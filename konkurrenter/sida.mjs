@@ -10,6 +10,7 @@
 
 import { STATUS } from './arenden.mjs';
 import { belopp } from './faktura.mjs';
+import { bevisStatus } from './klipp.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const attr = esc;
@@ -59,7 +60,7 @@ a{color:var(--accent)}
 .kol{display:grid;gap:8px;align-content:start;border:1px solid var(--linje);border-radius:10px;padding:12px;background:var(--bg)}
 .kol img{width:100%;height:auto;border-radius:6px;display:block;background:#fff}
 .kol .lank{font-family:var(--mono);font-size:13px;word-break:break-all}
-.citat{display:grid;gap:10px}
+.citat{display:grid;gap:10px}.obevisade{margin:10px 0 0;font-size:14px;color:var(--varning, #a24a08)}
 .citat blockquote{margin:0;padding:10px 14px;border-left:4px solid var(--stark);background:var(--yta2);border-radius:0 8px 8px 0;font-size:16px}
 .citat blockquote small{display:block;color:var(--dis);font-size:13px;margin-top:4px;font-family:var(--mono)}
 .bildpar{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
@@ -99,7 +100,10 @@ function arendeHtml(a, { miniatyr, skarmdump, brevtext }) {
   const deras = a.deras ?? {};
   const text = a.bevis?.text?.styrka ? a.bevis.text : (a.bevis?.annons?.styrka ? a.bevis.annons : null);
   const passager = (text?.passager ?? []).slice(0, 5);
-  const annonser = Array.isArray(a.bevis?.annonser) ? a.bevis.annonser.filter((t) => t.text?.styrka || t.bilder?.length) : [];
+  // Bara det som är bevisat med vårt eget material (bevisStatus) räknas; resten står för sig med orsak.
+  const allaAnnonser = Array.isArray(a.bevis?.annonser) ? a.bevis.annonser.filter((t) => t.text?.styrka || t.bilder?.length || t.klipp?.antal || t.klippStatus) : [];
+  const annonser = allaAnnonser.filter((t) => bevisStatus(t).bevisad);
+  const obevisade = allaAnnonser.filter((t) => !bevisStatus(t).bevisad);
   const bilder = a.bevis?.bilder ?? [];
   const sd = skarmdump(a);
   const mottagare = a.brev?.mottagare ?? null;
@@ -140,7 +144,7 @@ function arendeHtml(a, { miniatyr, skarmdump, brevtext }) {
     <div class="kol"><h3>Vårt</h3>${bildBlock(prod.bilder?.[0] ?? a.var?.annons?.bild, { miniatyr })}<p><a href="${attr(prod.url ?? '#')}" target="_blank" rel="noopener">${esc(prod.titel ?? prod.url ?? '?')}</a></p>${a.var?.annons?.namn ? `<p class="meta">Annons: ${esc(a.var.annons.namn)}</p>` : ''}</div>
     <div class="kol"><h3>Deras</h3>${sd ? `<img src="${attr(sd)}" alt="Skärmdump av ${attr(motpart(a))}">` : bildBlock(bilder[0]?.deras ?? deras.bilder?.[0] ?? null, { miniatyr })}<p class="lank"><a href="${attr(deras.url ?? deras.snapshot ?? '#')}" target="_blank" rel="noopener">${esc(deras.url ?? deras.snapshot ?? '?')}</a></p>${deras.titel ? `<p class="meta">${esc(deras.titel)}</p>` : ''}${deras.kontakt?.epost?.length ? `<p class="meta">Adresser på deras sida: ${esc(deras.kontakt.epost.slice(0, 4).join(', '))}</p>` : ''}</div>
   </div>
-  ${annonser.length ? `<section class="citat"><h3>Deras annonser som återger våra — ${annonser.length} st${annonser.some((t) => t.aktiv !== undefined && t.aktiv !== null) ? ` (${annonser.filter((t) => t.aktiv !== false).length} live)` : ''}</h3>${[...annonser].sort((x, y) => (y.aktiv === false ? 0 : 1) - (x.aktiv === false ? 0 : 1) || (y.exponeringar ?? 0) - (x.exponeringar ?? 0)).map((t) => `<blockquote>${t.text?.passager?.[0] ? `”${esc(t.text.passager[0].text)}”` : '<em>ingen ordagrann text — bilden är beviset</em>'}<small>${t.lank ? `<a href="${attr(t.lank)}" target="_blank" rel="noopener">annons ${t.nr}</a>` : `annons ${t.nr}`}${t.varAnnons?.namn ? ` ← vår ${esc(t.varAnnons.namn)}` : ''}${t.text ? ` · ${t.text.langsta} ord i följd, ${t.text.kopieradeOrd} ord totalt` : ''}${t.bilder?.length ? ` · ${t.bilder.length} bild(er) lika våra` : ''}${t.video ? ' · video' : ''}${t.aktiv === false ? ' · AVSTÄNGD' : t.aktiv === true ? ' · LIVE' : ''}${t.exponeringar ? ` · räckvidd ${esc(String(t.exponeringar).replace(/\B(?=(\d{3})+(?!\d))/g, ' '))}` : ''}${t.produkt?.titel ? ` · vår produkt: ${esc(t.produkt.titel)}` : ''}</small></blockquote>`).join('')}</section>` : passager.length ? `<section class="citat"><h3>Kopierad text — ${esc(text.kopieradeOrd)} ord ordagrant, längsta sviten ${esc(text.langsta)} ord</h3>${passager.map((p) => `<blockquote>”${esc(p.text)}”<small>${p.ord} ord i följd${text === a.bevis?.annons ? ' · ur vår annonstext' : ' · ur vår produktsida'}</small></blockquote>`).join('')}</section>` : ''}
+  ${annonser.length ? `<section class="citat"><h3>Deras annonser som återger våra — ${annonser.length} st${annonser.some((t) => t.aktiv !== undefined && t.aktiv !== null) ? ` (${annonser.filter((t) => t.aktiv !== false).length} live)` : ''}</h3>${[...annonser].sort((x, y) => (y.aktiv === false ? 0 : 1) - (x.aktiv === false ? 0 : 1) || (y.exponeringar ?? 0) - (x.exponeringar ?? 0)).map((t) => `<blockquote>${t.text?.passager?.[0] ? `”${esc(t.text.passager[0].text)}”` : '<em>ingen ordagrann text — bilden är beviset</em>'}<small>${t.lank ? `<a href="${attr(t.lank)}" target="_blank" rel="noopener">annons ${t.nr}</a>` : `annons ${t.nr}`}${bevisStatus(t).text && t.varAnnons?.namn ? ` ← vår ${esc(t.varAnnons.namn)}` : ''}${bevisStatus(t).text ? ` · ${t.text.langsta} ord i följd, ${t.text.kopieradeOrd} ord totalt` : ''}${t.klipp?.antal ? ` · filmen klippt ur våra ${esc((t.klipp.filmer ?? []).join(', '))} (${t.klipp.antal} rutor ur olika scener, ${t.klipp.andel} % matchar)` : bevisStatus(t).overifierad ? ' · ⚠️ bara miniatyren matchar — klippen inte kontrollerade' : bevisStatus(t).bild ? ` · ${t.bilder.length} bild(er) lika våra` : ''}${t.video ? ' · video' : ''}${t.aktiv === false ? ' · AVSTÄNGD' : t.aktiv === true ? ' · LIVE' : ''}${t.exponeringar ? ` · räckvidd ${esc(String(t.exponeringar).replace(/\B(?=(\d{3})+(?!\d))/g, ' '))}` : ''}${t.produkt?.titel ? ` · vår produkt: ${esc(t.produkt.titel)}` : ''}</small></blockquote>`).join('')}${obevisade.length ? `<p class="obevisade"><strong>Inte med i brev, faktura eller anmälan (${obevisade.length}):</strong> ${obevisade.map((t) => `annons ${esc(t.nr)} — ${esc(bevisStatus(t).orsak)}`).join(' · ')}</p>` : ''}</section>` : passager.length ? `<section class="citat"><h3>Kopierad text — ${esc(text.kopieradeOrd)} ord ordagrant, längsta sviten ${esc(text.langsta)} ord</h3>${passager.map((p) => `<blockquote>”${esc(p.text)}”<small>${p.ord} ord i följd${text === a.bevis?.annons ? ' · ur vår annonstext' : ' · ur vår produktsida'}</small></blockquote>`).join('')}</section>` : ''}
   ${bilder.length ? `<section><h3>Samma bilder — ${bilder.length} st</h3><div class="bildpar">${bilder.slice(0, 8).map((b) => `<figure>${bildBlock(b.egen, { miniatyr })}${bildBlock(b.deras, { miniatyr })}<figcaption>vår ↔ deras · ${esc(b.grad)} (avstånd ${b.avstand}/64)</figcaption></figure>`).join('')}</div></section>` : ''}
   ${beslut}
 </article>`;

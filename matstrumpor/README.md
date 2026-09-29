@@ -153,3 +153,20 @@ beställning fars dag 24/10 och jul 8/12. Black Week-trappan 10/20/30 % ligger i
 Shopify som tre schemalagda automatiska rabatter 23–30/11 (Axels beslut).
 ⚠️ Kontot saknade postadress 2026-09-25, så inget är påslaget: villkoren och
 Cowork-prompten står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor.
+
+## Cookie-rutan: bara Shopifys sedan 2026-09-29
+
+Axels order: "alla kunder får två stycken [cookie-rutor] varje gång … vi tar
+bort våran custom cookie pop-up och så kör vi bara med Shopifys vanliga."
+Mätt samma dag på tio butikers startsidor: bara matstrumpor.se hade två —
+temats egen sektion `ms-cookies` (följde med källtemat; fabriken tar redan
+bort den i varje OPS-butik, `factory/rensa-kalla.mjs`) plus Shopifys
+samtyckesruta. Borttagen ur `sections/footer-group.json` i det publicerade
+temat (`Matstrumpor CRO + storleksrad 2026-09-17`, `…/207180890451`) via
+`themeFilesUpsert`: sektionen `ms_cookies` ur `sections` och `order`, inget
+annat ändrat, tillbakaläst (bara `footer` kvar). Filen
+`sections/ms-cookies.liquid` ligger kvar oanvänd. Publik HTML på
+`/`, produktsidan, `/nb`, `/da`, `/en`, `/de`: `id="ms-cookies"` 0 gånger.
+Samtycket sköts nu bara av Shopifys ruta (Inställningar → Kundsekretess).
+Tillbaka: lägg `"ms_cookies": {"type": "ms-cookies", "settings": {"visible": true}}`
+i `sections` och `"ms_cookies"` sist i `order`.

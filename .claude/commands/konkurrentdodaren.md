@@ -12,6 +12,7 @@ Argument: `$ARGUMENTS` — normalt tomt (rutinen, varje morgon). Axels egna verb
                                             Axels godkännande: brev + faktura som UTKAST i Stonebite-Gmail (--direkt = skicka därifrån)
 /konkurrentdodaren skickad KD-2026-001      kvittot när Axel själv tryckt Skicka i Gmail
 /konkurrentdodaren faktura KD-2026-001      bara fakturan (titta på den, eller efter ändrad taxa)
+/konkurrentdodaren klipp KD-2026-001        Bevisrutorna ur VÅRA EGNA klipp (deras film ↔ alla våra filmer) — före `anmal` när träffen är en film
 /konkurrentdodaren anmal KD-2026-001        Meta-anmälningarna: EN per kopierad annons, allt ifyllt + bevisbild → Axel verifierar EN gång
 /konkurrentdodaren anmald KD-2026-001 --nr 1 --referens <Metas nr>   kvittot per inskickad anmälan (skrivs av sessionen)
 /konkurrentdodaren avfarda KD-2026-001 "ingen kopia"
@@ -223,7 +224,11 @@ inget: "Inget för dig i dag."
 
 - **`skicka <id> [--till adress] [--sprak sv|en] [--kopare "Bolag AB, adress"] [--land GB] [--cpm 98] [--utan-faktura] [--direkt]`**
   Axels ord `skicka` i chatten ÄR godkännandet — fråga inte en gång till.
-  1. `node konkurrenter/kor.mjs --skicka <id> [--till …] [--sprak …] [--kopare …] [--land …] [--cpm …] [--utan-faktura]`
+  **Har Axel i samma veva sagt `kör anmälningarna <id>`: lägg till `--med-anmalan`** — brevet säger då
+  "De N aktiva annonserna anmäls samtidigt till Meta …" och hotar inte med Meta-anmälan som villkor
+  (utan flaggan står Meta kvar bland det som händer om de inte tar bort materialet). Kör sedan
+  anmälningarna direkt efter brevet (steg under `anmal`).
+  1. `node konkurrenter/kor.mjs --skicka <id> [--med-anmalan] [--till …] [--sprak …] [--kopare …] [--land …] [--cpm …] [--utan-faktura]`
      — bygger brevet och fakturan (PDF i Chromium) till
      `konkurrenter/arenden/<id>/brev.txt`, `brev.json` (sändpaketet:
      till/från/ämne/text/bilagor) och `faktura-<nr>.pdf`. Fakturan räknar
@@ -266,9 +271,38 @@ inget: "Inget för dig i dag."
   2026-09-29: "den går in och reportar annonsen också, och fyller i allting med
   rätt uppgifter … tio rippade annonser = tio olika reports … det enda jag
   vill göra är att bara verifiera reporten … sen skickar du in allting").
+  0. **Är träffen en FILM (`video: true` i annonsfallet): kör FÖRST
+     `node konkurrenter/kor.mjs --klipp <id>`** (Axel 2026-09-29, andra
+     vändan: "många av de videosarna som vi säger är snodda har vi också
+     snott … typ nittio procent av alla klippen är våra, förutom just de som
+     du tog screenshots på" — miniatyrträffen, annonsens förhandsbild, är det
+     LÅNADE klippet). `klipp.mjs` laddar ner deras film (annonsbiblioteket)
+     och ALLA våra filmer med samma namnprefix i våra konton (Meta `source`;
+     ORVO/takskyddet: 131 filmer), tar en ruta var halva sekund, matchar
+     (dHash i ffmpeg — Playwrights ffmpeg saknar H.264, `pip3 install --user
+     imageio-ffmpeg` har det; skriptet säger vilken som saknas), kastar
+     scenerna med det lånade klippet ± 2 s på båda sidor och väljer 3 par ur
+     olika scener per annons (tätast först). Skriver `klipp.json` (facit,
+     committas), rutorna i `output/klipp/<id>/` (cache) och sammanfattningen
+     på ärendets annonser. Mätt 2026-09-29: 68–84 % av ORVO:s rutor matchar
+     våra filmer, paren 0–1/64. Säger Axel att en ruta ändå är lånad
+     ("anmälan 3 ruta B är lånad"): `--klipp <id> --lanat 3:B` (utesluts
+     överallt, minnet i `klipp.json`) och sedan steg 1 igen. Bildannonser
+     hoppar steget (bildträffen gäller). **Tre skydd:** platta rutor (svart,
+     vitt, tonat — `KONTRAST_MIN`) bär aldrig ett par; bara våra filmer
+     publicerade FÖRE deras annons räknas (annonsens startdatum mot vår
+     `created_time`); och `bevisStatus` avgör per annons vad som är bevisat
+     (text / film / bild / ej bevisad). En annons som INTE är bevisad med
+     vårt eget material tas aldrig med i anmälan, brevet eller fakturan — den
+     står med orsak i ärendet och på sidan. Har en filmannons bara
+     miniatyrträffen (klippen aldrig körda) stoppar `--anmal`, `--faktura`
+     och `--skicka` tills `--klipp <id> --alla` körts.
   1. `node konkurrenter/kor.mjs --anmal <id>` — bygger **en anmälan per
-     annons** med länk och träff: bevisbilden (vårt original ↔ deras annons,
-     kopierad text markerad; PNG i Chromium, publik länk på butikens CDN via
+     annons** med länk och träff: bevisbilden (för en film: 3 par ur våra
+     egna klipp, vår filmruta till vänster och samma ruta i deras annons till
+     höger, med film, tid och avstånd per par — aldrig miniatyrträffen, den
+     stoppar hellre än att falla tillbaka; annars vårt original ↔ deras annons
+     med kopierad text markerad; PNG i Chromium, publik länk på butikens CDN via
      `anmalan.cdn_butik`), fältpaketet `arenden/<id>/anmalan/<nr>.json` +
      `<nr>.txt` (engelska: kontakt, rättighetshavare, annonsens URL, vad som
      kopierats, originalets länkar, försäkringarna, underskriften — allt ur
@@ -332,6 +366,9 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] Granskningssidan publicerad på samma länk som `konkurrenter/sida.json` (eller länken sparad första gången)
 - [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast) eller `skicka <id> --direkt` (sänt)
 - [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>" (`--anmal-skicka <id> --ja` bara då; torrt utan `--ja`); varje inskickad anmälan kvitterad (automatiskt eller `--anmald`) med referens
+- [ ] Bevisbilderna för videoannonser är byggda ur våra egna klipp (`--klipp` före `--anmal`), aldrig ur miniatyrträffen — och en ruta Axel pekat ut som lånad är utesluten med `--lanat` och kortet ombyggt
+- [ ] Varje annons i brev, faktura och anmälan är BEVISAD med vårt eget material (`bevisStatus`: text, film ur våra klipp eller en bildannons bild) — obevisade står med orsak i ärendet, och inget par bygger på en platt ruta eller en film publicerad efter deras annons
+- [ ] Sessionen har TITTAT på varje par (översiktsark av `output/klipp/<id>/<nr>-<bokstav>-egen/deras.jpg`) — inga av de lånade klippen från förhandsbilderna, och kortets två bilder är samma bild; ett lånat par är utpekat med `--klipp <id> --lanat <anmälan>:<bokstav>` och korten ombyggda
 - [ ] Ett annonsfynd under Axels tröskel (ingen annons över 10 000 i räckvidd och färre än 10 live) blev INGET ärende — det står i rapporten under "Under din tröskel"
 - [ ] Commit + push till main (arenden.jsonl, arenden/, lage.json, sida.json) — aldrig `output/`
 - [ ] Svaret till Axel är på svenska, kort, och hans uppgifter står sist, numrerade

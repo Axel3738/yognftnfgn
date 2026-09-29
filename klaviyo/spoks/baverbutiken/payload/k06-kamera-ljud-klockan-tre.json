@@ -67,6 +67,17 @@
       "alignment": "left"
     },
     {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "KAMERA30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "regular",
       "text": "Koden KAMERA30 ger 30 % på kameran till och med söndag 18 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"

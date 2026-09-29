@@ -202,6 +202,35 @@ blandade sorter i paketet (1 av 22 vid avläsning 2), fyrpack B 8 / A 3,
 enstaka lådor B 5 / A 1 (B:s lucka på pizza-/hamburgare-/donutsidan står
 kvar). Båda når 100 köp inom ungefär ett och ett halvt dygn i den här takten.
 
+**Avläsning 4 — 2026-09-28 ~19:00 UTC (Axels fråga "hur går det för AB-testet?"):**
+`#4786` → `#5098`, **313 ordrar** (5 ur rabattkoden, 0 okända, 0 tvingade,
+0 annullerade, 0 återbetalda). Ordrarna hämtade direkt ur Admin API (appen
+Fabriken), `analys.mjs` från grenen `claude/build-shrinepro-like-theme-pfalsx`
+körd oförändrad: **A 173 / 73 932 kr / snitt 427 kr, B 140 / 60 288 kr /
+snitt 431 kr.** Lyft B mot A −19,1 %, p = 0,071 (konfidens 93,0 %).
+Snittordern lika (+3 kr, p = 0,81) — B:s försprång i snittorder vid avläsning
+3 (+46 kr) är borta. Verktygets beslut, ordagrant: **"Ingen säkerställd
+skillnad, och underlaget räcker för att säga det. Behåll A och testa något
+med större skillnad."** Riktningen pekar mot A (A fler köp sju av elva dygn, B två,
+och sedan 25/9 A 122 / B 83), men under 95 % — ingen dom om att B är sämre,
+bara att B inte är bättre. Sessionens rekommendation: avsluta testet och
+låta alla se A (Axels klick, eller sessionens ändring av `ms_ab_tests` i
+temat på hans ok — `/abtest`: rör inte temat utan ok). B:s lucka på
+pizza-/hamburgare-/donutsidan står kvar och gör att B aldrig ska bli
+permanent i sin nuvarande form.
+
+**⛔ Testet AVSTÄNGT 2026-09-29 — Axels beslut ("stäng av AB-testet så alla ser A").**
+Sessionen ändrade EN rad i det publicerade temats `config/settings_data.json`
+(`Matstrumpor CRO + storleksrad 2026-09-17`, `gid://shopify/OnlineStoreTheme/207180890451`,
+butik 1r46tp-qx, via `themeFilesUpsert` med appen Fabriken): `"ms_ab_tests":
+"sortval"` → `"# sortval"` (en rad som börjar med `#` hoppas av `ms-head.liquid`).
+Tillbakaläst: bara den raden ändrad. Publika sidan: `"tests": []`, B-blocket
+`hidden`, A synligt. Chromium som kund: ny besökare ser A, och en besökare med
+gamla kakan `ms_ab_sortval=b` ser också A (`ms-ab.js` rör inte element för
+ett avstängt test). Nya ordrar får ingen `AB sortval`-stämpel. Slå på igen =
+ta bort `# ` i samma inställning. B-koderna `STRUMPOR-K1F1-P*`/`K2F2-P*` ligger
+kvar i Shopify men visas inte längre någonstans.
+
 ---
 
 ## 2026-09-27 — rond 3: 0 etiketter, 0 lärdomar, 0 briefer, 4 förslag — och namnkrocken rättad
@@ -294,6 +323,24 @@ bortmålad (`pipeline/logga.py`), och de sju först uppladdade fick videon utbyt
 **Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
 **Nästa:** haikuh3, haikuh2 och s001h1 som annons 005–007 med ElevenLabs-röst (egen session,
 `matstrumpor/marknader/egna/PROMPT-elevenlabs.md`).
+
+## 2026-09-29 — utlandet: haikuh3, haikuh2, s001h1 som annons 005–007 i alla tolv kampanjer (36 annonser, PAUSED)
+
+**Hypotes:** De tre svenska röstvideorna (svensk AI-kvinnoröst + klipp) bär lika bra med samma röst
+på marknadens språk. Test utomlands, fast alla tre låg under break-even i Sverige.
+**Mix:** 0 vidarebyggen / 36 lokaliseringar av tre befintliga svenska annonser (ingen ny vinkel).
+**Källa:** `kallor.json` (haikuh3, haikuh2, s001h1). Texterna är granskade av infödda granskare
+(33 av 33 `"granskad": true`). Rösten är ElevenLabs text-till-tal med en klon av källans röst, aldrig
+HeyGen (Axels order 2026-09-28).
+**Annonser:** `MATSTRUMP_<KOD>_sushi_gift_ugc_005_v1` (haikuh3), `_006_v1` (haikuh2), `_007_v1`
+(s001h1) × NO DK FI US DE FR NL ES IT PL PT WW (WW bär engelskan). Id:n finns i
+`matstrumpor/marknader/annonser/lage.json` och `videor.json`.
+**QA:** 33 av 33 gröna i rostkoll. Whisper hör rätt språk i alla 33 (norska 0,73–0,86, övriga
+0,91–1,0), ordtäckningen är 0,88–1,0 och tonhöjden ligger 190–239 Hz mot källans 198–200. Alla 33
+är tittade på i bild: inget svenskt ord, ingen logga, knappen på marknadens språk. Tabellen finns i
+`matstrumpor/marknader/egna/README.md` → Läget.
+**Uppladdat:** 2026-09-29, i marknadens enda adset, PAUSED och tillbakaläst.
+**Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
 
 ## Format för kommande rader
 

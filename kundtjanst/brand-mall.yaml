@@ -61,6 +61,7 @@ tvister:
   # för att få den. Det ger färre returer, men bara om svaret går ut inom
   # forsta_svar_timmar nedan — ett missat mejl blir en tvist, och en tvist
   # kostar mer än returen. false = adressen står i policyn och får skickas fritt.
+  retursedel_url: ""          # länk till retursedeln kunden skriver ut (kundtjanst/retursedel/bygg.mjs --ladda-upp); tom ⇒ ingen rad
   returadress_pa_forfragan: true
   # {{RETURN_POSTAGE_PAID_BY}} — "kund" eller "butik". ⚠️ Lämna tom tills ägaren
   # sagt vilket; VA:n får aldrig gissa det i ett kundmejl.
@@ -114,7 +115,8 @@ svar:
   autosvar: true              # false = motorn rör inte den här brevlådan alls
   sprak: ""                   # sv|nb|da|fi|en — kundens språk vinner; tomt = ur brand.land
   signatur: ""                # "Kundtjänst Bäverbutiken" — tomt = "Kundtjänst <namn>" på kundens språk. ALDRIG "AI"
-  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar)
+  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar) — bara för datumfönstret
+  leverans_arbetsdagar: [5, 10] # samma löfte i arbetsdagar — det som står i svaren (aldrig "7-14 dagar")
   packas_dagar: 2             # arbetsdagar från order till sändning
   sparningssida: ""           # https://<butik>/pages/spara — kundens spårningssida (sparning/butiker.json). Tomt = ingen länk i svaret
   sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)

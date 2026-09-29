@@ -28,6 +28,7 @@
 //     spårningslänk — spårningslänken kommer i VA:ns svar.
 
 import { klassificera, normalisera } from '../klassificering.mjs';
+import { namnerHamtaUt } from './svar.mjs';
 import { arSystem, arEgen } from '../arenden.mjs';
 
 export const HINK = Object.freeze({ ENKEL: 'ENKEL', ARG: 'ARG', SVAR: 'SVÅR', SKIP: 'SKIP' });
@@ -45,16 +46,19 @@ const TVISTORD = [
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Ilska utöver klassificeringens eskaleringsord (sv/nb/da/fi/en).
+// "besviken"/"disappointed" togs bort 2026-09-29 (Axels granskning av de 16
+// skarpa svaren: Mikaels "blev väldigt besviken" om ett överdrag som inte
+// passade fick eskaleringsmallen — besvikelse är inte ilska).
 // "skit", "skräp", "bluff", "betalar inte" lades till 2026-09-21 kväll efter
 // den första torrkörningen: "Vad är det här för skit? … Det här betalar jag
 // inte för" och "Det är rent skräp" hamnade i SVÅR i stället för ARG.
 const ARGORD = [
-  '\\barg\\b', 'förbannad', 'irriterad', 'besviken', 'frustrerad', 'urusel', '\\busel\\b', 'fruktansvärt', 'hemskt', 'skäms', 'aldrig mer', 'sista gången', 'oseriös', 'katastrof',
+  '\\barg\\b', 'förbannad', 'irriterad', 'frustrerad', 'urusel', '\\busel\\b', 'fruktansvärt', 'hemskt', 'skäms', 'aldrig mer', 'sista gången', 'oseriös', 'katastrof',
   '\\bskit\\b', 'skitprodukt', 'skräp', 'bluff', 'bedrägeri', 'lurad', 'lurade', 'betalar (jag |vi )?inte', 'oacceptabel', 'skandal', 'skämt', 'dålig kvalit', 'usel kvalit', 'tunt som en',
-  '\\bsint\\b', 'forbanna', 'skuffet', 'frustrert', 'elendig', 'aldri mer', 'siste gang', 'useriøs', 'søppel', 'svindel', '\\blurt\\b', '\\bdritt\\b', 'uakseptabel',
-  '\\bvred\\b', 'skuffet', 'frustreret', 'elendigt', 'aldrig mere', 'sidste gang', 'skrald', 'snydt', '\\blort\\b', 'uacceptabel',
-  'vihainen', 'pettynyt', 'turhautunut', 'surkea', 'en ikinä enää', 'roska', 'huijaus', 'paska',
-  'pissed', 'angry', 'furious', 'disappointed', 'frustrated', 'terrible', 'awful', '\\bworst\\b', 'never again', 'disgusting', 'ridiculous', 'unacceptable', 'joke\\b', '\\bscam\\b', 'fraud', 'rip-?off', 'garbage', 'rubbish', '\\bcrap\\b',
+  '\\bsint\\b', 'forbanna', 'frustrert', 'elendig', 'aldri mer', 'siste gang', 'useriøs', 'søppel', 'svindel', '\\blurt\\b', '\\bdritt\\b', 'uakseptabel',
+  '\\bvred\\b', 'frustreret', 'elendigt', 'aldrig mere', 'sidste gang', 'skrald', 'snydt', '\\blort\\b', 'uacceptabel',
+  'vihainen', 'turhautunut', 'surkea', 'en ikinä enää', 'roska', 'huijaus', 'paska',
+  'pissed', 'angry', 'furious', 'frustrated', 'terrible', 'awful', '\\bworst\\b', 'never again', 'disgusting', 'ridiculous', 'unacceptable', 'joke\\b', '\\bscam\\b', 'fraud', 'rip-?off', 'garbage', 'rubbish', '\\bcrap\\b',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Enkla ämnen — bara när mejlet INTE är argt.
@@ -113,6 +117,15 @@ export function harTvistord(text) {
   return TVISTORD.some((re) => re.test(t));
 }
 
+// Hälsnings- och avslutningsrader räknas inte när utropstecknen räknas:
+// "Hej!" + "Tack på förhand!" är artighet, inte ilska (Stevan 2026-09-27,
+// vars lugna avbeställning fick eskaleringsmallen).
+const HALSNINGSRAD = /^\s*(hej(san)?|hallå|hi|hello|hei|god (morgon|dag|kväll)|(tusen |stort )?tack( på förhand| så mycket)?|takk|tak|kiitos|thanks|thank you|mvh|m\.v\.h\.?|vänliga hälsningar|med vänlig(a)? hälsning(ar)?|vennlig hilsen|venlig hilsen|kind regards|best regards)[!.,\s]*$/i;
+function utropstecken(text) {
+  const s = String(text ?? '').split('\n').filter((r) => !HALSNINGSRAD.test(r)).join('\n');
+  return { dubbla: (s.match(/!{2,}/g) ?? []).length, alla: (s.match(/!/g) ?? []).length };
+}
+
 /** Andelen VERSALORD (≥ 4 bokstäver) i texten — "JAG VILL HA MINA PENGAR" är inte lugn. */
 function versalandel(text) {
   const ord = String(text ?? '').match(/[A-ZÅÄÖØÆa-zåäöøæ]{4,}/g) ?? [];
@@ -137,7 +150,8 @@ export function arArg({ klass, amne = '', text = '', trad = null } = {}) {
   const stark = klass.eskaleringStark ?? klass.eskalering;
   if (stark >= 1) orsaker.push(`eskaleringsord (${stark})`);
   if (ARGORD.some((re) => re.test(a) || re.test(t))) orsaker.push('argt ordval');
-  if ((String(text).match(/!{2,}/g) ?? []).length >= 1 || (String(text).match(/!/g) ?? []).length >= 3) orsaker.push('många utropstecken');
+  const u = utropstecken(text);
+  if (u.dubbla >= 1 || u.alla >= 3) orsaker.push('många utropstecken');
   if (versalandel(text) >= 0.3) orsaker.push('skriver i versaler');
   if (trad && trad.antalInkommande >= 3 && trad.antalSvar === 0) orsaker.push(`tredje mejlet utan svar (${trad.antalInkommande} obesvarade)`);
   return { arg: orsaker.length > 0, orsaker };
@@ -160,11 +174,12 @@ const ALDRIG_ENKEL = new Set(['retur_angerratt', 'aterbetalning', 'avbestallning
 // Byte och storlek (SOP 21): "för litet", "en storlek större", "passar inte"
 // är ett byte som VA:n beslutar om — ingen bildförfrågan, inget WISMO.
 // Jan-Olofs "överdraget är för litet, behöver en storlek större" 2026-09-21.
-const BYTE = ['för lite[tn]', 'för sto[rt]+\\b', 'för små', 'för trång', 'för kort', 'för lång', 'storlek större', 'storlek mindre', 'större storlek', 'mindre storlek', 'annan storlek', 'fel storlek', 'passar inte', 'byta (till|mot|ut|storlek)', '\\bbyte\\b',
-  'for lit[ent]', 'for sto[rt]+\\b', 'for små', 'for trang', 'større størrelse', 'mindre størrelse', 'feil størrelse', 'passer ikke', 'bytte (til|mot|størrelse)',
+// "passar inte"/"does not fit" är ett klagomål, inte en bytesbegäran — det får bildförfrågan `passform` (Mikael 2026-09-23/29), inte SVÅR. Bara storleken (för liten, en storlek större, byta) är byte.
+const BYTE = ['(jätte|väldigt|alldeles|helt|på tok) ?(för )?(små|liten|litet|stor|stora|stort|trång|trånga)', 'kan inte ha (dom|dem|den|de)', 'får (inte|ej) (ens )?på (mig|dom|dem|den)', 'får (dom|dem|den) inte på', 'för lite[tn]', 'för sto[rt]+\\b', 'för små', 'för trång', 'för kort', 'för lång', 'storlek större', 'storlek mindre', 'större storlek', 'mindre storlek', 'annan storlek', 'fel storlek', 'byta (till|mot|ut|storlek)', '\\bbyte\\b',
+  'for lit[ent]', 'for sto[rt]+\\b', 'for små', 'for trang', 'større størrelse', 'mindre størrelse', 'feil størrelse', 'bytte (til|mot|størrelse)',
   'for lille', 'forkert størrelse', 'ombytning', 'bytte (til|størrelse)',
-  'liian pieni', 'liian iso', 'liian suuri', 'ei sovi', 'väärä koko', 'vaihtaa (kokoa|toiseen)',
-  'too small', 'too big', 'too large', 'too tight', 'does not fit', 'doesn.t fit', 'wrong size', 'size up', 'size down', 'a size (bigger|larger|smaller)', 'exchange (it|for|to)',
+  'liian pieni', 'liian iso', 'liian suuri', 'väärä koko', 'vaihtaa (kokoa|toiseen)',
+  'too small', 'too big', 'too large', 'too tight', 'wrong size', 'size up', 'size down', 'a size (bigger|larger|smaller)', 'exchange (it|for|to)',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Kunden vill returnera och frågar hur (Axels beslut 2026-09-22 på Peters
@@ -186,11 +201,37 @@ export function arReturfraga({ amne = '', text = '' } = {}) {
   return RETURFRAGA.some((re) => re.test(a) || re.test(t));
 }
 
+// Tecken på att kunden HAR varan eller en order. Utan dem (och utan ordernummer)
+// är "Någon garanti?", "passar den?" och "vilket överdrag skall jag välja" frågor
+// FÖRE köp — Hans 2026-09-28 fick en bildförfrågan för att ordet garanti är
+// skadad_defekt. Axels beslut 2026-09-29: sådana mejl svarar boten aldrig på.
+const HAR_VARAN = ['fick', 'fått', 'kom (fram|hem|idag|i dag|igår|i går)', 'levererad', 'levererat', 'levererades', 'mottog', 'mottagit', 'öppnade', 'beställde', 'köpte', 'har beställt', 'har köpt', 'varan jag', 'produkten jag',
+  'fikk', 'mottok', 'kjøpte', 'bestilte', 'pakken', 'modtog', 'købte', '\\bfik\\b', 'sain', 'ostin', 'tilasin', 'pakettini',
+  'received', 'arrived', 'got (it|the|my)', 'bought', 'ordered', 'delivered', 'my parcel', 'the parcel', 'the package',
+].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+
+// Frågan före köp: garanti, passform, vilken variant, "innan jag beställer". sv/nb/da/fi/en.
+const FORKOP_FRAGA = /garanti|warranty|guarantee|passar (den|det|de|dom|detta|dessa) (till|på|min|mitt|mina|en|ett)|skulle (den|det) passa|kommer (den|det) (att )?passa|vilken (storlek|modell|variant|färg|version)|vilket (överdrag|skydd|alternativ)|(skall|ska) jag välja|rekommenderar ni|finns (den|det|de) i|har ni (den|det|de|någon|några|nån)|innan jag (beställer|köper)|funderar på att (köpa|beställa)|vad kostar|går den att|passer (den|det) (til|på)|hvilken (størrelse|modell)|anbefaler dere|før jeg bestiller|sopiiko|mikä koko|ennen kuin tilaan|does it fit|will it fit|which (size|model)|before (i|we) order|before ordering|do you (have|sell)|is it (suitable|compatible)/i;
+// Ett klagomål på en vara kunden har — då är det aldrig en fråga före köp.
+const KLAGOMAL = /trasig|sönder|defekt|fungerar (inte|ej)|funkar (inte|ej)|saknas|fel (vara|produkt|storlek|färg|antal)|ser (inte|ej) (alls )?ut som|inte som på bilden|stämmer (inte|ej)|passar (inte|ej)|för (liten|litet|små|stor|stora|stort)|skadad|reklam|ødelagt|virker ikke|passer ikke|i stykker|rikki|ei toimi|ei sovi|broken|damaged|does not (work|fit)|doesn.t (work|fit)|wrong (item|size|product)|not as (pictured|described)|missing/i;
+
+/** Är mejlet en fråga före köp — produktfråga, garanti eller passform utan order och utan mottagen vara? Ren. */
+export function arForkop({ klass, amne = '', text = '' } = {}) {
+  if (klass?.ordernummer?.length) return false;
+  const a = normalisera(amne);
+  const t = normalisera(text);
+  const allt = `${a}\n${t}`;
+  if ([...HAR_ORDER, ...HAR_VARAN].some((re) => re.test(a) || re.test(t))) return false;
+  if (KLAGOMAL.test(allt)) return false;
+  return klass?.kategori === 'produktfraga' || FORKOP_FRAGA.test(allt);
+}
+
 /** Är mejlet ett byte eller en storleksfråga på en levererad vara (SOP 21)? Ren. */
 export function arByte({ klass, amne = '', text = '' } = {}) {
   const a = normalisera(amne);
   const t = normalisera(text);
-  return BYTE.some((re) => re.test(a) || re.test(t)) && (klass?.alla ?? []).some((x) => ['skadad_defekt', 'fel_vara', 'retur_angerratt', 'produktfraga'].includes(x.id));
+  // Johan 2026-09-28 ("dom va jätte små!! … kan inte ha dom") bar ingen kategori alls — ordet storlek i mejlet räcker.
+  return BYTE.some((re) => re.test(a) || re.test(t)) && ((klass?.alla ?? []).some((x) => ['skadad_defekt', 'fel_vara', 'retur_angerratt', 'produktfraga'].includes(x.id)) || /storlek|størrelse|\bkoko\b|\bsize\b/i.test(`${a}\n${t}`));
 }
 
 /** Vilken enkel fråga det är, eller null. Ren. */
@@ -203,8 +244,10 @@ export function enkelTyp({ klass, amne = '', text = '' }) {
   if (alla.has('retur_angerratt') && !alla.has('chargeback_hot') && !arByte({ klass, amne, text }) && arReturfraga({ amne, text })) return 'retur';
   if ([...alla].some((id) => ALDRIG_ENKEL.has(id))) return null;
   if (arByte({ klass, amne, text })) return null;
-  // SOP 05/08/07/15: skadad, defekt, fel eller för få varor ⇒ första svaret ber om bilderna.
-  if (alla.has('skadad_defekt') || alla.has('fel_vara')) return 'foton';
+  // SOP 05/08/07/15: skadad, defekt, fel eller för få varor ⇒ första svaret ber om bilderna — bara när kunden HAR varan (arForkop).
+  if ((alla.has('skadad_defekt') || alla.has('fel_vara')) && !arForkop({ klass, amne, text })) return 'foton';
+  // Kunden står hos ombudet utan kod (Mats 2026-09-25): läget ur spårningen + vad hen gör hos ombudet.
+  if (namnerHamtaUt(`${amne}\n${text}`)) return 'wismo';
   if (traff(FORETAG)) return 'foretag';
   if (traff(ADRESS)) return 'adress';
   if (traff(OPPETTIDER)) return 'oppettider';
@@ -262,6 +305,18 @@ export function hinka({ mejl, brand, trad = null } = {}) {
   if (harTvistord(`${amne}\n${text}`)) return { ...bas, hink: HINK.SVAR, orsak: 'tvistord i mejlet (chargeback/dispute/ARN/tvist) — bara VA:n' };
   if (mejl.bilaga) return { ...bas, hink: HINK.SVAR, orsak: 'mejlet har en bilaga motorn inte läst' };
   if (String(text).trim().length < 8) return { ...bas, hink: HINK.SVAR, orsak: 'nästan ingen text att läsa' };
+
+  // Axels granskning 2026-09-29 (de 16 skarpa svaren): tre sorters mejl får ALDRIG
+  // ett automatiskt svar, hur många utropstecken de än bär — de går till VA:n.
+  //   • frågan före köp (Hans: "Någon garanti? … vilket överdrag skall jag välja")
+  //   • byte eller storlek (Johan: "jätte små!!" fick eskaleringsmallen för utropstecknen)
+  //   • avbeställning (Stevan: "Kan jag avbryta denna orden?" fick eskaleringsmallen)
+  const alla = new Set((klass.alla ?? []).map((x) => x.id));
+  if (arForkop({ klass, amne, text })) return { ...bas, hink: HINK.SVAR, orsak: 'fråga före köp — ingen order och ingen mottagen vara nämns, VA:n svarar (Axels beslut 2026-09-29)' };
+  if (!alla.has('chargeback_hot')) {
+    if (arByte({ klass, amne, text })) return { ...bas, hink: HINK.SVAR, orsak: 'byte eller storlek (SOP 21) — VA:n beslutar' };
+    if (alla.has('avbestallning')) return { ...bas, hink: HINK.SVAR, orsak: 'avbeställning — VA:n, inget automatiskt svar (Axels beslut 2026-09-29)' };
+  }
 
   const ilska = arArg({ klass, amne, text, trad });
   if (ilska.arg) return { ...bas, hink: HINK.ARG, orsak: ilska.orsaker.join(', '), argOrsaker: ilska.orsaker };

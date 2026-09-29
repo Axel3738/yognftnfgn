@@ -39,6 +39,7 @@ svar:
   sparningssidor:
     nb: "https://carashell.se/nb/pages/spara"
     en: "https://carashell.com/pages/spara"
+    da: "https://carashell.se/da/pages/spara"
     fi: "https://carashell.se/fi/pages/spara"
   sparning_prefix: "CS-"
   va_mapp: VA-PRIO
@@ -58,6 +59,8 @@ tvister:
   # i villkoren (terms-of-service) och på kontaktsidan; båda bytta samma dag.
   # Till och med 2026-09-25: Sjöhed 160, 442 74 Harestad.
   returadress: "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige"
+  # Retursedeln kunden skriver ut och klistrar på paketet (Axels bild 2026-09-29, kundtjanst/retursedel/).
+  retursedel_url: "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/retursedel.png?v=1790677409"
   # Processen är ändå "mejla först": SE-policyn ("Du får en returinstruktion
   # inom två arbetsdagar") och US-policyn ("we'll tell you where to send it").
   returadress_pa_forfragan: true

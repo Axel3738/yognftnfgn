@@ -1,13 +1,13 @@
 {
   "id": "k23-tofflor-golvet",
-  "namn": "MAIL_20260930_Tofflor_S_1_kopare-tofflor_problem_golvet-blir-kallt_v1",
-  "memo": "Skräddarsytt rea-mejl till sko- och toffelköparna (Axel 2026-09-29: mindre grupper, ett mejl som träffar hårdare, bästsäljarmejlet dömdes för att rabatten saknade anledning). Hypotes: den som köpt skor eller tofflor av oss köper fodrade tofflor när kylan kommer, och en kod med slutdag ger anledningen att göra det nu; mätt på köp per mottagare mot K02. Rea 30 % med TOFFLOR30 på fyra tofflor till och med söndag 4 oktober. Ordningen är problem, agitation, lösning, erbjudande: hero utan produktbild och utan knapp, koden först efter produkten.",
+  "namn": "MAIL_20261002_Tofflor_S_1_tier1-kopare-tofflor_problem_golvet-blir-kallt_v2",
+  "memo": "Tofflorrea brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"; v1 gick bara till sko- och toffelköparna). Publiken är Tofflorrean 2/10: Warmup tier 1 plus sko- och toffelköparna, utan båtköparna som får båtmejlet samma dag. Flyttad från onsdag 30/9 till fredag 2/10 så att tier 1 inte får två mejl samma kväll som gräsklipparrean. Hypotes: kalla golv i hallen är en anledning för alla, inte bara för dem som redan köpt skor av oss, och en kod med slutdag ger anledningen att köpa nu; mätt på köp per mottagare, köpare mot icke-köpare. Rea 30 % med TOFFLOR30 på fyra tofflor till och med söndag 4 oktober. Ordningen är problem, agitation, lösning, erbjudande: hero utan produktbild och utan knapp, koden först efter produkten.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
-    "kalla_ref": "segmentet Köpare tofflor & skor 2026-09-29",
+    "kalla_ref": "segmentet Tofflorrean 2/10 (Warmup tier 1 + Köpare tofflor & skor, utan Köpare båt) 2026-09-29",
     "lardom": null,
-    "avatar": "den som köpt skor eller tofflor av oss",
+    "avatar": "den som går på kalla golv hemma i vinter",
     "begar": "varma fötter i hallen i vinter",
     "awareness": "problem",
     "urgency": "sasong + slutdag (4 oktober)",
@@ -34,7 +34,7 @@
     {
       "typ": "hero",
       "rubrik": "Golvet i hallen är iskallt innan kaffet är klart",
-      "text": "Hej {{fornamn}},\n\nDu har handlat skor eller tofflor hos oss. Nu kommer kylan, och strumpor hjälper bara en stund."
+      "text": "Hej {{fornamn}},\n\nNu kommer kylan på allvar. Sockor håller värmen till slutet av hallen, sedan är det kallt igen."
     },
     {
       "typ": "text",
@@ -127,11 +127,17 @@
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
+    },
+    {
+      "rad": "Nu kommer kylan på allvar. Sockor håller värmen till slutet av hallen, sedan är det kallt igen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
     }
   ],
-  "planerad": "2026-09-30T18:00:00+02:00",
+  "planerad": "2026-10-02T18:00:00+02:00",
   "segment": [
-    "Köpare tofflor & skor"
+    "Tofflorrean 2/10"
   ],
   "exkludera": [],
   "status_plan": "klar",

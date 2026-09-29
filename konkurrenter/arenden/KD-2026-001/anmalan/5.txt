@@ -12,14 +12,14 @@ Relationship: CEO of the rights owner Stonebite Ecom AB (Swedish company, reg. n
 
 — Content you want to report —
 URL: https://www.facebook.com/ads/library/?id=1075928918391127
-Description: This advertisement, run by the Facebook page "ORVO" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. 1 image in the ad is our own copyrighted advertising image — a still frame or photo taken from our own ad (perceptual-hash comparison: identical, distance 1/64). The ad is a video that uses our material. The ad has been running since 24 September 2026. According to the Ad Library it has reached approximately 2,205 people in the EU. It copies our ad "Takoverdrag_GT_2_H1" for the product "Taköverdrag Husvagn – Skyddar Den Dyraste Ytan", which our page has been running since before this ad appeared. This is report 5 of 10 concerning ads from the same advertiser; each ad is reported separately.
+Description: This advertisement, run by the Facebook page "ORVO" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films "CaraShellRoof_PD_3_H1", "CaraShellRoof_NO_PD_2", "Takoverdrag_SP_4_H1" (published by us between 11 September 2026 and 16 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:05, 0:06, 0:15) are identical to frames of our films (perceptual-hash distance 2, 0, 1/64), and 64% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). According to the Ad Library it has reached approximately 2,205 people in the EU. It copies our ads "CaraShellRoof_PD_3_H1", "CaraShellRoof_NO_PD_2", "Takoverdrag_SP_4_H1" for the product "Taköverdrag Husvagn & Husbil 5,5–13,5 m", which our page ran before this ad appeared. This is report 5 of 10 concerning ads from the same advertiser; each ad is reported separately.
 
 — Your copyrighted work —
-Description: Original advertising copy, product photographs and video produced by Stonebite Ecom AB for our store https://baverbutiken.se (product: "Taköverdrag Husvagn – Skyddar Den Dyraste Ytan"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.
-Original URL: https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan
-Original URL: https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543
+Description: Original advertising films produced by Stonebite Ecom AB for our store https://carashell.se (product: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"): "CaraShellRoof_PD_3_H1", "CaraShellRoof_NO_PD_2", "Takoverdrag_SP_4_H1". The footage is our own work and we hold the copyright. Our ads are listed in the Ad Library and the product page is at the links below.
+Original URL: https://carashell.se/products/takskyddet
+Original URL: https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=1381171778405935
 
-Additional information: Evidence screenshot (our original on the left, the reported ad on the right, copied passage highlighted): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_b82d23d4-a51b-4d24-9209-89908e3ca6a1.png?v=1790669006. Internal reference: KD-2026-001, report 5/10, prepared 29 September 2026.
+Additional information: Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_5ef2493b-14ee-4078-aa38-a2cc6ace874c.png?v=1790682726. Internal reference: KD-2026-001, report 5/10, prepared 29 September 2026.
 
 — Declarations (tick all) —
 [x] I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.
@@ -27,4 +27,4 @@ Additional information: Evidence screenshot (our original on the left, the repor
 [x] I declare, under penalty of perjury, that I am the owner, or am authorised to act on behalf of the owner, of an exclusive right that is allegedly infringed.
 
 Electronic signature: Axel Odhner
-Attachment: arenden/KD-2026-001/anmalan/bevis-5.png · https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_b82d23d4-a51b-4d24-9209-89908e3ca6a1.png?v=1790669006
+Attachment: arenden/KD-2026-001/anmalan/bevis-5.png · https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_5ef2493b-14ee-4078-aa38-a2cc6ace874c.png?v=1790682726

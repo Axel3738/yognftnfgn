@@ -101,7 +101,8 @@ export const STANDARD_SVAR = Object.freeze({
   autosvar: true,             // false = motorn rör inte brevlådan (flaggar inte heller)
   sprak: '',                  // sv|nb|da|fi|en — standard ur brand.land när tomt
   signatur: '',               // "Kundtjänst Bäverbutiken" — tomt = "<Kundtjänst på kundens språk> <brand>"
-  leverans_dagar: [7, 14],    // butikens leveranslöfte, kalenderdagar från skickdagen (mejl/konfig.json frakt)
+  leverans_dagar: [7, 14],    // butikens leveranslöfte, kalenderdagar från skickdagen (mejl/konfig.json frakt) — bara för datumfönstret
+  leverans_arbetsdagar: [5, 10], // samma löfte i ARBETSDAGAR — det som står i svaren (Axels order 2026-09-21: aldrig "7-14 dagar")
   packas_dagar: 2,            // arbetsdagar innan en betald order skickas
   sparningssida: '',          // https://baverbutiken.se/pages/spara — kundens spårningssida (sparning/butiker.json handle)
   sparning_prefix: 'BB-',     // bävernumrets prefix på sidan (sparning/butiker.json prefix)
@@ -121,7 +122,7 @@ export function brandUrButiksfil(b, id) {
   // domän i butiksfilen — autosvaret tar det därifrån om brandfilen tystnar.
   const lev = String(b?.frakt?.leveranstid ?? '').match(/(\d+)\s*[–-]\s*(\d+)\s*arbetsdag/);
   const svar = {};
-  if (lev) svar.leverans_dagar = [Math.round(Number(lev[1]) * 1.4), Math.round(Number(lev[2]) * 1.4)];
+  if (lev) { svar.leverans_arbetsdagar = [Number(lev[1]), Number(lev[2])]; svar.leverans_dagar = [Math.round(Number(lev[1]) * 1.4), Math.round(Number(lev[2]) * 1.4)]; }
   return {
     id,
     brand: String(bu.brand ?? '').trim() || id,

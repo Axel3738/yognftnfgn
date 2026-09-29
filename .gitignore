@@ -149,6 +149,7 @@ klaviyo/output/
 konkurrenter/output/
 # Meta-anmälningarnas bevisbilder (~1 MB PNG styck), formulärets skärmdumpar (<nr>-torr/-formular/-kvitto.png), engångskodens filer och verifieringssidan (data-URI:er) — bevisets länk på CDN, fälten och kvittot (referens) står i <nr>.json och arenden.jsonl som committas.
 konkurrenter/arenden/*/anmalan/*.png
+konkurrenter/arenden/*/anmalan/*.jpg
 konkurrenter/arenden/*/anmalan/kod.txt*
 konkurrenter/arenden/*/anmalan/verifiering.html
 
@@ -159,3 +160,4 @@ matstrumpor/marknader/annonser/klar/*.rutor.json
 # Matstrumpors egna videor: källorna och renderingarna ligger inte i repot
 matstrumpor/marknader/egna/kalla/
 matstrumpor/marknader/egna/ut/
+mejl/output/butiker/*/lankkoll/

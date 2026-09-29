@@ -43,20 +43,32 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
+  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal, tiderna hos dem och andelen matchande rutor.
+  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)[\s\S]*?and (\d+)% of the reported video/);
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
-  const varAnnons = f.contentDescription?.match(/It copies our ad "([^"]+)"/)?.[1] ?? null;
-  const produkt = f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
-  const bygg = (passage) => [
+  // Källan: filmerna paren kommer ur (anmalan.mjs lägger dem som fält), annars annonsen texten/bilden kommer ur.
+  const filmer = Array.isArray(a.filmer) && a.filmer.length ? a.filmer : null;
+  const kallor = f.contentDescription?.match(/It copies our ads? ((?:"[^"]+"(?:, )?)+)/)?.[1] ?? null;
+  const produkt = a.produkt ?? f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
+  const flera = (filmer?.length ?? 0) > 1 ? 's' : '';
+  // Kortas i steg när 500 inte räcker — filmlistan och etiketterna först, så att referensen i slutet alltid får plats
+  // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
+  const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true } = {}) => [
     m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
-    !m && !bilder && video ? 'The video uses our material.' : null,
-    `Original: ${varAnnons ? `our ad "${varAnnons}"` : 'our ad'}${produkt ? ` for "${produkt}"` : ''}, running before this ad.`,
-    a.bevisbildUrl ? `Evidence screenshot (ours left, theirs right): ${a.bevisbildUrl}` : null,
+    klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours; ${klipp[3]}% of its frames match our film${flera}.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
+    !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
+    filmer
+      ? `Original: our ad film${flera} ${filmer.slice(0, antalFilmer).map((x) => `"${x}"`).join(', ')}${filmer.length > antalFilmer ? ' and others' : ''}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published before this ad.`
+      : `Original: ${kallor ? `our ad ${kallor}` : 'our ad'}${produkt && produktNamn ? ` for "${produkt}"` : ''}, running before this ad.`,
+    a.bevisbildUrl ? `${bevis} ${a.bevisbildUrl}` : null,
     `Ref ${a.arende} ${a.nr}/${a.antal}.`,
   ].filter(Boolean).join(' ');
+  const steg = [{}, { bevis: 'Evidence (ours left, theirs right):' }, { bevis: 'Evidence (ours left, theirs right):', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false, produktNamn: false }];
   let passage = m ? m[3] : '';
   let text = bygg(passage);
-  while (text.length > max && passage.length > 20) { passage = korta(passage, passage.length - 20); text = bygg(passage); }
+  for (const o of steg) { text = bygg(passage, o); if (text.length <= max) break; }
+  const sista = steg.at(-1);
+  while (text.length > max && passage.length > 20) { passage = korta(passage, passage.length - 20); text = bygg(passage, sista); }
   return text.length > max ? korta(text, max) : text;
 }
 

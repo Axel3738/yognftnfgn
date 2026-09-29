@@ -1,0 +1,6666 @@
+{
+  "byggd": "2026-09-29T11:42:19.084Z",
+  "ffmpeg": "/root/.local/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "fps": 2,
+  "maxAvstand": 6,
+  "arende": "KD-2026-001",
+  "lanade_hashar": [],
+  "lanade_par": [],
+  "lanade_klipp": {
+    "fron": {
+      "2": [
+        0
+      ],
+      "4": [
+        0
+      ],
+      "5": [
+        0
+      ],
+      "7": [
+        0
+      ],
+      "9": [
+        0
+      ],
+      "10": [
+        0
+      ],
+      "14": [
+        0
+      ],
+      "16": [
+        0
+      ],
+      "18": [
+        0
+      ],
+      "20": [
+        0.03
+      ],
+      "24": [],
+      "25": [],
+      "28": [],
+      "29": [],
+      "30": [],
+      "31": [],
+      "32": [],
+      "33": [],
+      "35": [],
+      "37": []
+    },
+    "deras": {
+      "2": 9,
+      "4": 6,
+      "5": 12,
+      "7": 5,
+      "9": 8,
+      "10": 12,
+      "14": 7,
+      "16": 10,
+      "18": 17,
+      "20": 8
+    },
+    "egnaFilmer": 101,
+    "rutor": 71,
+    "varv": 2
+  },
+  "bibliotek": {
+    "prefixer": [
+      "CaraShellRoof_",
+      "Takoverdrag_",
+      "IBC_"
+    ],
+    "filmer": [
+      {
+        "id": "1627891502009585",
+        "namn": "Takoverdrag_CS_2_H1",
+        "annonsId": "120250147352270291",
+        "kalla": "source",
+        "langd": 26.353,
+        "rutor": 53,
+        "skapad": "2026-09-09T00:55:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1604517611454232",
+        "namn": "Takoverdrag_CS_12_H1",
+        "annonsId": "120250371708270291",
+        "kalla": "source",
+        "langd": 23.032,
+        "rutor": 46,
+        "skapad": "2026-09-25T13:50:15+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4572957359625651",
+        "namn": "Takoverdrag_SP_4_H4",
+        "annonsId": "120250371696280291",
+        "kalla": "source",
+        "langd": 19.8,
+        "rutor": 40,
+        "skapad": "2026-09-25T13:47:00+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1098418466410287",
+        "namn": "Takoverdrag_SP_4_H3",
+        "annonsId": "120250371676420291",
+        "kalla": "source",
+        "langd": 28.6,
+        "rutor": 57,
+        "skapad": "2026-09-25T13:43:42+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4708239646167646",
+        "namn": "Takoverdrag_SP_4_H2",
+        "annonsId": "120250371639930291",
+        "kalla": "source",
+        "langd": 21.332,
+        "rutor": 43,
+        "skapad": "2026-09-25T13:40:24+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2009369086434994",
+        "namn": "Takoverdrag_UG_2_H1",
+        "annonsId": "120250357009170291",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41,
+        "skapad": "2026-09-24T13:39:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2238823400028473",
+        "namn": "Takoverdrag_CS_9_H1",
+        "annonsId": "120250341609420291",
+        "kalla": "source",
+        "langd": 25.286,
+        "rutor": 51,
+        "skapad": "2026-09-23T14:02:26+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2165753887623386",
+        "namn": "Takoverdrag_PD_10_H1",
+        "annonsId": "120250341572220291",
+        "kalla": "source",
+        "langd": 23.733,
+        "rutor": 47,
+        "skapad": "2026-09-23T13:59:03+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1062629803323334",
+        "namn": "Takoverdrag_CO_5_H1",
+        "annonsId": "120250341545560291",
+        "kalla": "source",
+        "langd": 13.232,
+        "rutor": 26,
+        "skapad": "2026-09-23T13:55:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1055843663993823",
+        "namn": "Takoverdrag_OB_3_H1",
+        "annonsId": "120250341520820291",
+        "kalla": "source",
+        "langd": 26.932,
+        "rutor": 54,
+        "skapad": "2026-09-23T13:52:36+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2274279546663682",
+        "namn": "Takoverdrag_GT_11_H1",
+        "annonsId": "120250341502740291",
+        "kalla": "source",
+        "langd": 26.467,
+        "rutor": 53,
+        "skapad": "2026-09-23T13:49:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1455550966388281",
+        "namn": "Takoverdrag_OB_4_H1",
+        "annonsId": "120250341482970291",
+        "kalla": "source",
+        "langd": 22.467,
+        "rutor": 45,
+        "skapad": "2026-09-23T13:46:00+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1906776980305994",
+        "namn": "Takoverdrag_OB_1_H1",
+        "annonsId": "120250330463600291",
+        "kalla": "source",
+        "langd": 18.032,
+        "rutor": 36,
+        "skapad": "2026-09-18T14:30:19+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1826453095026173",
+        "namn": "Takoverdrag_OB_2_H1",
+        "annonsId": "120250330462810291",
+        "kalla": "source",
+        "langd": 16.718,
+        "rutor": 33,
+        "skapad": "2026-09-22T14:38:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1799802437683001",
+        "namn": "Takoverdrag_PD_6_H1",
+        "annonsId": "120250330352620291",
+        "kalla": "source",
+        "langd": 16.182,
+        "rutor": 32,
+        "skapad": "2026-09-18T13:35:43+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "973503352439826",
+        "namn": "Takoverdrag_RI_3_H1",
+        "annonsId": "120250330352260291",
+        "kalla": "source",
+        "langd": 17.275,
+        "rutor": 35,
+        "skapad": "2026-09-18T13:39:02+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "961591576997026",
+        "namn": "Takoverdrag_PD_7_H1",
+        "annonsId": "120250330351320291",
+        "kalla": "source",
+        "langd": 17.9,
+        "rutor": 36,
+        "skapad": "2026-09-18T13:42:14+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1445308770789193",
+        "namn": "Takoverdrag_TR_3_H1",
+        "annonsId": "120250330350820291",
+        "kalla": "source",
+        "langd": 24.149,
+        "rutor": 48,
+        "skapad": "2026-09-22T14:15:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1650750200017215",
+        "namn": "Takoverdrag_GT_10_H1",
+        "annonsId": "120250330350540291",
+        "kalla": "source",
+        "langd": 17.786,
+        "rutor": 36,
+        "skapad": "2026-09-22T14:19:12+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1066431556240617",
+        "namn": "Takoverdrag_CS_7_H1",
+        "annonsId": "120250330347950291",
+        "kalla": "source",
+        "langd": 22.268,
+        "rutor": 45,
+        "skapad": "2026-09-22T14:32:12+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1637241178064828",
+        "namn": "Takoverdrag_RI_2_H1",
+        "annonsId": "120250330348390291",
+        "kalla": "source",
+        "langd": 16.832,
+        "rutor": 34,
+        "skapad": "2026-09-22T14:28:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4715692158754983",
+        "namn": "Takoverdrag_CO_3_H1",
+        "annonsId": "120250330351050291",
+        "kalla": "source",
+        "langd": 19.899,
+        "rutor": 40,
+        "skapad": "2026-09-22T14:12:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2035796930428239",
+        "namn": "Takoverdrag_GT_7_H1",
+        "annonsId": "120250330350170291",
+        "kalla": "source",
+        "langd": 18.15,
+        "rutor": 36,
+        "skapad": "2026-09-22T14:22:26+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2014143355963963",
+        "namn": "Takoverdrag_GT_8_H1",
+        "annonsId": "120250330348980291",
+        "kalla": "source",
+        "langd": 14.367,
+        "rutor": 29,
+        "skapad": "2026-09-22T14:25:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1794612261680643",
+        "namn": "Takoverdrag_CS_8_H1",
+        "annonsId": "120250330347560291",
+        "kalla": "source",
+        "langd": 20.082,
+        "rutor": 40,
+        "skapad": "2026-09-22T14:35:35+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "28026609890344616",
+        "namn": "Takoverdrag_SP_1_H1",
+        "annonsId": "120250252311510291",
+        "kalla": "source",
+        "langd": 23.4,
+        "rutor": 47,
+        "skapad": "2026-09-09T01:00:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1393647809607009",
+        "namn": "Takoverdrag_RI_1_H1",
+        "annonsId": "120250252311710291",
+        "kalla": "source",
+        "langd": 31.45,
+        "rutor": 63,
+        "skapad": "2026-09-16T06:32:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1629374438803173",
+        "namn": "Takoverdrag_UG_1_H1",
+        "annonsId": "120250252311540291",
+        "kalla": "source",
+        "langd": 27.082,
+        "rutor": 54,
+        "skapad": "2026-09-16T06:25:29+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4425339637679185",
+        "namn": "Takoverdrag_PD_4_H1",
+        "annonsId": "120250252311830291",
+        "kalla": "source",
+        "langd": 25.432,
+        "rutor": 51,
+        "skapad": "2026-09-15T14:11:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1135726582116215",
+        "namn": "Takoverdrag_GT_2_H1",
+        "annonsId": "120250252311810291",
+        "kalla": "source",
+        "langd": 27.748,
+        "rutor": 55,
+        "skapad": "2026-09-09T00:57:16+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "29253924880875293",
+        "namn": "Takoverdrag_PD_1_H1",
+        "annonsId": "120250252311470291",
+        "kalla": "source",
+        "langd": 37.755,
+        "rutor": 75,
+        "skapad": "2026-09-09T00:58:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1077720491316831",
+        "namn": "Takoverdrag_CO_1_H1",
+        "annonsId": "120250252311550291",
+        "kalla": "source",
+        "langd": 25.75,
+        "rutor": 51,
+        "skapad": "2026-09-16T06:35:25+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1596124075334669",
+        "namn": "Takoverdrag_SP_4_H1",
+        "annonsId": "120250252311480291",
+        "kalla": "source",
+        "langd": 39.817,
+        "rutor": 80,
+        "skapad": "2026-09-16T06:28:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1402932001225062",
+        "namn": "Takoverdrag_SP_2_H1",
+        "annonsId": "120250252311500291",
+        "kalla": "source",
+        "langd": 24.766,
+        "rutor": 49,
+        "skapad": "2026-09-09T01:00:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1615028910329688",
+        "namn": "Takoverdrag_GT_5_H1",
+        "annonsId": "120250252311750291",
+        "kalla": "source",
+        "langd": 23.166,
+        "rutor": 46,
+        "skapad": "2026-09-15T14:08:34+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2388339611978148",
+        "namn": "Takoverdrag_PD_2_H1",
+        "annonsId": "120250252311460291",
+        "kalla": "source",
+        "langd": 37.632,
+        "rutor": 75,
+        "skapad": "2026-09-09T00:59:05+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "28131074066587234",
+        "namn": "Takoverdrag_CS_3_H1",
+        "annonsId": "120250252311780291",
+        "kalla": "source",
+        "langd": 29.187,
+        "rutor": 58,
+        "skapad": "2026-09-09T00:56:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1067361515911303",
+        "namn": "Takoverdrag_PD_3_H1",
+        "annonsId": "120250252311560291",
+        "kalla": "source",
+        "langd": 37.918,
+        "rutor": 76,
+        "skapad": "2026-09-09T00:59:42+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1075240581763143",
+        "namn": "Takoverdrag_GT_3_H1",
+        "annonsId": "120250252311800291",
+        "kalla": "source",
+        "langd": 28.467,
+        "rutor": 57,
+        "skapad": "2026-09-09T00:57:44+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1481340267178614",
+        "namn": "Takoverdrag_GT_4_H1",
+        "annonsId": "120250252311440291",
+        "kalla": "source",
+        "langd": 26.733,
+        "rutor": 53,
+        "skapad": "2026-09-15T14:05:17+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1658293378988495",
+        "namn": "Takoverdrag_GT_1_H1",
+        "annonsId": "120250252311820291",
+        "kalla": "source",
+        "langd": 29.581,
+        "rutor": 59,
+        "skapad": "2026-09-09T00:56:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1538677984965189",
+        "namn": "Takoverdrag_CS_1_H1",
+        "annonsId": "120250252311790291",
+        "kalla": "source",
+        "langd": 28.35,
+        "rutor": 57,
+        "skapad": "2026-09-09T00:55:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2239839696801908",
+        "namn": "Takoverdrag_SP_3_H1",
+        "annonsId": "120250252311680291",
+        "kalla": "source",
+        "langd": 22.932,
+        "rutor": 46,
+        "skapad": "2026-09-09T01:01:18+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1615772559952031",
+        "namn": "IBC_PD_8_H2",
+        "annonsId": "120250357195530291",
+        "kalla": "source",
+        "langd": 13.5,
+        "rutor": 27,
+        "skapad": "2026-09-24T13:58:37+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1863964741255471",
+        "namn": "IBC_PD_12_H3",
+        "annonsId": "120250357148370291",
+        "kalla": "source",
+        "langd": 22.032,
+        "rutor": 44,
+        "skapad": "2026-09-24T13:55:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1128238286583746",
+        "namn": "IBC_PD_12_H2",
+        "annonsId": "120250357115480291",
+        "kalla": "source",
+        "langd": 25.8,
+        "rutor": 52,
+        "skapad": "2026-09-24T13:52:11+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4096046270695497",
+        "namn": "IBC_PD_12_H1",
+        "annonsId": "120250357082270291",
+        "kalla": "source",
+        "langd": 20,
+        "rutor": 40,
+        "skapad": "2026-09-24T13:48:53+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1785606832453033",
+        "namn": "IBC_CS_9_H1",
+        "annonsId": "120250312659050291",
+        "kalla": "source",
+        "langd": 14.032,
+        "rutor": 28,
+        "skapad": "2026-09-21T13:40:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1556368976259248",
+        "namn": "IBC_PD_11_H1",
+        "annonsId": "120250312634610291",
+        "kalla": "source",
+        "langd": 18.4,
+        "rutor": 37,
+        "skapad": "2026-09-21T13:37:33+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1430629729026479",
+        "namn": "IBC_RI_1_H1",
+        "annonsId": "120250312599430291",
+        "kalla": "source",
+        "langd": 15.566,
+        "rutor": 31,
+        "skapad": "2026-09-21T13:34:13+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2474799873003152",
+        "namn": "IBC_GT_1_H1",
+        "annonsId": "120250005835180291",
+        "kalla": "source",
+        "langd": 48.621,
+        "rutor": 97,
+        "skapad": "2026-08-28T23:07:01+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1063820523024427",
+        "namn": "IBC_CO_2_H1",
+        "annonsId": "120250276317180291",
+        "kalla": "source",
+        "langd": 21.132,
+        "rutor": 42,
+        "skapad": "2026-09-18T14:06:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1387033843410567",
+        "namn": "IBC_PD_8_H1",
+        "annonsId": "120250260705080291",
+        "kalla": "source",
+        "langd": 25.866,
+        "rutor": 52,
+        "skapad": "2026-09-17T14:20:04+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1841924466797267",
+        "namn": "IBC_SP_5_H1",
+        "annonsId": "120250260581300291",
+        "kalla": "source",
+        "langd": 25.449,
+        "rutor": 51,
+        "skapad": "2026-09-17T14:13:44+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1483812933780790",
+        "namn": "IBC_GT_1_H3",
+        "annonsId": "120250005857680291",
+        "kalla": "source",
+        "langd": 48.738,
+        "rutor": 97,
+        "skapad": "2026-08-28T23:08:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1080967590998290",
+        "namn": "IBC_GT_5_H1",
+        "annonsId": "120250233239120291",
+        "kalla": "source",
+        "langd": 10.032,
+        "rutor": 20,
+        "skapad": "2026-09-15T15:54:32+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3184789875053817",
+        "namn": "IBC_PD_6_H1",
+        "annonsId": "120250233325780291",
+        "kalla": "source",
+        "langd": 6.778,
+        "rutor": 14,
+        "skapad": "2026-09-15T15:57:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4053712831426721",
+        "namn": "IBC_PD_6_H2",
+        "annonsId": "120250233379210291",
+        "kalla": "source",
+        "langd": 16.366,
+        "rutor": 33,
+        "skapad": "2026-09-15T16:01:09+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1870000097502293",
+        "namn": "IBC_CS_5_H1",
+        "annonsId": "120250233165060291",
+        "kalla": "source",
+        "langd": 19.1,
+        "rutor": 38,
+        "skapad": "2026-09-15T15:51:17+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1461480642480301",
+        "namn": "IBC_PD_4_H3",
+        "annonsId": "120250154966570291",
+        "kalla": "source",
+        "langd": 9.832,
+        "rutor": 20,
+        "skapad": "2026-09-09T13:33:21+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1049024191076191",
+        "namn": "IBC_SP_3_H1",
+        "annonsId": "120250155312560291",
+        "kalla": "source",
+        "langd": 17.733,
+        "rutor": 35,
+        "skapad": "2026-09-09T14:02:18+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "990453767422328",
+        "namn": "IBC_GT_4_H1",
+        "annonsId": "120250154956130291",
+        "kalla": "source",
+        "langd": 21.45,
+        "rutor": 43,
+        "skapad": "2026-09-09T13:32:32+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1096638769714378",
+        "namn": "IBC_CS_4_H1",
+        "annonsId": "120250154950960291",
+        "kalla": "source",
+        "langd": 20.032,
+        "rutor": 40,
+        "skapad": "2026-09-09T13:31:34+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1080771684433274",
+        "namn": "IBC_PD_4_H2",
+        "annonsId": "120250147958100291",
+        "kalla": "source",
+        "langd": 16.45,
+        "rutor": 33,
+        "skapad": "2026-09-09T02:15:53+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "973184302489895",
+        "namn": "IBC_PD_4_H1",
+        "annonsId": "120250147950300291",
+        "kalla": "source",
+        "langd": 16.45,
+        "rutor": 33,
+        "skapad": "2026-09-09T02:14:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1599422584518727",
+        "namn": "IBC_GT_3_H1",
+        "annonsId": "120250105818500291",
+        "kalla": "source",
+        "langd": 17.9,
+        "rutor": 36,
+        "skapad": "2026-09-05T12:09:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1780621779948363",
+        "namn": "IBC_PD_3_H1",
+        "annonsId": "120250105772210291",
+        "kalla": "source",
+        "langd": 24.517,
+        "rutor": 49,
+        "skapad": "2026-09-05T12:05:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3302692703264106",
+        "namn": "IBC_GT_1_H2",
+        "annonsId": "120250005852720291",
+        "kalla": "source",
+        "langd": 47.485,
+        "rutor": 95,
+        "skapad": "2026-08-28T23:08:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1763664158107031",
+        "namn": "IBC_CS_1_H3",
+        "annonsId": "120250005831370291",
+        "kalla": "source",
+        "langd": 30.58,
+        "rutor": 61,
+        "skapad": "2026-08-28T23:06:22+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2324322015061954",
+        "namn": "IBC_CS_1_H2",
+        "annonsId": "120250005829330291",
+        "kalla": "source",
+        "langd": 31.833,
+        "rutor": 64,
+        "skapad": "2026-08-28T23:06:02+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3662907913873698",
+        "namn": "IBC_SP_1_H3",
+        "annonsId": "120250005825820291",
+        "kalla": "source",
+        "langd": 37.245,
+        "rutor": 74,
+        "skapad": "2026-08-28T23:05:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "936077119062272",
+        "namn": "IBC_SP_1_H2",
+        "annonsId": "120250005824980291",
+        "kalla": "source",
+        "langd": 37.337,
+        "rutor": 75,
+        "skapad": "2026-08-28T23:04:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2443648059774481",
+        "namn": "IBC_SP_1_H1",
+        "annonsId": "120250005823320291",
+        "kalla": "source",
+        "langd": 38.638,
+        "rutor": 77,
+        "skapad": "2026-08-28T23:04:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1443169294347963",
+        "namn": "IBC_PD_Extra",
+        "annonsId": "120250005822150291",
+        "kalla": "source",
+        "langd": 10.005,
+        "rutor": 20,
+        "skapad": "2026-08-28T23:03:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2656978288031260",
+        "namn": "IBC_PD_1_H3",
+        "annonsId": "120250005820750291",
+        "kalla": "source",
+        "langd": 44.675,
+        "rutor": 89,
+        "skapad": "2026-08-28T23:03:36+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1872630750382247",
+        "namn": "IBC_PD_1_H2",
+        "annonsId": "120250005819880291",
+        "kalla": "source",
+        "langd": 43.909,
+        "rutor": 88,
+        "skapad": "2026-08-28T23:03:13+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1367356292221497",
+        "namn": "IBC_PD_1_H1",
+        "annonsId": "120250005818370291",
+        "kalla": "source",
+        "langd": 44.605,
+        "rutor": 89,
+        "skapad": "2026-08-28T23:02:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1348028590866369",
+        "namn": "CaraShellRoof_SP_3_H1 – kopia",
+        "annonsId": "120249305727070172",
+        "kalla": "source",
+        "langd": 22.941,
+        "rutor": 46,
+        "skapad": "2026-09-11T17:50:02+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1423280463099933",
+        "namn": "CaraShellRoof_CS_1_H1 – kopia",
+        "annonsId": "120249305727140172",
+        "kalla": "source",
+        "langd": 28.63,
+        "rutor": 57,
+        "skapad": "2026-09-11T14:56:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1622439879521452",
+        "namn": "CaraShellRoof_NO_SP_104_H2",
+        "annonsId": "120249304588710172",
+        "kalla": "source",
+        "langd": 21.333,
+        "rutor": 42,
+        "skapad": "2026-09-28T18:07:36+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1253560923610589",
+        "namn": "CaraShellRoof_NO_CS_112_H1",
+        "annonsId": "120249304605860172",
+        "kalla": "source",
+        "langd": 23.019,
+        "rutor": 46,
+        "skapad": "2026-09-28T18:08:49+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1652433423131201",
+        "namn": "CaraShellRoof_NO_UG_102_H1",
+        "annonsId": "120249304260960172",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41,
+        "skapad": "2026-09-28T17:45:25+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2532558620578049",
+        "namn": "CaraShellRoof_UG_102_H1",
+        "annonsId": "120249304159620172",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41,
+        "skapad": "2026-09-28T17:36:46+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "3350782465092166",
+        "namn": "CaraShellRoof_CS_112_H1",
+        "annonsId": "120249303997750172",
+        "kalla": "source",
+        "langd": 23.033,
+        "rutor": 46,
+        "skapad": "2026-09-28T17:29:04+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1761934668355976",
+        "namn": "CaraShellRoof_SP_104_H2",
+        "annonsId": "120249303842690172",
+        "kalla": "source",
+        "langd": 21.339,
+        "rutor": 43,
+        "skapad": "2026-09-28T17:21:10+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1412486877658998",
+        "namn": "CaraShellRoof_NO_SP_104_H3",
+        "annonsId": "120249303609050172",
+        "kalla": "source",
+        "langd": 28.608,
+        "rutor": 57,
+        "skapad": "2026-09-28T17:12:21+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1077839678351814",
+        "namn": "CaraShellRoof_SP_104_H3",
+        "annonsId": "120249303595620172",
+        "kalla": "source",
+        "langd": 28.607,
+        "rutor": 57,
+        "skapad": "2026-09-28T17:11:17+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1449926570335863",
+        "namn": "CaraShellRoof_NO_SP_104_H4",
+        "annonsId": "120249303471350172",
+        "kalla": "source",
+        "langd": 19.776,
+        "rutor": 39,
+        "skapad": "2026-09-28T17:02:25+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1655299202919021",
+        "namn": "CaraShellRoof_SP_104_H4",
+        "annonsId": "120249303450790172",
+        "kalla": "source",
+        "langd": 19.807,
+        "rutor": 40,
+        "skapad": "2026-09-28T17:00:32+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1581078819611847",
+        "namn": "CaraShellRoof_GT_108_H1",
+        "annonsId": "120249219941370172",
+        "kalla": "source",
+        "langd": 14.372,
+        "rutor": 29,
+        "skapad": "2026-09-22T18:43:06+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1992753328079778",
+        "namn": "CaraShellRoof_NO_CS_109_H1",
+        "annonsId": "120249251181710172",
+        "kalla": "source",
+        "langd": 25.28,
+        "rutor": 50,
+        "skapad": "2026-09-24T18:02:10+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1113931614900422",
+        "namn": "CaraShellRoof_CS_109_H1",
+        "annonsId": "120249251079280172",
+        "kalla": "source",
+        "langd": 25.287,
+        "rutor": 51,
+        "skapad": "2026-09-24T17:53:28+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2385602205304737",
+        "namn": "CaraShellRoof_NO_PD_110_H1",
+        "annonsId": "120249251068280172",
+        "kalla": "source",
+        "langd": 23.723,
+        "rutor": 47,
+        "skapad": "2026-09-24T17:52:08+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "3374872859568095",
+        "namn": "CaraShellRoof_PD_110_H1",
+        "annonsId": "120249251052800172",
+        "kalla": "source",
+        "langd": 23.753,
+        "rutor": 47,
+        "skapad": "2026-09-24T17:51:00+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2570676566701204",
+        "namn": "CaraShellRoof_NO_CO_105_H1",
+        "annonsId": "120249250978490172",
+        "kalla": "source",
+        "langd": 13.205,
+        "rutor": 26,
+        "skapad": "2026-09-24T17:42:09+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1704771903955594",
+        "namn": "CaraShellRoof_CO_105_H1",
+        "annonsId": "120249250968760172",
+        "kalla": "source",
+        "langd": 13.236,
+        "rutor": 26,
+        "skapad": "2026-09-24T17:41:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1363705672420084",
+        "namn": "CaraShellRoof_NO_OB_103_H1",
+        "annonsId": "120249250960120172",
+        "kalla": "source",
+        "langd": 26.923,
+        "rutor": 54,
+        "skapad": "2026-09-24T17:39:50+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1639679094163224",
+        "namn": "CaraShellRoof_OB_103_H1",
+        "annonsId": "120249250865390172",
+        "kalla": "source",
+        "langd": 26.935,
+        "rutor": 54,
+        "skapad": "2026-09-24T17:31:07+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "4654945931450127",
+        "namn": "CaraShellRoof_NO_OB_104_H1",
+        "annonsId": "120249250842220172",
+        "kalla": "source",
+        "langd": 22.485,
+        "rutor": 45,
+        "skapad": "2026-09-24T17:29:45+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1735622540880260",
+        "namn": "CaraShellRoof_OB_104_H1",
+        "annonsId": "120249250828910172",
+        "kalla": "source",
+        "langd": 22.477,
+        "rutor": 45,
+        "skapad": "2026-09-24T17:28:37+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1658410342588356",
+        "namn": "CaraShellRoof_PD_5_H1",
+        "annonsId": "120249156254490172",
+        "kalla": "source",
+        "langd": 39.403,
+        "rutor": 79,
+        "skapad": "2026-09-18T14:37:06+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1106555205158745",
+        "namn": "CaraShellRoof_NO_CS_107_H1",
+        "annonsId": "120249220320230172",
+        "kalla": "source",
+        "langd": 22.293,
+        "rutor": 44,
+        "skapad": "2026-09-22T19:16:15+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1825495121938837",
+        "namn": "CaraShellRoof_NO_CS_108_H1",
+        "annonsId": "120249220305570172",
+        "kalla": "source",
+        "langd": 20.096,
+        "rutor": 40,
+        "skapad": "2026-09-22T19:15:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "3607041216139485",
+        "namn": "CaraShellRoof_CS_107_H1",
+        "annonsId": "120249220065150172",
+        "kalla": "source",
+        "langd": 22.268,
+        "rutor": 45,
+        "skapad": "2026-09-22T18:53:07+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "965612976568336",
+        "namn": "CaraShellRoof_CS_108_H1",
+        "annonsId": "120249219971810172",
+        "kalla": "source",
+        "langd": 20.085,
+        "rutor": 40,
+        "skapad": "2026-09-22T18:45:27+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1595318538708903",
+        "namn": "CaraShellRoof_NO_GT_108_H1",
+        "annonsId": "120249219954690172",
+        "kalla": "source",
+        "langd": 14.379,
+        "rutor": 29,
+        "skapad": "2026-09-22T18:44:09+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1079569404945831",
+        "namn": "CaraShellRoof_NO_RI_102_H1",
+        "annonsId": "120249219766110172",
+        "kalla": "source",
+        "langd": 16.811,
+        "rutor": 33,
+        "skapad": "2026-09-22T18:34:19+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1071192608954056",
+        "namn": "CaraShellRoof_RI_102_H1",
+        "annonsId": "120249219751100172",
+        "kalla": "source",
+        "langd": 16.835,
+        "rutor": 34,
+        "skapad": "2026-09-22T18:32:56+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2826851037702309",
+        "namn": "CaraShellRoof_NO_GT_107_H1",
+        "annonsId": "120249219738560172",
+        "kalla": "source",
+        "langd": 18.133,
+        "rutor": 36,
+        "skapad": "2026-09-22T18:31:32+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1741108893778636",
+        "namn": "CaraShellRoof_GT_107_H1",
+        "annonsId": "120249219634340172",
+        "kalla": "source",
+        "langd": 18.158,
+        "rutor": 36,
+        "skapad": "2026-09-22T18:22:54+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1403871565193476",
+        "namn": "CaraShellRoof_NO_CO_103_H1",
+        "annonsId": "120249219610580172",
+        "kalla": "source",
+        "langd": 19.883,
+        "rutor": 40,
+        "skapad": "2026-09-22T18:21:34+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "977388375383939",
+        "namn": "CaraShellRoof_CO_103_H1",
+        "annonsId": "120249219580260172",
+        "kalla": "source",
+        "langd": 19.9,
+        "rutor": 40,
+        "skapad": "2026-09-22T18:20:25+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1900610934243464",
+        "namn": "CaraShellRoof_NO_GT_110_H1",
+        "annonsId": "120249219376980172",
+        "kalla": "source",
+        "langd": 17.771,
+        "rutor": 35,
+        "skapad": "2026-09-22T18:11:41+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1380709547105585",
+        "namn": "CaraShellRoof_GT_110_H1",
+        "annonsId": "120249219359450172",
+        "kalla": "source",
+        "langd": 17.787,
+        "rutor": 36,
+        "skapad": "2026-09-22T18:10:14+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2029903231000078",
+        "namn": "CaraShellRoof_NO_TR_103_H1",
+        "annonsId": "120249219342600172",
+        "kalla": "source",
+        "langd": 24.128,
+        "rutor": 48,
+        "skapad": "2026-09-22T18:09:01+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1793739685294307",
+        "namn": "CaraShellRoof_TR_103_H1",
+        "annonsId": "120249219198500172",
+        "kalla": "source",
+        "langd": 24.171,
+        "rutor": 48,
+        "skapad": "2026-09-22T18:00:23+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1548948153663624",
+        "namn": "CaraShellRoof_NO_OB_102_H1",
+        "annonsId": "120249219188850172",
+        "kalla": "source",
+        "langd": 16.725,
+        "rutor": 33,
+        "skapad": "2026-09-22T17:59:10+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1126795003184713",
+        "namn": "CaraShellRoof_OB_102_H1",
+        "annonsId": "120249219182040172",
+        "kalla": "source",
+        "langd": 16.719,
+        "rutor": 33,
+        "skapad": "2026-09-22T17:58:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2987493098255555",
+        "namn": "CaraShellRoof_GT_105_H1",
+        "annonsId": "120249154846540172",
+        "kalla": "source",
+        "langd": 23.173,
+        "rutor": 46,
+        "skapad": "2026-09-18T13:39:00+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1719383225792035",
+        "namn": "CaraShellRoof_DK_SP_2_H1",
+        "annonsId": "120249189967000172",
+        "kalla": "source",
+        "langd": 23.2,
+        "rutor": 46,
+        "skapad": "2026-09-21T07:23:00+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "926846713407543",
+        "namn": "CaraShellRoof_DK_PD_3_H1",
+        "annonsId": "120249187181850172",
+        "kalla": "source",
+        "langd": 35.5,
+        "rutor": 71,
+        "skapad": "2026-09-20T22:47:12+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1112671017763391",
+        "namn": "CaraShellRoof_DK_GT_3_H1",
+        "annonsId": "120249187102110172",
+        "kalla": "source",
+        "langd": 25,
+        "rutor": 50,
+        "skapad": "2026-09-20T22:23:24+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1762380161577491",
+        "namn": "CaraShellRoof_DK_GT_105_H1",
+        "annonsId": "120249187007770172",
+        "kalla": "source",
+        "langd": 19.7,
+        "rutor": 39,
+        "skapad": "2026-09-20T22:05:20+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1558660875531572",
+        "namn": "CaraShellRoof_DK_UG_101_H1",
+        "annonsId": "120249187272840172",
+        "kalla": "source",
+        "langd": 22.733,
+        "rutor": 45,
+        "skapad": "2026-09-20T23:09:28+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1443400564308108",
+        "namn": "CaraShellRoof_DK_SP_3_H1",
+        "annonsId": "120249187270580172",
+        "kalla": "source",
+        "langd": 20.2,
+        "rutor": 40,
+        "skapad": "2026-09-20T23:08:24+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2387749111634154",
+        "namn": "CaraShellRoof_DK_SP_1_H1",
+        "annonsId": "120249187226770172",
+        "kalla": "source",
+        "langd": 21.1,
+        "rutor": 42,
+        "skapad": "2026-09-20T22:59:51+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1601642511625040",
+        "namn": "CaraShellRoof_DK_SP_104_H1",
+        "annonsId": "120249187225080172",
+        "kalla": "source",
+        "langd": 32.733,
+        "rutor": 65,
+        "skapad": "2026-09-20T22:58:54+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1399910959005311",
+        "namn": "CaraShellRoof_DK_RI_103_H1",
+        "annonsId": "120249187222290172",
+        "kalla": "source",
+        "langd": 15.633,
+        "rutor": 31,
+        "skapad": "2026-09-20T22:57:47+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1668887704850139",
+        "namn": "CaraShellRoof_DK_RI_101_H1",
+        "annonsId": "120249187188530172",
+        "kalla": "source",
+        "langd": 24.233,
+        "rutor": 48,
+        "skapad": "2026-09-20T22:49:15+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1054982260693152",
+        "namn": "CaraShellRoof_DK_PD_5_H1",
+        "annonsId": "120249187185630172",
+        "kalla": "source",
+        "langd": 40.033,
+        "rutor": 80,
+        "skapad": "2026-09-20T22:48:15+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1788133572536635",
+        "namn": "CaraShellRoof_DK_PD_2_H1",
+        "annonsId": "120249187160370172",
+        "kalla": "source",
+        "langd": 34,
+        "rutor": 68,
+        "skapad": "2026-09-20T22:38:06+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1893661364993107",
+        "namn": "CaraShellRoof_DK_PD_1_H1",
+        "annonsId": "120249187152190172",
+        "kalla": "source",
+        "langd": 35.2,
+        "rutor": 70,
+        "skapad": "2026-09-20T22:36:02+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1562827285066963",
+        "namn": "CaraShellRoof_DK_PD_107_H1",
+        "annonsId": "120249187149100172",
+        "kalla": "source",
+        "langd": 16.933,
+        "rutor": 34,
+        "skapad": "2026-09-20T22:35:02+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1790801295300915",
+        "namn": "CaraShellRoof_DK_PD_106_H1",
+        "annonsId": "120249187147650172",
+        "kalla": "source",
+        "langd": 14.232,
+        "rutor": 28,
+        "skapad": "2026-09-20T22:34:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1101893395858515",
+        "namn": "CaraShellRoof_DK_PD_104_H1",
+        "annonsId": "120249187112080172",
+        "kalla": "source",
+        "langd": 26,
+        "rutor": 52,
+        "skapad": "2026-09-20T22:25:25+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1595493122321634",
+        "namn": "CaraShellRoof_DK_OB_101_H1",
+        "annonsId": "120249187105790172",
+        "kalla": "source",
+        "langd": 17.133,
+        "rutor": 34,
+        "skapad": "2026-09-20T22:24:25+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1022957367434548",
+        "namn": "CaraShellRoof_DK_GT_2_H1",
+        "annonsId": "120249187072590172",
+        "kalla": "source",
+        "langd": 25.6,
+        "rutor": 51,
+        "skapad": "2026-09-20T22:14:49+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1794412381825348",
+        "namn": "CaraShellRoof_DK_GT_1_H1",
+        "annonsId": "120249187069000172",
+        "kalla": "source",
+        "langd": 26.5,
+        "rutor": 53,
+        "skapad": "2026-09-20T22:13:52+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1101144385596275",
+        "namn": "CaraShellRoof_DK_GT_104_H1",
+        "annonsId": "120249186988920172",
+        "kalla": "source",
+        "langd": 24,
+        "rutor": 48,
+        "skapad": "2026-09-20T22:04:23+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2375217519952762",
+        "namn": "CaraShellRoof_DK_CS_3_H1",
+        "annonsId": "120249186885890172",
+        "kalla": "source",
+        "langd": 25.5,
+        "rutor": 51,
+        "skapad": "2026-09-20T21:55:52+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1830113652113718",
+        "namn": "CaraShellRoof_DK_CS_2_H1",
+        "annonsId": "120249186879890172",
+        "kalla": "source",
+        "langd": 23,
+        "rutor": 46,
+        "skapad": "2026-09-20T21:54:42+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2247752302434581",
+        "namn": "CaraShellRoof_DK_CS_1_H1",
+        "annonsId": "120249186876760172",
+        "kalla": "source",
+        "langd": 24.2,
+        "rutor": 48,
+        "skapad": "2026-09-20T21:53:38+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1389951253307800",
+        "namn": "CaraShellRoof_DK_CO_101_H1",
+        "annonsId": "120249186841290172",
+        "kalla": "source",
+        "langd": 21.533,
+        "rutor": 43,
+        "skapad": "2026-09-20T21:44:38+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1389971213334396",
+        "namn": "CaraShellRoof_NO_PD_5_H1",
+        "annonsId": "120249184161160172",
+        "kalla": "source",
+        "langd": 39.402,
+        "rutor": 79,
+        "skapad": "2026-09-20T16:25:27+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1108472061580364",
+        "namn": "CaraShellRoof_NO_OB_101_H1",
+        "annonsId": "120249174817930172",
+        "kalla": "source",
+        "langd": 18.005,
+        "rutor": 36,
+        "skapad": "2026-09-19T20:59:35+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1556049345748382",
+        "namn": "CaraShellRoof_OB_101_H1",
+        "annonsId": "120249174782070172",
+        "kalla": "source",
+        "langd": 18.041,
+        "rutor": 36,
+        "skapad": "2026-09-19T20:50:58+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1816274386037604",
+        "namn": "CaraShellRoof_NO_PD_107_H1",
+        "annonsId": "120249174771810172",
+        "kalla": "source",
+        "langd": 17.899,
+        "rutor": 36,
+        "skapad": "2026-09-19T20:49:41+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1974597696535578",
+        "namn": "CaraShellRoof_PD_107_H1",
+        "annonsId": "120249174717100172",
+        "kalla": "source",
+        "langd": 17.902,
+        "rutor": 36,
+        "skapad": "2026-09-19T20:41:12+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1394314669552194",
+        "namn": "CaraShellRoof_RI_103_H1",
+        "annonsId": "120249174703490172",
+        "kalla": "source",
+        "langd": 17.276,
+        "rutor": 35,
+        "skapad": "2026-09-19T20:38:52+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1392852839189930",
+        "namn": "CaraShellRoof_NO_RI_103_H1",
+        "annonsId": "120249174709540172",
+        "kalla": "source",
+        "langd": 17.28,
+        "rutor": 34,
+        "skapad": "2026-09-19T20:39:46+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1010500768679806",
+        "namn": "CaraShellRoof_NO_PD_106_H1",
+        "annonsId": "120249174602710172",
+        "kalla": "source",
+        "langd": 16.171,
+        "rutor": 32,
+        "skapad": "2026-09-19T20:30:07+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1614606223663086",
+        "namn": "CaraShellRoof_PD_106_H1",
+        "annonsId": "120249174596040172",
+        "kalla": "source",
+        "langd": 16.185,
+        "rutor": 32,
+        "skapad": "2026-09-19T20:29:12+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1082133370890277",
+        "namn": "CaraShellRoof_NO_CO_101_H1",
+        "annonsId": "120249156971740172",
+        "kalla": "source",
+        "langd": 25.728,
+        "rutor": 51,
+        "skapad": "2026-09-18T15:28:13+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "4358986354354178",
+        "namn": "CaraShellRoof_CO_101_H1",
+        "annonsId": "120249156949620172",
+        "kalla": "source",
+        "langd": 25.773,
+        "rutor": 51,
+        "skapad": "2026-09-18T15:27:10+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1468539521804448",
+        "namn": "CaraShellRoof_NO_RI_101_H1",
+        "annonsId": "120249156825270172",
+        "kalla": "source",
+        "langd": 31.445,
+        "rutor": 63,
+        "skapad": "2026-09-18T15:18:28+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "909489265306307",
+        "namn": "CaraShellRoof_RI_101_H1",
+        "annonsId": "120249156812030172",
+        "kalla": "source",
+        "langd": 31.462,
+        "rutor": 63,
+        "skapad": "2026-09-18T15:17:21+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1089156770495240",
+        "namn": "CaraShellRoof_NO_SP_104_H1",
+        "annonsId": "120249156792690172",
+        "kalla": "source",
+        "langd": 39.808,
+        "rutor": 79,
+        "skapad": "2026-09-18T15:16:09+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "5545430099015735",
+        "namn": "CaraShellRoof_SP_104_H1",
+        "annonsId": "120249156702540172",
+        "kalla": "source",
+        "langd": 39.821,
+        "rutor": 80,
+        "skapad": "2026-09-18T15:07:28+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "956181934199479",
+        "namn": "CaraShellRoof_NO_UG_101_H1",
+        "annonsId": "120249156691640172",
+        "kalla": "source",
+        "langd": 27.093,
+        "rutor": 54,
+        "skapad": "2026-09-18T15:06:13+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "908138792119136",
+        "namn": "CaraShellRoof_UG_101_H1",
+        "annonsId": "120249156622630172",
+        "kalla": "source",
+        "langd": 27.098,
+        "rutor": 54,
+        "skapad": "2026-09-18T14:57:32+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1410737117056018",
+        "namn": "CaraShellRoof_NO_PD_104_H1",
+        "annonsId": "120249156611760172",
+        "kalla": "source",
+        "langd": 25.408,
+        "rutor": 51,
+        "skapad": "2026-09-18T14:56:16+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1125943453292960",
+        "namn": "CaraShellRoof_PD_104_H1",
+        "annonsId": "120249156601060172",
+        "kalla": "source",
+        "langd": 25.449,
+        "rutor": 51,
+        "skapad": "2026-09-18T14:55:15+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1138703088490461",
+        "namn": "CaraShellRoof_NO_GT_104_H1",
+        "annonsId": "120249156483200172",
+        "kalla": "source",
+        "langd": 26.731,
+        "rutor": 53,
+        "skapad": "2026-09-18T14:46:16+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1061397679972242",
+        "namn": "CaraShellRoof_GT_104_H1",
+        "annonsId": "120249156466900172",
+        "kalla": "source",
+        "langd": 26.75,
+        "rutor": 53,
+        "skapad": "2026-09-18T14:45:16+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2061757411100613",
+        "namn": "CaraShellRoof_NO_GT_105_H1",
+        "annonsId": "120249155104410172",
+        "kalla": "source",
+        "langd": 23.168,
+        "rutor": 46,
+        "skapad": "2026-09-18T13:47:30+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1556650005605125",
+        "namn": "CaraShellRoof_SP_1_H1",
+        "annonsId": "120249055490910172",
+        "kalla": "source",
+        "langd": 23.406,
+        "rutor": 47,
+        "skapad": "2026-09-11T17:50:05+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1386057536419616",
+        "namn": "CaraShellRoof_PD_2_H1",
+        "annonsId": "120249053103110172",
+        "kalla": "source",
+        "langd": 37.64,
+        "rutor": 75,
+        "skapad": "2026-09-11T14:54:33+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "936761792816241",
+        "namn": "CaraShellRoof_PD_1_H1",
+        "annonsId": "120249053108400172",
+        "kalla": "source",
+        "langd": 37.756,
+        "rutor": 75,
+        "skapad": "2026-09-11T14:55:23+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1655467449510740",
+        "namn": "CaraShellRoof_CS_2_H1",
+        "annonsId": "120249053112760172",
+        "kalla": "source",
+        "langd": 26.625,
+        "rutor": 53,
+        "skapad": "2026-09-11T14:56:02+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2002215364052591",
+        "namn": "CaraShellRoof_GT_2_H1",
+        "annonsId": "120249053109650172",
+        "kalla": "source",
+        "langd": 27.77,
+        "rutor": 55,
+        "skapad": "2026-09-11T14:55:34+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1857409852233561",
+        "namn": "CaraShellRoof_CS_3_H1",
+        "annonsId": "120249053113380172",
+        "kalla": "source",
+        "langd": 29.462,
+        "rutor": 59,
+        "skapad": "2026-09-11T14:56:09+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1605983741209099",
+        "namn": "CaraShellRoof_PD_3_H1",
+        "annonsId": "120249053109070172",
+        "kalla": "source",
+        "langd": 37.918,
+        "rutor": 76,
+        "skapad": "2026-09-11T14:55:29+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "913664211465110",
+        "namn": "CaraShellRoof_SP_2_H1",
+        "annonsId": "120249055490080172",
+        "kalla": "source",
+        "langd": 24.776,
+        "rutor": 49,
+        "skapad": "2026-09-11T17:49:58+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1549042997026478",
+        "namn": "CaraShellRoof_GT_1_H1",
+        "annonsId": "120249053110620172",
+        "kalla": "source",
+        "langd": 29.581,
+        "rutor": 59,
+        "skapad": "2026-09-11T14:55:38+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1744126283376004",
+        "namn": "CaraShellRoof_GT_3_H1",
+        "annonsId": "120249053110870172",
+        "kalla": "source",
+        "langd": 28.468,
+        "rutor": 57,
+        "skapad": "2026-09-11T14:55:42+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1695160671555902",
+        "namn": "CaraShellRoof_NO_PD_2",
+        "annonsId": "120249053444510172",
+        "kalla": "source",
+        "langd": 37.931,
+        "rutor": 76,
+        "skapad": "2026-09-11T15:22:22+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1045548825135718",
+        "namn": "CaraShellRoof_NO_PD_1",
+        "annonsId": "120249053442830172",
+        "kalla": "source",
+        "langd": 38.059,
+        "rutor": 76,
+        "skapad": "2026-09-11T15:22:13+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2110716253151876",
+        "namn": "CaraShellRoof_NO_PD_3",
+        "annonsId": "120249053443940172",
+        "kalla": "source",
+        "langd": 38.251,
+        "rutor": 76,
+        "skapad": "2026-09-11T15:22:18+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2626919671082739",
+        "namn": "CaraShellRoof_NO_SP_1",
+        "annonsId": "120249055495560172",
+        "kalla": "source",
+        "langd": 23.68,
+        "rutor": 47,
+        "skapad": "2026-09-11T17:50:49+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1413671947535181",
+        "namn": "CaraShellRoof_NO_SP_3",
+        "annonsId": "120249055496620172",
+        "kalla": "source",
+        "langd": 23.253,
+        "rutor": 46,
+        "skapad": "2026-09-11T17:50:57+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2252795932233676",
+        "namn": "CaraShellRoof_NO_SP_2",
+        "annonsId": "120249055496110172",
+        "kalla": "source",
+        "langd": 25.045,
+        "rutor": 50,
+        "skapad": "2026-09-11T17:50:53+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1627274245451886",
+        "namn": "CaraShellRoof_NO_G_3",
+        "annonsId": "120249054126170172",
+        "kalla": "source",
+        "langd": 28.8,
+        "rutor": 58,
+        "skapad": "2026-09-11T16:09:56+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1398527628372231",
+        "namn": "CaraShellRoof_NO_G_1",
+        "annonsId": "120249054126660172",
+        "kalla": "source",
+        "langd": 29.888,
+        "rutor": 60,
+        "skapad": "2026-09-11T16:10:00+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1473647581242954",
+        "namn": "CaraShellRoof_NO_G_2",
+        "annonsId": "120249054125720172",
+        "kalla": "source",
+        "langd": 27.733,
+        "rutor": 55,
+        "skapad": "2026-09-11T16:09:51+0200",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1976636959675980",
+        "namn": "CaraShellRoof_US_CO_103_H1",
+        "annonsId": "120251574965360435",
+        "kalla": "source",
+        "langd": 19.96,
+        "rutor": 40,
+        "skapad": "2026-09-23T16:43:07+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1809647016727305",
+        "namn": "CaraShellRoof_US_CS_3_H1",
+        "annonsId": "120251464373320435",
+        "kalla": "source",
+        "langd": 29.48,
+        "rutor": 59,
+        "skapad": "2026-09-17T13:35:24+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2091827178086365",
+        "namn": "CaraShellRoof_US_OB_104_H1",
+        "annonsId": "120251651140340435",
+        "kalla": "source",
+        "langd": 22.56,
+        "rutor": 45,
+        "skapad": "2026-09-28T16:56:58+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1417755516981039",
+        "namn": "CaraShellRoof_US_OB_103_H1",
+        "annonsId": "120251651131140435",
+        "kalla": "source",
+        "langd": 27,
+        "rutor": 54,
+        "skapad": "2026-09-28T16:55:59+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1428446972756893",
+        "namn": "CaraShellRoof_US_CO_105_H1",
+        "annonsId": "120251650907860435",
+        "kalla": "source",
+        "langd": 13.32,
+        "rutor": 27,
+        "skapad": "2026-09-28T16:42:20+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1027507970348784",
+        "namn": "CaraShellRoof_US_PD_110_H1",
+        "annonsId": "120251650898200435",
+        "kalla": "source",
+        "langd": 23.8,
+        "rutor": 48,
+        "skapad": "2026-09-28T16:41:20+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "28228352036806786",
+        "namn": "CaraShellRoof_US_CS_109_H1",
+        "annonsId": "120251650890260435",
+        "kalla": "source",
+        "langd": 25.32,
+        "rutor": 51,
+        "skapad": "2026-09-28T16:40:19+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1639043651062180",
+        "namn": "CaraShellRoof_US_SP_104_H4",
+        "annonsId": "120251650670480435",
+        "kalla": "source",
+        "langd": 19.84,
+        "rutor": 40,
+        "skapad": "2026-09-28T16:31:47+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1842088930478129",
+        "namn": "CaraShellRoof_US_SP_104_H3",
+        "annonsId": "120251650660230435",
+        "kalla": "source",
+        "langd": 28.72,
+        "rutor": 57,
+        "skapad": "2026-09-28T16:30:45+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2018976448804329",
+        "namn": "CaraShellRoof_US_PD_1_H1",
+        "annonsId": "120251443952290435",
+        "kalla": "source",
+        "langd": 37.738,
+        "rutor": 75,
+        "skapad": "2026-09-16T12:03:17+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1102535909384969",
+        "namn": "CaraShellRoof_US_GT_1_H1",
+        "annonsId": "120251443936870435",
+        "kalla": "source",
+        "langd": 29.568,
+        "rutor": 59,
+        "skapad": "2026-09-16T12:01:42+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "4576371346014668",
+        "namn": "CaraShellRoof_US_GT_107_H1",
+        "annonsId": "120251574936760435",
+        "kalla": "source",
+        "langd": 18.24,
+        "rutor": 36,
+        "skapad": "2026-09-23T16:42:12+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2074177703490983",
+        "namn": "CaraShellRoof_US_SP_2_H1",
+        "annonsId": "120251443980060435",
+        "kalla": "source",
+        "langd": 24.725,
+        "rutor": 49,
+        "skapad": "2026-09-16T12:05:31+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1427877129413478",
+        "namn": "CaraShellRoof_US_CO_101_H1",
+        "annonsId": "120251489798720435",
+        "kalla": "source",
+        "langd": 25.84,
+        "rutor": 52,
+        "skapad": "2026-09-18T17:02:46+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "945341604691980",
+        "namn": "CaraShellRoof_US_PD_2_H1",
+        "annonsId": "120251443958320435",
+        "kalla": "source",
+        "langd": 37.61,
+        "rutor": 75,
+        "skapad": "2026-09-16T12:03:51+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1492224382954464",
+        "namn": "CaraShellRoof_US_GT_105_H1",
+        "annonsId": "120251490274580435",
+        "kalla": "source",
+        "langd": 23.28,
+        "rutor": 47,
+        "skapad": "2026-09-18T17:16:52+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1744480580003859",
+        "namn": "CaraShellRoof_US_PD_107_H1",
+        "annonsId": "120251575291390435",
+        "kalla": "source",
+        "langd": 17.96,
+        "rutor": 36,
+        "skapad": "2026-09-23T17:03:24+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1056684087204493",
+        "namn": "CaraShellRoof_US_CS_108_H1",
+        "annonsId": "120251574720300435",
+        "kalla": "source",
+        "langd": 20.16,
+        "rutor": 40,
+        "skapad": "2026-09-23T16:31:45+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2177220836157402",
+        "namn": "CaraShellRoof_US_SP_104_H1",
+        "annonsId": "120251489832370435",
+        "kalla": "source",
+        "langd": 39.88,
+        "rutor": 80,
+        "skapad": "2026-09-18T17:04:49+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2405002000029198",
+        "namn": "CaraShellRoof_US_PD_5_H1",
+        "annonsId": "120251490405930435",
+        "kalla": "source",
+        "langd": 39.48,
+        "rutor": 79,
+        "skapad": "2026-09-18T17:25:27+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1043154241877750",
+        "namn": "CaraShellRoof_US_PD_107_H1_FELSPRAK",
+        "annonsId": "120251517190490435",
+        "kalla": "source",
+        "langd": 17.96,
+        "rutor": 36,
+        "skapad": "2026-09-20T15:38:47+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1418713567088703",
+        "namn": "CaraShellRoof_US_PD_106_H1",
+        "annonsId": "120251575337600435",
+        "kalla": "source",
+        "langd": 16.239,
+        "rutor": 32,
+        "skapad": "2026-09-23T17:05:20+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1587310759837011",
+        "namn": "CaraShellRoof_US_PD_106_H1_FELSPRAK",
+        "annonsId": "120251517205690435",
+        "kalla": "source",
+        "langd": 16.239,
+        "rutor": 32,
+        "skapad": "2026-09-20T15:40:26+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1094190266691650",
+        "namn": "CaraShellRoof_US_OB_101_H1_FELSPRAK",
+        "annonsId": "120251517183220435",
+        "kalla": "source",
+        "langd": 18.08,
+        "rutor": 36,
+        "skapad": "2026-09-20T15:37:56+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1712510233195692",
+        "namn": "CaraShellRoof_US_GT_104_H1",
+        "annonsId": "120251490245280435",
+        "kalla": "source",
+        "langd": 26.84,
+        "rutor": 54,
+        "skapad": "2026-09-18T17:15:52+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1766154087973858",
+        "namn": "CaraShellRoof_US_RI_101_H1",
+        "annonsId": "120251489815700435",
+        "kalla": "source",
+        "langd": 31.56,
+        "rutor": 63,
+        "skapad": "2026-09-18T17:03:45+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1438645004828840",
+        "namn": "CaraShellRoof_US_PD_104_H1",
+        "annonsId": "120251490027610435",
+        "kalla": "source",
+        "langd": 25.48,
+        "rutor": 51,
+        "skapad": "2026-09-18T17:14:21+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2188202955443522",
+        "namn": "CaraShellRoof_US_GT_110_H1",
+        "annonsId": "120251574989110435",
+        "kalla": "source",
+        "langd": 17.88,
+        "rutor": 36,
+        "skapad": "2026-09-23T16:44:02+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1257020833231980",
+        "namn": "CaraShellRoof_US_RI_103_H1_FELSPRAK",
+        "annonsId": "120251517195980435",
+        "kalla": "source",
+        "langd": 17.36,
+        "rutor": 35,
+        "skapad": "2026-09-20T15:39:35+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2157619511805779",
+        "namn": "CaraShellRoof_US_RI_103_H1",
+        "annonsId": "120251575310620435",
+        "kalla": "source",
+        "langd": 17.36,
+        "rutor": 35,
+        "skapad": "2026-09-23T17:04:19+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1356120749929650",
+        "namn": "CaraShellRoof_US_OB_101_H1",
+        "annonsId": "120251575148110435",
+        "kalla": "source",
+        "langd": 18.08,
+        "rutor": 36,
+        "skapad": "2026-09-23T16:54:29+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2255605101645105",
+        "namn": "CaraShellRoof_US_OB_102_H1",
+        "annonsId": "120251575130410435",
+        "kalla": "source",
+        "langd": 16.8,
+        "rutor": 34,
+        "skapad": "2026-09-23T16:53:33+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2169040990351389",
+        "namn": "CaraShellRoof_US_GT_108_H1",
+        "annonsId": "120251574733400435",
+        "kalla": "source",
+        "langd": 14.44,
+        "rutor": 29,
+        "skapad": "2026-09-23T16:32:46+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1456046416365396",
+        "namn": "CaraShellRoof_US_UG_101_H1",
+        "annonsId": "120251489963410435",
+        "kalla": "source",
+        "langd": 27.16,
+        "rutor": 54,
+        "skapad": "2026-09-18T17:13:22+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1975710343346703",
+        "namn": "CaraShellRoof_US_RI_102_H1",
+        "annonsId": "120251574762570435",
+        "kalla": "source",
+        "langd": 16.88,
+        "rutor": 34,
+        "skapad": "2026-09-23T16:33:42+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "982715894872460",
+        "namn": "CaraShellRoof_US_SP_1_H1",
+        "annonsId": "120251443973510435",
+        "kalla": "source",
+        "langd": 23.36,
+        "rutor": 46,
+        "skapad": "2026-09-16T12:04:58+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1092284476496580",
+        "namn": "CaraShellRoof_US_SP_3_H1",
+        "annonsId": "120251443986910435",
+        "kalla": "source",
+        "langd": 22.933,
+        "rutor": 46,
+        "skapad": "2026-09-16T12:06:08+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "932114256628070",
+        "namn": "CaraShellRoof_US_PD_3_H1",
+        "annonsId": "120251443963930435",
+        "kalla": "source",
+        "langd": 37.93,
+        "rutor": 76,
+        "skapad": "2026-09-16T12:04:25+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "3882566601885478",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "annonsId": "120251443854310435",
+        "kalla": "source",
+        "langd": 26.602,
+        "rutor": 53,
+        "skapad": "2026-09-16T11:55:12+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1108953801683932",
+        "namn": "CaraShellRoof_US_GT_3_H1",
+        "annonsId": "120251443947020435",
+        "kalla": "source",
+        "langd": 28.48,
+        "rutor": 57,
+        "skapad": "2026-09-16T12:02:43+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1129803382727892",
+        "namn": "CaraShellRoof_US_TR_103_H1",
+        "annonsId": "120251575116270435",
+        "kalla": "source",
+        "langd": 24.24,
+        "rutor": 48,
+        "skapad": "2026-09-23T16:52:31+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "930713102980067",
+        "namn": "CaraShellRoof_US_CS_3_H1",
+        "annonsId": "120251443924930435",
+        "kalla": "source",
+        "langd": 29.376,
+        "rutor": 59,
+        "skapad": "2026-09-16T12:01:08+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2038339686937860",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "annonsId": "120251443679590435",
+        "kalla": "source",
+        "langd": 28.48,
+        "rutor": 57,
+        "skapad": "2026-09-16T11:41:48+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1404228334576608",
+        "namn": "CaraShellRoof_US_CS_107_H1",
+        "annonsId": "120251574623040435",
+        "kalla": "source",
+        "langd": 22.4,
+        "rutor": 45,
+        "skapad": "2026-09-23T16:23:15+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1116698521078812",
+        "namn": "CaraShellRoof_US_GT_2_H1",
+        "annonsId": "120251443941470435",
+        "kalla": "source",
+        "langd": 27.733,
+        "rutor": 55,
+        "skapad": "2026-09-16T12:02:10+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2483331948816623",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "annonsId": "120251464373270435",
+        "kalla": "source",
+        "langd": 26.71,
+        "rutor": 53,
+        "skapad": "2026-09-17T13:35:24+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "973002322499534",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "annonsId": "120251464373280435",
+        "kalla": "source",
+        "langd": 28.59,
+        "rutor": 57,
+        "skapad": "2026-09-17T13:35:24+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1109367725376408",
+        "namn": "CaraShellRoof_US_CS_3_H1",
+        "annonsId": "120251464335700435",
+        "kalla": "source",
+        "langd": 29.48,
+        "rutor": 59,
+        "skapad": "2026-09-17T13:32:41+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "967749349275960",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "annonsId": "120251464335640435",
+        "kalla": "source",
+        "langd": 26.71,
+        "rutor": 53,
+        "skapad": "2026-09-17T13:32:41+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2000419143979285",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "annonsId": "120251464335660435",
+        "kalla": "source",
+        "langd": 28.59,
+        "rutor": 57,
+        "skapad": "2026-09-17T13:32:41+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2019985285387165",
+        "namn": "CaraShellRoof_US_CS_3_H1",
+        "annonsId": "120251463790400435",
+        "kalla": "source",
+        "langd": 29.48,
+        "rutor": 59,
+        "skapad": "2026-09-17T13:28:50+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2102852343677489",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "annonsId": "120251463790150435",
+        "kalla": "source",
+        "langd": 28.59,
+        "rutor": 57,
+        "skapad": "2026-09-17T13:28:50+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1094167586925865",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "annonsId": "120251463790140435",
+        "kalla": "source",
+        "langd": 26.71,
+        "rutor": 53,
+        "skapad": "2026-09-17T13:28:50+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2141687156420903",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "annonsId": "120251464399470435",
+        "kalla": "source",
+        "langd": 28.59,
+        "rutor": 57,
+        "skapad": "2026-09-17T13:37:57+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "2209364843795095",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "annonsId": "120251464399460435",
+        "kalla": "source",
+        "langd": 26.71,
+        "rutor": 53,
+        "skapad": "2026-09-17T13:37:57+0000",
+        "verksamhet": "CaraShell"
+      },
+      {
+        "id": "1051482727765426",
+        "namn": "CaraShellRoof_US_CS_3_H1",
+        "annonsId": "120251464399440435",
+        "kalla": "source",
+        "langd": 29.48,
+        "rutor": 59,
+        "skapad": "2026-09-17T13:37:57+0000",
+        "verksamhet": "CaraShell"
+      }
+    ],
+    "fel": []
+  },
+  "per": {
+    "2": {
+      "nr": 2,
+      "libraryId": "2011809009499730",
+      "lank": "https://www.facebook.com/ads/library/?id=2011809009499730",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120249187152190172",
+        "namn": "CaraShellRoof_DK_PD_1_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 9,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2011809009499730.mp4",
+        "langd": 34.4,
+        "rutor": 68
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "CaraShellRoof_OB_101_H1",
+          "Takoverdrag_OB_1_H1",
+          "Takoverdrag_SP_4_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_DK_OB_101_H1": 2,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "CaraShellRoof_US_TR_103_H1": 1,
+          "CaraShellRoof_US_RI_103_H1_FELSPRAK": 1,
+          "CaraShellRoof_US_PD_107_H1": 1,
+          "CaraShellRoof_PD_5_H1": 2,
+          "Takoverdrag_TR_3_H1": 1,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_US_CS_2_H1": 1,
+          "Takoverdrag_PD_2_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_OB_1_H1": 5,
+          "CaraShellRoof_US_PD_5_H1": 1,
+          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "CaraShellRoof_US_CO_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 68,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 40,
+        "andel": 59,
+        "lanadeRutor": 19,
+        "scener": 12,
+        "matchadeScener": 12,
+        "uteslutnaScener": 4,
+        "perFilm": {
+          "CaraShellRoof_DK_OB_101_H1": 2,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "CaraShellRoof_US_TR_103_H1": 1,
+          "CaraShellRoof_US_RI_103_H1_FELSPRAK": 1,
+          "CaraShellRoof_US_PD_107_H1": 1,
+          "CaraShellRoof_PD_5_H1": 2,
+          "Takoverdrag_TR_3_H1": 1,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_US_CS_2_H1": 1,
+          "Takoverdrag_PD_2_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_OB_1_H1": 5,
+          "CaraShellRoof_US_PD_5_H1": 1,
+          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "CaraShellRoof_US_CO_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 6,
+          "derasI": 12,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/2-A-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1",
+            "skapad": "2026-09-19T20:50:58+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "033cda5f2577f0ca",
+          "egenHash": "033cda5f2577d0ca",
+          "scen": {
+            "nr": 3,
+            "tFran": 6,
+            "tTill": 6.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 22.5,
+          "derasI": 45,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/2-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 6,
+          "stod": 2,
+          "derasHash": "c01f4748499baa8e",
+          "egenHash": "c01f4f48499aa49e",
+          "scen": {
+            "nr": 9,
+            "tFran": 22,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-B-deras.jpg",
+          "kontroll": 7
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 27.5,
+          "derasI": 55,
+          "egenT": 22,
+          "egenI": 44,
+          "egenFil": "output/klipp/KD-2026-001/2-C-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b191b0b56",
+          "scen": {
+            "nr": 10,
+            "tFran": 24,
+            "tTill": 28.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 16,
+          "egenI": 32,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1402932001225062",
+            "namn": "Takoverdrag_SP_2_H1",
+            "skapad": "2026-09-09T01:00:50+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 1,
+          "derasHash": "98aefefd7d7171de",
+          "egenHash": "b8aefefd7d3171de",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 4
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 11,
+          "derasI": 22,
+          "egenT": 35.5,
+          "egenI": 71,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "2405002000029198",
+            "namn": "CaraShellRoof_US_PD_5_H1",
+            "skapad": "2026-09-18T17:25:27+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 0,
+          "derasHash": "3ec0c2f50f993990",
+          "egenHash": "3ec0c2f50f991d90",
+          "scen": {
+            "nr": 5,
+            "tFran": 8,
+            "tTill": 11.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 12.5,
+          "derasI": 25,
+          "egenT": 7,
+          "egenI": 14,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "2018976448804329",
+            "namn": "CaraShellRoof_US_PD_1_H1",
+            "skapad": "2026-09-16T12:03:17+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "9c98386828e5560a",
+          "egenHash": "9c98386928e5d40a",
+          "scen": {
+            "nr": 6,
+            "tFran": 12,
+            "tTill": 15
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "4": {
+      "nr": 4,
+      "libraryId": "2255393811922676",
+      "lank": "https://www.facebook.com/ads/library/?id=2255393811922676",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250242493840291",
+        "namn": "Takoverdrag_RI_1_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 6,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2255393811922676.mp4",
+        "langd": 37.7,
+        "rutor": 75
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "CaraShellRoof_DK_PD_106_H1",
+          "Takoverdrag_SP_4_H1",
+          "CaraShellRoof_NO_SP_104_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_RI_1_H1": 8,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_SP_4_H1": 9,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 3,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_US_SP_104_H1": 1,
+          "CaraShellRoof_US_CO_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 75,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 39,
+        "andel": 52,
+        "lanadeRutor": 18,
+        "scener": 16,
+        "matchadeScener": 15,
+        "uteslutnaScener": 3,
+        "perFilm": {
+          "Takoverdrag_RI_1_H1": 8,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_SP_4_H1": 9,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 3,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_US_SP_104_H1": 1,
+          "CaraShellRoof_US_CO_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 15,
+          "derasI": 30,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/4-A-egen.jpg",
+          "egenFilm": {
+            "id": "1790801295300915",
+            "namn": "CaraShellRoof_DK_PD_106_H1",
+            "skapad": "2026-09-20T22:34:05+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "2082f84e8f0fc0d6",
+          "egenHash": "2082f84e8f0fc8d6",
+          "scen": {
+            "nr": 4,
+            "tFran": 14.5,
+            "tTill": 15.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 23,
+          "derasI": 46,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/4-B-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "3c3d1b1c180e3738",
+          "egenHash": "3c3d1b1e180e3538",
+          "scen": {
+            "nr": 9,
+            "tFran": 23,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 32,
+          "derasI": 64,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/4-C-egen.jpg",
+          "egenFilm": {
+            "id": "1089156770495240",
+            "namn": "CaraShellRoof_NO_SP_104_H1",
+            "skapad": "2026-09-18T15:16:09+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "fcb21a0f8fc069bc",
+          "egenHash": "fcb21a0f8fc069bc",
+          "scen": {
+            "nr": 14,
+            "tFran": 32,
+            "tTill": 35
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1",
+            "skapad": "2026-09-16T06:32:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "b2b2725b5c7c7838",
+          "egenHash": "b2b0725b5c7c7838",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "909489265306307",
+            "namn": "CaraShellRoof_RI_101_H1",
+            "skapad": "2026-09-18T15:17:21+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "666572bbb57e7b1b",
+          "egenHash": "666572bbb57e7b1b",
+          "scen": {
+            "nr": 1,
+            "tFran": 3,
+            "tTill": 5.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 6,
+          "derasI": 12,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1",
+            "skapad": "2026-09-16T06:32:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "eb7108b003581e9f",
+          "egenHash": "eb710ab003785e9f",
+          "scen": {
+            "nr": 2,
+            "tFran": 6,
+            "tTill": 11.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "5": {
+      "nr": 5,
+      "libraryId": "1432012392223391",
+      "lank": "https://www.facebook.com/ads/library/?id=1432012392223391",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250147367410291",
+        "namn": "Takoverdrag_GT_3_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 12,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1432012392223391.mp4",
+        "langd": 47.5,
+        "rutor": 95
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_OB_1_H1",
+          "CaraShellRoof_PD_1_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 4,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_CS_8_H1": 1,
+          "Takoverdrag_GT_8_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "CaraShellRoof_DK_PD_5_H1": 1,
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_PD_1_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
+          "Takoverdrag_PD_2_H1": 3,
+          "CaraShellRoof_US_PD_106_H1_FELSPRAK": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_PD_6_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 95,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 46,
+        "andel": 48,
+        "lanadeRutor": 27,
+        "scener": 30,
+        "matchadeScener": 28,
+        "uteslutnaScener": 8,
+        "perFilm": {
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 4,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_CS_8_H1": 1,
+          "Takoverdrag_GT_8_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "CaraShellRoof_DK_PD_5_H1": 1,
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_PD_1_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
+          "Takoverdrag_PD_2_H1": 3,
+          "CaraShellRoof_US_PD_106_H1_FELSPRAK": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_PD_6_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 20.5,
+          "derasI": 41,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/5-A-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 10,
+            "tFran": 19.5,
+            "tTill": 21
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 22,
+          "derasI": 44,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/5-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c01f4f48499aa49e",
+          "egenHash": "c01f4f48499aa49e",
+          "scen": {
+            "nr": 11,
+            "tFran": 21.5,
+            "tTill": 22.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 30.5,
+          "derasI": 61,
+          "egenT": 23.5,
+          "egenI": 47,
+          "egenFil": "output/klipp/KD-2026-001/5-C-egen.jpg",
+          "egenFilm": {
+            "id": "936761792816241",
+            "namn": "CaraShellRoof_PD_1_H1",
+            "skapad": "2026-09-11T14:55:23+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3918191902012367",
+          "egenHash": "3918191902012367",
+          "scen": {
+            "nr": 20,
+            "tFran": 30.5,
+            "tTill": 31.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "28026609890344616",
+            "namn": "Takoverdrag_SP_1_H1",
+            "skapad": "2026-09-09T01:00:20+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "b8aedeffdd7131de",
+          "egenHash": "d8aedeffdd7171de",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4.5,
+          "egenI": 9,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1045548825135718",
+            "namn": "CaraShellRoof_NO_PD_1",
+            "skapad": "2026-09-11T15:22:13+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "8697b7373faf7779",
+          "egenHash": "8697b7373faf7259",
+          "scen": {
+            "nr": 1,
+            "tFran": 3.5,
+            "tTill": 4
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "945341604691980",
+            "namn": "CaraShellRoof_US_PD_2_H1",
+            "skapad": "2026-09-16T12:03:51+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "3438a8686825b2f1",
+          "egenHash": "3438a8686825b0f1",
+          "scen": {
+            "nr": 2,
+            "tFran": 4.5,
+            "tTill": 5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "7": {
+      "nr": 7,
+      "libraryId": "1379264000855257",
+      "lank": "https://www.facebook.com/ads/library/?id=1379264000855257",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120249156601060172",
+        "namn": "CaraShellRoof_PD_104_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 5,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1379264000855257.mp4",
+        "langd": 44.8,
+        "rutor": 89
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_RI_1_H1",
+          "Takoverdrag_SP_4_H1",
+          "CaraShellRoof_US_RI_101_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_PD_1_H1": 2,
+          "CaraShellRoof_NO_PD_3": 1,
+          "Takoverdrag_PD_3_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_NO_PD_2": 1,
+          "Takoverdrag_TR_3_H1": 4,
+          "CaraShellRoof_PD_5_H1": 2,
+          "CaraShellRoof_US_PD_5_H1": 3,
+          "Takoverdrag_UG_1_H1": 1,
+          "Takoverdrag_RI_1_H1": 6,
+          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_US_CO_103_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_DK_PD_107_H1": 1,
+          "Takoverdrag_SP_2_H1": 2,
+          "CaraShellRoof_NO_SP_2": 1,
+          "CaraShellRoof_US_SP_2_H1": 2,
+          "CaraShellRoof_US_SP_3_H1": 1,
+          "CaraShellRoof_SP_2_H1": 3,
+          "Takoverdrag_SP_1_H1": 1,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_DK_UG_101_H1": 1,
+          "CaraShellRoof_RI_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 89,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 64,
+        "andel": 72,
+        "lanadeRutor": 14,
+        "scener": 24,
+        "matchadeScener": 24,
+        "uteslutnaScener": 7,
+        "perFilm": {
+          "CaraShellRoof_PD_1_H1": 2,
+          "CaraShellRoof_NO_PD_3": 1,
+          "Takoverdrag_PD_3_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_NO_PD_2": 1,
+          "Takoverdrag_TR_3_H1": 4,
+          "CaraShellRoof_PD_5_H1": 2,
+          "CaraShellRoof_US_PD_5_H1": 3,
+          "Takoverdrag_UG_1_H1": 1,
+          "Takoverdrag_RI_1_H1": 6,
+          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_US_CO_103_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_DK_PD_107_H1": 1,
+          "Takoverdrag_SP_2_H1": 2,
+          "CaraShellRoof_NO_SP_2": 1,
+          "CaraShellRoof_US_SP_2_H1": 2,
+          "CaraShellRoof_US_SP_3_H1": 1,
+          "CaraShellRoof_SP_2_H1": 3,
+          "Takoverdrag_SP_1_H1": 1,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_DK_UG_101_H1": 1,
+          "CaraShellRoof_RI_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 11.5,
+          "derasI": 23,
+          "egenT": 18.5,
+          "egenI": 37,
+          "egenFil": "output/klipp/KD-2026-001/7-A-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1",
+            "skapad": "2026-09-16T06:32:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 4,
+          "stod": 2,
+          "derasHash": "bc3d191c180e3b38",
+          "egenHash": "7c3d1b1c180e3f38",
+          "scen": {
+            "nr": 6,
+            "tFran": 11,
+            "tTill": 11.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 13,
+          "derasI": 26,
+          "egenT": 14,
+          "egenI": 28,
+          "egenFil": "output/klipp/KD-2026-001/7-B-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "c2461e1a181e1933",
+          "egenHash": "c6461e1a181e3933",
+          "scen": {
+            "nr": 7,
+            "tFran": 12,
+            "tTill": 13
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-B-deras.jpg",
+          "kontroll": 7
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 34.5,
+          "derasI": 69,
+          "egenT": 15.5,
+          "egenI": 31,
+          "egenFil": "output/klipp/KD-2026-001/7-C-egen.jpg",
+          "egenFilm": {
+            "id": "1766154087973858",
+            "namn": "CaraShellRoof_US_RI_101_H1",
+            "skapad": "2026-09-18T17:03:45+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "a093dfcb9707b3ca",
+          "egenHash": "a093dfcb9723b3ca",
+          "scen": {
+            "nr": 20,
+            "tFran": 33.5,
+            "tTill": 34.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-C-deras.jpg",
+          "kontroll": 3
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1410737117056018",
+            "namn": "CaraShellRoof_NO_PD_104_H1",
+            "skapad": "2026-09-18T14:56:16+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "67c82097939faa8a",
+          "egenHash": "77c92097939f8a8a",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 12.5,
+          "egenI": 25,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "f477f01838386081",
+          "egenHash": "f457f01838386081",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 3.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 4.5,
+          "derasI": 9,
+          "egenT": 22.5,
+          "egenI": 45,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "936761792816241",
+            "namn": "CaraShellRoof_PD_1_H1",
+            "skapad": "2026-09-11T14:55:23+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 1,
+          "derasHash": "e96de4103d382888",
+          "egenHash": "e96de4103d382888",
+          "scen": {
+            "nr": 2,
+            "tFran": 4,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "9": {
+      "nr": 9,
+      "libraryId": "1075928918391127",
+      "lank": "https://www.facebook.com/ads/library/?id=1075928918391127",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250147364200291",
+        "namn": "Takoverdrag_GT_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 8,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1075928918391127.mp4",
+        "langd": 38.5,
+        "rutor": 77
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "CaraShellRoof_PD_3_H1",
+          "CaraShellRoof_NO_PD_2",
+          "Takoverdrag_SP_4_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_DK_GT_1_H1": 2,
+          "CaraShellRoof_GT_2_H1": 1,
+          "CaraShellRoof_NO_G_2": 1,
+          "Takoverdrag_PD_3_H1": 2,
+          "CaraShellRoof_PD_3_H1": 1,
+          "CaraShellRoof_NO_PD_2": 1,
+          "Takoverdrag_GT_5_H1": 5,
+          "CaraShellRoof_NO_GT_105_H1": 1,
+          "CaraShellRoof_US_CS_1_H1": 1,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_DK_PD_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_SP_4_H1": 10,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_UG_1_H1": 5,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_RI_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_DK_PD_106_H1": 3,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_CO_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 77,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 49,
+        "andel": 64,
+        "lanadeRutor": 18,
+        "scener": 21,
+        "matchadeScener": 21,
+        "uteslutnaScener": 8,
+        "perFilm": {
+          "CaraShellRoof_DK_GT_1_H1": 2,
+          "CaraShellRoof_GT_2_H1": 1,
+          "CaraShellRoof_NO_G_2": 1,
+          "Takoverdrag_PD_3_H1": 2,
+          "CaraShellRoof_PD_3_H1": 1,
+          "CaraShellRoof_NO_PD_2": 1,
+          "Takoverdrag_GT_5_H1": 5,
+          "CaraShellRoof_NO_GT_105_H1": 1,
+          "CaraShellRoof_US_CS_1_H1": 1,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_DK_PD_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_SP_4_H1": 10,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_UG_1_H1": 5,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_RI_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_DK_PD_106_H1": 3,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_CO_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 22.5,
+          "egenI": 45,
+          "egenFil": "output/klipp/KD-2026-001/9-A-egen.jpg",
+          "egenFilm": {
+            "id": "1605983741209099",
+            "namn": "CaraShellRoof_PD_3_H1",
+            "skapad": "2026-09-11T14:55:29+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "e16de4183c3e3884",
+          "egenHash": "e12de4183c3e2884",
+          "scen": {
+            "nr": 2,
+            "tFran": 5,
+            "tTill": 6
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 23.5,
+          "egenI": 47,
+          "egenFil": "output/klipp/KD-2026-001/9-B-egen.jpg",
+          "egenFilm": {
+            "id": "1695160671555902",
+            "namn": "CaraShellRoof_NO_PD_2",
+            "skapad": "2026-09-11T15:22:22+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3918190102012367",
+          "egenHash": "3918190102012367",
+          "scen": {
+            "nr": 3,
+            "tFran": 6.5,
+            "tTill": 8
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 15,
+          "derasI": 30,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/9-C-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "2082f8678f0fd0d6",
+          "egenHash": "2082f8678f0ff0d6",
+          "scen": {
+            "nr": 9,
+            "tFran": 14.5,
+            "tTill": 15.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "28131074066587234",
+            "namn": "Takoverdrag_CS_3_H1",
+            "skapad": "2026-09-09T00:56:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 5,
+          "stod": 2,
+          "derasHash": "840bf3f5edcc2c78",
+          "egenHash": "860bf3f5cdcc7c79",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 5,
+          "egenI": 10,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1794412381825348",
+            "namn": "CaraShellRoof_DK_GT_1_H1",
+            "skapad": "2026-09-20T22:13:52+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 1,
+          "derasHash": "914b990124060b13",
+          "egenHash": "914b990124061313",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 10.5,
+          "derasI": 21,
+          "egenT": 12.5,
+          "egenI": 25,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1101144385596275",
+            "namn": "CaraShellRoof_DK_GT_104_H1",
+            "skapad": "2026-09-20T22:04:23+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 4,
+          "stod": 0,
+          "derasHash": "7068d3307040e0e0",
+          "egenHash": "70e8d3303040f0f0",
+          "scen": {
+            "nr": 6,
+            "tFran": 10.5,
+            "tTill": 10.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "10": {
+      "nr": 10,
+      "libraryId": "2354225538650112",
+      "lank": "https://www.facebook.com/ads/library/?id=2354225538650112",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250242482300291",
+        "namn": "Takoverdrag_SP_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 12,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2354225538650112.mp4",
+        "langd": 47.1,
+        "rutor": 94
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_OB_1_H1",
+          "CaraShellRoof_NO_PD_106_H1",
+          "CaraShellRoof_US_UG_101_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_CO_101_H1": 2,
+          "Takoverdrag_CO_1_H1": 3,
+          "CaraShellRoof_US_CO_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 5,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 5,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_US_RI_103_H1_FELSPRAK": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_GT_7_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 2,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_DK_CO_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 2,
+          "CaraShellRoof_US_UG_101_H1": 2,
+          "CaraShellRoof_UG_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 94,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 59,
+        "andel": 63,
+        "lanadeRutor": 19,
+        "scener": 24,
+        "matchadeScener": 23,
+        "uteslutnaScener": 6,
+        "perFilm": {
+          "CaraShellRoof_CO_101_H1": 2,
+          "Takoverdrag_CO_1_H1": 3,
+          "CaraShellRoof_US_CO_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 5,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 5,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_US_RI_103_H1_FELSPRAK": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_GT_7_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 2,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_DK_CO_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 2,
+          "CaraShellRoof_US_UG_101_H1": 2,
+          "CaraShellRoof_UG_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 29,
+          "derasI": 58,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/10-A-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 14,
+            "tFran": 28.5,
+            "tTill": 30
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-A-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 32,
+          "derasI": 64,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/10-B-egen.jpg",
+          "egenFilm": {
+            "id": "1010500768679806",
+            "namn": "CaraShellRoof_NO_PD_106_H1",
+            "skapad": "2026-09-19T20:30:07+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "2082f84e8f8fd0d6",
+          "egenHash": "2082f84e8f8dd0d6",
+          "scen": {
+            "nr": 16,
+            "tFran": 32,
+            "tTill": 32.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 39.5,
+          "derasI": 79,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/10-C-egen.jpg",
+          "egenFilm": {
+            "id": "1456046416365396",
+            "namn": "CaraShellRoof_US_UG_101_H1",
+            "skapad": "2026-09-18T17:13:22+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "fa901b0f8f88f038",
+          "egenHash": "fa901b0f8f80f838",
+          "scen": {
+            "nr": 22,
+            "tFran": 37.5,
+            "tTill": 44
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "5545430099015735",
+            "namn": "CaraShellRoof_SP_104_H1",
+            "skapad": "2026-09-18T15:07:28+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "b0d0f1e4f0f0f9b9",
+          "egenHash": "b0d0f1e4f0f0f9b9",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 6,
+          "derasI": 12,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "fcb21a0f8fc068bc",
+          "egenHash": "fcb21a0f8fc868bc",
+          "scen": {
+            "nr": 2,
+            "tFran": 5.5,
+            "tTill": 8
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 9,
+          "derasI": 18,
+          "egenT": 9,
+          "egenI": 18,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "a0d3dfd48f07dbca",
+          "egenHash": "a0d3dfd08f07f9ca",
+          "scen": {
+            "nr": 3,
+            "tFran": 8.5,
+            "tTill": 9.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "14": {
+      "nr": 14,
+      "libraryId": "883337508196166",
+      "lank": "https://www.facebook.com/ads/library/?id=883337508196166",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120249186879890172",
+        "namn": "CaraShellRoof_DK_CS_2_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 7,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-883337508196166.mp4",
+        "langd": 34.2,
+        "rutor": 68
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_SP_4_H1",
+          "Takoverdrag_RI_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_TR_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 3,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "Takoverdrag_SP_2_H1": 1,
+          "CaraShellRoof_US_GT_2_H1": 1,
+          "CaraShellRoof_DK_OB_101_H1": 1,
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "CaraShellRoof_NO_PD_1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_SP_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 12,
+          "CaraShellRoof_US_UG_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_DK_SP_104_H1": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "CaraShellRoof_US_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 68,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 40,
+        "andel": 59,
+        "lanadeRutor": 12,
+        "scener": 20,
+        "matchadeScener": 18,
+        "uteslutnaScener": 3,
+        "perFilm": {
+          "Takoverdrag_TR_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 3,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "Takoverdrag_SP_2_H1": 1,
+          "CaraShellRoof_US_GT_2_H1": 1,
+          "CaraShellRoof_DK_OB_101_H1": 1,
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "CaraShellRoof_NO_PD_1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_SP_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 12,
+          "CaraShellRoof_US_UG_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_DK_SP_104_H1": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "CaraShellRoof_US_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 19,
+          "derasI": 38,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/14-A-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "fcb21a0f8fc868bc",
+          "egenHash": "fcb21a0f8fc868bc",
+          "scen": {
+            "nr": 11,
+            "tFran": 18.5,
+            "tTill": 21
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 21.5,
+          "derasI": 43,
+          "egenT": 16,
+          "egenI": 32,
+          "egenFil": "output/klipp/KD-2026-001/14-B-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1",
+            "skapad": "2026-09-16T06:32:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "a093cfc08707bbca",
+          "egenHash": "a0d3cfc38707bbca",
+          "scen": {
+            "nr": 12,
+            "tFran": 21.5,
+            "tTill": 22
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 29,
+          "derasI": 58,
+          "egenT": 22,
+          "egenI": 44,
+          "egenFil": "output/klipp/KD-2026-001/14-C-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b191b0b56",
+          "scen": {
+            "nr": 18,
+            "tFran": 28,
+            "tTill": 30
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "945341604691980",
+            "namn": "CaraShellRoof_US_PD_2_H1",
+            "skapad": "2026-09-16T12:03:51+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "485fd8d8989c715c",
+          "egenHash": "485fd8d8989c711c",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 15,
+          "egenI": 30,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1116698521078812",
+            "namn": "CaraShellRoof_US_GT_2_H1",
+            "skapad": "2026-09-16T12:02:10+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 4,
+          "stod": 1,
+          "derasHash": "c4125430f28638f8",
+          "egenHash": "c4105470f28668f8",
+          "scen": {
+            "nr": 4,
+            "tFran": 7.5,
+            "tTill": 10
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 23,
+          "egenI": 46,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "5545430099015735",
+            "namn": "CaraShellRoof_SP_104_H1",
+            "skapad": "2026-09-18T15:07:28+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 5,
+          "stod": 1,
+          "derasHash": "a2f378c78fe0dda9",
+          "egenHash": "a2f378c7cfe0e9ad",
+          "scen": {
+            "nr": 10,
+            "tFran": 14.5,
+            "tTill": 18
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "16": {
+      "nr": 16,
+      "libraryId": "2514259155737512",
+      "lank": "https://www.facebook.com/ads/library/?id=2514259155737512",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250242482300291",
+        "namn": "Takoverdrag_SP_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 10,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2514259155737512.mp4",
+        "langd": 47.7,
+        "rutor": 95
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_RI_3_H1",
+          "Takoverdrag_SP_4_H1",
+          "CaraShellRoof_NO_UG_101_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 4,
+          "CaraShellRoof_US_SP_104_H1": 2,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 3,
+          "Takoverdrag_SP_4_H1": 14,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "Takoverdrag_CS_3_H1": 1,
+          "CaraShellRoof_CS_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 4,
+          "Takoverdrag_SP_1_H1": 2,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_SP_104_H1": 4,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_US_SP_3_H1": 3,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_US_TR_103_H1": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_PD_7_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 95,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 58,
+        "andel": 61,
+        "lanadeRutor": 26,
+        "scener": 27,
+        "matchadeScener": 27,
+        "uteslutnaScener": 12,
+        "perFilm": {
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 4,
+          "CaraShellRoof_US_SP_104_H1": 2,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 3,
+          "Takoverdrag_SP_4_H1": 14,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "Takoverdrag_CS_3_H1": 1,
+          "CaraShellRoof_CS_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 4,
+          "Takoverdrag_SP_1_H1": 2,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_SP_104_H1": 4,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_US_SP_3_H1": 3,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_US_TR_103_H1": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_PD_7_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/16-A-egen.jpg",
+          "egenFilm": {
+            "id": "973503352439826",
+            "namn": "Takoverdrag_RI_3_H1",
+            "skapad": "2026-09-18T13:39:02+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "1eb8d3f6b5b7bb8d",
+          "egenHash": "1eb8d3e4b5bfbb8d",
+          "scen": {
+            "nr": 13,
+            "tFran": 17.5,
+            "tTill": 21
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 22.5,
+          "derasI": 45,
+          "egenT": 22,
+          "egenI": 44,
+          "egenFil": "output/klipp/KD-2026-001/16-B-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b191b0b56",
+          "scen": {
+            "nr": 14,
+            "tFran": 21.5,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-B-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 27,
+          "derasI": 54,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/16-C-egen.jpg",
+          "egenFilm": {
+            "id": "956181934199479",
+            "namn": "CaraShellRoof_NO_UG_101_H1",
+            "skapad": "2026-09-18T15:06:13+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "2082f84a8f8fd0d6",
+          "egenHash": "2082f84a8f0ff0d6",
+          "scen": {
+            "nr": 16,
+            "tFran": 25.5,
+            "tTill": 28
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 1.5,
+          "egenI": 3,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "b0d0e1e0f0f0f5b8",
+          "egenHash": "b0d0e1e4f0f0f9b8",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "4715692158754983",
+            "namn": "Takoverdrag_CO_3_H1",
+            "skapad": "2026-09-22T14:12:38+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "e1a2c160ec617139",
+          "egenHash": "e1a2c160ec617939",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "956181934199479",
+            "namn": "CaraShellRoof_NO_UG_101_H1",
+            "skapad": "2026-09-18T15:06:13+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "2082f84a8f8f90d6",
+          "egenHash": "2082f84a8f0ff0d6",
+          "scen": {
+            "nr": 4,
+            "tFran": 6.5,
+            "tTill": 7
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "18": {
+      "nr": 18,
+      "libraryId": "964240652690101",
+      "lank": "https://www.facebook.com/ads/library/?id=964240652690101",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250147388460291",
+        "namn": "Takoverdrag_SP_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 17,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-964240652690101.mp4",
+        "langd": 38.2,
+        "rutor": 76
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_SP_4_H1",
+          "Takoverdrag_OB_1_H1",
+          "CaraShellRoof_OB_101_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_GT_5_H1": 1,
+          "CaraShellRoof_GT_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 3,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_101_H1": 3,
+          "Takoverdrag_RI_1_H1": 4,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "CaraShellRoof_OB_101_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_US_UG_101_H1": 1,
+          "CaraShellRoof_US_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 76,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 40,
+        "andel": 53,
+        "lanadeRutor": 24,
+        "scener": 20,
+        "matchadeScener": 19,
+        "uteslutnaScener": 8,
+        "perFilm": {
+          "Takoverdrag_GT_5_H1": 1,
+          "CaraShellRoof_GT_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 3,
+          "CaraShellRoof_SP_104_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_101_H1": 3,
+          "Takoverdrag_RI_1_H1": 4,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "CaraShellRoof_OB_101_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_US_UG_101_H1": 1,
+          "CaraShellRoof_US_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 7.5,
+          "derasI": 15,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/18-A-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "2082f8678f0fd0d6",
+          "egenHash": "2082f8678f0ff0d6",
+          "scen": {
+            "nr": 3,
+            "tFran": 5.5,
+            "tTill": 8
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-A-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 24.5,
+          "derasI": 49,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/18-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "8080e08383295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 13,
+            "tFran": 24,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 26.5,
+          "derasI": 53,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/18-C-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1",
+            "skapad": "2026-09-19T20:50:58+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "004080078135b0c0",
+          "egenHash": "004080078135f0c0",
+          "scen": {
+            "nr": 14,
+            "tFran": 26,
+            "tTill": 27
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "2074177703490983",
+            "namn": "CaraShellRoof_US_SP_2_H1",
+            "skapad": "2026-09-16T12:05:31+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "8c999932a31d6120",
+          "egenHash": "8c999932a3156120",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1",
+            "skapad": "2026-09-19T20:50:58+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 2,
+          "stod": 0,
+          "derasHash": "e01e1fc0499ab59e",
+          "egenHash": "c01e1fc8499ab59e",
+          "scen": {
+            "nr": 1,
+            "tFran": 3.5,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 12,
+          "derasI": 24,
+          "egenT": 12.5,
+          "egenI": 25,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1",
+            "skapad": "2026-09-16T06:32:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 0,
+          "derasHash": "700effe49cc91870",
+          "egenHash": "700effe49ce91070",
+          "scen": {
+            "nr": 6,
+            "tFran": 10,
+            "tTill": 13.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "20": {
+      "nr": 20,
+      "libraryId": "28302634086095313",
+      "lank": "https://www.facebook.com/ads/library/?id=28302634086095313",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250147355250291",
+        "namn": "Takoverdrag_CS_3_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0.03
+      ],
+      "lanadeRutor": 8,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-28302634086095313.mp4",
+        "langd": 31.7,
+        "rutor": 63
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "Takoverdrag_PD_6_H1",
+          "CaraShellRoof_US_OB_101_H1",
+          "Takoverdrag_OB_1_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 3,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "CaraShellRoof_US_RI_102_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_OB_1_H1": 7
+        }
+      },
+      "statistik": {
+        "derasRutor": 63,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 42,
+        "andel": 67,
+        "lanadeRutor": 9,
+        "scener": 19,
+        "matchadeScener": 18,
+        "uteslutnaScener": 2,
+        "perFilm": {
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_US_RI_101_H1": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 3,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_US_OB_101_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "CaraShellRoof_US_RI_102_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_OB_1_H1": 7
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 11,
+          "derasI": 22,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/20-A-egen.jpg",
+          "egenFilm": {
+            "id": "1799802437683001",
+            "namn": "Takoverdrag_PD_6_H1",
+            "skapad": "2026-09-18T13:35:43+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "a0938fc08707ebca",
+          "egenHash": "a0d3cfc08705ebca",
+          "scen": {
+            "nr": 4,
+            "tFran": 10.5,
+            "tTill": 11.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-A-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 19,
+          "derasI": 38,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/20-B-egen.jpg",
+          "egenFilm": {
+            "id": "1356120749929650",
+            "namn": "CaraShellRoof_US_OB_101_H1",
+            "skapad": "2026-09-23T16:54:29+0000",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "4140100003465ef4",
+          "egenHash": "4040100903465ef4",
+          "scen": {
+            "nr": 13,
+            "tFran": 18.5,
+            "tTill": 19
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 23,
+          "derasI": 46,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/20-C-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1",
+            "skapad": "2026-09-18T14:30:19+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 16,
+            "tFran": 22.5,
+            "tTill": 24
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/20-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "28131074066587234",
+            "namn": "Takoverdrag_CS_3_H1",
+            "skapad": "2026-09-09T00:56:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "bb2280561c9dc939",
+          "egenHash": "bb22805e1c9dc939",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/20-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 25.5,
+          "derasI": 51,
+          "egenT": 19,
+          "egenI": 38,
+          "egenFil": "output/klipp/KD-2026-001/20-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1601642511625040",
+            "namn": "CaraShellRoof_DK_SP_104_H1",
+            "skapad": "2026-09-20T22:58:54+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 1,
+          "stod": 0,
+          "derasHash": "d434360f8fc0e89e",
+          "egenHash": "d434360f8fc0a89e",
+          "scen": {
+            "nr": 18,
+            "tFran": 25.5,
+            "tTill": 31
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/20-lanat-2-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "24": {
+      "nr": 24,
+      "libraryId": "881353884937989",
+      "lank": "https://www.facebook.com/ads/library/?id=881353884937989",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-881353884937989.mp4",
+        "langd": 53.1,
+        "rutor": 106
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_PD_1_H2",
+          "IBC_GT_1_H2"
+        ],
+        "perFilm": {
+          "IBC_PD_1_H2": 39,
+          "IBC_PD_1_H1": 15,
+          "IBC_PD_1_H3": 16,
+          "IBC_SP_1_H3": 2,
+          "IBC_CS_1_H3": 1,
+          "IBC_GT_1_H3": 1,
+          "IBC_SP_1_H2": 5,
+          "IBC_GT_1_H2": 4,
+          "IBC_PD_Extra": 4,
+          "IBC_SP_1_H1": 2,
+          "IBC_PD_11_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_SP_5_H1": 2,
+          "IBC_CO_2_H1": 1,
+          "IBC_PD_8_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 105,
+        "utanInnehall": 1,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 95,
+        "andel": 90,
+        "lanadeRutor": 0,
+        "scener": 18,
+        "matchadeScener": 17,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_PD_1_H2": 39,
+          "IBC_PD_1_H1": 15,
+          "IBC_PD_1_H3": 16,
+          "IBC_SP_1_H3": 2,
+          "IBC_CS_1_H3": 1,
+          "IBC_GT_1_H3": 1,
+          "IBC_SP_1_H2": 5,
+          "IBC_GT_1_H2": 4,
+          "IBC_PD_Extra": 4,
+          "IBC_SP_1_H1": 2,
+          "IBC_PD_11_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_SP_5_H1": 2,
+          "IBC_CO_2_H1": 1,
+          "IBC_PD_8_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 8.5,
+          "derasI": 17,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/24-A-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "4eb0adc6328eb25a",
+          "egenHash": "4eb0adc6328eb25a",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 15.5,
+          "derasI": 31,
+          "egenT": 26.5,
+          "egenI": 53,
+          "egenFil": "output/klipp/KD-2026-001/24-B-egen.jpg",
+          "egenFilm": {
+            "id": "3302692703264106",
+            "namn": "IBC_GT_1_H2",
+            "skapad": "2026-08-28T23:08:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3bb172cafa7832c4",
+          "egenHash": "3bb172cafa7832c4",
+          "scen": {
+            "nr": 5,
+            "tFran": 14,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-B-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 28.5,
+          "derasI": 57,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/24-C-egen.jpg",
+          "egenFilm": {
+            "id": "3302692703264106",
+            "namn": "IBC_GT_1_H2",
+            "skapad": "2026-08-28T23:08:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "88935071717147ac",
+          "egenHash": "88935071717147ac",
+          "scen": {
+            "nr": 10,
+            "tFran": 28,
+            "tTill": 31
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "25": {
+      "nr": 25,
+      "libraryId": "1104713849178149",
+      "lank": "https://www.facebook.com/ads/library/?id=1104713849178149",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1104713849178149.mp4",
+        "langd": 44.5,
+        "rutor": 89
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_GT_1_H1",
+          "IBC_PD_1_H3",
+          "IBC_PD_1_H1"
+        ],
+        "perFilm": {
+          "IBC_GT_1_H1": 4,
+          "IBC_PD_1_H1": 13,
+          "IBC_PD_1_H2": 11,
+          "IBC_PD_1_H3": 5,
+          "IBC_SP_1_H3": 8,
+          "IBC_PD_Extra": 3,
+          "IBC_PD_8_H1": 1,
+          "IBC_CS_9_H1": 1,
+          "IBC_SP_1_H2": 5,
+          "IBC_GT_1_H3": 1,
+          "IBC_GT_1_H2": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 88,
+        "utanInnehall": 1,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 54,
+        "andel": 61,
+        "lanadeRutor": 0,
+        "scener": 12,
+        "matchadeScener": 11,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_GT_1_H1": 4,
+          "IBC_PD_1_H1": 13,
+          "IBC_PD_1_H2": 11,
+          "IBC_PD_1_H3": 5,
+          "IBC_SP_1_H3": 8,
+          "IBC_PD_Extra": 3,
+          "IBC_PD_8_H1": 1,
+          "IBC_CS_9_H1": 1,
+          "IBC_SP_1_H2": 5,
+          "IBC_GT_1_H3": 1,
+          "IBC_GT_1_H2": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/25-A-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3162e6e8a8601703",
+          "egenHash": "3162e6e8a8601703",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "derasFil": "output/klipp/KD-2026-001/25-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/25-B-egen.jpg",
+          "egenFilm": {
+            "id": "2656978288031260",
+            "namn": "IBC_PD_1_H3",
+            "skapad": "2026-08-28T23:03:36+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "98d3b0f1d1e03647",
+          "egenHash": "98d3b0f1d1f03647",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 6.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/25-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 8.5,
+          "derasI": 17,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/25-C-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c5cd13aa98797979",
+          "egenHash": "c5cd13aa98797979",
+          "scen": {
+            "nr": 2,
+            "tFran": 7,
+            "tTill": 10.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/25-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "26": {
+      "nr": 26,
+      "libraryId": "1609075883990633",
+      "lank": "https://www.facebook.com/ads/library/?id=1609075883990633",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": "bildannons — ingen film att jämföra (texten eller bildträffen bär beviset)",
+      "status": "bild"
+    },
+    "27": {
+      "nr": 27,
+      "libraryId": "959558576541189",
+      "lank": "https://www.facebook.com/ads/library/?id=959558576541189",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": "bildannons — ingen film att jämföra (texten eller bildträffen bär beviset)",
+      "status": "bild"
+    },
+    "28": {
+      "nr": 28,
+      "libraryId": "1656312872610738",
+      "lank": "https://www.facebook.com/ads/library/?id=1656312872610738",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1656312872610738.mp4",
+        "langd": 10.1,
+        "rutor": 20
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_GT_1_H1",
+          "IBC_PD_Extra"
+        ],
+        "perFilm": {
+          "IBC_GT_1_H1": 4,
+          "IBC_PD_Extra": 14,
+          "IBC_SP_1_H2": 1,
+          "IBC_PD_1_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 20,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 20,
+        "andel": 100,
+        "lanadeRutor": 0,
+        "scener": 3,
+        "matchadeScener": 3,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_GT_1_H1": 4,
+          "IBC_PD_Extra": 14,
+          "IBC_SP_1_H2": 1,
+          "IBC_PD_1_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 27.5,
+          "egenI": 55,
+          "egenFil": "output/klipp/KD-2026-001/28-A-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "39b172dafa78b2c4",
+          "egenHash": "39b172dafa78b2c4",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "derasFil": "output/klipp/KD-2026-001/28-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 29,
+          "egenI": 58,
+          "egenFil": "output/klipp/KD-2026-001/28-B-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "88935031717357ac",
+          "egenHash": "88935031717157ac",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 4.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/28-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 7.5,
+          "derasI": 15,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/28-C-egen.jpg",
+          "egenFilm": {
+            "id": "1443169294347963",
+            "namn": "IBC_PD_Extra",
+            "skapad": "2026-08-28T23:03:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "d2c0e0c18c92c0c0",
+          "egenHash": "d2c0e0c18c92c0c0",
+          "scen": {
+            "nr": 2,
+            "tFran": 5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/28-C-deras.jpg",
+          "kontroll": 4
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "29": {
+      "nr": 29,
+      "libraryId": "2111950559399908",
+      "lank": "https://www.facebook.com/ads/library/?id=2111950559399908",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2111950559399908.mp4",
+        "langd": 38.8,
+        "rutor": 77
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_CS_1_H3"
+        ],
+        "perFilm": {
+          "IBC_CS_1_H3": 30,
+          "IBC_CS_1_H2": 1,
+          "IBC_SP_1_H3": 1,
+          "IBC_PD_11_H1": 4,
+          "IBC_SP_1_H1": 1,
+          "IBC_PD_1_H1": 5,
+          "IBC_GT_1_H2": 1,
+          "IBC_SP_1_H2": 3,
+          "IBC_PD_1_H2": 7,
+          "IBC_CO_2_H1": 2,
+          "IBC_PD_1_H3": 1,
+          "IBC_PD_Extra": 1,
+          "IBC_PD_8_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_SP_3_H1": 3,
+          "IBC_GT_4_H1": 5,
+          "IBC_PD_6_H2": 1,
+          "IBC_GT_3_H1": 1,
+          "IBC_PD_3_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 75,
+        "utanInnehall": 2,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 70,
+        "andel": 93,
+        "lanadeRutor": 0,
+        "scener": 15,
+        "matchadeScener": 14,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_CS_1_H3": 30,
+          "IBC_CS_1_H2": 1,
+          "IBC_SP_1_H3": 1,
+          "IBC_PD_11_H1": 4,
+          "IBC_SP_1_H1": 1,
+          "IBC_PD_1_H1": 5,
+          "IBC_GT_1_H2": 1,
+          "IBC_SP_1_H2": 3,
+          "IBC_PD_1_H2": 7,
+          "IBC_CO_2_H1": 2,
+          "IBC_PD_1_H3": 1,
+          "IBC_PD_Extra": 1,
+          "IBC_PD_8_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_SP_3_H1": 3,
+          "IBC_GT_4_H1": 5,
+          "IBC_PD_6_H2": 1,
+          "IBC_GT_3_H1": 1,
+          "IBC_PD_3_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/29-A-egen.jpg",
+          "egenFilm": {
+            "id": "1763664158107031",
+            "namn": "IBC_CS_1_H3",
+            "skapad": "2026-08-28T23:06:22+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "71be2fa5f17c1621",
+          "egenHash": "71be2fa5f17c1625",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 6
+          },
+          "derasFil": "output/klipp/KD-2026-001/29-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 10.5,
+          "derasI": 21,
+          "egenT": 10.5,
+          "egenI": 21,
+          "egenFil": "output/klipp/KD-2026-001/29-B-egen.jpg",
+          "egenFilm": {
+            "id": "1763664158107031",
+            "namn": "IBC_CS_1_H3",
+            "skapad": "2026-08-28T23:06:22+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "8a726e8644694853",
+          "egenHash": "8a726e8644694853",
+          "scen": {
+            "nr": 3,
+            "tFran": 6.5,
+            "tTill": 13
+          },
+          "derasFil": "output/klipp/KD-2026-001/29-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 14.5,
+          "derasI": 29,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/29-C-egen.jpg",
+          "egenFilm": {
+            "id": "1763664158107031",
+            "namn": "IBC_CS_1_H3",
+            "skapad": "2026-08-28T23:06:22+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c0e63a8d4f32759b",
+          "egenHash": "c0e63a8d4f32759b",
+          "scen": {
+            "nr": 4,
+            "tFran": 13.5,
+            "tTill": 15
+          },
+          "derasFil": "output/klipp/KD-2026-001/29-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "30": {
+      "nr": 30,
+      "libraryId": "28404529475856242",
+      "lank": "https://www.facebook.com/ads/library/?id=28404529475856242",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-28404529475856242.mp4",
+        "langd": 26.1,
+        "rutor": 52
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_SP_3_H1",
+          "IBC_GT_1_H3"
+        ],
+        "perFilm": {
+          "IBC_SP_3_H1": 6,
+          "IBC_PD_4_H3": 3,
+          "IBC_PD_3_H1": 2,
+          "IBC_PD_6_H2": 2,
+          "IBC_GT_5_H1": 1,
+          "IBC_SP_1_H3": 1,
+          "IBC_PD_1_H3": 1,
+          "IBC_GT_1_H3": 3,
+          "IBC_GT_1_H1": 1,
+          "IBC_PD_1_H2": 3,
+          "IBC_SP_1_H2": 4,
+          "IBC_GT_1_H2": 1,
+          "IBC_GT_4_H1": 4,
+          "IBC_GT_3_H1": 1,
+          "IBC_PD_4_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 52,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 34,
+        "andel": 65,
+        "lanadeRutor": 2,
+        "scener": 9,
+        "matchadeScener": 7,
+        "uteslutnaScener": 1,
+        "perFilm": {
+          "IBC_SP_3_H1": 6,
+          "IBC_PD_4_H3": 3,
+          "IBC_PD_3_H1": 2,
+          "IBC_PD_6_H2": 2,
+          "IBC_GT_5_H1": 1,
+          "IBC_SP_1_H3": 1,
+          "IBC_PD_1_H3": 1,
+          "IBC_GT_1_H3": 3,
+          "IBC_GT_1_H1": 1,
+          "IBC_PD_1_H2": 3,
+          "IBC_SP_1_H2": 4,
+          "IBC_GT_1_H2": 1,
+          "IBC_GT_4_H1": 4,
+          "IBC_GT_3_H1": 1,
+          "IBC_PD_4_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/30-A-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c7ce0607070b64c5",
+          "egenHash": "c7ce0607070b64c5",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "derasFil": "output/klipp/KD-2026-001/30-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/30-B-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "95a622cc43cfc1a0",
+          "egenHash": "95a602cc43cdc1a0",
+          "scen": {
+            "nr": 1,
+            "tFran": 3.5,
+            "tTill": 5
+          },
+          "derasFil": "output/klipp/KD-2026-001/30-B-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 7,
+          "derasI": 14,
+          "egenT": 42.5,
+          "egenI": 85,
+          "egenFil": "output/klipp/KD-2026-001/30-C-egen.jpg",
+          "egenFilm": {
+            "id": "1483812933780790",
+            "namn": "IBC_GT_1_H3",
+            "skapad": "2026-08-28T23:08:30+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "00020c4848480101",
+          "egenHash": "00020c4848680101",
+          "scen": {
+            "nr": 3,
+            "tFran": 6.5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/30-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 14,
+          "derasI": 28,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/30-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "936077119062272",
+            "namn": "IBC_SP_1_H2",
+            "skapad": "2026-08-28T23:04:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 5,
+          "stod": 2,
+          "derasHash": "021cd34b03000e0c",
+          "egenHash": "121e934b03600e0c",
+          "scen": {
+            "nr": 4,
+            "tFran": 10,
+            "tTill": 15
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/30-lanat-1-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "31": {
+      "nr": 31,
+      "libraryId": "2570589666792338",
+      "lank": "https://www.facebook.com/ads/library/?id=2570589666792338",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2570589666792338.mp4",
+        "langd": 26.9,
+        "rutor": 53
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_PD_3_H1",
+          "IBC_SP_3_H1",
+          "IBC_PD_1_H2"
+        ],
+        "perFilm": {
+          "IBC_CS_5_H1": 5,
+          "IBC_SP_3_H1": 5,
+          "IBC_PD_3_H1": 5,
+          "IBC_PD_4_H3": 1,
+          "IBC_GT_3_H1": 4,
+          "IBC_GT_4_H1": 2,
+          "IBC_PD_4_H1": 2,
+          "IBC_PD_4_H2": 2,
+          "IBC_PD_6_H2": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_SP_5_H1": 2,
+          "IBC_PD_1_H2": 12,
+          "IBC_PD_1_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 52,
+        "utanInnehall": 1,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 45,
+        "andel": 87,
+        "lanadeRutor": 0,
+        "scener": 11,
+        "matchadeScener": 11,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_CS_5_H1": 5,
+          "IBC_SP_3_H1": 5,
+          "IBC_PD_3_H1": 5,
+          "IBC_PD_4_H3": 1,
+          "IBC_GT_3_H1": 4,
+          "IBC_GT_4_H1": 2,
+          "IBC_PD_4_H1": 2,
+          "IBC_PD_4_H2": 2,
+          "IBC_PD_6_H2": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_SP_5_H1": 2,
+          "IBC_PD_1_H2": 12,
+          "IBC_PD_1_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/31-A-egen.jpg",
+          "egenFilm": {
+            "id": "1780621779948363",
+            "namn": "IBC_PD_3_H1",
+            "skapad": "2026-09-05T12:05:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "20c8905511713123",
+          "egenHash": "20c8905511717123",
+          "scen": {
+            "nr": 2,
+            "tFran": 2.5,
+            "tTill": 3.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/31-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/31-B-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c7ce0607070b64c5",
+          "egenHash": "c7ce0607070b64c5",
+          "scen": {
+            "nr": 3,
+            "tFran": 4,
+            "tTill": 6.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/31-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 33.5,
+          "egenI": 67,
+          "egenFil": "output/klipp/KD-2026-001/31-C-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "5ce92430ccd92141",
+          "egenHash": "5ce92430ccb92141",
+          "scen": {
+            "nr": 9,
+            "tFran": 17,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/31-C-deras.jpg",
+          "kontroll": 3
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "32": {
+      "nr": 32,
+      "libraryId": "822924234242433",
+      "lank": "https://www.facebook.com/ads/library/?id=822924234242433",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-822924234242433.mp4",
+        "langd": 23.6,
+        "rutor": 47
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_PD_4_H2",
+          "IBC_PD_Extra",
+          "IBC_PD_6_H2"
+        ],
+        "perFilm": {
+          "IBC_PD_4_H2": 8,
+          "IBC_PD_4_H1": 9,
+          "IBC_SP_3_H1": 5,
+          "IBC_GT_3_H1": 2,
+          "IBC_GT_4_H1": 7,
+          "IBC_PD_3_H1": 5,
+          "IBC_SP_1_H1": 1,
+          "IBC_PD_Extra": 2,
+          "IBC_SP_1_H3": 1,
+          "IBC_SP_5_H1": 1,
+          "IBC_GT_1_H3": 2,
+          "IBC_PD_8_H1": 1,
+          "IBC_CS_5_H1": 1,
+          "IBC_PD_6_H2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 47,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 46,
+        "andel": 98,
+        "lanadeRutor": 0,
+        "scener": 9,
+        "matchadeScener": 9,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_PD_4_H2": 8,
+          "IBC_PD_4_H1": 9,
+          "IBC_SP_3_H1": 5,
+          "IBC_GT_3_H1": 2,
+          "IBC_GT_4_H1": 7,
+          "IBC_PD_3_H1": 5,
+          "IBC_SP_1_H1": 1,
+          "IBC_PD_Extra": 2,
+          "IBC_SP_1_H3": 1,
+          "IBC_SP_5_H1": 1,
+          "IBC_GT_1_H3": 2,
+          "IBC_PD_8_H1": 1,
+          "IBC_CS_5_H1": 1,
+          "IBC_PD_6_H2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/32-A-egen.jpg",
+          "egenFilm": {
+            "id": "1080771684433274",
+            "namn": "IBC_PD_4_H2",
+            "skapad": "2026-09-09T02:15:53+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "5341535a527053b3",
+          "egenHash": "5341535a527053b3",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "derasFil": "output/klipp/KD-2026-001/32-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 13,
+          "derasI": 26,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/32-B-egen.jpg",
+          "egenFilm": {
+            "id": "1443169294347963",
+            "namn": "IBC_PD_Extra",
+            "skapad": "2026-08-28T23:03:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "c99a1a62ec72fa7d",
+          "egenHash": "c19a1a62ec72fa7d",
+          "scen": {
+            "nr": 5,
+            "tFran": 12,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-001/32-B-deras.jpg",
+          "kontroll": 5
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 19.5,
+          "derasI": 39,
+          "egenT": 9.5,
+          "egenI": 19,
+          "egenFil": "output/klipp/KD-2026-001/32-C-egen.jpg",
+          "egenFilm": {
+            "id": "4053712831426721",
+            "namn": "IBC_PD_6_H2",
+            "skapad": "2026-09-15T16:01:09+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "f10102e3c8c434dc",
+          "egenHash": "f10102e3c8c4b4dc",
+          "scen": {
+            "nr": 7,
+            "tFran": 19,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/32-C-deras.jpg",
+          "kontroll": 5
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "33": {
+      "nr": 33,
+      "libraryId": "1434217218630153",
+      "lank": "https://www.facebook.com/ads/library/?id=1434217218630153",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1434217218630153.mp4",
+        "langd": 49.2,
+        "rutor": 98
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_SP_1_H1"
+        ],
+        "perFilm": {
+          "IBC_SP_1_H1": 52,
+          "IBC_CO_2_H1": 1,
+          "IBC_SP_1_H2": 8,
+          "IBC_GT_1_H2": 4,
+          "IBC_SP_1_H3": 3,
+          "IBC_PD_1_H1": 6,
+          "IBC_PD_1_H2": 7,
+          "IBC_PD_Extra": 6,
+          "IBC_SP_5_H1": 1,
+          "IBC_CS_9_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_GT_1_H1": 1,
+          "IBC_GT_1_H3": 3
+        }
+      },
+      "statistik": {
+        "derasRutor": 98,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 94,
+        "andel": 96,
+        "lanadeRutor": 0,
+        "scener": 17,
+        "matchadeScener": 17,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_SP_1_H1": 52,
+          "IBC_CO_2_H1": 1,
+          "IBC_SP_1_H2": 8,
+          "IBC_GT_1_H2": 4,
+          "IBC_SP_1_H3": 3,
+          "IBC_PD_1_H1": 6,
+          "IBC_PD_1_H2": 7,
+          "IBC_PD_Extra": 6,
+          "IBC_SP_5_H1": 1,
+          "IBC_CS_9_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_GT_1_H1": 1,
+          "IBC_GT_1_H3": 3
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 17.5,
+          "derasI": 35,
+          "egenT": 17.5,
+          "egenI": 35,
+          "egenFil": "output/klipp/KD-2026-001/33-A-egen.jpg",
+          "egenFilm": {
+            "id": "2443648059774481",
+            "namn": "IBC_SP_1_H1",
+            "skapad": "2026-08-28T23:04:38+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "1a0c9c6dd741020e",
+          "egenHash": "1b0c9c6dd741020e",
+          "scen": {
+            "nr": 6,
+            "tFran": 13.5,
+            "tTill": 18
+          },
+          "derasFil": "output/klipp/KD-2026-001/33-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 20,
+          "derasI": 40,
+          "egenT": 20,
+          "egenI": 40,
+          "egenFil": "output/klipp/KD-2026-001/33-B-egen.jpg",
+          "egenFilm": {
+            "id": "2443648059774481",
+            "namn": "IBC_SP_1_H1",
+            "skapad": "2026-08-28T23:04:38+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3bb172dafa703284",
+          "egenHash": "3bb172dafa703284",
+          "scen": {
+            "nr": 7,
+            "tFran": 18.5,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/33-B-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 42,
+          "derasI": 84,
+          "egenT": 32,
+          "egenI": 64,
+          "egenFil": "output/klipp/KD-2026-001/33-C-egen.jpg",
+          "egenFilm": {
+            "id": "2443648059774481",
+            "namn": "IBC_SP_1_H1",
+            "skapad": "2026-08-28T23:04:38+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3162e6653178771d",
+          "egenHash": "3162e6653178771d",
+          "scen": {
+            "nr": 14,
+            "tFran": 38,
+            "tTill": 42.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/33-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "34": {
+      "nr": 34,
+      "libraryId": "1577589293324520",
+      "lank": "https://www.facebook.com/ads/library/?id=1577589293324520",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": "bildannons — ingen film att jämföra (texten eller bildträffen bär beviset)",
+      "status": "bild"
+    },
+    "35": {
+      "nr": 35,
+      "libraryId": "1012611565170060",
+      "lank": "https://www.facebook.com/ads/library/?id=1012611565170060",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1012611565170060.mp4",
+        "langd": 30,
+        "rutor": 60
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_PD_4_H1",
+          "IBC_PD_1_H1",
+          "IBC_GT_1_H2"
+        ],
+        "perFilm": {
+          "IBC_GT_3_H1": 5,
+          "IBC_GT_5_H1": 1,
+          "IBC_PD_4_H1": 7,
+          "IBC_SP_3_H1": 1,
+          "IBC_PD_4_H2": 1,
+          "IBC_GT_4_H1": 3,
+          "IBC_PD_3_H1": 1,
+          "IBC_CS_5_H1": 1,
+          "IBC_SP_1_H3": 2,
+          "IBC_GT_1_H2": 3,
+          "IBC_PD_1_H1": 1,
+          "IBC_PD_1_H3": 2,
+          "IBC_PD_Extra": 5,
+          "IBC_SP_1_H2": 3,
+          "IBC_SP_5_H1": 2,
+          "IBC_RI_1_H1": 2,
+          "IBC_PD_1_H2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 59,
+        "utanInnehall": 1,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 41,
+        "andel": 69,
+        "lanadeRutor": 0,
+        "scener": 10,
+        "matchadeScener": 9,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_GT_3_H1": 5,
+          "IBC_GT_5_H1": 1,
+          "IBC_PD_4_H1": 7,
+          "IBC_SP_3_H1": 1,
+          "IBC_PD_4_H2": 1,
+          "IBC_GT_4_H1": 3,
+          "IBC_PD_3_H1": 1,
+          "IBC_CS_5_H1": 1,
+          "IBC_SP_1_H3": 2,
+          "IBC_GT_1_H2": 3,
+          "IBC_PD_1_H1": 1,
+          "IBC_PD_1_H3": 2,
+          "IBC_PD_Extra": 5,
+          "IBC_SP_1_H2": 3,
+          "IBC_SP_5_H1": 2,
+          "IBC_RI_1_H1": 2,
+          "IBC_PD_1_H2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 2,
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/35-A-egen.jpg",
+          "egenFilm": {
+            "id": "973184302489895",
+            "namn": "IBC_PD_4_H1",
+            "skapad": "2026-09-09T02:14:52+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "8ff89e47609a868e",
+          "egenHash": "8fd89e476098868e",
+          "scen": {
+            "nr": 1,
+            "tFran": 0.5,
+            "tTill": 2.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/35-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 12,
+          "derasI": 24,
+          "egenT": 27.5,
+          "egenI": 55,
+          "egenFil": "output/klipp/KD-2026-001/35-B-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3bb172cafa7032c4",
+          "egenHash": "3bb172cafa7032c4",
+          "scen": {
+            "nr": 5,
+            "tFran": 10.5,
+            "tTill": 12.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/35-B-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 13.5,
+          "derasI": 27,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/35-C-egen.jpg",
+          "egenFilm": {
+            "id": "3302692703264106",
+            "namn": "IBC_GT_1_H2",
+            "skapad": "2026-08-28T23:08:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "88935071317147ac",
+          "egenHash": "88935071717147ac",
+          "scen": {
+            "nr": 6,
+            "tFran": 13,
+            "tTill": 15.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/35-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "36": {
+      "nr": 36,
+      "libraryId": "1647442366750043",
+      "lank": "https://www.facebook.com/ads/library/?id=1647442366750043",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": "bildannons — ingen film att jämföra (texten eller bildträffen bär beviset)",
+      "status": "bild"
+    },
+    "37": {
+      "nr": 37,
+      "libraryId": "1025355243884934",
+      "lank": "https://www.facebook.com/ads/library/?id=1025355243884934",
+      "start": "2026-09-24",
+      "varAnnons": {
+        "id": "120250154956130291",
+        "namn": "IBC_GT_4_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1025355243884934.mp4",
+        "langd": 21,
+        "rutor": 42
+      },
+      "egen": {
+        "jamforda": 204,
+        "senare": 36,
+        "anvanda": [
+          "IBC_PD_1_H1",
+          "IBC_GT_1_H2",
+          "IBC_CS_5_H1"
+        ],
+        "perFilm": {
+          "IBC_GT_3_H1": 3,
+          "IBC_PD_6_H1": 1,
+          "IBC_PD_4_H3": 3,
+          "IBC_SP_1_H1": 2,
+          "IBC_SP_1_H3": 2,
+          "IBC_GT_1_H2": 3,
+          "IBC_PD_1_H1": 3,
+          "IBC_PD_1_H3": 1,
+          "IBC_SP_1_H2": 3,
+          "IBC_PD_1_H2": 2,
+          "IBC_PD_Extra": 2,
+          "IBC_PD_8_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_PD_11_H1": 1,
+          "IBC_CS_5_H1": 2,
+          "IBC_PD_3_H1": 2,
+          "IBC_PD_6_H2": 2,
+          "IBC_PD_4_H1": 2,
+          "IBC_PD_4_H2": 2,
+          "IBC_CS_4_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 42,
+        "utanInnehall": 0,
+        "egnaRutor": 10249,
+        "filmer": 204,
+        "filmerSenare": 36,
+        "traffar": 39,
+        "andel": 93,
+        "lanadeRutor": 0,
+        "scener": 8,
+        "matchadeScener": 8,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_GT_3_H1": 3,
+          "IBC_PD_6_H1": 1,
+          "IBC_PD_4_H3": 3,
+          "IBC_SP_1_H1": 2,
+          "IBC_SP_1_H3": 2,
+          "IBC_GT_1_H2": 3,
+          "IBC_PD_1_H1": 3,
+          "IBC_PD_1_H3": 1,
+          "IBC_SP_1_H2": 3,
+          "IBC_PD_1_H2": 2,
+          "IBC_PD_Extra": 2,
+          "IBC_PD_8_H1": 1,
+          "IBC_RI_1_H1": 1,
+          "IBC_PD_11_H1": 1,
+          "IBC_CS_5_H1": 2,
+          "IBC_PD_3_H1": 2,
+          "IBC_PD_6_H2": 2,
+          "IBC_PD_4_H1": 2,
+          "IBC_PD_4_H2": 2,
+          "IBC_CS_4_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 27.5,
+          "egenI": 55,
+          "egenFil": "output/klipp/KD-2026-001/37-A-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3bb172cafa7032c4",
+          "egenHash": "3bb172cafa7032c4",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 6
+          },
+          "derasFil": "output/klipp/KD-2026-001/37-A-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/37-B-egen.jpg",
+          "egenFilm": {
+            "id": "3302692703264106",
+            "namn": "IBC_GT_1_H2",
+            "skapad": "2026-08-28T23:08:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "88935071217147ac",
+          "egenHash": "88935071717147ac",
+          "scen": {
+            "nr": 3,
+            "tFran": 6.5,
+            "tTill": 8.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/37-B-deras.jpg",
+          "kontroll": 5
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 14.5,
+          "derasI": 29,
+          "egenT": 4.5,
+          "egenI": 9,
+          "egenFil": "output/klipp/KD-2026-001/37-C-egen.jpg",
+          "egenFilm": {
+            "id": "1870000097502293",
+            "namn": "IBC_CS_5_H1",
+            "skapad": "2026-09-15T15:51:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c7ce0607071b64c5",
+          "egenHash": "c7ce0607071b64c5",
+          "scen": {
+            "nr": 5,
+            "tFran": 14,
+            "tTill": 16.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/37-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    }
+  }
+}

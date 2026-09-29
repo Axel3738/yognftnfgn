@@ -421,6 +421,49 @@ skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
 
+### Axels granskning av de 16 skarpa svaren 2026-09-29 — sju regler ändrade
+
+Axel läste alla botens skarpa svar 23–29/9 (`autosvar/GRANSKNING-2026-09-29.md`,
+sidan https://claude.ai/artifact/QEFnetPPAoLZNupp3QWQ8V) och tog beslut mejl
+för mejl. Allt är inlagt och testat (`test/autosvar.test.mjs` → "Axels
+granskning 2026-09-29"):
+
+| Kund | Vad boten gjorde | Axels beslut | Regeln nu |
+|---|---|---|---|
+| Hans (garanti, "vilket överdrag skall jag välja") | bildförfrågan (`garanti` ⇒ skadad_defekt) | "vi svarar inte på sådana mejl, det är inget urgent" | **Fråga före köp ⇒ SVÅR** (`hinkar.arForkop`: inget ordernummer, inget ord om en mottagen vara, en förköpsfråga — garanti, passar den, vilken storlek, innan jag beställer — och inget klagomål). Samma ord med "fick överdraget … gick sönder" är fortfarande ett ärende |
+| Stevan ("Kan jag avbryta denna orden?") | eskaleringsmallen | "han får bara ignorera att svara på det" | **Avbeställning ⇒ SVÅR**, före ilsketesten. Dessutom räknas hälsningsrader ("Hej!", "Tack på förhand!") aldrig som utropstecken (`utropstecken()`) |
+| Johan ("jätte små!! … kan inte ha dom") | eskaleringsmallen för `!!` | "inte ett mejl boten måste svara på" | **Byte ⇒ SVÅR före ilsketesten**; `BYTE` bär nu "jätte/väldigt/alldeles för små", "kan inte ha dom", "får inte på mig dom", och ordet *storlek* i mejlet räcker som kategori |
+| Mikael ("blev väldigt besviken", passar inte) | ARG + "har du mer information" | "besviken ska inte trigga mallen; det som är bra är bilden" | `besviken`/`skuffet`/`pettynyt`/`disappointed` borta ur `ARGORD`; "passar inte" är inte längre byte utan **ENKEL `foton` med passformsbilden** |
+| Peter (stämmer inte med bilden, "lurad") | ARG + bilder + "mer information" | "behövs inte — skriv 'Vad är ditt ordernummer?'" | `som_pa_bilden` får **ingen bildförfrågan**; frågan efter ordernumret ställs alltid när numret saknas i mejlet (`behoverOrdernummer`), även när ordern hittats på e-posten — utom när svaret redan visar ordern i läget. `SOM_PA_BILDEN` känner igen "stämmer inte överens med det som bilden visar" |
+| Alla arga | "Har du mer information som kan hjälpa oss lösa det snabbare …" | "det behöver vi inte skriva" | **`merInfo` är borta ur alla fem språk.** Det arga svaret är: hälsning, empati + problemet, eskalerat inom 48 h, [läget], [ordernumret?], [bilder], [retur], signatur |
+| Bosse (bara "inte fått någon orderbekräftelse") | läget med skanningar, "spårningen står still", fönster | "bara länken och det där med skräpposten" | `svar.baraBekraftelse` ⇒ **`enbartLank`**: kollat + på väg + länken + skräppostraden, inget om skanningar |
+| Rolf ("undrar när mitt överdrag kommer") | "står still"-raden + "Beräknad leverans" | "samma där, ändra det" | **Stilla-raden bara när kunden själv tar upp det** (`namnerStillaSparning`), aldrig av sig själv på en gammal skanning. **Leveransfönstret står aldrig bredvid spårningslänken** (Axels order 2026-09-21 — `lageRader` bar ändå fönstret; nu bara utan länk) |
+| Peter H (leveranstid före köp) | "Leveranstiden är 7-14 dagar" | "den skriver fel; skicka spårningslänken också" | **Arbetsdagar** ur `svar.leverans_arbetsdagar` (standard 5–10; brandfilen; `brandUrButiksfil` läser "5–10 arbetsdagar" ur butiksfilen) i `leveranstid` och `fonsterDagar`, plus länken till butikens spårningssida (`svar.sparningssida`) |
+| Mats (hos ombudet utan kod, "dom vägrar lämna ut paketet!") | generisk ARG utan lösning | "bra att den hanterar hans invändning — han ska kontakta postföretaget" | `svar.namnerHamtaUt` ⇒ X-raden `hamta_ut` + läget med ombud och kolli + raden **"Aviseringen med koden skickas av fraktbolaget, inte av oss. Kolla SMS och skräpposten. Hos ombudet räcker det oftast med legitimation och kollinumret … kontakta PostNord direkt"** (ARG när tonen är arg, annars ENKEL wismo) |
+| Ann, Pierre, Sören (returer) | rätt svar, men **Sjöhed 160** som returadress | "bara byt till nya adressen; vi ska skicka med retursedeln" | Brandfilen bär Stenkolsgatan 1B sedan 2026-09-28; Railway kör bygget efter bytet (omstart 2026-09-29 07:26 UTC). **Retursedeln väntar på Axels PDF** — görs om med nya adressen och länkas i returmallen när den finns. Kunden betalar returfrakten själv (Axel: "varför kan inte kunden stå för den?") |
+
+✅ **Retursedeln (Axels bild 2026-09-29 kväll):** `kundtjanst/retursedel/bygg.mjs`
+renderar `retursedel.html` (STONEBITE, "Posta till:", Stonebite Ecom AB,
+Stenkolsgatan 1B, 417 07 Göteborg, Sverige) i Chromium → `retursedel.png`, och
+`--ladda-upp` lägger den i Matstrumpors Shopify Files (samma väg som
+konkurrentdödarens bevisbilder): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/retursedel.png?v=1790677409
+(200, 64 kB, läst tillbaka). Länken står i `tvister.retursedel_url` i
+Bäverbutikens, CaraShells och Matstrumpors brandfiler, och returmallen bär
+raden "Skriv gärna ut retursedeln och klistra den på paketet: …" på fem språk
+(tom URL ⇒ ingen rad). Ny adress ⇒ ändra html:en, kör `bygg.mjs --ladda-upp`,
+byt URL:en i brandfilerna. CaraShells danska kunder får `/da/pages/spara`
+sedan samma kväll (`svar.sparningssidor.da`).
+
+Svaren till Axels frågor, mätta: Mats paket (#7020, 4PX) stod hos ombudet från
+24/9 09:12, han skrev 25/9 18:43 och hämtade 26/9 10:01 — avin/koden kommer
+från sista-bitens fraktbolag, inte från oss (vår spårningssida visar ombud och
+kolli vid `READY_FOR_PICKUP`). Stevan skrev dag 6 efter ordern (#7800, lagd
+21/9, skickad 22/9, paketet i Kina 26/9). Peters produkt är Båtmotorskydd 420D
+(#7056, levererat 24/9). Johans mejl triggade regeln "två utropstecken i
+rad". Stevans eget mejl ger SVÅR när det körs om; det skarpa ARG-svaret kom
+troligen ur utropstecken i det citerade Shopify-mejlet — inte fastställt, men
+avbeställning stoppas nu före ilsketesten oavsett.
+
 ### ⛔ SKARPT sedan 2026-09-23 ~13:10 CEST — Axels beslut A
 
 Axel trodde botten redan skickade ("Nej va??? Varför kör inte botten, den ska

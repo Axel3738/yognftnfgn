@@ -54,7 +54,7 @@ import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
 import { HINK, hinka, beslut, redanBesvaradAvOss, arReturfraga } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
-import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning, namnerHamtaUt, baraBekraftelse } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
 import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
@@ -155,7 +155,9 @@ export async function korBrand(brand, {
     // Fakta för ENKEL (där de avgör svaret) och för ARG om paketet (där de
     // läggs till som ett stycke — en arg "var är paketet"-kund ska få veta det).
     let fakta = null;
-    const omPaketet = (hink.klass.alla ?? []).some((x) => ['var_ar_ordern', 'ej_levererad'].includes(x.id));
+    // Står kunden hos ombudet utan kod (Mats 2026-09-25) handlar mejlet om paketet: läget + vad hen gör hos ombudet.
+    const hamtaUt = namnerHamtaUt(`${mejl.amne}\n${mejl.text}`);
+    const omPaketet = (hink.klass.alla ?? []).some((x) => ['var_ar_ordern', 'ej_levererad'].includes(x.id)) || hamtaUt;
     const returfraga = arReturfraga({ amne: mejl.amne, text: mejl.text });
     // ARG hämtar alltid faktan: ordern hittas på e-posten även när numret saknas i mejlet (Tobias-feedbacken 2026-09-22), och då behöver svaret inte be om det.
     if ((hink.hink === HINK.ENKEL && ['wismo', 'adress', 'retur'].includes(hink.typ)) || hink.hink === HINK.ARG) {
@@ -184,7 +186,7 @@ export async function korBrand(brand, {
             // Läget ur Shopify/17TRACK som eget stycke — bara när mejlet handlar om paketet, med färsk fakta (ingen spärr) och kundens egen order.
             let lage = null;
             if (omPaketet && fakta?.order && !fakta.sparr) {
-              try { lage = { namn: fakta.order.namn, rader: lageRader({ sprak: post.sprak, fakta, brand: konfig, stilla, nu }) }; }
+              try { lage = { namn: fakta.order.namn, rader: lageRader({ sprak: post.sprak, fakta, brand: konfig, stilla, hamtaUt, nu }) }; }
               catch (e) { lage = null; logg(`uid ${m.uid}: läget kunde inte byggas (${e.message}) — det arga svaret går utan`); }
             }
             post.lage = Boolean(lage);
@@ -200,17 +202,18 @@ export async function korBrand(brand, {
             const retur = returfraga ? returText({ sprak: post.sprak, brand: konfig, ordernummer }) : null;
             post.retur = Boolean(retur);
             // SOP 05/08: skadad, fel eller undermålig vara ("skräp", "ser inte ut som på bilden") ⇒ be om de tre bilderna i samma svar (Axels feedback 2026-09-22: "jättebra att vi frågar efter bilder direkt").
-            const foton = villHaFoton(hink.klass) || ['kvalitet', 'som_pa_bilden', 'skadad_defekt', 'fel_vara'].includes(x);
+            // "Ser inte ut som på bilden" får ingen bildförfrågan (Axels granskning 2026-09-29, Peter: bilderna hjälper inte, ordernumret gör det).
+            const foton = x !== 'som_pa_bilden' && (villHaFoton(hink.klass) || ['kvalitet', 'skadad_defekt', 'fel_vara'].includes(x));
             // Vilka bilder: 'vara' (slutat fungera ⇒ bild/video på felet) eller 'leverans' (transportskada/fel vara ⇒ varan, förpackningen, fraktetiketten). Hans bränslepump 2026-09-22.
             const fotonTyp = fotonTypFor({ klass: hink.klass, text: `${mejl.amne}\n${mejl.text}` });
             if (foton) post.fotonTyp = fotonTyp;
-            // Saknas ordernumret (inte i mejlet, ingen order på adressen) ber svaret om det i stället för "har du mer information".
-            post.behoverOrdernummer = !ordernummer;
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, fotonTyp, lage, namn, opostadDagar, retur, behoverOrdernummer: !ordernummer }).text;
+            // Skrev kunden inte ordernumret frågar svaret efter det — även när ordern hittats på e-posten (Axels beslut 2026-09-29, Peter: "det kan skapa komplikationer om han har fel mejl"), utom när svaret redan visar ordern i läget.
+            post.behoverOrdernummer = !(hink.klass.ordernummer?.length) && !lage;
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, fotonTyp, lage, namn, opostadDagar, retur, behoverOrdernummer: post.behoverOrdernummer }).text;
           } else {
             const fotonTyp = d.typ === 'foton' ? fotonTypFor({ klass: hink.klass, text: `${mejl.amne}\n${mejl.text}` }) : 'leverans';
             if (d.typ === 'foton') post.fotonTyp = fotonTyp;
-            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, fotonTyp, nu }).text;
+            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, enbartLank: baraBekraftelse(`${mejl.amne}\n${mejl.text}`), hamtaUt, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, fotonTyp, nu }).text;
           }
         } catch (e) {
           text = null;

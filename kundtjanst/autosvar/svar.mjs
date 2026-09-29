@@ -76,17 +76,17 @@ const T = {
     ingenSkanning: 'Fraktbolaget brukar visa den första skanningen 2-4 dagar efter att paketet skickats.',
     folj: (l, nr) => (nr ? `Ditt spårningsnummer hos oss är ${nr}, och du följer paketet här: ${l}` : `Du följer paketet här: ${l}`),
     fonster: (a, b) => `Beräknad leverans: ${a} till ${b}.`,
-    fonsterDagar: (a, b) => `Beräknad leveranstid är ${a}-${b} dagar från att paketet skickas.`,
+    fonsterDagar: (a, b) => `Beräknad leveranstid är ${a}-${b} arbetsdagar från att paketet skickas.`,
     ejSkickad: (o, d, n) => `Din order ${o} är mottagen ${d} och packas inom ${n} arbetsdagar. Du får ett mejl med spårningslänk så fort paketet skickas.`,
-    leveranstid: (a, b, n) => `Leveranstiden är ${a}-${b} dagar från att paketet skickats. Vi skickar inom ${n} arbetsdagar efter beställningen, och du får ett mejl med spårningslänk när det går iväg. Kolla även skräpposten om mejlet inte syns.`,
+    // Arbetsdagar, aldrig "7-14 dagar" (Axels order 2026-09-21; boten skrev det ändå till Peter H 2026-09-28). Länken till spårningssidan när butiken har en.
+    leveranstid: (a, b, n, sida) => `Leveranstiden är ${a}-${b} arbetsdagar från att paketet skickats. Vi skickar inom ${n} arbetsdagar efter beställningen, och du får ett mejl med spårningslänk när det går iväg. Kolla även skräpposten om mejlet inte syns.${sida ? ` Du följer paketet här: ${sida}` : ''}`,
     oppettider: (h) => `Vi svarar på mejl inom ${h} timmar på vardagar. Skriv gärna ordernumret i mejlet, så går det snabbare.`,
     adress: (o) => `Tack, jag har skickat din nya adress vidare till vårt lager med prioritet. Din order ${o} har inte skickats än. Hinner de ändra innan paketet går iväg går det till den nya adressen. Hör av dig direkt om leveransbekräftelsen visar fel adress.`,
     // ARG (Axels feedback 2026-09-22): empati, problemet i klartext, sen eskaleringen.
     arg: (x) => `Jag förstår helt din frustration. ${x}`,
     eskalerat: (h) => `Jag har eskalerat det här direkt till vårt ansvariga team som ett brådskande ärende. Du kan räkna med svar inom ${h} timmar.`,
-    merInfo: 'Har du mer information som kan hjälpa oss lösa det snabbare får du gärna svara på det här mejlet.',
-    // Saknas ordernumret (inte i mejlet, ingen order på adressen) ersätter den här raden merInfo (Tobias-feedbacken).
-    ordernummerArg: 'För att vi ska kunna hitta din order behöver vi ditt ordernummer. Skriv gärna det i ditt svar, tillsammans med annat som kan hjälpa oss lösa det snabbare.',
+    // Saknas ordernumret i kundens mejl frågar det arga svaret rakt ut (Axels granskning 2026-09-29: Peter). Raden "har du mer information … svara" är borta ur alla arga svar.
+    ordernummerArg: 'Vad är ditt ordernummer? Skriv det i ditt svar så hittar vi ordern direkt.',
     opostad: (n) => `Din order har legat opostad i ${n} dagar, och det är inte acceptabelt.`,
     lageIntro: (o) => `Det här ser jag just nu om din order ${o}:`,
     // SOP 36/37: spårningen får stå still, sista biten tar 1-2 arbetsdagar, ombud/ute för leverans.
@@ -94,6 +94,8 @@ const T = {
     framme: (bolag) => `Paketet ligger hos ${bolag} för sista biten. Det brukar levereras inom 1-2 arbetsdagar.`,
     uteForLeverans: 'Paketet är ute för leverans i dag.',
     hamta: (bolag, nr, lank) => `Paketet finns att hämta hos ombudet${bolag ? ` (${bolag}${nr ? `, kolli ${nr}` : ''})` : ''}.${lank ? ` Ombud och öppettider: ${lank}` : ''}`,
+    // Kunden står hos ombudet utan kod (Mats #7020, 2026-09-25): koden kommer från fraktbolaget, inte från oss — och det är dem kunden kontaktar (Axels beslut 2026-09-29).
+    hamtaUt: (bolag, nr, lank) => `Aviseringen med koden skickas av fraktbolaget, inte av oss. Kolla SMS och skräpposten. Hos ombudet räcker det oftast med legitimation${nr ? ` och kollinumret ${nr}` : ''}. Får du ändå inte ut paketet: kontakta ${bolag || 'fraktbolaget'} direkt${lank ? ` (${lank})` : ''}.`,
     // SOP 06: levererat men inte mottaget — checklistan, aldrig ordet "borttappat".
     levererad: (d, plats) => `Enligt fraktbolaget levererades paketet ${d}${plats ? ` (${plats})` : ''}.`,
     levereradUtanDatum: 'Enligt fraktbolaget är paketet levererat.',
@@ -119,6 +121,7 @@ const T = {
       '3. Skicka paketet till:',
       ...r.adress,
       'Skicka det som brev eller paket direkt till adressen ovan, inte till ett ombud. Vi hämtar inte ut paket från ombud.',
+      ...(r.sedel ? [`Skriv gärna ut retursedeln och klistra den på paketet: ${r.sedel}`] : []),
       '4. Använd gärna en spårbar frakttjänst, och svara på det här mejlet med spårningsnumret när du postat paketet. Då följer vi upp så fort det kommit fram.',
       ...(r.frakt === 'kund' ? ['Returfrakten står du själv för.'] : r.frakt === 'butik' ? ['Vi står för returfrakten. Svara på det här mejlet så ordnar vi en fraktsedel.'] : []),
       ...(r.dagar ? [`Returen ska skickas inom ${r.dagar} dagar från att du tog emot varan.`] : []),
@@ -146,6 +149,7 @@ const T = {
       chargeback_hot: 'Det du beskriver är helt oacceptabelt, och det är inget vi står för.',
       vantat: 'Att du fått vänta på svar är inte acceptabelt, och det är inget vi står för.',
       levererat_ej_mottaget: 'Ett paket som markerats som levererat utan att du fått det är helt oacceptabelt, och det är inget vi står för.',
+      hamta_ut: 'Att stå hos ombudet utan att få ut sitt paket är inte acceptabelt, och det är inget vi står för.',
       standard: 'Det du beskriver är helt oacceptabelt, och det är inget vi står för.',
     },
   },
@@ -158,21 +162,21 @@ const T = {
     ingenSkanning: 'Fraktselskapet viser vanligvis den første skanningen 2-4 dager etter at pakken er sendt.',
     folj: (l, nr) => (nr ? `Sporingsnummeret ditt hos oss er ${nr}, og du følger pakken her: ${l}` : `Du følger pakken her: ${l}`),
     fonster: (a, b) => `Beregnet levering: ${a} til ${b}.`,
-    fonsterDagar: (a, b) => `Beregnet leveringstid er ${a}-${b} dager fra pakken sendes.`,
+    fonsterDagar: (a, b) => `Beregnet leveringstid er ${a}-${b} virkedager fra pakken sendes.`,
     ejSkickad: (o, d, n) => `Bestillingen din ${o} er mottatt ${d} og pakkes innen ${n} virkedager. Du får en e-post med sporingslenke så snart pakken sendes.`,
-    leveranstid: (a, b, n) => `Leveringstiden er ${a}-${b} dager fra pakken er sendt. Vi sender innen ${n} virkedager etter bestillingen, og du får en e-post med sporingslenke når den går. Sjekk også søppelposten hvis e-posten ikke dukker opp.`,
+    leveranstid: (a, b, n, sida) => `Leveringstiden er ${a}-${b} virkedager fra pakken er sendt. Vi sender innen ${n} virkedager etter bestillingen, og du får en e-post med sporingslenke når den går. Sjekk også søppelposten hvis e-posten ikke dukker opp.${sida ? ` Du følger pakken her: ${sida}` : ''}`,
     oppettider: (h) => `Vi svarer på e-post innen ${h} timer på hverdager. Skriv gjerne ordrenummeret i e-posten, så går det raskere.`,
     adress: (o) => `Takk, jeg har sendt den nye adressen din videre til lageret vårt med prioritet. Bestillingen din ${o} er ikke sendt ennå. Rekker de å endre før pakken går, sendes den til den nye adressen. Ta kontakt med en gang hvis leveringsbekreftelsen viser feil adresse.`,
     arg: (x) => `Jeg forstår frustrasjonen din fullt ut. ${x}`,
     eskalerat: (h) => `Jeg har eskalert dette direkte til det ansvarlige teamet vårt som en hastesak. Du kan regne med svar innen ${h} timer.`,
-    merInfo: 'Har du mer informasjon som kan hjelpe oss å løse dette raskere, er det bare å svare på denne e-posten.',
-    ordernummerArg: 'For at vi skal kunne finne bestillingen din trenger vi ordrenummeret ditt. Skriv det gjerne i svaret ditt, sammen med annet som kan hjelpe oss å løse dette raskere.',
+    ordernummerArg: 'Hva er ordrenummeret ditt? Skriv det i svaret, så finner vi bestillingen med en gang.',
     opostad: (n) => `Bestillingen din har ligget usendt i ${n} dager, og det er ikke akseptabelt.`,
     lageIntro: (o) => `Dette ser jeg akkurat nå om bestillingen din ${o}:`,
     stilla: 'Det er helt normalt at sporingen står stille noen dager underveis. Pakken er på vei likevel.',
     framme: (bolag) => `Pakken ligger hos ${bolag} for siste etappe. Den blir vanligvis levert innen 1-2 virkedager.`,
     uteForLeverans: 'Pakken er ute for levering i dag.',
     hamta: (bolag, nr, lank) => `Pakken kan hentes på utleveringsstedet${bolag ? ` (${bolag}${nr ? `, kolli ${nr}` : ''})` : ''}.${lank ? ` Utleveringssted og åpningstider: ${lank}` : ''}`,
+    hamtaUt: (bolag, nr, lank) => `Varselet med hentekoden sendes av fraktselskapet, ikke av oss. Sjekk SMS og søppelposten. På utleveringsstedet holder det som regel med legitimasjon${nr ? ` og kollinummeret ${nr}` : ''}. Får du likevel ikke ut pakken: kontakt ${bolag || 'fraktselskapet'} direkte${lank ? ` (${lank})` : ''}.`,
     levererad: (d, plats) => `Ifølge fraktselskapet ble pakken levert ${d}${plats ? ` (${plats})` : ''}.`,
     levereradUtanDatum: 'Ifølge fraktselskapet er pakken levert.',
     levereradKolla: 'Sjekk gjerne: postkassen, om det ligger en hentelapp, nærmeste utleveringssted, hos naboer og et skjermet sted ved døren. Finner du den fortsatt ikke: svar på denne e-posten, så undersøker vi videre med en gang.',
@@ -191,6 +195,7 @@ const T = {
       '3. Send pakken til:',
       ...r.adress,
       'Send den som brev eller pakke direkte til adressen over, ikke til et hentested. Vi henter ikke ut pakker fra hentesteder.',
+      ...(r.sedel ? [`Skriv gjerne ut returseddelen og fest den på pakken: ${r.sedel}`] : []),
       '4. Bruk gjerne en sporbar frakttjeneste, og svar på denne e-posten med sporingsnummeret når du har sendt pakken. Da følger vi opp så snart den har kommet frem.',
       ...(r.frakt === 'kund' ? ['Returfrakten betaler du selv.'] : r.frakt === 'butik' ? ['Vi dekker returfrakten. Svar på denne e-posten, så ordner vi en fraktseddel.'] : []),
       ...(r.dagar ? [`Returen må sendes innen ${r.dagar} dager etter at du mottok varen.`] : []),
@@ -215,6 +220,7 @@ const T = {
       chargeback_hot: 'Det du beskriver er helt uakseptabelt, og det er ikke noe vi står for.',
       vantat: 'At du har måttet vente på svar er ikke akseptabelt, og det er ikke noe vi står for.',
       levererat_ej_mottaget: 'En pakke som er merket som levert uten at du har fått den er helt uakseptabelt, og det er ikke noe vi står for.',
+      hamta_ut: 'Å stå på utleveringsstedet uten å få ut pakken sin er ikke akseptabelt, og det er ikke noe vi står for.',
       standard: 'Det du beskriver er helt uakseptabelt, og det er ikke noe vi står for.',
     },
   },
@@ -227,21 +233,21 @@ const T = {
     ingenSkanning: 'Fragtfirmaet viser normalt den første scanning 2-4 dage efter at pakken er sendt.',
     folj: (l, nr) => (nr ? `Dit sporingsnummer hos os er ${nr}, og du kan følge pakken her: ${l}` : `Du kan følge pakken her: ${l}`),
     fonster: (a, b) => `Forventet levering: ${a} til ${b}.`,
-    fonsterDagar: (a, b) => `Forventet leveringstid er ${a}-${b} dage fra pakken sendes.`,
+    fonsterDagar: (a, b) => `Forventet leveringstid er ${a}-${b} hverdage fra pakken sendes.`,
     ejSkickad: (o, d, n) => `Din ordre ${o} er modtaget ${d} og pakkes inden for ${n} hverdage. Du får en mail med sporingslink, så snart pakken er sendt.`,
-    leveranstid: (a, b, n) => `Leveringstiden er ${a}-${b} dage fra pakken er sendt. Vi sender inden for ${n} hverdage efter bestillingen, og du får en mail med sporingslink, når den afsendes. Tjek også spam, hvis mailen ikke dukker op.`,
+    leveranstid: (a, b, n, sida) => `Leveringstiden er ${a}-${b} hverdage fra pakken er sendt. Vi sender inden for ${n} hverdage efter bestillingen, og du får en mail med sporingslink, når den afsendes. Tjek også spam, hvis mailen ikke dukker op.${sida ? ` Du følger pakken her: ${sida}` : ''}`,
     oppettider: (h) => `Vi svarer på mails inden for ${h} timer på hverdage. Skriv gerne ordrenummeret i mailen, så går det hurtigere.`,
     adress: (o) => `Tak, jeg har sendt din nye adresse videre til vores lager med prioritet. Din ordre ${o} er ikke sendt endnu. Når de at ændre den, før pakken afsendes, sendes den til den nye adresse. Skriv straks, hvis leveringsbekræftelsen viser en forkert adresse.`,
     arg: (x) => `Jeg forstår fuldt ud din frustration. ${x}`,
     eskalerat: (h) => `Jeg har eskaleret det her direkte til vores ansvarlige team som en hastesag. Du kan regne med svar inden for ${h} timer.`,
-    merInfo: 'Har du flere oplysninger, der kan hjælpe os med at løse det hurtigere, må du meget gerne svare på denne mail.',
-    ordernummerArg: 'For at vi kan finde din ordre har vi brug for dit ordrenummer. Skriv det gerne i dit svar, sammen med andet, der kan hjælpe os med at løse det hurtigere.',
+    ordernummerArg: 'Hvad er dit ordrenummer? Skriv det i dit svar, så finder vi ordren med det samme.',
     opostad: (n) => `Din ordre har ligget uafsendt i ${n} dage, og det er ikke acceptabelt.`,
     lageIntro: (o) => `Det her kan jeg se lige nu om din ordre ${o}:`,
     stilla: 'Det er helt normalt, at sporingen står stille nogle dage undervejs. Pakken er på vej alligevel.',
     framme: (bolag) => `Pakken ligger hos ${bolag} til den sidste del. Den bliver normalt leveret inden for 1-2 hverdage.`,
     uteForLeverans: 'Pakken er ude til levering i dag.',
     hamta: (bolag, nr, lank) => `Pakken kan hentes i pakkeshoppen${bolag ? ` (${bolag}${nr ? `, kolli ${nr}` : ''})` : ''}.${lank ? ` Pakkeshop og åbningstider: ${lank}` : ''}`,
+    hamtaUt: (bolag, nr, lank) => `Beskeden med afhentningskoden sendes af fragtfirmaet, ikke af os. Tjek SMS og spam. I pakkeshoppen er legitimation${nr ? ` og kollinummeret ${nr}` : ''} som regel nok. Kan du stadig ikke få pakken udleveret: kontakt ${bolag || 'fragtfirmaet'} direkte${lank ? ` (${lank})` : ''}.`,
     levererad: (d, plats) => `Ifølge fragtfirmaet blev pakken leveret ${d}${plats ? ` (${plats})` : ''}.`,
     levereradUtanDatum: 'Ifølge fragtfirmaet er pakken leveret.',
     levereradKolla: 'Tjek gerne: postkassen, om der ligger en afhentningsseddel, nærmeste pakkeshop, hos naboer og et beskyttet sted ved døren. Finder du den stadig ikke: svar på denne mail, så undersøger vi det straks nærmere.',
@@ -260,6 +266,7 @@ const T = {
       '3. Send pakken til:',
       ...r.adress,
       'Send den som brev eller pakke direkte til adressen ovenfor, ikke til en pakkeshop. Vi henter ikke pakker i pakkeshops.',
+      ...(r.sedel ? [`Print gerne retursedlen og sæt den på pakken: ${r.sedel}`] : []),
       '4. Brug gerne en sporbar fragtservice, og svar på denne mail med sporingsnummeret, når du har sendt pakken. Så følger vi op, så snart den er nået frem.',
       ...(r.frakt === 'kund' ? ['Returfragten betaler du selv.'] : r.frakt === 'butik' ? ['Vi betaler returfragten. Svar på denne mail, så sender vi en fragtlabel.'] : []),
       ...(r.dagar ? [`Returen skal sendes inden for ${r.dagar} dage, efter at du modtog varen.`] : []),
@@ -284,6 +291,7 @@ const T = {
       chargeback_hot: 'Det, du beskriver, er helt uacceptabelt, og det er ikke noget, vi står for.',
       vantat: 'At du har måttet vente på svar er ikke acceptabelt, og det er ikke noget, vi står for.',
       levererat_ej_mottaget: 'En pakke, der er markeret som leveret, uden at du har fået den, er helt uacceptabelt, og det er ikke noget, vi står for.',
+      hamta_ut: 'At stå i pakkeshoppen uden at få sin pakke udleveret er ikke acceptabelt, og det er ikke noget, vi står for.',
       standard: 'Det, du beskriver, er helt uacceptabelt, og det er ikke noget, vi står for.',
     },
   },
@@ -296,21 +304,21 @@ const T = {
     ingenSkanning: 'Kuljetusyhtiö näyttää ensimmäisen skannauksen yleensä 2-4 päivää lähetyksen jälkeen.',
     folj: (l, nr) => (nr ? `Seurantanumerosi meillä on ${nr}, ja voit seurata pakettia täällä: ${l}` : `Voit seurata pakettia täällä: ${l}`),
     fonster: (a, b) => `Arvioitu toimitus ${a} ja ${b} välillä.`,
-    fonsterDagar: (a, b) => `Arvioitu toimitusaika on ${a}-${b} päivää paketin lähettämisestä.`,
+    fonsterDagar: (a, b) => `Arvioitu toimitusaika on ${a}-${b} arkipäivää paketin lähettämisestä.`,
     ejSkickad: (o, d, n) => `Tilauksesi ${o} on vastaanotettu ${d}, ja se pakataan ${n} arkipäivän kuluessa. Saat sähköpostin seurantalinkillä heti, kun paketti lähetetään.`,
-    leveranstid: (a, b, n) => `Toimitusaika on ${a}-${b} päivää paketin lähettämisestä. Lähetämme ${n} arkipäivän kuluessa tilauksesta, ja saat sähköpostin seurantalinkillä, kun paketti lähtee. Tarkista myös roskaposti, jos viesti ei näy.`,
+    leveranstid: (a, b, n, sida) => `Toimitusaika on ${a}-${b} arkipäivää paketin lähettämisestä. Lähetämme ${n} arkipäivän kuluessa tilauksesta, ja saat sähköpostin seurantalinkillä, kun paketti lähtee. Tarkista myös roskaposti, jos viesti ei näy.${sida ? ` Seuraat pakettia täältä: ${sida}` : ''}`,
     oppettider: (h) => `Vastaamme sähköposteihin ${h} tunnin kuluessa arkipäivisin. Kirjoita tilausnumero viestiin, niin asia hoituu nopeammin.`,
     adress: (o) => `Kiitos, välitin uuden osoitteesi varastollemme kiireellisenä. Tilaustasi ${o} ei ole vielä lähetetty. Jos he ehtivät muuttaa osoitteen ennen lähetystä, paketti lähetetään uuteen osoitteeseen. Ota heti yhteyttä, jos lähetysvahvistuksessa näkyy väärä osoite.`,
     arg: (x) => `Ymmärrän turhautumisesi täysin. ${x}`,
     eskalerat: (h) => `Olen välittänyt tämän suoraan vastuutiimillemme kiireellisenä asiana. Voit odottaa vastausta ${h} tunnin kuluessa.`,
-    merInfo: 'Jos sinulla on lisätietoja, jotka auttavat meitä ratkaisemaan asian nopeammin, vastaa tähän viestiin.',
-    ordernummerArg: 'Jotta löydämme tilauksesi, tarvitsemme tilausnumerosi. Kirjoita se vastaukseesi yhdessä muiden tietojen kanssa, jotka voivat auttaa meitä ratkaisemaan asian nopeammin.',
+    ordernummerArg: 'Mikä on tilausnumerosi? Kirjoita se vastaukseesi, niin löydämme tilauksen heti.',
     opostad: (n) => `Tilauksesi on ollut lähettämättä ${n} päivää, eikä se ole hyväksyttävää.`,
     lageIntro: (o) => `Tämän näen juuri nyt tilauksestasi ${o}:`,
     stilla: 'On aivan normaalia, että seuranta pysyy paikallaan muutaman päivän kuljetuksen aikana. Paketti on silti matkalla.',
     framme: (bolag) => `Paketti on ${bolag}:n käsittelyssä viimeistä osuutta varten. Se toimitetaan yleensä 1-2 arkipäivän kuluessa.`,
     uteForLeverans: 'Paketti on jakelussa tänään.',
     hamta: (bolag, nr, lank) => `Paketti on noudettavissa noutopisteestä${bolag ? ` (${bolag}${nr ? `, kolli ${nr}` : ''})` : ''}.${lank ? ` Noutopiste ja aukioloajat: ${lank}` : ''}`,
+    hamtaUt: (bolag, nr, lank) => `Noutokoodin lähettää kuljetusyhtiö, emme me. Tarkista tekstiviestit ja roskaposti. Noutopisteessä riittää yleensä henkilöllisyystodistus${nr ? ` ja kollinumero ${nr}` : ''}. Jos et silti saa pakettia: ota yhteyttä suoraan ${bolag || 'kuljetusyhtiöön'}${lank ? ` (${lank})` : ''}.`,
     levererad: (d, plats) => `Kuljetusyhtiön mukaan paketti toimitettiin ${d}${plats ? ` (${plats})` : ''}.`,
     levereradUtanDatum: 'Kuljetusyhtiön mukaan paketti on toimitettu.',
     levereradKolla: 'Tarkista: postilaatikko, mahdollinen saapumisilmoitus, lähin noutopiste, naapurit ja suojainen paikka oven luona. Jos et vieläkään löydä sitä: vastaa tähän viestiin, niin selvitämme asiaa heti lisää.',
@@ -329,6 +337,7 @@ const T = {
       '3. Lähetä paketti osoitteeseen:',
       ...r.adress,
       'Lähetä se kirjeenä tai pakettina suoraan yllä olevaan osoitteeseen, ei noutopisteeseen. Emme nouda paketteja noutopisteistä.',
+      ...(r.sedel ? [`Tulosta palautuslappu ja kiinnitä se pakettiin: ${r.sedel}`] : []),
       '4. Käytä mielellään seurattavaa lähetystapaa ja vastaa tähän viestiin seurantanumerolla, kun olet postittanut paketin. Seuraamme asiaa heti, kun paketti on saapunut.',
       ...(r.frakt === 'kund' ? ['Palautuskulut maksat itse.'] : r.frakt === 'butik' ? ['Me maksamme palautuskulut. Vastaa tähän viestiin, niin järjestämme rahtikirjan.'] : []),
       ...(r.dagar ? [`Palautus on lähetettävä ${r.dagar} päivän kuluessa tuotteen vastaanottamisesta.`] : []),
@@ -353,6 +362,7 @@ const T = {
       chargeback_hot: 'Kuvaamasi tilanne on täysin mahdotonta hyväksyä, emmekä seiso sellaisen takana.',
       vantat: 'Se, että olet joutunut odottamaan vastausta, ei ole hyväksyttävää, emmekä seiso sellaisen takana.',
       levererat_ej_mottaget: 'Paketti, joka on merkitty toimitetuksi vaikka et ole saanut sitä, on täysin mahdotonta hyväksyä, emmekä seiso sellaisen takana.',
+      hamta_ut: 'Se, että seisot noutopisteessä saamatta pakettiasi, ei ole hyväksyttävää, emmekä seiso sellaisen takana.',
       standard: 'Kuvaamasi tilanne on täysin mahdotonta hyväksyä, emmekä seiso sellaisen takana.',
     },
   },
@@ -365,21 +375,21 @@ const T = {
     ingenSkanning: 'The carrier usually shows the first scan 2-4 days after the parcel is shipped.',
     folj: (l, nr) => (nr ? `Your tracking number with us is ${nr}, and you can follow the parcel here: ${l}` : `You can follow the parcel here: ${l}`),
     fonster: (a, b) => `Estimated delivery: between ${a} and ${b}.`,
-    fonsterDagar: (a, b) => `Estimated delivery time is ${a}-${b} days from when the parcel is shipped.`,
+    fonsterDagar: (a, b) => `Estimated delivery time is ${a}-${b} working days from when the parcel is shipped.`,
     ejSkickad: (o, d, n) => `Your order ${o} was received on ${d} and is packed within ${n} working days. You will get an email with a tracking link as soon as the parcel ships.`,
-    leveranstid: (a, b, n) => `Delivery takes ${a}-${b} days from when the parcel is shipped. We ship within ${n} working days of the order, and you get an email with a tracking link when it leaves. Please check your spam folder if the email does not show up.`,
+    leveranstid: (a, b, n, sida) => `Delivery takes ${a}-${b} working days from when the parcel is shipped. We ship within ${n} working days of the order, and you get an email with a tracking link when it leaves. Please check your spam folder if the email does not show up.${sida ? ` You can follow the parcel here: ${sida}` : ''}`,
     oppettider: (h) => `We answer emails within ${h} hours on weekdays. Please include your order number in the email. It speeds things up.`,
     adress: (o) => `Thank you, I have passed your new address on to our warehouse as a priority. Your order ${o} has not shipped yet. If they can change it before the parcel leaves, it will go to the new address. Please reply straight away if the shipping confirmation shows the wrong address.`,
     arg: (x) => `I completely understand your frustration. ${x}`,
     eskalerat: (h) => `I have escalated this directly to our responsible team as an urgent case. You can expect a reply within ${h} hours.`,
-    merInfo: 'If you have any more information that could help us resolve this faster, just reply to this email.',
-    ordernummerArg: 'To find your order we need your order number. Please include it in your reply, along with anything else that could help us resolve this faster.',
+    ordernummerArg: 'What is your order number? Include it in your reply and we will find the order straight away.',
     opostad: (n) => `Your order has sat unshipped for ${n} days, and that is not acceptable.`,
     lageIntro: (o) => `Here is what I can see right now for your order ${o}:`,
     stilla: 'It is completely normal for tracking to stand still for a few days during transit. The parcel is still on its way.',
     framme: (bolag) => `The parcel is with ${bolag} for the last leg. It is usually delivered within 1-2 working days.`,
     uteForLeverans: 'The parcel is out for delivery today.',
     hamta: (bolag, nr, lank) => `The parcel is ready for collection at the pickup point${bolag ? ` (${bolag}${nr ? `, parcel ${nr}` : ''})` : ''}.${lank ? ` Pickup point and opening hours: ${lank}` : ''}`,
+    hamtaUt: (bolag, nr, lank) => `The notification with the pickup code is sent by the carrier, not by us. Check your SMS and spam folder. At the pickup point, ID${nr ? ` and the parcel number ${nr}` : ''} is usually enough. If they still will not release the parcel: contact ${bolag || 'the carrier'} directly${lank ? ` (${lank})` : ''}.`,
     levererad: (d, plats) => `According to the carrier the parcel was delivered on ${d}${plats ? ` (${plats})` : ''}.`,
     levereradUtanDatum: 'According to the carrier the parcel has been delivered.',
     levereradKolla: 'Please check: your mailbox, any pickup notice, the nearest pickup point, with neighbours, and a sheltered spot by the door. If you still cannot find it: reply to this email and we will investigate further straight away.',
@@ -398,6 +408,7 @@ const T = {
       '3. Send the parcel to:',
       ...r.adress,
       'Send it as a letter or parcel directly to the address above, not to a pickup point. We do not collect parcels from pickup points.',
+      ...(r.sedel ? [`Please print the return label and stick it on the parcel: ${r.sedel}`] : []),
       '4. Please use a tracked shipping service, and reply to this email with the tracking number once you have posted it. We will follow up as soon as it arrives.',
       ...(r.frakt === 'kund' ? ['Return shipping is at your own cost.'] : r.frakt === 'butik' ? ['We cover the return shipping. Reply to this email and we will arrange a label.'] : []),
       ...(r.dagar ? [`The return must be sent within ${r.dagar} days of receiving the item.`] : []),
@@ -422,6 +433,7 @@ const T = {
       chargeback_hot: 'What you describe is completely unacceptable, and it is not something we stand for.',
       vantat: 'Having to wait for a reply is not acceptable, and it is not something we stand for.',
       levererat_ej_mottaget: 'A parcel marked as delivered when you never received it is completely unacceptable, and it is not something we stand for.',
+      hamta_ut: 'Standing at the pickup point without getting your parcel is not acceptable, and it is not something we stand for.',
       standard: 'What you describe is completely unacceptable, and it is not something we stand for.',
     },
   },
@@ -497,6 +509,8 @@ export function returText({ sprak = 'sv', brand = {}, ordernummer = '' } = {}) {
     dagar: Number(tv.returfonster_dagar) || 0,
     frakt: ['kund', 'kunden', 'customer'].includes(frakt) ? 'kund' : ['butik', 'butiken', 'vi', 'store', 'shop'].includes(frakt) ? 'butik' : '',
     policy: String(tv.policy_url ?? '').trim(),
+    // Retursedeln kunden skriver ut (Axels bild 2026-09-29, byggd i kundtjanst/retursedel/). Tom ⇒ raden ritas inte.
+    sedel: String(tv.retursedel_url ?? '').trim(),
   });
 }
 
@@ -515,10 +529,10 @@ export function returText({ sprak = 'sv', brand = {}, ordernummer = '' } = {}) {
  * `bekraftelse` = kunden saknar orderbekräftelsen ⇒ skräppost-raden (SOP 11/30).
  * Kastar när faktan inte räcker (ingen order, order utan datum). Ren.
  */
-export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = false, stilla = false, nu = new Date() } = {}) {
+export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = false, stilla = false, enbartLank = false, hamtaUt = false, nu = new Date() } = {}) {
   const t = T[sprak] ?? T.sv;
   const sv = brand.svar ?? {};
-  const [levMin, levMax] = Array.isArray(sv.leverans_dagar) && sv.leverans_dagar.length === 2 ? sv.leverans_dagar : [7, 14];
+  const [levMin, levMax] = arbetsdagar(sv);
   const packas = Number(sv.packas_dagar) || 2;
   const o = fakta.order;
   if (!o) throw new Error('läge utan order');
@@ -543,19 +557,23 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
     else if (iLandet) rader.push(t.framme(sp.sista.namn));
     else {
       rader.push(t.paVag);
-      if (sp.senaste) {
+      // Frågar kunden bara efter orderbekräftelsen (Bosse 2026-09-25) får hen länken och skräppost-raden, inget om skanningar som står still (Axels granskning 2026-09-29).
+      if (enbartLank) { /* bara länken nedan */ }
+      else if (sp.senaste) {
         const h = sp.senaste;
         if (h.tid) rader.push(t.senaste(datumText(h.tid, sprak, { tid: true })));
-        const alder = h.tid ? nuMs - new Date(h.tid).getTime() : 0;
-        // SOP 02: säger kunden själv att spårningen står still får hen raden även när skanningen är färsk.
-        if (alder > STILLA_DAGAR * DAG_MS || stilla) rader.push(t.stilla);
+        // SOP 02: raden om att spårningen får stå still bara när kunden själv tar upp det (Axels granskning 2026-09-29, Bosse och Rolf: "vi behöver inte skriva om transporten står still" när kunden bara frågar när paketet kommer). Fram till dess kom den av sig själv när skanningen var äldre än STILLA_DAGAR.
+        if (stilla) rader.push(t.stilla);
       } else {
         rader.push(t.ingenSkanning);
         if (stilla) rader.push(t.stilla);
       }
     }
+    // Länken till fraktbolaget står redan i hämta-raden när paketet är hos ombudet — inte två gånger.
+    if (hamtaUt) rader.push(t.hamtaUt(sp.sista?.namn, sp.sista?.nummer, sp.status === 'READY_FOR_PICKUP' ? null : sp.sista?.lank));
     if (fakta.lank) rader.push(t.folj(fakta.lank, fakta.bavernummer));
-    const fonsterPassar = !['READY_FOR_PICKUP', 'OUT_FOR_DELIVERY'].includes(sp.status) && !iLandet;
+    // Leveransfönstret står ALDRIG i ett mejl som bär spårningslänken — sidan visar det (Axels order 2026-09-21; boten skrev det ändå till Bosse och Rolf, rättat 2026-09-29). Bara utan länk.
+    const fonsterPassar = !fakta.lank && !['READY_FOR_PICKUP', 'OUT_FOR_DELIVERY'].includes(sp.status) && !iLandet;
     if (fonsterPassar && fakta.fonster?.fran && fakta.fonster?.till) rader.push(t.fonster(kortDatum(fakta.fonster.fran, sprak), kortDatum(fakta.fonster.till, sprak)));
   } else if (s && !s.skickad) {
     // Sändning finns men utan datum: säg det vi vet, aldrig ett datum.
@@ -581,10 +599,10 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
  * Returnerar { text } eller kastar om faktan inte räcker — anroparen ska då
  * lägga mejlet i SVÅR, aldrig skicka en halv mening.
  */
-export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, behoverOrdernummer = false, ordernummer = '', fotonTyp = 'leverans', nu = new Date() } = {}) {
+export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, enbartLank = false, hamtaUt = false, behoverOrdernummer = false, ordernummer = '', fotonTyp = 'leverans', nu = new Date() } = {}) {
   const t = T[sprak] ?? T.sv;
   const sv = brand.svar ?? {};
-  const [levMin, levMax] = Array.isArray(sv.leverans_dagar) && sv.leverans_dagar.length === 2 ? sv.leverans_dagar : [7, 14];
+  const [levMin, levMax] = arbetsdagar(sv);
   const packas = Number(sv.packas_dagar) || 2;
   const rader = [t.halsning(namn), '', t.tack];
   const o = fakta.order;
@@ -592,7 +610,7 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
   switch (typ) {
     case 'wismo': {
       if (!o) throw new Error('wismo utan order');
-      rader.push(t.kollat(o.namn), ...lageRader({ sprak, fakta, brand, bekraftelse, stilla, nu }));
+      rader.push(t.kollat(o.namn), ...lageRader({ sprak, fakta, brand, bekraftelse, stilla, enbartLank, hamtaUt, nu }));
       break;
     }
     case 'levererad': {
@@ -615,7 +633,7 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
       break;
     }
     case 'leveranstid':
-      rader.push(t.leveranstid(levMin, levMax, packas));
+      rader.push(t.leveranstid(levMin, levMax, packas, String(sv.sparningssida ?? '').trim()));
       break;
     case 'oppettider':
       rader.push(t.oppettider(Number(sv.svarstid_timmar) || 24));
@@ -649,7 +667,7 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
 // bilden" och "skräp/tunt som en ICA-kasse" får egna meningar.
 const X_KONKRET = ['skadad_defekt', 'ej_levererad', 'fel_vara', 'okand_debitering'];
 const X_OVRIGA = ['avbestallning', 'retur_angerratt', 'var_ar_ordern'];   // aterbetalning ⇒ standard: kunden har just BEGÄRT pengarna, inte väntat på dem (torrkörningen 2026-09-21)
-const SOM_PA_BILDEN = /ser inte (alls )?ut som|inte (alls )?som på bild|stämmer (inte|ej) (in )?(på|med) (bilden|beskrivningen)|ser ikke ut som|ligner ikke billedet|ei näytä (lainkaan )?kuvan|not (at all )?(as|like) (the )?(picture|pictured|described)|looks nothing like/i;
+const SOM_PA_BILDEN = /ser inte (alls )?ut som|inte (alls )?som på bild|stämmer (inte|ej) (in )?(på|med) (bilden|beskrivningen)|stämmer (inte|ej) (alls )?överens med (det som )?bild|(annat|annorlunda) än (på )?bild|(vad|det) (som )?bilden visar|ser ikke ut som|ligner ikke billedet|ei näytä (lainkaan )?kuvan|not (at all )?(as|like) (the )?(picture|pictured|described)|looks nothing like/i;
 const KVALITET = /\bskräp\b|\bskit\b|skitprodukt|kvalit|tunt som|tunn som|billig plast|\bplast\b|\busel\b|sopsäck|sop-?påse|søppel|\bskrald\b|\bdritt\b|\blort\b|\broska\b|\bpaska\b|laatu|\bgarbage\b|\brubbish\b|\bcrap\b|flimsy|cheap plastic/i;
 
 /** X-nyckeln ur klassificeringen + ilskans orsaker (hinkar.arArg) + mejlets text. Ren. */
@@ -657,6 +675,7 @@ export function xNyckelFor(klass, argOrsaker = [], text = '') {
   if (argOrsaker.some((o) => /levererat/.test(o))) return 'levererat_ej_mottaget';
   const traffade = new Set((klass?.alla ?? []).map((a) => a.id));
   const t = String(text ?? '');
+  if (namnerHamtaUt(t)) return 'hamta_ut';
   if (SOM_PA_BILDEN.test(t)) return 'som_pa_bilden';
   if (traffade.has('skadad_defekt')) return 'skadad_defekt';
   if (KVALITET.test(t)) return 'kvalitet';
@@ -674,10 +693,11 @@ export function xNyckelFor(klass, argOrsaker = [], text = '') {
  * ges), eskaleringen som brådskande ärende med "svar inom 48 timmar"
  * (brandfilens svar.eskalering_timmar), läget ur Shopify/17TRACK som eget
  * stycke (`lage` = { namn, rader } — bara med färsk fakta), sen ANTINGEN
- * "har du mer information … svara" ELLER, när ordernumret saknas
- * (`behoverOrdernummer`), "vi behöver ditt ordernummer" — plus bildförfrågan
- * (`foton`, SOP 05/08) och returblocket (`retur` = returText()) när kunden
- * bett om en retur. Inga tankstreck någonstans.
+ * frågan "vad är ditt ordernummer?" när numret saknas i kundens mejl
+ * (`behoverOrdernummer`) — plus bildförfrågan (`foton`, SOP 05/08) och
+ * returblocket (`retur` = returText()) när kunden bett om en retur. Raden
+ * "har du mer information … svara" är BORTA sedan Axels granskning
+ * 2026-09-29 (Mikael, Peter). Inga tankstreck någonstans.
  */
 export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNyckel = null, foton = false, fotonTyp = 'leverans', lage = null, namn = '', opostadDagar = null, retur = null, behoverOrdernummer = false } = {}) {
   const t = T[sprak] ?? T.sv;
@@ -685,8 +705,9 @@ export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNy
   const timmar = Number(brand?.svar?.eskalering_timmar) || ESKALERING_TIMMAR;
   const stycken = [`${t.arg(x)}\n${t.eskalerat(timmar)}`];
   if (lage?.namn && Array.isArray(lage.rader) && lage.rader.length) stycken.push([t.lageIntro(lage.namn), ...lage.rader].join('\n'));
-  const info = behoverOrdernummer ? t.ordernummerArg : t.merInfo;
-  stycken.push(foton ? `${info}\n${fotonRader(t, fotonTyp)[1]}` : info);
+  const info = behoverOrdernummer ? t.ordernummerArg : null;
+  const bild = foton ? fotonRader(t, fotonTyp)[1] : null;
+  if (info || bild) stycken.push([info, bild].filter(Boolean).join('\n'));
   if (retur) stycken.push(retur);
   return { text: `${t.halsning(namn)}\n\n${stycken.join('\n\n')}\n\n${t.halsningSlut}\n${signatur(brand, sprak)}`, x };
 }
@@ -732,6 +753,35 @@ export function fotonTypFor({ klass, text = '' } = {}) {
   if (ids.includes('fel_vara')) return 'leverans';
   if (ids.includes('skadad_defekt') && FUNKTIONSFEL.test(s) && !TRANSPORTSKADA.test(s)) return 'vara';
   return 'leverans';
+}
+
+/**
+ * Leveranslöftet i ARBETSDAGAR (Axels order 2026-09-21: "5–10 arbetsdagar, aldrig
+ * 7–14 dagar"). Brandfilens svar.leverans_arbetsdagar; standard 5–10. Kalenderdagarna
+ * (svar.leverans_dagar) används bara för datumfönstret i fakta.mjs. Ren.
+ */
+function arbetsdagar(sv = {}) {
+  const a = sv.leverans_arbetsdagar;
+  return Array.isArray(a) && a.length === 2 && a.every((n) => Number(n) > 0) ? [Number(a[0]), Number(a[1])] : [5, 10];
+}
+
+// Kunden står hos ombudet och får inte ut paketet: ingen kod, ingen avi, ombudet vägrar
+// (Mats #7020 2026-09-25: "har ingen kod … dom vägrar lämna ut paketet"). sv/nb/da/fi/en.
+const HAMTA_UT = /ingen (hämt|upphämtnings|avi|utlämnings)?kod\b|inte fått (någon |nån |en |något )?(kod|avi|avisering|sms|meddelande (om|för) (att )?hämta)|vägrar (att )?(lämna|ge) ut|(kan|går|får) (inte|ej) hämta( ut)?|får (inte|ej) ut (paketet|det|mitt paket)|inte kunnat hämta|lämnar (inte|ej) ut|ombudet (vägrar|säger|kräver|vill inte)|ingen hentekode|får ikke (ut|hentet) pakken|nekter å (levere|gi) ut|ingen afhentningskode|kan ikke (få|hente) pakken|ei noutokoodia|en saa pakettia|no (pickup |collection )?code|(won.t|will not|refuse[sd]? to) (release|hand over|give me)|can.?t (collect|pick up) (it|the parcel|my parcel)/i;
+
+/** Står kunden hos ombudet utan att få ut paketet? Ren. */
+export function namnerHamtaUt(text) {
+  return HAMTA_UT.test(String(text ?? ''));
+}
+
+/**
+ * Frågar kunden BARA efter orderbekräftelsen (inte var paketet är)? Då får
+ * WISMO-svaret länken och skräppost-raden, inget om skanningar (Bosse
+ * 2026-09-25, Axels granskning 2026-09-29). Ren.
+ */
+export function baraBekraftelse(text) {
+  const s = String(text ?? '');
+  return namnerBekraftelse(s) && !/var är|vart (är|har)|när kommer|undrar när|spårning|sporing|tracking|står still|stått still|hur länge|inte (fått|kommit)[^.\n]{0,20}(paket|varan|leverans)|tagit vägen|dröjer|väntat/i.test(s);
 }
 
 /** Säger kunden att spårningen står still eller inte uppdateras (SOP 02)? Ren. */

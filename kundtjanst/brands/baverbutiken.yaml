@@ -44,6 +44,8 @@ svar:
   sprak: sv
   signatur: "Kundtjänst Bäverbutiken"
   leverans_dagar: [7, 14]
+  # Samma löfte i arbetsdagar — det som står i svaren (Axels order 2026-09-21, granskningen 2026-09-29).
+  leverans_arbetsdagar: [5, 10]
   packas_dagar: 2
   sparningssida: "https://baverbutiken.se/pages/spara"
   sparning_prefix: "BB-"
@@ -97,6 +99,8 @@ tvister:
   # AB, Sjöhed 160, 442 74 Harestad, Sverige", och kunder som fått den adressen
   # innan dess kan fortfarande posta dit (kundtjanst/va-sop/00-STORE-FACTS.md).
   returadress: "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige"
+  # Retursedeln kunden skriver ut och klistrar på paketet (Axels bild 2026-09-29, kundtjanst/retursedel/).
+  retursedel_url: "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/retursedel.png?v=1790677409"
   # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
   # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
   # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en
