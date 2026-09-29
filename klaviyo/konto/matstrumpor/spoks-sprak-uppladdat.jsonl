@@ -1,0 +1,8 @@
+{"tid":"2026-09-29T12:24:40Z","typ":"flode","flode":"f07-aterkop-sushi","flowId":"8c9c1204-99bd-4b0f-a988-4d7af65e4702","namn":"F07 En låda till (sushi, dag 21) · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f01-valkomst","flowId":"89976b01-a650-4ad5-94a5-0556c490ae03","namn":"F01 Välkomst (Matstrumpor-klubben) · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f02-overgiven-kassa","flowId":"6b22283c-d686-405b-8b6d-7d0b1f762028","namn":"F02 Övergiven kassa · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f03-webbhistorik","flowId":"17aa6927-46a0-405d-b787-cd5e0e2513dc","namn":"F03 Webbhistorik · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f04-efter-kop","flowId":"0594aa1b-dfce-4a46-81ef-8bd20989c16c","namn":"F04 Efter köp · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f05-vinback","flowId":"32d23706-635e-4e1e-9c1f-e25d61df7bdf","namn":"F05 Vinna tillbaka · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:25:10Z","typ":"steg","flode":"f07-aterkop-sushi","index":0,"stepId":"92fb5540-1646-41e3-9e4a-01aa16943e30"}
+{"tid":"2026-09-29T12:26:31Z","typ":"steg","flode":"f07-aterkop-sushi","index":1,"stepId":"47c5f116-d727-4161-8287-c6a5b30825fc","postId":"1fbc4760-2c3d-494d-a2a5-87741e9eb6b3","sprak":"sv","mejl_id":"f07-aterkop-sushi-e1","ifylld":true}

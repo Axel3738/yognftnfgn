@@ -1,0 +1,585 @@
+{
+  "sprak": "nl",
+  "ui": {
+    "hej_reserv": "Hoi",
+    "du_reserv": "jij",
+    "medlem_reserv": "Lid",
+    "medlemskort": "Lidkaart",
+    "medlem_i": "Lid van de {klubb}",
+    "knapp_till": "Naar het product",
+    "knapp_kassa": "Terug naar afrekenen",
+    "knapp_titta": "Bekijk opnieuw",
+    "knapp_betyg": "Geef je beoordeling",
+    "ms_rad": "Het pakketnummer dat met MS begint, staat in de mail dat je pakket is verzonden.",
+    "fakta_retur_rubrik": "Bedenktijd",
+    "fakta_sparning_rubrik": "Volg je pakket",
+    "fakta_sparning_text": "Volg het de hele weg",
+    "grundare": "oprichter",
+    "verifierad": "geverifieerde klant",
+    "verifierad_ensam": "Geverifieerde klant",
+    "fakta_retur_text": "30 dagen retourrecht",
+    "oversatt": "vertaald uit het Zweeds",
+    "klubb": "Matstrumpor-club"
+  },
+  "citat": {
+    "0cc5d9cab945": "De sokkenpakketten waren zo leuk om aan kinderen en kleinkinderen te geven! En van wat ik achteraf heb gehoord, was het ook goede kwaliteit!",
+    "1f16cc42983e": "Erg comfortabele sokken",
+    "af7d51d6f01d": "Heerlijke sokken, de ontvanger was zo blij.",
+    "c0a92758da0e": "Heel mooi in een leuke verpakking! Snelle levering"
+  },
+  "mejl": {
+    "k01-de-tror-att-det-ar-sushi": {
+      "kalla": "12fd0d6076d0",
+      "amne": "Ze kijken twee keer, en dan lachen ze",
+      "forhandstext": "Vijf paar sokken liggen waar de sushistukjes hoorden te liggen.",
+      "block": [
+        {
+          "rubrik": "Ziet eruit als sushi. Zijn sokken.",
+          "text": "Hoi {{fornamn}},\n\nDe doos gaat open als een sushibestelling. Vijf paar sokken liggen opgerold als sushistukjes, met eetstokjes ernaast.",
+          "knapp.text": "Bekijk de sushidoos"
+        },
+        {
+          "text": "Wie de doos opent, denkt eerst dat het echte sushi is.\n\nDan begrijpt die persoon wat het écht is, en kijkt nog een keer."
+        },
+        {
+          "rubrik": "Dit zit er in de doos",
+          "punkter": [
+            "Vijf paar sokken, opgerold als sushistukjes.",
+            "De doos ziet eruit als afhaaleten, tot hij open is.",
+            "Houten eetstokjes zitten erbij.",
+            "One size, EU 36-44."
+          ]
+        },
+        {},
+        {
+          "text": "Vijf paar in een doos die gemaakt is om het oog te misleiden.",
+          "knapp": "Naar de sushidoos"
+        },
+        {}
+      ]
+    },
+    "k02-ingen-jublar-at-tvattmedel": {
+      "kalla": "8d8d1af7f269",
+      "amne": "Niemand juicht om wasmiddel",
+      "forhandstext": "Grappig bij het openen. Handig de dag erna.",
+      "block": [
+        {
+          "rubrik": "Het saaie cadeau werkt. Het grappige wordt vergeten.",
+          "text": "Hoi {{fornamn}},\n\nEen praktisch cadeau wordt in stilte uitgepakt. Een grappig gadget ligt morgen al in een la.",
+          "knapp.text": "Bekijk de doos"
+        },
+        {
+          "text": "Deze is vanavond leuk en morgen aan je voeten."
+        },
+        {
+          "text": "Vijf paar in een doos die eruitziet als echte sushi.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "rubrik": "Voor de volgende persoon"
+        },
+        {}
+      ]
+    },
+    "k03-kundernas-ord": {
+      "kalla": "89f0038718bf",
+      "amne": "De recensies zeggen dat de ontvanger blij was",
+      "forhandstext": "Gemiddeld 4,5 van 5, geen woord verzonnen.",
+      "block": [
+        {
+          "rubrik": "Dit schreven klanten",
+          "text": "Echte kopers, echte woorden. Niets hier is verzonnen."
+        },
+        {},
+        {
+          "text": "Vijf paar sokken, opgerold als sushi, in een doos die het oog misleidt.",
+          "knapp": "Naar de sushidoos"
+        },
+        {}
+      ]
+    },
+    "k04-fars-dag-bestall-senast-24-okt": {
+      "kalla": "a3433ff29791",
+      "amne": "Een cadeau dat hij niet ziet aankomen",
+      "forhandstext": "Bestel op tijd. Vijf paar sokken in een doos.",
+      "block": [
+        {
+          "rubrik": "Bestel op tijd een cadeau voor hem",
+          "text": "Hoi {{fornamn}},\n\nEen cadeau dat lastig te raden is, dat is de beste soort. Bestel op tijd, dan hoef je niet te haasten.",
+          "knapp.text": "Bekijk het cadeau"
+        },
+        {
+          "text": "Wie de doos krijgt, denkt dat er eten in zit. Pas als de doos open is, weet de ontvanger wat het echt is."
+        },
+        {
+          "text": "Vijf paar die het cadeau vooraf moeilijk te raden maken.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "rubrik": "Als hij liever iets anders wil"
+        },
+        {}
+      ]
+    },
+    "k05-julstrumpan": {
+      "kalla": "2d2d53fa582e",
+      "amne": "Raad wat ik in de kerstsok stopte",
+      "forhandstext": "Klein doosje. Grote gok.",
+      "block": [
+        {
+          "rubrik": "Hij past in de kerstsok",
+          "text": "Hoi {{fornamn}},\n\nEen klein doosje. Vijf paar sokken en eetstokjes erin.\n\nPrecies het formaat waar een kerstsok voor gemaakt is.",
+          "knapp.text": "Bekijk de sushidoos"
+        },
+        {
+          "text": "Hij ziet eruit als afhaaleten. Niemand raadt het goed voordat hij open is."
+        },
+        {
+          "rubrik": "Waarom hij erin past",
+          "punkter": [
+            "De doos is klein genoeg voor een kerstsok.",
+            "Vijf paar sokken, opgerold als sushi.",
+            "Houten eetstokjes zitten erbij."
+          ]
+        },
+        {
+          "text": "Dezelfde doos, nu in de kerstsok.",
+          "knapp": "Naar de sushidoos"
+        },
+        {},
+        {}
+      ]
+    },
+    "k06-slut-i-november-forra-aret": {
+      "kalla": "a46dc7445b89",
+      "amne": "De sushidoos was vorig jaar in november uitverkocht",
+      "forhandstext": "De dozen waren in november op, nog voor de kerstdrukte begon.",
+      "block": [
+        {
+          "rubrik": "Vorig jaar in november waren we uitverkocht",
+          "text": "Hoi {{fornamn}},\n\nIn november 2025 was de sushidoos uitverkocht. We weten niet of dat weer gebeurt, maar als je toch van plan was iets voor Kerstmis te kopen, is nu misschien een goed moment om dat te doen.",
+          "knapp.text": "Bekijk de sushidoos"
+        },
+        {
+          "text": "Dezelfde doos die vorig jaar in november uitverkocht raakte.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "rubrik": "Als je liever iets anders wilt"
+        },
+        {}
+      ]
+    },
+    "k07-tva-lador-tva-personer": {
+      "kalla": "ed6617a35935",
+      "amne": "Koop 1, krijg 1, voor twee verschillende mensen",
+      "forhandstext": "Twee ontvangers, één aankoop, geen gedoe.",
+      "block": [
+        {
+          "rubrik": "Twee dozen, twee mensen op de lijst",
+          "text": "Hoi {{fornamn}},\n\nDe meeste bestellingen bevatten twee dozen. Eén voor mama, één voor je broer. Eén voor jezelf, één voor iemand anders.\n\nKoop 1, krijg 1, dat staat op de productpagina.",
+          "knapp.text": "Bekijk de sushidoos"
+        },
+        {
+          "rubrik": "Twee mensen op de lijst",
+          "punkter": [
+            "Mama en je broer.",
+            "Je collega en je partner.",
+            "De kinderen en opa."
+          ]
+        },
+        {
+          "text": "Nog een doos erbij, zoals het op de productpagina staat.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "rubrik": "Andere soorten, hetzelfde aanbod op de productpagina"
+        },
+        {}
+      ]
+    },
+    "k08-julklappsguide": {
+      "kalla": "65a6f3871101",
+      "amne": "Sushi, pizza, burger, donut. Eén lijst.",
+      "forhandstext": "Vier soorten, vier ontvangers, alles op één plek.",
+      "block": [
+        {
+          "rubrik": "Sushi voor de een, pizza voor de ander",
+          "text": "{{fornamn}}, vier soorten dozen, vier verschillende mensen om iets aan te geven. Sushi voor wie van sushi houdt, of nooit zou raden wat er in de doos zit. Pizza voor wie alles deelt. Burger voor je broer of vader. Donut voor de kinderen.",
+          "knapp.text": "Bekijk de hele gids"
+        },
+        {
+          "text": "Niemand hoeft eindeloos te zoeken. Hier zijn vier voorstellen, één voor elk type persoon op de lijst."
+        },
+        {
+          "text": "Voor wie van sushi houdt, of nooit zou raden wat er in de doos zit.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "text": "Vier paar in een pizzadoos, voor wie alles deelt.",
+          "knapp": "Naar de pizzadoos"
+        },
+        {
+          "text": "Twee paar in een burgerbox, voor je broer of vader.",
+          "knapp": "Naar de burgerdoos"
+        },
+        {
+          "text": "Drie paar, opgerold als donuts, voor de kinderen.",
+          "knapp": "Naar de donutdoos"
+        },
+        {
+          "text": "Bestel op tijd voor Kerstmis."
+        },
+        {}
+      ]
+    },
+    "k09-black-week-start": {
+      "kalla": "998439a85e93",
+      "amne": "Je korting wordt automatisch berekend bij het afrekenen",
+      "forhandstext": "10, 20 of 30 procent. Hangt alleen af van wat er in je winkelmandje ligt.",
+      "block": [
+        {
+          "rubrik": "Meer artikelen in je winkelmandje geven meer korting, de hele week",
+          "text": "{{fornamn}}, tijdens Black Week berekent de kassa je korting automatisch, op basis van het aantal artikelen in je winkelmandje. Eén artikel geeft 10%, twee artikelen geven 20%, drie of meer geven 30%. Geen code nodig, de korting wordt direct bij het afrekenen verrekend.",
+          "knapp.text": "Bekijk het hele assortiment"
+        },
+        {
+          "rubrik": "Zo werkt de staffelkorting",
+          "punkter": [
+            "1 artikel: 10% korting",
+            "2 artikelen: 20% korting",
+            "3 artikelen of meer: 30% korting"
+          ]
+        },
+        {
+          "rubrik": "Combineer voor het volgende niveau"
+        },
+        {}
+      ]
+    },
+    "k10-black-friday": {
+      "kalla": "6819d8838ab1",
+      "amne": "Black Friday: de korting geldt nog",
+      "forhandstext": "Vandaag is het Black Friday, en de staffelkorting blijft gelden.",
+      "block": [
+        {
+          "rubrik": "Black Friday. De staffelkorting geldt nog.",
+          "text": "{{fornamn}}, vandaag is het Black Friday, en de staffelkorting geldt nog steeds. Eén artikel geeft 10%, twee geven 20%, drie of meer geven 30%, en de kassa rekent het voor je uit.",
+          "knapp.text": "Naar het assortiment"
+        },
+        {
+          "rubrik": "Vul je winkelmandje voor het volgende niveau"
+        },
+        {
+          "rubrik": "Onthoud hoe de staffelkorting werkt",
+          "punkter": [
+            "1 artikel: 10% korting",
+            "2 artikelen: 20% korting",
+            "3 artikelen of meer: 30% korting"
+          ]
+        },
+        {}
+      ]
+    },
+    "k11-bestall-senast-8-dec": {
+      "kalla": "bb81cc21898a",
+      "amne": "Bestel op tijd voor Kerstmis",
+      "forhandstext": "Vier voorstellen, direct klaar om te bestellen.",
+      "block": [
+        {
+          "rubrik": "Bestel op tijd voor Kerstmis",
+          "text": "{{fornamn}}, wil je met Kerstmis een doos cadeau doen? Bestel dan in goede tijd.",
+          "knapp.text": "Bestel op tijd"
+        },
+        {
+          "rubrik": "Vier voorstellen, direct klaar"
+        },
+        {}
+      ]
+    },
+    "k12-sista-dagen-idag": {
+      "kalla": "56e82e349de8",
+      "amne": "Nog niets besteld voor Kerstmis?",
+      "forhandstext": "Kerstmis komt eraan. Bestel in goede tijd.",
+      "block": [
+        {
+          "rubrik": "Bestel in goede tijd voor Kerstmis",
+          "text": "{{fornamn}}, Kerstmis komt dichterbij, dus bestel in goede tijd.",
+          "knapp.text": "Bestel nu"
+        },
+        {
+          "text": "Vijf paar in een doos die eruitziet alsof hij rechtstreeks uit het restaurant komt.",
+          "knapp": "Naar de sushidoos"
+        },
+        {
+          "rubrik": "Of een van de andere drie"
+        },
+        {}
+      ]
+    },
+    "k13-presentkortet": {
+      "kalla": "495e5de80fa5",
+      "amne": "Een cadeau dat direct per mail komt",
+      "forhandstext": "Een cadeaubon wordt direct per mail verstuurd.",
+      "block": [
+        {
+          "rubrik": "Zoek je een cadeau dat direct klaar is?",
+          "text": "Een cadeau dat direct per mail wordt verstuurd, dat kan met een cadeaubon."
+        },
+        {
+          "text": "De ontvanger kiest zelf wat hij of zij wil, in de hele winkel.",
+          "knapp": "Koop de cadeaubon"
+        },
+        {
+          "rubrik": "Zo werkt het",
+          "text": "De cadeaubon wordt digitaal verstuurd, als e-mail, met een code die de ontvanger in de winkel inwisselt. Geen wachtrij, geen pakket dat nog onderweg is."
+        },
+        {}
+      ]
+    },
+    "k14-vem-har-fodelsedag-harnast": {
+      "kalla": "54b4099890b8",
+      "amne": "Wie is er de volgende jarig?",
+      "forhandstext": "Kerstmis is voorbij. De volgende gelegenheid is niet ver weg.",
+      "block": [
+        {
+          "rubrik": "Wie is er de volgende jarig?",
+          "text": "{{fornamn}}, Kerstmis is voorbij, maar cadeaus hoeven dat niet te zijn. De volgende verjaardag op de lijst is altijd dichterbij dan je denkt.",
+          "knapp.text": "Bekijk alle soorten"
+        },
+        {
+          "text": "Een doos die op eten lijkt, werkt in januari net zo goed als in december."
+        },
+        {
+          "rubrik": "Vier soorten, klaar voor elk moment"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e1": {
+      "kalla": "8f76ff1e7861",
+      "amne": "Je bent toegelaten tot de Matstrumpor-club",
+      "forhandstext": "Je plek en je kaart wachten hier.",
+      "block": [
+        {
+          "rubrik": "Je bent toegelaten tot de club",
+          "text": "Je plek in de Matstrumpor-club is klaar. Je hebt je aangemeld, dus hij is van jou.\n\nWij verkopen sokken die eruitzien als sushi, pizza, hamburgers en donuts.\n\nDeze mails gaan alleen naar leden van de Matstrumpor-club.",
+          "knapp.text": "Bekijk alle dozen"
+        },
+        {
+          "etikett": "LIDKAART",
+          "rad_under_namnet": "Lid van de Matstrumpor-club",
+          "fotnot": "Bij de kassa vraagt niemand naar deze kaart."
+        },
+        {
+          "rubrik": "Dit krijgen alleen leden",
+          "punkter": [
+            null,
+            "Een mail over Black Week, alleen voor leden.",
+            "De echte woorden van klanten, letterlijk, zonder dat je hoeft te zoeken.",
+            "Wat er in de doos zit, getoond voordat je beslist."
+          ]
+        },
+        {
+          "rubrik": "Sushi, donut en pizza"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e2": {
+      "kalla": "8e16702c6ea6",
+      "amne": "Dit schreven klanten",
+      "forhandstext": "Acht recensies, gemiddeld 4,5. Geen enkele door ons geschreven.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Andere soorten om cadeau te geven"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e3": {
+      "kalla": "63adf86bf305",
+      "amne": "Zo werkt het als je bestelt",
+      "forhandstext": "Levering, tracking en retour, kort en duidelijk.",
+      "block": [
+        {
+          "rubrik": "Zo werkt het als je bestelt",
+          "text": "Je pakket krijgt een eigen nummer dat met MS begint. Je vindt het op de trackingpagina, samen met waar het pakket onderweg is.\n\nBedenk je je, dan kun je retourneren. Dat staat in het kader hieronder. Heb je een vraag, mail kundsupport@matstrumpor.se en je krijgt antwoord."
+        },
+        {},
+        {
+          "text": "Bekijk alles wat we verkopen"
+        }
+      ]
+    },
+    "f02-overgiven-kassa-e1": {
+      "kalla": "c268b115e64a",
+      "amne": "Er ligt nog iets in je winkelmandje",
+      "forhandstext": "Klik terug, alles staat klaar.",
+      "block": [
+        {
+          "rubrik": "Je winkelmandje is er nog",
+          "text": "Alles wat je hebt toegevoegd, staat er nog. Er is niets verwijderd."
+        },
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e2": {
+      "kalla": "0de656842fa6",
+      "amne": "Drie dingen die je misschien wilt weten",
+      "forhandstext": "Maat, retour en aan wie je het kunt vragen. Kort beantwoord.",
+      "block": [
+        {
+          "rubrik": "Drie vragen voordat je betaalt",
+          "text": "Passen ze? Ja, one size, dus 36-44.\n\nBedenk je je? Je kunt retourneren. Dat staat in het kader hieronder.\n\nWie antwoordt als er iets misgaat? Mail kundsupport@matstrumpor.se, je krijgt antwoord."
+        },
+        {},
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e3": {
+      "kalla": "2e080922dc0c",
+      "amne": "Laatste herinnering",
+      "forhandstext": "Hierna mailen we niet meer over je winkelmandje.",
+      "block": [
+        {
+          "rubrik": "Laatste herinnering",
+          "text": "Dit is de laatste herinnering. We mailen niet nog eens over dit winkelmandje.\n\nWil je nog afrekenen? Alles ligt er precies zoals je het hebt achtergelaten."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e1": {
+      "kalla": "70bdaded5b4d",
+      "amne": "Hier keek je naar",
+      "forhandstext": "Geen verkooppraatje. Alleen deze.",
+      "block": [
+        {
+          "text": "Hier keek je een tijdje geleden naar."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e2": {
+      "kalla": "c18f517ea010",
+      "amne": "Je was geïnteresseerd in deze",
+      "forhandstext": "Deze, en drie andere voor het geval deze niet de juiste was.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Drie andere soorten om uit te kiezen"
+        }
+      ]
+    },
+    "f04-efter-kop-e1": {
+      "kalla": "8da03c073e0e",
+      "amne": "Je bestelling is onderweg",
+      "forhandstext": "Eén knop, en je ziet precies waar het nu is.",
+      "block": [
+        {
+          "rubrik": "Je bestelling is onderweg",
+          "text": "Tik op de knop en je ziet precies waar je pakket nu is."
+        },
+        {
+          "text": "Volg je pakket"
+        },
+        {
+          "text": "Vragen voordat het aankomt? Mail kundsupport@matstrumpor.se, wij antwoorden."
+        }
+      ]
+    },
+    "f04-efter-kop-e2": {
+      "kalla": "ded016e7c03d",
+      "amne": "Alles goed aangekomen?",
+      "forhandstext": "Rond dit moment is het pakket meestal aangekomen.",
+      "block": [
+        {
+          "rubrik": "Alles aangekomen?",
+          "text": "Rond dit moment is het pakket meestal aangekomen. Ontbreekt er iets of ziet iets er vreemd uit? Mail kundsupport@matstrumpor.se, wij lossen het op."
+        },
+        {
+          "rubrik": "Voor de volgende persoon"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e1": {
+      "kalla": "e31b5d1f4e7e",
+      "amne": "Wie is er aan de beurt voor een doos?",
+      "forhandstext": "Geen actie, alleen een herinnering: de lijst met ontvangers raakt zelden op.",
+      "block": [
+        {
+          "rubrik": "Wie is er aan de beurt?",
+          "text": "De vorige keer gaf je een doos cadeau. Die werkt net zo goed nog een keer, voor iemand anders op de lijst."
+        },
+        {
+          "rubrik": "Vier soorten om uit te kiezen"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e2": {
+      "kalla": "2273435a131d",
+      "amne": "Dit schreven echte klanten",
+      "forhandstext": "Twee stemmen, en daarna hoor je hier niets meer over van ons.",
+      "block": [
+        {},
+        {
+          "text": "Vijf paar, opgerold als sushistukjes, in een doos die eruitziet als afhaaleten tot hij open is. De eetstokjes zitten erbij.",
+          "knapp": "Bekijk de sushidoos"
+        },
+        {}
+      ]
+    },
+    "f06-sunset-e1": {
+      "kalla": "ff33ef0d112b",
+      "amne": "Wil je in de club blijven?",
+      "forhandstext": "Antwoorden kost één klik, meer niet.",
+      "block": [
+        {
+          "rubrik": "Wil je in de Matstrumpor-club blijven?",
+          "text": "{{fornamn}}, het is een tijdje stil geweest tussen ons. Eén klik houdt je in de Matstrumpor-club."
+        },
+        {
+          "text": "Ja, ik blijf lid"
+        }
+      ]
+    },
+    "f06-sunset-e2": {
+      "kalla": "2b166f306856",
+      "amne": "Laatste mail over je plek in de club",
+      "forhandstext": "Na deze mail halen we je eruit, als we niets horen.",
+      "block": [
+        {
+          "rubrik": "Dit is de laatste mail van de club",
+          "text": "{{fornamn}}, horen we nu niets, dan halen we je uit de Matstrumpor-club. Eén laatste klik houdt je erin."
+        },
+        {
+          "text": "Ja, laat me lid blijven"
+        }
+      ]
+    },
+    "f07-aterkop-sushi-e1": {
+      "kalla": "7eb3f48e69d1",
+      "amne": "Nog een doos, voor de volgende persoon",
+      "forhandstext": "De meeste mensen die nog eens kopen, kiezen precies dezelfde doos.",
+      "block": [
+        {
+          "rubrik": "Nog een doos, voor de volgende persoon",
+          "text": "De meeste mensen die nog eens bestellen, kiezen precies dezelfde sushidoos, voor iemand anders op de lijst."
+        },
+        {
+          "text": "Vijf paar, opgerold als sushistukjes, in een doos die eruitziet als afhaaleten tot hij open is. De eetstokjes zitten erbij.",
+          "knapp": "Bekijk de sushidoos"
+        },
+        {
+          "rubrik": "Of een andere soort"
+        },
+        {}
+      ]
+    }
+  }
+}
