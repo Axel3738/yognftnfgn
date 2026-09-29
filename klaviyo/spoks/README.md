@@ -946,12 +946,21 @@ ett mejl; sushin har inget jämförpris så ingen "rea" på sushin; butikens nam
 i appen** (MCP:n kan varken välja publik eller schemalägga). Bara segment med samtycke (MFL
 19 §). Klaviyo-utkasten i `UV6Rqg` rörs inte. Sessionen raderar aldrig ett utkast.
 
-**Förslag på stoppregel (Axels beslut, inte inskrivet någonstans än):** ett mejl om dagen till
-3 000 personer är cirka 70 000 mejl på fyra veckor. Läs `get_campaign_statistics` per utskick
-dagen efter: **avanmälningar över 0,5 % på ett utskick, eller ett enda spamklagomål ⇒ hoppa
-över nästa dag och gå ner till varannan dag**; två utskick i rad utan en enda order ⇒ byt vinkel
-innan nästa. Öppningsgraden fäller aldrig en dom ensam (Evolve/Billy). Måttet är ordrar och
-avanmälningar, aldrig öppningar.
+**Stoppregeln finns redan — `LARM_LEVERANS` i `docs/os/EPOST-STRATEGI.md` §8:** spamklagomål
+**över 0,3 %** eller avregistreringar **över 1 %** på ett utskick ⇒ stoppa nästa kampanj,
+tillbaka till det engagerade segmentet, Axel pingas (0,3 % är Gmails gräns, 1 % en startsiffra).
+Ett mejl om dagen till 3 000 personer är cirka 70 000 mejl på fyra veckor, så regeln läses
+efter VARJE utskick (`get_campaign_statistics` dagen efter). Två utskick i rad utan en enda
+order ⇒ byt vinkel innan nästa. Öppningsgraden fäller aldrig en dom ensam (Evolve/Billy).
+⚠️ **Takten mot vad vi vet (Axels fråga 2026-09-29 "är det såhär vi ska köra?"):** Klaviyos
+riktlinje i samma dokument §4 är *dagligen bara till engagerade 30 d, upp till 3/vecka till
+60 d, 2/vecka till 90 d* — ett mejl om dagen till HELA samtyckeslistan (aldrig mejlad, ny
+avsändardomän i Spoks) ligger över den. Evolve-boten fick takt-frågan redan 2026-09-24
+(fråga 4) och svarade "inget i källorna, ask the community directly"; det den HAR är Billys
+lanseringskadens *nyfikenhet → teaser → avslöjande med datum → nedräkning → "missade du?"*
+(svar 5), som är exakt seriens form. Fråga 16 i `klaviyo/evolve/FRAGOR.md` (2026-09-29) är
+skriven för communityn OCH boten; Axels beslut A/B/C om takten står i chatten 2026-09-29 och
+skrivs in här när det kommer. Tills dess: inget schemalagt utöver K01.
 
 **Kvar / nästa:** Veckans dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de
 dagliga; K16 förtur + F01 E1 v4 (KUNDRESA §7); K15 kvar att skicka (Recensionerna ovan).
