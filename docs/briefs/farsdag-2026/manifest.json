@@ -452,6 +452,127 @@
       "pris": 289,
       "jamforpris": 482,
       "notion": "3ea270ab908c815b9477f4296f3fb6f0"
+    },
+    {
+      "namn": "Takoverdrag_FD_1_H3",
+      "typ": "video",
+      "hub": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+      "hubnamn": "BÄVER For CARL Taköverdraget för Husvagn",
+      "produkt": "takoverdrag",
+      "fil": "docs/briefs/farsdag-2026/Takoverdrag_FD_1_H3/brief.md",
+      "pris": 1129,
+      "jamforpris": 1469,
+      "notion": "3ea270ab908c812faf02ef34a689cf90"
+    },
+    {
+      "namn": "Termoskydd_FD_1_H3",
+      "typ": "video",
+      "hub": "c5a270ab-908c-83e3-b721-81fde8643080",
+      "hubnamn": "BÄVER Termoskyddet för Husbil",
+      "produkt": "termoskydd",
+      "fil": "docs/briefs/farsdag-2026/Termoskydd_FD_1_H3/brief.md",
+      "pris": 559,
+      "jamforpris": 932,
+      "notion": "3ea270ab908c81479f66f4dbb34d912f"
+    },
+    {
+      "namn": "IBC_FD_1_H3",
+      "typ": "video",
+      "hub": "76b270ab-908c-8393-8a47-01f6ae366d42",
+      "hubnamn": "BÄVER IBC-Tanköverdraget",
+      "produkt": "ibc",
+      "fil": "docs/briefs/farsdag-2026/IBC_FD_1_H3/brief.md",
+      "pris": 489,
+      "jamforpris": 636,
+      "notion": "3ea270ab908c8171952bdf8ec83cf9d2"
+    },
+    {
+      "namn": "Batmotor_FD_1_H3",
+      "typ": "video",
+      "hub": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+      "hubnamn": "Boat motor cover creative hub",
+      "produkt": "batmotor",
+      "fil": "docs/briefs/farsdag-2026/Batmotor_FD_1_H3/brief.md",
+      "pris": 579,
+      "jamforpris": 965,
+      "notion": "3ea270ab908c8157a66beee0799d307c"
+    },
+    {
+      "namn": "Sotarset_FD_1_H3",
+      "typ": "video",
+      "hub": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+      "hubnamn": "Chimney sweep set creative hub",
+      "produkt": "sotarset",
+      "fil": "docs/briefs/farsdag-2026/Sotarset_FD_1_H3/brief.md",
+      "pris": 459,
+      "jamforpris": 599,
+      "notion": "3ea270ab908c81aaaa9eca4568455a96"
+    },
+    {
+      "namn": "Inomhustofflor_FD_1_H3",
+      "typ": "video",
+      "hub": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+      "hubnamn": "Indoor slippers creative hub",
+      "produkt": "tofflor",
+      "fil": "docs/briefs/farsdag-2026/Inomhustofflor_FD_1_H3/brief.md",
+      "pris": 489,
+      "jamforpris": 978,
+      "notion": "3ea270ab908c818192bffabd24aff22a"
+    },
+    {
+      "namn": "Beltgrinder_FD_1_H3",
+      "typ": "video",
+      "hub": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+      "hubnamn": "Belt grinder creative hub",
+      "produkt": "beltgrinder",
+      "fil": "docs/briefs/farsdag-2026/Beltgrinder_FD_1_H3/brief.md",
+      "pris": 909,
+      "jamforpris": 1182,
+      "notion": "3ea270ab908c8124bf0be75f9b7fb669"
+    },
+    {
+      "namn": "Solcellslampa_FD_1_H3",
+      "typ": "video",
+      "hub": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+      "hubnamn": "Solar motion sensor light creative hub",
+      "produkt": "solcellslampa",
+      "fil": "docs/briefs/farsdag-2026/Solcellslampa_FD_1_H3/brief.md",
+      "pris": 589,
+      "jamforpris": 775,
+      "notion": "3ea270ab908c81639ebec35e6ed4d258"
+    },
+    {
+      "namn": "Golfkalender_FD_1_H3",
+      "typ": "video",
+      "hub": "3e8270ab-908c-817b-9e74-efe7a636609e",
+      "hubnamn": "Golf advent calendar creative hub",
+      "produkt": "golfkalender",
+      "fil": "docs/briefs/farsdag-2026/Golfkalender_FD_1_H3/brief.md",
+      "pris": 549,
+      "jamforpris": 719,
+      "notion": "3ea270ab908c81bf9c61d29214d815b1"
+    },
+    {
+      "namn": "Taljset_FD_1_H3",
+      "typ": "video",
+      "hub": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+      "hubnamn": "Whittling set creative hub",
+      "produkt": "taljset",
+      "fil": "docs/briefs/farsdag-2026/Taljset_FD_1_H3/brief.md",
+      "pris": 869,
+      "jamforpris": 1139,
+      "notion": "3ea270ab908c810795c0e2170586dc97"
+    },
+    {
+      "namn": "Rodholder_FD_1_H3",
+      "typ": "video",
+      "hub": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+      "hubnamn": "Fish rod holder",
+      "produkt": "rodholder",
+      "fil": "docs/briefs/farsdag-2026/Rodholder_FD_1_H3/brief.md",
+      "pris": 289,
+      "jamforpris": 482,
+      "notion": "3ea270ab908c8132b86ad3583a8a4d6c"
     }
   ]
 }

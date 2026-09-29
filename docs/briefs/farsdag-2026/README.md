@@ -129,6 +129,28 @@ samma rader. De fyra sessionen själv komponerade byggs om med `FD_VAR=2_2 pytho
 axelbältets gamla pris), briefgranskningens `--rad`-spärr grön, raderna i Notion med
 båda formaten och `To be Reviewed`.
 
+**Videon `FD_1_H3` (Axel samma förmiddag: "gjorde du inga briefs till videos?"):**
+samma rad som hook i en tredje omklippsvariant per produkt. Basen är den av H1/H2
+vars första bild redan visar det raden säger (`BAS` i `variant-h3.mjs`: kniven mot
+bandet, foten i tofflan, borsten ur röret …); bild, effekt och rad 2–4 står kvar
+ordagrant, så H3 mot basen läser radens effekt. Briefspärren 0 anmärkningar på alla
+elva, raderna i Notion som `Draft` (redigerarna tar dem själva, Axels besked samma
+dag), tillbakalästa.
+
+| Produkt | Bas | Notion |
+|---|---|---|
+| Båtmotorskyddet | H1 | [Batmotor_FD_1_H3](https://www.notion.so/3ea270ab908c8157a66beee0799d307c) |
+| Bältesslipen | H1 | [Beltgrinder_FD_1_H3](https://www.notion.so/3ea270ab908c8124bf0be75f9b7fb669) |
+| Golfkalendern | H2 | [Golfkalender_FD_1_H3](https://www.notion.so/3ea270ab908c81bf9c61d29214d815b1) |
+| IBC-överdraget | H1 | [IBC_FD_1_H3](https://www.notion.so/3ea270ab908c8171952bdf8ec83cf9d2) |
+| Inomhustofflorna | H2 | [Inomhustofflor_FD_1_H3](https://www.notion.so/3ea270ab908c818192bffabd24aff22a) |
+| Fiskespöhållaren | H2 | [Rodholder_FD_1_H3](https://www.notion.so/3ea270ab908c8132b86ad3583a8a4d6c) |
+| Solcellslampan | H1 | [Solcellslampa_FD_1_H3](https://www.notion.so/3ea270ab908c81639ebec35e6ed4d258) |
+| Sotarsetet | H2 | [Sotarset_FD_1_H3](https://www.notion.so/3ea270ab908c81aaaa9eca4568455a96) |
+| Taköverdraget | H2 | [Takoverdrag_FD_1_H3](https://www.notion.so/3ea270ab908c812faf02ef34a689cf90) |
+| Täljsetet | H2 | [Taljset_FD_1_H3](https://www.notion.so/3ea270ab908c810795c0e2170586dc97) |
+| Termoskyddet | H2 | [Termoskydd_FD_1_H3](https://www.notion.so/3ea270ab908c81479f66f4dbb34d912f) |
+
 **Uppladdningen:** sessionen laddade upp alla `FD_2_1` och `FD_2_2` själv 2026-09-29
 förmiddag i stället för att vänta på leveransrundan 13:20 (Axel: "Vart är alla items
 med fars dag-annonsen?"). Metas anropstak för kontot stryper efter ett par
