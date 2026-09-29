@@ -60,6 +60,7 @@ export const FAKTA = {
     kalla: 'golf-adventskalender-24-golftillbehor', sku: 'ADVENT-GOLF',
     pris: 549, jamfor: 719, usd: 17.19,
     offert: 'Golf advent calendar · Amazon B0FRFP1JZ2 · 9,08 + 8,11 = 17,19 USD',
+    no: { pris: 619, jamfor: 809, usd: 19.48, modell: 'SE-landat 17,19 USD × 1,133 — Kalenderkungen-arket har bara SWEDEN-rader; pris 549 × 1,13 = 620 → 619, jämför 719 × 1,13 = 812 → 809' },   // Axel 2026-09-29: "vi måste fixa golfkalendern till norska butiken"
     obs: 'Axels gissning 2026-09-16: "den som jag tror kommer printa mest är den här golfkalendern."',
   },
   cocktail: {
