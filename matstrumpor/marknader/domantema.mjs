@@ -23,6 +23,10 @@
 // Recensionerna är de riktiga, troget översatta (sonnet + infödd granskare 2026-09-29), alla elva,
 // även treorna och "Lang leveringstid".
 //
+// Två rättningar som inte är domänbundna körs i samma steg, för att läsas tillbaka på samma sätt:
+// finskans etikett i presentkortets formulär, och momsraden ("Skatter ingår.") som är borta på alla
+// värdar och språk sedan 2026-09-29 (Axel: "ta bort inkl. moms … Skriv inget").
+//
 // Patcharna är exakta (bytExakt: fel antal träffar = kastar) och idempotenta (markören MARK).
 
 import { readFileSync } from 'node:fs';
@@ -186,6 +190,41 @@ export const FI_RATT = '"name_label": "Vastaanottajan nimi (valinnainen)",';
 export function patchaFiLocale(kod) {
   if (kod.includes(FI_RATT)) return { kod, byten: [], hoppade: ['fi.json: redan rätt'] };
   return { kod: bytExakt(kod, FI_FEL, FI_RATT, 1), byten: ['mottagarens_namn'], hoppade: [] };
+}
+
+// Momsraden bort (Axels beslut 2026-09-29: "ta bort inkl. moms … Skriv inget"). Dawn skriver
+// "Skatter ingår." under priset och "Skatter ingår. Rabatter och fraktkostnad beräknas i kassan."
+// i varukorgen och sidolådan, på varje språk ("Taxes included.", "Inkl. Steuern." …), eftersom
+// butikens priser är satta inklusive skatt. Axel sköter moms och tull själv, så sajten säger inget
+// om det, och ingen ersättningstext skrivs. Korgens hela rad försvinner, också meningen om rabatter
+// och frakt: den sitter ihop med momsen i samma översättning, och frakten är fri till alla länder.
+// Elementet står kvar tomt så att avståndet till kassaknappen blir som förut. Butikens
+// skatteinställning rörs aldrig. Inte domänbundet: gäller alla värdar och alla språk.
+export const MOMS_MARK = `${MARK}: ingen momsrad`;
+const MOMS_KOMMENTAR = `{%- comment -%} ${MOMS_MARK} (Axel 2026-09-29, matstrumpor/marknader/domantema.mjs) {%- endcomment -%}`;
+export const PRODUKT_MOMS_VILLKOR = '{%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}';
+const PRODUKT_MOMS = /\{%- if cart\.duties_included and cart\.taxes_included -%\}\s*\{\{ 'products\.product\.duties_and_taxes_included' \| t \}\}\s*\{%- elsif cart\.taxes_included -%\}\s*\{\{ 'products\.product\.taxes_included' \| t \}\}\s*\{%- elsif cart\.duties_included -%\}\s*\{\{ 'products\.product\.duties_included' \| t \}\}\s*\{%- endif -%\}/g;
+const KORG_MOMS = /(<small class="tax-note caption-large rte">)[\s\S]*?(\n([ \t]*)<\/small>)/g;
+
+function bytMonster(kod, re, ersatt, antal) {
+  const traffar = [...kod.matchAll(re)].length;
+  if (traffar !== antal) throw new Error(`${re.source.slice(0, 40)}… hittades ${traffar} gånger, väntade ${antal}`);
+  return kod.replace(re, ersatt);
+}
+
+/** Produktsidan och "utvald produkt": momsraden under priset. Fraktpolicyns länk ritas som förut. */
+export function patchaProduktMoms(kod) {
+  if (kod.includes(MOMS_MARK)) return { kod, byten: [], hoppade: ['momsraden: redan borta'] };
+  kod = bytExakt(kod, PRODUKT_MOMS_VILLKOR, '{%- if shop.shipping_policy.body != blank -%}', 1);
+  kod = bytMonster(kod, PRODUKT_MOMS, MOMS_KOMMENTAR, 1);
+  return { kod, byten: ['momsraden_under_priset'], hoppade: [] };
+}
+
+/** Varukorgen, sidolådan och snabbordern: raden under totalsumman. */
+export function patchaKorgMoms(kod) {
+  if (kod.includes(MOMS_MARK)) return { kod, byten: [], hoppade: ['momsraden: redan borta'] };
+  kod = bytMonster(kod, KORG_MOMS, (_, start, slut, indrag) => `${start}\n${indrag}  ${MOMS_KOMMENTAR}${slut}`, 1);
+  return { kod, byten: ['momsraden_i_varukorgen'], hoppade: [] };
 }
 
 /** Bara för testerna: version 2 av layoutpatchen, som den gick live förmiddagen 2026-09-29. */
@@ -383,7 +422,13 @@ export const PATCHAR = {
   'sections/footer.liquid': patchaFooter,
   'snippets/ms-head.liquid': patchaMsHead,
   'locales/fi.json': patchaFiLocale,
+  'sections/main-product.liquid': patchaProduktMoms,
+  'sections/featured-product.liquid': patchaProduktMoms,
+  'sections/main-cart-footer.liquid': patchaKorgMoms,
+  'snippets/cart-drawer.liquid': patchaKorgMoms,
+  'snippets/quick-order-list.liquid': patchaKorgMoms,
 };
+const MOMSFILER = Object.keys(PATCHAR).filter((f) => PATCHAR[f] === patchaProduktMoms || PATCHAR[f] === patchaKorgMoms);
 export const NYA_FILER = {
   'sections/ms-omdomen-no.liquid': SEKTION_OMDOMEN,
   'snippets/ms-omdomen-badge.liquid': SNIPPET_BADGE,
@@ -449,7 +494,8 @@ async function huvud() {
   // därför upp till tre läsningar innan en fil döms.
   const okFor = (n) => (n.filename === 'templates/product.json' ? n.body.content.includes('ms_omdomen_no')
     : n.filename === 'locales/fi.json' ? n.body.content.includes(FI_RATT)
-      : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) : n.body.content.includes(MARK));
+      : MOMSFILER.includes(n.filename) ? n.body.content.includes(MOMS_MARK)
+        : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) : n.body.content.includes(MARK));
   let las;
   for (let forsok = 1; forsok <= 3; forsok++) {
     las = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 20) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: ut.map((x) => x.filename) });

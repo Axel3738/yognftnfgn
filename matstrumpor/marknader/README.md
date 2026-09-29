@@ -387,9 +387,32 @@ mättes rent.
   Shopify rättar alla språk på en gång.
 - `hreflang` på .eu/.com/.no pekar på .se. Shopify skriver dem själv.
 - Kvar som ägarbeslut:
-  - fraktpolicyns "priserna är exklusive moms, tull kan tillkomma" mot "Inkl. Steuern";
   - presentkortets omräknade pris;
   - rabattkodernas svenska namn (HAMBURGARE-K1F1).
+
+### Momsraden borta (Axels svar 2026-09-29 kväll)
+
+Frågan var att fraktpolicyn säger "exklusive moms, tull kan tillkomma" medan produktsidan sa "inkl.
+moms". Axels svar: "ta bort inkl. moms / Skriv inget / C", och "Jag fixar Judge.me till alla språk".
+
+- **Borta på alla värdar och alla tolv språk:** "Skatter ingår." under priset, och "Skatter ingår.
+  Rabatter och fraktkostnad beräknas i kassan." under totalsumman i varukorgen och sidolådan
+  ("Taxes included.", "Inkl. Steuern." …). Dawn skriver raden för att butikens priser är satta
+  inklusive skatt.
+- **Ingen text i stället** ("Skriv inget"). Korgens hela rad går, också meningen om rabatter och
+  frakt, för den sitter ihop med momsen i samma översättning och frakten är fri. Elementet står kvar
+  tomt, så avståndet till kassaknappen är som förut.
+- **Fraktpolicyn står som den står** (C). Butikens skatteinställning rörs inte. Judge.me gör Axel.
+- Patchen: `domantema.mjs` → `patchaProduktMoms` (`main-product`, `featured-product`) och
+  `patchaKorgMoms` (`main-cart-footer`, `cart-drawer`, `quick-order-list`). Den är exakt och
+  idempotent, och markören är `ms-domantema: ingen momsrad`. Den andra sessionens Trustpilot-rad i
+  sidolådan rörs inte, och det testas.
+- **Mätt:** PROV först, sedan MAIN, båda tillbakalästa. Sedan läst som kund med en vara i korgen på
+  .se (sv, en, nb, fi, pt), .com, .no och .eu (de, fr, nl, es, it, da, pl, pt-pt): 0 momsrader.
+  Sidolådan är sedd i Chromium på sv och de. Totalsumman, Trustpilot-raden och kassaknappen står som
+  förut.
+- ⚠️ På .eu är portugisiskan `/pt-pt/`. `/pt/` skickar till engelska startsidan. Annonsernas länk
+  är `matstrumpor.se/pt/…`, och den visar portugisiska (mätt samma kväll).
 
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 

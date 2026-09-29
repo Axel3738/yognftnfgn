@@ -161,7 +161,11 @@ allt detta i `marknader/README.md` → "Domänerna". ✅ **QA som kund på alla 
 BÄVERBUTIKENS kundkonto, loggan "MATSTRUMPOR.SE" stod kvar i sidfot + JSON-LD på egna domäner,
 köpknappen sa "Lägger i…" på alla språk, ätpinnarnas sida visade strumpstorlekarna. `bygg.mjs --steg
 tema` uppdaterar sedan dess översättningar i redan patchade filer (förut nådde en ändrad översättning
-aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⚠️ Shopify mätt
+aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⛔ **Ingen momsrad på
+sajten sedan 2026-09-29 kväll** (Axel: "ta bort inkl. moms / Skriv inget / C"): "Skatter ingår." under
+priset och hela korgraden under totalsumman är borta på alla värdar och tolv språk
+(`domantema.mjs` → `patchaProduktMoms`/`patchaKorgMoms`). Skriv aldrig in en moms- eller tulltext
+igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
