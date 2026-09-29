@@ -87,6 +87,54 @@ Spärren släpper nu igenom ordet bara när briefen bär en rad som börjar med
 bildbrieferna, i repot och i Notion (tillbakaläst). Fyra tester i
 `bildannonser/test/verifiera.test.mjs`.
 
+## Omgång 3, 2026-09-29: rubrikvarianten `FD_2_2` ("presenten han faktiskt använder")
+
+**Beställd:** Axel samma morgon: "Ni har också testat att köra med den farsdagspresenten
+som de faktiskt vill ha eller faktiskt kommer att använda … det hade ju varit nice att
+köra några sådana headlines på några bilder … de var riktigt nice." Belägget i kontot:
+`Takoverdrag_GT_2_H1` ("gav jag något han faktiskt använder. Varje vinter.") är
+Taköverdragets mest lönsamma video (8 182 kr, 30 köp, ROAS 4,24, vinstbidrag 13 124 kr,
+MagiBorsten last_30d läst 2026-09-28), speglad som "Presenten han faktiskt blir glad för."
+och "The RV gift they'll actually use".
+
+**Bara rubriken byts.** `FD_2_2` är `FD_2_1` pixel för pixel utom rubriken: badge,
+underrad, foto, prisband och bottenrad står kvar, och annonsen går i samma adset
+(`FD | Notionrunda 2026-09-29`) med samma annonstext. Då läser H(2_1) mot H(2_2) per
+produkt rubrikens effekt och inget annat. Ordet **"faktiskt"** är vinkelns markör och
+står i varje rubrik. Rubrikerna skrevs av en sonnet-subagent mot `docs/copy-regler.md`,
+två förslag per produkt med tre-frågorstest, och sex skrevs om för att bära
+"faktiskt" (`copy/rubriker-FD_2_2.json`).
+
+| Produkt | FD_2_1 (förut) | FD_2_2 (ny) | Notion |
+|---|---|---|---|
+| Båtmotorskyddet | Fars dag-present: skydd för hela vintern. | Fars dag-presenten han faktiskt drar över motorn | [Batmotor_FD_2_2](https://www.notion.so/3ea270ab908c81f8a628ddfbd4382637) |
+| Bältesslipen | Fars dag-present för pappans slöa knivar | Fars dag-presenten han faktiskt slipar eggen med | [Beltgrinder_FD_2_2](https://www.notion.so/3ea270ab908c81409fe4d26b234b89cc) |
+| Golfkalendern | Fars dag-present fylld med golfprylar. | Till fars dag: golfprylar han faktiskt öppnar | [Golfkalender_FD_2_2](https://www.notion.so/3ea270ab908c81419182ed6ee0c7f8f1) |
+| IBC-överdraget | Fars dag-presenten som stoppar algerna i tanken | Fars dag-presenten han faktiskt drar över tanken | [IBC_FD_2_2](https://www.notion.so/3ea270ab908c81caa1d7d8cee17ffea0) |
+| Inomhustofflorna | Kamouflagetofflor fodrade med plysch till fars dag | Fars dag-tofflorna han faktiskt har på sig | [Inomhustofflor_FD_2_2](https://www.notion.so/3ea270ab908c81438599cb3ccd63fdd1) |
+| Fiskespöhållaren | Fars dag-present: fyra hållare, en till varje spö | Fars dag-presenten han faktiskt sätter spöet i | [Rodholder_FD_2_2](https://www.notion.so/3ea270ab908c815b9477f4296f3fb6f0) |
+| Solcellslampan | En present till fars dag: ingen elektriker. | Fars dag-presenten han faktiskt sätter upp själv | [Solcellslampa_FD_2_2](https://www.notion.so/3ea270ab908c8147aeade49d234cb295) |
+| Sotarsetet | Fars dag-present: skruva ihop 3,69 meter själv. | Fars dag: skorstenen han faktiskt rensar själv | [Sotarset_FD_2_2](https://www.notion.so/3ea270ab908c8101b5b6e440c461ea57) |
+| Taköverdraget | Present till fars dag: taket han aldrig kollar. | Till fars dag: husvagnstaket han faktiskt täcker | [Takoverdrag_FD_2_2](https://www.notion.so/3ea270ab908c81adb8e8c0bed640d5d9) |
+| Täljsetet | Till fars dag: 30 delar i väskan. | Fars dag-presenten han faktiskt täljer med | [Taljset_FD_2_2](https://www.notion.so/3ea270ab908c81d8ac41c68f1d5f3959) |
+| Termoskyddet | Fars dag-present: pappa slipper torka imma | Fars dag-skyddet han faktiskt sätter på husbilen | [Termoskydd_FD_2_2](https://www.notion.so/3ea270ab908c8151ada7c74e83a8319d) |
+
+**Bilderna:** sju av `FD_2_1` gjordes av bildrutinen (kie.ai-bas + `text.py`), och
+basen utan text dör med rutinens container. Därför `byt-rubrik.py`: den läser av
+rubrikens rader (feta streck under den röda badgen, ≥ 5 px streckbredd), räknar ut
+storleken ur radavståndet (`text.py`: höjden av "Åjg" × 1,45), tvättar bort bara de
+mörka textpixlarna med inpaint och skriver den nya rubriken i Liberation Sans Bold på
+samma rader. De fyra sessionen själv komponerade byggs om med `FD_VAR=2_2 python3 komponera.py`. Alla 22 bilder (4:5 + 1:1) tittade på, `verifiera.py` grön
+(spec:en måste bära `produkt`, annars stoppas IBC:s riktiga jämförpris 636 kr som
+axelbältets gamla pris), briefgranskningens `--rad`-spärr grön, raderna i Notion med
+båda formaten och `To be Reviewed`.
+
+**Uppladdningen:** sessionen laddade upp alla `FD_2_1` och `FD_2_2` själv 2026-09-29
+förmiddag i stället för att vänta på leveransrundan 13:20 (Axel: "Vart är alla items
+med fars dag-annonsen?"). Metas anropstak för kontot stryper efter ett par
+uppladdningar i rad ("User request limit reached"): en i taget, 6 minuters vila vid
+strypning, en minut mellan annonserna.
+
 ## Brieferna i Notion (alla `Draft`, skapade 2026-09-28)
 
 **Allt på en sida (Axels fråga 2026-09-29 "vart kan jag se alla farsdag briefs"):**

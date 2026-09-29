@@ -1,0 +1,101 @@
+{
+ "Batmotor_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt drar över motorn",
+  "engelska": "The Father's Day gift he actually pulls over the motor",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Beltgrinder_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt slipar eggen med",
+  "engelska": "The Father's Day gift he actually sharpens the edge with",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Golfkalender_FD_2_2": {
+  "rubrik": "Till fars dag: golfprylar han faktiskt öppnar",
+  "engelska": "For Father's Day: golf gear he actually opens",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "IBC_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt drar över tanken",
+  "engelska": "The Father's Day gift he actually pulls over the tank",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Inomhustofflor_FD_2_2": {
+  "rubrik": "Fars dag-tofflorna han faktiskt har på sig",
+  "engelska": "The Father's Day slippers he actually wears",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Rodholder_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt sätter spöet i",
+  "engelska": "The Father's Day gift he actually puts the rod in",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Solcellslampa_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt sätter upp själv",
+  "engelska": "The Father's Day gift he actually puts up himself",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Sotarset_FD_2_2": {
+  "rubrik": "Fars dag: skorstenen han faktiskt rensar själv",
+  "engelska": "Father's Day: the chimney he actually cleans himself",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Takoverdrag_FD_2_2": {
+  "rubrik": "Till fars dag: husvagnstaket han faktiskt täcker",
+  "engelska": "For Father's Day: the caravan roof he actually covers",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Taljset_FD_2_2": {
+  "rubrik": "Fars dag-presenten han faktiskt täljer med",
+  "engelska": "The Father's Day gift he actually whittles with",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ },
+ "Termoskydd_FD_2_2": {
+  "rubrik": "Fars dag-skyddet han faktiskt sätter på husbilen",
+  "engelska": "The Father's Day cover he actually puts on the motorhome",
+  "test": {
+   "vis": "✅",
+   "fals": "✅",
+   "konk": "❌"
+  }
+ }
+}
