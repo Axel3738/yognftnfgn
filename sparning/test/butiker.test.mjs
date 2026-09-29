@@ -46,6 +46,19 @@ test('registret: varje butik bär det rundan och sidan behöver', () => {
   assert.deepEqual(KRAVDA_SCOPES, ['read_orders', 'write_fulfillments', 'write_content']);
 });
 
+// 2026-09-28: sju språk lades i Matstrumpors sprak_extra och fick språkfiler, men
+// inte en rad i SPRAK. skapaOversattare kastade "Okänt språk" och rundan 16:56
+// publicerade ingen sida alls — för ALLA kunder, inte bara de nya språken. Testet
+// läser registret, så ett nytt språk kan inte läggas till på bara ena stället.
+test('registret: varje språk i sprak_extra finns i SPRAK och går att bygga en översättare för', () => {
+  for (const b of allaButiker()) {
+    for (const kod of b.sprak_extra ?? []) {
+      assert.ok(SPRAK[kod], `${b.id}: sprak_extra har "${kod}" men SPRAK i oversatt.mjs saknar raden`);
+      assert.doesNotThrow(() => skapaOversattare(kod), `${b.id}: skapaOversattare("${kod}")`);
+    }
+  }
+});
+
 test('registret: standardbutiken bor i sparning/, de andra i sparning/butiker/<id>/', () => {
   const bb = lasButik();
   assert.equal(bb.id, 'baverbutiken');

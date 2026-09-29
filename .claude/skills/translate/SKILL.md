@@ -13,7 +13,8 @@ Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser
 
 ## Tre järnregler (brutna = pengar eller förtroende förlorat)
 
-1. **Rendera ALDRIG före proofread.** Rendering drar HeyGen-credits, proofread är gratis.
+1. **Rendera ALDRIG före proofread.** Rendering drar mest HeyGen-credits. Proofread i
+   precision-läget drar också krediter (mätt 2026-09-28), speed-läget gjorde det inte.
    Transkriptet ska vara lokaliserat, verifierat och godkänt INNAN generate anropas.
 2. **Skanna ALLTID källvideon efter inbränd text före leverans.** HeyGen översätter bara
    ljudet — svensk text i bild följer med oöversatt. Hittas text: täck och ersätt med
@@ -27,7 +28,10 @@ Fråga med AskUserQuestion om något av detta saknas: **marknader** och **priser
    ```
 
    Gratis, bara ffmpeg lokalt. Fångar tyst spår, längddrift mot källan, avhugget
-   slut och tappat tal. **En video med ❌ levereras inte** — rendera om den i
+   slut och tappat tal. Kör sedan **`pipeline/lyssna.py <final.mp4> <srt> <källa.mp4> <språkkod>`**
+   (Whisper small, lokalt): språket som hörs, andel av SRT:ns ord som hörs (0,7–0,9 är normalt,
+   under ~0,6 = lyssna), röstens tonhöjd mot källans (byte av person eller kön syns) och hela
+   transkriptionen, så att slutet går att läsa. **En video med ❌ levereras inte** — rendera om den i
    HeyGens UI eller stryk den ur batchen. Ladda aldrig upp den ändå.
 
    ⚠️ **Grönt betyder "inga mätbara fel", inte "godkänd".** ffmpeg hör inte
@@ -70,9 +74,12 @@ renderats om. "QA grön" utan röstraden räknas inte som QA.
 ## Vilka videor översätts — Axels regel 2026-09-27
 
 - **UGC (riktiga människor framför kameran: Nathalie, Katarina, Sofie …) översätts alltid
-  med HeyGens dyraste version** = full videoöversättning med röstklon och lip-sync (det
-  `proofreadCreate` → `proofreadGenerate` gör). Aldrig "audio only"-dubben, aldrig en
-  billigare nivå för att spara krediter — hellre en video mindre.
+  med HeyGens dyraste version** = full videoöversättning med röstklon och lip-sync i
+  **läget `precision`** (`proofreadCreate` → `proofreadGenerate`). Aldrig "audio only"-dubben,
+  aldrig `speed`, aldrig en billigare nivå för att spara krediter — hellre en video mindre.
+  ⚠️ `pipeline/heygen.mjs` skickade fram till 2026-09-28 inget läge alls, och då blev det
+  HeyGens standard `speed`. Sedan dess är `precision` standard i `proofreadCreate`,
+  `translate-batch.mjs` och `localize.mjs`; `--mode=speed` måste skrivas ut.
 - **Egna HeyGen-videor (våra AI-avatarer) översätts INTE.** De görs om direkt på
   målspråket i HeyGen med samma avatar och manus. En avatarvideo som skickas genom den här
   pipelinen är fel väg — stoppa och säg det.
@@ -94,11 +101,16 @@ renderats om. "QA grön" utan röstraden räknas inte som QA.
    ladda ner: `https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t`.
    Filer >32 MB: komprimera med libx264 crf 23–28 före HeyGen-upload (32 MB-gräns).
 2. **Kolla kvoten** (`checkQuota`) och rapportera den till användaren före och efter.
-3. **Proofread-fas (0 credits).** En session per video × marknad via `proofreadCreate`.
+3. **Proofread-fas.** En session per video × marknad via `proofreadCreate` (precision).
    Språknamn måste matcha HeyGens lista exakt (`listTargetLanguages`), t.ex.
    "Norwegian Bokmål (Norway)", "Danish (Denmark)", "Finnish (Finland)", "English (UK)",
    "English (Australia)", "Spanish (Mexico)", "Dutch (Netherlands)".
    **Spara alla session-ID:n till en JSON-fil på disk DIREKT** — containern kan starta om.
+   ⚠️ **Blocken skiljer sig mellan sessioner och lägen.** En text som godkänts mot en annan
+   session (t.ex. speed) läses upp i fel tidsfönster om den laddas upp rakt av. Flytta den med
+   `node pipeline/srt-block.mjs justera <godkänd.srt> <nya-block.srt> <ut.srt>` (går när de nya
+   gränserna är en delmängd av de gamla); annars fördelar en agent texten på de nya blocken och
+   `node pipeline/srt-block.mjs jamfor <godkänd.srt> <ny.srt>` visar att inget ord ändrats.
 4. **Lokalisera transkripten.** Läs varje SRT och rätta enligt checklistan i
    `docs/video-localization.md` (§Lokaliseringschecklista). Kortversion:
    - Varumärken/produktnamn enligt marknadens namn (fråga användaren om okänt).
@@ -122,7 +134,11 @@ renderats om. "QA grön" utan röstraden räknas inte som QA.
    - Fastnar en video i moderationskön: polla i bakgrunden, leverera resten direkt.
 7. **Järnregel 2:** skanna källvideon (2 bilder/sek, hitta ljusa textplattor via
    numpy: rader där 40 < vita pixlar < 240 vid 270 px bredd). Hittas inbränd text:
-   bränn lokaliserade captions med **`pipeline/no-captions.py`** — Axels facit
+   bränn lokaliserade captions med **`pipeline/no-captions.py --rutor`** — sedan
+   2026-09-28 (Axel: "Kan du göra så att det suddiga inte är så himla stort?") suddas bara
+   rutan runt den inbrända raden, bild för bild och bara medan texten syns
+   (`pipeline/textrutor.py` mäter rutorna, efterkontrollen stoppar med exit 3 om källtext
+   blinkar fram). Utan `--rutor` gäller den äldre bandmetoden — Axels facit
    2026-09-02 (`Beltesliper_NO_PD_3`): ett utsuddat band över hela bredden exakt
    där källremsan satt (blurrad kopia av intilliggande bildinnehåll — inte
    källtexten suddad på plats), och ovanpå en tajt ruta med vit bakgrund och

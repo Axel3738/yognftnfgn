@@ -107,8 +107,8 @@ men rutinen bygger från `main`. Axels beslut samma kväll: butiken heter
 **Matstrumpor** i alla länder och annonserna bär raden "svenskt varumärke"
 (CaraShell-principen); alla kampanjer 1 000 kr/dag men ⛔ **ingen aktiveras
 förrän Axel granskat annonserna**. HeyGen-nyckeln sitter på
-`subscriptions@stonebite.org` med 0,10 USD i API-plånboken och ingen
-prenumeration — därför "Insufficient credit". Domänerna `.no`/`.eu` köper Axel,
+`subscriptions@stonebite.org`; plånboken fylldes på 2026-09-28 (243 USD, 170 kvar
+efter alla 33 videor). Domänerna `.no`/`.eu` köper Axel,
 `.com` finns; kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys
 opt-out-formulär ("Dina integritetsval") bär kundtexten i `data-*`-attribut —
 nb/da hade svenska knappar live till 2026-09-27 kväll, rättat och tillbakaläst.
@@ -123,13 +123,19 @@ byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag)
 DK, FI, US och WW (NO+DK+FI+US+GB+AU+CA+NZ, engelska, `/en/` utan `?country=`) —
 de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
 Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
-Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → nb/en/da/fi; ⛔ **Katarinas
+Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
-(copy av sonnet). ⛔ **HeyGen stoppar:** `Insufficient credit. This operation
-requires 'api' credits` på varje proofread-session (mätt två gånger 2026-09-27)
-medan kvoten säger `api: 6, plan_credit: 2000` — studiokrediterna är inte
-API-krediter; Axel köper API-krediter på app.heygen.com. Inga annonser ligger i
-kampanjerna, inget spenderar. ⚠️ Shopify mätt
+(copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
+tolv, alla i HeyGens **dyraste läge `precision`**. ⚠️ `pipeline/heygen.mjs` skickade inget
+läge före 2026-09-28 och fick då HeyGens standard `speed`: 24 speed-renderingar kastades,
+precision är nu standard i repot (`--mode=speed` måste skrivas ut). Precision delar talet i
+andra block än speed — en godkänd text flyttas med `pipeline/srt-block.mjs`, aldrig rakt
+upp. QA och id:n: `marknader/README.md` → Annonserna i kontot. ⛔ Inget aktiverat — Axel
+granskar först. **Egna videor (inte UGC) görs med egen röst, aldrig med HeyGens
+översättning** (Axel 2026-09-28): haikuh3, haikuh2, s001h1 (en svensk AI-kvinnoröst →
+ElevenLabs-dubbning i manuellt läge med granskade manus — kräver `ELEVENLABS_API_KEY`,
+som saknas 2026-09-29) och 012v2 (ingen röst, bara bildtext: `pipeline/textboxar.py` +
+`textbyte.py`); allt i `marknader/egna/`. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

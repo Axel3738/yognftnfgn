@@ -327,8 +327,9 @@ skapade i nya kungen (CBO, OUTCOME_SALES, lowest cost, ett adset var — spegel 
 | PT | `MATSTRUMP_PT_SALES` | 120251750324340023 | PT | pt (`/pt/`) | 1 000 kr/dag — Axels (kväll) |
 
 Worldwide länkar till `/en/products/sushi-strumpor` utan `?country=` — Shopify väljer marknad
-efter kundens IP, så en dansk ser engelska + DKK. Sverige ingår inte (egen kampanj). **Inga
-annonser ligger i än:** videorna väntar på HeyGen (nedan). **Axels budgetbeslut 2026-09-27
+efter kundens IP, så en dansk ser engelska + DKK. Sverige ingår inte (egen kampanj). **Annonserna
+ligger i sedan 2026-09-28/29 — 36 st, 3 per kampanj, alla PAUSED** (se "Annonserna i kontot"
+nedan). **Axels budgetbeslut 2026-09-27
 kväll: alla kampanjer 1 000 kr/dag** ("Worldwide kanske vi kan börja på 1000kr per dag. Sen
 respektive kampanjer 1000kr per dag också") — men ⛔ **ingen kampanj aktiveras förrän Axel
 granskat annonserna** ("jag vill inte att du aktiverar kampanjerna i meta för ens jag har
@@ -339,12 +340,32 @@ utan butiksnamnet, så regeln "butikens namn står aldrig i en annons" håller. 
 `annonser/lage.json`, `bygg.mjs --lage`. Metas rate limit slog till mitt i bygget (kod 17,
 backoff 30/60/120 s …) — bygget tar en kvart för sju kampanjer, inte en minut.
 
+## Annonserna i kontot (2026-09-28/29) — 36 st, alla PAUSED
+
+Varje kampanj har tre annonser med Axels egen UGC, gjord i HeyGens **dyraste läge (`precision`)**
+på kampanjens språk (WW bär de engelska): `MATSTRUMP_<KOD>_sushi_gift_ugc_001_v1` (Nathalie),
+`…_gift_ugc_002_v1` (Sofie H1), `…_jul_ugc_003_v1` (Sofie H2). Katarina ingår aldrig. Id:n i
+`annonser/lage.json` (tillbakaläst ur kontot) och `annonser/videor.json` (vilken fil varje annons
+bär, sha256). NO och NL laddades först upp med speed-renderingar och fick precision-videon
+inbytt i samma annons (`bygg.mjs --byt-video`: ny creative, tillbakaläst, fortfarande PAUSED).
+
+**QA, alla 33 videor (11 språk × 3):** röstkollen grön på alla; Whisper hör marknadens språk i
+alla 33 (sannolikhet 0,93–1,0), 77–100 % av textens ord hörs, rösten ligger inom 21 % av
+källans tonhöjd. Svenska inbrända texter suddade bara i sin ruta medan de syns (`--rutor`) och
+marknadens text inbränd. Texterna som renderades: `heygen/srt/<KOD>/`. Kostnad: ungefär 49 USD
+för 32 precision-sessioner + 31 renderingar (13 148 → 10 218 API-enheter, 60 enheter = 1 USD;
+den 33:e, norska Nathalie, var provet). Hela flödet: `heygen/README.md`.
+
+⛔ **Inget är påslaget.** Axel granskar annonserna först; `--aktivera` vägrar så länge
+budgetbeslutet i `marknader.json` bär "tills Axel granskat".
+
 ⚠️ **HeyGen-nyckeln sitter på kontot `subscriptions@stonebite.org`** (Axel Odhner, mätt
 `GET /v1/user/me` 2026-09-27 kväll): `billing_type: wallet`, **saldo 0,10 USD, ingen
 prenumeration på det kontot**. Det är därför API:t svarar "Insufficient credit … requires 'api'
 credits" fast `remaining_quota` visar `plan_credit: 2000` — planens krediter ligger inte i
 API-plånboken. Axel fyller på plånboken på det kontot (app.heygen.com → Settings → API/Billing)
 eller lägger en API-nyckel från kontot som bär prenumerationen i `HEYGEN_API_KEY`.
+✅ **Löst 2026-09-28:** Axel fyllde på plånboken (243 USD vid start, 170 USD kvar efter alla 33).
 
 ## Norge först — Axels budget 1 000 kr/dag (2026-09-27), förberett men stoppat på HeyGen
 
@@ -371,6 +392,9 @@ bara det körningen själv skapat.
    Samma mönster som 2026-08-29 (47 sessioner). API-krediterna köps på app.heygen.com
    (Settings → Subscriptions & API). Sessionerna återskapas av sig själva vid nästa
    `proofread`-körning.
+
+✅ **Båda lösta:** token:en skriver i nya kungen sedan 2026-09-27 ~15:30 CEST, och HeyGen-
+plånboken fylldes på 2026-09-28. Norges tre annonser ligger PAUSED (se "Annonserna i kontot").
 
 ## Annonserna i 20–30 länder — planen (inte byggd)
 
