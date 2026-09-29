@@ -1,0 +1,663 @@
+{
+ "agent": "AV",
+ "datum": "2026-09-29-carashell",
+ "sammanfattning": "Linsen sökte husbilens KAROSS OCH DRIVLINA UTANPÅ (Ducato/Boxer/Jumper/Transit) under uppställningen 1,6 v — allt utom vindrutan, hytten inifrån och speglarna (AN 09-29). Golvet lästes med URL: PriceRunner via curl (31 sökningar), getcamping.se (16 sökningar, kortparser på data-title/data-price); husvagnsexperten.se 403, campingvaruhuset.se 404 på sök, Biltema/Jula 403, kama.se svarar inte = oläst. Utfall: den vanligaste failure-moden vid uppställning på Ducato-husbilen (möss i motorrummet) har ingen svensk vara i nät-/staketform (PriceRunner 0 på musskydd/musnät/gnagarskydd/mårdskydd bil, getcamping 0) — bara ultraljud som är sortiment; svarta ränder (ägarens vanligaste klagomål) har bara kemi i svensk handel plus Fiamma Drip Stop 175 kr/75 cm; vintercamparens frysta gråvattentank har ingen svensk 12 V-värmematta alls. Fyra rader levereras, ingen i skyddsform (nät, list, deflektor, värmematta) — formtaket rörs inte. Strukna: markisskyddet (ingen kassettform på Ali, ingen i svensk handel — Fiamma/Thule-kassetter behöver inget), torkarbladslyftaren (landad 14–74 kr, K8), torkarbladsskydd (= Termoskyddet, K0), anti-siphon/tanklock (sortiment), reservhjulslås (ingen Ali-form), bakdörrslåset (borrning + Motorlåset REAL_LOSER), avgasplugg, el-fotsteget, solpanel/Starlink, ultraljud, batteri (K0), teleskopborsten (sortiment + Biltvättborsten REAL_LOSER).",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Gnagarstaketet runt husbilen, 304-nät",
+   "objekt": "NYTT: Husbilens motorrum och hjulhus (Ducato) — mössen som klättrar in via däcken under uppställningen",
+   "form": "nät",
+   "form_kommentar": "tygstaket med rostfritt 304-nät i nederkant som ställs runt hela bilen på marken (ingen huv/överdrag) — mössen kommer inte fram till däcken och hjulhusen; räknas INTE mot formtaket",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (Ducato-husbil 400 tkr–1,5 Mkr; kabelskada av möss = verkstad, belopp ej mätt)",
+     "deadline uppställning 1,6 v (4 av 5 dömda vann på 'uppställning')",
+     "old way = improvisation (musfällor, pepparmyntsolja, ultraljud som inte biter — samma svikande default som presenningen)",
+     "golv under nej: ingen svensk aktör i formen (PriceRunner 0 på fyra sökord, getcamping 0)",
+     "ägare 55+ småhus, latent behov nej — alla husbilsägare vet om mössen"
+    ],
+    "avvikelser": [
+     "form nät (0 dömda i kontot — Axel 2 ja, aldrig launchad) i stället för överdrag",
+     "storleken är inte mätt: listningen säger 'Universal Version' och heron visar en SUV — en 7 m Ducato-husbil har ~20 m omkrets",
+     "pris 979 utan ankare (landad × 2,4) — högsta prisbandet 500–999, ankare okänd",
+     "hero har text ('Car Fence', leverantörslogga) — måste beskäras eller bytas mot egen bild"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012197754256",
+    "url": "https://www.aliexpress.com/item/1005012197754256.html",
+    "pris_usd": 28.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:42:50Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012197754256.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'Universal Version' — längd/omkrets står inte i titeln (ej mätt); syskon: 1005007137110221 (46,79 USD, samma hero, produktsidan svarade tomt 11:47:47Z — troligen större storlek, ej bekräftat), 1005012586549357 (35,49 USD, LIVE 11:48:04Z, hero med kinesisk text och vattenstämplar — använd inte); billiga 'condenser net' 2,65–4,19 USD är insektsnät för grillen (sommar, annan sak)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är två foton av en vit SUV med det svarta staketet runt hjulen, rostfritt nät synligt i nederkant på det nedre fotot; text 'RUTI LIVING', 'Car Fence', '304 stainless steel mesh below' måste beskäras — övre fotot är nästan textfritt"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen i formen — PriceRunner 'musskydd bil' 0, 'musnät motorrum' bara bagagenät, 'gnagarskydd bil' bara lackskydd/stötfångarskydd, 'mårdskydd bil' bara stänkskydd, 'musstaket bil'/'bilstaket möss' 0; getcamping 'mus'/'gnagare'/'musskydd' 0 i formen",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=musn%C3%A4t%20motorrum",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "inget märke i formen i svensk handel (ej mätt); närmaste grannform: Rejekt Rått & Musskrämma ultraljud 2-pack 348 kr (PriceRunner 'musskrämma bil' 2026-09-29) — annan sak, sortiment hos Biltema/Jula (oläst 403)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=musskr%C3%A4mma%20bil",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('musskydd bil', 'musnät motorrum', 'gnagarskydd bil', 'mårdskydd bil', 'råttskydd bil', 'musskrämma bil', 'musstaket bil', 'bilstaket möss' — 0 i formen)",
+     "getcamping.se ('mus', 'gnagare', 'musskydd' — 0 i formen)",
+     "biltema.se / jula.se (403, oläst — ultraljud 12 V känt sortiment, annan form)",
+     "husvagnsexperten.se (403), campingvaruhuset.se (404 på sök), kama.se (svarar inte)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     366,
+     447
+    ],
+    "pris_sek": 979,
+    "brutto_sek": [
+     532,
+     613
+    ],
+    "be_cpa_sek": [
+     532,
+     613
+    ],
+    "be_roas": 1.71,
+    "flerkop": false,
+    "returrisk": "medel — omkretsen är okänd; passar staketet inte en 7 m husbil kommer det tillbaka"
+   },
+   "meta_tanke": {
+    "hook": "Möss i husbilen i vinter igen?",
+    "objekt_i_bild": "husbilen på uppställningsplatsen med det svarta staketet runt alla hjul, nätet i nederkant",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "musen stoppas vid nätet på marken innan den når däcket — motorrummet förblir tomt hela vintern"
+   },
+   "varfor": "Möss i motorrummet är den vanligaste vinterskadan på en uppställd husbil och det finns ingen svensk vara i den här formen — bara ultraljud som är sortiment; samma struktur som taköverdraget (dyrt objekt ute, uppställning 1,6 v, svikande improvisation) i en ny form (nät) som Axel gett 2 ja men kontot aldrig testat.",
+   "huvudrisk": "Omkretsen är inte mätt (heron visar en SUV, husbilen är 7 m) och priset 979 saknar märkesankare — plus text i heron.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 9,
+    "K4": 9,
+    "K5": 6,
+    "K6": 10,
+    "K7": 5,
+    "K8": 8,
+    "K9": 4,
+    "K10": 3,
+    "K11": 1,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep nät/möss/motorrum: Lastnät, Golfnät, Bordtennisnät — inget gnagarskydd; inget i husbilsraderna)",
+     "koncept.py sok 'rodent'/'fence'/'engine' → K0153 + K0164 (samma listningstyp, status kandidat, aldrig levererade, SOKTRAFF 09-10 — får levereras enligt ORDER.md); 'gnagar'/'staket' inget på husbil",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012197754256.html",
+    "https://www.aliexpress.com/item/1005012586549357.html",
+    "https://www.pricerunner.se/search?q=musn%C3%A4t%20motorrum",
+    "https://www.pricerunner.se/search?q=gnagarskydd%20bil",
+    "https://www.pricerunner.se/search?q=musskr%C3%A4mma%20bil",
+    "https://www.getcamping.se/search?q=mus"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Droppkantslisten mot svarta ränder, 2 × 3 m",
+   "objekt": "NYTT: Husbilens sidoväggar under takkanten — regnvattnet som rinner från taket och lämnar svarta ränder",
+   "form": "annat",
+   "form_kommentar": "självhäftande J-list i PVC som limmas längs takkanten ovanför fönster och dörr och leder vattnet förbi väggen (Fiamma Drip Stop-formen) — ingen skyddsform, räknas inte mot formtaket",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H03",
+   "vinnarlikhet": {
+    "likast": "Sätesöverdragaren (åkgräsklippare)",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (husbilens gelcoat/plåtsida)",
+     "pågående skada som ägaren ser varje vår (svarta ränder under varje fönster) — deadline höstregn NOW 1,6 v, skadan pågår hela uppställningen",
+     "svikande default som ägaren redan köpt: 'Ren fritid — Rengöringsmedel husvagn' 195 kr (getcamping 'svarta ränder') = H03-strukturen",
+     "ägare 55+ småhus, latent behov nej",
+     "flerköp ja: två sidor, flera fönster — 2 × 3 m i paketet"
+    ],
+    "avvikelser": [
+     "form annat/list (0 av 15 dömda 'annat' vann) — men den sitter PÅ husbilen året runt, inte i förrådet",
+     "montering = ja (rengör, dra av skyddspapper, tryck fast) — vinnarna kräver ingen montering",
+     "golv i exakt form finns: Fiamma Drip Stop 75 cm 175 kr (PriceRunner) — styckpriset ligger under oss, meterpriset (233 kr/m) 2,3× över",
+     "6 m-variantens Ali-pris ej mätt — ekonomin räknad på 2 × 3 m-rullen à 12,06 USD"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009863338287",
+    "url": "https://www.aliexpress.com/item/1005009863338287.html",
+    "pris_usd": 12.06,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:32Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005009863338287.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "3 m eller 6 m, vit eller svart (titel '3/6M Camper Van Gutter Rain Guard Drip Stop 1/2\" Height Drip Rail PVC'); 12,06 USD = lägsta varianten (3 m), 6 m ej mätt; syskon: 1005010452482465 (19,09 USD, LIVE 11:44:29Z, hero = collage med text 'Wide range of applications' + husbil), 1005012526611091 (6,43 USD 1/3/5 m, LIVE 11:44:34Z, hero med stor text '5M'), 1005012536661178 / 1005012205366468 (5,58–5,95 USD, 1/5/6 m silikon, sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: en bil ovanför, två rullar (vit + svart) med rött skyddspapper under, texten '3 meters' — bilen är en personbil, inte en husbil; creativen bör visa listen ovanför ett husbilsfönster med ränderna bredvid (svarta ränder är självförklarande på 3 s)"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Fiamma Drip Stop List 75 cm Svart (PriceRunner, kategori Tak)",
+     "pris_sek": 175,
+     "url": "https://www.pricerunner.se/search?q=fiamma%20drip",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Fiamma Drip Stop räknat per meter: 175 kr / 0,75 m = 233 kr/m → 6 m ≈ 1 400 kr (8 lister; PriceRunner 2026-09-29); getcamping 'drip stop'/'droppkant'/'regnlist' 0 i formen",
+     "pris_sek": 1400,
+     "url": "https://www.pricerunner.se/search?q=fiamma%20drip",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('fiamma drip': Drip Stop 75 cm 175 kr; 'drip stop fiamma' samma; 'regnlist husbil' 0; 'droppkant husbil' 0; 'droppskydd husbil' 0; 'rain gutter rv': bara Plastmo hängrännor + 'Camper Gutter Spout' 92 kr = US-stuprörsförlängning, annan sak)",
+     "getcamping.se ('drip stop', 'droppkant', 'regnlist' — 0 i formen; 'svarta ränder' → Ren fritid rengöringsmedel 195 kr = defaultlösningen)",
+     "husvagnsexperten.se (403), campingvaruhuset.se (404), biltema.se/jula.se (403) — oläst"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     314,
+     384
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     315,
+     385
+    ],
+    "be_cpa_sek": [
+     315,
+     385
+    ],
+    "be_roas": 2.0,
+    "flerkop": true,
+    "returrisk": "låg — universal list, ingen storlek; risken är fästet (självhäftande på kall yta)"
+   },
+   "meta_tanke": {
+    "hook": "Svarta ränder på husbilen varje vår?",
+    "objekt_i_bild": "husbilens sida med svarta ränder under fönstret, listen limmad ovanför nästa fönster som är rent",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regnvattnet rinner ut i änden av listen i stället för ner över väggen — ett fönster med ränder, ett utan"
+   },
+   "varfor": "Svarta ränder är husbilsägarens synligaste vinterskada och den svenska lösningen är kemi varje vår (H03: svikande köpt default 195 kr) — listen sitter på husbilen och löser orsaken; Fiamma-formen finns i fackhandel till 233 kr/m (2,0× vårt meterpris) och ingen svensk aktör säljer rullen.",
+   "huvudrisk": "Form 'annat' + limning på kall yta i oktober, och Fiammas styckpris 175 kr ser billigare ut än vårt paket i en jämförelse.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 9,
+    "K7": 6,
+    "K8": 6,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep list/regn: 'Dörrbottenlist' 319 = inomhus, annan sak; inget på husbilens sida)",
+     "koncept.py sok 'drip'/'gutter'/'rain' → K0021/K0018/K0032 stuprörsförlängningar för huset (annan sak), inget på husbil; 'list' inget",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009863338287.html",
+    "https://www.aliexpress.com/item/1005010452482465.html",
+    "https://www.aliexpress.com/item/1005012526611091.html",
+    "https://www.pricerunner.se/search?q=fiamma%20drip",
+    "https://www.pricerunner.se/search?q=regnlist%20husbil",
+    "https://www.getcamping.se/search?q=svarta%20r%C3%A4nder"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Vindavvisarna till Ducato-hytten, par",
+   "objekt": "NYTT: Husbilshyttens dörrfönster utvändigt (Ducato/Boxer/Jumper 2006–) — regnet som kommer in när fönstret står på glänt",
+   "form": "annat",
+   "form_kommentar": "två akryldeflektorer som kläms fast i fönsterschaktet med medföljande clips (inga verktyg) och sitter kvar året runt — vädra/sova med fönstret på glänt utan regn in; ingen skyddsform, räknas inte mot formtaket",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "samma bil och samma ägare som Termoskyddet (Ducato-basen, 80 % av svenska husbilar; ägaren vet vilken bil han har = ägarkänd parameter)",
+     "objekt ute, dyr > 10 tkr",
+     "ankare ≥ 1,6× i sortiment: ClimAir vindavvisare Peugeot Boxer 1 175 kr (PriceRunner, samma form, föregående generation), ClimAir-sortimentet 755–1 175",
+     "material klass 1: textfri hero med Ducato i kontext"
+    ],
+    "avvikelser": [
+     "datumet är svagt: nyttan är kondens/vädring vid uppställning och regn på sommaren — inget hårt datum (sasong 1)",
+     "form annat (0 av 15 dömda 'annat' vann) och montering = ja (clips i fönsterschaktet, utan verktyg)",
+     "ingen Ducato 2006+-variant sedd i svensk handel: ClimAir/Heko på PriceRunner gäller andra modeller — luckan är verklig men ankaret är ett syskon",
+     "ventilation av en uppställd husbil görs oftast via takluckan — hyttfönstret på glänt är också en stöldrisk, hooken måste vara regnet, inte förvaringen"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012880104542",
+    "url": "https://www.aliexpress.com/item/1005012880104542.html",
+    "pris_usd": 24.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012880104542.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 par, Citroën Relay/Jumper, Peugeot Boxer, Fiat Ducato Mk3 2006–2024 (X250/X290 delar dörrar) — en variant; syskon: 1005012229828624 (22,29 USD, LIVE 11:46:11Z, identisk hero, samma passform), 1005012584864276 (20,65 USD in-channel, sökträff), 1005013029922102/1005013030930569 (72,50 USD Ventvisor X250/X290 — för dyra)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: de två svarta deflektorerna med gula reflexer + åtta metallclips ovanför, en vit Ducato-skåpbil (facelift 2021+) nedanför — textfri; deflektorn sitter inte på bilen i heron, creativen bör visa fönstret på glänt i regn"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen Ducato 2006+-vindavvisare sedd i formen — PriceRunner 'vindavvisare ducato' ger ClimAir Boxer 1994–2005 1 175 och Heko HO15148 595 (annan modell); 'vindavvisare fiat ducato' bara reservdelar; 'vindavvisare husbil' 0; getcamping 'vindavvisare' 0 i formen",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=vindavvisare%20ducato",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Climair Vindavvisare För Framdörrar Klar Peugeot Boxer 1994–2005 (PriceRunner 2026-09-29; samma form, föregående generation); ClimAir-sortimentet 755–1 175 kr, Heko 435–668",
+     "pris_sek": 1175,
+     "url": "https://www.pricerunner.se/search?q=vindavvisare%20ducato",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.8,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('vindavvisare ducato', 'climair ducato', 'climair fiat ducato', 'heko ducato', 'vindavvisare fiat ducato', 'vindavvisare husbil')",
+     "getcamping.se ('vindavvisare' — 0 i formen)",
+     "biltema.se / jula.se (403, oläst), husvagnsexperten.se (403), campingvaruhuset.se (404)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     313,
+     383
+    ],
+    "pris_sek": 649,
+    "brutto_sek": [
+     266,
+     336
+    ],
+    "be_cpa_sek": [
+     266,
+     336
+    ],
+    "be_roas": 2.16,
+    "flerkop": false,
+    "returrisk": "medel — passar bara Ducato/Boxer/Jumper 2006–; Transit-/Sprinter-ägare måste sorteras bort i annonsen"
+   },
+   "meta_tanke": {
+    "hook": "Regn in genom husbilsfönstret på glänt?",
+    "objekt_i_bild": "Ducato-hyttens dörrfönster på glänt i regn med deflektorn påsatt",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regnet rinner utanpå deflektorn medan fönstret står öppet en decimeter — vädrar utan att det blir blött"
+   },
+   "varfor": "Del som sitter på samma bil som Termoskyddet året runt, ingen Ducato-variant sedd i svensk handel och ClimAir som synligt ankare 1,8× (H06/H10-struktur, textfri hero i kontext). Levereras som exploration med svagt datum — inte som datumdriven vinnare.",
+   "huvudrisk": "Inget hårt datum och form 'annat' med clips-montering; hooken måste bära på regnet, inte på uppställningen.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 7,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep vind/husbil: 'MC Handvärmare – Vindtäta Greppöverdrag', Buskjackan, Termoskydd Husbil = andra saker)",
+     "koncept.py sok 'deflector'/'vindavvis' → 0; 'Ducato' → K0150/K0181 (vindruteskydd, annan sak)",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012880104542.html",
+    "https://www.aliexpress.com/item/1005012229828624.html",
+    "https://www.pricerunner.se/search?q=vindavvisare%20ducato",
+    "https://www.pricerunner.se/search?q=climair%20ducato",
+    "https://www.pricerunner.se/search?q=heko%20ducato",
+    "https://www.getcamping.se/search?q=vindavvisare"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Gråvattentankens 12 V-värmematta",
+   "objekt": "NYTT: Husbilens gråvattentank under golvet — fryser och spricker vid vintercamping (Sälen/Åre/Idre, −20°)",
+   "form": "annat",
+   "form_kommentar": "självhäftande silikonvärmematta med termostat som limmas på tankens undersida och kopplas till 12 V (US-formen 'holding tank heater pad') — ingen skyddsform, räknas inte mot formtaket",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Kranskydd Frost 420D",
+    "delade_variabler": [
+     "objekt ute, frost som hot, deadline första snö (Norrland 3,7 v, Svealand 7,4 v)",
+     "ägare 55+ småhus (vintercamparen med husbil på skidcampingen)",
+     "ingen svensk aktör i formen: PriceRunner 'tankvärmare husbil'/'tankvärmare 12v'/'gråvattentank värme' ger bara diesel-/kupévärmare, getcamping 'tankvärmare' 0"
+    ],
+    "avvikelser": [
+     "montering = ja (rengör tanken, limma mattan, dra 12 V med säkring) — 2 av 9 dömda med montering vann",
+     "material klass 0: heron är en orange silikonmatta med två sladdar på vit bakgrund — ingen tank, ingen husbil; creativen måste byggas själv",
+     "ägarantalet är en okänd delmängd (vintercampare med ouppvärmd tank) — ej mätt",
+     "old way = köpt produkt som fungerar (frostskyddsmedel i tanken / ventilen öppen med hink) snarare än improvisation",
+     "form annat (0 av 15 dömda vann) och lägsta prisbandet 300–499"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 3.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005007345717544",
+    "url": "https://www.aliexpress.com/item/1005007345717544.html",
+    "pris_usd": 13.65,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:42:58Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005007345717544.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "12 V med termostat, en storlek (mått står inte i titeln — ej mätt); syskon: 1005009338535468 (13,33 USD, LIVE 11:42:55Z, hero = mattan med skyddspapper delvis avdraget, ännu mindre kontext); generiska 'engine oil tank heater pad' 2–8 USD utan termostat (sökträff, annan sak)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: orange silikonmatta med självhäftande fält och två vita sladdar, vit bakgrund — textfri packshot utan tank; creativen måste visa mattan under en husbil i snö"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen i formen — PriceRunner 'tankvärmare husbil' (20 träffar: Webasto/DEFA/VEVOR diesel- och kupévärmare), 'tankvärmare 12v' (samma), 'gråvattentank värme' (varmvattenberedare/värmeflaskor); getcamping 'tankvärmare' 0",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=tankv%C3%A4rmare%20husbil",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "inget märke i formen i svensk handel (ej mätt); fabriksuppvärmda tankar på vinterhusbilar (Kabe/Hobby) är objektets 'ankare' men ingen eftermarknadsvara sedd",
+     "pris_sek": null,
+     "url": "https://www.getcamping.se/search?q=tankv%C3%A4rmare",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('tankvärmare husbil', 'tankvärmare 12v', 'gråvattentank värme' — 0 i formen)",
+     "getcamping.se ('tankvärmare' — 0 i formen)",
+     "kama.se (svarar inte), husvagnsexperten.se (403), campingvaruhuset.se (404), biltema.se/jula.se (403) — oläst"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     178,
+     217
+    ],
+    "pris_sek": 479,
+    "brutto_sek": [
+     262,
+     301
+    ],
+    "be_cpa_sek": [
+     262,
+     301
+    ],
+    "be_roas": 1.7,
+    "flerkop": false,
+    "returrisk": "medel — kunden måste ha 12 V-kunskap och en åtkomlig tank; mattans mått ej mätt"
+   },
+   "meta_tanke": {
+    "hook": "Fryser gråvattentanken på skidcampingen?",
+    "objekt_i_bild": "husbilen i snö på campingen, mattan limmad under tanken, termostaten tänd",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "tanken töms med rinnande vatten i −15° medan grannens ventil är en isklump"
+   },
+   "varfor": "Vintercamparens återkommande skada (fryst gråvattentank) har ingen eftermarknadsvara i svensk handel — formen finns bara i USA; fönstret öppnar med första snön (3,7 v Norrland). Levereras som ren H10-exploration med LÅG konfidens och asymmetri på lucka/nyhet.",
+   "huvudrisk": "Montering med 12 V-dragning på en packshot utan sammanhang, och vintercamparna med ouppvärmd tank är en omätt delmängd.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 10,
+    "K3": 6,
+    "K4": 10,
+    "K5": 5,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 2,
+    "K10": 3,
+    "K11": 0,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep tank/värm: IBC-tankadaptrar, MC Handvärmare, Värmeljus — inget på husbilens tank)",
+     "koncept.py sok 'heater'/'värmare'/'heating pad' → djurvärmemattor (K0019/K0175/K0191), dammvärmaren K0262 — annan sak",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007345717544.html",
+    "https://www.aliexpress.com/item/1005009338535468.html",
+    "https://www.pricerunner.se/search?q=tankv%C3%A4rmare%20husbil",
+    "https://www.pricerunner.se/search?q=gr%C3%A5vattentank%20v%C3%A4rme",
+    "https://www.getcamping.se/search?q=tankv%C3%A4rmare"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Markisskyddet / kassettmarkisens vinterhylsa (awning cover sleeve)",
+   "skal": "Ingen form att leverera: Ali 'motorhome awning cover sleeve cassette' och 'caravan awning protective cover storage' ger bara terrassmarkishylsor (9–36 USD) och bakdörrsmarkiser; getcamping 'markis' 89 produkter utan ett enda skydd (Fiamma F45/Thule 6300 = hårda kassetter som inget behöver; påsmarkiserna har egen påse). PriceRunner 'markisskydd husbil' bara husbilsöverdrag/lackskydd. K0107 (Universal RV Awning Cover 600D) är ett soltak, inte ett skydd."
+  },
+  {
+   "namn": "Torkarbladslyftaren 2-pack (wiper stand-off)",
+   "skal": "Ali 0,96–5,09 USD per par → landad 14–74 kr; PriceRunner 'torkarbladslyftare' 0 (Biltema/Jula 403, oläst). Lågt upplevt värde (K8) och ingen bild att bygga creative på — samma dom som AN 09-29. Inte öppnad."
+  },
+  {
+   "namn": "Torkarbladsskyddet / vindrutans frostskydd",
+   "skal": "Ali 'windshield wiper cover frost snow' ger vindrutesnöskydd 10–29 USD = samma sak som 'Termoskydd Husbil 211 × 171 cm' 559 kr ACTIVE (K0 på sak) samt 2,88 USD torkararmshylsor (K8). Inte öppnad."
+  },
+  {
+   "namn": "Motorrummets ultraljudsskrämma 12 V",
+   "skal": "Sortiment: PriceRunner 'musskrämma bil' Rejekt 2-pack 348 kr, Biltema/Jula-form känd (403, oläst). Uppdraget bad om nät/spärr-formen — den levererades (gnagarstaketet). Inte sökt på Ali."
+  },
+  {
+   "namn": "Startbatteriets vakt / batteriunderhåll i hytten",
+   "skal": "K0: 'Batterifrånskiljare – Huvudströmbrytare 12/24V' 189 kr och '7-i-1 Jumpstart 5000A' 1 599 kr ACTIVE i katalogen; Solcellsladdaren 10 W (K0173) launchad 09-24; CTEK Battery Sense/underhållsladdare = sortiment (ankare 900). Inte sökt."
+  },
+  {
+   "namn": "El-fotstegets skydd (Thule Omnistep)",
+   "skal": "Ali 'motorhome electric step cover' ger hela el-fotsteg 215–1 139 USD och US-stegöverdrag för Lippert-trappor (25 USD) — ingen form för den europeiska Omnistep-modellen. getcamping 'fotsteg' 0 skydd. Struken."
+  },
+  {
+   "namn": "Anti-siphon / låsbart tanklock Ducato (dieselstöld under uppställningen)",
+   "skal": "Ali 'anti siphon fuel device Ducato' ger bara handpumpar (3–25 USD) och bränslereservdelar; PriceRunner 'tanklock ducato' 20 låsbara tanklock 75–690 kr = sortiment (Biltema/Mekonomen). Struken."
+  },
+  {
+   "namn": "Reservhjulslås Ducato (reservhjulet under chassit)",
+   "skal": "Ali 'spare wheel lock Fiat Ducato' ger inga reservhjulslås — bara hjulklampar 19–37 USD (Biltema-sortiment) och rattlås; PriceRunner 'reservhjulslås' bara klampar 175–593. Ingen leverantör i formen."
+  },
+  {
+   "namn": "Ducatos bakdörrslås / hyttdörrslås (BEVINSEE 33,99 USD, 3-pack 51,79 USD)",
+   "skal": "Kräver borrning i dörren (montering = ja), lås-form på uppställt objekt = Motorlåset REAL_LOSER 0,50 (09-27); Heosafe-ankaret syns varken på PriceRunner ('heosafe' 1 boksafe) eller getcamping; PriceRunner 'dörrlås husbil' = 14 trycklås 195–995 (annan sak). Sökträff, ej öppnad."
+  },
+  {
+   "namn": "Avgasplugg mot möss",
+   "skal": "Ali 'exhaust pipe plug rodent car' ger bara MC-tvättpluggar 1,65–3,65 USD och svetsmuffar; PriceRunner 'avgasplugg' = skoterventiler. K8 lågt, ingen bild. Struken."
+  },
+  {
+   "namn": "Solpanelens snöskydd på taket",
+   "skal": "Ingen failure mode att visa (MPPT-regulatorn klarar snötäcket, panelen ska helst vara fri) och ingen form på Ali — 'satellite dish cover motorhome' ger Starlink-fodral 11–75 USD. Struken."
+  },
+  {
+   "namn": "Starlink Mini-fodralet på husbilstaket",
+   "skal": "Formen finns (silikonfodral 17–30 USD) men Starlink används på resa, inte under uppställningen — inget datum; PriceRunner 'starlink mini skydd' bara kablar. Utanför rundans struktur, till backloggen."
+  },
+  {
+   "namn": "Teleskopborsten med vattenanslutning för tak/sida",
+   "skal": "Uteslutet av ordern (kedjan har bilborstar = sortiment) och Biltvättborsten REAL_LOSER 1,16 (H07: jobbet ägaren klarar). Inte sökt."
+  },
+  {
+   "namn": "Fläckborttagare för svarta ränder",
+   "skal": "Kemi (nej enligt ordern) — och det är den svikande defaulten (Ren fritid 195 kr, getcamping) som droppkantslisten byggs mot."
+  },
+  {
+   "namn": "Hyttkapell Ducato, spegelhuvar, invändig termomatta, gummilister, lyktskydd, dragkrok, AdBlue, backkamera, taköverdrag, takluckehuv, hjulskydd, stegskydd, kylskåpsventil, gasolkoffert",
+   "skal": "Uteslutna av ordern: gjorda (AN 09-29 / katalog), andra linser (AU, AR) eller 'nej' i ordern. Inte sökta."
+  }
+ ]
+}
