@@ -106,7 +106,9 @@ export function tolkaAnnonsinput(data) {
     .map((a, i) => { const e = exponeringarUr(a); return { nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null, slut: a.slut ?? null, aktiv: aktivUr(a), exponeringar: e.antal, exponeringarKalla: e.kalla }; })
     .filter((a) => a.text || a.bilder.length);
   if (!rader.length) throw new Error('annonsfilen har inga annonser med text eller bilder.');
-  return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader };
+  // Landet annonsbiblioteket lästes för (adlibrary.mjs skriver det i filen) — ett norskt fynd är ett eget ärende.
+  const land = typeof data?.land === 'string' && /^[A-Z]{2}$/.test(data.land) ? data.land : null;
+  return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader, land };
 }
 
 /**
@@ -189,9 +191,13 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   const verksamhet = produkt?.verksamhet ?? topp.varAnnons?.verksamhet ?? basta.varAnnons?.verksamhet ?? Object.keys(konfig.verksamheter)[0];
   const huvudAnnons = topp.varAnnons ?? basta.varAnnons ?? null;
   const deras = input.deras;
+  // Nyckeln bär landet utanför Sverige: samma sida i Norge är ett EGET ärende, aldrig en uppdatering
+  // av det svenska (mätt 2026-09-29: ORVO:s 13 norska annonser hade annars skrivit över bevisen i
+  // KD-2026-001 — efter att brevet gått).
+  const land = input.land && input.land !== 'SE' ? input.land : null;
   return {
-    nyckel: nyckelFor({ typ: 'annons', doman: deras.doman, sidaId: deras.doman ? null : deras.sidnamn, handle: 'annonser' }),
-    verksamhet, typ: 'annons', kalla,
+    nyckel: nyckelFor({ typ: 'annons', doman: deras.doman, sidaId: deras.doman ? null : deras.sidnamn, handle: land ? `annonser-${land}` : 'annonser' }),
+    verksamhet, typ: 'annons', kalla, ...(land ? { land } : {}),
     var: {
       produkt: produkt ? { handle: produkt.handle, titel: produkt.titel, url: produkt.url, butik: produkt.butik, bilder: (produkt.bilder ?? []).slice(0, 12) } : { handle: 'annonser', titel: `${traffar.length} ${traffar.length === 1 ? 'annons' : 'annonser'}`, url: null, butik: null, bilder: [] },
       annons: huvudAnnons ? { id: huvudAnnons.id, namn: huvudAnnons.namn, bild: huvudAnnons.bild ?? egnaAnnonser.find((e) => e.id === huvudAnnons.id)?.bild ?? null } : null,

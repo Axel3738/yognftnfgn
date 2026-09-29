@@ -97,6 +97,52 @@ export function formularVarden(a, { land = 'Sweden' } = {}) {
   return { ...v, fel };
 }
 
+/**
+ * Cowork-prompten för anmälningar som ska skickas i Axels egen Chrome — vägen
+ * när Meta kräver en säkerhetskontroll (captcha) vid Submit, som bara en
+ * människa får göra (mätt 2026-09-29). Cowork fyller i exakt det Axel godkänt,
+ * Axel gör säkerhetskontrollen själv. `anmalningar`: [{ nr, antal, formular, v }]
+ * där v är formularVarden(). Ren.
+ */
+export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden' }) {
+  const n = anmalningar.length;
+  const block = anmalningar.map(({ nr, antal, v }) => [
+    `===== ANMÄLAN ${nr} av ${antal} =====`,
+    `Fält "Provide the URLs/IDs leading directly to the content that you're reporting":`,
+    v.urls,
+    `Fält "Provide an example of your copyrighted work that you believe has been infringed":`,
+    v.original,
+    `Fält "Describe how you believe that this content infringes your intellectual property rights":`,
+    v.beskrivning,
+    `Fält "Your full name": ${v.namn}`,
+    `Fält "Email" och "Confirm email address": ${v.epost}`,
+    `Fält "Electronic signature": ${v.signatur}`,
+  ].join('\n')).join('\n\n');
+  const forsta = anmalningar[0];
+  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+
+REGLER
+1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code": Meta mejlar en kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Öppna Gmail i en ny flik med det kontot, ta koden ur det senaste mejlet "Please verify your email address" från Meta och skriv in den. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla ${n}). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": ${land}. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: ${forsta?.v?.rattighetshavare ?? 'Stonebite Ecom AB'} → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+${block}
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "Anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "Anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.
+`;
+}
+
 /** Engångskoden ur ett mejl från Meta: talet efter ordet code/kod, annars första fristående 5–8-siffriga talet. Ren. */
 export function kodUrText(text) {
   const t = String(text ?? '');
@@ -115,6 +161,21 @@ export function referensUrText(text) {
   const t = String(text ?? '');
   const m = t.match(/(?:report|reference|case|ticket|ärende)[^\n\d]{0,60}?(?:#|no\.?|number|nummer|id)?[^\n\d]{0,20}(\d{6,})/i) ?? t.match(/\b(\d{9,})\b/);
   return m ? m[1] : null;
+}
+
+/**
+ * Vad sidan säger efter Submit: 'sakerhetskontroll' (Metas captcha-ruta — en
+ * människas sak), 'bekraftad' (Meta tackar/bekräftar OCH formuläret är borta),
+ * annars 'vantar'. Ren. Mätt 2026-09-29, ORVO anmälan 1: rutan heter "Security
+ * check — A security check is required to proceed." och formuläret står kvar
+ * under den; skriptet läste då formuläret som kvitto. Bara 'bekraftad' är ett kvitto.
+ */
+export function kvittoUtfall(text) {
+  const t = String(text ?? '');
+  if (/security check|security verification|captcha|confirm (that )?you'?re (a )?human|not a robot|säkerhetskontroll/i.test(t)) return 'sakerhetskontroll';
+  const formularKvar = /Electronic signature|Elektronisk underskrift/i.test(t);
+  if (!formularKvar && /thanks? (you )?for (your|submitting)|we('ve| have) received|report (has been |was )?(submitted|received)|report number|reference number|tack för din anmälan/i.test(t)) return 'bekraftad';
+  return 'vantar';
 }
 
 const sidtext = async (page) => { try { return await page.evaluate(() => document.body?.innerText ?? ''); } catch { return ''; } };
@@ -228,19 +289,23 @@ export async function skickaAnmalan(a, { ja = false, kodFil, vantaKodMs = 8 * 60
     const textMitt = await sidtext(page);
     const kvar = kvarUrText(textMitt);
     if (kvar > 0) { await dumpa(page, 'stopp'); throw new Error(`${kvar} obligatoriskt fält kvar före Submit (${textMitt.match(/\d+\s+required fields? remaining/i)?.[0]}) — inget skickat`); }
-    // Submit — bara här, bara med ja.
+    // Submit — bara här, bara med ja. Inskickad BARA när Meta bekräftar; en
+    // säkerhetskontroll (captcha) är en människas och löses aldrig härifrån.
     const nar = new Date().toISOString();
+    let utfall = 'vantar';
     await steg('Submit', async () => {
       const knapp = page.getByRole('button', { name: /^Submit$/ }).first();
       if (!(await knapp.count())) throw new Error('Submit-knappen saknas');
       await knapp.click();
       const t0 = Date.now();
-      while (Date.now() - t0 < 30_000) { await page.waitForTimeout(1500); const t = await sidtext(page); if (!/Electronic signature/.test(t) || /thank you|received|submitted|report number|reference/i.test(t)) break; }
+      while (Date.now() - t0 < 45_000) { await page.waitForTimeout(1500); utfall = kvittoUtfall(await sidtext(page)); if (utfall !== 'vantar') break; }
     });
     const text = await sidtext(page);
-    const kvittoFil = await dumpa(page, 'kvitto');
+    const bild = await dumpa(page, utfall === 'bekraftad' ? 'kvitto' : utfall === 'sakerhetskontroll' ? 'sakerhetskontroll' : 'ingen-bekraftelse');
+    if (utfall === 'sakerhetskontroll') throw Object.assign(new Error(`Meta kräver en säkerhetskontroll (captcha) vid Submit — den görs av en människa, aldrig härifrån. INGET är inskickat.${bild ? ` Skärmdump: ${bild}` : ''}`), { kod: 'SAKERHETSKONTROLL', skarmdump: bild });
+    if (utfall !== 'bekraftad') throw Object.assign(new Error(`ingen bekräftelse från Meta inom 45 s — räknas INTE som inskickad.${bild ? ` Skärmdump: ${bild}` : ''}`), { kod: 'INGEN_BEKRAFTELSE', skarmdump: bild });
     const referens = referensUrText(text);
     logg(`  kvitto: ${text.replace(/\s+/g, ' ').slice(0, 300)}`);
-    return { status: 'skickad', referens, text: text.replace(/\s+/g, ' ').slice(0, 2000), skarmdump, kvittoFil, nar };
+    return { status: 'skickad', referens, text: text.replace(/\s+/g, ' ').slice(0, 2000), skarmdump, kvittoFil: bild, nar };
   } finally { await browser.close().catch(() => {}); }
 }
