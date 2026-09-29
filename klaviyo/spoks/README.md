@@ -633,6 +633,31 @@ utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hade hamnat på söndag 2
 på `2026-09-29T16:00:00Z` = tisdag 18:00. Publiken (segmentet) syns inte i `get_campaign`, så den
 går inte att kontrollera från en session.
 
+⛔ **Falska citat i CaraShells kampanjer, hittade 2026-09-29 ~12:50 CEST** (Axels fråga "har vi
+kampanjer att skicka nu?"): första kampanjen på svenska ("Vattnet som blir kvar vid takluckan") och
+norska ("Regnet som blir stående ved takluken"), båda schemalagda tis 29/9 18:00, bar citaten
+"Bra skydd för taket och lätt att använda." Karin och "Jag är nöjd med överdraget. Rekommenderas."
+Erik, signerade **verifierad kund / verifisert kunde**. Black Week-kampanjen (sv + nb, utkast) bar
+Karins. Källan är `factory/produkter/takskyddet.yaml → reviews` — exakt de tio importerade
+recensioner som Bäverbutikens granskning underkände 2026-09-26 (`baverbutiken/KVAR.md`: verified
+"nothing", @example.com, skapade på elva sekunder 31 timmar innan produkten publicerades). Payloaden
+byggdes före `konvertera.mjs`-spärren (`verifierad: true` krävs), och ingen granskade CaraShell
+efteråt. Danska och engelska var rena (danskan har `citat: false`, engelskan inga svenska citat).
+- ✅ **Black Week sv `eba4e395-…` och nb `549ee8cb-…`**: citatet borttaget via
+  `update_draft_campaign` 12:50–12:51 CEST, allt annat kvar (block-id:n ekade, produktkorten ur
+  payloaden), tillbakaläst: noll citat.
+- ⏳ **Första kampanjen sv `52181edf-…` och nb `e2bc52fd-…`**: `waiting_to_be_published` går inte
+  att ändra via MCP (`campaign_not_editable`). Axel tar bort schemaläggningen i appen → sessionen
+  tar bort de två citaten ur samma kampanj (blocklistorna förberedda) → Axel schemalägger igen
+  18:00 med samma segment (`SEG_samtycke_sv` / `SEG_samtycke_nb`). Inga dubbletter byggs: appen
+  visar ämnesraden, och två kampanjer med samma ämnesrad är en felklickning som väntar.
+- Repots payload (sv/nb k01 och k09) har citaten borttagna för hand, bara citaten. En
+  omgenerering med `konvertera.mjs --brand carashell` slår dessutom ihop dubbla produktkort i sv
+  K01, K02, K05, K06 och K07 (spärren från Bäverbutikens granskning) — Spoks-utkasten har kvar
+  dubbelkorten, så payloaden omgenererades inte.
+- **Publiken 2026-09-29 12:55 CEST** (`get_segments`): `SEG_samtycke_sv` 39, `_nb` 16, `_da` 12,
+  `_en` 85 = 152 med samtycke (81 den 27/9; den nya texten i kassarutan gäller sedan 27/9).
+
 **Samtycket per land, mätt i Shopify 2026-09-27** (487 kunder; `emailMarketingConsent` +
 `consentUpdatedAt` mot orderns `createdAt`): **USA 59 av 77 (77 %)**, GB 1 av 5, **DK 3 av 28
 (11 %), SE 12 av 198 (6 %), AU 2 av 32, NO 4 av 99 (4 %)**, FI 0 av 8, NZ 0 av 4, CA 0 av 3, 33
