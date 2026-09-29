@@ -112,8 +112,13 @@ node konkurrenter/kor.mjs --lista
    till svenska köpare (Axels svar: B2B), 0 % med omvänd betalningsskyldighet
    till utländska näringsidkare (landet ur `--land`, annars domänen, annars
    brevets språk); momsreg.nr härleds ur org.nr. Nummer `F-<ärende>-<löpnr>`,
-   10 dagar netto, dröjsmålsränta enligt räntelagen. HTML → PDF i Chromium
-   (`page.pdf`, 2 s). **Utan bankgiro/IBAN i konfig vägrar den** — och ett
+   10 dagar netto, dröjsmålsränta enligt räntelagen. **PDF:en görs av
+   `textpdf.mjs`** med PDF:ens standardtypsnitt Helvetica (inget inbäddat,
+   zlib-komprimerat): ORVO-fakturan på 24 rader blev 5 kB. Chromiums
+   `page.pdf` bäddar in typsnittet en gång per sida och gav 72 kB, och bilagan
+   går som base64 i Gmail-connectorns verktygsanrop, där 97 000 tecken inte
+   ryms säkert (mätt 2026-09-29). Chromium är reserven om den lilla inte går.
+   HTML-versionen finns kvar för appens fakturabild. **Utan bankgiro/IBAN i konfig vägrar den** — och ett
    IBAN som inte klarar kontrollsiffran (mod 97) stoppar också; Axels IBAN
    inlagt 2026-09-29 och kontrollerat. Köparen läses ur deras sida
    (bolagsnamn/org.nr) eller ges med `--kopare "Bolag AB, adress"`. Belopp
@@ -129,6 +134,28 @@ node konkurrenter/kor.mjs --lista
      ärendet till `skickad`/`pamind` och sätter fristen. Kvittot kräver en
      giltig adress och går aldrig två gånger (`skickad → skickad` är ingen
      tillåten övergång).
+     ⛔ **Brevet går som PDF, mejlet bär en följetext utan länkar**
+     (`brevpdf.mjs`, 2026-09-29). Gmail-connectorn skriver om VARJE länk och
+     domän i mejlets text till Googles omdirigering
+     (`https://www.google.com/url?q=…&sa=E`), både i text- och HTML-delen och
+     även när HTML skickas själv. Mätt på två utkast: "orvo.se", "org.nr"
+     (.nr-domänen) och alla annonslänkar blev omdirigeringar. En länk som
+     säger facebook.com men går till google.com ser ut som nätfiske. Därför
+     lägger `--skicka` (Gmail-vägen) brevet ordagrant i `brev.pdf` med
+     klickbara länkar och skriver `omslag` i paketet: följetexten (vad som är
+     bifogat, fristen, avsändaren). Den har ingen domän, och
+     `harLankbartOrd` stoppar paketet om en smyger in. Sessionen lägger
+     utkastet (följetexten + `brev.pdf` + fakturan), **läser tillbaka det i
+     RAW, jämför båda bilagornas sha256 med filerna och ser att texten saknar
+     google.com/url** och skickar först sedan utkastet. ORVO-brevet gick så
+     (sms:et och brevet nämner inte Meta, `--utan-meta`).
+   - **`--utan-meta`** (Axels beslut 2026-09-29 för ORVO: "vi borde lugnt inte
+     säga att vi har skickat DMCA … han kommer att försöka få ner våra
+     annonser"): brevet, påminnelsen och sms:et nämner inte Meta-anmälningarna
+     alls, varken "anmäls samtidigt", "redan anmälda" eller som hot. Minnet är
+     `brev.utanMeta` på ärendet. ⚠️ Metas formulär lämnar själv ut
+     rättighetshavarens namn, anmälarens e-post och vad anmälan gäller till
+     den anmälde, så ORVO får veta det från Meta.
    - **Loopia (reserv):** `--via loopia --ja` skickar från verksamhetens
      supportbrevlåda direkt (`kundtjanst/brevlada.mjs skickaNytt`). Spärrar:
      `--ja`, `KONKURRENTER_INGEN_SANDNING=1`, status, mottagare, egna
@@ -162,7 +189,22 @@ node konkurrenter/kor.mjs --lista
     kvittot skrivs av sig självt ur Metas svar (`--anmald` finns kvar för
     hand; en anmälan kvitteras aldrig två gånger; alla inskickade ⇒ ärendet
     "anmält vidare"). Utan `--ja` torrkörs formuläret: allt ifyllt, skärmdump
-    `<nr>-torr.png`, ingen kod, inget skickat. Lokala skärmdumpar
+    `<nr>-torr.png`, ingen kod, inget skickat.
+    ⛔ **Meta kräver en säkerhetskontroll (captcha) vid Submit** (mätt
+    2026-09-29, ORVO anmälan 1). Koden gick igenom, men efter Submit kom rutan
+    "Security check: A security check is required to proceed" och formuläret
+    stod kvar under den. Det gamla skriptet läste formuläret som kvitto och
+    skrev "inskickad". Kvittot togs tillbaka med `--anmald <id> --nr 1 --angra
+    "<skäl>"`. Nu räknas en anmälan som inskickad BARA när Meta bekräftar
+    (`kvittoUtfall`: tacksida och formuläret borta). En säkerhetskontroll
+    stoppar med `kod: SAKERHETSKONTROLL`: den görs av en människa och
+    **löses aldrig härifrån**. Vägen blir då **`--anmal-cowork <id>`**, som
+    skriver `arenden/<id>/anmalan/COWORK-PROMPT.txt`. Där står exakt
+    formularVarden() för varje anmälan som inte är inskickad. Cowork fyller i
+    i Axels Chrome och tar koden ur hans Gmail, och Axel gör
+    säkerhetskontrollen och klickar Submit. Kvittona skrivs med `--anmald <id>
+    --nr <n> --referens <r>` ur Metas bekräftelsemejl eller Coworks lista.
+    Lokala skärmdumpar
     Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två
     anmälningar, två bevisbilder (2400 px, ~0,9 MB), verifieringssidan tittad
     på. ⚠️ Formulärets fält läses av LIVE i Chrome och paras på etikett —
