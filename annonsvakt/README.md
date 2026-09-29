@@ -1,9 +1,9 @@
 # Annonsvakten — `/annonsvakt`
 
 Varje timme: alla annonskonton token:en når → det som stoppar eller bränner
-pengar just nu → Discord `#ad-alerts` i Bäverbutikens server (och Slack när
-Axel byggt kanalen). **Läs-bara.** Den pausar, aktiverar och ändrar aldrig
-något. Axels beställning 2026-09-27:
+pengar just nu → Discord `#ad-alerts` i Bäverbutikens server, och det röda på
+svenska i Slack `#urgent` (kanalen Axel läser). **Läs-bara.** Den pausar,
+aktiverar och ändrar aldrig något. Axels beställning 2026-09-27:
 
 > "en rutin som scannar alla annonskonton och liknande efter problem med
 > nedstängda annonser och sådana grejer … meddela mig som urgent … rädda mig
@@ -16,7 +16,8 @@ node annonsvakt/kor.mjs                  # torrt: läs, döm, visa — skriv ing
 node annonsvakt/kor.mjs --discord        # rutinen: posta + skriv minnet
 node annonsvakt/kor.mjs --kolla          # nycklar, rättigheter, vilka konton som svarar
 node annonsvakt/kor.mjs --json <fil>     # hela resultatet som JSON
-npm test                                 # 19 tester utan nät (annonsvakt/test/)
+node annonsvakt/kor.mjs --postat <id …>  # kvittera Slack-meddelanden sessionen postat via connectorn
+npm test                                 # 25 tester utan nät (annonsvakt/test/)
 ```
 
 ## Vad den larmar om
@@ -64,8 +65,42 @@ annons utan spend är nattvaktens sak (CLAUDE.md regel 11).
   Namn på konton, kampanjer och annonser står i `kodspann` — svenskdetektorn i
   `tools/lib/engelska.mjs` räknar inte kodspann, och Metas feltexter hämtas
   med `locale=en_US`.
-- **Slack**: finns `SLACK_WEBHOOK_URL` i rutinens miljö postas samma text
-  även dit (pingarna bort, `**` → `*`). Ett Slack-fel stoppar aldrig Discord.
+- **Varje fynd bär en länk** till Ads Manager med objektet markerat
+  (`lank`, och `forhandsvisning` = Metas `preview_shareable_link` på en
+  annons) — Axels fråga 2026-09-29: "Kan du skicka en länk till annonsen?".
+  I Discord som maskerad länk i `<>` (ingen förhandsvisning), i Slack som
+  "Öppna i Ads Manager" · "Se annonsen".
+
+## Slack `#urgent`: bara det röda, på svenska
+
+Axels ord 2026-09-27 ("Discorden vägrar jag kolla") och 2026-09-29 ("du kan
+ju koppla Slack själv, eftersom att den redan är connectad här"). Kanalen är
+`#urgent` `C0C4MTQNMT7` i workspace Stonebite — privat, Axel är enda
+medlemmen, samma kanal som `akut/`. Larmen bär spend och ROAS, och
+redigerarna får aldrig se spend, så posta aldrig i en annan kanal.
+
+- **Vad:** `formuleraSlack` i `regler.mjs` — nya 🔴, 🔴 som påminns och ✅
+  när ett 🔴 tillstånd är borta. 🟡 (granskning, över budget, läsfel) och
+  💓 stannar i Discord. Svenska, inga tankstreck, länk på varje rad.
+- **Hur:** tre vägar, i ordning. `SLACK_BOT_TOKEN` i miljön ⇒
+  `chat.postMessage` till `kanal.slack.kanalId`. `SLACK_WEBHOOK_URL` i
+  miljön ⇒ POST till webhooken (låst till kanalen när den skapades). Ingen
+  nyckel ⇒ texten läggs i **`annonsvakt/output/att-posta.json`** (gitignorerad,
+  rader äldre än ett dygn faller bort), sessionen postar den med
+  `mcp__Slack__slack_send_message` och kvitterar med `--postat <id>` — samma
+  mönster som `akut/`. Ett Slack-fel stoppar aldrig Discord: texten hamnar i kön.
+- ⚠️ **Mätt 2026-09-29: rutinens fasta session har inga Slack-verktyg.**
+  `create_trigger` svarar "the connectors parameter is not available for
+  this organization", båda vakternas triggrar har `mcp_connections: []`, och
+  `get_session` på akut-rutinens session listar Bash/Read/Write … utan ett
+  enda `mcp__Slack__*`. I rutinen är det alltså **nyckeln i miljön** som
+  gäller (`env_018aG5VVb69sSagge8CfgghK`, samma miljö som `/akut`) — kön är
+  för sessioner som har connectorn (den här, när Axel kör `/annonsvakt` för
+  hand). Webhooken bygger Axel eller Cowork: `annonsvakt/cowork/1-slack-webhook.txt`.
+- **Överlappet med `akut/`:** när miljön bär en Slack-nyckel stänger `/akut`
+  av sina `konto`- och `pengar`-larm (`kontroller_av_med_slacknyckel`), för
+  då säger annonsvakten samma sak per annons med lägre trösklar och länk.
+  Utan nyckel står allt på i båda — ingen av dem når Slack från rutinen då.
 
 Ett konto som inte lästes den här timmen får sina öppna problem varken lösta
 eller påminda — annars hade Metas rate limit gjort att en avvisad annons
@@ -75,7 +110,7 @@ eller påminda — annars hade Metas rate limit gjort att en avvisad annons
 
 ```json
 { "konton": { "<id>": { "namn", "valuta", "forstSedd" } },
-  "oppna": { "<nyckel>": { "typ", "niva", "rubrik", "konto", "forst", "larmat" } },
+  "oppna": { "<nyckel>": { "typ", "niva", "rubrik", "rubrikSv", "konto", "forst", "larmat" } },
   "handelser": [ { "nyckel", "tid", "rubrik" } ],
   "hjartslag": "YYYY-MM-DD" }
 ```
@@ -121,9 +156,10 @@ varför, och rör aldrig koden.
 | Fil | Vad |
 |---|---|
 | `kor.mjs` | Körningen och CLI:t. `kor()` tar falsk klient/sändare i tester |
-| `regler.mjs` | Alla regler, rena funktioner: konton, objekt, spend, minnet (`sammanfoga`), texten (`formulera`) |
+| `regler.mjs` | Alla regler, rena funktioner: konton, objekt, spend, minnet (`sammanfoga`), texterna (`formulera` engelska till Discord, `formuleraSlack` svenska till #urgent), länkarna |
 | `meta.mjs` | Läsningen ur Meta, läs-bara. Klienten är `kommentarer/meta.mjs`:s (backoff, timeout) |
 | `minne.mjs` | `minne.json`: läs, skriv bara vid ändring |
-| `posta.mjs` | Discord (server → kanal, skapas vid behov → post med låsta pingar) och Slack (webhook) |
-| `konfig.json` | Kanal, Axels id:n, trösklar, ignorerade felkoder, hjärtslag |
-| `test/` | 19 tester utan nät |
+| `posta.mjs` | Discord (server → kanal, skapas vid behov → post med låsta pingar), Slack (bot-token, webhook) och kön till Slack-connectorn (`att-posta.json`, `--postat`) |
+| `konfig.json` | Kanaler (Discord + Slack), Axels id:n, trösklar, ignorerade felkoder, hjärtslag |
+| `cowork/` | `1-slack-webhook.txt`: bygger webhooken i Slack åt rutinen (Axel klistrar in nyckeln själv) |
+| `test/` | 25 tester utan nät |

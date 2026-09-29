@@ -19,7 +19,7 @@ export { skapaKlient };
 
 export const KONTOFALT = 'account_id,name,currency,account_status,disable_reason,amount_spent,balance,spend_cap,timezone_name';
 export const PROBLEMSTATUS = Object.freeze(['DISAPPROVED', 'WITH_ISSUES', 'PENDING_REVIEW', 'PENDING_BILLING_INFO']);
-export const ANNONSFALT = 'id,name,status,effective_status,ad_review_feedback,issues_info,updated_time,campaign{id,name,status,effective_status},adset{id,name,status,effective_status}';
+export const ANNONSFALT = 'id,name,status,effective_status,ad_review_feedback,issues_info,updated_time,preview_shareable_link,campaign{id,name,status,effective_status},adset{id,name,status,effective_status}';
 export const KAMPANJFALT = 'id,name,status,effective_status,issues_info,daily_budget,lifetime_budget,updated_time';
 export const ADSETFALT = 'id,name,status,effective_status,issues_info,daily_budget,campaign_id,updated_time';
 export const INSIGHTSFALT = 'ad_id,ad_name,adset_id,adset_name,campaign_id,campaign_name,spend,actions,purchase_roas';

@@ -154,6 +154,18 @@ test('en nedlagd butik utan ordrar mäts inte, och en butik som var i drift men 
   } finally { rmSync(rot, { recursive: true, force: true }); }
 });
 
+test('med en Slack-nyckel i miljön stängs konto- och pengar-larmen av (annonsvakten tar dem i #urgent); utan nyckel står de på', async () => {
+  const rot = lagRepo();
+  try {
+    const utan = await korAkut({ rot, env: {}, nu: NU, torr: true, hamtare: hamtare({}) });
+    assert.ok(utan.larm.some((l) => l.typ === 'pengar'), 'utan nyckel larmar akut om pengarna själv');
+    const med = await korAkut({ rot, env: { SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/x' }, nu: NU, torr: true, hamtare: hamtare({}) });
+    assert.equal(med.larm.filter((l) => l.typ === 'pengar' || l.typ === 'konto').length, 0);
+    assert.ok(med.sammanfattning.noteringar.some((n) => /annonsvakten larmar dem i #urgent/.test(n)), 'noteringen säger varför');
+    assert.equal(med.larm.length, utan.larm.length - utan.larm.filter((l) => l.typ === 'pengar' || l.typ === 'konto').length, 'inget annat påverkas');
+  } finally { rmSync(rot, { recursive: true, force: true }); }
+});
+
 test('Meta-token död: ett larm, inga konto-larm, och det syns i noteringarna att kontona inte mättes', async () => {
   const rot = lagRepo();
   try {
