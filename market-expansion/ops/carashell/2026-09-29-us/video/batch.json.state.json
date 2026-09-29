@@ -22,7 +22,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3493b2d1f3554d55ab0af87887a20f7e-en"
+  "renderId": "3493b2d1f3554d55ab0af87887a20f7e-en",
+  "downloaded": true
  },
  "carashell_CS_112_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/4c8131c55bd54d928c32d5a4a9be8690/original.mp4",
@@ -47,7 +48,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "8e79f54e72f048d3b76a593332ed99fc-en"
+  "renderId": "8e79f54e72f048d3b76a593332ed99fc-en",
+  "downloaded": true
  },
  "carashell_SP_104_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/bc31f284f3f04127b2e19dad70d668df/original.mp4",
@@ -72,6 +74,7 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "11a0a4519bd64e5dbdb75ceabafabb62-en"
+  "renderId": "11a0a4519bd64e5dbdb75ceabafabb62-en",
+  "downloaded": true
  }
 }

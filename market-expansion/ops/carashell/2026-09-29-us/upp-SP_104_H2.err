@@ -1,0 +1,32 @@
+(node:10628) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_SP_104_H2" · video CaraShellRoof_US_SP_104_H2-ai.mp4 (3.87 MB)
+3. Marknadskoll: "CaraShellRoof_US_SP_104_H2" bär US — ok för US
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 8000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_SP_104_H2" finns inte bland kontots 477 annonser — ok
+5. Koncept SP → adset "CARASHELL_US_SP" (120251451415210435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: video 2037027070351142 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "2037027070351142",
+       "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/831138184_1116813924155955_2948739497462507281_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3495b&_nc_ohc=vkYlRywS9BwQ7kNvwGm0CSo&_nc_oc=Adow6RmdrR1sX7UtCJ3nDLKMNgGW0KJJsR6AMSBGOI4_tL02UVnBk8le3zgPY2WvXk4&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=APRAPSkEAAAA&_nc_gid=cHnTbEDTjdH6lYPdVs6SUg&_nc_tpa=Q5bMBQIXmqYQ5qBmoKfv9mCQj_ZVkHoDHHqk-y6nVcwpFG1Z7QluYX0rSzq7PZN8HIIBruZTStRKZ7mhTQ&oh=00_AQNhfFHdsRQGvQIe1s7ZG6v74ZjxsKCyodwMVi6eSQzMLQ&oe=6AC1A0DE",
+       "message": "One person on a ladder. Straps on all four sides, hooked at the bottom edge. The cover goes on the roof only and keeps rain away from roof hatches and seams. Silver-coated 210D oxford weave, 21 × 10 ft. $199, regular price $249.",
+       "title": "One person. One roof cover.",
+       "link_description": "$199, regular $249",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_SP_104_H2 (120251671868600435), creative 2143089366243575
+9. Aktiverad: annons 120251671868600435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_SP_104_H2 → ACTIVE / effective IN_PROCESS (adset 120251451415210435)
