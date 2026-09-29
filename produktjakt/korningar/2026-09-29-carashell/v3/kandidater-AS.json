@@ -1,0 +1,108 @@
+{
+ "agent": "AS",
+ "datum": "2026-09-29-carashell",
+ "struktur": "VINTERCAMPING — husvagnen/husbilen som står på skidcampingen (Sälen/Åre/Idre/Vemdalen) november–april i snö och −20°. OWNER → OBJECT → FAILURE MODE i −20° → vad improviserar de i dag.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Vinterkjolen 7 m med hjulhuskappor",
+   "objekt": "NYTT: Husvagnens undersida (golvet mellan vagn och mark) — vinden och snön som blåser in under golvet och förtältet på skidcampingen november–april; i dag improviseras med presenning och snövall runt vagnen",
+   "form": "skydd",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr (husvagnen 150–500 tkr)", "agare_55plus", "formsydd skyddsform på vagnen", "väderdatum (vintercampingen öppnar)", "improvisation i dag (presenning runt vagnen)"],
+    "avvikelser": ["golv finns i svensk fackhandel (markkappa 316–476 kr utan hjulhuskappor)", "inbränd text i heron", "vintercamparna är en delmängd av 283 840 husvagnar — antal ej mätt"]
+   },
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "säsongsstart",
+    "veckor_kvar": 9.3,
+    "timing": "NOW",
+    "kommentar": "Inget fönster i sasong.json för vintercamping (sasong.py --objekt gav EVERGREEN). Källa läst 2026-09-29: skistar.com/sv/vara-skidorter/salen/ — 'Ski Test Weekend Sälen 3–6 dec 2026' = skidsäsongen är igång senast v 49 (9,3 v). Linsordern anger att skidcampingarna öppnar v 46–48 (~7 v) — ingen egen extern källa hämtad för campingarnas öppningsdatum."
+   },
+   "listning": {
+    "product_id": "1005009861098478",
+    "url": "https://www.aliexpress.com/item/1005009861098478.html",
+    "pris_usd": 17.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:27Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005009861098478.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 set: kjol 7 m × 47 cm PVC + två hjulhuskappor + sugproppar + pinnar/lina (universal, en variant). Syskonlistning 1005012319891705 ($8.15, 7 m × 50 cm, sida öppnad 11:39Z, hero sedd — hero med text bara upptill, går att beskära; priset misstänkt lågt, ej använt i ekonomin). 1005012176932181 ($16.19, 7 m × 50 cm) öppnad 11:44Z, hero sedd (packshot, text mitt i bilden).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Heron visar husbil med kjol + hjulhuskappa monterad, men 'RV AWNING DRAUGHT SKIRT' inbränt mitt i bilden — kräver egen bild eller syskonlistningens hero (1005012319891705: caravan i kontext, text bara i toppen, beskärbar). Ingen listning visar snö/vinter — vinterkontexten måste fotas själv."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Svenska Tält Markkappa / Hindermann Markkappa (getcamping.se)", "pris_sek": 316, "url": "https://www.getcamping.se/search/?q=markkappa", "exakt_samma_form": false, "kommentar": "Bara kjolen, ingen hjulhuskappa; Hindermann 380, Dometic Dual Fix Vagnskappa 330 cm 439 / 390–400 cm 476, Dometic Hjulhuskappa Limpet 212–255 kr styck — ett kit motsvarande vårt (kjol 390 cm + 2 hjulhuskappor) kostar ~900 kr i fackhandeln. OLPRO Awning Skirt Draught Excluders 376 kr på PriceRunner (van-storlek)."},
+    "premium_ankare": {"namn": "Thule Windslip Markkappa 500 cm", "pris_sek": 1249, "url": "https://www.pricerunner.se/search?q=olpro%20awning%20skirt", "i_sortiment": true, "kommentar": "Läst 2026-09-29 (PriceRunner-sökningen 'olpro awning skirt' returnerade Thule Windslip 1 249 kr). Fiamma Markkappa Fiat Ducato 1 756 kr på getcamping.se (husbilsvarianten)."},
+    "ankare_kvot": 2.09,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["getcamping.se (markkappa, vagnskappa, hjulhus, vindskydd, draught, skirt)", "pricerunner.se (draught skirt, olpro awning skirt, vindkjol husvagn, hjulhuskappa, windslip markkappa)", "campingvaruhuset.se (sökvägen 404 — oläst, men kategorin 'Vindskydd' syns i menyn)", "husvagnsexperten.se (oläst — http 000)", "kama.se (oläst — http 000)", "biltema.se (404 på söksidan)", "jula.se (403)"]
+   },
+   "ekonomi": {
+    "landad_sek": [222, 272],
+    "pris_sek": 599,
+    "brutto_sek": [327, 377],
+    "be_cpa_sek": [327, 377],
+    "be_roas": 1.70,
+    "flerkop": false,
+    "returrisk": "låg — universal 7 m kapas/viks; sugproppar fäster på slät plåt (risk: hammrad/aluminiumsida på äldre vagnar)"
+   },
+   "meta_tanke": {
+    "hook": "Blåser det in under vagnen i Sälen?",
+    "objekt_i_bild": "husvagnen på skidcampingen i snö med kjolen runt om, hjulhuskapporna på",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "snövall mot kjolen utanpå, torrt och vindstilla under vagnen/i förtältet — mot presenningen som fladdrar"
+   },
+   "varfor": "Samma struktur som termoskyddet (skydd på dyr husvagn ute inför ett datum) på ett nytt objekt: undersidan. Golv finns (markkappa 316–476 kr) men ankaret Thule Windslip 1 249 kr ger 2,09× och kitet med hjulhuskappor saknar svensk motsvarighet under 900 kr — H06-fallet rent.",
+   "huvudrisk": "Markkappa är känd form hos förtältsägare (kan räknas som 'har redan') och alla Ali-heron har inbränd text utan vinterkontext — creativen måste fotas i snö.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 9, "K4": 8, "K5": 7, "K6": 8, "K7": 5, "K8": 7, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen kjol/markkappa/vindskydd)", "koncept.py sok: markkappa, kappa, kjol, skirt, vindskydd, förtält = 0 träffar", "REDAN-PROVAT.md (61 koncept — ingen kjol)"]},
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009861098478.html",
+    "https://www.aliexpress.com/item/1005012319891705.html",
+    "https://www.getcamping.se/search/?q=markkappa",
+    "https://www.getcamping.se/search/?q=hjulhus",
+    "https://www.pricerunner.se/search?q=olpro%20awning%20skirt",
+    "https://www.pricerunner.se/search?q=draught%20skirt",
+    "https://www.skistar.com/sv/vara-skidorter/salen/"
+   ]
+  }
+ ],
+ "strukna": [
+  {"objekt": "Truma-skorstenen (avgasen snöar igen)", "skal": "Truma Skorstensförlängning AKV 15 cm = 144 kr och Truma Skorsten AKL 462 kr på PriceRunner — originalet ligger under oss; Ali-kopian 1005010568296444 $4.39 ger BE-CPA < 190."},
+  {"objekt": "Vattenslangen (fryser)", "skal": "Ingen färdig uppvärmd slang på Ali (fyra sökningar: bara självreglerande värmekabel 17 W/m $4–11 = Biltema/Jula-sortiment). Golv VEVOR Uppvärmd Vattenslang 4,5 m 706 kr på PriceRunner. Koncept utan listning."},
+  {"objekt": "Gråvattentanken (fryser) — 12 V-värmeplatta", "skal": "Ali 1005009338535468 $13.33 öppnad, hero sedd: packshot av en orange silikonbit med limbaksida (materialklass 0), montering med lim + 12 V-inkoppling, inget svenskt ankare (PR 'tankvärmare 12V' = DEFA-motorvärmare). H10-kandidat på pappret, men förlorarsignalerna montering + packshot väger tyngre."},
+  {"objekt": "Gasolflaskan (fryser)", "skal": "Fel failure mode: gasol (propan) fryser inte vid −20°, problemet är tryckfall/regulatoris — Trumas lösning EisEx saknar Ali-kopia (sökt). Termohuv 11 kg = K0081 (kandidat sedan tidigare, samma sak+form). 220 V-värmebälte runt flaskan = säkerhetsrisk."},
+  {"objekt": "Dörren (draget) — termogardin", "skal": "Bara Ducato/Boxer-specifika listningar (måste mäta/modell = förlorarsignal), ingen för husvagnsdörr. Dörrlister = generiskt sortiment."},
+  {"objekt": "Golvet (kallt) — värmematta 12 V/230 V", "skal": "Ingen husvagnsform på Ali (12 V-filtar); PriceRunner-sortiment 12 V värmematta 360–1 170 kr. Generisk vara."},
+  {"objekt": "Taket (snö) — snöraka med teleskopskaft", "skal": "Verktyg som läggs i förrådet (ORDER) + sortiment (Ali $22–75; PR 'snöraka teleskop'; Biltema/Jula oläst 404/403)."},
+  {"objekt": "Kylskåpsventilen (snöar igen) — vinterlucka", "skal": "Ankare Dometic Vinterlucka EWS 300 isolerad 640 kr (PriceRunner) men ingen Ali-listning av själva luckan — bara 'winter closing clips' $3."},
+  {"objekt": "Takluckan (draget) — invändig isolerkudde", "skal": "Fiamma Thermovent Isolering Taklucka 172 kr på getcamping.se = originalet under oss. Utvändig huv = K0231 (Axel ja). 1005012006629130 (400×400 mm) öppnad på tredje försöket men aldrig levererbar mot 172-kronorsoriginal."},
+  {"objekt": "Madrassen (kondens mot ytterväggen) — 3D-mesh-underlägg", "skal": "Bra ankare (Madrassunderlägg 3D Airmesh 1 036 kr, getcamping.se) men ingen färdig Ali-listning på fyra sökningar — bara 3D-spacer-mesh som metervara $10.49. Koncept utan listning; värt en egen sökning en annan dag."},
+  {"objekt": "Movern (15–25 tkr under vagnen i snö/salt) — huv", "skal": "Ingen Ali-listning (sökt 'caravan mover cover'); getcamping säljer bara movers 11 596–15 999 kr, inget skydd."},
+  {"objekt": "Förtältstaket (bär inte snö) — snöstöd", "skal": "Bara generiska tältstänger på Ali (sortiment); getcamping 'taksträckare' 0 träffar. Vinterförtält är en annan prisklass."},
+  {"objekt": "Aquaroll/vattendunk (fryser) — isolerhuv", "skal": "Aquaroll är ett UK-kärl; svensk vattendunk-huv saknar listning."},
+  {"objekt": "Parabolen (snöar igen)", "skal": "Ingen Ali-listning (bara Starlink-fästen)."}
+ ]
+}
