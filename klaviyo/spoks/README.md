@@ -1018,7 +1018,14 @@ utskick.
 
 **Guardrails:** inget schemalagt utöver K01 (Axels eget klick), inget skickat av sessionen —
 **publik och Schedule per mejl är Axels klick i appen** (MCP:n kan varken välja publik eller
-schemalägga). Bara segment med samtycke (MFL
+schemalägga). ⛔ **En egen MCP/CLI löser det inte** (Axels fråga 2026-09-29 kväll, utrett samma
+kväll): Spoks **publika API** (`https://api.spoks.com`, nyckel per arbetsyta i headern `x-api-key`,
+kontraktet på https://docs.spoks.com/openapi.json, version 2026-07) skapar och ändrar bara utkast,
+och docs säger ordagrant att man "publish or schedule it from the app". `PATCH /campaigns/{id}`
+kan däremot sätta **publiken** (`recipients.segmentIds`), vilket MCP:n inte kan. Appen är Flutter
+(canvas, därav den vita sidan i en dold flik) mot `frontend.spoks.com` med Firebase-inloggning
+(projekt `spoks-app`); att härma den med Axels inloggning ur webbläsaren är sessionens beslut att
+inte bygga: skört, mot Spoks upplägg, och ett fel publicerar till ~3 000 direkt. Bara segment med samtycke (MFL
 19 §). Klaviyo-utkasten i `UV6Rqg` rörs inte. Sessionen raderar aldrig ett utkast.
 
 **Stoppregeln finns redan — `LARM_LEVERANS` i `docs/os/EPOST-STRATEGI.md` §8:** spamklagomål
