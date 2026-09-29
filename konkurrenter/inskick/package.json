@@ -1,0 +1,10 @@
+{
+  "name": "konkurrenter-inskick",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Inskickningen av Meta-anmälningar (konkurrenter/arenden/<id>/anmalan/<nr>.json) i Metas upphovsrättsformulär från containern. Enda beroendet är playwright-core; webbläsaren är den förinstallerade Chromium i /opt/pw-browsers. Installera med: PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --prefix konkurrenter/inskick",
+  "dependencies": {
+    "playwright-core": "1.56.0"
+  }
+}

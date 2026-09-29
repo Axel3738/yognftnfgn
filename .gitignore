@@ -150,6 +150,10 @@ konkurrenter/output/
 # Meta-anmälningarnas bevisbilder (~1 MB PNG styck) och verifieringssidan (data-URI:er) — bevisets länk på CDN och fälten står i <nr>.json som committas.
 konkurrenter/arenden/*/anmalan/bevis-*.png
 konkurrenter/arenden/*/anmalan/verifiering.html
+# Inskickningens spår per anmälan: engångskoden, skärmdumparna (torr/före/kvitto/fel). Kvittot (<nr>.kvitto.json) committas.
+konkurrenter/arenden/*/anmalan/*.kod
+konkurrenter/arenden/*/anmalan/*.kod-begard
+konkurrenter/arenden/*/anmalan/*.png
 
 # Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
 matstrumpor/marknader/annonser/klar/*.mp4

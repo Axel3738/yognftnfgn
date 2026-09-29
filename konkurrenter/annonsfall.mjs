@@ -88,7 +88,21 @@ export function jamforAnnons(a, { egnaAnnonser, egnaProdukter, konfig, derasHash
   const deras = a.bilder.map((u) => ({ url: u, hash: derasHashar.get(u)?.hash })).filter((x) => x.hash);
   const egnaBilder = [...egnaAnnonser.map((e) => e.bild).filter(Boolean), ...(basta?.produkt?.bilder ?? [])].map((u) => ({ url: u, hash: egnaHashar.get(u)?.hash })).filter((x) => x.hash);
   const bilder = jamforBilder(egnaBilder, deras, konfig.trosklar.bild);
-  return { text: basta?.text ?? null, varAnnons: basta?.varAnnons ?? null, produkt: basta?.produkt ?? null, bilder };
+  // Bara bildträff (kopierad video/bild med omskriven text — ORVO 2026-09-29):
+  // den annons hos oss som äger den träffade bilden ÄR originalet, och dess
+  // landningssida ger produkten. Annars hade anmälan sagt "10 annonser" i
+  // stället för produktens namn.
+  let varAnnons = basta?.varAnnons ?? null;
+  let produkt = basta?.produkt ?? null;
+  if (!varAnnons && bilder.length) {
+    const agare = egnaAnnonser.find((e) => e.bild && e.bild === bilder[0].egen);
+    if (agare) varAnnons = { id: agare.id, namn: agare.namn, text: agare.text, bild: agare.bild, handle: agare.handle, verksamhet: agare.verksamhet, ...(agare.lank ? { lank: agare.lank } : {}) };
+  }
+  if (!produkt && varAnnons?.handle) {
+    const p = egnaProdukter.find((x) => x.handle === varAnnons.handle && (!varAnnons.verksamhet || x.verksamhet === varAnnons.verksamhet)) ?? egnaProdukter.find((x) => x.handle === varAnnons.handle);
+    if (p) produkt = { handle: p.handle, titel: p.titel, url: p.url, butik: p.butik, verksamhet: p.verksamhet, bilder: (p.bilder ?? []).slice(0, 12) };
+  }
+  return { text: basta?.text ?? null, varAnnons, produkt, bilder };
 }
 
 /**

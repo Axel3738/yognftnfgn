@@ -138,9 +138,13 @@ node konkurrenter/kor.mjs --lista
     bilagor och sessionen inte kan ladda upp en containerfil från Axels
     dator — länken står i "Övrig information". Verifieringssidan
     `arenden/<id>/anmalan/verifiering.html` (alla fält, alla bilder) är Axels
-    ENDA klick: på hans "kör anmälningarna <id>" fyller sessionen i
-    formuläret i hans **Claude in Chrome** (facebook.com svarar 403 från
-    containern), en anmälan i taget, och kvitterar varje med `--anmald`
+    ENDA klick: på hans "kör anmälningarna <id>" skickar sessionen in dem
+    **från containern** med `konkurrenter/inskick/skicka.mjs` (playwright-core
+    + den förinstallerade Chromium; mätt 2026-09-29: formuläret fungerar
+    utloggat härifrån, det enda Meta kräver är en engångskod som mejlas till
+    anmälarens adress — sessionen läser den i Gmail-connectorn och skriver
+    `<nr>.kod`, skriptet skickar och skriver `<nr>.kvitto.json`), en anmälan
+    i taget, och kvitterar varje med `--anmald`
     (Metas referensnummer; en anmälan kvitteras aldrig två gånger; alla
     inskickade ⇒ ärendet "anmält vidare" när brevet gått). Lokala skärmdumpar
     Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två

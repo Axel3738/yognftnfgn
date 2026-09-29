@@ -413,6 +413,14 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   assert.match(fynd.skal[0], /2 av deras annonser återger våra annonstexter ordagrant/);
   // Ingen träff alls ⇒ null, aldrig ett påhittat ärende
   assert.equal(byggAnnonsfynd({ ...input, annonser: [input.annonser[2]] }, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() }), null);
+  // Bara bildträff (ORVO 2026-09-29: vår video, omskriven text) ⇒ annonsen som äger bilden är originalet, och dess produkt blir ärendets
+  const bildAnnons = { ...input.annonser[2], bilder: ['https://scontent/deras.jpg'] };
+  const jb = jamforAnnons(bildAnnons, { egnaAnnonser: [{ ...egnaAnnonser[0], lank: 'https://baverbutiken.se/products/takoverdrag' }], egnaProdukter, konfig: KONFIG, derasHashar: new Map([['https://scontent/deras.jpg', { hash: 'ffdfef3b73fe9c19' }]]), egnaHashar: new Map([['https://cdn/ann1.png', { hash: 'ffdfef3b73fe9c19' }]]) });
+  assert.equal(jb.text, null); assert.equal(jb.bilder.length, 1);
+  assert.equal(jb.varAnnons?.namn, 'Takoverdrag_PD_1_H1'); assert.equal(jb.varAnnons.lank, 'https://baverbutiken.se/products/takoverdrag');
+  assert.equal(jb.produkt?.titel, 'Taköverdrag Husvagn');
+  const fyndBild = byggAnnonsfynd({ ...input, annonser: [bildAnnons] }, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map([['https://scontent/deras.jpg', { hash: 'ffdfef3b73fe9c19' }]]), egnaHashar: new Map([['https://cdn/ann1.png', { hash: 'ffdfef3b73fe9c19' }]]), nu: '2026-09-29T08:00:00Z' });
+  assert.equal(fyndBild.var.produkt.handle, 'takoverdrag'); assert.equal(fyndBild.var.annons.namn, 'Takoverdrag_PD_1_H1'); assert.equal(fyndBild.verksamhet, 'Bäverbutiken');
   // Brevet räknar upp annonserna, fakturan tar en rad per annons (video dyrare)
   const skarm = { egen: 'https://cdn/ann1.png', deras: '/tmp/axels-skarmdump.png', avstand: 0, grad: 'identisk' };
   const arende = { ...fynd, id: 'KD-2026-009', status: 'ny', skapad: '2026-09-29T08:00:00Z', brev: { mottagare: 'info@kopian.se' }, bevis: { ...fynd.bevis, bilder: [skarm], annonser: fynd.bevis.annonser.map((t, i) => (i === 0 ? { ...t, bilder: [skarm] } : t)) } };

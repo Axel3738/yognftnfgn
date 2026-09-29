@@ -283,29 +283,38 @@ inget: "Inget för dig i dag."
      (annons, exponeringar, bevisbild ja/nej). **Vänta på hans
      "kör anmälningarna <id>".** Det är hans enda verifiering — fråga inte
      igen per anmälan.
-  3. **På "kör anmälningarna <id>": Claude in Chrome krävs** (facebook.com
-     svarar 403 från containern och formuläret kräver hans inloggning). Finns
-     inte `mcp__claude-in-chrome__*` (eller `enable__mcp__claude-in-chrome`):
-     säg det som första rad och ge honom stegen (Chrome Web Store →
-     "Claude" av Anthropic → installera → logga in med samma konto → öppna
-     chatten i Chrome). Med Chrome: läs skillen `anthropic-skills:chrome-browser`,
-     ladda verktygen i EN ToolSearch, `tabs_context_mcp`, och **för varje
-     `<nr>.json` i nummerordning, en i taget:** ny flik på `formular`
-     (Metas upphovsrättsformulär), läs formuläret (`read_page`) och para
-     ihop fälten på etikett — fälten kan heta annat än i paketet och Meta
-     ändrar dem; fyll `reporter` (namn, e-post, telefon, adress),
-     `rightsOwner` (rättighetshavare + relation), `contentUrls`,
-     `contentDescription`, `originalWorkDescription` + `originalWorkUrls`,
-     `additionalInfo` (bär CDN-länken till bevisbilden — bilagor kan inte
-     laddas upp från Axels dator av sessionen, länken ÄR skärmdumpen; finns
-     ett bilagefält och en CDN-länk saknas: bygg om med CDN först), kryssa
-     alla `declarations`, skriv `signature`. Skicka in. Läs
-     bekräftelsesidan och Metas referens-/rapportnummer, kör
-     `node konkurrenter/kor.mjs --anmald <id> --nr <nr> --referens <nummer>`,
-     stäng fliken, nästa. Har formuläret ett fält paketet inte täcker, eller
-     saknar ett fält paketet har: stanna, säg exakt vad, fyll inte på med
-     gissningar. Fel/utebliven respons 2–3 gånger: stanna och säg vad som
-     hände (skillens regel).
+  3. **På "kör anmälningarna <id>": inskickningen sker FRÅN CONTAINERN**
+     (mätt 2026-09-29: formuläret laddar och tar emot utloggat härifrån —
+     "403 från containern" gällde aldrig formuläret; det enda Meta kräver är
+     en engångskod som mejlas till anmälarens e-post). Motorn är
+     `konkurrenter/inskick/skicka.mjs` (playwright-core mot den
+     förinstallerade Chromium; installera EN gång per container med
+     `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --prefix konkurrenter/inskick`).
+     **För varje `<nr>.json` i nummerordning, en i taget:**
+     - Starta i bakgrunden: `node konkurrenter/inskick/skicka.mjs <id> --nr <nr> > <logg> 2>&1 &`
+       — skriptet fyller alla fyra stegen ur paketet (Copyright → Facebook →
+       Sweden + "No, but I'm authorized…" + rättighetshavaren → länken,
+       originalets URL, beskrivningen, namn, e-post ×2, underskrift), klickar
+       "Request code" och väntar (max 6 min) på filen
+       `arenden/<id>/anmalan/<nr>.kod`.
+     - Läs koden: Gmail-connectorn (`mcp__Gmail__search_threads`
+       `from:facebookmail.com newer_than:1h` eller `subject:code`, sedan
+       `get_thread`) — adressen i paketet MÅSTE vara läsbar i den kopplade
+       brevlådan (konfig `anmalan.undertecknare.epost`, eller `--anmal … --epost`).
+       Skriv koden i `<nr>.kod`. Skriptet skriver in den, kontrollerar att
+       "0 required fields remaining", klickar Submit, läser bekräftelsen och
+       skriver `<nr>.kvitto.json` (+ skärmdump `<nr>.kvitto.png`).
+     - Läs kvittot. `lyckat: true` med referens ⇒
+       `node konkurrenter/kor.mjs --anmald <id> --nr <nr> --referens <referens>`.
+       Utan referens men lyckat ⇒ `--referens inskickad-<datum>`. `lyckat: false`
+       eller exit 1/3 ⇒ stanna, titta på skärmdumpen, säg exakt vad som stod.
+     Skriptet vägrar en anmälan som redan har kvitto, ett ofullständigt
+     paket och ett formulär med kvarvarande obligatoriska fält — det gissar
+     aldrig. `--torr` fyller allt, begär koden och stannar före Submit
+     (skärmdump `<nr>.torr.png`), det är provkörningen.
+     Reserv om formuläret ändrats så att skriptet stannar: Claude in Chrome i
+     Axels inloggade webbläsare (skillen `anthropic-skills:chrome-browser`),
+     samma paket, fält för fält på etikett.
   4. Efteråt: steg 6 och 7 (commit-rubrik `konkurrentdodaren: anmält <id>`)
      och EN rad till Axel: "N av N inskickade, referenser …".
 - **`anmald <id> --nr <n> --referens <r>`** → `node konkurrenter/kor.mjs --anmald …`
