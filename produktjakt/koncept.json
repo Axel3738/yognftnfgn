@@ -3552,7 +3552,7 @@
   "K0068": {
    "id": "K0068",
    "skapad": "2026-09-10",
-   "namn": "4 Packs Adjustable 19\"-36\" Silver Wheel Tire Covers for Sedan RV Camper Van SUV Wheel Oxfo",
+   "namn": "Hjulskydden 4-pack, silver 19–36 tum",
    "objekt": "Husvagn/husbil — hjulen och däcken",
    "form": "skydd",
    "sak": "husvagn/husbil+skydd",
@@ -3578,22 +3578,76 @@
        "datum": "2026-09-10",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-10/fynd-doa.json"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T14:53:29Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
    ],
-   "leveranser": [],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 6,
+     "rank_poang": 15.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 355,
+     "be_cpa": 244,
+     "hook": "Står husvagnen på samma däck i vinter?",
+     "varfor": "Axels order 2026-09-29: USA-brandets storage-produkt nr 1. Fackhandeln säljer formen bara STYCKVIS 139–269 kr (4 st = 556–1 076), vi säljer 4-pack silver på 599 = under ankaret 1,8× (H06, ATV-kapellets struktur); samma ägare, objekt ute och datum (uppställning 1,6 v) som V1.",
+     "huvudrisk": "Hjulskydden 4-pack fick 'kanske' 2026-09-11 (K0235, 27–29 tum) — samma form, nu justerbar 19–36 och silver; heron bär logga + ikoner och visar ett bilhjul.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "K0235 kanske 09-11 — annan listning/storlek",
+      "K1": 14,
+      "K2": 14,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 10,
+      "K7": 4,
+      "K8": 7,
+      "K9": 5,
+      "K10": 3,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
    "feedback": [],
    "launch": null,
    "meta": null,
-   "status": "kandidat",
+   "status": "levererad",
    "aterupptas_om": [],
    "historik": [
     {
      "datum": "2026-09-10",
      "handelse": "skapat (produktjakt)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
     }
-   ]
+   ],
+   "namn_sv": "Hjulskydden 4-pack, silver 19–36 tum"
   },
   "K0069": {
    "id": "K0069",
@@ -7661,6 +7715,12 @@
        "datum": "2026-09-10",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-10/fynd-doa2.json"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:42:50Z",
+       "kalla": "v3 discovery"
       },
       {
        "datum": "2026-09-29-carashell",
@@ -26606,6 +26666,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:46:47Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:46:47Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -26696,6 +26762,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:43:07Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:07Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -26767,6 +26839,12 @@
      "pris_usd": 17.09,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:27Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",
@@ -26862,6 +26940,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:53:59Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:53:59Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -26947,6 +27031,12 @@
      "pris_usd": 26.19,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:52:57Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",
@@ -27042,6 +27132,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T07:07:42Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T07:07:42Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27127,6 +27223,12 @@
      "pris_usd": 24.09,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:26Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",
@@ -27222,6 +27324,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:44:47Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:47Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27307,6 +27415,12 @@
      "pris_usd": 6.39,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:47Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",
@@ -27402,6 +27516,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:47:19Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:47:19Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27478,6 +27598,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:39:47Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:39:47Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27549,6 +27675,12 @@
      "pris_usd": 12.06,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:32Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",
@@ -27644,6 +27776,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:43:32Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:32Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27720,6 +27858,12 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-29T11:47:19Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:47:19Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
@@ -27791,6 +27935,12 @@
      "pris_usd": 13.65,
      "forst_sedd": "2026-09-29-carashell",
      "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:07Z",
+       "kalla": "v3 discovery"
+      },
       {
        "datum": "2026-09-29-carashell",
        "verdict": "LIVE_VERIFIED",

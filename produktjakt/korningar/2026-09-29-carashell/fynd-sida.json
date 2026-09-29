@@ -2,9 +2,9 @@
  "datum": "2026-09-29-carashell",
  "version": "v3",
  "kalla": "korningar/2026-09-29-carashell/v3/batch.json",
- "antal_kandidater": 16,
+ "antal_kandidater": 17,
  "per_slot": {
-  "exploitation": 7,
+  "exploitation": 8,
   "exploration": 9,
   "sasong": 0
  },
@@ -819,6 +819,164 @@
    ]
   },
   {
+   "product_id": "1005005932851254",
+   "titel": "Hjulskydden 4-pack, silver 19–36 tum",
+   "url": "https://www.aliexpress.com/item/1005005932851254.html",
+   "pris": 24.49,
+   "valuta": "USD",
+   "pris_text": "US $24.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-29-carashell/v3/bilder/1005005932851254.jpg",
+   "sald": "",
+   "grupp": "NYTT: Husvagnens/husbilens fyra hjul på uppställningsplatsen — däcksidorna mot sol, frost och sprickor",
+   "objekt": "NYTT: Husvagnens/husbilens fyra hjul på uppställningsplatsen — däcksidorna mot sol, frost och sprickor",
+   "taggar": {
+    "objekt": "NYTT: Husvagnens/husbilens fyra hjul på uppställningsplatsen — däcksidorna mot sol, frost och sprickor",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Däckskydd Husbil (campingvaruhuset.se) 269 kr/st → 4 st"
+   },
+   "ekonomi": {
+    "landad": 355,
+    "forslag_pris": 599,
+    "multipel": 1.69,
+    "be_cpa": 244,
+    "be_roas": 2.4,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     320,
+     390
+    ]
+   },
+   "namn_sv": "Hjulskydden 4-pack, silver 19–36 tum",
+   "status": "bevisad struktur",
+   "poang": 15.0,
+   "rank_slutlig": 15.0,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "K0235 kanske 09-11 — annan listning/storlek",
+    "K1": 14,
+    "K2": 14,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 10,
+    "K7": 4,
+    "K8": 7,
+    "K9": 5,
+    "K10": 3,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Står husvagnen på samma däck i vinter?",
+   "efter_bild": "spruckna däcksidor bredvid ett täckt hjul; fyra hjul, fyra skydd",
+   "huvudrisk": "Hjulskydden 4-pack fick 'kanske' 2026-09-11 (K0235, 27–29 tum) — samma form, nu justerbar 19–36 och silver; heron bär logga + ikoner och visar ett bilhjul.",
+   "varfor": "Axels order 2026-09-29: USA-brandets storage-produkt nr 1. Fackhandeln säljer formen bara STYCKVIS 139–269 kr (4 st = 556–1 076), vi säljer 4-pack silver på 599 = under ankaret 1,8× (H06, ATV-kapellets struktur); samma ägare, objekt ute och datum (uppställning 1,6 v) som V1.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0068",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget husvagn (V1)",
+    "delade_variabler": [
+     "objekt_ute",
+     "husvagnsägaren 55+",
+     "uppställning 1,6 v",
+     "överdrag",
+     "flerköp (4 hjul)"
+    ],
+    "avvikelser": [
+     "objekt = däcket (1 000–2 000 kr styck), inte hela vagnen",
+     "golv i fackhandeln per styck"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 2 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); form=överdrag 9V/3F (+0.5); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 15.0",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Campout Däckskydd (campingvaruhuset.se)",
+     "pris_sek": 139,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
+     "exakt_samma_form": true,
+     "anm": "per STYCK — 4 st = 556; Kegel 195, ProPlus XL 194, Däckskydd Husvagn 215, HI-GEAR 189 (PriceRunner) — sex varianter, alla styckvis"
+    },
+    "premium_ankare": {
+     "namn": "Däckskydd Husbil (campingvaruhuset.se) 269 kr/st → 4 st",
+     "pris_sek": 1076,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.8,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (hjulskydd husvagn/husbil, däckskydd husvagn — läst 2026-09-29)",
+     "campingvaruhuset.se (däckskydd)",
+     "getcamping.se (däckskydd, hjulöverdrag — bara Dometic hjulhuskappa 319–375)",
+     "kama.se/husvagnsexperten.se/Biltema/Jula = oläst (403)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "BENOO-logga och ikonrad i heron — beskär; bilden på bilhjulet är i kontext, husvagnshjul måste fotas själv"
+   },
+   "meta_tanke": {
+    "hook": "Står husvagnen på samma däck i vinter?",
+    "objekt_i_bild": "fyra silverhjul på den uppställda husvagnen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "spruckna däcksidor bredvid ett täckt hjul; fyra hjul, fyra skydd"
+   },
+   "listning": {
+    "product_id": "1005005932851254",
+    "url": "https://www.aliexpress.com/item/1005005932851254.html",
+    "pris_usd": 24.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T14:53:29Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005005932851254.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "4-pack, justerbar 19–36 tum (svensk husvagn 185R14 ≈ 26 tum passar); silver",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005005932851254.html",
+    "https://www.pricerunner.se/search?q=däckskydd husvagn",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd"
+   ]
+  },
+  {
    "product_id": "1005010569162335",
    "titel": "Bakdörrsgardinerna Ducato, 2 delar",
    "url": "https://www.aliexpress.com/item/1005010569162335.html",
@@ -856,7 +1014,7 @@
    "status": "bevisad struktur",
    "poang": 13.8,
    "rank_slutlig": 13.8,
-   "rank": 6,
+   "rank": 7,
    "per_kriterium": {
     "K0": "ok",
     "K1": 12,
@@ -1020,7 +1178,7 @@
    "status": "bevisad struktur",
    "poang": 12.5,
    "rank_slutlig": 12.5,
-   "rank": 7,
+   "rank": 8,
    "per_kriterium": {
     "K0": "ok",
     "K1": 12,
@@ -1180,7 +1338,7 @@
    "status": "utforskning",
    "poang": 11,
    "rank_slutlig": 11,
-   "rank": 8,
+   "rank": 9,
    "per_kriterium": {
     "K0": "ok",
     "K1": 12,
@@ -1340,7 +1498,7 @@
    "status": "utforskning",
    "poang": 11,
    "rank_slutlig": 11,
-   "rank": 9,
+   "rank": 10,
    "per_kriterium": {
     "K0": "ok",
     "K1": 12,
@@ -1500,7 +1658,7 @@
    "status": "utforskning",
    "poang": 11,
    "rank_slutlig": 11,
-   "rank": 10,
+   "rank": 11,
    "per_kriterium": {
     "K0": "ok",
     "K1": 10,
@@ -1658,7 +1816,7 @@
    "status": "utforskning",
    "poang": 10,
    "rank_slutlig": 10,
-   "rank": 11,
+   "rank": 12,
    "per_kriterium": null,
    "hook": "Vem vaktar vagnens dörr i vinter?",
    "efter_bild": "bultsax mot den dolda bygeln — får inget grepp",
@@ -1807,7 +1965,7 @@
    "status": "utforskning",
    "poang": 10,
    "rank_slutlig": 10,
-   "rank": 12,
+   "rank": 13,
    "per_kriterium": null,
    "hook": "Svarta ränder på vagnens sida?",
    "efter_bild": "regnvatten som droppar fritt från näsan i stället för att rinna längs väggen; före/efter-rand",
@@ -1953,7 +2111,7 @@
    "status": "utforskning",
    "poang": 10,
    "rank_slutlig": 10,
-   "rank": 13,
+   "rank": 14,
    "per_kriterium": {
     "K0": "ok",
     "K1": 12,
@@ -2114,7 +2272,7 @@
    "status": "utforskning",
    "poang": 9,
    "rank_slutlig": 9,
-   "rank": 14,
+   "rank": 15,
    "per_kriterium": null,
    "hook": "Står vagnen olåst i vinter?",
    "efter_bild": "klämman låses på hjulet, nyckeln dras ur — syns från vägen",
@@ -2263,7 +2421,7 @@
    "status": "utforskning",
    "poang": 8,
    "rank_slutlig": 8,
-   "rank": 15,
+   "rank": 16,
    "per_kriterium": null,
    "hook": "Går dina fönster att öppna utifrån?",
    "efter_bild": "handtaget kan inte fällas — fönstret sitter fast",
@@ -2410,7 +2568,7 @@
    "status": "utforskning",
    "poang": 8,
    "rank_slutlig": 8,
-   "rank": 16,
+   "rank": 17,
    "per_kriterium": null,
    "hook": "Fryser tanken på skidcampingen?",
    "efter_bild": "frost på tanken utanför dynan, is i slangen som tinar",

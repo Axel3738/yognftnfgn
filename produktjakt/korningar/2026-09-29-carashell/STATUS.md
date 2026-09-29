@@ -24,7 +24,7 @@ Formtaket lyft — `rank.py --tema --formtak 1.0` (ny flagga i dag; för en buti
 | AW | Ordning/flerköp i vagnen | 3 → 2 (kylskåpsspärr, överskåpsspärr; markisklämmor fel säsong) | Fackhandeln säljer lås/fästen för skåp men inte "håll-kvar-innehållet"-formen — äkta H10 utan ankare. |
 | HS | Spegelhuvarna Ducato (lins AN i går, lyftes ut av arketyptaket) | 1 | Milenco 1 116 = 1,6×. |
 
-**Summa: 20 → 16.** ~150 fraser, ~90 produktsidor, ~75 strukna i linserna + 4 av huvudsessionen. rank.py --tema --formtak 1.0: 16 → 16, inga kollisioner (hjullåsets objekt döptes om, SAK krockade med däckvaggorna). Gnagarstaketet fick K0153 (kandidat sedan 09-04, första leveransen).
+**Summa: 20 → 16, + hjulskydden på Axels fråga kl 14:50 = 17 (sida v32).** ~150 fraser, ~90 produktsidor, ~75 strukna i linserna + 4 av huvudsessionen. rank.py --tema --formtak 1.0: 16 → 16, inga kollisioner (hjullåsets objekt döptes om, SAK krockade med däckvaggorna). Gnagarstaketet fick K0153 (kandidat sedan 09-04, första leveransen).
 
 ## Batchen (sida v31 = 16 kort; ark `Leverantorsoffert-2026-09-29-carashell.xlsx` med bilder)
 
@@ -46,6 +46,7 @@ Formtaket lyft — `rank.py --tema --formtak 1.0` (ny flagga i dag; för en buti
 | 14 | Hjullåset för husvagn, Milenco-kopia (K0373) | 949 · 399–499 | Milenco Compact 1 619 (1,7×) / kopior 281–850 | H06 | MEDEL | lås 0/15, Motorlåset förlorade |
 | 15 | Fönsterspärrarna Seitz/Dometic, 3 par (K0374) | 349 · 241–261 | Dometic 199/par (1,7×) / campingvaruhuset 159 | H08 | LÅG | liten plastbit |
 | 16 | Vattentankens värmedyna 12 V (K0375) | 479 · 262–301 | — / — (kama.se oläst) | H10 | LÅG | lim + 12 V = montering 7/9 förlorare |
+| 17 | Hjulskydden 4-pack, silver 19–36 tum (K0068) — Axels fråga kl 14:50 | 599 · 209–279 | Däckskydd Husbil 269/st × 4 = 1 076 (1,8×) / Campout 139/st, Kegel 195, ProPlus 194 — styckvis | H06 | MEDEL | K0235 fick kanske 09-11; heron med logga + bilhjul |
 
 Alla LIVE_VERIFIED 11:30–12:20 UTC, hero sedd. Sex skyddsformer av 16 (38 %) — formtaket hade inte ens bitit. Tre Ducato-gardiner = syskon (max tre, gränsen hålls). Sex LÅG med flit (målet 10+; Axel avgör upplevt värde).
 
