@@ -252,7 +252,8 @@ test('mejl_sprak och mejl_marknader samtidigt stoppar, svenska i mejl_sprak stop
 });
 
 test('notis-oversattning: läget per språk och spärren mot en främmande huvudmall', async () => {
-  const { lageFor, arVarMall, lasFraga, kor } = await import('../notis-oversattning.mjs');
+  const { lageFor, arVarMall, lasFraga, kor, saknadeSprak } = await import('../notis-oversattning.mjs');
+  assert.deepEqual(saknadeSprak([{ locale: 'sv', primary: true }, { locale: 'de' }, { locale: 'cs' }], ['de']), ['cs'], 'nytt språk utan fraktmall syns');
   const onskat = { title: 'T', body_html: 'B' };
   assert.equal(lageFor([], onskat), 'saknas');
   assert.equal(lageFor([{ key: 'title', value: 'Shopify' }, { key: 'body_html', value: 'std' }], onskat), 'annan');
@@ -275,6 +276,7 @@ test('notis-oversattning: läget per språk och spärren mot en främmande huvud
         for (const t of v.t) (lager[`${v.id}|${t.locale}`] ??= []).push({ key: t.key, value: t.value, outdated: false });
         return { translationsRegister: { userErrors: [], translations: [] } };
       }
+      if (q.includes('shopLocales')) return { shopLocales: [{ locale: 'sv', primary: true }, ...b.oversattningar.map((o) => ({ locale: o.locale }))] };
       const r = { resourceId: v.id, translatableContent: [{ key: 'title', value: 'x', digest: 'd1' }, { key: 'body_html', value: huvud, digest: 'd2' }] };
       for (const o of b.oversattningar) r[`l_${o.locale.replace(/[^a-z0-9]/gi, '_')}`] = lager[`${v.id}|${o.locale}`] ?? [];
       return { translatableResource: r };

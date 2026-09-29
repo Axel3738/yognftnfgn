@@ -60,6 +60,10 @@ argumentet; för Bäverbutiken utelämnas `--butik` helt.
    med lagefilen i steg 3. Exit 1 = ett språk stämde inte vid
    tillbakaläsningen — skriv det överst i rapporten. Vägrar det för att
    "huvudmallen i Shopify är inte vår": rör ingenting, skriv det i rapporten.
+   Säger det "Språk i butiken utan egna fraktmejl": ett nytt språk har
+   publicerats (fler marknader kommer) och får Shopifys standardmejl tills
+   `mejl/sprak/<kod>.json` + en rad i `mejl_sprak` finns — skriv språken i
+   rapporten, bygg inte språkfilen i rutinen (den skrivs av sonnet och granskas).
 3. Committa och pusha minnet. Lagefilen är `sparning/lage.json` för
    Bäverbutiken, annars `sparning/butiker/<butik>/lage.json` (+ butikens
    `konfig.json` med bokföringen). Flera rutiner pushar till `main` varje

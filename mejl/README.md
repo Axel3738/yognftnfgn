@@ -709,3 +709,16 @@ gjorde ingenting. `lankkoll.mjs`: alla tolv språk svarar 200 med rätt
 `<html lang>` och visar det riktiga paketet MS-3654539E, ingen svensk text
 (skärmdumpar i `output/butiker/matstrumpor/lankkoll/`, gitignorerade).
 Kvar: den svenska huvudmallen utan leveransfönstret — Cowork-prompten.
+
+**Svenska huvudmallen inne 2026-09-29 eftermiddag** (Cowork + Axel): alla tre
+tecken för tecken lika med filerna (7 192 / 6 153 / 6 142), ingen "Beräknad
+leverans" kvar. Fraktbekräftelsens elva översättningar blev `outdated` av
+bytet och registrerades om med `--om-inaktuell` (lika och aktuella).
+
+**Fler marknader kommer** (Axel samma dag: "vi kommer köra fler än tolv
+marknader"): ett nytt publicerat språk utan rad i `mejl_sprak` får Shopifys
+standardfraktmejl. `notis-oversattning.mjs` läser därför `shopLocales` varje
+körning och skriver "Språk i butiken utan egna fraktmejl: …" — spårningsrutinen
+tar med det i rapporten. Nytt språk = `mejl/sprak/<kod>.json` (sonnet +
+granskare, knappen = spårningssidans knapp) + en rad i `mejl_sprak` + bygg +
+`--skarpt`. Spårningssidan behöver samma språk i `sparning/sprak/`.
