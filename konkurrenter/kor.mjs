@@ -39,6 +39,9 @@
 //        Med --ja (Axels "kör anmälningarna"): engångskoden ur kodfilen, Submit, kvitto —
 //        kvitto BARA när Meta bekräftar. Visar Meta en säkerhetskontroll (captcha,
 //        mätt 2026-09-29) stannar skriptet: den görs av en människa, aldrig härifrån.
+//   node konkurrenter/kor.mjs --lagg-till <id> --annonser <annons-id,…>
+//        Tar med FILMER ur sidans annonsfil som inte matchade på text eller förhandsbild,
+//        som kandidater (`kandidat: 'film'`). --klipp avgör; obevisade kommer aldrig med.
 //   node konkurrenter/kor.mjs --anmal-cowork <id>
 //        Cowork-prompten för de anmälningar som inte är inskickade: Cowork fyller i
 //        exakt de godkända texterna i Axels Chrome, Axel gör säkerhetskontrollen.
@@ -48,7 +51,7 @@
 //   node konkurrenter/kor.mjs --skicka <id> [--utan-meta] …
 //        --utan-meta: brevet och sms:et nämner inte Meta-anmälningarna alls (Axels beslut
 //        2026-09-29 för ORVO: "vi borde lugnt inte säga att vi har skickat DMCA").
-//   node konkurrenter/kor.mjs --granska <id> [--forsta] [--bara-status] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]
+//   node konkurrenter/kor.mjs --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]
 //        Axels granskningsapp (ett kort per anmälan + mejlet med fakturan + sms:et,
 //        Ja/Nej som sidan sparar i data/beslut.json) → output/granska/<id>/.
 //   node konkurrenter/kor.mjs --granska-svar <id> --beslut <fil> [--granskning <fil>]
@@ -80,7 +83,7 @@ import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, fakturaLitenP
 import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
 import { byggAnmalningar, kontrolleraAnmalan, anmalanText, annonsLank } from './anmalan.mjs';
 import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
-import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml } from './granskning.mjs';
+import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml, mejlRedanNot } from './granskning.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd, annonsUppfoljning } from './annonsfall.mjs';
 import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
 import { skickaAnmalan, formularVarden, coworkPrompt } from './anmal-skicka.mjs';
@@ -831,7 +834,7 @@ async function anmal() {
   const original = lasJson(join(mapp, 'original.json'), null)?.filmer ?? null;
   const { originalFor } = await import('./original.mjs');
   // Samma regel som anmalan.mjs: ledfilmen först, annars nästa film med en hittad annons — varnas bara när ingen finns.
-  const utanOriginal = annonser.filter((t) => t.klipp?.antal && !originalFor(t.klipp, original ?? {}).length).map((t) => t.nr);
+  const utanOriginal = annonser.filter((t) => t.klipp?.antal && !originalFor(t.klipp, original ?? {}, { fore: t.start }).length).map((t) => t.nr);
   if (utanOriginal.length) logg(`  ⚠️ ${utanOriginal.length} annons(er) utan vår egen annons som exempel (${utanOriginal.join(', ')}) — exemplet blir vår sidas lista i annonsbiblioteket. Kör först: node konkurrenter/kor.mjs --original ${a.id}`);
   else if (original) logg(`  originalen: ledfilmens annons i annonsbiblioteket är exemplet i alla ${annonser.filter((t) => t.klipp?.antal).length} filmanmälningar (original.json)`);
 
@@ -895,6 +898,61 @@ async function anmal() {
  * (cache) och en sammanfattning på ärendets annonser — --anmal bygger sedan
  * bevisbilden ur paren och vägrar den gamla rutan.
  */
+const idUrLank = (lank) => String(lank ?? '').match(/[?&]id=(\d+)/)?.[1] ?? null;
+
+/**
+ * Annonsfilen för ärendets sida som bär flest av ärendets annonser (landet följer med
+ * av sig självt: SE-filen heter .annonser-<id>.json, andra länder .annonser-<id>-NO.json);
+ * senaste vid lika. { fil, data } — data null när ingen fil finns.
+ */
+function annonsfilFor(a) {
+  const sidaId = a.deras?.sidaId ?? null;
+  const filer = existsSync(OUTPUT) && sidaId ? readdirSync(OUTPUT).filter((f) => new RegExp(`\\.annonser-${sidaId}(-[A-Z]{2})?\\.json$`).test(f)).sort() : [];
+  const arendetsId = new Set((a.bevis?.annonser ?? []).map((t) => idUrLank(t.lank)).filter(Boolean));
+  let bast = { fil: null, data: null }; let flest = -1;
+  for (const f of filer) {
+    const d = lasJson(join(OUTPUT, f), null);
+    const n = (d?.annonser ?? []).filter((x) => arendetsId.has(String(x.id))).length;
+    if (d && n >= flest) { flest = n; bast = { fil: join(OUTPUT, f), data: d }; }
+  }
+  return bast;
+}
+
+/**
+ * --lagg-till <id> --annonser <annons-id,…>: tar med FILMER ur sidans annonsfil som
+ * varken matchade på text eller förhandsbild (ORVO Norge 2026-09-29: 3 av 10 filmer
+ * hade en annan förhandsbild än våra). Raderna märks `kandidat: 'film'` och bevisas
+ * bara av --klipp: utan rutor ur våra klipp släpper bevisStatus aldrig in dem i brev,
+ * faktura eller anmälan.
+ */
+async function laggTill() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('lagg-till'));
+  const onskade = String(flagga('annonser') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+  if (!onskade.length) { console.log('Ange --annonser <annons-id,…> (id:t ur annonsbibliotekets länk).'); process.exitCode = 1; return; }
+  const { fil, data } = annonsfilFor(a);
+  if (!data) { console.log(`Ingen annonsfil för sidan ${a.deras?.sidaId ?? '?'} i output/ — kör --hamta --annonser-sida ${a.deras?.sidaId ?? '<sid-id>'}${a.land ? ` --land ${a.land}` : ''} först.`); process.exitCode = 1; return; }
+  const finns = new Set((a.bevis?.annonser ?? []).map((t) => idUrLank(t.lank)));
+  const input = tolkaAnnonsinput(data);
+  const nrFor = new Map(input.annonser.map((r) => [idUrLank(r.lank), r]));
+  const produkt = a.var?.produkt ? { handle: a.var.produkt.handle, titel: a.var.produkt.titel, url: a.var.produkt.url, butik: a.var.produkt.butik ?? null, verksamhet: a.verksamhet } : null;
+  const nya = [];
+  for (const id of onskade) {
+    const x = (data.annonser ?? []).find((y) => String(y.id) === id);
+    if (!x) { console.log(`  ${id}: finns inte i ${basename(fil)}`); continue; }
+    if (finns.has(id)) { console.log(`  ${id}: finns redan i ${a.id}`); continue; }
+    if (!x.video) { console.log(`  ${id}: ingen film — bara filmer kan läggas till (en bildannons jämförs mot våra annonsbilder i --hamta)`); continue; }
+    const r = nrFor.get(id);
+    nya.push({ nr: r?.nr ?? (data.annonser.indexOf(x) + 1), lank: r?.lank ?? x.lank, video: true, start: x.start ?? null, slut: x.slut ?? null, aktiv: r?.aktiv ?? x.aktiv ?? null, exponeringar: r?.exponeringar ?? null, exponeringarKalla: r?.exponeringarKalla ?? null, text: null, varAnnons: null, produkt, bilder: [], derasText: String(x.text ?? '').slice(0, 2000), kandidat: 'film' });
+  }
+  if (!nya.length) { console.log('Inget att lägga till.'); process.exitCode = 1; return; }
+  const nu = new Date().toISOString();
+  const upp = { ...a, bevis: { ...a.bevis, annonser: [...(a.bevis?.annonser ?? []), ...nya] }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'sessionen', not: `${nya.length} film(er) tillagda som kandidater (annons ${nya.map((t) => t.nr).join(', ')}) — --klipp avgör om de är klippta ur våra` }] };
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  await byggSidaFil({ k, arenden });
+  console.log(`${nya.length} film(er) tillagda i ${a.id} som kandidater: ${nya.map((t) => `annons ${t.nr} (${idUrLank(t.lank)})`).join(', ')}. Nästa steg: --klipp ${a.id} --alla.`);
+}
+
 async function klipp() {
   const k = konfig();
   const { arenden, a } = hamtaArende(flagga('klipp'));
@@ -902,7 +960,8 @@ async function klipp() {
   if (!ff.bin) { console.log(`ffmpeg med H.264 saknas${ff.provade.length ? ` (provade utan H.264: ${ff.provade.join(', ')})` : ''} — installera: pip3 install --user imageio-ffmpeg, eller sätt FFMPEG=<sökväg>.`); process.exitCode = 1; return; }
   const nu = new Date().toISOString();
   const antal = Number(flagga('antal', 3)) || 3;
-  const allaTraffar = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length);
+  // Kandidaterna (--lagg-till) jämförs också — de bevisas bara om rutor ur våra klipp hittas.
+  const allaTraffar = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length || t.kandidat === 'film');
   const baraAktiva = har('bara-aktiva') || (!har('alla') && Boolean(a.anmalan?.baraAktiva));
   const annonser = baraAktiva ? allaTraffar.filter((t) => t.aktiv !== false) : allaTraffar;
   if (!annonser.length) { console.log(`${a.id} har inga annonsträffar att välja rutor för.`); process.exitCode = 1; return; }
@@ -924,17 +983,9 @@ async function klipp() {
     lanadePar.push({ annonsNr, derasT: par.derasT, filmId: par.egenFilm?.id ?? null, egenT: par.egenT, film: par.egenFilm?.namn ?? null, nar: new Date().toISOString() });
     logg(`  lånat klipp utpekat: anmälan ${m[1]} ruta ${m[2].toUpperCase()} (annons ${annonsNr}, deras ${tid(par.derasT)}) — utesluts överallt`);
   }
-  // Deras videolänkar ur annonsfilen för sidan som bär flest av ärendets annonser (landet följer med av
-  // sig självt — SE-filen heter .annonser-<id>.json, andra länder .annonser-<id>-NO.json); senaste vid lika.
+  // Deras videolänkar ur annonsfilen som bär ärendets annonser (annonsfilFor).
   const sidaId = a.deras?.sidaId ?? null;
-  const filer = existsSync(OUTPUT) && sidaId ? readdirSync(OUTPUT).filter((f) => new RegExp(`\\.annonser-${sidaId}(-[A-Z]{2})?\\.json$`).test(f)).sort() : [];
-  const arendetsId = new Set((a.bevis?.annonser ?? []).map((t) => String(t.lank ?? '').match(/[?&]id=(\d+)/)?.[1]).filter(Boolean));
-  let annonsfil = null; let flest = -1;
-  for (const f of filer) {
-    const d = lasJson(join(OUTPUT, f), null);
-    const n = (d?.annonser ?? []).filter((x) => arendetsId.has(String(x.id))).length;
-    if (d && n >= flest) { flest = n; annonsfil = d; }
-  }
+  const annonsfil = annonsfilFor(a).data;
   const videoUrl = new Map((annonsfil?.annonser ?? []).map((x) => [String(x.id), x.videoUrl ?? null]));
   if (!annonsfil) logg(`  ⚠️ ingen annonsfil för sidan ${sidaId ?? '?'} i output/ — kör --hamta --annonser-sida ${sidaId ?? '<sid-id>'} först`);
   const { skapaKlient } = await import('../kommentarer/meta.mjs');
@@ -1432,15 +1483,18 @@ function smsFor(a) {
 }
 
 /**
- * --granska <id> [--forsta] [--bara-status] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]:
+ * --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]:
  * Axels granskningsapp → output/granska/<id>/ (index.html, data/*.json, bilder/).
  * Sessionen publicerar mappen på verifieringslänken med capabilities {artifact: {}}.
  * `--forsta` skriver också en tom data/beslut.json — BARA vid första publiceringen,
  * sedan äger sidan den filen (Axels svar). `--bara-status` skriver bara data/status.json.
+ * `--utan-mejl` = bara anmälningarna (ORVO Norge 2026-09-29: brevet och fakturan gick
+ * redan i KD-2026-001 mot samma sida) — skicka flaggan vid VARJE ombyggnad av den rundan.
  */
 async function granska() {
   const k = konfig();
-  const { a } = hamtaArende(flagga('granska'));
+  const { arenden, a } = hamtaArende(flagga('granska'));
+  const utanMejl = har('utan-mejl');
   const ut = flagga('ut') ?? GRANSKAMAPP(a.id);
   mkdirSync(join(ut, 'data'), { recursive: true });
   const sms = smsFor(a);
@@ -1462,15 +1516,17 @@ async function granska() {
     if (existsSync(kallbild)) { bild = `bilder/bevis-${r.nr}.jpg`; copyFileSync(kallbild, join(ut, bild)); filer[bild] = join(ut, bild); }
     kort.push(kortAnmalan(r, paket, { annons, bild, land: k.anmalan?.land ?? 'Sweden' }));
   }
-  const { brev } = await brevFor(a, k, { anmalanSamtidigt: !a.brev?.utanMeta });
-  const gmail = k.brev?.avsandare?.gmail_konto ?? null;
-  const fran = gmail ?? brev.fran;
-  const franNot = gmail && gmail !== brev.fran ? `Det Gmail-konto som är kopplat, så ditt namn syns som avsändare. Brevet ber dem svara till ${brev.fran}.` : null;
-  let fbild = null;
-  if (a.faktura) { const f = await fakturaBild(a, join(ut, 'bilder', 'faktura.jpg')); if (f) { fbild = 'bilder/faktura.jpg'; filer[fbild] = f; } }
-  kort.push(kortMejl({ brev, faktura: a.faktura, fran, franNot, antalByggda: a.anmalan?.antal ?? rapporter.length, baraAktiva: Boolean(a.anmalan?.baraAktiva), bild: fbild }));
-  if (existsSync(join(ARENDEMAPP, a.id, 'sms-mall.txt'))) kort.push({ nyckel: 'sms', typ: 'sms', version: 'sms' });
-  const g = byggGranskning({ a, kort });
+  if (!utanMejl) {
+    const { brev } = await brevFor(a, k, { anmalanSamtidigt: !a.brev?.utanMeta });
+    const gmail = k.brev?.avsandare?.gmail_konto ?? null;
+    const fran = gmail ?? brev.fran;
+    const franNot = gmail && gmail !== brev.fran ? `Det Gmail-konto som är kopplat, så ditt namn syns som avsändare. Brevet ber dem svara till ${brev.fran}.` : null;
+    let fbild = null;
+    if (a.faktura) { const f = await fakturaBild(a, join(ut, 'bilder', 'faktura.jpg')); if (f) { fbild = 'bilder/faktura.jpg'; filer[fbild] = f; } }
+    kort.push(kortMejl({ brev, faktura: a.faktura, fran, franNot, antalByggda: a.anmalan?.antal ?? rapporter.length, baraAktiva: Boolean(a.anmalan?.baraAktiva), bild: fbild }));
+    if (existsSync(join(ARENDEMAPP, a.id, 'sms-mall.txt'))) kort.push({ nyckel: 'sms', typ: 'sms', version: 'sms' });
+  }
+  const g = byggGranskning({ a, kort, not: utanMejl ? (mejlRedanNot(a, arenden.values()) ?? 'Inget mejl i den här rundan, bara anmälningarna.') : null });
   skrivJson(join(ut, 'data', 'granskning.json'), g);
   filer['data/granskning.json'] = join(ut, 'data', 'granskning.json');
   writeFileSync(join(ut, 'index.html'), sidaHtml(g));
@@ -1510,6 +1566,6 @@ async function sidaEnbart() {
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('granska-svar') ? granskaSvar : har('granska') ? granska : har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('original') ? original : har('anmal-skicka') ? anmalSkicka : har('anmal-cowork') ? anmalCowork : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+const huvud = har('granska-svar') ? granskaSvar : har('granska') ? granska : har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('original') ? original : har('anmal-skicka') ? anmalSkicka : har('anmal-cowork') ? anmalCowork : har('lagg-till') ? laggTill : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
 if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });

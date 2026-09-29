@@ -26,7 +26,7 @@ import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
 import { dHash, avstand, tid, prefixUrNamn, scener, lanadeRutor, paraRutor, klippSammanfattning, hittaFfmpeg, videoIdn, kontrastAv, bevisStatus, produktForPar, filmdatum, tagningar, lanadeKlipp, skillnadOvre, SAMMA_TAGNING } from '../klipp.mjs';
-import { frasUrText, fraserUrText, landUrNamn, sokUrl, annonserUrSvar, andelLika, valjOriginal, hittaOriginal, ledfilm, originalFor, MIN_ANDEL } from '../original.mjs';
+import { frasUrText, fraserUrText, landUrNamn, sokUrl, annonserUrSvar, andelLika, valjOriginal, hittaOriginal, ledfilm, originalFor, startadeFore, MIN_ANDEL } from '../original.mjs';
 
 const KONFIG = JSON.parse(readFileSync(new URL('../konfig.json', import.meta.url), 'utf8'));
 const FORETAG = KONFIG.brev.foretag;
@@ -792,6 +792,17 @@ test('bevisStatus: text, film ur våra klipp, en bildannons bild — en films mi
   assert.equal(bevisStatus({}).bevisad, false);
 });
 
+test('bevisbildHtml: länken till vårt original per par bara när vår annons startade före deras', () => {
+  const a = ARENDE(); const annons = { ...KLIPP_ANNONS(), start: '2026-09-24' }; const klipp = KLIPP();
+  const original = { Takoverdrag_PD_2_H1: { lank: 'https://fb/?id=TIDIG', start: '2026-09-18' }, Takoverdrag_OB_1_H1: { lank: 'https://fb/?id=SEN', start: '2026-09-27' } };
+  const html = bevisbildHtml(a, annons, { miniatyr: () => null, nu: '2026-09-29T10:00:00Z', nr: 1, antal: 10, klipp, original });
+  assert.match(html, /our original in the Ad Library: https:\/\/fb\/\?id=TIDIG/);
+  assert.doesNotMatch(html, /id=SEN/, 'vår annons som startade efter deras visas aldrig som original');
+  assert.equal(startadeFore({ start: '2026-09-24' }, '2026-09-24'), false, 'samma dag räknas inte');
+  assert.equal(startadeFore({ start: '2026-09-23' }, '2026-09-24T08:00:00Z'), true);
+  assert.equal(startadeFore({}, '2026-09-24'), true, 'okänt datum hos oss kan inte dömas');
+});
+
 test('klipp: hittaFfmpeg tar första binären som klarar H.264 och redovisar dem som inte gör det', () => {
   const finns = () => true; const lasMapp = () => { throw new Error('inget'); };
   const a = hittaFfmpeg({ env: { FFMPEG: '/x/utan' }, hem: '/ingen', kolla: () => false, finns, lasMapp });
@@ -871,6 +882,11 @@ test('original: fraserna, landet, sökningen, svaren ur annonsbiblioteket, jämf
   const klipp = { filmer: ['A', 'B', 'C'], perFilm: { A: 2, B: 10, C: 1 }, par: [{ film: 'A' }, { film: 'A' }, { film: 'C' }] };
   assert.equal(ledfilm(klipp), 'B'); assert.equal(ledfilm({ ...klipp, perFilm: undefined }), 'A'); assert.equal(ledfilm({ filmer: [] }), null);
   assert.deepEqual(originalFor(klipp, { A: { lank: 'LA' }, B: { lank: 'LB' }, C: { fel: 'x' } }).map((o) => [o.film, o.lank]), [['B', 'LB'], ['A', 'LA']]);
+  // Vår annons som startade samma dag som deras eller senare är aldrig exemplet (ORVO Norge: vår US-annons 27/9, deras 24/9)
+  const org = { A: { lank: 'LA', start: '2026-09-18' }, B: { lank: 'LB', start: '2026-09-27' }, C: { lank: 'LC', start: '2026-09-24' } };
+  assert.deepEqual(originalFor(klipp, org, { fore: '2026-09-24' }).map((o) => o.film), ['A'], 'B (27/9) och C (samma dag) faller bort');
+  assert.deepEqual(originalFor(klipp, org).map((o) => o.film), ['B', 'A', 'C'], 'utan deras startdatum: ledfilmen först som förut');
+  assert.deepEqual(originalFor(klipp, { B: { lank: 'LB' } }, { fore: '2026-09-24' }).map((o) => o.film), ['B'], 'okänt startdatum hos oss kan inte dömas och står kvar');
 });
 
 test('hittaOriginal: fras för fras, bara våra sidor, bara en film som ÄR vår — aldrig en träff som bara delar texten', async () => {

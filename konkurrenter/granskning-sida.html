@@ -1,4 +1,4 @@
-<title>Anmälningar KD-2026-001</title>
+<title>__TITEL__</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
 /* Layout: en kortlek — ett kort i taget (svep, pilar eller prickarna), beslutsraden fast i botten. */
@@ -96,7 +96,7 @@ button{font:inherit}
   <header class="topp">
     <p class="eyebrow" id="eyebrow">Konkurrentdödaren</p>
     <h1>Granska och svara</h1>
-    <p id="ingress">Ett kort per anmälan till Meta, sedan mejlet med fakturan. Svep mellan korten och tryck Ja eller Nej. När du trycker Ja skickar Claude in just den.</p>
+    <p id="ingress">Ett kort per anmälan till Meta, sedan mejlet med fakturan. Svep mellan korten och tryck Ja eller Nej. Det du säger ja till skickar Claude in. Ber Meta om en säkerhetskontroll gör du den själv, Claude gör den aldrig.</p>
     <div class="lagesrad" id="lagesrad"></div>
     <div id="notiser"></div>
   </header>
@@ -269,13 +269,16 @@ button{font:inherit}
       `<span class="chip nej">${nej} nej</span>`,
       `<span class="chip">${kvar} kvar</span>`,
       inne ? `<span class="chip ja">${inne} inskickade</span>` : '',
-      `<span class="chip ${mt === 'klar' ? 'ja' : mt === 'pagar' ? 'pagar' : ''}">${mejl}</span>`,
+      // En runda utan mejlkort (bara anmälningar) visar ingen mejlstatus alls.
+      mk ? `<span class="chip ${mt === 'klar' ? 'ja' : mt === 'pagar' ? 'pagar' : ''}">${mejl}</span>` : '',
     ].join('');
+    if (!mk) document.getElementById('ingress').textContent = 'Ett kort per anmälan till Meta. Svep mellan korten och tryck Ja eller Nej. Det du säger ja till skickar Claude in. Ber Meta om en säkerhetskontroll gör du den själv, Claude gör den aldrig.';
     document.getElementById('eyebrow').textContent = `Konkurrentdödaren · ${G.arende}${G.deras?.sidnamn ? ` · ${G.deras.sidnamn}` : ''}`;
   }
 
   function renderNotiser() {
     const delar = [];
+    if (G.not) delar.push(`<p class="notis">${esc(G.not)}</p>`);
     if (S.notis) delar.push(`<p class="notis">${esc(S.notis)}</p>`);
     if (lasfel) delar.push(`<p class="notis varning">${esc(lasfel)}</p>`);
     if (skrivfel) delar.push(`<p class="notis varning">${esc(skrivfel)}</p>`);

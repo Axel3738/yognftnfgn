@@ -81,7 +81,7 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   const start = annons.start && !klipp?.datum ? ` The ad has been running since ${datumEn(annons.start)}.` : '';
   // Originalen (Axel 2026-09-29: "du måste hitta annonserna inne i vårt ad library"): våra egna annonser med
   // filmerna, verifierade ruta för ruta — ledfilmen först, den går i formulärets exempelfält (EN länk).
-  const originaler = klipp && original ? originalFor(klipp, original).map((o) => ({ film: o.film, lank: o.lank, arkivId: o.arkivId ?? null, start: o.start ?? null, sida: o.sida ?? null, sidaId: o.sidaId ?? null })) : [];
+  const originaler = klipp && original ? originalFor(klipp, original, { fore: annons.start }).map((o) => ({ film: o.film, lank: o.lank, arkivId: o.arkivId ?? null, start: o.start ?? null, sida: o.sida ?? null, sidaId: o.sidaId ?? null })) : [];
   const orgMening = originaler.length ? ` Our original ad${originaler.length === 1 ? ' is' : 's are'} public in Meta's Ad Library: ${originaler.map((o) => `"${o.film}" ${o.lank}`).join(', ')}.` : '';
   const contentDescription = `This advertisement, run by ${sida}, reproduces our copyrighted advertising material without authorisation. ${delar.join(' ')}${orgMening}${start}${exp} It copies ${varAnnons} for the product "${prod.titel ?? prod.handle ?? ''}", which our page ran before this ad appeared. This is report ${nr} of ${antal} concerning ads from the same advertiser; each ad is reported separately.`;
   // Ordningen är formulärets: [0] blir "example of your copyrighted work". Utan hittat original är det vår sidas lista i annonsbiblioteket — aldrig produktsidan först.

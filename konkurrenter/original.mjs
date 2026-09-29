@@ -170,10 +170,24 @@ export function ledfilm(klipp) {
 
 /**
  * Originalen för en anmälan i den ordning länkarna ska stå: ledfilmen först, sedan
- * de andra filmerna med en hittad annons. `original` = original.json:s `filmer`. Ren.
+ * de andra filmerna med en hittad annons. `original` = original.json:s `filmer`.
+ * `fore` = deras annons startdatum: en annons av VÅRA som startade samma dag eller
+ * senare visas aldrig som exempel, även om filmen är vår (ORVO Norge 2026-09-29:
+ * vår US-annons med samma film startade 27/9, deras 24/9 — Metas granskare ser bara
+ * annonsbibliotekets datum, och där hade vi sett ut att komma efter). Ren.
  */
-export function originalFor(klipp, original = {}) {
+export function originalFor(klipp, original = {}, { fore = null } = {}) {
   const led = ledfilm(klipp);
   const ordning = [led, ...(klipp?.filmer ?? []).filter((f) => f !== led)].filter(Boolean);
-  return ordning.map((f) => ({ film: f, ...(original[f] ?? {}) })).filter((o) => o.lank);
+  return ordning.map((f) => ({ film: f, ...(original[f] ?? {}) })).filter((o) => o.lank && startadeFore(o, fore));
+}
+
+/**
+ * Startade vår annons `o` FÖRE deras annons (`derasStart`, datum eller ISO-tid)?
+ * Samma dag räknas inte. Okänt datum på någon sida kan inte dömas ⇒ true.
+ * Samma regel i anmälans länkar och i bevisbildens rad per par. Ren.
+ */
+export function startadeFore(o, derasStart) {
+  if (!derasStart || !o?.start) return true;
+  return String(o.start).slice(0, 10) < String(derasStart).slice(0, 10);
 }
