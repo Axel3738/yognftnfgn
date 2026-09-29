@@ -1178,3 +1178,10 @@ webbläsare) gör dem.
   V04 och V05 skrivs 9/10 och 12/10 och får egna prompter. K16 (förtur 22/11) och tröstpriset
   byggs 2/11. Stoppregeln `LARM_LEVERANS` gäller fortfarande: vid larm flyttas nästa
   schemalagda mejl till utkast.
+- **Stoppregeln läses varje morgon** av rutinen `trig_0184cEo3qqjRg5GxemevSEYf` (08:38 svensk tid,
+  `CRON_TZ=Europe/Stockholm`, i den här sessionen, sedd i svaret från `create_trigger` 2026-09-29):
+  gårdagens utskick mot `LARM_LEVERANS`, och `notify` på de närmaste 48 timmarnas mejl. Tyst utom
+  en rad när allt är rätt; larm ⇒ vilka schemalagda mejl som ska till utkast, med Cowork-prompt.
+  Raderar sig själv efter 31/12. Påminnelserna 30/9, 5/10, 6/10, 9/10, 12/10 och 2/11 är
+  omskrivna samma dag: de ber aldrig Axel schemalägga för hand, utan ger en Cowork-prompt ur
+  `cowork-schema.mjs --bara`.
