@@ -1175,7 +1175,10 @@ Gäller alla mejl, även de nio flöden som redan var igång och den schemalagda
 
 **Bytet går inte via MCP** (mätt 2026-09-29 i verktygens egna beskrivningar): `update_flow_step`
 "Send steps cannot be enabled here — the user enables them in the flow editor", och `update_flow`
-kräver ett inaktivt flöde och har inget fält för att slå på det. Så det är Axels klick, varje gång.
+kräver ett inaktivt flöde och har inget fält för att slå på det. Klicken görs därför i appen, av Axel eller
+av Cowork med `klaviyo/spoks/cowork/1-matstrumpor-sprakbyte.txt` (ett flöde i taget: nya flödets
+sändsteg på → nya flödet på → gamla flödets stora knapp av → läs av). Mätt före bytet 2026-09-29
+kväll med `get_flows`: de sex gamla på (160/20/15/201/204/193 inrullade), de sex nya av med 0.
 
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
