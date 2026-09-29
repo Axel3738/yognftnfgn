@@ -21,20 +21,20 @@
       "begar": "veta att mottagaren av presenten blir glad"
     },
     {
-      "text": "Två kunder, ordagrant. Inget påhittat.",
-      "begar": "veta att det inte är en bluff eller påhittat"
+      "text": "\"Så roliga att ge barn och barnbarnen i present\"",
+      "begar": "se att presenten är rolig att ge till barn och barnbarn"
     },
     {
       "text": "Läs vad riktiga köpare skrev",
       "begar": "se bevis innan köpet"
     }
   ],
-  "forhandstext": "Två verifierade kunder, inte ett påhittat ord.",
+  "forhandstext": "Två köpare av sushilådan berättar hur det gick när de gav bort den.",
   "block": [
     {
       "typ": "text",
       "rubrik": "Det här skrev kunderna",
-      "text": "Riktiga köpare, riktiga ord. Ingenting här är påhittat."
+      "text": "Den ena skrev att mottagaren blev så glad, den andra att lådorna var roliga att ge till barn och barnbarn."
     },
     {
       "typ": "citat",
@@ -62,7 +62,7 @@
       "ingen_annan": true
     },
     {
-      "rad": "Två kunder, ordagrant. Inget påhittat.",
+      "rad": "\"Så roliga att ge barn och barnbarnen i present\"",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -74,7 +74,7 @@
       "ingen_annan": true
     },
     {
-      "rad": "Två verifierade kunder, inte ett påhittat ord.",
+      "rad": "Två köpare av sushilådan berättar hur det gick när de gav bort den.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -87,6 +87,12 @@
     },
     {
       "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Den ena skrev att mottagaren blev så glad, den andra att lådorna var roliga att ge till barn och barnbarn.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

@@ -34,7 +34,7 @@
     {
       "typ": "hero",
       "rubrik": "Två sushilådor till fars dag för priset av en",
-      "text": "Hej {{fornamn}},\n\nFars dag är den 8 november. Köp en sushilåda och få en till, det står på produktsidan.\n\nGe den ena till pappa. Behåll den andra, eller ge bort den till någon annan.",
+      "text": "Hej {{fornamn}},\n\nFars dag är den 8 november. Välj Köp 1, få 1 innan du lägger sushilådan i varukorgen, så följer den andra lådan med automatiskt. Ingen kod behövs.\n\nGe den ena till pappa. Behåll den andra, eller ge bort den till någon annan.",
       "bild": "produkt:sushi-strumpor",
       "knapp": {
         "text": "Se sushilådan",
@@ -110,6 +110,12 @@
     },
     {
       "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Välj Köp 1, få 1 innan du lägger sushilådan i varukorgen, så följer den andra lådan med automatiskt. Ingen kod behövs.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

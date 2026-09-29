@@ -25,7 +25,7 @@
     {
       "typ": "hero",
       "rubrik": "En till pappa. En till farfar.",
-      "text": "Hej {{fornamn}},\n\nKöp 1, få 1, det står på produktsidan. Den ena lådan går till pappa. Den andra kan gå till svärfar, farfar eller morfar.",
+      "text": "Hej {{fornamn}},\n\nKöp en sushilåda, så ingår en till. Den ena lådan går till pappa. Den andra kan gå till svärfar, farfar eller morfar.",
       "bild": "produkt:sushi-strumpor",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
@@ -42,7 +42,8 @@
     { "rad": "En till pappa. En till farfar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Om den andra pappan hellre vill ha en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp en sushilåda, så ingår en till.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-02T18:00:00+02:00",
   "segment": ["SEG_samtycke"],

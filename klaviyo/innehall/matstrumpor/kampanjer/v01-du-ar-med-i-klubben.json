@@ -1,69 +1,79 @@
 {
   "id": "v01-du-ar-med-i-klubben",
-  "namn": "MAIL_20260930_Varde_KL_1_samtycke_problem_du-ar-med-i-klubben_v1",
-  "memo": "Hypotes: ett värdemejl utan säljpitch, som säger varför mottagaren får mejl, vad klubben är (mejllistan) och vad den inte ger (inga rabattkoder, inga poäng), ger fler svar och färre avanmälningar än ett säljmejl till en publik som aldrig fått en kampanj. Uppmaningen är att svara med vilken låda man har hemma, eller att man aldrig köpt, och svar på mejl är den starkaste signalen för leverbarheten. Bara sanna klubbpåståenden: mejlen går först till klubben (nya sorter, påfyllning, sista beställningsdagarna), och sista beställningsdagen är lördag 24 oktober till fars dag och tisdag 8 december till jul (klaviyo/brands/matstrumpor.json#kalender). Bort med flit: pris, leveranstid, ätpinnar, dragning, siffror eller koder om Köp 1, få 1. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Evolve: blanda fritt värde med sälj, Billy och Spencer; svar på mejl som leverbarhetssignal).",
+  "namn": "MAIL_20260930_Varde_KL_1_samtycke_solution_du-ar-med-i-klubben_v2",
+  "memo": "v2 efter Axels dom 2026-09-29 (\"Att de inte kommer att få en massa rabatter och sånt, det kommer de ju visst få\"): v1 kallade klubben mejllistan och sa att den inte ger rabattkoder eller poäng, fel ton och sedan Axels beslut 2026-09-27 också osant. Hypotes: ett mejl som visar medlemmen konkreta, daterade förmåner (Black Week öppnar för klubben söndag 22/11 kl 18, ett dygn före alla andra; 100 kr att handla för på Black Friday till den som inte vunnit; tre medlemmar dras varje tisdag från 6/10 och får sushilådan mot en kort video; nya sorter och påfyllning först) ger fler svar, färre avanmälningar och fler öppningar av nästa mejl än v1. Exklusiviteten kommer av tillgång, inte av adjektiv (Evolve svar 9: förtur är \"the proven mechanic\"). Uppmaningen är att svara med vilken låda man har hemma: svar är leverbarhetssignal och underlag till V04. Källor: KUNDRESA.md §7 (förtur C, dragningen, tröstpriset), klaviyo/spoks/README.md → Klubbdragningen och Tröstpriset, CLAUDE.md (tröstpriset 100 kr, Axels beslut 2026-09-27 kväll). Förturens starttid ligger i Shopify sedan 2026-09-29 (klaviyo/konto/matstrumpor/shopify-rabatter.jsonl); K16 och tröstpriset byggs 2/11 (påminnelse lagd).",
   "taggar": {
     "typ": "N",
     "kalla": "evolve",
-    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "kalla_ref": "klaviyo/innehall/matstrumpor/KUNDRESA.md#7 + klaviyo/evolve/SVAR.md#svar-9",
     "lardom": null,
-    "avatar": "prenumeranten som anmälde sig eller köpte och aldrig fått en kampanj",
-    "begar": "förstå vad man är med i och vad man får, innan man bestämmer sig för att vara kvar",
-    "awareness": "problem",
+    "avatar": "medlemmen som anmälde sig eller köpte och aldrig fått en kampanj",
+    "begar": "tillhörighet och tillgång: få veta vad medlemmar får före alla andra",
+    "awareness": "solution",
     "urgency": "ingen",
     "confidence": "low",
     "prefix": "Varde",
     "kod": "KL"
   },
   "amnesrader": [
-    { "text": "Du är med i Matstrumpor-klubben", "begar": "tillhörighet: få bekräftat att man redan är med" },
-    { "text": "Har du en låda som ser ut som mat hemma?", "begar": "vilja svara på en enkel fråga om sin egen låda" },
-    { "text": "Matstrumpor-klubben: mejlen först, inga koder", "begar": "veta exakt vad man får och inte får innan man bestämmer sig" }
+    { "text": "Varje tisdag kan du vinna sushilådan. Du är med.", "begar": "chansen att vinna en låda gratis, och lugnet i att man redan är med utan att göra något" },
+    { "text": "Du går in på Black Week ett dygn före alla andra", "begar": "förtur: att komma in före alla andra, med tidsangivelse" },
+    { "text": "Fredag 27 november får du 100 kr att handla för", "begar": "konkret pengavärde med datum" }
   ],
-  "forhandstext": "Klubben är mejllistan. Nya sorter och påfyllning får du före sajten.",
+  "forhandstext": "Första dragningen är tisdag 6 oktober. Sedan Black Week först och 100 kr på Black Friday.",
   "block": [
     {
-      "typ": "text",
-      "rubrik": null,
-      "text": "Hej {{fornamn}},\n\nDu anmälde dig till Matstrumpor eller köpte en av lådorna, och sa ja till mejl. Därför får du det här.\n\nMejllistan kallar vi Matstrumpor-klubben, och du är med i den."
+      "typ": "hero",
+      "rubrik": "Du är med i klubben",
+      "text": "Hej {{fornamn}},\n\nDu är medlem i Matstrumpor-klubben, och det här får du.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": null
     },
     {
       "typ": "punkter",
-      "rubrik": "Det här får Matstrumpor-klubben först",
+      "rubrik": "Fem saker du får som medlem",
       "punkter": [
-        "Nya sorter av lådorna, före sajten.",
-        "Påfyllning av lådor som tagit slut, före sajten.",
-        "Sista beställningsdagarna före sajten: lördag 24 oktober till fars dag, tisdag 8 december till jul."
+        "Tisdag 6 oktober, och sedan varje tisdag: vi drar tre medlemmar som får sushilådan med fem par strumpor.",
+        "Söndag 22 november kl 18: Black Week öppnar för klubben, ett dygn före alla andra, och pågår till och med måndag 30 november. Rabatterna räknas ut automatiskt i kassan, ingen kod behövs.",
+        "Fredag 27 november, Black Friday: varje medlem som inte vunnit i dragningen får 100 kr att handla för i butiken.",
+        "Lördag 24 oktober och tisdag 8 december: sista beställningsdag, först till fars dag och sedan till jul. Du får påminnelsen.",
+        "Varje gång en ny sort kommer, eller en låda som tagit slut fylls på, får du mejlet innan den syns på sajten och i annonserna."
       ]
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Det du inte får är rabattkoder. Matstrumpor-klubben ger inga koder och inga poäng."
+      "text": "Alla medlemmar är med i dragningen om sushilådan, gratis, utan köp och utan anmälan.\n\nVinnarna får ett mejl från oss. De får sushilådan utan kostnad, mot att de filmar en kort video av sig själva med strumporna: tio sekunder räcker."
     },
     {
       "typ": "grundare",
-      "text": "Svara på det här mejlet och skriv vilken låda du har hemma: sushi, pizza, hamburgare eller donut. Har du aldrig köpt en låda, skriv det.\n\nJag vill veta hur många av er som har en låda hemma."
+      "text": "Ett skript drar namnen varje tisdag, och ingen handplockar, inte ens jag."
     }
   ],
+  "tillatna_belopp": [
+    { "belopp": "100 kr", "kalla": "Tröstpriset: Axels beslut 2026-09-27 kväll, 100 kr kredit på Black Friday till medlemmar som aldrig vunnit (CLAUDE.md → Klubbdragningen, klaviyo/spoks/README.md → Tröstpriset)." }
+  ],
   "tretest": [
-    { "rad": "Du är med i Matstrumpor-klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Har du en låda som ser ut som mat hemma?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Matstrumpor-klubben: mejlen först, inga koder", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Klubben är mejllistan. Nya sorter och påfyllning får du före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Du anmälde dig till Matstrumpor eller köpte en av lådorna, och sa ja till mejl. Därför får du det här.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Mejllistan kallar vi Matstrumpor-klubben, och du är med i den.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Det här får Matstrumpor-klubben först", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Nya sorter av lådorna, före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Påfyllning av lådor som tagit slut, före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Sista beställningsdagarna före sajten: lördag 24 oktober till fars dag, tisdag 8 december till jul.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Det du inte får är rabattkoder. Matstrumpor-klubben ger inga koder och inga poäng.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Svara på det här mejlet och skriv vilken låda du har hemma: sushi, pizza, hamburgare eller donut. Har du aldrig köpt en låda, skriv det.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Jag vill veta hur många av er som har en låda hemma.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Varje tisdag kan du vinna sushilådan. Du är med.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du går in på Black Week ett dygn före alla andra", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag 27 november får du 100 kr att handla för", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Första dragningen är tisdag 6 oktober. Sedan Black Week först och 100 kr på Black Friday.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du är med i klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du är medlem i Matstrumpor-klubben, och det här får du.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem saker du får som medlem", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tisdag 6 oktober, och sedan varje tisdag: vi drar tre medlemmar som får sushilådan med fem par strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Söndag 22 november kl 18: Black Week öppnar för klubben, ett dygn före alla andra, och pågår till och med måndag 30 november. Rabatterna räknas ut automatiskt i kassan, ingen kod behövs.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag 27 november, Black Friday: varje medlem som inte vunnit i dragningen får 100 kr att handla för i butiken.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lördag 24 oktober och tisdag 8 december: sista beställningsdag, först till fars dag och sedan till jul. Du får påminnelsen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Varje gång en ny sort kommer, eller en låda som tagit slut fylls på, får du mejlet innan den syns på sajten och i annonserna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Alla medlemmar är med i dragningen om sushilådan, gratis, utan köp och utan anmälan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vinnarna får ett mejl från oss.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "De får sushilådan utan kostnad, mot att de filmar en kort video av sig själva med strumporna: tio sekunder räcker.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett skript drar namnen varje tisdag, och ingen handplockar, inte ens jag.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-09-30T18:00:00+02:00",
   "segment": ["SEG_samtycke"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Värdemejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Värdemejl i dagliga serien efter Evolves svar 16 (2026-09-29). v2 2026-09-29 efter Axels dom på v1; lovar dragningens start tisdag 6/10 (Axels ord krävs den morgonen)."
 }

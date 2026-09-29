@@ -25,7 +25,7 @@
     {
       "typ": "hero",
       "rubrik": "En vecka kvar. Fortfarande Köp 1, få 1.",
-      "text": "Hej {{fornamn}},\n\nHelgen är här. Drygt en vecka är kvar till sista beställningsdagen 24 oktober, för att hinna till fars dag.\n\nKöp en låda och få en till, det står på produktsidan. Donutlådan är med precis som de andra tre.",
+      "text": "Hej {{fornamn}},\n\nHelgen är här. Drygt en vecka är kvar till sista beställningsdagen 24 oktober, för att hinna till fars dag.\n\nKöp en låda och få en till i valfri sort. Donutlådan är med precis som de andra tre.",
       "bild": "produkt:donut-strumpor",
       "knapp": { "text": "Se donutlådan", "lank": "produkt:donut-strumpor" }
     },
@@ -55,7 +55,8 @@
     { "rad": "En vecka kvar. Fortfarande Köp 1, få 1.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Köp 1, få 1 gäller de tre andra sorterna också", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp en låda och få en till i valfri sort.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-16T18:00:00+02:00",
   "segment": ["SEG_samtycke"],

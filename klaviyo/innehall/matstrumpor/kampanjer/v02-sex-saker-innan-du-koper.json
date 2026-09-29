@@ -1,0 +1,72 @@
+{
+  "id": "v02-sex-saker-innan-du-koper",
+  "namn": "MAIL_20261003_Varde_PD_1_uppvarmning_solution_sex-saker-innan-du-koper_v2",
+  "memo": "v2 2026-09-29, ersätter \"svara med ett ord\": Axels beslut samma dag att inga mejl ber medlemmarna svara (\"det kommer bli kaos för kundsupporten\"). Hypotes: raka svar på sex frågor folk ställer innan de köper (ätpinnar, storlek, frakt, betalning, Köp 1, få 1 utan kod, den andra lådan valfri) tar bort friktionen före köpet utan säljpitch, och ger fler klick på produktsidorna än ett säljmejl samma helg. Allt ur produktsidans FAQ och köpruta, lästa 2026-09-29: ett par ätpinnar per sushilåda (paketet Köp 1, få 1 visar 2 par för två lådor), One Size ungefär 36 till 44, fri frakt inom Sverige, betalsätten, gratislådan läggs i varukorgen automatiskt. Bort med flit: paren per låda och att lådan är förpackningen (V03 mån 5/10 äger dem), leveranstid, pris, öppet köp i brödtexten (står i faktablocket). Källa: klaviyo/evolve/SVAR.md → Svar 16 (värde blandat med sälj per vecka).",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "matstrumpor.se/products/sushi-strumpor (FAQ + köpruta, läst 2026-09-29) + klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "den engagerade medlemmen som funderar på en låda men har praktiska frågor",
+    "begar": "trygghet: få det praktiska besvarat innan man köper",
+    "awareness": "solution",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "Varde",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Sex saker att veta innan du köper en låda", "begar": "trygghet: få det praktiska sagt innan man bestämmer sig" },
+    { "text": "Ett par ätpinnar, en storlek, ingen kod", "begar": "nyfikenhet: tre små, konkreta detaljer som får det praktiska att låta enkelt" },
+    { "text": "Måste den andra lådan vara samma sort? Nej.", "begar": "frihet: den andra lådan är ens egen, av valfri sort" }
+  ],
+  "forhandstext": "Kort om ätpinnar, storlek, frakt, betalning, Köp 1, få 1 och gratislådans sort.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sex saker att veta innan du köper en låda",
+      "text": "Hej {{fornamn}},",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": null
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "**Ingår det ätpinnar i sushilådan?** Ja, ett par ätpinnar i trä ingår i varje sushilåda. Två sushilådor ger alltså två par ätpinnar.\n\n**Vilken storlek har strumporna i lådan?** En storlek som passar de flesta, ungefär 36 till 44, och materialet är stretchigt.\n\n**Vad kostar frakten för en låda?** Ingenting: frakten är fri inom Sverige.\n\n**Hur betalar jag för en låda?** Med Klarna, kort (Visa, Mastercard, American Express med flera), Apple Pay, Google Pay, PayPal och Shop Pay.\n\n**Behöver jag en kod till Köp 1, få 1?** Nej, ingen kod behövs. Välj paketet Köp 1, få 1 i köprutan på produktsidan och lägg det i varukorgen. Gratislådan följer med automatiskt och syns i varukorgen som en egen rad.\n\n**Vilken sort blir gratislådan?** Du väljer själv bland alla fyra sorterna. Det finns också Köp 2, få 2."
+    },
+    {
+      "typ": "knapp",
+      "text": "Se alla fyra lådorna",
+      "lank": "kollektion:alla-produkter"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Ett par ätpinnar, en storlek, ingen kod", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sex saker att veta innan du köper en låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Måste den andra lådan vara samma sort? Nej.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kort om ätpinnar, storlek, frakt, betalning, Köp 1, få 1 och gratislådans sort.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingår det ätpinnar i sushilådan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ja, ett par ätpinnar i trä ingår i varje sushilåda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två sushilådor ger alltså två par ätpinnar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vilken storlek har strumporna i lådan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En storlek som passar de flesta, ungefär 36 till 44, och materialet är stretchigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vad kostar frakten för en låda?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingenting: frakten är fri inom Sverige.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hur betalar jag för en låda?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Med Klarna, kort (Visa, Mastercard, American Express med flera), Apple Pay, Google Pay, PayPal och Shop Pay.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Behöver jag en kod till Köp 1, få 1?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nej, ingen kod behövs.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Välj paketet Köp 1, få 1 i köprutan på produktsidan och lägg det i varukorgen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gratislådan följer med automatiskt och syns i varukorgen som en egen rad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vilken sort blir gratislådan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du väljer själv bland alla fyra sorterna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det finns också Köp 2, få 2.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alla fyra lådorna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-03T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Värdemejl i dagliga serien; v2 2026-09-29 ersätter svarsfrågan (Axels beslut: inga mejl ber om svar)."
+}

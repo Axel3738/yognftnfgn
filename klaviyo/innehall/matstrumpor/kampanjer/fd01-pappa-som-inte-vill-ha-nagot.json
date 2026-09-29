@@ -49,7 +49,7 @@
     {
       "typ": "produkt",
       "handle": "sushi-strumpor",
-      "text": "Köp 1, få 1, det står på produktsidan. En till pappa, en till farfar.",
+      "text": "Köper du en sushilåda får du två. En till pappa, en till farfar.",
       "knapp": "Till sushilådan"
     },
     {
@@ -110,6 +110,12 @@
     },
     {
       "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Köper du en sushilåda får du två. En till pappa, en till farfar.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

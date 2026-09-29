@@ -55,8 +55,9 @@ före utskicket.
 
 Axels order 2026-09-28: kampanjer **varje dag**, minst tio fars dag-mejl, REA-mejl för den
 pågående rean. "Rean" på Matstrumpor är det stående erbjudandet **Köp 1, få 1** (koderna läggs
-på produktsidan, mejlen säger "det står på produktsidan" och aldrig en kod; erbjudandet tar
-aldrig slut, så den enda brådskan är sista beställningsdagen **lör 24/10**).
+på produktsidan, mejlen säger vad erbjudandet gör, du betalar för en låda och väljer den andra
+själv, och aldrig en kod; erbjudandet tar aldrig slut, så den enda brådskan är sista
+beställningsdagen **lör 24/10**).
 
 **Omgång 1 (28/9)** var ett mejl om dagen till hela listan, nästan bara fars dag. **Omgång 2
 (29/9) följer Evolves svar 16** (`klaviyo/evolve/SVAR.md`):
@@ -67,30 +68,34 @@ aldrig slut, så den enda brådskan är sista beställningsdagen **lör 24/10**)
   och veckans starkaste. En dag är ett mejl: på hela listans dagar ingår de engagerade i samma
   utskick. Undantaget är blitzen.
 - **Mixen per vecka** (räknad ur tabellen): v1 29/9–5/10 **3 sälj / 4 värde**, v2 **5 / 2**,
-  v3 **6 / 1**, v4 **bara sälj**. Värdemejlen är klubben (V01), kundernas ord (K03, FD08, V05),
-  en fråga att svara på (V02) och lådans innehåll (V03).
+  v3 **6 / 1**, v4 **bara sälj**. Värdemejlen är klubben och dess förmåner (V01), kundernas
+  ord (K03, FD08, V05), sex saker att veta innan man köper (V02), lådans innehåll (V03) och
+  första dragningen (V04).
+- **Inget mejl ber om svar, och ingen tas bort** (Axels beslut 2026-09-29: "det kommer bli kaos
+  för kundsupporten", "jag tycker inte vi tar bort några som inte svarar"). F06 E1/E2 skickas
+  aldrig; titlarna i Spoks börjar `SKICKAS INTE`.
 - **Blitzen:** fre 23/10 två mejl (09:00 alla, 20:00 engagerade), lör 24/10 tre (09:00 alla,
   13:00 engagerade, 20:00 alla).
 - **Bänken:** FD02, FD03, FD04, FD05 och FD07 schemaläggs inte. De ligger kvar som utkast med
   titeln `BÄNK · …` och återanvänds mot jul (sista beställning tis 8/12).
 
-**Publik och Schedule per mejl är Axels klick** i appen, klockslaget står i tabellen. Fältet
+**Granska allt på en sida:** https://claude.ai/artifact/VgHANQtbtSFQZnVkogj9ma (alla mejl som ska ut, i utskicksordning, med knapp till varje utkast; byggs om med `node klaviyo/gallerier.mjs --brand matstrumpor --granska --fran <datum>` och publiceras på samma länk). **Publik och Schedule per mejl är Axels klick** i appen, klockslaget står i tabellen. Fältet
 "Till:" ska vara exakt segmentet i kolumnen Publik, och `SEG_oengagerade_180d` utesluts.
 
 | Dag | Kort | Publik | Typ | Ämnesrad | Spoks-utkast |
 |---|---|---|---|---|---|
 | tis 29/9 18:00 | K01 | `SEG_samtycke` | sälj | De tittar två gånger, sen skrattar de | [9aa10213](https://app.spoks.com/matstrumpor/post/9aa10213-3bf1-42bc-b23e-315e088d92be/edit) |
-| ons 30/9 18:00 | V01 | `SEG_samtycke` | värde | Du är med i Matstrumpor-klubben | [1f01d495](https://app.spoks.com/matstrumpor/post/1f01d495-8a67-4719-a6a0-817f1822295d/edit) |
+| ons 30/9 18:00 | V01 | `SEG_samtycke` | värde | Varje tisdag kan du vinna sushilådan. Du är med. (v2 29/9) | [1f01d495](https://app.spoks.com/matstrumpor/post/1f01d495-8a67-4719-a6a0-817f1822295d/edit) |
 | tor 1/10 18:00 | K03 | `SEG_uppvarmning_steg1` | värde | Recensionerna säger att mottagaren blev glad | [920afd93](https://app.spoks.com/matstrumpor/post/920afd93-03be-4aba-9c25-8d6a12603f06/edit) |
 | fre 2/10 18:00 | REA01 | `SEG_samtycke` | sälj | En till pappa, en till svärfar | [411d7f9e](https://app.spoks.com/matstrumpor/post/411d7f9e-a68b-4b69-a07b-4a9d32bb8b1d/edit) |
-| lör 3/10 18:00 | V02 | `SEG_uppvarmning_steg1` | värde | Klubbfråga: vem är svårast att köpa till? | [277058be](https://app.spoks.com/matstrumpor/post/277058be-7182-4cfc-b36c-1522e84cdbb5/edit) |
+| lör 3/10 18:00 | V02 | `SEG_uppvarmning_steg1` | värde | Sex saker att veta innan du köper en låda (ny 29/9) | [277058be](https://app.spoks.com/matstrumpor/post/277058be-7182-4cfc-b36c-1522e84cdbb5/edit) |
 | sön 4/10 18:00 | FD01 | `SEG_uppvarmning_steg1` | sälj | Han säger nej till presenter. Inte till sushi. | [fe8c9abf](https://app.spoks.com/matstrumpor/post/fe8c9abf-4cbe-41fc-aaca-1d4400717049/edit) |
 | mån 5/10 18:00 | V03 | `SEG_uppvarmning_steg1` | värde | Inuti sushilådan: fem par strumpor | [436d851d](https://app.spoks.com/matstrumpor/post/436d851d-3dac-4dd5-b733-984b2af584e1/edit) |
 | tis 6/10 18:00 | K02 | `SEG_samtycke` | sälj | Ingen jublar åt tvättmedel | [b7acd85c](https://app.spoks.com/matstrumpor/post/b7acd85c-236d-4b46-9469-2df548361492/edit) |
 | ons 7/10 18:00 | FD06 | `SEG_uppvarmning_steg1` | sälj | Sushilådan funkar även om du knappt känner svärfar | [19db626c](https://app.spoks.com/matstrumpor/post/19db626c-e88e-4900-bb19-c2e5ca196144/edit) |
 | tor 8/10 18:00 | FD08 | `SEG_uppvarmning_steg1` | värde | Så här skrev de om lådan till pappa | [f4696d2a](https://app.spoks.com/matstrumpor/post/f4696d2a-8358-4fcd-a67a-4b5ac280c0d5/edit) |
 | fre 9/10 18:00 | REA02 | `SEG_samtycke` | sälj | Köp 1, få 1 gäller alla fyra sorterna | [9d41c29d](https://app.spoks.com/matstrumpor/post/9d41c29d-d7e4-42c7-aaaa-b8f49f17da12/edit) |
-| lör 10/10 18:00 | V04 | `SEG_uppvarmning_steg1` | värde | Ni svarade (ur svaren på V02) | — skrivs fre 9/10, reserv FD03 |
+| lör 10/10 18:00 | V04 | `SEG_uppvarmning_steg1` | värde | Första dragningen (om den körts tis 6/10) | — skrivs fre 9/10, reserv FD03 |
 | sön 11/10 18:00 | FD09 | `SEG_uppvarmning_steg1` | sälj | Två veckor kvar till 24 oktober | [5317562c](https://app.spoks.com/matstrumpor/post/5317562c-2e88-4549-a23e-13329494c9a3/edit) |
 | mån 12/10 18:00 | FD10 | `SEG_kopare_forra_sasongen` | sälj | Förra gången jul, den här gången fars dag | [f7e75509](https://app.spoks.com/matstrumpor/post/f7e75509-9397-4ed6-bfb3-aabec4f0ea63/edit) |
 | tis 13/10 18:00 | V05 | `SEG_samtycke` | värde | Vad ni skrev om lådan (ur nya Judge.me-recensioner) | — skrivs mån 12/10, reserv FD02 |
@@ -110,9 +115,11 @@ aldrig slut, så den enda brådskan är sista beställningsdagen **lör 24/10**)
 | lör 24/10 20:00 | FD23 | `SEG_samtycke` | sälj | Sista påminnelsen om sushilådan före fars dag | [6aa3c5c6](https://app.spoks.com/matstrumpor/post/6aa3c5c6-6cea-417e-90b5-a89b829b4226/edit) |
 | sön 25/10 18:00 | FD20 | `SEG_samtycke` | sälj | En present till pappa som hinner fram ändå | [385b6fc9](https://app.spoks.com/matstrumpor/post/385b6fc9-f41c-43c3-bb02-96bd0970b849/edit) |
 
-**V04 och V05 skrivs när underlaget finns, aldrig i förväg.** V04 *Ni svarade* (lör 10/10,
-engagerade) skrivs fre 9/10 ur svaren på V01 och V02; de landar i kundsupport@matstrumpor.se och
-läses med `loopia-mail`. Färre än tio svar ⇒ FD03 från bänken tar platsen. V05 *Vad ni skrev om
+**V04 och V05 skrivs när underlaget finns, aldrig i förväg.** V04 *Första dragningen* (lör
+10/10, engagerade) skrivs fre 9/10 om den första skarpa dragningen körts tis 6/10 (loggen
+`klaviyo/konto/matstrumpor/dragningar.jsonl`); inga namn, inga orter. Ingen dragning ⇒ FD03 från
+bänken tar platsen. (Till 29/9 skulle V04 byggas ur svaren på V01 och V02; Axel strök
+svarsfrågorna samma dag.) V05 *Vad ni skrev om
 lådan* (tis 13/10, hela listan) skrivs mån 12/10 ur de nya Judge.me-recensionerna efter K15.
 Färre än tre nya ⇒ FD02 tar platsen.
 

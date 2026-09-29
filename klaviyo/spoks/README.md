@@ -1043,8 +1043,56 @@ schemalägger en vecka i taget, efter att sessionen läst föregående veckas si
 5/10 vecka 2-listan `trig_01EH4bY8pvLc4UPkaCMn5RGt`, fre 9/10 V04 `trig_01GoTUd9oR7vppKrahMMyZ51`,
 mån 12/10 V05 + vecka 3 `trig_01M7GAcm5zvRmfcL1yDRQD4e`. Veckans
 dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de dagliga; K16 förtur + F01
-E1 v4 (KUNDRESA §7). K15 skickades 28/9 11:18 CEST. Svaren på V01 och V02 landar i
-kundsupport@matstrumpor.se. Autosvaret skickar inget på dem: Matstrumpor går torrt, och ett
-svar vars citat bär vår supportadress räknas som redan besvarat (`redanBesvaradAvOss` i
-`kundtjanst/autosvar/hinkar.mjs`). Ett svar utan sådant citat kan hamna hos VA:n som ett
-ärende. De behöver inget svar var för sig; V04 är svaret.
+E1 v4 (KUNDRESA §7). K15 skickades 28/9 11:18 CEST.
+
+### Axels granskning 2026-09-29: V01 v2, inga svarsfrågor, ingen tas bort, en granskningslänk
+
+Axel öppnade V01 först och underkände det ("Att de inte kommer att få en massa rabatter och
+sånt, det kommer de ju visst få … det är skit"). Samma eftermiddag, när han skulle granska
+resten: "jag vill bara kunna ha en länk för att granska dem", "jag tycker inte vi tar bort några
+som inte svarar på mejlet" och "det är bara onödigt att vi ber dem svara på mejlen, för det
+kommer bli kaos för kundsupporten". Fyra beslut, alla genomförda:
+
+- **V01 v2** (ons 30/9, `SEG_samtycke`, Spoks `1f01d495`, hash `88ea66d1`): *Varje tisdag kan
+  du vinna sushilådan. Du är med.* Fem daterade förmåner i stället för "Mejllistan kallar vi
+  Matstrumpor-klubben … inga koder och inga poäng": dragningen varje tisdag från 6/10, Black
+  Week för klubben sön 22/11 kl 18 (ett dygn före alla andra), 100 kr att handla för på Black
+  Friday till den som inte vunnit, påminnelse om sista beställningsdagarna, nya sorter och
+  påfyllning först. Copy av Sonnet mot copy-reglerna, 0 ❌. Löftena är sanna eller bokade:
+  rabatternas starttid i Shopify flyttad till sön 22/11 17:00Z samma dag
+  (`konto/matstrumpor/shopify-rabatter.jsonl`), tröstpriset 100 kr är Axels beslut 27/9 och
+  byggs 2/11 tillsammans med K16 (påminnelse `trig_011Xqt44pRC5Ax5yg6ZkBJRA`), och första
+  skarpa dragningen tis 6/10 kräver Axels "kör" den morgonen (påminnelse
+  `trig_017jCVjHEjJmkJP4qS51iNjE`). "100 kr" släpps igenom av `validera.mjs` bara för att
+  mejlet listar beloppet i `tillatna_belopp` med källa. "Med ätpinnar av trä" struket ur
+  dragningsraden: vinsten är en utkastorder med bara sushivarianten, och att ätpinnarna följer
+  med den är inte mätt.
+- **Inga mejl ber om svar.** V01:s svarsfråga borta, **V02 ersatt** (lör 3/10, engagerade,
+  samma Spoks-utkast `277058be`): *Sex saker att veta innan du köper en låda*, raka svar ur
+  produktsidans FAQ (ätpinnar, storlek, frakt, betalning, Köp 1, få 1 utan kod, den andra
+  lådan valfri). Filen heter nu `v02-sex-saker-innan-du-koper.json`. **V04 byggs inte ur svar**
+  längre: fre 9/10 skrivs den ur första dragningen om den körts 6/10, annars tar FD03 platsen
+  (påminnelsen omskriven). Svar som ändå kommer landar i kundsupport@matstrumpor.se; autosvaret
+  går torrt för Matstrumpor och skickar inget. K15 och F09 har kvar raden "Blev något fel?
+  Svara …": den gäller den som har ett problem, inte alla, och F08:s vinnare svarar med video
+  och adress (tre i veckan).
+- **Ingen tas bort för att hen inte öppnar eller svarar.** F06 E1/E2 (sunset) skickas aldrig;
+  titlarna i Spoks börjar `SKICKAS INTE · …` (`4fccb750`, `662420f3`) så de inte kan
+  schemaläggas av misstag igen (F06 E2 schemalades en gång 26/9). Sessionen raderar dem inte.
+  Deliverabilityn sköts i stället av publiken: dagligt bara till de engagerade, hela listan 2–3
+  i veckan, och stoppregeln `LARM_LEVERANS`.
+- **Rättelser i tio andra utkast** (Sonnet, läst tillbaka i Spoks): tic:en "Köp 1, få 1, det
+  står på produktsidan" (åtta mejl: FD01, FD11, FD12, FD17, K07, REA01, REA02, REA03) säger nu
+  vad erbjudandet gör; K03 slutade försäkra "inget påhittat" tre gånger; V03 tappade "Alla fyra
+  lådorna är förpackningen" och jargongordet "dubbeltitten". **Faktum rättat: ett par
+  ätpinnar per sushilåda** (produktsidan 2026-09-29: paketet Köp 1, få 1 visar "Ätpinnar i trä
+  · 2 par" för två lådor, Köp 2, få 2 "4 par" för fyra); K07:s "fyra par ätpinnar" på två lådor
+  var fel och säger nu två.
+- **Granskningslänken** (en sida med alla mejl som ska ut, i utskicksordning, som i mobilen,
+  med knapp till varje utkast i Spoks): `node klaviyo/gallerier.mjs --brand matstrumpor
+  --granska --fran <datum>` skriver `klaviyo/output/matstrumpor/galleri-granska.html`, som
+  publiceras som Artifact på samma länk varje gång: https://claude.ai/artifact/VgHANQtbtSFQZnVkogj9ma. Bänken (`parkerad`) och
+  det som redan gått visas inte. Utseendet i Spoks (typsnitt, färger) kan skilja något; texten
+  och bilderna är desamma. **Scheman läggs fortfarande av Axel i appen**: Spoks MCP har inget
+  verktyg för att schemalägga eller skicka (`get_links` säger det själv: "sending a campaign"
+  är en app-länk).

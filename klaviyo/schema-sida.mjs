@@ -27,7 +27,7 @@ export function delar(iso, tidszon) {
 }
 
 export const STATUS = { klar: ['Klar', 'ok'], 'utkast-skrivs-om-efter-lardom': ['Skrivs om efter lärdom', 'sen'], 'kraver-axel': ['Kräver Axel', 'varn'] };
-export const SEGMENT_ORD = { SEG_uppvarmning_steg1: 'uppvärmning: aktiva senaste 30 dagarna', SEG_engagerade_60d: 'engagerade 60 dagar', SEG_engagerade_90d: 'engagerade 90 dagar', SEG_samtycke: 'alla som sagt ja', SEG_kopare: 'alla köpare som sagt ja' };
+export const SEGMENT_ORD = { SEG_uppvarmning_steg1: 'uppvärmning: aktiva senaste 30 dagarna', SEG_engagerade_60d: 'engagerade 60 dagar', SEG_engagerade_90d: 'engagerade 90 dagar', SEG_samtycke: 'alla som sagt ja', SEG_kopare: 'alla köpare som sagt ja', SEG_kopare_forra_sasongen: 'förra säsongens köpare som sagt ja' };
 export const ENHET = { minutes: 'minuter', hours: 'timmar', days: 'dagar', weeks: 'veckor' };
 
 export function triggerText(t) {

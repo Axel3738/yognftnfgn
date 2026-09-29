@@ -25,7 +25,7 @@
     {
       "typ": "hero",
       "rubrik": "I år får pappa pizzan, inte sushin",
-      "text": "Hej {{fornamn}},\n\nSushilådan har du redan skickat vidare. I år är turen kommen till pizzalådan, samma trick men med en annan maträtt.\n\nGe den till pappa. Köp 1, få 1, det står på produktsidan.",
+      "text": "Hej {{fornamn}},\n\nSushilådan har du redan skickat vidare. I år är turen kommen till pizzalådan, samma trick men med en annan maträtt.\n\nGe den till pappa. Köper du pizzalådan får du en låda till, och du väljer själv om den blir sushi, pizza, hamburgare eller donut.",
       "bild": "produkt:pizza-strumpor",
       "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
     },
@@ -55,7 +55,8 @@
     { "rad": "I år får pappa pizzan, inte sushin", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Fler sorter, om det inte ska bli pizzan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köper du pizzalådan får du en låda till, och du väljer själv om den blir sushi, pizza, hamburgare eller donut.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-15T18:00:00+02:00",
   "segment": ["SEG_kopare"],

@@ -25,7 +25,7 @@
     {
       "typ": "hero",
       "rubrik": "Två lådor, två personer på listan",
-      "text": "Hej {{fornamn}},\n\nDe flesta beställningar innehåller två lådor. En till mamma, en till brorsan. En till dig, en till någon annan.\n\nKöp 1, få 1, det står på produktsidan.",
+      "text": "Hej {{fornamn}},\n\nDe flesta beställningar innehåller två lådor. En till mamma, en till brorsan. En till dig, en till någon annan.\n\nMed Köp 1, få 1 köper du sushilådan till mamma och får en till brorsan på köpet.",
       "bild": "produkt:sushi-strumpor",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
@@ -41,7 +41,7 @@
     {
       "typ": "produkt",
       "handle": "sushi-strumpor",
-      "text": "En låda till på köpet, som det står på produktsidan.",
+      "text": "Två sushilådor är tio par strumpor och två par ätpinnar i trä. Du betalar för en.",
       "knapp": "Till sushilådan"
     },
     {
@@ -60,7 +60,9 @@
     { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Två personer på listan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Andra sorter, samma erbjudande på produktsidan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Andra sorter, samma erbjudande på produktsidan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Med Köp 1, få 1 köper du sushilådan till mamma och får en till brorsan på köpet.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två sushilådor är tio par strumpor och två par ätpinnar i trä. Du betalar för en.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-11-10T18:00:00+01:00",
   "segment": ["SEG_samtycke"],

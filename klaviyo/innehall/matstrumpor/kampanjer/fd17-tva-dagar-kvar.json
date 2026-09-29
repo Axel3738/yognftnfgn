@@ -25,7 +25,7 @@
     {
       "typ": "hero",
       "rubrik": "Två dagar kvar att beställa till fars dag",
-      "text": "Hej {{fornamn}},\n\nPaketet behöver skickas i tid för att hinna fram till fars dag. Beställ senast lördag. Köp 1, få 1, det står på produktsidan som alltid. Det är bara tiden till fars dag som är knapp.",
+      "text": "Hej {{fornamn}},\n\nPaketet behöver skickas i tid för att hinna fram till fars dag. Beställ senast lördag. Köp 1, få 1 gäller fortfarande, så du betalar för en sushilåda och får två. Det är bara tiden till fars dag som är knapp.",
       "bild": "produkt:sushi-strumpor",
       "knapp": { "text": "Beställ innan lördag", "lank": "produkt:sushi-strumpor" }
     },
@@ -55,7 +55,8 @@
     { "rad": "Två dagar kvar att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Beställ innan lördag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Pizza, burgare eller donut, samma sista dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp 1, få 1 gäller fortfarande, så du betalar för en sushilåda och får två.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-22T18:00:00+02:00",
   "segment": ["SEG_samtycke"],

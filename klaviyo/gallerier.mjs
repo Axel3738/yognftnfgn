@@ -4,6 +4,7 @@
 // mallar, alla flows, alla kampanjer färdiggenererade, jävligt nice".
 //
 //   node klaviyo/gallerier.mjs --brand matstrumpor [--lankar <fil.json>]
+//   node klaviyo/gallerier.mjs --brand matstrumpor --granska --fran 2026-09-30   # granskningssidan
 //
 // Läser output/<brand>/manifest.json + <id>.exempel.html (skrivna av bygg.mjs) och
 // innehall/<brand>/. Skriver output/<brand>/galleri-kampanjer.html, galleri-floden.html
@@ -86,6 +87,8 @@ function stil(brand, s) {
   .meny a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
   .hopp { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 24px; padding: 0; list-style: none; }
   .hopp a { font-size: 15px; font-weight: 700; padding: 5px 12px; border-radius: 8px; background: var(--kort); border: 1px solid var(--linje); color: var(--text); text-decoration: none; }
+  .knapp { display: inline-block; margin-top: 2px; padding: 10px 18px; border-radius: 999px; background: var(--accent-text); color: var(--grund); font-weight: 700; text-decoration: none; }
+  .knapp:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
   .kort { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 24px; align-items: start; background: var(--kort); border: 1px solid var(--linje); border-radius: 18px; padding: 22px 24px; margin-bottom: 22px; }
   .kort.enkel { grid-template-columns: minmax(0, 1fr); }
   .meta { display: grid; gap: 10px; min-width: 0; }
@@ -126,43 +129,83 @@ function stil(brand, s) {
 </style>`;
 }
 
-function kampanjKort({ k, mejl, html, brand, reg }) {
+// "k01-…" → K01, "fd12-…" → FD12, "rea01-…" → REA01, "v03-…" → V03.
+export function kodFor(id) {
+  const m = String(id).match(/^([a-z]+)(\d+)/i);
+  return m ? `${m[1].toUpperCase()}${m[2]}` : String(id);
+}
+
+// granska: granskningsläget (Axels beställning 2026-09-29: "jag vill bara kunna ha en
+// länk för att granska dem") — ingen hypotes eller internt namn, men segmentets namn
+// som det heter i Spoks och en knapp till utkastet där publik och schema väljs.
+function kampanjKort({ k, mejl, html, brand, reg, granska = null }) {
   const d = delar(k.planerad, brand.tidszon ?? 'Europe/Stockholm');
   const [st, kl] = STATUS[k.status_plan] ?? [k.status_plan ?? 'Utkast', 'sen'];
-  const kod = (k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id);
+  const kod = kodFor(k.id);
   const amnen = mejl.amnesrader ?? [];
   const seg = (k.segment ?? []).map((s) => SEGMENT_ORD[s] ?? s).join(', ');
+  const spoks = granska?.spoks?.get(k.id) ?? null;
+  const rader = granska
+    ? `<dl class="rad"><dt>Går till</dt><dd>${esk(seg || '?')}${(k.segment ?? []).length ? `<br><span class="svag">Välj i Spoks: ${esk(k.segment.join(', '))}</span>` : ''}</dd></dl>
+    <dl class="rad"><dt>Spoks</dt><dd>${spoks ? `<a class="knapp" href="${esk(spoks)}" target="_blank" rel="noopener">Öppna utkastet i Spoks</a>` : '<span class="svag">inget utkast i Spoks än</span>'}</dd></dl>`
+    : `<dl class="rad"><dt>Testas mot</dt><dd><ol>${amnen.slice(1).map((a) => `<li>${esk(a.text)}</li>`).join('')}</ol></dd></dl>
+    <dl class="rad"><dt>Går till</dt><dd>${esk(seg || '?')}</dd></dl>
+    <dl class="rad"><dt>Läge</dt><dd class="brickor"><span class="bricka ${kl}">${esk(st)}</span>${(mejl.taggar?.urgency && mejl.taggar.urgency !== 'ingen') ? `<span class="tagg">brådska: ${esk(mejl.taggar.urgency)}</span>` : ''}</dd></dl>
+    <dl class="rad"><dt>Hypotes</dt><dd class="svag">${esk(String(mejl.memo ?? '').replace(/^\s*hypotes:\s*/i, ''))}</dd></dl>
+    <p class="svag">${esk(k.namn)}</p>`;
   return `<article class="kort" id="${esk(k.id)}">
   <div class="meta">
     <p class="datum">${d ? `<b>${d.dag}</b><span>${esk(d.man)} · ${esk(d.veckodag)} kl ${esk(d.tid)}</span>` : '<span>inget datum</span>'}</p>
     <p class="eyebrow">${esk(kod)}</p>
     <p class="amne">${esk(amnen[0]?.text ?? k.namn)}</p>
     <p class="fht">${esk(mejl.forhandstext ?? '')}</p>
-    <dl class="rad"><dt>Testas mot</dt><dd><ol>${amnen.slice(1).map((a) => `<li>${esk(a.text)}</li>`).join('')}</ol></dd></dl>
-    <dl class="rad"><dt>Går till</dt><dd>${esk(seg || '?')}</dd></dl>
-    <dl class="rad"><dt>Läge</dt><dd class="brickor"><span class="bricka ${kl}">${esk(st)}</span>${(mejl.taggar?.urgency && mejl.taggar.urgency !== 'ingen') ? `<span class="tagg">brådska: ${esk(mejl.taggar.urgency)}</span>` : ''}</dd></dl>
-    <dl class="rad"><dt>Hypotes</dt><dd class="svag">${esk(String(mejl.memo ?? '').replace(/^\s*hypotes:\s*/i, ''))}</dd></dl>
-    <p class="svag">${esk(k.namn)}</p>
+    ${rader}
   </div>
   ${telefon(html, `${kod} i mobilen`, reg)}
 </article>`;
+}
+
+// Utkastens Spoks-id ur uppladdningsloggen (konto/<brand>/spoks-uppladdat.jsonl):
+// senaste raden per mejl_id vinner, bara kampanjer. mall = spoks.json lankar.kampanj.
+export function spoksLankar(loggText, mall) {
+  const ut = new Map();
+  for (const rad of String(loggText).split('\n')) {
+    if (!rad.trim()) continue;
+    let r;
+    try { r = JSON.parse(rad); } catch { continue; }
+    if (r.typ !== 'kampanj' || !r.mejl_id || !r.id) continue;
+    ut.set(r.mejl_id, String(mall).replace('{postId}', r.id));
+  }
+  return ut;
+}
+
+// Vilka kampanjer som ska granskas: från och med ett datum (svensk tid), aldrig de som
+// står på bänken (status_plan parkerad), i utskicksordning.
+export function attGranska(kampanjer, fran) {
+  return [...kampanjer]
+    .filter((k) => k.status_plan !== 'parkerad')
+    .filter((k) => !fran || String(k.planerad ?? '') >= fran)
+    .sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
 }
 
 // Sidorna tar butikens stilfil (`stil`, mejl/butiker/<id>.json) bara för webbfonten;
 // färgerna är galleriets egna.
 const sidStil = (st) => ({ ...STIL_FALLBACK, font_webb: st?.font_webb ?? null });
 
-export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar, bilder = new Map(), stil: st = null }) {
+export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar, bilder = new Map(), stil: st = null, granska = null }) {
   const s = sidStil(st);
   const reg = nyttRegister();
-  const sorterade = [...kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
-  const hopp = sorterade.map((k) => { const d = delar(k.planerad, brand.tidszon); const kod = k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id; return `<li><a href="#${esk(k.id)}">${esk(kod)} · ${d ? `${d.dag} ${esk(d.man)}` : ''}</a></li>`; }).join('');
-  return `<title>${esk(brand.namn)} kampanjer</title>
+  const sorterade = granska ? attGranska(kampanjer, granska.fran) : [...kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
+  const hopp = sorterade.map((k) => { const d = delar(k.planerad, brand.tidszon); return `<li><a href="#${esk(k.id)}">${esk(kodFor(k.id))} · ${d ? `${d.dag} ${esk(d.man)}` : ''}</a></li>`; }).join('');
+  const rubrik = granska
+    ? { titel: 'Granska mejlen innan de schemaläggs', ingress: `${sorterade.length} mejl i den ordning de går ut, som de ser ut i mobilen. Ämnesraden och förhandstexten står överst i varje kort. Knappen öppnar utkastet i Spoks, där publiken väljs och mejlet schemaläggs. Utseendet i Spoks (typsnitt och färger) kan skilja sig något; texten och bilderna är desamma.` }
+    : { titel: 'Alla kampanjer, färdiga', ingress: `${sorterade.length} kampanjer i datumordning, renderade som de ser ut i mobilen. Ämnesrad A är den som står överst; B och C testas mot den. Allt ligger som utkast i Klaviyo tills du säger till.` };
+  return `<title>${esk(brand.namn)} ${granska ? 'mejlgranskning' : 'kampanjer'}</title>
 ${stil(brand, s)}
 <main>
-${huvud({ brand, sida: 'kampanjer', titel: 'Alla kampanjer, färdiga', ingress: `${sorterade.length} kampanjer i datumordning, renderade som de ser ut i mobilen. Ämnesrad A är den som står överst; B och C testas mot den. Allt ligger som utkast i Klaviyo tills du säger till.`, lankar })}
+${huvud({ brand, sida: granska ? null : 'kampanjer', titel: rubrik.titel, ingress: rubrik.ingress, lankar: granska ? null : lankar })}
 <ul class="hopp">${hopp}</ul>
-${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand, reg })).join('\n')}
+${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand, reg, granska })).join('\n')}
 </main>
 ${bildSkript(reg, bilder)}
 `;
@@ -264,6 +307,20 @@ async function main() {
   const { bilder, saknas } = await hamtaBilder({ urlar, cacheDir: join(ut, 'bilder'), logg: (t) => console.log(t) });
   const ur = mejlUtUrManifest(manifest, htmlFor);
   const { stil: st } = laddaBrandResurser(brand);
+  // --granska [--fran YYYY-MM-DD]: en sida med bara det som ska ut, i utskicksordning,
+  // med knapp till varje utkast i Spoks (konto/<brand>/spoks.json + spoks-uppladdat.jsonl).
+  if (process.argv.includes('--granska')) {
+    const konto = join(ROT, 'klaviyo', 'konto', brandId);
+    const mall = JSON.parse(readFileSync(join(konto, 'spoks.json'), 'utf8')).arbetsyta?.lankar?.kampanj;
+    const loggFil = join(konto, 'spoks-uppladdat.jsonl');
+    const spoks = mall && existsSync(loggFil) ? spoksLankar(readFileSync(loggFil, 'utf8'), mall) : new Map();
+    const html = galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar: null, bilder, stil: st, granska: { spoks, fran: arg('--fran') } });
+    writeFileSync(join(ut, 'galleri-granska.html'), html);
+    const antal = attGranska(innehall.kampanjer, arg('--fran')).length;
+    console.log(`galleri-granska.html: ${antal} mejl, ${Math.round(Buffer.byteLength(html, 'utf8') / 1024)} kB`);
+    if (saknas.length) console.log(`⚠️  ${saknas.length} bilder saknas: ${saknas.map((x) => x.url).join(', ')}`);
+    return;
+  }
   const filer = {
     'galleri-kampanjer.html': galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar, bilder, stil: st }),
     'galleri-floden.html': galleriFloden({ brand, floden: innehall.floden, htmlFor, lankar, bilder, stil: st }),

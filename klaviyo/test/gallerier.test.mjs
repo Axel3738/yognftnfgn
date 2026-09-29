@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { bygg, galleri, lasInnehall } from '../bygg.mjs';
 import { bildUrlar, nyttRegister, medPlatshallare, hamtaBilder, bildSkript } from '../bilder.mjs';
-import { galleriKampanjer, galleriFloden, galleriMallar, mejlUtUrManifest } from '../gallerier.mjs';
+import { galleriKampanjer, galleriFloden, galleriMallar, mejlUtUrManifest, kodFor, spoksLankar, attGranska } from '../gallerier.mjs';
 import { FIXTURER, PRODUKTER, RECENSIONER, BRAND } from './hjalp.mjs';
 
 const nu = new Date('2026-09-24T12:00:00Z');
@@ -133,4 +133,40 @@ test('bygg galleri: utan bilder är ramarna srcdoc (offline som förut), med bil
   assert.match(med, /<script id="bilder" type="application\/json">/);
   assert.equal(bildJson(med).length, bilder.size);
   assert.match(med, /tis 29 sep kl 18:00/, 'resten av sidan är som förut');
+});
+
+test('granskningssidan: bara det som ska ut, i ordning, med knapp till Spoks och utan hypotes', () => {
+  assert.equal(kodFor('k01-de-tror'), 'K01');
+  assert.equal(kodFor('fd12-ni-gav-bort-sushin'), 'FD12');
+  assert.equal(kodFor('rea01-tva-pappor'), 'REA01');
+  assert.equal(kodFor('v03-sa-ser-ladan-ut'), 'V03');
+  const mall = 'https://app.spoks.com/butik/post/{postId}/edit';
+  const logg = [
+    { typ: 'kampanj', mejl_id: 'v01-klubben', id: 'gammal-1' },
+    { typ: 'flode', mejl_id: 'f01-valkomst-e1', id: 'flodes-id' },
+    'inte json',
+    { typ: 'kampanj', mejl_id: 'v01-klubben', id: 'ny-1' },
+    { typ: 'kampanj', mejl_id: 'fd02-bank', id: 'bank-1' },
+  ].map((r) => (typeof r === 'string' ? r : JSON.stringify(r))).join('\n');
+  const spoks = spoksLankar(logg, mall);
+  assert.equal(spoks.get('v01-klubben'), 'https://app.spoks.com/butik/post/ny-1/edit', 'senaste raden vinner');
+  assert.equal(spoks.has('f01-valkomst-e1'), false, 'bara kampanjer');
+  const mejl = (id, planerad, extra = {}) => ({ id, namn: `MAIL_${id}`, planerad, segment: ['SEG_samtycke'], status_plan: 'kraver-axel', memo: `Hypotes för ${id}`, amnesrader: [{ text: `Ämne ${id}` }, { text: 'B' }, { text: 'C' }], forhandstext: `Förhandstext ${id}`, ...extra });
+  const kampanjer = [
+    mejl('v01-klubben', '2026-09-30T18:00:00+02:00'),
+    mejl('k01-skickad', '2026-09-29T18:00:00+02:00'),
+    mejl('fd02-bank', '2026-10-02T18:00:00+02:00', { status_plan: 'parkerad' }),
+    mejl('rea01-tva', '2026-10-02T18:00:00+02:00'),
+  ];
+  assert.deepEqual(attGranska(kampanjer, '2026-09-30').map((k) => k.id), ['v01-klubben', 'rea01-tva']);
+  const html = galleriKampanjer({ brand: BRAND, kampanjer, htmlFor: (id) => `<p>${id}</p>`, lankar: { schema: 'x' }, granska: { spoks, fran: '2026-09-30' } });
+  assert.match(html, /Granska mejlen innan de schemaläggs/);
+  assert.match(html, /href="https:\/\/app\.spoks\.com\/butik\/post\/ny-1\/edit"/);
+  assert.match(html, /Välj i Spoks: SEG_samtycke/);
+  assert.match(html, /REA01/);
+  assert.match(html, /inget utkast i Spoks än/, 'REA01 saknar rad i loggen');
+  assert.doesNotMatch(html, /k01-skickad|fd02-bank/, 'skickat och bänken syns inte');
+  assert.doesNotMatch(html, /Hypotes för|MAIL_v01/, 'hypotesen och internnamnet är för sessionen, inte för granskningen');
+  assert.doesNotMatch(html, /class="meny"/, 'ingen meny till de gamla Klaviyo-galleriernas sidor');
+  assert.ok(html.indexOf('v01-klubben') < html.indexOf('rea01-tva'), 'utskicksordning');
 });

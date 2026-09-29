@@ -1,7 +1,7 @@
 {
   "id": "v03-sa-ser-ladan-ut-inuti",
   "namn": "MAIL_20261005_Varde_PD_1_uppvarmning_problem_sa-ser-ladan-ut-inuti_v1",
-  "memo": "Hypotes: produktkunskap utan säljpitch (vad som faktiskt ligger i varje låda, att lådan är förpackningen, en storlek och dubbeltitten när någon öppnar den) tar bort osäkerheten om vad man får hos den som funderar på en låda, och ger fler klick på produktsidan än ett mejl som öppnar med en uppmaning att köpa, trots en lågmäld knapp ('Titta på sushilådan'). Fakta som används är bara paren per sort (sushi 5, pizza 4, donut 3, hamburgare 2), en storlek och att ingen inslagning behövs. Bort med flit: ätpinnar (ingår inte), pris, leveranstid, rabatter, dragning. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Evolve: blanda fritt värde med sälj, Billy och Spencer; svar på mejl som leverbarhetssignal).",
+  "memo": "Hypotes: produktkunskap utan säljpitch (vad som faktiskt ligger i varje låda, att lådan är förpackningen, en storlek och att den som öppnar lådan tittar en gång till) tar bort osäkerheten om vad man får hos den som funderar på en låda, och ger fler klick på produktsidan än ett mejl som öppnar med en uppmaning att köpa, trots en lågmäld knapp ('Titta på sushilådan'). Fakta som används är bara paren per sort (sushi 5, pizza 4, donut 3, hamburgare 2), en storlek och att ingen inslagning behövs. Bort med flit: ätpinnar (ett par per sushilåda ingår, men de står i K01), pris, leveranstid, rabatter, dragning. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Evolve: blanda fritt värde med sälj, Billy och Spencer; svar på mejl som leverbarhetssignal).",
   "taggar": {
     "typ": "N",
     "kalla": "evolve",
@@ -32,7 +32,7 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Alla fyra lådorna är förpackningen. Du ger bort dem som de är, utan att slå in dem.\n\nAlla fyra har strumpor i en storlek, One Size.\n\nNär någon öppnar sushilådan ser det ut som sushi.\n\nSedan ser man strumporna och tittar en gång till. Det är dubbeltitten."
+      "text": "Det finns fyra lådor som ser ut som mat. Varje låda är en färdig presentförpackning, så du behöver inte slå in något.\n\nAlla fyra har strumpor i en storlek, One Size.\n\nNär någon öppnar sushilådan ser det ut som sushi.\n\nSedan ser man strumporna och tittar en gång till."
     },
     {
       "typ": "punkter",
@@ -54,10 +54,10 @@
     { "rad": "Fem par strumpor, rullade som sushibitar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Utsidan ser ut som en takeaway-låda från en sushirestaurang. Insidan är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Titta på sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Alla fyra lådorna är förpackningen. Du ger bort dem som de är, utan att slå in dem.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det finns fyra lådor som ser ut som mat. Varje låda är en färdig presentförpackning, så du behöver inte slå in något.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Alla fyra har strumpor i en storlek, One Size.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "När någon öppnar sushilådan ser det ut som sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Sedan ser man strumporna och tittar en gång till. Det är dubbeltitten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sedan ser man strumporna och tittar en gång till.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Så många par ligger i varje låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Fem par i sushilådan, rullade som sushibitar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Fyra par i pizzalådan, en låda som ser ut som en pizzakartong.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
