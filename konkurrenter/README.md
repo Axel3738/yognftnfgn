@@ -22,6 +22,8 @@ node konkurrenter/kor.mjs --skicka KD-2026-001 [--till adress] [--sprak sv|en] [
                                                         # SÄNDPAKETET: brev.txt + brev.json + faktura-<nr>.pdf i arenden/<id>/ — skickar inget
 node konkurrenter/kor.mjs --skickad KD-2026-001 [--till adress] [--paminnelse]   # kvittot när brevet gått ut via Gmail
 node konkurrenter/kor.mjs --faktura KD-2026-001 [--kopare …] [--cpm 98] [--land GB] [--ny-faktura]   # bara fakturan (CPM mäts ur Meta om --cpm saknas)
+node konkurrenter/kor.mjs --anmal KD-2026-001 [--utan-cdn] [--utan-bevisbild] [--namn …] [--epost …] [--telefon …]   # Meta-anmälningarna: en per annons + bevisbild + verifieringssida
+node konkurrenter/kor.mjs --anmald KD-2026-001 --nr 1 --referens <Metas nr>   # kvittot per inskickad anmälan
 node konkurrenter/kor.mjs --skicka KD-2026-001 --via loopia --ja        # RESERV: skicka direkt från butikens kundtjänstbrevlåda
 node konkurrenter/kor.mjs --avfarda KD-2026-001 "ingen kopia"
 node konkurrenter/kor.mjs --foljupp                     # är kopian borta efter brevet?
@@ -118,7 +120,36 @@ node konkurrenter/kor.mjs --lista
      supportbrevlåda direkt (`kundtjanst/brevlada.mjs skickaNytt`). Spärrar:
      `--ja`, `KONKURRENTER_INGEN_SANDNING=1`, status, mottagare, egna
      domäner, brevlådan i miljön.
-10. **Rapport och sida** (`rapport.mjs`, `sida.mjs`): svensk rapport med
+10. **Meta-anmälan** (`anmalan.mjs`, `bevisbild.mjs`, `--anmal`; Axels order
+    2026-09-29: "den går in och reportar annonsen också … tio rippade annonser
+    = tio olika reports … det enda jag vill göra är att bara verifiera"):
+    **en anmälan per kopierad annons**, aldrig alla i samma. Varje anmälan
+    bär Metas upphovsrättsformulärs fält på engelska (kontakt ur
+    `konfig.json → anmalan.undertecknare` — VD:ns namn står här, formuläret
+    kräver en riktig person; rättighetshavaren Stonebite Ecom AB med org.nr;
+    annonsens Ad Library-länk; vad som kopierats med den längsta ordagranna
+    sviten citerad, räckvidd och startdatum; originalets länkar = produktsidan
+    + vår sida i annonsbiblioteket (`anmalan.vara_sidor`); de tre
+    försäkringarna; underskriften) och **bevisbilden**: vårt original ↔ deras
+    annons med den kopierade texten markerad, PNG i Chromium (Axels tips:
+    skärmdump i anmälan ger högre träffsäkerhet). Bevisbilden läggs publikt på
+    Matstrumpors Shopify Files (`anmalan.cdn_butik`, samma väg som
+    `matstrumpor/thumbnails.mjs`) eftersom Metas formulär inte alltid tar
+    bilagor och sessionen inte kan ladda upp en containerfil från Axels
+    dator — länken står i "Övrig information". Verifieringssidan
+    `arenden/<id>/anmalan/verifiering.html` (alla fält, alla bilder) är Axels
+    ENDA klick: på hans "kör anmälningarna <id>" fyller sessionen i
+    formuläret i hans **Claude in Chrome** (facebook.com svarar 403 från
+    containern), en anmälan i taget, och kvitterar varje med `--anmald`
+    (Metas referensnummer; en anmälan kvitteras aldrig två gånger; alla
+    inskickade ⇒ ärendet "anmält vidare" när brevet gått). Lokala skärmdumpar
+    Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två
+    anmälningar, två bevisbilder (2400 px, ~0,9 MB), verifieringssidan tittad
+    på. ⚠️ Formulärets fält läses av LIVE i Chrome och paras på etikett —
+    Meta byter dem utan förvarning; ett fält paketet inte täcker stoppar, det
+    fylls aldrig med en gissning. PNG:erna och verifieringssidan är
+    gitignorerade (`<nr>.json` bär CDN-länken).
+11. **Rapport och sida** (`rapport.mjs`, `sida.mjs`): svensk rapport med
     Axels uppgifter sist, engelsk Discord-post i `#copycats` bara när något
     är nytt, och granskningssidan (`output/sida.html`, publiceras som
     artifact på länken i `sida.json`) med bevisen sida vid sida (per annons i
@@ -134,6 +165,8 @@ node konkurrenter/kor.mjs --lista
 | `arenden.jsonl` | ✅ | Ärendeloggen (kvittot på varje brev och faktura) |
 | `arenden/<id>.md`, `arenden/<id>/skarmdump.jpg`, `arenden/<id>/miniatyrer.json` | ✅ | Bevisen per ärende |
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
+| `arenden/<id>/anmalan/<nr>.json` + `.txt` | ✅ | Meta-anmälan per annons: fälten, bevisbildens CDN-länk, status + Metas referens |
+| `arenden/<id>/anmalan/bevis-<nr>.png`, `verifiering.html` | ❌ | Bevisbilderna (~1 MB styck) och Axels verifieringssida — byggs om med `--anmal` |
 | `lage.json` | ✅ | När varje produkt kollades senast (rotationen), senaste körning |
 | `sida.json` | ✅ | Granskningssidans artifact-länk: https://claude.ai/artifact/6JenXfVagtgw2THL8Q4y4v (publiceras om på samma länk varje körning) |
 | `output/` | ❌ | Rådata, kandidater, annonsfiler, bildcache, skärmdumpar, sidan — dör med containern |
@@ -184,4 +217,5 @@ output/ dit (tester och provkörningar — repot rörs inte).
 - Egna domäner (konfig + `sparning/butiker.json` + `kommentarer/konfig.json` +
   fabrikens filer) blir aldrig kandidater; marknadsplatser och sociala nätverk
   ignoreras.
-- 30 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- En Meta-anmälan per annons; ingen skickas utan Axels "kör anmälningarna <id>"; varje inskickad kvitteras med referens och aldrig två gånger.
+- 31 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

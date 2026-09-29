@@ -39,6 +39,8 @@ import { byggBrev, kontrolleraBrev, valjSprak } from './brev.mjs';
 import { skickaBrev, byggSandpaket, registreraSkickat } from './skicka.mjs';
 import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, skrivFakturaHtml, belopp, ibanGiltig } from './faktura.mjs';
 import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
+import { byggAnmalningar, kontrolleraAnmalan, anmalanText } from './anmalan.mjs';
+import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
@@ -653,6 +655,87 @@ async function skickad() {
   console.log(`✅ ${upp.id} är nu ${upp.status}: ${paminnelse ? 'påminnelsen' : 'brevet'}${upp.faktura?.nr && !paminnelse ? ` + faktura ${upp.faktura.nr}` : ''} gick till ${upp.brev.mottagare} via ${upp.brev[paminnelse ? 'paminnelse' : 'skickat'].via}. Frist: ${upp.brev.frist}. Uppföljningen läser om deras sida från nästa körning.`);
 }
 
+/**
+ * --anmal <id>: Meta-anmälningarna, EN per kopierad annons (Axels order
+ * 2026-09-29). Bygger bevisbilden per annons (vårt ↔ deras, PNG i Chromium),
+ * lägger den publikt på butikens CDN när det går, skriver fältpaketen
+ * arenden/<id>/anmalan/<nr>.json + .txt och verifieringssidan
+ * verifiering.html. Skickar INGET — det gör sessionen i Axels Chrome efter
+ * hans enda ok, och kvitterar med --anmald.
+ */
+async function anmal() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('anmal'));
+  const nu = new Date().toISOString();
+  const annonser = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length);
+  if (!annonser.length) { console.log(`${a.id} har inga annonsträffar att anmäla (typ ${a.typ}). Meta-anmälan gäller kopierade ANNONSER — en kopierad sajt går via brevet.`); process.exitCode = 1; return; }
+  const mapp = join(ARENDEMAPP, a.id, 'anmalan'); mkdirSync(mapp, { recursive: true });
+  const undertecknare = { ...(k.anmalan?.undertecknare ?? {}), ...(flagga('namn') ? { namn: flagga('namn') } : {}), ...(flagga('epost') ? { epost: flagga('epost') } : {}), ...(flagga('telefon') ? { telefon: flagga('telefon') } : {}) };
+
+  // Bilderna till bevisbilden: ärendets miniatyrer + det som saknas hämtas nu (Chromium behövs ändå för PNG:n).
+  const miniatyrer = { ...(a.miniatyrer ?? {}) };
+  const bevisbilder = {};
+  if (!har('utan-bevisbild')) {
+    let hashare = null;
+    try {
+      hashare = await startaHashare({ logg });
+      const behov = [...new Set(annonser.flatMap((t) => [t.varAnnons?.bild, ...(t.bilder ?? []).flatMap((b) => [b.egen, b.deras])]).concat([a.var?.produkt?.bilder?.[0], a.var?.annons?.bild]).filter((u) => u && !miniatyrer[u]))];
+      if (behov.length) { const m = await hashaLankar(behov, { hashare, cache: null, medMiniatyr: true, logg, max: 40 }); for (const [u, v] of m.hashar) if (v.miniatyr) miniatyrer[u] = v.miniatyr; }
+      await hashare.stang(); hashare = null;
+      const antal = annonser.length;
+      for (let i = 0; i < annonser.length; i++) {
+        const t = annonser[i];
+        const html = bevisbildHtml(a, t, { miniatyr: (u) => miniatyrer[u] ?? null, nu, nr: i + 1, antal });
+        const fil = join(mapp, `bevis-${i + 1}.png`);
+        try { await bevisbildPng(html, fil); bevisbilder[t.nr] = { fil: fil.replace(`${DATAMAPP}/`, ''), url: null }; logg(`  bevisbild ${i + 1}/${antal}: ${basename(fil)}`); }
+        catch (e) { logg(`  ⚠️ bevisbild ${i + 1}: ${e.message}`); }
+      }
+    } catch (e) { logg(`  ⚠️ Chromium: ${e.message} — anmälningarna byggs utan bevisbild`); if (hashare) await hashare.stang().catch(() => {}); }
+    // Publik länk på butikens CDN (Metas formulär tar inte alltid bilagor).
+    if (!har('utan-cdn') && k.anmalan?.cdn_butik && Object.keys(bevisbilder).length) {
+      try {
+        const { lasButik, skapaKlient } = await import('../sparning/butik.mjs');
+        const { tillShopify } = await import('../matstrumpor/thumbnails.mjs');
+        const klient = await skapaKlient(lasButik(k.anmalan.cdn_butik));
+        for (const [nr, b] of Object.entries(bevisbilder)) { try { b.url = await tillShopify(klient, join(DATAMAPP, b.fil), { mime: 'image/png' }); logg(`  CDN ${nr}: ${b.url}`); } catch (e) { logg(`  ⚠️ CDN ${nr}: ${e.message}`); } }
+      } catch (e) { logg(`  ⚠️ CDN: ${e.message} — bevisbilden följer bara som bilaga`); }
+    }
+  }
+  const { anmalningar, hoppade } = byggAnmalningar(a, k, { undertecknare, nu, bevisbilder });
+  if (!anmalningar.length) { console.log(`Inga anmälningar byggda: ${hoppade.map((h) => `annons ${h.nr}: ${h.orsak}`).join('; ') || 'inga annonser med länk'}`); process.exitCode = 1; return; }
+  const fel = anmalningar.flatMap(kontrolleraAnmalan);
+  for (const an of anmalningar) { skrivJson(join(mapp, `${an.nr}.json`), an); writeFileSync(join(mapp, `${an.nr}.txt`), `${anmalanText(an)}\n`); }
+  const bilder = Object.fromEntries(anmalningar.filter((an) => an.bevisbild && existsSync(join(DATAMAPP, an.bevisbild))).map((an) => [an.nr, `data:image/png;base64,${readFileSync(join(DATAMAPP, an.bevisbild)).toString('base64')}`]));
+  writeFileSync(join(mapp, 'verifiering.html'), verifieringHtml({ arende: a, anmalningar, bilder, uppdaterad: nu }));
+  const upp = { ...a, miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  console.log(`${anmalningar.length} anmälning${anmalningar.length === 1 ? '' : 'ar'} byggd${anmalningar.length === 1 ? '' : 'a'} för ${a.id} (en per annons)${hoppade.length ? `, ${hoppade.length} hoppad(e): ${hoppade.map((h) => `annons ${h.nr} ${h.orsak}`).join(', ')}` : ''}:`);
+  for (const an of anmalningar) console.log(`  ${an.nr}/${an.antal}: ${an.lank}${an.exponeringar ? ` · ${an.exponeringar} exponeringar` : ''} · bevisbild ${an.bevisbild ? (an.bevisbildUrl ? 'PNG + CDN-länk' : 'PNG (ingen CDN-länk)') : 'SAKNAS'}`);
+  console.log(`Fälten: konkurrenter/arenden/${a.id}/anmalan/<nr>.json (.txt = samma i klartext) · verifieringssidan: konkurrenter/arenden/${a.id}/anmalan/verifiering.html`);
+  if (fel.length) { console.log(`⚠️ Stoppat: ${[...new Set(fel)].join('; ')}`); process.exitCode = 1; return; }
+  console.log(`Nästa steg: publicera verifieringssidan till Axel. På hans "kör anmälningarna ${a.id}" fyller sessionen i formuläret i hans Chrome, en anmälan i taget, och kvitterar varje med: node konkurrenter/kor.mjs --anmald ${a.id} --nr <n> --referens <Metas referens>`);
+}
+
+/** --anmald <id> --nr <n> --referens <r>: kvittot för EN inskickad anmälan. Alla inskickade ⇒ ärendet märks "anmält vidare". */
+async function anmald() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('anmald'));
+  const nr = Number(flagga('nr'));
+  const referens = flagga('referens') ?? null;
+  const nu = flagga('nar') ?? new Date().toISOString();
+  const rapporter = a.anmalan?.rapporter ?? [];
+  const r = rapporter.find((x) => x.nr === nr);
+  if (!r) { console.log(`${a.id} har ingen anmälan ${flagga('nr') ?? '?'} — bygg dem med --anmal ${a.id} först (finns: ${rapporter.map((x) => x.nr).join(', ') || 'inga'}).`); process.exitCode = 1; return; }
+  if (r.status === 'inskickad') { console.log(`Anmälan ${nr} är redan kvitterad ${r.inskickad} (referens ${r.referens ?? '—'}) — en anmälan skickas aldrig två gånger.`); process.exitCode = 1; return; }
+  const nya = rapporter.map((x) => (x.nr === nr ? { ...x, status: 'inskickad', referens, inskickad: nu } : x));
+  const alla = nya.every((x) => x.status === 'inskickad');
+  let upp = { ...a, anmalan: { ...a.anmalan, rapporter: nya, klar: alla ? nu : null }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'axel', not: `Meta-anmälan ${nr}/${rapporter.length} inskickad${referens ? ` (referens ${referens})` : ''}` }] };
+  if (alla) { try { upp = overgang(upp, STATUS.ESKALERAD, { av: 'axel', nu, not: `alla ${rapporter.length} Meta-anmälningar inskickade` }); } catch { /* från "ny" finns ingen övergång — anmälan står ändå som klar */ } }
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  await byggSidaFil({ k, arenden });
+  console.log(`✅ Anmälan ${nr}/${rapporter.length} kvitterad${referens ? ` — referens ${referens}` : ''}. ${alla ? `Alla inskickade; ${upp.id} är nu ${upp.status}.` : `${nya.filter((x) => x.status !== 'inskickad').length} kvar.`}`);
+}
+
 /** --faktura <id>: bygg (om) fakturan utan brev — för att titta på den eller efter ändrad taxa. */
 async function fakturaEnbart() {
   const k = konfig();
@@ -770,6 +853,6 @@ async function sidaEnbart() {
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
-if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
+const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });

@@ -30,18 +30,20 @@ export function dragFrame(fil, sekund = 1.0) {
 }
 
 /** Laddar upp en lokal bild till Shopify Files och väntar tills den är READY. */
-export async function tillShopify(klient, lokalFil, { forsok = 20 } = {}) {
+export async function tillShopify(klient, lokalFil, { forsok = 20, mime = null } = {}) {
   const namn = basename(lokalFil);
+  // Typen ur filändelsen om den inte ges (konkurrentdödarens bevisbilder är PNG).
+  const typ = mime ?? (/\.png$/i.test(namn) ? 'image/png' : /\.webp$/i.test(namn) ? 'image/webp' : 'image/jpeg');
   const staged = await klient.graphql(
     `mutation($input:[StagedUploadInput!]!){stagedUploadsCreate(input:$input){stagedTargets{url resourceUrl parameters{name value}} userErrors{message}}}`,
-    { input: [{ filename: namn, mimeType: 'image/jpeg', resource: 'IMAGE', httpMethod: 'POST' }] },
+    { input: [{ filename: namn, mimeType: typ, resource: 'IMAGE', httpMethod: 'POST' }] },
   );
   const mal = staged.stagedUploadsCreate.stagedTargets[0];
   if (!mal) throw new Error('Shopify gav ingen staged target.');
 
   const form = new FormData();
   for (const p of mal.parameters) form.append(p.name, p.value);
-  form.append('file', new Blob([readFileSync(lokalFil)], { type: 'image/jpeg' }), namn);
+  form.append('file', new Blob([readFileSync(lokalFil)], { type: typ }), namn);
   const svar = await fetch(mal.url, { method: 'POST', body: form });
   if (!svar.ok) throw new Error(`Staged upload misslyckades: ${svar.status} ${(await svar.text()).slice(0, 200)}`);
 

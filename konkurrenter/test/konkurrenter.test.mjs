@@ -18,6 +18,8 @@ import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, f
 import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr } from '../annonsfall.mjs';
 import { cpmUr, summeraInsights, insightsSokvag, hamtaCpm, valjCpm } from '../cpm.mjs';
 import { adLibraryToken } from '../sok.mjs';
+import { annonsLank, varAdLibraryLank, byggAnmalan, byggAnmalningar, kontrolleraAnmalan, anmalanText, FORSAKRINGAR } from '../anmalan.mjs';
+import { markera, bevisbildHtml, verifieringHtml } from '../bevisbild.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
@@ -477,6 +479,44 @@ test('cpm: cpmUr, summeraInsights med prefix, insightsSokvag, hamtaCpm mot falsk
   assert.equal(valjCpm({ konfig: { faktura: {} }, verksamhet: 'X' }), null);
   // Konfigens konton: CaraShells US-konto räknas inte in i CPM:en
   assert.equal(KONFIG.verksamheter.CaraShell.konton.find((k) => k.id === '1107817401910319').cpm, false);
+});
+
+test('Meta-anmälan: en per annons med länk, alla fält ifyllda på engelska, stopp utan undertecknare/bevis, texten och verifieringssidan', () => {
+  assert.deepEqual(annonsLank('https://www.facebook.com/ads/library/?active_status=all&id=123456789012345&x=1'), { lank: 'https://www.facebook.com/ads/library/?id=123456789012345', libraryId: '123456789012345' });
+  assert.deepEqual(annonsLank(''), { lank: null, libraryId: null });
+  assert.match(varAdLibraryLank(KONFIG, 'Bäverbutiken'), /view_all_page_id=678639638662543$/); assert.equal(varAdLibraryLank(KONFIG, 'Okänd'), null);
+  const t1 = { nr: 1, lank: 'https://www.facebook.com/ads/library/?id=111', exponeringar: 12345, start: '2026-09-01', text: { styrka: 'stark', kopieradeOrd: 31, langsta: 31, passager: [{ ord: 31, text: 'regnet löven och fågelskiten hamnar på taket' }] }, varAnnons: { namn: 'Takoverdrag_PD_1_H1', text: VAR_TEXT }, bilder: [], derasText: 'Regnet, löven och fågelskiten hamnar på taket! Köp nu.' };
+  const t2 = { nr: 2, lank: null, text: { styrka: 'stark', kopieradeOrd: 9, langsta: 9, passager: [] }, bilder: [] };
+  const t3 = { nr: 3, lank: 'https://www.facebook.com/ads/library/?id=333', video: true, text: null, bilder: [{ egen: 'https://cdn/ann.png', deras: '/tmp/skarm3.png', avstand: 1, grad: 'identisk' }], derasText: '' };
+  const arende = { id: 'KD-2026-011', verksamhet: 'Bäverbutiken', typ: 'annons', status: 'ny', var: { produkt: { titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', butik: 'https://baverbutiken.se', bilder: ['https://cdn/p1.png'] }, annons: { bild: 'https://cdn/ann.png' } }, deras: { sidnamn: 'Kopian', sidaId: '1299101096626433', doman: 'kopian.se' }, bevis: { annonser: [t1, t2, t3] }, brev: { skickat: { nar: '2026-09-29T10:00:00Z' } }, faktura: { nr: 'F-KD-2026-011-1' } };
+  const { anmalningar, hoppade } = byggAnmalningar(arende, KONFIG, { nu: '2026-09-29T12:00:00Z', bevisbilder: { 1: { fil: 'arenden/KD-2026-011/anmalan/bevis-1.png', url: 'https://cdn.shopify.com/s/files/x/bevis-1.png' }, 3: { fil: 'arenden/KD-2026-011/anmalan/bevis-2.png', url: null } } });
+  assert.equal(anmalningar.length, 2); assert.deepEqual(hoppade, [{ nr: 2, orsak: 'ingen Ad Library-länk' }]);
+  const a1 = anmalningar[0];
+  assert.equal(a1.nr, 1); assert.equal(a1.antal, 2); assert.equal(a1.libraryId, '111'); assert.equal(a1.formular, 'https://www.facebook.com/help/contact/1758255661104383');
+  assert.equal(a1.falt.reporter.fullName, 'Axel Odhner'); assert.equal(a1.falt.reporter.email, 'contact@stonebite.org'); assert.match(a1.falt.reporter.address, /Göteborg, Sweden$/);
+  assert.equal(a1.falt.rightsOwner.name, 'Stonebite Ecom AB'); assert.equal(a1.falt.rightsOwner.registrationNumber, '559576-2401'); assert.match(a1.falt.rightsOwner.relationship, /^CEO of the rights owner Stonebite Ecom AB/);
+  assert.deepEqual(a1.falt.contentUrls, ['https://www.facebook.com/ads/library/?id=111']);
+  for (const m of ['Facebook page "Kopian" (page ID 1299101096626433)', '31 words of our advertising copy appear verbatim', '31 consecutive words: "regnet löven och fågelskiten hamnar på taket"', 'running since 1 September 2026', 'approximately 12,345 people in the EU', 'our ad "Takoverdrag_PD_1_H1" for the product "Taköverdrag Husvagn"', 'report 1 of 2', 'each ad is reported separately']) assert.ok(a1.falt.contentDescription.includes(m), `saknar: ${m}`);
+  assert.deepEqual(a1.falt.originalWorkUrls, ['https://baverbutiken.se/products/takoverdrag', varAdLibraryLank(KONFIG, 'Bäverbutiken')]);
+  assert.match(a1.falt.additionalInfo, /https:\/\/cdn\.shopify\.com\/s\/files\/x\/bevis-1\.png/); assert.match(a1.falt.additionalInfo, /Internal reference: KD-2026-011, report 1\/2/); assert.match(a1.falt.additionalInfo, /cease-and-desist letter with invoice F-KD-2026-011-1 was sent to the advertiser on 29 September 2026/);
+  assert.deepEqual(a1.falt.declarations, [...FORSAKRINGAR]); assert.equal(a1.falt.signature, 'Axel Odhner'); assert.equal(a1.bevisbildUrl, 'https://cdn.shopify.com/s/files/x/bevis-1.png');
+  assert.deepEqual(kontrolleraAnmalan(a1), []);
+  const a3 = anmalningar[1];
+  assert.equal(a3.nr, 2); assert.equal(a3.libraryId, '333'); assert.match(a3.falt.contentDescription, /1 image in the ad is our own copyrighted product photograph \(perceptual-hash comparison: identical, distance 1\/64\)/); assert.match(a3.falt.contentDescription, /The ad is a video/); assert.match(a3.falt.additionalInfo, /attached to this report/);
+  assert.doesNotMatch(JSON.stringify(a3), /skarm3\.png/); // Axels lokala fil står aldrig i anmälan
+  // Stopp: ingen undertecknare, ingen bevisbild
+  const utan = byggAnmalan(arende, t1, { ...KONFIG, anmalan: { ...KONFIG.anmalan, undertecknare: {} } }, { nr: 1, antal: 1 });
+  assert.match(kontrolleraAnmalan(utan).join(), /undertecknare saknas/); assert.match(kontrolleraAnmalan(utan).join(), /ingen bevisbild/);
+  const txt = anmalanText(a1);
+  for (const m of ['REPORT 1/2 — case KD-2026-011', 'Reported ad (URL): https://www.facebook.com/ads/library/?id=111', 'Full name: Axel Odhner', 'Rights owner: Stonebite Ecom AB (reg. no. 559576-2401)', '[x] I have a good faith belief', 'Electronic signature: Axel Odhner', 'Attachment: arenden/KD-2026-011/anmalan/bevis-1.png']) assert.ok(txt.includes(m), `saknar: ${m}`);
+  // Bevisbilden: båda kolumnerna, passagen markerad hos dem, inga externa bilder
+  assert.equal(markera('Regnet, löven och fågelskiten hamnar på taket! Köp nu.', 'regnet löven och fågelskiten hamnar på taket'), '<mark>Regnet, löven och fågelskiten hamnar på taket</mark>! Köp nu.');
+  assert.equal(markera('helt annan text', 'regnet löven och fågelskiten'), 'helt annan text'); assert.equal(markera('a & b', null), 'a &amp; b');
+  const html = bevisbildHtml(arende, t1, { miniatyr: (u) => (u === 'https://cdn/ann.png' ? 'data:image/png;base64,AAAA' : null), nu: '2026-09-29T12:00:00Z', nr: 1, antal: 2 });
+  assert.match(html, /Copyright infringement evidence — case KD-2026-011, ad 1 of 2/); assert.match(html, /Our original — Takoverdrag_PD_1_H1/); assert.match(html, /Reported ad — page "Kopian"/); assert.match(html, /<mark>Regnet, löven och fågelskiten hamnar på taket<\/mark>/); assert.match(html, /EU reach ≈ 12,345/); assert.match(html, /31 words copied verbatim/);
+  assert.match(html, /src="data:image\/png;base64,AAAA"/); assert.match(html, /No image in this ad/); assert.doesNotMatch(html, /src="http/);
+  const v = verifieringHtml({ arende, anmalningar, bilder: { 1: 'data:image/png;base64,BBBB' }, uppdaterad: '2026-09-29T12:00:00Z' });
+  assert.match(v, /<title>Anmälningar KD-2026-011<\/title>/); assert.match(v, /2 anmälningar till Meta — en per annons/); assert.match(v, /kör anmälningarna KD-2026-011/); assert.match(v, /Anmälan 1 av 2 — annons 111/); assert.match(v, /Anmälan 2 av 2 — annons 333/); assert.match(v, /Ingen bevisbild — anmälan går utan skärmdump/); assert.match(v, /Axel Odhner/); assert.doesNotMatch(v, /undefined|null/);
 });
 
 test('adLibraryToken: den verifierade personens användartoken först, sedan den vanliga', () => {
