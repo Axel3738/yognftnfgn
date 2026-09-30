@@ -7,7 +7,7 @@
   "klar": "FINISHED",
   "_om": "Avläst ur hubbens statuskolumn 2026-09-30 (Axels skärmdump + API): Draft → … → In Review → Approved + Launched in SE → To be translated to ACTIVE MARKETS → FINISHED. 'Translation in review', 'Hereer to be rewied' och 'Not used' finns också i kolumnen men används inte av rutinen."
  },
- "typ_regex": "pending approval",
+ "typ_regex": "^(video|image) - (pending approval|approved)$",
  "granskare": {
   "test_dagar": 3,
   "test_dagar_om": "Axel 2026-09-30: marknaderna testas i tre dagar. En marknad döms först när kampanjen haft spend tre HELA dygn (dagens halva räknas aldrig).",
@@ -29,6 +29,9 @@
  },
  "tak_per_korning": 6,
  "tak_om": "Högst sex nya översättningar (rad × marknad) per körning. HeyGen precision kostar ~1,5 USD per video och språk; resten tas nästa dag.",
- "aldrig_utomlands": ["katarina"],
- "aldrig_utomlands_om": "Axel 2026-09-27: Katarinas UGC får aldrig lämna Sverige. En rad vars namn eller sida nämner henne stoppas."
+ "aldrig_utomlands": [
+  "katarina"
+ ],
+ "aldrig_utomlands_om": "Axel 2026-09-27: Katarinas UGC får aldrig lämna Sverige. En rad vars namn eller sida nämner henne stoppas.",
+ "typ_om": "Mätt 2026-09-30: en launchad rad bar Typ \"Video - Approved\", inte \"… Pending Approval\" — regeln tar båda. Inkludering, aldrig uteslutning: SOP/Guideline/Feedback kommer aldrig med."
 }

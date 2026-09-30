@@ -94,8 +94,23 @@ function visaMarknader({ idag, domar, mal }) {
   console.log(mal.length ? `➡️  Översätts till: ${mal.map((m) => m.kod).join(', ')}` : '➡️  Ingen marknad skalar — inget översätts i dag.');
 }
 
-async function ko(status) {
-  return klaraRader({ id: K.hub_id, titel: 'Matstrumpor creative hub' }, { statusar: [status.toLowerCase()], typ: new RegExp(K.typ_regex, 'i') });
+/** Sidans text (egenskaperna + blocken högst upp) — för spärren "aldrig utomlands" (Katarina). Utan den
+ *  prövade spärren bara radnamnet, och ett MATSTRUMP_-namn nämner aldrig kreatören (fel hittat 2026-09-30). */
+async function sidText(id) {
+  const H = { Authorization: `Bearer ${process.env.NOTION_TOKEN}`, 'Notion-Version': '2022-06-28' };
+  const bitar = [];
+  const sida = await (await fetch(`https://api.notion.com/v1/pages/${id}`, { headers: H })).json();
+  for (const p of Object.values(sida.properties ?? {})) for (const t of p.rich_text ?? p.title ?? []) bitar.push(t.plain_text);
+  const b = await (await fetch(`https://api.notion.com/v1/blocks/${id}/children?page_size=100`, { headers: H })).json();
+  if (b.object === 'error') throw new Error(`Notion svarade ${b.status} på sidan ${id} — spärren kan inte prövas`);
+  for (const x of b.results ?? []) for (const t of x[x.type]?.rich_text ?? []) bitar.push(t.plain_text);
+  return bitar.join(' ');
+}
+
+async function ko(status, { medText = false } = {}) {
+  const rader = await klaraRader({ id: K.hub_id, titel: 'Matstrumpor creative hub' }, { statusar: [status.toLowerCase()], typ: new RegExp(K.typ_regex, 'i') });
+  if (medText) for (const r of rader) r.text = await sidText(r.id);
+  return rader;
 }
 
 function notionSkriv(sid, kommentar, status) {
@@ -136,7 +151,7 @@ async function huvud() {
 
   if (har('--plan')) {
     const g = await granska();
-    const rader = await ko(K.status.ko);
+    const rader = await ko(K.status.ko, { medText: true });
     const p = planera(rader, g.mal, g.finns, K);
     if (har('--json')) { console.log(JSON.stringify({ ...g, finns: undefined, rader: rader.length, ...p }, null, 1)); return; }
     visaMarknader(g);
@@ -153,7 +168,7 @@ async function huvud() {
   if (sid) {
     const g = await granska();
     if (!g.mal.length) throw new Error('Ingen marknad skalar — raden kan inte vara klar i "alla mål".');
-    const rad = (await ko(K.status.ko)).find((r) => r.id.replace(/-/g, '') === sid.replace(/-/g, ''));
+    const rad = (await ko(K.status.ko, { medText: true })).find((r) => r.id.replace(/-/g, '') === sid.replace(/-/g, ''));
     if (!rad) throw new Error(`Raden ${sid} ligger inte i "${K.status.ko}".`);
     const p = planera([rad], g.mal, g.finns, { ...K, tak_per_korning: Infinity });
     if (!p.klara.length) throw new Error(`${rad.namn} saknas fortfarande i: ${p.att_gora.map((a) => a.kod).join(', ') || p.stoppade.map((s) => s.skal).join('; ')}`);

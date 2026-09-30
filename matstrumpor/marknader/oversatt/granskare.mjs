@@ -42,7 +42,7 @@ export function forstaSpendDygn(dagar, idag) {
 export function domMarknad({ k, dagar = [], fonster = null, be, g, idag, manuellt }) {
   const bas = { kod: k.kod, kampanj: k.kampanj ?? null, effective_status: k.effective_status ?? null, break_even: be?.roas ?? null, break_even_kalla: be?.kalla ?? null };
   if (manuellt?.lage) {
-    return { ...bas, lage: manuellt.lage === 'skalar' ? LAGE.SKALAR : LAGE.AV, manuellt: true, motivering: `Axels ord ${manuellt.datum ?? ''}: ${manuellt.citat ?? manuellt.lage}`.trim() };
+    return { ...bas, lage: manuellt.lage === 'skalar' ? LAGE.SKALAR : LAGE.AV, manuellt: true, motivering: `Axels ord ${manuellt.datum ?? ''}: ${manuellt.citat ?? manuellt.lage}${manuellt.lage === 'skalar' && k.effective_status !== 'ACTIVE' ? ` — ⚠️ kampanjen är ${k.effective_status ?? 'inte hittad'}, så nya annonser laddas upp PAUSADE` : ''}`.trim() };
   }
   if (k.effective_status !== 'ACTIVE') return { ...bas, lage: LAGE.AV, motivering: `kampanjen är ${k.effective_status ?? 'inte hittad'} i kontot` };
   const forsta = forstaSpendDygn(dagar, idag);

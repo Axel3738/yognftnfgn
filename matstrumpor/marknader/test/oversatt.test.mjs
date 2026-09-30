@@ -95,3 +95,16 @@ test('--ny-aktiv slår bara på i en skalande marknad med dagens dom och aktiv k
   assert.equal(farNyAktiv({ ...ok, kampanjStatus: 'PAUSED' }).ok, false);
   assert.equal(farNyAktiv({ ...ok, granskare: null }).ok, false);
 });
+
+test('Typ-regeln tar både Pending Approval och Approved, aldrig SOP/Guideline', async () => {
+  const { readFileSync } = await import('node:fs');
+  const K = JSON.parse(readFileSync(new URL('../oversatt/konfig.json', import.meta.url), 'utf8'));
+  const re = new RegExp(K.typ_regex, 'i');
+  for (const t of ['Video - Pending Approval', 'Image - Pending Approval', 'Video - Approved']) assert.ok(re.test(t), t);
+  for (const t of ['SOP', 'Guideline', 'Feedback', 'Winning Creative', '']) assert.ok(!re.test(t), t);
+});
+
+test('Axels skalar på en pausad kampanj säger att annonserna blir pausade', () => {
+  const d = domMarknad({ k: { kod: 'DE', effective_status: 'PAUSED' }, be, g, idag: '2026-10-03', manuellt: { lage: 'skalar' } });
+  assert.match(d.motivering, /PAUSADE/);
+});
