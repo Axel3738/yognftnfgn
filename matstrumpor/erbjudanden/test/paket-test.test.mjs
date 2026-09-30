@@ -8,7 +8,7 @@ import { join, dirname } from 'node:path';
 import {
   lasSpec, valideraSpec, nivaFalt, nivaerUr, renderingar, renderUtanVariant, patchaProduktJson, patchaIndexJson,
   lasTestRader, aktivaTest, nyttTestVarde, bytTestRad, kodBelopp, kassaSumma, sidPris, sidaMotKassa, rabattMutation,
-  planPa, planAv, tillampa, patchaSnippetFastVariant, harFastVariantPatch, SNIPPET, synligt, kontrolleraLage, slutlageFel, tolkaKundvy, krUrText, delaHuvud, B_BLOCK,
+  planPa, planAv, tillampa, utlandFel, patchaSnippetFastVariant, harFastVariantPatch, SNIPPET, synligt, kontrolleraLage, slutlageFel, tolkaKundvy, krUrText, delaHuvud, B_BLOCK,
 } from '../paket-test.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -247,7 +247,7 @@ test('snippeten: fast_variant-patchen är två ändringar, verkningslös utan fa
   const plan = planPa(lage(), SPEC, CTX);
   const x = plan.steg.reduce((l, s) => tillampa(l, s), lage());
   const pr = renderingar(x.mallar['templates/product.json']).filter((q) => !q.mix);
-  assert.deepEqual(pr.map((q) => [q.test, q.testVariant, q.variant]), [['paket', 'a', 'a'], ['paket', 'b', 'paket-b']]);
+  assert.deepEqual(pr.map((q) => [q.land, q.test, q.testVariant, q.variant]), [['SE', 'paket', 'a', 'a'], ['!SE', null, null, 'a'], ['SE', 'paket', 'b', 'paket-b']]);
   assert.match(x.mallar['templates/product.json'], /variant: 'paket-b', fast_variant: 52506473365843 %/);
   assert.match(x.mallar['templates/index.json'], /variant: 'paket-b', fast_variant: 52506473365843 %/);
   assert.doesNotMatch(x.mallar['templates/index.json'], /variant: 'a', fast_variant/);
@@ -304,4 +304,28 @@ test('kundvyns tolkning: testet av ⇒ A; aktivt ⇒ variantens nivåer och pris
   assert.equal(krUrText('1 197,00 kr'), 1197);
   assert.equal(krUrText('SEK 399'), 399);
   assert.equal(krUrText('1.197,50 kr'), 1197.5);
+});
+
+test('landspärren: utanför Sverige ser alla A — det som låg live 13:48 visade B:s kronor i JPY/NOK', () => {
+  // Läget som gick live 13:48 = specen utan b_land.
+  const utanLand = { ...SPEC, b_land: undefined };
+  const live = planPa(lage(), utanLand, CTX).steg.reduce((l, s) => tillampa(l, s), lage());
+  assert.ok(utlandFel(live, SPEC, SIM).some((f) => /^NO product\/b: B-nivåerna syns utanför SE/.test(f)));
+  assert.deepEqual(synligt(live, { sida: 'product', besokare: 'b', ...SIM, land: 'JP' }).filter((r) => r.nivaer.length).flatMap((r) => r.nivaer), ['sushi-paket-1', 'sushi-paket-2', 'sushi-paket-4']);
+  // Rättningen: bara de två mallarna skrivs om, i den ordningen, och varje mellanläge håller
+  const plan = planPa(live, SPEC, CTX);
+  assert.deepEqual(plan.hinder, []);
+  assert.deepEqual(plan.steg.map((s) => s.fil ?? s.typ), ['templates/product.json', 'templates/index.json']);
+  let x = live;
+  for (const s of plan.steg) { x = tillampa(x, s); assert.deepEqual(kontrolleraLage(x, SIM), [], s.fil); }
+  assert.deepEqual(utlandFel(x, SPEC, SIM), []);
+  for (const land of ['NO', 'JP', 'DE', 'US']) for (const b of ['a', 'b']) for (const sida of ['product', 'index']) {
+    assert.deepEqual(synligt(x, { sida, besokare: b, ...SIM, land }).filter((r) => r.nivaer.length).flatMap((r) => r.nivaer), ['sushi-2', 'sushi-4'], `${land} ${sida} ${b}`);
+  }
+  for (const b of ['a', 'b']) assert.deepEqual(synligt(x, { sida: 'product', besokare: b, ...SIM, land: 'SE' }).filter((r) => r.nivaer.length).flatMap((r) => r.nivaer), b === 'a' ? ['sushi-2', 'sushi-4'] : ['sushi-paket-1', 'sushi-paket-2', 'sushi-paket-4']);
+  assert.deepEqual(planPa(x, SPEC, CTX).steg, []); // idempotent
+  // --av från det rättade läget: testet av, alla länder ser A
+  let y = x;
+  for (const s of planAv(x, SPEC).steg) { y = tillampa(y, s); assert.deepEqual(kontrolleraLage(y, SIM), []); }
+  assert.deepEqual(slutlageFel(y, SPEC), []);
 });

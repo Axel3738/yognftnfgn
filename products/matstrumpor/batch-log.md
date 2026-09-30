@@ -413,3 +413,13 @@ på kronor kvar före reklam per variant — inte på antal ordrar ensamt. ~100 
 från den möter andra priser. Liten spend; syns i avläsningen.
 ⚠️ Överstruket pris på B (898 / 1 796 kr) = lådornas och pinnarnas listpris utan kod, samma
 räkning som A visar.
+
+**Rättat 2026-09-30 ~14:01 CEST — B visades utomlands.** 13:48–14:01 ritades B-köprutan även
+på /nb, /ja, /de, /en: B:s 499/799 lästes som belopp i kundens valuta (¥499, NOK 499) medan
+koderna drar fasta kronor. 0 B-ordrar hann komma in (senaste order 13:19 UTC vid kontrollen).
+Nu: A-omslaget och B-blocket bara när `localization.country.iso_code == 'SE'`, andra länder ser
+A utan test (specarna `b_land: "SE"`). Mätt efteråt i publik HTML: B-blocket 1 gång på SE,
+0 på NO/JP/DE (produktsidan) och NO/US (startsidan); `--kassaprov` 399/499/799. Läs testet
+bara på ordrar med leveransland SE (ms-ab.js stämplar även utländska besökare).
+⚠️ `templates/index.json` läses inte tillbaka "identiskt" av verktyget trots att innehållet är
+rätt live — skrivningen gick igenom, kontrollen är för strikt. Undersök innan nästa mallskrivning.

@@ -205,6 +205,20 @@ export function nivaerUr(noder) {
 
 // ── mallarna ─────────────────────────────────────────────────────────────────────────────────────────
 
+const LAND_RE = /\{%-?\s*if localization\.country\.iso_code == '([A-Z]{2})'\s*-?%\}([\s\S]*?)(?:\{%-?\s*else\s*-?%\}([\s\S]*?))?\{%-?\s*endif\s*-?%\}/g;
+/** custom_liquid → [{ land: null | 'SE' | '!SE', text }] — landgrenarna som testets renderingar ligger i. */
+function landDelar(cl) {
+  const ut = [];
+  let sist = 0;
+  for (const m of cl.matchAll(LAND_RE)) {
+    ut.push({ land: null, text: cl.slice(sist, m.index) });
+    ut.push({ land: m[1], text: m[2] });
+    if (m[3] != null) ut.push({ land: `!${m[1]}`, text: m[3] });
+    sist = m.index + m[0].length;
+  }
+  ut.push({ land: null, text: cl.slice(sist) });
+  return ut;
+}
 const RENDER_RE = /(?:<div\s+data-ms-ab="([^":]+):([^"]+)"(\s+hidden)?\s*>)?\s*\{%-?\s*render\s+'ms-paket'\s*,([^%]*?)-?%\}/g;
 
 /** Alla renderingar av ms-paket i en mall, i visningsordning. */
@@ -226,10 +240,10 @@ export function renderingar(mallText) {
       }
       const cl = b.settings?.custom_liquid;
       if (typeof cl !== 'string' || !cl.includes("'ms-paket'")) continue;
-      for (const m of cl.matchAll(RENDER_RE)) {
+      for (const del of landDelar(cl)) for (const m of del.text.matchAll(RENDER_RE)) {
         const param = m[4];
         ut.push({
-          sektion: sid, block: bid,
+          sektion: sid, block: bid, land: del.land,
           test: m[1] ?? null, testVariant: m[2] ?? null, dold: Boolean(m[3]),
           variant: /variant:\s*'([^']*)'/.exec(param)?.[1] ?? '',
           mix: /mix:\s*true/.test(param),
@@ -254,9 +268,29 @@ export function renderUtanVariant(filer) {
 
 const A_OMSLAG = (test) => `data-ms-ab="${test}:a"`;
 export const B_BLOCK = 'ms_paket_b';
+// ⛔ B bara i Sverige (mätt 2026-09-30 13:58 UTC som kund med ?ms_ab=paket:b): alla andra marknader har fasta
+// prislistor (NOK 469, EUR 44,90, USD 69, JPY 7 980, TWD 1 690 för 5-par), och snippetens fastprisläge räknar
+// fastpris 499/799 som belopp i KUNDENS valuta — Japan såg "2 lådor ¥499 (förr ¥18,120)", Norge "499,00 kr" för
+// 1 056 NOK, Tyskland och USA fullpris utan rabatt medan koden (fasta kronor, omräknade) drog av i kassan. B-nivåernas
+// rubriker har heller inga översättningar. Därför ritas B-blocket bara när kundens land är specens b_land, och A-blocket
+// bär sitt testomslag bara där — i alla andra länder syns A för alla, även för en besökare som lottats till B.
+const landVillkor = (land) => `{%- if localization.country.iso_code == '${land}' -%}`;
+export function aBlockLiquid(spec, { produkt = 'product', sektion = 'section.id' } = {}) {
+  const render = `{% render 'ms-paket', product: ${produkt}, section_id: ${sektion}, variant: 'a' %}`;
+  if (!spec.b_land) return `<div ${A_OMSLAG(spec.test)}>${render}</div>`;
+  return `${landVillkor(spec.b_land)}<div ${A_OMSLAG(spec.test)}>${render}</div>{%- else -%}<div>${render}</div>{%- endif -%}`;
+}
 const fastParam = (fastId) => (fastId ? `, fast_variant: ${Number(fastId)}` : '');
-export function bBlockLiquid(spec, fastId = null) {
-  return `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: product, section_id: block.id, variant: '${spec.b_variant}'${fastParam(fastId)} %}</div>`;
+export function bBlockLiquid(spec, fastId = null, { produkt = 'product' } = {}) {
+  const b = `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: ${produkt}, section_id: block.id, variant: '${spec.b_variant}'${fastParam(fastId)} %}</div>`;
+  return spec.b_land ? `${landVillkor(spec.b_land)}${b}{%- endif -%}` : b;
+}
+/** Känner igen en custom_liquid vars enda innehåll är renderingar av ms-paket i testets former (ingen mix). */
+function arTestetsForm(cl, { produkt, varianter }) {
+  const r = renderingar(JSON.stringify({ sections: { x: { settings: { product: 'x' }, blocks: { y: { type: 'custom_liquid', settings: { custom_liquid: cl } } } } }, order: ['x'] }));
+  if (!r.length || r.some((x) => x.mix || !varianter.includes(x.variant))) return false;
+  const rest = cl.replace(LAND_RE, (m, l, a, b) => a + (b ?? '')).replace(RENDER_RE, '').replace(/<\/?div[^>]*>/g, '').trim();
+  return rest === '' && cl.includes(`product: ${produkt}`);
 }
 
 /** product.json: A-blocket → <test>:a, nytt B-block direkt efter. Idempotent. */
@@ -267,12 +301,11 @@ export function patchaProduktJson(text, spec, fastId = null) {
   const byten = [];
   const a = main.blocks.ms_paket;
   const cl = a.settings?.custom_liquid ?? '';
-  if (!/render\s+'ms-paket'/.test(cl) || /mix:\s*true/.test(cl) || !/variant:\s*'a'/.test(cl)) throw new Error("product.json: ms_paket är inte en render av ms-paket med variant: 'a' — okänd form, rör den inte");
-  if (!cl.includes(A_OMSLAG(spec.test))) {
-    const ny = cl.replace(/data-ms-ab="[^"]*"/, A_OMSLAG(spec.test));
-    if (ny === cl) throw new Error('product.json: ms_paket saknar data-ms-ab-omslag');
-    a.settings.custom_liquid = ny;
-    byten.push(`ms_paket: omslaget → ${spec.test}:a`);
+  const onskatA = aBlockLiquid(spec);
+  if (cl !== onskatA) {
+    if (!arTestetsForm(cl, { produkt: 'product', varianter: ['a'] })) throw new Error("product.json: ms_paket är inte en render av ms-paket med variant: 'a' — okänd form, rör den inte");
+    a.settings.custom_liquid = onskatA;
+    byten.push(`ms_paket: omslaget → ${spec.test}:a${spec.b_land ? ` (bara ${spec.b_land}; andra länder ser A utan omslag)` : ''}`);
   }
   const onskat = { type: 'custom_liquid', settings: { custom_liquid: bBlockLiquid(spec, fastId) } };
   if (JSON.stringify(main.blocks[B_BLOCK]) !== JSON.stringify(onskat)) {
@@ -293,20 +326,18 @@ export function patchaProduktJson(text, spec, fastId = null) {
 export function patchaIndexJson(text, spec, fastId = null) {
   const { huvud, data } = delaHuvud(text);
   const byten = [];
-  const par = (bid) => `<div ${A_OMSLAG(spec.test)}>{% render 'ms-paket', product: section.settings.product, section_id: section.id, variant: 'a' %}</div>`
-    + `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: section.settings.product, section_id: block.id, variant: '${spec.b_variant}'${fastParam(fastId)} %}</div>`;
-  const gammaltPar = (bid) => par(bid).replace(fastParam(fastId), '');
+  const P = 'section.settings.product';
+  const par = aBlockLiquid(spec, { produkt: P }) + bBlockLiquid(spec, fastId, { produkt: P });
   for (const [sid, s] of Object.entries(data.sections ?? {})) {
     for (const [bid, b] of Object.entries(s.blocks ?? {})) {
       const cl = b.settings?.custom_liquid;
       if (typeof cl !== 'string' || !cl.includes("'ms-paket'")) continue;
-      if (cl === par(bid)) continue;
-      if (fastId && cl === gammaltPar(bid)) { b.settings.custom_liquid = par(bid); byten.push(`${sid}/${bid}: B-renderingen får fast_variant ${fastId}`); continue; }
-      const r = [...cl.matchAll(RENDER_RE)];
-      if (r.length === 1 && !r[0][1] && !/variant:/.test(r[0][4]) && /product:\s*section\.settings\.product/.test(r[0][4]) && cl.trim() === r[0][0].trim()) {
-        b.settings.custom_liquid = par(bid);
-        byten.push(`${sid}/${bid}: startsidans köpruta → ${spec.test}:a + ${spec.test}:b`);
-      } else throw new Error(`index.json ${sid}/${bid}: okänd form på ms-paket-renderingen — rör den inte`);
+      if (cl === par) continue;
+      // Kända former: originalet (en render utan variant) och våra tidigare par (utan fast_variant / utan landspärr).
+      if (!arTestetsForm(cl, { produkt: P, varianter: ['', 'a', spec.b_variant] })) throw new Error(`index.json ${sid}/${bid}: okänd form på ms-paket-renderingen — rör den inte`);
+      const forut = renderingar(JSON.stringify({ sections: { x: { settings: { product: 'x' }, blocks: { y: { type: 'custom_liquid', settings: { custom_liquid: cl } } } } }, order: ['x'] }));
+      b.settings.custom_liquid = par;
+      byten.push(`${sid}/${bid}: startsidans köpruta → ${spec.test}:a + ${spec.test}:b${fastId ? ` (fast_variant ${fastId})` : ''}${spec.b_land ? ` bara ${spec.b_land}` : ''} (förut ${forut.map((x) => x.test ? `${x.test}:${x.testVariant}` : 'utan test').join(' + ')})`);
     }
   }
   return { text: byten.length ? satt(huvud, data) : text, byten };
@@ -583,12 +614,13 @@ export function tillampa(lage, s) {
 
 // ── vad kunden ser (simulering av Liquid + ms-ab.js) ──────────────────────────────────────────────────
 
-export function synligt(lage, { sida, besokare, produktId, produktHandle }) {
+export function synligt(lage, { sida, besokare, produktId, produktHandle, land = 'SE' }) {
   const fil = sida === 'index' ? 'templates/index.json' : 'templates/product.json';
   const aktiva = new Set(aktivaTest(lasTestRader(lage.settings)));
   const ut = [];
   for (const r of renderingar(lage.mallar[fil])) {
     if (r.produkt !== 'sidans' && r.produkt !== produktHandle) continue;
+    if (r.land && !(r.land === land || (r.land.startsWith('!') && r.land.slice(1) !== land))) continue;
     const syns = r.test && aktiva.has(r.test) ? besokare === r.testVariant : !r.dold;
     if (!syns) continue;
     const nivaer = lage.nivaer.filter((n) => {
@@ -604,15 +636,28 @@ export function synligt(lage, { sida, besokare, produktId, produktHandle }) {
   return ut;
 }
 
+/** Utanför b_land: B-nivåerna får aldrig synas (deras fastpris är kronor). */
+export function utlandFel(lage, spec, { produktId, produktHandle }) {
+  if (!spec.b_land) return [];
+  const bh = new Set(spec.b_nivaer.map((n) => n.handle));
+  const fel = [];
+  for (const sida of ['product', 'index']) for (const besokare of ['a', 'b']) {
+    const syns = synligt(lage, { sida, besokare, produktId, produktHandle, land: 'NO' }).flatMap((r) => r.nivaer).filter((h) => bh.has(h));
+    if (syns.length) fel.push(`NO ${sida}/${besokare}: B-nivåerna syns utanför ${spec.b_land} (${syns.join(', ')})`);
+  }
+  return fel;
+}
+
 /** Invarianten: på produktsidan och startsidan ser både A- och B-besökare EN köpruta med nivåer, utan dubbla antal. */
 export function kontrolleraLage(lage, { produktId, produktHandle }) {
   const fel = [];
-  for (const sida of ['product', 'index']) for (const besokare of ['a', 'b']) {
-    const s = synligt(lage, { sida, besokare, produktId, produktHandle }).filter((r) => r.nivaer.length);
-    if (s.length === 0) fel.push(`${sida}/${besokare}: ingen köpruta med nivåer`);
-    if (s.length > 1) fel.push(`${sida}/${besokare}: ${s.length} köprutor syns samtidigt`);
+  for (const land of ['SE', 'NO']) for (const sida of ['product', 'index']) for (const besokare of ['a', 'b']) {
+    const pre = land === 'SE' ? '' : `${land} `;
+    const s = synligt(lage, { sida, besokare, produktId, produktHandle, land }).filter((r) => r.nivaer.length);
+    if (s.length === 0) fel.push(`${pre}${sida}/${besokare}: ingen köpruta med nivåer`);
+    if (s.length > 1) fel.push(`${pre}${sida}/${besokare}: ${s.length} köprutor syns samtidigt`);
     const antal = s.flatMap((r) => r.antal);
-    if (new Set(antal).size !== antal.length) fel.push(`${sida}/${besokare}: samma antal två gånger (${antal.join(', ')})`);
+    if (new Set(antal).size !== antal.length) fel.push(`${pre}${sida}/${besokare}: samma antal två gånger (${antal.join(', ')})`);
   }
   return fel;
 }
@@ -924,12 +969,13 @@ async function huvud() {
   const simFel = [];
   for (const [i, s] of plan.steg.entries()) { lage = tillampa(lage, s); for (const f of kontrolleraLage(lage, sim)) simFel.push(`efter steg ${i + 1}: ${f}`); }
   for (const f of slutlageFel(lage, spec)) simFel.push(`slutläget: ${f}`);
+  if (pa) for (const f of utlandFel(lage, spec, sim)) simFel.push(`slutläget: ${f}`);
   log(simFel.length ? simFel.map((f) => `❌ simulering: ${f}`).join('\n') : `✅ simulering: alla ${plan.steg.length} mellanlägen visar en köpruta för A och B på produktsidan och startsidan; slutläget följer regeln`);
   if (pa && !plan.hinder.length && !plan.skarptHinder.length && !simFel.length) log('✅ inget stoppar --skarpt (körs bara på Axels ok)');
   if (!pa) {
     for (const v of ['a', 'b']) for (const sida of ['product', 'index']) log(`   efter --av, ${sida}, besökare ${v}: ${synligt(lage, { sida, besokare: v, ...sim }).filter((r) => r.nivaer.length).map((r) => r.nivaer.join(', ')).join(' / ')}`);
   } else {
-    for (const v of ['a', 'b']) for (const sida of ['product', 'index']) log(`   efter --pa, ${sida}, besökare ${v}: ${synligt(lage, { sida, besokare: v, ...sim }).filter((r) => r.nivaer.length).map((r) => r.nivaer.join(', ')).join(' / ')}`);
+    for (const land of ['SE', 'NO']) for (const v of ['a', 'b']) for (const sida of ['product', 'index']) log(`   efter --pa, ${land} ${sida}, besökare ${v}: ${synligt(lage, { sida, besokare: v, ...sim, land }).filter((r) => r.nivaer.length).map((r) => r.nivaer.join(', ')).join(' / ')}`);
   }
   if (!skarpt) return;
   if (plan.hinder.length || plan.skarptHinder.length || simFel.length) { log('\n⛔ Skriver ingenting: hinder ovan.'); process.exitCode = 1; return; }

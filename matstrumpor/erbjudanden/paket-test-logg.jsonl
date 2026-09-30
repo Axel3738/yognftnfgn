@@ -8,3 +8,4 @@
 {"tid":"2026-09-30T13:48:03.199Z","typ":"niva","handle":"sushi-2","diff":[{"key":"ab_variant","fore":null,"efter":"a"}],"id":"gid://shopify/Metaobject/410438533459"}
 {"tid":"2026-09-30T13:48:03.845Z","typ":"niva","handle":"sushi-4","diff":[{"key":"ab_variant","fore":null,"efter":"a"}],"id":"gid://shopify/Metaobject/410438566227"}
 {"tid":"2026-09-30T13:48:04.494Z","typ":"settings","fil":"config/settings_data.json","fore":"# sortval","efter":"# sortval\npaket:50:50"}
+{"tid":"2026-09-30T14:01:41.093Z","typ":"mall","fil":"templates/product.json","byten":["ms_paket: omslaget → paket:a (bara SE; andra länder ser A utan omslag)","ms_paket_b: B-blocket (paket:b, variant 'paket-b', fast_variant 52506473365843)"]}

@@ -7,6 +7,7 @@
   "gratis_produkt_handle": "sushipinnar-i-akta-tra",
   "standard_variant": "5 - Par / One Size",
   "b_fast_variant": "5 - Par / One Size",
+  "b_land": "SE",
   "a_nivaer": ["sushi-2", "sushi-4"],
   "b_nivaer": [
     { "handle": "sushi-paket-1", "antal": 1, "rubrik": "1 låda", "underrubrik": "5 par strumpor", "bricka": "", "fastpris": 299, "rabattkod": "SUSHI-1LADA", "bogo_gratis": 0, "gratis_antal": 0, "gratis_text": "", "forvald": false },
