@@ -52,6 +52,12 @@ async function api(sökväg, params = {}) {
   const url = new URL(`${API}/${sökväg}`);
   url.searchParams.set('access_token', TOKEN);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : String(v));
+  return hamtaUrl(url);
+}
+
+// Samma backoff för första sidan och för `paging.next` — en strypning mitt i
+// bläddringen gav förut (t.o.m. 2026-09-30) tyst halva svaret. Se hamta-kontodata.mjs.
+async function hamtaUrl(url) {
   for (let f = 0; ; f++) {
     const t = senast + PAUS_MS - Date.now();
     if (t > 0) await vänta(t);
@@ -75,12 +81,7 @@ async function alla(sökväg, params = {}) {
   let svar = await api(sökväg, { ...params, limit: params.limit ?? 200 });
   ut.push(...(svar.data || []));
   while (svar.paging?.next) {
-    const t = senast + PAUS_MS - Date.now();
-    if (t > 0) await vänta(t);
-    senast = Date.now();
-    const res = await fetch(svar.paging.next);
-    svar = await res.json().catch(() => ({}));
-    if (svar.error) { if (svar.error.code === 17) { await vänta(20000); continue; } throw new Error(`Meta paging: ${svar.error.message}`); }
+    svar = await hamtaUrl(svar.paging.next);
     ut.push(...(svar.data || []));
   }
   return ut;

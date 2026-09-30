@@ -44,6 +44,14 @@ export async function api(sökväg, params = {}) {
   const url = new URL(`${API}/${sökväg}`);
   url.searchParams.set('access_token', TOKEN);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : String(v));
+  return hamtaUrl(url);
+}
+
+/**
+ * Ett GET mot en färdig adress (första sidan eller `paging.next`), med samma
+ * paus och samma backoff. Ger aldrig upp tyst: tar försöken slut kastas felet.
+ */
+export async function hamtaUrl(url) {
   for (let f = 0; ; f++) {
     const t = senast + PAUS_MS - Date.now();
     if (t > 0) await vänta(t);
@@ -62,17 +70,16 @@ export async function api(sökväg, params = {}) {
   }
 }
 
+// Nästa sida hämtas med samma backoff som första. Förut (t.o.m. 2026-09-30)
+// gjorde en strypning (kod 17) mitt i bläddringen `continue` på felsvaret, som
+// saknar `paging.next` — loopen tog slut och gav de sidor den hunnit hämta,
+// utan ett ord. Hittat av facit-kartläggningen 2026-09-30.
 export async function alla(sökväg, params = {}) {
   const ut = [];
   let svar = await api(sökväg, { ...params, limit: params.limit ?? 200 });
   ut.push(...(svar.data || []));
   while (svar.paging?.next) {
-    const t = senast + PAUS_MS - Date.now();
-    if (t > 0) await vänta(t);
-    senast = Date.now();
-    const res = await fetch(svar.paging.next);
-    svar = await res.json().catch(() => ({}));
-    if (svar.error) { if (svar.error.code === 17) { await vänta(20000); continue; } throw new Error(`Meta paging: ${svar.error.message}`); }
+    svar = await hamtaUrl(svar.paging.next);
     ut.push(...(svar.data || []));
   }
   return ut;

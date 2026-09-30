@@ -14,6 +14,7 @@ import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRa
 import { brieftak, harLevandeVinnare, minnesmapp, mix, vidarebyggBehov } from './lardom.mjs';
 import { cpaStiger, cpaText, dagarOver, klickandel, CPA_STIG_DAGAR } from './trend.mjs';
 import { cpaDiagnos, funnellage, lasMatris, rutorAttBygga, storstaObesvarade, tackningRad, tackningText, FUNNEL_BUDGET_SEK } from './invandningar.mjs';
+import { facitNot, status as facitStatus } from './facit.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -846,6 +847,21 @@ export function rapport(rader, meta, behov = []) {
   }
   ut.push('');
 
+  // Facit (Axel 2026-09-30, agent/FACIT.md): hur motorns tidigare beslut i
+  // samma läge gick — bredvid dagens beslut, före "Att godkänna". Ändrar inget.
+  if (meta.facit) {
+    ut.push(`## 🎯 Facit — så har motorns beslut gått (${meta.facit.skapad})`);
+    ut.push('');
+    for (const s of meta.facit.status.slice(1)) ut.push(s);
+    const medNot = sorterade.filter((r) => r.dom?.facit && (r.dom.kraverGodkannande || r.dom.facit.familj.startsWith('HALL')));
+    if (medNot.length) {
+      ut.push('');
+      ut.push('Dagens beslut bredvid sin hink:');
+      for (const r of medNot) ut.push(`- **${r.namn.split('|')[0].trim()}** (${r.dom.kod}) — ${r.dom.facit.text}`);
+    }
+    ut.push('');
+  }
+
   // Ägarens kampanjer (Axels order 2026-09-22): listicle-/lagerrensnings-
   // kampanjerna döms AGARENS och skrivs ut så det syns att motorn lät dem vara.
   const agarens = rader.filter((r) => r.dom?.kod === 'AGARENS');
@@ -1098,7 +1114,25 @@ async function main() {
     varningar.push('agent/spegelbudget.json saknas — spegelmarknaderna (CaraShell) räknas inte i briefkvoten i dag (rond-auto steg 1c).');
   }
 
-  const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf), spegel };
+  // Facit (Axels beställning 2026-09-30, agent/FACIT.md): hur motorns tidigare
+  // budgetbeslut i samma läge faktiskt gick. Läses HÄR och läggs bredvid
+  // domen som `dom.facit` — koden, budgeten och planen är desamma med eller
+  // utan (testat). Saknas filen eller är den gammal: en varning, inget mer.
+  const kal = await lasKalibrering();
+  let facit = null;
+  if (kal) {
+    const alder = (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${kal.skapad}T00:00:00Z`)) / 86400000;
+    if (!Number.isFinite(alder) || alder > KALIBRERING_MAX_DAGAR) {
+      varningar.push(`agent/kalibrering.json är från ${kal.skapad ?? 'okänt datum'} — facit visas inte i dag (rond-auto steg 1d).`);
+    } else {
+      for (const r of rader) { const not = facitNot(kal, r); if (not) r.dom.facit = not; }
+      facit = { skapad: kal.skapad, forslag: kal.forslag ?? [], status: facitStatus(kal) };
+    }
+  } else {
+    varningar.push('agent/kalibrering.json saknas — facit visas inte i dag (rond-auto steg 1d: node agent/facit.mjs --hamta).');
+  }
+
+  const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf), spegel, facit };
   if (argv.includes('--json')) {
     const behovslista = annonsbehov(rader, { logg, idag, marknad, spegel }).map((b) => {
       const rad = rader.find((r) => r.id === b.kampanj_id);
@@ -1110,6 +1144,18 @@ async function main() {
     }, null, 2));
   } else {
     console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag, marknad, spegel })));
+  }
+}
+
+/** Facit-kalibreringen får vara så här många dygn gammal innan den inte visas. */
+export const KALIBRERING_MAX_DAGAR = 3;
+
+/** agent/kalibrering.json (skriven av agent/facit.mjs), eller null. */
+async function lasKalibrering() {
+  try {
+    return JSON.parse(await readFile(join(HÄR, 'kalibrering.json'), 'utf8'));
+  } catch {
+    return null;
   }
 }
 

@@ -171,6 +171,39 @@ briefer per marknad, ingen linjär skalning med spenden — Axels besked
 marknaderna räknas. Är filen äldre än 20 timmar varnar ronden och räknar
 utan den.
 
+### 1d. Facit — hur gick motorns tidigare beslut? (OBLIGATORISKT, läs-bart)
+
+Axels beställning 2026-09-30: *"en feedbackloop som kollar om det var bra
+eller dåligt att vi skalade och stängde av … så att vi lär oss vart det är
+okej att skala mer och vart vi kan spara in mer pengar."* Allt om metoden:
+`agent/FACIT.md`.
+
+```bash
+node agent/facit.mjs --hamta
+```
+
+Skriptet hämtar kampanjernas dygnsserie (7d_click, även avstängda kampanjer)
+och Metas aktivitetslogg för budgetändringar ur båda kontona med token, dömer
+varje höjning, sänkning och avstängning vars fönster stängt sedan i går, och
+skriver tre filer: nya rader i `agent/facit.jsonl`, hinkarna och förslagen i
+`agent/kalibrering.json`, rapporten i `agent/utdata/facit-<IDAG>.md`. Steg 2
+läser `kalibrering.json` och lägger hinkens bråk bredvid varje beslut
+(`dom.facit`) och i rapportens avsnitt `## 🎯 Facit`.
+
+**Det här steget ändrar ingenting i Meta och ingenting i planen.** Det är inte
+en budgetändring, så "utför bara det som står i plan.atgarder" gäller inte
+här — steget körs varje dag. Facit skrivs ALDRIG i `agent/budgetlogg.jsonl`
+(en rad där med `ny_budget` fryser kampanjen tre dygn, och varje annan kod
+nollställer uppskjutningsräknaren i `planera`).
+
+**Fail-open:** stryper Meta (kod 17) eller felar skriptet — skriv orsaken på
+en rad i leveransen och gå vidare till steg 2. Ronden säger själv att facit
+saknas. Kör aldrig om hämtningen fler än en gång; budgetändringarna går före.
+
+Förslagen i kalibreringen (`⚑`) är **Axels beslut**. Du ändrar aldrig
+`agent/besked.mjs` för att ett förslag säger det — du nämner dem i
+leveransen, och Axel svarar ja eller nej.
+
 ## 2. Räkna — en gång per marknad
 
 ```bash
@@ -1241,7 +1274,8 @@ surf-läget, bär `ny_budget`), `FATIGUE_TEST` och `FATIGUE_TEST_SVAR` (4b).
 ## 6. Leverans
 
 Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
-(om ändrad) till `claude/daily-agent-discussion-uos5df`.
+(om ändrad) + facit (`agent/facit.jsonl`, `agent/kalibrering.json`,
+`agent/utdata/facit-<IDAG>.md` från steg 1d) till `claude/daily-agent-discussion-uos5df`.
 
 **Gick pushen igenom: du är klar här.** Bygg INTE om dashboarden och
 publicera ingen artefakt — se blocket högst upp i filen.
@@ -1265,6 +1299,17 @@ Den ger breakthrough-frekvensen per produkt som bråk OCH procent ("3/21
 många etiketterade annonser som saknar lärdom, hur många briefer som
 skrevs och hur många av dem som pekar på en lärdom, vidarebyggen med
 deadline, och koncept vid taket. Samma rader på engelska i Discord.
+
+**Facit-raderna är obligatoriska i varje rond** (Axels beställning
+2026-09-30) — klistra in utskriften av:
+```bash
+node agent/facit.mjs --status
+```
+Den säger hur motorns höjningar, sänkningar och avstängningar faktiskt gick
+(rätt som bråk, kronor mot kontrollen, marginal-ROAS mot break-even), vad
+väntan kostade, och hur många regelförslag som väntar på Axel. I Discord:
+`node agent/facit.mjs --status --en` — samma rader på engelska, INNE i den
+enda `--kanal ronden`-posten (ingen egen post, inga extra pingar).
 
 **Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
 **på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
@@ -1318,6 +1363,9 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Tre Meta-anrop gjorda mot BÅDA kontona: SE `1867947880635861` och NO `1050941584152547`
 - [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
 - [ ] `agent/spegelbudget.json` skriven ur OPS-kontot och USA-kontot (bara CaraShell, bara läst — steg 1c) och committad; `## 🪞 Spegelmarknader` läst i rapporten
+- [ ] Facit körd i steg 1d (`node agent/facit.mjs --hamta`) FÖRE steg 2 — eller orsaken skriven på en rad; `agent/facit.jsonl` + `agent/kalibrering.json` + `agent/utdata/facit-<IDAG>.md` pushade; `## 🎯 Facit` läst i rapporten
+- [ ] `node agent/facit.mjs --status` i leveransen (och `--en` i Discord-posten); varje ⚑ förslag nämnt för Axel — inget förslag verkställt, `agent/besked.mjs` orörd
+- [ ] Ingen facit-rad i `agent/budgetlogg.jsonl`
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte
