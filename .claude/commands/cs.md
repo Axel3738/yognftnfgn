@@ -18,7 +18,7 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 
 ## Gör följande, hela kedjan utan att invänta godkännande
 
-**0. Kundernas kommentarer först (Axel 2026-09-30):** kör `node agent/leads.mjs --prefix <Annonsprefix>`. Varje 🟢 BRIEFA-lead blir en brief i batchen med `lead=<VOC-id>` + `kalla=voc` (fri mot brieftaket), ⏸-leads listas i rapporten. Regeln i sin helhet: `/rond-auto` 4b → "Kundernas kommentarer FÖRST".
+**0. Kundernas kommentarer som underlag (Axel 2026-09-30):** kör `node agent/leads.mjs --prefix <Annonsprefix>` och låt invändningarna och frågorna styra diagnosen och valet av vinkel/hook inom batchens vanliga antal — aldrig en brief per kommentar. Återkommande invändningar in i `dna.md`. Regeln: `/rond-auto` 4b → "Kundernas kommentarer är underlag".
 
 ### 1. Läs läget
 - **Chatthistoriken:** hitta briefarna/manusen från de senaste CS-rundorna i
