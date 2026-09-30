@@ -1,0 +1,157 @@
+{
+  "skapad": "2026-09-30",
+  "version": 1,
+  "halveringstid": 30,
+  "beslut": {
+    "HOJ": {
+      "gissningar": 86,
+      "ratt": 70,
+      "fel": 16,
+      "oklara": 0,
+      "andel": 0.811
+    },
+    "SANK": {
+      "gissningar": 14,
+      "ratt": 2,
+      "fel": 2,
+      "oklara": 10,
+      "andel": 0.486
+    },
+    "VANTA_HOG": {
+      "gissningar": 53,
+      "ratt": 39,
+      "fel": 14,
+      "oklara": 0,
+      "andel": 0.734
+    },
+    "VANTA_FORLUST": {
+      "gissningar": 19,
+      "ratt": 9,
+      "fel": 10,
+      "oklara": 0,
+      "andel": 0.466
+    }
+  },
+  "monster": [
+    {
+      "id": "M2286",
+      "beslut": "HOJ",
+      "villkor": {
+        "lage": "1,6–2,0 × BE",
+        "kop": "10–29"
+      },
+      "typ": "miss",
+      "vanlig_andel": 0.811,
+      "fall": 12,
+      "kampanjer": 10,
+      "ratt": 5,
+      "fel": 7,
+      "andel": 0.55,
+      "lag": 0.37,
+      "hog": 0.729,
+      "fel_i_rad": 2,
+      "senast": "2026-09-20",
+      "forst_listad": "2026-09-30"
+    },
+    {
+      "id": "M9258",
+      "beslut": "VANTA_HOG",
+      "villkor": {
+        "kop": "30 eller fler"
+      },
+      "typ": "miss",
+      "vanlig_andel": 0.734,
+      "fall": 10,
+      "kampanjer": 4,
+      "ratt": 4,
+      "fel": 6,
+      "andel": 0.512,
+      "lag": 0.327,
+      "hog": 0.697,
+      "fel_i_rad": 0,
+      "senast": "2026-09-23",
+      "forst_listad": "2026-09-30"
+    },
+    {
+      "id": "M6853",
+      "beslut": "HOJ",
+      "villkor": {
+        "lage": "1,6–2,0 × BE"
+      },
+      "typ": "miss",
+      "vanlig_andel": 0.811,
+      "fall": 18,
+      "kampanjer": 12,
+      "ratt": 11,
+      "fel": 7,
+      "andel": 0.654,
+      "lag": 0.502,
+      "hog": 0.806,
+      "fel_i_rad": 1,
+      "senast": "2026-09-20",
+      "forst_listad": "2026-09-30"
+    },
+    {
+      "id": "M7972",
+      "beslut": "VANTA_FORLUST",
+      "villkor": {
+        "kop": "10–29"
+      },
+      "typ": "styrka",
+      "vanlig_andel": 0.466,
+      "fall": 8,
+      "kampanjer": 5,
+      "ratt": 7,
+      "fel": 1,
+      "andel": 0.693,
+      "lag": 0.507,
+      "hog": 0.878,
+      "fel_i_rad": 0,
+      "senast": "2026-09-19",
+      "forst_listad": "2026-09-30"
+    },
+    {
+      "id": "M6732",
+      "beslut": "VANTA_FORLUST",
+      "villkor": {
+        "kop": "under 10"
+      },
+      "typ": "miss",
+      "vanlig_andel": 0.466,
+      "fall": 11,
+      "kampanjer": 9,
+      "ratt": 2,
+      "fel": 9,
+      "andel": 0.282,
+      "lag": 0.117,
+      "hog": 0.446,
+      "fel_i_rad": 1,
+      "senast": "2026-09-21",
+      "forst_listad": "2026-09-30"
+    },
+    {
+      "id": "M1720",
+      "beslut": "VANTA_HOG",
+      "villkor": {
+        "budget": "<1 000"
+      },
+      "typ": "styrka",
+      "vanlig_andel": 0.734,
+      "fall": 7,
+      "kampanjer": 4,
+      "ratt": 7,
+      "fel": 0,
+      "andel": 0.886,
+      "lag": 0.759,
+      "hog": 1.013,
+      "fel_i_rad": 0,
+      "senast": "2026-09-23",
+      "forst_listad": "2026-09-30"
+    }
+  ],
+  "slump": {
+    "miss": 0.7,
+    "styrka": 0.3,
+    "nyligen_samre": 1.6
+  }
+}

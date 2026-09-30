@@ -1731,6 +1731,24 @@ export function rapportMd(kal, { nya = [] } = {}) {
 
 const dimNamn = (d) => ({ marknad: 'marknad', zon: 'budget före', band: 'ROAS/BE vid beslutet', trappa: 'ROAS ÷ target', fart: 'fart', forsta_steg: 'första steget', total: 'hela ändringen', kedja: 'kedja', regelverk: 'regelverk' }[d] ?? d);
 
+/**
+ * Kalibreringen som fil: bara det ronden och nästa morgon läser (7-dygnshinkarna,
+ * hållhinkarna, mätaren, förslagen och historiken), en hink per rad. Filen
+ * committas varje dag — med 3-dygnskopiorna och indrag var den 700 kB
+ * (2026-09-30). Förslagen räknas på allt i minnet innan filen skrivs.
+ */
+export function kalibreringSomText(kal) {
+  const { hinkar, hinkar_nya_regeln: _nya, hall, ...rest } = kal;
+  const fil = { ...rest, hinkar: { lang: hinkar?.lang ?? {} }, hall: { lang: hall?.lang ?? {} } };
+  const rad = (v) => JSON.stringify(v);
+  const block = (obj, ind) => `{\n${Object.entries(obj).map(([k, v]) => `${ind}  ${rad(k)}: ${rad(v)}`).join(',\n')}\n${ind}}`;
+  const delar = Object.entries(fil).map(([k, v]) => {
+    if (k === 'hinkar' || k === 'hall') return `  ${rad(k)}: { "lang": ${block(v.lang, '  ')} }`;
+    return `  ${rad(k)}: ${rad(v)}`;
+  });
+  return `{\n${delar.join(',\n')}\n}\n`;
+}
+
 // ── CLI ──────────────────────────────────────────────────────────────────────
 
 function lasJsonl(fil) {
@@ -1826,7 +1844,7 @@ async function main(argv) {
   if (nyaGissningar.length) appendFileSync(GISSNINGSFIL, nyaGissningar.map((r) => JSON.stringify(r)).join('\n') + '\n');
   if (minne) { const t = `${MONSTERFIL}.tmp`; writeFileSync(t, `${JSON.stringify(minne, null, 2)}\n`); renameSync(t, MONSTERFIL); }
   const tmp = `${KALIBRERINGSFIL}.tmp`;
-  writeFileSync(tmp, `${JSON.stringify(utfall.kalibrering, null, 2)}\n`);
+  writeFileSync(tmp, kalibreringSomText(utfall.kalibrering));
   renameSync(tmp, KALIBRERINGSFIL);
   const rapportfil = join(HÄR, 'utdata', `facit-${idag}.md`);
   mkdirSync(dirname(rapportfil), { recursive: true });
