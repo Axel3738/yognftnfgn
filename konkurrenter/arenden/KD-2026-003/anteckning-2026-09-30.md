@@ -59,3 +59,21 @@ Ja betyder att Axel intygar att annonsen till vänster är vår: vi har klippt d
 och skrivit texten. Efter hans Ja skickas anmälningarna till Metas formulär.
 Meta visar en säkerhetskontroll (captcha) vid Submit från containern, så
 inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
+
+## Inskickningen
+
+- **Axel sa Ja på alla 6 korten** 09:24–09:25 UTC, på kortens aktuella
+  versioner (`--granska-svar` gav anmälan 1–6, 0 nej). Han skrev samma
+  förmiddag: "Vi ska skicka in alla … de har mer än tio annonser som är snodda
+  från oss." Han trodde att sidan låg under tröskeln. Mätt ligger den över på
+  båda sätten: 11 live-kopior, och annons 11 har 61 564 i räckvidd.
+- **Containern 09:38 UTC, anmälan 1:** torrkörningen fyllde alla fält. Den
+  skarpa körningen begärde koden, och sessionen läste den ur Gmail. Meta visade
+  då "Security check" vid Submit. **Inget är inskickat.** Skärmdumpen
+  `1-sakerhetskontroll.png` är gitignorerad.
+- **Vägen vidare:** `anmalan/COWORK-PROMPT.txt` (6 anmälningar, texterna
+  kontrollerade ord för ord mot korten Axel godkände). Cowork fyller i Axels
+  Chrome, och Axel gör säkerhetskontrollen. Kvittona skrivs med
+  `--anmald KD-2026-003 --nr <n> --referens <r>` när Axel klistrar in Coworks
+  lista.
+- Taköverdragets 5 är fortfarande inte med.
