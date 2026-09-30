@@ -41,58 +41,97 @@ Talet i videon är hans egna påståenden. Han visar inga siffror från något k
 | Döm inte på 24 timmar | ✅ Ja | `docs/os/ANALYSMETOD.md`: ingen dom under 300 kr / 3 köp, etikett dag 7 |
 | Frakt och kommunikation | ✅ Ja | Spårningssidan i sex butiker, autosvaret skarpt, 5–10 arbetsdagar |
 | Produktpipeline | ✅ Delvis | OPS-fabriken, tacksidans tilläggsprodukter i CaraShell |
-| Butikskredit efter köp | ✅ Delvis | KREDIT100 i Bäverbutikens efter-köp-mejl (Spoks F04 v3) |
+| Butikskredit efter köp | ✅ Delvis | KREDIT100 i Bäverbutikens efter-köp-mejl (Spoks F04 v2 + v3) och på spårningssidan |
 | LTV genom produktval | ⚠️ Passar oss dåligt | Bäverbutiken har ett enda produktpar med återköp (motorhölje → båtmotorskydd), Matstrumpor 1,2 % återköp, CaraShell 0 återköp (`klaviyo/evolve/ATERKOP-ANALYS*.md`, CLAUDE.md). **CAC är vår spak, inte LTV.** |
-| **Cost cap / bid cap** | ❌ Aldrig testat | Läst i Meta 2026-09-30: alla **31 aktiva kampanjer** i MagiBorsten (22), OPS-kontot (5), Magiborsten UK (3) och nya kungen (1) kör `LOWEST_COST_WITHOUT_CAP`. Fabriken bygger bara det (`factory/kampanj.mjs`). |
-| **Kundenkät** | ❌ Nej | Står i `docs/os/EPOST-STRATEGI.md` som "kräver Axels ok" sedan 2026-09-24. Evolve sa samma sak (Mar 13 [1:07:12]). |
+| **Cost cap / bid cap** | ❌ Nej, och Evolve säger nej | Läst i Meta 2026-09-30: **alla 45 aktiva kampanjer i alla sju konton** token:en når (MagiBorsten 22, Magiborsten NO 12, OPS-kontot 5, Magiborsten UK 3, Magiborsten FI 1, nya kungen 1, SnarkLös 1) kör `LOWEST_COST_WITHOUT_CAP`. Enda försöket någonsin: SnarkLös "Cost caps SE" juni 2026, 160 kr, 0 köp (för lite för en dom). |
+| **Kundenkät** | ⏳ Byggs | Axel bygger en enkät efter köpet i en annan session (2026-09-30). |
 | **Organiskt / fler kanaler** | ❌ Nej | Allt betalt går via Meta. |
 
 ---
 
-## Vad vi kan göra just nu (sessionens rangordning)
+## Efter Chadbots svar (2026-09-30): vad som gäller
 
-1. **Kundenkät efter leverans, alla tre butiker.** Ett mejl i Spoks efter leveransen med
-   fyra–fem frågor. Svaren blir `voc` i briefer och mejl. Billigast, ingen risk för
-   annonskontona, och datan saknas helt i dag. Kan byggas som inaktivt flöde; att slå på
-   är Axels klick.
-2. **Cost cap-test i EN kampanj.** En kopia av en CBO som redan går, taket satt på
-   break-even-CPA ur `products/products.json` eller lägre, högre budget, läst först efter
-   7 dagar. Budget och produkt är Axels beslut. Vänta på Chadbots svar först.
-3. **Organiskt för Matstrumpor inför jul.** Rolig bakom-kulisserna-video, ingen försäljning.
-   Kräver någon som filmar. Vänta på Chadbots svar.
+Chadbots svar står i `SVAR.md`. En kontroll i fyra delar körde samma kväll: tidigare beslut i
+repot, KREDIT100 i Shopify och Spoks, svensk lag om utlottning, och en skeptisk granskare.
+Förslagen i sessionens första svar är ändrade efter den.
 
-### Till sessionen som bygger enkäten efter köpet (2026-09-30)
+1. **Cost cap med uppblåst budget: inför det inte.** Evolve kör en CBO på lägsta kostnad som
+   standard och skalar vinnare genom att höja budgeten ("I wouldn't test with CC", Shaun). Vi kör
+   redan så i alla 45 kampanjer. Förslaget "cost cap-test i en kampanj" från första svaret är
+   struket. Ett äldre förslag på StonePNL-grenen (`docs/annonsdoktrin/granskning-meta-mekanik.md`,
+   2026-08-27: cost cap = 0,85 × break-even-CPA från S1) togs aldrig in och ska inte tas upp igen
+   som nytt. Ändras budstrategin någon gång är det Axels beslut.
+2. **Zombiekampanj (cost cap för annonser utan spend): inte nu.** Evolve står bakom den, men bara
+   som räddningsverktyg. Regel 11 (Axels beslut 2026-09-20) säger att alla nya annonser går i
+   produktens CBO, och att en annons utan spend på sju dygn etiketteras `INGEN_LEVERANS` och
+   släpps. Etiketten sätts under 10 kr de första sju dygnen, och annonsen pausas aldrig. En
+   zombiekampanj blir en extra kampanj per produkt som ronden, spendtjuven och commission måste
+   undanta, och Evolves egna ord om den är "adds some more spend but it's not scaling"
+   (`docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` §5). Vill Axel pröva är det hans budgetbeslut.
+3. **Organiskt: inte nu.** Chadbot har en datapunkt och inget besked för vår sorts produkter. Görs
+   det någon gång: mät försäljning per miljon visningar (cirka 10 000 dollar är bra, cirka 1 000
+   dollar fungerar inte som annons), och räkna med att Meta inte alltid spenderar på det som gick
+   bra organiskt. Det här gäller inte Axels beslut 2026-09-27 att betalda Facebook Reels är av i
+   CaraShell US; det handlar om placeringar.
+4. **Butikskredit: mät vår egen, fråga inte igen.** Evolve har en datapunkt i
+   `klaviyo/evolve/SVAR.md` (Grayson): butikskredit för köp två används till cirka 30 % och kostar
+   lite. Om cashbackprogram vid cirka 1 % återköp finns inget. **Mätt 2026-09-30 20:15 UTC:**
+   KREDIT100 har använts **0 gånger** (Shopify `asyncUsageCount`), och 103 köpare har passerat
+   kreditmejlets steg i Spoks (96 i F04 v2, 7 i F04 v3). Det bevisar inte att mejlen gick fram,
+   och fyra dygn är för tidigt för en dom. 30 %-rean fram till 22/10 går till samma köpare och
+   KREDIT100 kombineras bara med fraktrabatter, så koden används mindre under rean. **Mät igen
+   efter 22/10** mot Graysons 30 %. Ordrarna med koden gick inte att läsa här (`ACCESS_DENIED`,
+   SE-appen saknar orderrättighet och `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER` finns inte i den här
+   miljön). `mejl/matning.mjs` läser fortfarande koden TACKIGEN och ska pekas om till KREDIT100
+   med startdatum 2026-09-26 innan mätningen görs. Föreslå aldrig hjulet eller TACKIGEN igen:
+   det gav 0 köp.
 
-Axel bygger redan en enkät efter köpet i en annan session. Det här är vad videon säger
-om enkäten, och vad sessionen här lägger till.
+### Till sessionen som bygger enkäten efter köpet (rättad 2026-09-30)
 
-**Ur videon (11:00–13:30 och 15:00):**
-- Målet är att förstå kunden, så att annonserna säljer en **känsla**. Bred copy till en bred
-  målgrupp ger hög CAC, för då hittar Meta inte kunden.
-- Hans frågor: vad gör du, hur gammal är du, vad fick dig att köpa, vad ska vi bli bättre på,
-  vad är viktigt för dig.
-- Han använder svaren till tre saker: att välja kreatörer som liknar kunden, att förstå vad
-  kunden vill ha, och att välja kanal efter var kunden lägger sin tid.
-- Han visar inga siffror på att enkäten fungerar.
+⚠️ Den första versionen av det här avsnittet sa att frågor om produkten skulle gå ut **efter
+leveransen**. Chadbots svar säger att en enkät efter leveransen gav noll svar. Det är en enda
+anekdot, men den pekar åt samma håll som Evolves övriga råd: frågorna ska ställas på tacksidan
+eller direkt efter köpet.
+
+**Ur videon (11:00–13:30):** målet är att förstå kunden, så att annonsen säljer en känsla. Hans
+frågor: vad gör du, hur gammal är du, vad fick dig att köpa, vad ska vi bli bättre på, vad är
+viktigt för dig. Han visar inga siffror på att enkäten fungerar.
+
+**Ur Chadbots svar:** fritext före flerval ("people actually have to type shit"), tacksidan
+fungerar, efter leveransen gav noll svar, en utlottning hellre än en belöning per svar. Syftet är
+att hitta köpare man inte visste om (exemplet: köparna var överviktiga män, inte gravida kvinnor).
 
 **Sessionens tillägg:**
-- En fråga om **situationen före köpet** ("vad hände som gjorde att du letade efter det här?")
-  ger annonsvinklar. Den är vår egen idé och finns inte i videon.
-- Fråga **var de såg produkten och vilken app de använder mest**. Svaret avgör om organiskt
-  eller en ny kanal (videons punkt 3) är värt tiden.
-- Spara svaren **ordagrant**, märkta `voc`, på samma sätt som `kommentarer/leads.md`. Då kan
-  `/cs` bygga koncept på dem. Åldern ger målgruppen till `/ugc-scout`.
-- "Vad ska vi bli bättre på" och "vad mer skulle du vilja köpa av oss" matar
-  produktpipelinen (videons punkt om LTV). Nästan ingen köper igen hos oss i dag.
-- Spoks `order_delivered` fyrar i Bäverbutiken och CaraShell (mätt 2026-09-28 och 2026-09-30).
-  Om frågorna gäller själva produkten ska enkäten gå ut efter leveransen. Frågan om varför de
-  köpte svarar kunden bäst direkt efter köpet, till exempel på tacksidan.
-- Bär mejlet en belöning (kredit eller utlottning) är det reklam. Samma regel som
-  köparflödena gäller då: bara köpare som inte har tackat nej (`kundundantag`).
-- Kunderna skriver butikens namn i svaren. Stryk det innan ett citat hamnar i en brief,
-  för butikens namn står aldrig i en annons.
-- Chadbot har fått frågan om vilka enkätfrågor som faktiskt ger nya vinklar (`FRAGOR.md`
-  punkt 2). Svaret hamnar i `SVAR.md`.
+- På tacksidan: en till tre fritextfrågor. **Vad hände som gjorde att du letade efter det här?**
+  **Var såg du produkten?** **Köpte du till dig själv eller till någon annan?** Frågor om själva
+  produkten kan kunden inte svara på förrän paketet har kommit fram, så de får vänta eller strykas.
+- Spara svaren ordagrant, märkta `voc`, stryk butikens namn, och koppla aldrig ett svar till en
+  enskild annons. Att svaren matar `/cs` är vår egen koppling; Evolve beskriver att de matar
+  mejlsegmenteringen.
+- Bara CaraShell har en tacksidesextension (`factory/tacksida/`, appen "CaraShell Tacksida").
+  Bäverbutiken och Matstrumpor behöver en egen app, och i alla tre butikerna läggs blocket in med
+  Axels klick i kassaredigeraren. Svaren måste också sparas någonstans; tacksidans app har ingen
+  databas i dag.
+- **Belöning:** helst ingen för en kort enkät. Blir det ett pris är det säkraste EN tidsbegränsad
+  utlottning av ett presentkort med fast dragningsdatum och oförändrade priser, som visas först
+  efter köpet och aldrig som ett skäl att köpa. Den är då licensfri enligt spellagen 3 kap. 4 §
+  (Spelinspektionens ställningstagande om insats 2025-04-15) och skattefri för vinnaren
+  (IL 8 kap. 3 §). En utlottning varje månad som aldrig tar slut är en gråzon.
+- **Villkoren ska stå fullt ut** (MFL 9–10 §, svarta listan punkt 19): arrangör, vem som får
+  delta, att inget ytterligare köp krävs, priset och dess värde, sista dag, hur och när vinnaren
+  lottas och hur vinnaren meddelas, kontaktadress.
+- **Mejl:** en enkät som går ut som mejl med en utlottning är reklam. Den får bara gå till köpare
+  som inte har tackat nej (`kundundantag`), med en avregistreringslänk i varje mejl (MFL 19–20 §).
+- **GDPR:** fritext kopplad till en order är personuppgifter. En rad under enkäten med länk till
+  integritetspolicyn, och policyn måste nämna enkäten. Be kunden att inte skriva om hälsa. Gallra
+  svaren efter en bestämd tid, radera deltagaruppgifterna efter dragningen och skriv vinnaren
+  som förnamn plus initial.
+- Det här är sessionens läsning av lagtexten och myndigheternas sidor, inte juridisk rådgivning.
+  Det finns ingen svensk dom om enkäter med utlottning. Källorna:
+  https://www.spelinspektionen.se/lagar-regler/rattsliga-stallningstaganden/insats-enligt-3-kap.-4--1-spellagen,
+  https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/spellag-20181138_sfs-2018-1138/,
+  https://data.riksdagen.se/dokument/sfs-2008-486.text,
+  https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/rattslig-grund/intresseavvagning/.
 
 **Inte nu:** Snapchat/Pinterest (inget team för det) och produktval för LTV (fel sorts
 produkter för det, och det byter vi inte på en video).

@@ -720,8 +720,12 @@ breakthrough och < 3 iterationer loggade".
   månadsrensning av gamla annonser** — ingen kampanj är nära taket; kursens
   egen tröskel är 10 k$/dag. Varningsrad någon gång, inte nu.
 - **Zombie-/graveyard-kampanj** — Evolve själva: "adds some more spend but it's
-  not scaling". `INGEN_LEVERANS`-paus ger samma rensning utan en extra kampanj
-  per produkt att undanta i ronden, spendtjuven och commission.
+  not scaling". Etiketten `INGEN_LEVERANS` ger samma rensning utan en extra kampanj
+  per produkt att undanta i ronden, spendtjuven och commission. Annonsen etiketteras
+  och släpps men pausas aldrig (regel 11). *(Rättat 2026-09-30: här stod
+  "`INGEN_LEVERANS`-paus". Chadbot bekräftade samma dag att zombiekampanjen är
+  Evolves enda användning av cost cap, som räddningsverktyg:
+  `docs/youtube/2026-09-28-manny-barbas-cac-ltv/SVAR.md`.)*
 - **Milanote/Figma som visuell board, betald licens** — Notion är boarden; ett
   tredje verktyg bryter kedjan brief → granskning → leverans → commission.
 - **AI-format med ansikten eller sång: AI-berättelse med människa (§7 #8),
