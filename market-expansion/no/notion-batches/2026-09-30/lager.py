@@ -70,7 +70,8 @@ def main():
     os.makedirs(f'{B}/qa', exist_ok=True)
     skrivna, varningar = [], []
     for namn, t in TIDER.items():
-        inn = f'{B}/no-video/{namn}.mp4'
+        # download skriver <slug>_<namn>.mp4, inte <namn>.mp4
+        inn = f'{B}/no-video/spikkesett_{namn}.mp4'
         kalla = f'{B}/spikkesett/up/{namn}.mp4'
         if not os.path.exists(inn):
             varningar.append(f'{namn}: den renderade filen saknas, hoppad')
