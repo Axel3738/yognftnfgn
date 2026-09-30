@@ -84,6 +84,17 @@ def _font(sokvag, storlek):
         raise TextFel(f"Hittar inte typsnittet {sokvag}: {fel}") from fel
 
 
+def _delar_meningar(block):
+    """Rubriker och citat bryts normalt vid meningsslut — det ger en hook en rad
+    per pastaende. Men en rubrik som ar ett prispastaende ("489 kr till fars dag.
+    Ord. 978 kr.") far da "Ord." som en egen rad mitt i, vilket ser sonderbrutet
+    ut (matt 2026-09-30 i fars dag-ronden). `"meningar": false` later den raden
+    brytas pa ordgrans i stallet. Texten ar ordagrann oavsett."""
+    if block.get("meningar") is False:
+        return False
+    return block["stil"] in ("rubrik", "citat")
+
+
 def _storlek(stil, block):
     """Startgraden för blocket. `storlek` i spec:en låter en layout matcha en
     förälder-creative exakt (Beltgrinder_PD_2_3 ärver Balteslipmaskin_PD_2_1:s
@@ -367,7 +378,7 @@ def lagg_pa_text(spec):
     # Botten ritas nerifrån och upp, så blocken staplas i angiven ordning.
     for b in reversed(bottenblock):
         stil = STILAR[b["stil"]]
-        kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
+        kalla = dela_meningar(b["text"]) if _delar_meningar(b) else b["text"]
         font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
                                maxbredd, _rader(stil, b), rita)
         if b["stil"] == "knapp":
@@ -389,7 +400,7 @@ def lagg_pa_text(spec):
 
     for b in toppblock:
         stil = STILAR[b["stil"]]
-        kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
+        kalla = dela_meningar(b["text"]) if _delar_meningar(b) else b["text"]
         font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
                                maxbredd, _rader(stil, b), rita)
         rh = _radhojd(font)
@@ -423,6 +434,14 @@ def lagg_pa_text(spec):
         rh = _radhojd(font)
         sidfarg = _blackfarg(stil, b)
         if zon == "mitt":
+            # Plattan gick tidigare bara att fa i topp- och bottenzonen. Ett citat
+            # mitt i bilden ligger ofta over himmel eller vatten och blir olasligt
+            # dar (matt 2026-09-30 pa Rodholder_SP_3_1: mork bla text over en ljus
+            # solnedgang). "platta": true ritar samma ljusa ruta har.
+            if b.get("platta"):
+                rita_platta(bild, MARGINAL // 2, hojd / 2 - 18,
+                            bredd - MARGINAL // 2, hojd / 2 + rh * len(rader) + 12)
+                rita = ImageDraw.Draw(bild)
             for i, rad in enumerate(rader):
                 rita.text((bredd / 2, hojd / 2 + i * rh), rad, font=font,
                           fill=sidfarg, anchor="ma")
