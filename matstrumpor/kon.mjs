@@ -127,6 +127,6 @@ export async function hubbNamn(konfig, { fetchFn = fetch } = {}) {
 
 export async function hamtaKo(konfig, val = {}) {
   const hub = { id: konfig.notion.hub_id, titel: konfig.notion.hub_namn };
-  const rader = await klaraRader(hub, { statusar: [konfig.notion.ko_status.toLowerCase()], ...val });
+  const rader = await klaraRader(hub, { statusar: (konfig.notion.ko_statusar ?? [konfig.notion.ko_status]).map((s) => s.toLowerCase()), ...val });
   return { rader, plan: planera(rader, konfig, val) };
 }
