@@ -30,8 +30,8 @@ För varje arbetsyta:
 
 Regler, utan undantag:
 - Radera, rotera eller ändra ALDRIG en nyckel som redan finns. Skapa bara den nya.
-- Rör inga kampanjer, flöden, segment, kontakter, formulär, inställningar eller domäner.
-  Schemalägg inget, skicka inget, slå inte på något.
+- Rör inga kampanjer, flöden, segment, kontakter, formulär eller domäner, och ändra ingen
+  annan inställning än den nya nyckeln. Schemalägg inget, skicka inget, slå inte på något.
 - Logga aldrig in med ett annat Spoks-konto. Syns en arbetsyta inte i väljaren, eller får
   du inte skapa nycklar där: hoppa över den och skriv exakt vad du såg.
 - Ser något annorlunda ut än beskrivet: STANNA, gör inget mer, och skriv exakt vad du ser.
