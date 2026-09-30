@@ -27,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const MARKOR = 'bw-worldwide';
 // v2 (2026-09-30): texterna kommer ur snippets/bw-t.liquid på åtta språk (tema/sprak.json).
-export const VERSION = 'v3'; // v3 2026-09-30: startsidans titel Beaver Store (page_title = butiksnamnet)
+export const VERSION = 'v4'; // v3 2026-09-30: startsidans titel Beaver Store · v4: og/twitter-titeln och den dolda h1:an
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -45,7 +45,10 @@ function byt(innehall, fran, till, fil) {
 
 /** En patch per fil: ren funktion originaltext → ny text. Kastar om temat inte ser ut som väntat. */
 export const PATCHAR = {
-  'snippets/header-logo-block.liquid': (t, f) => byt(t,
+  'snippets/header-logo-block.liquid': (t, f) => byt(byt(t,
+    // Startsidans dolda h1 (skärmläsare, sökmotorer) — utan bindestreck, så svenska grenen renderas som förut.
+    `        <span class="visually-hidden">{{ shop.name }}</span>`,
+    `        <span class="visually-hidden">{% capture bw_h %}{% render 'bw-lage' %}{% endcapture %}{% if bw_h contains 'ww' %}Beaver Store{% else %}{{ shop.name }}{% endif %}</span>`, f),
     `    {%- if block.settings.logo -%}\n      {% comment %}`,
     `    ${CAP}\n    {%- if bw contains 'ww' -%}\n      <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">\n        <img src="{{ 'beaver-store-logga.png' | asset_url }}" alt="Beaver Store" itemprop="logo" width="1920" height="1080" style="height:auto">\n      </a>\n    {%- elsif block.settings.logo -%}\n      {% comment %}`, f),
 
@@ -103,6 +106,9 @@ export const PATCHAR = {
 
   'snippets/social-meta-tags.liquid': (t, f) => {
     t = `${CAP}\n{%- assign bw_namn = shop.name -%}{%- if bw contains 'ww' -%}{%- assign bw_namn = 'Beaver Store' -%}{%- endif -%}\n` + t;
+    // Startsidans og/twitter-titel och beskrivning faller tillbaka på butiksnamnet "Bäverbutiken.se".
+    t = byt(t, `  assign og_description = page_description | default: shop.description | default: shop.name\n-%}`,
+      `  assign og_description = page_description | default: shop.description | default: shop.name\n  if bw contains 'ww'\n    if og_title == shop.name\n      assign og_title = 'Beaver Store'\n    endif\n    if og_description == shop.name\n      capture og_description\n        echo 'Beaver Store · '\n        render 'bw-t', k: 'produkt_svenskt'\n      endcapture\n    endif\n  endif\n-%}`, f);
     return byt(t, `<meta property="og:site_name" content="{{ shop.name }}">`, `<meta property="og:site_name" content="{{ bw_namn }}">`, f);
   },
 };

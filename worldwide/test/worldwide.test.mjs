@@ -27,7 +27,7 @@ test('temapatchen går på Bäverbutikens riktiga temafiler, en gång', () => {
 
 test('temapatchen lägger bara till: varje svensk rad i originalet står kvar', () => {
   // Raderna som patchen medvetet skriver om (if → elsif, span inom gren) räknas bort.
-  const omskrivna = /block\.settings\.logo -%\}$|<img src="\{\{ block\.settings\.logo \| img_url: footer_logo_size|\{\{ shop\.name \}\}$|&ndash; \{\{ shop\.name \}\}|og:site_name|page_title contains shop\.name|av 5|recensioner från kunder|'Recensioner'|från riktiga kunder|block\.settings\.titel \}\}<\/span>|block\.settings\.rad != blank|Recensioner från kunder|stjärnor|Verifierat köp|Föregående recensioner|Fler recensioner/;
+  const omskrivna = /block\.settings\.logo -%\}$|<img src="\{\{ block\.settings\.logo \| img_url: footer_logo_size|\{\{ shop\.name \}\}$|&ndash; \{\{ shop\.name \}\}|og:site_name|page_title contains shop\.name|av 5|recensioner från kunder|'Recensioner'|från riktiga kunder|block\.settings\.titel \}\}<\/span>|block\.settings\.rad != blank|Recensioner från kunder|stjärnor|Verifierat köp|Föregående recensioner|Fler recensioner|visually-hidden">\{\{ shop\.name/;
   for (const fil of Object.keys(PATCHAR)) {
     const ny = patchaFil(fil, original(fil)).text;
     const saknas = original(fil).split('\n').map((l) => l.trim()).filter((l) => l && !omskrivna.test(l)).filter((l) => !ny.includes(l));
@@ -87,7 +87,7 @@ test('granska: siffror, taggar, svenska och förbjudna ord', () => {
   assert.ok(granskaProdukt(kalla, { ...bra, descriptionHtml: '<p>Håller 2.5 liter och det är bra.</p>' }).length > 0);
 });
 
-test('alla 248 engelska produkttexter klarar granskningen', () => {
+test('alla 250 engelska produkttexter (248 + garantin och Kachings Blanda & Spara) klarar granskningen', () => {
   const kallmapp = join(ROT, 'oversattning', 'kalla');
   let n = 0;
   for (const f of readdirSync(kallmapp).filter((x) => x.startsWith('produkter-'))) {
@@ -97,7 +97,7 @@ test('alla 248 engelska produkttexter klarar granskningen', () => {
       n++;
     }
   }
-  assert.equal(n, 248);
+  assert.equal(n, 250);
 });
 
 test('annonserna: namn, länder, aktiveringsspärr', () => {
