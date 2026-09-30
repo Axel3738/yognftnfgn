@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-30T12:45:54.721Z",
+ "uppdaterad": "2026-09-30T15:45:01.390Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -46,6 +46,15 @@
    "forst": "2026-09-27T14:10:56.188Z",
    "larmat": "2026-09-27T14:10:56.188Z",
    "rubrikSv": "Annonsen `Beltgrinder_REV_2_1` AVVISAD"
+  },
+  "konto:1107817401910319:lasfel": {
+   "typ": "konto",
+   "niva": "gul",
+   "rubrik": "Could not read `Magiborsten UK`",
+   "rubrikSv": "Kunde inte läsa `Magiborsten UK`",
+   "konto": "1107817401910319",
+   "forst": "2026-09-30T15:45:01.390Z",
+   "larmat": "2026-09-30T15:45:01.390Z"
   }
  },
  "handelser": [
