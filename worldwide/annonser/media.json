@@ -1470,7 +1470,12 @@
    "worldwide/annonser/klar/Damasker_CS_1.mp4.qa-2.png",
    "worldwide/annonser/klar/Damasker_CS_1.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1034991169568247",
+  "annons_id": "120251691257930435",
+  "creative_id": "1127581973543952",
+  "kampanj_id": "120251679795180435",
+  "skapad": "2026-09-30T13:43:14.190Z"
  },
  "MC-Kapell_CS_2": {
   "fil": "worldwide/annonser/klar/MC-Kapell_CS_2.mp4",
@@ -1483,7 +1488,11 @@
    "worldwide/annonser/klar/MC-Kapell_CS_2.mp4.qa-3.png"
   ],
   "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
-  "video_id": "1638923710906632"
+  "video_id": "1638923710906632",
+  "annons_id": "120251691088500435",
+  "creative_id": "1096902409729786",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T13:34:05.690Z"
  },
  "Taljset_PD_1_H6": {
   "hoppa": "textkoll 2026-09-30: 12.5s 869kr | 12.5s ordinarie1139kr | 13s 869kr"
@@ -1507,7 +1516,12 @@
    "worldwide/annonser/klar/Damasker_PD_3.mp4.qa-2.png",
    "worldwide/annonser/klar/Damasker_PD_3.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1018120110627563",
+  "annons_id": "120251691265520435",
+  "creative_id": "1378093298711828",
+  "kampanj_id": "120251679795180435",
+  "skapad": "2026-09-30T13:43:48.922Z"
  },
  "Batmotor_AU_1_H1": {
   "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Batmotor_AU_1_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för "
@@ -1579,14 +1593,20 @@
    "worldwide/annonser/klar/MC-Kapell_PD_2.mp4.qa-2.png",
    "worldwide/annonser/klar/MC-Kapell_PD_2.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "4506129069659279",
+  "annons_id": "120251691094420435",
+  "creative_id": "932595246201174",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T13:34:33.801Z"
  },
  "Rodholder_PD_12_H1": {
   "fil": "worldwide/annonser/klar/Rodholder_PD_12_H1.mp4",
   "sha256": "6602c4d68f95060c3ea6523a01a5c36e92cc750baf9854fc28b6469af9446c49",
-  "rost": null,
   "granskad": true,
+  "utan_rost": true,
   "granskning": "sessionen 2026-09-30 kväll: bara musik i källan, ingen text i bild — textkoll.py (OCR hela videon) ✅, används som den är",
+  "rost": null,
   "video_id": "1544185124418979",
   "annons_id": "120251690893500435",
   "creative_id": "1400137011716001",
@@ -1660,35 +1680,60 @@
    "worldwide/annonser/klar/MC-Kapell_PD_3.mp4.qa-2.png",
    "worldwide/annonser/klar/MC-Kapell_PD_3.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1723600065370091",
+  "annons_id": "120251691099240435",
+  "creative_id": "1056957913826324",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T13:35:02.147Z"
  },
  "Batmotor_BF_14_1": {
   "fil": "worldwide/annonser/klar/Batmotor_BF_14_1.jpg",
   "sha256": "d7f08a9a1d070105195e391e2849975104ee481d90bd650db6387542e11a4900",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "e288c79b13f70cc94c8412c76e7e0bf6",
+  "annons_id": "120251691366000435",
+  "creative_id": "1729949394764861",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T13:46:49.829Z"
  },
  "IBC_PD_2_1": {
   "fil": "worldwide/annonser/klar/IBC_PD_2_1.jpg",
   "sha256": "75a32d1ecd6193c71718026241bb1ef2d33f27fa848a0a901ea7bdd6c135c5db",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "516009f03716b398aacd28a4051df80c",
+  "annons_id": "120251691517930435",
+  "creative_id": "1302676838575743",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T13:57:18.639Z"
  },
  "Termoskydd_CS_10_1": {
   "fil": "worldwide/annonser/klar/Termoskydd_CS_10_1.jpg",
   "sha256": "4717b432a81fec64bb4a5c729235daf1250d6ba4e53a3f37fba8952b47232f5e",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "133186ee03402f11350469e76820cb23",
+  "annons_id": "120251691653160435",
+  "creative_id": "1576462087479438",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T14:06:32.371Z"
  },
  "Sotarset_PD_4_1": {
   "fil": "worldwide/annonser/klar/Sotarset_PD_4_1.jpg",
   "sha256": "17c5e21cfe56850621facca4cb1b087046c70babe8a3dd5623df69410f1f12a8",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "c453e4ba86daf0d9b186fd8ed6f8f5c8",
+  "annons_id": "120251691774830435",
+  "creative_id": "1976585949689319",
+  "kampanj_id": "120251679569180435",
+  "skapad": "2026-09-30T14:08:56.755Z"
  },
  "Värmesulorna_PD_2_1V": {
   "fil": "worldwide/annonser/klar/V_rmesulorna_PD_2_1V.jpg",
@@ -1697,7 +1742,12 @@
   "efterkontroll": "ren",
   "oparade": [
    "TOUNDRA"
-  ]
+  ],
+  "image_hash": "284680c3f1141fcd6a1e8646b8205032",
+  "annons_id": "120251693682960435",
+  "creative_id": "1102994818938453",
+  "kampanj_id": "120251679808200435",
+  "skapad": "2026-09-30T14:27:10.533Z"
  },
  "Takoverdrag_CS_6_1": {
   "hoppa": "bildgranskning: svensk rad kvar efter omritning"
@@ -1707,7 +1757,12 @@
   "sha256": "5adf871d7ecf4a9aa7c8dbe7f2da69dff6a06d924cf4d3d111559458bdda651f",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "8dbd46f78f9d4656ea78e2cdafc339be",
+  "annons_id": "120251691371990435",
+  "creative_id": "2328303137975542",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T13:46:57.647Z"
  },
  "IBC_CS_2_1": {
   "hoppa": "bildgranskning: suddat pris syns som fläck"
@@ -1717,14 +1772,24 @@
   "sha256": "67ec7d0ce4872370628c44b0b0bae81a3684304a215adb5afb2228b22a3c6f65",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "8b2d91469f3608b2fa65370008a5161b",
+  "annons_id": "120251691658790435",
+  "creative_id": "2246586926129478",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T14:07:03.933Z"
  },
  "MC-Kapell_PD_2_1": {
   "fil": "worldwide/annonser/klar/MC-Kapell_PD_2_1.jpg",
   "sha256": "d171200fd060f536c52a3bea8dae64a2f100dd163b4a24e73cb9ba64ec8ce7da",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "cd9e53873683c85cd898ca445c36e395",
+  "annons_id": "120251692995300435",
+  "creative_id": "1517500646994090",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T14:16:46.438Z"
  },
  "Takoverdrag_PD_8_1": {
   "hoppa": "bildgranskning: mörk fläck efter suddningen"
@@ -1737,27 +1802,47 @@
   "sha256": "33214c4dc128586533fbace5320b5e85e1fd06635795650ecef24cd95abe2017",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "33706f6f9670f79d01da0690760eae72",
+  "annons_id": "120251691543380435",
+  "creative_id": "2340651386730358",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T13:58:34.914Z"
  },
  "Beachslippers_PD_13_10": {
   "fil": "worldwide/annonser/klar/Beachslippers_PD_13_10.jpg",
   "sha256": "75f3a92ab4452cb23b4b4ece302e4ba573437050442b63b30f20dc438be4eb51",
   "granskad": true,
-  "utan_text": true
+  "utan_text": true,
+  "image_hash": "95c59872a409faebb5ff0ccffacee1ee",
+  "annons_id": "120251691666420435",
+  "creative_id": "1630058428792310",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T14:07:21.185Z"
  },
  "MC-Kapell_RI_2_1": {
   "fil": "worldwide/annonser/klar/MC-Kapell_RI_2_1.jpg",
   "sha256": "63d147d7551c728b34af3d242ab029d7e2d35bd61fd3ee1e5ccfa1bd31f28dfa",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "d07386091d1d38e708ddea6f5ccc6402",
+  "annons_id": "120251693018270435",
+  "creative_id": "1085509720748614",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T14:16:53.641Z"
  },
  "Batmotor_BOF_3_1": {
   "fil": "worldwide/annonser/klar/Batmotor_BOF_3_1.jpg",
   "sha256": "66ff918b42c15b83aa9053fcebb312d5cb502a959d90cce275b1e66fac21712c",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "a6c054303b22f28a393bdc2094822f97",
+  "annons_id": "120251691338840435",
+  "creative_id": "1658515602340142",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T13:46:19.366Z"
  },
  "Enginecover_SO_22_2": {
   "hoppa": "bildgranskning: underraden flyter utanför rutan"
@@ -1767,19 +1852,250 @@
   "sha256": "25dc9b0c8ab449d0ea621af9ec66e3f05b7592344ba6809a9d29242507dc9d0c",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "fa4aefb65c1104b8db418f281d033e70",
+  "annons_id": "120251691545050435",
+  "creative_id": "948467265000650",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T13:58:42.389Z"
  },
  "Beachslippers_PD_13_8": {
   "fil": "worldwide/annonser/klar/Beachslippers_PD_13_8.jpg",
   "sha256": "d304613066f899e0c6c9a5a674a9f9cae3532b2554d8688db025f5f2ca8a8461",
   "granskad": true,
-  "utan_text": true
+  "utan_text": true,
+  "image_hash": "443de1c5b32fb514e81727bbf66ab0dd",
+  "annons_id": "120251691676640435",
+  "creative_id": "39158429650437309",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T14:07:28.866Z"
  },
  "MC-Kapell_OB_1_1": {
   "fil": "worldwide/annonser/klar/MC-Kapell_OB_1_1.jpg",
   "sha256": "8b13394973702f58d09cd1294f5900d0eb4f4d521df5c1f54bc15084bdab06e4",
   "granskad": true,
   "efterkontroll": "ren",
-  "oparade": []
+  "oparade": [],
+  "image_hash": "bec4591e4859e9b4d0bf4e12326219f2",
+  "annons_id": "120251693026720435",
+  "creative_id": "2111244446141089",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T14:17:01.415Z"
+ },
+ "Batmotor_SP_1_H10": {
+  "fil": "worldwide/annonser/klar/Batmotor_SP_1_H10.mp4",
+  "sha256": "a9c9943863f7f70b70dbbed7ac8e73f4828cdc8eebebf2711a48539c605eaf0b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Batmotor_SP_1_H10.mp4.qa-1.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H10.mp4.qa-2.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H10.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1080571521371298",
+  "annons_id": "120251691360420435",
+  "creative_id": "1714093929693558",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T13:46:42.981Z"
+ },
+ "Takoverdrag_OB_3_H1": {
+  "hoppa": "textkoll 2026-09-30: 0s Ar det vattentätt? | 12.5s 1129 kr | 12.5s 1469 KR"
+ },
+ "Seatcover_PD_15_H1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_15_H1.mp4",
+  "sha256": "3064ae964b297515f9fceba59e913bd4c90a104fa6ab4972d5657e2002e577b7",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Seatcover_PD_15_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Seatcover_PD_15_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Seatcover_PD_15_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1999498520762500",
+  "annons_id": "120251691385210435",
+  "creative_id": "28940980235585461",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T13:47:38.412Z"
+ },
+ "Motorhölje_PD_1_H2": {
+  "fil": "worldwide/annonser/klar/Motorh_lje_PD_1_H2.mp4",
+  "sha256": "1a8b1a6ecbc42543e0dcef7f72335c88d9e4f1c1ddad628044392741ac860948",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1446446064050499",
+  "annons_id": "120251691408750435",
+  "creative_id": "1083877947950798",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T13:48:57.280Z"
+ },
+ "IBC_PD_1_H2": {
+  "fil": "worldwide/annonser/klar/IBC_PD_1_H2.mp4",
+  "sha256": "e13262c06b4e65ad6569e90bb42d028d2d30a6a4e66b0c47759477760bf3fcef",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/IBC_PD_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/IBC_PD_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/IBC_PD_1_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "948074441688345",
+  "annons_id": "120251691531390435",
+  "creative_id": "1075148778702645",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T13:57:53.311Z"
+ },
+ "IBC_PD_4_H3": {
+  "hoppa": "textkoll 2026-09-30: 9.5s 489 kr idag | 10s 489 kr idag | 10.5s 489 kr idag"
+ },
+ "Termoskydd_CS_1": {
+  "fil": "worldwide/annonser/klar/Termoskydd_CS_1.mp4",
+  "sha256": "21f06fe8b49168e95511db23fb46c07d069a730ac7b4c7eb40d6d8b32b5d136f",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Termoskydd_CS_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Termoskydd_CS_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Termoskydd_CS_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "2294655324656438",
+  "annons_id": "120251691657370435",
+  "creative_id": "3050718835098274",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T14:06:56.817Z"
+ },
+ "Overvakningskamera_PD_2": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_PD_2.mp4",
+  "sha256": "f49c5ea3355e8aa8ff610d766ceb457a9e7c6555b51034318b0f16a85eb3d0a5",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Overvakningskamera_PD_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Overvakningskamera_PD_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Overvakningskamera_PD_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1300516205454744",
+  "annons_id": "120251691541740435",
+  "creative_id": "1395574436033181",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T13:58:27.410Z"
+ },
+ "Seatcover_SP_2_1_H1": {
+  "hoppa": "kundens egen recension i första person (manusagenten 2026-09-30) — går inte att belägga utomlands"
+ },
+ "Damasker_PD_2": {
+  "fil": "worldwide/annonser/klar/Damasker_PD_2.mp4",
+  "sha256": "8df5e5acf27ce036f6ebb8ef3ddf18484dc3237df68e573552374b1e98759406",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_PD_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_PD_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_PD_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1103124526023039",
+  "annons_id": "120251693327860435",
+  "creative_id": "1903177827776839",
+  "kampanj_id": "120251679795180435",
+  "skapad": "2026-09-30T14:18:12.211Z"
+ },
+ "Värmesulorna_PD_1_H3": {
+  "fil": "worldwide/annonser/klar/V_rmesulorna_PD_1_H3.mp4",
+  "sha256": "f19f24afdd406698215ed5eb4327fbf3486a79ab0eeee64c50dce2b3d9110bbb",
+  "granskad": true,
+  "granskning": "sessionen 2026-09-30 kväll: textkoll fann bara produktens engelska tryck \"Output:70%-Med-6H\" (ingen svenska, inga kronor); röstkollen ✅",
+  "video_id": "1567772058681129",
+  "annons_id": "120251693681260435",
+  "creative_id": "2258875711320162",
+  "kampanj_id": "120251679808200435",
+  "skapad": "2026-09-30T14:27:03.871Z"
+ },
+ "Takoverdrag_UG_1_H1": {
+  "hoppa": "textkoll 2026-09-30: 14.5s 1129 KR | 15s 1129 KR | 18s BAVERBUTIKEN"
+ },
+ "Sotarset_PD_7_H1": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_7_H1.mp4",
+  "sha256": "653fdb3b687f8c68fe4925eb60f5dd2dc55e35d5e1184408961e5606e173c315",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_7_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_7_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_7_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1561047338628703",
+  "annons_id": "120251691770840435",
+  "creative_id": "1655345952915632",
+  "kampanj_id": "120251679569180435",
+  "skapad": "2026-09-30T14:08:49.229Z"
+ },
+ "Takoverdrag_RI_1_H1": {
+  "hoppa": "textkoll 2026-09-30: 15.5s 1129KR | 16s 1129KR | 16.5s 1129 KR"
+ },
+ "Taljset_PD_2": {
+  "fil": "worldwide/annonser/klar/Taljset_PD_2.mp4",
+  "sha256": "af629fe41c300b7906b771490fe2d99e482f4ddbfb854fe89551f0b785fb831b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Taljset_PD_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Taljset_PD_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Taljset_PD_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1447889320636359",
+  "annons_id": "120251693656460435",
+  "creative_id": "1453998206641830",
+  "kampanj_id": "120251679800490435",
+  "skapad": "2026-09-30T14:26:19.558Z"
+ },
+ "Seatcover_PD_12_H1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_12_H1.mp4",
+  "sha256": "39b9e359efa24e5f7381828ac886e90460fb825af00a412b3df290eb341f0b1b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Seatcover_PD_12_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Seatcover_PD_12_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Seatcover_PD_12_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1665246555023436",
+  "annons_id": "120251691389470435",
+  "creative_id": "1807450303770622",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T13:48:01.429Z"
+ },
+ "Enginecover_SP_10_H1 Opening 1": {
+  "fil": "worldwide/annonser/klar/Enginecover_SP_10_H1_Opening_1.mp4",
+  "sha256": "b5dab1f1e3ca674ef27fbd7d1e42aac069ce6405a59491264b7c5f96fc6525b3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Enginecover_SP_10_H1_Opening_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Enginecover_SP_10_H1_Opening_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Enginecover_SP_10_H1_Opening_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "955359213712739",
+  "annons_id": "120251691396540435",
+  "creative_id": "1774823620515023",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T13:48:34.519Z"
+ },
+ "IBC_PD_4_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/IBC_PD_4_H1.mp4  band 816:944 (uppmätt 859:901, höjt till 816:944 för två rader), sudd: rem"
  }
 }
