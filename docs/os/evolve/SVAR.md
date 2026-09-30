@@ -54,7 +54,79 @@ kursen. Se "Där kursens egna citat säger något annat" nedan.
 >
 > Bottom line: The strongest guidance is Spencer's preference for open-ended questions on the thank-you page [C1][C4], the principle that surveys should surface non-obvious avatars [C5], and review mining as a proven method via D1's $200K ad example. Response rates, incentive bias, multi-language setup, gift-buyer considerations, tagging frameworks, validation thresholds, and comparative hit-rate evidence are all gaps — worth asking the community directly, especially other operators running multi-niche stores.
 
+### Vad vi tar med oss (läst 2026-09-30)
+
+Varje punkt är kontrollerad mot Chads text ovan eller mot kursens egna citat i
+`docs/ecomtalent/fynd.json` (lektion + tidsstämpel). Tre granskare läste
+läsningen efteråt och fällde det som var överdrivet.
+
+1. **Fråga öppet och räkna svaren efteråt.** Spencer vill ha skrivna svar, för
+   då syns vem som tänkt efter [C4]. I kursen redovisades svaret som en andel:
+   43–46 % angav samma köpskäl, och det blev huvudbegäret (Dec 5 [17:54]). Om
+   den frågan var öppen framgår inte. En öppen fråga som vi räknar efteråt är
+   alltså vårt val, med stöd av [C4].
+2. **Enkäten ska hitta det vi har missat.** Chad [C5]: ett team trodde att
+   köparna var gravida kvinnor, men det var män med ölmage, och det gav ny
+   skala. Shaun & Spencer [46:06]: en ny avatar ger ny skala. Att den avataren
+   kom ur en enkät står i sammanfattningen av samtalet, inte i citatet.
+3. **Svaren ska in i briefarna, inte bara i mejlen.** Chad säger att
+   enkätdatan används i mejlen [C2]. Kursen antyder mer: enkäten gav
+   huvudbegäret (Dec 5 [17:54]), och direkt efter berättar Spencer om en
+   invändningsannons som blev top spender ([18:40]). Köparnas feedback är "the
+   most valuable data that you can get" ([20:15]).
+4. **Var frågan ska ställas är inte avgjort.** Chad säger tacksidan, och att
+   det misslyckas efter leveransen. Det vilar på en medlem som kör på tacksidan
+   [C1] och en medlem vars andra enkät "they never did" [C3]. Det citatet kan
+   lika gärna betyda att enkäten aldrig blev av. Kursen nämner inte tacksidan i
+   något av de 516 fynden. Den föreslår två vägar: ett mejl till alla tidigare
+   köpare med en Typeform och utlottning av en gratisprodukt (Mar 13
+   [1:05:38]–[1:07:12]), och intervjuer med tidiga kunder (Mar 6 [34:02]).
+5. **Kunder svarar på mejl, men tidpunkten avgör vad de svarar.** I
+   Bäverbutiken var 84 av 293 ärenden på 30 dagar (till 2026-09-14) svar på
+   Judge.me:s recensionsmejl, och 77 av dem gällde leveransen
+   (`kundtjanst/korningar/baverbutiken/2026-W38.json`). En fråga som når kunden
+   före paketet besvaras med "var är mitt paket". Hur många som fick mejlet vet
+   vi inte, så svarsgraden går inte att räkna.
+6. **Belöning:** Spencer föredrar en utlottning framför belöning per svar, och
+   belöning per svar är rimlig bara vid en lång enkät [C6]. En eller två frågor
+   behöver ingen belöning.
+7. **Koppla inte svaret till en enskild annons.** UTM är opålitligt [C2].
+   Kursen säger inget om att koppla enkätsvar till annonser. Det närmaste är att
+   läsa spenden per ålder och kön för att förstå vem en vinnare når (Apr 24
+   [10:59], [15:52]).
+8. **Ingen har mätt hit rate per idékälla** (Chads punkt 5). Kursen räknar
+   hit rate som vinnare delat med testade (Overview [26:38], [28:14]). Per
+   källa blir det vår egen tillämpning. I dag står `kalla=voc` i koncepten men
+   inte på etikettraden (`docs/os/CS-KLART.md`, avstämningen punkt 12, rad
+   262), så det går inte att mäta än.
+
+### Där kursens egna citat säger något annat än Chad
+
+| Chad säger | Kursen säger | Belägg |
+|---|---|---|
+| Intervjuer: "Not covered in any source" | **Fel.** Värden anlitade någon som pratade med tidiga kunder, med frågor han skrev själv (frågorna återges inte) | Mar 6 [34:02] |
+| Giveaway: bara en morot | **Delvis fel.** Kursen föreslår ett mejl till alla befintliga köpare med en Typeform och utlottning, och kallar feedback från köparna en favoritmetod som hjälpt flera brands. Det är ett förslag, inte en redovisning av något som gjorts | Mar 13 [1:05:38], [1:07:12] |
+| Tacksidan, inte efter leveransen | **Kursen säger inte det.** Den säger bara "post purchase survey" | Shaun & Spencer [44:31] |
+| Inget taggsystem för svaren | För koncept finns ett: avatar, massbegär och medvetenhetsnivå per koncept, fem avatarer och tio massbegär per brand. Att enkätsvar ska sorteras så säger kursen inte uttryckligen | Overview [25:07], BRAND AI [23:47] |
+| Hook eller invändningsannons: ingen källa | Ett begär blir en hooktext, tre på samma video. För statiska annonser väljer invändningen formatet (pris ⇒ produktbild, förtroende ⇒ testimonial). Vinnarens manus skrivs om så att det bemöter invändningarna i annonsens kommentarer | Video Hooks [10:13], Art of 1 Frame [16:28] + [18:50], Feb 27 [32:51] |
+| Hur många svar som räcker: ingen källa | **Stämmer.** Närmast: en research-leverans ska ha 15–20 invändningar med svar | Deep Market Research [32:11] |
+| Ny vinkel eller iteration: D1:s iterationsramverk | Kursen ger blandningen: utan vinnare 80 % nytt, med vinnare 80 % iterationer, minst 1 av 10 annonser på ny research. Vart ett enkätsvar ska ledas säger ingen av dem | Feb 20 [24:21], Feb 27 [2:23], Apr 24 [1:02:45] |
+
+**Går inte att kontrollera mot kursen:** Sem [C1], medlemmen [C3],
+Spencer-citatet och Triple Whale [C4], mejlen [C2] och D1:s annons på 200 000
+dollar. Vi har aldrig läst botens källor själva.
+
+### Vad boten läser (viktigt inför nästa fråga)
+
+Boten söker i Discord-trådar (`[Cn]`) och i kursdokument (`[Dn]`), inte i de
+inspelade samtalen. I alla sparade botsvar finns noll tidsstämplar, och
+transkriptfynden om enkäter (Dec 5, Mar 13) kom inte fram fast frågan gällde
+just dem. Numreringen gäller bara inom ett svar: `[C4]` här är inte `[C4]` i
+ett annat svar. **Det samtalen säger läser vi själva** ur
+`docs/ecomtalent/fynd.json`, och räcker inte det ber vi Axel ladda upp
+transkripten igen (`docs/ecomtalent/README.md`). Fråga aldrig boten efter
+tidsstämplar.
+
 ### Vad vi gör med svaret
 
-_(fylls i när svaret finns: enkätens frågor, var den visas, hur svaren blir
-`voc`-leads i `/cs` och hur vi mäter hit rate per källa)_
+Planen för själva enkäten står i `ENKAT.md` här bredvid.
