@@ -606,6 +606,32 @@ slapp den). Den döljs nu på alla språk utom svenska (`domantema.mjs` → `CSS
 `snippets/ms-head.liquid`, `display: none` bakom `request.locale.iso_code != 'sv'`). Trust-radens
 "Secure payment" står kvar. Tillbakaläst live: SE visar raden, US/GB/AU har den dold (höjd 0).
 
+### Granskningens första fynd: korgen och Taiwans mejlknapp (2026-09-30 kväll)
+
+En fristående session granskade hela utlandsbygget (`PROMPT-granskning.md`). Två fel var
+bekräftade redan i sajtdelen och är rättade samma kväll, före rapporten:
+
+- **Korgen blev engelsk.** Paketväljarens reservväg (`assets/ms-paket.js`, `laddaOm()`) laddade
+  om till `/discount/<kod>?redirect=/cart`. En ren `/cart` landar på domänens huvudspråk, alltså
+  engelska på matstrumpor.com för en tysk, polsk eller japansk kund. Reservvägen tas när lådan
+  inte kan ritas eller när rabattkoden inte fastnade. Den vanliga vägen ritar lådan på kundens
+  språk (mätt: "Dein Warenkorb", koden `SUSHI-K2F2` tillämplig). Nu bär omdirigeringen rutten
+  (`rutt + 'cart'`, `/de/cart`), och Shopify följer den (mätt på /de, /zh-tw, /ja, /pt-pt).
+  Rättat i `temapatch.mjs` → `patchaPaketKorg` (körs av `bygg.mjs --steg tema`, skrivet och
+  tillbakaläst, och butiken skickar ut det: `rutt+"cart"` i den minifierade filen), och i fabrikens
+  källa `factory/tema/assets/ms-paket.js`. Det var det enda stället i temats 406 filer med en
+  korg utan språkmapp (`ms-ab.js` postar `/cart/update.js`, som bara är JSON).
+- **Taiwans mejlknapp gav 404.** Fraktmejlens knapp räknades som `matstrumpor.se/<mapp>`, och .se
+  bär zh-TW på `/zh`. Nu går alla tretton språkens knappar till matstrumpor.com, med adresser ur
+  Shopifys egna `rootUrls` (`mejl/README.md` → "Matstrumpor på tolv språk").
+- ⚠️ `bygg.mjs --steg tema` säger sedan samma dag att `snippets/ms-paket.liquid` inte är
+  "originalet + våra patchar". Filen bär en annan sessions pakettest (`fast_variant`,
+  `matstrumpor/erbjudanden/paket-test.mjs`), så steget rör den inte längre. Nya texter i
+  paketväljaren når därför inte den filen förrän originalet i `output/tema-original/` följer med.
+- ⚠️ Chromium från containern fick Cloudflares kontroll ("Verifying your connection", 429) samma
+  kväll, medan granskaren körde. Korgen återskapades därför med samma anrop som knappen gör
+  (curl med kakor): `/discount/<kod>?redirect=…`, `POST /de/cart/add.js` med `sections_url`, och `/de/cart.js`.
+
 ## Japan och Taiwan (Axel 2026-09-30)
 
 Axel: "Jag hade också viljat testa Japan och Taiwan. Och i Japan speciellt kan vi trycka på att det är ett

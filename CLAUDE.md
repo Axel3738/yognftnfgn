@@ -101,7 +101,11 @@ adversariellt (`output/underlag-<locale>.json` är minnet). 📧 **Fraktmejlen p
 Före det bar våra tre mallar Shopifys standardöversättning på alla elva språk
 (en tysk kund hade fått Shopifys tyska standardmejl med fraktbolagets länk).
 Spårningsrutinen lägger in språken igen varje timme om den svenska mallen
-klistrats om (`sparning.md` steg 2b). Allt i `mejl/README.md` → "Matstrumpor på
+klistrats om (`sparning.md` steg 2b). ⛔ **Knappen går till matstrumpor.com i
+språkets mapp sedan 2026-09-30** (`mejl_sprak[].sida`, ur Shopifys rootUrls): den
+räknades som .se/<mapp>, och Taiwans .se/zh-tw gav 404 (.se bär zh-TW på /zh).
+Rutinen bygger från `main`, så en ändrad länk registreras först EFTER merge —
+annars skriver timrutinen tillbaka den gamla. Allt i `mejl/README.md` → "Matstrumpor på
 tolv språk". Temats hårdkodade
 svenska (paketväljaren, trust-raden, "Verifierat köp", pris- och datumformatet
 i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
