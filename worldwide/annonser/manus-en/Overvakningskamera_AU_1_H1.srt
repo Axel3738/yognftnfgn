@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:03,280
+Here's how to tell a good security camera from a bad one.
+
+2
+00:00:03,280 --> 00:00:08,900
+First, one lens or two. Few cover three hundred fifty-five degrees. One lens always has a blind spot.
+
+3
+00:00:08,900 --> 00:00:12,560
+Then, can it tell a threat from a cat? This one can, so fewer false alarms.
+
+4
+00:00:12,560 --> 00:00:16,320
+And does it hold up in harsh weather on real wifi, not just in a lab.
+
+5
+00:00:16,320 --> 00:00:20,000
+Fourteen-day returns. Free shipping. Shop now!

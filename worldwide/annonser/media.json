@@ -1097,7 +1097,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "db18447adc1baf6b3e0b3f4b499d9b55",
+  "annons_id": "120251690121160435",
+  "creative_id": "2029674731057479",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T12:38:07.696Z"
  },
  "Batmotor_BF_13_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: rubrikerna ritades ovanpå varandra"
@@ -1108,7 +1113,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "3c52d7669bd2653517f350422dd4da38",
+  "annons_id": "120251690123120435",
+  "creative_id": "1055052087347709",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T12:38:25.173Z"
  },
  "Seatcover_SO_7_1": {
   "fil": "worldwide/annonser/klar/Seatcover_SO_7_1.jpg",
@@ -1116,7 +1126,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "c3f19200da22bf91be860febc9e0fcf3",
+  "annons_id": "120251690124310435",
+  "creative_id": "1663257332025716",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T12:38:32.233Z"
  },
  "Seatcover_PD_21_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: text ovanpå text + trasig rad"
@@ -1131,7 +1146,12 @@
    "3.",
    "4."
   ],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "3a75756382e82d4cbdffb572342e7252",
+  "annons_id": "120251690125780435",
+  "creative_id": "1826424221825840",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T12:38:41.487Z"
  },
  "Enginecover_SO_7_2": {
   "fil": "worldwide/annonser/klar/Enginecover_SO_7_2.jpg",
@@ -1139,7 +1159,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "bd8e07e00488d3719f8d6f1f4b6976af",
+  "annons_id": "120251690128110435",
+  "creative_id": "2417159785757928",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T12:38:59.246Z"
  },
  "IBC_PD_9_1": {
   "fil": "worldwide/annonser/klar/IBC_PD_9_1.jpg",
@@ -1147,7 +1172,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "4d3d41f408e7beaff976db6cf69dc98a",
+  "annons_id": "120251690132940435",
+  "creative_id": "1626845285488118",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T12:39:16.471Z"
  },
  "IBC_CO_1_1": {
   "fil": "worldwide/annonser/klar/IBC_CO_1_1.jpg",
@@ -1155,7 +1185,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "492b0d5e61c335aa391b051c21d446e9",
+  "annons_id": "120251690134950435",
+  "creative_id": "1080023431687081",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T12:39:24.865Z"
  },
  "Overvakningskamera_PD_4_1": {
   "fil": "worldwide/annonser/klar/Overvakningskamera_PD_4_1.jpg",
@@ -1251,5 +1286,22 @@
   "efterkontroll": "ren",
   "oparade": [],
   "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+ },
+ "Batmotor_SP_1_H9": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Batmotor_SP_1_H9.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för "
+ },
+ "Balteslipmaskin_CS_2": {
+  "fil": "worldwide/annonser/klar/Balteslipmaskin_CS_2.mp4",
+  "sha256": "dc53eeffa2cfcebac5ce2f69bce9c80b7365f06951bdeb060b9ab1bf4172f8e1",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Balteslipmaskin_CS_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Balteslipmaskin_CS_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Balteslipmaskin_CS_2.mp4.qa-3.png"
+  ]
+ },
+ "Batmotor_SP_1_H15": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Batmotor_SP_1_H15.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för"
  }
 }
