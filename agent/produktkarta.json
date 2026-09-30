@@ -73,7 +73,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 9: \"Round Bathtub Cover Outdoor Anti-Uv Spa Hot Tub Dust Cover\"), 1 st till Sverige: produkt + frakt 9,54 + 8,73 = 18,27 USD, plus 2,9 EUR EU-avgift per order. Priset 619 kr läst ur baverbutiken.se/products.json (se lage_motivering). Offerten gäller största storleken (210D, 215 × 70 cm); minsta storleken 190 × 30 cm är 14,6 USD enligt sheetets anteckning — blocket räknar på den dyrare.",
         "datum": "2026-09-24"
-      }
+      },
+      "minne": "products/spabadskapellet-i-svart-210d",
+      "minne_not": "mappen skapad 2026-09-30 av lardom.mjs --skriv (16 etiketter dag 7, kampanjen PAUSED) — ingen annan mapp fanns, så ingen splittring"
     },
     {
       "campaign_id": "120252299552200233",

@@ -2854,3 +2854,125 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Arbetslampan för Makita-batteri (120250083675400291)
 
+### Lärdom L-120250341636210291 — Batmotor_UG_3_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 188 kr / 21 310 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | 0,0 % (0 köp / 8 LPV) |
+| Hook rate / hold rate | 27 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Om några veckor tas båten upp för säsongen." · rubrik: "Sätts på innan båten ställs undan"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | båtägare i jag-form ("drar jag på skyddet") inför upptagningen | okänd |
+| Vinkel | — (brief saknas i repot) | UG (UGC) med säsongsöppning — batch-log: "UGC vid bryggan, säsongsvinkeln" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — skyddet nämns direkt | okänd |
+| Mekanism | — (brief saknas i repot) | "420D-tyg, hela vägen ner över riggen" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | "579 kr" utan jämförpris | okänd |
+| Brådska | — (brief saknas i repot) | säsong: "Om några veckor tas båten upp" | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: UGC-bryggan med säsongsöppning fick 188 kr av kampanjens 21 310 kr — hook rate 27 %, hold rate 9 %, 0 köp — och det räcker inte för att säga om säsongsraden eller UGC-formatet bar mindre än syskonen.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden: en observation, ingen dom (188 kr, 0 köp); UGC-steget på UG_1_H1-lärdomen är taget och gav inget köp, säsongsvinkeln bärs av `Batmotor_FM_4_H1` och `Batmotor_SP_1_H14` (redan live), och all ny copy följer dna.md:s ⛔ (problem eller pris i hooken, aldrig materialets styrka — live-copyn "hela vägen ner över riggen" rörs inte men upprepas inte).
+
+### Lärdom L-120250341661690291 — Batmotor_RV_12_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 1 kr / 21 310 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 40 % / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): ""Bra skydd när båten står ute. Väldigt nöjd." – Thomas Eriksson" · rubrik: "Skydda motorn. 579 kr."
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | nöjd kund som talar — citatet med namn (Judge.me-recension, dna.md 2026-09-21) | okänd |
+| Vinkel | — (brief saknas i repot) | RV (recension som video) — batch-log: "riktig Judge.me-recension ordagrant" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — skydd och pris direkt | okänd |
+| Mekanism | — (brief saknas i repot) | "420D-tyg. Täcker hela motorn. Ingen montering – dra över, spänn en rem." | okänd |
+| Tro | — (brief saknas i repot) | social bevisning: "Väldigt nöjd" + kundens namn | okänd |
+| Positionering | — (brief saknas i repot) | "Pris: 579 kr" utan jämförpris | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: annonsen fick 1 kr av kampanjens 21 310 kr — hook rate 40 % är mätt på för få visningar för att betyda något; utfallet säger att Meta aldrig lät den tävla, inte att recensionsvideon inte bär.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (1 kr, Metas dom, aldrig ABO): ingen tredje recensionsvideo — och ny copy får inte återanvända kvalitetscitatet ("Bra skydd … Väldigt nöjd"), eftersom dna.md:s ⛔ (2026-09-29) förbjuder kvalitetsrader i recensioner; en framtida RV kräver ett citat om något annat än materialet.
+
+### Lärdom L-120250341688520291 — Batmotor_GT_3_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 1 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 1 kr / 21 310 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 50 % / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Han skottar snö av båten varje vinter." · rubrik: "En gåva som skyddar hela vintern"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | mottagaren, en båtägare som skottar snö — copyn beskriver honom, inte köparen | okänd |
+| Vinkel | — (brief saknas i repot) | GT (present) enligt namnkoden och rubriken "En gåva" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — "kåpa till rigg" i copyn | okänd |
+| Mekanism | — (brief saknas i repot) | "420D Oxford-tyg, kåpa till rigg" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | "579 kr, en gång" utan jämförpris | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn (inget datum för fars dag nämns) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: annonsen fick 1 kr av kampanjens 21 310 kr — hook rate 50 % är mätt på för få visningar för att tolkas; att den inte levererade utanför presentsäsong säger inget om presentvinkeln.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (1 kr, Metas dom, aldrig ABO): presentvinkeln prövas igen bara i ett presentfönster (fars dag 8 november, jul) och då med brief senast 2026-10-25, som iteration på den GT som fått bäst etikett; live-rubriken "skyddar hela vintern" överlovar enligt dna.md:s ⛔ och får inte tas med in i den briefen.
+
+## Fiskespöhållaren (120249850522830291)
+
