@@ -1,0 +1,55 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250365247750291",
+      "namn": "Maskinhylla_CS_1",
+      "status": "ACTIVE",
+      "spend": 1294.59,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 5,
+      "spend_7d": 1515.21,
+      "roas_7d": 1.165713,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.130895,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    },
+    {
+      "id": "120250365250300291",
+      "namn": "Maskinhylla_GT_2_1",
+      "status": "ACTIVE",
+      "spend": 543.53,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 5,
+      "spend_7d": 652.27,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 789.72,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.520709754321216,
+  "kampanj_spend": 2750.67,
+  "tjuvSpend": 1838.12,
+  "tjuvAndel": 0.668244464076025,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 790 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120250365247300291",
+  "kampanj_namn": "Maskinhyllan för 4 Elverktyg | BE ROAS 1.64 | Launch 2026-09-25"
+}

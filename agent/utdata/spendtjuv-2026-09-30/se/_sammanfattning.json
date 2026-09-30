@@ -1,0 +1,38 @@
+[
+  {
+    "kampanj_id": "120249902177470291",
+    "namn": "Bälteslipmaskinen",
+    "lage": "gron",
+    "dom_i_planen": "VANTA_KONSEKVENT",
+    "annonser": 68,
+    "break_even": 1.7595818815331012,
+    "break_even_cpa": 563.4026301696168,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,58 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120249850522830291",
+    "namn": "Fiskespöhållaren",
+    "lage": "gron",
+    "dom_i_planen": "VANTA_KONSEKVENT",
+    "annonser": 123,
+    "break_even": 1.5,
+    "break_even_cpa": 286.8775593103952,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,35 eller 0 köp över 3 × break-even-CPA)."
+  }
+]

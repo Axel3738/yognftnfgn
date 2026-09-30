@@ -44,8 +44,12 @@ async function main() {
   mkdirSync(utDir, { recursive: true });
 
   const trappa = new Map(utfall.plan.atgarder.filter((a) => a.typ === 'trappa').map((a) => [a.kampanj_id, a]));
+  // --bara <id,id>: kör bara de kampanjerna (2026-09-30: Meta strypte efter 14 av 16,
+  // och en omkörning av allt hade bränt samma anrop igen). Sammanfattningen slås ihop.
+  const bara = flagga('--bara') ? new Set(flagga('--bara').split(',').map((s) => s.trim())) : null;
   const kandidater = [];
   for (const r of utfall.rader) {
+    if (bara && !bara.has(r.id)) continue;
     const kod = r.dom?.kod;
     const spend3d = lasBelopp(r.spend3d);
     if (trappa.has(r.id)) kandidater.push({ rad: r, lage: 'trappa' });
@@ -133,7 +137,13 @@ async function main() {
     sammanfattning.push({ kampanj_id: id, namn: rad.namn.split('|')[0].trim(), lage, dom_i_planen: rad.dom?.kod, annonser: annonser.length, break_even: be, break_even_cpa: beCpa, raddningar_14d: raddningar14d, forlangning_idag: jobb.forlangning_idag, agarbeslut_idag: agarIdag, dom: res.dom ?? null, tjuvar: (res.tjuvar || []).map((t) => `${t.namn} ${t.spend ?? ''} roas ${t.roas ?? ''} ${t.orsak ?? ''}`), vantar: (res.vantar || []).map((v) => `${v.namn}: ${v.vantar_orsak}`), rest: res.rest ?? null, raddade: res.raddade ?? null, motivering: res.motivering ?? res.fel ?? null });
     console.error(`  ${rad.namn.split('|')[0].trim()} [${lage}] → ${res.dom ?? res.fel} (${annonser.length} annonser${(res.tjuvar || []).length ? `, tjuvar: ${res.tjuvar.map((t) => t.namn).join(', ')}` : ''})`);
   }
-  writeFileSync(join(utDir, '_sammanfattning.json'), `${JSON.stringify(sammanfattning, null, 2)}\n`);
+  const sammanFil = join(utDir, '_sammanfattning.json');
+  let ut = sammanfattning;
+  if (bara && existsSync(sammanFil)) {
+    const gamla = JSON.parse(readFileSync(sammanFil, 'utf8')).filter((s) => !bara.has(s.kampanj_id));
+    ut = [...gamla, ...sammanfattning];
+  }
+  writeFileSync(sammanFil, `${JSON.stringify(ut, null, 2)}\n`);
   console.log(JSON.stringify(sammanfattning, null, 2));
 }
 
