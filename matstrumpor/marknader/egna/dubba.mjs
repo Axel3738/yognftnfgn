@@ -43,9 +43,17 @@ export const RÖST = 'lRBvixWrjVcBSKxchtgC'; // "Matstrumpor AI-kvinna (klon ur 
 // repliker (襪子, 五雙 …): klonen på mandarin 0,75 (tonfel: 襪子 wàzi hördes 蛙子 "groda"), Anna Su
 // (infödd, taiwanesisk mandarin, ElevenLabs röstbibliotek) med eleven_turbo_v2_5 0,92. Japanskan
 // behåller klonen: felet där var kanji-läsningen, inte rösten (se `las` nedan).
-export const RÖSTER = { TW: '9lHjugDhwqoxA5MhX0az' }; // "Matstrumpor TW Anna Su"
+// Danska 2026-09-30 (granskningen G-B02: "sokker" hördes som "sukker" sex av sex): Whisper large-v3 hörde
+// klonen säga det svenska "socker", och den infödda Freja (ElevenLabs röstbibliotek) "sokker" i fyra av fem
+// repliker. Whisper medium kan inte döma här: den hörde "sukker" även från fyra infödda röster, och large-v3
+// hör "det er sukker" från alla röster i den meningen (språkmodellen gissar). Mät danska med large-v3.
+export const RÖSTER = { TW: '9lHjugDhwqoxA5MhX0az', DK: 'h5TGSgjuArqhPBRRe0mM', 'JP/s001h1': '4lOQ7A2l7HPuG7UIHiKA' }; // Anna Su, Freja, Kyoko
 
-export const röstFor = (kod) => RÖSTER[kod] ?? RÖST;
+// En röst för EN video går före marknadens (nyckeln "<KOD>/<video>"). Japanska s001h1 2026-09-30 (granskningen
+// G-B01, 靴下 hördes "kusushita" alla tre gångerna): klonen fick 1 av 3 produktrepliker rätt i Whisper medium,
+// den infödda Kyoko (redan i kontot, "Matstrumpor JP Kyoko") 3 av 4 — med uttalet i hiragana. Kyoko läser
+// kanji fel (靴下 → がっか), så `las` behövs fortfarande. haikuh3/haikuh2 behåller klonen (0,89 replik för replik).
+export const röstFor = (kod, video) => RÖSTER[`${kod}/${video}`] ?? RÖSTER[kod] ?? RÖST;
 /** Ren: cachenyckeln för ett klipp. Rösten ingår bara när den inte är klonen, så att de elva
  *  europeiska språkens klipp (nyckel utan röst) fortfarande träffar cachen. */
 export const klippNyckel = ({ rost, modell, fart, prev, text, next }) => `${rost && rost !== RÖST ? `${rost}|` : ''}${modell}|${fart}|${prev}|${text}|${next}`;
@@ -174,7 +182,7 @@ async function main() {
   const langd = langdAv(join(HAR, 'kalla', `${video}.mp4`));
   const fon = fonster(manus, lok, langd);
   const modell = MODELL[kod] ?? STANDARDMODELL;
-  const rost = röstFor(kod);
+  const rost = röstFor(kod, video);
   const logg = [];
   let tecken = 0;
   for (let i = 0; i < lok.segment.length; i++) {

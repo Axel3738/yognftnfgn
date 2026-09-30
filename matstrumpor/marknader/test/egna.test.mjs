@@ -59,3 +59,11 @@ test('froFor: tagning 1 behåller det gamla fröet (godkända klipp står kvar),
   assert.notEqual(froFor(2), froFor(1, true));
   assert.equal(froFor(0), 29, 'en tagning under 1 räknas som 1');
 });
+
+test('röstFor: en röst per video går före marknadens — japanska s001h1 har Kyoko, haikuh3 klonen; Danmark Freja', () => {
+  assert.equal(röstFor('JP', 's001h1'), '4lOQ7A2l7HPuG7UIHiKA');
+  assert.equal(röstFor('JP', 'haikuh3'), RÖST);
+  assert.equal(röstFor('DK', 'haikuh2'), 'h5TGSgjuArqhPBRRe0mM');
+  assert.equal(röstFor('DE', 's001h1'), RÖST);
+  assert.equal(röstFor('TW'), '9lHjugDhwqoxA5MhX0az');
+});

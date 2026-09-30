@@ -38,7 +38,7 @@ export function lasSprak(kod, rot = ROT) {
 }
 
 // Konfig + copy för en butik, i det format byggMall vill ha.
-export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = null, sida = null } = {}) {
+export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = null, sida = null, hemFranSida = false } = {}) {
   const reg = lasButik(id, register);
   if (reg.standard) throw new Error('Bäverbutiken byggs med mejl/bygg.mjs, inte här.');
   const brand = JSON.parse(readFileSync(join(rot, 'butiker', `${id}.json`), 'utf8'));
@@ -48,10 +48,15 @@ export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = nu
   if (!support) throw new Error(`${id}: supportadress saknas i sparning/butiker.json — mejlets sidfot behöver den.`);
   const [min, max] = reg.leverans_dagar ?? [7, 14];
 
+  // Loggans länk följer språkets egen adress i Shopifys översättningar (`mejl_sprak`, granskningen G-D04,
+  // 2026-09-30): en tysk kund fick knappen till matstrumpor.com/de men loggan till matstrumpor.se. Adressen är
+  // spårningssidans utan /pages/<handle>. Bara i översättningarna (`hemFranSida`): CaraShells marknadsgrenar
+  // (`mejl_marknader`) är inklistrade för hand och ska se ut som de gör live tills någon klistrar om dem.
+  const hem = hemFranSida && sida && sida.endsWith(`/pages/${reg.handle}`) ? sida.slice(0, -`/pages/${reg.handle}`.length) : reg.url;
   const konfig = {
     butik: {
       namn: reg.namn,
-      url: reg.url,
+      url: hem,
       support,
       farg_rod: brand.farg_rod,
       farg_svart: brand.farg_svart,
@@ -145,7 +150,7 @@ export function byggOversattningar(id, bas, opts = {}) {
     sett.add(r.locale);
     const mapp = r.mapp ?? r.sprak;
     const sida = r.sida ?? `${bas.reg.url}/${mapp}/pages/${bas.reg.handle}`;
-    const indata = butikIndata(id, { ...opts, sprakKod: r.sprak, sida });
+    const indata = butikIndata(id, { ...opts, sprakKod: r.sprak, sida, hemFranSida: true });
     const mallar = FRAKTMALLAR.map((m) => byggMall(m, { ...indata, lage: 'liquid' }));
     return { locale: r.locale, kod: r.sprak, sida, indata, mallar };
   });
