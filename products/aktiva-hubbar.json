@@ -1,8 +1,32 @@
 {
   "kommentar": "Axels beslut 2026-09-15: /bildannonser gör bildannonser ENBART för hubbarna nedan. Skalningen på Bäverbutiken drogs igång igen och de här produkterna är de som aktivt får nya annonser. Övriga hubbar i teamspacet lämnas i fred — de listas i rapporten men rörs aldrig. Axel ändrar listan; lägg aldrig till en hubb själv.",
   "sa_matchas_de": "Matcha i första hand på 'datakalla' (data source-id), i andra hand på 'namn'. Hubbarna döps om i Notion utan förvarning — 2026-09-19 hette 'BÄVER Taköverdraget för Husvagn' plötsligt 'BÄVER  For CARL Taköverdraget för Husvagn', och en ren namnmatchning hade tappat hela hubben tyst. Ett nytt namn är inte en ny hubb: står id:t kvar är det samma hubb.",
-  "andrad": "2026-09-23",
+  "andrad": "2026-09-29",
   "aktiva": [
+    {
+      "namn": "Golf advent calendar creative hub",
+      "datakalla": "64a270ab-908c-8281-9151-071ae0ea9c62",
+      "notering": "Axels order 2026-09-29 (skärmbild på fem hubbar: \"Du måste köra bildannonser för alla dessa också\"). Hubben hade 9 bildrader i Draft ur briefronden 2026-09-28 och hade aldrig körts, för den stod bara under ÖVRIGA i rapporten. Annonsprefixet är svenskt (Golfkalender_) medan hubben heter engelska.",
+      "annonsprefix": "Golfkalender_"
+    },
+    {
+      "namn": "Whittling set creative hub",
+      "datakalla": "99c270ab-908c-83f9-b32d-07c644fed308",
+      "notering": "Axels order 2026-09-29, samma skärmbild. 9 bildrader i Draft ur briefronden 2026-09-28. Annonsprefixet är svenskt (Taljset_).",
+      "annonsprefix": "Taljset_"
+    },
+    {
+      "namn": "Fish rod holder",
+      "datakalla": "3c3270ab-908c-8356-ad6c-87ff779e647d",
+      "notering": "Axels order 2026-09-29, samma skärmbild. 43 bildrader i Draft vid mätningen — en backlog från 3d0…3df, alltså flera veckors briefronder som aldrig genererats. Hubben bär TVÅ prefix: Bäverbutikens Rodholder_ och TackleBays TackleBayRod_ (delad historia, CLAUDE.md). Hubben står INTE i factory/produkter/register.json, så den räknas som Bäverbutikens av alla rutiner — kollat med `node tools/lib/ops-hubbar.mjs` 2026-09-29.",
+      "annonsprefix": "Rodholder_"
+    },
+    {
+      "namn": "Solar motion sensor light creative hub",
+      "datakalla": "397270ab-908c-8253-ae5b-87a01a38c0c4",
+      "notering": "Axels order 2026-09-29, samma skärmbild. Hade 0 bildrader i Draft vid mätningen (bara 3 videorader, som aldrig rörs) — den ligger i listan för att nästa briefrond ska plockas upp av sig själv.",
+      "annonsprefix": "Solcellslampa_"
+    },
     {
       "namn": "Car wash brush creative hub",
       "datakalla": "905270ab-908c-8354-935d-071286e4e9b2",
