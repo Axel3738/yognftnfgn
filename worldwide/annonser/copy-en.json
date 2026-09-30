@@ -2393,5 +2393,597 @@
    "falsifiera": "✅",
    "ingen_annan": "✅"
   }
+ },
+ "Takoverdrag_CS_8_H1": {
+  "hoppa": null,
+  "text": "The roof: the one part of your caravan you never check.\nAdjustable straps on all four sides keep the cover in place, and the 210D fabric takes the rain, leaves and bird droppings all winter.\nFree shipping.\nA Swedish brand.",
+  "rubrik": "The roof you never check. Silver-coated 210D.",
+  "beskrivning": "Caravan & RV roof cover. Free shipping.",
+  "tre_fragor": {
+   "rad": "The roof you never check. Silver-coated 210D.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_BOF_4_1": {
+  "hoppa": null,
+  "text": "23% off the caravan & RV roof cover.\nCovers the whole roof, 19.5 m², in silver-coated 210D fabric. Free shipping.\nA Swedish brand.",
+  "rubrik": "23% off the caravan roof cover",
+  "beskrivning": "Covers the whole roof. Free shipping.",
+  "tre_fragor": {
+   "rad": "23% off the caravan roof cover",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_SP_1_H1": {
+  "hoppa": null,
+  "text": "Clear water in the tank, no algae all summer.\n\nThe green 210D Oxford fabric blocks the light that makes algae grow, and takes the sun instead of the plastic.\n\n✓ Blocks UV and sunlight\n✓ Closes with a zipper\n✓ You can still reach the lid\n\nSee it on the tank 👇\nA Swedish brand.",
+  "rubrik": "Clear water all summer",
+  "beskrivning": "IBC tote cover, 1000 L. Free shipping.",
+  "tre_fragor": {
+   "rad": "Clear water all summer",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "MC-Kapell_G_2": {
+  "hoppa": null,
+  "text": "Looking for a gift he'll actually use? 🎁\n\nHe loves his motorcycle. But who covers it when it's standing still?\n\nA motorcycle cover goes on in a minute and keeps rain, dust and UV off the paint. Picture his face when he sees you thought of exactly that.\n\nA simple gift. A lot of thought. 👉\nFree shipping.\nA Swedish brand.",
+  "rubrik": "The perfect gift for the rider",
+  "beskrivning": "A gift he'll use every week.",
+  "tre_fragor": {
+   "rad": "The perfect gift for the rider",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Damasker_PD_8_H1": {
+  "hoppa": null,
+  "text": "10 seconds. Then your boots stay dry all day.\nSnow, rain and grit stay out.\nHook onto the laces, strap under the boot, fasten around your leg. Done.\nFree shipping. 14-day returns.\nA Swedish brand.",
+  "rubrik": "10 seconds to dry boots",
+  "beskrivning": "14-day returns. Free shipping.",
+  "tre_fragor": {
+   "rad": "10 seconds to dry boots",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_CS_2_1": {
+  "hoppa": null,
+  "text": "40% OFF HIKING GAITERS\nSnow, water and grit stay out of your boots, all the way up 44 cm.\n✅ Free shipping\n✅ 14-day returns\nGrab yours 👇\nA Swedish brand.",
+  "rubrik": "40% off hiking gaiters",
+  "beskrivning": "Keeps snow, water and grit out. Free shipping.",
+  "tre_fragor": {
+   "rad": "40% off hiking gaiters",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Taljset_OB_1_H1": {
+  "hoppa": null,
+  "text": "Cut-resistant gloves go on before the knife comes out. A blade guard covers every blade, and the leather strop keeps the edge sharp.\n30 pieces in one zipped bag. Free shipping.\nA Swedish brand.",
+  "rubrik": "Gloves and a guard for every blade",
+  "beskrivning": "Whittling set, 30 pieces.",
+  "tre_fragor": {
+   "rad": "Gloves and a guard for every blade",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_FD_2_2": {
+  "hoppa": "Fars dag-annons med svenskt datum (beställ senast 19 oktober)",
+  "text": "",
+  "rubrik": "",
+  "beskrivning": "",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "",
+   "falsifiera": "",
+   "ingen_annan": ""
+  }
+ },
+ "Golfkalender_CS_2": {
+  "hoppa": null,
+  "text": "24% off the Golf Advent Calendar.\n24 doors filled with golf gear: balls, tees, ball markers, a green repair tool, a club brush and a golf towel.\nFree shipping. 14-day returns. 👇\nA Swedish brand.",
+  "rubrik": "24 doors for the golfer, 24% off",
+  "beskrivning": "24 golf accessories. Free shipping.",
+  "tre_fragor": {
+   "rad": "24 doors for the golfer, 24% off",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_SP_2": {
+  "hoppa": null,
+  "text": "A fun advent calendar with small golf accessories. One door a day, all the way to Christmas Eve.\n24 doors of golf gear he'll actually use: balls, tees, markers, a club brush.\nA small treat every morning in December.\n14-day returns.\nOrder yours here 👇\nA Swedish brand.",
+  "rubrik": "The most fun golf gift of the season",
+  "beskrivning": "24 golf accessories, one door a day.",
+  "tre_fragor": {
+   "rad": "The most fun golf gift of the season",
+   "visualisera": "❌",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Golfkalender_FD_2_1": {
+  "hoppa": "Fars dag-annons med svenskt datum (beställ senast 19 oktober)",
+  "text": "",
+  "rubrik": "",
+  "beskrivning": "",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "",
+   "falsifiera": "",
+   "ingen_annan": ""
+  }
+ },
+ "Värmesulorna_SP_1_H2": {
+  "hoppa": null,
+  "text": "Finally warm feet all day.\nTwo insoles, three heat modes, one key-fob remote. Trim them to your size along the printed lines, EU 41–46.\n✅ Control the heat without moving a foot\n✅ Charges by USB\n✅ 14-day returns\nStop freezing on the stand. 🔥\nA Swedish brand.",
+  "rubrik": "Warm feet, all day long",
+  "beskrivning": "Heated insoles with remote. Free shipping.",
+  "tre_fragor": {
+   "rad": "Warm feet, all day long",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Värmesulorna_G_2_1": {
+  "hoppa": null,
+  "text": "He gets cold feet every winter. He never complains, but I can tell. 🥹\nThis year I found the gift he'll actually use.\n✅ Something he really needs\n✅ Three heat modes, key-fob remote\n✅ Easy to understand, and to love\nPicture his face when he puts them in his boots. 🎁\n👉 Give him warmth.\nA Swedish brand.",
+  "rubrik": "The gift he actually needs",
+  "beskrivning": "Heated insoles he'll use again and again.",
+  "tre_fragor": {
+   "rad": "The gift he actually needs",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Takoverdrag_SP_2_H1": {
+  "hoppa": "Kundcitat utan källa ('Ångrar att jag inte köpte det här förra vintern', 'fler och fler husvagnsägare', 'betygsatt av riktiga kunder') går inte att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Takoverdrag_GT_2_1": {
+  "hoppa": null,
+  "text": "He talks about his caravan like it's a pet. 😅 This year I finally found something he'll actually be happy with.\n🎁 A roof cover that protects his caravan all winter\n🎁 Something he'll use again and again\n🎁 Delivered to your door, ready to wrap\nGive a gift that shows you get what he cares about. 👇\nA Swedish brand.",
+  "rubrik": "The gift he'll actually be happy with",
+  "beskrivning": "A great gift for the caravan owner. Free shipping.",
+  "tre_fragor": {
+   "rad": "The gift he'll actually be happy with",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Sotarset_PD_2_H1": {
+  "hoppa": null,
+  "text": "Screw the rods together one by one until the brush reaches behind the stove.\nIt comes out black.\nReach: 3.69 meters, built from 9 rods.\nA Swedish brand.",
+  "rubrik": "Rod by rod, behind the stove",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Rod by rod, behind the stove",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_CS_3": {
+  "hoppa": null,
+  "text": "⚡ 40% OFF THE MOTORCYCLE COVER ⚡\nThe motorcycle cover you've been waiting for, at a price that won't stay forever.\n🔥 Rain runs off, dust stays outside\n🔥 UV bleaches the cover instead of your paint\n🔥 Covers the whole bike, 218 × 118 cm\nClick and get yours before the price goes back up 👇\nA Swedish brand.",
+  "rubrik": "40% off the motorcycle cover",
+  "beskrivning": "40% off. Free shipping.",
+  "tre_fragor": {
+   "rad": "40% off the motorcycle cover",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_G_2_1": {
+  "hoppa": null,
+  "text": "Finally found the perfect gift for him 🎁\nThe one who's always outside: hiking, dog walks, forest, nature.\n✅ A gift he'll actually use\n✅ Simple, practical, appreciated\n✅ Perfect for a birthday or just \"thinking of you\"\nSee his face when he opens the package 👇\nA Swedish brand.",
+  "rubrik": "The gift he'll actually use",
+  "beskrivning": "The perfect gift for the one who loves the outdoors. Free shipping.",
+  "tre_fragor": {
+   "rad": "The gift he'll actually use",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_CS_3": {
+  "hoppa": null,
+  "text": "⚡ 40% OFF HIKING GAITERS ⚡\nSnow, wet undergrowth and grit stay out of your boots.\n✅ Hooks onto the laces, strap under the foot\n✅ Free shipping\n✅ 14-day returns\nGrab a pair and keep your socks dry 👇\nA Swedish brand.",
+  "rubrik": "40% off hiking gaiters",
+  "beskrivning": "40% off. Free shipping.",
+  "tre_fragor": {
+   "rad": "40% off hiking gaiters",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_PD_4_H1": {
+  "hoppa": null,
+  "text": "The bag holds 30 pieces: 6 knives and 6 chisels. Blade guards, a leather strop, polishing compound, sandpaper and a piece of wood are included.\nCut-resistant gloves come with it too.\nA Swedish brand.",
+  "rubrik": "30 pieces, 6 knives, 6 chisels",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "30 pieces, 6 knives, 6 chisels",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_CS_2": {
+  "hoppa": null,
+  "text": "🚨 SALE on the Whittling Set, 30 Pieces!\nAbout 24% off.\n30 pieces. 6 knives. 6 chisels. Everything you need to start whittling.\n👉 Get yours while the sale lasts.\nA Swedish brand.",
+  "rubrik": "Start whittling this weekend",
+  "beskrivning": "About 24% off. Free shipping.",
+  "tre_fragor": {
+   "rad": "Start whittling this weekend",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_PD_3": {
+  "hoppa": null,
+  "text": "Forget the chocolate calendar. This one is for the golfer. ⛳\n24 doors with 24 golf accessories.\nTees, ball markers, a pitch repair tool, a club brush, a towel and more.\nA little surprise every day.\nAnd everything ends up used on the course.\nGet your Golf Advent Calendar 👇\nA Swedish brand.",
+  "rubrik": "24 days of golf joy",
+  "beskrivning": "Open one door every day. Free shipping.",
+  "tre_fragor": {
+   "rad": "24 days of golf joy",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_CS_1": {
+  "hoppa": null,
+  "text": "🚨 SALE: 24% off the Golf Advent Calendar!\n24 doors filled with golf gear.\nTees, ball markers, a pitch repair tool, a club brush and more.\nTap and order while the price lasts 👇\nA Swedish brand.",
+  "rubrik": "24 doors for the golfer, 24% off",
+  "beskrivning": "24% off. Free shipping.",
+  "tre_fragor": {
+   "rad": "24 doors for the golfer, 24% off",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_FD_2_2": {
+  "hoppa": "Fars dag-present med beställningsdeadline (19 oktober) och kronpris. Svensk högtid, går inte att föra över.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Värmesulorna_SP_2_1": {
+  "hoppa": "Kundcitat utan källa ('Äntligen varma fötter hela dagen…') och 'tusentals svenskar'/'nöjda kunder i Sverige' går inte att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Värmesulorna_G_1_H1": {
+  "hoppa": null,
+  "text": "He gets cold feet every winter. He never complains, but I can see it. 🥹\nThis year I finally found the perfect gift.\n✅ Something he actually needs\n✅ Easy to understand, and to love\n✅ The gift he didn't know he wanted\nPicture his face when he opens it. 🎁\n👉 Give warmth this year.\nA Swedish brand.",
+  "rubrik": "The gift he actually needs",
+  "beskrivning": "Three heat modes, remote control. Free shipping.",
+  "tre_fragor": {
+   "rad": "The gift he actually needs",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_GT_11_H1": {
+  "hoppa": "Fars dag-deadline (8 november) i texten; svensk högtid",
+  "text": "",
+  "rubrik": "",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "❌",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_BOF_5_1": {
+  "hoppa": null,
+  "text": "The tarp that was supposed to protect your tank blows off in the first autumn storm.\nA 210D Oxford cover with a zipper stays put.\nProtect the tank before the weather turns.\nFree shipping.\nA Swedish brand.",
+  "rubrik": "The tarp blows off in the first storm",
+  "beskrivning": "210D Oxford cover with a zipper.",
+  "tre_fragor": {
+   "rad": "The tarp blows off in the first storm",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Sotarset_PD_3_1": {
+  "hoppa": null,
+  "text": "A stiff rod stops at the first bend.\nA flexible one follows the pipe straight through it.\n9 rods, 3.69 meters of reach.\nFree shipping.\nA Swedish brand.",
+  "rubrik": "Never gets stuck at the bend",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Never gets stuck at the bend",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_PD_6_1": {
+  "hoppa": null,
+  "text": "218 × 118.5 cm. The size that covers the whole bike.\nFits most motorcycles, mopeds and scooters.\nRain runs off, dust stays outside, UV hits the cover instead of the paint.\nFree shipping.\nA Swedish brand.",
+  "rubrik": "218×118.5 cm motorcycle cover",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "218×118.5 cm motorcycle cover",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_SP_5_H1": {
+  "hoppa": null,
+  "text": "I walked three weeks in rain and snow in the same boots.\nThe snow stayed out, the rain ran off and grit never got in.\nTakes ten seconds to put on before I head out.\nHiking gaiters. Free shipping.\nA Swedish brand.",
+  "rubrik": "Dry feet, whatever the weather",
+  "beskrivning": "Goes on in ten seconds",
+  "tre_fragor": {
+   "rad": "Dry feet, whatever the weather",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_G_2": {
+  "hoppa": null,
+  "text": "Found the perfect gift for him. 🎁\nHe's always out: hiking, dog, forest, nature.\n✅ A gift he'll actually use\n✅ Simple, practical, appreciated\n✅ Works for a birthday, the holidays or just \"thinking of you\"\nSee his face when he opens the box. 👇\nA Swedish brand.",
+  "rubrik": "The gift he'll actually use",
+  "beskrivning": "For the one who lives outdoors.",
+  "tre_fragor": {
+   "rad": "The gift he'll actually use",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_SP_3": {
+  "hoppa": null,
+  "text": "More and more people are discovering how relaxing whittling is. 🪵\n• Six knives and six chisels in one set\n• 30 pieces in a zipper bag, blade guards and cut-resistant gloves included\n• A calm hobby for home, the cabin or the patio\n👉 See why they got hooked.\nA Swedish brand.",
+  "rubrik": "Your new favorite hobby is waiting",
+  "beskrivning": "Six knives and six chisels in one set.",
+  "tre_fragor": {
+   "rad": "Your new favorite hobby is waiting",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Taljset_GT_4_H1": {
+  "hoppa": null,
+  "text": "The bag holds 6 knives and 6 chisels, 30 pieces in total.\nThe zipper can open the same evening the parcel does.\nFree shipping, 14-day returns.\nA Swedish brand.",
+  "rubrik": "The gift that turns into a hobby",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "The gift that turns into a hobby",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_SP_2_1": {
+  "hoppa": null,
+  "text": "24 doors filled with golf gear he'll actually use.\nTees, ball markers, a green repair tool, a club brush and a towel.\nA small surprise every morning in December.\n14-day returns.\nShop now 👇\nA Swedish brand.",
+  "rubrik": "The funniest golf gift this December",
+  "beskrivning": "Loved by golfers and the people who shop for them.",
+  "tre_fragor": {
+   "rad": "The funniest golf gift this December",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_PD_2": {
+  "hoppa": null,
+  "text": "Forget the chocolate calendar. This one is for the golfer. ⛳\n24 doors with 24 golf accessories.\nTees, ball markers, a repair tool, a club brush, a towel and more.\nA little surprise every day until Christmas Eve.\nAnd all of it gets used on the course.\nOrder the Golf Advent Calendar 👇\nA Swedish brand.",
+  "rubrik": "24 days of golf fun",
+  "beskrivning": "Open one door a day until Christmas.",
+  "tre_fragor": {
+   "rad": "24 days of golf fun",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_PD_1_H1": {
+  "hoppa": null,
+  "text": "Cold feet ruin the whole day. 🥶\nNot anymore.\nHeated insoles with a remote give you warm feet straight away, without taking your shoes off.\n✅ 3 heat modes\n✅ Key-fob remote control\n✅ USB rechargeable\nMade for the ski slope, the job site or the hunting stand.\n👉 Get yours.\nA Swedish brand.",
+  "rubrik": "Warm feet, all day, every time",
+  "beskrivning": "Charge, slip them in, press the button.",
+  "tre_fragor": {
+   "rad": "Warm feet, all day, every time",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_G_1_H2": {
+  "hoppa": null,
+  "text": "He gets cold feet every winter. He never complains, but I can tell. 🥹\nThis year I found the perfect gift.\n✅ Something he actually needs\n✅ Easy to understand and easy to love\n✅ The gift he didn't know he wanted\nImagine his face when he opens it. 🎁\n👉 Give warmth this year.\nA Swedish brand.",
+  "rubrik": "The gift he actually needs",
+  "beskrivning": "A gift he'll use again and again.",
+  "tre_fragor": {
+   "rad": "The gift he actually needs",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_SP_1_H1": {
+  "hoppa": null,
+  "text": "Finally warm feet all day long. 🔥\nHeated insoles with three heat modes and a remote.\n✅ Easy to use\n✅ Trim to your size along the printed lines, EU 41–46\n✅ 14-day returns\nStop freezing. 👇\n👉 Try them yourself.\nA Swedish brand.",
+  "rubrik": "Warm feet, all day, every time",
+  "beskrivning": "Three heat modes, one remote.",
+  "tre_fragor": {
+   "rad": "Warm feet, all day, every time",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_OB_8_1": {
+  "hoppa": null,
+  "text": "One loose corner is all it takes for a cover to fly off. This one has straps on all four sides, 2.5 m each and adjustable to your caravan, that hook into a hook at the bottom edge. Two extra tension straps (10.5 m) come with it at no extra cost. The roof is the part you never see, and the most expensive to repair. 23% off.\nA Swedish brand.",
+  "rubrik": "Straps on all four sides",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Straps on all four sides",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_PD_4_1": {
+  "hoppa": null,
+  "text": "210D Oxford fabric keeps the light out. The algae never get started.\nA Swedish brand.",
+  "rubrik": "210D Oxford fabric. No algae.",
+  "beskrivning": "Takes the UV instead of the plastic.",
+  "tre_fragor": {
+   "rad": "210D Oxford fabric. No algae.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Sotarset_PD_8_H2": {
+  "hoppa": null,
+  "text": "The brush goes inside the pipe: the soot gets brushed loose, not scraped. Nine flexible rods bend with the curve instead of stopping at it. Screw together up to 3.69 meters, build only the length you need, and clean it yourself between the chimney sweep's visits. Get your draft back.\nA Swedish brand.",
+  "rubrik": "Clean flue, better draft, in minutes",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Clean flue, better draft, in minutes",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_FO_1_H1": {
+  "hoppa": null,
+  "text": "Snow is on its way. Without protection, socks are wet in minutes.\nTen seconds to put on, and snow, rain and grit stay out.\nBe ready before the snow comes.\nA Swedish brand.",
+  "rubrik": "Snow is coming. Ten seconds protects.",
+  "beskrivning": "Keeps out snow, rain and grit.",
+  "tre_fragor": {
+   "rad": "Snow is coming. Ten seconds protects.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_SP_4_H1": {
+  "hoppa": null,
+  "text": "Three weeks of autumn rain. Thirty kilometers of mud every trip.\n\nHook on the laces, strap under the foot. It stayed put the whole hike.\n\nTurned the boot over after 30 km. Sock completely dry, no dampness at the seam.\nA Swedish brand.",
+  "rubrik": "30 km of rain. Socks dry.",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "30 km of rain. Socks dry.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_SP_4_H1": {
+  "hoppa": null,
+  "text": "30 pieces in one bag: 6 knives and 6 chisels, with a guard for every blade. Glove on, knife working, shavings falling.\nA Swedish brand.",
+  "rubrik": "30 pieces, 6 knives, 6 chisels",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "30 pieces, 6 knives, 6 chisels",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_PD_5_H1": {
+  "hoppa": null,
+  "text": "The knife takes its first cuts on a piece of wood meant for practice. The chisel hollows out, and the leather strop and polishing compound keep the edge sharp.\nA Swedish brand.",
+  "rubrik": "Practice on the spare wood first",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Practice on the spare wood first",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_PD_2_1": {
+  "hoppa": null,
+  "text": "Forget the chocolate calendar. This one is for the golfer. ⛳\n24 doors, 24 golf accessories.\nTees, ball markers, a pitch repair tool, a club brush, a towel and more.\nA small surprise every day leading up to Christmas.\nAnd all of it gets used on the course.\nOrder your Golf Advent Calendar 👇\nA Swedish brand.",
+  "rubrik": "24 days of golf joy",
+  "beskrivning": "Open one door a day until Christmas.",
+  "tre_fragor": {
+   "rad": "24 days of golf joy",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_G_2": {
+  "hoppa": null,
+  "text": "What do you buy a golfer who already has everything? 🎁\nYou just found it.\n24 small surprises, one door a day until Christmas.\nHe'll smile every morning and think of you.\nNo tie. No sweater. Something he'll be genuinely glad to get.\nGive him the gift he's still talking about after Christmas. Order here 👇\nA Swedish brand.",
+  "rubrik": "The perfect Christmas gift for a golfer",
+  "beskrivning": "24 reasons for him to smile in December.",
+  "tre_fragor": {
+   "rad": "The perfect Christmas gift for a golfer",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Golfkalender_SP_1": {
+  "hoppa": "Annonsen bygger på ett stjärnbetygscitat från en okänd kund som inte går att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Värmesulorna_CS_2_1": {
+  "hoppa": null,
+  "text": "Your toes go cold after fifteen minutes of standing still. These heated insoles have three heat modes (high, medium, low) on a key-fob remote, so you change the heat without moving a foot. Trim them along the printed lines to your size (EU 41-46) and charge them with a regular USB cable.\n24% off.\nA Swedish brand.",
+  "rubrik": "Heated insoles, 24% off",
+  "beskrivning": "Three heat modes. Remote control.",
+  "tre_fragor": {
+   "rad": "Heated insoles, 24% off",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_CS_1_H3": {
+  "hoppa": null,
+  "text": "Your toes go cold after fifteen minutes of standing still. These heated insoles have three heat modes (high, medium, low) on a key-fob remote, so you change the heat without moving a foot. Trim them along the printed lines to your size (EU 41-46) and charge them with a regular USB cable.\n24% off.\nA Swedish brand.",
+  "rubrik": "Heated insoles, 24% off",
+  "beskrivning": "Three heat modes. Remote control.",
+  "tre_fragor": {
+   "rad": "Heated insoles, 24% off",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
  }
 }

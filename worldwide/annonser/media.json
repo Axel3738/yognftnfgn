@@ -2097,5 +2097,292 @@
  },
  "IBC_PD_4_H1": {
   "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/IBC_PD_4_H1.mp4  band 816:944 (uppmätt 859:901, höjt till 816:944 för två rader), sudd: rem"
+ },
+ "Takoverdrag_OB_8_1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_OB_8_1.jpg",
+  "sha256": "101a6e890d16925105f858d85bfdda2407a16a37a531f5030d15020e3cc71cb8",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": [],
+  "image_hash": "1da634dbc1233624a0c111081b0b8bc2",
+  "annons_id": "120251697244240435",
+  "creative_id": "1635396528170028",
+  "kampanj_id": "120251678927960435",
+  "skapad": "2026-09-30T17:41:38.857Z"
+ },
+ "IBC_BOF_5_1": {
+  "fil": "worldwide/annonser/klar/IBC_BOF_5_1.jpg",
+  "sha256": "08fe6f7ec812a37b000a02a003eaea689a06295735d1e40e6fce4b00119f0189",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": [],
+  "image_hash": "0548e8ac56ed1395d2204df471a2f54d",
+  "annons_id": "120251697287920435",
+  "creative_id": "1418987930299114",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T17:43:26.730Z"
+ },
+ "MC-Kapell_PD_6_1": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_PD_6_1.jpg",
+  "sha256": "853e141152196b06fa4f9230d8e5f02bfea60e4039cc82a441c534f67bbaae3a",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Golfkalender_PD_2_1": {
+  "fil": "worldwide/annonser/klar/Golfkalender_PD_2_1.jpg",
+  "sha256": "777d574d44c4afcc2796f8087c02ac3275cbfa45627c9a9db688c053ceccc91a",
+  "granskad": true,
+  "utan_text": true
+ },
+ "Värmesulorna_G_2_1": {
+  "fil": "worldwide/annonser/klar/V_rmesulorna_G_2_1.jpg",
+  "sha256": "a8792f198ab4b769d06ddada9af030a1b3e740197160a6a32bc93bde225cefe2",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Takoverdrag_BOF_4_1": {
+  "hoppa": "bildgranskning: tom ruta överst, text över produkten efter suddningen"
+ },
+ "IBC_PD_4_1": {
+  "fil": "worldwide/annonser/klar/IBC_PD_4_1.jpg",
+  "sha256": "cee317b50b5465f1e191698bb0b3b3611c63f6d6bdde5fec291fc3467ec318ec",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": [],
+  "image_hash": "08c812e547dbd57cbbdbdfd2b0c7fbc5",
+  "annons_id": "120251697291360435",
+  "creative_id": "1025703327228512",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T17:43:33.458Z"
+ },
+ "Damasker_G_2_1": {
+  "fil": "worldwide/annonser/klar/Damasker_G_2_1.jpg",
+  "sha256": "d4eceec806c53ba9422fe569b4c1d2a6743a540ebf306d06f27c8513c19612f3",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Golfkalender_SP_2_1": {
+  "fil": "worldwide/annonser/klar/Golfkalender_SP_2_1.jpg",
+  "sha256": "4265599f117246d86571e9d5140c82f3a6f3b8647d5d794532fbe800a550fc51",
+  "granskad": true,
+  "utan_text": true
+ },
+ "Takoverdrag_GT_2_1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_GT_2_1.jpg",
+  "sha256": "ab7a4277c0fd60f95ada200ac723b7a04f82840b4e327b1d4253c0fec2f0a6d8",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": [],
+  "image_hash": "915e744c45e328fe323facfc31ab6326",
+  "annons_id": "120251697245890435",
+  "creative_id": "2896855717351425",
+  "kampanj_id": "120251678927960435",
+  "skapad": "2026-09-30T17:41:45.227Z"
+ },
+ "Sotarset_PD_3_1": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_3_1.jpg",
+  "sha256": "ac0436a4cb727858bd96cb5c5126081e07df4b113c24cd2f0c780b2478dce902",
+  "granskad": true,
+  "efterkontroll": "ren",
+  "oparade": [],
+  "image_hash": "3816d1952c43349423543f67cd026777",
+  "annons_id": "120251697665120435",
+  "creative_id": "2072741916763623",
+  "kampanj_id": "120251679569180435",
+  "skapad": "2026-09-30T18:00:18.351Z"
+ },
+ "Damasker_CS_2_1": {
+  "hoppa": "bildgranskning: \"idag\"/\"nästan slutsåld\" i bild — påhittad brådska"
+ },
+ "Värmesulorna_CS_2_1": {
+  "hoppa": "bildgranskning: \"bara idag\"/\"få kvar\" i bild — påhittad brådska"
+ },
+ "Damasker_FO_1_H1": {
+  "fil": "worldwide/annonser/klar/Damasker_FO_1_H1.mp4",
+  "sha256": "0a03d0eaa5f8eff3ae75911f4292764eb730ec1102349a3652112fd31366bd07",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_FO_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_FO_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_FO_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Damasker_CS_3": {
+  "fil": "worldwide/annonser/klar/Damasker_CS_3.mp4",
+  "sha256": "381cb3c586a8db3dd5f8add8cfe9f5c160b8f814957133e416ba4ed91eabde9e",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_CS_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_CS_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_CS_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Damasker_PD_8_H1": {
+  "fil": "worldwide/annonser/klar/Damasker_PD_8_H1.mp4",
+  "sha256": "cbea2ea16cd4c6ddc751c2a3517cb5820f714769dd8ec8ef2b20259b17a8f10d",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_PD_8_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_PD_8_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_PD_8_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_2_H1": {
+  "hoppa": "textkoll 2026-09-30: 12.5s 459kr. | 13s 459kr. | 13.5s 459kr"
+ },
+ "Damasker_G_2": {
+  "fil": "worldwide/annonser/klar/Damasker_G_2.mp4",
+  "sha256": "e426085229e1b444758a86f2e5f28ad4d5a320c7b26d2c1d5a60924b3a856e3e",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_G_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_G_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_G_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Golfkalender_SP_2": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Golfkalender_SP_2.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för"
+ },
+ "MC-Kapell_CS_3": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_CS_3.mp4",
+  "sha256": "917fcfe91b884a16545c67333e4dc0d3a75d6d96e11993778bfa636a6ce79689",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/MC-Kapell_CS_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/MC-Kapell_CS_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/MC-Kapell_CS_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_8_H2": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_8_H2.mp4",
+  "sha256": "328c795f9021c00f428f2123c1079c48a1422f88925a9232d36b93021010d8c9",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_8_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_8_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_8_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "856729060794879",
+  "annons_id": "120251697670540435",
+  "creative_id": "2032934607398018",
+  "kampanj_id": "120251679569180435",
+  "skapad": "2026-09-30T18:00:43.550Z"
+ },
+ "Taljset_PD_4_H1": {
+  "hoppa": "textkoll 2026-09-30: 12s 869kr | 12s ordinarie 1139 kr | 12.5s 869kr"
+ },
+ "MC-Kapell_G_2": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_G_2.mp4",
+  "sha256": "be2551a07cbdb91db1fa89ce53994d08eb86fb4c63712bcbb64fd20d5ad2d050",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/MC-Kapell_G_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/MC-Kapell_G_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/MC-Kapell_G_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Takoverdrag_CS_8_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ Takoverdrag_CS_8_H1: röstkollen — levereras inte"
+ },
+ "Taljset_CS_2": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Taljset_CS_2.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för två "
+ },
+ "Golfkalender_PD_3": {
+  "fil": "worldwide/annonser/klar/Golfkalender_PD_3.mp4",
+  "sha256": "8cde849c24c56140db2cba4103d7891217674ecc6309d8c13c5c08480df13596",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Golfkalender_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Golfkalender_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Golfkalender_PD_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Golfkalender_PD_2": {
+  "fil": "worldwide/annonser/klar/Golfkalender_PD_2.mp4",
+  "sha256": "9094b5c7de00a759d4a397f50457075d6b4fee4d509f17e45a6fddce57566900",
+  "granskad": true,
+  "granskning": "sessionen 2026-09-30 kväll: textkoll fann bara vår egen engelska bildtext (\"one a day till\" läses som svenska \"till\"); röstkollen ✅"
+ },
+ "Taljset_GT_4_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Taljset_GT_4_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för t"
+ },
+ "Värmesulorna_SP_1_H2": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Värmesulorna_SP_1_H1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Golfkalender_CS_2": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Golfkalender_CS_1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Värmesulorna_G_1_H2": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Damasker_SP_5_H1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "IBC_SP_1_H1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Damasker_SP_4_H1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Golfkalender_G_2": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Värmesulorna_G_1_H1": {
+  "hoppa": "manusagenten 2026-09-30: förstapersonsrecension, jul/fars dag eller bara pris och \"idag\" — inget manus"
+ },
+ "Taljset_SP_3": {
+  "fil": "worldwide/annonser/klar/Taljset_SP_3.mp4",
+  "sha256": "fdd59d695c162e1183ef676e8816f6255677e09ff255cb551df3315c6b9c9a91",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Taljset_SP_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Taljset_SP_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Taljset_SP_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30 kväll: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Taljset_SP_4_H1": {
+  "hoppa": "textkoll 2026-09-30: 10.5s 869 kr | 10.5s ordinarie 1 139 kr | 11s 869 kr"
+ },
+ "Taljset_OB_1_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Taljset_OB_1_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för t"
+ },
+ "Värmesulorna_PD_1_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/V_rmesulorna_PD_1_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 "
+ },
+ "Taljset_PD_5_H1": {
+  "hoppa": "textkoll 2026-09-30: 12.5s 869kr | 12.5s ordinarie 1139 kr | 13s 869kr"
+ },
+ "Värmesulorna_CS_1_H3": {
+  "fil": "worldwide/annonser/klar/V_rmesulorna_CS_1_H3.mp4",
+  "sha256": "f699cb4c5b2b7ed88f2949e5589a99a547c92f6ced9e95a69689da7fa8230a63",
+  "granskad": true,
+  "granskning": "sessionen 2026-09-30 kväll: textkoll fann bara produktens engelska tryck \"Output:70%-Med-6H\"; röstkollen ✅"
  }
 }

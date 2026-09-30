@@ -2030,5 +2030,327 @@
    "falsifiera": "✅",
    "ingen_annan": "❌"
   }
+ },
+ "Takoverdrag_OB_8_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Remmen hakar i en krok,\ninte i en knut du hoppas\nhåller.",
+    "en": "The strap clips into a hook,\nnot a knot you hope\nwill hold."
+   },
+   {
+    "sv": "Remmar på alla fyra sidor, 2,5 m och justerbara,\nhakas fast i en krok i nederkant.",
+    "en": "Straps on all four sides, 2.5 m and adjustable,\nclip onto a hook along the bottom edge."
+   },
+   {
+    "sv": "2 extra spännremmar (10,5 m) ingår",
+    "en": "2 extra tie-down straps (10.5 m) included"
+   },
+   {
+    "sv": "1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Beställ ditt taköverdrag",
+    "en": "Order your roof cover"
+   }
+  ],
+  "layout_en": "Top: a large pale semi-transparent box with a three-line centered bold near-black sans-serif headline, and a second box below it with a two-line centered regular dark line. Middle-right: a small black rounded label with bold white text over the photo of a hand clipping a black buckle. Lower: a full-width pale bar with one centered regular line (prices in kronor: replace with the short English line, bar stays). Bottom: dark-blue (#1c4a7a) rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "The strap clips into a hook, not a knot you hope will hold.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_BOF_5_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Presenningen som skulle\nskydda blåser av vid\nförsta höststormen.",
+    "en": "The tarp that was meant\nto protect blows off in\nthe first autumn storm."
+   },
+   {
+    "sv": "Ett 210D Oxford-överdrag med blixtlås sitter kvar.",
+    "en": "A 210D Oxford cover with a zipper stays put."
+   },
+   {
+    "sv": "Ingen presenning · Inga gummiband · 210D Oxford-tyg",
+    "en": "No tarp · No bungee cords · 210D Oxford fabric"
+   },
+   {
+    "sv": "Skydda tanken innan hösten",
+    "en": "Protect the tank before autumn"
+   }
+  ],
+  "layout_en": "Top: a large pale semi-transparent box with a three-line centered bold near-black sans-serif headline, and a second pale box below with one regular dark line. Bottom: a full-width pale bar with one centered regular dark line over the grass, then a dark-blue (#1c4a7a) rounded pill button with bold white text. Split-screen photo (blue tarp vs green zipped cover) stays untouched.",
+  "tre_fragor": {
+   "rad": "The tarp that was meant to protect blows off in the first autumn storm.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "MC-Kapell_PD_6_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "218 × 118,5 cm",
+    "en": "218 × 118.5 cm"
+   },
+   {
+    "sv": "Passar de flesta motorcyklar, mopeder och scooters.",
+    "en": "Fits most motorcycles, mopeds and scooters."
+   },
+   {
+    "sv": "349 kr",
+    "en": ""
+   },
+   {
+    "sv": "Kolla måtten",
+    "en": "Check the size"
+   }
+  ],
+  "layout_en": "Top: a large bold near-black sans-serif line, centered (dimensions, decimal comma becomes a point), then a regular dark line in a thin pale strip below it. Middle: photo of a black cover on a motorcycle (untouched). Lower: a full-width pale bar holding only the small price '349 kr' - paint out the text and the bar so the grey photo shows through. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "218 × 118.5 cm",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Golfkalender_PD_2_1": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No Swedish text in the image. The only caption, white bold sans-serif 'GOLF Golf Advent Calendar' at bottom left, is already English and stays as is.",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Värmesulorna_G_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Den perfekta julklappen till honom\nsom alltid fryser om fötterna",
+    "en": "The perfect Christmas gift for him\nwhose feet are always cold"
+   },
+   {
+    "sv": "Se hans ansikte när han förstår att du löste det.",
+    "en": "Watch his face when he sees you solved it."
+   },
+   {
+    "sv": "GE BORT VÄRME",
+    "en": "GIVE WARMTH"
+   }
+  ],
+  "layout_en": "Top: a two-line centered dark serif headline (Playfair-like, regular weight) directly on the blurred warm Christmas living room, no box, followed by a smaller centered regular sans-serif line in dark grey. Bottom: an off-white rounded-rectangle button with dark regular ALL CAPS text, centered, over the wooden table. The photo of the open gift box with a heated insole stays untouched.",
+  "tre_fragor": {
+   "rad": "The perfect Christmas gift for him whose feet are always cold",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Takoverdrag_BOF_4_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "1 129 kr",
+    "en": ""
+   },
+   {
+    "sv": "340 kr billigare än 1 469 kr",
+    "en": ""
+   },
+   {
+    "sv": "19,5 m² tak",
+    "en": "19.5 m² roof"
+   },
+   {
+    "sv": "Betala 1 129 kr",
+    "en": "Order yours now"
+   }
+  ],
+  "layout_en": "Top: two centered rows on a white-to-grey gradient - a huge bold black price line and, below it, a regular dark-grey line; paint both rows out and leave the clean white. Middle of the lower photo: small bold white centered caption under the folded cover, between the strap hooks. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white centered text; redraw it without the price.",
+  "tre_fragor": {
+   "rad": "19.5 m² roof",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_PD_4_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "210D Oxford-tyg.",
+    "en": "210D Oxford fabric."
+   },
+   {
+    "sv": "Stänger ute ljuset.",
+    "en": "Blocks out the light."
+   },
+   {
+    "sv": "Ingen alg.",
+    "en": "No algae."
+   },
+   {
+    "sv": "Kraftigt tyg. Enkelt blixtlås. Öppning upptill.",
+    "en": "Tough fabric. Easy zip. Opens at the top."
+   },
+   {
+    "sv": "Skydda din tank idag",
+    "en": "Protect your tank today"
+   }
+  ],
+  "layout_en": "Top: a pale semi-transparent white panel with three centered bold near-black sans-serif headline lines (large), then a thin divider and one regular dark line in a lower strip of the same panel. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white centered text. Redraw the text in place and keep the panels.",
+  "tre_fragor": {
+   "rad": "210D Oxford fabric. Blocks out the light. No algae.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Damasker_G_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Den perfekta presenten till",
+    "en": "The perfect gift for"
+   },
+   {
+    "sv": "honom som alltid är ute",
+    "en": "the man who's always outdoors"
+   },
+   {
+    "sv": "Se hans min när han öppnar den",
+    "en": "Watch his face when he opens it"
+   },
+   {
+    "sv": "Ge bort glädje idag",
+    "en": "Give joy today"
+   }
+  ],
+  "layout_en": "Top: two-line centered bold white sans-serif headline over the dark wooden lid, then one smaller light-weight white line below it. Bottom: off-white rounded-rectangle button with bold dark-brown centered text over the knitted blanket. Redraw each line in place, same weight and colours.",
+  "tre_fragor": {
+   "rad": "The perfect gift for the man who's always outdoors",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Golfkalender_SP_2_1": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No Swedish text in the image: the only lettering (GOLF ADVENT CALENDAR, Merry Christmas, 24 Days) is already English and printed on the product box. Leave the image untouched.",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Takoverdrag_GT_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "DEN PERFEKTA PRESENTEN\nTILL HUSVAGNS-ÄLSKAREN",
+    "en": "THE PERFECT GIFT\nFOR THE CARAVAN LOVER"
+   },
+   {
+    "sv": "Han blir inte \"tack snällt\"-glad. Han blir riktigt glad.",
+    "en": "Not \"thanks, that's nice\" happy. Actually happy."
+   },
+   {
+    "sv": "[ Ge presenten han faktiskt vill ha ]",
+    "en": "[ Give the gift he actually wants ]"
+   }
+  ],
+  "layout_en": "Two-line centered bold white sans-serif ALL CAPS headline across the top of a blurred living-room photo, with a one-line regular white subline directly below it (soft shadow, no box). At the bottom a small brown rounded button with a thin white outline holds one line of regular white text in square brackets. Repaint all three over the same blurred background; the gift-wrapped black cover in the middle stays untouched.",
+  "tre_fragor": {
+   "rad": "THE PERFECT GIFT FOR THE CARAVAN LOVER",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Sotarset_PD_3_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Stel fastnar.",
+    "en": "Stiff gets stuck."
+   },
+   {
+    "sv": "Böjlig fortsätter.",
+    "en": "Flexible keeps going."
+   },
+   {
+    "sv": "9 böjliga stänger följer röret genom varje krök.",
+    "en": "9 flexible rods follow the flue through every bend."
+   },
+   {
+    "sv": "459 kr. Ord. 599 kr.",
+    "en": ""
+   },
+   {
+    "sv": "Beställ.",
+    "en": "Order now."
+   }
+  ],
+  "layout_en": "Top: a near-white semi-opaque panel holds the two-line centered bold black sans-serif headline (Arial Bold style), and a slim white strip below it holds one regular dark line of subtext. Lower down a full-width light grey strip holds the price line in regular dark text - paint that text AND the strip out so the photo shows through. Bottom: dark-blue rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "Stiff gets stuck. Flexible keeps going.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Damasker_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "40% RABATT - IDAG",
+    "en": "40% OFF - TODAY"
+   },
+   {
+    "sv": "Snart slutsåld - få kvar i lager",
+    "en": "Almost sold out - few left in stock"
+   },
+   {
+    "sv": "Köp innan de tar slut",
+    "en": "Buy before they sell out"
+   }
+  ],
+  "layout_en": "Top: huge bold dark-brown (near-black) sans-serif ALL CAPS headline centered on the bright snowy background, no box; directly below it one regular dark-brown subline. Bottom: a brown-gold rounded button with a thin light outline and bold white text, centered. Repaint each over the same snow/wood background.",
+  "tre_fragor": {
+   "rad": "40% OFF - TODAY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Värmesulorna_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "24% RABATT - IDAG",
+    "en": "24% OFF - TODAY"
+   },
+   {
+    "sv": "Priset gäller bara idag – få kvar i lager",
+    "en": "Price valid today only – few left in stock"
+   }
+  ],
+  "layout_en": "Top: huge bold condensed white sans-serif ALL CAPS headline (Bebas/Oswald-like, soft shadow) centered on a deep red gradient background. Bottom: one line of medium-weight white sans-serif with a soft shadow, centered. The insoles and remote in the middle stay untouched.",
+  "tre_fragor": {
+   "rad": "24% OFF - TODAY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
  }
 }

@@ -1,0 +1,31 @@
+1
+00:00:00,000 --> 00:00:02,300
+Jag testade dem i tre veckors regn och snö.
+
+2
+00:00:02,820 --> 00:00:04,100
+Snön stannade ute.
+
+3
+00:00:04,360 --> 00:00:05,620
+Regnet studsade av.
+
+4
+00:00:05,880 --> 00:00:07,160
+Gruset kom aldrig in.
+
+5
+00:00:07,680 --> 00:00:09,220
+Tog tio sekunder att sätta på.
+
+6
+00:00:09,720 --> 00:00:11,260
+300 och 29 kronor.
+
+7
+00:00:11,520 --> 00:00:13,820
+Ordinarie 600 för 29 kronor.
+
+8
+00:00:14,340 --> 00:00:15,100
+Handla nu!
