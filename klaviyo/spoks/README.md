@@ -1206,7 +1206,8 @@ webbläsare) gör dem.
   `notify: true` och 17 mottagare** (mätt med `search_campaigns` i CaraShells yta samma kväll; sv 38,
   da 13, en 92). Spoks sätter alltså `notify` och mottagarantalet när mejlet går ut. Domen fälls därför
   bara på ett PUBLICERAT mejl (`cowork-schema.mjs --jamfor`: publicerat utan `notify` eller till 0
-  mottagare = fel; schemalagt = bara status och tid). Prompten kräver granskningssidan, Smart sending
+  mottagare = fel; schemalagt = bara status och tid). **Bekräftat på V01 själv 30/9:** den stod
+  schemalagd med `notify: false` och publicerades 18:00 med `notify: true` och 2 993 mottagare. Prompten kräver granskningssidan, Smart sending
   av (rutan tom), "… beräknas skickas" över 0 och "Planera" → "Tillämpa". Smart sending är av på
   varje mejl (sessionens beslut: 24-timmarsregeln skulle stryka de aktiva varannan dag i en serie som
   går kl 18 varje dag). Hjälpartikeln *Scheduling an email campaign*
@@ -1257,8 +1258,8 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
   bekräftat med `search_campaigns` (`2026-10-01T16:00Z`, uppdaterad 07:33).
 - **`notify`:** mejl som roboten schemalagt står med `notify: true`. V01 (Cowork 2026-09-29) står
   kvar på `false` även efter att roboten sparat om den med samma tid. Granskningen i appen visar
-  samma sak för båda: Smart sending av och 2 971 som "beräknas skickas". Kvällens kontroll 18:20
-  säger om V01 faktiskt mejlades.
+  samma sak för båda: Smart sending av och 2 971 som "beräknas skickas". ✅ **V01 mejlades:** den
+  publicerades 30/9 18:00 med `notify: true` och 2 993 mottagare (mätt 18:20 med `search_campaigns`).
 - **Takten och en fälla:** cirka 50 sekunder per mejl, 36 mejl på en halvtimme. FD11 fick först
   fel "Till: tomt": sidhuvudet ritas före mejlet, och roboten läste mottagarfältet medan sidan
   laddade. Den väntar sedan dess in "Till:" innan den läser något.
