@@ -4,6 +4,12 @@
 //
 //   node klaviyo/spoks/robot/spoks-robot.mjs logga-in [--epost kundsupport@baverbutiken.se] [--brand baverbutiken]
 //   node klaviyo/spoks/robot/spoks-robot.mjs schemalagg --facit klaviyo/spoks/cowork/<brand>-schema-<datum>.json [--bara K03,V02] [--torr]
+//   node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand matstrumpor]
+//
+// statistik läser ett skickat mejls avregistreringar och spamklagomål, som varken MCP:n eller
+// API:t ger (get_campaign_statistics har bara mottagare, öppningar, klick och köp), och dömer dem
+// mot LARM_LEVERANS (docs/os/EPOST-STRATEGI.md §8). Bara läsning. Sidan listar mottagarna med
+// namn och e-post; roboten skriver aldrig ut dem, bara talen.
 //
 // Facit är samma JSON som cowork-schema.mjs skriver (kod, postId, segment, datum, tid). Per mejl:
 //   utkast            → Till: (väljer facits segment om fältet är tomt) → TITTA IGENOM → Smart
@@ -37,6 +43,29 @@ export function inloggningslank(ra) {
   const text = String(ra).replace(/=\r?\n/g, '').replace(/=([0-9A-F]{2})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
   return [...text.matchAll(/href=["']?([^"' >]+)/gi)].map((m) => m[1].replace(/&amp;/g, '&'))
     .find((u) => /^https:\/\/auth\.links\.spoks\.com\//.test(u) && /oobCode|mode(=|%3D)signIn/i.test(u)) ?? null;
+}
+
+// Fliken "Mottagaraktivitet" i ett skickat mejls statistik, rad för rad som Spoks skriver den
+// (mätt på Matstrumpors K01 2026-09-30). "Återställd" är Spoks svenska för studsade.
+const AKTIVITET = {
+  levererad: 'Levererad', oppnad: 'Öppnad', klickade: 'Klickade', konverterad: 'Konverterad',
+  studsade: 'Återställd', avregistrerade: 'Avprenumererad', spam: 'Markerad som skräppost', overhoppade: 'Överhoppad',
+};
+export function lasMottagaraktivitet(rader) {
+  const ut = {};
+  for (const [nyckel, etikett] of Object.entries(AKTIVITET)) {
+    const re = new RegExp(`^${etikett} ([\\d\\s\\u00a0\\u202f]+)$`);
+    const rad = rader.find((t) => re.test(t));
+    ut[nyckel] = rad ? Number(rad.match(re)[1].replace(/\D/g, '')) : null;
+  }
+  return ut;
+}
+
+// LARM_LEVERANS: avregistreringar över 1 % eller spamklagomål över 0,3 % av de levererade.
+export function larmLeverans({ levererad, avregistrerade, spam }) {
+  if (!levererad || avregistrerade == null || spam == null) return { larm: null, orsak: 'talen saknas eller stod inte still på sidan' };
+  const procent = (n) => Math.round((n / levererad) * 10000) / 100;
+  return { avregProcent: procent(avregistrerade), spamProcent: procent(spam), larm: avregistrerade / levererad > 0.01 || spam / levererad > 0.003 };
 }
 
 function arg(namn) { const i = process.argv.indexOf(namn); return i >= 0 ? process.argv[i + 1] : null; }
@@ -137,7 +166,18 @@ async function vantaPaPut(page, postId, fran, ms = 12000) {
 
 async function ettMejl(page, r, { lank, torr }) {
   await page.goto(lank.replace('{postId}', r.postId), { waitUntil: 'domcontentloaded', timeout: 60000 });
-  if (!await vantaPaText(page, 'TITTA IGENOM', 45000)) throw new Error('Sidan kom aldrig.');
+  // Ett skickat mejl har ingen TITTA IGENOM, bara "Publicerad kampanj": det rörs aldrig.
+  let sida = null;
+  for (let i = 0; i < 45 && !sida; i++) {
+    const t = await texter(page);
+    if (t.some((e) => e.t.startsWith('Publicerad kampanj'))) sida = 'publicerad';
+    else if (t.some((e) => e.t.includes('TITTA IGENOM'))) sida = 'redigerbar';
+    else await page.waitForTimeout(1000);
+  }
+  if (!sida) throw new Error('Sidan kom aldrig.');
+  if (sida === 'publicerad') return { utfall: 'publicerad', rord: false };
+  // Sidhuvudet kommer före mejlet: vänta in mottagarfältet (FD11 2026-09-30 lästes under laddningen).
+  if (!await vantaPaText(page, 'Till:', 45000)) throw new Error('Mottagarfältet kom aldrig.');
   await page.waitForTimeout(1500);
   const t0 = await texter(page);
   const pill = t0.find((e) => e.t.startsWith('Kommer att publiceras'))?.t ?? null;
@@ -215,9 +255,69 @@ async function schemalagg() {
   if (fel) process.exitCode = 1;
 }
 
+// Den synliga nod vars text är exakt `text` och som står högst upp (flikraden, före rubriker med
+// samma ord: "Leveransförmåga" finns både som flik och som rubrik längre ner).
+async function hogstUpp(page, text) {
+  return page.evaluate((text) => {
+    const r = [...document.querySelectorAll('flt-semantics')]
+      .filter((e) => ((e.getAttribute('aria-label') ?? '') || (e.textContent ?? '')).trim() === text)
+      .map((e) => e.getBoundingClientRect()).filter((b) => b.width > 0 && b.y > 0 && b.y < innerHeight)
+      .sort((a, b) => a.y - b.y)[0];
+    return r ? { x: r.x + r.width / 2, y: r.y + r.height / 2 } : null;
+  }, text);
+}
+
+// Postsidan → "Se statistik" (under mejlet) → fliken "Mottagaraktivitet" → talen. Exit 3 = larm.
+async function statistik() {
+  const postId = arg('--post') ?? (() => { throw new Error('--post <postId> krävs.'); })();
+  if (!/^[0-9a-f-]{36}$/i.test(postId)) throw new Error(`Konstigt postId: ${postId}`);
+  const brand = arg('--brand') ?? 'matstrumpor';
+  const arbetsyta = JSON.parse(readFileSync(join(ROT, 'klaviyo', 'konto', brand, 'spoks.json'), 'utf8')).arbetsyta;
+  const lank = arbetsyta.lankar.kampanj.replace('{postId}', postId).replace(/\/edit$/, '');
+  const { ctx, page } = await starta();
+  try {
+    await page.goto(lank, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    if (/\/login/.test(page.url())) throw new Error('Inte inloggad: kör logga-in först.');
+    if (!await vantaPaText(page, 'Se statistik', 45000)) throw new Error('Ingen statistik på sidan: är mejlet skickat?');
+    let b = null;
+    for (let i = 0; i < 25; i++) {
+      const el = await nod(page, 'Se statistik', { exakt: false });
+      b = el ? await el.boundingBox() : null;
+      if (b && b.y > 100 && b.y + b.height < 850) break;
+      b = null;
+      await page.mouse.move(860, 500);
+      await page.mouse.wheel(0, 400);
+      await page.waitForTimeout(700);
+    }
+    if (!b) throw new Error('Hittar inte "Se statistik".');
+    await page.mouse.click(b.x + b.width / 2, b.y + b.height / 2);
+    if (!await vantaPaText(page, 'Mottagaraktivitet', 30000)) throw new Error('Statistiken öppnades inte.');
+    const flik = await hogstUpp(page, 'Mottagaraktivitet');
+    if (!flik) throw new Error('Hittar inte fliken Mottagaraktivitet.');
+    await page.mouse.click(flik.x, flik.y);
+    // Fliken ritar först platshållare (mätt 2026-09-30: "Avprenumererad 1234", "Levererad 2 981"
+    // och "Klickade 51" ur översikten) och byter till de riktiga talen några sekunder senare.
+    // Talen räknas därför först när två läsningar i rad, tre sekunder isär, är identiska.
+    let tal = lasMottagaraktivitet([]), forra = null, stilla = false;
+    await page.waitForTimeout(5000);
+    for (let i = 0; i < 20 && !stilla; i++) {
+      tal = lasMottagaraktivitet((await texter(page)).map((e) => e.t));
+      const nu = JSON.stringify(tal);
+      stilla = nu === forra && ![tal.levererad, tal.avregistrerade, tal.spam].includes(null);
+      forra = nu;
+      if (!stilla) await page.waitForTimeout(3000);
+    }
+    if (!stilla) tal = lasMottagaraktivitet([]);
+    const ut = { brand, postId, ...tal, ...larmLeverans(tal) };
+    logga({ kommando: 'statistik', ...ut });
+    if (ut.larm === null) process.exitCode = 1;
+    else if (ut.larm) process.exitCode = 3;
+  } finally { await ctx.close(); }
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const kommando = process.argv[2];
-  const k = { 'logga-in': loggaIn, schemalagg }[kommando];
-  if (!k) { console.error('Kommandon: logga-in, schemalagg (se huvudet i filen).'); process.exit(2); }
+  const k = { 'logga-in': loggaIn, schemalagg, statistik }[kommando];
+  if (!k) { console.error('Kommandon: logga-in, schemalagg, statistik (se huvudet i filen).'); process.exit(2); }
   k().catch((e) => { console.error('FEL', e.message); process.exit(1); });
 }

@@ -1229,6 +1229,7 @@ en människa. Den har inte Coworks problem: en robotflik är aldrig dold.
 ```bash
 node klaviyo/spoks/robot/spoks-robot.mjs logga-in            # en gång per container
 node klaviyo/spoks/robot/spoks-robot.mjs schemalagg --facit klaviyo/spoks/cowork/matstrumpor-schema-2026-10-01.json [--bara K03,V02] [--torr]
+node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand matstrumpor]   # avregistreringar + spam, exit 3 = larm
 ```
 
 - **Inloggningen:** Spoks har ingen lösenordsinloggning, bara magisk länk, Google, telefon och
@@ -1258,3 +1259,45 @@ node klaviyo/spoks/robot/spoks-robot.mjs schemalagg --facit klaviyo/spoks/cowork
   kvar på `false` även efter att roboten sparat om den med samma tid. Granskningen i appen visar
   samma sak för båda: Smart sending av och 2 971 som "beräknas skickas". Kvällens kontroll 18:20
   säger om V01 faktiskt mejlades.
+- **Takten och en fälla:** cirka 50 sekunder per mejl, 36 mejl på en halvtimme. FD11 fick först
+  fel "Till: tomt": sidhuvudet ritas före mejlet, och roboten läste mottagarfältet medan sidan
+  laddade. Den väntar sedan dess in "Till:" innan den läser något.
+- **Ett skickat mejl rörs aldrig:** dess sida har "Publicerad kampanj" och ingen TITTA IGENOM.
+  Roboten svarar då `utfall: publicerad` och går vidare (provat torrt på K01 samma dag).
+- ✅ **Kollen ons 30/9 10:00 CEST** (`trig_01AoYRfSaHJzbEicy2x49r9h`): `search_campaigns`
+  (`publishedAfter 2026-09-29`) mot `matstrumpor-schema-2026-09-30.json` gav **37 av 37 stämmer**
+  (V01 30/9 18:00 plus de 36 från K03). Publiken mättes med `update_segment` utan
+  `acknowledgeWarnings` och med oförändrad beskrivning (`applied: false` på alla fem):
+  SEG_samtycke 20 schemalagda (plus utkastet F06 E2, som aldrig skickas), SEG_uppvarmning_steg1
+  12, SEG_kopare_forra_sasongen 3, SEG_kopare 1, SEG_ej_kopt 1. Det blir **37 av 37 med rätt
+  segment**, jämfört mejl för mejl mot facit.
+- ⚠️ **`--jamfor` räknar ett facitmejl som saknas i svaret som fel.** Fråga därför alltid med
+  `publishedAfter 2026-09-29`, aldrig "i dag". Annars blir varje mejl som redan gått ut ett
+  falsklarm, och en rutin som schemalägger om det som "saknas" skickar roboten till skickade mejl.
+- **K01 Matstrumpor (29/9 18:00, SEG_samtycke), läst 30/9 ~10:30 CEST:**
+  - Levererad 2 983 (7 studsade, 0,2 %).
+  - Öppnad 921 (31 %).
+  - 51 klickade enligt MCP:n. Fliken Mottagaraktivitet visar 15 och räknar på något annat sätt.
+  - 2 köp, 798 kr.
+  - **28 avregistrerade = 0,94 %.**
+  - **0 spamklagomål.**
+
+  **Inget `LARM_LEVERANS`** (gränserna är över 1 % respektive över 0,3 %), men avregistreringarna
+  ligger nära gränsen. Det var första mejlet till hela listan från en ny avsändare.
+  Kontrollmätning med `preview_segment`: 36 av K01:s 2 983 mottagare är avregistrerade i dag. Det
+  räknar alla vägar ut, även flödesmejl. Regeln döms på Spoks siffra per utskick, alltså 28.
+- **`get_campaign_statistics` har varken avregistreringar eller spamklagomål.** De finns bara i
+  appen: postsidan → "Se statistik" (under mejlet) → fliken "Mottagaraktivitet". Därför finns
+  `spoks-robot.mjs statistik --post <id> [--brand matstrumpor]`. Den läser talen, dömer dem mot
+  `LARM_LEVERANS` och ger exit 3 vid larm. Den skriver aldrig ut mottagarlistan, som har namn och
+  e-post.
+  - ⚠️ **Fliken ritar platshållare först.** Första körningen läste "Avprenumererad 1234",
+    "Levererad 2 981" och "Klickade 51", alltså ett falsklarm på 41 %.
+  - Talen räknas därför först när två läsningar i rad, tre sekunder isär, är identiska. Två
+    körningar efter rättningen gav båda 2 983 / 28 / 0.
+- **Bäverbutikens K01** `51c37c20-…` skickades aldrig (0 i allt). Den ersattes av **"K01 v2 Taket
+  du aldrig går upp och kollar"** `0c760c3e-3eec-4fc0-b40f-3ec16b37e330`, som gick ut 29/9 18:00:
+  2 470 mottagare, 922 öppnade, 151 klick och 0 köp. Den sköts av en annan session och lästes
+  bara.
+- Oförklarat: appens meny säger "Kampanjer 165 kommande", men `search_campaigns` visar 37
+  schemalagda kampanjer. Flödesposter räknas inte i `search_campaigns`. Inget tyder på dubbletter.
