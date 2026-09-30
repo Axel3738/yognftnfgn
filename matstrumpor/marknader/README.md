@@ -231,6 +231,38 @@ använder tjänsterna". Ordval som är identiska med svenskan och rätt på mål
    HTML-attribut (`aria-label="{% case %}…"`) men aldrig inuti `{{ … }}` — då en variabel som
    tilldelas på raden före (`valj_paket` i `ms-bundle-picker.liquid`).
 
+## Priserna: minst +20 % mot Sverige (Axel 2026-09-30, `paslag.mjs`)
+
+Axel: "Jag undrar varför du bara har lagt på 15 % i worldwide … vi borde lowkey lägga på 20 % … om det
+går att göra ett snyggt pris av det". Påslaget mättes först mot Sveriges pris i dagens kurs
+(exchangerate-api, 1 SEK = 0,960 NOK / 0,0882 EUR / 0,100 USD). Resultatet var att bara Norges 5-par låg nära
+15 % (+17 %), och resten av Norge låg mellan −8 och +4 %. Europas 5-par låg på +27 %, och resten mellan +1 och +13 %.
+USA låg mellan +34 och +73 %.
+
+- **Regeln** (`konfig.json` → `paslag_min: 0.2`): varje fast pris i en utlandsmarknad ska vara minst
+  Sveriges pris + 20 % i dagens kurs. Ett pris under golvet höjs till närmaste snygga pris ovanför. Snyggt betyder
+  kronor som slutar på 9, euro och dollar på ,90, yen på 80 och Taiwan-dollar på 90. Ett pris över golvet
+  sänks aldrig, eftersom Axel ville höja och $69 är hans eget USA-beslut.
+- **Höjt och sett som kund 2026-09-30:**
+
+| Produkt | Norge | Europa | USA |
+|---|---|---|---|
+| Sushi 5 par | 449 → **469 kr** | 44,90 € (+27 %, kvar) | $69 (kvar) |
+| Sushi 3 par | 349 → **429 kr** | 34,90 → **39,90 €** | $54.99 (kvar) |
+| Donut | 299 → **349 kr** | 29,90 → **31,90 €** | $39.99 (kvar) |
+| Pizza | 399 → **519 kr** | 39,90 → **47,90 €** | $59.99 (kvar) |
+| Hamburgare | 299 → **349 kr** | 29,90 → **31,90 €** | $39.99 (kvar) |
+| Ätpinnar (gåvan) | 49 → **59 kr** | 4,90 → **5,90 €** | $6.99 (kvar) |
+
+  De lokala valutorna i Europa (DKK, CHF, PLN …) räknas om av Shopify från euron och följde med. Kontrollen
+  som kund visade DK 305/244/366 kr, CH 31/47 CHF och PL 178 zł. Gåvans "verdi" i Norge räknas ur ätpinnarnas
+  pris och blev 118/236 kr. Sverige är orört (399/369 kr).
+- **Köra:** `node matstrumpor/marknader/paslag.mjs` (torrt, visar påslaget per produkt), `--skriv` (in i
+  `konfig.json`), sedan `bygg.mjs --steg prislista --skarpt`. Kursen rör sig, så räkna om när en ny marknad
+  läggs till, aldrig i efterhand på en marknad som säljer.
+- **Leverantörens quotes per marknad tas först när marknaden har fått försäljning** (Axel samma dag). Därför
+  är frågorna i `LEVERANTOR-FRAGA.md` och `LEVERANTOR-FRAGA-JP-TW.md` parkerade.
+
 ## COGS per marknad (`matstrumpor/cogs.json`, `cogs.mjs`)
 
 Sverige: Shopifys Cost per item (landad, SEK) — sushi 5 par 80,23, 3 par 67,51;

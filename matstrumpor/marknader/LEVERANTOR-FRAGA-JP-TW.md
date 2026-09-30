@@ -1,5 +1,7 @@
 # Utkast: frågan till leverantören om Japan och Taiwan
 
+⏸ **Parkerad (Axel 2026-09-30):** "vi ska bara vänta tills vi får försäljning på olika marknader … bara då får vi quotes på de olika marknaderna." Skicka inget förrän en marknad har sålt. Utlandspriserna ligger under tiden minst 20 % över Sverige (`paslag.mjs`), eftersom quoten väntas bli dyr.
+
 Axel 2026-09-30: "Jag hade också viljat testa Japan och Taiwan". `matstrumpor/cogs.json` har landad
 kostnad bara för USA/UK/AU/CA/NZ. För Japan och Taiwan vet vi inte ens om leverantören skickar dit,
 vad det kostar eller hur lång tid det tar. Svaren avgör om Japan och Taiwan går att sälja med fri
