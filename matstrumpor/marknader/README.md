@@ -899,6 +899,35 @@ bara det körningen själv skapat.
 ✅ **Båda lösta:** token:en skriver i nya kungen sedan 2026-09-27 ~15:30 CEST, och HeyGen-
 plånboken fylldes på 2026-09-28. Norges tre annonser ligger PAUSED (se "Annonserna i kontot").
 
+## Översättningsrutinen: nya vinnare BARA till marknader som skalar (förberedd 2026-09-30)
+
+Axels beställning 2026-09-30: marknaderna testas i tre dygn, och det är "onödigt att bara börja
+spamma upp nya annonser och översätta till alla språk" — nya SE-vinnare översätts bara till de
+marknader som faktiskt går bra. Kommandot är **`/matstrumpor-oversatt`**, koden `oversatt/`:
+
+- **Granskaren** (`oversatt/granskare.mjs`, `kor.mjs --marknader` → `oversatt/lage.json`): varje
+  kampanj i `annonser/marknader.json` döms `av` (inte ACTIVE) · `testas` (< 3 hela dygn med spend)
+  · `for_lite` (< 300 kr eller < 3 köp på 7 dygn) · `under` (ROAS under marknadens break-even) ·
+  `skalar`. Break-even ur `cogs.json` + ECB (US 1,182, WW 1,137 mätt 2026-09-30); saknas kostnaden
+  (Norden, Europa, JP, TW) används Sveriges 1,498 och det står som reserv. Axels ord i
+  `oversatt/konfig.json → manuellt` vinner. NO och NOB följs åt (A/B-testet).
+- **Kön** är hubbens `To be translated to ACTIVE MARKETS`. `kor.mjs --vinnare --flytta --skarpt`
+  flyttar dit rader ur `Approved + Launched in SE` med ≥ 300 kr, ≥ 3 köp och ROAS ≥ break-even på
+  14 dygn (hookvarianterna 049h1/049h2 räknas ihop på radens 049) — men bara när någon marknad
+  skalar. Axel kan också flytta en rad för hand.
+- **Planen** (`kor.mjs --plan`): rad × skalande marknad som saknar annonsen, namn
+  `MATSTRUMP_<KOD>_<SE-namnet>`, högst 6 per körning, Katarina och odöpta rader stoppas.
+- **Uppladdningen** `annonser/bygg.mjs --marknad <KOD> --skarpt --ny-aktiv`: den nya annonsen slås
+  på bara när granskaren i dag sagt att marknaden skalar och kampanj + adset redan går
+  (`farNyAktiv`). Kampanj, adset och budget rörs aldrig.
+- **Klart**: `kor.mjs --klar <sid> --skarpt` ⇒ kommentar + `FINISHED` när alla skalande marknader
+  bär annonsen.
+
+Mätt vid bygget 2026-09-30 kväll: alla 15 marknadskampanjer PAUSED ⇒ 0 skalar, kön tom, 0
+SE-vinnare bland de namngivna raderna (största SE-spendern `09-17 Nathalie` bär inget
+Notion-namn och finns redan översatt som 001). **Ingen rutin schemalagd än** — den byggs med
+`/rutin /matstrumpor-oversatt` efter merge till `main`.
+
 ## Annonserna i 20–30 länder — planen (inte byggd)
 
 Kontot är det svenska "nya kungen" (SEK) — så gjordes US/UK/AU i augusti, och det

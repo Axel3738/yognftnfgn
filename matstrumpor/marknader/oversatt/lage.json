@@ -1,0 +1,158 @@
+{
+ "_om": "Skrivet av oversatt/kor.mjs (granskaren). Läs, ändra aldrig för hand — Axels ord skrivs i konfig.json → manuellt.",
+ "idag": "2026-09-30",
+ "skrivet": "2026-09-30T20:02:11.528Z",
+ "mal": [],
+ "domar": [
+  {
+   "kod": "NO",
+   "kampanj": "MATSTRUMP_NO_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "NOB",
+   "kampanj": "MATSTRUMP_NOB_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "DK",
+   "kampanj": "MATSTRUMP_DK_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "FI",
+   "kampanj": "MATSTRUMP_FI_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "US",
+   "kampanj": "MATSTRUMP_US_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.182,
+   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 105.78 kr (US)",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "WW",
+   "kampanj": "MATSTRUMP_WW_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.137,
+   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 82.82 kr (GB)",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "DE",
+   "kampanj": "MATSTRUMP_DE_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "FR",
+   "kampanj": "MATSTRUMP_FR_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "NL",
+   "kampanj": "MATSTRUMP_NL_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "ES",
+   "kampanj": "MATSTRUMP_ES_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "IT",
+   "kampanj": "MATSTRUMP_IT_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "PL",
+   "kampanj": "MATSTRUMP_PL_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "PT",
+   "kampanj": "MATSTRUMP_PT_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "JP",
+   "kampanj": "MATSTRUMP_JP_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  },
+  {
+   "kod": "TW",
+   "kampanj": "MATSTRUMP_TW_SALES",
+   "effective_status": "PAUSED",
+   "break_even": 1.498,
+   "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
+   "lage": "av",
+   "motivering": "kampanjen är PAUSED i kontot",
+   "fonster_fran": null
+  }
+ ]
+}

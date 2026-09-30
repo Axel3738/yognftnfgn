@@ -1,0 +1,34 @@
+{
+ "_om": "Översättningsrutinen för Matstrumpor (/matstrumpor-oversatt). Axels beställning 2026-09-30: \"jag kommer testa jättemånga olika marknader nu i tre dagar … då är det onödigt att bara börja spamma upp nya annonser och översätta till alla språk … de marknaderna som vi faktiskt går bra i, dem ska vi fortsätta ladda upp nya vinnare och översätta\". Ändra tal HÄR, aldrig i kommandofilen.",
+ "hub_id": "3a7270ab-908c-80d2-9f35-e73e51e457ff",
+ "status": {
+  "launchad_se": "Approved + Launched in SE",
+  "ko": "To be translated to ACTIVE MARKETS",
+  "klar": "FINISHED",
+  "_om": "Avläst ur hubbens statuskolumn 2026-09-30 (Axels skärmdump + API): Draft → … → In Review → Approved + Launched in SE → To be translated to ACTIVE MARKETS → FINISHED. 'Translation in review', 'Hereer to be rewied' och 'Not used' finns också i kolumnen men används inte av rutinen."
+ },
+ "typ_regex": "pending approval",
+ "granskare": {
+  "test_dagar": 3,
+  "test_dagar_om": "Axel 2026-09-30: marknaderna testas i tre dagar. En marknad döms först när kampanjen haft spend tre HELA dygn (dagens halva räknas aldrig).",
+  "min_spend_sek": 300,
+  "min_kop": 3,
+  "min_om": "Samma grindar som ANALYSMETOD (ingen dom under 300 kr eller 3 köp) — här krävs BÅDA för att en marknad ska räknas som skalande.",
+  "fonster_dagar": 7,
+  "fonster_om": "Domen räknas på marknadens senaste 7 hela dygn (eller sedan start om den är yngre). En marknad som gick bra dag 1–3 och sedan föll ska inte få nya översättningar.",
+  "break_even_reserv": 1.498,
+  "break_even_reserv_om": "Sveriges break-even (matstrumpor/konfig.json). Används BARA när marknadens landade kostnad saknas i cogs.json (Europa, Japan, Taiwan 2026-09-30) — och står då utskrivet som reserv i rapporten, aldrig som marknadens eget tal."
+ },
+ "manuellt": {},
+ "manuellt_om": "Axels egna ord vinner över mätningen: { \"DE\": { \"lage\": \"skalar\" | \"av\", \"av\": \"Axel\", \"datum\": \"2026-10-03\", \"citat\": \"…\" } }. Skriv aldrig in en rad här utan Axels ord.",
+ "vinnare": {
+  "fonster": "last_14d",
+  "min_spend_sek": 300,
+  "min_kop": 3,
+  "om": "En SE-annons i 'Approved + Launched in SE' räknas som vinnare när den har minst 300 kr OCH 3 köp på 14 dagar och ROAS ≥ Sveriges break-even. Vinnaren flyttas till kön bara när minst en marknad skalar — annars ligger den kvar (inget att översätta till)."
+ },
+ "tak_per_korning": 6,
+ "tak_om": "Högst sex nya översättningar (rad × marknad) per körning. HeyGen precision kostar ~1,5 USD per video och språk; resten tas nästa dag.",
+ "aldrig_utomlands": ["katarina"],
+ "aldrig_utomlands_om": "Axel 2026-09-27: Katarinas UGC får aldrig lämna Sverige. En rad vars namn eller sida nämner henne stoppas."
+}

@@ -8,6 +8,11 @@
 //   node matstrumpor/marknader/annonser/bygg.mjs --marknad NO --skarpt --byt-video
 //       byter videon i annonser som redan finns när filen i klar/ har ändrats (ny creative,
 //       samma annons, fortfarande PAUSED). videor.json minns vilken fil varje annons bär.
+//   node matstrumpor/marknader/annonser/bygg.mjs --marknad DE --skarpt --ny-aktiv
+//       översättningsrutinen (/matstrumpor-oversatt): NYA annonser skapas och slås på direkt — men
+//       BARA när granskaren i dag dömt marknaden som skalande (oversatt/lage.json → mal) och både
+//       kampanjen och adsetet redan är ACTIVE i kontot (läst live). Kampanj, adset, budget och
+//       befintliga annonser rörs aldrig; annars skapas den nya annonsen PAUSED som vanligt.
 //   node matstrumpor/marknader/annonser/bygg.mjs --marknad FR --skarpt --byt-text
 //       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
 //       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
@@ -29,6 +34,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
+import { idagSE } from '../../meta.mjs';
 import { api, alla, laddaUppVideo, laddaUppBild, väntaPåThumb, ingaEnhancements, skapaAnnons } from '../../../tools/meta-lib.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -38,6 +44,7 @@ const skarpt = arg.includes('--skarpt');
 const aktivera = arg.includes('--aktivera');
 const bytVideo = arg.includes('--byt-video');
 const bytText = arg.includes('--byt-text');
+const nyAktiv = arg.includes('--ny-aktiv');
 const log = (s) => console.log(s);
 // Vilken fil varje annons bär (sha256 av filen i klar/). Utan minnet går det inte att veta om en
 // annons redan har den nya videon — 2026-09-28 byttes speed-renderingarna mot precision.
@@ -72,6 +79,18 @@ export function regionalFalt(k) {
 }
 /** Ren: är felet Metas krav på verifierad annonsör (svenska eller engelska felmeddelanden)? */
 export const arVerifieringsfel = (msg = '') => /verifierad annonsör|regionalt reglerade|Annonsör saknas|beneficiary|payer|regional[_ ]regulat/i.test(msg);
+
+/** Ren: får en NY annons i marknaden slås på direkt? Granskarens dom måste vara från i dag och säga
+ *  att marknaden skalar, och kampanjen + adsetet måste redan gå. PAUSED är Axels beslut — det här
+ *  slår aldrig på en kampanj eller ett adset, bara annonsen körningen själv just skapat. */
+export function farNyAktiv({ kod, granskare, idag, kampanjStatus, adsetStatus }) {
+  if (!granskare) return { ok: false, skal: 'oversatt/lage.json saknas — kör granskaren först' };
+  if (granskare.idag !== idag) return { ok: false, skal: `granskarens dom är från ${granskare.idag}, inte ${idag} — kör granskaren igen` };
+  if (!(granskare.mal ?? []).includes(kod)) return { ok: false, skal: `${kod} skalar inte enligt granskaren i dag` };
+  if (kampanjStatus !== 'ACTIVE') return { ok: false, skal: `kampanjen är ${kampanjStatus}` };
+  if (adsetStatus !== 'ACTIVE') return { ok: false, skal: `adsetet är ${adsetStatus}` };
+  return { ok: true };
+}
 
 /** Ren: vilka av rubrik, brödtext och länkbeskrivning som skiljer mellan filen och annonsens
  *  creative i kontot (object_story_spec). Video bär title/link_description, bild name/description. */
@@ -240,7 +259,24 @@ async function byggMarknad(kod) {
       const r = await skapaAnnons({ act, adsetId: adset.id, namn: an.namn, spec: spec(an, m), enhancements: ingaEnhancements() });
       videor[an.namn] = minne(an, m, { creative_id: r.creativeId, annons_id: r.annonsId, skapad: new Date().toISOString() });
       sparaVideor();
-      log(`✅ annons ${an.namn}: ${r.annonsId} PAUSED`);
+      let status = 'PAUSED';
+      if (nyAktiv) {
+        const granskarFil = join(ROT, '../oversatt/lage.json');
+        const granskare = existsSync(granskarFil) ? JSON.parse(readFileSync(granskarFil, 'utf8')) : null;
+        const kl = await api(kampanj.id, { params: { fields: 'effective_status' } });
+        const al = await api(adset.id, { params: { fields: 'effective_status' } });
+        const f = farNyAktiv({ kod, granskare, idag: idagSE(), kampanjStatus: kl.effective_status, adsetStatus: al.effective_status });
+        if (!f.ok) log(`⛔ ${an.namn} stannar PAUSED: ${f.skal}`);
+        else {
+          await api(r.annonsId, { form: { status: 'ACTIVE' } });
+          const las = await api(r.annonsId, { params: { fields: 'status,effective_status' } });
+          if (las.status !== 'ACTIVE') throw new Error(`${an.namn}: slogs inte på (läst ${las.status})`);
+          status = `${las.status}/${las.effective_status}`;
+          videor[an.namn].aktiverad = new Date().toISOString();
+          sparaVideor();
+        }
+      }
+      log(`✅ annons ${an.namn}: ${r.annonsId} ${status}`);
     }
   }
 

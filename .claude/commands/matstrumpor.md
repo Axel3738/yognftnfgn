@@ -12,7 +12,7 @@ verksamhet, aldrig något annat konto, aldrig en annan kampanj.
 | Konto | **"nya kungen" `730973156224390`** (portfölj Matstrumpor.se, SEK) |
 | Kampanj | `MATSTRUMP_SALES_20260826` — `120251217860260023`, CBO 1 000 kr/dag |
 | Hub | `Matstrumpor creative hub` `3a7270ab-908c-80d2-9f35-e73e51e457ff` |
-| Kö | Status **`To be Reviewed`** → uppladdad → **`Approved`** |
+| Kö | Status **`To be Reviewed`** → uppladdad → **`Approved + Launched in SE`** |
 | Facit | `matstrumpor/konfig.json` — ändra tal DÄR, aldrig i den här filen |
 
 ⚠️ **Kontot HETER "nya kungen", inte Matstrumpor.** Kolla alltid
@@ -114,8 +114,9 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    - **Läs tillbaka annonsen** (`ads_get_ad_entities`, `level: "ad"`) och visa
      id + namn + adset + status i svaret. En uppladdning utan tillbakaläsning
      är inte gjord.
-   - Sätt radens status till **`Approved`** i Notion (Matstrumpor har ingen
-     översättningskö — NO- och FI-kontona i portföljen saknar betalmetod).
+   - Sätt radens status till **`Approved + Launched in SE`** i Notion (Axels namn
+     sedan 2026-09-30 — `Approved` finns inte längre i hubben). Därifrån plockar
+     `/matstrumpor-oversatt` vinnarna till de utlandsmarknader som skalar.
    - Logga en rad per uppladdning:
      ```bash
      node -e 'import("./matstrumpor/kor.mjs").then(m=>m.skrivRad({kod:"UPPLADDAD",annons:"<namn>",annons_id:"<id>",adset:"<nyckel>",notion:"<sid-id>",datum:"<YYYY-MM-DD>"}))'
@@ -154,7 +155,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Nytt adset (om något skapades) kopierat ur mallen, utan egen budget, id inskrivet i konfigen
 - [ ] Varje uppladdad annons tillbakaläst: id, namn, adset, status
 - [ ] Prisspärren körd; stoppade rader kommenterade i Notion och satta till `Draft`
-- [ ] Uppladdade rader satta till `Approved`
+- [ ] Uppladdade rader satta till `Approved + Launched in SE`
 - [ ] Inget PAUSED aktiverat, inget annat adset rört, ingen annan kampanj rörd
 - [ ] `logg.jsonl` (+ konfigen) committad och pushad
 - [ ] Slutrapport i två listor; Axels uppgifter sist, numrerade
