@@ -383,3 +383,33 @@ på köp per sidvisning.
 **Utfall (dag 7):** etikett per annons, breakthrough-frekvens som bråk
 **Lärdom:** länk till products/matstrumpor/lardomar.md#<id>
 ```
+
+---
+
+## 2026-09-30 — A/B-testet `paket` PÅ (Axels priser, Axels "kör")
+
+**Testet** (temat, inte en annonsbatch): köprutan på produktsidan och startsidan.
+**A** = som förut: Köp 1 – Få 1 GRATIS 399 kr (förvald) · Köp 2 – Få 2 GRATIS 798 kr.
+**B** = Axels trappa ("vi behöver få ner vår break even … en för 399, 2 för 499, 4 för 799"):
+1 låda 399 kr (ingen kod) · 2 lådor 499 kr (`SUSHI-2FOR499`, förvald, "Mest populär") ·
+4 lådor 799 kr (`SUSHI-4FOR799`, "Mest valt"), alltid 5-par (`fast_variant`), ätpinnarna med.
+50/50 per besökare, stämpeln `AB paket` på ordern. Påslaget 2026-09-30 ~13:48 CEST med
+`node matstrumpor/erbjudanden/paket-test.mjs --pa --skarpt` (logg i `erbjudanden/output/`).
+
+**Kontrollerat samma minut:** `--kundvy` i Chromium som svensk kund: tre nya besökare fick
+a, a, b; tvingade `?ms_ab=paket:a|b` visade exakt A:s två resp. B:s tre nivåer, den andra dold.
+`--kassaprov`: korgen 399 / 499 / 799 SEK, koderna `applicable: true`.
+
+**Varför:** med Shopifys 80,23 kr/låda + 32,70 kr tull lämnar 2 lådor för 399 kr 206 kr
+före reklam, mot 203 kr reklam per köp (14 d) — ~3 kr kvar. 2 lådor för 499 kr lämnar 306 kr.
+B vinner så länge köpen per besökare inte faller mer än ~33 %.
+
+**Läses av:** `/abtest paket` (`node matstrumpor/ab/kor.mjs --test paket --sedan 2026-09-30T11:48:00Z`),
+på kronor kvar före reklam per variant — inte på antal ordrar ensamt. ~100 köp per variant.
+
+**Stänga av:** `node matstrumpor/erbjudanden/paket-test.mjs --av --skarpt` (ordningen är inbyggd).
+
+⚠️ Bildannonsen `offer_static_d3` ("Köp 2 – få 2 gratis") landar på samma sida — B-besökare
+från den möter andra priser. Liten spend; syns i avläsningen.
+⚠️ Överstruket pris på B (898 / 1 796 kr) = lådornas och pinnarnas listpris utan kod, samma
+räkning som A visar.

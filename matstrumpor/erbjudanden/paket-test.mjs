@@ -737,7 +737,15 @@ function skrivPlan(plan, { log, tema }) {
 async function lasTillbakaFil(k, temaId, fil, vantat) {
   for (let forsok = 1; forsok <= 3; forsok++) {
     const r = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: [fil] });
-    if (r.theme.files.nodes[0]?.body?.content === vantat) return true;
+    const live = r.theme.files.nodes[0]?.body?.content;
+    if (live === vantat) return true;
+    // Shopify formaterar om JSON-mallar när de sparas (mätt 2026-09-30 på templates/index.json):
+    // jämför då innehållet, inte tecknen. Kommentarshuvudet /* … */ räknas inte.
+    if (fil.endsWith('.json') && typeof live === 'string') {
+      const tolka = (s) => { try { return JSON.stringify(JSON.parse(s.replace(/^\s*\/\*[\s\S]*?\*\//, ''))); } catch { return null; } };
+      const a = tolka(live);
+      if (a !== null && a === tolka(vantat)) return true;
+    }
     if (forsok < 3) await new Promise((x) => setTimeout(x, 5000));
   }
   return false;
