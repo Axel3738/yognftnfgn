@@ -194,6 +194,8 @@
       "mcp__loopia-mail__*",
       "mcp__Spoks",
       "mcp__Spoks__*",
+      "mcp__spoks-api",
+      "mcp__spoks-api__*",
       "Artifact",
       "Agent",
       "mcp__ADsmanagaer__ads_get_ad_accounts",
