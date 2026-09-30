@@ -61,5 +61,38 @@ Talet i videon är hans egna påståenden. Han visar inga siffror från något k
 3. **Organiskt för Matstrumpor inför jul.** Rolig bakom-kulisserna-video, ingen försäljning.
    Kräver någon som filmar. Vänta på Chadbots svar.
 
+### Till sessionen som bygger enkäten efter köpet (2026-09-30)
+
+Axel bygger redan en enkät efter köpet i en annan session. Det här är vad videon säger
+om enkäten, och vad sessionen här lägger till.
+
+**Ur videon (11:00–13:30 och 15:00):**
+- Målet är att förstå kunden, så att annonserna säljer en **känsla**. Bred copy till en bred
+  målgrupp ger hög CAC, för då hittar Meta inte kunden.
+- Hans frågor: vad gör du, hur gammal är du, vad fick dig att köpa, vad ska vi bli bättre på,
+  vad är viktigt för dig.
+- Han använder svaren till tre saker: att välja kreatörer som liknar kunden, att förstå vad
+  kunden vill ha, och att välja kanal efter var kunden lägger sin tid.
+- Han visar inga siffror på att enkäten fungerar.
+
+**Sessionens tillägg:**
+- En fråga om **situationen före köpet** ("vad hände som gjorde att du letade efter det här?")
+  ger annonsvinklar. Den är vår egen idé och finns inte i videon.
+- Fråga **var de såg produkten och vilken app de använder mest**. Svaret avgör om organiskt
+  eller en ny kanal (videons punkt 3) är värt tiden.
+- Spara svaren **ordagrant**, märkta `voc`, på samma sätt som `kommentarer/leads.md`. Då kan
+  `/cs` bygga koncept på dem. Åldern ger målgruppen till `/ugc-scout`.
+- "Vad ska vi bli bättre på" och "vad mer skulle du vilja köpa av oss" matar
+  produktpipelinen (videons punkt om LTV). Nästan ingen köper igen hos oss i dag.
+- Spoks `order_delivered` fyrar i Bäverbutiken och CaraShell (mätt 2026-09-28 och 2026-09-30).
+  Om frågorna gäller själva produkten ska enkäten gå ut efter leveransen. Frågan om varför de
+  köpte svarar kunden bäst direkt efter köpet, till exempel på tacksidan.
+- Bär mejlet en belöning (kredit eller utlottning) är det reklam. Samma regel som
+  köparflödena gäller då: bara köpare som inte har tackat nej (`kundundantag`).
+- Kunderna skriver butikens namn i svaren. Stryk det innan ett citat hamnar i en brief,
+  för butikens namn står aldrig i en annons.
+- Chadbot har fått frågan om vilka enkätfrågor som faktiskt ger nya vinklar (`FRAGOR.md`
+  punkt 2). Svaret hamnar i `SVAR.md`.
+
 **Inte nu:** Snapchat/Pinterest (inget team för det) och produktval för LTV (fel sorts
 produkter för det, och det byter vi inte på en video).
