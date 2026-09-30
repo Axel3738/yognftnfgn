@@ -1257,7 +1257,12 @@
   "sha256": "a81cbc4def5682dc813bae492ba26ea5cbd58360e83815bddc8f712eb6e024e7",
   "granskad": true,
   "utan_text": true,
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "4410cd3beba978242f706a050ca322e1",
+  "annons_id": "120251690460980435",
+  "creative_id": "1592624909009494",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T12:55:36.421Z"
  },
  "Beachslippers_SO_7_2": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: 349 kr kvar i bilden"
@@ -1267,7 +1272,12 @@
   "sha256": "a87f21ec466e2c36fdf2698860ec30185df5edad1f920f32bcbfbfdc668e0f47",
   "granskad": true,
   "utan_text": true,
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "f77563da9c147438a4e9cfd4b8f4051d",
+  "annons_id": "120251690462210435",
+  "creative_id": "3224268317768834",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T12:55:43.503Z"
  },
  "Beachslippers_PD_9_1": {
   "fil": "worldwide/annonser/klar/Beachslippers_PD_9_1.jpg",
@@ -1275,7 +1285,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "564167d33443ced954be72cddf25056c",
+  "annons_id": "120251690463510435",
+  "creative_id": "1413581817019798",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T12:55:51.270Z"
  },
  "Beltgrinder_SO_5_1": {
   "fil": "worldwide/annonser/klar/Beltgrinder_SO_5_1.jpg",
@@ -1283,7 +1298,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "ed0e0588bcdb5b6458c2c17abb4f487c",
+  "annons_id": "120251690466570435",
+  "creative_id": "1110572401403170",
+  "kampanj_id": "120251679457690435",
+  "skapad": "2026-09-30T12:56:09.876Z"
  },
  "Beltgrinder_PD_27_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: tom vit list där priset suddades"
@@ -1294,7 +1314,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "6066e497d8a08a73e451a861ad00f71c",
+  "annons_id": "120251690467860435",
+  "creative_id": "1748803639717296",
+  "kampanj_id": "120251679457690435",
+  "skapad": "2026-09-30T12:56:17.074Z"
  },
  "MC-Kapell_CS_7_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: tomma vita rutor, ingen rubrik kvar"
