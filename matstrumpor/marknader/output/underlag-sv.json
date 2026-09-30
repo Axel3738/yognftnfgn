@@ -1,5 +1,5 @@
 {
- "_om": "Svenskt underlag ur Shopify (matstrumpor), skrivet av matstrumpor/marknader/underlag.mjs 2026-09-30T09:36Z. Nycklar för människor; registreringen matchar på värde. Allt med _-prefix ignoreras.",
+ "_om": "Svenskt underlag ur Shopify (matstrumpor), skrivet av matstrumpor/marknader/underlag.mjs 2026-09-30T10:29Z. Nycklar för människor; registreringen matchar på värde. Allt med _-prefix ignoreras.",
  "optionvarde.sushi-strumpor.name": "5 - Par",
  "optionvarde.sushi-strumpor.name#3_par": "3 - Par",
  "optionvarde.sushi-strumpor.name#one_size": "One Size",
@@ -64,6 +64,7 @@
  "frakt.1458568429907.name": "Free shipping",
  "frakt.1458568462675.name": "Fri frakt",
  "frakt.1458796298579.name": "Fri frakt",
+ "frakt.1460927005011.name": "Fri frakt",
  "bildalt.61864814084435.alt": "Fraktkartongen med sushi- och donutlådan på dörrmattan (AI-genererad illustrationsbild)",
  "bildalt.61864814117203.alt": "Fyra par fötter i soffan med varsin matstrumpa och en skål popcorn (AI-genererad illustrationsbild)",
  "bildalt.61864814149971.alt": "Mormor skrattar vid födelsedagsbordet med burgarlådan i handen (AI-genererad illustrationsbild)",

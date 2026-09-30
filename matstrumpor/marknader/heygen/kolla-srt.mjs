@@ -32,6 +32,8 @@ const FORBJUDET = [
   [/マット.{0,3}ス.{0,2}ト|エスイー|ドットエス/u, 'butiksnamnet/domänen'],
   [/スウェーデン|瑞典|北欧|北歐|スカンジナビア|斯堪地那維亞/u, 'Sverige/svensk'],
   [/送料無料|無料配送|免運|免費運送|包郵|保証|保固|保證/u, 'fraktlöfte/garanti'],
+  // Talet fyra låter som "död" (し/死) och undviks i presentreklam i Japan och Taiwan (2026-09-30).
+  [/四/u, 'talet fyra (undviks i presenter i Japan och Taiwan)'],
 ];
 // Svenska ord som inte får stå kvar (utom där de också är målspråkets ord).
 const SVENSKA = { alla: ['strumpor', 'låda', 'lådan', 'ätpinnar', 'kalaset', 'julstrumpan', 'jättebra', 'också', 'verkligen', 'faktiskt', 'riktig', 'riktigt', 'paketerade', 'sushistrumpor', 'priset'] };

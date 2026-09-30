@@ -47,8 +47,14 @@ def chunk_cjk(text, maxc):
     if cur: satser.append(cur)
     pieces, cur = [], ''
     for s in satser:
+        # En sats som bara är lite för lång får stå på en rad (upp till tre tecken till ryms i bredden)
+        # hellre än att en svans på ett par tecken ("…可以送 / 了！") blir en egen cue.
+        if maxc < len(s) <= maxc + 3:
+            if cur: pieces.append(cur); cur = ''
+            pieces.append(s); continue
         while len(s) > maxc:
             k = maxc
+            if len(s) - k <= 3: k = max(1, len(s) - 4)  # dela hellre tidigare än lämna en kort svans
             while k > 1 and s[k] in BORJAR_EJ: k -= 1
             if cur: pieces.append(cur); cur = ''
             pieces.append(s[:k]); s = s[k:]

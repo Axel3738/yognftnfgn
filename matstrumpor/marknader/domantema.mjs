@@ -603,6 +603,26 @@ const TRUST_NY = `      {%- comment -%} ${FRAKT_MARK} (snippets/ms-frakt-land.li
       <div class="ms-trust__item">
         {%- if ms_fraktflagga != blank -%}{{ ms_fraktflagga }}{%- else -%}{% render 'ms-icon', name: ico %}{%- endif %}
 `;
+// ---- Collaget "Nu i hela världen" (sections/ms-varlden.liquid) -----------------------------------
+// Sektionen skrivs av collageverktyget (collage/tema.mjs på grenen claude/friendly-maxwell-cwfglq,
+// inte på main). Dess språkgrenar slutar på pt, så japanska och kinesiska fick svenskans
+// "Nu i hela världen" (mätt som kund i Japan och Taiwan 2026-09-30). Grenarna läggs in före else;
+// inget annat i filen rörs. Texterna skrivna av en sonnet-översättare samma dag.
+export const VARLDEN_MARK = `${MARK}: collagets rubrik på japanska och kinesiska`;
+export const VARLDEN_SPRAK = {
+  ja: { rubrik: 'いま、世界中で', under: '同じ寿司ボックス、同じ笑い。東京からシドニーまで。' },
+  'zh-tw': { rubrik: '現在，遍布全世界', under: '一樣的壽司盒，一樣的歡笑。從台北到雪梨。' },
+};
+const VARLDEN_ANKARE = "    else\n      assign rubrik = 'Nu i hela världen'";
+export function patchaVarlden(kod) {
+  if (kod.includes(VARLDEN_MARK)) return { kod, byten: [], hoppade: ['varlden: redan patchad'] };
+  const grenar = Object.entries(VARLDEN_SPRAK).filter(([l]) => !kod.includes(`when '${l}'`))
+    .map(([l, t]) => `    when '${l}'\n      assign rubrik = '${t.rubrik}'\n      assign under = '${t.under}'\n`).join('');
+  // Grenarna står inne i en {%- liquid -%}-tagg: där är en kommentar en rad som börjar med #.
+  const ny = `    # ${VARLDEN_MARK}\n${grenar}${VARLDEN_ANKARE}`;
+  return { kod: bytExakt(kod, VARLDEN_ANKARE, ny, 1), byten: ['varlden'], hoppade: [] };
+}
+
 /** Trust-radens truck-punkt tar texten och flaggan ur ms-frakt-land. Idempotent via FRAKT_MARK. */
 export function patchaTrustRow(kod) {
   if (kod.includes(FRAKT_MARK)) return { kod, byten: [], hoppade: ['trust-raden: redan patchad (fraktland)'] };
@@ -623,6 +643,7 @@ export const PATCHAR = {
   'snippets/cart-drawer.liquid': patchaKorgMoms,
   'snippets/quick-order-list.liquid': patchaKorgMoms,
   'snippets/ms-trust-row.liquid': patchaTrustRow,
+  'sections/ms-varlden.liquid': patchaVarlden,
 };
 const MOMSFILER = Object.keys(PATCHAR).filter((f) => PATCHAR[f] === patchaProduktMoms || PATCHAR[f] === patchaKorgMoms);
 export const NYA_FILER = {

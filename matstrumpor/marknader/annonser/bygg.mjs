@@ -58,6 +58,21 @@ export function farAktiveras(k, annonser) {
   if (fel.length) return { ok: false, skal: `${fel.length} annonser länkar fel: ${fel.map((a) => `${a.name} → ${a.lank}`).join('; ')}` };
   return { ok: true };
 }
+/** Ren: fälten ett land med annonsörsverifiering kräver på adsetet. Taiwan (mätt 2026-09-30): utan
+ *  `regional_regulated_categories: ["TAIWAN_UNIVERSAL"]` svarar Meta 400 "Värde för regionalt reglerade
+ *  kategorier krävs", och med bara kategorin 400 "Annonsör saknas: ange verifierad annonsör" — bolaget
+ *  måste vara verifierat som förmånstagare och betalare (Taiwans bedrägerilag). Identiteternas id listas
+ *  inte av något publikt API; de läses ur ett adset som bär dem och skrivs i marknader.json. */
+export function regionalFalt(k) {
+  const ut = {};
+  if (k.regional_regulated_categories?.length) ut.regional_regulated_categories = JSON.stringify(k.regional_regulated_categories);
+  const id = k.regional_regulation_identities;
+  if (id && Object.values(id).some(Boolean)) ut.regional_regulation_identities = JSON.stringify(id);
+  return ut;
+}
+/** Ren: är felet Metas krav på verifierad annonsör (svenska eller engelska felmeddelanden)? */
+export const arVerifieringsfel = (msg = '') => /verifierad annonsör|regionalt reglerade|Annonsör saknas|beneficiary|payer|regional[_ ]regulat/i.test(msg);
+
 /** Ren: vilka av rubrik, brödtext och länkbeskrivning som skiljer mellan filen och annonsens
  *  creative i kontot (object_story_spec). Video bär title/link_description, bild name/description. */
 export function textSkillnad(an, story = {}) {
@@ -119,17 +134,37 @@ async function byggMarknad(kod) {
   }
 
   let adset = kampanj ? ((await api(`${kampanj.id}/adsets`, { params: { fields: 'id,name,status', limit: 50 } })).data ?? []).find((a) => a.name === k.adset) : null;
+  const regional = regionalFalt(k);
+  const verifieringSaknas = !!k.regional_regulated_categories?.length && !regional.regional_regulation_identities;
   if (adset) log(`adset finns: ${adset.id} ${adset.status}`);
-  else if (!skarpt || !kampanj) log(`torrt: skulle skapa adsetet ${k.adset} (${k.geo.join(',')}, 18–65, Advantage+ audience, köp via pixel ${M.pixel}, 7d klick)`);
-  else {
-    adset = await api(`act_${act}/adsets`, { form: {
+  else if (!skarpt || !kampanj) {
+    log(`torrt: skulle skapa adsetet ${k.adset} (${k.geo.join(',')}, 18–65, Advantage+ audience, köp via pixel ${M.pixel}, 7d klick${regional.regional_regulated_categories ? `, ${k.regional_regulated_categories.join(',')}` : ''})`);
+    if (verifieringSaknas) log(`⚠️ ${kod}: ${k.regional_regulated_categories.join(',')} kräver verifierad förmånstagare och betalare — id:na saknas i marknader.json (regional_beslut säger vägen); Meta vägrar adsetet tills bolaget är verifierat`);
+  } else {
+    try {
+      adset = await api(`act_${act}/adsets`, { form: {
       name: k.adset, campaign_id: kampanj.id, status: 'PAUSED', billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS', destination_type: 'WEBSITE',
       promoted_object: JSON.stringify({ pixel_id: M.pixel, custom_event_type: 'PURCHASE' }),
       attribution_spec: JSON.stringify([{ event_type: 'CLICK_THROUGH', window_days: 7 }]),
       targeting: JSON.stringify({ geo_locations: { countries: k.geo, location_types: ['home', 'recent', 'frequently_in'] }, age_min: 18, age_max: 65, targeting_automation: { advantage_audience: 1 } }),
       dsa_beneficiary: 'STonebite', dsa_payor: 'STonebite',
-    } });
-    log(`✅ adset skapat PAUSED: ${adset.id}`);
+      ...regional,
+      } });
+      log(`✅ adset skapat PAUSED: ${adset.id}`);
+    } catch (e) {
+      // Ett land som kräver verifierad annonsör stoppar bara sin egen marknad, aldrig --alla.
+      if (!arVerifieringsfel(e.message)) throw e;
+      log(`⛔ ${kod}: Meta vägrar adsetet tills bolaget är verifierad annonsör — ${e.message}`);
+      log('   Kampanjen står kvar PAUSED och tom. Vägen står i marknader.json → regional_beslut.');
+      const k3 = await api(kampanj.id, { params: { fields: 'id,name,status,effective_status,daily_budget' } });
+      return { kod, kampanj: k3, adset: null, annonser: [], stopp: 'verifierad annonsör saknas' };
+    }
+  }
+  if (adset && k.regional_regulated_categories?.length) {
+    // Adsetet kan ha skapats för hand i Ads Manager (med förmånstagare och betalare valda där).
+    // Läs vad det bär, så att id:na kan skrivas i marknader.json och nästa adset byggas via API.
+    const r = await api(adset.id, { params: { fields: 'regional_regulated_categories,regional_regulation_identities' } });
+    log(`adsetets reglering: ${JSON.stringify(r.regional_regulated_categories ?? [])} ${JSON.stringify(r.regional_regulation_identities ?? {})}`);
   }
 
   if (!A) log(`inga annonser: ${kod}.json saknas (copy skrivs av sonnet mot docs/copy-regler.md)`);

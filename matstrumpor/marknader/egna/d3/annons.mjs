@@ -47,6 +47,12 @@ export function fel(kampanjfil, annons, t) {
     else if (BUTIKSORD.test(v)) ut.push(`${falt} nämner butiken eller en domän: "${v}"`);
     if (v && /\d+\s*(kr|€|\$|zł|nok|sek|eur|usd)/i.test(v)) ut.push(`${falt} bär ett pris — priset står bara på sidan`);
   }
+  // Japan och Taiwan: talet fyra (四, en ensam 4:a) undviks i presenter — storleken 36–44 räknas inte.
+  if (/^(JP|TW)$/.test(t.kod ?? '')) {
+    for (const [falt, v] of Object.entries({ title: annons.title, message: annons.message, link_description: annons.link_description, underrubrik: t.underrubrik, banner: t.banner })) {
+      if (v && /四|(?<![\d–-])4(?![\d–-])/u.test(v)) ut.push(`${falt} säger fyra — undviks i presenter i Japan och Taiwan`);
+    }
+  }
   const kryss = (t.tre_fragor ?? []).filter((r) => [r.visualisera, r.falsifiera, r.unik].includes('❌'));
   if (!t.tre_fragor?.length) ut.push('tre-frågorstestet saknas');
   for (const r of kryss) ut.push(`tre-frågorstestet har ❌: "${r.rad}"`);

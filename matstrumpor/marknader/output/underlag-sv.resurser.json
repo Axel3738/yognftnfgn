@@ -490,6 +490,15 @@
    ]
   },
   {
+   "id": "gid://shopify/DeliveryMethodDefinition/1460927005011",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1460927005011",
+   "keys": [
+    "name"
+   ]
+  },
+  {
    "id": "gid://shopify/MediaImage/61864814084435",
    "typ": "bildalt",
    "handle": null,

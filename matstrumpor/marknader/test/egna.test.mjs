@@ -1,7 +1,7 @@
 // Tester för egna/dubba.mjs — CSV:n (kontrollen av segmenten), SRT:n, tidsfönstren och farten (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { byggCsv, byggSrt, SPRAKKOD, fonster, fartFor } from '../egna/dubba.mjs';
+import { byggCsv, byggSrt, SPRAKKOD, fonster, fartFor, klippNyckel, RÖST, röstFor } from '../egna/dubba.mjs';
 
 const manus = [
   { a: 0, b: 2.5, sv: 'Hej, "du".' },
@@ -42,4 +42,11 @@ test('fartFor: orört när klippet ryms, annars lite snabbare men aldrig över 1
   assert.equal(fartFor(2, 3), 1);
   assert.equal(fartFor(3.3, 3), 1.133);
   assert.equal(fartFor(6, 3), 1.2);
+});
+
+test('klippNyckel: klonens nyckel är oförändrad (cachen för elva språk håller), en annan röst ger en annan nyckel', () => {
+  const x = { rost: RÖST, modell: 'eleven_multilingual_v2', fart: 1, prev: 'a', text: 'b', next: 'c' };
+  assert.equal(klippNyckel(x), 'eleven_multilingual_v2|1|a|b|c');
+  assert.notEqual(klippNyckel({ ...x, rost: 'annanRost' }), klippNyckel(x));
+  assert.equal(röstFor('DE'), RÖST);
 });

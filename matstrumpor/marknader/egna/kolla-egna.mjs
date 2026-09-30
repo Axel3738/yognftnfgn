@@ -23,6 +23,7 @@ if (CJK) FORBJUDET.push(
   [/マット.{0,3}ス.{0,2}ト|エスイー|ドットエス/u, 'butiksnamnet/domänen'],
   [/スウェーデン|瑞典|北欧|北歐|スカンジナビア|斯堪地那維亞/u, 'Sverige/svensk'],
   [/送料無料|無料配送|免運|免費運送|包郵|保証|保固|保證/u, 'nytt löfte'],
+  [/四/u, 'talet fyra (undviks i presenter i Japan och Taiwan)'],
 );
 // Taltempo: japanska ~7 tecken/s (kanji bär två morer), kinesiska ~5 (ett tecken = en stavelse).
 const TECKEN_PER_S = { JP: [7.5, 9], TW: [5.5, 6.5] }[kod];
@@ -52,6 +53,16 @@ for (let i = 0; i < Math.min(seg.length, manus.length); i++) {
   kolla(s.text, `segment ${i + 1}`);
   allText.push(s.text ?? '');
   if (CJK) {
+    // Japanska: rösten läser `las` (samma mening, de kanji modellen läser fel i hiragana — mätt
+    // 2026-09-30: 靴下 hördes "ガックザ", 母 som 目). Utan `las` läses kanji rakt av.
+    if (kod === 'JP') {
+      if (!s.las) varn.push(`segment ${i + 1}: las saknas (uttalet — ElevenLabs läser kanji fel)`);
+      else {
+        const slut = (x) => (x.match(/[。！？!?]/gu) ?? []).length;
+        if (slut(s.las) !== slut(s.text ?? '')) fel.push(`segment ${i + 1}: las har andra meningsslut än text`);
+        if (/[0-9０-９A-Za-zＡ-Ｚａ-ｚ]/u.test(s.las)) fel.push(`segment ${i + 1}: las bär siffror eller latinska bokstäver — skriv uttalet`);
+      }
+    }
     const tps = ((s.text ?? '').match(/[\p{L}\p{N}]/gu) ?? []).length / Math.max(0.3, m.b - m.a);
     if (tps > TECKEN_PER_S[1]) fel.push(`segment ${i + 1}: ${tps.toFixed(1)} tecken/s — hinns inte med`);
     else if (tps > TECKEN_PER_S[0]) varn.push(`segment ${i + 1}: ${tps.toFixed(1)} tecken/s`);

@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-29T21:10:38.723Z",
+ "skrivet": "2026-09-30T11:12:53.680Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -833,6 +833,18 @@
      "effective_status": "PENDING_REVIEW"
     }
    ]
+  },
+  {
+   "kod": "TW",
+   "kampanj": {
+    "id": "120251796778420023",
+    "name": "MATSTRUMP_TW_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": null,
+   "annonser": []
   }
  ]
 }

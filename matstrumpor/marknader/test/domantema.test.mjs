@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 import {
   MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
-  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR,
+  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR, patchaVarlden, VARLDEN_MARK,
 } from '../domantema.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -516,4 +516,17 @@ test('trust-raden: lastbilen får land och flagga, de andra punkterna ritas som 
   assert.deepEqual(patchaTrustRow(r.kod).byten, []);
   assert.throws(() => patchaTrustRow('<div class="ms-trust">'), /hittades 0 gånger/);
   assert.equal(PATCHAR['snippets/ms-trust-row.liquid'], patchaTrustRow);
+});
+
+test('collaget: japanska och kinesiska grenar före else, inne i liquid-taggen, idempotent', () => {
+  const kalla = "{%- liquid\n  assign sprak = request.locale.iso_code | downcase\n  case sprak\n    when 'pt-pt', 'pt'\n      assign rubrik = 'Agora em todo o mundo'\n      assign under = 'x'\n    else\n      assign rubrik = 'Nu i hela världen'\n      assign under = 'Samma sushilåda'\n  endcase\n-%}";
+  const r = patchaVarlden(kalla);
+  assert.deepEqual(r.byten, ['varlden']);
+  assert.ok(r.kod.includes("    when 'ja'\n      assign rubrik = 'いま、世界中で'"));
+  assert.ok(r.kod.includes("    when 'zh-tw'\n      assign rubrik = '現在，遍布全世界'"));
+  assert.ok(r.kod.indexOf("when 'zh-tw'") < r.kod.indexOf('    else'), 'före else');
+  assert.ok(!r.kod.includes('{%- comment'), 'ingen tagg-kommentar inne i liquid-taggen');
+  assert.ok(r.kod.includes(`    # ${VARLDEN_MARK}`));
+  assert.deepEqual(patchaVarlden(r.kod).byten, []);
+  assert.equal(PATCHAR['sections/ms-varlden.liquid'], patchaVarlden);
 });

@@ -1,0 +1,164 @@
+{
+ "_om": "Annonstext (ja) för MATSTRUMP_JP_SALES (Japan), skriven 2026-09-30 av en sonnet-subagent mot docs/copy-regler.md + oversattning/REGLER-ASIEN.md ur den svenska vinnarannonsen (Nathalie) och US-texten. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden, och talet fyra står aldrig (四 undviks i presenter i Japan). Videorna är JP-batchens (heygen/JP.json) och de egna videorna (egna/JP/), klar/JP_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841423405715219",
+ "copy": {
+  "title": "贈って笑って、毎週はく寿司ソックス",
+  "title_alt": [
+   "見た目はお寿司、中身はソックス5足",
+   "スウェーデンで昨年11月に完売した寿司ソックス"
+  ],
+  "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+  "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+ },
+ "svenska": {
+  "title": "Ge bort, skratta, ha på fötterna varje vecka: sushistrumpor",
+  "title_alt": [
+   "Ser ut som sushi, innehåller 5 par strumpor",
+   "Sushistrumporna som sålde slut i Sverige i november förra året"
+  ],
+  "message": "Ingen blir överlycklig av att få tvättmedel. Ingen sparar en skämtpryl för alltid.\nSka du ge bort något: en låda som inte ser ut som något annat än takeaway-sushi. Inuti finns 5 par strumpor rullade som sushi och äkta ätpinnar i trä.\nÄkta sushi är slut när man ätit upp den. Den här sushin gör nytta på fötterna varje vecka, också efter att du gett bort den.\nEtt svenskt varumärke.",
+  "link_description": "Sushi, pizza, burgare, donut. Köp 1 – få 1 gratis. Fri frakt."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/JP_nathalie.mp4",
+   "title": "贈って笑って、毎週はく寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/JP_sofie_h1.mp4",
+   "title": "見た目はお寿司、中身はソックス5足",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/JP_sofie_h2.mp4",
+   "title": "スウェーデンで昨年11月に完売した寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_anim_004_v1",
+   "kalla": "MATSTRUMP_sushi_gift_ugc_012v2_v1 (video 4323418044575220) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
+   "video": "klar/JP_012v2.mp4",
+   "title": "贈って笑って、毎週はく寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_ugc_005_v1",
+   "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1 (video 996449943431525) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
+   "video": "klar/JP_haikuh3.mp4",
+   "title": "贈って笑って、毎週はく寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_ugc_006_v1",
+   "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1 (video 3084560565211662) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
+   "video": "klar/JP_haikuh2.mp4",
+   "title": "贈って笑って、毎週はく寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_gift_ugc_007_v1",
+   "kalla": "MATSTRUMP_sushi_gift_ugc_s001h1_v2 (video 1593728122281460) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
+   "video": "klar/JP_s001h1.mp4",
+   "title": "贈って笑って、毎週はく寿司ソックス",
+   "message": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。\n贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。\n本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。\nスウェーデン発のブランドです。",
+   "link_description": "寿司・ピザ・バーガー・ドーナツ。1つ買うともう1つ無料。送料無料。"
+  },
+  {
+   "namn": "MATSTRUMP_JP_sushi_offer_static_008_v1",
+   "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/JP.json, granskad av infödda 2026-09-29)",
+   "bild": "klar/JP_d3.jpg",
+   "title": "2つ買うともう2つ無料、合計20足",
+   "message": "届くのは、買った2ボックスと無料の2ボックスです。\n2つ買うともう2つ無料。ソックスは合計20足です。\nお寿司のように巻いたソックス。本物の木製のお箸は、どのボックスにも付いています。\nフリーサイズ。EUサイズ36–44（約23–28cm）にフィットします。\nスウェーデン発のブランドです。",
+   "link_description": "2つ買うともう2つ無料。送料無料。"
+  }
+ ],
+ "_svenskt_varumarke": "Axel 2026-09-30: \"i Japan speciellt kan vi trycka på att det är ett svenskt varumärke\" — sista raden i brödtexten och en av rubrikerna bär det svenska varumärket (aldrig スウェーデン製). Butikens namn står aldrig i en annons.",
+ "tre_fragor": [
+  {
+   "rad": "贈って笑って、毎週はく寿司ソックス",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "見た目はお寿司、中身はソックス5足",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "スウェーデンで昨年11月に完売した寿司ソックス",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "洗剤をもらって大喜びする人はいません。おもしろ雑貨をずっと取っておく人もいません。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "贈るなら、テイクアウトのお寿司にしか見えない箱を。中身はお寿司のように巻いたソックス5足と、本物の木製のお箸です。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "本物のお寿司は、食べたらおしまい。このお寿司は、贈ったあとも毎週、足元で活躍します。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "スウェーデン発のブランドです。",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "unik": "❌",
+   "anm": "Axels order 2026-09-30, skrivs inte om. Ett varumärkes ursprung går inte att peka på, och vilket svenskt märke som helst kan skriva raden. Beviset står i rubrik 3 (完売 i Sverige)."
+  },
+  {
+   "rad": "見た目はお寿司。中身はソックス合計20足",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "届くのは、買った2ボックスと無料の2ボックスです。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "2つ買うともう2つ無料。ソックスは合計20足です。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "お寿司のように巻いたソックス。本物の木製のお箸は、どのボックスにも付いています。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "フリーサイズ。EUサイズ36–44（約23–28cm）にフィットします。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ]
+}

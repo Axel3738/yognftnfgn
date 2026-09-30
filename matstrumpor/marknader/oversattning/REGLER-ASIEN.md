@@ -83,3 +83,7 @@ presentbutik på nätet — aldrig maskinöversättning.
     ett löfte, en siffra eller en egenskap som källan inte har (utom raden i punkt 5).
 13. **Klarna nämns inte** (granskaren 2026-09-30): Klarna finns inte för kunder i Japan eller Taiwan,
     så betalsätten är kort, Apple Pay, Google Pay (och PayPal/Shop Pay där källan nämner dem).
+14. **Talet fyra i reklam** (2026-09-30): 四 låter som 死 (död) på både japanska och kinesiska och
+    undviks i presentreklam. I butikens texter står det bara där det är ett faktum (paketnivån med fyra
+    lådor), aldrig som säljargument. Annonser, videotal och bildtexter säger det aldrig
+    (`kolla-srt.mjs`, `kolla-egna.mjs` och `d3/annons.mjs` stoppar).
