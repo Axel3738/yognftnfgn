@@ -779,6 +779,11 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   // 2026-09-22) har kunderna som källa, inte en lärdom: lardom= krävs inte.
   // Rutan själv prövas i provaMatris.
   const invandning = t.invandning ?? null;
+  // lead=VOC-… (Axel 2026-09-30) är en REFERENS: hypotesen vilar på kundernas
+  // ord. Den ersätter aldrig lardom= och ger ingen plats — kommentarerna är
+  // underlag för strategin, inte en brief per kommentar.
+  const lead = t.lead ?? null;
+  if (lead && !/^VOC-\S+$/.test(String(lead).split(/\s*[,+]\s*/)[0])) varningar.push(`lead=${lead} är inget lead-id (VOC-<kommentars-id> ur node agent/leads.mjs)`);
   for (const k of BRIEF_TAGGAR) if (!t[k] && !(k === 'lardom' && invandning)) fel.push(`taggen ${k}= saknas`);
   if (invandning && !/^(voc|kommentarer|feedback)$/i.test(String(t.kalla ?? ''))) varningar.push(`invandning=${invandning} men kalla=${t.kalla ?? '—'} — en invändningsbrief har kunderna som källa (kalla=voc)`);
   const lard = lardomar(logg);
@@ -803,7 +808,7 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   }
   const rad = {
     datum: idag, kampanj_id: String(kampanj.id), kampanj_namn: String(kampanj.namn ?? ''), ad_account_id: String(kampanj.ad_account_id ?? ''),
-    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null, invandning, ruta: t.ruta ?? null,
+    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null, invandning, ruta: t.ruta ?? null, lead,
     avatar: t.avatar ?? null, awareness: t.awareness ?? null, begar: t.begar ?? null, mekanism: t.mekanism ?? null, tro: t.tro ?? null, urgency: t.urgency ?? null, 'hook-mekanik': t['hook-mekanik'] ?? null, kalla: t.kalla ?? null,
     notion_url: brief.url ?? null, genomford: true, godkand_av: 'auto — brief loggad, Axels definition av klart 2026-09-21',
   };
@@ -998,7 +1003,7 @@ async function huvud(argv) {
     const taggade = nyaPoster.map((p) => {
       const bf = isAbsolute(p.brief) ? p.brief : resolve(dirname(manifestFil), p.brief);
       const t = existsSync(bf) ? normaliseraTaggar(taggarUrBrief(readFileSync(bf, 'utf8')) ?? {}) : {};
-      return { namn: p.namn, plats: p.plats ?? null, invandning: t.invandning ?? null, ruta: t.ruta ?? null, typ: t.typ ?? null };
+      return { namn: p.namn, plats: p.plats ?? null, invandning: t.invandning ?? null, ruta: t.ruta ?? null, typ: t.typ ?? null, lead: t.lead ?? null };
     });
     const matris = lasMatris(minnesmapp(k), { rot: ROT });
     const budget = flagga('budget') !== null ? Number(flagga('budget')) : budgetUrKontodata(kampanjId);

@@ -18,6 +18,8 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 
 ## Gör följande, hela kedjan utan att invänta godkännande
 
+**0. Kundernas kommentarer som hjälpmedel (Axel 2026-09-30):** läs `node agent/leads.mjs --prefix <Annonsprefix>` för att förstå varför siffrorna ser ut som de gör och för idéer. Datan och lärdomarna styr — ingen annons byggs bara för att någon kommenterat. Regeln: `/rond-auto` 4b.
+
 ### 1. Läs läget
 - **Chatthistoriken:** hitta briefarna/manusen från de senaste CS-rundorna i
   denna chatt — vilka annonser byggdes, med vilken hypotes, vilken vinkel,
