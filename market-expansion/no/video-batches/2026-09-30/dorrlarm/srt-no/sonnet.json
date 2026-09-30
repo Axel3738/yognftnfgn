@@ -1,0 +1,586 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Fem hundre og ni kroner.",
+   "tekst": "509 kr"
+  },
+  {
+   "tale": "I dag tre hundre og åtti-ni.",
+   "tekst": "I dag 389"
+  },
+  {
+   "tale": "Nå er det rea på denne.",
+   "tekst": "Nå er det rea på denne."
+  },
+  {
+   "tale": "Ordinær pris fem hundre og ni kroner.",
+   "tekst": "Ordinær pris 509 kr."
+  },
+  {
+   "tale": "I dag tre hundre og åtti-ni kroner.",
+   "tekst": "I dag 389 kr."
+  },
+  {
+   "tale": "Hundre og ti desibel, trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll."
+  },
+  {
+   "tale": "Sett den opp selv, uten elektriker.",
+   "tekst": "Sett den opp selv, uten elektriker."
+  },
+  {
+   "tale": "Den varsler når noen rykker i døren, vinduet eller sykkelen.",
+   "tekst": "Varsler når noen rykker i døren, vinduet eller sykkelen."
+  },
+  {
+   "tale": "Prisen er tre hundre og åtti-ni kroner nå.",
+   "tekst": "Prisen er 389 kr nå."
+  },
+  {
+   "tale": "Lenken ligger her nede.",
+   "tekst": "Lenken ligger her nede."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H1": "Konkrete tall/priser og sensorfunksjon: visualisere ✅, falsifisere ✅ (kan sjekkes mot pris/spec), ingen konkurrent kan si det ⚠️ (pris/spec generisk men vibrasjonsdetaljen er spesifikk ✅)",
+ "CS_1_H2": [
+  {
+   "tale": "Den varsler før noen rekker å åpne døren.",
+   "tekst": "Den varsler før noen rekker å åpne døren."
+  },
+  {
+   "tale": "Akkurat nå er det tilbud på denne.",
+   "tekst": "Akkurat nå er det tilbud på denne."
+  },
+  {
+   "tale": "Ordinær pris er fem hundre og ni kroner.",
+   "tekst": "Ordinær pris: 509 kr"
+  },
+  {
+   "tale": "I dag: tre hundre og åtti-ni kroner.",
+   "tekst": "I dag: 389 kr"
+  },
+  {
+   "tale": "Hundre og ti desibel, trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll"
+  },
+  {
+   "tale": "Sett den opp selv, uten elektriker.",
+   "tekst": "Sett den opp selv, uten elektriker."
+  },
+  {
+   "tale": "Ingen app. Ikke noe abonnement.",
+   "tekst": "Ingen app. Ikke noe abonnement."
+  },
+  {
+   "tale": "Prisen er tre hundre og åtti-ni kroner nå.",
+   "tekst": "Prisen er 389 kr nå."
+  },
+  {
+   "tale": "Lenken ligger her nede.",
+   "tekst": "Lenken ligger her nede."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H2": "Konkrete faktabaserte linjer (sensor, pris, dB) ✅/✅/✅; generiske overgangs- og CTA-linjer (tilbud, lenke) ✅/❌/❌",
+ "CS_1_H3": [
+  {
+   "tale": "I dag er det nesten tjuefire prosent rabatt.",
+   "tekst": "Nesten 24% rabatt i dag."
+  },
+  {
+   "tale": "Akkurat nå er det tilbud på denne.",
+   "tekst": "Tilbud akkurat nå."
+  },
+  {
+   "tale": "Ordinær pris er fem hundre og ni kroner.",
+   "tekst": "Ordinær pris: 509 kr."
+  },
+  {
+   "tale": "I dag koster den tre hundre og åtti-ni kroner.",
+   "tekst": "I dag: 389 kr."
+  },
+  {
+   "tale": "Hundre og ti desibel, med trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll."
+  },
+  {
+   "tale": "Sett den opp selv, uten elektriker.",
+   "tekst": "Ingen elektriker nødvendig."
+  },
+  {
+   "tale": "Vibrasjonssensoren varsler når noen rykker i døren eller vinduet.",
+   "tekst": "Varsler ved rykk i dør/vindu."
+  },
+  {
+   "tale": "Prisen er tre hundre og åtti-ni kroner nå.",
+   "tekst": "389 kr nå."
+  },
+  {
+   "tale": "Lenken ligger her nede.",
+   "tekst": "Lenke nedenfor."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H3": "Konkrete tall/priser og funksjon: visualisere ✅, falsifisere ✅, ingen konkurrent kan si nøyaktig samme pris/prosent ✅",
+ "G_1_H1": [
+  {
+   "tale": "Jeg kjøpte den til ham, men det er egentlig jeg som sover bedre nå.",
+   "tekst": "Jeg kjøpte den til ham, men det er egentlig jeg som sover bedre nå."
+  },
+  {
+   "tale": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føltes som en ting.",
+   "tekst": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føltes som en ting."
+  },
+  {
+   "tale": "Så jeg satte den opp i garasjen.",
+   "tekst": "Så jeg satte den opp i garasjen."
+  },
+  {
+   "tale": "En liten alarm som høres i hele huset hvis noen åpner døren.",
+   "tekst": "En liten alarm som høres i hele huset hvis noen åpner døren."
+  },
+  {
+   "tale": "Han lo først.",
+   "tekst": "Han lo først."
+  },
+  {
+   "tale": "Trenger jeg egentlig dette?",
+   "tekst": "Trenger jeg egentlig dette?"
+  },
+  {
+   "tale": "Så skjønte han det.",
+   "tekst": "Så skjønte han det."
+  },
+  {
+   "tale": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg.",
+   "tekst": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg."
+  },
+  {
+   "tale": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel.",
+   "tekst": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel."
+  },
+  {
+   "tale": "En liten gave, en stor følelse av ro.",
+   "tekst": "En liten gave, en stor følelse av ro."
+  },
+  {
+   "tale": "Det er det beste jeg har kjøpt i år - under fire hundre kroner.",
+   "tekst": "Det er det beste jeg har kjøpt i år - under 400 kr."
+  }
+ ],
+ "_tre_G_1_H1": "Konkret scene (garasje, alarm) ✅ / falsifiserbart (høres i hele huset) ✅ / personlig historie ingen konkurrent kan kopiere ✅",
+ "G_1_H2": [
+  {
+   "tale": "Den beste gaven jeg har funnet i år koster under fire hundre kroner.",
+   "tekst": "Den beste gaven jeg har funnet i år koster under 400 kr."
+  },
+  {
+   "tale": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føles som en vanlig greie.",
+   "tekst": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føles som en vanlig greie."
+  },
+  {
+   "tale": "Så jeg satte den på garasjen.",
+   "tekst": "Så jeg satte den på garasjen."
+  },
+  {
+   "tale": "En liten alarm som varsler i hele huset hvis noen rykker i døren.",
+   "tekst": "En liten alarm som varsler i hele huset hvis noen rykker i døren."
+  },
+  {
+   "tale": "Han lo først.",
+   "tekst": "Han lo først."
+  },
+  {
+   "tale": "Trenger jeg virkelig dette?",
+   "tekst": "Trenger jeg virkelig dette?"
+  },
+  {
+   "tale": "Så forsto han.",
+   "tekst": "Så forsto han."
+  },
+  {
+   "tale": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg.",
+   "tekst": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg."
+  },
+  {
+   "tale": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel.",
+   "tekst": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel."
+  },
+  {
+   "tale": "En liten gave, en stor følelse av ro.",
+   "tekst": "En liten gave, en stor følelse av ro."
+  },
+  {
+   "tale": "Det er det beste jeg har kjøpt i år, for under fire hundre kroner.",
+   "tekst": "Det er det beste jeg har kjøpt i år, for under 400 kr."
+  }
+ ],
+ "_tre_G_1_H2": "Konkret bilde (garasje, alarm, dørrykk) ✅, falsifiserbart (pris, funksjon) ✅, personlig historie ingen konkurrent kan kopiere ordrett ✅",
+ "G_1_H3": [
+  {
+   "tale": "Han trodde det var en vanlig greie, helt til han skjønte hvorfor jeg ga ham den.",
+   "tekst": "Han trodde det var en vanlig greie, helt til han skjønte hvorfor jeg ga ham den."
+  },
+  {
+   "tale": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føles som en pryl.",
+   "tekst": "Jeg ville gi ham noe som viser at jeg bryr meg, uten at det føles som en pryl."
+  },
+  {
+   "tale": "Så jeg satte den på garasjen.",
+   "tekst": "Så jeg satte den på garasjen."
+  },
+  {
+   "tale": "En liten alarm på hundre og ti desibel som varsler i hele huset hvis noen rykker i døren.",
+   "tekst": "En liten alarm på 110 dB som varsler i hele huset hvis noen rykker i døren."
+  },
+  {
+   "tale": "Han lo først.",
+   "tekst": "Han lo først."
+  },
+  {
+   "tale": "Trenger jeg virkelig dette?",
+   "tekst": "Trenger jeg virkelig dette?"
+  },
+  {
+   "tale": "Så skjønte han det.",
+   "tekst": "Så skjønte han det."
+  },
+  {
+   "tale": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg.",
+   "tekst": "Det handler ikke om garasjen, det handler om at jeg vil vite at han er trygg."
+  },
+  {
+   "tale": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel.",
+   "tekst": "Man kan ikke alltid følge med selv, men man kan gi noen den tryggheten likevel."
+  },
+  {
+   "tale": "En liten gave, en stor følelse av ro.",
+   "tekst": "En liten gave, en stor følelse av ro."
+  },
+  {
+   "tale": "Det er det beste jeg har kjøpt i år, for under fire hundre kroner.",
+   "tekst": "Det er det beste jeg har kjøpt i år, for under 400 kr."
+  }
+ ],
+ "_tre_G_1_H3": "Linje 4 og 11 konkrete tall/enheter (✅ visualisere, ✅ falsifisere, ✅ ingen konkurrent kan si nøyaktig samme pris/desibel); resten er personlig fortelling (✅/❌ falsifiserbar, men autentisk stemme beholdt).",
+ "PD_1_H1": [
+  {
+   "tale": "Hører du dette?",
+   "tekst": "Hører du dette?"
+  },
+  {
+   "tale": "Det er hundre og ti desibel gjennom hele huset.",
+   "tekst": "Det er 110 dB gjennom hele huset."
+  },
+  {
+   "tale": "I kveld sikrer jeg huset med dette: en dør- og vindusalarm.",
+   "tekst": "I kveld sikrer jeg huset med dette: en dør- og vindusalarm."
+  },
+  {
+   "tale": "Hundre og ti desibel, trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll."
+  },
+  {
+   "tale": "Jeg setter den på vinduet.",
+   "tekst": "Jeg setter den på vinduet."
+  },
+  {
+   "tale": "Sånn høres det ut når noen tar på den.",
+   "tekst": "Sånn høres det ut når noen tar på den."
+  },
+  {
+   "tale": "Den varsler med en gang noen rykker eller bender på den - ikke først når den er åpen.",
+   "tekst": "Varsler når noen rykker eller bender på den - ikke først når den er åpen."
+  },
+  {
+   "tale": "Og med fjernkontrollen slår jeg alarmen av og på på avstand.",
+   "tekst": "Med fjernkontrollen slår jeg alarmen av og på på avstand."
+  },
+  {
+   "tale": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går.",
+   "tekst": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går."
+  },
+  {
+   "tale": "Ingen app, ikke noe abonnement, ingen elektriker.",
+   "tekst": "Ingen app, ikke noe abonnement, ingen elektriker."
+  },
+  {
+   "tale": "Bare sett den opp og skru den på.",
+   "tekst": "Bare sett den opp og skru den på."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  },
+  {
+   "tale": "For tre hundre og åtti-ni kroner er det vanskelig å si nei til å sove trygt om natten.",
+   "tekst": "389 kr - vanskelig å si nei til å sove trygt om natten."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkret demonstrasjon og faktumbasert vibrasjonssensor-linje: visualisere ✅, falsifisere ✅, ingen konkurrent kan si det nøyaktig likt ✅ (produktnavn/pris unikt for denne kilden)",
+ "PD_1_H2": [
+  {
+   "tale": "Jeg satte denne på vinduet i kveld.",
+   "tekst": "Jeg satte denne på vinduet i kveld."
+  },
+  {
+   "tale": "Hør hva som skjer.",
+   "tekst": "Hør hva som skjer."
+  },
+  {
+   "tale": "I kveld sikret jeg huset med denne: en dør- og vindusalarm,",
+   "tekst": "I kveld sikret jeg huset med denne: en dør- og vindusalarm,"
+  },
+  {
+   "tale": "hundre og ti desibel, trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll."
+  },
+  {
+   "tale": "Jeg setter den på vinduet.",
+   "tekst": "Jeg setter den på vinduet."
+  },
+  {
+   "tale": "Sånn høres det ut om noen rører den.",
+   "tekst": "Sånn høres det ut om noen rører den."
+  },
+  {
+   "tale": "Hundre og ti desibel - høres gjennom hele huset.",
+   "tekst": "110 dB - høres gjennom hele huset."
+  },
+  {
+   "tale": "Og med fjernkontrollen slår jeg alarmen av og på, på avstand.",
+   "tekst": "Og med fjernkontrollen slår jeg alarmen av og på, på avstand."
+  },
+  {
+   "tale": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går.",
+   "tekst": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går."
+  },
+  {
+   "tale": "Ingen app, ikke noe abonnement, ingen elektriker.",
+   "tekst": "Ingen app, ikke noe abonnement, ingen elektriker."
+  },
+  {
+   "tale": "Bare sett den opp og kom i gang.",
+   "tekst": "Bare sett den opp og kom i gang."
+  },
+  {
+   "tale": "Lenken ligger her nede.",
+   "tekst": "Lenken ligger her nede."
+  },
+  {
+   "tale": "Prisen er tre hundre og åtti-ni kroner nå, ned fra fem hundre og ni.",
+   "tekst": "389 kr nå - ned fra 509 kr."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkrete, falsifiserbare fakta (dB, pris, fjernkontroll) beholdt; 'grannene hører det' fjernet - alle linjer nå ✅/✅/✅ på tre-spørsmålstestet.",
+ "PD_1_H3": [
+  {
+   "tale": "Du trenger ikke gå bort dit for å slå av alarmen.",
+   "tekst": "Du trenger ikke gå bort dit for å slå av alarmen."
+  },
+  {
+   "tale": "Se her.",
+   "tekst": "Se her."
+  },
+  {
+   "tale": "I kveld sikrer jeg huset med denne: en dør- og vindusalarm.",
+   "tekst": "I kveld sikrer jeg huset med denne: en dør- og vindusalarm."
+  },
+  {
+   "tale": "Hundre og ti desibel, trådløs fjernkontroll.",
+   "tekst": "110 dB, trådløs fjernkontroll."
+  },
+  {
+   "tale": "Jeg setter den på vinduet.",
+   "tekst": "Jeg setter den på vinduet."
+  },
+  {
+   "tale": "Sånn høres det ut hvis noen rører ved den.",
+   "tekst": "Sånn høres det ut hvis noen rører ved den."
+  },
+  {
+   "tale": "Den varsler allerede når noen rykker eller bender i den, ikke først når den er åpen.",
+   "tekst": "Varsler når noen rykker eller bender i den - ikke først når den er åpen."
+  },
+  {
+   "tale": "Og med fjernkontrollen slår jeg alarmen av og på, på avstand.",
+   "tekst": "Med fjernkontrollen slår jeg alarmen av og på, på avstand."
+  },
+  {
+   "tale": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går.",
+   "tekst": "Jeg slipper å snike meg bort til vinduet hver gang jeg kommer og går."
+  },
+  {
+   "tale": "Ingen app, ikke noe abonnement, ingen elektriker.",
+   "tekst": "Ingen app, ikke noe abonnement, ingen elektriker."
+  },
+  {
+   "tale": "Bare monter den, og sett i gang.",
+   "tekst": "Bare monter den, og sett i gang."
+  },
+  {
+   "tale": "Lenken ligger her nede, og for tre hundre og åtti-ni kroner kan du sove roligere om natten.",
+   "tekst": "Lenken ligger her nede, og for 389 kr kan du sove roligere om natten."
+  },
+  {
+   "tale": "Det er vanskelig å si nei.",
+   "tekst": "Det er vanskelig å si nei."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkrete tall (110 dB, 389 kr, vibrasjon ved rykk/bend) består testet: visualisere ✅, falsifisere ✅, ingen konkurrent kan si nøyaktig dette ✅ - de generelle linjene ('se her', 'vanskelig å si nei') er svakere men fungerer som overgang, ikke påstand.",
+ "SP_1_H1": [
+  {
+   "tale": "Jeg var skeptisk.",
+   "tekst": "Jeg var skeptisk."
+  },
+  {
+   "tale": "Så testet jeg denne.",
+   "tekst": "Så testet jeg denne."
+  },
+  {
+   "tale": "Jeg trodde det var sånt man kjøper og glemmer.",
+   "tekst": "Jeg trodde det var sånt man kjøper og glemmer."
+  },
+  {
+   "tale": "Så satte jeg den opp på kjellervinduet og terrassedøren.",
+   "tekst": "Så satte jeg den opp på kjellervinduet og terrassedøren."
+  },
+  {
+   "tale": "Første natten testet jeg den.",
+   "tekst": "Første natten testet jeg den."
+  },
+  {
+   "tale": "Jeg for opp i sengen.",
+   "tekst": "Jeg for opp i sengen."
+  },
+  {
+   "tale": "Nå vet jeg alltid når noen åpner en dør jeg ikke venter meg.",
+   "tekst": "Nå vet jeg alltid når noen åpner en dør jeg ikke venter meg."
+  },
+  {
+   "tale": "Barna, katten, hvem som helst.",
+   "tekst": "Barna, katten, hvem som helst."
+  },
+  {
+   "tale": "Sett den opp selv, uten elektriker.",
+   "tekst": "Sett den opp selv, uten elektriker."
+  },
+  {
+   "tale": "Fjernkontrollen gjør at jeg slipper å løpe fram og tilbake.",
+   "tekst": "Fjernkontrollen gjør at jeg slipper å løpe fram og tilbake."
+  },
+  {
+   "tale": "Jeg har allerede kjøpt en til mamma.",
+   "tekst": "Jeg har allerede kjøpt en til mamma."
+  },
+  {
+   "tale": "Dette er en sånn ting jeg skulle ønske jeg fant tidligere.",
+   "tekst": "Dette er en sånn ting jeg skulle ønske jeg fant tidligere."
+  }
+ ],
+ "_tre_SP_1_H1": "Alle replikker konkrete og handlingsbaserte (visualisere ✅), sanne/falske observasjoner uten tomme påstander (falsifisere ✅), personlig UGC-stemme gjør at ingen konkurrent kan signere linjen direkte (ingen konkurrent ✅)",
+ "SP_1_H2": [
+  {
+   "tale": "Dette er grunnen til at jeg sover bedre nå.",
+   "tekst": "Dette er grunnen til at jeg sover bedre nå."
+  },
+  {
+   "tale": "Jeg trodde det var en sånn ting man kjøper og glemmer.",
+   "tekst": "Jeg trodde det var en sånn ting man kjøper og glemmer."
+  },
+  {
+   "tale": "Så satte jeg den opp på kjellervinduet og terrassedøren.",
+   "tekst": "Så satte jeg den opp på kjellervinduet og terrassedøren."
+  },
+  {
+   "tale": "Første natten testet jeg den.",
+   "tekst": "Første natten testet jeg den."
+  },
+  {
+   "tale": "Jeg spratt til i sengen.",
+   "tekst": "Jeg spratt til i sengen."
+  },
+  {
+   "tale": "Nå vet jeg alltid når noen rører en dør jeg ikke venter meg.",
+   "tekst": "Nå vet jeg alltid når noen rører en dør jeg ikke venter meg."
+  },
+  {
+   "tale": "Ungene, katten, hvem som helst.",
+   "tekst": "Ungene, katten, hvem som helst."
+  },
+  {
+   "tale": "Sett den opp selv, uten elektriker.",
+   "tekst": "Sett den opp selv, uten elektriker."
+  },
+  {
+   "tale": "Fjernkontrollen gjør at jeg slipper å løpe frem og tilbake.",
+   "tekst": "Fjernkontrollen gjør at jeg slipper å løpe frem og tilbake."
+  },
+  {
+   "tale": "Jeg har allerede kjøpt en til, til mamma.",
+   "tekst": "Jeg har allerede kjøpt en til, til mamma."
+  },
+  {
+   "tale": "Det er en sånn ting man skulle ønske man fant tidligere.",
+   "tekst": "Det er en sånn ting man skulle ønske man fant tidligere."
+  }
+ ],
+ "_tre_SP_1_H2": "Konkrete scener (kjellervindu, terrassedør, seng) ✅ visualisere, personlige utsagn kan falsifiseres som opplevelse ✅, men generiske UGC-formuleringer kunne vært sagt om mange produkter ❌ ingen konkurrent-unikhet",
+ "SP_1_H3": [
+  {
+   "tale": "Prisen var under fire hundre kroner, så jeg bestilte den med en gang.",
+   "tekst": "Prisen var under 400 kr, så jeg bestilte med en gang."
+  },
+  {
+   "tale": "Jeg trodde det bare var en sånn dings man kjøper og glemmer.",
+   "tekst": "Jeg trodde det bare var en sånn dings man kjøper og glemmer."
+  },
+  {
+   "tale": "Så satte jeg den opp på kjellervinduet og altandøra.",
+   "tekst": "Så satte jeg den opp på kjellervinduet og altandøra."
+  },
+  {
+   "tale": "Første natta testet jeg den.",
+   "tekst": "Første natta testet jeg den."
+  },
+  {
+   "tale": "Jeg spratt til i senga.",
+   "tekst": "Jeg spratt til i senga."
+  },
+  {
+   "tale": "Nå vet jeg alltid når noen åpner en dør jeg ikke venter meg.",
+   "tekst": "Nå vet jeg alltid når noen åpner en dør jeg ikke venter meg."
+  },
+  {
+   "tale": "Ungene, katten, hvem som helst.",
+   "tekst": "Ungene, katten, hvem som helst."
+  },
+  {
+   "tale": "Jeg satte den opp selv, uten elektriker.",
+   "tekst": "Jeg satte den opp selv, uten elektriker."
+  },
+  {
+   "tale": "Fjernkontrollen gjør at jeg slipper å springe frem og tilbake.",
+   "tekst": "Fjernkontrollen gjør at jeg slipper å springe frem og tilbake."
+  },
+  {
+   "tale": "Jeg har allerede kjøpt en til til mamma.",
+   "tekst": "Jeg har allerede kjøpt en til til mamma."
+  },
+  {
+   "tale": "Det er en sånn her ting man skulle ønske man fant tidligere.",
+   "tekst": "Det er en sånn her ting man skulle ønske man fant tidligere."
+  }
+ ],
+ "_tre_SP_1_H3": "Visualisere: ✅ (dør, vindu, fjernkontroll, seng), Falsifiserbart: ✅ (pris og handling er sjekkbare fakta), Ingen konkurrent kan si det: ✅ (personlig historie, ingen butikk nevnt)"
+}
