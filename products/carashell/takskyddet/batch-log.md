@@ -2908,3 +2908,35 @@ Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
 `carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad. SE-kampanjen
 ACTIVE med 11 adsets, pris 1 129 kr; båda listicle-kampanjerna filtrerade som
 eget spår.
+
+## 2026-09-29 — NO-rundan: 3 rader, alla redan uppe (loggad i efterhand)
+
+3 rader i `SE-ACTIVE to be translated` (`UG_102_H1`, `CS_112_H1`, `SP_104_H2`),
+alla ur 28/9:s spegling och skapade i kontot 17:45–18:09 CEST samma kväll.
+Tillbakalästa en och en ur Meta: ACTIVE/ACTIVE i ACTIVE-adsets (UG, CS, SP).
+Approved-kollen: **69 rader, 0 utan NO-annons.** Inget renderat, inget
+uppladdat, 0 HeyGen-credits, ingen Notion-status rörd.
+
+⚠️ **Sessionen stannade efter köläsningen** — Discord-rapporten, den här
+loggraden och commiten hann inte göras den dagen. Ingenting i kontot eller
+Notion rördes, så det som saknades var spåret, inte arbetet. Den 30/9
+rapporterades båda dagarna i samma Discord-post.
+
+## 2026-09-30 — NO-rundan: kön tom
+
+**0 rader** i `SE-ACTIVE to be translated`. Approved-kollen: **72 rader, 0 utan
+NO-annons.** Kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd
+länk `carashell.se/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst ur
+butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits, ingen Notion-status
+rörd. Discord-rapport postad i `#annons-uppladdning` (`1554864439684239371`),
+ingen ping.
+
+⚠️ **Metas läsgräns slog till två gånger i dag på Magiborsten UK** (det konto
+kön läser för US-kolumnen): köläsningen backade av fyra gånger (30+60+120+240 s)
+och Approved-passet **dog på första försöket** med `✗ Meta paging: User request
+limit reached` och lämnade en **tom fil**. Ett nytt försök tio minuter senare
+läste alla 72. Samma fälla som 27/9 — en strypt läsning ser ut som en tom kö om
+ingen läser felraden. Räkna med 10–25 min för en runda när kontot är strypt.
+
+Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på
+Axels besked, obesvarat sedan 2026-09-23.
