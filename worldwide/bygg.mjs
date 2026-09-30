@@ -33,6 +33,9 @@ export const KONFIG = JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8'))
 const EN = join(ROT, 'oversattning', 'en');
 const KALLA = join(ROT, 'oversattning', 'kalla');
 const LOCALE = 'en';
+/** Alla språk worldwide-närvaron bär (engelska standard, resten undermappar). */
+const LOCALES = KONFIG.marknad.locales ?? [LOCALE];
+const mappFor = (locale) => join(ROT, 'oversattning', locale);
 const log = (s) => console.log(s);
 const paus = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -77,12 +80,12 @@ export function fraktplan(zoner, konfig) {
 }
 
 /** Läser JSON-delar (_x-1.json, _x-2.json …) och slår ihop dem (bodies per nyckel fogas i del-ordning). */
-export function lasDelar(prefix) {
-  if (!existsSync(EN)) return {};
-  const filer = readdirSync(EN).filter((f) => f.startsWith(prefix) && f.endsWith('.json')).sort((a, b) => (Number(/(\d+)\.json$/.exec(a)?.[1] ?? 0) - Number(/(\d+)\.json$/.exec(b)?.[1] ?? 0)));
+export function lasDelar(prefix, mapp = EN) {
+  if (!existsSync(mapp)) return {};
+  const filer = readdirSync(mapp).filter((f) => f.startsWith(prefix) && f.endsWith('.json')).sort((a, b) => (Number(/(\d+)\.json$/.exec(a)?.[1] ?? 0) - Number(/(\d+)\.json$/.exec(b)?.[1] ?? 0)));
   const ut = {};
   for (const f of filer) {
-    const j = JSON.parse(readFileSync(join(EN, f), 'utf8'));
+    const j = JSON.parse(readFileSync(join(mapp, f), 'utf8'));
     if (j.del != null && (j.handle || j.typ)) {
       const k = j.handle ?? j.typ;
       ut[k] ??= { title: null, body: '' };
@@ -219,12 +222,14 @@ async function stegMarknader(k, { skarpt }) {
 
 async function stegSprak(k, { skarpt }) {
   const lage = await hamtaLage(k);
-  const f = lage.locales.find((x) => x.locale === LOCALE);
-  if (f) { log(`engelska finns (${f.published ? 'publicerad' : 'opublicerad'})`); return; }
-  if (!skarpt) { log('torrt: skulle aktivera engelska (opublicerad)'); return; }
-  const r = await mutation(k, `mutation($l: String!) { shopLocaleEnable(locale: $l) { shopLocale { locale published } userErrors { field message } } }`, { l: LOCALE });
-  if (r.fel.length) throw new Error(`Engelska: ${r.fel.join('; ')}`);
-  log('✅ engelska aktiverad (opublicerad)');
+  for (const locale of LOCALES) {
+    const f = lage.locales.find((x) => x.locale === locale);
+    if (f) { log(`${locale} finns (${f.published ? 'publicerad' : 'opublicerad'})`); continue; }
+    if (!skarpt) { log(`torrt: skulle aktivera ${locale} (opublicerad)`); continue; }
+    const r = await mutation(k, `mutation($l: String!) { shopLocaleEnable(locale: $l) { shopLocale { locale published } userErrors { field message } } }`, { l: locale });
+    if (r.fel.length) throw new Error(`${locale}: ${r.fel.join('; ')}`);
+    log(`✅ ${locale} aktiverad (opublicerad)`);
+  }
 }
 
 async function stegFrakt(k, { skarpt }) {
@@ -279,32 +284,42 @@ async function stegPrislista(k, { skarpt }) {
 
 // ---- översättningar
 
-async function allaResurser(k, typ) {
+async function allaResurser(k, typ, locale = LOCALE) {
   const ut = [];
   let efter = null;
   do {
-    const d = await k.graphql(`query($t: TranslatableResourceType!, $e: String, $l: String!) { translatableResources(resourceType: $t, first: 100, after: $e) { pageInfo { hasNextPage endCursor } nodes { resourceId translatableContent { key value digest } translations(locale: $l) { key value outdated } } } }`, { t: typ, e: efter, l: LOCALE });
+    const d = await k.graphql(`query($t: TranslatableResourceType!, $e: String, $l: String!) { translatableResources(resourceType: $t, first: 100, after: $e) { pageInfo { hasNextPage endCursor } nodes { resourceId translatableContent { key value digest } translations(locale: $l) { key value outdated } } } }`, { t: typ, e: efter, l: locale });
     ut.push(...d.translatableResources.nodes);
     efter = d.translatableResources.pageInfo.hasNextPage ? d.translatableResources.pageInfo.endCursor : null;
   } while (efter);
   return ut;
 }
 
-async function registrera(k, resurs, rader, { skarpt, etikett }) {
+async function registrera(k, resurs, rader, { skarpt, etikett, locale = LOCALE }) {
   const ny = rader.filter((r) => r.value && !resurs.translations?.some((t) => t.key === r.key && !t.outdated && norm(t.value) === norm(r.value)));
   if (!ny.length) return { antal: 0, fel: 0 };
   if (!skarpt) return { antal: ny.length, fel: 0 };
   let antal = 0, fel = 0;
   for (let i = 0; i < ny.length; i += 100) {
     const r = await mutation(k, `mutation($id: ID!, $t: [TranslationInput!]!) { translationsRegister(resourceId: $id, translations: $t) { translations { key } userErrors { field message } } }`,
-      { id: resurs.resourceId, t: ny.slice(i, i + 100).map((x) => ({ key: x.key, value: x.value, locale: LOCALE, translatableContentDigest: x.digest })) });
+      { id: resurs.resourceId, t: ny.slice(i, i + 100).map((x) => ({ key: x.key, value: x.value, locale, translatableContentDigest: x.digest })) });
     if (r.fel.length) { log(`❌ ${etikett}: ${r.fel.join('; ')}`); fel++; continue; }
     antal += r.data.translationsRegister.translations.length;
   }
   return { antal, fel };
 }
 
-async function stegOversattningar(k, { skarpt }) {
+async function stegOversattningar(k, opt) {
+  // Språk utan egen mapp (eller med för få filer) hoppas — de registreras när översättningen finns.
+  for (const locale of LOCALES) {
+    if (!existsSync(mappFor(locale))) { log(`⚠️ ${locale}: ingen mapp oversattning/${locale}/ — hoppas`); continue; }
+    log(`\n· ${locale}`);
+    await oversattningarFor(k, opt, locale);
+  }
+}
+
+async function oversattningarFor(k, { skarpt }, locale) {
+  const MAPP = mappFor(locale);
   const summa = {};
   const lagg = (typ, r) => { summa[typ] ??= { texter: 0, fel: 0, lackor: 0 }; summa[typ].texter += r.antal; summa[typ].fel += r.fel; };
   // Produkter: resurs → handle → en/<handle>.json (bara de som klarar granska.mjs).
@@ -319,73 +334,76 @@ async function stegOversattningar(k, { skarpt }) {
   } while (efter);
   const alternativ = new Map();
   let underkanda = 0;
-  for (const res of await allaResurser(k, 'PRODUCT')) {
+  let saknade = 0;
+  for (const res of await allaResurser(k, 'PRODUCT', locale)) {
     const h = handles.get(res.resourceId);
-    const en = h ? lasEn(h) : null;
-    if (!en) continue;
+    const en = h ? lasEn(h, locale) : null;
+    if (!en) { if (h) saknade++; continue; }
     const kalla = kallor.get(h);
-    if (kalla && granskaProdukt(kalla, en).length) { underkanda++; continue; }
+    if (kalla && granskaProdukt(kalla, en, { locale }).length) { underkanda++; continue; }
     for (const o of en.options ?? []) { alternativ.set(norm(o.name), o.name_en); for (const [sv, e] of Object.entries(o.values ?? {})) alternativ.set(norm(sv), e); }
     const karta = produktKarta(en);
     const rader = res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest }));
-    lagg('produkter', await registrera(k, res, rader, { skarpt, etikett: `produkt ${h}` }));
+    lagg('produkter', await registrera(k, res, rader, { skarpt, etikett: `produkt ${h}`, locale }));
   }
   if (underkanda) log(`⚠️ ${underkanda} produkter har ❌ i granska.mjs och registrerades inte`);
+  if (saknade) log(`⚠️ ${locale}: ${saknade} produkter saknar översättning (visas på butikens huvudspråk)`);
   // Alternativ och alternativvärden (Färg → Color, Svart → Black) — på värde.
   for (const typ of ['PRODUCT_OPTION', 'PRODUCT_OPTION_VALUE']) {
-    for (const res of await allaResurser(k, typ)) {
+    for (const res of await allaResurser(k, typ, locale)) {
       const rader = res.translatableContent.filter((c) => c.key === 'name' && alternativ.has(norm(c.value)) && norm(alternativ.get(norm(c.value))) !== norm(c.value)).map((c) => ({ key: c.key, value: alternativ.get(norm(c.value)), digest: c.digest }));
-      lagg('alternativ', await registrera(k, res, rader, { skarpt, etikett: typ }));
+      lagg('alternativ', await registrera(k, res, rader, { skarpt, etikett: typ, locale }));
     }
   }
   // Kollektioner (handle).
-  const koll = JSON.parse(readFileSync(join(EN, '_kollektioner.json'), 'utf8'));
+  const las = (f) => (existsSync(join(MAPP, f)) ? JSON.parse(readFileSync(join(MAPP, f), 'utf8')) : {});
+  const koll = las('_kollektioner.json');
   const kollHandles = new Map();
   const dk = await k.graphql(`{ collections(first: 250) { nodes { id handle } } }`);
   for (const c of dk.collections.nodes) kollHandles.set(c.id, c.handle);
-  for (const res of await allaResurser(k, 'COLLECTION')) {
+  for (const res of await allaResurser(k, 'COLLECTION', locale)) {
     const en = koll[kollHandles.get(res.resourceId)];
     if (!en) continue;
     const karta = { title: en.title, body_html: en.descriptionHtml, meta_title: en.seo_title, meta_description: en.seo_description };
-    lagg('kollektioner', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: 'kollektion' }));
+    lagg('kollektioner', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: 'kollektion', locale }));
   }
   // Sidor (handle).
-  const sidor = { ...lasDelar('_sidor'), ...lasDelar('_integritet') };
+  const sidor = { ...lasDelar('_sidor', MAPP), ...lasDelar('_integritet', MAPP) };
   const sidHandles = new Map();
   const dp = await k.graphql(`{ pages(first: 250) { nodes { id handle } } }`);
   for (const p of dp.pages.nodes) sidHandles.set(p.id, p.handle);
-  for (const res of await allaResurser(k, 'PAGE')) {
+  for (const res of await allaResurser(k, 'PAGE', locale)) {
     const en = sidor[sidHandles.get(res.resourceId)];
     if (!en) continue;
     const karta = { title: en.title, body_html: en.body };
-    lagg('sidor', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: `sida ${sidHandles.get(res.resourceId)}` }));
+    lagg('sidor', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: `sida ${sidHandles.get(res.resourceId)}`, locale }));
   }
   // Butikens policyer (typ).
-  const pol = { ...lasDelar('_policyer'), ...lasDelar('_villkor') };
+  const pol = { ...lasDelar('_policyer', MAPP), ...lasDelar('_villkor', MAPP) };
   const dpol = await k.graphql(`{ shop { shopPolicies { id type } } }`);
   const polTyp = new Map(dpol.shop.shopPolicies.map((p) => [p.id, p.type.toLowerCase().replace(/_/g, '-')]));
-  for (const res of await allaResurser(k, 'SHOP_POLICY')) {
+  for (const res of await allaResurser(k, 'SHOP_POLICY', locale)) {
     const en = pol[polTyp.get(res.resourceId)];
     if (!en) continue;
-    lagg('policyer', await registrera(k, res, res.translatableContent.filter((c) => c.key === 'body' && c.value).map((c) => ({ key: c.key, value: en.body, digest: c.digest })), { skarpt, etikett: `policy ${polTyp.get(res.resourceId)}` }));
+    lagg('policyer', await registrera(k, res, res.translatableContent.filter((c) => c.key === 'body' && c.value).map((c) => ({ key: c.key, value: en.body, digest: c.digest })), { skarpt, etikett: `policy ${polTyp.get(res.resourceId)}`, locale }));
   }
   // Menyer, temat och butikens titel — på värde.
-  const menyer = vardeKarta(JSON.parse(readFileSync(join(EN, '_menyer.json'), 'utf8')));
-  const tema = vardeKarta(JSON.parse(readFileSync(join(EN, '_tema.json'), 'utf8')));
-  const shop = JSON.parse(readFileSync(join(EN, '_shop.json'), 'utf8'));
+  const menyer = vardeKarta(las('_menyer.json'));
+  const tema = vardeKarta(las('_tema.json'));
+  const shop = las('_shop.json');
   for (const [typ, karta] of [['LINK', menyer], ['MENU', menyer], ['ONLINE_STORE_THEME', tema], ['ONLINE_STORE_THEME_JSON_TEMPLATE', tema], ['ONLINE_STORE_THEME_SETTINGS_DATA_SECTIONS', tema], ['ONLINE_STORE_THEME_SECTION_GROUP', tema]]) {
     let resurser;
-    try { resurser = await allaResurser(k, typ); } catch (e) { log(`⚠️ ${typ}: ${e.message.slice(0, 160)}`); continue; }
+    try { resurser = await allaResurser(k, typ, locale); } catch (e) { log(`⚠️ ${typ}: ${e.message.slice(0, 160)}`); continue; }
     for (const res of resurser) {
       const rader = res.translatableContent.filter((c) => c.value && karta.has(norm(c.value))).map((c) => ({ key: c.key, value: karta.get(norm(c.value)), digest: c.digest }));
-      lagg(typ.toLowerCase(), await registrera(k, res, rader, { skarpt, etikett: typ }));
+      lagg(typ.toLowerCase(), await registrera(k, res, rader, { skarpt, etikett: typ, locale }));
     }
   }
-  for (const res of await allaResurser(k, 'SHOP')) {
+  for (const res of await allaResurser(k, 'SHOP', locale)) {
     const karta = { meta_title: shop.title, meta_description: shop.description };
-    lagg('butik', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: 'shop' }));
+    lagg('butik', await registrera(k, res, res.translatableContent.filter((c) => karta[c.key] && c.value).map((c) => ({ key: c.key, value: karta[c.key], digest: c.digest })), { skarpt, etikett: 'shop', locale }));
   }
-  for (const [typ, s] of Object.entries(summa)) log(`${skarpt ? (s.fel ? '⚠️' : '✅') : 'torrt:'} ${typ}: ${s.texter} texter ${skarpt ? 'registrerade' : 'att registrera'}${s.fel ? `, ${s.fel} resurser GICK INTE (kör igen)` : ''}`);
+  for (const [typ, s] of Object.entries(summa)) log(`${skarpt ? (s.fel ? '⚠️' : '✅') : 'torrt:'} ${locale} ${typ}: ${s.texter} texter ${skarpt ? 'registrerade' : 'att registrera'}${s.fel ? `, ${s.fel} resurser GICK INTE (kör igen)` : ''}`);
 }
 
 async function stegDomaner(k, { skarpt }) {
@@ -404,6 +422,16 @@ async function stegDomaner(k, { skarpt }) {
     wp = { id: r.data.webPresenceCreate.webPresence.id, markets: { nodes: [] } };
     log(`✅ närvaro ${wp.id}`);
   }
+  const har = (wp.alternateLocales ?? []).map((x) => x.locale);
+  const nya = (M.doman.alternativa ?? []).filter((l) => !har.includes(l));
+  if (wp.domain && nya.length) {
+    if (!skarpt) log(`torrt: ${dom.host} får språken ${nya.join(', ')}`);
+    else {
+      const r = await mutation(k, `mutation($id: ID!, $input: WebPresenceUpdateInput!) { webPresenceUpdate(id: $id, input: $input) { webPresence { alternateLocales { locale } } userErrors { field message } } }`, { id: wp.id, input: { alternateLocales: [...har, ...nya] } });
+      if (r.fel.length) throw new Error(`Språken på ${dom.host}: ${r.fel.join('; ')}`);
+      log(`✅ ${dom.host}: ${r.data.webPresenceUpdate.webPresence.alternateLocales.map((x) => x.locale).join(', ')}`);
+    }
+  }
   if (!wp.markets.nodes.some((x) => x.id === mk.id)) {
     if (!skarpt) { log(`torrt: ${dom.host} kopplas till ${mk.name}`); return; }
     const r = await mutation(k, `mutation($id: ID!, $input: MarketUpdateInput!) { marketUpdate(id: $id, input: $input) { market { id } userErrors { field message } } }`, { id: mk.id, input: { webPresencesToAdd: [wp.id] } });
@@ -412,15 +440,20 @@ async function stegDomaner(k, { skarpt }) {
   } else log(`${dom.host}: kopplad till ${mk.name}`);
 }
 
-async function stegPublicera(k, { skarpt }) {
+async function stegPublicera(k, { skarpt, sprak }) {
   const lage = await hamtaLage(k);
-  const f = lage.locales.find((x) => x.locale === LOCALE);
-  if (!f) { log('⚠️ engelska är inte aktiverad — kör --steg sprak'); return; }
-  if (f.published) { log('engelska är publicerad'); return; }
-  if (!skarpt) { log('torrt: skulle publicera engelska'); return; }
-  const r = await mutation(k, `mutation($l: String!, $s: ShopLocaleInput!) { shopLocaleUpdate(locale: $l, shopLocale: $s) { shopLocale { published } userErrors { field message } } }`, { l: LOCALE, s: { published: true } });
-  if (r.fel.length) throw new Error(`Publicera: ${r.fel.join('; ')}`);
-  log('✅ engelska publicerad');
+  // --sprak en,de publicerar bara de språken (resten väntar på sina översättningar).
+  for (const locale of LOCALES.filter((l) => !sprak || sprak.includes(l))) {
+    const f = lage.locales.find((x) => x.locale === locale);
+    if (!f) { log(`⚠️ ${locale} är inte aktiverat — kör --steg sprak`); continue; }
+    if (f.published) { log(`${locale} är publicerat`); continue; }
+    // Ett språk publiceras först när dess översättning finns — annars ser besökaren svenska.
+    if (!existsSync(mappFor(locale))) { log(`⚠️ ${locale}: ingen översättning — publiceras inte`); continue; }
+    if (!skarpt) { log(`torrt: skulle publicera ${locale}`); continue; }
+    const r = await mutation(k, `mutation($l: String!, $s: ShopLocaleInput!) { shopLocaleUpdate(locale: $l, shopLocale: $s) { shopLocale { published } userErrors { field message } } }`, { l: locale, s: { published: true } });
+    if (r.fel.length) throw new Error(`Publicera ${locale}: ${r.fel.join('; ')}`);
+    log(`✅ ${locale} publicerat`);
+  }
 }
 
 async function stegKontroll() {
@@ -448,7 +481,7 @@ async function huvud() {
   for (const st of valda) {
     if (!STEG[st]) throw new Error(`Okänt steg ${st}`);
     log(`\n── ${st} ──`);
-    await STEG[st](k, { skarpt });
+    await STEG[st](k, { skarpt, sprak: a.includes('--sprak') ? a[a.indexOf('--sprak') + 1].split(',') : null });
   }
 }
 

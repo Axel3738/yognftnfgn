@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Início",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Jardim e Exterior",
+  "descriptionHtml": "<p>Produtos para o jardim, o pátio e a vida ao ar livre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Automóvel, Ferramentas e Garagem",
+  "descriptionHtml": "<p>Produtos para o automóvel, a oficina e a garagem.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Campismo e Ar Livre",
+  "descriptionHtml": "<p>Equipamento para campismo, caminhadas e vida ao ar livre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Agricultura e Animais",
+  "descriptionHtml": "<p>Produtos para a agricultura, cercados, cavalariças e animais de estimação.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Barcos e Náutica",
+  "descriptionHtml": "<p>Acessórios e manutenção para barcos, motores e uso náutico – proteção, limpeza, amarração e pesca.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Acessórios e Outros",
+  "descriptionHtml": "<p>Acessórios práticos e gadgets inteligentes para o dia a dia.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Veículos e Iluminação",
+  "descriptionHtml": "<p>Acessórios e iluminação LED para automóveis, motociclos, quadriciclos e camiões – luzes de trabalho, barras de luz e acessórios para veículos.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Mais Vendidos",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golfe e Desporto",
+  "descriptionHtml": "<p>Tudo para a volta de golfe e para o treino – desde apanha-bolas a bolsas para sapatos e redes de treino.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Calçado e Vestuário",
+  "descriptionHtml": "<p>Calçado, pantufas e roupa confortáveis para o dia a dia, o trabalho e o ar livre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Casa e Arrumação",
+  "descriptionHtml": "<p>Soluções inteligentes que põem ordem em casa – arrumação, artigos domésticos e ajudas práticas para o dia a dia.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Eletrónica e Telemóveis",
+  "descriptionHtml": "<p>Acessórios para telemóvel, suportes e eletrónica inteligente para casa, escritório e viagens.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Ciclismo",
+  "descriptionHtml": "<p>Acessórios e roupa para o seu passeio de bicicleta – desde guarda-lamas a calções acolchoados.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "O Seu Produto Grátis",
+  "descriptionHtml": "<p><strong>Já comprou connosco antes?</strong> Então recebe um dos produtos abaixo grátis na sua próxima compra — qual deles é decidido pela <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">roda da sorte</a>.</p>\n<p>Como funciona: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">gire a roda</a>, adicione o seu prémio ao carrinho e gaste mais, pelo menos, 299 SEK. O código <strong>TACKIGEN</strong> é aplicado automaticamente e o prémio custa 0 SEK no checkout. Se só tiver o prémio no carrinho, este mantém o preço total até adicionar artigos no valor de 299 SEK.</p>\n<p>Válido uma vez por cliente, para clientes que já tenham feito pelo menos uma encomenda à Beaver Store, com o mesmo endereço de e-mail da encomenda anterior.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Todos os Produtos",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Calendários do Advento",
+  "descriptionHtml": "<p>Calendários do Advento cheios e vazios – uma janela por dia até à véspera de Natal.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Inicio",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Jardín y vida al aire libre",
+  "descriptionHtml": "<p>Productos para el jardín, la terraza y la vida al aire libre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Coche, herramientas y garaje",
+  "descriptionHtml": "<p>Productos para el coche, el taller y el garaje.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Camping y aire libre",
+  "descriptionHtml": "<p>Equipamiento para camping, senderismo y vida al aire libre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Granja y animales",
+  "descriptionHtml": "<p>Productos para la agricultura, los cercados, las cuadras y las mascotas.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Barco y náutica",
+  "descriptionHtml": "<p>Accesorios y cuidado para barcos, motores y uso náutico: protección, limpieza, amarre y pesca.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Accesorios y más",
+  "descriptionHtml": "<p>Accesorios prácticos y gadgets inteligentes para el día a día.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Vehículos e iluminación",
+  "descriptionHtml": "<p>Accesorios e iluminación LED para coches, motos, quads y camiones: focos de trabajo, barras de luz y accesorios para vehículos.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Más vendidos",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf y deporte",
+  "descriptionHtml": "<p>Todo para la partida de golf y para entrenar: desde recogepelotas hasta bolsas para zapatos y redes de práctica.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Calzado y ropa",
+  "descriptionHtml": "<p>Calzado, zapatillas de estar por casa y ropa cómoda para el día a día, el trabajo y el aire libre.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Hogar y almacenaje",
+  "descriptionHtml": "<p>Soluciones inteligentes que ponen orden en tu casa: almacenaje, hogar y prácticos ayudantes para el día a día.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Electrónica y móvil",
+  "descriptionHtml": "<p>Accesorios para el móvil, soportes y electrónica inteligente para casa, la oficina y los viajes.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Ciclismo",
+  "descriptionHtml": "<p>Accesorios y ropa para tu salida en bici: desde guardabarros hasta culotes acolchados.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Tu producto gratis",
+  "descriptionHtml": "<p><strong>¿Ya has comprado antes con nosotros?</strong> Entonces te llevas gratis uno de los productos de abajo con tu próxima compra; cuál te toca lo decide la <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">ruleta de la suerte</a>.</p>\n<p>Así funciona: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">gira la ruleta</a>, añade tu premio al carrito y gasta al menos 299 SEK más. El código <strong>TACKIGEN</strong> se aplica automáticamente y el premio cuesta 0 SEK al finalizar la compra. Si en tu carrito solo está el premio, se mantiene a precio completo hasta que hayas añadido artículos por valor de 299 SEK.</p>\n<p>Válido una vez por cliente, para clientes que hayan hecho al menos un pedido en Beaver Store con anterioridad, usando la misma dirección de correo electrónico que en su pedido anterior.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Todos los productos",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Calendarios de Adviento",
+  "descriptionHtml": "<p>Calendarios de Adviento rellenos y vacíos: una puertecita al día hasta Nochebuena.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

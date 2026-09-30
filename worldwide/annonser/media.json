@@ -348,5 +348,544 @@
   "creative_id": "1616400533268339",
   "kampanj_id": "120251679112080435",
   "skapad": "2026-09-30T07:46:06.511Z"
+ },
+ "IBC_PD_1_H1": {
+  "fil": "worldwide/annonser/klar/IBC_PD_1_H1.mp4",
+  "sha256": "6def03035870fae7b44c910cf3b81a9331a4c05bbaefdd89e347017b273e0f6b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/IBC_PD_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/IBC_PD_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/IBC_PD_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: QA-bilderna tittade på, ingen svensk text; röstkollen ✅; rösten inte lyssnad på",
+  "video_id": "1607649844192318",
+  "annons_id": "120251685492260435",
+  "creative_id": "1770526597804984",
+  "kampanj_id": "120251679194140435",
+  "skapad": "2026-09-30T09:37:17.578Z"
+ },
+ "Damasker_PD_1": {
+  "fil": "worldwide/annonser/klar/Damasker_PD_1.mp4",
+  "sha256": "7641bb5e32caf7cfdb9891e278c7936764929f4434d79cbaa00a4fd154866b92",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_PD_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_PD_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_PD_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: QA-bilderna tittade på, ingen svensk text; röstkollen ✅; rösten inte lyssnad på",
+  "video_id": "1617635129849809",
+  "annons_id": "120251685534500435",
+  "creative_id": "1400874711666539",
+  "kampanj_id": "120251679795180435",
+  "skapad": "2026-09-30T09:38:00.310Z"
+ },
+ "Taljset_PD_1": {
+  "fil": "worldwide/annonser/klar/Taljset_PD_1.mp4",
+  "sha256": "fafef8474c8e84f4da261a7104973c3e9ad9b6519c76b5931586f8140aa5b31b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Taljset_PD_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Taljset_PD_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Taljset_PD_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: QA-bilderna tittade på, ingen svensk text; röstkollen ✅; rösten inte lyssnad på",
+  "video_id": "1616598470510467",
+  "annons_id": "120251685550170435",
+  "creative_id": "1017889407923989",
+  "kampanj_id": "120251679800490435",
+  "skapad": "2026-09-30T09:38:43.435Z"
+ },
+ "Golfkalender_PD_1": {
+  "fil": "worldwide/annonser/klar/Golfkalender_PD_1.mp4",
+  "sha256": "15a526db1ded27ec15672bf4e93748867697f6330cdf79a2d465c21528f4e0a3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Golfkalender_PD_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Golfkalender_PD_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Golfkalender_PD_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: QA-bilderna tittade på, ingen svensk text; röstkollen ✅; rösten inte lyssnad på",
+  "video_id": "1665767711740173",
+  "annons_id": "120251685559770435",
+  "creative_id": "1566410514734611",
+  "kampanj_id": "120251679804240435",
+  "skapad": "2026-09-30T09:39:24.825Z"
+ },
+ "Värmesulorna_PD_1_H2": {
+  "fil": "worldwide/annonser/klar/V_rmesulorna_PD_1_H2.mp4",
+  "sha256": "bb7d977f90c7727b3336bf7ff02a533cdf8d7f9f88baaaa17c61f6a61b906a78",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/V_rmesulorna_PD_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/V_rmesulorna_PD_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/V_rmesulorna_PD_1_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: QA-bilderna tittade på, ingen svensk text; röstkollen ✅; rösten inte lyssnad på",
+  "video_id": "1822513228763015",
+  "annons_id": "120251685570040435",
+  "creative_id": "897026393340853",
+  "kampanj_id": "120251679808200435",
+  "skapad": "2026-09-30T09:40:07.525Z"
+ },
+ "Fiskespöhållare_PD_EXTRA": {
+  "fil": "worldwide/annonser/klar/Fiskesp_h_llare_PD_EXTRA.mp4",
+  "sha256": "965c9e880738f02cb34a80bfb89f132d11457f5a30accc04963192e2c6fd65ed",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_EXTRA.mp4.qa-1.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_EXTRA.mp4.qa-2.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_EXTRA.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1069439042573145",
+  "annons_id": "120251686992240435",
+  "creative_id": "3335191559993626",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:17:55.782Z"
+ },
+ "Takoverdrag_CS_2_H1": {
+  "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
+ },
+ "Takoverdrag_SP_4_H1": {
+  "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
+ },
+ "Batmotor_UG_1_H1": {
+  "fil": "worldwide/annonser/klar/Batmotor_UG_1_H1.mp4",
+  "sha256": "fefb62e14820a740509247df72e968767ecf3bd6bbc6417783c5f412029d14b5",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Batmotor_UG_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Batmotor_UG_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Batmotor_UG_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen; svenska slutbilden (BÄVERBUTIKEN, 579 kr) ersatt med stillbild av produkten, slutbilderna tittade på"
+ },
+ "Takoverdrag_GT_5_H1": {
+  "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
+ },
+ "Takoverdrag_GT_2_H1": {
+  "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
+ },
+ "Seatcover_PD_13_H1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4",
+  "sha256": "65349c4f10b515436c133ebcf134c3ed55e7e85708eda46ced1c8d2af44c67e3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Fiskespöhållare_PD_1_H1": {
+  "fil": "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4",
+  "sha256": "f37b56d413bec74f2f5fd1aa9c9897c322703405511f936c7d0cc2b2ddf98333",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "2320027962081202"
+ },
+ "Seatcover_PD_2_1_H1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_2_1_H1.mp4",
+  "sha256": "35536413a4fd523abfda41faaf8a8b81fcefe1dc278a7aac17742a8a172ec82a",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Seatcover_PD_2_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Seatcover_PD_2_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Seatcover_PD_2_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Fiskespöhållare_CS_1_H1": {
+  "fil": "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H1.mp4",
+  "sha256": "c8a4512bd1e3587e34383e5db772444063cb4cac398eee42b766ca2128d4c42a",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1383729900593738",
+  "annons_id": "120251686998420435",
+  "creative_id": "1749219112997435",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:18:23.780Z"
+ },
+ "Enginecover_SO_4_H1": {
+  "fil": "worldwide/annonser/klar/Enginecover_SO_4_H1.mp4",
+  "sha256": "cfeae77979cc57028b69ed26f62be203562dc699718c528faead0f98dc49173b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Enginecover_SO_4_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Enginecover_SO_4_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Enginecover_SO_4_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Batmotor_SP_1_H1": {
+  "fil": "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4",
+  "sha256": "ec8afab0db75bc6c18efe3ae1415aa8d8b179075a7021f7608846ee800230bde",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Fiskespöhållare_CS_1_H3": {
+  "fil": "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4",
+  "sha256": "a3fe4399e65d458445efb6657b194cabc16d8e70c33a1e70fb4b1f54c2de5e0f",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Overvakningskamera_PD_3": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_PD_3.mp4",
+  "sha256": "a1dbef62ecbb2347cc9e183b1ea962e3324207d66ee97dabef2bbbb9d7553b0a",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Overvakningskamera_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Overvakningskamera_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Overvakningskamera_PD_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Seatcover bryn swipe 1": {
+  "fil": "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4",
+  "sha256": "389bf8fba22cdee33c95a4296f2c5cc8c9e1a17ecb3002f72008adc088bc770d",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Termoskydd_SP_4_H1": {
+  "fil": "worldwide/annonser/klar/Termoskydd_SP_4_H1.mp4",
+  "sha256": "ea2064708c9bef2307fc42e792fc397ad79141619fd748a1eb724066bf0aa017",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Termoskydd_SP_4_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Termoskydd_SP_4_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Termoskydd_SP_4_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Batmotor_SP_1_H3": {
+  "fil": "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4",
+  "sha256": "43cec13fe912fa48909afaaf1d6c76c35ece9bb726fcd90c8e31d7d3e20b0562",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Beltgrinder_PD_4_H1": {
+  "fil": "worldwide/annonser/klar/Beltgrinder_PD_4_H1.mp4",
+  "sha256": "9005975e8a6999d7f531ad276a83d5a4f6f3f12f7325b476e6a9ea2d67cbe0a2",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Beltgrinder_PD_4_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Beltgrinder_PD_4_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Beltgrinder_PD_4_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Motorhölje_SP_1_H1": {
+  "fil": "worldwide/annonser/klar/Motorh_lje_SP_1_H1.mp4",
+  "sha256": "70b4dc15b160bce2aa1712a637f554970ea903d057b73f92c53d41b70a1abbde",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Motorh_lje_SP_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Motorh_lje_SP_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Motorh_lje_SP_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Batmotor_FM_1_H1": {
+  "fil": "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4",
+  "sha256": "e5822fe0c7212a9e1ea3889f7867c230ba5f8805f87772a5c1cf6c9fd7274dc1",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen; svenska slutbilden (BÄVERBUTIKEN, 579 kr) ersatt med stillbild av produkten, slutbilderna tittade på"
+ },
+ "Motorhölje_SO_1_H2": {
+  "fil": "worldwide/annonser/klar/Motorh_lje_SO_1_H2.mp4",
+  "sha256": "3a21f03b571b6f1c7d735d5b04c28f803663d4fd339c639ae7b3a35f7cd01211",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Motorh_lje_SO_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Motorh_lje_SO_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Motorh_lje_SO_1_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_1_H2": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_1_H2.mp4",
+  "sha256": "5a5bddb895df786805cf4257440872b68075b1c1657c3e015cd5d2d03a0fe391",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Overvakningskamera_CS_2": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_CS_2.mp4",
+  "sha256": "fca123715fc826cb822c063b815f00d50b1b310829d41b956412bef835f09d20",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Overvakningskamera_CS_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Overvakningskamera_CS_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Overvakningskamera_CS_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_8_H1": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_8_H1.mp4",
+  "sha256": "89757605275a8bde8de35cc29ea505caefd7c500c19c11722b59fa88ee0434b9",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_8_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_8_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_8_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "IBC_CS_1_H3": {
+  "fil": "worldwide/annonser/klar/IBC_CS_1_H3.mp4",
+  "sha256": "1b7d605c058b2a7cd3ddd0fa374fb8dd937283a628f0803c5b2b0d5ccc6e5eab",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/IBC_CS_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/IBC_CS_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/IBC_CS_1_H3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Termoskydd_CS_2": {
+  "fil": "worldwide/annonser/klar/Termoskydd_CS_2.mp4",
+  "sha256": "bd3ce29436c8a894f21403e49c4a76967245eb7dd71f9b1e760d11d92459b2b4",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Termoskydd_CS_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Termoskydd_CS_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Termoskydd_CS_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Overvakningskamera_CS_3": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_CS_3.mp4",
+  "sha256": "8d875c91657f60159533576f5247f2ce29a9eb6a0b13968a5f88c2e3ae0fbefd",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Overvakningskamera_CS_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Overvakningskamera_CS_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Overvakningskamera_CS_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Termoskydd_RI_1_H1": {
+  "fil": "worldwide/annonser/klar/Termoskydd_RI_1_H1.mp4",
+  "sha256": "d03c935b6365ccdeb49798fb3f8dfe55f259a5e2e988909f8e06cfa08e4ab262",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Termoskydd_RI_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Termoskydd_RI_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Termoskydd_RI_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Balteslipmaskin_PD_3": {
+  "fil": "worldwide/annonser/klar/Balteslipmaskin_PD_3.mp4",
+  "sha256": "431298884fba459d1b2e7ce6a113fdf304da85a5176a1319b42b48072e1d7e84",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Balteslipmaskin_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Balteslipmaskin_PD_2": {
+  "fil": "worldwide/annonser/klar/Balteslipmaskin_PD_2.mp4",
+  "sha256": "0d884b05293a32955883cfe6520168869218331efcbcf2e5cb5f89956c0ec501",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Balteslipmaskin_PD_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_2.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_1_H3": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_1_H3.mp4",
+  "sha256": "41d349969933d7f7bb505d37d19e06fcd6d124161163888f31a66e39d66bf239",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Balteslipmaskin_PD_1": {
+  "fil": "worldwide/annonser/klar/Balteslipmaskin_PD_1.mp4",
+  "sha256": "e04edfa863b1245110021bd089f2beec0dfcbba94eae1d9398f3ecfee75530cf",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Balteslipmaskin_PD_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Balteslipmaskin_PD_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Sotarset_PD_1_H1": {
+  "fil": "worldwide/annonser/klar/Sotarset_PD_1_H1.mp4",
+  "sha256": "e8ad66a6092641d6dbff3b1e55a6d74e04a433b241acdf3769b30da3e14dc004",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_PD_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_PD_1_H1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "MC-Kapell_PD_1": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_PD_1.mp4",
+  "sha256": "69a7a7e915d528f59dd5b6a02c9218070843cb2145cae8e8de037d8238a0b0f6",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/MC-Kapell_PD_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/MC-Kapell_PD_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/MC-Kapell_PD_1.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Taljset_PD_3": {
+  "fil": "worldwide/annonser/klar/Taljset_PD_3.mp4",
+  "sha256": "a986cb23580a5e022e569c2b0815b84dddf3f1c85713c827e81459db1c6a0c83",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "qa": [
+   "worldwide/annonser/klar/Taljset_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Taljset_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Taljset_PD_3.mp4.qa-3.png"
+  ],
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+ },
+ "Termoskydd_CS_3": {
+  "fil": "worldwide/annonser/klar/Termoskydd_CS_3.mp4",
+  "sha256": "9e90b6066f736891637e79a51a2e573f7ed8ae1cc0ed77c4a82f944c7e6a9e87",
+  "granskad": true,
+  "rost": "CJ - Young Swedish Male",
+  "bandlage": true,
+  "granskning": "sessionen 2026-09-30: textkoll (OCR hela videon) ✅, röstkollen ✅, QA-bilderna tittade på. no-captions larmade om text ovanför bandet: det är täckets rutmönster, inte text (OCR hittar ingen)"
+ },
+ "Seatcover_PD_1_3_H1 – kopia": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_1_3_H1_kopia.mp4",
+  "sha256": "abbda0e31f1893ed6ed1f4e93ac7d2fbdb8a3ffdf6d4b98f5179369b16e8c1d4",
+  "granskad": true,
+  "rost": "CJ - Young Swedish Male",
+  "bandlage": true,
+  "granskning": "sessionen 2026-09-30: band 368:530, textkoll ✅, röstkollen ✅, QA-bilderna tittade på"
+ },
+ "Rodholder_PD_15_H1": {
+  "fil": "worldwide/annonser/klar/Rodholder_PD_15_H1.mp4",
+  "sha256": "7d629f97d7c94083c09abd753b7cc9f665926f6f828aad3189c8333efd24789d",
+  "granskad": true,
+  "rost": null,
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+ },
+ "Rodholder_PD_16_H1": {
+  "fil": "worldwide/annonser/klar/Rodholder_PD_16_H1.mp4",
+  "sha256": "c28f7ce553b65cea1479135cdf951e798e2736e4549487821f11f6c6a8e3831f",
+  "granskad": true,
+  "rost": null,
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+ },
+ "Motorhölje_PD_EXTRA": {
+  "fil": "worldwide/annonser/klar/Motorh_lje_PD_EXTRA.mp4",
+  "sha256": "bab15ad2f960796408a8cb362f1adba2514c94fe83e2bb90ffdb47e2ffcdc1fa",
+  "granskad": true,
+  "rost": null,
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+ },
+ "IBC_PD_Extra": {
+  "fil": "worldwide/annonser/klar/IBC_PD_Extra.mp4",
+  "sha256": "fe56ed6ed26e52bfc1026d538148468d80f8218c6c84029dca3ca5d175ef1fb4",
+  "granskad": true,
+  "rost": null,
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+ },
+ "Taljset_PD_1_H4": {
+  "hoppa": "kronorpriset (869 kr / ordinarie 1 139 kr) är inbränt i bilden vid 15,5 s — textkoll 2026-09-30"
+ },
+ "Batmotor_CS_5_H1": {
+  "hoppa": "kronorpriset (965 KR / 579 KR) är inbränt stort i bilden — 2026-09-30"
+ },
+ "Batmotor_SP_1_H5": {
+  "hoppa": "svensk checklista i bild + slutskärm med Bäverbutikens app och 579 kronor — 2026-09-30"
+ },
+ "Seatcover_PD_1_3_H1": {
+  "hoppa": "röstkollen ❌ 2026-09-30; kopian av samma annons (Seatcover_PD_1_3_H1 – kopia) används i stället"
+ },
+ "Takoverdrag_PD_4_H1": {
+  "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
  }
 }

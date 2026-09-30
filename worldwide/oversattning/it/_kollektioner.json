@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Home",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Giardino & Vita all'aperto",
+  "descriptionHtml": "<p>Prodotti per il giardino, il patio e la vita all'aria aperta.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Auto, Attrezzi & Garage",
+  "descriptionHtml": "<p>Prodotti per l'auto, l'officina e il garage.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Campeggio & Outdoor",
+  "descriptionHtml": "<p>Attrezzatura per il campeggio, le escursioni e la vita all'aria aperta.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Agricoltura & Animali",
+  "descriptionHtml": "<p>Prodotti per l'agricoltura, i recinti, le scuderie e gli animali domestici.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Barca & Nautica",
+  "descriptionHtml": "<p>Accessori e cura per barche, motori e uso nautico – protezione, pulizia, ormeggio e pesca.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Accessori & Altro",
+  "descriptionHtml": "<p>Accessori pratici e gadget intelligenti per la vita di tutti i giorni.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Veicoli & Illuminazione",
+  "descriptionHtml": "<p>Accessori e illuminazione LED per auto, moto, quad e camion – fari da lavoro, barre luminose e accessori per veicoli.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "I più venduti",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf & Sport",
+  "descriptionHtml": "<p>Tutto per il giro di golf e per l'allenamento – dai raccogli-palline alle borse per scarpe e alle reti da allenamento.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Scarpe & Abbigliamento",
+  "descriptionHtml": "<p>Scarpe, ciabatte e abiti comodi per la vita di tutti i giorni, il lavoro e l'aria aperta.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Casa & Organizzazione",
+  "descriptionHtml": "<p>Soluzioni intelligenti per mettere ordine in casa – contenitori, articoli per la casa e pratici aiuti di ogni giorno.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Elettronica & Mobile",
+  "descriptionHtml": "<p>Accessori per smartphone, supporti ed elettronica intelligente per casa, ufficio e viaggio.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Ciclismo",
+  "descriptionHtml": "<p>Accessori e abbigliamento per le tue uscite in bici – dai parafanghi ai pantaloncini imbottiti.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Il tuo prodotto in regalo",
+  "descriptionHtml": "<p><strong>Hai già acquistato da noi?</strong> Allora con il tuo prossimo acquisto ricevi in regalo uno dei prodotti qui sotto — quale, lo decide la <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">ruota della fortuna</a>.</p>\n<p>Come funziona: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">gira la ruota</a>, aggiungi il tuo premio al carrello e spendi almeno altre 299 SEK. Il codice <strong>TACKIGEN</strong> viene applicato automaticamente e il premio costa 0 SEK al checkout. Se nel carrello c'è solo il premio, resta a prezzo pieno finché non hai aggiunto articoli per 299 SEK.</p>\n<p>Valido una sola volta per cliente, per i clienti che hanno già effettuato almeno un ordine su Beaver Store, con lo stesso indirizzo e-mail usato per l'ordine precedente.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Tutti i prodotti",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Calendari dell'Avvento",
+  "descriptionHtml": "<p>Calendari dell'Avvento già riempiti e vuoti – una finestrella al giorno fino alla vigilia di Natale.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

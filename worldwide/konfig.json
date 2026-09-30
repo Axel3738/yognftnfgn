@@ -74,16 +74,32 @@
     "prisjustering_procent": 25,
     "prisjustering_comment": "Shopifys omräkning av SEK-priset i kundens valuta. Ett påslag worldwide ('lite dyrare', som Matstrumpor) är Axels beslut — sätt procenten här och kör --steg prislista.",
     "locales": [
-      "en"
+      "en",
+      "de",
+      "fr",
+      "es",
+      "it",
+      "nl",
+      "pl",
+      "pt-PT"
     ],
     "doman": {
       "host": "beaverstoreco.com",
       "standard": "en",
-      "alternativa": []
+      "alternativa": [
+        "de",
+        "fr",
+        "es",
+        "it",
+        "nl",
+        "pl",
+        "pt-PT"
+      ]
     },
     "leverans": "5–10 business days",
     "leverans_comment": "Koncernens standardlöfte (samma som Sverige och CaraShell US). INTE mätt för Bäverbutiken utanför Sverige.",
-    "prisjustering_beslut": "Axels svar 2026-09-30: +25 % utomlands (prislista USD, procentpåslag på Shopifys omräkning)."
+    "prisjustering_beslut": "Axels svar 2026-09-30: +25 % utomlands (prislista USD, procentpåslag på Shopifys omräkning).",
+    "locales_beslut": "Axels order 2026-09-30: 'allt språk och allting översätts till alla marknader'. Engelska är standard på beaverstoreco.com, de sju europeiska språken som undermappar (/de, /fr …). Shopify vägrar 'pt' — portugisiskan är pt-PT (Matstrumpor 2026-09-27)."
   },
   "frakt": {
     "zon": "Worldwide (free shipping)",

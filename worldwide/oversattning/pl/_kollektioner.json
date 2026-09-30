@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Strona główna",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Ogród i życie na świeżym powietrzu",
+  "descriptionHtml": "<p>Produkty do ogrodu, na taras i do życia na świeżym powietrzu.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Samochód, narzędzia i garaż",
+  "descriptionHtml": "<p>Produkty do samochodu, warsztatu i garażu.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Camping i outdoor",
+  "descriptionHtml": "<p>Sprzęt na camping, w góry i na świeże powietrze.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Gospodarstwo i zwierzęta",
+  "descriptionHtml": "<p>Produkty do gospodarstwa, na wybiegi, do stajni i dla zwierząt domowych.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Łodzie i żeglarstwo",
+  "descriptionHtml": "<p>Akcesoria i środki do pielęgnacji łodzi, silników i sprzętu morskiego – ochrona, czyszczenie, cumowanie i wędkarstwo.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Akcesoria i inne",
+  "descriptionHtml": "<p>Praktyczne akcesoria i sprytne gadżety na co dzień.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Pojazdy i oświetlenie",
+  "descriptionHtml": "<p>Akcesoria i oświetlenie LED do samochodów, motocykli, quadów i ciężarówek – lampy robocze, belki świetlne i akcesoria do pojazdów.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Bestsellery",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf i sport",
+  "descriptionHtml": "<p>Wszystko na rundę golfa i do treningu – od zbieraczy piłek po torby na buty i siatki treningowe.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Obuwie i odzież",
+  "descriptionHtml": "<p>Wygodne buty, kapcie i ubrania na co dzień, do pracy i na świeże powietrze.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Dom i przechowywanie",
+  "descriptionHtml": "<p>Sprytne rozwiązania, które wprowadzą porządek w domu – przechowywanie, artykuły gospodarstwa domowego i praktyczne pomoce na co dzień.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Elektronika i telefony",
+  "descriptionHtml": "<p>Akcesoria do telefonów, podstawki i sprytna elektronika do domu, biura i w podróż.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Rowery",
+  "descriptionHtml": "<p>Akcesoria i odzież na przejażdżkę rowerem – od błotników po spodenki z wkładką.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Twój darmowy produkt",
+  "descriptionHtml": "<p><strong>Robiłeś już u nas zakupy?</strong> W takim razie przy kolejnym zamówieniu dostajesz za darmo jeden z poniższych produktów – który, zdecyduje <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">koło szczęścia</a>.</p>\n<p>Jak to działa: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">zakręć kołem</a>, dodaj wygraną do koszyka i zrób zakupy za co najmniej 299 SEK więcej. Kod <strong>TACKIGEN</strong> zostanie naliczony automatycznie, a wygrana kosztuje w kasie 0 SEK. Jeśli w koszyku jest tylko wygrana, zachowuje ona pełną cenę, dopóki nie dodasz produktów za 299 SEK.</p>\n<p>Ważne jeden raz na klienta, dla klientów, którzy złożyli już wcześniej co najmniej jedno zamówienie w Beaver Store, z użyciem tego samego adresu e-mail co przy poprzednim zamówieniu.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Wszystkie produkty",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Kalendarze adwentowe",
+  "descriptionHtml": "<p>Kalendarze adwentowe – wypełnione i puste – jedno okienko dziennie aż do Wigilii.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

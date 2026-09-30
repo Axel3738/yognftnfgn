@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Home",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Tuin & buitenleven",
+  "descriptionHtml": "<p>Producten voor de tuin, het terras en het buitenleven.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Auto, gereedschap & garage",
+  "descriptionHtml": "<p>Producten voor de auto, de werkplaats en de garage.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Kamperen & outdoor",
+  "descriptionHtml": "<p>Spullen voor kamperen, wandelen en het buitenleven.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Landbouw & dieren",
+  "descriptionHtml": "<p>Producten voor landbouw, weides, stallen en huisdieren.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Boot & watersport",
+  "descriptionHtml": "<p>Accessoires en onderhoud voor boten, motoren en gebruik op het water – bescherming, reiniging, afmeren en vissen.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Accessoires & meer",
+  "descriptionHtml": "<p>Praktische accessoires en slimme gadgets voor het dagelijks leven.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Voertuigen & verlichting",
+  "descriptionHtml": "<p>Accessoires en ledverlichting voor auto's, motoren, quads en vrachtwagens – werklampen, ledbars en voertuigaccessoires.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Bestsellers",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf & sport",
+  "descriptionHtml": "<p>Alles voor een rondje golf en voor de training – van ballenrapers tot schoenentassen en oefennetten.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Schoenen & kleding",
+  "descriptionHtml": "<p>Comfortabele schoenen, pantoffels en kleding voor elke dag, het werk en buiten.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Huis & opbergen",
+  "descriptionHtml": "<p>Slimme oplossingen die orde brengen in huis – opbergen, huishouden en praktische hulpjes voor elke dag.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Elektronica & mobiel",
+  "descriptionHtml": "<p>Mobiele accessoires, standaards en slimme elektronica voor thuis, op kantoor en onderweg.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Fietsen",
+  "descriptionHtml": "<p>Accessoires en kleding voor je fietstocht – van spatborden tot gewatteerde fietsbroeken.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Je gratis product",
+  "descriptionHtml": "<p><strong>Heb je al eerder bij ons besteld?</strong> Dan krijg je bij je volgende bestelling een van de onderstaande producten gratis — welk product dat is, bepaalt het <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">rad van fortuin</a>.</p>\n<p>Zo werkt het: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">draai aan het rad</a>, leg je prijs in je winkelwagen en bestel voor minimaal SEK 299 extra. De code <strong>TACKIGEN</strong> wordt automatisch toegepast en de prijs kost SEK 0 bij het afrekenen. Zit alleen de prijs in je winkelwagen, dan blijft die tegen de volle prijs staan tot je artikelen ter waarde van SEK 299 hebt toegevoegd.</p>\n<p>Eén keer per klant geldig, voor klanten die eerder minstens één bestelling bij Beaver Store hebben geplaatst, met hetzelfde e-mailadres als bij hun vorige bestelling.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Alle producten",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Adventskalenders",
+  "descriptionHtml": "<p>Gevulde en lege adventskalenders – elke dag een deurtje tot kerstavond.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

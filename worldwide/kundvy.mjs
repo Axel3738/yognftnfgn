@@ -45,7 +45,10 @@ async function vy(bas, land, sprak, sokvag) {
 
 async function huvud() {
   if (a.includes('--sverige')) {
-    const v = await vy('https://baverbutiken.se', 'SE', 'sv', '/');
+    // ?country=SE: sedan USA ligger i Worldwide (egen domän) skickar Shopifys geo-omdirigering
+    // containerns amerikanska IP från baverbutiken.se till beaverstoreco.com trots SE-kakan (mätt
+    // 2026-09-30: GET / → 302 beaverstoreco.com, GET /?country=SE → 200). En svensk IP får SE ändå.
+    const v = await vy('https://baverbutiken.se', 'SE', 'sv', '/?country=SE');
     console.log(`baverbutiken.se som svensk kund: ${v.status} lang ${v.lang} ${v.land}/${v.valuta} logga ${v.logga} · A Swedish brand: ${v.svenskt ? 'SYNS (FEL)' : 'nej (rätt)'}`);
     return;
   }

@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Startseite",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Garten & Outdoor",
+  "descriptionHtml": "<p>Produkte für den Garten, die Terrasse und das Leben im Freien.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Auto, Werkzeug & Garage",
+  "descriptionHtml": "<p>Produkte für das Auto, die Werkstatt und die Garage.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Camping & Outdoor",
+  "descriptionHtml": "<p>Ausrüstung für Camping, Wandern und das Leben in der Natur.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Landwirtschaft & Tiere",
+  "descriptionHtml": "<p>Produkte für Landwirtschaft, Koppel, Stall und Haustiere.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Boot & Marine",
+  "descriptionHtml": "<p>Zubehör und Pflege für Boote, Motoren und den Einsatz auf dem Wasser – Schutz, Reinigung, Festmachen und Angeln.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Zubehör & Mehr",
+  "descriptionHtml": "<p>Praktisches Zubehör und clevere Gadgets für den Alltag.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Fahrzeuge & Beleuchtung",
+  "descriptionHtml": "<p>Zubehör und LED-Beleuchtung für Autos, Motorräder, Quads und Lkw – Arbeitsscheinwerfer, Lichtbalken und Fahrzeugzubehör.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Bestseller",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf & Sport",
+  "descriptionHtml": "<p>Alles für die Golfrunde und fürs Training – vom Ballsammler bis zur Schuhtasche und zum Übungsnetz.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Schuhe & Kleidung",
+  "descriptionHtml": "<p>Bequeme Schuhe, Hausschuhe und Kleidung für Alltag, Arbeit und draußen.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Haushalt & Aufbewahrung",
+  "descriptionHtml": "<p>Clevere Lösungen, die Ordnung ins Zuhause bringen – Aufbewahrung, Haushalt und praktische Helfer für den Alltag.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Elektronik & Mobilgeräte",
+  "descriptionHtml": "<p>Handyzubehör, Halterungen und smarte Elektronik für Zuhause, Büro und Reisen.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Radfahren",
+  "descriptionHtml": "<p>Zubehör und Kleidung für Ihre Radtour – vom Schutzblech bis zur gepolsterten Radhose.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Ihr Gratisprodukt",
+  "descriptionHtml": "<p><strong>Haben Sie schon einmal bei uns bestellt?</strong> Dann erhalten Sie bei Ihrer nächsten Bestellung eines der Produkte unten gratis – welches, entscheidet das <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">Glücksrad</a>.</p>\n<p>So funktioniert es: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">Drehen Sie am Glücksrad</a>, legen Sie Ihren Gewinn in den Warenkorb und bestellen Sie zusätzlich für mindestens 299 SEK. Der Code <strong>TACKIGEN</strong> wird automatisch angewendet, und der Gewinn kostet an der Kasse 0 SEK. Befindet sich nur der Gewinn im Warenkorb, bleibt er zum vollen Preis, bis Sie Artikel im Wert von 299 SEK hinzugefügt haben.</p>\n<p>Einmal pro Kunde einlösbar, für Kunden, die zuvor mindestens eine Bestellung bei Beaver Store aufgegeben haben, mit derselben E-Mail-Adresse wie bei der vorherigen Bestellung.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Alle Produkte",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Adventskalender",
+  "descriptionHtml": "<p>Befüllte und leere Adventskalender – jeden Tag ein Türchen bis Heiligabend.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

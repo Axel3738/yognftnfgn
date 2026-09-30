@@ -1,0 +1,30 @@
+{
+  "handle": "andningsbara-sneakers-latta-vandringsskor",
+  "title": "Sneakers traspiranti – Scarpe da trekking leggere",
+  "seo_title": null,
+  "seo_description": null,
+  "options": [
+    {
+      "name": "Storlek",
+      "name_en": "Taglia",
+      "values": {
+        "40": "40",
+        "41": "41",
+        "42": "42",
+        "43": "43",
+        "45": "45",
+        "46": "46"
+      }
+    },
+    {
+      "name": "Färg",
+      "name_en": "Colore",
+      "values": {
+        "Svart": "Nero",
+        "Grön": "Verde",
+        "Ljusgrå": "Grigio chiaro"
+      }
+    }
+  ],
+  "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Scarpe comode per le giornate in piedi</h2>\n<p>Scarpe pesanti e calde fanno stancare e sudare i piedi. In escursione e nella vita di tutti i giorni vuoi scarpe che siano traspiranti e diano sostegno.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/95b35a76-000a-4abc-9a3e-9a18b02a35b1.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sneakers traspiranti\"></p>\n<h3 style=\"font-size:19px;\">Leggere, con suola ammortizzante</h3>\n<p>Queste sneakers sono realizzate in materiale traspirante e hanno una suola in EVA ammortizzante. Sono leggere al piede e comode da indossare tutto il giorno.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/2b4ae4b8-adc9-4702-b4f1-c8c028e8ebf0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Dettaglio delle sneakers\"></p>\n<h3 style=\"font-size:19px;\">Caratteristiche</h3>\n<ul>\n<li>Materiale traspirante</li>\n<li>Suola in EVA ammortizzante</li>\n<li>Leggere al piede</li>\n<li>Ottime per escursioni, corsa e uso quotidiano</li>\n<li>Comode in ogni stagione</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/191b6e96-a7cd-4214-a79e-c2017cda8295.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Paio di sneakers\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>14 giorni per cambiare idea.</strong> A partire dal giorno in cui ricevi l'articolo. </p>\n</div>"
+}

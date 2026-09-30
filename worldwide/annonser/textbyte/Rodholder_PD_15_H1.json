@@ -1,0 +1,38 @@
+{
+ "video": "/tmp/claude-0/-home-user-yognftnfgn/78c883a8-8cc3-549d-8e7b-719daf765aca/scratchpad/kallor/Rodholder_PD_15_H1.mp4",
+ "ut": "worldwide/annonser/klar/Rodholder_PD_15_H1.mp4",
+ "font": "worldwide/tema/logga/Anton-Regular.ttf",
+ "texter": [
+  {
+   "a": 0.0,
+   "b": 17.0,
+   "text": "The shake test",
+   "mitt": [
+    360,
+    85
+   ],
+   "min": [
+    378,
+    98
+   ],
+   "max_bredd": 640,
+   "font_px": 58,
+   "farg": [
+    0,
+    0,
+    0
+   ],
+   "bakgrund": [
+    253,
+    253,
+    253,
+    255
+   ],
+   "radie": 22,
+   "pad": [
+    26,
+    6
+   ]
+  }
+ ]
+}

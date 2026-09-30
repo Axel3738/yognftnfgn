@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Accueil",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Jardin et vie en plein air",
+  "descriptionHtml": "<p>Des produits pour le jardin, la terrasse et la vie en plein air.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Auto, outils et garage",
+  "descriptionHtml": "<p>Des produits pour la voiture, l'atelier et le garage.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Camping et plein air",
+  "descriptionHtml": "<p>Du matériel pour le camping, la randonnée et la vie en plein air.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Ferme et animaux",
+  "descriptionHtml": "<p>Des produits pour l'agriculture, les enclos, les écuries et les animaux de compagnie.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Bateau et nautisme",
+  "descriptionHtml": "<p>Accessoires et entretien pour les bateaux, les moteurs et la navigation – protection, nettoyage, amarrage et pêche.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Accessoires et autres",
+  "descriptionHtml": "<p>Des accessoires pratiques et des gadgets malins pour le quotidien.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Véhicules et éclairage",
+  "descriptionHtml": "<p>Accessoires et éclairage LED pour voitures, motos, quads et camions – projecteurs de travail, barres lumineuses et accessoires pour véhicules.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Meilleures ventes",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf et sport",
+  "descriptionHtml": "<p>Tout pour votre partie de golf et pour l'entraînement – du ramasse-balles aux sacs à chaussures et aux filets d'entraînement.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Chaussures et vêtements",
+  "descriptionHtml": "<p>Des chaussures, des chaussons et des vêtements confortables pour le quotidien, le travail et le plein air.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Maison et rangement",
+  "descriptionHtml": "<p>Des solutions malignes pour mettre de l'ordre chez vous – rangement, articles ménagers et petits assistants pratiques du quotidien.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Électronique et mobile",
+  "descriptionHtml": "<p>Accessoires pour téléphone, supports et électronique intelligente pour la maison, le bureau et les voyages.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Vélo",
+  "descriptionHtml": "<p>Accessoires et vêtements pour vos sorties à vélo – des garde-boue aux cuissards rembourrés.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Votre produit gratuit",
+  "descriptionHtml": "<p><strong>Vous avez déjà commandé chez nous ?</strong> Alors vous recevez gratuitement l'un des produits ci-dessous avec votre prochain achat – et c'est la <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">roue de la chance</a> qui décide lequel.</p>\n<p>Comment ça marche : <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">faites tourner la roue</a>, ajoutez votre lot au panier et dépensez encore au moins 299 SEK. Le code <strong>TACKIGEN</strong> s'applique automatiquement et le lot coûte 0 SEK au moment du paiement. Si seul le lot se trouve dans votre panier, il reste au prix plein tant que vous n'avez pas ajouté des articles pour 299 SEK.</p>\n<p>Valable une seule fois par client, pour les clients ayant déjà passé au moins une commande chez Beaver Store, avec la même adresse e-mail que pour leur commande précédente.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "Tous les produits",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Calendriers de l'Avent",
+  "descriptionHtml": "<p>Des calendriers de l'Avent garnis ou vides – une case par jour jusqu'au réveillon de Noël.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

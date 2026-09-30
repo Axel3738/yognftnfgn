@@ -66,12 +66,19 @@ async function huvud() {
   const kallor = a.includes('--kallor') ? a[a.indexOf('--kallor') + 1] : join(ROT, 'kallor');
   const media = lasJson('media.json', {});
   const copy = lasJson('copy-en.json', {});
-  const spara = () => writeFileSync(join(ROT, 'media.json'), JSON.stringify(media, null, 1));
+  // Flera spår (--del k/n) kan köra samtidigt: läs filen igen och skriv bara in den egna posten.
+  const spara = (namn) => {
+    const pa = lasJson('media.json', {});
+    if (namn) pa[namn] = media[namn];
+    writeFileSync(join(ROT, 'media.json'), JSON.stringify(namn ? pa : media, null, 1));
+  };
+  const del = a.includes('--del') ? a[a.indexOf('--del') + 1].split('/').map(Number) : null;
   const videor = U.produkter.filter((p) => !p.under).flatMap((p) => p.annonser.filter((x) => x.typ === 'video').map((x) => ({ ...x, produkt: p.id })));
   const jobb = [];
   let tecken = 0;
   for (const v of videor) {
     if (bara && v.namn !== bara) continue;
+    if (del && videor.indexOf(v) % del[1] !== del[0] - 1) continue;
     const f = filnamn(v.namn);
     const kallSrt = join(ROT, 'transkript', `${f}.srt`);
     const manus = join(ROT, 'manus-en', `${f}.srt`);
@@ -110,7 +117,7 @@ async function huvud() {
     log(r.ut.split('\n').slice(-6).join('\n'));
     if (!gron) { log(`❌ ${v.namn}: röstkollen — levereras inte`); continue; }
     media[v.namn] = { fil: slut.slice(REPO.length + 1), sha256: createHash('sha256').update(readFileSync(slut)).digest('hex'), rost, granskad: false, qa: [1, 2, 3].map((n) => `${slut}.qa-${n}.png`.slice(REPO.length + 1)) };
-    spara();
+    spara(v.namn);
     log(`✅ ${v.namn}: ${media[v.namn].fil} — titta på QA-bilderna, sätt "granskad": true`);
   }
 }

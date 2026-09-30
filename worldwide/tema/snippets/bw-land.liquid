@@ -18,6 +18,11 @@
       break
     endif
   endfor
+  comment
+    Shopify ger landsnamnet på besökarens språk (Deutschland, États-Unis …). Bara engelskan
+    behöver bestämd form i en mening ("to the United States").
+  endcomment
+  if request.locale.iso_code == 'en'
   case kod
     when 'US'
       assign land = 'the United States'
@@ -34,6 +39,7 @@
     when 'HK'
       assign land = 'Hong Kong'
   endcase
+  endif
   assign t = text | default: '' | replace: '[[flagga]]', flagga | replace: '[[land]]', land
   echo t | escape
 -%}

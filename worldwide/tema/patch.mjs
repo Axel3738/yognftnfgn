@@ -26,7 +26,16 @@ import { fileURLToPath } from 'node:url';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const MARKOR = 'bw-worldwide';
-const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR}{%- endcomment -%}`;
+// v2 (2026-09-30): texterna kommer ur snippets/bw-t.liquid på åtta språk (tema/sprak.json).
+export const VERSION = 'v3'; // v3 2026-09-30: startsidans titel Beaver Store (page_title = butiksnamnet)
+const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
+/** Världslägets text på besökarens språk. */
+// Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
+const T = (k) => `{% render 'bw-t', k: '${k}' %}`;
+/** Samma, med [[flagga]]/[[land]] ersatta av kundens land. */
+const TL = (k) => `{%- capture bw_s -%}${T(k)}{%- endcapture -%}{%- render 'bw-land', text: bw_s -%}`;
+/** Betyget: punkt på engelska (4.8), komma på de andra språken (4,8). */
+const BETYG = `{%- if request.locale.iso_code == 'en' -%}{{ betyg_text | replace: ',', '.' }}{%- else -%}{{ betyg_text }}{%- endif %}`;
 
 function byt(innehall, fran, till, fil) {
   const n = innehall.split(fran).length - 1;
@@ -48,22 +57,22 @@ export const PATCHAR = {
     t = byt(t, `{% if show_announcement %}`,
       `${CAP}\n{%- if bw contains 'ww' -%}\n  {%- assign show_announcement = true -%}\n  {%- if bw contains 'frakt' -%}{%- assign announcement_block_count = 2 -%}{%- else -%}{%- assign announcement_block_count = 1 -%}{%- endif -%}\n{%- endif -%}\n\n{% if show_announcement %}`, f);
     t = byt(t, `          {%- assign slide_index = 0 -%}\n`,
-      `          {%- if bw contains 'ww' -%}\n            {%- if bw contains 'frakt' -%}\n              <div id="AnnouncementSlide-bw-frakt" class="announcement-slider__slide" data-index="0">\n                <span class="announcement-text">{%- render 'bw-land', text: '[[flagga]] Free shipping to [[land]]' -%}</span>\n                <span class="announcement-link-text">Tracked all the way</span>\n              </div>\n            {%- endif -%}\n            <div id="AnnouncementSlide-bw-svenskt" class="announcement-slider__slide" data-index="{% if bw contains 'frakt' %}1{% else %}0{% endif %}">\n              <span class="announcement-text">🇸🇪 A Swedish brand</span>\n              <span class="announcement-link-text">From Gothenburg, Sweden</span>\n            </div>\n          {%- else -%}\n          {%- assign slide_index = 0 -%}\n`, f);
+      `          {%- if bw contains 'ww' -%}\n            {%- if bw contains 'frakt' -%}\n              <div id="AnnouncementSlide-bw-frakt" class="announcement-slider__slide" data-index="0">\n                <span class="announcement-text">${TL('frakt_till')}</span>\n                <span class="announcement-link-text">${T('sparad')}</span>\n              </div>\n            {%- endif -%}\n            <div id="AnnouncementSlide-bw-svenskt" class="announcement-slider__slide" data-index="{% if bw contains 'frakt' %}1{% else %}0{% endif %}">\n              <span class="announcement-text">${T('svenskt')}</span>\n              <span class="announcement-link-text">${T('goteborg')}</span>\n            </div>\n          {%- else -%}\n          {%- assign slide_index = 0 -%}\n`, f);
     return byt(t, `          {%- endfor -%}\n        </div>`, `          {%- endfor -%}\n          {%- endif -%}\n        </div>`, f);
   },
 
   'snippets/product-template.liquid': (t, f) => byt(t,
     `                            <span>{{ block.settings.text }}</span>\n                          </span>\n                        </li>`,
-    `                            ${CAP}\n                            {%- if bw contains 'ww' and block.settings.icon == 'truck' -%}\n                            <span>{%- if bw contains 'frakt' -%}{%- render 'bw-land', text: 'Free shipping to [[flagga]] [[land]] · 5–10 business days' -%}{%- else -%}Tracked delivery · 5–10 business days{%- endif -%}</span>\n                            {%- else -%}\n                            <span>{{ block.settings.text }}</span>\n                            {%- endif -%}\n                          </span>\n                        </li>\n                        {%- if bw contains 'ww' and block.settings.icon == 'truck' -%}\n                        <li class="sales-point"><span class="icon-and-text"><span aria-hidden="true" style="font-size:18px;line-height:1">🇸🇪</span> <span>A Swedish brand from Gothenburg</span></span></li>\n                        {%- endif -%}`, f),
+    `                            ${CAP}\n                            {%- if bw contains 'ww' and block.settings.icon == 'truck' -%}\n                            <span>{%- if bw contains 'frakt' -%}${TL('produkt_frakt')}{%- else -%}${T('produkt_sparad')}{%- endif -%}</span>\n                            {%- else -%}\n                            <span>{{ block.settings.text }}</span>\n                            {%- endif -%}\n                          </span>\n                        </li>\n                        {%- if bw contains 'ww' and block.settings.icon == 'truck' -%}\n                        <li class="sales-point"><span class="icon-and-text"><span aria-hidden="true" style="font-size:18px;line-height:1">🇸🇪</span> <span>${T('produkt_svenskt')}</span></span></li>\n                        {%- endif -%}`, f),
 
   'sections/bb-fortroende.liquid': (t, f) => {
     t = byt(t, `<div class="bb-fortroende" data-section-id`, `${CAP}\n<div class="bb-fortroende" data-section-id`, f);
     t = byt(t, `      {%- for block in section.blocks -%}\n        <li class="bb-fortroende__punkt"`,
-      `      {%- for block in section.blocks -%}\n        {%- assign bw_titel = '' -%}{%- assign bw_rad = '' -%}{%- assign bw_dold = false -%}\n        {%- if bw contains 'ww' -%}\n          {%- case block.settings.ikon -%}\n            {%- when 'paket' -%}\n              {%- if bw contains 'frakt' -%}{%- assign bw_titel = 'Free shipping' -%}{%- capture bw_rad -%}{%- render 'bw-land', text: 'to [[flagga]] [[land]]' -%}{%- endcapture -%}{%- else -%}{%- assign bw_dold = true -%}{%- endif -%}\n            {%- when 'kort' -%}{%- assign bw_titel = 'Tracked delivery' -%}{%- assign bw_rad = 'Follow your parcel all the way' -%}\n            {%- when 'flagga' -%}{%- assign bw_titel = 'Swedish brand' -%}{%- assign bw_rad = 'Gothenburg · 14 days to change your mind' -%}\n          {%- endcase -%}\n        {%- endif -%}\n        {%- if bw_dold -%}{%- continue -%}{%- endif -%}\n        <li class="bb-fortroende__punkt"`, f);
-    t = byt(t, `{{ betyg_text }} av 5 <span`, `{%- if bw contains 'ww' -%}{{ betyg_text | replace: ',', '.' }} out of 5{%- else -%}{{ betyg_text }} av 5{%- endif -%} <span`, f);
-    t = byt(t, `{{ antal }} {{ block.settings.rad | default: 'recensioner från kunder' }}`, `{{ antal }} {% if bw contains 'ww' %}customer reviews{% else %}{{ block.settings.rad | default: 'recensioner från kunder' }}{% endif %}`, f);
-    t = byt(t, `{{ block.settings.titel_reserv | default: 'Recensioner' }}`, `{% if bw contains 'ww' %}Reviews{% else %}{{ block.settings.titel_reserv | default: 'Recensioner' }}{% endif %}`, f);
-    t = byt(t, `{{ block.settings.rad_reserv | default: 'från riktiga kunder' }}`, `{% if bw contains 'ww' %}from real customers{% else %}{{ block.settings.rad_reserv | default: 'från riktiga kunder' }}{% endif %}`, f);
+      `      {%- for block in section.blocks -%}\n        {%- assign bw_titel = '' -%}{%- assign bw_rad = '' -%}{%- assign bw_dold = false -%}\n        {%- if bw contains 'ww' -%}\n          {%- case block.settings.ikon -%}\n            {%- when 'paket' -%}\n              {%- if bw contains 'frakt' -%}{%- capture bw_titel -%}${T('f_frakt_titel')}{%- endcapture -%}{%- capture bw_rad -%}${TL('f_frakt_rad')}{%- endcapture -%}{%- else -%}{%- assign bw_dold = true -%}{%- endif -%}\n            {%- when 'kort' -%}{%- capture bw_titel -%}${T('f_sparad_titel')}{%- endcapture -%}{%- capture bw_rad -%}${T('f_sparad_rad')}{%- endcapture -%}\n            {%- when 'flagga' -%}{%- capture bw_titel -%}${T('f_svenskt_titel')}{%- endcapture -%}{%- capture bw_rad -%}${T('f_svenskt_rad')}{%- endcapture -%}\n          {%- endcase -%}\n        {%- endif -%}\n        {%- if bw_dold -%}{%- continue -%}{%- endif -%}\n        <li class="bb-fortroende__punkt"`, f);
+    t = byt(t, `{{ betyg_text }} av 5 <span`, `{%- if bw contains 'ww' -%}${BETYG} ${T('av5')}{%- else -%}{{ betyg_text }} av 5{%- endif %} <span`, f);
+    t = byt(t, `{{ antal }} {{ block.settings.rad | default: 'recensioner från kunder' }}`, `{{ antal }} {% if bw contains 'ww' %}${T('kundrec')}{% else %}{{ block.settings.rad | default: 'recensioner från kunder' }}{% endif %}`, f);
+    t = byt(t, `{{ block.settings.titel_reserv | default: 'Recensioner' }}`, `{% if bw contains 'ww' %}${T('rec')}{% else %}{{ block.settings.titel_reserv | default: 'Recensioner' }}{% endif %}`, f);
+    t = byt(t, `{{ block.settings.rad_reserv | default: 'från riktiga kunder' }}`, `{% if bw contains 'ww' %}${T('riktiga')}{% else %}{{ block.settings.rad_reserv | default: 'från riktiga kunder' }}{% endif %}`, f);
     t = byt(t, `<span class="bb-fortroende__titel">{{ block.settings.titel }}</span>`, `<span class="bb-fortroende__titel">{% if bw_titel != '' %}{{ bw_titel }}{% else %}{{ block.settings.titel }}{% endif %}</span>`, f);
     return byt(t, `{%- if block.settings.rad != blank -%}<span class="bb-fortroende__rad">{{ block.settings.rad }}</span>{%- endif -%}`,
       `{%- if bw_rad != '' -%}<span class="bb-fortroende__rad">{{ bw_rad }}</span>{%- elsif block.settings.rad != blank -%}<span class="bb-fortroende__rad">{{ block.settings.rad }}</span>{%- endif -%}`, f);
@@ -72,20 +81,21 @@ export const PATCHAR = {
   'sections/bb-recensioner.liquid': (t, f) => {
     t = byt(t, `<div class="bb-rec" id="kunderna-sager"`, `${CAP}\n<div class="bb-rec" id="kunderna-sager"`, f);
     t = byt(t, `{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.</p>`,
-      `{%- if bw contains 'ww' -%}{{ betyg_text | replace: ',', '.' }} out of 5 on average, based on {{ antal }} reviews.{%- else -%}{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.{%- endif -%}</p>\n      {%- endif -%}\n      {%- if bw contains 'ww' -%}\n        <p class="bb-rec__ingress" style="opacity:.75;font-size:14px">🇸🇪 Reviews from our customers in Sweden, translated from Swedish.</p>`, f);
-    t = byt(t, `aria-label="Recensioner från kunder"`, `aria-label="{% if bw contains 'ww' %}Customer reviews{% else %}Recensioner från kunder{% endif %}"`, f);
-    t = byt(t, `aria-label="{{ block.settings.betyg }} av 5 stjärnor"`, `aria-label="{{ block.settings.betyg }} {% if bw contains 'ww' %}out of 5 stars{% else %}av 5 stjärnor{% endif %}"`, f);
-    t = byt(t, `</svg>Verifierat köp</span>`, `</svg>{% if bw contains 'ww' %}Verified purchase{% else %}Verifierat köp{% endif %}</span>`, f);
-    t = byt(t, `aria-label="Föregående recensioner"`, `aria-label="{% if bw contains 'ww' %}Previous reviews{% else %}Föregående recensioner{% endif %}"`, f);
-    return byt(t, `aria-label="Fler recensioner"`, `aria-label="{% if bw contains 'ww' %}More reviews{% else %}Fler recensioner{% endif %}"`, f);
+      `{%- if bw contains 'ww' -%}{%- capture bw_s -%}${T('snitt')}{%- endcapture -%}${BETYG} {{ bw_s | replace: '[[antal]]', antal }}{%- else -%}{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.{%- endif -%}</p>\n      {%- endif -%}\n      {%- if bw contains 'ww' -%}\n        <p class="bb-rec__ingress" style="opacity:.75;font-size:14px">${T('rec_sverige')}</p>`, f);
+    t = byt(t, `aria-label="Recensioner från kunder"`, `aria-label="{% if bw contains 'ww' %}${T('aria_kundrec')}{% else %}Recensioner från kunder{% endif %}"`, f);
+    t = byt(t, `aria-label="{{ block.settings.betyg }} av 5 stjärnor"`, `aria-label="{{ block.settings.betyg }} {% if bw contains 'ww' %}${T('stjarnor')}{% else %}av 5 stjärnor{% endif %}"`, f);
+    t = byt(t, `</svg>Verifierat köp</span>`, `</svg>{% if bw contains 'ww' %}${T('verifierat')}{% else %}Verifierat köp{% endif %}</span>`, f);
+    t = byt(t, `aria-label="Föregående recensioner"`, `aria-label="{% if bw contains 'ww' %}${T('foreg')}{% else %}Föregående recensioner{% endif %}"`, f);
+    return byt(t, `aria-label="Fler recensioner"`, `aria-label="{% if bw contains 'ww' %}${T('fler')}{% else %}Fler recensioner{% endif %}"`, f);
   },
 
   'sections/footer.liquid': (t, f) => byt(t,
     `    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>`,
-    `    ${CAP}\n    {%- if bw contains 'ww' -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Beaver Store · STONEBITE ECOM AB, Gothenburg, Sweden. All rights reserved.</p>\n    {%- else -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>\n    {%- endif -%}`, f),
+    `    ${CAP}\n    {%- if bw contains 'ww' -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Beaver Store · STONEBITE ECOM AB, ${T('copyright')}</p>\n    {%- else -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>\n    {%- endif -%}`, f),
 
   'snippets/seo-title.liquid': (t, f) => {
-    t = `${CAP}\n{%- assign bw_namn = shop.name -%}{%- if bw contains 'ww' -%}{%- assign bw_namn = 'Beaver Store' -%}{%- endif -%}\n` + t;
+    // Startsidan har ingen egen SEO-titel, så page_title är butiksnamnet "Bäverbutiken.se" — i världsläget Beaver Store.
+    t = `${CAP}\n{%- assign bw_namn = shop.name -%}{%- if bw contains 'ww' -%}{%- assign bw_namn = 'Beaver Store' -%}{%- if page_title == shop.name -%}{%- assign page_title = 'Beaver Store' -%}{%- endif -%}{%- endif -%}\n` + t;
     t = byt(t, `    {{ shop.name }}\n  {%- else -%}`, `    {{ bw_namn }}\n  {%- else -%}`, f);
     t = byt(t, `{%- unless page_title contains shop.name -%}\n      &ndash; {{ shop.name }}`, `{%- unless page_title contains bw_namn -%}\n      &ndash; {{ bw_namn }}`, f);
     return t;
@@ -97,9 +107,27 @@ export const PATCHAR = {
   },
 };
 
+/** snippets/bw-t.liquid ur tema/sprak.json: {% render 'bw-t', k: 'nyckel' %} → texten på besökarens språk. */
+export function byggBwT(sprak = JSON.parse(readFileSync(join(ROT, 'sprak.json'), 'utf8'))) {
+  const rader = ["{%- comment -%}bw-t — världslägets texter per språk. GENERERAD av worldwide/tema/patch.mjs ur tema/sprak.json, redigera inte här.{%- endcomment -%}", '{%- liquid', '  assign l = request.locale.iso_code', '  case k'];
+  for (const [k, v] of Object.entries(sprak)) {
+    if (k.startsWith('_')) continue;
+    rader.push(`    when '${k}'`, '      case l');
+    for (const [l, t] of Object.entries(v)) {
+      if (l === 'en') continue;
+      if (/["']/.test(t)) throw new Error(`sprak.json ${k}.${l}: raka citattecken går inte i Liquid-strängen`);
+      rader.push(`        when '${l}'`, `          echo "${t}"`);
+    }
+    rader.push('        else', `          echo "${v.en}"`, '      endcase');
+  }
+  rader.push('  endcase', '-%}');
+  return rader.join('\n') + '\n';
+}
+
 /** Nya filer (skrivs rakt av, ägs av worldwide/tema). */
 export function nyaFiler() {
   return {
+    'snippets/bw-t.liquid': { text: byggBwT() },
     'snippets/bw-lage.liquid': { text: readFileSync(join(ROT, 'snippets', 'bw-lage.liquid'), 'utf8') },
     'snippets/bw-land.liquid': { text: readFileSync(join(ROT, 'snippets', 'bw-land.liquid'), 'utf8') },
     'assets/beaver-store-logga.png': { base64: readFileSync(join(ROT, 'logga', 'beaver-store-logga-q.png')).toString('base64') },
@@ -108,7 +136,8 @@ export function nyaFiler() {
 
 /** Patcha en fil om den inte redan bär markören. */
 export function patchaFil(fil, innehall) {
-  if (innehall.includes(MARKOR)) return { fil, lage: 'redan', text: innehall };
+  if (innehall.includes(`${MARKOR} ${VERSION}`)) return { fil, lage: 'redan', text: innehall };
+  if (innehall.includes(MARKOR)) throw new Error(`${fil} bär en äldre världspatch — patcha originalet (tema/original/<tema-id>/)`);
   const p = PATCHAR[fil];
   if (!p) throw new Error(`Ingen patch för ${fil}`);
   return { fil, lage: 'patchad', text: p(innehall, fil) };
@@ -169,6 +198,15 @@ async function huvud() {
 
   // Källan är alltid MAIN (den publicerade svenska sidan).
   const { filer: original } = await lasFiler(k, main.id, filer);
+  const sparat = join(ROT, 'original', main.id.split('/').pop());
+  for (const f of filer) {
+    // Bär MAIN en äldre version av patchen utgår den nya från det sparade originalet.
+    if (original[f]?.includes(MARKOR) && !original[f].includes(`${MARKOR} ${VERSION}`)) {
+      const p = join(sparat, f.replace(/\//g, '__'));
+      if (!existsSync(p)) throw new Error(`${f}: äldre patch i MAIN men inget sparat original i ${sparat}`);
+      original[f] = readFileSync(p, 'utf8');
+    }
+  }
   const plan = {};
   for (const f of filer) {
     if (original[f] == null) throw new Error(`${f} finns inte i MAIN`);
@@ -198,7 +236,7 @@ async function huvud() {
     mkdirSync(spar, { recursive: true });
     for (const f of filer) {
       const p = join(spar, f.replace(/\//g, '__'));
-      if (!existsSync(p)) writeFileSync(p, original[f]);
+      if (!existsSync(p) && !original[f].includes(MARKOR)) writeFileSync(p, original[f]);
     }
     console.log(`Originalen sparade i ${spar}`);
   }
@@ -208,9 +246,9 @@ async function huvud() {
   for (const [f, r] of Object.entries(plan)) if (r.lage === 'patchad') skriv[f] = { text: r.text };
   await skrivFiler(k, mal, skriv);
   // Tillbakaläsning
-  const { filer: tillbaka } = await lasFiler(k, mal, [...filer, 'snippets/bw-lage.liquid', 'snippets/bw-land.liquid']);
-  const saknas = [...filer].filter((f) => !tillbaka[f]?.includes(MARKOR));
-  if (!tillbaka['snippets/bw-lage.liquid'] || !tillbaka['snippets/bw-land.liquid']) saknas.push('bw-lage/bw-land');
+  const { filer: tillbaka } = await lasFiler(k, mal, [...filer, 'snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid']);
+  const saknas = [...filer].filter((f) => !tillbaka[f]?.includes(`${MARKOR} ${VERSION}`));
+  for (const f of ['snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid']) if (tillbaka[f] !== skriv[f].text) saknas.push(f);
   if (saknas.length) { console.error(`✗ Tillbakaläsningen saknar: ${saknas.join(', ')}`); process.exit(1); }
   console.log(`✅ ${Object.keys(skriv).length} filer skrivna och tillbakalästa i ${mal}.`);
 }
