@@ -2,6 +2,8 @@
  "comment": "Matstrumpors marknader i Shopify Markets (butiken 1r46tp-qx, matstrumpor.se). Facit för matstrumpor/marknader/*.mjs. Allt här är avläst eller ett dokumenterat beslut — källan står bredvid varje tal. Ändra HÄR, aldrig i skripten.",
  "butik": "matstrumpor",
  "butik_comment": "sparning/butiker.json → matstrumpor: 1r46tp-qx.myshopify.com, nycklarna SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx (appen Fabriken, 154 rättigheter — write_markets, write_locales, write_translations, write_shipping, write_price_rules, write_themes, write_products finns, mätt 2026-09-27).",
+ "paslag_min": 0.2,
+ "paslag_min_comment": "Axel 2026-09-30: 'Jag undrar varför du bara har lagt på 15 % i worldwide … vi borde lowkey lägga på 20 % … om det går att göra ett snyggt pris av det'. Varje fast pris i en utlandsmarknad är minst Sveriges pris + 20 % i dagens kurs, avrundat UPPÅT till ett snyggt pris (paslag.mjs). Ett pris som redan ligger över sänks aldrig. Leverantörens quotes per marknad tas först när marknaden fått försäljning (Axel samma dag).",
  "tema_id": "gid://shopify/OnlineStoreTheme/207180890451",
  "tema_comment": "MAIN-temat 'Matstrumpor CRO + storleksrad 2026-09-17' (mätt 2026-09-27). Temat bär egna locale-filer för nb/da/fi/en (Dawn-basen), så temats fasta ord kommer gratis. Det som ska översättas via API är butikens INNEHÅLL: produkter, sidor, policyer, menyer, temats JSON-mallar, paketnivåerna, fraktsätten.",
  "primar": {
@@ -51,7 +53,7 @@
   ],
   "kampanjer_comment": "Alla tre i det svenska kontot (SEK) med Matstrumpors pixel 1785935302094082, annonslänk https://sushisock.com/products/sushi-socks, 155 engelska annonser (MATSTRUMP_US_/AU_sushi_ugc_…). Livstid: 21 694 kr, 40 köp, alla under break-even. PAUSED med spend = beslut, aktiveras aldrig.",
   "sushisock_priser_usd": {
-   "sushi-socks 5 pairs": 59.0,
+   "sushi-socks 5 pairs": 59,
    "sushi-socks 3 pairs": 45.99,
    "donut-socks": 33.99,
    "pizza-socks": 49.99,
@@ -102,15 +104,15 @@
    },
    "fasta_priser": {
     "sushi-strumpor": {
-     "5 - Par / One Size": 449,
-     "3 - Par / One Size": 349
+     "5 - Par / One Size": 469,
+     "3 - Par / One Size": 429
     },
-    "donut-strumpor": 299,
-    "pizza-strumpor": 399,
-    "hamburger-strumpor": 299,
-    "sushipinnar-i-akta-tra": 49
+    "donut-strumpor": 349,
+    "pizza-strumpor": 519,
+    "hamburger-strumpor": 349,
+    "sushipinnar-i-akta-tra": 59
    },
-   "beslut_priser": "FÖRSLAG — premium enligt Axels 'lite dyrare worldwide'"
+   "beslut_priser": "Axel 2026-09-30: minst +20 % mot Sverige (paslag_min, paslag.mjs), snyggt avrundat uppåt. Höjt samma dag: 5 par 449→469, 3 par 349→429, donut 299→349, pizza 399→519, hamburgare 299→349, ätpinnar 49→59 NOK. Förut (2026-09-27): premium enligt Axels 'lite dyrare worldwide', men bara 5-paret låg över Sverige (+17 %)."
   },
   {
    "id": "EU",
@@ -168,15 +170,15 @@
    "fasta_priser": {
     "sushi-strumpor": {
      "5 - Par / One Size": 44.9,
-     "3 - Par / One Size": 34.9
+     "3 - Par / One Size": 39.9
     },
-    "donut-strumpor": 29.9,
-    "pizza-strumpor": 39.9,
-    "hamburger-strumpor": 29.9,
-    "sushipinnar-i-akta-tra": 4.9
+    "donut-strumpor": 31.9,
+    "pizza-strumpor": 47.9,
+    "hamburger-strumpor": 31.9,
+    "sushipinnar-i-akta-tra": 5.9
    },
    "namn_not": "Utökad 2026-09-27 från DK+FI till EU 27 (utom SE) + IS, LI, CH; språk da, fi, de, fr, nl, es, it, pl, pt. Axels order: \"hela Europa redo\".",
-   "beslut_priser": "Axel 2026-09-27: \"lite dyrare priser worldwide\", \"hellre för högt\" ⇒ fasta EUR-priser ~+20 % över SEK-nivån, charm-avrundade.",
+   "beslut_priser": "Axel 2026-09-30: minst +20 % mot Sverige (paslag_min, paslag.mjs), snyggt avrundat uppåt. Höjt samma dag: 3 par 34,90→39,90, donut 29,90→31,90, pizza 39,90→47,90, hamburgare 29,90→31,90, ätpinnar 4,90→5,90 EUR; 5 par 44,90 kvar (+27 %). Förut (2026-09-27): 'lite dyrare priser worldwide', 'hellre för högt' ⇒ 5-paret ~+20 %, resten +1 till +13 % i dagens kurs.",
    "doman": {
     "host": "matstrumpor.eu",
     "standard": "en",
@@ -219,7 +221,7 @@
    "priser": "fasta",
    "fasta_priser": {
     "sushi-strumpor": {
-     "5 - Par / One Size": 69.0,
+     "5 - Par / One Size": 69,
      "3 - Par / One Size": 54.99
     },
     "donut-strumpor": 39.99,
@@ -230,7 +232,7 @@
    "leveranstid": "5–10 arbetsdagar",
    "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
    "frakt": "fri",
-   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset)",
+   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset) 2026-09-30: alla USD-priser ligger på +34 till +73 % mot Sverige, alltså över golvet paslag_min (+20 %), och rördes inte.",
    "doman": {
     "host": "matstrumpor.com",
     "standard": "en",

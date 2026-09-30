@@ -1,5 +1,7 @@
 # Utkast: frågan till leverantören om kostnader per land
 
+⏸ **Parkerad (Axel 2026-09-30):** "vi ska bara vänta tills vi får försäljning på olika marknader … bara då får vi quotes på de olika marknaderna." Skicka inget förrän en marknad har sålt. Utlandspriserna ligger under tiden minst 20 % över Sverige (`paslag.mjs`), eftersom quoten väntas bli dyr.
+
 Axels beställning 2026-09-27 ("skriv ett meddelande till leverantören, ett utkast jag kan
 skicka"). Bakgrund: `matstrumpor/cogs.json` har landad kostnad för USA/UK/AU/CA/NZ (Axels
 ark: vara + frakt i USD, rader för 1 och 2 lådor) men **ingen** för Norge, Danmark, Finland

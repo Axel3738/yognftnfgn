@@ -113,7 +113,7 @@ LI, CH), de sju nya språken **de, fr, nl, es, it, pl, pt** är översatta (28
 sonnet-delar, varje del granskad av en skeptisk granskare, C+D parvis; alla
 fällda fynd inlagda — `marknader/README.md` → "Översättningarna till de sju
 språken") och ligger klara i `output/underlag-<locale>.json`; priser "lite
-dyrare worldwide" (Axels ord): NOK 449, EUR 44.90, USD 69 för 5-paret. ✅
+dyrare worldwide" (Axels ord): NOK 469 (449 till 2026-09-30), EUR 44.90, USD 69 för 5-paret, och sedan 2026-09-30 **minst +20 % mot Sverige på varje produkt** (Axel: "vi borde lowkey lägga på 20 %", `marknader/paslag.mjs`, sänker aldrig). ✅
 **Europa LIVE 2026-09-27 kväll efter Axels "ok"**: 27 länder tillagda, sju
 språk aktiverade, registrerade (157–159 texter var, 0 avviker), publicerade och
 lästa som kund i 19 länder (`marknader/README.md` → "Läget … kväll"). ⚠️
