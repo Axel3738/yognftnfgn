@@ -619,8 +619,12 @@ bekräftade redan i sajtdelen och är rättade samma kväll, före rapporten:
   (`rutt + 'cart'`, `/de/cart`), och Shopify följer den (mätt på /de, /zh-tw, /ja, /pt-pt).
   Rättat i `temapatch.mjs` → `patchaPaketKorg` (körs av `bygg.mjs --steg tema`, skrivet och
   tillbakaläst, och butiken skickar ut det: `rutt+"cart"` i den minifierade filen), och i fabrikens
-  källa `factory/tema/assets/ms-paket.js`. Det var det enda stället i temats 406 filer med en
-  korg utan språkmapp (`ms-ab.js` postar `/cart/update.js`, som bara är JSON).
+  källa `factory/tema/assets/ms-paket.js` (+ kopian i `factory/tema/ops-tema.zip`, som ett test
+  kräver ska vara byte-identisk). Det var det enda stället i temats 406 filer med en korg utan
+  språkmapp (`ms-ab.js` postar `/cart/update.js`, som bara är JSON). **CaraShell bar samma fel**
+  (live-filen var exakt fabrikens källa före rättningen): där hade en norsk eller dansk kund på
+  carashell.se/nb eller /da landat i en svensk korg. Samma fil skrevs in i CaraShells publicerade
+  tema samma kväll, tillbakaläst och utskickad som giltig JS (`node --check` på den minifierade filen).
 - **Taiwans mejlknapp gav 404.** Fraktmejlens knapp räknades som `matstrumpor.se/<mapp>`, och .se
   bär zh-TW på `/zh`. Nu går alla tretton språkens knappar till matstrumpor.com, med adresser ur
   Shopifys egna `rootUrls` (`mejl/README.md` → "Matstrumpor på tolv språk").

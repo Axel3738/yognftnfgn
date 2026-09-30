@@ -427,8 +427,8 @@
 
       // Reservvägen. Den laddar om sidan, men den fungerar alltid.
       // Omdirigeringen bär språkmappen (rutt = /de/, /nb/ …): en ren '/cart' landade på
-      // domänens huvudspråk, och en tysk kund på .com såg en engelsk korg (Matstrumpors
-      // granskning 2026-09-30). Shopify följer ?redirect=/de/cart och behåller språket.
+      // domänens huvudspråk, och en tysk kund på en engelsk domän såg en engelsk korg
+      // (granskningen 2026-09-30). Shopify följer ?redirect=/de/cart och behåller språket.
       function laddaOm() {
         window.location.href = kod
           ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent(rutt + 'cart')
