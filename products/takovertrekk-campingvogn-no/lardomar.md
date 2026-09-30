@@ -565,3 +565,243 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Båtmotortrekk NO (120252047563660233)
 
+### Lärdom L-120252357469370233 — Takovertrekk_NO_PD_10_H1 (KPI_WINNER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 702 kr / 39 832 kr (2 %) |
+| Köp | 2 |
+| ROAS / CPA | 3,53 / 351 kr — kampanjens ROAS 2,17 |
+| Konverteringsgrad | 4,1 % (2 köp / 49 LPV) |
+| Hook rate / hold rate | 44 % / 11 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Campingvogna di er kanskje ikke 6,5 meter." · rubrik: "Ni størrelser, fra 1 189 kr."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk campingvognsägare som tvekar på om storleken passar (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | PD: storleksinvändningen — "ni størrelser, 3 × 5,5 til 3 × 13,5 meter" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (läst ur copyn) | okänd |
+| Mekanism | — (brief saknas i repot) | "Én person får det på plass – bare reimene strammes fast i kanten" | okänd |
+| Tro | — (brief saknas i repot) | att det inte finns i min storlek — bemöts i första raden | okänd |
+| Positionering | — (brief saknas i repot) | pris från 1 189 kr | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: storleksraden "kanskje ikke 6,5 meter … ni størrelser" tar bort passar-invändningen och gav 2 köp på 702 kr (ROAS 3,53 mot kampanjens 2,17), men n=2 går inte att skilja från slump och annonsen fick bara 2 % av kampanjens spend.
+
+**Nästa annonser:**
+- `SLÄPP` — KPI_WINNER under grinden (702 kr men 2 köp): en observation, ingen dom och ingen iteration. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_PD_10_H1, se products/takoverdraget-husvagn/lardomar.md. Utfallet är KPI_WINNER, inte LOSER: 702 kr men bara 2 köp — under grinden på köp, så ingen dom; läs om vid dag 14.
+
+### Lärdom L-120252357464130233 — Takovertrekk_NO_CO_5_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 168 kr / 39 832 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,17 |
+| Konverteringsgrad | 0,0 % (0 köp / 7 LPV) |
+| Hook rate / hold rate | 30 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Det har jo gått bra så langt." · rubrik: "1 189 kr nå. Ingenting å gjette på senere."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk ägare som inte ser något problem med taket (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | CO: passiviteten är fienden — "taket er flaten du aldri ser etter" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | "et tak du oppdager er ødelagt til våren" (rädsla, ingen mekanism) | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 189 kr, förpris 1 549 kr (spar 23 %) | okänd |
+| Brådska | — (brief saknas i repot) | latent ("til våren") — ingen datumbrådska | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: "Det har jo gått bra så langt" möter en ägare som inte ser något problem och hooken (30 %) fångar för få, men 168 kr, 0 köp och 7 LPV är för lite för att säga om det är idén eller bara att annonsen fick få visningar.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_CO_5_H1, se products/takoverdraget-husvagn/lardomar.md.
+
+### Lärdom L-120252357459970233 — Takovertrekk_NO_OB_3_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 109 kr / 39 832 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,17 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 24 % / 5 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Et spørsmål vi fikk: "Er det vanntett?"" · rubrik: "Vannet renner av taket, ikke blir liggende."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk ägare som frågat om vattentäthet (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | OB (kalla=voc): invändningen "Er det vanntett?" besvaras ärligt med "nei" och avrinning | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten (läst ur copyn) | okänd |
+| Mekanism | — (brief saknas i repot) | vannet renner av den sølvbelagte veven; tetningen rundt takluker slipper stå i vann | okänd |
+| Tro | — (brief saknas i repot) | att det inte är vattentätt — bemöts med ett ärligt nej | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 189 kr, förpris 1 549 kr (spar 23 %) | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: ett "nei" som första svar på "Er det vanntett?" är ärligt men kan dämpa köpsuget hos den som ville höra ja, medan hook rate 24 % (lägst av de sex) tyder på en svag öppning; 109 kr och 1 LPV bär ingen slutsats.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_OB_3_H1, se products/takoverdraget-husvagn/lardomar.md.
+
+### Lärdom L-120252357454840233 — Takovertrekk_NO_GT_11_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 106 kr / 39 832 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,17 |
+| Konverteringsgrad | 0,0 % (0 köp / 2 LPV) |
+| Hook rate / hold rate | 52 % / 11 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Han snakker om campingvogna som om den var et kjæledyr." · rubrik: "Han glemmer sokker. Ikke dette."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | gåvogivaren — den som köper till en man med campingvogn (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | GT: gåvan — farsdag 8 november på mottagarbeskrivningen "campingvognsgubben" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (läst ur copyn) | okänd |
+| Mekanism | — (brief saknas i repot) | "taket er flaten som koster mest når noe går galt" | okänd |
+| Tro | — (brief saknas i repot) | att gåvan blir fel — bemöts med "sokker … glemt på en uke" | okänd |
+| Positionering | — (brief saknas i repot) | ni størrelser, från 1 189 kr | okänd |
+| Brådska | — (brief saknas i repot) | datum: "Klar til farsdag, 8. november" (verkligt datum, inte påhittad knapphet) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: hooken stannar tittaren (hook rate 52 %, högst av de sex) men få klickar vidare (2 LPV på 106 kr) — en gåvovinkel för farsdag når inte köpare som inte redan letar present; 0 köp på 106 kr säger annars inget.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_GT_11_H1, se products/takoverdraget-husvagn/lardomar.md.
+
+### Lärdom L-120252357447690233 — Takovertrekk_NO_OB_4_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 12 kr / 39 832 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,17 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 43 % / 13 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "Du har rett – et heldekkende trekk blir tett rundt hele vogna." · rubrik: "Ja, det blir tett. Men bare taket."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk ägare som fruktar att ett överdrag blir tätt runt hela vagnen (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | OB (kalla=voc): medhåll i invändningen före säljet — "dette dekker bare taket, sidene er åpne" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten (läst ur copyn) | okänd |
+| Mekanism | — (brief saknas i repot) | sidorna öppna, sølvbelagt 210D-vev på taket | okänd |
+| Tro | — (brief saknas i repot) | att det blir tätt/fuktigt — bemöts med medhåll och sedan avgränsning | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 189 kr, förpris 1 549 kr (spar 23 %) | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: medhåll före säljet ("Du har rett") ger en hook som håller (43 % / 13 %), men annonsen fick 12 kr och förlorade auktionen mot syskonen — siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_OB_4_H1, se products/takoverdraget-husvagn/lardomar.md.
+
+### Lärdom L-120252357475630233 — Takovertrekk_NO_CS_9_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 7 kr / 39 832 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,17 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 4 % / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-30): "360 kr rabatt på 19,5 kvadratmeter beskyttelse – hele takflaten, 6,5 × 3 meter." · rubrik: "19,5 m² beskyttelse for 1 189 kr."
+- VO/captions: ej läst (norsk dubb av den svenska förlagan; ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk ägare som väger pris mot yta (läst ur copyn) | okänd |
+| Vinkel | — (brief saknas i repot) | CS: prisankaret 360 kr rabatt räknat på yta — 19,5 m² för 1 189 kr | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (läst ur copyn) | okänd |
+| Mekanism | — (brief saknas i repot) | ett 210D-vev, reim i kanten, "ligger i ro i vind" | okänd |
+| Tro | — (brief saknas i repot) | att det är dyrt — bemöts med pris per yta och betyg 5,0 av 5 på 10 anmeldelser | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 189 kr / 19,5 m² | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav annonsen 7 kr och hook rate 4 % — öppningen "360 kr rabatt på 19,5 kvadratmeter" vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om prisankaret som idé.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (7 kr, Metas dom, aldrig ABO): logga och släpp. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_CS_9_H1, se products/takoverdraget-husvagn/lardomar.md.
+
