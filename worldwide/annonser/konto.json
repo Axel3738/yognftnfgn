@@ -1,0 +1,49 @@
+{
+  "_om": "Worldwide-annonserna för Beaver Store (Bäverbutiken utomlands). bygg.mjs läser den här filen + ../urval.json (vilka annonser) + copy-en.json (texten) + media.json (de engelska filerna). Allt skapas PAUSED; --aktivera vägrar så länge budget_beslut är null.",
+  "konto": "1107817401910319",
+  "konto_namn": "Magiborsten UK",
+  "konto_beslut": "Bäverbutikens eget utlandskonto (byggt för beavershop UK i augusti, SEK, tidszon GB) — samma konto som CaraShells US-kampanjer, men kampanjerna skiljs på prefixet BEAVERSTORE_. MagiBorsten 1867947880635861 används INTE: /notionkorning väljer kampanj ur kontot efter annonsprefixet, och en worldwide-kampanj där hade kunnat få svenska annonser. Pixeln Bäverbutiken.se 1554276343018184 är delad till kontot (mätt 2026-09-30).",
+  "pixel": "1554276343018184",
+  "sida": "1305042582683792",
+  "sida_namn": "BeaverShop",
+  "sida_beslut": "Axels gamla UK-sida (1 följare, har profilbild). Annonserna visas som 'BeaverShop' tills sidan byter namn till Beaver Store — frågan står i README → Frågor.",
+  "instagram_user_id": "17841438677722122",
+  "instagram_beslut": "Sidans page-backed Instagram-identitet (fanns redan, läst 2026-09-30). Instagram-kontot baverbutiken.se används inte: det säger Bäverbutiken.",
+  "dsa": "Stonebite Ecom AB",
+  "budget_sek_dag": 300,
+  "budget_beslut": null,
+  "budget_comment": "PLATSHÅLLARE: CBO-kampanjen måste ha en dagsbudget för att kunna skapas. Kampanjerna står PAUSED och --aktivera vägrar tills Axel sagt en budget (budget_beslut).",
+  "placeringar": {
+    "publisher_platforms": [
+      "facebook",
+      "instagram"
+    ],
+    "facebook_positions": [
+      "feed"
+    ],
+    "instagram_positions": [
+      "stream"
+    ]
+  },
+  "placeringar_beslut": "Samma som CaraShell US (Axels order 2026-09-27: 'kör flödet i facebook instagram') — Instagram Stories åt 16 654 kr utan köp på en natt i USA.",
+  "caraShell_lander": [
+    "US",
+    "GB",
+    "CA",
+    "AU",
+    "NZ",
+    "NO",
+    "DK",
+    "FI"
+  ],
+  "caraShell_produkter": [
+    "takoverdraget",
+    "termoskyddet"
+  ],
+  "caraShell_beslut": "Taköverdraget och termoskyddet säljs utomlands av CaraShell (carashell.com, US/GB/CA/AU/NZ + NO/DK/FI). Beaver Store visar dem bara i de länder CaraShell inte säljer i, så de två butikerna inte bjuder mot varandra i samma auktion. Frågan står i README → Frågor.",
+  "datum": "2026-09-30",
+  "annons_utan_lander": [
+    "SG"
+  ],
+  "annons_utan_lander_beslut": "Meta 400 vid adset-skapandet 2026-09-30: 'Om du vill publicera annonser som inkluderar platser i Singapore ska du använda … SINGAPORE_UNIVERSAL' (regionalt reglerad kategori, kräver en deklaration). Singapore ligger kvar i Shopify-marknaden men annonseras inte."
+}

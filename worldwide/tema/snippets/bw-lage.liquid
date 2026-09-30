@@ -1,0 +1,32 @@
+{%- comment -%}
+  bw-lage — är sidan i VÄRLDSLÄGET? (worldwide/tema, repot yognftnfgn)
+  Skriver ut "ww" när besökaren ser Beaver Store (engelska eller domänen
+  beaverstoreco.com) och dessutom "frakt" när besökarens land ligger i
+  marknaden Worldwide, där frakten är fri. Sverige på baverbutiken.se får
+  en tom sträng — den svenska sidan ritas exakt som förut.
+  Användning:
+    {%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}
+    {%- if bw contains 'ww' -%} … {%- endif -%}
+  "wwtest" är provmallarna i en temakopia (worldwide/tema/patch.mjs --prov);
+  MAIN har inga sådana mallar, så grenen är död där.
+{%- endcomment -%}
+{%- liquid
+  assign ww = false
+  if request.locale.iso_code != 'sv'
+    assign ww = true
+  endif
+  if request.host contains 'beaverstoreco'
+    assign ww = true
+  endif
+  if template.suffix == 'wwtest'
+    assign ww = true
+  endif
+  if ww
+    echo 'ww'
+    if localization.country.iso_code != 'SE'
+      if localization.market.handle == 'worldwide' or template.suffix == 'wwtest'
+        echo '+frakt'
+      endif
+    endif
+  endif
+-%}

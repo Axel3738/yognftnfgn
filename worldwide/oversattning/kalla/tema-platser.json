@@ -1,0 +1,277 @@
+{
+ "Köp nu": [
+  "templates/index.json.slideshow.blocks.slideshow-0.settings.link_text",
+  "templates/index.json.slideshow_cAc4Bc.blocks.image_hhkFNq.settings.link_text",
+  "templates/index.json.slideshow_cAc4Bc.blocks.image_VPeAR9.settings.link_text"
+ ],
+ "Vi är stolta över att presentera": [
+  "templates/index.json.background-image-text.settings.title"
+ ],
+ "<p>Sunshade solhatt, en perfekt accessoar för sommarens alla aktiviteter. Med vår solhatt kan du skydda dig mot solens farliga UV-strålar med UPF50+ solskydd. Hatten ger dig optimalt skydd mot skadliga UV-strålar och skyddar effektivt din hud från solen.</p><p> Solhatten har en smart design med ett hästsvanshål på baksidan och insidan är utrustad med ett ventilerande mesh-lager som avsevärt kan förbättra avkylningen. Du slipper svettas och hålla huvudet svalt, även på de varmaste dagarna. Solhattens andningsbara tyg ger dig dessutom en bekväm känsla, även när du bär den under längre perioder.</p>": [
+  "templates/index.json.background-image-text.settings.text"
+ ],
+ "Bästsäljare": [
+  "templates/index.json.featured_collection_Vh7p9G.settings.title"
+ ],
+ "Gå med i våran kundklubb": [
+  "templates/index.json.newsletter_QYB4M6.blocks.title_8fe6pB.settings.title"
+ ],
+ "Kontaktformulär": [
+  "templates/index.json.contact_form_ctUWMD.settings.title"
+ ],
+ "<p>301 Front St W<br/>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br/>Saturday, 8:30am - 10:30pm<br/>Sunday, 8:30am - 10:30pm</p>": [
+  "templates/index.json.map.settings.address"
+ ],
+ "recensioner från kunder": [
+  "templates/index.json.bb_fortroende.blocks.betyg.settings.rad",
+  "templates/page.om-oss.json.fortroende.blocks.betyg.settings.rad"
+ ],
+ "Recensioner": [
+  "templates/index.json.bb_fortroende.blocks.betyg.settings.titel_reserv",
+  "templates/index.json.bb_recensioner.settings.overrad",
+  "templates/page.om-oss.json.fortroende.blocks.betyg.settings.titel_reserv",
+  "templates/page.om-oss.json.recensioner.settings.overrad"
+ ],
+ "från riktiga kunder": [
+  "templates/index.json.bb_fortroende.blocks.betyg.settings.rad_reserv",
+  "templates/page.om-oss.json.fortroende.blocks.betyg.settings.rad_reserv"
+ ],
+ "Fri frakt": [
+  "templates/index.json.bb_fortroende.blocks.frakt.settings.titel",
+  "templates/page.om-oss.json.fortroende.blocks.frakt.settings.titel"
+ ],
+ "på ordrar över 300 kr": [
+  "templates/index.json.bb_fortroende.blocks.frakt.settings.rad",
+  "templates/page.om-oss.json.fortroende.blocks.frakt.settings.rad"
+ ],
+ "få först, betala sen": [
+  "templates/index.json.bb_fortroende.blocks.klarna.settings.rad",
+  "templates/page.om-oss.json.fortroende.blocks.klarna.settings.rad"
+ ],
+ "Svenskt företag": [
+  "templates/index.json.bb_fortroende.blocks.svenskt.settings.titel",
+  "templates/page.om-oss.json.fortroende.blocks.svenskt.settings.titel"
+ ],
+ "Göteborg · 14 dagars ångerrätt": [
+  "templates/index.json.bb_fortroende.blocks.svenskt.settings.rad",
+  "templates/page.om-oss.json.fortroende.blocks.svenskt.settings.rad"
+ ],
+ "frakt": [
+  "templates/index.json.bb_fortroende.block_order[1]",
+  "templates/page.om-oss.json.fortroende.block_order[1]"
+ ],
+ "Dom funkar klock rent å man behöver inte fundera på att spö ska fastna i nån buske eller nått på väg ner till vattnet.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1346398417.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1346398417.settings.text"
+ ],
+ "Kanon bra sätesöverdrag man sitter stabilt när traktorn lutar åt sidorna.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1344847905.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1344847905.settings.text"
+ ],
+ "Det bästa köp jag gjort fick bra stöd för ryggen bra balans av trimmer": [
+  "templates/index.json.bb_recensioner.blocks.rec_1333143089.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1333143089.settings.text"
+ ],
+ "Hej, de ser absolut perfekt ut och är totalt bekväma": [
+  "templates/index.json.bb_recensioner.blocks.rec_1305903855.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1305903855.settings.text"
+ ],
+ "Bra att det ingår en bana så att man kan öva på tekniken direkt ur kartongen.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1351162089.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1351162089.settings.text"
+ ],
+ "Riktigt bra och stabil hylla för skruvdragarna. Skönt att få ordning i garaget.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1351156676.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1351156676.settings.text"
+ ],
+ "Väldigt smidig och enkel att använda. Nu har jag bättre koll på dagarna.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1324461953.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1324461953.settings.text"
+ ],
+ "Bra adventskalender. Rolig idé med en bil bakom varje lucka. Väldigt uppskattad här hemma.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1324461876.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1324461876.settings.text"
+ ],
+ "Ger bra ljus när man jobbar i garaget. Bärhandtaget är också praktiskt.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1320489138.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1320489138.settings.text"
+ ],
+ "Ett väldigt bra sykit. Allt finns samlat på ett ställe och fodralet är smidigt.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1316974721.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1316974721.settings.text"
+ ],
+ "Väldigt enkla att sätta på och de fungerar bra.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1352311343.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1352311343.settings.text"
+ ],
+ "Fungerar perfekt och ser fin ut att ha stående på bänken.": [
+  "templates/index.json.bb_recensioner.blocks.rec_1352310106.settings.text",
+  "templates/page.om-oss.json.recensioner.blocks.rec_1352310106.settings.text"
+ ],
+ "Bäverkopplingen": [
+  "templates/index.json.bb_historia.blocks.steg1.settings.titel",
+  "templates/page.om-oss.json.historia.blocks.steg1.settings.titel"
+ ],
+ "Snabbkopplingen som startade allt. Tryck fast kabeln, hör klicket, klart.": [
+  "templates/index.json.bb_historia.blocks.steg1.settings.text",
+  "templates/page.om-oss.json.historia.blocks.steg1.settings.text"
+ ],
+ "Bäverlampan": [
+  "templates/index.json.bb_historia.blocks.steg2.settings.titel",
+  "templates/page.om-oss.json.historia.blocks.steg2.settings.titel"
+ ],
+ "Pannlampan för den som skruvar när det är mörkt.": [
+  "templates/index.json.bb_historia.blocks.steg2.settings.text",
+  "templates/page.om-oss.json.historia.blocks.steg2.settings.text"
+ ],
+ "Bävertratten": [
+  "templates/index.json.bb_historia.blocks.steg3.settings.titel",
+  "templates/page.om-oss.json.historia.blocks.steg3.settings.titel"
+ ],
+ "Snäpper fast på dunken. Tanka gräsklipparen utan spill.": [
+  "templates/index.json.bb_historia.blocks.steg3.settings.text",
+  "templates/page.om-oss.json.historia.blocks.steg3.settings.text"
+ ],
+ "För garaget, båten, trädgården och campingen. Och det växer.": [
+  "templates/index.json.bb_historia.blocks.idag.settings.text",
+  "templates/page.om-oss.json.historia.blocks.idag.settings.text"
+ ],
+ "Ett garage med verktyg, en tratt och en bensindunk": [
+  "templates/index.json.bb_historia.settings.bild_alt",
+  "templates/page.om-oss.json.historia.settings.bild_alt"
+ ],
+ "Vår historia": [
+  "templates/index.json.bb_historia.settings.overrad"
+ ],
+ "Det började med en koppling": [
+  "templates/index.json.bb_historia.settings.rubrik",
+  "templates/page.om-oss.json.historia.settings.rubrik"
+ ],
+ "<p>Bäverbutiken började inte som en butik. Den började i ett garage, med kablar som skulle kopplas, kabelskor som saknades och en tång som inte fungerade. Lösningen blev en liten snabbkoppling som man bara trycker fast. Vi döpte den till Bäverkopplingen, efter Sveriges flitigaste byggare.</p><p>Sedan kom Bäverlampan, för den som skruvar när det är mörkt. Och Bävertratten, som sitter fast på dunken när du tankar gräsklipparen. Varje gång var det samma sak: en vardagsgrej som borde finnas, men som ingen gjort ordentligt.</p><p>I dag är Bäverbutiken en hel butik med över 200 prylar för garaget, båten, trädgården och campingen. Tänk den där järnhandeln du gillar att gå runt i, fast på nätet och bara med det som faktiskt är värt att ha. Allt vi tar in får bevisa sig först. Det som inte håller måttet åker ut.</p>": [
+  "templates/index.json.bb_historia.settings.text",
+  "templates/page.om-oss.json.historia.settings.text"
+ ],
+ "Bäverbutiken, Göteborg": [
+  "templates/index.json.bb_historia.settings.signatur_rad",
+  "templates/page.om-oss.json.historia.settings.signatur_rad"
+ ],
+ "Mer om oss": [
+  "templates/index.json.bb_historia.settings.knapp_text"
+ ],
+ "Så växte butiken": [
+  "templates/index.json.bb_historia.settings.tidslinje_rubrik",
+  "templates/page.om-oss.json.historia.settings.tidslinje_rubrik"
+ ],
+ "Prylar som löser ett riktigt problem": [
+  "templates/index.json.bb_varfor.blocks.p1.settings.titel",
+  "templates/page.om-oss.json.varfor.blocks.p1.settings.titel"
+ ],
+ "<p>Inte saker som fyller en hylla. Varje pryl ska göra något i vardagen enklare.</p>": [
+  "templates/index.json.bb_varfor.blocks.p1.settings.text",
+  "templates/page.om-oss.json.varfor.blocks.p1.settings.text"
+ ],
+ "Testat innan det får plats": [
+  "templates/index.json.bb_varfor.blocks.p2.settings.titel",
+  "templates/page.om-oss.json.varfor.blocks.p2.settings.titel"
+ ],
+ "<p>Vi tar in mycket och behåller lite. Det som inte håller måttet åker ut.</p>": [
+  "templates/index.json.bb_varfor.blocks.p2.settings.text",
+  "templates/page.om-oss.json.varfor.blocks.p2.settings.text"
+ ],
+ "Priser som går att räkna hem": [
+  "templates/index.json.bb_varfor.blocks.p3.settings.titel",
+  "templates/page.om-oss.json.varfor.blocks.p3.settings.titel"
+ ],
+ "<p>Bra grejer ska inte behöva kosta som ett märke.</p>": [
+  "templates/index.json.bb_varfor.blocks.p3.settings.text",
+  "templates/page.om-oss.json.varfor.blocks.p3.settings.text"
+ ],
+ "<p>Klarna, fri frakt över 300 kr, 14 dagars ångerrätt och kundtjänst på svenska.</p>": [
+  "templates/index.json.bb_varfor.blocks.p4.settings.text",
+  "templates/page.om-oss.json.varfor.blocks.p4.settings.text"
+ ],
+ "Bäverbutikens bäver med kabel och skiftnyckel": [
+  "templates/index.json.bb_varfor.settings.bild_alt",
+  "templates/page.om-oss.json.varfor.settings.bild_alt"
+ ],
+ "Varför en bäver?": [
+  "templates/index.json.bb_varfor.settings.overrad",
+  "templates/page.om-oss.json.varfor.settings.overrad"
+ ],
+ "Bävern bygger. Vi också.": [
+  "templates/index.json.bb_varfor.settings.rubrik",
+  "templates/page.om-oss.json.varfor.settings.rubrik"
+ ],
+ "<p>Bävern bygger, lagar och fixar med det den har omkring sig. Den ger sig inte, och den gör det på gott humör. Det är precis den känslan vi vill att butiken ska ha: prylar för dig som hellre fixar själv än ringer någon.</p>": [
+  "templates/index.json.bb_varfor.settings.text",
+  "templates/page.om-oss.json.varfor.settings.text"
+ ],
+ "Vad du kan räkna med": [
+  "templates/index.json.bb_varfor.settings.punkter_rubrik",
+  "templates/page.om-oss.json.varfor.settings.punkter_rubrik"
+ ],
+ "Vilka vi är": [
+  "templates/index.json.bb_varfor.settings.vilka_rubrik",
+  "templates/page.om-oss.json.varfor.settings.vilka_rubrik"
+ ],
+ "<p>Bäverbutiken drivs av Stonebite Ecom AB i Göteborg. Vi är ett litet gäng som hittar prylarna, testar dem, gör filmerna och svarar på mejlen själva.</p><p>Har du en fråga, en idé på en pryl som borde finnas, eller blev något inte som du tänkt? Mejla <a href=\"mailto:kundsupport@baverbutiken.se\">kundsupport@baverbutiken.se</a>. Du kan också <a href=\"/pages/spara\">spåra ditt paket</a> här på sidan. Tack för att du handlar hos oss.</p>": [
+  "templates/index.json.bb_varfor.settings.vilka_text",
+  "templates/page.om-oss.json.varfor.settings.vilka_text"
+ ],
+ "Sitter på dunken. Spiller aldrig.": [
+  "templates/product.claudeprodukter.json.main.blocks.sales_point_pAqwJ8.settings.text"
+ ],
+ "Styr bränslet dit det ska.": [
+  "templates/product.claudeprodukter.json.main.blocks.sales_point_rj9NaB.settings.text"
+ ],
+ "Byt ut pipen som alltid läcker.": [
+  "templates/product.claudeprodukter.json.main.blocks.sales_point_xdmm3f.settings.text"
+ ],
+ "5 - 10 Arbetsdagar Fri Frakt inom Sverige": [
+  "templates/product.claudeprodukter.json.main.blocks.sales_point.settings.text"
+ ],
+ "Kontakta Oss": [
+  "templates/product.claudeprodukter.json.contact_form_Ak9e7i.settings.title"
+ ],
+ "Du kanske också gillar?": [
+  "templates/product.claudeprodukter.json.product-recommendations.settings.product_recommendations_heading"
+ ],
+ "Kontakta oss": [
+  "templates/list-collections.json.contact_form_tAYMA7.settings.title",
+  "templates/page.contact.json.form.settings.title"
+ ],
+ "<p>Vi finns här för att hjälpa dig så var inte rädd för att fråga något!</p>": [
+  "templates/page.contact.json.form.settings.text"
+ ],
+ "Om Bäverbutiken": [
+  "templates/page.om-oss.json.historia.settings.overrad",
+  "settings_data.sections.footer.blocks.om_baverbutiken.settings.title"
+ ],
+ "FRI FRAKT": [
+  "settings_data.sections.header.blocks.1524770292306.settings.text"
+ ],
+ "På ordrar över 300kr": [
+  "settings_data.sections.header.blocks.1524770292306.settings.link_text"
+ ],
+ "FÅ FÖRST, BETALA SEN - KLARNA": [
+  "settings_data.sections.header.blocks.1524770296206.settings.text"
+ ],
+ "Gäller alla beställningar inom Sverige": [
+  "settings_data.sections.header.blocks.1524770296206.settings.link_text"
+ ],
+ "Bäverbutikens kundklubb": [
+  "settings_data.sections.footer.blocks.1494292487693.settings.title"
+ ],
+ "<p>Gå med i våran kundklubb för exklusiva rabatter och erbjudanden!</p>": [
+  "settings_data.sections.footer.blocks.1494292487693.settings.text"
+ ],
+ "Företag": [
+  "settings_data.sections.footer.blocks.custom_6fi8YE.settings.title"
+ ],
+ "<p>Bäverbutiken drivs och ägs av<br/>STONEBITE ECOM AB<br/>Org.nr 559576-2401<br/>Stenkolsgatan 1B<br/>417 07 Göteborg</p>": [
+  "settings_data.sections.footer.blocks.custom_6fi8YE.settings.text"
+ ],
+ "<p>Det började med en koppling i ett garage. I dag är Bäverbutiken en hel butik med prylar för garaget, båten, trädgården och campingen, alla utvalda för att de faktiskt löser något. Svenskt företag i Göteborg.</p><p><a href=\"/pages/om-oss\">Läs vår historia</a></p>": [
+  "settings_data.sections.footer.blocks.om_baverbutiken.settings.text"
+ ]
+}

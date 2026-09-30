@@ -1,0 +1,39 @@
+{%- comment -%}
+  bw-land — kundens land i en textrad (worldwide/tema, repot yognftnfgn).
+  Samma idé som CaraShells ms-landtext: [[flagga]] blir landets flagga och
+  [[land]] landets namn så som det sägs i en mening ("the United States").
+  Landet är det Shopify valt för kunden (IP, ?country= eller landväljaren).
+  Parametrar: text — raden med [[flagga]] och/eller [[land]].
+  Okänt land: 🌍 + Shopifys eget landsnamn. Utdata escapas alltid.
+{%- endcomment -%}
+{%- liquid
+  assign kod = localization.country.iso_code
+  assign land = localization.country.name
+  assign flagga = '🌍'
+  assign par = 'AE:🇦🇪|AT:🇦🇹|AU:🇦🇺|BE:🇧🇪|BG:🇧🇬|CA:🇨🇦|CH:🇨🇭|CY:🇨🇾|CZ:🇨🇿|DE:🇩🇪|EE:🇪🇪|ES:🇪🇸|FR:🇫🇷|GB:🇬🇧|GR:🇬🇷|HK:🇭🇰|HR:🇭🇷|HU:🇭🇺|IE:🇮🇪|IL:🇮🇱|IT:🇮🇹|JP:🇯🇵|KR:🇰🇷|LT:🇱🇹|LU:🇱🇺|LV:🇱🇻|MT:🇲🇹|MY:🇲🇾|NL:🇳🇱|NZ:🇳🇿|PL:🇵🇱|PT:🇵🇹|RO:🇷🇴|SG:🇸🇬|SI:🇸🇮|SK:🇸🇰|US:🇺🇸|SE:🇸🇪|NO:🇳🇴|DK:🇩🇰|FI:🇫🇮|IS:🇮🇸' | split: '|'
+  for p in par
+    assign delar = p | split: ':'
+    if delar[0] == kod
+      assign flagga = delar[1]
+      break
+    endif
+  endfor
+  case kod
+    when 'US'
+      assign land = 'the United States'
+    when 'GB'
+      assign land = 'the United Kingdom'
+    when 'NL'
+      assign land = 'the Netherlands'
+    when 'AE'
+      assign land = 'the United Arab Emirates'
+    when 'CZ'
+      assign land = 'the Czech Republic'
+    when 'KR'
+      assign land = 'South Korea'
+    when 'HK'
+      assign land = 'Hong Kong'
+  endcase
+  assign t = text | default: '' | replace: '[[flagga]]', flagga | replace: '[[land]]', land
+  echo t | escape
+-%}

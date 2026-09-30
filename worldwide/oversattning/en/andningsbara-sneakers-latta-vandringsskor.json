@@ -1,0 +1,30 @@
+{
+  "handle": "andningsbara-sneakers-latta-vandringsskor",
+  "title": "Breathable Sneakers – Lightweight Hiking Shoes",
+  "seo_title": null,
+  "seo_description": null,
+  "options": [
+    {
+      "name": "Storlek",
+      "name_en": "Size",
+      "values": {
+        "40": "40",
+        "41": "41",
+        "42": "42",
+        "43": "43",
+        "45": "45",
+        "46": "46"
+      }
+    },
+    {
+      "name": "Färg",
+      "name_en": "Color",
+      "values": {
+        "Svart": "Black",
+        "Grön": "Green",
+        "Ljusgrå": "Light Gray"
+      }
+    }
+  ],
+  "descriptionHtml": "<div style=\"max-width:720px;margin:0 auto;font-family:sans-serif;line-height:1.6;color:#1a1a1a;\">\n<h2 style=\"font-size:22px;\">Comfortable shoes for long days on your feet</h2>\n<p>Heavy and hot shoes make your feet tired and sweaty. On the hike and in everyday life you want shoes that both breathe and give support.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/95b35a76-000a-4abc-9a3e-9a18b02a35b1.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Breathable sneakers\"></p>\n<h3 style=\"font-size:19px;\">Light with a cushioning sole</h3>\n<p>These sneakers are made of breathable material and have a cushioning EVA sole. They are light on the foot and comfortable to wear all day.</p>\n<p><img src=\"https://img.kwcdn.com/product/fancy/2b4ae4b8-adc9-4702-b4f1-c8c028e8ebf0.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Sneakers detail\"></p>\n<h3 style=\"font-size:19px;\">Features</h3>\n<ul>\n<li>Breathable material</li>\n<li>Cushioning EVA sole</li>\n<li>Light on the foot</li>\n<li>Good for hiking, running and everyday wear</li>\n<li>Comfortable all year round</li>\n</ul>\n<p><img src=\"https://img.kwcdn.com/product/fancy/191b6e96-a7cd-4214-a79e-c2017cda8295.jpg\" style=\"max-width:100%;border-radius:10px;\" alt=\"Pair of sneakers\"></p>\n<p style=\"background:#f3f7f3;padding:14px 18px;border-radius:10px;\"><strong>14 days to change your mind.</strong> Counted from the day you receive the item. </p>\n</div>"
+}

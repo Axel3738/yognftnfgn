@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:06,000
+En utombordare är värd 10 tusentals kronor. Det här är den billigaste försäkringen den kan få.
+
+2
+00:00:06,000 --> 00:00:14,000
+Ett hölje i 420D-tyg som stänger ute sol, salt och regn för 299 kronor och funkar inte på din motor.
+
+3
+00:00:14,000 --> 00:00:16,000
+30 dagars nöjdpunktgaranti.

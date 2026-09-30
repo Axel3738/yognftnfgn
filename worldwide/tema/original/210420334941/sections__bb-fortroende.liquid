@@ -1,0 +1,126 @@
+{%- comment -%}
+  bb-fortroende.liquid — förtroenderaden direkt under heron på baverbutiken.se.
+  Skrivs till temat av storytelling/publicera.mjs (repot yognftnfgn). Texterna
+  ändras i temaredigeraren (Anpassa → sektionen "Förtroenderaden").
+  Betyget och antalet recensioner kommer ur Judge.me:s egna fält
+  (shop.metafields.judgeme.*) — aldrig ur en hårdkodad siffra.
+{%- endcomment -%}
+{%- liquid
+  assign jm = shop.metafields.judgeme
+  assign betyg = jm.all_reviews_rating | default: ''
+  assign antal = jm.all_reviews_count | default: ''
+  assign betyg_text = betyg | plus: 0 | round: 1 | replace: '.', ','
+-%}
+{%- style -%}
+  .bb-fortroende { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; border-top: 1px solid rgba(0,0,0,.06); border-bottom: 1px solid rgba(0,0,0,.06); }
+  .bb-fortroende__lista { list-style: none; margin: 0; padding: 18px 0; display: grid; grid-template-columns: repeat({{ section.blocks.size | at_least: 1 }}, minmax(0, 1fr)); gap: 12px 24px; }
+  .bb-fortroende__punkt { display: flex; align-items: center; gap: 12px; margin: 0; min-width: 0; }
+  .bb-fortroende__punkt a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .bb-fortroende__ikon { flex: 0 0 auto; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: {{ section.settings.ikonbakgrund }}; color: {{ section.settings.ikonfarg }}; }
+  .bb-fortroende__ikon svg { width: 18px; height: 18px; fill: currentColor; }
+  .bb-fortroende__text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+  .bb-fortroende__titel { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); text-transform: uppercase; letter-spacing: .04em; font-size: 17px; }
+  .bb-fortroende__rad { font-size: 13px; opacity: .8; }
+  .bb-fortroende__stjarnor { color: #f4bc33; font-size: 13px; letter-spacing: 1px; }
+  @media only screen and (max-width: 768px) {
+    .bb-fortroende__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 14px 0; gap: 12px 10px; }
+    .bb-fortroende__titel { font-size: 15px; }
+    .bb-fortroende__rad { font-size: 12px; }
+    .bb-fortroende__ikon { width: 30px; height: 30px; }
+  }
+{%- endstyle -%}
+
+<div class="bb-fortroende" data-section-id="{{ section.id }}" data-section-type="bb-fortroende">
+  <div class="page-width">
+    <ul class="bb-fortroende__lista">
+      {%- for block in section.blocks -%}
+        <li class="bb-fortroende__punkt" {{ block.shopify_attributes }}>
+          {%- capture ikon -%}
+            <span class="bb-fortroende__ikon" aria-hidden="true">
+              {%- case block.settings.ikon -%}
+                {%- when 'stjarna' -%}<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.3l-6 3.3 1.3-6.6L2.4 9.4l6.7-.8z"/></svg>
+                {%- when 'paket' -%}<svg viewBox="0 0 24 24"><path d="M12 2L3 6.5v11L12 22l9-4.5v-11L12 2zm0 2.2l6.4 3.2L12 10.6 5.6 7.4 12 4.2zM5 9.1l6 3v7.3l-6-3V9.1zm8 10.3v-7.3l6-3v7.3l-6 3z"/></svg>
+                {%- when 'kort' -%}<svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 4v2h16V9H4zm0 4v4h16v-4H4z"/></svg>
+                {%- when 'flagga' -%}<svg viewBox="0 0 24 24"><path d="M5 3h2v18H5V3zm3 1h11l-2.5 4L19 12H8V4z"/></svg>
+                {%- when 'hjarta' -%}<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.4C1.2 8.3 3.4 5 6.7 5c1.9 0 3.4 1 4.3 2.4C11.9 6 13.4 5 15.3 5c3.3 0 5.5 3.3 4.2 6.6C19.5 16.4 12 21 12 21z"/></svg>
+                {%- else -%}<svg viewBox="0 0 24 24"><path d="M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6 12-12-1.4-1.4z"/></svg>
+              {%- endcase -%}
+            </span>
+          {%- endcapture -%}
+          {%- if block.type == 'betyg' and betyg != blank and antal != blank -%}
+            <a href="{{ block.settings.lank | default: '#kunderna-sager' }}">
+              {{ ikon }}
+              <span class="bb-fortroende__text">
+                <span class="bb-fortroende__titel">{{ betyg_text }} av 5 <span class="bb-fortroende__stjarnor" aria-hidden="true">★★★★★</span></span>
+                <span class="bb-fortroende__rad">{{ antal }} {{ block.settings.rad | default: 'recensioner från kunder' }}</span>
+              </span>
+            </a>
+          {%- elsif block.type == 'betyg' -%}
+            {{ ikon }}
+            <span class="bb-fortroende__text">
+              <span class="bb-fortroende__titel">{{ block.settings.titel_reserv | default: 'Recensioner' }}</span>
+              <span class="bb-fortroende__rad">{{ block.settings.rad_reserv | default: 'från riktiga kunder' }}</span>
+            </span>
+          {%- else -%}
+            {%- if block.settings.lank != blank -%}<a href="{{ block.settings.lank }}">{%- endif -%}
+              {{ ikon }}
+              <span class="bb-fortroende__text">
+                <span class="bb-fortroende__titel">{{ block.settings.titel }}</span>
+                {%- if block.settings.rad != blank -%}<span class="bb-fortroende__rad">{{ block.settings.rad }}</span>{%- endif -%}
+              </span>
+            {%- if block.settings.lank != blank -%}</a>{%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Förtroenderaden",
+  "max_blocks": 5,
+  "settings": [
+    { "type": "color", "id": "bakgrund", "label": "Bakgrund", "default": "#f6f6f4" },
+    { "type": "color", "id": "textfarg", "label": "Text", "default": "#111111" },
+    { "type": "color", "id": "ikonbakgrund", "label": "Ikonens bakgrund", "default": "#dd1d1d" },
+    { "type": "color", "id": "ikonfarg", "label": "Ikonens färg", "default": "#ffffff" }
+  ],
+  "blocks": [
+    {
+      "type": "betyg",
+      "name": "Betyg från Judge.me",
+      "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "Snittbetyget och antalet recensioner hämtas automatiskt från Judge.me. Finns inga siffror visas reservtexten." },
+        { "type": "select", "id": "ikon", "label": "Ikon", "default": "stjarna", "options": [ { "value": "stjarna", "label": "Stjärna" }, { "value": "hjarta", "label": "Hjärta" } ] },
+        { "type": "text", "id": "rad", "label": "Ord efter antalet", "default": "recensioner från kunder" },
+        { "type": "url", "id": "lank", "label": "Länk (tom = hoppa till recensionerna)" },
+        { "type": "text", "id": "titel_reserv", "label": "Reservrubrik", "default": "Recensioner" },
+        { "type": "text", "id": "rad_reserv", "label": "Reservrad", "default": "från riktiga kunder" }
+      ]
+    },
+    {
+      "type": "punkt",
+      "name": "Punkt",
+      "settings": [
+        { "type": "select", "id": "ikon", "label": "Ikon", "default": "bock", "options": [ { "value": "paket", "label": "Paket" }, { "value": "kort", "label": "Betalkort" }, { "value": "flagga", "label": "Flagga" }, { "value": "hjarta", "label": "Hjärta" }, { "value": "bock", "label": "Bock" } ] },
+        { "type": "text", "id": "titel", "label": "Rubrik", "default": "Fri frakt" },
+        { "type": "text", "id": "rad", "label": "Rad under", "default": "på ordrar över 300 kr" },
+        { "type": "url", "id": "lank", "label": "Länk (valfri)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Förtroenderaden",
+      "blocks": [
+        { "type": "betyg" },
+        { "type": "punkt", "settings": { "ikon": "paket", "titel": "Fri frakt", "rad": "på ordrar över 300 kr" } },
+        { "type": "punkt", "settings": { "ikon": "kort", "titel": "Klarna", "rad": "få först, betala sen" } },
+        { "type": "punkt", "settings": { "ikon": "flagga", "titel": "Svenskt företag", "rad": "Göteborg · 14 dagars ångerrätt" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

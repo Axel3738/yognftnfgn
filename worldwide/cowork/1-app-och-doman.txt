@@ -1,0 +1,177 @@
+Jag ska sälja Bäverbutikens produkter i hela världen under namnet Beaver Store, på
+domänen beaverstoreco.com, från SAMMA Shopify-butik som baverbutiken.se. Min
+Claude-session har redan byggt allt den kan: engelska texter för hela sajten,
+loggan, fri frakt-raden och annonserna. Den kommer inte längre, för appen den
+använder får inte röra marknader, språk och frakt. Du ska göra tre saker i Chrome
+med mitt inloggade konto: ge appen fler rättigheter, läsa av domänen och lägga in
+engelska texter i appen Kaching Bundles. Fråga mig om inloggning när du behöver
+den. Datorn är en Windows-dator.
+
+⛔ DET HÄR RÖR DU ALDRIG
+- Loopia, DNS, namnservrar, MX-poster. Domänen pekar redan rätt (mätt 2026-09-30:
+  A 23.227.38.65 och www → shops.myshopify.com, båda hos Loopia). Inget ska ändras där.
+- Butikens PRIMÄRA domän. baverbutiken.se ska vara primär även efteråt. Tryck
+  aldrig "Ange som primär" / "Set as primary" på något.
+- Marknaden Sverige, dess språk, valuta och priser.
+- Shopify Payments, betalsätt, skatter, moms, tullinställningar.
+- Andra appar än de två som nämns här ("Bäver uppladdare" och "Kaching Bundles").
+- Inga rättigheter tas bort. Du LÄGGER TILL, du ersätter aldrig. En rättighet som
+  försvinner syns inte som ett fel: kundernas spårningssida och produktuppladdningen
+  slutar bara tyst att fungera.
+- Ingenting publiceras, köps eller aktiveras. Inga annonser rörs.
+
+------------------------------------------------------------------------------
+BUTIKEN (facit, mätt 2026-09-30 via API)
+------------------------------------------------------------------------------
+
+Butik:           Bäverbutiken, 4snrw0-mg.myshopify.com
+Admin:           https://admin.shopify.com/store/4snrw0-mg
+Appen:           "Bäver uppladdare", Client ID börjar med  c08d97a8
+
+Appen har i dag EXAKT de här 12 rättigheterna:
+
+  read_content, read_discounts, read_inventory, read_products,
+  read_publications, read_themes,
+  write_content, write_discounts, write_inventory, write_products,
+  write_publications, write_themes
+
+(I appens lista kan det stå kortare: en write_-rättighet ger read_-rättigheten
+av sig själv. Det är okej, men varje rad ovan måste täckas av något i listan.)
+
+De som ska LÄGGAS TILL, exakt stavade:
+
+  write_markets, write_translations, write_locales, write_shipping,
+  read_legal_policies, read_online_store_navigation
+
+(write_markets ger read_markets, write_translations ger read_translations och
+så vidare. Lägg inte till något annat.)
+
+------------------------------------------------------------------------------
+STEG 1 — hitta rätt app
+------------------------------------------------------------------------------
+
+1. Öppna https://dev.shopify.com → Apps. Leta efter "Bäver uppladdare".
+2. Öppna den och gå till Settings (eller "Client credentials"). Kontrollera att
+   Client ID börjar med c08d97a8.
+3. Finns appen inte där: öppna butikens admin → Inställningar → Appar och
+   försäljningskanaler → Utveckla appar → "Bäver uppladdare" → Konfiguration.
+   Samma kontroll av Client ID / API-nyckel (börjar med c08d97a8).
+4. Stämmer inte Client ID någonstans: STOPPA hela steg 1–2 och skriv vad du såg.
+   Det kan finnas appar med liknande namn. Client ID avgör, inte namnet.
+
+------------------------------------------------------------------------------
+STEG 2 — lägg till rättigheterna
+------------------------------------------------------------------------------
+
+Om appen ligger i Dev Dashboard (dev.shopify.com):
+1. Versions → Create a version (eller "New version").
+2. Leta upp fältet Scopes (under Access). Det är en kommaseparerad lista.
+3. INNAN du ändrar något: kopiera fältets innehåll ordagrant till rapporten under
+   rubriken "FÖRE". Kontrollera att alla 12 ovan täcks.
+   Är fältet TOMT eller saknas något: STOPPA. Skapa inte versionen. Ett tomt fält
+   betyder att versionen inte utgår från den aktiva, och släpps den försvinner
+   alla rättigheter.
+4. Ställ markören SIST i fältet och skriv till, utan mellanslag:
+     ,write_markets,write_translations,write_locales,write_shipping,read_legal_policies,read_online_store_navigation
+5. Kopiera fältets nya innehåll till rapporten under "EFTER". EFTER ska vara
+   FÖRE + raden ovan, inget mer och inget mindre.
+6. Ändra inga andra fält. Döp versionen till "worldwide-2026-09-30" om den frågar.
+7. Tryck Release. Kontrollera under Versions att den nya versionen är Active.
+
+Om appen ligger under "Utveckla appar" i admin:
+1. Konfiguration → Admin API-integration → Redigera.
+2. Skriv i rapporten vilka rutor som är ikryssade FÖRE.
+3. Kryssa i (bara kryssa i, aldrig ur): Markets (skriv + läs), Translations
+   (skriv + läs), Locales (skriv + läs), Shipping (skriv + läs), Legal policies
+   (läs), Online store navigation (läs).
+4. Spara. Skriv i rapporten vilka rutor som är ikryssade EFTER.
+
+------------------------------------------------------------------------------
+STEG 3 — godkänn i butikens admin
+------------------------------------------------------------------------------
+
+1. Öppna https://admin.shopify.com/store/4snrw0-mg → Inställningar → Appar och
+   försäljningskanaler → "Bäver uppladdare". (Djupa admin-adresser kan ge en vit
+   sida. Klicka dig då fram.)
+2. Visar Shopify en ruta om nya rättigheter: läs den. Den ska bara nämna
+   marknader, översättningar, språk, frakt, juridiska policyer och navigering.
+   Nämner den att något TAS BORT: tryck inte. Stoppa och rapportera.
+   Annars: Uppdatera / Godkänn / Approve.
+3. Visar Shopify ingen ruta (Dev Dashboard-appen): gå tillbaka till appen i Dev
+   Dashboard → Install app → välj Bäverbutiken och gå igenom installationen, så
+   att rutan visas.
+4. Kontrollera efteråt i appens sida i admin (API access scopes / Visa
+   behörigheter) att de nya står med, och att produkter, innehåll, teman och
+   rabatter fortfarande står med.
+
+------------------------------------------------------------------------------
+STEG 4 — läs av domänen (RÖR INGET)
+------------------------------------------------------------------------------
+
+1. Admin → Inställningar → Domäner.
+2. Skriv i rapporten vad som står vid beaverstoreco.com och www.beaverstoreco.com:
+   status (Ansluten / Connected), SSL-certifikat (Utfärdat / Väntar / fel) och
+   vilken marknad de hör till, om det står.
+3. Skriv vilken domän som är primär. Det ska vara baverbutiken.se.
+4. Står det ett fel med en knapp som "Verifiera anslutning" / "Verify
+   connection": tryck den EN gång och skriv vad som hände. Tryck inget annat.
+
+------------------------------------------------------------------------------
+STEG 5 — engelska texter i Kaching Bundles
+------------------------------------------------------------------------------
+
+Paketväljaren på produktsidorna (1 st / 2 st / 3 st) kommer från appen Kaching
+Bundles och är på svenska. Kunder utomlands ska se engelska. Den svenska texten
+får INTE ändras.
+
+1. Admin → Appar → Kaching Bundles.
+2. Leta efter översättningar: "Translations", "Languages" eller en
+   språkväljare i varje erbjudande (deal). Läs appens egen hjälptext.
+3. Finns engelska (English) att välja: lägg in de engelska texterna nedan på
+   VARJE erbjudande som har de svenska texterna. Svenskan står kvar som den är.
+
+   | Svenska (står kvar)                        | Engelska (läggs till)                    |
+   |--------------------------------------------|------------------------------------------|
+   | 14 Dagars Ångerrätt & Svensk kundsupport   | 14-day returns · Swedish customer support |
+   | 1 st                                       | 1 pack                                   |
+   | 2 st                                       | 2 pack                                   |
+   | 3 st                                       | 3 pack                                   |
+   | Standard pris                              | Standard price                           |
+   | Mest populär                               | Most popular                             |
+   | Spara (följt av belopp eller procent)      | Save                                     |
+   | Gratis / GRATIS                            | Free / FREE                              |
+
+   Andra svenska texter du hittar i ett erbjudande: översätt dem kort och rakt,
+   aldrig med ett pris i kronor, och skriv dem i rapporten.
+4. Finns ingen engelska att välja (appen visar bara språk som är tillagda i
+   Shopify, och engelska läggs till av min session efter dig): gör ingenting mer
+   i Kaching. Skriv exakt vad appen visade och var översättningarna ligger, så
+   gör sessionen resten.
+5. Spara. Publicera eller aktivera inga nya erbjudanden och ändra inga rabatter.
+
+------------------------------------------------------------------------------
+KONTROLLERA SOM KUND (när steg 1–5 är klara)
+------------------------------------------------------------------------------
+
+1. Öppna https://baverbutiken.se i ett inkognitofönster. Sidan ska se ut som
+   vanligt: svenska, Bäverbutikens logga, priser i kr. Skriv att den gör det.
+2. Öppna https://www.beaverstoreco.com. Skriv vad som visas (sidan, ett
+   certifikatfel eller något annat). Det är okej att den ännu visar svenska: det
+   engelska slås på av min session efter dig.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILLBAKA
+------------------------------------------------------------------------------
+
+1. Appens namn, var den låg (Dev Dashboard eller Utveckla appar) och de första
+   8 tecknen i Client ID.
+2. Rättigheterna FÖRE och EFTER, ordagrant.
+3. Den nya versionens namn och att den är Active (Dev Dashboard).
+4. Vad godkännanderutan sa och vad du tryckte.
+5. Domänerna: status, SSL, primär domän.
+6. Kaching: fanns engelska, vilka erbjudanden du översatte, och varje text du
+   översatte utöver tabellen.
+7. Kundkontrollen på baverbutiken.se och beaverstoreco.com.
+8. Allt som såg konstigt ut, och varje ställe där du stoppade.
+
+Skriv aldrig ut client secret, åtkomsttoken eller lösenord i rapporten.

@@ -1,0 +1,775 @@
+{
+ "Takoverdrag_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "23% RABATT – IDAG",
+    "en": "23% OFF – TODAY"
+   },
+   {
+    "sv": "1469 kr",
+    "en": ""
+   },
+   {
+    "sv": "1129 kr",
+    "en": ""
+   },
+   {
+    "sv": "Begränsat lager – slut när det är slut",
+    "en": "Limited stock – gone when it's gone"
+   },
+   {
+    "sv": "Köp innan det tar slut",
+    "en": "Buy before it sells out"
+   }
+  ],
+  "layout_en": "Large white rounded card on a red/orange geometric background. Line 1 is huge bold dark-red sans-serif in ALL CAPS across the top of the card. Below it one row holds the struck-through '1469 kr' (dark grey, thin strike line) and the bold black '1129 kr' - paint that whole price row out and leave clean white. Line 4 is regular dark-grey sans-serif; line 5 is small regular text framed by two orange-red curly brackets (button-like, no fill). Photo of a white motorhome with a black roof cover fills the lower half.",
+  "tre_fragor": {
+   "rad": "23% OFF – TODAY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Takoverdrag_SP_2_1": {
+  "hoppa": "Citat krediterat 'Verifierad kund, 58 år' (\"Satte den på taket på fem minuter, helt själv...\") - citatet går inte att verifiera för en ny marknad.",
+  "rader": [],
+  "layout_en": "",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Takoverdrag_PD_10_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter.",
+    "en": "Nine sizes – from 3 × 5.5 to 3 × 13.5 meters."
+   },
+   {
+    "sv": "Från 1 129 kr.",
+    "en": ""
+   },
+   {
+    "sv": "Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn.",
+    "en": "Stays put in the wind – straps on all four sides, 2.5 m long and adjustable to your RV or caravan."
+   },
+   {
+    "sv": "Se alla nio storlekar.",
+    "en": "See all nine sizes."
+   }
+  ],
+  "layout_en": "Top: two-line centered bold near-black sans-serif headline over a pale sky. Just below it a full-width white bar holds one small regular line (the price) - paint out the text AND the white bar so the sky shows through. Lower third: a light semi-transparent box over the grass with two centered lines of regular dark text. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "Nine sizes – from 3 × 5.5 to 3 × 13.5 meters.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_PD_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "REGNET SKA INTE\nFÅ FÖRSTÖRA TAKET –\nTÄCK DET PÅ 5 MINUTER",
+    "en": "DON'T LET THE RAIN\nRUIN THE ROOF –\nCOVER IT IN 5 MINUTES"
+   }
+  ],
+  "layout_en": "One three-line headline, centered in the upper third on the pale blue sky, no box behind it: bold black geometric sans-serif (Montserrat-like), ALL CAPS, tight line spacing. A white motorhome with a black roof cover fills the lower two thirds. No other text.",
+  "tre_fragor": {
+   "rad": "DON'T LET THE RAIN RUIN THE ROOF – COVER IT IN 5 MINUTES",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Takoverdrag_FD_2_1": {
+  "hoppa": "Fars dag: badge 'Fars dag-rea', rubriken 'Present till fars dag' och 'Beställ senast 19 oktober' - svensk högtid och datum. Dessutom priser i kronor.",
+  "rader": [],
+  "layout_en": "",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Rodholder_PD_6_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Ett klick.\nSpöet stängt.",
+    "en": "One click.\nRod secured."
+   },
+   {
+    "sv": "Hårdplast och skumgummi håller spöet säkert stängt.",
+    "en": "Hard plastic and foam rubber hold the rod securely closed."
+   },
+   {
+    "sv": "4-pack 289 kr – beställ idag",
+    "en": "4-pack – order today"
+   }
+  ],
+  "layout_en": "Top: a two-line very large bold white sans-serif headline, centered, with a thin dark outline/shadow, over the blurred grey-blue water. Below it one line of regular white text with the same dark outline. Bottom: a full-width solid orange-red (#d84315) bar with one line of bold white text, centered. The macro photo of the orange rod clip on a black rod fills the middle.",
+  "tre_fragor": {
+   "rad": "One click. Rod secured.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Rodholder_CS_3_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "289 kr för 4 st.",
+    "en": "4 holders. One real price."
+   },
+   {
+    "sv": "Det blir 72,25 kr styck – inga koder, ingen rea.",
+    "en": "No codes, no sale."
+   },
+   {
+    "sv": "289 kr – Klarna och 30 dagars garanti.",
+    "en": "14-day returns."
+   }
+  ],
+  "layout_en": "Off-white background. Top: one line of huge bold near-black sans-serif, centered (the English is longer than the Swedish, so shrink to fit one line, or split it into two lines). Under it one line of regular mid-grey text, centered. Middle: a rounded-corner photo of four orange rod clips on a light surface (leave untouched). Bottom: a full-width solid orange-red (#d84315) bar with one line of bold white text, centered. NOTE: the Swedish ad was only about the kronor price, so the English headline carries the 'real price, no sale' angle without a number.",
+  "tre_fragor": {
+   "rad": "4 holders. One real price.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Batmotor_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "40% RABATT – ENDAST IDAG",
+    "en": "40% OFF – TODAY ONLY"
+   },
+   {
+    "sv": "Få kvar i lager – slår snart i topp",
+    "en": "Few left in stock – selling out fast"
+   },
+   {
+    "sv": "Ta rabatten nu",
+    "en": "Claim the discount"
+   }
+  ],
+  "layout_en": "Directly over the blue sky at the top, no box: white text with a soft dark shadow. Line 1 is large bold sans-serif ALL CAPS across the full width; line 2 is a smaller regular-weight sentence-case line. Bottom center: a red (#d32f2f) rounded-rectangle button (about 390 x 85 px) with bold white text, over the water. A black outboard cover on a boat fills the middle.",
+  "tre_fragor": {
+   "rad": "40% OFF – TODAY ONLY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Batmotor_BF_12_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "9 storlekar.\nEn för din motor.",
+    "en": "9 sizes.\nOne for your outboard."
+   },
+   {
+    "sv": "Passar 0–5 hk upp till 250–350 hk.",
+    "en": "Fits 0–5 hp up to 250–350 hp."
+   },
+   {
+    "sv": "420D Oxford-tyg · Dra över, spänn remmen — inga verktyg",
+    "en": "420D Oxford fabric · Pull it over, tighten the strap – no tools"
+   },
+   {
+    "sv": "Hitta din storlek — Båtmotorskyddet 420D",
+    "en": "Find your size – Outboard Motor Cover 420D"
+   }
+  ],
+  "layout_en": "White background. Top: two centered lines of very large bold near-black sans-serif. Below: one line of regular black text on a semi-transparent white bar that crosses the top of the tallest cover. Three black outboard covers in different sizes stand in the middle. Near the bottom (about y=1110 of 1350) one small bold white line over the grey gradient. Bottom: a wide dark-blue (#1c4a7a) rounded pill with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "9 sizes. One for your outboard.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Batmotor_BF_3_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Fel storlek?\nSe måttguiden innan du\nbeställer.",
+    "en": "Wrong size?\nCheck the size guide\nbefore you order."
+   },
+   {
+    "sv": "9 storlekar, 0–5 hk till 250–350 hk. Hitta din.",
+    "en": "9 sizes, 0–5 hp to 250–350 hp. Find yours."
+   },
+   {
+    "sv": "Se din storlek. Handla nu.",
+    "en": "See your size. Shop now."
+   }
+  ],
+  "layout_en": "Light grey background. Top: a nearly opaque white box (about x 30-1050, y 45-520) holding a three-line very large bold near-black centered headline, then a smaller regular line separated by a thin white gap. A black outboard cover with a buckle strap is behind and below the box. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "Wrong size? Check the size guide before you order.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Seatcover_PD_20_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Lägger du fortfarande\nen handduk på sätet?",
+    "en": "Still putting a towel\non the seat?"
+   },
+   {
+    "sv": "HÅLLER TYP EN DAG",
+    "en": "LASTS ABOUT A DAY"
+   },
+   {
+    "sv": "HÅLLER I ALLA VÄDER",
+    "en": "LASTS IN ALL WEATHER"
+   },
+   {
+    "sv": "Blöt igen efter första\nregnskuren.",
+    "en": "Soaked again after the\nfirst rain shower."
+   },
+   {
+    "sv": "600D Oxford-tyg,\nvattenavvisande och vadderat.",
+    "en": "600D Oxford fabric,\nwater-repellent and padded."
+   },
+   {
+    "sv": "649 kr – fri frakt & nöjd-kund-garanti",
+    "en": "Free shipping & 14-day returns"
+   }
+  ],
+  "layout_en": "White top band with a two-line extra-bold near-black geometric sans-serif headline (Montserrat ExtraBold-like), centered. Below: two side-by-side photos (blue towel on a mower seat left, grey-and-yellow seat cover right). Under the left photo a light-grey rounded pill with bold ALL-CAPS dark text, under the right photo a cream/beige rounded pill with bold ALL-CAPS dark text. Below the pills, in each half, two centered lines of regular dark text (Inter-like); the right half is a bit bolder. Bottom: a full-width dark charcoal (#3a3735) bar with one line of bold white text, centered.",
+  "tre_fragor": {
+   "rad": "Still putting a towel on the seat?",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_SO_1_1_H1": {
+  "hoppa": "\"811 KR överstruket\" är ritat som grafik och stod kvar efter suddningen (granskat 2026-09-30).",
+  "rader": [
+   {
+    "sv": "811 KR överstruket",
+    "en": ""
+   },
+   {
+    "sv": "NU 649 KR",
+    "en": "SAVE THE SEAT"
+   },
+   {
+    "sv": "FRI FRAKT · BETALA MED KLARNA",
+    "en": "FREE SHIPPING"
+   },
+   {
+    "sv": "30 DAGARS ÖPPET KÖP",
+    "en": "14-DAY RETURNS"
+   },
+   {
+    "sv": "BEGRÄNSAT\nANTAL I LAGER",
+    "en": "LIMITED\nSTOCK"
+   },
+   {
+    "sv": "TA DITT NU",
+    "en": "GET YOURS NOW"
+   }
+  ],
+  "layout_en": "Light grey studio background. Top-left stack: line 1 is bold white text with a soft shadow and a red strike-through line over '811 KR' followed by the word 'överstruket' - paint this whole line out and leave clean grey. Line 2 is huge bold yellow (#f5c518) ALL CAPS (the Swedish price is replaced by 'SAVE THE SEAT', taken from the Swedish ad's own headline 'Rädda sätet'; shrink to fit the width if needed). Below it two lines of bold black ALL CAPS. Top-right corner: a diagonal yellow ribbon with bold black ALL-CAPS text on two lines. Bottom-right: a white rounded-rectangle button with a dark outline and bold dark ALL-CAPS text. Two grey-and-yellow seat covers fill the middle.",
+  "tre_fragor": {
+   "rad": "SAVE THE SEAT",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Seatcover_SO_8_1": {
+  "hoppa": "Priset \"649\" i stor gul siffra stod kvar efter suddningen (granskat 2026-09-30).",
+  "rader": [
+   {
+    "sv": "Vi beställde\nin för många\nsätesöverdrag.",
+    "en": "We ordered\ntoo many\nseat covers."
+   },
+   {
+    "sv": "Därför säljer vi ut lagret till nedsatt pris.",
+    "en": "So we're clearing out the stock at a reduced price."
+   },
+   {
+    "sv": "811 kr",
+    "en": ""
+   },
+   {
+    "sv": "649 kr",
+    "en": ""
+   },
+   {
+    "sv": "Fri frakt, Klarna och 30 dagars öppet köp.",
+    "en": "Free shipping and 14-day returns."
+   }
+  ],
+  "layout_en": "Light grey background. Top-left: a three-line very large bold black sans-serif headline (Inter/Helvetica-like), left-aligned. Below it one regular black sentence. Under that (about y=690 of 1350) one price row: a small grey '811 kr' with a diagonal strike-through and a big mustard-yellow bold '649 kr' - paint the whole row out and leave clean background. Bottom-right: photo of a grey-and-yellow seat cover on a mower. Bottom: a full-width dark charcoal bar with one line of regular white text, centered.",
+  "tre_fragor": {
+   "rad": "We ordered too many seat covers.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Motorhölje_SO_2": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "20% RABATT IDAG",
+    "en": "SPECIAL PRICE TODAY"
+   },
+   {
+    "sv": "Skydda din motor — innan vintern kommer.",
+    "en": "Protect your motor – before winter comes."
+   },
+   {
+    "sv": "[ Handla nu — begränsat lager ]",
+    "en": "[ Shop now – limited stock ]"
+   }
+  ],
+  "layout_en": "Deep navy-blue header that fades into white. Line 1: huge bold white sans-serif ALL CAPS across the top. Line 2: bold white sans-serif, sentence case, directly below. Line 3: regular navy text inside square brackets, on the fading area below. Background has soft blue anchor and life-ring silhouettes; a black-covered outboard motor stands left of center and a folded cover with a header card lies right of it. The Swedish '20% RABATT' is NOT carried over: the ad's own copy only says 'kampanjpris', so no percentage is claimed.",
+  "tre_fragor": {
+   "rad": "SPECIAL PRICE TODAY",
+   "visualisera": "❌",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Enginecover_SO_5_1": {
+  "hoppa": "Märket \"30\" (30 dagars garanti) är grafik bredvid raden — motsäger 14-dagarslöftet (granskat 2026-09-30).",
+  "rader": [
+   {
+    "sv": "Marint motorhölje i 420D",
+    "en": "Marine outboard motor cover in 420D"
+   },
+   {
+    "sv": "337 kr",
+    "en": ""
+   },
+   {
+    "sv": "299 kr",
+    "en": ""
+   },
+   {
+    "sv": "Passar 6–250 hk",
+    "en": "Fits 6–250 hp"
+   },
+   {
+    "sv": "Finns i flera färger",
+    "en": "Available in several colors"
+   },
+   {
+    "sv": "Enkel att sätta på\noch ta av",
+    "en": "Easy to put on\nand take off"
+   },
+   {
+    "sv": "30 dagars nöjd-kund-garanti",
+    "en": "14-day returns"
+   }
+  ],
+  "layout_en": "White background. Top center: one line of regular black sans-serif text. Five outboard motors with covers in olive, grey, green, blue and black stand in a row. Price row centered at y=765 of 1024: a struck-through '337 kr' and a big bold black '299 kr' - paint it out and leave clean white. Below it three feature blurbs in a row, each a thin line icon (keep the icons) plus small regular black text. Below that a white pill with a thin black outline: a round '30' badge sits at the left inside the pill followed by the guarantee text - repaint the whole pill including the badge so it reads '14-day returns'. Five color swatches at the very bottom carry no text (leave).",
+  "tre_fragor": {
+   "rad": "Marine outboard motor cover in 420D",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Enginecover_SO_24_1": {
+  "hoppa": "Svenska rader och prisrutor ligger på fotot och gick inte att sudda rent (granskat 2026-09-30).",
+  "rader": [
+   {
+    "sv": "Vi beställde för mycket",
+    "en": "We ordered too many"
+   },
+   {
+    "sv": "Motorhölje 420D till utombordaren\n– så länge lagret räcker",
+    "en": "420D outboard motor cover\n– while stock lasts"
+   },
+   {
+    "sv": "367 kr",
+    "en": ""
+   },
+   {
+    "sv": "299 kr",
+    "en": ""
+   }
+  ],
+  "layout_en": "Top-left, over a garage wall: white text where each line sits in its own tight black rectangular highlight box - line 1 large bold, lines 2-3 regular weight. Photo: a cardboard box full of rolled black covers, more covers stacked on the floor, and an outboard motor with a black cover on a stand. Bottom center: a price tag made of a white box with a grey struck-through '367 kr' and a black box with bold white '299 kr' - paint out both boxes and restore the concrete floor behind them.",
+  "tre_fragor": {
+   "rad": "We ordered too many",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Enginecover_PD_8_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Dragsko – sitter stadigt",
+    "en": "Drawstring – stays secure"
+   },
+   {
+    "sv": "Kraftigt 420D Oxfordtyg",
+    "en": "Tough 420D Oxford fabric"
+   },
+   {
+    "sv": "Passar 6–250 hk",
+    "en": "Fits 6–250 hp"
+   },
+   {
+    "sv": "Skyddar mot sol,\nregn och salt",
+    "en": "Protects from sun,\nrain and salt"
+   },
+   {
+    "sv": "299 kr",
+    "en": ""
+   }
+  ],
+  "layout_en": "White background with five outboard motors in a row, covers in olive, grey, green, blue and black. Four callouts: white rounded pills with a thin grey outline and regular black text, each with a thin grey leader line ending in a white dot on the cover: 'Dragsko' top left-center, 'Kraftigt 420D Oxfordtyg' top center, 'Passar 6-250 hk' top right, 'Skyddar mot sol, regn och salt' bottom left (two lines). A small pill at the bottom right holds '299 kr' - paint that whole pill out and leave clean white.",
+  "tre_fragor": {
+   "rad": "Protects from sun, rain and salt",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Enginecover_SO_23_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Motorhöljet du tittade på",
+    "en": "The motor cover you looked at"
+   },
+   {
+    "sv": "Motorhölje 420D i vattenavvisande\nOxfordtyg – nu 299 kr",
+    "en": "420D outboard motor cover in water-repellent\nOxford fabric"
+   },
+   {
+    "sv": "367 kr",
+    "en": ""
+   },
+   {
+    "sv": "299 kr",
+    "en": ""
+   }
+  ],
+  "layout_en": "Light grey studio background. Top: a one-line headline in large regular-weight (not bold) near-black sans-serif (Inter-like), centered; under it two centered lines of smaller regular text. A single white outboard motor with a black cover floats in the middle. Bottom center price row: a grey struck-through '367 kr' next to a big bold black '299 kr' - paint out and leave clean grey.",
+  "tre_fragor": {
+   "rad": "The motor cover you looked at",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Overvakningskamera_CO_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Ser du skillnad?\nDet gör den.",
+    "en": "See the difference?\nIt does."
+   },
+   {
+    "sv": "Vanlig kamera",
+    "en": "Regular camera"
+   },
+   {
+    "sv": "Denna kamera",
+    "en": "This camera"
+   },
+   {
+    "sv": "355° täckning i stället för en fast vinkel",
+    "en": "355° coverage instead of a fixed angle"
+   },
+   {
+    "sv": "Vet skillnad på människa och katt",
+    "en": "Tells a person from a cat"
+   },
+   {
+    "sv": "799 kr, 30 dagars garanti",
+    "en": "14-day returns"
+   },
+   {
+    "sv": "Uppgradera",
+    "en": "Upgrade"
+   }
+  ],
+  "layout_en": "Top: a nearly opaque white box (x 30-1050, y 45-320) with a two-line very large bold near-black centered headline. Middle: two side-by-side product photos (a fixed camera left, a dome pan camera right). Each photo carries a black rounded label with bold white text at mid-height: left label x 50-280, y 605-680; right label x 558-792. Below the photos a light box holds three lines, each with a green check-mark icon (keep the icons) and regular dark text, starting at x=275. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "See the difference? It does.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Termoskydd_BOF_7_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "559 kr.",
+    "en": "40% off."
+   },
+   {
+    "sv": "Ordinarie 932 kr.",
+    "en": ""
+   },
+   {
+    "sv": "Du sparar 373 kr – 40 %.",
+    "en": ""
+   },
+   {
+    "sv": "Köp två – ytterligare 15 % rabatt.",
+    "en": "Buy two – get an extra 15% off."
+   },
+   {
+    "sv": "Beställ – 559 kr",
+    "en": "Order now"
+   }
+  ],
+  "layout_en": "Top: a full-width nearly opaque white box (x 30-1050, y 45-400) that held two very large bold near-black centered lines plus one smaller regular line. Only ONE line survives: '40% off.' in the large bold size, centered vertically in the box - remove the other two lines and shrink the box to fit, or keep the box and center the single line. Middle: front view of a white motorhome with a silver quilted thermal screen on the windscreen. One small bold white line over the bumper at y=1110. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "40% off.",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Termoskydd_SP_2_1": {
+  "hoppa": "Citat krediterat 'Verifierad kund, 58 år' (\"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\") - kan inte verifieras för en ny marknad. Bilden bär dessutom en genereringsartefakt ('Knapp: \"Beställ nu\"') och '30 dagars öppet köp'.",
+  "rader": [],
+  "layout_en": "",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Beachslippers_PD_13_1": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No overlaid ad text - use as is. The only lettering is part of the photo and already English: 'SPORT' embossed on the shoe strap and a white prop box with 'Hey,' at the left edge.",
+  "tre_fragor": {
+   "rad": "(no on-image text)",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Beachslippers_PD_13_6": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No text at all in the image (photo of a black clog with a deep-tread sole on a beige block) - use as is.",
+  "tre_fragor": {
+   "rad": "(no on-image text)",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Strandtofflor_PD_2_2": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No text at all in the image (flat lay of four camo clogs in black, black, khaki and white on a beige background) - use as is.",
+  "tre_fragor": {
+   "rad": "(no on-image text)",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Beachslippers_PD_2_3": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No text at all in the image (four camo clogs on a wet wooden deck) - use as is.",
+  "tre_fragor": {
+   "rad": "(no on-image text)",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Beltgrinder_PD_19_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Betala en gång.\nSluta betala för att slipa\nknivar.",
+    "en": "Pay once.\nStop paying to get your\nknives sharpened."
+   },
+   {
+    "sv": "909 kr, en gång. Sen är den din.",
+    "en": "One payment. Then it's yours."
+   },
+   {
+    "sv": "909 kr · Jämförpris 1 182 kr · Spara 273 kr (23%)",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Handla nu",
+    "en": "Shop now"
+   }
+  ],
+  "layout_en": "White background. Top: a three-line very large bold near-black centered headline, then one regular near-black centered line. The belt grinder product photo fills the middle (leave untouched). A full-width light-grey bar (about y 1070-1150) holds one small regular centered line - the English line is much shorter, keep it centered in the bar. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "Pay once. Stop paying to get your knives sharpened.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Balteslipmaskin_PD_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Slöa knivar?\nVässade på 10 sekunder.",
+    "en": "Dull knives?\nSharpened in 10 seconds."
+   }
+  ],
+  "layout_en": "Top quarter is an off-white/cream band holding a two-line extra-bold near-black geometric sans-serif headline (Montserrat-like), centered. Below it a photo of the belt grinder sharpening a kitchen knife with sparks on a workshop bench. No other text.",
+  "tre_fragor": {
+   "rad": "Dull knives? Sharpened in 10 seconds.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Balteslipmaskin_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Få kvar i lager\n– slut inom kort",
+    "en": "Few left in stock\n– selling out soon"
+   },
+   {
+    "sv": "909 kr",
+    "en": "40% OFF"
+   }
+  ],
+  "layout_en": "Pure black background with a red glow behind the product (belt grinder with accessories laid out above it). Top-left corner: a red diagonal corner ribbon (cut at 45 degrees) with bold white text following the diagonal, two lines. Bottom-right: a red 12-point starburst badge with a white outline; inside, huge bold white condensed text on one line. Replace it with '40% OFF' in the same font and white color (stack as '40%' over 'OFF' if it does not fit on one line). The Swedish ad states 40% in its own copy.",
+  "tre_fragor": {
+   "rad": "40% OFF",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beltgrinder_SP_5_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Slipbandet i rörelse.\n10 sekunder till vass\nkniv.",
+    "en": "The belt in motion.\n10 seconds to a\nsharp knife."
+   },
+   {
+    "sv": "Samma slipband, tre verktyg: kniv, sax, yxa.",
+    "en": "Same belt, three tools: knife, scissors, axe."
+   },
+   {
+    "sv": "909 kr (ord. 1 182 kr) — spara 273 kr",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Se den i action — beställ nu",
+    "en": "See it in action – order now"
+   }
+  ],
+  "layout_en": "Top: a semi-transparent white box (x 30-1050, y 45-430) with a three-line very large bold near-black centered headline, then a thin white gap and a second semi-transparent strip (y 435-520) with one regular centered line. Photo: a hand sharpening a knife on the belt grinder with sparks. Price bar: a semi-transparent white box at y 1070-1150 with one small centered line - remove the text AND the box so the photo shows. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "The belt in motion. 10 seconds to a sharp knife.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Sotarset_PD_6_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Det här får du.",
+    "en": "Here's what you get."
+   },
+   {
+    "sv": "9 stänger × 41 cm · 3,69 m räckvidd · Borste 100 mm · Sexkantsadapter.",
+    "en": "9 rods × 41 cm · 3.69 m reach · 100 mm brush · Hex adapter."
+   },
+   {
+    "sv": "459 kr. Ord. 599 kr.",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Beställ.",
+    "en": "Order."
+   }
+  ],
+  "layout_en": "Top: a semi-transparent white box (x 30-1050, y 45-190) with one large bold near-black centered line; below it a second slightly separate box (y 195-320) with two lines of regular dark centered text. Photo: a black chimney brush head, white flexible rods and steel connectors on a cloth. Price bar: a semi-transparent white box at y 1070-1150 with one small centered line - remove the text AND the box so the photo shows. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text.",
+  "tre_fragor": {
+   "rad": "Here's what you get. 9 rods × 41 cm · 3.69 m reach · 100 mm brush · Hex adapter.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "40% RABATT – IDAG ENDAST",
+    "en": "40% OFF – TODAY ONLY"
+   },
+   {
+    "sv": "Snart slutsåld – beställ innan den är borta",
+    "en": "Almost sold out – order before it's gone"
+   }
+  ],
+  "layout_en": "Very light grey-white studio background, no boxes. Line 1: very large bold condensed ALL-CAPS sans-serif (Oswald/Bebas-like), black, with the second half ('TODAY ONLY') in bright red (#e00) - same split as the Swedish '40% RABATT –' black and 'IDAG ENDAST' red. Line 2: regular near-black sans-serif, sentence case, centered under it. A motorcycle under a black cover fills the lower two thirds.",
+  "tre_fragor": {
+   "rad": "40% OFF – TODAY ONLY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "MC-Kapell_OF_1_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "349 kr istället för 582 kr.",
+    "en": "40% off."
+   },
+   {
+    "sv": "Spara 40 % — samma kapell, samma garanti.",
+    "en": "Same cover, same guarantee."
+   },
+   {
+    "sv": "Fri frakt inom Sverige.",
+    "en": "Free shipping."
+   },
+   {
+    "sv": "Handla nu",
+    "en": "Shop now"
+   }
+  ],
+  "layout_en": "Top: a white band (y 0-215) with one line of very large bold near-black centered text; the white band overlaps a light strip (y 215-280) that holds one regular centered line. Photo: a motorcycle under a dark cover on a beige studio background. A light bar at y 1070-1150 holds one small regular centered line. Bottom center: a dark-blue (#1c4a7a) rounded pill with bold white text. The Swedish ad states 40% in its own headline field, so the percentage replaces the kronor prices.",
+  "tre_fragor": {
+   "rad": "40% off.",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ }
+}

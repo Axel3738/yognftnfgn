@@ -1,0 +1,104 @@
+{
+ "frontpage": {
+  "title": "Home",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tradgard-utomhus": {
+  "title": "Garden & Outdoor Living",
+  "descriptionHtml": "<p>Products for the garden, the patio and outdoor living.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bil-verktyg-garage": {
+  "title": "Car, Tools & Garage",
+  "descriptionHtml": "<p>Products for the car, the workshop and the garage.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "camping-friluft": {
+  "title": "Camping & Outdoors",
+  "descriptionHtml": "<p>Gear for camping, hiking and outdoor life.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "lantbruk-djur": {
+  "title": "Farm & Animals",
+  "descriptionHtml": "<p>Products for farming, paddocks, stables and pets.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bat-marin": {
+  "title": "Boat & Marine",
+  "descriptionHtml": "<p>Accessories and care for boats, engines and marine use – protection, cleaning, mooring and fishing.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "tillbehor-ovrigt": {
+  "title": "Accessories & More",
+  "descriptionHtml": "<p>Practical accessories and smart gadgets for everyday life.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "fordon-belysning": {
+  "title": "Vehicles & Lighting",
+  "descriptionHtml": "<p>Accessories and LED lighting for cars, motorcycles, ATVs and trucks – work lights, light bars and vehicle accessories.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "bestsaljare": {
+  "title": "Best Sellers",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "golf-sport": {
+  "title": "Golf & Sports",
+  "descriptionHtml": "<p>Everything for the round of golf and for training – from ball pickers to shoe bags and practice nets.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "skor-klader": {
+  "title": "Shoes & Clothing",
+  "descriptionHtml": "<p>Comfortable shoes, slippers and clothes for everyday life, work and the outdoors.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "hem-forvaring": {
+  "title": "Home & Storage",
+  "descriptionHtml": "<p>Smart solutions that bring order to your home – storage, household and practical everyday helpers.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "elektronik-mobil": {
+  "title": "Electronics & Mobile",
+  "descriptionHtml": "<p>Mobile accessories, stands and smart electronics for home, office and travel.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "cykel": {
+  "title": "Cycling",
+  "descriptionHtml": "<p>Accessories and clothing for your bike ride – from mudguards to padded shorts.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "din-gratisprodukt": {
+  "title": "Your Free Product",
+  "descriptionHtml": "<p><strong>Have you shopped with us before?</strong> Then you get one of the products below for free with your next purchase — which one is decided by the <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">lucky wheel</a>.</p>\n<p>How it works: <a href=\"https://baverbutiken.se/pages/din-gratisprodukt\">spin the wheel</a>, add your prize to the cart and spend at least SEK 299 more. The code <strong>TACKIGEN</strong> is applied automatically and the prize costs SEK 0 at checkout. If only the prize is in your cart, it stays at full price until you have added items worth SEK 299.</p>\n<p>Valid once per customer, for customers who have placed at least one order with Beaver Store before, using the same email address as on their previous order.</p>",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "alla-produkter": {
+  "title": "All Products",
+  "descriptionHtml": "",
+  "seo_title": null,
+  "seo_description": null
+ },
+ "adventskalendrar": {
+  "title": "Advent Calendars",
+  "descriptionHtml": "<p>Pre-filled and empty advent calendars – one door a day until Christmas Eve.</p>",
+  "seo_title": null,
+  "seo_description": null
+ }
+}

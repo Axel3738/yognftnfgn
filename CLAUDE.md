@@ -1144,6 +1144,34 @@ där — aldrig båda.
 
 ---
 
+## `worldwide/` — Bäverbutiken i hela världen som Beaver Store (NY 2026-09-30)
+
+Axels `/goal` 2026-09-30: vinnarprodukterna och deras topp 5–10 annonser utomlands,
+Shopify Markets för alla länder, sajten på engelska med priser och logga, domänen
+**beaverstoreco.com**, vinkeln "A Swedish brand" och fri frakt-raden för varje land utom
+Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
+
+- **Samma Shopify-butik och samma pixel som baverbutiken.se** (`4snrw0-mg`, pixel
+  `1554276343018184`) — köpen är Bäverbutikens. En ny marknad **Worldwide** (37 länder i
+  `worldwide/konfig.json`, USD bas + lokala valutor, fri frakt 5–10 arbetsdagar). ⛔ NO, DK
+  och FI har egna Bäverbutiker och ligger aldrig i Worldwide (testat); Sverige rörs aldrig.
+- **Temat är patchat i det publicerade temat** med ett världsläge (`worldwide/tema/patch.mjs`,
+  `snippets/bw-lage.liquid`) som bara tar på engelska eller på beaverstoreco.com: loggan
+  Beaver Store, "A Swedish brand", fri frakt till kundens land (bara i marknaden worldwide).
+  Den svenska sidan mätt ordagrant oförändrad. En ny temaversion ⇒ kör patchen igen.
+- **Shopify-stegen (marknad, språk, frakt, översättningar, domän) väntar på appens
+  rättigheter** — "Bäver uppladdare" saknade markets/translations/locales/shipping 2026-09-30;
+  `worldwide/cowork/1-app-och-doman.txt` lägger till dem, sedan `node worldwide/bygg.mjs --alla --skarpt`
+  och `node worldwide/kundvy.mjs`.
+- **Annonserna ligger i Magiborsten UK `1107817401910319`** med prefixet `BEAVERSTORE_WW_`,
+  en CBO per produkt, allt PAUSED, platshållarbudget som `--aktivera` vägrar tills Axel sagt en
+  budget. Sidan BeaverShop `1305042582683792`. Taköverdraget och termoskyddet visas inte i
+  CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`,
+  aldrig bildmodellen); videorna har engelska manus men renderas med ElevenLabs först när
+  kvoten räcker (`annonser/video.mjs` vägrar annars — `/translate-no` delar kontot).
+
+---
+
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)
 
 Axels beställning 2026-09-27: "en rutin som trackar allt i min business och
@@ -1754,6 +1782,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Kommentarsgranskningen: annonskommentarer → allvarligt, köpfrågor, invändningar, leads** (konton, domäner, sidor = facit för verksamheten) | `kommentarer/` — `README.md`, `konfig.json`, `leads.md`, `rapporter/`; kommandot `/kommentarer` |
 | **Akutlarmet: det som bara Axel kan påverka → Slack `#urgent`** (kanal-id, trösklar och vilket konto som bär vilken rutin) | `akut/` — `README.md`, `konfig.json`, `kontroller.mjs` (reglerna), `data/larm.json` (minnet); kommandot `/akut` |
 | **Matstrumpor: uppladdaren + den lilla kungen** (konto "nya kungen", break-even, namnmotor, jul-routing, lärdomarna) | `matstrumpor/` — `README.md`, `konfig.json`; produktminnet i `products/matstrumpor/` |
+| **Bäverbutiken worldwide: Beaver Store på beaverstoreco.com** (marknaden, engelskan, temats världsläge, annonserna i Magiborsten UK, Cowork-prompten) | `worldwide/` — `README.md`, `konfig.json`, `bygg.mjs`, `kundvy.mjs`, `tema/patch.mjs`, `annonser/`, `cowork/1-app-och-doman.txt` |
 | **Matstrumpors Trustpilot på sajten** (Axels beställning 2026-09-29: startsidan, produktsidan, varukorgslådan, korgen, kollektionen — temat ritar självt, gratisplanen ger inga TrustBox-widgetar; betyget + omdömena i shop-metafältet `matstrumpor.trustpilot`, uppdateras varje morgon av `/matstrumporkungen` steg 0) | `matstrumpor/trustpilot.mjs`, `matstrumpor/trustpilot/` (`data.json` minnet, `sprak.json`, temafilerna); `README.md` → "Trustpilot på sajten" |
 | **Konkurrentdödaren: kopior av våra produktsidor och annonser → bevis → varningsbrev + faktura som Axel godkänner, från Stonebite-Gmail → Meta-anmälan per annons, inskickad härifrån efter hans ok** (ärendena är kvittot; sändpaketet och anmälningarna i `arenden/<id>/`) | `konkurrenter/` — `README.md`, `konfig.json` (avsändare, faktura, CPM-reserv, IBAN, undertecknare, Axels trösklar `trosklar.annons`), `arenden.jsonl`, `arenden/<id>.md`, `adlibrary.mjs` (läser annonsbiblioteket härifrån), `annonsfall.mjs` (ärende ur konkurrentens annonser + `vardAttJaga`), `faktura.mjs`, `cpm.mjs`, `anmalan.mjs` + `bevisbild.mjs` + `anmal-skicka.mjs` (Meta-anmälan per annons, formuläret härifrån), `klipp.mjs` (bevisrutorna ur våra egna klipp — deras film mot alla våra), `original.mjs` (våra originalannonser i annonsbiblioteket — exempelfältet i Metas formulär), `externa.mjs` + `externa/<id>.json` (klipp vi vet INTE är våra — utesluts ur par, andel och original; `--extern <länk>`), `cowork/1-annonser.txt` (reserv); alla varumärken och språk i `konfig.json → verksamheter`; kommandot `/konkurrentdodaren` |
 | Namnkonventionen | `docs/naming-convention.md` |

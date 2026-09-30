@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:04,600
+579 kronor. Ordinarie pris 965 kronor.
+
+2
+00:00:04,760 --> 00:00:07,840
+40 % rabatt, redan avdraget i priset.
+
+3
+00:00:08,000 --> 00:00:10,240
+Ingen kod behövs. Ingen deadline.
+
+4
+00:00:10,400 --> 00:00:13,520
+Bara ett bra pris på ett bra skydd. Handla nu!
