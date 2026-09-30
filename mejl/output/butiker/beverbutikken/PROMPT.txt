@@ -42,7 +42,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakken din er på vei` | `BB-` och `sha256` | **10 426** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/fraktbekraftelse.liquid |
+| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakken din er på vei` | `BB-` och `sha256` | **10 442** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/fraktbekraftelse.liquid |
 | 2 | **Leveransuppdatering / Shipping update** | `Ny info om pakken din` | `BB-` och `sha256` | **6 230** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/fraktuppdatering.liquid |
 | 3 | **Ute för leverans / Out for delivery** | `Pakken kommer i dag` | `BB-` och `sha256` | **6 233** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/ute_for_leverans.liquid |
 

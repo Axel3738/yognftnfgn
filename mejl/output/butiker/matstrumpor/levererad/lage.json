@@ -1,0 +1,135 @@
+{
+  "butik": "matstrumpor",
+  "lage": "skarpt",
+  "tid": "2026-09-30T18:18:44.216Z",
+  "rader": [
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "zh-TW",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "您的訂單已取消。",
+          "lage": "bytt",
+          "antal": 1
+        },
+        {
+          "gammal": "您",
+          "lage": "bytt",
+          "antal": 18
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "ja",
+      "key": "title",
+      "gjort": [
+        {
+          "gammal": "注文番号 {{ name }} が発送されました",
+          "lage": "bytt",
+          "antal": 1
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "ja",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "配送済み",
+          "lage": "bytt",
+          "antal": 6
+        },
+        {
+          "gammal": "配達状況を確認するために荷物を追跡する。",
+          "lage": "bytt",
+          "antal": 3
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "nb",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "mottatt pakken din enda?",
+          "lage": "bytt",
+          "antal": 1
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "fr",
+      "key": "title",
+      "gjort": [
+        {
+          "gammal": "Une commande {{ name }} a été livrée",
+          "lage": "bytt",
+          "antal": 1
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "fr",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "suivi:",
+          "lage": "bytt",
+          "antal": 3
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "zh-TW",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "您",
+          "lage": "bytt",
+          "antal": 4
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "nb",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "Har du ikke motatt bestillingen din?",
+          "lage": "bytt",
+          "antal": 1
+        }
+      ],
+      "andrad": true
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "fr",
+      "key": "body_html",
+      "gjort": [
+        {
+          "gammal": "suivi:",
+          "lage": "bytt",
+          "antal": 3
+        }
+      ],
+      "andrad": true
+    }
+  ],
+  "fel": 0
+}
