@@ -2940,3 +2940,22 @@ ingen läser felraden. Räkna med 10–25 min för en runda när kontot är stry
 
 Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på
 Axels besked, obesvarat sedan 2026-09-23.
+
+---
+
+## USA-runda 17 — 2026-09-30 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i BÅDA statusarna.** `SE-ACTIVE to be translated` 0 rader,
+`Approved` 72 rader där varje rad redan bär sin US-annons (0 eftersläpande).
+Ingenting översatt, ingenting laddat upp, ingen HeyGen-kredit rörd.
+
+Marknadsvakten kördes ändå (den dagen är den hela poängen med rutinen):
+12 av 12 adsets rätt placeringar, 87 annonser ACTIVE, budget 8 000 kr/dag,
+**spend i går 7 968 kr och i dag 4 257 kr — allt i tillåtna placeringar**,
+startsida, landningssida, produktsida och kassa engelska, kassan förvalde
+United States. Inget larm.
+
+Oförändrat: den ursprungliga `CARASHELL_US_Taköverdrag …` står PAUSED med
+2 246 kr spend (ägarens beslut), och kampanjen har fortfarande två adsets för
+samma vinkel (`CARASHELL_US_GT` och `CARASHELL_US_G`) som delar vinkelns
+budget i CBO:n.
