@@ -1,0 +1,585 @@
+{
+  "sprak": "fi",
+  "ui": {
+    "hej_reserv": "Hei",
+    "du_reserv": "sinä",
+    "medlem_reserv": "Jäsen",
+    "medlemskort": "Jäsenkortti",
+    "medlem_i": "Jäsenyys: {klubb}",
+    "knapp_till": "Tuotteeseen",
+    "knapp_kassa": "Takaisin kassalle",
+    "knapp_titta": "Katso uudelleen",
+    "knapp_betyg": "Anna arvosanasi",
+    "ms_rad": "Paketin numero, joka alkaa MS, löytyy sähköpostista, jossa kerrotaan paketin lähteneen matkaan.",
+    "fakta_retur_rubrik": "Peruuttamisoikeus",
+    "fakta_sparning_rubrik": "Seuraa pakettia",
+    "fakta_sparning_text": "Seuraa sitä koko matkan",
+    "grundare": "perustaja",
+    "verifierad": "vahvistettu asiakas",
+    "verifierad_ensam": "Vahvistettu asiakas",
+    "fakta_retur_text": "30 päivän palautusoikeus",
+    "oversatt": "käännetty ruotsista",
+    "klubb": "Matstrumpor-klubi"
+  },
+  "citat": {
+    "0cc5d9cab945": "Sukkapaketit olivat niin hauskoja antaa lahjaksi lapsille ja lapsenlapsille! Ja mitä olen jälkeenpäin kuullut, laatukin oli hyvä!",
+    "1f16cc42983e": "Tosi mukavat sukat",
+    "af7d51d6f01d": "Ihanat sukat, saaja ilahtui kovasti.",
+    "c0a92758da0e": "Tosi hienot hauskassa pakkauksessa! Nopea toimitus"
+  },
+  "mejl": {
+    "k01-de-tror-att-det-ar-sushi": {
+      "kalla": "12fd0d6076d0",
+      "amne": "He katsovat kahdesti ja alkavat nauraa",
+      "forhandstext": "Viisi paria sukkia on siinä, missä sushipalojen pitäisi olla.",
+      "block": [
+        {
+          "rubrik": "Näyttää sushilta. On sukkia.",
+          "text": "Hei {{fornamn}},\n\nLaatikko avataan kuin sushitilaus. Viisi paria sukkia on rullattu sushipaloiksi, ja vieressä on syömäpuikot.",
+          "knapp.text": "Katso sushilaatikko"
+        },
+        {
+          "text": "Se, joka avaa laatikon, luulee ensin, että siinä on oikeaa sushia.\n\nSitten hän tajuaa, mitä se oikeasti on, ja katsoo vielä kerran."
+        },
+        {
+          "rubrik": "Tämä on laatikossa",
+          "punkter": [
+            "Viisi paria sukkia, rullattuna sushipaloiksi.",
+            "Laatikko näyttää noutoruoalta, kunnes se avataan.",
+            "Puiset syömäpuikot kuuluvat mukaan.",
+            "Yksi koko 36-44 (EU-koko)."
+          ]
+        },
+        {},
+        {
+          "text": "Viisi paria laatikossa, joka on tehty huijaamaan silmää.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {}
+      ]
+    },
+    "k02-ingen-jublar-at-tvattmedel": {
+      "kalla": "8d8d1af7f269",
+      "amne": "Kukaan ei riemuitse pesuaineesta",
+      "forhandstext": "Hauska avattaessa. Käytännöllinen seuraavana päivänä.",
+      "block": [
+        {
+          "rubrik": "Tylsä toimii. Hauska unohtuu.",
+          "text": "Hei {{fornamn}},\n\nKäytännöllinen lahja avataan hiljaisuudessa. Vitsilahja makaa laatikossa jo huomenna.",
+          "knapp.text": "Katso laatikko"
+        },
+        {
+          "text": "Tämä on hauska illalla ja jalassa huomenna."
+        },
+        {
+          "text": "Viisi paria laatikossa, joka näyttää oikealta sushilta.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "rubrik": "Seuraavalle ihmiselle"
+        },
+        {}
+      ]
+    },
+    "k03-kundernas-ord": {
+      "kalla": "89f0038718bf",
+      "amne": "Arvostelut kertovat, että saaja ilahtui",
+      "forhandstext": "Keskiarvo 4,5 viidestä, eikä sanaakaan keksittyä.",
+      "block": [
+        {
+          "rubrik": "Tämän asiakkaat kirjoittivat",
+          "text": "Oikeita ostajia, oikeita sanoja. Mikään tässä ei ole keksittyä."
+        },
+        {},
+        {
+          "text": "Viisi paria sukkia, rullattuna kuin sushi, laatikossa, joka huijaa silmää.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {}
+      ]
+    },
+    "k04-fars-dag-bestall-senast-24-okt": {
+      "kalla": "a3433ff29791",
+      "amne": "Tilaa hyvissä ajoin lahjaksi",
+      "forhandstext": "Kannattaa tilata ajoissa.",
+      "block": [
+        {
+          "rubrik": "Tilaa hyvissä ajoin lahjaksi",
+          "text": "Hei {{fornamn}},\n\nJos paketti on tarkoitus antaa lahjaksi, kannattaa tilata hyvissä ajoin.",
+          "knapp.text": "Katso lahja"
+        },
+        {
+          "text": "Ajoissa tilaamalla lahjan ehtii valmistella rauhassa."
+        },
+        {
+          "text": "Viisi paria, jotka tekevät lahjasta vaikean arvata etukäteen.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "rubrik": "Jos saaja haluaisi mieluummin jotain muuta"
+        },
+        {}
+      ]
+    },
+    "k05-julstrumpan": {
+      "kalla": "2d2d53fa582e",
+      "amne": "Arvaa, mitä laitoin joulusukkaan",
+      "forhandstext": "Pieni laatikko. Iso arvaus.",
+      "block": [
+        {
+          "rubrik": "Se mahtuu joulusukkaan",
+          "text": "Hei {{fornamn}},\n\nPieni laatikko. Sisällä on viisi paria sukkia ja syömäpuikot.\n\nJuuri sopiva koko joulusukkaan.",
+          "knapp.text": "Katso sushilaatikko"
+        },
+        {
+          "text": "Se näyttää noutoruoalta. Kukaan ei arvaa oikein, ennen kuin se avataan."
+        },
+        {
+          "rubrik": "Miksi se mahtuu",
+          "punkter": [
+            "Laatikko on tarpeeksi pieni joulusukkaan.",
+            "Viisi paria sukkia, rullattuna kuin sushi.",
+            "Puiset syömäpuikot kuuluvat mukaan."
+          ]
+        },
+        {
+          "text": "Sama laatikko, nyt joulusukassa.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {},
+        {}
+      ]
+    },
+    "k06-slut-i-november-forra-aret": {
+      "kalla": "a46dc7445b89",
+      "amne": "Sushilaatikko myytiin loppuun viime marraskuussa",
+      "forhandstext": "Laatikot loppuivat ennen kuin joulukauppa oli päässyt vauhtiin.",
+      "block": [
+        {
+          "rubrik": "Viime marraskuussa myimme loppuun",
+          "text": "Hei {{fornamn}},\n\nViime marraskuussa sushilaatikko myytiin loppuun. Emme tiedä, käykö niin uudelleen, mutta jos aiot joka tapauksessa ostaa jouluksi, nyt voi olla hyvä hetki.",
+          "knapp.text": "Katso sushilaatikko"
+        },
+        {
+          "text": "Sama laatikko, joka myytiin loppuun viime marraskuussa.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "rubrik": "Jos haluat toisen mallin"
+        },
+        {}
+      ]
+    },
+    "k07-tva-lador-tva-personer": {
+      "kalla": "ed6617a35935",
+      "amne": "Osta 1, saat 1, kahdelle eri ihmiselle",
+      "forhandstext": "Kaksi saajaa, yksi ostos, ei säätöä.",
+      "block": [
+        {
+          "rubrik": "Kaksi laatikkoa, kaksi ihmistä listalla",
+          "text": "Hei {{fornamn}},\n\nUseimmissa tilauksissa on kaksi laatikkoa. Yksi äidille, yksi veljelle. Yksi sinulle, yksi jollekulle toiselle.\n\nOsta 1, saat 1, se lukee tuotesivulla.",
+          "knapp.text": "Katso sushilaatikko"
+        },
+        {
+          "rubrik": "Kaksi ihmistä listalla",
+          "punkter": [
+            "Äiti ja veli.",
+            "Työkaveri ja kumppani.",
+            "Lapset ja isoisä."
+          ]
+        },
+        {
+          "text": "Yksi laatikko lisää kaupan päälle, kuten tuotesivulla lukee.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "rubrik": "Muut mallit, sama tarjous tuotesivulla"
+        },
+        {}
+      ]
+    },
+    "k08-julklappsguide": {
+      "kalla": "65a6f3871101",
+      "amne": "Sushi, pizza, hampurilainen, donitsi. Yksi lista.",
+      "forhandstext": "Neljä mallia, neljä saajaa, kaikki yhdessä paikassa.",
+      "block": [
+        {
+          "rubrik": "Sushia yhdelle, pizzaa toiselle",
+          "text": "{{fornamn}}, tässä neljä mallia neljälle eri ihmiselle. Sushia sille, joka tykkää sushista tai joka ei ikinä arvaisi, mitä laatikossa on. Pizzaa sille, joka jakaa kaikkensa. Hampurilaista veljelle tai isälle. Donitsia lapsille.",
+          "knapp.text": "Katso koko opas"
+        },
+        {
+          "text": "Kenenkään ei tarvitse etsiä ikuisuuksia. Tässä on neljä ehdotusta, yksi jokaiselle listan ihmistyypille."
+        },
+        {
+          "text": "Sille, joka rakastaa sushia, tai sille, joka ei ikinä arvaisi, mitä laatikossa on.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "text": "Neljä paria pizzalaatikossa, sille, joka jakaa kaikkensa.",
+          "knapp": "Pizzalaatikkoon"
+        },
+        {
+          "text": "Kaksi paria hampurilaislaatikossa, veljelle tai isälle.",
+          "knapp": "Hampurilaislaatikkoon"
+        },
+        {
+          "text": "Kolme paria rullattuna kuin donitsit, lapsille.",
+          "knapp": "Donitsilaatikkoon"
+        },
+        {
+          "text": null
+        },
+        {}
+      ]
+    },
+    "k09-black-week-start": {
+      "kalla": "998439a85e93",
+      "amne": "Alennuksesi lasketaan automaattisesti kassalla",
+      "forhandstext": "10, 20 tai 30 prosenttia. Riippuu vain siitä, kuinka paljon ostoskorissa on.",
+      "block": [
+        {
+          "rubrik": "Mitä enemmän tuotteita ostoskorissa, sitä isompi alennus, koko viikon",
+          "text": "{{fornamn}}, tämän viikon ajan kassa laskee alennuksesi automaattisesti sen mukaan, montako tuotetta ostoskorissa on. Yksi tuote antaa 10 %, kaksi tuotetta 20 %, kolme tai useampi 30 %. Koodia ei tarvita, alennus vähennetään suoraan kassalla.",
+          "knapp.text": "Katso koko valikoima"
+        },
+        {
+          "rubrik": "Näin porrastus toimii",
+          "punkter": [
+            "1 tuote: 10 % alennus",
+            "2 tuotetta: 20 % alennus",
+            "3 tuotetta tai enemmän: 30 % alennus"
+          ]
+        },
+        {
+          "rubrik": "Yhdistä ja saat seuraavan tason"
+        },
+        {}
+      ]
+    },
+    "k10-black-friday": {
+      "kalla": "6819d8838ab1",
+      "amne": "Black Friday: alennus on yhä voimassa",
+      "forhandstext": "Tänään on Black Friday, ja porrastettu alennus on yhä voimassa.",
+      "block": [
+        {
+          "rubrik": "Black Friday. Porrastettu alennus on yhä voimassa.",
+          "text": "{{fornamn}}, tänään on Black Friday, ja porrastettu alennus on yhä voimassa. Yksi tuote antaa 10 %, kaksi 20 %, kolme tai useampi 30 %, ja kassa laskee sen puolestasi.",
+          "knapp.text": "Valikoimaan"
+        },
+        {
+          "rubrik": "Täytä ostoskori seuraavaa tasoa varten"
+        },
+        {
+          "rubrik": "Muista: näin porrastus toimii",
+          "punkter": [
+            "1 tuote: 10 % alennus",
+            "2 tuotetta: 20 % alennus",
+            "3 tuotetta tai enemmän: 30 % alennus"
+          ]
+        },
+        {}
+      ]
+    },
+    "k11-bestall-senast-8-dec": {
+      "kalla": "bb81cc21898a",
+      "amne": "Tilaa hyvissä ajoin ennen joulua",
+      "forhandstext": "Kannattaa tilata hyvissä ajoin ennen joulua.",
+      "block": [
+        {
+          "rubrik": "Tilaa hyvissä ajoin ennen joulua",
+          "text": "{{fornamn}}, jos haluat antaa sukat joululahjaksi, tilaa hyvissä ajoin.",
+          "knapp.text": "Tilaa hyvissä ajoin"
+        },
+        {
+          "rubrik": "Neljä ehdotusta, heti valmiina"
+        },
+        {}
+      ]
+    },
+    "k12-sista-dagen-idag": {
+      "kalla": "56e82e349de8",
+      "amne": "Tänään on hyvä päivä tilata jouluksi",
+      "forhandstext": "Älä jätä joululahjatilausta viime hetkeen.",
+      "block": [
+        {
+          "rubrik": "Tänään on hyvä päivä tilata joululahja",
+          "text": "{{fornamn}}, jos haluat antaa sukat joululahjaksi, tilaa hyvissä ajoin, älä jätä sitä viime hetkeen.",
+          "knapp.text": "Tilaa tänään"
+        },
+        {
+          "text": "Viisi paria laatikossa, joka näyttää suoraan ravintolasta haetulta.",
+          "knapp": "Sushilaatikkoon"
+        },
+        {
+          "rubrik": "Tai yksi kolmesta muusta"
+        },
+        {}
+      ]
+    },
+    "k13-presentkortet": {
+      "kalla": "495e5de80fa5",
+      "amne": "Lahja, joka ehtii perille silti",
+      "forhandstext": "Lahjakortti tulee perille sähköpostilla, vaikka aika käy vähiin.",
+      "block": [
+        {
+          "rubrik": "Onko aika käymässä vähiin?",
+          "text": "Jos sukkien ehtiminen perille huolettaa, heti sähköpostilla lähetettävä lahja ratkaisee asian."
+        },
+        {
+          "text": "Saaja valitsee itse, mitä haluaa, koko kaupasta.",
+          "knapp": "Osta lahjakortti"
+        },
+        {
+          "rubrik": "Näin se toimii",
+          "text": "Lahjakortti lähetetään digitaalisesti sähköpostilla, ja saaja lunastaa sen koodilla kaupassa. Ei jonoa, ei pakettia, jonka pitäisi ehtiä perille."
+        },
+        {}
+      ]
+    },
+    "k14-vem-har-fodelsedag-harnast": {
+      "kalla": "54b4099890b8",
+      "amne": "Kenellä on seuraavaksi syntymäpäivä?",
+      "forhandstext": "Joulu on ohi. Seuraava tilaisuus ei ole kaukana.",
+      "block": [
+        {
+          "rubrik": "Kenellä on syntymäpäivä seuraavaksi?",
+          "text": "{{fornamn}}, joulu on ohi, mutta lahjojen ei tarvitse olla. Listan seuraava syntymäpäivä on aina lähempänä kuin luulet.",
+          "knapp.text": "Katso kaikki mallit"
+        },
+        {
+          "text": "Ruoalta näyttävä laatikko toimii tammikuussa yhtä hyvin kuin joulukuussa."
+        },
+        {
+          "rubrik": "Neljä mallia, valmiina milloin tahansa"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e1": {
+      "kalla": "8f76ff1e7861",
+      "amne": "Sinut on hyväksytty Matstrumpor-klubiin",
+      "forhandstext": "Paikkasi ja korttisi odottavat täällä.",
+      "block": [
+        {
+          "rubrik": "Sinut on hyväksytty klubiin",
+          "text": "Paikkasi Matstrumpor-klubissa on valmis. Liityit mukaan, joten se on sinun.\n\nMyymme sukkia, jotka näyttävät sushilta, pizzalta, hampurilaisilta ja donitseilta.\n\nNämä sähköpostit lähetetään vain klubin jäsenille.",
+          "knapp.text": "Katso kaikki laatikot"
+        },
+        {
+          "etikett": "JÄSENKORTTI",
+          "rad_under_namnet": "Jäsenyys: Matstrumpor-klubi",
+          "fotnot": "Kassalla kukaan ei pyydä tätä korttia."
+        },
+        {
+          "rubrik": "Tämän saavat vain jäsenet",
+          "punkter": [
+            null,
+            "Sähköposti Black Weekistä, vain jäsenille.",
+            "Asiakkaiden oikeat sanat sanasta sanaan, ilman että sinun tarvitsee etsiä.",
+            "Mitä laatikossa on, näytettynä ennen kuin päätät."
+          ]
+        },
+        {
+          "rubrik": "Sushia, donitsia ja pizzaa"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e2": {
+      "kalla": "8e16702c6ea6",
+      "amne": "Tämän asiakkaat kirjoittivat",
+      "forhandstext": "Kahdeksan arvostelua, keskiarvo 4,5. Emme ole kirjoittaneet yhtäkään niistä.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Muita malleja lahjaksi annettavaksi"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e3": {
+      "kalla": "63adf86bf305",
+      "amne": "Näin tilaaminen toimii",
+      "forhandstext": "Toimitus, seuranta ja palautus, lyhyesti ja selkeästi.",
+      "block": [
+        {
+          "rubrik": "Näin tilaaminen toimii",
+          "text": "Paketillesi annetaan oma numero, joka alkaa kirjaimilla MS. Löydät sen seurantasivulta, ja siellä näet myös, missä paketti on matkalla.\n\nJos kadut ostosta, palautus on mahdollinen. Tiedot löydät alla olevasta ruudusta. Jos sinulla on kysyttävää, lähetä sähköpostia osoitteeseen kundsupport@matstrumpor.se, niin saat vastauksen."
+        },
+        {},
+        {
+          "text": "Katso kaikki, mitä myymme"
+        }
+      ]
+    },
+    "f02-overgiven-kassa-e1": {
+      "kalla": "c268b115e64a",
+      "amne": "Jotain jäi kassallesi",
+      "forhandstext": "Klikkaa takaisin, kaikki odottaa valmiina.",
+      "block": [
+        {
+          "rubrik": "Ostoskorisi on tallessa",
+          "text": "Kaikki, minkä laitoit kassalle, on tallessa. Mitään ei ole poistettu."
+        },
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e2": {
+      "kalla": "0de656842fa6",
+      "amne": "Kolme asiaa, joita ehkä mietit",
+      "forhandstext": "Koko, palautus ja keneltä voit kysyä. Lyhyet vastaukset.",
+      "block": [
+        {
+          "rubrik": "Kolme kysymystä ennen maksamista",
+          "text": "Sopivatko ne? Kyllä, yksi koko, eli 36-44.\n\nJos kadut ostosta? Palautus on mahdollinen, tiedot ovat alla olevassa ruudussa.\n\nKeneltä saa vastauksen, jos jokin menee pieleen? Lähetä sähköpostia osoitteeseen kundsupport@matstrumpor.se, saat vastauksen."
+        },
+        {},
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e3": {
+      "kalla": "2e080922dc0c",
+      "amne": "Viimeinen muistutus",
+      "forhandstext": "Tämän jälkeen emme lähetä kassasta enää sähköpostia.",
+      "block": [
+        {
+          "rubrik": "Viimeinen muistutus",
+          "text": "Viimeinen muistutus tästä. Emme lähetä sähköpostia tästä kassasta enää.\n\nJos haluat viimeistellä ostoksesi, kaikki on tallessa täsmälleen siinä, mihin sen jätit."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e1": {
+      "kalla": "70bdaded5b4d",
+      "amne": "Tätä katselit",
+      "forhandstext": "Ei myyntipuhetta. Vain tämä.",
+      "block": [
+        {
+          "text": "Katselit tätä hetki sitten."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e2": {
+      "kalla": "c18f517ea010",
+      "amne": "Olit kiinnostunut tästä",
+      "forhandstext": "Tämä, ja kolme muuta, jos tämä ei tuntunut oikealta.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Kolme muuta mallia valittavaksi"
+        }
+      ]
+    },
+    "f04-efter-kop-e1": {
+      "kalla": "8da03c073e0e",
+      "amne": "Tilauksesi on matkalla",
+      "forhandstext": "Yksi nappi, ja näet tarkalleen, missä paketti on juuri nyt.",
+      "block": [
+        {
+          "rubrik": "Tilauksesi on matkalla",
+          "text": "Paina nappia, niin näet tarkalleen, missä paketti on juuri nyt."
+        },
+        {
+          "text": "Seuraa pakettiasi"
+        },
+        {
+          "text": "Kysyttävää ennen perille tuloa? Lähetä sähköpostia osoitteeseen kundsupport@matstrumpor.se, vastaamme."
+        }
+      ]
+    },
+    "f04-efter-kop-e2": {
+      "kalla": "ded016e7c03d",
+      "amne": "Tuliko kaikki perille?",
+      "forhandstext": "Tähän mennessä paketti on yleensä ehtinyt perille.",
+      "block": [
+        {
+          "rubrik": "Tuliko kaikki perille?",
+          "text": "Tähän mennessä paketti on yleensä ehtinyt perille. Puuttuuko jotain tai näyttääkö jokin oudolta? Lähetä sähköpostia osoitteeseen kundsupport@matstrumpor.se, ratkaisemme sen."
+        },
+        {
+          "rubrik": "Seuraavalle ihmiselle"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e1": {
+      "kalla": "e31b5d1f4e7e",
+      "amne": "Kenen vuoro on saada laatikko?",
+      "forhandstext": "Ei kampanjaa, vain muistutus: saajien lista harvoin loppuu.",
+      "block": [
+        {
+          "rubrik": "Kenen vuoro?",
+          "text": "Annoit laatikon viime kerralla. Se toimii yhtä hyvin uudelleen, jollekulle toiselle listallasi."
+        },
+        {
+          "rubrik": "Neljä mallia valittavaksi"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e2": {
+      "kalla": "2273435a131d",
+      "amne": "Tämän kirjoittivat oikeat asiakkaat",
+      "forhandstext": "Kaksi ääntä, sen jälkeen et kuule tästä meiltä enempää.",
+      "block": [
+        {},
+        {
+          "text": "Viisi paria rullattuna sushipaloiksi, laatikossa, joka näyttää noutoruoalta, kunnes se avataan. Syömäpuikot kuuluvat mukaan.",
+          "knapp": "Katso sushilaatikko"
+        },
+        {}
+      ]
+    },
+    "f06-sunset-e1": {
+      "kalla": "ff33ef0d112b",
+      "amne": "Haluatko pysyä klubissa?",
+      "forhandstext": "Vastaus vie yhden klikkauksen, ei muuta.",
+      "block": [
+        {
+          "rubrik": "Haluatko pysyä Matstrumpor-klubissa?",
+          "text": "{{fornamn}}, välillämme on ollut hiljaista jo jonkin aikaa. Yksi klikkaus pitää sinut Matstrumpor-klubissa."
+        },
+        {
+          "text": "Kyllä, pidä minut mukana"
+        }
+      ]
+    },
+    "f06-sunset-e2": {
+      "kalla": "2b166f306856",
+      "amne": "Viimeinen viesti paikastasi klubissa",
+      "forhandstext": "Tämän viestin jälkeen poistamme sinut, ellemme kuule sinusta.",
+      "block": [
+        {
+          "rubrik": "Tämä on klubin viimeinen viesti",
+          "text": "{{fornamn}}, jos emme kuule sinusta nyt, poistamme sinut Matstrumpor-klubista. Yksi viimeinen klikkaus pitää sinut mukana."
+        },
+        {
+          "text": "Kyllä, säilytä paikkani"
+        }
+      ]
+    },
+    "f07-aterkop-sushi-e1": {
+      "kalla": "7eb3f48e69d1",
+      "amne": "Vielä yksi laatikko seuraavalle ihmiselle",
+      "forhandstext": "Useimmat, jotka ostavat uudelleen, valitsevat täsmälleen saman laatikon.",
+      "block": [
+        {
+          "rubrik": "Vielä yksi laatikko seuraavalle ihmiselle",
+          "text": "Useimmat, jotka ostavat vielä kerran, valitsevat täsmälleen saman sushilaatikon, jollekulle toiselle listallaan."
+        },
+        {
+          "text": "Viisi paria rullattuna sushipaloiksi, laatikossa, joka näyttää noutoruoalta, kunnes se avataan. Syömäpuikot kuuluvat mukaan.",
+          "knapp": "Katso sushilaatikko"
+        },
+        {
+          "rubrik": "Tai jokin toinen malli"
+        },
+        {}
+      ]
+    }
+  }
+}

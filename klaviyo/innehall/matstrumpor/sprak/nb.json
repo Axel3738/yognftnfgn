@@ -1,0 +1,585 @@
+{
+  "sprak": "nb",
+  "ui": {
+    "hej_reserv": "Hei",
+    "du_reserv": "du",
+    "medlem_reserv": "Medlem",
+    "medlemskort": "Medlemskort",
+    "medlem_i": "Medlem i {klubb}",
+    "knapp_till": "Til produktet",
+    "knapp_kassa": "Tilbake til kassen",
+    "knapp_titta": "Se igjen",
+    "knapp_betyg": "Gi din vurdering",
+    "ms_rad": "Pakkenummeret som starter på MS står i e-posten om at pakken er sendt.",
+    "fakta_retur_rubrik": "Angrerett",
+    "fakta_sparning_rubrik": "Spor pakken",
+    "fakta_sparning_text": "Følg den hele veien",
+    "grundare": "grunnlegger",
+    "verifierad": "verifisert kunde",
+    "verifierad_ensam": "Verifisert kunde",
+    "fakta_retur_text": "30 dagers åpent kjøp",
+    "oversatt": "oversatt fra svensk",
+    "klubb": "Matstrumpor-klubben"
+  },
+  "citat": {
+    "0cc5d9cab945": "Sokkepakkene var så morsomme å gi til barn og barnebarn i gave! Og etter det jeg har hørt var det god kvalitet også!",
+    "1f16cc42983e": "Veldig deilige sokker",
+    "af7d51d6f01d": "Nydelige sokker, mottakeren ble så glad.",
+    "c0a92758da0e": "Veldig fine i morsom innpakning! Rask levering"
+  },
+  "mejl": {
+    "k01-de-tror-att-det-ar-sushi": {
+      "kalla": "12fd0d6076d0",
+      "amne": "De titter to ganger, så ler de",
+      "forhandstext": "Fem par sokker ligger der sushibitene skulle ha vært.",
+      "block": [
+        {
+          "rubrik": "Ser ut som sushi. Er sokker.",
+          "text": "Hei {{fornamn}},\n\nEsken åpnes som en sushibestilling. Fem par sokker ligger rullet som sushibiter, med spisepinner ved siden av.",
+          "knapp.text": "Se sushiesken"
+        },
+        {
+          "text": "Den som åpner esken tror først at det er ekte sushi.\n\nSå går det opp for dem hva det egentlig er, og de titter en gang til."
+        },
+        {
+          "rubrik": "Dette ligger i esken",
+          "punkter": [
+            "Fem par sokker, rullet som sushibiter.",
+            "Esken ser ut som takeaway, helt til den åpnes.",
+            "Spisepinner i tre er med.",
+            "Én størrelse 36-44."
+          ]
+        },
+        {},
+        {
+          "text": "Fem par i en eske laget for å lure øyet.",
+          "knapp": "Til sushiesken"
+        },
+        {}
+      ]
+    },
+    "k02-ingen-jublar-at-tvattmedel": {
+      "kalla": "8d8d1af7f269",
+      "amne": "Ingen jubler over vaskemiddel",
+      "forhandstext": "Morsom når den åpnes. Nyttig dagen etter.",
+      "block": [
+        {
+          "rubrik": "Den kjedelige funker. Den morsomme glemmes.",
+          "text": "Hei {{fornamn}},\n\nEn praktisk gave rives opp i stillhet. En spøkegave ligger i en eske allerede i morgen.",
+          "knapp.text": "Se esken"
+        },
+        {
+          "text": "Denne er morsom i kveld og på føttene i morgen."
+        },
+        {
+          "text": "Fem par i en eske som ser ut som ekte sushi.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "rubrik": "Til neste person"
+        },
+        {}
+      ]
+    },
+    "k03-kundernas-ord": {
+      "kalla": "89f0038718bf",
+      "amne": "Anmeldelsene sier at mottakeren ble glad",
+      "forhandstext": "4,5 av 5 i snitt, ikke et eneste oppdiktet ord.",
+      "block": [
+        {
+          "rubrik": "Dette skrev kundene",
+          "text": "Ekte kjøpere, ekte ord. Ingenting her er diktet opp."
+        },
+        {},
+        {
+          "text": "Fem par sokker, rullet som sushi, i en eske som lurer øyet.",
+          "knapp": "Til sushiesken"
+        },
+        {}
+      ]
+    },
+    "k04-fars-dag-bestall-senast-24-okt": {
+      "kalla": "a3433ff29791",
+      "amne": "En gave til pappa? Bestill i god tid",
+      "forhandstext": "Jo tidligere du bestiller, jo mindre stress.",
+      "block": [
+        {
+          "rubrik": "Bestill i god tid",
+          "text": "Hei {{fornamn}},\n\nSkal pappa ha en gave? Da er det lurt å bestille i god tid.",
+          "knapp.text": "Se gaven"
+        },
+        {
+          "text": "Bestiller du i god tid, slipper du å stresse i siste liten."
+        },
+        {
+          "text": "Fem par som gjør gaven vanskelig å gjette på forhånd.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "rubrik": "Hvis han heller vil ha noe annet"
+        },
+        {}
+      ]
+    },
+    "k05-julstrumpan": {
+      "kalla": "2d2d53fa582e",
+      "amne": "Gjett hva jeg la i julestrømpen",
+      "forhandstext": "Liten eske. Stor gjetning.",
+      "block": [
+        {
+          "rubrik": "Den får plass i julestrømpen",
+          "text": "Hei {{fornamn}},\n\nEn liten eske. Fem par sokker og spisepinner inni.\n\nAkkurat den størrelsen en julestrømpe er laget for.",
+          "knapp.text": "Se sushiesken"
+        },
+        {
+          "text": "Den ser ut som takeaway. Ingen gjetter riktig før den åpnes."
+        },
+        {
+          "rubrik": "Hvorfor den får plass",
+          "punkter": [
+            "Esken er liten nok til en julestrømpe.",
+            "Fem par sokker, rullet som sushi.",
+            "Spisepinner i tre følger med."
+          ]
+        },
+        {
+          "text": "Samme eske, nå i julestrømpen.",
+          "knapp": "Til sushiesken"
+        },
+        {},
+        {}
+      ]
+    },
+    "k06-slut-i-november-forra-aret": {
+      "kalla": "a46dc7445b89",
+      "amne": "Sushiesken ble utsolgt i november i fjor",
+      "forhandstext": "Eskene tok slutt i november, før julehandelen kom i gang.",
+      "block": [
+        {
+          "rubrik": "I november i fjor ble vi utsolgt",
+          "text": "Hei {{fornamn}},\n\nI november 2025 ble sushiesken utsolgt. Vi vet ikke om det skjer igjen, men hvis du uansett tenkte å kjøpe til jul, kan det være lurt å gjøre det nå.",
+          "knapp.text": "Se sushiesken"
+        },
+        {
+          "text": "Samme eske som ble utsolgt i fjor november.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "rubrik": "Hvis du vil ha en annen variant"
+        },
+        {}
+      ]
+    },
+    "k07-tva-lador-tva-personer": {
+      "kalla": "ed6617a35935",
+      "amne": "Kjøp 1, få 1, til to ulike personer",
+      "forhandstext": "To mottakere, ett kjøp, null styr.",
+      "block": [
+        {
+          "rubrik": "To esker, to personer på listen",
+          "text": "Hei {{fornamn}},\n\nDe fleste bestillinger inneholder to esker. En til mamma, en til broren. En til deg, en til noen andre.\n\nKjøp 1, få 1, det står på produktsiden.",
+          "knapp.text": "Se sushiesken"
+        },
+        {
+          "rubrik": "To personer på listen",
+          "punkter": [
+            "Mamma og broren.",
+            "Kollegaen og partneren.",
+            "Barna og bestefar."
+          ]
+        },
+        {
+          "text": "En eske til på kjøpet, som det står på produktsiden.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "rubrik": "Andre varianter, samme tilbud på produktsiden"
+        },
+        {}
+      ]
+    },
+    "k08-julklappsguide": {
+      "kalla": "65a6f3871101",
+      "amne": "Sushi, pizza, burger, donut. Én liste.",
+      "forhandstext": "Fire varianter, fire mottakere, alt på ett sted.",
+      "block": [
+        {
+          "rubrik": "Sushi til én, pizza til en annen",
+          "text": "{{fornamn}}, fire varianter i esken, fire ulike personer å gi til. Sushi til den som liker sushi, eller aldri ville gjettet hva som er i esken. Pizza til den som deler med seg av alt. Burger til broren eller pappa. Donut til barna.",
+          "knapp.text": "Se hele guiden"
+        },
+        {
+          "text": "Ingen trenger å lete i evigheter. Her er fire forslag, ett for hver type person på listen."
+        },
+        {
+          "text": "Til den som elsker sushi, eller til den som aldri ville gjettet hva som er i esken.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "text": "Fire par i en pizzaeske, til den som deler med seg av alt.",
+          "knapp": "Til pizzaesken"
+        },
+        {
+          "text": "To par i en burgerboks, til broren eller pappa.",
+          "knapp": "Til burgeresken"
+        },
+        {
+          "text": "Tre par rullet som donuts, til barna.",
+          "knapp": "Til donutesken"
+        },
+        {
+          "text": null
+        },
+        {}
+      ]
+    },
+    "k09-black-week-start": {
+      "kalla": "998439a85e93",
+      "amne": "Rabatten din regnes ut automatisk i kassen",
+      "forhandstext": "10, 20 eller 30 prosent. Det avhenger bare av hvor mye som ligger i handlekurven.",
+      "block": [
+        {
+          "rubrik": "Flere varer i handlekurven gir mer rabatt i Black Week",
+          "text": "{{fornamn}}, i Black Week regner kassen ut rabatten din automatisk, ut fra hvor mange varer som ligger i handlekurven. En vare gir 10 %, to varer gir 20 %, tre eller flere gir 30 %. Ingen kode trengs, den trekkes direkte i kassen.",
+          "knapp.text": "Se hele sortimentet"
+        },
+        {
+          "rubrik": "Slik fungerer det",
+          "punkter": [
+            "1 vare: 10 % rabatt",
+            "2 varer: 20 % rabatt",
+            "3 varer eller flere: 30 % rabatt"
+          ]
+        },
+        {
+          "rubrik": "Kombiner for neste nivå"
+        },
+        {}
+      ]
+    },
+    "k10-black-friday": {
+      "kalla": "6819d8838ab1",
+      "amne": "Black Friday: rabatten gjelder fortsatt",
+      "forhandstext": "Black Friday i dag, og rabatten gjelder fortsatt.",
+      "block": [
+        {
+          "rubrik": "Black Friday. Rabatten gjelder fortsatt.",
+          "text": "{{fornamn}}, i dag er det Black Friday, og rabatten gjelder fortsatt. En vare gir 10 %, to gir 20 %, tre eller flere gir 30 %, og kassen regner det ut for deg.",
+          "knapp.text": "Til sortimentet"
+        },
+        {
+          "rubrik": "Fyll handlekurven for neste nivå"
+        },
+        {
+          "rubrik": "Husk: slik fungerer det",
+          "punkter": [
+            "1 vare: 10 % rabatt",
+            "2 varer: 20 % rabatt",
+            "3 varer eller flere: 30 % rabatt"
+          ]
+        },
+        {}
+      ]
+    },
+    "k11-bestall-senast-8-dec": {
+      "kalla": "bb81cc21898a",
+      "amne": "Bestill i god tid før jul",
+      "forhandstext": "Jo tidligere du bestiller, jo bedre.",
+      "block": [
+        {
+          "rubrik": "Bestill i god tid før jul",
+          "text": "{{fornamn}}, vil du gi bort sokker til jul, er det lurt å bestille i god tid.",
+          "knapp.text": "Bestill i god tid"
+        },
+        {
+          "rubrik": "Fire forslag, klare med en gang"
+        },
+        {}
+      ]
+    },
+    "k12-sista-dagen-idag": {
+      "kalla": "56e82e349de8",
+      "amne": "Julen nærmer seg",
+      "forhandstext": "Bestill i god tid før jul.",
+      "block": [
+        {
+          "rubrik": "Bestill før julestresset tar over",
+          "text": "{{fornamn}}, jo lenger du venter, desto mer stress blir det. Bestill i god tid før jul.",
+          "knapp.text": "Bestill nå"
+        },
+        {
+          "text": "Fem par i en eske som ser ut som den er tatt rett fra restauranten.",
+          "knapp": "Til sushiesken"
+        },
+        {
+          "rubrik": "Eller en av de tre andre"
+        },
+        {}
+      ]
+    },
+    "k13-presentkortet": {
+      "kalla": "495e5de80fa5",
+      "amne": "En gave som kommer på e-post",
+      "forhandstext": "Et gavekort sendes digitalt, på e-post.",
+      "block": [
+        {
+          "rubrik": "Trenger du en gave uten pakke?",
+          "text": "Et gavekort sendes direkte på e-post, uten at noe skal sendes i posten."
+        },
+        {
+          "text": "Mottakeren velger selv hva de ønsker seg, i hele butikken.",
+          "knapp": "Kjøp gavekortet"
+        },
+        {
+          "rubrik": "Slik fungerer det",
+          "text": "Gavekortet sendes digitalt, som en e-post, med en kode mottakeren løser inn i butikken. Ingen kø, ingen pakke som skal rekke frem."
+        },
+        {}
+      ]
+    },
+    "k14-vem-har-fodelsedag-harnast": {
+      "kalla": "54b4099890b8",
+      "amne": "Hvem fyller år neste gang?",
+      "forhandstext": "Julen er over. Neste anledning er ikke langt unna.",
+      "block": [
+        {
+          "rubrik": "Hvem har bursdag neste gang?",
+          "text": "{{fornamn}}, julen er over, men gavene trenger ikke være over. Neste bursdag på listen er alltid nærmere enn du tror.",
+          "knapp.text": "Se alle variantene"
+        },
+        {
+          "text": "En eske som ser ut som mat funker like bra i januar som i desember."
+        },
+        {
+          "rubrik": "Fire varianter, klare når som helst"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e1": {
+      "kalla": "8f76ff1e7861",
+      "amne": "Du er tatt opp i Matstrumpor-klubben",
+      "forhandstext": "Plassen din og kortet ditt venter her inne.",
+      "block": [
+        {
+          "rubrik": "Du er tatt opp i klubben",
+          "text": "Plassen din i Matstrumpor-klubben er klar. Du meldte deg på, så den er din.\n\nVi selger sokker som ser ut som sushi, pizza, hamburger og donuts.\n\nDisse e-postene sendes bare til medlemmer av klubben.",
+          "knapp.text": "Se alle eskene"
+        },
+        {
+          "etikett": "MEDLEMSKORT",
+          "rad_under_namnet": "Medlem i Matstrumpor-klubben",
+          "fotnot": "Ingen kassemedarbeider spør etter dette kortet."
+        },
+        {
+          "rubrik": "Dette får bare medlemmer",
+          "punkter": [
+            null,
+            "En e-post om Black Week, bare for medlemmer.",
+            "Kundenes ekte ord, ordrett, uten at du må lete.",
+            "Hva som ligger i esken, vist før du bestemmer deg."
+          ]
+        },
+        {
+          "rubrik": "Sushi, donut og pizza"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e2": {
+      "kalla": "8e16702c6ea6",
+      "amne": "Dette skrev kundene",
+      "forhandstext": "Åtte anmeldelser, snitt 4,5. Ingen er skrevet av oss.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Andre varianter å gi bort"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e3": {
+      "kalla": "63adf86bf305",
+      "amne": "Slik fungerer det når du bestiller",
+      "forhandstext": "Levering, sporing og retur, kort og tydelig.",
+      "block": [
+        {
+          "rubrik": "Slik fungerer det når du bestiller",
+          "text": "Pakken din får et eget nummer som starter på MS. Du finner det på sporingssiden, sammen med hvor pakken befinner seg.\n\nAngrer du deg, kan du returnere. Det står i boksen her under. Har du et spørsmål, send e-post til kundsupport@matstrumpor.se, så får du svar."
+        },
+        {},
+        {
+          "text": "Se alt vi selger"
+        }
+      ]
+    },
+    "f02-overgiven-kassa-e1": {
+      "kalla": "c268b115e64a",
+      "amne": "Noe ligger igjen i kassen din",
+      "forhandstext": "Klikk deg tilbake, alt ligger klart.",
+      "block": [
+        {
+          "rubrik": "Handlekurven din ligger igjen",
+          "text": "Alt du la i kassen ligger der fortsatt. Ingenting er fjernet."
+        },
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e2": {
+      "kalla": "0de656842fa6",
+      "amne": "Tre ting du kanskje lurer på",
+      "forhandstext": "Størrelse, retur og hvem du kan spørre. Kort svart.",
+      "block": [
+        {
+          "rubrik": "Tre spørsmål før du betaler",
+          "text": "Passer de? Ja, én størrelse, altså 36-44.\n\nAngrer du deg? Det finnes retur, det står i boksen her under.\n\nHvem svarer hvis noe går galt? Send e-post til kundsupport@matstrumpor.se, du får svar."
+        },
+        {},
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e3": {
+      "kalla": "2e080922dc0c",
+      "amne": "Siste påminnelse",
+      "forhandstext": "Etter dette sender vi ikke e-post om kassen igjen.",
+      "block": [
+        {
+          "rubrik": "Siste påminnelse",
+          "text": "Siste påminnelse om dette. Vi sender ikke e-post om denne kassen igjen.\n\nVil du fullføre handelen, ligger alt akkurat der du la det."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e1": {
+      "kalla": "70bdaded5b4d",
+      "amne": "Denne kikket du på",
+      "forhandstext": "Ingen salgsprat. Bare denne.",
+      "block": [
+        {
+          "text": "Denne kikket du på for en stund siden."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e2": {
+      "kalla": "c18f517ea010",
+      "amne": "Du var interessert i denne",
+      "forhandstext": "Denne, og tre andre hvis den ikke føltes riktig.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Tre andre varianter å velge mellom"
+        }
+      ]
+    },
+    "f04-efter-kop-e1": {
+      "kalla": "8da03c073e0e",
+      "amne": "Bestillingen din er på vei",
+      "forhandstext": "Én knapp, og du ser nøyaktig hvor den er akkurat nå.",
+      "block": [
+        {
+          "rubrik": "Bestillingen din er på vei",
+          "text": "Trykk på knappen, så ser du nøyaktig hvor pakken er akkurat nå."
+        },
+        {
+          "text": "Følg pakken din"
+        },
+        {
+          "text": "Spørsmål før den lander? Send e-post til kundsupport@matstrumpor.se, vi svarer."
+        }
+      ]
+    },
+    "f04-efter-kop-e2": {
+      "kalla": "ded016e7c03d",
+      "amne": "Kom alt frem som det skal?",
+      "forhandstext": "Nå pleier pakken å ha kommet frem.",
+      "block": [
+        {
+          "rubrik": "Kom alt frem?",
+          "text": "Nå pleier pakken å ha kommet frem. Mangler noe, eller ser noe rart ut? Send e-post til kundsupport@matstrumpor.se, vi ordner det."
+        },
+        {
+          "rubrik": "Til neste person"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e1": {
+      "kalla": "e31b5d1f4e7e",
+      "amne": "Hvem står for tur til en eske?",
+      "forhandstext": "Ingen kampanje, bare en påminnelse: listen med mottakere tar sjelden slutt.",
+      "block": [
+        {
+          "rubrik": "Hvem står for tur?",
+          "text": "Du ga bort en eske sist. Den funker like bra en gang til, til noen andre på listen."
+        },
+        {
+          "rubrik": "Fire varianter å velge mellom"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e2": {
+      "kalla": "2273435a131d",
+      "amne": "Dette skrev ekte kunder",
+      "forhandstext": "To røster, så hører du ikke mer om dette fra oss.",
+      "block": [
+        {},
+        {
+          "text": "Fem par rullet som sushibiter, i en eske som ser ut som takeaway helt til den åpnes. Spisepinnene følger med.",
+          "knapp": "Se sushiesken"
+        },
+        {}
+      ]
+    },
+    "f06-sunset-e1": {
+      "kalla": "ff33ef0d112b",
+      "amne": "Vil du fortsatt være med i klubben?",
+      "forhandstext": "Svaret tar ett klikk, ikke noe mer.",
+      "block": [
+        {
+          "rubrik": "Vil du fortsatt være med i Matstrumpor-klubben?",
+          "text": "{{fornamn}}, det har vært stille mellom oss en stund. Ett klikk holder deg med i Matstrumpor-klubben."
+        },
+        {
+          "text": "Ja, behold meg"
+        }
+      ]
+    },
+    "f06-sunset-e2": {
+      "kalla": "2b166f306856",
+      "amne": "Siste e-post om plassen din i klubben",
+      "forhandstext": "Etter denne e-posten fjerner vi deg, hvis vi ikke hører noe.",
+      "block": [
+        {
+          "rubrik": "Dette er siste e-post fra klubben",
+          "text": "{{fornamn}}, hører vi ikke noe nå, fjerner vi deg fra Matstrumpor-klubben. Ett siste klikk holder deg med."
+        },
+        {
+          "text": "Ja, behold meg"
+        }
+      ]
+    },
+    "f07-aterkop-sushi-e1": {
+      "kalla": "7eb3f48e69d1",
+      "amne": "En eske til, til neste person",
+      "forhandstext": "De fleste som kjøper en gang til velger nøyaktig samme eske igjen.",
+      "block": [
+        {
+          "rubrik": "En eske til, til neste person",
+          "text": "De fleste som handler en gang til velger nøyaktig samme sushieske, til noen andre på listen."
+        },
+        {
+          "text": "Fem par, rullet som sushibiter, i en eske som ser ut som takeaway helt til den åpnes. Spisepinnene følger med.",
+          "knapp": "Se sushiesken"
+        },
+        {
+          "rubrik": "Eller en annen variant"
+        },
+        {}
+      ]
+    }
+  }
+}

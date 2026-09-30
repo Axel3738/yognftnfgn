@@ -179,6 +179,11 @@ test('recensioner: källan väljs per brand, widgetens HTML blir ren text', () =
   assert.deepEqual(rader[0], { product_external_id: 1001, rating: 5, body: 'Bra', reviewer: { name: 'Kent' }, published: true, hidden: false, verified_buyer: true, anonym: false, created_at: '2026-09-25' });
   const anonym = widgetTillRader({ reviews: [{ rating: 5, body_html: 'x', reviewer_name: 'Anonym', verified_buyer: true, is_anonymous_reviewer: true }] }, 1);
   assert.equal(anonym[0].anonym, true);
+  // Formen efter 2026-09-29: reviews tom, recensionerna i två språklistor, samma uuid en gång.
+  const ny = widgetTillRader({ product_external_id: 7, reviews: [],
+    primary_language_reviews: [{ uuid: 'a', rating: 5, body_html: 'Ett', verified_buyer: true }],
+    other_language_reviews: [{ uuid: 'b', rating: 4, body_html: 'Två', verified_buyer: true }, { uuid: 'a', rating: 5, body_html: 'Ett', verified_buyer: true }] }, 7);
+  assert.deepEqual(ny.map((r) => r.body), ['Ett', 'Två']);
 });
 
 test('recensioner: judgeme-widget frågar per produkt, kopplar på Shopify-id, cachar med källan', async () => {
