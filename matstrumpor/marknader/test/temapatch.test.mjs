@@ -139,6 +139,43 @@ test('patchaPaketJs: köpknappens tre texter på kundens språk, svenskan som re
   assert.equal(kor.call(null, 'de') && (() => { const w = {}; new Function('window', 'document', r2.kod)(w, { documentElement: { lang: 'de' } }); return w.msTest.text('lagger_i', 'x'); })(), 'Wird in den Warenkorb gelegt …');
 });
 
+test('patchaPaketJs: reservvägen landar i korgen på kundens språk, inte på domänens huvudspråk', async () => {
+  // Granskningen 2026-09-30: "korgen blir engelsk". Reservvägen laddade om till
+  // /discount/<kod>?redirect=/cart, och en ren /cart på matstrumpor.com är engelska.
+  const { patchaPaketJs, patchaPaketKorg } = await import('../temapatch.mjs');
+  const js = [
+    '(function () {', "  'use strict';",
+    '  window.msTest = function (rutt, kod) {',
+    '    var gick = {};',
+    "    function laddaOm() { gick.href = kod ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart') : rutt + 'cart'; }",
+    "    gick.fetch = rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart.js');",
+    "    if (false) { knapp.textContent = 'Lägger i…'; }",
+    "    if (false) { throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.'); }",
+    "    if (false) { fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.'; }",
+    '    laddaOm(); return gick;',
+    '  };', '})();',
+  ].join('\n');
+  const ov = { de: { 'liquid.ms-paket.js.lagger_i': 'Wird hinzugefügt …' } };
+  const r = patchaPaketJs(js, ov);
+  assert.ok(r.byten.some((b) => b.startsWith('korgens språkmapp')), r.byten.join(', '));
+  assert.ok(!r.kod.includes("encodeURIComponent('/cart')") && !r.kod.includes("encodeURIComponent('/cart.js')"));
+  const kor = (kod, rutt, rabatt) => { const w = {}; new Function('window', 'document', kod)(w, { documentElement: { lang: 'de' } }); return w.msTest(rutt, rabatt); };
+  assert.equal(kor(r.kod, '/de/', 'SUSHI-K2F2').href, '/de/discount/SUSHI-K2F2?redirect=%2Fde%2Fcart');
+  assert.equal(kor(r.kod, '/zh-tw/', 'SUSHI-K2F2').fetch, '/zh-tw/discount/SUSHI-K2F2?redirect=%2Fzh-tw%2Fcart.js');
+  assert.equal(kor(r.kod, '/', 'SUSHI-K2F2').href, '/discount/SUSHI-K2F2?redirect=%2Fcart', 'huvudspråket (roten) ska fortfarande landa på /cart');
+  // Idempotent: andra körningen byter ingenting.
+  assert.deepEqual(patchaPaketJs(r.kod, ov).byten, []);
+  assert.deepEqual(patchaPaketKorg(r.kod).byten, []);
+  // Utan översättningar lagas korgen ändå.
+  assert.ok(patchaPaketJs(js, {}).byten.some((b) => b.startsWith('korgens språkmapp')));
+});
+
+test('fabrikens ms-paket.js skickar aldrig kunden till en korg utan språkmapp', async () => {
+  const { readFileSync } = await import('node:fs');
+  const kod = readFileSync(new URL('../../../factory/tema/assets/ms-paket.js', import.meta.url), 'utf8');
+  assert.ok(!/encodeURIComponent\('\/cart(\.js)?'\)/.test(kod), "factory/tema/assets/ms-paket.js bär en '/cart' utan rutt");
+});
+
 test('patchaMallJson: en gren byggd med en äldre översättning byts på plats mot den nya', () => {
   const mall = JSON.stringify({ sections: { main: { blocks: { ms_storlek: { type: 'custom_liquid', settings: { custom_liquid: '<p class="ms-storlek">Passar strl 36–44 · stretchigt material</p>' } } } } } }, null, 2);
   const gammal = { en: { 'liquid.product.ms_storlek': 'Fits EU 36–44 · stretchy fabric' } };

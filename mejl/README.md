@@ -668,11 +668,19 @@ Shopifys egna översättningar av notisen**, lagda via API.
 
 **Så byggs det:**
 - `sparning/butiker.json` → `matstrumpor.mejl_sprak`: en rad per språk,
-  `{ locale, sprak, mapp }` (`pt-PT` / `pt.json` / `/pt`).
+  `{ locale, sprak, mapp, sida }` (`pt-PT` / `pt.json` / `/pt` / knappens adress).
 - `node mejl/bygg-butik.mjs matstrumpor` skriver den svenska huvudmallen som
   förut + `output/butiker/matstrumpor/oversattningar/<locale>/<mall>.liquid`.
-  Knappen går till `matstrumpor.se/<mapp>/pages/spara?nummer=MS-…` —
-  matstrumpor.se bär alla tolv språk i alla marknader (webPresences).
+  ⛔ **Knappen går till `sida` sedan 2026-09-30: matstrumpor.com i språkets
+  mapp** (`/de/pages/spara`, `/pt-pt/…`, `/zh-tw/…`, engelskan i roten), skriven
+  ur Shopifys egna `webPresences → rootUrls` för .com, inte räknad. Förut
+  räknades den som `matstrumpor.se/<mapp>/pages/spara`, och .se bär zh-TW på
+  `/zh`, inte `/zh-tw`: **Taiwans knapp gav 404** (granskningen 2026-09-30),
+  och testet räknade samma fel som koden och godkände det. Alla tretton
+  länkarna svarar nu 200 på rätt språk (mätt med curl samma kväll). `.com` följer
+  Axels regel att allt utland går via .com. `mapp` är kvar som .se-mappen,
+  eftersom Spoks (`klaviyo/spoks-sprak.mjs`) bygger sina länkar av den —
+  ändra aldrig `mapp` för mejlens skull.
 - `node mejl/notis-oversattning.mjs matstrumpor [--skarpt] [--om-inaktuell]`
   registrerar och läser tillbaka. Vägrar om huvudmallen inte längre är vår.
   Spårningsrutinen kör `--skarpt --om-inaktuell` varje timme
@@ -680,7 +688,9 @@ Shopifys egna översättningar av notisen**, lagda via API.
   lägger in språken igen när den svenska mallen klistrats om.
 - `node mejl/lankkoll.mjs matstrumpor` öppnar knappens länk som kund i
   Chromium, ett språk i taget, med ett riktigt paket ur spårningsminnet:
-  sidans språk, att paketet visas, ingen svensk text.
+  sidans språk, att paketet visas, ingen svensk text. **Kör den efter varje
+  nytt språk** — ja och zh-TW registrerades 2026-09-30 utan den, och Taiwans
+  404 hittades först av granskaren.
 - `mejl/butiker/matstrumpor.json` → `leveransfonster: false`: ingen
   "Beräknad leverans"-ruta i fraktbekräftelsen, på något språk (Axels order
   2026-09-21 — fönstret står aldrig i ett mejl som bär spårningslänken).

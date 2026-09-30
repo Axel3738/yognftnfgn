@@ -43,7 +43,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd821d">
-                    <a href="{% if fulfillment.tracking_number %}https://matstrumpor.se/nl/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'MS-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: 'Trebuchet MS',Verdana,Arial,sans-serif; font-weight: bold; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Volg je pakket</a>
+                    <a href="{% if fulfillment.tracking_number %}https://matstrumpor.com/nl/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'MS-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: 'Trebuchet MS',Verdana,Arial,sans-serif; font-weight: bold; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Volg je pakket</a>
                   </td>
                 </tr>
               </table>
