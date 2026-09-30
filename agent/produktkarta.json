@@ -1492,6 +1492,70 @@
       "lage_motivering": "kampanj startad 2026-09-26 med namnet \"LOCK_IN_Bordtennisnätet | Engagemang Indien | 2026-09-26\": en ENGAGEMANGSKAMPANJ mot Indien (social proof/lock-in), inte en försäljningskampanj — 500 kr/dag, ~180 kr och 0 köp på 3 dagar vid ronden 2026-09-27. Tillagd av /rond-auto 2026-09-27 så den syns. Break-even saknas i namnet med flit: engagemang har ingen ROAS att mäta mot, så domen SAKNAR_BREAK_EVEN (rör ingenting) är rätt. Inget kostnadsblock — ett break-even ur prissheetet hade gett en försäljningsdom på en kampanj som inte säljer. Axel avgör om de ska ha en egen regel (t.ex. kostnadstak) — tills dess rör ronden dem aldrig.",
       "break_even_roas": null,
       "break_even_kalla": "saknas med flit (engagemangskampanj)"
+    },
+    {
+      "campaign_id": "120250424998070291",
+      "produkt": "Kamadohuven",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-30T02:19:06+0200, 111.91 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (1.62). Priset i butiken 649 kr (jämförpris 849) läst ur baverbutiken.se/products.json 2026-09-30 (handle kamadohuv-80-102-cm-skydd-med-forvaringspase). Kostnadsblocket fyllt 2026-09-30 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 649,
+        "usd": 19.12,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-30, raden \"Kamadohuven 600D\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 7,85 + 11,27 = 19.12 USD, plus 2,9 EUR EU-avgift per order. Priset 649 kr läst ur baverbutiken.se/products.json 2026-09-30.",
+        "datum": "2026-09-30"
+      }
+    },
+    {
+      "campaign_id": "120252448770490233",
+      "produkt": "Golfkalender NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30T01:19:53+0200, 0 kr spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,48). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252444577580233",
+      "produkt": "Rulleknivsliper NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30T00:55:47+0200, 106.8 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,62). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252440511870233",
+      "produkt": "Varmesåler NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30T00:32:35+0200, 107.24 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,63). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252434667620233",
+      "produkt": "Varmesete NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30T00:03:19+0200, 177.44 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,63). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252434371440233",
+      "produkt": "Verktøyhylle NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-29T23:29:49+0200, 152.69 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,63). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252434076200233",
+      "produkt": "Spikkesett NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-29T22:58:53+0200, 280.54 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,63). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
     }
   ],
   "valutakurser": {

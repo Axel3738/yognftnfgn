@@ -1,6 +1,6 @@
 {
   "kommentar": "Spegelkampanjernas budget — CaraShell-kampanjerna i OPS-kontot (MagiBorsten DK 915422744950975) och USA/UK-kontot (Magiborsten UK 1107817401910319). Axels beslut 2026-09-24: han sköter budgetarna där själv, men ronden ska räkna in de marknadernas spend när den bestämmer hur många briefer Bäverbutikens produkt får (annonserna speglas SE → CaraShell). Skrivs av /rond-auto steg 1c varje morgon ur Meta (level campaign, last_3d, filter CARASHELL). Budgetronden rör ALDRIG de här kontona.",
-  "hamtad": "2026-09-29T05:53:35.681Z",
+  "hamtad": "2026-09-30T05:52:21.246Z",
   "attribution": "7d_click",
   "konton": {
     "915422744950975": {
@@ -11,9 +11,9 @@
           "namn": "NYA LISTICLE CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia",
           "effective_status": "ACTIVE",
           "daily_budget": "2000 kr (SEK)",
-          "spend_3d": "386.07 kr (SEK)",
-          "roas_3d": "3.753205",
-          "kop_3d": 1
+          "spend_3d": "2745.88 kr (SEK)",
+          "roas_3d": "1.168296",
+          "kop_3d": 2
         },
         {
           "id": "120249183407750172",
@@ -29,8 +29,8 @@
           "namn": "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5 | BE-ROAS 1.63 | 2026-09-20",
           "effective_status": "ACTIVE",
           "daily_budget": "2000 kr (SEK)",
-          "spend_3d": "5268.67 kr (SEK)",
-          "roas_3d": "3.011705",
+          "spend_3d": "5803.22 kr (SEK)",
+          "roas_3d": "2.76828",
           "kop_3d": 10
         },
         {
@@ -47,8 +47,8 @@
           "namn": "CARASHELL_SE_Taköverdraget LISTICLE",
           "effective_status": "ACTIVE",
           "daily_budget": "2800 kr (SEK)",
-          "spend_3d": "5614.48 kr (SEK)",
-          "roas_3d": "1.891894",
+          "spend_3d": "7071.14 kr (SEK)",
+          "roas_3d": "1.546002",
           "kop_3d": 8
         },
         {
@@ -74,8 +74,8 @@
           "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
           "effective_status": "ACTIVE",
           "daily_budget": "4000 kr (SEK)",
-          "spend_3d": "10868.61 kr (SEK)",
-          "roas_3d": "1.976028",
+          "spend_3d": "11651.88 kr (SEK)",
+          "roas_3d": "1.861052",
           "kop_3d": 16
         },
         {
@@ -83,9 +83,9 @@
           "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
           "effective_status": "ACTIVE",
           "daily_budget": "3000 kr (SEK)",
-          "spend_3d": "17842.7 kr (SEK)",
-          "roas_3d": "1.451367",
-          "kop_3d": 20
+          "spend_3d": "14590.82 kr (SEK)",
+          "roas_3d": "1.509805",
+          "kop_3d": 17
         }
       ]
     },
@@ -106,9 +106,9 @@
           "namn": "AU LISTICLE Taköverdrag CARASHELL",
           "effective_status": "ACTIVE",
           "daily_budget": "3169.23 kr (SEK)",
-          "spend_3d": "9200.26 kr (SEK)",
-          "roas_3d": "0.845441",
-          "kop_3d": 3
+          "spend_3d": "8230.39 kr (SEK)",
+          "roas_3d": "1.722878",
+          "kop_3d": 6
         },
         {
           "id": "120251471271400435",
@@ -169,9 +169,9 @@
           "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
           "effective_status": "ACTIVE",
           "daily_budget": "8000 kr (SEK)",
-          "spend_3d": "46612.43 kr (SEK)",
-          "roas_3d": "0.963109",
-          "kop_3d": 17
+          "spend_3d": "41178.52 kr (SEK)",
+          "roas_3d": "1.099968",
+          "kop_3d": 16
         },
         {
           "id": "120251451414990435",
