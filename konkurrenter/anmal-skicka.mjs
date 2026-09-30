@@ -134,7 +134,7 @@ REGLER
 1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
 2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
 3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
-4. Knappen "Request code": Meta mejlar en kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Öppna Gmail i en ny flik med det kontot, ta koden ur det senaste mejlet "Please verify your email address" från Meta och skriv in den. Syns ingen sådan knapp: fortsätt.
+4. Knappen "Request code" ("Begär kod"): Meta mejlar en ny kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'} för varje anmälan. Mejlet kommer från notification@email.meta.com och heter "Please verify your email address" eller "Verifiera din e-postadress". Öppna Gmail i en ny flik med just det kontot och ta koden ur det senaste mejlet. Är Gmail inloggat som ett annat konto: STANNA och skriv till Axel: "Jag behöver koden till anmälan <nr>." Vänta på svaret, för Axel hämtar koden från Claude. Syns ingen sådan knapp: fortsätt.
 5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
 6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
 7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.

@@ -80,4 +80,11 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   att Claude in Chrome inte var anslutet till chatten och stannade före första
   steget. Tillägget är av som standard i varje ny chatt. Prompten börjar nu med
   FÖRST, som säger exakt vad Axel slår på.
+- **Coworks andra försök, 15:03 CEST:** anmälan 1 fylldes i och koden
+  begärdes. Gmail i Axels Chrome var claude6@stonebite.org, så Cowork hittade
+  inte koden, och Metas mejl hette dessutom "Verifiera din e-postadress" på
+  svenska. Sessionen läste koden ur axel.odhner@stonebite.org och gav den till
+  Axel. Regel 4 i prompten säger nu båda ämnesraderna, och att Cowork ska be
+  Axel om koden när Gmail är ett annat konto. Facebook-inloggning behövs inte,
+  för Cowork kom utloggad ända fram till koden.
 - Taköverdragets 5 är fortfarande inte med.

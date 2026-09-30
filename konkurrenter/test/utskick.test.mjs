@@ -155,4 +155,7 @@ test('coworkPrompt: exakt de godkända fälten, och säkerhetskontrollen lämnas
   // Cowork 2026-09-30: Claude in Chrome är av som standard i varje ny chatt. Prompten säger då exakt vad Axel slår på.
   assert.match(p, /Slå på Claude in Chrome i menyn Connectors/);
   assert.ok(p.indexOf('FÖRST') < p.indexOf('REGLER'), 'kontrollen av Chrome ska stå före reglerna');
+  // Cowork 2026-09-30: Gmail i Axels Chrome var ett annat konto, och Metas mejl var på svenska.
+  assert.match(p, /Verifiera din e-postadress/);
+  assert.match(p, /Jag behöver koden till anmälan <nr>/);
 });
