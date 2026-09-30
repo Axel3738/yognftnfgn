@@ -158,4 +158,16 @@ test('coworkPrompt: exakt de godkända fälten, och säkerhetskontrollen lämnas
   // Cowork 2026-09-30: Gmail i Axels Chrome var ett annat konto, och Metas mejl var på svenska.
   assert.match(p, /Verifiera din e-postadress/);
   assert.match(p, /Jag behöver koden till anmälan <nr>/);
+  assert.doesNotMatch(p, /redan skickade/, 'utan klara nummer ingen sådan rad');
+});
+
+test('coworkPrompt: en ny chatt efter en tappad session får veta vilka som redan är skickade', () => {
+  const v = { rattighetshavare: 'Stonebite Ecom AB', urls: 'https://www.facebook.com/ads/library/?id=3', original: 'https://www.facebook.com/ads/library/?id=4', beskrivning: 'Ref KD-TEST-001 3/4.', namn: 'Axel Odhner', epost: 'axel@example.se', signatur: 'Axel Odhner' };
+  const f = 'https://www.facebook.com/help/contact/1758255661104383';
+  const p = coworkPrompt({ arende: 'KD-TEST-001', anmalningar: [{ nr: 3, antal: 4, formular: f, v }, { nr: 4, antal: 4, formular: f, v }], klara: [1, 2] });
+  assert.match(p, /skicka in 2 upphovsrättsanmälningar/);
+  assert.match(p, /Anmälan 1 och 2 är redan skickade\. Skicka dem aldrig igen\./);
+  assert.ok(!p.includes('ANMÄLAN 1 av') && !p.includes('ANMÄLAN 2 av'), 'de skickade står inte i prompten');
+  assert.ok(p.includes('ANMÄLAN 3 av 4') && p.includes('ANMÄLAN 4 av 4'));
+  assert.match(coworkPrompt({ arende: 'X', anmalningar: [{ nr: 4, antal: 4, formular: f, v }], klara: [1, 2, 3] }), /Anmälan 1, 2 och 3 är redan skickade/);
 });

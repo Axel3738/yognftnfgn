@@ -450,6 +450,16 @@ inget: "Inget för dig i dag."
      länge den gäller (en timme), så en kod kan räcka till flera anmälningar. Kvittona skriver sessionen sedan med
      `--anmald <id> --nr <n> --referens <r>`, ur Metas bekräftelsemejl i Gmail eller ur Coworks lista.
      Står ett kvitto fel (en anmälan som inte gick in): `--anmald <id> --nr <n> --angra "<skäl>"`.
+     **Tappar Axel Cowork-chatten mitt i** (2026-09-30 kväll): en ny chatt minns inget, så bygg
+     om prompten med `--anmal-cowork <id> --bara <de som inte är skickade>`. Prompten säger då
+     att de lägre numren redan är skickade, och de står inte med. Ta alltid med för få hellre än
+     för många: en anmälan som saknas skickas i nästa omgång, men en dubblett går inte att ta
+     tillbaka. **Vad Meta gjorde syns i annonsbiblioteket:** `gated_type` i annonsens data är
+     `TAKEN_DOWN` när Meta tagit ner den (anmälan 1, mätt 2026-09-30) och `ELIGIBLE` när den
+     ligger kvar. Ett mejl "We removed the content" bevisar inte vilken annons ärendet gällde.
+     Kvittot med de ekade fälten gör det. ⚠️ Gmail-connectorn kan neka att läsa ett kvitto
+     ("The caller does not have permission", mätt på ärende 921610674086655). Då skrivs kvittot
+     inte in förrän Axel har läst `Ref <id> <nr>/<antal>` i mejlet.
 
 - **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
   2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och
