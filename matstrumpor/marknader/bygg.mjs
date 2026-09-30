@@ -482,7 +482,11 @@ async function stegTema(k, { skarpt }) {
       // JSON-mallarna rörs också av domantema och Trustpilot-sektionen, så de byggs aldrig om från
       // originalet — patchaMallJson byter bara sina egna grenar på plats (gammal översättning → ny).
       // ms-paket.js bär sin ordlista som byts på plats, och räknas därför inte som "patchad" här.
-      if (!fil.endsWith('.json') && /request\.locale\.iso_code|var LANG = /.test(kod)) {
+      // ms-cro.js bär inga översatta texter (språket läses ur <html lang> när sidan körs), så den
+      // patchas på plats: en ny del i patchaJs (2026-09-30: datumintervallet) läggs på den som redan
+      // ligger live, i stället för att filen känns igen som "originalet + patchen" (det gör den inte
+      // längre när patchen själv växer).
+      if (!fil.endsWith('.json') && fil !== 'assets/ms-cro.js' && /request\.locale\.iso_code|var LANG = /.test(kod)) {
         const orig = urOriginal(fil);
         if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
         let doman = false;
