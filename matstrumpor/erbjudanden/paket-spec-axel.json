@@ -1,0 +1,69 @@
+{
+  "comment": "STANDARDSPECEN för testet `paket` (Axels priser 2026-09-30). A = dagens två nivåer (sushi-2 Köp 1 – Få 1 399 kr, sushi-4 Köp 2 – Få 2 798 kr). B = 1 låda 399 kr (ingen kod, dagens styckpris), 2 lådor 499 kr, 4 lådor 799 kr, ätpinnar 1 par per låda på köpet i 2- och 4-nivån. Rabatterna finns inte i Shopify: verktyget skapar dem i --skarpt (discountCodeBasicCreate, fast belopp av på sushi 5-par + ätpinnarna, minsta delsumma = hela paketets ordinarie pris). Beloppen räknas ur Shopifys LIVE priser vid körning (5-par 399 kr och ätpinnar 50 kr 2026-09-30 ⇒ 399,00 resp. 997,00 kr av, minsta delsumma 898,00 resp. 1 796,00 kr). Ingen procent, alltså ingen trunkering.",
+  "test": "paket",
+  "vikter": [50, 50],
+  "b_variant": "paket-b",
+  "produkt_handle": "sushi-strumpor",
+  "gratis_produkt_handle": "sushipinnar-i-akta-tra",
+  "standard_variant": "5 - Par / One Size",
+  "a_nivaer": ["sushi-2", "sushi-4"],
+  "b_nivaer": [
+    {
+      "handle": "sushi-paket-1",
+      "antal": 1,
+      "rubrik": "1 låda",
+      "underrubrik": "5 par strumpor",
+      "bricka": "",
+      "fastpris": 399,
+      "rabattkod": "",
+      "bogo_gratis": 0,
+      "gratis_antal": 0,
+      "gratis_text": "",
+      "forvald": false
+    },
+    {
+      "handle": "sushi-paket-2",
+      "antal": 2,
+      "rubrik": "2 lådor",
+      "underrubrik": "10 par strumpor + ätpinnar",
+      "bricka": "Mest populär",
+      "fastpris": 499,
+      "rabattkod": "SUSHI-2FOR499",
+      "bogo_gratis": 0,
+      "gratis_antal": 2,
+      "gratis_text": "Äkta ätpinnar i trä (2 par)",
+      "forvald": true
+    },
+    {
+      "handle": "sushi-paket-4",
+      "antal": 4,
+      "rubrik": "4 lådor",
+      "underrubrik": "20 par strumpor + ätpinnar",
+      "bricka": "Mest valt",
+      "fastpris": 799,
+      "rabattkod": "SUSHI-4FOR799",
+      "bogo_gratis": 0,
+      "gratis_antal": 4,
+      "gratis_text": "Äkta ätpinnar i trä (4 par)",
+      "forvald": false
+    }
+  ],
+  "rabattkoder": [
+    {
+      "kod": "SUSHI-2FOR499",
+      "titel": "Paket-test B: 2 lådor sushi + 2 par ätpinnar = 499 kr",
+      "lador": 2,
+      "pinnar": 2,
+      "kundpris": 499,
+      "varianter": ["5 - Par / One Size"]
+    },
+    {
+      "kod": "SUSHI-4FOR799",
+      "titel": "Paket-test B: 4 lådor sushi + 4 par ätpinnar = 799 kr",
+      "lador": 4,
+      "pinnar": 4,
+      "kundpris": 799,
+      "varianter": ["5 - Par / One Size"]
+    }
+  ]
+}

@@ -1,0 +1,823 @@
+{
+ "metaobjectDefinitionByType": {
+  "id": "gid://shopify/MetaobjectDefinition/46075838803",
+  "name": "Paketnivå",
+  "fieldDefinitions": [
+   {
+    "key": "produkt",
+    "name": "Produkt",
+    "type": {
+     "name": "product_reference"
+    }
+   },
+   {
+    "key": "antal",
+    "name": "Antal",
+    "type": {
+     "name": "number_integer"
+    }
+   },
+   {
+    "key": "rubrik",
+    "name": "Rubrik",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "underrubrik",
+    "name": "Underrubrik",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "bricka",
+    "name": "Bricka",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "fastpris",
+    "name": "Kundens totalpris",
+    "type": {
+     "name": "number_decimal"
+    }
+   },
+   {
+    "key": "gratis_produkt",
+    "name": "Gratisprodukt",
+    "type": {
+     "name": "product_reference"
+    }
+   },
+   {
+    "key": "gratis_antal",
+    "name": "Antal gratis",
+    "type": {
+     "name": "number_integer"
+    }
+   },
+   {
+    "key": "gratis_text",
+    "name": "Text om gratisprodukten",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "forvald",
+    "name": "Förvald",
+    "type": {
+     "name": "boolean"
+    }
+   },
+   {
+    "key": "ab_variant",
+    "name": "A/B-variant",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "rabattkod",
+    "name": "Rabattkod",
+    "type": {
+     "name": "single_line_text_field"
+    }
+   },
+   {
+    "key": "bogo_gratis",
+    "name": "BOGO: antal gratis strumpor",
+    "type": {
+     "name": "number_integer"
+    }
+   }
+  ],
+  "metaobjects": {
+   "nodes": [
+    {
+     "id": "gid://shopify/Metaobject/410438533459",
+     "handle": "sushi-2",
+     "displayName": "Köp 1 – Få 1 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286130889043",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 1 – Få 1 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "Du får 2 lådor – betalar för 1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest Populär",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "399.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (2 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "true",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "SUSHI-K1F1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "1",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438566227",
+     "handle": "sushi-4",
+     "displayName": "Köp 2 – Få 2 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286130889043",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 2 – Få 2 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "Du får 4 lådor – betalar för 2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest gratis",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "798.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (4 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "false",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "SUSHI-K2F2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "2",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438631763",
+     "handle": "pizza-2",
+     "displayName": "Köp 1 – Få 1 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10314752852307",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 1 – Få 1 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "2 för priset av 1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest Populär",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "449.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (2 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "true",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "PIZZA-K1F1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "1",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438664531",
+     "handle": "pizza-4",
+     "displayName": "Köp 2 – Få 2 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10314752852307",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 2 – Få 2 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "4 för priset av 2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest gratis",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "898.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (4 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "false",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "PIZZA-K2F2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "2",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438795603",
+     "handle": "hamburgare-2",
+     "displayName": "Köp 1 – Få 1 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10314753769811",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 1 – Få 1 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "2 för priset av 1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest Populär",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "299.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (2 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "true",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "HAMBURGARE-K1F1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "1",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438828371",
+     "handle": "hamburgare-4",
+     "displayName": "Köp 2 – Få 2 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10314753769811",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 2 – Få 2 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "4 för priset av 2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest gratis",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "598.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (4 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "false",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "HAMBURGARE-K2F2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "2",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438893907",
+     "handle": "donut-2",
+     "displayName": "Köp 1 – Få 1 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286979449171",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 1 – Få 1 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "2 för priset av 1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest Populär",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "299.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (2 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "true",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "DONUT-K1F1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "1",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/410438926675",
+     "handle": "donut-4",
+     "displayName": "Köp 2 – Få 2 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286979449171",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 2 – Få 2 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "4 för priset av 2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest gratis",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "598.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (4 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "false",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": null,
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "DONUT-K2F2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "2",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/451482124627",
+     "handle": "mix-2",
+     "displayName": "Köp 1 – Få 1 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286130889043",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 1 – Få 1 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "Du får 2 lådor – betalar för 1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest Populär",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "399.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "2",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (2 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "true",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": "b",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "STRUMPOR-K1F1",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "1",
+       "type": "number_integer"
+      }
+     ]
+    },
+    {
+     "id": "gid://shopify/Metaobject/451482157395",
+     "handle": "mix-4",
+     "displayName": "Köp 2 – Få 2 GRATIS",
+     "fields": [
+      {
+       "key": "produkt",
+       "value": "gid://shopify/Product/10286130889043",
+       "type": "product_reference"
+      },
+      {
+       "key": "antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "rubrik",
+       "value": "Köp 2 – Få 2 GRATIS",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "underrubrik",
+       "value": "Du får 4 lådor – betalar för 2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bricka",
+       "value": "Mest gratis",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "fastpris",
+       "value": "798.0",
+       "type": "number_decimal"
+      },
+      {
+       "key": "gratis_produkt",
+       "value": "gid://shopify/Product/10408204468563",
+       "type": "product_reference"
+      },
+      {
+       "key": "gratis_antal",
+       "value": "4",
+       "type": "number_integer"
+      },
+      {
+       "key": "gratis_text",
+       "value": "Äkta ätpinnar i trä (4 par)",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "forvald",
+       "value": "false",
+       "type": "boolean"
+      },
+      {
+       "key": "ab_variant",
+       "value": "b",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "rabattkod",
+       "value": "STRUMPOR-K2F2",
+       "type": "single_line_text_field"
+      },
+      {
+       "key": "bogo_gratis",
+       "value": "2",
+       "type": "number_integer"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

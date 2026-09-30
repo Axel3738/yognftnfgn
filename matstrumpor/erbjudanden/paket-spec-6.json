@@ -1,0 +1,17 @@
+{
+  "comment": "Alternativ (förslag 2026-09-30): paket-spec.json plus 6 lådor 'Köp 3 – Få 3' 1 197 kr med SUSHI-K3F3. Koden FINNS INTE i Shopify och är inte definierad här — verktyget vägrar --skarpt tills den skapats (BxGy som SUSHI-K2F2: köp 3 sushi, få 9 av sushi + ätpinnar till 100 %, en gång per order).",
+  "test": "paket",
+  "vikter": [50, 50],
+  "b_variant": "paket-b",
+  "produkt_handle": "sushi-strumpor",
+  "gratis_produkt_handle": "sushipinnar-i-akta-tra",
+  "standard_variant": "5 - Par / One Size",
+  "a_nivaer": ["sushi-2", "sushi-4"],
+  "b_nivaer": [
+    { "handle": "sushi-paket-1", "antal": 1, "rubrik": "1 låda", "underrubrik": "5 par strumpor", "bricka": "", "fastpris": 399, "rabattkod": "", "bogo_gratis": 0, "gratis_antal": 0, "gratis_text": "", "forvald": false },
+    { "handle": "sushi-paket-2", "antal": 2, "rubrik": "Köp 1 – Få 1 GRATIS", "underrubrik": "Du får 2 lådor – betalar för 1", "bricka": "Mest Populär", "fastpris": 399, "rabattkod": "SUSHI-K1F1", "bogo_gratis": 1, "gratis_antal": 2, "gratis_text": "Äkta ätpinnar i trä (2 par)", "forvald": true },
+    { "handle": "sushi-paket-4", "antal": 4, "rubrik": "Köp 2 – Få 2 GRATIS", "underrubrik": "Du får 4 lådor – betalar för 2", "bricka": "Mest gratis", "fastpris": 798, "rabattkod": "SUSHI-K2F2", "bogo_gratis": 2, "gratis_antal": 4, "gratis_text": "Äkta ätpinnar i trä (4 par)", "forvald": false },
+    { "handle": "sushi-paket-6", "antal": 6, "rubrik": "Köp 3 – Få 3 GRATIS", "underrubrik": "Du får 6 lådor – betalar för 3", "bricka": "", "fastpris": 1197, "rabattkod": "SUSHI-K3F3", "bogo_gratis": 3, "gratis_antal": 6, "gratis_text": "Äkta ätpinnar i trä (6 par)", "forvald": false }
+  ],
+  "rabattkoder": []
+}
