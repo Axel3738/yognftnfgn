@@ -27,6 +27,7 @@ npm test                     # 69 tester, ska vara gröna
 | `spendtjuv.mjs` | Spendtjuvsspärren. Avgör om en kampanj som går back bärs av ett par olönsamma annonser — då pausas de i stället för hela kampanjen. |
 | `logg.mjs` | Läser och skriver budgetloggen. Räknar dagar sedan ändring och back-dagar i rad. |
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |
+| `facit.mjs` + `hamta-facit.mjs` | Facit (Axel 2026-09-30): dömer varje budgetbeslut i efterhand mot vad gammal budget hade gett, samlar domarna i hinkar och föreslår en regeländring först när datan bär den. Ändrar aldrig något — förslagen är JA/NEJ till Axel. Körs i `/rond-auto` steg 6b. Metoden och det den inte klarar: `FACIT.md`. |
 | `produktkarta.json` | Vilka kampanjer som är test respektive drift. Sanningskällan. |
 | `budgetlogg.jsonl` | Minnet. En rad per beslut, aldrig redigerad i efterhand. Färskaste kopian bor inbäddad i dashboard-artefakten (schemalagda körningar kan inte pusha till git); `minne.mjs` synkar. |
 | `minne.mjs` | Läser tillbaka budgetloggen och filutkorgen ur dashboardens HTML. Källan med flest rader vinner. |
