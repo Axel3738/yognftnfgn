@@ -1180,7 +1180,12 @@ av Cowork med `klaviyo/spoks/cowork/1-matstrumpor-sprakbyte.txt` (ett flöde i t
 sändsteg på → nya flödet på → gamla flödets stora knapp av → läs av). Mätt före bytet 2026-09-29
 kväll med `get_flows`: de sex gamla på (160/20/15/201/204/193 inrullade), de sex nya av med 0. **Välkomst bytt 2026-09-29 21:10–21:12 CEST av Cowork:** nya F01 på med alla 36
 sändsteg på och triggern på, gamla F01:s trigger av (flödet står kvar "Aktiv" med sina 160 inrullade),
-båda tillbakalästa med `get_flow`. Rad 2–6 kvar.
+båda tillbakalästa med `get_flow`. ✅ **Alla sex bytta 2026-09-29 21:10–22:27 CEST av Cowork** (Välkomst 21:10/21:12, Övergiven kassa
+21:38/21:41, Webbhistorik 21:49/21:52, Efter köp 22:05/22:09, Vinna tillbaka 22:17/22:20, En låda till
+22:25/22:27 — nytt på / gammalt av). Tillbakaläst med `get_flow` 2026-09-30 natt: de sex nya `isActive`
+med triggern på och alla 156 sändsteg på, redan 1–5 inrullade var; de sex gamla har `trigger.isActive:
+false`, flödet `isActive: true` och sändstegen kvar på, så de redan inrullade (160/18/12/204/208/197)
+får sina svenska mejl klart. F08 (v1+v2) och F09 orörda.
 
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
