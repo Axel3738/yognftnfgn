@@ -124,3 +124,25 @@ egen data visar att alla åtta skapades **inom nio sekunder 2026-09-24 kl 00:23 
 kundrecensioner utan inlagda. **Inga sådana görs i NO** — CLAUDE.md: påhittade omdömen görs aldrig, och norsk
 markedsføringslov/svensk MFL förbjuder falska omdömen. Judge.me:s "review request"-mejl till riktiga köpare är vägen.
 
+## Golfkalenderns sida omgjord (2026-09-29/30)
+Axel: *"Du har inte missat några gifs och så då? Det kändes legit som världens keffaste produktsida"* — och sedan
+*"fixa ba golf kalendern tbh den är lowkey den ända som printar"*. Alla nio kalendrar hade 1–2 bilder och ingen GIF
+(byggda 16/9, före GIF-regeln 24/9). Bara golf är omgjord; de andra åtta väntar (källbilder för dinosaurie och gör din egen
+hittades på Amazon.de, se nedan).
+
+- **Källor:** offertens Amazon-listning B0FRFP1JZ2 via **amazon.de** (amazon.com ger captcha, AliExpress/Temu är blockerade
+  från molnet, Bing-bildsök fungerar) + B0FVSM4YZC (samma tillbehör, bilder i användning).
+- **Galleriet (SE + NO, 6 bilder + GIF, ingen AI):** 01 asken med öppna luckor och alla tillbehör · 02 fyra tillbehör i bruk
+  (2×2, rubrikband bortskuret, `golf/rutnat.mjs`) · 03 mått 30 × 28 × 6 cm (asken frilagd, cm-linjer ritade med sharp,
+  `golf/matt.mjs`) · 04 julklappsbild · 05 klubbborste i bruk · 06 linjemarkör i bruk · GIF = bildspel med övertoning av de
+  riktiga fotona. Filer: `<scratch>/advent/galleri/golf/`, plan: `galleri.json`, byggt med
+  `node temu/kalendrar/galleri-bygg.mjs <se|no> --skarp golf`.
+- **AI-video underkänd fyra gånger:** veo hittade på utdragna lådor och hål tre luckor breda i lucktråget och öppnade fel
+  lucka. För kalendrar med numrerade luckor: **ingen AI-video av luckan som öppnas** — bildspel av riktiga foton i stället.
+  En GIF utan AI får egen alt-text (`gif.ai: false` i planen) och ingen AI-rad.
+- **Beskrivningen** byggdes om från live-HTML: problem → GIF → lösning → bild 02 → funktioner (utfallet i fetstil, orden
+  kontrollerade mot live-texten, `bullets.json`) + specar → bild 03 → FAQ → garantiblocket orört.
+- **Öppen fråga till Axel:** måttbilden säger 30 × 28 × 6 cm (leverantörens siffror, samma som specen). Askens proportioner
+  på alla foton tyder på ~30 × 23–24 cm — höjden kan vara uppräknad. Bekräfta med CWD om det spelar roll.
+- **Workflow-verktyg:** `bild.mjs` (hämta/ark/crop/kie-rensa/kie-bild/video/gif), `galleri-bygg.mjs`, `../sidkoll.mjs`.
+

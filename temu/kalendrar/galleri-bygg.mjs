@@ -69,7 +69,10 @@ for (const [id, f] of Object.entries(FAKTA)) {
   if (canva.length && !tvinga) { console.log(`! ${id}: Axel har egna bilder i galleriet (${canva.length} Canva-filer) — hoppar, kör med --tvinga om han sagt till`); continue; }
 
   const nya = plan.bilder.map((x, i) => ({ fil: path.join(GAL, id, x.fil), alt: x[ALT], ai: x.ai, namn: `kalender-${id}-${String(i + 1).padStart(2, '0')}.jpg` }));
-  const gif = plan.gif?.ok && existsSync(path.join(GAL, id, plan.gif.fil || 'video.gif')) ? { fil: path.join(GAL, id, plan.gif.fil || 'video.gif'), alt: GIF_ALT, gif: true, namn: `kalender-${id}.gif` } : null;
+  // GIF:en är AI-märkt om inte planen säger ai:false (golf 2026-09-29: bildspel av riktiga foton — då egen alt och ingen AI-rad)
+  const gifAi = plan.gif?.ai !== false;
+  const gif = plan.gif?.ok && existsSync(path.join(GAL, id, plan.gif.fil || 'video.gif')) ? { fil: path.join(GAL, id, plan.gif.fil || 'video.gif'), alt: gifAi ? GIF_ALT : plan.gif[ALT], gif: true, namn: `kalender-${id}.gif` } : null;
+  if (gif && !gif.alt) { console.log(`! ${id}: GIF utan AI saknar ${ALT}`); continue; }
   const saknasFil = [...nya, ...(gif ? [gif] : [])].filter((x) => !existsSync(x.fil));
   if (saknasFil.length) { console.log(`! ${id}: filer saknas — ${saknasFil.map((x) => x.fil).join(', ')}`); continue; }
   const dubbelAlt = nya.map((x) => x.alt).filter((a, i, all) => all.indexOf(a) !== i);
@@ -109,9 +112,9 @@ for (const [id, f] of Object.entries(FAKTA)) {
   const fi = delar.findIndex((s) => s.includes('<ul>'));
   if (delar.length < 4 || fi < 2) throw new Error(`${id}: oväntad beskrivningsstruktur (${delar.length} block, funktioner på ${fi})`);
   const A = gifM ? img(gifM, true) : img(bildM[0]);
-  const B = bildM[gifM ? 1 : 1] ? img(bildM[1]) : '';
+  const B = bildM[1] ? img(bildM[1]) : '';
   const C = bildM[2] ? img(bildM[2]) : (bildM[0] ? img(bildM[0]) : '');
-  const harAi = !!gifM || nya.some((x) => x.ai);
+  const harAi = (!!gifM && gifAi) || nya.some((x) => x.ai);
   const ny = delar.map((s, i) => s + (i === 0 ? A : i === 1 ? B : i === fi ? C : '') + (i === delar.length - 2 && harAi ? `<p><em>${AI_RAD}</em></p>` : '')).join('');
   await b.mutera(`mutation u($input:ProductUpdateInput!){productUpdate(product:$input){userErrors{field message}}}`, { input: { id: p.id, descriptionHtml: ny } }, 'productUpdate');
   await sov(1500);

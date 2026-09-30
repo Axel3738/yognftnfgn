@@ -1,0 +1,67 @@
+{
+ "golf": {
+  "id": "golf",
+  "bilder": [
+   {
+    "fil": "01-hero-oppna-luckor.jpg",
+    "alt_sv": "Golf-adventskalender: grön ask med golfspelare på locket, de numrerade luckorna och golftillbehören som ingår",
+    "alt_no": "Golf-adventskalender: grønn eske med golfspiller på lokket, de nummererte lukene og golftilbehøret som følger med",
+    "ai": false,
+    "kalla": "amazon-01.jpg (offertlistningen B0FRFP1JZ2, https://m.media-amazon.com/images/I/81MHzQltppL._AC_SL1500_.jpg), kopierad och paddad till kvadrat. Oförändrad, bara alt-texten är ändrad ('alla' struket)."
+   },
+   {
+    "fil": "02-tillbehor-i-bruk.jpg",
+    "alt_sv": "Fyra av tillbehören i bruk: greenlagare på greenen, T-nyckel till golfskornas spikes, slagräknare för två spelare och bollupplockare",
+    "alt_no": "Fire av tilbehørene i bruk: greenfork på greenen, T-nøkkel til golfskoenes spikes, slagteller for to spillere og ballplukker",
+    "ai": false,
+    "kalla": "amazon-B0FVSM4YZC-06.jpg (https://m.media-amazon.com/images/I/81aVTvUpjGL._AC_SL1500_.jpg). Rubrikbandet GEAR THAT'S MADE TO PLAY är bortskuret. De fyra fotorutorna är mittbeskurna till kvadrater, 4 px inåt så att källans kantlinje och snöflingor försvinner. Rutorna är satta i ett symmetriskt 2×2-rutnät med samma hörnradie och lika bred grön ram runt om, 1340×1340 (scratch advent/golf-rutnat.mjs)"
+   },
+   {
+    "fil": "03-matt.jpg",
+    "alt_sv": "Golfkalenderns mått: 30 × 28 × 6 cm",
+    "alt_no": "Golfkalenderens mål: 30 × 28 × 6 cm",
+    "ai": false,
+    "kalla": "amazon-04.jpg (https://m.media-amazon.com/images/I/8160UVl6nxL._AC_SL1500_.jpg). Asken är frilagd efter sina sex hörn och lagd på vitt med en mjuk skugga. Leverantörens måttlinjer, cm/inch-etiketter och randiga ram är borta. Nya måttlinjer finns bara i cm (30, 28 och 6 cm enligt specarna) och är ritade deterministiskt med sharp, alltså ingen AI (scratch advent/golf-matt.mjs)"
+   },
+   {
+    "fil": "04-julklapp.jpg",
+    "alt_sv": "Golfkalendern som julklapp: en kvinna håller för ögonen på en man i tomteluva medan hon visar asken",
+    "alt_no": "Golfkalenderen som julegave: en kvinne holder for øynene til en mann i nisselue mens hun viser esken",
+    "ai": false,
+    "kalla": "amazon-05.jpg (https://m.media-amazon.com/images/I/81SkPq9q9KL._AC_SL1500_.jpg), vita snedkanter beskurna. Oförändrad."
+   },
+   {
+    "fil": "05-klubbborste.jpg",
+    "alt_sv": "Klubbrengöringsborsten används på klubbhuvudet på ett järn med jord i spåren",
+    "alt_no": "Rengjøringsbørsten brukes på et jernkøllehode med jord i rillene",
+    "ai": false,
+    "kalla": "amazon-B0FVSM4YZC-02.jpg (https://m.media-amazon.com/images/I/71Xltpd1PML._AC_SL1500_.jpg), skylten GOLF CLUB CLEANING BRUSH bortskuren. Oförändrad, bara omdöpt från 06."
+   },
+   {
+    "fil": "06-linjemarkor.jpg",
+    "alt_sv": "Linjemarkören med penna och en golfboll med uppritat kors som läggs på en pegg",
+    "alt_no": "Linjemarkøren med penn og en golfball med et kryss tegnet på som legges på en tee",
+    "ai": false,
+    "kalla": "amazon-B0FVSM4YZC-03.jpg (https://m.media-amazon.com/images/I/71dTTDnebGL._AC_SL1500_.jpg), skylten BALL MARKING KIT bortskuren. Oförändrad, bara omdöpt från 07 och med rättad alt-text."
+   }
+  ],
+  "gif": {
+   "ok": true,
+   "fil": "video.gif",
+   "ai": false,
+   "alt_sv": "Tillbehören i användning: greenlagare, spiknyckel, slagräknare, bollupplockare, klubbborste och linjemarkör",
+   "alt_no": "Tilbehøret i bruk: greenfork, spikesnøkkel, slagteller, ballplukker, køllebørste og linjemarkør",
+   "anteckning": "Bildspel med övertoning av sex RIKTIGA leverantörsfoton (ingen AI). Fyra AI-videoförsök underkändes 2026-09-29: veo hittade på lådor och hål i lucktråget."
+  },
+  "anteckningar": [
+   "Blockerare åtgärdade. 1) 03-oppna-luckor-jul är struken: den hade en inklistrad miniatyr över lucka 11, ett kinesiskt tecken, ett avklippt lock och var suddig. 2) GIF:en är struken (gif:false), se gif.anteckning.",
+   "Minor åtgärdade: alt-texterna på 01 och 06 (f.d. 07) och 02-tillbehor-i-bruk (f.d. 05) är rättade. 02-ask-julbord är ersatt med måttbilden 03-matt: samma riktiga ask ur amazon-04, men frilagd på vitt och bara med cm-mått som stämmer med specarna 30 × 28 × 6 cm. Rutnätet i tillbehörsbilden har nu symmetrisk ram, och hörn och snöflingerester är borta.",
+   "Ny ordning, vald efter beskrivningens platser i galleri-bygg.mjs. Utan GIF: problem, 01-hero, lösning, 02-tillbehor-i-bruk ('det som hamnar i bagen'), funktioner och specar (där 'Kartong: 30 × 28 × 6 cm' står), 03-matt, FAQ, garanti. Därefter bara galleri: 04-julklapp, 05-klubbborste, 06-linjemarkor. Det ligger en bild mellan funktioner och garanti (03-matt).",
+   "Granskarens AI_RAD-anmärkning löser sig för golf: ingen bild har ai:true och det finns ingen GIF, så harAi blir falskt och ingen AI-rad skrivs. Används bildspelsalternativet ändå måste GIF_ALT och AI_RAD i galleri-bygg.mjs först låta bli att kalla det AI.",
+   "Räkneord på bilderna stämmer med fakta: '24 Days' på locket, 30/28/6 cm på måttbilden. Inga tum/inch, ingen säljtext och inga Amazon-ikoner finns kvar. Asktrycket (GOLF, ADVENT CALENDAR, Merry Christmas, 24 Days, Merry Christmas Happy Golf) står kvar, eftersom det är produktens eget tryck.",
+   "Filer i galleri/golf/ nu: 01-hero-oppna-luckor.jpg, 02-tillbehor-i-bruk.jpg, 03-matt.jpg, 04-julklapp.jpg, 05-klubbborste.jpg, 06-linjemarkor.jpg. Strukna filer är flyttade till advent/golf-tmp/strukna/. Kontaktark: advent/galleri-golf-ark.jpg.",
+   "KIE-saldo före körningen: 9 145 credits. Två videor kördes, ca 80 credits. Inga repofiler är ändrade och inget är uppladdat till Shopify. Scratch-skripten som gör bilderna går att köra om: advent/golf-matt.mjs och advent/golf-rutnat.mjs."
+  ],
+  "kalla": "workflow wf_f99d0c80-4ae 2026-09-29 (källor → kurera → två granskare → laga → omgranskning godkänd)"
+ }
+}

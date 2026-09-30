@@ -492,6 +492,14 @@ används. **Produkter utan skörd måste ändå ha en post i `galleri.mjs`**, an
 aldrig upp (driftbilen och bordsfotbollen låg färdiga i scratch i timmar). **Handlar köpet om passform** (batteriskydd,
 huvar, överdrag) ska sidan ha en måttguide — ritad deterministiskt med sharp, aldrig AI.
 
+**Klona aldrig en produkt till NO (eller någon annan butik) utan att först köra sidreglerna på källsidan** — GIF,
+minst 4–5 bilder, första bilden visar hela produkten, 7-blocksordningen. *(2026-09-29: golfkalendern klonades till NO med
+två bilder och ingen GIF; Axel: "världens keffaste produktsida". Svenska sidan såg likadan ut.)* `node temu/sidkoll.mjs se`
+listar varje aktiv sida som bryter mot reglerna (30/9: 197 av 248 saknar GIF). **AI-video av en kalender med numrerade
+luckor fungerar inte** — veo hittar på lådor och hål i tråget (fyra underkända försök); gör ett bildspel av riktiga foton i
+stället och märk det inte som AI. Riktiga leverantörsbilder finns ofta på **amazon.de/dp/<ASIN>** (`"hiRes"` i sidan) —
+amazon.com ger captcha, Temu/AliExpress är blockerade från molnet.
+
 **Axel redigerar gallerier själv i Shopify-admin — och skripten lägger tillbaka det han tagit bort.** `galleri-bygg.mjs`
 är idempotent på alt-text: saknas en bild laddas den upp igen. *(2026-09-24 kväll: Axel bytte bordsfotbollens galleri mot
 egna Canva-bilder och tog bort AI-bilderna; en körning lade tillbaka dem inom en timme.)* Kontrollera `updatedAt` och
