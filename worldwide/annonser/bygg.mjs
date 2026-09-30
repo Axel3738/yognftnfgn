@@ -112,7 +112,14 @@ async function huvud() {
   if (a.includes('--lage')) { for (const c of vara) log(`${c.name}: ${c.id} ${c.status}/${c.effective_status} ${Number(c.daily_budget) / 100} kr/dag`); if (!vara.length) log('inga BEAVERSTORE_-kampanjer än'); return; }
 
   const media = lasJson('media.json', {});
-  const sparaMedia = () => writeFileSync(join(ROT, 'media.json'), JSON.stringify(media, null, 1));
+  // video.mjs/bildrita.mjs kan skriva media.json samtidigt: läs om filen och skriv bara in de poster bygget rört.
+  const rorda = new Set();
+  const sparaMedia = (namn) => {
+    if (namn) rorda.add(namn);
+    const pa = lasJson('media.json', {});
+    for (const k of rorda) pa[k] = { ...pa[k], ...media[k] };
+    writeFileSync(join(ROT, 'media.json'), JSON.stringify(pa, null, 1));
+  };
   for (const p of planer) {
     log(`\n── ${p.kampanj} ──`);
     let kampanj = vara.find((c) => c.name === p.kampanj);
@@ -143,15 +150,15 @@ async function huvud() {
       if (!existsSync(fil)) { log(`⚠️ ${x.namn}: ${x.media.fil} finns inte på disk — hoppar`); continue; }
       if (!skarpt || !adset) { log(`torrt: ${x.namn} (${x.typ}) → ${p.lank}`); continue; }
       const m = media[x.kalla];
-      if (x.typ === 'bild' && !m.image_hash) { m.image_hash = await laddaUppBild(K.konto, fil); sparaMedia(); }
-      if (x.typ === 'video' && !m.video_id) { m.video_id = await laddaUppVideo(K.konto, fil); sparaMedia(); }
+      if (x.typ === 'bild' && !m.image_hash) { m.image_hash = await laddaUppBild(K.konto, fil); sparaMedia(x.kalla); }
+      if (x.typ === 'video' && !m.video_id) { m.video_id = await laddaUppVideo(K.konto, fil); sparaMedia(x.kalla); }
       const c = x.copy;
       const spec = x.typ === 'bild'
         ? { page_id: K.sida, instagram_user_id: K.instagram_user_id, link_data: { image_hash: m.image_hash, link: p.lank, message: c.text, name: c.rubrik, ...(c.beskrivning ? { description: c.beskrivning } : {}), call_to_action: { type: 'SHOP_NOW', value: { link: p.lank } } } }
         : { page_id: K.sida, instagram_user_id: K.instagram_user_id, video_data: { video_id: m.video_id, image_url: await väntaPåThumb(m.video_id), title: c.rubrik, message: c.text, ...(c.beskrivning ? { link_description: c.beskrivning } : {}), call_to_action: { type: 'SHOP_NOW', value: { link: p.lank } } } };
       const r = await skapaAnnons({ act: K.konto, adsetId: adset.id, namn: x.namn, spec, enhancements: ingaEnhancements(), dsa: { beneficiary: K.dsa, payor: K.dsa } });
       m.annons_id = r.annonsId; m.creative_id = r.creativeId; m.kampanj_id = kampanj.id; m.skapad = new Date().toISOString();
-      sparaMedia();
+      sparaMedia(x.kalla);
       log(`✅ ${x.namn}: ${r.annonsId} PAUSED`);
     }
     if (aktivera && skarpt) {

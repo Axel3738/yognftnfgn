@@ -84,6 +84,7 @@ async function huvud() {
     const manus = join(ROT, 'manus-en', `${f}.srt`);
     const kalla = join(kallor, `${f}.mp4`);
     if (copy[v.namn]?.hoppa) { log(`· ${v.namn}: hoppas (copy-en.json: ${copy[v.namn].hoppa.slice(0, 80)}…)`); continue; }
+    if (media[v.namn]?.hoppa) { log(`· ${v.namn}: hoppas (media.json: ${media[v.namn].hoppa.slice(0, 80)}…)`); continue; }
     if (!existsSync(manus)) { log(`· ${v.namn}: inget engelskt manus än`); continue; }
     if (!sammaTider(readFileSync(kallSrt, 'utf8'), readFileSync(manus, 'utf8'))) { log(`❌ ${v.namn}: manuset har inte källans cues/tider — skriv om det`); continue; }
     const rader = srtText(readFileSync(manus, 'utf8'));

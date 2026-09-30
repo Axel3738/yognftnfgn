@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:02,000
+799 kronor, idag.
+
+2
+00:00:02,000 --> 00:00:02,840
+Sedan är den borta.
+
+3
+00:00:02,840 --> 00:00:05,080
+Just nu, 799 kronor.
+
+4
+00:00:05,080 --> 00:00:06,960
+Ordinarie pris, 1000 kronor.
+
+5
+00:00:06,960 --> 00:00:08,800
+Dubbelins, ha i spårning.
+
+6
+00:00:08,800 --> 00:00:10,680
+355 graders teckning.
+
+7
+00:00:10,680 --> 00:00:13,440
+Lagret är begränsat, och priset går upp snart.
+
+8
+00:00:13,440 --> 00:00:15,240
+Handla idag, betala med Klarna.
+
+9
+00:00:15,240 --> 00:00:16,760
+Både nu, betala sen.
+
+10
+00:00:16,760 --> 00:00:18,520
+Bifrakt över 300 kronor.
+
+11
+00:00:18,520 --> 00:00:21,240
+30 dagars öppet köp, om du inte är nöjd.
+
+12
+00:00:21,240 --> 00:00:23,520
+Missa inte rean, ställ innan den är slut.
