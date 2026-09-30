@@ -87,4 +87,19 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   Axel. Regel 4 i prompten säger nu båda ämnesraderna, och att Cowork ska be
   Axel om koden när Gmail är ett annat konto. Facebook-inloggning behövs inte,
   för Cowork kom utloggad ända fram till koden.
+- **Anmälan 1 är inskickad och har fått verkan.** Metas kvitto 15:18 CEST gav
+  ärende 1098421112563587, och kvittot ekade rätt annons. Mejlet 15:26 sa "We
+  removed the content". I annonsbiblioteket är annons 2899062230465261 (båtmotorskyddet,
+  61 564 i räckvidd) nu `gated_type: TAKEN_DOWN` med texten "This content was removed".
+- **Anmälan 2 är inte bevisad.** Cowork skrev att den skickades och att tacksidan
+  inte visade något nummer. Meta har ett andra ärende från i dag, 921610674086655
+  (kvittot kom cirka 15:51 och "We removed the content" 15:59). Men kvittot går inte
+  att läsa via Gmail-connectorn ("The caller does not have permission"). Bälteslipens
+  annons 1652495996287809 var dessutom fortfarande `ELIGIBLE` och aktiv 20:05, fyra
+  timmar efter mejlet. Kvittot skrivs in först när Axel har läst `2/6` i Metas mejl.
+  Står det `1/6` där skickades anmälan 1 två gånger, och då ska anmälan 2 skickas.
+- **Axel tappade Cowork-chatten på kvällen.** Anmälan 3 var ifylld men inte
+  skickad, för inget kvitto kom. Den nya prompten byggdes med `--anmal-cowork
+  KD-2026-003 --bara 3,4,5,6` och innehåller bara anmälan 3–6. Den säger att 1 och
+  2 redan är skickade, och alla 44 fält stämmer ord för ord mot korten Axel godkände.
 - Taköverdragets 5 är fortfarande inte med.

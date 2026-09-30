@@ -42,9 +42,11 @@
 //   node konkurrenter/kor.mjs --lagg-till <id> --annonser <annons-id,…>
 //        Tar med FILMER ur sidans annonsfil som inte matchade på text eller förhandsbild,
 //        som kandidater (`kandidat: 'film'`). --klipp avgör; obevisade kommer aldrig med.
-//   node konkurrenter/kor.mjs --anmal-cowork <id>
+//   node konkurrenter/kor.mjs --anmal-cowork <id> [--bara 3,4,5,6]
 //        Cowork-prompten för de anmälningar som inte är inskickade: Cowork fyller i
 //        exakt de godkända texterna i Axels Chrome, Axel gör säkerhetskontrollen.
+//        --bara när Cowork skickat fler än kvittona visar (tappad session): de
+//        lägre numren sägs vara skickade och står inte i prompten.
 //        → arenden/<id>/anmalan/COWORK-PROMPT.txt
 //   node konkurrenter/kor.mjs --anmald <id> --nr <n> --referens <r> | --angra "<skäl>"
 //        Kvittot för hand när en anmälan skickats på annat sätt; --angra tar tillbaka ett felaktigt kvitto.
@@ -1366,10 +1368,16 @@ async function anmalSkicka() {
 async function anmalCowork() {
   const k = konfig();
   const { a } = hamtaArende(flagga('anmal-cowork'));
-  const rapporter = (a.anmalan?.rapporter ?? []).filter((r) => r.status !== 'inskickad');
+  // --bara 3,4,5,6: Cowork har skickat fler än kvittona visar (Axel tappade sessionen 2026-09-30).
+  const bara = listaFlagga('bara').map(Number).filter(Number.isInteger);
+  const byggda = a.anmalan?.rapporter ?? [];
+  const dubbel = byggda.filter((r) => bara.includes(r.nr) && r.status === 'inskickad');
+  if (dubbel.length) { console.log(`⚠️ Stoppat: anmälan ${dubbel.map((r) => r.nr).join(', ')} är redan inskickad — en anmälan skickas aldrig två gånger.`); process.exitCode = 1; return; }
+  const rapporter = byggda.filter((r) => r.status !== 'inskickad' && (!bara.length || bara.includes(r.nr)));
   if (!rapporter.length) { console.log(`${a.id}: alla anmälningar är redan inskickade (eller inga är byggda).`); process.exitCode = 1; return; }
+  const klara = byggda.filter((r) => !rapporter.includes(r) && r.nr < Math.max(...rapporter.map((x) => x.nr))).map((r) => r.nr);
   const land = k.anmalan?.land ?? 'Sweden';
-  const alla = a.anmalan?.rapporter?.length ?? rapporter.length;
+  const alla = byggda.length || rapporter.length;
   const anmalningar = [];
   for (const r of rapporter) {
     const an = lasJson(join(DATAMAPP, r.fil));
@@ -1378,7 +1386,7 @@ async function anmalCowork() {
     if (v.fel.length) { console.log(`anmälan ${r.nr}: ${v.fel.join('; ')}`); process.exitCode = 1; return; }
     anmalningar.push({ nr: r.nr, antal: alla, formular: an.formular, v });
   }
-  const text = coworkPrompt({ arende: a.id, sida: a.deras?.sidnamn ?? a.deras?.namn ?? null, anmalningar, land });
+  const text = coworkPrompt({ arende: a.id, sida: a.deras?.sidnamn ?? a.deras?.namn ?? null, anmalningar, land, klara });
   const fil = join(ARENDEMAPP, a.id, 'anmalan', 'COWORK-PROMPT.txt');
   writeFileSync(fil, text);
   console.log(`Cowork-prompten för ${anmalningar.length} anmälning(ar) (${anmalningar.map((x) => x.nr).join(', ')}): ${fil.replace(`${DATAMAPP}/`, 'konkurrenter/')} (${text.length} tecken)`);
