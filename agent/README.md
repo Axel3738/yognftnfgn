@@ -28,6 +28,7 @@ npm test                     # 69 tester, ska vara gröna
 | `logg.mjs` | Läser och skriver budgetloggen. Räknar dagar sedan ändring och back-dagar i rad. |
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |
 | `facit.mjs` + `hamta-facit.mjs` | Facit (Axel 2026-09-30): dömer varje budgetbeslut i efterhand mot vad gammal budget hade gett, samlar domarna i hinkar och föreslår en regeländring först när datan bär den. Ändrar aldrig något — förslagen är JA/NEJ till Axel. Körs i `/rond-auto` steg 6b. Metoden och det den inte klarar: `FACIT.md`. |
+| `monster.mjs` | Mönsterminnet: varje beslut rättat som en gissning mot dygn 1–3 efter, och lägen där motorn gissar fel eller rätt oftare än vanligt. Varningar, aldrig förbud. `gissningar.jsonl` (glöms aldrig) + `monster.json` (dagens mönster). |
 | `produktkarta.json` | Vilka kampanjer som är test respektive drift. Sanningskällan. |
 | `budgetlogg.jsonl` | Minnet. En rad per beslut, aldrig redigerad i efterhand. Färskaste kopian bor inbäddad i dashboard-artefakten (schemalagda körningar kan inte pusha till git); `minne.mjs` synkar. |
 | `minne.mjs` | Läser tillbaka budgetloggen och filutkorgen ur dashboardens HTML. Källan med flest rader vinner. |

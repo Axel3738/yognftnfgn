@@ -849,7 +849,7 @@ export function rapport(rader, meta, behov = []) {
   // Facit (Axel 2026-09-30, agent/FACIT.md): hur motorns tidigare beslut i
   // samma läge gick — bredvid dagens beslut, före "Att godkänna". Ändrar inget.
   if (meta.facit) {
-    ut.push(`## 🎯 Facit — så har motorns beslut gått (${meta.facit.skapad}${meta.facit.delvis ? ', DELVIS — ett konto saknades' : ''})`);
+    ut.push(`## 🎯 Facit — så har motorns beslut gått${meta.facit.skapad ? ` (${meta.facit.skapad}${meta.facit.delvis ? ', DELVIS — ett konto saknades' : ''})` : ''}`);
     ut.push('');
     ut.push('Underlag, inte order: facit ändrar ingen dom, ingen budget och ingen status. Regelförslag är Axels beslut.');
     ut.push('');
@@ -859,6 +859,13 @@ export function rapport(rader, meta, behov = []) {
       ut.push('');
       ut.push('Dagens åtgärder bredvid sin hink:');
       for (const r of medNot) ut.push(`- **${r.namn.split('|')[0].trim()}** (${r.dom.kod}) — ${r.dom.facit.text}`);
+    }
+    if (meta.facit.monster) { ut.push(''); ut.push(meta.facit.monster); }
+    const medMonster = sorterade.filter((r) => r.dom?.monster);
+    if (medMonster.length) {
+      ut.push('');
+      ut.push('Dagens beslut som liknar ett mönster (varningar, inga förbud — domen är densamma):');
+      for (const r of medMonster) ut.push(`- **${r.namn.split('|')[0].trim()}** (${r.dom.kod}) — ${r.dom.monster.text}`);
     }
     ut.push('');
   }
@@ -1120,7 +1127,7 @@ async function main() {
   // facit.mjs eller en trasig kalibrering.json får aldrig stoppa ronden (en
   // avbruten rond betyder ingen budgetändring alls den dagen). Koden, budgeten
   // och planen är desamma med eller utan facit (testat).
-  const facit = await laddaFacit(rader, idag, varningar);
+  const facit = await laddaFacit(rader, idag, varningar, { logg, marknad });
 
   const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf), spegel, facit };
   if (argv.includes('--json')) {
@@ -1148,7 +1155,32 @@ export const KALIBRERING_MAX_DAGAR = 3;
  * förslagen går bara till Axel (kritiken 2026-09-30: en text bredvid dagens
  * beslut får inte kunna läsas som en order).
  */
-export async function laddaFacit(rader, idag, varningar, { kal = undefined, modul = undefined } = {}) {
+export async function laddaFacit(rader, idag, varningar, { kal = undefined, modul = undefined, minne = undefined, monsterModul = undefined, logg = [], marknad = null } = {}) {
+  // Mönsterminnet (agent/monster.json) läses för sig — ett fel där rör aldrig facit.
+  let monsterRad = null;
+  try {
+    const mm = monsterModul ?? await import('./monster.mjs');
+    const mn = minne === undefined ? await lasJsonFil('monster.json') : minne;
+    const alder = mn ? (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${mn.skapad}T00:00:00Z`)) / 86400000 : NaN;
+    if (mn && Array.isArray(mn.monster) && alder >= 0 && alder <= KALIBRERING_MAX_DAGAR) {
+      for (const r of rader) {
+        try { const not = mm.monsterNot(mn, r, { logg, idag, marknad }); if (not && r.dom) r.dom.monster = not; } catch (e) { varningar.push(`Mönster för ${String(r.namn ?? r.id).split('|')[0].trim()} kunde inte läsas: ${e.message}`); }
+      }
+      monsterRad = mm.monsterStatus(mn);
+    }
+  } catch (e) {
+    varningar.push(`Mönsterminnet kunde inte läsas: ${e.message} — ronden går vidare utan.`);
+  }
+  const f = await laddaFacitKal(rader, idag, varningar, { kal, modul });
+  if (f && monsterRad) f.monster = monsterRad;
+  return f ?? (monsterRad ? { skapad: null, delvis: false, antal_forslag: 0, status: [], monster: monsterRad } : null);
+}
+
+async function lasJsonFil(namn) {
+  try { return JSON.parse(await readFile(join(HÄR, namn), 'utf8')); } catch { return null; }
+}
+
+async function laddaFacitKal(rader, idag, varningar, { kal, modul }) {
   try {
     const m = modul ?? await import('./facit.mjs');
     const k = kal === undefined ? await lasKalibrering() : kal;

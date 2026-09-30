@@ -253,6 +253,58 @@ kontrollerar att konstanten i `agent/besked.mjs` i dag har värdet i `fran`
 rad i `REGELVERK` med dagens datum (så att nya beslut mäts för sig), och kör
 testerna. `NEJ F1234`: ingenting ändras.
 
+## Mönsterminnet — var motorn brukar gissa fel och rätt
+
+Axels beställning 2026-09-30: *"lära sig av sina misstag … hitta mönster för
+vad den har trott varje gång och som kanske har blivit fel … lagra det … men
+vi får inte ta konkreta förbud, för en grej som brukar funka kanske bara inte
+funkade två eller tre gånger."* Koden: `agent/monster.mjs`.
+
+Varje beslut är en gissning om de närmaste dygnen, och rättas mot dygn 1–3
+efter — ingen kontrafaktik, bara det som hände:
+
+| Beslut | Motorn trodde | Rätt om | Fel om |
+|---|---|---|---|
+| Höjning | kampanjen fortsätter gå med vinst | ROAS ≥ break-even | ROAS under break-even |
+| Sänkning | kampanjen är inte värd pengarna just nu | ROAS under break-even | ROAS ≥ target (studsade) |
+| Vänta trots ROAS över target | toppen håller kanske inte | ROAS under target | ROAS ≥ target (missad höjning) |
+| Vänta med en kampanj i förlust | den kan vända | ROAS ≥ break-even | ROAS under break-even |
+
+Villkoren är bara sådant som var känt när motorn bestämde sig: ROAS mot
+break-even, dygn i rad över target, köp senaste tre dygnen, motorns ändring
+veckan innan, budget, senaste dygnet mot snittet, marknad. Minnet letar lägen
+(ett villkor eller två) där gissningen gått fel eller rätt oftare än vanligt.
+
+Skydden mot förbud på slump:
+
+- **Krympning.** Varje läge dras mot beslutets vanliga träffsäkerhet (fyra fall
+  i förhand). Ett läge listas först vid 6 beslut på 4 olika kampanjer (två
+  villkor: 8), 15 procentenheter från det vanliga och säkert på 80 %-nivån.
+  Två–tre missar i ett läge som brukar fungera räcker aldrig.
+- **Glömska.** Äldre beslut väger mindre, halva vikten efter 30 dygn. Ett
+  mönster som slutar stämma försvinner av sig självt.
+- **Slumpnivån.** Varje morgon blandas utfallen om 100 gånger, och rapporten
+  säger hur många mönster ren slump hade gett. 2026-09-30: 4 missar hittade,
+  mot i snitt 0,7 av slump; 2 styrkor mot 0,2. Listan "brukar fungera men gick
+  fel nyligen" (tre fel i rad) gav 1,7 av slump — den är mest brus och står
+  som "håll ögonen på".
+- **Aldrig en regel.** Mönstret står bredvid dagens beslut i ronden och i
+  rapporten. Motorn ändras bara när Axel säger ja.
+
+Gissningarna sparas i `agent/gissningar.jsonl` och glöms aldrig (Meta ger
+bara 45 dygn bakåt). Mönstren räknas om varje morgon till `agent/monster.json`.
+
+Första körningen 2026-09-30, 172 rättade gissningar: höjningar rätt 70 av 86,
+vänta över target rätt 39 av 53, vänta i förlust rätt 9 av 19, sänkningar
+2 av 4 (10 oklara). Återkommande missar:
+
+- Höjning vid ROAS 1,6–2,0 × break-even: med vinst efteråt 11 av 18 gånger,
+  mot 81 % för höjningar i stort (12 kampanjer). Med 10–29 köp: 5 av 12.
+- Vänta med en kampanj i förlust när den hade under 10 köp på tre dygn: tog
+  sig över break-even 2 av 11 gånger (9 kampanjer).
+- Vänta trots ROAS över target med 30 köp eller fler: föll under target 4 av
+  10 gånger (4 kampanjer).
+
 ## Första körningen, 2026-09-30
 
 Datan: SE 739 dygnsrader och 121 budgetändringar (27 för hand), NO 335 och 36,

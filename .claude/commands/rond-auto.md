@@ -1299,10 +1299,18 @@ Skriptet hämtar kampanjernas dygnsserie (7d_click, även avstängda kampanjer)
 och Metas aktivitetslogg för budgetändringar ur båda kontona med token (egen
 tidsgräns 150 s för båda, ett omförsök vid strypning), dömer varje höjning och
 sänkning vars fönster stängt och mognat, registrerar avstängningarna, och
-skriver tre filer: nya rader i `agent/facit.jsonl`, hinkarna och förslagen i
-`agent/kalibrering.json`, rapporten i `agent/utdata/facit-<IDAG>.md`. Utan
-`--skriv` skrivs ingenting. Committa de tre filerna i en EGEN commit och pusha
-till samma gren.
+skriver fem filer: nya rader i `agent/facit.jsonl`, hinkarna och förslagen i
+`agent/kalibrering.json`, motorns rättade gissningar i `agent/gissningar.jsonl`
+(glöms aldrig), dagens mönster i `agent/monster.json` och rapporten i
+`agent/utdata/facit-<IDAG>.md`. Utan `--skriv` skrivs ingenting. Committa de
+fem filerna i en EGEN commit och pusha till samma gren.
+
+**Mönsterminnet** (Axels beställning 2026-09-30: "lära sig av sina misstag …
+men inga förbud") rättar varje beslut som en gissning mot dygn 1–3 efter, och
+listar lägen där motorn gissat fel eller rätt oftare än vanligt. I morgon
+lägger ronden en rad bredvid varje beslut som liknar ett sådant läge. Raden är
+en varning, aldrig ett förbud: du utför planen precis som den står. Ett
+mönster ändrar aldrig en dom, en budget eller `agent/besked.mjs`.
 
 **Det här steget ändrar ingenting i Meta, i planen eller i
 `agent/budgetlogg.jsonl`.** En facit-rad i budgetloggen med `ny_budget`
@@ -1406,9 +1414,9 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Tre Meta-anrop gjorda mot BÅDA kontona: SE `1867947880635861` och NO `1050941584152547`
 - [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
 - [ ] `agent/spegelbudget.json` skriven ur OPS-kontot och USA-kontot (bara CaraShell, bara läst — steg 1c) och committad; `## 🪞 Spegelmarknader` läst i rapporten
-- [ ] Facit körd i steg 6b (`node agent/facit.mjs --hamta --skriv`) EFTER budgetändringarna och loggens push — eller orsaken skriven på en rad; `agent/facit.jsonl` + `agent/kalibrering.json` + `agent/utdata/facit-<IDAG>.md` pushade i en egen commit
+- [ ] Facit körd i steg 6b (`node agent/facit.mjs --hamta --skriv`) EFTER budgetändringarna och loggens push — eller orsaken skriven på en rad; `agent/facit.jsonl` + `agent/kalibrering.json` + `agent/gissningar.jsonl` + `agent/monster.json` + `agent/utdata/facit-<IDAG>.md` pushade i en egen commit
 - [ ] `node agent/facit.mjs --status` i leveransen (och `--en` i Discord-posten); varje ⚑ förslag klistrat in för Axel med sitt id och JA/NEJ — inget förslag verkställt, `agent/besked.mjs` orörd. Säger statusen GAMMAL: skriv att 6b inte skrev i dag
-- [ ] Ingen facit-rad i `agent/budgetlogg.jsonl`, ingen återstart och ingen budgetändring för att facit sa något
+- [ ] Ingen facit-rad i `agent/budgetlogg.jsonl`, ingen återstart och ingen budgetändring för att facit eller ett mönster sa något
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte

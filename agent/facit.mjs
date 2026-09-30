@@ -27,6 +27,8 @@ import {
 const HÄR = dirname(fileURLToPath(import.meta.url));
 export const FACITFIL = join(HÄR, 'facit.jsonl');
 export const KALIBRERINGSFIL = join(HÄR, 'kalibrering.json');
+export const GISSNINGSFIL = join(HÄR, 'gissningar.jsonl');
+export const MONSTERFIL = join(HÄR, 'monster.json');
 
 // ── Konstanterna ─────────────────────────────────────────────────────────────
 
@@ -1742,7 +1744,11 @@ async function main(argv) {
   const flagga = (namn, fallback = null) => { const i = argv.indexOf(namn); return i >= 0 && argv[i + 1] ? argv[i + 1] : fallback; };
   if (argv.includes('--status')) {
     const kal = existsSync(KALIBRERINGSFIL) ? JSON.parse(readFileSync(KALIBRERINGSFIL, 'utf8')) : null;
-    console.log(status(kal, { en: argv.includes('--en'), idag: svensktDatumIdag() }).join('\n'));
+    const rader = status(kal, { en: argv.includes('--en'), idag: svensktDatumIdag() });
+    if (!argv.includes('--en')) {
+      try { const mn = existsSync(MONSTERFIL) ? JSON.parse(readFileSync(MONSTERFIL, 'utf8')) : null; const st = mn ? (await import('./monster.mjs')).monsterStatus(mn) : null; if (st) rader.push(`- ${st}`); } catch { /* mönstren är ett tillägg */ }
+    }
+    console.log(rader.join('\n'));
     return;
   }
   const idag = flagga('--idag', svensktDatumIdag());
@@ -1788,14 +1794,37 @@ async function main(argv) {
   const utfall = kor({ logg, data, idag, sparade, karta, forvantadeKonton: valda, tidigare });
   utfall.kalibrering.varningar = varningar;
 
-  if (argv.includes('--json')) { console.log(JSON.stringify(utfall.kalibrering, null, 2)); }
-  const md = rapportMd(utfall.kalibrering, utfall);
+  // Mönsterminnet (agent/monster.mjs): motorns gissningar rättade mot utfallet.
+  // gissningar.jsonl glömmer aldrig (Meta ger bara 45 dygn bakåt); monster.json
+  // räknas om varje morgon ur hela minnet. Ett fel här stoppar inte facit.
+  let minne = null; let nyaGissningar = [];
+  try {
+    const M = await import('./monster.mjs');
+    const serier = {}; let until = null;
+    for (const [k, d] of Object.entries(data)) { if (!d) continue; serier[k] = byggSerie(d.dygn); until = until && until < d.until ? until : d.until; }
+    const gamla = lasJsonl(GISSNINGSFIL);
+    const kanda = new Set(gamla.map((g) => g.nyckel));
+    nyaGissningar = M.gissningar(logg, serier, { until }).filter((g) => !kanda.has(g.nyckel));
+    const allaG = [...gamla, ...nyaGissningar];
+    let igar = null;
+    try { igar = existsSync(MONSTERFIL) ? JSON.parse(readFileSync(MONSTERFIL, 'utf8')) : null; } catch { igar = null; }
+    minne = { ...M.monster(allaG, { idag, tidigare: igar }), slump: M.slumpniva(allaG, { idag }) };
+    utfall.monsterRapport = M.monsterRapport(minne);
+    utfall.monsterStatus = M.monsterStatus(minne);
+  } catch (e) {
+    varningar.push(`Mönsterminnet kunde inte räknas: ${e.message}`);
+  }
+
+  if (argv.includes('--json')) { console.log(JSON.stringify({ ...utfall.kalibrering, monster: minne }, null, 2)); }
+  const md = [rapportMd(utfall.kalibrering, utfall), ...(utfall.monsterRapport ?? [])].join('\n');
   if (torr) {
     if (!argv.includes('--json')) console.log(md);
-    console.error(`FACIT (torr): ${utfall.nya.length} nya rader skulle skrivas. Inget skrivet — rutinen skriver med --skriv.`);
+    console.error(`FACIT (torr): ${utfall.nya.length} nya rader och ${nyaGissningar.length} nya gissningar skulle skrivas. Inget skrivet — rutinen skriver med --skriv.`);
     return;
   }
   if (utfall.nya.length) appendFileSync(FACITFIL, utfall.nya.map((r) => JSON.stringify(r)).join('\n') + '\n');
+  if (nyaGissningar.length) appendFileSync(GISSNINGSFIL, nyaGissningar.map((r) => JSON.stringify(r)).join('\n') + '\n');
+  if (minne) { const t = `${MONSTERFIL}.tmp`; writeFileSync(t, `${JSON.stringify(minne, null, 2)}\n`); renameSync(t, MONSTERFIL); }
   const tmp = `${KALIBRERINGSFIL}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(utfall.kalibrering, null, 2)}\n`);
   renameSync(tmp, KALIBRERINGSFIL);
@@ -1803,8 +1832,8 @@ async function main(argv) {
   mkdirSync(dirname(rapportfil), { recursive: true });
   writeFileSync(rapportfil, `${md}\n`);
   for (const v of varningar) console.error(`⚠ ${v}`);
-  console.error(`FACIT: ${utfall.nya.length} nya rader i agent/facit.jsonl, kalibreringen i agent/kalibrering.json, rapporten i agent/utdata/facit-${idag}.md.`);
-  console.log(status(utfall.kalibrering).join('\n'));
+  console.error(`FACIT: ${utfall.nya.length} nya rader i agent/facit.jsonl, ${nyaGissningar.length} nya gissningar i agent/gissningar.jsonl, mönstren i agent/monster.json, kalibreringen i agent/kalibrering.json, rapporten i agent/utdata/facit-${idag}.md.`);
+  console.log([...status(utfall.kalibrering), ...(utfall.monsterStatus ? [`- ${utfall.monsterStatus}`] : [])].join('\n'));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
