@@ -1419,3 +1419,498 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Medisinboks NO (120252062027980233)
 
+### Lärdom L-120250342271020291 — Sotarset_PD_6_1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 1 507 kr / 21 292 kr (7 %) |
+| Köp | 5 |
+| ROAS / CPA | 1,95 / 301 kr — kampanjens ROAS 2,26 |
+| Konverteringsgrad | 7,0 % (5 köp / 71 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | ja |
+
+**Koncept/typ/parent/källa:** koncept PD (spec), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "Det här får du — spec-lista på riktigt foto med nio stänger"), typ okänd, parent —, källa: sidans Funktioner. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "9 böjliga stänger à 41 cm." · rad 2: "Borste och sexkantsadapter ingår." · rad 3: "3,69 meters räckvidd, allt i ett paket."
+- Rubrik (live): "9 stänger i en låda"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Det här får du." · underrad "9 stänger × 41 cm · 3,69 m räckvidd · Borste 100 mm · Sexkantsadapter." · prisband "459 kr. Ord. 599 kr." · knapp "Beställ." · foto: svart nylonborste, en uppsnodd vit stång och fyra lösa stänger på golv och tygbit, ingen människa. Antalet nio går inte att räkna säkert i bilden (dna.md spärr 3: bara foton med alla nio).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | ingen person, inget problem — köparen som redan väger innehållet | okänd |
+| Vinkel | spec (batch-log: "Det här får du", sidans Funktioner) | spec: innehållslista med mått ur sidan (3,69 m, 41 cm, 100 mm) | ja |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — visar vad som ingår, beskriver inget problem | okänd |
+| Mekanism | — (brief saknas i repot) | ingen visad mekanism, bara räckvidden som mått | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts; måtten är enda belägget | okänd |
+| Positionering | — (brief saknas i repot) | innehållslista med pris och ord. pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen (459 kr, ord. 599 kr utan tidsgräns) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: en innehållslista sållar hårt — den som klickar har redan bestämt sig (konverteringsgrad 7,0 % mot 3,0 % på PD_1_H2 i lärdomen 2026-09-26) men den stoppar inte den kalla scrollen, så Meta gav den 7 % av spenden och ROAS 1,95 hamnade under kampanjens 2,26 fast över break-even 1,61.
+
+**Nästa annonser:**
+- SLÄPP — LOSER men över break-even (ROAS 1,95 mot 1,61, CPA 301 mot break-even-CPA 307 kr, vinstbidrag ≈ +30 kr) — annonsen får ligga kvar, men den itereras inte: idén kom ur sidans Funktioner (ingen research-källa) och loser-regeln säger släpp; PD_1-vidarebyggena och `Sotarset_PD_9_H1` har företräde. Anmärkning till redigeraren: bilden visar inte säkert nio stänger — aldrig sexstångsbilden märkt som nio.
+
+### Lärdom L-120250342317190291 — Sotarset_PD_4_1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 114 kr / 21 292 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (beviset, villkorad), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "sotet på tidningen som foto — bara äkta"), typ okänd, parent —, källa: gissning. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Sotet som faktiskt satt i kaminröret." · rad 2: "Borstat loss på minuter." · rad 3: "Priset: 459 kr, tidigare 599 kr."
+- Rubrik (live): "Det här satt i röret"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Det här satt i röret." · prisband "459 kr. Ord. 599 kr." · knapp "Beställ." · foto: hög med sot på en tidningssida på ett träbord, svart borste till höger, rörböj i nedre hörnet — ser genererat ut (gissning), att materialet är äkta kan inte belägas ur repot. Anmärkning till redigeraren: "på minuter" i primärtexten hör inte hemma i ny copy; annonsen rörs inte (live-regeln 2026-09-15).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | beviset (batch-log: villkorad på äkta material) | beviset: sot på tidning (villkoret "bara äkta material" ej belagt) | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten — visar resultatet av problemet | okänd |
+| Mekanism | — (brief saknas i repot) | ingen visad mekanism, bara resultatet (sotet) | okänd |
+| Tro | — (brief saknas i repot) | beviset är själva bilden; äktheten okänd | okänd |
+| Positionering | — (brief saknas i repot) | foto som bevis med pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 114 kr och fem landningssidevisningar räcker inte för en läsning; ett stilla sotfoto utan mekanism och med ett tidslöfte ("på minuter") ger scrollen lite att stanna för, och bilden ser genererad ut — ett bevis som inte går att belägga bär dåligt.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden (114 kr, 0 köp, 5 LPV): en observation, ingen dom. Sotbeviset finns redan som video i `Sotarset_PD_4_H1` (samma bevis, INGEN_LEVERANS), så det byggs inte om som bild; bevis-vinkeln byggs bara om med äkta material, och "på minuter" går aldrig in i ny copy.
+
+### Lärdom L-120250342711370291 — Sotarset_PD_2_H1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 28 kr / 21 292 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | 0,0 % (0 köp / 4 LPV) |
+| Hook rate / hold rate | 28 % / 17 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (räckvidd), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "räckvidden bakom kaminen/torktumlaren är en egen smärta"), typ okänd, parent —, källa: sidraden "Når bakom kaminen eller torktumlaren" + PD_1_H2. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Skruva ihop stängerna en efter en tills borsten når bakom kaminen." · rad 2: "Den kommer ut svart." · rad 3: "Räckvidden: 3,69 meter, byggd av 9 stänger."
+- Rubrik (live): "Stång för stång bakom kaminen"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | räckvidd (batch-log) | räckvidd bakom kaminen (torktumlaren nämns inte i copyn) | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten — borsten som kommer ut svart | okänd |
+| Mekanism | — (brief saknas i repot) | skruva ihop stänger till 3,69 m | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | räckviddsdemo | okänd |
+| Brådska | — (brief saknas i repot) | ingen (inget pris i primärtexten) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: hook rate 28 % är ungefär hälften av breakthrougharnas 51–55 % (lärdomarna 2026-09-26) medan hold rate 17 % ligger nära H3:s 18 % — öppningen "skruva ihop stängerna" stoppar scrollen dåligt men kroppen håller, och med 28 kr och 4 landningssidevisningar finns ingen köpsignal alls.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden (28 kr, 0 köp): en observation, ingen dom. Räckviddsvinkeln fick samma svar som bild (`Sotarset_PD_2_1`, INGEN_LEVERANS); PD_1-kroppen har fyra namngivna vidarebyggen i hubben som får spenden först.
+
+### Lärdom L-120250342203030291 — Sotarset_PD_3_1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 25 kr / 21 292 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (stel mot böjlig), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "stel/böjlig som tvådelad bild"), typ okänd, parent —, källa: sidraden "Följer krökar där en stel stång fastnar" + copy-regler. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "En stel stång stannar vid kröken." · rad 2: "Den böjliga fortsätter rakt igenom den." · rad 3: "9 stänger, 3,69 meters räckvidd."
+- Rubrik (live): "Fastnar aldrig i kröken"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Stel fastnar. Böjlig fortsätter." (tvådelad bild, vit mittlinje) · underrad "9 böjliga stänger följer röret genom varje krök." · prisband "459 kr. Ord. 599 kr." · knapp "Beställ." · foto: en rörböj, vänster sida stel stång som stannar, höger sida vit böjlig stång genom kröken.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | jämförelse (batch-log: konflikt typ A) | stel mot böjlig (jämförelse) | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten — visar skillnaden mellan två verktyg | okänd |
+| Mekanism | — (brief saknas i repot) | böjliga stänger följer krökar | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | jämförelsebild med pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 25 kr och tre landningssidevisningar ger ingen läsning; en delad bild utan människa eller kamin lovar ett tekniskt argument till någon som ännu inte vet att stela stänger är problemet.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden (25 kr, 0 köp, 3 LPV): en observation, ingen dom. Samma vinkel som video (`Sotarset_PD_3_H1`) fick 4 kr — varken bild eller video har fått en riktig läsning, så vinkeln byggs inte om innan PD-vidarebyggena har svarat.
+
+### Lärdom L-120250342291580291 — Sotarset_G_2_1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 6 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept G (gåva), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "gåva till honom med kamin — G-videorna svalt"), typ okänd, parent —, källa: befintlig G-copy. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "En present till honom med kamin." · rad 2: "Han rensar rökkanalen själv, mellan sotarens besök." · rad 3: "9 böjliga stänger, 459 kr."
+- Rubrik (live): "Julklappen han sotar med"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Till honom med kamin: sotar själv mellan besöken." · underrad "9 böjliga stänger. Rensar rökkanalen mellan sotarens besök." · prisband "459 kr. Ord. 599 kr." · knapp "Beställ." · foto: man knäböjer vid en kamin i ett vardagsrum, svart borste och vita stänger på en filt i förgrunden. Anmärkning: metarubriken säger "Julklappen" den 30 september medan fars dag (8 november) är närmast.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | partner-som-koper-present-till-honom-med-kamin (dna.md, obevisad) | partnern som köper present till honom med kamin | ja |
+| Vinkel | gåva (batch-log) | gåva (present till honom) | ja |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — presenten är verktyget | okänd |
+| Mekanism | — (brief saknas i repot) | ingen visad mekanism, bara "rensar själv mellan sotarens besök" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | presentbild med pris och ord. pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen tidsgräns i copyn; "Julklappen" i rubriken är en högtid, ingen deadline | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 6 kr och ingen visning att tala om — en julklappsrubrik i slutet av september bredvid PD_1_H2 som tog 53 % av kampanjens spend första veckan (lärdomen 2026-09-26) gav Meta ingen anledning att leverera, och gåvovinkeln har ännu bara fått ett enda svar (G_1_H2:s 3 köp under grinden).
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (6 kr, Metas dom, aldrig ABO): logga och släpp. Gåvovinkeln bärs nu av fars dag-briefen i `docs/briefs/farsdag-2026/` med rätt högtid (8 november), och `Sotarset_G_2_H1` byggs bara om `G_2_1` blir KPI_WINNER (backlog.md).
+
+### Lärdom L-120250343537630291 — Sotarset_PD_4_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 5 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 38 % / 17 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (beviset, villkorad), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "riktigt sot på tidningspapper som bevis — bara med äkta material"), typ okänd, parent —, källa: PD_1_H2 + gissning. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "En tidning läggs under rörets utlopp innan borsten dras igenom." · rad 2: "Det som föll ner var inte skrapat ur röret, det var borstat loss." · rad 3: "Klart på några minuter."
+- Rubrik (live): "Filmat: vad som kom ur röret"
+- Anmärkning till redigeraren: "Klart på några minuter" hör inte hemma i ny copy; annonsen rörs inte (live-regeln 2026-09-15).
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | beviset (batch-log: villkorad på äkta material) | beviset: tidning under rörets utlopp, sotet som faller | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | borsta loss i stället för att skrapa | okänd |
+| Tro | — (brief saknas i repot) | beviset är filmen; äktheten okänd | okänd |
+| Positionering | — (brief saknas i repot) | filmat bevis | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: hook rate 38 % och hold rate 17 % är över hälften av breakthrougharnas nivå men Meta gav ändå bara 5 kr — öppningen "tidning under utloppet" är ett lugnt förlopp som väntar in beviset, och Meta hittade ingen tidig signal att skala på.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (5 kr, Metas dom, aldrig ABO): logga och släpp. Sotbeviset som ny öppning på en levande vinnare (`Sotarset_PD_1_H6`/`PD_1_H7` i hubben) är redan namngivet i lärdomarna 2026-09-26; ingen egen iteration här.
+
+### Lärdom L-120250342761840291 — Sotarset_PD_3_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 4 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 17 % / 13 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (stel mot böjlig), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "stel stång fastnar i kröken, böjlig går igenom (konflikt typ A)"), typ okänd, parent —, källa: sidraden + copy-regler. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Vid kröken tar den stela stången slut." · rad 2: "Den böjliga fortsätter förbi den, stång för stång." · rad 3: "Sotet borstas loss."
+- Rubrik (live): "Går runt kröken en stel inte gör"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | jämförelse (batch-log) | stel mot böjlig (jämförelse) | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | böjliga stänger följer krökar | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | jämförelse i röret | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: hook rate 17 % är batchens lägsta och hold rate 13 % under H2/H3:s 18–21 % — en jämförelse som börjar med en "stel stång" stoppar scrollen dåligt hos någon som inte kallar sitt problem för ett stångproblem; på 4 kr är dock talen få visningar, inget mer.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (4 kr, Metas dom, aldrig ABO): logga och släpp. Stel/böjlig-vinkeln fick samma svar som bild (`Sotarset_PD_3_1`, 25 kr); ingen ny variant byggs.
+
+### Lärdom L-120250342235540291 — Sotarset_CS_2_1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 3 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept CS (erbjudande utan brådska), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "459 kr med 599 struket, inget annat"), typ okänd, parent —, källa: sidpriset. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "599 kr blir 459 kr." · rad 2: "Spara 140 kr på sotarsetet med böjliga stänger." · rad 3: "Beställ ditt sotarset."
+- Rubrik (live): "Sänkt till 459 kr"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "459 kr." · underrad "Ord. pris 599 kr. Spara 140 kr." · knapp "Beställ." · foto: nio vita stänger i rad på ljus botten med borsten överst, ingen människa.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | rea-köparen — ingen person, ingen kamin | okänd |
+| Vinkel | CS (batch-log: ärligt erbjudande utan brådska) | CS: 599 → 459 kr, sidans pris, utan brådska | ja |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten — förklarar inte problemet, bara priset | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | reavara | okänd |
+| Brådska | ingen (regel: aldrig påhittad brådska) | ingen — ingen tidsgräns, inget knapphetsspråk | ja |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: en ren prisbild utan problem, person eller mekanism ger en kall publik ingen anledning att stanna, och erbjudandet har nu fått fyra försök utan spend (CS_1_H2, CS_1_H3, CS_2_H1, denna) — kampanjens PD-kropp tar spenden.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (3 kr, Metas dom, aldrig ABO): logga och släpp. Det ärliga erbjudandet fick här sitt fjärde försök utan spend; det byggs inte om som pris-only innan en PD-vinnare kan bära det som tillägg.
+
+### Lärdom L-120250342169470291 — Sotarset_PD_2_1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 3 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (räckvidd), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "räckviddsvinkeln validerad billigt som statisk"), typ okänd, parent —, källa: sidraden "Når bakom kaminen eller torktumlaren". Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Böjliga stänger tar sig bakom kaminen." · rad 2: "Dit en stel borste aldrig kommer åt." · rad 3: "459 kr. Ord. pris 599 kr."
+- Rubrik (live): "Når bakom kaminen"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Når bakom kaminen." · underrad "3,69 meter böjlig räckvidd." · prisband "459 kr. Ord. 599 kr." · knapp "Beställ." · foto: svart kamin med rör mot en ljus panelvägg, en vit böjlig stång som slingrar sig bakom kaminen, vedkorg till höger.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | räckvidd (batch-log) | räckvidd bakom kaminen | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | böjlig stång som når bakom kaminen | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | räckviddsbild med pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: bilden visar rummet men inget problem — ingen som lider av sämre drag känner igen sig, så Meta hade inget att leverera på (3 kr) och räckviddsvinkeln har därmed inte fått någon läsning som bild eller som video.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (3 kr, Metas dom, aldrig ABO): logga och släpp. Räckvidden som video (`Sotarset_PD_2_H1`, 28 kr) fick samma svar; ingen ny variant.
+
+### Lärdom L-120250343462230291 — Sotarset_PD_5_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 33 % / 33 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (räknad uppbyggnad), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "räknad uppbyggnad 1…9 → 3,69 m, "bygg bara den längd du behöver""), typ okänd, parent —, källa: sidraden "Bygg bara den längd du behöver" + gissning. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Räkna stängerna medan de skruvas ihop: 1, 2, 3… hela vägen till 9." · rad 2: "3,69 meter fullt utbyggt." · rad 3: "Bygg bara den längd du faktiskt behöver."
+- Rubrik (live): "1 till 9 stänger, du väljer"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | villaägare med kamin (copyn nämner kaminen eller röret) | okänd |
+| Vinkel | räknad uppbyggnad (batch-log) | räknad uppbyggnad 1 till 9 (räckvidd som mått) | ja |
+| Medvetandenivå | — (brief saknas i repot) | produkt- till lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | skruva ihop stänger, välj längd | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | mått-demo | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 0 kr på sju dygn — Meta lät annonsen aldrig ta en enda visning i CBO:n, och hook rate 33 % / hold rate 33 % ligger på några få visningar; öppningen "räkna stängerna" börjar med produkten, inte med problemet som bär kampanjens breakthroughs.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (0 kr, Metas dom, aldrig ABO): logga och släpp. Idén "bygg bara den längd du behöver" kan komma tillbaka som mekanismavsnitt i en PD-kropp, aldrig som egen annons.
+
+### Lärdom L-120250343609070291 — Sotarset_UG_1_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept UG (UGC-talare), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "UGC-talare vid kaminen, ingen voiceover"), typ okänd, parent —, källa: gissning. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "En vanlig person skruvar ihop stängerna framför kameran." · rad 2: "Böjer sig runt kröken, drar ut borsten svart av sot." · rad 3: "459 kr, jämfört med 599 kr."
+- Rubrik (live): "Sotade kaminröret själv"
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | UGC-talare vid kaminen (batch-log) | en vanlig person vid kaminen (talare enligt copyn) | ja |
+| Vinkel | formatet (talare) (batch-log) | UGC-format, sotar själv | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | skruva ihop, böj runt kröken, borsten kommer ut svart | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | UGC-demo med pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 0 kr på sju dygn — annonsen fick aldrig en visning, så UGC-formatet är helt oprövat och det går inte att säga om talaren eller kroppen föll.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (0 kr, Metas dom, aldrig ABO): logga och släpp. UGC-formatet har inte fått en enda visning och byggs inte om förrän en PD-vinnare finns att bära det.
+
+### Lärdom L-120250343411150291 — Sotarset_CS_2_H1 (INGEN_LEVERANS, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 21 292 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,26 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept CS (erbjudande utan brådska), batch #2 (2026-09-21, batch-log.md), ingen brief i repot (bara batch-logens rad: "ärligt erbjudande 599 → 459 utan brådska; CS_1 fick aldrig spend"), typ okänd, parent —, källa: gissning + sidpriset. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Prislappen ändras från 599 kr till 459 kr." · rad 2: "I lådan: 9 stänger, en borste, en sexkantsadapter." · rad 3: "Inget mer, inget mindre."
+- Rubrik (live): "599 kr. Nu 459 kr."
+- VO/captions: ej läst (ingen brief i repot, ingen ram dragen)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | rea-köparen — ingen person, ingen kamin i copyn | okänd |
+| Vinkel | CS (batch-log: ärligt erbjudande utan brådska) | CS: 599 → 459 kr med innehållslista, utan brådska | ja |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | reavara med innehållslista | okänd |
+| Brådska | ingen (regel: aldrig påhittad brådska) | ingen — inget knapphetsspråk | ja |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 0 kr på sju dygn — prisvideon utan problem fick aldrig en visning bredvid PD-kroppen, och erbjudandet är därmed oprövat på video.
+
+**Nästa annonser:**
+- SLÄPP — INGEN_LEVERANS (0 kr, Metas dom, aldrig ABO): logga och släpp. Erbjudandet har nu fyra försök utan spend (CS_1_H2, CS_1_H3, CS_2_1, denna) och byggs inte om som pris-only.
+
+## Herrshortsen (120249237587760291)
+

@@ -1294,3 +1294,46 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Fiskespöhållaren (120249850522830291)
 
+### Lärdom L-120250341849240291 — Termoskydd_CS_9_1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 17 kr / 15 822 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,82 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept CS (pris) med nattbild, batch #3 (2026-09-21/22, batch-log.md: "CS_3:s layout med nattbild", isolerad variabel bilden), förälder Termoskydd_CS_3 (BREAKTHROUGH, lärdom L-120250175770080291), ingen brief för det live-annonsen (briefen `Termoskydd_CS_13_1` bär platsen CS_9_1 men är ett annat, senare koncept med daglig bild). Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Ingen ser in. Varken fram eller på sidan." · rad 2: "Skyddet sitter utanpå glaset – ingen kondens att torka bort i morgon." · rad 3: "559 kr (ord. 932 kr) – spara 373 kr, 40 %."
+- Rubrik (live): "Ingen ser in. Varken fram eller sidan."
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Ingen ser in. Varken fram eller på sidan." · underrad "Skyddet sitter utanpå glaset – ingen kondens att torka bort i morgon." · prisband "559 kr (ord. 932 kr) — spara 373 kr, 40 %." · knapp "Handla nu." · foto: vit husbil i skymning eller natt med det quiltade silverskyddet över vindrutan och sidorutan. Tre budskap i en bild (insyn, kondens, pris).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husbilsägare som vill ha mörker och integritet | okänd |
+| Vinkel | CS (batch-log: CS_3:s layout, bara bilden byts) | prislayout med insynsrubrik, kondens som underrad och pris | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten — insyn och kondens | okänd |
+| Mekanism | — (brief saknas i repot) | skyddet utanpå glaset | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | prisbild med 40 % rabatt | okänd |
+| Brådska | — (brief saknas i repot) | ingen — ingen tidsgräns | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: rubriken är insynsvinkeln "Ingen ser in" och inte priset, så bilden är kanske inte den enda variabeln mot CS_3 (förälderns rubrik är inte läst), och 17 kr räcker i alla fall inte för en läsning.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden (17 kr, 0 köp): en observation, ingen dom. Föräldern `Termoskydd_CS_3` (BREAKTHROUGH) har sina vidarebyggen redan i hubben (CS_10_1, CS_11_H1, CS_12_1, CS_13_1), och insynsvinkeln bärs av `Termoskydd_PD_10_H1`/`PD_11_H1`; ingen ny iteration här.
+
+## Sneakers Herr (120249917338680291)
+

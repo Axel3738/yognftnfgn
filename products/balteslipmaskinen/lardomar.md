@@ -1892,3 +1892,169 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Motorhöljet ABO-test 08-19 (120249860739760291)
 
+### Lärdom L-120250341756780291 — Beltgrinder_CS_6_1 (KPI_WINNER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 7 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 268 kr / 7 805 kr (3 %) |
+| Köp | 1 |
+| ROAS / CPA | 3,40 / 268 kr — kampanjens ROAS 3,10 |
+| Konverteringsgrad | 4,8 % (1 köp / 21 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** kostnad-en-gang · **Typ:** I · **Parent:** Beltgrinder_PD_19_1 · **Iteration:** 3 · **Källa:** parent
+**Brief:** `products/balteslipmaskinen/batch-07/image-ads-briefs/Beltgrinder_CS_6_1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "7 hastigheter. 15 graders vinkel som maskinen håller åt dig." · rad 2: "Betala en gång, sluta betala för att slipa knivar." · rad 3: "909 kr · Jämförpris 1 182 kr · Spara 273 kr (23%)."
+- Rubrik (live): "15° vinkel. Betala en gång."
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Betala en gång. Sluta betala för att slipa knivar." (förälderns rubrik) · underrad "7 hastigheter. 15 graders vinkel som maskinen håller åt dig." · prisband "909 kr · Jämförpris 1 182 kr · Spara 273 kr (23%)" · knapp "Handla nu" · foto: maskinen på vit botten. Avvikelse mot copy card: beskrivningsfältet är tomt live (briefen: "7 hastigheter. 909 kr.") och raden "Samma maskin slipar verktyg, metall och trä" saknas i primärtexten.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den-som-betalar-slipare-for-egna-knivar | den som betalar för att slipa knivar (rubriken) | ja |
+| Vinkel | CS | CS: pris och kostnad-en-gång | ja |
+| Medvetandenivå | solution | lösningsmedveten — visar maskinen och dess specifikation | ja |
+| Mekanism | 7-hastigheter-15-graders-vinkel | 7 hastigheter och 15 graders vinkel som maskinen håller | ja |
+| Tro | en-fast-vinkel-ger-eggen | en fast vinkel ger eggen ("vinkel som maskinen håller åt dig") | ja |
+| Positionering | — (taggen saknas i briefen) | ownership mot sliptjänst (rubriken); taggen saknas i briefen | okänd |
+| Brådska | pris | pris (909 kr, jämförpris 1 182 kr), ingen tidsgräns | ja |
+**Utförandet föll:** nej · utford_som_briefad: ja
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: mekanismraden under förälderns rubrik höll ROAS uppe men ett köp på 21 landningssidevisningar (konverteringsgrad 4,8 %) är för lite för att säga att raden adderar köp — hade den gjort det skulle ROAS 3,40 kunna ligga kvar vid en bedömbar spend.
+
+**Nästa annonser:**
+- SLÄPP tills vidare — under grinden (268 kr, 1 köp): läs om dag 14 (--uppgradering). Ingen iteration byggs på ett köp, och konceptet `kostnad-en-gang` står redan på iteration 3 av 3 mot `Beltgrinder_PD_19_1` (taket, punkt 18).
+
+### Lärdom L-120250341725620291 — Beltgrinder_PD_32_1 (KPI_WINNER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 7 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 89 kr / 7 805 kr (1 %) |
+| Köp | 1 |
+| ROAS / CPA | 10,18 / 89 kr — kampanjens ROAS 3,10 |
+| Konverteringsgrad | 12,5 % (1 köp / 8 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** kostnad-en-gang · **Typ:** I · **Parent:** Beltgrinder_PD_19_1 · **Iteration:** 1 · **Källa:** parent
+**Brief:** `products/balteslipmaskinen/batch-07/image-ads-briefs/Beltgrinder_PD_32_1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Varje kniv i lådan vässad – en enda betalning." · rad 2: "Ingen kö hos slipare. Ingen ny betalning nästa gång kniven blir slö." · rad 3: "909 kr, en gång. Jämförpris 1 182 kr – spara 273 kr (23%)."
+- Rubrik (live): "Betala en gång, inte varje slipning"
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Betala en gång. Sluta betala för att slipa knivar." (förälderns rubrik) · underrad "Varje kniv i lådan vässad — en enda betalning." · prisband "909 kr · Jämförpris 1 182 kr · Spara 273 kr (23%)" · knapp "Handla nu" · foto: maskinen på vit botten. Avvikelse mot briefen: "10 sekunder" saknas i både bild och text (briefens H1 och COPY CARD har det) — kostnaden uttrycks i knivar men inte i sekunder, så en halva av den planerade variabeln "knivar och sekunder" är inte utförd.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den-som-betalar-slipare-for-egna-knivar | den som betalar för att slipa knivar | ja |
+| Vinkel | PD | kostnad utan gissning (kniv i lådan, ingen kö) | ja |
+| Medvetandenivå | solution | lösningsmedveten | ja |
+| Mekanism | agande-i-stallet-for-tjanst | ägande i stället för sliptjänst | ja |
+| Tro | slipning-kostar-varje-gang | slipning kostar varje gång ("Ingen ny betalning nästa gång kniven blir slö") | ja |
+| Positionering | — (taggen saknas i briefen) | ownership mot sliptjänst; taggen saknas i briefen | okänd |
+| Brådska | pris | pris (909 kr, jämförpris 1 182 kr), ingen tidsgräns | ja |
+**Utförandet föll:** nej · utford_som_briefad: ja
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: kostnaden uttryckt i knivar och kö räcker för att ett köp ska komma (konverteringsgrad 12,5 %, 1 köp på 8 landningssidevisningar), men 89 kr är så lite spend att talet inte säger om formuleringen slår förälderns "en gång, sen är den din".
+
+**Nästa annonser:**
+- SLÄPP tills vidare — under grinden (89 kr, 1 köp): läs om dag 14 (--uppgradering). Ingen ny iteration byggs på ett köp; videoversionen `Beltgrinder_PD_33_H1` är redan namngiven i lärdomen för `Beltgrinder_PD_19_1` och tar nästa läsning.
+
+### Lärdom L-120250341790550291 — Beltgrinder_PD_27_1 (KPI_WINNER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 65 kr / 7 805 kr (1 %) |
+| Köp | 1 |
+| ROAS / CPA | 13,96 / 65 kr — kampanjens ROAS 3,10 |
+| Konverteringsgrad | 14,3 % (1 köp / 7 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (10-sekunderslöftet som rubrik), batch #5 (batch-log.md: "b020-layouten, rubriken bär 10-sekunderslöftet"), ingen brief i repot, typ okänd, parent —, källa: b020-layouten (kontots bäst presterande format). Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Från slö till rakbladsvass på 10 sekunder." · rad 2: "Bälteslipmaskin Mini 3-i-1 – knivslip och polerare." · rad 3: "909 kr (ord. 1 182 kr) – spara 273 kr, 23 %."
+- Rubrik (live): "Från slö till rakbladsvass. 10 sek."
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Från slö till rakbladsvass. 10 sekunder." · underrad "Bälteslipmaskin Mini 3-i-1 – knivslip & polerare." · prisband "909 kr (ord. 1 182 kr) – spara 273 kr." · knapp "Vässa dina knivar." · foto: hand i grå handske slipar en kniv, gnistor.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | den som har slöa knivar | okänd |
+| Vinkel | PD (batch-log: rubriken bär 10-sekunderslöftet) | PD: 10 sekunder från slö till vass | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten — slö kniv mot vass | okänd |
+| Mekanism | — (brief saknas i repot) | demo: kniv mot slipbandet | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | 3-i-1 knivslip och polerare med pris | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 10-sekunderslöftet med en kniv som slipas i bilden fick ett köp på 7 landningssidevisningar (konverteringsgrad 14,3 %) men bara 65 kr spend, så talet är ren tur eller ren signal — det går inte att skilja åt förrän spenden är större.
+
+**Nästa annonser:**
+- SLÄPP tills vidare — under grinden (65 kr, 1 köp): läs om dag 14 (--uppgradering). 10-sekunderslöftet bärs redan av kontots benchmark, och ingen iteration byggs på ett köp.
+
+### Lärdom L-120250341825990291 — Beltgrinder_PD_24_1 (LOSER, etikett 2026-09-30)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | LOSER |
+| Fönster | 2026-09-23 – 2026-09-29 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 34 kr / 7 805 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 3,10 |
+| Konverteringsgrad | 0,0 % (0 köp / 4 klick) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** koncept PD (nytt motiv i förälderns layout), batch #5 (batch-log.md: "PD_19_1:s exakta layout, nytt motiv (yxa/mejsel)"), ingen brief i repot, typ okänd, parent Beltgrinder_PD_19_1 enligt batch-logens rad (layouten), källa: parent. Läst live 2026-09-30.
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-30, Graph API): "Slö yxa? Vässad på 10 sekunder." · rad 2: "Slipar knivar, trä, metall och smycken – tre maskiner i en." · rad 3: "909 kr (ord. 1 182 kr). Du sparar 273 kr, 23 %."
+- Rubrik (live): "Slö yxa? Vässad på 10 sekunder."
+- Bild (läst 2026-09-30, ingen inbränd text utöver detta): rubrik "Slö yxa? Vässad på 10 sekunder." · underrad "Slipar knivar, trä, metall och smycken. Tre maskiner i en." · prisband "909 kr (ord. 1 182 kr) – spara 273 kr" · knapp "Beställ Bälteslipmaskinen – 909 kr" · foto: hand i handske slipar en yxa, gnistor.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | den som har en slö yxa | okänd |
+| Vinkel | PD, motivet byts (batch-log: yxa/mejsel) | PD med nytt motiv: yxa i stället för kniv | ja |
+| Medvetandenivå | — (brief saknas i repot) | problem- till lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | demo: yxa mot slipbandet | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts | okänd |
+| Positionering | — (brief saknas i repot) | 3-i-1: knivar, trä, metall, smycken | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: en yxa i förälderns layout ger en snävare publik än kniven (den som slipar knivar är målgruppen i benchmarken), och 34 kr med 4 klick och 0 köp räcker inte för att säga att motivet föll.
+
+**Nästa annonser:**
+- SLÄPP — LOSER under grinden (34 kr, 0 köp, 4 klick): en observation, ingen dom. Motivbytet (yxa) har inget att iterera på, och kostnadsvinkeln som bär kampanjens breakthrough ligger redan i `Beltgrinder_PD_32_1`/`PD_33_H1`.
+
+## Inomhustofflorna i Kamouflage (120250268503590291)
+
