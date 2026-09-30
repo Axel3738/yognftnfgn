@@ -81,9 +81,19 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
    **uttryckligt undantag från regel 11 i CLAUDE.md**, fattat av Axel 2026-08-30.
    Rätta inte tillbaka det och föreslå inte test-ABO varje natt.
 4. **Grön QA aktiveras direkt.** Rutinen väntar inte på att Axel slår på.
-5. **Stoppregeln är en enda: priset.** Skiljer priset i annonsen mer än **20 %**
-   (upp eller ner) från produktsidans pris i Shopify just nu, stoppas annonsen.
-   **Nämner annonsen inget pris finns inget att stoppa på** — den är grön.
+5. **Stoppreglerna är två: priset och returlöftet.**
+   - **Priset.** Skiljer priset i annonsen mer än **20 %** (upp eller ner) från
+     produktsidans pris i Shopify just nu, stoppas annonsen. **Nämner annonsen
+     inget pris finns inget att stoppa på** — den är grön.
+   - **Returlöftet: bara 14 dagar släpps igenom** (Axels beslut 2026-09-30,
+     "från och med nu släpp endast igenom 14 dagar"). Säger en creative **30
+     dagars garanti, 30 dagars öppet köp, "pengarna tillbaka i 30 dagar"** eller
+     något annat fönster än butikens publicerade, stoppas den — **video som
+     bild**. Butikens policy är 14 dagars ångerrätt, så ett trettiodagarslöfte
+     är ett löfte kunden inte får infriat. Facit är `tvister.returfonster_dagar`
+     i butikens brandfil (`kundtjanst/brands/<id>.yaml`), aldrig briefen.
+     ⚠️ Annonser som redan ligger live stängs aldrig av i efterhand (regel 7) —
+     regeln gäller före uppladdning.
    Allt annat i checklistan är anmärkningar som rapporteras, inte stopp.
    Felstavningar i **videoannonser** är okej.
 6. **Problem = kommentar + tillbaka till `Draft`. Video som bild.** En creative
@@ -210,6 +220,13 @@ misstag den dag någon slår på kampanjen igen.
 finns för att kringgå den — **använd den aldrig i rutinen**, bara när Axel
 uttryckligen ber om det i en chatt.
 
+⛔ **Fråga aldrig Axel vad som ska hända med raderna i en avvecklad kampanj.**
+Hans svar 2026-09-30, på tolfte dagens fråga om samma sak: *"Strunta i dom
+eftersom att vi inte kör produkterna längre."* Rapportera dem som EN rad med
+produkt och antal, i rapporten och i `#ads-launching`, och gå vidare. Ingen
+fråga, ingen uppmaning, ingen dagräkning. Samma sak gäller ett blockerat
+prefix. Blir en av produkterna aktuell igen säger Axel det själv.
+
 En rad i `To be Reviewed` **utan bilaga och utan Drive-länk** är inte klar.
 `leveranskon.mjs` listar den ändå, märkt `VÄNTAR PÅ FIL` — ta med den i
 rapporten och i `#problem-and-revisions-ads`, fråga redigeraren. Samma sak när
@@ -259,6 +276,7 @@ Att materialet är uttaget är inte samma sak som att det är granskat.
 | # | Punkt | Var | Video | Bild |
 |---|-------|-----|-------|------|
 | 1 | **Priset i annonsen mot Shopify-priset: avvikelse ≤ 20 %** (inget pris i annonsen = grön) | all inbränd text | 🔁 Draft | 🔁 Draft |
+| 1b | **Returlöftet = butikens egna fönster, 14 dagar** (Axel 2026-09-30). "30 dagars garanti", "30 dagars öppet köp", "pengarna tillbaka i 30 dagar" ⇒ stopp. Inget returlöfte i annonsen = grön | all inbränd text + voiceover | 🔁 Draft | 🔁 Draft |
 | 2 | Hooken i briefen är hooken i bild | frames 0–3 s | anmärkning | 🔁 Draft |
 | 3 | Formatet stämmer (UGC / before-after / comparison …) | hela | anmärkning | 🔁 Draft |
 | 4 | Vinkeln stämmer (pain / benefit / social …) | hela | anmärkning | 🔁 Draft |
@@ -459,6 +477,7 @@ löser själv nästa natt.
       (eller uttryckligen: briefen gick inte att läsa, och varför)
 - [ ] Varje fynd utpekat med frame-nummer och sekund (eller plats i bilden)
 - [ ] Ingen creative med prisavvikelse > 20 % uppladdad (inget pris i annonsen = grön)
+- [ ] Ingen creative med ett annat returlöfte än butikens 14 dagar uppladdad (inget returlöfte = grön)
 - [ ] Varje creative med problem, video som bild: kommentar i Notion + status → `Draft`, inte uppladdad
 - [ ] Uppladdade i rätt produkts kampanj, sida/pixel ärvd, inget med spend > 0 rört
 - [ ] Inga creatives lagda i en avvecklad kampanj (PAUSED med spend) — bara rapporterade
