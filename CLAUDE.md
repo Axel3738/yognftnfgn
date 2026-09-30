@@ -190,6 +190,13 @@ nekar också: `checkoutBranding` ger ACCESS_DENIED "must be on a Plus plan". Cow
 `matstrumpor-kassa-logga.png` med `matstrumpor/marknader/cowork/2-slutklick.txt`. Knappen heter
 "Redigera", inte "Anpassa". Sessionen läste tillbaka den tyska kassan (.com/de) och den svenska
 (.se), och båda visade den nya loggan.
+✅ **Fraktrutan visar kundens flagga och land sedan 2026-09-30** (Axel: "Free shipping to Norway,
+Japan etc"). Exempel: "Free shipping to the United States" och "Kostenloser Versand in die Schweiz".
+Sverige ser samma text som förut. Grammatiken står i `domantema.mjs` → `FRAKT_SPRAK`, och länderna
+kommer ur `konfig.json`, så ett nytt land får rutan av sig själv. Sessionen läste rutan som kund i 24
+länder. Samma dag doldes appen Ultimate Trust Badges på alla språk utom svenska. Den visade "Betala
+säkert med Klarna." och Swish-loggan för kunder i USA, UK, AU, CA och NZ. Allt står i
+`marknader/README.md` → "Fraktrutan".
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
