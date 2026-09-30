@@ -12,7 +12,9 @@ const API_VERSION = '2026-07';
 const FÖRVÄNTAD_DOMÄN = 'matstrumpor.se';
 const MYSHOPIFY = '1r46tp-qx.myshopify.com'; // avläst ur live-sajtens Shopify.shop 2026-09-16
 
-const domän = v => (v.includes('.') ? v : `${v}.myshopify.com`);
+// Värdet i environmentet kan vara skrivet med understreck (1r46tp_qx.myshopify.com),
+// men ett domännamn kan aldrig innehålla understreck — Shopify svarar då 404.
+const domän = v => (v.includes('.') ? v : `${v}.myshopify.com`).replace(/_/g, '-');
 
 export function butiksDomän() {
   const n = nyckel();
