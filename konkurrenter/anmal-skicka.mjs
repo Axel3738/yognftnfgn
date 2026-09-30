@@ -127,6 +127,9 @@ export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden'
   const forsta = anmalningar[0];
   return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
 
+FÖRST
+Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."
+
 REGLER
 1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
 2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.

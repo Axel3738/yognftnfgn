@@ -76,4 +76,8 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   Chrome, och Axel gör säkerhetskontrollen. Kvittona skrivs med
   `--anmald KD-2026-003 --nr <n> --referens <r>` när Axel klistrar in Coworks
   lista.
+- **Coworks första försök samma förmiddag: 0 av 6 inskickade.** Cowork svarade
+  att Claude in Chrome inte var anslutet till chatten och stannade före första
+  steget. Tillägget är av som standard i varje ny chatt. Prompten börjar nu med
+  FÖRST, som säger exakt vad Axel slår på.
 - Taköverdragets 5 är fortfarande inte med.
