@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-30T12:25:30.655Z",
+ "byggd": "2026-09-30T13:15:39.550Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-30T12:15:14.881Z"
+  "till": "2026-09-30T13:08:07.267Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -974,7 +974,7 @@
   "status": "ok",
   "orsak": null,
   "historikFran": "2026-09-15T13:22:48+00:00",
-  "matt": "2026-09-30T12:15:14.881Z",
+  "matt": "2026-09-30T13:08:07.267Z",
   "dagar": 14,
   "rutiner": [
    {
@@ -988,9 +988,9 @@
     },
     "schematext": "varje timme :16",
     "vad": "Skanningar in i Shopify + kundens spårningssida",
-    "senast": "2026-09-30T11:27:52+00:00",
-    "antal": 269,
-    "nasta": "2026-09-30T12:16:00.000Z",
+    "senast": "2026-09-30T12:25:32+00:00",
+    "antal": 270,
+    "nasta": "2026-09-30T13:16:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1006,9 +1006,9 @@
     },
     "schematext": "varje timme :32",
     "vad": "Samma som Bäverbutikens, norsk kedja",
-    "senast": "2026-09-30T11:34:09+00:00",
-    "antal": 213,
-    "nasta": "2026-09-30T12:32:00.000Z",
+    "senast": "2026-09-30T12:35:40+00:00",
+    "antal": 214,
+    "nasta": "2026-09-30T13:32:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1024,12 +1024,12 @@
     },
     "schematext": "varje timme :40",
     "vad": "Finsk kedja",
-    "senast": "2026-09-30T11:41:39+00:00",
-    "antal": 213,
-    "nasta": "2026-09-30T12:40:00.000Z",
+    "senast": "2026-09-30T12:42:29+00:00",
+    "antal": 214,
+    "nasta": "2026-09-30T13:40:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 1 h sedan"
+    "ord": "körde för mindre än en timme sedan"
    },
    {
     "id": "sparning-baeverbutiken",
@@ -1042,9 +1042,9 @@
     },
     "schematext": "varje timme :48",
     "vad": "Dansk kedja",
-    "senast": "2026-09-30T11:49:19+00:00",
-    "antal": 213,
-    "nasta": "2026-09-30T12:48:00.000Z",
+    "senast": "2026-09-30T12:50:25+00:00",
+    "antal": 214,
+    "nasta": "2026-09-30T13:48:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1060,9 +1060,9 @@
     },
     "schematext": "varje timme :24",
     "vad": "Fyrspråkig kedja (sv/nb/en/fi)",
-    "senast": "2026-09-30T11:27:27+00:00",
-    "antal": 216,
-    "nasta": "2026-09-30T12:24:00.000Z",
+    "senast": "2026-09-30T12:28:56+00:00",
+    "antal": 217,
+    "nasta": "2026-09-30T13:24:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1078,9 +1078,9 @@
     },
     "schematext": "varje timme :56",
     "vad": "Prefix MS-",
-    "senast": "2026-09-30T11:57:15+00:00",
-    "antal": 200,
-    "nasta": "2026-09-30T12:56:00.000Z",
+    "senast": "2026-09-30T12:58:48+00:00",
+    "antal": 201,
+    "nasta": "2026-09-30T13:56:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1096,9 +1096,9 @@
     },
     "schematext": "varje timme :04",
     "vad": "Shopify + Meta + Discord + rutinvakten + bonus → snapshot.json → main → Railway. Byggd 2026-09-22 på Barkås-kontot (trig_01QwKgfZP3JdhZX6tbGo1LJb)",
-    "senast": "2026-09-30T11:13:23+00:00",
-    "antal": 184,
-    "nasta": "2026-09-30T13:04:00.000Z",
+    "senast": "2026-09-30T12:25:38+00:00",
+    "antal": 185,
+    "nasta": "2026-09-30T14:04:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1114,9 +1114,9 @@
     },
     "schematext": "varje timme :28",
     "vad": "Det som bara Axel kan påverka: butiker nere, annonskonton avstängda, pengar som brinner, pixeln, backend, rutiner som står still, döda nycklar, chargeback-graden, utbetalningar → Slack #urgent. Byggd 2026-09-27 på claude6@stonebite.org",
-    "senast": "2026-09-30T11:29:34+00:00",
-    "antal": 62,
-    "nasta": "2026-09-30T12:28:00.000Z",
+    "senast": "2026-09-30T12:29:48+00:00",
+    "antal": 63,
+    "nasta": "2026-09-30T13:28:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1132,12 +1132,12 @@
     },
     "schematext": "04:15 varje dag",
     "vad": "Dagens videor översatta till norska via HeyGen",
-    "senast": "2026-09-29T23:38:50+00:00",
-    "antal": 47,
+    "senast": "2026-09-30T12:19:46+00:00",
+    "antal": 48,
     "nasta": "2026-10-01T02:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 13 h sedan"
+    "ord": "körde för 1 h sedan"
    },
    {
     "id": "no-recensioner",
@@ -1155,7 +1155,7 @@
     "nasta": "2026-10-01T03:30:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 8 h sedan"
+    "ord": "körde för 9 h sedan"
    },
    {
     "id": "commission",
@@ -1173,7 +1173,7 @@
     "nasta": "2026-10-01T04:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 7 h sedan"
+    "ord": "körde för 8 h sedan"
    },
    {
     "id": "tvistkoll",
@@ -1209,7 +1209,7 @@
     "nasta": "2026-10-01T03:40:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 27 h sedan"
+    "ord": "körde för 28 h sedan"
    },
    {
     "id": "konkurrentdodaren",
@@ -1222,12 +1222,12 @@
     },
     "schematext": "06:25 varje dag",
     "vad": "Kopior av våra produktsidor och annonser → bevis + varningsbrev med faktura som Axel godkänner innan det skickas (från Stonebite-Gmail). Granskningssidan + Discord #copycats bara när något är nytt",
-    "senast": "2026-09-30T06:28:14+00:00",
-    "antal": 6,
+    "senast": "2026-09-30T13:08:31+00:00",
+    "antal": 8,
     "nasta": "2026-10-01T04:25:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 6 h sedan"
+    "ord": "körde för mindre än en timme sedan"
    },
    {
     "id": "annonsvakt",
@@ -1240,8 +1240,8 @@
     },
     "schematext": "07:44 varje dag",
     "vad": "Körs VARJE TIMME (:44): alla annonskonton → nedstängt konto, tappad åtkomst, död token, avvisade annonser, adsets/kampanjer med fel, annons som drar iväg med spend utan köp → Discord #ad-alerts (Axel pingas på 🔴). Läs-bara. Spåret i git är dagens hjärtslag (första körningen efter kl 07) plus varje larm — därför står den som daglig här, så vakten kan döma i stället för att visa 'omätbar' varje timme. Byggd 2026-09-27 16:37 CEST på claude6-kontot (trig_01PSHGGMYhoXYfgbhiV28YQh, fast session session_012UgQpHpzYdjWgvg5ceFqY2).",
-    "senast": "2026-09-30T11:58:22+00:00",
-    "antal": 15,
+    "senast": "2026-09-30T12:46:41+00:00",
+    "antal": 16,
     "nasta": "2026-10-01T05:44:00.000Z",
     "avstangd": false,
     "status": "ok",
@@ -1321,10 +1321,10 @@
     "vad": "Notion-kön SE-ACTIVE to be translated → norska → live",
     "senast": "2026-09-29T19:00:42+00:00",
     "antal": 39,
-    "nasta": "2026-09-30T13:00:00.000Z",
+    "nasta": "2026-10-01T13:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 17 h sedan"
+    "ord": "körde för 18 h sedan"
    },
    {
     "id": "bildannonser",
@@ -1360,7 +1360,7 @@
     "nasta": "2026-09-30T22:41:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 13 h sedan"
+    "ord": "körde för 14 h sedan"
    },
    {
     "id": "nattvakt-carashell-termoskyddet",
@@ -1396,7 +1396,7 @@
     "nasta": "2026-10-01T12:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för mindre än en timme sedan"
+    "ord": "körde för 1 h sedan"
    },
    {
     "id": "leverans-carashell-termoskyddet",
@@ -1432,7 +1432,7 @@
     "nasta": "2026-09-30T14:05:00.000Z",
     "avstangd": false,
     "status": "sen",
-    "ord": "sen — körde för 46 h sedan, väntat var 24 h"
+    "ord": "sen — körde för 47 h sedan, väntat var 24 h"
    },
    {
     "id": "no-carashell-termoskyddet",
@@ -1468,7 +1468,7 @@
     "nasta": "2026-09-30T14:45:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 21 h sedan"
+    "ord": "körde för 22 h sedan"
    },
    {
     "id": "spegla-carashell-termoskyddet",
@@ -1504,7 +1504,7 @@
     "nasta": "2026-09-30T15:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 19 h sedan"
+    "ord": "körde för 20 h sedan"
    },
    {
     "id": "us-carashell-termoskyddet",
@@ -1786,6 +1786,90 @@
    "ny": 0
   },
   "handelser": [
+   {
+    "tid": "2026-09-30T13:08:31+00:00",
+    "rutin": "konkurrentdodaren",
+    "namn": "Konkurrentdödaren",
+    "brand": "bolaget",
+    "rubrik": "konkurrentdodaren: Cowork ber Axel om Metas kod när Gmail är ett annat konto"
+   },
+   {
+    "tid": "2026-09-30T12:58:48+00:00",
+    "rutin": "sparning-matstrumpor",
+    "namn": "Spårningen Matstrumpor",
+    "brand": "matstrumpor",
+    "rubrik": "sparning matstrumpor: 2026-09-30 14:56 — 2 event, 415 paket, 3120 händelser"
+   },
+   {
+    "tid": "2026-09-30T12:51:24+00:00",
+    "rutin": "konkurrentdodaren",
+    "namn": "Konkurrentdödaren",
+    "brand": "bolaget",
+    "rubrik": "konkurrentdodaren: Cowork-prompten kollar Claude in Chrome först"
+   },
+   {
+    "tid": "2026-09-30T12:50:25+00:00",
+    "rutin": "sparning-baeverbutiken",
+    "namn": "Spårningen Bæverbutiken (DK)",
+    "brand": "baverbutiken",
+    "rubrik": "Spårning Bæverbutiken: rond 14:48 (1 paket, 23 händelser)"
+   },
+   {
+    "tid": "2026-09-30T12:46:41+00:00",
+    "rutin": "annonsvakt",
+    "namn": "Annonsvakten",
+    "brand": "bolaget",
+    "rubrik": "Annonsvakten 2026-09-30 14:45: NO läst igen (löst)"
+   },
+   {
+    "tid": "2026-09-30T12:42:29+00:00",
+    "rutin": "sparning-majavakauppa",
+    "namn": "Spårningen Majavakauppa (FI)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning majavakauppa 2026-09-30 14:41 — 0 event, 0 registrerade, sidan publicerad (62 paket, 529 händelser)"
+   },
+   {
+    "tid": "2026-09-30T12:35:40+00:00",
+    "rutin": "sparning-beverbutikken",
+    "namn": "Spårningen Beverbutikken (NO)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning beverbutikken 2026-09-30 14:33: 1058 paket, 12123 händelser, 7 event"
+   },
+   {
+    "tid": "2026-09-30T12:29:48+00:00",
+    "rutin": "akut",
+    "namn": "Akutlarmet (Slack #urgent)",
+    "brand": "bolaget",
+    "rubrik": "Akutlarmet 14:29: 0 nya larm"
+   },
+   {
+    "tid": "2026-09-30T12:28:56+00:00",
+    "rutin": "sparning-carashell",
+    "namn": "Spårningen CaraShell",
+    "brand": "carashell",
+    "rubrik": "sparning carashell 2026-09-30 14:29: 453 paket, 3146 handelser, 0 event"
+   },
+   {
+    "tid": "2026-09-30T12:25:38+00:00",
+    "rutin": "stonebite",
+    "namn": "Stonebite: färsk data till sajten",
+    "brand": "bolaget",
+    "rubrik": "Stonebite: färsk data 2026-09-30 14:20 CEST"
+   },
+   {
+    "tid": "2026-09-30T12:25:32+00:00",
+    "rutin": "sparning-baverbutiken",
+    "namn": "Spårningen Bäverbutiken",
+    "brand": "baverbutiken",
+    "rubrik": "sparning baverbutiken: 2026-09-30 14:16 — 8 event, 0 registrerade, sidan publicerad (1590 paket)"
+   },
+   {
+    "tid": "2026-09-30T12:19:46+00:00",
+    "rutin": "translate-no",
+    "namn": "Norsk videobatch",
+    "brand": "baverbutiken",
+    "rubrik": "NO-videobatch 2026-09-30: Dörr- och Fönsterlarm + Tribuneponcho"
+   },
    {
     "tid": "2026-09-30T12:10:02+00:00",
     "rutin": "leverans-carashell-takskyddet",
@@ -4501,97 +4585,13 @@
     "namn": "Akutlarmet (Slack #urgent)",
     "brand": "bolaget",
     "rubrik": "Akutlarmet 2026-09-28 18:28: 0 nya, 0 lösta"
-   },
-   {
-    "tid": "2026-09-28T16:25:59+00:00",
-    "rutin": "sparning-carashell",
-    "namn": "Spårningen CaraShell",
-    "brand": "carashell",
-    "rubrik": "sparning carashell 2026-09-28 18:30: 445 paket, 2322 händelser, 1 event"
-   },
-   {
-    "tid": "2026-09-28T16:24:29+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning baverbutiken: 2026-09-28 18:17 — 14 event, 0 registrerade, sidan publicerad (1648 paket)"
-   },
-   {
-    "tid": "2026-09-28T16:12:50+00:00",
-    "rutin": "stonebite",
-    "namn": "Stonebite: färsk data till sajten",
-    "brand": "bolaget",
-    "rubrik": "Stonebite: färsk data 2026-09-28 18:13 CEST"
-   },
-   {
-    "tid": "2026-09-28T16:10:59+00:00",
-    "rutin": "spegla-carashell-takskyddet",
-    "namn": "Speglingen Taköverdraget",
-    "brand": "carashell",
-    "rubrik": "Spegling carashell/takskyddet 2026-09-28: efterjustering, 10 av 10 live"
-   },
-   {
-    "tid": "2026-09-28T16:00:20+00:00",
-    "rutin": "sparning-matstrumpor",
-    "namn": "Spårningen Matstrumpor",
-    "brand": "matstrumpor",
-    "rubrik": "sparning matstrumpor: 2026-09-28 17:56 — 0 event, 386 paket, 2896 händelser"
-   },
-   {
-    "tid": "2026-09-28T15:49:58+00:00",
-    "rutin": "sparning-baeverbutiken",
-    "namn": "Spårningen Bæverbutiken (DK)",
-    "brand": "baverbutiken",
-    "rubrik": "Spårning Bæverbutiken: rond 17:49 (1 paket, 23 händelser)"
-   },
-   {
-    "tid": "2026-09-28T15:46:48+00:00",
-    "rutin": "spegla-carashell-takskyddet",
-    "namn": "Speglingen Taköverdraget",
-    "brand": "carashell",
-    "rubrik": "Spegling carashell/takskyddet 2026-09-28: 5 av 6 speglade, 8 av 10 annonser live"
-   },
-   {
-    "tid": "2026-09-28T15:41:44+00:00",
-    "rutin": "sparning-majavakauppa",
-    "namn": "Spårningen Majavakauppa (FI)",
-    "brand": "baverbutiken",
-    "rubrik": "sparning majavakauppa 2026-09-28 17:41 — 0 event, 0 registrerade, sidan publicerad (61 paket, 479 händelser)"
-   },
-   {
-    "tid": "2026-09-28T15:33:38+00:00",
-    "rutin": "sparning-beverbutikken",
-    "namn": "Spårningen Beverbutikken (NO)",
-    "brand": "baverbutiken",
-    "rubrik": "sparning beverbutikken 2026-09-28 17:32: 1041 paket, 11285 händelser, 1 event"
-   },
-   {
-    "tid": "2026-09-28T15:29:17+00:00",
-    "rutin": "akut",
-    "namn": "Akutlarmet (Slack #urgent)",
-    "brand": "bolaget",
-    "rubrik": "Akutlarmet 2026-09-28 17:29: 0 nya, 0 lösta"
-   },
-   {
-    "tid": "2026-09-28T15:26:14+00:00",
-    "rutin": "sparning-carashell",
-    "namn": "Spårningen CaraShell",
-    "brand": "carashell",
-    "rubrik": "sparning carashell 2026-09-28 17:30: 445 paket, 2321 händelser"
-   },
-   {
-    "tid": "2026-09-28T15:25:19+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning baverbutiken: 2026-09-28 17:18 — 11 event, 0 registrerade, sidan publicerad (1649 paket)"
    }
   ]
  },
  "eskalering": {
   "status": "ok",
   "orsak": null,
-  "hamtad": "2026-09-30T12:24:57.796Z",
+  "hamtad": "2026-09-30T13:15:08.638Z",
   "kanaler": [
    {
     "brand": "baverbutiken",
@@ -5764,31 +5764,31 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:15:14.933Z"
+   "tid": "2026-09-30T13:08:07.353Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:15:14.933Z"
+   "tid": "2026-09-30T13:08:07.353Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:15:14.933Z"
+   "tid": "2026-09-30T13:08:07.353Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:15:14.933Z"
+   "tid": "2026-09-30T13:08:07.353Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "6 av 12 butiker gick inte att läsa",
-   "tid": "2026-09-30T12:15:35.165Z",
+   "tid": "2026-09-30T13:08:28.863Z",
    "butiker": 12,
    "avstangda": 1
   },
@@ -5796,43 +5796,43 @@
    "id": "shopify:vinst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:16:05.121Z",
+   "tid": "2026-09-30T13:08:59.421Z",
    "butiker": 6
   },
   {
    "id": "shopify:tvister",
    "status": "delvis",
    "orsak": "6 av 12 butiker gick inte att läsa tvisterna för",
-   "tid": "2026-09-30T12:16:12.593Z",
+   "tid": "2026-09-30T13:09:07.390Z",
    "butiker": 12,
-   "oppna": 30
+   "oppna": 31
   },
   {
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:16:27.674Z",
+   "tid": "2026-09-30T13:09:26.935Z",
    "konton": 7
   },
   {
    "id": "tavla",
-   "status": "delvis",
-   "orsak": "Meta (Magiborsten NO): Meta: User request limit reached",
-   "tid": "2026-09-30T12:24:47.234Z",
-   "live7": 0
+   "status": "ok",
+   "orsak": null,
+   "tid": "2026-09-30T13:14:58.086Z",
+   "live7": 112
   },
   {
    "id": "valuta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:24:47.955Z",
+   "tid": "2026-09-30T13:14:59.032Z",
    "datum": "2026-09-29"
   },
   {
    "id": "rutiner",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:24:51.090Z",
+   "tid": "2026-09-30T13:15:01.422Z",
    "ok": 20,
    "sen": 1,
    "saknas": 0,
@@ -5844,21 +5844,21 @@
    "id": "discord",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:24:57.796Z",
+   "tid": "2026-09-30T13:15:08.638Z",
    "kanaler": 26
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:25:30.642Z",
+   "tid": "2026-09-30T13:15:39.535Z",
    "personer": 6
   },
   {
    "id": "autosvar",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-30T12:25:30.655Z",
+   "tid": "2026-09-30T13:15:39.550Z",
    "butiker": 3
   }
  ],
@@ -6018,11 +6018,11 @@
     },
     {
      "datum": "2026-09-30",
-     "omsattning": 50105.10000000001,
-     "ordrar": 61
+     "omsattning": 55671.10000000001,
+     "ordrar": 69
     }
    ],
-   "ordrar": 2481,
+   "ordrar": 2489,
    "status": "ok",
    "orsak": null,
    "via": "SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER"
@@ -6182,11 +6182,11 @@
     },
     {
      "datum": "2026-09-30",
-     "omsattning": 20994.489999999998,
-     "ordrar": 12
+     "omsattning": 28436.219999999998,
+     "ordrar": 17
     }
    ],
-   "ordrar": 513,
+   "ordrar": 518,
    "status": "ok",
    "orsak": null,
    "via": "SHOPIFY_*_yitrbk_m3"
@@ -6346,11 +6346,11 @@
     },
     {
      "datum": "2026-09-30",
-     "omsattning": 6794.6,
-     "ordrar": 8
+     "omsattning": 7333.6,
+     "ordrar": 9
     }
    ],
-   "ordrar": 915,
+   "ordrar": 916,
    "status": "ok",
    "orsak": null,
    "via": "SHOPIFY_*_NO"
@@ -6838,11 +6838,11 @@
     },
     {
      "datum": "2026-09-30",
-     "omsattning": 10763,
-     "ordrar": 26
+     "omsattning": 12359,
+     "ordrar": 30
     }
    ],
-   "ordrar": 476,
+   "ordrar": 480,
    "status": "ok",
    "orsak": null,
    "via": "SHOPIFY_*_1r46tp_qx"
@@ -7117,26 +7117,26 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 33205.43,
+     "spend": 33207.11,
      "kop": 89,
-     "roas": 2.450202
+     "roas": 2.450078
     }
    ],
    "idag": {
-    "spend": 18029.8,
-    "kop": 53,
-    "roas": 2.486112,
+    "spend": 19426.9,
+    "kop": 58,
+    "roas": 2.499786,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 86709.72,
+     "spend": 86710.26,
      "kop": 142,
-     "roas": 2.184007,
-     "cpa": 610.6318309859155,
-     "intakt": 189374.63544803998
+     "roas": 2.183993,
+     "cpa": 610.6356338028169,
+     "intakt": 189374.60086818
     },
     {
      "id": "120250009325850291",
@@ -7150,20 +7150,20 @@
     {
      "id": "120250284693380291",
      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-     "spend": 21296.02,
+     "spend": 21296.07,
      "kop": 89,
-     "roas": 2.257294,
-     "cpa": 239.28112359550562,
-     "intakt": 48071.37816988
+     "roas": 2.257289,
+     "cpa": 239.2816853932584,
+     "intakt": 48071.384554230004
     },
     {
      "id": "120250175763810291",
      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-     "spend": 15825.28,
+     "spend": 15825.54,
      "kop": 49,
-     "roas": 1.821376,
-     "cpa": 322.9648979591837,
-     "intakt": 28823.78518528
+     "roas": 1.821346,
+     "cpa": 322.9702040816327,
+     "intakt": 28823.78397684
     },
     {
      "id": "120250349169940291",
@@ -7195,11 +7195,11 @@
     {
      "id": "120250349257210291",
      "namn": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
-     "spend": 8376.75,
+     "spend": 8376.8,
      "kop": 39,
-     "roas": 3.290035,
-     "cpa": 214.78846153846155,
-     "intakt": 27559.80068625
+     "roas": 3.290015,
+     "cpa": 214.78974358974358,
+     "intakt": 27559.797651999997
     },
     {
      "id": "120250253948980291",
@@ -7267,11 +7267,11 @@
     {
      "id": "120250001079150291",
      "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-     "spend": 4063.42,
+     "spend": 4063.47,
      "kop": 16,
-     "roas": 2.861732,
-     "cpa": 253.96375,
-     "intakt": 11628.41904344
+     "roas": 2.861697,
+     "cpa": 253.966875,
+     "intakt": 11628.41990859
     },
     {
      "id": "120250268503590291",
@@ -7285,11 +7285,11 @@
     {
      "id": "120250377860080291",
      "namn": "Rullknivslipen i Trä 20° | BE ROAS 1.63 | Launch 2026-09-26",
-     "spend": 3513.12,
+     "spend": 3513.83,
      "kop": 7,
-     "roas": 1.593712,
-     "cpa": 501.8742857142857,
-     "intakt": 5598.90150144
+     "roas": 1.59339,
+     "cpa": 501.9757142857143,
+     "intakt": 5598.901583700001
     },
     {
      "id": "120250349292760291",
@@ -7339,7 +7339,7 @@
     {
      "id": "120250383022120291",
      "namn": "LOCK_IN_Spabadskapellet | Engagemang Indien | 2026-09-26",
-     "spend": 1817.96,
+     "spend": 1817.97,
      "kop": 0,
      "roas": null,
      "cpa": null,
@@ -7366,7 +7366,7 @@
     {
      "id": "120250383019880291",
      "namn": "LOCK_IN_Bordtennisnätet | Engagemang Indien | 2026-09-26",
-     "spend": 1522.69,
+     "spend": 1522.7,
      "kop": 0,
      "roas": null,
      "cpa": null,
@@ -7620,9 +7620,9 @@
     }
    ],
    "idag": {
-    "spend": 559.49,
+    "spend": 605.43,
     "kop": 1,
-    "roas": 1.785555,
+    "roas": 1.650067,
     "tomt": false
    },
    "kampanjer": [
@@ -7841,26 +7841,26 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 10443.23,
+     "spend": 10443.41,
      "kop": 54,
-     "roas": 2.171113
+     "roas": 2.171075
     }
    ],
    "idag": {
-    "spend": 5492.87,
-    "kop": 26,
-    "roas": 1.989517,
+    "spend": 5820.26,
+    "kop": 31,
+    "roas": 2.220375,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120251217860260023",
      "namn": "MATSTRUMP_SALES_20260826",
-     "spend": 63941.07,
+     "spend": 63941.25,
      "kop": 336,
-     "roas": 2.220633,
-     "cpa": 190.30080357142856,
-     "intakt": 141989.65009731
+     "roas": 2.220627,
+     "cpa": 190.30133928571428,
+     "intakt": 141989.66616375
     }
    ],
    "status": "ok",
@@ -7996,15 +7996,15 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 15709.82,
+     "spend": 15712.56,
      "kop": 11,
-     "roas": 0.990763
+     "roas": 0.99059
     }
    ],
    "idag": {
-    "spend": 6761.25,
-    "kop": 5,
-    "roas": 0.953226,
+    "spend": 7454.05,
+    "kop": 6,
+    "roas": 1.018929,
     "tomt": false
    },
    "kampanjer": [
@@ -8020,38 +8020,38 @@
     {
      "id": "120249050596730172",
      "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 27093.27,
+     "spend": 27094.66,
      "kop": 44,
-     "roas": 2.169278,
-     "cpa": 615.7561363636364,
-     "intakt": 58772.83455905999
+     "roas": 2.169167,
+     "cpa": 615.7877272727272,
+     "intakt": 58772.842348219994
     },
     {
      "id": "120249183405560172",
      "namn": "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5 | BE-ROAS 1.63 | 2026-09-20",
-     "spend": 18263.3,
+     "spend": 18264.01,
      "kop": 25,
-     "roas": 2.054405,
-     "cpa": 730.5319999999999,
-     "intakt": 37520.214836499996
+     "roas": 2.054325,
+     "cpa": 730.5604,
+     "intakt": 37520.212343249994
     },
     {
      "id": "120249121867590172",
      "namn": "CARASHELL_SE_Taköverdraget LISTICLE",
-     "spend": 15993.63,
+     "spend": 15994.21,
      "kop": 20,
-     "roas": 1.717771,
-     "cpa": 799.6814999999999,
-     "intakt": 27473.393798729998
+     "roas": 1.717709,
+     "cpa": 799.7104999999999,
+     "intakt": 27473.398464889997
     },
     {
      "id": "120249305726720172",
      "namn": "NYA LISTICLE CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia",
-     "spend": 2748.72,
+     "spend": 2748.78,
      "kop": 2,
-     "roas": 1.167089,
-     "cpa": 1374.36,
-     "intakt": 3208.0008760799997
+     "roas": 1.167063,
+     "cpa": 1374.39,
+     "intakt": 3207.9994331400003
     }
    ],
    "status": "ok",
@@ -8145,44 +8145,44 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 15825.07,
+     "spend": 15828.05,
      "kop": 18,
-     "roas": 2.886821
+     "roas": 2.886278
     }
    ],
    "idag": {
-    "spend": 8858.31,
-    "kop": 6,
-    "roas": 1.601623,
+    "spend": 10055.89,
+    "kop": 7,
+    "roas": 1.63818,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120251451415500435",
      "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
-     "spend": 99802.72,
+     "spend": 99803.51,
      "kop": 58,
-     "roas": 1.549858,
-     "cpa": 1720.736551724138,
-     "intakt": 154680.04401376
+     "roas": 1.549845,
+     "cpa": 1720.750172413793,
+     "intakt": 154679.97095594998
     },
     {
      "id": "120251471312320435",
      "namn": "AU LISTICLE Taköverdrag CARASHELL",
-     "spend": 27177.71,
+     "spend": 27178.25,
      "kop": 17,
-     "roas": 1.403336,
-     "cpa": 1598.6888235294118,
-     "intakt": 38139.45884055999
+     "roas": 1.403308,
+     "cpa": 1598.7205882352941,
+     "intakt": 38139.455651
     },
     {
      "id": "120251633656390435",
      "namn": "Taköverdrag 5 reasons USA TEST",
-     "spend": 13236.98,
+     "spend": 13238.63,
      "kop": 13,
-     "roas": 2.480926,
-     "cpa": 1018.2292307692308,
-     "intakt": 32839.96784348
+     "roas": 2.480617,
+     "cpa": 1018.3561538461538,
+     "intakt": 32839.97063471
     },
     {
      "id": "120251633696770435",
@@ -8288,13 +8288,13 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 4339.06,
+     "spend": 4339.19,
      "kop": 2,
-     "roas": 0.7099
+     "roas": 0.709879
     }
    ],
    "idag": {
-    "spend": 1740.04,
+    "spend": 1827.36,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -8303,11 +8303,11 @@
     {
      "id": "120251780248980199",
      "namn": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
-     "spend": 22060.36,
+     "spend": 22060.49,
      "kop": 29,
-     "roas": 2.196744,
-     "cpa": 760.7020689655172,
-     "intakt": 48460.963467839996
+     "roas": 2.196731,
+     "cpa": 760.706551724138,
+     "intakt": 48460.96225819001
     }
    ],
    "status": "ok",
@@ -8497,26 +8497,26 @@
     },
     {
      "datum": "2026-09-29",
-     "spend": 8378.09,
+     "spend": 8378.1,
      "kop": 10,
-     "roas": 0.945355
+     "roas": 0.945354
     }
    ],
    "idag": {
-    "spend": 7067.6,
+    "spend": 7737.59,
     "kop": 7,
-    "roas": 0.800784,
+    "roas": 0.731445,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120252183519570233",
      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
-     "spend": 39840.9,
+     "spend": 39840.91,
      "kop": 62,
-     "roas": 2.165669,
-     "cpa": 642.5951612903226,
-     "intakt": 86282.2020621
+     "roas": 2.165668,
+     "cpa": 642.5953225806452,
+     "intakt": 86282.18387788002
     },
     {
      "id": "120252321093160233",
@@ -8599,7 +8599,7 @@
   "status": "ok",
   "orsak": null,
   "datum": "2026-09-29",
-  "hamtad": "2026-09-30T12:15:14.881Z",
+  "hamtad": "2026-09-30T13:08:07.267Z",
   "kalla": "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml",
   "sekPer": {
    "SEK": 1,
@@ -8720,10 +8720,10 @@
     },
     {
      "datum": "2026-09-30",
-     "ordrar": 61,
-     "netto": 50105.1,
-     "varukostnad": 15238.83,
-     "avgifter": 1385.51,
+     "ordrar": 69,
+     "netto": 55671.1,
+     "varukostnad": 16994.54,
+     "avgifter": 1562.53,
      "avgifterAnnanValuta": {},
      "utanKostnad": 0,
      "utanAvgift": 3601.6
@@ -8740,12 +8740,12 @@
     }
    ],
    "kostnadKallor": {
-    "shopify": 859,
+    "shopify": 869,
     "land": 0,
     "saknasLand": 0
    },
    "perLand": {
-    "SE": 816
+    "SE": 824
    }
   },
   {
@@ -8867,14 +8867,16 @@
     },
     {
      "datum": "2026-09-30",
-     "ordrar": 12,
-     "netto": 20994.49,
-     "varukostnad": 6454.53,
-     "avgifter": 191.36,
+     "ordrar": 17,
+     "netto": 28436.22,
+     "varukostnad": 9276.54,
+     "avgifter": 233.9,
      "avgifterAnnanValuta": {
       "AUD": 73.38,
-      "USD": 10.06,
-      "GBP": 1.5
+      "USD": 21.61,
+      "GBP": 1.5,
+      "NOK": 109.5,
+      "DKK": 29.57
      },
      "utanKostnad": 555.43,
      "utanAvgift": 2040.52
@@ -8891,16 +8893,16 @@
     }
    ],
    "kostnadKallor": {
-    "shopify": 264,
+    "shopify": 269,
     "land": 0,
     "saknasLand": 0
    },
    "perLand": {
     "AU": 22,
-    "US": 76,
-    "SE": 85,
-    "NO": 47,
-    "DK": 29,
+    "US": 77,
+    "SE": 86,
+    "NO": 49,
+    "DK": 30,
     "FI": 1,
     "GB": 1
    }
@@ -8990,10 +8992,10 @@
     },
     {
      "datum": "2026-09-30",
-     "ordrar": 8,
-     "netto": 6794.6,
-     "varukostnad": 2368.89,
-     "avgifter": 345.9,
+     "ordrar": 9,
+     "netto": 7333.6,
+     "varukostnad": 2547.15,
+     "avgifter": 376.44,
      "avgifterAnnanValuta": {},
      "utanKostnad": 0,
      "utanAvgift": 0
@@ -9001,12 +9003,12 @@
    ],
    "saknarKostnad": [],
    "kostnadKallor": {
-    "shopify": 161,
+    "shopify": 162,
     "land": 0,
     "saknasLand": 0
    },
    "perLand": {
-    "NO": 156
+    "NO": 157
    }
   },
   {
@@ -9300,19 +9302,19 @@
     },
     {
      "datum": "2026-09-30",
-     "ordrar": 26,
-     "netto": 10763,
-     "varukostnad": 4121.08,
-     "avgifter": 363.23,
+     "ordrar": 30,
+     "netto": 12359,
+     "varukostnad": 4762.92,
+     "avgifter": 410.77,
      "avgifterAnnanValuta": {},
-     "utanKostnad": 3598,
+     "utanKostnad": 3998,
      "utanAvgift": 0
     }
    ],
    "saknarKostnad": [
     {
      "titel": "Äkta ätpinnar i trä",
-     "intakt": 38400
+     "intakt": 38800
     },
     {
      "titel": "Pizza-Strumpor · One Size",
@@ -9328,19 +9330,19 @@
     }
    ],
    "kostnadKallor": {
-    "shopify": 706,
+    "shopify": 714,
     "land": 0,
     "saknasLand": 0
    },
    "perLand": {
-    "SE": 388
+    "SE": 392
    }
   }
  ],
  "tavla": {
-  "status": "delvis",
-  "orsak": "Meta (Magiborsten NO): Meta: User request limit reached",
-  "meta": "saknas",
+  "status": "ok",
+  "orsak": null,
+  "meta": "ok",
   "hubbar": 26,
   "kommentarer": {
    "traffar": 49,
@@ -9354,15 +9356,15 @@
   },
   "lag": {
    "attGora": 167,
-   "pagar": 15,
+   "pagar": 14,
    "revision": 1,
-   "vantar": 136,
+   "vantar": 137,
    "forsenade": 4,
-   "live7": 0,
-   "vinnare": 0,
-   "lanserade": 0,
+   "live7": 112,
+   "vinnare": 3,
+   "lanserade": 259,
    "utanRedigerare": 229,
-   "ledtidMedian": null
+   "ledtidMedian": 5.2
   },
   "personer": [
    {
@@ -9375,27 +9377,11 @@
      "vantar": 12
     },
     "forsenade": 3,
-    "live7": 0,
-    "vinnare": 0,
-    "lanserade": 0,
-    "ledtidMedian": null,
-    "ledtidAntal": 0
-   },
-   {
-    "id": "gilz",
-    "namn": "Gilz",
-    "ko": {
-     "attGora": 0,
-     "pagar": 0,
-     "revision": 1,
-     "vantar": 7
-    },
-    "forsenade": 1,
-    "live7": 0,
-    "vinnare": 0,
-    "lanserade": 0,
-    "ledtidMedian": null,
-    "ledtidAntal": 0
+    "live7": 40,
+    "vinnare": 3,
+    "lanserade": 110,
+    "ledtidMedian": 5.1,
+    "ledtidAntal": 106
    },
    {
     "id": "jasper",
@@ -9407,16 +9393,46 @@
      "vantar": 57
     },
     "forsenade": 0,
-    "live7": 0,
+    "live7": 56,
     "vinnare": 0,
-    "lanserade": 0,
-    "ledtidMedian": null,
-    "ledtidAntal": 0
+    "lanserade": 87,
+    "ledtidMedian": 5.1,
+    "ledtidAntal": 70
+   },
+   {
+    "id": "gilz",
+    "namn": "Gilz",
+    "ko": {
+     "attGora": 0,
+     "pagar": 0,
+     "revision": 1,
+     "vantar": 7
+    },
+    "forsenade": 1,
+    "live7": 15,
+    "vinnare": 0,
+    "lanserade": 29,
+    "ledtidMedian": 36.5,
+    "ledtidAntal": 27
+   },
+   {
+    "id": "jerzee",
+    "namn": "Jerzee",
+    "ko": {
+     "attGora": 0,
+     "pagar": 0,
+     "revision": 0,
+     "vantar": 0
+    },
+    "forsenade": 0,
+    "live7": 1,
+    "vinnare": 0,
+    "lanserade": 33,
+    "ledtidMedian": 2.7,
+    "ledtidAntal": 33
    }
   ],
-  "utanAnnonser": [
-   "Jerzee"
-  ],
+  "utanAnnonser": [],
   "produkttestare": [
    "Josh",
    "Annabelle"
@@ -9429,7 +9445,20 @@
    "Racing Car Advent Calendar creative hub",
    "catcabin creative hub"
   ],
-  "vinnare": [],
+  "vinnare": [
+   {
+    "annons": "Batmotor_SP_1_H5",
+    "person": "Carl",
+    "andel": 0.53,
+    "dagar": 23
+   },
+   {
+    "annons": "Takoverdrag_SP_4_H1",
+    "person": "Carl",
+    "andel": 0.21,
+    "dagar": 14
+   }
+  ],
   "forsenade": [
    {
     "nyckel": "Motorcycle Cover creative hub|MC-Kapell_OB_3_H1",
@@ -20838,7 +20867,7 @@
     "program": "produkttest"
    }
   ],
-  "raknat": "2026-09-30T12:25:30.623Z",
+  "raknat": "2026-09-30T13:15:39.512Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -20873,7 +20902,7 @@
   ],
   "matningar": {
    "recensioner": 1380,
-   "tvister": 75,
+   "tvister": 76,
    "veckor": 4,
    "produkttest": 78
   }
@@ -22974,7 +23003,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17815961949",
@@ -22992,7 +23021,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17684595037",
@@ -23010,7 +23039,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17705992541",
@@ -23028,7 +23057,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "16768893303",
@@ -23046,7 +23075,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17857872221",
@@ -23064,7 +23093,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17731354973",
@@ -23082,7 +23111,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17863377245",
@@ -23100,7 +23129,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17862787421",
@@ -23118,7 +23147,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17862558045",
@@ -23136,7 +23165,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17861968221",
@@ -23154,7 +23183,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17876353373",
@@ -23172,7 +23201,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17873207645",
@@ -23190,7 +23219,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17751572829",
@@ -23208,7 +23237,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17884250461",
@@ -23226,7 +23255,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17894736221",
@@ -23244,7 +23273,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17888313693",
@@ -23262,7 +23291,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17904992605",
@@ -23280,7 +23309,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17913577821",
@@ -23298,7 +23327,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17925603677",
@@ -23316,7 +23345,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17923506525",
@@ -23334,7 +23363,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17933893981",
@@ -23352,7 +23381,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17929797981",
@@ -23370,7 +23399,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17929601373",
@@ -23388,7 +23417,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "16904618359",
@@ -23406,7 +23435,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "16902390135",
@@ -23424,7 +23453,25 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
+  },
+  {
+   "tvistId": "17940808029",
+   "order": "#7092",
+   "orderId": "17820938797405",
+   "brand": "baverbutiken",
+   "typ": "inquiry",
+   "orsak": "credit not processed",
+   "belopp": 579,
+   "valuta": "SEK",
+   "deadline": "2026-10-19",
+   "initierad": "2026-09-30",
+   "status": "needs response",
+   "besvarad": false,
+   "utfall": null,
+   "oppen": true,
+   "kalla": "shopify",
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "16907600247",
@@ -23442,7 +23489,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17773822301",
@@ -23460,7 +23507,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17773723997",
@@ -23478,7 +23525,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   },
   {
    "tvistId": "17663131997",
@@ -23496,13 +23543,13 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-30T12:15:14.881Z"
+   "hamtad": "2026-09-30T13:08:07.267Z"
   }
  ],
  "tvister": {
   "status": "delvis",
   "orsak": "6 av 12 butiker gick inte att läsa tvisterna för",
-  "hamtad": "2026-09-30T12:15:14.881Z",
+  "hamtad": "2026-09-30T13:08:07.267Z",
   "fonsterDagar": 180,
   "butiker": [
    {
@@ -23511,10 +23558,10 @@
     "status": "ok",
     "orsak": null,
     "via": "SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER",
-    "antal": 65,
-    "oppna": 26,
-    "behoverSvar": 23,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "antal": 66,
+    "oppna": 27,
+    "behoverSvar": 24,
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "carashell",
@@ -23525,7 +23572,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "beverbutikken",
@@ -23536,7 +23583,7 @@
     "antal": 7,
     "oppna": 4,
     "behoverSvar": 4,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "baeverbutiken",
@@ -23547,7 +23594,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "majavakauppa",
@@ -23558,7 +23605,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "matstrumpor",
@@ -23569,7 +23616,7 @@
     "antal": 3,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "catcabin",
@@ -23580,7 +23627,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "pzjagy-mz",
@@ -23591,7 +23638,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "kalender",
@@ -23602,7 +23649,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "j0p8qz-kp",
@@ -23613,7 +23660,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "tacklebay",
@@ -23624,7 +23671,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    },
    {
     "id": "aphkky-ke",
@@ -23635,7 +23682,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-30T12:15:14.881Z"
+    "hamtad": "2026-09-30T13:08:07.267Z"
    }
   ]
  },
@@ -23841,7 +23888,7 @@
  },
  "autosvar": {
   "dagar": 30,
-  "hamtad": "2026-09-30T12:15:14.881Z",
+  "hamtad": "2026-09-30T13:08:07.267Z",
   "etiketter": {
    "x": {
     "som_pa_bilden": "looks nothing like the picture",
@@ -23869,8 +23916,8 @@
    "baverbutiken": {
     "brand": "baverbutiken",
     "period": {
-     "fran": "2026-08-31T12:15:14.881Z",
-     "till": "2026-09-30T12:15:14.881Z",
+     "fran": "2026-08-31T13:08:07.267Z",
+     "till": "2026-09-30T13:08:07.267Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-22T21:30:08.320Z",
@@ -26004,8 +26051,8 @@
    "carashell": {
     "brand": "carashell",
     "period": {
-     "fran": "2026-08-31T12:15:14.881Z",
-     "till": "2026-09-30T12:15:14.881Z",
+     "fran": "2026-08-31T13:08:07.267Z",
+     "till": "2026-09-30T13:08:07.267Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-23T13:44:44.754Z",
@@ -26754,8 +26801,8 @@
    "matstrumpor": {
     "brand": "matstrumpor",
     "period": {
-     "fran": "2026-08-31T12:15:14.881Z",
-     "till": "2026-09-30T12:15:14.881Z",
+     "fran": "2026-08-31T13:08:07.267Z",
+     "till": "2026-09-30T13:08:07.267Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-23T17:17:59.091Z",
@@ -28173,15 +28220,15 @@
     "url": "https://baverbutiken.se",
     "status": "ok",
     "paket": 2947,
-    "levererade": 1421,
-    "paVag": 1503,
+    "levererade": 1429,
+    "paVag": 1495,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-30T11:21:55.484Z",
+     "datum": "2026-09-30T12:19:44.477Z",
      "ordrar": 2419,
-     "paket": 1514,
+     "paket": 1513,
      "registrerade": 0,
-     "skrivna": 2,
+     "skrivna": 8,
      "fel": 0,
      "torr": false
     }
@@ -28192,13 +28239,13 @@
     "url": "https://carashell.se",
     "status": "ok",
     "paket": 453,
-    "levererade": 22,
-    "paVag": 427,
+    "levererade": 24,
+    "paVag": 425,
     "utanSkanning": 2,
     "senasteKorning": {
-     "datum": "2026-09-30T11:27:17.371Z",
+     "datum": "2026-09-30T12:28:41.908Z",
      "ordrar": 449,
-     "paket": 429,
+     "paket": 427,
      "registrerade": 0,
      "skrivna": 0,
      "fel": 0,
@@ -28211,15 +28258,15 @@
     "url": "https://beverbutikken.no",
     "status": "ok",
     "paket": 1059,
-    "levererade": 619,
-    "paVag": 425,
+    "levererade": 626,
+    "paVag": 418,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-30T11:33:52.520Z",
+     "datum": "2026-09-30T12:35:25.350Z",
      "ordrar": 927,
-     "paket": 426,
+     "paket": 423,
      "registrerade": 0,
-     "skrivna": 3,
+     "skrivna": 7,
      "fel": 0,
      "torr": false
     }
@@ -28234,7 +28281,7 @@
     "paVag": 0,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-30T11:49:08.227Z",
+     "datum": "2026-09-30T12:50:09.750Z",
      "ordrar": 1,
      "paket": 0,
      "registrerade": 0,
@@ -28253,7 +28300,7 @@
     "paVag": 41,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-30T11:41:28.996Z",
+     "datum": "2026-09-30T12:42:20.462Z",
      "ordrar": 43,
      "paket": 42,
      "registrerade": 0,
@@ -28268,15 +28315,15 @@
     "url": "https://matstrumpor.se",
     "status": "ok",
     "paket": 415,
-    "levererade": 86,
-    "paVag": 325,
+    "levererade": 88,
+    "paVag": 323,
     "utanSkanning": 2,
     "senasteKorning": {
-     "datum": "2026-09-30T11:56:56.222Z",
+     "datum": "2026-09-30T12:58:20.804Z",
      "ordrar": 385,
      "paket": 327,
      "registrerade": 0,
-     "skrivna": 0,
+     "skrivna": 2,
      "fel": 0,
      "torr": false
     }
