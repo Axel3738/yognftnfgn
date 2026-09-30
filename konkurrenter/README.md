@@ -68,7 +68,20 @@ node konkurrenter/kor.mjs --lista
    vid taket 30), räckvidden per annons hämtas ur EU-transparensen genom att
    detaljfrågan AdLibraryV3AdDetailsQuery spelas upp per annons, och sidans
    info (namn, kategori, Instagram, domän) följer med. Mätt på ORVO: 37
-   annonser med räckvidd på 42 s. Reserv (`--hamta --annonser <fil>`): Axel
+   annonser med räckvidd på 42 s. **Över taket 30** (general stores:
+   Bustatio-busto hade 58 aktiva och ~4 700 inaktiva annonser 2026-09-30)
+   läses de AKTIVA med datumfönster: "visningar t.o.m. D" är för en aktiv
+   annons samma sak som "startade t.o.m. D", så en stigande rad datum
+   (`tackDatum`: var 30:e dag ett år bakåt, var tredje de sista 60) läser dem
+   i omgångar om högst 30. Det gav 58 av 58 på 13 vanliga laddningar. Sedan
+   provas sidans egen pagineringsfråga (AdLibrarySearchPaginationQuery,
+   fångad genom skrollning och uppspelad med markören), men den **stryps**
+   efter ett femtiotal frågor ("Rate limit exceeded", kod 1675004, och
+   strypningen satt kvar i över en halvtimme). Då väntar läsaren 60 s en gång
+   och faller sedan tillbaka på media_type. `--max-annonser N` (standard 400,
+   de aktiva först) och `--rackvidd aktiva` (räckvidden bara för de aktiva,
+   eftersom detaljfrågan stryps på samma sätt) gör en stor sida hanterbar.
+   Reserv (`--hamta --annonser <fil>`): Axel
    eller Cowork (`cowork/1-annonser.txt`) skriver ner annonserna — länk,
    text, rubrik, `aktiv`, `exponeringar`, bilder — i en JSON-fil (formatet
    står överst i `annonsfall.mjs`). **Axels kriterier** (`trosklar.annons`,
@@ -435,7 +448,14 @@ Eoka AB (ORVO) bestred KD-2026-001 med en enda TikTok-länk. Sekvensen i vårt
 2025. Mätt samma kväll: videon ligger i **58 av våra 240 takskyddsfilmer**,
 100 annonser, 54 aktiva, 82 127 kr på 7 dygn
 (`arenden/KD-2026-001/svar-2026-09-29.md` + `specialised-covers.json`).
-Axel släppte ärendet. Tre fel i brevet, alla nu stängda i koden:
+Axel släppte ärendet. **Återkallelsen gick ut 2026-09-30 07:30**, med en
+ursäkt på hans ord ("skicka återkallelsen och be om ursäkt"). Gmail-svaret
+`1a0f0cb29f5946ca` återkallar fakturan och kraven och säger att brevet
+"innehöll påståenden som vi inte hade kontrollerat tillräckligt". Det nämner
+inte vilka klipp det gäller eller var de kommer ifrån (Axel: det är "dumt att
+beskriva om det riskerar att vårat ad account ryker"). Det gamla utkastet är
+raderat. **De 54 aktiva annonserna med Specialised Covers klipp ligger kvar**
+(Axels val B 2026-09-30, ingen ny brief). Tre fel i brevet, alla nu stängda i koden:
 
 1. **"Filmerna är framställda av oss".** Brevet räknar nu upp varje kopierad
    sekvens: *er 0:06 = vår annons &lt;länk&gt; (visas sedan …) vid 0:02*.
@@ -448,6 +468,17 @@ Axel släppte ärendet. Tre fel i brevet, alla nu stängda i koden:
 3. **Produktsidor och marknadsföringslagen** (vilseledande efterbildning,
    renommésnyltning) utan belägg. Borta. Produktsidan nämns bara när en
    ordagrann text från den är uppmätt.
+
+**Anspråket `redigering` (Bustatio-busto, 2026-09-30).** En general store
+(bustatio.com) körde 11 av VÅRA färdiga annonser. De var nedladdade med vår
+svenska text i bilden vid exakt samma tider (deras 0:05 = vår 0:05) och bara
+en vattenstämpel "bustatio" tillagd. Filmklippen under texten är en blandning.
+En del är AI-klipp vi har gjort, en del leverantörens produktfilm och en del
+riktiga inspelningar vi knappast gjort själva. Vår klippning och vår text är
+däremot våra. `--anmal <id> --ansprak redigering` gör anspråk på just det, i
+anmälan ("a re-upload of our own ad film … We make no claim to the underlying
+product footage"), på bevisbilden, i formulärets 500 tecken, på
+granskningskortet och i brevet. Anspråket sparas på ärendet.
 
 **Registret över klipp vi vet inte är våra: `externa/<id>.json`**
 (`externa.mjs`). Varje källa har sina rutor (dHash 9 × 8), sin ägare och sin

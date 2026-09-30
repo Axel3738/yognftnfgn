@@ -1,0 +1,54 @@
+Uppdrag: byt Matstrumpors sex svenska mejlflöden i Spoks mot de nya flödena på alla språk.
+Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
+
+Läget före dig (mätt 2026-09-29 kväll): de sex GAMLA flödena är på och har kunder i sig.
+De sex NYA flödena ("… · alla språk") är av, har 0 kunder och alla sändsteg är av.
+Innehållet i de nya flödena är färdigt och kontrollerat. Du ska BARA slå på och stänga av.
+
+Gör ETT flöde i taget, i den här ordningen. För varje rad nedan:
+
+  A. Öppna det NYA flödet (första länken).
+  B. Slå på VARJE sändsteg (mejlstegen), ett i taget, i flödesredigeraren. Väntestegen rör du inte.
+     Räkna: flödet ska ha exakt så många sändsteg på som står i raden.
+  C. Slå på själva flödet (knappen överst). Säger Spoks "Detta flöde har inga aktiva åtgärder"
+     är något sändsteg fortfarande av: gå tillbaka till B.
+  D. Öppna det GAMLA svenska flödet (andra länken) och stäng av det med den stora knappen överst.
+     Rör INTE dess sändsteg: de kunder som redan är inne ska få sina mejl klart.
+  E. Ladda om båda sidorna och läs av. Nya: brickan "Aktiv" och Triggare på. Gamla: Triggare AV.
+     Det gamla flödets bricka står KVAR på "Aktiv" — det är rätt: knappen stänger bara triggern,
+     och kunderna som redan är inne får sina mejl klart (mätt med get_flow 2026-09-29 21:12 på
+     Välkomst: trigger.isActive false, flödet isActive true). Skriv ned vad du såg.
+  Gå sedan till nästa rad. Gör aldrig nästa rad innan E är klart.
+
+1. Välkomst: 36 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/89976b01-a650-4ad5-94a5-0556c490ae03
+   Gammalt: https://app.spoks.com/matstrumpor/flows/4e8a9b59-4192-4bb4-8829-785e6af01f7c
+2. Övergiven kassa: 36 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/6b22283c-d686-405b-8b6d-7d0b1f762028
+   Gammalt: https://app.spoks.com/matstrumpor/flows/7e1dab93-5aba-4f69-b497-66636df338e2
+3. Webbhistorik: 24 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/17aa6927-46a0-405d-b787-cd5e0e2513dc
+   Gammalt: https://app.spoks.com/matstrumpor/flows/dafa3c59-7a47-4a9e-a5cc-80eba2716612
+4. Efter köp: 24 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/0594aa1b-dfce-4a46-81ef-8bd20989c16c
+   Gammalt: https://app.spoks.com/matstrumpor/flows/d9f24905-8dab-43f3-a427-d8478701f315
+5. Vinna tillbaka: 24 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/32d23706-635e-4e1e-9c1f-e25d61df7bdf
+   Gammalt: https://app.spoks.com/matstrumpor/flows/6728bb3b-fa5d-402b-8a66-f0f6ac360fca
+6. En låda till (sushi, dag 21): 12 sändsteg
+   Nytt:  https://app.spoks.com/matstrumpor/flows/8c9c1204-99bd-4b0f-a988-4d7af65e4702
+   Gammalt: https://app.spoks.com/matstrumpor/flows/615a6e65-9a43-4a29-8af8-afc82ee7cd23
+
+Regler, utan undantag:
+- Ändra ALDRIG text, ämnesrad, bilder, filter, väntetider eller trigger i något flöde.
+- Rör INGA andra flöden. F08 Klubbdragningen och F09 Recensionen ska stå kvar som de är.
+- Rör inga kampanjer, segment eller inställningar. Schemalägg inget, skicka inget.
+- Radera ingenting.
+- Ser något annorlunda ut än beskrivet (fel antal sändsteg, en knapp som saknas, en varning du
+  inte känner igen, ett gammalt flöde som redan är av): STANNA på den raden, gör inget mer,
+  och skriv exakt vad du ser.
+- Går du inte att slå på ett nytt flöde: stäng INTE av det gamla. Då får kunderna fortfarande
+  svenska mejl, vilket är bättre än inga mejl.
+
+Rapportera till sist, en rad per flöde: namn, antal sändsteg du slog på, nytt flöde på/av,
+gammalt flöde på/av, klockslag.

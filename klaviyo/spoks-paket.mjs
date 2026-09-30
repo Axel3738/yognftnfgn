@@ -28,7 +28,7 @@ import { pathToFileURL } from 'node:url';
 import { ROT } from './mallar.mjs';
 import { lasInnehall, planeraMejl } from './bygg.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
-import { hamtaRecensionerCache, citatSignatur } from './recensioner.mjs';
+import { hamtaRecensionerCache } from './recensioner.mjs';
 
 // ---------------------------------------------------------------------------
 // Byggstenar
@@ -60,13 +60,39 @@ export function ateintradeTillSpoks(a) {
   throw new Error(`Okänd återinträdesenhet "${e}".`);
 }
 
+// De fasta orden motorn själv skriver in (knappar, faktarutan, medlemskortet,
+// citatets signatur). Svenska är standard; ett annat språk skickar sin egen
+// uppsättning i ctx.ui (klaviyo/innehall/<brand>/sprak/<sprak>.json → ui).
+export const UI_SV = {
+  hej_reserv: 'Hej',
+  du_reserv: 'du',
+  medlem_reserv: 'Medlem',
+  medlemskort: 'Medlemskort',
+  medlem_i: 'Medlem i {klubb}',
+  knapp_till: 'Till produkten',
+  knapp_kassa: 'Tillbaka till kassan',
+  knapp_titta: 'Titta igen',
+  knapp_betyg: 'Ge ditt betyg',
+  ms_rad: 'Paketnumret som börjar på MS står i mejlet om att paketet skickats.',
+  fakta_retur_rubrik: 'Ångerrätt',
+  fakta_retur_text: null,
+  fakta_sparning_rubrik: 'Spåra paketet',
+  fakta_sparning_text: 'Följ det hela vägen',
+  grundare: 'grundare',
+  verifierad: 'verifierad kund',
+  verifierad_ensam: 'Verifierad kund',
+  oversatt: null,
+  klubb: null,
+};
+
 // {{fornamn}} → Spoks personaliseringstoken. Bara filtret default finns i Spoks,
 // så reservordet väljs efter var namnet står: efter "Hej" blir det "du", först
 // i en mening (följt av kommatecken) blir det "Hej".
-export function fornamnTillSpoks(text) {
+export function fornamnTillSpoks(text, ui = UI_SV) {
+  const q = (s) => String(s).replace(/'/g, '’');
   return String(text ?? '')
-    .replace(/(^|\n)\{\{fornamn\}\}, /g, "$1{{ contact.first_name | default: 'Hej' }}, ")
-    .replace(/\{\{fornamn\}\}/g, "{{ contact.first_name | default: 'du' }}");
+    .replace(/(^|\n)\{\{fornamn\}\}, /g, `$1{{ contact.first_name | default: '${q(ui.hej_reserv)}' }}, `)
+    .replace(/\{\{fornamn\}\}/g, `{{ contact.first_name | default: '${q(ui.du_reserv)}' }}`);
 }
 
 const stycken = (text) =>
@@ -85,10 +111,12 @@ function handleUr(spec) {
 // token för spårningsnumret.
 export function lankTillSpoks(spec, ctx) {
   const s = String(spec ?? '').trim();
-  const bas = ctx.brand.butik_url.replace(/\/$/, '');
+  // ctx.bas = butikens adress på mejlets språk (https://matstrumpor.se/de); saknas
+  // den är det huvudspråket.
+  const bas = (ctx.bas ?? ctx.brand.butik_url).replace(/\/$/, '');
   const [typ, ...rest] = s.split(':');
   const varde = rest.join(':');
-  if (typ === 'produkt') return ctx.produkt(varde)?.url ?? `${bas}/products/${varde}`;
+  if (typ === 'produkt') return (ctx.bas ? null : ctx.produkt(varde)?.url) ?? `${bas}/products/${varde}`;
   if (typ === 'kollektion') return `${bas}/collections/${varde}`;
   if (typ === 'sparning') {
     ctx.anmarkningar.add('Spårningslänken går till spårningssidan utan paketnummer (Spoks saknar en token för spårningsnumret) — mejlet får en rad om att MS-numret står i leveransmejlet.');
@@ -121,24 +149,54 @@ function spoksProdukt(handle, ctx) {
   return f;
 }
 
+// Ett produktkort på ett annat språk än katalogens: Spoks produktblock visar
+// katalogens svenska titel och pris i kronor, så kortet blir bild + titeln på
+// mejlets språk + knapp till produktsidan på samma språk (inget pris — butiken
+// visar det i kundens valuta).
+function bildkort(handle, ctx, knapp) {
+  const p = spoksProdukt(handle, ctx);
+  if (!p) return [];
+  const url = lankTillSpoks(`produkt:${handle}`, ctx);
+  const titel = ctx.titel?.(handle);
+  if (!titel) ctx.fel.push(`Produkten "${handle}" saknar titel på ${ctx.sprak} (butikens översättning).`);
+  const ut = [];
+  if (p.bild_id) ut.push({ type: 'image', fileId: p.bild_id, altText: titel ?? handle, urlRedirect: url });
+  else ctx.fel.push(`Produkten "${handle}" saknar bild_id i facit — bildkortet kan inte ritas.`);
+  ut.push({ type: 'h2', text: titel ?? handle, alignment: 'center' });
+  ut.push(knappBlock(knapp ?? ctx.ui.knapp_till, url));
+  return ut;
+}
+
 function produktBlock(handles, ctx, { knapp = null, perRad = null } = {}) {
+  if (ctx.produktkort === 'bild') {
+    const kort = handles.map((h) => bildkort(h, ctx, knapp)).filter((k) => k.length);
+    if (!kort.length) return [];
+    if (kort.length === 1) return kort[0];
+    const ut = [];
+    for (let i = 0; i < kort.length; i += 4) {
+      const rad = kort.slice(i, i + 4);
+      if (rad.length === 1) ut.push(...rad[0]);
+      else ut.push({ type: 'columns', columns: rad.map((blocks) => ({ flex: 1, blocks })), stackedOnMobile: true, verticalAlignment: 'top' });
+    }
+    return ut;
+  }
   const lista = handles.map((h) => spoksProdukt(h, ctx)).filter(Boolean);
-  if (!lista.length) return null;
-  return {
+  if (!lista.length) return [];
+  return [{
     type: 'products',
     selectionMode: 'manual',
-    products: lista.map((p) => ({ id: p.id, button: knapp ?? 'Till produkten' })),
+    products: lista.map((p) => ({ id: p.id, button: knapp ?? ctx.ui.knapp_till })),
     dynamicProductsCount: null,
     dynamicCriteria: null,
     productVisibilitySettings: SYNLIGT(knapp),
     buttonText: knapp,
     alignment: 'center',
     productsPerRow: perRad ?? Math.max(1, Math.min(lista.length, 4)),
-  };
+  }];
 }
 
-const text = (t, { typ = 'regular', align = 'left' } = {}) => ({ type: typ, text: fornamnTillSpoks(t), alignment: align });
-const styckeBlock = (t, align = 'left') => stycken(t).map((s) => text(s, { align }));
+const text = (t, { typ = 'regular', align = 'left', ui = UI_SV } = {}) => ({ type: typ, text: fornamnTillSpoks(t, ui), alignment: align });
+const styckeBlock = (t, align = 'left', ui = UI_SV) => stycken(t).map((s) => text(s, { align, ui }));
 const knappBlock = (t, url) => ({ type: 'link', text: String(t), url, style: 'button' });
 
 // ---------------------------------------------------------------------------
@@ -147,59 +205,66 @@ const knappBlock = (t, url) => ({ type: 'link', text: String(t), url, style: 'bu
 
 const BLOCK = {
   hero(b, ctx) {
+    const { ui } = ctx;
     const ut = [];
     const h = handleUr(b.bild);
     if (h) {
       const p = spoksProdukt(h, ctx);
       // Produktbilden som ren bild när Spoks mediebibliotek bär den, annars ett
       // produktkort utan knapp (bilden, namnet och priset hydreras av Spoks).
-      if (p?.bild_id) ut.push({ type: 'image', fileId: p.bild_id, altText: ctx.produkt(h)?.titel ?? h, urlRedirect: lankTillSpoks(`produkt:${h}`, ctx) });
-      else if (p) ut.push(produktBlock([h], ctx, { perRad: 1 }));
+      if (p?.bild_id) ut.push({ type: 'image', fileId: p.bild_id, altText: (ctx.titel?.(h) ?? ctx.produkt(h)?.titel) ?? h, urlRedirect: lankTillSpoks(`produkt:${h}`, ctx) });
+      else if (p) ut.push(...produktBlock([h], ctx, { perRad: 1 }));
     } else if (b.bild) {
       ctx.varningar.push(`Hero-bilden "${b.bild}" är ingen produkt — ladda upp den med upload_media och lägg in bildblocket i redigeraren.`);
     }
-    if (b.rubrik) ut.push(text(b.rubrik, { typ: 'h1', align: 'center' }));
-    if (b.text) ut.push(...styckeBlock(b.text, 'center'));
-    if (b.knapp) ut.push(knappBlock(b.knapp.text, lankTillSpoks(b.knapp.lank, ctx)));
+    if (b.rubrik) ut.push(text(b.rubrik, { typ: 'h1', align: 'center', ui }));
+    if (b.text) ut.push(...styckeBlock(b.text, 'center', ui));
+    if (b.knapp?.text) ut.push(knappBlock(b.knapp.text, lankTillSpoks(b.knapp.lank, ctx)));
     return ut;
   },
   text(b, ctx) {
-    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2' })] : []), ...styckeBlock(b.text)];
+    const { ui } = ctx;
+    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2', ui })] : []), ...styckeBlock(b.text, 'left', ui)];
   },
-  punkter(b) {
-    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2' })] : []), ...(b.punkter ?? []).map((p) => text(p, { typ: 'list' }))];
+  punkter(b, ctx) {
+    const { ui } = ctx;
+    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2', ui })] : []), ...(b.punkter ?? []).filter(Boolean).map((p) => text(p, { typ: 'list', ui }))];
   },
   produkt(b, ctx) {
     const ut = [];
-    if (b.text) ut.push(...styckeBlock(b.text));
-    const pb = produktBlock([b.handle], ctx, { knapp: b.knapp ?? 'Till produkten', perRad: 1 });
-    if (pb) ut.push(pb);
+    if (b.text) ut.push(...styckeBlock(b.text, 'left', ctx.ui));
+    ut.push(...produktBlock([b.handle], ctx, { knapp: b.knapp ?? ctx.ui.knapp_till, perRad: 1 }));
     return ut;
   },
   produktrad(b, ctx) {
     const pb = produktBlock(b.handles ?? [], ctx);
-    if (!pb) return [];
-    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2', align: 'center' })] : []), pb];
+    if (!pb.length) return [];
+    return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2', align: 'center', ui: ctx.ui })] : []), ...pb];
   },
   citat(b, ctx) {
     const antal = Math.min(Number(b.antal ?? 2) || 2, 2);
-    const lista = (ctx.recensioner?.[b.handle] ?? []).slice(0, antal);
+    // Ett annat språk än recensionernas: bara recensioner med en granskad
+    // översättning (ctx.citat), och signaturen säger att den är översatt.
+    const alla = ctx.recensioner?.[b.handle] ?? [];
+    const lista = (ctx.citatText ? alla.filter((r) => ctx.citatText(r)) : alla).slice(0, antal);
     if (!lista.length) {
-      ctx.varningar.push(`Inga riktiga recensioner (4-5 stjärnor) för "${b.handle}", citatblocket utgår.`);
+      if (ctx.citatText) ctx.fel.push(`Citatblocket för "${b.handle}" har ingen översatt recension på ${ctx.sprak} — översätt dem i sprak/${ctx.sprak}.json → citat.`);
+      else ctx.varningar.push(`Inga riktiga recensioner (4-5 stjärnor) för "${b.handle}", citatblocket utgår.`);
       return [];
     }
     return lista.map((r) => ({
       type: 'quote',
-      text: `${'★'.repeat(Math.max(1, Math.min(5, Math.round(r.betyg))))} "${r.text}"\n${citatSignatur(r)}`,
+      text: `${'★'.repeat(Math.max(1, Math.min(5, Math.round(r.betyg))))} "${ctx.citatText ? ctx.citatText(r) : r.text}"\n${signatur(r, ctx.ui)}`,
       alignment: 'left',
     }));
   },
   knapp(b, ctx) {
+    if (!b.text) return [];
     const ut = [knappBlock(b.text, lankTillSpoks(b.lank, ctx))];
     // Klaviyo-knappen bar kundens eget paketnummer (?k=). Utan det måste kunden
     // skriva numret själv — säg var det står, annars lovar mejlet mer än sidan ger.
     if (ctx.sparningUtanNummer) {
-      ut.push(text('Paketnumret som börjar på MS står i mejlet om att paketet skickats.'));
+      ut.push(text(ctx.ui.ms_rad, { ui: ctx.ui }));
       ctx.sparningUtanNummer = false;
     }
     return ut;
@@ -207,37 +272,44 @@ const BLOCK = {
   // Medlemskortet: etikett, förnamn (eller "Medlem"), raden under, fotnot — i en
   // sektion så det mörka kortet kan stylas som ett block i Spoks redigerare.
   medlemskort(b, ctx) {
-    const klubb = ctx.brand.klubb?.namn ?? ctx.brand.namn;
+    const { ui } = ctx;
+    const klubb = ui.klubb ?? ctx.brand.klubb?.namn ?? ctx.brand.namn;
+    const q = (s) => String(s).replace(/'/g, '’');
     ctx.anmarkningar.add('Medlemskortet är en sektion med text — det mörka kortet (svart botten, orange ram) sätts på sektionen i Spoks redigerare.');
     return [{
       type: 'section',
       blocks: [
-        text(String(b.etikett ?? 'Medlemskort').toUpperCase(), { align: 'center' }),
-        { type: 'h2', text: "{{ contact.first_name | default: 'Medlem' }}", alignment: 'center' },
-        text(b.rad_under_namnet ?? `Medlem i ${klubb}`, { align: 'center' }),
+        text(String(b.etikett ?? ui.medlemskort).toUpperCase(), { align: 'center', ui }),
+        { type: 'h2', text: `{{ contact.first_name | default: '${q(ui.medlem_reserv)}' }}`, alignment: 'center' },
+        text(b.rad_under_namnet ?? ui.medlem_i.replace('{klubb}', klubb), { align: 'center', ui }),
         { type: 'divider' },
-        text(b.fotnot ?? klubb, { align: 'center' }),
+        text(b.fotnot ?? klubb, { align: 'center', ui }),
       ],
     }];
   },
   grundare(b, ctx) {
     const namn = ctx.stil?.grundare ?? 'Axel';
-    return [{ type: 'quote', text: `${fornamnTillSpoks(b.text)}\n${namn}, grundare`, alignment: 'left' }];
+    return [{ type: 'quote', text: `${fornamnTillSpoks(b.text, ctx.ui)}\n${namn}, ${ctx.ui.grundare}`, alignment: 'left' }];
   },
   fakta(b, ctx) {
-    const { brand } = ctx;
+    const { brand, ui } = ctx;
+    const retur = ui.fakta_retur_text ?? brand.angerratt_text;
+    const sparning = ctx.sparningssida ?? brand.sparningssida;
     const kolumner = [];
-    if (brand.angerratt_text) kolumner.push({ flex: 1, blocks: [text('**Ångerrätt**', { align: 'center' }), text(brand.angerratt_text, { align: 'center' })] });
-    if (brand.sparningssida) kolumner.push({ flex: 1, blocks: [text('**Spåra paketet**', { align: 'center' }), text(`[Följ det hela vägen](${brand.sparningssida})`, { align: 'center' })] });
+    if (retur) kolumner.push({ flex: 1, blocks: [text(`**${ui.fakta_retur_rubrik}**`, { align: 'center', ui }), text(retur, { align: 'center', ui })] });
+    if (sparning) kolumner.push({ flex: 1, blocks: [text(`**${ui.fakta_sparning_rubrik}**`, { align: 'center', ui }), text(`[${ui.fakta_sparning_text}](${sparning})`, { align: 'center', ui })] });
     if (kolumner.length < 2) return kolumner.flatMap((k) => k.blocks);
     return [{ type: 'columns', columns: kolumner, stackedOnMobile: true, verticalAlignment: 'top' }];
   },
   dynamisk(b, ctx) {
+    // Priset kommer ur Spoks katalog (kronor) — dolt på ett annat språk än
+    // katalogens, där butiken visar det i kundens egen valuta.
+    const medPris = ctx.produktkort !== 'bild';
     if (b.kalla === 'checkout_rader') {
       // Bara giltigt i ett flöde som triggas av checkout_created/abandoned_cart —
       // Spoks fyller i kundens egen kassa och länken tillbaka.
       ctx.kravTrigger = 'checkout_created';
-      return [{ type: 'abandonedCart', buttonText: 'Tillbaka till kassan', isButtonVisible: true, isProductPriceVisible: true, isProductQuantityVisible: true, isProductTitleVisible: true }];
+      return [{ type: 'abandonedCart', buttonText: ctx.ui.knapp_kassa, isButtonVisible: true, isProductPriceVisible: medPris, isProductQuantityVisible: true, isProductTitleVisible: true }];
     }
     if (b.kalla === 'visad_produkt') {
       ctx.kravFlode = true;
@@ -246,8 +318,8 @@ const BLOCK = {
         selectionMode: 'dynamic',
         dynamicCriteria: 'recently_viewed',
         dynamicProductsCount: 1,
-        productVisibilitySettings: SYNLIGT('Titta igen'),
-        buttonText: 'Titta igen',
+        productVisibilitySettings: { ...SYNLIGT(ctx.ui.knapp_titta), isPriceVisible: medPris, isOriginalPriceVisible: medPris },
+        buttonText: ctx.ui.knapp_titta,
         alignment: 'center',
         productsPerRow: 1,
       }];
@@ -257,7 +329,7 @@ const BLOCK = {
   },
   stjarnor(b, ctx) {
     ctx.varningar.push('Stjärnblocket byts mot en knapp till samma adress (Spoks har inga klickbara stjärnor).');
-    return [knappBlock(b.rubrik ?? 'Ge ditt betyg', lankTillSpoks(b.lank, ctx))];
+    return [knappBlock(b.rubrik ?? ctx.ui.knapp_betyg, lankTillSpoks(b.lank, ctx))];
   },
   erbjudande(b, ctx) {
     ctx.varningar.push('Erbjudandeblocket (lyckohjulet) är Bäverbutikens och byggs inte i Spoks-paketet.');
@@ -265,7 +337,18 @@ const BLOCK = {
   },
 };
 
+// Citatets signatur: namnet (om det finns) och "verifierad kund" på mejlets
+// språk, och "översatt från svenska" när texten är översatt.
+function signatur(r, ui) {
+  const namn = String(r?.namn ?? '').trim();
+  const bas = namn && !/^(anonym|verifierad kund)/i.test(namn) ? `${namn}, ${ui.verifierad}` : ui.verifierad_ensam;
+  return ui.oversatt ? `${bas} · ${ui.oversatt}` : bas;
+}
+
 export function blockTillSpoks(mejl, ctx) {
+  // Utan språk är det huvudspråket (samma objekt, så anroparens varningar och fel syns).
+  if (!ctx.ui) ctx.ui = UI_SV;
+  if (!ctx.fel) ctx.fel = [];
   const ut = [];
   for (const b of mejl.block ?? []) {
     const f = BLOCK[b.typ];
@@ -280,14 +363,15 @@ export function blockTillSpoks(mejl, ctx) {
 
 // Ett mejl → postData åt draft_campaign / update_draft_campaign.
 export function mejlTillSpoks(mejl, ctx, { titel }) {
-  const c = { ...ctx, varningar: [], anmarkningar: new Set(), fel: [], kravTrigger: null, kravFlode: false };
+  const c = { ...ctx, ui: { ...UI_SV, ...(ctx.ui ?? {}) }, varningar: [], anmarkningar: new Set(), fel: [], kravTrigger: null, kravFlode: false };
+  const ui = c.ui;
   const blocks = blockTillSpoks(mejl, c);
   const amne = mejl.amnesrader?.[0]?.text ?? mejl.namn ?? mejl.id;
   const post = {
     title: titel,
     deliveryChannel: 'email',
     channel: 'tag',
-    customizedNotification: { emailTitle: fornamnTillSpoks(amne), emailDescription: fornamnTillSpoks(mejl.forhandstext ?? '') },
+    customizedNotification: { emailTitle: fornamnTillSpoks(amne, ui), emailDescription: fornamnTillSpoks(mejl.forhandstext ?? '', ui) },
     blocks,
   };
   const kvar = JSON.stringify(post).match(/\{\{fornamn\}\}|\{%/g);

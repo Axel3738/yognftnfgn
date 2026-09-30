@@ -75,5 +75,45 @@
   "metrik_val": {
     "Viewed Product": "R9yPAm"
   },
-  "metrik_val_kommentar": "Mätt 2026-09-25: Viewed Product finns två gånger i UV6Rqg. R9yPAm (integration API = butikens Klaviyo-spårningskod klaviyo.js) hade 4 händelser samma dag (Name, Price '299 kr', URL, ImageURL), W55WbX (Shopify) 0. F03 triggar på R9yPAm."
+  "metrik_val_kommentar": "Mätt 2026-09-25: Viewed Product finns två gånger i UV6Rqg. R9yPAm (integration API = butikens Klaviyo-spårningskod klaviyo.js) hade 4 händelser samma dag (Name, Price '299 kr', URL, ImageURL), W55WbX (Shopify) 0. F03 triggar på R9yPAm.",
+  "spoks_sprak": {
+    "comment": "Mejlen i Spoks på alla språk (Axels beslut A 2026-09-29: 'alla tolv språk nu, som CaraShell … fler marknader kommer – bygg det så att ett nytt land eller språk bara är en rad till i konfigen'). Läses av klaviyo/spoks-sprak.mjs. ETT NYTT LAND = en rad i `lander` (ISO-kod → språk). Ett land som inte står här får `reserv`-språket, så en ny marknad i Shopify får engelska mejl av sig själv och aldrig svenska. ETT NYTT SPRÅK = en rad i sparning/butiker.json → matstrumpor.mejl_sprak (samma rad som fraktmejlen läser: locale, sprak, mapp) + en översatt fil klaviyo/innehall/matstrumpor/sprak/<sprak>.json (prompten: klaviyo/innehall/matstrumpor/sprak/README.md). Spoks vet bara kundens land (contact.country, engelskt landsnamn — mätt 2026-09-29: 'Sweden', 'United States'), inte språket, så språket följer landet. Kontakter utan land får huvudspråket.",
+    "huvudsprak": "sv",
+    "reserv": "en",
+    "reserv_comment": "Länder utan egen rad (i dag BG, HR, CY, CZ, EE, GR, HU, LV, LT, MT, RO, SK, SI, IS i Europa-marknaden, och varje land som läggs till senare) får engelska. Engelskans stegfilter är 'landet finns och är inte ett av de andra språkens länder', så ett felstavat eller nytt landsnamn i Spoks landar i engelska, aldrig i svenska.",
+    "lander": {
+      "SE": "sv",
+      "NO": "nb",
+      "DK": "da",
+      "FI": "fi",
+      "DE": "de",
+      "AT": "de",
+      "CH": "de",
+      "LI": "de",
+      "FR": "fr",
+      "LU": "fr",
+      "BE": "nl",
+      "NL": "nl",
+      "ES": "es",
+      "IT": "it",
+      "PL": "pl",
+      "PT": "pt",
+      "US": "en",
+      "GB": "en",
+      "AU": "en",
+      "CA": "en",
+      "NZ": "en",
+      "IE": "en"
+    },
+    "lander_comment": "Sessionens val 2026-09-29 där landet har flera språk: Belgien nederländska (flamländska är majoritetsspråket), Schweiz tyska, Luxemburg franska. Ändra raden om Axel vill annat. Finland finska (butiken har /fi sedan 2026-09-27). Landsnamnet i Spoks räknas ur ISO-koden med Intl (engelska) — avviker Spoks namn, lägg det i `landsnamn`.",
+    "landsnamn": {},
+    "kampanjer_bara": {
+      "k04-fars-dag-bestall-senast-24-okt": ["sv"],
+      "k11-bestall-senast-8-dec": ["sv"],
+      "k12-sista-dagen-idag": ["sv"],
+      "f06-sunset-e1": ["sv"],
+      "f06-sunset-e2": ["sv"]
+    },
+    "kampanjer_bara_comment": "Kampanjer som bara stämmer på vissa språk. K04 (fars dag 8 november, beställ senast 24 oktober), K11 (beställ senast 8 december) och K12 (sista dagen för jul i dag) bär sista beställningsdagar räknade på SVENSK leveranstid (leverans_p90_dygn 15, mätt på svenska ordrar) — för andra länder finns ingen mätt leveranstid, och fars dag infaller andra dagar i de flesta länder. Hitta aldrig på ett datum: kampanjen skickas bara på svenska tills leveranstiden per land är mätt. F06 Sunset (två utkast som skickas för hand) byggs inte på andra språk: Axels beslut 2026-09-29 \"ingen tas bort\" står i utkastens titlar i Spoks (\"SKICKAS INTE · F06 …\")."
+  }
 }

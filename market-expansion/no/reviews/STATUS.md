@@ -3,6 +3,56 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-30 — 60 nya på sju produkter, 46 i `sources.json`
+
+**Åtta nya mappar i MAKE TO NORWAY** (37 → 46 produkter i registret, 44 → 52
+Drive-mappar): Täljset 30 delar, Värmesits 45 × 90 cm, Maskinhyllan,
+Värmesulorna, Rullknivslipen, ATV-Kapell, K Golfkalender och Kapell till
+snöslunga. Alla åtta hade ett `_REVIEW`/`_REVIEWS`-ark i sin svenska mapp, alla
+med riktiga betyg och riktiga namn — inga TEST- eller exempelrader.
+
+Kartorna: 509 → 604 översättningar, 124 → 144 namn. Bygget gick från 332 till
+**400 klara / 10 bortvalda** (alla gamasjer).
+
+De norska handles slogs upp i feeden (235 produkter) och alla åtta fanns:
+
+| Produkt | Norskt handle | Rader |
+|---|---|---|
+| Täljset | `spikkesett-30-deler-6-kniver-og-6-jern` | 8 |
+| Värmesits | `varmesete-45-90-cm-4-varmesoner-usb-drevet` | 8 |
+| Maskinhyllan | `vegghengt-verktoyhylle-plass-til-4-elektroverktoy` | 8 |
+| Värmesulorna | `varmesaler-med-fjernkontroll-varme-fotter-pa-jaktposten` | 10 |
+| Rullknivslipen | `rulleknivsliperen-i-tre-20-vinkelen-er-allerede-satt` | 8 |
+| ATV-Kapell | `atv-trekk-storrelse-3xl-256-110-120-cm-svart` | 10 |
+| Golfkalendern | `golf-adventskalender-24-golftilbehor` | 8 (redan importerade) |
+| Kapell snöslunga | `trekk-til-snofreser-120-82-60-cm-holder-skitt-unna` | 8 |
+
+**Golfkalendern hoppades över av dubblettspärren** — produkten hade redan 8
+synliga recensioner. Litade på spärren, körde inte `--anda`.
+
+### Spamfiltret tog ALLA sju importer, som vanligt
+
+7 av 7 produkter fick `curated: spam` + `published: false` på varje rad medan
+POST svarade 201. `judgeme-publicera.mjs` rättade var och en i samma körning, och
+tillbakaläsningen gav 8 / 8 / 8 / 10 / 8 / 10 / 8 synliga och 0 spam. En sista
+`--dry` mot alla åtta svarade "redan N synliga" — alltså syns de i kundvyn.
+**Det här är normen, inte undantaget: räkna med publiceringssteget varje gång en
+ny produkt importeras.**
+
+⚠️ Datumen blev 2026-09-30 på alla 60, som alltid — API:t skriver inte
+`created_at`. Enda vägen till källans datum är CSV-import inne i Judge.me-appen.
+
+### Orättat, och vem det väntar på
+
+* **Kajakkholder: tio identiska titlar** i källarket ("Bra och stabila"), sjunde
+  dygnet. Recensionerna är importerade och synliga; bara rubrikerna ser
+  maskinskrivna ut. Rättas i arket, sedan om-import med `--anda` på Axels
+  uttryckliga begäran.
+* **De fyra arken oförändrade tolfte dygnet:** Dinosauriekalender (alla namn
+  "(EXEMPEL)"), Gravstenspenna (TEST-rader), Medicinask (exempelrader +
+  `not-a-real-product-handle`, produkten dessutom utgången och kan strykas helt),
+  Lövblåsare/Jetviften (personnamn i `title`, utekattkojans `product_handle`).
+
 ## Läget 2026-09-29 — 0 nya, allt redan klart, 38 i `sources.json`
 
 Drive oförändrad tredje dygnet: 39 produktmappar + WINNERS med 5 = 44, minus de

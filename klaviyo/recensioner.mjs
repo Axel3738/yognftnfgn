@@ -84,8 +84,15 @@ export function avHtml(html) {
 }
 
 /** Widgetens recensioner → samma rader som Judge.me:s API ger (så sorteraRecensioner tar båda). */
+// Mätt 2026-09-29 18:16 UTC: Judge.me slog på "multi_language_sorting" för butiken, och
+// widgeten svarar sedan dess med `reviews: []` och recensionerna i
+// `primary_language_reviews` + `other_language_reviews` (egen sidning var). Alla tre
+// läses, samma recension (uuid) bara en gång.
 export function widgetTillRader(svar, produktId) {
-  return (svar?.reviews ?? []).map((r) => ({
+  const sett = new Set();
+  const alla = [...(svar?.reviews ?? []), ...(svar?.primary_language_reviews ?? []), ...(svar?.other_language_reviews ?? [])]
+    .filter((r) => { const k = r?.uuid ?? null; if (!k) return true; if (sett.has(k)) return false; sett.add(k); return true; });
+  return alla.map((r) => ({
     product_external_id: svar.product_external_id ?? produktId,
     rating: r.rating,
     body: avHtml(r.body_html ?? r.body),
@@ -181,9 +188,22 @@ export async function hamtaViaWidget({ shop, produkter, fetchFn, perProdukt = 10
     u.searchParams.set('platform', 'shopify');
     u.searchParams.set('per_page', String(perProdukt));
     u.searchParams.set('product_id', String(p.id));
-    const r = await fetchFn(u);
-    if (!r.ok) throw new Error(`Judge.me-widgeten svarade ${r.status} för ${p.handle}`);
-    rader.push(...widgetTillRader(await r.json(), p.id));
+    const sett = new Set();
+    for (let sida = 1; sida <= 10; sida++) {
+      u.searchParams.set('page', String(sida));
+      const r = await fetchFn(u);
+      if (!r.ok) throw new Error(`Judge.me-widgeten svarade ${r.status} för ${p.handle}`);
+      const svar = await r.json();
+      for (const rad of widgetTillRader(svar, p.id)) {
+        const nyckel = `${rad.created_at}|${rad.body}`;
+        if (sett.has(nyckel)) continue;
+        sett.add(nyckel);
+        rader.push(rad);
+      }
+      const sidor = Math.max(...[svar?.pagination, svar?.primary_language_pagination, svar?.other_language_pagination]
+        .map((x) => Number(x?.total_pages) || 1));
+      if (sida >= sidor) break;
+    }
   }
   return rader;
 }

@@ -17,12 +17,13 @@ import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText, hemsida, s
 import { skickaBrev, kontrolleraForeSandning, SPARR_ENV, byggSandpaket, registreraSkickat } from '../skicka.mjs';
 import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml, momsregNr, ibanGiltig, svenskKopare } from '../faktura.mjs';
 import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr, vardAttJaga, aktivUr } from '../annonsfall.mjs';
-import { sidaIdUr, listaUrl, annonserUrHtml, normaliseraAnnons, rackviddUrDetalj, derasDoman, annonsfilUr, antalUrText } from '../adlibrary.mjs';
+import { sidaIdUr, listaUrl, annonserUrHtml, annonserUrJson, markorUrJson, markorUrHtml, tolkaGraphql, arStrypt, pagineringsKropp, tackDatum, normaliseraAnnons, rackviddUrDetalj, derasDoman, annonsfilUr, antalUrText } from '../adlibrary.mjs';
 import { beskrivning500, formularVarden, kodUrText, kvarUrText, referensUrText } from '../anmal-skicka.mjs';
 import { cpmUr, summeraInsights, insightsSokvag, hamtaCpm, valjCpm } from '../cpm.mjs';
 import { adLibraryToken } from '../sok.mjs';
 import { annonsLank, varAdLibraryLank, byggAnmalan, byggAnmalningar, kontrolleraAnmalan, anmalanText, FORSAKRINGAR } from '../anmalan.mjs';
 import { markera, bevisbildHtml, verifieringHtml } from '../bevisbild.mjs';
+import { kortAnmalan } from '../granskning.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
@@ -618,6 +619,40 @@ test('adlibrary: sid-id ur länk, annonserna ur den inbäddade JSON:en, normalis
   assert.equal(input.deras.doman, 'orvo.se'); assert.equal(input.annonser.length, 2); assert.equal(input.annonser[0].aktiv, true); assert.equal(input.annonser[1].aktiv, false); assert.equal(input.annonser[0].exponeringar, 3948); assert.equal(input.annonser[1].exponeringar, null);
 });
 
+test('adlibrary: bläddring förbi taket 30 — markören ur första sidan, GraphQL-svaren, strypningen och nästa sidas kropp', () => {
+  const nod = (id) => ({ ad_archive_id: id, is_active: true, page_id: '262424923617670', snapshot: { body: { text: `Annons ${id}` } } });
+  // Första sidan: markören står i HTML:ens inbäddade JSON (search_results_connection.page_info)
+  const forsta = { data: { ad_library_main: { search_results_connection: { edges: [{ node: { collated_results: [nod('1'), nod('2')] } }], page_info: { end_cursor: 'AQH-forsta', has_next_page: true } } } } };
+  const html = `<script type="application/json">{"x":1}</script><script type="application/json">${JSON.stringify(forsta)}</script>`;
+  assert.deepEqual(markorUrHtml(html), { markor: 'AQH-forsta', mer: true });
+  assert.equal(markorUrHtml('<p>ingen JSON</p>'), null);
+  // Nästa sida: svaret kan börja med for (;;); och strömmas som flera JSON-rader
+  const nasta = { data: { ad_library_main: { search_results_connection: { edges: [{ node: { collated_results: [nod('2'), nod('3')] } }], page_info: { end_cursor: null, has_next_page: false } } } } };
+  const delar = tolkaGraphql(`for (;;);${JSON.stringify(nasta)}\n{"label":"x","data":{}}\nskräp`);
+  assert.equal(delar.length, 2);
+  const ut = new Map([['1', nod('1')], ['2', nod('2')]]);
+  for (const d of delar) annonserUrJson(d, ut);
+  assert.deepEqual([...ut.keys()], ['1', '2', '3']); // id 2 räknas en gång
+  assert.deepEqual(delar.map(markorUrJson).find(Boolean), { markor: null, mer: false });
+  // Strypningen (mätt 2026-09-30 efter ~50 frågor i följd)
+  assert.equal(arStrypt(tolkaGraphql('{"errors":[{"message":"Rate limit exceeded","severity":"CRITICAL","code":1675004}]}')), true);
+  assert.equal(arStrypt(delar), false); assert.equal(arStrypt([]), false);
+  // Kroppen: markör, antal, status och medietyp byts; tokens, sid-id och doc_id följer med
+  const post = new URLSearchParams({ lsd: 'L', doc_id: '24922295957467452', fb_api_req_friendly_name: 'AdLibrarySearchPaginationQuery', variables: JSON.stringify({ activeStatus: 'active', countries: ['SE'], cursor: 'gammal', first: 10, mediaType: 'all', viewAllPageID: '262424923617670' }) }).toString();
+  const kropp = new URLSearchParams(pagineringsKropp(post, { markor: 'AQH-ny', status: 'inactive', first: 10 }));
+  const v = JSON.parse(kropp.get('variables'));
+  assert.equal(v.cursor, 'AQH-ny'); assert.equal(v.first, 10); assert.equal(v.activeStatus, 'inactive'); assert.equal(v.mediaType, 'all');
+  assert.equal(v.viewAllPageID, '262424923617670'); assert.deepEqual(v.countries, ['SE']);
+  assert.equal(kropp.get('lsd'), 'L'); assert.equal(kropp.get('doc_id'), '24922295957467452');
+  // Datumfönstren för en aktiv lista: stigande, unika, sista är i dag; listaUrl bär "t.o.m."
+  const d = tackDatum(new Date('2026-09-30T08:00:00Z'));
+  assert.equal(d.at(-1), '2026-09-30'); assert.equal(d[0], '2025-09-30');
+  assert.deepEqual([...d].sort(), d); assert.equal(new Set(d).size, d.length);
+  assert.ok(d.includes('2026-08-01') && d.includes('2026-09-27'));
+  assert.match(listaUrl('262424923617670', { status: 'active', tom: '2026-08-31' }), /active_status=active.*start_date\[min\]=2018-01-01&start_date\[max\]=2026-08-31&sort_data\[direction\]=desc&sort_data\[mode\]=relevancy_monthly_grouped&view_all_page_id=262424923617670$/);
+  assert.doesNotMatch(listaUrl('1'), /start_date/);
+});
+
 test('anmal-skicka: formulärets fält ur anmälan (produkt per annons, beskrivning ≤ 500), koden ur mejlet, kvar-räknaren och referensen ur kvittot', () => {
   const arende = { id: 'KD-2026-011', verksamhet: 'Bäverbutiken', typ: 'annons', status: 'ny', deras: { sidnamn: 'ORVO', sidaId: '1299101096626433' }, var: { produkt: { handle: 'ibc', titel: 'IBC-tanköverdrag', url: 'https://baverbutiken.se/products/ibc' } }, brev: null };
   const annons = { nr: 2, lank: 'https://www.facebook.com/ads/library/?id=2011809009499730', aktiv: true, exponeringar: 3364, video: true, start: '2026-09-24', text: { styrka: 'trolig', kopieradeOrd: 7, langsta: 7, passager: [{ text: 'stänger ute ljuset som får algerna att' }] }, varAnnons: { id: '1', namn: 'Takoverdrag_PD_3_H1', handle: 'takoverdrag' }, produkt: { handle: 'takoverdrag', titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', verksamhet: 'Bäverbutiken' }, bilder: [{ egen: 'https://cdn/a.jpg', deras: 'https://scontent/b.jpg', avstand: 1, grad: 'identisk' }] };
@@ -935,6 +970,34 @@ test('byggAnmalan och beskrivning500 med klipp: filmen klippt ur våra, tiderna 
   // Tre långa filmnamn + CDN-länken: texten kortas i steg, referensen i slutet klipps aldrig
   const lang = beskrivning500({ ...an, filmer: ['CaraShellRoof_OB_101_H1', 'Takoverdrag_OB_1_H1', 'Takoverdrag_SP_4_H1'], produkt: 'Taköverdrag Husvagn – Skyddar Den Dyraste Ytan', bevisbildUrl: 'https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_ec5b0e36-a63f-44eb-b297-ed5cfd0ec94b.png?v=1790682335' });
   assert.ok(lang.length <= 500, String(lang.length)); assert.match(lang, /Ref KD-2026-007 3\/10\.$/);
+});
+
+test('anspråket redigering (Bustatio 2026-09-30): vår färdiga annons uppladdad igen — anmälan, formulärtext, kort, bevisbild och brev gör anspråk på klippningen och texten, aldrig på filmklippen', () => {
+  const a = { ...ARENDE(), ansprak: 'redigering' }; const annons = KLIPP_ANNONS();
+  const u = { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 1, antal: 11, nu: '2026-09-30T08:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/x/bevis-1.png' };
+  const an = byggAnmalan(a, annons, KONFIG, u);
+  assert.equal(an.ansprak, 'redigering');
+  assert.match(an.falt.contentDescription, /The ad's video is a re-upload of our own ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1", with the same edit and our Swedish on-screen text at the same timestamps; the advertiser has added its own watermark\. 2 still frames from different scenes of the reported video \(at 0:15, 0:23\) are identical to frames of our films, including our on-screen text \(perceptual-hash distance 0, 0\/64\)\./);
+  assert.match(an.falt.originalWorkDescription, /^Original advertising films edited by .*Our claim covers our edit \(the selection, order and timing of the shots\) and our Swedish on-screen text and graphics, as shown on the evidence image\. We make no claim to the underlying product footage\./);
+  assert.doesNotMatch(an.falt.originalWorkDescription, /footage we produced/, 'filmklippen påstås aldrig vara våra');
+  const b = beskrivning500(an);
+  assert.ok(b.length <= 500, String(b.length));
+  assert.match(b, /Its video is a re-upload of our ad films \(same edit, our on-screen text\): 2 stills \(at 0:15, 0:23\) are identical\. We claim the edit and text only\./);
+  // En ordagrann svit + en lång CDN-länk (mätt på KD-2026-003 1/6): citatet går, referensen står kvar
+  const trangt = beskrivning500({ ...an, falt: { ...an.falt, contentDescription: `7 words of our advertising copy appear verbatim in this ad; the longest identical run is 7 consecutive words: "motorn från kåpan ner över riggen och". ${an.falt.contentDescription}` }, originaler: [{ lank: 'https://www.facebook.com/ads/library/?id=1564653074601367' }], bevisbildUrl: 'https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_39b984a4-9900-4b64-84b7-096db42130aa.png?v=1790749282' });
+  assert.ok(trangt.length <= 500, String(trangt.length)); assert.match(trangt, /Ref KD-2026-007 1\/11\.$/); assert.match(trangt, /7 consecutive identical words/);
+  const kort = kortAnmalan({ nr: 1 }, an, { annons });
+  assert.equal(kort.ansprak, 'redigering');
+  assert.match(kort.sammanfattning, /vår egen annons, uppladdad igen med samma klippning och vår text i bilden.*inte filmklippen under texten/);
+  // Utan anspråket: den gamla texten, oförändrad
+  const vanlig = byggAnmalan(ARENDE(), annons, KONFIG, u);
+  assert.equal(vanlig.ansprak, null); assert.match(vanlig.falt.contentDescription, /is cut from our own ad films/); assert.match(kortAnmalan({ nr: 1 }, vanlig, { annons }).sammanfattning, /klippt ur/);
+  // Bevisbilden säger samma sak som anmälan
+  const klipp = { val: [{ bokstav: 'A', derasT: 15, egenT: 11, avstand: 0, egenFilm: { namn: 'Takoverdrag_PD_2_H1' }, egenData: 'data:image/jpeg;base64,E', derasData: 'data:image/jpeg;base64,D' }], statistik: {} };
+  const html = bevisbildHtml(a, annons, { nr: 1, antal: 11, klipp });
+  assert.match(html, /The reported video is a re-upload of our own advertising film "Takoverdrag_PD_2_H1" — the same edit, with our Swedish on-screen text at the same timestamps\. Below:/);
+  assert.match(html, /Claimed: our edit and our on-screen text — not the underlying product footage\./);
+  assert.match(bevisbildHtml(ARENDE(), annons, { nr: 1, antal: 11, klipp }), /is cut from our own advertising film "Takoverdrag_PD_2_H1"\. Below:/, 'ingen dubbel punkt utan anspråket');
 });
 
 test('samma tagning: skillnadOvre räknar bara de övre raderna (textrutan längst ner räknas inte), tröskeln skiljer mätta fall', () => {

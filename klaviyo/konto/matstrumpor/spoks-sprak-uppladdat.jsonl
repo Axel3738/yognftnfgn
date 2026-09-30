@@ -1,0 +1,20 @@
+{"tid":"2026-09-29T12:24:40Z","typ":"flode","flode":"f07-aterkop-sushi","flowId":"8c9c1204-99bd-4b0f-a988-4d7af65e4702","namn":"F07 En låda till (sushi, dag 21) · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f01-valkomst","flowId":"89976b01-a650-4ad5-94a5-0556c490ae03","namn":"F01 Välkomst (Matstrumpor-klubben) · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f02-overgiven-kassa","flowId":"6b22283c-d686-405b-8b6d-7d0b1f762028","namn":"F02 Övergiven kassa · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f03-webbhistorik","flowId":"17aa6927-46a0-405d-b787-cd5e0e2513dc","namn":"F03 Webbhistorik · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f04-efter-kop","flowId":"0594aa1b-dfce-4a46-81ef-8bd20989c16c","namn":"F04 Efter köp · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:31:00Z","typ":"flode","flode":"f05-vinback","flowId":"32d23706-635e-4e1e-9c1f-e25d61df7bdf","namn":"F05 Vinna tillbaka · alla språk","status":"inaktivt"}
+{"tid":"2026-09-29T12:25:10Z","typ":"steg","flode":"f07-aterkop-sushi","index":0,"stepId":"92fb5540-1646-41e3-9e4a-01aa16943e30"}
+{"tid":"2026-09-29T12:26:31Z","typ":"steg","flode":"f07-aterkop-sushi","index":1,"stepId":"47c5f116-d727-4161-8287-c6a5b30825fc","postId":"1fbc4760-2c3d-494d-a2a5-87741e9eb6b3","sprak":"sv","mejl_id":"f07-aterkop-sushi-e1","ifylld":true}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_sv", "segmentId": "66dae6c7-55e4-43d5-b1ef-8e23f5baa3a4", "medlemmar_vid_skapandet": 3025}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_nb", "segmentId": "0043d3b0-fe21-47f5-9474-26922e5a56a1", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_da", "segmentId": "f8200b80-5ff8-46bf-adba-a38eab2e5069", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_fi", "segmentId": "7189379f-beef-4b82-9411-d7d6cab6c39d", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_en", "segmentId": "86d580af-aa5b-4b8d-ae77-20d3e9670ce0", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_de", "segmentId": "1f8d417d-3266-4b5d-86d9-369b3fcdc91d", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_fr", "segmentId": "c7a97511-fdb6-446c-9ff6-519e2653c683", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_nl", "segmentId": "ff7d9ef1-9758-46ca-8497-492f53286f12", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_es", "segmentId": "38b41798-dc89-4bab-b5a2-8314942bb1ff", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_it", "segmentId": "b335f41f-f470-4e98-a786-b3aef2ca0340", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_pl", "segmentId": "487f22f2-fa12-4d83-b54f-8e98469afef5", "medlemmar_vid_skapandet": 0}
+{"tid": "2026-09-29", "typ": "segment", "namn": "SEG_samtycke_pt", "segmentId": "9a20a1a4-bf53-454d-85b3-a5112bdb81f9", "medlemmar_vid_skapandet": 0}
