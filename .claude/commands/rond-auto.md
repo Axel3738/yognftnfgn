@@ -801,34 +801,31 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
   forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
   winning-line/feedback), fler försök om den är stark — men numret räknas.
-- **Kundernas kommentarer är underlag för strategin (Axels beslut 2026-09-30:
-  "använd kommentarerna som hjälpmedel för din kreativa strategi" — INTE en
-  brief per kommentar).** Kommentarsgranskningen (`/kommentarer`, 05:40 på
-  `main`) skriver `kommentarer/leads.md`: vad kunderna invänder, frågar och
-  misstror, med belägg. Före varje produkts lärdomar och runda:
+- **Kundernas kommentarer är ETT hjälpmedel, aldrig beslutet (Axels besked
+  2026-09-30: "du kan inte enskilt gå efter kommentarerna — det ska vara ett
+  hjälpmedel för att dra slutsatser och skapa nya annonser").** Datan styr:
+  etiketterna, lärdomarna, vinstbidraget och kvoten. Kommentarerna (`/kommentarer`
+  skriver `kommentarer/leads.md` på `main` 05:40) är en röst bland flera som
+  hjälper dig förstå VARFÖR siffrorna ser ut som de gör och ger idéer att testa.
   ```bash
   node agent/leads.mjs --prefix <Annonsprefix>     # läser origin/main (+ CaraShells röster för Tak/Termo)
   ```
-  Läs det och låt det styra tänkandet — kvoten, brieftaket och kravet på
-  `lardom=` är oförändrade:
-  1. **Diagnosen.** Lärdomen för en spend winner eller en KPI winner läser
-     kommentarerna först (redan diagnosordningen): är det en invändning som
-     håller tillbaka konverteringen? Skriv den i hypotesen, märkt gissning.
-  2. **Valet av vinkel och hook.** När rundans briefer väljs väger en
-     invändning eller fråga som återkommer (flera kommentarer, flera dagar)
-     tyngst för vilken vinkel, hook, bevisning eller rad som byggs — inom
-     rundans antal. Kundernas egna ord får bli hooken om de klarar
-     tre-frågorstestet. En brief vars hypotes vilar på dem citerar leaden med
-     `lead=<VOC-id>` + `kalla=voc` (valfritt, loggas på BRIEF-raden).
-  3. **Minnet.** En invändning eller kundfras som återkommer skrivs in i
-     produktens `dna.md` (avatar/invändningar) med datum och belägg, så nästa
-     runda börjar där.
-  4. **⏸-leads** (sidfix, fråga till Axel, väntar på leverantör eller ny
-     produkt) blir aldrig annonser — lista dem i rapporten under
-     `## 💬 Kundernas kommentarer`, med en rad om hur kommentarerna påverkade
-     dagens runda. Går leads.md inte att läsa (exit 2): säg det och kör ändå.
-  Leadsfilen på `main` bockas aldrig av härifrån. Produktsidans fakta gäller:
-  lovar kunderna något sidan inte säger, briefa det inte.
+  Så används de:
+  1. **Förklaring, inte dom.** När en lärdom söker orsaken till ett utfall kan
+     kommentarerna ge en hypotes (t.ex. "kunderna misstror priset") — den skrivs
+     märkt gissning och vägs mot vad datan säger. Några få kommentarer är
+     några få personer, inte publiken.
+  2. **Idéer, inte beställningar.** En invändning eller kundfras kan bli en
+     vinkel, hook eller bevisrad i en ny annons — om den passar det lärdomarna
+     och datan pekar mot, och inom rundans vanliga antal. Ingen annons byggs
+     bara för att någon kommenterat.
+  3. **Minnet.** Något som återkommer över flera dagar kan noteras i
+     produktens `dna.md` som en observation med datum och belägg — inte som en
+     slutsats.
+  4. **⏸-leads** (sidfix, fråga till Axel, väntar på leverantör) blir aldrig
+     annonser — de står i rapporten under `## 💬 Kundernas kommentarer`.
+  Går leads.md inte att läsa: säg det och kör ändå. Leadsfilen på `main`
+  bockas aldrig av härifrån. `lead=VOC-…` på en brief är en valfri referens.
 - **Listicle-kampanjerna är ÄGARENS (Axels order 2026-09-22).** En kampanj
   vars namn matchar `listicle` / `lagerrensning` / `vi-testade` /
   `anledningar` (`agent/kampanjval.mjs`, samma mönster som leveransrundans
@@ -1359,7 +1356,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
 - [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)
 - [ ] **Funnelläge (> 10 000 kr/dag):** `products/<id>/invandningar.md` byggd/uppdaterad FÖRE rundan (`tools/invandningsmatris.mjs` på main), täckningsraden läst i `## 🧱 Invändningstäckning`, varje obesvarad invändning ≥ 10 % har en brief med `invandning=` i rundan (fri mot taket), ingen fylld ruta briefad igen
-- [ ] `node agent/leads.mjs --prefix <prefix>` läst före varje produkts lärdomar och runda; kundernas invändningar synliga i diagnosen och valet av vinkel (inom kvoten), återkommande invändningar i dna.md, ⏸-leads + en rad om påverkan i `## 💬 Kundernas kommentarer`
+- [ ] `node agent/leads.mjs --prefix <prefix>` läst som hjälpmedel före lärdomar och runda — datan styr, kommentarerna förklarar och ger idéer; ⏸-leads i `## 💬 Kundernas kommentarer`
 - [ ] Ingen listicle-/lagerrensningskampanj rörd: alla med domen `AGARENS` står under `## 🛑 Ägarens kampanjer` och har ingen åtgärd i planen
 - [ ] `lardom.mjs --status` i leveransen: frekvens som bråk + procent, lärdomar i dag, briefer på lärdom, koncept vid taket
 - [ ] `ugc.mjs --deadlines` körd (larm postat om 🔴), `ugc.mjs --kandidater` körd; varje ✅ FÖRESLÅ har fått ett färdigt beställningsmeddelande till Lovely i `--kanal uppgifter` och en `UGC_FORSLAG`-rad — eller villkoret som föll utskrivet

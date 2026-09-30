@@ -18,7 +18,7 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 
 ## Gör följande, hela kedjan utan att invänta godkännande
 
-**0. Kundernas kommentarer som underlag (Axel 2026-09-30):** kör `node agent/leads.mjs --prefix <Annonsprefix>` och låt invändningarna och frågorna styra diagnosen och valet av vinkel/hook inom batchens vanliga antal — aldrig en brief per kommentar. Återkommande invändningar in i `dna.md`. Regeln: `/rond-auto` 4b → "Kundernas kommentarer är underlag".
+**0. Kundernas kommentarer som hjälpmedel (Axel 2026-09-30):** läs `node agent/leads.mjs --prefix <Annonsprefix>` för att förstå varför siffrorna ser ut som de gör och för idéer. Datan och lärdomarna styr — ingen annons byggs bara för att någon kommenterat. Regeln: `/rond-auto` 4b.
 
 ### 1. Läs läget
 - **Chatthistoriken:** hitta briefarna/manusen från de senaste CS-rundorna i

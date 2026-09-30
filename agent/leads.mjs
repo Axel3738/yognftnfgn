@@ -122,7 +122,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   if (!prefix || prefix === true) { console.error('Ange --prefix <Annonsprefix> eller --alla'); process.exit(2); }
   const oppna = oppnaLeads(leads, prefix);
   if (flagga('json')) { console.log(JSON.stringify(oppna, null, 2)); process.exit(0); }
-  console.log(`Vad kunderna säger om ${prefix} (${las.kalla}): ${oppna.length} leads — underlag för diagnosen och valet av vinkel, inte en brief per lead`);
+  console.log(`Vad kunderna säger om ${prefix} (${las.kalla}): ${oppna.length} leads — ett hjälpmedel: förklarar siffrorna och ger idéer, datan styr`);
   for (const l of oppna) {
     console.log(`\n${l.briefbar ? '💬 ANNONSEN' : '⏸  SIDAN/AXEL'} ${l.id}  [${l.datum} · ${l.typ}${l.speglad ? ` · speglad från ${l.prefix}` : ''}]`);
     console.log(`  Kunderna: ${l.text}`);
