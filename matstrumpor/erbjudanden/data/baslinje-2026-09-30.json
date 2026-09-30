@@ -1,0 +1,3407 @@
+{
+  "comment": "Baslinje för Matstrumpors erbjudanden, LÄS-BAR mätning 2026-09-30. Bara aggregat — inga kundnamn, e-postadresser eller adresser. Källa: Shopify Admin GraphQL 2025-07 via appen Fabriken (sparning/butik.mjs). Det som inte gick att läsa står under kunde_inte med orsak.",
+  "matt": "2026-09-30T13:06:13.563Z",
+  "butik": {
+    "namn": "Matstrumpor.se",
+    "valuta": "SEK",
+    "tidszon": "Europe/Stockholm",
+    "doman": "matstrumpor.se",
+    "plan": {
+      "publicDisplayName": "Grow",
+      "partnerDevelopment": false,
+      "shopifyPlus": false
+    },
+    "digitala_planbocker": [
+      "SHOPIFY_PAY",
+      "APPLE_PAY",
+      "GOOGLE_PAY"
+    ],
+    "plan_displayName_legacy": "Shopify",
+    "checkout_profiler": [
+      {
+        "name": "FixKliniken-konfiguration",
+        "isPublished": false
+      },
+      {
+        "name": "Kopia av FixKliniken-konfiguration",
+        "isPublished": true
+      }
+    ]
+  },
+  "fonster": {
+    "dagar": 90,
+    "fran_90": "2026-07-02",
+    "fran_30": "2026-08-31",
+    "till": "2026-09-30",
+    "tidszon": "Europe/Stockholm"
+  },
+  "senaste_90_dagar": {
+    "etikett": "90 dagar",
+    "fran": "2026-07-02",
+    "till": "2026-09-30",
+    "ordrar_totalt_hamtade": 512,
+    "annullerade": 0,
+    "testordrar": 0,
+    "ordrar": 512,
+    "finansiell_status": {
+      "PAID": 512
+    },
+    "omsattning_sek": 222277,
+    "aov_sek": 434.13,
+    "median_ordervarde_sek": 399,
+    "bara_betalda": {
+      "ordrar": 512,
+      "omsattning_sek": 222277,
+      "aov_sek": 434.13,
+      "comment": "Samma urval som node matstrumpor/kor.mjs --aov (financial_status:paid)."
+    },
+    "per_vecka": {
+      "2026-W28": {
+        "ordrar": 1,
+        "omsattning_sek": 399,
+        "aov_sek": 399
+      },
+      "2026-W29": {
+        "ordrar": 1,
+        "omsattning_sek": 399,
+        "aov_sek": 399
+      },
+      "2026-W35": {
+        "ordrar": 28,
+        "omsattning_sek": 12279,
+        "aov_sek": 438.54
+      },
+      "2026-W36": {
+        "ordrar": 19,
+        "omsattning_sek": 8778,
+        "aov_sek": 462
+      },
+      "2026-W37": {
+        "ordrar": 31,
+        "omsattning_sek": 15012,
+        "aov_sek": 484.26
+      },
+      "2026-W38": {
+        "ordrar": 28,
+        "omsattning_sek": 12867,
+        "aov_sek": 459.54
+      },
+      "2026-W39": {
+        "ordrar": 263,
+        "omsattning_sek": 112096,
+        "aov_sek": 426.22
+      },
+      "2026-W40": {
+        "ordrar": 141,
+        "omsattning_sek": 60447,
+        "aov_sek": 428.7
+      }
+    },
+    "strumplador_per_order": {
+      "fordelning": {
+        "0": 0,
+        "1": 18,
+        "2": 448,
+        "3": 10,
+        "4": 35,
+        "5": 1,
+        "6+": 0
+      },
+      "ordervarde_per_lador": {
+        "1": {
+          "ordrar": 18,
+          "omsattning_sek": 7122,
+          "aov_sek": 395.67,
+          "median_sek": 399,
+          "andel_omsattning_pct": 3.2
+        },
+        "2": {
+          "ordrar": 448,
+          "omsattning_sek": 178418,
+          "aov_sek": 398.25,
+          "median_sek": 399,
+          "andel_omsattning_pct": 80.27
+        },
+        "3": {
+          "ordrar": 10,
+          "omsattning_sek": 7371,
+          "aov_sek": 737.1,
+          "median_sek": 823,
+          "andel_omsattning_pct": 3.32
+        },
+        "4": {
+          "ordrar": 35,
+          "omsattning_sek": 28179,
+          "aov_sek": 805.11,
+          "median_sek": 798,
+          "andel_omsattning_pct": 12.68
+        },
+        "5": {
+          "ordrar": 1,
+          "omsattning_sek": 1187,
+          "aov_sek": 1187,
+          "median_sek": 1187,
+          "andel_omsattning_pct": 0.53
+        }
+      },
+      "andel_exakt_2_pct": 87.5,
+      "andel_4_plus_pct": 7.03,
+      "snitt_lador_per_order": 2.13,
+      "ordrar_med_lador": 512,
+      "ordrar_med_20_plus_rader_avhuggna": 0,
+      "comment": "Räknar lineItems vars titel/handle innehåller \"strumpor\" — ätpinnar och presentkort räknas inte. 0 = ordrar med bara presentkort/pinnar/annat."
+    },
+    "sushi_varianter": {
+      "5-pack": {
+        "enheter": 937,
+        "ordrar": 449
+      },
+      "3-pack": {
+        "enheter": 71,
+        "ordrar": 36
+      }
+    },
+    "produktmix": {
+      "sushi": {
+        "enheter": 1008,
+        "ordrar": 485,
+        "andel_ordrar_pct": 94.73
+      },
+      "pizza": {
+        "enheter": 27,
+        "ordrar": 19,
+        "andel_ordrar_pct": 3.71
+      },
+      "hamburgare": {
+        "enheter": 9,
+        "ordrar": 8,
+        "andel_ordrar_pct": 1.56
+      },
+      "donut": {
+        "enheter": 45,
+        "ordrar": 32,
+        "andel_ordrar_pct": 6.25
+      },
+      "atpinnar": {
+        "enheter": 1040,
+        "ordrar": 498,
+        "andel_ordrar_pct": 97.27
+      },
+      "presentkort": {
+        "enheter": 0,
+        "ordrar": 0,
+        "andel_ordrar_pct": 0
+      },
+      "annat": {
+        "enheter": 0,
+        "ordrar": 0,
+        "andel_ordrar_pct": 0
+      }
+    },
+    "radtitlar_topp": {
+      "Äkta ätpinnar i trä | ": 1040,
+      "Sushi-Strumpor | 5 - Par / One Size": 742,
+      "Sushi-Strumpor | 5 - Par": 195,
+      "Sushi-Strumpor | 3 - Par / One Size": 65,
+      "Donut-strumpor | One Size": 38,
+      "Pizza-Strumpor | One Size": 24,
+      "Donut-strumpor | ": 7,
+      "Hamburgare-Strumpor | One Size": 7,
+      "Sushi-Strumpor | 3 - Par": 6,
+      "Pizza-Strumpor | ": 3,
+      "Hamburgare-Strumpor | ": 2
+    },
+    "rabatter": {
+      "total_rabatt_sek": 258054,
+      "ordrar_utan_kod": 23,
+      "andel_utan_kod_pct": 4.49,
+      "ordrar_utan_nagon_rabatt": 21,
+      "andel_utan_nagon_rabatt_pct": 4.1,
+      "typer_av_rabattapplikation": {
+        "DiscountCodeApplication": 489,
+        "AutomaticDiscountApplication": 4
+      },
+      "koder": {
+        "SUSHI-K1F1": {
+          "ordrar": 310,
+          "andel_pct": 60.55,
+          "snittrabatt_sek": 497.9,
+          "snitt_ordervarde_sek": 406.36,
+          "snitt_lador": 2.03
+        },
+        "STRUMPOR-K1F1-P2": {
+          "ordrar": 105,
+          "andel_pct": 20.51,
+          "snittrabatt_sek": 495.76,
+          "snitt_ordervarde_sek": 400.04,
+          "snitt_lador": 2.01
+        },
+        "SUSHI-K2F2": {
+          "ordrar": 26,
+          "andel_pct": 5.08,
+          "snittrabatt_sek": 998,
+          "snitt_ordervarde_sek": 798,
+          "snitt_lador": 4
+        },
+        "STRUMPOR-K1F1-P1": {
+          "ordrar": 17,
+          "andel_pct": 3.32,
+          "snittrabatt_sek": 376.65,
+          "snitt_ordervarde_sek": 404.29,
+          "snitt_lador": 2
+        },
+        "DONUT-K1F1": {
+          "ordrar": 13,
+          "andel_pct": 2.54,
+          "snittrabatt_sek": 379.85,
+          "snitt_ordervarde_sek": 329.69,
+          "snitt_lador": 2
+        },
+        "PIZZA-K1F1": {
+          "ordrar": 8,
+          "andel_pct": 1.56,
+          "snittrabatt_sek": 549,
+          "snitt_ordervarde_sek": 449,
+          "snitt_lador": 2
+        },
+        "STRUMPOR-K2F2-P4": {
+          "ordrar": 8,
+          "andel_pct": 1.56,
+          "snittrabatt_sek": 990.5,
+          "snitt_ordervarde_sek": 846.63,
+          "snitt_lador": 4.13
+        },
+        "HAMBURGARE-K1F1": {
+          "ordrar": 1,
+          "andel_pct": 0.2,
+          "snittrabatt_sek": 399,
+          "snitt_ordervarde_sek": 299,
+          "snitt_lador": 2
+        },
+        "STRUMPOR-K2F2-P1": {
+          "ordrar": 1,
+          "andel_pct": 0.2,
+          "snittrabatt_sek": 648,
+          "snitt_ordervarde_sek": 848,
+          "snitt_lador": 4
+        }
+      },
+      "automatiska_och_manuella": {
+        "AutomaticDiscountApplication: Vinterrea": {
+          "ordrar": 4,
+          "varden": {
+            "399.0 SEK": 2,
+            "100 %": 2
+          },
+          "mal": "LINE_ITEM/ENTITLED/ACROSS"
+        }
+      },
+      "comment": "snittrabatt_sek = totalDiscountsSet per order (alla rabatter på ordern, inte bara koden)."
+    },
+    "betalsatt": {
+      "klassat": {
+        "klarna": {
+          "ordrar": 297,
+          "andel_pct": 58.01
+        },
+        "shop_pay": {
+          "ordrar": 96,
+          "andel_pct": 18.75
+        },
+        "apple_pay": {
+          "ordrar": 51,
+          "andel_pct": 9.96
+        },
+        "kort_shopify_payments": {
+          "ordrar": 40,
+          "andel_pct": 7.81
+        },
+        "paypal": {
+          "ordrar": 20,
+          "andel_pct": 3.91
+        },
+        "google_pay": {
+          "ordrar": 8,
+          "andel_pct": 1.56
+        }
+      },
+      "gateway_namn_ra": {
+        "shopify_payments": 492,
+        "paypal": 20
+      },
+      "betaldetaljer_ra": {
+        "LocalPaymentMethodsPaymentDetails:klarna": 302,
+        "CardPaymentDetails:SHOPIFY_PAY:card:Mastercard": 91,
+        "CardPaymentDetails:APPLE_PAY:card:Mastercard": 34,
+        "CardPaymentDetails:card:Mastercard": 29,
+        "PaypalWalletPaymentDetails": 20,
+        "CardPaymentDetails:APPLE_PAY:card:Visa": 17,
+        "CardPaymentDetails:SHOPIFY_PAY:card:Visa": 15,
+        "CardPaymentDetails:card:Visa": 9,
+        "CardPaymentDetails:GOOGLE_PAY:card:Mastercard": 6,
+        "CardPaymentDetails:card:American Express": 3,
+        "CardPaymentDetails:SHOPIFY_PAY:card:American Express": 2,
+        "CardPaymentDetails:GOOGLE_PAY:card:Visa": 2,
+        "CardPaymentDetails:APPLE_PAY:card:American Express": 2
+      },
+      "gateway_plus_formattedGateway": {
+        "shopify_payments | Shopify Payments": 492,
+        "paypal | Paypal": 20
+      },
+      "comment": "Klassningen ur paymentGatewayNames + transaktionernas paymentDetails (wallet/paymentMethodName). Klarna via Shopify Payments syns bara om paymentDetails säger det — se betaldetaljer_ra för råvärdena."
+    },
+    "valuta_och_land": {
+      "valutor": {
+        "SEK": 512
+      },
+      "lander": {
+        "SE": 512
+      },
+      "sek_och_sverige": 512,
+      "andel_sek_sverige_pct": 100
+    },
+    "frakt": {
+      "ordrar_med_fri_frakt": 512,
+      "andel_fri_frakt_pct": 100,
+      "fraktintakt_sek": 0,
+      "ordrar_utan_fraktrad": 0,
+      "fraktrader": {
+        "Fri Frakt @ 0 kr": 512
+      }
+    },
+    "aterbetalningar": {
+      "ordrar_med_aterbetalning": 0,
+      "andel_pct": 0,
+      "belopp_sek": 0,
+      "andel_av_omsattning_pct": 0,
+      "helt_aterbetalda": 0
+    },
+    "kunder": {
+      "ordrar_fran_aterkommande": 16,
+      "andel_aterkommande_pct": 3.13,
+      "ordrar_fran_aterkommande_utan_samma_dygn": 11,
+      "andel_utan_samma_dygn_pct": 2.15,
+      "unika_kunder_i_fonstret": 504,
+      "kunder_med_fler_an_en_order_i_fonstret": 8,
+      "ordrar_utan_kundkonto": 0,
+      "comment": "Reellt: en order räknas som återkommande bara om kunden hade minst en order FÖRE den (numberOfOrders minus ordrarna i fönstret = ordrar före fönstret, plus tidigare ordrar i fönstret). \"utan samma dygn\" kräver att den tidigare ordern lades > 24 h före."
+    },
+    "taggar_och_attribut": {
+      "taggar_topp": {
+        "Kaching Bundles": 2
+      },
+      "ordrar_med_upsell_spar": 0,
+      "attribut_nycklar": {
+        "country": 498,
+        "fbp": 498,
+        "host": 498,
+        "locale": 498,
+        "sh": 498,
+        "sw": 498,
+        "ttp": 498,
+        "vid": 498,
+        "fbc": 459,
+        "utm_medium": 445,
+        "utm_content": 420,
+        "utm_campaign": 409,
+        "utm_id": 405,
+        "utm_term": 405,
+        "utm_source": 367,
+        "AB sortval": 322,
+        "auid": 285
+      },
+      "attribut_varden_topp": {
+        "country=SE": 498,
+        "host=https://matstrumpor.se": 498,
+        "locale=sv": 495,
+        "utm_medium=paid": 441,
+        "utm_campaign=<nummer>": 405,
+        "utm_id=<nummer>": 405,
+        "utm_term=<nummer>": 405,
+        "utm_content=<nummer>": 380,
+        "utm_source=facebook": 360,
+        "AB sortval=a": 176,
+        "AB sortval=b": 146,
+        "utm_content=Facebook_UA": 37,
+        "utm_medium=email": 3,
+        "utm_source=spoks": 3,
+        "locale=en": 3,
+        "utm_source=ig": 2,
+        "utm_content=button": 2,
+        "utm_campaign=De tittar två gånger, sen skrattar de": 2,
+        "utm_source=fb": 1,
+        "utm_campaign=domain_click": 1
+      },
+      "ab_test_i_temat": {
+        "AB sortval=a": {
+          "ordrar": 176,
+          "aov_sek": 424.6,
+          "snitt_lador": 2.07
+        },
+        "AB sortval=b": {
+          "ordrar": 146,
+          "aov_sek": 427.89,
+          "snitt_lador": 2.06
+        }
+      },
+      "comment": "ab_test_i_temat = ordrar som bär ett \"AB …\"-attribut ur temat (kunden sattes i en gren i webbläsaren). \"AB sortval\" är temats sortval-block ms_sortval (gren b = rullista per låda, enligt matstrumpor/marknader/underlag.mjs). Bara ordrar syns här, inte besökare — ingen konverteringsgrad går att räkna ur detta."
+    }
+  },
+  "senaste_30_dagar": {
+    "etikett": "30 dagar",
+    "fran": "2026-08-31",
+    "till": "2026-09-30",
+    "ordrar_totalt_hamtade": 482,
+    "annullerade": 0,
+    "testordrar": 0,
+    "ordrar": 482,
+    "finansiell_status": {
+      "PAID": 482
+    },
+    "omsattning_sek": 209200,
+    "aov_sek": 434.02,
+    "median_ordervarde_sek": 399,
+    "bara_betalda": {
+      "ordrar": 482,
+      "omsattning_sek": 209200,
+      "aov_sek": 434.02,
+      "comment": "Samma urval som node matstrumpor/kor.mjs --aov (financial_status:paid)."
+    },
+    "per_vecka": {
+      "2026-W36": {
+        "ordrar": 19,
+        "omsattning_sek": 8778,
+        "aov_sek": 462
+      },
+      "2026-W37": {
+        "ordrar": 31,
+        "omsattning_sek": 15012,
+        "aov_sek": 484.26
+      },
+      "2026-W38": {
+        "ordrar": 28,
+        "omsattning_sek": 12867,
+        "aov_sek": 459.54
+      },
+      "2026-W39": {
+        "ordrar": 263,
+        "omsattning_sek": 112096,
+        "aov_sek": 426.22
+      },
+      "2026-W40": {
+        "ordrar": 141,
+        "omsattning_sek": 60447,
+        "aov_sek": 428.7
+      }
+    },
+    "strumplador_per_order": {
+      "fordelning": {
+        "0": 0,
+        "1": 18,
+        "2": 421,
+        "3": 10,
+        "4": 32,
+        "5": 1,
+        "6+": 0
+      },
+      "ordervarde_per_lador": {
+        "1": {
+          "ordrar": 18,
+          "omsattning_sek": 7122,
+          "aov_sek": 395.67,
+          "median_sek": 399,
+          "andel_omsattning_pct": 3.4
+        },
+        "2": {
+          "ordrar": 421,
+          "omsattning_sek": 167735,
+          "aov_sek": 398.42,
+          "median_sek": 399,
+          "andel_omsattning_pct": 80.18
+        },
+        "3": {
+          "ordrar": 10,
+          "omsattning_sek": 7371,
+          "aov_sek": 737.1,
+          "median_sek": 823,
+          "andel_omsattning_pct": 3.52
+        },
+        "4": {
+          "ordrar": 32,
+          "omsattning_sek": 25785,
+          "aov_sek": 805.78,
+          "median_sek": 798,
+          "andel_omsattning_pct": 12.33
+        },
+        "5": {
+          "ordrar": 1,
+          "omsattning_sek": 1187,
+          "aov_sek": 1187,
+          "median_sek": 1187,
+          "andel_omsattning_pct": 0.57
+        }
+      },
+      "andel_exakt_2_pct": 87.34,
+      "andel_4_plus_pct": 6.85,
+      "snitt_lador_per_order": 2.12,
+      "ordrar_med_lador": 482,
+      "ordrar_med_20_plus_rader_avhuggna": 0,
+      "comment": "Räknar lineItems vars titel/handle innehåller \"strumpor\" — ätpinnar och presentkort räknas inte. 0 = ordrar med bara presentkort/pinnar/annat."
+    },
+    "sushi_varianter": {
+      "5-pack": {
+        "enheter": 877,
+        "ordrar": 422
+      },
+      "3-pack": {
+        "enheter": 65,
+        "ordrar": 33
+      }
+    },
+    "produktmix": {
+      "sushi": {
+        "enheter": 942,
+        "ordrar": 455,
+        "andel_ordrar_pct": 94.4
+      },
+      "pizza": {
+        "enheter": 27,
+        "ordrar": 19,
+        "andel_ordrar_pct": 3.94
+      },
+      "hamburgare": {
+        "enheter": 9,
+        "ordrar": 8,
+        "andel_ordrar_pct": 1.66
+      },
+      "donut": {
+        "enheter": 45,
+        "ordrar": 32,
+        "andel_ordrar_pct": 6.64
+      },
+      "atpinnar": {
+        "enheter": 974,
+        "ordrar": 468,
+        "andel_ordrar_pct": 97.1
+      },
+      "presentkort": {
+        "enheter": 0,
+        "ordrar": 0,
+        "andel_ordrar_pct": 0
+      },
+      "annat": {
+        "enheter": 0,
+        "ordrar": 0,
+        "andel_ordrar_pct": 0
+      }
+    },
+    "radtitlar_topp": {
+      "Äkta ätpinnar i trä | ": 974,
+      "Sushi-Strumpor | 5 - Par / One Size": 742,
+      "Sushi-Strumpor | 5 - Par": 135,
+      "Sushi-Strumpor | 3 - Par / One Size": 65,
+      "Donut-strumpor | One Size": 38,
+      "Pizza-Strumpor | One Size": 24,
+      "Donut-strumpor | ": 7,
+      "Hamburgare-Strumpor | One Size": 7,
+      "Pizza-Strumpor | ": 3,
+      "Hamburgare-Strumpor | ": 2
+    },
+    "rabatter": {
+      "total_rabatt_sek": 241677,
+      "ordrar_utan_kod": 21,
+      "andel_utan_kod_pct": 4.36,
+      "ordrar_utan_nagon_rabatt": 21,
+      "andel_utan_nagon_rabatt_pct": 4.36,
+      "typer_av_rabattapplikation": {
+        "DiscountCodeApplication": 461
+      },
+      "koder": {
+        "SUSHI-K1F1": {
+          "ordrar": 285,
+          "andel_pct": 59.13,
+          "snittrabatt_sek": 498.12,
+          "snitt_ordervarde_sek": 407.32,
+          "snitt_lador": 2.03
+        },
+        "STRUMPOR-K1F1-P2": {
+          "ordrar": 105,
+          "andel_pct": 21.78,
+          "snittrabatt_sek": 495.76,
+          "snitt_ordervarde_sek": 400.04,
+          "snitt_lador": 2.01
+        },
+        "SUSHI-K2F2": {
+          "ordrar": 23,
+          "andel_pct": 4.77,
+          "snittrabatt_sek": 998,
+          "snitt_ordervarde_sek": 798,
+          "snitt_lador": 4
+        },
+        "STRUMPOR-K1F1-P1": {
+          "ordrar": 17,
+          "andel_pct": 3.53,
+          "snittrabatt_sek": 376.65,
+          "snitt_ordervarde_sek": 404.29,
+          "snitt_lador": 2
+        },
+        "DONUT-K1F1": {
+          "ordrar": 13,
+          "andel_pct": 2.7,
+          "snittrabatt_sek": 379.85,
+          "snitt_ordervarde_sek": 329.69,
+          "snitt_lador": 2
+        },
+        "PIZZA-K1F1": {
+          "ordrar": 8,
+          "andel_pct": 1.66,
+          "snittrabatt_sek": 549,
+          "snitt_ordervarde_sek": 449,
+          "snitt_lador": 2
+        },
+        "STRUMPOR-K2F2-P4": {
+          "ordrar": 8,
+          "andel_pct": 1.66,
+          "snittrabatt_sek": 990.5,
+          "snitt_ordervarde_sek": 846.63,
+          "snitt_lador": 4.13
+        },
+        "HAMBURGARE-K1F1": {
+          "ordrar": 1,
+          "andel_pct": 0.21,
+          "snittrabatt_sek": 399,
+          "snitt_ordervarde_sek": 299,
+          "snitt_lador": 2
+        },
+        "STRUMPOR-K2F2-P1": {
+          "ordrar": 1,
+          "andel_pct": 0.21,
+          "snittrabatt_sek": 648,
+          "snitt_ordervarde_sek": 848,
+          "snitt_lador": 4
+        }
+      },
+      "automatiska_och_manuella": {},
+      "comment": "snittrabatt_sek = totalDiscountsSet per order (alla rabatter på ordern, inte bara koden)."
+    },
+    "betalsatt": {
+      "klassat": {
+        "klarna": {
+          "ordrar": 284,
+          "andel_pct": 58.92
+        },
+        "shop_pay": {
+          "ordrar": 85,
+          "andel_pct": 17.63
+        },
+        "apple_pay": {
+          "ordrar": 49,
+          "andel_pct": 10.17
+        },
+        "kort_shopify_payments": {
+          "ordrar": 38,
+          "andel_pct": 7.88
+        },
+        "paypal": {
+          "ordrar": 18,
+          "andel_pct": 3.73
+        },
+        "google_pay": {
+          "ordrar": 8,
+          "andel_pct": 1.66
+        }
+      },
+      "gateway_namn_ra": {
+        "shopify_payments": 464,
+        "paypal": 18
+      },
+      "betaldetaljer_ra": {
+        "LocalPaymentMethodsPaymentDetails:klarna": 289,
+        "CardPaymentDetails:SHOPIFY_PAY:card:Mastercard": 80,
+        "CardPaymentDetails:APPLE_PAY:card:Mastercard": 34,
+        "CardPaymentDetails:card:Mastercard": 29,
+        "PaypalWalletPaymentDetails": 18,
+        "CardPaymentDetails:APPLE_PAY:card:Visa": 15,
+        "CardPaymentDetails:SHOPIFY_PAY:card:Visa": 15,
+        "CardPaymentDetails:card:Visa": 9,
+        "CardPaymentDetails:GOOGLE_PAY:card:Mastercard": 6,
+        "CardPaymentDetails:SHOPIFY_PAY:card:American Express": 2,
+        "CardPaymentDetails:GOOGLE_PAY:card:Visa": 2,
+        "CardPaymentDetails:APPLE_PAY:card:American Express": 2,
+        "CardPaymentDetails:card:American Express": 1
+      },
+      "gateway_plus_formattedGateway": {
+        "shopify_payments | Shopify Payments": 464,
+        "paypal | Paypal": 18
+      },
+      "comment": "Klassningen ur paymentGatewayNames + transaktionernas paymentDetails (wallet/paymentMethodName). Klarna via Shopify Payments syns bara om paymentDetails säger det — se betaldetaljer_ra för råvärdena."
+    },
+    "valuta_och_land": {
+      "valutor": {
+        "SEK": 482
+      },
+      "lander": {
+        "SE": 482
+      },
+      "sek_och_sverige": 482,
+      "andel_sek_sverige_pct": 100
+    },
+    "frakt": {
+      "ordrar_med_fri_frakt": 482,
+      "andel_fri_frakt_pct": 100,
+      "fraktintakt_sek": 0,
+      "ordrar_utan_fraktrad": 0,
+      "fraktrader": {
+        "Fri Frakt @ 0 kr": 482
+      }
+    },
+    "aterbetalningar": {
+      "ordrar_med_aterbetalning": 0,
+      "andel_pct": 0,
+      "belopp_sek": 0,
+      "andel_av_omsattning_pct": 0,
+      "helt_aterbetalda": 0
+    },
+    "kunder": {
+      "ordrar_fran_aterkommande": 13,
+      "andel_aterkommande_pct": 2.7,
+      "ordrar_fran_aterkommande_utan_samma_dygn": 9,
+      "andel_utan_samma_dygn_pct": 1.87,
+      "unika_kunder_i_fonstret": 476,
+      "kunder_med_fler_an_en_order_i_fonstret": 6,
+      "ordrar_utan_kundkonto": 0,
+      "comment": "Reellt: en order räknas som återkommande bara om kunden hade minst en order FÖRE den (numberOfOrders minus ordrarna i fönstret = ordrar före fönstret, plus tidigare ordrar i fönstret). \"utan samma dygn\" kräver att den tidigare ordern lades > 24 h före."
+    },
+    "taggar_och_attribut": {
+      "taggar_topp": {},
+      "ordrar_med_upsell_spar": 0,
+      "attribut_nycklar": {
+        "country": 472,
+        "fbp": 472,
+        "host": 472,
+        "locale": 472,
+        "sh": 472,
+        "sw": 472,
+        "ttp": 472,
+        "vid": 472,
+        "fbc": 433,
+        "utm_medium": 421,
+        "utm_content": 396,
+        "utm_campaign": 385,
+        "utm_id": 381,
+        "utm_term": 381,
+        "utm_source": 343,
+        "AB sortval": 322,
+        "auid": 268
+      },
+      "attribut_varden_topp": {
+        "country=SE": 472,
+        "host=https://matstrumpor.se": 472,
+        "locale=sv": 469,
+        "utm_medium=paid": 417,
+        "utm_campaign=<nummer>": 381,
+        "utm_id=<nummer>": 381,
+        "utm_term=<nummer>": 381,
+        "utm_content=<nummer>": 356,
+        "utm_source=facebook": 339,
+        "AB sortval=a": 176,
+        "AB sortval=b": 146,
+        "utm_content=Facebook_UA": 37,
+        "utm_medium=email": 3,
+        "utm_source=spoks": 3,
+        "locale=en": 3,
+        "utm_content=button": 2,
+        "utm_campaign=De tittar två gånger, sen skrattar de": 2,
+        "utm_campaign=domain_click": 1,
+        "utm_medium=company_profile": 1,
+        "utm_source=trustpilot": 1
+      },
+      "ab_test_i_temat": {
+        "AB sortval=a": {
+          "ordrar": 176,
+          "aov_sek": 424.6,
+          "snitt_lador": 2.07
+        },
+        "AB sortval=b": {
+          "ordrar": 146,
+          "aov_sek": 427.89,
+          "snitt_lador": 2.06
+        }
+      },
+      "comment": "ab_test_i_temat = ordrar som bär ett \"AB …\"-attribut ur temat (kunden sattes i en gren i webbläsaren). \"AB sortval\" är temats sortval-block ms_sortval (gren b = rullista per låda, enligt matstrumpor/marknader/underlag.mjs). Bara ordrar syns här, inte besökare — ingen konverteringsgrad går att räkna ur detta."
+    }
+  },
+  "fraktprofiler": [
+    {
+      "namn": "General profile",
+      "standard": true,
+      "grupper": [
+        {
+          "platser": [
+            "Stenkolsgatan 1B"
+          ],
+          "zoner": [
+            {
+              "namn": "Engelska marknader (US, UK, AU, CA, NZ)",
+              "lander": [
+                "AU",
+                "CA",
+                "GB",
+                "NZ",
+                "US"
+              ],
+              "metoder": [
+                {
+                  "namn": "Free shipping",
+                  "aktiv": true,
+                  "beskrivning": null,
+                  "pris": "0.0 SEK",
+                  "villkor": []
+                }
+              ]
+            },
+            {
+              "namn": "Europa (EU + Island, Liechtenstein, Schweiz)",
+              "lander": [
+                "AT",
+                "BE",
+                "BG",
+                "HR",
+                "CY",
+                "CZ",
+                "DK",
+                "EE",
+                "FI",
+                "FR",
+                "DE",
+                "GR",
+                "HU",
+                "IE",
+                "IT",
+                "LV",
+                "LT",
+                "LU",
+                "MT",
+                "NL",
+                "PL",
+                "PT",
+                "RO",
+                "SK",
+                "SI",
+                "ES",
+                "CH",
+                "IS",
+                "LI"
+              ],
+              "metoder": [
+                {
+                  "namn": "Fri frakt",
+                  "aktiv": true,
+                  "beskrivning": null,
+                  "pris": "0.0 SEK",
+                  "villkor": []
+                }
+              ]
+            },
+            {
+              "namn": "Internationell",
+              "lander": [
+                "AE",
+                "HK",
+                "IL",
+                "KR",
+                "MY",
+                "SG"
+              ],
+              "metoder": [
+                {
+                  "namn": "Standard",
+                  "aktiv": true,
+                  "beskrivning": null,
+                  "pris": "299.0 SEK",
+                  "villkor": [
+                    "TOTAL_PRICE GREATER_THAN_OR_EQUAL_TO 0.0 SEK"
+                  ]
+                }
+              ]
+            },
+            {
+              "namn": "Japan och Taiwan",
+              "lander": [
+                "JP",
+                "TW"
+              ],
+              "metoder": [
+                {
+                  "namn": "Fri frakt",
+                  "aktiv": true,
+                  "beskrivning": null,
+                  "pris": "0.0 SEK",
+                  "villkor": []
+                }
+              ]
+            },
+            {
+              "namn": "Norden (Norge)",
+              "lander": [
+                "NO"
+              ],
+              "metoder": [
+                {
+                  "namn": "Fri frakt",
+                  "aktiv": true,
+                  "beskrivning": null,
+                  "pris": "0.0 SEK",
+                  "villkor": []
+                }
+              ]
+            },
+            {
+              "namn": "Sverige",
+              "lander": [
+                "SE"
+              ],
+              "metoder": [
+                {
+                  "namn": "Fri Frakt",
+                  "aktiv": true,
+                  "beskrivning": "Postnord",
+                  "pris": "0.0 SEK",
+                  "villkor": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rabatter_i_butiken": {
+    "koder_antal": 31,
+    "koder": [
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453326163",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 2 få 2 + 4 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 8,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2-P4 (8)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453293395",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 2 få 2 + 3 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 5 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2-P3 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 5,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453260627",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 2 få 2 + 2 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 4 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2-P2 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 4,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453227859",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 2 få 2 + 1 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 3 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 1,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2-P1 (1)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453195091",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 2 få 2 + 0 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 2 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2-P0 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 2,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453162323",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 1 få 1 + 2 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 105,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1-P2 (105)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453129555",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 1 få 1 + 1 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 2 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 17,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1-P1 (17)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 2,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838453096787",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 1 få 1 + 0 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 1 item free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1-P0 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 1,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838450377043",
+        "typ": "kod:Bxgy",
+        "titel": "Alla sorter: Köp 2 få 2 + ätpinnar (mix)",
+        "status": "EXPIRED",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": "2026-09-17T11:37:13Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K2F2 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1838450344275",
+        "typ": "kod:Bxgy",
+        "titel": "Alla sorter: Köp 1 få 1 + ätpinnar (mix)",
+        "status": "EXPIRED",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": "2026-09-17T11:37:13Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830184976723",
+        "typ": "kod:Basic",
+        "titel": "E-postklubben 10 % (skrapkortet)",
+        "status": "ACTIVE",
+        "sammanfattning": "10% off entire order • One use per customer",
+        "startar": "2026-08-23T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": true,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "KLUBB10 (0)"
+        ],
+        "kunden_far": {
+          "varde": "10 %",
+          "av": "alla varor"
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047482195",
+        "typ": "kod:Bxgy",
+        "titel": "Donut: Köp 2 få 2 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "DONUT-K2F2 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "donut-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "donut-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047449427",
+        "typ": "kod:Bxgy",
+        "titel": "Donut: Köp 1 få 1 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 13,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "DONUT-K1F1 (13)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "donut-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "donut-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047416659",
+        "typ": "kod:Bxgy",
+        "titel": "Hamburgare: Köp 2 få 2 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "HAMBURGARE-K2F2 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047383891",
+        "typ": "kod:Bxgy",
+        "titel": "Hamburgare: Köp 1 få 1 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 1,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "HAMBURGARE-K1F1 (1)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047351123",
+        "typ": "kod:Bxgy",
+        "titel": "Pizza: Köp 2 få 2 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PIZZA-K2F2 (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "pizza-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "pizza-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1830047285587",
+        "typ": "kod:Bxgy",
+        "titel": "Pizza: Köp 1 få 1 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 8,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PIZZA-K1F1 (8)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "pizza-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "pizza-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829894881619",
+        "typ": "kod:Bxgy",
+        "titel": "Sushi: Köp 2 få 2 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 26,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "SUSHI-K2F2 (26)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829894848851",
+        "typ": "kod:Bxgy",
+        "titel": "Sushi: Köp 1 få 1 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 310,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "SUSHI-K1F1 (310)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829893931347",
+        "typ": "kod:Bxgy",
+        "titel": "Gratis ätpinnar (paketgåva)",
+        "status": "EXPIRED",
+        "sammanfattning": "Buy 2 items, get 2 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": "2026-08-22T05:33:42Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 2,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "GRATIS-PINNAR (0)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 2,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785338195",
+        "typ": "kod:Basic",
+        "titel": "Paket Donut 4-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr947.00 off 2 products • Minimum purchase of kr1,396.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-DONUT-4 (0)"
+        ],
+        "kunden_far": {
+          "varde": "947.0 SEK",
+          "av": {
+            "produkter": [
+              "donut-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 1396.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785305427",
+        "typ": "kod:Basic",
+        "titel": "Paket Donut 2-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr399.00 off 2 products • Minimum purchase of kr698.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-DONUT-2 (0)"
+        ],
+        "kunden_far": {
+          "varde": "399.0 SEK",
+          "av": {
+            "produkter": [
+              "donut-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 698.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785272659",
+        "typ": "kod:Basic",
+        "titel": "Paket Hamburgare 4-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr947.00 off 2 products • Minimum purchase of kr1,396.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-HAMBURGARE-4 (0)"
+        ],
+        "kunden_far": {
+          "varde": "947.0 SEK",
+          "av": {
+            "produkter": [
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 1396.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785239891",
+        "typ": "kod:Basic",
+        "titel": "Paket Hamburgare 2-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr399.00 off 2 products • Minimum purchase of kr698.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-HAMBURGARE-2 (0)"
+        ],
+        "kunden_far": {
+          "varde": "399.0 SEK",
+          "av": {
+            "produkter": [
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 698.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785141587",
+        "typ": "kod:Basic",
+        "titel": "Paket Pizza 4-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr1,327.00 off 2 products • Minimum purchase of kr1,996.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-PIZZA-4 (0)"
+        ],
+        "kunden_far": {
+          "varde": "1327.0 SEK",
+          "av": {
+            "produkter": [
+              "pizza-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 1996.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785108819",
+        "typ": "kod:Basic",
+        "titel": "Paket Pizza 2-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr549.00 off 2 products • Minimum purchase of kr998.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T16:39:20Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-PIZZA-2 (0)"
+        ],
+        "kunden_far": {
+          "varde": "549.0 SEK",
+          "av": {
+            "produkter": [
+              "pizza-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 998.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785076051",
+        "typ": "kod:Basic",
+        "titel": "Paket Sushi 4-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr798.00 off Sushi-Strumpor (2 variants) • Minimum purchase of kr1,476.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T05:33:42Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-SUSHI-4 (0)"
+        ],
+        "kunden_far": {
+          "varde": "798.0 SEK",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 1476.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1829785043283",
+        "typ": "kod:Basic",
+        "titel": "Paket Sushi 2-pack",
+        "status": "EXPIRED",
+        "sammanfattning": "kr399.00 off Sushi-Strumpor (2 variants) • Minimum purchase of kr738.00 • Applies once per order",
+        "startar": "2026-08-21T00:00:00Z",
+        "slutar": "2026-08-22T05:33:42Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "PAKET-SUSHI-2 (0)"
+        ],
+        "kunden_far": {
+          "varde": "399.0 SEK",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "minimikrav": "minst 738.0 SEK"
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1752315199827",
+        "typ": "kod:Basic",
+        "titel": "TACK15",
+        "status": "EXPIRED",
+        "sammanfattning": "15% off entire order • One use per customer",
+        "startar": "2025-12-04T16:07:58Z",
+        "slutar": "2026-08-22T04:08:31Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": true,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": true,
+          "productDiscounts": true,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "TACK15 (0)"
+        ],
+        "kunden_far": {
+          "varde": "15 %",
+          "av": "alla varor"
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1748369375571",
+        "typ": "kod:Basic",
+        "titel": "XAZ132",
+        "status": "EXPIRED",
+        "sammanfattning": "30% off entire order",
+        "startar": "2025-11-23T10:09:35Z",
+        "slutar": "2026-08-22T04:08:27Z",
+        "anvandningar": 0,
+        "anvandningsgrans": 1,
+        "en_gang_per_kund": false,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": true,
+          "productDiscounts": true,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "XAZ132 (0)"
+        ],
+        "kunden_far": {
+          "varde": "30 %",
+          "av": "alla varor"
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountCodeNode/1741008077139",
+        "typ": "kod:Basic",
+        "titel": "GLÖMD",
+        "status": "ACTIVE",
+        "sammanfattning": "10% off entire order • One use per customer",
+        "startar": "2025-10-17T14:17:20Z",
+        "slutar": null,
+        "anvandningar": 0,
+        "anvandningsgrans": 50,
+        "en_gang_per_kund": true,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": true,
+          "productDiscounts": true,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "GLÖMD (0)"
+        ],
+        "kunden_far": {
+          "varde": "10 %",
+          "av": "alla varor"
+        }
+      }
+    ],
+    "automatiska": [
+      {
+        "id": "gid://shopify/DiscountAutomaticNode/1829892587859",
+        "typ": "auto:Bxgy",
+        "titel": "Gratis ätpinnar vid paketköp",
+        "status": "EXPIRED",
+        "sammanfattning": "Buy 2 items, get 2 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": "2026-08-22T05:26:46Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": null,
+        "ganger_per_order": 2,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": true,
+          "shippingDiscounts": false
+        },
+        "koder": null,
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 2,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      {
+        "id": "gid://shopify/DiscountAutomaticNode/1840765501779",
+        "typ": "auto:Basic",
+        "titel": "Black Week 2026: 10 % vid 1 vara",
+        "status": "SCHEDULED",
+        "sammanfattning": "10% off entire order • Minimum quantity of 1",
+        "startar": "2026-11-22T17:00:00Z",
+        "slutar": "2026-11-30T23:00:00Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": null,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": null,
+        "kunden_far": {
+          "varde": "10 %",
+          "av": "alla varor"
+        },
+        "minimikrav": "minst 1 st"
+      },
+      {
+        "id": "gid://shopify/DiscountAutomaticNode/1840765534547",
+        "typ": "auto:Basic",
+        "titel": "Black Week 2026: 20 % vid 2 varor",
+        "status": "SCHEDULED",
+        "sammanfattning": "20% off entire order • Minimum quantity of 2",
+        "startar": "2026-11-22T17:00:00Z",
+        "slutar": "2026-11-30T23:00:00Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": null,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": null,
+        "kunden_far": {
+          "varde": "20 %",
+          "av": "alla varor"
+        },
+        "minimikrav": "minst 2 st"
+      },
+      {
+        "id": "gid://shopify/DiscountAutomaticNode/1840765567315",
+        "typ": "auto:Basic",
+        "titel": "Black Week 2026: 30 % vid 3+ varor",
+        "status": "SCHEDULED",
+        "sammanfattning": "30% off entire order • Minimum quantity of 3",
+        "startar": "2026-11-22T17:00:00Z",
+        "slutar": "2026-11-30T23:00:00Z",
+        "anvandningar": 0,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": null,
+        "ganger_per_order": null,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": null,
+        "kunden_far": {
+          "varde": "30 %",
+          "av": "alla varor"
+        },
+        "minimikrav": "minst 3 st"
+      }
+    ],
+    "bogo_detalj": {
+      "SUSHI-K1F1": {
+        "id": "gid://shopify/DiscountCodeNode/1829894848851",
+        "typ": "kod:Bxgy",
+        "titel": "Sushi: Köp 1 få 1 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 310,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "SUSHI-K1F1 (310)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      "STRUMPOR-K1F1-P1": {
+        "id": "gid://shopify/DiscountCodeNode/1838453129555",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 1 få 1 + 1 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 2 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 17,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1-P1 (17)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 2,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      "STRUMPOR-K1F1-P2": {
+        "id": "gid://shopify/DiscountCodeNode/1838453162323",
+        "typ": "kod:Bxgy",
+        "titel": "Mix: Köp 1 få 1 + 2 par ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 1 item, get 3 items free",
+        "startar": "2026-09-17T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 105,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": true
+        },
+        "koder": [
+          "STRUMPOR-K1F1-P2 (105)"
+        ],
+        "kunden_koper": {
+          "varde": "1 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 3,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      },
+      "SUSHI-K2F2": {
+        "id": "gid://shopify/DiscountCodeNode/1829894881619",
+        "typ": "kod:Bxgy",
+        "titel": "Sushi: Köp 2 få 2 + ätpinnar",
+        "status": "ACTIVE",
+        "sammanfattning": "Buy 2 items, get 6 items free",
+        "startar": "2026-08-22T00:00:00Z",
+        "slutar": null,
+        "anvandningar": 26,
+        "anvandningsgrans": null,
+        "en_gang_per_kund": false,
+        "ganger_per_order": 1,
+        "kombinerar_med": {
+          "orderDiscounts": false,
+          "productDiscounts": false,
+          "shippingDiscounts": false
+        },
+        "koder": [
+          "SUSHI-K2F2 (26)"
+        ],
+        "kunden_koper": {
+          "varde": "2 st",
+          "av": {
+            "produkter": [
+              "sushi-strumpor"
+            ],
+            "varianter": []
+          }
+        },
+        "kunden_far": {
+          "varde": {
+            "antal": 6,
+            "effekt": "100 %"
+          },
+          "av": {
+            "produkter": [
+              "sushi-strumpor",
+              "sushipinnar-i-akta-tra"
+            ],
+            "varianter": []
+          }
+        }
+      }
+    }
+  },
+  "produkter": [
+    {
+      "titel": "Äkta ätpinnar i trä",
+      "handle": "sushipinnar-i-akta-tra",
+      "status": "UNLISTED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -2069,
+      "publicerad": "2026-02-03",
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 50,
+          "jamforpris": null,
+          "lager": -2069,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Donut-strumpor",
+      "handle": "donut-strumpor",
+      "status": "ACTIVE",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -21,
+      "publicerad": "2025-12-17",
+      "en_variant": false,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "One Size",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": 499,
+          "lager": -21,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Exfolierande Skrubbsvamp",
+      "handle": "exfolierande-skrubbsvamp",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -4,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 129,
+          "jamforpris": null,
+          "lager": -4,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Fixkliniken Multiband - Stärk din kropp enkelt hemma!",
+      "handle": "fixkliniken-multiband-stark-din-kropp-enkelt-hemma",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -16,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 6,
+      "varianter": [
+        {
+          "titel": "Lätt - 4 Band / Blå",
+          "sku": "20595#JV1762840025-blue",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": -4,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Lätt - 4 Band / Lila",
+          "sku": "20595#JV1762840025-purple",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": -6,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Lätt - 4 Band / Gul",
+          "sku": "20595#JV1762840025-yellow",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Tung - 6 Band / Blå",
+          "sku": "20595#JV1762840025-6p-blue",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": -5,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Tung - 6 Band / Lila",
+          "sku": "20595#JV1762840025-6p-purple",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": -1,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Tung - 6 Band / Gul",
+          "sku": "20595#JV1762840025-6p-yellow",
+          "pris": 299,
+          "jamforpris": 0,
+          "lager": 0,
+          "lagerpolicy": "DENY",
+          "kopbar": false,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Fixkliniken Multiband Guide – Din enkla guide till rörelse och styrka hemma",
+      "handle": "fixkliniken-multiband-guide-din-enkla-guide-till-rorelse-och-styrka-hemma",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 149,
+          "jamforpris": null,
+          "lager": -9,
+          "lagerpolicy": "DENY",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "FixToes™ – Slipp hallux valgus utan operation",
+      "handle": "hallux-valgus-korrigerare-for-battre-fothalsa",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -4,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 349,
+          "jamforpris": 700,
+          "lager": -4,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Fot-terapimatta",
+      "handle": "fot-terapi-matta",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 30,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 3,
+      "varianter": [
+        {
+          "titel": "Liten",
+          "sku": null,
+          "pris": 199,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Mellan",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Stor",
+          "sku": null,
+          "pris": 349,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "FotRullen",
+      "handle": "rullmasserare",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 4,
+      "varianter": [
+        {
+          "titel": "Grå",
+          "sku": null,
+          "pris": 249,
+          "jamforpris": 300,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Mint Grön",
+          "sku": null,
+          "pris": 249,
+          "jamforpris": 300,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Lila",
+          "sku": null,
+          "pris": 249,
+          "jamforpris": 300,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Rosa",
+          "sku": null,
+          "pris": 249,
+          "jamforpris": 300,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Fotstöd dusch - för enklare rakning",
+      "handle": "fotstod-dusch-for-enklare-rakning",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": null,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Garanti för säker Frakt",
+      "handle": "kaching-cart-toggle",
+      "status": "ARCHIVED",
+      "typ": "Kaching Cart Upsell Toggle",
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 25,
+          "jamforpris": null,
+          "lager": -90,
+          "lagerpolicy": "DENY",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Hamburgare-Strumpor",
+      "handle": "hamburger-strumpor",
+      "status": "ACTIVE",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 77,
+      "publicerad": "2025-12-17",
+      "en_variant": false,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "One Size",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": 499,
+          "lager": 77,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Lättare steg – Fixklinikens guide till piggare ben och bättre välmående",
+      "handle": "test",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -1,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 199,
+          "jamforpris": null,
+          "lager": -1,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "LegEase – Vadmassager för trötta ben",
+      "handle": "legease-vadmassager-for-trotta-ben",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 499,
+          "jamforpris": null,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Mammaband – extra stöd för mage och rygg",
+      "handle": "mammaband-extra-stod-for-mage-och-rygg",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": null,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "OrtoFlex Pro",
+      "handle": "ortoflex-pro",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 63,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 6,
+      "varianter": [
+        {
+          "titel": "35-36",
+          "sku": "20595#DY1756100639-white-grey-35-36",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 12,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "37-38",
+          "sku": "20595#DY1756100639-white-grey-37-38",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 8,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "39-40",
+          "sku": "20595#DY1756100639-white-grey-39-40",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 7,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "41-42",
+          "sku": "20595#DY1756100639-white-grey-41-42",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 12,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "43-44",
+          "sku": "20595#DY1756100639-white-grey-43-44",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 12,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "45-46",
+          "sku": "20595#DY1756100639-white-grey-45-46",
+          "pris": 249,
+          "jamforpris": 0,
+          "lager": 12,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Pizza-Strumpor",
+      "handle": "pizza-strumpor",
+      "status": "ACTIVE",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 55,
+      "publicerad": "2025-12-17",
+      "en_variant": false,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "One Size",
+          "sku": null,
+          "pris": 449,
+          "jamforpris": 599,
+          "lager": 55,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Presentkort",
+      "handle": "presentkort",
+      "status": "ACTIVE",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": "2025-12-01",
+      "en_variant": false,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "150,00 kr",
+          "sku": null,
+          "pris": 150,
+          "jamforpris": null,
+          "lager": -197,
+          "lagerpolicy": "DENY",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "SilentTrim – Tyst och trygg nagelklippning för små händer",
+      "handle": "elektrisk-nagelklippare-med-led-ljus-smidig-nagelvard-for-sma-hander",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": null,
+          "lager": 0,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Skrubbmattan - Tvätta fötterna utan att böja dig – gör duschen tryggare och enklare varje dag!",
+      "handle": "skrubbmatta-dusch-ren-kropp",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 3,
+      "varianter": [
+        {
+          "titel": "Rosa",
+          "sku": null,
+          "pris": 149,
+          "jamforpris": null,
+          "lager": 30,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 49.28
+        },
+        {
+          "titel": "Blå",
+          "sku": null,
+          "pris": 149,
+          "jamforpris": null,
+          "lager": 35,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 49.28
+        },
+        {
+          "titel": "Grå",
+          "sku": null,
+          "pris": 149,
+          "jamforpris": null,
+          "lager": 26,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 49.28
+        }
+      ]
+    },
+    {
+      "titel": "Slipp slöa rakhyvlar och röda prickar – håll hyveln torr i duschen",
+      "handle": "rakfix",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 40,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 4,
+      "varianter": [
+        {
+          "titel": "Silver",
+          "sku": null,
+          "pris": 129,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Guld",
+          "sku": null,
+          "pris": 129,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Rosa Guld",
+          "sku": null,
+          "pris": 129,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        },
+        {
+          "titel": "Svart",
+          "sku": null,
+          "pris": 129,
+          "jamforpris": null,
+          "lager": 10,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Sömnplåster",
+      "handle": "somnplaster",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 199,
+          "jamforpris": null,
+          "lager": 0,
+          "lagerpolicy": "DENY",
+          "kopbar": false,
+          "kostnad_per_artikel": null
+        }
+      ]
+    },
+    {
+      "titel": "Sushi-Strumpor",
+      "handle": "sushi-strumpor",
+      "status": "ACTIVE",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": -2362,
+      "publicerad": "2025-12-01",
+      "en_variant": false,
+      "antal_varianter": 2,
+      "varianter": [
+        {
+          "titel": "5 - Par / One Size",
+          "sku": null,
+          "pris": 399,
+          "jamforpris": 399,
+          "lager": -2288,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 80.23
+        },
+        {
+          "titel": "3 - Par / One Size",
+          "sku": null,
+          "pris": 369,
+          "jamforpris": 369,
+          "lager": -74,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 67.51
+        }
+      ]
+    },
+    {
+      "titel": "Sushistrumpor",
+      "handle": "sushistrumpor",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 41,
+      "publicerad": null,
+      "en_variant": false,
+      "antal_varianter": 2,
+      "varianter": [
+        {
+          "titel": "5 - Par / One Size",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": 499,
+          "lager": 12,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 80.23
+        },
+        {
+          "titel": "3 - Par / One Size",
+          "sku": null,
+          "pris": 299,
+          "jamforpris": 499,
+          "lager": 29,
+          "lagerpolicy": "CONTINUE",
+          "kopbar": true,
+          "kostnad_per_artikel": 67.51
+        }
+      ]
+    },
+    {
+      "titel": "Trygga rutiner – Fixklinikens guide till en lugnare vardag med småbarn",
+      "handle": "trygga-rutiner-fixklinikens-guide-till-en-lugnare-vardag-med-smabarn",
+      "status": "ARCHIVED",
+      "typ": null,
+      "taggar": [],
+      "lager_totalt": 0,
+      "publicerad": null,
+      "en_variant": true,
+      "antal_varianter": 1,
+      "varianter": [
+        {
+          "titel": "Default Title",
+          "sku": null,
+          "pris": 199,
+          "jamforpris": null,
+          "lager": -1,
+          "lagerpolicy": "DENY",
+          "kopbar": true,
+          "kostnad_per_artikel": null
+        }
+      ]
+    }
+  ],
+  "appar": {
+    "antal": 16,
+    "traffar_pa_letade": [
+      {
+        "titel": "Conversion Bear Trust Badges",
+        "handle": "ultimate-trust-badge",
+        "utvecklare": "Conversion Bear"
+      },
+      {
+        "titel": "Klaviyo: Email Marketing & SMS",
+        "handle": "klaviyo-email-marketing",
+        "utvecklare": "Klaviyo"
+      },
+      {
+        "titel": "Klaviyo Reviews",
+        "handle": "fulfilled-1",
+        "utvecklare": "Klaviyo"
+      },
+      {
+        "titel": "Judge.me Reviews",
+        "handle": "judgeme",
+        "utvecklare": "Judge.me"
+      },
+      {
+        "titel": "Spoks",
+        "handle": "spoks",
+        "utvecklare": "Spoks Technologies, Inc."
+      }
+    ],
+    "alla": [
+      {
+        "titel": "Messaging",
+        "handle": "shopify-messaging",
+        "utvecklare": "Shopify"
+      },
+      {
+        "titel": "MabangErp3",
+        "handle": null,
+        "utvecklare": "mabangerp"
+      },
+      {
+        "titel": "Flow",
+        "handle": "flow",
+        "utvecklare": "Shopify"
+      },
+      {
+        "titel": "wetracked.io Connect",
+        "handle": "wt-connect",
+        "utvecklare": "wetracked.io"
+      },
+      {
+        "titel": "Conversion Bear Trust Badges",
+        "handle": "ultimate-trust-badge",
+        "utvecklare": "Conversion Bear"
+      },
+      {
+        "titel": "Klaviyo: Email Marketing & SMS",
+        "handle": "klaviyo-email-marketing",
+        "utvecklare": "Klaviyo"
+      },
+      {
+        "titel": "Klaviyo Reviews",
+        "handle": "fulfilled-1",
+        "utvecklare": "Klaviyo"
+      },
+      {
+        "titel": "Jemsu",
+        "handle": null,
+        "utvecklare": "app developer"
+      },
+      {
+        "titel": "WorkflowMail Emails",
+        "handle": "flowmail",
+        "utvecklare": "Intelli-ua"
+      },
+      {
+        "titel": "Shopify Claude Connector App",
+        "handle": "shopify-claude-mcp-app",
+        "utvecklare": "Shopify"
+      },
+      {
+        "titel": "Dianxiaomi（店小秘）",
+        "handle": "dianxiaomi",
+        "utvecklare": "dianxiaomi"
+      },
+      {
+        "titel": "Claude koppling",
+        "handle": "claude-koppling",
+        "utvecklare": "Matstrumpor.se"
+      },
+      {
+        "titel": "Judge.me Reviews",
+        "handle": "judgeme",
+        "utvecklare": "Judge.me"
+      },
+      {
+        "titel": "StonePNL",
+        "handle": "stonepnl",
+        "utvecklare": "STONEBITE ECOM AB"
+      },
+      {
+        "titel": "Fabriken",
+        "handle": "fabriken-8",
+        "utvecklare": "Matstrumpor.se"
+      },
+      {
+        "titel": "Spoks",
+        "handle": "spoks",
+        "utvecklare": "Spoks Technologies, Inc."
+      }
+    ]
+  },
+  "kunde_inte": []
+}
