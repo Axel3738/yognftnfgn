@@ -26,10 +26,14 @@ Den ska lära sig av sina misstag: hitta mönster där rutinen gissat fel flera
 gånger, och där den brukar ha rätt, och spara dem. Men inga förbud: en sak som
 brukar fungera kan ha missat två eller tre gånger av slump.
 
-Förlagan finns redan för budgetmotorn Skalnings kungen. Läs först
-docs/os/FEEDBACKLOOP-MALL.md och sedan förlagan på grenen
-claude/daily-agent-discussion-uos5df (agent/FACIT.md, agent/monster.mjs,
-agent/test/monster.test.mjs) med git show. Kopiera tänket, inte koden rakt av.
+Förlagan finns redan för budgetmotorn Skalnings kungen, på grenen
+claude/daily-agent-discussion-uos5df. Läs den utan att byta gren:
+  git fetch origin claude/daily-agent-discussion-uos5df
+  git show origin/claude/daily-agent-discussion-uos5df:docs/os/FEEDBACKLOOP-MALL.md
+  git show origin/claude/daily-agent-discussion-uos5df:agent/FACIT.md
+  git show origin/claude/daily-agent-discussion-uos5df:agent/monster.mjs
+  git show origin/claude/daily-agent-discussion-uos5df:agent/test/monster.test.mjs
+Kopiera tänket, inte koden rakt av.
 
 Gör så här, i ordning:
 
