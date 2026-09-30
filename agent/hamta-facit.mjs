@@ -5,8 +5,9 @@
 //      pausade kampanjer är med (rondens egen hämtning filtrerar på ACTIVE och
 //      tappar precis de kampanjer motorn stängt av).
 //   2. Metas aktivitetslogg för budgetändringar (category BUDGET): gammal och
-//      ny budget i öre, och vem som gjorde ändringen (`ads MCP server` =
-//      motorn, `Power Editor` / iOS = för hand).
+//      ny budget i öre och vilken app som gjorde ändringen. Motorn känns igen
+//      i agent/facit.mjs på raden i budgetloggen, inte på appens namn (andra
+//      sessioner använder också MCP-servern).
 //
 //   node agent/hamta-facit.mjs --konto SE|NO [--dagar 45] [--idag YYYY-MM-DD]
 //     → agent/utdata/cache/facit-<konto>-<idag>.json (gitignorerad)

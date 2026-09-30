@@ -1314,12 +1314,16 @@ budgetändring för att facit säger något — det är underlag, inte order.
 en rad i leveransen och gå vidare. Kör aldrig om hämtningen fler än en gång.
 Saknas ett konto skriver skriptet facit DELVIS (inga förslag den dagen).
 
-Förslagen (`⚑ Förslag N: KONSTANT från A till B … Svara JA N eller NEJ N`) är
-**Axels beslut**. Du ändrar aldrig `agent/besked.mjs` för att ett förslag
-säger det — du klistrar in dem i leveransen, och Axel svarar. Svarar Axel
-`JA N` i en senare session: den sessionen ändrar konstanten i
-`agent/besked.mjs`, lägger en rad i `REGELVERK` i `agent/facit.mjs` med
-dagens datum, och kör testerna.
+Förslagen (`⚑ Förslag F1234: KONSTANT från A till B … Svara JA F1234 eller
+NEJ F1234`) är **Axels beslut**. Du ändrar aldrig `agent/besked.mjs` för att
+ett förslag säger det — du klistrar in dem i leveransen, och Axel svarar.
+Id:t (`F` + fyra siffror) kommer ur förslagets innehåll, så samma förslag har
+samma id varje morgon. Svarar Axel `JA F1234` i en senare session gör den
+sessionen så här, och stoppar vid minsta glapp: (1) hitta F1234 i
+`agent/kalibrering.json` → `forslag`; (2) kontrollera att konstanten i
+`agent/besked.mjs` i dag har värdet i `fran` — annars fråga Axel, ändra
+ingenting; (3) ändra konstanten till `till`, lägg en rad i `REGELVERK` i
+`agent/facit.mjs` med dagens datum, kör `npm test`. `NEJ F1234`: ingenting.
 
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
 sköts upp och varför, om något larmade — vilka brief-rundor/batcher som
@@ -1344,7 +1348,7 @@ deadline, och koncept vid taket. Samma rader på engelska i Discord.
 node agent/facit.mjs --status
 ```
 Den säger hur motorns höjningar och sänkningar faktiskt gick mot att låta
-budgeten stå (rätt/fel/för jämna, kronor med 80 %-intervall), dina egna
+budgeten stå, upp till 7 dygn efter (rätt/fel/för jämna, kronor med 80 %-intervall), dina egna
 höjningar, sågtanden, om mätaren håller, hur långt den nya regeln kommit, och
 varje regelförslag med JA/NEJ. I Discord: `node agent/facit.mjs --status --en`
 — bara antal, inga kronor och ingen break-even (redigerarna läser kanalen),
@@ -1403,7 +1407,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
 - [ ] `agent/spegelbudget.json` skriven ur OPS-kontot och USA-kontot (bara CaraShell, bara läst — steg 1c) och committad; `## 🪞 Spegelmarknader` läst i rapporten
 - [ ] Facit körd i steg 6b (`node agent/facit.mjs --hamta --skriv`) EFTER budgetändringarna och loggens push — eller orsaken skriven på en rad; `agent/facit.jsonl` + `agent/kalibrering.json` + `agent/utdata/facit-<IDAG>.md` pushade i en egen commit
-- [ ] `node agent/facit.mjs --status` i leveransen (och `--en` i Discord-posten); varje ⚑ förslag klistrat in för Axel med JA/NEJ — inget förslag verkställt, `agent/besked.mjs` orörd
+- [ ] `node agent/facit.mjs --status` i leveransen (och `--en` i Discord-posten); varje ⚑ förslag klistrat in för Axel med sitt id och JA/NEJ — inget förslag verkställt, `agent/besked.mjs` orörd. Säger statusen GAMMAL: skriv att 6b inte skrev i dag
 - [ ] Ingen facit-rad i `agent/budgetlogg.jsonl`, ingen återstart och ingen budgetändring för att facit sa något
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning

@@ -49,3 +49,10 @@ test('alla(): egen backoff och tidsgräns per anrop (facit håller aldrig upp ro
   ]);
   await assert.rejects(() => alla('act_1/insights', {}, { backoff: [60000], deadline: Date.now() + 1000 }), /tidsgränsen/);
 });
+
+test('alla(): efter tidsgränsen görs inget nytt anrop (nästa sida eller nästa konto)', async () => {
+  stallIn({ pausMs: 0, backoffMs: [0] });
+  const anrop = stubba([{ data: [{ id: 1 }], paging: { next: 'https://graph.example/sida2' } }, { data: [{ id: 2 }] }]);
+  await assert.rejects(() => alla('act_1/insights', {}, { deadline: Date.now() - 1 }), /tidsgränsen/);
+  assert.equal(anrop.length, 0);
+});

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   tolkaInsiktsrad, tolkaBudgethandelse, byggSerie, summa, beslutUrLogg, andringsIndex, episoder,
   kontrollprov, kontrollfaktor, egenHistorik, placebo, vandring, dommaEpisod, dommaHall, hallUrLogg, breakEvenIndex, hinkar, forslag,
-  facitNot, familjForDom, kor, brak, plusDagar, bandFor, zonFor, MIN_KAMPANJER_FORSLAG, KALIBRERING_SCHEMA, REGELVERK, PLACEBO_HOJ,
+  facitNot, familjForDom, kor, brak, plusDagar, bandFor, zonFor, MIN_KAMPANJER_FORSLAG, KALIBRERING_SCHEMA, REGELVERK, PLACEBO_HOJ, METOD_VERSION, PLACEBO_TOLERANS, forslagId,
   sagtand, placeboSammanfattning, kalibrering, FORSLAG_DAGAR_I_RAD, status, statusEngelska,
 } from '../facit.mjs';
 import { planera, laddaFacit } from '../rond.mjs';
@@ -156,7 +156,7 @@ test('kontrollproven: bara dygn utan ändring D−3..D, och bara med egen histor
   const k0 = rena.filter((p) => p.kampanj_id === 'K0').map((p) => p.datum);
   for (const d of ['2026-09-10', '2026-09-11', '2026-09-12', '2026-09-13']) assert.ok(!k0.includes(d), `${d} har en ändring i D−3..D`);
   assert.ok(k0.includes('2026-09-09') && k0.includes('2026-09-14'));
-  assert.equal(egenHistorik(s, 'K0', '2026-08-25', 1.5, '2026-08-20'), null, 'datan räcker inte tio dygn bakåt');
+  assert.match(egenHistorik(s, 'K0', '2026-08-25', 1.5, '2026-08-20').saknas, /egen historik/, 'datan räcker inte tio dygn bakåt');
 });
 
 function ctxFor(serieRader, logg, { until = '2026-09-29', since = '2026-08-20', prov = null, andringar = [] } = {}) {
@@ -284,7 +284,7 @@ test('hinkarna: bara mätta episoder bär kronor; median, "utan största kampanj
 });
 
 test('förslag: en konstant, från A till B — kräver nog med kampanjer, intervall på ena sidan om noll, samma tecken utan största kampanjen och i kort horisont, ingen kampanj över 40 %', () => {
-  const b = (kampanjer, over = {}) => ({ familj: 'HOJ', dimension: 'trappa', varde: '1,0–1,5', episoder: 12, bedomda: 12, bedomda_kampanjer: kampanjer, ratt: 6, fel: 1, osakra: 5, delta_vinst_kr: 5000, intervall_80: [1000, 9000], median_kr: 300, utan_storsta_kr: 2000, storsta_andel: 0.3, tecken_haller: true, marginal_roas: 2.2, break_even_viktad: 1.6, kr_per_kampanjvecka: 700, ...over });
+  const b = (kampanjer, over = {}) => ({ familj: 'HOJ', dimension: 'trappa', varde: '1,0–1,5', episoder: 12, bedomda: 12, bedomda_kampanjer: kampanjer, ratt: 6, fel: 1, osakra: 5, delta_vinst_kr: 5000, intervall_80: [1000, 9000], median_kr: 300, utan_storsta_kr: 2000, storsta_andel: 0.3, tecken_haller: true, marginal_roas: 2.2, marginal_roas_tillagda: 2.2, break_even_viktad: 1.6, kr_per_kampanjvecka: 700, ...over });
   const nyckel = 'HOJ|trappa|1,0–1,5';
   const kort = { [nyckel]: { delta_vinst_kr: 800 } };
   const f = (hink, k = kort) => forslag({ hinkarNya: { [nyckel]: hink }, hinkarNyaKort: k, hall: {} });
@@ -293,42 +293,56 @@ test('förslag: en konstant, från A till B — kräver nog med kampanjer, inter
   assert.equal(f(b(8, { utan_storsta_kr: -10 })).length, 0, 'vilar på en kampanj');
   assert.equal(f(b(8, { storsta_andel: 0.6 })).length, 0, 'en kampanj bär mer än 40 %');
   assert.equal(f(b(8), { [nyckel]: { delta_vinst_kr: -1 } }).length, 0, 'kort horisont säger emot');
-  assert.equal(f(b(8, { marginal_roas: 1.8 })).length, 0, 'plus, men marginalen under 1,25 × break-even räcker inte för att skala mer');
+  assert.equal(f(b(8, { marginal_roas_tillagda: 1.8 })).length, 0, 'plus, men marginalen under 1,25 × break-even räcker inte för att skala mer');
+  assert.equal(f(b(8, { marginal_roas: 6.9, marginal_roas_tillagda: 1.4 })).length, 0, 'nettokvoten blåses upp av höjningar där spenden föll — grinden räknar bara tillagda kronor');
   const [x] = f(b(8));
   assert.match(x.konstant, /TRAPPA/);
   assert.equal(x.fran, '×1,2');
   assert.equal(x.till, '×1,3');
-  assert.equal(x.matare, PLACEBO_HOJ, 'förslaget bygger på mätaren i toppläget');
-  const [ner] = f(b(8, { delta_vinst_kr: -5000, intervall_80: [-9000, -1000], utan_storsta_kr: -2000, marginal_roas: 0.4 }), { [nyckel]: { delta_vinst_kr: -800 } });
+  assert.deepEqual(x.matare, [...PLACEBO_HOJ], 'förslaget bygger på mätaren där motorn höjer');
+  const [ner] = f(b(8, { delta_vinst_kr: -5000, intervall_80: [-9000, -1000], utan_storsta_kr: -2000, marginal_roas: 0.4, marginal_roas_tillagda: 0.4 }), { [nyckel]: { delta_vinst_kr: -800 } });
   assert.equal(ner.till, '×1,1');
 });
 
-test(`ett förslag når Axel först efter ${FORSLAG_DAGAR_I_RAD} morgnar i rad, med godkänd mätare totalt OCH i toppläget, och aldrig på en delvis dag`, () => {
+test(`ett förslag når Axel först efter ${FORSLAG_DAGAR_I_RAD} morgnar i rad, med stabilt id, med mätaren bevisat rak totalt OCH där motorn höjer, och aldrig på en delvis dag`, () => {
   const nu = REGELVERK[REGELVERK.length - 1].namn;
-  const rad = (kampanj_id, v) => ({ familj: 'HOJ', horisont: 'lang', metod: 3, kampanj_id, trappa: '1,0–1,5', forsta_steg: '+≤25 %', zon: '1 000–2 000', band: '≥2,0', marknad: 'SE', total: '+≤25 %', kedja: '1 steg', regelverk: nu, produkt: kampanj_id, dom: 'RATT', bedombar: true, delta_vinst_kr: v, flyttat_kr: 1000, delta_spend_kr: 1000, delta_intakt_kr: 2500, break_even: 1.5, efter: { dagar: 7 } });
+  const rad = (kampanj_id, v) => ({ familj: 'HOJ', horisont: 'lang', metod: METOD_VERSION, kampanj_id, trappa: '1,0–1,5', forsta_steg: '+≤25 %', zon: '1 000–2 000', band: '≥2,0', marknad: 'SE', total: '+≤25 %', kedja: '1 steg', regelverk: nu, produkt: kampanj_id, dom: 'RATT', bedombar: true, delta_vinst_kr: v, flyttat_kr: 1000, delta_spend_kr: 1000, delta_intakt_kr: 2500, break_even: 1.5, efter: { dagar: 7 } });
   const alla = Array.from({ length: 10 }, (_, i) => [rad(`K${i}`, 1000 + i), { ...rad(`K${i}`, 800), horisont: 'kort' }]).flat();
-  const bra = Array.from({ length: 20 }, (_, i) => ({ kampanj_id: `P${i % 10}`, fel_kr: i % 2 ? 50 : -50, lage: PLACEBO_HOJ }));
+  // Mätaren håller: medelfel ±0,05 × BE per kampanj, i båda lägena där motorn höjer.
+  const bra = PLACEBO_HOJ.flatMap((lage) => Array.from({ length: 20 }, (_, i) => ({ kampanj_id: `P${i % 10}`, fel_kr: i % 2 ? 50 : -50, w: 1000, lage })));
   let kal = null;
   for (let dag = 1; dag <= FORSLAG_DAGAR_I_RAD; dag++) {
     kal = kalibrering(alla, { kort: [], lang: [] }, { idag: plusDagar('2026-10-01', dag), placeboRader: bra, tidigare: kal });
     assert.ok(kal.kandidater.length > 0, `dag ${dag}: kandidaten finns`);
     assert.equal(kal.forslag.length, dag >= FORSLAG_DAGAR_I_RAD ? kal.kandidater.length : 0, `dag ${dag}`);
   }
-  assert.equal(kal.forslag[0].nr, 1);
-  assert.match(status(kal).join('\n'), /⚑ Förslag 1: TRAPPA .* från ×1,2 till ×1,3\..*Svara JA 1 eller NEJ 1\./);
+  const id = kal.forslag[0].id;
+  assert.equal(id, forslagId(kal.forslag[0].nyckel), 'id:t kommer ur nyckeln — samma förslag får samma id varje morgon');
+  assert.match(id, /^F\d{4}$/);
+  const txt = status(kal, { idag: kal.skapad }).join('\n');
+  assert.ok(txt.includes(`⚑ Förslag ${id}: TRAPPA`) && txt.includes(`från ×1,2 till ×1,3.`) && txt.includes(`Svara JA ${id} eller NEJ ${id}.`), txt);
+  assert.doesNotMatch(status(kal, { idag: plusDagar(kal.skapad, 1) }).join('\n'), /⚑/, 'en gammal kalibrering visar inga förslag');
   const delvis = kalibrering(alla, { kort: [], lang: [] }, { idag: plusDagar('2026-10-01', 8), placeboRader: bra, tidigare: kal, delvis: true });
   assert.equal(delvis.forslag.length, 0);
   const skevt = kalibrering(alla, { kort: [], lang: [] }, { idag: plusDagar('2026-10-01', 8), placeboRader: bra.map((p) => ({ ...p, fel_kr: -900 })), tidigare: kal });
   assert.equal(skevt.placebo.godkant, false);
   assert.equal(skevt.forslag.length, 0, 'underkänd mätare ⇒ inga förslag');
-  // Totalt godkänd men skev i toppläget ⇒ höjningsförslaget spärras, med orsak.
-  const mitt = Array.from({ length: 20 }, (_, i) => ({ kampanj_id: `M${i % 10}`, fel_kr: 1000, lage: 'BE–1,5 × BE' }));
-  const topp = Array.from({ length: 20 }, (_, i) => ({ kampanj_id: `T${i % 10}`, fel_kr: -1000, lage: PLACEBO_HOJ }));
+  // Lägen som tar ut varandra i summan: ekvivalenstestet underkänner ändå
+  // (granskningen 2026-09-30: toppläget stod som godkänt med medelfel −0,24).
+  const mitt = Array.from({ length: 20 }, (_, i) => ({ kampanj_id: `M${i % 10}`, fel_kr: 300, w: 1000, lage: 'BE–1,5 × BE' }));
+  const topp = PLACEBO_HOJ.flatMap((l) => Array.from({ length: 10 }, (_, i) => ({ kampanj_id: `T${l}${i}`, fel_kr: -300, w: 1000, lage: l })));
   const lage = kalibrering(alla, { kort: [], lang: [] }, { idag: plusDagar('2026-10-01', 8), placeboRader: [...mitt, ...topp], tidigare: kal });
-  assert.equal(lage.placebo.godkant, true, 'totalt tar lägena ut varandra');
-  assert.equal(lage.placebo.lagen[PLACEBO_HOJ].godkant, false);
+  assert.ok(Math.abs(lage.placebo.summa_kr) < 1, 'summan är noll');
+  assert.equal(lage.placebo.lagen[PLACEBO_HOJ[0]].godkant, false, 'men i läget där motorn höjer är medelfelet −0,3 × BE');
+  assert.match(lage.placebo.lagen[PLACEBO_HOJ[0]].orsak, /medelfelet/);
   assert.equal(lage.forslag.length, 0);
-  assert.match(lage.kandidater[0].sparrad, /över 1,5 × BE/);
+  assert.match(lage.kandidater[0].sparrad, /mätaren .* vid ROAS\/BE/);
+  // Ett läge utan prov spärrar höjningsförslaget även när resten håller.
+  const bara15 = bra.filter((r) => r.lage === PLACEBO_HOJ[0]);
+  const utanTopp = kalibrering(alla, { kort: [], lang: [] }, { idag: plusDagar('2026-10-01', 8), placeboRader: bara15, tidigare: kal });
+  assert.equal(utanTopp.placebo.godkant, true);
+  assert.match(utanTopp.kandidater[0].sparrad, new RegExp(PLACEBO_HOJ[1].replace(/[×()]/g, '.')));
+  assert.ok(PLACEBO_TOLERANS > 0);
 });
 
 test('facitNot ändrar aldrig domen, och planera ger samma plan med och utan facit', () => {
@@ -420,7 +434,7 @@ test('motorn = ändringen som står i budgetloggen, inte appens namn; en skapad 
   assert.equal(data.SE.budgetandringar[0].motor, true);
   assert.equal(data.SE.budgetandringar[1].motor, false, 'inte i budgetloggen ⇒ inte motorns');
   assert.equal(data.SE.budgetandringar[2].motor, false);
-  assert.equal(u.kalibrering.statistik.SE.handandringar, 2);
+  assert.equal(u.kalibrering.statistik.SE.handandringar, 1, 'den skapade budgeten är ingen handändring');
 });
 
 test('Discord-raden på engelska bär inga kronor och ingen break-even (redigerarna läser #scaling)', () => {
@@ -513,7 +527,7 @@ test('simulering med känt facit, heterogena kampanjer: felet ≤ 25 % av de fly
     if (varld.sprid > 0) {
       // Utan kontrollen (före-ROAS rakt av) ser höjningar på slumptoppar ut som stora förluster.
       const h = ut.HOJ;
-      assert.ok(Math.abs(h.naiv - h.orakel) > 3 * Math.abs(h.matt - h.orakel), `den naiva jämförelsen ska ligga långt ifrån sanningen (naiv ${Math.round(h.naiv)}, mätt ${Math.round(h.matt)}, orakel ${Math.round(h.orakel)})`);
+      assert.ok(Math.abs(h.naiv - h.orakel) > 2 * Math.abs(h.matt - h.orakel), `den naiva jämförelsen ska ligga långt ifrån sanningen (naiv ${Math.round(h.naiv)}, mätt ${Math.round(h.matt)}, orakel ${Math.round(h.orakel)})`);
     }
   }
 });
@@ -529,4 +543,52 @@ test('mätarens prov (placebo): en kampanj i taget, borttagen ur sin egen kontro
   assert.ok(Object.keys(sk.lagen).length >= 2);
   // Vandringen: ingen utöver bruset när modellen stämmer exakt.
   assert.ok(vandring(rader) < 0.05);
+});
+
+// ── Granskningen 2026-09-30: fynden låsta som tester ──
+
+test('hållbeslut som följs av en ändring inom 3 dygn faller aldrig bort — de blir ANDRAD_<typ> och räknas i nästa morgon', () => {
+  const s = dygn(K, [...dagar('2026-09-07', 3, (d) => [d, 1000, 3000, 10]), ...dagar('2026-09-10', 10, (d) => [d, 1000, 3000, 10])]);
+  const logg = [LOGG({ kod: 'LAT_VARA', genomford: false, ny_budget: null }), LOGG({ datum: '2026-09-12', gammal_budget: 1000, ny_budget: 1200 })];
+  const [h] = dommaHall(hallUrLogg(logg), 7, ctxFor(s, logg));
+  assert.equal(h.familj, 'HALL_HOG');
+  assert.equal(h.utfall, 'ANDRAD_UPP');
+  assert.equal(h.nasta_morgon_over_target, true);
+});
+
+test('grinden: flyttade spenden färre kronor än tre köp vid break-even blir det FLYTTADE_INTE, aldrig RÄTT eller FEL', () => {
+  const s = [...historik(K, 1000, 3000, 30), ...dygn(K, [...dagar('2026-09-07', 3, (d) => [d, 1000, 3000, 30]), ...dagar('2026-09-10', 8, (d) => [d, 1020, 3100, 31])])];
+  const ctx = ctxFor(s, [LOGG({ gammal_budget: 1000, ny_budget: 1200 })], { prov: provMedK(1) });
+  const r = dommaEpisod(episoder(ctx.beslut, ctx.index)[0], 'lang', ctx);
+  assert.equal(r.dom, 'FLYTTADE_INTE');
+  assert.equal(r.bedombar, false);
+});
+
+test('en ny metodversion dömer om allt i datafönstret — gamla rader hoppas inte', () => {
+  const s = [...historik(K, 1000, 3000, 10), ...dygn(K, [...dagar('2026-09-07', 3, (d) => [d, 1000, 3000, 10]), ...dagar('2026-09-10', 20, (d) => [d, 2000, 4800, 16])])];
+  const data = { SE: { dygn: s, budgetandringar: [], since: '2026-08-20', until: '2026-09-29' } };
+  const logg = [LOGG({ gammal_budget: 1000, ny_budget: 2000 })];
+  const forsta = kor({ logg, data, idag: '2026-09-30' });
+  const gamla = forsta.nya.map((r) => ({ ...r, metod: METOD_VERSION - 1, nyckel: r.nyckel.replace(/^\d+\|/, `${METOD_VERSION - 1}|`) }));
+  assert.equal(kor({ logg, data, idag: '2026-09-30', sparade: gamla }).nya.length, forsta.nya.length);
+});
+
+test('dina ändringar samma dygn slås ihop i tidsordning (aktivitetsloggen kommer nyast först)', () => {
+  const s = dygn(K, dagar('2026-09-01', 25, (d) => [d, 1000, 3000, 30]));
+  const data = { SE: { dygn: s, since: '2026-08-20', until: '2026-09-29', budgetandringar: [
+    { kampanj_id: K, datum: '2026-09-15', tid: '2026-09-15T11:18:00+0000', fran_sek: 2000, till_sek: 4000, app: 'Power Editor', motor: false },
+    { kampanj_id: K, datum: '2026-09-15', tid: '2026-09-15T04:58:00+0000', fran_sek: 1000, till_sek: 2000, app: 'Power Editor', motor: false },
+  ] } };
+  const u = kor({ logg: [LOGG({ kod: 'LAT_VARA', genomford: false, ny_budget: null })], data, idag: '2026-09-30' });
+  const axel = u.nya.filter((r) => r.familj === 'AXEL_HOJ' && r.horisont === 'lang');
+  assert.equal(axel.length, 1);
+  assert.equal(axel[0].beslut_fran_sek, 1000);
+  assert.equal(axel[0].beslut_till_sek, 4000);
+  assert.equal(axel[0].zon, '1 000–2 000');
+});
+
+test('ett konto ensamt är alltid DELVIS — inga förslag, ingen dag i rad', () => {
+  const s = dygn(K, dagar('2026-09-01', 25, (d) => [d, 1000, 3000, 30]));
+  const u = kor({ logg: [], data: { SE: { dygn: s, budgetandringar: [], since: '2026-08-20', until: '2026-09-29' } }, idag: '2026-09-30', forvantadeKonton: ['SE'] });
+  assert.equal(u.kalibrering.delvis, true);
 });

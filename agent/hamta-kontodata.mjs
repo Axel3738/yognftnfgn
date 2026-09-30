@@ -68,8 +68,17 @@ export async function hamtaUrl(url, { backoff = null, deadline = null } = {}) {
   for (let f = 0; ; f++) {
     const t = senast + PAUS_MS - Date.now();
     if (t > 0) await vänta(t);
+    // Med tidsgräns: inget nytt anrop efter gränsen, och varje anrop avbryts vid
+    // den (förut gällde gränsen bara väntan före omförsök — granskningen 2026-09-30).
+    if (Number.isFinite(deadline) && Date.now() >= deadline) throw new Error('Meta: tidsgränsen nådd före nästa anrop');
     senast = Date.now();
-    const res = await fetch(url);
+    let res;
+    try {
+      res = await fetch(url, Number.isFinite(deadline) ? { signal: AbortSignal.timeout(Math.max(1, deadline - Date.now())) } : undefined);
+    } catch (e) {
+      if (e?.name === 'TimeoutError' || e?.name === 'AbortError') throw new Error('Meta: anropet avbröts (tidsgränsen nådd)');
+      throw e;
+    }
     const json = await res.json().catch(() => ({}));
     if (res.ok && !json.error) return json;
     const e = json.error || {};
