@@ -1,0 +1,1640 @@
+{
+ "language_code": "swe",
+ "language_probability": 1.0,
+ "text": "Vad ger man mannen som redan har allt? Jag hittade svaret. Du vet hur svårt det är att hitta en present till honom. Han säger aldrig vad han vill ha och han har redan allt. Men han sitter ute i kylan, i fiskevattnet, i jaktpasset, på sidlinjen. Tänk dig när han öppnar paketet och förstår att du tänkt på honom. Nästa gång han sitter ute i kylan är det du han tänker på. Han blir varm och han vet att någon bryr sig. Det är en present han faktiskt kommer att använda hela vintern. Du får ta åt dig äran och han tackar dig varje gång han sätter sig. Hitta den perfekta presenten. Länken finns här under.",
+ "words": [
+  {
+   "text": "Vad",
+   "start": 0.08,
+   "end": 0.18,
+   "type": "word",
+   "logprob": -0.00014661667228210717
+  },
+  {
+   "text": " ",
+   "start": 0.18,
+   "end": 0.24,
+   "type": "spacing",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": "ger",
+   "start": 0.24,
+   "end": 0.44,
+   "type": "word",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": " ",
+   "start": 0.44,
+   "end": 0.48,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "man",
+   "start": 0.48,
+   "end": 0.64,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 0.64,
+   "end": 0.68,
+   "type": "spacing",
+   "logprob": -2.9802276912960224e-06
+  },
+  {
+   "text": "mannen",
+   "start": 0.68,
+   "end": 1.12,
+   "type": "word",
+   "logprob": -2.9802276912960224e-06
+  },
+  {
+   "text": " ",
+   "start": 1.12,
+   "end": 1.24,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "som",
+   "start": 1.24,
+   "end": 1.34,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 1.34,
+   "end": 1.38,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "redan",
+   "start": 1.38,
+   "end": 1.66,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 1.66,
+   "end": 1.72,
+   "type": "spacing",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": "har",
+   "start": 1.72,
+   "end": 2.04,
+   "type": "word",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": " ",
+   "start": 2.04,
+   "end": 2.14,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "allt?",
+   "start": 2.14,
+   "end": 2.34,
+   "type": "word",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": " ",
+   "start": 2.34,
+   "end": 2.5,
+   "type": "spacing",
+   "logprob": -1.823885577323381e-05
+  },
+  {
+   "text": "Jag",
+   "start": 2.5,
+   "end": 2.6,
+   "type": "word",
+   "logprob": -1.823885577323381e-05
+  },
+  {
+   "text": " ",
+   "start": 2.6,
+   "end": 2.64,
+   "type": "spacing",
+   "logprob": -2.098061486321967e-05
+  },
+  {
+   "text": "hittade",
+   "start": 2.64,
+   "end": 3.02,
+   "type": "word",
+   "logprob": -1.2091102157845463e-05
+  },
+  {
+   "text": " ",
+   "start": 3.02,
+   "end": 3.06,
+   "type": "spacing",
+   "logprob": -0.00020644917094614357
+  },
+  {
+   "text": "svaret.",
+   "start": 3.06,
+   "end": 3.52,
+   "type": "word",
+   "logprob": -0.00015097181000811588
+  },
+  {
+   "text": " ",
+   "start": 3.52,
+   "end": 3.66,
+   "type": "spacing",
+   "logprob": -4.351044481154531e-05
+  },
+  {
+   "text": "Du",
+   "start": 3.66,
+   "end": 3.72,
+   "type": "word",
+   "logprob": -4.351044481154531e-05
+  },
+  {
+   "text": " ",
+   "start": 3.72,
+   "end": 3.76,
+   "type": "spacing",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": "vet",
+   "start": 3.76,
+   "end": 3.92,
+   "type": "word",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": " ",
+   "start": 3.92,
+   "end": 3.94,
+   "type": "spacing",
+   "logprob": -0.00018189683032687753
+  },
+  {
+   "text": "hur",
+   "start": 3.94,
+   "end": 4.04,
+   "type": "word",
+   "logprob": -0.00018189683032687753
+  },
+  {
+   "text": " ",
+   "start": 4.04,
+   "end": 4.08,
+   "type": "spacing",
+   "logprob": -2.0265558760002023e-06
+  },
+  {
+   "text": "svårt",
+   "start": 4.08,
+   "end": 4.36,
+   "type": "word",
+   "logprob": -3.95773940908839e-06
+  },
+  {
+   "text": " ",
+   "start": 4.36,
+   "end": 4.38,
+   "type": "spacing",
+   "logprob": -6.782778655178845e-05
+  },
+  {
+   "text": "det",
+   "start": 4.38,
+   "end": 4.42,
+   "type": "word",
+   "logprob": -6.782778655178845e-05
+  },
+  {
+   "text": " ",
+   "start": 4.42,
+   "end": 4.44,
+   "type": "spacing",
+   "logprob": -1.9073304429184645e-05
+  },
+  {
+   "text": "är",
+   "start": 4.44,
+   "end": 4.46,
+   "type": "word",
+   "logprob": -1.9073304429184645e-05
+  },
+  {
+   "text": " ",
+   "start": 4.46,
+   "end": 4.5,
+   "type": "spacing",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": "att",
+   "start": 4.5,
+   "end": 4.54,
+   "type": "word",
+   "logprob": -1.0728830375228426e-06
+  },
+  {
+   "text": " ",
+   "start": 4.54,
+   "end": 4.58,
+   "type": "spacing",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": "hitta",
+   "start": 4.58,
+   "end": 4.76,
+   "type": "word",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": " ",
+   "start": 4.76,
+   "end": 4.78,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "en",
+   "start": 4.78,
+   "end": 4.88,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 4.88,
+   "end": 4.9,
+   "type": "spacing",
+   "logprob": -3.528532761265524e-05
+  },
+  {
+   "text": "present",
+   "start": 4.9,
+   "end": 5.28,
+   "type": "word",
+   "logprob": -3.528532761265524e-05
+  },
+  {
+   "text": " ",
+   "start": 5.28,
+   "end": 5.28,
+   "type": "spacing",
+   "logprob": -6.079655122448457e-06
+  },
+  {
+   "text": "till",
+   "start": 5.28,
+   "end": 5.34,
+   "type": "word",
+   "logprob": -6.079655122448457e-06
+  },
+  {
+   "text": " ",
+   "start": 5.34,
+   "end": 5.38,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "honom.",
+   "start": 5.38,
+   "end": 5.64,
+   "type": "word",
+   "logprob": -2.920602128142491e-06
+  },
+  {
+   "text": " ",
+   "start": 5.64,
+   "end": 5.66,
+   "type": "spacing",
+   "logprob": -5.8412379075889476e-06
+  },
+  {
+   "text": "Han",
+   "start": 5.66,
+   "end": 5.76,
+   "type": "word",
+   "logprob": -5.8412379075889476e-06
+  },
+  {
+   "text": " ",
+   "start": 5.76,
+   "end": 5.8,
+   "type": "spacing",
+   "logprob": -1.9073468138230965e-06
+  },
+  {
+   "text": "säger",
+   "start": 5.8,
+   "end": 5.96,
+   "type": "word",
+   "logprob": -1.9073468138230965e-06
+  },
+  {
+   "text": " ",
+   "start": 5.96,
+   "end": 6.1,
+   "type": "spacing",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": "aldrig",
+   "start": 6.1,
+   "end": 6.26,
+   "type": "word",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": " ",
+   "start": 6.26,
+   "end": 6.28,
+   "type": "spacing",
+   "logprob": -5.722029527532868e-06
+  },
+  {
+   "text": "vad",
+   "start": 6.28,
+   "end": 6.36,
+   "type": "word",
+   "logprob": -5.722029527532868e-06
+  },
+  {
+   "text": " ",
+   "start": 6.36,
+   "end": 6.38,
+   "type": "spacing",
+   "logprob": -1.6212332411669195e-05
+  },
+  {
+   "text": "han",
+   "start": 6.38,
+   "end": 6.44,
+   "type": "word",
+   "logprob": -1.6212332411669195e-05
+  },
+  {
+   "text": " ",
+   "start": 6.44,
+   "end": 6.48,
+   "type": "spacing",
+   "logprob": -1.9550132492440753e-05
+  },
+  {
+   "text": "vill",
+   "start": 6.48,
+   "end": 6.6,
+   "type": "word",
+   "logprob": -1.9550132492440753e-05
+  },
+  {
+   "text": " ",
+   "start": 6.6,
+   "end": 6.64,
+   "type": "spacing",
+   "logprob": -1.823885577323381e-05
+  },
+  {
+   "text": "ha",
+   "start": 6.64,
+   "end": 6.78,
+   "type": "word",
+   "logprob": -1.823885577323381e-05
+  },
+  {
+   "text": " ",
+   "start": 6.78,
+   "end": 6.9,
+   "type": "spacing",
+   "logprob": -3.576272320060525e-06
+  },
+  {
+   "text": "och",
+   "start": 6.9,
+   "end": 6.96,
+   "type": "word",
+   "logprob": -3.576272320060525e-06
+  },
+  {
+   "text": " ",
+   "start": 6.96,
+   "end": 6.98,
+   "type": "spacing",
+   "logprob": -7.867782187531702e-06
+  },
+  {
+   "text": "han",
+   "start": 6.98,
+   "end": 7.08,
+   "type": "word",
+   "logprob": -7.867782187531702e-06
+  },
+  {
+   "text": " ",
+   "start": 7.08,
+   "end": 7.12,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "har",
+   "start": 7.12,
+   "end": 7.32,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 7.32,
+   "end": 7.38,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "redan",
+   "start": 7.38,
+   "end": 7.6,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 7.6,
+   "end": 7.68,
+   "type": "spacing",
+   "logprob": -2.3841855067985307e-07
+  },
+  {
+   "text": "allt.",
+   "start": 7.68,
+   "end": 7.78,
+   "type": "word",
+   "logprob": -3.671615900202596e-06
+  },
+  {
+   "text": " ",
+   "start": 7.78,
+   "end": 7.82,
+   "type": "spacing",
+   "logprob": -4.303362584323622e-05
+  },
+  {
+   "text": "Men",
+   "start": 7.82,
+   "end": 7.86,
+   "type": "word",
+   "logprob": -4.303362584323622e-05
+  },
+  {
+   "text": " ",
+   "start": 7.86,
+   "end": 7.88,
+   "type": "spacing",
+   "logprob": -8.737658936297521e-05
+  },
+  {
+   "text": "han",
+   "start": 7.88,
+   "end": 7.96,
+   "type": "word",
+   "logprob": -8.737658936297521e-05
+  },
+  {
+   "text": " ",
+   "start": 7.96,
+   "end": 8.0,
+   "type": "spacing",
+   "logprob": -3.4689302992774174e-05
+  },
+  {
+   "text": "sitter",
+   "start": 8.0,
+   "end": 8.26,
+   "type": "word",
+   "logprob": -3.4689302992774174e-05
+  },
+  {
+   "text": " ",
+   "start": 8.26,
+   "end": 8.3,
+   "type": "spacing",
+   "logprob": -4.8874615458771586e-05
+  },
+  {
+   "text": "ute",
+   "start": 8.3,
+   "end": 8.4,
+   "type": "word",
+   "logprob": -4.8874615458771586e-05
+  },
+  {
+   "text": " ",
+   "start": 8.4,
+   "end": 8.44,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "i",
+   "start": 8.44,
+   "end": 8.52,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 8.52,
+   "end": 8.54,
+   "type": "spacing",
+   "logprob": -6.6756979322235566e-06
+  },
+  {
+   "text": "kylan,",
+   "start": 8.56,
+   "end": 8.92,
+   "type": "word",
+   "logprob": -0.00041879068946097203
+  },
+  {
+   "text": " ",
+   "start": 8.92,
+   "end": 9.0,
+   "type": "spacing",
+   "logprob": -0.0009116546134464443
+  },
+  {
+   "text": "i",
+   "start": 9.0,
+   "end": 9.08,
+   "type": "word",
+   "logprob": -0.0009116546134464443
+  },
+  {
+   "text": " ",
+   "start": 9.08,
+   "end": 9.12,
+   "type": "spacing",
+   "logprob": -0.003819909179583192
+  },
+  {
+   "text": "fiskevattnet,",
+   "start": 9.12,
+   "end": 9.76,
+   "type": "word",
+   "logprob": -0.10105864431303556
+  },
+  {
+   "text": " ",
+   "start": 9.76,
+   "end": 9.84,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "i",
+   "start": 9.84,
+   "end": 9.86,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 9.86,
+   "end": 9.9,
+   "type": "spacing",
+   "logprob": -9.059865078597795e-06
+  },
+  {
+   "text": "jaktpasset,",
+   "start": 9.9,
+   "end": 10.5,
+   "type": "word",
+   "logprob": -0.00020051866580285025
+  },
+  {
+   "text": " ",
+   "start": 10.5,
+   "end": 10.56,
+   "type": "spacing",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": "på",
+   "start": 10.56,
+   "end": 10.66,
+   "type": "word",
+   "logprob": -8.344646857949556e-07
+  },
+  {
+   "text": " ",
+   "start": 10.66,
+   "end": 10.7,
+   "type": "spacing",
+   "logprob": -4.005352093372494e-05
+  },
+  {
+   "text": "sidlinjen.",
+   "start": 10.7,
+   "end": 11.26,
+   "type": "word",
+   "logprob": -0.0013251817174477765
+  },
+  {
+   "text": " ",
+   "start": 11.26,
+   "end": 11.34,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "Tänk",
+   "start": 11.34,
+   "end": 11.48,
+   "type": "word",
+   "logprob": -0.00037499834431287127
+  },
+  {
+   "text": " ",
+   "start": 11.48,
+   "end": 11.56,
+   "type": "spacing",
+   "logprob": -4.0531076592742465e-06
+  },
+  {
+   "text": "dig",
+   "start": 11.56,
+   "end": 11.66,
+   "type": "word",
+   "logprob": -4.0531076592742465e-06
+  },
+  {
+   "text": " ",
+   "start": 11.66,
+   "end": 11.68,
+   "type": "spacing",
+   "logprob": -6.747018051100895e-05
+  },
+  {
+   "text": "när",
+   "start": 11.68,
+   "end": 11.74,
+   "type": "word",
+   "logprob": -6.747018051100895e-05
+  },
+  {
+   "text": " ",
+   "start": 11.74,
+   "end": 11.76,
+   "type": "spacing",
+   "logprob": -2.3007127310847864e-05
+  },
+  {
+   "text": "han",
+   "start": 11.76,
+   "end": 11.84,
+   "type": "word",
+   "logprob": -2.3007127310847864e-05
+  },
+  {
+   "text": " ",
+   "start": 11.84,
+   "end": 11.88,
+   "type": "spacing",
+   "logprob": -2.145764938177308e-06
+  },
+  {
+   "text": "öppnar",
+   "start": 11.88,
+   "end": 12.12,
+   "type": "word",
+   "logprob": -3.2186451335292077e-06
+  },
+  {
+   "text": " ",
+   "start": 12.12,
+   "end": 12.16,
+   "type": "spacing",
+   "logprob": -0.00021646064124070108
+  },
+  {
+   "text": "paketet",
+   "start": 12.16,
+   "end": 12.64,
+   "type": "word",
+   "logprob": -9.726472178174715e-05
+  },
+  {
+   "text": " ",
+   "start": 12.64,
+   "end": 12.68,
+   "type": "spacing",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": "och",
+   "start": 12.68,
+   "end": 12.74,
+   "type": "word",
+   "logprob": -1.4305104514278355e-06
+  },
+  {
+   "text": " ",
+   "start": 12.74,
+   "end": 12.76,
+   "type": "spacing",
+   "logprob": -1.680836794548668e-05
+  },
+  {
+   "text": "förstår",
+   "start": 12.76,
+   "end": 13.08,
+   "type": "word",
+   "logprob": -1.2074096689827587e-05
+  },
+  {
+   "text": " ",
+   "start": 13.08,
+   "end": 13.12,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "att",
+   "start": 13.12,
+   "end": 13.2,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 13.2,
+   "end": 13.22,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "du",
+   "start": 13.22,
+   "end": 13.32,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 13.32,
+   "end": 13.36,
+   "type": "spacing",
+   "logprob": -0.0009704885887913406
+  },
+  {
+   "text": "tänkt",
+   "start": 13.36,
+   "end": 13.6,
+   "type": "word",
+   "logprob": -0.0005840097634063568
+  },
+  {
+   "text": " ",
+   "start": 13.6,
+   "end": 13.64,
+   "type": "spacing",
+   "logprob": -1.1801649634435307e-05
+  },
+  {
+   "text": "på",
+   "start": 13.64,
+   "end": 13.7,
+   "type": "word",
+   "logprob": -1.1801649634435307e-05
+  },
+  {
+   "text": " ",
+   "start": 13.7,
+   "end": 13.72,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "honom.",
+   "start": 13.72,
+   "end": 14.0,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 14.0,
+   "end": 14.04,
+   "type": "spacing",
+   "logprob": -2.992108420585282e-05
+  },
+  {
+   "text": "Nästa",
+   "start": 14.04,
+   "end": 14.26,
+   "type": "word",
+   "logprob": -1.9478571994113734e-05
+  },
+  {
+   "text": " ",
+   "start": 14.26,
+   "end": 14.3,
+   "type": "spacing",
+   "logprob": -4.792098479811102e-05
+  },
+  {
+   "text": "gång",
+   "start": 14.3,
+   "end": 14.42,
+   "type": "word",
+   "logprob": -4.792098479811102e-05
+  },
+  {
+   "text": " ",
+   "start": 14.42,
+   "end": 14.46,
+   "type": "spacing",
+   "logprob": -3.6954811548639555e-06
+  },
+  {
+   "text": "han",
+   "start": 14.46,
+   "end": 14.56,
+   "type": "word",
+   "logprob": -3.6954811548639555e-06
+  },
+  {
+   "text": " ",
+   "start": 14.56,
+   "end": 14.6,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "sitter",
+   "start": 14.6,
+   "end": 14.84,
+   "type": "word",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": " ",
+   "start": 14.84,
+   "end": 14.88,
+   "type": "spacing",
+   "logprob": -3.266281055402942e-05
+  },
+  {
+   "text": "ute",
+   "start": 14.88,
+   "end": 14.98,
+   "type": "word",
+   "logprob": -3.266281055402942e-05
+  },
+  {
+   "text": " ",
+   "start": 14.98,
+   "end": 15.02,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "i",
+   "start": 15.02,
+   "end": 15.08,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 15.08,
+   "end": 15.12,
+   "type": "spacing",
+   "logprob": -5.125986263010418e-06
+  },
+  {
+   "text": "kylan",
+   "start": 15.12,
+   "end": 15.52,
+   "type": "word",
+   "logprob": -0.00026448203452673625
+  },
+  {
+   "text": " ",
+   "start": 15.52,
+   "end": 15.6,
+   "type": "spacing",
+   "logprob": -2.861018856492592e-06
+  },
+  {
+   "text": "är",
+   "start": 15.6,
+   "end": 15.64,
+   "type": "word",
+   "logprob": -2.861018856492592e-06
+  },
+  {
+   "text": " ",
+   "start": 15.64,
+   "end": 15.68,
+   "type": "spacing",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": "det",
+   "start": 15.68,
+   "end": 15.76,
+   "type": "word",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": " ",
+   "start": 15.76,
+   "end": 15.8,
+   "type": "spacing",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": "du",
+   "start": 15.8,
+   "end": 15.94,
+   "type": "word",
+   "logprob": -9.536738616588991e-07
+  },
+  {
+   "text": " ",
+   "start": 15.94,
+   "end": 16.0,
+   "type": "spacing",
+   "logprob": -1.8596476365928538e-05
+  },
+  {
+   "text": "han",
+   "start": 16.0,
+   "end": 16.1,
+   "type": "word",
+   "logprob": -1.8596476365928538e-05
+  },
+  {
+   "text": " ",
+   "start": 16.1,
+   "end": 16.14,
+   "type": "spacing",
+   "logprob": -2.50339189733495e-06
+  },
+  {
+   "text": "tänker",
+   "start": 16.14,
+   "end": 16.46,
+   "type": "word",
+   "logprob": -1.311300589890152e-06
+  },
+  {
+   "text": " ",
+   "start": 16.46,
+   "end": 16.48,
+   "type": "spacing",
+   "logprob": -2.622600959512056e-06
+  },
+  {
+   "text": "på.",
+   "start": 16.48,
+   "end": 16.62,
+   "type": "word",
+   "logprob": -2.344446556890034e-06
+  },
+  {
+   "text": " ",
+   "start": 16.62,
+   "end": 16.64,
+   "type": "spacing",
+   "logprob": -2.3841830625315197e-06
+  },
+  {
+   "text": "Han",
+   "start": 16.64,
+   "end": 16.72,
+   "type": "word",
+   "logprob": -2.3841830625315197e-06
+  },
+  {
+   "text": " ",
+   "start": 16.72,
+   "end": 16.76,
+   "type": "spacing",
+   "logprob": -0.0019452712731435895
+  },
+  {
+   "text": "blir",
+   "start": 16.76,
+   "end": 16.9,
+   "type": "word",
+   "logprob": -0.0019452712731435895
+  },
+  {
+   "text": " ",
+   "start": 16.9,
+   "end": 16.96,
+   "type": "spacing",
+   "logprob": -0.00021443451987579465
+  },
+  {
+   "text": "varm",
+   "start": 16.96,
+   "end": 17.26,
+   "type": "word",
+   "logprob": -0.00021443451987579465
+  },
+  {
+   "text": " ",
+   "start": 17.26,
+   "end": 17.34,
+   "type": "spacing",
+   "logprob": -8.34461570775602e-06
+  },
+  {
+   "text": "och",
+   "start": 17.34,
+   "end": 17.38,
+   "type": "word",
+   "logprob": -8.34461570775602e-06
+  },
+  {
+   "text": " ",
+   "start": 17.38,
+   "end": 17.4,
+   "type": "spacing",
+   "logprob": -6.115249561844394e-05
+  },
+  {
+   "text": "han",
+   "start": 17.4,
+   "end": 17.48,
+   "type": "word",
+   "logprob": -6.115249561844394e-05
+  },
+  {
+   "text": " ",
+   "start": 17.48,
+   "end": 17.52,
+   "type": "spacing",
+   "logprob": -2.5033637939486653e-05
+  },
+  {
+   "text": "vet",
+   "start": 17.52,
+   "end": 17.7,
+   "type": "word",
+   "logprob": -2.5033637939486653e-05
+  },
+  {
+   "text": " ",
+   "start": 17.7,
+   "end": 17.74,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "att",
+   "start": 17.74,
+   "end": 17.82,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 17.82,
+   "end": 17.86,
+   "type": "spacing",
+   "logprob": -4.8397800128441304e-05
+  },
+  {
+   "text": "någon",
+   "start": 17.86,
+   "end": 18.04,
+   "type": "word",
+   "logprob": -4.8397800128441304e-05
+  },
+  {
+   "text": " ",
+   "start": 18.04,
+   "end": 18.08,
+   "type": "spacing",
+   "logprob": -7.867782187531702e-06
+  },
+  {
+   "text": "bryr",
+   "start": 18.08,
+   "end": 18.3,
+   "type": "word",
+   "logprob": -6.0200459017778485e-06
+  },
+  {
+   "text": " ",
+   "start": 18.3,
+   "end": 18.36,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "sig.",
+   "start": 18.36,
+   "end": 18.5,
+   "type": "word",
+   "logprob": -2.6822085885669367e-07
+  },
+  {
+   "text": " ",
+   "start": 18.5,
+   "end": 18.56,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "Det",
+   "start": 18.56,
+   "end": 18.6,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 18.6,
+   "end": 18.6,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "är",
+   "start": 18.6,
+   "end": 18.62,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 18.62,
+   "end": 18.64,
+   "type": "spacing",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": "en",
+   "start": 18.64,
+   "end": 18.72,
+   "type": "word",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": " ",
+   "start": 18.72,
+   "end": 18.76,
+   "type": "spacing",
+   "logprob": -1.3232143828645349e-05
+  },
+  {
+   "text": "present",
+   "start": 18.76,
+   "end": 19.1,
+   "type": "word",
+   "logprob": -1.3232143828645349e-05
+  },
+  {
+   "text": " ",
+   "start": 19.1,
+   "end": 19.14,
+   "type": "spacing",
+   "logprob": -3.242440288886428e-05
+  },
+  {
+   "text": "han",
+   "start": 19.14,
+   "end": 19.24,
+   "type": "word",
+   "logprob": -3.242440288886428e-05
+  },
+  {
+   "text": " ",
+   "start": 19.24,
+   "end": 19.28,
+   "type": "spacing",
+   "logprob": -0.00017617580306250602
+  },
+  {
+   "text": "faktiskt",
+   "start": 19.28,
+   "end": 19.58,
+   "type": "word",
+   "logprob": -9.017405977829185e-05
+  },
+  {
+   "text": " ",
+   "start": 19.58,
+   "end": 19.62,
+   "type": "spacing",
+   "logprob": -1.2040065485052764e-05
+  },
+  {
+   "text": "kommer",
+   "start": 19.62,
+   "end": 19.76,
+   "type": "word",
+   "logprob": -1.2040065485052764e-05
+  },
+  {
+   "text": " ",
+   "start": 19.76,
+   "end": 19.8,
+   "type": "spacing",
+   "logprob": -5.483612312673358e-06
+  },
+  {
+   "text": "att",
+   "start": 19.8,
+   "end": 19.9,
+   "type": "word",
+   "logprob": -5.483612312673358e-06
+  },
+  {
+   "text": " ",
+   "start": 19.9,
+   "end": 19.98,
+   "type": "spacing",
+   "logprob": -6.353653589030728e-05
+  },
+  {
+   "text": "använda",
+   "start": 19.98,
+   "end": 20.36,
+   "type": "word",
+   "logprob": -6.353653589030728e-05
+  },
+  {
+   "text": " ",
+   "start": 20.36,
+   "end": 20.46,
+   "type": "spacing",
+   "logprob": -0.00043132537393830717
+  },
+  {
+   "text": "hela",
+   "start": 20.46,
+   "end": 20.7,
+   "type": "word",
+   "logprob": -0.00043132537393830717
+  },
+  {
+   "text": " ",
+   "start": 20.7,
+   "end": 20.74,
+   "type": "spacing",
+   "logprob": -0.0002616301644593477
+  },
+  {
+   "text": "vintern.",
+   "start": 20.74,
+   "end": 21.14,
+   "type": "word",
+   "logprob": -9.902028165242882e-05
+  },
+  {
+   "text": " ",
+   "start": 21.14,
+   "end": 21.2,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "Du",
+   "start": 21.2,
+   "end": 21.26,
+   "type": "word",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": " ",
+   "start": 21.26,
+   "end": 21.3,
+   "type": "spacing",
+   "logprob": -0.00011586471373448148
+  },
+  {
+   "text": "får",
+   "start": 21.3,
+   "end": 21.4,
+   "type": "word",
+   "logprob": -0.00011586471373448148
+  },
+  {
+   "text": " ",
+   "start": 21.4,
+   "end": 21.44,
+   "type": "spacing",
+   "logprob": -5.125986263010418e-06
+  },
+  {
+   "text": "ta",
+   "start": 21.44,
+   "end": 21.54,
+   "type": "word",
+   "logprob": -5.125986263010418e-06
+  },
+  {
+   "text": " ",
+   "start": 21.54,
+   "end": 21.58,
+   "type": "spacing",
+   "logprob": -1.0967194612021558e-05
+  },
+  {
+   "text": "åt",
+   "start": 21.58,
+   "end": 21.7,
+   "type": "word",
+   "logprob": -1.0967194612021558e-05
+  },
+  {
+   "text": " ",
+   "start": 21.7,
+   "end": 21.72,
+   "type": "spacing",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": "dig",
+   "start": 21.72,
+   "end": 21.82,
+   "type": "word",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": " ",
+   "start": 21.82,
+   "end": 21.9,
+   "type": "spacing",
+   "logprob": -0.00016973962192423642
+  },
+  {
+   "text": "äran",
+   "start": 21.9,
+   "end": 22.16,
+   "type": "word",
+   "logprob": -8.504862486802267e-05
+  },
+  {
+   "text": " ",
+   "start": 22.16,
+   "end": 22.24,
+   "type": "spacing",
+   "logprob": -2.0265558760002023e-06
+  },
+  {
+   "text": "och",
+   "start": 22.24,
+   "end": 22.28,
+   "type": "word",
+   "logprob": -2.0265558760002023e-06
+  },
+  {
+   "text": " ",
+   "start": 22.28,
+   "end": 22.32,
+   "type": "spacing",
+   "logprob": -6.556489552167477e-06
+  },
+  {
+   "text": "han",
+   "start": 22.32,
+   "end": 22.42,
+   "type": "word",
+   "logprob": -6.556489552167477e-06
+  },
+  {
+   "text": " ",
+   "start": 22.42,
+   "end": 22.46,
+   "type": "spacing",
+   "logprob": -7.343022298300639e-05
+  },
+  {
+   "text": "tackar",
+   "start": 22.46,
+   "end": 22.72,
+   "type": "word",
+   "logprob": -4.899321841615271e-05
+  },
+  {
+   "text": " ",
+   "start": 22.72,
+   "end": 22.76,
+   "type": "spacing",
+   "logprob": -5.364403477869928e-06
+  },
+  {
+   "text": "dig",
+   "start": 22.76,
+   "end": 22.88,
+   "type": "word",
+   "logprob": -5.364403477869928e-06
+  },
+  {
+   "text": " ",
+   "start": 22.88,
+   "end": 22.92,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "varje",
+   "start": 22.92,
+   "end": 23.12,
+   "type": "word",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": " ",
+   "start": 23.12,
+   "end": 23.16,
+   "type": "spacing",
+   "logprob": -7.271740287251305e-06
+  },
+  {
+   "text": "gång",
+   "start": 23.16,
+   "end": 23.3,
+   "type": "word",
+   "logprob": -7.271740287251305e-06
+  },
+  {
+   "text": " ",
+   "start": 23.3,
+   "end": 23.34,
+   "type": "spacing",
+   "logprob": -2.3364747903542593e-05
+  },
+  {
+   "text": "han",
+   "start": 23.34,
+   "end": 23.44,
+   "type": "word",
+   "logprob": -2.3364747903542593e-05
+  },
+  {
+   "text": " ",
+   "start": 23.44,
+   "end": 23.48,
+   "type": "spacing",
+   "logprob": -2.3841830625315197e-06
+  },
+  {
+   "text": "sätter",
+   "start": 23.48,
+   "end": 23.74,
+   "type": "word",
+   "logprob": -8.940690747749613e-07
+  },
+  {
+   "text": " ",
+   "start": 23.74,
+   "end": 23.8,
+   "type": "spacing",
+   "logprob": -9.059865078597795e-06
+  },
+  {
+   "text": "sig.",
+   "start": 23.8,
+   "end": 23.96,
+   "type": "word",
+   "logprob": -7.539955731772352e-06
+  },
+  {
+   "text": " ",
+   "start": 23.96,
+   "end": 24.0,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "Hitta",
+   "start": 24.0,
+   "end": 24.22,
+   "type": "word",
+   "logprob": -2.57491681168176e-06
+  },
+  {
+   "text": " ",
+   "start": 24.22,
+   "end": 24.26,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "den",
+   "start": 24.26,
+   "end": 24.38,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 24.38,
+   "end": 24.4,
+   "type": "spacing",
+   "logprob": -0.000998594332486391
+  },
+  {
+   "text": "perfekta",
+   "start": 24.4,
+   "end": 24.8,
+   "type": "word",
+   "logprob": -0.0007490053540024633
+  },
+  {
+   "text": " ",
+   "start": 24.8,
+   "end": 24.88,
+   "type": "spacing",
+   "logprob": -0.0005085367010906339
+  },
+  {
+   "text": "presenten.",
+   "start": 24.88,
+   "end": 25.42,
+   "type": "word",
+   "logprob": -0.000356285634438791
+  },
+  {
+   "text": " ",
+   "start": 25.42,
+   "end": 25.48,
+   "type": "spacing",
+   "logprob": -2.038458114839159e-05
+  },
+  {
+   "text": "Länken",
+   "start": 25.48,
+   "end": 25.82,
+   "type": "word",
+   "logprob": -0.0008371368015408128
+  },
+  {
+   "text": " ",
+   "start": 25.82,
+   "end": 25.86,
+   "type": "spacing",
+   "logprob": -1.645074735279195e-05
+  },
+  {
+   "text": "finns",
+   "start": 25.86,
+   "end": 26.04,
+   "type": "word",
+   "logprob": -1.645074735279195e-05
+  },
+  {
+   "text": " ",
+   "start": 26.04,
+   "end": 26.08,
+   "type": "spacing",
+   "logprob": -0.00012587709352374077
+  },
+  {
+   "text": "här",
+   "start": 26.08,
+   "end": 26.2,
+   "type": "word",
+   "logprob": -0.00012587709352374077
+  },
+  {
+   "text": " ",
+   "start": 26.2,
+   "end": 26.26,
+   "type": "spacing",
+   "logprob": -0.00013934595335740596
+  },
+  {
+   "text": "under.",
+   "start": 26.26,
+   "end": 26.5,
+   "type": "word",
+   "logprob": -0.0001303069293498993
+  }
+ ],
+ "transcription_id": "vUuJUNzDlu0NzTauKi80",
+ "audio_duration_secs": 26.5404375
+}

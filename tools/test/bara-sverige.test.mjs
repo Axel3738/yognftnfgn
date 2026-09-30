@@ -30,3 +30,15 @@ test('speglingen stoppar en FD-rad även när allt annat är grönt', () => {
   const annan = bedom({ ...rad, namn: 'Takoverdrag_GT_2_H1', spegel: 'CaraShellRoof_GT_102_H1' });
   assert.equal(annan.se.ok, true);
 });
+
+test('Norge är mätt och undantaget — samma farsdag, samma rea (2026-09-29)', () => {
+  assert.equal(baraSverige('Rodholder_FD_2_1', 'NO'), null);
+  assert.equal(baraSverige('Rodholder_FD_2_1', 'no'), null, 'gemener ska funka');
+});
+
+test('en omätt marknad stoppas fortfarande', () => {
+  for (const m of ['DK', 'US', 'GB', 'CA', 'FI']) {
+    assert.match(baraSverige('Rodholder_FD_2_1', m) ?? '', /bara Sverige/, m);
+  }
+  assert.match(baraSverige('Rodholder_FD_2_1') ?? '', /bara Sverige/, 'utan marknad ⇒ stopp');
+});

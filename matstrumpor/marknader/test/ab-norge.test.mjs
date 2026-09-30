@@ -10,6 +10,9 @@ test('ordern delas på landningssidan: .no är B, .se/nb är A, kassalänk och s
   assert.equal(klassaOrder(order('https://www.matstrumpor.no/')), 'B');
   assert.equal(klassaOrder(order('https://matstrumpor.se/nb/products/sushi-strumpor?country=NO')), 'A');
   assert.equal(klassaOrder(order('https://matstrumpor.se/nb')), 'A');
+  // A:s adress sedan 2026-09-29 kväll (allt utland via .com); .com utan /nb är inte Norge-testet.
+  assert.equal(klassaOrder(order('https://matstrumpor.com/nb/products/sushi-strumpor?country=NO')), 'A');
+  assert.equal(klassaOrder(order('https://matstrumpor.com/products/sushi-strumpor?country=US')), null);
   assert.equal(klassaOrder(order('https://matstrumpor.se/products/sushi-strumpor')), null);
   assert.equal(klassaOrder(order('https://matstrumpor.se/nbx/sida')), null);
   assert.equal(klassaOrder(order('https://matstrumpor.no/checkouts/cn/abc/nb-no', 'https://matstrumpor.no/checkouts/cn/abc')), null);

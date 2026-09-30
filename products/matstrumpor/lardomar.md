@@ -603,3 +603,27 @@ Sorterad på spend första veckan. `okänd` = Meta gav inget tal, aldrig 0.
 | MATSTRUMP_sushi_gift_ugc_s003h2_v2 | 2026-08-27 | INGEN_LEVERANS | 0 kr | 0 | okänd | okänd | okänd | okänd | okänd kr | 0 | under grinden |
 | MATSTRUMP_sushi_gift_ugc_s004h2_v2 | 2026-08-27 | INGEN_LEVERANS | 0 kr | 0 | okänd | 33.3 % | 100.0 % | okänd | 0 kr | 0 | under grinden |
 | MATSTRUMP_sushi_gift_ugc_s003h1_v2 | 2026-08-27 | INGEN_LEVERANS | 0 kr | 0 | okänd | 100.0 % | okänd | okänd | 0 kr | 0 | under grinden |
+
+
+## 2026-09-30, rond 4 — L-batch-1-svalt-adset: Gilz batch #1 fick ingen leverans, och orsaken är adsetet
+
+**Etiketterade i dag (11, egna första veckan 21–27/9):** 044h1/h2/h3, 045h1/h2/h3, 046v1/v2, 047h1/h2/h3. Tio `INGEN_LEVERANS`, en `LOSER` (047h2, 10 kr). **35 kr tillsammans på sju dygn, 0 köp.** Innehållet går inte att döma: ingen av dem visades tillräckligt.
+
+**Orsaken (mätt 2026-09-30, last_14d per adset i `MATSTRUMP_SALES_20260826`):**
+
+| Adset | Spend 14 d | Köp | Annonser |
+|---|---|---|---|
+| 09-17 UGC | 60 863 kr | 316 | 5 |
+| nya16 | 5 588 kr | 20 | 34 |
+| bilder | 3 787 kr | 13 | 11 |
+| nya8 | 675 kr | 1 | 8 |
+| batch03_bilder | 423 kr | 3 | 10 |
+| alla17 | 196 kr | 0 | 17 |
+| jul_video | 30 kr | 0 | 11 |
+| nya20 | 3 kr | 0 | 20 |
+
+Kampanjen är CBO. Meta lägger 85 % av budgeten i adsetet där Nathalie sitter. Uppladdaren skickar alla nya videor till `nya16` eller `jul_video`, som tillsammans fick 8 % på 45 annonser. **Katarinas två annonser laddades upp i `09-17 UGC` och fick 284 och 296 kr på sex dygn**, alltså ungefär 50 gånger mer per annons än batch #1. 20 annonser uppladdade sedan 24/9 fick 640 kr tillsammans.
+
+**Regeln framåt:** en ny video som ska testas mot Nathalie hamnar i `09-17 UGC`, annars testas den inte alls. Det är ett routingbeslut i uppladdaren och Axels beslut (FORSLAG `ROUTING` 2026-09-30). Tills dess ska briefer bygga på Nathalie-kroppen: de har bäst chans att få leverans även utanför adsetet, och de lär oss något om den enda vinnaren.
+
+**Två kundsignaler kvar att ta hand om:** "Material?" (kommentar 27/9) har inget svar på produktsidan (mätt 2026-09-30: inget materialord i texten). Ingen annons får påstå material förrän sidan gör det.

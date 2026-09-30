@@ -578,15 +578,16 @@ Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Tv
   `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
   det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
   `trustpilotMejl()` läser — tills Axel lagt vidarebefordran .se → .com hos Loopia.
-- ⚠️ **`order_delivered` har inte fyrat en enda gång än — för tidigt att döma:** 0 inrullade i alla
-  12 `FLOW_levererat_*` och 0 fulfillments `DELIVERED` i Shopify efter aktiveringen. CaraShells
-  ordrar 1–16/9 (82 st, alla under 20 dagar gamla) står 75 `IN_TRANSIT` / 4 `DELIVERED` (alla
-  norska, 25–26/9, före aktiveringen) / 2 `CONFIRMED`; 46 av 46 svenska bär sista skanningen
-  "Paketet är på väg (Mainland China)". Spårningsminnet: 5 levererade av 415 paket (Bäverbutikens:
-  1 283 av 2 717). Första svenska leveranserna väntas den här veckan; sessionens check-in ons 30/9
-  08:40 CEST mäter Shopify `DELIVERED` mot Spoks inrullade. Fyrar händelsen inte trots levererade
-  ordrar byggs F14 (och de två monteringsflödena, samma trigger) om på `order_created` + 20 dagar,
-  som Bäverbutikens tipsflöden — Axels beslut, frågas då.
+- ✅ **`order_delivered` fyrar i Spoks, mätt 2026-09-30 08:45 CEST** (Shopify `DELIVERED` med
+  `deliveredAt` efter aktiveringen 27/9 06:49 UTC mot `get_flows`): 17 levererade i Shopify, NO 9
+  (7 takskyddet + 2 termoskyddet), US 3, NZ 2, CA 1, GB 1, FI 1. Spoks inrullade (pågående +
+  klara) stämmer på kontakten: `FLOW_levererat_takskyddet_NB` 3 + 4 = 7,
+  `_termoskyddet_NB` 1 + 1 = 2, `_recension_NB` 9, `_takskyddet_EN` 7 + 1 = 8 (CA, US, GB, FI,
+  NZ), `_recension_EN` 8. SV och DA 0, för ingen svensk eller dansk order är levererad än: de 46
+  svenska ordrarna 11–16/9 står 45 `InTransit` + 1 `InfoReceived` hos 17TRACK (YunExpress,
+  registrerade 20/9), och Shopify säger samma sak, så spårningen läser rätt. Inrullningen kräver
+  inte samtycke (alla nio norska är `NOT_SUBSCRIBED`). Ingen ombyggnad till `order_created` behövs.
+  Före mätningen: 0 inrullade och 0 `DELIVERED` 28/9 (se git-historiken för den gamla raden).
 
 ✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
 aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
@@ -731,12 +732,19 @@ efteråt. Danska och engelska var rena (danskan har `citat: false`, engelskan in
   redigeraren visar det inte: "To:" visar segmentet som vanligt (Axels skärmdump samma eftermiddag,
   NB: "SEG_samtycke_nb (18)"). **Sv blev `true`** efter Axels omschemaläggning 14:14. **Nb stod kvar
   på `false`** efter tre omschemaläggningar (sparad 14:16, 14:24 och 14:35; den sista enligt
-  instruktionen pennan → Remove time → REVIEW → Schedule), orsak oklar. Appens kod har knappen "Send out notifications now" på statistiksidan för
-  ett inlägg som inte notifierat någon (oprövad). Uppföljning 30/9 08:40 CEST:
-  `get_campaign_statistics` på alla fyra visar om nb mejlades.
-- **Regler ur samma eftermiddag:** (1) rätta aldrig en schemalagd kampanj via MCP utan att räkna med
-  att utskicket måste slås på igen i appen, och läs `notify` med `search_campaigns` innan något
-  kallas klart; (2) gissa aldrig ett knappnamn i appen. Sessionen skrev "Notify only" ur appens kod,
+  instruktionen pennan → Remove time → REVIEW → Schedule), orsak oklar.
+- ✅ **Utfallet: alla fyra mejlades tis 29/9 18:00, även norskan.** Mätt 2026-09-30 08:45 CEST:
+  alla fyra `published` 16:00 UTC, och nb bar `notify: true` efter publiceringen (`updated`
+  16:00:01). `get_campaign_statistics`: e-postmottagare **sv 38, nb 17, da 13, en 91 = 159**;
+  öppnade 10 / 9 / 7 / 26 (Apples automatiska öppningar ingår, så de dömer inget), klick 2 / 0 / 0 /
+  3, 0 köp och 0 kr attribuerat första natten. `notify: false` på en SCHEMALAGD kampanj stoppade
+  alltså inte utskicket; Spoks satte flaggan själv vid publiceringen (hur är inte utrett;
+  segmentet i "To:" stod rätt hela tiden). Flaggan före utskicket bevisar inget. Statistiken
+  efteråt gör det.
+- **Regler ur samma eftermiddag:** (1) rätta en schemalagd kampanj via MCP bara när det krävs, och
+  räkna med att `notify` kan stå på `false` efter omsparningen; läs `get_campaign_statistics` efter
+  utskicket innan något kallas klart, och be aldrig Axel klicka om för flaggans skull (tre onödiga
+  rundor 29/9); (2) gissa aldrig ett knappnamn i appen. Sessionen skrev "Notify only" ur appens kod,
   men knappen fanns inte i redigeraren. Be om en skärmdump först. (3) Fyra rundor klick samma
   eftermiddag slutade med Axels "håll käften nu". Ge hela vägen i ett meddelande, och ta resten
   själv eller nästa dag.
@@ -1094,3 +1102,119 @@ butikens egen domän när något slås på. Inget är påslaget.
 6. **Planen:** Free räcker till september–oktober (K01/K02 till alla = 2 × 2 911, K03–K06
    små). **November har fyra utskick till alla (K07–K10 ≈ 11 600 mejl) + flödena — det
    kräver ett planbyte före 10/11.** Pengar = Axels beslut.
+
+## Matstrumpor på alla språk (Axels beslut A 2026-09-29)
+
+Axels ord: "alla tolv språk nu, som CaraShell. Men fler marknader kommer – bygg det så att ett
+nytt land eller språk bara är en rad till i konfigen, inte en ombyggnad", och sedan "vi kör ju
+hur många marknader som helst". Knappen i "efter köp" går till spårningssidan på kundens språk
+(`matstrumpor.se/<mapp>/pages/spara`, portugisiska `/pt`), mappningen ur
+`sparning/butiker.json` → `matstrumpor.mejl_sprak`.
+
+**Formen: ETT flöde per mejltyp, ett sändsteg per språk** (inte ett flöde per språk som
+CaraShell). Varje sändsteg har ett landsfilter, så Spoks lista förblir sex flöden hur många
+språk det än blir. Ett nytt språk = tolv nya sändsteg i de befintliga flödena, inga nya flöden.
+
+| Ändring | Vad du gör |
+|---|---|
+| Nytt LAND | En rad i `klaviyo/brands/matstrumpor.json` → `spoks_sprak.lander` (`"AT": "de"`). Ett land UTAN rad får engelska av sig självt (reservspråket), aldrig svenska. Kör om bygget och uppdatera landsfiltren på stegen. |
+| Nytt SPRÅK | En rad i `sparning/butiker.json` → `matstrumpor.mejl_sprak` (samma rad som fraktmejlen) + `klaviyo/innehall/matstrumpor/sprak/<kod>.json` (sonnet-översättare + skeptisk granskare enligt `sprak/README.md`) + raderna i `lander`. |
+| Ändrad svenska | `node klaviyo/spoks-sprak.mjs --kalla` → bygget säger vilka mejl som är gamla på vilket språk (`kalla`-hashen). Bara de översätts om. |
+
+**Motorn:** `klaviyo/spoks-sprak.mjs` (tester `klaviyo/test/spoks-sprak.test.mjs`).
+Översättningen läggs på den svenska formen: länkar, produkter och blockordning kommer alltid
+ur svenskan. Motorn stoppar på påhittade tal (ett tal som inte står i svenskan), tankstreck,
+okända tokens och gammal källa. Produktkorten på andra språk är bild + produktnamnet ur
+butikens egna översättningar (`matstrumpor/marknader/output/underlag-<locale>.json`) + knapp
+till `/<mapp>/products/<handle>`, utan pris, eftersom Spoks produktkort visar katalogens
+svenska titel och kronor. Kassablocket och "senast visade" visas utan pris av samma skäl.
+Kundcitaten är översatta och märkta "översatt från svenska" på språket.
+
+**Språket följer landet.** Spoks vet bara `contact.country` (engelskt landsnamn, mätt
+2026-09-29: "Sweden", "United States"). Kontakter utan land (anmälda i sidfoten utan köp) får
+svenska. Engelskans filter är "landet finns och är inte ett av de andra språkens länder".
+
+**Bara svenska:** K04 (fars dag 8 november), K11 och K12 (sista beställningsdag före jul) bär
+datum räknade på svensk leveranstid, så de skickas bara på svenska (`kampanjer_bara`). F06
+Sunset följer Axels beslut 2026-09-29 "ingen tas bort" och byggs inte på andra språk.
+Översättarna tog bort varje sista beställningsdag, fars dag och "hinner fram"-löfte ur de
+andra mejlen (bland annat K08:s sista rad och en medlemspunkt i F01 E1).
+
+**Granskningen hittade riktiga fel:** K02:s rubrik "den roliga glöms" hade vänts till sin
+motsats på engelska, nederländska, spanska och polska; polskans "Ja, lämna mig" i F06 betydde
+"lämna mig ifred"; franskans reservord gav "Bonjour vous,". Alla rättade före uppladdningen.
+
+**Rabatterna:** Black Week-trappans tre automatiska rabatter gäller alla köpare i alla
+marknader (`context: DiscountBuyerSelectionAll`, mätt 2026-09-29), så K09/K10 lovar inget som
+saknas utomlands. Men rabatternas namn är svenska ("Black Week 2026: 10 % vid 1 vara") och syns
+så i kassan för utländska kunder. Black Week-frågan till Axel (2026-09-25) är fortfarande öppen.
+
+**Rate limit (mätt 2026-09-29):** Spoks svarade "Rate limit exceeded. Try again in 28 seconds"
+när tre uppladdare och segmentanrop gick samtidigt (runt 35 anrop på 45 sekunder). Spoks egna
+regler: försök aldrig runt gränsen, tung användning kan stänga av kontots MCP-åtkomst. Därför
+laddar EN uppladdare åt gången upp, stannar vid första gränssvaret och loggar varje steg i
+`klaviyo/konto/matstrumpor/spoks-sprak/<flöde>.jsonl` så att nästa körning fortsätter där den
+stannade. Anropet för varje steg skrivs ut av `klaviyo/spoks/sprak-steg.mjs`, och varje
+uppladdat mejl jämförs maskinellt med filen av `klaviyo/spoks/sprak-koll.mjs` (Spoks egna
+svar ur sessionsloggarna).
+
+### Läget 2026-09-29 kväll (mätt: get_flow på alla sex, sprak-koll mot sessionsloggarna)
+
+| Flöde (nytt, AVSTÄNGT) | Spoks-id | Steg | Ersätter det svenska (live) |
+|---|---|---|---|
+| F01 Välkomst (Matstrumpor-klubben) · alla språk | `89976b01-a650-4ad5-94a5-0556c490ae03` | 72 (36 mejl) | `4e8a9b59-4192-4bb4-8829-785e6af01f7c` |
+| F02 Övergiven kassa · alla språk | `6b22283c-d686-405b-8b6d-7d0b1f762028` | 72 (36) | `7e1dab93-5aba-4f69-b497-66636df338e2` |
+| F03 Webbhistorik · alla språk | `17aa6927-46a0-405d-b787-cd5e0e2513dc` | 48 (24) | `dafa3c59-7a47-4a9e-a5cc-80eba2716612` |
+| F04 Efter köp · alla språk | `0594aa1b-dfce-4a46-81ef-8bd20989c16c` | 48 (24) | `d9f24905-8dab-43f3-a427-d8478701f315` |
+| F05 Vinna tillbaka · alla språk | `32d23706-635e-4e1e-9c1f-e25d61df7bdf` | 48 (24) | `6728bb3b-fa5d-402b-8a66-f0f6ac360fca` |
+| F07 En låda till (sushi, dag 21) · alla språk | `8c9c1204-99bd-4b0f-a988-4d7af65e4702` | 24 (12) | `615a6e65-9a43-4a29-8af8-afc82ee7cd23` |
+
+`node klaviyo/spoks/sprak-floden-koll.mjs`: alla sex ✅ (samma steg, väntetider och landsfilter
+som planen, en post bakom varje sändsteg, flöde + trigger + alla sändsteg AV). `sprak-koll.mjs`:
+alla 156 flödesmejl och 103 kampanjutkast lika med filerna tecken för tecken (tre avskrivningsfel
+hittades och rättades på vägen: fransk hård blanksteg, ett polskt "pudłka", ett dolt mjukt
+bindestreck i en polsk titel). Språksegmenten `SEG_samtycke_<sprak>` (12 st) id:n i
+`klaviyo/konto/matstrumpor/spoks-sprak-uppladdat.jsonl`; svenska 3 025 medlemmar, de andra 0 vid
+skapandet (annonserna utomlands är pausade).
+
+✅ **277 av 277 uppe (2026-09-29 20:17–20:22 CEST, ny session):** de sista 18 kampanjutkasten
+(index 103–120: K13 de/fr/nl/es/it/pl/pt, K14 nb/da/fi/en/de/fr/nl/es/it/pl/pt) laddades upp
+ett i taget efter att `whoami` svarat med arbetsytan Matstrumpor.se, id:n i
+`klaviyo/konto/matstrumpor/spoks-sprak/kampanjer.jsonl` (121 rader). Alla 121 kampanjer är
+utkast utan publik och datum. `sprak-koll.mjs` mot sessionens logg: 18 mejl, 0 avvikelser.
+`get_flow` på alla sex flödena samma kväll och `sprak-floden-koll.mjs`: alla sex ✅, flöde +
+trigger + alla sändsteg AV, 0 inrullade. Totalt 156 flödesmejl + 121 kampanjutkast = 277.
+
+⚠️ **Judge.me bytte widgetens svar 2026-09-29 ~18:16 UTC** (butiken fick
+`multi_language_sorting`): `reviews` kommer tom och recensionerna ligger i
+`primary_language_reviews` + `other_language_reviews`, med egen sidning. Bygget läste då 0
+recensioner och stoppade med "Citatblocket har ingen översatt recension" på alla elva språk
+(exit 1). `klaviyo/recensioner.mjs` läser nu alla tre listorna (uuid en gång) och bläddrar tills
+Judge.me:s `total_pages` är slut; efter rättningen 11 recensioner, bygget grönt. Testat i
+`klaviyo/test/brand.test.mjs`.
+
+**Sidfoten är tvåspråkig sedan 2026-09-29 kväll** (Axels val A): Spoks har EN sidfot per arbetsyta,
+så den bär nu svenska + engelska (`update_settings` → `looks.postFooter`, tillbakaläst):
+"… Frågor? Svara på mejlet eller skriv till kundsupport@matstrumpor.se · You joined the Matstrumpor
+club yourself, and these emails only go to members. Questions? Reply to this email or write to
+kundsupport@matstrumpor.se · matstrumpor.se", avregistreringen "Avregistrera dig · Unsubscribe".
+Gäller alla mejl, även de nio flöden som redan var igång och den schemalagda kampanjen.
+
+**Bytet går inte via MCP** (mätt 2026-09-29 i verktygens egna beskrivningar): `update_flow_step`
+"Send steps cannot be enabled here — the user enables them in the flow editor", och `update_flow`
+kräver ett inaktivt flöde och har inget fält för att slå på det. Klicken görs därför i appen, av Axel eller
+av Cowork med `klaviyo/spoks/cowork/1-matstrumpor-sprakbyte.txt` (ett flöde i taget: nya flödets
+sändsteg på → nya flödet på → gamla flödets stora knapp av → läs av). Mätt före bytet 2026-09-29
+kväll med `get_flows`: de sex gamla på (160/20/15/201/204/193 inrullade), de sex nya av med 0. **Välkomst bytt 2026-09-29 21:10–21:12 CEST av Cowork:** nya F01 på med alla 36
+sändsteg på och triggern på, gamla F01:s trigger av (flödet står kvar "Aktiv" med sina 160 inrullade),
+båda tillbakalästa med `get_flow`. ✅ **Alla sex bytta 2026-09-29 21:10–22:27 CEST av Cowork** (Välkomst 21:10/21:12, Övergiven kassa
+21:38/21:41, Webbhistorik 21:49/21:52, Efter köp 22:05/22:09, Vinna tillbaka 22:17/22:20, En låda till
+22:25/22:27 — nytt på / gammalt av). Tillbakaläst med `get_flow` 2026-09-30 natt: de sex nya `isActive`
+med triggern på och alla 156 sändsteg på, redan 1–5 inrullade var; de sex gamla har `trigger.isActive:
+false`, flödet `isActive: true` och sändstegen kvar på, så de redan inrullade (160/18/12/204/208/197)
+får sina svenska mejl klart. F08 (v1+v2) och F09 orörda.
+
+**Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
+sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
+svenska mejl klart). Två flöden med samma trigger på samtidigt ger svenska kunder dubbla mejl, så
+byt ett flöde i taget, nytt på och gammalt av i samma minut.

@@ -83,6 +83,42 @@ stickad julstrumpa i bild).
 | låda / paket | boks | æske | rasia | box | Box | boîte | doos | caja | scatola | pudełko | caixa |
 | Köp 1 – Få 1 | Kjøp 1 – Få 1 | Køb 1 – Få 1 | Osta 1 – Saat 1 | Buy 1 – Get 1 | Kauf 1 – Bekomm 1 | Achetez-en 1 – Recevez-en 1 | Koop 1 – Krijg 1 | Compra 1 – Llévate 1 | Compri 1 – Ricevi 1 | Kup 1 – Otrzymaj 1 | Compre 1 – Receba 1 |
 
+## Japan (JP, japanska) och Taiwan (TW, traditionell kinesiska), 2026-09-30
+
+Allt ovan gäller, med de här tilläggen (de vinner där de säger något annat):
+
+- **Skrift:** japanska med kana och kanji som en japansk kreatör skriver. Taiwan med
+  **traditionella tecken (繁體中文)**, aldrig förenklade, och taiwanesiskt vardagsspråk
+  (影片, 包裹, 超可愛), inte fastlandskinesiskt.
+- **Tal skrivs med kanji** (十、五、四、十一月), aldrig med siffror, inte heller helbreddssiffror.
+  Punkt 8 i reglerna ovan betyder det här på japanska och kinesiska.
+- **Längden** räknas i tecken mot HeyGens japanska/kinesiska text, ±25 % som ovan.
+- **Tonen:** japanska som en kvinnlig japansk kreatör på TikTok/Reels, vänlig (です・ます blandat med
+  naturliga talslut som 〜なんです、〜ですよね), aldrig maskulina slut (〜ぜ、〜ぞ) och aldrig
+  stelt skriftspråk. Kinesiskan som en taiwanesisk kvinnlig kreatör, 你, lätta partiklar
+  (啦、耶、欸) får förekomma men inte i varje block.
+- **"Det här är ditt tecken":** ingen ordagrann översättning. Välj det som låter infött, t.ex. ja
+  「これを見たあなた、きっと運命です」 eller 「これはもう、買うしかないサイン」; zh 「看到這支影片就是緣分」
+  eller 「這就是你在等的訊號」.
+- **"…på matstrumpor.se"** blir ja 「リンクから」「このリンクから」, zh 「點下面的連結」「連結在這裡」.
+- **"Två paket i priset av ett"** blir ja 「一つ買うと、もう一つ無料」, zh 「買一送一」.
+- **Julstrumpan** (sofie_h2, stickad strumpa i bild): ja 「クリスマスの靴下」, zh 「聖誕襪」.
+  **Kalaset:** ja 「パーティー」, zh 「派對」.
+- **Sverige i talet:** Taiwan aldrig (瑞典 står i annonstexten). **Japan får EN gång per video**
+  säga att det är ett svenskt varumärke eller att de sålde slut i Sverige (Axel 2026-09-30: "i Japan
+  speciellt kan vi trycka på att det är ett svenskt varumärke"), t.ex. nathalies
+  「スウェーデンでは去年の十一月に売り切れました」. Aldrig スウェーデン製 — strumporna är inte
+  tillverkade i Sverige. `kolla-srt.mjs` släpper igenom en スウェーデン för JP och stoppar resten.
+- **Ordlista:**
+
+| | JP (ja) | TW (zh-TW) |
+|---|---|---|
+| sushistrumpor | 寿司ソックス | 壽司襪 |
+| ätpinnar i trä | 木製のお箸 | 木頭筷子 |
+| låda / paket | ボックス | 盒子 |
+| Köp 1 – Få 1 | 一つ買うと、もう一つ無料 | 買一送一 |
+| pizza, burgare, donut | ピザ、バーガー、ドーナツ | 披薩、漢堡、甜甜圈 |
+
 ## Leverans
 
 Skriv `srt-fixed/matstrumpor_<video>.srt` (UTF-8, `\n`, tom rad mellan block, avslutande

@@ -166,6 +166,222 @@
       },
       "creative_prefix": "Seatcover_",
       "target_roas": null
+    },
+    {
+      "id": "fiskespohallaren",
+      "name": "Fiskespöhållaren (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 750,
+      "target_cpa_sek": 294,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.5,
+      "break_even_cpa_sek": 294,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 442,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 18
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "takoverdraget",
+      "name": "Taköverdraget för Husvagn (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 8000,
+      "target_cpa_sek": 767,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.63,
+      "break_even_cpa_sek": 767,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 1250,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 14
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "termoskyddet",
+      "name": "Termoskyddet för Husbil (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 2300,
+      "target_cpa_sek": 372,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.61,
+      "break_even_cpa_sek": 372,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 598,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 15
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "solcellslampan",
+      "name": "Solcellslampan med Rörelsesensor (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 1200,
+      "target_cpa_sek": 522,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.62,
+      "break_even_cpa_sek": 522,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 845,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 3
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "golfkalendern",
+      "name": "Golf Adventskalendern (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 3000,
+      "target_cpa_sek": 416,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.7,
+      "break_even_cpa_sek": 416,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 707,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 5
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "taljsetet",
+      "name": "Täljsetet 30 Delar (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 4000,
+      "target_cpa_sek": 559,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.63,
+      "break_even_cpa_sek": 559,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 911,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 6
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "batmotorskyddet",
+      "name": "Båtmotorskyddet 420D (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 500,
+      "target_cpa_sek": 384,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.62,
+      "break_even_cpa_sek": 384,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 622,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 7
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "ibc-tankoverdraget",
+      "name": "IBC-Tanköverdraget (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 500,
+      "target_cpa_sek": 442,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.51,
+      "break_even_cpa_sek": 442,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 668,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 11
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
+    },
+    {
+      "id": "balteslipmaskinen",
+      "name": "Bälteslipmaskinen (Bäverbutiken)",
+      "brand": "Bäverbutiken",
+      "ad_account_id": "1867947880635861",
+      "daily_budget_sek": 1100,
+      "target_cpa_sek": 573,
+      "target_cpa_kalla": "BREAK-EVEN-CPA, inte ett target Axel satt. Byt fältet när han sätter ett riktigt mål.",
+      "break_even_roas": 1.73,
+      "break_even_cpa_sek": 573,
+      "break_even_kalla": "break-even-ROAS ur kampanjnamnet i MagiBorsten, avläst 2026-09-30",
+      "aov_sek": 991,
+      "aov_kalla": "Meta last_30d 2026-09-30: spend × purchase_roas ÷ omni_purchase",
+      "cycle_start": "2026-09-30",
+      "status": "aktiv",
+      "launches": [
+        {
+          "date": "2026-09-30",
+          "count": 5
+        }
+      ],
+      "scaling": false,
+      "target_roas": null
     }
   ]
 }

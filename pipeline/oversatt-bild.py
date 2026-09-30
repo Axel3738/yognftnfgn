@@ -684,6 +684,16 @@ def rita_box(bild, im, b):
         lh = int(font.size * float(b.get("radavstand", 1.35)))
         blockh = lh * (len(rader) - 1) + asc * 0.72
         ytop = (y0 + y1) / 2 - blockh / 2
+        # "ink_topp": absolut y där den FÖRSTA radens bläck ska börja. Behövs när
+        # rutan bestämmer en FORM (ett pillerbadge, ett band) och texten samtidigt
+        # ska ligga exakt där den svenska låg: blockh = asc*0.72 underskattar den
+        # verkliga bläckhöjden, så mittcentreringen lägger texten för lågt — mätt
+        # 2026-09-30 på Taljset_FD_2_1:s badge, 13 px ned. Med ink_topp mäts
+        # fontens egna bläckavstånd och ytop flyttas så första raden landar rätt;
+        # formen (box/fyll/radie) rörs inte.
+        if b.get("ink_topp") is not None:
+            _pr = font.getbbox(rader[0])
+            ytop = float(b["ink_topp"]) - (_pr[1] if _pr else 0)
         farg = tuple(b.get("farg", [20, 48, 74]))
         xv = int(b.get("vanster_x", x0 + max(16, int((x1 - x0) * 0.06))))
         for i, rad in enumerate(rader):

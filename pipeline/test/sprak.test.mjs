@@ -154,3 +154,28 @@ test('gissaSprak: bokstäver utanför a–ö hålls ihop (não, się, très)', (
   assert.equal(gissaSprak('Não, não é isso. Não é mesmo, não.').poang.pt >= 4, true);
   assert.equal(gissaSprak('Ale to się nie da, bo się nie mieści.').poang.pl >= 5, true);
 });
+
+// ---- Japanska och kinesiska (Taiwan), 2026-09-30 — skriften avgör ------------------------------
+import { skrift, heygenSprakFor as _hs, sprakfamilj as _sf, kollaSprak as _ks } from '../sprak.mjs';
+
+test('Japan och Taiwan: HeyGens namn och språkfamiljerna', () => {
+  assert.equal(_hs('JP'), 'Japanese (Japan)');
+  assert.equal(_hs('TW'), 'Chinese (Taiwanese Mandarin, Traditional)');
+  assert.equal(_sf('Japanese (Japan)'), 'ja');
+  assert.equal(_sf('Chinese (Taiwanese Mandarin, Traditional)'), 'zh');
+});
+
+test('CJK: japanska bär kana, kinesiska inte; Taiwan kräver traditionella tecken', () => {
+  const ja = 'このソックスは本物のお寿司みたいに見えます。箱を開けた瞬間、みんな笑ってくれました。';
+  const zhTrad = '這雙襪子看起來就像真正的壽司，打開盒子的時候大家都笑了，真的很適合送給朋友。';
+  const zhForenklad = '这双袜子看起来就像真正的寿司，打开盒子的时候大家都笑了，真的很适合送给朋友。';
+  const en = 'These socks look exactly like real sushi and everyone laughed when they opened the box today.';
+  assert.equal(_ks(ja, 'ja').ok, true);
+  assert.equal(_ks(ja, 'zh').ok, false, 'japanska i en kinesisk session');
+  assert.equal(_ks(zhTrad, 'zh').ok, true);
+  assert.equal(_ks(zhTrad, 'ja').ok, false, 'kinesiska i en japansk session');
+  assert.equal(_ks(zhForenklad, 'zh').ok, false, 'förenklade tecken är fel för Taiwan');
+  assert.equal(_ks(en, 'ja').ok, false, 'engelska i en japansk session');
+  assert.equal(_ks('短い', 'ja').ok, null, 'för lite text att döma');
+  assert.ok(skrift(ja).kana > 10);
+});

@@ -16,7 +16,7 @@
   {%- liquid
     assign profil = d.profil[sprak] | default: d.profil.sv
     assign etikett = d.etikett[sprak] | default: d.etikett.sv
-    if sprak == 'en'
+    if sprak == 'en' or sprak == 'ja' or sprak == 'zh-TW'
       assign poang = d.poang_en
     else
       assign poang = d.poang_text

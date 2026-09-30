@@ -42,7 +42,8 @@ export function sammanfattning(paket) {
   const filmer = paket?.filmer ?? [];
   const k = d.match(/(\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
   const p = d.match(/(\d+)% of the reported video's sampled frames match/);
-  if (k) delar.push(`Annonsens film är klippt ur ${filmer.length === 1 ? 'en av våra filmer' : `${filmer.length || 'flera'} av våra filmer`}. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra${p ? `, och ${p[1]} % av annonsens bildrutor matchar våra filmer` : ''}.`);
+  if (k && /video is a re-upload of our own ad film/.test(d)) delar.push(`Annonsens film är vår egen annons, uppladdad igen med samma klippning och vår text i bilden. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra, texten inräknad. Anmälan gäller vår klippning och vår text, inte filmklippen under texten.`);
+  else if (k) delar.push(`Annonsens film är klippt ur ${filmer.length === 1 ? 'en av våra filmer' : `${filmer.length || 'flera'} av våra filmer`}. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra${p ? `, och ${p[1]} % av annonsens bildrutor matchar våra filmer` : ''}.`);
   const t = d.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words/);
   if (t) delar.push(`${t[1]} ord ur vår annonstext står ordagrant i annonsen, som längst ${t[2]} ord i följd.`);
   if (/image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(d)) delar.push('Bilden i annonsen är vår egen annonsbild.');
@@ -97,6 +98,7 @@ export function kortAnmalan(rapport, paket, { annons = null, bild = null, land =
     grund: paket.grund ?? null,
     filmer: paket.filmer ?? [],
     sammanfattning: sammanfattning(paket),
+    ansprak: paket.ansprak ?? null,
     bild,
     bildUrl: paket.bevisbildUrl ?? null,
     formular: paket.formular ?? null,
@@ -134,10 +136,26 @@ export function kortMejl({ brev, faktura, fran, franNot = null, antalByggda = 0,
   };
 }
 
-/** Hela sidans data. Ren. */
-export function byggGranskning({ a, kort, byggd = new Date().toISOString() }) {
+/**
+ * Hela sidans data. `not` = en mening under ingressen (t.ex. varför rundan saknar
+ * mejl: brevet gick redan i ett annat ärende mot samma sida). Ren.
+ */
+export function byggGranskning({ a, kort, byggd = new Date().toISOString(), not = null }) {
   const d = a.deras ?? {};
-  return { arende: a.id, verksamhet: a.verksamhet ?? null, deras: { sidnamn: d.sidnamn ?? null, sidaId: d.sidaId ?? null, doman: d.doman ?? null, epost: (d.epost ?? [])[0] ?? null }, byggd, kort };
+  return { arende: a.id, verksamhet: a.verksamhet ?? null, deras: { sidnamn: d.sidnamn ?? null, sidaId: d.sidaId ?? null, doman: d.doman ?? null, epost: (d.epost ?? [])[0] ?? null }, land: a.land ?? null, byggd, not: not ?? null, kort };
+}
+
+/**
+ * Meningen när en runda bara är anmälningar: vilket ärende mot samma Facebook-sida
+ * som redan bär brevet (senast skickat vinner). null när inget brev gått. Ren.
+ */
+export function mejlRedanNot(a, andra) {
+  const sida = a?.deras?.sidaId;
+  if (!sida) return null;
+  const fore = [...(andra ?? [])].filter((x) => x.id !== a.id && x.deras?.sidaId === sida && x.brev?.skickat?.nar)
+    .sort((x, y) => String(y.brev.skickat.nar).localeCompare(String(x.brev.skickat.nar)))[0];
+  if (!fore) return null;
+  return `Inget nytt mejl i den här rundan: brevet och fakturan till ${a.deras?.sidnamn ?? 'dem'} gick redan i ${fore.id} (${dagSv(fore.brev.skickat.nar, { tid: true })}). Här är bara anmälningarna.`;
 }
 
 /**
@@ -204,9 +222,13 @@ export function attGora({ granskning, beslut, status }) {
   return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla };
 }
 
-/** Sidans HTML: mallen med kortens data inbakad (säker i ett script-block). Ren utom läsningen av mallen. */
+/**
+ * Sidans HTML: mallen med kortens data inbakad (säker i ett script-block) och titeln
+ * "Anmälningar <ärende>" (stod låst på KD-2026-001 tills den norska rundan). Ren utom läsningen av mallen.
+ */
 export function sidaHtml(granskning, { mall = readFileSync(SIDMALL, 'utf8') } = {}) {
   const json = JSON.stringify(granskning).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
   if (!mall.includes('__GRANSKNING__')) throw new Error('sidmallen saknar __GRANSKNING__');
-  return mall.replace('__GRANSKNING__', () => json);
+  const titel = `Anmälningar ${granskning?.arende ?? ''}`.trim().replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  return mall.replace('__TITEL__', () => titel).replace('__GRANSKNING__', () => json);
 }

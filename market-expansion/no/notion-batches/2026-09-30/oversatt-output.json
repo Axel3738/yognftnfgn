@@ -1,0 +1,56 @@
+{
+ "_kommentar": "Norsk bokmål av sonnet-subagent 2026-09-30 mot docs/copy-regler.md och verifierade fakta ur beverbutikken.no. Huvudsessionen har granskat varje claim.",
+ "Taljset_FD_2_1": {
+  "former": [
+   {
+    "texter": [
+     { "rader": [0, 1], "text": "Til farsdag: 30 deler i vesken." },
+     { "rader": [2, 3], "text": "Bladbeskyttelse, lærstropp, sandpapir og kuttsikre hansker i samme veske." }
+    ]
+   },
+   { "texter": [{ "rader": [0], "text": "Farsdagssalg" }] },
+   {
+    "texter": [
+     { "rader": [0], "text": "1 039 kr," },
+     { "rader": [1], "text": "før 1 359 kr" },
+     { "rader": [2], "text": "Bestill innen 19. oktober" }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Til farsdag: 30 deler i én veske. Inni: 6 kniver, 6 jern, bladbeskyttelse og kuttsikre hansker. Farsdagssalg: 1 039 kr, før 1 359 kr. Bestill innen 19. oktober.",
+   "headline": "30 deler til pappa som spikker.",
+   "description": "Farsdagssalg: 1 039 kr, før 1 359 kr"
+  }
+ },
+ "Taljset_FD_2_2": {
+  "former": [
+   {
+    "texter": [
+     { "rader": [0, 1], "text": "Farsdagsgaven han faktisk spikker med" },
+     { "rader": [2, 3], "text": "Bladbeskyttelse, lærstropp, sandpapir og kuttsikre hansker i samme veske." }
+    ]
+   },
+   { "texter": [{ "rader": [0], "text": "Farsdagssalg" }] },
+   {
+    "texter": [
+     { "rader": [0], "text": "1 039 kr," },
+     { "rader": [1], "text": "før 1 359 kr" },
+     { "rader": [2], "text": "Bestill innen 19. oktober" }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Til farsdag: 30 deler i én veske. Inni: 6 kniver, 6 jern, bladbeskyttelse og kuttsikre hansker. Farsdagssalg: 1 039 kr, før 1 359 kr. Bestill innen 19. oktober.",
+   "headline": "30 deler til pappa som spikker.",
+   "description": "Farsdagssalg: 1 039 kr, før 1 359 kr"
+  }
+ },
+ "andringar": [
+  "Priserna bytta till den norska butikens: 869 kr → 1 039 kr, ord. 1 139 kr → 1 359 kr (lästa ur beverbutikken.no 2026-09-30).",
+  "\"ord.\" → \"før\": norska butiken kallar det førpris. Bara ordet ändrat, siffran är sidans.",
+  "\"Fars dag-rea\" → \"Farsdagssalg\", \"fars dag\" → \"farsdag\" (norsk sammanskrivning).",
+  "Inget struket: bilden bär ingen fri frakt, inga betyg, inga recensionsantal och ingen procentsats, så det fanns inget overifierbart att ta bort.",
+  "\"Beställ senast 19 oktober\" → \"Bestill innen 19. oktober\". Datumet står kvar: norsk farsdag 2026 är söndag 8 november, samma dag som den svenska, och leveranstiden till Norge är p90 18,8 dygn mot Sveriges 20."
+ ]
+}

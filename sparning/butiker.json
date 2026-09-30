@@ -157,67 +157,94 @@
    "es",
    "it",
    "pl",
-   "pt"
+   "pt",
+   "ja",
+   "zh"
   ],
   "sprak_extra_comment": "Marknaderna Norge, Europa (DK+FI) och USA/UK/AU/CA/NZ byggda 2026-09-27 (matstrumpor/marknader/) — sidan byter språk på dokumentets lang (/nb, /da, /fi, /en) precis som CaraShell. Texterna ur sparning/sprak/<kod>.json.",
   "mejl_sprak": [
    {
     "locale": "nb",
     "sprak": "nb",
-    "mapp": "nb"
+    "mapp": "nb",
+    "sida": "https://matstrumpor.com/nb/pages/spara"
    },
    {
     "locale": "da",
     "sprak": "da",
-    "mapp": "da"
+    "mapp": "da",
+    "sida": "https://matstrumpor.com/da/pages/spara"
    },
    {
     "locale": "fi",
     "sprak": "fi",
-    "mapp": "fi"
+    "mapp": "fi",
+    "sida": "https://matstrumpor.com/fi/pages/spara"
    },
    {
     "locale": "en",
     "sprak": "en",
-    "mapp": "en"
+    "mapp": "en",
+    "sida": "https://matstrumpor.com/pages/spara"
    },
    {
     "locale": "de",
     "sprak": "de",
-    "mapp": "de"
+    "mapp": "de",
+    "sida": "https://matstrumpor.com/de/pages/spara"
    },
    {
     "locale": "fr",
     "sprak": "fr",
-    "mapp": "fr"
+    "mapp": "fr",
+    "sida": "https://matstrumpor.com/fr/pages/spara"
    },
    {
     "locale": "nl",
     "sprak": "nl",
-    "mapp": "nl"
+    "mapp": "nl",
+    "sida": "https://matstrumpor.com/nl/pages/spara"
    },
    {
     "locale": "es",
     "sprak": "es",
-    "mapp": "es"
+    "mapp": "es",
+    "sida": "https://matstrumpor.com/es/pages/spara"
    },
    {
     "locale": "it",
     "sprak": "it",
-    "mapp": "it"
+    "mapp": "it",
+    "sida": "https://matstrumpor.com/it/pages/spara"
    },
    {
     "locale": "pl",
     "sprak": "pl",
-    "mapp": "pl"
+    "mapp": "pl",
+    "sida": "https://matstrumpor.com/pl/pages/spara"
    },
    {
     "locale": "pt-PT",
     "sprak": "pt",
-    "mapp": "pt"
+    "mapp": "pt",
+    "sida": "https://matstrumpor.com/pt-pt/pages/spara"
+   },
+   {
+    "locale": "ja",
+    "sprak": "ja",
+    "mapp": "ja",
+    "spoks": false,
+    "sida": "https://matstrumpor.com/ja/pages/spara"
+   },
+   {
+    "locale": "zh-TW",
+    "sprak": "zh",
+    "mapp": "zh-tw",
+    "spoks": false,
+    "sida": "https://matstrumpor.com/zh-tw/pages/spara"
    }
   ],
-  "mejl_sprak_comment": "Fraktmejlen på kundens språk (2026-09-29): en hel mall per rad, registrerad som Shopifys EGEN översättning av notisen (EMAIL_TEMPLATE, title + body_html) med node mejl/notis-oversattning.mjs matstrumpor. Shopify skickar notisen på det språk kunden handlade på — orderns språk, inte leveranslandet (Belgien/Schweiz har flera språk). locale = Shopifys språkkod (pt-PT), sprak = mejl/sprak/<kod>.json, mapp = URL-mappen på matstrumpor.se (/pt, inte /pt-pt) — knappen går till matstrumpor.se/<mapp>/pages/spara?nummer=MS-…, som bär alla tolv språk i alla marknader (mätt i webPresences 2026-09-29). Svenska är huvudmallen och klistras in för hand.",
+  "mejl_sprak_comment": "Fraktmejlen på kundens språk (2026-09-29): en hel mall per rad, registrerad som Shopifys EGEN översättning av notisen (EMAIL_TEMPLATE, title + body_html) med node mejl/notis-oversattning.mjs matstrumpor. Shopify skickar notisen på det språk kunden handlade på — orderns språk, inte leveranslandet (Belgien/Schweiz har flera språk). locale = Shopifys språkkod (pt-PT), sprak = mejl/sprak/<kod>.json. sida = knappens adress (?nummer=MS-… läggs på): matstrumpor.com i språkets mapp, ur Shopifys egna rootUrls för .com (2026-09-30, Axels regel att allt utland går via .com). Förut räknades den som matstrumpor.se/<mapp>, och zh-TW:s mapp på .se är /zh, inte /zh-tw: Taiwans knapp gav 404 (granskningen 2026-09-30). mapp = URL-mappen på matstrumpor.se (/pt, /zh) och används fortfarande av Spoks (klaviyo/spoks-sprak.mjs) — ändra aldrig mapp för mejlens skull. Svenska är huvudmallen och klistras in för hand.",
   "land": "Sverige",
   "landskod": "SE",
   "support": "kundsupport@matstrumpor.se",

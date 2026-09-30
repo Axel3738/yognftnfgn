@@ -1,0 +1,41 @@
+✅ KÖRD 2026-09-30 ~15:00 CEST av Cowork (Axels val A). STONEBITE ECOM AB fanns redan som organisationsverifiering med status "Granskas" och är vald som annonsör och betalare för Taiwan (samma bolag för båda). EU-inställningen "STonebite" är orörd. Meta granskar fortfarande, och annonsgruppen går inte att skapa via API förrän granskningen är klar. Nya manuella klick får en ny prompt (4-…).
+
+Uppdrag: gör Matstrumpors annonser i Taiwan möjliga i Meta. Gör bara det som står nedan.
+
+Varför: Taiwans lag kräver att varje annons som visas i Taiwan har en VERIFIERAD förmånstagare och en verifierad betalare. Förmånstagaren är den som tjänar på annonsen, betalaren den som betalar den. Båda är bolaget STONEBITE ECOM AB. Claude har byggt kampanjen MATSTRUMP_TW_SALES, som är pausad och tom, och åtta annonser som väntar på att laddas upp. Meta vägrar ta emot annonsgruppen tills bolaget är verifierat. Mätt 2026-09-30, Metas svar: "Annonsör saknas: ange verifierad annonsör så att annonser i annonsuppsättningen kan levereras till målgrupper i Taiwan".
+
+Rör ALDRIG:
+- Kampanjer, annonsgrupper eller annonser. Skapa inga, publicera inga, aktivera inga och ändra inga budgetar.
+- Andra annonskonton än "nya kungen".
+- EU-inställningen för förmånstagare och betalare (DSA). Den står på "STonebite" och ska stå kvar.
+- Betalmetoder, Shopify, DNS och Loopia.
+Betala ingenting. Verifiera ALDRIG Axel som privatperson, bara bolaget, eftersom förmånstagarens namn står publikt i Metas annonsbibliotek. Skriv aldrig adressen Sjöhed 160 någonstans.
+
+1. Öppna Ads Manager för annonskontot "nya kungen" (730973156224390) i verksamhetskontot Matstrumpor.se:
+   https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=730973156224390
+   Kontrollera att kontonamnet högst upp är "nya kungen". Står något annat: stanna och fråga Axel.
+
+2. Öppna kontots annonseringsinställningar ("Annonseringsinställningar" / "Advertising settings", via menyn eller kugghjulet Inställningar). Leta upp "Standardförmånstagare och betalare" ("Default beneficiary and payer") och välj landet Taiwan.
+   Erbjuder Meta verifieringen någon annanstans, till exempel under sidan Matstrumpors inställningar ("Annonser i Taiwan") eller i Business-inställningarna, får du starta den där. Ändra inget annat på den sidan.
+
+3. Finns STONEBITE ECOM AB (eller verksamhetskontot Matstrumpor.se) redan som verifierad organisation i listan: välj den som BÅDE förmånstagare och betalare för Taiwan och spara. Gå sedan till steg 5.
+
+4. Finns ingen verifierad organisation: starta verifieringen av en ORGANISATION (inte en person) med de här uppgifterna:
+   - Juridiskt namn: STONEBITE ECOM AB
+   - Organisationsnummer: 559576-2401
+   - Land: Sverige
+   - Adress: Stenkolsgatan 1B, 417 07 Göteborg
+   - Webbplats: https://matstrumpor.se
+   Axel laddar upp dokumentet själv, till exempel registreringsbeviset från Bolagsverket som PDF. Stanna vid uppladdningen och be honom välja filen. Välj aldrig själv en fil från datorn.
+   Bekräftelsekoden kommer via sms, samtal eller mejl. Fråga Axel vilket nummer eller vilken adress som ska få den, och låt honom skriva in koden själv.
+   Samma organisation är både förmånstagare och betalare, så verifiera den en gång och välj den för båda. Skicka in. Meta granskar i upp till cirka två dagar.
+
+5. Kontrollera sidan för standardförmånstagare och betalare. Den ska visa Taiwan → STONEBITE ECOM AB för både förmånstagare och betalare, med status "verifierad" eller "under granskning". Ta en skärmdump.
+
+Rapportera:
+- Vilken väg det blev: organisationen fanns redan, eller en ny verifiering.
+- Status: verifierad eller under granskning.
+- Exakt vad Meta skrev, om något stoppade.
+- Skärmdumpen från steg 5.
+
+Skriv sedan "Taiwan verifierad" eller "Taiwan under granskning" i chatten med Claude. När verifieringen är godkänd laddar Claude upp de åtta annonserna, pausade, och läser tillbaka dem. Ingenting aktiveras förrän Axel granskat annonserna.

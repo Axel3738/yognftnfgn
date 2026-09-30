@@ -236,7 +236,10 @@ export function patchaPaketJs(kod, ov) {
   const byten = [];
   const hoppade = [];
   const lista = paketJsOrdlista(ov);
-  if (Object.values(lista).every((x) => Object.keys(x).length === 0)) return { kod, byten, hoppade: ['ms-paket.js: ingen översättning'] };
+  if (Object.values(lista).every((x) => Object.keys(x).length === 0)) {
+    const korg = patchaPaketKorg(kod);
+    return { kod: korg.kod, byten: korg.byten, hoppade: ['ms-paket.js: ingen översättning', ...korg.hoppade] };
+  }
   const rad = `${PAKET_JS_MARK}${JSON.stringify(lista)};\n`;
   const fn = "  function msPaketText(n, sv) {\n    var l = document.documentElement.lang || 'sv';\n    var t = MS_PAKET_TEXT[n];\n    return (t && (t[l] || t[l.split('-')[0]])) || sv;\n  }\n";
   const kommentar = '  // Köpknappens texter på kundens språk (matstrumpor/marknader/temapatch.mjs patchaPaketJs) — svenskan är reserven.\n';
@@ -253,6 +256,30 @@ export function patchaPaketJs(kod, ov) {
     if (kod.includes(ny)) { hoppade.push(`${ny.match(/msPaketText\('([a-z_]+)'/)[1]}: redan patchad`); continue; }
     kod = bytExakt(kod, sok, ny, 1);
     byten.push(ny.match(/msPaketText\('([a-z_]+)'/)[1]);
+  }
+  const korg = patchaPaketKorg(kod);
+  return { kod: korg.kod, byten: [...byten, ...korg.byten], hoppade: [...hoppade, ...korg.hoppade] };
+}
+
+// Korgens språkmapp (granskningen 2026-09-30: "korgen blir engelsk"). Paketknappens reservväg
+// laddar om till /discount/<kod>?redirect=/cart. En ren '/cart' landar på domänens huvudspråk:
+// på matstrumpor.com engelska för en tysk, polsk eller japansk kund, på .se svenska. Rutten
+// (Shopify.routes.root = /de/, /zh-tw/ …) ska med. Shopify följer ?redirect=/de/cart och
+// behåller språket (mätt 2026-09-30 på /de, /zh-tw, /ja, /pt-pt). Samma rättning står i
+// fabrikens källa factory/tema/assets/ms-paket.js.
+export const PAKET_JS_KORG = [
+  ["encodeURIComponent('/cart')", "encodeURIComponent(rutt + 'cart')"],
+  ["encodeURIComponent('/cart.js')", "encodeURIComponent(rutt + 'cart.js')"],
+];
+
+export function patchaPaketKorg(kod) {
+  const byten = [];
+  const hoppade = [];
+  for (const [sok, ny] of PAKET_JS_KORG) {
+    const antal = kod.split(sok).length - 1;
+    if (antal === 0) { hoppade.push(`korg ${ny}: ${kod.includes(ny) ? 'redan patchad' : 'finns inte'}`); continue; }
+    kod = kod.split(sok).join(ny);
+    byten.push(`korgens språkmapp (${sok} ×${antal})`);
   }
   return { kod, byten, hoppade };
 }

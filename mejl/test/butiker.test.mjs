@@ -215,17 +215,21 @@ test('språkfilerna: alla elva bär samma nycklar som en.json, tolv månader och
   }
 });
 
-test('Matstrumpor: svensk huvudmall utan leveransfönster, elva översättningar med sin språkmapp', () => {
+test('Matstrumpor: svensk huvudmall utan leveransfönster, tretton översättningar med sin språkmapp', () => {
   const b = byggButik('matstrumpor');
   assert.equal(b.brand.leveransfonster, false);
   const frakt = b.liquid.find((m) => m.id === 'fraktbekraftelse').html;
   assert.ok(!frakt.includes('Beräknad leverans') && !frakt.includes('lev_fran_datum'), 'inget leveransfönster i mejlet som bär länken (Axel 2026-09-21)');
   assert.ok(frakt.includes('Spårningen visar ofta inget'), 'raden om tyst spårning står kvar');
   assert.ok(!/Sjöhed/i.test(JSON.stringify(b.liquid)), 'gamla adressen');
-  assert.deepEqual(b.oversattningar.map((o) => o.locale), ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT']);
+  assert.deepEqual(b.oversattningar.map((o) => o.locale), ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT', 'ja', 'zh-TW']);
+  // Facit är Shopifys egna rootUrls för matstrumpor.com (webPresences, läst 2026-09-30), inte en
+  // regel räknad ur koden: testet räknade förut samma matstrumpor.se/<mapp> som koden, och
+  // godkände därmed Taiwans knapp till .se/zh-tw — en sida som inte finns (.se bär zh-TW på /zh).
+  const COM = { en: '', 'pt-PT': 'pt-pt/', 'zh-TW': 'zh-tw/' };
   for (const o of b.oversattningar) {
-    const mapp = o.locale === 'pt-PT' ? 'pt' : o.locale;
-    assert.equal(o.sida, `https://matstrumpor.se/${mapp}/pages/spara`);
+    const mapp = COM[o.locale] ?? `${o.locale}/`;
+    assert.equal(o.sida, `https://matstrumpor.com/${mapp}pages/spara`, `${o.locale}: knappen går via .com (Axels regel för allt utland)`);
     for (const m of o.mallar) {
       assert.ok(m.html.startsWith('{% assign fornamn'), `${o.locale}/${m.id}: en hel mall, ingen case`);
       assert.ok(m.html.includes(`<html lang="${o.kod}">`), `${o.locale}/${m.id}: lang`);

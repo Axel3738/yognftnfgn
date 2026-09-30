@@ -1,0 +1,47 @@
+{
+  "comment": "Traditionell kinesiska (Taiwan, 繁體中文, 你-form) för Matstrumpors fraktmejl (Taiwan). Skriven av en sonnet-subagent 2026-09-30 mot sv-källan (mejl/copy.json), de.json och en.json som strukturförlagor och REGLER-ASIEN.md:s ordlista; inte granskad av en modersmålstalare, rätta här och aldrig i koden. Knappen (追蹤包裹), paketnumrets etikett och tilltalet (你) är låsta mot spårningssidan (sparning/sprak/zh.json). dagsuffix är tomt med flit: datumLiquid bygger '{dag}{suffix} {månad}', så '日' hade gett '30日 9月' i stället för det rätta '9月30日' — Matstrumpors fraktmejl visar inget leveransfönster, så datumet syns inte. halsning finns som i es/fr, så hälsningen blir '你好，Anna！' med helbreddstecken i stället för '你好 Anna!'.",
+  "kod": "zh",
+  "ord": {
+    "Hej": "你好",
+    "I paketet": "包裹內容",
+    "Levereras till": "配送至",
+    "Antal": "數量",
+    "Ditt paketnummer": "你的包裹編號",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "點選上方按鈕，就能立刻看到你的包裹。"
+  },
+  "manader": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+  "dagsuffix": "",
+  "menyrad": "追蹤包裹",
+  "sidfot": "對你的訂單有任何疑問嗎？請直接回覆這封郵件，或寄信到 {{support}}。",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["你的包裹在路上了", "{{ordernummer}} 已離開倉庫", "現在正送往你那裡"],
+      "preheader": ["追蹤連結就在這裡。", "如果沒看到這封信，請檢查垃圾郵件資料夾。"],
+      "rubrik": "你的包裹在路上了！",
+      "intro": "你的訂單 {{ordernummer}} 已離開倉庫，正在送往你那裡。",
+      "knapp": "追蹤包裹",
+      "tips": "包裹正在前往機場的途中，追蹤資訊可能會有 2–4 天沒有更新，這完全正常。之後請再查看一次。",
+      "beraknad_rubrik": "預計送達日期",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "前 2–4 天，追蹤資訊常常不會顯示任何動態。包裹正在前往機場的途中，並沒有遺失。你什麼都不用做，包裹完成登記後，追蹤資訊就會更新。"
+    },
+    "fraktuppdatering": {
+      "amne": ["你的包裹有新進度", "追蹤資訊已更新", "訂單 {{ordernummer}} 有更新"],
+      "preheader": ["目前的最新狀態如下。", "在這裡查看最新資料。"],
+      "rubrik": "追蹤資訊已更新",
+      "intro": "你的訂單 {{ordernummer}} 的追蹤資訊已更新。",
+      "knapp": "追蹤包裹"
+    },
+    "ute_for_leverans": {
+      "amne": ["你的包裹今天會送到", "現在正在配送中", "{{ordernummer}} 今天配送"],
+      "preheader": ["請在今天留意包裹送達。", "很快就會送到你的信箱或取貨點。"],
+      "rubrik": "你的包裹今天會送到",
+      "intro": "你的訂單 {{ordernummer}} 正在配送中，今天就會送達。",
+      "knapp": "追蹤包裹"
+    }
+  },
+  "halsning": {
+    "med_namn": "你好，{namn}！",
+    "utan_namn": "你好！"
+  }
+}

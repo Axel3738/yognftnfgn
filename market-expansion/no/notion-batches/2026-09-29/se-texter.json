@@ -1,0 +1,42 @@
+{
+ "Takoverdrag_FD_2_1": {
+  "former": [
+   {"form": "badge", "plats": "uppe vänster, röd platta, vit fet text", "rader": ["Fars dag-rea"]},
+   {"form": "platta", "plats": "rubrik, 2 rader, svart fet på ljus platta", "rader": ["Present till fars dag: taket han", "aldrig kollar."], "block": [0, 1]},
+   {"form": "platta", "plats": "underrubrik, 1 rad, svart normal", "rader": ["Kanten hänger 30 till 40 cm ner. Vattentät 210D-väv."]},
+   {"form": "platta", "plats": "pris, stor fet svart", "rader": ["Från 1 129 kr"]},
+   {"form": "platta", "plats": "jämförpris, grå normal", "rader": ["ord. 1 469 kr"]},
+   {"form": "platta", "plats": "fotrad, svart fet", "rader": ["Beställ senast 19 oktober"]}
+  ]
+ },
+ "Takoverdrag_FD_2_2": {
+  "former": [
+   {"form": "badge", "plats": "uppe vänster, röd platta, vit fet text", "rader": ["Fars dag-rea"]},
+   {"form": "platta", "plats": "rubrik, 2 rader, svart fet på ljus platta", "rader": ["Till fars dag: husvagnstaket", "han faktiskt täcker"], "block": [0, 1]},
+   {"form": "platta", "plats": "underrubrik, 1 rad, svart normal", "rader": ["Kanten hänger 30 till 40 cm ner. Vattentät 210D-väv."]},
+   {"form": "platta", "plats": "pris, stor fet svart", "rader": ["Från 1 129 kr"]},
+   {"form": "platta", "plats": "jämförpris, grå normal", "rader": ["ord. 1 469 kr"]},
+   {"form": "platta", "plats": "fotrad, svart fet", "rader": ["Beställ senast 19 oktober"]}
+  ]
+ },
+ "Sotarset_FD_2_1": {
+  "former": [
+   {"form": "badge", "plats": "uppe vänster, röd platta, vit fet text", "rader": ["Fars dag-rea"]},
+   {"form": "platta", "plats": "rubrik, 2 rader, svart fet", "rader": ["Fars dag-present: skruva ihop", "3,69 meter själv."], "block": [0, 1]},
+   {"form": "platta", "plats": "underrubrik, 1 rad, svart normal", "rader": ["9 böjliga stänger och en nylonborste på 100 millimeter rensar röret."]},
+   {"form": "platta", "plats": "pris, stor fet svart", "rader": ["459 kr"]},
+   {"form": "platta", "plats": "jämförpris, grå normal", "rader": ["ord. 599 kr"]},
+   {"form": "platta", "plats": "fotrad, svart fet", "rader": ["Beställ senast 19 oktober"]}
+  ]
+ },
+ "Sotarset_FD_2_2": {
+  "former": [
+   {"form": "badge", "plats": "uppe vänster, röd platta, vit fet text", "rader": ["Fars dag-rea"]},
+   {"form": "platta", "plats": "rubrik, 2 rader, svart fet", "rader": ["Fars dag: skorstenen", "han faktiskt rensar själv"], "block": [0, 1]},
+   {"form": "platta", "plats": "underrubrik, 1 rad, svart normal", "rader": ["9 böjliga stänger och en nylonborste på 100 millimeter rensar röret."]},
+   {"form": "platta", "plats": "pris, stor fet svart", "rader": ["459 kr"]},
+   {"form": "platta", "plats": "jämförpris, grå normal", "rader": ["ord. 599 kr"]},
+   {"form": "platta", "plats": "fotrad, svart fet", "rader": ["Beställ senast 19 oktober"]}
+  ]
+ }
+}

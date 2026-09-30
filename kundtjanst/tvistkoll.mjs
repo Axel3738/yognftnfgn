@@ -151,6 +151,30 @@ export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGA
       || (b.belopp - a.belopp));
 }
 
+/**
+ * Är fönstret stängt? Deadline passerad OCH inget bevis inskickat. Ren.
+ *
+ * ⛔ Mätt 2026-09-30 på **#4914** (chargeback, 348 kr): deadline
+ * `2026-09-30T01:00:00+02:00`, `evidence_sent_on: null`, status `under_review`.
+ * Ingen skickade in något, och klockan hann före. Dagen innan hände samma sak
+ * med order `17584203399517` (509 kr). Larmet hade namngett båda i förväg.
+ *
+ * En sådan rad är inte längre en uppgift — bevisfönstret går inte att öppna
+ * igen — men den får inte tigas bort heller: den är kvittot på vad uteblivet
+ * svar kostade. Därför står den under egen rubrik i larmet, aldrig i listan
+ * "need evidence" bland dem som fortfarande går att vinna.
+ */
+export function fonstretStangt(t, nu = new Date()) {
+  // ⚠️ Bara ett AVLÄST och tomt bevisfält bevisar att ingen svarade. Saknas
+  // fältet helt (data äldre än 2026-09-28) vet vi inte, och då stannar raden i
+  // uppgiftslistan som förut — en förfallen tvist som KAN ha bevis inne får
+  // aldrig bokföras som förlorad på en gissning.
+  if (t?.bevisSkickat !== null) return false;
+  const h = timmarKvar(t?.evidensSenastTid, nu);
+  if (h !== null) return h < 0;
+  return (dagarKvar(t?.evidensSenast, nu) ?? 99) < 0;
+}
+
 /** Chargeback = pengarna är redan dragna och en förlust är slutgiltig. Ren. */
 export function arChargeback(t) {
   return String(t?.typ ?? '').toLowerCase() === 'chargeback' ? 1 : 0;
@@ -183,8 +207,11 @@ export function narText(kvar, timmar = null) {
  * Discord-texten. Engelska — VA:n läser den (Axels order 2026-09-05).
  * Kundadresser förekommer inte här: ordernumret är nyckeln.
  */
-export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
+export function renderaLarm(alla, { brand, nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   const datum = new Date(nu).toISOString().slice(0, 10);
+  // Stängda fönster lyfts ur uppgiftslistan och får egen rubrik längst ner.
+  const stangda = alla.filter((x) => fonstretStangt(x, nu));
+  const rader = alla.filter((x) => !fonstretStangt(x, nu));
   // Förfallen och "förfaller idag" är INTE samma sak. En tvist med deadline i
   // dag går fortfarande att vinna — kallar man den "already past the due date"
   // hoppar VA:n över den och vi förlorar pengar som var räddningsbara.
@@ -203,7 +230,9 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   const ut = [
     `${rubrik} **Dispute deadlines — ${brand} (${datum})**`,
     '',
-    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence — every open chargeback, and inquiries due within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`,
+    rader.length
+      ? `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence — every open chargeback, and inquiries due within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`
+      : 'Nothing is waiting for evidence right now — but read the closed window at the bottom.',
     '',
     // ⚠️ Texten stod tidigare som "an unanswered dispute is lost automatically".
     // Det är FALSKT för inquiries och stod i larmet 2026-09-15..20. Mätt på 50
@@ -253,6 +282,24 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
     'gather its proof today even when the date is weeks away. **Always email the customer the same day anyway;**',
     '**only the evidence submission waits, and a customer who gets an answer often withdraws the dispute themselves.**',
   );
+  if (stangda.length) {
+    ut.push(
+      '',
+      `⛔ **The evidence window has closed on ${stangda.length === 1 ? 'this one' : `these ${stangda.length}`} — nothing was ever submitted.**`,
+      'Not a task: the window cannot be reopened. It is here so the cost is visible, and so nobody spends time on it today.',
+      '',
+    );
+    for (const x of stangda) {
+      const order = x.ordernamn ? `${x.ordernamn}` : `order ${x.orderId ?? 'unknown'}`;
+      const mark = arChargeback(x) ? '🔴 CHARGEBACK' : 'inquiry';
+      ut.push(`• **${order}** — ${mark}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — window closed ${x.evidensSenast}${klockslag(x.evidensSenastTid) ? ` at ${klockslag(x.evidensSenastTid)}` : ''}`);
+    }
+    ut.push(
+      '',
+      '**Still do one thing: email the customer.** A chargeback can be withdrawn by the cardholder even after our window shuts,',
+      'and an inquiry that nobody answered escalates into a chargeback — talking to the customer is the only lever left.',
+    );
+  }
   return ut.join('\n');
 }
 

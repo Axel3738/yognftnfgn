@@ -1,0 +1,1934 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-30",
+  "skapad": "2026-09-30T14:52:34.097Z",
+  "kvot": {
+    "heygen": 8978,
+    "kie": 8981.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3e9270ab908c81f680f4f8611ba9c238",
+        "namn": "Takoverdrag_OB_21_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_21_1-3e9270ab908c81f680f4f8611ba9c238",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_OB_21_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431673200291",
+        "status": "PENDING_REVIEW",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | OB | 2026-09-22",
+        "copy": {
+          "message": "Sidorna på taköverdraget står fria, precis som tänkt. Kanten hänger 30 till 40 cm ner över sidorna, och dörr, fönster och luckor är fria. En person får på och av det själv.",
+          "headline": "Sidorna fria, kanten hänger ner",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "bd715dfb2bf45d14eca9fc948e334002",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825290726_122114663817476552_1878649975250897172_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=6mP8gB7vRAYQ7kNvwG4qfcO&_nc_oc=Ado7CkC8gP_9RVHYgSEUrahumemYp6RpZqho-M3u48G1IAAiiEV9YvsvtQccGgB-YUE&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQIQldORHOPyTeoLVBbj-qwnbYYPY8Z4-xblJ2UUvGei-B-5i01CmTkfVReH_FX83PHUi1U9oxyofw&oh=00_AQN7ibiXALJrEQdwSqiudJg1NqIQpKEyyG1cL7i6caCDtA&oe=6AC2DE36",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "OB",
+      "nr": "21",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - OB",
+        "annonsNamn": "Takovertrekk_NO_OB_21_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e9270ab908c816aa501e69aae2b1688",
+        "namn": "Takoverdrag_OB_15_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_15_1-3e9270ab908c816aa501e69aae2b1688",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_OB_15_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431686210291",
+        "status": "PENDING_REVIEW",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | OB | 2026-09-22",
+        "copy": {
+          "message": "Riktig vinterförvaring är ett alternativ. Vårt överdrag är byggt för att stå kvar på din egen plats, från höst till vår. Kommer det tung blötsnö skottas den av, som du gjort utan överdrag.",
+          "headline": "På din plats, höst till vår",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "bc42758d8db84b77cfc0d689099f950a",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/830119658_122114666073476552_8835053470866290720_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=9kmgb80Q2GgQ7kNvwFfpD_M&_nc_oc=Adq8dX0rmX3DUwj3NCycBI1449gTEeWCEz-vPVEDaoERvenClAs0_V6syMNAcH1ecww&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQL3Oe7O8Uh-zBZox-3e0XYXxn0H4P_A2xFLXIVIrYkfFr6gjMx3mp75wX3lV9Udxs08QVvTA7iL1w&oh=00_AQOz4wHwF2L5R4cKvYYiNuU4YX2VASFSQFuPlaGfZGngcQ&oe=6AC2EE40",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "OB",
+      "nr": "15",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - OB",
+        "annonsNamn": "Takovertrekk_NO_OB_15_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e6270ab908c81a49a7ffc042ee08cca",
+        "namn": "Takoverdrag_OB_11_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_11_H1-3e6270ab908c81a49a7ffc042ee08cca",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_OB_11_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431703050291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | OB | 2026-09-22",
+        "copy": {
+          "message": "Vattnet ska inte bli stående på taket. Vår silverbelagda 210D-oxfordväv låter det rinna av i stället, inte en tunn presenning. Remmarna sitter på alla fyra sidor och håller kvar överdraget när det blåser. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).",
+          "headline": "Vattnet rinner av, inte taket.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2442042726327230",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQM1qnk1NY-kKSEK495maKem7LCl39dVjTF5Cx6-G9BMTyarY-4pV1XF9nsSnvK4hs9QfPGa4Y-2VFh1N_hiw8QQfM_KK3qNiqViGyOWM1n1rw.mp4?_nc_cat=109&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=_c0BDzjTMXQQ7kNvwFZ-BXP&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2NDIzMDQ1NDA2NjM0NDIsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=bf88d7e7c131d231&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC82QUFDRTdCMkM3NkQ0MUEwQkQ0ODI1RDAyQUE2MTI0RF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzBCRTIxQTRDODAyMzQ2QUI4NzczRkJGQTE2QkRGMzA2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACak-pKs2urqBRUCKAJDMywXQC8zMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=fg9w906VWeGlC24Cw7YIfw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKNOo_z_M5-nuwauDqycUWEGuJILILUtS0XI5NS1bYvpA5o_TWVaIw-aKGBoeysGSZdwPEhI0gjYw&oh=00_AQMvq8ZQFJpVunh5sOprz74MeymxunbzcumNDVAbUX7pgg&oe=6AC30F57&bitrate=2074626&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.614
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "OB",
+      "nr": "11",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - OB",
+        "annonsNamn": "Takovertrekk_NO_OB_11_H1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e6270ab908c811a9edbc28c6b534500",
+        "namn": "Takoverdrag_OB_9_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_9_H1-3e6270ab908c811a9edbc28c6b534500",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_OB_9_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431751150291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | OB | 2026-09-22",
+        "copy": {
+          "message": "Ett löst hörn räcker för att ett överdrag ska flyga i väg. Se remmen haka fast i en krok i nederkant, på alla fyra sidor, 2,5 m och justerbara efter din vagn. Två extra spännremmar (10,5 m) ingår, utan extra kostnad. Taket är det du aldrig ser, och det som kostar mest att laga. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).",
+          "headline": "Hakar i krok, inte i en knut",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1482774793724271",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQP5E9IC8MjNeHK_Lp5szQ6737mRKnp4a4XLz5SrhlRo2VdQkF1WxCnM9qM87m4tZkpgkKqE4mjBz0JreggSq9Xt5rVqExsJZoCg7k7AqiML9w.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=rs7DK5wxm5gQ7kNvwGRFcd1&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE4MjczNTU2MjE3ODU4MjUsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=cd22316162e240f9&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CREM4MUQ1OTM1QTk0MEU5QUY0MUFCMTczMjM0ODEyMF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUwMTU4MUY4RkM5QjQ5NkE4MTc2OUFCNUY2Nzg5MjY4X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbCg7irjP6-BhUCKAJDMywXQC6ZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=oLHNCY_9ghJo3cyDxKfeTQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJzt5DdeQIJZxVC1tsEXeOx_RucMyF9Oq2lpeiLTrtktz4sND0FvUkLcG7JS5EDXpo3hxEO4WHQ0g&oh=00_AQOP9LaE2VN7UVMU_hHwlhwHHeMd6-kVKt8tmkR6OdrVrQ&oe=6AC2F040&bitrate=1124419&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 15.316
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "OB",
+      "nr": "9",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - OB",
+        "annonsNamn": "Takovertrekk_NO_OB_9_H1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e6270ab908c81e3afbec4099793691b",
+        "namn": "Takoverdrag_OB_7_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_7_H1-3e6270ab908c81e3afbec4099793691b",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_OB_7_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431849830291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | OB | 2026-09-22",
+        "copy": {
+          "message": "Ett helöverdrag som viras runt hela vagnen blir tätt runt om, det stämmer. Det här överdraget ligger bara på taket, solen tar på ytan i stället för på taket, och vattnet rinner av i stället för att bli stående, tack vare den silverbelagda 210D-oxfordväven. Sidorna, fönstret och dörren är öppna som vanligt. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).",
+          "headline": "Tätt och skyddat är inte samma sak",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1776328426949514",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQP6kEw15dJMRnQMu0X_PCOUxgFpVcbptj8Xl8GTbqSk1j_Amz0KPMoEfuqvwBs2ic86Nq3cv31f2UJvV_JhI3NwYYPeBdL1egrSPw55a6a7Yw.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=2d0fcfRS43IQ7kNvwHGZlud&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwOTU4MTk4Mzk5MjI3MzMsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=fb7d082cc0f3b255&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MzBDQzI4MjA1NUI0NUYyOUJENjJDRDVDNDMxMTE5Q19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUyNkQ1NjUzNkE2OTRGMDZBQjFCMThCMkY4Rjc3OTYyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbaiN-EjqnyAxUCKAJDMywXQDCZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=W9L6KwCqgFl9Cr8ju7tMkw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIjFjcPZSA0xHL9qFCnu-RHKYx0lYoMZHmMLLbSGPd2gRXouRRTtBZDkRG4o47isUZclGKcHD-tYg&oh=00_AQNBIrE7mvIl3kyVQGxtMlMrFbFL2oxClSban-RsVm1x6w&oe=6AC2FBF5&bitrate=1615752&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 16.617
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "OB",
+      "nr": "7",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - OB",
+        "annonsNamn": "Takovertrekk_NO_OB_7_H1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e3270ab908c818fb93dfe6fc0ced6c3",
+        "namn": "Takoverdrag_CS_2_H2",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_CS_2_H2-3e3270ab908c818fb93dfe6fc0ced6c3",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_CS_2_H2",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431895240291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+        "copy": {
+          "message": "Taket kostar mest att laga, och vatten blir stående kring takluckorna om det inte skyddas.\nDet här överdraget täcker bara taket, en person sätter på det själv.\n1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %). Beställ ditt taköverdrag.",
+          "headline": "Taket kostar mest att laga.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1797020414825295",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQM0CgIdZZpqB_d3uIMPk5sGcsQdMQm_E_RbIFMeK8gOy2UPqGqrttG2LT6nV3kaht85jl45hhK8FNjpJn4a_XPP7pZbOLa373S_flkCZSSJpw.mp4?_nc_cat=107&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=9IhAL5pLS2EQ7kNvwG2c-bS&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2NjAwNzk4NDU2Nzg2MjgsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=3fd457a116f7f6bd&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9CNTM4QTBCRTlBRDc0Q0ZCQTAyNTM4NzkzRTgzMTlGMl9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0YwQ0M2QTI3QkFDRDQ5OTU4MDBBQTkyMzM2QThGMjk1X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbI-IDYrvXyBRUCKAJDMywXQDkAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=O9rIHr7um3noq2X7TwI3iA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQLRi8wc32BRHk1pjvUP58ef5lC7aal5BStDsh8PXauFibjluAMXiHeY0E3Xx_8OnJ00rNUtqFjtyQ&oh=00_AQMipIHoBnwrihJAOLYmm3HbdYv88eOfFr7-LAfmCa1UQQ&oe=6AC2EBE5&bitrate=1712056&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 25.008
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "CS",
+      "nr": "2",
+      "hook": "H2",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - CS",
+        "annonsNamn": "Takovertrekk_NO_CS_2_H2",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e3270ab908c819d8ad7c79f68a068c9",
+        "namn": "Takoverdrag_CS_2_H3",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_CS_2_H3-3e3270ab908c819d8ad7c79f68a068c9",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_CS_2_H3",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250431937530291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "kampanjId": "120250147343350291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+        "copy": {
+          "message": "Taket är det du aldrig ser, och det som kostar mest att laga.\nDet här överdraget täcker bara taket: silverbelagd 210D-väv, remmar på alla fyra sidor som hakas fast i kanten.\nNio storlekar, från 3 × 5,5 till 3 × 13,5 meter. En av dem passar din husvagn.\nFrån 1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %). Beställ ditt taköverdrag.",
+          "headline": "Nio storlekar. En för din husvagn.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2857875084598208",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQNKPuwlQ232rqmH3qcIBgNtHw0pd8MaNwoUqYR65xvm15aT1GZqInleDOi6dRVQmbA7Xh1rbepqOFkW3ly4-uETHp-F8epuLj37q4Q_cnMoPA.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=bhx9WlOpC7sQ7kNvwE5bB2F&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE2NDA5NTIzNjQyNjQzNjQsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=1c45971802c0c21f&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8wQzE4NTEyMzMzMDc0RTIxQTJGREMwQUI1RDU1NTg0OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0VCOTI3RjFENTRFRDRFNjlBRDRENUEyNTVDODVGMUVEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbYrp_s_5vqBRUCKAJDMywXQDyIcrAgxJwYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=yVjMTyc0KPYLKdMBWGfQGw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKtF2gy10Kf6g0bZ_6BIpa5FWkny8i0dlY0wtNvSctaxF8yEoz4w1-jYez5CA98lp2wx2ldjO6sew&oh=00_AQO_7jfTCyhiGPapj-Em17U7-20HzOkwRssvvLVdC5U79Q&oe=6AC2FCA1&bitrate=1337749&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 28.537
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "CS",
+      "nr": "2",
+      "hook": "H3",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - CS",
+        "annonsNamn": "Takovertrekk_NO_CS_2_H3",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81e8b362c2e0b3a71e5a",
+        "namn": "Termoskydd_SP_4_H4",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_SP_4_H4-3e8270ab908c81e8b362c2e0b3a71e5a",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_SP_4_H4",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250431981870291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | SP | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H4",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - SP",
+        "annonsNamn": "Frontrutetrekk_NO_SP_4_H4",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81ccb6dcfd4f0ae6e904",
+        "namn": "Termoskydd_SP_4_H3",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_SP_4_H3-3e8270ab908c81ccb6dcfd4f0ae6e904",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_SP_4_H3",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432034880291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | SP | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H3",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - SP",
+        "annonsNamn": "Frontrutetrekk_NO_SP_4_H3",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8193bb71d94374a32d3e",
+        "namn": "Solcellslampa_PD_1_H3",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_1_H3-3e8270ab908c8193bb71d94374a32d3e",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_1_H3",
+      "status": "HOPPA",
+      "skal": "\"Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17\" är PAUSED med 1895.69 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432070670291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H3",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Solcellslampa",
+        "se_kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "no_prefix": "Solcellslampa",
+        "adset_prefix": "Solcellslampa NO",
+        "campaign_id": "120252268799910233",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "_matt": "Tillagd 2026-09-28: kön larmade \"saknar koppling\" på tre videorader. Kampanjen och de 14 norska annonserna (Solcellslampa_NO_*) fanns redan, byggda 2026-09-17 — det var bara raden här som saknades. Läst samma dag: kampanjen PAUSED med 1 895,69 kr spend och ROAS 0,616, alltså avvecklad; nya rader flyttas därför till Approved av PAUSED-regeln, inte översätts."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252268799910233",
+        "kampanjNamn": "Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17",
+        "utfall": "AVVECKLAD",
+        "spend": 1895.69,
+        "adsetNamn": "Solcellslampa NO - PD",
+        "annonsNamn": "Solcellslampa_NO_PD_1_H3",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "prefix": "Solcellslampa"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81a286e3d21a7a4d6fa5",
+        "namn": "Solcellslampa_PD_1_H4",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_1_H4-3e8270ab908c81a286e3d21a7a4d6fa5",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_1_H4",
+      "status": "HOPPA",
+      "skal": "\"Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17\" är PAUSED med 1895.69 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432094730291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H4",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Solcellslampa",
+        "se_kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "no_prefix": "Solcellslampa",
+        "adset_prefix": "Solcellslampa NO",
+        "campaign_id": "120252268799910233",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "_matt": "Tillagd 2026-09-28: kön larmade \"saknar koppling\" på tre videorader. Kampanjen och de 14 norska annonserna (Solcellslampa_NO_*) fanns redan, byggda 2026-09-17 — det var bara raden här som saknades. Läst samma dag: kampanjen PAUSED med 1 895,69 kr spend och ROAS 0,616, alltså avvecklad; nya rader flyttas därför till Approved av PAUSED-regeln, inte översätts."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252268799910233",
+        "kampanjNamn": "Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17",
+        "utfall": "AVVECKLAD",
+        "spend": 1895.69,
+        "adsetNamn": "Solcellslampa NO - PD",
+        "annonsNamn": "Solcellslampa_NO_PD_1_H4",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "prefix": "Solcellslampa"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81f587beda925b33e95d",
+        "namn": "Solcellslampa_PD_1_H2",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_1_H2-3e8270ab908c81f587beda925b33e95d",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_1_H2",
+      "status": "HOPPA",
+      "skal": "\"Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17\" är PAUSED med 1895.69 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432140410291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H2",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Solcellslampa",
+        "se_kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "no_prefix": "Solcellslampa",
+        "adset_prefix": "Solcellslampa NO",
+        "campaign_id": "120252268799910233",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "_matt": "Tillagd 2026-09-28: kön larmade \"saknar koppling\" på tre videorader. Kampanjen och de 14 norska annonserna (Solcellslampa_NO_*) fanns redan, byggda 2026-09-17 — det var bara raden här som saknades. Läst samma dag: kampanjen PAUSED med 1 895,69 kr spend och ROAS 0,616, alltså avvecklad; nya rader flyttas därför till Approved av PAUSED-regeln, inte översätts."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252268799910233",
+        "kampanjNamn": "Solcellslampa NO | BE-ROAS 1,62 | 2026-09-17",
+        "utfall": "AVVECKLAD",
+        "spend": 1895.69,
+        "adsetNamn": "Solcellslampa NO - PD",
+        "annonsNamn": "Solcellslampa_NO_PD_1_H2",
+        "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+        "prefix": "Solcellslampa"
+      }
+    },
+    {
+      "notion": {
+        "id": "3ea270ab908c81419182ed6ee0c7f8f1",
+        "namn": "Golfkalender_FD_2_2",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_FD_2_2-3ea270ab908c81419182ed6ee0c7f8f1",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_FD_2_2",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250414539050291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "FD | Notionrunda 2026-09-29",
+        "copy": {
+          "message": "Fars dag-present. 24 golfluckor öppnas i december. Peggar knäcks och bollar försvinner hela säsongen, den här presenten fyller på igen. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+          "headline": "Fars dag-present som fyller golfbagen.",
+          "description": "Fars dag-rea: 549 kr, ord. 719 kr",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "dc4c31ee3c333cf11c9b0462152fc2b4",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825274637_122113994415476552_5423423647496576028_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=tfeW60sgDxYQ7kNvwFuasHS&_nc_oc=AdrL-q267hOpb83zdDZQnIaQUHJFsBM5SslQFZTnIYW-cdhjLAvci0NzGndo9ipEK2A&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJy6pdyKPzWmLUA7u9ulIZ8l_5GDNxCOdbPNfzxoearzzfdGwaokTBNhRgipQfwjhW-L_dN6TJS3w&oh=00_AQOMWesWo9L9EOO2M8ydsU3RjyceVzm4e4uhb2p_8CLlvA&oe=6AC2F4E5",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "FD",
+      "nr": "2",
+      "hook": "2",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - FD",
+        "annonsNamn": "Golfkalender_NO_FD_2_2",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e9270ab908c81fd81b8ea869d2d71d7",
+        "namn": "Golfkalender_FD_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_FD_2_1-3e9270ab908c81fd81b8ea869d2d71d7",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_FD_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250413650110291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "FD | Notionrunda 2026-09-29",
+        "copy": {
+          "message": "Fars dag-present. 24 golfluckor öppnas i december. Peggar knäcks och bollar försvinner hela säsongen, den här presenten fyller på igen. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+          "headline": "Fars dag-present som fyller golfbagen.",
+          "description": "Fars dag-rea: 549 kr, ord. 719 kr",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "120a03b1250d46e9378b64e23cd38daa",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/828069472_122113956363476552_8451342092354180502_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=pZWA9h5pR-4Q7kNvwGkbIcs&_nc_oc=AdpDggtY_aQieeOVLeRu-ZYpTlTMiq2leAADfaxfmKv57bxgSHU1ocC_oRJdM4Jz93g&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQIX5tT70Bv2e7xHgdBiUQ8wOT-hqPn9JzEs4j_-GCCUwzZGMeUdiYz7MuMMFn2GMeDWkLODcMqAaQ&oh=00_AQNIhmqDSGVtnC8ZJy6CEpIuNbsjfd80Y8QcDJGhC8YKUw&oe=6AC2F56F",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "FD",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - FD",
+        "annonsNamn": "Golfkalender_NO_FD_2_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8132a73ff3594ac4e37e",
+        "namn": "Golfkalender_BOF_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_BOF_2_1-3e8270ab908c8132a73ff3594ac4e37e",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_BOF_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432170600291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "BOF | Notionrunda 2026-09-30",
+        "copy": {
+          "message": "14 dagars ångerrätt enligt lag, räknat från den dag du får varan. Kalendern kommer färdigfylld, inget att fylla i själv. 549 kr, ordinarie 719 kr.",
+          "headline": "14 dagars ångerrätt enligt lag",
+          "description": "",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "822025855abd460c7287af03ae29f9ad",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/827857445_122114692107476552_9143089716166999055_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=WPMmaTev5tcQ7kNvwGG5m1o&_nc_oc=AdrvcJC6wUqlcOGgLBoASZyNi0eJFQtXOE6Jy9cRMJcl_x-0ndlUw3d-wo5lENuVKBM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJ-5NI5LliXPXXtONWbOyiXBx2fsBJKQoWv1DgIgjY_7ONBEbj10hoYFvK5wLKSYXKPxlxvzYphDQ&oh=00_AQNw8_0AK3VnZgfMjL5Z28qafE89yR5NdDQ3pwJtHV0vZA&oe=6AC2E7F9",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "BOF",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - BOF",
+        "annonsNamn": "Golfkalender_NO_BOF_2_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c816aadfef622a3c05d87",
+        "namn": "Golfkalender_BOF_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_BOF_1_1-3e8270ab908c816aadfef622a3c05d87",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_BOF_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432193410291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "BOF | Notionrunda 2026-09-30",
+        "copy": {
+          "message": "549 kr, ordinarie 719 kr, för 24 luckor färdigfyllda med golftillbehör. Spara 170 kr mot ordinarie pris.",
+          "headline": "549 kr, ordinarie 719 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "eec96b92ebfd52aa7a37ef27883613a5",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/825272550_122114696097476552_6605493335178995833_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=d9Yjsylb3LoQ7kNvwFnkzlT&_nc_oc=AdpnKCSRTMExRk6h-u_X1am8Yt1uPCnJWGoZB6xHliwNbD36yscogyasWkhTzEV3HmM&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQIyJ6-6ATmR5In5pzpecg7s17U46ZJc7we0IhrqnYKakVi4nZ_4TJHiDvtfCzlm-AMlRb3_GxThhg&oh=00_AQMCYwKwTofkD0P9gnNL5IbG9WgEpIBoSIy2_5XTs0lj0A&oe=6AC2E5F5",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "BOF",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - BOF",
+        "annonsNamn": "Golfkalender_NO_BOF_1_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81e9a237d6fa36a014e0",
+        "namn": "Golfkalender_CS_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_CS_4_1-3e8270ab908c81e9a237d6fa36a014e0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_CS_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432221070291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "Golf Adventskalendern | CS | 2026-09-24",
+        "copy": {
+          "message": "24 luckor, färdigfyllda med golftillbehör i stället för choklad. 549 kr, ordinarie 719 kr. Spara 170 kr.",
+          "headline": "549 kr i stället för 719",
+          "description": "",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f138b6dfc84206e5d63b5e371c8c3bd5",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/828365114_122114697675476552_6823957172645629935_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=SzOUkBhv3kYQ7kNvwHnNzaL&_nc_oc=AdpTsaHhH7vo5mWXiHegUCbDxPGwEP8pnfXHVWSG6r53rylK6drPkz26elEl66cxoRw&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJN-jH2ystjwwDWG0IxhVwTqotOf-z0NMvTU0rQtxIfmAMFieA8T587OIdmDXNG6oKNrcyjoYlUvA&oh=00_AQMYad2oYFt5J7a72E13tp5SXNw9dPsJsFQPmgiweAI8OA&oe=6AC2DA0C",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "CS",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - CS",
+        "annonsNamn": "Golfkalender_NO_CS_4_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81339a65efa24b79b74c",
+        "namn": "Golfkalender_LI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_LI_1_1-3e8270ab908c81339a65efa24b79b74c",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_LI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432245510291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "LI | Notionrunda 2026-09-30",
+        "copy": {
+          "message": "Bakom luckorna ligger golfbollar, peggar i plast och trä, bollmarkeringar, en greenlagare med spegel, en klubbrengöringsborste och en golfhandduk med clips. 549 kr, ordinarie 719 kr.",
+          "headline": "Det här ligger bakom luckorna",
+          "description": "",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "3c3e2516743cda06974fb1fb08410329",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825269317_122114698737476552_5303922550893303156_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=72psBdrc4noQ7kNvwGZhFzy&_nc_oc=AdrwoW7RqTUTTw1rnd0Qh0XOR9eMNgnAU9c3MJ46K4-a_eo9ivFQB46WwntaW4feXKw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQK-TriTO_1orKsgl1cqoJ9Cxw9dGcrexB7V37ZtGh6YmI_6RYrBO7NVyz6cYjjrcr-_ertdCQoOXw&oh=00_AQM7BE0Ic9Sho8HeceXjm3zd3Y1JhV8eeML0vM1c8jYjtA&oe=6AC2F9AA",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "LI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - LI",
+        "annonsNamn": "Golfkalender_NO_LI_1_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c815ba377e8ac0b8f1de5",
+        "namn": "Golfkalender_PD_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Golf advent calendar creative hub",
+        "url": "https://app.notion.com/p/Golfkalender_PD_4_1-3e8270ab908c815ba377e8ac0b8f1de5",
+        "kalla": "notion-rest"
+      },
+      "namn": "Golfkalender_PD_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432268160291",
+        "status": "ACTIVE",
+        "kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "kampanjId": "120250349257210291",
+        "adset": "Golf Adventskalendern | PD | 2026-09-24",
+        "copy": {
+          "message": "24 luckor med golftillbehör i stället för choklad: golfbollar, peggar, bollmarkeringar, greenlagare med spegel, klubbrengöringsborste och golfhandduk. 549 kr, ordinarie 719 kr.",
+          "headline": "Golftillbehör i stället för choklad",
+          "description": "",
+          "link": "https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "9e318951ea9e75d5e7a335421f467fc7",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/829190435_122114701605476552_889388130702356171_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=VEdwotvFFXgQ7kNvwHlYLSB&_nc_oc=Adq6i-swaOQ2h8nc-pntfOj2CshtXbSjVPzkfWqvi4lxvGXrUBAtOH1nHIoZbls7xNE&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJc78W-JtHZFpCeKX59B6J4Yqt47dhoXBaP8O3FT-sx0JPPSzJCt31H1qiHkxxKwey-bPnEOxgXJg&oh=00_AQP1AVMu323OS4Ftk9hTtTPw3UBGBTeIozaJZyHUgm3Vdg&oe=6AC301D6",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Golfkalender",
+      "K": "PD",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Golfkalender",
+        "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+        "no_prefix": "Golfkalender",
+        "adset_prefix": "Golfkalender NO",
+        "campaign_id": "120252448770490233",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252448770490233",
+        "kampanjNamn": "Golfkalender NO | BE-ROAS 1,48 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Golfkalender NO - PD",
+        "annonsNamn": "Golfkalender_NO_PD_4_1",
+        "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+        "prefix": "Golfkalender"
+      },
+      "pris": {
+        "pris": "619.00",
+        "jamforpris": "809.00",
+        "titel": "Golf Adventskalender – 24 Golftilbehør",
+        "handle": "golf-adventskalender-24-golftilbehor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c813b8303f3a9f7d14163",
+        "namn": "Taljset_BOF_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_BOF_1_1-3e8270ab908c813b8303f3a9f7d14163",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_BOF_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432292340291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "BOF | Notionrunda 2026-09-30",
+        "copy": {
+          "message": "869 kr, ordinarie 1 139 kr, en besparing på 270 kr. 30 delar ligger i en väska med dragkedja.",
+          "headline": "869 kr för 30 delar",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c490b7d448ac802f8c30c3fae2cfafd0",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/825840240_122114703021476552_5228891322978059128_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=-sagv6LcA08Q7kNvwFbI2ca&_nc_oc=AdoMzYmtxgPEQHG--Zg0psA3wEX05UrmPwz1M3GcNS6s2kSSYBEmPqwBGwZ7XicSrZI&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJ49tyzbhSAduSpnuCbEwdF-D6vb9aRsa8AyzHscpbGDUSMfelgqIPqXlhKn8vYP138MwzVZdo7Kw&oh=00_AQMiPoT3WxHbInLOGJNRk7eeT6zmBh08CRp0L2W5tdClAA&oe=6AC30B86",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "BOF",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - BOF",
+        "annonsNamn": "Spikkesett_NO_BOF_1_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c816b9d0ae403992e9320",
+        "namn": "Taljset_OB_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_OB_2_1-3e8270ab908c816b9d0ae403992e9320",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_OB_2_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432323580291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "OB | Notionrunda 2026-09-28",
+        "copy": {
+          "message": "En träbit ingår för att öva innan det riktiga. Handsken tas på, kniven tar de första snitten på träbiten. 869 kr, ordinarie 1 139 kr.",
+          "headline": "Öva på träbiten som ingår",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "76aaa7128edf80353dc83ce636e8e14e",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825274833_122114705331476552_366090083575177720_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=se6feK8G9kkQ7kNvwHU36PK&_nc_oc=Adq10FkMbot-tBINY2DP0NQdhDmHNCbG0UoTKcGI42TxMTGP7BcZcHHyqI38wIV12Co&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQJea9xylj3rfjSF-zOf4iZddys6tmOeVBNO4Lbn3eMJBqKxE17IEYgyA12oOLtNVb6tVgvMBGlaWA&oh=00_AQMbQMhGFVHca8s3tPpEqspn8Hdsk6V1VtXktgqBloyr7g&oe=6AC2D9A5",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "OB",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - OB",
+        "annonsNamn": "Spikkesett_NO_OB_2_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81529120d08b1b5f64f6",
+        "namn": "Taljset_CS_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_CS_4_1-3e8270ab908c81529120d08b1b5f64f6",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_CS_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432369240291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | CS | 2026-09-24",
+        "copy": {
+          "message": "869 kr, ordinarie 1 139 kr, en besparing på 270 kr. Väskan innehåller 30 delar: 6 knivar och 6 järn.",
+          "headline": "869 kr, spara 270 kr",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "70cc3ca052dbf288310a37f1ca772fb9",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825526751_122114707413476552_8385302000131413844_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=PCLxqQbOJQ4Q7kNvwHAlFPB&_nc_oc=Ado1NFAyvENQ24sjk1aezsOQCK9y3SyJvRKb9CEbJ6lnJZu1G3h0uCBjx_8P8KSC1yk&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQLP3Eee4WHqS5qA0ttk9YQf-Phb3o7KrwX80oyQe8G-7DIP7gEuBCRrIvZawcDWGVP3An0wDTM--g&oh=00_AQMru8T9_ICFQoHOLB7erdZUQMjTOKjbuqEXWJWDEnOgoA&oe=6AC2F957",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "CS",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - CS",
+        "annonsNamn": "Spikkesett_NO_CS_4_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8164a06afacc3ca7a9a2",
+        "namn": "Taljset_OB_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_OB_1_1-3e8270ab908c8164a06afacc3ca7a9a2",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_OB_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432410790291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "OB | Notionrunda 2026-09-28",
+        "copy": {
+          "message": "Bladet är vasst utan skydd förrän det läggs i väskan. Bladskydd täcker varje blad, skärskyddade handskar skyddar handen. 869 kr, ordinarie 1 139 kr.",
+          "headline": "Handskarna skyddar när kniven slinter",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "7523b39e00a54e869b5b415e72741adc",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/825288915_122114708961476552_8990808356364215185_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=xpOgBotdTlcQ7kNvwFogjl3&_nc_oc=AdqFKAXOoeiT-Ch1uaQZmHJZz8Qs6Lt4NSIdBy3ONhtZRsBHfScXqyIXsVz7ID7faSw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQKyaamQWptGVVFqofHkxi-SPKiGccXedAcDJ__uXm9Rz5NXXz6IIRj9O036Z6pt62A1hOUgeQKtXw&oh=00_AQNpzaEwAfqI_EcXylpRVcUIMLhuj4XlWUye2eKKKKLWgg&oe=6AC2F3ED",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "OB",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - OB",
+        "annonsNamn": "Spikkesett_NO_OB_1_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c813caa5fcd21530db032",
+        "namn": "Taljset_LI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_LI_1_1-3e8270ab908c813caa5fcd21530db032",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_LI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432445980291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "LI | Notionrunda 2026-09-30",
+        "copy": {
+          "message": "Väskan rymmer 30 delar: 6 knivar, 6 järn, bladskydd, läderstrop, polermedel, slippapper, en träbit och handskar. 869 kr, ordinarie 1 139 kr.",
+          "headline": "Det här ligger i väskan",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "e656cfe3754ac4d2cfb74ae20a5a3fe4",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/830574503_122114710467476552_1417727745128507668_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=kDRaeqf4xa4Q7kNvwH1sgCa&_nc_oc=Adp9G6YGmC_zF5jmO7OdIj3UE76Fn1Tu_9-dgRXOoooHecnafxCiJvxkGmlwQE8JRM8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQLsH-bGkgt9dOO-sKNvjinmITyxG5-XuCyyeIWkdBJCeEubmFFR_HxU0DcMxMD2cx3chAF4vunDtA&oh=00_AQPqjEhHjlYwN_G_yxt-bS9GYG4UslzqtBY-PN1B4yN-SQ&oe=6AC2EA35",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "LI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - LI",
+        "annonsNamn": "Spikkesett_NO_LI_1_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81fe9ac0ed9767877de7",
+        "namn": "Taljset_PD_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_4_1-3e8270ab908c81fe9ac0ed9767877de7",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_4_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250432495440291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24",
+        "copy": {
+          "message": "30 delar i en väska: 6 knivar och 6 järn. Bladskydd, läderstrop, polermedel, slippapper, en träbit och skärskyddade handskar ingår. 869 kr, ordinarie 1 139 kr.",
+          "headline": "30 delar, 6 knivar, 6 järn",
+          "description": "",
+          "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "1fe02ace08c5f388ae7af7326f7b3180",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/829199885_122114711403476552_8853831631692004066_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=ss-r2mZOGfkQ7kNvwHSIshk&_nc_oc=AdoOqV6C47Si2PQfhrjW76m2pLLWmXZNc8ix3u8_fBeaneTpE-dm-inhpJJW0mh0Vs8&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JGFGlm0Z4KvVqS1JxlORgA&_nc_tpa=Q5bMBQKwIl9IJ_sYb_sBNa-0s77ae35Gi8e-17pf30uiaYUDJUqdz66KD9dzsREYpAc7WbZ6Jv8Uh6kyOQ&oh=00_AQNTboUlwuMC2CBBwkoFAjsYZDiZrA3EXygfNxT8rGeGqg&oe=6AC2E09E",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - PD",
+        "annonsNamn": "Spikkesett_NO_PD_4_1",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      },
+      "pris": {
+        "pris": "1039.00",
+        "jamforpris": "1359.00",
+        "titel": "Spikkesett 30 Deler – 6 Kniver Og 6 Jern",
+        "handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c818da27cce60eb4270b3",
+        "namn": "Taljset_PD_1_H6",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_1_H6-3e8270ab908c818da27cce60eb4270b3",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_1_H6",
+      "status": "KLAR",
+      "skal": "finns redan i Magiborsten NO",
+      "se": {
+        "annonsId": "120250401659310291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H6",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - PD",
+        "annonsNamn": "Spikkesett_NO_PD_1_H6",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81e79285f3a16a8ec2b0",
+        "namn": "Taljset_PD_1_H5",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_1_H5-3e8270ab908c81e79285f3a16a8ec2b0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_1_H5",
+      "status": "KLAR",
+      "skal": "finns redan i Magiborsten NO",
+      "se": {
+        "annonsId": "120250401628530291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H5",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Taljset",
+        "se_kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "no_prefix": "Spikkesett",
+        "adset_prefix": "Spikkesett NO",
+        "campaign_id": "120252434076200233",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252434076200233",
+        "kampanjNamn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Spikkesett NO - PD",
+        "annonsNamn": "Spikkesett_NO_PD_1_H5",
+        "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+        "prefix": "Spikkesett"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e7270ab908c816aa093ec78525cdcc9",
+        "namn": "Batmotor_OB_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_OB_3_H1-3e7270ab908c816aa093ec78525cdcc9",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_OB_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432622120291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "OB | Notionrunda 2026-09-24"
+      },
+      "prefix": "Batmotor",
+      "K": "OB",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - OB",
+        "annonsNamn": "Batmotortrekk_NO_OB_3_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c8169ad3bf4137a30bf23",
+        "namn": "Batmotor_CS_9_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_CS_9_H1-3df270ab908c8169ad3bf4137a30bf23",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_CS_9_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432664560291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "9",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_9_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c816bb1e5d6a942128ab0",
+        "namn": "Batmotor_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_SP_4_H1-3df270ab908c816bb1e5d6a942128ab0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432763640291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81889cc9cc24a6010624",
+        "namn": "Batmotor_PD_7_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_PD_7_H1-3df270ab908c81889cc9cc24a6010624",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_PD_7_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432825020291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | PD | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "PD",
+      "nr": "7",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - PD",
+        "annonsNamn": "Batmotortrekk_NO_PD_7_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c8118b04cf36e764c69fd",
+        "namn": "Batmotor_SP_1_H7",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_SP_1_H7-3d5270ab908c8118b04cf36e764c69fd",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_SP_1_H7",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432950430291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H7",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H7",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3d5270ab908c818aaf20e3368fdc2e91",
+        "namn": "Batmotor_FM_2_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_FM_2_H1-3d5270ab908c818aaf20e3368fdc2e91",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_FM_2_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250432996150291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "FM | Notionrunda 2026-09-05"
+      },
+      "prefix": "Batmotor",
+      "K": "FM",
+      "nr": "2",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - FM",
+        "annonsNamn": "Batmotortrekk_NO_FM_2_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e9270ab908c813faa4cc3796194dc1e",
+        "namn": "IBC_PD_11_H2",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_PD_11_H2-3e9270ab908c813faa4cc3796194dc1e",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_PD_11_H2",
+      "status": "HOPPA",
+      "skal": "\"IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29\" är PAUSED med 32434.88 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250433018370291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "PD"
+      },
+      "prefix": "IBC",
+      "K": "PD",
+      "nr": "11",
+      "hook": "H2",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 32434.88,
+        "adsetNamn": "IBC-tanktrekk NO - PD",
+        "annonsNamn": "IBC-tanktrekk_NO_PD_11_H2",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk"
+      }
+    }
+  ]
+}

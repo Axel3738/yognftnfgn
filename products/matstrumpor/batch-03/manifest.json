@@ -1,0 +1,62 @@
+[
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_059_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_059_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 5,
+    "brieftyp": "I"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_060_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_060_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 6,
+    "brieftyp": "I"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_061_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_061_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 7,
+    "brieftyp": "I"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_offer_ugc_062_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_offer_ugc_062_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 8,
+    "brieftyp": "I"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_063_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_curiosity_ugc_063_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik + L-MATSTRUMP_sushi_curiosity_product_038_v1",
+    "iteration": 9,
+    "brieftyp": "I"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_064_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_064_v1/brief.md",
+    "koncept": "miniklipp-sushi",
+    "parent": "ingen",
+    "lardom": "L-batch-1-svalt-adset",
+    "iteration": 1,
+    "brieftyp": "N"
+  }
+]

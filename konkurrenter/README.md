@@ -36,7 +36,9 @@ node konkurrenter/kor.mjs --lista
 
 1. **Korpus** (`korpus.mjs`): varje verksamhets butiker läses via den publika
    `/products.json` (ingen nyckel), de annonser som visas just nu via Meta
-   (`META_ACCESS_TOKEN`, delade konton filtreras på kampanjprefix). Dagens
+   (`META_ACCESS_TOKEN`). I delade konton hör en annons till verksamheten när
+   kampanjnamnet bär prefixet som ett ord ELLER länken går till en av dess
+   butiker (se "Alla varumärken" nedan). Dagens
    produkter: annonserade + `bevaka` först, sedan rotation (aldrig kollad,
    äldst kollad; tak i `konfig.json` → `sok`). Två **fingeravtryck** per
    produkt: meningar på 7–16 ord utan siffror och utan butiksnamn.
@@ -66,7 +68,20 @@ node konkurrenter/kor.mjs --lista
    vid taket 30), räckvidden per annons hämtas ur EU-transparensen genom att
    detaljfrågan AdLibraryV3AdDetailsQuery spelas upp per annons, och sidans
    info (namn, kategori, Instagram, domän) följer med. Mätt på ORVO: 37
-   annonser med räckvidd på 42 s. Reserv (`--hamta --annonser <fil>`): Axel
+   annonser med räckvidd på 42 s. **Över taket 30** (general stores:
+   Bustatio-busto hade 58 aktiva och ~4 700 inaktiva annonser 2026-09-30)
+   läses de AKTIVA med datumfönster: "visningar t.o.m. D" är för en aktiv
+   annons samma sak som "startade t.o.m. D", så en stigande rad datum
+   (`tackDatum`: var 30:e dag ett år bakåt, var tredje de sista 60) läser dem
+   i omgångar om högst 30. Det gav 58 av 58 på 13 vanliga laddningar. Sedan
+   provas sidans egen pagineringsfråga (AdLibrarySearchPaginationQuery,
+   fångad genom skrollning och uppspelad med markören), men den **stryps**
+   efter ett femtiotal frågor ("Rate limit exceeded", kod 1675004, och
+   strypningen satt kvar i över en halvtimme). Då väntar läsaren 60 s en gång
+   och faller sedan tillbaka på media_type. `--max-annonser N` (standard 400,
+   de aktiva först) och `--rackvidd aktiva` (räckvidden bara för de aktiva,
+   eftersom detaljfrågan stryps på samma sätt) gör en stor sida hanterbar.
+   Reserv (`--hamta --annonser <fil>`): Axel
    eller Cowork (`cowork/1-annonser.txt`) skriver ner annonserna — länk,
    text, rubrik, `aktiv`, `exponeringar`, bilder — i en JSON-fil (formatet
    står överst i `annonsfall.mjs`). **Axels kriterier** (`trosklar.annons`,
@@ -112,8 +127,13 @@ node konkurrenter/kor.mjs --lista
    till svenska köpare (Axels svar: B2B), 0 % med omvänd betalningsskyldighet
    till utländska näringsidkare (landet ur `--land`, annars domänen, annars
    brevets språk); momsreg.nr härleds ur org.nr. Nummer `F-<ärende>-<löpnr>`,
-   10 dagar netto, dröjsmålsränta enligt räntelagen. HTML → PDF i Chromium
-   (`page.pdf`, 2 s). **Utan bankgiro/IBAN i konfig vägrar den** — och ett
+   10 dagar netto, dröjsmålsränta enligt räntelagen. **PDF:en görs av
+   `textpdf.mjs`** med PDF:ens standardtypsnitt Helvetica (inget inbäddat,
+   zlib-komprimerat): ORVO-fakturan på 24 rader blev 5 kB. Chromiums
+   `page.pdf` bäddar in typsnittet en gång per sida och gav 72 kB, och bilagan
+   går som base64 i Gmail-connectorns verktygsanrop, där 97 000 tecken inte
+   ryms säkert (mätt 2026-09-29). Chromium är reserven om den lilla inte går.
+   HTML-versionen finns kvar för appens fakturabild. **Utan bankgiro/IBAN i konfig vägrar den** — och ett
    IBAN som inte klarar kontrollsiffran (mod 97) stoppar också; Axels IBAN
    inlagt 2026-09-29 och kontrollerat. Köparen läses ur deras sida
    (bolagsnamn/org.nr) eller ges med `--kopare "Bolag AB, adress"`. Belopp
@@ -129,6 +149,28 @@ node konkurrenter/kor.mjs --lista
      ärendet till `skickad`/`pamind` och sätter fristen. Kvittot kräver en
      giltig adress och går aldrig två gånger (`skickad → skickad` är ingen
      tillåten övergång).
+     ⛔ **Brevet går som PDF, mejlet bär en följetext utan länkar**
+     (`brevpdf.mjs`, 2026-09-29). Gmail-connectorn skriver om VARJE länk och
+     domän i mejlets text till Googles omdirigering
+     (`https://www.google.com/url?q=…&sa=E`), både i text- och HTML-delen och
+     även när HTML skickas själv. Mätt på två utkast: "orvo.se", "org.nr"
+     (.nr-domänen) och alla annonslänkar blev omdirigeringar. En länk som
+     säger facebook.com men går till google.com ser ut som nätfiske. Därför
+     lägger `--skicka` (Gmail-vägen) brevet ordagrant i `brev.pdf` med
+     klickbara länkar och skriver `omslag` i paketet: följetexten (vad som är
+     bifogat, fristen, avsändaren). Den har ingen domän, och
+     `harLankbartOrd` stoppar paketet om en smyger in. Sessionen lägger
+     utkastet (följetexten + `brev.pdf` + fakturan), **läser tillbaka det i
+     RAW, jämför båda bilagornas sha256 med filerna och ser att texten saknar
+     google.com/url** och skickar först sedan utkastet. ORVO-brevet gick så
+     (sms:et och brevet nämner inte Meta, `--utan-meta`).
+   - **`--utan-meta`** (Axels beslut 2026-09-29 för ORVO: "vi borde lugnt inte
+     säga att vi har skickat DMCA … han kommer att försöka få ner våra
+     annonser"): brevet, påminnelsen och sms:et nämner inte Meta-anmälningarna
+     alls, varken "anmäls samtidigt", "redan anmälda" eller som hot. Minnet är
+     `brev.utanMeta` på ärendet. ⚠️ Metas formulär lämnar själv ut
+     rättighetshavarens namn, anmälarens e-post och vad anmälan gäller till
+     den anmälde, så ORVO får veta det från Meta.
    - **Loopia (reserv):** `--via loopia --ja` skickar från verksamhetens
      supportbrevlåda direkt (`kundtjanst/brevlada.mjs skickaNytt`). Spärrar:
      `--ja`, `KONKURRENTER_INGEN_SANDNING=1`, status, mottagare, egna
@@ -162,7 +204,35 @@ node konkurrenter/kor.mjs --lista
     kvittot skrivs av sig självt ur Metas svar (`--anmald` finns kvar för
     hand; en anmälan kvitteras aldrig två gånger; alla inskickade ⇒ ärendet
     "anmält vidare"). Utan `--ja` torrkörs formuläret: allt ifyllt, skärmdump
-    `<nr>-torr.png`, ingen kod, inget skickat. Lokala skärmdumpar
+    `<nr>-torr.png`, ingen kod, inget skickat.
+    **Andra länder** (ORVO Norge 2026-09-29): `--hamta --annonser-sida <id>
+    --land NO` skriver `…annonser-<id>-NO.json`, och fyndet får nyckeln
+    `annonser-NO`. Samma sida i Norge blir alltså ett EGET ärende (KD-2026-002),
+    aldrig en uppdatering av det svenska. Ärendet bär `land`, och uppföljningen
+    läser samma land. Filmer som varken matchar på text eller förhandsbild tas med
+    som kandidater med `--lagg-till <id> --annonser <id,…>`. `--klipp` avgör, och
+    utan rutor ur våra klipp kommer de aldrig med i en anmälan (`bevisStatus`).
+    ⛔ **Uppföljningen av ett annonsfall läser annonsbiblioteket, inte sajten**
+    (`annonsfall.mjs annonsUppfoljning`). Den gamla `--foljupp` jämförde deras
+    hemsida med vår produktsida. ORVO har inget på hemsidan, så rutinen hade
+    stängt KD-2026-001 som "åtgärdat" morgonen efter brevet. Nu gäller: finns
+    någon anmäld annons kvar som aktiv ⇒ KVAR. Går biblioteket inte att läsa ⇒
+    OKÄNT, aldrig borta.
+    ⛔ **Meta kräver en säkerhetskontroll (captcha) vid Submit** (mätt
+    2026-09-29, ORVO anmälan 1). Koden gick igenom, men efter Submit kom rutan
+    "Security check: A security check is required to proceed" och formuläret
+    stod kvar under den. Det gamla skriptet läste formuläret som kvitto och
+    skrev "inskickad". Kvittot togs tillbaka med `--anmald <id> --nr 1 --angra
+    "<skäl>"`. Nu räknas en anmälan som inskickad BARA när Meta bekräftar
+    (`kvittoUtfall`: tacksida och formuläret borta). En säkerhetskontroll
+    stoppar med `kod: SAKERHETSKONTROLL`: den görs av en människa och
+    **löses aldrig härifrån**. Vägen blir då **`--anmal-cowork <id>`**, som
+    skriver `arenden/<id>/anmalan/COWORK-PROMPT.txt`. Där står exakt
+    formularVarden() för varje anmälan som inte är inskickad. Cowork fyller i
+    i Axels Chrome och tar koden ur hans Gmail, och Axel gör
+    säkerhetskontrollen och klickar Submit. Kvittona skrivs med `--anmald <id>
+    --nr <n> --referens <r>` ur Metas bekräftelsemejl eller Coworks lista.
+    Lokala skärmdumpar
     Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två
     anmälningar, två bevisbilder (2400 px, ~0,9 MB), verifieringssidan tittad
     på. ⚠️ Formulärets fält läses av LIVE i Chrome och paras på etikett —
@@ -277,6 +347,13 @@ node konkurrenter/kor.mjs --lista
     annonser (+ tiderna i deras film), bevisbilden länken per par, och kortet i
     appen en svensk rad om vilken annons det är. Utan hittat original blir
     exemplet vår sidas lista (aldrig produktsidan) och `--anmal` varnar.
+    ⛔ **En annons av våra som startade samma dag som deras eller senare länkas
+    aldrig** (`originalFor(…, { fore: deras start })`, ORVO Norge 2026-09-29):
+    samma film går ofta i flera av våra konton, och vår US-kopia av en film
+    startade 27/9 medan deras annons startade 24/9. Metas granskare ser bara
+    annonsbibliotekets datum, och där hade vi sett ut att komma efter. Filmen
+    står kvar i beskrivningen (den skapades hos oss före deras annons), bara
+    länken faller bort. Okänt startdatum hos oss står kvar.
     **Mätt 2026-09-29 på ORVO:** 15 av 15 filmer hittade (två efter att den
     andra frasen provats), alla 100/100; ledfilmerna Takoverdrag_SP_4_H1
     (id 2000363993957496) och OB_1_H1 (id 1619798969500412), Bäverbutiken.se.
@@ -305,6 +382,12 @@ kan jag granska här också … och sen så skickas det."
   ny version av artifacten och väcker sessionen som bevakar den. Sidan skriver
   aldrig `data/status.json`, sessionen skriver aldrig `data/beslut.json`, så två
   skrivare krockar inte.
+- `--granska <id> --utan-mejl` = en runda med BARA anmälningar (ORVO Norge
+  KD-2026-002: brevet och fakturan gick redan i KD-2026-001 mot samma
+  Facebook-sida, och ett andra brev samma kväll hade bara rört till det). Inget
+  mejlkort, inget sms-kort, ingen mejlstatus. Överst står vilket ärende som bär
+  brevet (`granskning.mjs mejlRedanNot`). Flaggan skickas vid varje ombyggnad av
+  den rundan, annars kommer mejlkortet tillbaka.
 - `--granska-svar <id> --beslut <fil>` läser svaret (`granskning.mjs attGora`):
   ja på aktuell version ⇒ skicka in, mejlet först när varje anmälan har ett svar
   och med antalet ja i brevet (`brev.mjs metaRad`: "7 av de 10 aktiva
@@ -317,11 +400,110 @@ kan jag granska här också … och sen så skickas det."
   `{{META}}`); den visas i appen när mejlet gått.
 - Flödet steg för steg står i kommandofilen under `granska <id>`.
 
+## Alla varumärken (2026-09-29)
+
+Axel: "jag vill kunna göra denna konkurrentdödare applicable för alla brands
+och även Matstrumpor". Matstrumpor var redan med sedan bygget, men bara den
+svenska texten. Tre luckor täpptes samma kväll:
+
+| Verksamhet | Butiker (texterna som söks och jämförs) | Konton (annonserna) |
+|---|---|---|
+| Bäverbutiken | baverbutiken.se, beverbutikken.no, baeverbutiken.dk, majavakauppa.fi | MagiBorsten, Magiborsten NO, Magiborsten FI |
+| CaraShell | carashell.se, /nb, /da, carashell.com | OPS-kontot, Magiborsten UK (delade) |
+| Matstrumpor | matstrumpor.se + /en /nb /da /fi /de /fr /nl /es /it /pl /pt | nya kungen |
+
+- **Varje butik och språk har sin egen text.** Shopify svarar med den
+  översatta texten på `/<språk>/products.json`, mätt på alla tolv. En kopia i
+  Norge kopierar den norska texten, så den söks och jämförs på norska.
+- **Länken avgör vems annonsen är i ett delat konto** (`korpus.mjs
+  hamtaEgnaAnnonser`, `butikFor`, `kampanjTillhor`). Prefixet räknas som ett
+  ord var som helst i kampanjnamnet. Förut användes `startsWith`, och mätt
+  2026-09-29 tappade det CaraShells alla 130 aktiva annonser i UK-kontot
+  (kampanjen heter "1 CARASHELL_US_… – kopia") och 12 i OPS-kontot ("NYA …").
+  Aktiva annonser i korpusen blev: Bäverbutiken 688 → 858 (+ NO 136, FI 34),
+  CaraShell ~240 → 382.
+- **Prioriteten följer annonsens butik.** En annons till matstrumpor.se/nb
+  prioriterar den norska texten, inte alla tolv språk med samma handle
+  (`valjProdukter` tar `butik|handle`). I rotationen turas butikerna om (SE,
+  NO, DK, FI, SE …), annars hade den svenska katalogen tagit veckor innan en
+  enda norsk text söktes.
+- **Taket gäller alla verksamheter tillsammans:** `sok.max_produkter_totalt`
+  = 30, en i taget ur varje verksamhet (`fordelaProdukter`). Det blir 60
+  sökningar per morgon i stället för upp till 120. Torrkört 2026-09-29: 10
+  produkter per verksamhet, ur SE, NO och FI, CaraShells fyra språk och tio av
+  Matstrumpors.
+- **Discord:** Matstrumpor har ingen server, så dess fynd står bara i
+  rapporten och på granskningssidan (`discord.hoppa`).
+- **Inte med:** Grillkliniken, eftersom `META_ACCESS_TOKEN` inte når
+  SnarkLös (kommentarer/konfig.json → `konton_utanfor`). Inte heller de
+  nedlagda OPS-butikerna eller beavershop.co.uk, som är avstängd med flit.
+  Lägg till en verksamhet med en rad i `konfig.json → verksamheter` (butiker,
+  konton, avsändare) och dess sida i `anmalan.vara_sidor`. En lista med flera
+  sidor går bra, och den första är huvudsidan.
+
+## Bara det vi kan bevisa: ORVO-lärdomen (2026-09-29)
+
+Eoka AB (ORVO) bestred KD-2026-001 med en enda TikTok-länk. Sekvensen i vårt
+"original" Takoverdrag_SP_4_H1 fanns på Specialised Covers konto sedan 22 maj
+2025. Mätt samma kväll: videon ligger i **58 av våra 240 takskyddsfilmer**,
+100 annonser, 54 aktiva, 82 127 kr på 7 dygn
+(`arenden/KD-2026-001/svar-2026-09-29.md` + `specialised-covers.json`).
+Axel släppte ärendet. **Återkallelsen gick ut 2026-09-30 07:30**, med en
+ursäkt på hans ord ("skicka återkallelsen och be om ursäkt"). Gmail-svaret
+`1a0f0cb29f5946ca` återkallar fakturan och kraven och säger att brevet
+"innehöll påståenden som vi inte hade kontrollerat tillräckligt". Det nämner
+inte vilka klipp det gäller eller var de kommer ifrån (Axel: det är "dumt att
+beskriva om det riskerar att vårat ad account ryker"). Det gamla utkastet är
+raderat. **De 54 aktiva annonserna med Specialised Covers klipp ligger kvar**
+(Axels val B 2026-09-30, ingen ny brief). Tre fel i brevet, alla nu stängda i koden:
+
+1. **"Filmerna är framställda av oss".** Brevet räknar nu upp varje kopierad
+   sekvens: *er 0:06 = vår annons &lt;länk&gt; (visas sedan …) vid 0:02*.
+   Det är tidskoden hos dem, vår annons i annonsbiblioteket och tidskoden hos
+   oss (`brev.mjs sekvensRad`). Kravet gäller bara det uppräknade, och
+   Meta-anmälan säger "Only these frames are claimed".
+2. **Procenten** ("59 % av er film matchar våra filmer") räknade lånade
+   rutor som våra. Den står aldrig i brevet, i anmälan eller på bevisbilden,
+   bara internt i rapporten och på granskningssidan.
+3. **Produktsidor och marknadsföringslagen** (vilseledande efterbildning,
+   renommésnyltning) utan belägg. Borta. Produktsidan nämns bara när en
+   ordagrann text från den är uppmätt.
+
+**Anspråket `redigering` (Bustatio-busto, 2026-09-30).** En general store
+(bustatio.com) körde 11 av VÅRA färdiga annonser. De var nedladdade med vår
+svenska text i bilden vid exakt samma tider (deras 0:05 = vår 0:05) och bara
+en vattenstämpel "bustatio" tillagd. Filmklippen under texten är en blandning.
+En del är AI-klipp vi har gjort, en del leverantörens produktfilm och en del
+riktiga inspelningar vi knappast gjort själva. Vår klippning och vår text är
+däremot våra. `--anmal <id> --ansprak redigering` gör anspråk på just det, i
+anmälan ("a re-upload of our own ad film … We make no claim to the underlying
+product footage"), på bevisbilden, i formulärets 500 tecken, på
+granskningskortet och i brevet. Anspråket sparas på ärendet.
+
+**Registret över klipp vi vet inte är våra: `externa/<id>.json`**
+(`externa.mjs`). Varje källa har sina rutor (dHash 9 × 8), sin ägare och sin
+orsak. I dag finns tre källor: Specialised Covers TikTok-video, den brittiska
+husvagnen "Searcher" med svart takskydd och personen som spänner ett svart
+kapell. De två senare var redan märkta med `--lanat` men matchar inte
+TikTok-videon, så de är egna källor.
+
+- `--klipp` gör registrets rutor till lånade, i våra filmer och i deras
+  annons. De bär aldrig ett par och räknas aldrig i andelen. `klipp.json →
+  externa` visar vilka filmer som bär dem och var.
+- `--original` länkar aldrig en annons vars film bär ett externt klipp. Filmen
+  söks inte ens (`original.json → externa`, `originalFor`).
+- Granskningskortets Ja är ett intygande: "varje ruta till vänster är
+  inspelad eller gjord av oss, inte hämtad från någon annan".
+- Registret växer åt ett håll. Får vi veta att ett klipp inte är vårt läggs
+  det till. Det tas aldrig bort för att ett fall ska bli starkare.
+
 ## Filer
 
 | Fil | Committas | Vad |
 |---|---|---|
-| `konfig.json` | ✅ | Verksamheter, avsändare (Gmail), faktura (beräkning, CPM-reserv, moms, IBAN, schablontaxa), egna domäner, trösklar, Discord — facit |
+| `konfig.json` | ✅ | Verksamheter (alla butiker och språk, alla konton), avsändare (Gmail), faktura (beräkning, CPM-reserv, moms, IBAN, schablontaxa), egna domäner, trösklar, Discord — facit |
+| `externa.mjs`, `externa/<id>.json` | ✅ | Registret över klipp vi vet inte är våra (källa, ägare, orsak, rutor) — utesluts ur par, andel och original |
+| `arenden/KD-2026-001/svar-2026-09-29.md`, `specialised-covers.json` | ✅ | Eoka AB:s bestridande och mätningen: 58 filmer, 100 annonser, 54 aktiva, spend per annons |
 | `arenden.jsonl` | ✅ | Ärendeloggen (kvittot på varje brev och faktura) |
 | `arenden/<id>.md`, `arenden/<id>/skarmdump.jpg`, `arenden/<id>/miniatyrer.json` | ✅ | Bevisen per ärende |
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
@@ -347,7 +529,9 @@ output/ dit (tester och provkörningar — repot rörs inte).
 ## Läget vid bygget (mätt 2026-09-27, kompletterat 2026-09-29)
 
 - Butikerna: Bäverbutiken 248 produkter, CaraShell 4, Matstrumpor 5 — alla
-  läsbara publikt. OPS-butikernas `body_html` är 25 ord (texten ligger i
+  läsbara publikt. Sedan 2026-09-29 20 butiker (se "Alla varumärken"):
+  beverbutikken.no 235, baeverbutiken.dk 175, majavakauppa.fi 175,
+  CaraShells fyra språk 4 styck, Matstrumpors tolv språk 5 styck. OPS-butikernas `body_html` är 25 ord (texten ligger i
   temat) ⇒ "för lite text att söka på"; källan är ändå Bäverbutikens sida,
   som speglas.
 - Avsändaren är Gmail — inga brevlådelösenord behövs. Reserven `--via
@@ -394,4 +578,6 @@ output/ dit (tester och provkörningar — repot rörs inte).
   fabrikens filer) blir aldrig kandidater; marknadsplatser och sociala nätverk
   ignoreras.
 - En Meta-anmälan per annons; ingen skickas utan Axels "kör anmälningarna <id>"; varje inskickad kvitteras med referens och aldrig två gånger.
-- 31 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- Brevet och anmälan påstår bara det uppräknade (sekvenser med tidskoder, ordagranna passager, identiska bilder) — aldrig "filmerna är våra", aldrig en andel, aldrig marknadsföringslagen, aldrig produktsidor utan uppmätt text.
+- Klipp i `externa/` bär aldrig ett par, räknas aldrig i andelen och deras filmer länkas aldrig som original.
+- 79 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

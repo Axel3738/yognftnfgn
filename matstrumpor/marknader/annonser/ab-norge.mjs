@@ -4,12 +4,13 @@
 //   node matstrumpor/marknader/annonser/ab-norge.mjs --fran 2026-10-01 --till 2026-10-14
 //
 // Axels beställning 2026-09-29: "vi testar med att det är ett svenskt varumärke, och sen ser vi skillnaden
-// efter typ två veckor". A = MATSTRUMP_NO_SALES (matstrumpor.se/nb, brödtexten slutar "Et svensk merke."),
+// efter typ två veckor". A = MATSTRUMP_NO_SALES (matstrumpor.com/nb sedan 2026-09-29 kväll, förut
+// matstrumpor.se/nb; brödtexten slutar "Et svensk merke."),
 // B = MATSTRUMP_NOB_SALES (matstrumpor.no, norska B-sidan, utan raden). Samma videor, rubriker, pris och
 // budget — skillnaden är varumärkesraden i annonsen och sidan kunden landar på.
 //
 // Två källor, var för sig: Meta (spend, visningar, klick, sidvisningar, köp, ROAS per kampanj, 7 dagars klick)
-// och Shopify (ordrar till Norge, delade på landningssidan: matstrumpor.no ⇒ B, matstrumpor.se/nb ⇒ A,
+// och Shopify (ordrar till Norge, delade på landningssidan: matstrumpor.no ⇒ B, matstrumpor.com/nb eller .se/nb ⇒ A,
 // allt annat ⇒ okänd). Talen blandas aldrig: Metas köp är pixelns, Shopifys ordrar är butikens.
 //
 // ⚠️ Norge saknar landad kostnad (matstrumpor/cogs.json → norden, mätt 2026-09-27), så break-even och
@@ -41,7 +42,8 @@ export function klassaOrder(order, { kampanjA, kampanjB } = {}) {
     const host = u.hostname.replace(/^www\./, '');
     if (u.pathname.includes('/checkouts/')) continue;
     if (host === 'matstrumpor.no') return 'B';
-    if (host === 'matstrumpor.se' && /^\/nb(\/|$)/.test(u.pathname)) return 'A';
+    // A landade på matstrumpor.se/nb till 2026-09-29 och på matstrumpor.com/nb sedan dess (Axel: allt utland via .com).
+    if ((host === 'matstrumpor.se' || host === 'matstrumpor.com') && /^\/nb(\/|$)/.test(u.pathname)) return 'A';
   }
   return null;
 }
@@ -115,7 +117,7 @@ export function splitTest({ kampanjA, kampanjB, start, dagar = 14 }) {
   const t1 = t0 + dagar * 86400 - 60;
   return {
     name: `Matstrumpor Norge: svenskt varumärke (A) mot norsk sida (B) ${start}`,
-    description: 'A = MATSTRUMP_NO_SALES (matstrumpor.se/nb, "Et svensk merke."), B = MATSTRUMP_NOB_SALES (matstrumpor.no). matstrumpor/marknader/annonser/ab-norge.mjs',
+    description: 'A = MATSTRUMP_NO_SALES (matstrumpor.com/nb, "Et svensk merke."), B = MATSTRUMP_NOB_SALES (matstrumpor.no). matstrumpor/marknader/annonser/ab-norge.mjs',
     type: 'SPLIT_TEST',
     start_time: t0,
     end_time: t1,

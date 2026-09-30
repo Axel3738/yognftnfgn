@@ -8,7 +8,12 @@ Motexempel = Overvåkingskamera_NO_CS_1: svensk text kvar bakom en halvgenomskin
 platta, norsk text i en egen ruta under — så får det ALDRIG se ut.
 
   python3 pipeline/no-captions.py <in.mp4> <in.srt> <out.mp4> [--band=Y0:Y1] [--font-px=46]
-                                  [--max-chars=34] [--blur=12] [--no-check] [--rutor]
+                                  [--max-chars=34] [--blur=12] [--no-check] [--rutor] [--font=NAMN]
+
+  --font     typsnittet; utan flaggan väljs det ur SRT:ns skrift (japanska ⇒ Noto Sans CJK JP,
+             kinesiska ⇒ Noto Sans CJK TC, båda feta och hämtade av pipeline/cjk.py; annars
+             Liberation Sans). Japanska och kinesiska cues får högst hälften så många tecken
+             (cover-srt.py), eftersom tecknen är dubbelt så breda.
 
   --rutor    (2026-09-28, Axel: "det suddiga tar upp för mycket av skärmen") sudda BARA rutan
              där källtexten står, och bara medan den står där — pipeline/textrutor.py mäter.
@@ -126,7 +131,29 @@ def cover_srt(src, max_chars):
     return cues, tmp
 
 
-def skriv_ass(cues, path, w, h, band, font_px):
+# Typsnittet följer skriften (2026-09-30, Japan och Taiwan): Liberation Sans saknar japanska och
+# kinesiska tecken, och libass fallback valde då ett typsnitt per tecken — ojämn text. Kana ⇒
+# IPAGothic, kinesiska tecken utan kana ⇒ WenQuanYi Zen Hei (båda finns i containern, fc-list).
+CJK_TECKEN = re.compile(r'[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]')
+KANA_TECKEN = re.compile(r'[\u3040-\u30ff]')
+
+
+def typsnitt_for(text, flag=None):
+    """Fet Noto Sans CJK (JP/TC) hämtas och registreras av cjk.py; går det inte används
+    IPAGothic/WenQuanYi, som finns i containern men bara i normal vikt."""
+    if flag and flag.get('--font'): return str(flag['--font'])
+    if len(CJK_TECKEN.findall(text)) < 4: return 'Liberation Sans'
+    lang = 'ja' if KANA_TECKEN.search(text) else 'zh'
+    try:
+        sys.path.insert(0, HÄR)
+        import cjk
+        return cjk.typsnittsnamn(lang)
+    except Exception as e:
+        print(f'  (Noto Sans CJK gick inte att hämta: {e} — reservtypsnitt)', file=sys.stderr)
+        return 'IPAGothic' if lang == 'ja' else 'WenQuanYi Zen Hei'
+
+
+def skriv_ass(cues, path, w, h, band, font_px, font='Liberation Sans'):
     """ASS med PlayRes = videons mått, så Fontsize, Outline och \\pos är i riktiga pixlar.
     BorderStyle 4 = en vit ruta runt hela textblocket (Outline = padding), svart fet text.
     \\an5 + \\pos centrerar rutan (1 eller 2 rader) mitt i bandet."""
@@ -139,7 +166,7 @@ def skriv_ass(cues, path, w, h, band, font_px):
         'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, '
         'Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, '
         'Alignment, MarginL, MarginR, MarginV, Encoding\n'
-        f'Style: NO,Liberation Sans,{font_px},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,'
+        f'Style: NO,{font},{font_px},&H00000000,&H00000000,&H00FFFFFF,&H00FFFFFF,'
         f'-1,0,0,0,100,100,0,0,4,{RUTA_PADDING},0,5,{marg},{marg},0,1\n\n'
         '[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n'
     )
@@ -228,14 +255,15 @@ def rutlage(ff, src, srt, out, w0, h0, dur, font_px, max_chars, flag):
     band = (int(cy - halv), int(cy + halv))
     cues, tmp2 = cover_srt(srt, max_chars)
     if not cues: sys.exit('SRT:n gav inga cues.')
-    ass = os.path.join(tmp2, 'no.ass'); skriv_ass(cues, ass, w0, h0, band, font_px)
+    font = typsnitt_for(' '.join(c[2] for c in cues), flag)
+    ass = os.path.join(tmp2, 'no.ass'); skriv_ass(cues, ass, w0, h0, band, font_px, font)
     ass_esc = ass.replace('\\', '\\\\').replace(':', '\\:').replace("'", "\\'")
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     r = subprocess.run([ff, '-nostdin', '-y', '-v', 'error', '-i', mellan, '-vf', f'subtitles={ass_esc}',
                         '-c:v', 'libx264', '-crf', '20', '-preset', 'medium', '-c:a', 'copy', out], stdin=subprocess.DEVNULL)
     if r.returncode != 0: sys.exit(f'ffmpeg (captions) misslyckades: {src}')
     json.dump({'segment': seg, 'kvar': kvar, 'yta': yta, 'band': band}, open(out + '.rutor.json', 'w'), indent=1)
-    print(f'✓ {out}  {len(seg)} suddrutor (i snitt {100 * yta:.1f} % av bilden), captions kring y {int(cy)}, {len(cues)} cues')
+    print(f'✓ {out}  {len(seg)} suddrutor (i snitt {100 * yta:.1f} % av bilden), captions kring y {int(cy)}, {len(cues)} cues, typsnitt {font}')
     if '--no-check' in flag: return
     bilder = qa_bilder(ff, out, dur)
     print('  QA-bilder att titta på: ' + ', '.join(os.path.basename(b) for b in bilder))
@@ -295,7 +323,8 @@ def main():
 
     cues, tmp = cover_srt(srt, max_chars)
     if not cues: sys.exit('SRT:n gav inga cues.')
-    ass = os.path.join(tmp, 'no.ass'); skriv_ass(cues, ass, w0, h0, band, font_px)
+    font = typsnitt_for(' '.join(c[2] for c in cues), flag)
+    ass = os.path.join(tmp, 'no.ass'); skriv_ass(cues, ass, w0, h0, band, font_px, font)
 
     ass_esc = ass.replace('\\', '\\\\').replace(':', '\\:').replace("'", "\\'")
     vf = (f"split[a][b];[b]crop=iw:{h}:0:{remsa_y},boxblur={blur}:{max(2, blur // 5)}[sudd];"

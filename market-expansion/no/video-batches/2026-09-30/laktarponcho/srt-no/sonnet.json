@@ -1,0 +1,530 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Tribuneponchoen med varme er over tjue prosent billigere.",
+   "tekst": "Tribuneponcho med varme er over 20 % billigere."
+  },
+  {
+   "tale": "Bare nå.",
+   "tekst": "Bare nå."
+  },
+  {
+   "tale": "Bare nå, over tjue prosent rabatt.",
+   "tekst": "Bare nå, over 20 % rabatt."
+  },
+  {
+   "tale": "Tribuneponchoen med varme, tre varmenivåer via USB.",
+   "tekst": "Tribuneponcho med varme, 3 varmenivåer via USB."
+  },
+  {
+   "tale": "Fra åtte hundre og åttini kroner, nå bare seks hundre og syttini kroner.",
+   "tekst": "Fra 889 kr, nå bare 679 kr."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp.",
+   "tekst": "30 dagers åpent kjøp."
+  },
+  {
+   "tale": "Prisen gjelder bare nå.",
+   "tekst": "Prisen gjelder bare nå."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H1": "Priser/varmenivåer/rabatt er konkrete og falsifiserbare (✅/✅), men generiske linjer som 'Bare nå' kunne en konkurrent også si (❌) – akseptert siden de erstatter forbudte påstander med nøytrale, sanne fakta.",
+ "CS_1_H2": [
+  {
+   "tale": "Innebygd varme du styrer selv.",
+   "tekst": "Innebygd varme du styrer selv."
+  },
+  {
+   "tale": "Spar over tjue prosent nå.",
+   "tekst": "Spar over 20 % nå."
+  },
+  {
+   "tale": "Bare nå, spar over tjue prosent.",
+   "tekst": "Bare nå, spar over 20 %."
+  },
+  {
+   "tale": "Tribuneponcho med varme.",
+   "tekst": "Tribuneponcho med varme."
+  },
+  {
+   "tale": "Tre varmenivåer via USB.",
+   "tekst": "3 varmenivåer via USB."
+  },
+  {
+   "tale": "Før: åtte hundre og åttini kroner.",
+   "tekst": "Før: 889 kr."
+  },
+  {
+   "tale": "Nå: seks hundre og syttini kroner.",
+   "tekst": "Nå: 679 kr."
+  },
+  {
+   "tale": "Kobles til en powerbank via USB.",
+   "tekst": "Kobles til en powerbank via USB."
+  },
+  {
+   "tale": "Bare nå til denne prisen.",
+   "tekst": "Bare nå til denne prisen."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H2": "Konkret ✅ (tall/produkt/USB), falsifiserbart ✅ (priser og funksjoner fra faktaark), unik ⚠️ (priser er produktspesifikke, men rabatt-fraser kunne i teorien brukes av andre)",
+ "CS_1_H3": [
+  {
+   "tale": "Vil du slutte å fryse?",
+   "tekst": "Vil du slutte å fryse?"
+  },
+  {
+   "tale": "Da må du se denne prisen.",
+   "tekst": "Da må du se denne prisen."
+  },
+  {
+   "tale": "Bare nå, over tjue prosent rabatt.",
+   "tekst": "Bare nå, over 20 % rabatt."
+  },
+  {
+   "tale": "Tribuneponcho med varme.",
+   "tekst": "Tribuneponcho med varme."
+  },
+  {
+   "tale": "Tre varmenivåer via USB.",
+   "tekst": "3 varmenivåer via USB."
+  },
+  {
+   "tale": "Fra åtte hundre og åttini kroner, nå bare seks hundre og syttini kroner.",
+   "tekst": "Fra 889 kr, nå bare 679 kr."
+  },
+  {
+   "tale": "Den holder varmen når du sitter stille på tribunen.",
+   "tekst": "Holder varmen når du sitter stille på tribunen."
+  },
+  {
+   "tale": "Bare nå til denne prisen.",
+   "tekst": "Bare nå til denne prisen."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Klikk på lenken og bestill nå.",
+   "tekst": "Klikk på lenken og bestill nå."
+  }
+ ],
+ "_tre_CS_1_H3": "Konkrete produktfakta (varmenivåer, USB, tribune, pris) ✅ visualisere, ✅ falsifiserbart, ✅ ingen konkurrent kan si det (spesifikk pris/rabatt/produkt)",
+ "G_1_H1": [
+  {
+   "tale": "Hva gir du personen som alltid fryser?",
+   "tekst": "Hva gir du personen som alltid fryser?"
+  },
+  {
+   "tale": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet.",
+   "tekst": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet."
+  },
+  {
+   "tale": "Se for deg ansiktet når personen pakker opp denne.",
+   "tekst": "Se for deg ansiktet når personen pakker opp denne."
+  },
+  {
+   "tale": "En tribuneponcho med varme.",
+   "tekst": "En tribuneponcho med varme."
+  },
+  {
+   "tale": "Da kommer smilet.",
+   "tekst": "Da kommer smilet."
+  },
+  {
+   "tale": "Og så blir den brukt igjen og igjen på kampen,",
+   "tekst": "Og så blir den brukt igjen og igjen på kampen,"
+  },
+  {
+   "tale": "på jakttur, hjemme i sofaen.",
+   "tekst": "på jakttur, hjemme i sofaen."
+  },
+  {
+   "tale": "Og hver gang blir personen varm og tenker på deg.",
+   "tekst": "Og hver gang blir personen varm og tenker på deg."
+  },
+  {
+   "tale": "Sånn føles en riktig god gave.",
+   "tekst": "Sånn føles en riktig god gave."
+  },
+  {
+   "tale": "Du fant noe som virkelig passer.",
+   "tekst": "Du fant noe som virkelig passer."
+  },
+  {
+   "tale": "Gi bort varme i år.",
+   "tekst": "Gi bort varme i år."
+  },
+  {
+   "tale": "Bestill via lenken før jul.",
+   "tekst": "Bestill via lenken før jul."
+  }
+ ],
+ "_tre_G_1_H1": "Konkrete scener (ansikt, kamp, jakttur, sofa) ✅ visualisere, ✅ falsifiserbart (bruksscenario fra faktaark), ✅ ingen konkurrent kan si nøyaktig dette om egen gave-historie",
+ "G_1_H2": [
+  {
+   "tale": "Julegaven han faktisk kommer til å bruke hver eneste kamp.",
+   "tekst": "Julegaven han faktisk kommer til å bruke hver eneste kamp."
+  },
+  {
+   "tale": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet.",
+   "tekst": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet."
+  },
+  {
+   "tale": "Se for deg ansiktet når mottakeren pakker opp denne.",
+   "tekst": "Se for deg ansiktet når mottakeren pakker opp denne."
+  },
+  {
+   "tale": "En tribuneponcho med varme.",
+   "tekst": "En tribuneponcho med varme."
+  },
+  {
+   "tale": "Da kommer smilet, og så brukes den igjen og igjen på kampen,",
+   "tekst": "Da kommer smilet, og så brukes den igjen og igjen på kampen,"
+  },
+  {
+   "tale": "på fisketuren, hjemme i sofaen.",
+   "tekst": "på fisketuren, hjemme i sofaen."
+  },
+  {
+   "tale": "Og hver gang blir mottakeren varm og tenker på deg.",
+   "tekst": "Og hver gang blir mottakeren varm og tenker på deg."
+  },
+  {
+   "tale": "Sånn føles en virkelig god gave.",
+   "tekst": "Sånn føles en virkelig god gave."
+  },
+  {
+   "tale": "Du fant noe som virkelig passer.",
+   "tekst": "Du fant noe som virkelig passer."
+  },
+  {
+   "tale": "Gi bort varme i år.",
+   "tekst": "Gi bort varme i år."
+  },
+  {
+   "tale": "Bestill via lenken før jul.",
+   "tekst": "Bestill via lenken før jul."
+  }
+ ],
+ "_tre_G_1_H2": "Konkret produkt/scene (poncho, kamp, sofa) ✅, falsifiserbart (bruker den om og om igjen) ⚠️ (mykt påstått, ikke reklameløfte), ingen konkurrent kan si nøyaktig dette uten produktet ✅",
+ "G_1_H3": [
+  {
+   "tale": "Slutt å lete.",
+   "tekst": "Slutt å lete."
+  },
+  {
+   "tale": "Du har funnet den perfekte gaven.",
+   "tekst": "Du har funnet den perfekte gaven."
+  },
+  {
+   "tale": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet.",
+   "tekst": "Du vet den personen som alltid fryser, som aldri er fornøyd med teppet."
+  },
+  {
+   "tale": "Se for deg ansiktet når mottakeren pakker opp denne.",
+   "tekst": "Se for deg ansiktet når mottakeren pakker opp denne."
+  },
+  {
+   "tale": "En tribuneponcho med varme.",
+   "tekst": "En tribuneponcho med varme."
+  },
+  {
+   "tale": "Da kommer smilet.",
+   "tekst": "Da kommer smilet."
+  },
+  {
+   "tale": "Og så brukes den igjen og igjen på kampen,",
+   "tekst": "Og så brukes den igjen og igjen på kampen,"
+  },
+  {
+   "tale": "på fisketuren, hjemme i sofaen.",
+   "tekst": "på fisketuren, hjemme i sofaen."
+  },
+  {
+   "tale": "Og hver gang blir mottakeren varm og tenker på deg.",
+   "tekst": "Og hver gang blir mottakeren varm og tenker på deg."
+  },
+  {
+   "tale": "Sånn føles en virkelig god gave.",
+   "tekst": "Sånn føles en virkelig god gave."
+  },
+  {
+   "tale": "Du fant noe som virkelig passer.",
+   "tekst": "Du fant noe som virkelig passer."
+  },
+  {
+   "tale": "Gi bort varme i år.",
+   "tekst": "Gi bort varme i år."
+  },
+  {
+   "tale": "Bestill via lenken før jul.",
+   "tekst": "Bestill via lenken før jul."
+  }
+ ],
+ "_tre_G_1_H3": "Konkret produkt og scene ✅, falsifiserbart (bruk på kamp/tur/sofa) ✅, konkurrent kan ikke bruke akkurat denne historien om hen som fryser ✅",
+ "PD_1_H1": [
+  {
+   "tale": "Fryser du på tribunen?",
+   "tekst": "Fryser du på tribunen?"
+  },
+  {
+   "tale": "Glem filten.",
+   "tekst": "Glem filten."
+  },
+  {
+   "tale": "Her er løsningen.",
+   "tekst": "Her er løsningen."
+  },
+  {
+   "tale": "Denne tribuneponchoen har innebygd varme.",
+   "tekst": "Tribuneponcho med innebygd varme."
+  },
+  {
+   "tale": "Du kobler den til en powerbank via USB,",
+   "tekst": "Kobles til en powerbank via USB,"
+  },
+  {
+   "tale": "og du velger selv mellom tre varmenivåer: lav, middels eller høy.",
+   "tekst": "3 varmenivåer: lav, middels eller høy."
+  },
+  {
+   "tale": "Du bestemmer hvor varmt du vil ha det.",
+   "tekst": "Du bestemmer hvor varmt du vil ha det."
+  },
+  {
+   "tale": "Bruk den på tribunen, på jaktposten eller hjemme i sofaen.",
+   "tekst": "På tribunen, på jaktposten eller i sofaen."
+  },
+  {
+   "tale": "Hendene er helt fri, og glidelåsen gjør den rask å ta på.",
+   "tekst": "Hendene fri, glidelås rett frem."
+  },
+  {
+   "tale": "Hold varmen uten å sitte under et teppe.",
+   "tekst": "Hold varmen uten teppe."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkrete produktdetaljer (USB, tre nivåer, glidelås) ✅ visualisere, ✅ falsifiserbart, ✅ ingen konkurrent kan si nøyaktig dette om egen poncho.",
+ "PD_1_H2": [
+  {
+   "tale": "Ponchoen som holder deg varm når hendene er fri.",
+   "tekst": "Ponchoen som holder deg varm når hendene er fri."
+  },
+  {
+   "tale": "Denne tribuneponchoen har innebygd varme.",
+   "tekst": "Denne tribuneponchoen har innebygd varme."
+  },
+  {
+   "tale": "Du kobler den til en powerbank via USB,",
+   "tekst": "Du kobler den til en powerbank via USB,"
+  },
+  {
+   "tale": "og du har tre varmenivåer: lav, middels og høy.",
+   "tekst": "3 varmenivåer: lav, middels og høy."
+  },
+  {
+   "tale": "Du velger selv hvor varm du vil ha den.",
+   "tekst": "Du velger selv hvor varm du vil ha den."
+  },
+  {
+   "tale": "Bruk den på tribunen, på jaktposten eller hjemme i sofaen.",
+   "tekst": "På tribunen, på jaktposten eller hjemme i sofaen."
+  },
+  {
+   "tale": "Hendene er helt fri, og den åpnes og lukkes med glidelås.",
+   "tekst": "Hendene er helt fri – åpnes og lukkes med glidelås."
+  },
+  {
+   "tale": "Hold varmen uten å sitte under et teppe.",
+   "tekst": "Hold varmen uten å sitte under et teppe."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret fakta (USB/powerbank, tre nivåer, glidelås) ✅ visualisere, ✅ falsifiserbart, ✅ ingen konkurrent kan si nøyaktig dette om denne ponchoen.",
+ "PD_1_H3": [
+  {
+   "tale": "Sånn holder du deg varm hele kampen.",
+   "tekst": "Sånn holder du deg varm hele kampen."
+  },
+  {
+   "tale": "Denne tribuneponchoen har innebygd varme.",
+   "tekst": "Denne tribuneponchoen har innebygd varme."
+  },
+  {
+   "tale": "Du kobler den til en powerbank via USB.",
+   "tekst": "Du kobler den til en powerbank via USB."
+  },
+  {
+   "tale": "Du har tre varmenivåer: lav, middels eller høy.",
+   "tekst": "Du har 3 varmenivåer: lav, middels eller høy."
+  },
+  {
+   "tale": "Du bestemmer selv hvor varmt du vil ha det.",
+   "tekst": "Du bestemmer selv hvor varmt du vil ha det."
+  },
+  {
+   "tale": "Bruk den på tribunen, på jaktposten eller hjemme i sofaen.",
+   "tekst": "Bruk den på tribunen, på jaktposten eller hjemme i sofaen."
+  },
+  {
+   "tale": "Hendene er fri, og den åpnes med glidelås rett frem.",
+   "tekst": "Hendene er fri, og den åpnes med glidelås rett frem."
+  },
+  {
+   "tale": "Hold varmen uten å sitte under et teppe.",
+   "tekst": "Hold varmen uten å sitte under et teppe."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkrete detaljer (USB, 3 nivåer, tribune/jaktpost) er visualiserbare ✅, falsifiserbare ✅, og produktspesifikke fremfor generiske adjektiv ✅.",
+ "SP_1_H1": [
+  {
+   "tale": "Dette er tribuneponchoen med innebygd varme.",
+   "tekst": "Dette er tribuneponchoen med innebygd varme."
+  },
+  {
+   "tale": "Her er hvorfor.",
+   "tekst": "Her er hvorfor."
+  },
+  {
+   "tale": "Den er strikket i beige og ser ut som en vanlig poncho.",
+   "tekst": "Strikket i beige – ser ut som en vanlig poncho."
+  },
+  {
+   "tale": "Varmen holder deg i gang når du sitter stille.",
+   "tekst": "Varmen holder deg i gang når du sitter stille."
+  },
+  {
+   "tale": "Den har tre varmenivåer.",
+   "tekst": "3 varmenivåer."
+  },
+  {
+   "tale": "Du velger selv styrken – lav, middels eller høy.",
+   "tekst": "Du velger selv: lav, middels eller høy."
+  },
+  {
+   "tale": "Den kobles til en powerbank via USB.",
+   "tekst": "Kobles til en powerbank via USB."
+  },
+  {
+   "tale": "På tribunen eller på jaktposten, hendene er fri hele tiden.",
+   "tekst": "På tribunen eller jaktposten – hendene er fri hele tiden."
+  },
+  {
+   "tale": "Vær den som er varm når alle andre fryser.",
+   "tekst": "Vær den som er varm når alle andre fryser."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_SP_1_H1": "Alle linjer peker på konkrete, faktabaserte egenskaper (stoff, varmenivåer, USB, bruksområde tribune/jaktpost): visualisere ✅, falsifisere ✅, ingen konkurrent kan si nøyaktig dette om egen imiterte vare ✅ (produktnavn + spesifikke detaljer er unike).",
+ "SP_1_H2": [
+  {
+   "tale": "Slik holder du deg varm når du sitter stille på tribunen.",
+   "tekst": "Slik holder du deg varm når du sitter stille på tribunen."
+  },
+  {
+   "tale": "Dette er tribuneponchoen med innebygd varme.",
+   "tekst": "Tribuneponchoen med innebygd varme."
+  },
+  {
+   "tale": "Strikket stoff i beige, ser ut som en vanlig poncho.",
+   "tekst": "Strikket stoff i beige – ser ut som en vanlig poncho."
+  },
+  {
+   "tale": "Den har tre varmenivåer.",
+   "tekst": "3 varmenivåer."
+  },
+  {
+   "tale": "Du velger selv hvor varmt du vil ha det.",
+   "tekst": "Du velger selv hvor varmt."
+  },
+  {
+   "tale": "Den kobles til en powerbank via USB, så du tar den med overalt.",
+   "tekst": "Kobles til en powerbank via USB – ta den med overalt."
+  },
+  {
+   "tale": "På tribunen, på jaktposten – og hendene er fri hele tiden.",
+   "tekst": "På tribunen, på jaktposten – hendene fri hele tiden."
+  },
+  {
+   "tale": "Vær den som er varm når alle andre fryser.",
+   "tekst": "Vær den som er varm når alle andre fryser."
+  },
+  {
+   "tale": "Finn den via lenken nedenfor.",
+   "tekst": "Finn den via lenken nedenfor."
+  }
+ ],
+ "_tre_SP_1_H2": "Visualisere ✅ (stoff, USB, tre nivåer, tribune/jaktpost), falsifiserbart ✅ på faktalinjene / nøytralt på CTA-linjer, ingen konkurrent kan si det: ✅ (produktspesifikt, uten butikknavn)",
+ "SP_1_H3": [
+  {
+   "tale": "Sitter du stille på tribunen, setter kulden seg fort.",
+   "tekst": "Sitter du stille på tribunen, setter kulden seg fort."
+  },
+  {
+   "tale": "Dette er tribuneponchoen med innebygd varme.",
+   "tekst": "Dette er tribuneponchoen med innebygd varme."
+  },
+  {
+   "tale": "Den er strikket i beige og ser ut som en vanlig poncho.",
+   "tekst": "Strikket i beige – ser ut som en vanlig poncho."
+  },
+  {
+   "tale": "Den har tre varmenivåer.",
+   "tekst": "3 varmenivåer."
+  },
+  {
+   "tale": "Du velger selv hvor varmt du vil ha det.",
+   "tekst": "Du velger selv hvor varmt."
+  },
+  {
+   "tale": "Den kobles til en powerbank via USB, så du kan ta den med overalt.",
+   "tekst": "Kobles til powerbank via USB – ta den med overalt."
+  },
+  {
+   "tale": "På tribunen, på jobb, på jaktposten – hendene er frie hele tiden.",
+   "tekst": "Tribunen, jobb, jaktposten – hendene er frie hele tiden."
+  },
+  {
+   "tale": "Vær den som er varm når alle andre fryser.",
+   "tekst": "Vær den som er varm når alle andre fryser."
+  },
+  {
+   "tale": "Finn den via lenken nedenfor.",
+   "tekst": "Finn den via lenken nedenfor."
+  }
+ ],
+ "_tre_SP_1_H3": "Linje 3 byttet fra kundeutsagn til synlig faktadetalj (stoff/utseende): visualisere ✅, falsifisere ✅, konkurrent kan ikke si det ✅ (produktspesifikt)."
+}

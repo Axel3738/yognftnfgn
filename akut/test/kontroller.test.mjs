@@ -28,6 +28,9 @@ test('sajterna: svarar = frisk; 5xx, timeout, 402 och lösenordssidan är tre ol
   assert.deepEqual(friska, ['butik:baverbutiken']);
   assert.deepEqual(larm.map((l) => l.nyckel), ['butik:carashell', 'butik:matstrumpor', 'butik:kalender', 'butik:drytrek']);
   assert.match(larm[0].rubrik, /carashell\.se svarar inte/);
+  const strypt = domSajter([sajt('carashell', { ok: false, status: 429, forsok: 3 })]);
+  assert.equal(strypt.larm.length, 0, '429 är Shopifys strypning, inte en död sida');
+  assert.equal(strypt.friska.length, 0);
   assert.match(larm[0].rader[0], /svarar 503 på 3 försök/);
   assert.match(larm[1].rader[0], /ingen respons på 20 s/);
   assert.match(larm[2].rubrik, /STÄNGD av Shopify/);

@@ -18,6 +18,7 @@
 
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { BARA_FORENKLAD } from '../../pipeline/sprak.mjs';
 
 export const TILLATET_TOMT = new Set(['liquid.ms-sista-dag.fars_dag', 'liquid.ms-sista-dag.jul']);
 export const FORBJUDET = ['Sjöhed', 'Harestad', 'sushisock', 'Bäverbutiken', 'baverbutiken', 'Bäverbutikens'];
@@ -40,6 +41,38 @@ const SVENSKA_ORD = {
   fi: /\b(och|att|från|inte|är|också|eller|med|för|till|kunder|beställning|leverans|dagar|frakt|strumpor|köp)\b/i,
   en: /\b(och|att|från|inte|är|också|eller|med|för|till|våra|vårt|kunder|beställning|leverans|dagar|frakt|strumpor|köp|kr)\b/i,
 };
+
+// Japanska och traditionell kinesiska (2026-09-30, Japan och Taiwan). Ordgränser finns inte, så
+// det mäts på skriften och på fasta fraser. REGLER-ASIEN.md är facit.
+const CJK_LOCALE = /^(ja|zh)/i;
+const KANA = /[\u3040-\u30ff]/u;
+const HANGUL = /[\uac00-\ud7af]/u;
+const SVERIGE_CJK = /スウェーデン|瑞典|北欧|北歐/u;
+const FRAKT_CJK = /送料|配送|発送|お届け|運費|運送|配送|寄送|免運/u;
+const VALUTA_CJK = /[¥￥]|NT\$|新台幣|台幣|日圓|日幣|クローナ|克朗|\d[\d,，]*\s*(円|元|ドル)/u;
+// Policyer och om oss bär bolagets land; japanskans hero börjar med スウェーデン発のブランド (REGLER-ASIEN
+// punkt 5) och får då säga hur lådan kommer fram utan att det blir en fraktrad.
+const POLICY_NYCKEL = /^(policy|sida\.(integritetspolicy|retur|fraktpolicy|om-oss|villkor)|tema\.index\.hero\.t\.text$)/;
+
+/** Ren: fynd i en japansk/kinesisk text. Förenklade tecken och kana i taiwanesisk text, hangul, belopp
+ *  i en valuta, och Sverige i en frakt-/leveransrad (bolagets land i en policy och det svenska varumärket
+ *  i japanskans hero/om oss är rätt). */
+export function granskaCjk(k, ren, locale) {
+  const ut = [];
+  const zh = /^zh/i.test(locale);
+  if (zh) {
+    const f = ren.match(BARA_FORENKLAD);
+    if (f) ut.push({ nyckel: k, typ: 'skrift', text: `förenklade tecken (${[...new Set(f)].join('')}) — Taiwan läser traditionell kinesiska` });
+    if (KANA.test(ren)) ut.push({ nyckel: k, typ: 'skrift', text: 'japansk kana i kinesisk text' });
+  }
+  if (HANGUL.test(ren)) ut.push({ nyckel: k, typ: 'skrift', text: 'koreanska tecken' });
+  if (VALUTA_CJK.test(ren)) ut.push({ nyckel: k, typ: 'sanning', text: `ett belopp eller en valuta ("${ren.match(VALUTA_CJK)[0]}") — valutan är aldrig ett belopp (REGLER-ASIEN.md punkt 2)` });
+  if (SVERIGE_CJK.test(ren) && FRAKT_CJK.test(ren) && !POLICY_NYCKEL.test(k)) {
+    ut.push({ nyckel: k, typ: 'sanning', text: 'nämner Sverige i en frakt-/leveransrad — fraktrutan skriver landet själv (REGLER-ASIEN.md punkt 1)' });
+  }
+  if (!zh && /スウェーデン製|瑞典製/u.test(ren)) ut.push({ nyckel: k, typ: 'sanning', text: 'スウェーデン製 — varumärket är svenskt, inte strumporna (REGLER-ASIEN.md punkt 5)' });
+  return ut;
+}
 
 /** Granskar en översättning. → { fel: [{nyckel, typ, text}], varningar: [...] } */
 export function granska(sv, mal, locale) {
@@ -109,6 +142,7 @@ export function granska(sv, mal, locale) {
       if (!/Göteborg|Matstrumpor|Äkta ätpinnar/.test(ren)) varn.push({ nyckel: k, typ: 'svenska', text: 'ä eller ö i norsk/dansk text' });
     }
     if (/[äö]/.test(ren) && (locale === 'nb' || locale === 'da' || locale === 'en') && !/Göteborg|Matstrumpor/.test(ren)) varn.push({ nyckel: k, typ: 'svenska', text: `ä/ö i ${locale}-text: "${ren.trim().slice(0, 60)}"` });
+    if (CJK_LOCALE.test(locale)) for (const f of granskaCjk(k, ren, locale)) (f.varning ? varn : fel).push(f);
   }
   return { fel, varningar: varn };
 }

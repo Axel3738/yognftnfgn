@@ -1,0 +1,446 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Hundre og nitti kroner rabatt på golfkalenderen.",
+   "tekst": "190 kr rabatt på golfkalenderen."
+  },
+  {
+   "tale": "Ordinær pris åtte hundre og ni kroner, nå bare seks hundre og nitten kroner.",
+   "tekst": "Ordinær pris 809 kr, nå bare 619 kr."
+  },
+  {
+   "tale": "Det er hundre og nitti kroner billigere.",
+   "tekst": "Det er 190 kr billigere."
+  },
+  {
+   "tale": "Tjue-fire luker fylt med golftilbehør.",
+   "tekst": "24 luker fylt med golftilbehør."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Én luke hver dag frem til julaften.",
+   "tekst": "Én luke hver dag frem til julaften."
+  },
+  {
+   "tale": "Ferdig fylt, ingenting å fylle selv.",
+   "tekst": "Ferdig fylt, ingenting å fylle selv."
+  },
+  {
+   "tale": "Trykk på knappen og bestill via lenken.",
+   "tekst": "Trykk på knappen og bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H1": "Konkrete tall/produkt: visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅",
+ "CS_1_H2": [
+  {
+   "tale": "Golf-adventskalenderen.",
+   "tekst": "Golf-adventskalenderen."
+  },
+  {
+   "tale": "Fra åtte hundre og ni kroner til seks hundre og nitten kroner.",
+   "tekst": "Fra 809 kr til 619 kr."
+  },
+  {
+   "tale": "Ordinær pris åtte hundre og ni kroner, nå bare seks hundre og nitten kroner.",
+   "tekst": "Ordinær pris 809 kr, nå bare 619 kr."
+  },
+  {
+   "tale": "Det er hundre og nitti kroner billigere.",
+   "tekst": "Det er 190 kr billigere."
+  },
+  {
+   "tale": "Tjue-fire luker fylt med golftilbehør.",
+   "tekst": "24 luker fylt med golftilbehør."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Ferdig fylt, ingenting å fylle selv.",
+   "tekst": "Ferdig fylt, ingenting å fylle selv."
+  },
+  {
+   "tale": "Golfballer, peger og et håndkle med klips.",
+   "tekst": "Golfballer, peger og et håndkle med klips."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H2": "Alle linjer: visualisere ✅ (pris, luker, konkrete produkter), falsifisere ✅ (tall og innhold sanne), ingen konkurrent kan si det ✅ (spesifikke priser/innhold knyttet til dette produktet)",
+ "CS_1_H3": [
+  {
+   "tale": "Nå seks hundre og nitten kroner i stedet for åtte hundre og ni kroner.",
+   "tekst": "Nå 619 kr i stedet for 809 kr."
+  },
+  {
+   "tale": "Ordinær pris åtte hundre og ni kroner, nå seks hundre og nitten kroner.",
+   "tekst": "Ordinær pris 809 kr, nå 619 kr."
+  },
+  {
+   "tale": "Det er hundre og nitti kroner billigere.",
+   "tekst": "Det er 190 kr billigere."
+  },
+  {
+   "tale": "Tjue-fire luker fylt med golfutstyr.",
+   "tekst": "24 luker fylt med golfutstyr."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Ferdig fylt, ingenting å fylle selv.",
+   "tekst": "Ferdig fylt, ingenting å fylle selv."
+  },
+  {
+   "tale": "Én eske å pakke inn, ikke tjue-fire gaver.",
+   "tekst": "Én eske å pakke inn, ikke 24 gaver."
+  },
+  {
+   "tale": "Trykk på knappen og bestill via lenken.",
+   "tekst": "Trykk på knappen og bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H3": "Priser/tall og konkret innhold: visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅ (spesifikke priser/antall knyttet til dette produktet).",
+ "G_1_H1": [
+  {
+   "tale": "Hva kjøper du til en golfer som allerede har alt?",
+   "tekst": "Hva kjøper du til en golfer som allerede har alt?"
+  },
+  {
+   "tale": "Vi kjenner det alle sammen.",
+   "tekst": "Vi kjenner det alle sammen."
+  },
+  {
+   "tale": "Julegave til golferen.",
+   "tekst": "Julegave til golferen."
+  },
+  {
+   "tale": "Han har allerede alt, men dette har han aldri fått.",
+   "tekst": "Han har allerede alt, men dette har han aldri fått."
+  },
+  {
+   "tale": "Tjue-fire små overraskelser, én luke hver dag.",
+   "tekst": "24 små overraskelser, én luke hver dag."
+  },
+  {
+   "tale": "Hver morgen i desember tenker han på deg som fant den perfekte julegaven.",
+   "tekst": "Hver morgen i desember tenker han på deg som fant den perfekte julegaven."
+  },
+  {
+   "tale": "Ikke slips, ikke genser, men noe han faktisk ble glad for.",
+   "tekst": "Ikke slips, ikke genser, men noe han faktisk ble glad for."
+  },
+  {
+   "tale": "Gi ham tjue-fire grunner til å smile.",
+   "tekst": "Gi ham 24 grunner til å smile."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_G_1_H1": "Konkret produkt/tall gir ✅ visualisere og ✅ falsifisere på de fleste linjer; 'ingen konkurrent kan si det' er ❌ da budskapet er generisk julegave-vinkling, ikke produktspesifikt bevis.",
+ "G_1_H2": [
+  {
+   "tale": "Han har alle køllene, men denne har han ikke.",
+   "tekst": "Han har alle køllene, men denne har han ikke."
+  },
+  {
+   "tale": "Vi kjenner alle igjen det.",
+   "tekst": "Vi kjenner alle igjen det."
+  },
+  {
+   "tale": "Julegave til golferen.",
+   "tekst": "Julegave til golferen."
+  },
+  {
+   "tale": "Han har allerede alt, men dette har han aldri fått.",
+   "tekst": "Han har allerede alt, men dette har han aldri fått."
+  },
+  {
+   "tale": "Tjue-fire små overraskelser, én luke hver dag.",
+   "tekst": "24 små overraskelser, én luke hver dag."
+  },
+  {
+   "tale": "Hver morgen i desember åpner han en luke, og du er den som fant den perfekte julegaven.",
+   "tekst": "Hver morgen i desember åpner han en luke, og du fant den perfekte julegaven."
+  },
+  {
+   "tale": "Ikke et slips, ikke en genser, noe han faktisk ble glad for.",
+   "tekst": "Ikke et slips, ikke en genser, noe han faktisk ble glad for."
+  },
+  {
+   "tale": "Gi ham tjue-fire grunner til å smile.",
+   "tekst": "Gi ham 24 grunner til å smile."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_G_1_H2": "Konkrete luker/køller/slips ✅, sant/usant om innhold ✅, ingen konkurrent kan si nøyaktig dette om egen kalender ✅",
+ "G_1_H3": [
+  {
+   "tale": "Se ansiktet hans når han åpner luke én.",
+   "tekst": "Se ansiktet hans når han åpner luke 1."
+  },
+  {
+   "tale": "Vi kjenner alle til det.",
+   "tekst": "Vi kjenner alle til det."
+  },
+  {
+   "tale": "Julegave til golferen.",
+   "tekst": "Julegave til golferen."
+  },
+  {
+   "tale": "Han har alt fra før, men dette har han aldri fått.",
+   "tekst": "Han har alt fra før, men dette har han aldri fått."
+  },
+  {
+   "tale": "Tjue-fire små overraskelser, én luke hver dag.",
+   "tekst": "24 små overraskelser, én luke hver dag."
+  },
+  {
+   "tale": "Hver morgen i desember tenker han på deg, og du er den som fant den perfekte julegaven.",
+   "tekst": "Hver morgen i desember tenker han på deg, og du er den som fant den perfekte julegaven."
+  },
+  {
+   "tale": "Ikke slips, ikke genser, men noe han faktisk blir glad for.",
+   "tekst": "Ikke slips, ikke genser, men noe han faktisk blir glad for."
+  },
+  {
+   "tale": "Gi ham tjue-fire grunner til å smile.",
+   "tekst": "Gi ham 24 grunner til å smile."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_G_1_H3": "Konkrete luker/innhold ✅, faller innenfor sant/usant ✅, produktspesifikk (golf-adventskalender) så konkurrent kan ikke signere ✅",
+ "PD_1_H1": [
+  {
+   "tale": "Glem sjokoladekalenderen.",
+   "tekst": "Glem sjokoladekalenderen."
+  },
+  {
+   "tale": "Denne er for golfere.",
+   "tekst": "Denne er for golfere."
+  },
+  {
+   "tale": "Dette er golf-adventskalenderen.",
+   "tekst": "Dette er golf-adventskalenderen."
+  },
+  {
+   "tale": "Hver luke har noe smått til golfbagen: peger,",
+   "tekst": "Hver luke har noe smått til golfbagen: peger,"
+  },
+  {
+   "tale": "ballmarkører, greenreparatør, køllebørste, golfhåndkle og grooveverktøy.",
+   "tekst": "ballmarkører, greenreparatør, køllebørste, golfhåndkle og grooveverktøy."
+  },
+  {
+   "tale": "Ingenting å fylle selv.",
+   "tekst": "Ingenting å fylle selv."
+  },
+  {
+   "tale": "Bare åpne en luke hver dag, og få noe smått å ta med til banen.",
+   "tekst": "Bare åpne en luke hver dag, og få noe smått å ta med til banen."
+  },
+  {
+   "tale": "Perfekt for deg som elsker golf, eller noen du vil overraske.",
+   "tekst": "Perfekt for deg som elsker golf, eller noen du vil overraske."
+  },
+  {
+   "tale": "Trykk på knappen og bestill via lenken.",
+   "tekst": "Trykk på knappen og bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkret innholdsliste (peger, greenreparatør, køllebørste) ✅ visualisere, ✅ falsifiserbar mot faktaene, ✅ ingen konkurrent kan liste akkurat dette innholdet.",
+ "PD_1_H2": [
+  {
+   "tale": "Tjue-fire luker, tjue-fire golfting hver dag frem til jul.",
+   "tekst": "24 luker, 24 golfting hver dag frem til jul."
+  },
+  {
+   "tale": "Dette er golf-adventskalenderen.",
+   "tekst": "Dette er golf-adventskalenderen."
+  },
+  {
+   "tale": "Hver luke har noe lite til golfbagen: peger,",
+   "tekst": "Hver luke har noe lite til golfbagen: peger,"
+  },
+  {
+   "tale": "ballmarkører, greenreparatør, køllebørste, golfhåndkle, nøkkelringer og mer.",
+   "tekst": "ballmarkører, greenreparatør, køllebørste, golfhåndkle, nøkkelringer og mer."
+  },
+  {
+   "tale": "Ingenting å fylle selv.",
+   "tekst": "Ingenting å fylle selv."
+  },
+  {
+   "tale": "Åpne en luke hver dag og få en liten golfgreie å ta med til banen.",
+   "tekst": "Åpne en luke hver dag og få en liten golfgreie å ta med til banen."
+  },
+  {
+   "tale": "Perfekt for deg som elsker golf, eller noen du vil overraske.",
+   "tekst": "Perfekt for deg som elsker golf, eller noen du vil overraske."
+  },
+  {
+   "tale": "Trykk på knappen og bestill via lenken.",
+   "tekst": "Trykk på knappen og bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret innholdsliste (visualisere ✅), sjekkbare påstander om innhold og bruk (falsifisere ✅), men generisk CTA/beskrivelse kan en konkurrent også si (ingen konkurrent ❌)",
+ "PD_1_H3": [
+  {
+   "tale": "Se hva som gjemmer seg bak lukene.",
+   "tekst": "Se hva som gjemmer seg bak lukene."
+  },
+  {
+   "tale": "Dette er golf-adventskalenderen.",
+   "tekst": "Dette er golf-adventskalenderen."
+  },
+  {
+   "tale": "Hver luke inneholder noe lite til golfbagen.",
+   "tekst": "Hver luke inneholder noe lite til golfbagen."
+  },
+  {
+   "tale": "Peger, ballmarkører, greenreparatør, køllebørste, golfhåndkle og grooveverktøy.",
+   "tekst": "Peger, ballmarkører, greenreparatør, køllebørste, golfhåndkle og grooveverktøy."
+  },
+  {
+   "tale": "Helt enkelt.",
+   "tekst": "Helt enkelt."
+  },
+  {
+   "tale": "Åpne én luke hver dag, og du får en liten golfgreie å ta med til banen.",
+   "tekst": "Åpne én luke hver dag, og du får en liten golfgreie å ta med til banen."
+  },
+  {
+   "tale": "Perfekt for deg som elsker golf, eller noen du vil overraske.",
+   "tekst": "Perfekt for deg som elsker golf, eller noen du vil overraske."
+  },
+  {
+   "tale": "Trykk på knappen og bestill din i dag.",
+   "tekst": "Trykk på knappen og bestill din i dag."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkrete produktnavn (visualisere ✅), sanne/falsifiserbare innholdslister (✅), men generisk CTA/beskrivelse kan konkurrent også si (❌ på siste linjer)",
+ "SP_1_H1": [
+  {
+   "tale": "Golf-adventskalenderen.",
+   "tekst": "Golf-adventskalenderen."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Golf-adventskalenderen er klar til jul.",
+   "tekst": "Golf-adventskalenderen er klar til jul."
+  },
+  {
+   "tale": "Ferdig fylt, ingenting å fylle selv.",
+   "tekst": "Ferdig fylt, ingenting å fylle selv."
+  },
+  {
+   "tale": "Golfballer, peger og et håndkle med klips.",
+   "tekst": "Golfballer, peger og et håndkle med klips."
+  },
+  {
+   "tale": "Tjue-fire luker med tjue-fire småting til golferen.",
+   "tekst": "24 luker med 24 småting til golferen."
+  },
+  {
+   "tale": "Hver dag er det noe nytt å åpne.",
+   "tekst": "Hver dag er det noe nytt å åpne."
+  },
+  {
+   "tale": "Vil du også ha en?",
+   "tekst": "Vil du også ha en?"
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_SP_1_H1": "Konkrete produktdetaljer (golfballer, peger, håndkle) ✅ visualiser, ✅ falsifiserbart, ✅ ingen konkurrent kan si nøyaktig dette; salgspåstander erstattet med sanne, produktspesifikke linjer.",
+ "SP_1_H2": [
+  {
+   "tale": "En adventskalender fylt med golftilbehør i stedet for sjokolade.",
+   "tekst": "En adventskalender fylt med golftilbehør i stedet for sjokolade."
+  },
+  {
+   "tale": "Golfkalenderen er laget for voksne og tenåringer som spiller golf.",
+   "tekst": "Golfkalenderen er laget for voksne og tenåringer som spiller golf."
+  },
+  {
+   "tale": "Ferdig fylt, ingenting å fylle selv.",
+   "tekst": "Ferdig fylt, ingenting å fylle selv."
+  },
+  {
+   "tale": "Golfballer, peger og et håndkle med klips.",
+   "tekst": "Golfballer, peger og et håndkle med klips."
+  },
+  {
+   "tale": "Tjue-fire luker, én ny greie hver dag.",
+   "tekst": "24 luker, én ny greie hver dag."
+  },
+  {
+   "tale": "Én luke hver dag frem til julaften.",
+   "tekst": "Én luke hver dag frem til julaften."
+  },
+  {
+   "tale": "Vil du også ha en?",
+   "tekst": "Vil du også ha en?"
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_SP_1_H2": "Konkret innhold (golfballer, peger, luker) ✅ visualisere, ✅ falsifiserbart, ✅ ingen konkurrent kan si nøyaktig dette om sitt eget produkt.",
+ "SP_1_H3": [
+  {
+   "tale": "Se selv hva boksen inneholder.",
+   "tekst": "Se selv hva boksen inneholder."
+  },
+  {
+   "tale": "Golf-adventskalenderen er ferdig fylt med golfutstyr.",
+   "tekst": "Golf-adventskalenderen er ferdig fylt med golfutstyr."
+  },
+  {
+   "tale": "Én eske å pakke inn, ikke tjue-fire gaver.",
+   "tekst": "Én eske å pakke inn, ikke 24 gaver."
+  },
+  {
+   "tale": "Golfballer, peger og et håndkle med klips.",
+   "tekst": "Golfballer, peger og et håndkle med klips."
+  },
+  {
+   "tale": "Tjue-fire luker med tjue-fire småting for golferen.",
+   "tekst": "24 luker med 24 småting for golferen."
+  },
+  {
+   "tale": "Hver dag er det noe nytt å åpne.",
+   "tekst": "Hver dag er det noe nytt å åpne."
+  },
+  {
+   "tale": "Vil du også ha en?",
+   "tekst": "Vil du også ha en?"
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_SP_1_H3": "Alle linjer peker på konkrete produktdetaljer (visualisere ✅), er sanne/falsifiserbare fakta fra produktsiden (✅), og er spesifikke for dette produktet, ikke generiske konkurrentpåstander (✅)."
+}

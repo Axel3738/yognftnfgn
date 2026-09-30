@@ -17,7 +17,7 @@ import { join, dirname } from 'node:path';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const ANNONSER = join(ROT, '..', '..', 'annonser');
-export const KODER = ['NO', 'DK', 'FI', 'US', 'WW', 'DE', 'FR', 'NL', 'ES', 'IT', 'PL', 'PT'];
+export const KODER = ['NO', 'DK', 'FI', 'US', 'WW', 'DE', 'FR', 'NL', 'ES', 'IT', 'PL', 'PT', 'JP', 'TW'];
 export const textKod = (kod) => (kod === 'WW' ? 'US' : kod);
 export const namnFor = (kod) => `MATSTRUMP_${kod}_sushi_offer_static_008_v1`;
 // Butikens namn och domän står aldrig i en annons (Axels beslut 2026-09-18).
@@ -46,6 +46,12 @@ export function fel(kampanjfil, annons, t) {
     if (!v) ut.push(`${falt} saknas`);
     else if (BUTIKSORD.test(v)) ut.push(`${falt} nämner butiken eller en domän: "${v}"`);
     if (v && /\d+\s*(kr|€|\$|zł|nok|sek|eur|usd)/i.test(v)) ut.push(`${falt} bär ett pris — priset står bara på sidan`);
+  }
+  // Japan och Taiwan: talet fyra (四, en ensam 4:a) undviks i presenter — storleken 36–44 räknas inte.
+  if (/^(JP|TW)$/.test(t.kod ?? '')) {
+    for (const [falt, v] of Object.entries({ title: annons.title, message: annons.message, link_description: annons.link_description, underrubrik: t.underrubrik, banner: t.banner })) {
+      if (v && /四|(?<![\d–-])4(?![\d–-])/u.test(v)) ut.push(`${falt} säger fyra — undviks i presenter i Japan och Taiwan`);
+    }
   }
   const kryss = (t.tre_fragor ?? []).filter((r) => [r.visualisera, r.falsifiera, r.unik].includes('❌'));
   if (!t.tre_fragor?.length) ut.push('tre-frågorstestet saknas');

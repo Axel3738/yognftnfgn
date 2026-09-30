@@ -1240,3 +1240,50 @@ Den passerar grinden (300 kr + 3 köp) om ett par dygn — läs den DÅ, inte ti
 och jämför mot LISTICLE (7d CPA 556) snarare än mot huvudkampanjen. Och skriv inte
 "listicle-spåret är lösningen" förrän den nya kampanjen har egna tre köp: ett köp
 på 371 kr är exakt den sortens tal som ser ut som en vinnare och inte är det.
+
+## 2026-09-30 — värsta dygnet hittills, och listicle-spåret svarade inte
+
+Ronden pausade **tre annonser** och slog i taket på tre ändringar: `SP_3_H1`
+och sänkningen av LISTICLE (2 800 → 2 000 kr) ligger först i kön nästa natt.
+Huvudkampanjen hölls av kadensspärren (2 av 3 dygn), fönstret öppnar 2026-10-01.
+
+⛔ **29 september är det sämsta dygnet den här produkten haft:** alla tre
+kampanjerna tillsammans **8 949 kr, 4 köp, ROAS 0,66, CPA 2 237 kr** mot
+break-even 693.
+
+| Kampanj 29/9 | Spend | ROAS | Köp |
+|---|---|---|---|
+| Huvudkampanjen | 3 294 kr | 0,73 | 2 |
+| LISTICLE | 3 312 kr | **0,53** | 1 |
+| NYA LISTICLE | 2 343 kr | 0,75 | 1 |
+
+⚠️ **Det viktiga i den tabellen är att listicle-spåret föll med.** Axel flyttade
+pengarna dit 28/9 kväll (LISTICLE 1 400 → 2 800, ny kampanj på 2 000) — exakt
+den riktning datan pekade, eftersom LISTICLE då låg på 7d-CPA 556 mot
+huvudkampanjens 806. **Första hela dygnet på den nya nivån gav LISTICLE ROAS
+0,53**, sämre än huvudkampanjen samma dygn. Den nya kampanjen gav 0,75 på
+2 343 kr.
+
+→ **Instruktion:** skriv INTE "listicle-spåret fungerade inte" på det här. Ett
+dygn, och det dygnet var dåligt i alla tre kampanjerna samtidigt — det pekar på
+något som ligger över kampanjnivån (efterfrågan, säsong, auktionen), inte på
+vilken landningssida som används. Mät samma jämförelse om tre dygn: har
+LISTICLE-spåret en egen CPA-fördel kvar när båda kört på sina nya budgetar en
+hel vecka? Först då betyder svaret något.
+
+**7 dygn SE:** 65 374 kr, 70 köp, ROAS 1,44, CPA **934 kr** ⇒ vinstbidrag
+**−16 864 kr**. Tredje negativa natten, och den fördjupas: −9 693 → −10 179 →
+−16 864.
+
+**`SP_5_1`, fjärde mätningen i rad över break-even:** 7d-CPA 765 → 951 → 1 164 →
+**1 090 kr**. 14-dygnsklassen ligger på CPA 672, alltså precis under break-even
+693 — den skyddas fortfarande som `vinnare`, men marginalen är 21 kr. **Faller
+14-dygnstalet över 693 tar ronden den själv**, utan att någon behöver besluta.
+Det är en mätning att vänta in, inte att föregripa.
+
+⚠️ **En annan sorts fynd: ronden hittade fyra kill-kandidater på en natt** (mot
+noll i går). Det är inte att reglerna blev strängare — det är att annonser som
+legat i `for_tidigt` passerade 3 × target-CPA utan köp. När spenden per annons
+stiger i en krympande kampanj faller fler igenom grinden samtidigt. Räkna med
+fler pausningar de närmaste nätterna och läs dem som en effekt av nivån, inte
+som en ny signal per annons.

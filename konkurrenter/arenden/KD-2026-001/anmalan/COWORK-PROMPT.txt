@@ -1,0 +1,129 @@
+Uppgift: skicka in 10 upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende KD-2026-001 (Facebooksidan ORVO). Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+
+REGLER
+1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: https://www.facebook.com/help/contact/1758255661104383
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code": Meta mejlar en kod till axel.odhner@stonebite.org. Öppna Gmail i en ny flik med det kontot, ta koden ur det senaste mejlet "Please verify your email address" från Meta och skriv in den. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla 10). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": Sweden. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: Stonebite Ecom AB → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+===== ANMÄLAN 1 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=2011809009499730
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:06, 0:22, 0:27) are identical to ours; 59% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=2116077445718614, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_1b0f1607-235d-4e98-bcbc-d2b96b2e9776.png?v=1790691515 Ref KD-2026-001 1/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 2 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=2255393811922676
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:15, 0:23, 0:32) are identical to ours; 52% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=1867600047562270, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-2_242b1548-e974-4305-970a-910ce0b6af48.png?v=1790691522 Ref KD-2026-001 2/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 3 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=883337508196166
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:19, 0:21, 0:29) are identical to ours; 59% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=1384755223647735, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_bf7646e2-770c-4bd7-baba-9f7b08bf8d24.png?v=1790691558 Ref KD-2026-001 3/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 4 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1432012392223391
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1619798969500412
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:20, 0:22, 0:38) are identical to ours; 33% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1619798969500412 https://www.facebook.com/ads/library/?id=2000363993957496, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-4_5e844b37-d4ca-419e-b572-f4463661b58e.png?v=1790691531 Ref KD-2026-001 4/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 5 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1075928918391127
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:09, 0:15, 0:33) are identical to ours; 47% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=1402118762047171, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_4c471957-0a15-460b-bbad-b68ebfcf7249.png?v=1790691544 Ref KD-2026-001 5/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 6 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=2354225538650112
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1619798969500412
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:29, 0:32, 0:39) are identical to ours; 63% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1619798969500412 https://www.facebook.com/ads/library/?id=1477507084209046, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_04d80ce1-7147-4640-bf6b-3d929739715f.png?v=1790691552 Ref KD-2026-001 6/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 7 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1379264000855257
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:11, 0:13, 0:34) are identical to ours; 64% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=1384755223647735, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_d3f4849e-16d6-4db5-9be1-21f9717cafb5.png?v=1790691538 Ref KD-2026-001 7/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 8 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=28302634086095313
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1619798969500412
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:11, 0:19, 0:23) are identical to ours; 67% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1619798969500412 https://www.facebook.com/ads/library/?id=1643130043819316, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-8_5eed0a45-3c40-4770-88bc-1a0e8dbc1540.png?v=1790691577 Ref KD-2026-001 8/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 9 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=964240652690101
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1619798969500412
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:07, 0:24, 0:26) are identical to ours; 51% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1619798969500412 https://www.facebook.com/ads/library/?id=2000363993957496, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-9_6821ecb2-bdff-426f-91da-7273b177a9c1.png?v=1790691570 Ref KD-2026-001 9/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 10 av 10 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=2514259155737512
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2000363993957496
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:18, 0:22, 0:27) are identical to ours; 60% of its frames match our films. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2000363993957496 https://www.facebook.com/ads/library/?id=1719988219741607, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-10_1b8948c8-eab2-4d66-b339-8de33180cedf.png?v=1790691563 Ref KD-2026-001 10/10.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "Anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "Anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.

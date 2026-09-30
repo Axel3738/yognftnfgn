@@ -23,9 +23,14 @@ import json, os, shutil, subprocess, sys, tempfile
 
 from PIL import Image, ImageDraw, ImageFont
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import cjk  # japanska/kinesiska: typsnitt med tecknen + radbrytning utan mellanslag (2026-09-30)
+
 
 def radbryt(text, font, max_bredd):
-    """Bryter på ord så att varje rad får plats i max_bredd px. Ett ord som ensamt är för brett står själv."""
+    """Bryter på ord så att varje rad får plats i max_bredd px. Ett ord som ensamt är för brett står själv.
+    Japanska och kinesiska bryts mellan tecken (cjk.radbryt), eftersom de saknar mellanslag."""
+    if cjk.sprak(text): return cjk.radbryt(text, font, max_bredd)
     rader, rad = [], ''
     for ord_ in text.split():
         prov = (rad + ' ' + ord_).strip()
@@ -37,7 +42,7 @@ def radbryt(text, font, max_bredd):
 
 def rita_ruta(t, fontfil):
     """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd). En text kan bära egen font."""
-    font = ImageFont.truetype(t.get('font', fontfil), t['font_px'])
+    font = ImageFont.truetype(cjk.font_for(t['text'], t.get('font', fontfil)), t['font_px'])
     padx, pady = t.get('pad', [18, 8])
     maxb = t.get('max_bredd', 600) - 2 * padx
     rader = []

@@ -124,6 +124,9 @@ export function domSajter(sajter = [], { nu = new Date() } = {}) {
     if (!r) continue;
     const nyckel = `butik:${s.id}`;
     if (r.ok) { friska.push(nyckel); continue; }
+    // 429 = Shopify stryper vår IP (mätt 30/9 03:28: carashell.com och baverbutiken.se
+    // svarade också 429 medan carashell.se svarade 200). Servern svarar — ingen dom åt något håll.
+    if (r.status === 429) continue;
     const doman = domanUr(s.url);
     let rubrik; let rader; let gor;
     if (r.status === 402) {

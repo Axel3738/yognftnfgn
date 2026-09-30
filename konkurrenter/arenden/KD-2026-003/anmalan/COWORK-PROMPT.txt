@@ -1,0 +1,88 @@
+Uppgift: skicka in 6 upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende KD-2026-003 (Facebooksidan Bustatio-busto). Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+
+FÖRST
+Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som axel.odhner@stonebite.org. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."
+
+REGLER
+1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: https://www.facebook.com/help/contact/1758255661104383
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code" ("Begär kod"): Meta mejlar en ny kod till axel.odhner@stonebite.org för varje anmälan. Mejlet kommer från notification@email.meta.com och heter "Please verify your email address" eller "Verifiera din e-postadress". Öppna Gmail i en ny flik med just det kontot och ta koden ur det senaste mejlet. Är Gmail inloggat som ett annat konto: STANNA och skriv till Axel: "Jag behöver koden till anmälan <nr>." Vänta på svaret, för Axel hämtar koden från Claude. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla 6). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": Sweden. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: Stonebite Ecom AB → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+===== ANMÄLAN 1 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=2899062230465261
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1564653074601367
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Verbatim copy of our ad copy: 7 consecutive identical words. Its video is a re-upload of our ad film (same edit, our on-screen text): 3 stills are identical. We claim the edit and text only. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=1564653074601367, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_39b984a4-9900-4b64-84b7-096db42130aa.png?v=1790749282 Ref KD-2026-003 1/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 2 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1652495996287809
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2048782039094883
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad film (same edit, our on-screen text): 3 stills (at 0:11, 0:16, 0:21) are identical. We claim the edit and text only. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=2048782039094883 for "Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare", published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-2_9ce15a1a-1fbb-4c6f-8eac-6fab5ed3436e.png?v=1790749286 Ref KD-2026-003 2/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 3 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1551058543491574
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1595998031573353
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad films (same edit, our on-screen text): 3 stills (at 0:01, 0:03, 0:08) are identical. We claim the edit and text only. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1595998031573353 https://www.facebook.com/ads/library/?id=1372190351203892, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_44577296-c732-49fb-9266-54f2fac9a43d.png?v=1790749300 Ref KD-2026-003 3/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 4 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=973988949077032
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1112669048088643
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad film (same edit, our on-screen text): 3 stills (at 0:02, 0:07, 0:24) are identical. We claim the edit and text only. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=1112669048088643 for "IBC-tanköverdrag 1000 L – Stoppar Alger & UV", published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-4_b0a16846-683d-4158-9688-469dd4de4fa9.png?v=1790749291 Ref KD-2026-003 4/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 5 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1555804585865131
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=959107410554528
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad films (same edit, our on-screen text): 3 stills (at 0:00, 0:04, 0:05) are identical. We claim the edit and text only. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=959107410554528 https://www.facebook.com/ads/library/?id=28341728188789408, published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_c5f1a5ca-5622-4f92-8dfb-d17ef5ebae74.png?v=1790749305 Ref KD-2026-003 5/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== ANMÄLAN 6 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1051577917889579
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1581950873474683
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad film (same edit, our on-screen text): 3 stills (at 0:06, 0:24, 0:34) are identical. We claim the edit and text only. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=1581950873474683 for "IBC-tanköverdrag 1000 L – Stoppar Alger & UV", published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_f2824043-9c66-4ef0-8f8d-8c708b8d7ac2.png?v=1790749296 Ref KD-2026-003 6/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "Anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "Anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.

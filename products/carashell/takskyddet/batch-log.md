@@ -2877,3 +2877,127 @@ sin ersättare ska alltid tittas på i en frame.**
   — ägarens beslut, inget laddas upp dit.
 - Kampanjen har fortfarande två adsets för samma vinkel (`CARASHELL_US_GT` och
   `CARASHELL_US_G`) som delar vinkelns budget i CBO:n.
+
+## Nattvakten 2026-09-30 — tre annonser pausade, taket nått, sämsta dygnet hittills
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK): 3 ändringar, alla
+tillbakalästa.**
+- Pausade `CaraShellRoof_CS_1_H1` (14d 3 201 kr / 4 köp / CPA 800, 0 köp på 7d),
+  `CaraShellRoof_PD_2_1` i huvudkampanjen (14d 2 889 kr / 4 köp / CPA 722, 7d-CPA
+  2 566) och `CaraShellRoof_CS_3_H1` i LISTICLE (1 301 kr, 0 köp på 14 dygn).
+- **Taket på tre ändringar nåddes.** Kvar i kön till nästa natt: pausa
+  `CaraShellRoof_SP_3_H1` (1 287 kr, 1 köp, CPA 1 287) och sänka
+  `CARASHELL_SE_Taköverdraget LISTICLE` 2 800 → 2 000 kr (3d-vinst −3,2 %).
+- Huvudkampanjen **3 000 kr** (Axels tal) hölls av kadensspärren, 2 av 3 dygn.
+  3d: 14 573 kr, 17 köp, ROAS 1,51, vinst −4,8 %. Fönstret öppnar 2026-10-01.
+- `NYA LISTICLE … – kopia` 2 000 kr: 2 735 kr och 2 köp på 3 dygn — fortfarande
+  under grinden (300 kr OCH 3 köp), ingen dom.
+
+**29 september, alla tre kampanjerna:** 8 949 kr, 4 köp, ROAS 0,66, CPA 2 237 kr.
+Sämsta dygnet produkten haft. LISTICLE föll hårdast (ROAS 0,53) trots att den
+var den friska halvan fram till dess.
+
+**7 dygn SE:** 65 374 kr, 70 köp, ROAS 1,44, CPA 934 kr ⇒ vinstbidrag
+**−16 864 kr** (i går −10 179, i förrgår −9 693).
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.
+
+## 2026-09-30 — leveransrundan: tionde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad. SE-kampanjen
+ACTIVE med 11 adsets, pris 1 129 kr; båda listicle-kampanjerna filtrerade som
+eget spår.
+
+## 2026-09-29 — NO-rundan: 3 rader, alla redan uppe (loggad i efterhand)
+
+3 rader i `SE-ACTIVE to be translated` (`UG_102_H1`, `CS_112_H1`, `SP_104_H2`),
+alla ur 28/9:s spegling och skapade i kontot 17:45–18:09 CEST samma kväll.
+Tillbakalästa en och en ur Meta: ACTIVE/ACTIVE i ACTIVE-adsets (UG, CS, SP).
+Approved-kollen: **69 rader, 0 utan NO-annons.** Inget renderat, inget
+uppladdat, 0 HeyGen-credits, ingen Notion-status rörd.
+
+⚠️ **Sessionen stannade efter köläsningen** — Discord-rapporten, den här
+loggraden och commiten hann inte göras den dagen. Ingenting i kontot eller
+Notion rördes, så det som saknades var spåret, inte arbetet. Den 30/9
+rapporterades båda dagarna i samma Discord-post.
+
+## 2026-09-30 — NO-rundan: kön tom
+
+**0 rader** i `SE-ACTIVE to be translated`. Approved-kollen: **72 rader, 0 utan
+NO-annons.** Kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd
+länk `carashell.se/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst ur
+butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits, ingen Notion-status
+rörd. Discord-rapport postad i `#annons-uppladdning` (`1554864439684239371`),
+ingen ping.
+
+⚠️ **Metas läsgräns slog till två gånger i dag på Magiborsten UK** (det konto
+kön läser för US-kolumnen): köläsningen backade av fyra gånger (30+60+120+240 s)
+och Approved-passet **dog på första försöket** med `✗ Meta paging: User request
+limit reached` och lämnade en **tom fil**. Ett nytt försök tio minuter senare
+läste alla 72. Samma fälla som 27/9 — en strypt läsning ser ut som en tom kö om
+ingen läser felraden. Räkna med 10–25 min för en runda när kontot är strypt.
+
+Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på
+Axels besked, obesvarat sedan 2026-09-23.
+
+---
+
+## USA-runda 17 — 2026-09-30 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i BÅDA statusarna.** `SE-ACTIVE to be translated` 0 rader,
+`Approved` 72 rader där varje rad redan bär sin US-annons (0 eftersläpande).
+Ingenting översatt, ingenting laddat upp, ingen HeyGen-kredit rörd.
+
+Marknadsvakten kördes ändå (den dagen är den hela poängen med rutinen):
+12 av 12 adsets rätt placeringar, 87 annonser ACTIVE, budget 8 000 kr/dag,
+**spend i går 7 968 kr och i dag 4 257 kr — allt i tillåtna placeringar**,
+startsida, landningssida, produktsida och kassa engelska, kassan förvalde
+United States. Inget larm.
+
+Oförändrat: den ursprungliga `CARASHELL_US_Taköverdrag …` står PAUSED med
+2 246 kr spend (ägarens beslut), och kampanjen har fortfarande två adsets för
+samma vinkel (`CARASHELL_US_GT` och `CARASHELL_US_G`) som delar vinkelns
+budget i CBO:n.
+
+---
+
+## 2026-09-30 — speglingen: 0 speglade, 3 källrader → Approved
+
+**Inget att spegla.** SE-kön hade tre rader, alla stoppade:
+
+| Källrad | Skäl |
+|---|---|
+| `Takoverdrag_FD_2_2` | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | nämner butiken — sjunde dygnet (24–30/9) |
+
+⚠️ **De två fars dag-bildannonserna kan ALDRIG speglas, och det är inte Axels
+beslut.** Fars dag är 8 november i Sverige men i juni i USA, Storbritannien,
+Kanada och Danmark, och sista beställningsdagen (19 oktober) är räknad på
+leveranstiden till Sverige. Verktygets fars dag-spärr gör rätt. De nämner
+dessutom butiken, men att rätta det gör dem inte speglingsbara — de hör bara i
+Sverige. ⚠️ Discord-jobbet lade ändå alla tre under ACTION NEEDED med texten
+"decide whether the editor should make a store version"; raden skrevs om för
+hand så att bara `GT_11_H1` ligger hos Axel. **Ett permanent stoppskäl och ett
+redigeraren kan rätta ska inte hamna i samma hög** — annars slutar Axel läsa
+listan.
+
+**3 källrader → `Approved`** (US-annonserna kom upp i natt):
+`SP_4_H2` → `120251671868600435`, `CS_12_H1` → `120251671852550435`,
+`UG_2_H1` → `120251671833900435`. Kön `CaraShell EN ready to be active` är nu
+tom.
+
+⛔ **Metas strypning (kod 17) på UK-kontot blockerade tre försök i ~50 minuter.**
+Kölistningen utan `--kor` kom igenom med verktygets egen backoff (30+60+120 s),
+men `--kor` föll direkt med `Meta paging: User request limit reached` — den
+läser fler sidor ur UK-kontot och kastar där i stället för att backa av. Fjärde
+försöket kom förbi US-kontot. **En strypt läsning är inte ett tomt resultat:**
+körningen upprepades tills alla tre kontona gick att läsa, i stället för att
+rapportera 0 → Approved.
+⚠️ Och en fälla i containern: `sleep` i en bakgrundskörning dödas av
+bakgrundsgränsen (~10 min), så en paus på 25 minuter blir aldrig av. Dela upp
+väntan eller kör om direkt.
+
+Priserna lästa live: SE 1 129 kr, NO 1 106 NOK. Båda kampanjerna ACTIVE
+(SE 11 adsets, NO 12). Inget loggat i registret — `register.mjs log` vägrar 0.
