@@ -722,3 +722,13 @@ körning och skriver "Språk i butiken utan egna fraktmejl: …" — spårningsr
 tar med det i rapporten. Nytt språk = `mejl/sprak/<kod>.json` (sonnet +
 granskare, knappen = spårningssidans knapp) + en rad i `mejl_sprak` + bygg +
 `--skarpt`. Spårningssidan behöver samma språk i `sparning/sprak/`.
+
+**Testmejlen 2026-09-29 eftermiddag** (Cowork, till axelodhner.business@gmail.com —
+Shopifys testknapp skickar bara till personalkontot, adressen går inte att välja):
+språkväljaren i redigerarens förhandsvisning skickar testet på valt språk. Tio av
+tolv lästa i Gmail — sv, nb, da, fi, en, de, fr, nl, es, it — rätt ämnesrad, rätt
+knapp, och knappen går till `matstrumpor.se/<mapp>/pages/spara?nummer=MS-…`
+(Shopify lägger en egen klickspårning `_t/c/v3/…` + `&syclid=` runt länken).
+pl och pt-PT stoppades av Shopifys spärr "För många testaviseringar" — inte
+skickade; täckta av tillbakaläsningen i API:t, polskans förhandsvisning och
+`lankkoll.mjs`. ⚠️ Testknappen tål ungefär tio mejl i följd.

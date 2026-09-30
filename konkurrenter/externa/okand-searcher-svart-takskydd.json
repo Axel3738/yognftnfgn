@@ -1,0 +1,176 @@
+{
+ "id": "okand-searcher-svart-takskydd",
+ "agare": "okänd (riktig inspelning, brittisk husvagn Sterling Eccles Searcher med svart takskydd)",
+ "lank": null,
+ "publicerad": null,
+ "tillagd": "2026-09-29",
+ "orsak": "Märkt lånad i KD-2026-002 (--lanat) och sedd av sessionen: inte vår inspelning. Rutorna är våra filmers kopior av klippet (CaraShellRoof_DK_PD_2_H1 ~12 s, Takoverdrag_CS_1_H1 ~26 s, CaraShellRoof_NO_PD_1 ~11 s).",
+ "kalla": "våra rutor 2/s ur output/klipp: CaraShellRoof_DK_PD_2_H1 10–16 s, Takoverdrag_CS_1_H1 24–28 s, CaraShellRoof_NO_PD_1 9–14 s (tagningens utsträckning sedd med ögat 2026-09-29)",
+ "rutor": [
+  {
+   "t": 10,
+   "hash": "fb1fe3c5c7c7dc39",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 10.5,
+   "hash": "fdaf90d672b2ce82",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 11,
+   "hash": "7f17d0511de8cc09",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 11.5,
+   "hash": "7f4778a35151684c",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 12,
+   "hash": "fffe80fa7a56e860",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 12.5,
+   "hash": "7b171cc6c6c68303",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 13,
+   "hash": "1921e1a0a0a0a9a1",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 13.5,
+   "hash": "c1c0808091c1ea6e",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 14,
+   "hash": "0de104840282d8f8",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 14.5,
+   "hash": "1900018181c1fcf9",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 15,
+   "hash": "411c202030a0fbf3",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 15.5,
+   "hash": "4c5df8e9a92dfcd4",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 16,
+   "hash": "6c4df86d692ddcd4",
+   "film": "1788133572536635"
+  },
+  {
+   "t": 24,
+   "hash": "942268b0306de3d2",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 24.5,
+   "hash": "f3bf477163737d71",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 25,
+   "hash": "fd0fc0f5767d75b2",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 25.5,
+   "hash": "7f179098aec84126",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 26,
+   "hash": "7e07b03239f05011",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 26.5,
+   "hash": "7f07b8d3e9a9110c",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 27,
+   "hash": "fefe2298d31ee8c8",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 27.5,
+   "hash": "ff4906f3f1c17101",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 28,
+   "hash": "1962e0a0a0a0a0a1",
+   "film": "1538677984965189"
+  },
+  {
+   "t": 9,
+   "hash": "484c48c8ccae5c2e",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 9.5,
+   "hash": "20bbbbdbde8a7929",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 10,
+   "hash": "88eada93616ce2a3",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 10.5,
+   "hash": "733f87494b4e6465",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 11,
+   "hash": "f91fd38b8e0e3163",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 11.5,
+   "hash": "ff0f30b4b63ac282",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 12,
+   "hash": "7e07e0e534e03106",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 12.5,
+   "hash": "7e07707131b31800",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 13,
+   "hash": "be7e04f6333a3030",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 13.5,
+   "hash": "ff3e00feec1868c0",
+   "film": "1045548825135718"
+  },
+  {
+   "t": 14,
+   "hash": "2e37d79091918888",
+   "film": "1045548825135718"
+  }
+ ]
+}

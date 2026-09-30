@@ -8,6 +8,13 @@
 //   node matstrumpor/marknader/annonser/bygg.mjs --marknad NO --skarpt --byt-video
 //       byter videon i annonser som redan finns när filen i klar/ har ändrats (ny creative,
 //       samma annons, fortfarande PAUSED). videor.json minns vilken fil varje annons bär.
+//   node matstrumpor/marknader/annonser/bygg.mjs --marknad FR --skarpt --byt-text
+//       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
+//       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
+//       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
+//       Byter också Facebook-sidan, Instagram-kontot och länken när marknader.json säger något
+//       annat (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se";
+//       länken matstrumpor.com/<språk> sedan samma kväll — inte matstrumpor.se).
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -22,7 +29,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
-import { api, alla, laddaUppVideo, väntaPåThumb, ingaEnhancements, skapaAnnons } from '../../../tools/meta-lib.mjs';
+import { api, alla, laddaUppVideo, laddaUppBild, väntaPåThumb, ingaEnhancements, skapaAnnons } from '../../../tools/meta-lib.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const M = JSON.parse(readFileSync(join(ROT, 'marknader.json'), 'utf8'));
@@ -30,6 +37,7 @@ const arg = process.argv.slice(2);
 const skarpt = arg.includes('--skarpt');
 const aktivera = arg.includes('--aktivera');
 const bytVideo = arg.includes('--byt-video');
+const bytText = arg.includes('--byt-text');
 const log = (s) => console.log(s);
 // Vilken fil varje annons bär (sha256 av filen i klar/). Utan minnet går det inte att veta om en
 // annons redan har den nya videon — 2026-09-28 byttes speed-renderingarna mot precision.
@@ -50,10 +58,45 @@ export function farAktiveras(k, annonser) {
   if (fel.length) return { ok: false, skal: `${fel.length} annonser länkar fel: ${fel.map((a) => `${a.name} → ${a.lank}`).join('; ')}` };
   return { ok: true };
 }
-/** Ren: annonsens länk måste bära marknadens locale och (för enlandskampanjer) landet. */
+/** Ren: vilka av rubrik, brödtext och länkbeskrivning som skiljer mellan filen och annonsens
+ *  creative i kontot (object_story_spec). Video bär title/link_description, bild name/description. */
+export function textSkillnad(an, story = {}) {
+  const v = story.video_data, l = story.link_data;
+  const live = v ? { title: v.title, message: v.message, link_description: v.link_description }
+    : l ? { title: l.name, message: l.message, link_description: l.description } : {};
+  return ['title', 'message', 'link_description'].filter((f) => (live[f] ?? '') !== (an[f] ?? ''));
+}
+
+/** Ren: vilken Facebook-sida och vilket Instagram-konto annonsen visas som, mot marknader.json. */
+export function identitetSkillnad(M, story = {}) {
+  const ut = [];
+  if ((story.page_id ?? '') !== (M.sida ?? '')) ut.push('sida');
+  if ((story.instagram_user_id ?? '') !== (M.instagram_user_id ?? '')) ut.push('instagram');
+  return ut;
+}
+
+/** Ren: länken i annonsens creative (video: call_to_action, bild: link_data.link och dess
+ *  call_to_action) mot marknadens `lank` i marknader.json. */
+export function lankSkillnad(k, story = {}) {
+  const v = story.video_data, l = story.link_data;
+  const live = [v?.call_to_action?.value?.link, l?.link, l?.call_to_action?.value?.link].filter((x) => x !== undefined);
+  if (!live.length) return (k.lank ?? '') ? ['länk'] : [];
+  return live.every((x) => x === k.lank) ? [] : ['länk'];
+}
+
+// Domänernas standardspråk: roten bär språket utan mapp (matstrumpor.com/ är engelska, .no/ norska).
+const STANDARDSPRAK = { 'matstrumpor.se': 'sv', 'matstrumpor.com': 'en', 'matstrumpor.no': 'nb', 'matstrumpor.eu': 'en' };
+
+/** Ren: annonsens länk måste gå till marknadens domän (`doman`, annars matstrumpor.se), bära språkmappen
+ *  (`sprakmapp`, annars locale; ingen mapp för domänens standardspråk) och, för enlandskampanjer, landet.
+ *  Allt utland länkar till matstrumpor.com sedan 2026-09-29 kväll (Axel: "Ska inte alla vara via .com
+ *  domänen?"). Undantaget är A/B-testets B-sida på matstrumpor.no. */
 export function lankOk(k, lank) {
   if (!lank) return false;
-  if (!lank.includes(`matstrumpor.se/${k.locale}/`)) return false;
+  const doman = k.doman ?? 'matstrumpor.se';
+  if (!lank.startsWith(`https://${doman}/`)) return false;
+  const mapp = k.sprakmapp ?? (STANDARDSPRAK[doman] === k.locale ? '' : k.locale);
+  if (mapp && !lank.startsWith(`https://${doman}/${mapp}/`)) return false;
   if (k.geo.length === 1 && !lank.includes(`country=${k.geo[0]}`)) return false;
   return true;
 }
@@ -91,43 +134,83 @@ async function byggMarknad(kod) {
 
   if (!A) log(`inga annonser: ${kod}.json saknas (copy skrivs av sonnet mot docs/copy-regler.md)`);
   else {
-    const finns = adset ? await alla(`${adset.id}/ads`, { fields: 'id,name,status' }, 50) : [];
-    const spec = (an, videoId, thumb) => ({ page_id: M.sida, instagram_user_id: M.instagram_user_id,
-      video_data: { video_id: videoId, image_url: thumb, title: an.title, message: an.message, link_description: an.link_description, call_to_action: { type: 'SHOP_NOW', value: { link: k.lank } } } });
+    const finns = adset ? await alla(`${adset.id}/ads`, { fields: bytText ? 'id,name,status,effective_status,creative{object_story_spec}' : 'id,name,status' }, 50) : [];
+    // Video (an.video, eller an.video_fran = en annan annons vars video återanvänds — A/B-testets B-kampanj
+    // bär exakt samma video som A) eller bild (an.bild, eller an.bild_fran) med link_data.
+    const spec = (an, media) => media.image_hash
+      ? { page_id: M.sida, instagram_user_id: M.instagram_user_id,
+        link_data: { image_hash: media.image_hash, link: k.lank, message: an.message, name: an.title, description: an.link_description, call_to_action: { type: 'SHOP_NOW', value: { link: k.lank } } } }
+      : { page_id: M.sida, instagram_user_id: M.instagram_user_id,
+        video_data: { video_id: media.video_id, image_url: media.thumb, title: an.title, message: an.message, link_description: an.link_description, call_to_action: { type: 'SHOP_NOW', value: { link: k.lank } } } };
+    const kallfil = (an) => an.bild ?? an.video ?? null;
+    const media = async (an) => {
+      const fran = an.video_fran ?? an.bild_fran;
+      if (fran) {
+        const v = videor[fran];
+        if (!v?.video_id && !v?.image_hash) throw new Error(`${an.namn}: ${fran} finns inte i videor.json — bygg A-annonsen först`);
+        if (v.image_hash) return { image_hash: v.image_hash, sha256: v.sha256, fil: v.fil };
+        return { video_id: v.video_id, thumb: await väntaPåThumb(v.video_id), sha256: v.sha256, fil: v.fil };
+      }
+      const fil = join(ROT, kallfil(an));
+      if (an.bild) return { image_hash: await laddaUppBild(act, fil), sha256: sha(fil), fil: an.bild };
+      const videoId = await laddaUppVideo(act, fil);
+      return { video_id: videoId, thumb: await väntaPåThumb(videoId), sha256: sha(fil), fil: an.video };
+    };
+    const minne = (an, m, extra) => ({ sha256: m.sha256, fil: m.fil, ...(m.image_hash ? { image_hash: m.image_hash } : { video_id: m.video_id }), ...(an.video_fran || an.bild_fran ? { fran: an.video_fran ?? an.bild_fran } : {}), ...extra });
     for (const an of A.annonser) {
-      const fil = join(ROT, an.video);
+      const lanad = !!(an.video_fran || an.bild_fran);
+      const fil = kallfil(an) ? join(ROT, kallfil(an)) : null;
       const gammal = finns.find((x) => x.name === an.namn);
+      if (gammal && bytText) {
+        // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida).
+        const andrat = [...textSkillnad(an, gammal.creative?.object_story_spec), ...identitetSkillnad(M, gammal.creative?.object_story_spec), ...lankSkillnad(k, gammal.creative?.object_story_spec)];
+        if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
+        if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
+        if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
+        // Samma media som annonsen redan bär: ingen ny uppladdning.
+        const v = videor[an.video_fran ?? an.bild_fran ?? an.namn];
+        if (!v?.video_id && !v?.image_hash) { log(`⚠️ ${an.namn}: videor.json vet inte vilken video/bild annonsen bär — hoppar`); continue; }
+        const m = v.image_hash ? { image_hash: v.image_hash, sha256: v.sha256, fil: v.fil } : { video_id: v.video_id, thumb: await väntaPåThumb(v.video_id), sha256: v.sha256, fil: v.fil };
+        const creative = await api(`act_${act}/adcreatives`, { form: { name: an.namn, object_story_spec: JSON.stringify(spec(an, m)), degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()) } });
+        await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
+        const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
+        if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
+        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec), ...lankSkillnad(k, las.creative.object_story_spec)];
+        if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
+        videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
+        sparaVideor();
+        log(`✅ nytt (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        continue;
+      }
       if (gammal) {
-        if (!bytVideo) { log(`annons finns: ${an.namn}`); continue; }
-        if (!existsSync(fil)) { log(`⚠️ ${an.namn}: videon saknas (${an.video}) — behåller den gamla`); continue; }
+        if (!bytVideo || lanad) { log(`annons finns: ${an.namn}`); continue; }
+        if (!existsSync(fil)) { log(`⚠️ ${an.namn}: filen saknas (${kallfil(an)}) — behåller den gamla`); continue; }
         const hash = sha(fil);
-        if (videor[an.namn]?.sha256 === hash) { log(`annons finns med samma video: ${an.namn}`); continue; }
-        if (!skarpt) { log(`torrt: skulle byta videon i ${an.namn} (${gammal.id}) mot ${an.video}`); continue; }
-        const videoId = await laddaUppVideo(act, fil);
-        const thumb = await väntaPåThumb(videoId);
-        const creative = await api(`act_${act}/adcreatives`, { form: { name: an.namn, object_story_spec: JSON.stringify(spec(an, videoId, thumb)), degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()) } });
+        if (videor[an.namn]?.sha256 === hash) { log(`annons finns med samma fil: ${an.namn}`); continue; }
+        if (!skarpt) { log(`torrt: skulle byta filen i ${an.namn} (${gammal.id}) mot ${kallfil(an)}`); continue; }
+        const m = await media(an);
+        const creative = await api(`act_${act}/adcreatives`, { form: { name: an.namn, object_story_spec: JSON.stringify(spec(an, m)), degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()) } });
         await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
         const las = await api(gammal.id, { params: { fields: 'status,creative{id}' } });
         if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
-        videor[an.namn] = { sha256: hash, fil: an.video, video_id: videoId, creative_id: creative.id, annons_id: gammal.id, bytt: new Date().toISOString() };
+        videor[an.namn] = minne(an, m, { creative_id: creative.id, annons_id: gammal.id, bytt: new Date().toISOString() });
         sparaVideor();
-        log(`✅ ny video i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        log(`✅ ny fil i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
         continue;
       }
-      if (!existsSync(fil)) { log(`⚠️ ${an.namn}: videon saknas (${an.video}) — hoppar`); continue; }
-      if (!skarpt || !adset) { log(`torrt: skulle ladda upp ${an.video} och skapa ${an.namn} (PAUSED) → ${k.lank}`); continue; }
-      const hash = sha(fil);
-      const videoId = await laddaUppVideo(act, fil);
-      const thumb = await väntaPåThumb(videoId);
-      const r = await skapaAnnons({ act, adsetId: adset.id, namn: an.namn, spec: spec(an, videoId, thumb), enhancements: ingaEnhancements() });
-      videor[an.namn] = { sha256: hash, fil: an.video, video_id: videoId, creative_id: r.creativeId, annons_id: r.annonsId, skapad: new Date().toISOString() };
+      if (!lanad && !existsSync(fil)) { log(`⚠️ ${an.namn}: filen saknas (${kallfil(an)}) — hoppar`); continue; }
+      if (lanad && !videor[an.video_fran ?? an.bild_fran]) { log(`⚠️ ${an.namn}: ${an.video_fran ?? an.bild_fran} är inte uppladdad än (videor.json) — hoppar, kör om när A-annonsen finns`); continue; }
+      if (!skarpt || !adset) { log(`torrt: skulle ${lanad ? `återanvända ${an.video_fran ?? an.bild_fran}:s ${an.bild_fran ? 'bild' : 'video'}` : `ladda upp ${kallfil(an)}`} och skapa ${an.namn} (PAUSED) → ${k.lank}`); continue; }
+      const m = await media(an);
+      const r = await skapaAnnons({ act, adsetId: adset.id, namn: an.namn, spec: spec(an, m), enhancements: ingaEnhancements() });
+      videor[an.namn] = minne(an, m, { creative_id: r.creativeId, annons_id: r.annonsId, skapad: new Date().toISOString() });
       sparaVideor();
       log(`✅ annons ${an.namn}: ${r.annonsId} PAUSED`);
     }
   }
 
   if (!kampanj) return null;
-  const ads = adset ? (await alla(`${adset.id}/ads`, { fields: 'id,name,status,effective_status,creative{object_story_spec}' }, 50)).map((a) => ({ ...a, lank: a.creative?.object_story_spec?.video_data?.call_to_action?.value?.link ?? '' })) : [];
+  const ads = adset ? (await alla(`${adset.id}/ads`, { fields: 'id,name,status,effective_status,creative{object_story_spec}' }, 50)).map((a) => { const o = a.creative?.object_story_spec ?? {}; return { ...a, lank: (o.video_data ?? o.link_data)?.call_to_action?.value?.link ?? o.link_data?.link ?? '' }; }) : [];
   for (const a of ads) if (!lankOk(k, a.lank)) log(`❌ ${a.name}: länken ${a.lank} matchar inte ${k.locale}/${k.geo.join(',')}`);
   if (aktivera && skarpt) {
     const f = farAktiveras(k, ads);

@@ -11,9 +11,9 @@
     "Fraktetiketten är skapad": "Etykieta przesyłki została utworzona",
     "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot": "Nadawca zgłosił, że paczka jest w drodze do terminalu. Śledzenie zaktualizuje się, gdy paczka zostanie odebrana",
     "Uppgifterna om paketet är registrerade": "Dane paczki zostały zarejestrowane",
-    "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet": "Nadawca zarezerwował transport, a przewoźnik czeka na paczkę",
+    "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet": "Nadawca zlecił wysyłkę, a przewoźnik czeka na paczkę",
     "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det": "Nadawca przygotowuje Twoją paczkę. Śledzenie zaktualizuje się, gdy przewoźnik ją odbierze",
-    "Leveransen är bokad": "Dostawa została zarezerwowana",
+    "Leveransen är bokad": "Przesyłka została zarejestrowana",
     "Avsändaren har skickat iväg paketet": "Nadawca wysłał paczkę",
     "Paketet är upphämtat": "Paczka została odebrana",
     "Yanwen har hämtat paketet": "Yanwen odebrał paczkę",
@@ -95,7 +95,7 @@
     "Hos fraktbolaget": "U przewoźnika",
     "Ute för leverans": "W doręczeniu",
     "Levererat": "Dostarczono",
-    "Inbokad hos fraktbolaget": "Zarezerwowana u przewoźnika",
+    "Inbokad hos fraktbolaget": "Zarejestrowana u przewoźnika",
     "Hämtat hos avsändaren": "Odebrana od nadawcy",
     "Klart för avfärd": "Gotowa do wysyłki",
     "På flygplatsen": "Na lotnisku",
@@ -124,7 +124,7 @@
     "Leverans försöktes utan att lyckas. Ett nytt försök följer.": "Próbowano doręczyć paczkę, ale się nie udało. Nastąpi kolejna próba.",
     "Paketet är levererat.": "Paczka została dostarczona.",
     "Ett problem uppstod med leveransen. Mejla {{support}} så hjälper vi till.": "Wystąpił problem z dostawą. Napisz do {{support}}, a pomożemy.",
-    "Paketet är bokat": "Paczka jest zarezerwowana",
+    "Paketet är bokat": "Paczka została zarejestrowana",
     "Paketet finns att hämta": "Paczka jest gotowa do odbioru",
     "Leveransförsöket misslyckades": "Próba doręczenia się nie powiodła",
     "Det blev ett problem med leveransen": "Wystąpił problem z dostawą",
@@ -141,7 +141,7 @@
     "Leveransen är försenad": "Dostawa jest opóźniona",
     "Den skulle ha varit framme {{datum}}. Mejla oss så kollar vi upp den åt dig.": "Paczka powinna była dotrzeć {{datum}}. Napisz do nas, a sprawdzimy to dla Ciebie.",
     "Klistra in numret från leveransmejlet först.": "Najpierw wklej numer z e-maila z wysyłką.",
-    "Paketet är bokat. Fraktbolaget har inte skannat det än": "Paczka jest zarezerwowana. Przewoźnik jeszcze jej nie zeskanował",
+    "Paketet är bokat. Fraktbolaget har inte skannat det än": "Paczka została zarejestrowana. Przewoźnik jeszcze jej nie zeskanował",
     "det brukar ta": "zwykle trwa to",
     "Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla": "Ta strona wymaga włączonego JavaScriptu, aby pokazać Twoje śledzenie. Włącz go w przeglądarce i odśwież stronę, albo napisz do",
     "så kollar vi paketet åt dig.": "a sprawdzimy paczkę dla Ciebie.",
@@ -199,6 +199,7 @@
     "Lägg till för {{pris}}": "Dodaj za {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Cena dotyczy naszych klientów i jest naliczana automatycznie w koszyku.",
     "Paketet är på väg till ombud": "Paczka jest w drodze do punktu odbioru",
-    "Vi planerar ett nytt hemleveransförsök till dig": "Planujemy kolejną próbę doręczenia pod Twój adres"
+    "Vi planerar ett nytt hemleveransförsök till dig": "Planujemy kolejną próbę doręczenia pod Twój adres",
+    "2–4 dagar": "2–4 dni"
   }
 }

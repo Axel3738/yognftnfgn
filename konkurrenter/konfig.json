@@ -3,23 +3,29 @@
   "verksamheter": {
     "Bäverbutiken": {
       "avsandare": "baverbutiken",
-      "butiker": ["https://baverbutiken.se"],
+      "butiker": ["https://baverbutiken.se", "https://beverbutikken.no", "https://baeverbutiken.dk", "https://majavakauppa.fi"],
       "sprak": "sv",
-      "konton": [{ "id": "1867947880635861", "namn": "MagiBorsten" }],
-      "_om": "Systerbutikerna NO/DK/FI säljer samma sortiment på landets språk — deras texter är översättningar av de svenska, så den svenska produktsidan är originalet som bevakas. Lägg till dem i butiker: när de ska sökas på egen hand."
+      "konton": [
+        { "id": "1867947880635861", "namn": "MagiBorsten" },
+        { "id": "1050941584152547", "namn": "Magiborsten NO", "cpm": false, "_om": "Beverbutikken (NO): 136 aktiva annonser mätt 2026-09-29, alla till beverbutikken.no. Norsk marknad räknas inte in i den svenska CPM:en." },
+        { "id": "1619718346388201", "namn": "Magiborsten FI", "cpm": false, "_om": "Majavakauppa (FI): 34 aktiva annonser mätt 2026-09-29, alla till majavakauppa.fi." }
+      ],
+      "_om": "Alla fyra butiker (SE, NO, DK, FI) sedan 2026-09-29 (Axel: 'applicable för alla brands'). Systerbutikerna säljer samma sortiment på landets språk, så en kopia i Norge kopierar den norska texten — varje butiks egna produkttexter och annonser söks och jämförs. DK har inga egna aktiva annonser (mätt 2026-09-29: OPS-kontots 252 aktiva annonser är alla CaraShells). UK (beavershop.co.uk) är avstängd med flit (stonebite/butiker-av.json) och står inte här."
     },
     "CaraShell": {
       "avsandare": "carashell",
-      "butiker": ["https://carashell.se"],
+      "butiker": ["https://carashell.se", "https://carashell.se/nb", "https://carashell.se/da", "https://carashell.com"],
       "sprak": "sv",
       "konton": [
         { "id": "915422744950975", "namn": "MagiBorsten DK (OPS-kontot)", "prefix": "CARASHELL_" },
         { "id": "1107817401910319", "namn": "Magiborsten UK", "prefix": "CARASHELL_", "cpm": false, "_om": "USA-kampanjerna: räknas inte in i CPM:en (annan marknad, 256 kr mot 141 i Norden, mätt 2026-09-29) — annonserna läses ändå." }
-      ]
+      ],
+      "_om": "Samma Shopify-butik på fyra språk: svenska, norska (/nb), danska (/da) och engelska (carashell.com). Varje språk annonseras (mätt 2026-09-29: OPS-kontot 111 annonser till carashell.se, 81 till /nb, 60 till /da; UK-kontot 130 till carashell.com). I de delade kontona avgör annonsens LÄNK att den är CaraShells (korpus.mjs hamtaEgnaAnnonser), prefixet räcker inte: 'NYA …' och '1 CARASHELL_US_… – kopia' föll bort med det gamla startsWith."
     },
     "Matstrumpor": {
       "avsandare": "matstrumpor",
-      "butiker": ["https://matstrumpor.se"],
+      "butiker": ["https://matstrumpor.se", "https://matstrumpor.se/en", "https://matstrumpor.se/nb", "https://matstrumpor.se/da", "https://matstrumpor.se/fi", "https://matstrumpor.se/de", "https://matstrumpor.se/fr", "https://matstrumpor.se/nl", "https://matstrumpor.se/es", "https://matstrumpor.se/it", "https://matstrumpor.se/pl", "https://matstrumpor.se/pt"],
+      "_om": "Samma butik på tolv språk (Markets sedan 2026-09-27, matstrumpor/marknader/). Varje språkmapp svarar med sina egna översatta produkttexter på /<språk>/products.json (mätt 2026-09-29). Prioriteten följer annonsens länk: en annons till /nb prioriterar den norska texten, inte alla tolv.",
       "sprak": "sv",
       "konton": [{ "id": "730973156224390", "namn": "nya kungen" }]
     }
@@ -45,6 +51,7 @@
   "ignorera_kommentar": "Marknadsplatser och sociala nätverk: leverantörens egna bilder och texter ligger lagligt på Amazon/Temu/AliExpress, ett brev dit går ingenstans, och Facebook/Instagram kan inte läsas utan inloggning. Bing fyller dessutom på med lösa träffar när en exakt fras inte finns (mätt 2026-09-27: 'Botkyrka kommun' på en fras ur Trädansiktet) — de faller bort på likhetstalen, inte här.",
   "sok": {
     "max_produkter_per_korning": 20,
+    "max_produkter_totalt": 30,
     "fraser_per_produkt": 2,
     "traffar_per_fras": 8,
     "max_kandidater_per_produkt": 6,
@@ -52,7 +59,7 @@
     "min_ord": 7,
     "max_ord": 16,
     "paus_ms": 900,
-    "_om": "20 produkter × 2 fraser = 40 Bing-sökningar per körning, i rotation (aldrig kollad först, sedan äldst kollad). De annonserade produkterna är alltid med — det är dem konkurrenter kopierar."
+    "_om": "max_produkter_per_korning gäller per verksamhet, max_produkter_totalt över alla (en i taget ur varje verksamhet, korpus.mjs fordelaProdukter): 30 produkter × 2 fraser = 60 sökningar per körning, i rotation (aldrig kollad först, sedan äldst kollad). De annonserade produkterna är alltid med — det är dem konkurrenter kopierar. Taket kom 2026-09-29 med systerbutikerna och språken: utan det hade 20 per verksamhet gett upp till 120 sökningar varje morgon."
   },
   "trosklar": {
     "text": { "min_passage": 8, "stark_tackning": 0.3, "stark_langsta": 15, "trolig_tackning": 0.12, "trolig_langsta": 9 },
@@ -69,7 +76,7 @@
     "svarsfrist_timmar": 48,
     "paminnelse_efter_dagar": 3,
     "foretag": { "namn": "Stonebite Ecom AB", "orgnr": "559576-2401", "adress": "Stenkolsgatan 1B, 417 07 Göteborg" },
-    "avsandare": { "via": "gmail", "mail": "contact@stonebite.org", "namn": "Stonebite Ecom AB" },
+    "avsandare": { "via": "gmail", "mail": "contact@stonebite.org", "namn": "Stonebite Ecom AB", "gmail_konto": "axel.odhner@stonebite.org", "_gmail_konto": "Kontot Gmail-connectorn faktiskt skickar från (mätt 2026-09-29 i Skickat: axel.odhner@stonebite.org). Mejlet går därifrån, så Axels namn syns som avsändare; granskningsappen visar det. Brevet ber dem svara till `mail`." },
     "_om": "Företagsuppgifterna är samma som svar.foretag i kundtjanst/brands/baverbutiken.yaml (kontoret sedan 2026-09-26). Aldrig VD:ns namn i brevet. AVSÄNDAREN (Axels beslut 2026-09-29): brevet går från bolagets egen Stonebite-mejl via Gmail-connectorn i sessionen — 'mycket mer seriöst … från Stonebite-mailen' — inte från butikens kundtjänstbrevlåda. `mail` är adressen som skrivs i brevet och på fakturan; sessionen byter den mot det Gmail-konto Axel faktiskt kopplat om de skiljer sig. `via: loopia` + verksamhetens `avsandare` finns kvar som reserv (--via loopia, kräver KUNDTJANST_MAIL_PASS_<ID>)."
   },
   "faktura": {
@@ -96,7 +103,8 @@
   "anmalan": {
     "undertecknare": { "namn": "Axel Odhner", "roll": "CEO", "epost": "axel.odhner@stonebite.org", "telefon": "", "adress": "Stenkolsgatan 1B, 417 07 Göteborg, Sweden" },
     "land": "Sweden",
-    "vara_sidor": { "Bäverbutiken": "678639638662543", "CaraShell": "1381171778405935", "Matstrumpor": "820358954504320" },
+    "vara_sidor": { "Bäverbutiken": ["678639638662543", "879054088633562", "1324465810740336", "1305042582683792", "1317870104733246"], "CaraShell": "1381171778405935", "Matstrumpor": "820358954504320" },
+    "_vara_sidor": "En sid-id eller en lista per verksamhet (Bäverbutiken har en sida per marknad, ur kommentarer/konfig.json → sidor). Den första är huvudsidan och länkas när inget eget original hittas. Alla räknas som våra när annonsbiblioteket letas igenom (--original).",
     "cdn_butik": "matstrumpor",
     "_om": "Meta-anmälan av kopierade annonser (Axels order 2026-09-29: en anmälan per annons, allt ifyllt, skärmdump med, han verifierar en gång). undertecknare = den som skriver under i Metas upphovsrättsformulär — formuläret kräver en riktig person, så VD:ns namn står HÄR men aldrig i brevet (CLAUDE.md-regeln gäller brevet). EPOSTEN måste vara en adress den kopplade Gmail-connectorn läser: Metas engångskod (och Metas svar) går dit. Mätt 2026-09-29: connectorn är axel.odhner@stonebite.org och ett testmejl till contact@stonebite.org landade INTE där — därför axel.odhner@. Meta delar reporterns e-post med den anmälda parten; vill Axel ha contact@ i stället måste contact@ vidarebefordras till hans Gmail först (hans klick i Google Workspace). vara_sidor = våra Facebook-sidor per verksamhet (ur kommentarer/konfig.json → sidor) för länken till originalet i annonsbiblioteket. cdn_butik = butiken vars Shopify Files bär bevisbilderna publikt (matstrumpors app 'Fabriken' har write_files, samma väg som matstrumpor/thumbnails.mjs) — Metas formulär tar inte alltid bilagor, så länken står i anmälan; tom sträng = ingen uppladdning, bara bilagan. Formulären står i anmalan.mjs → FORMULAR och fylls i HÄRIFRÅN av anmal-skicka.mjs (kartlagt 2026-09-29: fyra steg, engångskod till undertecknarens e-post som sessionen läser ur Gmail-connectorn) — fälten paras på etikett och kan ändras hos Meta; ett fält som inte hittas stoppar. `land` (standard Sweden) är svaret på 'Where are you asserting rights?'."
   },

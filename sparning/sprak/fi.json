@@ -64,6 +64,8 @@
     "Paketet förbereds för leverans": "Pakettia valmistellaan toimitusta varten",
     "Paketet är inlagt för utkörning": "Paketti on siirretty jakeluun",
     "Paketet är ute för leverans": "Paketti on jakelussa",
+    "Fraktbolaget kunde inte leverera paketet": "Kuljetusliike ei pystynyt toimittamaan pakettia",
+    "Paketet ska levereras i dag": "Paketti toimitetaan tänään",
     "Ett fack i paketboxen är bokat åt dig": "Pakettiautomaatista on varattu lokero sinulle",
     "Paketet är inlagt i paketboxen": "Paketti on pakettiautomaatissa",
     "Ett meddelande om paketet har skickats till dig": "Sinulle on lähetetty ilmoitus paketista",
@@ -212,6 +214,7 @@
     "Lägg till för {{pris}}": "Lisää hintaan {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Hinta koskee sinua, joka tilasit meiltä, ja se lisätään automaattisesti kassalla.",
     "Paketet är på väg till ombud": "Paketti on matkalla noutopisteeseen",
-    "Vi planerar ett nytt hemleveransförsök till dig": "Suunnittelemme uutta kotiinkuljetusyritystä"
+    "Vi planerar ett nytt hemleveransförsök till dig": "Suunnittelemme uutta kotiinkuljetusyritystä",
+    "2–4 dagar": "2–4 päivää"
   }
 }

@@ -57,6 +57,8 @@ export function patchaFil(fil, kod, ov) {
   const N = (n) => liquidNyckel(fil, n);
   const redan = (mark) => kod.includes(mark);
   const gren = (n, sv, opts) => grenFor(sv, N(n), ov, opts);
+  // Mallen fylls bara när grenen finns — annars hade ett saknat ord skrivit "null" i temat.
+  const mall = (g, f) => (g ? f(g) : null);
   const byt = (namn, sok, ersatt, antal) => {
     if (!ersatt) { hoppade.push(`${namn}: ingen översättning`); return; }
     if (redan(ersatt)) { hoppade.push(`${namn}: redan patchad`); return; }
@@ -66,14 +68,18 @@ export function patchaFil(fil, kod, ov) {
 
   switch (fil) {
     case 'snippets/ms-paket.liquid': {
-      byt('valj_paket', 'aria-label="Välj paket"', `aria-label="${gren('valj_paket', 'Välj paket')}"`, 1);
-      byt('lada', '<span class="ms-paket__lada-etikett">Låda {{ n }}', `<span class="ms-paket__lada-etikett">${gren('lada', 'Låda')} {{ n }}`, 1);
-      byt('gratis', '{% if n > betalda %} · gratis{% endif %}', `{% if n > betalda %} · ${gren('gratis', 'gratis')}{% endif %}`, 1);
-      byt('gratis_per_sushilada', "{% render 'ms-icon', name: 'gift' %} Gratis per sushilåda", `{% render 'ms-icon', name: 'gift' %} ${gren('gratis_per_sushilada', 'Gratis per sushilåda')}`, 1);
-      byt('atpinnar_i_tra', '<span>Ätpinnar i trä · <span data-ms-paket-gava-antal>', `<span>${gren('atpinnar_i_tra', 'Ätpinnar i trä')} · <span data-ms-paket-gava-antal>`, 1);
-      byt('par', '{{ gantal }}</span> par</span>', `{{ gantal }}</span> ${gren('par', 'par')}</span>`, 1);
-      byt('varde', 'class="ms-paket__gava-varde">värde ', `class="ms-paket__gava-varde">${gren('varde', 'värde')} `, 2);
-      byt('gratis_pa_kopet', "{% render 'ms-icon', name: 'gift' %} Gratis på köpet", `{% render 'ms-icon', name: 'gift' %} ${gren('gratis_pa_kopet', 'Gratis på köpet')}`, 1);
+      byt('valj_paket', 'aria-label="Välj paket"', mall(gren('valj_paket', 'Välj paket'), (g) => `aria-label="${g}"`), 1);
+      byt('lada', '<span class="ms-paket__lada-etikett">Låda {{ n }}', mall(gren('lada', 'Låda'), (g) => `<span class="ms-paket__lada-etikett">${g} {{ n }}`), 1);
+      byt('gratis', '{% if n > betalda %} · gratis{% endif %}', mall(gren('gratis', 'gratis'), (g) => `{% if n > betalda %} · ${g}{% endif %}`), 1);
+      byt('gratis_per_sushilada', "{% render 'ms-icon', name: 'gift' %} Gratis per sushilåda", mall(gren('gratis_per_sushilada', 'Gratis per sushilåda'), (g) => `{% render 'ms-icon', name: 'gift' %} ${g}`), 1);
+      byt('atpinnar_i_tra', '<span>Ätpinnar i trä · <span data-ms-paket-gava-antal>', mall(gren('atpinnar_i_tra', 'Ätpinnar i trä'), (g) => `<span>${g} · <span data-ms-paket-gava-antal>`), 1);
+      byt('par', '{{ gantal }}</span> par</span>', mall(gren('par', 'par'), (g) => `{{ gantal }}</span> ${g}</span>`), 1);
+      byt('varde', 'class="ms-paket__gava-varde">värde ', mall(gren('varde', 'värde'), (g) => `class="ms-paket__gava-varde">${g} `), 2);
+      byt('gratis_pa_kopet', "{% render 'ms-icon', name: 'gift' %} Gratis på köpet", mall(gren('gratis_pa_kopet', 'Gratis på köpet'), (g) => `{% render 'ms-icon', name: 'gift' %} ${g}`), 1);
+      // Skärmläsarens etikett på sortvalet (QA 2026-09-29: "Sort i låda 1" på alla språk). Grenen står i ett
+      // attribut med dubbla citattecken — ett " i en översättning hade brutit HTML:en, därför &quot;.
+      const sortGren = gren('sort_i_lada', 'Sort i låda');
+      byt('sort_i_lada', 'aria-label="Sort i låda {{ n }}"', sortGren && `aria-label="${sortGren.replace(/"/g, '&quot;')} {{ n }}"`, 1);
       break;
     }
     case 'snippets/ms-sista-dag.liquid': {
@@ -127,13 +133,13 @@ export function patchaFil(fil, kod, ov) {
           byten.push('valj_paket');
         }
       }
-      byt('spara', '<span class="ms-bundle__flag">Spara {{ saving }}%</span>', `<span class="ms-bundle__flag">${gren('spara', 'Spara')} {{ saving }}%</span>`, 1);
+      byt('spara', '<span class="ms-bundle__flag">Spara {{ saving }}%</span>', mall(gren('spara', 'Spara'), (g) => `<span class="ms-bundle__flag">${g} {{ saving }}%</span>`), 1);
       break;
     }
     case 'sections/ms-compare.liquid': {
-      byt('egenskap', '<span class="ms-sr">Egenskap</span>', `<span class="ms-sr">${gren('egenskap', 'Egenskap')}</span>`, 1);
-      byt('ja', '<span class="ms-sr">Ja</span>', `<span class="ms-sr">${gren('ja', 'Ja')}</span>`, 2);
-      byt('nej', '<span class="ms-sr">Nej</span>', `<span class="ms-sr">${gren('nej', 'Nej')}</span>`, 2);
+      byt('egenskap', '<span class="ms-sr">Egenskap</span>', mall(gren('egenskap', 'Egenskap'), (g) => `<span class="ms-sr">${g}</span>`), 1);
+      byt('ja', '<span class="ms-sr">Ja</span>', mall(gren('ja', 'Ja'), (g) => `<span class="ms-sr">${g}</span>`), 2);
+      byt('nej', '<span class="ms-sr">Nej</span>', mall(gren('nej', 'Nej'), (g) => `<span class="ms-sr">${g}</span>`), 2);
       break;
     }
     case 'sections/ms-reviews.liquid':
@@ -153,11 +159,13 @@ export function patchaFil(fil, kod, ov) {
     case 'snippets/ms-delivery-estimate.liquid': {
       // "Beräknad leverans" kommer som parameter ur product.json (patchaMallJson) — här är
       // bara reservvärdet och ordet "arbetsdagar" i intervallet.
-      byt('arbetsdagar', '{{ mn }}–{{ mx }} arbetsdagar</span>', `{{ mn }}–{{ mx }} ${gren('arbetsdagar', 'arbetsdagar')}</span>`, 1);
+      byt('arbetsdagar', '{{ mn }}–{{ mx }} arbetsdagar</span>', mall(gren('arbetsdagar', 'arbetsdagar'), (g) => `{{ mn }}–{{ mx }} ${g}</span>`), 1);
       break;
     }
     case 'assets/ms-cro.js':
       return patchaJs(kod);
+    case 'assets/ms-paket.js':
+      return patchaPaketJs(kod, ov);
     default:
       throw new Error(`temapatch känner inte filen ${fil}`);
   }
@@ -191,6 +199,64 @@ export function patchaJs(kod) {
   return { kod, byten, hoppade };
 }
 
+// ---- Paketväljarens köpknapp (assets/ms-paket.js) -------------------------------
+//
+// Köpknappen visar "Lägger i…" medan varan läggs i korgen, och två svenska felrader om det
+// inte gick (QA som kund 2026-09-29: på alla elva språk). JavaScript har ingen Liquid, så
+// texterna står som en ordlista i filen, nycklad på <html lang> (samma koder som
+// request.locale.iso_code: nb, da, … pt-PT), med svenskan som reserv i varje anrop.
+// Ordlistan byts på plats vid varje körning — ändrade översättningar slår igenom utan original.
+export const PAKET_JS_TEXTER = {
+  lagger_i: 'Lägger i…',
+  fel_lagga_i: 'Kunde inte lägga i varukorgen.',
+  fel_forsok_igen: 'Det gick inte att lägga i varukorgen. Försök igen.',
+};
+const PAKET_JS_SOK_TOPP = "(function () {\n  'use strict';\n";
+const PAKET_JS_MARK = '  var MS_PAKET_TEXT = ';
+const PAKET_JS_ANROP = [
+  ["knapp.textContent = 'Lägger i…';", "knapp.textContent = msPaketText('lagger_i', 'Lägger i…');"],
+  ["throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.');", "throw new Error(d.description || d.message || msPaketText('fel_lagga_i', 'Kunde inte lägga i varukorgen.'));"],
+  ["fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.';", "fel.textContent = e.message || msPaketText('fel_forsok_igen', 'Det gick inte att lägga i varukorgen. Försök igen.');"],
+];
+
+/** Ordlistan { nyckel: { locale: text } } ur översättningarna — bara språk med egen text. */
+export function paketJsOrdlista(ov) {
+  const ut = {};
+  for (const [n, sv] of Object.entries(PAKET_JS_TEXTER)) {
+    ut[n] = {};
+    for (const l of locales(ov)) {
+      const t = ov?.[l]?.[`liquid.ms-paket.js.${n}`];
+      if (typeof t === 'string' && t.trim() && t !== sv) ut[n][l] = t;
+    }
+  }
+  return ut;
+}
+
+export function patchaPaketJs(kod, ov) {
+  const byten = [];
+  const hoppade = [];
+  const lista = paketJsOrdlista(ov);
+  if (Object.values(lista).every((x) => Object.keys(x).length === 0)) return { kod, byten, hoppade: ['ms-paket.js: ingen översättning'] };
+  const rad = `${PAKET_JS_MARK}${JSON.stringify(lista)};\n`;
+  const fn = "  function msPaketText(n, sv) {\n    var l = document.documentElement.lang || 'sv';\n    var t = MS_PAKET_TEXT[n];\n    return (t && (t[l] || t[l.split('-')[0]])) || sv;\n  }\n";
+  const kommentar = '  // Köpknappens texter på kundens språk (matstrumpor/marknader/temapatch.mjs patchaPaketJs) — svenskan är reserven.\n';
+  const finns = kod.split('\n').find((r) => r.startsWith(PAKET_JS_MARK));
+  if (finns === undefined) {
+    kod = bytExakt(kod, PAKET_JS_SOK_TOPP, `${PAKET_JS_SOK_TOPP}${kommentar}${rad}${fn}`, 1);
+    byten.push('ordlista');
+  } else if (`${finns}\n` === rad) hoppade.push('ordlista: redan aktuell');
+  else {
+    kod = bytExakt(kod, `${finns}\n`, rad, 1);
+    byten.push('ordlista (uppdaterad)');
+  }
+  for (const [sok, ny] of PAKET_JS_ANROP) {
+    if (kod.includes(ny)) { hoppade.push(`${ny.match(/msPaketText\('([a-z_]+)'/)[1]}: redan patchad`); continue; }
+    kod = bytExakt(kod, sok, ny, 1);
+    byten.push(ny.match(/msPaketText\('([a-z_]+)'/)[1]);
+  }
+  return { kod, byten, hoppade };
+}
+
 // ---- JSON-mallarnas custom_liquid-block ---------------------------------------
 //
 // product.json och index.json bär custom_liquid-block med svensk text som
@@ -211,55 +277,61 @@ const MALLBYTEN = {
   ],
 };
 
-/** Patchar en JSON-mall (som text — JSON.parse/stringify hade tappat kommentaren och ordningen). */
-export function patchaMallJson(fil, kod, ov, liquidTexter = {}) {
+/** En mallrads byte för en given översättning: { sok, ny } som JSON-textsträngar, eller null när
+ *  översättningen saknas. sok = svenska originalet, ny = blocket med locale-grenar. */
+function mallForm(b, ovX) {
+  // JSON-strängen: citattecken och backslash måste escapas som JSON gör.
+  const json = (s) => JSON.stringify(s).slice(1, -1);
+  if (b.typ === 'trust') {
+    const rader = [];
+    for (const l of locales(ovX)) {
+      const a = ovX?.[l]?.['liquid.ms-trust-row.fri_frakt'], c = ovX?.[l]?.['liquid.ms-trust-row.oppet_kop'], d = ovX?.[l]?.['liquid.ms-trust-row.trygg_betalning'];
+      if (!a || !c || !d) continue;
+      rader.push(`{% when '${l}' %}${[`truck:${a}`, `refresh:${c}`, `lock:${d}`].join('|')}`);
+    }
+    if (rader.length === 0) return null;
+    // items-parametern måste vara ett Liquid-uttryck — en case-sats går inte i ett render-argument.
+    // Därför: tilldela variabeln före render och skicka variabeln.
+    const tilldelning = `{% case request.locale.iso_code %}${rador(rader)}{% else %}truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning{% endcase %}`;
+    const ny = `{% capture ms_trust_items %}${tilldelning}{% endcapture %}{% render 'ms-trust-row', items: ms_trust_items %}`;
+    const gammal = "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning' %}";
+    return { sok: json(gammal), ny: json(ny), fel: 'hittar inte trust-blocket att patcha' };
+  }
+  if (!grenFor(b.sv, b.nyckel, ovX, { citat: b.form === 'param' })) return null;
+  if (b.form === 'param') {
+    // render-argument: capture först, skicka variabeln.
+    const gammal = `{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: 'Beräknad leverans' %}`;
+    const ny = `{% capture ms_delivery_text %}${grenFor(b.sv, b.nyckel, ovX)}{% endcapture %}{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: ms_delivery_text %}`;
+    return { sok: json(gammal), ny: json(ny), fel: 'hittar inte leveransblocket att patcha' };
+  }
+  return { sok: json(b.sok), ny: json(b.sok.replace(b.sv, grenFor(b.sv, b.nyckel, ovX))), fel: `"${b.sv.slice(0, 30)}" hittades inte`, exakt: true };
+}
+
+/** Patchar en JSON-mall (som text — JSON.parse/stringify hade tappat kommentaren och ordningen).
+ *  `gamla` = tidigare översättningar (samma form som `ov`): en gren som byggts med en av dem byts
+ *  på plats mot den nya. Mallarna rörs av fler än temabygget (domantema, Trustpilot-sektionen 2026-09-29),
+ *  så de kan inte byggas om från originalet — bara grenen själv byts. */
+export function patchaMallJson(fil, kod, ov, liquidTexter = {}, gamla = []) {
   const spec = MALLBYTEN[fil];
   if (!spec) throw new Error(`temapatch känner inte mallen ${fil}`);
   const byten = [];
   const hoppade = [];
-  // JSON-strängen: citattecken och backslash måste escapas som JSON gör.
-  const json = (s) => JSON.stringify(s).slice(1, -1);
   for (const b of spec) {
-    let ersatt = null;
-    if (b.typ === 'trust') {
-      const rader = [];
-      for (const l of locales(ov)) {
-        const a = ov?.[l]?.['liquid.ms-trust-row.fri_frakt'], c = ov?.[l]?.['liquid.ms-trust-row.oppet_kop'], d = ov?.[l]?.['liquid.ms-trust-row.trygg_betalning'];
-        if (!a || !c || !d) continue;
-        rader.push(`{% when '${l}' %}${[`truck:${a}`, `refresh:${c}`, `lock:${d}`].join('|')}`);
-      }
-      if (rader.length === 0) { hoppade.push(`${b.namn}: ingen översättning`); continue; }
-      // items-parametern måste vara ett Liquid-uttryck — en case-sats går inte i ett render-argument.
-      // Därför: tilldela variabeln före render och skicka variabeln.
-      const tilldelning = `{% case request.locale.iso_code %}${rador(rader)}{% else %}truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning{% endcase %}`;
-      const ny = `{% capture ms_trust_items %}${tilldelning}{% endcapture %}{% render 'ms-trust-row', items: ms_trust_items %}`;
-      const gammal = "{% render 'ms-trust-row', items: 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning' %}";
-      const sokJson = json(gammal), nyJson = json(ny);
-      if (kod.includes(nyJson)) { hoppade.push(`${b.namn}: redan patchad`); continue; }
-      if (!kod.includes(sokJson)) throw new Error(`${fil}: hittar inte trust-blocket att patcha`);
-      kod = kod.split(sokJson).join(nyJson);
-      byten.push(b.namn);
-      continue;
-    }
-    const gren = grenFor(b.sv, b.nyckel, ov, { citat: b.form === 'param' });
-    if (!gren) { hoppade.push(`${b.namn}: ingen översättning`); continue; }
-    if (b.form === 'param') {
-      // render-argument: capture först, skicka variabeln.
-      const gammal = `{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: 'Beräknad leverans' %}`;
-      const ny = `{% capture ms_delivery_text %}${grenFor(b.sv, b.nyckel, ov)}{% endcapture %}{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: ms_delivery_text %}`;
-      const sokJson = json(gammal), nyJson = json(ny);
-      if (kod.includes(nyJson)) { hoppade.push(`${b.namn}: redan patchad`); continue; }
-      if (!kod.includes(sokJson)) throw new Error(`${fil}: hittar inte leveransblocket att patcha`);
-      kod = kod.split(sokJson).join(nyJson);
-      byten.push(b.namn);
-      continue;
-    }
-    ersatt = gren;
-    const sokJson = json(b.sok), nyJson = json(b.sok.replace(b.sv, ersatt));
-    if (kod.includes(nyJson)) { hoppade.push(`${b.namn}: redan patchad`); continue; }
-    const n = kod.split(sokJson).length - 1;
-    if (n !== 1) throw new Error(`${fil}: "${b.sv.slice(0, 30)}" hittades ${n} gånger, väntade 1`);
-    kod = kod.split(sokJson).join(nyJson);
+    const f = mallForm(b, ov);
+    if (!f) { hoppade.push(`${b.namn}: ingen översättning`); continue; }
+    if (kod.includes(f.ny)) { hoppade.push(`${b.namn}: redan patchad`); continue; }
+    // En gren byggd med en äldre översättning byts FÖRST. Svenskan står kvar i grenens else-del, så
+    // "originalet" hittas även i en redan patchad fil — mätt 2026-09-29: index.json:s bildrad hade
+    // annars fått den nya case-satsen inuti den gamlas else-gren, och de nya texterna aldrig syntts.
+    const gammal = gamla.map((o) => mallForm(b, o)).find((g) => g && g.ny !== f.ny && kod.split(g.ny).length - 1 === 1);
+    if (gammal) { kod = kod.split(gammal.ny).join(f.ny); byten.push(`${b.namn} (uppdaterad)`); continue; }
+    const json = (x) => JSON.stringify(x).slice(1, -1);
+    const redanGren = kod.includes(json(`{% else %}${b.sv ?? 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning'}{% endcase %}`));
+    if (redanGren) throw new Error(`${fil}: ${b.namn} bär redan en språkgren som inte kommer ur någon känd version av underlaget — rör den inte (läs filen och underlagets historik)`);
+    const n = kod.split(f.sok).length - 1;
+    if (n === 0) throw new Error(`${fil}: ${f.fel}`);
+    if (f.exakt && n !== 1) throw new Error(`${fil}: "${b.sv.slice(0, 30)}" hittades ${n} gånger, väntade 1`);
+    kod = kod.split(f.sok).join(f.ny);
     byten.push(b.namn);
   }
   return { kod, byten, hoppade };

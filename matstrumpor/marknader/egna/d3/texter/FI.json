@@ -1,0 +1,43 @@
+{
+ "kod": "FI",
+ "locale": "fi",
+ "wordmark": "SUSHISUKAT",
+ "underrubrik": "Näyttää noutoruoalta. On 20 paria sukkia.",
+ "banner": "OSTA 2 – SAAT 2 ILMAISEKSI",
+ "message": "Saat neljä laatikkoa.\nOsta 2 – saat 2 ilmaiseksi, yhteensä kaksikymmentä paria sukkia.\nRullattu kuin maki, puiset syömäpuikot jokaisessa laatikossa.\nYksi koko, sopii kokoihin 36–44.\nRuotsalainen merkki.",
+ "title": "Osta 2, saat 2 ilmaiseksi: neljä laatikkoa",
+ "link_description": "Osta 2, saat 2 ilmaiseksi. Ilmainen toimitus Suomeen.",
+ "tre_fragor": [
+  {
+   "rad": "Näyttää noutoruoalta. On 20 paria sukkia.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Saat neljä laatikkoa.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Osta 2 – saat 2 ilmaiseksi, yhteensä kaksikymmentä paria sukkia.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Rullattu kuin maki, puiset syömäpuikot jokaisessa laatikossa.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Yksi koko, sopii kokoihin 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

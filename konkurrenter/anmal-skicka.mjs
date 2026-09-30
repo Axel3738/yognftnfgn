@@ -43,27 +43,34 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
-  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal, tiderna hos dem och andelen matchande rutor.
-  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)[\s\S]*?and (\d+)% of the reported video/);
+  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal och tiderna hos dem. Ingen andel sedan 2026-09-29:
+  // den räknade hela våra filmer som våra, även klipp vi lånat (Eoka AB:s bestridande).
+  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
   // Källan: filmerna paren kommer ur (anmalan.mjs lägger dem som fält), annars annonsen texten/bilden kommer ur.
   const filmer = Array.isArray(a.filmer) && a.filmer.length ? a.filmer : null;
   const kallor = f.contentDescription?.match(/It copies our ads? ((?:"[^"]+"(?:, )?)+)/)?.[1] ?? null;
   const produkt = a.produkt ?? f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
   const flera = (filmer?.length ?? 0) > 1 ? 's' : '';
-  // Kortas i steg när 500 inte räcker — filmlistan och etiketterna först, så att referensen i slutet alltid får plats
+  // Originalen i annonsbiblioteket (kor.mjs --original): länkarna till våra egna annonser säger granskaren mer än våra interna filmnamn.
+  const org = Array.isArray(a.originaler) ? a.originaler.filter((o) => o?.lank) : [];
+  // Kortas i steg när 500 inte räcker — länk-/filmlistan och etiketterna först, så att referensen i slutet alltid får plats
   // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
   const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true } = {}) => [
     m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours; ${klipp[3]}% of its frames match our film${flera}.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
+    klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
     !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
-    filmer
-      ? `Original: our ad film${flera} ${filmer.slice(0, antalFilmer).map((x) => `"${x}"`).join(', ')}${filmer.length > antalFilmer ? ' and others' : ''}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published before this ad.`
-      : `Original: ${kallor ? `our ad ${kallor}` : 'our ad'}${produkt && produktNamn ? ` for "${produkt}"` : ''}, running before this ad.`,
+    org.length
+      ? `Original: our ad${Math.min(org.length, antalFilmer) > 1 ? 's' : ''} in the Ad Library ${org.slice(0, antalFilmer).map((o) => o.lank).join(' ')}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published by us before this ad.`
+      : filmer
+        ? `Original: our ad film${flera} ${filmer.slice(0, antalFilmer).map((x) => `"${x}"`).join(', ')}${filmer.length > antalFilmer ? ' and others' : ''}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published before this ad.`
+        : `Original: ${kallor ? `our ad ${kallor}` : 'our ad'}${produkt && produktNamn ? ` for "${produkt}"` : ''}, running before this ad.`,
     a.bevisbildUrl ? `${bevis} ${a.bevisbildUrl}` : null,
     `Ref ${a.arende} ${a.nr}/${a.antal}.`,
   ].filter(Boolean).join(' ');
-  const steg = [{}, { bevis: 'Evidence (ours left, theirs right):' }, { bevis: 'Evidence (ours left, theirs right):', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false, produktNamn: false }];
+  // Två länkar till våra annonser väger tyngst, sedan tiderna i deras film (där granskaren ska titta) — produktnamnet
+  // står redan på bevisbilden (mätt 2026-09-29, ORVO: två länkar + tiderna utan produktnamn = 483 tecken).
+  const steg = [{}, { bevis: 'Evidence (ours left, theirs right):' }, { bevis: 'Evidence (ours left, theirs right):', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2, produktNamn: false }, { bevis: 'Evidence:', antalFilmer: 2, tider: false, produktNamn: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false, produktNamn: false }];
   let passage = m ? m[3] : '';
   let text = bygg(passage);
   for (const o of steg) { text = bygg(passage, o); if (text.length <= max) break; }
@@ -91,6 +98,52 @@ export function formularVarden(a, { land = 'Sweden' } = {}) {
   return { ...v, fel };
 }
 
+/**
+ * Cowork-prompten för anmälningar som ska skickas i Axels egen Chrome — vägen
+ * när Meta kräver en säkerhetskontroll (captcha) vid Submit, som bara en
+ * människa får göra (mätt 2026-09-29). Cowork fyller i exakt det Axel godkänt,
+ * Axel gör säkerhetskontrollen själv. `anmalningar`: [{ nr, antal, formular, v }]
+ * där v är formularVarden(). Ren.
+ */
+export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden' }) {
+  const n = anmalningar.length;
+  const block = anmalningar.map(({ nr, antal, v }) => [
+    `===== ANMÄLAN ${nr} av ${antal} =====`,
+    `Fält "Provide the URLs/IDs leading directly to the content that you're reporting":`,
+    v.urls,
+    `Fält "Provide an example of your copyrighted work that you believe has been infringed":`,
+    v.original,
+    `Fält "Describe how you believe that this content infringes your intellectual property rights":`,
+    v.beskrivning,
+    `Fält "Your full name": ${v.namn}`,
+    `Fält "Email" och "Confirm email address": ${v.epost}`,
+    `Fält "Electronic signature": ${v.signatur}`,
+  ].join('\n')).join('\n\n');
+  const forsta = anmalningar[0];
+  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+
+REGLER
+1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code": Meta mejlar en kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Öppna Gmail i en ny flik med det kontot, ta koden ur det senaste mejlet "Please verify your email address" från Meta och skriv in den. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla ${n}). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": ${land}. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: ${forsta?.v?.rattighetshavare ?? 'Stonebite Ecom AB'} → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+${block}
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "Anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "Anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.
+`;
+}
+
 /** Engångskoden ur ett mejl från Meta: talet efter ordet code/kod, annars första fristående 5–8-siffriga talet. Ren. */
 export function kodUrText(text) {
   const t = String(text ?? '');
@@ -109,6 +162,21 @@ export function referensUrText(text) {
   const t = String(text ?? '');
   const m = t.match(/(?:report|reference|case|ticket|ärende)[^\n\d]{0,60}?(?:#|no\.?|number|nummer|id)?[^\n\d]{0,20}(\d{6,})/i) ?? t.match(/\b(\d{9,})\b/);
   return m ? m[1] : null;
+}
+
+/**
+ * Vad sidan säger efter Submit: 'sakerhetskontroll' (Metas captcha-ruta — en
+ * människas sak), 'bekraftad' (Meta tackar/bekräftar OCH formuläret är borta),
+ * annars 'vantar'. Ren. Mätt 2026-09-29, ORVO anmälan 1: rutan heter "Security
+ * check — A security check is required to proceed." och formuläret står kvar
+ * under den; skriptet läste då formuläret som kvitto. Bara 'bekraftad' är ett kvitto.
+ */
+export function kvittoUtfall(text) {
+  const t = String(text ?? '');
+  if (/security check|security verification|captcha|confirm (that )?you'?re (a )?human|not a robot|säkerhetskontroll/i.test(t)) return 'sakerhetskontroll';
+  const formularKvar = /Electronic signature|Elektronisk underskrift/i.test(t);
+  if (!formularKvar && /thanks? (you )?for (your|submitting)|we('ve| have) received|report (has been |was )?(submitted|received)|report number|reference number|tack för din anmälan/i.test(t)) return 'bekraftad';
+  return 'vantar';
 }
 
 const sidtext = async (page) => { try { return await page.evaluate(() => document.body?.innerText ?? ''); } catch { return ''; } };
@@ -222,19 +290,23 @@ export async function skickaAnmalan(a, { ja = false, kodFil, vantaKodMs = 8 * 60
     const textMitt = await sidtext(page);
     const kvar = kvarUrText(textMitt);
     if (kvar > 0) { await dumpa(page, 'stopp'); throw new Error(`${kvar} obligatoriskt fält kvar före Submit (${textMitt.match(/\d+\s+required fields? remaining/i)?.[0]}) — inget skickat`); }
-    // Submit — bara här, bara med ja.
+    // Submit — bara här, bara med ja. Inskickad BARA när Meta bekräftar; en
+    // säkerhetskontroll (captcha) är en människas och löses aldrig härifrån.
     const nar = new Date().toISOString();
+    let utfall = 'vantar';
     await steg('Submit', async () => {
       const knapp = page.getByRole('button', { name: /^Submit$/ }).first();
       if (!(await knapp.count())) throw new Error('Submit-knappen saknas');
       await knapp.click();
       const t0 = Date.now();
-      while (Date.now() - t0 < 30_000) { await page.waitForTimeout(1500); const t = await sidtext(page); if (!/Electronic signature/.test(t) || /thank you|received|submitted|report number|reference/i.test(t)) break; }
+      while (Date.now() - t0 < 45_000) { await page.waitForTimeout(1500); utfall = kvittoUtfall(await sidtext(page)); if (utfall !== 'vantar') break; }
     });
     const text = await sidtext(page);
-    const kvittoFil = await dumpa(page, 'kvitto');
+    const bild = await dumpa(page, utfall === 'bekraftad' ? 'kvitto' : utfall === 'sakerhetskontroll' ? 'sakerhetskontroll' : 'ingen-bekraftelse');
+    if (utfall === 'sakerhetskontroll') throw Object.assign(new Error(`Meta kräver en säkerhetskontroll (captcha) vid Submit — den görs av en människa, aldrig härifrån. INGET är inskickat.${bild ? ` Skärmdump: ${bild}` : ''}`), { kod: 'SAKERHETSKONTROLL', skarmdump: bild });
+    if (utfall !== 'bekraftad') throw Object.assign(new Error(`ingen bekräftelse från Meta inom 45 s — räknas INTE som inskickad.${bild ? ` Skärmdump: ${bild}` : ''}`), { kod: 'INGEN_BEKRAFTELSE', skarmdump: bild });
     const referens = referensUrText(text);
     logg(`  kvitto: ${text.replace(/\s+/g, ' ').slice(0, 300)}`);
-    return { status: 'skickad', referens, text: text.replace(/\s+/g, ' ').slice(0, 2000), skarmdump, kvittoFil, nar };
+    return { status: 'skickad', referens, text: text.replace(/\s+/g, ' ').slice(0, 2000), skarmdump, kvittoFil: bild, nar };
   } finally { await browser.close().catch(() => {}); }
 }

@@ -736,6 +736,42 @@
    "keys": [
     "general.brand_description"
    ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814084435",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814084435",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814117203",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814117203",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814149971",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814149971",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814182739",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814182739",
+   "keys": [
+    "alt"
+   ]
   }
  ]
 }

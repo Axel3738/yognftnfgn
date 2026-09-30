@@ -1,0 +1,447 @@
+<title>__TITEL__</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: en kortlek — ett kort i taget (svep, pilar eller prickarna), beslutsraden fast i botten. */
+:root{
+  --bg:#f2f4f1;--yta:#ffffff;--yta2:#e9ece6;--text:#151a21;--dis:#5b6570;--linje:#d5dad2;
+  --accent:#0e6a86;--accent-text:#ffffff;
+  --ja:#2b7a4b;--ja-bg:#def0e3;--nej:#a24a08;--nej-bg:#fbe9d8;--pagar:#2f5f8f;--pagar-bg:#e1ecf7;--fel:#b42318;--fel-bg:#fde7e4;
+  --skugga:0 -6px 24px rgba(21,26,33,.10);
+  --disp:'Barlow Condensed','Arial Narrow',Arial,sans-serif;--brod:'Source Sans 3','Segoe UI',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --bg:#0e1216;--yta:#161c23;--yta2:#1e262f;--text:#e6eaef;--dis:#9aa5b1;--linje:#2a343f;--accent:#5fbcd9;--accent-text:#0a1a22;
+  --ja:#6fc48f;--ja-bg:#12301d;--nej:#f0a35c;--nej-bg:#3a2410;--pagar:#8ab8e6;--pagar-bg:#14283b;--fel:#ff8a80;--fel-bg:#3b1512;--skugga:0 -6px 24px rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --bg:#0e1216;--yta:#161c23;--yta2:#1e262f;--text:#e6eaef;--dis:#9aa5b1;--linje:#2a343f;--accent:#5fbcd9;--accent-text:#0a1a22;
+  --ja:#6fc48f;--ja-bg:#12301d;--nej:#f0a35c;--nej-bg:#3a2410;--pagar:#8ab8e6;--pagar-bg:#14283b;--fel:#ff8a80;--fel-bg:#3b1512;--skugga:0 -6px 24px rgba(0,0,0,.45)}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--brod);font-size:17px;line-height:1.5;margin:0}
+.ram{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:18px 150px;display:grid;gap:16px}
+h1,h2{font-family:var(--disp);font-weight:700;letter-spacing:.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.05}
+h2{font-size:clamp(24px,5vw,32px);line-height:1.08}
+h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--dis);font-weight:600;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--dis)}
+.topp{display:grid;gap:8px}
+.lagesrad{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--yta2);color:var(--text)}
+.chip.ja{background:var(--ja-bg);color:var(--ja)}.chip.nej{background:var(--nej-bg);color:var(--nej)}.chip.pagar{background:var(--pagar-bg);color:var(--pagar)}
+.notis{background:var(--pagar-bg);color:var(--text);border-radius:10px;padding:10px 14px;font-size:16px}
+.notis.varning{background:var(--nej-bg)}
+.notis button{margin-top:8px}
+.prickar{display:flex;flex-wrap:wrap;gap:6px}
+.prick{min-width:40px;height:40px;padding:0 8px;border-radius:10px;border:1.5px solid var(--linje);background:var(--yta);color:var(--text);font:600 15px var(--brod);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-variant-numeric:tabular-nums}
+.prick[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.prick.ja{background:var(--ja-bg);border-color:var(--ja);color:var(--ja)}
+.prick.nej{background:var(--nej-bg);border-color:var(--nej);color:var(--nej)}
+.prick.pagar{background:var(--pagar-bg);border-color:var(--pagar);color:var(--pagar)}
+.prick.klar{background:var(--ja);border-color:var(--ja);color:var(--yta)}
+.prick.fel{background:var(--fel-bg);border-color:var(--fel);color:var(--fel)}
+.kort{background:var(--yta);border:1px solid var(--linje);border-radius:14px;padding:18px 16px;display:grid;gap:16px;min-width:0;touch-action:pan-y pinch-zoom}
+.kort > *{min-width:0}
+.fakta{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--dis);font-size:15px}
+.fakta b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.bildram{display:grid;gap:6px}
+.bildram img{width:100%;height:auto;border-radius:10px;border:1px solid var(--linje);background:var(--yta2);display:block}
+.liten{font-size:14px;color:var(--dis)}
+.sv{background:var(--yta2);border-radius:10px;padding:10px 14px}
+dl{margin:0;display:grid;gap:0}
+.faltrad{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:4px 14px;padding:9px 0;border-top:1px solid var(--linje)}
+.faltrad dt{color:var(--dis);font-size:14px;font-weight:600}
+.faltrad dd{margin:0;word-break:break-word;min-width:0}
+.faltrad dd .svensk{display:block;color:var(--dis);font-size:14px}
+.faltrad dd.lang{font-family:var(--mono);font-size:14px;line-height:1.55;white-space:pre-wrap}
+@media (max-width:560px){.faltrad{grid-template-columns:minmax(0,1fr)}}
+.forsakran{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+.brevhuvud{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:15px}
+.brevhuvud span:nth-child(odd){color:var(--dis);font-weight:600}
+.brev{font-family:var(--brod);font-size:16px;line-height:1.55;white-space:pre-wrap;word-break:break-word;background:var(--yta2);border-radius:10px;padding:14px;margin:0;overflow-x:auto}
+.brev mark{background:var(--nej-bg);color:inherit;border-radius:3px;padding:0 2px}
+.bilaga{display:inline-flex;gap:8px;align-items:center;font-family:var(--mono);font-size:14px;background:var(--yta2);border-radius:8px;padding:6px 10px;width:fit-content;max-width:100%;overflow-wrap:anywhere}
+.lagesruta{border-radius:10px;padding:12px 14px;font-weight:600}
+.lagesruta.ja{background:var(--ja-bg);color:var(--ja)}.lagesruta.nej{background:var(--nej-bg);color:var(--nej)}
+.lagesruta.pagar{background:var(--pagar-bg);color:var(--pagar)}.lagesruta.klar{background:var(--ja);color:var(--yta)}
+.lagesruta.fel{background:var(--fel-bg);color:var(--fel)}.lagesruta.vantar{background:var(--yta2);color:var(--dis)}
+.lagesruta small{display:block;font-weight:400;margin-top:2px}
+.sms{font-size:17px;line-height:1.55;white-space:pre-wrap;background:var(--yta2);border-radius:10px;padding:14px;margin:0;word-break:break-word}
+.botten{position:fixed;left:0;right:0;bottom:0;background:var(--yta);border-top:1px solid var(--linje);box-shadow:var(--skugga);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.botten-inre{max-width:860px;margin:0 auto;display:grid;gap:8px}
+.knapprad{display:flex;gap:8px;align-items:stretch}
+.knapprad .mitt{flex:1;display:flex;gap:8px;min-width:0}
+button{font:inherit}
+.knapp{border:0;border-radius:12px;padding:12px 16px;font-weight:700;font-size:17px;cursor:pointer;min-height:48px;flex:1;min-width:0}
+.knapp.ja{background:var(--ja);color:var(--yta)}
+.knapp.nej{background:var(--nej-bg);color:var(--nej)}
+.knapp.neutral{background:var(--yta2);color:var(--text)}
+.knapp:disabled{opacity:.45;cursor:not-allowed}
+.pil{border:1.5px solid var(--linje);background:var(--yta);color:var(--text);border-radius:12px;min-width:48px;min-height:48px;font-size:22px;cursor:pointer}
+.pil:disabled{opacity:.35}
+.botten-text{font-size:15px;color:var(--dis);text-align:center}
+.nejruta{display:grid;gap:8px}
+.nejruta textarea{width:100%;min-height:84px;border-radius:10px;border:1.5px solid var(--linje);background:var(--bg);color:var(--text);font:16px var(--brod);padding:10px}
+.bildram img[data-zoom]{cursor:zoom-in}
+.zoom{position:fixed;inset:0;z-index:20;background:var(--bg);display:grid;grid-template-rows:auto minmax(0,1fr);padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
+.zoom[hidden]{display:none}
+.zoom-rad{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 16px 10px}
+.zoom-rad .knapp{flex:0 0 auto}
+.zoom-yta{overflow:auto;-webkit-overflow-scrolling:touch}
+.zoom-yta img{max-width:none;width:auto;height:auto;display:block}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion: no-preference){.kort{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+</style>
+<div class="ram">
+  <header class="topp">
+    <p class="eyebrow" id="eyebrow">Konkurrentdödaren</p>
+    <h1>Granska och svara</h1>
+    <p id="ingress">Ett kort per anmälan till Meta, sedan mejlet med fakturan. Svep mellan korten och tryck Ja eller Nej. Det du säger ja till skickar Claude in. Ber Meta om en säkerhetskontroll gör du den själv, Claude gör den aldrig.</p>
+    <div class="lagesrad" id="lagesrad"></div>
+    <div id="notiser"></div>
+  </header>
+  <nav class="prickar" id="prickar" aria-label="Korten"></nav>
+  <main class="kort" id="kort" aria-live="polite"></main>
+</div>
+<div class="botten" id="botten"><div class="botten-inre" id="botten-inre"></div></div>
+<div class="zoom" id="zoom" hidden role="dialog" aria-label="Bilden i full storlek"><div class="zoom-rad"><span class="liten">Dra för att se hela bilden</span><button type="button" class="knapp neutral" data-atgard="stang-zoom">Stäng</button></div><div class="zoom-yta"><img id="zoom-bild" alt=""></div></div>
+<script type="application/json" id="granskning">__GRANSKNING__</script>
+<script>
+(() => {
+  'use strict';
+  const G = JSON.parse(document.getElementById('granskning').textContent);
+  const KORT = G.kort;
+  const ANM = KORT.filter((k) => k.typ === 'anmalan');
+  let B = { svar: {} };
+  let S = { kort: {} };
+  let beslutSha = null;
+  let artifact = null;
+  let lasbar = false;
+  let skrivfel = null;
+  let lasfel = null;
+  let index = 0;
+  let sparar = false;
+  let nejOppen = null;
+  let andrar = null;
+  let kopierat = false;
+
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const ss = {
+    get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* ingen lagring */ } },
+    del(k) { try { sessionStorage.removeItem(k); } catch { /* ingen lagring */ } },
+  };
+  const NYCKEL_INDEX = `granska:${G.arende}:index`;
+  const NYCKEL_OSPARAT = `granska:${G.arende}:osparat`;
+  const tal = (n) => Number(n).toLocaleString('sv-SE').replace(/[  ]/g, ' ');
+  const tid = (iso) => {
+    if (!iso) return '';
+    const d = new Date(iso); if (Number.isNaN(+d)) return String(iso);
+    return `${d.toLocaleDateString('sv-SE', { day: 'numeric', month: 'short', timeZone: 'Europe/Stockholm' }).replace('.', '')} kl. ${d.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Stockholm' })}`;
+  };
+  const dag = (iso) => iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString('sv-SE', { day: 'numeric', month: 'long', timeZone: 'Europe/Stockholm' }) : '';
+
+  const aktuellt = (k) => { const s = B.svar?.[k.nyckel]; return s && s.version === k.version ? s : null; };
+  const lage = (k) => S.kort?.[k.nyckel] ?? null;
+  const klar = (k) => ['inskickad', 'skickad'].includes(lage(k)?.lage);
+  const obesvarade = () => ANM.filter((k) => !aktuellt(k) && !klar(k));
+  const jaAntal = () => ANM.filter((k) => lage(k)?.lage === 'inskickad' || aktuellt(k)?.svar === 'ja').length;
+  function tillstand(k) {
+    const l = lage(k)?.lage;
+    if (l === 'inskickad' || l === 'skickad') return 'klar';
+    if (l === 'pagar') return 'pagar';
+    if (l === 'fel') return 'fel';
+    if (k.typ === 'sms') return S.sms?.text ? 'ja' : 'vantar';
+    const a = aktuellt(k);
+    if (a) return a.svar;
+    return B.svar?.[k.nyckel] ? 'ombyggd' : 'vantar';
+  }
+  const kortNamn = (k) => (k.typ === 'anmalan' ? `anmälan ${k.nr}` : k.typ === 'mejl' ? 'mejlet' : 'sms:et');
+
+  async function sha256(text) {
+    try {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+    } catch { return null; }
+  }
+
+  function lankar(text) {
+    return esc(text).replace(/https?:\/\/[^\s<]+/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+  }
+
+  function renderLageRuta(k) {
+    const l = lage(k);
+    const t = tillstand(k);
+    const a = aktuellt(k);
+    if (t === 'klar') {
+      if (k.typ === 'mejl') return `<div class="lagesruta klar">Mejlet är skickat ${esc(tid(l.nar))}<small>till ${esc(l.till ?? k.till ?? '')}${l.fran ? ` från ${esc(l.fran)}` : ''}</small></div>`;
+      return `<div class="lagesruta klar">Inskickad till Meta ${esc(tid(l.nar))}<small>${l.referens ? `Metas referens: ${esc(l.referens)}` : 'Meta gav inget referensnummer på kvittot.'}</small></div>`;
+    }
+    if (t === 'pagar') return `<div class="lagesruta pagar">Claude ${k.typ === 'mejl' ? 'skickar mejlet' : 'skickar in anmälan'} just nu<small>Sidan uppdateras när det är klart.</small></div>`;
+    if (t === 'fel') return `<div class="lagesruta fel">Det gick inte att ${k.typ === 'mejl' ? 'skicka mejlet' : 'skicka in anmälan'}<small>${esc(l.text ?? '')}</small></div>`;
+    if (t === 'ja') return `<div class="lagesruta ja">Du sa ja ${esc(tid(a.nar))}<small>${k.typ === 'mejl' ? 'Claude skickar mejlet så snart alla anmälningar har ett svar.' : 'Claude skickar in den till Meta.'}</small></div>`;
+    if (t === 'nej') return `<div class="lagesruta nej">Du sa nej ${esc(tid(a.nar))}<small>${a.not ? `Din kommentar: ${esc(a.not)}` : 'Den skickas inte.'}</small></div>`;
+    if (t === 'ombyggd') return '<div class="lagesruta vantar">Kortet är ändrat sedan du svarade. Titta igen och svara på nytt.</div>';
+    return '';
+  }
+
+  function renderAnmalan(k) {
+    const falt = k.falt.map((f) => `<div class="faltrad"><dt>${esc(f.etikett)}</dt><dd class="${f.lang ? 'lang' : ''}">${f.lank ? lankar(f.varde) : esc(f.varde)}${f.sv ? `<span class="svensk">${esc(f.sv)}</span>` : ''}</dd></div>`).join('');
+    return `
+      <p class="eyebrow">Anmälan ${k.nr} av ${k.antal ?? ANM.length}</p>
+      <h2>Annons ${esc(k.annonsNr ?? '')} hos ${esc(G.deras?.sidnamn ?? 'dem')}</h2>
+      <div class="fakta">
+        ${k.produkt ? `<span>Vår produkt: <b>${esc(k.produkt)}</b></span>` : ''}
+        ${k.start ? `<span>Live sedan <b>${esc(dag(k.start))}</b></span>` : ''}
+        ${k.exponeringar ? `<span>Räckvidd <b>${esc(tal(k.exponeringar))}</b> personer</span>` : ''}
+      </div>
+      <p><a href="${esc(k.lank)}" target="_blank" rel="noopener">Öppna annonsen i Metas annonsbibliotek</a></p>
+      ${renderLageRuta(k)}
+      <section class="bildram" aria-label="Bilden som följer med anmälan">
+        <h3>Bilden som följer med anmälan</h3>
+        ${k.bild ? `<img src="${esc(k.bild)}" data-zoom alt="Bildrutor ur våra filmer bredvid samma rutor i deras annons" loading="lazy">` : '<p class="liten">Bilden finns inte i den här versionen av sidan.</p>'}
+        <p class="liten">Tryck på bilden för att förstora. Våra filmer till vänster, deras annons till höger. <b>Ja betyder att du intygar att varje ruta till vänster är inspelad eller gjord av oss, inte hämtad från någon annan (en leverantör, ett TikTok-konto, en annan butik).</b> Är du osäker på en ruta: tryck Nej och skriv vilken.${k.bildUrl ? ` Meta får <a href="${esc(k.bildUrl)}" target="_blank" rel="noopener">den här filen</a>.` : ''}</p>
+      </section>
+      ${k.sammanfattning ? `<p class="sv"><b>Vad anmälan säger, på svenska:</b> ${esc(k.sammanfattning)}</p>` : ''}
+      <section aria-label="Det här skrivs in i Metas formulär">
+        <h3>Det här skrivs in i Metas formulär</h3>
+        <dl>${falt}</dl>
+        ${k.fel?.length ? `<p class="lagesruta fel">Stoppas: ${esc(k.fel.join('; '))}</p>` : ''}
+      </section>
+      <section aria-label="Försäkran">
+        <h3>Försäkran i formuläret, som du skriver under</h3>
+        <ul class="forsakran">${k.forsakran.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+        ${k.formular ? `<p class="liten">Formuläret: <a href="${esc(k.formular)}" target="_blank" rel="noopener">Metas upphovsrättsformulär</a>. Meta mejlar en engångskod till adressen ovan, och Claude läser den i din Gmail.</p>` : ''}
+      </section>`;
+  }
+
+  function brevText(k) {
+    if (!k.meta) return esc(k.text);
+    const n = Math.min(jaAntal(), k.antalByggda);
+    const rad = k.meta[n] ?? '';
+    const [fore, efter] = k.text.split('[[META]]');
+    // Utan anmälningar försvinner meningen och dess tomrad, så styckena står som i brevet som skickas.
+    return `${esc(fore)}${rad ? `<mark>${esc(rad)}</mark>` : ''}${esc(rad ? (efter ?? '') : (efter ?? '').replace(/^\n\n/, '\n'))}`;
+  }
+
+  function renderMejl(k) {
+    const f = k.faktura;
+    const kvar = obesvarade().length;
+    return `
+      <p class="eyebrow">Mejlet med fakturan</p>
+      <h2>Brevet till ${esc(G.deras?.sidnamn ?? 'dem')}</h2>
+      ${renderLageRuta(k)}
+      ${kvar && !klar(k) ? `<p class="notis varning">Mejlet kan skickas när alla ${ANM.length} anmälningar har ett svar. ${kvar} kvar.</p>` : ''}
+      <div class="brevhuvud">
+        <span>Från</span><span>${esc(k.fran)}${k.franNot ? `<br><span class="liten">${esc(k.franNot)}</span>` : ''}</span>
+        <span>Till</span><span>${esc(k.till ?? '')}</span>
+        <span>Ämne</span><span>${esc(k.amne)}</span>
+      </div>
+      ${f?.fil ? `<p class="bilaga" aria-label="Bilaga">Bilaga: ${esc(f.fil)}</p>` : ''}
+      ${k.meta ? `<p class="liten">Den markerade meningen följer dina svar: just nu anmäls ${jaAntal()} av ${k.antalByggda}.</p>` : ''}
+      <pre class="brev">${brevText(k)}</pre>
+      <p class="liten">Datum och klockslag i brevet räknas från när det skickas.</p>
+      ${f ? `<section class="bildram" aria-label="Fakturan">
+        <h3>Fakturan ${esc(f.nr)}</h3>
+        <div class="fakta"><span>Att betala <b>${esc(tal(f.brutto))} kr</b></span><span>varav moms <b>${esc(tal(f.moms))} kr</b></span>${f.exponeringar ? `<span><b>${esc(tal(f.exponeringar))}</b> exponeringar${f.cpm ? ` × CPM <b>${esc(String(f.cpm).replace('.', ','))} kr</b>` : ''}</span>` : ''}<span>Förfaller <b>${esc(dag(f.forfaller))}</b></span></div>
+        ${f.bild ? `<img src="${esc(f.bild)}" data-zoom alt="Fakturan som PDF-bilagan ser ut" loading="lazy"><p class="liten">Tryck på fakturan för att förstora.</p>` : ''}
+      </section>` : ''}`;
+  }
+
+  function renderSms() {
+    const text = S.sms?.text;
+    return `
+      <p class="eyebrow">Sms:et</p>
+      <h2>Sms till ${esc(G.deras?.sidnamn ?? 'dem')}</h2>
+      ${text ? `<p>Skicka det här från din telefon nu när mejlet har gått iväg.</p><pre class="sms" id="smstext">${esc(text)}</pre>` : '<p class="lagesruta vantar">Sms-texten visas här när mejlet har skickats, med samma belopp och förfallodag som fakturan.</p>'}`;
+  }
+
+  function renderLagesrad() {
+    const ja = ANM.filter((k) => ['ja', 'pagar', 'klar'].includes(tillstand(k))).length;
+    const nej = ANM.filter((k) => tillstand(k) === 'nej').length;
+    const inne = ANM.filter((k) => tillstand(k) === 'klar').length;
+    const kvar = obesvarade().length;
+    const mk = KORT.find((k) => k.typ === 'mejl');
+    const mt = mk ? tillstand(mk) : null;
+    const mejl = mt === 'klar' ? 'Mejlet: skickat' : mt === 'pagar' ? 'Mejlet: skickas nu' : mt === 'ja' ? 'Mejlet: ja' : mt === 'nej' ? 'Mejlet: nej' : 'Mejlet: väntar';
+    document.getElementById('lagesrad').innerHTML = [
+      `<span class="chip ja">${ja} ja</span>`,
+      `<span class="chip nej">${nej} nej</span>`,
+      `<span class="chip">${kvar} kvar</span>`,
+      inne ? `<span class="chip ja">${inne} inskickade</span>` : '',
+      // En runda utan mejlkort (bara anmälningar) visar ingen mejlstatus alls.
+      mk ? `<span class="chip ${mt === 'klar' ? 'ja' : mt === 'pagar' ? 'pagar' : ''}">${mejl}</span>` : '',
+    ].join('');
+    if (!mk) document.getElementById('ingress').textContent = 'Ett kort per anmälan till Meta. Svep mellan korten och tryck Ja eller Nej. Det du säger ja till skickar Claude in. Ber Meta om en säkerhetskontroll gör du den själv, Claude gör den aldrig.';
+    document.getElementById('eyebrow').textContent = `Konkurrentdödaren · ${G.arende}${G.deras?.sidnamn ? ` · ${G.deras.sidnamn}` : ''}`;
+  }
+
+  function renderNotiser() {
+    const delar = [];
+    if (G.not) delar.push(`<p class="notis">${esc(G.not)}</p>`);
+    if (S.notis) delar.push(`<p class="notis">${esc(S.notis)}</p>`);
+    if (lasfel) delar.push(`<p class="notis varning">${esc(lasfel)}</p>`);
+    if (skrivfel) delar.push(`<p class="notis varning">${esc(skrivfel)}</p>`);
+    const osparat = (() => { try { return JSON.parse(ss.get(NYCKEL_OSPARAT) ?? 'null'); } catch { return null; } })();
+    if (osparat && !(B.svar?.[osparat.nyckel]?.nar >= osparat.nar)) {
+      const k = KORT.find((x) => x.nyckel === osparat.nyckel);
+      if (k) delar.push(`<div class="notis varning">Ditt svar på ${esc(kortNamn(k))} hann inte sparas, för sidan uppdaterades samtidigt.<br><button class="knapp neutral" type="button" data-atgard="spara-igen">Spara svaret igen</button></div>`);
+    } else if (osparat) ss.del(NYCKEL_OSPARAT);
+    document.getElementById('notiser').innerHTML = delar.join('');
+  }
+
+  function renderPrickar() {
+    document.getElementById('prickar').innerHTML = KORT.map((k, i) => {
+      const t = tillstand(k);
+      const namn = k.typ === 'anmalan' ? String(k.nr) : k.typ === 'mejl' ? 'Mejl' : 'Sms';
+      return `<button type="button" class="prick ${t === 'ombyggd' ? '' : t}" data-gatill="${i}" aria-current="${i === index}" aria-label="${esc(kortNamn(k))}, ${esc(t)}">${esc(namn)}</button>`;
+    }).join('');
+  }
+
+  function renderBotten() {
+    const k = KORT[index];
+    const t = tillstand(k);
+    const pilar = (mitt) => `<div class="knapprad"><button type="button" class="pil" data-atgard="forra" aria-label="Förra kortet" ${index === 0 ? 'disabled' : ''}>‹</button><div class="mitt">${mitt}</div><button type="button" class="pil" data-atgard="nasta" aria-label="Nästa kort" ${index === KORT.length - 1 ? 'disabled' : ''}>›</button></div>`;
+    let ovan = ''; let mitt = '';
+    const kanSpara = Boolean(artifact) && !lasbar;
+    if (k.typ === 'sms') {
+      mitt = S.sms?.text ? `<button type="button" class="knapp ja" data-atgard="kopiera">${kopierat ? 'Kopierat' : 'Kopiera sms-texten'}</button>` : '<p class="botten-text" style="flex:1;align-self:center">Kommer när mejlet har gått iväg</p>';
+    } else if (t === 'klar' || t === 'pagar') {
+      mitt = `<p class="botten-text" style="flex:1;align-self:center">${t === 'klar' ? (k.typ === 'mejl' ? 'Skickat' : 'Inskickad') : 'Claude arbetar med den nu'}</p>`;
+    } else if ((t === 'ja' || t === 'nej') && andrar !== k.nyckel) {
+      mitt = `<button type="button" class="knapp neutral" data-atgard="andra" ${kanSpara ? '' : 'disabled'}>Ändra mitt svar</button>`;
+    } else if (nejOppen === k.nyckel) {
+      ovan = `<div class="nejruta"><label for="nej-not" class="liten">Vad är fel? Valfritt, till exempel "ruta B är lånad".</label><textarea id="nej-not" maxlength="1500"></textarea></div>`;
+      mitt = `<button type="button" class="knapp neutral" data-atgard="avbryt">Avbryt</button><button type="button" class="knapp nej" data-atgard="spara-nej" ${sparar ? 'disabled' : ''}>Spara nej</button>`;
+    } else {
+      const mejlLas = k.typ === 'mejl' && obesvarade().length > 0;
+      const jaText = t === 'fel' ? 'Försök igen' : k.typ === 'mejl' ? 'Ja, skicka mejlet' : 'Ja, skicka in';
+      mitt = `<button type="button" class="knapp nej" data-atgard="nej" ${kanSpara && !sparar ? '' : 'disabled'}>Nej</button><button type="button" class="knapp ja" data-atgard="ja" ${kanSpara && !sparar && !mejlLas ? '' : 'disabled'}>${sparar ? 'Sparar …' : jaText}</button>`;
+      if (!artifact) ovan = '<p class="botten-text">Knapparna fungerar när sidan är öppen i Claude.</p>';
+      else if (lasbar) ovan = '<p class="botten-text">Den här vyn kan inte spara. Skriv ditt svar i chatten i stället.</p>';
+    }
+    document.getElementById('botten-inre').innerHTML = `${ovan}${pilar(mitt)}`;
+  }
+
+  function render() {
+    index = Math.max(0, Math.min(index, KORT.length - 1));
+    const k = KORT[index];
+    const el = document.getElementById('kort');
+    el.innerHTML = k.typ === 'anmalan' ? renderAnmalan(k) : k.typ === 'mejl' ? renderMejl(k) : renderSms(k);
+    renderLagesrad(); renderNotiser(); renderPrickar(); renderBotten();
+    ss.set(NYCKEL_INDEX, String(index));
+  }
+
+  function ga(i) {
+    if (i < 0 || i >= KORT.length || i === index) return;
+    index = i; nejOppen = null; andrar = null; kopierat = false;
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function nastaObesvarade(fran) {
+    for (let i = fran + 1; i < KORT.length; i++) { const t = tillstand(KORT[i]); if (t === 'vantar' || t === 'ombyggd') return i; }
+    for (let i = 0; i < fran; i++) { const t = tillstand(KORT[i]); if (t === 'vantar' || t === 'ombyggd') return i; }
+    return Math.min(fran + 1, KORT.length - 1);
+  }
+
+  async function spara(k, svar, not = '') {
+    if (!artifact || sparar) return;
+    const post = { svar, not: String(not ?? '').trim(), version: k.version, nar: new Date().toISOString() };
+    const nytt = { ...B, svar: { ...(B.svar ?? {}), [k.nyckel]: post } };
+    const text = `${JSON.stringify(nytt, null, 1)}\n`;
+    ss.set(NYCKEL_OSPARAT, JSON.stringify({ nyckel: k.nyckel, ...post }));
+    sparar = true; skrivfel = null; renderBotten();
+    try {
+      const fil = { content: text, contentType: 'application/json' };
+      if (beslutSha) fil.ifMatch = beslutSha;
+      const res = await artifact.publish({ 'data/beslut.json': fil });
+      B = nytt;
+      beslutSha = res?.shas?.['data/beslut.json'] ?? (await sha256(text));
+      ss.del(NYCKEL_OSPARAT);
+      sparar = false; nejOppen = null; andrar = null;
+      if (k.typ === 'anmalan') index = nastaObesvarade(index);
+      render();
+    } catch (e) {
+      sparar = false;
+      const kod = e?.code ?? 'upstream_error';
+      if (kod === 'conflict') skrivfel = 'Sidan uppdaterades samtidigt. Tryck på knappen igen.';
+      else if (['not_writer', 'not_granted', 'capability_disabled', 'capability_removed', 'consent_required', 'not_declared'].includes(kod)) { lasbar = true; skrivfel = 'Den här vyn kan inte spara svar. Skriv i chatten i stället, till exempel: ja 1 2 3, nej 4.'; ss.del(NYCKEL_OSPARAT); }
+      else if (kod === 'rate_limited') skrivfel = 'För många sparningar på kort tid. Vänta en minut och tryck igen.';
+      else skrivfel = `Svaret sparades inte (${kod}). Tryck igen om en stund.`;
+      render();
+    }
+  }
+
+  const zoom = document.getElementById('zoom');
+  const oppnaZoom = (src) => { document.getElementById('zoom-bild').src = src; zoom.hidden = false; };
+  const stangZoom = () => { zoom.hidden = true; document.getElementById('zoom-bild').removeAttribute('src'); };
+
+  document.addEventListener('click', async (ev) => {
+    const bild = ev.target.closest('img[data-zoom]');
+    if (bild) return oppnaZoom(bild.getAttribute('src'));
+    const b = ev.target.closest('button');
+    if (!b) return;
+    if (b.dataset.gatill !== undefined) return ga(Number(b.dataset.gatill));
+    const k = KORT[index];
+    switch (b.dataset.atgard) {
+      case 'stang-zoom': return stangZoom();
+      case 'forra': return ga(index - 1);
+      case 'nasta': return ga(index + 1);
+      case 'ja': return spara(k, 'ja');
+      case 'nej': nejOppen = k.nyckel; renderBotten(); document.getElementById('nej-not')?.focus(); return;
+      case 'avbryt': nejOppen = null; andrar = null; renderBotten(); return;
+      case 'spara-nej': return spara(k, 'nej', document.getElementById('nej-not')?.value ?? '');
+      case 'andra': andrar = k.nyckel; renderBotten(); return;
+      case 'spara-igen': {
+        let o = null; try { o = JSON.parse(ss.get(NYCKEL_OSPARAT) ?? 'null'); } catch { o = null; }
+        const kk = o && KORT.find((x) => x.nyckel === o.nyckel);
+        if (kk && o.version === kk.version) { index = KORT.indexOf(kk); return spara(kk, o.svar, o.not); }
+        ss.del(NYCKEL_OSPARAT); render(); return;
+      }
+      case 'kopiera': {
+        const text = S.sms?.text ?? '';
+        try { await navigator.clipboard.writeText(text); kopierat = true; renderBotten(); }
+        catch { const el = document.getElementById('smstext'); if (el) { const r = document.createRange(); r.selectNodeContents(el); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } }
+        return;
+      }
+      default:
+    }
+  });
+
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && !zoom.hidden) return stangZoom();
+    if (ev.target.closest?.('textarea,input') || !zoom.hidden) return;
+    if (ev.key === 'ArrowLeft') ga(index - 1);
+    if (ev.key === 'ArrowRight') ga(index + 1);
+  });
+
+  let x0 = null; let y0 = null;
+  const yta = document.getElementById('kort');
+  yta.addEventListener('touchstart', (ev) => { const t = ev.touches[0]; x0 = t.clientX; y0 = t.clientY; }, { passive: true });
+  yta.addEventListener('touchend', (ev) => {
+    if (x0 === null) return;
+    const t = ev.changedTouches[0]; const dx = t.clientX - x0; const dy = t.clientY - y0; x0 = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) ga(index + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+
+  async function lasFil(sokvag) {
+    const r = await fetch(sokvag, { cache: 'no-store' });
+    if (!r.ok) throw new Error(`${sokvag}: ${r.status}`);
+    return r.text();
+  }
+
+  async function start() {
+    const sparatIndex = Number(ss.get(NYCKEL_INDEX));
+    if (Number.isInteger(sparatIndex) && sparatIndex >= 0 && sparatIndex < KORT.length) index = sparatIndex;
+    render();
+    try { const text = await lasFil('data/beslut.json'); B = JSON.parse(text); B.svar ??= {}; beslutSha = await sha256(text); }
+    catch { B = { svar: {} }; lasfel = 'Dina tidigare svar gick inte att läsa. Ladda om sidan.'; }
+    try { S = JSON.parse(await lasFil('data/status.json')); S.kort ??= {}; } catch { S = { kort: {} }; }
+    render();
+    try { artifact = window.claude?.use ? await window.claude.use('artifact') : null; } catch { artifact = null; }
+    render();
+  }
+  start();
+})();
+</script>

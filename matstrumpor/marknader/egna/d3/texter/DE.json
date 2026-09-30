@@ -1,0 +1,43 @@
+{
+ "kod": "DE",
+ "locale": "de",
+ "wordmark": "SUSHI-SOCKEN",
+ "underrubrik": "Sieht aus wie Takeaway. Sind 20 Paar Socken.",
+ "banner": "KAUF 2 – BEKOMM 2 GRATIS",
+ "message": "Du bekommst vier Boxen.\nKauf 2 – bekomm 2 gratis, zwanzig Paar Socken insgesamt.\nGerollt wie Maki, Essstäbchen aus Holz in jeder Box.\nEinheitsgröße, passt Gr. 36–44.\nEine schwedische Marke.",
+ "title": "Kauf 2, bekomm 2 gratis: vier Boxen",
+ "link_description": "Kauf 2 – Bekomm 2 GRATIS. Kostenloser Versand.",
+ "tre_fragor": [
+  {
+   "rad": "Sieht aus wie Takeaway. Sind 20 Paar Socken.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Du bekommst vier Boxen.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Kauf 2 – bekomm 2 gratis, zwanzig Paar Socken insgesamt.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Gerollt wie Maki, Essstäbchen aus Holz in jeder Box.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Einheitsgröße, passt Gr. 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

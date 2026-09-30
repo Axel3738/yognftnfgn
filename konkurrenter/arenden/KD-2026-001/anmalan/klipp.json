@@ -1,11 +1,41 @@
 {
-  "byggd": "2026-09-29T11:42:19.084Z",
+  "byggd": "2026-09-29T14:00:54.334Z",
   "ffmpeg": "/root/.local/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
   "fps": 2,
   "maxAvstand": 6,
   "arende": "KD-2026-001",
-  "lanade_hashar": [],
-  "lanade_par": [],
+  "lanade_hashar": [
+    "3918191902012367",
+    "e12de4183c3e2884",
+    "e16de4183c3e3884",
+    "3918190102012367"
+  ],
+  "lanade_par": [
+    {
+      "annonsNr": 5,
+      "derasT": 30.5,
+      "filmId": "936761792816241",
+      "egenT": 23.5,
+      "film": "CaraShellRoof_PD_1_H1",
+      "nar": "2026-09-29T13:53:40.148Z"
+    },
+    {
+      "annonsNr": 9,
+      "derasT": 5.5,
+      "filmId": "1605983741209099",
+      "egenT": 22.5,
+      "film": "CaraShellRoof_PD_3_H1",
+      "nar": "2026-09-29T13:53:40.148Z"
+    },
+    {
+      "annonsNr": 9,
+      "derasT": 6.5,
+      "filmId": "1695160671555902",
+      "egenT": 23.5,
+      "film": "CaraShellRoof_NO_PD_2",
+      "nar": "2026-09-29T13:53:40.148Z"
+    }
+  ],
   "lanade_klipp": {
     "fron": {
       "2": [
@@ -15,12 +45,15 @@
         0
       ],
       "5": [
+        30.5,
         0
       ],
       "7": [
         0
       ],
       "9": [
+        5.5,
+        6.5,
         0
       ],
       "10": [
@@ -38,11 +71,21 @@
       "20": [
         0.03
       ],
-      "24": [],
-      "25": [],
-      "28": [],
-      "29": [],
-      "30": [],
+      "24": [
+        0
+      ],
+      "25": [
+        0.03
+      ],
+      "28": [
+        0
+      ],
+      "29": [
+        0
+      ],
+      "30": [
+        0
+      ],
       "31": [],
       "32": [],
       "33": [],
@@ -52,17 +95,25 @@
     "deras": {
       "2": 9,
       "4": 6,
-      "5": 12,
-      "7": 5,
-      "9": 8,
+      "5": 18,
+      "7": 12,
+      "9": 15,
       "10": 12,
       "14": 7,
       "16": 10,
       "18": 17,
-      "20": 8
+      "20": 8,
+      "24": 6,
+      "25": 5,
+      "28": 5,
+      "29": 3,
+      "30": 7,
+      "31": 6,
+      "33": 15,
+      "37": 6
     },
-    "egnaFilmer": 101,
-    "rutor": 71,
+    "egnaFilmer": 132,
+    "rutor": 128,
     "varv": 2
   },
   "bibliotek": {
@@ -2540,7 +2591,7 @@
         "filmerSenare": 36,
         "traffar": 40,
         "andel": 59,
-        "lanadeRutor": 19,
+        "lanadeRutor": 20,
         "scener": 12,
         "matchadeScener": 12,
         "uteslutnaScener": 4,
@@ -2983,9 +3034,10 @@
       "fel": null,
       "status": "bevisad",
       "fron": [
+        30.5,
         0
       ],
-      "lanadeRutor": 12,
+      "lanadeRutor": 18,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1432012392223391.mp4",
         "langd": 47.5,
@@ -2996,7 +3048,7 @@
         "senare": 36,
         "anvanda": [
           "Takoverdrag_OB_1_H1",
-          "CaraShellRoof_PD_1_H1"
+          "Takoverdrag_SP_4_H1"
         ],
         "perFilm": {
           "CaraShellRoof_DK_CS_2_H1": 1,
@@ -3004,22 +3056,11 @@
           "CaraShellRoof_PD_5_H1": 3,
           "Takoverdrag_OB_1_H1": 7,
           "CaraShellRoof_OB_101_H1": 4,
-          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_SP_4_H1": 6,
           "CaraShellRoof_DK_PD_106_H1": 1,
           "Takoverdrag_RI_1_H1": 3,
           "Takoverdrag_PD_7_H1": 1,
           "Takoverdrag_CS_8_H1": 1,
-          "Takoverdrag_GT_8_H1": 1,
-          "CaraShellRoof_NO_GT_107_H1": 1,
-          "CaraShellRoof_DK_RI_103_H1": 1,
-          "CaraShellRoof_DK_PD_5_H1": 1,
-          "Takoverdrag_PD_3_H1": 2,
-          "Takoverdrag_PD_1_H1": 1,
-          "CaraShellRoof_PD_1_H1": 1,
-          "Takoverdrag_GT_5_H1": 1,
-          "Takoverdrag_PD_2_H1": 3,
-          "CaraShellRoof_US_PD_106_H1_FELSPRAK": 1,
-          "CaraShellRoof_NO_UG_101_H1": 1,
           "Takoverdrag_CO_1_H1": 1,
           "Takoverdrag_PD_6_H1": 1
         }
@@ -3030,34 +3071,23 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 46,
-        "andel": 48,
-        "lanadeRutor": 27,
+        "traffar": 31,
+        "andel": 33,
+        "lanadeRutor": 45,
         "scener": 30,
         "matchadeScener": 28,
-        "uteslutnaScener": 8,
+        "uteslutnaScener": 17,
         "perFilm": {
           "CaraShellRoof_DK_CS_2_H1": 1,
           "Takoverdrag_RI_3_H1": 2,
           "CaraShellRoof_PD_5_H1": 3,
           "Takoverdrag_OB_1_H1": 7,
           "CaraShellRoof_OB_101_H1": 4,
-          "Takoverdrag_SP_4_H1": 7,
+          "Takoverdrag_SP_4_H1": 6,
           "CaraShellRoof_DK_PD_106_H1": 1,
           "Takoverdrag_RI_1_H1": 3,
           "Takoverdrag_PD_7_H1": 1,
           "Takoverdrag_CS_8_H1": 1,
-          "Takoverdrag_GT_8_H1": 1,
-          "CaraShellRoof_NO_GT_107_H1": 1,
-          "CaraShellRoof_DK_RI_103_H1": 1,
-          "CaraShellRoof_DK_PD_5_H1": 1,
-          "Takoverdrag_PD_3_H1": 2,
-          "Takoverdrag_PD_1_H1": 1,
-          "CaraShellRoof_PD_1_H1": 1,
-          "Takoverdrag_GT_5_H1": 1,
-          "Takoverdrag_PD_2_H1": 3,
-          "CaraShellRoof_US_PD_106_H1_FELSPRAK": 1,
-          "CaraShellRoof_NO_UG_101_H1": 1,
           "Takoverdrag_CO_1_H1": 1,
           "Takoverdrag_PD_6_H1": 1
         }
@@ -3121,28 +3151,28 @@
           "k": 2,
           "bokstav": "C",
           "rang": 2,
-          "derasT": 30.5,
-          "derasI": 61,
-          "egenT": 23.5,
-          "egenI": 47,
+          "derasT": 38,
+          "derasI": 76,
+          "egenT": 22,
+          "egenI": 44,
           "egenFil": "output/klipp/KD-2026-001/5-C-egen.jpg",
           "egenFilm": {
-            "id": "936761792816241",
-            "namn": "CaraShellRoof_PD_1_H1",
-            "skapad": "2026-09-11T14:55:23+0200",
-            "verksamhet": "CaraShell"
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
           },
-          "avstand": 0,
+          "avstand": 1,
           "stod": 2,
-          "derasHash": "3918191902012367",
-          "egenHash": "3918191902012367",
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b191b0b56",
           "scen": {
-            "nr": 20,
-            "tFran": 30.5,
-            "tTill": 31.5
+            "nr": 27,
+            "tFran": 36.5,
+            "tTill": 38.5
           },
           "derasFil": "output/klipp/KD-2026-001/5-C-deras.jpg",
-          "kontroll": 0
+          "kontroll": 1
         }
       ],
       "uteslutna": [
@@ -3236,7 +3266,7 @@
       "fron": [
         0
       ],
-      "lanadeRutor": 5,
+      "lanadeRutor": 12,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1379264000855257.mp4",
         "langd": 44.8,
@@ -3251,14 +3281,9 @@
           "CaraShellRoof_US_RI_101_H1"
         ],
         "perFilm": {
-          "CaraShellRoof_PD_1_H1": 2,
-          "CaraShellRoof_NO_PD_3": 1,
-          "Takoverdrag_PD_3_H1": 1,
-          "Takoverdrag_PD_1_H1": 1,
-          "CaraShellRoof_NO_PD_2": 1,
-          "Takoverdrag_TR_3_H1": 4,
           "CaraShellRoof_PD_5_H1": 2,
           "CaraShellRoof_US_PD_5_H1": 3,
+          "Takoverdrag_TR_3_H1": 3,
           "Takoverdrag_UG_1_H1": 1,
           "Takoverdrag_RI_1_H1": 6,
           "Takoverdrag_SP_4_H1": 7,
@@ -3294,21 +3319,16 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 64,
-        "andel": 72,
-        "lanadeRutor": 14,
+        "traffar": 57,
+        "andel": 64,
+        "lanadeRutor": 21,
         "scener": 24,
         "matchadeScener": 24,
-        "uteslutnaScener": 7,
+        "uteslutnaScener": 10,
         "perFilm": {
-          "CaraShellRoof_PD_1_H1": 2,
-          "CaraShellRoof_NO_PD_3": 1,
-          "Takoverdrag_PD_3_H1": 1,
-          "Takoverdrag_PD_1_H1": 1,
-          "CaraShellRoof_NO_PD_2": 1,
-          "Takoverdrag_TR_3_H1": 4,
           "CaraShellRoof_PD_5_H1": 2,
           "CaraShellRoof_US_PD_5_H1": 3,
+          "Takoverdrag_TR_3_H1": 3,
           "Takoverdrag_UG_1_H1": 1,
           "Takoverdrag_RI_1_H1": 6,
           "Takoverdrag_SP_4_H1": 7,
@@ -3510,9 +3530,11 @@
       "fel": null,
       "status": "bevisad",
       "fron": [
+        5.5,
+        6.5,
         0
       ],
-      "lanadeRutor": 8,
+      "lanadeRutor": 15,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1075928918391127.mp4",
         "langd": 38.5,
@@ -3522,19 +3544,12 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "CaraShellRoof_PD_3_H1",
-          "CaraShellRoof_NO_PD_2",
-          "Takoverdrag_SP_4_H1"
+          "Takoverdrag_GT_5_H1",
+          "Takoverdrag_SP_4_H1",
+          "Takoverdrag_UG_1_H1"
         ],
         "perFilm": {
-          "CaraShellRoof_DK_GT_1_H1": 2,
-          "CaraShellRoof_GT_2_H1": 1,
-          "CaraShellRoof_NO_G_2": 1,
-          "Takoverdrag_PD_3_H1": 2,
-          "CaraShellRoof_PD_3_H1": 1,
-          "CaraShellRoof_NO_PD_2": 1,
-          "Takoverdrag_GT_5_H1": 5,
-          "CaraShellRoof_NO_GT_105_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
           "CaraShellRoof_US_CS_1_H1": 1,
           "CaraShellRoof_DK_GT_105_H1": 1,
           "CaraShellRoof_DK_PD_104_H1": 1,
@@ -3560,21 +3575,14 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 49,
-        "andel": 64,
-        "lanadeRutor": 18,
+        "traffar": 36,
+        "andel": 47,
+        "lanadeRutor": 31,
         "scener": 21,
         "matchadeScener": 21,
-        "uteslutnaScener": 8,
+        "uteslutnaScener": 11,
         "perFilm": {
-          "CaraShellRoof_DK_GT_1_H1": 2,
-          "CaraShellRoof_GT_2_H1": 1,
-          "CaraShellRoof_NO_G_2": 1,
-          "Takoverdrag_PD_3_H1": 2,
-          "CaraShellRoof_PD_3_H1": 1,
-          "CaraShellRoof_NO_PD_2": 1,
-          "Takoverdrag_GT_5_H1": 5,
-          "CaraShellRoof_NO_GT_105_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
           "CaraShellRoof_US_CS_1_H1": 1,
           "CaraShellRoof_DK_GT_105_H1": 1,
           "CaraShellRoof_DK_PD_104_H1": 1,
@@ -3598,26 +3606,26 @@
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 2,
-          "derasT": 5.5,
-          "derasI": 11,
-          "egenT": 22.5,
-          "egenI": 45,
+          "rang": 3,
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 11,
+          "egenI": 22,
           "egenFil": "output/klipp/KD-2026-001/9-A-egen.jpg",
           "egenFilm": {
-            "id": "1605983741209099",
-            "namn": "CaraShellRoof_PD_3_H1",
-            "skapad": "2026-09-11T14:55:29+0200",
-            "verksamhet": "CaraShell"
+            "id": "1615028910329688",
+            "namn": "Takoverdrag_GT_5_H1",
+            "skapad": "2026-09-15T14:08:34+0200",
+            "verksamhet": "Bäverbutiken"
           },
-          "avstand": 2,
+          "avstand": 3,
           "stod": 2,
-          "derasHash": "e16de4183c3e3884",
-          "egenHash": "e12de4183c3e2884",
+          "derasHash": "c08fc12b0d008c80",
+          "egenHash": "c08fc12b0d80c480",
           "scen": {
-            "nr": 2,
-            "tFran": 5,
-            "tTill": 6
+            "nr": 5,
+            "tFran": 9.5,
+            "tTill": 10
           },
           "derasFil": "output/klipp/KD-2026-001/9-A-deras.jpg",
           "kontroll": 3
@@ -3626,38 +3634,11 @@
           "k": 1,
           "bokstav": "B",
           "rang": 0,
-          "derasT": 6.5,
-          "derasI": 13,
-          "egenT": 23.5,
-          "egenI": 47,
-          "egenFil": "output/klipp/KD-2026-001/9-B-egen.jpg",
-          "egenFilm": {
-            "id": "1695160671555902",
-            "namn": "CaraShellRoof_NO_PD_2",
-            "skapad": "2026-09-11T15:22:22+0200",
-            "verksamhet": "CaraShell"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "3918190102012367",
-          "egenHash": "3918190102012367",
-          "scen": {
-            "nr": 3,
-            "tFran": 6.5,
-            "tTill": 8
-          },
-          "derasFil": "output/klipp/KD-2026-001/9-B-deras.jpg",
-          "kontroll": 3
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 1,
           "derasT": 15,
           "derasI": 30,
           "egenT": 7.5,
           "egenI": 15,
-          "egenFil": "output/klipp/KD-2026-001/9-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/9-B-egen.jpg",
           "egenFilm": {
             "id": "1596124075334669",
             "namn": "Takoverdrag_SP_4_H1",
@@ -3673,8 +3654,35 @@
             "tFran": 14.5,
             "tTill": 15.5
           },
-          "derasFil": "output/klipp/KD-2026-001/9-C-deras.jpg",
+          "derasFil": "output/klipp/KD-2026-001/9-B-deras.jpg",
           "kontroll": 2
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 33.5,
+          "derasI": 67,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/9-C-egen.jpg",
+          "egenFilm": {
+            "id": "1629374438803173",
+            "namn": "Takoverdrag_UG_1_H1",
+            "skapad": "2026-09-16T06:25:29+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "7e990f8e8f88d070",
+          "egenHash": "7e990f8e8f80f074",
+          "scen": {
+            "nr": 20,
+            "tFran": 32.5,
+            "tTill": 38
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-C-deras.jpg",
+          "kontroll": 5
         }
       ],
       "uteslutna": [
@@ -3727,31 +3735,59 @@
           "derasFil": "output/klipp/KD-2026-001/9-lanat-2-deras.jpg"
         },
         {
-          "derasT": 10.5,
-          "derasI": 21,
-          "egenT": 12.5,
-          "egenI": 25,
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 22.5,
+          "egenI": 45,
           "egenFil": "output/klipp/KD-2026-001/9-lanat-3-egen.jpg",
           "egenFilm": {
-            "id": "1101144385596275",
-            "namn": "CaraShellRoof_DK_GT_104_H1",
-            "skapad": "2026-09-20T22:04:23+0200",
+            "id": "1605983741209099",
+            "namn": "CaraShellRoof_PD_3_H1",
+            "skapad": "2026-09-11T14:55:29+0200",
             "verksamhet": "CaraShell"
           },
-          "avstand": 4,
-          "stod": 0,
-          "derasHash": "7068d3307040e0e0",
-          "egenHash": "70e8d3303040f0f0",
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "e16de4183c3e3884",
+          "egenHash": "e12de4183c3e2884",
           "scen": {
-            "nr": 6,
-            "tFran": 10.5,
-            "tTill": 10.5
+            "nr": 2,
+            "tFran": 5,
+            "tTill": 6
           },
           "orsak": "lånat klipp — utesluten ruta i scenen",
           "derasFil": "output/klipp/KD-2026-001/9-lanat-3-deras.jpg"
         }
       ],
-      "kastade": []
+      "kastade": [
+        {
+          "k": 3,
+          "bokstav": "D",
+          "rang": 2,
+          "derasT": 26.5,
+          "derasI": 53,
+          "egenT": 19,
+          "egenI": 38,
+          "egenFil": null,
+          "egenFilm": {
+            "id": "1601642511625040",
+            "namn": "CaraShellRoof_DK_SP_104_H1",
+            "skapad": "2026-09-20T22:58:54+0200",
+            "verksamhet": "CaraShell"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "d434360f8fc0b0de",
+          "egenHash": "d434360f8fc0a89e",
+          "scen": {
+            "nr": 15,
+            "tFran": 26,
+            "tTill": 27
+          },
+          "kontroll": 3,
+          "orsak": "samma bild som paret deras 0:33 (11.7/255, gränsen 20)"
+        }
+      ]
     },
     "10": {
       "nr": 10,
@@ -4077,7 +4113,7 @@
         "filmerSenare": 36,
         "traffar": 40,
         "andel": 59,
-        "lanadeRutor": 12,
+        "lanadeRutor": 14,
         "scener": 20,
         "matchadeScener": 18,
         "uteslutnaScener": 3,
@@ -4303,7 +4339,7 @@
           "Takoverdrag_RI_1_H1": 3,
           "CaraShellRoof_NO_PD_106_H1": 1,
           "CaraShellRoof_NO_UG_101_H1": 3,
-          "Takoverdrag_SP_4_H1": 14,
+          "Takoverdrag_SP_4_H1": 13,
           "Takoverdrag_UG_1_H1": 1,
           "CaraShellRoof_NO_SP_104_H1": 2,
           "Takoverdrag_CS_3_H1": 1,
@@ -4328,9 +4364,9 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 58,
-        "andel": 61,
-        "lanadeRutor": 26,
+        "traffar": 57,
+        "andel": 60,
+        "lanadeRutor": 27,
         "scener": 27,
         "matchadeScener": 27,
         "uteslutnaScener": 12,
@@ -4342,7 +4378,7 @@
           "Takoverdrag_RI_1_H1": 3,
           "CaraShellRoof_NO_PD_106_H1": 1,
           "CaraShellRoof_NO_UG_101_H1": 3,
-          "Takoverdrag_SP_4_H1": 14,
+          "Takoverdrag_SP_4_H1": 13,
           "Takoverdrag_UG_1_H1": 1,
           "CaraShellRoof_NO_SP_104_H1": 2,
           "Takoverdrag_CS_3_H1": 1,
@@ -4551,7 +4587,6 @@
         ],
         "perFilm": {
           "Takoverdrag_GT_5_H1": 1,
-          "CaraShellRoof_GT_104_H1": 1,
           "CaraShellRoof_DK_SP_104_H1": 3,
           "CaraShellRoof_SP_104_H1": 1,
           "CaraShellRoof_NO_SP_104_H1": 1,
@@ -4578,15 +4613,14 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 40,
-        "andel": 53,
-        "lanadeRutor": 24,
+        "traffar": 39,
+        "andel": 51,
+        "lanadeRutor": 26,
         "scener": 20,
         "matchadeScener": 19,
-        "uteslutnaScener": 8,
+        "uteslutnaScener": 10,
         "perFilm": {
           "Takoverdrag_GT_5_H1": 1,
-          "CaraShellRoof_GT_104_H1": 1,
           "CaraShellRoof_DK_SP_104_H1": 3,
           "CaraShellRoof_SP_104_H1": 1,
           "CaraShellRoof_NO_SP_104_H1": 1,
@@ -4740,25 +4774,25 @@
           "derasFil": "output/klipp/KD-2026-001/18-lanat-2-deras.jpg"
         },
         {
-          "derasT": 12,
-          "derasI": 24,
-          "egenT": 12.5,
-          "egenI": 25,
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 14,
+          "egenI": 28,
           "egenFil": "output/klipp/KD-2026-001/18-lanat-3-egen.jpg",
           "egenFilm": {
-            "id": "1393647809607009",
-            "namn": "Takoverdrag_RI_1_H1",
-            "skapad": "2026-09-16T06:32:07+0200",
-            "verksamhet": "Bäverbutiken"
+            "id": "1061397679972242",
+            "namn": "CaraShellRoof_GT_104_H1",
+            "skapad": "2026-09-18T14:45:16+0200",
+            "verksamhet": "CaraShell"
           },
-          "avstand": 2,
+          "avstand": 5,
           "stod": 0,
-          "derasHash": "700effe49cc91870",
-          "egenHash": "700effe49ce91070",
+          "derasHash": "706cd3303030e0f0",
+          "egenHash": "70e8d3303000e4f0",
           "scen": {
-            "nr": 6,
-            "tFran": 10,
-            "tTill": 13.5
+            "nr": 2,
+            "tFran": 5,
+            "tTill": 5
           },
           "orsak": "lånat klipp — utesluten ruta i scenen",
           "derasFil": "output/klipp/KD-2026-001/18-lanat-3-deras.jpg"
@@ -5012,8 +5046,10 @@
       },
       "fel": null,
       "status": "bevisad",
-      "fron": [],
-      "lanadeRutor": 0,
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 6,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-881353884937989.mp4",
         "langd": 53.1,
@@ -5024,24 +5060,21 @@
         "senare": 36,
         "anvanda": [
           "IBC_PD_1_H2",
-          "IBC_GT_1_H2"
+          "IBC_PD_1_H3"
         ],
         "perFilm": {
-          "IBC_PD_1_H2": 39,
-          "IBC_PD_1_H1": 15,
-          "IBC_PD_1_H3": 16,
-          "IBC_SP_1_H3": 2,
-          "IBC_CS_1_H3": 1,
-          "IBC_GT_1_H3": 1,
-          "IBC_SP_1_H2": 5,
-          "IBC_GT_1_H2": 4,
+          "IBC_PD_1_H2": 25,
+          "IBC_PD_1_H1": 12,
+          "IBC_GT_1_H2": 2,
+          "IBC_SP_1_H2": 3,
           "IBC_PD_Extra": 4,
+          "IBC_PD_1_H3": 13,
           "IBC_SP_1_H1": 2,
-          "IBC_PD_11_H1": 1,
           "IBC_RI_1_H1": 1,
           "IBC_SP_5_H1": 2,
           "IBC_CO_2_H1": 1,
-          "IBC_PD_8_H1": 1
+          "IBC_PD_8_H1": 1,
+          "IBC_SP_1_H3": 1
         }
       },
       "statistik": {
@@ -5050,40 +5083,165 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 95,
-        "andel": 90,
-        "lanadeRutor": 0,
+        "traffar": 67,
+        "andel": 64,
+        "lanadeRutor": 29,
         "scener": 18,
         "matchadeScener": 17,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 11,
         "perFilm": {
-          "IBC_PD_1_H2": 39,
-          "IBC_PD_1_H1": 15,
-          "IBC_PD_1_H3": 16,
-          "IBC_SP_1_H3": 2,
-          "IBC_CS_1_H3": 1,
-          "IBC_GT_1_H3": 1,
-          "IBC_SP_1_H2": 5,
-          "IBC_GT_1_H2": 4,
+          "IBC_PD_1_H2": 25,
+          "IBC_PD_1_H1": 12,
+          "IBC_GT_1_H2": 2,
+          "IBC_SP_1_H2": 3,
           "IBC_PD_Extra": 4,
+          "IBC_PD_1_H3": 13,
           "IBC_SP_1_H1": 2,
-          "IBC_PD_11_H1": 1,
           "IBC_RI_1_H1": 1,
           "IBC_SP_5_H1": 2,
           "IBC_CO_2_H1": 1,
-          "IBC_PD_8_H1": 1
+          "IBC_PD_8_H1": 1,
+          "IBC_SP_1_H3": 1
         }
       },
       "val": [
         {
           "k": 0,
           "bokstav": "A",
+          "rang": 1,
+          "derasT": 25,
+          "derasI": 50,
+          "egenT": 25,
+          "egenI": 50,
+          "egenFil": "output/klipp/KD-2026-001/24-A-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "0c55f57435910312",
+          "egenHash": "0c45f57435910312",
+          "scen": {
+            "nr": 8,
+            "tFran": 23.5,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-A-deras.jpg",
+          "kontroll": 3
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 35.5,
+          "derasI": 71,
+          "egenT": 34,
+          "egenI": 68,
+          "egenFil": "output/klipp/KD-2026-001/24-B-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "5e6964b05cb15121",
+          "egenHash": "5e2964f05cb95121",
+          "scen": {
+            "nr": 12,
+            "tFran": 34,
+            "tTill": 37.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-B-deras.jpg",
+          "kontroll": 8
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
           "rang": 0,
+          "derasT": 50,
+          "derasI": 100,
+          "egenT": 20,
+          "egenI": 40,
+          "egenFil": "output/klipp/KD-2026-001/24-C-egen.jpg",
+          "egenFilm": {
+            "id": "2656978288031260",
+            "namn": "IBC_PD_1_H3",
+            "skapad": "2026-08-28T23:03:36+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "080cc56f07090e07",
+          "egenHash": "000cc56f07090e07",
+          "scen": {
+            "nr": 16,
+            "tFran": 47,
+            "tTill": 52
+          },
+          "derasFil": "output/klipp/KD-2026-001/24-C-deras.jpg",
+          "kontroll": 3
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/24-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "3162c3697471752d",
+          "egenHash": "316243697471752d",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/24-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 3,
+          "egenI": 6,
+          "egenFil": "output/klipp/KD-2026-001/24-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "8e98d0e373211c0f",
+          "egenHash": "8e98d4e373611c0f",
+          "scen": {
+            "nr": 1,
+            "tFran": 3,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/24-lanat-2-deras.jpg"
+        },
+        {
           "derasT": 8.5,
           "derasI": 17,
           "egenT": 8.5,
           "egenI": 17,
-          "egenFil": "output/klipp/KD-2026-001/24-A-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/24-lanat-3-egen.jpg",
           "egenFilm": {
             "id": "1872630750382247",
             "namn": "IBC_PD_1_H2",
@@ -5099,65 +5257,10 @@
             "tFran": 3.5,
             "tTill": 9.5
           },
-          "derasFil": "output/klipp/KD-2026-001/24-A-deras.jpg",
-          "kontroll": 0
-        },
-        {
-          "k": 1,
-          "bokstav": "B",
-          "rang": 2,
-          "derasT": 15.5,
-          "derasI": 31,
-          "egenT": 26.5,
-          "egenI": 53,
-          "egenFil": "output/klipp/KD-2026-001/24-B-egen.jpg",
-          "egenFilm": {
-            "id": "3302692703264106",
-            "namn": "IBC_GT_1_H2",
-            "skapad": "2026-08-28T23:08:07+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "3bb172cafa7832c4",
-          "egenHash": "3bb172cafa7832c4",
-          "scen": {
-            "nr": 5,
-            "tFran": 14,
-            "tTill": 16
-          },
-          "derasFil": "output/klipp/KD-2026-001/24-B-deras.jpg",
-          "kontroll": 4
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 1,
-          "derasT": 28.5,
-          "derasI": 57,
-          "egenT": 2,
-          "egenI": 4,
-          "egenFil": "output/klipp/KD-2026-001/24-C-egen.jpg",
-          "egenFilm": {
-            "id": "3302692703264106",
-            "namn": "IBC_GT_1_H2",
-            "skapad": "2026-08-28T23:08:07+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "88935071717147ac",
-          "egenHash": "88935071717147ac",
-          "scen": {
-            "nr": 10,
-            "tFran": 28,
-            "tTill": 31
-          },
-          "derasFil": "output/klipp/KD-2026-001/24-C-deras.jpg",
-          "kontroll": 2
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/24-lanat-3-deras.jpg"
         }
       ],
-      "uteslutna": [],
       "kastade": []
     },
     "25": {
@@ -5172,8 +5275,10 @@
       },
       "fel": null,
       "status": "bevisad",
-      "fron": [],
-      "lanadeRutor": 0,
+      "fron": [
+        0.03
+      ],
+      "lanadeRutor": 5,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1104713849178149.mp4",
         "langd": 44.5,
@@ -5183,22 +5288,22 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_GT_1_H1",
-          "IBC_PD_1_H3",
-          "IBC_PD_1_H1"
+          "IBC_PD_1_H1",
+          "IBC_SP_1_H3",
+          "IBC_PD_1_H2"
         ],
         "perFilm": {
-          "IBC_GT_1_H1": 4,
-          "IBC_PD_1_H1": 13,
-          "IBC_PD_1_H2": 11,
-          "IBC_PD_1_H3": 5,
+          "IBC_PD_1_H3": 3,
+          "IBC_PD_1_H1": 9,
+          "IBC_PD_1_H2": 9,
           "IBC_SP_1_H3": 8,
+          "IBC_GT_1_H1": 2,
           "IBC_PD_Extra": 3,
           "IBC_PD_8_H1": 1,
           "IBC_CS_9_H1": 1,
-          "IBC_SP_1_H2": 5,
+          "IBC_SP_1_H2": 3,
           "IBC_GT_1_H3": 1,
-          "IBC_GT_1_H2": 2
+          "IBC_GT_1_H2": 1
         }
       },
       "statistik": {
@@ -5207,90 +5312,36 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 54,
-        "andel": 61,
-        "lanadeRutor": 0,
+        "traffar": 41,
+        "andel": 47,
+        "lanadeRutor": 15,
         "scener": 12,
         "matchadeScener": 11,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 5,
         "perFilm": {
-          "IBC_GT_1_H1": 4,
-          "IBC_PD_1_H1": 13,
-          "IBC_PD_1_H2": 11,
-          "IBC_PD_1_H3": 5,
+          "IBC_PD_1_H3": 3,
+          "IBC_PD_1_H1": 9,
+          "IBC_PD_1_H2": 9,
           "IBC_SP_1_H3": 8,
+          "IBC_GT_1_H1": 2,
           "IBC_PD_Extra": 3,
           "IBC_PD_8_H1": 1,
           "IBC_CS_9_H1": 1,
-          "IBC_SP_1_H2": 5,
+          "IBC_SP_1_H2": 3,
           "IBC_GT_1_H3": 1,
-          "IBC_GT_1_H2": 2
+          "IBC_GT_1_H2": 1
         }
       },
       "val": [
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 1,
-          "derasT": 1,
-          "derasI": 2,
-          "egenT": 1,
-          "egenI": 2,
-          "egenFil": "output/klipp/KD-2026-001/25-A-egen.jpg",
-          "egenFilm": {
-            "id": "2474799873003152",
-            "namn": "IBC_GT_1_H1",
-            "skapad": "2026-08-28T23:07:01+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "3162e6e8a8601703",
-          "egenHash": "3162e6e8a8601703",
-          "scen": {
-            "nr": 0,
-            "tFran": 0,
-            "tTill": 2
-          },
-          "derasFil": "output/klipp/KD-2026-001/25-A-deras.jpg",
-          "kontroll": 0
-        },
-        {
-          "k": 1,
-          "bokstav": "B",
-          "rang": 2,
-          "derasT": 5,
-          "derasI": 10,
-          "egenT": 6.5,
-          "egenI": 13,
-          "egenFil": "output/klipp/KD-2026-001/25-B-egen.jpg",
-          "egenFilm": {
-            "id": "2656978288031260",
-            "namn": "IBC_PD_1_H3",
-            "skapad": "2026-08-28T23:03:36+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 1,
-          "stod": 2,
-          "derasHash": "98d3b0f1d1e03647",
-          "egenHash": "98d3b0f1d1f03647",
-          "scen": {
-            "nr": 1,
-            "tFran": 2.5,
-            "tTill": 6.5
-          },
-          "derasFil": "output/klipp/KD-2026-001/25-B-deras.jpg",
-          "kontroll": 3
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
           "rang": 0,
           "derasT": 8.5,
           "derasI": 17,
           "egenT": 12,
           "egenI": 24,
-          "egenFil": "output/klipp/KD-2026-001/25-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/25-A-egen.jpg",
           "egenFilm": {
             "id": "1367356292221497",
             "namn": "IBC_PD_1_H1",
@@ -5306,11 +5357,138 @@
             "tFran": 7,
             "tTill": 10.5
           },
-          "derasFil": "output/klipp/KD-2026-001/25-C-deras.jpg",
+          "derasFil": "output/klipp/KD-2026-001/25-A-deras.jpg",
           "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 12.5,
+          "derasI": 25,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/25-B-egen.jpg",
+          "egenFilm": {
+            "id": "3662907913873698",
+            "namn": "IBC_SP_1_H3",
+            "skapad": "2026-08-28T23:05:23+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "01521c9010500100",
+          "egenHash": "01529c1010500100",
+          "scen": {
+            "nr": 3,
+            "tFran": 11,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-001/25-B-deras.jpg",
+          "kontroll": 6
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 22.5,
+          "derasI": 45,
+          "egenT": 22,
+          "egenI": 44,
+          "egenFil": "output/klipp/KD-2026-001/25-C-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 0,
+          "derasHash": "8fea6828280c2522",
+          "egenHash": "8fea682828682522",
+          "scen": {
+            "nr": 6,
+            "tFran": 22.5,
+            "tTill": 26
+          },
+          "derasFil": "output/klipp/KD-2026-001/25-C-deras.jpg",
+          "kontroll": 7
         }
       ],
-      "uteslutna": [],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/25-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3162e6e8a8601703",
+          "egenHash": "3162e6e8a8601703",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/25-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/25-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "2656978288031260",
+            "namn": "IBC_PD_1_H3",
+            "skapad": "2026-08-28T23:03:36+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "98d3b0f1d1e03647",
+          "egenHash": "98d3b0f1d1f03647",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 6.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/25-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/25-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "936077119062272",
+            "namn": "IBC_SP_1_H2",
+            "skapad": "2026-08-28T23:04:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 1,
+          "derasHash": "0703030d09020303",
+          "egenHash": "0703030d09020303",
+          "scen": {
+            "nr": 4,
+            "tFran": 16.5,
+            "tTill": 21.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/25-lanat-3-deras.jpg"
+        }
+      ],
       "kastade": []
     },
     "26": {
@@ -5351,8 +5529,10 @@
       },
       "fel": null,
       "status": "bevisad",
-      "fron": [],
-      "lanadeRutor": 0,
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 5,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1656312872610738.mp4",
         "langd": 10.1,
@@ -5362,14 +5542,12 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_GT_1_H1",
           "IBC_PD_Extra"
         ],
         "perFilm": {
-          "IBC_GT_1_H1": 4,
-          "IBC_PD_Extra": 14,
-          "IBC_SP_1_H2": 1,
-          "IBC_PD_1_H1": 1
+          "IBC_PD_Extra": 11,
+          "IBC_PD_1_H1": 1,
+          "IBC_GT_1_H1": 1
         }
       },
       "statistik": {
@@ -5378,83 +5556,28 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 20,
-        "andel": 100,
-        "lanadeRutor": 0,
+        "traffar": 13,
+        "andel": 65,
+        "lanadeRutor": 7,
         "scener": 3,
         "matchadeScener": 3,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 2,
         "perFilm": {
-          "IBC_GT_1_H1": 4,
-          "IBC_PD_Extra": 14,
-          "IBC_SP_1_H2": 1,
-          "IBC_PD_1_H1": 1
+          "IBC_PD_Extra": 11,
+          "IBC_PD_1_H1": 1,
+          "IBC_GT_1_H1": 1
         }
       },
       "val": [
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 1,
-          "derasT": 1.5,
-          "derasI": 3,
-          "egenT": 27.5,
-          "egenI": 55,
-          "egenFil": "output/klipp/KD-2026-001/28-A-egen.jpg",
-          "egenFilm": {
-            "id": "2474799873003152",
-            "namn": "IBC_GT_1_H1",
-            "skapad": "2026-08-28T23:07:01+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "39b172dafa78b2c4",
-          "egenHash": "39b172dafa78b2c4",
-          "scen": {
-            "nr": 0,
-            "tFran": 0,
-            "tTill": 2
-          },
-          "derasFil": "output/klipp/KD-2026-001/28-A-deras.jpg",
-          "kontroll": 3
-        },
-        {
-          "k": 1,
-          "bokstav": "B",
-          "rang": 2,
-          "derasT": 3,
-          "derasI": 6,
-          "egenT": 29,
-          "egenI": 58,
-          "egenFil": "output/klipp/KD-2026-001/28-B-egen.jpg",
-          "egenFilm": {
-            "id": "2474799873003152",
-            "namn": "IBC_GT_1_H1",
-            "skapad": "2026-08-28T23:07:01+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 1,
-          "stod": 2,
-          "derasHash": "88935031717357ac",
-          "egenHash": "88935031717157ac",
-          "scen": {
-            "nr": 1,
-            "tFran": 2.5,
-            "tTill": 4.5
-          },
-          "derasFil": "output/klipp/KD-2026-001/28-B-deras.jpg",
-          "kontroll": 3
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
           "rang": 0,
           "derasT": 7.5,
           "derasI": 15,
           "egenT": 7.5,
           "egenI": 15,
-          "egenFil": "output/klipp/KD-2026-001/28-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/28-A-egen.jpg",
           "egenFilm": {
             "id": "1443169294347963",
             "namn": "IBC_PD_Extra",
@@ -5470,11 +5593,60 @@
             "tFran": 5,
             "tTill": 9.5
           },
-          "derasFil": "output/klipp/KD-2026-001/28-C-deras.jpg",
+          "derasFil": "output/klipp/KD-2026-001/28-A-deras.jpg",
           "kontroll": 4
         }
       ],
-      "uteslutna": [],
+      "uteslutna": [
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 27.5,
+          "egenI": 55,
+          "egenFil": "output/klipp/KD-2026-001/28-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "39b172dafa78b2c4",
+          "egenHash": "39b172dafa78b2c4",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/28-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 29,
+          "egenI": 58,
+          "egenFil": "output/klipp/KD-2026-001/28-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "88935031717357ac",
+          "egenHash": "88935031717157ac",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/28-lanat-2-deras.jpg"
+        }
+      ],
       "kastade": []
     },
     "29": {
@@ -5489,8 +5661,10 @@
       },
       "fel": null,
       "status": "bevisad",
-      "fron": [],
-      "lanadeRutor": 0,
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 3,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-2111950559399908.mp4",
         "langd": 38.8,
@@ -5500,23 +5674,19 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_CS_1_H3"
+          "IBC_CS_1_H3",
+          "IBC_GT_4_H1"
         ],
         "perFilm": {
-          "IBC_CS_1_H3": 30,
-          "IBC_CS_1_H2": 1,
-          "IBC_SP_1_H3": 1,
-          "IBC_PD_11_H1": 4,
-          "IBC_SP_1_H1": 1,
-          "IBC_PD_1_H1": 5,
-          "IBC_GT_1_H2": 1,
+          "IBC_CS_1_H3": 19,
           "IBC_SP_1_H2": 3,
           "IBC_PD_1_H2": 7,
           "IBC_CO_2_H1": 2,
           "IBC_PD_1_H3": 1,
           "IBC_PD_Extra": 1,
           "IBC_PD_8_H1": 1,
-          "IBC_RI_1_H1": 1,
+          "IBC_PD_11_H1": 3,
+          "IBC_PD_1_H1": 4,
           "IBC_SP_3_H1": 3,
           "IBC_GT_4_H1": 5,
           "IBC_PD_6_H2": 1,
@@ -5530,27 +5700,22 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 70,
-        "andel": 93,
-        "lanadeRutor": 0,
+        "traffar": 52,
+        "andel": 69,
+        "lanadeRutor": 20,
         "scener": 15,
         "matchadeScener": 14,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 8,
         "perFilm": {
-          "IBC_CS_1_H3": 30,
-          "IBC_CS_1_H2": 1,
-          "IBC_SP_1_H3": 1,
-          "IBC_PD_11_H1": 4,
-          "IBC_SP_1_H1": 1,
-          "IBC_PD_1_H1": 5,
-          "IBC_GT_1_H2": 1,
+          "IBC_CS_1_H3": 19,
           "IBC_SP_1_H2": 3,
           "IBC_PD_1_H2": 7,
           "IBC_CO_2_H1": 2,
           "IBC_PD_1_H3": 1,
           "IBC_PD_Extra": 1,
           "IBC_PD_8_H1": 1,
-          "IBC_RI_1_H1": 1,
+          "IBC_PD_11_H1": 3,
+          "IBC_PD_1_H1": 4,
           "IBC_SP_3_H1": 3,
           "IBC_GT_4_H1": 5,
           "IBC_PD_6_H2": 1,
@@ -5562,7 +5727,7 @@
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 2,
+          "rang": 1,
           "derasT": 4,
           "derasI": 8,
           "egenT": 4,
@@ -5616,12 +5781,86 @@
         {
           "k": 2,
           "bokstav": "C",
-          "rang": 1,
+          "rang": 2,
+          "derasT": 35,
+          "derasI": 70,
+          "egenT": 10,
+          "egenI": 20,
+          "egenFil": "output/klipp/KD-2026-001/29-C-egen.jpg",
+          "egenFilm": {
+            "id": "990453767422328",
+            "namn": "IBC_GT_4_H1",
+            "skapad": "2026-09-09T13:32:32+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "f10102e3c8c034dc",
+          "egenHash": "f10102e3c86034dc",
+          "scen": {
+            "nr": 13,
+            "tFran": 34,
+            "tTill": 36
+          },
+          "derasFil": "output/klipp/KD-2026-001/29-C-deras.jpg",
+          "kontroll": 6
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/29-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1763664158107031",
+            "namn": "IBC_CS_1_H3",
+            "skapad": "2026-08-28T23:06:22+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 4,
+          "stod": 2,
+          "derasHash": "71858243c0c094d8",
+          "egenHash": "71858646c0e094d8",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/29-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/29-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1763664158107031",
+            "namn": "IBC_CS_1_H3",
+            "skapad": "2026-08-28T23:06:22+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "71858c4acdca95d8",
+          "egenHash": "71858c4acdea95d8",
+          "scen": {
+            "nr": 1,
+            "tFran": 1.5,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/29-lanat-2-deras.jpg"
+        },
+        {
           "derasT": 14.5,
           "derasI": 29,
           "egenT": 14.5,
           "egenI": 29,
-          "egenFil": "output/klipp/KD-2026-001/29-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/29-lanat-3-egen.jpg",
           "egenFilm": {
             "id": "1763664158107031",
             "namn": "IBC_CS_1_H3",
@@ -5637,11 +5876,10 @@
             "tFran": 13.5,
             "tTill": 15
           },
-          "derasFil": "output/klipp/KD-2026-001/29-C-deras.jpg",
-          "kontroll": 2
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/29-lanat-3-deras.jpg"
         }
       ],
-      "uteslutna": [],
       "kastade": []
     },
     "30": {
@@ -5656,8 +5894,10 @@
       },
       "fel": null,
       "status": "bevisad",
-      "fron": [],
-      "lanadeRutor": 0,
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 7,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-28404529475856242.mp4",
         "langd": 26.1,
@@ -5667,24 +5907,22 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_SP_3_H1",
-          "IBC_GT_1_H3"
+          "IBC_GT_1_H3",
+          "IBC_GT_4_H1"
         ],
         "perFilm": {
-          "IBC_SP_3_H1": 6,
-          "IBC_PD_4_H3": 3,
-          "IBC_PD_3_H1": 2,
-          "IBC_PD_6_H2": 2,
           "IBC_GT_5_H1": 1,
           "IBC_SP_1_H3": 1,
           "IBC_PD_1_H3": 1,
           "IBC_GT_1_H3": 3,
           "IBC_GT_1_H1": 1,
           "IBC_PD_1_H2": 3,
-          "IBC_SP_1_H2": 4,
+          "IBC_SP_1_H2": 3,
           "IBC_GT_1_H2": 1,
           "IBC_GT_4_H1": 4,
+          "IBC_PD_6_H2": 1,
           "IBC_GT_3_H1": 1,
+          "IBC_PD_3_H1": 1,
           "IBC_PD_4_H1": 1
         }
       },
@@ -5694,27 +5932,25 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 34,
-        "andel": 65,
-        "lanadeRutor": 2,
+        "traffar": 22,
+        "andel": 42,
+        "lanadeRutor": 16,
         "scener": 9,
         "matchadeScener": 7,
-        "uteslutnaScener": 1,
+        "uteslutnaScener": 3,
         "perFilm": {
-          "IBC_SP_3_H1": 6,
-          "IBC_PD_4_H3": 3,
-          "IBC_PD_3_H1": 2,
-          "IBC_PD_6_H2": 2,
           "IBC_GT_5_H1": 1,
           "IBC_SP_1_H3": 1,
           "IBC_PD_1_H3": 1,
           "IBC_GT_1_H3": 3,
           "IBC_GT_1_H1": 1,
           "IBC_PD_1_H2": 3,
-          "IBC_SP_1_H2": 4,
+          "IBC_SP_1_H2": 3,
           "IBC_GT_1_H2": 1,
           "IBC_GT_4_H1": 4,
+          "IBC_PD_6_H2": 1,
           "IBC_GT_3_H1": 1,
+          "IBC_PD_3_H1": 1,
           "IBC_PD_4_H1": 1
         }
       },
@@ -5723,65 +5959,11 @@
           "k": 0,
           "bokstav": "A",
           "rang": 0,
-          "derasT": 1.5,
-          "derasI": 3,
-          "egenT": 0.5,
-          "egenI": 1,
-          "egenFil": "output/klipp/KD-2026-001/30-A-egen.jpg",
-          "egenFilm": {
-            "id": "1049024191076191",
-            "namn": "IBC_SP_3_H1",
-            "skapad": "2026-09-09T14:02:18+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "c7ce0607070b64c5",
-          "egenHash": "c7ce0607070b64c5",
-          "scen": {
-            "nr": 0,
-            "tFran": 0,
-            "tTill": 3
-          },
-          "derasFil": "output/klipp/KD-2026-001/30-A-deras.jpg",
-          "kontroll": 0
-        },
-        {
-          "k": 1,
-          "bokstav": "B",
-          "rang": 2,
-          "derasT": 4,
-          "derasI": 8,
-          "egenT": 4,
-          "egenI": 8,
-          "egenFil": "output/klipp/KD-2026-001/30-B-egen.jpg",
-          "egenFilm": {
-            "id": "1049024191076191",
-            "namn": "IBC_SP_3_H1",
-            "skapad": "2026-09-09T14:02:18+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 2,
-          "stod": 2,
-          "derasHash": "95a622cc43cfc1a0",
-          "egenHash": "95a602cc43cdc1a0",
-          "scen": {
-            "nr": 1,
-            "tFran": 3.5,
-            "tTill": 5
-          },
-          "derasFil": "output/klipp/KD-2026-001/30-B-deras.jpg",
-          "kontroll": 3
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 1,
           "derasT": 7,
           "derasI": 14,
           "egenT": 42.5,
           "egenI": 85,
-          "egenFil": "output/klipp/KD-2026-001/30-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/30-A-egen.jpg",
           "egenFilm": {
             "id": "1483812933780790",
             "namn": "IBC_GT_1_H3",
@@ -5797,17 +5979,119 @@
             "tFran": 6.5,
             "tTill": 9.5
           },
-          "derasFil": "output/klipp/KD-2026-001/30-C-deras.jpg",
+          "derasFil": "output/klipp/KD-2026-001/30-A-deras.jpg",
           "kontroll": 2
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 22.5,
+          "derasI": 45,
+          "egenT": 10,
+          "egenI": 20,
+          "egenFil": "output/klipp/KD-2026-001/30-B-egen.jpg",
+          "egenFilm": {
+            "id": "990453767422328",
+            "namn": "IBC_GT_4_H1",
+            "skapad": "2026-09-09T13:32:32+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "f10100c3c84034dc",
+          "egenHash": "f10102e3c86034dc",
+          "scen": {
+            "nr": 7,
+            "tFran": 22,
+            "tTill": 23
+          },
+          "derasFil": "output/klipp/KD-2026-001/30-B-deras.jpg",
+          "kontroll": 6
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 24.5,
+          "derasI": 49,
+          "egenT": 3.5,
+          "egenI": 7,
+          "egenFil": "output/klipp/KD-2026-001/30-C-egen.jpg",
+          "egenFilm": {
+            "id": "990453767422328",
+            "namn": "IBC_GT_4_H1",
+            "skapad": "2026-09-09T13:32:32+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 1,
+          "derasHash": "e808c0555171332a",
+          "egenHash": "e800c4555171332a",
+          "scen": {
+            "nr": 8,
+            "tFran": 23.5,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/30-C-deras.jpg",
+          "kontroll": 5
         }
       ],
       "uteslutna": [
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/30-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c7ce0607070b64c5",
+          "egenHash": "c7ce0607070b64c5",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/30-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/30-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "95a622cc43cfc1a0",
+          "egenHash": "95a602cc43cdc1a0",
+          "scen": {
+            "nr": 1,
+            "tFran": 3.5,
+            "tTill": 5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/30-lanat-2-deras.jpg"
+        },
         {
           "derasT": 14,
           "derasI": 28,
           "egenT": 14.5,
           "egenI": 29,
-          "egenFil": "output/klipp/KD-2026-001/30-lanat-1-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/30-lanat-3-egen.jpg",
           "egenFilm": {
             "id": "936077119062272",
             "namn": "IBC_SP_1_H2",
@@ -5824,7 +6108,7 @@
             "tTill": 15
           },
           "orsak": "lånat klipp — utesluten ruta i scenen",
-          "derasFil": "output/klipp/KD-2026-001/30-lanat-1-deras.jpg"
+          "derasFil": "output/klipp/KD-2026-001/30-lanat-3-deras.jpg"
         }
       ],
       "kastade": []
@@ -5842,7 +6126,7 @@
       "fel": null,
       "status": "bevisad",
       "fron": [],
-      "lanadeRutor": 0,
+      "lanadeRutor": 6,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-2570589666792338.mp4",
         "langd": 26.9,
@@ -5852,19 +6136,17 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_PD_3_H1",
-          "IBC_SP_3_H1",
+          "IBC_GT_3_H1",
           "IBC_PD_1_H2"
         ],
         "perFilm": {
-          "IBC_CS_5_H1": 5,
-          "IBC_SP_3_H1": 5,
-          "IBC_PD_3_H1": 5,
-          "IBC_PD_4_H3": 1,
-          "IBC_GT_3_H1": 4,
-          "IBC_GT_4_H1": 2,
+          "IBC_CS_5_H1": 2,
+          "IBC_SP_3_H1": 1,
+          "IBC_GT_3_H1": 3,
+          "IBC_GT_4_H1": 1,
           "IBC_PD_4_H1": 2,
           "IBC_PD_4_H2": 2,
+          "IBC_PD_3_H1": 1,
           "IBC_PD_6_H2": 1,
           "IBC_SP_1_H2": 2,
           "IBC_SP_5_H1": 2,
@@ -5878,21 +6160,20 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 45,
-        "andel": 87,
-        "lanadeRutor": 0,
+        "traffar": 31,
+        "andel": 60,
+        "lanadeRutor": 15,
         "scener": 11,
         "matchadeScener": 11,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 4,
         "perFilm": {
-          "IBC_CS_5_H1": 5,
-          "IBC_SP_3_H1": 5,
-          "IBC_PD_3_H1": 5,
-          "IBC_PD_4_H3": 1,
-          "IBC_GT_3_H1": 4,
-          "IBC_GT_4_H1": 2,
+          "IBC_CS_5_H1": 2,
+          "IBC_SP_3_H1": 1,
+          "IBC_GT_3_H1": 3,
+          "IBC_GT_4_H1": 1,
           "IBC_PD_4_H1": 2,
           "IBC_PD_4_H2": 2,
+          "IBC_PD_3_H1": 1,
           "IBC_PD_6_H2": 1,
           "IBC_SP_1_H2": 2,
           "IBC_SP_5_H1": 2,
@@ -5904,26 +6185,26 @@
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 1,
-          "derasT": 2.5,
-          "derasI": 5,
+          "rang": 2,
+          "derasT": 9.5,
+          "derasI": 19,
           "egenT": 7.5,
           "egenI": 15,
           "egenFil": "output/klipp/KD-2026-001/31-A-egen.jpg",
           "egenFilm": {
-            "id": "1780621779948363",
-            "namn": "IBC_PD_3_H1",
-            "skapad": "2026-09-05T12:05:49+0200",
+            "id": "1599422584518727",
+            "namn": "IBC_GT_3_H1",
+            "skapad": "2026-09-05T12:09:47+0200",
             "verksamhet": "Bäverbutiken"
           },
-          "avstand": 1,
+          "avstand": 3,
           "stod": 2,
-          "derasHash": "20c8905511713123",
-          "egenHash": "20c8905511717123",
+          "derasHash": "7072f412307836f7",
+          "egenHash": "707274123178b6f7",
           "scen": {
-            "nr": 2,
-            "tFran": 2.5,
-            "tTill": 3.5
+            "nr": 5,
+            "tFran": 9,
+            "tTill": 11
           },
           "derasFil": "output/klipp/KD-2026-001/31-A-deras.jpg",
           "kontroll": 3
@@ -5932,38 +6213,11 @@
           "k": 1,
           "bokstav": "B",
           "rang": 0,
-          "derasT": 5,
-          "derasI": 10,
-          "egenT": 0.5,
-          "egenI": 1,
-          "egenFil": "output/klipp/KD-2026-001/31-B-egen.jpg",
-          "egenFilm": {
-            "id": "1049024191076191",
-            "namn": "IBC_SP_3_H1",
-            "skapad": "2026-09-09T14:02:18+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "c7ce0607070b64c5",
-          "egenHash": "c7ce0607070b64c5",
-          "scen": {
-            "nr": 3,
-            "tFran": 4,
-            "tTill": 6.5
-          },
-          "derasFil": "output/klipp/KD-2026-001/31-B-deras.jpg",
-          "kontroll": 1
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 2,
           "derasT": 18,
           "derasI": 36,
           "egenT": 33.5,
           "egenI": 67,
-          "egenFil": "output/klipp/KD-2026-001/31-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/31-B-egen.jpg",
           "egenFilm": {
             "id": "1872630750382247",
             "namn": "IBC_PD_1_H2",
@@ -5979,11 +6233,111 @@
             "tFran": 17,
             "tTill": 20.5
           },
-          "derasFil": "output/klipp/KD-2026-001/31-C-deras.jpg",
+          "derasFil": "output/klipp/KD-2026-001/31-B-deras.jpg",
           "kontroll": 3
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 24.5,
+          "derasI": 49,
+          "egenT": 40,
+          "egenI": 80,
+          "egenFil": "output/klipp/KD-2026-001/31-C-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "00803089c3c89869",
+          "egenHash": "1080208983c89869",
+          "scen": {
+            "nr": 10,
+            "tFran": 21,
+            "tTill": 26
+          },
+          "derasFil": "output/klipp/KD-2026-001/31-C-deras.jpg",
+          "kontroll": 4
         }
       ],
-      "uteslutna": [],
+      "uteslutna": [
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/31-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1780621779948363",
+            "namn": "IBC_PD_3_H1",
+            "skapad": "2026-09-05T12:05:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 1,
+          "derasHash": "20c8905511717123",
+          "egenHash": "20c8905511717123",
+          "scen": {
+            "nr": 1,
+            "tFran": 1.5,
+            "tTill": 2
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/31-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-001/31-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1780621779948363",
+            "namn": "IBC_PD_3_H1",
+            "skapad": "2026-09-05T12:05:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "20c8905511713123",
+          "egenHash": "20c8905511717123",
+          "scen": {
+            "nr": 2,
+            "tFran": 2.5,
+            "tTill": 3.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/31-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/31-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1049024191076191",
+            "namn": "IBC_SP_3_H1",
+            "skapad": "2026-09-09T14:02:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c7ce0607070b64c5",
+          "egenHash": "c7ce0607070b64c5",
+          "scen": {
+            "nr": 3,
+            "tFran": 4,
+            "tTill": 6.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/31-lanat-3-deras.jpg"
+        }
+      ],
       "kastade": []
     },
     "32": {
@@ -6016,7 +6370,6 @@
         "perFilm": {
           "IBC_PD_4_H2": 8,
           "IBC_PD_4_H1": 9,
-          "IBC_SP_3_H1": 5,
           "IBC_GT_3_H1": 2,
           "IBC_GT_4_H1": 7,
           "IBC_PD_3_H1": 5,
@@ -6027,6 +6380,7 @@
           "IBC_GT_1_H3": 2,
           "IBC_PD_8_H1": 1,
           "IBC_CS_5_H1": 1,
+          "IBC_SP_3_H1": 4,
           "IBC_PD_6_H2": 1
         }
       },
@@ -6036,16 +6390,15 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 46,
-        "andel": 98,
-        "lanadeRutor": 0,
+        "traffar": 45,
+        "andel": 96,
+        "lanadeRutor": 1,
         "scener": 9,
         "matchadeScener": 9,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 1,
         "perFilm": {
           "IBC_PD_4_H2": 8,
           "IBC_PD_4_H1": 9,
-          "IBC_SP_3_H1": 5,
           "IBC_GT_3_H1": 2,
           "IBC_GT_4_H1": 7,
           "IBC_PD_3_H1": 5,
@@ -6056,6 +6409,7 @@
           "IBC_GT_1_H3": 2,
           "IBC_PD_8_H1": 1,
           "IBC_CS_5_H1": 1,
+          "IBC_SP_3_H1": 4,
           "IBC_PD_6_H2": 1
         }
       },
@@ -6142,7 +6496,32 @@
           "kontroll": 5
         }
       ],
-      "uteslutna": [],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/32-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "973184302489895",
+            "namn": "IBC_PD_4_H1",
+            "skapad": "2026-09-09T02:14:52+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "b1a662cc43cdc1a0",
+          "egenHash": "b1a642cc43c5c1a0",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/32-lanat-1-deras.jpg"
+        }
+      ],
       "kastade": []
     },
     "33": {
@@ -6158,7 +6537,7 @@
       "fel": null,
       "status": "bevisad",
       "fron": [],
-      "lanadeRutor": 0,
+      "lanadeRutor": 15,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1434217218630153.mp4",
         "langd": 49.2,
@@ -6168,22 +6547,17 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
+          "IBC_PD_Extra",
           "IBC_SP_1_H1"
         ],
         "perFilm": {
-          "IBC_SP_1_H1": 52,
-          "IBC_CO_2_H1": 1,
+          "IBC_SP_1_H1": 16,
           "IBC_SP_1_H2": 8,
-          "IBC_GT_1_H2": 4,
-          "IBC_SP_1_H3": 3,
-          "IBC_PD_1_H1": 6,
-          "IBC_PD_1_H2": 7,
+          "IBC_PD_1_H1": 2,
+          "IBC_PD_1_H2": 2,
           "IBC_PD_Extra": 6,
           "IBC_SP_5_H1": 1,
-          "IBC_CS_9_H1": 1,
-          "IBC_RI_1_H1": 1,
-          "IBC_GT_1_H1": 1,
-          "IBC_GT_1_H3": 3
+          "IBC_SP_1_H3": 1
         }
       },
       "statistik": {
@@ -6192,52 +6566,46 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 94,
-        "andel": 96,
-        "lanadeRutor": 0,
+        "traffar": 36,
+        "andel": 37,
+        "lanadeRutor": 60,
         "scener": 17,
         "matchadeScener": 17,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 15,
         "perFilm": {
-          "IBC_SP_1_H1": 52,
-          "IBC_CO_2_H1": 1,
+          "IBC_SP_1_H1": 16,
           "IBC_SP_1_H2": 8,
-          "IBC_GT_1_H2": 4,
-          "IBC_SP_1_H3": 3,
-          "IBC_PD_1_H1": 6,
-          "IBC_PD_1_H2": 7,
+          "IBC_PD_1_H1": 2,
+          "IBC_PD_1_H2": 2,
           "IBC_PD_Extra": 6,
           "IBC_SP_5_H1": 1,
-          "IBC_CS_9_H1": 1,
-          "IBC_RI_1_H1": 1,
-          "IBC_GT_1_H1": 1,
-          "IBC_GT_1_H3": 3
+          "IBC_SP_1_H3": 1
         }
       },
       "val": [
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 2,
-          "derasT": 17.5,
-          "derasI": 35,
-          "egenT": 17.5,
-          "egenI": 35,
+          "rang": 0,
+          "derasT": 33.5,
+          "derasI": 67,
+          "egenT": 6,
+          "egenI": 12,
           "egenFil": "output/klipp/KD-2026-001/33-A-egen.jpg",
           "egenFilm": {
-            "id": "2443648059774481",
-            "namn": "IBC_SP_1_H1",
-            "skapad": "2026-08-28T23:04:38+0200",
+            "id": "1443169294347963",
+            "namn": "IBC_PD_Extra",
+            "skapad": "2026-08-28T23:03:59+0200",
             "verksamhet": "Bäverbutiken"
           },
           "avstand": 1,
           "stod": 2,
-          "derasHash": "1a0c9c6dd741020e",
-          "egenHash": "1b0c9c6dd741020e",
+          "derasHash": "c99a1a62ec72fa7d",
+          "egenHash": "c19a1a62ec72fa7d",
           "scen": {
-            "nr": 6,
-            "tFran": 13.5,
-            "tTill": 18
+            "nr": 12,
+            "tFran": 32.5,
+            "tTill": 34.5
           },
           "derasFil": "output/klipp/KD-2026-001/33-A-deras.jpg",
           "kontroll": 3
@@ -6246,10 +6614,10 @@
           "k": 1,
           "bokstav": "B",
           "rang": 1,
-          "derasT": 20,
-          "derasI": 40,
-          "egenT": 20,
-          "egenI": 40,
+          "derasT": 37.5,
+          "derasI": 75,
+          "egenT": 27.5,
+          "egenI": 55,
           "egenFil": "output/klipp/KD-2026-001/33-B-egen.jpg",
           "egenFilm": {
             "id": "2443648059774481",
@@ -6257,47 +6625,93 @@
             "skapad": "2026-08-28T23:04:38+0200",
             "verksamhet": "Bäverbutiken"
           },
-          "avstand": 0,
+          "avstand": 3,
           "stod": 2,
-          "derasHash": "3bb172dafa703284",
-          "egenHash": "3bb172dafa703284",
+          "derasHash": "44b858dbc14e0d0f",
+          "egenHash": "44b858cbc146050f",
           "scen": {
-            "nr": 7,
-            "tFran": 18.5,
-            "tTill": 20.5
+            "nr": 13,
+            "tFran": 35,
+            "tTill": 37.5
           },
           "derasFil": "output/klipp/KD-2026-001/33-B-deras.jpg",
           "kontroll": 2
-        },
+        }
+      ],
+      "uteslutna": [
         {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 0,
-          "derasT": 42,
-          "derasI": 84,
-          "egenT": 32,
-          "egenI": 64,
-          "egenFil": "output/klipp/KD-2026-001/33-C-egen.jpg",
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/33-lanat-1-egen.jpg",
           "egenFilm": {
             "id": "2443648059774481",
             "namn": "IBC_SP_1_H1",
             "skapad": "2026-08-28T23:04:38+0200",
             "verksamhet": "Bäverbutiken"
           },
-          "avstand": 0,
+          "avstand": 2,
           "stod": 2,
-          "derasHash": "3162e6653178771d",
-          "egenHash": "3162e6653178771d",
+          "derasHash": "60312ea4a24079e0",
+          "egenHash": "60312ea4a26069e0",
           "scen": {
-            "nr": 14,
-            "tFran": 38,
-            "tTill": 42.5
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
           },
-          "derasFil": "output/klipp/KD-2026-001/33-C-deras.jpg",
-          "kontroll": 2
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/33-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/33-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "2443648059774481",
+            "namn": "IBC_SP_1_H1",
+            "skapad": "2026-08-28T23:04:38+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "71848348cbc995d8",
+          "egenHash": "71848b48cbc995d8",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/33-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 4.5,
+          "egenI": 9,
+          "egenFil": "output/klipp/KD-2026-001/33-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "936077119062272",
+            "namn": "IBC_SP_1_H2",
+            "skapad": "2026-08-28T23:04:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "da42dce9eae8ee20",
+          "egenHash": "da4adce9eae8ee20",
+          "scen": {
+            "nr": 2,
+            "tFran": 5.5,
+            "tTill": 8
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/33-lanat-3-deras.jpg"
         }
       ],
-      "uteslutna": [],
       "kastade": []
     },
     "34": {
@@ -6337,25 +6751,21 @@
         "senare": 36,
         "anvanda": [
           "IBC_PD_4_H1",
-          "IBC_PD_1_H1",
-          "IBC_GT_1_H2"
+          "IBC_GT_3_H1",
+          "IBC_SP_1_H2"
         ],
         "perFilm": {
           "IBC_GT_3_H1": 5,
           "IBC_GT_5_H1": 1,
           "IBC_PD_4_H1": 7,
-          "IBC_SP_3_H1": 1,
           "IBC_PD_4_H2": 1,
           "IBC_GT_4_H1": 3,
           "IBC_PD_3_H1": 1,
           "IBC_CS_5_H1": 1,
-          "IBC_SP_1_H3": 2,
-          "IBC_GT_1_H2": 3,
-          "IBC_PD_1_H1": 1,
-          "IBC_PD_1_H3": 2,
-          "IBC_PD_Extra": 5,
           "IBC_SP_1_H2": 3,
           "IBC_SP_5_H1": 2,
+          "IBC_PD_Extra": 4,
+          "IBC_GT_1_H2": 1,
           "IBC_RI_1_H1": 2,
           "IBC_PD_1_H2": 1
         }
@@ -6366,28 +6776,24 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 41,
-        "andel": 69,
-        "lanadeRutor": 0,
+        "traffar": 32,
+        "andel": 54,
+        "lanadeRutor": 10,
         "scener": 10,
         "matchadeScener": 9,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 4,
         "perFilm": {
           "IBC_GT_3_H1": 5,
           "IBC_GT_5_H1": 1,
           "IBC_PD_4_H1": 7,
-          "IBC_SP_3_H1": 1,
           "IBC_PD_4_H2": 1,
           "IBC_GT_4_H1": 3,
           "IBC_PD_3_H1": 1,
           "IBC_CS_5_H1": 1,
-          "IBC_SP_1_H3": 2,
-          "IBC_GT_1_H2": 3,
-          "IBC_PD_1_H1": 1,
-          "IBC_PD_1_H3": 2,
-          "IBC_PD_Extra": 5,
           "IBC_SP_1_H2": 3,
           "IBC_SP_5_H1": 2,
+          "IBC_PD_Extra": 4,
+          "IBC_GT_1_H2": 1,
           "IBC_RI_1_H1": 2,
           "IBC_PD_1_H2": 1
         }
@@ -6396,7 +6802,7 @@
         {
           "k": 0,
           "bokstav": "A",
-          "rang": 2,
+          "rang": 0,
           "derasT": 1.5,
           "derasI": 3,
           "egenT": 1,
@@ -6423,12 +6829,89 @@
         {
           "k": 1,
           "bokstav": "B",
-          "rang": 0,
+          "rang": 2,
+          "derasT": 7,
+          "derasI": 14,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/35-B-egen.jpg",
+          "egenFilm": {
+            "id": "1599422584518727",
+            "namn": "IBC_GT_3_H1",
+            "skapad": "2026-09-05T12:09:47+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 1,
+          "derasHash": "e800c0511371333a",
+          "egenHash": "e800c0511131332a",
+          "scen": {
+            "nr": 3,
+            "tFran": 7,
+            "tTill": 8.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/35-B-deras.jpg",
+          "kontroll": 6
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 16,
+          "derasI": 32,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-001/35-C-egen.jpg",
+          "egenFilm": {
+            "id": "936077119062272",
+            "namn": "IBC_SP_1_H2",
+            "skapad": "2026-08-28T23:04:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 4,
+          "stod": 2,
+          "derasHash": "81078505ddf2f27d",
+          "egenHash": "91078707dde2f27d",
+          "scen": {
+            "nr": 7,
+            "tFran": 16,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/35-C-deras.jpg",
+          "kontroll": 7
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 6,
+          "derasI": 12,
+          "egenT": 5,
+          "egenI": 10,
+          "egenFil": "output/klipp/KD-2026-001/35-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1080771684433274",
+            "namn": "IBC_PD_4_H2",
+            "skapad": "2026-09-09T02:15:53+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 3,
+          "stod": 2,
+          "derasHash": "b5a404cc3e1e4be0",
+          "egenHash": "b5b404cc3e1e4fa0",
+          "scen": {
+            "nr": 2,
+            "tFran": 3,
+            "tTill": 6.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/35-lanat-1-deras.jpg"
+        },
+        {
           "derasT": 12,
           "derasI": 24,
           "egenT": 27.5,
           "egenI": 55,
-          "egenFil": "output/klipp/KD-2026-001/35-B-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/35-lanat-2-egen.jpg",
           "egenFilm": {
             "id": "1367356292221497",
             "namn": "IBC_PD_1_H1",
@@ -6444,18 +6927,15 @@
             "tFran": 10.5,
             "tTill": 12.5
           },
-          "derasFil": "output/klipp/KD-2026-001/35-B-deras.jpg",
-          "kontroll": 4
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/35-lanat-2-deras.jpg"
         },
         {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 1,
           "derasT": 13.5,
           "derasI": 27,
           "egenT": 2,
           "egenI": 4,
-          "egenFil": "output/klipp/KD-2026-001/35-C-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/35-lanat-3-egen.jpg",
           "egenFilm": {
             "id": "3302692703264106",
             "namn": "IBC_GT_1_H2",
@@ -6471,11 +6951,10 @@
             "tFran": 13,
             "tTill": 15.5
           },
-          "derasFil": "output/klipp/KD-2026-001/35-C-deras.jpg",
-          "kontroll": 2
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/35-lanat-3-deras.jpg"
         }
       ],
-      "uteslutna": [],
       "kastade": []
     },
     "36": {
@@ -6504,7 +6983,7 @@
       "fel": null,
       "status": "bevisad",
       "fron": [],
-      "lanadeRutor": 0,
+      "lanadeRutor": 6,
       "deras": {
         "video": "output/klipp/KD-2026-001/deras-1025355243884934.mp4",
         "langd": 21,
@@ -6514,30 +6993,17 @@
         "jamforda": 204,
         "senare": 36,
         "anvanda": [
-          "IBC_PD_1_H1",
-          "IBC_GT_1_H2",
-          "IBC_CS_5_H1"
+          "IBC_PD_4_H3"
         ],
         "perFilm": {
-          "IBC_GT_3_H1": 3,
-          "IBC_PD_6_H1": 1,
-          "IBC_PD_4_H3": 3,
-          "IBC_SP_1_H1": 2,
-          "IBC_SP_1_H3": 2,
-          "IBC_GT_1_H2": 3,
-          "IBC_PD_1_H1": 3,
-          "IBC_PD_1_H3": 1,
-          "IBC_SP_1_H2": 3,
-          "IBC_PD_1_H2": 2,
+          "IBC_GT_3_H1": 2,
+          "IBC_PD_1_H2": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_PD_1_H1": 2,
           "IBC_PD_Extra": 2,
-          "IBC_PD_8_H1": 1,
-          "IBC_RI_1_H1": 1,
-          "IBC_PD_11_H1": 1,
-          "IBC_CS_5_H1": 2,
-          "IBC_PD_3_H1": 2,
-          "IBC_PD_6_H2": 2,
-          "IBC_PD_4_H1": 2,
+          "IBC_SP_1_H1": 1,
           "IBC_PD_4_H2": 2,
+          "IBC_PD_4_H3": 1,
           "IBC_CS_4_H1": 1
         }
       },
@@ -6547,32 +7013,21 @@
         "egnaRutor": 10249,
         "filmer": 204,
         "filmerSenare": 36,
-        "traffar": 39,
-        "andel": 93,
-        "lanadeRutor": 0,
+        "traffar": 14,
+        "andel": 33,
+        "lanadeRutor": 27,
         "scener": 8,
         "matchadeScener": 8,
-        "uteslutnaScener": 0,
+        "uteslutnaScener": 7,
         "perFilm": {
-          "IBC_GT_3_H1": 3,
-          "IBC_PD_6_H1": 1,
-          "IBC_PD_4_H3": 3,
-          "IBC_SP_1_H1": 2,
-          "IBC_SP_1_H3": 2,
-          "IBC_GT_1_H2": 3,
-          "IBC_PD_1_H1": 3,
-          "IBC_PD_1_H3": 1,
-          "IBC_SP_1_H2": 3,
-          "IBC_PD_1_H2": 2,
+          "IBC_GT_3_H1": 2,
+          "IBC_PD_1_H2": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_PD_1_H1": 2,
           "IBC_PD_Extra": 2,
-          "IBC_PD_8_H1": 1,
-          "IBC_RI_1_H1": 1,
-          "IBC_PD_11_H1": 1,
-          "IBC_CS_5_H1": 2,
-          "IBC_PD_3_H1": 2,
-          "IBC_PD_6_H2": 2,
-          "IBC_PD_4_H1": 2,
+          "IBC_SP_1_H1": 1,
           "IBC_PD_4_H2": 2,
+          "IBC_PD_4_H3": 1,
           "IBC_CS_4_H1": 1
         }
       },
@@ -6581,11 +7036,85 @@
           "k": 0,
           "bokstav": "A",
           "rang": 0,
+          "derasT": 20,
+          "derasI": 40,
+          "egenT": 9,
+          "egenI": 18,
+          "egenFil": "output/klipp/KD-2026-001/37-A-egen.jpg",
+          "egenFilm": {
+            "id": "1461480642480301",
+            "namn": "IBC_PD_4_H3",
+            "skapad": "2026-09-09T13:33:21+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 4,
+          "stod": 1,
+          "derasHash": "7e31629c6377f8bb",
+          "egenHash": "7e3162d86377d9bb",
+          "scen": {
+            "nr": 7,
+            "tFran": 20,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/37-A-deras.jpg",
+          "kontroll": 4
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/37-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1599422584518727",
+            "namn": "IBC_GT_3_H1",
+            "skapad": "2026-09-05T12:09:47+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "9fb81e27409a868e",
+          "egenHash": "9fb81e27409aa68e",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/37-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 1.5,
+          "egenI": 3,
+          "egenFil": "output/klipp/KD-2026-001/37-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1461480642480301",
+            "namn": "IBC_PD_4_H3",
+            "skapad": "2026-09-09T13:33:21+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 1,
+          "derasHash": "95b622ce43cfc1a0",
+          "egenHash": "95f622ce43cfc1a0",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/37-lanat-2-deras.jpg"
+        },
+        {
           "derasT": 5,
           "derasI": 10,
           "egenT": 27.5,
           "egenI": 55,
-          "egenFil": "output/klipp/KD-2026-001/37-A-egen.jpg",
+          "egenFil": "output/klipp/KD-2026-001/37-lanat-3-egen.jpg",
           "egenFilm": {
             "id": "1367356292221497",
             "namn": "IBC_PD_1_H1",
@@ -6601,65 +7130,10 @@
             "tFran": 3.5,
             "tTill": 6
           },
-          "derasFil": "output/klipp/KD-2026-001/37-A-deras.jpg",
-          "kontroll": 4
-        },
-        {
-          "k": 1,
-          "bokstav": "B",
-          "rang": 2,
-          "derasT": 6.5,
-          "derasI": 13,
-          "egenT": 2,
-          "egenI": 4,
-          "egenFil": "output/klipp/KD-2026-001/37-B-egen.jpg",
-          "egenFilm": {
-            "id": "3302692703264106",
-            "namn": "IBC_GT_1_H2",
-            "skapad": "2026-08-28T23:08:07+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 2,
-          "stod": 2,
-          "derasHash": "88935071217147ac",
-          "egenHash": "88935071717147ac",
-          "scen": {
-            "nr": 3,
-            "tFran": 6.5,
-            "tTill": 8.5
-          },
-          "derasFil": "output/klipp/KD-2026-001/37-B-deras.jpg",
-          "kontroll": 5
-        },
-        {
-          "k": 2,
-          "bokstav": "C",
-          "rang": 1,
-          "derasT": 14.5,
-          "derasI": 29,
-          "egenT": 4.5,
-          "egenI": 9,
-          "egenFil": "output/klipp/KD-2026-001/37-C-egen.jpg",
-          "egenFilm": {
-            "id": "1870000097502293",
-            "namn": "IBC_CS_5_H1",
-            "skapad": "2026-09-15T15:51:17+0200",
-            "verksamhet": "Bäverbutiken"
-          },
-          "avstand": 0,
-          "stod": 2,
-          "derasHash": "c7ce0607071b64c5",
-          "egenHash": "c7ce0607071b64c5",
-          "scen": {
-            "nr": 5,
-            "tFran": 14,
-            "tTill": 16.5
-          },
-          "derasFil": "output/klipp/KD-2026-001/37-C-deras.jpg",
-          "kontroll": 0
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/37-lanat-3-deras.jpg"
         }
       ],
-      "uteslutna": [],
       "kastade": []
     }
   }

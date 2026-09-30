@@ -191,6 +191,9 @@ const marknadensLander = (m) =>
  * regionkoder. (CaraShell 2026-09-17: en egen domän — carashell.com — hör
  * till EN marknad, mätt: `webPresencesToAdd` från en annan marknad svarar
  * RESOURCE_NOT_FOUND. Engelsktalande länder delar därför USA:s block.)
+ * ⚠️ Motsagt 2026-09-29 på Matstrumpor: webPresencesToAdd med matstrumpor.com
+ * till en BEFINTLIG marknad (Europa) svarade utan fel, och .com låg kvar i
+ * USA-marknaden. Delning går alltså, åtminstone där. Prova innan du bygger runt.
  */
 export function landerAttLaggaTill(rad, befintligaKoder) {
   const har = new Set((befintligaKoder ?? []).map((k) => String(k ?? '').trim().toUpperCase()).filter(Boolean));
@@ -441,7 +444,8 @@ export async function laggTillAlternateLocale(locale, { torr = false, hoppaOver 
 // kopplas BARA den närvaron, och andra som hänger på marknaden kopplas loss
 // (så .se inte serverar USA i USD). `hoppaOver`: andra marknaders egna
 // domäner, som aldrig ska kopplas hit. Mätt 2026-09-17: en egen domän kan
-// bara sitta på EN marknad (RESOURCE_NOT_FOUND från en annan).
+// bara sitta på EN marknad (RESOURCE_NOT_FOUND från en annan). ⚠️ Motsagt
+// 2026-09-29 på Matstrumpor (matstrumpor.com delad med Norge och Europa utan fel).
 export async function kopplaPresence(marketId, { torr = false, doman = null, hoppaOver = [] } = {}) {
   const lage = await hamtaLage();
   const undantag = new Set((hoppaOver ?? []).map((h) => String(h ?? '').toLowerCase()).filter(Boolean));

@@ -1,0 +1,43 @@
+{
+ "kod": "FR",
+ "locale": "fr",
+ "wordmark": "CHAUSSETTES SUSHI",
+ "underrubrik": "On dirait des sushis à emporter. 20 paires.",
+ "banner": "2 ACHETÉS – 2 OFFERTS",
+ "message": "Vous recevez quatre boîtes.\n2 achetés – 2 offerts, vingt paires de chaussettes au total.\nRoulées comme des makis. Des baguettes en bois dans chaque boîte.\nTaille unique, du 36 au 44.\nUne marque suédoise.",
+ "title": "2 achetés, 2 offerts : quatre boîtes",
+ "link_description": "2 achetés – 2 offerts. Livraison gratuite.",
+ "tre_fragor": [
+  {
+   "rad": "On dirait des sushis à emporter. 20 paires.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Vous recevez quatre boîtes.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "2 achetés – 2 offerts, vingt paires de chaussettes au total.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Roulées comme des makis. Des baguettes en bois dans chaque boîte.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Taille unique, du 36 au 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": "paket.sushi-4.rubrik \"Achetez-en 2 – Recevez-en 2 GRATUIT\" är grammatiskt fel (gratuit ska stå i plural: \"gratuits\") och är 35 tecken mot 19 i svenskan, så bannern krymper till hälften. Byt till franskans vanliga uttryck \"2 achetés – 2 offerts\" (och paket.sushi-2.rubrik till \"1 acheté – 1 offert\"). Minsta rättning om formen ska behållas: \"Achetez-en 2 – Recevez-en 2 GRATUITS\"."
+}

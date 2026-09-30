@@ -28,6 +28,9 @@ test('sajterna: svarar = frisk; 5xx, timeout, 402 och lösenordssidan är tre ol
   assert.deepEqual(friska, ['butik:baverbutiken']);
   assert.deepEqual(larm.map((l) => l.nyckel), ['butik:carashell', 'butik:matstrumpor', 'butik:kalender', 'butik:drytrek']);
   assert.match(larm[0].rubrik, /carashell\.se svarar inte/);
+  const strypt = domSajter([sajt('carashell', { ok: false, status: 429, forsok: 3 })]);
+  assert.equal(strypt.larm.length, 0, '429 är Shopifys strypning, inte en död sida');
+  assert.equal(strypt.friska.length, 0);
   assert.match(larm[0].rader[0], /svarar 503 på 3 försök/);
   assert.match(larm[1].rader[0], /ingen respons på 20 s/);
   assert.match(larm[2].rubrik, /STÄNGD av Shopify/);
@@ -238,6 +241,20 @@ test('Shopify-nycklar: en butik som var i drift och nu inte kan läsas larmar �
   assert.equal(larm[0].verksamhet, 'baverbutiken');
   assert.match(larm[0].rader[0], /inte installerad/);
   assert.deepEqual(friska, ['nyckel:shopify:carashell']);
+});
+
+test('Shopify-nycklar: ett tillfälligt nätfel i snapshoten är ingen död nyckel', () => {
+  const minne = { butiker: { beverbutikken: { namn: 'Beverbutikken', senastOk: '2026-09-27T10:00:00Z' } } };
+  for (const orsak of [
+    'Shopify svarade 503: DNS resolution failed (transient resolver error)',
+    'fetch failed', 'Shopify svarade 502: Bad Gateway', 'ETIMEDOUT',
+  ]) {
+    const { larm, friska } = domShopifyNycklar({ butiker: [{ id: 'beverbutikken', status: 'fel', orsak }], minne, nu: NU, varumarken: VARUMARKEN });
+    assert.deepEqual(larm, [], orsak);
+    assert.deepEqual(friska, [], orsak);
+  }
+  const { larm } = domShopifyNycklar({ butiker: [{ id: 'beverbutikken', status: 'fel', orsak: 'Shopify svarade 401: Invalid API key' }], minne, nu: NU, varumarken: VARUMARKEN });
+  assert.equal(larm.length, 1);
 });
 
 test('tvistgraden: chargebacks (inte inquiries) på 30 dagar mot ordrar — bara med underlag, en gång per vecka', () => {

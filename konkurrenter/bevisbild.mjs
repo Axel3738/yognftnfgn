@@ -15,6 +15,7 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { tid, bevisStatus } from './klipp.mjs';
+import { startadeFore } from './original.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const nar = (iso) => (iso ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Stockholm' }).format(new Date(iso)) : '?');
@@ -45,7 +46,7 @@ export const egenPlats = (v, { sprak = 'en' } = {}) => (v.egenT === null || v.eg
  * (ur klipp.mjs) — då byggs kortet av paren, inte av miniatyren.
  * Fast ljust tema med flit — bilden ska se likadan ut hos Metas granskare.
  */
-export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new Date().toISOString(), nr = 1, antal = 1, klipp = null } = {}) {
+export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new Date().toISOString(), nr = 1, antal = 1, klipp = null, original = null } = {}) {
   const val0 = klipp?.val?.length ? klipp.val : null;
   // Produkten: filmernas när kortet bärs av våra klipp (paren pekar på vår film), annars fyndets.
   const prod = (val0 && annons.klipp?.produkt?.url ? annons.klipp.produkt : null) ?? annons.produkt ?? arende.var?.produkt ?? {};
@@ -62,14 +63,17 @@ export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new 
     const filmer = [...new Set(val.map((v) => v.egenFilm?.namn).filter(Boolean))];
     const filmnamn = (v) => v.egenFilm?.namn ?? null;
     const filmdag = (v) => (v.egenFilm?.skapad ? ` (ours since ${esc(dag(v.egenFilm.skapad))})` : '');
+    // Var granskaren ser vår film: vår egen annons i annonsbiblioteket (kor.mjs --original), verifierad ruta för ruta —
+    // bara en annons som startade FÖRE deras (ORVO Norge 2026-09-29: vår US-kopia startade 27/9, deras 24/9).
+    const bibl = (v) => { const o = original?.[filmnamn(v)]; return o?.lank && !o.externa && startadeFore(o, annons.start) ? ` · our original in the Ad Library: ${esc(o.lank)}` : ''; };
     kropp = `<p class="ingress">The reported video is cut from our own advertising film${filmer.length === 1 ? ` "${esc(filmer[0])}"` : filmer.length > 1 ? `s (${filmer.map((f) => `"${esc(f)}"`).join(', ')})` : annons.varAnnons?.namn ? ` "${esc(annons.varAnnons.namn)}"` : ''}. Below: ${val.length} still${val.length === 1 ? '' : 's'} from different scenes of the reported ad (right) next to the same frame${val.length === 1 ? '' : 's'} in our film${filmer.length > 1 ? 's' : ''} (left).</p>
-<div class="rader">${val.map((v) => `<div class="klipprad"><div class="kol"><h2>Our film${filmnamn(v) ? ` — ${esc(filmnamn(v))}` : ''}${filmdag(v)} · ${esc(egenPlats(v))}</h2>${bild(v.egenData, 'Frame from our ad film')}</div><div class="kol deras"><h2>Reported ad · ${esc(tid(v.derasT))}</h2>${bild(v.derasData, 'The same frame in the reported ad')}</div><p class="parrad">Pair ${esc(v.bokstav)} · perceptual-hash distance ${esc(v.avstand)}/64${v.scen ? ` · scene ${esc(tid(v.scen.tFran))}–${esc(tid(v.scen.tTill))} of the reported ad` : ''}</p></div>`).join('')}</div>
+<div class="rader">${val.map((v) => `<div class="klipprad"><div class="kol"><h2>Our film${filmnamn(v) ? ` — ${esc(filmnamn(v))}` : ''}${filmdag(v)} · ${esc(egenPlats(v))}</h2>${bild(v.egenData, 'Frame from our ad film')}</div><div class="kol deras"><h2>Reported ad · ${esc(tid(v.derasT))}</h2>${bild(v.derasData, 'The same frame in the reported ad')}</div><p class="parrad">Pair ${esc(v.bokstav)} · perceptual-hash distance ${esc(v.avstand)}/64${v.scen ? ` · scene ${esc(tid(v.scen.tFran))}–${esc(tid(v.scen.tTill))} of the reported ad` : ''}${bibl(v)}</p></div>`).join('')}</div>
 ${passage
     ? `<div class="par texter"><div class="kol"><h2>Our ad text</h2><div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div><div class="kol deras"><h2>Reported ad text</h2><div class="text">${markera(derasText, passage)}</div><p class="rad">${derasRad}</p></div></div>`
     : `<div class="texter"><div class="kol deras"><h2>Reported ad${arende.deras?.sidnamn ? ` — page "${esc(arende.deras.sidnamn)}"` : ''}</h2>${derasText ? `<div class="text">${esc(derasText)}</div>` : ''}<p class="rad">${derasRad}</p></div></div>`}`;
     const d = annons.klipp?.datum ?? null;
     const publicerad = d ? `, published by us ${d.forsta === d.sista ? `on ${esc(dag(d.forsta))}` : `between ${esc(dag(d.forsta))} and ${esc(dag(d.sista))}`}${annons.start ? ` — before the reported ad started running on ${esc(dag(annons.start))}` : ''}` : '';
-    dom = `<div class="dom">The reported video is cut from our own advertising film${filmer.length > 1 ? 's' : ''}${publicerad}: ${val.length} still frame${val.length === 1 ? '' : 's'} from different scenes of the reported ad (at ${val.map((v) => tid(v.derasT)).join(', ')}) ${val.length === 1 ? 'is' : 'are'} identical to frames of our film${filmer.length > 1 ? 's' : ''} (perceptual-hash distance ${val.map((v) => v.avstand).join(', ')}/64)${st.andel !== undefined ? `; ${st.andel}% of the reported video's sampled frames (${st.traffar} of ${st.derasRutor}) match our films frame for frame${st.filmer ? ` (compared against ${st.filmer} of our films)` : ''}` : ''}.${annons.text?.styrka ? ` The ad copy also repeats ${annons.text.kopieradeOrd} of our words verbatim (longest identical run ${annons.text.langsta} words, highlighted).` : ''}</div>`;
+    dom = `<div class="dom">The reported video is cut from our own advertising film${filmer.length > 1 ? 's' : ''}${publicerad}: ${val.length} still frame${val.length === 1 ? '' : 's'} from different scenes of the reported ad (at ${val.map((v) => tid(v.derasT)).join(', ')}) ${val.length === 1 ? 'is' : 'are'} identical to frames of our film${filmer.length > 1 ? 's' : ''} (perceptual-hash distance ${val.map((v) => v.avstand).join(', ')}/64). Only these frames are claimed.${annons.text?.styrka ? ` The ad copy also repeats ${annons.text.kopieradeOrd} of our words verbatim (longest identical run ${annons.text.langsta} words, highlighted).` : ''}</div>`;
   } else {
     // Vänster: den bild av VÅR som faktiskt matchade (annonsbilden/filmrutan) — inte produktfotot. ORVO 2026-09-29:
     // första bygget visade produktfotot bredvid deras filmruta, fast träffen var vår egen filmruta (avstånd 1/64).
@@ -130,13 +134,13 @@ ${dom}
  * skala 1 för verifieringssidan: tio PNG:er inbäddade gav 34,6 MB (mätt 2026-09-29), gränsen är 16 MB.
  * Returnerar PNG-filen eller kastar med orsak.
  */
-export async function bevisbildPng(html, fil, { jpg = null, playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
+export async function bevisbildPng(html, fil, { jpg = null, bredd = 1200, playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
   let pw;
   try { pw = await import(playwrightSokvag); } catch (e) { throw new Error(`Playwright saknas (${e.message.split('\n')[0]}) — bevisbilden kan inte göras här`); }
   const exe = kandidater.find((k) => existsSync(k));
   const browser = await pw.chromium.launch({ headless: true, args: ['--no-sandbox'], ...(exe ? { executablePath: exe } : {}) });
   try {
-    const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: 2 });
+    const page = await browser.newPage({ viewport: { width: bredd, height: 900 }, deviceScaleFactor: 2 });
     await page.setContent(html, { waitUntil: 'load' });
     mkdirSync(dirname(fil), { recursive: true });
     await page.screenshot({ path: fil, type: 'png', fullPage: true });

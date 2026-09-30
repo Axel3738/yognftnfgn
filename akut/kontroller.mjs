@@ -124,6 +124,9 @@ export function domSajter(sajter = [], { nu = new Date() } = {}) {
     if (!r) continue;
     const nyckel = `butik:${s.id}`;
     if (r.ok) { friska.push(nyckel); continue; }
+    // 429 = Shopify stryper vår IP (mätt 30/9 03:28: carashell.com och baverbutiken.se
+    // svarade också 429 medan carashell.se svarade 200). Servern svarar — ingen dom åt något håll.
+    if (r.status === 429) continue;
     const doman = domanUr(s.url);
     let rubrik; let rader; let gor;
     if (r.status === 402) {
@@ -431,6 +434,11 @@ export function domNotion(svar, { nu = new Date() } = {}) {
  * men som snapshoten inte längre kan läsa ⇒ appen är avinstallerad, nekad
  * eller nyckeln borta. 402 tas av sajtkollen (butiken är stängd, inte nyckeln).
  */
+/** Svar som säger att vägen dit brast, inte att nyckeln nekades. */
+export function arTillfalligtNatfel(orsak) {
+  return /\b50[0234]\b|DNS resolution|transient|timeout|timed out|ETIMEDOUT|ECONNRESET|ECONNREFUSED|EAI_AGAIN|ENOTFOUND|fetch failed|socket hang up/i.test(String(orsak ?? ''));
+}
+
 export function domShopifyNycklar({ butiker = [], minne = { butiker: {} }, nu = new Date(), varumarken = [] } = {}) {
   const larm = [];
   const friska = [];
@@ -443,6 +451,10 @@ export function domShopifyNycklar({ butiker = [], minne = { butiker: {} }, nu = 
     const m = minne.butiker?.[b.id];
     if (!m?.senastOk || Date.parse(m.senastOk) < grans) continue; // aldrig läst, eller död sedan länge — inte akut
     if (/\b402\b|Unavailable Shop/i.test(String(b.orsak ?? ''))) continue;
+    // Nätfel är inte en död nyckel (mätt 2026-09-29 18:04: "503: DNS resolution
+    // failed (transient resolver error)" för Norge i snapshoten, nyckeln läste
+    // butiken live två minuter senare). Varken larm eller "löst".
+    if (arTillfalligtNatfel(b.orsak)) continue;
     larm.push({
       typ: 'nyckel', nyckel, verksamhet: verksamhetForButik(varumarken, b) ?? null,
       rubrik: `Shopify-nyckeln till ${m.namn ?? b.id} fungerar inte längre`,

@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { join, dirname } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dagarKvar, timmarKvar, klockslag, obesvarad, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
+import { dagarKvar, timmarKvar, klockslag, obesvarad, fonstretStangt, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
 import { normaliseraTvist } from '../shopify.mjs';
 import { brandUrEgenfil } from '../brands.mjs';
 import { lasYaml } from '../../factory/yaml.mjs';
@@ -364,4 +364,51 @@ test('obesvarad följer bevisfältet, med statusen som reserv för gammal data',
   // Gammal data utan fältet: statusen får avgöra, som före 2026-09-29.
   assert.equal(obesvarad({ status: 'under_review' }), false);
   assert.equal(obesvarad({ status: 'needs_response' }), true);
+});
+
+// ------------------------------------------- stängt fönster är inte en uppgift
+// #4914 (chargeback, 348 kr) hade deadline 2026-09-30T01:00 och
+// evidence_sent_on: null — ingen skickade in något, och klockan hann före.
+// Dagen innan gick order 17584203399517 (509 kr) samma väg. Larmet namngav
+// båda i förväg, så det som brast var inskickningen, inte mätningen. En rad
+// vars fönster är stängt hör inte i uppgiftslistan: den går inte att göra
+// något åt, och blandad med de räddningsbara lär den VA:n att rött inte betyder
+// något.
+
+test('fonstretStangt kräver både passerad deadline och uteblivet bevis', () => {
+  const nu = new Date('2026-09-30T05:40:00Z');
+  assert.equal(fonstretStangt({ evidensSenastTid: '2026-09-30T01:00:00+02:00', bevisSkickat: null }, nu), true);
+  assert.equal(fonstretStangt({ evidensSenastTid: '2026-09-30T01:00:00+02:00', bevisSkickat: '2026-09-29T20:00:00+02:00' }, nu), false, 'inskickat i tid är inte stängt');
+  assert.equal(fonstretStangt({ evidensSenastTid: '2026-10-03T01:00:00+02:00', bevisSkickat: null }, nu), false, 'framtiden är inte stängd');
+  // Utan tidpunkt får datumet avgöra, som i äldre data.
+  assert.equal(fonstretStangt({ evidensSenast: '2026-09-20', bevisSkickat: null }, nu), true);
+  assert.equal(fonstretStangt({ evidensSenast: '2026-09-20' }, nu), false, 'saknat bevisfält är okänt, aldrig förlorat');
+  assert.equal(fonstretStangt({ evidensSenast: null, bevisSkickat: null }, nu), false, 'okänd deadline är inte stängd');
+});
+
+test('larmet skiljer stängt fönster från det som fortfarande går att vinna', () => {
+  const nu = new Date('2026-09-30T05:40:00Z');
+  const lista = [
+    tvist({ id: 'forlorad', ordernamn: '#4914', belopp: 348, bevisSkickat: null,
+      evidensSenast: '2026-09-30', evidensSenastTid: '2026-09-30T01:00:00+02:00' }),
+    tvist({ id: 'kvar', ordernamn: '#4845', belopp: 348, bevisSkickat: null,
+      evidensSenast: '2026-10-03', evidensSenastTid: '2026-10-03T01:00:00+02:00' }),
+  ];
+  const text = renderaLarm(bradskande(lista, { nu, grans: 3 }), { brand: 'B', nu, grans: 3 });
+  assert.match(text, /1 open dispute needs evidence/, 'bara den räddningsbara räknas som uppgift');
+  assert.match(text, /window has closed on this one/);
+  assert.match(text, /\*\*#4914\*\*.*window closed 2026-09-30 at 01:00/);
+  assert.match(text, /email the customer/i, 'det enda som återstår ska stå där');
+  // Den förlorade får inte stå bland raderna som ska skickas in.
+  const uppgifter = text.slice(0, text.indexOf('window has closed'));
+  assert.doesNotMatch(uppgifter, /#4914/, '#4914 hör inte i uppgiftslistan');
+  assert.match(uppgifter, /#4845/);
+});
+
+test('bara stängda fönster ger ingen falsk uppgiftsrad', () => {
+  const nu = new Date('2026-09-30T05:40:00Z');
+  const lista = [tvist({ ordernamn: '#4914', bevisSkickat: null, evidensSenast: '2026-09-30', evidensSenastTid: '2026-09-30T01:00:00+02:00' })];
+  const text = renderaLarm(bradskande(lista, { nu, grans: 3 }), { brand: 'B', nu, grans: 3 });
+  assert.match(text, /Nothing is waiting for evidence right now/);
+  assert.doesNotMatch(text, /0 open disputes/);
 });

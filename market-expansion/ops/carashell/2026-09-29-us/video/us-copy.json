@@ -1,0 +1,41 @@
+{
+ "UG_102_H1": {
+  "srt": [
+   "This covers just the roof.",
+   "Twenty-one by ten feet, right across the roof.",
+   "I'm doing this alone. Straps on all four sides hook at the bottom edge. It folds into this bag.",
+   "It's one hundred ninety-nine dollars.",
+   "Regular price, two hundred forty-nine dollars."
+  ],
+  "message": "Just the roof. One person. Straps on all four sides hook at the bottom edge. Silver-coated 210D oxford weave keeps rain off your roof hatches and seams, and it folds into the bag it comes with. 21 × 10 ft. $199, regular price $249.",
+  "headline": "A roof cover you fit alone",
+  "description": "$199, regular price $249"
+ },
+ "CS_112_H1": {
+  "srt": [
+   "I paid one hundred ninety-nine dollars.",
+   "The roof is your trailer's most expensive surface. It handles a full winter outside, in silver-coated 210D oxford weave.",
+   "Straps on all four sides hook at bottom edge.",
+   "Regular price, two hundred forty-nine dollars.",
+   "One hundred ninety-nine dollars.",
+   "Protect the roof. One hundred ninety-nine dollars."
+  ],
+  "message": "The roof is the most expensive surface on your trailer. This cover goes on the roof only, in silver-coated 210D oxford weave. Straps on all four sides hook at the bottom edge. $199, regular price $249.",
+  "headline": "Protect the roof. $199.",
+  "description": "Regular price $249"
+ },
+ "SP_104_H2": {
+  "srt": [
+   "Hook the strap at the roof edge.",
+   "Covers only the roof, not the whole trailer.",
+   "One person does it alone.",
+   "Water never pools at roof hatches.",
+   "Straps on all four sides hook at the bottom edge.",
+   "210D weave holds out the whole winter.",
+   "One hundred ninety-nine dollars, regular price two hundred forty-nine dollars."
+  ],
+  "message": "One person on a ladder. Straps on all four sides, hooked at the bottom edge. The cover goes on the roof only and keeps rain away from roof hatches and seams. Silver-coated 210D oxford weave, 21 × 10 ft. $199, regular price $249.",
+  "headline": "One person. One roof cover.",
+  "description": "$199, regular $249"
+ }
+}

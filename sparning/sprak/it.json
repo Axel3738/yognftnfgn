@@ -13,7 +13,7 @@
     "Uppgifterna om paketet är registrerade": "I dati del pacco sono stati registrati",
     "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet": "Il mittente ha prenotato la spedizione e il corriere è in attesa del pacco",
     "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det": "Il mittente sta preparando il tuo pacco. Il tracciamento si aggiornerà quando il corriere lo avrà ricevuto",
-    "Leveransen är bokad": "La spedizione è stata prenotata",
+    "Leveransen är bokad": "La spedizione è stata registrata",
     "Avsändaren har skickat iväg paketet": "Il mittente ha spedito il pacco",
     "Paketet är upphämtat": "Il pacco è stato ritirato",
     "Yanwen har hämtat paketet": "Yanwen ha ritirato il pacco",
@@ -124,7 +124,7 @@
     "Leverans försöktes utan att lyckas. Ett nytt försök följer.": "La consegna è stata tentata senza successo. Seguirà un nuovo tentativo.",
     "Paketet är levererat.": "Il pacco è stato consegnato.",
     "Ett problem uppstod med leveransen. Mejla {{support}} så hjälper vi till.": "Si è verificato un problema con la consegna. Scrivi a {{support}} e ti aiuteremo.",
-    "Paketet är bokat": "Il pacco è stato prenotato",
+    "Paketet är bokat": "La spedizione è stata registrata",
     "Paketet finns att hämta": "Il pacco è pronto per il ritiro",
     "Leveransförsöket misslyckades": "Il tentativo di consegna non è riuscito",
     "Det blev ett problem med leveransen": "C'è stato un problema con la consegna",
@@ -141,8 +141,8 @@
     "Leveransen är försenad": "La consegna è in ritardo",
     "Den skulle ha varit framme {{datum}}. Mejla oss så kollar vi upp den åt dig.": "Sarebbe dovuto arrivare il {{datum}}. Scrivici e lo controlleremo per te.",
     "Klistra in numret från leveransmejlet först.": "Incolla prima il numero dall'email di spedizione.",
-    "Paketet är bokat. Fraktbolaget har inte skannat det än": "Il pacco è stato prenotato. Il corriere non lo ha ancora scansionato",
-    "det brukar ta": "di solito ci vuole",
+    "Paketet är bokat. Fraktbolaget har inte skannat det än": "La spedizione è stata registrata. Il corriere non ha ancora scansionato il pacco",
+    "det brukar ta": "di solito ci vogliono",
     "Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla": "Questa pagina ha bisogno di JavaScript per mostrare il tuo tracciamento. Attivalo nel browser e ricarica la pagina, oppure scrivi a",
     "så kollar vi paketet åt dig.": "e controlleremo il pacco per te.",
     "Spårning": "Tracciamento",
@@ -199,6 +199,7 @@
     "Lägg till för {{pris}}": "Aggiungi per {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Il prezzo vale per te che hai ordinato da noi e si applica automaticamente al checkout.",
     "Paketet är på väg till ombud": "Il pacco è in viaggio verso un punto di ritiro",
-    "Vi planerar ett nytt hemleveransförsök till dig": "Stiamo programmando un nuovo tentativo di consegna a domicilio"
+    "Vi planerar ett nytt hemleveransförsök till dig": "Stiamo programmando un nuovo tentativo di consegna a domicilio",
+    "2–4 dagar": "2–4 giorni"
   }
 }

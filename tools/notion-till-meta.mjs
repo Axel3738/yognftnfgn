@@ -236,16 +236,33 @@ async function laddaUppVideo(act, fil) {
   return r.id;
 }
 
-/** Metas thumbnail dyker upp först när videon processats. Vänta max ~2 min. */
-async function väntaPåThumb(videoId) {
+/**
+ * Väntar tills videon BÅDE har en thumbnail OCH är `video_status: ready`.
+ * Max ~2 min.
+ *
+ * ⚠️ Thumbnailen kommer FÖRE videon är klar — det räcker alltså inte att vänta
+ * på den. Mätt 2026-09-29 på `Rodholder_PD_66_H1` (21 MB, 12,6 Mbit/s): Meta
+ * gav thumbnail efter 15 s men `video_status` stod på `processing` till 20 s.
+ * Skapar man adcreative i glappet svarar Meta **500 "An unexpected error has
+ * occurred"** — en generisk 500 som inte säger ett ord om videon, och som inte
+ * går över av att man försöker igen (varje omförsök laddar upp en ny video och
+ * hamnar i samma glapp). Leveransrundan den dagen föll på de två första stora
+ * filerna medan två 10 MB-filer gick igenom: små videor hinner bli klara innan
+ * thumbnailen dyker upp, stora gör det inte.
+ */
+async function väntaPåVideo(videoId) {
+  let thumb = null;
   for (let i = 0; i < 24; i++) {
     const r = await api(videoId, { params: { fields: 'status,thumbnails' } });
     const t = (r.thumbnails?.data || []).find(x => x.is_preferred) || r.thumbnails?.data?.[0];
-    if (t?.uri) return t.uri;
+    if (t?.uri) thumb = t.uri;
     if (r.status?.video_status === 'error') throw new Error('Meta kunde inte processa videon.');
+    if (thumb && r.status?.video_status === 'ready') return thumb;
     await new Promise(s => setTimeout(s, 5000));
   }
-  throw new Error('Metas video-thumbnail kom aldrig — annonsen skapas inte utan den.');
+  throw new Error(thumb
+    ? 'Metas video blev aldrig klar (video_status ready) — annonsen skapas inte.'
+    : 'Metas video-thumbnail kom aldrig — annonsen skapas inte utan den.');
 }
 
 async function laddaUppBild(act, fil) {
@@ -416,7 +433,7 @@ async function main() {
   let spec;
   if (ärVideo) {
     const videoId = await laddaUppVideo(act, fil);
-    const thumb = await väntaPåThumb(videoId);
+    const thumb = await väntaPåVideo(videoId);
     spec = {
       page_id: pageId,
       video_data: {

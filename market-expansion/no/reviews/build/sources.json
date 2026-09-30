@@ -228,6 +228,54 @@
       "namn": "Kajakhållare 2-pack",
       "drive_sheet": "1FL51S_HXDXxazXHbzunqSmNwvM627-MkC7Re4pLuUlY",
       "no_handle": "kajakkholder-2-pk-veggkroker-som-taler-45-kg"
+    },
+    {
+      "id": "spikkesett",
+      "namn": "Täljset 30 delar",
+      "drive_sheet": "1caKD-GeVk8aO3zYiAoLcon9W5q7keJRaMHEikiNVJiM",
+      "no_handle": "spikkesett-30-deler-6-kniver-og-6-jern"
+    },
+    {
+      "id": "varmesete",
+      "namn": "Värmesits 45 × 90 cm",
+      "drive_sheet": "170OU3GYKOL0MLIpu0qkHsL0fxN8Q7JqqY65RoSMSLnE",
+      "no_handle": "varmesete-45-90-cm-4-varmesoner-usb-drevet"
+    },
+    {
+      "id": "verktoyhylle",
+      "namn": "Maskinhyllan",
+      "drive_sheet": "1ECAV7RK-6k0iCwqgRaFIpw2t8bXbg1j9vifB1oZyf9Q",
+      "no_handle": "vegghengt-verktoyhylle-plass-til-4-elektroverktoy"
+    },
+    {
+      "id": "varmesaler",
+      "namn": "Värmesulorna",
+      "drive_sheet": "1TTFMzFnpVgMPmyGJ2GtgqoHG2xb7ulsjkIk7dgsNVWU",
+      "no_handle": "varmesaler-med-fjernkontroll-varme-fotter-pa-jaktposten"
+    },
+    {
+      "id": "rulleknivsliper",
+      "namn": "Rullknivslipen",
+      "drive_sheet": "1Hu7q-ZPvarIdzehT4mNXNN5CTgOhBZ5Ftxo6aQcHrS8",
+      "no_handle": "rulleknivsliperen-i-tre-20-vinkelen-er-allerede-satt"
+    },
+    {
+      "id": "atv-trekk",
+      "namn": "ATV-Kapell",
+      "drive_sheet": "1JkhQYa-GqM8vwC3utymgKw6V-C3pu-0VJptZ2txGOYk",
+      "no_handle": "atv-trekk-storrelse-3xl-256-110-120-cm-svart"
+    },
+    {
+      "id": "golf-adventskalender",
+      "namn": "K Golfkalender",
+      "drive_sheet": "1P2UMleC_BiMtOa3sVcGFyTnrzzs6K0pT0jkZQpBTpHQ",
+      "no_handle": "golf-adventskalender-24-golftilbehor"
+    },
+    {
+      "id": "snofrestrekk",
+      "namn": "Kapell till snöslunga",
+      "drive_sheet": "14SbTXqEBGt7MAsBobySKyBXhRxTMWgnxApG95xVVjRg",
+      "no_handle": "trekk-til-snofreser-120-82-60-cm-holder-skitt-unna"
     }
   ]
 }

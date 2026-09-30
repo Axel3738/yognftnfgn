@@ -1,0 +1,29 @@
+{
+ "in": "../forbehandlad/carashell_UG_102_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_UG_102_H1.mp4",
+ "srt": "../srt-us/carashell_UG_102_H1.srt",
+ "captions": {
+  "zon": [
+   820,
+   960
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 886,
+  "h_min": 30,
+  "h_max": 130,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620
+ },
+ "lager": [
+  {
+   "png": "../lager/ug102-pris.png",
+   "t": [
+    14.5,
+    20.7
+   ]
+  }
+ ],
+ "qa": "qa-UG_102_H1"
+}

@@ -64,6 +64,8 @@
     "Paketet förbereds för leverans": "Pakken gøres klar til levering",
     "Paketet är inlagt för utkörning": "Pakken er sat til udkørsel",
     "Paketet är ute för leverans": "Pakken er ude til levering",
+    "Fraktbolaget kunde inte leverera paketet": "Fragtfirmaet kunne ikke levere pakken",
+    "Paketet ska levereras i dag": "Pakken skal leveres i dag",
     "Ett fack i paketboxen är bokat åt dig": "Et rum i pakkeboksen er reserveret til dig",
     "Paketet är inlagt i paketboxen": "Pakken er lagt i pakkeboksen",
     "Ett meddelande om paketet har skickats till dig": "En besked om pakken er sendt til dig",
@@ -212,6 +214,7 @@
     "Lägg till för {{pris}}": "Tilføj for {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gælder dig, der har bestilt hos os, og tilføjes automatisk i kassen.",
     "Paketet är på väg till ombud": "Pakken er på vej til et afhentningssted",
-    "Vi planerar ett nytt hemleveransförsök till dig": "Vi planlægger et nyt leveringsforsøg hjem til dig"
+    "Vi planerar ett nytt hemleveransförsök till dig": "Vi planlægger et nyt leveringsforsøg hjem til dig",
+    "2–4 dagar": "2–4 dage"
   }
 }
