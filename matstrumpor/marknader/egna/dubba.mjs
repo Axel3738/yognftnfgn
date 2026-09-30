@@ -35,11 +35,28 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 const HAR = dirname(fileURLToPath(import.meta.url));
 const KLAR = join(HAR, '../annonser/klar');
 const API = 'https://api.elevenlabs.io/v1';
-export const SPRAKKOD = { NO: 'no', DK: 'da', FI: 'fi', US: 'en', DE: 'de', FR: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt' };
+export const SPRAKKOD = { NO: 'no', DK: 'da', FI: 'fi', US: 'en', DE: 'de', FR: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt',
+  // Japan och Taiwan 2026-09-30: eleven_multilingual_v2 läser japanska och mandarin (zh).
+  JP: 'ja', TW: 'zh' };
 export const RÖST = 'lRBvixWrjVcBSKxchtgC'; // "Matstrumpor AI-kvinna (klon ur annonserna)"
+// Egen röst per marknad där klonen inte bär språket. Provlyssnat 2026-09-30 med Whisper medium på fem
+// repliker (襪子, 五雙 …): klonen på mandarin 0,75 (tonfel: 襪子 wàzi hördes 蛙子 "groda"), Anna Su
+// (infödd, taiwanesisk mandarin, ElevenLabs röstbibliotek) med eleven_turbo_v2_5 0,92. Japanskan
+// behåller klonen: felet där var kanji-läsningen, inte rösten (se `las` nedan).
+export const RÖSTER = { TW: '9lHjugDhwqoxA5MhX0az' }; // "Matstrumpor TW Anna Su"
+
+export const röstFor = (kod) => RÖSTER[kod] ?? RÖST;
+/** Ren: cachenyckeln för ett klipp. Rösten ingår bara när den inte är klonen, så att de elva
+ *  europeiska språkens klipp (nyckel utan röst) fortfarande träffar cachen. */
+export const klippNyckel = ({ rost, modell, fart, prev, text, next }) => `${rost && rost !== RÖST ? `${rost}|` : ''}${modell}|${fart}|${prev}|${text}|${next}`;
 // Norska finns inte i eleven_multilingual_v2. eleven_v3 prövades (2026-09-29, NO haikuh2): Whisper
 // hörde svenska 0,96, ordtäckning 0,43, och v3 bryr sig inte om farten (11 av 18 över fönstret).
-export const MODELL = { NO: 'eleven_turbo_v2_5' };
+export const MODELL = { NO: 'eleven_turbo_v2_5', TW: 'eleven_turbo_v2_5' };
+/** Ren: texten rösten läser. `las` är segmentets uttal (japanska: samma mening med de kanji som
+ *  modellen läser fel skrivna med hiragana — 靴下 → くつした, 五足 → ごそく, 母 → はは). Mätt
+ *  2026-09-30: med kanji hördes 靴下 som "ガックザ"/"かさ" och 母 som 目 i alla fyra röster; med
+ *  uttalet 0,87 i snitt och 靴下 rätt. Undertexten och textlagret visar alltid `text`. */
+export const lasText = (s) => s.las ?? s.text;
 const STANDARDMODELL = 'eleven_multilingual_v2';
 const MAXFART = 1.2, MAXTEMPO = 1.15;
 const OM = process.argv.includes('--om'); // ❌ i QA: nytt frö, nya klipp (cachenyckeln bär fröet)
@@ -106,13 +123,13 @@ function talnivå(fil) {
   return n ? Math.sqrt(sum / n) : 0;
 }
 
-async function tts(text, lang, modell, fart, prev, next, fil) {
+async function tts(text, lang, modell, fart, prev, next, fil, rost = RÖST) {
   if (existsSync(fil)) return;
   const kropp = { text, model_id: modell, seed: OM ? 30 : 29,
     voice_settings: { stability: 0.5, similarity_boost: 0.85, style: 0, use_speaker_boost: true, speed: fart } };
   if (modell !== STANDARDMODELL) kropp.language_code = lang;
   if (modell !== 'eleven_v3') { if (prev) kropp.previous_text = prev; if (next) kropp.next_text = next; }
-  const r = await api(`/text-to-speech/${RÖST}?output_format=mp3_44100_192`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(kropp) });
+  const r = await api(`/text-to-speech/${rost}?output_format=mp3_44100_192`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(kropp) });
   const rå = `${fil}.ra.mp3`;
   writeFileSync(rå, Buffer.from(await r.arrayBuffer()));
   // tystnad före och efter bort, så klippet börjar när segmentet börjar
@@ -152,22 +169,24 @@ async function main() {
   const langd = langdAv(join(HAR, 'kalla', `${video}.mp4`));
   const fon = fonster(manus, lok, langd);
   const modell = MODELL[kod] ?? STANDARDMODELL;
+  const rost = röstFor(kod);
   const logg = [];
   let tecken = 0;
   for (let i = 0; i < lok.segment.length; i++) {
     const s = lok.segment[i];
-    const prev = lok.segment.slice(Math.max(0, i - 2), i).map((x) => x.text).join(' ');
-    const next = lok.segment[i + 1]?.text ?? '';
-    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(`${modell}|${fart}|${prev}|${s.text}|${next}`).digest('hex').slice(0, 10)}${OM ? '_om' : ''}.mp3`);
+    const prev = lok.segment.slice(Math.max(0, i - 2), i).map(lasText).join(' ');
+    const next = lok.segment[i + 1] ? lasText(lok.segment[i + 1]) : '';
+    const las = lasText(s);
+    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(klippNyckel({ rost, modell, fart, prev, text: las, next })).digest('hex').slice(0, 10)}${OM ? '_om' : ''}.mp3`);
     let fart = 1, fil = klipp(1);
-    if (!existsSync(fil)) tecken += s.text.length;
-    await tts(s.text, lang, modell, 1, prev, next, fil);
+    if (!existsSync(fil)) tecken += las.length;
+    await tts(las, lang, modell, 1, prev, next, fil, rost);
     let d = langdAv(fil.replace(/\.mp3$/, '.wav'));
     const f = fartFor(d, fon[i].max);
     if (f > 1) {
       fart = f; fil = klipp(f);
-      if (!existsSync(fil)) tecken += s.text.length;
-      await tts(s.text, lang, modell, f, prev, next, fil);
+      if (!existsSync(fil)) tecken += las.length;
+      await tts(las, lang, modell, f, prev, next, fil, rost);
       d = langdAv(fil.replace(/\.mp3$/, '.wav'));
     }
     let tempo = 1;
@@ -189,9 +208,9 @@ async function main() {
   filt.push(`[0:a]${lok.segment.map((_, i) => `[v${i}]`).join('')}amix=inputs=${lok.segment.length + 1}:duration=first:normalize=0,alimiter=limit=0.95[ut]`);
   const dub = `${bas}.dub.m4a`;
   kor('ffmpeg', [...inn, '-filter_complex', filt.join(';'), '-map', '[ut]', '-c:a', 'aac', '-b:a', '192k', dub]);
-  writeFileSync(`${bas}.dub.json`, JSON.stringify({ vag: 'tts', rost: RÖST, modell, text_sha: textSha, gain: +gain.toFixed(3), tecken_denna_korning: tecken, segment: logg, skapad: new Date().toISOString() }, null, 1));
+  writeFileSync(`${bas}.dub.json`, JSON.stringify({ vag: 'tts', rost, modell, text_sha: textSha, gain: +gain.toFixed(3), tecken_denna_korning: tecken, segment: logg, skapad: new Date().toISOString() }, null, 1));
   const over = logg.filter((x) => x.over);
-  console.log(`${kod} ${video}: ${logg.length} segment, modell ${modell}, ${tecken} nya tecken, fart>1 på ${logg.filter((x) => x.fart > 1).length}, atempo på ${logg.filter((x) => x.tempo > 1).length}${over.length ? `, ⚠️ ${over.length} går över fönstret: ${over.map((x) => x.seg).join(', ')}` : ''}`);
+  console.log(`${kod} ${video}: ${logg.length} segment, röst ${rost === RÖST ? 'klonen' : rost}, modell ${modell}, ${tecken} nya tecken, fart>1 på ${logg.filter((x) => x.fart > 1).length}, atempo på ${logg.filter((x) => x.tempo > 1).length}${over.length ? `, ⚠️ ${over.length} går över fönstret: ${over.map((x) => x.seg).join(', ')}` : ''}`);
 
   const ut = `${bas}.mp4`;
   // ljudet tonas ut på bildens sista 0,28 s (tyst de sista 30 ms, som källorna): -shortest kapar vid bildens slut, och utan utoning ligger

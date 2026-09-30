@@ -214,6 +214,44 @@
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+  },
+  "JP": {
+   "kampanj": "MATSTRUMP_JP_SALES",
+   "adset": "MATSTRUMP_JP_ugc",
+   "geo": [
+    "JP"
+   ],
+   "locale": "ja",
+   "heygen_sprak": "Japanese (Japan)",
+   "lank": "https://matstrumpor.com/ja/products/sushi-strumpor?country=JP",
+   "doman": "matstrumpor.com",
+   "sprakmapp": "ja",
+   "lank_beslut": "2026-09-30: Axel \"Jag hade också viljat testa Japan och Taiwan … i Japan speciellt kan vi trycka på att det är ett svenskt varumärke\", val B \"som i Europa\" ⇒ egen marknad Japan (JPY) i Shopify, japanska på matstrumpor.com/ja som alla utlandsspråk.",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "PLATSHÅLLARE 1 000 kr/dag (som de andra utlandskampanjerna) så att CBO-kampanjen kan skapas PAUSED — EJ GIVEN av Axel för Japan/Taiwan. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+  },
+  "TW": {
+   "kampanj": "MATSTRUMP_TW_SALES",
+   "adset": "MATSTRUMP_TW_ugc",
+   "geo": [
+    "TW"
+   ],
+   "locale": "zh-TW",
+   "heygen_sprak": "Chinese (Taiwanese Mandarin, Traditional)",
+   "lank": "https://matstrumpor.com/zh-tw/products/sushi-strumpor?country=TW",
+   "doman": "matstrumpor.com",
+   "sprakmapp": "zh-tw",
+   "lank_beslut": "2026-09-30: Axel \"Jag hade också viljat testa Japan och Taiwan\", val B \"som i Europa\" ⇒ egen marknad Taiwan (TWD) i Shopify, traditionell kinesiska på matstrumpor.com/zh-tw.",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "PLATSHÅLLARE 1 000 kr/dag (som de andra utlandskampanjerna) så att CBO-kampanjen kan skapas PAUSED — EJ GIVEN av Axel för Japan/Taiwan. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord",
+   "regional_regulated_categories": [
+    "TAIWAN_UNIVERSAL"
+   ],
+   "regional_regulation_identities": {
+    "taiwan_universal_beneficiary": null,
+    "taiwan_universal_payer": null
+   },
+   "regional_beslut": "Mätt 2026-09-30: Taiwan kräver regional kategori TAIWAN_UNIVERSAL OCH en verifierad förmånstagare och betalare på adsetet (Taiwans bedrägerilag). Utan kategorin svarar Meta 400 \"Värde för regionalt reglerade kategorier krävs\", med bara kategorin 400 \"Annonsör saknas: ange verifierad annonsör\". Kampanjen MATSTRUMP_TW_SALES 120251796778420023 är skapad PAUSED och tom. Vägen: STONEBITE ECOM AB verifieras som förmånstagare och betalare i Meta (Cowork-prompten matstrumpor/marknader/cowork/3-taiwan-verifiering.txt, dokumenten laddar Axel upp själv; Meta granskar cirka 2 dagar). Sedan: bygg.mjs --marknad TW --skarpt igen. Vägrar Meta fortfarande utan id:n: adsetet MATSTRUMP_TW_ugc skapas för hand i Ads Manager med förmånstagare och betalare valda (promptens steg B), bygg.mjs lägger annonserna i det och skriver ut id:na — skriv dem då här. Inget publikt API listar id:na (github.com/facebook/facebook-java-business-sdk/issues/493)."
   }
  }
 }

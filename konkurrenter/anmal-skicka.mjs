@@ -45,7 +45,10 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
   // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal och tiderna hos dem. Ingen andel sedan 2026-09-29:
   // den räknade hela våra filmer som våra, även klipp vi lånat (Eoka AB:s bestridande).
-  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
+  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/)
+    ?? f.contentDescription?.match(/video is a re-upload of our own ad film[\s\S]*?(\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
+  // Anspråket 'redigering' (anmalan.mjs): vår färdiga annons uppladdad igen — vi gör anspråk på klippningen och texten, inte på filmklippen.
+  const redigering = a.ansprak === 'redigering' || /video is a re-upload of our own ad film/.test(f.contentDescription ?? '');
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
   // Källan: filmerna paren kommer ur (anmalan.mjs lägger dem som fält), annars annonsen texten/bilden kommer ur.
   const filmer = Array.isArray(a.filmer) && a.filmer.length ? a.filmer : null;
@@ -56,9 +59,9 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const org = Array.isArray(a.originaler) ? a.originaler.filter((o) => o?.lank) : [];
   // Kortas i steg när 500 inte räcker — länk-/filmlistan och etiketterna först, så att referensen i slutet alltid får plats
   // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
-  const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true } = {}) => [
-    m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
+  const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true, citat = true } = {}) => [
+    m ? (citat ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : `Verbatim copy of our ad copy: ${m[2]} consecutive identical words.`) : null,
+    klipp && redigering ? `Its video is a re-upload of our ad film${flera} (same edit, our on-screen text): ${klipp[1]} stills${tider ? ` (at ${klipp[2]})` : ''} are identical. We claim the edit and text only.` : klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
     !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
     org.length
       ? `Original: our ad${Math.min(org.length, antalFilmer) > 1 ? 's' : ''} in the Ad Library ${org.slice(0, antalFilmer).map((o) => o.lank).join(' ')}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published by us before this ad.`
@@ -76,6 +79,8 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   for (const o of steg) { text = bygg(passage, o); if (text.length <= max) break; }
   const sista = steg.at(-1);
   while (text.length > max && passage.length > 20) { passage = korta(passage, passage.length - 20); text = bygg(passage, sista); }
+  // Räcker det ändå inte går citatet (antalet ord står kvar) — referensen i slutet klipps aldrig (Bustatio 2026-09-30: "Ref…").
+  if (text.length > max) text = bygg(passage, { ...sista, citat: false });
   return text.length > max ? korta(text, max) : text;
 }
 

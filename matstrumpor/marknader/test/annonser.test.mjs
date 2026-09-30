@@ -1,7 +1,7 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { farAktiveras, identitetSkillnad, lankOk, lankSkillnad, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { arVerifieringsfel, farAktiveras, identitetSkillnad, lankOk, lankSkillnad, regionalFalt, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
 import { readFileSync } from 'node:fs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
@@ -119,4 +119,21 @@ test('--byt-text byter också sidan: utlandsannonserna visas som sidan Matstrump
   assert.deepEqual(identitetSkillnad(M, gammal), ['sida', 'instagram']);
   assert.deepEqual(identitetSkillnad(M, { page_id: M.sida, instagram_user_id: M.instagram_user_id }), []);
   assert.deepEqual(identitetSkillnad(M, {}), ['sida', 'instagram']);
+});
+
+test('regionalFalt: Taiwan skickar TAIWAN_UNIVERSAL, identiteterna bara när id:na finns, andra marknader inget', async () => {
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  // Mätt 2026-09-30: utan kategorin 400 "Värde för regionalt reglerade kategorier krävs".
+  assert.deepEqual(JSON.parse(regionalFalt(M.kampanjer.TW).regional_regulated_categories), ['TAIWAN_UNIVERSAL']);
+  assert.equal(regionalFalt({ regional_regulated_categories: ['TAIWAN_UNIVERSAL'], regional_regulation_identities: { taiwan_universal_beneficiary: null, taiwan_universal_payer: null } }).regional_regulation_identities, undefined);
+  const med = regionalFalt({ regional_regulated_categories: ['TAIWAN_UNIVERSAL'], regional_regulation_identities: { taiwan_universal_beneficiary: '111', taiwan_universal_payer: '222' } });
+  assert.deepEqual(JSON.parse(med.regional_regulation_identities), { taiwan_universal_beneficiary: '111', taiwan_universal_payer: '222' });
+  for (const kod of ['NO', 'US', 'DE', 'JP']) assert.deepEqual(regionalFalt(M.kampanjer[kod]), {}, kod);
+});
+
+test('arVerifieringsfel: Metas svar om verifierad annonsör känns igen, andra fel släpps igenom', () => {
+  assert.ok(arVerifieringsfel('Meta 400: Invalid parameter — Annonsör saknas: ange verifierad annonsör så att annonser i annonsuppsättningen kan levereras till målgrupper i Taiwan.'));
+  assert.ok(arVerifieringsfel('Meta 400: Invalid parameter — Värde för regionalt reglerade kategorier krävs.'));
+  assert.ok(arVerifieringsfel('Meta 400: Invalid parameter — Beneficiary is missing'));
+  assert.equal(arVerifieringsfel('Meta 400: (#100) Invalid parameter — pixel_id'), false);
 });

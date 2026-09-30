@@ -1,0 +1,585 @@
+{
+  "sprak": "da",
+  "ui": {
+    "hej_reserv": "Hej",
+    "du_reserv": "du",
+    "medlem_reserv": "Medlem",
+    "medlemskort": "Medlemskort",
+    "medlem_i": "Medlem af {klubb}",
+    "knapp_till": "Til produktet",
+    "knapp_kassa": "Tilbage til kassen",
+    "knapp_titta": "Se igen",
+    "knapp_betyg": "Giv din vurdering",
+    "ms_rad": "Pakkenummeret, der begynder med MS, står i mailen om, at pakken er sendt.",
+    "fakta_retur_rubrik": "Fortrydelsesret",
+    "fakta_sparning_rubrik": "Spor pakken",
+    "fakta_sparning_text": "Følg den hele vejen",
+    "grundare": "grundlægger",
+    "verifierad": "verificeret kunde",
+    "verifierad_ensam": "Verificeret kunde",
+    "fakta_retur_text": "30 dages fortrydelsesret",
+    "oversatt": "oversat fra svensk",
+    "klubb": "Matstrumpor-klubben"
+  },
+  "citat": {
+    "0cc5d9cab945": "Sokkepakkerne var så sjove at give til børn og børnebørn i gave! Og efter hvad jeg har hørt bagefter, var det også god kvalitet!",
+    "1f16cc42983e": "Rigtig behagelige sokker",
+    "af7d51d6f01d": "Vidunderlige sokker, modtageren blev så glad.",
+    "c0a92758da0e": "Rigtig fine i sjov indpakning! Hurtig levering"
+  },
+  "mejl": {
+    "k01-de-tror-att-det-ar-sushi": {
+      "kalla": "12fd0d6076d0",
+      "amne": "De kigger to gange, så griner de",
+      "forhandstext": "Fem par sokker ligger, hvor sushistykkerne burde være.",
+      "block": [
+        {
+          "rubrik": "Ligner sushi. Er sokker.",
+          "text": "Hej {{fornamn}},\n\nBoksen åbnes som en sushibestilling. Fem par sokker ligger rullet som sushistykker, med spisepinde ved siden af.",
+          "knapp.text": "Se sushiboksen"
+        },
+        {
+          "text": "Alle, der åbner boksen, tror først, at det er rigtig sushi.\n\nSå går det op for dem, hvad det egentlig er, og de kigger en gang til."
+        },
+        {
+          "rubrik": "Det ligger i boksen",
+          "punkter": [
+            "Fem par sokker, rullet som sushistykker.",
+            "Boksen ligner takeaway, indtil den åbnes.",
+            "Spisepinde af træ er med.",
+            "Én størrelse 36-44."
+          ]
+        },
+        {},
+        {
+          "text": "Fem par i en boks, lavet til at snyde øjet.",
+          "knapp": "Til sushiboksen"
+        },
+        {}
+      ]
+    },
+    "k02-ingen-jublar-at-tvattmedel": {
+      "kalla": "8d8d1af7f269",
+      "amne": "Ingen jubler over vaskemiddel",
+      "forhandstext": "Sjov, når den åbnes. Brugbar dagen efter.",
+      "block": [
+        {
+          "rubrik": "Den kedelige virker. Den sjove glemmes.",
+          "text": "Hej {{fornamn}},\n\nEn praktisk gave bliver pakket op i tavshed. En sjov nipsting ligger i en skuffe allerede i morgen.",
+          "knapp.text": "Se boksen"
+        },
+        {
+          "text": "Den her er sjov i aften og på fødderne i morgen."
+        },
+        {
+          "text": "Fem par i en boks, der ligner rigtig sushi.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "rubrik": "Til den næste person"
+        },
+        {}
+      ]
+    },
+    "k03-kundernas-ord": {
+      "kalla": "89f0038718bf",
+      "amne": "Anmeldelserne siger, at modtageren blev glad",
+      "forhandstext": "4,5 af 5 i gennemsnit, ikke et opdigtet ord.",
+      "block": [
+        {
+          "rubrik": "Det skrev kunderne",
+          "text": "Rigtige købere, rigtige ord. Intet her er opdigtet."
+        },
+        {},
+        {
+          "text": "Fem par sokker, rullet som sushi, i en boks, der snyder øjet.",
+          "knapp": "Til sushiboksen"
+        },
+        {}
+      ]
+    },
+    "k04-fars-dag-bestall-senast-24-okt": {
+      "kalla": "a3433ff29791",
+      "amne": "Bestil i god tid til gaven",
+      "forhandstext": "Bestil i god tid.",
+      "block": [
+        {
+          "rubrik": "Bestil i god tid",
+          "text": "Hej {{fornamn}},\n\nVil du give en gave til en bestemt anledning, så bestil i god tid.",
+          "knapp.text": "Se gaven"
+        },
+        {
+          "text": "Bestil i god tid, så har du ro til at vælge."
+        },
+        {
+          "text": "Fem par, der gør gaven svær at gætte på forhånd.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "rubrik": "Hvis der hellere skal være noget andet"
+        },
+        {}
+      ]
+    },
+    "k05-julstrumpan": {
+      "kalla": "2d2d53fa582e",
+      "amne": "Gæt, hvad jeg lagde i julestrømpen",
+      "forhandstext": "Lille boks. Stort gæt.",
+      "block": [
+        {
+          "rubrik": "Der er plads til den i julestrømpen",
+          "text": "Hej {{fornamn}},\n\nEn lille boks. Fem par sokker og spisepinde indeni.\n\nPræcis den størrelse, en julestrømpe er lavet til.",
+          "knapp.text": "Se sushiboksen"
+        },
+        {
+          "text": "Den ligner takeaway. Ingen gætter rigtigt, før den åbnes."
+        },
+        {
+          "rubrik": "Derfor er der plads til den",
+          "punkter": [
+            "Boksen er lille nok til en julestrømpe.",
+            "Fem par sokker, rullet som sushi.",
+            "Spisepinde af træ følger med."
+          ]
+        },
+        {
+          "text": "Samme boks, nu i julestrømpen.",
+          "knapp": "Til sushiboksen"
+        },
+        {},
+        {}
+      ]
+    },
+    "k06-slut-i-november-forra-aret": {
+      "kalla": "a46dc7445b89",
+      "amne": "Sushiboksen blev udsolgt i november sidste år",
+      "forhandstext": "Boksene blev udsolgt i november, før julehandlen var kommet i gang.",
+      "block": [
+        {
+          "rubrik": "I november sidste år blev vi udsolgt",
+          "text": "Hej {{fornamn}},\n\nI november 2025 blev sushiboksen udsolgt. Vi ved ikke, om det sker igen, men hvis du alligevel tænkte på at købe til jul, kan det være tid til at gøre det nu.",
+          "knapp.text": "Se sushiboksen"
+        },
+        {
+          "text": "Samme boks, som blev udsolgt sidste november.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "rubrik": "Hvis du vil have en anden slags"
+        },
+        {}
+      ]
+    },
+    "k07-tva-lador-tva-personer": {
+      "kalla": "ed6617a35935",
+      "amne": "Køb 1, få 1, til to forskellige personer",
+      "forhandstext": "To modtagere, ét køb, intet besvær.",
+      "block": [
+        {
+          "rubrik": "To bokse, to personer på listen",
+          "text": "Hej {{fornamn}},\n\nDe fleste bestillinger indeholder to bokse. En til mor, en til bror. En til dig, en til en anden.\n\nKøb 1, få 1, det står på produktsiden.",
+          "knapp.text": "Se sushiboksen"
+        },
+        {
+          "rubrik": "To personer på listen",
+          "punkter": [
+            "Mor og bror.",
+            "Kollegaen og partneren.",
+            "Børnene og farfar."
+          ]
+        },
+        {
+          "text": "En boks mere med i købet, som der står på produktsiden.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "rubrik": "Andre slags, samme tilbud på produktsiden"
+        },
+        {}
+      ]
+    },
+    "k08-julklappsguide": {
+      "kalla": "65a6f3871101",
+      "amne": "Sushi, pizza, burger, donut. En liste.",
+      "forhandstext": "Fire slags, fire modtagere, alt på ét sted.",
+      "block": [
+        {
+          "rubrik": "Sushi til en, pizza til en anden",
+          "text": "{{fornamn}}, fire slags i boksen, fire forskellige personer at give til. Sushi til den, der kan lide sushi, eller aldrig ville gætte, hvad der er i boksen. Pizza til den, der deler ud af alt. Burger til bror eller far. Donut til børnene.",
+          "knapp.text": "Se hele guiden"
+        },
+        {
+          "text": "Ingen behøver lede i evigheder. Her er fire forslag, et til hver type person på listen."
+        },
+        {
+          "text": "Til den, der elsker sushi, eller til den, der aldrig ville gætte, hvad der er i boksen.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "text": "Fire par i en pizzakarton, til den, der deler ud af alt.",
+          "knapp": "Til pizzaboksen"
+        },
+        {
+          "text": "To par i en burgerboks, til bror eller far.",
+          "knapp": "Til burgerboksen"
+        },
+        {
+          "text": "Tre par rullet som donuts, til børnene.",
+          "knapp": "Til donutboksen"
+        },
+        {
+          "text": "Bestil i god tid før jul."
+        },
+        {}
+      ]
+    },
+    "k09-black-week-start": {
+      "kalla": "998439a85e93",
+      "amne": "Din rabat regnes automatisk ud i kassen",
+      "forhandstext": "10, 20 eller 30 procent. Afhænger kun af, hvor meget der ligger i kurven.",
+      "block": [
+        {
+          "rubrik": "Flere varer i kurven giver mere rabat, hele ugen",
+          "text": "{{fornamn}}, hele Black Week regner kassen din rabat ud automatisk ud fra, hvor mange varer der ligger i kurven. En vare giver 10 %, to varer giver 20 %, tre eller flere giver 30 %. Ingen kode nødvendig, den trækkes direkte i kassen.",
+          "knapp.text": "Se hele sortimentet"
+        },
+        {
+          "rubrik": "Sådan virker rabattrappen",
+          "punkter": [
+            "1 vare: 10 % rabat",
+            "2 varer: 20 % rabat",
+            "3 varer eller flere: 30 % rabat"
+          ]
+        },
+        {
+          "rubrik": "Kombiner for næste niveau"
+        },
+        {}
+      ]
+    },
+    "k10-black-friday": {
+      "kalla": "6819d8838ab1",
+      "amne": "Black Friday: rabatten gælder stadig",
+      "forhandstext": "Black Friday i dag, og rabattrappen gælder stadig.",
+      "block": [
+        {
+          "rubrik": "Black Friday. Rabattrappen gælder stadig.",
+          "text": "{{fornamn}}, i dag er det Black Friday, og rabattrappen gælder stadig. En vare giver 10 %, to giver 20 %, tre eller flere giver 30 %, og kassen regner det ud for dig.",
+          "knapp.text": "Til sortimentet"
+        },
+        {
+          "rubrik": "Fyld kurven for næste niveau"
+        },
+        {
+          "rubrik": "Husk: sådan virker rabattrappen",
+          "punkter": [
+            "1 vare: 10 % rabat",
+            "2 varer: 20 % rabat",
+            "3 varer eller flere: 30 % rabat"
+          ]
+        },
+        {}
+      ]
+    },
+    "k11-bestall-senast-8-dec": {
+      "kalla": "bb81cc21898a",
+      "amne": "Bestil i god tid til jul",
+      "forhandstext": "Jo før, jo bedre.",
+      "block": [
+        {
+          "rubrik": "Bestil i god tid før jul",
+          "text": "{{fornamn}}, vil du give en boks i julegave, så bestil i god tid.",
+          "knapp.text": "Bestil i god tid"
+        },
+        {
+          "rubrik": "Fire forslag, klar med det samme"
+        },
+        {}
+      ]
+    },
+    "k12-sista-dagen-idag": {
+      "kalla": "56e82e349de8",
+      "amne": "Bestil din julegave nu",
+      "forhandstext": "Tænker du på en julegave, så er tiden inde.",
+      "block": [
+        {
+          "rubrik": "Nu er det tid til at bestille til jul",
+          "text": "{{fornamn}}, tænker du på en julegave, så bestil i god tid.",
+          "knapp.text": "Bestil nu"
+        },
+        {
+          "text": "Fem par i en boks, der ser ud, som om den kom direkte fra restauranten.",
+          "knapp": "Til sushiboksen"
+        },
+        {
+          "rubrik": "Eller en af de tre andre"
+        },
+        {}
+      ]
+    },
+    "k13-presentkortet": {
+      "kalla": "495e5de80fa5",
+      "amne": "En gave direkte i indbakken",
+      "forhandstext": "Et gavekort sendes direkte på mail.",
+      "block": [
+        {
+          "rubrik": "Et gavekort på mail",
+          "text": "En gave, der sendes direkte på mail og ikke kræver nogen pakke."
+        },
+        {
+          "text": "Modtageren vælger selv, hvad vedkommende har lyst til, i hele butikken.",
+          "knapp": "Køb gavekortet"
+        },
+        {
+          "rubrik": "Sådan virker det",
+          "text": "Gavekortet sendes digitalt, som en mail, med en kode, modtageren indløser i butikken. Ingen kø, ingen pakke, der skal nå frem."
+        },
+        {}
+      ]
+    },
+    "k14-vem-har-fodelsedag-harnast": {
+      "kalla": "54b4099890b8",
+      "amne": "Hvem fylder år næste gang?",
+      "forhandstext": "Julen er forbi. Næste anledning er ikke langt væk.",
+      "block": [
+        {
+          "rubrik": "Hvem har fødselsdag næste gang?",
+          "text": "{{fornamn}}, julen er forbi, men gaverne behøver ikke være det. Næste fødselsdag på listen er altid tættere på, end du tror.",
+          "knapp.text": "Se alle varianterne"
+        },
+        {
+          "text": "En boks, der ligner mad, virker lige så godt i januar som i december."
+        },
+        {
+          "rubrik": "Fire slags, klar når som helst"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e1": {
+      "kalla": "8f76ff1e7861",
+      "amne": "Du er meldt ind i Matstrumpor-klubben",
+      "forhandstext": "Din plads og dit kort venter her indenfor.",
+      "block": [
+        {
+          "rubrik": "Du er meldt ind i klubben",
+          "text": "Din plads i Matstrumpor-klubben er klar. Du meldte dig ind, så den er din.\n\nVi sælger sokker, der ligner sushi, pizza, hamburgere og donuts.\n\nDe her mails går kun til medlemmer af klubben.",
+          "knapp.text": "Se alle boksene"
+        },
+        {
+          "etikett": "MEDLEMSKORT",
+          "rad_under_namnet": "Medlem af Matstrumpor-klubben",
+          "fotnot": "Ingen kassemedarbejder spørger efter dette kort."
+        },
+        {
+          "rubrik": "Det her får kun medlemmer",
+          "punkter": [
+            null,
+            "En mail om Black Week, kun til medlemmer.",
+            "Kundernes rigtige ord, ordret, uden at du skal lede.",
+            "Hvad der ligger i boksen, vist inden du bestemmer dig."
+          ]
+        },
+        {
+          "rubrik": "Sushi, donut og pizza"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e2": {
+      "kalla": "8e16702c6ea6",
+      "amne": "Det her skrev kunderne",
+      "forhandstext": "Otte anmeldelser, gennemsnit 4,5. Ingen af dem er skrevet af os.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Andre slags at give væk"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e3": {
+      "kalla": "63adf86bf305",
+      "amne": "Sådan fungerer det, når du bestiller",
+      "forhandstext": "Levering, sporing og retur, kort og tydeligt.",
+      "block": [
+        {
+          "rubrik": "Sådan fungerer det, når du bestiller",
+          "text": "Din pakke får sit eget nummer, der begynder med MS. Du finder det på sporingssiden, hvor du også kan se, hvor pakken er på sin vej til dig.\n\nFortryder du dig, kan du returnere. Det står i feltet herunder. Har du et spørgsmål, skriv til kundsupport@matstrumpor.se, så får du svar."
+        },
+        {},
+        {
+          "text": "Se alt, hvad vi sælger"
+        }
+      ]
+    },
+    "f02-overgiven-kassa-e1": {
+      "kalla": "c268b115e64a",
+      "amne": "Noget ligger tilbage i din kurv",
+      "forhandstext": "Klik dig tilbage, alt ligger klar.",
+      "block": [
+        {
+          "rubrik": "Din kurv er der stadig",
+          "text": "Alt, du lagde i kurven, ligger der stadig. Intet er fjernet."
+        },
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e2": {
+      "kalla": "0de656842fa6",
+      "amne": "Tre ting, du måske undrer dig over",
+      "forhandstext": "Størrelse, retur og hvem du kan spørge. Kort besvaret.",
+      "block": [
+        {
+          "rubrik": "Tre spørgsmål, før du betaler",
+          "text": "Passer de? Ja, én størrelse, altså 36-44.\n\nFortryder du dig? Der er retur, det står i feltet herunder.\n\nHvem svarer, hvis noget går galt? Skriv til kundsupport@matstrumpor.se, du får svar."
+        },
+        {},
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e3": {
+      "kalla": "2e080922dc0c",
+      "amne": "Sidste påmindelse",
+      "forhandstext": "Efter det her skriver vi ikke om din kurv igen.",
+      "block": [
+        {
+          "rubrik": "Sidste påmindelse",
+          "text": "Sidste påmindelse om det her. Vi skriver ikke om denne kurv igen.\n\nVil du handle færdig, ligger alt lige der, hvor du lagde det."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e1": {
+      "kalla": "70bdaded5b4d",
+      "amne": "Den her kiggede du på",
+      "forhandstext": "Ingen salgssnak. Bare den her.",
+      "block": [
+        {
+          "text": "Den her kiggede du på for et stykke tid siden."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e2": {
+      "kalla": "c18f517ea010",
+      "amne": "Du var interesseret i den her",
+      "forhandstext": "Den og tre andre, hvis den ikke føltes rigtig.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Tre andre slags at vælge imellem"
+        }
+      ]
+    },
+    "f04-efter-kop-e1": {
+      "kalla": "8da03c073e0e",
+      "amne": "Din bestilling er på vej",
+      "forhandstext": "Ét klik, og du ser præcis, hvor den er lige nu.",
+      "block": [
+        {
+          "rubrik": "Din bestilling er på vej",
+          "text": "Tryk på knappen, så ser du præcis, hvor pakken er lige nu."
+        },
+        {
+          "text": "Følg din pakke"
+        },
+        {
+          "text": "Spørgsmål, før den lander? Skriv til kundsupport@matstrumpor.se, vi svarer."
+        }
+      ]
+    },
+    "f04-efter-kop-e2": {
+      "kalla": "ded016e7c03d",
+      "amne": "Kom alt frem, som det skal?",
+      "forhandstext": "Vi vil bare høre, om pakken er kommet.",
+      "block": [
+        {
+          "rubrik": "Kom alt frem?",
+          "text": "Er pakken kommet frem? Mangler der noget, eller ser noget mærkeligt ud? Skriv til kundsupport@matstrumpor.se, vi løser det."
+        },
+        {
+          "rubrik": "Til den næste person"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e1": {
+      "kalla": "e31b5d1f4e7e",
+      "amne": "Hvem står for tur til en boks?",
+      "forhandstext": "Ingen kampagne, bare en påmindelse: listen med modtagere bliver sjældent tom.",
+      "block": [
+        {
+          "rubrik": "Hvem står for tur?",
+          "text": "Du gav en boks væk sidst. Den virker lige så godt en gang til, til en anden på listen."
+        },
+        {
+          "rubrik": "Fire slags at vælge imellem"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e2": {
+      "kalla": "2273435a131d",
+      "amne": "Det her skrev rigtige kunder",
+      "forhandstext": "To stemmer, så hører du ikke mere om det her fra os.",
+      "block": [
+        {},
+        {
+          "text": "Fem par rullet som sushistykker, i en boks, der ligner takeaway, indtil den åbnes. Spisepindene følger med.",
+          "knapp": "Se sushiboksen"
+        },
+        {}
+      ]
+    },
+    "f06-sunset-e1": {
+      "kalla": "ff33ef0d112b",
+      "amne": "Vil du blive i klubben?",
+      "forhandstext": "Svaret tager ét klik, ikke mere.",
+      "block": [
+        {
+          "rubrik": "Vil du blive i Matstrumpor-klubben?",
+          "text": "{{fornamn}}, der har været stille mellem os et stykke tid. Ét klik holder dig i Matstrumpor-klubben."
+        },
+        {
+          "text": "Ja, jeg vil blive"
+        }
+      ]
+    },
+    "f06-sunset-e2": {
+      "kalla": "2b166f306856",
+      "amne": "Sidste mail om din plads i klubben",
+      "forhandstext": "Efter den her mail fjerner vi dig, hvis vi ikke hører noget.",
+      "block": [
+        {
+          "rubrik": "Det her er sidste mail fra klubben",
+          "text": "{{fornamn}}, hører vi ikke noget nu, fjerner vi dig fra Matstrumpor-klubben. Et sidste klik holder dig i klubben."
+        },
+        {
+          "text": "Ja, behold mig"
+        }
+      ]
+    },
+    "f07-aterkop-sushi-e1": {
+      "kalla": "7eb3f48e69d1",
+      "amne": "En boks mere, til den næste",
+      "forhandstext": "De fleste, der køber igen, vælger præcis samme boks.",
+      "block": [
+        {
+          "rubrik": "En boks mere, til den næste person",
+          "text": "De fleste, der handler en gang til, vælger præcis samme sushiboks, til en anden på listen."
+        },
+        {
+          "text": "Fem par, rullet som sushistykker, i en boks, der ligner takeaway, indtil den åbnes. Spisepindene følger med.",
+          "knapp": "Se sushiboksen"
+        },
+        {
+          "rubrik": "Eller en anden slags"
+        },
+        {}
+      ]
+    }
+  }
+}

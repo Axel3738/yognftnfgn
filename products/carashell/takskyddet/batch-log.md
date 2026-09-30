@@ -2901,3 +2901,10 @@ var den friska halvan fram till dess.
 **−16 864 kr** (i går −10 179, i förrgår −9 693).
 
 **Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.
+
+## 2026-09-30 — leveransrundan: tionde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad. SE-kampanjen
+ACTIVE med 11 adsets, pris 1 129 kr; båda listicle-kampanjerna filtrerade som
+eget spår.

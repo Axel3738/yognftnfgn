@@ -12,8 +12,11 @@ vit text max 62 px. Storleken väljs som originalet (snittbredd 0,60 × storlek 
 krymps dessutom tills den UPPMÄTTA bredden ryms — ett långt ord på finska eller franska får
 aldrig gå utanför pillen. Texten ritas som vektor i koden, bildmodellen ritar aldrig text.
 """
-import json, sys
+import json, os, sys
 from PIL import Image, ImageDraw, ImageFont
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../../pipeline'))
+import cjk  # japanska/kinesiska: DejaVu saknar tecknen (Japan och Taiwan 2026-09-30)
 
 S = 1080
 FET = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -21,15 +24,18 @@ NORMAL = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 AVG = 0.60
 
 def storlek(text, max_bredd, max_size, fontfil, min_size=20):
-    """Originalets regel (snittbredd) först, sedan uppmätt bredd som tak."""
+    """Originalets regel (snittbredd) först, sedan uppmätt bredd som tak. Ett japanskt/kinesiskt
+    tecken är ungefär en hel storlek brett, inte 0,60 — det räknas som två tecken."""
     size = max_size
-    while size > min_size and len(text) * size * AVG > max_bredd:
+    n = sum(2 if cjk.CJK.match(c) else 1 for c in text)
+    while size > min_size and n * size * AVG > max_bredd:
         size -= 1
     while size > min_size and ImageFont.truetype(fontfil, size).getlength(text) > max_bredd:
         size -= 1
     return size
 
 def rad(draw, text, cx, baslinje, max_bredd, max_size, fontfil, fyll):
+    fontfil = cjk.font_for(text, fontfil)
     size = storlek(text, max_bredd, max_size, fontfil)
     f = ImageFont.truetype(fontfil, size)
     draw.text((cx, baslinje), text, font=f, fill=fyll, anchor='ms')  # 'ms' = mitten, baslinje (som SVG text-anchor middle)
@@ -42,8 +48,9 @@ def rita(t, ut, bas='bas.png'):
     rad(d, t['underrubrik'], S / 2, 178, S - 260, 36, NORMAL, '#DCEEFB')
     cx, cy, bredd, hojd = S / 2, 292, 800, 116
     d.rounded_rectangle([cx - bredd / 2, cy - hojd / 2, cx + bredd / 2, cy + hojd / 2], radius=hojd / 2, fill='#B3261E')
-    size = storlek(t['banner'], bredd - 60, 62, FET)
-    d.text((cx, cy + size * 0.35), t['banner'], font=ImageFont.truetype(FET, size), fill='#ffffff', anchor='ms')
+    fet = cjk.font_for(t['banner'], FET)
+    size = storlek(t['banner'], bredd - 60, 62, fet)
+    d.text((cx, cy + size * 0.35), t['banner'], font=ImageFont.truetype(fet, size), fill='#ffffff', anchor='ms')
     im.save(ut, quality=92)
     return ut
 

@@ -200,7 +200,7 @@ button{font:inherit}
       <section class="bildram" aria-label="Bilden som följer med anmälan">
         <h3>Bilden som följer med anmälan</h3>
         ${k.bild ? `<img src="${esc(k.bild)}" data-zoom alt="Bildrutor ur våra filmer bredvid samma rutor i deras annons" loading="lazy">` : '<p class="liten">Bilden finns inte i den här versionen av sidan.</p>'}
-        <p class="liten">Tryck på bilden för att förstora. Våra filmer till vänster, deras annons till höger. <b>Ja betyder att du intygar att varje ruta till vänster är inspelad eller gjord av oss, inte hämtad från någon annan (en leverantör, ett TikTok-konto, en annan butik).</b> Är du osäker på en ruta: tryck Nej och skriv vilken.${k.bildUrl ? ` Meta får <a href="${esc(k.bildUrl)}" target="_blank" rel="noopener">den här filen</a>.` : ''}</p>
+        <p class="liten">Tryck på bilden för att förstora. Våra filmer till vänster, deras annons till höger. ${k.ansprak === 'redigering' ? '<b>Ja betyder att du intygar att annonsen till vänster är vår: vi har klippt den och skrivit texten i bilden. Anmälan gäller bara klippningen och texten, inte filmklippen under texten.</b> Är det inte vår annons: tryck Nej och skriv varför.' : '<b>Ja betyder att du intygar att varje ruta till vänster är inspelad eller gjord av oss, inte hämtad från någon annan (en leverantör, ett TikTok-konto, en annan butik).</b> Är du osäker på en ruta: tryck Nej och skriv vilken.'}${k.bildUrl ? ` Meta får <a href="${esc(k.bildUrl)}" target="_blank" rel="noopener">den här filen</a>.` : ''}</p>
       </section>
       ${k.sammanfattning ? `<p class="sv"><b>Vad anmälan säger, på svenska:</b> ${esc(k.sammanfattning)}</p>` : ''}
       <section aria-label="Det här skrivs in i Metas formulär">

@@ -157,7 +157,9 @@
    "es",
    "it",
    "pl",
-   "pt"
+   "pt",
+   "ja",
+   "zh"
   ],
   "sprak_extra_comment": "Marknaderna Norge, Europa (DK+FI) och USA/UK/AU/CA/NZ byggda 2026-09-27 (matstrumpor/marknader/) — sidan byter språk på dokumentets lang (/nb, /da, /fi, /en) precis som CaraShell. Texterna ur sparning/sprak/<kod>.json.",
   "mejl_sprak": [
@@ -215,6 +217,18 @@
     "locale": "pt-PT",
     "sprak": "pt",
     "mapp": "pt"
+   },
+   {
+    "locale": "ja",
+    "sprak": "ja",
+    "mapp": "ja",
+    "spoks": false
+   },
+   {
+    "locale": "zh-TW",
+    "sprak": "zh",
+    "mapp": "zh-tw",
+    "spoks": false
    }
   ],
   "mejl_sprak_comment": "Fraktmejlen på kundens språk (2026-09-29): en hel mall per rad, registrerad som Shopifys EGEN översättning av notisen (EMAIL_TEMPLATE, title + body_html) med node mejl/notis-oversattning.mjs matstrumpor. Shopify skickar notisen på det språk kunden handlade på — orderns språk, inte leveranslandet (Belgien/Schweiz har flera språk). locale = Shopifys språkkod (pt-PT), sprak = mejl/sprak/<kod>.json, mapp = URL-mappen på matstrumpor.se (/pt, inte /pt-pt) — knappen går till matstrumpor.se/<mapp>/pages/spara?nummer=MS-…, som bär alla tolv språk i alla marknader (mätt i webPresences 2026-09-29). Svenska är huvudmallen och klistras in för hand.",

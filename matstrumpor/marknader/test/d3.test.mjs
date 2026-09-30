@@ -10,8 +10,8 @@ const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 const text = (k) => JSON.parse(readFileSync(join(ROT, 'egna', 'd3', 'texter', `${k}.json`), 'utf8'));
 const kampanj = (rad) => ({ annonser: [{ namn: 'MATSTRUMP_NO_sushi_gift_ugc_001_v1', message: `Något.\n${rad}` }], tre_fragor: [] });
 
-test('alla tolv kampanjer har en granskad text, WW bär USA:s', () => {
-  assert.equal(KODER.length, 12);
+test('alla fjorton kampanjer (Japan och Taiwan sedan 2026-09-30) har en granskad text, WW bär USA:s', () => {
+  assert.equal(KODER.length, 14);
   assert.equal(textKod('WW'), 'US');
   for (const k of KODER) {
     const t = text(textKod(k));

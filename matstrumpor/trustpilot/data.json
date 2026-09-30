@@ -1,5 +1,5 @@
 {
-  "hamtad": "2026-09-29T10:37:22.292Z",
+  "hamtad": "2026-09-30T10:23:30.432Z",
   "poang": 4.2,
   "poang_text": "4,2",
   "poang_en": "4.2",
@@ -24,7 +24,9 @@
     "es": "Muy bueno",
     "it": "Molto buono",
     "pl": "Dobra",
-    "pt-PT": "Bom"
+    "pt-PT": "Bom",
+    "ja": "ほぼ満足",
+    "zh-TW": "很好"
   },
   "profil": {
     "sv": "https://se.trustpilot.com/review/www.matstrumpor.se",
@@ -38,7 +40,9 @@
     "es": "https://es.trustpilot.com/review/www.matstrumpor.se",
     "it": "https://it.trustpilot.com/review/www.matstrumpor.se",
     "pl": "https://pl.trustpilot.com/review/www.matstrumpor.se",
-    "pt-PT": "https://pt.trustpilot.com/review/www.matstrumpor.se"
+    "pt-PT": "https://pt.trustpilot.com/review/www.matstrumpor.se",
+    "ja": "https://jp.trustpilot.com/review/www.matstrumpor.se",
+    "zh-TW": "https://www.trustpilot.com/review/www.matstrumpor.se"
   },
   "omdomen": [
     {

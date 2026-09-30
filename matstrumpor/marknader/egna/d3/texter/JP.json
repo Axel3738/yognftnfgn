@@ -1,0 +1,51 @@
+{
+ "kod": "JP",
+ "locale": "ja",
+ "wordmark": "寿司ソックス",
+ "underrubrik": "見た目はお寿司。中身はソックス合計20足",
+ "banner": "2つ買うともう2つ無料",
+ "message": "届くのは、買った2ボックスと無料の2ボックスです。\n2つ買うともう2つ無料。ソックスは合計20足です。\nお寿司のように巻いたソックス。本物の木製のお箸は、どのボックスにも付いています。\nフリーサイズ。EUサイズ36–44（約23–28cm）にフィットします。\nスウェーデン発のブランドです。",
+ "title": "2つ買うともう2つ無料、合計20足",
+ "link_description": "2つ買うともう2つ無料。送料無料。",
+ "svenska": {
+  "wordmark": "Sushistrumpor",
+  "underrubrik": "Ser ut som sushi. Innehåller strumpor, 20 par sammanlagt",
+  "banner": "Köp 2 – få 2 till gratis",
+  "message": "Du får de 2 lådorna du köper och 2 gratislådor.\nKöp 2 – få 2 till gratis. Strumpor sammanlagt: 20 par.\nRullade som sushi. Äkta ätpinnar i trä följer med i varje låda.\nEn storlek, passar EU 36–44 (cirka 23–28 cm).\nEtt svenskt varumärke.",
+  "title": "Köp 2 – få 2 till gratis, sammanlagt 20 par",
+  "link_description": "Köp 2 – få 2 till gratis. Fri frakt."
+ },
+ "tre_fragor": [
+  {
+   "rad": "見た目はお寿司。中身はソックス合計20足",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "届くのは、買った2ボックスと無料の2ボックスです。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "2つ買うともう2つ無料。ソックスは合計20足です。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "お寿司のように巻いたソックス。本物の木製のお箸は、どのボックスにも付いています。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "フリーサイズ。EUサイズ36–44（約23–28cm）にフィットします。",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

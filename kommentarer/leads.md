@@ -2,6 +2,17 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-09-30
+
+- [ ] **CaraShell · CaraShellRoof** · invändning — AC-aggregat och takluckor igen i USA (4 kommentarer i dag, en har två AC och frågar efter ett telefonnummer). 'Ni visar bara platta tak' återkommer. → OB/bild: skyddet över ett tak med AC-aggregat, redan i backloggen (väntar på leverantörens svar)
+  - Källa: voc · `kalla=voc` · belägg: 122111574021473983_28692091877073738, 122115450333473983_2870553866661525, 122111590569473983_1604744941393958, 122107043547473983_1417451633824080 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · fråga — "Kan man köra med det på?" i NO och US samma dygn (en ironiskt). Samma fråga kom på Bäverbutikens annons. Ingen sida säger att skyddet är för parkerat fordon. → Sidfix: raden 'Ta av skyddet innan du kör' på produktsidan och listiclen
+  - Källa: voc · `kalla=voc` · belägg: 122115450333473983_2327681831339075, 122113236861473983_1129576376417123 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · fråga — Två US-kommentarer frågar om skyddet är vattentätt, och en av dem om materialet. Svaret (vattentätt, tål sol) syns inte tillräckligt. → Bild: 'Waterproof. Sunproof.' som rubrik på regnbild
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_1414598860112367, 122108439363473983_1583636692901878 · status: väntar
+- [ ] **Bäverbutiken · Taljset** · invändning — Täljsetet: 'samma som på Temu', 'stulna videor', 'drop-shipping', 'bjuder 350 kr'. Fyra misstroende-kommentarer på ett dygn. → Egen demo-video av täljsetet i stället för lånat material
+  - Källa: voc · `kalla=voc` · belägg: 122188293782859973_1575039907108370, 122188293782859973_1123457660037882, 122187648338859973_28594983403486791, 122187648338859973_2144205093144686 · status: väntar
+
 ## 2026-09-29
 
 - [ ] **Bäverbutiken · Takoverdrag** · invändning — Fukt/ventilation igen i SE och NO, och en norsk kund ger sin egen lösning: frigolitlådor under duken med öppna ändar för luft (2 likes). Kundens egen distans är ett konkret hook för OB-konceptet med distansprodukten. → OB: kundens frigolitlådor som hook, sedan distansprodukten när den finns

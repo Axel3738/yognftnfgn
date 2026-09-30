@@ -454,15 +454,6 @@
    ]
   },
   {
-   "id": "gid://shopify/DeliveryMethodDefinition/1106542854483",
-   "typ": "fraktsätt",
-   "handle": null,
-   "prefix": "frakt.1106542854483",
-   "keys": [
-    "name"
-   ]
-  },
-  {
    "id": "gid://shopify/DeliveryMethodDefinition/1106542887251",
    "typ": "fraktsätt",
    "handle": null,
@@ -487,6 +478,69 @@
    "prefix": "frakt.1458568462675",
    "keys": [
     "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1458796298579",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1458796298579",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1460927005011",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1460927005011",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814084435",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814084435",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814117203",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814117203",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814149971",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814149971",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/61864814182739",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.61864814182739",
+   "keys": [
+    "alt"
+   ]
+  },
+  {
+   "id": "gid://shopify/MediaImage/62475343495507",
+   "typ": "bildalt",
+   "handle": null,
+   "prefix": "bildalt.62475343495507",
+   "keys": [
+    "alt"
    ]
   },
   {
@@ -729,48 +783,22 @@
    ]
   },
   {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/product.tillbehor?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "product.tillbehor",
+   "prefix": "tema.product.tillbehor",
+   "keys": [
+    "section.product.tillbehor.json.main.share.share_label:3n0vqv9wuiqfh",
+    "section.product.tillbehor.json.ms_sticky.label:12vis953i33jw"
+   ]
+  },
+  {
    "id": "gid://shopify/OnlineStoreThemeSettingsCategory/Brand+information?theme_id=207180890451&first_setting_id=brand_headline",
    "typ": "temainställning",
    "handle": null,
    "prefix": "temainst",
    "keys": [
     "general.brand_description"
-   ]
-  },
-  {
-   "id": "gid://shopify/MediaImage/61864814084435",
-   "typ": "bildalt",
-   "handle": null,
-   "prefix": "bildalt.61864814084435",
-   "keys": [
-    "alt"
-   ]
-  },
-  {
-   "id": "gid://shopify/MediaImage/61864814117203",
-   "typ": "bildalt",
-   "handle": null,
-   "prefix": "bildalt.61864814117203",
-   "keys": [
-    "alt"
-   ]
-  },
-  {
-   "id": "gid://shopify/MediaImage/61864814149971",
-   "typ": "bildalt",
-   "handle": null,
-   "prefix": "bildalt.61864814149971",
-   "keys": [
-    "alt"
-   ]
-  },
-  {
-   "id": "gid://shopify/MediaImage/61864814182739",
-   "typ": "bildalt",
-   "handle": null,
-   "prefix": "bildalt.61864814182739",
-   "keys": [
-    "alt"
    ]
   }
  ]

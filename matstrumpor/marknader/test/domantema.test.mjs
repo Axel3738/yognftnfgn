@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 import {
   MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
-  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR,
+  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR, patchaVarlden, VARLDEN_MARK,
 } from '../domantema.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -175,6 +175,20 @@ test('ms-head: CSS:en för .no ligger bakom värdvillkoret', () => {
   assert.equal(patchaMsHead(r.kod).kod, r.kod);
 });
 
+test('ms-head: trust-badge-appens svenska rad döljs på alla språk utom svenska, också i en redan patchad fil', () => {
+  const ny = patchaMsHead('<script src="x"></script>\n');
+  assert.deepEqual(ny.byten, ['css_norsk', 'trust_badges_bara_svenska']);
+  // Live 2026-09-30: filen bar redan .no-blocket men inte appblocket.
+  const live = patchaMsHead('<script src="x"></script>\n').kod.replace(CSS_UTB, '');
+  const r = patchaMsHead(live);
+  assert.deepEqual(r.byten, ['trust_badges_bara_svenska']);
+  assert.ok(r.kod.includes(`{%- unless request.locale.iso_code == 'sv' -%}\n<style>#ultimateTrustBadgeswidgetDiv { display: none !important; }</style>\n{%- endunless -%}`));
+  assert.equal(r.kod.split(UTB_MARK).length - 1, 1);
+  assert.equal(r.kod.split("request.host contains 'matstrumpor.no'").length - 1, 1, '.no-blocket läggs inte in två gånger');
+  assert.deepEqual(patchaMsHead(r.kod).byten, []);
+  assert.equal(patchaMsHead(r.kod).kod, r.kod);
+});
+
 test('produktmallen: norska recensionerna efter Judge.me, märket efter Judge.me-märket, kommentarshuvudet kvar', () => {
   const mall = `/*\n * Shopifys huvud\n */\n${JSON.stringify({
     sections: { main: { type: 'main-product', blocks: { title: { type: 'title' }, judgeme_stjarnor: { type: 'x' }, ms_storlek: { type: 'custom_liquid' } }, block_order: ['title', 'judgeme_stjarnor', 'ms_storlek'] }, judgeme_widget: { type: 'apps' }, ms_faq_section: { type: 'ms-faq-section' } },
@@ -331,4 +345,188 @@ test('momsraden: korgens rad är tom, elementet och Trustpilot-raden står kvar,
 test('momsraden: alla fem Dawn-filer som ritar raden patchas', () => {
   for (const f of ['sections/main-product.liquid', 'sections/featured-product.liquid']) assert.equal(PATCHAR[f], patchaProduktMoms, f);
   for (const f of ['sections/main-cart-footer.liquid', 'snippets/cart-drawer.liquid', 'snippets/quick-order-list.liquid']) assert.equal(PATCHAR[f], patchaKorgMoms, f);
+});
+
+// ---- Fraktrutan följer kundens land (Axel 2026-09-30) ----------------------------------------------
+import { FRAKT_MARK, FRAKT_SPRAK, fraktText, fraktLandSnippet, saljlander, patchaTrustRow, NYA_FILER, UTB_MARK, CSS_UTB } from '../domantema.mjs';
+
+const KONFIG_M = JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8'));
+const LANDER = saljlander(KONFIG_M);
+
+// Trust-raden ordagrant ur MAIN-temat 2026-09-30 (loopen; huvudet med språkgrenarna är oförändrat).
+const TRUST_ROW = `{%- if rows.size > 0 -%}
+  <div class="ms-trust ms-scope" style="--ms-tr-antal: {{ rows.size }}">
+    {%- for row in rows -%}
+      {%- liquid
+        assign bits = row | split: ':'
+        assign ico = bits[0] | strip
+        assign txt = bits[1] | strip
+        if txt == blank
+          assign txt = ico
+          assign ico = 'check-circle'
+        endif
+      -%}
+      <div class="ms-trust__item">
+        {% render 'ms-icon', name: ico %}
+        <span>{{ txt }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+`;
+
+// En liten tolk för just det Liquid snippeten använder (assign, unless/contains, if, case/when/else,
+// echo med append), så att VARJE språk × land kan köras här och jämföras med fraktText().
+function korSnippet(kalla, { locale, kod, namn, del }) {
+  const block = kalla.slice(kalla.indexOf('{%- liquid') + '{%- liquid'.length, kalla.lastIndexOf('-%}'));
+  const rader = block.split('\n').map((r) => r.trim()).filter(Boolean);
+  let i = 0;
+  const las = (slut) => {
+    const kropp = [];
+    while (i < rader.length) {
+      const r = rader[i];
+      if (slut.some((s) => r === s || r.startsWith(`${s} `))) return kropp;
+      i++;
+      if (r.startsWith('if ') || r.startsWith('unless ')) {
+        const nod = { typ: r.startsWith('if ') ? 'if' : 'unless', villkor: r.replace(/^(if|unless) /, ''), da: las(['else', 'endif', 'endunless']), annars: [] };
+        if (rader[i] === 'else') { i++; nod.annars = las(['endif']); }
+        i++; kropp.push(nod);
+      } else if (r.startsWith('case ')) {
+        const nod = { typ: 'case', uttryck: r.slice(5), nar: [], annars: [] };
+        while (rader[i] !== 'endcase') {
+          const h = rader[i++];
+          if (h.startsWith('when ')) nod.nar.push({ varde: h.slice(5).replace(/'/g, ''), kropp: las(['when', 'else', 'endcase']) });
+          else if (h === 'else') nod.annars = las(['endcase']);
+          else throw new Error(`okänd rad i case: ${h}`);
+        }
+        i++; kropp.push(nod);
+      } else kropp.push({ typ: 'rad', r });
+    }
+    return kropp;
+  };
+  const trad = las([]);
+  const v = { 'localization.country.iso_code': kod, 'localization.country.name': namn, 'request.locale.iso_code': locale, del: del ?? '' };
+  const varde = (x) => (x.startsWith("'") ? x.slice(1, -1) : x === 'blank' ? '' : (v[x] ?? ''));
+  const uttryck = (x) => {
+    if (x.startsWith('localization.country | image_url')) return `<img flagga ${kod}>`;
+    const [forsta, ...filter] = x.split(/ \| (?=append: )/);
+    return filter.reduce((s, f) => s + varde(f.replace('append: ', '')), varde(forsta));
+  };
+  const villkor = (c) => {
+    let m;
+    if ((m = c.match(/^(\S+) (==|!=) (.+)$/))) return (varde(m[1]) === varde(m[3])) === (m[2] === '==');
+    if ((m = c.match(/^('[^']*') contains (\S+)$/))) return varde(m[1]).includes(varde(m[2]));
+    throw new Error(`okänt villkor: ${c}`);
+  };
+  let ut = '';
+  const kor = (kropp) => {
+    for (const n of kropp) {
+      if (n.typ === 'if') kor(villkor(n.villkor) ? n.da : n.annars);
+      else if (n.typ === 'unless') { if (!villkor(n.villkor)) kor(n.da); }
+      else if (n.typ === 'case') { const x = varde(n.uttryck); kor((n.nar.find((w) => w.varde === x) ?? { kropp: n.annars }).kropp); }
+      else if (n.r.startsWith('assign ')) { const [, namnV, h] = n.r.match(/^assign (\S+) = (.+)$/); v[namnV] = uttryck(h); }
+      else if (n.r.startsWith('echo ')) ut += uttryck(n.r.slice(5));
+      else throw new Error(`okänd rad: ${n.r}`);
+    }
+  };
+  kor(trad);
+  return ut;
+}
+
+test('fraktraden: landet och grammatiken per språk, hemlandet med fast fras', () => {
+  const f = (loc, kod, namn) => fraktText(loc, kod, namn, LANDER);
+  assert.equal(f('sv', 'SE', 'Sverige'), 'Fri frakt i Sverige');
+  assert.equal(f('sv', 'DE', 'Tyskland'), 'Fri frakt till Tyskland');
+  assert.equal(f('nb', 'NO', 'Norge'), 'Fri frakt til Norge');
+  assert.equal(f('da', 'DK', 'Danmark'), 'Fri fragt til Danmark');
+  assert.equal(f('fi', 'FI', 'Suomi'), 'Ilmainen toimitus Suomeen');
+  assert.equal(f('en', 'US', 'United States'), 'Free shipping to the United States');
+  assert.equal(f('en', 'GB', 'United Kingdom'), 'Free shipping to the United Kingdom');
+  assert.equal(f('en', 'AU', 'Australia'), 'Free shipping to Australia');
+  assert.equal(f('de', 'AT', 'Österreich'), 'Kostenloser Versand nach Österreich');
+  assert.equal(f('de', 'CH', 'Schweiz'), 'Kostenloser Versand in die Schweiz');
+  assert.equal(f('fr', 'FR', 'France'), 'Livraison gratuite en France');
+  assert.equal(f('fr', 'LU', 'Luxembourg'), 'Livraison gratuite au Luxembourg');
+  assert.equal(f('fr', 'NL', 'Pays-Bas'), 'Livraison gratuite aux Pays-Bas');
+  assert.equal(f('fr', 'MT', 'Malte'), 'Livraison gratuite à Malte');
+  assert.equal(f('nl', 'US', 'Verenigde Staten'), 'Gratis verzending naar de Verenigde Staten');
+  assert.equal(f('nl', 'BE', 'België'), 'Gratis verzending naar België');
+  assert.equal(f('es', 'GB', 'Reino Unido'), 'Envío gratis al Reino Unido');
+  assert.equal(f('it', 'MT', 'Malta'), 'Spedizione gratuita a Malta');
+  assert.equal(f('it', 'NL', 'Paesi Bassi'), 'Spedizione gratuita nei Paesi Bassi');
+  assert.equal(f('pl', 'PL', 'Polska'), 'Darmowa dostawa do Polski');
+  assert.equal(f('pt-PT', 'DE', 'Alemanha'), 'Envio grátis para a Alemanha');
+  assert.equal(f('pt-PT', 'LU', 'Luxemburgo'), 'Envio grátis para o Luxemburgo');
+  assert.equal(f('pt-PT', 'MT', 'Malta'), 'Envio grátis para Malta');
+  // Land vi inte säljer till: frasen utan land.
+  assert.equal(f('en', 'BR', 'Brazil'), 'Free shipping');
+  assert.equal(f('ja', 'BR', 'ブラジル'), '送料無料');
+  assert.equal(f('xx', 'SE', 'Sverige'), null, 'okänt språk ⇒ trust-radens egen text står kvar');
+  // Japan och Taiwan är säljländer sedan 2026-09-30 (konfig.json).
+  assert.ok(LANDER.includes('JP') && LANDER.includes('TW'));
+  assert.equal(f('ja', 'JP', '日本'), '日本全国送料無料');
+  assert.equal(f('ja', 'DE', 'ドイツ'), 'ドイツへの送料無料');
+  assert.equal(f('zh-TW', 'TW', '台灣'), '全台免運費');
+  assert.equal(f('zh-TW', 'JP', '日本'), '免運費寄送至日本');
+  assert.equal(f('fr', 'JP', 'Japon'), 'Livraison gratuite au Japon');
+  assert.equal(f('en', 'JP', 'Japan'), 'Free shipping to Japan');
+});
+
+test('fraktraden: varje säljland har landet utskrivet på varje språk (fr och pt har ingen standardartikel)', () => {
+  for (const [loc, d] of Object.entries(FRAKT_SPRAK)) {
+    for (const kod of LANDER) {
+      const t = fraktText(loc, kod, `<${kod}>`, LANDER);
+      assert.notEqual(t, d.generisk, `${loc} ${kod} föll tillbaka på frasen utan land`);
+      assert.ok(!/'/.test(t), `${loc} ${kod}: rak apostrof bryter Liquid-strängen`);
+    }
+  }
+});
+
+test('snippeten: samma text som fraktText för varje språk × land, flaggan bara i säljländer', () => {
+  const s = fraktLandSnippet(LANDER);
+  assert.ok(s.includes(FRAKT_MARK));
+  assert.ok(s.includes(`'${',' + LANDER.join(',') + ','}' contains ms_fl_sok`), 'säljländerna ur konfig.json');
+  for (const loc of [...Object.keys(FRAKT_SPRAK), 'xx']) {
+    for (const kod of [...LANDER, 'JP', 'BR']) {
+      const namn = `<${kod}>`;
+      const vantat = fraktText(loc, kod, namn, LANDER) ?? '';
+      assert.equal(korSnippet(s, { locale: loc, kod, namn }), vantat, `${loc} ${kod}`);
+      assert.equal(korSnippet(s, { locale: loc, kod, namn, del: 'flagga' }), LANDER.includes(kod) ? `<img flagga ${kod}>` : '', `flaggan ${loc} ${kod}`);
+    }
+  }
+  // Ett nytt säljland i konfig följer med av sig självt (Japan kom in 2026-09-30).
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本' }), '日本全国送料無料');
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '<img flagga JP>');
+  const medBr = fraktLandSnippet([...LANDER, 'BR']);
+  assert.equal(korSnippet(medBr, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '<img flagga BR>');
+  assert.equal(korSnippet(s, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '', 'utan Brasilien i konfig: ingen flagga');
+  assert.equal(NYA_FILER['snippets/ms-frakt-land.liquid'], s, 'NYA_FILER bär snippeten för konfigens länder');
+});
+
+test('trust-raden: lastbilen får land och flagga, de andra punkterna ritas som förut, idempotent', () => {
+  const r = patchaTrustRow(TRUST_ROW);
+  assert.deepEqual(r.byten, ['fraktland']);
+  assert.ok(r.kod.includes(FRAKT_MARK));
+  assert.ok(r.kod.includes("{%- if ico == 'truck' -%}"), 'bara lastbilspunkten');
+  assert.ok(r.kod.includes("{%- render 'ms-frakt-land', del: 'flagga' -%}"));
+  assert.ok(r.kod.includes("{%- else -%}{% render 'ms-icon', name: ico %}{%- endif %}"), 'ikonen står kvar när det inte finns en flagga');
+  assert.equal(r.kod.split("render 'ms-icon'").length - 1, 1);
+  assert.ok(r.kod.includes('        <span>{{ txt }}</span>\n'), 'texten ritas som förut');
+  assert.ok(r.kod.indexOf("{%- assign ms_fraktflagga = '' -%}") < r.kod.indexOf('<div class="ms-trust__item">'), 'flaggan nollställs för varje punkt');
+  assert.deepEqual(patchaTrustRow(r.kod).byten, []);
+  assert.throws(() => patchaTrustRow('<div class="ms-trust">'), /hittades 0 gånger/);
+  assert.equal(PATCHAR['snippets/ms-trust-row.liquid'], patchaTrustRow);
+});
+
+test('collaget: japanska och kinesiska grenar före else, inne i liquid-taggen, idempotent', () => {
+  const kalla = "{%- liquid\n  assign sprak = request.locale.iso_code | downcase\n  case sprak\n    when 'pt-pt', 'pt'\n      assign rubrik = 'Agora em todo o mundo'\n      assign under = 'x'\n    else\n      assign rubrik = 'Nu i hela världen'\n      assign under = 'Samma sushilåda'\n  endcase\n-%}";
+  const r = patchaVarlden(kalla);
+  assert.deepEqual(r.byten, ['varlden']);
+  assert.ok(r.kod.includes("    when 'ja'\n      assign rubrik = 'いま、世界中で'"));
+  assert.ok(r.kod.includes("    when 'zh-tw'\n      assign rubrik = '現在，遍布全世界'"));
+  assert.ok(r.kod.indexOf("when 'zh-tw'") < r.kod.indexOf('    else'), 'före else');
+  assert.ok(!r.kod.includes('{%- comment'), 'ingen tagg-kommentar inne i liquid-taggen');
+  assert.ok(r.kod.includes(`    # ${VARLDEN_MARK}`));
+  assert.deepEqual(patchaVarlden(r.kod).byten, []);
+  assert.equal(PATCHAR['sections/ms-varlden.liquid'], patchaVarlden);
 });

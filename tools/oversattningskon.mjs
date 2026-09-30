@@ -138,8 +138,9 @@ async function läsKö() {
       .map(r => ({ id: String(r.id).replace(/-/g, ''), namn: r.namn, typ: r.typ, status: r.status, hub: r.hub, url: r.url, kalla: 'rader-fil' }));
   }
   const { allaKlaraRader } = await import('./notion-kalla.mjs');
-  const { rader, fel } = await allaKlaraRader({ statusar: [KÖ_STATUS.toLowerCase()], typ: TYP_RE });
+  const { rader, fel, hoppade } = await allaKlaraRader({ statusar: [KÖ_STATUS.toLowerCase()], typ: TYP_RE });
   for (const [h, f] of Object.entries(fel)) console.error(`  ⚠ ${h}: ${f}`);
+  if (hoppade?.length) console.log(`Hubbar utan åtkomst, hoppade enligt Axels beslut 2026-09-30: ${hoppade.length} (${hoppade.join(', ')})`);
   return rader.map(r => ({ id: String(r.id).replace(/-/g, ''), namn: r.namn, typ: r.typ, status: r.status, hub: r.hub, url: r.url, kalla: 'notion-rest' }));
 }
 

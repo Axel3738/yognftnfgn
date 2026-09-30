@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-29T21:10:38.723Z",
+ "skrivet": "2026-09-30T12:12:34.403Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -833,6 +833,82 @@
      "effective_status": "PENDING_REVIEW"
     }
    ]
+  },
+  {
+   "kod": "JP",
+   "kampanj": {
+    "id": "120251797899280023",
+    "name": "MATSTRUMP_JP_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251797901800023",
+    "namn": "MATSTRUMP_JP_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251797953480023",
+     "name": "MATSTRUMP_JP_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797952860023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_007_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797940940023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_005_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797933610023",
+     "name": "MATSTRUMP_JP_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797945730023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_006_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797926190023",
+     "name": "MATSTRUMP_JP_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797919120023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251797915760023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "PENDING_REVIEW"
+    }
+   ]
+  },
+  {
+   "kod": "TW",
+   "kampanj": {
+    "id": "120251796778420023",
+    "name": "MATSTRUMP_TW_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": null,
+   "annonser": []
   }
  ]
 }

@@ -11,7 +11,7 @@
 //        Läser kandidaterna (sessionens fil, Bing om --bing, Ad Library när
 //        token:en får), hämtar varje sida, jämför text och bilder mot vårt,
 //        tar skärmdump på träffarna → output/<datum>.json. Rör INTE minnet.
-//   node konkurrenter/kor.mjs --hamta --annonser-sida <sid-id|Ad Library-länk> [--land SE] [--utan-rackvidd]
+//   node konkurrenter/kor.mjs --hamta --annonser-sida <sid-id|Ad Library-länk> [--land SE] [--utan-rackvidd | --rackvidd aktiva] [--max-annonser 400]
 //        Läser en Facebook-sidas ANNONSER ur annonsbiblioteket härifrån
 //        (adlibrary.mjs: Chromium, räckvidd per annons) → annonsfilen →
 //        samma jämförelse som --annonser <fil>. Slutar med Axels kriterier.
@@ -31,7 +31,7 @@
 //        Våra ORIGINALANNONSER i annonsbiblioteket (original.mjs): filmerna paren pekar på
 //        letas upp på våra sidor och verifieras ruta för ruta → original.json. --anmal
 //        lägger länken i formulärets exempelfält ("Provide an example of your work").
-//   node konkurrenter/kor.mjs --anmal <id> [--bara-aktiva] [--utan-bevisbild] [--utan-cdn]
+//   node konkurrenter/kor.mjs --anmal <id> [--bara-aktiva] [--ansprak redigering] [--hoppa <nr,…> --hoppa-orsak "…"] [--utan-bevisbild] [--utan-cdn]
 //        Meta-anmälningarna: en per kopierad annons + bevisbild + verifieringssida.
 //        Finns klipp.json byggs bevisbilden ur paren, aldrig ur miniatyrträffen.
 //   node konkurrenter/kor.mjs --anmal-skicka <id> [--nr n] [--ja] [--kod-fil <fil>]
@@ -281,7 +281,7 @@ function jamforMotProdukt(p, kand, { k, derasHashar, egnaHashar }) {
 /**
  * Läser konkurrentens ANNONSER själv ur Metas annonsbibliotek (adlibrary.mjs,
  * Chromium härifrån): `--hamta --annonser-sida <sid-id eller Ad Library-länk>
- * [--land SE] [--utan-rackvidd]`. Skriver annonsfilen till output/ och kör
+ * [--land SE] [--utan-rackvidd | --rackvidd aktiva] [--max-annonser 400]`. Skriver annonsfilen till output/ och kör
  * sedan samma jämförelse som `--annonser <fil>`.
  */
 async function hamtaAnnonserSida(k, sida) {
@@ -290,7 +290,10 @@ async function hamtaAnnonserSida(k, sida) {
   if (!sidaId) throw new Error(`"${sida}" är varken ett sid-id eller en Ad Library-länk med view_all_page_id.`);
   const land = flagga('land') ?? (k.ad_library?.lander?.[0] ?? 'SE');
   logg(`Läser annonsbiblioteket för sidan ${sidaId} (${land}) i Chromium …`);
-  const bibliotek = await hamtaAdLibrary(sidaId, { land, logg, medRackvidd: !har('utan-rackvidd') });
+  // --max-annonser: taket för en general store med tusentals annonser (standard 400, aktiva läses först).
+  // --rackvidd aktiva: räckvidden bara för de aktiva — detaljfrågan per annons stryps annars på hundratals (mätt 2026-09-30).
+  const medRackvidd = har('utan-rackvidd') ? false : (flagga('rackvidd') === 'aktiva' ? 'aktiva' : true);
+  const bibliotek = await hamtaAdLibrary(sidaId, { land, logg, medRackvidd, max: flagga('max-annonser') ? Number(flagga('max-annonser')) : undefined });
   mkdirSync(OUTPUT, { recursive: true });
   // Landet i filnamnet utanför Sverige: den norska läsningen skrev annars över den svenska (mätt 2026-09-29).
   const fil = join(OUTPUT, `${idag}.annonser-${sidaId}${land !== 'SE' ? `-${land}` : ''}.json`);
@@ -800,6 +803,11 @@ async function anmal() {
   const k = konfig();
   const { arenden, a } = hamtaArende(flagga('anmal'));
   const nu = new Date().toISOString();
+  // --ansprak redigering (Bustatio 2026-09-30): de har laddat upp VÅRA färdiga annonser igen, med vår text i bilden och
+  // samma klippning. Anmälan gäller då vår klippning och vår text — aldrig filmklippen under, som kan vara andras.
+  // Sparas på ärendet och gäller varje ombygge (och brevet).
+  const ansprak = flagga('ansprak') ?? a.ansprak ?? null;
+  if (ansprak && ansprak !== 'redigering') { console.log(`⚠️ Stoppat: okänt anspråk "${ansprak}" — det enda som finns är "redigering" (vår färdiga annons uppladdad igen).`); process.exitCode = 1; return; }
   // Ett nytt bygge skriver över rapporterna — aldrig över en anmälan som redan gått in (kvittot hade försvunnit).
   const inskickade = (a.anmalan?.rapporter ?? []).filter((r) => r.inskickad || r.referens);
   if (inskickade.length && !har('tvinga')) { console.log(`⚠️ Stoppat: ${inskickade.length} anmälning(ar) i ${a.id} är redan inskickade (nr ${inskickade.map((r) => r.nr).join(', ')}) — ett nytt bygge skulle skriva över kvittona. --tvinga bygger ändå.`); process.exitCode = 1; return; }
@@ -811,8 +819,13 @@ async function anmal() {
   const ov = overifieradFel(a, iOmfang);
   if (ov) { console.log(`⚠️ Stoppat: ${ov}`); process.exitCode = 1; return; }
   // Bara det som är BEVISAT med vårt eget material anmäls (bevisStatus) — och bara med länk. Numreringen följer den här listan.
+  // --hoppa <nr,…> [--hoppa-orsak "…"]: annonser som medvetet INTE anmäls, med orsaken i ärendet (Bustatio 2026-09-30:
+  // taköverdragets filmer bär Specialised Covers klipp — en anmälan där bjuder in samma motdrag som Eoka AB:s).
+  const hoppaNr = new Set(String(flagga('hoppa') ?? '').split(',').map((x) => Number(x.trim())).filter((x) => Number.isFinite(x) && x > 0));
+  const hoppaOrsak = flagga('hoppa-orsak') ?? 'utesluten med --hoppa';
   const tidigaHopp = [];
   const annonser = iOmfang.filter((t) => {
+    if (hoppaNr.has(Number(t.nr))) { tidigaHopp.push({ nr: t.nr, orsak: hoppaOrsak }); return false; }
     const st = bevisStatus(t);
     if (!st.bevisad) { tidigaHopp.push({ nr: t.nr, orsak: `inte bevisad med vårt eget material: ${st.orsak}` }); return false; }
     if (!annonsLank(t.lank).lank) { tidigaHopp.push({ nr: t.nr, orsak: 'ingen Ad Library-länk' }); return false; }
@@ -859,7 +872,7 @@ async function anmal() {
       const antal = annonser.length;
       for (let i = 0; i < annonser.length; i++) {
         const t = annonser[i];
-        const html = bevisbildHtml(a, t, { miniatyr: (u) => miniatyrer[u] ?? null, nu, nr: i + 1, antal, klipp: klippen[t.nr] ?? null, original });
+        const html = bevisbildHtml({ ...a, ansprak }, t, { miniatyr: (u) => miniatyrer[u] ?? null, nu, nr: i + 1, antal, klipp: klippen[t.nr] ?? null, original });
         const fil = join(mapp, `bevis-${i + 1}.png`);
         try { await bevisbildPng(html, fil, { jpg: fil.replace(/\.png$/, '.jpg') }); bevisbilder[t.nr] = { fil: fil.replace(`${DATAMAPP}/`, ''), url: null }; logg(`  bevisbild ${i + 1}/${antal}: ${basename(fil)}`); }
         catch (e) { logg(`  ⚠️ bevisbild ${i + 1}: ${e.message}`); }
@@ -875,7 +888,7 @@ async function anmal() {
       } catch (e) { logg(`  ⚠️ CDN: ${e.message} — bevisbilden följer bara som bilaga`); }
     }
   }
-  const bygget = byggAnmalningar({ ...a, bevis: { ...a.bevis, annonser } }, k, { undertecknare, nu, bevisbilder, original });
+  const bygget = byggAnmalningar({ ...a, ansprak, bevis: { ...a.bevis, annonser } }, k, { undertecknare, nu, bevisbilder, original });
   const { anmalningar } = bygget;
   const hoppade = [...tidigaHopp, ...bygget.hoppade];
   if (!anmalningar.length) { console.log(`Inga anmälningar byggda: ${hoppade.map((h) => `annons ${h.nr}: ${h.orsak}`).join('; ') || 'inga annonser med länk'}`); process.exitCode = 1; return; }
@@ -886,7 +899,7 @@ async function anmal() {
   // Gamla filer från ett större bygge (fler anmälningar förra gången) tas bort, så att mappen bara bär det som gäller.
   for (const f of readdirSync(mapp)) { const m = f.match(/^(?:bevis-)?(\d+)\.(?:json|txt|png)$/); if (m && Number(m[1]) > anmalningar.length) { try { unlinkSync(join(mapp, f)); logg(`  gammal fil borttagen: ${f}`); } catch { /* ok */ } } }
   writeFileSync(join(mapp, 'verifiering.html'), verifieringHtml({ arende: a, anmalningar, bilder, klippen, hoppade, uppdaterad: nu }));
-  const upp = { ...a, miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, baraAktiva: har('bara-aktiva'), hoppadeInaktiva, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
+  const upp = { ...a, ...(ansprak ? { ansprak } : {}), miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, baraAktiva: har('bara-aktiva'), hoppadeInaktiva, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
   sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp, { miniatyrer }); arenden.set(upp.id, upp);
   console.log(`${anmalningar.length} anmälning${anmalningar.length === 1 ? '' : 'ar'} byggd${anmalningar.length === 1 ? '' : 'a'} för ${a.id} (en per annons)${hoppade.length ? `, ${hoppade.length} hoppad(e): ${hoppade.map((h) => `annons ${h.nr} ${h.orsak}`).join(', ')}` : ''}:`);
   for (const an of anmalningar) console.log(`  ${an.nr}/${an.antal}: ${an.lank}${an.exponeringar ? ` · ${an.exponeringar} exponeringar` : ''} · bevisbild ${an.bevisbild ? (an.bevisbildUrl ? 'PNG + CDN-länk' : 'PNG (ingen CDN-länk)') : 'SAKNAS'}`);

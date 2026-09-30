@@ -231,6 +231,38 @@ använder tjänsterna". Ordval som är identiska med svenskan och rätt på mål
    HTML-attribut (`aria-label="{% case %}…"`) men aldrig inuti `{{ … }}` — då en variabel som
    tilldelas på raden före (`valj_paket` i `ms-bundle-picker.liquid`).
 
+## Priserna: minst +20 % mot Sverige (Axel 2026-09-30, `paslag.mjs`)
+
+Axel: "Jag undrar varför du bara har lagt på 15 % i worldwide … vi borde lowkey lägga på 20 % … om det
+går att göra ett snyggt pris av det". Påslaget mättes först mot Sveriges pris i dagens kurs
+(exchangerate-api, 1 SEK = 0,960 NOK / 0,0882 EUR / 0,100 USD). Resultatet var att bara Norges 5-par låg nära
+15 % (+17 %), och resten av Norge låg mellan −8 och +4 %. Europas 5-par låg på +27 %, och resten mellan +1 och +13 %.
+USA låg mellan +34 och +73 %.
+
+- **Regeln** (`konfig.json` → `paslag_min: 0.2`): varje fast pris i en utlandsmarknad ska vara minst
+  Sveriges pris + 20 % i dagens kurs. Ett pris under golvet höjs till närmaste snygga pris ovanför. Snyggt betyder
+  kronor som slutar på 9, euro och dollar på ,90, yen på 80 och Taiwan-dollar på 90. Ett pris över golvet
+  sänks aldrig, eftersom Axel ville höja och $69 är hans eget USA-beslut.
+- **Höjt och sett som kund 2026-09-30:**
+
+| Produkt | Norge | Europa | USA |
+|---|---|---|---|
+| Sushi 5 par | 449 → **469 kr** | 44,90 € (+27 %, kvar) | $69 (kvar) |
+| Sushi 3 par | 349 → **429 kr** | 34,90 → **39,90 €** | $54.99 (kvar) |
+| Donut | 299 → **349 kr** | 29,90 → **31,90 €** | $39.99 (kvar) |
+| Pizza | 399 → **519 kr** | 39,90 → **47,90 €** | $59.99 (kvar) |
+| Hamburgare | 299 → **349 kr** | 29,90 → **31,90 €** | $39.99 (kvar) |
+| Ätpinnar (gåvan) | 49 → **59 kr** | 4,90 → **5,90 €** | $6.99 (kvar) |
+
+  De lokala valutorna i Europa (DKK, CHF, PLN …) räknas om av Shopify från euron och följde med. Kontrollen
+  som kund visade DK 305/244/366 kr, CH 31/47 CHF och PL 178 zł. Gåvans "verdi" i Norge räknas ur ätpinnarnas
+  pris och blev 118/236 kr. Sverige är orört (399/369 kr).
+- **Köra:** `node matstrumpor/marknader/paslag.mjs` (torrt, visar påslaget per produkt), `--skriv` (in i
+  `konfig.json`), sedan `bygg.mjs --steg prislista --skarpt`. Kursen rör sig, så räkna om när en ny marknad
+  läggs till, aldrig i efterhand på en marknad som säljer.
+- **Leverantörens quotes per marknad tas först när marknaden har fått försäljning** (Axel samma dag). Därför
+  är frågorna i `LEVERANTOR-FRAGA.md` och `LEVERANTOR-FRAGA-JP-TW.md` parkerade.
+
 ## COGS per marknad (`matstrumpor/cogs.json`, `cogs.mjs`)
 
 Sverige: Shopifys Cost per item (landad, SEK) — sushi 5 par 80,23, 3 par 67,51;
@@ -539,6 +571,114 @@ engelska länderna utan egen kampanj: **GB, AU, CA och NZ**. Resten av inriktnin
 Advantage+, platstyperna). Den är tillbakaläst och står i `marknader.json` → `WW.geo_beslut`.
 Kampanjen heter fortfarande `MATSTRUMP_WW_SALES`, för annonsnamnen bär `WW`.
 
+### Fraktrutan visar kundens land och flagga (Axel 2026-09-30)
+
+Axel: "istället för att vi har den här widgeten … jag vill att den ändras utifrån vilket land kunden
+sitter i så att det står Free shipping to Norway, Japan etc … magnetchess har gjort detta väldigt
+snyggt". Rutan är lastbilspunkten i trust-raden under köpknappen (`snippets/ms-trust-row.liquid`,
+produktsidan och ätpinnarnas mall). Förut stod "Fri frakt i Sverige" på svenska och bara "Free
+shipping"/"Kostenloser Versand" utan land på de andra språken.
+
+- **Nu:** kundens flagga i stället för lastbilen, och texten med landet: "Free shipping to the United
+  States", "Kostenloser Versand in die Schweiz", "Livraison gratuite au Luxembourg", "Darmowa dostawa do
+  Polski". Svenska kunder ser samma text som förut, "Fri frakt i Sverige", med den svenska flaggan.
+- **Motorn:** `domantema.mjs` → `FRAKT_SPRAK` (grammatiken per språk: hemlandets fasta fras, artikel och
+  preposition per land där språket kräver det) och `fraktLandSnippet` → `snippets/ms-frakt-land.liquid`,
+  som skrivs om varje körning ur `konfig.json`:s länder. Ett nytt land i en marknad får alltså flaggan och
+  landet av sig självt; ett land vi inte säljer till får frasen utan land och lastbilen. Landnamnet är
+  Shopifys eget på kundens språk (`localization.country.name`), flaggan Shopifys egen (`country |
+  image_url`, 4:3), 1,25em hög så att texterna står i linje med ikonerna bredvid.
+- **Mätt som kund 2026-09-30 i 24 länder** (SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT, CH, FR, BE,
+  LU, NL, ES, IT, PL, PT, IE, CZ): rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
+  `test/domantema.test.mjs` kör snippeten i en liten Liquid-tolk för alla 13 språk × 38 länder och
+  jämför med `fraktText`.
+- Magnetchess gick inte att läsa härifrån (magnetchess.com svarar 502/503 mot containern). Deras .se
+  visar bara "Free shipping on all orders". Utseendet är därför vårt eget.
+
+### Trust Badges-appen bara på svenska (hittat 2026-09-30)
+
+Appen Ultimate Trust Badges ritar en rad under köpknappen: "Betala säkert med Klarna." och logorna
+Mastercard, Visa, Apple Pay, Klarna, Google Pay och **Swish**. Texten är appens egen och finns bara på
+svenska. Mätt som kund: raden syntes på svenska sidor **och på .com:s engelska sidor**, alltså i USA, UK,
+Australien, Kanada och Nya Zeeland (appen känner bara igen sökvägar utan språkmapp, så /nb /da /de …
+slapp den). Den döljs nu på alla språk utom svenska (`domantema.mjs` → `CSS_UTB` i
+`snippets/ms-head.liquid`, `display: none` bakom `request.locale.iso_code != 'sv'`). Trust-radens
+"Secure payment" står kvar. Tillbakaläst live: SE visar raden, US/GB/AU har den dold (höjd 0).
+
+## Japan och Taiwan (Axel 2026-09-30)
+
+Axel: "Jag hade också viljat testa Japan och Taiwan. Och i Japan speciellt kan vi trycka på att det är ett
+svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbetsdagar japan osv".
+
+- **Två egna marknader i Shopify** (`konfig.json`): Japan (JPY, japanska `ja`) och Taiwan (TWD,
+  traditionell kinesiska `zh-TW`), fri frakt i zonen "Japan och Taiwan", 5–10 arbetsdagar. Adresserna är
+  `matstrumpor.com/ja` och `matstrumpor.com/zh-tw` (.com delas med Japan och Taiwan, `--steg domaner`).
+  ⚠️ Planen "Shopify" gav två marknader till utan fel — README:ns gamla "Grow-planen ger inte fler
+  marknader" stämde inte.
+- **Priserna "som i Europa"** (`paslag.mjs` → `prisSomI`): närmaste snygga pris till Europas pris i
+  dagens kurs, aldrig under golvet Sverige + 20 %. Japan ¥7 980 / 7 080 / donut 5 680 / pizza 8 580 /
+  burger 5 680 / ätpinnar 1 080; Taiwan NT$1 690 / 1 490 / 1 190 / 1 790 / 1 190 / 209.
+- **Översättningen** (207 texter per språk): sonnet-översättare per del (A–D) mot `REGLER.md` +
+  `oversattning/REGLER-ASIEN.md`, en skeptisk infödd granskare per del (C och D parvis), alla fynd
+  inlagda. De viktigaste fynden: Klarna finns inte i Japan eller Taiwan och är borttaget där (regel 13),
+  två betydelsefel i japanska integritetspolicyn (klagorätten hos tillsynsmyndigheten, "verkställa
+  överträdelser"), åldersgränsen "16 歲以下" (= 16 och yngre) i kinesiskan, 雙數 (läses "jämnt tal") →
+  組合, 真正木頭筷子 → 實木筷子. `granska.mjs` kontrollerar skriften (förenklade tecken, kana i
+  kinesiska, belopp, Sverige i fraktrad, スウェーデン製).
+- **Svenskt varumärke i Japan** (Axels ord): hjältetexten börjar med 「スウェーデン発のブランド。」 och
+  första stycket på Om oss säger det; annonsernas brödtext slutar med 「スウェーデン発のブランドです。」
+  och en av rubrikerna bär vinkeln; Nathalie säger i videon att sushilådan sålde slut i Sverige.
+  Aldrig スウェーデン製. Taiwan får samma rad som alla andra: 「來自瑞典的品牌。」.
+- **Talet fyra säger vi aldrig i reklam** (四 = 死 på både japanska och kinesiska; regel 14):
+  bildannonsen säger 「2つ買うともう2つ無料、合計20足」 / 「買二送二，共 20 雙襪子」 i stället för "fyra
+  lådor", och `kolla-srt.mjs`, `kolla-egna.mjs` och `d3/annons.mjs` stoppar ett 四.
+- **Temat:** `bygg.mjs --steg tema` byggde om tio filer med ja/zh-TW-grenar. ⚠️ Trust-raden bär sedan
+  i dag både temapatchens språkgrenar och fraktrutans flagga (`domantema.mjs`), så steget kände inte
+  igen filen ("någon har ändrat filen"). Det bygger nu `domantema(temapatch(original))` och jämför
+  med det.
+- **Läst som kund 2026-09-30** (Chromium, `?country=JP` / `?country=TW`): japanska/kinesiska, JPY/TWD,
+  5足 ¥7,980 · 3足 ¥7,080 / 5雙 $1,690 · 3雙 $1,490, fraktrutan 「日本全国送料無料」 / 「全台免運費」
+  med flaggan, 30日間返品OK / 30 天內可退貨. Kvar på svenska: Judge.me-recensionerna och rutan "Var
+  först med att skriva en recension" (Judge.me känner igen nya språk inom ~24–48 h, se nedan) och
+  collaget "Nu i hela världen" (en annan sessions sektion, grenen `claude/friendly-maxwell-cwfglq` —
+  rubriken får ja/zh-TW av `domantema.mjs` tills collageverktyget är på `main`).
+- **Spårningssidan, fraktmejlen, Trustpilot:** `sparning/sprak/ja.json` + `zh.json` (209 fraser),
+  `sprak_extra` + `mejl_sprak` i `sparning/butiker.json` (med `spoks: false` — Spoks-mejlen går på
+  engelska till Japan och Taiwan tills innehållet är översatt), tidszon Asia/Tokyo / Asia/Taipei och
+  datumspann med månaden först (10月7日–14日). Fraktmejlen registrerade på ja och zh-TW (39 av 39
+  lästa tillbaka). Trustpilot-raden på båda språken: japanska etiketten är Trustpilots egen
+  (「ほぼ満足」), Taiwan får 「很好」 ur `ETIKETT_EGEN` eftersom Trustpilot saknar kinesiska, och båda
+  skriver betyget med decimalpunkt.
+- **Annonserna, åtta per marknad** (`annonser/JP.json`, `TW.json`; copy av sonnet mot copy-reglerna +
+  `REGLER-ASIEN.md`, granskad av infödda): 001–003 Nathalie, Sofie H1 och Sofie H2 genom HeyGen i
+  läget `precision` (`heygen/JP.json`, `TW.json`, SRT:erna i `heygen/srt/JP|TW/`), 004 012v2 med
+  japansk/kinesisk bildtext, 005–007 röstvideorna haikuh3, haikuh2 och s001h1 med ElevenLabs
+  (`egna/JP|TW/*.json`) och 008 bildannonsen D3 (`egna/d3/texter/JP|TW.json`). Katarina är inte med.
+  Verktygen för skriften (Noto Sans CJK, kinsoku, tecken per sekund, bigram-lyssning) står i
+  `heygen/README.md` → "Japanska och kinesiska". Den japanska granskaren fällde 17 rader i röstvideorna
+  första gången; undertexten säger nu samma sak som rubriken som syns samtidigt (その一、…).
+  ⚠️ **Rösten i 005–007 mättes replik för replik** (`pipeline/seglyssna.py`): röstkollen och
+  helfilslyssningen var gröna, men 靴下 hördes som "ガックザ" och 襪子 som 蛙子 ("groda"). Japanskan
+  läser nu uttalsfältet `las` (de svåra orden i hiragana), och Taiwan har den infödda rösten Anna Su
+  med `eleven_turbo_v2_5`. Siffrorna står i `egna/README.md` → Språkkoder.
+- ✅ **Japan uppladdat 2026-09-30, allt PAUSED:** kampanjen `MATSTRUMP_JP_SALES` 120251797899280023
+  (CBO, platshållarbudget 1 000 kr/dag), adsetet `MATSTRUMP_JP_ugc` 120251797901800023 (JP, pixelns
+  köp, 7 dagars klick) och 8 annonser, tillbakalästa: sidan Matstrumpor, Instagram-identiteten,
+  länken `matstrumpor.com/ja/…?country=JP` och sista raden 「スウェーデン発のブランドです。」 i alla
+  åtta. ⛔ Inget aktiveras förrän Axel granskat annonserna.
+- ⛔ **Taiwan kräver verifierad annonsör (mätt 2026-09-30).** Taiwans bedrägerilag: varje annons som
+  visas i Taiwan måste bära en verifierad förmånstagare och betalare. Utan kategorin svarade Meta 400
+  "Värde för regionalt reglerade kategorier krävs … TAIWAN_UNIVERSAL", med kategorin 400 "Annonsör
+  saknas: ange verifierad annonsör". Kampanjen `MATSTRUMP_TW_SALES` 120251796778420023 står PAUSED och
+  tom, och de åtta annonsfilerna är klara. Vägen: `cowork/3-taiwan-verifiering.txt` (bolaget STONEBITE
+  ECOM AB som förmånstagare och betalare, aldrig Axel som person; dokumentet laddar Axel upp själv),
+  Meta granskar cirka två dagar, sedan `annonser/bygg.mjs --marknad TW --skarpt`. Verktyget skickar
+  `regional_regulated_categories` ur `marknader.json` och identiteterna när id:na står där, och stoppar
+  bara sin egen marknad med orsak. Inget publikt API listar id:na (facebook-java-business-sdk
+  issue 493): vägrar Meta även efter verifieringen skapas adsetet `MATSTRUMP_TW_ugc` för hand i Ads
+  Manager med förmånstagare och betalare valda, och `bygg.mjs` lägger annonserna i det och skriver ut
+  id:na.
+
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
 Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",
@@ -553,7 +693,9 @@ Sofie (aldrig Katarina), "transkribera alla annonser", och det enda som får bli
 | Engelska världen | US, GB, CA, AU, NZ | en | USD + lokala | $69 / 54.99 / 39.99 / 59.99 / 39.99 / 6.99 |
 
 Shopifys Grow-plan ger inte fler marknader, därför en Europa-marknad med många språk (Shopify
-tar max 20 språk; vi hamnar på 12). Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
+tar max 20 språk; vi hamnar på 12). ⚠️ **Det stämde inte (mätt 2026-09-30):** butikens plan heter
+"Shopify", och `marketCreate` skapade Japan och Taiwan som egna marknader utan fel (se "Japan och
+Taiwan" nedan). Språken är 14 sedan dess. Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
 **matstrumpor.com** finns — kopplas med `cowork/1-domaner.txt`, sedan `webPresenceCreate` +
 `marketUpdate` per marknad. Frakt: ny zon "Europa" fri frakt (29 länder), "EU"-zonen (299 kr)
 blir tom och tas bort, "Norden" döps om och behåller NO, "Internationell" behåller resten.
