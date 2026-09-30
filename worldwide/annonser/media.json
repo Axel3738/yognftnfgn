@@ -468,7 +468,11 @@
    "worldwide/annonser/klar/Batmotor_UG_1_H1.mp4.qa-3.png"
   ],
   "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen; svenska slutbilden (BÄVERBUTIKEN, 579 kr) ersatt med stillbild av produkten, slutbilderna tittade på",
-  "video_id": "1666179454858482"
+  "video_id": "1666179454858482",
+  "annons_id": "120251687030050435",
+  "creative_id": "1073631769008410",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T10:21:31.629Z"
  },
  "Takoverdrag_GT_5_H1": {
   "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
@@ -486,7 +490,12 @@
    "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4.qa-2.png",
    "worldwide/annonser/klar/Seatcover_PD_13_H1.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1419096063754582",
+  "annons_id": "120251687044630435",
+  "creative_id": "1094675076291578",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T10:23:06.240Z"
  },
  "Fiskespöhållare_PD_1_H1": {
   "fil": "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4",
@@ -602,7 +611,8 @@
    "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4.qa-2.png",
    "worldwide/annonser/klar/Seatcover_bryn_swipe_1.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1101049829100621"
  },
  "Termoskydd_SP_4_H1": {
   "fil": "worldwide/annonser/klar/Termoskydd_SP_4_H1.mp4",
@@ -626,7 +636,12 @@
    "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4.qa-2.png",
    "worldwide/annonser/klar/Batmotor_SP_1_H3.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1765021578045177",
+  "annons_id": "120251687033460435",
+  "creative_id": "1069643979168977",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T10:22:01.483Z"
  },
  "Beltgrinder_PD_4_H1": {
   "fil": "worldwide/annonser/klar/Beltgrinder_PD_4_H1.mp4",
@@ -662,7 +677,12 @@
    "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4.qa-2.png",
    "worldwide/annonser/klar/Batmotor_FM_1_H1.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen; svenska slutbilden (BÄVERBUTIKEN, 579 kr) ersatt med stillbild av produkten, slutbilderna tittade på"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen; svenska slutbilden (BÄVERBUTIKEN, 579 kr) ersatt med stillbild av produkten, slutbilderna tittade på",
+  "video_id": "1967915063898717",
+  "annons_id": "120251687038840435",
+  "creative_id": "2031402467580300",
+  "kampanj_id": "120251678997290435",
+  "skapad": "2026-09-30T10:22:25.664Z"
  },
  "Motorhölje_SO_1_H2": {
   "fil": "worldwide/annonser/klar/Motorh_lje_SO_1_H2.mp4",
@@ -858,7 +878,12 @@
   "granskad": true,
   "rost": "CJ - Young Swedish Male",
   "bandlage": true,
-  "granskning": "sessionen 2026-09-30: band 368:530, textkoll ✅, röstkollen ✅, QA-bilderna tittade på"
+  "granskning": "sessionen 2026-09-30: band 368:530, textkoll ✅, röstkollen ✅, QA-bilderna tittade på",
+  "video_id": "4424898144392374",
+  "annons_id": "120251687051690435",
+  "creative_id": "1844643606401553",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T10:23:34.937Z"
  },
  "Rodholder_PD_15_H1": {
   "fil": "worldwide/annonser/klar/Rodholder_PD_15_H1.mp4",
