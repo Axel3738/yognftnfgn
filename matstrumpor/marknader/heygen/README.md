@@ -1,11 +1,14 @@
-# HeyGen-batcherna — Matstrumpors UGC till elva språk
+# HeyGen-batcherna — Matstrumpors UGC till tretton språk
 
 Axels regler 2026-09-27: **UGC-videor (riktiga människor) översätts med HeyGens dyraste
 version** (full videoöversättning, röstklon + lip-sync i läget `precision` — aldrig audio only,
 aldrig `speed`); **egna HeyGen-avatarvideor översätts inte utan görs om direkt på målspråket i
 HeyGen**; ⛔ **Katarinas UGC får inte köras i andra marknader — översätts aldrig.** Källorna här
 är därför Nathalie (vinnaren: 29 av 44 köp 17–26/9), Sofie H1 och Sofie H2 (jul) — alla Axels
-egna UGC. Elva språk: NO, DK, FI, US (engelska, även WW), DE, FR, NL, ES, IT, PL, PT.
+egna UGC. Tretton språk: NO, DK, FI, US (engelska, även WW), DE, FR, NL, ES, IT, PL, PT och sedan
+2026-09-30 JP (japanska, HeyGens `Japanese (Japan)`) och TW (taiwanesisk mandarin med traditionell
+skrift, `Chinese (Taiwanese Mandarin, Traditional)`). Japan och Taiwan: se "Japanska och kinesiska"
+nedan och `LOKALISERA.md`.
 
 | Fil | Vad |
 |---|---|
@@ -83,3 +86,43 @@ HeyGen.
 
 Annonser: `MATSTRUMP_<KOD>_sushi_<vinkel>_ugc_<nnn>_v1` (`gift`, `jul`). Adset:
 `MATSTRUMP_<KOD>_ugc`. Kampanj: `MATSTRUMP_<KOD>_SALES`. Klara filer: `annonser/klar/<KOD>_<namn>.mp4`.
+
+## Japanska och kinesiska (JP, TW — 2026-09-30)
+
+Samma kedja som de andra språken (proofread → sonnet-skribent → infödd granskare → skribenten
+rättar → `translate-batch.mjs render` i `precision` → `download` → `rostkoll.py` →
+`no-captions.py --rutor` → `lyssna.py`), med fem skillnader som sitter i verktygen:
+
+- **Skriften:** `pipeline/sprak.mjs` → `kollaCjk` räknar kana och han-tecken i stället för
+  funktionsord, och `kolla-srt.mjs` stoppar siffror med full bredd, valutor, butiksnamnet i katakana,
+  Sverige/Norden utom EN gång i Japan (Axel: "i Japan speciellt kan vi trycka på att det är ett
+  svenskt varumärke"; aldrig スウェーデン製), frakt/garanti och **talet fyra** (四 = 死 i båda
+  språken; en present säger aldrig fyra). Taiwan får aldrig förenklade tecken (`BARA_FORENKLAD`).
+- **Undertexterna:** `pipeline/cover-srt.py` ger en CJK-cue högst `MAX // 2` tecken (17 vid 34),
+  delar vid 。！？ först och sedan vid 、，, och låter aldrig en rad börja med skiljetecken eller litet
+  kana (kinsoku). En sats som bara är tre tecken för lång får stå kvar hellre än att en svans blir en
+  egen cue.
+- **Typsnittet:** `pipeline/cjk.py` hämtar Noto Sans CJK JP/TC Bold (notofonts via jsdelivr) till
+  `~/.fonts` första gången; `no-captions.py`, `textbyte.py`, `textlager.py` och `d3/rita.py` väljer
+  typsnitt per text. Liberation Sans och Poppins saknar tecknen och ger tomma rutor.
+- **Lyssningen:** `pipeline/lyssna.py` mäter täckningen i tecken-bigram (inga ord att dela på) och
+  gör om Whispers förenklade kinesiska till traditionell med opencc `s2twp` innan jämförelsen.
+  Täckningen blir lägre än för latinska språk (0,72–0,89 mot 0,94–1,0): Whisper skriver homofoner
+  (買衣送衣 för 買一送一, 勘配 för 完売), inte fel i rösten.
+- **Talet:** japanskan läses högst cirka 7 tecken/s och mandarinen cirka 5 tecken/s i samma
+  tidsfönster som svenskan (`egna/kolla-egna.mjs` → `TECKEN_PER_S`).
+
+| Marknad | Video | Hörs som | Täckning | Röstkoll |
+|---|---|---|---|---|
+| TW | nathalie | zh 0.99 | 0.77 | ✅ |
+| TW | sofie_h1 | zh 1.0 | 0.87 | ✅ |
+| TW | sofie_h2 | zh 1.0 | 0.89 | ✅ |
+| JP | nathalie | ja 0.99 | 0.89 | ✅ |
+| JP | sofie_h1 | ja 1.0 | 0.89 | ✅ |
+| JP | sofie_h2 | ja 1.0 | 0.93 | ✅ |
+
+Replik för replik (`pipeline/seglyssna.py`, Whisper medium på varje replik för sig): JP nathalie
+0,91 (bara siffror och homofoner skilde, 完売 hördes 販売), TW nathalie 0,81 (聖誕 hördes 震盪,
+筷子 蓋子). UGC:n behåller HeyGens röst: Axels regel är HeyGens dyraste läge för riktiga människor,
+och rösten måste följa läpparna.
+

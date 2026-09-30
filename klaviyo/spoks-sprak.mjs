@@ -14,6 +14,7 @@
 //     får reservspråket (engelska) av sig självt, aldrig svenska.
 //   - ETT NYTT SPRÅK = en rad i sparning/butiker.json → <butik>.mejl_sprak (samma
 //     rad som fraktmejlen läser) + en översatt fil innehall/<brand>/sprak/<sprak>.json.
+//     En rad med `"spoks": false` hoppas här (fraktmejl finns, Spoks-innehåll inte än).
 //   - Flödena blir INTE fler när språken blir fler: F01 är ett flöde med ett
 //     sändsteg per språk (landsfilter på steget), så Spoks lista förblir sex flöden.
 //
@@ -51,6 +52,9 @@ export function sprakKonfig(brand, rot = ROT, butiker = null) {
   const sprak = [{ sprak: huvud, locale: huvud, mapp: '' }];
   for (const r of butik.mejl_sprak ?? []) {
     if (!r?.sprak || r.sprak === huvud) continue;
+    // `spoks: false` = språket har fraktmejl och spårningssida men inget Spoks-innehåll än (Japan och
+    // Taiwan 2026-09-30). Kunderna där får reservspråket, som varje land utan egen rad.
+    if (r.spoks === false) continue;
     if (sprak.some((x) => x.sprak === r.sprak)) throw new Error(`mejl_sprak har ${r.sprak} två gånger.`);
     sprak.push({ sprak: r.sprak, locale: r.locale ?? r.sprak, mapp: r.mapp ?? r.sprak });
   }

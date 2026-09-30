@@ -34,6 +34,13 @@ test('språken kommer ur mejl_sprak, huvudspråket först, mappen följer med', 
   assert.equal(k.landsnamn('US'), 'United States');
 });
 
+test('en mejl_sprak-rad med spoks: false hoppas — landet får reservspråket (Japan och Taiwan 2026-09-30)', () => {
+  const b = { testbutik: { ...butiker.testbutik, mejl_sprak: [...butiker.testbutik.mejl_sprak, { locale: 'ja', sprak: 'ja', mapp: 'ja', spoks: false }] } };
+  const k = sprakKonfig(brand(), ROT, b);
+  assert.deepEqual(k.sprak.map((x) => x.sprak), ['sv', 'nb', 'en', 'pt']);
+  assert.throws(() => sprakKonfig(brand({ SE: 'sv', JP: 'ja' }), ROT, b), /språket "ja", som saknas/);
+});
+
 test('ett land som pekar på ett språk utan mejl_sprak-rad stoppar bygget', () => {
   assert.throws(() => sprakKonfig(brand({ SE: 'sv', DE: 'de' }), ROT, butiker), /språket "de", som saknas/);
   assert.throws(() => sprakKonfig(brand({ se: 'sv' }), ROT, butiker), /ISO-landskod/);

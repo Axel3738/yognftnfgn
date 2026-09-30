@@ -66,7 +66,32 @@ Alla tre röstvideorna har **samma svenska AI-kvinnoröst** (mediantonhöjd 198�
 ## Språkkoder
 
 NO nb (`no` hos ElevenLabs), DK da, FI fi, US en (även WW), DE de, FR fr, NL nl, ES es, IT it,
-PL pl, PT pt (Portugal).
+PL pl, PT pt (Portugal), och sedan 2026-09-30 JP ja och TW zh (mandarin, texten i traditionell skrift).
+
+**Japanska och kinesiska (JP, TW):** manusen skrivs och granskas enligt `LOKALISERA.md` → "Japanska och
+kinesiska" (kanji-siffror, aldrig talet fyra, "Sverige" en gång i Japan och aldrig スウェーデン製).
+`kolla-egna.mjs` mäter talet i tecken per sekund (`TECKEN_PER_S`: JP 7,5 varning / 9 stopp, TW 5,5 / 6,5)
+och bildtextens bredd med full bredd per tecken. `textlager.py`, `rendera-012v2.py` och `d3/rita.py`
+ritar med Noto Sans CJK JP/TC Bold (`pipeline/cjk.py` hämtar typsnittet första gången), radbryter
+tecken för tecken med kinsoku (ingen rad börjar med 、。！？ eller litet kana), och `dubba.mjs` läser
+med `ja` resp. `zh`. Den japanska granskaren fällde 17 rader i röstvideorna första gången:
+undertexten måste säga samma sak som rubriken som syns samtidigt (その一、… under rubriken その一：…),
+och ett kort får aldrig börja med っ efter en delning vid ？.
+
+**Rösten på japanska och mandarin — mätt replik för replik, inte på hela filen (2026-09-30).**
+Röstkollen var grön och helfilslyssningen gav 0,80–0,83, men Whisper medium på varje replik för sig
+(`seglyssna`: klippet ur videon, täckning i tecken-bigram) visade att produktordet inte gick fram:
+- **Japanska:** 靴下 hördes som "ガックザ", 母 som 目 och 五足 som 無年. Felet var **kanji-läsningen,
+  inte rösten**: fyra röster (klonen, Kyoko, Fumi, Rina) läste samma kanji fel, men med uttalet i
+  hiragana hördes klonen 0,87 i snitt och 靴下 rätt. Varje japanskt segment bär därför fältet
+  **`las`** (samma mening, de svåra orden i hiragana, skrivet av skribenten); `dubba.mjs` läser
+  `las`, undertexten och textlagret visar `text`. Klonen behålls.
+- **Mandarin:** klonen gjorde tonfel (襪子 wàzi hördes 蛙子, "groda"), 0,75. Den infödda rösten
+  **Anna Su** (taiwanesisk mandarin, ElevenLabs röstbibliotek, `RÖSTER.TW`) med
+  `eleven_turbo_v2_5` gav 0,92. eleven_v3 prövades och var sämre för båda språken (0,80–0,82 ja,
+  0,81 zh) och bryr sig inte om farten.
+- HeyGens japanska (Nathalie) låg på 0,91 replik för replik, med bara siffror och homofoner fel —
+  facit för vad "bra" är med den här mätningen.
 
 ## Butikens logga i bild (mätt 2026-09-29)
 
@@ -112,7 +137,8 @@ visar loggan "MATSTRUMPOR.SE" med sushifiguren:
   rutan): originalets inledning är stor fet text och bär annonsens första sekund. Mätt: 30–36 px
   på alla elva språk.
 - **"Matstrumpor.se" i slutet** av haiku-videorna sägs inte och suddas bort. Rutan ersätts inte.
-- Poppins (OFL, `pipeline/fonts/`) täcker alla elva språkens tecken (kontrollerat med fontTools).
+- Poppins (OFL, `pipeline/fonts/`) täcker alla elva europeiska språkens tecken (kontrollerat med fontTools).
+  Japanska och kinesiska ritas med Noto Sans CJK (se Språkkoder).
 
 ## Läget (2026-09-29): 33 av 33 uppladdade PAUSED som annons 005–007
 

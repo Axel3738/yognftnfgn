@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 import {
   MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
-  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR,
+  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR, patchaVarlden, VARLDEN_MARK,
 } from '../domantema.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -459,15 +459,17 @@ test('fraktraden: landet och grammatiken per språk, hemlandet med fast fras', (
   assert.equal(f('pt-PT', 'LU', 'Luxemburgo'), 'Envio grátis para o Luxemburgo');
   assert.equal(f('pt-PT', 'MT', 'Malta'), 'Envio grátis para Malta');
   // Land vi inte säljer till: frasen utan land.
-  assert.equal(f('en', 'JP', 'Japan'), 'Free shipping');
-  assert.equal(f('ja', 'JP', '日本'), '送料無料');
+  assert.equal(f('en', 'BR', 'Brazil'), 'Free shipping');
+  assert.equal(f('ja', 'BR', 'ブラジル'), '送料無料');
   assert.equal(f('xx', 'SE', 'Sverige'), null, 'okänt språk ⇒ trust-radens egen text står kvar');
-  // När Japan och Taiwan blir säljländer.
-  const medJp = [...LANDER, 'JP', 'TW'];
-  assert.equal(fraktText('ja', 'JP', '日本', medJp), '日本全国送料無料');
-  assert.equal(fraktText('ja', 'DE', 'ドイツ', medJp), 'ドイツへの送料無料');
-  assert.equal(fraktText('zh-TW', 'TW', '台灣', medJp), '全台免運費');
-  assert.equal(fraktText('fr', 'JP', 'Japon', medJp), 'Livraison gratuite au Japon');
+  // Japan och Taiwan är säljländer sedan 2026-09-30 (konfig.json).
+  assert.ok(LANDER.includes('JP') && LANDER.includes('TW'));
+  assert.equal(f('ja', 'JP', '日本'), '日本全国送料無料');
+  assert.equal(f('ja', 'DE', 'ドイツ'), 'ドイツへの送料無料');
+  assert.equal(f('zh-TW', 'TW', '台灣'), '全台免運費');
+  assert.equal(f('zh-TW', 'JP', '日本'), '免運費寄送至日本');
+  assert.equal(f('fr', 'JP', 'Japon'), 'Livraison gratuite au Japon');
+  assert.equal(f('en', 'JP', 'Japan'), 'Free shipping to Japan');
 });
 
 test('fraktraden: varje säljland har landet utskrivet på varje språk (fr och pt har ingen standardartikel)', () => {
@@ -492,11 +494,12 @@ test('snippeten: samma text som fraktText för varje språk × land, flaggan bar
       assert.equal(korSnippet(s, { locale: loc, kod, namn, del: 'flagga' }), LANDER.includes(kod) ? `<img flagga ${kod}>` : '', `flaggan ${loc} ${kod}`);
     }
   }
-  // Ett nytt säljland i konfig följer med av sig självt.
-  const medJp = fraktLandSnippet([...LANDER, 'JP']);
-  assert.equal(korSnippet(medJp, { locale: 'ja', kod: 'JP', namn: '日本' }), '日本全国送料無料');
-  assert.equal(korSnippet(medJp, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '<img flagga JP>');
-  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '', 'utan Japan i konfig: ingen flagga');
+  // Ett nytt säljland i konfig följer med av sig självt (Japan kom in 2026-09-30).
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本' }), '日本全国送料無料');
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '<img flagga JP>');
+  const medBr = fraktLandSnippet([...LANDER, 'BR']);
+  assert.equal(korSnippet(medBr, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '<img flagga BR>');
+  assert.equal(korSnippet(s, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '', 'utan Brasilien i konfig: ingen flagga');
   assert.equal(NYA_FILER['snippets/ms-frakt-land.liquid'], s, 'NYA_FILER bär snippeten för konfigens länder');
 });
 
@@ -513,4 +516,17 @@ test('trust-raden: lastbilen får land och flagga, de andra punkterna ritas som 
   assert.deepEqual(patchaTrustRow(r.kod).byten, []);
   assert.throws(() => patchaTrustRow('<div class="ms-trust">'), /hittades 0 gånger/);
   assert.equal(PATCHAR['snippets/ms-trust-row.liquid'], patchaTrustRow);
+});
+
+test('collaget: japanska och kinesiska grenar före else, inne i liquid-taggen, idempotent', () => {
+  const kalla = "{%- liquid\n  assign sprak = request.locale.iso_code | downcase\n  case sprak\n    when 'pt-pt', 'pt'\n      assign rubrik = 'Agora em todo o mundo'\n      assign under = 'x'\n    else\n      assign rubrik = 'Nu i hela världen'\n      assign under = 'Samma sushilåda'\n  endcase\n-%}";
+  const r = patchaVarlden(kalla);
+  assert.deepEqual(r.byten, ['varlden']);
+  assert.ok(r.kod.includes("    when 'ja'\n      assign rubrik = 'いま、世界中で'"));
+  assert.ok(r.kod.includes("    when 'zh-tw'\n      assign rubrik = '現在，遍布全世界'"));
+  assert.ok(r.kod.indexOf("when 'zh-tw'") < r.kod.indexOf('    else'), 'före else');
+  assert.ok(!r.kod.includes('{%- comment'), 'ingen tagg-kommentar inne i liquid-taggen');
+  assert.ok(r.kod.includes(`    # ${VARLDEN_MARK}`));
+  assert.deepEqual(patchaVarlden(r.kod).byten, []);
+  assert.equal(PATCHAR['sections/ms-varlden.liquid'], patchaVarlden);
 });

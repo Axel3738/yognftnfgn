@@ -75,7 +75,21 @@ export const SPRAK = {
   it: { locale: 'it-IT', doman: 'it' },
   pl: { locale: 'pl-PL', doman: 'pl' },
   'pt-PT': { locale: 'pt-PT', doman: 'pt' },
+  // Japan och Taiwan 2026-09-30. Trustpilot har japanska (etiketten "ほぼ満足" för 4,2) men ingen
+  // kinesiska: zh-TW-locale svarar med engelskans "Great", så Taiwans etikett kommer ur ETIKETT_EGEN.
+  // Profilen på jp.trustpilot.com; tw.trustpilot.com skickar till www.
+  ja: { locale: 'ja-JP', doman: 'jp' },
+  'zh-TW': { locale: 'zh-TW', doman: 'www' },
 };
+
+// Språk där Trustpilot inte översätter etiketten: Trustpilots egen skala (Excellent/Great/Average/Poor/Bad,
+// samma trösklar som starsString) på språket. Nyckeln är den engelska etiketten Trustpilot svarar med.
+export const ETIKETT_EGEN = {
+  'zh-TW': { Excellent: '極佳', Great: '很好', Average: '普通', Poor: '差', Bad: '很差' },
+};
+
+// Språk som skriver betyget med decimalpunkt (4.2), inte decimalkomma (4,2).
+export const DECIMALPUNKT = ['en', 'ja', 'zh-TW'];
 
 export const MAX_OMDOMEN = 9;      // kort i sektionen
 export const MINST_STJARNOR = 4;   // TrustBox-standarden "4–5 stjärnor"; betyget visas ändå oavkortat
@@ -152,7 +166,7 @@ export function betygUr(starterPerSprak) {
   if (!bu || typeof bu.trustScore !== 'number') throw new Error('Starter-JSON:en saknar businessUnit.trustScore — inget skrivs.');
   const n = bu.numberOfReviews ?? {};
   const etikett = {};
-  for (const [sprak, d] of Object.entries(starterPerSprak)) if (d?.starsString) etikett[sprak] = d.starsString;
+  for (const [sprak, d] of Object.entries(starterPerSprak)) if (d?.starsString) etikett[sprak] = ETIKETT_EGEN[sprak]?.[d.starsString] ?? d.starsString;
   return {
     poang: bu.trustScore,
     poang_text: String(bu.trustScore.toFixed(1)).replace('.', ','),

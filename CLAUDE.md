@@ -197,6 +197,17 @@ kommer ur `konfig.json`, så ett nytt land får rutan av sig själv. Sessionen l
 länder. Samma dag doldes appen Ultimate Trust Badges på alla språk utom svenska. Den visade "Betala
 säkert med Klarna." och Swish-loggan för kunder i USA, UK, AU, CA och NZ. Allt står i
 `marknader/README.md` → "Fraktrutan".
+🇯🇵🇹🇼 **Japan och Taiwan sedan 2026-09-30** (Axel: "testa Japan och Taiwan … i Japan speciellt kan vi
+trycka på att det är ett svenskt varumärke", val B "som i Europa"): egna marknader Japan (JPY, `ja`)
+och Taiwan (TWD, `zh-TW`) på matstrumpor.com/ja och /zh-tw, fri frakt 5–10 arbetsdagar, priser som
+Europa men aldrig under Sverige + 20 %. Talet fyra (四) står aldrig i en annons, och japanskan säger
+スウェーデン発のブランド men aldrig スウェーデン製. Kampanjerna `MATSTRUMP_JP_SALES` och
+`MATSTRUMP_TW_SALES` är PAUSED, med åtta annonser per marknad. ⛔ **Taiwan kräver att bolaget är
+verifierad annonsör** (Taiwans lag; mätt samma dag: Meta vägrar annonsgruppen med "Annonsör saknas"):
+`matstrumpor/marknader/cowork/3-taiwan-verifiering.txt`, sedan `annonser/bygg.mjs --marknad TW
+--skarpt`. ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
+helfilsmåttet var grönt medan 靴下 hördes som "ガックザ". Japanskan läser uttalsfältet `las`
+(kanji → hiragana), och Taiwan har en infödd röst. Allt i `marknader/README.md` → "Japan och Taiwan".
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan

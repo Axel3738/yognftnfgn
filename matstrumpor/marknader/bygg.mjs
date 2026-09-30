@@ -32,6 +32,7 @@ import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
 import { KONFIG, OUTPUT, underlagsfil, resursfil, LIQUID_TEXTER } from './underlag.mjs';
 import { granska } from './granska.mjs';
 import { patchaFil, patchaMallJson } from './temapatch.mjs';
+import { PATCHAR as DOMANPATCHAR } from './domantema.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const LOCALES = [...new Set(KONFIG.marknader.flatMap((m) => m.locales))];
@@ -464,6 +465,10 @@ async function stegTema(k, { skarpt }) {
     ...gamlaOversattningar(),
   ];
   const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER, gamla.map((g) => g.ov)) : patchaFil(fil, kod, o));
+  // Filer som domantema.mjs OCKSÅ patchar (2026-09-30: ms-trust-row.liquid fick fraktrutans flagga och
+  // land ovanpå språkgrenarna). Live = domantema(temapatch(original)) — utan det här kände steget inte
+  // igen filen längre ("någon har ändrat filen") och Japan/Taiwan hade aldrig fått sina grenar.
+  const medDoman = (fil, kod) => (DOMANPATCHAR[fil] ? DOMANPATCHAR[fil](kod).kod : kod);
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
@@ -480,12 +485,21 @@ async function stegTema(k, { skarpt }) {
       if (!fil.endsWith('.json') && /request\.locale\.iso_code|var LANG = /.test(kod)) {
         const orig = urOriginal(fil);
         if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
-        const traff = gamla.find((g) => { try { return patcha(fil, orig, g.ov).kod === kod; } catch { return false; } });
+        let doman = false;
+        const traff = gamla.find((g) => {
+          try {
+            const p = patcha(fil, orig, g.ov).kod;
+            if (p === kod) return true;
+            if (DOMANPATCHAR[fil] && medDoman(fil, p) === kod) { doman = true; return true; }
+            return false;
+          } catch { return false; }
+        });
         if (!traff) { log(`❌ ${fil}: temat är inte originalet + någon av våra patchar (någon har ändrat filen) — rör den inte`); continue; }
         bas = orig;
-        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn})`);
-      }
-      r = patcha(fil, bas, ov);
+        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn}${doman ? ' + domantemats patch' : ''})`);
+        r = patcha(fil, bas, ov);
+        if (doman) { r.kod = medDoman(fil, r.kod); if (r.kod !== kod && !r.byten.length) r.byten.push('domantema'); }
+      } else r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
     log(`${fil}: ${r.byten.length} byten${r.byten.length ? ` (${r.byten.join(', ')})` : ''}${r.hoppade.length ? ` · hoppade: ${r.hoppade.join('; ')}` : ''}`);
     if (r.byten.length && r.kod !== kod) skriv.push({ filename: fil, body: { type: 'TEXT', value: r.kod } });

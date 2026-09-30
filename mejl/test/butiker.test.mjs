@@ -215,16 +215,16 @@ test('språkfilerna: alla elva bär samma nycklar som en.json, tolv månader och
   }
 });
 
-test('Matstrumpor: svensk huvudmall utan leveransfönster, elva översättningar med sin språkmapp', () => {
+test('Matstrumpor: svensk huvudmall utan leveransfönster, tretton översättningar med sin språkmapp', () => {
   const b = byggButik('matstrumpor');
   assert.equal(b.brand.leveransfonster, false);
   const frakt = b.liquid.find((m) => m.id === 'fraktbekraftelse').html;
   assert.ok(!frakt.includes('Beräknad leverans') && !frakt.includes('lev_fran_datum'), 'inget leveransfönster i mejlet som bär länken (Axel 2026-09-21)');
   assert.ok(frakt.includes('Spårningen visar ofta inget'), 'raden om tyst spårning står kvar');
   assert.ok(!/Sjöhed/i.test(JSON.stringify(b.liquid)), 'gamla adressen');
-  assert.deepEqual(b.oversattningar.map((o) => o.locale), ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT']);
+  assert.deepEqual(b.oversattningar.map((o) => o.locale), ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT', 'ja', 'zh-TW']);
   for (const o of b.oversattningar) {
-    const mapp = o.locale === 'pt-PT' ? 'pt' : o.locale;
+    const mapp = { 'pt-PT': 'pt', 'zh-TW': 'zh-tw' }[o.locale] ?? o.locale;
     assert.equal(o.sida, `https://matstrumpor.se/${mapp}/pages/spara`);
     for (const m of o.mallar) {
       assert.ok(m.html.startsWith('{% assign fornamn'), `${o.locale}/${m.id}: en hel mall, ingen case`);
