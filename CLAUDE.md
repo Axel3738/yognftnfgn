@@ -377,7 +377,8 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
       exakta tal, bara avrundade.
     - Spara svaret i repot, bredvid ämnet, så att nästa session slipper
       fråga igen. Mönstret finns redan: `klaviyo/evolve/FRAGOR.md` + `SVAR.md`,
-      `factory/tacksida/EVOLVE-FRAGOR.md` + `EVOLVE-SVAR.md`, `stonebite/evolve/`.
+      `factory/tacksida/EVOLVE-FRAGOR.md` + `EVOLVE-SVAR.md`, `stonebite/evolve/`,
+      `messenger/EVOLVE-*.md`, `docs/os/evolve/` (creative strategy: efterköpsenkäten).
       Läs de svaren först. Har boten redan svarat på något ska du inte
       fråga igen.
     - Chadbot ger inspiration och metod, aldrig våra siffror. Regel 3 gäller
