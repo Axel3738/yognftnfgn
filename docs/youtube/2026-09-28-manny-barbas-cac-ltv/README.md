@@ -82,7 +82,16 @@ Förslagen i sessionens första svar är ändrade efter den.
    | Termoskyddet | 17 154 kr | 33 | 9 |
    | Fiskespöhållaren | 14 171 kr | 85 | 35 |
 
-   Det är 115 annonser utan spend i de sju, och 128 i hela kontot. **Hur den byggs:** en kampanj
+   Det är 115 annonser utan spend i de sju, och 128 i hela kontot.
+   **Sessionens bedömning av ROI (Axels fråga samma kväll): låg risk, men nära noll vinst.** Med
+   taket på break-even-CPA siktar Meta på att köpen kostar ungefär så mycket, och då tjänar varje köp
+   runt 0 kr. Ett lägre tak ger vinst per köp men ännu mindre spend. Annonserna har redan dömts av
+   Meta: Evolves siffra är att 1 av 42 svultna annonser skalade när de fick egen budget. Köpen kan
+   också komma från samma kunder som CBO:n redan når. Samtidigt låg alla sju kampanjerna över
+   break-even de senaste 7 dagarna (läst 2026-09-30, `spend × (ROAS ÷ break-even − 1)`):
+   Taköverdraget 29 453 kr (ROAS 2,18 mot 1,63), Sotarsetet 8 561, Båtmotorskyddet 6 935,
+   Bälteslipmaskinen 6 161, IBC 3 637, Fiskespöhållaren 2 843, Termoskyddet 2 077. Varje extra
+   krona gör alltså mer nytta där. Budgeten är Axels beslut. **Hur den byggs:** en kampanj
    `ZOMBIE_…` i MagiBorsten, ett adset per produkt med cost cap = produktens break-even-CPA,
    annonserna kopieras dit (originalen i CBO:n rörs aldrig), allt byggs PAUSED. Leveransrundan
    väljer kampanj efter annonsprefixet, så zombiekampanjen måste in i samma uteslutning som
