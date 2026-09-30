@@ -228,7 +228,11 @@ inget: "Inget för dig i dag."
   **räckvidden per annons** ur EU-transparensen (detaljfrågan
   AdLibraryV3AdDetailsQuery fångas en gång och spelas upp per annons) och
   sidans info (namn, kategori, Instagram, "om"-text, domänen ur
-  landningslänkarna), skriver `output/<datum>.annonser-<sid-id>.json` och
+  landningslänkarna). **En general store över taket 30** (Bustatio-busto: 58 aktiva,
+  ~4 700 inaktiva): de aktiva läses med datumfönster (58 av 58), bläddringsfrågan
+  stryps efter ett femtiotal frågor — kör med `--max-annonser 150 --rackvidd aktiva`
+  och skrolla aldrig för hand i biblioteket (det är skrollningen som utlöser strypningen).
+  Läsaren skriver `output/<datum>.annonser-<sid-id>.json` och
   kör direkt samma jämförelse som `--annonser <fil>`: ALLA våra aktiva
   annonser (Meta) och produkttexter (ordagranna sviter ≥ 6 ord), deras bilder
   (videoaffischer, annonsbilder) hashade mot våra annonsbilder, deras sajt
@@ -374,6 +378,15 @@ inget: "Inget för dig i dag."
      beskrivningen. Hittas inget för en annons blir exemplet vår sidas lista i
      annonsbiblioteket — aldrig produktsidan — och `--anmal` varnar: säg det
      till Axel. ~3 min för 15 filmer första gången, sekunder sedan (cache).
+  0c. **Är deras filmer VÅRA FÄRDIGA ANNONSER uppladdade igen** (samma klippning,
+     vår svenska text i bilden vid samma tider, deras vattenstämpel ovanpå —
+     Bustatio-busto 2026-09-30, `--klipp` gav deras 0:05 = vår 0:05 i alla 11):
+     titta på paren, och bär filmklippen UNDER texten material som inte är vårt
+     (leverantörens produktfilm, en kreatörs inspelning): kör `--anmal <id>
+     --ansprak redigering`. Anmälan, bevisbilden, formulärets 500 tecken,
+     granskningskortet ("Ja = annonsen är vår: vi har klippt den och skrivit
+     texten") och ett eventuellt brev gör då anspråk på **vår klippning och vår
+     text i bilden, aldrig på filmklippen**. Anspråket sparas på ärendet.
   1. `node konkurrenter/kor.mjs --anmal <id>` — bygger **en anmälan per
      annons** med länk och träff: bevisbilden (för en film: 3 par ur våra
      egna klipp, vår filmruta till vänster och samma ruta i deras annons till
