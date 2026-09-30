@@ -1167,7 +1167,7 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   geo-omdirigeras baverbutiken.se nu till beaverstoreco.com — läs svenska sidor med `?country=SE`.
   Kvar: Kaching Bundles och Judge.me på språken (`worldwide/cowork/2-kaching-judgeme.txt`).
 - **Annonserna ligger i Magiborsten UK `1107817401910319`** med prefixet `BEAVERSTORE_WW_`,
-  en CBO per produkt, **16 kampanjer à 1 000 kr/dag (Axels budget), allt PAUSED** — inget aktiveras
+  en CBO per produkt, **16 kampanjer à 1 000 kr/dag (Axels budget), 66 annonser (25 bilder + videor), allt PAUSED och tillbakaläst 2026-09-30** — inget aktiveras
   förrän Axel granskat. Sidan `1305042582683792` heter Beaver Store. Taköverdraget och termoskyddet
   visas inte i CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`),
   videorna dubbade med ElevenLabs och kontrollerade med `annonser/textkoll.py` (OCR över hela
