@@ -92,6 +92,11 @@ Röstkollen var grön och helfilslyssningen gav 0,80–0,83, men Whisper medium 
   0,81 zh) och bryr sig inte om farten.
 - HeyGens japanska (Nathalie) låg på 0,91 replik för replik, med bara siffror och homofoner fel —
   facit för vad "bra" är med den här mätningen.
+- **Efter omdubbningen (samma dag):** JP haikuh3 0,91, haikuh2 0,88, s001h1 0,83 (det lägsta är
+  寿司ソックス skrivet med hiragana av Whisper, "すしそつくす"); TW 0,83 / 0,85 / 0,78 med 襪子 och
+  uppmaningen rätt. Röstkollen ✅ på alla sex. Kvar som fel är homofoner (五足 → 誤則, ほこり → 誇り).
+- Provlyssningens röster ligger kvar i ElevenLabs-kontot (Kyoko, Fumi och Rina på japanska, Chen på
+  mandarin), oanvända. De tar 4 av kontots 160 röstplatser.
 
 ## Butikens logga i bild (mätt 2026-09-29)
 
