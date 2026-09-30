@@ -438,7 +438,12 @@ inget: "Inget för dig i dag."
      webbläsare, inga knep): den är en människas. Kör
      `node konkurrenter/kor.mjs --anmal-cowork <id>` → `arenden/<id>/anmalan/COWORK-PROMPT.txt`,
      skicka filen till Axel med SendUserFile och ge honom stegen: öppna Cowork i Chrome, klistra in,
-     gör säkerhetskontrollen när Cowork säger till. Kvittona skriver sessionen sedan med
+     gör säkerhetskontrollen när Cowork säger till. ⚠️ Mätt 2026-09-30 (KD-2026-003): Cowork
+     stannade före första steget med "Claude in Chrome är inte anslutet". Claude in Chrome är AV
+     som standard i varje ny chatt (support.claude.com 12012173), så prompten börjar med FÖRST,
+     som säger åt Axel att slå på Claude in Chrome i chattens menyn Connectors. Saknas den i
+     menyn: initialerna nere till vänster → Settings → Connectors → Claude in Chrome → Configure →
+     slå på. Kvittona skriver sessionen sedan med
      `--anmald <id> --nr <n> --referens <r>`, ur Metas bekräftelsemejl i Gmail eller ur Coworks lista.
      Står ett kvitto fel (en anmälan som inte gick in): `--anmald <id> --nr <n> --angra "<skäl>"`.
 
