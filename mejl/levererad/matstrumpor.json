@@ -1,0 +1,72 @@
+{
+  "comment": "Rättningar i Shopifys EGNA översättningar av de två levererad-notiserna (inte våra tre fraktmallar — dem sköter notis-oversattning.mjs). Varje byte är exakt: [gammal text, ny text, antal gånger den gamla ska finnas, eller null = alla]. Hittas den gamla inte men den nya finns är bytet redan gjort. Källa: granskningen 2026-09-30 (G-D08, G-C-zh-TW-06, G-C-JA-09, G-C-nb-09, G-C-FR-09). Rör inte pt-PT:s du/ni-form (G-C-PT-07 a) — Axels val.",
+  "mallar": {
+    "levererad_forsandelse": "gid://shopify/EmailTemplate/126544609619",
+    "levererad_order": "gid://shopify/EmailTemplate/126543757651"
+  },
+  "rattningar": [
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "zh-TW",
+      "key": "body_html",
+      "varfor": "Du-form som sajten och våra mejl (REGLER-ASIEN 4), sedan grenen för en order som levererats HEL: den sa 'Din order har avbrutits.' (Shopifys översättningsfel). Ordningen spelar roll — varje byte läses på texten efter det förra.",
+      "byt": [["您", "你", null], ["你的訂單已取消。", "你的訂單已送達。", 1]]
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "zh-TW",
+      "key": "body_html",
+      "varfor": "Du-form som sajten och våra mejl (REGLER-ASIEN 4).",
+      "byt": [["您", "你", null]]
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "ja",
+      "key": "title",
+      "varfor": "Ämnesraden sa 'har skickats' (発送) om ett levererat paket.",
+      "byt": [["注文番号 {{ name }} が発送されました", "ご注文{{ name }}の荷物が配達されました", 1]]
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "ja",
+      "key": "body_html",
+      "varfor": "Brödtexten blandade 配送済み (skickat) och 配達済み (levererat), och tre grenar slutade i ordboksform.",
+      "byt": [["配送済み", "配達済み", null], ["配達状況を確認するために荷物を追跡する。", "荷物を追跡して配達状況を確認しましょう。", null]]
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "nb",
+      "key": "body_html",
+      "varfor": "Bokmål skriver 'ennå'.",
+      "byt": [["mottatt pakken din enda?", "mottatt pakken din ennå?", 1]]
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "nb",
+      "key": "body_html",
+      "varfor": "Stavfel.",
+      "byt": [["Har du ikke motatt bestillingen din?", "Har du ikke mottatt bestillingen din?", 1]]
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "fr",
+      "key": "title",
+      "varfor": "'Une commande' läses som någon annans order.",
+      "byt": [["Une commande {{ name }} a été livrée", "Un envoi de votre commande {{ name }} a été livré", 1]]
+    },
+    {
+      "mall": "levererad_forsandelse",
+      "locale": "fr",
+      "key": "body_html",
+      "varfor": "Franskan har (hårt) mellanslag före kolon.",
+      "byt": [["suivi:", "suivi\u00a0:", 3]]
+    },
+    {
+      "mall": "levererad_order",
+      "locale": "fr",
+      "key": "body_html",
+      "varfor": "Franskan har (hårt) mellanslag före kolon.",
+      "byt": [["suivi:", "suivi\u00a0:", 3]]
+    }
+  ]
+}

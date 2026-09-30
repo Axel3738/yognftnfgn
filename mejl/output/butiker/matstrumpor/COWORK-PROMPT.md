@@ -99,7 +99,7 @@ tillbaka varje språk ur Shopify och provat länkarna som kund).
 | es | `Tu paquete ya está en camino` | **Rastrear paquete** | `https://matstrumpor.com/es/pages/spara?nummer=MS-` |
 | it | `Il tuo pacco è in viaggio` | **Traccia il pacco** | `https://matstrumpor.com/it/pages/spara?nummer=MS-` |
 | pl | `Twoja paczka jest w drodze` | **Śledź swoją paczkę** | `https://matstrumpor.com/pl/pages/spara?nummer=MS-` |
-| pt-PT | `A tua encomenda já vai a caminho` | **Rastrear encomenda** | `https://matstrumpor.com/pt-pt/pages/spara?nummer=MS-` |
+| pt-PT | `A tua encomenda já vai a caminho` | **Seguir encomenda** | `https://matstrumpor.com/pt-pt/pages/spara?nummer=MS-` |
 | ja | `お荷物を発送しました` | **配送状況を確認** | `https://matstrumpor.com/ja/pages/spara?nummer=MS-` |
 | zh-TW | `你的包裹在路上了` | **追蹤包裹** | `https://matstrumpor.com/zh-tw/pages/spara?nummer=MS-` |
 

@@ -718,6 +718,42 @@ aktuella (`updatedAt` 2026-09-29T11:09:27Z); omkörning med `--om-inaktuell`
 gjorde ingenting. `lankkoll.mjs`: alla tolv språk svarar 200 med rätt
 `<html lang>` och visar det riktiga paketet MS-3654539E, ingen svensk text
 (skärmdumpar i `output/butiker/matstrumpor/lankkoll/`, gitignorerade).
+
+### Granskningens rättningar (2026-09-30 kväll)
+
+Den fristående granskningen (`matstrumpor/marknader/granskning/GRANSKNING-2026-09-30.md`)
+läste mejlen på tretton språk. Rättat i våra tre mallar (`mejl/sprak/*.json`, registreras
+av timrutinen eller `notis-oversattning.mjs --skarpt` efter merge):
+
+- **fi** "lähtenyt varastolta" → "varastosta" (fel kasus), **de** "eingecheckt" →
+  "erfasst" och "im Laufe des Tages", **nl** "onderweg voor levering" → "bij de bezorger",
+  "ingecheckt" → "geregistreerd", **fr** "Restez à l'affût" → "Surveillez votre boîte aux
+  lettres aujourd'hui."
+- **pt-PT:** paketnumret hette "número de encomenda", som är ORDERNUMRET på portugisiska.
+  Nu "código de rastreio" i mejlet och på spårningssidan, och knappen heter "Seguir
+  encomenda" som menyn. "A caminho do voo" → "do aeroporto", adressrubriken "Morada de
+  entrega".
+- **ja/zh-TW:** "2〜4日" / "2–4 天" → "数日" / "幾天" i mejlen och på spårningssidan, så att
+  talet fyra inte står i en kundtext (samma anda som annonsregeln, och inget går förlorat).
+- **en:** adressraden följer landet (`adressformat: "land"` i `sprak/en.json`,
+  `mallar.mjs → adressrad`): USA, Kanada och Australien får "Ort, DELSTAT POSTNR",
+  Storbritannien ort och postnummer på var sin rad, Nya Zeeland "Ort Postnr". Alla andra
+  språk behåller "postnr ort".
+
+**Shopifys egna levererad-notiser** ("En försändelse … har levererats", "Ordern … har
+levererats") går ut när spårningsrutinen skriver ett DELIVERED-event, och de bar Shopifys
+egna översättningar med riktiga fel. Den kinesiska grenen för en order som levererats hel
+sa 「您的訂單已取消。」 ("Din order har avbrutits"), och den japanska ämnesraden sa 発送
+("har skickats"). `node mejl/levererad-oversattning.mjs matstrumpor [--skarpt]` byter
+bara de uppräknade meningarna i Shopifys nuvarande text (`mejl/levererad/matstrumpor.json`).
+Det stoppar om Shopifys text inte är den som lästes, och en andra körning gör ingenting.
+**Utfall 2026-09-30 ~20:15 CEST:** 9 översättningar registrerade och lästa tillbaka (zh-TW
+båda i du-form, ja ämne + brödtext, nb två stavfel, fr ämne + hårt mellanslag före
+kolon). pt-PT:s ni-form ("você") står kvar — det är Axels val (G-C-PT-07 a).
+
+⚠️ Bygget 2026-09-30 skrev också om CaraShells, NO:s, DK:s och FI:s mallar i
+`output/butiker/`, eftersom nb/da/fi ändrats i källan sedan förra bygget. Shopify bär deras
+gamla text tills de klistras in igen. Inget är fel i dem.
 Kvar: den svenska huvudmallen utan leveransfönstret — Cowork-prompten.
 
 **Svenska huvudmallen inne 2026-09-29 eftermiddag** (Cowork + Axel): alla tre

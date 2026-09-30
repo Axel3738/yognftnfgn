@@ -15,10 +15,10 @@
   "sidfot": "Kysyttävää tilauksestasi? Vastaa tähän viestiin tai kirjoita osoitteeseen {{support}}.",
   "mallar": {
     "fraktbekraftelse": {
-      "amne": ["Pakettisi on matkalla", "Tilaus {{ordernummer}} on lähtenyt varastolta", "Matkalla sinulle nyt"],
+      "amne": ["Pakettisi on matkalla", "Tilaus {{ordernummer}} on lähtenyt varastosta", "Matkalla sinulle nyt"],
       "preheader": ["Seurantalinkki on tässä.", "Tarkista roskaposti, jos et näe viestiä."],
       "rubrik": "Paketti on matkalla!",
-      "intro": "Tilauksesi {{ordernummer}} on lähtenyt varastolta ja on matkalla sinulle.",
+      "intro": "Tilauksesi {{ordernummer}} on lähtenyt varastosta ja on matkalla sinulle.",
       "knapp": "Seuraa pakettia",
       "tips": "Seuranta ei välttämättä päivity 2–4 päivään, kun paketti on matkalla lentokentälle. Se on täysin normaalia. Tarkista tilanne uudelleen sen jälkeen.",
       "beraknad_rubrik": "Arvioitu toimitus",

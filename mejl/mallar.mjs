@@ -500,11 +500,30 @@ function summering(s, lage) {
           </tr>`;
 }
 
+// Sista adressraden i landets egen ordning. Språket väljer inte ordningen —
+// en engelsk mall går till fem länder — så språkfilen säger bara om landet ska
+// avgöra (`adressformat: "land"`, mejl/sprak/en.json). Granskningen 2026-09-30
+// (G-C-en-11): "90210 Beverly Hills" utan delstat ser fel ut för en amerikan.
+// USA, Kanada och Australien skriver "Ort, DELSTAT POSTNR", Storbritannien
+// orten och postnumret på var sin rad, Nya Zeeland "Ort Postnr". Alla andra
+// länder behåller "postnr ort".
+export function adressrad(k = null) {
+  const svensk = '{{ shipping_address.zip }} {{ shipping_address.city }}';
+  if (k?.sprak?.adressformat !== 'land') return svensk;
+  return (
+    "{% case shipping_address.country_code %}" +
+    "{% when 'US', 'CA', 'AU' %}{{ shipping_address.city }}{% if shipping_address.province_code != blank %}, {{ shipping_address.province_code }}{% endif %} {{ shipping_address.zip }}" +
+    "{% when 'GB' %}{{ shipping_address.city }}<br>{{ shipping_address.zip }}" +
+    "{% when 'NZ' %}{{ shipping_address.city }} {{ shipping_address.zip }}" +
+    `{% else %}${svensk}{% endcase %}`
+  );
+}
+
 function leveransadress(s, lage, k = null) {
   const a = EXEMPEL.adress;
   const inre =
     lage === 'liquid'
-      ? `{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}<br>{{ shipping_address.address2 }}{% endif %}<br>{{ shipping_address.zip }} {{ shipping_address.city }}`
+      ? `{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}<br>{{ shipping_address.address2 }}{% endif %}<br>${adressrad(k)}`
       : `${esk(a.namn)}<br>${esk(a.gata)}<br>${a.postnr} ${esk(a.ort)}`;
   const block = `${avdelare(s)}
           <tr>
