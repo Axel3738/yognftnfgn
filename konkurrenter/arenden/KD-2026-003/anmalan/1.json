@@ -1,0 +1,64 @@
+{
+  "nr": 1,
+  "antal": 6,
+  "arende": "KD-2026-003",
+  "verksamhet": "Bäverbutiken",
+  "plattform": "facebook",
+  "formular": "https://www.facebook.com/help/contact/1758255661104383",
+  "lank": "https://www.facebook.com/ads/library/?id=2899062230465261",
+  "libraryId": "2899062230465261",
+  "annonsNr": 11,
+  "exponeringar": 61564,
+  "video": true,
+  "grund": "text+film",
+  "filmer": [
+    "Batmotor_SP_1_H5"
+  ],
+  "originaler": [
+    {
+      "film": "Batmotor_SP_1_H5",
+      "lank": "https://www.facebook.com/ads/library/?id=1564653074601367",
+      "arkivId": "1564653074601367",
+      "start": "2026-09-07",
+      "sida": "Bäverbutiken.se",
+      "sidaId": "678639638662543"
+    }
+  ],
+  "produkt": "Båtmotorskydd 420D – Heltäckande för Utombordare",
+  "ansprak": "redigering",
+  "falt": {
+    "reporter": {
+      "fullName": "Axel Odhner",
+      "email": "axel.odhner@stonebite.org",
+      "phone": "",
+      "address": "Stenkolsgatan 1B, 417 07 Göteborg, Sweden",
+      "country": "Sweden"
+    },
+    "rightsOwner": {
+      "name": "Stonebite Ecom AB",
+      "registrationNumber": "559576-2401",
+      "relationship": "CEO of the rights owner Stonebite Ecom AB (Swedish company, reg. no. 559576-2401)"
+    },
+    "contentUrls": [
+      "https://www.facebook.com/ads/library/?id=2899062230465261"
+    ],
+    "contentDescription": "This advertisement, run by the Facebook page \"Bustatio-busto\" (page ID 262424923617670), reproduces our copyrighted advertising material without authorisation. 7 words of our advertising copy appear verbatim in this ad; the longest identical run is 7 consecutive words: \"motorn från kåpan ner över riggen och\". The ad's video is a re-upload of our own ad film \"Batmotor_SP_1_H5\" (published by us on 7 September 2026, before this ad started running on 23 September 2026), with the same edit and our Swedish on-screen text at the same timestamps; the advertiser has added its own watermark. 3 still frames from different scenes of the reported video (at 0:05, 0:17, 0:20) are identical to frames of our film, including our on-screen text (perceptual-hash distance 0, 0, 0/64). Our original ad is public in Meta's Ad Library: \"Batmotor_SP_1_H5\" https://www.facebook.com/ads/library/?id=1564653074601367. According to the Ad Library it has reached approximately 61,564 people in the EU. It copies our ads \"Batmotor_SP_1_H14\", \"Batmotor_SP_1_H5\" for the product \"Båtmotorskydd 420D – Heltäckande för Utombordare\", which our page ran before this ad appeared. This is report 1 of 6 concerning ads from the same advertiser; each ad is reported separately.",
+    "originalWorkDescription": "Original advertising film edited by Stonebite Ecom AB for our store https://baverbutiken.se (product: \"Båtmotorskydd 420D – Heltäckande för Utombordare\"): \"Batmotor_SP_1_H5\". Our claim covers our edit (the selection, order and timing of the shots) and our Swedish on-screen text and graphics, as shown on the evidence image. We make no claim to the underlying product footage. The original ads are public in Meta's Ad Library, run by our page Bäverbutiken.se (links below).",
+    "originalWorkUrls": [
+      "https://www.facebook.com/ads/library/?id=1564653074601367",
+      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543",
+      "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare"
+    ],
+    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_39b984a4-9900-4b64-84b7-096db42130aa.png?v=1790749282. Internal reference: KD-2026-003, report 1/6, prepared 30 September 2026.",
+    "declarations": [
+      "I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.",
+      "The information in this notification is accurate.",
+      "I declare, under penalty of perjury, that I am the owner, or am authorised to act on behalf of the owner, of an exclusive right that is allegedly infringed."
+    ],
+    "signature": "Axel Odhner"
+  },
+  "bevisbild": "arenden/KD-2026-003/anmalan/bevis-1.png",
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_39b984a4-9900-4b64-84b7-096db42130aa.png?v=1790749282",
+  "status": "utkast",
+  "skapad": "2026-09-30T06:21:04.067Z"
+}

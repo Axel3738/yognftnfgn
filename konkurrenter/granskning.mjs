@@ -42,7 +42,8 @@ export function sammanfattning(paket) {
   const filmer = paket?.filmer ?? [];
   const k = d.match(/(\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
   const p = d.match(/(\d+)% of the reported video's sampled frames match/);
-  if (k) delar.push(`Annonsens film är klippt ur ${filmer.length === 1 ? 'en av våra filmer' : `${filmer.length || 'flera'} av våra filmer`}. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra${p ? `, och ${p[1]} % av annonsens bildrutor matchar våra filmer` : ''}.`);
+  if (k && /video is a re-upload of our own ad film/.test(d)) delar.push(`Annonsens film är vår egen annons, uppladdad igen med samma klippning och vår text i bilden. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra, texten inräknad. Anmälan gäller vår klippning och vår text, inte filmklippen under texten.`);
+  else if (k) delar.push(`Annonsens film är klippt ur ${filmer.length === 1 ? 'en av våra filmer' : `${filmer.length || 'flera'} av våra filmer`}. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra${p ? `, och ${p[1]} % av annonsens bildrutor matchar våra filmer` : ''}.`);
   const t = d.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words/);
   if (t) delar.push(`${t[1]} ord ur vår annonstext står ordagrant i annonsen, som längst ${t[2]} ord i följd.`);
   if (/image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(d)) delar.push('Bilden i annonsen är vår egen annonsbild.');
@@ -97,6 +98,7 @@ export function kortAnmalan(rapport, paket, { annons = null, bild = null, land =
     grund: paket.grund ?? null,
     filmer: paket.filmer ?? [],
     sammanfattning: sammanfattning(paket),
+    ansprak: paket.ansprak ?? null,
     bild,
     bildUrl: paket.bevisbildUrl ?? null,
     formular: paket.formular ?? null,

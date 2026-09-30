@@ -1,0 +1,3499 @@
+{
+  "byggd": "2026-09-30T06:04:55.973Z",
+  "ffmpeg": "/root/.local/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "fps": 2,
+  "maxAvstand": 6,
+  "arende": "KD-2026-003",
+  "lanade_hashar": [],
+  "lanade_par": [],
+  "lanade_klipp": {
+    "fron": {
+      "11": [
+        0
+      ],
+      "17": [
+        0
+      ],
+      "29": [
+        0
+      ],
+      "50": [
+        0
+      ],
+      "51": [
+        0
+      ],
+      "52": [],
+      "53": [],
+      "54": [],
+      "55": [],
+      "56": [],
+      "57": []
+    },
+    "deras": {
+      "11": 2,
+      "17": 7,
+      "29": 4,
+      "50": 4,
+      "51": 12
+    },
+    "egnaFilmer": 26,
+    "rutor": 24,
+    "varv": 1
+  },
+  "externa": {
+    "kallor": [
+      {
+        "id": "okand-kapell-husbil-stropp",
+        "agare": "okänd (riktig inspelning, person i mörk jacka spänner ett svart kapell på en husbil)"
+      },
+      {
+        "id": "okand-searcher-svart-takskydd",
+        "agare": "okänd (riktig inspelning, brittisk husvagn Sterling Eccles Searcher med svart takskydd)"
+      },
+      {
+        "id": "specialised-covers-7507334595818294550",
+        "agare": "Specialised Covers (TikTok @specialised_covers)"
+      }
+    ],
+    "filmer": {
+      "Takoverdrag_CS_2_H1": {
+        "rutor": 21,
+        "kallor": [
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:16–0:26"
+      },
+      "Takoverdrag_CO_5_H1": {
+        "rutor": 10,
+        "kallor": [
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:00–0:05"
+      },
+      "Takoverdrag_PD_4_H1": {
+        "rutor": 19,
+        "kallor": [
+          "okand-kapell-husbil-stropp",
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:02–0:04, 0:13–0:20"
+      },
+      "Takoverdrag_GT_2_H1": {
+        "rutor": 7,
+        "kallor": [
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:00–0:03"
+      },
+      "Takoverdrag_PD_1_H1": {
+        "rutor": 22,
+        "kallor": [
+          "okand-searcher-svart-takskydd"
+        ],
+        "tider": "0:08–0:13, 0:15–0:20"
+      },
+      "Takoverdrag_CO_1_H1": {
+        "rutor": 19,
+        "kallor": [
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:14–0:23"
+      },
+      "Takoverdrag_SP_4_H1": {
+        "rutor": 17,
+        "kallor": [
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:29–0:37"
+      },
+      "Takoverdrag_GT_5_H1": {
+        "rutor": 18,
+        "kallor": [
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:03–0:08, 0:19–0:22"
+      },
+      "Takoverdrag_PD_2_H1": {
+        "rutor": 18,
+        "kallor": [
+          "okand-kapell-husbil-stropp",
+          "okand-searcher-svart-takskydd"
+        ],
+        "tider": "0:11–0:13, 0:16–0:22"
+      },
+      "Takoverdrag_CS_3_H1": {
+        "rutor": 15,
+        "kallor": [
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:19–0:26"
+      },
+      "Takoverdrag_PD_3_H1": {
+        "rutor": 14,
+        "kallor": [
+          "okand-kapell-husbil-stropp",
+          "okand-searcher-svart-takskydd"
+        ],
+        "tider": "0:15–0:22"
+      },
+      "Takoverdrag_GT_4_H1": {
+        "rutor": 13,
+        "kallor": [
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:20–0:26"
+      },
+      "Takoverdrag_CS_1_H1": {
+        "rutor": 21,
+        "kallor": [
+          "okand-searcher-svart-takskydd",
+          "specialised-covers-7507334595818294550"
+        ],
+        "tider": "0:18–0:28"
+      }
+    }
+  },
+  "bibliotek": {
+    "prefixer": [
+      "Batmotor_",
+      "Takoverdrag_",
+      "Balteslipmaskin_",
+      "IBC_"
+    ],
+    "filmer": [
+      {
+        "id": "1605811701278029",
+        "namn": "Batmotor_SP_1_H15",
+        "annonsId": "120250371768970291",
+        "kalla": "source",
+        "langd": 25.1,
+        "rutor": 50,
+        "skapad": "2026-09-25T14:00:10+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1080358214851301",
+        "namn": "Batmotor_SP_1_H14",
+        "annonsId": "120250371749840291",
+        "kalla": "source",
+        "langd": 33.367,
+        "rutor": 67,
+        "skapad": "2026-09-25T13:56:56+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1138489245520594",
+        "namn": "Batmotor_SP_1_H13",
+        "annonsId": "120250371726830291",
+        "kalla": "source",
+        "langd": 26.35,
+        "rutor": 53,
+        "skapad": "2026-09-25T13:53:33+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3604845459656203",
+        "namn": "Batmotor_GT_3_H1",
+        "annonsId": "120250341688520291",
+        "kalla": "source",
+        "langd": 13.1,
+        "rutor": 26,
+        "skapad": "2026-09-23T14:10:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1073368532126528",
+        "namn": "Batmotor_RV_12_H1",
+        "annonsId": "120250341661690291",
+        "kalla": "source",
+        "langd": 14.332,
+        "rutor": 29,
+        "skapad": "2026-09-23T14:07:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1611866143740103",
+        "namn": "Batmotor_UG_3_H1",
+        "annonsId": "120250341636210291",
+        "kalla": "source",
+        "langd": 11.466,
+        "rutor": 23,
+        "skapad": "2026-09-23T14:04:12+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1458264399455321",
+        "namn": "Batmotor_FM_4_H1",
+        "annonsId": "120250327222620291",
+        "kalla": "source",
+        "langd": 16.138,
+        "rutor": 32,
+        "skapad": "2026-09-22T13:50:48+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1357649919586960",
+        "namn": "Batmotor_PD_8_H1",
+        "annonsId": "120250327197070291",
+        "kalla": "source",
+        "langd": 16.04,
+        "rutor": 32,
+        "skapad": "2026-09-22T13:47:29+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "28633124569614934",
+        "namn": "Batmotor_SP_1_H11",
+        "annonsId": "120250327152190291",
+        "kalla": "source",
+        "langd": 20.898,
+        "rutor": 42,
+        "skapad": "2026-09-22T13:44:13+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1590153086180324",
+        "namn": "Batmotor_SP_1_H12",
+        "annonsId": "120250327107400291",
+        "kalla": "source",
+        "langd": 22.52,
+        "rutor": 45,
+        "skapad": "2026-09-22T13:40:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "919129707591459",
+        "namn": "Batmotor_PD_6_H1",
+        "annonsId": "120250301152290291",
+        "kalla": "source",
+        "langd": 19.503,
+        "rutor": 39,
+        "skapad": "2026-09-20T14:17:42+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1610437867131666",
+        "namn": "Batmotor_SP_3_H1",
+        "annonsId": "120250301138450291",
+        "kalla": "source",
+        "langd": 22.15,
+        "rutor": 44,
+        "skapad": "2026-09-20T14:14:25+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2069084820641141",
+        "namn": "Batmotor_SP_1_H9",
+        "annonsId": "120250301122860291",
+        "kalla": "source",
+        "langd": 20.316,
+        "rutor": 41,
+        "skapad": "2026-09-20T14:11:02+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1371138935008534",
+        "namn": "Batmotor_SP_1_H10",
+        "annonsId": "120250301084080291",
+        "kalla": "source",
+        "langd": 18.032,
+        "rutor": 36,
+        "skapad": "2026-09-20T14:04:44+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1037940892396053",
+        "namn": "Batmotor_SP_1_H8",
+        "annonsId": "120250168880490291",
+        "kalla": "source",
+        "langd": 16.206,
+        "rutor": 32,
+        "skapad": "2026-09-10T14:04:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1132686839090779",
+        "namn": "Batmotor_GT_4_H1",
+        "annonsId": "120250168704670291",
+        "kalla": "source",
+        "langd": 17.4,
+        "rutor": 35,
+        "skapad": "2026-09-10T13:44:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4446021522319102",
+        "namn": "Batmotor_UG_1_H1",
+        "annonsId": "120250126154060291",
+        "kalla": "source",
+        "langd": 19.528,
+        "rutor": 39,
+        "skapad": "2026-09-07T14:27:33+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2004189113613630",
+        "namn": "Batmotor_SP_1_H6",
+        "annonsId": "120250126119630291",
+        "kalla": "source",
+        "langd": 29.14,
+        "rutor": 58,
+        "skapad": "2026-09-07T14:26:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1056183513996276",
+        "namn": "Batmotor_CS_5_H1",
+        "annonsId": "120250126099880291",
+        "kalla": "source",
+        "langd": 16.16,
+        "rutor": 32,
+        "skapad": "2026-09-07T14:25:27+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1933072994546708",
+        "namn": "Batmotor_SP_1_H5",
+        "annonsId": "120250125804850291",
+        "kalla": "source",
+        "langd": 27.62,
+        "rutor": 55,
+        "skapad": "2026-09-07T13:59:01+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1597942948690717",
+        "namn": "Batmotor_UG_2_H1",
+        "annonsId": "120250125793010291",
+        "kalla": "source",
+        "langd": 20.619,
+        "rutor": 41,
+        "skapad": "2026-09-07T13:58:10+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1266148105597835",
+        "namn": "Batmotor_SP_1_H4",
+        "annonsId": "120250105327740291",
+        "kalla": "source",
+        "langd": 13.258,
+        "rutor": 26,
+        "skapad": "2026-09-05T11:04:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1617575683396460",
+        "namn": "Batmotor_PD_3_H1",
+        "annonsId": "120250105321700291",
+        "kalla": "source",
+        "langd": 15.859,
+        "rutor": 32,
+        "skapad": "2026-09-05T11:03:45+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1877111913258829",
+        "namn": "Batmotor_CS_3_H1",
+        "annonsId": "120250105232890291",
+        "kalla": "source",
+        "langd": 16.02,
+        "rutor": 32,
+        "skapad": "2026-09-05T10:53:57+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1089098373600069",
+        "namn": "Batmotor_TH_1_H1",
+        "annonsId": "120250105225860291",
+        "kalla": "source",
+        "langd": 13.86,
+        "rutor": 28,
+        "skapad": "2026-09-05T10:52:51+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2233203693921095",
+        "namn": "Batmotor_AU_1_H1",
+        "annonsId": "120250105139440291",
+        "kalla": "source",
+        "langd": 15.32,
+        "rutor": 31,
+        "skapad": "2026-09-05T10:43:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "923979406974034",
+        "namn": "Batmotor_FM_1_H1",
+        "annonsId": "120250105131680291",
+        "kalla": "source",
+        "langd": 16.92,
+        "rutor": 34,
+        "skapad": "2026-09-05T10:42:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3023858884612696",
+        "namn": "Batmotor_RV_1_H1",
+        "annonsId": "120250104984000291",
+        "kalla": "source",
+        "langd": 12.98,
+        "rutor": 26,
+        "skapad": "2026-09-05T10:33:19+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "887481027573612",
+        "namn": "Batmotor_GT_1_H2",
+        "annonsId": "120250024534870291",
+        "kalla": "source",
+        "langd": 39.171,
+        "rutor": 78,
+        "skapad": "2026-08-31T02:16:28+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1070297909075117",
+        "namn": "Batmotor_PD_1_H1",
+        "annonsId": "120250024539550291",
+        "kalla": "source",
+        "langd": 46.253,
+        "rutor": 92,
+        "skapad": "2026-08-31T02:17:37+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1606706424394398",
+        "namn": "Batmotor_PD_1_H3",
+        "annonsId": "120250024545240291",
+        "kalla": "source",
+        "langd": 45.44,
+        "rutor": 91,
+        "skapad": "2026-08-31T02:19:03+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1738843847334441",
+        "namn": "Batmotor_PD_1_H2",
+        "annonsId": "120250024542500291",
+        "kalla": "source",
+        "langd": 46.021,
+        "rutor": 92,
+        "skapad": "2026-08-31T02:18:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1704348047334965",
+        "namn": "Batmotor_GT_1_H3",
+        "annonsId": "120250024536580291",
+        "kalla": "source",
+        "langd": 38.94,
+        "rutor": 78,
+        "skapad": "2026-08-31T02:16:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "27975221842162711",
+        "namn": "Batmotor_GT_1_H1",
+        "annonsId": "120250024533740291",
+        "kalla": "source",
+        "langd": 39.682,
+        "rutor": 79,
+        "skapad": "2026-08-31T02:15:56+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2316418655827152",
+        "namn": "Batmotor_SP_1_H2",
+        "annonsId": "120250009362290291",
+        "kalla": "source",
+        "langd": 40.519,
+        "rutor": 81,
+        "skapad": "2026-08-29T10:41:45+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1420853253236470",
+        "namn": "Batmotor_SP_1_H3",
+        "annonsId": "120250009362730291",
+        "kalla": "source",
+        "langd": 41.076,
+        "rutor": 82,
+        "skapad": "2026-08-29T10:41:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1042617252002157",
+        "namn": "Batmotor_SP_1_H1",
+        "annonsId": "120250009361920291",
+        "kalla": "source",
+        "langd": 42.005,
+        "rutor": 84,
+        "skapad": "2026-08-29T10:41:43+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1627891502009585",
+        "namn": "Takoverdrag_CS_2_H1",
+        "annonsId": "120250147352270291",
+        "kalla": "source",
+        "langd": 26.353,
+        "rutor": 53,
+        "skapad": "2026-09-09T00:55:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1604517611454232",
+        "namn": "Takoverdrag_CS_12_H1",
+        "annonsId": "120250371708270291",
+        "kalla": "source",
+        "langd": 23.032,
+        "rutor": 46,
+        "skapad": "2026-09-25T13:50:15+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4572957359625651",
+        "namn": "Takoverdrag_SP_4_H4",
+        "annonsId": "120250371696280291",
+        "kalla": "source",
+        "langd": 19.8,
+        "rutor": 40,
+        "skapad": "2026-09-25T13:47:00+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1098418466410287",
+        "namn": "Takoverdrag_SP_4_H3",
+        "annonsId": "120250371676420291",
+        "kalla": "source",
+        "langd": 28.6,
+        "rutor": 57,
+        "skapad": "2026-09-25T13:43:42+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4708239646167646",
+        "namn": "Takoverdrag_SP_4_H2",
+        "annonsId": "120250371639930291",
+        "kalla": "source",
+        "langd": 21.332,
+        "rutor": 43,
+        "skapad": "2026-09-25T13:40:24+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2009369086434994",
+        "namn": "Takoverdrag_UG_2_H1",
+        "annonsId": "120250357009170291",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41,
+        "skapad": "2026-09-24T13:39:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2238823400028473",
+        "namn": "Takoverdrag_CS_9_H1",
+        "annonsId": "120250341609420291",
+        "kalla": "source",
+        "langd": 25.286,
+        "rutor": 51,
+        "skapad": "2026-09-23T14:02:26+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2165753887623386",
+        "namn": "Takoverdrag_PD_10_H1",
+        "annonsId": "120250341572220291",
+        "kalla": "source",
+        "langd": 23.733,
+        "rutor": 47,
+        "skapad": "2026-09-23T13:59:03+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1062629803323334",
+        "namn": "Takoverdrag_CO_5_H1",
+        "annonsId": "120250341545560291",
+        "kalla": "source",
+        "langd": 13.232,
+        "rutor": 26,
+        "skapad": "2026-09-23T13:55:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1055843663993823",
+        "namn": "Takoverdrag_OB_3_H1",
+        "annonsId": "120250341520820291",
+        "kalla": "source",
+        "langd": 26.932,
+        "rutor": 54,
+        "skapad": "2026-09-23T13:52:36+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2274279546663682",
+        "namn": "Takoverdrag_GT_11_H1",
+        "annonsId": "120250341502740291",
+        "kalla": "source",
+        "langd": 26.467,
+        "rutor": 53,
+        "skapad": "2026-09-23T13:49:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1455550966388281",
+        "namn": "Takoverdrag_OB_4_H1",
+        "annonsId": "120250341482970291",
+        "kalla": "source",
+        "langd": 22.467,
+        "rutor": 45,
+        "skapad": "2026-09-23T13:46:00+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1906776980305994",
+        "namn": "Takoverdrag_OB_1_H1",
+        "annonsId": "120250276655390291",
+        "kalla": "source",
+        "langd": 18.032,
+        "rutor": 36,
+        "skapad": "2026-09-18T14:30:19+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1826453095026173",
+        "namn": "Takoverdrag_OB_2_H1",
+        "annonsId": "120250327631820291",
+        "kalla": "source",
+        "langd": 16.718,
+        "rutor": 33,
+        "skapad": "2026-09-22T14:38:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1799802437683001",
+        "namn": "Takoverdrag_PD_6_H1",
+        "annonsId": "120250275999120291",
+        "kalla": "source",
+        "langd": 16.182,
+        "rutor": 32,
+        "skapad": "2026-09-18T13:35:43+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "973503352439826",
+        "namn": "Takoverdrag_RI_3_H1",
+        "annonsId": "120250276046550291",
+        "kalla": "source",
+        "langd": 17.275,
+        "rutor": 35,
+        "skapad": "2026-09-18T13:39:02+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "961591576997026",
+        "namn": "Takoverdrag_PD_7_H1",
+        "annonsId": "120250276091950291",
+        "kalla": "source",
+        "langd": 17.9,
+        "rutor": 36,
+        "skapad": "2026-09-18T13:42:14+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1445308770789193",
+        "namn": "Takoverdrag_TR_3_H1",
+        "annonsId": "120250327429530291",
+        "kalla": "source",
+        "langd": 24.149,
+        "rutor": 48,
+        "skapad": "2026-09-22T14:15:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1650750200017215",
+        "namn": "Takoverdrag_GT_10_H1",
+        "annonsId": "120250327449910291",
+        "kalla": "source",
+        "langd": 17.786,
+        "rutor": 36,
+        "skapad": "2026-09-22T14:19:12+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1066431556240617",
+        "namn": "Takoverdrag_CS_7_H1",
+        "annonsId": "120250327583230291",
+        "kalla": "source",
+        "langd": 22.268,
+        "rutor": 45,
+        "skapad": "2026-09-22T14:32:12+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1637241178064828",
+        "namn": "Takoverdrag_RI_2_H1",
+        "annonsId": "120250327559480291",
+        "kalla": "source",
+        "langd": 16.832,
+        "rutor": 34,
+        "skapad": "2026-09-22T14:28:58+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4715692158754983",
+        "namn": "Takoverdrag_CO_3_H1",
+        "annonsId": "120250327408150291",
+        "kalla": "source",
+        "langd": 19.899,
+        "rutor": 40,
+        "skapad": "2026-09-22T14:12:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2035796930428239",
+        "namn": "Takoverdrag_GT_7_H1",
+        "annonsId": "120250327477010291",
+        "kalla": "source",
+        "langd": 18.15,
+        "rutor": 36,
+        "skapad": "2026-09-22T14:22:26+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2014143355963963",
+        "namn": "Takoverdrag_GT_8_H1",
+        "annonsId": "120250327505860291",
+        "kalla": "source",
+        "langd": 14.367,
+        "rutor": 29,
+        "skapad": "2026-09-22T14:25:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1794612261680643",
+        "namn": "Takoverdrag_CS_8_H1",
+        "annonsId": "120250327615480291",
+        "kalla": "source",
+        "langd": 20.082,
+        "rutor": 40,
+        "skapad": "2026-09-22T14:35:35+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "28026609890344616",
+        "namn": "Takoverdrag_SP_1_H1",
+        "annonsId": "120250147383940291",
+        "kalla": "source",
+        "langd": 23.4,
+        "rutor": 47,
+        "skapad": "2026-09-09T01:00:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1393647809607009",
+        "namn": "Takoverdrag_RI_1_H1",
+        "annonsId": "120250242493840291",
+        "kalla": "source",
+        "langd": 31.45,
+        "rutor": 63,
+        "skapad": "2026-09-16T06:32:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1629374438803173",
+        "namn": "Takoverdrag_UG_1_H1",
+        "annonsId": "120250242464260291",
+        "kalla": "source",
+        "langd": 27.082,
+        "rutor": 54,
+        "skapad": "2026-09-16T06:25:29+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4425339637679185",
+        "namn": "Takoverdrag_PD_4_H1",
+        "annonsId": "120250232050780291",
+        "kalla": "source",
+        "langd": 25.432,
+        "rutor": 51,
+        "skapad": "2026-09-15T14:11:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1135726582116215",
+        "namn": "Takoverdrag_GT_2_H1",
+        "annonsId": "120250147364200291",
+        "kalla": "source",
+        "langd": 27.748,
+        "rutor": 55,
+        "skapad": "2026-09-09T00:57:16+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "29253924880875293",
+        "namn": "Takoverdrag_PD_1_H1",
+        "annonsId": "120250147375290291",
+        "kalla": "source",
+        "langd": 37.755,
+        "rutor": 75,
+        "skapad": "2026-09-09T00:58:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1077720491316831",
+        "namn": "Takoverdrag_CO_1_H1",
+        "annonsId": "120250242502750291",
+        "kalla": "source",
+        "langd": 25.75,
+        "rutor": 51,
+        "skapad": "2026-09-16T06:35:25+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1596124075334669",
+        "namn": "Takoverdrag_SP_4_H1",
+        "annonsId": "120250242482300291",
+        "kalla": "source",
+        "langd": 39.817,
+        "rutor": 80,
+        "skapad": "2026-09-16T06:28:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1402932001225062",
+        "namn": "Takoverdrag_SP_2_H1",
+        "annonsId": "120250147388460291",
+        "kalla": "source",
+        "langd": 24.766,
+        "rutor": 49,
+        "skapad": "2026-09-09T01:00:50+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1615028910329688",
+        "namn": "Takoverdrag_GT_5_H1",
+        "annonsId": "120250232026090291",
+        "kalla": "source",
+        "langd": 23.166,
+        "rutor": 46,
+        "skapad": "2026-09-15T14:08:34+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2388339611978148",
+        "namn": "Takoverdrag_PD_2_H1",
+        "annonsId": "120250147378530291",
+        "kalla": "source",
+        "langd": 37.632,
+        "rutor": 75,
+        "skapad": "2026-09-09T00:59:05+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "28131074066587234",
+        "namn": "Takoverdrag_CS_3_H1",
+        "annonsId": "120250147355250291",
+        "kalla": "source",
+        "langd": 29.187,
+        "rutor": 58,
+        "skapad": "2026-09-09T00:56:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1067361515911303",
+        "namn": "Takoverdrag_PD_3_H1",
+        "annonsId": "120250147380520291",
+        "kalla": "source",
+        "langd": 37.918,
+        "rutor": 76,
+        "skapad": "2026-09-09T00:59:42+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1075240581763143",
+        "namn": "Takoverdrag_GT_3_H1",
+        "annonsId": "120250147367410291",
+        "kalla": "source",
+        "langd": 28.467,
+        "rutor": 57,
+        "skapad": "2026-09-09T00:57:44+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1481340267178614",
+        "namn": "Takoverdrag_GT_4_H1",
+        "annonsId": "120250232005150291",
+        "kalla": "source",
+        "langd": 26.733,
+        "rutor": 53,
+        "skapad": "2026-09-15T14:05:17+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1658293378988495",
+        "namn": "Takoverdrag_GT_1_H1",
+        "annonsId": "120250147361170291",
+        "kalla": "source",
+        "langd": 29.581,
+        "rutor": 59,
+        "skapad": "2026-09-09T00:56:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1538677984965189",
+        "namn": "Takoverdrag_CS_1_H1",
+        "annonsId": "120250147347090291",
+        "kalla": "source",
+        "langd": 28.35,
+        "rutor": 57,
+        "skapad": "2026-09-09T00:55:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2239839696801908",
+        "namn": "Takoverdrag_SP_3_H1",
+        "annonsId": "120250147391760291",
+        "kalla": "source",
+        "langd": 22.932,
+        "rutor": 46,
+        "skapad": "2026-09-09T01:01:18+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1011166471743919",
+        "namn": "Balteslipmaskin_G_2",
+        "annonsId": "120249902209390291",
+        "kalla": "source",
+        "langd": 26.308,
+        "rutor": 53,
+        "skapad": "2026-08-21T15:21:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1398818738864863",
+        "namn": "Balteslipmaskin_CS_2",
+        "annonsId": "120249902198460291",
+        "kalla": "source",
+        "langd": 14.419,
+        "rutor": 29,
+        "skapad": "2026-08-21T15:20:21+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3235837766610261",
+        "namn": "Balteslipmaskin_SP_2",
+        "annonsId": "120249902191520291",
+        "kalla": "source",
+        "langd": 15.116,
+        "rutor": 30,
+        "skapad": "2026-08-21T15:19:17+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1986770251978673",
+        "namn": "Balteslipmaskin_SP_3",
+        "annonsId": "120249902193820291",
+        "kalla": "source",
+        "langd": 14.419,
+        "rutor": 29,
+        "skapad": "2026-08-21T15:19:40+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1371814388392481",
+        "namn": "Balteslipmaskin_PD_3",
+        "annonsId": "120249902185790291",
+        "kalla": "source",
+        "langd": 28.049,
+        "rutor": 56,
+        "skapad": "2026-08-21T15:18:36+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1085215414453915",
+        "namn": "Balteslipmaskin_CS_1",
+        "annonsId": "120249902197250291",
+        "kalla": "source",
+        "langd": 15.487,
+        "rutor": 31,
+        "skapad": "2026-08-21T15:20:10+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1011490975267705",
+        "namn": "Balteslipmaskin_SP_1",
+        "annonsId": "120249902189740291",
+        "kalla": "source",
+        "langd": 15.209,
+        "rutor": 30,
+        "skapad": "2026-08-21T15:19:06+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1174985622376123",
+        "namn": "Balteslipmaskin_G_1",
+        "annonsId": "120249902208370291",
+        "kalla": "source",
+        "langd": 26.215,
+        "rutor": 52,
+        "skapad": "2026-08-21T15:21:18+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1658209305969301",
+        "namn": "Balteslipmaskin_G_3",
+        "annonsId": "120249902215700291",
+        "kalla": "source",
+        "langd": 26.749,
+        "rutor": 53,
+        "skapad": "2026-08-21T15:21:54+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1676849203405105",
+        "namn": "Balteslipmaskin_PD_1",
+        "annonsId": "120249902182980291",
+        "kalla": "source",
+        "langd": 27.887,
+        "rutor": 56,
+        "skapad": "2026-08-21T15:17:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1035595892599385",
+        "namn": "Balteslipmaskin_CS_3",
+        "annonsId": "120249902202700291",
+        "kalla": "source",
+        "langd": 14.72,
+        "rutor": 29,
+        "skapad": "2026-08-21T15:20:45+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1745370429845138",
+        "namn": "Balteslipmaskin_PD_2",
+        "annonsId": "120249902183550291",
+        "kalla": "source",
+        "langd": 27.98,
+        "rutor": 56,
+        "skapad": "2026-08-21T15:18:10+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1615772559952031",
+        "namn": "IBC_PD_8_H2",
+        "annonsId": "120250357195530291",
+        "kalla": "source",
+        "langd": 13.5,
+        "rutor": 27,
+        "skapad": "2026-09-24T13:58:37+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1863964741255471",
+        "namn": "IBC_PD_12_H3",
+        "annonsId": "120250357148370291",
+        "kalla": "source",
+        "langd": 22.032,
+        "rutor": 44,
+        "skapad": "2026-09-24T13:55:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1128238286583746",
+        "namn": "IBC_PD_12_H2",
+        "annonsId": "120250357115480291",
+        "kalla": "source",
+        "langd": 25.8,
+        "rutor": 52,
+        "skapad": "2026-09-24T13:52:11+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4096046270695497",
+        "namn": "IBC_PD_12_H1",
+        "annonsId": "120250357082270291",
+        "kalla": "source",
+        "langd": 20,
+        "rutor": 40,
+        "skapad": "2026-09-24T13:48:53+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1785606832453033",
+        "namn": "IBC_CS_9_H1",
+        "annonsId": "120250312659050291",
+        "kalla": "source",
+        "langd": 14.032,
+        "rutor": 28,
+        "skapad": "2026-09-21T13:40:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1556368976259248",
+        "namn": "IBC_PD_11_H1",
+        "annonsId": "120250312634610291",
+        "kalla": "source",
+        "langd": 18.4,
+        "rutor": 37,
+        "skapad": "2026-09-21T13:37:33+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1430629729026479",
+        "namn": "IBC_RI_1_H1",
+        "annonsId": "120250312599430291",
+        "kalla": "source",
+        "langd": 15.566,
+        "rutor": 31,
+        "skapad": "2026-09-21T13:34:13+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2474799873003152",
+        "namn": "IBC_GT_1_H1",
+        "annonsId": "120250005835180291",
+        "kalla": "source",
+        "langd": 48.621,
+        "rutor": 97,
+        "skapad": "2026-08-28T23:07:01+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1063820523024427",
+        "namn": "IBC_CO_2_H1",
+        "annonsId": "120250276317180291",
+        "kalla": "source",
+        "langd": 21.132,
+        "rutor": 42,
+        "skapad": "2026-09-18T14:06:20+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1387033843410567",
+        "namn": "IBC_PD_8_H1",
+        "annonsId": "120250260705080291",
+        "kalla": "source",
+        "langd": 25.866,
+        "rutor": 52,
+        "skapad": "2026-09-17T14:20:04+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1841924466797267",
+        "namn": "IBC_SP_5_H1",
+        "annonsId": "120250260581300291",
+        "kalla": "source",
+        "langd": 25.449,
+        "rutor": 51,
+        "skapad": "2026-09-17T14:13:44+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1483812933780790",
+        "namn": "IBC_GT_1_H3",
+        "annonsId": "120250005857680291",
+        "kalla": "source",
+        "langd": 48.738,
+        "rutor": 97,
+        "skapad": "2026-08-28T23:08:30+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1080967590998290",
+        "namn": "IBC_GT_5_H1",
+        "annonsId": "120250233239120291",
+        "kalla": "source",
+        "langd": 10.032,
+        "rutor": 20,
+        "skapad": "2026-09-15T15:54:32+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3184789875053817",
+        "namn": "IBC_PD_6_H1",
+        "annonsId": "120250233325780291",
+        "kalla": "source",
+        "langd": 6.778,
+        "rutor": 14,
+        "skapad": "2026-09-15T15:57:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "4053712831426721",
+        "namn": "IBC_PD_6_H2",
+        "annonsId": "120250233379210291",
+        "kalla": "source",
+        "langd": 16.366,
+        "rutor": 33,
+        "skapad": "2026-09-15T16:01:09+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1870000097502293",
+        "namn": "IBC_CS_5_H1",
+        "annonsId": "120250233165060291",
+        "kalla": "source",
+        "langd": 19.1,
+        "rutor": 38,
+        "skapad": "2026-09-15T15:51:17+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1461480642480301",
+        "namn": "IBC_PD_4_H3",
+        "annonsId": "120250154966570291",
+        "kalla": "source",
+        "langd": 9.832,
+        "rutor": 20,
+        "skapad": "2026-09-09T13:33:21+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1049024191076191",
+        "namn": "IBC_SP_3_H1",
+        "annonsId": "120250155312560291",
+        "kalla": "source",
+        "langd": 17.733,
+        "rutor": 35,
+        "skapad": "2026-09-09T14:02:18+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "990453767422328",
+        "namn": "IBC_GT_4_H1",
+        "annonsId": "120250154956130291",
+        "kalla": "source",
+        "langd": 21.45,
+        "rutor": 43,
+        "skapad": "2026-09-09T13:32:32+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1096638769714378",
+        "namn": "IBC_CS_4_H1",
+        "annonsId": "120250154950960291",
+        "kalla": "source",
+        "langd": 20.032,
+        "rutor": 40,
+        "skapad": "2026-09-09T13:31:34+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1080771684433274",
+        "namn": "IBC_PD_4_H2",
+        "annonsId": "120250147958100291",
+        "kalla": "source",
+        "langd": 16.45,
+        "rutor": 33,
+        "skapad": "2026-09-09T02:15:53+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "973184302489895",
+        "namn": "IBC_PD_4_H1",
+        "annonsId": "120250147950300291",
+        "kalla": "source",
+        "langd": 16.45,
+        "rutor": 33,
+        "skapad": "2026-09-09T02:14:52+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1599422584518727",
+        "namn": "IBC_GT_3_H1",
+        "annonsId": "120250105818500291",
+        "kalla": "source",
+        "langd": 17.9,
+        "rutor": 36,
+        "skapad": "2026-09-05T12:09:47+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1780621779948363",
+        "namn": "IBC_PD_3_H1",
+        "annonsId": "120250105772210291",
+        "kalla": "source",
+        "langd": 24.517,
+        "rutor": 49,
+        "skapad": "2026-09-05T12:05:49+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3302692703264106",
+        "namn": "IBC_GT_1_H2",
+        "annonsId": "120250005852720291",
+        "kalla": "source",
+        "langd": 47.485,
+        "rutor": 95,
+        "skapad": "2026-08-28T23:08:07+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1763664158107031",
+        "namn": "IBC_CS_1_H3",
+        "annonsId": "120250005831370291",
+        "kalla": "source",
+        "langd": 30.58,
+        "rutor": 61,
+        "skapad": "2026-08-28T23:06:22+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2324322015061954",
+        "namn": "IBC_CS_1_H2",
+        "annonsId": "120250005829330291",
+        "kalla": "source",
+        "langd": 31.833,
+        "rutor": 64,
+        "skapad": "2026-08-28T23:06:02+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "3662907913873698",
+        "namn": "IBC_SP_1_H3",
+        "annonsId": "120250005825820291",
+        "kalla": "source",
+        "langd": 37.245,
+        "rutor": 74,
+        "skapad": "2026-08-28T23:05:23+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "936077119062272",
+        "namn": "IBC_SP_1_H2",
+        "annonsId": "120250005824980291",
+        "kalla": "source",
+        "langd": 37.337,
+        "rutor": 75,
+        "skapad": "2026-08-28T23:04:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2443648059774481",
+        "namn": "IBC_SP_1_H1",
+        "annonsId": "120250005823320291",
+        "kalla": "source",
+        "langd": 38.638,
+        "rutor": 77,
+        "skapad": "2026-08-28T23:04:38+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1443169294347963",
+        "namn": "IBC_PD_Extra",
+        "annonsId": "120250005822150291",
+        "kalla": "source",
+        "langd": 10.005,
+        "rutor": 20,
+        "skapad": "2026-08-28T23:03:59+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "2656978288031260",
+        "namn": "IBC_PD_1_H3",
+        "annonsId": "120250005820750291",
+        "kalla": "source",
+        "langd": 44.675,
+        "rutor": 89,
+        "skapad": "2026-08-28T23:03:36+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1872630750382247",
+        "namn": "IBC_PD_1_H2",
+        "annonsId": "120250005819880291",
+        "kalla": "source",
+        "langd": 43.909,
+        "rutor": 88,
+        "skapad": "2026-08-28T23:03:13+0200",
+        "verksamhet": "Bäverbutiken"
+      },
+      {
+        "id": "1367356292221497",
+        "namn": "IBC_PD_1_H1",
+        "annonsId": "120250005818370291",
+        "kalla": "source",
+        "langd": 44.605,
+        "rutor": 89,
+        "skapad": "2026-08-28T23:02:49+0200",
+        "verksamhet": "Bäverbutiken"
+      }
+    ],
+    "fel": []
+  },
+  "per": {
+    "11": {
+      "nr": 11,
+      "libraryId": "2899062230465261",
+      "lank": "https://www.facebook.com/ads/library/?id=2899062230465261",
+      "start": "2026-09-23",
+      "varAnnons": {
+        "id": "120250371749840291",
+        "namn": "Batmotor_SP_1_H14",
+        "handle": "batmotorskydd-420d-heltackande-for-utombordare"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 2,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-2899062230465261.mp4",
+        "langd": 23,
+        "rutor": 46
+      },
+      "egen": {
+        "jamforda": 105,
+        "senare": 21,
+        "anvanda": [
+          "Batmotor_SP_1_H5"
+        ],
+        "perFilm": {
+          "Batmotor_SP_1_H5": 28,
+          "Batmotor_GT_1_H2": 2,
+          "Batmotor_SP_1_H3": 2,
+          "Batmotor_SP_1_H1": 3,
+          "Batmotor_PD_1_H2": 1,
+          "Batmotor_SP_1_H4": 2,
+          "Batmotor_TH_1_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 46,
+        "utanInnehall": 0,
+        "egnaRutor": 5218,
+        "filmer": 105,
+        "filmerSenare": 21,
+        "traffar": 40,
+        "andel": 87,
+        "lanadeRutor": 6,
+        "scener": 15,
+        "matchadeScener": 15,
+        "uteslutnaScener": 3,
+        "perFilm": {
+          "Batmotor_SP_1_H5": 28,
+          "Batmotor_GT_1_H2": 2,
+          "Batmotor_SP_1_H3": 2,
+          "Batmotor_SP_1_H1": 3,
+          "Batmotor_PD_1_H2": 1,
+          "Batmotor_SP_1_H4": 2,
+          "Batmotor_TH_1_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-003/11-A-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "ff8c9f9e87cd4e00",
+          "egenHash": "ff8c9f9e87cd4e00",
+          "scen": {
+            "nr": 3,
+            "tFran": 3,
+            "tTill": 5.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/11-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 17,
+          "derasI": 34,
+          "egenT": 17,
+          "egenI": 34,
+          "egenFil": "output/klipp/KD-2026-003/11-B-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "0081991b4c481849",
+          "egenHash": "0081991b4c481849",
+          "scen": {
+            "nr": 12,
+            "tFran": 17,
+            "tTill": 19
+          },
+          "derasFil": "output/klipp/KD-2026-003/11-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 20.5,
+          "derasI": 41,
+          "egenT": 20.5,
+          "egenI": 41,
+          "egenFil": "output/klipp/KD-2026-003/11-C-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "00023333137b3383",
+          "egenHash": "00023333137b3383",
+          "scen": {
+            "nr": 13,
+            "tFran": 19.5,
+            "tTill": 22
+          },
+          "derasFil": "output/klipp/KD-2026-003/11-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-003/11-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "40381d0b0d294ba3",
+          "egenHash": "40381d0b0d294ba3",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 0.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/11-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 1.5,
+          "egenI": 3,
+          "egenFil": "output/klipp/KD-2026-003/11-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "726c6c39586aac1e",
+          "egenHash": "726c6c39586aac1e",
+          "scen": {
+            "nr": 1,
+            "tFran": 1,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/11-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-003/11-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1933072994546708",
+            "namn": "Batmotor_SP_1_H5",
+            "skapad": "2026-09-07T13:59:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "307179393b3b5b9b",
+          "egenHash": "307179393b3b5b9b",
+          "scen": {
+            "nr": 2,
+            "tFran": 2,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/11-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "17": {
+      "nr": 17,
+      "libraryId": "1773323230645766",
+      "lank": "https://www.facebook.com/ads/library/?id=1773323230645766",
+      "start": "2026-09-23",
+      "varAnnons": {
+        "id": "120250242482300291",
+        "namn": "Takoverdrag_SP_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 21,
+      "externaRutor": 14,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1773323230645766.mp4",
+        "langd": 33.5,
+        "rutor": 67
+      },
+      "egen": {
+        "jamforda": 105,
+        "senare": 21,
+        "anvanda": [
+          "Takoverdrag_SP_4_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_SP_4_H1": 42,
+          "Takoverdrag_UG_1_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 67,
+        "utanInnehall": 0,
+        "egnaRutor": 5218,
+        "filmer": 105,
+        "filmerSenare": 21,
+        "traffar": 44,
+        "andel": 66,
+        "lanadeRutor": 23,
+        "scener": 14,
+        "matchadeScener": 14,
+        "uteslutnaScener": 4,
+        "perFilm": {
+          "Takoverdrag_SP_4_H1": 42,
+          "Takoverdrag_UG_1_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-003/17-A-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "2082f867878ff0d6",
+          "egenHash": "2082f867878ff0d6",
+          "scen": {
+            "nr": 2,
+            "tFran": 5.5,
+            "tTill": 8
+          },
+          "derasFil": "output/klipp/KD-2026-003/17-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 18,
+          "egenI": 36,
+          "egenFil": "output/klipp/KD-2026-003/17-B-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "1cf0e8a71e7b49c2",
+          "egenHash": "1cf0e8a71e7b49c2",
+          "scen": {
+            "nr": 9,
+            "tFran": 16,
+            "tTill": 20
+          },
+          "derasFil": "output/klipp/KD-2026-003/17-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 21.5,
+          "derasI": 43,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-003/17-C-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "eafec44b191b0e56",
+          "egenHash": "eafec44b191b0e56",
+          "scen": {
+            "nr": 10,
+            "tFran": 20.5,
+            "tTill": 23
+          },
+          "derasFil": "output/klipp/KD-2026-003/17-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-003/17-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e1a3c160ec617939",
+          "egenHash": "e1a3c160ec617939",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/17-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 3.5,
+          "egenI": 7,
+          "egenFil": "output/klipp/KD-2026-003/17-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "ea7ec449150f0bd6",
+          "egenHash": "ea7ec449150f0bd6",
+          "scen": {
+            "nr": 1,
+            "tFran": 3.5,
+            "tTill": 5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/17-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 28,
+          "derasI": 56,
+          "egenT": 31,
+          "egenI": 62,
+          "egenFil": "output/klipp/KD-2026-003/17-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1",
+            "skapad": "2026-09-16T06:28:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 1,
+          "stod": 2,
+          "derasHash": "a7e4cf8df171f880",
+          "egenHash": "a7c4cf8df171f880",
+          "scen": {
+            "nr": 12,
+            "tFran": 26,
+            "tTill": 30.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/17-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "29": {
+      "nr": 29,
+      "libraryId": "1652495996287809",
+      "lank": "https://www.facebook.com/ads/library/?id=1652495996287809",
+      "start": "2026-09-23",
+      "varAnnons": {
+        "id": "120249902208370291",
+        "namn": "Balteslipmaskin_G_1",
+        "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 4,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1652495996287809.mp4",
+        "langd": 26.3,
+        "rutor": 52
+      },
+      "egen": {
+        "jamforda": 105,
+        "senare": 21,
+        "anvanda": [
+          "Balteslipmaskin_G_1"
+        ],
+        "perFilm": {
+          "Balteslipmaskin_G_1": 41,
+          "Balteslipmaskin_PD_1": 3,
+          "Balteslipmaskin_PD_2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 52,
+        "utanInnehall": 0,
+        "egnaRutor": 5218,
+        "filmer": 105,
+        "filmerSenare": 21,
+        "traffar": 45,
+        "andel": 87,
+        "lanadeRutor": 7,
+        "scener": 8,
+        "matchadeScener": 8,
+        "uteslutnaScener": 2,
+        "perFilm": {
+          "Balteslipmaskin_G_1": 41,
+          "Balteslipmaskin_PD_1": 3,
+          "Balteslipmaskin_PD_2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 11.5,
+          "derasI": 23,
+          "egenT": 11,
+          "egenI": 22,
+          "egenFil": "output/klipp/KD-2026-003/29-A-egen.jpg",
+          "egenFilm": {
+            "id": "1174985622376123",
+            "namn": "Balteslipmaskin_G_1",
+            "skapad": "2026-08-21T15:21:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e6e6c17959416133",
+          "egenHash": "e6e6c17959416133",
+          "scen": {
+            "nr": 4,
+            "tFran": 10,
+            "tTill": 13.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/29-A-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 16,
+          "derasI": 32,
+          "egenT": 16,
+          "egenI": 32,
+          "egenFil": "output/klipp/KD-2026-003/29-B-egen.jpg",
+          "egenFilm": {
+            "id": "1174985622376123",
+            "namn": "Balteslipmaskin_G_1",
+            "skapad": "2026-08-21T15:21:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "1aca6e3c3f5c7e78",
+          "egenHash": "1aca6e3c3f5c7e78",
+          "scen": {
+            "nr": 5,
+            "tFran": 14,
+            "tTill": 17.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/29-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 21.5,
+          "derasI": 43,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-003/29-C-egen.jpg",
+          "egenFilm": {
+            "id": "1174985622376123",
+            "namn": "Balteslipmaskin_G_1",
+            "skapad": "2026-08-21T15:21:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "032139728c00b8df",
+          "egenHash": "032139728c00b8df",
+          "scen": {
+            "nr": 6,
+            "tFran": 18,
+            "tTill": 24
+          },
+          "derasFil": "output/klipp/KD-2026-003/29-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-003/29-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1174985622376123",
+            "namn": "Balteslipmaskin_G_1",
+            "skapad": "2026-08-21T15:21:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "0b1b07070ad1e0cf",
+          "egenHash": "0b1b07070ad1e0cf",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/29-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 3.5,
+          "egenI": 7,
+          "egenFil": "output/klipp/KD-2026-003/29-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1174985622376123",
+            "namn": "Balteslipmaskin_G_1",
+            "skapad": "2026-08-21T15:21:18+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e8d8ce64e509437d",
+          "egenHash": "e8d8ce64e509437d",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 5.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/29-lanat-2-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "50": {
+      "nr": 50,
+      "libraryId": "1791135212034393",
+      "lank": "https://www.facebook.com/ads/library/?id=1791135212034393",
+      "start": "2026-09-27",
+      "varAnnons": {
+        "id": "120250147378530291",
+        "namn": "Takoverdrag_PD_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 22,
+      "externaRutor": 18,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1791135212034393.mp4",
+        "langd": 37.7,
+        "rutor": 75
+      },
+      "egen": {
+        "jamforda": 126,
+        "senare": 0,
+        "anvanda": [
+          "Takoverdrag_PD_2_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_PD_2_H1": 40,
+          "Takoverdrag_PD_1_H1": 2,
+          "Takoverdrag_GT_1_H1": 4,
+          "Takoverdrag_CS_3_H1": 2,
+          "Takoverdrag_CS_1_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 75,
+        "utanInnehall": 0,
+        "egnaRutor": 6132,
+        "filmer": 126,
+        "filmerSenare": 0,
+        "traffar": 49,
+        "andel": 65,
+        "lanadeRutor": 26,
+        "scener": 12,
+        "matchadeScener": 12,
+        "uteslutnaScener": 7,
+        "perFilm": {
+          "Takoverdrag_PD_2_H1": 40,
+          "Takoverdrag_PD_1_H1": 2,
+          "Takoverdrag_GT_1_H1": 4,
+          "Takoverdrag_CS_3_H1": 2,
+          "Takoverdrag_CS_1_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-003/50-A-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3a30723864857271",
+          "egenHash": "3a30723864857271",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 10
+          },
+          "derasFil": "output/klipp/KD-2026-003/50-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 23,
+          "derasI": 46,
+          "egenT": 23,
+          "egenI": 46,
+          "egenFil": "output/klipp/KD-2026-003/50-B-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "1918191b120563e7",
+          "egenHash": "1918191b120563e7",
+          "scen": {
+            "nr": 7,
+            "tFran": 23,
+            "tTill": 24.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/50-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 35.5,
+          "derasI": 71,
+          "egenT": 35.5,
+          "egenI": 71,
+          "egenFil": "output/klipp/KD-2026-003/50-C-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e0e4e635a38271d0",
+          "egenHash": "e0e4e635a38271d0",
+          "scen": {
+            "nr": 11,
+            "tFran": 34.5,
+            "tTill": 37
+          },
+          "derasFil": "output/klipp/KD-2026-003/50-C-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-003/50-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "048c885000c08931",
+          "egenHash": "048c885000c08931",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/50-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-003/50-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 2,
+          "stod": 2,
+          "derasHash": "336fdf1f3f0fd0e0",
+          "egenHash": "336fdf3f3f1fd0e0",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/50-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 12.5,
+          "derasI": 25,
+          "egenT": 12.5,
+          "egenI": 25,
+          "egenFil": "output/klipp/KD-2026-003/50-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1",
+            "skapad": "2026-09-09T00:59:05+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "7f0fe8e1a1c1a2da",
+          "egenHash": "7f0fe8e1a1c1a2da",
+          "scen": {
+            "nr": 3,
+            "tFran": 10.5,
+            "tTill": 16
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/50-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "51": {
+      "nr": 51,
+      "libraryId": "1622525942850615",
+      "lank": "https://www.facebook.com/ads/library/?id=1622525942850615",
+      "start": "2026-09-27",
+      "varAnnons": {
+        "id": "120250147367410291",
+        "namn": "Takoverdrag_GT_3_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [
+        0
+      ],
+      "lanadeRutor": 33,
+      "externaRutor": 21,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1622525942850615.mp4",
+        "langd": 28.5,
+        "rutor": 57
+      },
+      "egen": {
+        "jamforda": 126,
+        "senare": 0,
+        "anvanda": [
+          "Takoverdrag_CS_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_CS_1_H1": 18,
+          "Takoverdrag_CS_2_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "Takoverdrag_GT_2_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 57,
+        "utanInnehall": 0,
+        "egnaRutor": 6132,
+        "filmer": 126,
+        "filmerSenare": 0,
+        "traffar": 21,
+        "andel": 37,
+        "lanadeRutor": 36,
+        "scener": 7,
+        "matchadeScener": 7,
+        "uteslutnaScener": 5,
+        "perFilm": {
+          "Takoverdrag_CS_1_H1": 18,
+          "Takoverdrag_CS_2_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "Takoverdrag_GT_2_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 7.5,
+          "derasI": 15,
+          "egenT": 7.5,
+          "egenI": 15,
+          "egenFil": "output/klipp/KD-2026-003/51-A-egen.jpg",
+          "egenFilm": {
+            "id": "1538677984965189",
+            "namn": "Takoverdrag_CS_1_H1",
+            "skapad": "2026-09-09T00:55:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "f83494e4829be9ce",
+          "egenHash": "f83494e4829be9ce",
+          "scen": {
+            "nr": 2,
+            "tFran": 6.5,
+            "tTill": 9
+          },
+          "derasFil": "output/klipp/KD-2026-003/51-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 1,
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 9.5,
+          "egenI": 19,
+          "egenFil": "output/klipp/KD-2026-003/51-B-egen.jpg",
+          "egenFilm": {
+            "id": "1538677984965189",
+            "namn": "Takoverdrag_CS_1_H1",
+            "skapad": "2026-09-09T00:55:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "70b4e9b83800f8b8",
+          "egenHash": "70b4e9b83800f8b8",
+          "scen": {
+            "nr": 3,
+            "tFran": 9.5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/51-B-deras.jpg",
+          "kontroll": 1
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 1.5,
+          "egenI": 3,
+          "egenFil": "output/klipp/KD-2026-003/51-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1538677984965189",
+            "namn": "Takoverdrag_CS_1_H1",
+            "skapad": "2026-09-09T00:55:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "dcdfebffff7733cc",
+          "egenHash": "dcdfebffff7733cc",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 5.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/51-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 6,
+          "derasI": 12,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-003/51-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1538677984965189",
+            "namn": "Takoverdrag_CS_1_H1",
+            "skapad": "2026-09-09T00:55:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 6,
+          "stod": 2,
+          "derasHash": "c5f7fff1f937fdfe",
+          "egenHash": "cdddfff1f937f9fa",
+          "scen": {
+            "nr": 1,
+            "tFran": 6,
+            "tTill": 6
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/51-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 14.5,
+          "derasI": 29,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-003/51-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1538677984965189",
+            "namn": "Takoverdrag_CS_1_H1",
+            "skapad": "2026-09-09T00:55:07+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "b0f8fc36f4eaf0f0",
+          "egenHash": "b0f8fc36f4eaf0f0",
+          "scen": {
+            "nr": 4,
+            "tFran": 10,
+            "tTill": 19
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/51-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "52": {
+      "nr": 52,
+      "libraryId": "1784680335767232",
+      "lank": "https://www.facebook.com/ads/library/?id=1784680335767232",
+      "start": "2026-09-27",
+      "varAnnons": {
+        "id": "120250147364200291",
+        "namn": "Takoverdrag_GT_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 7,
+      "externaRutor": 7,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1784680335767232.mp4",
+        "langd": 27.9,
+        "rutor": 55
+      },
+      "egen": {
+        "jamforda": 126,
+        "senare": 0,
+        "anvanda": [
+          "Takoverdrag_GT_2_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_GT_2_H1": 45,
+          "Takoverdrag_CS_1_H1": 2,
+          "Takoverdrag_CS_2_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 55,
+        "utanInnehall": 0,
+        "egnaRutor": 6132,
+        "filmer": 126,
+        "filmerSenare": 0,
+        "traffar": 48,
+        "andel": 87,
+        "lanadeRutor": 7,
+        "scener": 7,
+        "matchadeScener": 7,
+        "uteslutnaScener": 2,
+        "perFilm": {
+          "Takoverdrag_GT_2_H1": 45,
+          "Takoverdrag_CS_1_H1": 2,
+          "Takoverdrag_CS_2_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 11.5,
+          "derasI": 23,
+          "egenT": 11.5,
+          "egenI": 23,
+          "egenFil": "output/klipp/KD-2026-003/52-A-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "b0f8fc36f4cae0f0",
+          "egenHash": "b0f8fc36f4cae0f0",
+          "scen": {
+            "nr": 2,
+            "tFran": 7,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-003/52-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 18,
+          "egenI": 36,
+          "egenFil": "output/klipp/KD-2026-003/52-B-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "1eae26ac8051d040",
+          "egenHash": "1eae26ac8051d040",
+          "scen": {
+            "nr": 3,
+            "tFran": 16.5,
+            "tTill": 19.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/52-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 22,
+          "derasI": 44,
+          "egenT": 22,
+          "egenI": 44,
+          "egenFil": "output/klipp/KD-2026-003/52-C-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "663840b7931eb84e",
+          "egenHash": "663840b7931eb84e",
+          "scen": {
+            "nr": 5,
+            "tFran": 20.5,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/52-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-003/52-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "c60de3f54dcc7c7d",
+          "egenHash": "c60de3f54dcc7c7d",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/52-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 5,
+          "derasI": 10,
+          "egenT": 5,
+          "egenI": 10,
+          "egenFil": "output/klipp/KD-2026-003/52-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "23038202a303551a",
+          "egenHash": "23038202a303551a",
+          "scen": {
+            "nr": 1,
+            "tFran": 3,
+            "tTill": 6.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/52-lanat-2-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "53": {
+      "nr": 53,
+      "libraryId": "1641400197482112",
+      "lank": "https://www.facebook.com/ads/library/?id=1641400197482112",
+      "start": "2026-09-27",
+      "varAnnons": {
+        "id": "120250232005150291",
+        "namn": "Takoverdrag_GT_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 13,
+      "externaRutor": 13,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1641400197482112.mp4",
+        "langd": 26.9,
+        "rutor": 53
+      },
+      "egen": {
+        "jamforda": 126,
+        "senare": 0,
+        "anvanda": [
+          "Takoverdrag_GT_4_H1",
+          "Takoverdrag_GT_2_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_GT_4_H1": 35,
+          "Takoverdrag_GT_2_H1": 2,
+          "Takoverdrag_PD_1_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 53,
+        "utanInnehall": 0,
+        "egnaRutor": 6132,
+        "filmer": 126,
+        "filmerSenare": 0,
+        "traffar": 38,
+        "andel": 72,
+        "lanadeRutor": 15,
+        "scener": 10,
+        "matchadeScener": 10,
+        "uteslutnaScener": 3,
+        "perFilm": {
+          "Takoverdrag_GT_4_H1": 35,
+          "Takoverdrag_GT_2_H1": 2,
+          "Takoverdrag_PD_1_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-003/53-A-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "38303466761bac26",
+          "egenHash": "38303466761bac26",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 8
+          },
+          "derasFil": "output/klipp/KD-2026-003/53-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-003/53-B-egen.jpg",
+          "egenFilm": {
+            "id": "1135726582116215",
+            "namn": "Takoverdrag_GT_2_H1",
+            "skapad": "2026-09-09T00:57:16+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "66c92097931f988e",
+          "egenHash": "66c92097931f988e",
+          "scen": {
+            "nr": 2,
+            "tFran": 8.5,
+            "tTill": 10.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/53-B-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 15,
+          "derasI": 30,
+          "egenT": 15,
+          "egenI": 30,
+          "egenFil": "output/klipp/KD-2026-003/53-C-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e1f0de8550e0c002",
+          "egenHash": "e1f0de8550e0c002",
+          "scen": {
+            "nr": 5,
+            "tFran": 14,
+            "tTill": 17
+          },
+          "derasFil": "output/klipp/KD-2026-003/53-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 19.5,
+          "derasI": 39,
+          "egenT": 19.5,
+          "egenI": 39,
+          "egenFil": "output/klipp/KD-2026-003/53-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "312f97c7c60668d4",
+          "egenHash": "312f97c7c60668d4",
+          "scen": {
+            "nr": 7,
+            "tFran": 18.5,
+            "tTill": 20.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/53-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 21,
+          "derasI": 42,
+          "egenT": 21,
+          "egenI": 42,
+          "egenFil": "output/klipp/KD-2026-003/53-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e1637cddcdea783e",
+          "egenHash": "e1637cddcdea783e",
+          "scen": {
+            "nr": 8,
+            "tFran": 21,
+            "tTill": 21
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/53-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 23,
+          "derasI": 46,
+          "egenT": 23,
+          "egenI": 46,
+          "egenFil": "output/klipp/KD-2026-003/53-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1481340267178614",
+            "namn": "Takoverdrag_GT_4_H1",
+            "skapad": "2026-09-15T14:05:17+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "0d16e6eaeb8dfcfb",
+          "egenHash": "0d16e6eaeb8dfcfb",
+          "scen": {
+            "nr": 9,
+            "tFran": 21.5,
+            "tTill": 26
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/53-lanat-3-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "54": {
+      "nr": 54,
+      "libraryId": "973988949077032",
+      "lank": "https://www.facebook.com/ads/library/?id=973988949077032",
+      "start": "2026-09-25",
+      "varAnnons": {
+        "id": "120250005818370291",
+        "namn": "IBC_PD_1_H1",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-973988949077032.mp4",
+        "langd": 39,
+        "rutor": 78
+      },
+      "egen": {
+        "jamforda": 119,
+        "senare": 7,
+        "anvanda": [
+          "IBC_PD_1_H1"
+        ],
+        "perFilm": {
+          "IBC_PD_1_H1": 60,
+          "IBC_PD_1_H3": 4,
+          "IBC_PD_1_H2": 1,
+          "IBC_GT_1_H2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 78,
+        "utanInnehall": 0,
+        "egnaRutor": 5776,
+        "filmer": 119,
+        "filmerSenare": 7,
+        "traffar": 66,
+        "andel": 85,
+        "lanadeRutor": 12,
+        "scener": 13,
+        "matchadeScener": 13,
+        "uteslutnaScener": 2,
+        "perFilm": {
+          "IBC_PD_1_H1": 60,
+          "IBC_PD_1_H3": 4,
+          "IBC_PD_1_H2": 1,
+          "IBC_GT_1_H2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-003/54-A-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "3162c4eca868550d",
+          "egenHash": "3162c4eca868550d",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/54-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 7,
+          "derasI": 14,
+          "egenT": 7,
+          "egenI": 14,
+          "egenFil": "output/klipp/KD-2026-003/54-B-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "9882d8d8b8f87167",
+          "egenHash": "9882d8d8b8f87167",
+          "scen": {
+            "nr": 1,
+            "tFran": 4,
+            "tTill": 10
+          },
+          "derasFil": "output/klipp/KD-2026-003/54-B-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 24.5,
+          "derasI": 49,
+          "egenT": 24.5,
+          "egenI": 49,
+          "egenFil": "output/klipp/KD-2026-003/54-C-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e77757278cc12312",
+          "egenHash": "e77757278cc12312",
+          "scen": {
+            "nr": 6,
+            "tFran": 23,
+            "tTill": 26.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/54-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 15,
+          "derasI": 30,
+          "egenT": 15,
+          "egenI": 30,
+          "egenFil": "output/klipp/KD-2026-003/54-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "0554062404201000",
+          "egenHash": "0554062404201000",
+          "scen": {
+            "nr": 3,
+            "tFran": 13,
+            "tTill": 16.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/54-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 18.5,
+          "derasI": 37,
+          "egenT": 18.5,
+          "egenI": 37,
+          "egenFil": "output/klipp/KD-2026-003/54-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1367356292221497",
+            "namn": "IBC_PD_1_H1",
+            "skapad": "2026-08-28T23:02:49+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "4111090d13400303",
+          "egenHash": "4111090d13400303",
+          "scen": {
+            "nr": 4,
+            "tFran": 17,
+            "tTill": 22
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/54-lanat-2-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "55": {
+      "nr": 55,
+      "libraryId": "1051577917889579",
+      "lank": "https://www.facebook.com/ads/library/?id=1051577917889579",
+      "start": "2026-09-25",
+      "varAnnons": {
+        "id": "120250005819880291",
+        "namn": "IBC_PD_1_H2",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1051577917889579.mp4",
+        "langd": 38.3,
+        "rutor": 76
+      },
+      "egen": {
+        "jamforda": 119,
+        "senare": 7,
+        "anvanda": [
+          "IBC_PD_1_H2"
+        ],
+        "perFilm": {
+          "IBC_PD_1_H2": 59,
+          "IBC_PD_1_H1": 5,
+          "IBC_PD_1_H3": 1,
+          "IBC_SP_1_H2": 1,
+          "IBC_GT_1_H3": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 76,
+        "utanInnehall": 0,
+        "egnaRutor": 5776,
+        "filmer": 119,
+        "filmerSenare": 7,
+        "traffar": 67,
+        "andel": 88,
+        "lanadeRutor": 9,
+        "scener": 13,
+        "matchadeScener": 13,
+        "uteslutnaScener": 2,
+        "perFilm": {
+          "IBC_PD_1_H2": 59,
+          "IBC_PD_1_H1": 5,
+          "IBC_PD_1_H3": 1,
+          "IBC_SP_1_H2": 1,
+          "IBC_GT_1_H3": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 0,
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-003/55-A-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "9aa258eab8f8f07b",
+          "egenHash": "9aa258eab8f8f07b",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/55-A-deras.jpg",
+          "kontroll": 1
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 24,
+          "derasI": 48,
+          "egenT": 24,
+          "egenI": 48,
+          "egenFil": "output/klipp/KD-2026-003/55-B-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "05cd472690722202",
+          "egenHash": "05cd472690722202",
+          "scen": {
+            "nr": 7,
+            "tFran": 22.5,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/55-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 1,
+          "derasT": 34.5,
+          "derasI": 69,
+          "egenT": 34.5,
+          "egenI": 69,
+          "egenFil": "output/klipp/KD-2026-003/55-C-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "5ead64f04cf85561",
+          "egenHash": "5ead64f04cf85561",
+          "scen": {
+            "nr": 11,
+            "tFran": 32.5,
+            "tTill": 36
+          },
+          "derasFil": "output/klipp/KD-2026-003/55-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 14.5,
+          "derasI": 29,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-003/55-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "00ad818592100900",
+          "egenHash": "00ad818592100900",
+          "scen": {
+            "nr": 4,
+            "tFran": 12.5,
+            "tTill": 15.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/55-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 18,
+          "derasI": 36,
+          "egenT": 18,
+          "egenI": 36,
+          "egenFil": "output/klipp/KD-2026-003/55-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1872630750382247",
+            "namn": "IBC_PD_1_H2",
+            "skapad": "2026-08-28T23:03:13+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "402008376c380e0f",
+          "egenHash": "402008376c380e0f",
+          "scen": {
+            "nr": 5,
+            "tFran": 16,
+            "tTill": 21.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-003/55-lanat-2-deras.jpg"
+        }
+      ],
+      "kastade": []
+    },
+    "56": {
+      "nr": 56,
+      "libraryId": "1551058543491574",
+      "lank": "https://www.facebook.com/ads/library/?id=1551058543491574",
+      "start": "2026-09-25",
+      "varAnnons": {
+        "id": "120250005822150291",
+        "namn": "IBC_PD_Extra",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1551058543491574.mp4",
+        "langd": 10.1,
+        "rutor": 20
+      },
+      "egen": {
+        "jamforda": 119,
+        "senare": 7,
+        "anvanda": [
+          "IBC_GT_1_H1",
+          "IBC_SP_1_H2",
+          "IBC_PD_Extra"
+        ],
+        "perFilm": {
+          "IBC_PD_Extra": 16,
+          "IBC_GT_1_H1": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_GT_1_H2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 20,
+        "utanInnehall": 0,
+        "egnaRutor": 5776,
+        "filmer": 119,
+        "filmerSenare": 7,
+        "traffar": 20,
+        "andel": 100,
+        "lanadeRutor": 0,
+        "scener": 3,
+        "matchadeScener": 3,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_PD_Extra": 16,
+          "IBC_GT_1_H1": 1,
+          "IBC_SP_1_H2": 2,
+          "IBC_GT_1_H2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 27.5,
+          "egenI": 55,
+          "egenFil": "output/klipp/KD-2026-003/56-A-egen.jpg",
+          "egenFilm": {
+            "id": "2474799873003152",
+            "namn": "IBC_GT_1_H1",
+            "skapad": "2026-08-28T23:07:01+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "39b172dafa78b2c4",
+          "egenHash": "39b172dafa78b2c4",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "derasFil": "output/klipp/KD-2026-003/56-A-deras.jpg",
+          "kontroll": 2
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 2,
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-003/56-B-egen.jpg",
+          "egenFilm": {
+            "id": "936077119062272",
+            "namn": "IBC_SP_1_H2",
+            "skapad": "2026-08-28T23:04:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "88935071717157ac",
+          "egenHash": "88935071717157ac",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 4.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/56-B-deras.jpg",
+          "kontroll": 4
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 0,
+          "derasT": 8,
+          "derasI": 16,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-003/56-C-egen.jpg",
+          "egenFilm": {
+            "id": "1443169294347963",
+            "namn": "IBC_PD_Extra",
+            "skapad": "2026-08-28T23:03:59+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "8eb35173f9dfd3c3",
+          "egenHash": "8eb35173f9dfd3c3",
+          "scen": {
+            "nr": 2,
+            "tFran": 5,
+            "tTill": 9.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/56-C-deras.jpg",
+          "kontroll": 0
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    },
+    "57": {
+      "nr": 57,
+      "libraryId": "1555804585865131",
+      "lank": "https://www.facebook.com/ads/library/?id=1555804585865131",
+      "start": "2026-09-25",
+      "varAnnons": {
+        "id": "120250147958100291",
+        "namn": "IBC_PD_4_H2",
+        "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+      },
+      "fel": null,
+      "status": "bevisad",
+      "fron": [],
+      "lanadeRutor": 0,
+      "externaRutor": 0,
+      "deras": {
+        "video": "output/klipp/KD-2026-003/deras-1555804585865131.mp4",
+        "langd": 13.3,
+        "rutor": 26
+      },
+      "egen": {
+        "jamforda": 119,
+        "senare": 7,
+        "anvanda": [
+          "IBC_PD_4_H2",
+          "IBC_PD_4_H1"
+        ],
+        "perFilm": {
+          "IBC_PD_4_H2": 9,
+          "IBC_PD_4_H1": 15,
+          "IBC_PD_3_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 26,
+        "utanInnehall": 0,
+        "egnaRutor": 5776,
+        "filmer": 119,
+        "filmerSenare": 7,
+        "traffar": 26,
+        "andel": 100,
+        "lanadeRutor": 0,
+        "scener": 6,
+        "matchadeScener": 6,
+        "uteslutnaScener": 0,
+        "perFilm": {
+          "IBC_PD_4_H2": 9,
+          "IBC_PD_4_H1": 15,
+          "IBC_PD_3_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "rang": 1,
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-003/57-A-egen.jpg",
+          "egenFilm": {
+            "id": "1080771684433274",
+            "namn": "IBC_PD_4_H2",
+            "skapad": "2026-09-09T02:15:53+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "5341535a527053b3",
+          "egenHash": "5341535a527053b3",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2
+          },
+          "derasFil": "output/klipp/KD-2026-003/57-A-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "rang": 0,
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-003/57-B-egen.jpg",
+          "egenFilm": {
+            "id": "1080771684433274",
+            "namn": "IBC_PD_4_H2",
+            "skapad": "2026-09-09T02:15:53+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "959025cc7e3b4da0",
+          "egenHash": "959025cc7e3b4da0",
+          "scen": {
+            "nr": 1,
+            "tFran": 2.5,
+            "tTill": 5
+          },
+          "derasFil": "output/klipp/KD-2026-003/57-B-deras.jpg",
+          "kontroll": 0
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "rang": 2,
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-003/57-C-egen.jpg",
+          "egenFilm": {
+            "id": "973184302489895",
+            "namn": "IBC_PD_4_H1",
+            "skapad": "2026-09-09T02:14:52+0200",
+            "verksamhet": "Bäverbutiken"
+          },
+          "avstand": 0,
+          "stod": 2,
+          "derasHash": "e800c0755133333a",
+          "egenHash": "e800c0755133333a",
+          "scen": {
+            "nr": 2,
+            "tFran": 5.5,
+            "tTill": 7.5
+          },
+          "derasFil": "output/klipp/KD-2026-003/57-C-deras.jpg",
+          "kontroll": 2
+        }
+      ],
+      "uteslutna": [],
+      "kastade": []
+    }
+  }
+}

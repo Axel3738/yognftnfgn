@@ -230,7 +230,10 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
         '',
         ...rader,
         '',
-        'Materialet som räknas upp ovan är framställt av oss och skyddas av lagen (1960:729) om upphovsrätt till litterära och konstnärliga verk. Kravet gäller enbart det uppräknade materialet.',
+        // Anspråket 'redigering' (Bustatio 2026-09-30): vår färdiga annons uppladdad igen — klippningen och texten är våra, inte filmklippen.
+        arende.ansprak === 'redigering'
+          ? 'Annonserna som räknas upp ovan är våra: klippningen och texten i bilden är gjorda av oss och skyddas av lagen (1960:729) om upphovsrätt till litterära och konstnärliga verk. Kravet gäller enbart vår klippning och vår text, inte filmklippen i sig.'
+          : 'Materialet som räknas upp ovan är framställt av oss och skyddas av lagen (1960:729) om upphovsrätt till litterära och konstnärliga verk. Kravet gäller enbart det uppräknade materialet.',
         '',
         `Vi kräver att ni senast ${fristText(nu, fristTimmar, 'sv')}, det vill säga inom ${fristTimmar} timmar från detta mejl:`,
         '',
@@ -276,7 +279,9 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
       '',
       ...rader,
       '',
-      'The material listed above was produced by us and is protected under the Swedish Act on Copyright in Literary and Artistic Works (1960:729) and internationally under the Berne Convention. This demand concerns only the listed material.',
+      arende.ansprak === 'redigering'
+        ? 'The ads listed above are ours: the edit and the on-screen text were made by us and are protected under the Swedish Act on Copyright in Literary and Artistic Works (1960:729) and internationally under the Berne Convention. This demand concerns only our edit and our text, not the underlying footage.'
+        : 'The material listed above was produced by us and is protected under the Swedish Act on Copyright in Literary and Artistic Works (1960:729) and internationally under the Berne Convention. This demand concerns only the listed material.',
       '',
       `We require that no later than ${fristText(nu, fristTimmar, 'en')}, i.e. within ${fristTimmar} hours of this email, you:`,
       '',
