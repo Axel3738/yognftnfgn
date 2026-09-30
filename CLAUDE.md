@@ -1789,9 +1789,9 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 
 ### Produkterna (`products/products.json`)
 
-Sex produkter, alla på MagiBorsten. `scaling: true` = ingår i redigerardashboarden
-och har en egen Notion creative hub. `scaling: false` = testprodukt, utanför
-redigerarnas arbetsflöde.
+**Femton produkter**, alla på MagiBorsten. `scaling: true` = ingår i
+redigerardashboarden och har en egen Notion creative hub. `scaling: false` =
+testprodukt, utanför redigerarnas arbetsflöde.
 
 | id | Skalar | Dagsbudget | Break-even-ROAS |
 |---|---|---|---|
@@ -1801,6 +1801,27 @@ redigerarnas arbetsflöde.
 | `strandtofflorna` | ✅ | 1 000 kr | 1,70 |
 | `ai-glasogon` | ❌ | 1 000 kr | 1,34 |
 | `vaggfastet` | ❌ | 500 kr | 2,00 |
+| `takoverdraget` | ❌ | 8 000 kr | 1,63 |
+| `taljsetet` | ❌ | 4 000 kr | 1,63 |
+| `golfkalendern` | ❌ | 3 000 kr | 1,70 |
+| `termoskyddet` | ❌ | 2 300 kr | 1,61 |
+| `solcellslampan` | ❌ | 1 200 kr | 1,62 |
+| `balteslipmaskinen` | ❌ | 1 100 kr | 1,73 |
+| `fiskespohallaren` | ❌ | 750 kr | 1,50 |
+| `batmotorskyddet` | ❌ | 500 kr | 1,62 |
+| `ibc-tankoverdraget` | ❌ | 500 kr | 1,51 |
+
+⚠️ **De nio nedersta lades in 2026-09-30** (Axels svar när kvoten inte gick att
+logga på tionde dagen: "om du antar att dom ska vara där så gör det"). De bär
+bara det kvoten behöver, och **varje tal är mätt, inget gissat**: dagsbudget =
+summan av kampanjens ACTIVE adsets i Meta, break-even-ROAS = talet i
+kampanjnamnet, AOV = Metas `last_30d` (spend × ROAS ÷ köp). ⚠️ Deras
+`target_cpa_sek` **är break-even-CPA, inte ett mål Axel satt** — det står i
+fältet `target_cpa_kalla` på varje post, och det ger en försiktigare kvot än en
+gissad målnivå. Sätter Axel ett riktigt target ska fältet bytas. `campaign_ids`,
+`creative_prefix` och `notion` är utelämnade **med flit**: de styr andra rutiner
+(leveransrundan slår upp kampanjen ur kontot, commission avbryter på en hub som
+inte svarar), och tillägget skulle bara röra kvoten.
 
 Break-even-talen kommer ur Axels COGS-beräkning 2026-08-05 och är verkliga.
 Dagsbudgetarna ändras ofta — **läs alltid `products.json`, citera aldrig tabellen
@@ -2480,11 +2501,25 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   dem 2026-08-31. `/notionkorning` larmar högst upp i rapporten om Notion inte gick
   att läsa.)*
 
-  **Stoppregeln i `/notionkorning` är en enda: pris som avviker mer än 20 % från
-  Shopify-sidan** (inget pris i annonsen = grön). En creative med problem, video
-  som bild, får kommentar i Notion och flyttas till `Draft`. För bild är varje fel
-  ett problem; för video bara priset — felstavningar i video laddas upp ändå med
-  en anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
+  **Stoppreglerna i `/notionkorning` är FYRA.** (1) Pris
+  som avviker mer än 20 % från Shopify-sidan (inget pris i annonsen = grön).
+  (2) ⛔ **Bara 14 dagar släpps igenom** — Axels beslut 2026-09-30, "från och med
+  nu släpp endast igenom 14 dagar". En creative som lovar **30 dagars garanti,
+  30 dagars öppet köp eller "pengarna tillbaka i 30 dagar"** stoppas, **video som
+  bild**, för butikens publicerade policy är 14 dagars ångerrätt och ett
+  trettiodagarslöfte är alltså ett löfte kunden inte får infriat. Facit är
+  `tvister.returfonster_dagar` i brandfilen, aldrig briefen. Bakgrunden: 27–30
+  september gick nio videor live som lovade 30 dagar, för den gamla regeln
+  stoppade bara priset. (3) ⛔ **Butikens namn eller logga** någonstans i
+  creativen — Axels regel 2026-09-18 fanns men stoppade ingenting, så
+  `BÄVERBUTIKEN` gick live på slutkort 22, 29 och 30 september. (4) ⛔ **En
+  främmande vattenstämpel**, alltså ett redigeringsverktygs märke i bild (`VEED`,
+  `CapCut`, TikTok-loggan) — den säger för kunden att annonsen är gjord i ett
+  gratisverktyg (`Termoskydd_OB_1_H1`, 2026-09-30). Alla fyra gäller **video som
+  bild**. En creative med problem, video som bild, får kommentar i
+  Notion och flyttas till `Draft`. För bild är varje fel ett problem; för video
+  bara de fyra stoppreglerna — felstavningar i video laddas upp ändå med en
+  anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
   `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
   ⚠️ **Stoppregeln gäller före uppladdning. En annons som redan är live stängs

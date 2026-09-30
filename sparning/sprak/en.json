@@ -88,6 +88,7 @@
     "Paketet har lämnat avgångsorten": "The parcel has left the origin",
     "Chauffören kom inte in genom porten och kunde inte lämna paketet": "The driver could not get through the entrance and could not leave the parcel",
     "Leveransen är försenad. Leveransdatumet uppdateras": "The delivery is delayed. The delivery date will be updated",
+    "Paketet är adresserat till en boxadress och kan därför bli försenat": "The parcel is addressed to a PO box and may therefore be delayed",
     "4PX har hämtat paketet": "4PX has picked up the parcel",
     "Paketet ligger hos tullen": "The parcel is held at customs",
     "Leveransen misslyckades": "The delivery failed",

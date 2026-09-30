@@ -2908,3 +2908,96 @@ Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
 `carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad. SE-kampanjen
 ACTIVE med 11 adsets, pris 1 129 kr; båda listicle-kampanjerna filtrerade som
 eget spår.
+
+## 2026-09-29 — NO-rundan: 3 rader, alla redan uppe (loggad i efterhand)
+
+3 rader i `SE-ACTIVE to be translated` (`UG_102_H1`, `CS_112_H1`, `SP_104_H2`),
+alla ur 28/9:s spegling och skapade i kontot 17:45–18:09 CEST samma kväll.
+Tillbakalästa en och en ur Meta: ACTIVE/ACTIVE i ACTIVE-adsets (UG, CS, SP).
+Approved-kollen: **69 rader, 0 utan NO-annons.** Inget renderat, inget
+uppladdat, 0 HeyGen-credits, ingen Notion-status rörd.
+
+⚠️ **Sessionen stannade efter köläsningen** — Discord-rapporten, den här
+loggraden och commiten hann inte göras den dagen. Ingenting i kontot eller
+Notion rördes, så det som saknades var spåret, inte arbetet. Den 30/9
+rapporterades båda dagarna i samma Discord-post.
+
+## 2026-09-30 — NO-rundan: kön tom
+
+**0 rader** i `SE-ACTIVE to be translated`. Approved-kollen: **72 rader, 0 utan
+NO-annons.** Kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd
+länk `carashell.se/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst ur
+butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits, ingen Notion-status
+rörd. Discord-rapport postad i `#annons-uppladdning` (`1554864439684239371`),
+ingen ping.
+
+⚠️ **Metas läsgräns slog till två gånger i dag på Magiborsten UK** (det konto
+kön läser för US-kolumnen): köläsningen backade av fyra gånger (30+60+120+240 s)
+och Approved-passet **dog på första försöket** med `✗ Meta paging: User request
+limit reached` och lämnade en **tom fil**. Ett nytt försök tio minuter senare
+läste alla 72. Samma fälla som 27/9 — en strypt läsning ser ut som en tom kö om
+ingen läser felraden. Räkna med 10–25 min för en runda när kontot är strypt.
+
+Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på
+Axels besked, obesvarat sedan 2026-09-23.
+
+---
+
+## USA-runda 17 — 2026-09-30 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i BÅDA statusarna.** `SE-ACTIVE to be translated` 0 rader,
+`Approved` 72 rader där varje rad redan bär sin US-annons (0 eftersläpande).
+Ingenting översatt, ingenting laddat upp, ingen HeyGen-kredit rörd.
+
+Marknadsvakten kördes ändå (den dagen är den hela poängen med rutinen):
+12 av 12 adsets rätt placeringar, 87 annonser ACTIVE, budget 8 000 kr/dag,
+**spend i går 7 968 kr och i dag 4 257 kr — allt i tillåtna placeringar**,
+startsida, landningssida, produktsida och kassa engelska, kassan förvalde
+United States. Inget larm.
+
+Oförändrat: den ursprungliga `CARASHELL_US_Taköverdrag …` står PAUSED med
+2 246 kr spend (ägarens beslut), och kampanjen har fortfarande två adsets för
+samma vinkel (`CARASHELL_US_GT` och `CARASHELL_US_G`) som delar vinkelns
+budget i CBO:n.
+
+---
+
+## 2026-09-30 — speglingen: 0 speglade, 3 källrader → Approved
+
+**Inget att spegla.** SE-kön hade tre rader, alla stoppade:
+
+| Källrad | Skäl |
+|---|---|
+| `Takoverdrag_FD_2_2` | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | nämner butiken — sjunde dygnet (24–30/9) |
+
+⚠️ **De två fars dag-bildannonserna kan ALDRIG speglas, och det är inte Axels
+beslut.** Fars dag är 8 november i Sverige men i juni i USA, Storbritannien,
+Kanada och Danmark, och sista beställningsdagen (19 oktober) är räknad på
+leveranstiden till Sverige. Verktygets fars dag-spärr gör rätt. De nämner
+dessutom butiken, men att rätta det gör dem inte speglingsbara — de hör bara i
+Sverige. ⚠️ Discord-jobbet lade ändå alla tre under ACTION NEEDED med texten
+"decide whether the editor should make a store version"; raden skrevs om för
+hand så att bara `GT_11_H1` ligger hos Axel. **Ett permanent stoppskäl och ett
+redigeraren kan rätta ska inte hamna i samma hög** — annars slutar Axel läsa
+listan.
+
+**3 källrader → `Approved`** (US-annonserna kom upp i natt):
+`SP_4_H2` → `120251671868600435`, `CS_12_H1` → `120251671852550435`,
+`UG_2_H1` → `120251671833900435`. Kön `CaraShell EN ready to be active` är nu
+tom.
+
+⛔ **Metas strypning (kod 17) på UK-kontot blockerade tre försök i ~50 minuter.**
+Kölistningen utan `--kor` kom igenom med verktygets egen backoff (30+60+120 s),
+men `--kor` föll direkt med `Meta paging: User request limit reached` — den
+läser fler sidor ur UK-kontot och kastar där i stället för att backa av. Fjärde
+försöket kom förbi US-kontot. **En strypt läsning är inte ett tomt resultat:**
+körningen upprepades tills alla tre kontona gick att läsa, i stället för att
+rapportera 0 → Approved.
+⚠️ Och en fälla i containern: `sleep` i en bakgrundskörning dödas av
+bakgrundsgränsen (~10 min), så en paus på 25 minuter blir aldrig av. Dela upp
+väntan eller kör om direkt.
+
+Priserna lästa live: SE 1 129 kr, NO 1 106 NOK. Båda kampanjerna ACTIVE
+(SE 11 adsets, NO 12). Inget loggat i registret — `register.mjs log` vägrar 0.

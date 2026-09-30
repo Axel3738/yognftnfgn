@@ -1,0 +1,127 @@
+[
+ {
+  "form": 0,
+  "text": "Til farsdag: 30 deler i vesken.",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Till fars dag:",
+   "30 delar i väskan."
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Bladbeskyttelse, lærstropp, sandpapir og kuttsikre hansker i samme veske.",
+  "rader": [
+   2,
+   3
+  ],
+  "se_rader": [
+   "Bladskydd, läderstrop, slippapper och",
+   "skärskyddade handskar i samma väska."
+  ],
+  "vanster": false
+ },
+ {
+  "box": [
+   55,
+   438,
+   380,
+   537
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   62,
+   446,
+   371,
+   529
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   198,
+   12,
+   42
+  ],
+  "radie": 41,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 40,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 467,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   250,
+   1100,
+   845,
+   1275
+  ]
+ },
+ {
+  "box": [
+   265,
+   1179,
+   815,
+   1295
+  ],
+  "fet": true,
+  "storlek": 42,
+  "farg": [
+   195,
+   14,
+   42
+  ],
+  "text": "Bestill innen 19. oktober"
+ },
+ {
+  "box": [
+   230,
+   1073,
+   660,
+   1189
+  ],
+  "fet": true,
+  "storlek": 92,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "vanster_x": 239,
+  "text": "1 039 kr,"
+ },
+ {
+  "box": [
+   600,
+   1101,
+   870,
+   1217
+  ],
+  "fet": false,
+  "storlek": 43,
+  "farg": [
+   101,
+   97,
+   92
+  ],
+  "vanster_x": 617,
+  "text": "før 1 359 kr"
+ }
+]

@@ -165,11 +165,17 @@ const UNDERSTATUS_PREFIX = {
 // okänd och läggs in då — den säger något annat och ska inte gissas.
 const ANLAGGNINGSRAD = /^\s*【[^】]+】\s*arrived\.?\s*$/i;
 const ANLAGGNING_MOTTAGET = /^\s*【[^】]+】\s*received\.?\s*$/i;
+// Yanwen skriver ibland ut DATUM OCH KLOCKSLAG i leveransraden: "The shipment
+// item was delivered on 9/30/2026 at 10:33 AM" (mätt 2026-09-30 på CaraShell).
+// Varje leverans hade blivit en egen ordboksrad som aldrig slutar växa, och
+// kunden ser tiden i sin egen tidslinje ändå.
+const LEVERERAD_MED_TID = /^\s*the shipment item was delivered on\b/i;
 const OMBUDSRAD =/\bthe (?:parcel|package|shipment) has arrived at\b(?!.*\b(?:airport|terminal|facility|centre|center|customs|hub|depot|warehouse|destination)\b)/i;
 const MONSTER = [
   [OMBUDSRAD, 'Paketet har kommit till ombudet'],
   [ANLAGGNINGSRAD, 'Paketet har kommit till terminalen'],
   [ANLAGGNING_MOTTAGET, 'Fraktbolaget har tagit emot paketet'],
+  [LEVERERAD_MED_TID, 'Paketet är levererat'],
   [/planlagt levering natt til/i, 'Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat'],
   [/离开.*(转运中心|分拨中心)/, 'Paketet har lämnat omlastningsterminalen'],
   [/(到达|已到).*(转运中心|分拨中心)/, 'Paketet har kommit till omlastningsterminalen'],
