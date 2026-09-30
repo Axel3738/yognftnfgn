@@ -33,6 +33,7 @@ import { KONFIG, OUTPUT, underlagsfil, resursfil, LIQUID_TEXTER } from './underl
 import { granska } from './granska.mjs';
 import { patchaFil, patchaMallJson } from './temapatch.mjs';
 import { PATCHAR as DOMANPATCHAR } from './domantema.mjs';
+import { SNIPPET as PAKET_SNIPPET, patchaSnippetFastVariant, harFastVariantPatch } from '../erbjudanden/paket-test.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const LOCALES = [...new Set(KONFIG.marknader.flatMap((m) => m.locales))];
@@ -469,6 +470,9 @@ async function stegTema(k, { skarpt }) {
   // land ovanpå språkgrenarna). Live = domantema(temapatch(original)) — utan det här kände steget inte
   // igen filen längre ("någon har ändrat filen") och Japan/Taiwan hade aldrig fått sina grenar.
   const medDoman = (fil, kod) => (DOMANPATCHAR[fil] ? DOMANPATCHAR[fil](kod).kod : kod);
+  // Pakettestets fast_variant i snippets/ms-paket.liquid (erbjudanden/paket-test.mjs, 2026-09-30): två rader som
+  // ligger utanför temapatchens grenar. Live = paket(temapatch(original)) känns igen och läggs på igen efter ombygget.
+  const medPaket = (fil, kod) => (fil === PAKET_SNIPPET ? patchaSnippetFastVariant(kod).kod : kod);
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
@@ -486,9 +490,11 @@ async function stegTema(k, { skarpt }) {
         const orig = urOriginal(fil);
         if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
         let doman = false;
+        const paket = fil === PAKET_SNIPPET && harFastVariantPatch(kod);
         const traff = gamla.find((g) => {
           try {
-            const p = patcha(fil, orig, g.ov).kod;
+            let p = patcha(fil, orig, g.ov).kod;
+            if (paket) p = medPaket(fil, p);
             if (p === kod) return true;
             if (DOMANPATCHAR[fil] && medDoman(fil, p) === kod) { doman = true; return true; }
             return false;
@@ -496,9 +502,10 @@ async function stegTema(k, { skarpt }) {
         });
         if (!traff) { log(`❌ ${fil}: temat är inte originalet + någon av våra patchar (någon har ändrat filen) — rör den inte`); continue; }
         bas = orig;
-        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn}${doman ? ' + domantemats patch' : ''})`);
+        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn}${doman ? ' + domantemats patch' : ''}${paket ? ' + pakettestets fast_variant' : ''})`);
         r = patcha(fil, bas, ov);
         if (doman) { r.kod = medDoman(fil, r.kod); if (r.kod !== kod && !r.byten.length) r.byten.push('domantema'); }
+        if (paket) { r.kod = medPaket(fil, r.kod); if (r.kod !== kod && !r.byten.length) r.byten.push('pakettestet'); }
       } else r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
     log(`${fil}: ${r.byten.length} byten${r.byten.length ? ` (${r.byten.join(', ')})` : ''}${r.hoppade.length ? ` · hoppade: ${r.hoppade.join('; ')}` : ''}`);

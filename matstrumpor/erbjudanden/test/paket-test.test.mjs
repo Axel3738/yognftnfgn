@@ -8,7 +8,7 @@ import { join, dirname } from 'node:path';
 import {
   lasSpec, valideraSpec, nivaFalt, nivaerUr, renderingar, renderUtanVariant, patchaProduktJson, patchaIndexJson,
   lasTestRader, aktivaTest, nyttTestVarde, bytTestRad, kodBelopp, kassaSumma, sidPris, sidaMotKassa, rabattMutation,
-  planPa, planAv, tillampa, synligt, kontrolleraLage, slutlageFel, tolkaKundvy, krUrText, delaHuvud, B_BLOCK,
+  planPa, planAv, tillampa, patchaSnippetFastVariant, harFastVariantPatch, SNIPPET, synligt, kontrolleraLage, slutlageFel, tolkaKundvy, krUrText, delaHuvud, B_BLOCK,
 } from '../paket-test.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -27,6 +27,7 @@ function lage() {
   return {
     mallar: { 'templates/product.json': las('product.json'), 'templates/index.json': las('index.json') },
     settings: las('settings_data.json'),
+    snippet: las('ms-paket.liquid'),
     nivaer: nivaerUr(m),
     koder: { 'SUSHI-K1F1': 'ACTIVE', 'SUSHI-K2F2': 'ACTIVE' },
   };
@@ -105,7 +106,9 @@ test('--pa: rätt ordning, varje mellanläge visar en köpruta för A och B, slu
   const plan = planPa(l, SPEC, CTX);
   assert.deepEqual(plan.hinder, []);
   const typer = plan.steg.map((s) => s.typ);
-  assert.deepEqual(typer, ['kod', 'kod', 'mall', 'mall', 'niva', 'niva', 'niva', 'niva', 'niva', 'settings']);
+  assert.deepEqual(plan.skarptHinder, []);
+  assert.deepEqual(plan.steg.filter((s) => s.typ === 'mall').map((s) => s.fil), [SNIPPET, 'templates/product.json', 'templates/index.json']);
+  assert.deepEqual(typer, ['kod', 'kod', 'mall', 'mall', 'mall', 'niva', 'niva', 'niva', 'niva', 'niva', 'settings']);
   assert.deepEqual(plan.steg.filter((s) => s.typ === 'niva').map((s) => s.handle), ['sushi-paket-1', 'sushi-paket-2', 'sushi-paket-4', 'sushi-2', 'sushi-4']);
   let x = l;
   for (const s of plan.steg) { x = tillampa(x, s); assert.deepEqual(kontrolleraLage(x, SIM), [], `efter ${s.typ} ${s.handle ?? s.fil ?? s.kod ?? ''}`); }
@@ -209,22 +212,50 @@ test('rabattkoderna ger exakt 499,00 och 799,00 kr i kassan (fasta belopp i öre
   assert.equal(m.variables.d.code, 'SUSHI-2FOR499');
 });
 
-test('sidan mot kassan: 5-par stämmer, 3-par visar 439/679 kr men kassan tar 838/1 676 kr ⇒ --skarpt vägras', () => {
+test('sidan mot kassan: B köper alltid 5-par ⇒ allt stämmer; utan b_fast_variant visar 3-par 439/679 men kassan tar 838/1 676', () => {
   const r = sidaMotKassa(SPEC, CTX);
-  const rad = (h, v) => r.find((x) => x.handle === h && x.variant.startsWith(v));
+  assert.ok(r.every((x) => x.ok), JSON.stringify(r.filter((x) => !x.ok)));
+  const rad3 = r.find((x) => x.handle === 'sushi-paket-2' && x.variant.startsWith('3'));
+  assert.deepEqual([rad3.variant, rad3.sida, rad3.kassa], ['3 - Par / One Size vald → köper 5 - Par / One Size', 49900, 49900]);
+  assert.deepEqual(planPa(lage(), SPEC, CTX).skarptHinder, []);
+  const utan = { ...SPEC, b_fast_variant: undefined };
+  const u = sidaMotKassa(utan, CTX);
+  const rad = (h, v) => u.find((x) => x.handle === h && x.variant.startsWith(v));
   assert.deepEqual([rad('sushi-paket-2', '5').sida, rad('sushi-paket-2', '5').kassa], [49900, 49900]);
   assert.deepEqual([rad('sushi-paket-4', '5').sida, rad('sushi-paket-4', '5').kassa], [79900, 79900]);
   assert.deepEqual([rad('sushi-paket-2', '3').sida, rad('sushi-paket-2', '3').kassa], [43900, 83800]);
   assert.deepEqual([rad('sushi-paket-4', '3').sida, rad('sushi-paket-4', '3').kassa], [67900, 167600]);
-  assert.deepEqual([rad('sushi-paket-1', '3').sida, rad('sushi-paket-1', '3').kassa], [36900, 36900]);
-  const plan = planPa(lage(), SPEC, CTX);
-  assert.equal(plan.skarptHinder.length, 2);
-  // Med 3-par i koden stämmer allt (Axels andra väg)
-  const med3 = { ...SPEC, rabattkoder: SPEC.rabattkoder.map((d) => ({ ...d, varianter: ['5 - Par / One Size', '3 - Par / One Size'] })) };
-  assert.ok(sidaMotKassa(med3, CTX).every((x) => x.ok));
-  assert.deepEqual(planPa(lage(), med3, CTX).skarptHinder, []);
+  assert.equal(planPa(lage(), utan, CTX).skarptHinder.length, 2);
   // sidPris följer snippeten: BOGO-nivån i A ger 399 kr på 5-par
   assert.equal(sidPris({ antal: 2, rabattkod: 'SUSHI-K1F1', bogo_gratis: 1, gratis_antal: 2, fastpris: 399 }, { variantOre: 39900, standardOre: 39900, pinnOre: 5000 }), 39900);
+});
+
+test('snippeten: fast_variant-patchen är två ändringar, verkningslös utan fast_variant, idempotent', () => {
+  const orig = las('ms-paket.liquid');
+  assert.equal(harFastVariantPatch(orig), false);
+  const r = patchaSnippetFastVariant(orig);
+  assert.equal(r.byten.length, 2);
+  assert.ok(harFastVariantPatch(r.kod));
+  // Allt utanför de två ställena är orört: ta bort det tillagda blocket och byt tillbaka standardraden ⇒ originalet.
+  const tillbaka = r.kod.replace(/  comment\n    ms-paket-test[\s\S]*?\n  endif\n/, '').replace('assign standard = v.price', 'assign standard = p.selected_or_first_available_variant.price');
+  assert.equal(tillbaka, orig);
+  // v sätts bara inne i "if fast_variant != blank"
+  assert.match(r.kod, /if fast_variant != blank\n    for fx in p\.variants\n      if fx\.id == fast_variant\n        assign v = fx/);
+  assert.deepEqual(patchaSnippetFastVariant(r.kod).byten, []);
+  assert.throws(() => patchaSnippetFastVariant(orig.replace('assign standard = p.selected_or_first_available_variant.price', 'assign standard = 0')), /okänd version/);
+  // B-renderingarna skickar 5-parets id, A-renderingarna inget
+  const plan = planPa(lage(), SPEC, CTX);
+  const x = plan.steg.reduce((l, s) => tillampa(l, s), lage());
+  const pr = renderingar(x.mallar['templates/product.json']).filter((q) => !q.mix);
+  assert.deepEqual(pr.map((q) => [q.test, q.testVariant, q.variant]), [['paket', 'a', 'a'], ['paket', 'b', 'paket-b']]);
+  assert.match(x.mallar['templates/product.json'], /variant: 'paket-b', fast_variant: 52506473365843 %/);
+  assert.match(x.mallar['templates/index.json'], /variant: 'paket-b', fast_variant: 52506473365843 %/);
+  assert.doesNotMatch(x.mallar['templates/index.json'], /variant: 'a', fast_variant/);
+  assert.equal(x.snippet, r.kod);
+  // Startsidan som redan fått A/B-paret utan fast_variant får bara id:t tillagt
+  const utanId = planPa(lage(), { ...SPEC, b_fast_variant: undefined }, CTX).steg.find((s) => s.fil === 'templates/index.json').text;
+  const mig = planPa({ ...x, mallar: { ...x.mallar, 'templates/index.json': utanId } }, SPEC, CTX).steg.filter((s) => s.typ === 'mall');
+  assert.deepEqual(mig.map((s) => s.fil), ['templates/index.json']);
 });
 
 test('specens regler: gratis utan kod, "gratis" utan gratis, två förvalda, pris som inte stämmer', () => {

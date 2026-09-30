@@ -64,10 +64,15 @@
 // (kunden kan inte få paketpriset utan pinnarna och tjäna pinnarnas värde). BxGy med belopp (`amount` finns i
 // DiscountEffectInput, mätt) valdes bort: den rabatterar bara "få"-varorna, och 2 lådor för 499 kr kräver avdrag
 // på lådorna själva.
-// ⚠️ 3-PAR: koden gäller bara 5-par (Axels "BARA för sushi-strumpor 5-pack"). Sidan räknar om korten när kunden
-// byter till 3-par (369 kr) och visar då 439 kr för 2 lådor — men kassan tar 838 kr (koden gäller inte). Verktyget
-// räknar sida mot kassa för VARJE variant och vägrar --skarpt vid minsta skillnad. Två vägar, båda Axels beslut:
-// ta med 3-par i koden (då betalar 3-parkunden 439 / 679 kr) eller dölj 3-par för B.
+// 3-PAR (huvudsessionens beslut 2026-09-30, 3-par är 7 % av ordrarna): i B gäller paketen ALLTID 5-par. Specens
+// b_fast_variant ⇒ B-renderingarna skickar fast_variant: <5-parets id> till snippeten, som då räknar korten på
+// 5-parpriset (v = den fasta varianten, standard = v.price) och ms-paket.js köper den varianten (data-variant-id,
+// variantId()), vad variantväljaren än står på. Snippet-ändringen är två rader och gör ingenting utan fast_variant,
+// så A, startsidans A och pizza/hamburgare/donut ritas exakt som förut. Utan b_fast_variant visar sidan 439 / 679
+// kr för 3-par medan kassan tar 838 / 1 676 kr (koden gäller bara 5-par) — sidaMotKassa fångar det och --skarpt
+// vägras. ⚠️ snippets/ms-paket.liquid ägs också av temapatchen (marknader/bygg.mjs --steg tema), som bara rör en
+// fil den känner igen; bygg.mjs känner därför igen den här patchen och lägger på den igen när den bygger om.
+// Variantväljaren syns fortfarande i B: en kund som väljer 3-par får 5-par till samma pris (fler par, inte färre).
 //
 // ⚠️ d3-annonsen ("Köp 2 – få 2 gratis", bildannonsen D3, marknader/egna/d3/) länkar till samma produktsida. En
 // besökare som lottas till B möter då 2 lådor 499 kr / 4 lådor 799 kr och ordet gratis finns inte på sidan —
@@ -249,12 +254,13 @@ export function renderUtanVariant(filer) {
 
 const A_OMSLAG = (test) => `data-ms-ab="${test}:a"`;
 export const B_BLOCK = 'ms_paket_b';
-export function bBlockLiquid(spec) {
-  return `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: product, section_id: block.id, variant: '${spec.b_variant}' %}</div>`;
+const fastParam = (fastId) => (fastId ? `, fast_variant: ${Number(fastId)}` : '');
+export function bBlockLiquid(spec, fastId = null) {
+  return `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: product, section_id: block.id, variant: '${spec.b_variant}'${fastParam(fastId)} %}</div>`;
 }
 
 /** product.json: A-blocket → <test>:a, nytt B-block direkt efter. Idempotent. */
-export function patchaProduktJson(text, spec) {
+export function patchaProduktJson(text, spec, fastId = null) {
   const { huvud, data } = delaHuvud(text);
   const main = data.sections?.main;
   if (!main?.blocks?.ms_paket) throw new Error('product.json: blocket ms_paket saknas — läs mallen innan du patchar');
@@ -268,10 +274,10 @@ export function patchaProduktJson(text, spec) {
     a.settings.custom_liquid = ny;
     byten.push(`ms_paket: omslaget → ${spec.test}:a`);
   }
-  const onskat = { type: 'custom_liquid', settings: { custom_liquid: bBlockLiquid(spec) } };
+  const onskat = { type: 'custom_liquid', settings: { custom_liquid: bBlockLiquid(spec, fastId) } };
   if (JSON.stringify(main.blocks[B_BLOCK]) !== JSON.stringify(onskat)) {
     main.blocks[B_BLOCK] = onskat;
-    byten.push(`${B_BLOCK}: B-blocket (${spec.test}:b, variant '${spec.b_variant}')`);
+    byten.push(`${B_BLOCK}: B-blocket (${spec.test}:b, variant '${spec.b_variant}'${fastId ? `, fast_variant ${fastId}` : ''})`);
   }
   const ix = main.block_order.indexOf('ms_paket');
   const bix = main.block_order.indexOf(B_BLOCK);
@@ -284,16 +290,18 @@ export function patchaProduktJson(text, spec) {
 }
 
 /** index.json: startsidans render utan variant → A/B-par. Idempotent. */
-export function patchaIndexJson(text, spec) {
+export function patchaIndexJson(text, spec, fastId = null) {
   const { huvud, data } = delaHuvud(text);
   const byten = [];
   const par = (bid) => `<div ${A_OMSLAG(spec.test)}>{% render 'ms-paket', product: section.settings.product, section_id: section.id, variant: 'a' %}</div>`
-    + `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: section.settings.product, section_id: block.id, variant: '${spec.b_variant}' %}</div>`;
+    + `<div data-ms-ab="${spec.test}:b" hidden>{% render 'ms-paket', product: section.settings.product, section_id: block.id, variant: '${spec.b_variant}'${fastParam(fastId)} %}</div>`;
+  const gammaltPar = (bid) => par(bid).replace(fastParam(fastId), '');
   for (const [sid, s] of Object.entries(data.sections ?? {})) {
     for (const [bid, b] of Object.entries(s.blocks ?? {})) {
       const cl = b.settings?.custom_liquid;
       if (typeof cl !== 'string' || !cl.includes("'ms-paket'")) continue;
       if (cl === par(bid)) continue;
+      if (fastId && cl === gammaltPar(bid)) { b.settings.custom_liquid = par(bid); byten.push(`${sid}/${bid}: B-renderingen får fast_variant ${fastId}`); continue; }
       const r = [...cl.matchAll(RENDER_RE)];
       if (r.length === 1 && !r[0][1] && !/variant:/.test(r[0][4]) && /product:\s*section\.settings\.product/.test(r[0][4]) && cl.trim() === r[0][0].trim()) {
         b.settings.custom_liquid = par(bid);
@@ -303,6 +311,46 @@ export function patchaIndexJson(text, spec) {
   }
   return { text: byten.length ? satt(huvud, data) : text, byten };
 }
+
+// ── snippeten: fast_variant (B köper och visar alltid 5-par) ───────────────────────────────────────
+
+export const SNIPPET = 'snippets/ms-paket.liquid';
+const FAST_MARK = 'ms-paket-test: fast_variant';
+const V_FORE = '  assign v = p.selected_or_first_available_variant\n';
+const V_EFTER = V_FORE
+  + '  comment\n'
+  + `    ${FAST_MARK} — ett block som skickar fast_variant (pakettestets B) räknar och köper ALLTID den varianten,\n`
+  + '    oavsett variantväljaren. Utan fast_variant är v exakt som förut (matstrumpor/erbjudanden/paket-test.mjs).\n'
+  + '  endcomment\n'
+  + '  if fast_variant != blank\n'
+  + '    for fx in p.variants\n'
+  + '      if fx.id == fast_variant\n'
+  + '        assign v = fx\n'
+  + '      endif\n'
+  + '    endfor\n'
+  + '  endif\n';
+const STD_FORE = 'assign standard = p.selected_or_first_available_variant.price';
+const STD_EFTER = 'assign standard = v.price';
+
+/**
+ * Två ändringar i snippets/ms-paket.liquid, båda utan verkan när fast_variant saknas (A, startsidans A, pizza …):
+ *  1. v = den fasta varianten om blocket skickar fast_variant (annars oförändrat p.selected_or_first_available_variant);
+ *  2. standardpriset i fastprisläget = v.price — samma värde som förut när fast_variant saknas, eftersom v då ÄR
+ *     p.selected_or_first_available_variant.
+ * assets/ms-paket.js behöver ingen ändring: data-variant-id finns redan, variantId() och styckpris() läser den, och
+ * köpet (kop) lägger den varianten i korgen.
+ * Idempotent. Kastar om snippeten inte har exakt de två raderna (någon har ändrat den — rör den inte).
+ */
+export function patchaSnippetFastVariant(kod) {
+  if (kod.includes(FAST_MARK)) {
+    if (!kod.includes(STD_EFTER)) throw new Error(`${SNIPPET}: markören finns men standardpriset är inte v.price`);
+    return { kod, byten: [] };
+  }
+  const n1 = kod.split(V_FORE).length - 1, n2 = kod.split(STD_FORE).length - 1;
+  if (n1 !== 1 || n2 !== 1) throw new Error(`${SNIPPET}: hittar inte raderna att patcha (${n1}/${n2}) — okänd version, rör den inte`);
+  return { kod: kod.replace(V_FORE, V_EFTER).replace(STD_FORE, STD_EFTER), byten: ['v = fast_variant när blocket skickar den', 'standard = v.price'] };
+}
+export const harFastVariantPatch = (kod) => String(kod).includes(FAST_MARK);
 
 // ── settings ──────────────────────────────────────────────────────────────────────────────────────────
 
@@ -378,17 +426,21 @@ export function sidPris(n, { variantOre, standardOre, pinnOre }) {
 /** Sida mot kassa för varje variant och varje nivå med en kod som specen skapar. */
 export function sidaMotKassa(spec, { varianter, standardOre, pinnOre, pinnVariant }) {
   const ut = [];
+  // Med b_fast_variant räknar och köper B-köprutan alltid den varianten (snippeten + data-variant-id), vad kunden
+  // än valt i variantväljaren — kunden som valt 3-par ser och får 5-par. Då är det den enda korg B kan ge.
+  const fast = spec.b_fast_variant ? varianter.find((v) => v.titel === spec.b_fast_variant) : null;
   const koder = new Map((spec.rabattkoder ?? []).map((d) => [d.kod, d]));
   for (const n of spec.b_nivaer) {
     const def = koder.get((n.rabattkod || '').trim());
     if (!def && n.rabattkod) continue; // befintliga BxGy-koder räknas inte här
     const kod = def ? { varianter: new Set(varianter.filter((v) => def.varianter.includes(v.titel)).map((v) => v.id).concat(pinnVariant)), ...kodBelopp(def, { standardOre, pinnOre, varianter }) } : null;
-    for (const v of varianter) {
+    for (const vald of varianter) {
+      const v = fast ?? vald;
       const sida = sidPris(n, { variantOre: v.prisOre, standardOre, pinnOre });
       const korg = [{ variant: v.id, prisOre: v.prisOre, antal: n.antal }];
       if (Number(n.gratis_antal) > 0) korg.push({ variant: pinnVariant, prisOre: pinnOre, antal: Number(n.gratis_antal) });
       const kassa = kassaSumma(korg, kod);
-      ut.push({ handle: n.handle, variant: v.titel, sida, kassa, ok: sida === kassa });
+      ut.push({ handle: n.handle, variant: fast ? `${vald.titel} vald → köper ${v.titel}` : v.titel, sida, kassa, ok: sida === kassa });
     }
   }
   return ut;
@@ -450,10 +502,23 @@ export function planPa(lage, spec, ctx) {
     for (const r of sidaMotKassa(spec, ctx)) if (!r.ok) skarptHinder.push(`${r.handle} med ${r.variant}: sidan visar ${krText(r.sida)} kr men kassan tar ${krText(r.kassa)} kr`);
   }
 
-  // 1. mallar
-  const pp = patchaProduktJson(lage.mallar['templates/product.json'], spec);
+  // 1. snippeten (före mallarna: fast_variant gör ingenting förrän B-blocket skickar den) och mallarna
+  let fastId = null;
+  if (spec.b_fast_variant) {
+    const fv = (ctx.varianter ?? []).find((v) => v.titel === spec.b_fast_variant);
+    if (!fv) hinder.push(`b_fast_variant "${spec.b_fast_variant}" finns inte bland produktens varianter`);
+    else fastId = fv.id;
+    if (lage.snippet == null) hinder.push(`${SNIPPET} lästes inte`);
+    else {
+      try {
+        const ps = patchaSnippetFastVariant(lage.snippet);
+        if (ps.byten.length) steg.push({ typ: 'mall', fil: SNIPPET, byten: ps.byten, text: ps.kod });
+      } catch (e) { hinder.push(e.message); }
+    }
+  }
+  const pp = patchaProduktJson(lage.mallar['templates/product.json'], spec, fastId);
   if (pp.byten.length) steg.push({ typ: 'mall', fil: 'templates/product.json', byten: pp.byten, text: pp.text });
-  const pi = patchaIndexJson(lage.mallar['templates/index.json'], spec);
+  const pi = patchaIndexJson(lage.mallar['templates/index.json'], spec, fastId);
   if (pi.byten.length) steg.push({ typ: 'mall', fil: 'templates/index.json', byten: pi.byten, text: pi.text });
   const efterMallar = { ...lage.mallar, 'templates/product.json': pp.text, 'templates/index.json': pi.text };
   for (const r of renderUtanVariant(efterMallar)) hinder.push(`${r.fil} ${r.sektion}/${r.block ?? ''}: ms-paket renderas utan variant — den köprutan blir tom när A-nivåerna märks a`);
@@ -503,7 +568,8 @@ export function planAv(lage, spec) {
 /** Ett steg applicerat på läget (för simuleringen och för tillbakaläsningens facit). */
 export function tillampa(lage, s) {
   const ny = { ...lage, mallar: { ...lage.mallar }, nivaer: lage.nivaer.map((n) => ({ ...n, fields: { ...n.fields } })), koder: { ...(lage.koder ?? {}) } };
-  if (s.typ === 'mall') ny.mallar[s.fil] = s.text;
+  if (s.typ === 'mall' && s.fil === SNIPPET) ny.snippet = s.text;
+  else if (s.typ === 'mall') ny.mallar[s.fil] = s.text;
   if (s.typ === 'settings') ny.settings = s.text;
   if (s.typ === 'kod') ny.koder[s.kod] = 'ACTIVE';
   if (s.typ === 'niva') {
@@ -616,7 +682,7 @@ const Q_KOD = `query($k: String!) { codeDiscountNodeByCode(code: $k) { id codeDi
   ... on DiscountCodeBxgy { status title } ... on DiscountCodeFreeShipping { status title } ... on DiscountCodeApp { status title } } } }`;
 
 async function hamtaLage(k, spec) {
-  const d = await k.graphql(Q_LAGE, { f: [...MALLAR, SETTINGS] });
+  const d = await k.graphql(Q_LAGE, { f: [...MALLAR, SETTINGS, SNIPPET] });
   const tema = d.themes.nodes[0];
   if (!tema || tema.role !== 'MAIN') throw new Error('hittar inget tema med rollen MAIN');
   const filer = Object.fromEntries(tema.files.nodes.map((n) => [n.filename, n.body?.content]));
@@ -642,7 +708,7 @@ async function hamtaLage(k, spec) {
   return {
     tema,
     publishable: d.metaobjectDefinitionByType?.capabilities?.publishable?.enabled ?? false,
-    lage: { mallar: { 'templates/product.json': filer['templates/product.json'], 'templates/index.json': filer['templates/index.json'] }, settings: filer[SETTINGS], nivaer: nivaerUr(d.metaobjects.nodes), koder },
+    lage: { mallar: { 'templates/product.json': filer['templates/product.json'], 'templates/index.json': filer['templates/index.json'] }, settings: filer[SETTINGS], snippet: filer[SNIPPET] ?? null, nivaer: nivaerUr(d.metaobjects.nodes), koder },
     ovriga, koddetaljer: detaljer,
     ctx: { produktId: p.p.id, gratisProduktId: p.g.id, standardOre: standard.prisOre, pinnOre: ore(pinne.price), varianter, pinnVariant: pinne.id.split('/').pop(), pinnVariantGid: pinne.id },
   };
@@ -851,6 +917,7 @@ async function huvud() {
   for (const [i, s] of plan.steg.entries()) { lage = tillampa(lage, s); for (const f of kontrolleraLage(lage, sim)) simFel.push(`efter steg ${i + 1}: ${f}`); }
   for (const f of slutlageFel(lage, spec)) simFel.push(`slutläget: ${f}`);
   log(simFel.length ? simFel.map((f) => `❌ simulering: ${f}`).join('\n') : `✅ simulering: alla ${plan.steg.length} mellanlägen visar en köpruta för A och B på produktsidan och startsidan; slutläget följer regeln`);
+  if (pa && !plan.hinder.length && !plan.skarptHinder.length && !simFel.length) log('✅ inget stoppar --skarpt (körs bara på Axels ok)');
   if (!pa) {
     for (const v of ['a', 'b']) for (const sida of ['product', 'index']) log(`   efter --av, ${sida}, besökare ${v}: ${synligt(lage, { sida, besokare: v, ...sim }).filter((r) => r.nivaer.length).map((r) => r.nivaer.join(', ')).join(' / ')}`);
   } else {
