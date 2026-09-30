@@ -41,7 +41,7 @@ Talet i videon är hans egna påståenden. Han visar inga siffror från något k
 | Döm inte på 24 timmar | ✅ Ja | `docs/os/ANALYSMETOD.md`: ingen dom under 300 kr / 3 köp, etikett dag 7 |
 | Frakt och kommunikation | ✅ Ja | Spårningssidan i sex butiker, autosvaret skarpt, 5–10 arbetsdagar |
 | Produktpipeline | ✅ Delvis | OPS-fabriken, tacksidans tilläggsprodukter i CaraShell |
-| Butikskredit efter köp | ✅ Delvis | KREDIT100 i Bäverbutikens efter-köp-mejl (Spoks F04 v2 + v3) och på spårningssidan |
+| Butikskredit efter köp | ✅ Nystartad | KREDIT100 sedan 2026-09-26 i Bäverbutikens efter-köp-mejl (Spoks F04 v2 + v3) och på spårningssidan |
 | LTV genom produktval | ⚠️ Passar oss dåligt | Bäverbutiken har ett enda produktpar med återköp (motorhölje → båtmotorskydd), Matstrumpor 1,2 % återköp, CaraShell 0 återköp (`klaviyo/evolve/ATERKOP-ANALYS*.md`, CLAUDE.md). **CAC är vår spak, inte LTV.** |
 | **Cost cap / bid cap** | ❌ Nej, och Evolve säger nej | Läst i Meta 2026-09-30: **alla 45 aktiva kampanjer i alla sju konton** token:en når (MagiBorsten 22, Magiborsten NO 12, OPS-kontot 5, Magiborsten UK 3, Magiborsten FI 1, nya kungen 1, SnarkLös 1) kör `LOWEST_COST_WITHOUT_CAP`. Enda försöket någonsin: SnarkLös "Cost caps SE" juni 2026, 160 kr, 0 köp (för lite för en dom). |
 | **Kundenkät** | ⏳ Byggs | Axel bygger en enkät efter köpet i en annan session (2026-09-30). |
@@ -61,13 +61,34 @@ Förslagen i sessionens första svar är ändrade efter den.
    struket. Ett äldre förslag på StonePNL-grenen (`docs/annonsdoktrin/granskning-meta-mekanik.md`,
    2026-08-27: cost cap = 0,85 × break-even-CPA från S1) togs aldrig in och ska inte tas upp igen
    som nytt. Ändras budstrategin någon gång är det Axels beslut.
-2. **Zombiekampanj (cost cap för annonser utan spend): inte nu.** Evolve står bakom den, men bara
-   som räddningsverktyg. Regel 11 (Axels beslut 2026-09-20) säger att alla nya annonser går i
-   produktens CBO, och att en annons utan spend på sju dygn etiketteras `INGEN_LEVERANS` och
-   släpps. Etiketten sätts under 10 kr de första sju dygnen, och annonsen pausas aldrig. En
-   zombiekampanj blir en extra kampanj per produkt som ronden, spendtjuven och commission måste
-   undanta, och Evolves egna ord om den är "adds some more spend but it's not scaling"
-   (`docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` §5). Vill Axel pröva är det hans budgetbeslut.
+2. **Zombiekampanj (cost cap för annonser utan spend): Axel vill ha den (2026-09-30 kväll).**
+   Sessionens första "inte nu" var sessionens egen bedömning från 2026-09-21, inte Axels beslut och
+   inte Evolves. Chadbot säger tvärtom att det är den enda användning av cost cap som Evolve står
+   bakom, som räddningsverktyg för annonser som inte fick spend i CBO:n på sju dygn. Evolves egna ord
+   om den är att den ger "lite mer spend men ingen skalning", så den ska inte väntas bli en ny
+   vinnarmaskin. Den är till för annonserna som **aldrig fick spend** i de bästa produkternas
+   kampanjer, inte för vinnarna själva.
+   **Mätt i MagiBorsten 2026-09-30 21:00 UTC** (aktiva annonser, minst sju dygn gamla, under 10 kr
+   i spend under hela livstiden), med de sju bästa produkterna efter vinstbidrag på 30 dagar
+   (`spend × (ROAS ÷ break-even − 1)`, ROAS ur Meta):
+
+   | Produkt | Vinstbidrag 30 d | Aktiva annonser ≥ 7 dygn | Varav utan spend |
+   |---|---|---|---|
+   | Taköverdraget | 165 328 kr | 69 | 6 |
+   | Båtmotorskyddet | 38 559 kr | 71 | 14 |
+   | IBC-Tanköverdraget | 24 459 kr | 73 | 29 |
+   | Sotarsetet | 18 217 kr | 22 | 14 |
+   | Bälteslipmaskinen | 18 152 kr | 49 | 8 |
+   | Termoskyddet | 17 154 kr | 33 | 9 |
+   | Fiskespöhållaren | 14 171 kr | 85 | 35 |
+
+   Det är 115 annonser utan spend i de sju, och 128 i hela kontot. **Hur den byggs:** en kampanj
+   `ZOMBIE_…` i MagiBorsten, ett adset per produkt med cost cap = produktens break-even-CPA,
+   annonserna kopieras dit (originalen i CBO:n rörs aldrig), allt byggs PAUSED. Leveransrundan
+   väljer kampanj efter annonsprefixet, så zombiekampanjen måste in i samma uteslutning som
+   listicle-kampanjerna (`tools/lib/kampanjval.mjs`, `LISTICLE_MONSTER`), annars kan nya annonser
+   hamna i den. Budgetronden och annonsvakten ska också känna igen namnet. Taket, budgeten och
+   produkterna är Axels beslut (regel 12). Regel 11 ändras bara om Axel säger det.
 3. **Organiskt: inte nu.** Chadbot har en datapunkt och inget besked för vår sorts produkter. Görs
    det någon gång: mät försäljning per miljon visningar (cirka 10 000 dollar är bra, cirka 1 000
    dollar fungerar inte som annons), och räkna med att Meta inte alltid spenderar på det som gick
@@ -75,16 +96,15 @@ Förslagen i sessionens första svar är ändrade efter den.
    CaraShell US; det handlar om placeringar.
 4. **Butikskredit: mät vår egen, fråga inte igen.** Evolve har en datapunkt i
    `klaviyo/evolve/SVAR.md` (Grayson): butikskredit för köp två används till cirka 30 % och kostar
-   lite. Om cashbackprogram vid cirka 1 % återköp finns inget. **Mätt 2026-09-30 20:15 UTC:**
-   KREDIT100 har använts **0 gånger** (Shopify `asyncUsageCount`), och 103 köpare har passerat
-   kreditmejlets steg i Spoks (96 i F04 v2, 7 i F04 v3). Det bevisar inte att mejlen gick fram,
-   och fyra dygn är för tidigt för en dom. 30 %-rean fram till 22/10 går till samma köpare och
-   KREDIT100 kombineras bara med fraktrabatter, så koden används mindre under rean. **Mät igen
-   efter 22/10** mot Graysons 30 %. Ordrarna med koden gick inte att läsa här (`ACCESS_DENIED`,
-   SE-appen saknar orderrättighet och `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER` finns inte i den här
-   miljön). `mejl/matning.mjs` läser fortfarande koden TACKIGEN och ska pekas om till KREDIT100
-   med startdatum 2026-09-26 innan mätningen görs. Föreslå aldrig hjulet eller TACKIGEN igen:
-   det gav 0 köp.
+   lite. Om cashbackprogram vid cirka 1 % återköp finns inget. **KREDIT100 är ny:** Axel skapade
+   den 2026-09-26 08:03 UTC (läst i Shopify 2026-09-30), och de första kreditmejlen kan ha gått ut
+   tidigast 29/9. Att den inte använts än säger alltså ingenting. Sessionens första formulering
+   ("har använts 0 gånger fast 103 köpare passerat mejlet") lät som ett underbetyg och var fel sätt
+   att säga det (Axel samma kväll). Mät först när koden varit ute några veckor, och räkna med att
+   30 %-rean fram till 22/10 går till samma köpare. Ordrarna med koden går inte att läsa i den här
+   miljön (SE-appen saknar orderrättighet). `mejl/matning.mjs` läser fortfarande TACKIGEN och ska
+   pekas om till KREDIT100 innan mätningen görs. Föreslå aldrig hjulet eller TACKIGEN igen: det gav
+   0 köp.
 
 ### Till sessionen som bygger enkäten efter köpet (rättad 2026-09-30)
 
