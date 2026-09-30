@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-30T12:12:34.403Z",
+ "skrivet": "2026-09-30T13:02:41.927Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -908,7 +908,8 @@
     "daily_budget": "100000"
    },
    "adset": null,
-   "annonser": []
+   "annonser": [],
+   "stopp": "verifierad annonsör saknas"
   }
  ]
 }
