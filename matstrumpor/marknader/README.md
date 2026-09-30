@@ -661,6 +661,11 @@ svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbets
   helfilslyssningen var gröna, men 靴下 hördes som "ガックザ" och 襪子 som 蛙子 ("groda"). Japanskan
   läser nu uttalsfältet `las` (de svåra orden i hiragana), och Taiwan har den infödda rösten Anna Su
   med `eleven_turbo_v2_5`. Siffrorna står i `egna/README.md` → Språkkoder.
+- ✅ **Japan uppladdat 2026-09-30, allt PAUSED:** kampanjen `MATSTRUMP_JP_SALES` 120251797899280023
+  (CBO, platshållarbudget 1 000 kr/dag), adsetet `MATSTRUMP_JP_ugc` 120251797901800023 (JP, pixelns
+  köp, 7 dagars klick) och 8 annonser, tillbakalästa: sidan Matstrumpor, Instagram-identiteten,
+  länken `matstrumpor.com/ja/…?country=JP` och sista raden 「スウェーデン発のブランドです。」 i alla
+  åtta. ⛔ Inget aktiveras förrän Axel granskat annonserna.
 - ⛔ **Taiwan kräver verifierad annonsör (mätt 2026-09-30).** Taiwans bedrägerilag: varje annons som
   visas i Taiwan måste bära en verifierad förmånstagare och betalare. Utan kategorin svarade Meta 400
   "Värde för regionalt reglerade kategorier krävs … TAIWAN_UNIVERSAL", med kategorin 400 "Annonsör
