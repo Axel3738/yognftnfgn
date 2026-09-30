@@ -146,5 +146,8 @@ for (const s of segment) fc.push(`[0:v]trim=start=${s.kStart.toFixed(3)}:end=${s
 fc.push(`${segment.map((s) => `[v${s.i}]`).join('')}concat=n=${segment.length}:v=1:a=0,fps=30,format=yuv420p[v]`);
 for (const s of segment) fc.push(`[${s.i + 1}:a]${s.tempo !== 1 ? `atempo=${s.tempo.toFixed(4)},` : ''}adelay=${Math.round(s.ut * 1000)}|${Math.round(s.ut * 1000)}[a${s.i}]`);
 fc.push(`${segment.map((s) => `[a${s.i}]`).join('')}amix=inputs=${segment.length}:normalize=0:dropout_transition=0,apad,atrim=end=${nyLangd.toFixed(3)},loudnorm=I=-16:TP=-1.5:LRA=11[a]`);
-kor(['ffmpeg', '-y', '-v', 'error', ...inputs, '-filter_complex', fc.join(';'), '-map', '[v]', '-map', '[a]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', UT]);
+// `-t` = den planerade längden. Mätt 2026-09-30 (worldwide, Motorhölje_PD_1_H3): ljudkedjan
+// (apad → atrim → loudnorm) tog ibland aldrig slut — ffmpeg kodade tyst ljud i 25 min, 35 MB,
+// långt efter att bilden (20,4 s) var slut. Samma kommando med `-t` blev klart på 11 s.
+kor(['ffmpeg', '-nostdin', '-y', '-v', 'error', ...inputs, '-filter_complex', fc.join(';'), '-map', '[v]', '-map', '[a]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-c:a', 'aac', '-b:a', '160k', '-t', nyLangd.toFixed(3), '-movflags', '+faststart', UT]);
 console.log(`✓ ${UT}  (${langd(UT).toFixed(2)} s)  +  ${UT}.srt`);

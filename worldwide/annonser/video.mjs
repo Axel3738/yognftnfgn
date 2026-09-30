@@ -9,8 +9,10 @@
 //   1. manus-en/<fil>.srt  engelska repliker, samma cues och tider som transkript/<fil>.srt
 //      (Whisper lokalt → sonnet mot REGLER-VIDEO.md)
 //   2. pipeline/omdubb/elevenlabs-omdubb.mjs  röst per cue, filmen tempo-anpassad, källans ljud bort
-//   3. pipeline/no-captions.py --rutor         suddar källans inbrända svenska text där den står,
-//                                               bränner in de engelska replikerna
+//   3. pipeline/no-captions.py (bandläget)     suddar källans textband över hela bredden och
+//                                               bränner in de engelska replikerna (--rutor: bara rutan)
+//      ⚠️ Text utanför bandet (checklistor, prisskyltar i bild, som Batmotor_SP_1_H5) stoppar
+//      med exit 3 — den videon behöver pipeline/textboxar.py + textbyte.py, inte den här kedjan.
 //   4. pipeline/rostkoll.py                     tyst spår, längddrift, avhugget slut, tappat tal
 // En video med ❌ i röstkollen eller exit ≠ 0 i något steg blir aldrig "klar" i media.json.
 //
@@ -97,7 +99,11 @@ async function huvud() {
     log(`\n─── ${v.namn}`);
     let r = kor(['node', join(REPO, 'pipeline/omdubb/elevenlabs-omdubb.mjs'), `--kalla=${kalla}`, `--srt=${manus}`, `--ut=${mellan}`, `--rost=${rost}`, '--modell=eleven_v3']);
     if (r.kod !== 0 || !existsSync(mellan)) { log(`❌ omdubben: ${r.ut.slice(-600)}`); continue; }
-    r = kor(['python3', join(REPO, 'pipeline/no-captions.py'), mellan, `${mellan}.srt`, slut, '--rutor']);
+    // Bandläget (hela bredden suddas) är standard här, inte --rutor: mätt 2026-09-30 på
+    // Motorhölje_PD_1_H3 lämnade --rutor kanter av källans vita karaoke-rutor med svenska
+    // bokstäver ("S…", "…t.") bredvid den engelska texten — och kontrollen såg dem inte.
+    // --rutor finns kvar som val (--rutor på video.mjs), men då tittar sessionen på varje ruta.
+    r = kor(['python3', join(REPO, 'pipeline/no-captions.py'), mellan, `${mellan}.srt`, slut, ...(a.includes('--rutor') ? ['--rutor'] : [])]);
     if (r.kod !== 0 || !existsSync(slut)) { log(`❌ captions (exit ${r.kod}): ${r.ut.slice(-600)}`); continue; }
     r = kor(['python3', join(REPO, 'pipeline/rostkoll.py'), '--kalla', kalla, '--ny', slut, '--srt', `${mellan}.srt`, '--kallsrt', manus, '--omtajmad']);
     const gron = r.kod === 0 && !/❌/.test(r.ut);
