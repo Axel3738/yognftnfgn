@@ -147,10 +147,18 @@ kundens valuta, med länken och knappen "Kopiera länken" (Shopifys
 inte för en avbruten order. I kassaredigeraren visar det exempelnumret
 `EXEMPEL1`, så att blocket går att se när det läggs in.
 
-Byggt lokalt med Shopify CLI 2026-09-30: 24,2 kB. **Inte deployat.** Kräver
-en egen app i Axels Dev Dashboard, samma väg som CaraShells tacksida
-(`factory/tacksida/`), och det är Axels klick: `cowork/1-tacksidan.txt`.
-Därefter, i en session med de två nycklarna i miljön:
+✅ **Deployat och releasat 2026-09-30 23:36 CEST** som `matstrumpor-tacksida-2`
+i appen **"Matstrumpor Tacksida"** (org Matstrumpor.se, Client ID i
+`konfig.json → app_client_id`, inga rättigheter — `shopify.app.matstrumpor.toml`
+läst tillbaka med `scopes = ""`). Blocket syns för kunden först när det lagts in
+på tacksidan och orderstatussidan i kassaredigeraren (`cowork/1-tacksidan.txt`,
+steg 5–7). ⚠️ Token (`SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR`) som lades in i
+Environments medan sessionen körde syntes INTE i den sessionens skal (mätt tre
+gånger 21:25–21:33 UTC); en ny session i samma miljö såg den direkt. Deploya
+alltid från en session som startats efter att nyckeln lagts in.
+
+Deploya om (efter ändrade belopp, språk eller kod), i en session med token i
+miljön:
 
 ```bash
 bash matstrumpor/varva/deploy.sh --torr   # konfigen hämtas, bygger lokalt
