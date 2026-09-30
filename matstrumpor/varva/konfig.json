@@ -20,6 +20,8 @@
  "paketkoder_monster": "^(SUSHI|PIZZA|HAMBURGARE|DONUT|STRUMPOR)-K\\dF\\d",
  "paketkoder_comment": "Paketväljarens BxGy-koder (Köp 1 få 1 …). 466 av 490 ordrar i september 2026 bar en av dem. De tillät ingen annan rabatt, och när två rabatter inte får kombineras drar Shopify av den som är bäst för kunden, alltså paketkoden. Vännens 50 kr hade då aldrig dragits av. --kod öppnar dem för ORDERrabatter (vännens kod) och stänger samtidigt produktkombinationen på varje annan orderrabatt som stod öppen (GLÖMD), så att inget annat än vännens kod börjar kombineras. Originalen står i lage.json → aterstall; --aterstall --skarpt lägger tillbaka dem.",
  "api_version": "2026-07",
+ "app_client_id": "9a9640762e045a66040a793bb6be6483",
+ "app_client_id_comment": "Appen \"Matstrumpor Tacksida\" i Dev Dashboard-organisationen Matstrumpor.se, inga rättigheter, skapad av Cowork 2026-09-30 (cowork/1-tacksidan.txt). Client ID är ingen hemlighet — det står i shopify.app.matstrumpor.toml. deploy.sh läser det härifrån när TACKSIDA_CLIENT_ID_MATSTRUMPOR saknas; token (SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR) ligger bara i miljön.",
  "valutor": {
   "SEK": {
    "land": "SE",
