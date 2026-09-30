@@ -443,7 +443,11 @@ inget: "Inget för dig i dag."
      som standard i varje ny chatt (support.claude.com 12012173), så prompten börjar med FÖRST,
      som säger åt Axel att slå på Claude in Chrome i chattens menyn Connectors. Saknas den i
      menyn: initialerna nere till vänster → Settings → Connectors → Claude in Chrome → Configure →
-     slå på. Kvittona skriver sessionen sedan med
+     slå på. Mätt samma eftermiddag: Metas tacksida visar inget nummer, men inom en minut
+     kommer mejlet "Anmälan om immateriella rättigheter # <nr>" från
+     `case++…@support.facebook.com` till undertecknarens adress, med alla fält ekade (annonsen,
+     originalet, beskrivningen). Numret där är kvittot. Meta skickar också SAMMA kod igen så
+     länge den gäller (en timme), så en kod kan räcka till flera anmälningar. Kvittona skriver sessionen sedan med
      `--anmald <id> --nr <n> --referens <r>`, ur Metas bekräftelsemejl i Gmail eller ur Coworks lista.
      Står ett kvitto fel (en anmälan som inte gick in): `--anmald <id> --nr <n> --angra "<skäl>"`.
 
