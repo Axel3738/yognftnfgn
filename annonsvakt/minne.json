@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-30T15:45:01.390Z",
+ "uppdaterad": "2026-09-30T16:45:11.866Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -46,15 +46,6 @@
    "forst": "2026-09-27T14:10:56.188Z",
    "larmat": "2026-09-27T14:10:56.188Z",
    "rubrikSv": "Annonsen `Beltgrinder_REV_2_1` AVVISAD"
-  },
-  "konto:1107817401910319:lasfel": {
-   "typ": "konto",
-   "niva": "gul",
-   "rubrik": "Could not read `Magiborsten UK`",
-   "rubrikSv": "Kunde inte läsa `Magiborsten UK`",
-   "konto": "1107817401910319",
-   "forst": "2026-09-30T15:45:01.390Z",
-   "larmat": "2026-09-30T15:45:01.390Z"
   }
  },
  "handelser": [
@@ -127,6 +118,11 @@
    "nyckel": "spend:120250349195630291:2026-09-29:0",
    "tid": "2026-09-29T18:45:06.785Z",
    "rubrik": "Ad `Taljset_PD_1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251451415280435:2026-09-30:0",
+   "tid": "2026-09-30T16:45:11.866Z",
+   "rubrik": "Ad `CaraShellRoof_US_SP_2_1` spending badly"
   }
  ],
  "hjartslag": "2026-09-30"
