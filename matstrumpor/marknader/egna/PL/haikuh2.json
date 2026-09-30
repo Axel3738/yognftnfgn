@@ -10,7 +10,7 @@
    "a": 4.04,
    "b": 5.54,
    "sv": "Ett: de är helt enkelt unika.",
-   "text": "Raz, są po prostu wyjątkowe."
+   "text": "Po pierwsze, są wyjątkowe."
   },
   {
    "a": 5.72,
@@ -40,7 +40,7 @@
    "a": 15.56,
    "b": 17.74,
    "sv": "Två: värdet för pengarna är helt absurt.",
-   "text": "Dwa, dostajesz mega dużo za te pieniądze."
+   "text": "Po drugie, dostajesz mega dużo za tę kasę."
   },
   {
    "a": 17.94,
@@ -64,7 +64,7 @@
    "a": 26.14,
    "b": 28.28,
    "sv": "Tre: du gör mottagaren väldigt glad.",
-   "text": "Trzy, sprawiasz komuś ogromną radość."
+   "text": "Po trzecie, sprawiasz komuś dużą radość."
   },
   {
    "a": 28.28,
@@ -112,9 +112,9 @@
  "texter": {
   "hook": "Stop! Nie kupuj skarpetek sushi, zanim to zobaczysz.",
   "rubriker": [
-   "RAZ: SĄ PO PROSTU WYJĄTKOWE",
-   "DWA: TO SIĘ OPŁACA",
-   "TRZY: SPRAWIASZ IM RADOŚĆ"
+   "PO PIERWSZE: SĄ PO PROSTU WYJĄTKOWE",
+   "PO DRUGIE: TO SIĘ OPŁACA",
+   "PO TRZECIE: SPRAWIASZ IM RADOŚĆ"
   ],
   "knapp": "ZAMÓW TERAZ"
  },

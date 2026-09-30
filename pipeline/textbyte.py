@@ -100,7 +100,10 @@ def kor(plan):
         cx, cy = t['mitt']
         x, y = int(round(cx - w / 2)), int(round(cy - h / 2))
         inputs += ['-loop', '1', '-i', f]
-        filt.append(f"{senaste}[{n}:v]overlay={x}:{y}:shortest=1:enable='between(t,{t['a']:.2f},{t['b']:.2f})'[t{i}]")
+        # Halvöppet fönster [a, b): en ruta slutar i samma bildruta som nästa börjar. Med between(t,a,b)
+        # syntes båda i bildrutan vid bytet (granskningen 2026-09-30, G-B04: "Den fake er sokker." halvt
+        # över "Én af æskerne …" vid 2,0 s, en bokstavsrest under ruta 5 vid 8,0 s, i alla tretton språk).
+        filt.append(f"{senaste}[{n}:v]overlay={x}:{y}:shortest=1:enable='gte(t,{t['a']:.3f})*lt(t,{t['b']:.3f})'[t{i}]")
         senaste = f'[t{i}]'; n += 1
         qa.append(((t['a'] + t['b']) / 2, rader))
     cmd = [ff, '-nostdin', '-y', '-v', 'error'] + inputs + ['-filter_complex', ';'.join(filt), '-map', senaste, '-map', '0:a?',

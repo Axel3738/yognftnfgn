@@ -1,6 +1,6 @@
 {
  "butik": "matstrumpor",
- "tid": "2026-09-30T17:32:41.964Z",
+ "tid": "2026-09-30T18:21:03.697Z",
  "lage": "skarpt",
  "mallar": {
   "fraktbekraftelse": {
@@ -9,95 +9,89 @@
    "huvud_sha": "048e0896c9452a95",
    "sprak": {
     "nb": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "fd8bca8d9852513f",
      "tecken": 7213,
      "efter": "lika"
     },
     "da": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "b54586c1f81d38da",
      "tecken": 7210,
      "efter": "lika"
     },
     "fi": {
      "fore": "annan",
-     "sha": "13058beaed95a07e",
+     "sha": "c30dc951e824a778",
      "tecken": 7266,
      "efter": "lika"
     },
     "en": {
      "fore": "annan",
-     "sha": "e39bf9486511f9f4",
-     "tecken": 7254,
+     "sha": "5bb3db30f5d08c18",
+     "tecken": 7636,
      "efter": "lika"
     },
     "de": {
      "fore": "annan",
-     "sha": "2cc4b136c90892b7",
-     "tecken": 7303,
+     "sha": "5f48d46bbbc748ef",
+     "tecken": 7301,
      "efter": "lika"
     },
     "fr": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "f0ec00e9b4c13eda",
      "tecken": 7330,
      "efter": "lika"
     },
     "nl": {
      "fore": "annan",
-     "sha": "1a990b591b3606c6",
-     "tecken": 7270,
+     "sha": "fcb252339c6730dc",
+     "tecken": 7273,
      "efter": "lika"
     },
     "es": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "b28578fc453cf86d",
      "tecken": 7295,
      "efter": "lika"
     },
     "it": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "8e0a70adb5836dbd",
      "tecken": 7288,
      "efter": "lika"
     },
     "pl": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "1edb457e41865d78",
      "tecken": 7253,
      "efter": "lika"
     },
     "pt-PT": {
      "fore": "annan",
-     "sha": "0ad4cfd27c66fc4a",
-     "tecken": 7304,
+     "sha": "10ed49d202ef32a1",
+     "tecken": 7314,
      "efter": "lika"
     },
     "ja": {
      "fore": "annan",
-     "sha": "03ceb2e5a8a377ef",
-     "tecken": 7018,
+     "sha": "e20c0c33ebffd681",
+     "tecken": 7016,
      "efter": "lika"
     },
     "zh-TW": {
      "fore": "annan",
-     "sha": "50e9ab381708c349",
-     "tecken": 6923,
+     "sha": "f303bba64a2e60b3",
+     "tecken": 6920,
      "efter": "lika"
     }
    },
    "registrerade": [
-    "nb",
-    "da",
     "fi",
     "en",
     "de",
-    "fr",
     "nl",
-    "es",
-    "it",
-    "pl",
     "pt-PT",
     "ja",
     "zh-TW"
@@ -109,98 +103,86 @@
    "huvud_sha": "25484111c59c6277",
    "sprak": {
     "nb": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "1c1c997f5647e2ec",
      "tecken": 6157,
      "efter": "lika"
     },
     "da": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "331804674dc9a8ad",
      "tecken": 6146,
      "efter": "lika"
     },
     "fi": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "20d07e2672c57c6f",
      "tecken": 6158,
      "efter": "lika"
     },
     "en": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "0a81ee598dcccf9e",
      "tecken": 6189,
      "efter": "lika"
     },
     "de": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "bc429b5efeb2191b",
      "tecken": 6202,
      "efter": "lika"
     },
     "fr": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "0cec6723c4615508",
      "tecken": 6228,
      "efter": "lika"
     },
     "nl": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "4f618530f9542c01",
      "tecken": 6171,
      "efter": "lika"
     },
     "es": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "ed644f96fad7ef07",
      "tecken": 6219,
      "efter": "lika"
     },
     "it": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "0e05541d9ecc77cd",
      "tecken": 6198,
      "efter": "lika"
     },
     "pl": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "e8db4142779a5809",
      "tecken": 6201,
      "efter": "lika"
     },
     "pt-PT": {
      "fore": "annan",
-     "sha": "3f9fae7376255994",
-     "tecken": 6209,
+     "sha": "10271f5381af9cbd",
+     "tecken": 6206,
      "efter": "lika"
     },
     "ja": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "bd65826befddc436",
      "tecken": 6026,
      "efter": "lika"
     },
     "zh-TW": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "46d2d4659052c30f",
      "tecken": 5972,
      "efter": "lika"
     }
    },
    "registrerade": [
-    "nb",
-    "da",
-    "fi",
-    "en",
-    "de",
-    "fr",
-    "nl",
-    "es",
-    "it",
-    "pl",
-    "pt-PT",
-    "ja",
-    "zh-TW"
+    "pt-PT"
    ]
   },
   "ute_for_leverans": {
@@ -209,98 +191,89 @@
    "huvud_sha": "b7fc01a1f19ddcd1",
    "sprak": {
     "nb": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "5d59e8f0bc8930f6",
      "tecken": 6160,
      "efter": "lika"
     },
     "da": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "e90b9260c6b591f9",
      "tecken": 6154,
      "efter": "lika"
     },
     "fi": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "d1e7499556cbb58e",
      "tecken": 6175,
      "efter": "lika"
     },
     "en": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "438f04ef9bb34731",
      "tecken": 6181,
      "efter": "lika"
     },
     "de": {
      "fore": "annan",
-     "sha": "ac8fe756287f1ced",
-     "tecken": 6207,
+     "sha": "76d8adbb1b8bf08f",
+     "tecken": 6209,
      "efter": "lika"
     },
     "fr": {
      "fore": "annan",
-     "sha": "c10f07ffb08916b4",
-     "tecken": 6247,
+     "sha": "9e75e521373de874",
+     "tecken": 6261,
      "efter": "lika"
     },
     "nl": {
      "fore": "annan",
-     "sha": "b9f7622edec70157",
-     "tecken": 6189,
+     "sha": "96b0f6b875809217",
+     "tecken": 6175,
      "efter": "lika"
     },
     "es": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "418c7ecf904544d2",
      "tecken": 6199,
      "efter": "lika"
     },
     "it": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "871d0c2136f09d4a",
      "tecken": 6196,
      "efter": "lika"
     },
     "pl": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "3f561bf66604e840",
      "tecken": 6171,
      "efter": "lika"
     },
     "pt-PT": {
      "fore": "annan",
-     "sha": "f731875b56cc3a7f",
-     "tecken": 6202,
+     "sha": "2fe8705f9087d3db",
+     "tecken": 6199,
      "efter": "lika"
     },
     "ja": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "3569bd5f5af0a02f",
      "tecken": 6038,
      "efter": "lika"
     },
     "zh-TW": {
-     "fore": "annan",
+     "fore": "lika",
      "sha": "7143f9d52d6a84a0",
      "tecken": 5981,
      "efter": "lika"
     }
    },
    "registrerade": [
-    "nb",
-    "da",
-    "fi",
-    "en",
     "de",
     "fr",
     "nl",
-    "es",
-    "it",
-    "pl",
-    "pt-PT",
-    "ja",
-    "zh-TW"
+    "pt-PT"
    ]
   }
  },

@@ -1,7 +1,7 @@
 // Tester för egna/dubba.mjs — CSV:n (kontrollen av segmenten), SRT:n, tidsfönstren och farten (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { byggCsv, byggSrt, SPRAKKOD, fonster, fartFor, klippNyckel, RÖST, röstFor } from '../egna/dubba.mjs';
+import { byggCsv, byggSrt, SPRAKKOD, fonster, fartFor, froFor, klippNyckel, RÖST, röstFor } from '../egna/dubba.mjs';
 
 const manus = [
   { a: 0, b: 2.5, sv: 'Hej, "du".' },
@@ -49,4 +49,13 @@ test('klippNyckel: klonens nyckel är oförändrad (cachen för elva språk hål
   assert.equal(klippNyckel(x), 'eleven_multilingual_v2|1|a|b|c');
   assert.notEqual(klippNyckel({ ...x, rost: 'annanRost' }), klippNyckel(x));
   assert.equal(röstFor('DE'), RÖST);
+});
+
+test('froFor: tagning 1 behåller det gamla fröet (godkända klipp står kvar), tagning 2 ger ett nytt, --om ett eget', () => {
+  assert.equal(froFor(), 29);
+  assert.equal(froFor(1), 29);
+  assert.equal(froFor(1, true), 30);
+  assert.equal(froFor(2), 1029);
+  assert.notEqual(froFor(2), froFor(1, true));
+  assert.equal(froFor(0), 29, 'en tagning under 1 räknas som 1');
 });

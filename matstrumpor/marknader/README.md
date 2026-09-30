@@ -269,7 +269,10 @@ USA låg mellan +34 och +73 %.
 Sverige: Shopifys Cost per item (landad, SEK) — sushi 5 par 80,23, 3 par 67,51;
 donut/pizza/hamburgare **saknas i Shopify**. Big 5: Axels ark (USD per order, vara +
 frakt, rad för 1 och 2 lådor). Norden: **ingen kostnad känd** — står som saknas med
-orsak. `kor.mjs --ekonomi --marknad US` räknar break-even per produkt med ECB-kurs;
+orsak. ⚠️ **Europa (DE, AT, CH, FR, BE, LU, NL, ES, IT, PL, PT), Japan och Taiwan har inget
+kostnadsblock alls** — 13 av de 21 länder som har en kampanj (granskningen G-F08, 2026-09-30).
+Break-even går inte att räkna där förrän leverantörens pris per land finns (Axel: först när
+marknaden har sålt). `kor.mjs --ekonomi --marknad US` räknar break-even per produkt med ECB-kurs;
 vinsten på stonebite.org räknar Matstrumpors Big 5-ordrar på leveranslandets kostnad
 (`stonebite/kallor/vinst.mjs` → `kostnadPerLand`).
 
@@ -589,8 +592,9 @@ shipping"/"Kostenloser Versand" utan land på de andra språken.
   landet av sig självt; ett land vi inte säljer till får frasen utan land och lastbilen. Landnamnet är
   Shopifys eget på kundens språk (`localization.country.name`), flaggan Shopifys egen (`country |
   image_url`, 4:3), 1,25em hög så att texterna står i linje med ikonerna bredvid.
-- **Mätt som kund 2026-09-30 i 24 länder** (SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT, CH, FR, BE,
-  LU, NL, ES, IT, PL, PT, IE, CZ): rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
+- **Mätt som kund 2026-09-30 i 22 länder** (23 prov: SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT,
+  CH, FR, BE, LU, NL, ES, IT, PL, PT, IE, CZ), och samma kväll i Japan och Taiwan (「日本全国送料無料」 /
+  「全台免運費」, se Japan och Taiwan), alltså 24: rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
   `test/domantema.test.mjs` kör snippeten i en liten Liquid-tolk för alla 13 språk × 38 länder och
   jämför med `fraktText`.
 - Magnetchess gick inte att läsa härifrån (magnetchess.com svarar 502/503 mot containern). Deras .se
@@ -651,7 +655,10 @@ svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbets
   burger 5 680 / ätpinnar 1 080; Taiwan NT$1 690 / 1 490 / 1 190 / 1 790 / 1 190 / 209.
 - **Översättningen** (207 texter per språk): sonnet-översättare per del (A–D) mot `REGLER.md` +
   `oversattning/REGLER-ASIEN.md`, en skeptisk infödd granskare per del (C och D parvis), alla fynd
-  inlagda. De viktigaste fynden: Klarna finns inte i Japan eller Taiwan och är borttaget där (regel 13),
+  inlagda. De viktigaste fynden: Klarna finns inte i Japan eller Taiwan och är borttaget där (regel 13;
+  texten sedan bygget, och sidfotens betalikoner sedan 2026-09-30 kväll — de visade Klarna, BLIK, iDEAL,
+  Twint … för japanska och taiwanesiska kunder tills `domantema.mjs` → `BETAL_ASIEN` begränsade dem till
+  kort, PayPal, Apple Pay, Google Pay och Shop Pay),
   två betydelsefel i japanska integritetspolicyn (klagorätten hos tillsynsmyndigheten, "verkställa
   överträdelser"), åldersgränsen "16 歲以下" (= 16 och yngre) i kinesiskan, 雙數 (läses "jämnt tal") →
   組合, 真正木頭筷子 → 實木筷子. `granska.mjs` kontrollerar skriften (förenklade tecken, kana i
@@ -772,7 +779,51 @@ videor fick SRT i `transkript/` (11 av dem är nästan tysta — musik/text, ska
 17 lämnade Meta inte ut (`source` saknas — id:n i `transkript/README.md`). HeyGen behövs
 inte för transkriptet, bara för dubbningen, och den står still på API-krediterna.
 
-## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
+## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
+
+Läst ur kontot med `annonser/bygg.mjs --lage` (id:n och annonserna i `annonser/lage.json`, länkarna
+i `annonser/marknader.json`). Sida `1285064981363590` "Matstrumpor" och Instagram-identiteten
+`17841423405715219` på alla 112, länken går till matstrumpor.com utom B-sidan.
+
+| Kod | Kampanj | Id | Länder | Språk | kr/dag | Annonser | Länk |
+|---|---|---|---|---|---|---|---|
+| NO | `MATSTRUMP_NO_SALES` | 120251749551520023 | NO | nb | 500 (A/B) | 8 | .com/nb |
+| NOB | `MATSTRUMP_NOB_SALES` | 120251777339520023 | NO | nb | 500 (A/B) | 8 | matstrumpor.no |
+| DK | `MATSTRUMP_DK_SALES` | 120251749599180023 | DK | da | 1 000 | 8 | .com/da |
+| FI | `MATSTRUMP_FI_SALES` | 120251749604200023 | FI | fi | 1 000 | 8 | .com/fi |
+| US | `MATSTRUMP_US_SALES` | 120251749609010023 | US | en | 1 000 | 8 | .com |
+| WW | `MATSTRUMP_WW_SALES` | 120251749612350023 | GB, AU, CA, NZ | en | 1 000 | 8 | .com |
+| DE | `MATSTRUMP_DE_SALES` | 120251750242530023 | DE, AT, CH | de | 1 000 | 8 | .com/de |
+| FR | `MATSTRUMP_FR_SALES` | 120251750244370023 | FR, BE, LU | fr | 1 000 | 8 | .com/fr |
+| NL | `MATSTRUMP_NL_SALES` | 120251750246440023 | NL | nl | 1 000 | 8 | .com/nl |
+| ES | `MATSTRUMP_ES_SALES` | 120251750248310023 | ES | es | 1 000 | 8 | .com/es |
+| IT | `MATSTRUMP_IT_SALES` | 120251750250830023 | IT | it | 1 000 | 8 | .com/it |
+| PL | `MATSTRUMP_PL_SALES` | 120251750321130023 | PL | pl | 1 000 | 8 | .com/pl |
+| PT | `MATSTRUMP_PT_SALES` | 120251750324340023 | PT | pt-PT | 1 000 | 8 | .com/pt-pt |
+| JP | `MATSTRUMP_JP_SALES` | 120251797899280023 | JP | ja | 1 000 (platshållare) | 8 | .com/ja |
+| TW | `MATSTRUMP_TW_SALES` | 120251796778420023 | TW | zh-TW | 1 000 (platshållare) | **0** | .com/zh-tw |
+
+- **Budgeten:** Axels 1 000 kr/dag per kampanj (2026-09-27 kväll) gäller NO–PT; Norge delas 500 + 500 i
+  A/B-testet. JP och TW bär en platshållare som `--aktivera` vägrar tills Axel sagt en budget.
+- **TW är tom med flit:** åtta annonsfiler är klara i `annonser/TW.json`, men Meta vägrar adsetet tills
+  bolaget är verifierad annonsör i Taiwan (se Japan och Taiwan).
+- **En kampanj per språk, inte per land** (Axel 2026-09-29: "en kampanj per marknad borde bli bäst").
+  Länder med samma språk delar kampanj (DE + AT + CH, FR + BE + LU, GB + AU + CA + NZ), och inget land
+  ligger i två kampanjer. Shopifys marknad Europa bär 29 länder, och 13 av dem har en kampanj. De 16 utan
+  kampanj (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan handla i butiken men får
+  inga annonser: deras språk är inte översatt. Irland och Malta (engelska) och Liechtenstein (tyska)
+  skulle kunna läggas i WW respektive DE utan ny översättning.
+- ⚠️ **Tre gamla kampanjer från augusti ligger kvar i samma konto** (granskningen G-F07):
+  `MATSTRUMP_SALES AU` 120251251965440023, `MATSTRUMP_SALES UK` 120251251897940023 och
+  `MATSTRUMP_SALES_US_20260828` 120251241772530023. Kampanjerna är PAUSED, men deras adsets och 155 annonser
+  står ACTIVE och länkar till sushisock.com (den gamla engelska butiken, sidan `1229557150250240`). Ett
+  klick "slå på allt" på kampanjnivå startar alltså 3 000 kr/dag till en annan butik, i länder som US och
+  WW redan bär. Rör dem aldrig härifrån. Arkiveringen är Axels klick i Ads Manager.
+- ⚠️ **Australien kräver verifierad annonsör och betalare** (granskningen G-A01, `issues_info` på
+  WW-adsetet `120251749614670023`: SOFT_ERROR 3858810). Samma sorts krav som Taiwan. Om Meta då stoppar
+  bara AU eller hela adsetet går inte att läsa ur API:t, och det prövas aldrig genom att slå på.
+
+## Kampanjerna i kontot — historik: bygget 2026-09-27 ~16:00 CEST (ersatt av tabellen ovan)
 
 Axels order: "Nu har api tillgång också. Bygg upp alla kampanjer. Bygg upp worldwide kampanj.
 Förbered usa kampanj med alla nya ads vi inte hade innan och UGC heygennad. Katarina får vi
@@ -809,7 +860,9 @@ utan butiksnamnet, så regeln "butikens namn står aldrig i en annons" håller. 
 `annonser/lage.json`, `bygg.mjs --lage`. Metas rate limit slog till mitt i bygget (kod 17,
 backoff 30/60/120 s …) — bygget tar en kvart för sju kampanjer, inte en minut.
 
-## Annonserna i kontot (2026-09-28/29) — 36 st, alla PAUSED
+## Annonserna i kontot — historik: de första 36 (2026-09-28/29), alla PAUSED
+
+(Läget nu: åtta per kampanj, 001–008, se tabellen ovan.)
 
 Varje kampanj har tre annonser med Axels egen UGC, gjord i HeyGens **dyraste läge (`precision`)**
 på kampanjens språk (WW bär de engelska): `MATSTRUMP_<KOD>_sushi_gift_ugc_001_v1` (Nathalie),
@@ -908,8 +961,10 @@ och "Finland DK" `1356652809967926` saknar betalmetod och nås inte av token.
 Rutinen som saknas är `/ops-oversatt` för Matstrumpor: SE-vinnarna i hubben →
 `pipeline/translate-batch.mjs --marknad <M>` (HeyGen för video, `translate-images` för
 bild) → en kampanj per land i nya kungen (`MATSTRUMP_<LAND>_SALES`, geo = landet,
-länk `https://matstrumpor.se/<språk>/products/<handle>?country=<LAND>`) → annonsnamn
+länk `https://matstrumpor.com/<språk>/products/<handle>?country=<LAND>`) → annonsnamn
 `MATSTRUMP_<LAND>_sushi_<vinkel>_<format>_<nnn>_v<n>`. Break-even per land ur
-`cogs.json` (US 1,22 · GB 1,17 … för sushi 5 par; se `--ekonomi --marknad`). Byggs
+`cogs.json` via `kor.mjs --ekonomi --marknad <LAND>` (talen rör sig med kursen och priserna:
+US 1,22 · GB 1,17 när planen skrevs 2026-09-27, 1,182 / 1,137 vid granskningen 2026-09-30;
+citera aldrig ett gammalt tal). Byggs
 som `/matstrumpor-marknader` när Axel sagt budget per land — augustis test låg under
 break-even i alla tre länder, och den frågan är hans.

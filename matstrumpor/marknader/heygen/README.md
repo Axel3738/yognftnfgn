@@ -64,6 +64,23 @@ Miljö: `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` på 
    annonser först (2026-09-27).
 8. **Logga:** `products/matstrumpor/batch-log.md` + `docs/video-localization.md`; etikett dag 7.
 
+## Rendera om en video med rättad text (mätt 2026-09-30)
+
+Granskningen hörde enskilda repliker fel (G-B05: DK "livret" som "Sliurad", NL "teken" som
+"keuken", FI "sushi" som "susi") och fällde några kalker. Elva videor renderades om **i samma
+proofread-session**, utan ny proofread:
+
+1. Rättad SRT i `<batch>/<KOD>/srt-fixed/` (den gamla kopieras till `srt-fixed.fore-<datum>/`),
+   `kolla-srt.mjs` med `HEYGEN_BATCH=<batch>` ska ge ✅. Samma block och samma tider — bara texten.
+2. I `<KOD>.json.state.json`: spara `renderId` som `renderId_fore_<datum>` och ta bort `renderId`,
+   `srtApplied` och `downloaded` på just de posterna (apply hoppar över allt som har ett `renderId`).
+   Kopiera den gamla filen i `final/` till `final.fore-<datum>/`.
+3. `apply` → `render` → `download` som vanligt. HeyGen tog den nya texten i den gamla sessionen
+   (DK Nathalie: render startad 19:12, nedladdad 19:16). En omrendering drog ~42 API-enheter
+   (≈ 0,70 USD), ingen ny proofread.
+4. QA ny mot gammal: `seglyssna.py` på båda med sina SRT:er, röstkollen, sedan `no-captions.py
+   --rutor` till `annonser/klar/` och `bygg.mjs --byt-video`.
+
 ## USA: "alla nya ads vi inte hade innan" (Axel 2026-09-27)
 
 Den gamla US-kampanjen (`MATSTRUMP_SALES_US_20260828`, PAUSED) hade 49 annonser (38 video,

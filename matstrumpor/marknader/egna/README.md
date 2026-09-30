@@ -34,6 +34,8 @@ Alla tre röstvideorna har **samma svenska AI-kvinnoröst** (mediantonhöjd 198�
    - `<KOD>/012v2.json` innehåller de sju bildtexterna.
 3. **012v2 (ingen röst):** `python3 matstrumpor/marknader/egna/rendera-012v2.py <KOD>` →
    `../annonser/klar/<KOD>_012v2.mp4`. Samma sju orange rutor ritas med ny text och täcker de svenska helt.
+   Kontrollera sedan varje bildruta: `python3 matstrumpor/marknader/egna/kolla-012v2.py <KOD> …`
+   (svensk text synlig eller två av våra rutor samtidigt ⇒ ❌, exit 1).
 4. **Röstvideorna, textlagret:** `python3 matstrumpor/marknader/egna/textlager.py <KOD> <video>`
    → `ut/<KOD>_<video>.text.mp4`. Alla svenska texter byts, originalljudet ligger kvar. Tar ~2,5 min per video.
 5. **Röstvideorna, rösten:** `node matstrumpor/marknader/egna/dubba.mjs <KOD> <video>` →
@@ -230,3 +232,32 @@ logga, knappen på marknadens språk.
 Whisper small stavar fel på produktord och hör ibland ett kort ord fel. DE haikuh3 "Kein Geschenk"
 lästes som "Das ist ein Geschenk", men Whisper medium på klippet hörde rätt. Norskan hörs som `no`
 med lägre säkerhet (0,73–0,86): klonen är svensk, och Whisper blandar ihop språken.
+
+## Granskningen 2026-09-30: 004 och röstvideorna 005–007
+
+**004 (012v2), alla tretton språk.** Granskningen (G-B04) såg två rutor samtidigt vid varje byte och
+källans svenska ruta en bildruta vid 6,08 s. Två fel, båda rättade:
+
+- `pipeline/textbyte.py` tände en ruta med `between(t,a,b)`, som gäller båda ändpunkterna. Bildrutan
+  på gränsen visade då både den gamla och den nya rutan. Nu `gte(t,a)*lt(t,b)`: en ruta slutar precis
+  när nästa börjar. Det gäller också undertexterna i röstvideorna (`textlager.py` ritar med `textbyte.py`).
+- Gränsen mellan ruta 3 och 4 stod på 6,1 s i `012v2.boxar.json` (mätt med 10 bilder/s), men källan
+  byter på bildruta 152 = 6,08 s. Gränsen är nu 6,06 s, mätt bildruta för bildruta med orange-andelen i
+  källans rutor. De andra gränserna ligger exakt på källans byten (bildruta 50/100/200/250/300).
+- `kolla-012v2.py` jämför varje bildruta med källan. Den fångade det gamla felet (bildruta 152 +
+  nio dubbla) och godkände alla tretton nya filer (354 bildrutor var, 0 fel).
+- Nio rutor fick ny text (sonnet, fynden G-C-DA-04, en-03, es-04, it-08, NL-08, PT-11, JA-07), t.ex.
+  DK "Fakepizzaen / er sokker.", US "In the sock drawer. / Never mixed up.", JP
+  「寿司、ピザ、バーガー、ドーナツ／ひとり一つ、好きなのを選ぼう。」 (en sort var, inte ett par var).
+
+**005–007: repliker och rubriker.** 45 ändringar i 22 filer (sonnet, `rost.ut.json` i sessionens
+scratchpad; varje ändring bär sitt fynd). Exempel: DE "Du wirst zur Person …", NO "Det er gaven som
+får deg til å se smart ut.", PL "Po pierwsze/Po drugie/Po trzecie" i tal och rubrik, TW 「第二：超值到誇張」.
+
+**En replik om, inte hela videon:** `tagning: 2` på ett segment ger det segmentet ett nytt frö
+(`froFor`, 1029 i stället för 29); resten av videon behåller sina klipp. `--om` byter fortfarande alla.
+ES haikuh3 segment 19 ("Pincha ya…") fick tagning 2, eftersom rösten sa "allá".
+
+⚠️ **De europeiska röstvideorna fanns inte i den här containern.** De byggdes i ElevenLabs-sessionen
+(PR #266) och varken klippen i `ut/tts/` eller filerna i `annonser/klar/` följde med. En ändrad text
+bygger därför om hela videon (samma frö 29 ger nästan samma tagning som förut) och kostar ~1 000 tecken.

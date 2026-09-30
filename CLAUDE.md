@@ -134,16 +134,25 @@ opt-out-formulär ("Dina integritetsval") bär kundtexten i `data-*`-attribut �
 nb/da hade svenska knappar live till 2026-09-27 kväll, rättat och tillbakaläst.
 COGS per marknad i
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
-kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
+kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify, och **Europa (DE, AT, CH,
+FR, BE, LU, NL, ES, IT, PL, PT), Japan och Taiwan har inget kostnadsblock alls** — 13 av 21
+kampanjländer, break-even går inte att räkna där (granskningen G-F08, 2026-09-30). **Annonserna
 utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
 `MATSTRUMP_NO_SALES` i nya kungen.** ✅ **Token:en SKRIVER i nya kungen sedan
 2026-09-27 ~15:30 CEST** (Axel gav rollen; före det `Permissions error …
 ads_management`). `matstrumpor/marknader/annonser/bygg.mjs --alla --skarpt`
 byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag),
 DK, FI, US och WW (engelska, `/en/` utan `?country=`; **sedan 2026-09-29 bara GB+AU+CA+NZ**,
-Axels "en kampanj per marknad borde bli bäst", så inget land ligger i två kampanjer) —
-de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
-Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
+Axels "en kampanj per marknad borde bli bäst", så inget land ligger i två kampanjer).
+Axel sa 1 000 kr/dag för alla samma kväll (Norge delas sedan 500 + 500 i A/B-testet); en
+platshållarbudget som `--aktivera` vägrar bär bara JP och TW. **Läget 2026-09-30 kväll: 15
+kampanjer, 112 annonser, alla PAUSED** — en kampanj per SPRÅK (DE+AT+CH, FR+BE+LU,
+GB+AU+CA+NZ delar), så 13 av Europamarknadens 29 länder har en kampanj; de 16 utan har
+inget översatt språk. Tabellen, id:n och regler i `marknader/README.md` → Kampanjerna.
+⚠️ Tre gamla augustikampanjer (sushisock.com) ligger PAUSED i samma konto med 155 ACTIVE
+annonser under sig — rör dem aldrig, arkivering är Axels klick (granskningen G-F07).
+⚠️ **Australien kräver verifierad annonsör och betalare** (WW-adsetet, SOFT_ERROR 3858810,
+granskningen G-A01) — samma väg som Taiwan.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
@@ -206,7 +215,9 @@ trycka på att det är ett svenskt varumärke", val B "som i Europa"): egna mark
 och Taiwan (TWD, `zh-TW`) på matstrumpor.com/ja och /zh-tw, fri frakt 5–10 arbetsdagar, priser som
 Europa men aldrig under Sverige + 20 %. Talet fyra (四) står aldrig i en annons, och japanskan säger
 スウェーデン発のブランド men aldrig スウェーデン製. Kampanjerna `MATSTRUMP_JP_SALES` och
-`MATSTRUMP_TW_SALES` är PAUSED, med åtta annonser per marknad. ⛔ **Taiwan kräver att bolaget är
+`MATSTRUMP_TW_SALES` är PAUSED: JP med åtta annonser, TW tom (åtta annonsfiler klara i repot) tills
+Meta godkänt annonsören. Klarna är borta ur texterna och sidfotens betalikoner på ja/zh-TW
+(`domantema.mjs` → `BETAL_ASIEN`). ⛔ **Taiwan kräver att bolaget är
 verifierad annonsör** (Taiwans lag; mätt samma dag: Meta vägrar annonsgruppen med "Annonsör saknas"):
 `matstrumpor/marknader/cowork/3-taiwan-verifiering.txt`, sedan `annonser/bygg.mjs --marknad TW
 --skarpt`. ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
@@ -217,9 +228,9 @@ BM). Instagram visas via sidans page-backed identitet `17841423405715219`, efter
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
 i PAUSED annonser. Sverige och sidan Matstrumpor.se `820358954504320` rörs aldrig därifrån.
 Sidans profilbild var tom, så annonserna visade en grå gubbe. Sedan 2026-09-29 är den loggan utan ".SE"
-(sessionen, `POST /{sida}/picture`, tillbakaläst). ✅ Alla 104 utlandsannonser bär sidan, Instagram-
-identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll. En egen avläsning av kontot gav 104
-av 104, alla PAUSED.
+(sessionen, `POST /{sida}/picture`, tillbakaläst). ✅ Alla utlandsannonser bär sidan, Instagram-
+identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll: 104 av 104 då, **112 av 112
+2026-09-30 med Japan** (granskningens egen avläsning), alla PAUSED.
 **Judge.me:** rutans texter är översatta på alla tolv språk. Axel slog på "automatic" 2026-09-29, men
 recensionerna var ännu inte översatta samma kväll, eftersom Judge.me anger upp till 48 timmar
 (`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt

@@ -123,9 +123,14 @@ function talnivå(fil) {
   return n ? Math.sqrt(sum / n) : 0;
 }
 
-async function tts(text, lang, modell, fart, prev, next, fil, rost = RÖST) {
+/** Ren: fröet för ett klipp. `tagning` på segmentet (2, 3 …) ger EN replik ett nytt frö utan att
+ *  resten av videon byts — granskningen 2026-09-30 hörde fel ord i enstaka repliker (ES 005 "allá"),
+ *  och `--om` byter alla klipp på en gång. Tagning 1 är det gamla fröet, så godkända klipp står kvar. */
+export const froFor = (tagning = 1, om = false) => (om ? 30 : 29) + (Math.max(1, tagning) - 1) * 1000;
+
+async function tts(text, lang, modell, fart, prev, next, fil, rost = RÖST, seed = froFor(1, OM)) {
   if (existsSync(fil)) return;
-  const kropp = { text, model_id: modell, seed: OM ? 30 : 29,
+  const kropp = { text, model_id: modell, seed,
     voice_settings: { stability: 0.5, similarity_boost: 0.85, style: 0, use_speaker_boost: true, speed: fart } };
   if (modell !== STANDARDMODELL) kropp.language_code = lang;
   if (modell !== 'eleven_v3') { if (prev) kropp.previous_text = prev; if (next) kropp.next_text = next; }
@@ -177,16 +182,17 @@ async function main() {
     const prev = lok.segment.slice(Math.max(0, i - 2), i).map(lasText).join(' ');
     const next = lok.segment[i + 1] ? lasText(lok.segment[i + 1]) : '';
     const las = lasText(s);
-    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(klippNyckel({ rost, modell, fart, prev, text: las, next })).digest('hex').slice(0, 10)}${OM ? '_om' : ''}.mp3`);
+    const tag = s.tagning ?? 1, seed = froFor(tag, OM);
+    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(klippNyckel({ rost, modell, fart, prev, text: las, next })).digest('hex').slice(0, 10)}${OM ? '_om' : ''}${tag > 1 ? `_t${tag}` : ''}.mp3`);
     let fart = 1, fil = klipp(1);
     if (!existsSync(fil)) tecken += las.length;
-    await tts(las, lang, modell, 1, prev, next, fil, rost);
+    await tts(las, lang, modell, 1, prev, next, fil, rost, seed);
     let d = langdAv(fil.replace(/\.mp3$/, '.wav'));
     const f = fartFor(d, fon[i].max);
     if (f > 1) {
       fart = f; fil = klipp(f);
       if (!existsSync(fil)) tecken += las.length;
-      await tts(las, lang, modell, f, prev, next, fil, rost);
+      await tts(las, lang, modell, f, prev, next, fil, rost, seed);
       d = langdAv(fil.replace(/\.mp3$/, '.wav'));
     }
     let tempo = 1;
@@ -195,7 +201,7 @@ async function main() {
     let slutfil = wav;
     if (tempo > 1) { slutfil = wav.replace(/\.wav$/, `.t${tempo}.wav`); kor('ffmpeg', ['-nostdin', '-y', '-v', 'error', '-i', wav, '-af', `atempo=${tempo}`, slutfil]); }
     const dUt = langdAv(slutfil);
-    logg.push({ seg: i + 1, a: s.a, max: fon[i].max, d: +dUt.toFixed(2), fart, tempo, over: dUt > fon[i].max + 0.05 });
+    logg.push({ seg: i + 1, a: s.a, max: fon[i].max, d: +dUt.toFixed(2), fart, tempo, over: dUt > fon[i].max + 0.05, ...(tag > 1 ? { tagning: tag } : {}) });
     lok.segment[i]._fil = slutfil;
   }
   // nivån: klonens tal läggs på källans talnivå, bakgrunden som den var
