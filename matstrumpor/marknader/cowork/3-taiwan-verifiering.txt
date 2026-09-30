@@ -1,3 +1,5 @@
+✅ KÖRD 2026-09-30 ~15:00 CEST av Cowork (Axels val A). STONEBITE ECOM AB fanns redan som organisationsverifiering med status "Granskas" och är vald som annonsör och betalare för Taiwan (samma bolag för båda). EU-inställningen "STonebite" är orörd. Meta granskar fortfarande, och annonsgruppen går inte att skapa via API förrän granskningen är klar. Nya manuella klick får en ny prompt (4-…).
+
 Uppdrag: gör Matstrumpors annonser i Taiwan möjliga i Meta. Gör bara det som står nedan.
 
 Varför: Taiwans lag kräver att varje annons som visas i Taiwan har en VERIFIERAD förmånstagare och en verifierad betalare. Förmånstagaren är den som tjänar på annonsen, betalaren den som betalar den. Båda är bolaget STONEBITE ECOM AB. Claude har byggt kampanjen MATSTRUMP_TW_SALES, som är pausad och tom, och åtta annonser som väntar på att laddas upp. Meta vägrar ta emot annonsgruppen tills bolaget är verifierat. Mätt 2026-09-30, Metas svar: "Annonsör saknas: ange verifierad annonsör så att annonser i annonsuppsättningen kan levereras till målgrupper i Taiwan".
