@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 1/55 (2 %) (etikett.mjs --frekvens 2026-09-29)
+Breakthrough-frekvens: 1/61 (2 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -555,3 +555,16 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Takoverdrag_FD_4_4 | bild, BOF | Remmar på alla fyra sidor. Spänne, krok. | https://www.notion.so/3ea270ab908c81108ee6eca9e640acbb |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-09-30) — Taköverdraget för Husvagn 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/61 (2 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_PD_10_H1 | 3 | **LOSER** | 10 % | 8 234 kr | 11 | 1,80 / 2,18 | 45 % / 8 % | ja |
+| Takoverdrag_OB_3_H1 | 4 | **LOSER** | 2 % | 2 034 kr | 2 | 1,19 / 2,18 | 35 % / 10 % | nej |
+| Takoverdrag_GT_11_H1 | 4 | **LOSER** | 1 % | 875 kr | 0 | 0,00 / 2,18 | 49 % / 11 % | nej |
+| Takoverdrag_CO_5_H1 | 3 | **KPI_WINNER** | 1 % | 482 kr | 2 | 5,30 / 2,18 | 33 % / 8 % | nej |
+| Takoverdrag_CS_9_H1 | 2 | **LOSER** | 1 % | 452 kr | 0 | 0,00 / 2,18 | 25 % / 9 % | nej |
+| Takoverdrag_OB_4_H1 | 4 | **LOSER** | 1 % | 446 kr | 0 | 0,00 / 2,18 | 30 % / 10 % | nej |

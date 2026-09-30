@@ -1,6 +1,6 @@
 # Batch-logg — Inomhustofflorna i Kamouflage
 
-Breakthrough-frekvens: 0/15 (0 %) (etikett.mjs --frekvens 2026-09-25)
+Breakthrough-frekvens: 0/28 (0 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 (förstabatch) — 2026-09-20 (`/rond-auto` steg 4b)
 
@@ -122,3 +122,25 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Inomhustofflor_FD_4_4 | bild, BOF | Två färger, åtta storlekar, plysch hela vägen. | https://www.notion.so/3ea270ab908c81fab157c731eecb27ca |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-09-30) — Inomhustofflorna i Kamouflage
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 0/28 (0 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Inomhustofflor_SP_3_H2 | 1 | **LOSER** | 4 % | 171 kr | 0 | 0,00 / 1,15 | 21 % / 6 % | nej |
+| Inomhustofflor_RV_1_1 | 1 | **LOSER** | 1 % | 44 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_SP_3_H1 | 1 | **LOSER** | 1 % | 34 kr | 0 | 0,00 / 1,15 | 33 % / 10 % | nej |
+| Inomhustofflor_CS_3_H1 | 1 | **LOSER** | 1 % | 23 kr | 0 | 0,00 / 1,15 | 20 % / 6 % | nej |
+| Inomhustofflor_RV_2_1 | 1 | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_CO_1_H1 | 1 | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,15 | 50 % / 9 % | nej |
+| Inomhustofflor_BOF_3_1 | 1 | **LOSER** (BOF) | 0 % | 11 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_BOF_2_1 | 1 | **LOSER** (BOF) | 0 % | 10 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_CS_4_1 | 1 | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_LI_1_1 | 1 | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_CO_2_1 | 1 | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_PD_3_H1 | 1 | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,15 | 60 % / 20 % | nej |
+| Inomhustofflor_TR_1_1 | 1 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,15 | — | nej |
+| Inomhustofflor_GT_3_H1 | 1 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,15 | 33 % / — | nej |
+| Inomhustofflor_PD_4_1 | 1 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,15 | — | nej |

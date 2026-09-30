@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/60 (2 %) — spend winners 0, KPI winners 13, losers 30, ej levererade 16 (etikett.mjs --frekvens 2026-09-27)
+Breakthrough-frekvens: 1/69 (1 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -640,3 +640,13 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
 
 ⛔ Copyn följer Axels beslut 2026-09-29 (dna.md överst): inga materiallöften, ingen snö, ingen "vattnet rinner av" — föräldrens snöklipp och vattenmakro används inte.
+
+## Etiketter dag 7 (2026-09-30) — Båtmotorskyddet 420D
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/69 (1 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Batmotor_UG_3_H1 | 3 | **LOSER** | 1 % | 188 kr | 0 | 0,00 / 1,78 | 27 % / 9 % | nej |
+| Batmotor_RV_12_H1 | 3 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,78 | 40 % / — | nej |
+| Batmotor_GT_3_H1 | 1 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,78 | 50 % / — | nej |

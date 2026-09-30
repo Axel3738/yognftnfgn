@@ -1,6 +1,6 @@
 # Batch-log — Termoskyddet för Husbil
 
-Breakthrough-frekvens: 2/24 (8 %) — spend winners 1, KPI winners 3, losers 12, ej levererade 6 (etikett.mjs --frekvens 2026-09-27)
+Breakthrough-frekvens: 2/30 (7 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -496,3 +496,11 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Termoskydd_FD_4_4 | bild, BOF | 211 cm bred, 90 cm sidflikar | https://www.notion.so/3ea270ab908c81fb80e5cd00dd72faae |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-09-30) — Termoskyddet för Husbil 211 × 171 cm
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 2/30 (7 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Termoskydd_CS_9_1 | 2 | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,82 | — | nej |

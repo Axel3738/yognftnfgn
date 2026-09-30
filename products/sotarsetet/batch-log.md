@@ -1,6 +1,6 @@
 # Batch-log — Sotarsetet med Böjliga Stänger
 
-Breakthrough-frekvens: 2/11 (18 %) — `node agent/etikett.mjs --frekvens` 2026-09-26 (spend winners 0, KPI winners 1, losers 2, ej levererade 6).
+Breakthrough-frekvens: 2/23 (9 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 — 2026-09-19 (Joshs testbatch, före OS:et)
 
@@ -138,3 +138,41 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Sotarset_FD_4_4 | bild, BOF | 9 stänger à 41 cm. 3,69 meter. | https://www.notion.so/3ea270ab908c8188ab62ec376d700c53 |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-09-30) — Sotarsetet med Böjliga Stänger
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 2/23 (9 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Sotarset_PD_6_1 | 2 | **LOSER** | 7 % | 1 507 kr | 5 | 1,95 / 2,26 | — | ja |
+| Sotarset_PD_4_1 | 2 | **LOSER** | 1 % | 114 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_PD_2_H1 | 2 | **LOSER** | 0 % | 28 kr | 0 | 0,00 / 2,26 | 28 % / 17 % | nej |
+| Sotarset_PD_3_1 | 2 | **LOSER** | 0 % | 25 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_G_2_1 | 2 | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_PD_4_H1 | 2 | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,26 | 38 % / 17 % | nej |
+| Sotarset_PD_3_H1 | 2 | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,26 | 17 % / 13 % | nej |
+| Sotarset_CS_2_1 | 2 | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_PD_2_1 | 2 | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_PD_5_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,26 | 33 % / 33 % | nej |
+| Sotarset_UG_1_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,26 | — | nej |
+| Sotarset_CS_2_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,26 | — | nej |
+
+## Etiketter dag 7 (2026-09-30) — Feiesett NO
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (Magiborsten NO, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 2/24 (8 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Sotarset_NO_PD_4_1 | okänd | **LOSER** | 1 % | 59 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_PD_3_H1 | okänd | **KPI_WINNER** | 0 % | 39 kr | 1 | 10,37 / 3,08 | 29 % / 12 % | nej |
+| Sotarset_NO_CS_2_1 | okänd | **KPI_WINNER** | 0 % | 28 kr | 1 | 14,35 / 3,08 | — | nej |
+| Sotarset_NO_PD_2_1 | okänd | **LOSER** | 0 % | 14 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_UG_1_H1 | okänd | **KPI_WINNER** | 0 % | 11 kr | 1 | 35,47 / 3,08 | 33 % / 12 % | nej |
+| Sotarset_NO_PD_6_1 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_PD_3_1 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_PD_4_H1 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_G_2_1 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_CS_2_H1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_PD_2_H1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,08 | — | nej |
+| Sotarset_NO_PD_5_H1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,08 | — | nej |

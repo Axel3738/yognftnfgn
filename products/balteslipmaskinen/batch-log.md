@@ -1,6 +1,6 @@
 # Batch-logg — Bälteslipmaskinen
 
-Breakthrough-frekvens: 1/36 (3 %) (etikett.mjs --frekvens 2026-09-26)
+Breakthrough-frekvens: 1/45 (2 %) (etikett.mjs --frekvens 2026-09-30)
 
 ## Batch #1 — originaladsen (launch 2026-08-21, före OS:et)
 16 annonser i CBO (PD/SP/CS/G-serier). Utfall t.o.m. 2026-08-29: se dna.md.
@@ -512,3 +512,14 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Beltgrinder_FD_4_4 | bild, BOF | Slipband. Polerhjul. Knivslip. Alla tre på en bänk. | https://www.notion.so/3ea270ab908c81b3a633c17fa1712292 |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-09-30) — Bälteslipmaskinen
+
+Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna första vecka 2026-09-23–2026-09-29, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/45 (2 %) (etikett.mjs --frekvens 2026-09-30).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_CS_6_1 | 7 | **KPI_WINNER** | 3 % | 268 kr | 1 | 3,40 / 3,10 | — | nej |
+| Beltgrinder_PD_32_1 | 7 | **KPI_WINNER** | 1 % | 89 kr | 1 | 10,18 / 3,10 | — | nej |
+| Beltgrinder_PD_27_1 | 5 | **KPI_WINNER** | 1 % | 65 kr | 1 | 13,96 / 3,10 | — | nej |
+| Beltgrinder_PD_24_1 | 5 | **LOSER** | 0 % | 34 kr | 0 | 0,00 / 3,10 | — | nej |
