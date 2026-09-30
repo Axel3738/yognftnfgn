@@ -498,7 +498,11 @@
    "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H1.mp4.qa-3.png"
   ],
   "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
-  "video_id": "2320027962081202"
+  "video_id": "2320027962081202",
+  "annons_id": "120251687004460435",
+  "creative_id": "990239430774969",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:18:52.835Z"
  },
  "Seatcover_PD_2_1_H1": {
   "fil": "worldwide/annonser/klar/Seatcover_PD_2_1_H1.mp4",
@@ -551,7 +555,8 @@
    "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4.qa-2.png",
    "worldwide/annonser/klar/Batmotor_SP_1_H1.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "1110394588145956"
  },
  "Fiskespöhållare_CS_1_H3": {
   "fil": "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4",
@@ -563,7 +568,12 @@
    "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4.qa-2.png",
    "worldwide/annonser/klar/Fiskesp_h_llare_CS_1_H3.mp4.qa-3.png"
   ],
-  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen"
+  "granskning": "sessionen 2026-09-30: textkoll.py (OCR hela videon, 2 bilder/s) ✅, röstkollen ✅ vid renderingen",
+  "video_id": "2262830877808466",
+  "annons_id": "120251687011200435",
+  "creative_id": "978101125316771",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:19:47.222Z"
  },
  "Overvakningskamera_PD_3": {
   "fil": "worldwide/annonser/klar/Overvakningskamera_PD_3.mp4",
@@ -850,14 +860,24 @@
   "sha256": "7d629f97d7c94083c09abd753b7cc9f665926f6f828aad3189c8333efd24789d",
   "granskad": true,
   "rost": null,
-  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅",
+  "video_id": "2309750209774219",
+  "annons_id": "120251687008390435",
+  "creative_id": "1121247717141718",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:19:21.081Z"
  },
  "Rodholder_PD_16_H1": {
   "fil": "worldwide/annonser/klar/Rodholder_PD_16_H1.mp4",
   "sha256": "c28f7ce553b65cea1479135cdf951e798e2736e4549487821f11f6c6a8e3831f",
   "granskad": true,
   "rost": null,
-  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅"
+  "granskning": "sessionen 2026-09-30: ingen röst i källan; inbränd svensk text bytt (textbyte.py) eller ingen text; textkoll (OCR hela videon) ✅",
+  "video_id": "2146567542875403",
+  "annons_id": "120251687015700435",
+  "creative_id": "1752109796114111",
+  "kampanj_id": "120251678947750435",
+  "skapad": "2026-09-30T10:20:23.179Z"
  },
  "Motorhölje_PD_EXTRA": {
   "fil": "worldwide/annonser/klar/Motorh_lje_PD_EXTRA.mp4",

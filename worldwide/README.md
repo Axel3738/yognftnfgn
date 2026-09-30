@@ -10,18 +10,19 @@ till deras country". Judge.me:s automatiska översättning slår Axel på själv
 egen domän och engelska. Samma pixel (Bäverbutiken.se `1554276343018184`) — köpen ÄR
 Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
 
-## Läget 2026-09-30 (mätt)
+## Läget 2026-09-30 eftermiddag (mätt)
 
 | Del | Läge |
 |---|---|
 | Urvalet | 16 produkter med vinstbidrag ≥ 5 000 kr i MagiBorsten (hela livstiden, `urval.json`), 92 annonser: ≥ 300 kr, ≥ 3 köp, positivt vinstbidrag, max 10 per produkt. Axelbältet och solcellslampan är UNDER tröskeln och byggs inte |
-| Sajtens engelska | 248 produkter + kollektioner, sidor, policyer, menyer, temats texter i `oversattning/en/` — **248 ✅ / 0 ❌** i `granska.mjs` (siffrorna samma som svenskan, inga kronor, inget "30 dagar" — butikens retur är 14 dagar) |
-| Temat | **Patchat i det publicerade temat `210420334941`** (12 filer, originalen i `tema/original/`). Världsläget tar bara på engelska eller på beaverstoreco.com: loggan Beaver Store, annonsraden "🇺🇸 Free shipping to the United States" + "🇸🇪 A Swedish brand", produktsidans fri frakt-rad till kundens land, engelska förtroende- och recensionsband, "Beaver Store" i titel/og/sidfot. Den svenska sidan mätt ordagrant oförändrad (0 diff) |
-| Domänen | beaverstoreco.com registrerad 2026-09-30 05:38 UTC hos Loopia, DNS pekar redan på Shopify (A 23.227.38.65, www → shops.myshopify.com), **kopplad i Bäverbutikens Shopify** (API: `shop.domains`). Certifikatet var inte utfärdat ~07:00 UTC (crt.sh 0 certifikat, TLS-handskakningen fel) — Shopify utfärdar själv |
-| Shopify: marknad, språk, frakt, översättningar | ⛔ **Väntar på appens rättigheter.** "Bäver uppladdare" (`SHOPIFY_*_SE`) saknar markets/translations/locales/shipping — `cowork/1-app-och-doman.txt` lägger till dem. Sedan: `node worldwide/bygg.mjs --alla --skarpt` |
-| Bildannonser | 25 engelska bilder i `annonser/klar/` (OCR-mätta, suddade, omritade med `bildrita.mjs` + `zonrita.py`, tittade på av sessionen), 7 hoppade (fars dag, "verifierad kund"-citat, text som inte går att flytta) |
-| Videoannonser | Svenska transkript (Whisper lokalt) i `annonser/transkript/`, engelska manus för 47 videor i `annonser/manus-en/` (sonnet mot `REGLER-VIDEO.md`, samma cues och tider; 9 hoppade av copyn, 4 utan röst i källan). **En provvideo renderad:** `Motorhölje_PD_1_H3` (röst "CJ - Young Swedish Male", bandläget, röstkollen ✅, bilderna tittade på, rösten inte lyssnad på). `Batmotor_SP_1_H5` stoppades rätt: källan har en svensk checklista i bild som bara textbyte kan ta. **Resten väntar på ElevenLabs:** 10 387 tecken kvar till 23 okt (Creator), 46 videor behöver ~17 300, och `/translate-no` drar varje natt från samma konto |
-| Meta | **16 kampanjer, 16 adset, 26 annonser (25 bilder + 1 video), alla PAUSED och tillbakalästa** i **Magiborsten UK `1107817401910319`** (`annonser/konto.json`), prefix `BEAVERSTORE_WW_`, CBO, platshållarbudget 300 kr/dag som `--aktivera` vägrar tills Axel sagt en budget. Fem kampanjer (IBC, damasker, täljset, golfkalendern, värmesulorna) har bara videoannonser och står tomma tills videorna finns. Id:n: `node worldwide/annonser/bygg.mjs --lage` |
+| Marknaden | **Worldwide ACTIVE** i Shopify: 37 länder, bas USD, lokala valutor (18 i kassan), prislista +25 % (`Beaver Store Worldwide`), fraktzonen "Worldwide (free shipping)" 0 kr — länderna flyttade ur zonerna EU och Internationell, Sverige/NO/DK/FI orörda. Mätt: täckningen 1 129 kr i Sverige = 145 USD / 127,95 EUR / 109 GBP |
+| Domänen | **beaverstoreco.com kopplad till Worldwide** (egen webbnärvaro, standardspråk en + de/fr/es/it/nl/pl/pt-PT) — omdirigerar inte längre till baverbutiken.se. baverbutiken.se är fortfarande primär. ⚠️ Från containerns amerikanska IP skickar Shopifys geo-omdirigering nu baverbutiken.se → beaverstoreco.com; en svensk IP får Sverige (`kundvy.mjs --sverige` läser med `?country=SE`) |
+| Språken | **Åtta språk, 265 ✅ / 0 ❌ per språk** i `granska.mjs` (hela katalogen, kollektioner, sidor, policyer, menyer, temat). Engelskan skriven av sessionen + sonnet, de sju andra översatta från engelskan av sonnet-agenter mot `oversattning/REGLER-SPRAK.md`. Sidfotens länkar (Användarvillkor, Ångra köp …) och "Garanti för säker frakt"/"Blanda & Spara" lades till efter första kundkontrollen; berättelsen säger inte längre "(Bäverbutiken in Swedish)" |
+| Temat | **v3 i det publicerade temat `210420334941`** (13 filer, tillbakalästa; originalen i `tema/original/`). Världsläget: loggan Beaver Store, fri frakt till kundens land, "A Swedish brand", förtroendeband och recensionsband på kundens språk (`snippets/bw-t.liquid` ur `tema/sprak.json`, 25 nycklar × 8 språk), titeln Beaver Store. Svenska sidan kontrollerad orörd |
+| Kvar som bara går i appar | **Kaching Bundles** (paketväljaren) och **Judge.me** (recensionerna) visar svenska utomlands — `cowork/2-kaching-judgeme.txt`. Kaching visade bara svenska innan språken publicerades |
+| Bildannonser | 25 engelska bilder, alla PAUSED i kontot |
+| Videoannonser | ElevenLabs (Pro), rösten "CJ - Young Swedish Male", bandläget, `rostkoll.py` och **`annonser/textkoll.py` (OCR över HELA filmen)** som sista grind. 39 videor granskade. **Hoppade:** alla fem takskyddsvideor (klipp ur Specialised Covers video — samma sekvens som fällde KD-2026-001, ett nytt konto ska inte bära dem), fyra med kronor/butiksnamn/svensk checklista inbränt (`Batmotor_SP_1_H5`, `Batmotor_CS_5_H1`, `Taljset_PD_1_H4`) och `Seatcover_PD_1_3_H1` (röstkollen; kopian används). `Batmotor_UG_1_H1` och `Batmotor_FM_1_H1` fick en stillbild av produkten i stället för den svenska slutbilden (BÄVERBUTIKEN, 579 kr) |
+| Meta | 16 kampanjer i **Magiborsten UK `1107817401910319`**, prefix `BEAVERSTORE_WW_`, **1 000 kr/dag per kampanj**, allt PAUSED. Sidan `1305042582683792` heter Beaver Store (Cowork 2026-09-30; Facebook kan granska namnet i upp till 3 dagar). Id:n: `node worldwide/annonser/bygg.mjs --lage` |
 
 ## Beslut sessionen fattade (ändra i konfigen om de är fel)
 
@@ -35,7 +36,8 @@ Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
 - **Budgeten: 1 000 kr/dag per kampanj** (Axels svar 2026-09-30, tolkat per kampanj som
   Matstrumpor utomlands) — satt och tillbakaläst på alla 16 med `annonser/budget.mjs`, alla PAUSED.
   Aktivering kräver ändå Axels ord efter granskning.
-- **Videorna:** Axel uppgraderar ElevenLabs, sedan `node worldwide/annonser/video.mjs --skarpt`.
+- **Videorna:** ElevenLabs uppgraderat av Axel; renderade med `node worldwide/annonser/video.mjs --skarpt --del k/n`.
+- **Språken utöver engelska: de, fr, es, it, nl, pl, pt-PT** (Axels "allt språk … till alla marknader", sessionens val av språk efter länderna i marknaden).
 - **Facebook-sidan döps om till Beaver Store** (Axels svar, Cowork steg 6).
 - **Frakten: en zon "Worldwide (free shipping)", 0 kr, "5–10 business days"** — samma löfte som
   i Sverige. Länderna flyttas ur sina gamla zoner.

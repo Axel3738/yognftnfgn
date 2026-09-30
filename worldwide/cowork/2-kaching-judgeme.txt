@@ -1,0 +1,123 @@
+Jag säljer Bäverbutikens produkter i hela världen som Beaver Store på beaverstoreco.com,
+från SAMMA Shopify-butik som baverbutiken.se. Sajten är klar på åtta språk: engelska,
+tyska, franska, spanska, italienska, nederländska, polska och portugisiska. Två appar
+visar fortfarande svenska för kunderna utomlands: Kaching Bundles (paketväljaren på
+produktsidan) och Judge.me (recensionerna). Du ska lägga in språken i båda, i Chrome
+med mitt inloggade konto. Fråga mig om inloggning när du behöver den. Datorn är en
+Windows-dator.
+
+⛔ DET HÄR RÖR DU ALDRIG
+- Loopia, DNS, namnservrar, MX-poster, domäner. Butikens primära domän är
+  baverbutiken.se och ska förbli det.
+- Marknader, språk, valutor, priser, frakt, betalsätt, Shopify Payments, skatter.
+  Allt det är redan byggt och kontrollerat.
+- Kachings erbjudanden i sig: inga nya erbjudanden, inga rabatter, inga priser,
+  ingen aktivering eller avstängning. Du lägger bara till ÖVERSÄTTNINGAR.
+- Den svenska texten i någon app. Svenskan står kvar som den är.
+- Judge.me: inga recensioner raderas, döljs, redigeras eller importeras. Inga
+  recensionsförfrågningar slås på (de är AV med flit sedan 2026-09-28).
+- Andra appar, temat, Meta, annonser.
+- Ingenting köps. Inget abonnemang uppgraderas. Kräver något en betald plan: STOPPA
+  det steget och skriv vad det kostar.
+
+------------------------------------------------------------------------------
+BUTIKEN
+------------------------------------------------------------------------------
+
+Admin:   https://admin.shopify.com/store/4snrw0-mg
+Språken som är publicerade i Shopify (mätt av sessionen): sv (huvudspråk), en, de,
+fr, es, it, nl, pl, pt-PT.
+
+------------------------------------------------------------------------------
+STEG 1 — Kaching Bundles: översättningar på åtta språk
+------------------------------------------------------------------------------
+
+Förra gången (2026-09-30 förmiddag) visade Kaching → Översättningar bara "SV -
+Swedish", för inga andra språk var publicerade i Shopify än. Nu är de det.
+
+1. Admin → Appar → Kaching Bundles → Översättningar (adressen slutar på
+   /apps/bundle-deals/app/translations/sv).
+2. Öppna språkväljaren. Skriv i rapporten exakt vilka språk den visar nu.
+3. För VARJE språk nedan som finns i väljaren: välj språket och fyll i texterna.
+   Sektionen "Allmänt" har engelska originaltexter (t.ex. "FREE") — skriv
+   översättningen i fältet för språket. Scrolla hela sidan: kan du inte scrolla i
+   appens ram, zooma ut (Ctrl + minus) eller klicka i ramen och tryck End.
+4. Erbjudandenas egna texter (1 st, 2 st, Mest populär …): leta efter dem längre
+   ner på översättningssidan eller i varje erbjudande under en flik för språk.
+
+   | Svenska (står kvar)                      | en                                         | de                                              | fr                                                  |
+   |------------------------------------------|--------------------------------------------|-------------------------------------------------|-----------------------------------------------------|
+   | 14 Dagars Ångerrätt & Svensk kundsupport | 14-day returns · Swedish customer support  | 14 Tage Rückgaberecht · Schwedischer Kundenservice | 14 jours pour changer d’avis · Service client suédois |
+   | 1 st                                     | 1 pack                                     | 1 Stück                                         | 1 pièce                                             |
+   | 2 st                                     | 2 pack                                     | 2 Stück                                         | 2 pièces                                            |
+   | 3 st                                     | 3 pack                                     | 3 Stück                                         | 3 pièces                                            |
+   | Standard pris                            | Standard price                             | Normalpreis                                     | Prix standard                                       |
+   | Mest populär                             | Most popular                               | Am beliebtesten                                 | Le plus populaire                                   |
+   | Spara                                    | Save                                       | Sparen Sie                                      | Économisez                                          |
+   | GRATIS / Gratis                          | FREE / Free                                | GRATIS / Gratis                                 | GRATUIT / Gratuit                                   |
+
+   | Svenska (står kvar)                      | es                                         | it                                     | nl                               | pl                                        | pt-PT                                     |
+   |------------------------------------------|--------------------------------------------|----------------------------------------|----------------------------------|-------------------------------------------|-------------------------------------------|
+   | 14 Dagars Ångerrätt & Svensk kundsupport | 14 días para cambiar de opinión · Atención al cliente sueca | 14 giorni per cambiare idea · Assistenza clienti svedese | 14 dagen bedenktijd · Zweedse klantenservice | 14 dni na zmianę decyzji · Szwedzka obsługa klienta | 14 dias para mudar de ideia · Apoio ao cliente sueco |
+   | 1 st                                     | 1 unidad                                   | 1 pezzo                                | 1 stuk                           | 1 szt.                                    | 1 unidade                                 |
+   | 2 st                                     | 2 unidades                                 | 2 pezzi                                | 2 stuks                          | 2 szt.                                    | 2 unidades                                |
+   | 3 st                                     | 3 unidades                                 | 3 pezzi                                | 3 stuks                          | 3 szt.                                    | 3 unidades                                |
+   | Standard pris                            | Precio estándar                            | Prezzo standard                        | Standaardprijs                   | Cena standardowa                          | Preço normal                              |
+   | Mest populär                             | El más popular                             | Il più popolare                        | Meest gekozen                    | Najpopularniejszy                         | Mais popular                              |
+   | Spara                                    | Ahorra                                     | Risparmia                              | Bespaar                          | Oszczędzasz                               | Poupe                                     |
+   | GRATIS / Gratis                          | GRATIS / Gratis                            | GRATIS / Gratis                        | GRATIS / Gratis                  | GRATIS / Gratis                           | GRÁTIS / Grátis                           |
+
+   Andra svenska texter du hittar: översätt kort och rakt, ALDRIG med ett pris i
+   kronor och aldrig med ordet Bäverbutiken, och skriv dem i rapporten.
+5. Spara efter varje språk.
+6. Visar väljaren fortfarande bara svenska: gör ingenting mer i Kaching. Leta i
+   appens inställningar efter "Languages" / "Språk" / "Multi-language" och skriv
+   exakt vad som står där (även om det kräver en betald plan — köp inget).
+
+------------------------------------------------------------------------------
+STEG 2 — Judge.me: recensionerna på kundens språk
+------------------------------------------------------------------------------
+
+Kunder utomlands ser i dag svenska recensioner och svensk text runt dem ("10
+recensioner", "Drivs av Judge.me").
+
+1. Admin → Appar → Judge.me Product Reviews.
+2. Leta upp inställningen för språk/översättning: "Settings" → "Languages" eller
+   "Translations", eller "Multi-language" / "Auto-translate reviews". Läs appens
+   hjälptext om den finns.
+3. Slå på att widgetens texter (knappar, "reviews", "Verified" osv.) följer
+   butikens språk, för alla språk som finns: en, de, fr, es, it, nl, pl, pt-PT.
+   Svenskan ändras inte.
+4. Finns automatisk översättning av själva recensionerna ("Translate reviews"):
+   slå på den för samma språk, om den ingår i den plan butiken HAR. Kostar den
+   extra: slå inte på den, skriv priset i rapporten.
+5. Spara. Skriv i rapporten exakt vilka inställningar du ändrade, med de namn
+   appen använder.
+
+------------------------------------------------------------------------------
+KONTROLLERA SOM KUND
+------------------------------------------------------------------------------
+
+Öppna i ett nytt fönster (inkognito om det går):
+
+1. https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan?country=SE
+   — ska vara SVENSKA, paketväljaren på svenska, recensionerna som förut.
+2. https://beaverstoreco.com/de/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan?country=DE
+   — ska vara tyska: paketväljaren (1 Stück …) och recensionsrutan.
+3. https://beaverstoreco.com/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan?country=US
+   — ska vara engelska.
+
+Om adresserna i punkt 1–3 inte öppnar produkten: gå till startsidan på samma
+adress och klicka på första produkten.
+
+Skriv för varje: vilket språk paketväljaren visar, vilket språk recensionsrutans
+knappar och rubrik visar, och om någon svensk text syns. Lägg ingenting i
+varukorgen.
+
+------------------------------------------------------------------------------
+RAPPORTEN
+------------------------------------------------------------------------------
+
+Kort, i punktform: vad du ändrade (app, språk, fält), vad som inte gick och
+varför, och de tre kundkontrollerna. Skriv aldrig in lösenord, tokens eller
+nycklar i rapporten.

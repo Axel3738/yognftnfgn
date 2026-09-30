@@ -1155,22 +1155,24 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   `1554276343018184`) — köpen är Bäverbutikens. En ny marknad **Worldwide** (37 länder i
   `worldwide/konfig.json`, USD bas + lokala valutor, fri frakt 5–10 arbetsdagar). ⛔ NO, DK
   och FI har egna Bäverbutiker och ligger aldrig i Worldwide (testat); Sverige rörs aldrig.
-- **Temat är patchat i det publicerade temat** med ett världsläge (`worldwide/tema/patch.mjs`,
-  `snippets/bw-lage.liquid`) som bara tar på engelska eller på beaverstoreco.com: loggan
-  Beaver Store, "A Swedish brand", fri frakt till kundens land (bara i marknaden worldwide).
-  Den svenska sidan mätt ordagrant oförändrad. En ny temaversion ⇒ kör patchen igen.
-- **Shopify-stegen (marknad, språk, frakt, översättningar, domän) väntar på appens
-  rättigheter** — "Bäver uppladdare" saknade markets/translations/locales/shipping 2026-09-30;
-  `worldwide/cowork/1-app-och-doman.txt` lägger till dem, sedan `node worldwide/bygg.mjs --alla --skarpt`
-  och `node worldwide/kundvy.mjs`.
+- **Temat är patchat i det publicerade temat** med ett världsläge (`worldwide/tema/patch.mjs` v3,
+  `snippets/bw-lage.liquid` + `bw-t.liquid` ur `tema/sprak.json`) som bara tar på andra språk än
+  svenska eller på beaverstoreco.com: loggan Beaver Store, "A Swedish brand", fri frakt till kundens
+  land, förtroende- och recensionsband på kundens språk. Svenska sidan mätt orörd. Ny temaversion ⇒
+  kör patchen igen (`--tema <id> --skarpt`).
+- ✅ **Live i Shopify sedan 2026-09-30 eftermiddag** (efter Coworks rättigheter): marknaden
+  Worldwide ACTIVE, **åtta språk** (en, de, fr, es, it, nl, pl, pt-PT — 265 ✅ per språk i
+  `oversattning/granska.mjs`), prislista +25 %, fraktzonen 0 kr, **beaverstoreco.com kopplad till
+  Worldwide** (baverbutiken.se fortfarande primär). ⚠️ Från containerns amerikanska IP
+  geo-omdirigeras baverbutiken.se nu till beaverstoreco.com — läs svenska sidor med `?country=SE`.
+  Kvar: Kaching Bundles och Judge.me på språken (`worldwide/cowork/2-kaching-judgeme.txt`).
 - **Annonserna ligger i Magiborsten UK `1107817401910319`** med prefixet `BEAVERSTORE_WW_`,
-  en CBO per produkt — **16 kampanjer och 26 annonser PAUSED sedan 2026-09-30** (tillbakalästa),
-  platshållarbudget som `--aktivera` vägrar tills Axel sagt en budget. Sidan BeaverShop `1305042582683792`. Taköverdraget och termoskyddet visas inte i
-  CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`,
-  aldrig bildmodellen); videorna har engelska manus men renderas med ElevenLabs först när
-  kvoten räcker (`annonser/video.mjs` vägrar annars — `/translate-no` delar kontot).
-
----
+  en CBO per produkt, **16 kampanjer à 1 000 kr/dag (Axels budget), allt PAUSED** — inget aktiveras
+  förrän Axel granskat. Sidan `1305042582683792` heter Beaver Store. Taköverdraget och termoskyddet
+  visas inte i CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`),
+  videorna dubbade med ElevenLabs och kontrollerade med `annonser/textkoll.py` (OCR över hela
+  filmen: svenska, kronor, butiksnamn). ⛔ **Takskyddsvideorna med Specialised Covers klipp laddas
+  aldrig upp här** (samma sekvens som fällde KD-2026-001) — `media.json` → `hoppa`.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)
 
