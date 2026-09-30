@@ -88,12 +88,18 @@ API key → GENERATE KEY). Tre saker i koden som styr allt:
 - **Knappen kräver betald plan.** På Free öppnar den "Uppgradera butiken: Den här funktionen
   kräver en betald plan." Planerna 2026-09-30 (whoami): **Bäverbutiken Paid, Matstrumpor Paid**
   (9 104 mejl i september, obegränsat), **CaraShell Free** (410 av 5 000). CaraShell får alltså
-  ingen nyckel utan en uppgradering, och den är Axels pengabeslut. `api-konfig.json` →
-  `anteckning` gör att `kolla` säger just det.
+  ingen nyckel utan en uppgradering. `api-konfig.json` → `anteckning` gör att `kolla` säger
+  just det.
+- ⛔ **Nyckeln ska vara för CaraShell** (Axels besked 2026-09-30 kväll, efter att sessionen
+  tagit bort CaraShell ur Cowork-prompten: "Det ska vara för Carashell"). Hela CLI:n byggdes för
+  CaraShell, så Bäverbutikens och Matstrumpors nycklar är inte det som saknas. Vägen: Axel
+  uppgraderar CaraShell själv med knappen **UPPGRADERA NU** i rutan "Uppgradera butiken"
+  (spoks.com/pricing, läst samma kväll: 35 dollar i månaden), och sedan skapas nyckeln. Cowork
+  uppgraderar aldrig, och prompten stannar vid rutan.
 - **Cowork såg en vit sida** 2026-09-30 ~23:23: appen är Flutter och ritar allt som en bild, så
   en läsare av sidans text ser bara Intercom-knappen. Prompten
-  `klaviyo/spoks/cowork/2-api-nycklar.txt` säger nu åt Cowork att läsa med skärmdumpar och att
-  aldrig klicka på ögat eller kopiera-ikonen: det gör Axel själv.
+  `klaviyo/spoks/cowork/2-api-nycklar.txt` gäller bara CaraShell, säger åt Cowork att läsa med
+  skärmdumpar och att aldrig klicka på ögat eller kopiera-ikonen: det gör Axel själv.
 
 **Arbetsdelningen:** innehållet (produktkort, kuponger, flöden) → Spoks-connectorn;
 publik, ämnesrad och läsning → `spoks-api`; schemaläggning och att slå på flöden → appen.
