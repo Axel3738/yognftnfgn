@@ -7,8 +7,9 @@
 #   bash matstrumpor/varva/deploy.sh [--torr]
 #
 # Kräver i Environments på claude.ai (syns i en redan körande session):
-#   • TACKSIDA_CLIENT_ID_MATSTRUMPOR — appen "Matstrumpor Tacksida" (inga scopes),
-#     skapad av matstrumpor/varva/cowork/1-tacksidan.txt.
+#   • Appens Client ID — konfig.json → app_client_id ("Matstrumpor Tacksida", inga
+#     scopes, skapad av cowork/1-tacksidan.txt). TACKSIDA_CLIENT_ID_MATSTRUMPOR i
+#     miljön vinner om den finns.
 #   • SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR — Dev Dashboard → appen → Settings →
 #     App Automation Token (per app, därför per butik).
 #
@@ -31,8 +32,12 @@ HAR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 APP="$HAR/app"
 ROT="$(cd "$HAR/../.." && pwd)"
 
+# Client ID är ingen hemlighet: miljön vinner, annars konfig.json → app_client_id.
 if [[ -z "${TACKSIDA_CLIENT_ID_MATSTRUMPOR:-}" ]]; then
-  echo "STOPP: TACKSIDA_CLIENT_ID_MATSTRUMPOR saknas i miljön (matstrumpor/varva/cowork/1-tacksidan.txt, steg 1–4)." >&2
+  TACKSIDA_CLIENT_ID_MATSTRUMPOR="$(node -e "process.stdout.write(require('$HAR/konfig.json').app_client_id || '')")"
+fi
+if [[ -z "${TACKSIDA_CLIENT_ID_MATSTRUMPOR:-}" ]]; then
+  echo "STOPP: appens Client ID saknas (TACKSIDA_CLIENT_ID_MATSTRUMPOR eller konfig.json → app_client_id)." >&2
   exit 2
 fi
 if [[ -z "${SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR:-}" ]]; then
