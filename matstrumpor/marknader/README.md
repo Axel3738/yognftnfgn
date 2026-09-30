@@ -819,6 +819,11 @@ i `annonser/marknader.json`). Sida `1285064981363590` "Matstrumpor" och Instagra
   står ACTIVE och länkar till sushisock.com (den gamla engelska butiken, sidan `1229557150250240`). Ett
   klick "slå på allt" på kampanjnivå startar alltså 3 000 kr/dag till en annan butik, i länder som US och
   WW redan bär. Rör dem aldrig härifrån. Arkiveringen är Axels klick i Ads Manager.
+- ⚠️ **Flerlandskampanjernas länkar saknar `?country=`** (DE, FR, WW: ett adset bär flera länder). Från
+  containern (amerikansk IP) svarar `/de/…` utan land med 429/engelska, med `?country=DE` tyska och
+  `localization=DE` (mätt 2026-09-30 kväll, granskningen G-D02, sänkt till 🔵 vid dess andra prövning).
+  Shopifys marknad Europa bär `de` och `fr` på matstrumpor.com, så en tysk IP bör stanna på tyska — men
+  det går inte att mäta härifrån. Pröva länken via en tysk/fransk VPN innan DE/FR slås på.
 - ⚠️ **Australien kräver verifierad annonsör och betalare** (granskningen G-A01, `issues_info` på
   WW-adsetet `120251749614670023`: SOFT_ERROR 3858810). Samma sorts krav som Taiwan. Om Meta då stoppar
   bara AU eller hela adsetet går inte att läsa ur API:t, och det prövas aldrig genom att slå på.

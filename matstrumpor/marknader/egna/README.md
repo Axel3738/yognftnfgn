@@ -266,18 +266,22 @@ bygger därför om hela videon (samma frö 29 ger nästan samma tagning som för
 som `dubba.mjs` (frö 29):**
 
 - **Danska → den infödda rösten Freja** (`RÖSTER.DK`, ElevenLabs röstbibliotek, eleven_multilingual_v2).
-  Granskningen (G-B02) hörde "sokker" som "sukker" sex av sex i 007. Whisper medium kan inte döma
-  det: den hörde "sukker" från klonen OCH från fyra infödda röster. Whisper large-v3 hörde klonen säga
+  Granskningen (G-B02) hörde "sokker" som "sukker" sex av sex i 007; dess andra prövning strök fyndet,
+  eftersom Whisper medium hör "sukker" även i referenserna. Det stämmer: medium hörde "sukker" från
+  klonen OCH från fyra infödda röster. Bytet gjordes ändå, på large-v3-mätningen: Whisper large-v3 hörde klonen säga
   det svenska "socker", Freja "sokker" i fyra av fem repliker (i "…det er sokker" hör large-v3 "sukker"
   från alla röster — språkmodellen gissar på den vanliga frasen). `seglyssna.py --modell large-v3` för danska.
   Stavningsknep hjälpte inte: "såkker" gav "sukker", "sakker" gav "Saga".
 - **Norska behåller klonen** (eleven_turbo_v2_5): i provet hördes "sokker" rätt, och i nya 007 går
   slutpoängen fram ("Ser ut som sushi, men er sokker. Sushisokker."). En replik av fem hörs "sukker".
 - **Japanska 007 (s001h1) → den infödda rösten Kyoko** (`RÖSTER['JP/s001h1']`, per video). Granskningen
-  (G-B01) hörde 靴下 som "kusushita" tre gånger. Katakana クツシタ i `las` hjälpte inte (fortfarande
+  (G-B01) hörde 靴下 som "kusushita" tre gånger (sänkt till 🔵 vid dess andra prövning: en av två repliker
+  utan ledtråd). Katakana クツシタ i `las` hjälpte inte (fortfarande
   くすした), och デス/バメン gjorde det sämre ("ディエス"). Kyoko läser kanji fel (靴下 → がっか) men
   hiragana rätt i 3 av 4 produktrepliker, klonen i 1 av 3. Poängraden säger nu ソックス, som båda
   rösterna uttalar rätt varje gång. haikuh3 och haikuh2 behåller klonen (0,89 replik för replik).
 - **USA/UK 007:** "I started this brand out of pure frustration." är borta (granskningen G-C-en-01:
-  en AI-person påstår att hon grundat varumärket, FTC 16 CFR 465 / CPRs). Ny replik av sonnet: "I keep
+  en AI-person påstår att hon grundat varumärket, FTC 16 CFR 465 / CPRs; andra prövningen gjorde det
+  till en fråga till Axel, eftersom samma rad går i Sverige — sessionen valde den försiktiga vägen i
+  USA/UK, där regeln är uttrycklig, och annonsen är PAUSED). Ny replik av sonnet: "I keep
   giving everyone the same candle." Övriga språk bär grundarraden som den svenska originalet.

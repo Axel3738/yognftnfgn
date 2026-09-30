@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-30T13:02:41.927Z",
+ "skrivet": "2026-09-30T19:40:36.176Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -16,6 +16,18 @@
     "namn": "MATSTRUMP_NO_ugc"
    },
    "annonser": [
+    {
+     "id": "120251774085920023",
+     "name": "MATSTRUMP_NO_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251766972450023",
+     "name": "MATSTRUMP_NO_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
     {
      "id": "120251766982410023",
      "name": "MATSTRUMP_NO_sushi_jul_ugc_003_v1",
@@ -47,22 +59,10 @@
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251774085920023",
-     "name": "MATSTRUMP_NO_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
      "id": "120251777219140023",
      "name": "MATSTRUMP_NO_sushi_gift_ugc_005_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251766972450023",
-     "name": "MATSTRUMP_NO_sushi_gift_ugc_002_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -145,6 +145,24 @@
    },
    "annonser": [
     {
+     "id": "120251773838480023",
+     "name": "MATSTRUMP_DK_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767925650023",
+     "name": "MATSTRUMP_DK_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251767922010023",
+     "name": "MATSTRUMP_DK_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
      "id": "120251767917830023",
      "name": "MATSTRUMP_DK_sushi_gift_ugc_001_v1",
      "status": "PAUSED",
@@ -173,24 +191,6 @@
      "name": "MATSTRUMP_DK_sushi_offer_static_008_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251773838480023",
-     "name": "MATSTRUMP_DK_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251767925650023",
-     "name": "MATSTRUMP_DK_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251767922010023",
-     "name": "MATSTRUMP_DK_sushi_gift_ugc_002_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -209,26 +209,32 @@
    },
    "annonser": [
     {
+     "id": "120251779447420023",
+     "name": "MATSTRUMP_FI_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251774095290023",
+     "name": "MATSTRUMP_FI_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767833370023",
+     "name": "MATSTRUMP_FI_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
      "id": "120251767836390023",
      "name": "MATSTRUMP_FI_sushi_jul_ugc_003_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251779447420023",
-     "name": "MATSTRUMP_FI_sushi_offer_static_008_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
      "id": "120251777313530023",
      "name": "MATSTRUMP_FI_sushi_gift_ugc_007_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251774095290023",
-     "name": "MATSTRUMP_FI_sushi_gift_anim_004_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
@@ -249,12 +255,6 @@
      "name": "MATSTRUMP_FI_sushi_gift_ugc_005_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251767833370023",
-     "name": "MATSTRUMP_FI_sushi_gift_ugc_002_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -275,6 +275,18 @@
     {
      "id": "120251773869430023",
      "name": "MATSTRUMP_US_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251777320540023",
+     "name": "MATSTRUMP_US_sushi_gift_ugc_005_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251777326060023",
+     "name": "MATSTRUMP_US_sushi_gift_ugc_006_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
@@ -307,18 +319,6 @@
      "name": "MATSTRUMP_US_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251777326060023",
-     "name": "MATSTRUMP_US_sushi_gift_ugc_006_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251777320540023",
-     "name": "MATSTRUMP_US_sushi_gift_ugc_005_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -337,14 +337,20 @@
    },
    "annonser": [
     {
-     "id": "120251773122350023",
-     "name": "MATSTRUMP_WW_sushi_gift_ugc_002_v1",
+     "id": "120251773875250023",
+     "name": "MATSTRUMP_WW_sushi_gift_anim_004_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251773875250023",
-     "name": "MATSTRUMP_WW_sushi_gift_anim_004_v1",
+     "id": "120251779480740023",
+     "name": "MATSTRUMP_WW_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251773122350023",
+     "name": "MATSTRUMP_WW_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
@@ -363,12 +369,6 @@
     {
      "id": "120251773126030023",
      "name": "MATSTRUMP_WW_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251779480740023",
-     "name": "MATSTRUMP_WW_sushi_offer_static_008_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
@@ -401,6 +401,24 @@
    },
    "annonser": [
     {
+     "id": "120251779483200023",
+     "name": "MATSTRUMP_DE_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773827160023",
+     "name": "MATSTRUMP_DE_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767714620023",
+     "name": "MATSTRUMP_DE_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
      "id": "120251777208060023",
      "name": "MATSTRUMP_DE_sushi_gift_ugc_007_v1",
      "status": "PAUSED",
@@ -419,12 +437,6 @@
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251773827160023",
-     "name": "MATSTRUMP_DE_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
      "id": "120251777200300023",
      "name": "MATSTRUMP_DE_sushi_gift_ugc_005_v1",
      "status": "PAUSED",
@@ -435,18 +447,6 @@
      "name": "MATSTRUMP_DE_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251779483200023",
-     "name": "MATSTRUMP_DE_sushi_offer_static_008_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251767714620023",
-     "name": "MATSTRUMP_DE_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -464,6 +464,12 @@
     "namn": "MATSTRUMP_FR_ugc"
    },
    "annonser": [
+    {
+     "id": "120251774200960023",
+     "name": "MATSTRUMP_FR_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
     {
      "id": "120251767752770023",
      "name": "MATSTRUMP_FR_sushi_jul_ugc_003_v1",
@@ -501,12 +507,6 @@
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251774200960023",
-     "name": "MATSTRUMP_FR_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
      "id": "120251779487060023",
      "name": "MATSTRUMP_FR_sushi_offer_static_008_v1",
      "status": "PAUSED",
@@ -529,52 +529,52 @@
    },
    "annonser": [
     {
-     "id": "120251777702060023",
-     "name": "MATSTRUMP_NL_sushi_gift_ugc_007_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251779489330023",
-     "name": "MATSTRUMP_NL_sushi_offer_static_008_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251777695320023",
-     "name": "MATSTRUMP_NL_sushi_gift_ugc_006_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251777685840023",
-     "name": "MATSTRUMP_NL_sushi_gift_ugc_005_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
      "id": "120251773854830023",
      "name": "MATSTRUMP_NL_sushi_gift_anim_004_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251767094320023",
      "name": "MATSTRUMP_NL_sushi_jul_ugc_003_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251767088900023",
      "name": "MATSTRUMP_NL_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251777702060023",
+     "name": "MATSTRUMP_NL_sushi_gift_ugc_007_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251779489330023",
+     "name": "MATSTRUMP_NL_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251777695320023",
+     "name": "MATSTRUMP_NL_sushi_gift_ugc_006_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251767086320023",
      "name": "MATSTRUMP_NL_sushi_gift_ugc_001_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251777685840023",
+     "name": "MATSTRUMP_NL_sushi_gift_ugc_005_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     }
    ]
   },
@@ -592,6 +592,24 @@
     "namn": "MATSTRUMP_ES_ugc"
    },
    "annonser": [
+    {
+     "id": "120251773848300023",
+     "name": "MATSTRUMP_ES_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773395390023",
+     "name": "MATSTRUMP_ES_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251773397880023",
+     "name": "MATSTRUMP_ES_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
     {
      "id": "120251777873750023",
      "name": "MATSTRUMP_ES_sushi_gift_ugc_006_v1",
@@ -621,24 +639,6 @@
      "name": "MATSTRUMP_ES_sushi_gift_ugc_005_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251773848300023",
-     "name": "MATSTRUMP_ES_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251773397880023",
-     "name": "MATSTRUMP_ES_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251773395390023",
-     "name": "MATSTRUMP_ES_sushi_gift_ugc_002_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -657,6 +657,24 @@
    },
    "annonser": [
     {
+     "id": "120251779586620023",
+     "name": "MATSTRUMP_IT_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251774066780023",
+     "name": "MATSTRUMP_IT_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773115760023",
+     "name": "MATSTRUMP_IT_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
      "id": "120251773110070023",
      "name": "MATSTRUMP_IT_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
@@ -669,20 +687,8 @@
      "effective_status": "PAUSED"
     },
     {
-     "id": "120251779586620023",
-     "name": "MATSTRUMP_IT_sushi_offer_static_008_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
      "id": "120251779099030023",
      "name": "MATSTRUMP_IT_sushi_gift_ugc_007_v1",
-     "status": "PAUSED",
-     "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251774066780023",
-     "name": "MATSTRUMP_IT_sushi_gift_anim_004_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
     },
@@ -697,12 +703,6 @@
      "name": "MATSTRUMP_IT_sushi_gift_ugc_006_v1",
      "status": "PAUSED",
      "effective_status": "PAUSED"
-    },
-    {
-     "id": "120251773115760023",
-     "name": "MATSTRUMP_IT_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     }
    ]
   },
@@ -721,52 +721,52 @@
    },
    "annonser": [
     {
-     "id": "120251779590650023",
-     "name": "MATSTRUMP_PL_sushi_offer_static_008_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251778334920023",
-     "name": "MATSTRUMP_PL_sushi_gift_ugc_006_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
      "id": "120251773863230023",
      "name": "MATSTRUMP_PL_sushi_gift_anim_004_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251778322760023",
-     "name": "MATSTRUMP_PL_sushi_gift_ugc_005_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
-    },
-    {
-     "id": "120251778343860023",
-     "name": "MATSTRUMP_PL_sushi_gift_ugc_007_v1",
-     "status": "PAUSED",
      "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251767868150023",
-     "name": "MATSTRUMP_PL_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
     },
     {
      "id": "120251767864530023",
      "name": "MATSTRUMP_PL_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251778343860023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_007_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251779590650023",
+     "name": "MATSTRUMP_PL_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251767862200023",
      "name": "MATSTRUMP_PL_sushi_gift_ugc_001_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251778334920023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_006_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251778322760023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_005_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251767868150023",
+     "name": "MATSTRUMP_PL_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     }
    ]
   },
@@ -785,32 +785,14 @@
    },
    "annonser": [
     {
-     "id": "120251774073780023",
-     "name": "MATSTRUMP_PT_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
      "id": "120251779706040023",
      "name": "MATSTRUMP_PT_sushi_offer_static_008_v1",
      "status": "PAUSED",
      "effective_status": "IN_PROCESS"
     },
     {
-     "id": "120251778538670023",
-     "name": "MATSTRUMP_PT_sushi_gift_ugc_007_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251768008570023",
-     "name": "MATSTRUMP_PT_sushi_jul_ugc_003_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251778534510023",
-     "name": "MATSTRUMP_PT_sushi_gift_ugc_006_v1",
+     "id": "120251774073780023",
+     "name": "MATSTRUMP_PT_sushi_gift_anim_004_v1",
      "status": "PAUSED",
      "effective_status": "IN_PROCESS"
     },
@@ -818,19 +800,37 @@
      "id": "120251768003540023",
      "name": "MATSTRUMP_PT_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251778538670023",
+     "name": "MATSTRUMP_PT_sushi_gift_ugc_007_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251778534510023",
+     "name": "MATSTRUMP_PT_sushi_gift_ugc_006_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251778419300023",
      "name": "MATSTRUMP_PT_sushi_gift_ugc_005_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251768008570023",
+     "name": "MATSTRUMP_PT_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251767996050023",
      "name": "MATSTRUMP_PT_sushi_gift_ugc_001_v1",
      "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
     }
    ]
   },
@@ -849,52 +849,52 @@
    },
    "annonser": [
     {
-     "id": "120251797953480023",
-     "name": "MATSTRUMP_JP_sushi_offer_static_008_v1",
+     "id": "120251797915760023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_001_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251797952860023",
      "name": "MATSTRUMP_JP_sushi_gift_ugc_007_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251797940940023",
-     "name": "MATSTRUMP_JP_sushi_gift_ugc_005_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251797933610023",
-     "name": "MATSTRUMP_JP_sushi_gift_anim_004_v1",
-     "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251797945730023",
      "name": "MATSTRUMP_JP_sushi_gift_ugc_006_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251797940940023",
+     "name": "MATSTRUMP_JP_sushi_gift_ugc_005_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251797953480023",
+     "name": "MATSTRUMP_JP_sushi_offer_static_008_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251797926190023",
      "name": "MATSTRUMP_JP_sushi_jul_ugc_003_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251797933610023",
+     "name": "MATSTRUMP_JP_sushi_gift_anim_004_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
     },
     {
      "id": "120251797919120023",
      "name": "MATSTRUMP_JP_sushi_gift_ugc_002_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
-    },
-    {
-     "id": "120251797915760023",
-     "name": "MATSTRUMP_JP_sushi_gift_ugc_001_v1",
-     "status": "PAUSED",
-     "effective_status": "PENDING_REVIEW"
+     "effective_status": "PAUSED"
     }
    ]
   },
@@ -908,8 +908,7 @@
     "daily_budget": "100000"
    },
    "adset": null,
-   "annonser": [],
-   "stopp": "verifierad annonsör saknas"
+   "annonser": []
   }
  ]
 }
