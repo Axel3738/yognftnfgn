@@ -31,10 +31,17 @@ import json, os, re, subprocess, sys
 B = os.path.dirname(os.path.abspath(__file__))
 TIDER = json.load(open(f'{B}/matt/slutkort-tider.json', encoding='utf-8'))['videor']
 
-# Uppmätta rutor i en 720x1280-ruta. Marginal: pillret och slutkortstexten
-# har mjuka kanter och skugga, så rutorna tas några px utanför bläcket.
-BLUR_RAD1 = [240, 200, 482, 292]    # "869 kr"            (bläck x 253..467, y 212..277)
-BLUR_RAD2 = [58, 292, 664, 374]     # "ordinarie 1 139 kr" (bläck x  72..651, y 300..361)
+# ⚠️ Slutkortstexten ligger också på OLIKA höjd i olika videor — samma fälla som
+# pillret. Mätt 2026-09-30 i en ruta mitt i slutkortsfönstret per video:
+# SP_4_H1 rad 1 y 212..275 och rad 2 y 299..366, men GT_4_H1 ligger ~20 px lägre
+# (rad 2 slutar y 385). Första versionen hade två rutor som slutade vid y 374,
+# och då gick det att LÄSA "ordinarie 1 139 kr" under den norska texten i
+# GT_4_H1 — fångat i QA, inte av något skript.
+#
+# Därför EN ruta som spänner hela det uppmätta intervallet i båda led:
+# rad 1 börjar tidigast y 212, rad 2 slutar senast y 385, texten är som bredast
+# x 72..679. Marginal för skuggan och de mjuka kanterna.
+BLUR_PRIS = [46, 196, 692, 398]
 
 # ⚠️ Pillret ligger på OLIKA höjd i olika videor — mätt 2026-09-30 i sex rutor per
 # källa: PD_1_H4 y 786..852, GT_4_H1 807..871, OB_1_H1 821..887, PD_1_H5 826..894,
@@ -97,10 +104,7 @@ def main():
             # två elementen krockar ändå aldrig — slutkortet ligger y 212..378,
             # pillret y 786..917.
             'captions': dict(CAPTIONS),
-            'blur': [
-                {'rect': BLUR_RAD1, 't': [fran, till]},
-                {'rect': BLUR_RAD2, 't': [fran, till]},
-            ],
+            'blur': [{'rect': BLUR_PRIS, 't': [fran, till]}],
             'lager': [{'png': f'{B}/lager/slutkort-no.png', 't': [fran, till]}],
             'qa': f'{B}/qa',
         }
