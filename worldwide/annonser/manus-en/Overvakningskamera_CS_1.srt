@@ -1,0 +1,47 @@
+1
+00:00:00,000 --> 00:00:02,000
+Sale price, today only.
+
+2
+00:00:02,000 --> 00:00:02,840
+Then it's gone.
+
+3
+00:00:02,840 --> 00:00:05,080
+Right now, on sale.
+
+4
+00:00:05,080 --> 00:00:06,960
+Save big while it lasts.
+
+5
+00:00:06,960 --> 00:00:08,800
+Dual lens, with auto tracking.
+
+6
+00:00:08,800 --> 00:00:10,680
+Three fifty-five degree view.
+
+7
+00:00:10,680 --> 00:00:13,440
+Stock is limited, and the sale ends soon.
+
+8
+00:00:13,440 --> 00:00:15,240
+Order today.
+
+9
+00:00:15,240 --> 00:00:16,760
+Watch your home tonight.
+
+10
+00:00:16,760 --> 00:00:18,520
+Free shipping.
+
+11
+00:00:18,520 --> 00:00:21,240
+Fourteen-day returns if you're not happy.
+
+12
+00:00:21,240 --> 00:00:23,520
+Don't miss the sale, order before it's gone.

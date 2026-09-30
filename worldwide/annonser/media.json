@@ -1303,5 +1303,16 @@
  },
  "Batmotor_SP_1_H15": {
   "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Batmotor_SP_1_H15.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för"
+ },
+ "Takoverdrag_RI_3_H1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4",
+  "sha256": "f307aba892c769c542e1fe8bc8c0186faed062992592514e630e938d95eadabf",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-3.png"
+  ]
  }
 }
