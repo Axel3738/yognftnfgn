@@ -1164,8 +1164,8 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   `worldwide/cowork/1-app-och-doman.txt` lägger till dem, sedan `node worldwide/bygg.mjs --alla --skarpt`
   och `node worldwide/kundvy.mjs`.
 - **Annonserna ligger i Magiborsten UK `1107817401910319`** med prefixet `BEAVERSTORE_WW_`,
-  en CBO per produkt, allt PAUSED, platshållarbudget som `--aktivera` vägrar tills Axel sagt en
-  budget. Sidan BeaverShop `1305042582683792`. Taköverdraget och termoskyddet visas inte i
+  en CBO per produkt — **16 kampanjer och 26 annonser PAUSED sedan 2026-09-30** (tillbakalästa),
+  platshållarbudget som `--aktivera` vägrar tills Axel sagt en budget. Sidan BeaverShop `1305042582683792`. Taköverdraget och termoskyddet visas inte i
   CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`,
   aldrig bildmodellen); videorna har engelska manus men renderas med ElevenLabs först när
   kvoten räcker (`annonser/video.mjs` vägrar annars — `/translate-no` delar kontot).

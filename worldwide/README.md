@@ -20,8 +20,8 @@ Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
 | Domänen | beaverstoreco.com registrerad 2026-09-30 05:38 UTC hos Loopia, DNS pekar redan på Shopify (A 23.227.38.65, www → shops.myshopify.com), **kopplad i Bäverbutikens Shopify** (API: `shop.domains`). Certifikatet var inte utfärdat ~07:00 UTC (crt.sh 0 certifikat, TLS-handskakningen fel) — Shopify utfärdar själv |
 | Shopify: marknad, språk, frakt, översättningar | ⛔ **Väntar på appens rättigheter.** "Bäver uppladdare" (`SHOPIFY_*_SE`) saknar markets/translations/locales/shipping — `cowork/1-app-och-doman.txt` lägger till dem. Sedan: `node worldwide/bygg.mjs --alla --skarpt` |
 | Bildannonser | 25 engelska bilder i `annonser/klar/` (OCR-mätta, suddade, omritade med `bildrita.mjs` + `zonrita.py`, tittade på av sessionen), 7 hoppade (fars dag, "verifierad kund"-citat, text som inte går att flytta) |
-| Videoannonser | Svenska transkript (Whisper lokalt) i `annonser/transkript/`, engelska manus i `annonser/manus-en/` (sonnet mot `REGLER-VIDEO.md`, samma cues och tider). **Inte renderade:** ElevenLabs har ~11 000 tecken kvar till 23 okt (Creator), och alla videor behöver ~22 000; `/translate-no` drar varje natt från samma konto |
-| Meta | Kampanjer per produkt i **Magiborsten UK `1107817401910319`** (`annonser/konto.json`), prefix `BEAVERSTORE_WW_`, CBO, ett adset per produkt, allt **PAUSED**, platshållarbudget 300 kr/dag som `--aktivera` vägrar tills Axel sagt en budget |
+| Videoannonser | Svenska transkript (Whisper lokalt) i `annonser/transkript/`, engelska manus för 47 videor i `annonser/manus-en/` (sonnet mot `REGLER-VIDEO.md`, samma cues och tider; 9 hoppade av copyn, 4 utan röst i källan). **En provvideo renderad:** `Motorhölje_PD_1_H3` (röst "CJ - Young Swedish Male", bandläget, röstkollen ✅, bilderna tittade på, rösten inte lyssnad på). `Batmotor_SP_1_H5` stoppades rätt: källan har en svensk checklista i bild som bara textbyte kan ta. **Resten väntar på ElevenLabs:** 10 387 tecken kvar till 23 okt (Creator), 46 videor behöver ~17 300, och `/translate-no` drar varje natt från samma konto |
+| Meta | **16 kampanjer, 16 adset, 26 annonser (25 bilder + 1 video), alla PAUSED och tillbakalästa** i **Magiborsten UK `1107817401910319`** (`annonser/konto.json`), prefix `BEAVERSTORE_WW_`, CBO, platshållarbudget 300 kr/dag som `--aktivera` vägrar tills Axel sagt en budget. Fem kampanjer (IBC, damasker, täljset, golfkalendern, värmesulorna) har bara videoannonser och står tomma tills videorna finns. Id:n: `node worldwide/annonser/bygg.mjs --lage` |
 
 ## Beslut sessionen fattade (ändra i konfigen om de är fel)
 
@@ -89,5 +89,11 @@ Shopify att planen inte räcker är det Axels beslut (uppgradering kostar pengar
   `zonrita.py` parar fragment med block och ritar blockets engelska en gång.
 - **Butikens retur är 14 dagar**, inte "30 dagars öppet köp" som flera svenska annonser säger.
   All engelska säger 14.
-- **Meta stryper kontot (kod 17)** — bygget backar av upp till 8 gånger; en körning kan ta
-  timmar när annonsvakten och andra rutiner läser samtidigt.
+- **Meta stryper kontot (kod 17, subkod 2446079 "för många API-anrop från annonskontot")** —
+  bygget backade av 24 gånger och tog 50 minuter för 16 kampanjer. Läs inte kontot medan det
+  bygger; varje läsning förlänger spärren. `bygg.mjs` skriver stdout först när den är klar
+  (proxyomstarten i `tools/meta-lib.mjs`) — läs kontot efteråt, inte loggen under tiden.
+- **Dubbningens ljudspår tog aldrig slut** (Motorhölje_PD_1_H3): ffmpeg kodade tyst ljud i 25
+  min. `pipeline/omdubb/elevenlabs-omdubb.mjs` har sedan dess `-t` = planerad längd.
+- **Karaoke-rutor i källan:** `--rutor` lämnade kanter med svenska bokstäver som kontrollen inte
+  såg. Worldwide-videorna körs därför i bandläget (hela bredden suddas).

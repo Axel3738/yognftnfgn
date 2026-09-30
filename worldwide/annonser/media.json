@@ -110,7 +110,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "924d5d6265f780f0fd53ed9bca76b171",
+  "annons_id": "120251679110910435",
+  "creative_id": "1384477850333083",
+  "kampanj_id": "120251679108990435",
+  "skapad": "2026-09-30T07:02:32.402Z"
  },
  "Seatcover_SO_1_1_H1": {
   "hoppa": "\"811 KR överstruket\" är ritat som grafik och stod kvar efter suddningen (granskat 2026-09-30)."
@@ -124,7 +129,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "e057bc2d577f7d59f1bee0f0e85456a7",
+  "annons_id": "120251679114710435",
+  "creative_id": "1113414764529777",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T07:02:54.646Z"
  },
  "Enginecover_SO_5_1": {
   "hoppa": "Märket \"30\" (30 dagars garanti) är grafik bredvid raden — motsäger 14-dagarslöftet (granskat 2026-09-30)."
@@ -138,7 +148,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "21066aca6c704362ed174a567d006163",
+  "annons_id": "120251679115270435",
+  "creative_id": "1844170973235745",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T07:03:02.212Z"
  },
  "Enginecover_SO_23_1": {
   "fil": "worldwide/annonser/klar/Enginecover_SO_23_1.jpg",
@@ -146,7 +161,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "bed690b6d80015b7895192294593f3ea",
+  "annons_id": "120251679116050435",
+  "creative_id": "1432673568814068",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T07:03:09.516Z"
  },
  "Overvakningskamera_CO_2_1": {
   "fil": "worldwide/annonser/klar/Overvakningskamera_CO_2_1.jpg",
@@ -154,7 +174,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "82a55e9c51f33aafa65f121cc740b2f2",
+  "annons_id": "120251679206020435",
+  "creative_id": "2121912588426740",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T07:11:21.077Z"
  },
  "Termoskydd_BOF_7_1": {
   "fil": "worldwide/annonser/klar/Termoskydd_BOF_7_1.jpg",
@@ -162,7 +187,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "b4938cd917d2a744466e46e5724020b8",
+  "annons_id": "120251679212010435",
+  "creative_id": "2197367204328125",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T07:11:44.317Z"
  },
  "Termoskydd_SP_2_1": {
   "hoppa": "Citat krediterat 'Verifierad kund, 58 år' (\"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\") - kan inte verifieras för en ny marknad. Bilden bär dessutom en genereringsartefakt ('Knapp: \"Beställ nu\"') och '30 dagars öppet köp'."
@@ -172,28 +202,48 @@
   "sha256": "70bde3d0f66626e76846bf246bf60908f5829f38555e4faf838dece488347b39",
   "granskad": true,
   "utan_text": true,
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "ab0bc8c23b554ff54fcf45548618ad9a",
+  "annons_id": "120251679339940435",
+  "creative_id": "1921373125328975",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T07:19:38.913Z"
  },
  "Beachslippers_PD_13_6": {
   "fil": "worldwide/annonser/klar/Beachslippers_PD_13_6.jpg",
   "sha256": "ac40efe26247eb53efb9887fe709ef5fac6e39c43625fe41402e4580c8017e89",
   "granskad": true,
   "utan_text": true,
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "dc2b07d9d6db84a93750ae075ec9fbbc",
+  "annons_id": "120251679343280435",
+  "creative_id": "29710386455228076",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T07:19:47.387Z"
  },
  "Strandtofflor_PD_2_2": {
   "fil": "worldwide/annonser/klar/Strandtofflor_PD_2_2.jpg",
   "sha256": "9b579ec7493fb35eddcf2c51ec9d1141b5346565f929815a2dcc24a2f75840f8",
   "granskad": true,
   "utan_text": true,
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "ce166e023fdee42a196f14bb1f912026",
+  "annons_id": "120251679347000435",
+  "creative_id": "1410491837842972",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T07:19:54.009Z"
  },
  "Beachslippers_PD_2_3": {
   "fil": "worldwide/annonser/klar/Beachslippers_PD_2_3.jpg",
   "sha256": "0d4fab8f03f4896c6310f2cb8850f1ce792ad9700372b7982f35536a1aeb0145",
   "granskad": true,
   "utan_text": true,
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "e62336155b4d1e7106a4568df236cd3e",
+  "annons_id": "120251679348410435",
+  "creative_id": "1859863551670718",
+  "kampanj_id": "120251679337250435",
+  "skapad": "2026-09-30T07:20:01.507Z"
  },
  "Beltgrinder_PD_19_1": {
   "fil": "worldwide/annonser/klar/Beltgrinder_PD_19_1.jpg",
@@ -201,7 +251,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "a8da74d6039b3f7348a054103509b811",
+  "annons_id": "120251679462270435",
+  "creative_id": "1093763483237391",
+  "kampanj_id": "120251679457690435",
+  "skapad": "2026-09-30T07:27:58.301Z"
  },
  "Balteslipmaskin_PD_2_1": {
   "fil": "worldwide/annonser/klar/Balteslipmaskin_PD_2_1.jpg",
@@ -209,7 +264,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "a08ad5c4dd3e349cf0d634dcb9466b21",
+  "annons_id": "120251679465270435",
+  "creative_id": "938884012175614",
+  "kampanj_id": "120251679457690435",
+  "skapad": "2026-09-30T07:28:07.327Z"
  },
  "Balteslipmaskin_CS_2_1": {
   "fil": "worldwide/annonser/klar/Balteslipmaskin_CS_2_1.jpg",
@@ -225,7 +285,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "47d6287415e1f1a6a6ec8f4196999dc5",
+  "annons_id": "120251679466600435",
+  "creative_id": "2004748553517072",
+  "kampanj_id": "120251679457690435",
+  "skapad": "2026-09-30T07:28:14.700Z"
  },
  "Sotarset_PD_6_1": {
   "fil": "worldwide/annonser/klar/Sotarset_PD_6_1.jpg",
@@ -233,7 +298,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "05d39252ac599b2168df1fb034a1fe3a",
+  "annons_id": "120251679571020435",
+  "creative_id": "2225206874708816",
+  "kampanj_id": "120251679569180435",
+  "skapad": "2026-09-30T07:36:10.398Z"
  },
  "MC-Kapell_CS_2_1": {
   "fil": "worldwide/annonser/klar/MC-Kapell_CS_2_1.jpg",
@@ -241,7 +311,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "0ae3753270ba64e361e036b48d55961d",
+  "annons_id": "120251679574450435",
+  "creative_id": "930705443069464",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T07:36:33.728Z"
  },
  "MC-Kapell_OF_1_1": {
   "fil": "worldwide/annonser/klar/MC-Kapell_OF_1_1.jpg",
@@ -249,6 +324,29 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)"
+  "granskad_av": "sessionen 2026-09-30 (kontaktark, alla bilder tittade på)",
+  "image_hash": "eb382914445894484128fb731726ba0b",
+  "annons_id": "120251679575820435",
+  "creative_id": "1111466651405680",
+  "kampanj_id": "120251679572450435",
+  "skapad": "2026-09-30T07:36:40.580Z"
+ },
+ "Motorhölje_PD_1_H3": {
+  "fil": "worldwide/annonser/klar/Motorh_lje_PD_1_H3.mp4",
+  "sha256": "18895ae13b8e93c483550e7580bc91d3e68bc20187206b74729fc6b41fba719b",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": true,
+  "granskning": "sessionen 2026-09-30: QA-bilder + band vid 0,3/1,8/2,6/12 s tittade på, ingen svensk text kvar; röstkollen ✅; rösten inte lyssnad på",
+  "qa": [
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Motorh_lje_PD_1_H3.mp4.qa-3.png"
+  ],
+  "bandlage": true,
+  "video_id": "1738061213943072",
+  "annons_id": "120251679820510435",
+  "creative_id": "1616400533268339",
+  "kampanj_id": "120251679112080435",
+  "skapad": "2026-09-30T07:46:06.511Z"
  }
 }
