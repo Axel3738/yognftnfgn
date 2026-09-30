@@ -64,6 +64,21 @@ argumentet; för Bäverbutiken utelämnas `--butik` helt.
    publicerats (fler marknader kommer) och får Shopifys standardmejl tills
    `mejl/sprak/<kod>.json` + en rad i `mejl_sprak` finns — skriv språken i
    rapporten, bygg inte språkfilen i rutinen (den skrivs av sonnet och granskas).
+2c. **Bara butiken `matstrumpor`: värva en vän** (Axels beslut 2026-09-30,
+   allt i `matstrumpor/varva/README.md`):
+   `node matstrumpor/varva.mjs --skarpt`
+   Vännen fick 50 kr på sitt första köp via kundens länk (attributet `van`
+   på ordern). När vännens första order är betald, SKICKAD och inte
+   återbetald, och vännen inte är kunden själv (kund, e-post, adress), får
+   kunden 100 kr i Shopifys butikskredit i sin egen valuta och Shopifys mejl
+   om det. Högst 10 vänner per kund. Körs här, varje timme, därför att den
+   här rutinen bär Matstrumpors Shopify-nycklar och vet när paketet gått —
+   **ingen annan rutin eller session får köra `--skarpt`** (två körare =
+   dubbel utbetalning). Ändrades `matstrumpor/varva/krediterat.jsonl`:
+   committa den med lagefilen i steg 3 — minnet är det som hindrar en dubbel
+   utbetalning, därför pushas det samma timme. Säger en rad **"kräver en
+   människa"**: kreditera ALDRIG för hand och kör inte om — skriv raden
+   överst i rapporten. Felar skriptet: skriv orsaken och fortsätt med steg 3.
 3. Committa och pusha minnet. Lagefilen är `sparning/lage.json` för
    Bäverbutiken, annars `sparning/butiker/<butik>/lage.json` (+ butikens
    `konfig.json` med bokföringen). Flera rutiner pushar till `main` varje
@@ -91,7 +106,9 @@ argumentet; för Bäverbutiken utelämnas `--butik` helt.
 Aldrig: skapa ordrar, ändra fulfillments, skicka mejl, röra andra butiker
 än argumentets, röra temafiler. Skriptet skriver ENBART
 `fulfillmentEventCreate` och `pageCreate`/`pageUpdate` på den egna sidan
-(och i steg 2b `translationsRegister` på butikens tre egna fraktnotiser).
+(och i steg 2b `translationsRegister` på butikens tre egna fraktnotiser; i
+steg 2c, bara Matstrumpor, `storeCreditAccountCredit` + taggen
+`varva-krediterad` på vännens order).
 
 ## DEFINITION OF DONE
 
@@ -99,6 +116,7 @@ Aldrig: skapa ordrar, ändra fulfillments, skicka mejl, röra andra butiker
 - [ ] Rundan körd, utskriften visad
 - [ ] Spårningssidan publicerad och tillbakaläst i kundens vy (eller orsaken skriven)
 - [ ] Steg 2b körd för en butik med `mejl_sprak` (eller: butiken har inga)
+- [ ] Steg 2c körd för `matstrumpor`, `krediterat.jsonl` pushad om den ändrats (eller: annan butik)
 - [ ] Lagefilen committad och pushad till `main`, `output/` inte med
 - [ ] Nya fraser inlagda i ordboken och språkfilerna, eller orsaken skriven
 - [ ] Rapporten har siffrorna ovan
