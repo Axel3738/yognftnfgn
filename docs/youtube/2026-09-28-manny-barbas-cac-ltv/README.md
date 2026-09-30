@@ -61,7 +61,8 @@ Förslagen i sessionens första svar är ändrade efter den.
    struket. Ett äldre förslag på StonePNL-grenen (`docs/annonsdoktrin/granskning-meta-mekanik.md`,
    2026-08-27: cost cap = 0,85 × break-even-CPA från S1) togs aldrig in och ska inte tas upp igen
    som nytt. Ändras budstrategin någon gång är det Axels beslut.
-2. **Zombiekampanj (cost cap för annonser utan spend): Axel vill ha den (2026-09-30 kväll).**
+2. **Zombiekampanj (cost cap för annonser utan spend): SKIPPAD, Axels beslut 2026-09-30 kväll** ("strunta i denna skiten") efter ROI-bedömningen nedan. Bygg den inte utan att han tar upp den igen.
+   Bakgrund: Axel ville först ha den samma kväll.
    Sessionens första "inte nu" var sessionens egen bedömning från 2026-09-21, inte Axels beslut och
    inte Evolves. Chadbot säger tvärtom att det är den enda användning av cost cap som Evolve står
    bakom, som räddningsverktyg för annonser som inte fick spend i CBO:n på sju dygn. Evolves egna ord
