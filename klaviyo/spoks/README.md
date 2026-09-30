@@ -1301,3 +1301,13 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
   bara.
 - Oförklarat: appens meny säger "Kampanjer 165 kommande", men `search_campaigns` visar 37
   schemalagda kampanjer. Flödesposter räknas inte i `search_campaigns`. Inget tyder på dubbletter.
+- **Uppföljningarna går via roboten, inte Cowork** (omskrivna 30/9):
+  - Morgonkollen `trig_0184cEo3qqjRg5GxemevSEYf` kör `statistik` på gårdagens mejl varje morgon.
+  - Veckosiffrorna 5/10 `trig_01EH4bY8pvLc4UPkaCMn5RGt`.
+  - Dragningen 6/10 `trig_017jCVjHEjJmkJP4qS51iNjE`.
+  - V04 9/10 `trig_01GoTUd9oR7vppKrahMMyZ51` och V05 12/10 `trig_01M7GAcm5zvRmfcL1yDRQD4e`.
+  - K16 och tröstpriset 2/11 `trig_011Xqt44pRC5Ax5yg6ZkBJRA`.
+
+  De som schemalägger skriver facit med `cowork-schema.mjs --bara`, kör `schemalagg` och mäter
+  sedan med `--jamfor`. Axels enda klick som finns kvar är att flytta ett schemalagt mejl till
+  utkast vid larm, via menyn "•••" i Spoks. Roboten kan inte göra det än.
