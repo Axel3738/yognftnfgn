@@ -183,6 +183,12 @@ async function stegMarknader(k, { skarpt }) {
     log(`✅ marknaden ${r.data.marketCreate.market.name} skapad (${r.data.marketCreate.market.status})`);
     lage = await hamtaLage(k);
     mk = lage.marknader.find((x) => x.handle === M.handle);
+    // marketCreate kan ge DRAFT trots status ACTIVE (factory/marknad.mjs, mätt 2026-09-09).
+    if (mk && mk.status !== 'ACTIVE') {
+      const r2 = await mutation(k, `mutation($id: ID!, $input: MarketUpdateInput!) { marketUpdate(id: $id, input: $input) { market { status } userErrors { field message } } }`, { id: mk.id, input: { status: 'ACTIVE' } });
+      if (r2.fel.length) throw new Error(`Aktivera ${mk.name}: ${r2.fel.join('; ')}`);
+      log('✅ marknaden aktiverad');
+    }
   } else {
     const saknas = M.lander.filter((c) => !mk.lander.includes(c));
     log(`marknaden ${mk.name} finns (${mk.status}), ${mk.lander.length} länder${saknas.length ? `, saknar ${saknas.join(', ')}` : ''}`);
@@ -260,13 +266,13 @@ async function stegPrislista(k, { skarpt }) {
     const a = kat.priceList.parent?.adjustment;
     if (a?.type === typ && Number(a.value) === varde) { log(`prislistan ${kat.priceList.name} har redan ${typ} ${varde} %`); return; }
     if (!skarpt) { log(`torrt: prislistan ${kat.priceList.name} får ${typ} ${varde} %`); return; }
-    const r = await mutation(k, `mutation($id: ID!, $input: PriceListUpdateInput!) { priceListUpdate(id: $id, input: $input) { priceList { parent { adjustment { type value } } } userErrors { field message } } }`, { id: kat.priceList.id, input: { parent: { adjustment: { type, value: varde } } } });
+    const r = await mutation(k, `mutation($id: ID!, $input: PriceListUpdateInput!) { priceListUpdate(id: $id, input: $input) { priceList { parent { adjustment { type value } } } userErrors { field message } } }`, { id: kat.priceList.id, input: { parent: { adjustment: { type: typ, value: varde } } } });
     if (r.fel.length) throw new Error(r.fel.join('; '));
     log(`✅ prislistan: ${JSON.stringify(r.data.priceListUpdate.priceList.parent)}`);
     return;
   }
   if (!skarpt) { log(`torrt: prislista ${M.basvaluta} ${typ} ${varde} % + katalog för ${mk.name}`); return; }
-  const p = await k.graphql(`mutation($input: PriceListCreateInput!) { priceListCreate(input: $input) { priceList { id name } userErrors { field message } } }`, { input: { name: `Beaver Store ${M.basvaluta}`, currency: M.basvaluta, parent: { adjustment: { type, value: varde } } } });
+  const p = await k.graphql(`mutation($input: PriceListCreateInput!) { priceListCreate(input: $input) { priceList { id name } userErrors { field message } } }`, { input: { name: `Beaver Store ${M.basvaluta}`, currency: M.basvaluta, parent: { adjustment: { type: typ, value: varde } } } });
   const c = await k.graphql(`mutation($input: CatalogCreateInput!) { catalogCreate(input: $input) { catalog { id title } userErrors { field message } } }`, { input: { title: `Beaver Store ${M.namn}`, status: 'ACTIVE', context: { marketIds: [mk.id] }, priceListId: p.priceListCreate.priceList.id } });
   log(`✅ ${p.priceListCreate.priceList.name} + ${c.catalogCreate.catalog.title}`);
 }

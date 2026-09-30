@@ -58,6 +58,14 @@ node worldwide/annonser/video.mjs --skarpt      # videorna, när ElevenLabs-kvot
 node worldwide/annonser/bygg.mjs --aktivera --skarpt   # först när konto.json → budget_beslut är Axels
 ```
 
+## Om marknaden inte går att skapa
+
+`marketCreate` kan vägra av två skäl som inte är kod: planens tak på antal marknader, eller att
+ett land redan ligger i en annan marknad som inte får ändras. `bygg.mjs` flyttar länder ur andra
+marknader (aldrig ur primärmarknaden Sverige) och skriver varje flytt i torrkörningen — **läs
+torrkörningen innan `--skarpt`**. En marknad som blir tom sätts DRAFT, aldrig raderas. Säger
+Shopify att planen inte räcker är det Axels beslut (uppgradering kostar pengar).
+
 ## Filerna
 
 | Fil | Vad |
