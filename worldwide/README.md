@@ -42,7 +42,7 @@ Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
 - **Frakten: en zon "Worldwide (free shipping)", 0 kr, "5–10 business days"** — samma löfte som
   i Sverige. Länderna flyttas ur sina gamla zoner.
 - **Taköverdraget och termoskyddet annonseras inte i CaraShells länder** (US, GB, CA, AU, NZ,
-  NO, DK, FI) — två butiker ska inte bjuda mot varandra i samma auktion. Fråga nedan.
+  NO, DK, FI) — två butiker ska inte bjuda mot varandra i samma auktion. **Axels beslut A 2026-09-30 kväll.**
 - **Kontot:** Magiborsten UK (Bäverbutikens gamla utlandskonto, SEK) — inte MagiBorsten, där
   `/notionkorning` väljer kampanj på annonsprefix och kunde ha lagt svenska annonser i en
   worldwide-kampanj. **Sidan:** BeaverShop `1305042582683792` (Axels gamla UK-sida).
