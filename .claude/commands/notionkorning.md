@@ -81,7 +81,8 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
    **uttryckligt undantag från regel 11 i CLAUDE.md**, fattat av Axel 2026-08-30.
    Rätta inte tillbaka det och föreslå inte test-ABO varje natt.
 4. **Grön QA aktiveras direkt.** Rutinen väntar inte på att Axel slår på.
-5. **Stoppreglerna är två: priset och returlöftet.**
+5. **Stoppreglerna är fyra: priset, returlöftet, butikens namn och en främmande
+   vattenstämpel.**
    - **Priset.** Skiljer priset i annonsen mer än **20 %** (upp eller ner) från
      produktsidans pris i Shopify just nu, stoppas annonsen. **Nämner annonsen
      inget pris finns inget att stoppa på** — den är grön.
@@ -92,8 +93,20 @@ Beslut 2026-08-30, uppdaterade 2026-09-02:
      bild**. Butikens policy är 14 dagars ångerrätt, så ett trettiodagarslöfte
      är ett löfte kunden inte får infriat. Facit är `tvister.returfonster_dagar`
      i butikens brandfil (`kundtjanst/brands/<id>.yaml`), aldrig briefen.
-     ⚠️ Annonser som redan ligger live stängs aldrig av i efterhand (regel 7) —
-     regeln gäller före uppladdning.
+   - **Butikens namn eller logga i creativen.** Axels regel 2026-09-18 säger att
+     en annons aldrig bär butikens namn — inte i copy, bild, voiceover, captions
+     eller på ett slutkort. Regeln fanns men stoppade ingenting, så
+     `BÄVERBUTIKEN` gick live på slutkort 22, 29 och 30 september. Nu stoppas
+     den, **video som bild**. Skälet är praktiskt: annonser speglas mellan
+     butiker, och en fil med en butiks logga går inte att använda i en annan.
+   - **En främmande vattenstämpel**, alltså ett redigeringsverktygs eller en
+     app-plattforms märke i bild (`VEED`, `CapCut`, TikTok-loggan …). Den säger
+     för kunden att annonsen är gjord i ett gratisverktyg. Stoppas, **video som
+     bild**. *(2026-09-30: `Termoskydd_OB_1_H1` gick live med `VEED` i varje
+     bildruta, för den gamla regeln stoppade bara priset.)*
+
+   ⚠️ Annonser som redan ligger live stängs aldrig av i efterhand (regel 7) —
+   reglerna gäller före uppladdning.
    Allt annat i checklistan är anmärkningar som rapporteras, inte stopp.
    Felstavningar i **videoannonser** är okej.
 6. **Problem = kommentar + tillbaka till `Draft`. Video som bild.** En creative
@@ -277,6 +290,8 @@ Att materialet är uttaget är inte samma sak som att det är granskat.
 |---|-------|-----|-------|------|
 | 1 | **Priset i annonsen mot Shopify-priset: avvikelse ≤ 20 %** (inget pris i annonsen = grön) | all inbränd text | 🔁 Draft | 🔁 Draft |
 | 1b | **Returlöftet = butikens egna fönster, 14 dagar** (Axel 2026-09-30). "30 dagars garanti", "30 dagars öppet köp", "pengarna tillbaka i 30 dagar" ⇒ stopp. Inget returlöfte i annonsen = grön | all inbränd text + voiceover | 🔁 Draft | 🔁 Draft |
+| 1c | **Butikens namn eller logga** någonstans i creativen (Axels regel 2026-09-18) | bild, slutkort, captions, voiceover | 🔁 Draft | 🔁 Draft |
+| 1d | **Främmande vattenstämpel** — ett redigeringsverktygs märke i bild (`VEED`, `CapCut`, TikTok-loggan …) | hela | 🔁 Draft | 🔁 Draft |
 | 2 | Hooken i briefen är hooken i bild | frames 0–3 s | anmärkning | 🔁 Draft |
 | 3 | Formatet stämmer (UGC / before-after / comparison …) | hela | anmärkning | 🔁 Draft |
 | 4 | Vinkeln stämmer (pain / benefit / social …) | hela | anmärkning | 🔁 Draft |
@@ -478,6 +493,7 @@ löser själv nästa natt.
 - [ ] Varje fynd utpekat med frame-nummer och sekund (eller plats i bilden)
 - [ ] Ingen creative med prisavvikelse > 20 % uppladdad (inget pris i annonsen = grön)
 - [ ] Ingen creative med ett annat returlöfte än butikens 14 dagar uppladdad (inget returlöfte = grön)
+- [ ] Ingen creative med butikens namn/logga eller en främmande vattenstämpel uppladdad
 - [ ] Varje creative med problem, video som bild: kommentar i Notion + status → `Draft`, inte uppladdad
 - [ ] Uppladdade i rätt produkts kampanj, sida/pixel ärvd, inget med spend > 0 rört
 - [ ] Inga creatives lagda i en avvecklad kampanj (PAUSED med spend) — bara rapporterade

@@ -2497,7 +2497,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   dem 2026-08-31. `/notionkorning` larmar högst upp i rapporten om Notion inte gick
   att läsa.)*
 
-  **Stoppreglerna i `/notionkorning` är TVÅ: priset och returlöftet.** (1) Pris
+  **Stoppreglerna i `/notionkorning` är FYRA.** (1) Pris
   som avviker mer än 20 % från Shopify-sidan (inget pris i annonsen = grön).
   (2) ⛔ **Bara 14 dagar släpps igenom** — Axels beslut 2026-09-30, "från och med
   nu släpp endast igenom 14 dagar". En creative som lovar **30 dagars garanti,
@@ -2506,9 +2506,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   trettiodagarslöfte är alltså ett löfte kunden inte får infriat. Facit är
   `tvister.returfonster_dagar` i brandfilen, aldrig briefen. Bakgrunden: 27–30
   september gick nio videor live som lovade 30 dagar, för den gamla regeln
-  stoppade bara priset. En creative med problem, video som bild, får kommentar i
+  stoppade bara priset. (3) ⛔ **Butikens namn eller logga** någonstans i
+  creativen — Axels regel 2026-09-18 fanns men stoppade ingenting, så
+  `BÄVERBUTIKEN` gick live på slutkort 22, 29 och 30 september. (4) ⛔ **En
+  främmande vattenstämpel**, alltså ett redigeringsverktygs märke i bild (`VEED`,
+  `CapCut`, TikTok-loggan) — den säger för kunden att annonsen är gjord i ett
+  gratisverktyg (`Termoskydd_OB_1_H1`, 2026-09-30). Alla fyra gäller **video som
+  bild**. En creative med problem, video som bild, får kommentar i
   Notion och flyttas till `Draft`. För bild är varje fel ett problem; för video
-  bara de två stoppreglerna — felstavningar i video laddas upp ändå med en
+  bara de fyra stoppreglerna — felstavningar i video laddas upp ändå med en
   anmärkning. Ingen nödbroms på antal leveranser. **Uppladdad rad flyttas till
   `SE-ACTIVE to be translated`** (översättningskön), aldrig till `Approved`.
 
