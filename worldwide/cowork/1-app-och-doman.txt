@@ -2,9 +2,9 @@ Jag ska sälja Bäverbutikens produkter i hela världen under namnet Beaver Stor
 domänen beaverstoreco.com, från SAMMA Shopify-butik som baverbutiken.se. Min
 Claude-session har redan byggt allt den kan: engelska texter för hela sajten,
 loggan, fri frakt-raden och annonserna. Den kommer inte längre, för appen den
-använder får inte röra marknader, språk och frakt. Du ska göra tre saker i Chrome
-med mitt inloggade konto: ge appen fler rättigheter, läsa av domänen och lägga in
-engelska texter i appen Kaching Bundles. Fråga mig om inloggning när du behöver
+använder får inte röra marknader, språk och frakt. Du ska göra fyra saker i Chrome
+med mitt inloggade konto: ge appen fler rättigheter, läsa av domänen, lägga in
+engelska texter i appen Kaching Bundles och döpa om Facebook-sidan BeaverShop. Fråga mig om inloggning när du behöver
 den. Datorn är en Windows-dator.
 
 ⛔ DET HÄR RÖR DU ALDRIG
@@ -15,6 +15,7 @@ den. Datorn är en Windows-dator.
 - Marknaden Sverige, dess språk, valuta och priser.
 - Shopify Payments, betalsätt, skatter, moms, tullinställningar.
 - Andra appar än de två som nämns här ("Bäver uppladdare" och "Kaching Bundles").
+- Annonser, kampanjer och budgetar i Meta. Bara sidans NAMN ändras (steg 6).
 - Inga rättigheter tas bort. Du LÄGGER TILL, du ersätter aldrig. En rättighet som
   försvinner syns inte som ett fel: kundernas spårningssida och produktuppladdningen
   slutar bara tyst att fungera.
@@ -150,6 +151,23 @@ får INTE ändras.
 5. Spara. Publicera eller aktivera inga nya erbjudanden och ändra inga rabatter.
 
 ------------------------------------------------------------------------------
+STEG 6 — döp om Facebook-sidan BeaverShop till Beaver Store
+------------------------------------------------------------------------------
+
+Utlandsannonserna visas som sidan "BeaverShop" (sid-id 1305042582683792). Den ska
+heta "Beaver Store", samma som domänen och loggan.
+
+1. Öppna https://www.facebook.com/1305042582683792 med mitt konto. Kontrollera
+   att sidan heter BeaverShop. Är det en annan sida: STOPPA steg 6.
+2. Byt till sidan (Switch / Växla till sidan) → Inställningar → Sidinformation /
+   Page info → Namn. Skriv exakt:  Beaver Store
+3. Spara. Facebook kan säga att namnbytet granskas i några dagar. Det är okej.
+4. Rör ingenting annat på sidan: inte användarnamn, profilbild, Instagram,
+   admins, inlägg eller annonser. Rör inga andra sidor, och särskilt aldrig
+   Bäverbutikens svenska sida.
+5. Skriv i rapporten vad Facebook sa: direkt bytt eller under granskning.
+
+------------------------------------------------------------------------------
 KONTROLLERA SOM KUND (när steg 1–5 är klara)
 ------------------------------------------------------------------------------
 
@@ -172,6 +190,7 @@ RAPPORTERA TILLBAKA
 6. Kaching: fanns engelska, vilka erbjudanden du översatte, och varje text du
    översatte utöver tabellen.
 7. Kundkontrollen på baverbutiken.se och beaverstoreco.com.
-8. Allt som såg konstigt ut, och varje ställe där du stoppade.
+8. Facebook-sidans namnbyte: klart eller under granskning.
+9. Allt som såg konstigt ut, och varje ställe där du stoppade.
 
 Skriv aldrig ut client secret, åtkomsttoken eller lösenord i rapporten.

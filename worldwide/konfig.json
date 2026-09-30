@@ -6,7 +6,18 @@
     "primar_doman": "baverbutiken.se",
     "env_suffix": "SE",
     "env_suffix_comment": "Appen 'Bäver uppladdare' (SHOPIFY_CLIENT_ID_SE/SECRET_SE). Mätt 2026-09-30: 12 scopes — produkter, innehåll, teman, rabatter, publiceringar, lager. Marknader, översättningar, språk och frakt saknas; worldwide/cowork/1-app-och-doman.txt lägger till dem.",
-    "kravda_scopes": ["read_markets", "write_markets", "read_translations", "write_translations", "read_locales", "write_locales", "read_shipping", "write_shipping", "read_legal_policies", "read_online_store_navigation"]
+    "kravda_scopes": [
+      "read_markets",
+      "write_markets",
+      "read_translations",
+      "write_translations",
+      "read_locales",
+      "write_locales",
+      "read_shipping",
+      "write_shipping",
+      "read_legal_policies",
+      "read_online_store_navigation"
+    ]
   },
   "varumarke": {
     "namn": "Beaver Store",
@@ -18,16 +29,61 @@
   "marknad": {
     "namn": "Worldwide",
     "handle": "worldwide",
-    "lander": ["US", "CA", "GB", "IE", "AU", "NZ", "DE", "AT", "CH", "NL", "BE", "LU", "FR", "ES", "PT", "IT", "PL", "CZ", "SK", "SI", "HR", "HU", "RO", "BG", "GR", "CY", "MT", "EE", "LV", "LT", "AE", "HK", "IL", "JP", "KR", "MY", "SG"],
+    "lander": [
+      "US",
+      "CA",
+      "GB",
+      "IE",
+      "AU",
+      "NZ",
+      "DE",
+      "AT",
+      "CH",
+      "NL",
+      "BE",
+      "LU",
+      "FR",
+      "ES",
+      "PT",
+      "IT",
+      "PL",
+      "CZ",
+      "SK",
+      "SI",
+      "HR",
+      "HU",
+      "RO",
+      "BG",
+      "GR",
+      "CY",
+      "MT",
+      "EE",
+      "LV",
+      "LT",
+      "AE",
+      "HK",
+      "IL",
+      "JP",
+      "KR",
+      "MY",
+      "SG"
+    ],
     "lander_comment": "Butikens egen leveranslista (shop.shipsToCountries, 41 länder 2026-09-30) minus SE (hemmamarknaden) och NO, DK, FI — de har egna Bäverbutiks-butiker (beverbutikken.no, baeverbutiken.dk, majavakauppa.fi) och egna annonskonton. Ett land till = en rad här + en ny körning av marknader,frakt.",
     "basvaluta": "USD",
     "lokala_valutor": true,
-    "prisjustering_procent": 0,
+    "prisjustering_procent": 25,
     "prisjustering_comment": "Shopifys omräkning av SEK-priset i kundens valuta. Ett påslag worldwide ('lite dyrare', som Matstrumpor) är Axels beslut — sätt procenten här och kör --steg prislista.",
-    "locales": ["en"],
-    "doman": { "host": "beaverstoreco.com", "standard": "en", "alternativa": [] },
+    "locales": [
+      "en"
+    ],
+    "doman": {
+      "host": "beaverstoreco.com",
+      "standard": "en",
+      "alternativa": []
+    },
     "leverans": "5–10 business days",
-    "leverans_comment": "Koncernens standardlöfte (samma som Sverige och CaraShell US). INTE mätt för Bäverbutiken utanför Sverige."
+    "leverans_comment": "Koncernens standardlöfte (samma som Sverige och CaraShell US). INTE mätt för Bäverbutiken utanför Sverige.",
+    "prisjustering_beslut": "Axels svar 2026-09-30: +25 % utomlands (prislista USD, procentpåslag på Shopifys omräkning)."
   },
   "frakt": {
     "zon": "Worldwide (free shipping)",

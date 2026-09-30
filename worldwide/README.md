@@ -30,9 +30,13 @@ Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
   annonstext är "A Swedish brand." (CaraShell-/Matstrumpor-principen).
 - **Länderna: 37** (`konfig.json`): US, CA, GB, IE, AU, NZ, EU utom SE/DK/FI, CH, AE, HK, IL, JP,
   KR, MY, SG. Norge, Danmark och Finland har egna Bäverbutiker och ligger aldrig här (testat).
-- **Priserna: USD som basvaluta, lokala valutor på, inget påslag** (`prisjustering_procent: 0` —
-  Shopifys omräkning av det svenska priset). Matstrumpor valde "lite dyrare worldwide"; det är
-  Axels fråga nedan.
+- **Priserna: USD som basvaluta, lokala valutor på, +25 %** (Axels svar 2026-09-30,
+  `prisjustering_procent: 25` — prislista USD med procentpåslag på Shopifys omräkning).
+- **Budgeten: 1 000 kr/dag per kampanj** (Axels svar 2026-09-30, tolkat per kampanj som
+  Matstrumpor utomlands) — satt och tillbakaläst på alla 16 med `annonser/budget.mjs`, alla PAUSED.
+  Aktivering kräver ändå Axels ord efter granskning.
+- **Videorna:** Axel uppgraderar ElevenLabs, sedan `node worldwide/annonser/video.mjs --skarpt`.
+- **Facebook-sidan döps om till Beaver Store** (Axels svar, Cowork steg 6).
 - **Frakten: en zon "Worldwide (free shipping)", 0 kr, "5–10 business days"** — samma löfte som
   i Sverige. Länderna flyttas ur sina gamla zoner.
 - **Taköverdraget och termoskyddet annonseras inte i CaraShells länder** (US, GB, CA, AU, NZ,
