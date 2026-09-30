@@ -72,11 +72,28 @@ skrivs); varje ändring läses tillbaka; en skrivning görs aldrig om efter 5xx 
 
 **Nycklarna:** `SPOKS_API_KEY_BAVERBUTIKEN`, `SPOKS_API_KEY_CARASHELL`,
 `SPOKS_API_KEY_MATSTRUMPOR` (och `SPOKS_API_KEY_BEVERBUTIKKEN` när den norska arbetsytan
-finns; id:t saknas med flit i konfigen och fylls i då). Minsta rättighet: kampanjer
-read-write, allt annat read-only. De skapas i appen med Cowork-prompten
-`klaviyo/spoks/cowork/2-api-nycklar.txt`, och Axel lägger in dem i Claude-miljön själv
+finns; id:t saknas med flit i konfigen och fylls i då). Axel lägger in dem i Claude-miljön själv
 (Cowork skriver aldrig in nycklar). Nyckeln hamnar aldrig i repot. **Vid bygget fanns ingen
 nyckel:** MCP-servern laddades i byggsessionen och `spoks_kolla` svarade "saknas" för alla fyra.
+
+**Var nyckeln görs** (läst 2026-09-30 i appens egen kod `main.dart.js` och översättningsfilen
+`app.spoks.com/assets/assets/translations/sv-SE.json`, inte gissat): **Inställningar →
+Integrationer → rutan "API-nyckel" → GENERERA NYCKEL** (engelska: Settings → Integrations →
+API key → GENERATE KEY). Tre saker i koden som styr allt:
+- **En nyckel per arbetsyta, ingen rättighetsväljare.** Knappen syns bara när nyckeln saknas.
+  Finns nyckeln visar rutan den dold, med ett öga och en kopiera-ikon ("Kopierade till urklipp").
+  Det finns ingen knapp för att rotera, så att trycka på knappen kan aldrig ta sönder en nyckel
+  som redan används. Nyckelns rättigheter sätter Spoks; `kolla` skriver ut vilka den fick, och
+  vitlistan i `api.mjs` bestämmer vad vi skriver oavsett.
+- **Knappen kräver betald plan.** På Free öppnar den "Uppgradera butiken: Den här funktionen
+  kräver en betald plan." Planerna 2026-09-30 (whoami): **Bäverbutiken Paid, Matstrumpor Paid**
+  (9 104 mejl i september, obegränsat), **CaraShell Free** (410 av 5 000). CaraShell får alltså
+  ingen nyckel utan en uppgradering, och den är Axels pengabeslut. `api-konfig.json` →
+  `anteckning` gör att `kolla` säger just det.
+- **Cowork såg en vit sida** 2026-09-30 ~23:23: appen är Flutter och ritar allt som en bild, så
+  en läsare av sidans text ser bara Intercom-knappen. Prompten
+  `klaviyo/spoks/cowork/2-api-nycklar.txt` säger nu åt Cowork att läsa med skärmdumpar och att
+  aldrig klicka på ögat eller kopiera-ikonen: det gör Axel själv.
 
 **Arbetsdelningen:** innehållet (produktkort, kuponger, flöden) → Spoks-connectorn;
 publik, ämnesrad och läsning → `spoks-api`; schemaläggning och att slå på flöden → appen.
@@ -1007,7 +1024,8 @@ tills dess kör var och en bara sin butik — Bäverbutikens yta `f716ae36-…` 
 `spoks-paket.mjs`, och `konvertera.mjs` rör aldrig Matstrumpor.
 
 **Ytan** (mätt med whoami/get_settings 2026-09-26): Matstrumpor.se, Shopify
-`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**,
+`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**
+(⚠️ **Paid** vid mätningen 2026-09-30, 9 104 mejl i september),
 4 370 kontakter varav **2 911 med samtycke**. Inställningarna satta via MCP:n: avsändare
 "Matstrumpor", reply-to `kundsupport@matstrumpor.se`, loggan, färgerna (`#dd821d` på
 `#f3ede2`, vitt sidhuvud), fonten **Tilt Warp + Nunito Sans** (Mochiy Pop P One finns inte i

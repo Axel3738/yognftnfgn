@@ -1,7 +1,7 @@
 // Spoks officiella API: klienten, spärrarna, CLI:n och MCP-servern mot en falsk Spoks.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { skapaKlient, kollaAlla, vaktaAnrop, vaktaSegment, vaktaAmnesrad, lasKonfig, main } from '../spoks/api.mjs';
+import { skapaKlient, kollaAlla, vaktaAnrop, vaktaSegment, vaktaAmnesrad, lasKonfig, skrivUt, main } from '../spoks/api.mjs';
 import { skapaServer } from '../spoks/api-mcp.mjs';
 import { falskSpoks, YTOR } from './falsk-spoks.mjs';
 
@@ -28,6 +28,14 @@ test('kolla utan nycklar: varje arbetsyta saknas och inget anrop görs', async (
   assert.ok(r.length >= 3);
   assert.ok(r.every((x) => x.lage === 'saknas'));
   assert.equal(f.anrop.length, 0);
+});
+
+test('saknad nyckel säger var den görs, och CaraShells säger varför den saknas', async () => {
+  const r = await kollaAlla({ env: {}, konfig: KONFIG, ...tyst });
+  const cs = r.find((x) => x.butik === 'carashell');
+  assert.match(cs.anteckning, /betald plan/);
+  assert.match(skrivUt('kolla', r), /carashell \(CaraShell\): SPOKS_API_KEY_CARASHELL saknas i miljön\. .*betald plan/);
+  assert.throws(() => klient('baverbutiken', falskSpoks(), {}), (e) => e.kod === 'NYCKEL_SAKNAS' && /Inställningar → Integrationer/.test(e.message));
 });
 
 test('kolla: rätt nyckel ger ok med rättigheter, fel nyckel ger fel utan att kasta', async () => {

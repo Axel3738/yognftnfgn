@@ -1,5 +1,5 @@
 {
-  "comment": "Spoks officiella API (Public API) — facit för klaviyo/spoks/api.mjs och MCP-servern spoks-api. En nyckel per arbetsyta i miljön (namnet i 'nyckel'), aldrig i repot. arbetsyta_id jämförs med GET /authorization innan första anropet: en nyckel som hör till en annan butik stoppas. Beverbutikkens arbetsyta finns inte än (klaviyo/spoks/beverbutikken/PROMPT.md) — id:t skrivs in när den skapats. Specen: https://api.spoks.com/openapi.json, läst 2026-09-30 (version 2026-07, 17 anrop).",
+  "comment": "Spoks officiella API (Public API) — facit för klaviyo/spoks/api.mjs och MCP-servern spoks-api. En nyckel per arbetsyta i miljön (namnet i 'nyckel'), aldrig i repot. arbetsyta_id jämförs med GET /authorization innan första anropet: en nyckel som hör till en annan butik stoppas. Beverbutikkens arbetsyta finns inte än (klaviyo/spoks/beverbutikken/PROMPT.md) — id:t skrivs in när den skapats. Specen: https://api.spoks.com/openapi.json, läst 2026-09-30 (version 2026-07, 17 anrop). Nyckeln skapas i appen: Inställningar → Integrationer → rutan API-nyckel → GENERERA NYCKEL (en nyckel per arbetsyta, ingen rättighetsväljare; appens egen kod och översättningsfil, lästa 2026-09-30). Knappen kräver betald plan: på Free öppnar den 'Uppgradera butiken'. 'anteckning' skrivs ut när nyckeln saknas.",
   "bas": "https://api.spoks.com",
   "version": "2026-07",
   "takt_ms": 1100,
@@ -12,7 +12,8 @@
     "carashell": {
       "namn": "CaraShell",
       "arbetsyta_id": "38f3d430-690c-4c0b-8419-8ec2e5272148",
-      "nyckel": "SPOKS_API_KEY_CARASHELL"
+      "nyckel": "SPOKS_API_KEY_CARASHELL",
+      "anteckning": "Spoks-planen var Free vid mätningen 2026-09-30 (whoami), och API-nyckeln kräver betald plan. Ingen nyckel utan uppgradering, och den är Axels beslut."
     },
     "matstrumpor": {
       "namn": "Matstrumpor",

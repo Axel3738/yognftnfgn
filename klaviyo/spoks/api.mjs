@@ -55,6 +55,10 @@ export const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{1
 const KAMPANJ_ID = /^[A-Za-z0-9_-]{1,64}$/;
 export const AMNE_MAX = 45;        // specen: "Email subject line. Max 45 characters."
 export const FORHAND_MAX = 130;    // specen: "Email preview text … Max 130 characters."
+// Var nyckeln görs, ur appens egen kod och översättningsfil (lästa 2026-09-30).
+// Appen har en nyckel per arbetsyta och ingen rättighetsväljare. Knappen syns
+// bara när nyckeln saknas, och på Free-plan öppnar den "Uppgradera butiken".
+export const VAR_NYCKELN = 'Nyckeln görs i Spoks-appen: Inställningar → Integrationer → rutan API-nyckel → GENERERA NYCKEL, och kräver betald plan. Den läggs sedan som miljövariabel (klaviyo/spoks/README.md → Spoks officiella API).';
 
 export class SpoksFel extends Error {
   constructor(meddelande, { kod = 'SPOKS', status = null, traceId = null } = {}) {
@@ -231,7 +235,7 @@ export function skapaKlient(butikId, {
   const yta = arbetsyta(butikId, konfig);
   const nyckel = String(env[yta.nyckel] ?? '').trim();
   if (!nyckel) {
-    throw new SpoksFel(`${yta.namn}: ${yta.nyckel} saknas i miljön. Nyckeln skapas i Spoks-appen, en per arbetsyta, och läggs som miljövariabel (klaviyo/spoks/README.md → Spoks officiella API).`, { kod: 'NYCKEL_SAKNAS' });
+    throw new SpoksFel(`${yta.namn}: ${yta.nyckel} saknas i miljön. ${VAR_NYCKELN}${yta.anteckning ? ` ${yta.anteckning}` : ''}`, { kod: 'NYCKEL_SAKNAS' });
   }
   const bas = new URL(konfig.bas ?? 'https://api.spoks.com');
   const version = konfig.version ?? '2026-07';
@@ -449,7 +453,7 @@ export async function kollaAlla({ env = process.env, konfig = lasKonfig(), bara 
   for (const y of allaArbetsytor(konfig)) {
     if (bara && y.id !== bara) continue;
     const rad = { butik: y.id, namn: y.namn, nyckel: y.nyckel, arbetsytaId: y.arbetsyta_id ?? null };
-    if (!String(env[y.nyckel] ?? '').trim()) { ut.push({ ...rad, lage: 'saknas' }); continue; }
+    if (!String(env[y.nyckel] ?? '').trim()) { ut.push({ ...rad, lage: 'saknas', anteckning: y.anteckning ?? null }); continue; }
     try {
       const v = await skapaKlient(y.id, { env, konfig, ...rest }).verifiera();
       ut.push({ ...rad, lage: 'ok', arbetsytaNamn: v.arbetsytaNamn, organisation: v.organisation, rattigheter: v.rattigheter });
@@ -468,7 +472,7 @@ export function skrivUt(typ, r) {
   switch (typ) {
     case 'kolla':
       return r.map((x) => {
-        if (x.lage === 'saknas') return `❌ ${x.butik} (${x.namn}): ${x.nyckel} saknas i miljön`;
+        if (x.lage === 'saknas') return `❌ ${x.butik} (${x.namn}): ${x.nyckel} saknas i miljön${x.anteckning ? `. ${x.anteckning}` : ''}`;
         if (x.lage === 'fel') return `⛔ ${x.butik} (${x.namn}): ${x.fel}`;
         return `✅ ${x.butik}: nyckeln hör till "${x.arbetsytaNamn}". Rättigheter: ${rattText(x.rattigheter)}`;
       }).join('\n');
