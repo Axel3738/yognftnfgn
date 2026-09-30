@@ -265,6 +265,15 @@
   "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
   "_matt": "Tillagd 2026-09-30. Kampanjen byggdes 2026-09-29 22:58 av /translate-no och är ACTIVE med 16 annonser (Spikkesett_NO_*, fyra adsets G/CS/SP/PD, 1 000 kr/dag); mätt samma dag: 822,67 kr spend, ROAS 1,31 mot break-even 1,63. Utan den här raden rapporterade kön 'prefixet Taljset saknar koppling' och rutinen kunde inte fylla på kampanjen."
  },
+ "golfkalender": {
+  "se_prefix": "Golfkalender",
+  "se_kampanj": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
+  "no_prefix": "Golfkalender",
+  "adset_prefix": "Golfkalender NO",
+  "campaign_id": "120252448770490233",
+  "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
+  "_matt": "Tillagd 2026-09-30, samma lucka som Täljsetet: kampanjen byggdes 2026-09-29 av /translate-no och är ACTIVE med 16 annonser (Golfkalender_NO_*, adsets G/CS/SP/PD), 111,78 kr spend. Kön rapporterade 'prefixet Golfkalender saknar koppling' för de två fars dag-bilderna."
+ },
  "rullknivslipen": {
   "se_prefix": "Rullknivslipen",
   "se_kampanj": "Rullknivslipen i Trä 20° | BE ROAS 1.63 | Launch 2026-09-26",

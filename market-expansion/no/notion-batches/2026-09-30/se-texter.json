@@ -1,0 +1,49 @@
+{
+ "_kommentar": "Formerna lästa ur BILDEN (facit), inte ur briefen. Båda bilderna har samma tre former och samma produktfoto; bara rubriken i form 0 skiljer. Form 2 (prisplattan) överstyrs helt i overrides.json: detektorn hittar bara den feta delen av prisraden (x 264..553), aldrig den grå jämförpristexten 'ord. 1 139 kr' (x 573..817) — utan överstyrning hade det svenska jämförpriset stått kvar i den norska bilden.",
+ "Taljset_FD_2_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Till fars dag:",
+     "30 delar i väskan.",
+     "Bladskydd, läderstrop, slippapper och",
+     "skärskyddade handskar i samma väska."
+    ],
+    "block": [[0, 1], [2, 3]]
+   },
+   {
+    "typ": "badge",
+    "rader": ["Fars dag-rea"]
+   },
+   {
+    "typ": "platta",
+    "rader": ["869 kr,", "ord. 1 139 kr", "Beställ senast 19 oktober"],
+    "varning": "869 kr och 1 139 kr är svenska priser. Norska butiken: 1 039 NOK, ord. 1 359 NOK (läst ur beverbutikken.no 2026-09-30)."
+   }
+  ]
+ },
+ "Taljset_FD_2_2": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Fars dag-presenten",
+     "han faktiskt täljer med",
+     "Bladskydd, läderstrop, slippapper och",
+     "skärskyddade handskar i samma väska."
+    ],
+    "block": [[0, 1], [2, 3]]
+   },
+   {
+    "typ": "badge",
+    "rader": ["Fars dag-rea"]
+   },
+   {
+    "typ": "platta",
+    "rader": ["869 kr,", "ord. 1 139 kr", "Beställ senast 19 oktober"],
+    "varning": "869 kr och 1 139 kr är svenska priser. Norska butiken: 1 039 NOK, ord. 1 359 NOK (läst ur beverbutikken.no 2026-09-30)."
+   }
+  ]
+ }
+}

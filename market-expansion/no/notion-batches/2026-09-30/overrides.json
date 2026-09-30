@@ -1,0 +1,32 @@
+{
+ "_kommentar": "Form 2 (prisplattan) överstyrs helt. Skälet är mätt, inte gissat: detektorn läser prisraden som EN rad x 264..553 — bara den feta delen '869 kr,'. Den grå jämförpristexten 'ord. 1 139 kr' (x 573..817, färg [101,97,92]) blir aldrig en egen rad, så utan överstyrning hade det SVENSKA jämförpriset stått kvar i den norska bilden. Alla koordinater är uppmätta i bilden (kolumnprofil + inkbbox per sträng i samma font som verktyget använder, LiberationSans), inte gissade.\n\nRitordningen är erase → deadline → fet pris → grått jämförpris, och den ordningen är avsiktlig: varje ruta suddar sin egen yta först, så en senare ruta får aldrig överlappa en tidigare rutas text. Deadline-rutan (y 1179..1295) skär in i prisradens underkant och måste därför ritas FÖRE priset; feta rutan (x 230..660) skär in i grå textens början och måste ritas FÖRE den grå.",
+ "_kommentar_badge": "Form 1 (det röda pillret) överstyrs också, av två MÄTTA fel i den första körningen: (1) detektorn läser raden som 'normal', så 'Farsdagssalg' kom ut utan fetstil medan svenskan är fet; (2) sudda() fyller formens ljusa pixlar med knappfärgen, och pillrets rundade hörn ÄR ljusa — de blev röda och pillret en fyrkant. Därför byggs badgen om: en vit ruta suddar hela ytan (bakgrunden runt pillret är mätt [255,255,255]), sedan ritas pillret som en rundad platta i sin egen färg [198,12,42] med radie 41 (= halva höjden 83, helt runda ändar, mätt i kolumnprofilen) och texten fet vit ovanpå. Pillret är breddat 289 → 309 px eftersom 'Farsdagssalg' är bredare än 'Fars dag-rea' vid samma fontstorlek (258 mot 239 px vid fet 40, som är den storlek som ger exakt svenskans bläckhöjd 37 px); marginalen 25 px på var sida behålls, och produktfotot börjar först vid x≈430 så det finns plats. ink_topp 467 = svenskans bläcktopp.",
+ "Taljset_FD_2_1": {
+  "box_for_form": {
+   "1": [
+    { "box": [55, 438, 380, 537], "fyll": "ljus", "fyllfarg": [255, 255, 255], "radie": 0, "alfa": 255 },
+    { "post": 0, "box": [62, 446, 371, 529], "fyll": "mork", "fyllfarg": [198, 12, 42], "radie": 41, "alfa": 255, "fet": true, "storlek": 40, "farg": [255, 255, 255], "ink_topp": 467 }
+   ],
+   "2": [
+    { "box": [250, 1100, 845, 1275] },
+    { "post": 2, "box": [265, 1179, 815, 1295], "fet": true, "storlek": 42, "farg": [195, 14, 42] },
+    { "post": 0, "box": [230, 1073, 660, 1189], "fet": true, "storlek": 92, "farg": [19, 18, 16], "vanster_x": 239 },
+    { "post": 1, "box": [600, 1101, 870, 1217], "fet": false, "storlek": 43, "farg": [101, 97, 92], "vanster_x": 617 }
+   ]
+  }
+ },
+ "Taljset_FD_2_2": {
+  "box_for_form": {
+   "1": [
+    { "box": [55, 438, 380, 537], "fyll": "ljus", "fyllfarg": [255, 255, 255], "radie": 0, "alfa": 255 },
+    { "post": 0, "box": [62, 446, 371, 529], "fyll": "mork", "fyllfarg": [198, 12, 42], "radie": 41, "alfa": 255, "fet": true, "storlek": 40, "farg": [255, 255, 255], "ink_topp": 467 }
+   ],
+   "2": [
+    { "box": [250, 1100, 845, 1275] },
+    { "post": 2, "box": [265, 1179, 815, 1295], "fet": true, "storlek": 42, "farg": [195, 14, 42] },
+    { "post": 0, "box": [230, 1073, 660, 1189], "fet": true, "storlek": 92, "farg": [19, 18, 16], "vanster_x": 239 },
+    { "post": 1, "box": [600, 1101, 870, 1217], "fet": false, "storlek": 43, "farg": [101, 97, 92], "vanster_x": 617 }
+   ]
+  }
+ }
+}
