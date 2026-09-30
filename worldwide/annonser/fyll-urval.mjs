@@ -49,6 +49,15 @@ export function kandidater(per, be, uteslut) {
   }).sort((a, b) => b.vinstbidrag - a.vinstbidrag);
 }
 
+/** Andra steget (Axels order 2026-09-30 kväll: "ta topp fem spenders, förutom vinnarna"): produkter
+ * som inte når tio med köp fylls med de annonser som spenderat mest, även utan köp (minst 100 kr). */
+export function spenders(per, be, uteslut) {
+  return per.filter((o) => !uteslut.has(o.namn) && o.spend >= 100).map((o) => {
+    const roas = o.spend ? o.varde / o.spend : 0;
+    return { namn: o.namn, spend: Math.round(o.spend), kop: o.kop, roas: +roas.toFixed(2), cpa: o.kop ? Math.round(o.spend / o.kop) : null, vinstbidrag: Math.round(o.spend * (roas / be - 1)), ad_id: o.ids.sort((a, b) => b.s - a.s)[0].id, fyllnad10: true, spender: true };
+  }).sort((a, b) => b.spend - a.spend);
+}
+
 /** Annonser i produkten som faktiskt kan laddas upp (inte hoppade i copy eller media). */
 export function anvandbara(p, copy, media) {
   return p.annonser.filter((a) => !copy[a.namn]?.hoppa && !media[a.namn]?.hoppa);
@@ -94,7 +103,9 @@ async function huvud() {
     const behov = MAL - har;
     if (behov <= 0) { console.log(`${p.id}: ${har} användbara — klar`); continue; }
     const uteslut = new Set([...p.annonser.map((x) => x.namn), ...scFilmer]);
-    const kand = kandidater(perNamn(rader, p.prefix), p.be, uteslut);
+    const per = perNamn(rader, p.prefix);
+    const kopkand = kandidater(per, p.be, uteslut);
+    const kand = a.includes('--spenders') ? [...kopkand, ...spenders(per, p.be, new Set([...uteslut, ...kopkand.map((k) => k.namn)]))] : kopkand;
     // Två extra i marginal: en del faller i copy- eller textkollen (kronor i bild m.m.).
     const onskat = behov + 2;
     if (!skarpt) {
@@ -114,7 +125,7 @@ async function huvud() {
       if (c.lank && !/baverbutiken\.se/.test(c.lank)) { console.log(`  · ${k.namn}: länkar till ${c.lank.slice(0, 60)} — hoppas`); continue; }
       sedda.add(nyckel);
       nya.push(c);
-      console.log(`  + ${p.id}: ${c.namn} ${c.typ} (${c.vinstbidrag} kr, ${c.kop} köp)`);
+      console.log(`  + ${p.id}: ${c.namn} ${c.typ} (${c.spender ? `spender ${c.spend} kr, ` : ''}${c.vinstbidrag} kr, ${c.kop} köp)`);
     }
     p.annonser.push(...nya);
     console.log(`${p.id}: ${har} → ${har + nya.length} (mål ${MAL}${har + nya.length < MAL ? `, bara ${kand.length} annonser med köp finns` : ''})`);

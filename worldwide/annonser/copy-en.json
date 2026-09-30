@@ -1876,5 +1876,522 @@
   "rubrik": null,
   "beskrivning": null,
   "tre_fragor": null
+ },
+ "Takoverdrag_GT_6_1": {
+  "hoppa": null,
+  "text": "Cover the roof before winter does its worst.\n210D fabric stands up to a whole winter outside, unlike thin tarps that crack in frost.\nFolds down and packs away in the bag it comes with.\nA Swedish brand.",
+  "rubrik": "Cover the caravan roof for winter",
+  "beskrivning": "210D fabric that lasts the winter. Free shipping.",
+  "tre_fragor": {
+   "rad": "Cover the caravan roof for winter",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_PD_8_1": {
+  "hoppa": null,
+  "text": "6.5 × 3 meters – the whole roof, nothing more. 210D fabric that lasts a full winter season outside. 19.5 m², handled by one person.\nA Swedish brand.",
+  "rubrik": "6.5 × 3 meters – the whole roof",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "6.5 × 3 meters – the whole roof",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Batmotor_SP_1_H10": {
+  "hoppa": null,
+  "text": "Most covers only wrap the top cowl. This one goes all the way down over the rigging.\nA Swedish brand.",
+  "rubrik": "Goes all the way down over the rigging",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Goes all the way down over the rigging",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_SO_5_1": {
+  "hoppa": null,
+  "text": "A new seat for a ride-on mower can cost a small fortune. This 600D Oxford seat cover gives the same protection for a fraction of the price. It slips right over your existing cushion – done in under 60 seconds.\n✅ Water-repellent fabric, dry seat in any weather\n✅ Padded underside for a comfortable ride\n✅ Fits most ride-on mowers and garden tractors\n👉 Tap the link and see how easily it fits.\nA Swedish brand.",
+  "rubrik": "Save the cost of a new seat",
+  "beskrivning": "Tired of a wet, hot, cracked seat? The original cushion on a ride-on mower dries out, cracks and turns rock hard after just a couple of seasons in sun and rain. A wet seat in the morning, a scorching one in the afternoon – and every bump in the lawn goes straight into your back...",
+  "tre_fragor": {
+   "rad": "Save the cost of a new seat",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Enginecover_SP_10_H1 Opening 1": {
+  "hoppa": null,
+  "text": "Stays on in a storm and in gusts. 🌊\nKeeps the engine dry and protected.\nSee it in action 👇\nA Swedish brand.",
+  "rubrik": "The outboard cover that stays put",
+  "beskrivning": "Marine-grade 420D fabric that keeps the engine dry.",
+  "tre_fragor": {
+   "rad": "The outboard cover that stays put",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_PD_4_H3": {
+  "hoppa": null,
+  "text": "Green water in the tank?\n210D Oxford fabric blocks sunlight and UV completely.\nA Swedish brand.",
+  "rubrik": "Stop the algae. Cover the tank.",
+  "beskrivning": "210D Oxford fabric, blocks UV.",
+  "tre_fragor": {
+   "rad": "Stop the algae. Cover the tank.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Overvakningskamera_LI_1_1": {
+  "hoppa": null,
+  "text": "Most cameras manage one or two of the points in the picture.\nThis one has dual lens, AI tracking, alerts, weather protection and a warranty – all at once.\nA Swedish brand.",
+  "rubrik": "5 out of 5. No compromises.",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "5 out of 5. No compromises.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Termoskydd_SP_3": {
+  "hoppa": "Öppnar med ett kundcitat utan källa ('Vi sover mycket bättre nu') och 'tusentals husbilsägare' går inte att verifiera på en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Beachslippers_SP_5_1": {
+  "hoppa": "Kundcitat utan källa ('Jag halkade aldrig med dessa …') och 'hundratals män' går inte att verifiera på en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Sotarset_PD_4_1": {
+  "hoppa": null,
+  "text": "The soot that was actually sitting in the stove pipe.\nBrushed loose in minutes.\n9 flexible rods, 3.69 m of reach.\nA Swedish brand.",
+  "rubrik": "This was in the pipe",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "This was in the pipe",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_OB_1_1": {
+  "hoppa": null,
+  "text": "218 × 118.5 cm – fits most motorcycles.\nDoesn't fit yours? 14-day returns.\nNo risk to try.\nA Swedish brand.",
+  "rubrik": "Doesn't fit? 14-day returns",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Doesn't fit? 14-day returns",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_PD_1_H3": {
+  "hoppa": null,
+  "text": "Cold feet ruin the whole day. 🥶\nNot anymore.\nHeated insoles with a remote give you warm feet – instantly, without taking your shoes off.\n✅ 3 heat levels\n✅ Up to 8 hours of warmth\n✅ Control it all with the remote\nPerfect for the ski slope, the job or the game.\n👉 Order yours today.\nA Swedish brand.",
+  "rubrik": "Warm feet – all day, every time",
+  "beskrivning": "Charge, slip into your shoes, press the button.",
+  "tre_fragor": {
+   "rad": "Warm feet – all day, every time",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_UG_1_H1": {
+  "hoppa": null,
+  "text": "Think you have to cover the whole caravan roof?\nOne person can do this alone. A full cover is heavy to get up there by yourself.\nSecured with a strap and a drawstring around the edge. Free shipping.\nA Swedish brand.",
+  "rubrik": "Just the roof. One person can do it.",
+  "beskrivning": "Free shipping",
+  "tre_fragor": {
+   "rad": "Just the roof. One person can do it.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_OB_3_H1": {
+  "hoppa": null,
+  "text": "A question we got: \"Is it waterproof?\"\nHonest answer: no. But water runs off the silver-coated fabric instead of collecting.\nThe seals around your roof hatches don't have to sit in water all winter.\n23% off right now.\nA Swedish brand.",
+  "rubrik": "Water runs off the roof, not into it.",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Water runs off the roof, not into it.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Batmotor_BF_14_1": {
+  "hoppa": null,
+  "text": "Covers the cowl and all the way down over the leg.\nOne strap is enough.\nA Swedish brand.",
+  "rubrik": "Covers the cowl and the leg. One strap.",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Covers the cowl and the leg. One strap.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_PD_15_H1": {
+  "hoppa": null,
+  "text": "The mower seat is soaked every morning and scorching every afternoon. 😩\n\nOur seat cover slips straight over your existing cushion:\n✅ Water-repellent 600D Oxford, so a dry seat even after rain\n✅ Padded inside that takes the bumps for you\n✅ Adjustable straps that don't slip, even on uneven ground\n✅ On in under 60 seconds, no tools\nFits most ride-on mowers and garden tractors. Four colors.\n\n👉 Tap the link and see how easily it goes on.\nA Swedish brand.",
+  "rubrik": "A dry, comfortable seat all season",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "A dry, comfortable seat all season",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Motorhölje_PD_1_H2": {
+  "hoppa": null,
+  "text": "Rain, sun and salt wear on your outboard every single day ⛵\nThis cover protects it against weather and rust.\nUniversal fit, made for most outboards.\nEasy to put on and take off.\nProtect your motor today 👇\nA Swedish brand.",
+  "rubrik": "Protect your outboard, year after year",
+  "beskrivning": "Heavy 420D fabric against rain, sun and salt.",
+  "tre_fragor": {
+   "rad": "Protect your outboard, year after year",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_PD_4_H1": {
+  "hoppa": null,
+  "text": "Green, algae-filled rainwater in the tank?\n210D Oxford fabric blocks sunlight and UV completely.\nOpening at the top so you can still reach the lid.\nA Swedish brand.",
+  "rubrik": "Blocks sunlight and UV completely",
+  "beskrivning": "210D Oxford fabric. Opening at the top.",
+  "tre_fragor": {
+   "rad": "Blocks sunlight and UV completely",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Overvakningskamera_SP_3": {
+  "hoppa": "Bygger på ett anonymt kundcitat ('Jag sover bättre nu'), 'verifierade recensioner' och 'tusentals hushåll i Sverige' som inte går att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Termoskydd_CS_1": {
+  "hoppa": null,
+  "text": "⏰ TODAY ONLY: 40% off the Motorhome Windshield Thermal Cover.\nStock is running low and the price goes back up tomorrow.\nMany have already ordered ahead of the season.\nDon't miss it. The price only holds today. 👇\nA Swedish brand.",
+  "rubrik": "40% OFF. TODAY ONLY",
+  "beskrivning": "Few left in stock. The offer ends soon.",
+  "tre_fragor": {
+   "rad": "40% OFF. TODAY ONLY",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Strandtofflor_SP_1_H2": {
+  "hoppa": "Öppnar med ett anonymt kundcitat och 'hundratals män har redan bytt', inget av det går att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "MC-Kapell_PD_2_1": {
+  "hoppa": null,
+  "text": "Rain, dust and sun wear on your motorcycle every day it's parked outside. 🏍️\n\nThe motorcycle cover protects:\n\n✅ The paint from UV fading\n✅ The seat from rain and damp\n✅ The whole bike from dust and dirt\n\n218 × 118 cm. Fits most motorcycles, mopeds and scooters.\n\nOrder your cover today 👉\nA Swedish brand.",
+  "rubrik": "Keep your bike covered, year after year",
+  "beskrivning": "Protection from rain, dust and UV. Easy to put on.",
+  "tre_fragor": {
+   "rad": "Keep your bike covered, year after year",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Damasker_PD_2": {
+  "hoppa": null,
+  "text": "Tired of snow, water and grit in your boots? 🥾\n✅ Keeps the snow out, the whole hike\n✅ Stops rain and wet terrain\n✅ Protects against grit, mud and stones\n✅ On in 10 seconds\nTap and order yours today 👇\nA Swedish brand.",
+  "rubrik": "Hike dry, whatever the weather",
+  "beskrivning": "Gaiters that keep snow, water & grit out.",
+  "tre_fragor": {
+   "rad": "Hike dry, whatever the weather",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Värmesulorna_PD_2_1V": {
+  "hoppa": null,
+  "text": "Cold feet ruin the whole day. 🥶\nNot anymore.\nHeated insoles with a remote give you warm feet right away, without taking your shoes off.\n✅ 3 heat levels\n✅ Up to 8 hours of heat\n✅ Control it all with the remote\nMade for the ski slope, the job site or a long game.\n👉 Order yours today.\nA Swedish brand.",
+  "rubrik": "Warm feet, all day, every time",
+  "beskrivning": "Charge, slip into your shoes, press the button.",
+  "tre_fragor": {
+   "rad": "Warm feet, all day, every time",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Takoverdrag_SP_3_H1": {
+  "hoppa": "Kundcitat utan källa (\"Ångrar att jag inte köpte det här förra vintern\", \"fler och fler husvagnsägare\", \"betygsatt av riktiga kunder\") går inte att verifiera i en ny marknad; hela kroken är citatet.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Takoverdrag_RI_1_H1": {
+  "hoppa": null,
+  "text": "Around the roof hatch, the sealant sits in damp day after day.\nEventually it softens, and water comes straight in through the roof.\nNo amount of washing fixes that. A roof cover does.\nA Swedish brand.",
+  "rubrik": "Washing won't fix this",
+  "beskrivning": "14-day returns",
+  "tre_fragor": {
+   "rad": "Washing won't fix this",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Batmotor_CS_4_1": {
+  "hoppa": null,
+  "text": "40% off is already taken off, no code needed.\nThe price you see is the price you pay.\nA Swedish brand.",
+  "rubrik": "40% off, already taken off",
+  "beskrivning": "No code needed. Free shipping.",
+  "tre_fragor": {
+   "rad": "40% off, already taken off",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_PD_12_H1": {
+  "hoppa": null,
+  "text": "Your ride-on mower seat is wet every morning and scorching every afternoon. 😩\n\nThis seat cover slips right over your existing cushion:\n✅ Water-repellent 600D Oxford, so a dry seat even after rain\n✅ Padded inside to take the bumps for you\n✅ Adjustable straps, so it won't slide on uneven ground\n✅ On in under 60 seconds, no tools\nFits most ride-on mowers and garden tractors. Four colors.\n\n👉 Tap the link and see how easily it goes on.\nA Swedish brand.",
+  "rubrik": "A dry seat after every rain",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "A dry seat after every rain",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_PD_2_1": {
+  "hoppa": null,
+  "text": "Tired of green, algae-filled rainwater? 💧\n\nThis cover blocks sunlight and UV completely, so the water in your IBC tank stays clear and the tank doesn't wear out early.\n\n✓ Heavy-duty 210D Oxford fabric\n✓ Simple zipper, on in 2 minutes\n✓ Opening at the top, so you can still reach the lid\n\nProtect your tank today 👇\nA Swedish brand.",
+  "rubrik": "Clear water. No algae. Simple.",
+  "beskrivning": "Fits a standard 1000 L IBC tank.",
+  "tre_fragor": {
+   "rad": "Clear water. No algae. Simple.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_CS_2_1": {
+  "hoppa": null,
+  "text": "⏰ TODAY ONLY: 23% OFF\n\nThe price goes back up tomorrow.\n\nStock is running low, and plenty of people have already ordered.\n\nNo algae. No brittle plastic. Just a thick, protective cover for your IBC tank.\n\nDon't miss it. Order before it's gone 👇\nA Swedish brand.",
+  "rubrik": "23% off your IBC tank cover today",
+  "beskrivning": "Today only: 23% off. Free shipping.",
+  "tre_fragor": {
+   "rad": "23% off your IBC tank cover today",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Overvakningskamera_BOF_2_1": {
+  "hoppa": null,
+  "text": "14-day returns. Not happy? Your money back.\nFree shipping.\nA Swedish brand.",
+  "rubrik": "14-day returns",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "14-day returns",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Termoskydd_BOF_8_1": {
+  "hoppa": null,
+  "text": "Free shipping. 14-day returns: if you don't like it, you get your money back.\nSmooth delivery and a secure checkout.\nA Swedish brand.",
+  "rubrik": "Free shipping. 14-day returns",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Free shipping. 14-day returns",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Beachslippers_PD_13_8": {
+  "hoppa": null,
+  "text": "Still slipping on the wet patio? 😬\nThese slides have a non-slip sole that grips on a wet deck, wet grass and slippery rocks.\n✅ Soft EVA material, comfortable all day\n✅ Step in in 2 seconds, no laces\n✅ Dry fast, easy to rinse clean\nOrder yours today and stop worrying about your next step 👇\nA Swedish brand.",
+  "rubrik": "Non-slip slides for the garden & patio",
+  "beskrivning": "Grip and comfort on any surface.",
+  "tre_fragor": {
+   "rad": "Non-slip slides for the garden & patio",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_SP_2": {
+  "hoppa": "Kundcitat utan källa (\"Min MC ser ut som ny igen\") och \"tusentals motorcykelägare i Sverige\" går inte att verifiera i en ny marknad; hela kroken är citatet.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Damasker_SP_1": {
+  "hoppa": "Kundcitat utan källa (\"Helt torra strumpor\") och \"Verifierade kunder\"/\"tusentals vandrare\" går inte att verifiera i en ny marknad.",
+  "text": null,
+  "rubrik": null,
+  "beskrivning": null,
+  "tre_fragor": null
+ },
+ "Takoverdrag_CS_6_1": {
+  "hoppa": null,
+  "text": "Free shipping on the caravan & RV roof cover, 6.5 × 3 metres.\nSilver-coated 210D fabric that keeps rain, leaves and sun off the roof.\n14-day returns if it doesn't fit.\nA Swedish brand.",
+  "rubrik": "Free shipping: caravan roof cover",
+  "beskrivning": "14-day returns",
+  "tre_fragor": {
+   "rad": "Free shipping: caravan roof cover",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Batmotor_BOF_3_1": {
+  "hoppa": null,
+  "text": "9 sizes. From 0–5 hp up to 250–350 hp.\nWhether you run a small dinghy or a big cruiser, there's a cover that fits your outboard.\nA Swedish brand.",
+  "rubrik": "9 sizes, 0–5 to 250–350 hp",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "9 sizes, 0–5 to 250–350 hp",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_SP_2_1_H1": {
+  "hoppa": null,
+  "text": "\"Thought I'd have to replace the whole seat.\"\n\nIt's the most common comment we get. Most cracked seats can be saved with a cover instead.\n\n✅ Heavy-duty 600D Oxford that handles sun, rain and daily mowing\n✅ A dry seat every morning\n✅ A softer ride thanks to the padding\n✅ 14-day returns\n\n👉 Tap the link to read more and pick your color.\nA Swedish brand.",
+  "rubrik": "Save the seat. Skip the new cushion.",
+  "beskrivning": "14-day returns. Free shipping.",
+  "tre_fragor": {
+   "rad": "Save the seat. Skip the new cushion.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Enginecover_SO_22_2": {
+  "hoppa": null,
+  "text": "We over-ordered marine engine covers in 420D Oxford fabric.\nSo we're clearing them out at a lower price.\nWater-repellent protection against rain, sun and dust.\nDrawstring all the way around for a snug fit.\nOn and off in seconds.\nWhile stock lasts, order yours now.\nA Swedish brand.",
+  "rubrik": "Overstock sale: 420D engine cover",
+  "beskrivning": "Water-repellent 420D Oxford cover for marine engines. Drawstring fit, on and off in seconds.",
+  "tre_fragor": {
+   "rad": "Overstock sale: 420D engine cover",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "IBC_PD_1_H2": {
+  "hoppa": null,
+  "text": "Tired of green, algae-filled rainwater? 💧\n\nThis cover blocks sunlight and UV completely, so the water in your IBC tote stays clear and the tank doesn't wear out early.\n\n✓ Heavy-duty 210D Oxford fabric\n✓ Easy zipper, done in 2 minutes\n✓ Opening at the top, so you still reach the lid\n\nProtect your tank today 👇\nA Swedish brand.",
+  "rubrik": "Clear water. No algae. Easy.",
+  "beskrivning": "Fits a standard 1000 L IBC tote.",
+  "tre_fragor": {
+   "rad": "Clear water. No algae. Easy.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Overvakningskamera_PD_2": {
+  "hoppa": null,
+  "text": "A sound in the yard at three in the morning. 😨\nIs it the cat, or something else?\n✅ Two lenses, 355° coverage: no blind spots\n✅ AI that tells people from cats and branches\n✅ Alerts only on real threats: no false alarms\n✅ Instant phone notification wherever you are\nStop guessing what's happening at home. See it. 👉 Order yours today.\nA Swedish brand.",
+  "rubrik": "See the whole yard, no cat false alarms",
+  "beskrivning": "AI tracking that tells people from cats and branches.",
+  "tre_fragor": {
+   "rad": "See the whole yard, no cat false alarms",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Termoskydd_CS_10_1": {
+  "hoppa": null,
+  "text": "Condensation can't get a grip on the inside of the glass.\nThe cover sits on the outside of the windshield, not behind it.\nCovers the windshield and both side windows, 211 × 171 cm.\nNow 40% off.\nA Swedish brand.",
+  "rubrik": "Fog on the inside. Cover on the outside.",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Fog on the inside. Cover on the outside.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Beachslippers_PD_13_10": {
+  "hoppa": null,
+  "text": "Still slipping on the wet deck? 😬\nThese slides have a non-slip sole that grips wet decking, soaked lawns and slick stones.\n✅ Soft EVA material: comfortable all day\n✅ Step in within 2 seconds, no laces\n✅ Dry fast, rinse clean in seconds\nOrder yours today and stop worrying about your next step 👇\nA Swedish brand.",
+  "rubrik": "Non-slip slides for the garden and deck",
+  "beskrivning": "Grip and comfort on any surface.",
+  "tre_fragor": {
+   "rad": "Non-slip slides for the garden and deck",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Sotarset_PD_7_H1": {
+  "hoppa": null,
+  "text": "Your stove draws worse with every fire, and you know why. Soot builds up quietly in the bend, right where a stiff rod stops. Nine flexible rods follow the bends: screw together 3.69 metres and pull the nylon brush through the flue. Clean it yourself between sweeps. Order your chimney sweep kit today and get your draft back.\nA Swedish brand.",
+  "rubrik": "Clean flue, better draft, in minutes",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Clean flue, better draft, in minutes",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "MC-Kapell_RI_2_1": {
+  "hoppa": null,
+  "text": "One season uncovered means dull paint and rust on the chrome.\nThe cover takes the hit, not your motorcycle.\nStop the damage before it starts.\nA Swedish brand.",
+  "rubrik": "Stop the damage before it starts",
+  "beskrivning": null,
+  "tre_fragor": {
+   "rad": "Stop the damage before it starts",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_PD_2": {
+  "hoppa": null,
+  "text": "Always wanted to try whittling, but never known which tools you need? 🪵\nWith the 30-piece whittling set you get it all in one:\n✔️ 6 knives to shape and cut\n✔️ 6 gouges to hollow out and bring out detail\n✔️ 30 pieces in total, so you can start right away\nPerfect for spoons, figures and decorations.\n👉 Order your set here.\nA Swedish brand.",
+  "rubrik": "Start whittling this weekend",
+  "beskrivning": "A complete set, no guesswork.",
+  "tre_fragor": {
+   "rad": "Start whittling this weekend",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
  }
 }
