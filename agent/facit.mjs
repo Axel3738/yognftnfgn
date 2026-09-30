@@ -19,7 +19,10 @@
 import { existsSync, readFileSync, writeFileSync, appendFileSync, mkdirSync, renameSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { lasBelopp, targetRoas, GOLV_SEK, MIN_SPEND_FOR_DOM, MIN_KOP_FOR_DOM } from './besked.mjs';
+import {
+  lasBelopp, targetRoas, vinstProcent, GOLV_SEK, MIN_SPEND_FOR_DOM, MIN_KOP_FOR_DOM,
+  TRAPPA, SNABB_SKALNING_ROAS, KONSEKVENT_DAGAR, TAK_UTAN_VINNARE, NARA_GRANS_PP, LIVSTIDS_MAX_BACKDAGAR, TEST_TROSKEL_SEK,
+} from './besked.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 export const FACITFIL = join(HÄR, 'facit.jsonl');
@@ -69,11 +72,8 @@ export const REGELVERK = Object.freeze([
   { fran: '2026-09-23', namn: 'trappan + inget tak + CPA-spärr (2026-09-22)' },
 ]);
 
-/** Kontrollfaktorn: minst så många kampanjdygn från så många ANDRA kampanjer i
- *  bandet. Annars grannbanden, sedan båda marknaderna, annars k = 1 och sagt.
- *  Mätt 2026-09-30: kravet "ingen ändring på elva dygn" gav 6 prov i Sverige —
- *  motorn rör nästan allt var tredje dag — så kontrollen räknas i stället som
- *  regressionens skärningspunkt (se kontrollfaktor). */
+/** Kontrollen kräver minst så många kampanjdygn från så många ANDRA kampanjer
+ *  (den egna marknaden först, annars båda). Annars ingen dom (UNG), och det sägs. */
 export const KONTROLL_MIN_PROV = 15;
 export const KONTROLL_MIN_KAMPANJER = 5;
 
@@ -99,12 +99,29 @@ export const HALL_KODER = ['LAT_VARA', 'VANTA_KADENS', 'VANTA_KONSEKVENT', 'CPA_
 
 export const FAMILJNAMN = Object.freeze({
   HOJ: 'höjningar', SANK: 'sänkningar', STANG: 'avstängningar', TJUV: 'tjuvpauser',
+  AXEL_HOJ: 'dina egna höjningar', AXEL_SANK: 'dina egna sänkningar',
   HALL_HOG: 'väntan över target', HALL_MELLAN: 'väntan mellan break-even och target', HALL_FORLUST: 'väntan i förlust',
 });
 const FAMILJNAMN_EN = Object.freeze({
   HOJ: 'raises', SANK: 'cuts', STANG: 'kills', TJUV: 'thief pauses',
+  AXEL_HOJ: "Axel's own raises", AXEL_SANK: "Axel's own cuts",
   HALL_HOG: 'holds above target', HALL_MELLAN: 'holds between break-even and target', HALL_FORLUST: 'holds in loss',
 });
+
+/** Metodens version på varje facit-rad. Hinkarna räknas bara ur gällande version,
+ *  så en rättad metod aldrig blandas med frysta rader från en gammal. */
+export const METOD_VERSION = 3;
+
+/** Familjens grund: dina egna ändringar mäts precis som motorns. */
+export const grund = (f) => (f === 'AXEL_HOJ' ? 'HOJ' : f === 'AXEL_SANK' ? 'SANK' : f);
+export const arBudgetfamilj = (f) => ['HOJ', 'SANK'].includes(grund(f));
+
+/** ROAS ÷ target vid beslutet — exakt trappans steg i besked.mjs (TRAPPA.over 1,0 / 1,5 / 2,0). */
+export const trappaFor = (roas, target) => {
+  if (!Number.isFinite(roas) || !Number.isFinite(target) || target <= 0) return 'okänd';
+  const q = roas / target;
+  return q < 1 ? '<1,0' : q < 1.5 ? '1,0–1,5' : q < 2 ? '1,5–2,0' : '≥2,0';
+};
 
 // ── Datum ────────────────────────────────────────────────────────────────────
 
@@ -324,7 +341,7 @@ export function episoder(beslut, index) {
   const ut = [];
   const perKampanj = new Map();
   for (const b of beslut) {
-    if (!['HOJ', 'SANK', 'STANG', 'TJUV'].includes(b.familj)) continue;
+    if (!['HOJ', 'SANK', 'STANG', 'TJUV', 'AXEL_HOJ', 'AXEL_SANK'].includes(b.familj)) continue;
     if (!perKampanj.has(b.kampanj_id)) perKampanj.set(b.kampanj_id, []);
     perKampanj.get(b.kampanj_id).push(b);
   }
@@ -354,86 +371,153 @@ export function episoder(beslut, index) {
   return ut.sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0));
 }
 
-// ── Kontrollen: regressionen mot medelvärdet ────────────────────────────────
+// ── Kontrollen: vad hade hänt utan ändringen? ────────────────────────────────
+//
+// Version 3 (2026-09-30), vald i en provbänk mot fyra simuleringar med känt facit
+// (agent/FACIT.md → "Hur modellen valdes"). Motorn agerar nästan alltid när ROAS
+// är hög eller låg, så de dygn där inget ändrades är få just där besluten tas.
+// En regression över ALLA kampanjdygn med spendens flytt som förklaring (version
+// 2) blandade ihop motorns egen reaktion med kampanjens utveckling: i
+// simuleringen såg höjningar ut att tjäna 60–90 % av de flyttade kronorna för
+// mycket och sänkningar lika mycket för lite, åt fel håll. Version 3 utgår från
+// kampanjens EGEN nivå veckan innan och räknar hur mycket av före-fönstrets
+// avvikelse som brukar hålla i sig (empirisk Bayes). Felet i simuleringarna:
+// 1–15 % av de flyttade kronorna, utan en riktning som går igen.
+
+/** Kampanjens egen nivå: dygn D−10..D−4, minst 5 dygn med spend, 3 köp och 300 kr. */
+export const HISTORIK = Object.freeze({ fran: 10, till: 4, minDagar: 5 });
+/** Ett köps intäkt är brusig (sammansatt Poisson): variansen i log-ROAS ≈ (1 + CV²) / köp. */
+const BRUS_PER_KOP = () => 1 + AOV_CV ** 2;
+
+/** Kampanjens nivå veckan innan D, eller null (för lite historik — ny kampanj). */
+export function egenHistorik(serie, kampanjId, datum, be, since) {
+  const fran = plusDagar(datum, -HISTORIK.fran);
+  if (fran < since || !Number.isFinite(be)) return null;
+  const h = summa(serie, kampanjId, fran, plusDagar(datum, -HISTORIK.till));
+  if (h.dagar - h.nolldygn < HISTORIK.minDagar || h.kop < MIN_KOP_FOR_DOM || h.spend < MIN_SPEND_FOR_DOM || !(h.roas > 0)) return null;
+  return { qh: h.roas / be, kop: h.kop, spend: h.spend };
+}
 
 /**
- * Prov för kontrollen: varje kampanjdygn d med ett bedömbart före-fönster
- * (≥ 300 kr, ≥ 3 köp, spend varje dygn) och spend varje dygn i efter-fönstret
- * D+1..D+h. Ändringar spelar ingen roll här — regressionen räknar bort dem.
- *   x = log(spend per dygn efter ÷ före)      (hur mycket spenden flyttade)
- *   y = log(ROAS efter ÷ ROAS före)            (hur ROAS rörde sig)
+ * Prov för kontrollen: varje kampanjdygn d där budgeten INTE ändrades D−3..D,
+ * med ett bedömbart före-fönster (≥ 300 kr, ≥ 3 köp, spend varje dygn) och en
+ * egen historik (D−10..D−4). Utfallet är ROAS D+1..D+h oavsett vad som hände
+ * sedan (samma fråga som ett hållbeslut besvarar: vad blev det när vi lät den
+ * vara i dag). Minst halva efter-fönstret med spend.
+ *   q  = ROAS/BE före     qh = ROAS/BE veckan innan     y = ROAS/BE efter
  */
-export function kontrollprov(serie, beIndex, { marknadFor: mf, since, until, h }) {
+export function kontrollprov(serie, beIndex, { marknadFor: mf, since, until, h, index = new Map() }) {
   const prov = [];
   for (const [kid, m] of serie) {
     const datum = [...m.keys()].sort();
     if (!datum.length) continue;
     const forsta = datum[0] > since ? datum[0] : since;
+    const andringar = (index.get(String(kid)) ?? []).map((x) => x.datum);
     for (let d = plusDagar(forsta, FORE_DAGAR); plusDagar(d, h) <= until; d = plusDagar(d, 1)) {
+      if (andringar.some((a) => a >= plusDagar(d, -FORE_DAGAR) && a <= d)) continue;
       const fore = summa(serie, kid, plusDagar(d, -FORE_DAGAR), plusDagar(d, -1));
       if (fore.nolldygn || fore.spend < MIN_SPEND_FOR_DOM || fore.kop < MIN_KOP_FOR_DOM || !(fore.roas > 0)) continue;
       const efter = summa(serie, kid, plusDagar(d, 1), plusDagar(d, h));
-      if (efter.nolldygn) continue;
+      if (!(efter.spend > 0) || (efter.dagar - efter.nolldygn) * 2 < efter.dagar) continue;
       const be = beIndex(kid, d);
       if (!Number.isFinite(be)) continue;
-      const x = Math.log((efter.spend / efter.dagar) / (fore.spend / fore.dagar));
-      prov.push({ kampanj_id: kid, datum: d, marknad: mf(kid), band: bandFor(fore.roas, be), x, q: fore.roas / be, y: (efter.roas ?? 0) / be, w: fore.spend });
+      const hist = egenHistorik(serie, kid, d, be, since);
+      if (!hist) continue;
+      const q = fore.roas / be;
+      if (q >= KONTROLL_MAX_Q) continue;
+      prov.push({ kampanj_id: kid, datum: d, marknad: mf(kid), q, qh: hist.qh, kop: fore.kop, kop_hist: hist.kop, kop_efter: efter.kop, y: (efter.roas ?? 0) / be, w: fore.spend });
     }
   }
   return prov;
 }
 
-const bandIndex = (namn) => BAND.findIndex((b) => b.namn === namn);
+/** Kontrollen räknas på dygn med ROAS under 5 × break-even (extrema dygn på få köp styr annars). */
+export const KONTROLL_MAX_Q = 5;
 
 /**
- * Viktad minsta kvadrat y = a + b·q + c·x (tre okända, normalekvationerna).
- * Saknas spridning i x eller q faller den koefficienten bort (sätts till 0).
- */
-export function regression(prov) {
-  const W = prov.reduce((s, p) => s + p.w, 0);
-  if (!(W > 0) || prov.length < 3) return null;
-  const m = (f) => prov.reduce((s, p) => s + p.w * f(p), 0) / W;
-  const mq = m((p) => p.q); const mx = m((p) => p.x); const my = m((p) => p.y);
-  const sqq = m((p) => (p.q - mq) ** 2); const sxx = m((p) => (p.x - mx) ** 2); const sqx = m((p) => (p.q - mq) * (p.x - mx));
-  const sqy = m((p) => (p.q - mq) * (p.y - my)); const sxy = m((p) => (p.x - mx) * (p.y - my));
-  let b = 0; let c = 0;
-  const det = sqq * sxx - sqx * sqx;
-  if (sqq > 1e-9 && sxx > 1e-9 && Math.abs(det) > 1e-12) { b = (sqy * sxx - sxy * sqx) / det; c = (sxy * sqq - sqy * sqx) / det; }
-  else if (sqq > 1e-9) b = sqy / sqq;
-  else if (sxx > 1e-9) c = sxy / sxx;
-  return { a: my - b * mq - c * mx, b, c };
-}
-
-/**
- * Kontrafaktisk ROAS (i break-even-enheter) för en kampanj som hade ROAS/BE = q
- * före beslutet, om spenden INTE flyttat: a + b·q ur regressionen över andra
- * kampanjers dygn. b < 1 är regressionen mot medelvärdet — en kampanj som nyss
- * gått ovanligt bra förväntas falla tillbaka, en i förlust studsa upp.
- *
- * Varför kontinuerligt och inte per band (mätt 2026-09-30 i simuleringstestet):
- * motorn höjer precis vid target, bandets nedre kant, och ett bandsnitt
- * underskattade då det kontrafaktiska — sann vinst 0 kr blev +13 274 kr med
- * log-kvoter per band, +8 853 kr med kvoter per band.
+ * Kontrafaktisk ROAS/BE för en kampanj med före-nivån q och egna nivån qh, om
+ * budgeten stått still:   κ · qh · (q ÷ qh)^ρ
+ *   ρ = C ÷ (C + brus)   hur mycket av avvikelsen mot den egna nivån som håller
+ *                        i sig. C = hur mycket den brukar hålla (kovariansen i
+ *                        andra kampanjers orörda dygn), brus = (1 + CV²) ÷ köp
+ *                        före — få köp ⇒ mer är slump ⇒ lägre ρ.
+ *   κ                    trötthet och allt annat som drar alla kampanjer åt
+ *                        samma håll (kalibrerat så att andra kampanjers orörda
+ *                        dygn får rätt snitt).
  * Kampanjen som bedöms räknas aldrig in i sin egen kontroll. Tunn marknad ⇒
  * båda marknaderna; annars saknas kontrollen och det sägs.
  */
-export function kontrollfaktor(prov, { q = null, band = null, marknad, utom = null }) {
-  for (const marknader of [[marknad], ['SE', 'NO']]) {
-    const urval = prov.filter((p) => p.kampanj_id !== utom && marknader.includes(p.marknad) && p.q > 0 && p.q < KONTROLL_MAX_Q);
-    const kampanjer = new Set(urval.map((p) => p.kampanj_id)).size;
-    if (urval.length < KONTROLL_MIN_PROV || kampanjer < KONTROLL_MIN_KAMPANJER) continue;
-    const reg = regression(urval);
-    if (!reg) continue;
-    const qq = Number.isFinite(q) ? q : bandMitt(band);
-    const kvot = Math.max(reg.a + reg.b * qq, 0);
-    return { kvot, k: qq > 0 ? kvot / qq : null, a: reg.a, b: reg.b, elasticitet: reg.c, prov: urval.length, kampanjer, marknad: marknader.join('+') };
+export function kontrollfaktor(prov, { q, qh, kop, kopHist = null, marknad, utom = null, omdragningar = 0, fro = '' }) {
+  const saknas = (orsak) => ({ kvot: null, k: 1, prov: 0, kampanjer: 0, marknad, saknas: true, orsak });
+  if (!(q > 0)) return saknas('ingen före-ROAS');
+  if (!(qh > 0)) return saknas('för lite egen historik veckan innan');
+  const alla = prov.filter((p) => p.kampanj_id !== utom && p.q > 0 && p.qh > 0);
+  if (!kontrollRacker(alla)) return saknas('för få andra kampanjer med orörda dygn');
+  const m = anpassa(alla, marknad);
+  if (!m) return saknas('för få orörda dygn med köp');
+  const ut = m.forutsag({ q, qh, kop });
+  const brus = BRUS_PER_KOP();
+  // Osäkerheten i det kontrafaktiska (log-skala): före-fönstrets och historikens brus.
+  const sdLn = Math.sqrt(ut.rho * ut.rho * brus / Math.max(kop, 1) + (1 - ut.rho) ** 2 * (Number.isFinite(kopHist) ? brus / Math.max(kopHist, 1) : 0));
+  // Modellens egen osäkerhet: kontrollkampanjerna dras om med återläggning och
+  // κ och C räknas om. Den är GEMENSAM för alla beslut samma morgon (samma
+  // skattning), så hinkarna lägger ihop den rakt, inte i kvadrat.
+  let sdKvot = null;
+  if (omdragningar > 0) {
+    const perKampanj = new Map();
+    for (const p of alla) { if (!perKampanj.has(p.kampanj_id)) perKampanj.set(p.kampanj_id, []); perKampanj.get(p.kampanj_id).push(p); }
+    const grupper = [...perKampanj.values()];
+    const r = slump(hash(`kontroll|${fro}`));
+    const v = [];
+    for (let i = 0; i < omdragningar; i++) {
+      const drag = [];
+      for (let j = 0; j < grupper.length; j++) drag.push(...grupper[Math.floor(r() * grupper.length)]);
+      const mb = anpassa(drag, marknad);
+      if (mb) v.push(mb.forutsag({ q, qh, kop }).kvot);
+    }
+    if (v.length >= 10) { const mv = v.reduce((a2, b2) => a2 + b2, 0) / v.length; sdKvot = Math.sqrt(v.reduce((a2, b2) => a2 + (b2 - mv) ** 2, 0) / (v.length - 1)); }
   }
-  return { kvot: null, k: 1, prov: 0, kampanjer: 0, marknad, saknas: true };
+  return { kvot: ut.kvot, k: ut.kvot / q, rho: ut.rho, kappa: m.kappa, C: m.C, sdLn, sdKvot, prov: m.prov, kampanjer: m.kampanjer, marknad: m.marknad };
 }
 
-/** Kontrollen räknas på dygn med ROAS under 5 × break-even (extrema dygn på få köp styr annars linjen). */
-export const KONTROLL_MAX_Q = 5;
-const bandMitt = (namn) => { const i = BAND.findIndex((b) => b.namn === namn); if (i < 0) return null; const lag = i === 0 ? 0.5 : BAND[i - 1].upp; const hog = Number.isFinite(BAND[i].upp) ? BAND[i].upp : lag * 1.3; return (lag + hog) / 2; };
+/** Så många omdragningar av kontrollkampanjerna per beslut (modellens osäkerhet). */
+export const MODELL_OMDRAGNINGAR = 60;
+/** Omdragningen fångar skattningens brus men inte att modellen är en förenkling.
+ *  Kalibrerat i simuleringen 2026-09-30 (3 världar × 8 frön, en månads data per
+ *  körning): felet delat med omdragningens sd hade spridningen 1,4 för höjningar
+ *  och 1,9 för sänkningar. Skalan gör 80 %-intervallen ärliga. */
+export const MODELL_SKALA = Object.freeze({ HOJ: 1.5, SANK: 1.9 });
+
+const kontrollRacker = (r) => r.length >= KONTROLL_MIN_PROV && new Set(r.map((p) => p.kampanj_id)).size >= KONTROLL_MIN_KAMPANJER;
+
+/**
+ * Anpassar modellen på en uppsättning orörda dygn: C på alla (båda marknaderna —
+ * på en marknad var det för tunt: Norge 2026-09-30 hade 27 dygn på 6 kampanjer
+ * och C slog i golvet), κ på marknadens egna när de räcker (trötthet och säsong
+ * är marknadens). Null när datan inte bär.
+ */
+function anpassa(alla, marknad) {
+  const brus = BRUS_PER_KOP();
+  const med = alla.filter((p) => p.y > 0);
+  const W = med.reduce((s, p) => s + p.w, 0);
+  if (!(W > 0) || med.length < 3) return null;
+  const u = med.map((p) => Math.log(p.q / p.qh));
+  const z = med.map((p) => Math.log(p.y / p.qh));
+  const mu = med.reduce((s, p, i) => s + p.w * u[i], 0) / W;
+  const mz = med.reduce((s, p, i) => s + p.w * z[i], 0) / W;
+  const C = Math.max(med.reduce((s, p, i) => s + p.w * (u[i] - mu) * (z[i] - mz), 0) / W, 0.001);
+  const rhoFor = (k) => C / (C + brus / Math.max(k, 1));
+  const pred0 = (p) => p.qh * Math.exp(rhoFor(p.kop) * Math.log(p.q / p.qh));
+  const egna = alla.filter((p) => p.marknad === marknad);
+  const urval = kontrollRacker(egna) ? egna : alla;
+  const Wa = urval.reduce((s, p) => s + p.w * pred0(p), 0);
+  if (!(Wa > 0)) return null;
+  const kappa = urval.reduce((s, p) => s + p.w * p.y, 0) / Wa;
+  return {
+    C, kappa, prov: urval.length, kampanjer: new Set(urval.map((p) => p.kampanj_id)).size, marknad: urval === egna ? marknad : 'SE+NO',
+    forutsag: ({ q, qh, kop }) => { const rho = rhoFor(kop); return { rho, kvot: kappa * qh * Math.exp(rho * Math.log(q / qh)) }; },
+  };
+}
 
 // ── Domen per episod (version 2, efter designkritiken 2026-09-30) ────────────
 //
@@ -500,10 +584,16 @@ export function dommaEpisod(ep, horisont, ctx) {
     forsta_steg: stegFor(ep.familj, ep.steg[0]?.fran, ep.steg[0]?.till),
     total: stegFor(ep.familj, ep.fran, ep.till),
     kedja: ep.steg.length > 1 ? '2+ steg' : '1 steg',
+    av: ep.familj.startsWith('AXEL_') ? 'axel' : 'motorn',
+    metod: METOD_VERSION,
   };
+  // Hur länge sedan förra ändringen (snabbspåret höjer igen efter ett dygn).
+  const fore0 = (index.get(String(ep.kampanj_id)) ?? []).filter((x) => x.datum < ep.start).pop();
+  const sedan = fore0 ? dagarMellan(fore0.datum, ep.start) : null;
+  bas.fart = sedan === 1 ? 'snabbspår (1 dygn)' : sedan === 2 ? '2 dygn' : 'normal (≥ 3 dygn)';
 
   // Episoden kan fortfarande växa: vänta tills en ny ändring åt samma håll inte längre hinner komma.
-  if (plusDagar(ep.slut, KEDJA_DAGAR) > until && ['HOJ', 'SANK'].includes(ep.familj)) return null;
+  if (plusDagar(ep.slut, KEDJA_DAGAR) > until && arBudgetfamilj(ep.familj)) return null;
 
   // Före-fönstret = urvalsfönstret, exakt det motorn såg (D−3..D−1).
   const foreFran = plusDagar(ep.start, -FORE_DAGAR);
@@ -514,6 +604,7 @@ export function dommaEpisod(ep, horisont, ctx) {
   bas.break_even = Number.isFinite(be) ? be : null;
   bas.target = Number.isFinite(target) ? Math.round(target * 1000) / 1000 : null;
   bas.band = bandFor(fore.roas, be);
+  bas.trappa = trappaFor(fore.roas, target);
   // Beslutsdatan före 2026-09-25 bar visningsköp (kontots standardattribution);
   // facit räknar allt i 7d_click, så bandet kan skilja från det motorn såg.
   bas.beslutsdata = ep.start < ATTRIBUTION_7D_CLICK_FRAN ? 'med visningsköp' : '7d_click';
@@ -521,6 +612,26 @@ export function dommaEpisod(ep, horisont, ctx) {
   if (ep.familj !== 'STANG' && fore.nolldygn) return { ...bas, dom: 'LANSERINGSFAS', orsak: `${fore.nolldygn} dygn utan spend i före-fönstret`, fore: kort(fore) };
   const tidigare = handelserMellan(index, ep.kampanj_id, foreFran, plusDagar(ep.start, -1));
   if (ep.familj !== 'STANG' && tidigare.length) return { ...bas, dom: 'STORD', orsak: `${tidigare[0].motor ? 'motorn' : 'handändring'} ${tidigare[0].typ} ${tidigare[0].datum} i före-fönstret`, fore: kort(fore) };
+
+  // Avstängning: ingen kontrafaktisk dom (kritiken 2026-09-30 — valet av kontroll
+  // avgjorde domen helt). Det som räknas är det som faktiskt hände: startades den
+  // om (loggad ATERAKTIVERA eller spend syns igen), och gick den då plus?
+  if (ep.familj === 'STANG') {
+    const rad0 = { ...bas, fore: kort(fore), kop_fore: fore.kop };
+    let r = null;
+    for (let d = plusDagar(ep.start, 1); d <= plusDagar(ep.start, h) && d <= until; d = plusDagar(d, 1)) {
+      const v = serie.get(ep.kampanj_id)?.get(d);
+      if (v && v.spend > 0) { r = d; break; }
+    }
+    if (!r && plusDagar(ep.start, h + MOGNAD_DAGAR) > until) return null;
+    if (r) {
+      const rTill = plusDagar(r, h - 1);
+      if (plusDagar(rTill, MOGNAD_DAGAR) > until) return null;
+      const w = summa(serie, ep.kampanj_id, r, rTill);
+      rad0.aterstartad = { datum: r, dagar: w.dagar, spend: runda(w.spend, 0), roas: w.roas === null ? null : runda(w.roas, 3), vinst_kr: runda(w.intakt / be - w.spend, 0) };
+    }
+    return { ...rad0, dom: 'REGISTRERAD', orsak: rad0.aterstartad ? 'återstartad — utfallet efter återstarten står i raden' : 'ingen kontrafaktisk dom för avstängningar', bedombar: false };
+  }
 
   // Efter-fönstret: dagen efter första steget till H dygn efter sista. Kapas vid
   // första ändring som inte hör till episoden. Motorns egen avstängning eller
@@ -533,14 +644,12 @@ export function dommaEpisod(ep, horisont, ctx) {
   const storning = handelserMellan(index, ep.kampanj_id, eFran, eTill, { utom: egnaDagar })[0];
   if (storning) {
     eTill = plusDagar(storning.datum, -1);
-    avbruten = storning.motor && ep.familj !== 'STANG';
+    avbruten = storning.motor && bas.av === 'motorn';
     orsakKap = `${storning.motor ? 'motorn' : 'handändring'} ${storning.typ} ${storning.datum}`;
   }
-  if (ep.familj !== 'STANG') {
-    for (let d = eFran; d <= eTill; d = plusDagar(d, 1)) {
-      const v = serie.get(ep.kampanj_id)?.get(d);
-      if (!v || !(v.spend > 0)) { eTill = plusDagar(d, -1); avbruten = false; orsakKap = `inget spend ${d} (pausad för hand?)`; break; }
-    }
+  for (let d = eFran; d <= eTill; d = plusDagar(d, 1)) {
+    const v = serie.get(ep.kampanj_id)?.get(d);
+    if (!v || !(v.spend > 0)) { eTill = plusDagar(d, -1); avbruten = false; orsakKap = `inget spend ${d} (pausad för hand?)`; break; }
   }
   if (plusDagar(eTill, MOGNAD_DAGAR) > until) return null; // fönstret har inte stängt och mognat — väntar
   const eDagar = dagarMellan(eFran, eTill) + 1;
@@ -548,27 +657,18 @@ export function dommaEpisod(ep, horisont, ctx) {
   const efter = summa(serie, ep.kampanj_id, eFran, eTill);
   const rad = { ...bas, fore: kort(fore), efter: kort(efter), avkortat: orsakKap, avbruten };
 
-  // Avstängning: ingen kontrafaktisk dom (kritiken 2026-09-30 — valet av k
-  // avgjorde domen helt). Det som räknas är det som faktiskt hände: startades
-  // den om, och gick den då plus?
-  if (ep.familj === 'STANG') {
-    if (efter.spend > 0) rad.aterstartad = { spend: runda(efter.spend, 0), roas: efter.roas === null ? null : runda(efter.roas, 3), vinst_kr: runda(efter.intakt / be - efter.spend, 0) };
-    rad.kop_fore = fore.kop;
-    return { ...rad, dom: 'REGISTRERAD', orsak: rad.aterstartad ? 'återstartad — utfallet efter återstarten står i raden' : 'ingen kontrafaktisk dom för avstängningar', bedombar: false };
-  }
-
-  // Kontrafaktisk ROAS: före-ROAS × k, där k är hur ROAS rör sig för ANDRA
-  // kampanjer i samma band när spenden inte flyttar (regressionens skärnings-
-  // punkt). Vald på placebotestet 2026-09-30: "veckan innan motorn tittade" som
-  // baslinje gav −41 066 kr på 24 dygn där inget ändrades (kampanjer mattas av),
-  // regressionen +11 033 kr med ett intervall som innehåller noll.
-  const kf = kontrollfaktor(ctx.prov[horisont] ?? [], { q: fore.roas / be, marknad: ep.marknad, utom: ep.kampanj_id });
-  if (kf.saknas) return { ...rad, dom: 'UNG', orsak: 'ingen kontroll (för få andra kampanjer)' };
+  // Kontrafaktisk ROAS: kampanjens egen nivå veckan innan, plus den del av
+  // före-fönstrets avvikelse som brukar hålla i sig (kontrollfaktor, version 3).
+  // Fönster på upp till 5 dygn jämförs med 3-dygnsprov, längre med 7-dygnsprov.
+  const hist = egenHistorik(serie, ep.kampanj_id, ep.start, be, ctx.since);
+  if (!hist) return { ...rad, dom: 'UNG', orsak: 'för lite egen historik veckan innan (ny eller nyss startad kampanj)' };
+  const provH = eDagar <= 5 ? 'kort' : 'lang';
+  const kf = kontrollfaktor(ctx.prov[provH] ?? [], { q: fore.roas / be, qh: hist.qh, kop: fore.kop, kopHist: hist.kop, marknad: ep.marknad, utom: ep.kampanj_id, omdragningar: ctx.omdragningar ?? MODELL_OMDRAGNINGAR, fro: bas.nyckel });
+  if (kf.saknas) return { ...rad, dom: 'UNG', orsak: `ingen kontroll (${kf.orsak})` };
   const roasCf = kf.kvot * be;
-  // Osäkerheten i det kontrafaktiska: före-fönstrets brus × lutningen b (så mycket av före-ROAS som går vidare).
-  const varCfPerKr = (intaktsvarians(fore) * kf.b * kf.b) / (fore.spend ** 2);
   rad.k = runda(kf.k, 3);
-  rad.kontrafaktiskt = `ROAS/BE före ${dec(fore.roas / be)} ⇒ utan ändring ${dec(kf.kvot)} (${kf.prov} kampanjdygn, ${kf.kampanjer} andra kampanjer, ${kf.marknad})`;
+  rad.kontroll = { q: runda(fore.roas / be, 3), qh: runda(hist.qh, 3), rho: runda(kf.rho, 3), kappa: runda(kf.kappa, 3), prov: kf.prov, kampanjer: kf.kampanjer, marknad: kf.marknad, fonster: provH };
+  rad.kontrafaktiskt = `ROAS/BE veckan innan ${dec(hist.qh)}, före ${dec(fore.roas / be)} ⇒ utan ändring ${dec(kf.kvot)} (${kf.prov} orörda dygn, ${kf.kampanjer} andra kampanjer, ${kf.marknad})`;
 
   // Vad hade gammal budget gett? Spend som i före-fönstret, ROAS som kontrafaktiskt.
   const sf = fore.spend / fore.dagar;
@@ -578,7 +678,10 @@ export function dommaEpisod(ep, horisont, ctx) {
   const dR = efter.intakt - Rcf;
   const dVinst = dR / be - dS;
   const aov = fore.kop > 0 ? fore.intakt / fore.kop : efter.kop > 0 ? efter.intakt / efter.kop : null;
-  const sd = Math.sqrt(intaktsvarians(efter, aov) + varCfPerKr * Scf * Scf) / be;
+  const vandringLn2 = ctx.vandring?.[provH] ?? VANDRING_RESERV;
+  const modellSd = Number.isFinite(kf.sdKvot) ? kf.sdKvot * Scf * (MODELL_SKALA[grund(ep.familj)] ?? 1.9) : 0; // i vinstkronor: Δvinst = … − kvot × Scf
+  const sd = Math.sqrt((intaktsvarians(efter, aov) + Rcf * Rcf * (kf.sdLn ** 2 + vandringLn2)) / (be * be) + modellSd * modellSd);
+  rad.modell_sd_kr = runda(modellSd, 0);
   rad.delta_spend_kr = runda(dS, 0);
   rad.delta_intakt_kr = runda(dR, 0);
   rad.marginal_roas = Math.abs(dS) >= MIN_FLYTT_SEK ? runda(dR / dS, 3) : null;
@@ -586,8 +689,8 @@ export function dommaEpisod(ep, horisont, ctx) {
   rad.intervall_80 = [runda(dVinst - Z80 * sd, 0), runda(dVinst + Z80 * sd, 0)];
   rad.flyttat_kr = runda(Math.abs(dS), 0);
   if (Math.abs(dS) < MIN_FLYTT_SEK) rad.etikett = 'spenden flyttade inte';
-  else if (ep.familj === 'HOJ' && dS < 0) rad.etikett = 'KOLLAPS — spenden föll efter höjningen';
-  else if (ep.familj === 'SANK' && dS > 0) rad.etikett = 'spenden steg efter sänkningen';
+  else if (grund(ep.familj) === 'HOJ' && dS < 0) rad.etikett = 'KOLLAPS — spenden föll efter höjningen';
+  else if (grund(ep.familj) === 'SANK' && dS > 0) rad.etikett = 'spenden steg efter sänkningen';
   const lo = dVinst - Z80 * sd; const hi = dVinst + Z80 * sd;
   return { ...rad, dom: lo > 0 ? 'RATT' : hi < 0 ? 'FEL' : 'OSAKER', bedombar: true, preliminar: efter.kop < 5 };
 }
@@ -616,38 +719,104 @@ export function dommaHall(hall, h, ctx) {
     let eTill = plusDagar(x.datum, h);
     const nasta = handelserMellan(ctx.index, x.kampanj_id, x.datum, eTill)[0];
     if (nasta) eTill = plusDagar(nasta.datum, -1);
-    if (eTill > ctx.until || dagarMellan(x.datum, eTill) < MIN_EFTER_DAGAR) continue;
+    if (plusDagar(eTill, MOGNAD_DAGAR) > ctx.until || dagarMellan(x.datum, eTill) < MIN_EFTER_DAGAR) continue;
     const fore = summa(ctx.serie, x.kampanj_id, plusDagar(x.datum, -FORE_DAGAR), plusDagar(x.datum, -1));
     const efter = summa(ctx.serie, x.kampanj_id, plusDagar(x.datum, 1), eTill);
     if (fore.spend < MIN_SPEND_FOR_DOM || fore.kop < MIN_KOP_FOR_DOM || efter.nolldygn) continue;
     const be = Number.isFinite(x.be) ? x.be : ctx.beIndex(x.kampanj_id, x.datum);
     if (!Number.isFinite(be)) continue;
     const target = targetRoas(be).target;
-    let familj = null; let utfall = null; let forlust = 0;
+    let familj = null; let utfall = null;
     if (fore.roas >= target) {
       familj = 'HALL_HOG';
       utfall = efter.roas >= target ? 'HOLL' : efter.roas >= be ? 'SJONK' : 'FORLUST';
     } else if (fore.roas >= be) {
       familj = 'HALL_MELLAN';
       utfall = efter.roas >= be ? 'HOLL_VINST' : 'FOLL_UNDER';
-      forlust = Math.max(0, efter.spend - efter.intakt / be);
     } else {
       familj = 'HALL_FORLUST';
       utfall = efter.roas >= be ? 'ATERHAMTAD' : 'FORTSATT_FORLUST';
-      forlust = Math.max(0, efter.spend - efter.intakt / be);
     }
+    // Vinsten per dygn efter (intäkt ÷ break-even − spend). Hinkarna summerar
+    // UNIKA kampanjdygn — överlappande fönster räknades förut flera gånger
+    // (kritiken 2026-09-30: 342 fönsterdygn men 132 unika).
+    const dygn = [];
+    for (let d = plusDagar(x.datum, 1); d <= eTill; d = plusDagar(d, 1)) {
+      const v = ctx.serie.get(x.kampanj_id)?.get(d);
+      if (v) dygn.push([d, runda(v.intakt / be - v.spend, 0)]);
+    }
+    // Nästa morgons tredygnsfönster (D−2..D): stod den kvar över target när motorn tittade igen?
+    const nastaMorgon = summa(ctx.serie, x.kampanj_id, plusDagar(x.datum, -2), x.datum);
     ut.push({
       familj, kod: x.kod, datum: x.datum, kampanj_id: x.kampanj_id, kampanj_namn: x.kampanj_namn, marknad: x.marknad,
-      zon: zonFor(x.budget), band: bandFor(fore.roas, be), utfall, forlust_kr: runda(forlust, 0),
-      vinst_efter_kr: runda(efter.intakt / be - efter.spend, 0), roas_fore: runda(fore.roas, 3), roas_efter: runda(efter.roas, 3),
+      zon: zonFor(x.budget), band: bandFor(fore.roas, be), trappa: trappaFor(fore.roas, target), utfall,
+      nasta_morgon_over_target: nastaMorgon.nolldygn ? null : nastaMorgon.roas >= target,
+      roas_fore: runda(fore.roas, 3), roas_efter: runda(efter.roas, 3), dygn,
     });
+  }
+  return ut;
+}
+
+/**
+ * Väntans kostnad (kritiken 2026-09-30: facit kunde inte se missade höjningar —
+ * väntan som följdes av en höjning inom två dygn sorterades bort). För varje
+ * hålldygn över target som följdes av en höjning inom 3 dygn: den höjningens
+ * mätta Δvinst per dygn. Positivt = väntan kostade; negativt = väntan sparade.
+ */
+export function vantekostnad(hall, hojRader, ctx) {
+  const perStart = new Map();
+  for (const r of hojRader) if (r.bedombar && r.familj === 'HOJ') perStart.set(`${r.kampanj_id}|${r.start}`, r);
+  const ut = [];
+  for (const x of hall) {
+    if (plusDagar(x.datum, -FORE_DAGAR) < ctx.since) continue;
+    const be = Number.isFinite(x.be) ? x.be : ctx.beIndex(x.kampanj_id, x.datum);
+    if (!Number.isFinite(be)) continue;
+    const fore = summa(ctx.serie, x.kampanj_id, plusDagar(x.datum, -FORE_DAGAR), plusDagar(x.datum, -1));
+    if (fore.nolldygn || !(fore.roas >= targetRoas(be).target)) continue;
+    for (let n = 1; n <= 3; n++) {
+      const r = perStart.get(`${x.kampanj_id}|${plusDagar(x.datum, n)}`);
+      if (!r) continue;
+      ut.push({ kod: x.kod, datum: x.datum, kampanj_id: x.kampanj_id, marknad: x.marknad, hojning: r.start, kostnad_kr: runda(r.delta_vinst_kr / (r.efter?.dagar || 1), 0) });
+      break;
+    }
+  }
+  return ut;
+}
+
+/**
+ * Revideringen (underlag för NARA_GRANS_PP, kritiken 2026-09-30): motorn skjuter
+ * upp beslut nära en zongräns med motiveringen att ROAS revideras uppåt i
+ * efterhand. Här jämförs loggad 3-dygns-ROAS med samma fönster hämtat i dag,
+ * för rader från 7d_click-tiden. Korsar omhämtningen gränsen?
+ */
+export function revidering(logg, serie, { since, marknad }) {
+  const sett = new Set();
+  const ut = [];
+  const zon = (v) => (v === null ? null : v < 0 ? 0 : v < 16 ? 1 : v < 25 ? 2 : 3);
+  for (const r of logg) {
+    if (marknadFor(r) !== marknad || !r.datum || r.datum < ATTRIBUTION_7D_CLICK_FRAN) continue;
+    const roas = lasBelopp(r.roas_3d ?? null); const be = lasBelopp(r.break_even ?? null);
+    if (!Number.isFinite(roas) || !Number.isFinite(be) || be <= 1) continue;
+    const nyckel = `${r.kampanj_id}|${r.datum}`;
+    if (sett.has(nyckel)) continue;
+    sett.add(nyckel);
+    const fran = plusDagar(r.datum, -FORE_DAGAR);
+    if (fran < since) continue;
+    const nu = summa(serie, String(r.kampanj_id), fran, plusDagar(r.datum, -1));
+    if (!(nu.spend > 0)) continue;
+    const vLogg = vinstProcent(be, roas); const vNu = vinstProcent(be, nu.roas);
+    const nara = vLogg !== null && [0, 16, 25].some((g) => Math.abs(vLogg - g) < 3);
+    ut.push({ nara, uppskjuten: r.kod === 'UPPSKJUTEN_GRANS', korsade: zon(vLogg) !== zon(vNu), kvot: roas > 0 ? nu.roas / roas : null });
   }
   return ut;
 }
 
 // ── Kalibreringen: hinkarna ─────────────────────────────────────────────────
 
-export const DIMENSIONER = ['alla', 'marknad', 'zon', 'band', 'forsta_steg', 'total', 'kedja', 'regelverk', 'produkt'];
+/** Hinkarnas dimensioner. trappa, fart, zon och forsta_steg är KÄNDA vid beslutet
+ *  (det förslagen får bygga på); kedja och total beror på vad som hände efteråt
+ *  och står bara som beskrivning (kritiken 2026-09-30). */
+export const DIMENSIONER = ['alla', 'marknad', 'zon', 'band', 'trappa', 'fart', 'forsta_steg', 'total', 'kedja', 'regelverk', 'produkt'];
 
 /** Bootstrap-omdragningar för hinkens intervall. Kampanjen är enheten (kluster):
  *  sex episoder på samma kampanj är inte sex oberoende bevis. */
@@ -690,12 +859,13 @@ const EJ_BEDOMDA = ['LANSERINGSFAS', 'UNG', 'STORD', 'UTANFOR_DATAN', 'SAKNAR_BR
 export function hinkar(rader) {
   const ut = {};
   for (const r of rader) {
-    if (!['HOJ', 'SANK', 'STANG', 'TJUV'].includes(r.familj)) continue;
+    if (!['HOJ', 'SANK', 'STANG', 'TJUV', 'AXEL_HOJ', 'AXEL_SANK'].includes(r.familj)) continue;
     for (const dim of DIMENSIONER) {
-      if (['forsta_steg', 'total', 'kedja'].includes(dim) && !['HOJ', 'SANK'].includes(r.familj)) continue;
+      if (['forsta_steg', 'total', 'kedja', 'trappa', 'fart'].includes(dim) && !arBudgetfamilj(r.familj)) continue;
+      if (dim === 'fart' && grund(r.familj) !== 'HOJ') continue;
       const varde = dim === 'alla' ? 'alla' : r[dim] ?? 'okänd';
       const nyckel = `${r.familj}|${dim}|${varde}`;
-      const b = ut[nyckel] ??= { familj: r.familj, dimension: dim, varde, episoder: 0, bedomda: 0, ratt: 0, fel: 0, osakra: 0, preliminara: 0, avbrutna: 0, ej_bedomda: 0, aterstartade: 0, aterstartade_plus: 0, flyttat_kr: 0, delta_vinst_kr: 0, _dS: 0, _dR: 0, _beVikt: 0, _alla: new Set(), _per: new Map(), _v: [] };
+      const b = ut[nyckel] ??= { familj: r.familj, dimension: dim, varde, episoder: 0, bedomda: 0, ratt: 0, fel: 0, osakra: 0, preliminara: 0, avbrutna: 0, ej_bedomda: 0, aterstartade: 0, aterstartade_plus: 0, flyttat_kr: 0, delta_vinst_kr: 0, _dS: 0, _dR: 0, _beVikt: 0, _dagar: 0, _modell: 0, _alla: new Set(), _per: new Map(), _v: [] };
       b.episoder += 1;
       b._alla.add(r.kampanj_id);
       if (EJ_BEDOMDA.includes(r.dom)) b.ej_bedomda += 1;
@@ -714,6 +884,8 @@ export function hinkar(rader) {
       b._per.set(r.kampanj_id, (b._per.get(r.kampanj_id) ?? 0) + v);
       b._dS += r.delta_spend_kr ?? 0;
       b._dR += r.delta_intakt_kr ?? 0;
+      b._dagar += r.efter?.dagar ?? 0;
+      b._modell += r.modell_sd_kr ?? 0;
       b._beVikt += (r.break_even ?? 0) * Math.abs(r.delta_spend_kr ?? 0);
     }
   }
@@ -727,90 +899,166 @@ export function hinkar(rader) {
     const storsta = [...b._per.entries()].sort((x, y) => Math.abs(y[1]) - Math.abs(x[1]))[0];
     b.utan_storsta_kr = storsta ? Math.round(b.delta_vinst_kr - storsta[1]) : null;
     b.storsta_kampanj = storsta ? storsta[0] : null;
-    b.intervall_80 = klusterintervall(b._per, nyckel);
+    b.storsta_andel = storsta && Math.abs(b.delta_vinst_kr) > 0 ? runda(Math.abs(storsta[1]) / Math.abs(b.delta_vinst_kr), 2) : null;
+    // Håller tecknet när en kampanj i taget lämnas utanför?
+    const tecken = Math.sign(b.delta_vinst_kr);
+    b.tecken_haller = b._per.size >= 2 && tecken !== 0 && [...b._per.values()].every((v) => Math.sign(b.delta_vinst_kr - v) === tecken);
+    const dagar = b._dagar;
+    b.kr_per_kampanjvecka = dagar > 0 ? Math.round((b.delta_vinst_kr / dagar) * 7) : null;
+    // Utfallens spridning (kampanjer dras om) plus modellens egen osäkerhet, som är
+    // gemensam för besluten och därför läggs ihop rakt (mätt i simuleringen
+    // 2026-09-30: en månads data gav ±30–40 % av de flyttade kronorna i modellfel).
+    b.intervall_80_utfall = klusterintervall(b._per, nyckel);
+    b.modell_sd_kr = Math.round(b._modell);
+    b.intervall_80 = b.intervall_80_utfall ? [Math.round(b.intervall_80_utfall[0] - Z80 * b._modell), Math.round(b.intervall_80_utfall[1] + Z80 * b._modell)] : null;
     b.flyttat_kr = Math.round(b.flyttat_kr);
     b.delta_vinst_kr = Math.round(b.delta_vinst_kr);
     void absS;
-    delete b._dS; delete b._dR; delete b._beVikt; delete b._alla; delete b._per; delete b._v;
+    delete b._dS; delete b._dR; delete b._beVikt; delete b._dagar; delete b._modell; delete b._alla; delete b._per; delete b._v;
   }
   return ut;
 }
 
-/** Hållbeslutens hinkar: per kod, band, zon och marknad. */
+/** Hållbeslutens hinkar: per kod, band, trappa, zon och marknad. Nettot räknas
+ *  på UNIKA kampanjdygn (intäkt ÷ break-even − spend), aldrig max(0, …) per fönster. */
 export function hallHinkar(hallRader) {
   const ut = {};
   for (const r of hallRader) {
-    for (const dim of ['alla', 'kod', 'band', 'zon', 'marknad']) {
+    for (const dim of ['alla', 'kod', 'band', 'trappa', 'zon', 'marknad']) {
       const varde = dim === 'alla' ? 'alla' : r[dim] ?? 'okänd';
       const nyckel = `${r.familj}|${dim}|${varde}`;
-      const b = ut[nyckel] ??= { familj: r.familj, dimension: dim, varde, kampanjdygn: 0, kampanjer: new Set(), utfall: {}, forlust_kr: 0, vinst_efter_kr: 0 };
+      const b = ut[nyckel] ??= { familj: r.familj, dimension: dim, varde, kampanjdygn: 0, kampanjer: new Set(), utfall: {}, nasta_morgon: { over: 0, av: 0 }, _dygn: new Map() };
       b.kampanjdygn += 1;
       b.kampanjer.add(r.kampanj_id);
       b.utfall[r.utfall] = (b.utfall[r.utfall] ?? 0) + 1;
-      b.forlust_kr += r.forlust_kr ?? 0;
-      b.vinst_efter_kr += r.vinst_efter_kr ?? 0;
+      if (r.nasta_morgon_over_target !== null && r.nasta_morgon_over_target !== undefined) { b.nasta_morgon.av += 1; if (r.nasta_morgon_over_target) b.nasta_morgon.over += 1; }
+      for (const [d, v] of r.dygn ?? []) b._dygn.set(`${r.kampanj_id}|${d}`, v);
     }
   }
-  for (const b of Object.values(ut)) { b.kampanjer = b.kampanjer.size; b.forlust_kr = Math.round(b.forlust_kr); b.vinst_efter_kr = Math.round(b.vinst_efter_kr); }
+  for (const b of Object.values(ut)) {
+    b.kampanjer = b.kampanjer.size;
+    b.unika_dygn = b._dygn.size;
+    b.netto_kr = Math.round([...b._dygn.values()].reduce((x, y) => x + (y ?? 0), 0));
+    delete b._dygn;
+  }
   return ut;
+}
+
+export function vantekostnadHinkar(rader) {
+  const ut = {};
+  for (const r of rader) {
+    for (const varde of ['alla', r.kod]) {
+      const b = ut[varde] ??= { kod: varde, hålldygn: 0, kampanjer: new Set(), kostnad_kr: 0 };
+      b['hålldygn'] += 1; b.kampanjer.add(r.kampanj_id); b.kostnad_kr += r.kostnad_kr ?? 0;
+    }
+  }
+  for (const b of Object.values(ut)) { b.kampanjer = b.kampanjer.size; b.kostnad_kr = Math.round(b.kostnad_kr); }
+  return ut;
+}
+
+export function revideringSammanfattning(rader) {
+  const nara = rader.filter((r) => r.nara || r.uppskjuten);
+  const kvoter = rader.map((r) => r.kvot).filter(Number.isFinite);
+  return { rader: rader.length, nara: nara.length, nara_korsade: nara.filter((r) => r.korsade).length, alla_korsade: rader.filter((r) => r.korsade).length, median_kvot: kvoter.length ? runda(median(kvoter), 3) : null };
 }
 
 // ── Förslagen till Axel ──────────────────────────────────────────────────────
 
-/** Vilken konstant i besked.mjs ett förslag gäller, per familj och dimension. */
-const KONSTANT = {
-  'HOJ|zon|≥4 000': 'HOGZON_MAX_FAKTOR / TAK_UTAN_VINNARE',
-  'HOJ|forsta_steg|+>60 %': 'TRAPPA (steget ×2 vid ≥ 200 % av target)',
-  'HOJ|forsta_steg|+26–60 %': 'TRAPPA (steget ×1,5 vid ≥ 150 % av target)',
-  'HOJ|forsta_steg|+≤25 %': 'TRAPPA (steget +20 % vid ≥ target)',
-  'HOJ|total|+>60 %': 'SNABB_SKALNING_ROAS / TRAPPA (hur långt en kedja får gå)',
-  'HOJ|kedja|2+ steg': 'SNABB_SKALNING_ROAS / SNABB_MIN_DAGAR (snabbspåret)',
-  HOJ: 'ZON_SKALA_OVER / KONSEKVENT_DAGAR (när en höjning får ske)',
-  SANK: 'ZON_SANK_UNDER / HALVERA (hur hårt motorn sänker)',
-  'SANK|forsta_steg|till golvet': 'LIVSTIDS_MAX_BACKDAGAR (livstidsspärrens sänkning till 500 kr)',
-  STANG: 'BACK_DAGAR_FOR_AVSTANGNING / spendtjuvens grind',
-  'HALL_HOG|kod|VANTA_KONSEKVENT': 'KONSEKVENT_DAGAR (dygn över target före höjning)',
-  'HALL_HOG|kod|VANTA_KADENS': 'MIN_DAGAR_MELLAN_ANDRINGAR / SNABB_SKALNING_ROAS',
-  'HALL_HOG|kod|LAT_VARA': 'TAK_UTAN_VINNARE / ZON_SKALA_OVER',
-  'HALL_HOG|kod|CPA_STIGER': 'CPA_STIG_DAGAR (trend.mjs)',
-  'HALL_HOG|kod|UPPSKJUTEN_GRANS': 'NARA_GRANS_PP (uppskjutning nära zongräns)',
-  HALL_MELLAN: 'ZON_SANK_UNDER (testprodukter i plus rörs aldrig — Axels regel 2026-08-29)',
-  'HALL_FORLUST|kod|VANTA_TROSKEL': 'TEST_TROSKEL_SEK (testet får 1 500 kr innan det döms)',
-  'HALL_FORLUST|kod|RAKNA_BACKDAGAR': 'BACK_DAGAR_FOR_AVSTANGNING / LIVSTIDS_MAX_BACKDAGAR',
+// ── Förslagen: en konstant, från A till B, JA eller NEJ ─────────────────────
+//
+// Kritiken 2026-09-30: "skala mer här" går inte att säga ja till. Varje förslag
+// pekar på exakt en konstant i agent/besked.mjs med dagens värde och ett nytt,
+// och bygger bara på det som var KÄNT vid beslutet (trappsteg, fart, zon,
+// hållkod) — aldrig på kedja eller total, som beror på vad som hände efteråt.
+// Evidensen måste hålla på alla sätt samtidigt (stark()).
+
+/** Minsta underlag för ett förslag på höjningar: episoder och OLIKA kampanjer. */
+export const FORSLAG_MIN_EPISODER = 8;
+export const FORSLAG_MIN_KAMPANJER = 5;
+/** Den största kampanjen får bära högst så stor del av summan. */
+export const FORSLAG_MAX_STORSTA = 0.4;
+/** "Tjänade pengar" = samlad marginal-ROAS minst så mycket över break-even. */
+export const FORSLAG_GASA_MARGINAL = 1.25;
+
+/**
+ * Stark evidens i en hink: nog med episoder och kampanjer, 80 %-intervallet på
+ * ena sidan om noll, samma tecken utan största kampanjen, utan varje kampanj i
+ * tur och ordning, och i kort horisont — och ingen kampanj bär mer än 40 %.
+ */
+export function stark(b, { kort = null, minEp = FORSLAG_MIN_EPISODER, minKamp = FORSLAG_MIN_KAMPANJER } = {}) {
+  if (!b || b.bedomda < minEp || (b.bedomda_kampanjer ?? 0) < minKamp || !b.intervall_80) return 0;
+  const [lo, hi] = b.intervall_80;
+  const tecken = lo > 0 ? 1 : hi < 0 ? -1 : 0;
+  if (!tecken) return 0;
+  if (Math.sign(b.utan_storsta_kr) !== tecken || !b.tecken_haller) return 0;
+  if (!(b.storsta_andel <= FORSLAG_MAX_STORSTA)) return 0;
+  if (!kort || Math.sign(kort.delta_vinst_kr) !== tecken) return 0;
+  return tecken;
+}
+
+const TRAPPSTEG = {
+  '1,0–1,5': { steg: TRAPPA.find((t) => t.over === 1.0), upp: 1.3, ner: 1.1 },
+  '1,5–2,0': { steg: TRAPPA.find((t) => t.over === 1.5), upp: 1.75, ner: 1.3 },
+  '≥2,0': { steg: TRAPPA.find((t) => t.over === 2.0), upp: 2.5, ner: 1.5 },
 };
-const konstantFor = (b) => KONSTANT[`${b.familj}|${b.dimension}|${b.varde}`] ?? KONSTANT[b.familj] ?? null;
+const tal = (x) => String(x).replace('.', ',');
+const bevisText = (b) => `${b.bedomda} mätta på ${b.bedomda_kampanjer} kampanjer · ${b.ratt} rätt, ${b.fel} fel, ${b.osakra} osäkra · ${kr(b.delta_vinst_kr)} mot att låta bli (80 %: ${kr(b.intervall_80?.[0])} till ${kr(b.intervall_80?.[1])})${b.marginal_roas !== null ? ` · marginal-ROAS ${dec(b.marginal_roas)} mot break-even ${dec(b.break_even_viktad)}` : ''}`;
 
 export function forslag(kal) {
   const ut = [];
-  for (const b of Object.values(kal.hinkar ?? {})) {
-    if (['alla', 'regelverk', 'produkt'].includes(b.dimension) || (b.bedomda_kampanjer ?? 0) < MIN_KAMPANJER_FORSLAG || !b.intervall_80) continue;
-    const [lo, hi] = b.intervall_80;
-    const hink = `${FAMILJNAMN[b.familj]} där ${dimText(b.dimension)} ${b.varde}`;
-    const nyckel = `${b.familj}|${b.dimension}|${b.varde}`;
-    const bevis = `${b.bedomda} episoder på ${b.bedomda_kampanjer} kampanjer: ${b.ratt} rätt, ${b.fel} fel, ${b.osakra} osäkra · Σ ${kr(b.delta_vinst_kr)} (80 %: ${kr(lo)} till ${kr(hi)}) · median ${kr(b.median_kr)} per episod · utan största kampanjen ${kr(b.utan_storsta_kr)}${b.marginal_roas !== null ? ` · marginal-ROAS ${dec(b.marginal_roas)} mot break-even ${dec(b.break_even_viktad)}` : ''}`;
-    // Samma tecken i kort och lång horisont — annars är det fönstret som talar, inte marknaden.
-    const kort = kal.hinkarKort?.[nyckel];
-    const kortSamma = (tecken) => kort && Math.sign(kort.delta_vinst_kr) === tecken;
-    const vinner = lo > 0 && b.utan_storsta_kr > 0 && b.median_kr > 0 && kortSamma(1);
-    const forlorar = hi < 0 && b.utan_storsta_kr < 0 && b.median_kr < 0 && kortSamma(-1);
-    if (b.familj === 'HOJ' && vinner) ut.push({ nyckel, typ: 'GASA', hink, bevis, konstant: konstantFor(b), text: 'De tillagda kronorna har tjänat pengar här, även utan den största kampanjen. Större steg eller kortare väntan har täckning.' });
-    if (b.familj === 'HOJ' && forlorar) ut.push({ nyckel, typ: 'BROMSA', hink, bevis, konstant: konstantFor(b), text: 'De tillagda kronorna har gått back här. Mindre steg eller hårdare krav före höjning.' });
-    if (b.familj === 'SANK' && forlorar) ut.push({ nyckel, typ: 'MILDRA', hink, bevis, konstant: konstantFor(b), text: 'Sänkningarna här tog bort kronor som tjänade pengar. Sänk mindre eller vänta längre.' });
-    if (b.familj === 'SANK' && vinner) ut.push({ nyckel, typ: 'SANK_MER', hink, bevis, konstant: konstantFor(b), text: 'Sänkningarna här sparade pengar. Att sänka tidigare eller mer har täckning.' });
+  const H = kal.hinkarNya ?? {}; const K = kal.hinkarNyaKort ?? {}; const A = kal.hinkarAlla ?? {};
+  const lagg = (f) => ut.push({ matare: null, ...f, nyckel: `${f.konstant}|${f.till}` });
+  const laggHoj = (f) => lagg({ ...f, matare: PLACEBO_HOJ }); // bygger på mätarens kontrafaktik i toppläget
+
+  // R1 — trappan: steget per trappsteg (ROAS ÷ target vid beslutet).
+  for (const [varde, t] of Object.entries(TRAPPSTEG)) {
+    const b = H[`HOJ|trappa|${varde}`];
+    const tecken = stark(b, { kort: K[`HOJ|trappa|${varde}`] });
+    if (tecken > 0 && b.marginal_roas >= FORSLAG_GASA_MARGINAL * b.break_even_viktad) laggHoj({ konstant: `TRAPPA (steget vid ROAS ${varde} × target)`, fran: `×${tal(t.steg.faktor)}`, till: `×${tal(t.upp)}`, varfor: 'Höjningarna i det här trappsteget tjänade pengar, även utan den största kampanjen.', bevis: bevisText(b), kr_per_vecka: b.kr_per_kampanjvecka });
+    if (tecken < 0) laggHoj({ konstant: `TRAPPA (steget vid ROAS ${varde} × target)`, fran: `×${tal(t.steg.faktor)}`, till: `×${tal(t.ner)}`, varfor: 'Höjningarna i det här trappsteget gick back.', bevis: bevisText(b), kr_per_vecka: b.kr_per_kampanjvecka });
   }
-  for (const b of Object.values(kal.hall ?? {})) {
-    if (!['kod', 'band'].includes(b.dimension) || b.kampanjdygn < MIN_HALL_DYGN || b.kampanjer < MIN_KAMPANJER_FORSLAG) continue;
+  // R3 — snabbspåret: höjningar dagen efter förra höjningen.
+  {
+    const v = 'snabbspår (1 dygn)'; const b = H[`HOJ|fart|${v}`];
+    const tecken = stark(b, { kort: K[`HOJ|fart|${v}`] });
+    if (tecken > 0 && b.marginal_roas >= FORSLAG_GASA_MARGINAL * b.break_even_viktad) laggHoj({ konstant: 'SNABB_SKALNING_ROAS', fran: tal(SNABB_SKALNING_ROAS.toFixed(1)), till: '2,5', varfor: 'Höjningar dagen efter förra höjningen tjänade pengar — snabbspåret kan öppnas tidigare.', bevis: bevisText(b), kr_per_vecka: b.kr_per_kampanjvecka });
+    if (tecken < 0) laggHoj({ konstant: 'SNABB_SKALNING_ROAS', fran: tal(SNABB_SKALNING_ROAS.toFixed(1)), till: '4,0', varfor: 'Höjningar dagen efter förra höjningen gick back.', bevis: bevisText(b), kr_per_vecka: b.kr_per_kampanjvecka });
+  }
+  // R4 — taket utan vinnaretikett: höjningar över 4 000 kr (motorns och dina egna).
+  for (const fam of ['HOJ', 'AXEL_HOJ']) {
+    const hink = fam === 'HOJ' ? H : A;
+    const b = hink[`${fam}|zon|≥4 000`];
+    const tecken = stark(b, { kort: fam === 'HOJ' ? K[`${fam}|zon|≥4 000`] : (kal.hinkarAllaKort ?? {})[`${fam}|zon|≥4 000`], minEp: 5, minKamp: 3 });
+    if (tecken > 0 && b.marginal_roas >= FORSLAG_GASA_MARGINAL * b.break_even_viktad) laggHoj({ konstant: 'TAK_UTAN_VINNARE', fran: `${TAK_UTAN_VINNARE.toLocaleString('sv-SE')} kr`, till: '6 000 kr', varfor: `${fam === 'HOJ' ? 'Motorns' : 'Dina egna'} höjningar över 4 000 kr/dag tjänade pengar.`, bevis: bevisText(b), kr_per_vecka: b.kr_per_kampanjvecka });
+  }
+  // R2 — konsekvensspärren: stod kampanjen kvar över target nästa morgon?
+  {
+    const b = kal.hall?.['HALL_HOG|kod|VANTA_KONSEKVENT'];
+    if (b && b.nasta_morgon.av >= MIN_HALL_DYGN && b.kampanjer >= FORSLAG_MIN_KAMPANJER) {
+      const andel = b.nasta_morgon.over / b.nasta_morgon.av;
+      const hoj = H['HOJ|alla|alla'];
+      const bevis = `${brak(b.nasta_morgon.over, b.nasta_morgon.av)} väntedygn stod kvar över target nästa morgon (${b.kampanjer} kampanjer)`;
+      if (andel >= 0.8 && hoj && hoj.delta_vinst_kr > 0) lagg({ konstant: 'KONSEKVENT_DAGAR', fran: String(KONSEKVENT_DAGAR), till: '1', varfor: 'Kampanjerna låg nästan alltid kvar över target dagen efter — den extra väntedagen gav inget.', bevis, kr_per_vecka: null });
+      if (andel <= 0.5) lagg({ konstant: 'KONSEKVENT_DAGAR', fran: String(KONSEKVENT_DAGAR), till: '3', varfor: 'Hälften föll under target redan nästa morgon — toppen höll inte.', bevis, kr_per_vecka: null });
+    }
+  }
+  // R8 — uppskjutningen nära en zongräns: reviderades siffrorna i efterhand?
+  {
+    const r = kal.revidering;
+    if (r && r.nara >= 30 && r.nara_korsade / r.nara < 0.05) lagg({ konstant: 'NARA_GRANS_PP', fran: String(NARA_GRANS_PP), till: '0', varfor: 'Motorn skjuter upp beslut nära en gräns för att siffran kan revideras — men den gör det inte.', bevis: `${r.nara_korsade} av ${r.nara} rader nära en gräns korsade den när samma fönster hämtades om (median omhämtad ÷ loggad ROAS ${dec(r.median_kvot, 3)})`, kr_per_vecka: null });
+  }
+  // R6/R7 — väntan i förlust: livstidsspärren och testtröskeln (netto på unika dygn).
+  for (const [kod, konstant, fran, snabbare, langsammare] of [['RAKNA_BACKDAGAR', 'LIVSTIDS_MAX_BACKDAGAR', String(LIVSTIDS_MAX_BACKDAGAR), '3', '7'], ['VANTA_TROSKEL', 'TEST_TROSKEL_SEK', `${TEST_TROSKEL_SEK.toLocaleString('sv-SE')} kr`, '1 000 kr', '2 000 kr']]) {
+    const b = kal.hall?.[`HALL_FORLUST|kod|${kod}`];
+    if (!b || b.kampanjdygn < MIN_HALL_DYGN || b.kampanjer < FORSLAG_MIN_KAMPANJER) continue;
     const n = b.kampanjdygn;
-    const hink = `${FAMILJNAMN[b.familj]} (${b.dimension === 'band' ? `ROAS/BE ${b.varde}` : b.varde})`;
-    const nyckel = `${b.familj}|${b.dimension}|${b.varde}`;
-    if (b.familj === 'HALL_HOG' && (b.utfall.HOLL ?? 0) / n >= 0.8) ut.push({ nyckel, typ: 'SKALA_TIDIGARE', hink, bevis: `${brak(b.utfall.HOLL, n)} kampanjdygn stod kvar över target efter väntan (${b.kampanjer} kampanjer)`, konstant: konstantFor(b), text: 'Kampanjerna höll sig över target medan motorn väntade. Väntan kostade höjningar.' });
-    if (b.familj === 'HALL_MELLAN' && (b.utfall.FOLL_UNDER ?? 0) / n >= 0.6 && b.forlust_kr >= 3000) ut.push({ nyckel, typ: 'SANK_TIDIGARE', hink, bevis: `${brak(b.utfall.FOLL_UNDER, n)} kampanjdygn föll under break-even, ${krUtanTecken(b.forlust_kr)} förlust under väntan (${b.kampanjer} kampanjer)`, konstant: konstantFor(b), text: 'Kampanjer som bara gick lite plus föll oftast under break-even. Att sänka tidigare har täckning.' });
-    if (b.familj === 'HALL_FORLUST' && (b.utfall.FORTSATT_FORLUST ?? 0) / n >= 0.8 && b.forlust_kr >= 3000) ut.push({ nyckel, typ: 'STANG_TIDIGARE', hink, bevis: `${brak(b.utfall.FORTSATT_FORLUST, n)} kampanjdygn fortsatte under break-even, ${krUtanTecken(b.forlust_kr)} förlust under väntan (${b.kampanjer} kampanjer)`, konstant: konstantFor(b), text: 'Kampanjerna i förlust tog sig inte upp medan motorn väntade. Väntan kostade pengar.' });
+    const bevis = `${brak(b.utfall.FORTSATT_FORLUST ?? 0, n)} fortsatte under break-even, ${brak(b.utfall.ATERHAMTAD ?? 0, n)} tog sig upp · netto ${kr(b.netto_kr)} på ${b.unika_dygn} unika dygn (${b.kampanjer} kampanjer)`;
+    if ((b.utfall.FORTSATT_FORLUST ?? 0) / n >= 0.8 && b.netto_kr < 0) lagg({ konstant, fran, till: snabbare, varfor: 'Kampanjerna i förlust som fick vänta tog sig nästan aldrig upp, och väntan kostade pengar.', bevis, kr_per_vecka: null });
+    if ((b.utfall.ATERHAMTAD ?? 0) / n >= 0.5 && b.netto_kr > 0) lagg({ konstant, fran, till: langsammare, varfor: 'Kampanjerna i förlust som fick vänta tog sig ofta upp, och väntan tjänade pengar (överlevare — osäkert).', bevis, kr_per_vecka: null });
   }
   return ut;
 }
 
-const dimText = (d) => ({ marknad: 'marknaden är', zon: 'budgeten var', band: 'ROAS/break-even var', forsta_steg: 'första steget var', total: 'hela ändringen var', kedja: 'kedjan var', produkt: 'produkten är' }[d] ?? d);
 
 // ── Formatering ──────────────────────────────────────────────────────────────
 
@@ -839,15 +1087,21 @@ export function kor({ logg, data, idag, sparade = [], karta = {}, forvantadeKont
   const statistik = {};
   const placeboRader = [];
   const sagtandRader = [];
+  const vantaRader = [];
+  const revideringRader = [];
 
   // Kontrollproven för alla konton först — kontrollen får låna från den andra
   // marknaden när det egna bandet är för tunt.
+  // Orörda dygn = ingen ändring i aktivitetsloggen eller budgetloggen D−3..D.
   const provAlla = { kort: [], lang: [] };
   for (const [kontoKod, d] of Object.entries(data)) {
     if (!d) continue;
     const serie = byggSerie(d.dygn);
-    for (const [hNamn, h] of Object.entries(HORISONTER)) provAlla[hNamn].push(...kontrollprov(serie, beIndex, { marknadFor: () => kontoKod, since: d.since, until: d.until, h }));
+    const index = andringsIndex(d.budgetandringar, beslut.filter((b) => b.marknad === kontoKod));
+    for (const [hNamn, h] of Object.entries(HORISONTER)) provAlla[hNamn].push(...kontrollprov(serie, beIndex, { marknadFor: () => kontoKod, since: d.since, until: d.until, h, index }));
   }
+  const placeboPer = { kort: placebo(provAlla.kort), lang: placebo(provAlla.lang) };
+  const vandr = { kort: vandring(placeboPer.kort), lang: vandring(placeboPer.lang) };
 
   for (const [kontoKod, d] of Object.entries(data)) {
     if (!d) continue;
@@ -873,12 +1127,21 @@ export function kor({ logg, data, idag, sparade = [], karta = {}, forvantadeKont
       if (!Number.isFinite(b.fran)) b.fran = a.fran_sek;
       if (!Number.isFinite(b.till) && ['HOJ', 'SANK'].includes(b.familj)) b.till = a.till_sek;
     }
+    // Dina egna budgetändringar (Power Editor, iOS, andra sessioner — allt som inte
+    // står i budgetloggen) mäts med samma metod som motorns (kritiken 2026-09-30:
+    // Taköverdragets dubblingar i september var de tydligaste lärdomarna om var det
+    // går att skala mer, och facit använde dem bara för att kapa fönster).
+    const namnFor = (kid) => d.dygn.find((x) => x.kampanj_id === kid && x.namn)?.namn ?? logg.find((r) => String(r.kampanj_id) === kid)?.kampanj_namn ?? kid;
+    const axel = (d.budgetandringar ?? []).filter((a) => !a.motor && !a.skapad && Number.isFinite(a.fran_sek) && a.till_sek !== a.fran_sek).map((a) => ({
+      familj: a.till_sek > a.fran_sek ? 'AXEL_HOJ' : 'AXEL_SANK', kod: 'HAND', datum: a.datum, kampanj_id: a.kampanj_id, kampanj_namn: namnFor(a.kampanj_id),
+      marknad: kontoKod, fran: a.fran_sek, till: a.till_sek, be: beIndex(a.kampanj_id, a.datum),
+    }));
     const index = andringsIndex(d.budgetandringar, minaBeslut);
     const marknadForK = () => kontoKod;
     const prov = {};
     for (const [hNamn, h] of Object.entries(HORISONTER)) prov[hNamn] = [...(provAlla[hNamn] ?? [])];
-    const ctx = { serie, index, prov, until: d.until, since: d.since, idag, beIndex, produktFor };
-    const eps = episoder(minaBeslut, index);
+    const ctx = { serie, index, prov, vandring: vandr, until: d.until, since: d.since, idag, beIndex, produktFor };
+    const eps = episoder([...minaBeslut, ...axel].sort((x, y) => (x.datum < y.datum ? -1 : x.datum > y.datum ? 1 : 0)), index);
     for (const ep of eps) {
       for (const hNamn of Object.keys(HORISONTER)) {
         const nyckel = `${ep.familj}|${ep.kampanj_id}|${ep.start}|${hNamn}`;
@@ -893,22 +1156,28 @@ export function kor({ logg, data, idag, sparade = [], karta = {}, forvantadeKont
     sagtandRader.push(...sagtand(eps, index, { until: d.until, marknad: kontoKod }));
     const minaHall = hall.filter((x) => x.marknad === kontoKod);
     for (const [hNamn, h] of Object.entries(HORISONTER)) hallRader[hNamn].push(...dommaHall(minaHall, h, ctx));
-    placeboRader.push(...placebo(minaHall, ctx));
+    const hojMatta = [...sparade, ...nya].filter((r) => r.marknad === kontoKod && r.familj === 'HOJ' && r.metod === METOD_VERSION);
+    const basta = new Map();
+    for (const r of hojMatta) { const k = `${r.kampanj_id}|${r.start}`; if (!basta.has(k) || (r.horisont === 'lang' && r.bedombar)) basta.set(k, r); }
+    vantaRader.push(...vantekostnad(minaHall, [...basta.values()], ctx));
+    revideringRader.push(...revidering(logg, serie, { since: d.since, marknad: kontoKod }));
     // Handändringar: det motorn inte gjorde (Axels egna budgetändringar i Meta).
     statistik[kontoKod] = {
       dygnsrader: d.dygn.length,
       budgetandringar: d.budgetandringar.length,
       handandringar: d.budgetandringar.filter((a) => !a.motor).length,
       kontrollprov_lang: prov.lang.filter((p) => p.marknad === kontoKod).length,
-      kontroll_lang: (() => { const kf = kontrollfaktor(prov.lang, { q: 1, marknad: kontoKod }); return kf.saknas ? { saknas: true } : { a: runda(kf.a, 3), b: runda(kf.b, 3), elasticitet: runda(kf.elasticitet, 3), prov: kf.prov, kampanjer: kf.kampanjer, marknad: kf.marknad }; })(),
+      // Exempel: en kampanj på break-even veckan innan, 1,5 × break-even före, 10 köp.
+      kontroll_lang: (() => { const kf = kontrollfaktor(prov.lang, { q: 1.5, qh: 1, kop: 10, marknad: kontoKod }); return kf.saknas ? { saknas: true, orsak: kf.orsak } : { rho_10_kop: runda(kf.rho, 3), kappa: runda(kf.kappa, 3), kvot_vid_1_5: runda(kf.kvot, 3), prov: kf.prov, kampanjer: kf.kampanjer, marknad: kf.marknad }; })(),
       since: d.since,
       until: d.until,
     };
   }
 
+  placeboRader.push(...placeboPer.kort);
   const alla = [...sparade, ...nya];
   const konton = Object.keys(data).filter((k) => data[k]);
-  const kal = kalibrering(alla, hallRader, { idag, statistik, vantar, placeboRader, sagtandRader, konton, delvis: Boolean(forvantadeKonton) && forvantadeKonton.some((k) => !konton.includes(k)), tidigare });
+  const kal = kalibrering(alla, hallRader, { idag, statistik, vantar, placeboRader, vandring: vandr, sagtandRader, vantaRader, revideringRader, konton, delvis: Boolean(forvantadeKonton) && forvantadeKonton.some((k) => !konton.includes(k)), tidigare });
   return { nya, alla, hallRader, kalibrering: kal, vantar, placeboRader };
 }
 
@@ -953,49 +1222,87 @@ export const KALIBRERING_SCHEMA = 2;
 export const FORSLAG_DAGAR_I_RAD = 7;
 
 /**
- * Placebo: samma mätare på kampanjdygn där motorn INTE ändrade något (ett
- * hållbeslut, ingen ändring D−3..D+3 — kort horisont, för det långa fönstret
- * ger för få dygn). Mätaren ska då säga ≈ 0 kr. Gör den inte det är den skev,
- * och då går inga förslag till Axel (kritiken 2026-09-30).
+ * Placebo (version 3): mätaren på dygn där ingenting ändrades, en kampanj i
+ * taget med kampanjen själv borttagen ur kontrollen. Felet är intäkten mätaren
+ * hade hittat på: (ROAS efter − förutsagd ROAS) × spend, i vinstkronor. En rak
+ * mätare hamnar nära noll.
+ *
+ * Varför inte motorns hålldygn "utan ändring D−3..D+3" som i version 2: kravet
+ * att inget ändrades EFTERÅT väljer ut dygn på utfallet (motorn höjer när det
+ * går bra), så sanningen där är inte noll. Mätt i simuleringen 2026-09-30: det
+ * sanna värdet på de hålldygnen var −67 000 kr, inte 0. Här villkoras bara på
+ * det som låg före beslutet.
  */
-export function placebo(hall, ctx) {
+export function placebo(prov) {
   const ut = [];
-  const sett = new Set();
-  for (const x of hall) {
-    const nyckel = `${x.kampanj_id}|${x.datum}`;
-    if (sett.has(nyckel)) continue;
-    sett.add(nyckel);
-    if (handelserMellan(ctx.index, x.kampanj_id, plusDagar(x.datum, -FORE_DAGAR), plusDagar(x.datum, HORISONTER.kort)).length) continue;
-    const ep = { familj: 'HOJ', kampanj_id: x.kampanj_id, kampanj_namn: x.kampanj_namn, marknad: x.marknad, start: x.datum, slut: x.datum, steg: [{ datum: x.datum, kod: 'PLACEBO', fran: x.budget, till: x.budget }], fran: x.budget, till: x.budget, be: x.be };
-    const r = dommaEpisod(ep, 'kort', ctx);
-    if (!r || !r.bedombar || r.avkortat) continue;
-    ut.push({ kampanj_id: x.kampanj_id, datum: x.datum, marknad: x.marknad, delta_vinst_kr: r.delta_vinst_kr, dom: r.dom });
+  for (const p of prov) {
+    const kf = kontrollfaktor(prov, { q: p.q, qh: p.qh, kop: p.kop, kopHist: p.kop_hist, marknad: p.marknad, utom: p.kampanj_id });
+    if (kf.saknas) continue;
+    ut.push({ kampanj_id: p.kampanj_id, datum: p.datum, marknad: p.marknad, lage: p.q >= 1.5 ? 'över 1,5 × BE' : p.q >= 1 ? 'BE–1,5 × BE' : 'under BE', fel_kr: runda((p.y - kf.kvot) * p.w, 0), y: p.y, yhat: kf.kvot, sdLn: kf.sdLn, kop_efter: p.kop_efter, w: p.w });
   }
   return ut;
 }
 
+/** Mätarens prov per läge. Ett förslag om höjningar kräver att mätaren håller
+ *  i läget där motorn höjer (över 1,5 × BE), inte bara i snitt — mätt
+ *  2026-09-30: +31 790 kr i mittläget och −31 676 kr i toppläget tog ut varandra. */
+export const PLACEBO_LAGEN = ['under BE', 'BE–1,5 × BE', 'över 1,5 × BE'];
+export const PLACEBO_HOJ = 'över 1,5 × BE';
+
 export function placeboSammanfattning(rader) {
-  const per = new Map();
-  for (const r of rader) per.set(r.kampanj_id, (per.get(r.kampanj_id) ?? 0) + r.delta_vinst_kr);
-  const iv = klusterintervall(per, 'placebo');
-  const fel = rader.filter((r) => r.dom === 'FEL').length;
-  const ratt = rader.filter((r) => r.dom === 'RATT').length;
-  const godkant = Boolean(iv) && per.size >= MIN_KAMPANJER_FORSLAG && iv[0] <= 0 && iv[1] >= 0;
-  return { kampanjdygn: rader.length, kampanjer: per.size, ratt, fel, osakra: rader.length - ratt - fel, summa_kr: Math.round(rader.reduce((s, r) => s + r.delta_vinst_kr, 0)), median_kr: rader.length ? Math.round(median(rader.map((r) => r.delta_vinst_kr))) : null, intervall_80: iv, godkant };
+  const sammanfatta = (r) => {
+    const per = new Map();
+    for (const x of r) per.set(x.kampanj_id, (per.get(x.kampanj_id) ?? 0) + x.fel_kr);
+    const iv = klusterintervall(per, 'placebo');
+    return { kampanjdygn: r.length, kampanjer: per.size, summa_kr: Math.round(r.reduce((s, x) => s + x.fel_kr, 0)), intervall_80: iv, godkant: Boolean(iv) && per.size >= MIN_KAMPANJER_FORSLAG && iv[0] <= 0 && iv[1] >= 0 };
+  };
+  const lagen = {};
+  for (const l of PLACEBO_LAGEN) { const r = rader.filter((x) => x.lage === l); if (r.length) lagen[l] = sammanfatta(r); }
+  return { ...sammanfatta(rader), lagen };
 }
 
-export function kalibrering(alla, hallRader, { idag, statistik = {}, vantar = [], placeboRader = [], sagtandRader = [], konton = [], delvis = false, tidigare = null } = {}) {
-  const per = { kort: hinkar(alla.filter((r) => r.horisont === 'kort')), lang: hinkar(alla.filter((r) => r.horisont === 'lang')) };
+/**
+ * Kampanjernas egen vandring (log-varians) utöver köpbruset och kontrollens
+ * osäkerhet, mätt på placebodygnen: (ln y − ln ŷ)² minus det bruset förklarar.
+ * Läggs på varje episods intervall — utan den var intervallen för smala (en
+ * kampanj rör sig på några dygn även när ingen rör budgeten). Minst 10 dygn,
+ * annars 0,1 (≈ ±32 %), mätt 2026-09-30 på 3-dygnsfönstren.
+ */
+export const VANDRING_RESERV = 0.1;
+export function vandring(placeboRader) {
+  const r = placeboRader.filter((x) => x.y > 0 && x.yhat > 0 && x.kop_efter > 0);
+  if (r.length < 10) return VANDRING_RESERV;
+  const W = r.reduce((s, x) => s + x.w, 0);
+  const tot = r.reduce((s, x) => s + x.w * Math.log(x.y / x.yhat) ** 2, 0) / W;
+  const brus = r.reduce((s, x) => s + x.w * (BRUS_PER_KOP() / x.kop_efter + x.sdLn ** 2), 0) / W;
+  return Math.max(tot - brus, 0);
+}
+
+export function kalibrering(alla, hallRader, { idag, statistik = {}, vantar = [], placeboRader = [], vandring: vandr = null, sagtandRader = [], vantaRader = [], revideringRader = [], konton = [], delvis = false, tidigare = null } = {}) {
+  const giltiga = alla.filter((r) => r.metod === METOD_VERSION);
+  const nuvarande = REGELVERK[REGELVERK.length - 1].namn;
+  const nya = giltiga.filter((r) => r.regelverk === nuvarande || r.av === 'axel');
+  const per = { kort: hinkar(giltiga.filter((r) => r.horisont === 'kort')), lang: hinkar(giltiga.filter((r) => r.horisont === 'lang')) };
+  const perNya = { kort: hinkar(nya.filter((r) => r.horisont === 'kort')), lang: hinkar(nya.filter((r) => r.horisont === 'lang')) };
   const hall = { kort: hallHinkar(hallRader.kort ?? []), lang: hallHinkar(hallRader.lang ?? []) };
   const plac = placeboSammanfattning(placeboRader);
-  const kal = { schema: KALIBRERING_SCHEMA, skapad: idag, metod: 'agent/FACIT.md', konton, delvis, horisonter: HORISONTER, hinkar: per, hall, placebo: plac, sagtand: sagtandHinkar(sagtandRader), statistik, vantar: vantar.length };
+  const rev = revideringSammanfattning(revideringRader);
+  // Hur långt det nuvarande regelverket har kommit mot ett förslag, per trappsteg.
+  const nyaRegeln = Object.fromEntries(Object.keys(TRAPPSTEG).map((v) => { const b = perNya.lang[`HOJ|trappa|${v}`]; return [v, { matta: b?.bedomda ?? 0, kampanjer: b?.bedomda_kampanjer ?? 0 }]; }));
+  const kal = {
+    schema: KALIBRERING_SCHEMA, metod_version: METOD_VERSION, skapad: idag, metod: 'agent/FACIT.md', konton, delvis, horisonter: HORISONTER,
+    regelverk_nu: nuvarande, nya_regeln: nyaRegeln,
+    hinkar: per, hinkar_nya_regeln: perNya, hall, placebo: plac, sagtand: sagtandHinkar(sagtandRader),
+    vantekostnad: vantekostnadHinkar(vantaRader), revidering: rev, statistik, vantar: vantar.length,
+    vandring: vandr ? { kort: runda(vandr.kort, 3), lang: runda(vandr.lang, 3) } : null,
+  };
   // Kandidater: det datan stöder i dag. Förslag: kandidater som stått
   // FORSLAG_DAGAR_I_RAD körningar i rad, på en hel (inte delvis) dag, med
   // godkänt placebo. En delvis dag rör inte historiken.
-  const kandidater = delvis ? [] : forslag({ hinkar: per.lang, hinkarKort: per.kort, hall: hall.lang });
+  const kandidater = delvis ? [] : forslag({ hinkarNya: perNya.lang, hinkarNyaKort: perNya.kort, hinkarAlla: per.lang, hinkarAllaKort: per.kort, hall: hall.lang, revidering: rev });
   const historik = { ...(tidigare?.forslag_historik ?? {}) };
   if (!delvis && tidigare?.skapad !== idag) {
-    const nu = new Set(kandidater.map((f) => `${f.typ}|${f.nyckel}`));
+    const nu = new Set(kandidater.map((f) => f.nyckel));
     for (const k of Object.keys(historik)) if (!nu.has(k)) delete historik[k];
     for (const k of nu) {
       const h = historik[k];
@@ -1004,8 +1311,10 @@ export function kalibrering(alla, hallRader, { idag, statistik = {}, vantar = []
     }
   }
   kal.forslag_historik = historik;
-  kal.kandidater = kandidater.map((f) => ({ ...f, dagar_i_rad: historik[`${f.typ}|${f.nyckel}`]?.dagar_i_rad ?? 0 }));
-  kal.forslag = plac.godkant ? kal.kandidater.filter((f) => f.dagar_i_rad >= FORSLAG_DAGAR_I_RAD) : [];
+  // Spärr: mätaren ska hålla totalt OCH i läget förslaget bygger på.
+  const sparr = (f) => (!plac.godkant ? 'mätaren är inte godkänd' : f.matare && !plac.lagen?.[f.matare]?.godkant ? `mätaren är inte godkänd vid ROAS/BE ${f.matare}` : null);
+  kal.kandidater = kandidater.map((f) => ({ ...f, dagar_i_rad: historik[f.nyckel]?.dagar_i_rad ?? 0, sparrad: sparr(f) }));
+  kal.forslag = kal.kandidater.filter((f) => f.dagar_i_rad >= FORSLAG_DAGAR_I_RAD && !f.sparrad).map((f, i) => ({ ...f, nr: i + 1 }));
   return kal;
 }
 
@@ -1028,7 +1337,15 @@ export function familjForDom(rad) {
 /** Hinken säger något bredvid dagens beslut först från så många olika kampanjer. */
 export const MIN_KAMPANJER_NOT = 3;
 
-const hinkText = (b) => `${b.ratt} rätt, ${b.fel} fel, ${b.osakra} osäkra på ${b.bedomda_kampanjer} kampanjer · Σ ${kr(b.delta_vinst_kr)}${b.intervall_80 ? ` (80 %: ${kr(b.intervall_80[0])} till ${kr(b.intervall_80[1])})` : ''}`;
+const kampanjer = (n) => `${n} ${n === 1 ? 'kampanj' : 'kampanjer'}`;
+const hinkText = (b) => `${b.ratt} rätt, ${b.fel} fel, ${b.osakra} för jämna att döma, på ${kampanjer(b.bedomda_kampanjer)} · ${kr(b.delta_vinst_kr)} mot att låta budgeten stå${b.intervall_80 ? ` (80 %: ${kr(b.intervall_80[0])} till ${kr(b.intervall_80[1])})` : ''}`;
+const hallText = (b, familj) => {
+  const n = b.kampanjdygn;
+  const netto = `netto ${kr(b.netto_kr)} på ${b.unika_dygn} unika kampanjdygn`;
+  if (familj === 'HALL_HOG') return `${brak(b.utfall.HOLL ?? 0, n)} stod kvar över target efter väntan${b.nasta_morgon.av ? `, ${brak(b.nasta_morgon.over, b.nasta_morgon.av)} redan nästa morgon` : ''} (${b.kampanjer} kampanjer)`;
+  if (familj === 'HALL_MELLAN') return `${brak(b.utfall.FOLL_UNDER ?? 0, n)} föll under break-even under väntan · ${netto} (${b.kampanjer} kampanjer)`;
+  return `${brak(b.utfall.ATERHAMTAD ?? 0, n)} tog sig över break-even · ${netto} (${b.kampanjer} kampanjer)`;
+};
 
 /**
  * Facit bredvid ett beslut: hinkens utfall för dagens läge (budgetzon och
@@ -1047,15 +1364,13 @@ export function facitNot(kal, rad) {
   const delar = [];
   const hinkarNu = [];
   if (familj.startsWith('HALL') || familj === 'STANG') {
+    const hallFamilj = familj === 'STANG' ? 'HALL_FORLUST' : familj;
     const nyckel = familj === 'STANG' ? `HALL_FORLUST|band|${band}` : `${familj}|kod|${rad.dom.kod}`;
     const b = kal.hall?.lang?.[nyckel];
     if (b && b.kampanjdygn >= MIN_HALL_DYGN) {
-      const n = b.kampanjdygn;
       hinkarNu.push(nyckel);
-      if (familj === 'STANG') delar.push(`kampanjer i förlust vid ROAS/BE ${band} som fick leva: ${brak(b.utfall.ATERHAMTAD ?? 0, n)} kampanjdygn tog sig över break-even (${b.kampanjer} kampanjer, överlevare)`);
-      else if (familj === 'HALL_HOG') delar.push(`${rad.dom.kod} över target: ${brak(b.utfall.HOLL ?? 0, n)} kampanjdygn stod kvar över target efter väntan (${b.kampanjer} kampanjer)`);
-      else if (familj === 'HALL_MELLAN') delar.push(`${rad.dom.kod} mellan break-even och target: ${brak(b.utfall.FOLL_UNDER ?? 0, n)} föll under break-even, ${krUtanTecken(b.forlust_kr)} förlust under väntan (${b.kampanjer} kampanjer)`);
-      else delar.push(`${rad.dom.kod} i förlust: ${brak(b.utfall.ATERHAMTAD ?? 0, n)} tog sig över break-even, väntan kostade ${krUtanTecken(b.forlust_kr)} (${b.kampanjer} kampanjer)`);
+      const etikett = familj === 'STANG' ? `kampanjer i förlust vid ROAS/BE ${band} som fick leva` : `${rad.dom.kod}`;
+      delar.push(`${etikett}: ${hallText(b, hallFamilj)}`);
     }
   } else {
     for (const [dim, varde] of [['zon', zon], ['band', band]]) {
@@ -1063,7 +1378,7 @@ export function facitNot(kal, rad) {
       if (!b) continue;
       hinkarNu.push(`${familj}|${dim}|${varde}`);
       const etikett = dim === 'zon' ? `vid ${varde} kr` : `vid ROAS/BE ${varde}`;
-      if ((b.bedomda_kampanjer ?? 0) < MIN_KAMPANJER_NOT) { delar.push(`${etikett}: för få kampanjer än (${b.bedomda_kampanjer ?? 0})`); continue; }
+      if ((b.bedomda_kampanjer ?? 0) < MIN_KAMPANJER_NOT) { delar.push(`${etikett}: för få mätta kampanjer än (${b.bedomda_kampanjer ?? 0})`); continue; }
       delar.push(`${etikett}: ${hinkText(b)}`);
     }
   }
@@ -1075,45 +1390,59 @@ export function facitNot(kal, rad) {
 
 // ── Rapport och status ───────────────────────────────────────────────────────
 
-function sammanfattning(kal, { en = false } = {}) {
+const stor = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+const decDag = (n) => (Number.isFinite(n) ? String(Math.round(n * 10) / 10).replace('.', ',') : '—');
+
+/** En rad per budgetfamilj (lång horisont). Svenska med kronor, eller engelska utan. */
+function familjRad(b, familj, { en = false } = {}) {
+  const namn = (en ? FAMILJNAMN_EN : FAMILJNAMN)[familj];
+  if (!b.bedomda) {
+    return en
+      ? `${namn}: ${b.episoder} so far, none measurable yet (launch phase, disturbed or too little history)`
+      : `${stor(namn)}: ${b.episoder} st, ingen mätbar än (${b.ej_bedomda} i lanseringsfas, störda eller utan egen historik)`;
+  }
+  if (en) return `${namn}: ${b.bedomda} measured on ${b.bedomda_kampanjer} campaigns — ${b.ratt} paid off, ${b.fel} did not, ${b.osakra} too close to call`;
+  return `${stor(namn)}: ${b.bedomda} av ${b.episoder} mätta · ${hinkText(b)}`;
+}
+
+function sammanfattning(kal) {
   const ut = [];
-  const namn = en ? FAMILJNAMN_EN : FAMILJNAMN;
-  const sek = (n) => `${n >= 0 ? '+' : '−'}${Math.abs(Math.round(n)).toLocaleString('en-US')} SEK`;
-  for (const familj of ['HOJ', 'SANK', 'TJUV']) {
+  for (const familj of ['HOJ', 'SANK', 'AXEL_HOJ', 'AXEL_SANK', 'TJUV']) {
     const b = kal.hinkar?.lang?.[`${familj}|alla|alla`];
-    if (!b) continue;
-    const iv = b.intervall_80;
-    ut.push(en
-      ? `${namn[familj]}: ${b.bedomda} of ${b.episoder} episodes measured (${b.bedomda_kampanjer} campaigns) — ${b.ratt} right, ${b.fel} wrong, ${b.osakra} uncertain; ${sek(b.delta_vinst_kr)} profit vs what the old budget would have made${iv ? ` (80 %: ${sek(iv[0])} to ${sek(iv[1])})` : ''}, median ${sek(b.median_kr ?? 0)} per episode, ${sek(b.utan_storsta_kr ?? 0)} without the biggest campaign`
-      : `${namn[familj]}: ${b.bedomda} av ${b.episoder} episoder mätta (${b.bedomda_kampanjer} kampanjer) — ${b.ratt} rätt, ${b.fel} fel, ${b.osakra} osäkra; ${kr(b.delta_vinst_kr)} mot vad gammal budget hade gett${iv ? ` (80 %: ${kr(iv[0])} till ${kr(iv[1])})` : ''}, median ${kr(b.median_kr)} per episod, ${kr(b.utan_storsta_kr)} utan största kampanjen`);
+    if (b) ut.push(familjRad(b, familj));
   }
   const sg = kal.sagtand?.['alla|alla'];
-  if (sg) ut.push(en ? `sawtooth: ${brak(sg.vande, sg.hojningar)} raises were followed by the robot's own cut or pause within ${SAGTAND_DAGAR} days (median ${sg.median_dagar ?? '—'} days, ${sg.kampanjer} campaigns)` : `sågtand: ${brak(sg.vande, sg.hojningar)} höjningar följdes av motorns egen sänkning eller avstängning inom ${SAGTAND_DAGAR} dygn (median ${sg.median_dagar ?? '—'} dygn, ${sg.kampanjer} kampanjer)`);
+  if (sg) ut.push(`Sågtand: ${brak(sg.vande, sg.hojningar)} höjningar vändes av motorns egen sänkning eller avstängning inom ${SAGTAND_DAGAR} dygn (median ${decDag(sg.median_dagar)} dygn, ${sg.kampanjer} kampanjer)`);
   const st = kal.hinkar?.lang?.['STANG|alla|alla'];
-  if (st) ut.push(en ? `${namn.STANG}: ${st.episoder} recorded, no counterfactual verdict; ${st.aterstartade} restarted, ${st.aterstartade_plus} of them made money after the restart` : `${namn.STANG}: ${st.episoder} registrerade, ingen kontrafaktisk dom; ${st.aterstartade} återstartade, varav ${st.aterstartade_plus} gick plus efter återstarten`);
+  if (st) ut.push(`Avstängningar: ${st.episoder} registrerade, ingen dom (det går inte att veta vad en avstängd kampanj hade gett) · ${st.aterstartade} startades om, ${st.aterstartade_plus} av dem gick plus`);
   for (const familj of ['HALL_HOG', 'HALL_MELLAN', 'HALL_FORLUST']) {
     const b = kal.hall?.lang?.[`${familj}|alla|alla`];
-    if (!b) continue;
-    if (familj === 'HALL_HOG') ut.push(en ? `${namn[familj]}: ${brak(b.utfall.HOLL ?? 0, b.kampanjdygn)} campaign-days stayed above target after waiting (${b.kampanjer} campaigns)` : `${namn[familj]}: ${brak(b.utfall.HOLL ?? 0, b.kampanjdygn)} kampanjdygn stod kvar över target efter väntan (${b.kampanjer} kampanjer)`);
-    else if (familj === 'HALL_MELLAN') ut.push(en ? `${namn[familj]}: ${brak(b.utfall.FOLL_UNDER ?? 0, b.kampanjdygn)} campaign-days fell below break-even, ${b.forlust_kr.toLocaleString('en-US')} SEK lost while waiting (${b.kampanjer} campaigns)` : `${namn[familj]}: ${brak(b.utfall.FOLL_UNDER ?? 0, b.kampanjdygn)} kampanjdygn föll under break-even, ${krUtanTecken(b.forlust_kr)} förlust under väntan (${b.kampanjer} kampanjer)`);
-    else ut.push(en ? `${namn[familj]}: ${brak(b.utfall.ATERHAMTAD ?? 0, b.kampanjdygn)} recovered above break-even, waiting cost ${b.forlust_kr.toLocaleString('en-US')} SEK (${b.kampanjer} campaigns)` : `${namn[familj]}: ${brak(b.utfall.ATERHAMTAD ?? 0, b.kampanjdygn)} tog sig över break-even, väntan kostade ${krUtanTecken(b.forlust_kr)} (${b.kampanjer} kampanjer)`);
+    if (b) ut.push(`${stor(FAMILJNAMN[familj])}: ${hallText(b, familj)}`);
   }
   return ut;
 }
 
+const forslagText = (f) => `⚑ Förslag ${f.nr}: ${f.konstant} från ${f.fran} till ${f.till}. ${f.varfor} Bevis: ${f.bevis}. Svara JA ${f.nr} eller NEJ ${f.nr}.`;
+
+/** Rondens leverans: en skärm, svenska, kronor. */
 export function status(kal, { en = false } = {}) {
   if (en) return statusEngelska(kal);
   if (!kal) return ['Facit: ingen kalibrering än (agent/kalibrering.json saknas).'];
-  const ut = [`Facit ${kal.skapad}${kal.delvis ? ' (DELVIS — ett konto saknades)' : ''} — så har motorns budgetbeslut faktiskt gått (7 dygn efter, mot vad gammal budget hade gett):`];
-  for (const x of sammanfattning(kal)) ut.push(`- ${x}`);
+  const ut = [`Facit ${kal.skapad}${kal.delvis ? ' (DELVIS — ett konto saknades, inga förslag i dag)' : ''} — så gick budgetbesluten 7 dygn efter, mot att låta budgeten stå:`];
+  for (const familj of ['HOJ', 'SANK', 'AXEL_HOJ']) {
+    const b = kal.hinkar?.lang?.[`${familj}|alla|alla`];
+    if (b) ut.push(`- ${familjRad(b, familj)}`);
+  }
+  const sg = kal.sagtand?.['alla|alla'];
+  if (sg) ut.push(`- Sågtand: ${brak(sg.vande, sg.hojningar)} höjningar vändes av motorn själv inom ${SAGTAND_DAGAR} dygn (median ${decDag(sg.median_dagar)} dygn).`);
   const p = kal.placebo;
-  if (p) ut.push(`- Placebo (dygn utan ändring, ska ge ≈ 0 kr): ${kr(p.summa_kr)} på ${p.kampanjer} kampanjer${p.intervall_80 ? ` (80 %: ${kr(p.intervall_80[0])} till ${kr(p.intervall_80[1])})` : ''} — ${p.godkant ? 'godkänt' : 'EJ godkänt, inga förslag går ut'}`);
+  if (p) { const h = p.lagen?.[PLACEBO_HOJ]; ut.push(`- Mätaren, prövad på ${p.kampanjdygn} dygn där ingen rörde budgeten: ${kr(p.summa_kr)} (ska vara nära noll${p.intervall_80 ? `, 80 %: ${kr(p.intervall_80[0])} till ${kr(p.intervall_80[1])}` : ''}) — ${p.godkant ? 'godkänd' : 'EJ godkänd, inga förslag går ut'}${h ? `; i toppläget där motorn höjer ${kr(h.summa_kr)}, ${h.godkant ? 'godkänd' : 'EJ godkänd'}` : ''}.`); }
+  const nr = kal.nya_regeln ?? {};
+  if (Object.keys(nr).length) ut.push(`- Nya regeln (${kal.regelverk_nu}): mätta höjningar per trappsteg ${Object.entries(nr).map(([v, x]) => `${v} × target ${x.matta} av ${FORSLAG_MIN_EPISODER}`).join(' · ')}.`);
   const f = kal.forslag ?? [];
-  const k = (kal.kandidater ?? []).filter((x) => !f.includes(x));
-  if (f.length) {
-    ut.push(`- ⚑ ${f.length} regelförslag till Axel (stått ${FORSLAG_DAGAR_I_RAD} morgnar i rad) — se agent/utdata/facit-${kal.skapad}.md. Inget ändras förrän Axel säger ja.`);
-    for (const x of f) ut.push(`  - ${x.typ}: ${x.hink}`);
-  } else ut.push(`- Inga regelförslag än${k.length ? ` — ${k.length} kandidat(er) på väg (${k.map((x) => `${x.typ} dag ${x.dagar_i_rad} av ${FORSLAG_DAGAR_I_RAD}`).join(', ')})` : ''}.`);
+  const k = (kal.kandidater ?? []).filter((x) => !f.some((y) => y.nyckel === x.nyckel));
+  for (const x of f) ut.push(`- ${forslagText(x)}`);
+  if (!f.length) ut.push(`- Inga regelförslag${k.length ? ` (på väg: ${k.map((x) => `${x.konstant} till ${x.till}, dag ${x.dagar_i_rad} av ${FORSLAG_DAGAR_I_RAD}${x.sparrad ? ', spärrad' : ''}`).join('; ')})` : ''}.`);
   return ut;
 }
 
@@ -1122,9 +1451,9 @@ export function status(kal, { en = false } = {}) {
 export function statusEngelska(kal) {
   if (!kal) return ['Facit: no calibration yet.'];
   const ut = [`Facit ${kal.skapad} — how the robot's budget moves turned out (7 days after):`];
-  for (const [familj, namn] of [['HOJ', 'raises'], ['SANK', 'cuts']]) {
+  for (const familj of ['HOJ', 'SANK']) {
     const b = kal.hinkar?.lang?.[`${familj}|alla|alla`];
-    if (b) ut.push(`- ${namn}: ${b.bedomda} measured on ${b.bedomda_kampanjer} campaigns — ${b.ratt} paid off, ${b.fel} did not, ${b.osakra} too close to call`);
+    if (b) ut.push(`- ${familjRad(b, familj, { en: true })}`);
   }
   const sg = kal.sagtand?.['alla|alla'];
   if (sg) ut.push(`- sawtooth: ${sg.vande} of ${sg.hojningar} raises were followed by the robot's own cut or pause within ${SAGTAND_DAGAR} days`);
@@ -1135,11 +1464,12 @@ export function statusEngelska(kal) {
 
 export function rapportMd(kal, { nya = [] } = {}) {
   const ut = [];
+  const sortera = (x, y) => (x.dimension === y.dimension ? String(x.varde).localeCompare(String(y.varde), 'sv') : x.dimension.localeCompare(y.dimension));
   ut.push(`# Facit — ${kal.skapad}`);
   ut.push('');
-  ut.push('Så har Skalnings kungens budgetbeslut gått. Varje höjning och sänkning jämförs med vad GAMMAL budget hade gett: samma spend som före beslutet, och den ROAS kampanjen hade veckan innan motorn tittade (justerad för hur resten av kontot rörde sig). Skillnaden i vinst är beslutets facit. Metoden och kritiken den klarat: `agent/FACIT.md`. **Facit ändrar ingenting** — förslagen nedan är Axels beslut.');
+  ut.push('Så har Skalnings kungens budgetbeslut gått. Varje höjning och sänkning jämförs med vad GAMMAL budget hade gett: samma spend som före beslutet, och den ROAS kampanjen hade fått ändå. Den räknas från kampanjens egen nivå veckan innan plus den del av en topp eller dipp som brukar hålla i sig, mätt på andra kampanjers dygn där ingen rörde budgeten. Skillnaden i vinst är beslutets facit. Metoden, provbänken och det mätaren inte klarar: `agent/FACIT.md`. **Facit ändrar ingenting** — förslagen nedan är Axels beslut.');
   ut.push('');
-  ut.push('Läs bråken rätt: ett enskilt beslut är oftast OSÄKERT — tre dygns köp är för få för att skilja ett bra beslut från tur. Det är hinkarna över veckor som lär motorn något, och de växer varje morgon.');
+  ut.push('Ett enskilt beslut är oftast för jämnt att döma: tre till sju dygns köp räcker sällan för att skilja ett bra beslut från tur. Det är hinkarna över veckor som lär motorn något.');
   ut.push('');
   ut.push('## Sammanfattning (7 dygn efter)');
   ut.push('');
@@ -1149,21 +1479,31 @@ export function rapportMd(kal, { nya = [] } = {}) {
   const f = kal.forslag ?? [];
   ut.push(`## ⚑ Förslag till Axel (${f.length})`);
   ut.push('');
-  if (!f.length) ut.push(`Inga än. Ett förslag kräver minst ${MIN_KAMPANJER_FORSLAG} olika kampanjer i samma hink, ett 80 %-intervall som inte korsar noll, och att resultatet håller även utan den största kampanjen.`);
-  for (const x of f) ut.push(`- **${x.typ}** — ${x.hink}: ${x.text} Bevis: ${x.bevis}.${x.konstant ? ` Gäller \`${x.konstant}\` i agent/besked.mjs.` : ''}`);
-  ut.push('');
-  const kand = (kal.kandidater ?? []).filter((x) => !f.includes(x));
-  if (kand.length) {
-    ut.push(`### Kandidater (ett förslag måste stå ${FORSLAG_DAGAR_I_RAD} morgnar i rad)`);
+  if (!f.length) ut.push(`Inga än. Ett förslag kräver minst ${FORSLAG_MIN_EPISODER} mätta beslut på ${FORSLAG_MIN_KAMPANJER} olika kampanjer i samma hink, ett 80 %-intervall som inte korsar noll, samma tecken utan den största kampanjen och i det korta fönstret, en godkänd mätare, och att det stått ${FORSLAG_DAGAR_I_RAD} morgnar i rad.`, '');
+  for (const x of f) {
+    ut.push(`### Förslag ${x.nr}: \`${x.konstant}\` från ${x.fran} till ${x.till}`);
     ut.push('');
-    for (const x of kand) ut.push(`- ${x.typ} — ${x.hink}: dag ${x.dagar_i_rad} av ${FORSLAG_DAGAR_I_RAD}. ${x.bevis}.`);
+    ut.push(`${x.varfor} Bevis: ${x.bevis}.${Number.isFinite(x.kr_per_vecka) ? ` Hinken: ${kr(x.kr_per_vecka)} per kampanjvecka.` : ''} Konstanten står i \`agent/besked.mjs\`.`);
+    ut.push('');
+    ut.push(`Svara **JA ${x.nr}** eller **NEJ ${x.nr}**. Inget ändras förrän du svarat.`);
     ut.push('');
   }
+  const kand = (kal.kandidater ?? []).filter((x) => !f.some((y) => y.nyckel === x.nyckel));
+  if (kand.length) {
+    ut.push(`### På väg (ett förslag måste stå ${FORSLAG_DAGAR_I_RAD} morgnar i rad)`);
+    ut.push('');
+    for (const x of kand) ut.push(`- \`${x.konstant}\` från ${x.fran} till ${x.till}: dag ${x.dagar_i_rad} av ${FORSLAG_DAGAR_I_RAD}${x.sparrad ? ` — SPÄRRAD: ${x.sparrad}` : ''}. ${x.varfor} ${x.bevis}.`);
+    ut.push('');
+  }
+
   const p = kal.placebo;
   if (p) {
-    ut.push('### Placebo — mäter mätaren rätt?');
+    ut.push('## Mätaren — mäter den rätt?');
     ut.push('');
-    ut.push(`Samma mätare på ${p.kampanjdygn} kampanjdygn (${p.kampanjer} kampanjer) där motorn INTE ändrade något. Den ska ge ≈ 0 kr: ${kr(p.summa_kr)}${p.intervall_80 ? ` (80 %: ${kr(p.intervall_80[0])} till ${kr(p.intervall_80[1])})` : ''}, median ${kr(p.median_kr)}, ${p.ratt} "rätt" / ${p.fel} "fel" / ${p.osakra} osäkra. ${p.godkant ? '**Godkänt** — intervallet innehåller noll.' : '**Inte godkänt** — då går inga förslag till Axel.'}`);
+    ut.push(`Mätaren prövas varje morgon på ${p.kampanjdygn} kampanjdygn (${p.kampanjer} kampanjer) där ingen rörde budgeten, en kampanj i taget med kampanjen själv borttagen. Den intäkt den hittar på där ska vara nära noll: ${kr(p.summa_kr)}${p.intervall_80 ? ` (80 %: ${kr(p.intervall_80[0])} till ${kr(p.intervall_80[1])})` : ''}. ${p.godkant ? '**Godkänd** — intervallet innehåller noll.' : '**Inte godkänd** — då går inga förslag till Axel.'}`);
+    ut.push('');
+    for (const [l, x] of Object.entries(p.lagen ?? {})) ut.push(`- ROAS/BE ${l}: ${kr(x.summa_kr)} på ${x.kampanjdygn} dygn (${x.kampanjer} kampanjer)${x.intervall_80 ? `, 80 %: ${kr(x.intervall_80[0])} till ${kr(x.intervall_80[1])}` : ''} — ${x.godkant ? 'godkänd' : 'inte godkänd'}${l === PLACEBO_HOJ ? ' (spärrar förslag om höjningar)' : ''}`);
+    if (kal.vandring) ut.push(`- Kampanjernas egen vandring utöver köpbruset (log-varians, läggs på varje intervall): ${dec(kal.vandring.kort, 3)} på 3 dygn, ${dec(kal.vandring.lang, 3)} på 7 dygn.`);
     ut.push('');
   }
 
@@ -1172,9 +1512,9 @@ export function rapportMd(kal, { nya = [] } = {}) {
     if (!rader.length) return;
     ut.push(`## ${rubrik}`);
     ut.push('');
-    ut.push('| Hink | Episoder | Kampanjer | Rätt / fel / osäkra | Σ Δ vinst | 80 % | Median | Utan största | Marginal-ROAS | Break-even |');
+    ut.push('| Hink | Beslut | Mätta kampanjer | Rätt / fel / för jämna | Σ Δ vinst | 80 % | Median | Utan största | Marginal-ROAS | Break-even |');
     ut.push('|---|---|---|---|---|---|---|---|---|---|');
-    for (const b of rader.sort((x, y) => (x.dimension === y.dimension ? String(x.varde).localeCompare(String(y.varde), 'sv') : x.dimension.localeCompare(y.dimension)))) {
+    for (const b of rader.sort(sortera)) {
       const iv = b.intervall_80 ? `${kr(b.intervall_80[0])} … ${kr(b.intervall_80[1])}` : '—';
       ut.push(`| ${dimNamn(b.dimension)}: ${b.varde} | ${b.episoder} | ${b.bedomda_kampanjer} | ${b.ratt} / ${b.fel} / ${b.osakra} | ${b.bedomda ? kr(b.delta_vinst_kr) : '—'} | ${iv} | ${kr(b.median_kr)} | ${kr(b.utan_storsta_kr)} | ${dec(b.marginal_roas)} | ${dec(b.break_even_viktad)} |`);
     }
@@ -1186,67 +1526,91 @@ export function rapportMd(kal, { nya = [] } = {}) {
     ut.push('');
     ut.push('Ren räkning på loggen, ingen kontrafaktik. En hög andel betyder att motorn höjer på toppar som inte håller.');
     ut.push('');
-    for (const b of sgr.sort((x, y) => (x.dimension === y.dimension ? String(x.varde).localeCompare(String(y.varde), 'sv') : x.dimension.localeCompare(y.dimension)))) ut.push(`- ${dimNamn(b.dimension)} ${b.varde}: ${brak(b.vande, b.hojningar)} vände (${b.stangda} till avstängning), median ${b.median_dagar ?? '—'} dygn, ${b.kampanjer} kampanjer`);
+    for (const b of sgr.sort(sortera)) ut.push(`- ${dimNamn(b.dimension)} ${b.varde}: ${brak(b.vande, b.hojningar)} vände (${b.stangda} till avstängning), median ${decDag(b.median_dagar)} dygn, ${b.kampanjer} kampanjer`);
     ut.push('');
   }
   tabell('HOJ', 'Höjningar — var det lönar sig att skala');
   tabell('SANK', 'Sänkningar — sparade de pengar?');
+  tabell('AXEL_HOJ', 'Dina egna höjningar (allt i Metas aktivitetslogg som inte står i budgetloggen)');
+  tabell('AXEL_SANK', 'Dina egna sänkningar');
   tabell('TJUV', 'Tjuvpauser — blev kampanjen bättre?');
 
   const st = Object.values(kal.hinkar?.lang ?? {}).filter((b) => b.familj === 'STANG' && b.dimension === 'band');
   if (st.length) {
     ut.push('## Avstängningar — det som faktiskt hände');
     ut.push('');
-    ut.push('En avstängd kampanj har ingen data efteråt, så facit fäller ingen kontrafaktisk dom (valet av kontroll avgjorde domen helt — kritiken 2026-09-30). Här står antalet per band, hur många som startades om och gick plus, och hur kampanjer i samma band gick när de fick leva.');
+    ut.push('En avstängd kampanj har ingen data efteråt, så facit fäller ingen dom. Här står antalet per band, hur många som startades om och gick plus, och hur kampanjer i samma band gick när de fick leva (överlevare — de som fick leva var de motorn trodde på).');
     ut.push('');
     for (const b of st.sort((x, y) => String(x.varde).localeCompare(String(y.varde), 'sv'))) {
       const levde = kal.hall?.lang?.[`HALL_FORLUST|band|${b.varde}`];
-      ut.push(`- ROAS/BE ${b.varde}: ${b.episoder} avstängda (${b.kampanjer} kampanjer), ${b.aterstartade} återstartade varav ${b.aterstartade_plus} gick plus${levde ? ` · de som fick leva i bandet: ${brak(levde.utfall.ATERHAMTAD ?? 0, levde.kampanjdygn)} kampanjdygn tog sig över break-even (${levde.kampanjer} kampanjer, överlevare)` : ''}`);
+      ut.push(`- ROAS/BE ${b.varde}: ${b.episoder} avstängda (${b.kampanjer} kampanjer), ${b.aterstartade} återstartade varav ${b.aterstartade_plus} gick plus${levde ? ` · de som fick leva i bandet: ${hallText(levde, 'HALL_FORLUST')}` : ''}`);
     }
     ut.push('');
   }
 
   const hall = Object.values(kal.hall?.lang ?? {}).filter((b) => b.dimension === 'kod');
   if (hall.length) {
-    ut.push('## Hållbeslut — vad väntan gav (rullande 45 dygn, kampanjdygn överlappar)');
+    ut.push('## Hållbeslut — vad väntan gav (7 dygn, rullande 45 dygn)');
     ut.push('');
-    ut.push('| Läge | Kod | Kampanjdygn | Kampanjer | Utfall | Förlust under väntan |');
-    ut.push('|---|---|---|---|---|---|');
+    ut.push('Nettot räknas på unika kampanjdygn: intäkt ÷ break-even − spend. Över target finns inget netto att räkna — där är frågan om toppen höll.');
+    ut.push('');
+    ut.push('| Läge | Kod | Kampanjdygn | Kampanjer | Utfall | Över target nästa morgon | Netto |');
+    ut.push('|---|---|---|---|---|---|---|');
     for (const b of hall.sort((x, y) => y.kampanjdygn - x.kampanjdygn)) {
-      ut.push(`| ${FAMILJNAMN[b.familj]} | ${b.varde} | ${b.kampanjdygn} | ${b.kampanjer} | ${Object.entries(b.utfall).map(([k, v]) => `${k} ${brak(v, b.kampanjdygn)}`).join(', ')} | ${b.familj === 'HALL_HOG' ? '—' : krUtanTecken(b.forlust_kr)} |`);
+      ut.push(`| ${FAMILJNAMN[b.familj]} | ${b.varde} | ${b.kampanjdygn} | ${b.kampanjer} | ${Object.entries(b.utfall).map(([k, v]) => `${k} ${brak(v, b.kampanjdygn)}`).join(', ')} | ${b.nasta_morgon.av ? brak(b.nasta_morgon.over, b.nasta_morgon.av) : '—'} | ${b.familj === 'HALL_HOG' ? '—' : `${kr(b.netto_kr)} (${b.unika_dygn} dygn)`} |`);
     }
     ut.push('');
   }
 
-  const prod = Object.values(kal.hinkar?.lang ?? {}).filter((b) => b.dimension === 'produkt' && b.bedomda > 0 && ['HOJ', 'SANK'].includes(b.familj)).sort((x, y) => x.delta_vinst_kr - y.delta_vinst_kr);
-  if (prod.length) {
-    ut.push('## Per produkt (mätta episoder)');
+  const vk = kal.vantekostnad?.alla;
+  if (vk) {
+    ut.push('## Väntans kostnad — väntedygn över target som följdes av en höjning');
     ut.push('');
-    for (const b of prod) ut.push(`- ${b.varde} — ${FAMILJNAMN[b.familj]}: ${b.ratt} rätt, ${b.fel} fel, ${b.osakra} osäkra, ${kr(b.delta_vinst_kr)}`);
+    ut.push(`${vk['hålldygn']} väntedygn över target (${vk.kampanjer} kampanjer) följdes av en höjning inom 3 dygn. Höjningarnas mätta vinst per dygn, summerad över väntedygnen: ${kr(vk.kostnad_kr)}. Plus betyder att höjningen tjänade pengar, alltså att väntan kostade ungefär så mycket; minus att väntan sparade pengar.`);
+    ut.push('');
+    for (const b of Object.values(kal.vantekostnad).filter((x) => x.kod !== 'alla')) ut.push(`- ${b.kod}: ${b['hålldygn']} väntedygn, ${kr(b.kostnad_kr)}`);
+    ut.push('');
+  }
+  const rv = kal.revidering;
+  if (rv?.rader) {
+    ut.push('## Revideras siffrorna i efterhand? (underlag för `NARA_GRANS_PP`)');
+    ut.push('');
+    ut.push(`Samma tredygnsfönster hämtat i dag jämfört med det motorn loggade (7d_click-tiden): ${rv.rader} rader, median omhämtad ÷ loggad ROAS ${dec(rv.median_kvot, 3)}. Av ${rv.nara} rader nära en zongräns korsade ${rv.nara_korsade} gränsen vid omhämtningen.`);
+    ut.push('');
+  }
+
+  const prod = Object.values(kal.hinkar?.lang ?? {}).filter((b) => b.dimension === 'produkt' && b.bedomda > 0 && ['HOJ', 'SANK', 'AXEL_HOJ', 'AXEL_SANK'].includes(b.familj)).sort((x, y) => x.delta_vinst_kr - y.delta_vinst_kr);
+  if (prod.length) {
+    ut.push('## Per produkt (mätta beslut)');
+    ut.push('');
+    for (const b of prod) ut.push(`- ${b.varde} — ${FAMILJNAMN[b.familj]}: ${b.ratt} rätt, ${b.fel} fel, ${b.osakra} för jämna, ${kr(b.delta_vinst_kr)}`);
     ut.push('');
   }
 
   const dagens = nya.filter((r) => r.horisont === 'lang');
   if (dagens.length) {
-    ut.push(`## Nya facit i dag (${dagens.length} episoder, 7 dygn)`);
+    ut.push(`## Nya facit i dag (${dagens.length} beslut, 7 dygn)`);
     ut.push('');
     for (const r of dagens.slice(0, 60)) {
-      ut.push(`- ${r.start}${r.slut !== r.start ? `–${r.slut}` : ''} **${String(r.kampanj_namn ?? r.kampanj_id).split('|')[0].trim()}** (${r.marknad}) ${FAMILJNAMN[r.familj]} ${r.beslut_fran_sek ?? '?'} → ${r.beslut_till_sek ?? '?'} kr: **${r.dom}**${r.orsak ? ` — ${r.orsak}` : ''}${r.bedombar ? ` · ${kr(r.delta_vinst_kr)} (80 %: ${kr(r.intervall_80?.[0])} till ${kr(r.intervall_80?.[1])})` : ''}${r.marginal_roas !== null && r.marginal_roas !== undefined && r.bedombar ? ` · marginal-ROAS ${dec(r.marginal_roas)} mot ${dec(r.break_even)}` : ''}${r.etikett ? ` · ${r.etikett}` : ''}${r.avbruten ? ' · AVBRUTEN av motorn' : ''}${r.avkortat && !r.avbruten ? ` · kapat: ${r.avkortat}` : ''}${r.aterstartad ? ` · ÅTERSTARTAD (${kr(r.aterstartad.vinst_kr)})` : ''}`);
+      ut.push(`- ${r.start}${r.slut !== r.start ? `–${r.slut}` : ''} **${String(r.kampanj_namn ?? r.kampanj_id).split('|')[0].trim()}** (${r.marknad}) ${FAMILJNAMN[r.familj]} ${r.beslut_fran_sek ?? '?'} → ${r.beslut_till_sek ?? '?'} kr: **${r.dom}**${r.orsak ? ` — ${r.orsak}` : ''}${r.bedombar ? ` · ${kr(r.delta_vinst_kr)} (80 %: ${kr(r.intervall_80?.[0])} till ${kr(r.intervall_80?.[1])})` : ''}${r.marginal_roas !== null && r.marginal_roas !== undefined && r.bedombar ? ` · marginal-ROAS ${dec(r.marginal_roas)} mot ${dec(r.break_even)}` : ''}${r.kontrafaktiskt ? ` · ${r.kontrafaktiskt}` : ''}${r.etikett ? ` · ${r.etikett}` : ''}${r.avbruten ? ' · AVBRUTEN av motorn' : ''}${r.avkortat && !r.avbruten ? ` · kapat: ${r.avkortat}` : ''}${r.aterstartad ? ` · ÅTERSTARTAD (${kr(r.aterstartad.vinst_kr)})` : ''}`);
     }
     ut.push('');
   }
 
   ut.push('## Datan');
   ut.push('');
-  for (const [k, s] of Object.entries(kal.statistik ?? {})) ut.push(`- ${k}: ${s.dygnsrader} dygnsrader ${s.since}..${s.until}, ${s.budgetandringar} budgetändringar i Metas aktivitetslogg varav ${s.handandringar} för hand.`);
-  ut.push(`- ${kal.vantar} episoder väntar på att fönstret stänger och mognar (${MOGNAD_DAGAR} dygn).`);
+  for (const [k, s] of Object.entries(kal.statistik ?? {})) {
+    const kl = s.kontroll_lang;
+    ut.push(`- ${k}: ${s.dygnsrader} dygnsrader ${s.since}..${s.until}, ${s.budgetandringar} budgetändringar i Metas aktivitetslogg varav ${s.handandringar} för hand. Kontrollen: ${s.kontrollprov_lang} orörda 7-dygnsprov${kl && !kl.saknas ? ` (${kl.kampanjer} kampanjer; en kampanj på break-even veckan innan och 1,5 × före med 10 köp väntas ge ${dec(kl.kvot_vid_1_5)} × break-even utan ändring, ρ ${dec(kl.rho_10_kop)})` : kl?.orsak ? ` — ${kl.orsak}` : ''}.`);
+  }
+  ut.push(`- ${kal.vantar} beslut väntar på att fönstret stänger och mognar (${MOGNAD_DAGAR} dygn).`);
   ut.push(`- Beslut före ${ATTRIBUTION_7D_CLICK_FRAN} fattades på siffror med visningsköp; facit räknar allt i 7d_click.`);
   ut.push('- Nya annonser som laddas upp i samma kampanj under fönstret syns inte som störning — de påverkar ROAS utan att budgeten ändrats.');
   ut.push('');
   return ut.join('\n');
 }
 
-const dimNamn = (d) => ({ marknad: 'marknad', zon: 'budget före', band: 'ROAS/BE vid beslutet', forsta_steg: 'första steget', total: 'hela ändringen', kedja: 'kedja', regelverk: 'regelverk' }[d] ?? d);
+const dimNamn = (d) => ({ marknad: 'marknad', zon: 'budget före', band: 'ROAS/BE vid beslutet', trappa: 'ROAS ÷ target', fart: 'fart', forsta_steg: 'första steget', total: 'hela ändringen', kedja: 'kedja', regelverk: 'regelverk' }[d] ?? d);
 
 // ── CLI ──────────────────────────────────────────────────────────────────────
 
