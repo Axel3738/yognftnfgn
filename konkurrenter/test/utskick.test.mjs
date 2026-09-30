@@ -152,4 +152,7 @@ test('coworkPrompt: exakt de godkända fälten, och säkerhetskontrollen lämnas
   for (const s of [v.urls, v.original, v.beskrivning, 'https://www.facebook.com/ads/library/?id=3', 'ANMÄLAN 1 av 2', 'ANMÄLAN 2 av 2', 'axel@example.se']) assert.ok(p.includes(s), `saknar ${s}`);
   assert.match(p, /Säkerhetskontroll.*gör den du/);
   assert.match(p, /Försök aldrig lösa den själv/);
+  // Cowork 2026-09-30: Claude in Chrome är av som standard i varje ny chatt. Prompten säger då exakt vad Axel slår på.
+  assert.match(p, /Slå på Claude in Chrome i menyn Connectors/);
+  assert.ok(p.indexOf('FÖRST') < p.indexOf('REGLER'), 'kontrollen av Chrome ska stå före reglerna');
 });
