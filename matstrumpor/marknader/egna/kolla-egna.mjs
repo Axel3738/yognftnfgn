@@ -14,6 +14,18 @@ const FORBJUDET = [
   [/sverige|svensk|sweden|swedish|schwed|suède|suédois|zweed|zweeds|suecia|sueco|svezia|svedese|szwecj|szwedzk|suécia|ruotsi|scandinav|skandinav/i, 'Sverige/svensk'],
   [/\b(gratis frakt|fri frakt|free shipping|kostenlos|livraison|verzending|envío|spedizione|dostawa|envio|garanti|guarantee|garantie|garantía|garanzia|gwarancj|garantia)\b/i, 'nytt löfte'],
 ];
+// Japanska och kinesiska (2026-09-30): tal med kanji, aldrig siffror; valuta, symboler, Sverige/Norden,
+// frakt och garanti på språket. Talet mäts i tecken per sekund i stället för ord (inga mellanslag).
+const CJK = /^(JP|TW)$/.test(kod);
+if (CJK) FORBJUDET.push(
+  [/[０-９]/u, 'siffra (ska skrivas med kanji)'], [/[％＆／＄￥¥―]/u, 'symbol'],
+  [/円|日圓|日幣|台幣|新台幣|美元|克朗|クローナ|ドル|[一二三四五六七八九十百千萬两兩]元/u, 'valuta/belopp'],
+  [/マット.{0,3}ス.{0,2}ト|エスイー|ドットエス/u, 'butiksnamnet/domänen'],
+  [/スウェーデン|瑞典|北欧|北歐|スカンジナビア|斯堪地那維亞/u, 'Sverige/svensk'],
+  [/送料無料|無料配送|免運|免費運送|包郵|保証|保固|保證/u, 'nytt löfte'],
+);
+// Taltempo: japanska ~7 tecken/s (kanji bär två morer), kinesiska ~5 (ett tecken = en stavelse).
+const TECKEN_PER_S = { JP: [7.5, 9], TW: [5.5, 6.5] }[kod];
 const SVENSKA = ['strumpor', 'låda', 'lådan', 'present', 'presenten', 'mamma', 'grejer', 'faktiskt', 'riktig', 'också', 'verkligen', 'sushistrumpor', 'klicka', 'länken'];
 const fel = [], varn = [];
 const manus = JSON.parse(readFileSync(`${E}/${video}.manus.json`, 'utf8')).filter((s) => !s.stryk);
@@ -39,19 +51,27 @@ for (let i = 0; i < Math.min(seg.length, manus.length); i++) {
   if (s.sv !== m.sv) fel.push(`segment ${i + 1}: sv-raden ändrad`);
   kolla(s.text, `segment ${i + 1}`);
   allText.push(s.text ?? '');
+  if (CJK) {
+    const tps = ((s.text ?? '').match(/[\p{L}\p{N}]/gu) ?? []).length / Math.max(0.3, m.b - m.a);
+    if (tps > TECKEN_PER_S[1]) fel.push(`segment ${i + 1}: ${tps.toFixed(1)} tecken/s — hinns inte med`);
+    else if (tps > TECKEN_PER_S[0]) varn.push(`segment ${i + 1}: ${tps.toFixed(1)} tecken/s`);
+    continue;
+  }
   const kvot = (s.text ?? '').length / Math.max(1, m.sv.length);
   const ordps = ((s.text ?? '').match(/[\p{L}']+/gu) ?? []).length / Math.max(0.3, m.b - m.a);
   if (kvot > 1.45) fel.push(`segment ${i + 1}: ${Math.round(kvot * 100)} % av svenskans längd — hinns inte med`);
   else if (kvot > 1.3) varn.push(`segment ${i + 1}: ${Math.round(kvot * 100)} % av svenskans längd`);
   if (ordps > 4.2) varn.push(`segment ${i + 1}: ${ordps.toFixed(1)} ord/s`);
 }
+// Ett japanskt/kinesiskt tecken tar ungefär två latinska bokstävers bredd i en ruta.
+const bredd = (x) => [...String(x ?? '')].reduce((n, c) => n + (/[\u3000-\u9fff\uff00-\uffef]/u.test(c) ? 2 : 1), 0);
 const t = d.texter ?? {};
 for (const [k, v] of Object.entries(bild)) {
   if (Array.isArray(v)) {
     if (!Array.isArray(t[k]) || t[k].length !== v.length) { fel.push(`texter.${k}: ska vara ${v.length} rader`); continue; }
-    t[k].forEach((x, i) => { kolla(x, `texter.${k}[${i}]`); if (x.length > v[i].length * 1.4) varn.push(`texter.${k}[${i}] ${x.length} tecken mot ${v[i].length}`); allText.push(x); });
+    t[k].forEach((x, i) => { kolla(x, `texter.${k}[${i}]`); if (bredd(x) > v[i].length * 1.4) varn.push(`texter.${k}[${i}] ${bredd(x)} teckenbredder mot ${v[i].length}`); allText.push(x); });
   } else {
-    kolla(t[k], `texter.${k}`); if ((t[k] ?? '').length > v.length * 1.4) varn.push(`texter.${k} ${(t[k] ?? '').length} tecken mot ${v.length}`); allText.push(t[k] ?? '');
+    kolla(t[k], `texter.${k}`); if (bredd(t[k]) > v.length * 1.4) varn.push(`texter.${k} ${bredd(t[k])} teckenbredder mot ${v.length}`); allText.push(t[k] ?? '');
   }
 }
 const fam = sprakfamilj(heygenSprakFor(kod));

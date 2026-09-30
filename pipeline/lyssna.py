@@ -7,7 +7,9 @@
 # Skriver EN rad JSON:
 #   sprak_hort / sannolikhet — språket faster-whisper hör i dubben (ska vara marknadens)
 #   ordtackning             — andel av SRT:ns ord som faktiskt hörs (Whisper small stavar fel
-#                              på produktord, så 0,7–0,9 är normalt; under ~0,6 = lyssna)
+#                              på produktord, så 0,7–0,9 är normalt; under ~0,6 = lyssna).
+#                              ja/zh: andel teckenpar (Whisper väljer ofta kana där manuset har
+#                              kanji, så där är ~0,5 normalt); zh jämförs i traditionella tecken
 #   f0_dub / f0_kalla       — röstens mediantonhöjd i Hz; en klonad kvinnoröst ska ligga
 #                              inom ~25 % av källans (byte av person eller kön syns här)
 #   hort                    — hela transkriptionen, för att läsa slutet (avhugget sista ord)
@@ -35,8 +37,25 @@ def tonhojd(x, sr=16000):
         if ac[k] / ac[0] > 0.45: f0.append(sr / k)
     return float(np.median(f0)) if len(f0) > 20 else None
 
-def ord_i(t):
+CJK = re.compile(r'[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]')
+
+def ord_i(t, sprak=''):
+    """Orden att jämföra. Japanska och kinesiska har inga mellanslag (2026-09-30, Japan och
+    Taiwan): där är "orden" teckenpar ur de japanska/kinesiska tecknen, annars blev en hel sats
+    ett enda "ord" och täckningen nära noll hur rätt rösten än var."""
+    if sprak in ('ja', 'zh') or len(CJK.findall(t)) > len(t) // 3:
+        tecken = CJK.findall(t)
+        return [a + b for a, b in zip(tecken, tecken[1:])]
     return re.findall(r"[\w']+", t.lower())
+
+def traditionell(t):
+    """Whisper skriver taiwanesisk mandarin med FÖRENKLADE tecken — jämför i traditionella
+    (opencc s2twp, `pip install opencc-python-reimplemented`). Saknas paketet: oförändrat."""
+    try:
+        import opencc
+        return opencc.OpenCC('s2twp').convert(t)
+    except ImportError:
+        return t
 
 def main():
     fil, srt, kalla, sprak = sys.argv[1:5]
@@ -44,7 +63,8 @@ def main():
     segs, info = modell.transcribe(fil, beam_size=5, vad_filter=True)
     hort = ' '.join(s.text.strip() for s in segs)
     srt_text = ' '.join(r for r in open(srt, encoding='utf-8').read().split('\n') if r.strip() and not r.strip().isdigit() and '-->' not in r)
-    hord, sord = ord_i(hort), ord_i(srt_text)
+    if sprak == 'zh': hort = traditionell(hort)
+    hord, sord = ord_i(hort, sprak), ord_i(srt_text, sprak)
     mangd = set(hord)
     tackning = sum(1 for o in sord if o in mangd) / max(1, len(sord))
     f_dub, f_kalla = tonhojd(ljud(fil)), tonhojd(ljud(kalla))

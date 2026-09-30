@@ -33,6 +33,9 @@ export const HEYGEN_SPRAK_PER_MARKNAD = Object.freeze({
   IT: 'Italian (Italy)',
   PL: 'Polish (Poland)',
   PT: 'Portuguese (Portugal)',
+  // Matstrumpors Japan och Taiwan 2026-09-30 (namnen lästa ur listTargetLanguages samma dag, 190 språk).
+  JP: 'Japanese (Japan)',
+  TW: 'Chinese (Taiwanese Mandarin, Traditional)',
 });
 
 /** HeyGen-språket för en marknad, eller null för en okänd kod. */
@@ -57,6 +60,8 @@ export function sprakfamilj(heygenSprak) {
   if (s.startsWith('italian')) return 'it';
   if (s.startsWith('polish')) return 'pl';
   if (s.startsWith('portuguese')) return 'pt';
+  if (s.startsWith('japanese')) return 'ja';
+  if (s.startsWith('chinese') || s.startsWith('mandarin')) return 'zh';
   return null;
 }
 
@@ -155,8 +160,44 @@ export function gissaSprak(text) {
  * Texten som gick fel 2026-09-20 var engelska (~90 ord) i en session som
  * förväntade norska: en = 30+, nb = 0 → false. Det är hela poängen.
  */
+// Japanska och kinesiska har inga mellanslag, så funktionsord går inte att räkna. Skriften avgör
+// (2026-09-30, Japan och Taiwan): japanska bär kana (hiragana/katakana), kinesiska bär inga; traditionell
+// kinesiska (Taiwan) skiljs från förenklad på tecken som bara finns i den ena skriften.
+const KANA = /[\u3040-\u30ff]/gu;
+const HAN = /\p{Script=Han}/gu;
+const LATIN_ORD = /[A-Za-zÀ-ÿ]{2,}/g;
+export const BARA_FORENKLAD = /[这们个来说时对为会过开关门见长问车东边还进发现给让当从后样经动么]/gu;
+const BARA_TRADITIONELL = /[這們個來說時對為會過開關門見長問車東邊還進發現給讓當從後樣經動麼]/gu;
+
+/** Ren: skriften i en text — antal kana, han-tecken, latinska ord och förenklade/traditionella tecken. */
+export function skrift(text) {
+  const t = String(text ?? '');
+  return {
+    kana: (t.match(KANA) ?? []).length,
+    han: (t.match(HAN) ?? []).length,
+    latin: (t.match(LATIN_ORD) ?? []).length,
+    forenklad: (t.match(BARA_FORENKLAD) ?? []).length,
+    traditionell: (t.match(BARA_TRADITIONELL) ?? []).length,
+  };
+}
+
+function kollaCjk(text, f) {
+  const s = skrift(text);
+  const tecken = s.kana + s.han;
+  if (tecken < 12) return { ok: tecken === 0 && s.latin >= 8 ? false : null, forvantad: f, gissat: null, skrift: s, skal: tecken === 0 && s.latin >= 8 ? `texten har inga ${f === 'ja' ? 'japanska' : 'kinesiska'} tecken (${s.latin} latinska ord)` : `för lite text att döma (${tecken} tecken)` };
+  if (s.latin > tecken / 2) return { ok: false, forvantad: f, gissat: 'latin', skrift: s, skal: `mest latinska ord (${s.latin}) — inte ${namnFor(f)}` };
+  if (f === 'ja') {
+    if (s.kana < tecken * 0.15) return { ok: false, forvantad: f, gissat: 'zh', skrift: s, skal: `nästan ingen kana (${s.kana} av ${tecken}) — det här är kinesiska, inte japanska` };
+    return { ok: true, forvantad: f, gissat: 'ja', skrift: s, skal: null };
+  }
+  if (s.kana > tecken * 0.05) return { ok: false, forvantad: f, gissat: 'ja', skrift: s, skal: `kana i texten (${s.kana}) — det här är japanska, inte kinesiska` };
+  if (s.forenklad > s.traditionell) return { ok: false, forvantad: f, gissat: 'zh-förenklad', skrift: s, skal: `förenklade tecken (${s.forenklad} mot ${s.traditionell} traditionella) — Taiwan läser traditionell kinesiska` };
+  return { ok: true, forvantad: f, gissat: 'zh', skrift: s, skal: null };
+}
+
 export function kollaSprak(text, forvantad) {
   const f = String(forvantad ?? '').toLowerCase();
+  if (f === 'ja' || f === 'zh') return kollaCjk(text, f);
   const g = gissaSprak(text);
   if (!SPRAKFAMILJER.includes(f)) return { ok: null, forvantad: f, gissat: g.sprak, poang: g.poang, ord: g.ord, skal: `okänd språkfamilj "${forvantad}"` };
   const vinnare = g.topp[0];
@@ -172,7 +213,7 @@ export function kollaSprak(text, forvantad) {
   return { ok: true, forvantad: f, gissat: g.sprak ?? f, poang: g.poang, ord: g.ord, skal: null };
 }
 
-const NAMN = { en: 'engelska', sv: 'svenska', nb: 'norska', da: 'danska', fi: 'finska', de: 'tyska', fr: 'franska', nl: 'nederländska', es: 'spanska', it: 'italienska', pl: 'polska', pt: 'portugisiska' };
+const NAMN = { en: 'engelska', sv: 'svenska', nb: 'norska', da: 'danska', fi: 'finska', de: 'tyska', fr: 'franska', nl: 'nederländska', es: 'spanska', it: 'italienska', pl: 'polska', pt: 'portugisiska', ja: 'japanska', zh: 'kinesiska' };
 export const namnFor = (k) => NAMN[k] ?? String(k);
 
 /** Språk och locale ur ett HeyGen-id ("…-nb-nb-NO" → { kod: 'nb', locale: 'nb-NO' }).

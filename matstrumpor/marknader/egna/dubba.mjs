@@ -35,7 +35,9 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 const HAR = dirname(fileURLToPath(import.meta.url));
 const KLAR = join(HAR, '../annonser/klar');
 const API = 'https://api.elevenlabs.io/v1';
-export const SPRAKKOD = { NO: 'no', DK: 'da', FI: 'fi', US: 'en', DE: 'de', FR: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt' };
+export const SPRAKKOD = { NO: 'no', DK: 'da', FI: 'fi', US: 'en', DE: 'de', FR: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt',
+  // Japan och Taiwan 2026-09-30: eleven_multilingual_v2 läser japanska och mandarin (zh).
+  JP: 'ja', TW: 'zh' };
 export const RÖST = 'lRBvixWrjVcBSKxchtgC'; // "Matstrumpor AI-kvinna (klon ur annonserna)"
 // Norska finns inte i eleven_multilingual_v2. eleven_v3 prövades (2026-09-29, NO haikuh2): Whisper
 // hörde svenska 0,96, ordtäckning 0,43, och v3 bryr sig inte om farten (11 av 18 över fönstret).

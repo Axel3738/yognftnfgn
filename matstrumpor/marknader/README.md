@@ -619,7 +619,9 @@ Sofie (aldrig Katarina), "transkribera alla annonser", och det enda som får bli
 | Engelska världen | US, GB, CA, AU, NZ | en | USD + lokala | $69 / 54.99 / 39.99 / 59.99 / 39.99 / 6.99 |
 
 Shopifys Grow-plan ger inte fler marknader, därför en Europa-marknad med många språk (Shopify
-tar max 20 språk; vi hamnar på 12). Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
+tar max 20 språk; vi hamnar på 12). ⚠️ **Det stämde inte (mätt 2026-09-30):** butikens plan heter
+"Shopify", och `marketCreate` skapade Japan och Taiwan som egna marknader utan fel (se "Japan och
+Taiwan" nedan). Språken är 14 sedan dess. Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
 **matstrumpor.com** finns — kopplas med `cowork/1-domaner.txt`, sedan `webPresenceCreate` +
 `marketUpdate` per marknad. Frakt: ny zon "Europa" fri frakt (29 länder), "EU"-zonen (299 kr)
 blir tom och tas bort, "Norden" döps om och behåller NO, "Internationell" behåller resten.

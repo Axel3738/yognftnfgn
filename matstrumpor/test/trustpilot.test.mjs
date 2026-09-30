@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import {
   valjOmdomen, egenRubrik, klipp, datumSv, betygUr, metafaltJson, laggInPaStartsidan,
   byggSektion, sprakCase, lasMallJson, sidanBar, profilUrl, laggInPaProduktsidan, laggInRad, laggInILadan, temaFiler,
-  SPRAKFIL, SEKTIONSFIL, SNIPPETFIL, SPRAK, SEKTION_TYP, SEKTIONSFIL_TEMA, SNIPPETFIL_TEMA, INDEX_FIL, PRODUKT_FIL, KORG_FIL, KOLLEKTION_FIL, LADA_FIL,
+  SPRAKFIL, SEKTIONSFIL, SNIPPETFIL, SPRAK, DECIMALPUNKT, SEKTION_TYP, SEKTIONSFIL_TEMA, SNIPPETFIL_TEMA, INDEX_FIL, PRODUKT_FIL, KORG_FIL, KOLLEKTION_FIL, LADA_FIL,
 } from '../trustpilot.mjs';
 
 const rev = (over = {}) => ({
@@ -60,6 +60,19 @@ test('betygUr: poäng med komma och punkt, etiketten per språk, fördelningen',
   assert.deepEqual(b.fordelning, { 1: 4, 2: 0, 3: 0, 4: 0, 5: 11 });
   assert.deepEqual(b.etikett, { sv: 'Bra', en: 'Great' });
   assert.throws(() => betygUr({ sv: { businessUnit: {} } }), /trustScore/);
+});
+
+test('betygUr: Taiwan får sin etikett ur ETIKETT_EGEN (Trustpilot svarar engelska på zh-TW)', () => {
+  const b = betygUr({ sv: starter('Bra'), ja: starter('ほぼ満足'), 'zh-TW': starter('Great') });
+  assert.deepEqual(b.etikett, { sv: 'Bra', ja: 'ほぼ満足', 'zh-TW': '很好' });
+});
+
+test('DECIMALPUNKT: varje språk med 4.2 i stället för 4,2 står i båda mallarnas villkor', () => {
+  for (const fil of ['ms-trustpilot.liquid', 'ms-trustpilot-rad.liquid']) {
+    const mall = readFileSync(new URL(`../trustpilot/${fil}`, import.meta.url), 'utf8');
+    const villkor = mall.match(/if sprak == [^\n]+/)[0];
+    for (const s of DECIMALPUNKT) assert.ok(villkor.includes(`sprak == '${s}'`), `${fil}: ${s} saknas i "${villkor}"`);
+  }
 });
 
 test('metafaltJson: profillänk per språk på rätt Trustpilot-domän', () => {
@@ -155,7 +168,7 @@ test('sprakCase: en gren per språk, svenskan som else, {n} byts', () => {
   assert.ok(!c.includes('{n}'));
 });
 
-test('sprak.json: tolv språk, åtta nycklar, inga tankstreck, {n} i baserat', () => {
+test('sprak.json: samma språk som SPRAK (fjorton sedan Japan och Taiwan), åtta nycklar, inga tankstreck, {n} i baserat', () => {
   const sprak = JSON.parse(readFileSync(SPRAKFIL, 'utf8'));
   assert.deepEqual(Object.keys(sprak).sort(), Object.keys(SPRAK).sort());
   for (const [s, o] of Object.entries(sprak)) {

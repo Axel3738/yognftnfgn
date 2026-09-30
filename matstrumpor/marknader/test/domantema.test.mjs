@@ -459,15 +459,17 @@ test('fraktraden: landet och grammatiken per språk, hemlandet med fast fras', (
   assert.equal(f('pt-PT', 'LU', 'Luxemburgo'), 'Envio grátis para o Luxemburgo');
   assert.equal(f('pt-PT', 'MT', 'Malta'), 'Envio grátis para Malta');
   // Land vi inte säljer till: frasen utan land.
-  assert.equal(f('en', 'JP', 'Japan'), 'Free shipping');
-  assert.equal(f('ja', 'JP', '日本'), '送料無料');
+  assert.equal(f('en', 'BR', 'Brazil'), 'Free shipping');
+  assert.equal(f('ja', 'BR', 'ブラジル'), '送料無料');
   assert.equal(f('xx', 'SE', 'Sverige'), null, 'okänt språk ⇒ trust-radens egen text står kvar');
-  // När Japan och Taiwan blir säljländer.
-  const medJp = [...LANDER, 'JP', 'TW'];
-  assert.equal(fraktText('ja', 'JP', '日本', medJp), '日本全国送料無料');
-  assert.equal(fraktText('ja', 'DE', 'ドイツ', medJp), 'ドイツへの送料無料');
-  assert.equal(fraktText('zh-TW', 'TW', '台灣', medJp), '全台免運費');
-  assert.equal(fraktText('fr', 'JP', 'Japon', medJp), 'Livraison gratuite au Japon');
+  // Japan och Taiwan är säljländer sedan 2026-09-30 (konfig.json).
+  assert.ok(LANDER.includes('JP') && LANDER.includes('TW'));
+  assert.equal(f('ja', 'JP', '日本'), '日本全国送料無料');
+  assert.equal(f('ja', 'DE', 'ドイツ'), 'ドイツへの送料無料');
+  assert.equal(f('zh-TW', 'TW', '台灣'), '全台免運費');
+  assert.equal(f('zh-TW', 'JP', '日本'), '免運費寄送至日本');
+  assert.equal(f('fr', 'JP', 'Japon'), 'Livraison gratuite au Japon');
+  assert.equal(f('en', 'JP', 'Japan'), 'Free shipping to Japan');
 });
 
 test('fraktraden: varje säljland har landet utskrivet på varje språk (fr och pt har ingen standardartikel)', () => {
@@ -492,11 +494,12 @@ test('snippeten: samma text som fraktText för varje språk × land, flaggan bar
       assert.equal(korSnippet(s, { locale: loc, kod, namn, del: 'flagga' }), LANDER.includes(kod) ? `<img flagga ${kod}>` : '', `flaggan ${loc} ${kod}`);
     }
   }
-  // Ett nytt säljland i konfig följer med av sig självt.
-  const medJp = fraktLandSnippet([...LANDER, 'JP']);
-  assert.equal(korSnippet(medJp, { locale: 'ja', kod: 'JP', namn: '日本' }), '日本全国送料無料');
-  assert.equal(korSnippet(medJp, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '<img flagga JP>');
-  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '', 'utan Japan i konfig: ingen flagga');
+  // Ett nytt säljland i konfig följer med av sig självt (Japan kom in 2026-09-30).
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本' }), '日本全国送料無料');
+  assert.equal(korSnippet(s, { locale: 'ja', kod: 'JP', namn: '日本', del: 'flagga' }), '<img flagga JP>');
+  const medBr = fraktLandSnippet([...LANDER, 'BR']);
+  assert.equal(korSnippet(medBr, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '<img flagga BR>');
+  assert.equal(korSnippet(s, { locale: 'en', kod: 'BR', namn: 'Brazil', del: 'flagga' }), '', 'utan Brasilien i konfig: ingen flagga');
   assert.equal(NYA_FILER['snippets/ms-frakt-land.liquid'], s, 'NYA_FILER bär snippeten för konfigens länder');
 });
 

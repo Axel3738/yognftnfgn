@@ -26,8 +26,10 @@ test('byggCsv: fel antal segment eller flyttade tider stoppar', () => {
 
 test('byggSrt och språkkoderna', () => {
   assert.equal(byggSrt(lok), '1\n00:00:00,000 --> 00:00:02,500\nHi, "you".\n\n2\n00:00:03,000 --> 00:00:05,250\nTap the link.\n');
-  assert.equal(Object.keys(SPRAKKOD).length, 11);
+  assert.equal(Object.keys(SPRAKKOD).length, 13);
   assert.equal(SPRAKKOD.NO, 'no');
+  assert.equal(SPRAKKOD.JP, 'ja');
+  assert.equal(SPRAKKOD.TW, 'zh');
 });
 
 test('fonster: segmentet får tiden fram till nästa segment, ett struket segment är en gräns, sista till slutet', () => {

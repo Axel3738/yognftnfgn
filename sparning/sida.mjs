@@ -57,7 +57,9 @@ export const STANDARDSUPPORT = 'kundsupport@baverbutiken.se';
 // webbläsare — engelskan (US, GB, CA, AU, NZ) spänner över tio tidszoner.
 export const TIDSZON = { sv: 'Europe/Stockholm', nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki', en: 'auto',
   // Matstrumpors Europa-marknad 2026-09-27: språket bär ett helt land eller flera i samma zon (de: DE/AT/CH, fr: FR/BE/LU).
-  de: 'Europe/Berlin', fr: 'Europe/Paris', nl: 'Europe/Amsterdam', es: 'Europe/Madrid', it: 'Europe/Rome', pl: 'Europe/Warsaw', pt: 'Europe/Lisbon' };
+  de: 'Europe/Berlin', fr: 'Europe/Paris', nl: 'Europe/Amsterdam', es: 'Europe/Madrid', it: 'Europe/Rome', pl: 'Europe/Warsaw', pt: 'Europe/Lisbon',
+  // Japan och Taiwan 2026-09-30: ett land per språk.
+  ja: 'Asia/Tokyo', zh: 'Asia/Taipei' };
 
 // De fasta texterna i markupen, på svenska. Varje rad har ett data-t med
 // samma text som nyckel; för de extra språken bakas översättningen in i
@@ -839,6 +841,16 @@ function starta() {
     return { fran: fran, till: till, sen: Date.now() > till.getTime() };
   }
 
+  // Står månaden före dagen i språket? ja-JP och zh-TW skriver "10月7日" (2026-09-30, Japan och
+  // Taiwan) — där blir samma månad "10月7日–14日", inte "7日–10月14日".
+  function manadForst() {
+    try {
+      var p = new Intl.DateTimeFormat(LOC, { month: 'short', day: 'numeric' }).formatToParts(new Date());
+      for (var i = 0; i < p.length; i++) { if (p[i].type === 'month') return true; if (p[i].type === 'day') return false; }
+    } catch (e) {}
+    return false;
+  }
+
   // "25–28 sep" — och med månad på båda när de skiljer sig.
   function spann(a, b) {
     var alt = { timeZone: TZ, day: 'numeric', month: 'short' };
@@ -846,6 +858,7 @@ function starta() {
     var ettB = b.toLocaleDateString(LOC, alt).replace(/\./g, '');
     var m = { timeZone: TZ, month: 'short' };
     if (a.toLocaleDateString(LOC, m) === b.toLocaleDateString(LOC, m)) {
+      if (manadForst()) return ettA + '–' + b.toLocaleDateString(LOC, { timeZone: TZ, day: 'numeric' });
       return a.toLocaleDateString(LOC, { timeZone: TZ, day: 'numeric' }) + '–' + ettB;
     }
     return ettA + ' – ' + ettB;

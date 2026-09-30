@@ -25,6 +25,13 @@ const FORBJUDET = [
   [/sverige|svensk|sweden|swedish|schwed|suède|suédois|zweed|zweeds|suecia|sueco|svezia|svedese|szwecj|szwedzk|suécia|sueco|ruotsi|sverige|svensk/i, 'Sverige/svensk'],
   [/\b(gratis frakt|fri frakt|free shipping|kostenlos|livraison|verzending|envío|spedizione|dostawa|envio)\b/i, 'fraktlöfte'],
   [/\b(garanti|guarantee|garantie|garantía|garanzia|gwarancj|garantia)\b/i, 'garanti'],
+  // Japanska och kinesiska (2026-09-30): tal skrivs med kanji (十、五), aldrig siffror — inte heller
+  // helbreddssiffror; valuta, symboler, butiksnamnet i katakana, Sverige/Norden, frakt och garanti.
+  [/[０-９]/u, 'siffra (ska skrivas med kanji: 十、五)'], [/[％＆／＄￥¥]/u, 'symbol'], [/[―－]/u, 'tankstreck'],
+  [/円|日圓|日幣|台幣|新台幣|美元|克朗|クローナ|ドル|[一二三四五六七八九十百千萬两兩]元/u, 'valuta/belopp'],
+  [/マット.{0,3}ス.{0,2}ト|エスイー|ドットエス/u, 'butiksnamnet/domänen'],
+  [/スウェーデン|瑞典|北欧|北歐|スカンジナビア|斯堪地那維亞/u, 'Sverige/svensk'],
+  [/送料無料|無料配送|免運|免費運送|包郵|保証|保固|保證/u, 'fraktlöfte/garanti'],
 ];
 // Svenska ord som inte får stå kvar (utom där de också är målspråkets ord).
 const SVENSKA = { alla: ['strumpor', 'låda', 'lådan', 'ätpinnar', 'kalaset', 'julstrumpan', 'jättebra', 'också', 'verkligen', 'faktiskt', 'riktig', 'riktigt', 'paketerade', 'sushistrumpor', 'priset'] };
@@ -38,11 +45,20 @@ export function kolla(kod, video, fil) {
   const ra = readFileSync(fixad, 'utf8');
   const a = block(readFileSync(orig, 'utf8')), b = block(ra);
   if (a.length !== b.length) fel.push(`blockantal ${b.length}, HeyGen har ${a.length}`);
+  let sverigeJp = 0;
   for (let i = 0; i < Math.min(a.length, b.length); i++) {
     if (a[i].nr !== b[i].nr) fel.push(`block ${i + 1}: nummer "${b[i].nr}" ≠ "${a[i].nr}"`);
     if (a[i].tid !== b[i].tid) fel.push(`block ${i + 1}: tidskod "${b[i].tid}" ≠ "${a[i].tid}"`);
     if (!b[i].text) fel.push(`block ${i + 1}: tom text`);
-    for (const [re, vad] of FORBJUDET) { const m = re.exec(b[i].text); if (m) fel.push(`block ${i + 1}: ${vad} ("${m[0]}")`); }
+    for (const [re, vad] of FORBJUDET) {
+      const m = re.exec(b[i].text);
+      if (!m) continue;
+      // Japan (Axel 2026-09-30: "i Japan speciellt kan vi trycka på att det är ett svenskt varumärke"):
+      // スウェーデン får stå EN gång per video — "i Sverige sålde de slut", "ett varumärke från Sverige" —
+      // aldrig スウェーデン製 (varumärket är svenskt, strumporna är inte tillverkade där).
+      if (kod === 'JP' && vad === 'Sverige/svensk' && m[0] === 'スウェーデン' && !/スウェーデン製/.test(b[i].text)) { sverigeJp++; continue; }
+      fel.push(`block ${i + 1}: ${vad} ("${m[0]}")`);
+    }
     const ord = b[i].text.toLowerCase().match(/[\p{L}]+/gu) ?? [];
     const kvar = ord.filter((o) => SVENSKA.alla.includes(o));
     if (kvar.length && !['NO', 'DK'].includes(kod)) fel.push(`block ${i + 1}: svenska ord kvar (${kvar.join(', ')})`);
@@ -50,6 +66,7 @@ export function kolla(kod, video, fil) {
     const kvot = b[i].text.length / Math.max(1, a[i].text.length);
     if (kvot > 1.35 || kvot < 0.65) varningar.push(`block ${i + 1}: längd ${b[i].text.length} tecken mot HeyGens ${a[i].text.length} (${Math.round(kvot * 100)} %)`);
   }
+  if (sverigeJp > 1) fel.push(`スウェーデン står ${sverigeJp} gånger — högst en gång per video`);
   const fam = sprakfamilj(heygenSprakFor(kod));
   const k = kollaSprak(srtText(ra), fam);
   if (k.ok === false) fel.push(`språkkollen: ${k.skal}`);

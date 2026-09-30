@@ -23,7 +23,45 @@ def fmt_ts(x):
     h = int(x//3600); m = int(x % 3600//60); s = int(x % 60); ms = int(round((x-int(x))*1000))
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
+# Japanska och kinesiska (2026-09-30, Matstrumpor i Japan och Taiwan): inga mellanslag att bryta
+# på, och ett tecken är ungefär dubbelt så brett som en latinsk bokstav. Utan det här blev en hel
+# mening EN cue som libass inte kan radbryta — texten sprack ut över bildens kant. En CJK-cue får
+# därför högst MAX // 2 tecken (17 vid standard 34: en rad i 720 och 1080 i bredd) och delas vid
+# 。！？ först, sedan vid 、，, och en lång sats hårt — aldrig så att en ny rad börjar med skiljetecken.
+CJK = re.compile(r'[぀-ヿ㐀-鿿豈-﫿ｦ-ﾟ]')
+SLUT_CJK = '。！？!?'
+PAUS_CJK = '、，,；;：:'
+BORJAR_EJ = SLUT_CJK + PAUS_CJK + '」』）)・ー…〜ゃゅょっぁぃぅぇぉャュョッァィゥェォ'
+
+def ar_cjk(text):
+    return len(CJK.findall(text)) >= max(2, len(text.replace(' ', '')) // 3)
+
+def chunk_cjk(text, maxc):
+    text = re.sub(r'\s+', '', text)
+    satser, cur = [], ''
+    for i, t in enumerate(text):
+        cur += t
+        nasta = text[i + 1] if i + 1 < len(text) else ''
+        if (t in SLUT_CJK or t in PAUS_CJK) and nasta not in BORJAR_EJ:
+            satser.append(cur); cur = ''
+    if cur: satser.append(cur)
+    pieces, cur = [], ''
+    for s in satser:
+        while len(s) > maxc:
+            k = maxc
+            while k > 1 and s[k] in BORJAR_EJ: k -= 1
+            if cur: pieces.append(cur); cur = ''
+            pieces.append(s[:k]); s = s[k:]
+        if cur and len(cur) + len(s) > maxc:
+            pieces.append(cur); cur = s
+        else:
+            cur += s
+    if cur: pieces.append(cur)
+    return pieces
+
 def chunk(text):
+    if ar_cjk(text):
+        return chunk_cjk(text, max(8, MAX // 2))
     sents = [s.strip() for s in re.findall(r'[^.!?]+[.!?]?\s*', text) if s.strip()]
     pieces, cur = [], ''
     for s in sents:

@@ -17,7 +17,7 @@ import { join, dirname } from 'node:path';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const ANNONSER = join(ROT, '..', '..', 'annonser');
-export const KODER = ['NO', 'DK', 'FI', 'US', 'WW', 'DE', 'FR', 'NL', 'ES', 'IT', 'PL', 'PT'];
+export const KODER = ['NO', 'DK', 'FI', 'US', 'WW', 'DE', 'FR', 'NL', 'ES', 'IT', 'PL', 'PT', 'JP', 'TW'];
 export const textKod = (kod) => (kod === 'WW' ? 'US' : kod);
 export const namnFor = (kod) => `MATSTRUMP_${kod}_sushi_offer_static_008_v1`;
 // Butikens namn och domän står aldrig i en annons (Axels beslut 2026-09-18).

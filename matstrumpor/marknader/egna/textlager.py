@@ -49,8 +49,27 @@ def langd(path):
     return float(r.stdout.strip())
 
 
+sys.path.insert(0, os.path.join(REPO, 'pipeline'))
+import cjk  # japanska/kinesiska: typsnitt och radbrytning utan mellanslag (2026-09-30)
+
+
 def bitar(text, max_tecken=24):
-    """Delar en mening i korta bitar på ordgräns (som originalets 2–4 ord)."""
+    """Delar en mening i korta bitar på ordgräns (som originalets 2–4 ord). Japanska och kinesiska
+    har inga ordgränser: där delas vid 、。，！？ och annars hårt, högst hälften så många tecken
+    (tecknen är dubbelt så breda), aldrig så att en bit börjar med ett skiljetecken."""
+    if cjk.sprak(text):
+        maxc, ut, rad = max(6, max_tecken // 2), [], ''
+        delar = re.findall(r'[^、。，！？!?]+[、。，！？!?]*', re.sub(r'\s+', '', text))
+        for d in delar:
+            while len(d) > maxc:
+                k = maxc
+                while k > 1 and d[k] in cjk.BORJAR_EJ: k -= 1
+                if rad: ut.append(rad); rad = ''
+                ut.append(d[:k]); d = d[k:]
+            if rad and len(rad) + len(d) > maxc: ut.append(rad); rad = d
+            else: rad += d
+        if rad: ut.append(rad)
+        return ut
     ut, rad = [], ''
     for o in text.split():
         prov = (rad + ' ' + o).strip()
@@ -178,7 +197,7 @@ def main():
         from PIL import ImageFont
         sys.path.insert(0, os.path.join(REPO, 'pipeline'))
         from textbyte import radbryt  # samma radbrytning som renderaren
-        fet = os.path.join(REPO, 'pipeline/fonts/Poppins-Bold.ttf')
+        fet = cjk.font_for(texter['hook'], os.path.join(REPO, 'pipeline/fonts/Poppins-Bold.ttf'))
         px = 28
         for prov in range(44, 27, -2):
             f = ImageFont.truetype(fet, prov)

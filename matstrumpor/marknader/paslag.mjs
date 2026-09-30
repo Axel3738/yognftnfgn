@@ -13,7 +13,7 @@
 // × (1 + paslag_min) i dagens kurs. Ligger det under höjs det till närmaste snygga pris ovanför. Ett
 // pris som redan ligger över sänks ALDRIG: Axel ville höja, och USA-priset $69 är hans eget beslut.
 // Snyggt pris per valuta: hela kronor som slutar på 9 (469, 59), euro/dollar som slutar på ,90
-// (31,90), yen som slutar på 80 (7 180) och Taiwan-dollar som slutar på 90 (1 690).
+// (31,90), yen som slutar på 80 (7 180) och Taiwan-dollar som slutar på 90 (1 690; under 1 000 på 9: 219).
 //
 // Kursen är exchangerate-api:s dagskurs (open.er-api.com, gratis, bär alla valutor inklusive TWD;
 // ECB saknar TWD). Kursen rör sig — förslaget gäller dagen det räknades, och priset står sedan fast.
@@ -31,10 +31,28 @@ const HELA = new Set(['NOK', 'SEK', 'DKK', 'ISK', 'CZK', 'HUF', 'PLN', 'RON', 'B
 export function snyggtPris(mal, valuta) {
   const v = String(valuta).toUpperCase();
   if (v === 'JPY') return Math.max(80, Math.ceil((mal - 80) / 100) * 100 + 80);
-  if (v === 'TWD') return Math.max(90, Math.ceil((mal - 90) / 100) * 100 + 90);
+  if (v === 'TWD') return mal < 1000 ? Math.max(9, Math.ceil((mal - 9) / 10) * 10 + 9) : Math.ceil((mal - 90) / 100) * 100 + 90;
   if (HELA.has(v)) return Math.max(9, Math.ceil((mal - 9) / 10) * 10 + 9);
   // Två decimaler: ,90 på hela enheter (31,90 · 5,90).
   return Math.round((Math.max(0.9, Math.ceil(mal - 0.9) + 0.9)) * 100) / 100;
+}
+
+/** Ren: det snygga pris som ligger NÄRMAST mal (uppåt eller nedåt) — för en ny marknad som ska ligga
+ *  "som" en annan (Axels val B 2026-09-30: Japan och Taiwan som i Europa). */
+export function narmasteSnygga(mal, valuta) {
+  const v = String(valuta).toUpperCase();
+  const upp = snyggtPris(mal, v);
+  const steg = v === 'JPY' || (v === 'TWD' && mal >= 1000) ? 100 : HELA.has(v) || v === 'TWD' ? 10 : 1;
+  const ned = Math.round((upp - steg) * 100) / 100;
+  return ned > 0 && mal - ned < upp - mal ? ned : upp;
+}
+
+/** Ren: priset i en ny marknad "som i" en annan marknad: närmaste snygga pris till den andra
+ *  marknadens pris i dagens kurs, men aldrig under golvet (Sveriges pris + paslag). */
+export function prisSomI({ annat, kursAnnat, kurs, sek, valuta, paslag }) {
+  const mal = (annat / kursAnnat) * kurs;
+  const golv = snyggtPris(sek * (1 + paslag) * kurs, valuta);
+  return Math.max(narmasteSnygga(mal, valuta), golv);
 }
 
 /** Ren: det nya priset. Höjs bara om det ligger under golvet; sänks aldrig. */
