@@ -129,6 +129,7 @@
   "package return, received by shipper": "Paketet har skickats tillbaka till avsändaren",
   "the parcel was delivered at the door": "Paketet är levererat vid din dörr",
   "parcel has been delivered.(front door)": "Paketet är levererat vid din dörr",
+  "parcel has been delivered.(other secured locations)": "Paketet är levererat",
   "delivered, door/yard. for delivery issues & tracking support, contact gofo at +1 949 688-6032 or cs@mail.gofo.com": "Paketet är levererat vid din dörr",
   "there was an error in the edi, a new notification has been made": "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget",
   "the shipment was marked with an invalid postal code. the shipment is forwarded to the recipient but may be delayed": "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat",
