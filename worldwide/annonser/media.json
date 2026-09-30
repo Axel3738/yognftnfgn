@@ -1198,7 +1198,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "6c60cbedfde61bf8acf6b8647121d4a3",
+  "annons_id": "120251690324430435",
+  "creative_id": "3143241955868122",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T12:47:14.639Z"
  },
  "Overvakningskamera_CS_2_1": {
   "fil": "worldwide/annonser/klar/Overvakningskamera_CS_2_1.jpg",
@@ -1208,7 +1213,12 @@
   "oparade": [
    "5G"
   ],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "19762a9f810d876616690559121eeacc",
+  "annons_id": "120251690325840435",
+  "creative_id": "1642310127403176",
+  "kampanj_id": "120251679202540435",
+  "skapad": "2026-09-30T12:47:22.190Z"
  },
  "Overvakningskamera_CS_4_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: tom bockrad"
@@ -1219,7 +1229,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "52a02e7b50db6adb522e253e2861f9ae",
+  "annons_id": "120251690329860435",
+  "creative_id": "1478405357445324",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T12:47:38.968Z"
  },
  "Termoskydd_MT_1_1": {
   "fil": "worldwide/annonser/klar/Termoskydd_MT_1_1.jpg",
@@ -1227,7 +1242,12 @@
   "granskad": true,
   "efterkontroll": "ren",
   "oparade": [],
-  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren"
+  "granskning": "sessionen 2026-09-30 kväll: kontaktark tittat på, efterkontrollen ren",
+  "image_hash": "fb631d7885e5cc5933e46ab1f390dadb",
+  "annons_id": "120251690333120435",
+  "creative_id": "2121984615059358",
+  "kampanj_id": "120251679207540435",
+  "skapad": "2026-09-30T12:47:46.446Z"
  },
  "Beachslippers_SO_5_1": {
   "hoppa": "bildritningen underkänd av sessionen 2026-09-30: tecken som saknas i typsnittet + text utanför bandet"
@@ -1313,6 +1333,175 @@
    "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-1.png",
    "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-2.png",
    "worldwide/annonser/klar/Takoverdrag_RI_3_H1.mp4.qa-3.png"
+  ]
+ },
+ "Takoverdrag_PD_10_H1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_PD_10_H1.mp4",
+  "sha256": "6223cb7ccbfd61d853128464635f6834af0b5f6061972d4da4074fa794b61823",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Takoverdrag_PD_10_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_10_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_10_H1.mp4.qa-3.png"
+  ]
+ },
+ "Takoverdrag_PD_1_H1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_PD_1_H1.mp4",
+  "sha256": "dff8a82e91395a9c8d293d1e9a033bf07e5dc62d605d3ae85a39f565dc42466e",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Takoverdrag_PD_1_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_1_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_1_H1.mp4.qa-3.png"
+  ]
+ },
+ "Fiskespöhållare_PD_1_H2": {
+  "fil": "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H2.mp4",
+  "sha256": "9f6f8b50e5d0cd1f2399068609e520f82a8c9771fddd92d8c32a1b21e4bb4372",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Fiskesp_h_llare_PD_1_H2.mp4.qa-3.png"
+  ]
+ },
+ "Enginecover_SO_21_H1": {
+  "fil": "worldwide/annonser/klar/Enginecover_SO_21_H1.mp4",
+  "sha256": "20ca95215295feee3959c25c79b4a9d6d1b61c1c36ec4e3723de5446d4969bc3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Enginecover_SO_21_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Enginecover_SO_21_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Enginecover_SO_21_H1.mp4.qa-3.png"
+  ]
+ },
+ "IBC_PD_4_H2": {
+  "fil": "worldwide/annonser/klar/IBC_PD_4_H2.mp4",
+  "sha256": "e05c40187dd5d3130a107faae505e26ab8f49abebab0ed9fe4f4a72188c556a0",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/IBC_PD_4_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/IBC_PD_4_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/IBC_PD_4_H2.mp4.qa-3.png"
+  ]
+ },
+ "Overvakningskamera_G_3": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_G_3.mp4",
+  "sha256": "38ddb12b03df1ca24ad88ca41bea9a30c751268d2684475b676ca0da91bbf7d3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Overvakningskamera_G_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Overvakningskamera_G_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Overvakningskamera_G_3.mp4.qa-3.png"
+  ]
+ },
+ "Beachslippers_PD_5_H1": {
+  "fil": "worldwide/annonser/klar/Beachslippers_PD_5_H1.mp4",
+  "sha256": "bc836f6d4d56c150955705a51d088f6b0b8d2522c3529f6c07b13c3ac6abbcf7",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Beachslippers_PD_5_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Beachslippers_PD_5_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Beachslippers_PD_5_H1.mp4.qa-3.png"
+  ]
+ },
+ "Sotarset_G_1_H3": {
+  "fil": "worldwide/annonser/klar/Sotarset_G_1_H3.mp4",
+  "sha256": "a18eaca69ad032514dcea278faa3414ce6419157963879b17acb866eee4aaa63",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_G_1_H3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_G_1_H3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_G_1_H3.mp4.qa-3.png"
+  ]
+ },
+ "Sotarset_G_1_H2": {
+  "fil": "worldwide/annonser/klar/Sotarset_G_1_H2.mp4",
+  "sha256": "36b12d0d51d78b1c23de10ddbcfb75901fb8d6606e6ada3e89e2c6d10a5bbb31",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Sotarset_G_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/Sotarset_G_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/Sotarset_G_1_H2.mp4.qa-3.png"
+  ]
+ },
+ "Damasker_CS_1": {
+  "fil": "worldwide/annonser/klar/Damasker_CS_1.mp4",
+  "sha256": "100bc2f8b8d827e5451406269bfc9d1432a66983589b22afffefb8a39dc1e74c",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_CS_1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_CS_1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_CS_1.mp4.qa-3.png"
+  ]
+ },
+ "MC-Kapell_CS_2": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_CS_2.mp4",
+  "sha256": "70838607994a9c9abbe7eb6fdf003044edb9ed240951baafb0e26dedc7d967c7",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/MC-Kapell_CS_2.mp4.qa-1.png",
+   "worldwide/annonser/klar/MC-Kapell_CS_2.mp4.qa-2.png",
+   "worldwide/annonser/klar/MC-Kapell_CS_2.mp4.qa-3.png"
+  ]
+ },
+ "Taljset_PD_1_H6": {
+  "fil": "worldwide/annonser/klar/Taljset_PD_1_H6.mp4",
+  "sha256": "da177e639be640a68869a71f145cb6f840cbf60dde7824536be0a39bc3ecf282",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Taljset_PD_1_H6.mp4.qa-1.png",
+   "worldwide/annonser/klar/Taljset_PD_1_H6.mp4.qa-2.png",
+   "worldwide/annonser/klar/Taljset_PD_1_H6.mp4.qa-3.png"
+  ]
+ },
+ "Seatcover_PD_16_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Seatcover_PD_16_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 fö"
+ },
+ "Overvakningskamera_AU_1_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Overvakningskamera_AU_1_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898"
+ },
+ "Strandtofflor hemmagjord UGC": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ Strandtofflor hemmagjord UGC: röstkollen — levereras inte"
+ },
+ "Damasker_PD_3": {
+  "fil": "worldwide/annonser/klar/Damasker_PD_3.mp4",
+  "sha256": "4793dcef05d77d803b00098266d167017fb2be28c20b13a2c97a75c9e068e48d",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Damasker_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/Damasker_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/Damasker_PD_3.mp4.qa-3.png"
+  ]
+ },
+ "Batmotor_AU_1_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Batmotor_AU_1_H1.mp4  band 898:1026 (standard (ingen text i zonen), höjt till 898:1026 för "
+ },
+ "Enginecover_PD_4_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 3): ✓ /home/user/yognftnfgn/worldwide/annonser/klar/Enginecover_PD_4_H1.mp4  band 437:525 (standard (ingen text i zonen), höjt till 437:525 för"
+ },
+ "Takoverdrag_RI_2_H1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_RI_2_H1.mp4",
+  "sha256": "0cdcc3dd3f13127b5fda727ed6833627ea6c2bc101f8e1149f048ce8189cfe7d",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Takoverdrag_RI_2_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Takoverdrag_RI_2_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Takoverdrag_RI_2_H1.mp4.qa-3.png"
   ]
  }
 }

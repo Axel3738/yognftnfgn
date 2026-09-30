@@ -27,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const MARKOR = 'bw-worldwide';
 // v2 (2026-09-30): texterna kommer ur snippets/bw-t.liquid på åtta språk (tema/sprak.json).
-export const VERSION = 'v4'; // v3 2026-09-30: startsidans titel Beaver Store · v4: og/twitter-titeln och den dolda h1:an
+export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s svenska texter byts i sidan (bw-appord) · v3 2026-09-30: startsidans titel Beaver Store · v4: og/twitter-titeln och den dolda h1:an
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -94,7 +94,7 @@ export const PATCHAR = {
 
   'sections/footer.liquid': (t, f) => byt(t,
     `    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>`,
-    `    ${CAP}\n    {%- if bw contains 'ww' -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Beaver Store · STONEBITE ECOM AB, ${T('copyright')}</p>\n    {%- else -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>\n    {%- endif -%}`, f),
+    `    ${CAP}\n    {%- if bw contains 'ww' -%}\n    {%- render 'bw-appord' -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Beaver Store · STONEBITE ECOM AB, ${T('copyright')}</p>\n    {%- else -%}\n    <p class="footer__small-text">&copy; {{ 'now' | date: '%Y' }} Bäverbutiken. Alla rättigheter förbehållna.</p>\n    {%- endif -%}`, f),
 
   'snippets/seo-title.liquid': (t, f) => {
     // Startsidan har ingen egen SEO-titel, så page_title är butiksnamnet "Bäverbutiken.se" — i världsläget Beaver Store.
@@ -112,6 +112,39 @@ export const PATCHAR = {
     return byt(t, `<meta property="og:site_name" content="{{ shop.name }}">`, `<meta property="og:site_name" content="{{ bw_namn }}">`, f);
   },
 };
+
+/** snippets/bw-appord.liquid ur tema/appord.json: byter Kachings och Judge.me:s svenska texter på besökarens språk.
+ * Renderas bara i världsläget (sidfotens ww-gren). Rör bara textnoder inne i apparnas egna element. */
+export function byggAppord(ord = JSON.parse(readFileSync(join(ROT, 'appord.json'), 'utf8'))) {
+  const data = JSON.stringify({ exakt: ord.exakt, monster: ord.monster }).replace(/</g, '\\u003c');
+  return `{%- comment -%}${MARKOR} ${VERSION} — genererad av worldwide/tema/patch.mjs ur tema/appord.json. Ändra där, inte här.{%- endcomment -%}
+<script>
+(function () {
+  var L = {{ request.locale.iso_code | json }};
+  var O = ${data};
+  function tr(v) { return v && (v[L] || v[L.split('-')[0]] || v.en); }
+  var M = O.monster.map(function (m) { return { re: new RegExp(m.sv), m: m }; });
+  var SEL = 'kaching-bundle, kaching-bundles-block, [class*="jdgm"]';
+  function byt(n) {
+    var t = n.nodeValue; if (!t || !t.trim()) return;
+    var k = t.trim(), ny = null;
+    if (O.exakt[k]) ny = tr(O.exakt[k]);
+    else for (var i = 0; i < M.length; i++) { var r = M[i].re.exec(k); if (r) { var x = tr(M[i].m); if (x) ny = x.replace('[[n]]', r[1] || ''); break; } }
+    if (ny && ny !== k) n.nodeValue = t.replace(k, ny);
+  }
+  function gå(rot) {
+    var w = document.createTreeWalker(rot, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) { var p = n.parentElement; if (p && p.closest && p.closest(SEL)) byt(n); }
+    if (rot.querySelectorAll) rot.querySelectorAll('[placeholder]').forEach(function (e) { if (e.closest(SEL) && O.exakt[e.placeholder]) e.placeholder = tr(O.exakt[e.placeholder]); });
+  }
+  var väntar = false;
+  function kör() { väntar = false; gå(document.body); }
+  new MutationObserver(function () { if (!väntar) { väntar = true; requestAnimationFrame(kör); } }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+  if (document.readyState !== 'loading') kör(); else document.addEventListener('DOMContentLoaded', kör);
+})();
+</script>
+`;
+}
 
 /** snippets/bw-t.liquid ur tema/sprak.json: {% render 'bw-t', k: 'nyckel' %} → texten på besökarens språk. */
 export function byggBwT(sprak = JSON.parse(readFileSync(join(ROT, 'sprak.json'), 'utf8'))) {
@@ -134,6 +167,7 @@ export function byggBwT(sprak = JSON.parse(readFileSync(join(ROT, 'sprak.json'),
 export function nyaFiler() {
   return {
     'snippets/bw-t.liquid': { text: byggBwT() },
+    'snippets/bw-appord.liquid': { text: byggAppord() },
     'snippets/bw-lage.liquid': { text: readFileSync(join(ROT, 'snippets', 'bw-lage.liquid'), 'utf8') },
     'snippets/bw-land.liquid': { text: readFileSync(join(ROT, 'snippets', 'bw-land.liquid'), 'utf8') },
     'assets/beaver-store-logga.png': { base64: readFileSync(join(ROT, 'logga', 'beaver-store-logga-q.png')).toString('base64') },
@@ -252,9 +286,9 @@ async function huvud() {
   for (const [f, r] of Object.entries(plan)) if (r.lage === 'patchad') skriv[f] = { text: r.text };
   await skrivFiler(k, mal, skriv);
   // Tillbakaläsning
-  const { filer: tillbaka } = await lasFiler(k, mal, [...filer, 'snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid']);
+  const { filer: tillbaka } = await lasFiler(k, mal, [...filer, 'snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid', 'snippets/bw-appord.liquid']);
   const saknas = [...filer].filter((f) => !tillbaka[f]?.includes(`${MARKOR} ${VERSION}`));
-  for (const f of ['snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid']) if (tillbaka[f] !== skriv[f].text) saknas.push(f);
+  for (const f of ['snippets/bw-lage.liquid', 'snippets/bw-land.liquid', 'snippets/bw-t.liquid', 'snippets/bw-appord.liquid']) if (tillbaka[f] !== skriv[f].text) saknas.push(f);
   if (saknas.length) { console.error(`✗ Tillbakaläsningen saknar: ${saknas.join(', ')}`); process.exit(1); }
   console.log(`✅ ${Object.keys(skriv).length} filer skrivna och tillbakalästa i ${mal}.`);
 }

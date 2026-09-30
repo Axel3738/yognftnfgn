@@ -1,0 +1,34 @@
+{
+ "_om": "Kaching Bundles (paketväljaren) och Judge.me (recensionsrutan) visar sina svenska texter även utomlands — Kachings språkväljare har bara svenska och Judge.me:s inställningar gick inte att nå (Cowork 2026-09-30). snippets/bw-appord.liquid (ur worldwide/tema/patch.mjs) byter texterna i sidan, BARA i världsläget. Nycklarna är den svenska texten exakt som apparna ritar den; [[n]] = ett tal, [[sprak]] = ett språknamn. en är reserven.",
+ "exakt": {
+  "14 Dagars Ångerrätt & Svensk kundsupport": {"en": "14-day returns · Swedish customer support", "de": "14 Tage Rückgaberecht · Schwedischer Kundenservice", "fr": "14 jours pour changer d’avis · Service client suédois", "es": "14 días para cambiar de opinión · Atención al cliente sueca", "it": "14 giorni per cambiare idea · Assistenza clienti svedese", "nl": "14 dagen bedenktijd · Zweedse klantenservice", "pl": "14 dni na zmianę decyzji · Szwedzka obsługa klienta", "pt-PT": "14 dias para mudar de ideia · Apoio ao cliente sueco"},
+  "1 st": {"en": "1 pack", "de": "1 Stück", "fr": "1 pièce", "es": "1 unidad", "it": "1 pezzo", "nl": "1 stuk", "pl": "1 szt.", "pt-PT": "1 unidade"},
+  "2 st": {"en": "2 pack", "de": "2 Stück", "fr": "2 pièces", "es": "2 unidades", "it": "2 pezzi", "nl": "2 stuks", "pl": "2 szt.", "pt-PT": "2 unidades"},
+  "3 st": {"en": "3 pack", "de": "3 Stück", "fr": "3 pièces", "es": "3 unidades", "it": "3 pezzi", "nl": "3 stuks", "pl": "3 szt.", "pt-PT": "3 unidades"},
+  "4 st": {"en": "4 pack", "de": "4 Stück", "fr": "4 pièces", "es": "4 unidades", "it": "4 pezzi", "nl": "4 stuks", "pl": "4 szt.", "pt-PT": "4 unidades"},
+  "5 st": {"en": "5 pack", "de": "5 Stück", "fr": "5 pièces", "es": "5 unidades", "it": "5 pezzi", "nl": "5 stuks", "pl": "5 szt.", "pt-PT": "5 unidades"},
+  "Standard pris": {"en": "Standard price", "de": "Normalpreis", "fr": "Prix standard", "es": "Precio estándar", "it": "Prezzo standard", "nl": "Standaardprijs", "pl": "Cena standardowa", "pt-PT": "Preço normal"},
+  "Mest populär": {"en": "Most popular", "de": "Am beliebtesten", "fr": "Le plus populaire", "es": "El más popular", "it": "Il più popolare", "nl": "Meest gekozen", "pl": "Najpopularniejszy", "pt-PT": "Mais popular"},
+  "Bästa värdet": {"en": "Best value", "de": "Bester Preis", "fr": "Meilleur rapport qualité-prix", "es": "Mejor precio", "it": "Miglior prezzo", "nl": "Beste prijs", "pl": "Najlepsza cena", "pt-PT": "Melhor preço"},
+  "Skriv en recension": {"en": "Write a review", "de": "Bewertung schreiben", "fr": "Écrire un avis", "es": "Escribir una opinión", "it": "Scrivi una recensione", "nl": "Schrijf een beoordeling", "pl": "Napisz opinię", "pt-PT": "Escrever uma avaliação"},
+  "Högsta betyg": {"en": "Highest rating", "de": "Beste Bewertung", "fr": "Meilleure note", "es": "Mejor valoración", "it": "Valutazione più alta", "nl": "Hoogste score", "pl": "Najwyższa ocena", "pt-PT": "Classificação mais alta"},
+  "Lägsta betyg": {"en": "Lowest rating", "de": "Schlechteste Bewertung", "fr": "Note la plus basse", "es": "Peor valoración", "it": "Valutazione più bassa", "nl": "Laagste score", "pl": "Najniższa ocena", "pt-PT": "Classificação mais baixa"},
+  "Bilder först": {"en": "Pictures first", "de": "Bilder zuerst", "fr": "Photos d’abord", "es": "Fotos primero", "it": "Prima le foto", "nl": "Foto’s eerst", "pl": "Najpierw zdjęcia", "pt-PT": "Fotos primeiro"},
+  "Videor först": {"en": "Videos first", "de": "Videos zuerst", "fr": "Vidéos d’abord", "es": "Vídeos primero", "it": "Prima i video", "nl": "Video’s eerst", "pl": "Najpierw filmy", "pt-PT": "Vídeos primeiro"},
+  "Mest hjälpsamma": {"en": "Most helpful", "de": "Hilfreichste", "fr": "Les plus utiles", "es": "Más útiles", "it": "Più utili", "nl": "Meest nuttig", "pl": "Najbardziej pomocne", "pt-PT": "Mais úteis"},
+  "Senaste": {"en": "Most recent", "de": "Neueste", "fr": "Les plus récents", "es": "Más recientes", "it": "Più recenti", "nl": "Nieuwste", "pl": "Najnowsze", "pt-PT": "Mais recentes"},
+  "Recensioner på andra språk": {"en": "Reviews in other languages", "de": "Bewertungen in anderen Sprachen", "fr": "Avis dans d’autres langues", "es": "Opiniones en otros idiomas", "it": "Recensioni in altre lingue", "nl": "Beoordelingen in andere talen", "pl": "Opinie w innych językach", "pt-PT": "Avaliações noutros idiomas"},
+  "Visa fler recensioner": {"en": "Show more reviews", "de": "Weitere Bewertungen", "fr": "Plus d’avis", "es": "Ver más opiniones", "it": "Altre recensioni", "nl": "Meer beoordelingen", "pl": "Więcej opinii", "pt-PT": "Mais avaliações"},
+  "Verifierad": {"en": "Verified", "de": "Verifiziert", "fr": "Vérifié", "es": "Verificado", "it": "Verificato", "nl": "Geverifieerd", "pl": "Zweryfikowany", "pt-PT": "Verificado"},
+  "Verifierat köp": {"en": "Verified purchase", "de": "Verifizierter Kauf", "fr": "Achat vérifié", "es": "Compra verificada", "it": "Acquisto verificato", "nl": "Geverifieerde aankoop", "pl": "Zweryfikowany zakup", "pt-PT": "Compra verificada"},
+  "Visa original": {"en": "Show original", "de": "Original anzeigen", "fr": "Voir l’original", "es": "Ver original", "it": "Mostra originale", "nl": "Origineel tonen", "pl": "Pokaż oryginał", "pt-PT": "Ver original"}
+ },
+ "monster": [
+  {"sv": "^([\\d\\s ]+) recensioner$", "en": "[[n]] reviews", "de": "[[n]] Bewertungen", "fr": "[[n]] avis", "es": "[[n]] opiniones", "it": "[[n]] recensioni", "nl": "[[n]] beoordelingen", "pl": "[[n]] opinii", "pt-PT": "[[n]] avaliações"},
+  {"sv": "^1 recension$", "en": "1 review", "de": "1 Bewertung", "fr": "1 avis", "es": "1 opinión", "it": "1 recensione", "nl": "1 beoordeling", "pl": "1 opinia", "pt-PT": "1 avaliação"},
+  {"sv": "^Baserat på ([\\d\\s ]+) recensioner$", "en": "Based on [[n]] reviews", "de": "Basierend auf [[n]] Bewertungen", "fr": "Basé sur [[n]] avis", "es": "Basado en [[n]] opiniones", "it": "Basato su [[n]] recensioni", "nl": "Gebaseerd op [[n]] beoordelingen", "pl": "Na podstawie [[n]] opinii", "pt-PT": "Com base em [[n]] avaliações"},
+  {"sv": "^Översätt recension till (.+)$", "en": "Translate review to [[n]]", "de": "Bewertung übersetzen: [[n]]", "fr": "Traduire l’avis : [[n]]", "es": "Traducir opinión: [[n]]", "it": "Traduci recensione: [[n]]", "nl": "Beoordeling vertalen: [[n]]", "pl": "Przetłumacz opinię: [[n]]", "pt-PT": "Traduzir avaliação: [[n]]"},
+  {"sv": "^Spara ([\\d%,.\\s ]+%)$", "en": "Save [[n]]", "de": "Sparen Sie [[n]]", "fr": "Économisez [[n]]", "es": "Ahorra [[n]]", "it": "Risparmia [[n]]", "nl": "Bespaar [[n]]", "pl": "Oszczędzasz [[n]]", "pt-PT": "Poupe [[n]]"},
+  {"sv": "^Spara (.+)$", "en": "Save [[n]]", "de": "Sparen Sie [[n]]", "fr": "Économisez [[n]]", "es": "Ahorra [[n]]", "it": "Risparmia [[n]]", "nl": "Bespaar [[n]]", "pl": "Oszczędzasz [[n]]", "pt-PT": "Poupe [[n]]"}
+ ]
+}
