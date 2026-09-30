@@ -50,9 +50,10 @@ export function kandidater(per, be, uteslut) {
 }
 
 /** Andra steget (Axels order 2026-09-30 kväll: "ta topp fem spenders, förutom vinnarna"): produkter
- * som inte når tio med köp fylls med de annonser som spenderat mest, även utan köp (minst 100 kr). */
-export function spenders(per, be, uteslut) {
-  return per.filter((o) => !uteslut.has(o.namn) && o.spend >= 100).map((o) => {
+ * som inte når tio med köp fylls med de annonser som spenderat mest, även utan köp (minst 100 kr;
+ * --min-spend 1 i tredje rundan samma kväll, när golfkalendern och värmesulorna stod på 1 och 3). */
+export function spenders(per, be, uteslut, minSpend = 100) {
+  return per.filter((o) => !uteslut.has(o.namn) && o.spend >= minSpend).map((o) => {
     const roas = o.spend ? o.varde / o.spend : 0;
     return { namn: o.namn, spend: Math.round(o.spend), kop: o.kop, roas: +roas.toFixed(2), cpa: o.kop ? Math.round(o.spend / o.kop) : null, vinstbidrag: Math.round(o.spend * (roas / be - 1)), ad_id: o.ids.sort((a, b) => b.s - a.s)[0].id, fyllnad10: true, spender: true };
   }).sort((a, b) => b.spend - a.spend);
@@ -105,7 +106,7 @@ async function huvud() {
     const uteslut = new Set([...p.annonser.map((x) => x.namn), ...scFilmer]);
     const per = perNamn(rader, p.prefix);
     const kopkand = kandidater(per, p.be, uteslut);
-    const kand = a.includes('--spenders') ? [...kopkand, ...spenders(per, p.be, new Set([...uteslut, ...kopkand.map((k) => k.namn)]))] : kopkand;
+    const kand = a.includes('--spenders') ? [...kopkand, ...spenders(per, p.be, new Set([...uteslut, ...kopkand.map((k) => k.namn)]), a.includes('--min-spend') ? Number(a[a.indexOf('--min-spend') + 1]) : 100)] : kopkand;
     // Två extra i marginal: en del faller i copy- eller textkollen (kronor i bild m.m.).
     const onskat = behov + 2;
     if (!skarpt) {

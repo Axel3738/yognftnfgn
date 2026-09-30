@@ -19,8 +19,8 @@ Bäverbutikens. Sverige, NO, DK och FI rörs aldrig härifrån.
 | Domänen | **beaverstoreco.com kopplad till Worldwide** (egen webbnärvaro, standardspråk en + de/fr/es/it/nl/pl/pt-PT) — omdirigerar inte längre till baverbutiken.se. baverbutiken.se är fortfarande primär. ⚠️ Från containerns amerikanska IP skickar Shopifys geo-omdirigering nu baverbutiken.se → beaverstoreco.com; en svensk IP får Sverige (`kundvy.mjs --sverige` läser med `?country=SE`) |
 | Språken | **Åtta språk, 265 ✅ / 0 ❌ per språk** i `granska.mjs` (hela katalogen, kollektioner, sidor, policyer, menyer, temat). Engelskan skriven av sessionen + sonnet, de sju andra översatta från engelskan av sonnet-agenter mot `oversattning/REGLER-SPRAK.md`. Sidfotens länkar (Användarvillkor, Ångra köp …) och "Garanti för säker frakt"/"Blanda & Spara" lades till efter första kundkontrollen; berättelsen säger inte längre "(Bäverbutiken in Swedish)" |
 | Temat | **v3 i det publicerade temat `210420334941`** (13 filer, tillbakalästa; originalen i `tema/original/`). Världsläget: loggan Beaver Store, fri frakt till kundens land, "A Swedish brand", förtroendeband och recensionsband på kundens språk (`snippets/bw-t.liquid` ur `tema/sprak.json`, 25 nycklar × 8 språk), titeln Beaver Store. Svenska sidan kontrollerad orörd |
-| Kvar som bara går i appar | **Kaching Bundles** (paketväljaren) och **Judge.me** (recensionerna) visar svenska utomlands — `cowork/2-kaching-judgeme.txt`. Kaching visade bara svenska innan språken publicerades |
-| Annonserna i Meta | **16 kampanjer, 66 annonser (25 bilder + videorna), allt PAUSED och tillbakaläst 2026-09-30 kväll**, 1 000 kr/dag per kampanj |
+| Kaching + Judge.me | Apparna gick inte att översätta i admin (Cowork 2026-09-30: Kachings språkväljare har bara SV). **Temat byter deras svenska texter i världsläget** (`snippets/bw-appord.liquid` ur `tema/appord.json`, v5) — sett på tyska produktsidan: "1 Stück", "Am beliebtesten", "14 Tage Rückgaberecht". Ny svensk text i ett Kaching-erbjudande ⇒ lägg raden i `appord.json` och kör patchen. Judge.me:s automatiska översättning av recensionerna är Axels |
+| Annonserna i Meta | **16 kampanjer, 130 annonser, 1 000 kr/dag per kampanj — AKTIVERADE med start 2026-10-01 00:01 svensk tid** (Axels order 2026-09-30: "aktivera alla kampanjer och schemalägg dem till 00.01 imorgon"; adsetens `start_time` sätts FÖRE statusen, `konto.json → start`). Per kampanj: Båtmotor 12, Fiskespö 11, Motorhölje 11, Kamera 11, Termoskydd 11, Säte 10, Tofflor 10, Bälteslip 10, IBC 9, Sotar 9, MC 9, Taköverdrag 5, Damasker 4, Täljset 4, Värmesulor 3, Golfkalender 1 — de sista har inte fler annonser med data |
 | Videoannonser | ElevenLabs (Pro), rösten "CJ - Young Swedish Male", bandläget, `rostkoll.py` och **`annonser/textkoll.py` (OCR över HELA filmen)** som sista grind. 43 videor granskade och uppladdade. **Hoppade:** alla fem takskyddsvideor (klipp ur Specialised Covers video — samma sekvens som fällde KD-2026-001, ett nytt konto ska inte bära dem), fyra med kronor/butiksnamn/svensk checklista inbränt (`Batmotor_SP_1_H5`, `Batmotor_CS_5_H1`, `Taljset_PD_1_H4`) och `Seatcover_PD_1_3_H1` (röstkollen; kopian används). `Batmotor_UG_1_H1` och `Batmotor_FM_1_H1` fick en stillbild av produkten i stället för den svenska slutbilden (BÄVERBUTIKEN, 579 kr) |
 | Meta | 16 kampanjer i **Magiborsten UK `1107817401910319`**, prefix `BEAVERSTORE_WW_`, **1 000 kr/dag per kampanj**, allt PAUSED. Sidan `1305042582683792` heter Beaver Store (Cowork 2026-09-30; Facebook kan granska namnet i upp till 3 dagar). Id:n: `node worldwide/annonser/bygg.mjs --lage` |
 
@@ -61,7 +61,8 @@ node worldwide/kundvy.mjs                       # beaverstoreco.com som kund i a
 node worldwide/kundvy.mjs --sverige             # baverbutiken.se som svensk kund är orörd
 node worldwide/annonser/bygg.mjs --skarpt       # kampanjer/annonser som saknas (PAUSED)
 node worldwide/annonser/video.mjs --skarpt      # videorna, när ElevenLabs-kvoten räcker
-node worldwide/annonser/bygg.mjs --aktivera --skarpt   # först när konto.json → budget_beslut är Axels
+node worldwide/annonser/fyll-urval.mjs <insikter.json> [--spenders] --skarpt   # fyll produkterna till tio annonser
+node worldwide/annonser/bygg.mjs --aktivera --skarpt   # kräver budget_beslut; start_time ur konto.json → start (eller --start)
 ```
 
 ## Om marknaden inte går att skapa
@@ -87,6 +88,13 @@ Shopify att planen inte räcker är det Axels beslut (uppgradering kostar pengar
 | `test/worldwide.test.mjs` | Temat, frakten, konfigen, granskningen, annonserna (i `npm test`) |
 
 ## Lärdomar (mätta)
+
+- **Tio per produkt** (Axel 2026-09-30 kväll: "top 10 annonser per produkt" + "ta topp fem spenders,
+  förutom vinnarna"): `annonser/fyll-urval.mjs` fyller först med annonser med köp (vinstbidrag), sedan
+  med `--spenders` (mest spend, ≥ 100 kr). Unik film/bild, aldrig Specialised Covers klipp, aldrig
+  karusell. Ungefär var femte faller i granskningen (kronor/svenska inbränt, kundcitat, jul).
+- **Påståenden som inte går att belägga stryks ur manus** ("eight out of eight reviews", "discounted
+  today only") — de gäller Bäverbutikens svenska sida, inte Beaver Store.
 
 - **Bildmodellen ritar aldrig text** — kie nano-banana-edit gav "23% RABATT – TOAY" och lämnade
   "1469 kr" kvar. OCR-mätning + suddning + vektortext (`factory/bildmarknad-*.py`) block för

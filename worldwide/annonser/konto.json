@@ -47,6 +47,5 @@
  ],
  "annons_utan_lander_beslut": "Meta 400 vid adset-skapandet 2026-09-30: 'Om du vill publicera annonser som inkluderar platser i Singapore ska du använda … SINGAPORE_UNIVERSAL' (regionalt reglerad kategori, kräver en deklaration). Singapore ligger kvar i Shopify-marknaden men annonseras inte.",
  "sida_namn_beslut": "Axels svar 2026-09-30: sidan döps om till Beaver Store (cowork/1-app-och-doman.txt steg 6).",
- "aktivering_beslut": "Axels order 2026-09-30 kväll: 'aktivera alla kampanjer och schemalägg dem till 00.01 imorgon, svensk tid' — alla 16 kampanjer ACTIVE med adsetens start_time 2026-10-01T00:01:00+02:00 (bygg.mjs --aktivera --start …).",
- "start": "2026-10-01T00:01:00+02:00"
+ "aktivering_beslut": "Axels order 2026-09-30: \"aktivera alla kampanjer och schemalägg dem till 00.01 imorgon, svensk tid\". Meta vägrar start_time på redan skapade adset, så: --aktivera --forbered (annonser + adset ACTIVE, kampanjen PAUSED) samma eftermiddag, --aktivera --bara-kampanj 2026-10-01 00:01 CEST via sessionens schemalagda väckning."
 }

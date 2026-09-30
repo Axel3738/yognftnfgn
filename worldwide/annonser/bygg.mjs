@@ -166,18 +166,24 @@ async function huvud() {
       const f = farAktiveras(K, ads);
       if (!f.ok) log(`⛔ aktiverar INTE ${p.kampanj}: ${f.skal}`);
       else {
-        // Starttiden sätts på adsetet FÖRE aktiveringen, så att inget spenderar före den (Axels 00:01).
-        const start = a.includes('--start') ? a[a.indexOf('--start') + 1] : K.start;
-        if (start) { await api(adset.id, { form: { start_time: start } }); log(`   start ${start}`); }
-        for (const ad of ads) if (ad.status !== 'ACTIVE') await api(ad.id, { form: { status: 'ACTIVE' } });
-        await api(adset.id, { form: { status: 'ACTIVE' } });
-        await api(kampanj.id, { form: { status: 'ACTIVE' } });
-        log(`✅ aktiverat ${p.kampanj}`);
+        // Axels 00:01 (2026-09-30): Meta vägrar ny start_time på ett adset som redan "startat" (det
+        // gör det när det skapas, även PAUSED — mätt: "Det går inte att redigera starttiden om
+        // annonsuppsättningen redan har startats"). Därför två steg:
+        //   --forbered     annonser + adset ACTIVE, kampanjen står kvar PAUSED (inget levererar)
+        //   --bara-kampanj bara kampanjen ACTIVE — körs på klockslaget (16 anrop, klart på sekunder)
+        const forbered = a.includes('--forbered');
+        const baraKampanj = a.includes('--bara-kampanj');
+        if (!baraKampanj) {
+          for (const ad of ads) if (ad.status !== 'ACTIVE') await api(ad.id, { form: { status: 'ACTIVE' } });
+          await api(adset.id, { form: { status: 'ACTIVE' } });
+        }
+        if (!forbered) await api(kampanj.id, { form: { status: 'ACTIVE' } });
+        log(`✅ ${forbered ? 'förberett (kampanjen PAUSED)' : 'aktiverat'} ${p.kampanj}`);
       }
     }
     if (skarpt) {
       const k3 = await api(kampanj.id, { params: { fields: 'status,effective_status,daily_budget' } });
-      if (aktivera && adset) { const as3 = await api(adset.id, { params: { fields: 'status,start_time' } }); log(`adset: ${as3.status} start ${as3.start_time}`); }
+      if (aktivera && adset) { const as3 = await api(adset.id, { params: { fields: 'status,effective_status' } }); log(`adset: ${as3.status}/${as3.effective_status}`); }
       const ads3 = adset ? await alla(`${adset.id}/ads`, { fields: 'name,status' }, 50) : [];
       log(`tillbakaläst: ${k3.status}/${k3.effective_status} ${Number(k3.daily_budget) / 100} kr/dag · ${ads3.length} annonser (${ads3.map((x) => x.status).join(',') || '—'})`);
     }
