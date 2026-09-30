@@ -539,6 +539,40 @@ engelska länderna utan egen kampanj: **GB, AU, CA och NZ**. Resten av inriktnin
 Advantage+, platstyperna). Den är tillbakaläst och står i `marknader.json` → `WW.geo_beslut`.
 Kampanjen heter fortfarande `MATSTRUMP_WW_SALES`, för annonsnamnen bär `WW`.
 
+### Fraktrutan visar kundens land och flagga (Axel 2026-09-30)
+
+Axel: "istället för att vi har den här widgeten … jag vill att den ändras utifrån vilket land kunden
+sitter i så att det står Free shipping to Norway, Japan etc … magnetchess har gjort detta väldigt
+snyggt". Rutan är lastbilspunkten i trust-raden under köpknappen (`snippets/ms-trust-row.liquid`,
+produktsidan och ätpinnarnas mall). Förut stod "Fri frakt i Sverige" på svenska och bara "Free
+shipping"/"Kostenloser Versand" utan land på de andra språken.
+
+- **Nu:** kundens flagga i stället för lastbilen, och texten med landet: "Free shipping to the United
+  States", "Kostenloser Versand in die Schweiz", "Livraison gratuite au Luxembourg", "Darmowa dostawa do
+  Polski". Svenska kunder ser samma text som förut, "Fri frakt i Sverige", med den svenska flaggan.
+- **Motorn:** `domantema.mjs` → `FRAKT_SPRAK` (grammatiken per språk: hemlandets fasta fras, artikel och
+  preposition per land där språket kräver det) och `fraktLandSnippet` → `snippets/ms-frakt-land.liquid`,
+  som skrivs om varje körning ur `konfig.json`:s länder. Ett nytt land i en marknad får alltså flaggan och
+  landet av sig självt; ett land vi inte säljer till får frasen utan land och lastbilen. Landnamnet är
+  Shopifys eget på kundens språk (`localization.country.name`), flaggan Shopifys egen (`country |
+  image_url`, 4:3), 1,25em hög så att texterna står i linje med ikonerna bredvid.
+- **Mätt som kund 2026-09-30 i 24 länder** (SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT, CH, FR, BE,
+  LU, NL, ES, IT, PL, PT, IE, CZ): rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
+  `test/domantema.test.mjs` kör snippeten i en liten Liquid-tolk för alla 13 språk × 38 länder och
+  jämför med `fraktText`.
+- Magnetchess gick inte att läsa härifrån (magnetchess.com svarar 502/503 mot containern). Deras .se
+  visar bara "Free shipping on all orders". Utseendet är därför vårt eget.
+
+### Trust Badges-appen bara på svenska (hittat 2026-09-30)
+
+Appen Ultimate Trust Badges ritar en rad under köpknappen: "Betala säkert med Klarna." och logorna
+Mastercard, Visa, Apple Pay, Klarna, Google Pay och **Swish**. Texten är appens egen och finns bara på
+svenska. Mätt som kund: raden syntes på svenska sidor **och på .com:s engelska sidor**, alltså i USA, UK,
+Australien, Kanada och Nya Zeeland (appen känner bara igen sökvägar utan språkmapp, så /nb /da /de …
+slapp den). Den döljs nu på alla språk utom svenska (`domantema.mjs` → `CSS_UTB` i
+`snippets/ms-head.liquid`, `display: none` bakom `request.locale.iso_code != 'sv'`). Trust-radens
+"Secure payment" står kvar. Tillbakaläst live: SE visar raden, US/GB/AU har den dold (höjd 0).
+
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
 Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",

@@ -345,9 +345,25 @@ export const CSS_NORSK = `
 {%- endif -%}
 `;
 
+// Appen Ultimate Trust Badges ritar en egen rad under köpknappen: "Betala säkert med Klarna." och
+// logorna Mastercard, Visa, Apple Pay, Klarna, Google Pay och Swish. Texten är appens egen och finns
+// bara på svenska, och Swish finns bara i Sverige. Mätt 2026-09-30 som kund: raden ritades på svenska
+// sidor OCH på de engelska (.com utan språkmapp: USA, UK, Australien, Kanada, Nya Zeeland), men inte
+// under /nb /da /fi /de … (appen känner bara igen sökvägar utan språkmapp). Den döljs därför på
+// alla språk utom svenska, och där står trust-radens "Secure payment" kvar. Svenska sidor ritas som förut.
+export const UTB_MARK = `${MARK}: trust-badge-appen bara på svenska`;
+export const CSS_UTB = `
+{%- comment -%} ${UTB_MARK} — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
+{%- unless request.locale.iso_code == 'sv' -%}
+<style>#ultimateTrustBadgeswidgetDiv { display: none !important; }</style>
+{%- endunless -%}
+`;
 export function patchaMsHead(kod) {
-  if (kod.includes(MARK)) return { kod, byten: [], hoppade: ['ms-head: redan patchad'] };
-  return { kod: kod.replace(/\s*$/, '\n') + CSS_NORSK, byten: ['css_norsk'], hoppade: [] };
+  const byten = [];
+  let ut = kod;
+  if (!ut.includes(MARK)) { ut = ut.replace(/\s*$/, '\n') + CSS_NORSK; byten.push('css_norsk'); }
+  if (!ut.includes(UTB_MARK)) { ut = ut.replace(/\s*$/, '\n') + CSS_UTB; byten.push('trust_badges_bara_svenska'); }
+  return byten.length ? { kod: ut, byten, hoppade: [] } : { kod, byten: [], hoppade: ['ms-head: redan patchad'] };
 }
 
 // Recensionerna på norska — en egen sektion, ritas BARA på matstrumpor.no.
@@ -452,6 +468,147 @@ export function omdomenJson(rader, { kalla = null } = {}) {
   };
 }
 
+// ---- Fraktrutan följer kundens land ----------------------------------------------------------------
+// Axel 2026-09-30: "istället för att vi har den här widgeten … att den ändras utifrån vilket land kunden
+// sitter i så att det står Free shipping to Norway, Japan etc … magnetchess har gjort detta väldigt
+// snyggt". Förut stod "Fri frakt i Sverige" på svenska och bara "Free shipping"/"Kostenloser Versand"
+// (utan land) på de andra språken. Nu: kundens flagga i stället för lastbilen, och texten med landet.
+// Landnamnet är Shopifys eget på kundens språk (localization.country.name, mätt 2026-09-30: "Schweiz"
+// på de, "Szwajcaria" på pl, "Svizzera" på it, "Sveitsi" på fi; nb får svenska namn, eftersom Shopify
+// saknar bokmål, men "Norge" stavas likadant). Flaggan är Shopifys egen (country | image_url).
+// Grammatiken står per språk: hemlandet har en fast fras, och artikel/preposition står per land där
+// språket kräver det (fr en/au/aux/à, de "in die", it "negli/nel/nei/a", pt "para a/o/os", es "al/a los",
+// nl "naar de/het", en "the"). Där landnamnet böjs (fi illativ, pl genitiv) står en neutral form.
+// Ett land vi inte säljer till får frasen utan land och ingen flagga. Texten "Fri frakt i Sverige" står
+// kvar ordagrant för svenska kunder. Snippeten skrivs om varje körning (NYA_FILER), så ett nytt land i
+// konfig.json följer med av sig självt.
+export const FRAKT_MARK = `${MARK}: fraktrutan följer kundens land`;
+const perLand = (grupper, fore, efter = '') => Object.fromEntries(Object.entries(grupper).flatMap(([art, koder]) => koder.map((k) => [k, [`${fore}${art}`, efter]])));
+// Per språk: generisk = land vi inte säljer till; hel = hela frasen per land; namn = [före, efter] runt
+// Shopifys landnamn, per land eller som standard ('*'). Saknas både hel, namn[land] och '*' blir det generiskt.
+export const FRAKT_SPRAK = {
+  sv: { generisk: 'Fri frakt', hel: { SE: 'Fri frakt i Sverige' }, namn: { '*': ['Fri frakt till ', ''] } },
+  nb: { generisk: 'Fri frakt', hel: { NO: 'Fri frakt til Norge' }, namn: { '*': ['Fri frakt til ', ''] } },
+  da: { generisk: 'Fri fragt', hel: { DK: 'Fri fragt til Danmark' }, namn: { '*': ['Fri fragt til ', ''] } },
+  fi: { generisk: 'Ilmainen toimitus', hel: { FI: 'Ilmainen toimitus Suomeen' }, namn: { '*': ['Ilmainen toimitus maahan ', ''] } },
+  en: { generisk: 'Free shipping', namn: { ...perLand({ 'the ': ['US', 'GB', 'NL'] }, 'Free shipping to '), '*': ['Free shipping to ', ''] } },
+  de: {
+    generisk: 'Kostenloser Versand',
+    hel: { CH: 'Kostenloser Versand in die Schweiz', NL: 'Kostenloser Versand in die Niederlande', SK: 'Kostenloser Versand in die Slowakei', US: 'Kostenloser Versand in die USA', GB: 'Kostenloser Versand ins Vereinigte Königreich' },
+    namn: { '*': ['Kostenloser Versand nach ', ''] },
+  },
+  fr: {
+    generisk: 'Livraison gratuite',
+    namn: perLand({
+      'en ': ['FR', 'BE', 'CH', 'DE', 'AT', 'ES', 'IT', 'PL', 'SE', 'NO', 'FI', 'IE', 'GR', 'HR', 'SI', 'SK', 'HU', 'RO', 'BG', 'EE', 'LV', 'LT', 'IS', 'CZ', 'AU', 'NZ'],
+      'au ': ['LU', 'PT', 'DK', 'GB', 'CA', 'LI', 'JP'],
+      'aux ': ['NL', 'US'],
+      'à ': ['MT', 'CY', 'TW'],
+    }, 'Livraison gratuite '),
+  },
+  nl: { generisk: 'Gratis verzending', namn: { ...perLand({ 'de ': ['US'], 'het ': ['GB'] }, 'Gratis verzending naar '), '*': ['Gratis verzending naar ', ''] } },
+  es: { generisk: 'Envío gratis', hel: { GB: 'Envío gratis al Reino Unido', NL: 'Envío gratis a los Países Bajos' }, namn: { '*': ['Envío gratis a ', ''] } },
+  it: {
+    generisk: 'Spedizione gratuita',
+    hel: { US: 'Spedizione gratuita negli Stati Uniti', GB: 'Spedizione gratuita nel Regno Unito', NL: 'Spedizione gratuita nei Paesi Bassi' },
+    namn: { ...perLand({ 'a ': ['MT', 'CY'] }, 'Spedizione gratuita '), '*': ['Spedizione gratuita in ', ''] },
+  },
+  pl: { generisk: 'Darmowa dostawa', hel: { PL: 'Darmowa dostawa do Polski' }, namn: { '*': ['Darmowa dostawa: ', ''] } },
+  'pt-PT': {
+    generisk: 'Envio grátis',
+    hel: { PT: 'Envio grátis para Portugal', US: 'Envio grátis para os Estados Unidos', GB: 'Envio grátis para o Reino Unido', NL: 'Envio grátis para os Países Baixos' },
+    namn: perLand({
+      'a ': ['FR', 'ES', 'IT', 'SE', 'NO', 'FI', 'IE', 'GR', 'HR', 'SI', 'SK', 'HU', 'RO', 'BG', 'EE', 'LV', 'LT', 'IS', 'CZ', 'AT', 'PL', 'DK', 'AU', 'NZ', 'DE', 'CH', 'BE'],
+      'o ': ['LU', 'LI', 'CA', 'JP'],
+      '': ['MT', 'CY', 'TW'],
+    }, 'Envio grátis para '),
+  },
+  ja: { generisk: '送料無料', hel: { JP: '日本全国送料無料' }, namn: { '*': ['', 'への送料無料'] } },
+  'zh-TW': { generisk: '免運費', hel: { TW: '全台免運費' }, namn: { '*': ['免運費寄送至', ''] } },
+};
+
+/** Alla länder vi säljer till: Sverige + varje marknad i konfig.json. */
+export function saljlander(konfig) {
+  return [...new Set([konfig.primar?.land ?? 'SE', ...konfig.marknader.flatMap((m) => m.lander)])];
+}
+
+/** Ren: fraktraden per land i JS — samma regler som Liquid-snippeten. För tester och granskning. */
+export function fraktText(locale, kod, namn, lander, sprak = FRAKT_SPRAK) {
+  const d = sprak[locale];
+  if (!d) return null;
+  if (!kod || !lander.includes(kod)) return d.generisk;
+  if (d.hel?.[kod]) return d.hel[kod];
+  const n = d.namn?.[kod] ?? d.namn?.['*'];
+  return n ? `${n[0]}${namn}${n[1]}` : d.generisk;
+}
+
+/** Ren: snippeten ms-frakt-land.liquid. `del: 'flagga'` ger kundens flagga (bara säljländer), annars
+ *  fraktraden. Ett språk utanför tabellen ger ingenting, och då står trust-radens egen text kvar. */
+export function fraktLandSnippet(lander, sprak = FRAKT_SPRAK) {
+  const q = (s) => `'${String(s).replace(/'/g, '’')}'`;
+  const rad = (d, kod) => {
+    if (d.hel?.[kod]) return `echo ${q(d.hel[kod])}`;
+    const n = d.namn?.[kod] ?? d.namn?.['*'];
+    if (!n) return `echo ${q(d.generisk)}`;
+    return `echo ${n[0] ? `${q(n[0])} | append: ms_fl_namn` : 'ms_fl_namn'}${n[1] ? ` | append: ${q(n[1])}` : ''}`;
+  };
+  const grenar = Object.entries(sprak).map(([loc, d]) => {
+    const egna = [...new Set([...Object.keys(d.hel ?? {}), ...Object.keys(d.namn ?? {}).filter((k) => k !== '*')])].filter((k) => lander.includes(k));
+    const standard = rad(d, '*');
+    const land = egna.length
+      ? `        case ms_fl_kod\n${egna.map((kod) => `          when '${kod}'\n            ${rad(d, kod)}`).join('\n')}\n          else\n            ${standard}\n        endcase`
+      : `        ${standard}`;
+    return `      when '${loc}'\n        if ms_fl_kod == blank\n          echo ${q(d.generisk)}\n        else\n${land.replace(/^/gm, '  ')}\n        endif`;
+  }).join('\n');
+  return `{%- comment -%}
+  ${FRAKT_MARK} (Axel 2026-09-30). Skrivs av matstrumpor/marknader/domantema.mjs varje körning —
+  ändra där, aldrig här. del: 'flagga' ger kundens flagga, annars fraktraden. Ett land vi inte säljer
+  till får frasen utan land och ingen flagga.
+{%- endcomment -%}
+{%- liquid
+  assign ms_fl_kod = localization.country.iso_code
+  assign ms_fl_namn = localization.country.name
+  assign ms_fl_sok = ',' | append: ms_fl_kod | append: ','
+  unless '${',' + lander.join(',') + ','}' contains ms_fl_sok
+    assign ms_fl_kod = ''
+  endunless
+  if del == 'flagga'
+    if ms_fl_kod != blank
+      echo localization.country | image_url: width: 64 | image_tag: class: 'ms-fraktflagga', alt: '', width: 20, height: 15, loading: 'lazy', style: 'height:1.25em;width:auto;margin:.125em 0;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.1)'
+    endif
+  else
+    case request.locale.iso_code
+${grenar}
+    endcase
+  endif
+-%}`;
+}
+
+// Trust-radens två rader som byts: ikonen och punktens början. Flaggan tar lastbilens plats bara när
+// kunden sitter i ett säljland; annars ritas lastbilen som förut. Flaggan (Shopifys, 4:3) är 1,25em hög
+// med 0,125em luft över och under, så att den tar samma höjd som ikonerna bredvid (1,5em i mobilen)
+// och texterna under står i linje. Stilen står i img-taggen: ingen CSS-fil behöver patchas.
+const TRUST_ANKARE = `      <div class="ms-trust__item">
+        {% render 'ms-icon', name: ico %}
+`;
+const TRUST_NY = `      {%- comment -%} ${FRAKT_MARK} (snippets/ms-frakt-land.liquid) {%- endcomment -%}
+      {%- assign ms_fraktflagga = '' -%}
+      {%- if ico == 'truck' -%}
+        {%- capture ms_fraktland -%}{%- render 'ms-frakt-land' -%}{%- endcapture -%}
+        {%- assign ms_fraktland = ms_fraktland | strip -%}
+        {%- if ms_fraktland != blank -%}{%- assign txt = ms_fraktland -%}{%- endif -%}
+        {%- capture ms_fraktflagga -%}{%- render 'ms-frakt-land', del: 'flagga' -%}{%- endcapture -%}
+        {%- assign ms_fraktflagga = ms_fraktflagga | strip -%}
+      {%- endif -%}
+      <div class="ms-trust__item">
+        {%- if ms_fraktflagga != blank -%}{{ ms_fraktflagga }}{%- else -%}{% render 'ms-icon', name: ico %}{%- endif %}
+`;
+/** Trust-radens truck-punkt tar texten och flaggan ur ms-frakt-land. Idempotent via FRAKT_MARK. */
+export function patchaTrustRow(kod) {
+  if (kod.includes(FRAKT_MARK)) return { kod, byten: [], hoppade: ['trust-raden: redan patchad (fraktland)'] };
+  return { kod: bytExakt(kod, TRUST_ANKARE, TRUST_NY, 1), byten: ['fraktland'], hoppade: [] };
+}
+
 // Filerna och vad som görs med dem.
 export const PATCHAR = {
   'layout/theme.liquid': patchaLayout,
@@ -465,11 +622,13 @@ export const PATCHAR = {
   'sections/main-cart-footer.liquid': patchaKorgMoms,
   'snippets/cart-drawer.liquid': patchaKorgMoms,
   'snippets/quick-order-list.liquid': patchaKorgMoms,
+  'snippets/ms-trust-row.liquid': patchaTrustRow,
 };
 const MOMSFILER = Object.keys(PATCHAR).filter((f) => PATCHAR[f] === patchaProduktMoms || PATCHAR[f] === patchaKorgMoms);
 export const NYA_FILER = {
   'sections/ms-omdomen-no.liquid': SEKTION_OMDOMEN,
   'snippets/ms-omdomen-badge.liquid': SNIPPET_BADGE,
+  'snippets/ms-frakt-land.liquid': fraktLandSnippet(saljlander(JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8')))),
 };
 
 // ---- Nät -------------------------------------------------------------------
@@ -535,7 +694,10 @@ async function huvud() {
       : MOMSFILER.includes(n.filename) ? n.body.content.includes(MOMS_MARK)
         : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) && n.body.content.includes(VILLKOR_V6)
           : n.filename === 'sections/header.liquid' ? n.body.content.includes(HEADER_V2)
-            : n.filename === 'snippets/meta-tags.liquid' ? n.body.content.includes(META_V2) : n.body.content.includes(MARK));
+            : n.filename === 'snippets/meta-tags.liquid' ? n.body.content.includes(META_V2)
+              : n.filename === 'snippets/ms-frakt-land.liquid' ? n.body.content === NYA_FILER['snippets/ms-frakt-land.liquid']
+                : n.filename === 'snippets/ms-head.liquid' ? n.body.content.includes(UTB_MARK)
+                : n.filename === 'snippets/ms-trust-row.liquid' ? n.body.content.includes(FRAKT_MARK) : n.body.content.includes(MARK));
   let las;
   for (let forsok = 1; forsok <= 3; forsok++) {
     las = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 20) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: ut.map((x) => x.filename) });
