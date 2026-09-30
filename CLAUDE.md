@@ -501,8 +501,28 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
    HeyGen-videor (våra AI-avatarer) översätts inte alls — de görs om direkt på
    målspråket i HeyGen** ("annars kör vi bara våra egna HeyGen"). En avatarvideo
    genom translate-pipelinen är alltså fel väg.
+6. **Axels beslut 2026-09-30: HeyGen bara när någon PRATAR I BILD.** ("Det blir
+   faktiskt mycket billigare om vi bara kör med ElevenLabs.") HeyGen gör exakt
+   en sak ElevenLabs inte gör — läppsynk — och den behövs bara när en människa
+   syns prata mot kameran. Voiceover över produktbilder dubbas med ElevenLabs
+   för 0 krediter, via `pipeline/omdubb/elevenlabs-omdubb.mjs` (vägen Axel valde
+   redan 2026-09-16 när han dömde ut HeyGens klonröst) med källmanuset ur
+   `pipeline/scribe.mjs`. Domen mäts av **`pipeline/pratar-i-bild.py`** och tas
+   i `/oversatt` Fas 4.1. **Osäkerhet ⇒ HeyGen** — krediter kostar pengar en
+   gång, fel läppsynk syns i varje visning. Regel 5 står kvar: en video med ett
+   talande ansikte går alltid till HeyGen, och det är precis det detektorn
+   avgör — mätt i stället för gissat ur annonsnamnet.
+   Mätt 2026-09-30 på 86 riktiga videor: **78 av 84 produktvideor → ElevenLabs**
+   (93 %), 6 i gråzon → HeyGen, och **båda** de kända UGC-annonserna fångades,
+   0 falska PRATAR. ⚠️ Ytan är grinden, inte träfffrekvensen: Haar-kaskaden ser
+   "ansikten" i tyg och gräs, och `Batmotortrekk RV_1_H1` fick träff i halva
+   bildrutorna som ren produktvideo (0,39 % av bildytan mot 2,9–3,1 % för ett
+   talande ansikte). Trösklarna och hela mätningen: `docs/video-localization.md`
+   → "HeyGen eller ElevenLabs".
 
-Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
+Kräver env-variablerna `HEYGEN_API_KEY` **och `ELEVENLABS_API_KEY`** i
+environmentet, samt `pip install "opencv-python-headless<5"` i körningen
+(OpenCV 5 har tagit bort både `CascadeClassifier` och kaskadfilerna).
 
 ---
 
