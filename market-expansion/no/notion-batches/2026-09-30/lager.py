@@ -36,11 +36,17 @@ TIDER = json.load(open(f'{B}/matt/slutkort-tider.json', encoding='utf-8'))['vide
 BLUR_RAD1 = [240, 200, 482, 292]    # "869 kr"            (bläck x 253..467, y 212..277)
 BLUR_RAD2 = [58, 292, 664, 374]     # "ordinarie 1 139 kr" (bläck x  72..651, y 300..361)
 
+# ⚠️ Pillret ligger på OLIKA höjd i olika videor — mätt 2026-09-30 i sex rutor per
+# källa: PD_1_H4 y 786..852, GT_4_H1 807..871, OB_1_H1 821..887, PD_1_H5 826..894,
+# SP_4_H1 836..903, PD_4_H1 845..917. Första körningen hade zon [815, 935] och
+# missade PD_1_H4 helt (pillret hittat i 98 av 441 frames) — svenska ordcaptions
+# som "bladskydd," och "träbit och" stod kvar i den norska videon, fångat i QA.
+# Fönstret spänner därför hela intervallet, med marginal.
 CAPTIONS = {
-    'zon': [815, 935],        # pillrets sökfönster i y
+    'zon': [775, 935],         # pillrets sökfönster i y, mätt över alla nio
     'x0': 0, 'x1': 720, 'bredd_max': 700,
-    'h_min': 45, 'h_max': 85,  # pillrets höjd, mätt ~64
-    'standard_cy': 871,        # pillrets mitt i y
+    'h_min': 45, 'h_max': 85,  # pillrets höjd, mätt 65..73
+    'standard_cy': 855,        # mitten av det uppmätta intervallet, bara reserv
     'max_chars': 30, 'font_px': 27,
     'pad_x': 6, 'pad_y': 6,
 }
