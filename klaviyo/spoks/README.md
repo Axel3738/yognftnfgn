@@ -578,15 +578,16 @@ Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Tv
   `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
   det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
   `trustpilotMejl()` läser — tills Axel lagt vidarebefordran .se → .com hos Loopia.
-- ⚠️ **`order_delivered` har inte fyrat en enda gång än — för tidigt att döma:** 0 inrullade i alla
-  12 `FLOW_levererat_*` och 0 fulfillments `DELIVERED` i Shopify efter aktiveringen. CaraShells
-  ordrar 1–16/9 (82 st, alla under 20 dagar gamla) står 75 `IN_TRANSIT` / 4 `DELIVERED` (alla
-  norska, 25–26/9, före aktiveringen) / 2 `CONFIRMED`; 46 av 46 svenska bär sista skanningen
-  "Paketet är på väg (Mainland China)". Spårningsminnet: 5 levererade av 415 paket (Bäverbutikens:
-  1 283 av 2 717). Första svenska leveranserna väntas den här veckan; sessionens check-in ons 30/9
-  08:40 CEST mäter Shopify `DELIVERED` mot Spoks inrullade. Fyrar händelsen inte trots levererade
-  ordrar byggs F14 (och de två monteringsflödena, samma trigger) om på `order_created` + 20 dagar,
-  som Bäverbutikens tipsflöden — Axels beslut, frågas då.
+- ✅ **`order_delivered` fyrar i Spoks, mätt 2026-09-30 08:45 CEST** (Shopify `DELIVERED` med
+  `deliveredAt` efter aktiveringen 27/9 06:49 UTC mot `get_flows`): 17 levererade i Shopify, NO 9
+  (7 takskyddet + 2 termoskyddet), US 3, NZ 2, CA 1, GB 1, FI 1. Spoks inrullade (pågående +
+  klara) stämmer på kontakten: `FLOW_levererat_takskyddet_NB` 3 + 4 = 7,
+  `_termoskyddet_NB` 1 + 1 = 2, `_recension_NB` 9, `_takskyddet_EN` 7 + 1 = 8 (CA, US, GB, FI,
+  NZ), `_recension_EN` 8. SV och DA 0, för ingen svensk eller dansk order är levererad än: de 46
+  svenska ordrarna 11–16/9 står 45 `InTransit` + 1 `InfoReceived` hos 17TRACK (YunExpress,
+  registrerade 20/9), och Shopify säger samma sak, så spårningen läser rätt. Inrullningen kräver
+  inte samtycke (alla nio norska är `NOT_SUBSCRIBED`). Ingen ombyggnad till `order_created` behövs.
+  Före mätningen: 0 inrullade och 0 `DELIVERED` 28/9 (se git-historiken för den gamla raden).
 
 ✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
 aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
@@ -731,12 +732,19 @@ efteråt. Danska och engelska var rena (danskan har `citat: false`, engelskan in
   redigeraren visar det inte: "To:" visar segmentet som vanligt (Axels skärmdump samma eftermiddag,
   NB: "SEG_samtycke_nb (18)"). **Sv blev `true`** efter Axels omschemaläggning 14:14. **Nb stod kvar
   på `false`** efter tre omschemaläggningar (sparad 14:16, 14:24 och 14:35; den sista enligt
-  instruktionen pennan → Remove time → REVIEW → Schedule), orsak oklar. Appens kod har knappen "Send out notifications now" på statistiksidan för
-  ett inlägg som inte notifierat någon (oprövad). Uppföljning 30/9 08:40 CEST:
-  `get_campaign_statistics` på alla fyra visar om nb mejlades.
-- **Regler ur samma eftermiddag:** (1) rätta aldrig en schemalagd kampanj via MCP utan att räkna med
-  att utskicket måste slås på igen i appen, och läs `notify` med `search_campaigns` innan något
-  kallas klart; (2) gissa aldrig ett knappnamn i appen. Sessionen skrev "Notify only" ur appens kod,
+  instruktionen pennan → Remove time → REVIEW → Schedule), orsak oklar.
+- ✅ **Utfallet: alla fyra mejlades tis 29/9 18:00, även norskan.** Mätt 2026-09-30 08:45 CEST:
+  alla fyra `published` 16:00 UTC, och nb bar `notify: true` efter publiceringen (`updated`
+  16:00:01). `get_campaign_statistics`: e-postmottagare **sv 38, nb 17, da 13, en 91 = 159**;
+  öppnade 10 / 9 / 7 / 26 (Apples automatiska öppningar ingår, så de dömer inget), klick 2 / 0 / 0 /
+  3, 0 köp och 0 kr attribuerat första natten. `notify: false` på en SCHEMALAGD kampanj stoppade
+  alltså inte utskicket; Spoks satte flaggan själv vid publiceringen (hur är inte utrett;
+  segmentet i "To:" stod rätt hela tiden). Flaggan före utskicket bevisar inget. Statistiken
+  efteråt gör det.
+- **Regler ur samma eftermiddag:** (1) rätta en schemalagd kampanj via MCP bara när det krävs, och
+  räkna med att `notify` kan stå på `false` efter omsparningen; läs `get_campaign_statistics` efter
+  utskicket innan något kallas klart, och be aldrig Axel klicka om för flaggans skull (tre onödiga
+  rundor 29/9); (2) gissa aldrig ett knappnamn i appen. Sessionen skrev "Notify only" ur appens kod,
   men knappen fanns inte i redigeraren. Be om en skärmdump först. (3) Fyra rundor klick samma
   eftermiddag slutade med Axels "håll käften nu". Ge hela vägen i ett meddelande, och ta resten
   själv eller nästa dag.

@@ -1,0 +1,10 @@
+{
+  "comment": "Hubbar som svarar 404 (integrationen är inte inbjuden) och som Axel har sagt att vi ska strunta i. De fyra är skalningsprodukternas GAMLA, arkiverade hubbar i products.json — de har svarat 404 i varje körning sedan länge, och nytt arbete för samma produkter ligger i de nyare BÄVER-hubbarna. Axels ord 2026-09-30, efter att fyra körningar i rad rapporterat dem: \"skit i boat cover 420D, beach crocs, trimmer belt, mower seat. Skit i alla dem.\" Läsarna (tools/notion-kalla.mjs → allaKlaraRader) räknar därför INTE deras 404 som ett fel att rapportera — de redovisas som EN rad 'hoppade, Axels beslut'. ⚠️ Bara 404 tystas, och bara för exakt dessa id:n: ett annat fel på samma hub, eller 404 på en hub som inte står här, larmar precis som förut. ⚠️ Commission läser hubbarna via sin egen väg (commission/hubbar.json) och påverkas inte — annars hamnar spend på fel person. Ska någon av dem läsas igen: bjud in integrationen (••• → Connections) och ta bort raden här.",
+  "beslut": "Axel 2026-09-30",
+  "hubbar": [
+    { "id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4", "titel": "Boat cover 420D creative hub", "produkt": "motorholjet" },
+    { "id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7", "titel": "Beach crocs creative hub", "produkt": "strandtofflorna" },
+    { "id": "3aa270ab-908c-808b-9d87-d1f1a0d70cbc", "titel": "Trimmer belt creative hub", "produkt": "axelbaltet" },
+    { "id": "3aa270ab-908c-80c0-88aa-cb4935db8f33", "titel": "Mower seat creative hub", "produkt": "satesoverdragaren" }
+  ]
+}
