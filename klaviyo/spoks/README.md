@@ -1016,16 +1016,17 @@ och Axel byter förhandstexten i appen. **Regeln:** skriv aldrig antal eller sni
 recensionerna i ett mejl som går ut senare än samma dag; recensionerna ändras av våra egna
 utskick.
 
-**Guardrails:** inget schemalagt utöver K01 (Axels eget klick), inget skickat av sessionen —
-**publik och Schedule per mejl är Axels klick i appen** (MCP:n kan varken välja publik eller
-schemalägga). ⛔ **En egen MCP/CLI löser det inte** (Axels fråga 2026-09-29 kväll, utrett samma
-kväll): Spoks **publika API** (`https://api.spoks.com`, nyckel per arbetsyta i headern `x-api-key`,
-kontraktet på https://docs.spoks.com/openapi.json, version 2026-07) skapar och ändrar bara utkast,
-och docs säger ordagrant att man "publish or schedule it from the app". `PATCH /campaigns/{id}`
-kan däremot sätta **publiken** (`recipients.segmentIds`), vilket MCP:n inte kan. Appen är Flutter
-(canvas, därav den vita sidan i en dold flik) mot `frontend.spoks.com` med Firebase-inloggning
-(projekt `spoks-app`); att härma den med Axels inloggning ur webbläsaren är sessionens beslut att
-inte bygga: skört, mot Spoks upplägg, och ett fel publicerar till ~3 000 direkt. Bara segment med samtycke (MFL
+**Guardrails:** inget skickat av sessionen, och **schemaläggning bara på Axels order** (MCP:n kan
+varken välja publik eller schemalägga). Spoks **publika API** kan det inte heller
+(`https://api.spoks.com`, nyckel per arbetsyta i headern `x-api-key`, kontraktet på
+https://docs.spoks.com/openapi.json, version 2026-07): det skapar och ändrar bara utkast, och docs
+säger ordagrant "publish or schedule it from the app". `PATCH /campaigns/{id}` kan däremot sätta
+**publiken** (`recipients.segmentIds`), vilket MCP:n inte kan. ✅ **Därför klickar roboten i
+appen sedan 2026-09-30** (Axels order: "bygg en cli för att kunna interagera med hemsidan … och sen
+scheduelar du alla"): `klaviyo/spoks/robot/`, se **Roboten** nedan. Sessionen avrådde först kvällen
+innan (skört, mot Spoks upplägg, ett fel når ~3 000 direkt); det som gjorde det försvarbart är att
+roboten går genom appens egna knappar i en inloggad webbläsare, aldrig genom interna anrop, och
+att spärrarna sitter i koden. Bara segment med samtycke (MFL
 19 §). Klaviyo-utkasten i `UV6Rqg` rörs inte. Sessionen raderar aldrig ett utkast.
 
 **Stoppregeln finns redan — `LARM_LEVERANS` i `docs/os/EPOST-STRATEGI.md` §8:** spamklagomål
@@ -1217,3 +1218,43 @@ webbläsare) gör dem.
   Raderar sig själv efter 31/12. Påminnelserna 30/9, 5/10, 6/10, 9/10, 12/10 och 2/11 är
   omskrivna samma dag: de ber aldrig Axel schemalägga för hand, utan ger en Cowork-prompt ur
   `cowork-schema.mjs --bara`.
+
+### Roboten 2026-09-30: schemaläggningen i appen, utan Cowork
+
+Axels order samma morgon, efter en kväll där Cowork fastnade på vita sidor ("bygg en cli för att
+kunna interagera med hemsidan … och sen scheduelar du alla"). `klaviyo/spoks/robot/` kör en
+Chromium-robot i containern (Playwright, `/opt/pw-browsers/chromium`) som klickar i Spoks-appen som
+en människa. Den har inte Coworks problem: en robotflik är aldrig dold.
+
+```bash
+node klaviyo/spoks/robot/spoks-robot.mjs logga-in            # en gång per container
+node klaviyo/spoks/robot/spoks-robot.mjs schemalagg --facit klaviyo/spoks/cowork/matstrumpor-schema-2026-10-01.json [--bara K03,V02] [--torr]
+```
+
+- **Inloggningen:** Spoks har ingen lösenordsinloggning, bara magisk länk, Google, telefon och
+  Apple. `logga-in` begär en länk till Spoks-kontot `kundsupport@baverbutiken.se` (samma användare
+  som MCP:n), läser mejlet "Sign in to Spoks requested at …" ur brevlådan med `kundtjanst/mail.mjs`
+  (`KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`) och öppnar länken i robotens profil. Profilen ligger i
+  `~/.cache/spoks-robot/profil` (aldrig i repot; `SPOKS_PROFIL` byter plats). Länken skrivs aldrig ut.
+- **Proxyn:** Chromium litar bara på containerproxyns egna CA:er (`--ignore-certificate-errors-spki-list`
+  med SPKI-hasharna ur `/root/.ccr/ca-bundle.crt`, räknade av `spkiHashar`), aldrig på allt.
+- **Appen är Flutter:** knapparna finns i DOM:en först när tillgänglighetsläget slås på
+  (`flt-semantics-placeholder`), och de hittas på sin text. Datumväljaren har pilar utan text,
+  dagknappar och fälten Timme och Minut där markören hoppar vidare efter två siffror.
+- **Vägarna, mätta 2026-09-30:** ett utkast: "Till:" (tomt fält ⇒ roboten kryssar facits segment i
+  listan, som skrollar och inte stängs av Esc) → "TITTA IGENOM" → Smart sending av → "Planera" →
+  datum och tid → "Tillämpa", som sparar direkt (en PUT mot posten). Ett schemalagt mejl på fel tid:
+  pillret → "Ändra publiceringstid" → datum och tid → "Tillämpa" → "TITTA IGENOM" →
+  **"Uppdatera inlägg"**. "Tillämpa" ensam sparar INTE ett schemalagt mejl (mätt: ingen begäran
+  alls, och efter omladdning stod den gamla tiden kvar).
+- **Spärrar i koden:** `SKICKA_NU` vägrar varje knapp som "Publicera nu"/"Skicka nu"/"Send now";
+  fel arbetsyta stoppar allt innan något rörs; fel eller tomt segment (0 kontakter) och påslagen
+  Smart sending (färgen mitt i rutan, vit = av) stoppar mejlet; varje sparning måste synas som en
+  PUT. Efteråt mäts allt med `search_campaigns` och `cowork-schema.mjs --jamfor`.
+- **Fyndet samma morgon:** K03 var schemalagd för hand 07:08 på onsdag 30/9 kl 18:00, samma tid som
+  V01 (datumväljaren öppnar på dagens datum). Roboten flyttade den till torsdag 1/10 kl 18:00,
+  bekräftat med `search_campaigns` (`2026-10-01T16:00Z`, uppdaterad 07:33).
+- **`notify`:** mejl som roboten schemalagt står med `notify: true`. V01 (Cowork 2026-09-29) står
+  kvar på `false` även efter att roboten sparat om den med samma tid. Granskningen i appen visar
+  samma sak för båda: Smart sending av och 2 971 som "beräknas skickas". Kvällens kontroll 18:20
+  säger om V01 faktiskt mejlades.
