@@ -143,6 +143,7 @@ Spårningens egna tester (167) bevisar att de fyra språkpaketen är fullständi
 | `sammanfoga.mjs` | Delarna `<locale>-A1…E.json` → `output/underlag-<locale>.json`: nyckelkontroll, granskning, hårda blanksteg tillbaka |
 | `kundvy.mjs` | Läser butiken som kund i varje land (POST /localization): lang, land, valuta, pris, paketnivå, läckor |
 | `output/underlag-<locale>.json` | Översättningarna (sonnet-subagenter mot REGLER, granskade adversariellt) — committade, det är minnet (`matstrumpor/.gitignore` undantar dem från `output/`) |
+| `PROMPT-granskning.md` | Uppdraget till en fristående session som granskar hela utlandsbygget innan Axel slår på något: Meta, video och röst, språket med en infödd granskare per språk, sajten och korgen som kund, mejlen och byggarens påståenden. Läs-bart. Axels beställning 2026-09-30: "Om du skriver en prompt för en annan session att granska dig". Rapporten hamnar i `granskning/` |
 
 ```bash
 node matstrumpor/marknader/underlag.mjs             # svenskt underlag ur Shopify
