@@ -1169,8 +1169,8 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   `worldwide/tema/appord.json`) — apparna själva går inte (Cowork 2026-09-30).
 - **Annonserna ligger i Magiborsten UK `1107817401910319`** med prefixet `BEAVERSTORE_WW_`,
   en CBO per produkt, **16 kampanjer à 1 000 kr/dag (Axels budget), 151 annonser (upp till tio per produkt,
-  `annonser/fyll-urval.mjs`). Annonser och adset är ACTIVE och kampanjerna PAUSED till 2026-10-01 00:01 svensk tid**, då
-  sessionens schemalagda väckning slår på dem (Axels order 2026-09-30). Meta vägrar ny `start_time` på ett adset som redan finns,
+  `annonser/fyll-urval.mjs`). ✅ Alla 16 kampanjer ACTIVE sedan 2026-10-01 00:01–00:16 svensk tid** (tillbakalästa: kampanj, adset och
+  alla 151 annonser), påslagna av sessionens schemalagda väckning (Axels order 2026-09-30). Meta vägrar ny `start_time` på ett adset som redan finns,
   så aktiveringen görs i två steg: `bygg.mjs --aktivera --forbered` och `--aktivera --bara-kampanj`. Sidan `1305042582683792` heter Beaver Store. Taköverdraget och termoskyddet
   visas inte i CaraShells länder. Bilderna omritade med OCR (`annonser/bildrita.mjs` + `zonrita.py`),
   videorna dubbade med ElevenLabs och kontrollerade med `annonser/textkoll.py` (OCR över hela
