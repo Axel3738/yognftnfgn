@@ -771,5 +771,739 @@
    "falsifiera": "✅",
    "ingen_annan": "❌"
   }
+ },
+ "Takoverdrag_OB_5_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Ja, det blir tätt.",
+    "en": "Yes, it seals tight."
+   },
+   {
+    "sv": "Fast bara taket.",
+    "en": "But only the roof."
+   },
+   {
+    "sv": "Det här täcker bara taket. Sidorna är öppna.",
+    "en": "It covers only the roof. The sides stay open."
+   },
+   {
+    "sv": "1 129 kr (ord. 1 469 kr)",
+    "en": ""
+   },
+   {
+    "sv": "Beställ ditt taköverdrag",
+    "en": "Order your roof cover"
+   }
+  ],
+  "layout_en": "Top: two lines of huge bold near-black centered sans-serif on white, then one small regular centered line below. A semi-transparent white bar across the lower photo holds the bold price line '1 129 kr (ord. 1 469 kr)' - paint out the text AND the bar so the motorhome shows through. Bottom: dark-blue rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "Yes, it seals tight. But only the roof.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Seatcover_SO_3_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "En present han faktiskt kommer använda – varje gång han klipper gräset.",
+    "en": "A gift he'll actually use – every time he mows the lawn."
+   },
+   {
+    "sv": "Praktisk – inget han behöver komma ihåg att använda",
+    "en": "Practical – nothing he has to remember to use"
+   },
+   {
+    "sv": "Uppskattad – syns att du tänkt efter",
+    "en": "Thoughtful – shows you put thought into it"
+   },
+   {
+    "sv": "Används varje gång han sätter sig på klipparen",
+    "en": "Used every time he sits on the mower"
+   },
+   {
+    "sv": "649 kr · Fri frakt · 30 dagars öppet köp",
+    "en": "Free shipping · 14-day returns"
+   }
+  ],
+  "layout_en": "Top-left: two-line bold near-black left-aligned headline over the blurred lawn. Below it three dash-bulleted lines, left-aligned, each starting with a bold keyword (Praktisk / Uppskattad / Används varje) followed by regular text over two lines. Bottom: off-white strip with one centered bold near-black line; paint out the whole strip text and redraw it as 'Free shipping · 14-day returns'.",
+  "tre_fragor": {
+   "rad": "A gift he'll actually use – every time he mows the lawn.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_PD_9_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Tyget stänger ute ljuset som får alger att växa.",
+    "en": "The fabric blocks the light that makes algae grow."
+   },
+   {
+    "sv": "Öppning upptill – kom åt locket utan att ta av överdraget.",
+    "en": "Top opening – reach the lid without removing the cover."
+   },
+   {
+    "sv": "489 kr (ord. 636 kr) · Fri frakt inom Sverige.",
+    "en": "Free shipping"
+   },
+   {
+    "sv": "Skydda tanken för 489 kr.",
+    "en": "Protect your tank."
+   }
+  ],
+  "layout_en": "Top: a large semi-transparent white box holds a two-line bold near-black centered headline, and a second white strip below holds a two-line regular centered sub line. Mid-bottom over the grass: one small bold white centered line (price and free shipping) - paint out and redraw as 'Free shipping' only. Bottom: dark-blue rounded pill button with bold white text; the price in the button is removed.",
+  "tre_fragor": {
+   "rad": "The fabric blocks the light that makes algae grow.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Termoskydd_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "40% RABATT – IDAG ENDAST",
+    "en": "40% OFF – TODAY ONLY"
+   },
+   {
+    "sv": "Få kvar i lager – beställ innan det är slut!",
+    "en": "Few left in stock – order before they're gone!"
+   }
+  ],
+  "layout_en": "Top: full-width light-blue banner with one huge bold white ALL-CAPS line. Just below, over the forest photo, a red rounded label with one medium white regular line centered. Repaint both in the same colours and weights; the motorhome photo stays untouched.",
+  "tre_fragor": {
+   "rad": "40% OFF – TODAY ONLY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beachslippers_PD_13_5": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "No text in the image (a black marbled slide on a stone block, beige background). Nothing to paint out or draw.",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "MC-Kapell_CS_7_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "SPARA 233 KR",
+    "en": ""
+   },
+   {
+    "sv": "349 kr istället för 582 kr — permanent, inte en kampanj",
+    "en": ""
+   },
+   {
+    "sv": "218×118,5 cm · Regn, damm och UV",
+    "en": "218×118.5 cm · Rain, dust and UV"
+   },
+   {
+    "sv": "Beställ för 349 kr",
+    "en": "Order yours"
+   }
+  ],
+  "layout_en": "Top: a white translucent box with a huge bold near-black centered line 'SPARA 233 KR', and a second white strip below with two lines of regular centered text - both are kronor prices, so paint out both boxes completely and let the grey wall show through. Mid-bottom: one small bold white centered line over the photo. Bottom: dark-blue rounded pill button with bold white text, centered.",
+  "tre_fragor": {
+   "rad": "218×118.5 cm · Rain, dust and UV",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Rodholder_PROD_V05": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Inga fler trassliga linor.",
+    "en": "No more tangled lines."
+   },
+   {
+    "sv": "Varje spö hålls stängt för sig.",
+    "en": "Each rod stays clipped on its own."
+   },
+   {
+    "sv": "4-pack 289 kr – 30 dagars nöjd-kund-garanti",
+    "en": "4-pack – 14-day returns"
+   }
+  ],
+  "layout_en": "Centered bold near-black sans-serif headline near the top, with a smaller regular grey subline directly below, on a pale grey-green gradient. Two orange clips fill the middle. Full-width rust-red bar at the bottom with one line of bold white text - paint out the whole line (it contains the kronor price) and redraw the English line centered in the same bar.",
+  "tre_fragor": {
+   "rad": "No more tangled lines.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Seatcover_SO_7_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Trött på det blöta sätet?",
+    "en": "Tired of the wet seat?"
+   },
+   {
+    "sv": "Ett nytt säte kostar tusenlappar.",
+    "en": "A new seat costs a fortune."
+   },
+   {
+    "sv": "Det här kostar betydligt mindre.",
+    "en": "This costs far less."
+   },
+   {
+    "sv": "811 kr",
+    "en": ""
+   },
+   {
+    "sv": "649 kr",
+    "en": ""
+   },
+   {
+    "sv": "Fri frakt, Klarna & 30 dagars öppet köp",
+    "en": "Free shipping & 14-day returns"
+   }
+  ],
+  "layout_en": "Black background. Huge bold white left-aligned two-line headline at the top, then two regular white sublines. Middle left: struck-through white '811 kr' above a big bold yellow '649 kr' - paint out both price lines and leave clean black (the seat photo sits to the right and lower, do not touch it). Bottom: dark navy bar with one regular white line, redrawn as English centered in the bar.",
+  "tre_fragor": {
+   "rad": "Tired of the wet seat?",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "IBC_CO_1_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Samma tank.",
+    "en": "Same tank."
+   },
+   {
+    "sv": "Olika sommar.",
+    "en": "Different summers."
+   },
+   {
+    "sv": "Utan skydd — med IBC-tanköverdraget",
+    "en": "Without cover — with the IBC tote cover"
+   }
+  ],
+  "layout_en": "Split photo (algae-green tank left, green covered tank right). Top: large semi-transparent white box with two centered bold near-black headline lines. Bottom: a thinner white box with one centered regular dark line. Redraw the text into the same boxes and keep the boxes.",
+  "tre_fragor": {
+   "rad": "Same tank. Different summers.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Termoskydd_MT_1_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "2 termoskydd – spara 15%",
+    "en": "2 thermal covers – save 15%"
+   },
+   {
+    "sv": "Rabatten är förvald i kassan – ingen kod att skriva in.",
+    "en": "Discount applied at checkout – no code needed."
+   },
+   {
+    "sv": "559 kr/st · Fri frakt · Klarna · 30 dagars öppet köp",
+    "en": "Free shipping · 14-day returns"
+   },
+   {
+    "sv": "Välj 2 st – få 15% rabatt",
+    "en": "Pick 2 – get 15% off"
+   }
+  ],
+  "layout_en": "Top: white box with a two-line centered bold near-black headline, then one regular dark line beneath it in the lower part of the same box. Lower third over a grey gradient: one small bold white centered line (contains the kronor price and Klarna - redraw as English, white, same place), and below it a dark-blue rounded pill button with bold white text.",
+  "tre_fragor": {
+   "rad": "2 thermal covers – save 15%",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beachslippers_PD_9_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Slät sula. Denna sula. Välj.",
+    "en": "Bald sole. This sole. Choose."
+   }
+  ],
+  "layout_en": "White strip across the top with one centered bold black sans-serif line. Below is a split photo of two soles; redraw only the headline in the white strip and leave the photo untouched (the worn sole shows a third-party logo molded in the rubber, part of the photo).",
+  "tre_fragor": {
+   "rad": "Bald sole. This sole. Choose.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Taljset_PD_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Sluta köpa täljverktyg ett och ett.",
+    "en": "Stop buying carving tools one by one."
+   },
+   {
+    "sv": "Få alla 30 i ett set.",
+    "en": "Get all 30 in one set."
+   }
+  ],
+  "layout_en": "Two centered lines of near-black sans-serif over a blurred pale workshop wall at the top; the first line regular weight, the second bold. Paint out with the soft off-white wall tone and redraw in the same positions. The table photo below is untouched.",
+  "tre_fragor": {
+   "rad": "Stop buying carving tools one by one.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Rodholder_PD_7_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Skillnaden är en\nklämma.",
+    "en": "The difference is\none clip."
+   },
+   {
+    "sv": "Utan klämma: spö trasslar",
+    "en": "Without clip: rods tangle"
+   },
+   {
+    "sv": "Med klämma: spö stängt",
+    "en": "With clip: rod secured"
+   },
+   {
+    "sv": "4-pack 289 kr – beställ idag",
+    "en": "4-pack – order today"
+   }
+  ],
+  "layout_en": "Headline: two centered lines of huge bold near-black sans-serif on an off-white background at the top. Two photo panels below, each with a rounded pill label at its top: left pill is black with white bold text, right pill is orange (#ff5a1f) with white bold text; keep the pill shapes and repaint only the text. Bottom: full-width dark orange-red bar with one centered bold white line; paint the '289 kr' out of the sentence and redraw the whole line in English.",
+  "tre_fragor": {
+   "rad": "The difference is one clip.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Seatcover_PD_21_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Lägger du fortfarande en\ngammal jacka över sätet?",
+    "en": "Still covering the seat\nwith an old jacket?"
+   },
+   {
+    "sv": "Gammal jacka",
+    "en": "Old jacket"
+   },
+   {
+    "sv": "Riktigt sätesöverdrag",
+    "en": "A real seat cover"
+   },
+   {
+    "sv": "Glider av och skyddar\nsällan hela sätet.",
+    "en": "Slips off and rarely\ncovers the whole seat."
+   },
+   {
+    "sv": "Sitter kvar med justerbara\nremmar i slittåligt\n600D Oxfordtyg.",
+    "en": "Stays put with adjustable\nstraps in tough\n600D Oxford fabric."
+   },
+   {
+    "sv": "Nu 649 kr med fri frakt.",
+    "en": "Free shipping."
+   }
+  ],
+  "layout_en": "Top: two-line headline in bold dark-brown Roboto-like sans-serif on white. Two side-by-side photos (old jacket on a mower seat left, grey seat cover right) each with a rounded pill label at the bottom edge: light grey pill left, beige pill right, bold dark text. Under the photos two centered captions of regular dark text on white (left one two lines, right one three lines). Bottom: full-width dark charcoal bar with one large bold white centered line; paint out the whole sentence and redraw 'Free shipping.' in the same style.",
+  "tre_fragor": {
+   "rad": "Still covering the seat with an old jacket?",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "✅"
+  }
+ },
+ "Overvakningskamera_PD_4_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Dag eller natt — den\nmissar aldrig något",
+    "en": "Day or night, it\nnever misses a thing"
+   },
+   {
+    "sv": "AI-spårning, 355° täckning",
+    "en": "AI tracking, 355° coverage"
+   },
+   {
+    "sv": "Två linser — inga döda vinklar",
+    "en": "Two lenses, no blind spots"
+   },
+   {
+    "sv": "Vet skillnad på människa och katt",
+    "en": "Tells a person from a cat"
+   },
+   {
+    "sv": "30 dagars nöjd-kund-garanti",
+    "en": "14-day returns"
+   },
+   {
+    "sv": "Handla nu",
+    "en": "Shop now"
+   }
+  ],
+  "layout_en": "Semi-transparent white panels over a split day/night photo. Headline: two centered lines of bold near-black sans-serif in the top panel. Subline: one regular dark line in a thinner panel under it. Bottom panel: three centered checklist lines, each with a green checkmark icon on the left (keep the icons), regular dark text. Below, a dark-blue (#1c4a7a) pill button with bold white centered text.",
+  "tre_fragor": {
+   "rad": "Day or night, it never misses a thing",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beachslippers_SO_5_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Sommarerbjudande ☀️",
+    "en": "Summer offer ☀️"
+   },
+   {
+    "sv": "2 par – endast 598 kr!",
+    "en": "2 pairs – one low price!"
+   },
+   {
+    "sv": "Bäverbutiken.se",
+    "en": ""
+   }
+  ],
+  "layout_en": "Top: black rounded pill with white regular text and a sun emoji, centered. Below it a teal ribbon banner, slightly rotated upward to the right, with one line of bold white sans-serif; keep the ribbon and repaint the text along its angle. Bottom center: the store domain in regular black text on the pale gradient background; paint it out completely with the surrounding gradient so nothing remains.",
+  "tre_fragor": {
+   "rad": "2 pairs – one low price!",
+   "visualisera": "❌",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beltgrinder_SO_5_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "3 verktyg i ett.\nPriset av ett.",
+    "en": "3 tools in one.\nThe price of one."
+   },
+   {
+    "sv": "Kniv, sax och yxa — samma verktyg, samma köp.",
+    "en": "Knife, scissors and axe. One tool, one purchase."
+   },
+   {
+    "sv": "909 kr (ord. 1 182 kr) — spara 273 kr, 23 %",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Beställ Bälteslipmaskinen",
+    "en": "Order the Belt Grinder"
+   }
+  ],
+  "layout_en": "Top white panel: two centered lines of large bold near-black sans-serif; a thinner white strip below it holds one regular dark line. Bottom: a white strip with one small regular dark centered line (prices in kronor: replace the whole line with 'Save 23%', same style). Under it a dark-blue (#1c4a7a) pill button with bold white centered text.",
+  "tre_fragor": {
+   "rad": "3 tools in one. The price of one.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Batmotor_PD_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "SLUTA LÅTA REGN OCH SOL FÖRSTÖRA DIN MOTOR",
+    "en": "STOP LETTING RAIN AND SUN RUIN YOUR MOTOR"
+   }
+  ],
+  "layout_en": "Two centered lines of huge bold white ALL-CAPS condensed sans-serif over the blue sky at the top, no box or background fill. Redraw the same text in the same spot and weight; the sky behind is smooth so paint it out cleanly first.",
+  "tre_fragor": {
+   "rad": "STOP LETTING RAIN AND SUN RUIN YOUR MOTOR",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Seatcover_PD_10_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "4 skäl att skydda sätet innan hösten",
+    "en": "4 reasons to protect your mower seat"
+   },
+   {
+    "sv": "Slipp den kalla, blöta känslan i baken varje morgon",
+    "en": "No more cold, wet seat every morning"
+   },
+   {
+    "sv": "Slipp ont i ryggen och baken efter en hel dags klippning",
+    "en": "No more aching back after a full day of mowing"
+   },
+   {
+    "sv": "Slipp krångel och bortslösad tid med verktyg",
+    "en": "No fuss, no wasted time with tools"
+   },
+   {
+    "sv": "Slipp betala tusenlappar för ett nytt säte om ett år",
+    "en": "No paying big money for a new seat next year"
+   },
+   {
+    "sv": "649 kr · Fri frakt · 30 dagars öppet köp",
+    "en": "Free shipping · 14-day returns"
+   }
+  ],
+  "layout_en": "Off-white background. Headline: two left-aligned lines of very large extra-bold near-black sans-serif at the top. Below it a pale rounded card holds four numbered rows (beige number chips 1-4 stay), each a 2-3 line left-aligned regular dark sans-serif text; repaint each row's text only, keep the chips. Bottom: full-width near-black bar with one centered white regular line - paint out and redraw as 'Free shipping · 14-day returns' with no price.",
+  "tre_fragor": {
+   "rad": "4 reasons to protect your mower seat",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Overvakningskamera_CS_2_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "20% RABATT – IDAG",
+    "en": "20% OFF – TODAY"
+   },
+   {
+    "sv": "Endast 799 kr (ord. 1000 kr) —",
+    "en": ""
+   },
+   {
+    "sv": "Begränsat lager, snart slut!",
+    "en": "Limited stock, almost gone!"
+   }
+  ],
+  "layout_en": "White background with red diagonal shards. Top: one line of huge bold ALL-CAPS white text with thick red outline and shadow, centered; redraw in the same style. Bottom: two centered lines of heavy black condensed sans-serif - the first line (799 kr / ord. 1000 kr) is painted out completely to clean white, the second is redrawn in the same black heavy style. The blank red price tag on the camera stays untouched.",
+  "tre_fragor": {
+   "rad": "20% OFF – TODAY",
+   "visualisera": "❌",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beachslippers_PD_13_2": {
+  "hoppa": null,
+  "rader": [],
+  "layout_en": "Pure product photo of two camouflage clogs on white blocks; the only lettering ('SPORT' on the strap, 'Hey,' on the box) is part of the photo, not ad text. No text to replace.",
+  "tre_fragor": {
+   "rad": "",
+   "visualisera": "–",
+   "falsifiera": "–",
+   "ingen_annan": "–"
+  }
+ },
+ "Beltgrinder_PD_27_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Från slö till rakbladsvass.",
+    "en": "From dull to razor-sharp."
+   },
+   {
+    "sv": "10 sekunder.",
+    "en": "10 seconds."
+   },
+   {
+    "sv": "Bälteslipmaskin Mini 3-i-1 – knivslip & polerare.",
+    "en": "Mini 3-in-1 Belt Grinder – knife sharpener & polisher."
+   },
+   {
+    "sv": "909 kr (ord. 1 182 kr) – spara 273 kr.",
+    "en": ""
+   },
+   {
+    "sv": "Vässa dina knivar.",
+    "en": "Sharpen your knives."
+   }
+  ],
+  "layout_en": "Top: large white semi-opaque panel with a three-line centered bold black Arial-style headline, then a thin white strip with one regular centered subtitle line. Paint out and redraw text only, panel stays. Lower: a white price strip with one regular line - paint the text out AND the strip so the photo/gradient shows through. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white centered text.",
+  "tre_fragor": {
+   "rad": "From dull to razor-sharp. 10 seconds.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Batmotor_BF_13_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "420D Oxford-tyg.",
+    "en": "420D Oxford fabric."
+   },
+   {
+    "sv": "Ner över hela riggen.",
+    "en": "Down over the whole rig."
+   },
+   {
+    "sv": "Vänster: oskyddad. Höger: skyddad med 420D Oxford.",
+    "en": "Left: unprotected. Right: covered in 420D Oxford."
+   },
+   {
+    "sv": "579 kr. Ordinarie 965 kr. Du sparar 386 kr.",
+    "en": ""
+   },
+   {
+    "sv": "Beställ Båtmotorskyddet 420D.",
+    "en": "Get the 420D Outboard Cover."
+   }
+  ],
+  "layout_en": "Top: large white translucent card with two centered lines of huge bold near-black sans-serif (lines 1-2), then a thin divider and a regular-weight two-line centered subline (line 3, wraps to a second line). Split before/after photo of an outboard in rain fills the middle. Small bold white price line (line 4) sits near the bottom over the photo - paint it out completely (no replacement text). Bottom: dark-blue (#1c4a7a) rounded pill button with bold white centered text (line 5).",
+  "tre_fragor": {
+   "rad": "Down over the whole rig.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Enginecover_SO_7_2": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Den dag du säljer båten tittar köparen på motorn först",
+    "en": "The day you sell the boat, the buyer looks at the motor first"
+   },
+   {
+    "sv": "En välvårdad kåpa gör ett helt annat intryck än en blekt",
+    "en": "A cared-for cover looks far better than a faded one"
+   },
+   {
+    "sv": "Skydda utseendet – och värdet · 299 kr",
+    "en": "Protect the looks – and the value"
+   },
+   {
+    "sv": "30 dagars nöjd-kund-garanti",
+    "en": "14-day returns"
+   }
+  ],
+  "layout_en": "White background. Lines 1 is a huge bold black centered sans-serif headline over two lines at the top, line 2 a regular black one-line subline directly under it. Bottom-left: regular black line 3 with the bold '299 kr' at its end - paint out the '· 299 kr' part and redraw the line without a price. Bottom-right: dark slate-grey circle badge with white bold 3-line text (line 4) - repaint the circle and fit the shorter English in 2 lines.",
+  "tre_fragor": {
+   "rad": "The day you sell the boat, the buyer looks at the motor first",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
+ },
+ "Overvakningskamera_CS_4_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Spara 201 kr i dag",
+    "en": "Save today"
+   },
+   {
+    "sv": "1 000 kr",
+    "en": ""
+   },
+   {
+    "sv": "799 kr",
+    "en": ""
+   },
+   {
+    "sv": "Fri frakt över 300 kr",
+    "en": "Free shipping"
+   },
+   {
+    "sv": "Klarna – betala senare",
+    "en": ""
+   },
+   {
+    "sv": "30 dagars nöjd-kund-garanti",
+    "en": "14-day returns"
+   },
+   {
+    "sv": "Handla nu",
+    "en": "Shop now"
+   }
+  ],
+  "layout_en": "Bright white product shot of a dual-lens camera. Line 1 is a large bold near-black centered headline at the top. Below it two centered price lines: struck-through grey '1 000 kr' and huge bold black '799 kr' - paint both rows out over the pale background, no replacement. Lower part: white translucent box with three green-check bullet lines in regular dark text (lines 4-6); line 5 (Klarna) has no replacement, so remove that row and its checkmark and re-space the two remaining bullets. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white text (line 7).",
+  "tre_fragor": {
+   "rad": "Save today",
+   "visualisera": "❌",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beachslippers_SO_7_2": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Vi beställde för mycket",
+    "en": "We ordered too many"
+   },
+   {
+    "sv": "349 kr",
+    "en": ""
+   },
+   {
+    "sv": "istället för",
+    "en": ""
+   },
+   {
+    "sv": "420 kr",
+    "en": ""
+   },
+   {
+    "sv": "Så långt lagret räcker",
+    "en": "While stock lasts"
+   }
+  ],
+  "layout_en": "Photo of four clogs on dark wet decking. Top-right: dark rounded semi-transparent box with white bold text. Line 1 small bold white; below it one row with huge bold white '349 kr', small 'istället för' and a struck-through '420 kr' - paint that whole price row out and shrink the box so it holds only line 1 and line 5 (small bold white) directly under each other.",
+  "tre_fragor": {
+   "rad": "We ordered too many",
+   "visualisera": "✅",
+   "falsifiera": "❌",
+   "ingen_annan": "❌"
+  }
+ },
+ "Beltgrinder_PD_32_1": {
+  "hoppa": null,
+  "rader": [
+   {
+    "sv": "Betala en gång.",
+    "en": "Pay once."
+   },
+   {
+    "sv": "Sluta betala för att slipa knivar.",
+    "en": "Stop paying to get knives sharpened."
+   },
+   {
+    "sv": "Varje kniv i lådan vässad — en enda betalning.",
+    "en": "Every knife in the drawer sharpened — one payment."
+   },
+   {
+    "sv": "909 kr · Jämförpris 1 182 kr · Spara 273 kr (23%)",
+    "en": "Save 23%"
+   },
+   {
+    "sv": "Handla nu",
+    "en": "Shop now"
+   }
+  ],
+  "layout_en": "White background, belt grinder photo in the middle. Top: huge bold near-black centered headline, line 1 on its own row, line 2 wrapping over two rows. Under it one regular-weight centered subline (line 3). Lower third: full-width light-grey bar with one regular dark line of prices (line 4) - paint the whole line out and set only 'Save 23%' centered in the bar. Bottom: dark-blue (#1c4a7a) rounded pill button with bold white text (line 5).",
+  "tre_fragor": {
+   "rad": "Pay once. Stop paying to get knives sharpened.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "ingen_annan": "❌"
+  }
  }
 }

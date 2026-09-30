@@ -1061,5 +1061,109 @@
  },
  "Takoverdrag_PD_4_H1": {
   "hoppa": "innehåller klipp ur Specialised Covers video (samma sekvens som fällde KD-2026-001, konkurrenter/arenden/KD-2026-001/specialised-covers.json) — laddas inte upp i ett nytt konto; 2026-09-30"
+ },
+ "Takoverdrag_OB_5_1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_OB_5_1.jpg",
+  "sha256": "6994c861e1bd5f246fa73147e5913e28f471005333349c939e538a3698d75793",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Rodholder_PROD_V05": {
+  "fil": "worldwide/annonser/klar/Rodholder_PROD_V05.jpg",
+  "sha256": "80b5b44be3a8627c26025f3588d834097cdbc8a64ece744ae8cef1295a08098b",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Rodholder_PD_7_1": {
+  "fil": "worldwide/annonser/klar/Rodholder_PD_7_1.jpg",
+  "sha256": "bfbb9ac28a644fd16ccb8aea294888874399f75d7204b3501be68fc4c09e4478",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Batmotor_PD_2_1": {
+  "fil": "worldwide/annonser/klar/Batmotor_PD_2_1.jpg",
+  "sha256": "b794f20e94f475cf3696531e2293311b0570f811639cd5c8e1985514d8fb1d6f",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Batmotor_BF_13_1": {
+  "fil": "worldwide/annonser/klar/Batmotor_BF_13_1.jpg",
+  "sha256": "4e80baaebc5f8225397dd2297c85c02f59381319fc316c5dff8f67d04cf35011",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Seatcover_SO_3_1": {
+  "fil": "worldwide/annonser/klar/Seatcover_SO_3_1.jpg",
+  "sha256": "8d230dbb601561c27cb72c9d78abf809dc38c9229ae07ef5b46de91e309d2349",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Seatcover_SO_7_1": {
+  "fil": "worldwide/annonser/klar/Seatcover_SO_7_1.jpg",
+  "sha256": "90559d6e0fc1021066c27c8ad83c374f21b1717ad46d8f08a683f54097355f2f",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Seatcover_PD_21_1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_21_1.jpg",
+  "sha256": "7efff00488c3b6ac300dc582b74f80d99cd90416f114ef0e815e11ed04a61ee1",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Seatcover_PD_10_1": {
+  "fil": "worldwide/annonser/klar/Seatcover_PD_10_1.jpg",
+  "sha256": "3f9cf3c171aa4366fd3c1704811d6c6f301742032430a32264d988d1c38bec72",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": [
+   "2.",
+   "3.",
+   "4."
+  ]
+ },
+ "Enginecover_SO_7_2": {
+  "fil": "worldwide/annonser/klar/Enginecover_SO_7_2.jpg",
+  "sha256": "48d95514067bd79b4370e2414abe902f398fa58b64310b601b4792066e5e4024",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "IBC_PD_9_1": {
+  "fil": "worldwide/annonser/klar/IBC_PD_9_1.jpg",
+  "sha256": "7e1014c91149d4126f104924765f1f2da3c1fcfa759a418a054b09976bdb28e8",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "IBC_CO_1_1": {
+  "fil": "worldwide/annonser/klar/IBC_CO_1_1.jpg",
+  "sha256": "71548a24888cc656f444304ffc22b16313e8325f634740bb6cc56b0c5890fa51",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Overvakningskamera_PD_4_1": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_PD_4_1.jpg",
+  "sha256": "95f3d1702bf497539e4d518747e7a6f449d452ff7ed5858c5a81bf68b87594c0",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": []
+ },
+ "Overvakningskamera_CS_2_1": {
+  "fil": "worldwide/annonser/klar/Overvakningskamera_CS_2_1.jpg",
+  "sha256": "122dcb5b0c703e34f5116803d23cabf70ed30ba1635bf73ffca46b61bf24f992",
+  "granskad": false,
+  "efterkontroll": "ren",
+  "oparade": [
+   "5G"
+  ]
  }
 }
