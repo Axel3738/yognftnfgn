@@ -1,0 +1,57 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-30/no-video/spikkesett_Spikkesett_NO_OB_1_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-30/no/Spikkesett_NO_OB_1_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-30/srt-no/spikkesett_Spikkesett_NO_OB_1_H1.srt",
+ "captions": {
+  "zon": [
+   775,
+   935
+  ],
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 700,
+  "h_min": 45,
+  "h_max": 85,
+  "standard_cy": 855,
+  "max_chars": 30,
+  "font_px": 27,
+  "pad_x": 6,
+  "pad_y": 6
+ },
+ "blur": [
+  {
+   "rect": [
+    240,
+    200,
+    482,
+    292
+   ],
+   "t": [
+    7.4,
+    12.870000000000001
+   ]
+  },
+  {
+   "rect": [
+    58,
+    292,
+    664,
+    374
+   ],
+   "t": [
+    7.4,
+    12.870000000000001
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-30/lager/slutkort-no.png",
+   "t": [
+    7.4,
+    12.870000000000001
+   ]
+  }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-30/qa"
+}
