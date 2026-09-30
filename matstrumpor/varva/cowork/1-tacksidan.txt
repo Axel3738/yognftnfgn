@@ -1,0 +1,125 @@
+Jag vill ha ett "värva en vän"-kort på tacksidan i min butik Matstrumpor. Koden
+för kortet är färdig. Den behöver en EGEN liten Shopify-app att ligga i, och
+sedan ska blocket läggas in på tacksidan och orderstatussidan. Gör allt i
+Chrome med mitt inloggade konto och fråga mig om inloggning när du behöver
+den. Datorn är en Windows-dator.
+
+Uppdraget har två halvor med en PAUS i mitten. Efter steg 4 väntar du tills
+jag skriver "deployad". Först då gör du steg 5–7.
+
+------------------------------------------------------------------------------
+RÖR ALDRIG
+------------------------------------------------------------------------------
+
+- Appen "Fabriken" eller någon annan befintlig app. Den här appen är NY och
+  helt egen.
+- Rabatter, priser, produkter, temat, betalningar, frakt, marknader, domäner,
+  DNS och Shopify Payments.
+- Andra block i kassaredigeraren. Du LÄGGER TILL ett block på två sidor och
+  ändrar inget annat, inte heller färger, logga eller texter.
+- Andra butiker. Bara Matstrumpor (1r46tp-qx).
+
+------------------------------------------------------------------------------
+FAKTA
+------------------------------------------------------------------------------
+
+| Vad                  | Värde                                          |
+|----------------------|------------------------------------------------|
+| Butik                | Matstrumpor.se, 1r46tp-qx.myshopify.com         |
+| Appens namn          | Matstrumpor Tacksida                           |
+| Rättigheter (scopes) | INGA, lämna tomt                               |
+| Blockets namn        | Värva en vän                                   |
+
+------------------------------------------------------------------------------
+STEG 1 — SKAPA APPEN
+------------------------------------------------------------------------------
+
+1. Öppna https://admin.shopify.com/store/1r46tp-qx/settings/apps och klicka
+   "Utveckla appar" / "Develop apps". Det öppnar Dev Dashboard. Skriv upp
+   organisationens namn uppe till vänster.
+2. Klicka "Create app" / "Skapa app". Namn: Matstrumpor Tacksida.
+   Väljer den mellan typer: ta den enklaste ("Start from scratch" / "Build for
+   a single store"). Kräver formuläret en URL: skriv https://matstrumpor.se.
+3. Gå till appens Settings och läs av Client ID. Skriv upp hela.
+4. Lägg INTE till några rättigheter. Access scopes ska vara tomt.
+
+------------------------------------------------------------------------------
+STEG 2 — INSTALLERA APPEN I BUTIKEN
+------------------------------------------------------------------------------
+
+1. I appen: "Install app" / "Distribution" / "Test on store". Välj butiken
+   Matstrumpor.se (1r46tp-qx) och installera.
+2. Kommer en godkännandesida i butikens admin: godkänn. Den ska inte be om
+   några rättigheter. Ber den om rättigheter: STANNA och säg vilka.
+3. Kontrollera att https://admin.shopify.com/store/1r46tp-qx/settings/apps nu
+   listar "Matstrumpor Tacksida".
+
+------------------------------------------------------------------------------
+STEG 3 — GENERERA TOKEN
+------------------------------------------------------------------------------
+
+1. I appen: Settings → "App Automation Token" → Generate. Token börjar på
+   "atkn_".
+
+------------------------------------------------------------------------------
+STEG 4 — GE MIG VÄRDENA, SEDAN PAUS
+------------------------------------------------------------------------------
+
+Du får inte skriva in hemligheter i fält. Skriv dem till mig i chatten,
+exakt så här, så klistrar jag in dem själv:
+
+  Lägg in två variabler på claude.ai/code → Environments, i den miljö som
+  har SHOPIFY_CLIENT_ID_1r46tp_qx:
+    TACKSIDA_CLIENT_ID_MATSTRUMPOR = <client id>
+    SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR = <token>
+  Skriv sedan "deploya värva-kortet" till Claude-sessionen. Skriv "deployad"
+  till mig när den sagt att kortet är deployat.
+
+STANNA HÄR tills jag skriver "deployad".
+
+------------------------------------------------------------------------------
+STEG 5 — LÄGG IN BLOCKET PÅ TACKSIDAN
+------------------------------------------------------------------------------
+
+1. Öppna https://admin.shopify.com/store/1r46tp-qx/settings/checkout och klicka
+   "Anpassa" / "Customize" (knappen kan heta "Redigera") på den publicerade
+   kassan.
+2. Välj sidan "Tack" / "Thank you" i sidväljaren högst upp.
+3. Klicka "Lägg till block" / "Add block" i vänsterspalten. Välj "Värva en
+   vän" under "Matstrumpor Tacksida". Lägg det under orderbekräftelsen, så
+   högt upp som det går utan att flytta något annat block.
+4. I förhandsvisningen ska ett kort synas med rubriken "Ge en vän 50 kr i
+   rabatt", en länk som slutar på "?van=EXEMPEL1" och knappen "Kopiera
+   länken". Syns inget kort: STANNA och ta en skärmdump.
+5. Klicka "Spara" / "Save".
+
+------------------------------------------------------------------------------
+STEG 6 — SAMMA BLOCK PÅ ORDERSTATUSSIDAN
+------------------------------------------------------------------------------
+
+1. I samma redigerare: välj sidan "Orderstatus" / "Order status".
+2. "Lägg till block" → "Värva en vän". Lägg det högt upp, under
+   orderbekräftelsen.
+3. Samma kontroll som i steg 5.4. Klicka "Spara".
+
+------------------------------------------------------------------------------
+STEG 7 — KONTROLLERA
+------------------------------------------------------------------------------
+
+1. Ladda om redigeraren och kontrollera att blocket står kvar på båda sidorna.
+2. Ta en skärmdump av förhandsvisningen av tacksidan.
+3. Öppna https://matstrumpor.se/?van=PROV0VARVA1 i ett INKOGNITOFÖNSTER
+   (Ctrl+Shift+N), så att provet inte fastnar i min vanliga webbläsare. Nere på
+   sidan ska en mörk ruta synas: "Din vän har gett dig 50 kr rabatt. Den dras
+   av i kassan på ditt första köp." Ta en skärmdump. Lägg INTE någon order.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILL SLUT, KORT
+------------------------------------------------------------------------------
+
+- Organisationens namn där appen skapades.
+- Appens namn och de första 8 tecknen av Client ID.
+- Att appen syns som installerad i butikens applista.
+- Att blocket ligger på tacksidan och orderstatussidan, sparat, med
+  skärmdumparna.
+- Allt du INTE gjorde och varför.
