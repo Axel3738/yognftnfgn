@@ -34,7 +34,8 @@
    "a": 13.78,
    "b": 15.56,
    "sv": "Och sen, vänta, det är strumpor.",
-   "text": "And then, wait, it's socks."
+   "text": "And then, wait, they're socks.",
+   "not_2026_09_30": "Var \"it's socks\": Whisper medium OCH large-v3 hörde \"it sucks\" i två tagningar (frö 29 och 1029). Repliken är syskonvideons (haikuh3), godkänd i runda 4; \"they're socks\" hördes rätt av båda."
   },
   {
    "a": 15.56,
