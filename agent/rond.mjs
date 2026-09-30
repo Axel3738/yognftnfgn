@@ -14,7 +14,6 @@ import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRa
 import { brieftak, harLevandeVinnare, minnesmapp, mix, vidarebyggBehov } from './lardom.mjs';
 import { cpaStiger, cpaText, dagarOver, klickandel, CPA_STIG_DAGAR } from './trend.mjs';
 import { cpaDiagnos, funnellage, lasMatris, rutorAttBygga, storstaObesvarade, tackningRad, tackningText, FUNNEL_BUDGET_SEK } from './invandningar.mjs';
-import { facitNot, status as facitStatus } from './facit.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -850,13 +849,15 @@ export function rapport(rader, meta, behov = []) {
   // Facit (Axel 2026-09-30, agent/FACIT.md): hur motorns tidigare beslut i
   // samma läge gick — bredvid dagens beslut, före "Att godkänna". Ändrar inget.
   if (meta.facit) {
-    ut.push(`## 🎯 Facit — så har motorns beslut gått (${meta.facit.skapad})`);
+    ut.push(`## 🎯 Facit — så har motorns beslut gått (${meta.facit.skapad}${meta.facit.delvis ? ', DELVIS — ett konto saknades' : ''})`);
     ut.push('');
-    for (const s of meta.facit.status.slice(1)) ut.push(s);
-    const medNot = sorterade.filter((r) => r.dom?.facit && (r.dom.kraverGodkannande || r.dom.facit.familj.startsWith('HALL')));
+    ut.push('Underlag, inte order: facit ändrar ingen dom, ingen budget och ingen status. Regelförslag är Axels beslut.');
+    ut.push('');
+    for (const s of (meta.facit.status ?? []).slice(1)) ut.push(s);
+    const medNot = sorterade.filter((r) => r.dom?.facit && r.dom.kraverGodkannande);
     if (medNot.length) {
       ut.push('');
-      ut.push('Dagens beslut bredvid sin hink:');
+      ut.push('Dagens åtgärder bredvid sin hink:');
       for (const r of medNot) ut.push(`- **${r.namn.split('|')[0].trim()}** (${r.dom.kod}) — ${r.dom.facit.text}`);
     }
     ut.push('');
@@ -1115,22 +1116,11 @@ async function main() {
   }
 
   // Facit (Axels beställning 2026-09-30, agent/FACIT.md): hur motorns tidigare
-  // budgetbeslut i samma läge faktiskt gick. Läses HÄR och läggs bredvid
-  // domen som `dom.facit` — koden, budgeten och planen är desamma med eller
-  // utan (testat). Saknas filen eller är den gammal: en varning, inget mer.
-  const kal = await lasKalibrering();
-  let facit = null;
-  if (kal) {
-    const alder = (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${kal.skapad}T00:00:00Z`)) / 86400000;
-    if (!Number.isFinite(alder) || alder > KALIBRERING_MAX_DAGAR) {
-      varningar.push(`agent/kalibrering.json är från ${kal.skapad ?? 'okänt datum'} — facit visas inte i dag (rond-auto steg 1d).`);
-    } else {
-      for (const r of rader) { const not = facitNot(kal, r); if (not) r.dom.facit = not; }
-      facit = { skapad: kal.skapad, forslag: kal.forslag ?? [], status: facitStatus(kal) };
-    }
-  } else {
-    varningar.push('agent/kalibrering.json saknas — facit visas inte i dag (rond-auto steg 1d: node agent/facit.mjs --hamta).');
-  }
+  // beslut i samma läge gick, bredvid dagens beslut. Laddas SKYDDAT — ett fel i
+  // facit.mjs eller en trasig kalibrering.json får aldrig stoppa ronden (en
+  // avbruten rond betyder ingen budgetändring alls den dagen). Koden, budgeten
+  // och planen är desamma med eller utan facit (testat).
+  const facit = await laddaFacit(rader, idag, varningar);
 
   const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf), spegel, facit };
   if (argv.includes('--json')) {
@@ -1147,8 +1137,42 @@ async function main() {
   }
 }
 
-/** Facit-kalibreringen får vara så här många dygn gammal innan den inte visas. */
+/** Facit-kalibreringen får vara så här många dygn gammal innan den inte visas.
+ *  Facit körs sist i rutinen (steg 6b), så ronden läser alltid gårdagens. */
 export const KALIBRERING_MAX_DAGAR = 3;
+
+/**
+ * Lägger facit bredvid dagens domar och ger rapportens facit-block — eller null.
+ * Kastar ALDRIG: modulen laddas dynamiskt, varje rad skyddas, och allt som går
+ * fel blir en varning. `dom.facit` är rena siffror (inga förslag, inga verb) —
+ * förslagen går bara till Axel (kritiken 2026-09-30: en text bredvid dagens
+ * beslut får inte kunna läsas som en order).
+ */
+export async function laddaFacit(rader, idag, varningar, { kal = undefined, modul = undefined } = {}) {
+  try {
+    const m = modul ?? await import('./facit.mjs');
+    const k = kal === undefined ? await lasKalibrering() : kal;
+    if (!k) { varningar.push('agent/kalibrering.json saknas — facit visas inte i dag (rond-auto steg 6b: node agent/facit.mjs --hamta --skriv).'); return null; }
+    if (k.schema !== m.KALIBRERING_SCHEMA || typeof k.hinkar?.lang !== 'object' || k.hinkar.lang === null) {
+      varningar.push(`agent/kalibrering.json har fel format (schema ${k.schema ?? 'saknas'}, väntat ${m.KALIBRERING_SCHEMA}) — facit visas inte i dag.`);
+      return null;
+    }
+    const alder = (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${k.skapad}T00:00:00Z`)) / 86400000;
+    if (!Number.isFinite(alder) || alder > KALIBRERING_MAX_DAGAR || alder < 0) {
+      varningar.push(`agent/kalibrering.json är från ${k.skapad ?? 'okänt datum'} — facit visas inte i dag.`);
+      return null;
+    }
+    for (const r of rader) {
+      try { const not = m.facitNot(k, r); if (not) r.dom.facit = not; } catch (e) { varningar.push(`Facit för ${String(r.namn ?? r.id).split('|')[0].trim()} kunde inte räknas: ${e.message}`); }
+    }
+    let status = [];
+    try { status = m.status(k); } catch (e) { varningar.push(`Facit-statusen kunde inte skrivas: ${e.message}`); }
+    return { skapad: k.skapad, delvis: k.delvis === true, antal_forslag: Array.isArray(k.forslag) ? k.forslag.length : 0, fil: `agent/utdata/facit-${k.skapad}.md`, status };
+  } catch (e) {
+    varningar.push(`Facit kunde inte läsas: ${e.message} — ronden går vidare utan.`);
+    return null;
+  }
+}
 
 /** agent/kalibrering.json (skriven av agent/facit.mjs), eller null. */
 async function lasKalibrering() {

@@ -34,24 +34,37 @@ export const SPEGEL = {
   '1107817401910319': 'Magiborsten UK',
 };
 
-const PAUS_MS = 1200;
-const BACKOFF_MS = [20000, 40000, 80000, 160000, 300000];
+let PAUS_MS = 1200;
+let BACKOFF_MS = [20000, 40000, 80000, 160000, 300000];
 let senast = 0;
 const vänta = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export async function api(sökväg, params = {}) {
+/** Bara för tester: paus och backoff utan riktig väntan. */
+export function stallIn({ pausMs, backoffMs } = {}) {
+  if (Number.isFinite(pausMs)) PAUS_MS = pausMs;
+  if (Array.isArray(backoffMs)) BACKOFF_MS = backoffMs;
+  senast = 0;
+}
+
+/**
+ * `opts.backoff` ersätter backoff-trappan för ett anrop (facit: ett försök på
+ * 20 s, inte 600 s — den får aldrig hålla upp rondens budgetändringar), och
+ * `opts.deadline` (ms sedan epoch) avbryter hellre än att vänta förbi den.
+ */
+export async function api(sökväg, params = {}, opts = {}) {
   if (!TOKEN) throw new Error('META_ACCESS_TOKEN saknas i miljön.');
   const url = new URL(`${API}/${sökväg}`);
   url.searchParams.set('access_token', TOKEN);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, typeof v === 'object' ? JSON.stringify(v) : String(v));
-  return hamtaUrl(url);
+  return hamtaUrl(url, opts);
 }
 
 /**
  * Ett GET mot en färdig adress (första sidan eller `paging.next`), med samma
  * paus och samma backoff. Ger aldrig upp tyst: tar försöken slut kastas felet.
  */
-export async function hamtaUrl(url) {
+export async function hamtaUrl(url, { backoff = null, deadline = null } = {}) {
+  const trappa = backoff ?? BACKOFF_MS;
   for (let f = 0; ; f++) {
     const t = senast + PAUS_MS - Date.now();
     if (t > 0) await vänta(t);
@@ -61,12 +74,13 @@ export async function hamtaUrl(url) {
     if (res.ok && !json.error) return json;
     const e = json.error || {};
     const strypt = e.code === 17 || e.code === 4 || e.code === 32 || /request limit/i.test(e.message || '');
-    if ((strypt || e.is_transient || res.status >= 500) && f < BACKOFF_MS.length) {
-      console.error(`  ⏳ Meta ${strypt ? 'stryper' : `fel ${e.code ?? res.status}`} — väntar ${BACKOFF_MS[f] / 1000}s`);
-      await vänta(BACKOFF_MS[f]);
+    const forSent = Number.isFinite(deadline) && Date.now() + (trappa[f] ?? 0) > deadline;
+    if ((strypt || e.is_transient || res.status >= 500) && f < trappa.length && !forSent) {
+      console.error(`  ⏳ Meta ${strypt ? 'stryper' : `fel ${e.code ?? res.status}`} — väntar ${trappa[f] / 1000}s`);
+      await vänta(trappa[f]);
       continue;
     }
-    throw new Error(`Meta ${res.status}: ${e.message || res.statusText}`);
+    throw new Error(`Meta ${res.status}: ${e.message || res.statusText}${forSent ? ' (tidsgränsen nådd)' : ''}`);
   }
 }
 
@@ -74,12 +88,12 @@ export async function hamtaUrl(url) {
 // gjorde en strypning (kod 17) mitt i bläddringen `continue` på felsvaret, som
 // saknar `paging.next` — loopen tog slut och gav de sidor den hunnit hämta,
 // utan ett ord. Hittat av facit-kartläggningen 2026-09-30.
-export async function alla(sökväg, params = {}) {
+export async function alla(sökväg, params = {}, opts = {}) {
   const ut = [];
-  let svar = await api(sökväg, { ...params, limit: params.limit ?? 200 });
+  let svar = await api(sökväg, { ...params, limit: params.limit ?? 200 }, opts);
   ut.push(...(svar.data || []));
   while (svar.paging?.next) {
-    svar = await hamtaUrl(svar.paging.next);
+    svar = await hamtaUrl(svar.paging.next, opts);
     ut.push(...(svar.data || []));
   }
   return ut;

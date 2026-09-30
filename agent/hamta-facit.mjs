@@ -24,6 +24,11 @@ import { tolkaInsiktsrad, tolkaBudgethandelse, plusDagar } from './facit.mjs';
 const HÄR = dirname(fileURLToPath(import.meta.url));
 export const CACHE = join(HÄR, 'utdata', 'cache');
 export const STANDARD_DAGAR = 45;
+/** Facit får aldrig hålla upp ronden: ett omförsök på 20 s, och hela hämtningen
+ *  (båda kontona) avbryts hellre än att gå över tidsgränsen. Mätt ostrypt
+ *  2026-09-30: ~36 s för båda kontona. */
+export const BACKOFF_FACIT = [20000];
+export const TIDSGRANS_MS = 150000;
 // Kontots tidszon avgör vilket dygn en ändring hör till (07:55 i Stockholm är
 // 05:55 UTC — samma dygn, men en ändring 23:30 UTC är nästa dygn lokalt).
 export const TIDSZON = { SE: 'Europe/Stockholm', NO: 'Europe/Oslo' };
@@ -32,7 +37,8 @@ const svensktDatumIdag = () => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Eur
 
 export const cachefil = (konto, idag) => join(CACHE, `facit-${konto}-${idag}.json`);
 
-export async function hamtaFacitdata(kontoKod, { idag, dagar = STANDARD_DAGAR } = {}) {
+export async function hamtaFacitdata(kontoKod, { idag, dagar = STANDARD_DAGAR, deadline = Date.now() + TIDSGRANS_MS } = {}) {
+  const opts = { backoff: BACKOFF_FACIT, deadline };
   const konto = KONTON[kontoKod];
   if (!konto) throw new Error(`Okänt konto ${kontoKod} — ange SE eller NO.`);
   const act = `act_${konto.id}`;
@@ -48,7 +54,7 @@ export async function hamtaFacitdata(kontoKod, { idag, dagar = STANDARD_DAGAR } 
     fields: 'campaign_id,campaign_name,spend,actions,action_values,purchase_roas',
     action_attribution_windows: ['7d_click'],
     limit: 500,
-  });
+  }, opts);
   console.error(`  ${insikter.length} dygnsrader`);
 
   const aktiviteter = await alla(`${act}/activities`, {
@@ -57,7 +63,7 @@ export async function hamtaFacitdata(kontoKod, { idag, dagar = STANDARD_DAGAR } 
     until: idag,
     fields: 'event_time,event_type,object_id,object_type,extra_data,application_name',
     limit: 500,
-  });
+  }, opts);
   const tz = TIDSZON[kontoKod];
   const budget = aktiviteter.map((a) => tolkaBudgethandelse(a, tz)).filter(Boolean);
   console.error(`  ${budget.length} budgetändringar i aktivitetsloggen`);
