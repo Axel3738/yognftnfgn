@@ -69,7 +69,7 @@ export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = nu
     // aldrig i ett mejl som bär spårningslänken).
     frakt: { leverans_dagar_min: min, leverans_dagar_max: max, fonster: brand.leveransfonster !== false },
     sparning: { sida: sida ?? `${reg.url}/pages/${reg.handle}`, prefix: reg.prefix },
-    sprak: { kod: sprak.kod, ord: sprak.ord ?? {}, manader: sprak.manader ?? undefined, dagsuffix: sprak.dagsuffix ?? '', halsning: sprak.halsning ?? undefined },
+    sprak: { kod: sprak.kod, ord: sprak.ord ?? {}, manader: sprak.manader ?? undefined, dagsuffix: sprak.dagsuffix ?? '', halsning: sprak.halsning ?? undefined, adressformat: sprak.adressformat ?? undefined },
     // Inget erbjudande: blocket byggs bara när konfigen bär `erbjudande`.
   };
   const copy = {};

@@ -158,7 +158,7 @@
     "Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.": "Pakettinumero alkaa kirjaimilla {{prefix}} ja löytyy toimitusviestistäsi Seuraa pakettia -painikkeen alta. Myös kuljetusyhtiön seurantanumero toimii. Välilyönneillä ja viivoilla ei ole merkitystä.",
     "Vi hittar inte det numret": "Numeroa ei löydy",
     "Kontrollera att hela numret kom med när du klistrade in det.": "Tarkista, että koko numero tuli mukaan, kun liitit sen.",
-    "Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.": "Saitko toimitusviestin juuri? Silloin paketti on tulossa tänne — sivu hakee uudet paketit tunneittain, joten yritä hetken kuluttua uudelleen.",
+    "Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.": "Saitko toimitusviestin juuri? Silloin paketin tiedot eivät ole vielä ehtineet tälle sivulle. Sivu hakee uudet paketit tunneittain, joten yritä hetken kuluttua uudelleen.",
     "Stämmer numret och det ändå inte syns här: mejla": "Jos numero on oikein eikä se silti näy täällä: lähetä sähköpostia osoitteeseen",
     "så letar vi upp paketet åt dig.": "niin etsimme paketin puolestasi.",
     "Till butiken": "Kauppaan",

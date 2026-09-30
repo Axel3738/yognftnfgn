@@ -108,10 +108,13 @@ export function formularVarden(a, { land = 'Sweden' } = {}) {
  * när Meta kräver en säkerhetskontroll (captcha) vid Submit, som bara en
  * människa får göra (mätt 2026-09-29). Cowork fyller i exakt det Axel godkänt,
  * Axel gör säkerhetskontrollen själv. `anmalningar`: [{ nr, antal, formular, v }]
- * där v är formularVarden(). Ren.
+ * där v är formularVarden(). `klara`: numren som redan är skickade och inte står i
+ * prompten — en ny Cowork-chatt minns inget (Axel tappade sessionen 2026-09-30). Ren.
  */
-export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden' }) {
+export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden', klara = [] }) {
   const n = anmalningar.length;
+  const listan = (nr) => (nr.length > 1 ? `${nr.slice(0, -1).join(', ')} och ${nr.at(-1)}` : `${nr[0]}`);
+  const redan = klara.length ? ` Anmälan ${listan(klara)} är redan skickade. Skicka dem aldrig igen.` : '';
   const block = anmalningar.map(({ nr, antal, v }) => [
     `===== ANMÄLAN ${nr} av ${antal} =====`,
     `Fält "Provide the URLs/IDs leading directly to the content that you're reporting":`,
@@ -125,7 +128,7 @@ export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden'
     `Fält "Electronic signature": ${v.signatur}`,
   ].join('\n')).join('\n\n');
   const forsta = anmalningar[0];
-  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.${redan}
 
 FÖRST
 Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."

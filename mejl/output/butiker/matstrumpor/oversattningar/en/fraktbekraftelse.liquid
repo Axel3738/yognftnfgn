@@ -86,7 +86,7 @@
           <tr>
             <td style="padding: 20px 32px;">
               <span style="font-family: 'Trebuchet MS',Verdana,Arial,sans-serif; font-weight: bold; font-size: 16px; color: #121212; letter-spacing: 0.5px;">Delivering to</span>
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #121212; margin: 8px 0 0;">{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}<br>{{ shipping_address.address2 }}{% endif %}<br>{{ shipping_address.zip }} {{ shipping_address.city }}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #121212; margin: 8px 0 0;">{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}<br>{{ shipping_address.address2 }}{% endif %}<br>{% case shipping_address.country_code %}{% when 'US', 'CA', 'AU' %}{{ shipping_address.city }}{% if shipping_address.province_code != blank %}, {{ shipping_address.province_code }}{% endif %} {{ shipping_address.zip }}{% when 'GB' %}{{ shipping_address.city }}<br>{{ shipping_address.zip }}{% when 'NZ' %}{{ shipping_address.city }} {{ shipping_address.zip }}{% else %}{{ shipping_address.zip }} {{ shipping_address.city }}{% endcase %}</p>
             </td>
           </tr>{% endif %}
           <tr>

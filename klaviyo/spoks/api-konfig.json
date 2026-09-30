@@ -1,0 +1,28 @@
+{
+  "comment": "Spoks officiella API (Public API) — facit för klaviyo/spoks/api.mjs och MCP-servern spoks-api. En nyckel per arbetsyta i miljön (namnet i 'nyckel'), aldrig i repot. arbetsyta_id jämförs med GET /authorization innan första anropet: en nyckel som hör till en annan butik stoppas. Beverbutikkens arbetsyta finns inte än (klaviyo/spoks/beverbutikken/PROMPT.md) — id:t skrivs in när den skapats. Specen: https://api.spoks.com/openapi.json, läst 2026-09-30 (version 2026-07, 17 anrop).",
+  "bas": "https://api.spoks.com",
+  "version": "2026-07",
+  "takt_ms": 1100,
+  "arbetsytor": {
+    "baverbutiken": {
+      "namn": "Bäverbutiken",
+      "arbetsyta_id": "f716ae36-68ae-4f1c-a45e-96c35d5637a0",
+      "nyckel": "SPOKS_API_KEY_BAVERBUTIKEN"
+    },
+    "carashell": {
+      "namn": "CaraShell",
+      "arbetsyta_id": "38f3d430-690c-4c0b-8419-8ec2e5272148",
+      "nyckel": "SPOKS_API_KEY_CARASHELL"
+    },
+    "matstrumpor": {
+      "namn": "Matstrumpor",
+      "arbetsyta_id": "71c2d4c8-b9ec-488a-b15c-5dfe8dbd2226",
+      "nyckel": "SPOKS_API_KEY_MATSTRUMPOR"
+    },
+    "beverbutikken": {
+      "namn": "Beverbutikken",
+      "arbetsyta_id": null,
+      "nyckel": "SPOKS_API_KEY_BEVERBUTIKKEN"
+    }
+  }
+}

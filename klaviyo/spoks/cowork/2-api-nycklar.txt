@@ -1,0 +1,41 @@
+Uppdrag: skapa en API-nyckel i Spoks för var och en av tre arbetsytor, så att Claude kan
+välja publik och läsa kampanjer själv. Allt görs i Spoks-appen (https://app.spoks.com). Inget annat.
+
+Bakgrund: Spoks har ett officiellt API (https://docs.spoks.com). Nycklarna skapas i appen, en per
+arbetsyta. Claude läser dem ur miljön, aldrig ur en fil eller en chatt.
+
+Gör EN arbetsyta i taget, i den här ordningen:
+  1. Bäverbutiken
+  2. Carashell
+  3. Matstrumpor.se
+
+För varje arbetsyta:
+  A. Byt till arbetsytan (arbetsyteväljaren i appen).
+  B. Leta i arbetsytans inställningar efter API-nyckeln. Den ligger troligen bland
+     integrationerna. Knappens exakta namn vet jag inte: läs vad som står och välj det som
+     skapar en ny API-nyckel.
+  C. Ge nyckeln namnet: Claude CLI
+  D. Rättigheterna, om appen frågar per del:
+       - Kampanjer / inlägg (campaigns, posts): läsa och skriva (read-write)
+       - Allt annat (kontakter, produkter, arbetsyta, team): bara läsa (read-only)
+     Frågar appen inte om rättigheter: skapa nyckeln ändå och skriv det i rapporten.
+  E. Skapa nyckeln. När den visas: skriv INTE av den, klistra inte in den någonstans, och
+     ta ingen skärmdump av den. Skriv bara till Axel:
+       "Nyckeln för <arbetsytans namn> visas nu. Kopiera den och lägg in den i Claude-miljön
+        som <variabelnamnet nedan>. Skriv klar när du är färdig."
+     Vänta tills Axel skriver klar innan du stänger rutan eller går vidare.
+       Bäverbutiken  → SPOKS_API_KEY_BAVERBUTIKEN
+       Carashell     → SPOKS_API_KEY_CARASHELL
+       Matstrumpor.se → SPOKS_API_KEY_MATSTRUMPOR
+
+Regler, utan undantag:
+- Radera, rotera eller ändra ALDRIG en nyckel som redan finns. Skapa bara den nya.
+- Rör inga kampanjer, flöden, segment, kontakter, formulär eller domäner, och ändra ingen
+  annan inställning än den nya nyckeln. Schemalägg inget, skicka inget, slå inte på något.
+- Logga aldrig in med ett annat Spoks-konto. Syns en arbetsyta inte i väljaren, eller får
+  du inte skapa nycklar där: hoppa över den och skriv exakt vad du såg.
+- Ser något annorlunda ut än beskrivet: STANNA, gör inget mer, och skriv exakt vad du ser.
+
+Rapportera till sist, en rad per arbetsyta: arbetsytans namn, nyckeln skapad ja/nej, vilka
+rättigheter du valde (eller att appen inte frågade), och klockslag. Skriv aldrig själva nyckeln
+i rapporten.

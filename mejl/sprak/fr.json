@@ -34,7 +34,7 @@
     },
     "ute_for_leverans": {
       "amne": ["Votre colis arrive aujourd'hui", "En cours de livraison", "{{ordernummer}} arrive aujourd'hui"],
-      "preheader": ["Restez à l'affût dans la journée.", "Bientôt dans votre boîte aux lettres ou au point relais."],
+      "preheader": ["Surveillez votre boîte aux lettres aujourd'hui.", "Bientôt dans votre boîte aux lettres ou au point relais."],
       "rubrik": "Votre colis arrive aujourd'hui",
       "intro": "Votre commande {{ordernummer}} est en cours de livraison et arrivera dans la journée.",
       "knapp": "Suivre votre colis"

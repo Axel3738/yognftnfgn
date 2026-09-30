@@ -4,14 +4,14 @@
   "ord": {
     "Hej": "Olá",
     "I paketet": "Na encomenda",
-    "Levereras till": "Entrega em",
+    "Levereras till": "Morada de entrega",
     "Antal": "Qtd.",
-    "Ditt paketnummer": "O teu número de encomenda",
+    "Ditt paketnummer": "O teu código de rastreio",
     "Klicka på knappen ovan så visas ditt paket direkt.": "Clica no botão acima e a tua encomenda aparece de imediato."
   },
   "manader": ["de janeiro", "de fevereiro", "de março", "de abril", "de maio", "de junho", "de julho", "de agosto", "de setembro", "de outubro", "de novembro", "de dezembro"],
   "dagsuffix": "",
-  "menyrad": "Rastrear encomenda",
+  "menyrad": "Seguir encomenda",
   "sidfot": "Tens dúvidas sobre a tua encomenda? Responde a este email ou escreve para {{support}}.",
   "mallar": {
     "fraktbekraftelse": {
@@ -19,25 +19,25 @@
       "preheader": ["O link de rastreio está aqui.", "Verifica a pasta de spam se não encontrares o email."],
       "rubrik": "A tua encomenda já vai a caminho!",
       "intro": "A tua encomenda {{ordernummer}} saiu do armazém e está a caminho de ti.",
-      "knapp": "Rastrear encomenda",
-      "tips": "O rastreio pode ficar parado durante 2–4 dias enquanto a encomenda segue a caminho do voo. É perfeitamente normal. Volta a consultar depois disso.",
+      "knapp": "Seguir encomenda",
+      "tips": "O rastreio pode ficar parado durante 2–4 dias enquanto a encomenda segue para o aeroporto. É perfeitamente normal. Volta a consultar depois disso.",
       "beraknad_rubrik": "Entrega prevista",
       "beraknad": "{{leverans_fran}}–{{leverans_till}}",
-      "tysta_dagar": "Nos primeiros 2–4 dias, o rastreio muitas vezes não mostra nada. A encomenda está a caminho do voo, não se perdeu. Não precisas de fazer nada: o rastreio é atualizado assim que a encomenda for registada."
+      "tysta_dagar": "Nos primeiros 2–4 dias, o rastreio muitas vezes não mostra nada. A encomenda está a caminho do aeroporto, não se perdeu. Não precisas de fazer nada: o rastreio é atualizado assim que a encomenda for registada."
     },
     "fraktuppdatering": {
       "amne": ["Novidades sobre a tua encomenda", "O rastreio foi atualizado", "Atualização: {{ordernummer}}"],
       "preheader": ["Assim está a situação neste momento.", "Vê aqui os dados mais recentes."],
       "rubrik": "O rastreio foi atualizado",
       "intro": "Os dados de rastreio da tua encomenda {{ordernummer}} foram atualizados.",
-      "knapp": "Rastrear encomenda"
+      "knapp": "Seguir encomenda"
     },
     "ute_for_leverans": {
       "amne": ["A tua encomenda chega hoje", "Em distribuição neste momento", "{{ordernummer}} é entregue hoje"],
       "preheader": ["Fica de olho durante o dia.", "Em breve na tua caixa do correio ou no ponto de recolha."],
       "rubrik": "A tua encomenda chega hoje",
       "intro": "A tua encomenda {{ordernummer}} está em distribuição e chega ainda hoje.",
-      "knapp": "Rastrear encomenda"
+      "knapp": "Seguir encomenda"
     }
   }
 }
