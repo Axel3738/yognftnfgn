@@ -648,7 +648,12 @@ svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbets
   datumspann med månaden först (10月7日–14日). Fraktmejlen registrerade på ja och zh-TW (39 av 39
   lästa tillbaka). Trustpilot-raden på båda språken: japanska etiketten är Trustpilots egen
   (「ほぼ満足」), Taiwan får 「很好」 ur `ETIKETT_EGEN` eftersom Trustpilot saknar kinesiska, och båda
-  skriver betyget med decimalpunkt.
+  skriver betyget med decimalpunkt. ✅ **Spårningssidan läst som kund 2026-09-30 15:00 CEST** efter
+  rutinens första körning från `main`: allt på japanska och kinesiska utom sidans rubrik, som stod kvar
+  på svenska ("Spåra ditt paket"). Sidans titel (`Page 183508730195`, nyckeln `title`) hade översättning
+  på de elva andra språken men inte på ja/zh-TW, eftersom den ligger utanför underlaget. Den är nu
+  registrerad med samma text som menyraden på språket (「配送状況を確認」 / 「追蹤包裹」), tillbakaläst.
+  Läst om som kund: inga svenska rader. Ett nytt språk behöver samma rad.
 - **Annonserna, åtta per marknad** (`annonser/JP.json`, `TW.json`; copy av sonnet mot copy-reglerna +
   `REGLER-ASIEN.md`, granskad av infödda): 001–003 Nathalie, Sofie H1 och Sofie H2 genom HeyGen i
   läget `precision` (`heygen/JP.json`, `TW.json`, SRT:erna i `heygen/srt/JP|TW/`), 004 012v2 med
