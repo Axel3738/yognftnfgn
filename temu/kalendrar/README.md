@@ -145,4 +145,7 @@ hittades på Amazon.de, se nedan).
 - **Öppen fråga till Axel:** måttbilden säger 30 × 28 × 6 cm (leverantörens siffror, samma som specen). Askens proportioner
   på alla foton tyder på ~30 × 23–24 cm — höjden kan vara uppräknad. Bekräfta med CWD om det spelar roll.
 - **Workflow-verktyg:** `bild.mjs` (hämta/ark/crop/kie-rensa/kie-bild/video/gif), `galleri-bygg.mjs`, `../sidkoll.mjs`.
+- **De andra åtta: Axel 2026-09-30 "Strunta i dom"** — inget ändrat. Hittade källbilder om de ska göras senare
+  (amazon.de/dp/<ASIN>): dinosaurie B0FST8F71J (9 bilder, samma ask), gör din egen B0DDXK8FNZ (7), whisky B0FYCK8SB5 (6),
+  cocktail B0G1ZFJ23M (9). Pussel, ishockey, öl och sprit: inga källor hittade från molnet.
 
