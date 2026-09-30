@@ -516,6 +516,13 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   "regn", "vinter") stoppar bara på engelska/finska sidor, och ord som också är
   engelska ("over", "under", "till") används aldrig — de flaggade fem
   engelska rader. 8 tester i `factory/test/marknadskoll.test.mjs`.
+- **CaraShells USA-mål är listicle-kampanjen `Taköverdrag 5 reasons USA TEST` sedan 2026-09-30**
+  (Axels order: "byter mainkampanj i USA … då börjar vi bara ladda upp till den nya kampanjen").
+  `register.json` → `carashell/takskyddet.malkampanj.US` (kampanj `120251633656390435`, adset
+  `120251633656400435`) vinner över namnsökningen i `/ops-oversatt --marknad US`
+  (`tools/lib/malkampanj.mjs`); landningen ärvs ur kampanjen (rv-roof-cover-5-reasons). Mätt
+  28–30/9: nya ~18 700 kr / 19 köp, gamla (lagerrensning) ~24 300 kr / 15 köp. Den gamla
+  `1 CARASHELL_US_Taköverdrag … – kopia` rörs inte av rutinen. Byt mål = ändra raden i registret.
 - Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
   aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
   mot kundens riktiga vy — regeln föddes här 2026-09-07).

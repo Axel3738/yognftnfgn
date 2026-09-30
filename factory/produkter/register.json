@@ -385,6 +385,16 @@
         "status_se": "CaraShell SE ready to be active",
         "status_en": "CaraShell EN ready to be active",
         "satt": "2026-09-18"
+      },
+      "malkampanj": {
+        "US": {
+          "kampanj_id": "120251633656390435",
+          "kampanj_namn": "Taköverdrag 5 reasons USA TEST",
+          "adset_id": "120251633656400435",
+          "landning": "https://carashell.com/pages/rv-roof-cover-5-reasons?country=US",
+          "satt": "2026-09-30",
+          "motivering": "Axels order 2026-09-30: \"byter mainkampanj i USA … då börjar vi bara ladda upp till den nya kampanjen\". Mätt 28–30/9: nya (listiclen 5 reasons) ~18 700 kr / 19 köp, gamla (lagerrensning) ~24 300 kr / 15 köp. Den gamla rörs inte."
+        }
       }
     },
     "catcabin/utekattkojan": {
