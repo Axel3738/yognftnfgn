@@ -139,6 +139,18 @@ function hubbarUrProdukter() {
 }
 function require_fs() { return { readFileSync: fsReadFileSync }; }
 
+/** Hubbar vars 404 Axel sagt att vi ska strunta i (tools/lib/hubbar-utan-atkomst.json). */
+let _utanAtkomst = null;
+function utanAtkomst(id) {
+  if (!_utanAtkomst) {
+    try {
+      const j = JSON.parse(fsReadFileSync(new URL('./lib/hubbar-utan-atkomst.json', import.meta.url), 'utf8'));
+      _utanAtkomst = new Set((j.hubbar ?? []).map((h) => String(h.id).replace(/-/g, '')));
+    } catch { _utanAtkomst = new Set(); }
+  }
+  return _utanAtkomst.has(String(id).replace(/-/g, ''));
+}
+
 /** Alla creative hub-databaser: sokningen PLUS products.json.
  *  Sokningen finns for att nya produkter ska komma med av sig sjalva.
  *  products.json finns for att de gamla aldrig ska kunna falla bort. */
@@ -409,20 +421,26 @@ export async function allaKlaraRader(val = {}) {
   }
   const rader = [];
   const fel = {};
+  const hoppade = [];
   for (const h of hubbar) {
     try { rader.push(...await klaraRader(h, val)); }
     catch (e) {
+      // Axels beslut 2026-09-30: de fyra arkiverade hubbarna i
+      // tools/lib/hubbar-utan-atkomst.json ska vi strunta i. Deras 404 är
+      // alltså inget att rapportera — men BARA deras, och bara 404.
+      if (e.status === 404 && utanAtkomst(h.id)) { hoppade.push(h.titel); continue; }
       fel[h.titel] = e.status === 404
         ? `404 — integrationen är inte inbjuden till "${h.titel}" (••• → Connections)`
         : e.message;
     }
   }
-  if (Object.keys(fel).length === hubbar.length) {
-    const e = new Error(`Ingen av ${hubbar.length} hubbar gick att läsa: ${Object.values(fel).join(' · ')}`);
+  const forsokta = hubbar.length - hoppade.length;
+  if (forsokta > 0 && Object.keys(fel).length === forsokta) {
+    const e = new Error(`Ingen av ${forsokta} hubbar gick att läsa: ${Object.values(fel).join(' · ')}`);
     e.allaHubbarFelade = true;
     throw e;
   }
-  return { hubbar, rader, fel };
+  return { hubbar, rader, fel, hoppade };
 }
 
 // ------------------------------------------------------------- fristående CLI
