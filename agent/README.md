@@ -23,6 +23,7 @@ npm test                     # 69 tester, ska vara gröna
 | Fil | Vad |
 |---|---|
 | `besked.mjs` | Beslutsmotorn. All matematik. Inga API-anrop, inget Claude. |
+| `leads.mjs` | Kundernas kommentarer in i briefsteget (Axel 2026-09-30): läser `kommentarer/leads.md` ur `origin/main`, visar öppna leads per annonsprefix. En brief med `lead=VOC-…` + `kalla=voc` är fri mot brieftaket; `lardom.mjs --brief` stoppar okända eller redan använda leads. |
 | `spendtjuv.mjs` | Spendtjuvsspärren. Avgör om en kampanj som går back bärs av ett par olönsamma annonser — då pausas de i stället för hela kampanjen. |
 | `logg.mjs` | Läser och skriver budgetloggen. Räknar dagar sedan ändring och back-dagar i rad. |
 | `rond.mjs` | Kör ihop det: kontroller, dom per kampanj, färdig rapport. |

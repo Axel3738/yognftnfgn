@@ -801,6 +801,31 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
   forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
   winning-line/feedback), fler försök om den är stark — men numret räknas.
+- **Kundernas kommentarer FÖRST (Axels beslut 2026-09-30, alternativ A: "kollar du
+  någonsin på kommentarerna?" — svaret var nej).** Kommentarsgranskningen
+  (`/kommentarer`, 05:40 på `main`) skriver `kommentarer/leads.md` varje morgon:
+  invändningar, köpfrågor och förtroendefrågor ur annonskommentarerna, med belägg.
+  Före VARJE `brief_runda`, `forsta_batch` och `vidarebygg` på en SE-produkt:
+  ```bash
+  node agent/leads.mjs --prefix <Annonsprefix>     # läser origin/main, visar öppna leads (+ CaraShells för Tak/Termo)
+  ```
+  1. Varje **🟢 BRIEFA**-lead för produkten blir EN brief i den här rundan, före
+     dina egna koncept: vinkelkod `OB` (invändning) eller den förslaget säger,
+     taggarna `lead=<VOC-id>` + `kalla=voc`, kundernas egna ord i hooken där de
+     klarar tre-frågorstestet, och leadens förslag som Make-rad. `lead=`
+     ersätter `lardom=` och är **fri mot brieftaket** (kunderna beställde den).
+     `lardom.mjs --brief` stoppar ett lead-id som inte finns i leads.md eller
+     redan bär en BRIEF-rad — en lead, en brief. Produktsidans fakta gäller
+     fortfarande: lovar leaden något sidan inte säger, briefa det inte.
+  2. **⏸ INTE BRIEF**-leads (sidfix, fråga till Axel, väntar på leverantör eller
+     ny produkt) briefas aldrig — lista dem i rapporten under
+     `## 💬 Kundernas kommentarer` med förslaget, så Axel ser dem.
+  3. Leads på en produkt utan runda i dag rörs inte (de väntar på sin runda),
+     men `node agent/leads.mjs --alla` klistras in i rapporten varje morgon.
+  4. Går leads.md inte att läsa (exit 2): skriv det i rapporten och briefa ändå.
+  Leadsfilen på `main` bockas aldrig av härifrån — BRIEF-radens `lead=` är
+  kvittot. Skälet: en brief som svarar på det kunderna faktiskt frågar är den
+  enda källan (`kalla=voc`) som inte är en gissning.
 - **Listicle-kampanjerna är ÄGARENS (Axels order 2026-09-22).** En kampanj
   vars namn matchar `listicle` / `lagerrensning` / `vi-testade` /
   `anledningar` (`agent/kampanjval.mjs`, samma mönster som leveransrundans
@@ -1331,6 +1356,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
 - [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)
 - [ ] **Funnelläge (> 10 000 kr/dag):** `products/<id>/invandningar.md` byggd/uppdaterad FÖRE rundan (`tools/invandningsmatris.mjs` på main), täckningsraden läst i `## 🧱 Invändningstäckning`, varje obesvarad invändning ≥ 10 % har en brief med `invandning=` i rundan (fri mot taket), ingen fylld ruta briefad igen
+- [ ] `node agent/leads.mjs --prefix <prefix>` körd före varje runda; varje 🟢 BRIEFA-lead har en brief med `lead=` + `kalla=voc` (eller skäl), ⏸-leads och `--alla` i rapporten under `## 💬 Kundernas kommentarer`
 - [ ] Ingen listicle-/lagerrensningskampanj rörd: alla med domen `AGARENS` står under `## 🛑 Ägarens kampanjer` och har ingen åtgärd i planen
 - [ ] `lardom.mjs --status` i leveransen: frekvens som bråk + procent, lärdomar i dag, briefer på lärdom, koncept vid taket
 - [ ] `ugc.mjs --deadlines` körd (larm postat om 🔴), `ugc.mjs --kandidater` körd; varje ✅ FÖRESLÅ har fått ett färdigt beställningsmeddelande till Lovely i `--kanal uppgifter` och en `UGC_FORSLAG`-rad — eller villkoret som föll utskrivet

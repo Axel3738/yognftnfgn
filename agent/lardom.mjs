@@ -405,10 +405,12 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
   const sedda = new Map();   // namn → först sedd i detta anrop
   const tagna = new Map();   // plats → namnet som tog den i detta anrop
   const matrisBriefer = [];
+  const leadBriefer = [];
   for (const p of poster) {
     const namn = typeof p === 'string' ? p : p?.namn;
     const plats = typeof p === 'string' ? null : (p?.plats ?? null);
     const invandning = typeof p === 'string' ? null : (p?.invandning ?? null);
+    const lead = typeof p === 'string' ? null : (p?.lead ?? null);
     // Namnet självt får inte finnas någonstans — som BRIEF-rad, i kontot
     // eller i Notion — oavsett om posten är fri eller riktad. Det är
     // OB_3_H1-dubbletten (en fri brief med ett namn som redan låg i Notion).
@@ -419,6 +421,10 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
     // beställd av kunderna, inte av en lärdom — den konkurrerar inte om
     // kvoten, precis som en namngiven plats. Rutan prövas i provaMatris.
     if (invandning) { matrisBriefer.push(namn); continue; }
+    // En brief på en kommentarslead (lead=VOC-…, Axel 2026-09-30) är också
+    // beställd av kunderna — fri mot taket. Att leaden finns och är oanvänd
+    // prövas i CLI:t mot agent/leads.mjs.
+    if (lead) { leadBriefer.push(namn); continue; }
     if (plats) {
       if (tagna.has(small(plats))) { fel.push(`${namn}: platsen ${plats} togs redan av ${tagna.get(small(plats))} i samma manifest.`); continue; }
       // En UTFÖRD plats (BRIEF-rad med namnet, eller med namnet som plats) är
@@ -441,7 +447,7 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
       fel.push(`${n} finns redan som brief, i Notion eller i kontot — lärdomen är utförd. Briefa den inte igen.`);
     }
   }
-  return { ok: fel.length === 0, fel, tak: tak.tak, tak_kvar: tak.tak_kvar, tak_totalt: tak.tak_totalt, fria, riktade, matris: matrisBriefer, namngivna: tak.namngivna, struket: tak.struket };
+  return { ok: fel.length === 0, fel, tak: tak.tak, tak_kvar: tak.tak_kvar, tak_totalt: tak.tak_totalt, fria, riktade, matris: matrisBriefer, leads: leadBriefer, namngivna: tak.namngivna, struket: tak.struket };
 }
 
 /**
@@ -779,7 +785,12 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   // 2026-09-22) har kunderna som källa, inte en lärdom: lardom= krävs inte.
   // Rutan själv prövas i provaMatris.
   const invandning = t.invandning ?? null;
-  for (const k of BRIEF_TAGGAR) if (!t[k] && !(k === 'lardom' && invandning)) fel.push(`taggen ${k}= saknas`);
+  // Kommentarsleaden (lead=VOC-<kommentars-id>, Axel 2026-09-30) är också
+  // kundernas beställning: lardom= krävs inte, kalla=voc gör det.
+  const lead = t.lead ?? null;
+  if (lead && !/^VOC-\S+$/.test(String(lead).split(/\s*[,+]\s*/)[0])) fel.push(`lead=${lead} är inget lead-id (VOC-<kommentars-id> ur node agent/leads.mjs)`);
+  if (lead && !/^voc$/i.test(String(t.kalla ?? ''))) varningar.push(`lead=${lead} men kalla=${t.kalla ?? '—'} — en brief på en kommentarslead har kunderna som källa (kalla=voc)`);
+  for (const k of BRIEF_TAGGAR) if (!t[k] && !(k === 'lardom' && (invandning || lead))) fel.push(`taggen ${k}= saknas`);
   if (invandning && !/^(voc|kommentarer|feedback)$/i.test(String(t.kalla ?? ''))) varningar.push(`invandning=${invandning} men kalla=${t.kalla ?? '—'} — en invändningsbrief har kunderna som källa (kalla=voc)`);
   const lard = lardomar(logg);
   const lardomIds = new Set([...lard.values()].map((r) => String(r.lardom_id)));
@@ -803,7 +814,7 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   }
   const rad = {
     datum: idag, kampanj_id: String(kampanj.id), kampanj_namn: String(kampanj.namn ?? ''), ad_account_id: String(kampanj.ad_account_id ?? ''),
-    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null, invandning, ruta: t.ruta ?? null,
+    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null, invandning, ruta: t.ruta ?? null, lead,
     avatar: t.avatar ?? null, awareness: t.awareness ?? null, begar: t.begar ?? null, mekanism: t.mekanism ?? null, tro: t.tro ?? null, urgency: t.urgency ?? null, 'hook-mekanik': t['hook-mekanik'] ?? null, kalla: t.kalla ?? null,
     notion_url: brief.url ?? null, genomford: true, godkand_av: 'auto — brief loggad, Axels definition av klart 2026-09-21',
   };
@@ -998,7 +1009,7 @@ async function huvud(argv) {
     const taggade = nyaPoster.map((p) => {
       const bf = isAbsolute(p.brief) ? p.brief : resolve(dirname(manifestFil), p.brief);
       const t = existsSync(bf) ? normaliseraTaggar(taggarUrBrief(readFileSync(bf, 'utf8')) ?? {}) : {};
-      return { namn: p.namn, plats: p.plats ?? null, invandning: t.invandning ?? null, ruta: t.ruta ?? null, typ: t.typ ?? null };
+      return { namn: p.namn, plats: p.plats ?? null, invandning: t.invandning ?? null, ruta: t.ruta ?? null, typ: t.typ ?? null, lead: t.lead ?? null };
     });
     const matris = lasMatris(minnesmapp(k), { rot: ROT });
     const budget = flagga('budget') !== null ? Number(flagga('budget')) : budgetUrKontodata(kampanjId);
@@ -1011,8 +1022,24 @@ async function huvud(argv) {
       console.error('\n❌ Inget skrivet. Rätta manifestet och kör om.');
       process.exit(1);
     }
-    const kvot = provaBriefkvot(logg, kampanjId, taggade.map((p) => ({ namn: p.namn, plats: p.plats, invandning: p.invandning })), { idag, befintliga });
-    console.log(`Briefkvot: ${kvot.tak_kvar} fri(a) plats(er) kvar av ${kvot.tak} + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.matris.length ? ` + ${kvot.matris.length} på tomma rutor i matrisen (${kvot.matris.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
+    // Kommentarsleads (Axel 2026-09-30): en lead=VOC-… måste finnas i
+    // kommentarer/leads.md på main och får inte redan bära en BRIEF-rad.
+    const medLead = taggade.filter((p) => p.lead);
+    if (medLead.length) {
+      const { parseLeads, anvandaLeads, lasLeadsText } = await import('./leads.mjs');
+      let kanda = null;
+      try { kanda = new Set(parseLeads(lasLeadsText().text).map((l) => l.id)); } catch (e) { console.log(`   ⚠️  leads.md gick inte att läsa (${String(e.message).split('\n')[0]}) — lead-id:n prövas bara mot loggen`); }
+      const anv = anvandaLeads(logg);
+      const leadFel = [];
+      for (const p of medLead) for (const id of String(p.lead).split(/\s*[,+]\s*/)) {
+        if (kanda && !kanda.has(id)) leadFel.push(`${p.namn}: lead=${id} finns inte i kommentarer/leads.md (node agent/leads.mjs --prefix …)`);
+        if (anv.has(id)) leadFel.push(`${p.namn}: lead=${id} bär redan en BRIEF-rad — en lead, en brief`);
+      }
+      if (medLead.filter((p, i) => medLead.findIndex((q) => q.lead === p.lead) !== i).length) leadFel.push('samma lead= på två briefer i manifestet — en lead, en brief');
+      if (leadFel.length) { for (const f of leadFel) console.error(`   🔴 ${f}`); console.error('\n❌ Inget skrivet.'); process.exit(1); }
+    }
+    const kvot = provaBriefkvot(logg, kampanjId, taggade.map((p) => ({ namn: p.namn, plats: p.plats, invandning: p.invandning, lead: p.lead })), { idag, befintliga });
+    console.log(`Briefkvot: ${kvot.tak_kvar} fri(a) plats(er) kvar av ${kvot.tak} + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.matris.length ? ` + ${kvot.matris.length} på tomma rutor i matrisen (${kvot.matris.join(', ')})` : ''}${kvot.leads.length ? ` + ${kvot.leads.length} på kommentarsleads (${kvot.leads.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
     // Regel (b) går inte att pröva utan kontots och hubbens namn. Namnger
     // lärdomarna platser och anroparen inte skickat --befintliga har ingen
     // läst Notion — och det var exakt så OB_2_H1 fick ett andra koncept.
