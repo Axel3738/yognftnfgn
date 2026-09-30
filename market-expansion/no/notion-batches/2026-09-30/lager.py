@@ -91,7 +91,12 @@ def main():
             'in': inn,
             'ut': f'{B}/no/{namn}.mp4',
             'srt': f'{B}/srt-no/spikkesett_{namn}.srt',
-            'captions': dict(CAPTIONS, av=[[fran, till]]),   # inga captions över slutkortet
+            # ⚠️ Inget "av"-fönster. Första versionen stängde av captions under
+            # slutkortet, och då lämnades den svenska "handskarna," kvar i PD_1_H4:
+            # "av" hoppar över HELA caption-steget, alltså också suddningen. Och de
+            # två elementen krockar ändå aldrig — slutkortet ligger y 212..378,
+            # pillret y 786..917.
+            'captions': dict(CAPTIONS),
             'blur': [
                 {'rect': BLUR_RAD1, 't': [fran, till]},
                 {'rect': BLUR_RAD2, 't': [fran, till]},
