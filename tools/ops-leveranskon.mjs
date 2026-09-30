@@ -48,6 +48,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { valjAdsetForKoncept, konceptUrAdsetnamn, krockandeAdsets } from './meta-lib.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
+import { malkampanjFor, domFastMal } from './lib/malkampanj.mjs';
 import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 
@@ -525,7 +526,11 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const u = await kampanjUtfall(k.id);
     kandidater.push({ ...k, utfall: u.utfall, spend: u.spend ?? null });
   }
-  const { kampanj, skal: kampanjSkal, varning: kampanjVarning } = valjMalkampanj(kandidater, m);
+  // Ägarens uttryckliga mål (register.json → malkampanj) vinner över namnsökningen.
+  const fastMal = malkampanjFor(butik.post, m);
+  const { kampanj, skal: kampanjSkal, varning: kampanjVarning } = fastMal
+    ? await domFastMal(fastMal, konto, kampanjUtfall)
+    : valjMalkampanj(kandidater, m);
   if (kampanj) logg(`Kampanj (${m}): ${kampanj.namn} [${kampanj.status}] · bas "${kampanj.bas}"`);
   else { logg(`Kampanj (${m}): INGEN — ${kampanjSkal}`); varningar.push(`kampanj: ${kampanjSkal}`); }
   if (kampanjVarning) { logg(`  ⚠️  ${kampanjVarning}`); varningar.push(`kampanj: ${kampanjVarning}`); }
@@ -536,8 +541,14 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   // 4. Adsets + ärvd länk ur kampanjens egna annonser.
   let adsets = [];
   let lank_arvd = null;
+  let fastAdset = null;
   if (kampanj) {
     adsets = await alla(`${kampanj.id}/adsets`, { fields: 'id,name,status' }, 50);
+    if (fastMal?.adset_id) {
+      fastAdset = adsets.find((a) => String(a.id) === fastMal.adset_id) ?? null;
+      if (fastAdset) logg(`Fast adset (registret): ${fastAdset.name} (${fastAdset.id}, ${fastAdset.status}) — alla annonser dit`);
+      else varningar.push(`registrets adset ${fastMal.adset_id} finns inte i "${kampanj.namn}" — uppladdaren stoppar`);
+    }
     const kampanjAnnonser = await alla(`${kampanj.id}/ads`, { fields: 'id,name,status,created_time,creative{object_story_spec}' }, 50);
     const arv = arvdLank(kampanjAnnonser);
     if (arv) { lank_arvd = arv.lank; logg(`Ärvd länk: ${arv.lank} (ur ${arv.fran}, ${arv.status})`); }
@@ -610,7 +621,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     }
     const basnamn = avviker && butik.post.annonsprefix ? ommarkt(namn, butik.post.annonsprefix) : namn;
     const mal_namn = malNamn(basnamn, m);
-    const adsetnamn = kampanj ? adsetNamn(kampanj.bas, t.koncept) : null;
+    const adsetnamn = fastAdset ? fastAdset.name : (kampanj ? adsetNamn(kampanj.bas, t.koncept) : null);
     let d = dubblett(mal_namn, karta);
     // Heter vinkeln något annat på marknaden ligger annonsen uppe under ett
     // annat namn än den mekaniska översättningen. Leta då efter den under
@@ -642,7 +653,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       drive: (r.drive ?? []).map((x) => ({ id: x.id, typ: x.typ, url: x.url })),
       landning: r.landning ?? null, lank,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
-      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn, t.koncept),
+      adset_namn: adsetnamn, adset: fastAdset ? { id: fastAdset.id, name: fastAdset.name, status: fastAdset.status ?? null } : hittaAdset(adsets, adsetnamn, t.koncept),
       finns_i_meta: d.finns_i_meta, ad_id: d.ad_id, mal_namn_alias,
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,
