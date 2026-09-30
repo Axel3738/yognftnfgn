@@ -1538,5 +1538,70 @@
    "worldwide/annonser/klar/MC-Kapell_PD_2.mp4.qa-2.png",
    "worldwide/annonser/klar/MC-Kapell_PD_2.mp4.qa-3.png"
   ]
+ },
+ "Rodholder_PD_12_H1": {
+  "fil": "worldwide/annonser/klar/Rodholder_PD_12_H1.mp4",
+  "sha256": "6602c4d68f95060c3ea6523a01a5c36e92cc750baf9854fc28b6469af9446c49",
+  "rost": null,
+  "granskad": true,
+  "granskning": "sessionen 2026-09-30 kväll: bara musik i källan, ingen text i bild — textkoll.py (OCR hela videon) ✅, används som den är"
+ },
+ "Takoverdrag_PD_2_H1": {
+  "fil": "worldwide/annonser/klar/Takoverdrag_PD_2_H1.mp4",
+  "sha256": "aedc232007f6e5e10a33bb447b1cb54de1af9d5ce6e0c4d8ab33f0c225854f29",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Takoverdrag_PD_2_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_2_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Takoverdrag_PD_2_H1.mp4.qa-3.png"
+  ]
+ },
+ "IBC_CS_1_H2": {
+  "fil": "worldwide/annonser/klar/IBC_CS_1_H2.mp4",
+  "sha256": "347af6c4da7e0eff0fe3aa367a5239b4df3036fa0b94761b8531cc73c8b1a8d2",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/IBC_CS_1_H2.mp4.qa-1.png",
+   "worldwide/annonser/klar/IBC_CS_1_H2.mp4.qa-2.png",
+   "worldwide/annonser/klar/IBC_CS_1_H2.mp4.qa-3.png"
+  ]
+ },
+ "Beltgrinder_PD_29_H1": {
+  "fil": "worldwide/annonser/klar/Beltgrinder_PD_29_H1.mp4",
+  "sha256": "980a978874193d12809bfa7f4882559bd19da30dddec4de692b01ff9307b4665",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Beltgrinder_PD_29_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Beltgrinder_PD_29_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Beltgrinder_PD_29_H1.mp4.qa-3.png"
+  ]
+ },
+ "Termoskydd_UG_2_H1": {
+  "fil": "worldwide/annonser/klar/Termoskydd_UG_2_H1.mp4",
+  "sha256": "6aaacfce2affa49e3cd3445259308c09f581d1dd4828581f6dfc8e7d6ab071b3",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/Termoskydd_UG_2_H1.mp4.qa-1.png",
+   "worldwide/annonser/klar/Termoskydd_UG_2_H1.mp4.qa-2.png",
+   "worldwide/annonser/klar/Termoskydd_UG_2_H1.mp4.qa-3.png"
+  ]
+ },
+ "Seatcover_PD_18_H1": {
+  "hoppa": "rendering misslyckades 2026-09-30: ❌ captions (exit 1): 0 @ 0xa170dc0] Task finished with error code: -22 (Invalid argument)"
+ },
+ "MC-Kapell_PD_3": {
+  "fil": "worldwide/annonser/klar/MC-Kapell_PD_3.mp4",
+  "sha256": "c4ff286e591304314daa62b943cc34355bb3191be15c50030239bdf70bc02482",
+  "rost": "CJ - Young Swedish Male",
+  "granskad": false,
+  "qa": [
+   "worldwide/annonser/klar/MC-Kapell_PD_3.mp4.qa-1.png",
+   "worldwide/annonser/klar/MC-Kapell_PD_3.mp4.qa-2.png",
+   "worldwide/annonser/klar/MC-Kapell_PD_3.mp4.qa-3.png"
+  ]
  }
 }
