@@ -1,5 +1,9 @@
 # Köparenkäten: planen (2026-09-30)
 
+> **Axels beslut 2026-10-01: alternativ A, BARA Matstrumpor, ingen belöning.**
+> Bäverbutiken och CaraShell får ingen enkät; raderna om dem nedan är historik.
+> Bygget och läget står i `enkat/README.md`.
+
 Ingenting är byggt. Planen utgår från förslaget "Tre frågor direkt efter köpet". Det fick högst betyg av tre domare (22 poäng, mot 21, 11 och 9). Delar är lånade från de andra förslagen, och allt domarna fällde är rättat. Axels rättelse 2026-09-30 väger tyngst.
 
 ## Varför
