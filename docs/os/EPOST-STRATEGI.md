@@ -346,6 +346,14 @@ Klaviyos branschtal (placed order rate ovan) — som ytterram, aldrig som dom.
   **över 1 %** på ett utskick ⇒ stoppa nästa kampanj, tillbaka till
   30-dagarssegmentet, Axel pingas (VA-SOP E06). 0,3 % är Gmails gräns; 1 % är en
   *startsiffra*.
+  - **Matstrumpors dagliga serie, sedan 2026-10-01:**
+    - V01 gav 1,21 % avregistreringar och 0 spam.
+    - Axel frågade "varför skulle vi inte köra som planerat?". Sessionens råd blev att
+      köra som planerat, eftersom spamklagomålen (Gmails faktiska gräns) låg på 0.
+    - Ett stoppförslag ges därför först vid spam över 0,3 %, studs över 2 % eller
+      avregistreringar över 2 %.
+    - 1–2 % avregistreringar rapporteras i morgonkollen men stoppar inget.
+    - Axel kan gå tillbaka till 1 % med ett ord.
 - **Öppningsgrad dömer aldrig ensam.** Apples Mail Privacy Protection registrerar
   öppningar automatiskt och blåser upp talet. Den används bara i uppvärmningen (§4).
 - **Kill-linje för ett flödesmejl:** pausas bara om vinstbidraget är under noll

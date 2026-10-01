@@ -1318,6 +1318,12 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
 
   K03 (1/10) går redan till 30-dagarssegmentet och rörs inte. Trenden på hela listan: K01
   0,94 %, V01 1,21 %.
+
+  **Utfall samma förmiddag:** Axel frågade "varför skulle vi inte köra som planerat?".
+  Sessionens råd blev B, eftersom spamklagomålen ligger på 0 och 1 % är vår egen startsiffra.
+  Inget i Spoks är ändrat. Tröskeln för Matstrumpors dagliga serie står i
+  EPOST-STRATEGI §8: stoppförslag först vid spam över 0,3 %, studs över 2 % eller
+  avregistreringar över 2 %. Morgonkollen och 5/10-kollen dömer efter den.
 - **Uppföljningarna går via roboten, inte Cowork** (omskrivna 30/9):
   - Morgonkollen `trig_0184cEo3qqjRg5GxemevSEYf` kör `statistik` på gårdagens mejl varje morgon.
   - Veckosiffrorna 5/10 `trig_01EH4bY8pvLc4UPkaCMn5RGt`.
