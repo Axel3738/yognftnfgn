@@ -1,0 +1,145 @@
+Jag säljer Bäverbutikens produkter i hela världen som Beaver Store på beaverstoreco.com,
+från SAMMA Shopify-butik som baverbutiken.se. Min Claude-session har gjort allt den kan
+via API. Kvar är tre små saker som bara går att göra i admin. Gör dem i Chrome med mitt
+inloggade konto. Fråga mig om inloggning när du behöver den. Datorn är en Windows-dator.
+
+  1. Byt loggan i kassan (i dag "BÄVERBUTIKEN", som utländska kunder inte känner igen).
+  2. Ge appen "Bäver uppladdare" rätt att läsa metaobjekt, så att sessionen själv kan
+     översätta färgnamnen ("Grön" i den tyska kassan). Translate & Adapt behövs då inte.
+  3. Be Judge.me leta efter butikens språk igen.
+
+Jag vet att loggbytet syns även för svenska kunder i kassan. Det är mitt beslut.
+
+⛔ DET HÄR RÖR DU ALDRIG
+- Loopia, DNS, namnservrar, MX-poster, domäner. Butikens PRIMÄRA domän.
+- Marknader, språk, valutor, priser, frakt, betalsätt, Shopify Payments, skatter,
+  rabatter, temat, produkter, Kachings erbjudanden, Meta, annonser.
+- I kassaredigeraren: färger, typsnitt, knappar, bakgrunder, favicon, loggans storlek
+  och placering, texter, block och appar. BARA själva loggfilen byts.
+- Andra appar än "Bäver uppladdare" (steg 2) och Judge.me (steg 3).
+- Inga rättigheter tas bort. Du LÄGGER TILL, du ersätter aldrig. En rättighet som
+  försvinner syns inte som ett fel: spårningssidan och produktuppladdningen slutar
+  bara tyst att fungera.
+- Judge.me: datumformatet och alla andra inställningar står kvar. Inga recensioner
+  raderas, döljs eller redigeras. Inga recensionsförfrågningar slås på.
+- Ingenting köps, ingen app installeras, inget abonnemang uppgraderas.
+- Lägg ALDRIG en order. Fyll aldrig i ett kortnummer, en adress eller en e-post i kassan.
+- Ladda inte upp någon ny fil. Loggan finns redan i butikens filer.
+
+Admin: https://admin.shopify.com/store/4snrw0-mg
+
+------------------------------------------------------------------------------
+STEG 1 — Byt loggan i kassan
+------------------------------------------------------------------------------
+
+1. Admin → Inställningar (nere till vänster) → Kassa.
+2. Vid den aktiva konfigurationen (den som står "Aktiv"/"Active" eller "Publicerad"):
+   klicka "Redigera". (Knappen heter "Redigera", inte "Anpassa".)
+3. I redigeraren: klicka kugghjulet / "Inställningar" (Settings) i vänsterkanten och
+   sedan "Logotyp" (Logo) under Varumärke/Branding.
+4. Skriv av vilken fil som står som logga nu (filnamnet), innan du ändrar något.
+5. Klicka på loggan / "Ändra" / "Välj fil" och välj den BEFINTLIGA filen
+   "beaver-store-kassa-logga-flaggor.png" ur listan (sök på "flaggor" om den inte syns).
+   Den är 1920 × 1080 med genomskinlig bakgrund: en bäver och nio små flaggor.
+   Finns filen inte i listan: STOPPA steg 1 och skriv vad du ser. Ladda inte upp något.
+6. Ändra INTE storlek eller placering. Spara uppe till höger.
+7. Kräver Shopify att du "publicerar" konfigurationen: gör det, men bara om den enda
+   ändringen i listan över ändringar är loggan. Står något annat där: STOPPA och skriv
+   vad det är.
+
+------------------------------------------------------------------------------
+STEG 2 — Rätten att läsa metaobjekt i appen "Bäver uppladdare"
+------------------------------------------------------------------------------
+
+Färgerna ("Grön", "Blå" …) är metaobjekt i Shopifys färgkategori. Appen får i dag
+översätta, men inte läsa metaobjekt, så sessionen ser inte färgerna.
+
+Appen har i dag EXAKT de här rättigheterna (mätt 2026-10-01 via API):
+
+  read_content, read_discounts, read_inventory, read_legal_policies, read_locales,
+  read_markets, read_online_store_navigation, read_products, read_publications,
+  read_shipping, read_themes, read_translations,
+  write_content, write_discounts, write_inventory, write_locales, write_markets,
+  write_products, write_publications, write_shipping, write_themes,
+  write_translations
+
+(I appens lista kan det stå kortare: en write_-rättighet ger read_-rättigheten av sig
+själv. Det är okej, men varje rad ovan måste täckas av något i listan.)
+
+De som ska LÄGGAS TILL, exakt stavade (båda bara läsning):
+
+  read_metaobjects, read_metaobject_definitions
+
+1. Öppna https://dev.shopify.com → Apps → "Bäver uppladdare". Kontrollera att Client ID
+   börjar med c08d97a8. Stämmer det inte: STOPPA steg 2 och skriv vad du såg.
+   (Ligger appen i stället under butikens admin → Inställningar → Appar och
+   försäljningskanaler → Utveckla appar: Konfiguration → Admin API-integration →
+   Redigera, kryssa BARA I "Metaobjects" (läs) och "Metaobject definitions" (läs),
+   spara och hoppa till punkt 7.)
+2. Versions → Create a version (eller "New version").
+3. INNAN du ändrar något: kopiera fältet Scopes ordagrant till rapporten under "FÖRE".
+   Kontrollera att alla rättigheter ovan täcks. Är fältet TOMT eller saknas något:
+   STOPPA. Skapa inte versionen. Ett tomt fält betyder att versionen inte utgår från
+   den aktiva, och släpps den försvinner alla rättigheter.
+4. Ställ markören SIST i fältet och skriv till, utan mellanslag:
+     ,read_metaobjects,read_metaobject_definitions
+5. Kopiera fältets nya innehåll till rapporten under "EFTER". EFTER ska vara FÖRE +
+   raden ovan, inget mer och inget mindre. Ändra inga andra fält.
+6. Döp versionen till "metaobjekt-2026-10-01" om den frågar. Tryck Release och
+   kontrollera under Versions att den nya versionen är Active.
+7. Öppna butikens admin → Inställningar → Appar och försäljningskanaler → "Bäver
+   uppladdare". Visar Shopify en ruta om nya rättigheter: läs den. Den ska bara nämna
+   metaobjekt. Nämner den att något TAS BORT: tryck inte, STOPPA och skriv vad den sa.
+   Annars: Uppdatera / Godkänn / Approve. Visas ingen ruta: gå tillbaka till appen i
+   Dev Dashboard → Install app → välj Bäverbutiken, så att rutan visas.
+
+------------------------------------------------------------------------------
+STEG 3 — Judge.me: leta efter språken igen
+------------------------------------------------------------------------------
+
+I går slogs "Översätt recensioner automatiskt" på. Judge.me skrev då: "Vi kunde inte
+identifiera några ytterligare språk för din butik." Butiken har nio språk publicerade
+(svenska + en, de, fr, es, it, nl, pl, pt-PT).
+
+1. Admin → Appar → Judge.me Product Reviews → Inställningar → Språk.
+2. Klicka länken "försök igen" vid meddelandet EN gång. Vänta en minut och ladda om.
+3. Skriv i rapporten exakt vad som står efteråt, och vilka språk som listas.
+4. Ändra ingenting annat. Datumformatet rörs inte (sessionen har ordnat datumen i
+   temat för utländska kunder).
+
+------------------------------------------------------------------------------
+STEG 4 — Kontrollera som kund (lägg ALDRIG en order)
+------------------------------------------------------------------------------
+
+Rensa butikens cookies mellan kontrollerna (eller använd ett nytt fönster).
+
+1. Tyskland: öppna
+   https://beaverstoreco.com/de/products/fiskespohallare-4-pack-kraftig-forvaring?country=DE
+   Lägg EN i varukorgen, gå till kassan. Fyll INTE i något.
+   - Står den nya loggan (bäver + flaggor) högst upp? Ta en skärmdump.
+   - Syns loggan skarp, eller är den suddig/för liten? Skriv vad du ser.
+   Stäng kassan och töm varukorgen.
+2. Sverige: öppna
+   https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring?country=SE
+   Lägg EN i varukorgen, gå till kassan. Fyll INTE i något.
+   - Står den nya loggan där också? Är kassan i övrigt svensk (texter, kronor)?
+     Ta en skärmdump. Stäng kassan och töm varukorgen.
+3. Gör punkt 1 en gång till i mobilstorlek (Chrome → F12 → mobilikonen, välj iPhone):
+   syns flaggorna, eller blir de prickar? Skriv vad du ser.
+
+Ser loggan fel ut (beskuren, suddig, på fel plats): byt TILLBAKA till filen du skrev av
+i steg 1.4, spara, och skriv vad som var fel.
+
+------------------------------------------------------------------------------
+RAPPORTEN
+------------------------------------------------------------------------------
+
+Kort, i punktform:
+1. Den gamla loggans filnamn, och att den nya är sparad (och publicerad).
+2. Appens rättigheter FÖRE och EFTER, ordagrant, versionens namn och vad
+   godkännanderutan sa.
+3. Vad Judge.me sa efter "försök igen", och vilka språk som listas.
+4. Svaren på steg 4 med skärmdumparna.
+5. Allt som såg konstigt ut, och varje ställe där du stoppade.
+
+Skriv aldrig ut client secret, åtkomsttoken eller lösenord i rapporten.

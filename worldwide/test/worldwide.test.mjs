@@ -225,3 +225,24 @@ test('Impressum: länken i sidfoten ritas bara på tyska, och sidan bär ankaret
     assert.doesNotMatch(readFileSync(f, 'utf8'), /Impressum|Odhner/, l);
   }
 });
+
+test('Judge.me-datum: skrivs om med månadsnamn i världsläget, aldrig för amerikaner', async () => {
+  const { byggAppord } = await import('../tema/patch.mjs');
+  const t = byggAppord();
+  const s = t.slice(t.indexOf('<script>') + 8, t.indexOf('</script>')).replace(/\{%-?[^%]*-?%\}/g, '');
+  assert.doesNotThrow(() => new Function(s));
+  const re = new RegExp(/var DATUM = \/(.+)\/;/.exec(s)[1]);
+  assert.ok(re.test('09/24/2026'));
+  assert.ok(!re.test('24. Sept. 2026'));
+  assert.match(s, /Shopify\.country === 'US'/);
+  assert.match(s, /datum\(document\)/);
+});
+
+test('färgnamnen: planen översätter bara etikettfältet, på alla åtta språk, och rör aldrig svenskan', async () => {
+  const { planFor } = await import('../granskning/fargnamn.mjs');
+  const plan = planFor({ resourceId: 'x', translatableContent: [{ key: 'label', value: 'Grön', digest: 'd1' }, { key: 'color', value: '#00ff00', digest: 'd2' }] });
+  assert.equal(plan.length, 8);
+  assert.deepEqual(plan.find((p) => p.locale === 'de'), { locale: 'de', key: 'label', value: 'Grün', translatableContentDigest: 'd1', kalla: 'Grön' });
+  assert.ok(!plan.some((p) => p.locale === 'sv'));
+  assert.equal(planFor({ resourceId: 'y', translatableContent: [{ key: 'label', value: 'Orange', digest: 'd' }] }).length, 0);
+});

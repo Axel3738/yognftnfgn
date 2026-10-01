@@ -39,7 +39,8 @@ export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s sv
 // a8 2026-10-01: färgkategorins engelska rester (Pink, Purple, Khaki) på es/it/pt-PT, de och fr.
 // a9 2026-10-01: samma tre färger på alla sju språk (tyskan visade fortfarande "Pink" i Kaching).
 // a10 2026-10-01: Impressum-länk i sidfoten, bara på tyska (tysk lag, § 5 DDG; sidan är AGB:s tyska översättning).
-export const APPORD_VERSION = 'a10';
+// a11 2026-10-01: Judge.me:s datum ("09/24/2026", butiksinställningen gäller även Sverige) skrivs om på besökarens språk.
+export const APPORD_VERSION = 'a11';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -246,8 +247,27 @@ Tredje regeln: kollektionssidans banner (promo-grid, bilden hf_20260622_143757�
     // Skärmläsarens texter (aria-label="Se alla recensioner" på stjärnorna) byts också.
     if (rot.querySelectorAll) rot.querySelectorAll('[aria-label]').forEach(function (e) { var a = e.getAttribute('aria-label'); if (a && e.closest(SEL) && O.exakt[a.trim()]) e.setAttribute('aria-label', tr(O.exakt[a.trim()])); });
   }
+  // Judge.me skriver recensionens datum i amerikanskt format ("09/24/2026") i hela butiken — inställningen
+  // gäller även den svenska sidan och rörs därför inte. En europé läser 09/05 som 9 maj. I världsläget skrivs
+  // datumet om med månadens namn på besökarens språk ("24. Sept. 2026"), som inte går att läsa fel.
+  // Amerikanska besökare behåller sitt eget format. Utdatan matchar aldrig mönstret, så inget byts två gånger.
+  var DATUM = /^(\\d{2})\\/(\\d{2})\\/(\\d{4})$/;
+  var amerikan = /^en/.test(document.documentElement.lang || '') && window.Shopify && Shopify.country === 'US';
+  // Språk + land ("en-GB" ger "24 Sept 2026", "de-AT" österrikiskt), så att en britt inte får det amerikanska formatet.
+  function sprakLand() { var l = document.documentElement.lang || 'en', c = window.Shopify && Shopify.country; return l.indexOf('-') < 0 && c ? l + '-' + c : l; }
+  function datum(rot) {
+    if (amerikan || !rot.querySelectorAll || !window.Intl) return;
+    rot.querySelectorAll('[class*="jm-"], [class*="jdgm"]').forEach(function (e) {
+      if (e.children.length) return;
+      var t = (e.textContent || '').trim(), m = DATUM.exec(t);
+      if (!m) return;
+      var d = new Date(Date.UTC(+m[3], +m[1] - 1, +m[2]));
+      if (d.getUTCMonth() !== +m[1] - 1) return;
+      try { e.textContent = new Intl.DateTimeFormat(sprakLand(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(d); } catch (x) {}
+    });
+  }
   var väntar = false;
-  function kör() { väntar = false; gå(document.body); lankar(document); bilder(document); }
+  function kör() { väntar = false; gå(document.body); lankar(document); bilder(document); datum(document); }
   new MutationObserver(function () { if (!väntar) { väntar = true; requestAnimationFrame(kör); } }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   if (document.readyState !== 'loading') kör(); else document.addEventListener('DOMContentLoaded', kör);
 })();

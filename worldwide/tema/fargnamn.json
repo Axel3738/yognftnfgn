@@ -1,0 +1,17 @@
+{
+  "_om": "Färgnamnen i Shopifys färgkategori (metaobjekt shopify--color-pattern). Svenskan är källan och rörs aldrig; de här är översättningarna som kassan och mejlen visar. Samma tabell som worldwide/cowork/3-granskningen.txt steg 1. Körs med node worldwide/granskning/fargnamn.mjs [--skarpt].",
+  "farger": {
+    "Grön":       { "en": "Green",      "de": "Grün",       "fr": "Vert",        "es": "Verde",       "it": "Verde",    "nl": "Groen",       "pl": "Zielony",   "pt-PT": "Verde" },
+    "Rosa":       { "en": "Pink",       "de": "Rosa",       "fr": "Rose",        "es": "Rosa",        "it": "Rosa",     "nl": "Roze",        "pl": "Różowy",    "pt-PT": "Rosa" },
+    "Blå":        { "en": "Blue",       "de": "Blau",       "fr": "Bleu",        "es": "Azul",        "it": "Blu",      "nl": "Blauw",       "pl": "Niebieski", "pt-PT": "Azul" },
+    "Kamouflage": { "en": "Camouflage", "de": "Camouflage", "fr": "Camouflage",  "es": "Camuflaje",   "it": "Mimetico", "nl": "Camouflage",  "pl": "Kamuflaż",  "pt-PT": "Camuflagem" },
+    "Svart":      { "en": "Black",      "de": "Schwarz",    "fr": "Noir",        "es": "Negro",       "it": "Nero",     "nl": "Zwart",       "pl": "Czarny",    "pt-PT": "Preto" },
+    "Grått":      { "en": "Gray",       "de": "Grau",       "fr": "Gris",        "es": "Gris",        "it": "Grigio",   "nl": "Grijs",       "pl": "Szary",     "pt-PT": "Cinzento" },
+    "Gul":        { "en": "Yellow",     "de": "Gelb",       "fr": "Jaune",       "es": "Amarillo",    "it": "Giallo",   "nl": "Geel",        "pl": "Żółty",     "pt-PT": "Amarelo" },
+    "Vitt":       { "en": "White",      "de": "Weiß",       "fr": "Blanc",       "es": "Blanco",      "it": "Bianco",   "nl": "Wit",         "pl": "Biały",     "pt-PT": "Branco" },
+    "Rött":       { "en": "Red",        "de": "Rot",        "fr": "Rouge",       "es": "Rojo",        "it": "Rosso",    "nl": "Rood",        "pl": "Czerwony",  "pt-PT": "Vermelho" },
+    "Marin":      { "en": "Navy",       "de": "Marineblau", "fr": "Bleu marine", "es": "Azul marino", "it": "Blu navy", "nl": "Marineblauw", "pl": "Granatowy", "pt-PT": "Azul-marinho" },
+    "Lila":       { "en": "Purple",     "de": "Lila",       "fr": "Violet",      "es": "Morado",      "it": "Viola",    "nl": "Paars",       "pl": "Fioletowy", "pt-PT": "Roxo" },
+    "Khaki":      { "en": "Khaki",      "de": "Khaki",      "fr": "Kaki",        "es": "Caqui",       "it": "Cachi",    "nl": "Kaki",        "pl": "Khaki",     "pt-PT": "Caqui" }
+  }
+}
