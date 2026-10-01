@@ -3053,3 +3053,37 @@ postad i `#annons-uppladdning` (`1555220498533716029`), ingen ping.
 
 Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på Axels
 besked, obesvarat sedan 2026-09-23.
+
+---
+
+## 2026-10-01 — speglingen: 0 speglade, 3 stoppade, EN-kön tom
+
+Samma tre rader som i går i `CaraShell SE ready to be active`, alla stoppade —
+inget uppladdat, ingen status ändrad, inga nya kommentarer (stopp-kommentarerna
+från tidigare körningar står kvar på alla tre raderna).
+
+| Källrad | Format | Stoppskäl |
+|---|---|---|
+| `Takoverdrag_FD_2_2` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | video | nämner butiken — **åttonde dygnet** (24/9–1/10) |
+
+**`CaraShell EN ready to be active` är tom** — i går gick de tre sista raderna
+(`SP_4_H2`, `CS_12_H1`, `UG_2_H1`) till `Approved` när US-annonserna låg uppe,
+och inga nya har kommit in. Ingen rad väntar alltså på USA.
+
+Lästa live i dag: SE-kampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 |
+2026-09-11` ACTIVE med 11 adsets, NO-kampanjen `CARASHELL_NO_Takovertrekket`
+ACTIVE med 12 adsets, pris SE 1 129 kr och NO 1 106 NOK ur butiken (båda
+stämmer mot creativens 1 129 — priset är inte stoppet på någon rad). 162
+källannonser lästa i Bäverbutikens konto. Metas tre konton svarade utan
+strypning i dag, till skillnad från i går (~50 minuters kod 17 på UK-kontot).
+
+Inget loggat i registret: `register.mjs log` vägrar 0.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555231858881593357`).
+`action_axel` skrevs om för hand igen, av samma skäl som 2026-09-30: verktyget
+lägger fars dag-raderna i ACTION NEEDED med texten "decide whether the editor
+should make a store version", men **de två fars dag-bildannonserna kan ALDRIG
+speglas, och det är inte Axels beslut** — de ligger som förklaring under
+Warnings, och bara `GT_11_H1` står kvar som hans beslut.
