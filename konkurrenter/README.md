@@ -543,6 +543,18 @@ som GIF på deras produktsida. Axel: "Anmäla allt." Fem verktyg kom till.
   namnprefix och missade Nathalie, vars svenska annons inte heter `MATSTRUMP_…`.
   Jämför mot ALLA filmer innan något kallas "inte vårt". Produktbilder som kom
   från leverantören anmäls aldrig.
+- **Själv-läget i appen** (`--granska <id> --sjalv alla|nyckel,…|av`, och sedan
+  `--granska-svar <id> --beslut <fil> --kvittera`). Den 1 oktober på kvällen stoppade
+  Coworks säkerhetsspärr 10 av 11 anmälningar, alla MatSokkers 9 och Shopify-anmälan,
+  trots Axels uttryckliga godkännande. Cowork skriver heller aldrig in
+  verifieringskoden. Därför kan korten sättas i läget `sjalv`. Läget sparas på ärendet
+  (`a.sjalv`), så att varje senare statusbygge behåller det. Kortet visar då stegen i
+  formulärets ordning, med en kopieringsknapp per fält. Kopieringstexterna är exakt
+  `formularVarden`, alltså samma som Cowork-prompten. Axel trycker "Jag har skickat in
+  den", med ärendenumret om det finns, och markeringen sparas i `data/beslut.json`
+  under `skickat`. Sessionen skriver in kvittot med hans tid. Sessionen skickar aldrig
+  ett kort som står som `sjalv` eller `skickat`. Korten byter inte version, så hans Ja
+  gäller fortfarande. Skriv aldrig en ny Cowork-prompt som försöker ta sig runt spärren.
 - **`--klipp … --utan-film <regex>`** tar bort filmer ur jämförelsen.
   Matstrumpors utlandsversioner `MATSTRUMP_<LAND>_*` har aldrig visats och finns
   inte i annonsbiblioteket, så ett par mot dem går inte att kontrollera för
@@ -646,4 +658,4 @@ output/ dit (tester och provkörningar — repot rörs inte).
 - Klipp i `externa/` bär aldrig ett par, räknas aldrig i andelen och deras filmer länkas aldrig som original.
 - En Shopify-anmälan bara på det som mätts som vårt (≥ 3 identiska rutor ur ≥ 2 sekunder, ≥ 30 %), bara efter Axels Ja på kortets version, kvitterad en gång.
 - Bildbevis säger "identical" bara när mätningen gör det; en delbild påstår bara att bilden under texten är vår.
-- 95 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- 100 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

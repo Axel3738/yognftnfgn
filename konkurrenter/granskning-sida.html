@@ -82,6 +82,19 @@ button{font:inherit}
 .botten-text{font-size:15px;color:var(--dis);text-align:center}
 .nejruta{display:grid;gap:8px}
 .nejruta textarea{width:100%;min-height:84px;border-radius:10px;border:1.5px solid var(--linje);background:var(--bg);color:var(--text);font:16px var(--brod);padding:10px}
+.nejruta input{width:100%;min-height:48px;border-radius:10px;border:1.5px solid var(--linje);background:var(--bg);color:var(--text);font:17px var(--brod);padding:10px}
+/* Själv-läget (2026-10-01): Axel skickar in själv, ett steg i taget, en kopieringsknapp per text. */
+.sjalv{display:grid;gap:10px}
+.steg{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:steg}
+.steg li{counter-increment:steg;display:grid;gap:8px;background:var(--yta2);border-radius:12px;padding:12px 14px;border:2px solid transparent}
+.steg li.gjort{border-color:var(--ja)}
+.steg li > p{font-size:18px;font-weight:600;line-height:1.4}
+.steg li > p::before{content:counter(steg) ". ";color:var(--dis)}
+.kopiera{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start}
+.kopiera pre{margin:0;font-family:var(--mono);font-size:14px;line-height:1.5;white-space:pre-wrap;word-break:break-word;background:var(--yta);border:1px solid var(--linje);border-radius:8px;padding:8px 10px;max-height:8em;overflow:auto}
+.kopiera .knapp{flex:none;min-width:132px}
+@media (max-width:560px){.kopiera{grid-template-columns:minmax(0,1fr)}}
+.lankknapp{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 18px;font-weight:700;min-height:48px;background:var(--accent);color:var(--accent-text);text-decoration:none;width:fit-content;max-width:100%}
 .bildram img[data-zoom]{cursor:zoom-in}
 .zoom{position:fixed;inset:0;z-index:20;background:var(--bg);display:grid;grid-template-rows:auto minmax(0,1fr);padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
 .zoom[hidden]{display:none}
@@ -95,7 +108,7 @@ button{font:inherit}
 <div class="ram">
   <header class="topp">
     <p class="eyebrow" id="eyebrow">Konkurrentdödaren</p>
-    <h1>Granska och svara</h1>
+    <h1 id="rubrik">Granska och svara</h1>
     <p id="ingress">Ett kort per anmälan till Meta, sedan mejlet med fakturan. Svep mellan korten och tryck Ja eller Nej. Det du säger ja till skickar Claude in. Ber Meta om en säkerhetskontroll gör du den själv, Claude gör den aldrig.</p>
     <div class="lagesrad" id="lagesrad"></div>
     <div id="notiser"></div>
@@ -124,6 +137,7 @@ button{font:inherit}
   let nejOppen = null;
   let andrar = null;
   let kopierat = false;
+  let markerar = null;
 
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const ss = {
@@ -133,6 +147,8 @@ button{font:inherit}
   };
   const NYCKEL_INDEX = `granska:${G.arende}:index`;
   const NYCKEL_OSPARAT = `granska:${G.arende}:osparat`;
+  const NYCKEL_KOPIERAT = `granska:${G.arende}:kopierat`;
+  const kopierade = new Set((() => { try { return JSON.parse(ss.get(NYCKEL_KOPIERAT) ?? '[]'); } catch { return []; } })());
   const tal = (n) => Number(n).toLocaleString('sv-SE').replace(/[  ]/g, ' ');
   const tid = (iso) => {
     if (!iso) return '';
@@ -146,9 +162,13 @@ button{font:inherit}
   const klar = (k) => ['inskickad', 'skickad'].includes(lage(k)?.lage);
   const obesvarade = () => ANM.filter((k) => !aktuellt(k) && !klar(k));
   const jaAntal = () => ANM.filter((k) => lage(k)?.lage === 'inskickad' || aktuellt(k)?.svar === 'ja').length;
+  const SKICKBARA = KORT.filter((k) => k.typ === 'anmalan' || k.typ === 'shopify');
   function tillstand(k) {
     const l = lage(k)?.lage;
     if (l === 'inskickad' || l === 'skickad') return 'klar';
+    // Axel har markerat den som inskickad själv; sessionen har inte skrivit in kvittot än.
+    if (B.skickat?.[k.nyckel]) return 'markerad';
+    if (l === 'sjalv') return 'sjalv';
     if (l === 'pagar') return 'pagar';
     if (l === 'fel') return 'fel';
     if (k.typ === 'sms') return S.sms?.text ? 'ja' : 'vantar';
@@ -178,6 +198,11 @@ button{font:inherit}
       if (k.typ === 'shopify') return `<div class="lagesruta klar">Inskickad till Shopify ${esc(tid(l.nar))}<small>${l.referens ? `Shopifys referens: ${esc(l.referens)}` : 'Shopify gav inget referensnummer.'}</small></div>`;
       return `<div class="lagesruta klar">Inskickad till Meta ${esc(tid(l.nar))}<small>${l.referens ? `Metas referens: ${esc(l.referens)}` : 'Meta gav inget referensnummer på kvittot.'}</small></div>`;
     }
+    if (t === 'markerad') {
+      const m = B.skickat[k.nyckel];
+      return `<div class="lagesruta klar">Du skickade in den ${esc(tid(m.nar))}<small>${m.referens ? `Ärendenummer ${esc(m.referens)}. ` : ''}Claude skriver in kvittot.</small></div>`;
+    }
+    if (t === 'sjalv') return `<div class="lagesruta pagar">Du skickar in den själv<small>Cowork får inte skicka in anmälningar mot andra bolag. Följ stegen nedan. Varje text har en kopieringsknapp.</small></div>`;
     if (t === 'pagar') return `<div class="lagesruta pagar">Claude ${k.typ === 'mejl' ? 'skickar mejlet' : 'skickar in anmälan'} just nu<small>Sidan uppdateras när det är klart.</small></div>`;
     if (t === 'fel') return `<div class="lagesruta fel">Det gick inte att ${k.typ === 'mejl' ? 'skicka mejlet' : 'skicka in anmälan'}<small>${esc(l.text ?? '')}</small></div>`;
     if (t === 'ja') return `<div class="lagesruta ja">Du sa ja ${esc(tid(a.nar))}<small>${k.typ === 'mejl' ? 'Claude skickar mejlet så snart alla anmälningar har ett svar.' : k.typ === 'shopify' ? 'Den kommer med i Cowork-prompten, och Cowork skickar in den till Shopify.' : 'Claude skickar in den till Meta.'}</small></div>`;
@@ -186,7 +211,23 @@ button{font:inherit}
     return '';
   }
 
+  // Stegen när Axel skickar in själv: texten, länken till formuläret och en kopieringsknapp per fält.
+  function renderSjalv(k) {
+    return `<section class="sjalv" aria-label="Så skickar du in den">
+        <h3>Så skickar du in den</h3>
+        <ol class="steg">${(k.sjalv ?? []).map((s, i) => {
+          const gjort = kopierade.has(`${k.nyckel}:${i}`);
+          return `<li class="${gjort ? 'gjort' : ''}">
+            <p>${esc(s.text)}</p>
+            ${s.lank ? `<a class="lankknapp" href="${esc(s.lank)}" target="_blank" rel="noopener">Öppna formuläret ↗</a>` : ''}
+            ${s.kopiera ? `<div class="kopiera"><pre>${esc(s.kopiera)}</pre><button type="button" class="knapp ${gjort ? 'neutral' : 'ja'}" data-atgard="kopiera-steg" data-steg="${i}">${gjort ? 'Kopierat ✓' : 'Kopiera'}</button></div>` : ''}
+          </li>`;
+        }).join('')}</ol>
+      </section>`;
+  }
+
   function renderAnmalan(k) {
+    if (tillstand(k) === 'sjalv') return renderAnmalanSjalv(k);
     const falt = k.falt.map((f) => `<div class="faltrad"><dt>${esc(f.etikett)}</dt><dd class="${f.lang ? 'lang' : ''}">${f.lank ? lankar(f.varde) : esc(f.varde)}${f.sv ? `<span class="svensk">${esc(f.sv)}</span>` : ''}</dd></div>`).join('');
     return `
       <p class="eyebrow">Anmälan ${k.nr} av ${k.antal ?? ANM.length}</p>
@@ -216,7 +257,43 @@ button{font:inherit}
       </section>`;
   }
 
+  // Samma kort när Axel skickar in själv: stegen först, bilden och försäkran under som referens.
+  function renderAnmalanSjalv(k) {
+    return `
+      <p class="eyebrow">Anmälan ${k.nr} av ${k.antal ?? ANM.length}</p>
+      <h2>Annons ${esc(k.annonsNr ?? '')} hos ${esc(G.deras?.sidnamn ?? 'dem')}</h2>
+      <p><a href="${esc(k.lank)}" target="_blank" rel="noopener">Öppna annonsen i Metas annonsbibliotek</a></p>
+      ${renderLageRuta(k)}
+      ${renderSjalv(k)}
+      <section aria-label="Försäkran">
+        <h3>Försäkran i formuläret, som du skriver under</h3>
+        <ul class="forsakran">${k.forsakran.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+      </section>
+      <section class="bildram" aria-label="Bilden som visar intrånget">
+        <h3>Bilden som visar intrånget</h3>
+        ${k.bild ? `<img src="${esc(k.bild)}" data-zoom alt="Bildrutor ur vårt material bredvid samma rutor i deras annons" loading="lazy">` : ''}
+        <p class="liten">Länken till bilden står redan i beskrivningen. Du behöver inte ladda upp något.</p>
+      </section>`;
+  }
+
   function renderShopify(k) {
+    if (tillstand(k) === 'sjalv') {
+      return `
+      <p class="eyebrow">Anmälan till Shopify</p>
+      <h2>Vår film på ${esc((k.butik ?? '').replace(/^https?:\/\//, ''))}</h2>
+      ${k.sida ? `<p><a href="${esc(k.sida)}" target="_blank" rel="noopener">Öppna deras sida</a></p>` : ''}
+      ${renderLageRuta(k)}
+      ${renderSjalv(k)}
+      <section aria-label="Försäkran">
+        <h3>Försäkringarna du kryssar i</h3>
+        <ul class="forsakran">${k.forsakran.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+        <p class="liten">Shopify kan skicka anmälan, med namn och e-post, vidare till butiken.</p>
+      </section>
+      <section class="bildram" aria-label="Bilden som visar intrånget">
+        <h3>Bilden som visar intrånget</h3>
+        ${k.bild ? `<img src="${esc(k.bild)}" data-zoom alt="Bildrutor ur vår film bredvid samma rutor på deras sida" loading="lazy">` : ''}
+      </section>`;
+    }
     const falt = k.falt.map((f) => `<div class="faltrad"><dt>${esc(f.etikett)}</dt><dd class="${f.lang ? 'lang' : ''}">${f.lank ? lankar(f.varde) : esc(f.varde)}${f.sv ? `<span class="svensk">${esc(f.sv)}</span>` : ''}</dd></div>`).join('');
     const m = k.matt;
     return `
@@ -287,6 +364,19 @@ button{font:inherit}
   }
 
   function renderLagesrad() {
+    const sjalvKvar = SKICKBARA.filter((k) => tillstand(k) === 'sjalv').length;
+    const sjalvLage = SKICKBARA.some((k) => ['sjalv', 'markerad'].includes(tillstand(k)));
+    if (sjalvLage) {
+      const inneAlla = SKICKBARA.filter((k) => ['klar', 'markerad'].includes(tillstand(k))).length;
+      document.getElementById('rubrik').textContent = 'Skicka in anmälningarna';
+      document.getElementById('ingress').textContent = 'Cowork får inte skicka in anmälningar mot andra bolag, så du skickar in dem själv. Ta ett kort i taget: öppna formuläret, kopiera varje text med knappen och klistra in den. Tryck sedan "Jag har skickat in den".';
+      document.getElementById('lagesrad').innerHTML = [
+        `<span class="chip ${sjalvKvar ? 'pagar' : 'ja'}">${sjalvKvar} kvar att skicka in</span>`,
+        `<span class="chip ja">${inneAlla} inskickade</span>`,
+      ].join('');
+      document.getElementById('eyebrow').textContent = `Konkurrentdödaren · ${G.arende}${G.deras?.sidnamn ? ` · ${G.deras.sidnamn}` : ''}`;
+      return;
+    }
     const ja = ANM.filter((k) => ['ja', 'pagar', 'klar'].includes(tillstand(k))).length;
     const nej = ANM.filter((k) => tillstand(k) === 'nej').length;
     const inne = ANM.filter((k) => tillstand(k) === 'klar').length;
@@ -324,7 +414,9 @@ button{font:inherit}
     document.getElementById('prickar').innerHTML = KORT.map((k, i) => {
       const t = tillstand(k);
       const namn = k.typ === 'anmalan' ? String(k.nr) : k.typ === 'mejl' ? 'Mejl' : k.typ === 'shopify' ? 'Shopify' : 'Sms';
-      return `<button type="button" class="prick ${t === 'ombyggd' ? '' : t}" data-gatill="${i}" aria-current="${i === index}" aria-label="${esc(kortNamn(k))}, ${esc(t)}">${esc(namn)}</button>`;
+      const klass = t === 'ombyggd' ? '' : t === 'sjalv' ? 'pagar' : t === 'markerad' ? 'klar' : t;
+      const ord = t === 'sjalv' ? 'att skicka in' : t === 'markerad' || t === 'klar' ? 'inskickad' : t;
+      return `<button type="button" class="prick ${klass}" data-gatill="${i}" aria-current="${i === index}" aria-label="${esc(kortNamn(k))}, ${esc(ord)}">${esc(namn)}${t === 'markerad' || (t === 'klar' && k.typ !== 'mejl') ? ' ✓' : ''}</button>`;
     }).join('');
   }
 
@@ -336,6 +428,15 @@ button{font:inherit}
     const kanSpara = Boolean(artifact) && !lasbar;
     if (k.typ === 'sms') {
       mitt = S.sms?.text ? `<button type="button" class="knapp ja" data-atgard="kopiera">${kopierat ? 'Kopierat' : 'Kopiera sms-texten'}</button>` : '<p class="botten-text" style="flex:1;align-self:center">Kommer när mejlet har gått iväg</p>';
+    } else if (t === 'sjalv' && markerar === k.nyckel) {
+      ovan = `<div class="nejruta"><label for="ref" class="liten">Ärendenummer från ${k.typ === 'shopify' ? 'Shopify' : 'Meta'}, om tacksidan visar ett. Annars: lämna tomt.</label><input id="ref" type="text" maxlength="80" autocomplete="off" inputmode="text"></div>`;
+      mitt = `<button type="button" class="knapp neutral" data-atgard="avbryt">Avbryt</button><button type="button" class="knapp ja" data-atgard="spara-skickat" ${sparar ? 'disabled' : ''}>${sparar ? 'Sparar …' : 'Spara som inskickad'}</button>`;
+    } else if (t === 'sjalv') {
+      mitt = `<button type="button" class="knapp ja" data-atgard="markera" ${kanSpara && !sparar ? '' : 'disabled'}>Jag har skickat in den</button>`;
+      if (!artifact) ovan = '<p class="botten-text">Knappen fungerar när sidan är öppen i Claude. Annars: skriv i chatten vilka du skickat in.</p>';
+      else if (lasbar) ovan = '<p class="botten-text">Den här vyn kan inte spara. Skriv i chatten vilka du skickat in.</p>';
+    } else if (t === 'markerad') {
+      mitt = `<p class="botten-text" style="flex:1;align-self:center">Inskickad. Claude skriver in kvittot.</p><button type="button" class="knapp neutral" data-atgard="angra-skickat" style="flex:0 0 auto" ${kanSpara && !sparar ? '' : 'disabled'}>Ångra</button>`;
     } else if (t === 'klar' || t === 'pagar') {
       mitt = `<p class="botten-text" style="flex:1;align-self:center">${t === 'klar' ? (k.typ === 'mejl' ? 'Skickat' : 'Inskickad') : 'Claude arbetar med den nu'}</p>`;
     } else if ((t === 'ja' || t === 'nej') && andrar !== k.nyckel) {
@@ -394,13 +495,60 @@ button{font:inherit}
       render();
     } catch (e) {
       sparar = false;
-      const kod = e?.code ?? 'upstream_error';
-      if (kod === 'conflict') skrivfel = 'Sidan uppdaterades samtidigt. Tryck på knappen igen.';
-      else if (['not_writer', 'not_granted', 'capability_disabled', 'capability_removed', 'consent_required', 'not_declared'].includes(kod)) { lasbar = true; skrivfel = 'Den här vyn kan inte spara svar. Skriv i chatten i stället, till exempel: ja 1 2 3, nej 4.'; ss.del(NYCKEL_OSPARAT); }
-      else if (kod === 'rate_limited') skrivfel = 'För många sparningar på kort tid. Vänta en minut och tryck igen.';
-      else skrivfel = `Svaret sparades inte (${kod}). Tryck igen om en stund.`;
+      sparfel(e, 'Den här vyn kan inte spara svar. Skriv i chatten i stället, till exempel: ja 1 2 3, nej 4.');
+      if (lasbar) ss.del(NYCKEL_OSPARAT);
       render();
     }
+  }
+
+  function sparfel(e, lasText) {
+    const kod = e?.code ?? 'upstream_error';
+    if (kod === 'conflict') skrivfel = 'Sidan uppdaterades samtidigt. Tryck på knappen igen.';
+    else if (['not_writer', 'not_granted', 'capability_disabled', 'capability_removed', 'consent_required', 'not_declared'].includes(kod)) { lasbar = true; skrivfel = lasText; }
+    else if (kod === 'rate_limited') skrivfel = 'För många sparningar på kort tid. Vänta en minut och tryck igen.';
+    else skrivfel = `Det sparades inte (${kod}). Tryck igen om en stund.`;
+  }
+
+  function nastaSjalv(fran) {
+    for (let i = fran + 1; i < KORT.length; i++) if (tillstand(KORT[i]) === 'sjalv') return i;
+    for (let i = 0; i < fran; i++) if (tillstand(KORT[i]) === 'sjalv') return i;
+    return fran;
+  }
+
+  // Axels egen markering "Jag har skickat in den" (post) eller Ångra (null) — i SAMMA fil som hans Ja/Nej,
+  // under `skickat`. Sessionen läser den och skriver in kvittot (--granska-svar --kvittera).
+  async function sparaSkickat(k, post) {
+    if (!artifact || sparar) return;
+    const skickat = { ...(B.skickat ?? {}) };
+    if (post) skickat[k.nyckel] = post; else delete skickat[k.nyckel];
+    const nytt = { ...B, skickat };
+    const text = `${JSON.stringify(nytt, null, 1)}\n`;
+    sparar = true; skrivfel = null; renderBotten();
+    try {
+      const fil = { content: text, contentType: 'application/json' };
+      if (beslutSha) fil.ifMatch = beslutSha;
+      const res = await artifact.publish({ 'data/beslut.json': fil });
+      B = nytt;
+      beslutSha = res?.shas?.['data/beslut.json'] ?? (await sha256(text));
+      sparar = false; markerar = null;
+      if (post) index = nastaSjalv(index);
+      render();
+      window.scrollTo(0, 0);
+    } catch (e) {
+      sparar = false;
+      sparfel(e, 'Den här vyn kan inte spara. Skriv i chatten vilka du skickat in, till exempel: 1 2 3 klara.');
+      render();
+    }
+  }
+
+  async function kopieraText(text) {
+    try { await navigator.clipboard.writeText(text); return true; } catch { /* nästa väg */ }
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy'); ta.remove(); return ok;
+    } catch { return false; }
   }
 
   const zoom = document.getElementById('zoom');
@@ -420,7 +568,24 @@ button{font:inherit}
       case 'nasta': return ga(index + 1);
       case 'ja': return spara(k, 'ja');
       case 'nej': nejOppen = k.nyckel; renderBotten(); document.getElementById('nej-not')?.focus(); return;
-      case 'avbryt': nejOppen = null; andrar = null; renderBotten(); return;
+      case 'avbryt': nejOppen = null; andrar = null; markerar = null; renderBotten(); return;
+      case 'markera': markerar = k.nyckel; renderBotten(); document.getElementById('ref')?.focus(); return;
+      case 'spara-skickat': return sparaSkickat(k, { nar: new Date().toISOString(), referens: String(document.getElementById('ref')?.value ?? '').trim().slice(0, 80), version: k.version });
+      case 'angra-skickat': return sparaSkickat(k, null);
+      case 'kopiera-steg': {
+        const i = Number(b.dataset.steg);
+        const s = k.sjalv?.[i];
+        if (!s?.kopiera) return;
+        if (await kopieraText(s.kopiera)) {
+          kopierade.add(`${k.nyckel}:${i}`); ss.set(NYCKEL_KOPIERAT, JSON.stringify([...kopierade]));
+          b.textContent = 'Kopierat ✓'; b.classList.remove('ja'); b.classList.add('neutral'); b.closest('li')?.classList.add('gjort');
+        } else {
+          const pre = b.closest('.kopiera')?.querySelector('pre');
+          if (pre) { const r = document.createRange(); r.selectNodeContents(pre); const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+          b.textContent = 'Markerad: tryck Ctrl+C';
+        }
+        return;
+      }
       case 'spara-nej': return spara(k, 'nej', document.getElementById('nej-not')?.value ?? '');
       case 'andra': andrar = k.nyckel; renderBotten(); return;
       case 'spara-igen': {
@@ -441,6 +606,7 @@ button{font:inherit}
 
   document.addEventListener('keydown', (ev) => {
     if (ev.key === 'Escape' && !zoom.hidden) return stangZoom();
+    if (ev.key === 'Enter' && ev.target.id === 'ref') { ev.preventDefault(); return document.querySelector('[data-atgard="spara-skickat"]')?.click(); }
     if (ev.target.closest?.('textarea,input') || !zoom.hidden) return;
     if (ev.key === 'ArrowLeft') ga(index - 1);
     if (ev.key === 'ArrowRight') ga(index + 1);
