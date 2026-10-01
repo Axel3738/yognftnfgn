@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252434676430233",
+      "namn": "Varmesete_NO_PD_2",
+      "status": "ACTIVE",
+      "spend": 611.43,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 1,
+      "spend_7d": 611.43,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120252434676630233",
+      "namn": "Varmesete_NO_PD_3",
+      "status": "ACTIVE",
+      "spend": 633.29,
+      "roas": 3.19135,
+      "kop": 2,
+      "alder_dagar": 1,
+      "spend_7d": 633.29,
+      "roas_7d": 3.19135,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 2.928549,
+      "intakt": 2021.0500415
+    }
+  ],
+  "rest": {
+    "spend": 718.3399999999999,
+    "intakt": 2021.0500415,
+    "kop": 2,
+    "roas": 2.81350062853245
+  },
+  "break_even": 1.63,
+  "kampanj_spend": 1329.77,
+  "tjuvSpend": 611.43,
+  "tjuvAndel": 0.4598013190250945,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 46 % av spenden under break-even 1,63: Varmesete_NO_PD_2 (611 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,81 (718 kr, 2 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120252434667620233",
+  "kampanj_namn": "Varmesete NO | BE-ROAS 1,63 | 2026-09-29"
+}

@@ -1,0 +1,70 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252263198540233",
+      "namn": "Takovertrekk_NO_SP_4_H1",
+      "status": "ACTIVE",
+      "spend": 6512.42,
+      "roas": 0.957186,
+      "kop": 5,
+      "alder_dagar": 15,
+      "spend_7d": 12755.83,
+      "roas_7d": 2.528791,
+      "backdagar_i_rad": 2,
+      "etikett": "BREAKTHROUGH",
+      "etikett_datum": "2026-09-23",
+      "roas_livstid": 3.026674,
+      "intakt": 6233.59725012,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120252313661320233",
+      "namn": "Takovertrekk_NO_PD_10_1",
+      "status": "ACTIVE",
+      "spend": 3217.86,
+      "roas": 3.031512,
+      "kop": 7,
+      "alder_dagar": 11,
+      "spend_7d": 7404.66,
+      "roas_7d": 2.874105,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-27",
+      "roas_livstid": 2.736246,
+      "intakt": 9754.981204320002
+    },
+    {
+      "id": "120252413275680233",
+      "namn": "Takovertrekk_NO_SP_4_H2",
+      "status": "ACTIVE",
+      "spend": 1277.56,
+      "roas": 2.539012,
+      "kop": 2,
+      "alder_dagar": 3,
+      "spend_7d": 1277.56,
+      "roas_7d": 2.539012,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 2.511296,
+      "intakt": 3243.7401707199997
+    }
+  ],
+  "rest": {
+    "spend": 10975.23,
+    "intakt": 15852.9510778,
+    "kop": 11,
+    "roas": 1.4444299643652116
+  },
+  "break_even": 1.62,
+  "kampanj_spend": 17487.65,
+  "tjuvSpend": 6512.42,
+  "tjuvAndel": 0.3724010944866806,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,44 mot break-even 1,62 (10 975 kr, 11 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120252183519570233",
+  "kampanj_namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11"
+}

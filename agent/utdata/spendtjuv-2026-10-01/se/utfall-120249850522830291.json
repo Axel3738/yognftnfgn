@@ -1,0 +1,102 @@
+{
+  "tjuvar": [
+    {
+      "id": "120249850557140291",
+      "namn": "Fiskespöhållare_PD_1_H1",
+      "status": "ACTIVE",
+      "spend": 505.05,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 44,
+      "spend_7d": 958.25,
+      "roas_7d": 1.416436,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 1.782548,
+      "intakt": 0,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250435438530291",
+      "namn": "Rodholder_JF_6_H1",
+      "status": "ACTIVE",
+      "spend": 3,
+      "roas": 112.666667,
+      "kop": 1,
+      "alder_dagar": 1,
+      "spend_7d": 3,
+      "roas_7d": 112.666667,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 55.960265,
+      "intakt": 338.000001
+    },
+    {
+      "id": "120250413404600291",
+      "namn": "Rodholder_FD_2_1",
+      "status": "ACTIVE",
+      "spend": 13.72,
+      "roas": 49.271137,
+      "kop": 2,
+      "alder_dagar": 2,
+      "spend_7d": 13.72,
+      "roas_7d": 49.271137,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 49.271137,
+      "intakt": 675.99999964
+    },
+    {
+      "id": "120249912527550291",
+      "namn": "Rodholder_PD_16_H1",
+      "status": "ACTIVE",
+      "spend": 79.83,
+      "roas": 10.388325,
+      "kop": 2,
+      "alder_dagar": 40,
+      "spend_7d": 334.93,
+      "roas_7d": 3.485206,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 1.840453,
+      "intakt": 829.29998475
+    },
+    {
+      "id": "120249850603660291",
+      "namn": "Fiskespöhållare_CS_1_H1",
+      "status": "ACTIVE",
+      "spend": 215.38,
+      "roas": 1.569319,
+      "kop": 1,
+      "alder_dagar": 44,
+      "spend_7d": 527.86,
+      "roas_7d": 1.571061,
+      "backdagar_i_rad": null,
+      "etikett": "KPI_WINNER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 2.864901,
+      "intakt": 337.99992621999996
+    }
+  ],
+  "rest": {
+    "spend": 1861.77,
+    "intakt": 4206.36050401,
+    "kop": 12,
+    "roas": 2.259334130429645
+  },
+  "break_even": 1.5,
+  "kampanj_spend": 2366.18,
+  "tjuvSpend": 505.05,
+  "tjuvAndel": 0.21344530001944065,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 21 % av spenden under break-even 1,50: Fiskespöhållare_PD_1_H1 (505 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,26 (1 862 kr, 12 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120249850522830291",
+  "kampanj_namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18"
+}

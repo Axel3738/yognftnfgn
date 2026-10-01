@@ -1,0 +1,70 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250409076520291",
+      "namn": "Laktarponchon_PD_1_H1",
+      "status": "ACTIVE",
+      "spend": 510.92,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 510.92,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250409037470291",
+      "namn": "Laktarponchon_CS_1_H2",
+      "status": "ACTIVE",
+      "spend": 88.22,
+      "roas": 9.623668,
+      "kop": 1,
+      "alder_dagar": 2,
+      "spend_7d": 88.22,
+      "roas_7d": 9.623668,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 9.449082,
+      "intakt": 848.99999096
+    },
+    {
+      "id": "120250409065130291",
+      "namn": "Laktarponchon_G_1_H3",
+      "status": "ACTIVE",
+      "spend": 537.47,
+      "roas": 1.579623,
+      "kop": 1,
+      "alder_dagar": 2,
+      "spend_7d": 537.47,
+      "roas_7d": 1.579623,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.309397,
+      "intakt": 848.99997381
+    }
+  ],
+  "rest": {
+    "spend": 1603.57,
+    "intakt": 1697.9999647700001,
+    "kop": 2,
+    "roas": 1.058887335613662
+  },
+  "break_even": 1.5210261713245183,
+  "kampanj_spend": 2114.49,
+  "tjuvSpend": 510.92,
+  "tjuvAndel": 0.24162800486169245,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,06 mot break-even 1,52 (1 604 kr, 2 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120250409032260291",
+  "kampanj_namn": "Läktarponchon med Värme | BE ROAS 1.64 | Launch 2026-09-29"
+}

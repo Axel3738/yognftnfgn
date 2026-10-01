@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250409752120291",
+      "namn": "Sorkkorgarna_SP_1_H2",
+      "status": "ACTIVE",
+      "spend": 996.74,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 996.74,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250409750350291",
+      "namn": "Sorkkorgarna_SP_1_H1",
+      "status": "ACTIVE",
+      "spend": 31.76,
+      "roas": 30.456549,
+      "kop": 1,
+      "alder_dagar": 2,
+      "spend_7d": 31.76,
+      "roas_7d": 30.456549,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 29.836521,
+      "intakt": 967.29999624
+    }
+  ],
+  "rest": {
+    "spend": 862.8999999999999,
+    "intakt": 967.29999624,
+    "kop": 1,
+    "roas": 1.1209873638196781
+  },
+  "break_even": 1.513372333479174,
+  "kampanj_spend": 1859.64,
+  "tjuvSpend": 996.74,
+  "tjuvAndel": 0.5359854595513109,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,12 mot break-even 1,51 (863 kr, 1 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120250409571040291",
+  "kampanj_namn": "Sorkkorgarna 15-pack | BE ROAS 1.31 | Launch 2026-09-29"
+}

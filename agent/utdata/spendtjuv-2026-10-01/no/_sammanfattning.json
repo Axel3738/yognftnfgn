@@ -1,0 +1,176 @@
+[
+  {
+    "kampanj_id": "120252440511870233",
+    "namn": "Varmesåler NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 16,
+    "break_even": 1.63,
+    "break_even_cpa": 510.31905011042954,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,47 (break-even 1,63 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120252434667620233",
+    "namn": "Varmesete NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 12,
+    "break_even": 1.63,
+    "break_even_cpa": 619.9539836411043,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "PAUSA_TJUVAR",
+    "tjuvar": [
+      "Varmesete_NO_PD_2 611.43 roas 0 NOLL_KOP"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 718.3399999999999,
+      "intakt": 2021.0500415,
+      "kop": 2,
+      "roas": 2.81350062853245
+    },
+    "raddade": [
+      {
+        "id": "120252434676630233",
+        "namn": "Varmesete_NO_PD_3",
+        "status": "ACTIVE",
+        "spend": 633.29,
+        "roas": 3.19135,
+        "kop": 2,
+        "alder_dagar": 1,
+        "spend_7d": 633.29,
+        "roas_7d": 3.19135,
+        "backdagar_i_rad": null,
+        "etikett": null,
+        "etikett_datum": null,
+        "roas_livstid": 2.928549,
+        "intakt": 2021.0500415
+      }
+    ],
+    "motivering": "1 spendtjuv tog 46 % av spenden under break-even 1,63: Varmesete_NO_PD_2 (611 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,81 (718 kr, 2 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar."
+  },
+  {
+    "kampanj_id": "120252423739800233",
+    "namn": "Snøfresertrekk NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 14,
+    "break_even": 1.62,
+    "break_even_cpa": 250.75976583333332,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,46 (break-even 1,62 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120252423658210233",
+    "namn": "ATV-Trekk NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 15,
+    "break_even": 1.62,
+    "break_even_cpa": 407.9908371604938,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,46 (break-even 1,62 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120252321093160233",
+    "namn": "Feiesett NO",
+    "lage": "gron",
+    "dom_i_planen": "LAT_VARA",
+    "annonser": 30,
+    "break_even": 1.62,
+    "break_even_cpa": 281.583094,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [
+      "Sotarset_NO_PD_1_H2: BREAKTHROUGH (2026-09-28) med livstids-ROAS 3,01 över break-even — nåd. Dränering 7 d: −1 686 kr (tak 845 kr), back-dygn 2 (tak 5)."
+    ],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA). 1 annons(er) väntar (nåd eller ung)."
+  },
+  {
+    "kampanj_id": "120252183519570233",
+    "namn": "Takovertrekk Campingvogn NO",
+    "lage": "rod_utan_trappa",
+    "dom_i_planen": "SANK",
+    "annonser": 77,
+    "break_even": 1.62,
+    "break_even_cpa": 851.4031737768688,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "STANG_AV",
+    "tjuvar": [
+      "Takovertrekk_NO_SP_4_H1 6512.42 roas 0.957186 TROTT_VINNARE"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 10975.23,
+      "intakt": 15852.9510778,
+      "kop": 11,
+      "roas": 1.4444299643652116
+    },
+    "raddade": [
+      {
+        "id": "120252313661320233",
+        "namn": "Takovertrekk_NO_PD_10_1",
+        "status": "ACTIVE",
+        "spend": 3217.86,
+        "roas": 3.031512,
+        "kop": 7,
+        "alder_dagar": 11,
+        "spend_7d": 7404.66,
+        "roas_7d": 2.874105,
+        "backdagar_i_rad": null,
+        "etikett": "LOSER",
+        "etikett_datum": "2026-09-27",
+        "roas_livstid": 2.736246,
+        "intakt": 9754.981204320002
+      },
+      {
+        "id": "120252413275680233",
+        "namn": "Takovertrekk_NO_SP_4_H2",
+        "status": "ACTIVE",
+        "spend": 1277.56,
+        "roas": 2.539012,
+        "kop": 2,
+        "alder_dagar": 3,
+        "spend_7d": 1277.56,
+        "roas_7d": 2.539012,
+        "backdagar_i_rad": null,
+        "etikett": null,
+        "etikett_datum": null,
+        "roas_livstid": 2.511296,
+        "intakt": 3243.7401707199997
+      }
+    ],
+    "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,44 mot break-even 1,62 (10 975 kr, 11 köp). Kampanjen går back av egen kraft."
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [
+    {
+      "id": "120250289497670291",
+      "namn": "Termoskydd_BOF_7_1",
+      "status": "ACTIVE",
+      "spend": 2424.86,
+      "roas": 1.152644,
+      "kop": 5,
+      "alder_dagar": 12,
+      "spend_7d": 2983.9,
+      "roas_7d": 1.873387,
+      "backdagar_i_rad": null,
+      "etikett": "KPI_WINNER",
+      "etikett_datum": "2026-09-26",
+      "roas_livstid": 2.117224,
+      "intakt": 2795.00032984,
+      "dranering": 577.2942819674404,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "vantar": [],
+  "break_even": 1.5128015759116524,
+  "break_even_cpa": 394.7744999664672,
+  "kampanj_spend": 7164.36,
+  "noteringar": [],
+  "dom": "TJUV_I_GRON",
+  "tjuvSpend": 2424.86,
+  "motivering": "1 spendtjuv i en grön kampanj (break-even 1,51): Termoskydd_BOF_7_1 (2 425 kr, 5 köp, ROAS 1,15, TROTT_VINNARE). Pausa exakt dessa — kampanjen rörs inte.",
+  "kampanj_id": "120250175763810291",
+  "kampanj_namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11"
+}

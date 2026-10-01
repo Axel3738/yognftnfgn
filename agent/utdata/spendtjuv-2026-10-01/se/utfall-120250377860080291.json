@@ -1,0 +1,70 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250377890410291",
+      "namn": "Rullknivslipen_SP_1_H1",
+      "status": "ACTIVE",
+      "spend": 1355.8,
+      "roas": 0.427054,
+      "kop": 1,
+      "alder_dagar": 5,
+      "spend_7d": 1430.11,
+      "roas_7d": 1.376537,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.3378,
+      "intakt": 578.9998132,
+      "trott_vinnare": false,
+      "orsak": "UNDER_BE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250377886390291",
+      "namn": "Rullknivslipen_CS_2_1",
+      "status": "ACTIVE",
+      "spend": 261.2,
+      "roas": 3.480092,
+      "kop": 1,
+      "alder_dagar": 5,
+      "spend_7d": 444.76,
+      "roas_7d": 2.043799,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.980781,
+      "intakt": 909.0000303999999
+    },
+    {
+      "id": "120250377890140291",
+      "namn": "Rullknivslipen_PD_2_1",
+      "status": "ACTIVE",
+      "spend": 517.52,
+      "roas": 2.237595,
+      "kop": 2,
+      "alder_dagar": 5,
+      "spend_7d": 679.2,
+      "roas_7d": 1.704947,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.569659,
+      "intakt": 1158.0001644
+    }
+  ],
+  "rest": {
+    "spend": 1728.08,
+    "intakt": 2067.0001948,
+    "kop": 3,
+    "roas": 1.1961252921161056
+  },
+  "break_even": 1.519379967014497,
+  "kampanj_spend": 3083.88,
+  "tjuvSpend": 1355.8,
+  "tjuvAndel": 0.43964097176284417,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,20 mot break-even 1,52 (1 728 kr, 3 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120250377860080291",
+  "kampanj_namn": "Rullknivslipen i Trä 20° | BE ROAS 1.63 | Launch 2026-09-26"
+}
