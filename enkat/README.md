@@ -78,3 +78,7 @@ node --test enkat/test/*.test.mjs
   med svar 200, så knappen fungerar. Produkthandlen följer med.
 - **Läsa svaren:** `node enkat/las.mjs --mapp INBOX.ENKAT --sidor 10` (strukna
   svar i `enkat/output/`). Första avläsning om cirka en vecka.
+- **Utskick till tidigare kunder (Axels order 2026-10-01):** svenska köpare med
+  samtycke, utom 41 undantag (hashade i `utskick/undantag.json`), kanalkod
+  `k=mejl`, planerat fre 2/10 18:00 via Spoks med `cowork/3-utskick-tidigare-kunder.txt`.
+  Mejlet och besluten: `utskick/2026-10-tidigare-kunder.md`.

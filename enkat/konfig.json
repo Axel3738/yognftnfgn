@@ -11,7 +11,7 @@
   "orderbekraftelse_id": "gid://shopify/EmailTemplate/126543593811",
   "orderbekraftelse_ankare": "<table class=\"row footer\">",
   "mapp": "ENKAT",
-  "sidor_att_lasa": 3,
+  "sidor_att_lasa": 8,
   "fragor": [
     { "nr": 1, "falt": "Fraga 1", "text": "Vad hände som gjorde att du köpte det här just nu?", "matar": "begär, vinkel, cold hook, avatar" },
     { "nr": 2, "falt": "Fraga 2", "text": "Var såg du produkten? Skriv gärna vilken app eller sida, eller vem som tipsade dig.", "matar": "kanal; köpare som kom utanför annonserna" },
