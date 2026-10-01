@@ -185,10 +185,14 @@ arbetshypoteser tills kommentarerna går att läsa.
 ## Nästa steg (i ordning, vinst snabbast först)
 
 ⚠️ **Nya vinklar hämtas ur `mekanismer.md` (2026-10-01):** fem mekanismer
-mot marknadssofistikeringen (locket, duka fram den, favoriträtten,
-byrålådetestet, fem sorter), med hookar som klarat tre-frågorstestet,
-anti-positioneringar och skeptikerns dom. En rond som behöver sin "1 av 5
-nya" vinkel tar den därifrån, i den ordning filen anger.
+mot marknadssofistikeringen prövade av en skeptiker mot kontots transkript.
+En genuint ny (**duka fram den**, kräver ny inspelning, Axels beslut), två
+uppvärmda med test redan i kön (locket via 061/063, favoriträtten via 060 +
+Katarina), en hook (fem sorter), en förbrukad (byrålådetestet, står på varje
+annons). Hookarna har klarat tre-frågorstestet. ⚠️ **Hookarna för de 30
+annonser `lardomar.md` aldrig läste står i `matstrumpor/marknader/transkript/`
+(69 transkript).** Läs dem innan en vinkel kallas oprövad; den här sessionen
+kallade två redan körda vinklar nya tills skeptikern läste transkripten.
 
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;

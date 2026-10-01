@@ -59,10 +59,21 @@ avslöjar sig i två steg: locket ("va, sushi?") och upprullningen
 sig på en gång. Den här ljuger i tre sekunder, och det är de sekunderna som
 är presenten.
 
-**Varför ny:** dubbeltitten är kontots bärande ögonblick (haikuh3, Sofie H1,
-038, 063), men ingen annons har förklarat VARFÖR den lurar. Dropshippers
-visar tråget platt och säger "funny socks". Att peka på locket är
-"the reason why".
+**Varför ny (rättat efter skeptikern, se §6):** dubbeltitten är kontots
+bärande ögonblick (haikuh3, Sofie H1, 038, 063), men ingen annons har
+förklarat VARFÖR den lurar. ⚠️ Anti-inslagningen har däremot redan körts
+ordagrant, som listicle-punkt i svultna annonser: `fomo_ugc_november_v1`
+"Lådan är presentförpackningen. Inget att slå in" (22 kr) och `gift_ugc_h1–h3`
+"Lådan är själva presentförpackningen. Inget krångel med papper och tejp."
+(10–13 kr). Locket som handling: `044h1`/`045h1` "Han lyfte locket. Sen tog
+han upp en rulle." (batch #1, svält). Och 061 (Draft) öppnar redan på det
+stängda tråget. **Nytt är bara första bildrutan = mottagarens blick genom
+locket, utan hand och utan text om strumpor, avslöjandet först i sekund 3.**
+⚠️ Vinnarens egen film visar lådan INSLAGEN (brun box med grönt band,
+Nathalie 0:13), så "slå inte in den" går emot det bevisade materialet och
+testas bara som bild, aldrig på Nathalie-kroppen. Tråget är dessutom
+leverantörens standardvara (Alibaba säljer det), så "ingen annan kan säga
+det" håller i Sverige, inte globalt.
 
 **Belägg i produkten:** produktbilderna (lock, gräs, kulor), sidans "Sushilåda
 som lurar ögat – ser ut som takeaway tills du öppnar den", FAQ "redo att ges
@@ -96,20 +107,29 @@ kalaset), säg inget, vänta. Mottagaren upptäcker själv. Det ändrar
 överlämningen från "här är en present" till en scen, och scenen är
 bevismaterialet (reaktionen).
 
-**Varför ny:** 053 (Draft, "Hon tog en bit innan hon fattade vad det var")
-testar skämtet på fikat; Nathalie säger "ta med till kalaset". Men serveringen
-har aldrig varit mekanismen i en live annons, och ingen konkurrent kan säga
-det: deras strumpor har inget bord att dukas på.
+**Varför ny (skeptikerns dom UPPVÄRMD, men rankad högst):** bordet finns
+som b-roll och bisats i kontot (Nathalie "ta med till kalaset", `017v1h2` "De
+visade glatt upp de rullade strumporna för hela bordet", `045h1–h3` "Nästa
+middag hos mamma. Då kom han i sushi-strumporna.", haikuh3:s tuggscen, d3
+"Fyra lådor på bordet"), och 053 (Draft) ställer lådan på fikabordet, men
+053:s mekanism är tuggen, inte serveringen. **Serveringen som överlämning har
+aldrig burit en creative, live eller brief.** Ingen konkurrent har ett bord.
+Den är den enda av de fem som i sig är en scen med riktig mottagare, det enda
+kontot bevisat.
 
 **Belägg i produkten:** ätpinnar av trä ingår ("för hela illusionen"),
 tråget, locket.
 
 **Anti-positionering:** anti-överlämning. Presentpapper mot bord.
 
-**Första test:** video med riktig kreatör, mottagaren vid bordet, i
-`09-17 UGC`. 053 är redan skriven; den här mekanismen är 053:s generalisering
-till gift-vinkeln (julbordet, kalaset). Vänta in 053:s etikett innan en
-andra serverings-brief skrivs.
+**Första test:** 053:s syskon i gift-vinkeln: riktig mottagare, riktigt
+kalas eller julbord, tråget ställs fram bland riktig mat, kameran stannar på
+henne, och säljraden är "så gav jag bort den", inte skämtet. ⚠️ **Materialet
+finns inte:** Nathalies scen är köksbänk + presentbox, haikuh3:s bordsscen är
+klippkompilation (dog). Det kräver en ny inspelning av en riktig kreatör
+(Nathalie eller Katarina), alltså Axels beslut om pengar och kreatör. "Säg
+inget, vänta" är ett beteendepåstående utan produktbelägg: det visas, det
+påstås inte.
 
 **Hookar (sonnet 2026-10-01, alla tre ✅):**
 
@@ -132,21 +152,32 @@ du alltid beställer". Och det finns en låda per vana: sushi, pizza, burgare,
 donut. Att välja rätt låda är beviset på att man lyssnat. Det är en
 personlig present utan gravyr.
 
-**Varför ny:** Nathalies starkaste rad ("när du ger bort dom här så är det
-som att du vet allt om personen, du visste ju deras favoriträtt") ligger
-mitt i videon, aldrig först, aldrig som vinkel. 034 ("Till den som alltid
-beställer extra lax") och 032 ("Presentkort ger aldrig en dubbeltitt") fick
-12 resp. 1 kr: svält, inte dom. 012v2 ("var sin sort") dog som AI-bildspel.
-Idén har alltså aldrig fått leverans med en riktig människa.
+**Varför ny (rättat efter skeptikern, se §6):** Nathalies starkaste rad ("när
+du ger bort dom här så är det som att du vet allt om personen, du visste ju
+deras favoriträtt") ligger mitt i videon, aldrig först. ⚠️ Men idén har
+burit sex live annonser: `045h1` "Brorsan sa en grej i bilen som han säkert
+har glömt. Det blev en sushi-låda av det." (svält), `049h1–h3` "Det liknar
+en låda med deras favoriträtt, men det är strumpor." (live 25/9, 0–17 kr),
+`020h1–h3` "En låda som ser ut som deras favoriträtt." (2 kr), bild 034
+(12 kr), 032 (1 kr), 012v2 "Var sin sort" (LOSER) och **Katarina ×2**
+("sushiälskaren i ditt liv", riktig kreatör i `09-17 UGC`, ~290 kr var på sex
+dygn, 1 köp, ingen etikett än). Allt utom Katarina är svält, inte dom, så
+mekanismen är **oprövad snarare än förbrukad**, men 060 (Draft, "Hon: Jag
+vill ha något med lax. Jag: Säg inget mer.") ÄR redan testet. Skriv ingen
+ny brief förrän 060 och Katarina har etikett.
 
 **Belägg i produkten:** fyra rätter i butiken; recensionen "Mycket uppskattad
 julklapp till sushiälskande dotter!"; Nathalies rad.
 
 **Anti-positionering:** anti-presentkort, anti-"något till alla".
 
-**Första test:** Nathalie-kroppen med favoriträtt-raden som hook (0–3 s), i
-`09-17 UGC`. Bild: fyra lådor med fyra namnlappar ("Lax-Lisa", "Pizza-Pelle")
-är en gissning som kräver riktiga foton, inte kie.
+**Första test:** 060 (Draft) + Katarinas två. Bilden med fyra lådor
+("Pizza-pappan. Sushi-dottern …") kräver riktiga foton, inte kie, och
+⚠️ lovar pizza/burgare/donut (299–449 kr) från en annons som landar på
+sushisidan; uppladdaren stoppar redan pizza- och burgarklipp av det skälet.
+A/B-testet `sortval` visade att blandade sorter knappt används (1 av 22,
+sedan 11 av 63 ordrar), så "en låda per person" säljs som fyra lådor, inte
+som en blandad.
 
 **Hookar (sonnet 2026-10-01, alla tre ✅):**
 
@@ -172,12 +203,19 @@ fötterna. Förra årets roliga present ligger i en byrålåda, för där var
 skämtet produkten. Ny information: det är därför roliga presenter
 misslyckas, och det är därför den här inte gör det.
 
-**Varför ny:** detta är produktsidans egen tes och Ads Manager-texten på
-varje annons ("Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl."), men
-ingen creative har visat det: byrålådan mot fötterna i soffan. haikuh3 sa
-"ingen present som bara samlar damm" som adjektivlistan nummer två, och 055
-(Draft) lägger byrålådan som problemdel. Som BÄRANDE mekanism med bevis i
-bild (fötterna, tvätten, nästa vecka) är den oprövad.
+**Varför ny: det är den INTE (skeptikerns dom FÖRBRUKAD, se §6).** Det är
+produktsidans tes och copy-kortet på varje UGC-annons ("Ingen jublar åt
+tvättmedel. Ingen sparar en skämtpryl."), vinnarens egen rad 0:21 "rolig att
+öppna och används år efter år" med fötterna i soffan 0:22–0:25, haikuh3
+"Glöm alla de där tråkiga presenterna som hamnar i en låda" (konverterade
+1,1 %), `017v1h1–h3` "om den här presenten också hamnar i en byrålåda",
+`opush1` "Inget skräp som hamnar längst ner i byrålådan", somnet "Inte en
+pryl som hamnar i en låda", bilderna f/b002/031, och 055 (Draft) öppnar med
+ljuset i lådan. Grannarna lovar samma sak (Presenthuset "Presenten de
+faktiskt minns", Bäverbutiken "Presenten han faktiskt använder"). Sessionens
+första version av den här filen påstod att "ingen creative har visat det";
+det var fel. **Släpp den som mekanism.** Hookarna nedan sparas bara som
+rubrikalternativ till en före/efter-bild om en rond ändå vill pröva bilden.
 
 **Belägg i produkten:** sidans text; recensionerna "Jätte sköna strumpor",
 "Underbara strumpor, mottagaren vart så glad"; Nathalie 0:22 (strumporna på
@@ -186,9 +224,9 @@ fötterna i soffan).
 **Anti-positionering:** anti-skämtpryl. "Inte en skämtpryl. Strumpor med ett
 skämt på."
 
-**Första test:** bild före/efter (byrålådan med förra årets pryl mot fötterna
-i laxstrumporna) i `bilder`-adsetet, d3-layout med erbjudandet. Video: 055
-täcker problemdelen; vänta in dess etikett.
+**Första test:** inget. 055 täcker problemdelen; "förra årets present ligger
+i byrålådan" går inte att belägga, och "blir kvar" gränsar till ett
+kvalitetspåstående som sidan inte gör.
 
 **Hookar (sonnet 2026-10-01, alla tre ✅):**
 
@@ -206,12 +244,19 @@ täcker problemdelen; vänta in dess etikett.
 ### M5 · Fem sorter — varje par är en egen bit (NM, lägre tro)
 
 **Så fungerar den:** lådan är inte fem likadana par, den är fem sorter:
-laxnigiri, tamago, laxmaki, gurkmaki, röd rulle. Man väljer bit på morgonen.
-Det gör "används år efter år" konkret: fem olika strumpor i lådan, inte en
-rolig och fyra tråkiga.
+laxnigiri, tamago, laxmaki, gurkmaki, röd rulle. ⚠️ Räkna rätt: fem par =
+tio bitar = **två bitar per sort** (ett par är två strumpor av samma sort).
+"Varje par är en egen sort" är sant; "varje par är en egen bit" är fel, och
+`048h1–h3` säger redan "tio olika sushirullar" live, också fel. Man väljer
+sort på morgonen. Det gör "används år efter år" konkret: fem olika strumpor
+i lådan, inte en rolig och fyra tråkiga.
 
-**Varför ny:** ingen annons eller konkurrent har nämnt sorterna; alla säger
-"5 par". Bilden bär det själv (fem olika mönster uppradade).
+**Varför ny (rättat efter skeptikern):** räkningen finns i kontot (Nathalie
+"tio sushibitar", b005 "Räkna bitarna. Ingen är sushi.", 048 "tio olika
+sushirullar"), men sorterna har aldrig burit något. Det är en
+produktbeskrivning snarare än en mekanism, och bild utan människa och utan
+erbjudande är kontots dödaste format. Testas bara som hook på
+Nathalie-kroppen: en riktig fot per sort, fem morgnar, en caption.
 
 **Belägg i produkten:** produktbild 1 (fem olika par bredvid tråget).
 
@@ -221,8 +266,8 @@ sälja två eller fyra (90 av 110 ordrar bär två strumpprodukter, "Köp 2 – 
 2" är kontots bästa bild). Testas bara som hook på en video, aldrig som
 erbjudande.
 
-**Första test:** bild, de fem paren uppradade med sin bit bredvid, i
-`bilder`-adsetet. Lägst prioritet av de fem.
+**Första test:** H1 som hook på Nathalie-kroppen i `09-17 UGC`, aldrig som
+ensam bild. Lägst prioritet av de levande.
 
 **Hookar (sonnet 2026-10-01, alla tre ✅):**
 
@@ -246,7 +291,7 @@ erbjudande.
 | Presentpapper | M1 | Slå inte in den, locket avslöjar den åt dig |
 | Överlämningen | M2 | Duka fram den och säg inget |
 | Presentkortet | M3 | Presentkortet säger "jag vet inte", lådan säger "extra lax" |
-| Skämtprylen | M4 | Skämtet sitter i lådan, strumporna blir kvar |
+| Skämtprylen | M4 (släppt) | Skämtet sitter i lådan, strumporna blir kvar: redan på varje annons |
 | "5 par" | M5 | Fem sorter, inte fem likadana |
 
 **Mot dropshippers (tro-lager, ingen mekanism):** den enda invändningen
@@ -258,19 +303,33 @@ svenskt lager, snabb leverans, material, kvalitet (sidan säger inget om det;
 
 ---
 
-## 4. Rekommenderad ordning
+## 4. Rekommenderad ordning (efter skeptikerns dom)
 
-1. **M3 Favoriträtten** först: den sitter redan i vinnaren, kostar bara en
-   ny öppning på Nathalie-kroppen, och är den enda med ny information
-   (varför presenter misslyckas) plus identitet (sushiälskaren).
-2. **M1 Locket** som bild i d3-layout: billigast, och bild + erbjudande är
-   kontots näst bästa recept.
-3. **M4 Byrålådetestet** som före/efter-bild. Videon väntar på 055:s etikett.
-4. **M2 Duka fram den** väntar på 053:s etikett (samma frö).
-5. **M5 Fem sorter** sist, som bild.
+Ärligt läge: av fem kandidater är **en** genuint ny (M2), två är uppvärmda
+och har redan ett test i kön (M1 via 061/063, M3 via 060 + Katarina), en är
+en hook snarare än en mekanism (M5), och en är förbrukad (M4). Sessionens
+första ordning (M3 först, M4 trea) stod på två felaktiga påståenden om vad
+kontot kört; skeptikern läste transkripten och fällde dem.
+
+1. **M2 Duka fram den**: den enda som ingen annons burit, och den enda som i
+   sig är en scen med riktig mottagare. Priset är en ny inspelning
+   (Axels beslut). Skrivs som brief först när han sagt ja till inspelningen.
+2. **M1 Locket**: ett kamerabeslut på Nathalie-kroppen (blicken genom locket
+   i sekund 0–3). Men 061 och 063 står redan på samma ruta; läs deras
+   etiketter först. Lyfter de hook rate får locket en egen videolinje, och
+   anti-inslagningen testas som bild (aldrig på Nathalie, som visar lådan
+   inslagen).
+3. **M3 Favoriträtten**: 060 (Draft) och Katarina ×2 ÄR testet. Ingen ny
+   brief förrän de har etikett. Bilden med fyra lådor bara om pizza/burgare/
+   donut får egna landningssidor i annonsen.
+4. **M5 Fem sorter**: bara som H1-hook på Nathalie-kroppen, aldrig som
+   ensam bild. Rätta räkningen ("fem sorter", inte "tio olika") i nästa
+   version av 048.
+5. **M4 Byrålådetestet**: släppt. Står på varje annons redan.
 
 Regeln gäller fortfarande: aldrig fler briefer än lärdomar, och nya videor i
-`09-17 UGC` (rond 4:s förslag `ROUTING`), annars testas de inte alls.
+`09-17 UGC` (rond 4:s förslag `ROUTING`), annars testas de inte alls. Fyra
+av fem "redan körda" mekanismer ovan dog av svält i fel adset, inte av dom.
 
 ---
 
@@ -285,6 +344,35 @@ Katarinas och Nathalies material lämnar aldrig Sverige utan Axels ord.
 
 ---
 
-## 6. Skeptikerns dom
+## 6. Skeptikerns dom (2026-10-01)
 
-<!-- SKEPTIKER -->
+En skeptisk creative director (subagent, läs-bara, standard "fäll hellre än
+fria") läste `dna.md`, `lardomar.md`, batch-02/03-brieferna, juli-konceptdoc:en
+och **kontots 69 transkript i `matstrumpor/marknader/transkript/`**, det är
+där hookarna för de 30 annonser `lardomar.md` aldrig läste faktiskt står
+(lärdom för nästa rond: läs transkripten innan en vinkel kallas oprövad).
+
+| Mekanism | Redan i kontot? | Hos konkurrenter? | Dom | Vad som gör den nyare |
+|---|---|---|---|---|
+| M1 Locket | Delvis: anti-inslagning ordagrant i `fomo_november` + `h1–h3` (svält); locket som handling i `044h1`/`045h1`; 061 öppnar på stängt tråg | Nej (men Alibaba säljer tråget) | **UPPVÄRMD** | Första bildrutan = blicken genom locket, utan hand; släpp "slå inte in den" (vinnaren visar lådan inslagen) |
+| M2 Duka fram den | Delvis, bara som b-roll/bisats (`017v1h2`, `045`, haikuh3, d3); 053:s mekanism är tuggen | Nej | **UPPVÄRMD** | 053:s syskon i gift-vinkeln med riktig mottagare, riktigt bord; kräver ny inspelning |
+| M3 Favoriträtten | Ja: `045h1`, `049h1–h3`, `020h1–h3`, 034, 032, 012v2, Katarina ×2 (~290 kr var, 1 köp, ingen etikett); 060 ÄR testet | Ja, "jag vet vad du älskar" kör hela svenska strumpmarknaden (My Angry Socks, Soxo, London Sock Exchange) | **FÖRBRUKAD** enligt skeptikern; sessionens läsning: **oprövad** (allt utom Katarina är svält) men redan i kön | Inget utöver 060; vänta in etiketten |
+| M4 Byrålådetestet | Ja, mest av alla: copy-kortet på varje annons, vinnaren 0:21–0:25, haikuh3, `017v1`, `opush1`, somnet, f/b002/031, 055 | Ja: Presenthuset, Bäverbutiken | **FÖRBRUKAD** | Inget, släpp den |
+| M5 Fem sorter | Delvis: räkningen (Nathalie "tio bitar", b005, 048 "tio olika"); sorterna aldrig | Nej | **UPPVÄRMD** | En riktig fot per sort på Nathalie-kroppen; "egen bit" är fel, det är två bitar per sort |
+
+**Skeptikerns rangordning på breakthrough-chans:** 1 Duka fram den (en scen
+med riktig mottagare, det enda kontot bevisat; priset är ny inspelning) ·
+2 Locket (kamerabeslut, men 061/063 står på samma ruta) · 3 Favoriträtten
+(060 testar den redan) · 4 Fem sorter (bild utan människa och erbjudande är
+kontots dödaste format) · 5 Byrålådetestet (redan rubriken på alla annonser
+och grannarnas löfte).
+
+**Två sakfel i sessionens första version, båda rättade ovan:** "ingen
+creative har visat byrålådan" (Nathalie 0:21–0:25 gör det) och "favoriträtten
+har aldrig fått leverans med en riktig människa" (Katarina, 24/9).
+
+**Risker skeptikern pekade på, alla inskrivna:** "ljuger i tre sekunder" är
+inte mätt; "förra årets present ligger i byrålådan" går inte att belägga;
+"blir kvar" gränsar till kvalitetspåstående; fyra lådor från sushisidan
+lovar pizza/burgare/donut; "fem julstrumpor" säljer ett par åt gången när
+90 av 110 ordrar är två lådor.
