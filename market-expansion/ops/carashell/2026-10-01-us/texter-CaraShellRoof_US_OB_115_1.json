@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   64,
+   62,
+   1016,
+   142
+  ],
+  "fet": true,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 71,
+  "text": "From fall to spring, in place"
+ },
+ {
+  "box": [
+   91,
+   178,
+   983,
+   225
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 187,
+  "text": "Heavy wet snow shovels off, same as without a cover."
+ },
+ {
+  "box": [
+   360,
+   962,
+   723,
+   1033
+  ],
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 971,
+  "text": "$199",
+  "utvidga": 6
+ },
+ {
+  "box": [
+   225,
+   1084,
+   853,
+   1134
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 1093,
+  "text": "(reg. $249), save $50 (20%)",
+  "utvidga": 6
+ }
+]

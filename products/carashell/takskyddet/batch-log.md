@@ -3130,3 +3130,29 @@ kassan lästa som amerikansk kund: engelska, United States förvalt.
 **Lärdomen, samma som flera gånger förr i repot:** ett namnmönster är inte en
 lista. Vakten som letar på prefix ser inte kampanjen ägaren själv byggde i
 appen — och den säger inte "jag hittade inget", den säger "allt är bra".
+
+## 2026-10-01 kväll — ikapp till USA för hand (Axels order "ta ikapp … se till att det blir klart")
+
+Mätt i kontona 18:30 CEST: varje svensk CaraShell-annons fanns redan i USA. Det
+som låg efter var Bäverbutikens nya taköverdrag-annonser 30/9–1/10.
+
+* **OB_15_1 och OB_21_1 (bilder) stoppades falskt av speglingen** för "BÄVER" —
+  ordet stod i briefens metadatarad `Notion hub: … (BÄVER Taköverdraget för
+  Husvagn …)`, inte i annonsen. `brandtraff` hoppar nu den raden (test tillagt).
+  Speglade för hand: SE `120249364731180172` (OB_115_1) och `120249364705750172`
+  (OB_121_1) i `CARASHELL_SE_Taköverdraget`, rader i CaraShells hub.
+* **USA samma kväll:** `CaraShellRoof_US_OB_115_1` `120251717431390435` och
+  `CaraShellRoof_US_OB_121_1` `120251717438280435`, ACTIVE i "Taköverdrag 5
+  reasons USA TEST" (fasta adsetet), länk rv-roof-cover-5-reasons. Text av
+  sonnet-subagent, $199 / reg. $249 ur carashell.com (21 × 10 ft). Bilderna
+  ritade om med NO-rundans mätta rutor (`market-expansion/ops/carashell/
+  2026-10-01-us/bygg-us.py`); OB_121_1 fick rent vitt runt priset mot spår av
+  den bredare svenska raden. Raderna kvar i `SE-ACTIVE to be translated` — NO
+  för CaraShell är inte gjord (källraden hade ingen NO-version).
+* **Bugg i gårdagens målkampanj rättad:** uppladdaren läste marknaden ur
+  kampanjnamnet och dömde "…USA TEST" som SE — morgondagens US-runda hade
+  stoppat. Registrets mål räknas nu alltid som marknadens.
+* **Hålls med flit:** FD_* (fars dag, bara Sverige), GT_11_H1 (copyn nämner
+  Bäverbutiken). Elva videor (CS_2_H2/H3, OB_*) hålls i Bäverbutikens NO-runda
+  för svensk text inbränd i källan — de når CaraShell och USA först när den
+  rättats.

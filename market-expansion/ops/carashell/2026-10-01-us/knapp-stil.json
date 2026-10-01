@@ -1,0 +1,28 @@
+{
+ "Takoverdrag_OB_15_1": {
+  "pill": [
+   300,
+   1202,
+   779,
+   1308
+  ],
+  "radie": 53,
+  "storlek": 39,
+  "se_textbredd": 386,
+  "mitt": 539,
+  "ink_topp": 1240
+ },
+ "Takoverdrag_OB_21_1": {
+  "pill": [
+   300,
+   1202,
+   779,
+   1308
+  ],
+  "radie": 53,
+  "storlek": 40,
+  "se_textbredd": 388,
+  "mitt": 539,
+  "ink_topp": 1240
+ }
+}
