@@ -187,7 +187,70 @@ ROUTING), domänköp, annonsörsverifiering, app-tokens, nya produkter.
 
 ## 7. Trösklarna: Evolve mot `etikett.mjs`
 
-*(fylls i ur dokumentjämförelsen — se nedan)*
+| Evolve | Vi | Konsekvens |
+|---|---|---|
+| Spend-andel vecka 1: 10–30 %; på nivån $0–100k/mån hade deras breakthroughs median **67,9 %** (n=6) | fast 30 % (`etikett.mjs:21`) | vi ligger på golvet; i en utlandskampanj med ~8 annonser är jämn fördelning 12,5 % |
+| Breakthrough = kampanjens spend ökade vecka för vecka **på grund av annonsen** (+10 % → +100 %), yttre händelser räknas inte | `budget_d7 > budget_d0`, vilken höjning som helst, även Axels | Nathalies breakthrough sammanföll med Axels höjning 1 000 → 10 000 kr/dag 23/9; vilken annons som helst med ≥ 30 % den veckan hade blivit breakthrough |
+| inget ROAS-krav på breakthrough | ROAS ≥ break-even 1,498 | vi är strängare, och det är rätt för lönsamheten |
+| fönster = testets vecka 1 | D0 = annonsens `created_time` | **utlandsannonserna skapades PAUSED 27–30/9 och startar 2/10: 3–5 nolldagar i fönstret ⇒ falska INGEN_LEVERANS/LOSER 8/10** |
+| etiketten kan ändras vecka 2–3 (KPI → SW → BT) | skrivs en gång, W2/W3 hämtas aldrig | sena breakthroughs missas, 80/20-mixen styr fel |
+| "betydande spend" för att läsa hook/hold: ~1 000 USD efter 7 dagar | hook/hold läses på allt | på småannonser är talen brus |
+| hit rate = (BT + SW) ÷ alla | bara BT-frekvensen | ur loggen: 2 av 96 (2 %) |
+| klickattribution, CBO utan minbudget | `7d_click`, CBO, nej till minbudget 24/9 | lika |
+
+### ⛔ Hook rate och hold rate i `matstrumpor/meta.mjs` är fel (mätt mot Meta 2026-10-01)
+
+`varde()` tar nyckeln `7d_click` när den finns, och med `action_attribution_windows`
+satt skickar Meta den nyckeln även på `video_play_actions` — ett attribuerat tal, inte
+antalet videostarter. Läst samma kväll, kampanjen `MATSTRUMP_SALES_20260826`, last_14d:
+
+| Annons | Visningar | Starter som koden läser (`7d_click`) | Riktiga starter (`value`) | 3-sek-visningar | ThruPlay |
+|---|---|---|---|---|---|
+| Nathalie | 663 318 | 4 594 | 621 588 | 308 826 | 96 062 |
+| haikuh2 | 39 036 | 585 | 36 606 | 18 959 | 4 428 |
+| 012v2 | 4 164 | 44 | 3 875 | 2 020 | 403 |
+| haikuh3 | 3 102 | 126 | 2 887 | 1 550 | 599 |
+| Katarina "sushiälskaren" | 2 016 | 131 | 1 886 | 805 | 282 |
+
+Därför stod Nathalies hook rate som 0,2 % och holden på 012v2 som 450 % i
+`lardomar.md`. Med Evolves definition (3-sek-visningar ÷ visningar) är Nathalies hook
+**47 %**, haikuh2 49 %, haikuh3 50 %, Katarinas 40 %; ThruPlay ÷ visningar 14 %, 11 %,
+19 %, 14 %. Varje hook-/hold-lärdom som skrivits för Matstrumpor vilar alltså på fel tal.
+Rättningen: videomåtten hämtas utan attributionsfönster (eller läser alltid `value`),
+hook = `actions:video_view` ÷ visningar, hold = ThruPlay ÷ visningar, och ett test låser
+det (`matstrumpor/meta.mjs` `varde`/`tolkaRad`, `matstrumpor/test/`).
+
+### Topp 5 byggen för Matstrumpor, i ordning
+
+1. **Rätt D0 + etiketter för de 14 utlandskampanjerna** innan första veckan tar slut 8/10
+   (`meta.mjs`, `kor.mjs`, `namn.mjs`, `etikett.mjs`).
+2. **Rätta hook-/hold-måttet** enligt ovan.
+3. **Arkivet** (`matstrumpor/arkiv.mjs`): en rad per test med typ, förälder, iteration,
+   komponenter (plus positionering och valens), etikett v1–v3, slog föräldern, hit rate.
+4. **Etiketterna närmare Evolve:** omprövning vecka 2–3, breakthrough på kampanjens
+   spend W1 mot W0 (+10 %), Axels manuella höjningar flaggas som yttre händelse.
+5. **Namnregeln med kedjan:** `_h<k>` för hookvariant, `_i<N>p<föräldernr>` / `_im`,
+   valfri landskod, alias för Axels egna uppladdningar (Nathalie har inget nummer).
+
+**Ett beslut för Axel, inte ett bygge:** var nya annonser testas — Evolves ett adset per
+koncept (max 5 öppna) eller i `09-17 UGC` (förslaget ROUTING 30/9). Evolve testar aldrig
+i champions-adsetet; vår egen data (Katarina ~290 kr per annons där) talar ändå för det.
+
+### Ur Evolves prompter: regler som `copy-regler.md` och `BRIEF-REGI.md` saknar
+
+1. Modulärt hooktest: 3 hookar med var sin matchad bridge, men EN gemensam hold och CTA.
+2. Kall trafik: hook 0–3 s, bridge 3–8 s, hold 8–35 s, CTA ≤ 45 s; holden går
+   invändning → påstående → bevis → nytta.
+3. Hooken ~5 ord, max 2 rader på mobil.
+4. Slippery slope: varje mening slutar i en öppen loop; läs högt och leta stoppunkter.
+5. Mått → avsnitt före nytt manus: låg hook ⇒ ny hook/bild, låg hold ⇒ enklare mekanism
+   och kortare b-roll, låg konvertering ⇒ erbjudande eller tro.
+6. ⚠️ "Jämför aldrig med ett märke, skriv först/enda" krockar med `copy-regler.md`
+   ("jämför med det kunden redan känner") — välj en, skriv inte in båda.
+7. Läsnivå årskurs 5–7 för voiceover, "skulle du säga det vid dörren?".
+
+Ta **inte** in Evolves exekveringsmodell "bara b-roll + AI-röst, inga talande ansikten":
+Matstrumpors enda breakthrough är en riktig kreatör i bild.
 
 ## 8. Det som återstår att fråga Chadbot (inte ställt förut)
 
