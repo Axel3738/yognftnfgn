@@ -54,3 +54,16 @@ test('kortets språkfiler är exakt de som byggs ur sprak.json', () => {
   assert.deepEqual(filer, Object.keys(vantat).sort());
   for (const f of filer) assert.deepEqual(JSON.parse(readFileSync(join(KORTSPRAK, f), 'utf8')), vantat[f], f);
 });
+
+test('nummerFor: riktigt nummer först, exempel i redigeraren och för orderstatusens förhandsorder utan nummer', async () => {
+  const { nummerFor } = await import('../varva/app/extensions/varva-kort/src/logik.js');
+  const ex = 'EXEMPEL1';
+  assert.equal(nummerFor({ plats: 'tack', bekraftelse: { number: 'GR85LGHYQ' }, exempel: ex }), 'GR85LGHYQ');
+  assert.equal(nummerFor({ plats: 'orderstatus', order: { confirmationNumber: 'JRTI6ZICI' }, exempel: ex }), 'JRTI6ZICI');
+  // Kundkontoredigerarens förhandsorder (#1004) har inget nummer och editor sätts inte.
+  assert.equal(nummerFor({ plats: 'orderstatus', order: { name: '#1004' }, exempel: ex }), ex);
+  assert.equal(nummerFor({ plats: 'tack', bekraftelse: null, iRedigeraren: true, exempel: ex }), ex);
+  // Ingen order alls, eller tacksidan utan nummer utanför redigeraren: inget kort.
+  assert.equal(nummerFor({ plats: 'orderstatus', order: undefined, exempel: ex }), null);
+  assert.equal(nummerFor({ plats: 'tack', bekraftelse: {}, exempel: ex }), null);
+});

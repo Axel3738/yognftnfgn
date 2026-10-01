@@ -1,8 +1,8 @@
 {
-  "rubrik": "Oferece {van} de desconto a um amigo",
-  "text": "Envia o teu link a um amigo. O teu amigo recebe {van} de desconto na primeira compra. Quando a encomenda dele for enviada, recebes {kredit} de crédito para gastar na nossa loja.",
+  "rubrik": "Oferece um vale de {van} a um amigo",
+  "text": "Envia o teu link a um amigo. O teu amigo recebe um vale de {van} para a primeira compra. Quando a encomenda dele for enviada, recebes {kredit} de crédito para gastar na nossa loja.",
   "lank": "O teu link",
   "kopiera": "Copiar link",
   "kopierad": "Link copiado",
-  "villkor": "O desconto aplica-se à primeira compra do teu amigo. Recebes um e-mail quando o teu crédito de {kredit} estiver disponível. É descontado no checkout quando iniciares sessão com o mesmo e-mail."
+  "villkor": "O vale aplica-se à primeira compra do teu amigo. Recebes um e-mail quando o teu crédito de {kredit} estiver disponível. É aplicado no checkout quando iniciares sessão com o mesmo e-mail."
 }

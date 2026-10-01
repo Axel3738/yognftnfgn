@@ -547,8 +547,15 @@ async function skrivTema(klient, konfig, { skarpt, logg = console.log }) {
     const u = await klient.graphql(`mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) { themeFilesUpsert(themeId: $id, files: $files) { userErrors { filename message } } }`, { id: tema.id, files: [f] });
     if (u.themeFilesUpsert.userErrors.length) throw new Error(`themeFilesUpsert ${f.filename}: ${u.themeFilesUpsert.userErrors.map((e) => e.message).join('; ')}`);
   }
-  const efter = await las(filer.map((f) => f.filename));
-  for (const f of filer) if (efter[f.filename] !== f.body.value) throw new Error(`${f.filename} lästes tillbaka med annat innehåll.`);
+  // Shopify kan svara med den gamla filen en kort stund efter skrivningen (mätt
+  // 2026-10-01: första läsningen gammal, en läsning sekunder senare rätt).
+  let fel = filer;
+  for (let forsok = 0; fel.length && forsok < 5; forsok++) {
+    if (forsok) await new Promise((r) => setTimeout(r, 3000));
+    const efter = await las(filer.map((f) => f.filename));
+    fel = filer.filter((f) => efter[f.filename] !== f.body.value);
+  }
+  for (const f of fel) throw new Error(`${f.filename} lästes tillbaka med annat innehåll (fem läsningar).`);
   logg(`  ✓ ${filer.map((f) => f.filename).join(', ')} skrivna och tillbakalästa`);
 }
 

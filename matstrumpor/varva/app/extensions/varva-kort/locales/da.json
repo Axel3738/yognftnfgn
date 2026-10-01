@@ -1,8 +1,8 @@
 {
-  "rubrik": "Giv en ven {van} i rabat",
-  "text": "Send dit link til en ven. Din ven får {van} i rabat på sit første køb. Når vennens pakke er sendt, får du {kredit} til at handle for hos os.",
+  "rubrik": "Giv en ven et værdibevis på {van}",
+  "text": "Send dit link til en ven. Din ven får et værdibevis på {van} til sit første køb. Når vennens pakke er sendt, får du {kredit} til gode hos os.",
   "lank": "Dit link",
   "kopiera": "Kopiér linket",
   "kopierad": "Linket er kopieret",
-  "villkor": "Rabatten gælder vennens første køb. Du får en mail, når dine {kredit} er klar, og de trækkes fra i kassen, når du logger ind med samme e-mail."
+  "villkor": "Værdibeviset gælder vennens første køb. Du får en mail, når dine {kredit} er klar, og de trækkes fra i kassen, når du logger ind med samme e-mail."
 }

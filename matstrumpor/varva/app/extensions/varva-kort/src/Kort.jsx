@@ -12,7 +12,7 @@
 import { useState } from 'preact/hooks';
 
 import { DATA } from './data.js';
-import { varde, kortFor, fyll, decimaler } from './logik.js';
+import { varde, kortFor, fyll, decimaler, nummerFor } from './logik.js';
 
 const EXEMPEL = 'EXEMPEL1';
 
@@ -39,10 +39,15 @@ export function Kort({ plats }) {
   // Läses i komponenten, inte i extension(): värdena är signaler, och kortet ritas
   // om när Shopify fyller i dem.
   const order = plats === 'orderstatus' ? varde(shopify.order) : null;
-  // I kassaredigeraren finns ingen riktig order. Då visas kortet med ett
-  // exempelnummer, annars syns det inte när blocket läggs in.
-  const iRedigeraren = Boolean(shopify.extension?.editor);
-  const nummer = (plats === 'tack' ? varde(shopify.orderConfirmation)?.number : order?.confirmationNumber) ?? (iRedigeraren ? EXEMPEL : null);
+  // I redigerarna finns ingen riktig order. Då visas kortet med ett
+  // exempelnummer, annars syns det inte när blocket läggs in (logik.js nummerFor).
+  const nummer = nummerFor({
+    plats,
+    bekraftelse: plats === 'tack' ? varde(shopify.orderConfirmation) : null,
+    order,
+    iRedigeraren: Boolean(shopify.extension?.editor),
+    exempel: EXEMPEL,
+  });
   const avbruten = Boolean(order?.cancelledAt);
   const sprak = varde(shopify.localization?.language)?.isoCode;
   const valuta = varde(shopify.localization?.currency)?.isoCode;

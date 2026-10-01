@@ -5,9 +5,17 @@ Axels beställning 2026-09-30: Ty Chapmans reel om appen Redeemly
 "Kan du implementera detta på matstrumpor". Hans val samma kväll:
 **"Egen, 50 kr / 100 kr"**.
 
-- **Vännen** får **50 kr rabatt på sitt första köp**.
-- **Kunden som delade länken** får **100 kr i butikskredit** (Shopifys egen, i
+- **Vännen** får **en värdecheck på 50 kr till sitt första köp**.
+- **Kunden som delade länken** får **100 kr tillgodo** (Shopifys butikskredit, i
   kundens valuta) när vännens paket har skickats, och Shopifys mejl om det.
+
+⛔ **Kunden ser aldrig ordet "rabatt"** (Axels order 2026-10-01: "då ska vi ju
+skriva att de får kredit … en värdecheck … det ger en helt annan uppfattning").
+Kortet och rutan säger *värdecheck* om vännens 50 kr och *tillgodo* om kundens
+100 kr, på alla 14 språk (`sprak.json`: en voucher, de Gutschein, nb verdikupong
+…, översatta av Sonnet 2026-10-01). Under huven är vännens värdecheck fortfarande
+en rabattkod, så kassan visar raden "Orderrabatt VAN-BPKS6U"; den raden är
+Shopifys och går inte att döpa om.
 
 ## Varför inte Redeemly
 
@@ -22,10 +30,10 @@ som läggs på av sig själv.
 
 ```
 Tacksidan (kortet)                 matstrumpor.se/?van=GR85LGHYQ
-  "Ge en vän 50 kr i rabatt"   ──►  temats skript ms-varva.js:
-  länk + "Kopiera länken"            • vännens kod VAN-BPKS6U i varukorgen
+  "Ge en vän en värdecheck     ──►  temats skript ms-varva.js:
+   på 50 kr", länk + "Kopiera   • vännens kod VAN-BPKS6U i varukorgen
                                      • varukorgen märks van=GR85LGHYQ
-                                     • rutan "Din vän har gett dig 50 kr …"
+  länken"                            • rutan "Din vän har gett dig en värdecheck …"
                                               │
                                               ▼
                                    vännens order bär attributet van
@@ -144,10 +152,16 @@ ordrar ("vännens kod användes N gång(er) utan länk"). Blir de många: ny kod
 (`customer-account.order-status.block.render`), på kundens språk och i
 kundens valuta, med länken och knappen "Kopiera länken" (Shopifys
 `s-clipboard-item`). Inget kort när numret, valutan eller språket saknas, och
-inte för en avbruten order. I kassaredigeraren visar det exempelnumret
-`EXEMPEL1`, så att blocket går att se när det läggs in.
+inte för en avbruten order. I redigeraren visar tacksidan förhandsorderns
+nummer (`?van=ABC123EXAMPLE`). Kundkontoredigerarens förhandsorder på
+orderstatussidan har inget nummer och sätter inte `extension.editor`, så där
+visas exempelnumret `EXEMPEL1` (`logik.js nummerFor`). Före
+`matstrumpor-tacksida-3` syntes kortet inte alls där (Cowork 2026-10-01). Alla
+riktiga ordrar har ett nummer: 250 av de 250 senaste, mätt samma dag.
 
-✅ **Deployat och releasat 2026-09-30 23:36 CEST** som `matstrumpor-tacksida-2`
+✅ **Deployat och releasat 2026-09-30 23:36 CEST** som `matstrumpor-tacksida-2`, och
+**2026-10-01 10:58 CEST som `matstrumpor-tacksida-3`** (värdecheck-texterna + kortet
+på orderstatussidan, se nedan)
 i appen **"Matstrumpor Tacksida"** (org Matstrumpor.se, Client ID i
 `konfig.json → app_client_id`, inga rättigheter — `shopify.app.matstrumpor.toml`
 läst tillbaka med `scopes = ""`). Blocket syns för kunden först när det lagts in

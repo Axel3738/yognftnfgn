@@ -1,8 +1,8 @@
 {
-  "rubrik": "Geef een vriend {van} korting",
-  "text": "Stuur je link naar een vriend. Je vriend krijgt {van} korting op de eerste aankoop. Zodra het pakket van je vriend is verzonden, krijg je {kredit} tegoed om bij ons te besteden.",
+  "rubrik": "Geef een vriend een tegoedbon van {van}",
+  "text": "Stuur je link naar een vriend. Je vriend krijgt een tegoedbon van {van} voor zijn eerste aankoop. Zodra het pakket van je vriend is verzonden, krijg je {kredit} tegoed om bij ons te besteden.",
   "lank": "Jouw link",
   "kopiera": "Kopieer de link",
   "kopierad": "Link gekopieerd",
-  "villkor": "De korting geldt voor de eerste aankoop van je vriend. Je krijgt een e-mail zodra je tegoed van {kredit} beschikbaar is. Het wordt bij het afrekenen in mindering gebracht als je inlogt met hetzelfde e-mailadres."
+  "villkor": "De tegoedbon geldt voor de eerste aankoop van je vriend. Je krijgt een e-mail zodra je tegoed van {kredit} beschikbaar is. Het wordt bij het afrekenen in mindering gebracht als je inlogt met hetzelfde e-mailadres."
 }

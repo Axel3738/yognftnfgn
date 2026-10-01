@@ -88,9 +88,10 @@ STEG 5 — LÄGG IN BLOCKET PÅ TACKSIDAN
 3. Klicka "Lägg till block" / "Add block" i vänsterspalten. Välj "Värva en
    vän" under "Matstrumpor Tacksida". Lägg det under orderbekräftelsen, så
    högt upp som det går utan att flytta något annat block.
-4. I förhandsvisningen ska ett kort synas med rubriken "Ge en vän 50 kr i
-   rabatt", en länk som slutar på "?van=EXEMPEL1" och knappen "Kopiera
-   länken". Syns inget kort: STANNA och ta en skärmdump.
+4. I förhandsvisningen ska ett kort synas med rubriken "Ge en vän en
+   värdecheck på 50 kr", en länk som slutar på "?van=" + ett exempelnummer
+   (ABC123EXAMPLE på tacksidan, EXEMPEL1 på orderstatussidan) och knappen
+   "Kopiera länken". Syns inget kort: STANNA och ta en skärmdump.
 5. Klicka "Spara" / "Save".
 
 ------------------------------------------------------------------------------
@@ -110,8 +111,8 @@ STEG 7 — KONTROLLERA
 2. Ta en skärmdump av förhandsvisningen av tacksidan.
 3. Öppna https://matstrumpor.se/?van=PROV0VARVA1 i ett INKOGNITOFÖNSTER
    (Ctrl+Shift+N), så att provet inte fastnar i min vanliga webbläsare. Nere på
-   sidan ska en mörk ruta synas: "Din vän har gett dig 50 kr rabatt. Den dras
-   av i kassan på ditt första köp." Ta en skärmdump. Lägg INTE någon order.
+   sidan ska en mörk ruta synas: "Din vän har gett dig en värdecheck på 50 kr.
+   Den dras av i kassan på ditt första köp." Ta en skärmdump. Lägg INTE någon order.
 
 ------------------------------------------------------------------------------
 RAPPORTERA TILL SLUT, KORT

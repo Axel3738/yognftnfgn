@@ -10,6 +10,21 @@ export function refFor(nummer) {
   return /^[A-Z0-9]{6,16}$/.test(s) ? s : null;
 }
 
+/** Numret i länken. Tacksidan läser orderConfirmation.number, orderstatussidan
+ *  order.confirmationNumber. Exempelnumret visas i kassaredigeraren och för en
+ *  order UTAN bekräftelsenummer på orderstatussidan: redigerarens förhandsorder
+ *  (#1004, "Bekräftad 21 sep") saknar nummer, och kundkontoredigeraren sätter
+ *  inte extension.editor, så kortet syntes inte där (Cowork 2026-10-01). Alla
+ *  riktiga ordrar har ett nummer: 250 av de 250 senaste, och även #1004 från
+ *  2025-08-04 (mätt 2026-10-01). Ingen order alls ⇒ inget kort. */
+export function nummerFor({ plats, bekraftelse, order, iRedigeraren = false, exempel }) {
+  const riktigt = plats === 'tack' ? bekraftelse?.number : order?.confirmationNumber;
+  if (riktigt) return riktigt;
+  if (iRedigeraren) return exempel;
+  if (plats === 'orderstatus' && order) return exempel;
+  return null;
+}
+
 /** Butikens adress för kundens språk: exakt kod först ("pt-PT"), sedan
  *  grundspråket ("en-US" → "en"). Okänt språk ⇒ null: hellre inget kort än
  *  en länk på fel språk. */
