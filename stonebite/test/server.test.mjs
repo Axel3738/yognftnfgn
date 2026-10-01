@@ -815,6 +815,22 @@ test('fakturor: var och en laddar upp och ser bara sina egna; ägaren ser allas 
   assert.equal(buf.readUInt16LE(buf.length - 22 + 10), 2, 'två filer i zippen');
   assert.match(buf.toString('latin1'), /2026-09 Josh Redigerare - josh-september\.pdf/);
 
+  // Två filer i samma uppladdning = två fakturor samma månad
+  const csrf2 = await farskCsrf('/app/mig', josh.kaka);
+  const fd2 = new FormData(); fd2.set('csrf', csrf2); fd2.set('manad', '2026-07'); fd2.set('nasta', '/app/mig#fakturor');
+  fd2.append('fil', new Blob(['%PDF-1.4 juli 1']), 'juli-1.pdf'); fd2.append('fil', new Blob(['%PDF-1.4 juli 2']), 'juli-2.pdf');
+  const tva = await fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: josh.kaka }, body: fd2 });
+  assert.equal(tva.status, 303);
+  const migJuli = await (await hamta('/app/mig', josh.kaka)).text();
+  assert.match(migJuli, /juli-1\.pdf/); assert.match(migJuli, /juli-2\.pdf/);
+  // En trasig fil i paret ⇒ ingen av dem sparas
+  const csrf3 = await farskCsrf('/app/mig', josh.kaka);
+  const fd3 = new FormData(); fd3.set('csrf', csrf3); fd3.set('manad', '2026-06');
+  fd3.append('fil', new Blob(['ok']), 'juni-ok.pdf'); fd3.append('fil', new Blob(['x']), 'juni-fel.exe');
+  const par = await fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: josh.kaka }, body: fd3 });
+  assert.equal(par.status, 400);
+  assert.doesNotMatch(await (await hamta('/app/mig', josh.kaka)).text(), /juni-ok\.pdf/);
+
   // Ägaren laddar upp åt Vera — hamnar på henne
   const atVera = await laddaUpp(agare.kaka, { manad: '2026-08', namn: 'vera-aug.pdf', innehall: '%PDF-1.4 aug', personId: 'vera' });
   assert.equal(atVera.status, 303);

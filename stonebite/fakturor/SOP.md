@@ -15,7 +15,7 @@ på engelska. Den svenska sammanfattningen för Axel står sist.
 >
 > I also need a favour: I managed to lose the invoices you have sent me so far. Please upload **every invoice you have ever sent us for your salary — all time, every month, from your very first one**. It would be amazing if you could do it this week.
 >
-> How: log in at https://www.stonebite.org/app/mig → scroll to **Your invoices** → pick the month the invoice covers → choose the file (PDF or a photo) → **Upload the invoice**. One file per upload; just repeat for each month.
+> How: log in at https://www.stonebite.org/app/mig → scroll to **Your invoices** → pick the month the invoice covers → choose the file (PDF or a photo) → **Upload the invoice**. You can pick several files at once if you have more than one invoice for a month.
 >
 > Full step-by-step guide is below. If you no longer have an invoice for a month, write it again (same amount, same month) and upload that.
 >
@@ -29,7 +29,7 @@ på engelska. Den svenska sammanfattningen för Axel står sist.
 
 **Where:** https://www.stonebite.org/app/mig (log in with your usual account), section **Your invoices**.
 
-**What to upload:** every invoice you send Stonebite Ecom AB for your salary, bonus or commission. One file per invoice. PDF is best; a clear photo (JPG/PNG) is fine. Max 15 MB.
+**What to upload:** every invoice you have ever sent Stonebite Ecom AB for your salary, bonus or commission — all months, from the first one. One file per invoice. PDF is best; a clear photo (JPG/PNG) is fine. Max 15 MB.
 
 **Steps**
 
@@ -47,7 +47,7 @@ på engelska. Den svenska sammanfattningen för Axel står sist.
 **Rules**
 
 - Every invoice you have ever sent the company must be here. If a month is missing from your records, write the invoice again (same amount, same month) and upload it.
-- Invoices for two different months are two files. Do not merge months into one PDF.
+- One or two invoices for the same month is fine: pick both files at once, or upload twice. Invoices for two different months are two separate uploads. Do not merge months into one PDF.
 - You only ever see your own invoices. The owner sees everyone's.
 - Uploaded by mistake? Tell Axel — only the owner can remove an invoice.
 - If the page shows an error ("Only PDF or image", "File too big"), fix the file and try again.

@@ -562,7 +562,7 @@ export async function hantera(req, res) {
           return felsida(res, { kod: 400, rubrik: 'Försök igen', text: 'Formuläret var för gammalt. Gå tillbaka och försök igen.', nonce, https });
         }
         const nasta = sakerNasta(f2.nasta, '/app/mig#fakturor');
-        const fil = delar.filer.find((x) => x.falt === 'fil');
+        const filerna = delar.filer.filter((x) => x.falt === 'fil');
         // Ägaren/chefen får ladda upp åt någon annan; alla andra bara åt sig själva.
         let personId = anvandare.personId ?? null;
         let personNamn = anvandare.namn;
@@ -571,8 +571,13 @@ export async function hantera(req, res) {
           const p = personerForFakturor().find((x) => x.id === f2.personId);
           if (p) { personId = p.id; personNamn = p.namn; kontoId = p.id.startsWith('konto:') ? p.id.slice(6) : null; }
         }
+        // Flera filer i samma uppladdning = flera fakturor för samma månad
+        // (Axel 2026-10-01: "en eller två för varje månad"). Allt kontrolleras
+        // innan något skrivs, så ett fel i fil två lämnar inte fil ett ensam.
         try {
-          sparaFaktura({ personId, personNamn, kontoId, manad: f2.manad, filnamn: fil?.filnamn, data: fil?.data, anteckning: f2.anteckning }, { register: FAKTURAREGISTER, mapp: FAKTURAMAPP });
+          if (!filerna.length) throw new Error('Ingen fil valdes.');
+          for (const fil of filerna) sparaFaktura({ personId, personNamn, kontoId, manad: f2.manad, filnamn: fil.filnamn, data: fil.data, anteckning: f2.anteckning }, { register: FAKTURAREGISTER, mapp: join(FAKTURAMAPP, '.koll'), torr: true });
+          for (const fil of filerna) sparaFaktura({ personId, personNamn, kontoId, manad: f2.manad, filnamn: fil.filnamn, data: fil.data, anteckning: f2.anteckning }, { register: FAKTURAREGISTER, mapp: FAKTURAMAPP });
         } catch (e) {
           return felsida(res, { kod: 400, rubrik: 'Kunde inte ladda upp', text: e.message, nonce, https });
         }

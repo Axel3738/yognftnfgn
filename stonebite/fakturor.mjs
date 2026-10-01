@@ -113,7 +113,7 @@ export function lasFakturor(fil = FAKTURAREGISTER, { medBorttagna = false } = {}
  * begripligt fel på fel typ, för stor fil eller ogiltig månad — sidan visar
  * felet, ingenting halvskrivs.
  */
-export function sparaFaktura({ personId, personNamn, kontoId, manad, filnamn, data, anteckning = '', nu = new Date() }, { register = FAKTURAREGISTER, mapp = FAKTURAMAPP } = {}) {
+export function sparaFaktura({ personId, personNamn, kontoId, manad, filnamn, data, anteckning = '', nu = new Date() }, { register = FAKTURAREGISTER, mapp = FAKTURAMAPP, torr = false } = {}) {
   const person = sakerPersonNyckel(personId ?? kontoId);
   if (!person) throw new Error('Kontot saknar id.');
   const m = giltigManad(manad);
@@ -122,6 +122,7 @@ export function sparaFaktura({ personId, personNamn, kontoId, manad, filnamn, da
   if (data.length > MAX_BYTES) throw new Error(`Filen är för stor (max ${Math.round(MAX_BYTES / 1024 / 1024)} MB).`);
   const ext = extname(String(filnamn ?? '')).toLowerCase();
   if (!TYPER[ext]) throw new Error('Bara PDF eller bild (PNG, JPG, WEBP, HEIC).');
+  if (torr) return null; // bara kontrollerna ovan — inget skrivs
   const id = `${nu.toISOString().slice(0, 10)}-${randomBytes(5).toString('hex')}`;
   const relativ = join(person, `${m}-${id}${ext}`);
   const sokvag = join(mapp, relativ);
