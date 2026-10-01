@@ -133,4 +133,44 @@ Planen för själva enkäten står i `ENKAT.md` här bredvid.
 
 ## Följdfrågan (frågan 2026-10-01)
 
-_(väntar på svaret: Spencers CRO-enkät i dokumenten, enkätlänk i orderbekräftelsen, verktyg för tacksidan utan Plus)_
+Svaret kom 2026-10-01. Axel klistrade in det, och det står här ordagrant.
+
+> 1. Spencer's CRO survey framework in course docs:
+>
+> No. Spencer confirms the full questionnaire + process lives in the CRO program [C1][C6], but it is not in the course documents I have access to. He links an older video with some questions (https://youtu.be/q4MkJtQ-M9M) [C6], and notes their version runs as a giveaway so it differs slightly. Chrisphillips separately shared a 4-question structure mapped to ad research: symptoms in your life, failed solutions/frustrations, desired outcome (genie wish), and what made you hesitant before buying [C5] — but that's a member's framework, not Spencer's.
+>
+> 2. Survey link in order confirmation email:
+>
+> No source covers this. Nobody in the community has shared running a survey via order confirmation email or a reply rate for that setup. The closest data point is Chrisphillips's post-delivery survey (~2 weeks after delivery) getting zero responses — but that's a different timing, not the confirmation email.
+>
+> 3. App/setup for thank-you page survey on non-Plus:
+>
+> Two tools members actually use:
+>
+> * ZigPoll — Jonas and Malik both use it; you manually add it into your thank-you page so customers see it [C4][C7]. Jonas noted it felt like it may have caused issues after install but later confirmed it works [C4].
+> * Triple Whale — Amitoj uses it for thank-you page surveys [C2]. Caveat from Elias G: TW requires "Which Channel do you come from" as the first question before you can add your own [C4].
+>
+> GemPages came up but Elias clarified it's for post-purchase upsell flows, not surveys [C4]. Sem confirmed thank-you page placement but didn't name a specific app [C3].
+
+### Vad vi tar med oss
+
+1. **Spencers egna frågor finns inte i botens källor.** De ligger i CRO-programmet.
+   En äldre video med några av frågorna: https://youtu.be/q4MkJtQ-M9M (inte
+   läst än). Fråga aldrig boten om dem igen.
+2. **En medlems fyra frågor** (Chrisphillips [C5]): symptomen i ditt liv,
+   lösningar som inte fungerade, önskat utfall, och vad som fick dig att tveka
+   innan köpet. Den fjärde är vår reservfråga i `ENKAT.md` ("Var det något som
+   nästan fick dig att låta bli att köpa?"), alltså har den nu stöd.
+3. **Ingen har kört en enkätlänk i orderbekräftelsen.** Vi blir först och mäter
+   svarsgraden själva.
+4. **Verktyg för tacksidan utan Plus:** ZigPoll (två medlemmar) och Triple
+   Whale (en medlem, tvingar fram frågan om kanal först). Båda är betalappar.
+   Att installera en sådan är Axels pengabeslut.
+
+### Axels beslut efter svaret (2026-10-01)
+
+- **Alternativ A** ur `ENKAT.md`, men **bara Matstrumpor**: "Jag vill ju bygga
+  detta på matstrumpor bara egentligen, inte för dom andra." Bäverbutiken och
+  CaraShell får ingen enkät.
+- **Ingen belöning.** Ett presentkort på 100 kr till alla svarande är "lowkey
+  alldeles för mycket".
