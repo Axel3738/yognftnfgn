@@ -202,7 +202,12 @@ dec 2025) och 87 % har fått en klapp de inte ville ha (UNICEF dec 2024);
 57 % vill ge praktiskt, 25 % roligt, 23 % säger nej till skämtpresenter
 (Talker nov 2025); se-igenom-förpackning höjer viljan att äga (IJRM maj
 2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är FALSKT (cheeseburgare
-är), skriv "topp tre".
+är), skriv "topp tre". **Två sidor, publiceras om på samma länkar:** den
+engelska briefen till creative strat (`CS-BRIEF-sophistication.md`)
+https://claude.ai/artifact/5xGD7q2EtJfdVQr1aS8eKn och Axels enkla svenska
+sammanfattning https://claude.ai/artifact/4V8B41zhKmExD2qUumasf5 (Axels
+order samma dag: "jag kan inte läsa något sånt komplicerat struktur" —
+regeln står i CLAUDE.md under "Så här ska du svara Axel").
 
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;

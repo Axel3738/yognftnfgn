@@ -18,6 +18,12 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 Axel har grov dyslexi. Skriv kort och konkret — inga bibelsvar.
 
+⛔ **Axels order 2026-10-01: "jag kan inte läsa något sånt komplicerat struktur".**
+I chatten till Axel: inga tabeller, inga filnamn, inga parenteser, inga
+siffror i prosan. Korta rader. En sak per rad. Högst tre rubriker. Det
+krångliga får ligga i filerna och på sidorna; chatten säger vad det betyder
+och vad han ska göra. En lista till honom är aldrig längre än sex punkter.
+
 **Det enda formatkravet: gör HANS uppgifter omöjliga att missa.**
 Ska han göra något, sätt det sist under en egen rubrik, numrerat, en mening
 per rad, med exakt var han ska klicka och vad knappen heter. Ska han inte
