@@ -165,6 +165,9 @@ finns ("…redan har startats", mätt), så `annonser/schemalagg.mjs` gör det i
 (annonser + adset ACTIVE, kampanjen PAUSED — Meta granskar annonserna i förväg, inget kostar) och
 `--starta` 00:01 (bara kampanjerna), väckt av send_later `trig_01NVdXzi1vLMKY8id9FxzT9N`. Står
 kvar avstängda: Norges 007 i NO och NOB (`hall_av`, "sukker"), Australien (ovan), hela Taiwan.
+✅ **IGÅNG sedan 00:03–00:20 fre 2/10, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
+`starta`): 110 annonser på, de två 007 PAUSED, summa 13 000 kr/dag. Meta strypte (kod 17) i cirka 13
+minuter mitt i ES, och verktygets egen väntan tog det utan omkörning. TW rördes inte.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
