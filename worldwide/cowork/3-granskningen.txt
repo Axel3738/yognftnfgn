@@ -74,7 +74,13 @@ redan, men själva recensionstexterna kan bara Judge.me översätta.
 3. Finns automatisk översättning av recensionerna och ingår den i planen butiken HAR:
    slå på den för en, de, fr, es, it, nl, pl och pt-PT. Svenskan ändras inte.
 4. Kostar den extra: slå INTE på den. Skriv namnet på planen och priset.
-5. Spara. Skriv exakt vilka inställningar du ändrade, med de namn appen använder.
+5. Datumen i recensionerna står i amerikanskt format ("09/24/2026"), som en europé läser
+   som 9 i 24:e månaden. Leta efter ett val för datumformat ("Date format", ofta under
+   "Review widget" / "Widget settings" / "Appearance"). Går det att välja PER SPRÅK:
+   välj "DD/MM/YYYY" (eller ett format med månadens namn) för de åtta utlandsspråken.
+   Gäller valet hela butiken, alltså även den svenska sidan: ändra INGENTING, skriv bara
+   vad valet heter och vilka format som finns. Axel bestämmer.
+6. Spara. Skriv exakt vilka inställningar du ändrade, med de namn appen använder.
 
 ------------------------------------------------------------------------------
 STEG 3 — Kontrollera som kund (från den här datorn, alltså en svensk/EU-IP)
