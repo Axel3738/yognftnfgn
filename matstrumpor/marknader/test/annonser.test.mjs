@@ -47,6 +47,16 @@ test('farAktiveras: en given budget med ⛔ "tills Axel granskat" stoppar ändå
   }
 });
 
+test('farAktiveras: lansering_stopp stoppar marknaden även med given budget och rätt länkar — Taiwan bär det', async () => {
+  const ok = [{ name: 'a', lank: 'https://matstrumpor.com/zh-tw/products/sushi-strumpor?country=TW' }];
+  const TW = { locale: 'zh-TW', geo: ['TW'], doman: 'matstrumpor.com', sprakmapp: 'zh-tw', budget_beslut: 'Axel: 1000 kr/dag', lansering_stopp: 'tull-ID i kassan' };
+  assert.equal(farAktiveras({ ...TW, lansering_stopp: undefined }, ok).ok, true, 'utan stoppet hade den gått');
+  assert.match(farAktiveras(TW, ok).skal, /får inte lanseras än \(tull-ID i kassan\)/);
+  const { readFileSync } = await import('node:fs');
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  assert.match(M.kampanjer.TW.lansering_stopp ?? '', /tull/i, 'Taiwan ska bära stoppet tills Axel sagt annat');
+});
+
 test('lankOk: B-kampanjen på egen domän måste gå dit, aldrig till .se', () => {
   const NOB = { locale: 'nb', geo: ['NO'], doman: 'matstrumpor.no' };
   assert.equal(lankOk(NOB, 'https://matstrumpor.no/products/sushi-strumpor?country=NO'), true);
