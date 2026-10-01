@@ -43,11 +43,11 @@ function formular({ csrf, nasta, forvald, personer = [] }) {
     <label class="falt"><span>${esc(t('Vilken månad gäller fakturan?'))}</span>
       <input type="month" name="manad" value="${attr(forvald)}" required></label>
     <label class="falt"><span>${esc(t('Fakturan (PDF eller bild)'))}</span>
-      <input type="file" name="fil" accept=".pdf,.png,.jpg,.jpeg,.webp,.heic,application/pdf,image/*" required></label>
+      <input type="file" name="fil" accept=".pdf,.png,.jpg,.jpeg,.webp,.heic,application/pdf,image/*" multiple required></label>
     <label class="falt"><span>${esc(t('Anteckning (frivillig)'))}</span>
       <input type="text" name="anteckning" maxlength="300" placeholder="${attr(t('t.ex. lön september + bonus'))}"></label>
     <div><button class="knapp" type="submit">${esc(t('Ladda upp fakturan'))}</button>
-      <span class="mini" style="margin-left:10px">${esc(t('Max'))} ${Math.round(MAX_BYTES / 1024 / 1024)} MB. ${esc(t('En fil per uppladdning — ladda upp flera gånger för flera fakturor.'))}</span></div>
+      <span class="mini" style="margin-left:10px">${esc(t('Max'))} ${Math.round(MAX_BYTES / 1024 / 1024)} MB. ${esc(t('Har du två fakturor för samma månad: välj båda filerna på en gång, eller ladda upp igen.'))}</span></div>
   </form>`;
 }
 
@@ -77,7 +77,7 @@ export function minaFakturor({ rader = [], csrf, nu = new Date() }) {
   return block({
     id: 'fakturor',
     titel: 'Dina fakturor',
-    under: 'Ladda upp varje faktura du skickar till bolaget här — en fil per faktura, märkt med månaden den gäller. Ägaren hämtar dem härifrån till bokföringen, så du behöver inte mejla dem.',
+    under: 'Ladda upp varje faktura du någonsin skickat bolaget här — även gamla månader — märkt med månaden den gäller. Ägaren hämtar dem härifrån till bokföringen, så du behöver inte mejla dem. Bara du och ägaren ser dina.',
     innehall: `${panel({ titel: 'Ladda upp en faktura', innehall: formular({ csrf, nasta: '/app/mig#fakturor', forvald: forraManaden(nu) }) })}
       <div style="height:14px"></div>
       ${rader.length
