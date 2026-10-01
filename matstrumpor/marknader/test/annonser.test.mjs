@@ -38,13 +38,16 @@ test('farAktiveras: en given budget med ⛔ "tills Axel granskat" stoppar ändå
   const ok = [{ name: 'a', lank: 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO' }];
   const vantar = { ...NO, budget_beslut: "Axel 2026-09-27: '1000kr per dag'. ⛔ Förblir PAUSED tills Axel granskat annonserna" };
   assert.match(farAktiveras(vantar, ok).skal, /Axels granskning/);
-  // Facit är filen: varje kampanj som ännu inte granskats ska stoppas av spärren.
+  // Facit är filen: en kampanj utan Axels ja (⛔/platshållare i beslutet) eller med lanseringsstopp
+  // stoppas, och sedan 2026-10-01 ("schemalägg alla och japan") får de andra gå — Taiwan aldrig.
   const { readFileSync } = await import('node:fs');
   const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
   for (const [kod, k] of Object.entries(M.kampanjer)) {
     const lank = [{ name: kod, lank: k.lank }];
-    assert.equal(farAktiveras(k, lank).ok, false, `${kod} skulle kunna aktiveras: ${k.budget_beslut}`);
+    const stopp = !!k.lansering_stopp || /⛔|EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '');
+    assert.equal(farAktiveras(k, lank).ok, !stopp, `${kod}: ${k.budget_beslut}`);
   }
+  assert.equal(farAktiveras(M.kampanjer.TW, [{ name: 'TW', lank: M.kampanjer.TW.lank }]).ok, false, 'Taiwan får aldrig gå utan Axels ord');
 });
 
 test('farAktiveras: lansering_stopp stoppar marknaden även med given budget och rätt länkar — Taiwan bär det', async () => {
