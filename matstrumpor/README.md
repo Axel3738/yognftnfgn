@@ -36,7 +36,7 @@ node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node matstrumpor/ringlista.mjs                   # ringlistan: återköpare (2+ datum) + lottade nya kunder → output/ringlista/
+node matstrumpor/ringlista.mjs                   # ringlistan: 8 återköpare (2+ datum) + 7 lottade nya kunder med framme paket → output/ringlista/
 node matstrumpor/presentkort.mjs [--ja]          # presentkortet till återköparna EFTER samtalen (torrt utan --ja)
 node --test matstrumpor/test/*.test.mjs          # 85 tester
 ```
@@ -47,22 +47,36 @@ Inga npm-beroenden. Node ≥ 20.
 
 Axels beställning: "en lista med alla kunder som köpt 2 gånger eller fler …
 en ringlista … 1–3 frågor per kund", han ringer själv och skriver medan de
-pratar (inget spelas in). Hans ändring 2026-10-01: **bara kunder som köpt på
+pratar (inget spelas in). Hans ändringar 2026-10-01: **bara kunder som köpt på
 separata datum** — tacksidans donut-tillägg minuter efter köpet och två ordrar
-i samma besök är impuls, inte återköp — **plus ett slumpat urval av förra
-veckans förstagångsköpare**, och **en fil med återköparnas e-post** så att de
-kan exkluderas ur en annan undersökning per mejl.
+i samma besök är impuls, inte återköp — **plus ett slumpat urval av
+förstagångsköpare**, **bara kunder som fått sitt paket** ("vi kanske inte ska
+ringa kunder som inte fått sina paket"), **en kort lista** ("för många att
+ringa … gör en lista på lite färre": 8 + 7 = 15 samtal, resten reserv) och
+**en fil med återköparnas e-post** så att de kan exkluderas ur en annan
+undersökning per mejl.
 
 `node matstrumpor/ringlista.mjs` läser alla ordrar ur Shopify (appen
-"Fabriken", läs-bart), besöksdatan (UTM) för de senaste sju dagarnas ordrar och
-annonsnamnen ur Meta (`META_ACCESS_TOKEN`; utan den visas annons-id:t), och
+"Fabriken", läs-bart), besöksdatan (UTM) för de senaste 44 dagarnas ordrar,
+annonsnamnen ur Meta (`META_ACCESS_TOKEN`; utan den visas annons-id:t) och
+**"levererat" ur spårningsrutinens `sparning/butiker/matstrumpor/lage.json`**
+(paket → ordernummer, status `DELIVERED`, datum; committas till `main` varje
+timme — ⚠️ Shopifys eget `fulfillments.deliveredAt` var TOMT på alla 250
+ordrar sedan 25/8 vid mätningen 2026-10-01, så det går inte att lita på), och
 skriver **`output/ringlista/`**: `RINGLISTA.md` (läsbar), `ringlista.html`
 (tryck-för-att-ringa, statusknappar, anteckningsfält per kund som sparas i
 webbläsaren, knappen *Kopiera anteckningar* ger markdown att klistra in i
 chatten), `ringlista.json` och `aterkopare-epost.txt` (en adress per rad).
-`--urval N` styr hur många nya kunder som lottas (standard 15; samma lottning
-hela dagen, fröet är datumet), `--spara-ordrar` lägger råordrarna bredvid,
-`--fran <fil>` bygger om utan nät.
+`--max-aterkop N` (standard 8) och `--urval N` (standard 7) styr storleken;
+samma lottning hela dagen, fröet är datumet. `--lage <fil>` pekar på ett
+annat spårningsläge (en gren som ligger efter `main` har en gammal fil),
+`--spara-ordrar` lägger råordrarna bredvid, `--fran <fil>` bygger om utan nät.
+
+Huvudlistan är återköpare med telefon vars senaste paket är framme (flest
+köpdatum först, sedan högst summa), och förstagångsköpare med telefon vars
+paket levererades de senaste 14 dagarna. En återköpare vars senaste order är
+registrerad hos spårningen utan leverans, eller yngre än 30 dagar utan
+registrering, står i reserven som "paketet inte framme än — ring senare".
 
 ⛔ **Utdatan bär namn, telefonnummer och e-post.** Mappen är gitignorerad och
 filerna får aldrig committas, postas i Discord eller läggas i Notion. Ett test
@@ -74,19 +88,21 @@ Vad datan visade (4 012 ordrar 2026-09-27, besöksdatan 2026-10-01):
 |---|---|
 | 70 av 71 `shopify_draft_order` är Donut-strumpor 299 kr, skapade 1–5 min efter en webborder (dec 2025–mars 2026) | Tacksidans tillägg. Ett **köptillfälle = ett kalenderdatum i svensk tid**; 66 kunder med bara tillägget och 12 med två ordrar samma dag räknas bort (två identiska ordrar samma dag flaggas i huvudet som möjligt dubbelköp) |
 | Butiken sålde Fixkliniken-produkter (Skrubbmattan, FixToes …) före strumporna: 322 ordrar | En order utan strumpor/ätpinnar/presentkort räknas inte — de kunderna är inte Matstrumpors |
-| Kassan kräver inte telefon: 800 av 4 006 ordrar bär ett nummer; 61 av 350 förstagångsköpare veckan 24/9–1/10 | 42 återköpare på 2+ datum (av 4 237 ordrar 2026-10-01), **17 går att ringa**; de 25 utan nummer står sist med e-post och får presentkortet ändå. Nya kunder lottas bara bland dem med nummer |
+| Kassan kräver inte telefon: 800 av 4 006 ordrar bär ett nummer | 42 återköpare på 2+ datum (av 4 237 ordrar 2026-10-01), 17 med telefon ⇒ **8 i huvudlistan, 9 i reserv** (2 av dem väntar på paket); de 25 utan nummer står sist med e-post och får presentkortet ändå |
+| Spårningen: 95 paket levererade 2026-09-21–10-01, 84 av dem förstagångsköpare, 21 med telefon | **7 nya kunder lottas** bland de 21. Nya kunder lottas bara bland dem med nummer och framme paket |
 | `utm_content` bär annons-id på 36 av 46 ordrar med besöksdata | Varje ny kund står med annonsen hen kom från ("Facebook-annons: 09-17 Nathalie …"), så samtalet kan börja i rätt video |
 
 Frågorna är tre per kund. **Återköpare:** den mest specifika först (antal
 datum, byte av sort, tiden mellan köpen), sedan alltid *Vem fick strumporna,
 och hur reagerade den som fick dem?* och *Var det något som nästan fick dig
-att inte köpa?* **Nya kunder** (paketet har oftast inte kommit än, leverans
-median 11 dagar, så frågorna gäller köpet): *Minns du vad du såg i annonsen?
-Vad fick dig att klicka?*, *Vem är strumporna till, och vad är det för
-tillfälle?*, *Tvekade du på något innan du köpte?* Manuset per grupp står i
-filen. Presentkortet i "Köp 2 – få 2"-paketet räknas inte som en sort kunden
-valt. Evolve-boten får samma frågor att granska i
-`EVOLVE-FRAGOR-kundsamtal.md` (utan brand); svaret sparas bredvid.
+att inte köpa?* **Nya kunder** (paketet är framme): *Minns du vad du såg i
+annonsen? Vad fick dig att klicka?*, *Vem är strumporna till, och vad tyckte du
+när du öppnade paketet?*, *Var det något som nästan fick dig att inte köpa?*
+Manuset per grupp står i filen. Presentkortet i "Köp 2 – få 2"-paketet räknas
+inte som en sort kunden valt. Evolve-boten får frågorna att granska i
+`EVOLVE-FRAGOR-kundsamtal.md` (EN fråga, utan brand); svaret sparas bredvid.
+Påminnelsen om Evolve-svaret och presentkorten ligger som en `send_later` i
+sessionen som byggde listan (2026-10-02 17:15 CEST).
 
 **Presentkortet (Axels beslut 2026-10-01: 200 kr, skapas efteråt):**
 `node matstrumpor/presentkort.mjs` är torrt tills `--ja`, läser mottagarna ur
