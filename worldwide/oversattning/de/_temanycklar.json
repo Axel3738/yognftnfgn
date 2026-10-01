@@ -1,0 +1,4 @@
+{
+ "products.product.stock_label.one": "Nur noch {{ count }} Artikel auf Lager",
+ "products.product.stock_label.other": "Nur noch {{ count }} Artikel auf Lager"
+}

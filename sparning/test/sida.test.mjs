@@ -657,6 +657,15 @@ test('erbjudandet under paketet: stor knapp till hjulet, "Spåra ett annat numme
   // Halvt block (belopp utan hjul, eller hjul utan belopp) ger inte heller något.
   assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, erbjudande: { minsta_kop_sek: 299 } }).includes('class="bbs-erbjudande"'));
   assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, hjul: { handle: 'din-gratisprodukt' } }).includes('class="bbs-erbjudande"'));
+  // Utan extra språk ritas erbjudandet som förut, utan döljregel.
+  assert.ok(!kropp.includes('html:not([lang|='), 'en enspråkig sida får ingen döljregel');
+});
+
+test('erbjudandet (svenska, kronor) döljs på sidans extra språk, men visas på butikens eget (worldwide 2026-10-01)', () => {
+  const med = { ...KONFIG, sprak_extra: ['en', 'de'], erbjudande: { kod: 'TACKIGEN', minsta_kop_sek: 299 }, hjul: { handle: 'din-gratisprodukt' } };
+  const kropp = byggSidkropp(fixtur(), med);
+  assert.ok(kropp.includes('class="bbs-erbjudande"'), 'blocket finns kvar för den svenska sidan');
+  assert.ok(kropp.includes('html:not([lang|="sv"]) #bb-spar .bbs-erbjudande{display:none!important}'), 'döljregeln för andra språk saknas');
 });
 
 test('en norsk sida KÖRS: uppslaget ur adressen ger norsk rubrik och fem punkter (2026-09-20: datumnycklarna får inte följa locale)', () => {

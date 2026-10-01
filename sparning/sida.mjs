@@ -224,14 +224,18 @@ function tomtext(vaknar, T = (x) => x) {
 function erbjudandeBlock(c) {
   const e = c.erbjudande;
   if (!e) return '';
-  if (e.kredit) return `  <div class="bbs-erbjudande">
+  // Erbjudandet är skrivet på butikens eget språk och i kronor. På ett extra språk
+  // (sprak_extra: Bäverbutiken på beaverstoreco.com/de …) döljs det i stället för att
+  // visa svenska och kronor för en utländsk kund (worldwide-granskningen 2026-10-01).
+  const dolj = (c.extra ?? []).length ? `  <style>html:not([lang|="${esk(c.html ?? 'sv')}"]) #bb-spar .bbs-erbjudande{display:none!important}</style>\n` : '';
+  if (e.kredit) return `${dolj}  <div class="bbs-erbjudande">
     <p class="bbs-etikett bbs-etikett--ljus">Tack för din beställning</p>
     <h2>${esk(String(e.belopp))} kr på ditt nästa köp</h2>
     <p>Handla för minst ${esk(String(e.minsta))} kr så dras ${esk(String(e.belopp))} kr av i kassan. Koden ${esk(e.kod)} läggs på när du trycker på knappen. Den gäller en gång.</p>
     <a class="bbs-knapp bbs-knapp--stor" href="${esk(e.sida)}">Använd mina ${esk(String(e.belopp))} kr</a>
   </div>
 `;
-  return `  <div class="bbs-erbjudande">
+  return `${dolj}  <div class="bbs-erbjudande">
     <p class="bbs-etikett bbs-etikett--ljus">Tack för din beställning</p>
     <h2>Vinn en gratisprodukt</h2>
     <p>Som tack får du snurra vårt lyckohjul. Vinsten blir gratis i kassan vid ditt nästa köp över ${esk(String(e.minsta))} kr.</p>

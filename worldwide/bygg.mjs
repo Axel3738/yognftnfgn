@@ -305,6 +305,10 @@ async function registrera(k, resurs, rader, { skarpt, etikett, locale = LOCALE }
       { id: resurs.resourceId, t: ny.slice(i, i + 100).map((x) => ({ key: x.key, value: x.value, locale, translatableContentDigest: x.digest })) });
     if (r.fel.length) { log(`❌ ${etikett}: ${r.fel.join('; ')}`); fel++; continue; }
     antal += r.data.translationsRegister.translations.length;
+    // Temats språkfil skrivs om vid varje anrop: två anrop tätt efter varandra och det första
+    // försvinner (mätt 2026-10-01, 100 av 262 nycklar i locales/it.json). Paus mellan omgångarna,
+    // och worldwide/granskning/temafil-sync.mjs läser filen och registrerar om det som saknas.
+    if (i + 100 < ny.length) await paus(12000);
   }
   return { antal, fel };
 }
@@ -391,12 +395,24 @@ async function oversattningarFor(k, { skarpt }, locale) {
   const menyer = vardeKarta(las('_menyer.json'));
   const tema = vardeKarta(las('_tema.json'));
   const shop = las('_shop.json');
-  for (const [typ, karta] of [['LINK', menyer], ['MENU', menyer], ['ONLINE_STORE_THEME', tema], ['ONLINE_STORE_THEME_JSON_TEMPLATE', tema], ['ONLINE_STORE_THEME_SETTINGS_DATA_SECTIONS', tema], ['ONLINE_STORE_THEME_SECTION_GROUP', tema]]) {
+  // Fraktsättets namn i kassan ("Free tracked shipping" stod på engelska i den tyska kassan, 2026-10-01).
+  const frakt = vardeKarta(las('_frakt.json'));
+  for (const [typ, karta] of [['DELIVERY_METHOD_DEFINITION', frakt], ['LINK', menyer], ['MENU', menyer], ['ONLINE_STORE_THEME', tema], ['ONLINE_STORE_THEME_JSON_TEMPLATE', tema], ['ONLINE_STORE_THEME_SETTINGS_DATA_SECTIONS', tema], ['ONLINE_STORE_THEME_SECTION_GROUP', tema]]) {
     let resurser;
     try { resurser = await allaResurser(k, typ, locale); } catch (e) { log(`⚠️ ${typ}: ${e.message.slice(0, 160)}`); continue; }
     for (const res of resurser) {
       const rader = res.translatableContent.filter((c) => c.value && karta.has(norm(c.value))).map((c) => ({ key: c.key, value: karta.get(norm(c.value)), digest: c.digest }));
       lagg(typ.toLowerCase(), await registrera(k, res, rader, { skarpt, etikett: typ, locale }));
+    }
+  }
+  // Temats egna gränssnittsnycklar (cart.general.title, products.product.add_to_cart …) PER NYCKEL.
+  // Temat har ingen språkfil för it/nl/pl, så de språken föll tillbaka på engelska ("Add to cart"
+  // på en italiensk sida — worldwide-granskningen 2026-10-01). Filen _temanycklar.json: nyckel → text.
+  const nycklar = las('_temanycklar.json');
+  if (Object.keys(nycklar).length) {
+    for (const res of await allaResurser(k, 'ONLINE_STORE_THEME_LOCALE_CONTENT', locale)) {
+      const rader = res.translatableContent.filter((c) => typeof nycklar[c.key] === 'string' && nycklar[c.key].trim() && c.value).map((c) => ({ key: c.key, value: nycklar[c.key], digest: c.digest }));
+      lagg('temanycklar', await registrera(k, res, rader, { skarpt, etikett: 'temanycklar', locale }));
     }
   }
   for (const res of await allaResurser(k, 'SHOP', locale)) {

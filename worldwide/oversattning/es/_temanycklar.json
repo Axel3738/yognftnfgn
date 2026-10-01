@@ -1,0 +1,4 @@
+{
+ "products.product.stock_label.one": "Pocas unidades: queda {{ count }}",
+ "products.product.stock_label.other": "Pocas unidades: quedan {{ count }}"
+}

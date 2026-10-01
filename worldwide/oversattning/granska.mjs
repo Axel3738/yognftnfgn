@@ -118,6 +118,25 @@ export function granskaDel(enObj, ut, locale) {
   return fel;
 }
 
+/** _temanycklar.json (temats nycklar, nyckel → text): en fil per språk med BARA de nycklar språket
+ * saknar i temat (it/nl/pl: alla, de/fr/es/pt-PT: lagerraden). Granskas nyckel för nyckel mot
+ * engelskan: samma Liquid-platshållare och HTML-taggar, ingen svenska, inget förbjudet. */
+export function granskaTemanycklar(enObj, ut, locale) {
+  const fel = [];
+  const ph = (s) => [...String(s).matchAll(/\{\{[^}]*\}\}|\{%[^%]*%\}/g)].map((m) => m[0].replace(/\s+/g, '')).sort().join('|');
+  for (const [k, v] of Object.entries(ut)) {
+    if (typeof v !== 'string' || !v.trim()) { fel.push(`${k}: tom`); continue; }
+    const e = enObj[k];
+    if (e != null) {
+      if (ph(e) !== ph(v)) fel.push(`${k}: platshållare ${ph(e)} ≠ ${ph(v)}`);
+      if (taggar(e).join(' ') !== taggar(v).join(' ')) fel.push(`${k}: HTML-taggarna skiljer`);
+    }
+    if (/[åÅ]/.test(v) || (locale !== 'de' && /(?<![\p{L}])\p{L}*[äöÄÖ]\p{L}*(?![\p{L}])/u.test(v))) fel.push(`${k}: svenska bokstäver "${v.slice(0, 40)}"`);
+    for (const re of FORBJUDET) if (re.test(v)) fel.push(`${k}: förbjudet ${re}`);
+  }
+  return fel.slice(0, 8);
+}
+
 export function granskaFiler(filer, locale = 'en') {
   let ok = 0, dåliga = 0;
   const rader = [];
@@ -141,7 +160,8 @@ function granskaSprakfiler(locale, namn) {
     let fel;
     try {
       const ut = JSON.parse(readFileSync(join(ROT, locale, bas), 'utf8'));
-      if (bas.startsWith('_')) fel = granskaDel(JSON.parse(readFileSync(join(EN_MAPP, bas), 'utf8')), ut, locale);
+      if (bas === '_temanycklar.json') fel = granskaTemanycklar(JSON.parse(readFileSync(join(EN_MAPP, bas), 'utf8')), ut, locale);
+      else if (bas.startsWith('_')) fel = granskaDel(JSON.parse(readFileSync(join(EN_MAPP, bas), 'utf8')), ut, locale);
       else fel = kallor.has(ut.handle) ? granskaProdukt(kallor.get(ut.handle), ut, { locale }) : [`okänd handle ${ut.handle}`];
     } catch (e) { fel = [`kan inte läsas: ${e.message.slice(0, 120)}`]; }
     if (fel.length) { dåliga++; console.log(`❌ ${bas}: ${fel.join(' · ')}`); } else { ok++; console.log(`✅ ${bas}`); }

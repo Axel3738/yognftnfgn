@@ -121,3 +121,23 @@ test('bilderna: format och prompt utan priser', () => {
   assert.ok(p.includes('"909 kr" → REMOVE'));
   assert.ok(p.includes('"Slöa knivar?" → "Dull knives?"'));
 });
+
+test('apptexterna (bw-appord): reglerna i det genererade skriptet behåller sina snedstreck', async () => {
+  // 2026-10-01: mallsträngen åt upp \( och \d, så "Recensioner på andra språk" blev "Reviews på andra språk".
+  const { byggAppord } = await import('../tema/patch.mjs');
+  const t = byggAppord();
+  const skript = t.split('<script>')[1].split('</script>')[0];
+  const par = new Function(`return ${/var par = (\/.*?\/)\.exec/.exec(skript)[1]};`)();
+  assert.equal(par.exec('Recensioner på andra språk'), null, 'en vanlig mening får aldrig delas på första ordet');
+  assert.deepEqual([...par.exec('2x Skyddshölje (-€6,10)')].slice(1), ['2x Skyddshölje', ' (-€6,10)']);
+  const rabatt = new Function(`return ${/(\/\^\\d\+x .*?\/)\.test/.exec(skript)[1]};`)();
+  assert.ok(rabatt.test('2x Skyddshölje') && !rabatt.test('dx Skyddshölje'));
+  // Varje språkgren parsas och bär bara sitt språk.
+  for (const l of ['en', 'de', 'pl']) {
+    const re = l === 'en' ? /\{%- else -%\}\{% raw %\}([\s\S]*?)\{% endraw %\}/ : new RegExp(`\\{%- when '${l}' -%\\}\\{% raw %\\}([\\s\\S]*?)\\{% endraw %\\}`);
+    const O = new Function(`${re.exec(skript)[1]}; return O;`)();
+    assert.equal(typeof O.exakt['1x Skyddshölje'], 'string', `${l}: Kachings paketnamn saknas`);
+    assert.ok(!/[åäö]/.test(O.exakt['Fri Frakt & 30 Dagars Öppet Köp']) && !/30/.test(O.exakt['Fri Frakt & 30 Dagars Öppet Köp']), `${l}: 30 dagar eller svenska kvar`);
+  }
+  assert.ok(Buffer.byteLength(t, 'utf8') < 250 * 1024, 'snippeten måste rymmas under Shopifys gräns för en Liquid-fil');
+});

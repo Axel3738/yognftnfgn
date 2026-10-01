@@ -12,7 +12,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, copyFileSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, copyFileSync, writeFileSync, readFileSync, existsSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,7 +29,9 @@ const REPO = dirname(SPARNING);
 // butik.mjs, oversatt.mjs, butiker.json och sprak/ lades till 2026-09-20 med
 // flerbutiksstödet (Axels order: samma system i alla butiker).
 const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'bavernummer.mjs', 'sistabiten.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json', 'butik.mjs', 'oversatt.mjs', 'butiker.json', 'tillagg.mjs'];
-const SPRAKFILER = ['nb.json', 'da.json', 'fi.json'];
+// Alla språkfiler: butiker.json bär sprak_extra (Matstrumpor, och Bäverbutiken sedan worldwide
+// 2026-10-01), och ett språk utan fil i temp-kopian stoppar publiceringen.
+const SPRAKFILER = readdirSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'sprak')).filter((f) => f.endsWith('.json'));
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå
 // konfigurationens `sida`-block.

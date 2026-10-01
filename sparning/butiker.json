@@ -6,6 +6,17 @@
   "myshopify": "4snrw0-mg.myshopify.com",
   "env_suffix": "SE_BAVER_SE",
   "sprak": "sv",
+  "sprak_extra": [
+   "en",
+   "de",
+   "fr",
+   "nl",
+   "es",
+   "it",
+   "pl",
+   "pt"
+  ],
+  "sprak_extra_comment": "Worldwide (Beaver Store, beaverstoreco.com, samma butik) bär åtta språk; menyns 'Track your parcel' gick till en helsvensk sida (worldwide-granskningen 2026-10-01). Sidan byter på <html lang>; erbjudandet (kronor, svenska) döljs på de extra språken. Slår igenom när rutinen på main kör med den här raden.",
   "land": "Sverige",
   "landskod": "SE",
   "support": "kundsupport@baverbutiken.se",

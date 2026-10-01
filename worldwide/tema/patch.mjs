@@ -28,6 +28,10 @@ const ROT = dirname(fileURLToPath(import.meta.url));
 export const MARKOR = 'bw-worldwide';
 // v2 (2026-09-30): texterna kommer ur snippets/bw-t.liquid på åtta språk (tema/sprak.json).
 export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s svenska texter byts i sidan (bw-appord) · v3 2026-09-30: startsidans titel Beaver Store · v4: og/twitter-titeln och den dolda h1:an
+// Apptexternas egen version (snippets/bw-appord.liquid skrivs om varje körning; de nio patchade
+// filerna rörs inte när bara appord ändras — då behövs ingen ny VERSION).
+// a2 2026-10-01: Kachings paketnamn, Judge.me:s hela widget som hela meningar (appord.json → exakt; jdgm är källan), korgens rabattrader, Trust Badges dold, platshållarprodukter dolda, bara besökarens språk skickas.
+export const APPORD_VERSION = 'a2';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -116,26 +120,57 @@ export const PATCHAR = {
 /** snippets/bw-appord.liquid ur tema/appord.json: byter Kachings och Judge.me:s svenska texter på besökarens språk.
  * Renderas bara i världsläget (sidfotens ww-gren). Rör bara textnoder inne i apparnas egna element. */
 export function byggAppord(ord = JSON.parse(readFileSync(join(ROT, 'appord.json'), 'utf8'))) {
-  const data = JSON.stringify({ exakt: ord.exakt, monster: ord.monster }).replace(/</g, '\\u003c');
-  return `{%- comment -%}${MARKOR} ${VERSION} — genererad av worldwide/tema/patch.mjs ur tema/appord.json. Ändra där, inte här.{%- endcomment -%}
+  // Bara besökarens språk skickas till sidan (en gren per språk i Liquid, ~1/8 av datan), och datan
+  // ligger i {% raw %}: Judge.me:s texter bär {{ n }}, som Liquid annars hade ritat som tomt.
+  const SPRAK = ['en', 'de', 'fr', 'es', 'it', 'nl', 'pl', 'pt-PT'];
+  const valj = (v, l) => (v && typeof v === 'object' ? v[l] ?? v[l.split('-')[0]] ?? v.en : v) ?? null;
+  const forSprak = (l) => {
+    const exakt = {}; for (const [k, v] of Object.entries(ord.exakt)) { const t = valj(v, l); if (t) exakt[k] = t; }
+    const monster = ord.monster.map((m) => ({ sv: m.sv, t: valj(m, l) })).filter((m) => m.t);
+    const j = JSON.stringify({ exakt, monster }).replace(/</g, '\\u003c');
+    if (/\{%-?\s*endraw/.test(j)) throw new Error('appord.json innehåller endraw');
+    return j;
+  };
+  const grenar = SPRAK.filter((l) => l !== 'en').map((l) => `  {%- when '${l}' -%}{% raw %}O = ${forSprak(l)};{% endraw %}`).join('\n');
+  const data = `{%- case request.locale.iso_code -%}\n${grenar}\n  {%- else -%}{% raw %}O = ${forSprak('en')};{% endraw %}\n  {%- endcase -%}`;
+  return `{%- comment -%}${MARKOR} ${VERSION} appord ${APPORD_VERSION} — genererad av worldwide/tema/patch.mjs ur tema/appord.json. Ändra där, inte här.{%- endcomment -%}
+{%- comment -%}Ultimate Trust Badges ritar "Betala säkert med våra samarbetspartners." + Klarna- och Swish-logor
+under köpknappen, bara på svenska (worldwide-granskningen 2026-10-01, samma som Matstrumpor 2026-09-30).
+I världsläget döljs raden.{%- endcomment -%}
+<style>#ultimateTrustBadgeswidgetDiv{display:none!important}.shopify-section:has(.grid-product .placeholder-svg){display:none!important}</style>
+{%- comment -%}Andra regeln: korgsidans "Popular picks" har ingen kollektion vald och visade fyra "Example product
+$29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i världsläget.{%- endcomment -%}
 <script>
 (function () {
-  var L = {{ request.locale.iso_code | json }};
-  var O = ${data};
-  function tr(v) { return v && (v[L] || v[L.split('-')[0]] || v.en); }
-  var M = O.monster.map(function (m) { return { re: new RegExp(m.sv), m: m }; });
+  var O;
+  ${data}
+  function tr(v) { return v || null; }
+  // ⚠️ window.jdgmSettings skrivs INTE om. Prövat 2026-10-01: Judge.me:s nya widget (jm-*) blandade då
+  // ihop språken ("Write a recension", "Reviews på andra språk", recensionsrubriken "Great skydd!").
+  // Texterna byts i stället i sidan, som hela meningar, och aldrig inne i kundernas egna recensioner.
+  var M = O.monster.map(function (m) { return { re: new RegExp(m.sv), m: m.t }; });
   var SEL = 'kaching-bundle, kaching-bundles-block, [class*="jdgm"]';
-  function byt(n) {
+  // Varukorgen (lådan och korgsidan) bär Kachings rabattnamn per rad: "2x Skyddshölje (-€6,10)".
+  // Där byts BARA sådana rader — namnet före parentesen måste stå i appord.json.
+  // Kundernas egna ord (rubrik, text, namn, butikens svar) byts aldrig: "Bra" i en recensionsrubrik är kundens.
+  var EGNA = '.jm-review-content, [class*="review-content"], .jm-review-author, [class*="reviewer-name"], .jdgm-rev__title, .jdgm-rev__body, .jdgm-rev__author, .jdgm-rev__reply, .jdgm-rev__content, .jdgm-carousel-item__review, .jdgm-carousel-item__reviewer-name';
+  var KORG = '#CartDrawer, .drawer, [data-section-type="cart"], .cart__page, form[action*="/cart"]';
+  function byt(n, baraRabatt) {
     var t = n.nodeValue; if (!t || !t.trim()) return;
     var k = t.trim(), ny = null;
-    if (O.exakt[k]) ny = tr(O.exakt[k]);
+    var par = /^(.+?)( \\(.+\\))$/.exec(k);
+    if (par && O.exakt[par[1]]) ny = tr(O.exakt[par[1]]) + par[2];
+    else if (baraRabatt) ny = O.exakt[k] && /^\\d+x |^\\d+ ?-? ?Par$/.test(k) ? tr(O.exakt[k]) : null;
+    else if (O.exakt[k]) ny = tr(O.exakt[k]);
     else for (var i = 0; i < M.length; i++) { var r = M[i].re.exec(k); if (r) { var x = tr(M[i].m); if (x) ny = x.replace('[[n]]', r[1] || ''); break; } }
     if (ny && ny !== k) n.nodeValue = t.replace(k, ny);
   }
   function gå(rot) {
     var w = document.createTreeWalker(rot, NodeFilter.SHOW_TEXT, null), n;
-    while ((n = w.nextNode())) { var p = n.parentElement; if (p && p.closest && p.closest(SEL)) byt(n); }
+    while ((n = w.nextNode())) { var p = n.parentElement; if (!p || !p.closest || p.closest(EGNA)) continue; if (p.closest(SEL)) byt(n, false); else if (p.closest(KORG)) byt(n, true); }
     if (rot.querySelectorAll) rot.querySelectorAll('[placeholder]').forEach(function (e) { if (e.closest(SEL) && O.exakt[e.placeholder]) e.placeholder = tr(O.exakt[e.placeholder]); });
+    // Skärmläsarens texter (aria-label="Se alla recensioner" på stjärnorna) byts också.
+    if (rot.querySelectorAll) rot.querySelectorAll('[aria-label]').forEach(function (e) { var a = e.getAttribute('aria-label'); if (a && e.closest(SEL) && O.exakt[a.trim()]) e.setAttribute('aria-label', tr(O.exakt[a.trim()])); });
   }
   var väntar = false;
   function kör() { väntar = false; gå(document.body); }

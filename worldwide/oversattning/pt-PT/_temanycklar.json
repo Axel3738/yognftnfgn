@@ -1,0 +1,4 @@
+{
+ "products.product.stock_label.one": "Stock reduzido: resta {{ count }} unidade",
+ "products.product.stock_label.other": "Stock reduzido: restam {{ count }} unidades"
+}
