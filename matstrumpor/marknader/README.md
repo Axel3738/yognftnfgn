@@ -850,6 +850,12 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
 
 - **Med:** NO + NOB (500 + 500), DK, FI, US, WW (GB, CA, NZ), DE, FR, NL, ES, IT, PL, PT och JP, 1 000
   kr/dag var — 13 000 kr/dag, ≈ 91 000 kr/vecka.
+- **De 16 Europaländerna utan eget språk** (Irland, Malta, Tjeckien, Ungern, Rumänien, Bulgarien,
+  Kroatien, Slovakien, Slovenien, Litauen, Lettland, Estland, Grekland, Cypern, Island, Liechtenstein):
+  ingen kampanj. Axel valde 2026-10-01 C, att vänta en vecka med de 14 ("Vi kan säkert lägga till fler
+  sen"), före A, en egen engelsk kampanj för tolv av dem, och B, Irland + Malta i WW. Sajten visar dem
+  engelska och landets valuta (mätt: HUF, RON). Grekland, Cypern och Island har dyrare frakt enligt
+  leverantören.
 - **Står kvar avstängt:** Norges annons 007 i A och B (`hall_av`: avslöjandet hörs "sukker", se
   `egna/README.md` → Granskningen 2026-09-30) — de andra sju går; Australien (se nedan, ⚠️ Australien);
   hela Taiwan (`lansering_stopp`, se "Taiwans tull-ID").
