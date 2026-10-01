@@ -26,12 +26,12 @@ Upload with `--kreator <namn>` so the archive counts profit per creator. Raw fil
 
 ---
 
-# UGC script pack: Sofie and Katarina, three videos each
+# The script pack: four briefs
 
-**For:** the UGC coordinator (Lovely) and the two creators. **Parent ad:** `09-17 Nathalie captions musik`, our best ad by far: in its first week it brought in two out of every three sales the whole campaign made.
-**Recipe (Evolve):** each creator films three videos from the winner's components. **A** = copy, **B** = iteration, **C** = imitation.
-**Deliverable per creator:** A (one full take) · B (three separate 3-second hook takes + one body take) · C (one video in ONE chosen format; the two creators must not pick the same format).
-**Film:** vertical 9:16, phone, natural light, her own home, no filters. She says every line out loud, on camera. Editors burn the same words in as captions (max 2 lines, middle of the frame) and add the music. The store's name is deliberately not written anywhere in this pack.
+**For:** the UGC coordinator (Lovely) and the creators. **Parent ad:** `09-17 Nathalie captions musik`, our best ad by far: in its first week it brought in two out of every three sales the whole campaign made.
+**Recipe (Evolve):** each creator films three videos from the winner's components: the copy (brief 1), an iteration (brief 2), and one more (brief 3 for men, brief 4 for everyone else; a man with a fika table to film at may pick brief 4).
+**Deliverable per creator:** brief 1 (one full take) · brief 2 (three separate 3-second hook takes + one body take) · brief 3 or 4 (three hook takes + one body take).
+**Film:** vertical 9:16, phone, natural light, the creator's own home (brief 4: a real fika or dinner table), no filters. The creator says every line out loud, on camera. Editors burn the same words in as captions (max 2 lines, middle of the frame) and add the music. The store's name is deliberately not written anywhere in this pack.
 
 **Our hypothesis (not proven):** the winner works because of three things at once: a real person in her own home, a real recipient who opens it, and one concrete scarcity fact. Every video below keeps those three.
 
@@ -112,7 +112,87 @@ The other objection in the comments is about delivery time and "cheap goods". It
 
 ---
 
-<!--BRIEF34-->
+## Brief 3, THE MAN: he gives it to her, the camera stays on her face
+
+Avatar test: the male gift buyer (all our UGC so far is women). One body, three hook takes filmed separately; editors cut H1 + body, H2 + body, H3 + body. About 30 s. Keeps the winner's three ingredients: a real person, a real recipient who does not know what is in the box, the November line. Script lines by the sonnet subagent 2026-10-01 (`docs/copy-regler.md`); the only ❌ is the instruction line B2.
+
+### Hooks (filmed separately, 3 s each)
+
+| # | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
+|---|---|---|---|---|
+| H1 (huvudhook) | Sushi till henne. Fast strumpor. | Sushi for her. Except it is socks. | His kitchen, handheld. 1 s: the closed box in both hands, held toward the lens. 2 s: lid off, the tray seen from above, ten pieces, wooden chopsticks across. 3 s: one piece lifted out and let fall open into a sock. | ✅ ✅ ✅ seen, true, only ours |
+| H2 | Hennes favoriträtt. På fötterna. | Her favourite dish. On her feet. | Close-up, his kitchen behind him. 1 s: one salmon maki sock pinched between two fingers, held to the lens. 2 to 3 s: his other hand unrolls it halfway in front of his face. | ✅ ✅ ✅ sock seen, true, ours |
+| H3 | Hon anar ingenting. | She suspects nothing. | Wide. She sits in the background with her phone or a book, not looking his way. In front he holds the closed box toward the lens, one finger over his lips. Nothing else happens. | ✅ ✅ ✅ seen, true, our box |
+
+### Body (shared by all three hooks)
+
+| # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
+|---|---|---|---|---|---|
+| B1 | 0:03-0:06 | Dom sålde slut i november. | They sold out in November. | Medium shot, his kitchen behind him. He holds one unrolled salmon maki sock up by the cuff. | ✅ ✅ ✅ seen, true, only ours |
+| B2 | 0:06-0:09 | Ge bort dom till nån som älskar sushi. | Give them to someone who loves sushi. | He holds the closed box out toward the lens, as if handing it to the viewer. | ✅ ❌ ✅ seen, instruction, only ours |
+| B3 | 0:09-0:12 | Tio sushibitar med ätpinnar i trä. | Ten sushi pieces with wooden chopsticks. | Top-down close-up of the open tray: ten pieces, the wooden chopsticks laid across. His finger points at the chopsticks. | ✅ ✅ ✅ countable, true, only ours |
+| B4 | 0:12-0:15 | Pizza, burgare och donut i egna lådor. | Pizza, burger and donut in their own boxes. | The pizza, burger and donut boxes lined up on the counter, his hand sweeping along them. | ✅ ✅ ✅ countable, true, only ours |
+| B5 | 0:15-0:17 | *(tyst, inga ord)* | (silent, no words) | He walks over and hands her the closed box, the phone still in his hand and aimed at her. She has not looked inside. | ✅ ✅ ✅ no line, picture only |
+| B6 | 0:17-0:24 | *(tyst, hennes egna ord)* | (silent from him, her own words) | The camera stays on her face the whole time. She lifts the lid, looks at the tray and does whatever she does. Nobody tells her what to do. Her words and sounds are her own, never scripted. | ✅ ✅ ✅ no line, real reaction |
+| B7 | 0:24-0:30 | Sushin är hennes. Pizzan är min. | The sushi is hers. The pizza is mine. | Wide, on the sofa: her feet in the salmon socks. He sits next to her and holds up the closed pizza box. He asks her to put the socks on after the reaction is filmed; this shot is not the reaction. | ✅ ✅ ✅ seen, true, only ours |
+
+**Must be on camera:**
+- The creator, a man, face visible, in his own kitchen or living room, speaking to the camera in his own words and rhythm. Vertical 9:16, phone, natural light, no filters.
+- One unrolled salmon maki sock held up by the cuff within the first 6 seconds, so the socks read as socks.
+- The open tray from above: ten pieces, wooden chopsticks laid across.
+- All four boxes side by side: sushi, pizza, burger, donut. If one is missing, tell the coordinator before filming.
+- The recipient's face the whole time she opens it: the lid coming off, the first piece lifted out, her reaction, whatever it is.
+- Her feet in the salmon socks at the end, and him holding the closed pizza box.
+- The three hook takes, each filmed on its own.
+
+**Rules for this video:**
+- The recipient must know nothing about what is in the box and must really love sushi. H2 says it is her favourite dish, so use H2 only if that is true. If she guesses before she opens it, change the person or the day, never the line.
+- Never fake, coach or re-stage the reaction. Film it once and use whatever happens. If it is flat, say so and do not ask for a second go.
+- Consent: before filming, tell her only that you are filming a short video. Right after the reaction, ask if the clip may be used. No yes, no use.
+- Film H1 and H2 on their own at any time. Film H3 before the hand-over, with her busy with something else; in that shot she is not reacting to anything. If the recipient is a man, change only these words in the captions: hon to han, henne to honom, hennes to hans.
+- Never say, write or show the store's name or web address (check the box, labels and phone screens before filming). No prices, offers, delivery times, guarantees or returns, and nothing about what the socks are made of, how they feel, or how they wash or last. Say only the lines in the Swedish column.
+
+---
+
+## Brief 4, THE PRANK (new angle): the box to fika, a colleague tries to eat it
+
+Angle test: the prank (skämtaren), unaware entry; `053` is the recut version of the same idea, this is the first filmed one. One body, three hook takes; editors cut H1 + body, H2 + body, H3 + body. About 25 s. "Jag tog med sushi." is the only line that is false on purpose: it is the joke, said to the colleague in the scene, never to the camera, and the hooks tell the viewer the truth in the first 3 seconds. The only ❌ is the instruction line B5.
+
+### Hooks (filmed separately, 3 s each)
+
+| # | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
+|---|---|---|---|---|
+| H1 (huvudhook) | Jag lurade en kollega. | I fooled a colleague. | At the fika table, coffee cups in frame, handheld. 1 s: he looks into the lens, the open tray in front of him. 2 to 3 s: wooden chopsticks lift one piece, the other hand lets it fall open into a sock. Filmed after the prank has worked. | ✅ ✅ ✅ sock seen, true, ours |
+| H2 | Fika. Sushi. Strumpor. | Coffee break. Sushi. Socks. | Three shots of one second each, same table: (1) a coffee cup, (2) the open tray from above, ten pieces, wooden chopsticks across, (3) one piece unrolled into a sock in his hand. | ✅ ✅ ✅ three objects, true, ours |
+| H3 | Det här är inte sushi. | This is not sushi. | Close-up, handheld. 1 s: wooden chopsticks hold one piece up to the lens. 2 to 3 s: his other hand unrolls it into a sock, his face behind it. | ✅ ✅ ✅ seen, true, only ours |
+
+### Body (shared by all three hooks)
+
+| # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
+|---|---|---|---|---|---|
+| B1 | 0:03-0:05 | Jag tog med sushi. | I brought sushi. | The fika table, coffee cups. He sets the closed box in the middle and says the line to the colleague. The phone is propped so both faces are in frame. The colleague has not looked inside. | ✅ ✅ ✅ seen, deliberately false, ours |
+| B2 | 0:05-0:14 | *(tyst, kollegans egna ord)* | (silent from him, the colleague's own words) | The camera stays on the colleague's face. They lift the lid, look at the tray and do whatever they do. Whatever follows is the video. Their words and sounds are theirs, never scripted. | ✅ ✅ ✅ no line, real reaction |
+| B3 | 0:14-0:17 | Dom sålde slut i november. | They sold out in November. | He picks up the phone (selfie) and holds one unrolled sock up by the cuff. The colleague is still in frame behind him. | ✅ ✅ ✅ seen, true, only ours |
+| B4 | 0:17-0:20 | Pizza, burgare och donut i egna lådor. | Pizza, burger and donut in their own boxes. | The pizza, burger and donut boxes lined up on the fika table beside the coffee cups, his hand sweeping along them. | ✅ ✅ ✅ countable, true, only ours |
+| B5 | 0:20-0:24 | Ge bort dom. Eller ta med till fikat. | Give them away. Or bring them to the coffee break. | He holds the closed box out toward the lens, as if handing it to the viewer. | ✅ ❌ ✅ seen, instruction, only ours |
+
+**Must be on camera:**
+- The creator and the colleague at a real fika table (coffee cups, break room) or a real dinner table at home, faces visible. Vertical 9:16, phone propped so both faces are in frame, natural light, no filters.
+- The closed box going onto the table, the lid coming off, the open tray from above: ten pieces, wooden chopsticks laid across.
+- The colleague taking a piece with the chopsticks, looking at it, the double take and the laugh, face in frame the whole time.
+- One unrolled sock held up by the cuff, in the hook and again at 0:14.
+- The pizza, burger and donut boxes lined up on the table. If a box is missing, tell the coordinator before filming.
+- The creator holding the closed box out toward the lens at the end.
+- The three hook takes, each filmed on its own.
+
+**Rules for this video:**
+- The colleague must not know what is in the box. Do not tell, hint or rehearse. If they guess before they pick up a piece, do not use the take. Never fake, coach or re-stage the reaction: one take, use whatever happens, their words and sounds are never scripted.
+- Consent: before filming, tell the colleague only that you are filming a short video. Right after the take, ask if the clip may be used. No yes, no use. Nobody else in frame, no other brands, no readable screens or papers.
+- "Jag tog med sushi." is the only line that is false on purpose: it is the joke, said to the colleague in the scene, never to the camera. The hooks tell the viewer the truth in the first 3 seconds, and a sock must be on screen within 10 seconds. The editors trim waiting time, never the reaction.
+- Film H2 and H3 any time, alone. Film H1 only after the prank has worked, because the line has to be true. At a dinner instead of fika, change these words only: kollega to vän (H1), Fika to Middag (H2), fikat to middagen (B5).
+- Never say, write or show the store's name or web address (check the box, labels and phone screens before filming). No prices, offers, delivery times, guarantees or returns, and nothing about what the socks are made of, how they feel, or how they wash or last. Say only the lines in the Swedish column. Giving them away is the only thing the ending points to; no line tells anyone to buy.
+
+---
 
 ## Notes for the coordinator (judgment calls)
 
@@ -127,14 +207,14 @@ The other objection in the comments is about delivery time and "cheap goods". It
 
 ## Must be on camera
 
-- A real creator in her own home, face visible, speaking to the camera in her own rhythm.
+- A real creator in their own home, face visible, speaking to the camera in their own rhythm.
 - One salmon maki sock unrolled by hand, close-up.
 - The tray opened and filmed from above: ten pieces, wooden chopsticks visible.
 - The pizza, burger and donut boxes on the table.
 - A real recipient opening it without knowing what is inside, face in frame the whole time.
-- The creator's feet in the socks at the end (A and B: on the sofa).
-- B only: the candle, soap and plain grey socks; the drawer; the stretch close-up; the three hook takes filmed separately.
-- C only: whatever the chosen framework lists under "Must be visible".
+- Someone's feet in the socks at the end (brief 1 and 2: the creator's, on the sofa; brief 3: the recipient's).
+- Brief 2 only: the candle, soap and plain grey socks; the drawer; the stretch close-up; the three hook takes filmed separately.
+- Brief 3 and 4: the "Must be on camera" list inside each brief.
 
 ## Never
 
