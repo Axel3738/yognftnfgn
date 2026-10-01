@@ -15,7 +15,9 @@ Kortet och rutan säger *värdecheck* om vännens 50 kr och *tillgodo* om kunden
 100 kr, på alla 14 språk (`sprak.json`: en voucher, de Gutschein, nb verdikupong
 …, översatta av Sonnet 2026-10-01). Under huven är vännens värdecheck fortfarande
 en rabattkod, så kassan visar raden "Orderrabatt VAN-BPKS6U"; den raden är
-Shopifys och går inte att döpa om.
+Shopifys och går inte att döpa om. Koden heter `VAN-` med flit: Axels beslut B
+2026-10-01, efter att han sett kassan i skärmdump, var att behålla den (A hade
+varit `VARDECHECK-`). Döp inte om koderna utan att fråga honom.
 
 ## Varför inte Redeemly
 
