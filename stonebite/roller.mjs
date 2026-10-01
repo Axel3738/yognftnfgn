@@ -33,6 +33,7 @@ export const SIDOR = Object.freeze([
   { nyckel: 'recensioner', titel: 'Recensioner', url: '/app/recensioner', beskrivning: 'Vad kunderna skriver — och vem de tackar' },
   { nyckel: 'leverans', titel: 'Leverans', url: '/app/leverans', beskrivning: 'Paket på väg till kund' },
   { nyckel: 'bonus', titel: 'Bonus', url: '/app/bonus', beskrivning: 'Vad alla tjänar utöver lönen' },
+  { nyckel: 'fakturor', titel: 'Fakturor', url: '/app/fakturor', beskrivning: 'De anställdas fakturor, per person — hämtas härifrån till bokföringen' },
   { nyckel: 'system', titel: 'System', url: '/app/system', beskrivning: 'Allt som är byggt och vad det gör' },
   // Laget efter arbetssidorna: startsidan är rollens FÖRSTA sida, och VA:n ska
   // landa i Kundtjänst, redigeraren på topplistan.
@@ -53,8 +54,8 @@ export const ROLLER = Object.freeze({
   agare: {
     namn: 'Ägare',
     beskrivning: 'Allt. Pengar, annonser, folk, bonus och konton.',
-    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
-    ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'fakturor', 'system', 'mig', 'konton'],
+    ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken', 'fakturor-alla'],
   },
   // ⚠️ Namnen är medvetet övertydliga sedan 2026-09-23: Mechiles konto stod som
   // "Chef" (rollen låg direkt under Ägare i listan och heter nästan som hennes
@@ -62,8 +63,8 @@ export const ROLLER = Object.freeze({
   chef: {
     namn: 'Chef — ser ALL ekonomi',
     beskrivning: 'Allt utom vem som får logga in. Ser omsättning, spend och ROAS för alla butiker.',
-    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
-    ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'fakturor', 'system', 'mig'],
+    ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken', 'fakturor-alla'],
   },
   // Alla roller har en egen kalender — bara sina egna rader. Varumärkenas
   // kalendrar (med tvister, rutiner och spend-nära saker) ser bara ägare/chef.
