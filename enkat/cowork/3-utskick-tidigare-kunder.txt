@@ -10,8 +10,8 @@ STEG
    a) e-postsamtycke = prenumererar (subscribed)
    b) antal ordrar (total orders) är minst 1
    c) land är Sverige ELLER land saknas (samma som segmentet SEG_samtycke_sv; öppna det och kopiera villkoren om du är osäker)
-   d) e-post är INTE någon av de 41 adresserna ovan
-   Går villkor d inte att uttrycka (ingen "är inte någon av"/"not in"): STANNA, spara inget, och skriv i rapporten exakt vilka val som finns för e-post.
+   d) e-post är INTE någon av de 41 adresserna ovan. Spoks saknar "not in" för e-post (mätt av Cowork 2026-10-01: bara eq, ne, like, nlike, slike, elike, is, nis). Bygg därför d som 41 separata villkor "e-post är inte lika med" (ne), ett per adress, i "alla måste gälla"-grupper. Det betyder samma sak som "not in".
+   Innan du sparar: förhandsvisa segmentet UTAN villkor d och skriv ner antalet. Med villkor d får antalet bli högst 41 lägre.
 2. Spara segmentet. Skriv ner antalet kontakter. Kontrollera undantaget: sök på tre av de 41 adresserna i segmentets förhandsvisning (eller i kontaktlistan med segmentet som filter). Ingen av dem får synas. Syns en: STANNA.
 3. Kampanjer → ny e-postkampanj. Titel: "Enkät tidigare kunder · fre 2/10 18:00". Publik: bara segmentet från steg 1.
 4. Ämnesrad: Tre snabba frågor från oss
@@ -32,7 +32,7 @@ Tänk tillbaka på när du köpte och svara med egna ord, så kort eller långt 
 7. Schemalägg kampanjen till fredag 2 oktober 2026 kl 18:00 (svensk tid). Skicka INTE direkt.
 
 RAPPORT (kort, på svenska)
-- Segmentet: sparat ja/nej, antal kontakter, de tre provade undantagsadresserna syntes inte ja/nej.
+- Segmentet: sparat ja/nej, antal utan undantaget och med undantaget, de tre provade undantagsadresserna syntes inte ja/nej.
 - Kampanjen: publik = bara det nya segmentet ja/nej, ämnesrad och text rätt ja/nej.
 - Testmejlet: knappen öppnade enkäten ja/nej.
 - Schemalagd fre 2/10 18:00 ja/nej.
