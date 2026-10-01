@@ -1,8 +1,8 @@
 {
-  "rubrik": "Schenk einem Freund {van} Rabatt",
-  "text": "Schick deinen Link an einen Freund. Dein Freund bekommt {van} Rabatt auf seinen ersten Einkauf. Sobald sein Paket versendet wurde, bekommst du {kredit} Guthaben zum Einkaufen bei uns.",
+  "rubrik": "Schenk einem Freund einen Gutschein über {van}",
+  "text": "Schick deinen Link an einen Freund. Dein Freund bekommt einen Gutschein über {van} für seinen ersten Einkauf. Sobald sein Paket versendet wurde, bekommst du {kredit} Guthaben zum Einkaufen bei uns.",
   "lank": "Dein Link",
   "kopiera": "Link kopieren",
   "kopierad": "Link kopiert",
-  "villkor": "Der Rabatt gilt für den ersten Einkauf deines Freundes. Du bekommst eine E-Mail, sobald dein Guthaben von {kredit} bereitsteht. Es wird an der Kasse abgezogen, wenn du dich mit derselben E-Mail-Adresse anmeldest."
+  "villkor": "Der Gutschein gilt für den ersten Einkauf deines Freundes. Du bekommst eine E-Mail, sobald dein Guthaben von {kredit} bereitsteht. Es wird an der Kasse abgezogen, wenn du dich mit derselben E-Mail-Adresse anmeldest."
 }

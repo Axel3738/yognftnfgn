@@ -1,8 +1,8 @@
 {
-  "rubrik": "Give a friend {van} off",
-  "text": "Send your link to a friend. Your friend gets {van} off their first purchase. Once your friend's package has shipped, you get {kredit} in store credit to spend with us.",
+  "rubrik": "Give a friend a voucher worth {van}",
+  "text": "Send your link to a friend. Your friend gets a voucher worth {van} for their first purchase. Once your friend's package has shipped, you get {kredit} in store credit to spend with us.",
   "lank": "Your link",
   "kopiera": "Copy link",
   "kopierad": "Link copied",
-  "villkor": "The discount applies to your friend's first purchase. We'll email you when your {kredit} store credit is available, and it's applied at checkout when you log in with the same email address."
+  "villkor": "The voucher applies to your friend's first purchase. We'll email you when your {kredit} store credit is available, and it's applied at checkout when you log in with the same email address."
 }

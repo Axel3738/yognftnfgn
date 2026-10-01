@@ -9,7 +9,7 @@ name = "Värva en vän"
 handle = "varva-kort"
 uid = "6cb40c06-42c9-06ba-dbf9-1e405bed0731a4a6dc28"
 type = "ui_extension"
-description = "Kundens egen länk: vännen får rabatt på sitt första köp, kunden får butikskredit när vännens paket har skickats."
+description = "Kundens egen länk: vännen får en värdecheck till sitt första köp, kunden får pengar tillgodo när vännens paket har skickats."
 
 [[extensions.targeting]]
 target = "purchase.thank-you.block.render"
