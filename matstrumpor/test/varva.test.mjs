@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import {
   dom, lasMinne, refUr, normAdress, kundnyckel, oppenOrderrabatt, planKod, avvikelserVan,
-  visningsbelopp, kreditbelopp, byggData, kortdataJs, temaskript, laggInILayout, rapportRader,
+  visningsbelopp, kreditbelopp, byggData, kortdataJs, korttexterJs, KORTTEXTER, temaskript, laggInILayout, rapportRader,
   lasKonfig, KONFIGFIL, KORTDATA, SPRAKFIL, TEMASKRIPT_KALLA, LAYOUT_MARKOR,
 } from '../varva.mjs';
 
@@ -187,6 +187,11 @@ test('sprak.json: alla språk i länkarna har alla nycklar, belopp bara som plat
 test('kortets data.js är byggd ur den nuvarande konfigen', () => {
   if (!existsSync(KORTDATA)) return;
   assert.equal(readFileSync(KORTDATA, 'utf8'), kortdataJs(byggData(lasKonfig(KONFIGFIL))));
+});
+
+test('kortets texter.js är byggd ur den nuvarande sprak.json', () => {
+  if (!existsSync(KORTTEXTER)) return;
+  assert.equal(readFileSync(KORTTEXTER, 'utf8'), korttexterJs(JSON.parse(readFileSync(SPRAKFIL, 'utf8'))));
 });
 
 test('temaskriptet: datan och texterna bakas in, inga platshållare kvar', () => {

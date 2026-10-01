@@ -1,9 +1,12 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9a9640762e045a66040a793bb6be6483"
+name = "Matstrumpor Tacksida"
 application_url = "https://matstrumpor.se"
 embedded = true
-name = "Matstrumpor Tacksida"
+
+[webhooks]
+api_version = "2026-07"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
@@ -13,6 +16,3 @@ use_legacy_install_flow = false
 
 [auth]
 redirect_urls = [ ]
-
-[webhooks]
-api_version = "2026-07"

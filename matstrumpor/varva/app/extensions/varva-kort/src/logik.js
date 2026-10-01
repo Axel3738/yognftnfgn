@@ -41,6 +41,31 @@ export function basFor(lankar, sprak) {
   return null;
 }
 
+/** Kortets texter för ett språk ur texter.js, samma språkmatchning som länken. */
+export function texterFor(texter, sprak) {
+  const s = String(sprak ?? '');
+  if (!s || !texter) return null;
+  const nyckel = Object.keys(texter).find((k) => k.toLowerCase() === s.toLowerCase())
+    ?? Object.keys(texter).find((k) => k.toLowerCase() === s.split('-')[0].toLowerCase())
+    ?? (s.split('-')[0].toLowerCase() === 'no' && texter.nb ? 'nb' : null);
+  return nyckel ? texter[nyckel] : null;
+}
+
+/** Varför inget kort ritades, som en rad. BARA på orderstatussidan och bara för
+ *  en order utan bekräftelsenummer (förhandsvisningen; riktiga ordrar har alltid
+ *  ett). Annars null: en kund ser aldrig raden. */
+export function orsakUtanKort({ plats, order, nummer, sprak, valuta, kort, rubrik, data }) {
+  if (plats !== 'orderstatus' || order?.confirmationNumber) return null;
+  const delar = [
+    `order ${order ? (order.name ?? 'utan namn') : 'saknas'}`,
+    `nummer ${nummer ?? 'saknas'}`,
+    `språk ${sprak ?? 'saknas'}${sprak && !basFor(data.lankar, sprak) ? ' (ingen länk)' : ''}`,
+    `valuta ${valuta ?? 'saknas'}${valuta && !data.valutor[String(valuta).toUpperCase()] ? ' (inget belopp)' : ''}`,
+  ];
+  if (kort && !rubrik) delar.push('text saknas');
+  return `Värva en vän (förhandsvisning): ${delar.join(', ')}`;
+}
+
 /** Länken vännen får. Bara bekräftelsenumret, aldrig koden. */
 export const lankFor = (bas, ref) => `${String(bas).replace(/\/+$/, '')}/?van=${encodeURIComponent(ref)}`;
 

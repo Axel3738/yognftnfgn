@@ -67,3 +67,19 @@ test('nummerFor: riktigt nummer först, exempel i redigeraren och för orderstat
   assert.equal(nummerFor({ plats: 'orderstatus', order: undefined, exempel: ex }), null);
   assert.equal(nummerFor({ plats: 'tack', bekraftelse: {}, exempel: ex }), null);
 });
+
+test('texterFor + orsakUtanKort: reservtexterna matchar språket, felraden bara i förhandsvisningen', async () => {
+  const { texterFor, orsakUtanKort } = await import('../varva/app/extensions/varva-kort/src/logik.js');
+  const tx = { sv: { rubrik: 'S' }, nb: { rubrik: 'N' }, 'pt-PT': { rubrik: 'P' } };
+  assert.equal(texterFor(tx, 'sv-SE').rubrik, 'S');
+  assert.equal(texterFor(tx, 'no').rubrik, 'N');
+  assert.equal(texterFor(tx, 'PT-pt').rubrik, 'P');
+  assert.equal(texterFor(tx, 'ko'), null);
+  const d = { lankar: data.lankar, valutor: data.valutor };
+  // En riktig order har ett bekräftelsenummer: aldrig en felrad, inte ens när kortet saknas.
+  assert.equal(orsakUtanKort({ plats: 'orderstatus', order: { name: '#5226', confirmationNumber: 'JRTI6ZICI' }, data: d }), null);
+  assert.equal(orsakUtanKort({ plats: 'tack', order: null, data: d }), null);
+  const rad = orsakUtanKort({ plats: 'orderstatus', order: undefined, nummer: null, sprak: 'sv', valuta: 'BRL', data: d });
+  assert.match(rad, /order saknas/);
+  assert.match(rad, /BRL \(inget belopp\)/);
+});
