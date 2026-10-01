@@ -434,6 +434,15 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
       fråga igen.
     - Chadbot ger inspiration och metod, aldrig våra siffror. Regel 3 gäller
       fortfarande: data kommer ur Meta, Shopify, Notion och products.json.
+    - ✅ **Kursen går att läsa härifrån sedan 2026-10-01** (`tools/skool/`,
+      inloggning med `SKOOL_EMAIL`/`SKOOL_PASSWORD` i miljön, gruppen
+      `evolve-8484`): kursträdet med alla lektions-id:n i
+      `docs/os/evolve/KURSTRAD.md`, iterationsmodulen i
+      `docs/os/evolve/ITERATIONS-PLAYBOOK.md`, Evolves egen Claude-skill i
+      `docs/os/evolve/ad-iteration-skill/`, och gapet mot våra rutiner i
+      `docs/os/evolve/EVOLVE-GAP-ANALYS.md`. Läs dem innan Chadbot frågas om
+      iterationer, vinnardefinitioner, namnregler eller 3:2:2 — svaret står
+      redan i kursen. Lektionernas videor hämtas inte, bara texten.
 
 ---
 
@@ -1863,6 +1872,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| **Evolves iterationsplaybook + kursträdet + gapet mot våra rutiner** (läst ur Skool 2026-10-01 med `tools/skool/`) | **`docs/os/evolve/ITERATIONS-PLAYBOOK.md`**, `KURSTRAD.md`, `EVOLVE-GAP-ANALYS.md` |
 | **Regi rad för rad i varje videobrief + spärren före Notion** (Axels beslut 2026-09-21: `node tools/briefgranskning.mjs --rad <brief.md>` / `--manifest <manifest.json>`, exit 1 = ingen Notion-rad) | **`docs/os/BRIEF-REGI.md`** |
 | **Definition av klart för creative strategy — Axels 19 punkter** (2026-09-21): lärdomen per etiketterad annons, briefer som pekar på en lärdom, mixen ur etiketterna, brieftaket, vidarebyggen, taggarna, rapporten, kommentarerna, taket. Avstämningen efter varje bygge står längst ner i filen. Motorn: `agent/lardom.mjs` på rutinens gren | **`docs/os/CS-KLART.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |

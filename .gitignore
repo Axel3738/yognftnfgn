@@ -174,3 +174,6 @@ mejl/output/butiker/*/lankkoll/
 enkat/output/
 # Värva en vän: skärmdumpar från kundvyn (matstrumpor/varva/kundvy.mjs)
 matstrumpor/varva/output/
+
+# Skool-läsaren: inloggad session + hämtade lektioner (tools/skool/)
+tools/skool/.state/
