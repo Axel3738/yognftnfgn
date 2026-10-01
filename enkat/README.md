@@ -50,10 +50,19 @@ node --test enkat/test/*.test.mjs
 
 - 2026-10-01: sidan live och dold (`gid://shopify/Page/184085610835`, tema
   `207180890451`), kundvyn grön (formulär, markör, noreply, frågorna, GDPR-raden,
-  noindex). **Butikens hCaptcha stoppade sessionens provsvar** från Chromium i
-  containern, så notisens format med våra fält är ännu inte sett — provsvaret
-  skickas av Cowork i Axels webbläsare (`cowork/1-policy-och-prov.txt`), sedan
-  `node enkat/las.mjs` torrt.
-- Orderbekräftelsen med rutan är byggd men **inte inklistrad**. Ordningen före
-  inklistringen: policyn nämner enkäten → provsvaret läst av `las.mjs` →
-  timrutinen för `las.mjs --skarpt` byggd på `main` → klistra in.
+  noindex). Sessionens provsvar från Chromium i containern fastnade i butikens
+  hCaptcha; **Coworks provsvar i Axels webbläsare gick igenom** (ingen synlig
+  captcha). Notisen kom till kundsupport@matstrumpor.se 13.52 med fälten
+  Landskod, E-post (noreply), Enkat, Kanal, Produkt, Fraga 1–3. `las.mjs` hittade
+  det, tolkade alla fält, och `--skarpt` flyttade det till `INBOX.ENKAT`
+  (tillbakaläst där). Hela vägen fungerar.
+- **Integritetspolicyn är Shopifys automatiska** (Cowork 2026-10-01: textrutan
+  är låst så länge automatiken är på). Sessionens beslut: automatiken står kvar,
+  och informationen ges på själva enkätsidan där svaren samlas in (vem som
+  frågar, varför, hur länge, inga namn/hälsa). Sidans länk säger därför bara
+  "Våra allmänna villkor för personuppgifter står i integritetspolicyn", inte att
+  policyn nämner enkäten. Vill Axel ha stycket i policyn måste automatiken av,
+  och då uppdateras policyn inte längre av sig själv.
+- Orderbekräftelsen med rutan är byggd men **inte inklistrad**. Kvar före
+  inklistringen: timrutinen för `las.mjs --skarpt` byggd på `main`, sedan
+  Cowork-prompten som klistrar in `cowork/orderbekraftelse.liquid`.

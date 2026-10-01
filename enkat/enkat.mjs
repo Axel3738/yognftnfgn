@@ -57,7 +57,7 @@ export function byggMall(k) {
       <input type="hidden" name="contact[Enkat]" value="${esc(k.version)}">
       <input type="hidden" name="contact[Kanal]" id="EnkatKanal" value="">
       <input type="hidden" name="contact[Produkt]" id="EnkatProdukt" value="">${falt}
-      <p class="enkat__gdpr" style="font-size:0.85em;opacity:0.8">Vi frågar inte efter namn eller e-post. Skriv inga namn och inget om din hälsa. Vi sparar svaren i högst ${k.gallring_manader} månader och använder dem för att förbättra våra produkter och annonser. Avidentifierade citat utan namn kan sparas längre. Det är STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, som frågar. {% if shop.privacy_policy %}<a href="{{ shop.privacy_policy.url }}">Läs mer i vår integritetspolicy</a>.{% endif %}</p>
+      <p class="enkat__gdpr" style="font-size:0.85em;opacity:0.8">Vi frågar inte efter namn eller e-post. Skriv inga namn och inget om din hälsa. Vi sparar svaren i högst ${k.gallring_manader} månader och använder dem för att förbättra våra produkter och annonser. Avidentifierade citat utan namn kan sparas längre. Det är STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, som frågar. {% if shop.privacy_policy %}Våra allmänna villkor för personuppgifter står i <a href="{{ shop.privacy_policy.url }}">integritetspolicyn</a>.{% endif %}</p>
       <button type="submit" class="button">Skicka svaren</button>
     {%- endif -%}
   {%- endform -%}
