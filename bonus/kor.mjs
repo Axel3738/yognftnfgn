@@ -13,7 +13,7 @@
 // som folk rapporterat in ligger i bonus/insatser.jsonl och räknas först när
 // de har status "godkand".
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { raknaUt } from './motor.mjs';
@@ -218,6 +218,24 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
   logg(`  Allt ihop: ${utfall.summa} ${utfall.valuta}`);
 
   return utfall;
+}
+
+/** Månaderna som har ett sparat kvitto, nyast först. */
+export function sparadeManader(mapp = UTFALL) {
+  if (!existsSync(mapp)) return [];
+  return readdirSync(mapp)
+    .map((f) => (/^(\d{4}-\d{2})\.json$/.exec(f) ?? [])[1])
+    .filter(Boolean)
+    .sort()
+    .reverse();
+}
+
+/** Ett sparat kvitto (`bonus/utfall/<manad>.json`), eller null om månaden saknas. */
+export function lasKvitto(manad, mapp = UTFALL) {
+  if (!/^\d{4}-\d{2}$/.test(String(manad ?? ''))) return null;
+  const fil = join(mapp, `${manad}.json`);
+  if (!existsSync(fil)) return null;
+  return JSON.parse(readFileSync(fil, 'utf8'));
 }
 
 /**

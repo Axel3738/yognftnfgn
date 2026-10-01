@@ -41,7 +41,7 @@ import { kalenderSida } from './vy/kalender.mjs';
 import { lasHandelser, skrivHandelse, nyHandelse, tolkaNar, harleddaHandelser } from './kalender.mjs';
 import { lasKontakter, skrivKontakt, nyKontakt, uppdateraKontakt } from './kontakter.mjs';
 import { lasVarumarken } from './hamta.mjs';
-import { lasInsatser, skrivInsats, lasPersoner, sparaPerson, datamapp, lasRegler } from '../bonus/kor.mjs';
+import { lasInsatser, skrivInsats, lasPersoner, sparaPerson, datamapp, lasRegler, lasKvitto, sparadeManader } from '../bonus/kor.mjs';
 import { appSkal } from './vy/layout.mjs';
 import { sattSprak } from './vy/delar.mjs';
 import { sprakFor, SPRAKEN } from './sprak.mjs';
@@ -295,7 +295,13 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
     case 'leverans': return leveransSida({ snapshot: snap });
     case 'produkttest': return produkttestSida({ snapshot: snap, anvandare });
     case 'recensioner': return recensionerSida({ snapshot: snap, anvandare });
-    case 'bonus': return bonusSida({ snapshot: snap, anvandare, ...extra });
+    case 'bonus': return bonusSida({
+      snapshot: snap, anvandare, ...extra,
+      // En gången månad läses ur sitt sparade kvitto; ett trasigt eller saknat
+      // kvitto blir "inget kvitto sparat", aldrig en krasch.
+      kvitto: (() => { try { return lasKvitto(extra.manad); } catch { return null; } })(),
+      manader: (() => { try { return sparadeManader(); } catch { return []; } })(),
+    });
     case 'system': return systemSida({ snapshot: snap });
     case 'mig': return migSida({ snapshot: snap, anvandare, ...extra });
     case 'konton': return kontonSida({
