@@ -1302,6 +1302,22 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
   bara.
 - Oförklarat: appens meny säger "Kampanjer 165 kommande", men `search_campaigns` visar 37
   schemalagda kampanjer. Flödesposter räknas inte i `search_campaigns`. Inget tyder på dubbletter.
+- ⚠️ **`LARM_LEVERANS` på V01, mätt av morgonkollen tors 1/10 ~08:45 CEST:**
+  - Levererad 2 987 (6 studsade, 0,2 %).
+  - Öppnad 747 (25 %).
+  - 55 klickade enligt MCP:n.
+  - 0 köp.
+  - **36 avregistrerade = 1,21 %**, över 1 %.
+  - 0 spamklagomål.
+
+  Schemat stod kvar (`--jamfor` 37 av 37). Regeln i EPOST-STRATEGI §8 säger att nästa
+  kampanj stoppas och att utskicken går tillbaka till 30-dagarssegmentet. Nästa utskick till
+  hela listan är REA01, fre 2/10 18:00, till SEG_samtycke. Frågan till Axel:
+  - A) REA01 bara till SEG_uppvarmning_steg1 (roboten gör det)
+  - B) som planerat
+
+  K03 (1/10) går redan till 30-dagarssegmentet och rörs inte. Trenden på hela listan: K01
+  0,94 %, V01 1,21 %.
 - **Uppföljningarna går via roboten, inte Cowork** (omskrivna 30/9):
   - Morgonkollen `trig_0184cEo3qqjRg5GxemevSEYf` kör `statistik` på gårdagens mejl varje morgon.
   - Veckosiffrorna 5/10 `trig_01EH4bY8pvLc4UPkaCMn5RGt`.
