@@ -640,12 +640,24 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
    bildrutorna som ren produktvideo (0,39 % av bildytan mot 2,9–3,1 % för ett
    talande ansikte). Trösklarna och hela mätningen: `docs/video-localization.md`
    → "HeyGen eller ElevenLabs".
-   ⚠️ **Regel 6 och 7 säger olika saker om UGC, och det är inte avgjort.**
-   `/translate-no` kör ElevenLabs även på talande ansikten (Axel tyckte det lät
-   bättre); `/oversatt` skickar dem till HeyGen för läppsynkens skull. Båda är
-   Axels ord, en dag isär, och ingen har mätt hur en ElevenLabs-dubbad UGC-video
-   ser ut mot en HeyGen-dubbad. **Fråga honom innan någon förenar dem** — och
-   förena dem aldrig genom att tyst ta bort den ena.
+   ✅ **Avgjort 2026-10-01, Axels svar B på frågan om regel 6 och 7 krockade:
+   delningen gäller ÖVERALLT.** `/translate-no` kör alltså också
+   `pratar-i-bild.py` först — ElevenLabs på voiceover, HeyGen på talande
+   ansikten. Det ändrar hans 29/9-beslut bara för videor där någon pratar mot
+   kameran; allt annat är fortfarande ElevenLabs, vilket var det han tyckte lät
+   bättre (och det materialet är voiceover: 78 av 84 mätta videor).
+8. **Rösten kontrolleras per VIDEO, inte per röst** (mätt 2026-10-01).
+   `node pipeline/ordkoll.mjs <video> <srt> --sprak <kod>` läser tillbaka
+   ljudet med Scribe och jämför ORDEN mot manuset — `rostkoll.py` hör bara att
+   det låter något, inte vad. ⚠️ **Felet är slumpmässigt:** `Martin - Clear and
+   Comforting` läste "Taket" som "Pake" och "D-duk" som "Dedok" i första
+   generationen och samma text helt rätt i nästa, sex av sex. Det går alltså
+   inte att välja bort genom att testa rösten en gång eller skriva om texten.
+   Exit 1 ⇒ generera om just den cuen (radera dess mp3 i `vo/<namn>/<i>.mp3`);
+   exit 2 = kunde inte mätas och är aldrig ett godkännande. Transkriberingen kan
+   ha egna fel — lyssna innan du dömer, men leverera aldrig oläst.
+   ⚠️ Jämförelsen normaliserar bindestreck: utan det fick en perfekt uppläst
+   prisrad 12 fel av 15 ord, eftersom "åtti-ni" mot "åtti ni" förcköt hela raden.
 
 Kräver env-variablerna `HEYGEN_API_KEY` **och `ELEVENLABS_API_KEY`** i
 environmentet, samt `pip install "opencv-python-headless<5"` i körningen

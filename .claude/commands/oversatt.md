@@ -286,9 +286,19 @@ node pipeline/omdubb/elevenlabs-omdubb.mjs --kalla=<up>/<namn>.mp4 \
 # 4. Inbränd svensk text i BILDEN (HeyGen översätter ändå bara ljudet)
 python3 pipeline/no-precis.py <konfig.json>
 
-# 5. Obligatorisk, gratis, ingen video går ut utan den
-python3 pipeline/rostkoll.py <batch>/no/<målnamn>.mp4
+# 5. Obligatoriska, båda två — ingen video går ut utan dem
+python3 pipeline/rostkoll.py <batch>/no/<målnamn>.mp4          # hör ATT det låter
+node pipeline/ordkoll.mjs <batch>/no/<målnamn>.mp4 <ut>.srt --sprak no   # hör VAD
 ```
+
+⚠️ **Ordkollen är inte valfri och går inte att ersätta med en engångstest av
+rösten.** Mätt 2026-10-01: `Martin - Clear and Comforting` läste "Taket" som
+"Pake" och "D-duk" som "Dedok" i första generationen, och samma text helt rätt
+i nästa — sex av sex. Felet är slumpmässigt, så det måste fångas per video.
+Exit 1 ⇒ radera den cuens mp3 i `<utmapp>/vo/<namn>/<i>.mp3` och kör om
+`elevenlabs-omdubb`. Exit 2 = kunde inte mätas, vilket aldrig är ett
+godkännande. Transkriberingen kan ha fel — lyssna innan du dömer, men leverera
+aldrig oläst.
 
 ⚠️ **Rösten är norsk, aldrig svensk med norsk text.** `Martin - Clear and
 Comforting` är NO-rösten och står redan i `factory/opsmarknader.mjs`. Dubba
