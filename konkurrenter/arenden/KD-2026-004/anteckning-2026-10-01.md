@@ -124,3 +124,26 @@ KD-2026-004`). Kvittot skrivs med `--shopify KD-2026-004 --skickad --referens <r
   men bara GIF 2 är mätt som vår.
 - **Inget är inskickat förrän Coworks lista kommit tillbaka.** Kvittona skrivs in med
   `--anmald <id> --nr <n> --referens <r>` och `--shopify KD-2026-004 --skickad --referens <r>`.
+
+## Cowork stoppade anmälningarna (samma kväll)
+
+Axel körde prompten i Cowork och klistrade tillbaka hela chatten. Det här hände:
+
+- Cowork stannade först för att "Bypass all permissions" inte sa vad som godkändes. Axel
+  skrev då ett uttryckligt godkännande med alla nummer uppräknade.
+- **KD-2026-003 anmälan 2 (Bustatio) gick in.** Cowork fyllde i formuläret, och Axel skrev
+  koden, gjorde säkerhetskontrollen och klickade Skicka själv. Meta visade "Tack!" utan nummer.
+  Kvittot skrevs in med `--anmald KD-2026-003 --nr 2`, och alla sex Bustatio-anmälningar är nu
+  inskickade.
+- **KD-2026-004 anmälan 1–9 och Shopify-anmälan gick INTE in.** Coworks säkerhetsspärr
+  stoppade anmälan 1 och sa att spärren gäller allt som återstår. Cowork skriver heller aldrig
+  in verifieringskoden, inte ens när Axel klistrar in den i chatten.
+- **Axels fråga efteråt:** "Men den har ju väl bara rapporterat dom här MatSokker eller? Jag
+  vill ju ta ner dom." Svaret: inget av MatSokker var anmält. Det är de tio anmälningarna som
+  tar ner dem. Meta tar bort annonserna (Bustatio förlorade annons 1, 3 och 5 inom ett dygn),
+  och Shopify tar bort vår film från deras sida.
+- **Vägen nu är själv-läget i appen** (`--granska KD-2026-004 --utan-mejl --sjalv alla`,
+  publicerat som version 14). Varje kort visar stegen i Metas ordning med en
+  kopieringsknapp per fält, och Axel trycker "Jag har skickat in den" efter varje anmälan.
+  Sessionen kvitterar med `--granska-svar KD-2026-004 --beslut <fil> --kvittera`. Sessionen
+  skriver ingen ny Cowork-prompt som försöker ta sig runt spärren.

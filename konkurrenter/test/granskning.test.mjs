@@ -172,3 +172,64 @@ test('sidaHtml: titeln följer ärendet och kan inte bryta sig ur <title>', () =
   assert.match(sidaHtml(byggGranskning({ a: { id: 'KD-2026-002' }, kort: [] }), { mall }), /^<title>Anmälningar KD-2026-002<\/title>/);
   assert.match(sidaHtml(byggGranskning({ a: { id: '</title><b>' }, kort: [] }), { mall }), /^<title>Anmälningar &lt;\/title&gt;&lt;b&gt;<\/title>/);
 });
+
+// Själv-läget (2026-10-01): Cowork vägrade skicka in anmälningar mot andra bolag, Axel skickar in själv i appen.
+test('kortAnmalan.sjalv: stegen i Metas ordning, och varje kopieringstext är exakt fältets värde', async () => {
+  const { sjalvStegMeta } = await import('../granskning.mjs');
+  const k = kortAnmalan({ nr: 2 }, paket(2));
+  const varden = (f) => k.falt.find((x) => x.etikett.startsWith(f)).varde;
+  const kop = k.sjalv.filter((s) => s.kopiera).map((s) => s.kopiera);
+  assert.deepEqual(kop, [varden('Rättighetsinnehavare'), varden('Annonsen som anmäls'), varden('Exempel på vårt original'), varden('Beskrivning'), varden('Ditt namn'), varden('E-post'), varden('Elektronisk underskrift')]);
+  assert.equal(k.sjalv[0].lank, 'https://www.facebook.com/help/contact/1758255661104383');
+  assert.match(k.sjalv.map((s) => s.text).join(' '), /Välj landet Sverige\. Välj sedan "Nej, men jag är behörig att företräda rättighetsinnehavaren"/);
+  assert.match(k.sjalv.at(-2).text, /säkerhetskontroll: gör den\. Tryck Skicka/);
+  assert.equal(k.version, kortAnmalan({ nr: 2 }, paket(2)).version);
+  assert.match(sjalvStegMeta(paket(2), { land: 'Norway' }).map((s) => s.text).join(' '), /Välj landet Norge/);
+});
+
+test('kortShopify.sjalv: telefonraden bara med ett nummer, titeln bara när den finns, inga tomma kopieringsrutor', async () => {
+  const { kortShopify } = await import('../granskning.mjs');
+  const sp = (falt) => ({ formular: 'https://www.shopify.com/legal/tools/report-an-issue/dmca', falt: { foretag: 'Exempel AB', rollTillVerket: "I'm authorised", namn: 'Test Testsson', epost: 't@example.se', adress: 'Gatan 1', land: 'Sweden', butik: 'https://x.shop', sidor: ['https://x.shop/products/a', 'https://cdn.example/a.gif'], verk: 'Vår film.', original: ['https://example.se/a'], bevis: 'https://cdn.example/bevis.png', signatur: 'Test Testsson', ...falt }, forsakringar: ['I have a good faith belief …'] });
+  const utan = kortShopify({ status: 'utkast' }, sp({ telefon: null, titel: null })).sjalv;
+  assert.ok(utan.some((s) => /^Telefon: lämna tomt/.test(s.text) && !s.kopiera));
+  assert.ok(!utan.some((s) => /^Titel/.test(s.text)));
+  assert.ok(utan.every((s) => !('kopiera' in s) || s.kopiera));
+  assert.equal(utan.find((s) => /Länkarna till det du anmäler/.test(s.text)).kopiera, 'https://x.shop/products/a\nhttps://cdn.example/a.gif');
+  const med = kortShopify({ status: 'utkast' }, sp({ telefon: '+46 70 000 00 00', titel: 'CEO' })).sjalv;
+  assert.equal(med.find((s) => s.text === 'Telefon.').kopiera, '+46 70 000 00 00');
+  assert.equal(med.find((s) => /^Titel/.test(s.text)).kopiera, 'CEO');
+});
+
+test('statusFor: ärendets själv-lista blir läget sjalv, men ett kvitto vinner alltid', () => {
+  const a = { id: 'KD-TEST-001', sjalv: ['anmalan-1', 'anmalan-2', 'shopify'], anmalan: { rapporter: [{ nr: 1, status: 'inskickad', referens: '123', inskickad: '2026-10-01T18:00:00Z' }, { nr: 2, status: 'utkast' }] }, shopify: { status: 'utkast' } };
+  const s = statusFor(a, { nu: '2026-10-01T19:00:00Z' });
+  assert.equal(s.kort['anmalan-1'].lage, 'inskickad');
+  assert.equal(s.kort['anmalan-2'].lage, 'sjalv');
+  assert.equal(s.kort.shopify.lage, 'sjalv');
+  assert.equal(statusFor(a, { sjalv: [] }).kort['anmalan-2'], undefined, 'en uttrycklig tom lista stänger läget');
+});
+
+test('attGora: själv-korten skickas aldrig av sessionen, och Axels markering blir ett kvitto att skriva in', () => {
+  const g = granskningMed(3);
+  g.kort.push({ nyckel: 'shopify', typ: 'shopify', version: 's1' });
+  const svar = Object.fromEntries(g.kort.map((k) => [k.nyckel, ja(k)]));
+  const status = { kort: { 'anmalan-1': { lage: 'inskickad' }, 'anmalan-2': { lage: 'sjalv' }, 'anmalan-3': { lage: 'sjalv' }, shopify: { lage: 'sjalv' } } };
+  const skickat = { 'anmalan-1': { nar: '2026-10-01T18:00:00Z' }, 'anmalan-2': { nar: '2026-10-01T18:05:00Z', referens: '  9876  ' }, shopify: { nar: '2026-10-01T18:10:00Z', referens: '' } };
+  const r = attGora({ granskning: g, beslut: { svar, skickat }, status });
+  assert.deepEqual(r.anmalningar, []);
+  assert.equal(r.shopify, false);
+  assert.deepEqual(r.kvittera, [
+    { nyckel: 'anmalan-2', typ: 'anmalan', nr: 2, referens: '9876', nar: '2026-10-01T18:05:00Z' },
+    { nyckel: 'shopify', typ: 'shopify', nr: null, referens: null, nar: '2026-10-01T18:10:00Z' },
+  ], 'det redan inskickade kvitteras inte igen, och anmälan 3 är inte markerad');
+  const utanSjalv = attGora({ granskning: g, beslut: { svar }, status: { kort: {} } });
+  assert.deepEqual(utanSjalv.anmalningar, [1, 2, 3], 'utan själv-läget skickar sessionen som förut');
+  assert.equal(utanSjalv.shopify, true);
+});
+
+test('sidaHtml: mallen bär själv-läget (kopieringsknappen och markeringen)', () => {
+  const html = sidaHtml(byggGranskning({ a: { id: 'KD-TEST-001', deras: {} }, kort: [kortAnmalan({ nr: 1 }, paket(1))] }));
+  assert.match(html, /data-atgard="kopiera-steg"/);
+  assert.match(html, /Jag har skickat in den/);
+  assert.match(html, /data\/beslut\.json/);
+});
