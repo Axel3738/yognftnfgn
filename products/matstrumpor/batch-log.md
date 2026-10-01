@@ -423,3 +423,22 @@ A utan test (specarna `b_land: "SE"`). Mätt efteråt i publik HTML: B-blocket 1
 bara på ordrar med leveransland SE (ms-ab.js stämplar även utländska besökare).
 ⚠️ `templates/index.json` läses inte tillbaka "identiskt" av verktyget trots att innehållet är
 rätt live — skrivningen gick igenom, kontrollen är för strikt. Undersök innan nästa mallskrivning.
+
+**Avläsning 1 — 2026-10-01 ~14:00 CEST (`/abtest paket`):** fönster `#5195` 2026-09-30 12:01 UTC
+(efter Sverige-spärren) → `#5235` 2026-10-01 11:53 UTC. 41 ordrar, alla SE/SEK (kontrollerat per
+order), 0 okända, 0 tvingade, 0 annullerade, 6 ur rabattkoden (alla A, #5195–#5200 före
+efterstämpling). Sessioner per variant mäts inte.
+
+| | A | B |
+|---|---|---|
+| Ordrar | 23 | 18 |
+| Intäkt | 11 322 kr | 8 182 kr |
+| Snittorder | 492 kr | 455 kr |
+| Lådor/order | 2,22 | 1,5 |
+| 1 / 2 / 4+ lådor | 1 / 19 / 3 | 11 / 6 / 1 |
+| Koder | K1F1 19, K2F2 2, PIZZA-K1F1 1, utan 1 | utan kod 11, 2FOR499 6, 4FOR799 1 |
+
+`analys.mjs` ordagrant: lyft B mot A −21,7 %, p = 0,5322; snittorder −38 kr (p = 0,572).
+**"För få köp för att räkna på — 18 av 25 per variant. Ingen dom förrän dess."**
+Sessionens räkning (80,23 kr/låda + 32,70 kr tull, före reklam): A 6 473 kr (281 kr/order),
+B 5 427 kr (302 kr/order). 11 av 18 B-köpare tog 1 låda för 399 kr.
