@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-29",
+  "uppdaterad": "2026-10-01",
   "kampanjer": [
     {
       "campaign_id": "120252423658210233",
@@ -1556,6 +1556,46 @@
       "produkt": "Spikkesett NO",
       "lage": "test",
       "lage_motivering": "ny norsk kampanj startad 2026-09-29T22:58:53+0200, 280.54 kr (SEK) spend och 0 köp vid morgonens rond — tillagd av /rond-auto 2026-09-30. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,63). Norska kampanjer har inget kostnadsblock — sheetet bär bara svensk frakt (kartans kommentar), så kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250439658260291",
+      "produkt": "Buskjackan 2-pack",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-10-01T02:31:22+0200, 166.32 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-01. Kampanjnamnet säger BE ROAS 2.05, men kostnadsblocket ur prissheetet vinner (Axels beslut 2026-09-22). Priset i butiken 429 kr (jämförpris 559) läst ur baverbutiken.se/products.json 2026-10-01 (handle buskjackan-2-pack-120-180-cm-skarmar-av-vind-och-kyla).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 429,
+        "usd": 11.65,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-10-01, raden \"Buskjackan med dragkedja, 2-pack (09-15)\", 120x180cm 2pcs), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 2,92 + 8,73 = 11.65 USD, plus 2,9 EUR EU-avgift per order. Priset 429 kr läst ur baverbutiken.se/products.json 2026-10-01.",
+        "datum": "2026-10-01"
+      }
+    },
+    {
+      "campaign_id": "120252508835700233",
+      "produkt": "Kamadotrekk NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-10-01 04:55, 92 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-01. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,64); NO-poster bär inget kostnadsblock (samma som de sex NO-kampanjerna 2026-09-30).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252500291200233",
+      "produkt": "Tribuneponcho NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30 13:27, 1 132 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-01. Break-even står i kampanjnamnet (BE-ROAS 1,63).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252500169420233",
+      "produkt": "Dør- og Vindusalarm NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-30 13:14, 742 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-01. Break-even står i kampanjnamnet (BE-ROAS 1,63).",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
