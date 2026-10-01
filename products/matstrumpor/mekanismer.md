@@ -75,7 +75,18 @@ bort utan inslagning", recensionen "Ser helt fantastiskt ut. Ej öppnat då de
 om locket + "Köp 1 – få 1 gratis". Video: Nathalie-kroppen med ny öppning
 (0–3 s: lådan genom locket, ingen hand) i `09-17 UGC`.
 
-<!-- HOOKAR_M1 -->
+**Hookar (H = första raden i video/rubrik på bild, R = rubrik i Ads Manager; sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|---|
+| H1 ★ | Slå inte in den. Då syns ju sushin. | Don't wrap it. Then the "sushi" shows, of course. | ✅ olindad låda, klart lock | ✅ levereras utan inslagning | ✅ locket är vårt |
+| H2 | Räkna bitarna genom locket: tio. Räkna paren: 5. | Count the pieces through the lid: ten. Count the pairs: 5. | ✅ ögon som räknar bitar | ✅ tio bitar, 5 par | ✅ räkneleken kräver vår låda |
+| H3 | Takeaway-tråg på bordet. Ingen har beställt något. | Takeaway tray on the table. Nobody ordered anything. | ✅ tråg, bord, tomma händer | ✅ scen går att filma | ✅ ingen annan gömmer strumpor så |
+| H4 | Titta först genom locket. Rulla sedan upp en bit. | Look through the lid first. Then unroll one piece. | ✅ hand rullar upp strumpa | ✅ varje bit är en strumpa | ✅ upprullningen är vår |
+| R1 | Genomskinligt lock. 5 par strumpor. | Clear lid. 5 pairs of socks. | ✅ lock med strumpor under | ✅ lock och 5 par stämmer | ✅ lock plus strumpor, bara vi |
+| R2 | Strumpor i ett takeaway-tråg med lock | Socks in a takeaway tray with a lid | ✅ tråg, lock, strumpor i bild | ✅ ren produktbeskrivning | ✅ ingen annan säljer det tråget |
+
+★ Bästa: H1, kortast, och lägger locket och anti-inslagningen i en bild som går att filma på en sekund.
 
 ### M2 · Duka fram den — presenten som serveras, inte överlämnas (NM)
 
@@ -100,7 +111,18 @@ tråget, locket.
 till gift-vinkeln (julbordet, kalaset). Vänta in 053:s etikett innan en
 andra serverings-brief skrivs.
 
-<!-- HOOKAR_M2 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|---|
+| H1 | Ställ presenten på bordet. Ätpinnarna ligger redan i. | Put the gift on the table. The chopsticks are already in it. | ✅ present på bord, pinnar synliga | ✅ ätpinnar i trä ingår | ✅ present med pinnar, bara vi |
+| H2 | Räck den inte över. Duka fram den. | Don't hand it over. Set it out on the table. | ✅ bord dukas, ingen räcker över | ✅ tråg med pinnar går att duka | ✅ ingen annan dukar fram presenter |
+| H3 | Ställ presenten bredvid julskinkan. Se vem som tar en bit. | Put the gift next to the Christmas ham. Watch who takes a piece. | ✅ tråg bredvid julskinka | ✅ tio bitar finns att ta | ✅ ingen annan bjuder på bit |
+| H4 ★ | Säg ingenting tills någon rullar upp en bit. | Say nothing until someone unrolls a piece. | ✅ tystnad, hand, uppvikt bit | ✅ biten går att rulla upp | ✅ upprullning sker bara hos oss |
+| R1 | Duka fram den. Ätpinnar medföljer. | Set it out. Chopsticks included. | ✅ bord med tråg och pinnar | ✅ ätpinnar ingår | ✅ pinnar plus present, bara vi |
+| R2 | Strumpor att duka fram på julbordet | Socks to serve at the Christmas table | ✅ strumpor bland julmaten | ✅ går att ställa fram | ✅ ingen annan dukar strumpor |
+
+★ Bästa: H4, tystnaden och upprullningen ryms i en enda scen som ingen annan kan filma. H3 är julversionen till `jul_video`.
 
 ### M3 · Favoriträtten — presenten som bevisar att du lyssnat (NI + NID)
 
@@ -126,7 +148,21 @@ julklapp till sushiälskande dotter!"; Nathalies rad.
 `09-17 UGC`. Bild: fyra lådor med fyra namnlappar ("Lax-Lisa", "Pizza-Pelle")
 är en gissning som kräver riktiga foton, inte kie.
 
-<!-- HOOKAR_M3 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|---|
+| H1 | Hon beställer alltid gurkmaki. I tråget finns gurkmaki-strumpor. | She always orders cucumber maki. The tray has cucumber-maki socks. | ✅ vit rulle på tallrik | ✅ vita maki med gurka ingår | ✅ gurkmaki-strumpor bara hos oss |
+| H2 | Han tar pizza varje fredag. Det finns pizza-strumpor. | He gets pizza every Friday. Pizza socks exist. | ✅ pizzakartong en fredagskväll | ✅ pizza-strumpor finns i butiken | ✅ pizza plus strumpor är vårt |
+| H3 ★ | Pizza-pappan. Sushi-dottern. Burgar-brodern. Donut-mamman. | Pizza dad. Sushi daughter. Burger brother. Donut mom. | ✅ varje person har sin låda | ✅ alla rätter finns som låda | ✅ ingen annan har rätterna |
+| H4 | "Mycket uppskattad julklapp till sushiälskande dotter!" | "Much appreciated Christmas present for a sushi-loving daughter!" | ✅ dotter med sushiälskande blick | ✅ riktigt kundcitat, ordagrant | ✅ citatet är bara vår kunds |
+| R1 | Hennes vanliga beställning, i strumpor | Her usual order, as socks | ✅ rätten på bordet som låda | ✅ rätterna finns som strumpor | ✅ beställning som strumpor: vår |
+| R2 | Sushi, pizza, burgare, donut: strumpor | Sushi, pizza, burger, donut: socks | ✅ rad av olika lådor | ✅ alla rätter finns | ✅ meny som strumpor, bara vi |
+
+★ Bästa: H3, varje ansikte bär en låda och bär hela idén "en låda per person" utan att förklara den.
+⚠️ H2 (pizza) kräver pizzasidan som landningssida, inte sushisidan. H4 är
+Judge.me-recensionen från 2026-09-28 (verifierad köpare), ordagrant; ändras
+ett ord är den inte längre ett citat.
 
 ### M4 · Byrålådetestet — skämtet sitter i lådan, strumporna blir kvar (NI)
 
@@ -154,7 +190,18 @@ skämt på."
 i laxstrumporna) i `bilder`-adsetet, d3-layout med erbjudandet. Video: 055
 täcker problemdelen; vänta in dess etikett.
 
-<!-- HOOKAR_M4 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|---|
+| H1 | När skrattet lagt sig sitter tamago på fötterna. | When the laughter has died down, tamago is on your feet. | ✅ gult par med svart band | ✅ tamago ingår, går att bära | ✅ tamago på fötter, bara vi |
+| H2 | Tio bitar skämt. 5 par strumpor kvar. | Ten pieces of joke. 5 pairs of socks left. | ✅ tio bitar, sedan 5 par | ✅ tio bitar, 5 par | ✅ bitar-till-par är vårt |
+| H3 ★ | Ätpinnarna hamnar i lådan. Strumporna hamnar på fötterna. | The chopsticks end up in the drawer. The socks end up on your feet. | ✅ pinnar i låda, strumpor på fot | ✅ pinnar ingår, strumpor bärs | ✅ pinnar plus strumpor: bara vi |
+| H4 | Förra årets skämt ligger i byrålådan. Laxnigiri ligger i strumplådan. | Last year's joke is in the dresser drawer. Salmon nigiri is in the sock drawer. | ✅ byrålåda mot strumplåda i bild | ✅ gå och kolla din byrålåda | ✅ laxnigiri i strumplådan: vårt |
+| R1 | Skämtet är sushi. Strumporna blir kvar. | The joke is sushi. The socks stay. | ✅ tråg, sedan strumpor på fot | ✅ strumporna går att bära efteråt | ✅ sushi-skämt med strumpor, vårt |
+| R2 | Sushi som slutar i strumplådan | Sushi that ends up in the sock drawer | ✅ sushibit i strumplåda | ✅ strumpor hör hemma i lådan | ✅ sushi i strumplåda: bara vi |
+
+★ Bästa: H3, parallellismen ställer det som blir kvar mot det som försvinner, i en bild per halvrad. H4 är före/efter-bildens rubrik.
 
 ### M5 · Fem sorter — varje par är en egen bit (NM, lägre tro)
 
@@ -177,7 +224,18 @@ erbjudande.
 **Första test:** bild, de fem paren uppradade med sin bit bredvid, i
 `bilder`-adsetet. Lägst prioritet av de fem.
 
-<!-- HOOKAR_M5 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|---|
+| H1 ★ | Måndag: laxnigiri. Tisdag: tamago. Onsdag: gurkmaki. | Monday: salmon nigiri. Tuesday: tamago. Wednesday: cucumber maki. | ✅ dagar, bitar, strumplåda | ✅ alla sorterna ingår | ✅ veckodagar med sushisorter: vårt |
+| H2 | Laxnigiri, tamago, laxmaki, gurkmaki, röd rulle. Alla strumpor. | Salmon nigiri, tamago, salmon maki, cucumber maki, red roll. All socks. | ✅ bitarna uppradade på bordet | ✅ sorterna stämmer mot lådan | ✅ meny som strumpor, bara vi |
+| H3 | Fredag, och bara den röda rullen är kvar i lådan. | Friday, and only the red roll is left in the drawer. | ✅ nästan tom strumplåda | ✅ röd rulle ingår, går att kolla | ✅ röd rulle i strumplåda: vårt |
+| H4 | Orange med vita ränder. Gult med svart band. Välj. | Orange with white stripes. Yellow with a black band. Choose. | ✅ färger går att peka på | ✅ laxnigiri och tamago ser så ut | ✅ färgerna är våra bitar |
+| R1 | Inget par är samma sushibit | No pair is the same sushi piece | ✅ parade bitar uppradade | ✅ 5 par, olika sorter | ✅ sushibit-par: bara vi |
+| R2 | Välj par: laxnigiri eller tamago | Choose a pair: salmon nigiri or tamago | ✅ hand över två par | ✅ båda sorterna ingår | ✅ val mellan sushisorter: vi |
+
+★ Bästa: H1, veckodagarna ger rytm och tre konkreta sorter på ett ögonkast.
 
 ---
 
