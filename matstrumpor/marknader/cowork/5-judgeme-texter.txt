@@ -1,6 +1,8 @@
-⚠️ Läget 2026-10-01 kväll: finskan är KLAR (läst som kund: "11 arvostelua"). Kvar är polskan (del A) och
-språket på Shop-appens sju recensioner (del B). Coworks Chrome-flik hängde sig två gånger när Polska valdes.
-Starta om Chrome helt innan prompten körs igen, eller gör klicken för hand.
+⛔ KÖRD 2026-10-01 kväll, kör inte igen. Finskan, polskan (del A) och alla sju i del B är klara. Allt är läst
+som kund: "11 arvostelua", "11 recenzji", och engelska sidan visar de svenska recensionerna översatta.
+Kvar är bara Irénes recension på ätpinnarna (`sushipinnar-i-akta-tra`, olistad). Den ändras på samma sätt
+som del B: "Detected review language" → Swedish. Cowork hittade den själv och frågade.
+Coworks Chrome-flik hängde sig två gånger när Polska valdes. Det gick först efter att Chrome startats om.
 
 Uppdrag: två små rättningar i Judge.me för Matstrumpors utlandsbutik. Gör bara det som står nedan.
 
