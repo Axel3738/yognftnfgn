@@ -121,6 +121,16 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   5 togs ner inom minuter, så 4 och 6 ligger troligen hos en människa på Meta.
   Det är inte bekräftat, eftersom kvittomejlen fortfarande är dolda för
   Gmail-connectorn. Gmail visar inga nya mejl från Meta sedan 30/9 15:59.
+- **Anmälan 2 skickas igen. Sessionen beslutade det 1/10 kl 11 CEST.** Axel frågade
+  varför sessionen inte läser kvittot själv. Tråden för ärende 921610674086655 har 2 mejl,
+  men Gmail-connectorn ser bara beslutsmejlet från 13:59 UTC ("We removed the content …
+  This decision was made by our technology"). Mejlet saknar annons-id. Kvittot ger
+  fortfarande "The caller does not have permission". Bälteslipens annons 1652495996287809
+  var `ELIGIBLE` och aktiv 1/10 cirka 11:05 CEST, nästan ett dygn efter beslutsmejlet.
+  Anmälan 1, 3 och 5 togs däremot ner inom minuter. Ärende 921610674086655 gällde alltså
+  troligen båtmotorskyddet en andra gång. Anmälan 2 följer med i nästa Cowork-prompt
+  (`--anmal-cowork KD-2026-003 --bara 2`, ensam eller med nästa ärende), och Axel behöver
+  inte läsa kvittot. Annons 4 och 6 var också `ELIGIBLE` vid samma tid.
 - Taköverdragets 5 är fortfarande inte med. Axel frågade 30/9 kväll om de inte
   också var snodda. Svaret: jo, Bustatio kör fem av våra taköverdrag-filmer
   (räckvidd 24 345, 1 234, 1 059, 449 och 243), men alla fem bär lånade klipp.
