@@ -1,13 +1,13 @@
 {
  "_om": "B-kampanjen MATSTRUMP_NOB_SALES i A/B-testet i Norge (2026-09-29). Härledd ur NO.json av nob.mjs — ändra NO.json och kör om, redigera aldrig den här filen för hand. Enda skillnaderna mot A: raden 'Et svensk merke.' finns inte, och länken går till matstrumpor.no (marknader.json → NOB).",
- "instagram_user_id": "17841479011543544",
+ "instagram_user_id": "17841423405715219",
  "annonser": [
   {
    "namn": "MATSTRUMP_NOB_sushi_gift_ugc_001_v1",
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_ugc_001_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_ugc_001_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -15,7 +15,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_ugc_002_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_ugc_002_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -23,7 +23,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_jul_ugc_003_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_jul_ugc_003_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -31,7 +31,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_anim_004_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_anim_004_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -39,7 +39,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_ugc_005_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_ugc_005_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -47,7 +47,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_ugc_006_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_ugc_006_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -55,7 +55,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_gift_ugc_007_v1 (A/B-testet i Norge): samma video, utan \"Et svensk merke.\", länk matstrumpor.no",
    "video_fran": "MATSTRUMP_NO_sushi_gift_ugc_007_v1",
    "title": "Morsom i kveld. På føttene i morgen.",
-   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en vitsegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nDen blir ikke liggende i esken etterpå. Den er på føttene, uke etter uke.",
+   "message": "Ingen jubler over vaskemiddel. Ingen tar vare på en tullegave.\nSvaret på begge: en eske som ser ut som ekte takeaway, 5 par rullet som maki, spisepinner i tre ved siden av.\nSokkene blir ikke liggende i esken etterpå. De er på føttene, uke etter uke.",
    "link_description": "4 sorter. Kjøp 1, få 1. Fri frakt til Norge."
   },
   {
@@ -63,7 +63,7 @@
    "kalla": "B-versionen av MATSTRUMP_NO_sushi_offer_static_008_v1 (A/B-testet i Norge): samma bild, utan \"Et svensk merke.\", länk matstrumpor.no",
    "bild_fran": "MATSTRUMP_NO_sushi_offer_static_008_v1",
    "title": "Kjøp 2, få 2 gratis: fire bokser",
-   "message": "Du får fire bokser.\nKjøp 2 – få 2 gratis, tjue par sokker til sammen.\nRullet som maki, spisepinner av tre i hver boks.\nOnesize, passer str. 36–44.",
+   "message": "Du får fire bokser.\nKjøp 2 – få 2 gratis, tjue par sokker til sammen.\nRullet som maki, spisepinner av tre i hver boks.\nÉn størrelse, passer str. 36–44.",
    "link_description": "Kjøp 2, få 2 gratis. Fri frakt til Norge."
   }
  ]

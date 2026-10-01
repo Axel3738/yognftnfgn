@@ -1,0 +1,585 @@
+{
+  "sprak": "pt",
+  "ui": {
+    "hej_reserv": "Olá",
+    "du_reserv": "tu",
+    "medlem_reserv": "Membro",
+    "medlemskort": "Cartão de membro",
+    "medlem_i": "Membro do {klubb}",
+    "knapp_till": "Ver o produto",
+    "knapp_kassa": "Voltar ao checkout",
+    "knapp_titta": "Ver outra vez",
+    "knapp_betyg": "Dá a tua avaliação",
+    "ms_rad": "O número de seguimento que começa por MS está no e-mail a confirmar que a encomenda foi enviada.",
+    "fakta_retur_rubrik": "Direito de arrependimento",
+    "fakta_sparning_rubrik": "Seguir a encomenda",
+    "fakta_sparning_text": "Acompanha todo o percurso",
+    "grundare": "fundador",
+    "verifierad": "cliente verificado",
+    "verifierad_ensam": "Cliente verificado",
+    "fakta_retur_text": "30 dias para devolução",
+    "oversatt": "traduzido do sueco",
+    "klubb": "Clube Matstrumpor"
+  },
+  "citat": {
+    "0cc5d9cab945": "Os pacotes de meias eram tão giros para oferecer às crianças e aos netos! E pelo que ouvi depois, eram de boa qualidade também!",
+    "1f16cc42983e": "Meias muito confortáveis",
+    "af7d51d6f01d": "Meias maravilhosas, quem as recebeu ficou tão contente.",
+    "c0a92758da0e": "Muito bonitas numa embalagem divertida! Entrega rápida"
+  },
+  "mejl": {
+    "k01-de-tror-att-det-ar-sushi": {
+      "kalla": "12fd0d6076d0",
+      "amne": "Olham duas vezes, depois riem-se",
+      "forhandstext": "Cinco pares de meias onde deviam estar as peças de sushi.",
+      "block": [
+        {
+          "rubrik": "Parece sushi. São meias.",
+          "text": "Olá {{fornamn}},\n\nA caixa abre-se como uma encomenda de sushi. Cinco pares de meias enrolados como peças de sushi, com pauzinhos ao lado.",
+          "knapp.text": "Ver a caixa de sushi"
+        },
+        {
+          "text": "Quem abre a caixa pensa primeiro que é sushi a sério.\n\nDepois percebe o que é, e olha outra vez."
+        },
+        {
+          "rubrik": "É isto que vem na caixa",
+          "punkter": [
+            "Cinco pares de meias, enroladas como peças de sushi.",
+            "A caixa parece comida takeaway, até ser aberta.",
+            "Pauzinhos de madeira incluídos.",
+            "Tamanho único 36-44."
+          ]
+        },
+        {},
+        {
+          "text": "Cinco pares numa caixa feita para enganar o olho.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {}
+      ]
+    },
+    "k02-ingen-jublar-at-tvattmedel": {
+      "kalla": "8d8d1af7f269",
+      "amne": "Ninguém festeja um detergente",
+      "forhandstext": "Divertida quando se abre. Útil no dia seguinte.",
+      "block": [
+        {
+          "rubrik": "A aborrecida funciona. A divertida fica esquecida.",
+          "text": "Olá {{fornamn}},\n\nUma prenda prática desembrulha-se em silêncio. Uma prenda de brincadeira já está esquecida numa caixa amanhã.",
+          "knapp.text": "Ver a caixa"
+        },
+        {
+          "text": "Esta é divertida esta noite e está nos pés amanhã."
+        },
+        {
+          "text": "Cinco pares numa caixa que parece sushi a sério.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "rubrik": "Para a pessoa seguinte"
+        },
+        {}
+      ]
+    },
+    "k03-kundernas-ord": {
+      "kalla": "89f0038718bf",
+      "amne": "As avaliações dizem que quem recebeu ficou contente",
+      "forhandstext": "4,5 em 5 de média, sem uma palavra inventada.",
+      "block": [
+        {
+          "rubrik": "Isto escreveram os clientes",
+          "text": "Compradores reais, palavras reais. Nada aqui é inventado."
+        },
+        {},
+        {
+          "text": "Cinco pares de meias, enrolados como sushi, numa caixa que engana o olho.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {}
+      ]
+    },
+    "k04-fars-dag-bestall-senast-24-okt": {
+      "kalla": "a3433ff29791",
+      "amne": "A prenda difícil de adivinhar",
+      "forhandstext": "Uma caixa em que ninguém adivinha o que está lá dentro.",
+      "block": [
+        {
+          "rubrik": "Uma prenda que ninguém vê chegar",
+          "text": "Olá {{fornamn}},\n\nHá pessoas difíceis de presentear. Esta caixa parece comida, e só quando se abre é que se percebe o que é.",
+          "knapp.text": "Ver a prenda"
+        },
+        {
+          "text": "Quem a recebe olha para a caixa e pensa que é comida. Só depois vem a surpresa."
+        },
+        {
+          "text": "Cinco pares que tornam a prenda difícil de adivinhar.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "rubrik": "Se preferires outra coisa"
+        },
+        {}
+      ]
+    },
+    "k05-julstrumpan": {
+      "kalla": "2d2d53fa582e",
+      "amne": "Adivinha o que pus na meia de Natal",
+      "forhandstext": "Caixa pequena. Grande palpite.",
+      "block": [
+        {
+          "rubrik": "Cabe na meia de Natal",
+          "text": "Olá {{fornamn}},\n\nUma caixa pequena. Cinco pares de meias e pauzinhos lá dentro.\n\nDo tamanho exato para uma meia de Natal.",
+          "knapp.text": "Ver a caixa de sushi"
+        },
+        {
+          "text": "Parece comida takeaway. Ninguém adivinha antes de a abrir."
+        },
+        {
+          "rubrik": "Porque é que cabe",
+          "punkter": [
+            "A caixa é pequena o suficiente para uma meia de Natal.",
+            "Cinco pares de meias, enroladas como sushi.",
+            "Os pauzinhos de madeira vão incluídos."
+          ]
+        },
+        {
+          "text": "A mesma caixa, agora na meia de Natal.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {},
+        {}
+      ]
+    },
+    "k06-slut-i-november-forra-aret": {
+      "kalla": "a46dc7445b89",
+      "amne": "A caixa de sushi esgotou em novembro do ano passado",
+      "forhandstext": "As caixas esgotaram em novembro, antes de a época de Natal arrancar.",
+      "block": [
+        {
+          "rubrik": "Em novembro do ano passado esgotámos",
+          "text": "Olá {{fornamn}},\n\nEm novembro de 2025 a caixa de sushi esgotou. Não sabemos se volta a acontecer, mas se já pensavas comprar para o Natal, talvez seja boa altura para o fazer agora.",
+          "knapp.text": "Ver a caixa de sushi"
+        },
+        {
+          "text": "A mesma caixa que esgotou em novembro passado.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "rubrik": "Se preferires outra variedade"
+        },
+        {}
+      ]
+    },
+    "k07-tva-lador-tva-personer": {
+      "kalla": "ed6617a35935",
+      "amne": "Compra 1, recebe 1, para duas pessoas diferentes",
+      "forhandstext": "Dois destinatários, uma compra, zero complicações.",
+      "block": [
+        {
+          "rubrik": "Duas caixas, duas pessoas na lista",
+          "text": "Olá {{fornamn}},\n\nA maioria das encomendas tem duas caixas. Uma para a mãe, outra para o irmão. Uma para ti, outra para outra pessoa.\n\nCompra 1, recebe 1, está na página do produto.",
+          "knapp.text": "Ver a caixa de sushi"
+        },
+        {
+          "rubrik": "Duas pessoas na lista",
+          "punkter": [
+            "A mãe e o irmão.",
+            "O colega e a cara-metade.",
+            "Os filhos e o avô."
+          ]
+        },
+        {
+          "text": "Mais uma caixa na compra, como está na página do produto.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "rubrik": "Outras variedades, a mesma oferta na página do produto"
+        },
+        {}
+      ]
+    },
+    "k08-julklappsguide": {
+      "kalla": "65a6f3871101",
+      "amne": "Sushi, pizza, hambúrguer, donut. Uma lista.",
+      "forhandstext": "Quatro variedades, quatro destinatários, tudo num só sítio.",
+      "block": [
+        {
+          "rubrik": "Sushi para um, pizza para outro",
+          "text": "{{fornamn}}, quatro variedades de caixa, quatro pessoas diferentes a quem oferecer. Sushi para quem gosta de sushi, ou para quem nunca adivinharia o que está na caixa. Pizza para quem partilha tudo. Hambúrguer para o irmão ou o pai. Donut para as crianças.",
+          "knapp.text": "Ver o guia completo"
+        },
+        {
+          "text": "Ninguém precisa de andar horas à procura. Aqui ficam quatro sugestões, uma para cada tipo de pessoa na lista."
+        },
+        {
+          "text": "Para quem adora sushi, ou para quem nunca adivinharia o que está na caixa.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "text": "Quatro pares numa caixa de pizza, para quem partilha tudo.",
+          "knapp": "Ir para a caixa de pizza"
+        },
+        {
+          "text": "Dois pares numa caixa de hambúrguer, para o irmão ou o pai.",
+          "knapp": "Ir para a caixa de hambúrguer"
+        },
+        {
+          "text": "Três pares enrolados como donuts, para as crianças.",
+          "knapp": "Ir para a caixa de donut"
+        },
+        {
+          "text": null
+        },
+        {}
+      ]
+    },
+    "k09-black-week-start": {
+      "kalla": "998439a85e93",
+      "amne": "O teu desconto é calculado automaticamente no checkout",
+      "forhandstext": "10, 20 ou 30 por cento. Depende só do que estiver no carrinho.",
+      "block": [
+        {
+          "rubrik": "Mais artigos no carrinho, mais desconto, durante toda a semana",
+          "text": "{{fornamn}}, durante a Black Week o checkout calcula o teu desconto automaticamente, consoante o número de artigos no carrinho. Um artigo dá 10 %, dois artigos dão 20 %, três ou mais dão 30 %. Não é preciso código, o desconto é aplicado diretamente no checkout.",
+          "knapp.text": "Ver todos os produtos"
+        },
+        {
+          "rubrik": "Como funciona a escala",
+          "punkter": [
+            "1 artigo: 10 % de desconto",
+            "2 artigos: 20 % de desconto",
+            "3 artigos ou mais: 30 % de desconto"
+          ]
+        },
+        {
+          "rubrik": "Combina para chegar ao nível seguinte"
+        },
+        {}
+      ]
+    },
+    "k10-black-friday": {
+      "kalla": "6819d8838ab1",
+      "amne": "Black Friday: o desconto continua",
+      "forhandstext": "Hoje é Black Friday, e a escala de descontos continua ativa.",
+      "block": [
+        {
+          "rubrik": "Black Friday. A escala de descontos continua ativa.",
+          "text": "{{fornamn}}, hoje é Black Friday, e a escala de descontos continua ativa. Um artigo dá 10 %, dois dão 20 %, três ou mais dão 30 %, e o checkout calcula tudo por ti.",
+          "knapp.text": "Ver os produtos"
+        },
+        {
+          "rubrik": "Enche o carrinho para o nível seguinte"
+        },
+        {
+          "rubrik": "Lembra-te: como funciona a escala",
+          "punkter": [
+            "1 artigo: 10 % de desconto",
+            "2 artigos: 20 % de desconto",
+            "3 artigos ou mais: 30 % de desconto"
+          ]
+        },
+        {}
+      ]
+    },
+    "k11-bestall-senast-8-dec": {
+      "kalla": "bb81cc21898a",
+      "amne": "Encomenda com antecedência para o Natal",
+      "forhandstext": "Quanto mais cedo encomendares, melhor.",
+      "block": [
+        {
+          "rubrik": "Encomenda com antecedência para o Natal",
+          "text": "{{fornamn}}, se queres oferecer uma caixa no Natal, encomenda com antecedência. Quanto mais cedo, melhor.",
+          "knapp.text": "Encomendar já"
+        },
+        {
+          "rubrik": "Quatro sugestões, prontas a escolher"
+        },
+        {}
+      ]
+    },
+    "k12-sista-dagen-idag": {
+      "kalla": "56e82e349de8",
+      "amne": "Ainda não escolheste a prenda de Natal?",
+      "forhandstext": "Uma caixa que parece comida a sério.",
+      "block": [
+        {
+          "rubrik": "Ainda não escolheste a prenda de Natal?",
+          "text": "{{fornamn}}, se ainda procuras uma prenda de Natal, encomenda com antecedência. Uma caixa que parece comida e que ninguém adivinha.",
+          "knapp.text": "Encomendar"
+        },
+        {
+          "text": "Cinco pares numa caixa que parece saída diretamente do restaurante.",
+          "knapp": "Ir para a caixa de sushi"
+        },
+        {
+          "rubrik": "Ou uma das outras três"
+        },
+        {}
+      ]
+    },
+    "k13-presentkortet": {
+      "kalla": "495e5de80fa5",
+      "amne": "Uma prenda que chega por e-mail",
+      "forhandstext": "Um cartão-presente enviado por e-mail, sem esperar por um pacote.",
+      "block": [
+        {
+          "rubrik": "Precisas de uma prenda sem esperar?",
+          "text": "Um cartão-presente é enviado diretamente por e-mail, sem esperar por um pacote."
+        },
+        {
+          "text": "Quem o recebe escolhe o que quiser, em toda a loja.",
+          "knapp": "Comprar o cartão-presente"
+        },
+        {
+          "rubrik": "Como funciona",
+          "text": "O cartão-presente é enviado em formato digital, por e-mail, com um código que o destinatário usa na loja. Sem filas e sem pacotes à espera de chegar."
+        },
+        {}
+      ]
+    },
+    "k14-vem-har-fodelsedag-harnast": {
+      "kalla": "54b4099890b8",
+      "amne": "Quem faz anos a seguir?",
+      "forhandstext": "O Natal acabou. A próxima ocasião não está longe.",
+      "block": [
+        {
+          "rubrik": "Quem faz anos a seguir?",
+          "text": "{{fornamn}}, o Natal acabou, mas as prendas não têm de acabar. O próximo aniversário na lista está sempre mais perto do que pensas.",
+          "knapp.text": "Ver todas as variedades"
+        },
+        {
+          "text": "Uma caixa que parece comida funciona tão bem em janeiro como em dezembro."
+        },
+        {
+          "rubrik": "Quatro variedades, prontas quando precisares"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e1": {
+      "kalla": "8f76ff1e7861",
+      "amne": "Foste aceite no Clube Matstrumpor",
+      "forhandstext": "O teu lugar e o teu cartão esperam por ti aqui dentro.",
+      "block": [
+        {
+          "rubrik": "Foste aceite no clube",
+          "text": "O teu lugar no Clube Matstrumpor está garantido. Aderiste, por isso é teu.\n\nVendemos meias que parecem sushi, pizza, hambúrguer e donuts.\n\nEstes e-mails só vão para membros do clube.",
+          "knapp.text": "Ver todas as caixas"
+        },
+        {
+          "etikett": "CARTÃO DE MEMBRO",
+          "rad_under_namnet": "Membro do Clube Matstrumpor",
+          "fotnot": "Ninguém à caixa te vai pedir este cartão."
+        },
+        {
+          "rubrik": "Isto é só para membros",
+          "punkter": [
+            null,
+            "Um e-mail sobre a Black Week, só para membros.",
+            "As palavras verdadeiras dos clientes, tal como foram escritas, sem teres de as procurar.",
+            "O que vem na caixa, mostrado antes de decidires."
+          ]
+        },
+        {
+          "rubrik": "Sushi, donut e pizza"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e2": {
+      "kalla": "8e16702c6ea6",
+      "amne": "Isto escreveram os clientes",
+      "forhandstext": "Oito avaliações, média de 4,5. Nenhuma foi escrita por nós.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Outras variedades para oferecer"
+        },
+        {}
+      ]
+    },
+    "f01-valkomst-e3": {
+      "kalla": "63adf86bf305",
+      "amne": "Como funciona quando encomendas",
+      "forhandstext": "Entrega, seguimento e devolução, de forma curta e clara.",
+      "block": [
+        {
+          "rubrik": "Como funciona quando encomendas",
+          "text": "A tua encomenda recebe um número próprio que começa por MS. Encontras-o na página de seguimento, onde também vês por onde o pacote vai.\n\nSe te arrependeres, há devolução, como indicado no quadro aqui em baixo. Se tiveres uma dúvida, envia um e-mail para kundsupport@matstrumpor.se e recebes resposta."
+        },
+        {},
+        {
+          "text": "Ver tudo o que vendemos"
+        }
+      ]
+    },
+    "f02-overgiven-kassa-e1": {
+      "kalla": "c268b115e64a",
+      "amne": "Ficou algo no teu checkout",
+      "forhandstext": "Volta atrás, está tudo pronto.",
+      "block": [
+        {
+          "rubrik": "O teu carrinho continua aqui",
+          "text": "Tudo o que puseste no checkout continua lá. Nada foi removido."
+        },
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e2": {
+      "kalla": "0de656842fa6",
+      "amne": "Três coisas que talvez te perguntes",
+      "forhandstext": "Tamanho, devolução e a quem perguntar. Respondido em poucas palavras.",
+      "block": [
+        {
+          "rubrik": "Três perguntas antes de pagares",
+          "text": "Servem? Sim, tamanho único, ou seja, 36-44.\n\nArrependes-te? Há devolução, como indicado no quadro aqui em baixo.\n\nQuem responde se algo correr mal? Envia um e-mail para kundsupport@matstrumpor.se e recebes resposta."
+        },
+        {},
+        {}
+      ]
+    },
+    "f02-overgiven-kassa-e3": {
+      "kalla": "2e080922dc0c",
+      "amne": "Último lembrete",
+      "forhandstext": "Depois deste e-mail, não voltamos a escrever sobre o checkout.",
+      "block": [
+        {
+          "rubrik": "Último lembrete",
+          "text": "Último lembrete sobre isto. Não voltamos a enviar e-mails sobre este checkout.\n\nSe queres concluir a compra, está tudo exatamente onde deixaste."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e1": {
+      "kalla": "70bdaded5b4d",
+      "amne": "Foi isto que viste",
+      "forhandstext": "Sem conversa de vendas. Só isto.",
+      "block": [
+        {
+          "text": "Foi isto que viste há algum tempo."
+        },
+        {}
+      ]
+    },
+    "f03-webbhistorik-e2": {
+      "kalla": "c18f517ea010",
+      "amne": "Interessaste-te por esta",
+      "forhandstext": "Esta, e mais três se não te convenceu.",
+      "block": [
+        {},
+        {},
+        {
+          "rubrik": "Três outras variedades para escolher"
+        }
+      ]
+    },
+    "f04-efter-kop-e1": {
+      "kalla": "8da03c073e0e",
+      "amne": "A tua encomenda está a caminho",
+      "forhandstext": "Um botão, e vês exatamente onde está agora.",
+      "block": [
+        {
+          "rubrik": "A tua encomenda está a caminho",
+          "text": "Carrega no botão e vês exatamente onde o pacote está neste momento."
+        },
+        {
+          "text": "Seguir o pacote"
+        },
+        {
+          "text": "Dúvidas antes de chegar? Envia um e-mail para kundsupport@matstrumpor.se, respondemos."
+        }
+      ]
+    },
+    "f04-efter-kop-e2": {
+      "kalla": "ded016e7c03d",
+      "amne": "Chegou tudo como devia?",
+      "forhandstext": "A esta altura o pacote costuma já ter chegado.",
+      "block": [
+        {
+          "rubrik": "Chegou tudo?",
+          "text": "A esta altura o pacote costuma já ter chegado. Falta alguma coisa ou algo parece estranho? Envia um e-mail para kundsupport@matstrumpor.se, resolvemos."
+        },
+        {
+          "rubrik": "Para a pessoa seguinte"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e1": {
+      "kalla": "e31b5d1f4e7e",
+      "amne": "Quem é o próximo a receber uma caixa?",
+      "forhandstext": "Sem campanha, só um lembrete: a lista de destinatários raramente acaba.",
+      "block": [
+        {
+          "rubrik": "Quem é o próximo?",
+          "text": "Da última vez ofereceste uma caixa. Funciona igualmente bem outra vez, para outra pessoa da lista."
+        },
+        {
+          "rubrik": "Quatro variedades para escolher"
+        },
+        {}
+      ]
+    },
+    "f05-vinback-e2": {
+      "kalla": "2273435a131d",
+      "amne": "Isto escreveram clientes reais",
+      "forhandstext": "Duas opiniões, e depois não ouves mais nada sobre isto da nossa parte.",
+      "block": [
+        {},
+        {
+          "text": "Cinco pares enrolados como peças de sushi, numa caixa que parece takeaway até ser aberta. Os pauzinhos vão incluídos.",
+          "knapp": "Ver a caixa de sushi"
+        },
+        {}
+      ]
+    },
+    "f06-sunset-e1": {
+      "kalla": "ff33ef0d112b",
+      "amne": "Queres continuar no clube?",
+      "forhandstext": "A resposta demora um clique, nada mais.",
+      "block": [
+        {
+          "rubrik": "Queres continuar no Clube Matstrumpor?",
+          "text": "{{fornamn}}, tem estado tudo calado entre nós há algum tempo. Um clique mantém-te no Clube Matstrumpor."
+        },
+        {
+          "text": "Sim, quero continuar"
+        }
+      ]
+    },
+    "f06-sunset-e2": {
+      "kalla": "2b166f306856",
+      "amne": "Último e-mail sobre o teu lugar no clube",
+      "forhandstext": "Depois deste e-mail removemos-te, se não ouvirmos nada.",
+      "block": [
+        {
+          "rubrik": "Este é o último e-mail do clube",
+          "text": "{{fornamn}}, se não ouvirmos nada agora, removemos-te do Clube Matstrumpor. Um último clique mantém-te."
+        },
+        {
+          "text": "Sim, quero ficar"
+        }
+      ]
+    },
+    "f07-aterkop-sushi-e1": {
+      "kalla": "7eb3f48e69d1",
+      "amne": "Mais uma caixa, para a pessoa seguinte",
+      "forhandstext": "A maioria de quem compra outra vez escolhe exatamente a mesma caixa.",
+      "block": [
+        {
+          "rubrik": "Mais uma caixa, para a pessoa seguinte",
+          "text": "A maioria de quem volta a comprar escolhe exatamente a mesma caixa de sushi, para outra pessoa da lista."
+        },
+        {
+          "text": "Cinco pares, enrolados como peças de sushi, numa caixa que parece takeaway até ser aberta. Os pauzinhos vão incluídos.",
+          "knapp": "Ver a caixa de sushi"
+        },
+        {
+          "rubrik": "Ou outra variedade"
+        },
+        {}
+      ]
+    }
+  }
+}

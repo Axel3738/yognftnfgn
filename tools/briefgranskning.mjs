@@ -605,6 +605,18 @@ export function isoleradVariabel(text) {
   return m ? m[1].trim() : null;
 }
 
+/** Själva variabeln ur en "Isolated variable:"-rad — utan parentes, utan det
+ *  som står efter semikolon ("; the two sibling hooks are X and Y") och utan
+ *  ", against <förälder>". Mätt 2026-10-01: syskonlistan och förälderns namn
+ *  fällde 80 av 107 briefer som "mer än en variabel" fast variabeln var en. */
+export function variabelKarna(iso) {
+  return String(iso ?? '')
+    .replace(/\([^)]*\)/g, '')
+    .split(';')[0]
+    .replace(/,?\s*against\s+[A-Za-zÅÄÖåäö0-9_]+\s*$/i, '')
+    .trim();
+}
+
 /** Nämner briefens huvud (raderna före första rubriken, "Why this ad exists"
  *  och "Why:"-raden) en källa — playbook, winning line, swipe, egen data
  *  (mätning, CPA, köp, en bevisad struktur), backlog, förälder — eller är
@@ -717,7 +729,7 @@ export function granskaBrief(r, ctx = {}) {
   if (variant) {
     const iso = isoleradVariabel(text);
     if (!iso) A('variabel', 'variant of a parent ad without an "Isolated variable:" line — say the one thing that changed');
-    else if (/\s(\+|and|och)\s|,/i.test(iso.replace(/\([^)]*\)/g, ''))) A('variabel', `"Isolated variable: ${iso}" may name more than one variable — a variant changes exactly one thing`);
+    else if (/\s(\+|and|och)\s|,/i.test(variabelKarna(iso))) A('variabel', `"Isolated variable: ${iso}" may name more than one variable — a variant changes exactly one thing`);
   } else {
     const k = kallaUr(text);
     if (!k.kalla && !k.gissning) A('kalla', 'new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess');

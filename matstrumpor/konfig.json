@@ -62,6 +62,8 @@
     "hub_namn": "Matstrumpor creative hub",
     "matt_2026_09_21": "88 rader · 39 Approved, 26 Draft, 10 To be translated, 6 In Review, 4 To be Reviewed",
     "ko_status": "To be Reviewed",
+    "ko_statusar": ["To be Reviewed", "Creative strat review"],
+    "ko_statusar_comment": "Mätt 2026-09-30: Gilz satte färdiga 056 och 057 (sex videor, Drive-länk i sidan) i 'Creative strat review' 27–29/9, och kön läste bara 'To be Reviewed' — de låg osynliga i tre dygn. Båda statusarna är nu kö.",
     "efter_uppladdning": "Approved + Launched in SE",
     "efter_uppladdning_comment": "Matstrumpor har ingen översättningsrutin (NO/FI-kontona saknar betalmetod 2026-09-21), så en uppladdad rad går direkt till Approved + Launched in SE — inte till 'SE-ACTIVE to be translated' som Bäverbutiken. ⚠️ Statusen heter 'Approved + Launched in SE' i hubben (mätt 2026-09-29: 'Approved' finns inte, Notion svarar 400)."
   },

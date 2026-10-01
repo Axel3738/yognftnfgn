@@ -12,6 +12,11 @@
 //       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
 //       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
 //       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
+//       Byter också Facebook-sidan, Instagram-kontot och länken när marknader.json säger något
+//       annat (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se";
+//       länken matstrumpor.com/<språk> sedan samma kväll — inte matstrumpor.se). En LÅNAD annons
+//       (B-kampanjen NOB bär A-annonsens media) får också A-annonsens nuvarande video/bild här, så
+//       kör --byt-video på A först och --byt-text på den lånade sedan (2026-09-30).
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -48,6 +53,9 @@ const sparaVideor = () => writeFileSync(VIDEOR, JSON.stringify(videor, null, 1) 
  *  inte att du aktiverar kampanjerna i meta för ens jag har granskat alla". Budgeten är given, men
  *  aktiveringen är hans — texten i marknader.json ändras när han sagt ja, aldrig av en session själv. */
 export function farAktiveras(k, annonser) {
+  // Ett stopp för hela marknaden går före allt annat: Taiwan (Axel 2026-10-01) lanseras inte förrän
+  // kassan tar emot kundens tull-ID, hur rätt budget och annonser än är. Raden tas bort på hans ord.
+  if (k.lansering_stopp) return { ok: false, skal: `marknaden får inte lanseras än (${k.lansering_stopp})` };
   if (/EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `budgeten är en platshållare (${k.budget_beslut})` };
   if (/⛔|tills Axel granskat/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `väntar på Axels granskning (${k.budget_beslut})` };
   if (!annonser.length) return { ok: false, skal: 'inga annonser i adsetet' };
@@ -55,6 +63,21 @@ export function farAktiveras(k, annonser) {
   if (fel.length) return { ok: false, skal: `${fel.length} annonser länkar fel: ${fel.map((a) => `${a.name} → ${a.lank}`).join('; ')}` };
   return { ok: true };
 }
+/** Ren: fälten ett land med annonsörsverifiering kräver på adsetet. Taiwan (mätt 2026-09-30): utan
+ *  `regional_regulated_categories: ["TAIWAN_UNIVERSAL"]` svarar Meta 400 "Värde för regionalt reglerade
+ *  kategorier krävs", och med bara kategorin 400 "Annonsör saknas: ange verifierad annonsör" — bolaget
+ *  måste vara verifierat som förmånstagare och betalare (Taiwans bedrägerilag). Identiteternas id listas
+ *  inte av något publikt API; de läses ur ett adset som bär dem och skrivs i marknader.json. */
+export function regionalFalt(k) {
+  const ut = {};
+  if (k.regional_regulated_categories?.length) ut.regional_regulated_categories = JSON.stringify(k.regional_regulated_categories);
+  const id = k.regional_regulation_identities;
+  if (id && Object.values(id).some(Boolean)) ut.regional_regulation_identities = JSON.stringify(id);
+  return ut;
+}
+/** Ren: är felet Metas krav på verifierad annonsör (svenska eller engelska felmeddelanden)? */
+export const arVerifieringsfel = (msg = '') => /verifierad annonsör|regionalt reglerade|Annonsör saknas|beneficiary|payer|regional[_ ]regulat/i.test(msg);
+
 /** Ren: vilka av rubrik, brödtext och länkbeskrivning som skiljer mellan filen och annonsens
  *  creative i kontot (object_story_spec). Video bär title/link_description, bild name/description. */
 export function textSkillnad(an, story = {}) {
@@ -64,12 +87,46 @@ export function textSkillnad(an, story = {}) {
   return ['title', 'message', 'link_description'].filter((f) => (live[f] ?? '') !== (an[f] ?? ''));
 }
 
-/** Ren: annonsens länk måste bära marknadens locale och (för enlandskampanjer) landet. */
+/** Ren: bär annonsens creative en annan video eller bild än `v` (raden i videor.json)? Används för
+ *  LÅNADE annonser (B-kampanjen på .no bär A-annonsens media, `video_fran`/`bild_fran`): när A-annonsen
+ *  får en ny fil med --byt-video hoppar den lånade över sig själv, och textjämförelsen ser ingen skillnad.
+ *  Granskningen 2026-09-30 räknade på det: NOB hade annars fått behålla de gamla norska videorna. */
+export function mediaSkillnad(v, story = {}) {
+  const live = story.video_data?.video_id ?? story.link_data?.image_hash ?? '';
+  const ska = v?.video_id ?? v?.image_hash ?? '';
+  return live && ska && live !== ska ? ['media'] : [];
+}
+
+/** Ren: vilken Facebook-sida och vilket Instagram-konto annonsen visas som, mot marknader.json. */
+export function identitetSkillnad(M, story = {}) {
+  const ut = [];
+  if ((story.page_id ?? '') !== (M.sida ?? '')) ut.push('sida');
+  if ((story.instagram_user_id ?? '') !== (M.instagram_user_id ?? '')) ut.push('instagram');
+  return ut;
+}
+
+/** Ren: länken i annonsens creative (video: call_to_action, bild: link_data.link och dess
+ *  call_to_action) mot marknadens `lank` i marknader.json. */
+export function lankSkillnad(k, story = {}) {
+  const v = story.video_data, l = story.link_data;
+  const live = [v?.call_to_action?.value?.link, l?.link, l?.call_to_action?.value?.link].filter((x) => x !== undefined);
+  if (!live.length) return (k.lank ?? '') ? ['länk'] : [];
+  return live.every((x) => x === k.lank) ? [] : ['länk'];
+}
+
+// Domänernas standardspråk: roten bär språket utan mapp (matstrumpor.com/ är engelska, .no/ norska).
+const STANDARDSPRAK = { 'matstrumpor.se': 'sv', 'matstrumpor.com': 'en', 'matstrumpor.no': 'nb', 'matstrumpor.eu': 'en' };
+
+/** Ren: annonsens länk måste gå till marknadens domän (`doman`, annars matstrumpor.se), bära språkmappen
+ *  (`sprakmapp`, annars locale; ingen mapp för domänens standardspråk) och, för enlandskampanjer, landet.
+ *  Allt utland länkar till matstrumpor.com sedan 2026-09-29 kväll (Axel: "Ska inte alla vara via .com
+ *  domänen?"). Undantaget är A/B-testets B-sida på matstrumpor.no. */
 export function lankOk(k, lank) {
   if (!lank) return false;
-  // Egen domän (A/B-testets B-sida i Norge, `doman` i marknader.json): länken ska gå dit, aldrig till .se.
-  if (k.doman) { if (!lank.startsWith(`https://${k.doman}/`)) return false; }
-  else if (!lank.includes(`matstrumpor.se/${k.locale}/`)) return false;
+  const doman = k.doman ?? 'matstrumpor.se';
+  if (!lank.startsWith(`https://${doman}/`)) return false;
+  const mapp = k.sprakmapp ?? (STANDARDSPRAK[doman] === k.locale ? '' : k.locale);
+  if (mapp && !lank.startsWith(`https://${doman}/${mapp}/`)) return false;
   if (k.geo.length === 1 && !lank.includes(`country=${k.geo[0]}`)) return false;
   return true;
 }
@@ -92,17 +149,37 @@ async function byggMarknad(kod) {
   }
 
   let adset = kampanj ? ((await api(`${kampanj.id}/adsets`, { params: { fields: 'id,name,status', limit: 50 } })).data ?? []).find((a) => a.name === k.adset) : null;
+  const regional = regionalFalt(k);
+  const verifieringSaknas = !!k.regional_regulated_categories?.length && !regional.regional_regulation_identities;
   if (adset) log(`adset finns: ${adset.id} ${adset.status}`);
-  else if (!skarpt || !kampanj) log(`torrt: skulle skapa adsetet ${k.adset} (${k.geo.join(',')}, 18–65, Advantage+ audience, köp via pixel ${M.pixel}, 7d klick)`);
-  else {
-    adset = await api(`act_${act}/adsets`, { form: {
+  else if (!skarpt || !kampanj) {
+    log(`torrt: skulle skapa adsetet ${k.adset} (${k.geo.join(',')}, 18–65, Advantage+ audience, köp via pixel ${M.pixel}, 7d klick${regional.regional_regulated_categories ? `, ${k.regional_regulated_categories.join(',')}` : ''})`);
+    if (verifieringSaknas) log(`⚠️ ${kod}: ${k.regional_regulated_categories.join(',')} kräver verifierad förmånstagare och betalare — id:na saknas i marknader.json (regional_beslut säger vägen); Meta vägrar adsetet tills bolaget är verifierat`);
+  } else {
+    try {
+      adset = await api(`act_${act}/adsets`, { form: {
       name: k.adset, campaign_id: kampanj.id, status: 'PAUSED', billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS', destination_type: 'WEBSITE',
       promoted_object: JSON.stringify({ pixel_id: M.pixel, custom_event_type: 'PURCHASE' }),
       attribution_spec: JSON.stringify([{ event_type: 'CLICK_THROUGH', window_days: 7 }]),
       targeting: JSON.stringify({ geo_locations: { countries: k.geo, location_types: ['home', 'recent', 'frequently_in'] }, age_min: 18, age_max: 65, targeting_automation: { advantage_audience: 1 } }),
       dsa_beneficiary: 'STonebite', dsa_payor: 'STonebite',
-    } });
-    log(`✅ adset skapat PAUSED: ${adset.id}`);
+      ...regional,
+      } });
+      log(`✅ adset skapat PAUSED: ${adset.id}`);
+    } catch (e) {
+      // Ett land som kräver verifierad annonsör stoppar bara sin egen marknad, aldrig --alla.
+      if (!arVerifieringsfel(e.message)) throw e;
+      log(`⛔ ${kod}: Meta vägrar adsetet tills bolaget är verifierad annonsör — ${e.message}`);
+      log('   Kampanjen står kvar PAUSED och tom. Vägen står i marknader.json → regional_beslut.');
+      const k3 = await api(kampanj.id, { params: { fields: 'id,name,status,effective_status,daily_budget' } });
+      return { kod, kampanj: k3, adset: null, annonser: [], stopp: 'verifierad annonsör saknas' };
+    }
+  }
+  if (adset && k.regional_regulated_categories?.length) {
+    // Adsetet kan ha skapats för hand i Ads Manager (med förmånstagare och betalare valda där).
+    // Läs vad det bär, så att id:na kan skrivas i marknader.json och nästa adset byggas via API.
+    const r = await api(adset.id, { params: { fields: 'regional_regulated_categories,regional_regulation_identities' } });
+    log(`adsetets reglering: ${JSON.stringify(r.regional_regulated_categories ?? [])} ${JSON.stringify(r.regional_regulation_identities ?? {})}`);
   }
 
   if (!A) log(`inga annonser: ${kod}.json saknas (copy skrivs av sonnet mot docs/copy-regler.md)`);
@@ -135,7 +212,10 @@ async function byggMarknad(kod) {
       const fil = kallfil(an) ? join(ROT, kallfil(an)) : null;
       const gammal = finns.find((x) => x.name === an.namn);
       if (gammal && bytText) {
-        const andrat = textSkillnad(an, gammal.creative?.object_story_spec);
+        // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida),
+        // och för en lånad annons: att den bär A-annonsens NUVARANDE video eller bild.
+        const story = gammal.creative?.object_story_spec;
+        const andrat = [...textSkillnad(an, story), ...identitetSkillnad(M, story), ...lankSkillnad(k, story), ...(lanad ? mediaSkillnad(videor[an.video_fran ?? an.bild_fran], story) : [])];
         if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
         if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
         if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
@@ -147,11 +227,11 @@ async function byggMarknad(kod) {
         await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
         const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
         if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
-        const kvar = textSkillnad(an, las.creative.object_story_spec);
+        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec), ...lankSkillnad(k, las.creative.object_story_spec), ...(lanad ? mediaSkillnad(v, las.creative.object_story_spec) : [])];
         if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
         videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
         sparaVideor();
-        log(`✅ ny text (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        log(`✅ nytt (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
         continue;
       }
       if (gammal) {

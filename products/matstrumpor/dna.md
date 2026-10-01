@@ -1,6 +1,6 @@
 # Creative DNA — Matstrumpor (Sushi-Strumpor)
 
-**Skapad 2026-09-21. Uppdaterad 2026-09-27, rond 3** (rond 2 var 2026-09-24,
+**Skapad 2026-09-21. Uppdaterad 2026-09-30, rond 4** (rond 2 var 2026-09-24,
 den första riktiga `/matstrumporkungen`-ronden). Allt nedan är avläst ur kontot "nya kungen"
 `730973156224390` (token, 7d_click), Shopify och Notion. Ingen siffra är
 hämtad ur en tidigare chatt, och ingen är uppskattad. Talen per annons står
@@ -183,6 +183,15 @@ arbetshypoteser tills kommentarerna går att läsa.
 ---
 
 ## Nästa steg (i ordning, vinst snabbast först)
+
+0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
+   `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;
+   `nya16` + `jul_video` fick 5 618 kr på 45 annonser, batch #1 35 kr på 11.
+   Katarina, uppladdad i `09-17 UGC`, fick ~290 kr per annons på sex dygn.
+   Förslaget till Axel: nya videor i `09-17 UGC`. Sex nya briefer (059–064)
+   bygger på Nathalie-kroppen och Axels egna kommentarer på miniklippen.
+   056 och 057 (levererade 27–29/9) fastnade i `Creative strat review` —
+   kön läser nu den statusen också.
 
 1. **Rond 2 (2026-09-24): sex briefer, omdöpta 27/9** — fyra iterationer på
    Nathalie (`054`–`057`, hette 048–051), en julbild (`058`, hette 052), en ny

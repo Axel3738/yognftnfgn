@@ -23,7 +23,11 @@ from pathlib import Path
 # norska och danska marknader, så øØæÆ hör hemma här. Allt annat är mojibake
 # eller ett tecken modellen hittat på.
 # ² hör hemma i svensk annonstext (m², 19,5 m² tak) och är inte mojibake.
-TILLATNA_ICKE_ASCII = set("åäöÅÄÖøØæÆôÔéÉüÜ–—·×→”“’…°²✅✓•")
+# "à" står i svensk styckeprisnotation: "9 stänger à 41 cm" (Sotarset_FD_4_4,
+# 2026-09-30). Kontrollen är en mojibake-vakt, inte en stavningsregel, och
+# tecknet finns i Liberation Sans — utan det här stoppades en rad som briefen
+# skrev ordagrant och som rutinen inte får skriva om.
+TILLATNA_ICKE_ASCII = set("åäöÅÄÖøØæÆôÔéÉüÜàÀ–—·×→”“’…°²✅✓•")
 
 # Förbud ur CLAUDE.md och ramverkets steg 7. Träff = stoppfel, inte varning.
 FORBUD = [

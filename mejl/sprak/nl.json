@@ -23,7 +23,7 @@
       "tips": "De tracking kan 2–4 dagen stilstaan terwijl het pakket naar het vliegveld gaat. Dat is helemaal normaal. Kijk daarna nog een keer.",
       "beraknad_rubrik": "Verwachte levering",
       "beraknad": "{{leverans_fran}}–{{leverans_till}}",
-      "tysta_dagar": "De tracking laat de eerste 2–4 dagen vaak niets zien. Het pakket is onderweg naar het vliegveld en dus niet kwijt. Je hoeft niets te doen: de status wordt bijgewerkt zodra het pakket is ingecheckt."
+      "tysta_dagar": "De tracking laat de eerste 2–4 dagen vaak niets zien. Het pakket is onderweg naar het vliegveld en dus niet kwijt. Je hoeft niets te doen: de status wordt bijgewerkt zodra het pakket is geregistreerd."
     },
     "fraktuppdatering": {
       "amne": ["Nieuws over je pakket", "Je tracking is bijgewerkt", "Update: {{ordernummer}}"],
@@ -36,7 +36,7 @@
       "amne": ["Je pakket komt vandaag", "De bezorger is onderweg naar je", "{{ordernummer}} wordt vandaag bezorgd"],
       "preheader": ["Houd je pakket vandaag in de gaten.", "Straks in je brievenbus of bij het afhaalpunt."],
       "rubrik": "Je pakket komt vandaag",
-      "intro": "Je bestelling {{ordernummer}} is onderweg voor levering en komt vandaag bij je aan.",
+      "intro": "Je bestelling {{ordernummer}} is bij de bezorger en komt vandaag aan.",
       "knapp": "Volg je pakket"
     }
   }

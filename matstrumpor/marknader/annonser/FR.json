@@ -1,30 +1,30 @@
 {
  "_om": "Annonstext (fr) för MATSTRUMP_FR_SALES, skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 4/4 ✅. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är FR-batchens (heygen/FR.json), klar/FR_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
- "instagram_user_id": "17841479011543544",
+ "instagram_user_id": "17841423405715219",
  "copy": {
-  "title": "Fou rire ce soir. À vos pieds demain.",
+  "title": "Fou rire ce soir. À porter dès demain.",
   "title_alt": [
    "Rire ce soir. Porté demain.",
    "Ça fait rire ce soir. Ça se porte demain."
   ],
-  "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
-  "link_description": "4 sortes. Achetez-en 1 – Recevez-en 1 GRATUIT. Livraison gratuite."
+  "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
+  "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
  },
  "annonser": [
   {
    "namn": "MATSTRUMP_FR_sushi_gift_ugc_001_v1",
    "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
    "video": "klar/FR_nathalie.mp4",
-   "title": "Fou rire ce soir. À vos pieds demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Fou rire ce soir. À porter dès demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
    "namn": "MATSTRUMP_FR_sushi_gift_ugc_002_v1",
    "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
    "video": "klar/FR_sofie_h1.mp4",
-   "title": "Rire ce soir. Porté demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Rire ce soir. À porter demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
@@ -32,39 +32,39 @@
    "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
    "video": "klar/FR_sofie_h2.mp4",
    "title": "Ça fait rire ce soir. Ça se porte demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
    "namn": "MATSTRUMP_FR_sushi_gift_anim_004_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_012v2_v1 (video 4323418044575220) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/FR_012v2.mp4",
-   "title": "Fou rire ce soir. À vos pieds demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Fou rire ce soir. À porter dès demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
    "namn": "MATSTRUMP_FR_sushi_gift_ugc_005_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1 (video 996449943431525) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/FR_haikuh3.mp4",
-   "title": "Fou rire ce soir. À vos pieds demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Fou rire ce soir. À porter dès demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
    "namn": "MATSTRUMP_FR_sushi_gift_ugc_006_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1 (video 3084560565211662) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/FR_haikuh2.mp4",
-   "title": "Fou rire ce soir. À vos pieds demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Fou rire ce soir. À porter dès demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {
    "namn": "MATSTRUMP_FR_sushi_gift_ugc_007_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_s001h1_v2 (video 1593728122281460) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/FR_s001h1.mp4",
-   "title": "Fou rire ce soir. À vos pieds demain.",
-   "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
+   "title": "Fou rire ce soir. À porter dès demain.",
+   "message": "Personne ne s'emballe pour une lessive. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires de chaussettes roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles se portent, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. 1 acheté – 1 offert. Livraison gratuite."
   },
   {

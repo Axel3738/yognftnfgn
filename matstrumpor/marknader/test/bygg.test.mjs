@@ -4,8 +4,9 @@ import { byggKarta, paraResurs, arLacka, fraktplan, fastPrisFor, LOCALES } from 
 import { granska, TILLATET_TOMT } from '../granska.mjs';
 import { KONFIG, raderUr, arText } from '../underlag.mjs';
 
-test('konfigen: elva språk, tre marknader, alla länder i exakt en marknad, fraktzonerna täcker samma länder', () => {
-  assert.deepEqual([...LOCALES].sort(), ['da', 'de', 'en', 'es', 'fi', 'fr', 'it', 'nb', 'nl', 'pl', 'pt-PT']);
+test('konfigen: tretton språk, fem marknader (Japan och Taiwan sedan 2026-09-30), alla länder i exakt en marknad, fraktzonerna täcker samma länder', () => {
+  assert.deepEqual([...LOCALES].sort(), ['da', 'de', 'en', 'es', 'fi', 'fr', 'it', 'ja', 'nb', 'nl', 'pl', 'pt-PT', 'zh-TW']);
+  assert.deepEqual(KONFIG.marknader.map((m) => m.basvaluta), ['NOK', 'EUR', 'USD', 'JPY', 'TWD']);
   const lander = KONFIG.marknader.flatMap((m) => m.lander);
   assert.equal(new Set(lander).size, lander.length);
   assert.ok(!lander.includes('SE'));

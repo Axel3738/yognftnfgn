@@ -133,13 +133,23 @@ function versalandel(text) {
   return ord.filter((o) => o === o.toUpperCase()).length / ord.length;
 }
 
+// Svar eller vidarebefordran: Re:/Sv:/Vs:/AW:/Fwd:/Fw:/VB:/Antw: (flera i rad).
+const SVARSAMNE = /^\s*(\[[^\]]*\]\s*)?((re|sv|vs|aw|fwd?|fw|vb|antw|svar)\s*(\[\d+\])?\s*:\s*)+/i;
+/** Är ämnet ett svar/vidarebefordran (alltså någon annans rubrik)? Ren. */
+export function arSvarsamne(amne) {
+  return SVARSAMNE.test(String(amne ?? ''));
+}
+
 /**
  * Är mejlet argt? Ren. `klass` är klassificera(); `trad` bär
  * antalInkommande/antalSvar för tråden.
  */
 export function arArg({ klass, amne = '', text = '', trad = null } = {}) {
   const orsaker = [];
-  const a = normalisera(amne);
+  // Ett SVARS-ämne ("Re: Landade skämtet, eller inte?") är butikens egna ord, inte kundens —
+  // Matstrumpors recensionsförfrågan i Spoks bär ordet "skämt", så varje svar på den startade
+  // som ARG (mätt 2026-09-30). Ilskeorden prövas därför bara mot ämnen kunden skrivit själv.
+  const a = arSvarsamne(amne) ? '' : normalisera(amne);
   const t = normalisera(text);
   // Bara ilskans EGNA tecken. "ej_levererad" och "skadad_defekt" räknades som
   // arga i sig till 2026-09-22 — då fick ett artigt "överdraget är för litet"
@@ -271,6 +281,15 @@ const SALJFRASER = [
   /shopify (website |store )?(expert|developer)/, /\bcommission\b/, /profit margin/, /seasonal promotion/,
   /(increase|boost) (your )?sales/, /brand awareness/, /drive (significant )?engagement/, /digital agency/, /web design/,
   /overseas warehouse/, /test order/,
+  // Byråer och SaaS-säljare (2026-09-30). En AI-annonsbyrå ("Your copy is funnier than your ad", Matstrumpor
+  // 2026-09-25) fick eskaleringsmallen i torrläge — ordet "joke" i komplimangen blev ARG, och ingen fras ovan
+  // träffade. Klaviyos säljare 2026-09-30 räddades bara av ordet "unsubscribe" i en länk. Två fraser krävs fortfarande.
+  /examples? of (our|my) work/, /would you be open to (seeing|hearing|a (quick |short )?(call|chat|concept|demo|look))/,
+  /reply .{0,3}no thanks/, /\b(ai|ugc|video) (product )?(ads|creatives?)\b/, /quick concept/,
+  /growth specialist/, /account executive/, /partnership (manager|specialist)/, /business development/,
+  /book (a )?(time|call|meeting) (on|in) my calendar/, /schedule a (quick |short )?(call|chat|meeting)/, /when works best/,
+  /follow(ing)? up on my (last|previous|earlier) (message|e-?mail|note)/, /before upgrading/, /upgrade your (plan|account)/,
+  /exempel på (vårt|mitt) arbete/, /boka (ett )?(kort |snabbt )?(möte|samtal)/,
 ];
 
 /** Är mejlet en säljpitch till butiken? Två fraser, inget ordernummer. Ren. */

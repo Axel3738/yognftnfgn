@@ -1,0 +1,78 @@
+[
+ {
+  "box": [
+   64,
+   62,
+   1016,
+   142
+  ],
+  "fet": true,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 71,
+  "text": "Fra høst til vår, på din plass"
+ },
+ {
+  "box": [
+   128,
+   178,
+   947,
+   225
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 187,
+  "text": "Tung, våt snø måkes av, akkurat som uten trekk."
+ },
+ {
+  "box": [
+   360,
+   962,
+   723,
+   1033
+  ],
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 971,
+  "text": "1 189 kr"
+ },
+ {
+  "box": [
+   225,
+   1084,
+   853,
+   1134
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 1093,
+  "text": "(før 1 549 kr), spar 360 kr (23 %)"
+ },
+ {
+  "box": [
+   300,
+   1202,
+   780,
+   1308
+  ]
+ }
+]

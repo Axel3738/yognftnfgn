@@ -1,0 +1,78 @@
+[
+ {
+  "box": [
+   152,
+   66,
+   926,
+   134
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "1 039 kr, før 1 359 kr"
+ },
+ {
+  "box": [
+   245,
+   172,
+   833,
+   219
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 181,
+  "text": "30 deler i en veske med glidelås"
+ },
+ {
+  "box": [
+   380,
+   969,
+   700,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "1 039 kr"
+ },
+ {
+  "box": [
+   259,
+   1089,
+   818,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "Før 1 359 kr. Spar 320 kr."
+ },
+ {
+  "box": [
+   331,
+   1206,
+   749,
+   1308
+  ]
+ }
+]

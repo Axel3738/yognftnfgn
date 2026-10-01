@@ -1,0 +1,29 @@
+{
+  "_om": "Köparenkäten. Axels beslut A 2026-10-01: bara Matstrumpor, ingen belöning. Planen och skälen: docs/os/evolve/ENKAT.md.",
+  "version": "ENKAT-v1",
+  "butik": "matstrumpor",
+  "brand": "matstrumpor",
+  "handle": "enkat",
+  "mallsuffix": "enkat",
+  "titel": "Tre snabba frågor",
+  "noreply": "noreply@matstrumpor.se",
+  "sajt": "https://matstrumpor.se",
+  "orderbekraftelse_id": "gid://shopify/EmailTemplate/126543593811",
+  "orderbekraftelse_ankare": "<table class=\"row footer\">",
+  "mapp": "ENKAT",
+  "sidor_att_lasa": 3,
+  "fragor": [
+    { "nr": 1, "falt": "Fraga 1", "text": "Vad hände som gjorde att du köpte det här just nu?", "matar": "begär, vinkel, cold hook, avatar" },
+    { "nr": 2, "falt": "Fraga 2", "text": "Var såg du produkten? Skriv gärna vilken app eller sida, eller vem som tipsade dig.", "matar": "kanal; köpare som kom utanför annonserna" },
+    { "nr": 3, "falt": "Fraga 3", "text": "Köpte du det till dig själv eller till någon annan? Om det är en present: till vem (till exempel pappa, en vän, en kollega) och vid vilket tillfälle?", "matar": "avatar när köparen inte är användaren, presentvinklar, tillfällen" }
+  ],
+  "reserv": {
+    "ersatter": 2,
+    "falt": "Fraga 2",
+    "text": "Var det något som nästan fick dig att låta bli att köpa?",
+    "regel": "Säger minst 80 % av de 50 första svaren på fråga 2 bara Facebook, Instagram eller annons, byts fråga 2 mot den här (Axels val A). Stöd: Chrisphillips fjärde fråga [C5], Dec 5 [18:40].",
+    "aktiv": false
+  },
+  "butiksord": ["matstrumpor\\.(?:se|com|no|eu)", "matstrumpor(?:-?klubben)?", "sushisock(?:\\.com)?"],
+  "gallring_manader": 12
+}

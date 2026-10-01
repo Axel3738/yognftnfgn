@@ -1,0 +1,95 @@
+[
+ {
+  "box": [
+   234,
+   66,
+   846,
+   126
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "30 deler i en veske"
+ },
+ {
+  "box": [
+   51,
+   172,
+   1026,
+   219
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 181,
+  "text": "6 kniver, 6 jern, bladvern, lærstrop, polermiddel, slipepapir,"
+ },
+ {
+  "box": [
+   353,
+   224,
+   725,
+   264
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 233,
+  "text": "trebit og hansker"
+ },
+ {
+  "box": [
+   380,
+   969,
+   700,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "1 039 kr"
+ },
+ {
+  "box": [
+   358,
+   1089,
+   717,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "Før 1 359 kr."
+ },
+ {
+  "box": [
+   305,
+   1206,
+   776,
+   1308
+  ]
+ }
+]

@@ -37,7 +37,7 @@
   },
   {
    "a": 4.0,
-   "b": 6.1,
+   "b": 6.06,
    "ruta": [
     134,
     590,
@@ -52,7 +52,7 @@
    ]
   },
   {
-   "a": 6.1,
+   "a": 6.06,
    "b": 8.0,
    "ruta": [
     96,
@@ -115,5 +115,6 @@
     38
    ]
   }
- ]
+ ],
+ "not_2026_09_30": "Gränsen mellan ruta 3 och 4 flyttad 6.1 → 6.06 s: källans ruta 4 kommer på bildruta 152 (6,08 s vid 25 fps), mätt ruta för ruta med orange-andelen i rutan. Med 6.1 syntes källans svenska 'Ingen får låna din.' en bildruta i alla språk (granskningen G-B04). Övriga gränser (2,0/4,0/8,0/10,0/12,0) ligger exakt på källans bytesrutor 50/100/200/250/300. textbyte.py tänder en ruta med gte(t,a)*lt(t,b), så en gräns mitt mellan två bildrutor är entydig."
 }

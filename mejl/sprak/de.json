@@ -23,7 +23,7 @@
       "tips": "Der Sendungsstatus kann 2–4 Tage unverändert bleiben, während das Paket zum Flughafen unterwegs ist. Das ist völlig normal. Schau danach noch einmal nach.",
       "beraknad_rubrik": "Voraussichtliche Lieferung",
       "beraknad": "{{leverans_fran}}–{{leverans_till}}",
-      "tysta_dagar": "Die Sendungsverfolgung zeigt in den ersten 2–4 Tagen oft noch nichts an. Das Paket ist auf dem Weg zum Flughafen und nicht verloren gegangen. Du musst nichts tun: Sobald es eingecheckt ist, wird der Status aktualisiert."
+      "tysta_dagar": "Die Sendungsverfolgung zeigt in den ersten 2–4 Tagen oft noch nichts an. Das Paket ist auf dem Weg zum Flughafen und nicht verloren gegangen. Du musst nichts tun: Sobald es erfasst wurde, wird der Status aktualisiert."
     },
     "fraktuppdatering": {
       "amne": ["Neues zu deinem Paket", "Tracking wurde aktualisiert", "Update: {{ordernummer}}"],
@@ -34,9 +34,9 @@
     },
     "ute_for_leverans": {
       "amne": ["Dein Paket kommt heute", "Jetzt in der Zustellung", "{{ordernummer}} wird heute geliefert"],
-      "preheader": ["Halte im Lauf des Tages Ausschau.", "Bald im Briefkasten oder im Paketshop."],
+      "preheader": ["Halte im Laufe des Tages Ausschau.", "Bald im Briefkasten oder im Paketshop."],
       "rubrik": "Dein Paket kommt heute",
-      "intro": "Deine Bestellung {{ordernummer}} ist in der Zustellung und kommt im Lauf des Tages bei dir an.",
+      "intro": "Deine Bestellung {{ordernummer}} ist in der Zustellung und kommt im Laufe des Tages bei dir an.",
       "knapp": "Paket verfolgen"
     }
   }

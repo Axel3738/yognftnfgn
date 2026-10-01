@@ -43,8 +43,12 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
-  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal, tiderna hos dem och andelen matchande rutor.
-  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)[\s\S]*?and (\d+)% of the reported video/);
+  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal och tiderna hos dem. Ingen andel sedan 2026-09-29:
+  // den räknade hela våra filmer som våra, även klipp vi lånat (Eoka AB:s bestridande).
+  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/)
+    ?? f.contentDescription?.match(/video is a re-upload of our own ad film[\s\S]*?(\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/);
+  // Anspråket 'redigering' (anmalan.mjs): vår färdiga annons uppladdad igen — vi gör anspråk på klippningen och texten, inte på filmklippen.
+  const redigering = a.ansprak === 'redigering' || /video is a re-upload of our own ad film/.test(f.contentDescription ?? '');
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
   // Källan: filmerna paren kommer ur (anmalan.mjs lägger dem som fält), annars annonsen texten/bilden kommer ur.
   const filmer = Array.isArray(a.filmer) && a.filmer.length ? a.filmer : null;
@@ -55,9 +59,9 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const org = Array.isArray(a.originaler) ? a.originaler.filter((o) => o?.lank) : [];
   // Kortas i steg när 500 inte räcker — länk-/filmlistan och etiketterna först, så att referensen i slutet alltid får plats
   // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
-  const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true } = {}) => [
-    m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours; ${klipp[3]}% of its frames match our film${flera}.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
+  const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true, citat = true } = {}) => [
+    m ? (citat ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : `Verbatim copy of our ad copy: ${m[2]} consecutive identical words.`) : null,
+    klipp && redigering ? `Its video is a re-upload of our ad film${flera} (same edit, our on-screen text): ${klipp[1]} stills${tider ? ` (at ${klipp[2]})` : ''} are identical. We claim the edit and text only.` : klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
     !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
     org.length
       ? `Original: our ad${Math.min(org.length, antalFilmer) > 1 ? 's' : ''} in the Ad Library ${org.slice(0, antalFilmer).map((o) => o.lank).join(' ')}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published by us before this ad.`
@@ -75,6 +79,8 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   for (const o of steg) { text = bygg(passage, o); if (text.length <= max) break; }
   const sista = steg.at(-1);
   while (text.length > max && passage.length > 20) { passage = korta(passage, passage.length - 20); text = bygg(passage, sista); }
+  // Räcker det ändå inte går citatet (antalet ord står kvar) — referensen i slutet klipps aldrig (Bustatio 2026-09-30: "Ref…").
+  if (text.length > max) text = bygg(passage, { ...sista, citat: false });
   return text.length > max ? korta(text, max) : text;
 }
 
@@ -102,10 +108,13 @@ export function formularVarden(a, { land = 'Sweden' } = {}) {
  * när Meta kräver en säkerhetskontroll (captcha) vid Submit, som bara en
  * människa får göra (mätt 2026-09-29). Cowork fyller i exakt det Axel godkänt,
  * Axel gör säkerhetskontrollen själv. `anmalningar`: [{ nr, antal, formular, v }]
- * där v är formularVarden(). Ren.
+ * där v är formularVarden(). `klara`: numren som redan är skickade och inte står i
+ * prompten — en ny Cowork-chatt minns inget (Axel tappade sessionen 2026-09-30). Ren.
  */
-export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden' }) {
+export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden', klara = [] }) {
   const n = anmalningar.length;
+  const listan = (nr) => (nr.length > 1 ? `${nr.slice(0, -1).join(', ')} och ${nr.at(-1)}` : `${nr[0]}`);
+  const redan = klara.length ? ` Anmälan ${listan(klara)} är redan skickade. Skicka dem aldrig igen.` : '';
   const block = anmalningar.map(({ nr, antal, v }) => [
     `===== ANMÄLAN ${nr} av ${antal} =====`,
     `Fält "Provide the URLs/IDs leading directly to the content that you're reporting":`,
@@ -119,13 +128,16 @@ export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden'
     `Fält "Electronic signature": ${v.signatur}`,
   ].join('\n')).join('\n\n');
   const forsta = anmalningar[0];
-  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.
+  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, ärende ${arende}${sida ? ` (Facebooksidan ${sida})` : ''}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.${redan}
+
+FÖRST
+Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."
 
 REGLER
 1. En anmälan i taget, i nummerordning. Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
 2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
 3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
-4. Knappen "Request code": Meta mejlar en kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'}. Öppna Gmail i en ny flik med det kontot, ta koden ur det senaste mejlet "Please verify your email address" från Meta och skriv in den. Syns ingen sådan knapp: fortsätt.
+4. Knappen "Request code" ("Begär kod"): Meta mejlar en ny kod till ${forsta?.v?.epost ?? 'axel.odhner@stonebite.org'} för varje anmälan. Mejlet kommer från notification@email.meta.com och heter "Please verify your email address" eller "Verifiera din e-postadress". Öppna Gmail i en ny flik med just det kontot och ta koden ur det senaste mejlet. Är Gmail inloggat som ett annat konto: STANNA och skriv till Axel: "Jag behöver koden till anmälan <nr>." Vänta på svaret, för Axel hämtar koden från Claude. Syns ingen sådan knapp: fortsätt.
 5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
 6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
 7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.

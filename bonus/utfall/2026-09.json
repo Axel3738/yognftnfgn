@@ -17,7 +17,7 @@
   }
  },
  "valuta": "USD",
- "summa": 764.18,
+ "summa": 832.47,
  "utbetalningar": {
   "produkttest": {
    "namn": "Produkttest",
@@ -34,8 +34,8 @@
     }
    },
    "forsta": 480,
-   "andra": 120,
-   "summa": 600,
+   "andra": 180,
+   "summa": 660,
    "personer": {
     "forsta": 2,
     "andra": 2
@@ -60,11 +60,11 @@
     "namn": "Commission",
     "betalas": "Calculated separately by the commission run — the same figure as on the leaderboard."
    },
-   "summa": 164.18,
+   "summa": 172.47,
    "personer": 6
   }
  },
- "raknat": "2026-09-28T17:17:50.465Z",
+ "raknat": "2026-10-01T00:12:37.592Z",
  "kallor": [
   {
    "id": "kundtjanst",
@@ -82,7 +82,7 @@
    "id": "judge.me",
    "status": "ok",
    "orsak": null,
-   "antal": 1318
+   "antal": 1378
   },
   {
    "id": "trustpilot",
@@ -94,14 +94,14 @@
    "id": "produkttest",
    "status": "ok",
    "orsak": null,
-   "antal": 73
+   "antal": 80
   }
  ],
  "matningar": {
-  "recensioner": 1318,
+  "recensioner": 1378,
   "tvister": 27,
   "veckor": 4,
-  "produkttest": 73
+  "produkttest": 80
  },
  "personer": [
   {
@@ -112,21 +112,39 @@
     "produkttest"
    ],
    "valuta": "USD",
-   "summa": 390.88,
+   "summa": 437.55,
    "rader": [
     {
      "uppdrag": "produkt_fardig",
      "namn": "Färdig produkt",
      "enhet": "per produkt",
      "utbetalning": "produkttest",
-     "antal": 22,
-     "summa": 330,
+     "antal": 25,
+     "summa": 375,
      "bevis": [
+      {
+       "vad": "13 Ädelstenskalendern",
+       "datum": "2026-09-23",
+       "text": "Ads review · Video - Pending Approval",
+       "lank": "https://app.notion.com/p/13-delstenskalendern-3e4270ab908c8105a774f0f94ee54113"
+      },
       {
        "vad": "11 Maskinhyllan",
        "datum": "2026-09-23",
        "text": "Ads review · Video - Pending Approval",
        "lank": "https://app.notion.com/p/11-Maskinhyllan-3e4270ab908c818d974dc62bc63d7dee"
+      },
+      {
+       "vad": "11 Kamadohuven",
+       "datum": "2026-09-23",
+       "text": "Ads review · Video - Pending Approval",
+       "lank": "https://app.notion.com/p/11-Kamadohuven-3e4270ab908c81dfa452cb11dacc51b8"
+      },
+      {
+       "vad": "12 Radiostyrd offroadbil 1:16",
+       "datum": "2026-09-23",
+       "text": "Ads review · Video - Pending Approval",
+       "lank": "https://app.notion.com/p/12-Radiostyrd-offroadbil-1-16-3e4270ab908c8180818ad372630d9c09"
       },
       {
        "vad": "12 Radiostyrd driftbil 1:24",
@@ -163,33 +181,15 @@
        "datum": "2026-09-14",
        "text": "Ads review · Video - Pending Approval",
        "lank": "https://app.notion.com/p/10-F-gelmatare-med-kamera-3db270ab908c8164aea2df94bedf8df5"
-      },
-      {
-       "vad": "9 Solcellsladdare 10 W",
-       "datum": "2026-09-12",
-       "text": "Ads review · Video - Pending Approval",
-       "lank": "https://app.notion.com/p/9-Solcellsladdare-10-W-3d9270ab908c812cbf60db053ccfbbed"
-      },
-      {
-       "vad": "10 ATV-kapell 3XL",
-       "datum": "2026-09-12",
-       "text": "Ads review · Video - Pending Approval",
-       "lank": "https://app.notion.com/p/10-ATV-kapell-3XL-3d9270ab908c814ca15cc21bda724c96"
-      },
-      {
-       "vad": "10 Motorlås utombordare",
-       "datum": "2026-09-12",
-       "text": "Ads review · Video - Pending Approval",
-       "lank": "https://app.notion.com/p/10-Motorl-s-utombordare-3d9270ab908c8153b31fcb82404ac025"
       }
      ],
      "halvor": {
       "forsta": 240,
-      "andra": 90
+      "andra": 135
      },
      "halvorAntal": {
       "forsta": 16,
-      "andra": 6
+      "andra": 9
      }
     },
     {
@@ -198,11 +198,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 60.88,
+     "summa": 62.55,
      "bevis": [
       {
-       "vad": "277 annonser",
-       "datum": "2026-09-28",
+       "vad": "285 annonser",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -227,8 +227,8 @@
     "produkttest": {
      "takt": "halvmanad",
      "forsta": 240,
-     "andra": 90,
-     "summa": 330
+     "andra": 135,
+     "summa": 375
     },
     "bonus": {
      "takt": "manad",
@@ -236,7 +236,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 60.88
+     "summa": 62.55
     }
    }
   },
@@ -248,16 +248,22 @@
     "produkttest"
    ],
    "valuta": "USD",
-   "summa": 300.7,
+   "summa": 317.34,
    "rader": [
     {
      "uppdrag": "produkt_fardig",
      "namn": "Färdig produkt",
      "enhet": "per produkt",
      "utbetalning": "produkttest",
-     "antal": 18,
-     "summa": 270,
+     "antal": 19,
+     "summa": 285,
      "bevis": [
+      {
+       "vad": "13 Regntunnehuven",
+       "datum": "2026-09-23",
+       "text": "Ads review · Video - Pending Approval",
+       "lank": "https://app.notion.com/p/13-Regntunnehuven-3e4270ab908c81d1ad58d6ced7a9de0e"
+      },
       {
        "vad": "11 Värmesulorna",
        "datum": "2026-09-23",
@@ -311,21 +317,15 @@
        "datum": "2026-09-11",
        "text": "Ads review · Video - Pending Approval",
        "lank": "https://app.notion.com/p/8-Sotarset-B-jliga-St-nger-3d8270ab908c8175ab6bccfeec3bc967"
-      },
-      {
-       "vad": "8 Solcellslampa 210 LED Sensor",
-       "datum": "2026-09-11",
-       "text": "Ads review · Video - Pending Approval",
-       "lank": "https://app.notion.com/p/8-Solcellslampa-210-LED-Sensor-3d8270ab908c81b5bdfffc417f8fd125"
       }
      ],
      "halvor": {
       "forsta": 240,
-      "andra": 30
+      "andra": 45
      },
      "halvorAntal": {
       "forsta": 16,
-      "andra": 2
+      "andra": 3
      }
     },
     {
@@ -334,11 +334,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 30.7,
+     "summa": 32.34,
      "bevis": [
       {
-       "vad": "161 annonser",
-       "datum": "2026-09-28",
+       "vad": "164 annonser",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -363,8 +363,8 @@
     "produkttest": {
      "takt": "halvmanad",
      "forsta": 240,
-     "andra": 30,
-     "summa": 270
+     "andra": 45,
+     "summa": 285
     },
     "bonus": {
      "takt": "manad",
@@ -372,7 +372,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 30.7
+     "summa": 32.34
     }
    }
   },
@@ -382,7 +382,7 @@
    "roll": "redigerare",
    "extraRoller": [],
    "valuta": "USD",
-   "summa": 44.14,
+   "summa": 45.94,
    "rader": [
     {
      "uppdrag": "spend_andel",
@@ -390,11 +390,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 44.14,
+     "summa": 45.94,
      "bevis": [
       {
-       "vad": "101 annonser",
-       "datum": "2026-09-28",
+       "vad": "106 annonser",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -424,7 +424,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 44.14
+     "summa": 45.94
     }
    }
   },
@@ -434,7 +434,7 @@
    "roll": "redigerare",
    "extraRoller": [],
    "valuta": "USD",
-   "summa": 16.33,
+   "summa": 17.83,
    "rader": [
     {
      "uppdrag": "spend_andel",
@@ -442,11 +442,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 16.33,
+     "summa": 17.83,
      "bevis": [
       {
        "vad": "70 annonser",
-       "datum": "2026-09-28",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -476,7 +476,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 16.33
+     "summa": 17.83
     }
    }
   },
@@ -486,7 +486,7 @@
    "roll": "redigerare",
    "extraRoller": [],
    "valuta": "USD",
-   "summa": 7.49,
+   "summa": 7.78,
    "rader": [
     {
      "uppdrag": "spend_andel",
@@ -494,11 +494,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 7.49,
+     "summa": 7.78,
      "bevis": [
       {
-       "vad": "56 annonser",
-       "datum": "2026-09-28",
+       "vad": "60 annonser",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -528,7 +528,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 7.49
+     "summa": 7.78
     }
    }
   },
@@ -538,7 +538,7 @@
    "roll": "redigerare",
    "extraRoller": [],
    "valuta": "USD",
-   "summa": 4.64,
+   "summa": 6.03,
    "rader": [
     {
      "uppdrag": "spend_andel",
@@ -546,11 +546,11 @@
      "enhet": "0,4 % av spenden på dina annonser",
      "utbetalning": "commission",
      "antal": 1,
-     "summa": 4.64,
+     "summa": 6.03,
      "bevis": [
       {
-       "vad": "106 annonser",
-       "datum": "2026-09-28",
+       "vad": "133 annonser",
+       "datum": "2026-09-30",
        "text": "Andel av annonsspenden",
        "lank": ""
       }
@@ -580,7 +580,7 @@
     },
     "commission": {
      "takt": "manad",
-     "summa": 4.64
+     "summa": 6.03
     }
    }
   },
@@ -682,13 +682,13 @@
   {
    "uppdrag": "recension_med_namn",
    "orsak": "inget (eller flera) namn i texten",
-   "antal": 773,
+   "antal": 879,
    "summa": 0
   },
   {
    "uppdrag": "produkt_fardig",
    "orsak": "ingen Ansvarig i Notion",
-   "antal": 2,
+   "antal": 5,
    "summa": 0
   }
  ]

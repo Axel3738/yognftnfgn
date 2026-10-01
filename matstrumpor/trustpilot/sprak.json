@@ -1,122 +1,142 @@
 {
-  "sv": {
-    "eyebrow": "Omdömen på Trustpilot",
-    "heading": "Vad kunderna säger",
-    "av5": "av 5",
-    "omdomen": "omdömen",
-    "pa_trustpilot": "på Trustpilot",
-    "baserat": "Baserat på {n} omdömen",
-    "knapp": "Läs alla omdömen på Trustpilot",
-    "las": "Läs på Trustpilot"
-  },
-  "nb": {
-    "eyebrow": "Omtaler på Trustpilot",
-    "heading": "Hva kundene sier",
-    "av5": "av 5",
-    "omdomen": "omtaler",
-    "pa_trustpilot": "på Trustpilot",
-    "baserat": "Basert på {n} omtaler",
-    "knapp": "Les alle omtaler på Trustpilot",
-    "las": "Les på Trustpilot"
-  },
-  "da": {
-    "eyebrow": "Anmeldelser på Trustpilot",
-    "heading": "Det siger kunderne",
-    "av5": "af 5",
-    "omdomen": "anmeldelser",
-    "pa_trustpilot": "på Trustpilot",
-    "baserat": "Baseret på {n} anmeldelser",
-    "knapp": "Læs alle anmeldelser på Trustpilot",
-    "las": "Læs på Trustpilot"
-  },
-  "fi": {
-    "eyebrow": "Arvostelut Trustpilotissa",
-    "heading": "Mitä asiakkaat sanovat",
-    "av5": "/ 5",
-    "omdomen": "arvostelua",
-    "pa_trustpilot": "Trustpilotissa",
-    "baserat": "Perustuu {n} arvosteluun",
-    "knapp": "Lue kaikki arvostelut Trustpilotissa",
-    "las": "Lue Trustpilotissa"
-  },
-  "en": {
-    "eyebrow": "Reviews on Trustpilot",
-    "heading": "What our customers say",
-    "av5": "out of 5",
-    "omdomen": "reviews",
-    "pa_trustpilot": "on Trustpilot",
-    "baserat": "Based on {n} reviews",
-    "knapp": "Read all reviews on Trustpilot",
-    "las": "Read on Trustpilot"
-  },
-  "de": {
-    "eyebrow": "Bewertungen auf Trustpilot",
-    "heading": "Das sagen unsere Kunden",
-    "av5": "von 5",
-    "omdomen": "Bewertungen",
-    "pa_trustpilot": "auf Trustpilot",
-    "baserat": "Basierend auf {n} Bewertungen",
-    "knapp": "Alle Bewertungen auf Trustpilot lesen",
-    "las": "Auf Trustpilot lesen"
-  },
-  "fr": {
-    "eyebrow": "Avis sur Trustpilot",
-    "heading": "Ce que disent nos clients",
-    "av5": "sur 5",
-    "omdomen": "avis",
-    "pa_trustpilot": "sur Trustpilot",
-    "baserat": "Basé sur {n} avis",
-    "knapp": "Lire tous les avis sur Trustpilot",
-    "las": "Lire sur Trustpilot"
-  },
-  "nl": {
-    "eyebrow": "Beoordelingen op Trustpilot",
-    "heading": "Wat klanten zeggen",
-    "av5": "van 5",
-    "omdomen": "beoordelingen",
-    "pa_trustpilot": "op Trustpilot",
-    "baserat": "Gebaseerd op {n} beoordelingen",
-    "knapp": "Lees alle beoordelingen op Trustpilot",
-    "las": "Lees op Trustpilot"
-  },
-  "es": {
-    "eyebrow": "Opiniones en Trustpilot",
-    "heading": "Lo que dicen los clientes",
-    "av5": "de 5",
-    "omdomen": "opiniones",
-    "pa_trustpilot": "en Trustpilot",
-    "baserat": "Basado en {n} opiniones",
-    "knapp": "Leer todas las opiniones en Trustpilot",
-    "las": "Leer en Trustpilot"
-  },
-  "it": {
-    "eyebrow": "Recensioni su Trustpilot",
-    "heading": "Cosa dicono i clienti",
-    "av5": "su 5",
-    "omdomen": "recensioni",
-    "pa_trustpilot": "su Trustpilot",
-    "baserat": "Basato su {n} recensioni",
-    "knapp": "Leggi tutte le recensioni su Trustpilot",
-    "las": "Leggi su Trustpilot"
-  },
-  "pl": {
-    "eyebrow": "Opinie na Trustpilot",
-    "heading": "Co mówią klienci",
-    "av5": "na 5",
-    "omdomen": "opinii",
-    "pa_trustpilot": "na Trustpilot",
-    "baserat": "Na podstawie {n} opinii",
-    "knapp": "Przeczytaj wszystkie opinie na Trustpilot",
-    "las": "Przeczytaj na Trustpilot"
-  },
-  "pt-PT": {
-    "eyebrow": "Opiniões no Trustpilot",
-    "heading": "O que dizem os clientes",
-    "av5": "de 5",
-    "omdomen": "opiniões",
-    "pa_trustpilot": "no Trustpilot",
-    "baserat": "Com base em {n} opiniões",
-    "knapp": "Ler todas as opiniões no Trustpilot",
-    "las": "Ler no Trustpilot"
-  }
+ "sv": {
+  "eyebrow": "Omdömen på Trustpilot",
+  "heading": "Vad kunderna säger",
+  "av5": "av 5",
+  "omdomen": "omdömen",
+  "pa_trustpilot": "på Trustpilot",
+  "baserat": "Baserat på {n} omdömen",
+  "knapp": "Läs alla omdömen på Trustpilot",
+  "las": "Läs på Trustpilot"
+ },
+ "nb": {
+  "eyebrow": "Omtaler på Trustpilot",
+  "heading": "Hva kundene sier",
+  "av5": "av 5",
+  "omdomen": "omtaler",
+  "pa_trustpilot": "på Trustpilot",
+  "baserat": "Basert på {n} omtaler",
+  "knapp": "Les alle omtaler på Trustpilot",
+  "las": "Les på Trustpilot"
+ },
+ "da": {
+  "eyebrow": "Anmeldelser på Trustpilot",
+  "heading": "Det siger kunderne",
+  "av5": "af 5",
+  "omdomen": "anmeldelser",
+  "pa_trustpilot": "på Trustpilot",
+  "baserat": "Baseret på {n} anmeldelser",
+  "knapp": "Læs alle anmeldelser på Trustpilot",
+  "las": "Læs på Trustpilot"
+ },
+ "fi": {
+  "eyebrow": "Arvostelut Trustpilotissa",
+  "heading": "Mitä asiakkaat sanovat",
+  "av5": "/ 5",
+  "omdomen": "arvostelua",
+  "pa_trustpilot": "Trustpilotissa",
+  "baserat": "Perustuu {n} arvosteluun",
+  "knapp": "Lue kaikki arvostelut Trustpilotissa",
+  "las": "Lue Trustpilotissa"
+ },
+ "en": {
+  "eyebrow": "Reviews on Trustpilot",
+  "heading": "What our customers say",
+  "av5": "out of 5",
+  "omdomen": "reviews",
+  "pa_trustpilot": "on Trustpilot",
+  "baserat": "Based on {n} reviews",
+  "knapp": "Read all reviews on Trustpilot",
+  "las": "Read on Trustpilot"
+ },
+ "de": {
+  "eyebrow": "Bewertungen auf Trustpilot",
+  "heading": "Das sagen unsere Kunden",
+  "av5": "von 5",
+  "omdomen": "Bewertungen",
+  "pa_trustpilot": "auf Trustpilot",
+  "baserat": "Basierend auf {n} Bewertungen",
+  "knapp": "Alle Bewertungen auf Trustpilot lesen",
+  "las": "Auf Trustpilot lesen"
+ },
+ "fr": {
+  "eyebrow": "Avis sur Trustpilot",
+  "heading": "Ce que disent nos clients",
+  "av5": "sur 5",
+  "omdomen": "avis",
+  "pa_trustpilot": "sur Trustpilot",
+  "baserat": "Basé sur {n} avis",
+  "knapp": "Lire tous les avis sur Trustpilot",
+  "las": "Lire sur Trustpilot"
+ },
+ "nl": {
+  "eyebrow": "Beoordelingen op Trustpilot",
+  "heading": "Wat klanten zeggen",
+  "av5": "van 5",
+  "omdomen": "beoordelingen",
+  "pa_trustpilot": "op Trustpilot",
+  "baserat": "Gebaseerd op {n} beoordelingen",
+  "knapp": "Lees alle beoordelingen op Trustpilot",
+  "las": "Lees op Trustpilot"
+ },
+ "es": {
+  "eyebrow": "Opiniones en Trustpilot",
+  "heading": "Lo que dicen los clientes",
+  "av5": "de 5",
+  "omdomen": "opiniones",
+  "pa_trustpilot": "en Trustpilot",
+  "baserat": "Basado en {n} opiniones",
+  "knapp": "Leer todas las opiniones en Trustpilot",
+  "las": "Leer en Trustpilot"
+ },
+ "it": {
+  "eyebrow": "Recensioni su Trustpilot",
+  "heading": "Cosa dicono i clienti",
+  "av5": "su 5",
+  "omdomen": "recensioni",
+  "pa_trustpilot": "su Trustpilot",
+  "baserat": "Basato su {n} recensioni",
+  "knapp": "Leggi tutte le recensioni su Trustpilot",
+  "las": "Leggi su Trustpilot"
+ },
+ "pl": {
+  "eyebrow": "Opinie na Trustpilot",
+  "heading": "Co mówią klienci",
+  "av5": "na 5",
+  "omdomen": "opinii",
+  "pa_trustpilot": "na Trustpilot",
+  "baserat": "Na podstawie {n} opinii",
+  "knapp": "Przeczytaj wszystkie opinie na Trustpilot",
+  "las": "Przeczytaj na Trustpilot"
+ },
+ "pt-PT": {
+  "eyebrow": "Opiniões no Trustpilot",
+  "heading": "O que dizem os clientes",
+  "av5": "de 5",
+  "omdomen": "opiniões",
+  "pa_trustpilot": "no Trustpilot",
+  "baserat": "Com base em {n} opiniões",
+  "knapp": "Ler todas as opiniões no Trustpilot",
+  "las": "Ler no Trustpilot"
+ },
+ "ja": {
+  "eyebrow": "Trustpilotのレビュー",
+  "heading": "お客様の声",
+  "av5": "/ 5",
+  "omdomen": "件のレビュー",
+  "pa_trustpilot": "Trustpilotより",
+  "baserat": "{n}件のレビューに基づく",
+  "knapp": "Trustpilotですべてのレビューを読む",
+  "las": "Trustpilotで読む"
+ },
+ "zh-TW": {
+  "eyebrow": "Trustpilot 上的評論",
+  "heading": "顧客怎麼說",
+  "av5": "分（滿分 5 分）",
+  "omdomen": "則評論",
+  "pa_trustpilot": "來自 Trustpilot",
+  "baserat": "根據 {n} 則評論",
+  "knapp": "在 Trustpilot 查看所有評論",
+  "las": "在 Trustpilot 查看"
+ }
 }

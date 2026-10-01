@@ -1,0 +1,142 @@
+{
+ "sv": {
+  "rubrik": "Ge en vän en värdecheck på {van}",
+  "text": "Skicka din länk till en vän. Vännen får en värdecheck på {van} till sitt första köp. När vännens paket har skickats får du {kredit} tillgodo hos oss.",
+  "lank": "Din länk",
+  "kopiera": "Kopiera länken",
+  "kopierad": "Länken är kopierad",
+  "villkor": "Värdechecken gäller vännens första köp. Du får ett mejl när dina {kredit} finns tillgodo, och de dras av i kassan när du loggar in med samma e-post.",
+  "valkommen": "Din vän har gett dig en värdecheck på {van}. Den dras av i kassan på ditt första köp.",
+  "stang": "Stäng"
+ },
+ "nb": {
+  "rubrik": "Gi en venn en verdikupong på {van}",
+  "text": "Send lenken din til en venn. Vennen din får en verdikupong på {van} til sitt første kjøp. Når vennens pakke er sendt, får du {kredit} til gode hos oss.",
+  "lank": "Din lenke",
+  "kopiera": "Kopier lenken",
+  "kopierad": "Lenken er kopiert",
+  "villkor": "Verdikupongen gjelder vennens første kjøp. Du får en e-post når {kredit} er tilgjengelig, og beløpet trekkes fra i kassen når du logger inn med samme e-postadresse.",
+  "valkommen": "Vennen din har gitt deg en verdikupong på {van}. Den trekkes fra i kassen på ditt første kjøp.",
+  "stang": "Lukk"
+ },
+ "da": {
+  "rubrik": "Giv en ven et værdibevis på {van}",
+  "text": "Send dit link til en ven. Din ven får et værdibevis på {van} til sit første køb. Når vennens pakke er sendt, får du {kredit} til gode hos os.",
+  "lank": "Dit link",
+  "kopiera": "Kopiér linket",
+  "kopierad": "Linket er kopieret",
+  "villkor": "Værdibeviset gælder vennens første køb. Du får en mail, når dine {kredit} er klar, og de trækkes fra i kassen, når du logger ind med samme e-mail.",
+  "valkommen": "Din ven har givet dig et værdibevis på {van}. Det trækkes fra i kassen på dit første køb.",
+  "stang": "Luk"
+ },
+ "fi": {
+  "rubrik": "Anna ystävälle {van} arvoseteli",
+  "text": "Lähetä linkkisi ystävälle. Ystäväsi saa {van} arvosetelin ensimmäiseen ostokseensa. Kun ystäväsi paketti on lähetetty, saat {kredit} käytettäväksi kaupassamme.",
+  "lank": "Linkkisi",
+  "kopiera": "Kopioi linkki",
+  "kopierad": "Linkki kopioitu",
+  "villkor": "Arvoseteli koskee ystävän ensimmäistä ostosta. Saat sähköpostin, kun {kredit} on käytettävissäsi, ja summa vähennetään kassalla, kun kirjaudut sisään samalla sähköpostiosoitteella.",
+  "valkommen": "Ystäväsi on antanut sinulle {van} arvosetelin. Se vähennetään kassalla ensimmäisestä ostoksestasi.",
+  "stang": "Sulje"
+ },
+ "en": {
+  "rubrik": "Give a friend a voucher worth {van}",
+  "text": "Send your link to a friend. Your friend gets a voucher worth {van} for their first purchase. Once your friend's package has shipped, you get {kredit} in store credit to spend with us.",
+  "lank": "Your link",
+  "kopiera": "Copy link",
+  "kopierad": "Link copied",
+  "villkor": "The voucher applies to your friend's first purchase. We'll email you when your {kredit} store credit is available, and it's applied at checkout when you log in with the same email address.",
+  "valkommen": "Your friend has given you a voucher worth {van}. It's applied at checkout on your first purchase.",
+  "stang": "Close"
+ },
+ "de": {
+  "rubrik": "Schenk einem Freund einen Gutschein über {van}",
+  "text": "Schick deinen Link an einen Freund. Dein Freund bekommt einen Gutschein über {van} für seinen ersten Einkauf. Sobald sein Paket versendet wurde, bekommst du {kredit} Guthaben zum Einkaufen bei uns.",
+  "lank": "Dein Link",
+  "kopiera": "Link kopieren",
+  "kopierad": "Link kopiert",
+  "villkor": "Der Gutschein gilt für den ersten Einkauf deines Freundes. Du bekommst eine E-Mail, sobald dein Guthaben von {kredit} bereitsteht. Es wird an der Kasse abgezogen, wenn du dich mit derselben E-Mail-Adresse anmeldest.",
+  "valkommen": "Dein Freund hat dir einen Gutschein über {van} geschenkt. Er wird an der Kasse bei deinem ersten Einkauf abgezogen.",
+  "stang": "Schließen"
+ },
+ "fr": {
+  "rubrik": "Offrez un bon d'achat de {van} à un ami",
+  "text": "Envoyez votre lien à un ami. Votre ami reçoit un bon d'achat de {van} pour son premier achat. Une fois son colis expédié, vous recevez {kredit} de crédit d'achat à dépenser chez nous.",
+  "lank": "Votre lien",
+  "kopiera": "Copier le lien",
+  "kopierad": "Lien copié",
+  "villkor": "Le bon d'achat s'applique au premier achat de votre ami. Vous recevez un e-mail dès que votre crédit d'achat de {kredit} est disponible. Il est déduit au paiement lorsque vous vous connectez avec la même adresse e-mail.",
+  "valkommen": "Votre ami vous a offert un bon d'achat de {van}. Il est déduit au paiement de votre premier achat.",
+  "stang": "Fermer"
+ },
+ "nl": {
+  "rubrik": "Geef een vriend een tegoedbon van {van}",
+  "text": "Stuur je link naar een vriend. Je vriend krijgt een tegoedbon van {van} voor zijn eerste aankoop. Zodra het pakket van je vriend is verzonden, krijg je {kredit} tegoed om bij ons te besteden.",
+  "lank": "Jouw link",
+  "kopiera": "Kopieer de link",
+  "kopierad": "Link gekopieerd",
+  "villkor": "De tegoedbon geldt voor de eerste aankoop van je vriend. Je krijgt een e-mail zodra je tegoed van {kredit} beschikbaar is. Het wordt bij het afrekenen in mindering gebracht als je inlogt met hetzelfde e-mailadres.",
+  "valkommen": "Je vriend heeft je een tegoedbon van {van} gegeven. Die wordt bij het afrekenen in mindering gebracht op je eerste aankoop.",
+  "stang": "Sluiten"
+ },
+ "es": {
+  "rubrik": "Regala a un amigo un vale de {van}",
+  "text": "Envía tu enlace a un amigo. Tu amigo recibe un vale de {van} para su primera compra. Cuando se envíe su paquete, tú recibes {kredit} de crédito para gastar en nuestra tienda.",
+  "lank": "Tu enlace",
+  "kopiera": "Copiar enlace",
+  "kopierad": "Enlace copiado",
+  "villkor": "El vale es válido para la primera compra de tu amigo. Recibirás un correo cuando tu crédito de {kredit} esté disponible. Se aplica al pagar cuando inicias sesión con el mismo correo electrónico.",
+  "valkommen": "Tu amigo te ha regalado un vale de {van}. Se aplica al pagar tu primera compra.",
+  "stang": "Cerrar"
+ },
+ "it": {
+  "rubrik": "Regala a un amico un buono da {van}",
+  "text": "Invia il tuo link a un amico. Il tuo amico riceve un buono da {van} per il suo primo acquisto. Appena il suo pacco viene spedito, tu ricevi {kredit} di credito da spendere da noi.",
+  "lank": "Il tuo link",
+  "kopiera": "Copia il link",
+  "kopierad": "Link copiato",
+  "villkor": "Il buono vale per il primo acquisto del tuo amico. Riceverai un'email quando il tuo credito di {kredit} sarà disponibile. Verrà applicato al checkout quando accedi con la stessa email.",
+  "valkommen": "Il tuo amico ti ha regalato un buono da {van}. Viene applicato al checkout sul tuo primo acquisto.",
+  "stang": "Chiudi"
+ },
+ "pl": {
+  "rubrik": "Podaruj znajomemu bon o wartości {van}",
+  "text": "Wyślij swój link znajomemu. Twój znajomy dostanie bon o wartości {van} na pierwsze zakupy. Gdy jego paczka zostanie wysłana, dostaniesz {kredit} do wykorzystania w naszym sklepie.",
+  "lank": "Twój link",
+  "kopiera": "Skopiuj link",
+  "kopierad": "Link skopiowany",
+  "villkor": "Bon obowiązuje na pierwsze zakupy znajomego. Dostaniesz e-mail, gdy twoje środki w wysokości {kredit} będą dostępne. Zostaną odjęte przy płatności, gdy zalogujesz się tym samym adresem e-mail.",
+  "valkommen": "Twój znajomy podarował ci bon o wartości {van}. Zostanie odjęty przy płatności za twoje pierwsze zakupy.",
+  "stang": "Zamknij"
+ },
+ "pt-PT": {
+  "rubrik": "Oferece um vale de {van} a um amigo",
+  "text": "Envia o teu link a um amigo. O teu amigo recebe um vale de {van} para a primeira compra. Quando a encomenda dele for enviada, recebes {kredit} de crédito para gastar na nossa loja.",
+  "lank": "O teu link",
+  "kopiera": "Copiar link",
+  "kopierad": "Link copiado",
+  "villkor": "O vale aplica-se à primeira compra do teu amigo. Recebes um e-mail quando o teu crédito de {kredit} estiver disponível. É aplicado no checkout quando iniciares sessão com o mesmo e-mail.",
+  "valkommen": "O teu amigo ofereceu-te um vale de {van}. É aplicado no checkout na tua primeira compra.",
+  "stang": "Fechar"
+ },
+ "ja": {
+  "rubrik": "お友達に{van}分のお買い物券をプレゼント",
+  "text": "あなたのリンクをお友達に送ってください。お友達は初めてのご購入に使える{van}分のお買い物券がもらえます。お友達のお荷物が発送されると、当店でのお買い物に使える{kredit}分のストアクレジットをお届けします。",
+  "lank": "あなたのリンク",
+  "kopiera": "リンクをコピー",
+  "kopierad": "リンクをコピーしました",
+  "villkor": "お買い物券はお友達の初回のご購入に使えます。{kredit}分のストアクレジットがご利用いただけるようになりましたら、メールでお知らせします。ストアクレジットは、同じメールアドレスでログインすると、決済時に差し引かれます。",
+  "valkommen": "お友達が{van}分のお買い物券をプレゼントしてくれました。初めてのご購入時に、決済画面で差し引かれます。",
+  "stang": "閉じる"
+ },
+ "zh-TW": {
+  "rubrik": "送朋友 {van} 抵用券",
+  "text": "把你的連結傳給朋友。朋友的第一筆訂單可使用 {van} 抵用券。等朋友的包裹寄出後，你就會收到 {kredit} 購物金，可在我們店裡使用。",
+  "lank": "你的連結",
+  "kopiera": "複製連結",
+  "kopierad": "已複製連結",
+  "villkor": "抵用券適用於朋友的首次購買。{kredit} 購物金可以使用時，我們會寄電子郵件通知你。當你用相同的電子郵件登入後，購物金會在結帳時扣除。",
+  "valkommen": "你的朋友送了你 {van} 抵用券。首次購買結帳時會扣除。",
+  "stang": "關閉"
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "segment": [
+  {
+   "a": 0.0,
+   "b": 4.74,
+   "sv": "Om du ska ge bort en present snart så är sushiformade strumpor det snällaste du kan ge dem.",
+   "text": "もうすぐ誰かに贈るなら、寿司ソックスは、一番素敵な贈り物です。",
+   "las": "もうすぐだれかにおくるなら、すしソックスは、いちばんすてきなおくりものです。"
+  },
+  {
+   "a": 4.84,
+   "b": 7.08,
+   "sv": "Jag startade Matstrumpor ur en ilska.",
+   "text": "イライラから、始めた会社なんです。",
+   "las": "イライラから、はじめたかいしゃなんです。"
+  },
+  {
+   "a": 7.22,
+   "b": 10.92,
+   "sv": "Jag brukar alltid vänta till sista sekund med att tänka ut vad jag ska ge bort till present.",
+   "text": "プレゼントを考えるのが、いつもギリギリなんです。",
+   "las": "プレゼントをかんがえるのが、いつもギリギリなんです。"
+  },
+  {
+   "a": 11.1,
+   "b": 13.12,
+   "sv": "Och varje gång blir det panikletande.",
+   "text": "毎回、慌てて探すはめに。",
+   "las": "まいかい、あわてて探すはめに。"
+  },
+  {
+   "a": 13.26,
+   "b": 15.9,
+   "sv": "Men en grej vi alla går kort om är strumpor.",
+   "text": "でも靴下は、みんな足りなくなる。",
+   "las": "でもくつしたは、みんなたりなくなる。"
+  },
+  {
+   "a": 16.04,
+   "b": 17.52,
+   "sv": "Och udda par är vardag.",
+   "text": "左右バラバラ、あるある。",
+   "las": "さゆうバラバラ、あるある。"
+  },
+  {
+   "a": 17.58,
+   "b": 19.16,
+   "sv": "De här blandar du aldrig ihop.",
+   "text": "これなら間違えません。",
+   "las": "これならまちがえません。"
+  },
+  {
+   "a": 19.26,
+   "b": 22.72,
+   "sv": "Det är typ den perfekta balansen mellan praktiskt och oväntat.",
+   "text": "実用的なのに、意外性もある。絶妙なバランス！",
+   "las": "じつようてきなのに、いがいせいもある。ぜつみょうなバランス！"
+  },
+  {
+   "a": 22.82,
+   "b": 24.14,
+   "sv": "Först tror man att det är sushi.",
+   "text": "お寿司かと思いきや、",
+   "las": "おすしかとおもいきや、"
+  },
+  {
+   "a": 24.24,
+   "b": 25.92,
+   "sv": "Sen inser man att det är strumpor.",
+   "text": "実は靴下だった！",
+   "las": "じつは、くつしただった！"
+  },
+  {
+   "a": 26.02,
+   "b": 29.42,
+   "sv": "Och helt plötsligt har du gett bort något som faktiskt får en reaktion.",
+   "text": "そして気づけば、ちゃんと反応がもらえる。",
+   "las": "そして気づけば、ちゃんと、はんのうがもらえる。"
+  },
+  {
+   "a": 29.42,
+   "b": 31.02,
+   "sv": "Och som används på riktigt.",
+   "text": "本当に履いてもらえる。",
+   "las": "ほんとうに履いてもらえる。"
+  },
+  {
+   "a": 31.22,
+   "b": 34.74,
+   "sv": "Det är den typen av lilla present som passar perfekt till alla tillfällen.",
+   "text": "どんな場面にもぴったりなプチギフトです。",
+   "las": "どんな場面にもぴったりなプチギフトです。"
+  },
+  {
+   "a": 35.24,
+   "b": 38.06,
+   "sv": "Genomtänkt, kul men utan att försöka för mycket.",
+   "text": "気が利いていて、楽しくて、肩ひじ張らない。",
+   "las": "きがきいていてたのしくてかたひじはらない。"
+  },
+  {
+   "a": 38.3,
+   "b": 40.14,
+   "sv": "Ser ut som sushi, är strumpor.",
+   "text": "見た目は寿司、実はソックス。",
+   "las": "みためはすし、じつはソックス。"
+  },
+  {
+   "a": 40.34,
+   "b": 41.34,
+   "sv": "Sushistrumpor.",
+   "text": "寿司ソックス。",
+   "las": "すしソックス。"
+  }
+ ],
+ "texter": {
+  "etikett": "寿司ソックス"
+ },
+ "granskad": true
+}

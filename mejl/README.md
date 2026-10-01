@@ -668,11 +668,19 @@ Shopifys egna översättningar av notisen**, lagda via API.
 
 **Så byggs det:**
 - `sparning/butiker.json` → `matstrumpor.mejl_sprak`: en rad per språk,
-  `{ locale, sprak, mapp }` (`pt-PT` / `pt.json` / `/pt`).
+  `{ locale, sprak, mapp, sida }` (`pt-PT` / `pt.json` / `/pt` / knappens adress).
 - `node mejl/bygg-butik.mjs matstrumpor` skriver den svenska huvudmallen som
   förut + `output/butiker/matstrumpor/oversattningar/<locale>/<mall>.liquid`.
-  Knappen går till `matstrumpor.se/<mapp>/pages/spara?nummer=MS-…` —
-  matstrumpor.se bär alla tolv språk i alla marknader (webPresences).
+  ⛔ **Knappen går till `sida` sedan 2026-09-30: matstrumpor.com i språkets
+  mapp** (`/de/pages/spara`, `/pt-pt/…`, `/zh-tw/…`, engelskan i roten), skriven
+  ur Shopifys egna `webPresences → rootUrls` för .com, inte räknad. Förut
+  räknades den som `matstrumpor.se/<mapp>/pages/spara`, och .se bär zh-TW på
+  `/zh`, inte `/zh-tw`: **Taiwans knapp gav 404** (granskningen 2026-09-30),
+  och testet räknade samma fel som koden och godkände det. Alla tretton
+  länkarna svarar nu 200 på rätt språk (mätt med curl samma kväll). `.com` följer
+  Axels regel att allt utland går via .com. `mapp` är kvar som .se-mappen,
+  eftersom Spoks (`klaviyo/spoks-sprak.mjs`) bygger sina länkar av den —
+  ändra aldrig `mapp` för mejlens skull.
 - `node mejl/notis-oversattning.mjs matstrumpor [--skarpt] [--om-inaktuell]`
   registrerar och läser tillbaka. Vägrar om huvudmallen inte längre är vår.
   Spårningsrutinen kör `--skarpt --om-inaktuell` varje timme
@@ -680,7 +688,9 @@ Shopifys egna översättningar av notisen**, lagda via API.
   lägger in språken igen när den svenska mallen klistrats om.
 - `node mejl/lankkoll.mjs matstrumpor` öppnar knappens länk som kund i
   Chromium, ett språk i taget, med ett riktigt paket ur spårningsminnet:
-  sidans språk, att paketet visas, ingen svensk text.
+  sidans språk, att paketet visas, ingen svensk text. **Kör den efter varje
+  nytt språk** — ja och zh-TW registrerades 2026-09-30 utan den, och Taiwans
+  404 hittades först av granskaren.
 - `mejl/butiker/matstrumpor.json` → `leveransfonster: false`: ingen
   "Beräknad leverans"-ruta i fraktbekräftelsen, på något språk (Axels order
   2026-09-21 — fönstret står aldrig i ett mejl som bär spårningslänken).
@@ -708,6 +718,47 @@ aktuella (`updatedAt` 2026-09-29T11:09:27Z); omkörning med `--om-inaktuell`
 gjorde ingenting. `lankkoll.mjs`: alla tolv språk svarar 200 med rätt
 `<html lang>` och visar det riktiga paketet MS-3654539E, ingen svensk text
 (skärmdumpar i `output/butiker/matstrumpor/lankkoll/`, gitignorerade).
+
+### Granskningens rättningar (2026-09-30 kväll)
+
+Den fristående granskningen (`matstrumpor/marknader/granskning/GRANSKNING-2026-09-30.md`)
+läste mejlen på tretton språk. Rättat i våra tre mallar (`mejl/sprak/*.json`, registreras
+av timrutinen eller `notis-oversattning.mjs --skarpt` efter merge):
+
+- **fi** "lähtenyt varastolta" → "varastosta" (fel kasus), **de** "eingecheckt" →
+  "erfasst" och "im Laufe des Tages", **nl** "onderweg voor levering" → "bij de bezorger",
+  "ingecheckt" → "geregistreerd", **fr** "Restez à l'affût" → "Surveillez votre boîte aux
+  lettres aujourd'hui."
+- **pt-PT:** paketnumret hette "número de encomenda", som är ORDERNUMRET på portugisiska.
+  Nu "código de rastreio" i mejlet och på spårningssidan, och knappen heter "Seguir
+  encomenda" som menyn. "A caminho do voo" → "do aeroporto", adressrubriken "Morada de
+  entrega".
+- **ja/zh-TW:** "2〜4日" / "2–4 天" → "数日" / "幾天" i mejlen och på spårningssidan, så att
+  talet fyra inte står i en kundtext (samma anda som annonsregeln, och inget går förlorat).
+- **en:** adressraden följer landet (`adressformat: "land"` i `sprak/en.json`,
+  `mallar.mjs → adressrad`): USA, Kanada och Australien får "Ort, DELSTAT POSTNR",
+  Storbritannien ort och postnummer på var sin rad, Nya Zeeland "Ort Postnr". Alla andra
+  språk behåller "postnr ort".
+- **Loggans länk (G-D04):** knappen gick till matstrumpor.com/<mapp> men loggan till
+  matstrumpor.se. Nu följer loggan språkets adress (`bygg-butik.mjs` → `hemFranSida`, bara i
+  översättningarna som registreras via API): tyskan → matstrumpor.com/de, japanskan →
+  matstrumpor.com/ja. Den svenska huvudmallen och CaraShells handinklistrade marknadsgrenar
+  är orörda. Supportadressen kundsupport@matstrumpor.se står kvar: det är den brevlåda som finns.
+
+**Shopifys egna levererad-notiser** ("En försändelse … har levererats", "Ordern … har
+levererats") går ut när spårningsrutinen skriver ett DELIVERED-event, och de bar Shopifys
+egna översättningar med riktiga fel. Den kinesiska grenen för en order som levererats hel
+sa 「您的訂單已取消。」 ("Din order har avbrutits"), och den japanska ämnesraden sa 発送
+("har skickats"). `node mejl/levererad-oversattning.mjs matstrumpor [--skarpt]` byter
+bara de uppräknade meningarna i Shopifys nuvarande text (`mejl/levererad/matstrumpor.json`).
+Det stoppar om Shopifys text inte är den som lästes, och en andra körning gör ingenting.
+**Utfall 2026-09-30 ~20:15 CEST:** 9 översättningar registrerade och lästa tillbaka (zh-TW
+båda i du-form, ja ämne + brödtext, nb två stavfel, fr ämne + hårt mellanslag före
+kolon). pt-PT:s ni-form ("você") står kvar — det är Axels val (G-C-PT-07 a).
+
+⚠️ Bygget 2026-09-30 skrev också om CaraShells, NO:s, DK:s och FI:s mallar i
+`output/butiker/`, eftersom nb/da/fi ändrats i källan sedan förra bygget. Shopify bär deras
+gamla text tills de klistras in igen. Inget är fel i dem.
 Kvar: den svenska huvudmallen utan leveransfönstret — Cowork-prompten.
 
 **Svenska huvudmallen inne 2026-09-29 eftermiddag** (Cowork + Axel): alla tre

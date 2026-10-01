@@ -2,6 +2,8 @@
  "comment": "Matstrumpors marknader i Shopify Markets (butiken 1r46tp-qx, matstrumpor.se). Facit för matstrumpor/marknader/*.mjs. Allt här är avläst eller ett dokumenterat beslut — källan står bredvid varje tal. Ändra HÄR, aldrig i skripten.",
  "butik": "matstrumpor",
  "butik_comment": "sparning/butiker.json → matstrumpor: 1r46tp-qx.myshopify.com, nycklarna SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx (appen Fabriken, 154 rättigheter — write_markets, write_locales, write_translations, write_shipping, write_price_rules, write_themes, write_products finns, mätt 2026-09-27).",
+ "paslag_min": 0.2,
+ "paslag_min_comment": "Axel 2026-09-30: 'Jag undrar varför du bara har lagt på 15 % i worldwide … vi borde lowkey lägga på 20 % … om det går att göra ett snyggt pris av det'. Varje fast pris i en utlandsmarknad är minst Sveriges pris + 20 % i dagens kurs, avrundat UPPÅT till ett snyggt pris (paslag.mjs). Ett pris som redan ligger över sänks aldrig. Leverantörens quotes per marknad tas först när marknaden fått försäljning (Axel samma dag).",
  "tema_id": "gid://shopify/OnlineStoreTheme/207180890451",
  "tema_comment": "MAIN-temat 'Matstrumpor CRO + storleksrad 2026-09-17' (mätt 2026-09-27). Temat bär egna locale-filer för nb/da/fi/en (Dawn-basen), så temats fasta ord kommer gratis. Det som ska översättas via API är butikens INNEHÅLL: produkter, sidor, policyer, menyer, temats JSON-mallar, paketnivåerna, fraktsätten.",
  "primar": {
@@ -51,7 +53,7 @@
   ],
   "kampanjer_comment": "Alla tre i det svenska kontot (SEK) med Matstrumpors pixel 1785935302094082, annonslänk https://sushisock.com/products/sushi-socks, 155 engelska annonser (MATSTRUMP_US_/AU_sushi_ugc_…). Livstid: 21 694 kr, 40 köp, alla under break-even. PAUSED med spend = beslut, aktiveras aldrig.",
   "sushisock_priser_usd": {
-   "sushi-socks 5 pairs": 59.0,
+   "sushi-socks 5 pairs": 59,
    "sushi-socks 3 pairs": 45.99,
    "donut-socks": 33.99,
    "pizza-socks": 49.99,
@@ -78,8 +80,12 @@
     "host": "matstrumpor.no",
     "standard": "nb",
     "alternativa": [],
-    "comment": "Kopplad i Shopify av Axel 2026-09-29 (SSL på), bunden till Norge med `bygg.mjs --steg domaner`. Bara norska (inga alternativa språk) — det är B-versionen i A/B-testet (Axel 2026-09-29: 'en sid-version där vi får det att kännas väldigt norskt'). .se-närvaron ligger KVAR i marknaden: A-versionen är matstrumpor.se/nb?country=NO, och båda måste fungera för norska kunder samtidigt."
+    "comment": "Kopplad i Shopify av Axel 2026-09-29 (SSL på), bunden till Norge med `bygg.mjs --steg domaner`. Bara norska (inga alternativa språk) — det är B-versionen i A/B-testet (Axel 2026-09-29: 'en sid-version där vi får det att kännas väldigt norskt'). A-versionen är matstrumpor.com/nb?country=NO sedan 2026-09-29 kväll (före det matstrumpor.se/nb). Båda måste fungera för norska kunder samtidigt."
    },
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Axel 2026-09-29 kväll: 'Ska inte alla vara via .com domänen?' Utlandskunderna landar på matstrumpor.com/<språk>. Närvaron ägs av USA-marknaden (språken står där). .se-närvaron ligger kvar, så gamla länkar fungerar.",
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se).",
    "leveranstid": "5–10 arbetsdagar",
    "frakt": "fri",
@@ -98,15 +104,15 @@
    },
    "fasta_priser": {
     "sushi-strumpor": {
-     "5 - Par / One Size": 449,
-     "3 - Par / One Size": 349
+     "5 - Par / One Size": 469,
+     "3 - Par / One Size": 429
     },
-    "donut-strumpor": 299,
-    "pizza-strumpor": 399,
-    "hamburger-strumpor": 299,
-    "sushipinnar-i-akta-tra": 49
+    "donut-strumpor": 349,
+    "pizza-strumpor": 519,
+    "hamburger-strumpor": 349,
+    "sushipinnar-i-akta-tra": 59
    },
-   "beslut_priser": "FÖRSLAG — premium enligt Axels 'lite dyrare worldwide'"
+   "beslut_priser": "Axel 2026-09-30: minst +20 % mot Sverige (paslag_min, paslag.mjs), snyggt avrundat uppåt. Höjt samma dag: 5 par 449→469, 3 par 349→429, donut 299→349, pizza 399→519, hamburgare 299→349, ätpinnar 49→59 NOK. Förut (2026-09-27): premium enligt Axels 'lite dyrare worldwide', men bara 5-paret låg över Sverige (+17 %)."
   },
   {
    "id": "EU",
@@ -164,15 +170,15 @@
    "fasta_priser": {
     "sushi-strumpor": {
      "5 - Par / One Size": 44.9,
-     "3 - Par / One Size": 34.9
+     "3 - Par / One Size": 39.9
     },
-    "donut-strumpor": 29.9,
-    "pizza-strumpor": 39.9,
-    "hamburger-strumpor": 29.9,
-    "sushipinnar-i-akta-tra": 4.9
+    "donut-strumpor": 31.9,
+    "pizza-strumpor": 47.9,
+    "hamburger-strumpor": 31.9,
+    "sushipinnar-i-akta-tra": 5.9
    },
    "namn_not": "Utökad 2026-09-27 från DK+FI till EU 27 (utom SE) + IS, LI, CH; språk da, fi, de, fr, nl, es, it, pl, pt. Axels order: \"hela Europa redo\".",
-   "beslut_priser": "Axel 2026-09-27: \"lite dyrare priser worldwide\", \"hellre för högt\" ⇒ fasta EUR-priser ~+20 % över SEK-nivån, charm-avrundade.",
+   "beslut_priser": "Axel 2026-09-30: minst +20 % mot Sverige (paslag_min, paslag.mjs), snyggt avrundat uppåt. Höjt samma dag: 3 par 34,90→39,90, donut 29,90→31,90, pizza 39,90→47,90, hamburgare 29,90→31,90, ätpinnar 4,90→5,90 EUR; 5 par 44,90 kvar (+27 %). Förut (2026-09-27): 'lite dyrare priser worldwide', 'hellre för högt' ⇒ 5-paret ~+20 %, resten +1 till +13 % i dagens kurs.",
    "doman": {
     "host": "matstrumpor.eu",
     "standard": "en",
@@ -187,8 +193,12 @@
      "pl",
      "pt-PT"
     ],
-    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten och samma språkmappar som på .se (/de, /fr … /pt), så en länk flyttas genom att bara byta domän. .se-närvaron ligger kvar i marknaden — de pausade annonserna länkar dit."
+    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten och språkmappar (/de, /fr … /pt-pt). Sedan 2026-09-29 kväll länkar ingen annons hit: utlandet går via matstrumpor.com (`ocksa_domaner`). .eu ligger kvar och fungerar."
    },
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Axel 2026-09-29 kväll: 'Ska inte alla vara via .com domänen?' Utlandskunderna landar på matstrumpor.com/<språk>. Närvaron ägs av USA-marknaden (språken står där).",
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
   },
   {
@@ -211,7 +221,7 @@
    "priser": "fasta",
    "fasta_priser": {
     "sushi-strumpor": {
-     "5 - Par / One Size": 69.0,
+     "5 - Par / One Size": 69,
      "3 - Par / One Size": 54.99
     },
     "donut-strumpor": 39.99,
@@ -222,14 +232,92 @@
    "leveranstid": "5–10 arbetsdagar",
    "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
    "frakt": "fri",
-   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset)",
+   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset) 2026-09-30: alla USD-priser ligger på +34 till +73 % mot Sverige, alltså över golvet paslag_min (+20 %), och rördes inte.",
    "doman": {
     "host": "matstrumpor.com",
     "standard": "en",
-    "alternativa": [],
-    "comment": "Kopplad av Axel 2026-09-29. Bara engelska, utan språkmapp (som carashell.com: /en/ finns inte på en domän med engelska som standard — länkar byggs utan /en/). .se-närvaron ligger kvar — WW-kampanjen (NO+DK+FI+US+GB+AU+CA+NZ) länkar till matstrumpor.se/en/ och når alla länder därifrån."
+    "alternativa": [
+     "nb",
+     "da",
+     "fi",
+     "de",
+     "fr",
+     "nl",
+     "es",
+     "it",
+     "pl",
+     "pt-PT",
+     "ja",
+     "zh-TW"
+    ],
+    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten, utan /en/ (som carashell.com). Sedan 2026-09-29 kväll är det UTLANDETS adress. Axel: 'Ska inte alla vara via .com domänen?' Därför bär närvaron alla utlandsspråk (/nb, /da … /pt-pt) och ligger även i Norge och Europa (`ocksa_domaner` där). Språken för .com står bara här, hos ägaren, och --steg domaner skriver över närvarons språk med den här listan."
    },
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
+  },
+  {
+   "id": "JP",
+   "namn": "Japan",
+   "handle": "jp",
+   "lander": [
+    "JP"
+   ],
+   "locales": [
+    "ja"
+   ],
+   "basvaluta": "JPY",
+   "lokala_valutor": false,
+   "priser": "fasta",
+   "leveranstid": "5–10 arbetsdagar",
+   "leveranstid_comment": "Axel 2026-09-30: \"Det är 5 - 10 arbetsdagar japan osv\".",
+   "frakt": "fri",
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Kunderna landar på matstrumpor.com/ja resp. /zh-tw (samma .com-närvaro som alla utlandsmarknader, ägd av USA-marknaden, som bär språken).",
+   "fasta_priser": {
+    "sushi-strumpor": {
+     "5 - Par / One Size": 7980,
+     "3 - Par / One Size": 7080
+    },
+    "donut-strumpor": 5680,
+    "pizza-strumpor": 8580,
+    "hamburger-strumpor": 5680,
+    "sushipinnar-i-akta-tra": 1080
+   },
+   "beslut_priser": "Axel 2026-09-30: B — \"som i Europa\" (han såg 5-paret ¥7 980 i frågan). Övriga = Europas pris i dagens kurs (exchangerate-api 2026-09-30, 1 EUR = 178,5 JPY), närmaste yen-pris på 80, aldrig under Sverige + 20 % (paslag.mjs prisSomI).",
+   "japan_varumarke": "Axel 2026-09-30: \"i Japan speciellt kan vi trycka på att det är ett svenskt varumärke\" — スウェーデン発のブランド i hero-texten, på Om oss och i annonserna. Aldrig スウェーデン製 (tillverkade i Sverige)."
+  },
+  {
+   "id": "TW",
+   "namn": "Taiwan",
+   "handle": "tw",
+   "lander": [
+    "TW"
+   ],
+   "locales": [
+    "zh-TW"
+   ],
+   "basvaluta": "TWD",
+   "lokala_valutor": false,
+   "priser": "fasta",
+   "leveranstid": "5–10 arbetsdagar",
+   "leveranstid_comment": "Axel 2026-09-30: \"Det är 5 - 10 arbetsdagar japan osv\".",
+   "frakt": "fri",
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Kunderna landar på matstrumpor.com/ja resp. /zh-tw (samma .com-närvaro som alla utlandsmarknader, ägd av USA-marknaden, som bär språken).",
+   "fasta_priser": {
+    "sushi-strumpor": {
+     "5 - Par / One Size": 1690,
+     "3 - Par / One Size": 1490
+    },
+    "donut-strumpor": 1190,
+    "pizza-strumpor": 1790,
+    "hamburger-strumpor": 1190,
+    "sushipinnar-i-akta-tra": 209
+   },
+   "beslut_priser": "Axel 2026-09-30: B — \"som i Europa\" (han såg 5-paret NT$1 690 i frågan; Europas 44,90 € är NT$1 622 i dagens kurs). Övriga = Europas pris i dagens kurs (1 EUR = 36,1 TWD), närmaste pris på 90 (under 1 000 på 9), aldrig under Sverige + 20 % (paslag.mjs prisSomI)."
   }
  ],
  "frakt": {
@@ -292,6 +380,16 @@
     "metod": "Fri frakt",
     "pris_sek": 0,
     "beslut": "Axel 2026-09-27: hela Europa redo, fri frakt som i de andra launchländerna"
+   },
+   {
+    "namn": "Japan och Taiwan",
+    "lander": [
+     "JP",
+     "TW"
+    ],
+    "metod": "Fri frakt",
+    "pris_sek": 0,
+    "beslut": "Axel 2026-09-30: testa Japan och Taiwan, fri frakt, 5–10 arbetsdagar."
    }
   ]
  },
@@ -307,20 +405,26 @@
     "nb": "Fri frakt til Norge",
     "da": "Fri fragt til Danmark",
     "fi": "Ilmainen toimitus Suomeen",
-    "en": "Free shipping"
+    "en": "Free shipping",
+    "ja": "送料無料",
+    "zh-TW": "免運費"
    },
    "frakt_comment": "Engelskan är fem länder på en sida — inget landsnamn (temat saknar CaraShells [[land]]-token). 'Fri frakt i Sverige'/'i hela Sverige'/'inom Sverige' ⇒ raden ovan.",
    "leveranstid": {
     "nb": "5–10 virkedager",
     "da": "5–10 hverdage",
     "fi": "5–10 arkipäivää",
-    "en": "5–10 business days"
+    "en": "5–10 business days",
+    "ja": "5〜10営業日",
+    "zh-TW": "5–10 個工作天"
    },
    "valuta": {
     "nb": "NOK",
     "da": "DKK",
     "fi": "EUR",
-    "en": "USD (eller den valuta kassan visar)"
+    "en": "USD (eller den valuta kassan visar)",
+    "ja": "決済画面に表示される通貨",
+    "zh-TW": "結帳時顯示的幣別"
    },
    "valuta_comment": "Villkoren säger 'Alla priser anges i SEK' — i översättningen: marknadens valuta / 'the currency shown at checkout'. Inga SEK-belopp i någon översättning.",
    "returer": "30 dagar från mottagandet — Matstrumpors publicerade policy (kundtjanst/brands/matstrumpor.yaml returfonster_dagar 30). Oförändrat på alla marknader.",

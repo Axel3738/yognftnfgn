@@ -399,12 +399,21 @@ test('varorna läggs i FÖRE rabattkoden — koden fäster inte på en tom vagn'
   const js = TEMAFILER['assets/ms-paket.js'];
   const add = js.indexOf("fetch(rutt + 'cart/add.js'");
   // Bara koden i själva köpkedjan räknas — reservvägen laddaOm() pekar också
-  // på /discount, men den skickar kunden till /cart och ligger tidigare i filen.
-  const rabatt = js.indexOf("encodeURIComponent('/cart.js')");
+  // på /discount, men den skickar kunden till korgen och ligger tidigare i filen.
+  const rabatt = js.indexOf("encodeURIComponent(rutt + 'cart.js')");
   assert.ok(add > 0 && rabatt > 0, 'båda anropen ska finnas');
   assert.ok(add < rabatt, 'cart/add.js måste komma före /discount/<kod>');
   // Lådan hämtas färsk efter att koden fäst, annars visar den fullpris.
   assert.match(js, /rutt \+ '\?sections=' \+ idn/);
+});
+
+test('korgen behåller kundens språk: ingen omdirigering till /cart utan språkmappen', () => {
+  // Matstrumpors granskning 2026-09-30: reservvägen laddade om till
+  // /discount/<kod>?redirect=/cart, och en ren /cart landar på domänens
+  // huvudspråk — svenska på .se för en norsk kund, engelska på .com för en tysk.
+  const js = TEMAFILER['assets/ms-paket.js'];
+  assert.ok(!/encodeURIComponent\('\/cart(\.js)?'\)/.test(js), "en '/cart' utan rutt");
+  assert.ok(js.includes("encodeURIComponent(rutt + 'cart')"), 'reservvägen ska landa i rutt + cart');
 });
 
 // --- Köprutan ur konfigen (förenat ur tema-mall.mjs 2026-09-09, KEDJAN.md) ---

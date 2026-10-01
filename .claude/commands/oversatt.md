@@ -207,11 +207,52 @@ fotot, exakt som `/translate-no` Fas 3.2.
 siffror, inget svenskt kvar, texten inne i sin ruta, ✓-bockar kvar, streck rätt.
 Fel → rätta texten/overriden och kör om `--bara`. Aldrig leverera en bild med fel.
 
-## Fas 4 — Video (exakt `/translate-no` Fas 1–2)
+## Fas 4 — Video
 
 Källvideon ur SE-kontot (`advideos` `source`) → `<batch>/<slug>/up/<namn>.mp4`
-(>32 MB: crf 24–26). Kvot: Σ videominuter × 80 × 1,2 ≤ `details.api`, annars
-väntar videoraderna (bilderna körs ändå).
+(>32 MB: crf 24–26).
+⚠️ **Page-ägda reels har tom `source` på den vanliga token:en** (mätt 2026-09-30
+på `Termoskydd_UG_1_H1`: fältet utelämnas helt, inget felmeddelande). De hämtas
+med SIDTOKEN — `GET /<sida>?fields=access_token`, sedan `/<video>?fields=source`
+med den. UGC-annonserna ligger ofta där.
+
+### Fas 4.1 — Vem gör rösten: HeyGen eller ElevenLabs
+
+**HeyGen behövs bara för läppsynk.** Pratar ingen i bild kan ljudet bytas rakt
+av, och då är en HeyGen-rendering bortkastade krediter. Kör därför delningen
+FÖRST, på varje nedladdad källvideo:
+
+```bash
+pip install "opencv-python-headless<5"      # en gång per körning, bär Haar-kaskaderna
+python3 pipeline/pratar-i-bild.py <batch>/<slug>/up/*.mp4 --json > <batch>/rostvag.json
+```
+
+| Dom | Vad det betyder | Spår |
+|---|---|---|
+| `PRATAR` | en människa pratar mot kameran | **Fas 4.2, HeyGen** |
+| `VOICEOVER` | röst över produktbilder, ingen mun att synka | **Fas 4.3, ElevenLabs** |
+| `OKAND` | måtten räcker inte, eller videon gick inte att läsa | **Fas 4.2, HeyGen** |
+
+⚠️ **Osäkerhet kostar alltid krediter, aldrig kvalitet.** `OKAND` går till
+HeyGen. Att bränna krediter i onödan kostar pengar en gång; ny röst på en mun
+som rör sig fel syns i varje visning.
+
+⚠️ **Lita inte på träfffrekvensen — ytan är grinden.** Haar-kaskaden hittar
+"ansikten" i tyg, gräs och rutiga skjortor. `Batmotortrekk RV_1_H1` fick ansikte
+i 50 % av bildrutorna och var en ren produktvideo; alla träffarna var 0,39 % av
+bildytan. Ett ansikte som ska läppsynkas ligger på 2,9–3,1 % (mätt på de två
+UGC-annonserna). Trösklarna står i skriptets huvud med sina mätvärden — ändra
+dem bara mot en NY mätning.
+
+Skriv i rapporten hur många videor som gick vilket spår, och krediterna före →
+efter. Går alla till HeyGen en dag är det en signal värd att läsa, inte en
+slump.
+
+### Fas 4.2 — HeyGen-spåret (exakt `/translate-no` Fas 1–2)
+
+Kvot: Σ videominuter × 80 × 1,2 ≤ `details.api`, annars väntar videoraderna
+(bilderna och ElevenLabs-spåret körs ändå). **Manifestet ska bara innehålla
+raderna med `verktyg: "heygen"`.**
 ```bash
 cd pipeline
 node translate-batch.mjs proofread --manifest=<batch.json> --lang="Norwegian Bokmål (Norway)" --marknad=NO
@@ -223,6 +264,52 @@ node translate-batch.mjs render --manifest=… --marknad=NO && node translate-ba
 python3 pipeline/no-captions.py <render.mp4> <fixed.srt> <out.mp4>   # bara om källan har inbränd text
 ```
 Tom `.orig.srt` = inget tal ⇒ ingen render. Läs QA-bilderna, slutkortssvep.
+
+### Fas 4.3 — ElevenLabs-spåret (0 HeyGen-krediter)
+
+För raderna med `verktyg: "elevenlabs"`. Ingen HeyGen alls i den här kedjan —
+källmanuset kommer ur vårt eget konto med Scribe.
+
+```bash
+# 1. Svenska repliken med tider, rakt ur källvideons ljudspår
+node pipeline/scribe.mjs <up>/<namn>.mp4 --sprak sv --srt <batch>/srt/<namn>.sv.srt
+
+# 2. Norskan skrivs av en sonnet-subagent — SAMMA antal cues, samma tider.
+#    Siffror med bokstäver, och norska tal med mellanrum och bindestreck
+#    ("hundre og sytti-en") — sammanskrivet läses fel (omdubb/README.md).
+
+# 3. Röst + omtajmning av filmen
+node pipeline/omdubb/elevenlabs-omdubb.mjs --kalla=<up>/<namn>.mp4 \
+     --srt=<batch>/srt/<namn>.no.srt --ut=<batch>/no/<målnamn>.mp4 \
+     --rost="Martin - Clear and Comforting" --modell=eleven_v3   # --torr först!
+
+# 4. Inbränd svensk text i BILDEN (HeyGen översätter ändå bara ljudet)
+python3 pipeline/no-precis.py <konfig.json>
+
+# 5. Obligatoriska, båda två — ingen video går ut utan dem
+python3 pipeline/rostkoll.py <batch>/no/<målnamn>.mp4          # hör ATT det låter
+node pipeline/ordkoll.mjs <batch>/no/<målnamn>.mp4 <ut>.srt --sprak no   # hör VAD
+```
+
+⚠️ **Ordkollen är inte valfri och går inte att ersätta med en engångstest av
+rösten.** Mätt 2026-10-01: `Martin - Clear and Comforting` läste "Taket" som
+"Pake" och "D-duk" som "Dedok" i första generationen, och samma text helt rätt
+i nästa — sex av sex. Felet är slumpmässigt, så det måste fångas per video.
+Exit 1 ⇒ radera den cuens mp3 i `<utmapp>/vo/<namn>/<i>.mp3` och kör om
+`elevenlabs-omdubb`. Exit 2 = kunde inte mätas, vilket aldrig är ett
+godkännande. Transkriberingen kan ha fel — lyssna innan du dömer, men leverera
+aldrig oläst.
+
+⚠️ **Rösten är norsk, aldrig svensk med norsk text.** `Martin - Clear and
+Comforting` är NO-rösten och står redan i `factory/opsmarknader.mjs`. Dubba
+aldrig ett språk med ett annat språks röst.
+
+⚠️ **Kör `--torr` först och läs tabellen.** En ⚠️-rad betyder att manuset är för
+långt för filmen — då ska repliken kortas, inte rösten snabbas.
+
+⚠️ **Ingen musik följer med.** `elevenlabs-omdubb.mjs` kastar källans ljud. Är
+källan nästan bara musik ska den inte dubbas alls — det står redan i
+järnreglerna för `/translate`.
 
 ⚠️ **Captions får aldrig täcka bilden (Axel 2026-09-05: "du har täckt hela skärmen").**
 `no-captions.py` suddar ett band över hela bredden HELA videon och höjer det till

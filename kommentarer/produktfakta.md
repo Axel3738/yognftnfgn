@@ -7,6 +7,10 @@ Läses av `/kommentarer` innan svaren skrivs.
 
 ## Taköverdraget (Bäverbutiken `Takoverdrag` / `Takovertrekk`, CaraShell `CaraShellRoof`)
 
+- **Köpare i USA som fått fel storlek och inte fått svar på mejl:** be dem
+  mejla ordernumret till hello@carashell.com och säg att vi löser en retur
+  eller rätt storlek. Inget telefonnummer. Axel 2026-10-01 (val A).
+
 - **AC-aggregat, ventilhattar eller annat som sticker upp på taket:**
   överdraget läggs över, och det dras upp lite på sidorna. Rådet är att
   **välja en storlek längre** (ca 1 m / 3 ft) så att längden räcker. Axel
@@ -69,6 +73,9 @@ Läses av `/kommentarer` innan svaren skrivs.
 - **150 mm rör: räcker INTE.** Leverantören 2026-09-25: *"A 100mm brush head
   is too small for a 150mm pipe, and the cleaning effect may not be ideal."*
   Säg det rakt ut till den som frågar; borsthuvudet är 100 mm.
+- **Kakelugnens kanaler: ja, det fungerar.** Axel 2026-10-01 (svar på
+  frågan "Funkar sotarsetet för att sota kanalerna i en kakelugn?": "Ja").
+  Lova inget mer än ett ja.
 
 ## Bälteslipmaskin (`Beltgrinder` / `Balteslipmaskin`)
 

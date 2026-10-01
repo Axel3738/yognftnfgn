@@ -1,0 +1,111 @@
+{
+  "hub_id": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+  "rond": "2026-09-29",
+  "bra": [
+    "Every line is the page's own: 210 LEDs on three heads, 1200 mAh, no cable and no electrician, heads turned toward the drive, the stairs or the garage door (read live from the product page 2026-10-01).",
+    "The parent's claims the page does not make (`2500 lumen`, `270 grader`, `vattentät`) and another creator's TikTok watermark at 0:17–0:22 are banned by name.",
+    "Parent on profit contribution with CPA 395 kr against break-even 518 kr, 25 purchases; the statics say honestly that no static has 3 purchases yet."
+  ],
+  "missat": [
+    "This product has no memory in the repo (no products folder) — the Feedback row in the hub is its memory.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "Every brief on this product carries the parent-claim ban (`2500 lumen`, `270 grader`, `vattentät`) and the watermark ban at 0:17–0:22 — the parent's live copy still has them.",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "Solcellslampa_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Deadline twice (headline and bottom line)."
+      ],
+      "bra": [
+        "The page's three targets in the sub-line."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "Sub-line names the three heads and 210 LEDs."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Solcellslampa_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

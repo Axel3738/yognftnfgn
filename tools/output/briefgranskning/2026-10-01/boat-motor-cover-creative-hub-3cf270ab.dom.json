@@ -1,0 +1,113 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "rond": "2026-09-29",
+  "bra": [
+    "The 2026-09-28 rules held where they apply: every FD hook is a declarative and `saltvatten` is banned.",
+    "FD_3/FD_4 carry Axel's 2026-09-29 decision verbatim (no `tål en hel vinter`, no `UV`, no water demo, no snow shots) and build the hooks on fit, price and deadline instead of material strength.",
+    "Parent on profit contribution: CPA 220 kr against break-even 384 kr on 125 purchases; nine sizes and 579 / 965 kr match the page (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Batmotor_FD_1_H3 and Batmotor_FD_2_2 break Axel's 2026-09-29 decision on this product: FD_1_H3 shows the water-bead macro and the snow shot and its primary text says `håller regn, snö och UV ute hela vintern`, FD_2_2's sub-line says `mot regn, snö och UV`. FD_1_H3 is delivered and in To be Reviewed; FD_2_2 is Approved.",
+    "Batmotor_FD_3_H1 row 3: the VO says `0 till 5 hk, upp till 350` but the caption says `Från 0 till 5 hk` — sound off, the ad reads as if it only fits 0–5 hp.",
+    "Batmotor_FD_4_3's sub-line `Så hinner det fram` promises arrival; one parcel in ten arrives after the p90 deadline.",
+    "Batmotor_FD_3_H3 ends with stray lines `Batmotor_FD_3_H3 (H1)` / `(H2)` / `(H3)` — the same leftover the IBC hub had on 2026-09-24.",
+    "Axel's 2026-09-29 decision lives in products/batmotorskyddet-420d/dna.md on a branch, not on `main` — the next writer on `main` cannot read it."
+  ],
+  "regler": [
+    "Axel's 2026-09-29 decision binds every brief on this product: no `UV`, no winter promise, no water-bead or snow demo — check older FD rows against it before they are reused.",
+    "A caption that shortens a range keeps both ends: `0–5 till 250–350 hk`, never `Från 0 till 5 hk`.",
+    "Never promise arrival (`Så hinner det fram`): the date is the promise."
+  ],
+  "rader": [
+    {
+      "namn": "Batmotor_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "`Så hinner det fram` promises arrival."
+      ],
+      "bra": [
+        "`Dras på utan verktyg` is the page's line."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "`Ett tygöverdrag … spänns med en rem` — the owner's own wording."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Stray `(H1)/(H2)/(H3)` lines at the end of the body."
+      ],
+      "bra": [
+        "Deadline-first on the product photo."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Row 3 caption `Från 0 till 5 hk` drops the upper end — write `0–5 till 250–350 hk`."
+      ],
+      "bra": [
+        "Fit-first hook, as the owner's decision asks."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_1_H3",
+      "fel": [
+        "This video breaks the owner's decision of 2026-09-29 for this product (no water demo, no snow, no UV, no winter promise). Before it goes live: row 2 must not use the water-bead macro (OUR AD 0:08–0:10) and row 3 must not use the snow shot (0:17–0:19) — use the trailer and garage beats instead; the primary text `420D Oxford-tyg håller regn, snö och UV ute hela vintern` becomes `420D Oxford-tyg håller regn, smuts och löv borta`, and the headline `motorn skyddad i vinter` becomes `Fars dag-present: dra över, spänn remmen`."
+      ],
+      "anmarkningar": [],
+      "bra": [
+        "The `faktiskt` hook on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Batmotor_FD_2_2",
+      "fel": [
+        "The sub-line `420D Oxford-tyg mot regn, snö och UV. Nio storlekar, inga verktyg.` breaks the owner's decision of 2026-09-29 (no UV, no weather promise). Next version: `420D Oxford-tyg, nio storlekar, inga verktyg.`"
+      ],
+      "anmarkningar": [],
+      "bra": [
+        "Headline pair with FD_1_H3."
+      ]
+    }
+  ]
+}

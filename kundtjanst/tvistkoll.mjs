@@ -151,6 +151,39 @@ export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGA
       || (b.belopp - a.belopp));
 }
 
+/**
+ * Är fönstret stängt? Deadline passerad OCH inget bevis inskickat. Ren.
+ *
+ * ⛔ Mätt 2026-09-30 på **#4914** (chargeback, 348 kr): deadline
+ * `2026-09-30T01:00:00+02:00`, `evidence_sent_on: null`, status `under_review`.
+ * Ingen skickade in något, och klockan hann före. Dagen innan hände samma sak
+ * med order `17584203399517` (509 kr). Larmet hade namngett båda i förväg.
+ *
+ * ⛔ **Rättat 2026-10-01: "fönstret går inte att öppna igen" var FALSKT.**
+ * Samma #4914 fick sitt bevis inskickat **09:32 den 30 september** — 8,5 timmar
+ * efter deadline — och Shopify tog emot det: status `under_review`,
+ * `evidence_sent_on: 2026-09-30T09:32:09+02:00`. #5053 gick in sex timmar sent
+ * den 28 september och togs också emot. Två mätningar, två gånger accepterat.
+ * Larmet sa samtidigt "Not a task: the window cannot be reopened" — hade VA:n
+ * följt den raden hade hon inte skickat in, och 348 kr hade varit borta för att
+ * vårt eget larm sa åt henne att låta det vara. **Skicka alltid in ändå.**
+ *
+ * Raden ligger därför kvar under egen rubrik — inte för att den är avskriven,
+ * utan för att dess dygnsräkning är meningslös bland dem som har tid kvar — och
+ * rubriken säger åt VA:n att skicka in i dag. Att Shopify tar emot är bankens
+ * goodwill, inte en regel: det ersätter aldrig att skicka in i tid.
+ */
+export function fonstretStangt(t, nu = new Date()) {
+  // ⚠️ Bara ett AVLÄST och tomt bevisfält bevisar att ingen svarade. Saknas
+  // fältet helt (data äldre än 2026-09-28) vet vi inte, och då stannar raden i
+  // uppgiftslistan som förut — en förfallen tvist som KAN ha bevis inne får
+  // aldrig bokföras som förlorad på en gissning.
+  if (t?.bevisSkickat !== null) return false;
+  const h = timmarKvar(t?.evidensSenastTid, nu);
+  if (h !== null) return h < 0;
+  return (dagarKvar(t?.evidensSenast, nu) ?? 99) < 0;
+}
+
 /** Chargeback = pengarna är redan dragna och en förlust är slutgiltig. Ren. */
 export function arChargeback(t) {
   return String(t?.typ ?? '').toLowerCase() === 'chargeback' ? 1 : 0;
@@ -183,8 +216,11 @@ export function narText(kvar, timmar = null) {
  * Discord-texten. Engelska — VA:n läser den (Axels order 2026-09-05).
  * Kundadresser förekommer inte här: ordernumret är nyckeln.
  */
-export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
+export function renderaLarm(alla, { brand, nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   const datum = new Date(nu).toISOString().slice(0, 10);
+  // Stängda fönster lyfts ur uppgiftslistan och får egen rubrik längst ner.
+  const stangda = alla.filter((x) => fonstretStangt(x, nu));
+  const rader = alla.filter((x) => !fonstretStangt(x, nu));
   // Förfallen och "förfaller idag" är INTE samma sak. En tvist med deadline i
   // dag går fortfarande att vinna — kallar man den "already past the due date"
   // hoppar VA:n över den och vi förlorar pengar som var räddningsbara.
@@ -203,7 +239,9 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   const ut = [
     `${rubrik} **Dispute deadlines — ${brand} (${datum})**`,
     '',
-    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence — every open chargeback, and inquiries due within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`,
+    rader.length
+      ? `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence — every open chargeback, and inquiries due within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`
+      : 'Nothing is waiting for evidence right now — but read the closed window at the bottom.',
     '',
     // ⚠️ Texten stod tidigare som "an unanswered dispute is lost automatically".
     // Det är FALSKT för inquiries och stod i larmet 2026-09-15..20. Mätt på 50
@@ -253,6 +291,26 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
     'gather its proof today even when the date is weeks away. **Always email the customer the same day anyway;**',
     '**only the evidence submission waits, and a customer who gets an answer often withdraws the dispute themselves.**',
   );
+  if (stangda.length) {
+    ut.push(
+      '',
+      `⏰ **Past the deadline with no evidence in — ${stangda.length === 1 ? 'this one' : `these ${stangda.length}`}. SUBMIT ANYWAY, TODAY.**`,
+      'Measured twice in this shop: Shopify accepted evidence 6 hours late (28 Sep) and 8.5 hours late (30 Sep), both times',
+      'reaching `under_review`. Late is not the same as closed. Build the pack, press **Submit now**, and do it before',
+      'anything else on this list — these are the only rows where waiting another day can make the money unreachable.',
+      '',
+    );
+    for (const x of stangda) {
+      const order = x.ordernamn ? `${x.ordernamn}` : `order ${x.orderId ?? 'unknown'}`;
+      const mark = arChargeback(x) ? '🔴 CHARGEBACK' : 'inquiry';
+      ut.push(`• **${order}** — ${mark}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — window closed ${x.evidensSenast}${klockslag(x.evidensSenastTid) ? ` at ${klockslag(x.evidensSenastTid)}` : ''}`);
+    }
+    ut.push(
+      '',
+      '**And email the customer the same day.** A chargeback can be withdrawn by the cardholder even after our window shuts,',
+      'and an inquiry that nobody answered escalates into a chargeback — so talking to the customer is a second lever, not a substitute.',
+    );
+  }
   return ut.join('\n');
 }
 

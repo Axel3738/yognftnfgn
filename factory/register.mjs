@@ -438,6 +438,10 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // av /ops-spegla. Utan fältet finns ingen spegling och setup bygger
       // ingen sådan rutin. Skräp räknas som ingen spegling.
       spegling: giltigSpegling(d?.spegling) ? d.spegling : null,
+      // Ägarens uttryckliga målkampanj per marknad (Axels order 2026-09-30,
+      // CaraShell US → "Taköverdrag 5 reasons USA TEST"). Vinner över
+      // namnsökningen i kön och uppladdaren — tools/lib/malkampanj.mjs.
+      malkampanj: d?.malkampanj && typeof d.malkampanj === 'object' ? d.malkampanj : null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
       // Briefdagarna: posten får överstyra, annars toppnivån i register.json,

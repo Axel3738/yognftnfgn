@@ -91,15 +91,33 @@ test('patchaMallJson product.json: trust-blocket blir capture + render med varia
 });
 
 test('patchaJs: språk ur <html lang>, valuta via Intl när den inte är butikens, idempotent', () => {
-  const js = "(function () {\n  'use strict';\n\n  var TZ = 'Europe/Stockholm';\n  function money(cents, format) {\n    var f = format || '{{amount}} kr';\n    var utanOren = /no_decimals/i.test(f);\n    var kr = utanOren ? Math.round(cents / 100) : cents / 100;\n    var visaOren = !utanOren && Math.round(cents) % 100 !== 0;\n    var text = kr.toLocaleString('sv-SE', {\n      minimumFractionDigits: visaOren ? 2 : 0,\n      maximumFractionDigits: visaOren ? 2 : 0\n    });\n    return f.replace(/\\{\\{\\s*amount[a-z_]*\\s*\\}\\}/gi, text);\n  }\n  function svDate(date, withWeekday) {\n    return new Intl.DateTimeFormat('sv-SE', withWeekday\n      ? { weekday: 'long' } : { day: 'numeric' }).format(date);\n  }\n})();";
+  const js = "(function () {\n  'use strict';\n\n  var TZ = 'Europe/Stockholm';\n  function money(cents, format) {\n    var f = format || '{{amount}} kr';\n    var utanOren = /no_decimals/i.test(f);\n    var kr = utanOren ? Math.round(cents / 100) : cents / 100;\n    var visaOren = !utanOren && Math.round(cents) % 100 !== 0;\n    var text = kr.toLocaleString('sv-SE', {\n      minimumFractionDigits: visaOren ? 2 : 0,\n      maximumFractionDigits: visaOren ? 2 : 0\n    });\n    return f.replace(/\\{\\{\\s*amount[a-z_]*\\s*\\}\\}/gi, text);\n  }\n  function svDate(date, withWeekday) {\n    return new Intl.DateTimeFormat('sv-SE', withWeekday\n      ? { weekday: 'long' } : { day: 'numeric' }).format(date);\n  }\n  function pad(n) { return n < 10 ? '0' + n : String(n); }\n  function ut(from, to, min, max) {\n    return (min === max)\n          ? svDate(from, true)\n          : svDate(from, false) + ' – ' + svDate(to, false);\n  }\n})();";
   const r = patchaJs(js);
-  assert.deepEqual(r.byten, ['sprak', 'money', 'datum']);
+  assert.deepEqual(r.byten, ['sprak', 'money', 'datum', 'intervall']);
   assert.ok(r.kod.includes('var LANG = (document.documentElement.lang'));
   assert.ok(r.kod.includes("new Intl.NumberFormat(LANG, { style: 'currency', currency: aktiv"));
   assert.ok(r.kod.includes('new Intl.DateTimeFormat(LANG, withWeekday'));
   assert.ok(!r.kod.includes("'sv-SE', {"));
   // Koden ska fortfarande vara giltig JavaScript.
   assert.doesNotThrow(() => new Function(r.kod));
+  assert.deepEqual(patchaJs(r.kod).byten, []);
+});
+
+test('patchaJs: leveransfönstret i samma månad skriver månaden en gång, svenska som förut', () => {
+  // Språket och beloppen är redan patchade här (var LANG, Intl.NumberFormat(LANG); bara datumdelarna prövas.
+  const js = "(function () {\n  var TZ = 'Europe/Stockholm';\n  var LANG = 'sv-SE'; /* Intl.NumberFormat(LANG */\n  function svDate(date, withWeekday) {\n    return new Intl.DateTimeFormat('sv-SE', withWeekday\n      ? { weekday: 'long', day: 'numeric', month: 'long' }\n      : { day: 'numeric', month: 'long' }\n    ).format(date);\n  }\n  function pad(n) { return n < 10 ? '0' + n : String(n); }\n  var x = a ? b\n          : svDate(from, false) + ' – ' + svDate(to, false);\n})();";
+  const r = patchaJs(js);
+  assert.ok(r.byten.includes('intervall'));
+  const hjalp = r.kod.match(/  function svDate[\s\S]*?\n  \}\n/)[0] + r.kod.match(/  var INTERVALL_SPRAK[\s\S]*?\n  function datumIntervall[\s\S]*?\n  \}\n/)[0];
+  // Intl sätter smala mellanslag (U+2009) runt tankstrecket över ett månadsskifte; jämför med vanliga.
+  const kor = (lang, a, b) => new Function('from', 'to', `var LANG = '${lang}';\n${hjalp}\nreturn datumIntervall(from, to);`)(a, b).replace(/[\u2009\u202f]/g, ' ');
+  const d7 = new Date(2026, 9, 7), d14 = new Date(2026, 9, 14), d30 = new Date(2026, 9, 30), n6 = new Date(2026, 10, 6);
+  assert.equal(kor('pl', d7, d14), '7–14 października');
+  assert.equal(kor('de', d7, d14), '7.–14. Oktober');
+  assert.equal(kor('pl', d30, n6), '30 października – 6 listopada', 'över månadsskiftet: båda månaderna');
+  assert.equal(kor('sv-SE', d7, d14), '7 oktober – 14 oktober', 'svenskan som förut');
+  assert.equal(kor('ja', d7, d14), '10月7日 – 10月14日', 'japanskan som förut, inga siffror med snedstreck');
+  assert.equal(kor('it', d7, d14), '7 ottobre – 14 ottobre', 'italienskan som förut');
   assert.deepEqual(patchaJs(r.kod).byten, []);
 });
 
@@ -137,6 +155,43 @@ test('patchaPaketJs: köpknappens tre texter på kundens språk, svenskan som re
   const r2 = patchaPaketJs(r.kod, ov2);
   assert.deepEqual(r2.byten, ['ordlista (uppdaterad)']);
   assert.equal(kor.call(null, 'de') && (() => { const w = {}; new Function('window', 'document', r2.kod)(w, { documentElement: { lang: 'de' } }); return w.msTest.text('lagger_i', 'x'); })(), 'Wird in den Warenkorb gelegt …');
+});
+
+test('patchaPaketJs: reservvägen landar i korgen på kundens språk, inte på domänens huvudspråk', async () => {
+  // Granskningen 2026-09-30: "korgen blir engelsk". Reservvägen laddade om till
+  // /discount/<kod>?redirect=/cart, och en ren /cart på matstrumpor.com är engelska.
+  const { patchaPaketJs, patchaPaketKorg } = await import('../temapatch.mjs');
+  const js = [
+    '(function () {', "  'use strict';",
+    '  window.msTest = function (rutt, kod) {',
+    '    var gick = {};',
+    "    function laddaOm() { gick.href = kod ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart') : rutt + 'cart'; }",
+    "    gick.fetch = rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart.js');",
+    "    if (false) { knapp.textContent = 'Lägger i…'; }",
+    "    if (false) { throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.'); }",
+    "    if (false) { fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.'; }",
+    '    laddaOm(); return gick;',
+    '  };', '})();',
+  ].join('\n');
+  const ov = { de: { 'liquid.ms-paket.js.lagger_i': 'Wird hinzugefügt …' } };
+  const r = patchaPaketJs(js, ov);
+  assert.ok(r.byten.some((b) => b.startsWith('korgens språkmapp')), r.byten.join(', '));
+  assert.ok(!r.kod.includes("encodeURIComponent('/cart')") && !r.kod.includes("encodeURIComponent('/cart.js')"));
+  const kor = (kod, rutt, rabatt) => { const w = {}; new Function('window', 'document', kod)(w, { documentElement: { lang: 'de' } }); return w.msTest(rutt, rabatt); };
+  assert.equal(kor(r.kod, '/de/', 'SUSHI-K2F2').href, '/de/discount/SUSHI-K2F2?redirect=%2Fde%2Fcart');
+  assert.equal(kor(r.kod, '/zh-tw/', 'SUSHI-K2F2').fetch, '/zh-tw/discount/SUSHI-K2F2?redirect=%2Fzh-tw%2Fcart.js');
+  assert.equal(kor(r.kod, '/', 'SUSHI-K2F2').href, '/discount/SUSHI-K2F2?redirect=%2Fcart', 'huvudspråket (roten) ska fortfarande landa på /cart');
+  // Idempotent: andra körningen byter ingenting.
+  assert.deepEqual(patchaPaketJs(r.kod, ov).byten, []);
+  assert.deepEqual(patchaPaketKorg(r.kod).byten, []);
+  // Utan översättningar lagas korgen ändå.
+  assert.ok(patchaPaketJs(js, {}).byten.some((b) => b.startsWith('korgens språkmapp')));
+});
+
+test('fabrikens ms-paket.js skickar aldrig kunden till en korg utan språkmapp', async () => {
+  const { readFileSync } = await import('node:fs');
+  const kod = readFileSync(new URL('../../../factory/tema/assets/ms-paket.js', import.meta.url), 'utf8');
+  assert.ok(!/encodeURIComponent\('\/cart(\.js)?'\)/.test(kod), "factory/tema/assets/ms-paket.js bär en '/cart' utan rutt");
 });
 
 test('patchaMallJson: en gren byggd med en äldre översättning byts på plats mot den nya', () => {

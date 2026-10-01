@@ -1,13 +1,13 @@
 {
  "_om": "Engelsk annonstext för MATSTRUMP_US_SALES, skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md ur den svenska vinnarannonsen (Nathalie). Amerikansk stavning, inga årstider, inget pris, ingen leveranstid, 'Free shipping.' utan land — samma copy i US och WW. Tre-frågorstestet 8/8 ✅. Videorna är US-batchens (heygen/US.json), klar/US_<namn>.mp4 — WW använder samma filer. ⛔ Katarina ingår aldrig.",
- "instagram_user_id": "17841479011543544",
+ "instagram_user_id": "17841423405715219",
  "copy": {
   "title": "Fun tonight. On your feet tomorrow.",
   "title_alt": [
    "Looks like sushi. Isn't.",
    "A joke gift that doesn't stay a joke."
   ],
-  "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+  "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
   "link_description": "4 kinds. Buy 1, get 1. Free shipping."
  },
  "annonser": [
@@ -16,7 +16,7 @@
    "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
    "video": "klar/US_nathalie.mp4",
    "title": "Fun tonight. On your feet tomorrow.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -24,15 +24,15 @@
    "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
    "video": "klar/US_sofie_h1.mp4",
    "title": "Looks like sushi. Isn't.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
    "namn": "MATSTRUMP_US_sushi_jul_ugc_003_v1",
    "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
    "video": "klar/US_sofie_h2.mp4",
-   "title": "A joke gift that doesn't stay a joke.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "title": "A gag gift that doesn't stay a gag.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -40,7 +40,7 @@
    "kalla": "MATSTRUMP_sushi_gift_ugc_012v2_v1 (video 4323418044575220) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/US_012v2.mp4",
    "title": "Fun tonight. On your feet tomorrow.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -48,7 +48,7 @@
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1 (video 996449943431525) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/US_haikuh3.mp4",
    "title": "Fun tonight. On your feet tomorrow.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -56,7 +56,7 @@
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1 (video 3084560565211662) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/US_haikuh2.mp4",
    "title": "Fun tonight. On your feet tomorrow.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -64,7 +64,7 @@
    "kalla": "MATSTRUMP_sushi_gift_ugc_s001h1_v2 (video 1593728122281460) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/US_s001h1.mp4",
    "title": "Fun tonight. On your feet tomorrow.",
-   "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
+   "message": "No one cheers for detergent. No one keeps a gag gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
   },
   {
@@ -72,7 +72,7 @@
    "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/US.json, granskad av infödda 2026-09-29)",
    "bild": "klar/US_d3.jpg",
    "title": "Buy 2, get 2 free: 4 boxes",
-   "message": "You get four boxes.\nBuy 2 – get 2 free: 20 pairs of socks in total.\nRolled like maki. Wooden chopsticks in every box.\nOne size, fits EU 36–44.\nA Swedish brand.",
+   "message": "You get four boxes.\nBuy 2 – get 2 free: 20 pairs of socks in total.\nRolled like maki. Wooden chopsticks in every box.\nOne size, fits EU 36–44 (about US men's 4–10, US women's 5.5–11.5, UK 3.5–9.5).\nA Swedish brand.",
    "link_description": "Buy 2, get 2 free. Free shipping."
   }
  ],

@@ -1,0 +1,78 @@
+[
+ {
+  "box": [
+   170,
+   66,
+   905,
+   134
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "619 kr, før 809 kr."
+ },
+ {
+  "box": [
+   180,
+   172,
+   897,
+   219
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 181,
+  "text": "24 luker med golftilbehør, klar til sending."
+ },
+ {
+  "box": [
+   390,
+   969,
+   689,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "619 kr"
+ },
+ {
+  "box": [
+   276,
+   1089,
+   801,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "før 809 kr. Spar 190 kr."
+ },
+ {
+  "box": [
+   347,
+   1206,
+   733,
+   1308
+  ]
+ }
+]

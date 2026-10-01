@@ -1,0 +1,148 @@
+{
+ "comment": "Värva en vän på Matstrumpor (tacksidan). Facit för matstrumpor/varva.mjs, tacksidekortet (app/) och temats skript (ms-varva.js). Ändra HÄR, aldrig i koden — kör sedan `node matstrumpor/varva.mjs --bygg` så följer kortet och temat med.",
+ "beslut": "Axel 2026-09-30, efter Ty Chapmans reel om Redeemly (instagram.com/reels/Dd5G-J6zEyv): 'Egen, 50 kr / 100 kr'. Vännen får 50 kr rabatt på sitt första köp, kunden som delade länken får 100 kr i butikskredit när vännens paket har skickats. Redeemly valdes bort: största planen tar 800 ordrar/månad (Matstrumpor hade 1 617 i december 2025) och appen finns bara på engelska.",
+ "kod": "VAN-BPKS6U",
+ "kod_comment": "Vännens rabattkod. Står aldrig i länken — temats skript lägger på den när vännen landar med ?van=<bekräftelsenummer>. Slumpad 2026-09-30 (inga å/ä/ö, inga 0/O/1/I). Byts koden: skapa den nya med --kod --skarpt, kör --bygg och deploya kortet + --tema --skarpt.",
+ "kod_titel": "Värva en vän: 50 kr till vännen (första köpet)",
+ "van_belopp_sek": 50,
+ "kredit_belopp_sek": 100,
+ "minsta_ordervarde_sek": 200,
+ "minsta_ordervarde_comment": "Sessionens beslut 2026-09-30: utan golv hade 50 kr gjort en lös vara (ätpinnarna) gratis med fri frakt. Billigaste strumpan kostar 299 kr, så golvet stoppar ingen riktig order. Shopify räknar om golvet till kundens valuta.",
+ "attribut": "van",
+ "attribut_comment": "Varukorgsattributet temat sätter. Värdet är VÄRVARENS bekräftelsenummer (Order.confirmationNumber, slumpat av Shopify, t.ex. GR85LGHYQ) — aldrig ordernumret, som går att gissa.",
+ "tagg_krediterad": "varva-krediterad",
+ "max_per_varvare": 10,
+ "max_per_varvare_comment": "Sessionens beslut 2026-09-30: högst 10 krediterade vänner (1 000 kr) per kund. Utan tak kan en länk som hamnar på en rabattkodssajt betala ut utan gräns till en person. Varje vän över taket rapporteras, aldrig tyst.",
+ "dagar_bakat": 60,
+ "dagar_bakat_comment": "Så långt bakåt vännernas ordrar läses. Krediteringen körs varje timme i spårningsrutinen (/sparning matstrumpor, steg 2c); en order som väntar på att skickas prövas igen nästa timme.",
+ "notify": true,
+ "notify_comment": "Shopify mejlar kunden när krediten läggs in (StoreCreditAccountCreditInput.notify, finns från API 2026-01), på kundens språk.",
+ "paketkoder_monster": "^(SUSHI|PIZZA|HAMBURGARE|DONUT|STRUMPOR)-K\\dF\\d",
+ "paketkoder_comment": "Paketväljarens BxGy-koder (Köp 1 få 1 …). 466 av 490 ordrar i september 2026 bar en av dem. De tillät ingen annan rabatt, och när två rabatter inte får kombineras drar Shopify av den som är bäst för kunden, alltså paketkoden. Vännens 50 kr hade då aldrig dragits av. --kod öppnar dem för ORDERrabatter (vännens kod) och stänger samtidigt produktkombinationen på varje annan orderrabatt som stod öppen (GLÖMD), så att inget annat än vännens kod börjar kombineras. Originalen står i lage.json → aterstall; --aterstall --skarpt lägger tillbaka dem.",
+ "api_version": "2026-07",
+ "app_client_id": "9a9640762e045a66040a793bb6be6483",
+ "app_client_id_comment": "Appen \"Matstrumpor Tacksida\" i Dev Dashboard-organisationen Matstrumpor.se, inga rättigheter, skapad av Cowork 2026-09-30 (cowork/1-tacksidan.txt). Client ID är ingen hemlighet — det står i shopify.app.matstrumpor.toml. deploy.sh läser det härifrån när TACKSIDA_CLIENT_ID_MATSTRUMPOR saknas; token (SHOPIFY_APP_AUTOMATION_TOKEN_MATSTRUMPOR) ligger bara i miljön.",
+ "valutor": {
+  "SEK": {
+   "land": "SE",
+   "van": 50,
+   "kredit": 100,
+   "matt": 50
+  },
+  "NOK": {
+   "land": "NO",
+   "van": 48,
+   "kredit": 100,
+   "matt": 49
+  },
+  "DKK": {
+   "land": "DK",
+   "van": 33,
+   "kredit": 65,
+   "matt": 33.6
+  },
+  "EUR": {
+   "land": "FI",
+   "van": 4,
+   "kredit": 9,
+   "matt": 4.49
+  },
+  "USD": {
+   "land": "US",
+   "van": 5,
+   "kredit": 10,
+   "matt": 5.09
+  },
+  "GBP": {
+   "land": "GB",
+   "van": 3.5,
+   "kredit": 8,
+   "matt": 3.84
+  },
+  "AUD": {
+   "land": "AU",
+   "van": 7,
+   "kredit": 15,
+   "matt": 7.33
+  },
+  "CAD": {
+   "land": "CA",
+   "van": 7,
+   "kredit": 14,
+   "matt": 7.24
+  },
+  "NZD": {
+   "land": "NZ",
+   "van": 8.5,
+   "kredit": 18,
+   "matt": 9.04
+  },
+  "CHF": {
+   "land": "CH",
+   "van": 4,
+   "kredit": 9,
+   "matt": 4.25
+  },
+  "CZK": {
+   "land": "CZ",
+   "van": 100,
+   "kredit": 220,
+   "matt": 109.83
+  },
+  "HUF": {
+   "land": "HU",
+   "van": 1600,
+   "kredit": 3300,
+   "matt": 1647.47
+  },
+  "ISK": {
+   "land": "IS",
+   "van": 600,
+   "kredit": 1200,
+   "matt": 616
+  },
+  "PLN": {
+   "land": "PL",
+   "van": 19,
+   "kredit": 40,
+   "matt": 19.61
+  },
+  "RON": {
+   "land": "RO",
+   "van": 23,
+   "kredit": 45,
+   "matt": 23.7
+  },
+  "JPY": {
+   "land": "JP",
+   "van": 780,
+   "kredit": 1600,
+   "matt": 801
+  },
+  "TWD": {
+   "land": "TW",
+   "van": 150,
+   "kredit": 320,
+   "matt": 162.34
+  }
+ },
+ "valutor_comment": "Per valuta: land att mäta i, van = vännens rabatt som kortet och välkomstraden VISAR (golvat ur Shopifys egen omräkning av 50 kr, mätt med --mat), kredit = det värvaren FÅR (ett runt belopp nära 100 kr). En valuta utan rad får ingen kredit och kortet visas inte i den — aldrig en gissning. Japanska och kinesiska belopp innehåller aldrig siffran 4 (四).",
+ "lankar": {
+  "sv": "https://matstrumpor.se",
+  "en": "https://matstrumpor.com",
+  "nb": "https://matstrumpor.com/nb",
+  "da": "https://matstrumpor.com/da",
+  "fi": "https://matstrumpor.com/fi",
+  "de": "https://matstrumpor.com/de",
+  "fr": "https://matstrumpor.com/fr",
+  "nl": "https://matstrumpor.com/nl",
+  "es": "https://matstrumpor.com/es",
+  "it": "https://matstrumpor.com/it",
+  "pl": "https://matstrumpor.com/pl",
+  "pt-PT": "https://matstrumpor.com/pt-pt",
+  "ja": "https://matstrumpor.com/ja",
+  "zh-TW": "https://matstrumpor.com/zh-tw"
+ },
+ "lankar_comment": "Länken följer värvarens språk. Sverige på .se, allt utland på matstrumpor.com (Axels beslut 2026-09-29). Mapparna är samma som spårningssidans (sparning/butiker.json → matstrumpor.mejl_sprak).",
+ "valutor_matta": "2026-09-30"
+}

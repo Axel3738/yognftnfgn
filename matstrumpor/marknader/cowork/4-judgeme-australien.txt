@@ -1,0 +1,78 @@
+⛔ KÖRD 2026-10-01 — kör inte igen. Del A stoppade rätt: Australien har ingen vanlig landrad i Metas
+verifieringar, bara "finansiella tjänster", och kontots allmänna standardannonsör ska inte röras.
+Australien togs i stället ur WW-adsetet (marknader.json → WW.geo_vantar) tills Meta godkänt bolaget.
+Del B: datumformatet blev dd/mm/yyyy; japanska och kinesiska kom in när Axel tryckte "Uppdatera lista".
+Det som är kvar i Judge.me står i 5-judgeme-texter.txt.
+
+Uppdrag: två små saker för Matstrumpors utlandsbutik. Del A i Meta, del B i Judge.me. Gör bara det som står nedan.
+
+Rör ALDRIG:
+- Kampanjer, annonsgrupper eller annonser i Meta. Skapa inga, publicera inga, aktivera inga och ändra inga budgetar.
+- Andra annonskonton än "nya kungen", och EU-inställningen för förmånstagare och betalare (DSA, den står på "STonebite").
+- Recensionerna själva i Judge.me: radera, dölj, redigera eller besvara aldrig en recension.
+- Judge.me-planen, betalningar, e-postinställningar och recensionsförfrågningar.
+- De svenska texterna i Judge.me.
+- Shopify-temat, Shopify Payments, DNS och Loopia.
+Betala ingenting. Verifiera ALDRIG Axel som privatperson. Skriv aldrig adressen Sjöhed 160 någonstans.
+
+DEL A — Australien i Meta (samma sak som redan gjorts för Taiwan)
+
+Varför: Meta flaggar annonsgruppen MATSTRUMP_WW_ugc (Storbritannien, Australien, Kanada, Nya Zeeland): Australien kräver en verifierad annonsör och betalare. Bolaget STONEBITE ECOM AB är redan inskickat för granskning och valt för Taiwan (Coworks körning 2026-09-30). Nu ska samma bolag väljas för Australien.
+
+A1. Öppna Ads Manager för annonskontot "nya kungen" (730973156224390):
+    https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=730973156224390
+    Kontrollera att kontonamnet högst upp är "nya kungen". Står något annat: stanna och fråga Axel.
+A2. Öppna kontots annonseringsinställningar ("Annonseringsinställningar" / "Advertising settings") och "Standardförmånstagare och betalare" ("Default beneficiary and payer"), där Taiwan valdes förra gången.
+A3. Välj landet Australien. Välj STONEBITE ECOM AB som BÅDE förmånstagare och betalare och spara.
+    Finns bolaget inte i listan för Australien, eller vill Meta ha en ny verifiering med dokument: stanna, ladda inte upp något och rapportera exakt vad Meta skriver.
+A4. Kontrollera att sidan nu visar Taiwan → STONEBITE ECOM AB och Australien → STONEBITE ECOM AB, med status. Ta en skärmdump.
+
+DEL B — Judge.me-rutans egna texter på utlandsspråken
+
+Varför: granskningen läste produktsidan som kund på tolv språk. Rutans rubriker är rätt, men några gränssnittstexter står kvar på engelska eller svenska. Recensionerna själva är på svenska med flit (Judge.me översätter dem automatiskt) och ska inte röras.
+Fel som syns i dag:
+- Märket under produktnamnet säger "11 recensioner" (svenska) på tyska, franska, japanska och kinesiska sidor. På finska står "11 arvostelut" och på polska "11 recenzje", båda i fel form.
+- "Sort reviews by" står på engelska på alla utlandsspråk.
+- "5 stars: 6 (55%)" står på engelska på den franska sidan.
+- "Anonym" (svenska) står som namn på den italienska sidan.
+- Datumet skrivs "09/28/2026" (amerikanskt) överallt.
+
+B1. Öppna Judge.me i Shopify-admin för butiken Matstrumpor.se (1r46tp-qx): Appar → Judge.me.
+B2. Hitta där texterna per språk ställs in (heter ofta "Languages", "Multi-language", "Text customization" eller "Translations"). Välj ett språk i taget och sätt texterna nedan. Ändra bara de här fälten. Om ett fält har en platshållare som {{ n }}, {{ count }} eller liknande: behåll platshållaren exakt och byt bara orden runt den.
+
+   Rubriken och mellanrubriken (står på SVENSKA på japanska och kinesiska sidor, mätt 2026-10-01: "Kundrecensioner" och "Recensioner på andra språk"):
+   ja: お客様のレビュー · 他の言語のレビュー
+   zh-TW: 顧客評價 · 其他語言的評價
+   Rör inte rubriken på de andra språken, den är rätt där.
+
+   Märket ("X reviews"):
+   nb: {{ n }} anmeldelser   · da: {{ n }} anmeldelser   · fi: {{ n }} arvostelua   · en: {{ n }} reviews
+   de: {{ n }} Bewertungen   · fr: {{ n }} avis   · nl: {{ n }} beoordelingen   · es: {{ n }} reseñas
+   it: {{ n }} recensioni   · pl: {{ n }} recenzji   · pt-PT: {{ n }} avaliações
+   ja: {{ n }}件のレビュー   · zh-TW: {{ n }} 則評價
+   (Finns ett eget fält för EN recension: nb/da 1 anmeldelse, fi 1 arvostelu, en 1 review, de 1 Bewertung, fr 1 avis, nl 1 beoordeling, es 1 reseña, it 1 recensione, pl 1 recenzja, pt-PT 1 avaliação, ja 1件のレビュー, zh-TW 1 則評價.)
+
+   "Sort reviews by":
+   nb: Sorter anmeldelser etter · da: Sortér anmeldelser efter · fi: Lajittele arvostelut · de: Bewertungen sortieren nach
+   fr: Trier les avis par · nl: Beoordelingen sorteren op · es: Ordenar reseñas por · it: Ordina le recensioni per
+   pl: Sortuj recenzje według · pt-PT: Ordenar avaliações por · ja: 並べ替え · zh-TW: 排序方式
+   (en behåller "Sort reviews by".)
+
+   Stjärnfördelningen ("5 stars" …), om fältet finns: fr "5 étoiles", de "5 Sterne", nl "5 sterren", es "5 estrellas", it "5 stelle", pl "5 gwiazdek", pt-PT "5 estrelas", nb/da "5 stjerner", fi "5 tähteä", ja "星5", zh-TW "5 星". Ändra bara ordet för stjärnor, inte talen.
+
+   Namnet på en anonym recensent, om fältet finns per språk: it Anonimo, de Anonym, fr Anonyme, nl Anoniem, es Anónimo, pl Anonim, pt-PT Anónimo, nb/da Anonym, fi Nimetön, en Anonymous, ja 匿名, zh-TW 匿名.
+
+B3. Datumformatet: finns det per språk, sätt dd.mm.yyyy för nb, da, fi, de och pl; dd/mm/yyyy för en, fr, es, it och pt-PT; dd-mm-yyyy för nl; yyyy/mm/dd för ja och zh-TW. Finns bara ett gemensamt format: välj dd/mm/yyyy (Claudes val: gäller flest av marknaderna, och ingen läser det som amerikanskt datum).
+B4. Spara. Rör inga andra inställningar i Judge.me.
+B5. Kontrollera som kund. Öppna i en ny flik, en i taget, och ladda om sidan:
+    https://matstrumpor.com/de/products/sushi-strumpor?country=DE
+    https://matstrumpor.com/fi/products/sushi-strumpor?country=FI
+    https://matstrumpor.com/pl/products/sushi-strumpor?country=PL
+    https://matstrumpor.com/ja/products/sushi-strumpor?country=JP
+    På varje sida: vad står under produktnamnet (märket), vad står vid sorteringen och hur ser ett datum ut i recensionsrutan längre ned? Ta en skärmdump av rutan på varje sida.
+
+Rapportera:
+- Del A: om Australien nu visar STONEBITE ECOM AB för förmånstagare och betalare, med status, och skärmdumpen. Eller exakt vad Meta skrev om det stoppade.
+- Del B: vilka fält som fanns och vilka du ändrade, per språk, vilket datumformat som valdes, och de fyra skärmdumparna. Säg rakt ut om ett fält inte fanns.
+
+Skriv sedan "Judge.me och Australien klart" i chatten med Claude. Claude läser sidorna som kund och WW-annonsgruppen i Meta efteråt. Ingenting aktiveras förrän Axel granskat annonserna.

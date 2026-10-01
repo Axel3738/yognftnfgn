@@ -1,0 +1,41 @@
+Uppdrag: skapa en API-nyckel i Spoks för arbetsytan Carashell, så att Claude kan välja publik
+och läsa kampanjer själv. Allt görs i Spoks-appen (https://app.spoks.com). Inget annat.
+
+Förutsättning: Carashell måste ha en BETALD plan. På gratisplanen finns ingen nyckel, och knappen
+öppnar i stället rutan "Uppgradera butiken". Uppgraderingen kostar pengar och görs av Axel själv.
+Du uppgraderar aldrig.
+
+Bakgrund: Spoks har ett officiellt API (https://docs.spoks.com). Appen har EN nyckel per
+arbetsyta och frågar inte om rättigheter. Claude läser nyckeln ur miljön, aldrig ur en fil eller
+en chatt. Knappnamnen nedan är lästa ur Spoks egen kod och översättningsfil 2026-09-30.
+
+Spoks-appen ritar hela sidan som en enda bild. Läs den med skärmdumpar, inte med sidans text.
+Är sidan vit: vänta 10 sekunder och ta en skärmdump. Är den fortfarande vit: STANNA och rapportera.
+
+Steg:
+  A. Byt till arbetsytan Carashell i arbetsyteväljaren.
+  B. Öppna Inställningar (på engelska Settings) och sedan Integrationer (Integrations).
+  C. Leta upp rutan "API-nyckel" (API key).
+     - Står knappen GENERERA NYCKEL (GENERATE KEY) där: klicka på den EN gång.
+     - Står det redan en dold nyckel med stjärnor, en ögon-ikon och en kopiera-ikon: det finns
+       redan en nyckel. Klicka inte på något. Gå direkt till D.
+     - Öppnas rutan "Uppgradera butiken": klicka INTE på "Uppgradera nu". Stäng rutan, STANNA
+       och skriv till Axel: "Carashell har fortfarande gratisplanen. Uppgradera den själv med
+       Uppgradera nu i den rutan, så kör jag igen."
+  D. Klicka inte på ögat och inte på kopiera-ikonen. Nyckeln får aldrig synas på skärmen, i en
+     skärmdump eller i din text. Skriv bara till Axel:
+       "Nyckeln för Carashell finns nu. Klicka själv på kopiera-ikonen i rutan API-nyckel och lägg
+        in den i Claude-miljön som SPOKS_API_KEY_CARASHELL. Skriv klar när du är färdig."
+     Vänta tills Axel skriver klar.
+
+Regler, utan undantag:
+- Radera, rotera eller ändra ALDRIG en nyckel som redan finns. Skapa bara en ny där ingen finns.
+- Rör inga kampanjer, flöden, segment, kontakter, formulär eller domäner, och ändra ingen
+  annan inställning än den nya nyckeln. Schemalägg inget, skicka inget, slå inte på något.
+- Uppgradera aldrig en plan och öppna aldrig Fakturering.
+- Logga aldrig in med ett annat Spoks-konto. Syns Carashell inte i väljaren, eller får du inte
+  skapa nycklar där: STANNA och skriv exakt vad du såg.
+- Ser något annorlunda ut än beskrivet: STANNA, gör inget mer, och skriv exakt vad du ser.
+
+Rapportera till sist på en rad: om nyckeln skapades nu, redan fanns eller stoppades av
+uppgraderingsrutan, och klockslag. Skriv aldrig själva nyckeln i rapporten.

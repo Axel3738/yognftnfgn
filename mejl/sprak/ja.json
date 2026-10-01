@@ -1,0 +1,47 @@
+{
+  "comment": "Japanska (です・ます調) för Matstrumpors fraktmejl. Skriven av en sonnet-subagent 2026-09-30 mot sv-källan och de.json — inte av en modersmålstalare; rätta här, aldrig i koden. Knappen (配送状況を確認) och tilltalet (お客様) är låsta mot spårningssidan. dagsuffix står tomt med flit: datumLiquid bygger <dag><suffix> <månad> ('7日 9月'), men japanska skriver månad först ('9月7日') — det kräver en månad-först-gren i mallar.mjs; leveransfönstret visas ändå inte i Matstrumpors mejl. halsning ger 'Taroさん、こんにちは！' (som fr/es) i stället för standardens 'こんにちは Taro!'.",
+  "kod": "ja",
+  "ord": {
+    "Hej": "こんにちは",
+    "I paketet": "お荷物の内容",
+    "Levereras till": "お届け先",
+    "Antal": "数量",
+    "Ditt paketnummer": "お荷物番号",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "上のボタンをクリックすると、すぐにお荷物の状況が表示されます。"
+  },
+  "manader": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+  "dagsuffix": "",
+  "menyrad": "荷物追跡",
+  "sidfot": "ご注文についてご不明な点がありましたら、このメールにご返信いただくか、{{support}} までご連絡ください。",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["お荷物を発送しました", "ご注文{{ordernummer}}が倉庫を出発しました", "いま、お客様のもとへ向かっています"],
+      "preheader": ["追跡用のリンクはこちらです。", "メールが見当たらない場合は、迷惑メールフォルダをご確認ください。"],
+      "rubrik": "お荷物を発送しました！",
+      "intro": "ご注文{{ordernummer}}は倉庫を出発し、お客様のもとへ向かっています。",
+      "knapp": "配送状況を確認",
+      "tips": "お荷物が空港へ向かっている間、配送状況が数日ほど更新されないことがあります。これはまったく正常なことです。その後、もう一度ご確認ください。",
+      "beraknad_rubrik": "お届け予定",
+      "beraknad": "{{leverans_fran}}〜{{leverans_till}}",
+      "tysta_dagar": "最初の数日間は、配送状況にまだ何も表示されないことがよくあります。お荷物は空港へ向かっている途中で、紛失したわけではありません。特に何もする必要はありません。空港で受け付けられ次第、配送状況が更新されます。"
+    },
+    "fraktuppdatering": {
+      "amne": ["お荷物に関する新しいお知らせ", "配送状況が更新されました", "ご注文{{ordernummer}}の更新情報"],
+      "preheader": ["現在の状況はこちらです。", "最新の情報をご確認いただけます。"],
+      "rubrik": "配送状況が更新されました",
+      "intro": "ご注文{{ordernummer}}の追跡情報が更新されました。",
+      "knapp": "配送状況を確認"
+    },
+    "ute_for_leverans": {
+      "amne": ["本日、お荷物が届きます", "ただいま配達中です", "ご注文{{ordernummer}}は本日お届けします"],
+      "preheader": ["日中はお荷物の到着をお待ちください。", "まもなく郵便受けまたは受け取り場所に届きます。"],
+      "rubrik": "本日、お荷物が届きます",
+      "intro": "ご注文{{ordernummer}}は配達中で、本日中にお客様のもとに届きます。",
+      "knapp": "配送状況を確認"
+    }
+  },
+  "halsning": {
+    "med_namn": "{namn}さん、こんにちは！",
+    "utan_namn": "こんにちは！"
+  }
+}

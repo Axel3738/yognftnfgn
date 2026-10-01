@@ -1,0 +1,140 @@
+{
+ "segment": [
+  {
+   "a": 0.0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "寿司ソックスは、買わないで。理由は三つ。",
+   "las": "すしソックスは、かわないで。りゆうわ、みっつ。"
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "その一、とにかくユニーク。",
+   "las": "そのいち、とにかくユニーク。"
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "引き出しで眠る、つまらないギフトは、忘れて。",
+   "las": "ひきだしでねむる、つまらないギフトは、わすれて。"
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "これはもう、ひとつの体験。",
+   "las": "これはもう、ひとつのたいけん。"
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "箱を開けると、みんなお寿司だと思う。",
+   "las": "はこをあけると、みんなおすしだとおもう。"
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "でも待って、これ靴下！",
+   "las": "でも待って、これくつした！"
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "その二、コスパが良すぎる。",
+   "las": "そのに、コスパがよすぎる。"
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "ただの五足じゃないよ。",
+   "las": "ただのごそくじゃないよ。"
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "質もいいし、やわらかいし、長持ちするんです。",
+   "las": "しつもいいし、やわらかいし、ながもちするんです。"
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "履いてもらえるから、ほこりをかぶらない。",
+   "las": "履いてもらえるから、ほこりをかぶらない。"
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "その三、相手が大喜び。",
+   "las": "そのさん、あいてがおおよろこび。"
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "母のお気に入りのギフト！",
+   "las": "ははのおきにいりのギフト！"
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "なんと、もっと欲しいって！",
+   "las": "なんと、もっとほしいって！"
+  },
+  {
+   "a": 32.12,
+   "b": 35.0,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "リアクションも笑いも、間違いなしです。",
+   "las": "リアクションもわらいも、まちがいなしです。"
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "贈った人が、センスのいい人に見える。",
+   "las": "おくったひとが、センスのいいひとにみえる。"
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "これであなたも、プレゼント上手。",
+   "las": "これであなたも、プレゼントじょうず。"
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "どこで買ったか、聞かれる！",
+   "las": "どこでかったか、きかれる！"
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "今すぐリンクをチェック！",
+   "las": "いますぐリンクをチェック！"
+  }
+ ],
+ "texter": {
+  "hook": "待って！これを見るまで\n寿司ソックスは買わないで",
+  "rubriker": [
+   "その一：とにかくユニーク",
+   "その二：コスパが良すぎる",
+   "その三：相手が大喜び"
+  ],
+  "knapp": "今すぐ購入"
+ },
+ "granskad": true
+}

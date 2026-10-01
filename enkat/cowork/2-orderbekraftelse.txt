@@ -1,0 +1,19 @@
+Du hjälper Axel att slå på Matstrumpors köparenkät. EN ändring i Shopify-admin för butiken Matstrumpor.se (1r46tp-qx): den svenska orderbekräftelsen byts mot en version med rutan "Tre snabba frågor". Ingen annan butik.
+
+RÖR ALDRIG: andra notiser (fraktmejlen, återbetalning m.fl.), språkversioner/översättningar, temat, policyer, betalningar, domäner/DNS, Loopia, andra butiker. Skapa inga konton.
+
+STEG
+1. Öppna i en ny flik: https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/enkat/cowork/orderbekraftelse.liquid
+   Kontrollera att filen innehåller texten "ENKAT-v1 köparenkäten" och "Svara på frågorna". Markera allt (Ctrl+A) och kopiera (Ctrl+C).
+2. I Shopify-admin för Matstrumpor.se: Inställningar → Notiser → Kundnotiser → Orderbekräftelse → "Redigera kod".
+3. Klicka i kodrutan för e-postinnehållet (inte ämnesraden). Markera allt (Ctrl+A), klistra in (Ctrl+V). Ämnesraden "Order {{name}} bekräftad" rörs inte.
+4. Klicka "Spara".
+5. Kontrollera i förhandsgranskningen att rutan "Tre snabba frågor" med knappen "Svara på frågorna" syns under ordern, före sidfoten, och att resten av mejlet ser ut som förut (ordern, summan, adresserna).
+6. Klicka "Skicka testmejl" och kontrollera i testmejlet att knappen finns och går till matstrumpor.se/pages/enkat.
+
+Om något ser trasigt ut efter att du sparat (tomt mejl, felmeddelande i redigeraren): klicka "Återställ till standard" för orderbekräftelsen och skriv det i rapporten. Det ger tillbaka Shopifys standardmall.
+
+RAPPORT (kort, på svenska)
+- Sparad ja/nej.
+- Rutan syns i förhandsgranskningen ja/nej, resten av mejlet oförändrat ja/nej.
+- Testmejlet: knappen går till matstrumpor.se/pages/enkat ja/nej.

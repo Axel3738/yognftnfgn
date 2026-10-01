@@ -32,6 +32,7 @@ import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
 import { KONFIG, OUTPUT, underlagsfil, resursfil, LIQUID_TEXTER } from './underlag.mjs';
 import { granska } from './granska.mjs';
 import { patchaFil, patchaMallJson } from './temapatch.mjs';
+import { PATCHAR as DOMANPATCHAR } from './domantema.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const LOCALES = [...new Set(KONFIG.marknader.flatMap((m) => m.locales))];
@@ -464,6 +465,10 @@ async function stegTema(k, { skarpt }) {
     ...gamlaOversattningar(),
   ];
   const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER, gamla.map((g) => g.ov)) : patchaFil(fil, kod, o));
+  // Filer som domantema.mjs OCKSÅ patchar (2026-09-30: ms-trust-row.liquid fick fraktrutans flagga och
+  // land ovanpå språkgrenarna). Live = domantema(temapatch(original)) — utan det här kände steget inte
+  // igen filen längre ("någon har ändrat filen") och Japan/Taiwan hade aldrig fått sina grenar.
+  const medDoman = (fil, kod) => (DOMANPATCHAR[fil] ? DOMANPATCHAR[fil](kod).kod : kod);
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
@@ -477,15 +482,28 @@ async function stegTema(k, { skarpt }) {
       // JSON-mallarna rörs också av domantema och Trustpilot-sektionen, så de byggs aldrig om från
       // originalet — patchaMallJson byter bara sina egna grenar på plats (gammal översättning → ny).
       // ms-paket.js bär sin ordlista som byts på plats, och räknas därför inte som "patchad" här.
-      if (!fil.endsWith('.json') && /request\.locale\.iso_code|var LANG = /.test(kod)) {
+      // ms-cro.js bär inga översatta texter (språket läses ur <html lang> när sidan körs), så den
+      // patchas på plats: en ny del i patchaJs (2026-09-30: datumintervallet) läggs på den som redan
+      // ligger live, i stället för att filen känns igen som "originalet + patchen" (det gör den inte
+      // längre när patchen själv växer).
+      if (!fil.endsWith('.json') && fil !== 'assets/ms-cro.js' && /request\.locale\.iso_code|var LANG = /.test(kod)) {
         const orig = urOriginal(fil);
         if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
-        const traff = gamla.find((g) => { try { return patcha(fil, orig, g.ov).kod === kod; } catch { return false; } });
+        let doman = false;
+        const traff = gamla.find((g) => {
+          try {
+            const p = patcha(fil, orig, g.ov).kod;
+            if (p === kod) return true;
+            if (DOMANPATCHAR[fil] && medDoman(fil, p) === kod) { doman = true; return true; }
+            return false;
+          } catch { return false; }
+        });
         if (!traff) { log(`❌ ${fil}: temat är inte originalet + någon av våra patchar (någon har ändrat filen) — rör den inte`); continue; }
         bas = orig;
-        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn})`);
-      }
-      r = patcha(fil, bas, ov);
+        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn}${doman ? ' + domantemats patch' : ''})`);
+        r = patcha(fil, bas, ov);
+        if (doman) { r.kod = medDoman(fil, r.kod); if (r.kod !== kod && !r.byten.length) r.byten.push('domantema'); }
+      } else r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
     log(`${fil}: ${r.byten.length} byten${r.byten.length ? ` (${r.byten.join(', ')})` : ''}${r.hoppade.length ? ` · hoppade: ${r.hoppade.join('; ')}` : ''}`);
     if (r.byten.length && r.kod !== kod) skriv.push({ filename: fil, body: { type: 'TEXT', value: r.kod } });
@@ -558,9 +576,14 @@ async function stegPublicera(k, { skarpt }) {
 // Marknadernas egna domäner (Axel kopplade .no/.eu/.com i Settings → Domains 2026-09-29):
 // webPresenceCreate({ domainId, defaultLocale, alternateLocales }) → marketUpdate(webPresencesToAdd).
 // Samma recept som carashell.com (factory/API-GRANSER.md) men .se-närvaron tas INTE bort ur
-// marknaden: de pausade annonserna länkar till matstrumpor.se/<språk>?country=<LAND>, och
-// A/B-testet i Norge kräver att matstrumpor.se/nb (A) och matstrumpor.no (B) fungerar samtidigt.
-// En egen domän kan bara ligga i EN marknad (mätt på CaraShell 2026-09-17: RESOURCE_NOT_FOUND).
+// marknaden, så gamla länkar till matstrumpor.se/<språk>?country=<LAND> fungerar fortfarande.
+// `ocksa_domaner` kopplar en egen domän till fler marknader än ägarens. Axel 2026-09-29 kväll: "Ska
+// inte alla vara via .com domänen?", så matstrumpor.com ligger i Norge, Europa och USA-marknaden.
+// Språken är närvarons och står hos ägaren, den marknad vars `doman` är domänen.
+// ⚠️ "En egen domän kan bara ligga i EN marknad" (CaraShell 2026-09-17, RESOURCE_NOT_FOUND från en
+// nyskapad GB-marknad) stämmer inte här. Mätt 2026-09-29 på Matstrumpor: marketUpdate(Europa,
+// webPresencesToAdd: [.com]) svarade ok, och .com låg kvar i USA-marknaden. Orsaken till CaraShells fel
+// är inte utredd.
 // Läser tillbaka närvaron och marknadens koppling efter varje ändring.
 async function stegDomaner(k, { skarpt }) {
   const lasNarvaro = async () => (await k.graphql(`{ shop { domains { id host sslEnabled } }
@@ -597,8 +620,9 @@ async function stegDomaner(k, { skarpt }) {
         log(`✅ ${dm.host}: språken satta`);
       }
     }
-    const iMarknader = wp.markets.nodes.map((x) => x.name);
-    const fel = wp.markets.nodes.filter((x) => x.id !== mk.id);
+    const delas = new Set(KONFIG.marknader.filter((x) => (x.ocksa_domaner ?? []).includes(dm.host))
+      .map((x) => lage.marknader.find((y) => x.lander.some((c) => y.lander.includes(c)))?.id).filter(Boolean));
+    const fel = wp.markets.nodes.filter((x) => x.id !== mk.id && !delas.has(x.id));
     if (fel.length) log(`⚠️ ${dm.host} ligger även i ${fel.map((x) => x.name).join(', ')} — rörs inte, kontrollera i admin`);
     if (wp.markets.nodes.some((x) => x.id === mk.id)) log(`${dm.host}: kopplad till ${mk.name}`);
     else if (!skarpt) log(`torrt: ${dm.host} kopplas till ${mk.name}`);
@@ -606,6 +630,21 @@ async function stegDomaner(k, { skarpt }) {
       const r = await mutation(k, `mutation($id: ID!, $input: MarketUpdateInput!) { marketUpdate(id: $id, input: $input) { market { id } userErrors { field message code } } }`, { id: mk.id, input: { webPresencesToAdd: [wp.id] } });
       if (r.fel.length) throw new Error(`Koppla ${dm.host} till ${mk.name}: ${r.fel.join('; ')}`);
       log(`✅ ${dm.host}: kopplad till ${mk.name}`);
+    }
+  }
+  // Delade domäner: närvaron finns redan (ägaren skapade den ovan), den kopplas bara till fler marknader.
+  d = await lasNarvaro();
+  for (const m of KONFIG.marknader) {
+    const mk = lage.marknader.find((x) => m.lander.some((c) => x.lander.includes(c)));
+    for (const host of m.ocksa_domaner ?? []) {
+      const wp = d.webPresences.nodes.find((w) => w.domain?.host === host);
+      if (!wp) { log(`⚠️ ${m.namn}: ${host} har ingen närvaro än — ägarens rad skapar den (kör steget skarpt)`); continue; }
+      if (!mk) { log(`⚠️ ${m.namn}: marknaden finns inte — kör --steg marknader först`); continue; }
+      if (wp.markets.nodes.some((x) => x.id === mk.id)) { log(`${host}: delas med ${mk.name}`); continue; }
+      if (!skarpt) { log(`torrt: ${host} delas med ${mk.name}`); continue; }
+      const r = await mutation(k, `mutation($id: ID!, $input: MarketUpdateInput!) { marketUpdate(id: $id, input: $input) { market { id } userErrors { field message code } } }`, { id: mk.id, input: { webPresencesToAdd: [wp.id] } });
+      if (r.fel.length) throw new Error(`Dela ${host} med ${mk.name}: ${r.fel.join('; ')}`);
+      log(`✅ ${host}: delas med ${mk.name}`);
     }
   }
   // Tillbakaläsning: varje egen domän med sina språk, rotadresser och marknader.

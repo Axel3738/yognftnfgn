@@ -43,7 +43,12 @@ const REGLER = [
     'anmäla er', 'anmäler er', 'anmelde dere', 'kronofogd', 'inkasso', 'trustpilot', 'recension på', 'varna andra', 'advare andre',
   ]],
   ['okand_debitering', [
-    'dubbel', 'dubbelt', 'dobbelt', 'två gånger', 'to ganger', 'to gange', 'twice', 'charged twice', 'dragit', 'dragits', 'trukket', 'trekt',
+    // "två gånger"/"twice" bara med pengar i närheten: Matstrumpors kampanj "De tittar två gånger, sen skrattar de"
+    // gjorde varje svar på den till dubbeldebitering (2026-09-30) — i veckorapportens chargeback-risk också.
+    'dubbel', 'dubbelt', 'dobbelt',
+    '(drag\\w*|debiter\\w*|betal\\w*|pengar|kortet|belast\\w*|trukket|trekt|charged|billed|paid|payment|money)[^.?!\\n]{0,40}(två gånger|to ganger|to gange|twice)',
+    '(två gånger|to ganger|to gange|twice)[^.?!\\n]{0,40}(drag\\w*|debiter\\w*|betal\\w*|pengar|kortet|belast\\w*|trukket|trekt|charged|billed|paid|payment|money)',
+    'charged twice', 'dragit', 'dragits', 'trukket', 'trekt',
     'debiterad', 'debiterat', 'belastet', 'okänd', 'ukjent', 'ukendt', 'unauthorized', 'unauthorised', 'har inte beställt', 'har ikke bestilt', 'have not ordered',
     'aldrig beställt', 'aldri bestilt', 'not ordered', 'inte känner igen', 'kjenner ikke igjen', 'fel belopp', 'feil beløp', 'wrong amount', 'för mycket pengar',
   ]],

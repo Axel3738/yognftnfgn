@@ -1,6 +1,6 @@
 {
  "butik": "matstrumpor",
- "tid": "2026-09-29T12:10:20.281Z",
+ "tid": "2026-10-01T08:02:55.868Z",
  "lage": "skarpt",
  "mallar": {
   "fraktbekraftelse": {
@@ -9,69 +9,81 @@
    "huvud_sha": "048e0896c9452a95",
    "sprak": {
     "nb": {
-     "fore": "inaktuell",
-     "sha": "192963dfb878e07b",
-     "tecken": 7212,
+     "fore": "annan",
+     "sha": "08ecbb9132b20f9d",
+     "tecken": 7217,
      "efter": "lika"
     },
     "da": {
-     "fore": "inaktuell",
-     "sha": "f33ab57cb53fe239",
-     "tecken": 7209,
+     "fore": "annan",
+     "sha": "8a41c4566b428b1d",
+     "tecken": 7214,
      "efter": "lika"
     },
     "fi": {
-     "fore": "inaktuell",
-     "sha": "3c2b7053b9aa15af",
-     "tecken": 7265,
+     "fore": "annan",
+     "sha": "04af4c91684338e6",
+     "tecken": 7270,
      "efter": "lika"
     },
     "en": {
-     "fore": "inaktuell",
-     "sha": "ddedb1385a8079c8",
-     "tecken": 7256,
+     "fore": "annan",
+     "sha": "de49289e51522eae",
+     "tecken": 7637,
      "efter": "lika"
     },
     "de": {
-     "fore": "inaktuell",
-     "sha": "d33acd5d52c0c72a",
-     "tecken": 7302,
+     "fore": "annan",
+     "sha": "2905ca8ef7adf5bc",
+     "tecken": 7305,
      "efter": "lika"
     },
     "fr": {
-     "fore": "inaktuell",
-     "sha": "0187a0ece1d88906",
-     "tecken": 7329,
+     "fore": "annan",
+     "sha": "d73e6962797a21e6",
+     "tecken": 7334,
      "efter": "lika"
     },
     "nl": {
-     "fore": "inaktuell",
-     "sha": "919fbd37734e0919",
-     "tecken": 7269,
+     "fore": "annan",
+     "sha": "038fdf1e3da7e020",
+     "tecken": 7277,
      "efter": "lika"
     },
     "es": {
-     "fore": "inaktuell",
-     "sha": "8e079b435441a280",
-     "tecken": 7294,
+     "fore": "annan",
+     "sha": "7fa3f527088da59c",
+     "tecken": 7299,
      "efter": "lika"
     },
     "it": {
-     "fore": "inaktuell",
-     "sha": "7a631cc991b3fac1",
-     "tecken": 7287,
+     "fore": "annan",
+     "sha": "d776260f2bbc1b54",
+     "tecken": 7292,
      "efter": "lika"
     },
     "pl": {
-     "fore": "inaktuell",
-     "sha": "0d9cbc9a1b11dd38",
-     "tecken": 7252,
+     "fore": "annan",
+     "sha": "ff9f852efae8a2c8",
+     "tecken": 7257,
      "efter": "lika"
     },
     "pt-PT": {
-     "fore": "inaktuell",
-     "sha": "f1829f4388b6da1c",
-     "tecken": 7300,
+     "fore": "annan",
+     "sha": "d915abd075c2b183",
+     "tecken": 7321,
+     "efter": "lika"
+    },
+    "ja": {
+     "fore": "annan",
+     "sha": "e41d96a16745d315",
+     "tecken": 7020,
+     "efter": "lika"
+    },
+    "zh-TW": {
+     "fore": "annan",
+     "sha": "1fe8e017185849fb",
+     "tecken": 6927,
      "efter": "lika"
     }
    },
@@ -86,7 +98,9 @@
     "es",
     "it",
     "pl",
-    "pt-PT"
+    "pt-PT",
+    "ja",
+    "zh-TW"
    ]
   },
   "fraktuppdatering": {
@@ -95,62 +109,99 @@
    "huvud_sha": "25484111c59c6277",
    "sprak": {
     "nb": {
-     "fore": "lika",
-     "sha": "24b0d6dbf0d62fda",
-     "tecken": 6156
+     "fore": "annan",
+     "sha": "cf02bb3851eaf8aa",
+     "tecken": 6161,
+     "efter": "lika"
     },
     "da": {
-     "fore": "lika",
-     "sha": "8d05f1424affd39b",
-     "tecken": 6145
+     "fore": "annan",
+     "sha": "906d7b26c8ee407e",
+     "tecken": 6150,
+     "efter": "lika"
     },
     "fi": {
-     "fore": "lika",
-     "sha": "154ef83dcb3736aa",
-     "tecken": 6157
+     "fore": "annan",
+     "sha": "290b4a7f565758eb",
+     "tecken": 6162,
+     "efter": "lika"
     },
     "en": {
-     "fore": "lika",
-     "sha": "6f638a41b7d71921",
-     "tecken": 6191
+     "fore": "annan",
+     "sha": "31eccb9171cc69a0",
+     "tecken": 6190,
+     "efter": "lika"
     },
     "de": {
-     "fore": "lika",
-     "sha": "b290122dde826492",
-     "tecken": 6201
+     "fore": "annan",
+     "sha": "cc67f7c35d9f463e",
+     "tecken": 6206,
+     "efter": "lika"
     },
     "fr": {
-     "fore": "lika",
-     "sha": "f342e5fa9a00e382",
-     "tecken": 6227
+     "fore": "annan",
+     "sha": "5267a55eed53bf70",
+     "tecken": 6232,
+     "efter": "lika"
     },
     "nl": {
-     "fore": "lika",
-     "sha": "a016981444a84fff",
-     "tecken": 6170
+     "fore": "annan",
+     "sha": "c8899d0e9874375a",
+     "tecken": 6175,
+     "efter": "lika"
     },
     "es": {
-     "fore": "lika",
-     "sha": "3193673feccdc974",
-     "tecken": 6218
+     "fore": "annan",
+     "sha": "250e7c5965907cb3",
+     "tecken": 6223,
+     "efter": "lika"
     },
     "it": {
-     "fore": "lika",
-     "sha": "2f8e23a0352be7e6",
-     "tecken": 6197
+     "fore": "annan",
+     "sha": "19ef31fb42d4be60",
+     "tecken": 6202,
+     "efter": "lika"
     },
     "pl": {
-     "fore": "lika",
-     "sha": "6966fb1da70a705d",
-     "tecken": 6200
+     "fore": "annan",
+     "sha": "135b44107d0efba3",
+     "tecken": 6205,
+     "efter": "lika"
     },
     "pt-PT": {
-     "fore": "lika",
-     "sha": "1b54f409fdfe7a8d",
-     "tecken": 6205
+     "fore": "annan",
+     "sha": "c21db17d466133d0",
+     "tecken": 6213,
+     "efter": "lika"
+    },
+    "ja": {
+     "fore": "annan",
+     "sha": "7b2ee0985296ba4e",
+     "tecken": 6030,
+     "efter": "lika"
+    },
+    "zh-TW": {
+     "fore": "annan",
+     "sha": "7a02c9d90c67094f",
+     "tecken": 5979,
+     "efter": "lika"
     }
    },
-   "registrerade": []
+   "registrerade": [
+    "nb",
+    "da",
+    "fi",
+    "en",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt-PT",
+    "ja",
+    "zh-TW"
+   ]
   },
   "ute_for_leverans": {
    "resurs": "gid://shopify/EmailTemplate/126064427347",
@@ -158,62 +209,99 @@
    "huvud_sha": "b7fc01a1f19ddcd1",
    "sprak": {
     "nb": {
-     "fore": "lika",
-     "sha": "2e768402bac9ee66",
-     "tecken": 6159
+     "fore": "annan",
+     "sha": "615158b53c5fa597",
+     "tecken": 6164,
+     "efter": "lika"
     },
     "da": {
-     "fore": "lika",
-     "sha": "ded558752ce0e288",
-     "tecken": 6153
+     "fore": "annan",
+     "sha": "020dd73bef5c4f59",
+     "tecken": 6158,
+     "efter": "lika"
     },
     "fi": {
-     "fore": "lika",
-     "sha": "839ae80c429e6e4a",
-     "tecken": 6174
+     "fore": "annan",
+     "sha": "6503a5528503348f",
+     "tecken": 6179,
+     "efter": "lika"
     },
     "en": {
-     "fore": "lika",
-     "sha": "a861106652b4c346",
-     "tecken": 6183
+     "fore": "annan",
+     "sha": "f9d474d051f24bbb",
+     "tecken": 6182,
+     "efter": "lika"
     },
     "de": {
-     "fore": "lika",
-     "sha": "4845253f806382e9",
-     "tecken": 6206
+     "fore": "annan",
+     "sha": "1793dc643fc0dfa9",
+     "tecken": 6213,
+     "efter": "lika"
     },
     "fr": {
-     "fore": "lika",
-     "sha": "24fe0de84461ae8f",
-     "tecken": 6246
+     "fore": "annan",
+     "sha": "0beead2a9de7233c",
+     "tecken": 6265,
+     "efter": "lika"
     },
     "nl": {
-     "fore": "lika",
-     "sha": "0ab14256d9869b00",
-     "tecken": 6188
+     "fore": "annan",
+     "sha": "c53b6c9754107844",
+     "tecken": 6179,
+     "efter": "lika"
     },
     "es": {
-     "fore": "lika",
-     "sha": "bb65f441ebbdbdc0",
-     "tecken": 6198
+     "fore": "annan",
+     "sha": "1b859018e3ae6e9d",
+     "tecken": 6203,
+     "efter": "lika"
     },
     "it": {
-     "fore": "lika",
-     "sha": "0b1b2991baad22e8",
-     "tecken": 6195
+     "fore": "annan",
+     "sha": "b71ce78cd3c1bbf5",
+     "tecken": 6200,
+     "efter": "lika"
     },
     "pl": {
-     "fore": "lika",
-     "sha": "aff9fcd80451a504",
-     "tecken": 6170
+     "fore": "annan",
+     "sha": "2b8d535f533198d8",
+     "tecken": 6175,
+     "efter": "lika"
     },
     "pt-PT": {
-     "fore": "lika",
-     "sha": "6f298bfe3f3e5feb",
-     "tecken": 6198
+     "fore": "annan",
+     "sha": "4624e9ec02660b33",
+     "tecken": 6206,
+     "efter": "lika"
+    },
+    "ja": {
+     "fore": "annan",
+     "sha": "87146892bb1ca57b",
+     "tecken": 6042,
+     "efter": "lika"
+    },
+    "zh-TW": {
+     "fore": "annan",
+     "sha": "6e2217f7bb638eae",
+     "tecken": 5988,
+     "efter": "lika"
     }
    },
-   "registrerade": []
+   "registrerade": [
+    "nb",
+    "da",
+    "fi",
+    "en",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt-PT",
+    "ja",
+    "zh-TW"
+   ]
   }
  },
  "saknade_sprak": [],

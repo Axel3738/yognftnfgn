@@ -50,9 +50,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 det — id:t i adressfältet är markören: shipment_out_for_delivery är rätt, local_out_for_delivery fel (båda heter "Out for delivery" internt; CaraShell 2026-09-21). Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
 Shopifys räknare).
 
-### Översättningarna (11 språk) — rör dem inte
+### Översättningarna (13 språk) — rör dem inte
 
-Mallarna på nb, da, fi, en, de, fr, nl, es, it, pl, pt-PT ligger redan i Shopify som notisernas **översättningar**
+Mallarna på nb, da, fi, en, de, fr, nl, es, it, pl, pt-PT, ja, zh-TW ligger redan i Shopify som notisernas **översättningar**
 (lagda via API av sessionen, lästa tillbaka). Shopify skickar själv mejlet på
 det språk kunden handlade på. Du klistrar BARA in de svenska mallarna ovan.
 Öppna inte Translate & Adapt och ändra inga översättningar. Att översättningarna
@@ -80,17 +80,19 @@ tillbaka varje språk ur Shopify och provat länkarna som kund).
 
 | Språk | Ämnesrad | Knappen | Länken börjar med |
 |---|---|---|---|
-| nb | `Pakken din er på vei` | **Spor pakken** | `https://matstrumpor.se/nb/pages/spara?nummer=MS-` |
-| da | `Din pakke er på vej` | **Spor pakken** | `https://matstrumpor.se/da/pages/spara?nummer=MS-` |
-| fi | `Pakettisi on matkalla` | **Seuraa pakettia** | `https://matstrumpor.se/fi/pages/spara?nummer=MS-` |
-| en | `Your parcel is on its way` | **Track your parcel** | `https://matstrumpor.se/en/pages/spara?nummer=MS-` |
-| de | `Dein Paket ist unterwegs` | **Paket verfolgen** | `https://matstrumpor.se/de/pages/spara?nummer=MS-` |
-| fr | `Votre colis est en route` | **Suivre votre colis** | `https://matstrumpor.se/fr/pages/spara?nummer=MS-` |
-| nl | `Je pakket is onderweg` | **Volg je pakket** | `https://matstrumpor.se/nl/pages/spara?nummer=MS-` |
-| es | `Tu paquete ya está en camino` | **Rastrear paquete** | `https://matstrumpor.se/es/pages/spara?nummer=MS-` |
-| it | `Il tuo pacco è in viaggio` | **Traccia il pacco** | `https://matstrumpor.se/it/pages/spara?nummer=MS-` |
-| pl | `Twoja paczka jest w drodze` | **Śledź swoją paczkę** | `https://matstrumpor.se/pl/pages/spara?nummer=MS-` |
-| pt-PT | `A tua encomenda já vai a caminho` | **Rastrear encomenda** | `https://matstrumpor.se/pt/pages/spara?nummer=MS-` |
+| nb | `Pakken din er på vei` | **Spor pakken** | `https://matstrumpor.com/nb/pages/spara?nummer=MS-` |
+| da | `Din pakke er på vej` | **Spor pakken** | `https://matstrumpor.com/da/pages/spara?nummer=MS-` |
+| fi | `Pakettisi on matkalla` | **Seuraa pakettia** | `https://matstrumpor.com/fi/pages/spara?nummer=MS-` |
+| en | `Your parcel is on its way` | **Track your parcel** | `https://matstrumpor.com/pages/spara?nummer=MS-` |
+| de | `Dein Paket ist unterwegs` | **Paket verfolgen** | `https://matstrumpor.com/de/pages/spara?nummer=MS-` |
+| fr | `Votre colis est en route` | **Suivre votre colis** | `https://matstrumpor.com/fr/pages/spara?nummer=MS-` |
+| nl | `Je pakket is onderweg` | **Volg je pakket** | `https://matstrumpor.com/nl/pages/spara?nummer=MS-` |
+| es | `Tu paquete ya está en camino` | **Rastrear paquete** | `https://matstrumpor.com/es/pages/spara?nummer=MS-` |
+| it | `Il tuo pacco è in viaggio` | **Traccia il pacco** | `https://matstrumpor.com/it/pages/spara?nummer=MS-` |
+| pl | `Twoja paczka jest w drodze` | **Śledź swoją paczkę** | `https://matstrumpor.com/pl/pages/spara?nummer=MS-` |
+| pt-PT | `A tua encomenda já vai a caminho` | **Seguir encomenda** | `https://matstrumpor.com/pt-pt/pages/spara?nummer=MS-` |
+| ja | `お荷物を発送しました` | **配送状況を確認** | `https://matstrumpor.com/ja/pages/spara?nummer=MS-` |
+| zh-TW | `你的包裹在路上了` | **追蹤包裹** | `https://matstrumpor.com/zh-tw/pages/spara?nummer=MS-` |
 
 ### Rapportera tillbaka
 

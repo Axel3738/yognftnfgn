@@ -110,7 +110,9 @@ function kollaSrt(st, key, srt, vad) {
   else {
     // En rättad SRT som nu är på rätt språk släpper sitt eget stopp (inte HeyGens).
     if (typeof st.sprakfel === 'string' && st.sprakfel.startsWith(`${vad}:`)) delete st.sprakfel;
-    console.log(`  ✓ ${key}: ${vad} är ${namnFor(FAMILJ)} (${k.poang[FAMILJ]} funktionsord)`);
+    // Japanska/kinesiska döms på skriften (kollaCjk) och har inga funktionsord att räkna.
+    const matt = k.poang ? `${k.poang[FAMILJ]} funktionsord` : `${k.skrift?.kana ?? 0} kana, ${k.skrift?.han ?? 0} kanji/hanzi`;
+    console.log(`  ✓ ${key}: ${vad} är ${namnFor(FAMILJ)} (${matt})`);
   }
   return k.ok;
 }

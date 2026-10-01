@@ -75,6 +75,35 @@ likadana ut på båda språken.
 
 ---
 
+## Fakturorna (2026-10-01)
+
+Axels beställning: "ett ställe där alla anställda kan ladda upp sina fakturor
+… jag vill att Claude ska kunna komma åt dem, samla ihop dem och sedan skicka
+dem till min redovisningsbyrå". Och: alla fakturor någonsin, för han hade
+tappat bort dem.
+
+- **Alla roller laddar upp på Min sida** (blocket "Dina fakturor"): månad
+  (ÅÅÅÅ-MM), fil (PDF eller bild, max 15 MB), frivillig anteckning. Man ser
+  bara sina egna. En fil per uppladdning.
+- **Ägare och chef har sidan Fakturor** (`/app/fakturor`, rätten
+  `fakturor-alla`): en panel per person med senaste överst, månadsflikar,
+  **"Ladda ner alla för <månad> (zip)"**, "Ta bort" (mjuk — raden döljs, filen
+  ligger kvar) och "Ladda upp åt någon" med personväljare för fakturor som
+  kom per mejl.
+- **Lagring:** filerna på volymen `<STONEBITE_DATA>/fakturor/<person>/<månad>-<id>.<ext>`,
+  registret `<STONEBITE_DATA>/fakturor.jsonl` (senaste raden per id vinner).
+  Inget i repot, inget i snapshoten. `stonebite/fakturor.mjs` bär
+  multipart-tolkningen (egen, inga beroenden) och zippen (store, CRC32 —
+  `python3 -m zipfile` packar upp den i testet).
+- **Claude hämtar via API:** `GET /api/fakturor?manad=2026-09` och
+  `GET /api/fakturor/<id>` med `Authorization: Bearer $STONEBITE_API_NYCKEL`.
+  Nyckeln ska finnas på Railway OCH i claude.ai-miljön (prompten
+  `stonebite/cowork/10-fakturor-nyckel.txt`). Utan nyckel på servern finns
+  inget API. `node stonebite/fakturor-hamta.mjs --manad 2026-09` laddar ner
+  månaden till `stonebite/output/fakturor/<månad>/` — sedan mejlar sessionen
+  dem till byrån (Gmail-connectorn i Axels session). Skriptet skickar aldrig.
+- SOP:en till teamet och meddelandet Axel skickar: `stonebite/fakturor/SOP.md`.
+
 ## Bonusen
 
 Varje roll utom ägare och chef har ett bonusprogram, och Min sida är byggd för
@@ -91,6 +120,14 @@ betalas den 15:e, 16–sista betalas sista dagen i månaden), bonusen en gång i
 månaden, commission för sig. Min sida har ett kort per del, Bonus-sidan en
 tabell per del med vem som får vad. Definitionerna bor i `bonus/regler.json`
 → `utbetalningar`; talen är motorns (`bonus/README.md` → Utbetalningarna).
+
+**Förra månaden väljs på sidan** (`/app/bonus?manad=2026-09`, byggt
+2026-10-01 — Axel skulle betala ut september och sidan stod redan på oktober).
+Månaden som räknas just nu är snapshotens; en gången månad läses ur sitt
+sparade kvitto `bonus/utfall/<manad>.json` (hämtningen skriver det varje timme,
+så det fryser av sig självt när månaden är slut). Vyn räknar aldrig om något,
+och "Recensioner med namn" (60 dagar live) visas inte för en gången månad.
+En månad utan kvitto säger det — aldrig en annan månads pengar.
 
 ---
 

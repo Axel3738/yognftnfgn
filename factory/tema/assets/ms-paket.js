@@ -426,9 +426,12 @@
       }
 
       // Reservvägen. Den laddar om sidan, men den fungerar alltid.
+      // Omdirigeringen bär språkmappen (rutt = /de/, /nb/ …): en ren '/cart' landade på
+      // domänens huvudspråk, och en tysk kund på en engelsk domän såg en engelsk korg
+      // (granskningen 2026-09-30). Shopify följer ?redirect=/de/cart och behåller språket.
       function laddaOm() {
         window.location.href = kod
-          ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart')
+          ? rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent(rutt + 'cart')
           : rutt + 'cart';
       }
 
@@ -452,7 +455,7 @@
         //    Går den fel fortsätter vi ändå: kontrollera() nedan fångar det.
         if (!kod) return null;
         return fetch(
-          rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent('/cart.js'),
+          rutt + 'discount/' + encodeURIComponent(kod) + '?redirect=' + encodeURIComponent(rutt + 'cart.js'),
           { credentials: 'same-origin' }
         ).catch(function () { return null; });
       }).then(function () {

@@ -956,7 +956,11 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    annonser, lanserar i dag").** Fem mätningar styrde formen:
    - **En egen domän hör till EN marknad.** `marketUpdate(webPresencesToAdd:
      [carashell.com])` från en nyskapad GB-marknad svarade `RESOURCE_NOT_FOUND`
-     på presencen. Egna marknader per land hade alltså krävt `carashell.se/en-gb/`
+     på presencen. ⚠️ **Motsagt 2026-09-29 på Matstrumpor:** samma anrop med
+     matstrumpor.com till en BEFINTLIG marknad (Europa) svarade utan fel, och .com
+     låg kvar i USA-marknaden. .com delas nu av tre marknader
+     (`matstrumpor/marknader/README.md` → "Allt utland via matstrumpor.com").
+     Orsaken till CaraShells fel är inte utredd. Prova innan du bygger runt. Egna marknader per land hade alltså krävt `carashell.se/en-gb/`
      (Axel sa nej till .se för USA) eller fyra subdomäner med DNS-klick. Därför:
      länderna läggs i USA-marknaden. Raden i `butik.marknader` bär det som
      `lander: [GB, CA, AU, NZ]` (blocklista — yaml-parsern tar inte `[a, b]`)

@@ -36,7 +36,9 @@ node konkurrenter/kor.mjs --lista
 
 1. **Korpus** (`korpus.mjs`): varje verksamhets butiker läses via den publika
    `/products.json` (ingen nyckel), de annonser som visas just nu via Meta
-   (`META_ACCESS_TOKEN`, delade konton filtreras på kampanjprefix). Dagens
+   (`META_ACCESS_TOKEN`). I delade konton hör en annons till verksamheten när
+   kampanjnamnet bär prefixet som ett ord ELLER länken går till en av dess
+   butiker (se "Alla varumärken" nedan). Dagens
    produkter: annonserade + `bevaka` först, sedan rotation (aldrig kollad,
    äldst kollad; tak i `konfig.json` → `sok`). Två **fingeravtryck** per
    produkt: meningar på 7–16 ord utan siffror och utan butiksnamn.
@@ -66,7 +68,20 @@ node konkurrenter/kor.mjs --lista
    vid taket 30), räckvidden per annons hämtas ur EU-transparensen genom att
    detaljfrågan AdLibraryV3AdDetailsQuery spelas upp per annons, och sidans
    info (namn, kategori, Instagram, domän) följer med. Mätt på ORVO: 37
-   annonser med räckvidd på 42 s. Reserv (`--hamta --annonser <fil>`): Axel
+   annonser med räckvidd på 42 s. **Över taket 30** (general stores:
+   Bustatio-busto hade 58 aktiva och ~4 700 inaktiva annonser 2026-09-30)
+   läses de AKTIVA med datumfönster: "visningar t.o.m. D" är för en aktiv
+   annons samma sak som "startade t.o.m. D", så en stigande rad datum
+   (`tackDatum`: var 30:e dag ett år bakåt, var tredje de sista 60) läser dem
+   i omgångar om högst 30. Det gav 58 av 58 på 13 vanliga laddningar. Sedan
+   provas sidans egen pagineringsfråga (AdLibrarySearchPaginationQuery,
+   fångad genom skrollning och uppspelad med markören), men den **stryps**
+   efter ett femtiotal frågor ("Rate limit exceeded", kod 1675004, och
+   strypningen satt kvar i över en halvtimme). Då väntar läsaren 60 s en gång
+   och faller sedan tillbaka på media_type. `--max-annonser N` (standard 400,
+   de aktiva först) och `--rackvidd aktiva` (räckvidden bara för de aktiva,
+   eftersom detaljfrågan stryps på samma sätt) gör en stor sida hanterbar.
+   Reserv (`--hamta --annonser <fil>`): Axel
    eller Cowork (`cowork/1-annonser.txt`) skriver ner annonserna — länk,
    text, rubrik, `aktiv`, `exponeringar`, bilder — i en JSON-fil (formatet
    står överst i `annonsfall.mjs`). **Axels kriterier** (`trosklar.annons`,
@@ -385,11 +400,110 @@ kan jag granska här också … och sen så skickas det."
   `{{META}}`); den visas i appen när mejlet gått.
 - Flödet steg för steg står i kommandofilen under `granska <id>`.
 
+## Alla varumärken (2026-09-29)
+
+Axel: "jag vill kunna göra denna konkurrentdödare applicable för alla brands
+och även Matstrumpor". Matstrumpor var redan med sedan bygget, men bara den
+svenska texten. Tre luckor täpptes samma kväll:
+
+| Verksamhet | Butiker (texterna som söks och jämförs) | Konton (annonserna) |
+|---|---|---|
+| Bäverbutiken | baverbutiken.se, beverbutikken.no, baeverbutiken.dk, majavakauppa.fi | MagiBorsten, Magiborsten NO, Magiborsten FI |
+| CaraShell | carashell.se, /nb, /da, carashell.com | OPS-kontot, Magiborsten UK (delade) |
+| Matstrumpor | matstrumpor.se + /en /nb /da /fi /de /fr /nl /es /it /pl /pt | nya kungen |
+
+- **Varje butik och språk har sin egen text.** Shopify svarar med den
+  översatta texten på `/<språk>/products.json`, mätt på alla tolv. En kopia i
+  Norge kopierar den norska texten, så den söks och jämförs på norska.
+- **Länken avgör vems annonsen är i ett delat konto** (`korpus.mjs
+  hamtaEgnaAnnonser`, `butikFor`, `kampanjTillhor`). Prefixet räknas som ett
+  ord var som helst i kampanjnamnet. Förut användes `startsWith`, och mätt
+  2026-09-29 tappade det CaraShells alla 130 aktiva annonser i UK-kontot
+  (kampanjen heter "1 CARASHELL_US_… – kopia") och 12 i OPS-kontot ("NYA …").
+  Aktiva annonser i korpusen blev: Bäverbutiken 688 → 858 (+ NO 136, FI 34),
+  CaraShell ~240 → 382.
+- **Prioriteten följer annonsens butik.** En annons till matstrumpor.se/nb
+  prioriterar den norska texten, inte alla tolv språk med samma handle
+  (`valjProdukter` tar `butik|handle`). I rotationen turas butikerna om (SE,
+  NO, DK, FI, SE …), annars hade den svenska katalogen tagit veckor innan en
+  enda norsk text söktes.
+- **Taket gäller alla verksamheter tillsammans:** `sok.max_produkter_totalt`
+  = 30, en i taget ur varje verksamhet (`fordelaProdukter`). Det blir 60
+  sökningar per morgon i stället för upp till 120. Torrkört 2026-09-29: 10
+  produkter per verksamhet, ur SE, NO och FI, CaraShells fyra språk och tio av
+  Matstrumpors.
+- **Discord:** Matstrumpor har ingen server, så dess fynd står bara i
+  rapporten och på granskningssidan (`discord.hoppa`).
+- **Inte med:** Grillkliniken, eftersom `META_ACCESS_TOKEN` inte når
+  SnarkLös (kommentarer/konfig.json → `konton_utanfor`). Inte heller de
+  nedlagda OPS-butikerna eller beavershop.co.uk, som är avstängd med flit.
+  Lägg till en verksamhet med en rad i `konfig.json → verksamheter` (butiker,
+  konton, avsändare) och dess sida i `anmalan.vara_sidor`. En lista med flera
+  sidor går bra, och den första är huvudsidan.
+
+## Bara det vi kan bevisa: ORVO-lärdomen (2026-09-29)
+
+Eoka AB (ORVO) bestred KD-2026-001 med en enda TikTok-länk. Sekvensen i vårt
+"original" Takoverdrag_SP_4_H1 fanns på Specialised Covers konto sedan 22 maj
+2025. Mätt samma kväll: videon ligger i **58 av våra 240 takskyddsfilmer**,
+100 annonser, 54 aktiva, 82 127 kr på 7 dygn
+(`arenden/KD-2026-001/svar-2026-09-29.md` + `specialised-covers.json`).
+Axel släppte ärendet. **Återkallelsen gick ut 2026-09-30 07:30**, med en
+ursäkt på hans ord ("skicka återkallelsen och be om ursäkt"). Gmail-svaret
+`1a0f0cb29f5946ca` återkallar fakturan och kraven och säger att brevet
+"innehöll påståenden som vi inte hade kontrollerat tillräckligt". Det nämner
+inte vilka klipp det gäller eller var de kommer ifrån (Axel: det är "dumt att
+beskriva om det riskerar att vårat ad account ryker"). Det gamla utkastet är
+raderat. **De 54 aktiva annonserna med Specialised Covers klipp ligger kvar**
+(Axels val B 2026-09-30, ingen ny brief). Tre fel i brevet, alla nu stängda i koden:
+
+1. **"Filmerna är framställda av oss".** Brevet räknar nu upp varje kopierad
+   sekvens: *er 0:06 = vår annons &lt;länk&gt; (visas sedan …) vid 0:02*.
+   Det är tidskoden hos dem, vår annons i annonsbiblioteket och tidskoden hos
+   oss (`brev.mjs sekvensRad`). Kravet gäller bara det uppräknade, och
+   Meta-anmälan säger "Only these frames are claimed".
+2. **Procenten** ("59 % av er film matchar våra filmer") räknade lånade
+   rutor som våra. Den står aldrig i brevet, i anmälan eller på bevisbilden,
+   bara internt i rapporten och på granskningssidan.
+3. **Produktsidor och marknadsföringslagen** (vilseledande efterbildning,
+   renommésnyltning) utan belägg. Borta. Produktsidan nämns bara när en
+   ordagrann text från den är uppmätt.
+
+**Anspråket `redigering` (Bustatio-busto, 2026-09-30).** En general store
+(bustatio.com) körde 11 av VÅRA färdiga annonser. De var nedladdade med vår
+svenska text i bilden vid exakt samma tider (deras 0:05 = vår 0:05) och bara
+en vattenstämpel "bustatio" tillagd. Filmklippen under texten är en blandning.
+En del är AI-klipp vi har gjort, en del leverantörens produktfilm och en del
+riktiga inspelningar vi knappast gjort själva. Vår klippning och vår text är
+däremot våra. `--anmal <id> --ansprak redigering` gör anspråk på just det, i
+anmälan ("a re-upload of our own ad film … We make no claim to the underlying
+product footage"), på bevisbilden, i formulärets 500 tecken, på
+granskningskortet och i brevet. Anspråket sparas på ärendet.
+
+**Registret över klipp vi vet inte är våra: `externa/<id>.json`**
+(`externa.mjs`). Varje källa har sina rutor (dHash 9 × 8), sin ägare och sin
+orsak. I dag finns tre källor: Specialised Covers TikTok-video, den brittiska
+husvagnen "Searcher" med svart takskydd och personen som spänner ett svart
+kapell. De två senare var redan märkta med `--lanat` men matchar inte
+TikTok-videon, så de är egna källor.
+
+- `--klipp` gör registrets rutor till lånade, i våra filmer och i deras
+  annons. De bär aldrig ett par och räknas aldrig i andelen. `klipp.json →
+  externa` visar vilka filmer som bär dem och var.
+- `--original` länkar aldrig en annons vars film bär ett externt klipp. Filmen
+  söks inte ens (`original.json → externa`, `originalFor`).
+- Granskningskortets Ja är ett intygande: "varje ruta till vänster är
+  inspelad eller gjord av oss, inte hämtad från någon annan".
+- Registret växer åt ett håll. Får vi veta att ett klipp inte är vårt läggs
+  det till. Det tas aldrig bort för att ett fall ska bli starkare.
+
 ## Filer
 
 | Fil | Committas | Vad |
 |---|---|---|
-| `konfig.json` | ✅ | Verksamheter, avsändare (Gmail), faktura (beräkning, CPM-reserv, moms, IBAN, schablontaxa), egna domäner, trösklar, Discord — facit |
+| `konfig.json` | ✅ | Verksamheter (alla butiker och språk, alla konton), avsändare (Gmail), faktura (beräkning, CPM-reserv, moms, IBAN, schablontaxa), egna domäner, trösklar, Discord — facit |
+| `externa.mjs`, `externa/<id>.json` | ✅ | Registret över klipp vi vet inte är våra (källa, ägare, orsak, rutor) — utesluts ur par, andel och original |
+| `arenden/KD-2026-001/svar-2026-09-29.md`, `specialised-covers.json` | ✅ | Eoka AB:s bestridande och mätningen: 58 filmer, 100 annonser, 54 aktiva, spend per annons |
 | `arenden.jsonl` | ✅ | Ärendeloggen (kvittot på varje brev och faktura) |
 | `arenden/<id>.md`, `arenden/<id>/skarmdump.jpg`, `arenden/<id>/miniatyrer.json` | ✅ | Bevisen per ärende |
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
@@ -415,7 +529,9 @@ output/ dit (tester och provkörningar — repot rörs inte).
 ## Läget vid bygget (mätt 2026-09-27, kompletterat 2026-09-29)
 
 - Butikerna: Bäverbutiken 248 produkter, CaraShell 4, Matstrumpor 5 — alla
-  läsbara publikt. OPS-butikernas `body_html` är 25 ord (texten ligger i
+  läsbara publikt. Sedan 2026-09-29 20 butiker (se "Alla varumärken"):
+  beverbutikken.no 235, baeverbutiken.dk 175, majavakauppa.fi 175,
+  CaraShells fyra språk 4 styck, Matstrumpors tolv språk 5 styck. OPS-butikernas `body_html` är 25 ord (texten ligger i
   temat) ⇒ "för lite text att söka på"; källan är ändå Bäverbutikens sida,
   som speglas.
 - Avsändaren är Gmail — inga brevlådelösenord behövs. Reserven `--via
@@ -462,4 +578,6 @@ output/ dit (tester och provkörningar — repot rörs inte).
   fabrikens filer) blir aldrig kandidater; marknadsplatser och sociala nätverk
   ignoreras.
 - En Meta-anmälan per annons; ingen skickas utan Axels "kör anmälningarna <id>"; varje inskickad kvitteras med referens och aldrig två gånger.
-- 31 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- Brevet och anmälan påstår bara det uppräknade (sekvenser med tidskoder, ordagranna passager, identiska bilder) — aldrig "filmerna är våra", aldrig en andel, aldrig marknadsföringslagen, aldrig produktsidor utan uppmätt text.
+- Klipp i `externa/` bär aldrig ett par, räknas aldrig i andelen och deras filmer länkas aldrig som original.
+- 79 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

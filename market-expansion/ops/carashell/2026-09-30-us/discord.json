@@ -1,0 +1,20 @@
+{
+ "brand": "CaraShell",
+ "butik": "carashell/takskyddet",
+ "datum": "2026-09-30",
+ "lage": "brief",
+ "server": "CaraShell — OPS",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "🇺🇸 US translation round: the queue was empty in both statuses — nothing new to translate today",
+  "SE-ACTIVE to be translated: 0 rows. Approved: 72 rows, every one of them already live in the US account",
+  "Market watch ran anyway: 12 of 12 ad sets on the right placements, 87 ads active, budget 8 000 kr/day",
+  "Spend yesterday 7 968 kr and today 4 257 kr — all of it inside the allowed placements, nothing outside the feed",
+  "Home page, landing page, product page and checkout all read as English, checkout defaults to United States"
+ ],
+ "varningar": [
+  "The original CARASHELL_US_Taköverdrag campaign is still PAUSED with 2 246 kr spend — owner's decision, nothing uploaded there.",
+  "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting the angle's budget in the CBO."
+ ],
+ "nasta_korning": "2026-10-01"
+}

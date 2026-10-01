@@ -1,0 +1,104 @@
+{
+  "hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
+  "rond": "2026-09-30",
+  "bra": [
+    "All three rules from the 2026-09-27 review held: no row carries more than three words per second, one spelling per brief, and every new shot sits in a `NEW FOOTAGE` block at the top with its fallback.",
+    "The scene batch (FD_5/FD_6) is built from the page's own moments and says why the warmth scene was left out (the page makes no warmth claim, `trettio grader` is a banned summer line).",
+    "FD_6_1 caught that the old hero photo carries burned measurements and switched to the page's own scene photo — the asset check the image routine needs.",
+    "Price 559 / 932 kr, 211 × 171 cm, `två minuter`, `utanpå glaset, inte innanför` match the page (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Termoskydd_FD_5_H1 row 1 asks for the raw clip behind Termoskydd_RI_1_H1 WITHOUT its burned `Två månar` text, but says `NEW FOOTAGE: none` — if no raw file exists, the editor has no fallback.",
+    "The Source column again labels a Notion page id as `DRIVE 3db270ab…` (CS_12_H2, FD_5_H1–H3) — the bracket explains it, the label still sends the editor to the wrong place.",
+    "The FD_3/FD_4 rows on this product were created 2026-09-29 and are not in this review: the tool reads the newest day only (2026-09-30).",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "A clip `without burned text` needs a fallback in the NEW FOOTAGE block whenever no raw file is known to exist.",
+    "The Source label says where the file is: a Notion row is `NOTION <id>`, a Drive file `DRIVE <id>` — the second round this was missed.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "Termoskydd_FD_5_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean; the new dusk take has its fallback."
+      ],
+      "bra": [
+        "`ingen ser in på rastplatsen` is the page's own scene."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_5_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "`två minuters jobb på utsidan` is the page's line, on the parent's fitting beat."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_5_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 depends on a raw clip without burned text that may not exist — add a fallback.",
+        "Source label `DRIVE` on a Notion page id."
+      ],
+      "bra": [
+        "The scene is the page's own line."
+      ]
+    },
+    {
+      "namn": "Termoskydd_CS_12_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean. The 6-second problem section is the only variable against CS_12_H1."
+      ],
+      "bra": [
+        "Hub rules applied and named in the Why."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_6_3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "The page's fitting claim in the headline."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_6_4",
+      "fel": [],
+      "anmarkningar": [
+        "Clean; the brief says why it stays close to FD_4_1."
+      ],
+      "bra": [
+        "The scene, not the price, in the headline."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_6_2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "Headline at most 8 words, sub-line at most 12."
+      ]
+    },
+    {
+      "namn": "Termoskydd_FD_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "Asset switched away from the photo with burned measurements."
+      ]
+    }
+  ]
+}

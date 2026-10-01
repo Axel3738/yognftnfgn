@@ -62,3 +62,28 @@ text blir undertexter i videon.
 
 12. **Bildtexterna** ska rymmas där de svenska stod (högst ~30 % fler tecken) och låta som
     reklamtext på språket. `knapp` = marknadens vanliga knapptext för att beställa (versaler).
+
+## Japan (JP, japanska) och Taiwan (TW, traditionell kinesiska), 2026-09-30
+
+Allt ovan gäller, med de här tilläggen (de vinner där de säger något annat):
+
+- **Skrift:** japanska med kana och kanji som en japansk kreatör skriver; Taiwan med **traditionella
+  tecken (繁體中文)** och taiwanesiskt vardagsspråk, aldrig förenklade tecken eller fastlandsord.
+- **Talets längd mäts i tecken per sekund** (inga mellanslag att räkna ord på): japanska högst ~7
+  tecken/s (varning 7,5, fel 9), kinesiska högst ~5 (varning 5,5, fel 6,5). `kolla-egna.mjs` mäter.
+- **Tal med kanji** (一、二、三、五足/五雙), aldrig siffror. Rubrikerna ETT/TVÅ/TRE blir ja
+  「その一：」「その二：」「その三：」, zh 「第一：」「第二：」「第三：」.
+- **Tonen:** japanska som en kvinnlig japansk kreatör (です・ます med naturliga talslut), kinesiskan som
+  en taiwanesisk kvinnlig kreatör med 你. Knappen `knapp`: ja 「今すぐ購入」, zh 「立即購買」.
+- **Inget Sverige** i röstvideorna, inte heller i Japan (den svenska raden står i annonstexten och i
+  Nathalies video).
+- **Bildtexterna** (`hook`, `rubriker`, `etikett`, 012v2) ritas i en ruta där ett japanskt/kinesiskt
+  tecken tar två latinska bokstävers bredd: håll dem lika breda som svenskan (tecken × 2).
+- **Ordlista:**
+
+| | JP (ja) | TW (zh-TW) |
+|---|---|---|
+| sushistrumpor | 寿司ソックス | 壽司襪 |
+| låda | ボックス | 盒子 |
+| strumpor | ソックス／靴下 | 襪子 |
+| ätpinnar i trä | 木製のお箸 | 木頭筷子 |

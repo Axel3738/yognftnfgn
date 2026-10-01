@@ -23,9 +23,14 @@ import json, os, shutil, subprocess, sys, tempfile
 
 from PIL import Image, ImageDraw, ImageFont
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import cjk  # japanska/kinesiska: typsnitt med tecknen + radbrytning utan mellanslag (2026-09-30)
+
 
 def radbryt(text, font, max_bredd):
-    """Bryter på ord så att varje rad får plats i max_bredd px. Ett ord som ensamt är för brett står själv."""
+    """Bryter på ord så att varje rad får plats i max_bredd px. Ett ord som ensamt är för brett står själv.
+    Japanska och kinesiska bryts mellan tecken (cjk.radbryt), eftersom de saknar mellanslag."""
+    if cjk.sprak(text): return cjk.radbryt(text, font, max_bredd)
     rader, rad = [], ''
     for ord_ in text.split():
         prov = (rad + ' ' + ord_).strip()
@@ -37,7 +42,7 @@ def radbryt(text, font, max_bredd):
 
 def rita_ruta(t, fontfil):
     """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd). En text kan bära egen font."""
-    font = ImageFont.truetype(t.get('font', fontfil), t['font_px'])
+    font = ImageFont.truetype(cjk.font_for(t['text'], t.get('font', fontfil)), t['font_px'])
     padx, pady = t.get('pad', [18, 8])
     maxb = t.get('max_bredd', 600) - 2 * padx
     rader = []
@@ -95,7 +100,10 @@ def kor(plan):
         cx, cy = t['mitt']
         x, y = int(round(cx - w / 2)), int(round(cy - h / 2))
         inputs += ['-loop', '1', '-i', f]
-        filt.append(f"{senaste}[{n}:v]overlay={x}:{y}:shortest=1:enable='between(t,{t['a']:.2f},{t['b']:.2f})'[t{i}]")
+        # Halvöppet fönster [a, b): en ruta slutar i samma bildruta som nästa börjar. Med between(t,a,b)
+        # syntes båda i bildrutan vid bytet (granskningen 2026-09-30, G-B04: "Den fake er sokker." halvt
+        # över "Én af æskerne …" vid 2,0 s, en bokstavsrest under ruta 5 vid 8,0 s, i alla tretton språk).
+        filt.append(f"{senaste}[{n}:v]overlay={x}:{y}:shortest=1:enable='gte(t,{t['a']:.3f})*lt(t,{t['b']:.3f})'[t{i}]")
         senaste = f'[t{i}]'; n += 1
         qa.append(((t['a'] + t['b']) / 2, rader))
     cmd = [ff, '-nostdin', '-y', '-v', 'error'] + inputs + ['-filter_complex', ';'.join(filt), '-map', senaste, '-map', '0:a?',

@@ -1,0 +1,362 @@
+{
+ "aterstall": [
+  {
+   "id": "gid://shopify/DiscountCodeNode/1829894848851",
+   "titel": "Sushi: Köp 1 få 1 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1829894881619",
+   "titel": "Sushi: Köp 2 få 2 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047285587",
+   "titel": "Pizza: Köp 1 få 1 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047351123",
+   "titel": "Pizza: Köp 2 få 2 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047383891",
+   "titel": "Hamburgare: Köp 1 få 1 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047416659",
+   "titel": "Hamburgare: Köp 2 få 2 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047449427",
+   "titel": "Donut: Köp 1 få 1 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1830047482195",
+   "titel": "Donut: Köp 2 få 2 + ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": false
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453096787",
+   "titel": "Mix: Köp 1 få 1 + 0 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453129555",
+   "titel": "Mix: Köp 1 få 1 + 1 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453162323",
+   "titel": "Mix: Köp 1 få 1 + 2 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453195091",
+   "titel": "Mix: Köp 2 få 2 + 0 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453227859",
+   "titel": "Mix: Köp 2 få 2 + 1 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453260627",
+   "titel": "Mix: Köp 2 få 2 + 2 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453293395",
+   "titel": "Mix: Köp 2 få 2 + 3 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1838453326163",
+   "titel": "Mix: Köp 2 få 2 + 4 par ätpinnar",
+   "typ": "DiscountCodeBxgy",
+   "fore": {
+    "orderDiscounts": false,
+    "productDiscounts": false,
+    "shippingDiscounts": true
+   }
+  },
+  {
+   "id": "gid://shopify/DiscountCodeNode/1741008077139",
+   "titel": "GLÖMD",
+   "typ": "DiscountCodeBasic",
+   "fore": {
+    "orderDiscounts": true,
+    "productDiscounts": true,
+    "shippingDiscounts": true
+   }
+  }
+ ],
+ "kod_id": "gid://shopify/DiscountCodeNode/1842543624531",
+ "kod_skapad": "2026-09-30T20:08:43.520Z",
+ "matning": {
+  "tid": "2026-09-30T20:12:00.171Z",
+  "matt": {
+   "SEK": {
+    "land": "SE",
+    "valuta": "SEK",
+    "rabatt": 50,
+    "total_rabatt": 50,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 349
+   },
+   "NOK": {
+    "land": "NO",
+    "valuta": "NOK",
+    "rabatt": 49,
+    "total_rabatt": 49,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 420
+   },
+   "DKK": {
+    "land": "DK",
+    "valuta": "DKK",
+    "rabatt": 33.6,
+    "total_rabatt": 33.6,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 309.4
+   },
+   "EUR": {
+    "land": "FI",
+    "valuta": "EUR",
+    "rabatt": 4.49,
+    "total_rabatt": 4.49,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 40.41
+   },
+   "USD": {
+    "land": "US",
+    "valuta": "USD",
+    "rabatt": 5.09,
+    "total_rabatt": 5.09,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 63.91
+   },
+   "GBP": {
+    "land": "GB",
+    "valuta": "GBP",
+    "rabatt": 3.84,
+    "total_rabatt": 3.84,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 50.16
+   },
+   "AUD": {
+    "land": "AU",
+    "valuta": "AUD",
+    "rabatt": 7.33,
+    "total_rabatt": 7.33,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 94.67
+   },
+   "CAD": {
+    "land": "CA",
+    "valuta": "CAD",
+    "rabatt": 7.24,
+    "total_rabatt": 7.24,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 93.76
+   },
+   "NZD": {
+    "land": "NZ",
+    "valuta": "NZD",
+    "rabatt": 9.04,
+    "total_rabatt": 9.04,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 115.96
+   },
+   "CHF": {
+    "land": "CH",
+    "valuta": "CHF",
+    "rabatt": 4.25,
+    "total_rabatt": 4.25,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 39.75
+   },
+   "CZK": {
+    "land": "CZ",
+    "valuta": "CZK",
+    "rabatt": 109.83,
+    "total_rabatt": 109.83,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 1010.17
+   },
+   "HUF": {
+    "land": "HU",
+    "valuta": "HUF",
+    "rabatt": 1647.47,
+    "total_rabatt": 1647.47,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 15152.53
+   },
+   "ISK": {
+    "land": "IS",
+    "valuta": "ISK",
+    "rabatt": 616,
+    "total_rabatt": 616,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 5684
+   },
+   "PLN": {
+    "land": "PL",
+    "valuta": "PLN",
+    "rabatt": 19.61,
+    "total_rabatt": 19.61,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 180.39
+   },
+   "RON": {
+    "land": "RO",
+    "valuta": "RON",
+    "rabatt": 23.7,
+    "total_rabatt": 23.7,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 218.3
+   },
+   "JPY": {
+    "land": "JP",
+    "valuta": "JPY",
+    "rabatt": 801,
+    "total_rabatt": 801,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 7179
+   },
+   "TWD": {
+    "land": "TW",
+    "valuta": "TWD",
+    "rabatt": 162.34,
+    "total_rabatt": 162.34,
+    "koder": {
+     "VAN-BPKS6U": true
+    },
+    "total": 1527.66
+   }
+  },
+  "paket_och_van": {
+   "land": "SE",
+   "valuta": "SEK",
+   "rabatt": 50,
+   "total_rabatt": 549,
+   "koder": {
+    "SUSHI-K1F1": true,
+    "VAN-BPKS6U": true
+   },
+   "total": 349
+  }
+ }
+}

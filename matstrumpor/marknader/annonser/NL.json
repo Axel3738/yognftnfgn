@@ -1,71 +1,71 @@
 {
  "_om": "Annonstext (nl) för MATSTRUMP_NL_SALES, skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 4/4 ✅. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är NL-batchens (heygen/NL.json), klar/NL_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
- "instagram_user_id": "17841479011543544",
+ "instagram_user_id": "17841423405715219",
  "copy": {
-  "title": "Lachen vanavond. Aan je voeten morgen.",
+  "title": "Vanavond lachen. Morgen aan je voeten.",
   "title_alt": [
    "Lol vanavond. Gedragen morgen.",
    "Vanavond lachen, morgen dragen."
   ],
-  "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-  "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+  "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+  "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
  },
  "annonser": [
   {
    "namn": "MATSTRUMP_NL_sushi_gift_ugc_001_v1",
    "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
    "video": "klar/NL_nathalie.mp4",
-   "title": "Lachen vanavond. Aan je voeten morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen. Morgen aan je voeten.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_gift_ugc_002_v1",
    "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
    "video": "klar/NL_sofie_h1.mp4",
-   "title": "Lol vanavond. Gedragen morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen, morgen dragen.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_jul_ugc_003_v1",
    "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
    "video": "klar/NL_sofie_h2.mp4",
    "title": "Vanavond lachen, morgen dragen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_gift_anim_004_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_012v2_v1 (video 4323418044575220) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/NL_012v2.mp4",
-   "title": "Lachen vanavond. Aan je voeten morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen. Morgen aan je voeten.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_gift_ugc_005_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1 (video 996449943431525) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/NL_haikuh3.mp4",
-   "title": "Lachen vanavond. Aan je voeten morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen. Morgen aan je voeten.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_gift_ugc_006_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1 (video 3084560565211662) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/NL_haikuh2.mp4",
-   "title": "Lachen vanavond. Aan je voeten morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen. Morgen aan je voeten.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_gift_ugc_007_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_s001h1_v2 (video 1593728122281460) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/NL_s001h1.mp4",
-   "title": "Lachen vanavond. Aan je voeten morgen.",
-   "message": "Wasmiddel doet niemand juichen. Een grapcadeau bewaart niemand.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar gerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
-   "link_description": "4 soorten. Koop 1 – Krijg 1 GRATIS. Gratis verzending."
+   "title": "Vanavond lachen. Morgen aan je voeten.",
+   "message": "Niemand wordt blij van wasmiddel. Niemand bewaart een grapcadeau.\nHet antwoord op beide: een doos die eruitziet als een echte afhaalmaaltijd, 5 paar opgerold als maki, met echte houten eetstokjes ernaast.\nZe blijven niet in de doos, maar zitten aan je voeten, week na week.\nEen Zweeds merk.",
+   "link_description": "4 soorten. Koop 1 – krijg 1 GRATIS. Gratis verzending."
   },
   {
    "namn": "MATSTRUMP_NL_sushi_offer_static_008_v1",
@@ -73,7 +73,7 @@
    "bild": "klar/NL_d3.jpg",
    "title": "Koop 2, krijg 2 gratis: vier dozen",
    "message": "Je krijgt vier dozen.\nKoop 2 – krijg 2 gratis, twintig paar sokken in totaal.\nOpgerold als maki, houten eetstokjes in elke doos.\nOne size, past maat 36–44.\nEen Zweeds merk.",
-   "link_description": "Koop 2 – Krijg 2 GRATIS. Gratis verzending."
+   "link_description": "Koop 2 – krijg 2 GRATIS. Gratis verzending."
   }
  ],
  "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Een Zweeds merk.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",

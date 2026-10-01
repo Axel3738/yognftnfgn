@@ -1,0 +1,112 @@
+{
+  "hub_id": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+  "rond": "2026-09-29",
+  "bra": [
+    "Safety is handled honestly: the glove line is the page's own and no bare hand points a blade at the camera.",
+    "The parent's store-name captions at 0:20–0:24 are banned by timestamp.",
+    "Parent on profit contribution (PD_3, 4 879 kr) with the top spender named as benchmark; CPA 185 kr against break-even 556 kr; price 869 / 1 139 kr (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Taljset_FD_4_3's sub-line `Väskan med dragkedja hinner fram till fars dag` promises arrival. The deadline is set at delivery p90, so one parcel in ten arrives later than that.",
+    "Taljset_FD_3_H1 row 3 `Ett av 6 järn för olika snitt.` is half a sentence read aloud.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "Never promise arrival (`hinner fram`): the date is the promise — `Beställ senast 19 oktober` — and p90 means one parcel in ten is later.",
+    "Every VO line is a whole sentence read aloud: `Ett av 6 järn för olika snitt` needs a verb.",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says."
+  ],
+  "rader": [
+    {
+      "namn": "Taljset_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "`hinner fram till fars dag` promises arrival; deadline twice."
+      ],
+      "bra": [
+        "The zip case is the page's fact."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "Sub-line lists the case contents."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Row 3 VO `Ett av 6 järn för olika snitt` has no verb."
+      ],
+      "bra": [
+        "Objection `är det farligt att börja tälja?` answered with the gloves."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Taljset_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

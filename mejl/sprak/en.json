@@ -1,6 +1,7 @@
 {
   "comment": "Engelska för CaraShells USA-marknad (carashell.com — US, GB, CA, AU, NZ). Skriven av sessionen 2026-09-20 sen kväll; rätta här, aldrig i koden. Samma struktur som nb.json. Datumen skrivs '27 September' (inte amerikanskt 'September 27') — samma form fungerar i alla fem länderna. Delas sedan 2026-09-29 med Matstrumpors engelska fraktmejl (mejl_sprak, alla marknader); rättad efter en infödd granskning samma dag.",
   "kod": "en",
+  "adressformat": "land",
   "ord": {
     "Hej": "Hi",
     "I paketet": "In your parcel",

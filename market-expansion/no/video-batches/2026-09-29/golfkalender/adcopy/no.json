@@ -1,0 +1,23 @@
+{
+ "CS": {
+  "message": "🚨 Spar 190 kr på golf-adventskalenderen!\nOrdinær pris: 809 kr\nNå: 619 kr\nDu sparer 190 kr (23 %).\n24 luker, ferdig fylt med golftilbehør til jul.\n30 dagers åpent kjøp.\nTrykk på knappen under og bestill 👇",
+  "headline": "24 luker, spar 190 kr",
+  "description": "Ordinær 809 kr. Nå 619 kr. Spar 23 %."
+ },
+ "G": {
+  "message": "Hva gir du en golfspiller som har alt? 🎁\nDu fant svaret.\n24 luker fylt med golftilbehør, én luke om dagen frem til julaften.\nGolfballer, tees, ballmarkører, køllebørste og håndkle.\nIngen slips. Ingen genser. Noe han faktisk blir glad for.\nTrykk på knappen under og bestill 👇",
+  "headline": "Perfekt julegave til golfspilleren",
+  "description": "24 grunner for ham til å smile i desember."
+ },
+ "PD": {
+  "message": "Glem sjokoladekalenderen. Dette er for golfspilleren. ⛳\n24 luker med 24 golftilbehør.\nTees, ballmarkører, greenreparatør, køllebørste, håndkle og mer.\nEn liten overraskelse hver dag frem til julaften.\nAlt kommer til nytte på banen.\nTrykk på knappen under og bestill i dag 👇",
+  "headline": "24 dager med golfglede",
+  "description": "Åpne en luke hver dag frem til jul."
+ },
+ "SP": {
+  "message": "24 luker fylt med golftilbehør de faktisk bruker.\nGolfballer, tees, ballmarkører, køllebørste og håndkle.\nEn ny liten glede hver morgen i desember.\n30 dagers åpent kjøp.\nTrykk på knappen under og bestill 👇",
+  "headline": "Golfgaven med 24 luker",
+  "description": "24 luker, ferdig fylt med golftilbehør."
+ },
+ "_tre": "Alle fire: visualiserbart ✅ (konkret innhold/pris/luker), falsifiserbart ✅ (tall/pris/antall stemmer med fakta), unik nok ✅/❌ blandet (CS/PD/SP konkrete nok via tall og innhold ✅, G noe mer generisk 'ingen slips/genser' men fortsatt konkret nok ✅)"
+}

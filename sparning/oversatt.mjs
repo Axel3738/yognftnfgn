@@ -39,6 +39,10 @@ export const SPRAK = {
   it: { namn: 'italienska', locale: 'it-IT', html: 'it' },
   pl: { namn: 'polska', locale: 'pl-PL', html: 'pl' },
   pt: { namn: 'portugisiska', locale: 'pt-PT', html: 'pt' },
+  // Japan och Taiwan 2026-09-30. Sidan läser de två första tecknen i <html lang>, så Shopifys
+  // zh-TW blir 'zh' här; datumen skrivs i locale (ja-JP: 9月30日, zh-TW: 9月30日).
+  ja: { namn: 'japanska', locale: 'ja-JP', html: 'ja' },
+  zh: { namn: 'kinesiska (Taiwan)', locale: 'zh-TW', html: 'zh' },
 };
 
 export function lasSprakfil(kod) {

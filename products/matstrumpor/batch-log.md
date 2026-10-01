@@ -384,6 +384,29 @@ på köp per sidvisning.
 **Lärdom:** länk till products/matstrumpor/lardomar.md#<id>
 ```
 
+
+## 2026-09-30 — rond 4: 11 etiketter, 11 lärdomar, 6 briefer (059–064), 4 förslag — och två leveranser som fastnat
+
+**Etiketter:** Gilz batch #1 (044–047, 11 videor): 10 `INGEN_LEVERANS` + 1 `LOSER`, 35 kr på sju dygn. Lärdom `L-batch-1-svalt-adset` i `lardomar.md`: nya annonser i `nya16`/`jul_video` svälter, `09-17 UGC` tar 85 %.
+
+**Briefer, batch #3 (Notion Draft, `products/matstrumpor/batch-03/`):**
+
+| Namn | Typ | Vad | Källa |
+|---|---|---|---|
+| MATSTRUMP_sushi_gift_ugc_059_v1 | I 5 | Nathalie, 15 s-klipp | parent |
+| MATSTRUMP_sushi_gift_ugc_060_v1 | I 6 | Dialogkroken "Hon: … lax / Jag: Säg inget mer" | Axels kommentar 17/9 på pizzaklippet |
+| MATSTRUMP_sushi_gift_ugc_061_v1 | I 7 | "POV: Din vän tror att du köpt sushi till henne." | Axels kommentar 17/9 på burgarklippet |
+| MATSTRUMP_sushi_offer_ugc_062_v1 | I 8 | Slutet blir erbjudandet "Köp 1 – få 1 gratis" | produktsidan 30/9 |
+| MATSTRUMP_sushi_curiosity_ugc_063_v1 | I 9 | "Det här är inte sushi. Titta noga." | KPI_WINNER 038 |
+| MATSTRUMP_sushi_gift_ugc_064_v1 | N | 8 s-miniklipp, sushi | Axels kommentar 17/9 |
+
+Copy: sonnet-subagent mot `docs/copy-regler.md`, tre-frågorstestet i varje brief. Spärren `tools/briefgranskning.mjs --manifest`: 6/6 gröna.
+
+**Fastnat och rättat:** Gilz levererade 056 och 057 (sex videor) i statusen `Creative strat review` 27–29/9. Uppladdningskön läste bara `To be Reviewed`, så de syntes inte. Sessionen tittade på alla sex (inget pris i bild, rätt produkt, inget butiksnamn) och `konfig.json → notion.ko_statusar` läser nu båda statusarna. De väntar på `/matstrumpor`.
+
+**Miniklippen `B_Mini-clip_UGC_04` (pizza) och `BURGER B_Mini-clip_UGC_02`** står odöpta sedan 14–15/9. De visar pizza och burgare, men namnmönstret och landningssidan är bara sushi. De laddas inte upp förrän Axel sagt vilken sida de ska till.
+
+**Förslag (loggade som FORSLAG, inget gjort):** routing till `09-17 UGC`, budget +20 % till 12 000 kr/dag, pausa haikuh2 (−447 kr) och 012v2 (−396 kr).
 ---
 
 ## 2026-09-29 — `/matstrumpor`: batch #3 (039–043) live, nio annonser

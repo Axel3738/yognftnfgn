@@ -139,32 +139,63 @@ function hubbarUrProdukter() {
 }
 function require_fs() { return { readFileSync: fsReadFileSync }; }
 
+/** Hubbar vars 404 Axel sagt att vi ska strunta i (tools/lib/hubbar-utan-atkomst.json). */
+let _utanAtkomst = null;
+function utanAtkomst(id) {
+  if (!_utanAtkomst) {
+    try {
+      const j = JSON.parse(fsReadFileSync(new URL('./lib/hubbar-utan-atkomst.json', import.meta.url), 'utf8'));
+      _utanAtkomst = new Set((j.hubbar ?? []).map((h) => String(h.id).replace(/-/g, '')));
+    } catch { _utanAtkomst = new Set(); }
+  }
+  return _utanAtkomst.has(String(id).replace(/-/g, ''));
+}
+
 /** Alla creative hub-databaser: sokningen PLUS products.json.
  *  Sokningen finns for att nya produkter ska komma med av sig sjalva.
  *  products.json finns for att de gamla aldrig ska kunna falla bort. */
-export async function hittaHubbar() {
+export async function hittaHubbar({ logg = console.error, försök = 4 } = {}) {
+  // ⚠️ Sokningen MASTE lyckas. Faller den tyst blir kon products.json:s fyra
+  // hubbar — alltsa en kort ko och noll felmeddelanden, precis det CLAUDE.md
+  // varnar for ("en hubb som inte hittas ger aldrig ett felmeddelande, bara en
+  // kortare ko"). Matt 2026-10-01: forsta korningen gav 4 hubbar, omkorningen
+  // 29 — sokningen hade felat en gang. Darfor: prova om, och SAG det hogt om
+  // alla forsok felar. Tystnaden var felet, inte golvet.
   let sökta = [];
-  try {
-    let cursor;
-    do {
-      const r = await notion('search', {
-        method: 'POST',
-        body: {
-          // Ingen sokterm: alla databaser integrationen ser (teamspacet Baverbutiken).
-          filter: { value: 'database', property: 'object' },
-          page_size: 100,
-          ...(cursor ? { start_cursor: cursor } : {}),
-        },
-      });
-      for (const d of r.results ?? []) {
-        const titel = text(d.title ?? []);
-        if (ÄR_HUB(titel)) sökta.push({ id: d.id, titel, url: d.url, kalla: 'sök' });
-      }
-      cursor = r.has_more ? r.next_cursor : null;
-    } while (cursor);
-  } catch (e) {
-    if (e.saknarToken) throw e;
-    sökta = [];                       // sokningen kan fela; golvet nedan star kvar
+  let sökFel = null;
+  for (let i = 1; i <= Math.max(1, försök); i++) {
+    sökta = [];
+    sökFel = null;
+    try {
+      let cursor;
+      do {
+        const r = await notion('search', {
+          method: 'POST',
+          body: {
+            // Ingen sokterm: alla databaser integrationen ser (teamspacet Baverbutiken).
+            filter: { value: 'database', property: 'object' },
+            page_size: 100,
+            ...(cursor ? { start_cursor: cursor } : {}),
+          },
+        });
+        for (const d of r.results ?? []) {
+          const titel = text(d.title ?? []);
+          if (ÄR_HUB(titel)) sökta.push({ id: d.id, titel, url: d.url, kalla: 'sök' });
+        }
+        cursor = r.has_more ? r.next_cursor : null;
+      } while (cursor);
+      break;
+    } catch (e) {
+      if (e.saknarToken) throw e;
+      sökta = [];                     // sokningen kan fela; golvet nedan star kvar
+      sökFel = e;
+      if (logg) logg(`⚠️ Notion-sökningen efter hubbar felade (försök ${i}/${försök}): ${e.message}`);
+      if (i < försök) await new Promise(r => setTimeout(r, 2000 * i));
+    }
+  }
+  if (sökFel && logg) {
+    logg('⛔ HUBBSÖKNINGEN FELADE I ALLA FÖRSÖK. Kön bygger bara på products.json:s');
+    logg('   hubbar, alltså fyra av ~29 — rapportera det som ett FEL, aldrig som en tom kö.');
   }
 
   const på = new Map();
@@ -409,20 +440,26 @@ export async function allaKlaraRader(val = {}) {
   }
   const rader = [];
   const fel = {};
+  const hoppade = [];
   for (const h of hubbar) {
     try { rader.push(...await klaraRader(h, val)); }
     catch (e) {
+      // Axels beslut 2026-09-30: de fyra arkiverade hubbarna i
+      // tools/lib/hubbar-utan-atkomst.json ska vi strunta i. Deras 404 är
+      // alltså inget att rapportera — men BARA deras, och bara 404.
+      if (e.status === 404 && utanAtkomst(h.id)) { hoppade.push(h.titel); continue; }
       fel[h.titel] = e.status === 404
         ? `404 — integrationen är inte inbjuden till "${h.titel}" (••• → Connections)`
         : e.message;
     }
   }
-  if (Object.keys(fel).length === hubbar.length) {
-    const e = new Error(`Ingen av ${hubbar.length} hubbar gick att läsa: ${Object.values(fel).join(' · ')}`);
+  const forsokta = hubbar.length - hoppade.length;
+  if (forsokta > 0 && Object.keys(fel).length === forsokta) {
+    const e = new Error(`Ingen av ${forsokta} hubbar gick att läsa: ${Object.values(fel).join(' · ')}`);
     e.allaHubbarFelade = true;
     throw e;
   }
-  return { hubbar, rader, fel };
+  return { hubbar, rader, fel, hoppade };
 }
 
 // ------------------------------------------------------------- fristående CLI
