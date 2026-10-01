@@ -36,11 +36,11 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 
 | När | Vad |
 |---|---|
-| Varje ny kreatör | **Ge Nathalies manus** (`ugc/NATHALIE-MANUS.md`) som video A. Står i kungens steg 6. |
-| Mån 5/10 | Har Lovely fått meddelandet? Har Sofie och Katarina sagt ja? |
-| Tor 8/10 | Utlandets första veckor är slut, första etiketterna per land. |
-| Mån 12/10 | Råfilerna från Sofie och Katarina ska vara inne. |
-| Fre 23/10 | Sista dag att beställa UGC till Black Friday (CS-KLART punkt 22). |
+| Varje ny kreatör | **Ge Nathalies manus** (`ugc/NATHALIE-MANUS.md`) som video A. Står i kungens steg 6, så rutinen tar med det i varje UGC-förslag. |
+| Mån 5/10 07:45 | Push till Axel: Lovely-meddelandet, merge, ROUTING (`trig_01DNvip1ELUUsGDSFNDYDXoU`). |
+| Från fre 9/10 | Rutinen 07:00 ger utlandets första etiketter per land, när kampanjerna gått en vecka. |
+| Mån 12/10 07:45 | Push till Axel: är Sofies och Katarinas råfiler inne? (`trig_01AvCmc4qrFPQNAaakezRxTX`) |
+| Tis 20/10 07:45 | Push till Axel: tre dagar kvar att beställa UGC till Black Friday (23/10), med beställningen färdigskriven (`trig_01TLJbdZ9nCC9EVTCUFYc7PU`). |
 
 ---
 
