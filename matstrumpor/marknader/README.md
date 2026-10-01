@@ -529,15 +529,26 @@ loggan utan .SE.
   "Översätt recensionen till …". Judge.me skriver att språkigenkänningen tar upp till 48 timmar efter
   att inställningen slagits på, och Shopifys språk upp till 24 timmar. Inställningen kräver planen
   Awesome. [Judge.me: Translating reviews](https://judge.me/help/en/articles/11379816-translating-reviews-in-the-review-widget)
-- ⚠️ **Shop-appens tre recensioner är märkta `en`** fast de är svenska (Kent, Wide Pia, Niklas). På
-  engelska sidor visas de därför på svenska utan knapp, som om de vore engelska. Kolla igen efter
-  48 timmar. Rättar inte språkigenkänningen dem, är det Judge.me:s sak.
-- Läses om med `scratchpad`-skriptet `judgeme5.mjs`, som räknar per språk hur många recensioner som
-  visas översatta ("Visa original") och hur många som bara har knappen.
+- ⚠️ **Shop-appens sju recensioner är märkta `en`** fast de är svenska: Kent, Wide Pia, Niklas, Jonas,
+  Gittan, Fredrik och Annika. Det står i fältet `language` i Judge.me:s widgetdata, med `source: shop-app`
+  (läst 2026-10-01). Judge.me:s egna fyra recensioner är märkta `sv`. Språkigenkänningen hade inte
+  rättat dem efter 48 timmar. Följderna, mätta som kund 2026-10-01:
+  - **På engelska sidan (USA, UK, Kanada, Nya Zeeland) är de fem första recensionerna svenska och
+    oöversatta.** Judge.me tror att de redan är på engelska och visar dem utan knapp.
+  - På svenska sidan står "Visa original (engelska)" under svensk text.
+  - I Chrome översätter webbläsarens egen översättare dem "från engelska" till rotvälska, till exempel
+    "Kul Förpackning, Tierarzt" på tyska. Det syns från sida 2 under "Recensioner på andra språk", för
+    sida 1 är Judge.me:s egna tre. Utan webbläsarens översättare blir Judge.me:s översättning rätt.
+  - Rättas i Judge.me, en recension i taget: Reviews → "⋯" på recensionen → Review details →
+    "Detected review language" → Swedish → Save
+    ([Sorting reviews by language](https://judge.me/help/en/articles/10506442-sorting-reviews-by-language)).
+- Läses om med **`node matstrumpor/marknader/judgeme-koll.mjs`**: alla fjorton språk, `--visa` visar
+  varje recension, och `--med-webblasare` visar vad en Chrome-kund ser.
 - **Mätt igen 2026-10-01 ~10:30 CEST (~36 timmar efter inställningen):** fortfarande 0 översatta recensioner
   på de, nb, fr, ja och zh-TW, bara knappen "Översätt …". Rubrikerna är rätt på de, nb, fr och en, men
   japanska och kinesiska sidan visar "Kundrecensioner" och "Recensioner på andra språk" på svenska —
   texterna ligger i `cowork/4-judgeme-australien.txt` (B2). Läs om efter 48 timmar.
+  ⚠️ Talet "0 översatta" var fel, se nedan: skriptet läste recensionerna innan de syntes på skärmen.
 - **2026-10-01 eftermiddag, efter Coworks körning och Axels klick:**
   - **Japanska och kinesiska är på.** Judge.me:s språklista gjordes innan Japan och Taiwan lades till
     (2026-09-30) och visade bara elva språk. Axel tryckte **Inställningar → Språk → "Uppdatera lista"**,
@@ -546,13 +557,29 @@ loggan utan .SE.
     他の言語のレビュー · märket 11件のレビュー, och 客戶評論 · 寫評論 · 其他語言的評論 · märket 11 條評論.
   - **Datumet är dd/mm/yyyy** (Cowork, Inställningar → Språk; ett enda format för alla språk, Judge.me har
     inget format per språk). Förut stod 09/28/2026 överallt, även på svenska.
-  - **Översättningen av recensionerna har börjat:** den första tyska recensionen visas på tyska med "Original
-    anzeigen (Schwedisch)", polska och finska står på "Tłumaczenie…" / "Käännetään…". På japanska och
-    kinesiska finns bara knappen ännu.
-  - **Kvar:** rutans antal har fel böjning på finska ("11 arvostelut", ska vara "11 arvostelua") och polska
+  - **Antalet i rutan:** böjningen var fel på finska ("11 arvostelut", ska vara "11 arvostelua") och polska
     ("11 recenzje", ska vara "11 recenzji"). Det är Review Widget-fältet "Review word (plural)" per språk
     (Inställningar → Widgetar → Review Widget → Text → "Currently editing in"), i
-    `cowork/5-judgeme-texter.txt`. Polskans "recenzji" blir fel igen vid 22–24 recensioner (då "recenzje").
+    `cowork/5-judgeme-texter.txt`. **Finskan rättad 2026-10-01** av Cowork, och läst som kund: "11
+    arvostelua". **Polskan står kvar på "11 recenzje".** Judge.me-panelen blev tom och laddade om sig
+    varje gång Cowork valde Polska, två försök, och Coworks klick hamnade fel i fönstret. Polskans
+    "recenzji" blir fel igen vid 22–24 recensioner (då "recenzje").
+- ✅ **Recensionerna översätts när kunden rullar fram dem: 14 av 14 språk, mätt 2026-10-01 16:15 CEST**
+  (48 timmar efter inställningen, `judgeme-koll.mjs`, webbläsarens översättare av). De recensioner
+  som syns först står på sidans språk, med knappen "Visa original (svenska)" på samma språk. Exempel:
+  "Much appreciated Christmas gift for sushi-loving daughter!", "Bardzo ceniony prezent świąteczny dla
+  kochającej sushi córki!", 寿司好きの娘に大好評のクリスマスプレゼント！ Kunden klickar inget.
+  - Så fungerar det. Judge.me översätter en recension först när den syns på skärmen. Widgeten visar
+    "Översätter..." och hämtar översättningen från `api.judge.me/api/review_translations`, ett anrop
+    per recension, ~1–3 s. Om översättningen redan finns i produktens metafält tar den den därifrån.
+    Judge.me använder också webbläsarens egen översättare där den finns ("a combination of the Chrome
+    Translation API and AI-powered translation", Judge.me:s hjälpsida).
+  - ⚠️ **Två mätningar 2026-10-01 sa "0 översatta" och var fel**: 10:30 CEST och check-in-rutinen 16:00
+    CEST. Båda skripten rullade förbi rutan och läste recensionerna innan de syntes. Då visar Judge.me
+    bara knappen "Översätt …", även för en översättning som redan finns. `judgeme-koll.mjs` stannar
+    därför tre sekunder vid varje recension. Med 1,2 s gjorde Judge.me inget anrop alls på en- och
+    sv-sidan.
+  - Kvar är Shop-appens språkmärkning (ovan). Den gör att engelska sidan visar svenska recensioner.
   - **Går inte att ändra:** "Sort reviews by" är en dold skärmläsartext (syns inte för kunden), "5 stars:
     6 (55%)" ligger i ett dolt SEO-block som widgeten ersätter, och "Anonym" är namnet Judge.me lämnar ut på
     butikens språk för en anonym recensent (en fråga till Judge.me:s support om det ska rättas).

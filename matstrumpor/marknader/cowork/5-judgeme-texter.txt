@@ -1,30 +1,45 @@
-Uppdrag: två små texträttningar i Judge.me för Matstrumpors utlandsbutik. Gör bara det som står nedan.
+⚠️ Läget 2026-10-01 kväll: finskan är KLAR (läst som kund: "11 arvostelua"). Kvar är polskan (del A) och
+språket på Shop-appens sju recensioner (del B). Coworks Chrome-flik hängde sig två gånger när Polska valdes.
+Starta om Chrome helt innan prompten körs igen, eller gör klicken för hand.
+
+Uppdrag: två små rättningar i Judge.me för Matstrumpors utlandsbutik. Gör bara det som står nedan.
 
 Rör ALDRIG:
-- Recensionerna själva: radera, dölj, redigera eller besvara aldrig en recension.
+- Recensionernas text, betyg, namn, bilder eller synlighet. Radera, dölj, redigera eller besvara aldrig en recension.
+  Det enda som får ändras på en recension är "Detected review language" i del B, och bara på de sju som står där.
 - Språklistan (japanska och kinesiska är redan på sedan 2026-10-01) och datumformatet (dd/mm/yyyy är redan valt).
 - Märket under produktnamnet (Star Rating Badge): det är redan rätt på alla språk.
+- Finskans fält: "arvostelua" är redan sparat.
 - Judge.me-planen, betalningar, e-postinställningar och recensionsförfrågningar.
 - Shopify-temat, Shopify Payments, Meta, DNS och Loopia.
 Betala ingenting.
 
-Varför: recensionsrutan på produktsidan skriver antalet i fel form på två språk.
-- Finska: står "11 arvostelut", ska vara "11 arvostelua".
-- Polska: står "11 recenzje", ska vara "11 recenzji".
-Texten kommer från Review Widget-fältet "Review word (plural)" för respektive språk.
-
+DEL A: polskans antal
+Varför: recensionsrutan på polska skriver "11 recenzje", men det ska vara "11 recenzji". Texten kommer från
+Review Widget-fältet "Review word (plural)" för polska.
 1. Öppna Shopify-admin för butiken Matstrumpor.se (1r46tp-qx) och klicka Appar → Judge.me.
-2. Gå till Settings → Widgets → Review Widget. Den svenska adminen kan visa Inställningar → Widgetar → Review Widget, och knappen kan heta "Anpassa".
-3. Öppna sektionen "Text".
-4. Öppna rullistan "Currently editing in" (kan ha ett svenskt namn som "Redigerar just nu") och välj Finnish / Finska.
-5. Skriv arvostelua i fältet "Review word (plural)". Rör inte singularfältet ("Review word (singular)" = arvostelu) och inga andra fält. Klicka Save / Spara.
-6. Välj Polish / Polska i samma rullista.
-7. Skriv recenzji i fältet "Review word (plural)". Rör inte singularfältet (recenzja). Klicka Save / Spara.
-8. Om rullistan eller fälten inte finns, eller om panelen slutar svara: stanna, ändra ingenting mer och beskriv exakt vad du ser med en skärmdump.
-9. Kontrollera som kund. Öppna i en ny flik, en i taget, och ladda om sidan:
-   https://matstrumpor.com/fi/products/sushi-strumpor?country=FI — i recensionsrutan, bredvid betyget 4.4, ska det stå "11 arvostelua".
-   https://matstrumpor.com/pl/products/sushi-strumpor?country=PL — där ska det stå "11 recenzji".
-   (Talet kan vara högre än 11 om nya recensioner har kommit.) Ta en skärmdump av rutan på båda sidorna.
+2. Gå till Inställningar → Widgetar → Review Widget → Anpassa → Text (engelska: Settings → Widgets → Review Widget).
+3. Välj Polska i rullistan "Redigerar just nu i" ("Currently editing in").
+4. Skriv recenzji i fältet "Recensionsord (plural)" ("Review word (plural)"). Rör inte singularfältet (recenzja) och inga andra fält.
+5. Klicka Spara i rutan "Osparade ändringar" högst upp.
+6. Om panelen blir tom eller laddar om sig när du väljer Polska: stanna. Ändra ingenting mer, ta en skärmdump och gå vidare till del B.
 
-Rapportera: vilka fält du ändrade, per språk, och de två skärmdumparna. Säg rakt ut om ett fält inte fanns.
-Skriv sedan "Judge.me-texterna klara" i chatten med Claude. Claude läser sidorna som kund efteråt.
+DEL B: språket på Shop-appens sju recensioner
+Varför: Judge.me har märkt sju svenska recensioner från Shop-appen som engelska. Därför visas de oöversatta,
+på svenska, högst upp på den engelska produktsidan (USA, UK, Kanada, Nya Zeeland). Recensionerna gäller
+produkten Sushi-Strumpor och är skrivna av Kent, Wide Pia, Niklas, Jonas, Gittan, Fredrik och Annika.
+7. Gå till Recensioner (Reviews) i Judge.me.
+8. Hitta Kents recension. Klicka "⋯" på raden och sedan "Review details". Den svenska adminen kan kalla knappen något liknande.
+9. Öppna rullistan "Detected review language", välj Swedish (Svenska) och klicka Save (Spara).
+10. Gör samma sak för Wide Pia, Niklas, Jonas, Gittan, Fredrik och Annika. Ändra inget annat på recensionerna.
+11. Om rullistan inte finns för Shop-appens recensioner: stanna och ta en skärmdump av "Review details".
+
+KONTROLL SOM KUND (öppna i en ny flik, en i taget, och ladda om sidan):
+- https://matstrumpor.com/pl/products/sushi-strumpor?country=PL ska visa "11 recenzji" bredvid betyget 4.4.
+- https://matstrumpor.com/products/sushi-strumpor?country=US: rulla ner till recensionerna. De ska stå på engelska med
+  knappen "Show original (Swedish)". Judge.me översätter en recension när den syns på skärmen, så vänta några sekunder.
+(Talet kan vara högre än 11 om nya recensioner har kommit.) Ta en skärmdump av båda.
+
+Rapportera vad du ändrade i varje del, och skicka skärmdumparna. Säg rakt ut om ett fält eller en rullista inte fanns.
+Skriv sedan "Judge.me klar" i chatten med Claude. Claude läser sidorna som kund efteråt med
+node matstrumpor/marknader/judgeme-koll.mjs.

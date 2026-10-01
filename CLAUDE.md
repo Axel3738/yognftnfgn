@@ -265,10 +265,14 @@ identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll: 104 av 104 d
 **Judge.me:** rutans texter är översatta på alla tolv språk — japanska och kinesiska sedan
 2026-10-01, när Axel tryckte "Uppdatera lista" (Inställningar → Språk; ett språk som publiceras i
 Shopify efter att listan gjorts syns inte annars förrän efter upp till 24 timmar). Datumet är
-dd/mm/yyyy, ett enda format för alla språk. Recensionerna översätts automatiskt (upp till 48 timmar;
-den första tyska var klar 2026-10-01). Fel böjning i rutans antal på finska och polska rättas i
-Inställningar → Widgetar → Review Widget → Text → "Currently editing in" → "Review word (plural)"
-(`marknader/cowork/5-judgeme-texter.txt`). "Sort reviews by" är en dold skärmläsartext och "Anonym" är
+dd/mm/yyyy, ett enda format för alla språk. ✅ **Recensionerna översätts när kunden rullar fram dem,
+på alla fjorton språk** (mätt 2026-10-01 med `marknader/judgeme-koll.mjs`). ⚠️ Ett skript som rullar
+förbi rutan ser bara knappen "Översätt" och har två gånger gett ett falskt "0 översatta". ⚠️ **Shop-appens
+sju recensioner är märkta engelska fast de är svenska**, så engelska sidan visar dem oöversatta. Det
+rättas per recension i Judge.me: Reviews → ⋯ → Review details → "Detected review language". Böjningen i
+rutans antal rättas i Inställningar → Widgetar → Review Widget → Text → "Currently editing in" →
+"Review word (plural)" (`marknader/cowork/5-judgeme-texter.txt`): finskan klar 2026-10-01, polskan kvar,
+eftersom Coworks Chrome hängde sig. "Sort reviews by" är en dold skärmläsartext och "Anonym" är
 recensionens namn — inget av dem går att ändra i Judge.me (`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
