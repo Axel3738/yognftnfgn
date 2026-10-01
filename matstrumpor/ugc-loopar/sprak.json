@@ -1,0 +1,143 @@
+{
+ "sv": {
+  "band_rubrik": "Så ser det ut när lådan öppnas",
+  "ladan": "Lådan",
+  "avslojandet": "Avslöjandet",
+  "uppackningen": "Uppackningen",
+  "myskvallen": "Myskvällen",
+  "skrattet": "Skrattet",
+  "reaktionen": "Reaktionen",
+  "strumpan": "Strumpan",
+  "somdeanvands": "Som de används"
+ },
+ "nb": {
+  "band_rubrik": "Slik ser det ut når boksen åpnes",
+  "ladan": "Boksen",
+  "avslojandet": "Avsløringen",
+  "uppackningen": "Utpakkingen",
+  "myskvallen": "Kosekveld",
+  "skrattet": "Latteren",
+  "reaktionen": "Reaksjonen",
+  "somdeanvands": "Slik de brukes"
+ },
+ "da": {
+  "band_rubrik": "Sådan ser det ud, når boksen åbnes",
+  "ladan": "Boksen",
+  "avslojandet": "Afsløringen",
+  "uppackningen": "Udpakningen",
+  "myskvallen": "Hyggeaften",
+  "skrattet": "Latteren",
+  "reaktionen": "Reaktionen",
+  "somdeanvands": "Sådan bruges de"
+ },
+ "fi": {
+  "band_rubrik": "Tältä näyttää, kun laatikko avataan",
+  "ladan": "Laatikko",
+  "avslojandet": "Paljastus",
+  "uppackningen": "Paketin avaus",
+  "myskvallen": "Kotoisa ilta",
+  "skrattet": "Nauru",
+  "reaktionen": "Reaktio",
+  "somdeanvands": "Näin niitä käytetään"
+ },
+ "en": {
+  "band_rubrik": "This is what it looks like when the box opens",
+  "ladan": "The box",
+  "avslojandet": "The reveal",
+  "uppackningen": "The unboxing",
+  "myskvallen": "Cozy night in",
+  "skrattet": "The laugh",
+  "reaktionen": "The reaction",
+  "somdeanvands": "How they're worn"
+ },
+ "de": {
+  "band_rubrik": "So sieht es aus, wenn die Box aufgeht",
+  "ladan": "Die Box",
+  "avslojandet": "Die Enthüllung",
+  "uppackningen": "Das Auspacken",
+  "myskvallen": "Gemütlicher Abend",
+  "skrattet": "Das Lachen",
+  "reaktionen": "Die Reaktion",
+  "somdeanvands": "So werden sie getragen"
+ },
+ "fr": {
+  "band_rubrik": "Voici ce que ça donne quand on ouvre la boîte",
+  "ladan": "La boîte",
+  "avslojandet": "La révélation",
+  "uppackningen": "Le déballage",
+  "myskvallen": "Soirée cocooning",
+  "skrattet": "Le rire",
+  "reaktionen": "La réaction",
+  "somdeanvands": "Comme on les porte"
+ },
+ "nl": {
+  "band_rubrik": "Zo ziet het eruit als de doos opengaat",
+  "ladan": "De doos",
+  "avslojandet": "De onthulling",
+  "uppackningen": "Het uitpakken",
+  "myskvallen": "Gezellige avond",
+  "skrattet": "De lach",
+  "reaktionen": "De reactie",
+  "somdeanvands": "Zo worden ze gedragen"
+ },
+ "es": {
+  "band_rubrik": "Así se ve cuando se abre la caja",
+  "ladan": "La caja",
+  "avslojandet": "La revelación",
+  "uppackningen": "El desempaquetado",
+  "myskvallen": "Noche de sofá",
+  "skrattet": "La risa",
+  "reaktionen": "La reacción",
+  "somdeanvands": "Así los llevan"
+ },
+ "it": {
+  "band_rubrik": "Ecco cosa succede quando si apre la scatola",
+  "ladan": "La scatola",
+  "avslojandet": "La rivelazione",
+  "uppackningen": "L'unboxing",
+  "myskvallen": "Serata sul divano",
+  "skrattet": "La risata",
+  "reaktionen": "La reazione",
+  "somdeanvands": "Come si indossano"
+ },
+ "pl": {
+  "band_rubrik": "Tak wygląda otwarcie pudełka",
+  "ladan": "Pudełko",
+  "avslojandet": "Odsłonięcie",
+  "uppackningen": "Rozpakowanie",
+  "myskvallen": "Wieczór na kanapie",
+  "skrattet": "Śmiech",
+  "reaktionen": "Reakcja",
+  "somdeanvands": "Tak się je nosi"
+ },
+ "pt-PT": {
+  "band_rubrik": "Vê o que acontece quando abres a caixa",
+  "ladan": "A caixa",
+  "avslojandet": "A revelação",
+  "uppackningen": "O desembalar",
+  "myskvallen": "Noite no sofá",
+  "skrattet": "O riso",
+  "reaktionen": "A reação",
+  "somdeanvands": "Como se usam"
+ },
+ "ja": {
+  "band_rubrik": "ボックスを開けると、こうなります",
+  "ladan": "ボックス",
+  "avslojandet": "種明かし",
+  "uppackningen": "開封",
+  "myskvallen": "夜のおうち時間",
+  "skrattet": "笑い",
+  "reaktionen": "リアクション",
+  "somdeanvands": "使用シーン"
+ },
+ "zh-TW": {
+  "band_rubrik": "盒子打開的樣子",
+  "ladan": "盒子",
+  "avslojandet": "揭曉",
+  "uppackningen": "開箱",
+  "myskvallen": "溫馨夜晚",
+  "skrattet": "笑聲",
+  "reaktionen": "反應",
+  "somdeanvands": "實際使用的樣子"
+ }
+}

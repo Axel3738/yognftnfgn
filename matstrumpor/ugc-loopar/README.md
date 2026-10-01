@@ -1,4 +1,4 @@
-# `matstrumpor/ugc-loopar/` — rörliga UGC-loopar på matstrumpor.se (FÖRSLAG, inget live)
+# `matstrumpor/ugc-loopar/` — rörliga UGC-loopar på matstrumpor.se (LIVE sedan 2026-10-01, förslag 1–6)
 
 Axels beställning 2026-10-01: MatSokker (kopian i Norge, KD-2026-004) hade gjort sin sida
 "lite mer nice" med GIF:ar ur VÅRA UGC-filmer. Axel vill ha samma sak på matstrumpor.se, "lite all
@@ -11,7 +11,8 @@ före/efter per förslag, Ja/Nej per förslag. Källan är `forslag.html`.
 
 | Datum | Vad |
 |---|---|
-| 2026-10-01 | 8 loopar klippta, 7 förslag byggda i en lokal kopia av sidan, skärmdumpar mobil + dator. **Inget ändrat i butiken.** Väntar på Axels Ja/Nej per förslag. |
+| 2026-10-01 | 8 loopar klippta, 7 förslag byggda i en lokal kopia av sidan, skärmdumpar mobil + dator. |
+| 2026-10-01 kväll | **LIVE: förslag 1–6** (Axels order: "Kör allt förutom det mörka blocket … på produktsidan så ändrar du allt i produktbeskrivningen"). Förslag 7 (mörka blocket) är INTE byggt. Läst som kund i SE, NO, DE, US och JP: Katarina bara i SE, texterna på kundens språk, 0 Liquid-fel. |
 
 ## Looparna (`loopar.txt`)
 
@@ -72,12 +73,57 @@ inget hämtas från eller skrivs till butiken. ⚠️ Headless-Chromium hoppar i
 video (alla skärmdumpar visade första rutan), så skärmdumparna visar loopens valda bildruta som
 `<img>`. I butiken blir det video.
 
-## När Axel sagt Ja (nästa session)
+## Live: vad som ändrades 2026-10-01
 
-1. Ladda upp looparna (mp4 + jpg) i Matstrumpors Shopify Files.
-2. En sektion + snippet i temat (`ms-loop`), med Katarina-villkoret och `loading`-logik som bara
-   spelar loopen när den syns (IntersectionObserver).
-3. Bygg i en **kopia av det publicerade temat** och visa Axel förhandsvisningen. Publiceras först
-   på hans ord.
-4. Läs som kund i Sverige och i minst ett annat land (`matstrumpor/marknader/kundvy.mjs`):
-   Katarina syns i SE och inte utomlands, inga svenska ord läcker.
+```bash
+bash matstrumpor/ugc-loopar/klipp.sh                              # looparna (mp4 + jpg) ur kontot
+node matstrumpor/ugc-loopar/filer.mjs --skarpt                    # in i filarkivet → filer.json (committas)
+node matstrumpor/ugc-loopar/live.mjs --steg tema --skarpt         # startsidan, förslag 1–4
+node matstrumpor/ugc-loopar/live.mjs --steg rubrik --skarpt       # orange del i berättelsens rubrik, 13 översättningar
+node matstrumpor/ugc-loopar/live.mjs --steg produkt --skarpt      # produktbeskrivningen, förslag 5–6, alla 14 språk
+node matstrumpor/ugc-loopar/kundvy.mjs --bilder                   # som kund: SE/NO/DE/US/JP, exit 1 = Katarina utomlands
+node matstrumpor/ugc-loopar/live.mjs --aterstall --skarpt         # ÅNGRA: originalen ur backup/ tillbaka
+```
+
+Utan `--skarpt` skriver inget skript något. Originalen (image-banner, rich-text, index.json,
+produktbeskrivningen på 14 språk, rubrikens 13 översättningar) sparades i `backup/` före första
+skrivningen och committas.
+
+**Temat** (publicerat: "Matstrumpor CRO + storleksrad 2026-09-17"): nya `snippets/ms-loop.liquid`
+(videon + Katarina-spärren), `ms-loop-text.liquid` (texterna ur `sprak.json`, 14 språk),
+`ms-loop-hero.liquid`, `sections/ms-loop-band.liquid`, `ms-loop-grid.liquid`,
+`assets/ms-loopar.css`, `ms-loopar.js` (laddar en loop först när den syns, pausar när den lämnar
+skärmen, spelar inget vid "minska rörelse"). `image-banner.liquid` och `rich-text.liquid` fick en
+inställning `ms_loop` (rullista, "Matstrumpor: loop") — utan värde beter de sig som förut.
+`index.json`: hero `ms_loop: avslojandet`, berättelsen `ms_loop: rullen` + `<em>` i rubriken,
+`ms_loop_band` efter Trustpilot-raden, `ms_loop_grid` efter `ugc_galleri`, och `ugc_galleri` +
+`ugc_markning` (AI-raden) står kvar med `disabled: true`.
+
+**Produktbeskrivningen** (sushi-strumpor, sv + 13 översättningar via `translationsRegister`):
+bandet med tre loopar överst, Uppackningen i stället för leverantörens `ezgif-…webp` (med dess
+alt-text), Avslöjandet under "Ser ut som sushi. Är strumpor.". Videorna har `autoplay muted loop
+playsinline` i HTML:en, för beskrivningen kan inte ladda temats skript.
+
+### Mätt och lärt samma kväll
+
+- ⛔ **Leverantörens webp i beskrivningen vägde 15,7 MB** (`content-length` 15 735 106). De fem
+  looparna som ersätter den väger 1,4 MB tillsammans (uppackningen 239 kB).
+- **Produkten har ingen egen SEO-beskrivning**, så Shopify tar meta- och delningstexten ur
+  beskrivningens början. Etiketterna i bandet ritas därför av CSS ur `data-t` (en `<style>` i
+  beskrivningen, som `strip_html` tar bort med innehåll) — meta-texten börjar fortfarande "Ingen
+  jublar åt tvättmedel…". `kundvy.mjs` visar meta-texten per språk.
+- **Dawns `.media > *:not(.zoom)…` (0,3,0) sätter `display:block`** på allt i bildytan: mobilloopen
+  syntes bakom textrutan på dator tills regeln fick id + `!important` (`ms-loop-hero.liquid`).
+- **Shopify vill ha sektionsnamn på max 25 tecken** ("Invalid schema: name is too long").
+- **En video får staged-filnamnet av sig själv**; `fileUpdate` på filnamn vägras för video.
+- **Ändrad svensk rubrik gör översättningarna inaktuella** (alla 13 var markerade efter
+  temaskrivningen) — `--steg rubrik` registrerar dem igen med nya digesten, läst tillbaka.
+- **Shopifys robotspärr ("Verify you are human")** slog till mot containern en gång; `kundvy.mjs`
+  väntar och försöker igen.
+- ⚠️ **Chromium här spelar inte H.264**, så ingen loop har setts RÖRA sig härifrån — bara postern.
+  Filerna är vanlig mp4 (H.264 High, faststart) som spelas i Safari, Chrome och Firefox.
+
+## Förslag 7 (inte byggt)
+
+Det mörka blocket med knapp före recensionerna valde Axel bort 2026-10-01. Mockupen finns kvar i
+`mockup.mjs` (`#ms-loop-mork`) om det ska prövas senare.

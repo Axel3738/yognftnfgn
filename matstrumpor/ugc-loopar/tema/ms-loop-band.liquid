@@ -1,0 +1,36 @@
+{%- comment -%}
+  ms-loopar: bandet "Så ser det ut när lådan öppnas" på startsidan (matstrumpor/ugc-loopar).
+  Katarinas loop (strumpan_sv) bara i Sverige; utomlands står Rullen ("Skrattet") där.
+{%- endcomment -%}
+{{ 'ms-loopar.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ms-loopar.js' | asset_url }}" defer="defer"></script>
+{%- liquid
+  assign ms_sverige = false
+  if localization.country.iso_code == 'SE' and request.locale.iso_code == 'sv'
+    assign ms_sverige = true
+  endif
+-%}
+<div class="color-scheme-1 gradient">
+  <div class="ms-loop-band">
+    <h2 class="ms-loop-band__rubrik">{% render 'ms-loop-text', t: 'band_rubrik' %}</h2>
+    <div class="ms-loop-band__rad">
+      <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'ladan' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'ladan' %}</div></div>
+      <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'avslojandet' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'avslojandet' %}</div></div>
+      {%- if ms_sverige -%}
+        <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'strumpan_sv', ersatt: 'rullen' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'strumpan' %}</div></div>
+      {%- else -%}
+        <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'rullen' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'skrattet' %}</div></div>
+      {%- endif -%}
+      <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'uppackningen' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'uppackningen' %}</div></div>
+      <div class="ms-loop-band__item"><div class="ms-loop-kort">{% render 'ms-loop', loop: 'soffan' %}</div><div class="ms-loop-band__txt">{% render 'ms-loop-text', t: 'myskvallen' %}</div></div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Matstrumpor: loop-band",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+{%- comment -%}
+  ms-loopar: "Som de används" med riktiga loopar på startsidan (matstrumpor/ugc-loopar).
+  Ersätter multicolumn-sektionen ugc_galleri (AI-illustrationerna), som står kvar avstängd i mallen.
+  Katarinas loopar (reaktionen_sv, tamago_sv) bara i Sverige; utomlands Avslöjandet och Lådan.
+{%- endcomment -%}
+{{ 'ms-loopar.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ms-loopar.js' | asset_url }}" defer="defer"></script>
+{%- liquid
+  assign ms_sverige = false
+  if localization.country.iso_code == 'SE' and request.locale.iso_code == 'sv'
+    assign ms_sverige = true
+  endif
+-%}
+<div class="color-scheme-1 gradient">
+  <div class="page-width ms-loop-grid-wrap">
+    <h2 class="h1 ms-loop-grid__rubrik">{% render 'ms-loop-text', t: 'somdeanvands' %}</h2>
+    <div class="ms-loop-grid">
+      <div class="ms-loop-kort">{% render 'ms-loop', loop: 'uppackningen' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'uppackningen' %}</span></div>
+      <div class="ms-loop-kort">{% render 'ms-loop', loop: 'soffan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'myskvallen' %}</span></div>
+      {%- if ms_sverige -%}
+        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'reaktionen_sv', ersatt: 'avslojandet' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'reaktionen' %}</span></div>
+        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'tamago_sv', ersatt: 'ladan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'strumpan' %}</span></div>
+      {%- else -%}
+        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'avslojandet' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'avslojandet' %}</span></div>
+        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'ladan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'ladan' %}</span></div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Matstrumpor: loop-rutnät",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}

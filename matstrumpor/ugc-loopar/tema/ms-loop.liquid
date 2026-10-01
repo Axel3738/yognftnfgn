@@ -1,0 +1,18 @@
+{%- comment -%}
+  ms-loopar: en loop ur Matstrumpors UGC (matstrumpor/ugc-loopar). Byggs av live.mjs, ändra i repot.
+  Parametrar: loop (namnet i loopar.txt), ersatt (loopen som visas utanför Sverige när loop är
+  Katarinas, *_sv). ⛔ Katarinas UGC får aldrig lämna Sverige (Axel 2026-09-27).
+  Videon laddas och spelas av assets/ms-loopar.js först när den syns.
+{%- endcomment -%}
+{%- liquid
+  assign ms_namn = loop
+  if ms_namn contains '_sv'
+    unless localization.country.iso_code == 'SE' and request.locale.iso_code == 'sv'
+      assign ms_namn = ersatt | default: 'ladan'
+    endunless
+  endif
+  case ms_namn
+{{{ kallor }}}
+  endcase
+-%}
+<video class="ms-loop__v" muted loop playsinline preload="none" aria-hidden="true" width="600" height="600" poster="{{ ms_jpg }}" data-src="{{ ms_mp4 }}" data-loop="{{ ms_namn }}"></video>

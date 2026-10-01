@@ -39,6 +39,7 @@ p { margin: 0; max-width: 62ch }
 .topp h1 .acc { color: var(--orange-text) }
 .status { display: inline-flex; gap: 8px; align-items: center; width: fit-content; font-weight: 700; font-size: .9rem; padding: 6px 12px; border-radius: 999px; background: var(--yta); border: 1px solid var(--linje) }
 .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--rod) }
+.status--live::before { background: var(--gron) }
 .ingress { font-size: 1.12rem }
 
 /* loopar */
@@ -95,7 +96,7 @@ ul.regler { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; max-width: 
 
 <div class="ram">
   <header class="topp">
-    <span class="status">Utkast · inget är publicerat</span>
+    <span class="status status--live">Live sedan 1 okt · förslag 1–6 på sajten, 7 bortvalt</span>
     <h1>Matstrumpor <span class="acc">i rörelse</span></h1>
     <p class="ingress">8 korta loopar ur våra egna UGC-filmer, utplacerade på 7 ställen på startsidan och produktsidan. Tryck <b>Ja</b> eller <b>Nej</b> på varje förslag. Svaret samlas längst ner.</p>
   </header>

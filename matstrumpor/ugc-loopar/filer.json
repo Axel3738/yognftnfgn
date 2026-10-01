@@ -1,0 +1,35 @@
+{
+  "_om": "Looparnas adresser i Matstrumpors filarkiv (matstrumpor/ugc-loopar/filer.mjs). mp4 = originalet, jpg = bildrutan (poster).",
+  "avslojandet": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/4b0857a4a04a43d795dc916f5b4ac5c2.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-avslojandet.jpg?v=1790876032"
+  },
+  "rullen": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/4ecacef4ee9649c2b09e7d83f857778c.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-rullen.jpg?v=1790876052"
+  },
+  "uppackningen": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/83e3d07e9fc04bb5a7e74b08745d5a8c.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-uppackningen.jpg?v=1790876071"
+  },
+  "ladan": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/29ba65d981c64dc8bea287fd077487a1.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-ladan.jpg?v=1790876090"
+  },
+  "soffan": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/a55181480bf244ffb9ade793df5e45c1.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-soffan.jpg?v=1790876110"
+  },
+  "strumpan_sv": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/56b78bfa62ae4eb99780851278b781e0.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-strumpan-sv.jpg?v=1790876130"
+  },
+  "reaktionen_sv": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/d0a5b8ecb9cf4c5ca325840620f9551f.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-reaktionen-sv.jpg?v=1790876149"
+  },
+  "tamago_sv": {
+    "mp4": "https://cdn.shopify.com/videos/c/o/v/339f3dbc2443492d93d7ffd18db173c6.mp4",
+    "jpg": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/ms-loop-tamago-sv.jpg?v=1790876168"
+  }
+}
