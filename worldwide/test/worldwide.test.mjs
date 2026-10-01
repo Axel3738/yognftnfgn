@@ -208,3 +208,20 @@ test('svenska bilder: tas bort ur översättningen, storlekstabellerna på kunde
   assert.match(rensaSvenskaBilder(marin, 'marin-motorholje-420d-universellt-skydd', 'pl'), /Pasujące silniki.*175–250 KM/s);
   assert.equal(rensaSvenskaBilder(html, 'annan-produkt', 'de'), html, 'andra produkter rörs inte');
 });
+
+test('Impressum: länken i sidfoten ritas bara på tyska, och sidan bär ankaret', async () => {
+  const { byggAppord } = await import('../tema/patch.mjs');
+  const t = byggAppord();
+  const rader = t.split('\n').filter((r) => r.includes('Impressum</a>'));
+  assert.equal(rader.length, 1);
+  assert.match(rader[0], /\{%- if request\.locale\.iso_code == 'de' -%\}/);
+  assert.match(rader[0], /pages\/anvandarvillkor#impressum/);
+  const de = JSON.parse(readFileSync(new URL('../oversattning/de/_sidor-2.json', import.meta.url), 'utf8'));
+  assert.match(de.anvandarvillkor.body, /<h2 id="impressum">Impressum<\/h2>/);
+  assert.match(de.anvandarvillkor.body, /Axel Odhner/);
+  // Inget annat språk får Impressum-raden.
+  for (const l of ['en', 'fr', 'es', 'it', 'nl', 'pl', 'pt-PT']) {
+    const f = new URL(`../oversattning/${l}/_sidor-2.json`, import.meta.url);
+    assert.doesNotMatch(readFileSync(f, 'utf8'), /Impressum|Odhner/, l);
+  }
+});

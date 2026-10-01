@@ -1185,11 +1185,15 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   kollektionens svenska reabanner dold, villkorens Shopify-mallanteckningar borta, spanska/franska/
   portugisiska/tyska ordval och färgkategorins engelska rester ("Pink", "Purple") rättade (temat a9).
   Kvar: spårningssidan på svenska (rättad i `sparning/butiker.json`, går live när
-  grenen är på `main`), Kachings rabattnamn och BÄVERBUTIKEN-loggan i kassan (Axels beslut, ändrar
-  Sverige), recensionstexterna och färgnamnen i kassan (`worldwide/cowork/3-granskningen.txt`) och 17
+  grenen är på `main`), Kachings rabattnamn i kassan (ändrar Sverige), recensionstexterna och färgnamnen i kassan (`worldwide/cowork/3-granskningen.txt`) och 17
   annonser med påhittad brådska ("TODAY ONLY") som bara Axel får röra, plus Axels beslut i
   rapportens tabell (fraktpolicyns moms-/tullmening och "lager i Kina", Kachings motsägande
-  paketpriser, överstrukna priser i en ny EU-marknad, Impressum). ⚠️ Shopifys kassa spärrar
+  paketpriser, överstrukna priser i en ny EU-marknad). **Tyskland har egen juridik sedan samma kväll**
+  (Axels "ändra endast grejer i tyskland"): Widerrufsbelehrung med formulär, Gewährleistung och
+  **Impressum** (§ 5 DDG, Axel Odhner som VD) i de tyska översättningarna av retursidan och AGB, länken
+  "Impressum" i sidfoten bara på `de` (temat a10). **Kassaloggan blir bävern + nio flaggor** (Axels val C,
+  filen `beaver-store-kassa-logga-flaggor.png` i Filer, bytet `worldwide/cowork/4-kassalogga.txt`) —
+  kassan har EN logga, så Sverige får den också (hans beslut). ⚠️ Shopifys kassa spärrar
   IP:t efter ~18 kassor i rad — kör kassagranskningen glest.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)

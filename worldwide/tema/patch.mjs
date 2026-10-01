@@ -38,7 +38,8 @@ export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s sv
 // a7 2026-10-01: galleribilder med svensk text tas bort ur produktsidornas bildspel (GALLERI).
 // a8 2026-10-01: färgkategorins engelska rester (Pink, Purple, Khaki) på es/it/pt-PT, de och fr.
 // a9 2026-10-01: samma tre färger på alla sju språk (tyskan visade fortfarande "Pink" i Kaching).
-export const APPORD_VERSION = 'a9';
+// a10 2026-10-01: Impressum-länk i sidfoten, bara på tyska (tysk lag, § 5 DDG; sidan är AGB:s tyska översättning).
+export const APPORD_VERSION = 'a10';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -145,6 +146,9 @@ export function byggAppord(ord = JSON.parse(readFileSync(join(ROT, 'appord.json'
 {%- comment -%}Ultimate Trust Badges ritar "Betala säkert med våra samarbetspartners." + Klarna- och Swish-logor
 under köpknappen, bara på svenska (worldwide-granskningen 2026-10-01, samma som Matstrumpor 2026-09-30).
 I världsläget döljs raden.{%- endcomment -%}
+{%- comment -%}Tysk lag (§ 5 DDG) kräver ett Impressum som går att hitta från varje sida. Det står överst i AGB:s
+tyska översättning (#impressum). Länken ritas bara på tyska; inget annat språk och inte Sverige får den.{%- endcomment -%}
+{%- if request.locale.iso_code == 'de' -%}<p class="footer__small-text bw-impressum"><a href="{{ routes.root_url | append: '/pages/anvandarvillkor#impressum' | replace: '//', '/' }}">Impressum</a></p>{%- endif -%}
 <style>#ultimateTrustBadgeswidgetDiv{display:none!important}.shopify-section:has(.grid-product .placeholder-svg){display:none!important}body.template-collection .shopify-section[id$="__promo-grid"]{display:none!important}</style>
 {%- comment -%}Andra regeln: korgsidans "Popular picks" har ingen kollektion vald och visade fyra "Example product
 $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i världsläget.

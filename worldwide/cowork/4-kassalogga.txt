@@ -1,0 +1,68 @@
+Jag säljer Bäverbutikens produkter i hela världen som Beaver Store på beaverstoreco.com,
+från SAMMA Shopify-butik som baverbutiken.se. Kassan har bara EN logga för hela butiken
+(en logga per marknad kräver Shopify Plus). Den står i dag som "BÄVERBUTIKEN", vilket
+utländska kunder inte känner igen. Jag har valt en ny logga som funkar i alla länder:
+bävern med en rad flaggor (Sverige först). Den ligger redan uppladdad i butikens filer.
+Du byter loggan i kassan, inget annat. Gör det i Chrome med mitt inloggade konto. Fråga
+mig om inloggning när du behöver den. Datorn är en Windows-dator.
+
+Jag vet att bytet syns även för svenska kunder i kassan. Det är mitt beslut.
+
+⛔ DET HÄR RÖR DU ALDRIG
+- Loopia, DNS, namnservrar, MX-poster, domäner.
+- Marknader, språk, valutor, priser, frakt, betalsätt, Shopify Payments, skatter,
+  rabatter, appar, temat, produkter, Meta, annonser.
+- I kassaredigeraren: färger, typsnitt, knappar, bakgrunder, favicon, loggans storlek
+  och placering, texter, block och appar. BARA själva loggfilen byts.
+- Ingenting köps, ingen app installeras, inget abonnemang uppgraderas.
+- Lägg ALDRIG en order. Fyll aldrig i ett kortnummer, en adress eller en e-post i kassan.
+- Ladda inte upp någon ny fil. Filen finns redan.
+
+Admin: https://admin.shopify.com/store/4snrw0-mg
+
+------------------------------------------------------------------------------
+STEG 1 — Byt loggan
+------------------------------------------------------------------------------
+
+1. Admin → Inställningar (nere till vänster) → Kassa.
+2. Vid den aktiva konfigurationen (den som står "Aktiv"/"Active" eller "Publicerad"):
+   klicka "Redigera". (Knappen heter "Redigera", inte "Anpassa".)
+3. I redigeraren: klicka kugghjulet / "Inställningar" (Settings) i vänsterkanten och
+   sedan "Logotyp" (Logo) under Varumärke/Branding.
+4. Skriv av vilken fil som står som logga nu (filnamnet), innan du ändrar något.
+5. Klicka på loggan / "Ändra" / "Välj fil" och välj den BEFINTLIGA filen
+   "beaver-store-kassa-logga-flaggor.png" ur listan (sök på "flaggor" om den inte syns).
+   Den är 1920 × 1080 med genomskinlig bakgrund: en bäver och nio små flaggor.
+   Finns filen inte i listan: STOPPA och skriv vad du ser. Ladda inte upp något själv.
+6. Ändra INTE storlek eller placering. Spara uppe till höger.
+7. Kräver Shopify att du "publicerar" konfigurationen: gör det, men bara om den enda
+   ändringen i listan över ändringar är loggan. Står något annat där: STOPPA och skriv
+   vad det är.
+
+------------------------------------------------------------------------------
+STEG 2 — Kontrollera som kund (inkognito, lägg ALDRIG en order)
+------------------------------------------------------------------------------
+
+1. Tyskland: öppna
+   https://beaverstoreco.com/de/products/fiskespohallare-4-pack-kraftig-forvaring?country=DE
+   Lägg EN i varukorgen, gå till kassan. Fyll INTE i något.
+   - Står den nya loggan (bäver + flaggor) högst upp? Ta en skärmdump.
+   - Syns loggan skarp, eller är den suddig/för liten? Skriv vad du ser.
+   Stäng kassan och töm varukorgen.
+2. Sverige: nytt inkognitofönster, öppna
+   https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring?country=SE
+   Lägg EN i varukorgen, gå till kassan. Fyll INTE i något.
+   - Står den nya loggan där också? Är kassan i övrigt svensk (texter, kronor)?
+     Ta en skärmdump. Stäng kassan och töm varukorgen.
+3. Gör samma sak på mobilstorlek (Chrome → F12 → mobilikonen, välj iPhone) för
+   Tyskland: syns flaggorna, eller blir de prickar? Skriv vad du ser.
+
+Ser loggan fel ut (beskuren, suddig, på fel plats): byt TILLBAKA till filen du skrev av
+i steg 1.4, spara, och skriv vad som var fel.
+
+------------------------------------------------------------------------------
+RAPPORTEN
+------------------------------------------------------------------------------
+
+Kort, i punktform: filnamnet på den gamla loggan, att den nya är sparad (och publicerad),
+svaren på steg 2 med skärmdumparna. Skriv aldrig in lösenord, tokens eller nycklar.
