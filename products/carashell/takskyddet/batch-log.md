@@ -3156,3 +3156,29 @@ som låg efter var Bäverbutikens nya taköverdrag-annonser 30/9–1/10.
   Bäverbutiken). Elva videor (CS_2_H2/H3, OB_*) hålls i Bäverbutikens NO-runda
   för svensk text inbränd i källan — de når CaraShell och USA först när den
   rättats.
+
+## 2026-10-02 natt — budgetrond (nattvakten), briefronden pausad
+
+**Budget:** LISTICLE **2 800 → 2 000 kr** (3d-vinst −16,5 %, 7d +2,4 %, 5 dygn
+sedan senaste ändring). Huvudkampanjen står kvar på 2 100 kr — kadensspärr,
+1 dygn sedan gårdagens sänkning, öppnar 4/10 (3d-vinst −70,4 %, ROAS 0,76).
+**I kö till nästa natt:** NYA LISTICLE **2 000 → 1 400 kr** (3d −34,5 %,
+7d −22,4 %) — taket på tre ändringar.
+
+**Pausade annonser:**
+* `CaraShellRoof_SP_5_1` (huvudkampanjen) — 14d 26 373 kr / 37 köp / CPA **713 kr**
+  mot break-even 693, klassen vände till `forlorare`, 7d-CPA 1 624 kr.
+  Reglerna tog den själva, två nätter efter att 14d-talet stod på 692.
+* `CaraShellRoof_CS_2_1` (huvudkampanjen) — 14d 2 168 kr / 3 köp / CPA 723 kr,
+  7d-CPA 1 493 kr. Samma annonsnamn i LISTICLE är benchmarken (CPA 453 kr) och
+  rörs inte; se dna.md för hypotesen och vad som ska mätas innan den tros.
+
+**Dygn:** 30/9 7 824 kr / 12 köp / ROAS 1,95 (+492 kr) · 1/10 6 884 kr / 3 köp /
+ROAS 0,49 (−4 805 kr, preliminär — kontots dygn stängde nyss).
+**7 dygn SE:** 56 222 kr, 58 köp, ROAS 1,37, CPA 969 kr, vinstbidrag −16 028 kr.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut — CaraShell briefas i
+Bäverbutikens teamspace och speglas hit). Bara `kord` stämplad.
+
+**NO och DK:** 4 000 kr/dag vardera, mätt 2026-09-23, inte mätta om sedan dess.
+Nattvakten rör bara marknad SE.

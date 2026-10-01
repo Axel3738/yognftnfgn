@@ -1331,3 +1331,60 @@ sannolikt över, och då pausar ronden den själv utan att någon behöver beslu
 **7 dygn SE:** 60 557 kr, 64 köp, ROAS 1,42, CPA 946 kr ⇒ vinstbidrag
 **−16 205 kr** (i går −16 864). Veckofönstret bär fortfarande de tre värsta
 dygnen och vänder inte förrän de rullat ut.
+
+## Nattvakten 2026-10-02 — reglerna tog `SP_5_1` själva, och samma creative döms olika i tre kampanjer
+
+**Gjort:** pausade **`SP_5_1`** (huvudkampanjen) och **`CS_2_1`** (huvudkampanjen),
+sänkte **LISTICLE 2 800 → 2 000 kr**. Taket på tre ändringar nåddes för tredje
+natten i rad: **NYA LISTICLE 2 000 → 1 400 kr** ligger först i kön nästa natt.
+Huvudkampanjen rörs inte — kadensspärren, 1 dygn sedan gårdagens sänkning;
+fönstret öppnar **4 oktober**.
+
+✅ **`SP_5_1` är pausad av reglerna, inte av ett beslut.** 14-dygns-CPA gick
+**692 → 713 kr** mot break-even 693 och klassen vände till `forlorare`; 7-dygns-CPA
+stod på **1 624 kr** (9 746 kr / 6 köp), så trenden höll och kill-regeln sköt.
+Hela serien: 7d-CPA 478 → 765 → 951 → 1 164 → 1 090 → 1 364 → **1 624**, 14d-CPA
+625 → 664 → 672 → 692 → **713**. 14 dygn: 26 373 kr, 37 köp.
+→ **Det här är första gången i den här serien som en instruktion i filen höll
+utan att behöva tas tillbaka.** "Föregrip inte, vänta in 14-dygnstalet" var rätt:
+annonsen tog sig själv två nätter senare, ingen människa behövde besluta något,
+och 14-dygnsklassen fördröjde domen med ungefär en vecka mot 7-dygnstalet.
+Den fördröjningen är fortfarande den öppna frågan till Axel — den kostade
+~10 000 kr i spend på en annons vars 7-dygnstal legat över break-even sedan 28/9.
+
+🔎 **Samma creative, tre kampanjer, motsatta tal — `CS_2_1`:**
+
+| `CS_2_1` i | 14d spend | Köp | 14d CPA | 7d CPA | Dom i natt |
+|---|---|---|---|---|---|
+| LISTICLE | 8 162 kr | 18 | **453 kr** | 504 kr | benchmark (32,0 % av positivt vinstbidrag) |
+| NYA LISTICLE (– kopia) | 2 134 kr | 4 | **534 kr** | 534 kr | positiv, rörs inte |
+| Huvudkampanjen | 2 168 kr | 3 | **723 kr** | 1 493 kr | **PAUSAD** |
+
+Samma annonsnamn levererar alltså under break-even-CPA i de två
+listicle-kampanjerna och över den i huvudkampanjen. ⚠️ **Det här är en hypotes,
+inte en mätning:** jag har INTE läst annonsernas länkar i den här körningen, så
+att skillnaden är landningssidan (listicle mot produktsida) är en gissning —
+kampanjerna skiljer sig också i ålder och i hur Meta hunnit lära sig dem, och
+huvudkampanjens instans bär bara **3 köp på 14 dygn**. → **Nästa natt: läs
+`creative{object_story_spec}`/länken på de tre instanserna** innan någon skriver
+att listicle-sidan konverterar bättre. Går hypotesen igenom är den dyr i andra
+riktningen också — då är det huvudkampanjens sida, inte creativen, som ska bytas.
+
+⛔ **Slut på enskilda dygn för den här produkten.** 30/9 gav +492 kr i
+vinstbidrag (7 824 kr, 12 köp, ROAS 1,95). 1/10 gav **−4 805 kr** (6 884 kr,
+**3 köp**, ROAS 0,49) med huvudkampanjen på 2 194 kr och **0 köp**. Det är
+tredje gången på fyra nätter dygnsläsningen vänder helt, och två av de tre
+gångerna har den här filen fått ta tillbaka en slutsats byggd på en.
+⚠️ 1/10-raden lästes 00:41 den 2:a: kontots dygn stängde nyss och
+köpattributionen kan fortfarande röra sig uppåt. **Den siffran är preliminär.**
+→ **Instruktion:** skriv ingen dom, ingen vinkel och ingen brief på ett dygn
+härifrån. Dygnsvariationen är större än signalen. Nästa mätning som betyder
+något är de tre kampanjernas CPA över en hel vecka på sina nya budgetar,
+tidigast **6 oktober**.
+
+**7 dygn SE:** 56 222 kr, 58 köp, ROAS 1,37, CPA 969 kr ⇒ vinstbidrag
+**−16 028 kr**. Serien: +12 712 → −9 693 → −10 179 → −16 864 → −16 205 →
+−16 028. Spenden har fallit 19 % från toppen (69 768 kr) men förlusten per
+vecka står still — fönstret bär fortfarande de tre värsta dygnen, och
+kronan-för-kronan har alltså inte blivit bättre än den var. Det syns först när
+28–30/9 rullat ut.
