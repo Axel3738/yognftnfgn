@@ -1,17 +1,199 @@
 {
   "_om": "Färgnamnen i Shopifys färgkategori (metaobjekt shopify--color-pattern). Svenskan är källan och rörs aldrig; de här är översättningarna som kassan och mejlen visar. Samma tabell som worldwide/cowork/3-granskningen.txt steg 1. Körs med node worldwide/granskning/fargnamn.mjs [--skarpt].",
   "farger": {
-    "Grön":       { "en": "Green",      "de": "Grün",       "fr": "Vert",        "es": "Verde",       "it": "Verde",    "nl": "Groen",       "pl": "Zielony",   "pt-PT": "Verde" },
-    "Rosa":       { "en": "Pink",       "de": "Rosa",       "fr": "Rose",        "es": "Rosa",        "it": "Rosa",     "nl": "Roze",        "pl": "Różowy",    "pt-PT": "Rosa" },
-    "Blå":        { "en": "Blue",       "de": "Blau",       "fr": "Bleu",        "es": "Azul",        "it": "Blu",      "nl": "Blauw",       "pl": "Niebieski", "pt-PT": "Azul" },
-    "Kamouflage": { "en": "Camouflage", "de": "Camouflage", "fr": "Camouflage",  "es": "Camuflaje",   "it": "Mimetico", "nl": "Camouflage",  "pl": "Kamuflaż",  "pt-PT": "Camuflagem" },
-    "Svart":      { "en": "Black",      "de": "Schwarz",    "fr": "Noir",        "es": "Negro",       "it": "Nero",     "nl": "Zwart",       "pl": "Czarny",    "pt-PT": "Preto" },
-    "Grått":      { "en": "Gray",       "de": "Grau",       "fr": "Gris",        "es": "Gris",        "it": "Grigio",   "nl": "Grijs",       "pl": "Szary",     "pt-PT": "Cinzento" },
-    "Gul":        { "en": "Yellow",     "de": "Gelb",       "fr": "Jaune",       "es": "Amarillo",    "it": "Giallo",   "nl": "Geel",        "pl": "Żółty",     "pt-PT": "Amarelo" },
-    "Vitt":       { "en": "White",      "de": "Weiß",       "fr": "Blanc",       "es": "Blanco",      "it": "Bianco",   "nl": "Wit",         "pl": "Biały",     "pt-PT": "Branco" },
-    "Rött":       { "en": "Red",        "de": "Rot",        "fr": "Rouge",       "es": "Rojo",        "it": "Rosso",    "nl": "Rood",        "pl": "Czerwony",  "pt-PT": "Vermelho" },
-    "Marin":      { "en": "Navy",       "de": "Marineblau", "fr": "Bleu marine", "es": "Azul marino", "it": "Blu navy", "nl": "Marineblauw", "pl": "Granatowy", "pt-PT": "Azul-marinho" },
-    "Lila":       { "en": "Purple",     "de": "Lila",       "fr": "Violet",      "es": "Morado",      "it": "Viola",    "nl": "Paars",       "pl": "Fioletowy", "pt-PT": "Roxo" },
-    "Khaki":      { "en": "Khaki",      "de": "Khaki",      "fr": "Kaki",        "es": "Caqui",       "it": "Cachi",    "nl": "Kaki",        "pl": "Khaki",     "pt-PT": "Caqui" }
-  }
+    "Grön": {
+      "en": "Green",
+      "de": "Grün",
+      "fr": "Vert",
+      "es": "Verde",
+      "it": "Verde",
+      "nl": "Groen",
+      "pl": "Zielony",
+      "pt-PT": "Verde"
+    },
+    "Rosa": {
+      "en": "Pink",
+      "de": "Rosa",
+      "fr": "Rose",
+      "es": "Rosa",
+      "it": "Rosa",
+      "nl": "Roze",
+      "pl": "Różowy",
+      "pt-PT": "Rosa"
+    },
+    "Blå": {
+      "en": "Blue",
+      "de": "Blau",
+      "fr": "Bleu",
+      "es": "Azul",
+      "it": "Blu",
+      "nl": "Blauw",
+      "pl": "Niebieski",
+      "pt-PT": "Azul"
+    },
+    "Kamouflage": {
+      "en": "Camouflage",
+      "de": "Camouflage",
+      "fr": "Camouflage",
+      "es": "Camuflaje",
+      "it": "Mimetico",
+      "nl": "Camouflage",
+      "pl": "Kamuflaż",
+      "pt-PT": "Camuflagem"
+    },
+    "Svart": {
+      "en": "Black",
+      "de": "Schwarz",
+      "fr": "Noir",
+      "es": "Negro",
+      "it": "Nero",
+      "nl": "Zwart",
+      "pl": "Czarny",
+      "pt-PT": "Preto"
+    },
+    "Grått": {
+      "en": "Gray",
+      "de": "Grau",
+      "fr": "Gris",
+      "es": "Gris",
+      "it": "Grigio",
+      "nl": "Grijs",
+      "pl": "Szary",
+      "pt-PT": "Cinzento"
+    },
+    "Gul": {
+      "en": "Yellow",
+      "de": "Gelb",
+      "fr": "Jaune",
+      "es": "Amarillo",
+      "it": "Giallo",
+      "nl": "Geel",
+      "pl": "Żółty",
+      "pt-PT": "Amarelo"
+    },
+    "Vitt": {
+      "en": "White",
+      "de": "Weiß",
+      "fr": "Blanc",
+      "es": "Blanco",
+      "it": "Bianco",
+      "nl": "Wit",
+      "pl": "Biały",
+      "pt-PT": "Branco"
+    },
+    "Rött": {
+      "en": "Red",
+      "de": "Rot",
+      "fr": "Rouge",
+      "es": "Rojo",
+      "it": "Rosso",
+      "nl": "Rood",
+      "pl": "Czerwony",
+      "pt-PT": "Vermelho"
+    },
+    "Marin": {
+      "en": "Navy",
+      "de": "Marineblau",
+      "fr": "Bleu marine",
+      "es": "Azul marino",
+      "it": "Blu navy",
+      "nl": "Marineblauw",
+      "pl": "Granatowy",
+      "pt-PT": "Azul-marinho"
+    },
+    "Lila": {
+      "en": "Purple",
+      "de": "Lila",
+      "fr": "Violet",
+      "es": "Morado",
+      "it": "Viola",
+      "nl": "Paars",
+      "pl": "Fioletowy",
+      "pt-PT": "Roxo"
+    },
+    "Khaki": {
+      "en": "Khaki",
+      "de": "Khaki",
+      "fr": "Kaki",
+      "es": "Caqui",
+      "it": "Cachi",
+      "nl": "Kaki",
+      "pl": "Khaki",
+      "pt-PT": "Caqui"
+    },
+    "Orange": {
+      "de": "Orange",
+      "fr": "Orange",
+      "es": "Naranja",
+      "it": "Arancione",
+      "nl": "Oranje",
+      "pl": "Pomarańczowy",
+      "pt-PT": "Laranja"
+    },
+    "Silver": {
+      "de": "Silber",
+      "fr": "Argent",
+      "es": "Plateado",
+      "it": "Argento",
+      "nl": "Zilver",
+      "pl": "Srebrny",
+      "pt-PT": "Prateado"
+    },
+    "Light Gray": {
+      "de": "Hellgrau",
+      "fr": "Gris clair",
+      "es": "Gris claro",
+      "it": "Grigio chiaro",
+      "nl": "Lichtgrijs",
+      "pl": "Jasnoszary",
+      "pt-PT": "Cinzento-claro"
+    },
+    "Dark Camouflage": {
+      "de": "Dunkles Camouflage",
+      "fr": "Camouflage foncé",
+      "es": "Camuflaje oscuro",
+      "it": "Mimetico scuro",
+      "nl": "Donkere camouflage",
+      "pl": "Ciemny kamuflaż",
+      "pt-PT": "Camuflagem escura"
+    },
+    "Frosted Dragon": {
+      "de": "Drache, matt",
+      "fr": "Dragon, givré",
+      "es": "Dragón, esmerilado",
+      "it": "Drago, satinato",
+      "nl": "Draak, mat",
+      "pl": "Smok, matowy",
+      "pt-PT": "Dragão, fosco"
+    },
+    "Transparent Dragon": {
+      "de": "Drache, transparent",
+      "fr": "Dragon, transparent",
+      "es": "Dragón, transparente",
+      "it": "Drago, trasparente",
+      "nl": "Draak, transparant",
+      "pl": "Smok, przezroczysty",
+      "pt-PT": "Dragão, transparente"
+    },
+    "Frosted Flower": {
+      "de": "Blume, matt",
+      "fr": "Fleur, givrée",
+      "es": "Flor, esmerilada",
+      "it": "Fiore, satinato",
+      "nl": "Bloem, mat",
+      "pl": "Kwiat, matowy",
+      "pt-PT": "Flor, fosca"
+    },
+    "transparent flower": {
+      "en": "Transparent Flower",
+      "de": "Blume, transparent",
+      "fr": "Fleur, transparente",
+      "es": "Flor, transparente",
+      "it": "Fiore, trasparente",
+      "nl": "Bloem, transparant",
+      "pl": "Kwiat, przezroczysty",
+      "pt-PT": "Flor, transparente"
+    }
+  },
+  "_om_engelska": "Åtta färger heter på engelska redan i Shopify (också på svenska sidan, rörs inte); de får bara översättningar till de andra språken. Mätt 2026-10-01."
 }

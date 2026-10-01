@@ -1185,15 +1185,18 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   kollektionens svenska reabanner dold, villkorens Shopify-mallanteckningar borta, spanska/franska/
   portugisiska/tyska ordval och färgkategorins engelska rester ("Pink", "Purple") rättade (temat a9).
   Kvar: spårningssidan på svenska (rättad i `sparning/butiker.json`, går live när
-  grenen är på `main`), Kachings rabattnamn i kassan (ändrar Sverige), färgnamnen i kassan (appen saknar `read_metaobjects`, mätt 2026-10-01: `4-slutklick.txt` steg 2, sedan `worldwide/granskning/fargnamn.mjs --skarpt`), Judge.me:s recensionstexter (automatisk översättning på, men appen hittade inga språk; Judge.me-datumen skrivs om i temat a11) och 17
+  grenen är på `main`), Kachings rabattnamn i kassan (ändrar Sverige), Judge.me:s recensionstexter (automatisk översättning på, men appen hittade inga språk; Judge.me-datumen skrivs om i temat a11) och 17
   annonser med påhittad brådska ("TODAY ONLY") som bara Axel får röra, plus Axels beslut i
   rapportens tabell (fraktpolicyns moms-/tullmening och "lager i Kina", Kachings motsägande
   paketpriser, överstrukna priser i en ny EU-marknad). **Tyskland har egen juridik sedan samma kväll**
   (Axels "ändra endast grejer i tyskland"): Widerrufsbelehrung med formulär, Gewährleistung och
   **Impressum** (§ 5 DDG, Axel Odhner som VD) i de tyska översättningarna av retursidan och AGB, länken
-  "Impressum" i sidfoten bara på `de` (temat a10). **Kassaloggan blir bävern + nio flaggor** (Axels val C,
-  filen `beaver-store-kassa-logga-flaggor.png` i Filer, bytet `worldwide/cowork/4-slutklick.txt`) —
-  kassan har EN logga, så Sverige får den också (hans beslut). **Nio produkter hette "Color"/"Size" på svenska sidan** (stod så före worldwide); bytt till "Färg"/"Storlek" 2026-10-01 (Axels val A, `worldwide/granskning/alternativnamn.mjs`, loggen bär originalen). Översättningarna nycklas på det svenska namnet (`options[].name` i `oversattning/<l>/`), så ett nytt namnbyte kräver filerna först, sedan `bygg.mjs --steg oversattningar`. ⚠️ Shopifys kassa spärrar
+  "Impressum" i sidfoten bara på `de` (temat a10). **Kassaloggan är bävern + nio flaggor sedan 2026-10-01 kväll** (Axels val C, bytt av honom själv,
+  filen `beaver-store-kassa-logga-flaggor-beskuren.png` i Filer, läst som kund i DE och SE) —
+  kassan har EN logga, så Sverige har den också (hans beslut). **Färgnamnen i kassan är översatta sedan samma kväll**
+  (Axel gav Bäver uppladdare `read_metaobjects`; `worldwide/granskning/fargnamn.mjs --skarpt`, tabellen
+  `worldwide/tema/fargnamn.json`, 19 färger × 8 språk; DE-kassan "Grün", den svenska orörd). Ny färg i
+  Shopifys färgkategori ⇒ en rad i tabellen och kör om. **Nio produkter hette "Color"/"Size" på svenska sidan** (stod så före worldwide); bytt till "Färg"/"Storlek" 2026-10-01 (Axels val A, `worldwide/granskning/alternativnamn.mjs`, loggen bär originalen). Översättningarna nycklas på det svenska namnet (`options[].name` i `oversattning/<l>/`), så ett nytt namnbyte kräver filerna först, sedan `bygg.mjs --steg oversattningar`. ⚠️ Shopifys kassa spärrar
   IP:t efter ~18 kassor i rad — kör kassagranskningen glest.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)
