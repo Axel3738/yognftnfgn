@@ -193,6 +193,16 @@ annons). Hookarna har klarat tre-frågorstestet. ⚠️ **Hookarna för de 30
 annonser `lardomar.md` aldrig läste står i `matstrumpor/marknader/transkript/`
 (69 transkript).** Läs dem innan en vinkel kallas oprövad; den här sessionen
 kallade två redan körda vinklar nya tills skeptikern läste transkripten.
+📚 **Ny information (steg 4) i `ny-information.md` (2026-10-01):** tolv
+belagda fynd med källa och datum, varje källa öppnad av sessionen. De
+viktigaste för Sverige: 56 % av svenskarna har sushi som favoriträtt
+(Verian/HelloFresh 2024) och sushi är topp tre i takeaway (Wolt jan 2026);
+"den första oönskade julklappen läggs ut innan Kalle Anka" (Blocket/SVT
+dec 2025) och 87 % har fått en klapp de inte ville ha (UNICEF dec 2024);
+57 % vill ge praktiskt, 25 % roligt, 23 % säger nej till skämtpresenter
+(Talker nov 2025); se-igenom-förpackning höjer viljan att äga (IJRM maj
+2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är FALSKT (cheeseburgare
+är), skriv "topp tre".
 
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;
