@@ -1,0 +1,21 @@
+Rights owner (company): Stonebite Ecom AB (reg. no. 559576-2401)
+Your relationship to the copyright owner: I'm authorised to act on behalf of the copyright owner
+Full name: Axel Odhner (CEO)
+Email: axel.odhner@stonebite.org
+Phone: (none given)
+Address: Stenkolsgatan 1B, 417 07 Göteborg, Sweden
+Country: Sweden
+Store being reported: https://matsokker.shop
+URL(s) of the infringing content:
+https://matsokker.shop/products/sushi-sokker
+https://cdn.shopify.com/s/files/1/1084/6168/7114/files/gif2_800x800.gif
+Description of the copyrighted work:
+An advertising video made for our store Matstrumpor (matstrumpor.se) for our product "Sushi-Strumpor" (our ad "09-17 Nathalie captions musik", published by us on 17 September 2026). The animated image on the reported page is cut from this video: 20 of its 26 sampled frames are identical to frames of our video (perceptual-hash distance at most 6/64, compared as a square crop of our vertical video), as shown side by side on the evidence image.
+URL(s) of the original work:
+https://www.facebook.com/ads/library/?id=2127001151229429
+https://matstrumpor.se/products/sushi-strumpor
+Evidence image: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis.png?v=1790861027
+Electronic signature: Axel Odhner
+Statements:
+- I have a good faith belief that use of the copyrighted material described above is not authorized by the copyright owner, its agent, or the law.
+- I swear, under penalty of perjury, that the information in this notification is accurate and that I am the copyright owner or am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.

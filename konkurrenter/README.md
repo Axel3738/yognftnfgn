@@ -232,6 +232,11 @@ node konkurrenter/kor.mjs --lista
     i Axels Chrome och tar koden ur hans Gmail, och Axel gör
     säkerhetskontrollen och klickar Submit. Kvittona skrivs med `--anmald <id>
     --nr <n> --referens <r>` ur Metas bekräftelsemejl eller Coworks lista.
+    Flera ärenden går i EN prompt (2026-10-01): `--anmal-cowork
+    KD-2026-003,KD-2026-004 --bara "KD-2026-003:2"` skriver
+    `cowork/anmalningar-<datum>.txt`, med reglerna en gång och varje block
+    märkt med sitt ärende. `--med-shopify <id,…>` lägger Shopify-anmälan
+    (se "MatSokker" nedan) sist i samma prompt, som DEL 2.
     Lokala skärmdumpar
     Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två
     anmälningar, två bevisbilder (2400 px, ~0,9 MB), verifieringssidan tittad
@@ -497,6 +502,61 @@ TikTok-videon, så de är egna källor.
 - Registret växer åt ett håll. Får vi veta att ett klipp inte är vårt läggs
   det till. Det tas aldrig bort för att ett fall ska bli starkare.
 
+## MatSokker: delbilder, Shopify-anmälan och Metas gräns (2026-10-01)
+
+KD-2026-004 (`arenden/KD-2026-004/anteckning-2026-10-01.md`): en ny Shopify-butik
+i Norge körde 9 av Matstrumpors annonser med norsk text, och vår Nathalie-film låg
+som GIF på deras produktsida. Axel: "Anmäla allt." Fem verktyg kom till.
+
+- **Delbild** (`delbild.mjs`, `--lagg-till-bild <id> --annons <deras annons-id>
+  --var-bild <länk|fil> --var-annons "<vårt namn>" [--ruta x0,y0,x1,y1]`). En
+  bildannons där texten är omsatt matchar inte som hel bild. Därför söks vår
+  bilds mittparti (`MITTPARTI` 0,12–0,88 × 0,26–0,86, utan textraderna) i deras
+  bild över skala 0,3–1,6 och alla lägen, med en summerad-yta-tabell. Grov dHash
+  9 × 8 (≤ 6/64) hittar kandidaten, och fin 17 × 16 (≤ 64/256) avgör. MatSokkers
+  d4 gav 2/64 + 20/256 vid skala 0,96, och kontrollerna mot andra bilder 10–15/64
+  och 100–131/256. Raden bär `del: 'mittparti'`. Anmälan säger "our own advertising
+  image with its text re-set in another language: the picture under the text is
+  identical", och aldrig att hela bilden är det. Utan träff läggs inget till.
+- **Graden följer mätningen hela vägen.** En hel bild som bara är "near-identical"
+  (MatSokkers 036 och d3, 7–8/64, norsk text) heter "nearly identical" i de 500
+  tecknen och "nästan identisk" på kortet. Förut stod det "identical" där. En
+  bildannons kallas aldrig "a still frame from our ad video".
+- **Shopify-anmälan** (`shopify-anmalan.mjs`, `--shopify <id> --bild <fil-url>
+  --sida <sid-url> [--alla-filmer]`). Den gäller vårt material på en annan butiks
+  egen sida. Deras GIF eller film hashas med 4 rutor/s. Den jämförs mot våra
+  filmer (paren i `klipp.json`, eller alla med `--alla-filmer`) som en kvadrat ur
+  topp, mitt och botten av den stående filmen, och bästa film × beskärning vinner.
+  Den kräver minst 3 identiska rutor (≤ 6/64, aldrig platta) ur 2 olika sekunder
+  och 30 % av deras rutor (`arBevisad`). Bevisbilden visar 3 par ur olika
+  sekunder, uttagna med samma fps-kedja som hashen (aldrig `-ss`), och läggs på
+  Matstrumpors CDN. En oförändrad bild återanvänder sin länk (`bevisSha`). Fälten
+  på engelska ligger i `arenden/<id>/shopify/anmalan.json` + `.txt`, med
+  originalet = vår annons i annonsbiblioteket. Shopifys formulär
+  (https://www.shopify.com/legal/tools/report-an-issue/dmca) kräver inloggning.
+  Därför får appen ett Shopify-kort (`kortShopify`), Axels Ja tar med det i
+  Cowork-prompten (`--med-shopify`), och Cowork fyller i det i hans Chrome. Det
+  skapar aldrig ett konto och stannar vid en säkerhetskontroll. Kvittot skrivs
+  med `--shopify <id> --skickad --referens <r>`, aldrig två gånger. Mätt på
+  MatSokker: GIF 2 är 20 av 26 rutor ur vår Nathalie-annons. GIF 1 fanns inte i
+  någon av våra 243 filmer. ⚠️ Första mätningen jämförde bara filmerna med vårt
+  namnprefix och missade Nathalie, vars svenska annons inte heter `MATSTRUMP_…`.
+  Jämför mot ALLA filmer innan något kallas "inte vårt". Produktbilder som kom
+  från leverantören anmäls aldrig.
+- **`--klipp … --utan-film <regex>`** tar bort filmer ur jämförelsen.
+  Matstrumpors utlandsversioner `MATSTRUMP_<LAND>_*` har aldrig visats och finns
+  inte i annonsbiblioteket, så ett par mot dem går inte att kontrollera för
+  Metas granskare. Kör `--utan-film '^MATSTRUMP_[A-Z]{2}_'`, så kommer paren ur de
+  svenska annonser som gått. `--original … --max-prova 15` (standard 10) prövar
+  fler kandidater när flera av våra annonser delar text. På MatSokker hittade
+  det 8 av 9 filmer.
+- **`--klipp … --bara-cache`** jämför bara mot filmer som redan ligger i cachen
+  och skriver vilka som hoppades. Metas gräns för appen (`(#4) Application request
+  limit reached`) delas av ALLA rutiner. Mätt 2026-10-01 stod `x-app-usage` på
+  104 % mitt i en körning, och de saknade filmerna gick att hämta först när den
+  sjunkit till 54 %. Mät före en stor körning:
+  `curl -s "https://graph.facebook.com/v23.0/me?fields=id&access_token=$META_ACCESS_TOKEN" -D - -o /dev/null | grep -i x-app-usage`.
+
 ## Filer
 
 | Fil | Committas | Vad |
@@ -513,6 +573,10 @@ TikTok-videon, så de är egna källor.
 | `granskning.mjs`, `granskning-sida.html` | ✅ | Granskningsappen: kortens data, status, sms, `attGora`, och sidan med svep och Ja/Nej |
 | `output/granska/<id>/` | ❌ | Appen som publiceras: `index.html`, `data/granskning.json`, `data/status.json`, `bilder/` — byggs om med `--granska` |
 | `arenden/<id>/anmalan/klipp.json` | ✅ | Klippvalet: paren (film, tid, avstånd, hash) per annons, de lånade hasharna, biblioteket — `--klipp` |
+| `delbild.mjs` | ✅ | Vår bilds mittparti i deras bild (skala + läge, grov + fin dHash) — `--lagg-till-bild` |
+| `shopify-anmalan.mjs` | ✅ | Shopify-anmälan: måttet (kvadrat ur vår stående film), paren, fälten, bevisbilden, Cowork-avsnittet |
+| `arenden/<id>/shopify/anmalan.json` + `.txt` | ✅ | Shopify-anmälans fält, mått, bevisbildens CDN-länk, status + referens — `--shopify` |
+| `arenden/<id>/shopify/bevis.png`, `bevis.jpg` | ❌ | Shopify-anmälans bevisbild (~5 MB) — byggs om med `--shopify` |
 | `original.mjs` | ✅ | Våra originalannonser i annonsbiblioteket: fraserna, sökningen, jämförelsen ruta för ruta, ledfilmen |
 | `arenden/<id>/anmalan/original.json` | ✅ | Per film: vår annons i annonsbiblioteket (länk, arkiv-id, sida, start, lika %) eller orsaken — `--original` |
 | `output/klipp/<id>/` | ❌ | Cache: deras och våra filmer (mp4), `rutor-<video>.json`, `bibliotek.json`, rutorna som JPEG — bygg om med `--klipp` |
@@ -580,4 +644,6 @@ output/ dit (tester och provkörningar — repot rörs inte).
 - En Meta-anmälan per annons; ingen skickas utan Axels "kör anmälningarna <id>"; varje inskickad kvitteras med referens och aldrig två gånger.
 - Brevet och anmälan påstår bara det uppräknade (sekvenser med tidskoder, ordagranna passager, identiska bilder) — aldrig "filmerna är våra", aldrig en andel, aldrig marknadsföringslagen, aldrig produktsidor utan uppmätt text.
 - Klipp i `externa/` bär aldrig ett par, räknas aldrig i andelen och deras filmer länkas aldrig som original.
-- 79 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- En Shopify-anmälan bara på det som mätts som vårt (≥ 3 identiska rutor ur ≥ 2 sekunder, ≥ 30 %), bara efter Axels Ja på kortets version, kvitterad en gång.
+- Bildbevis säger "identical" bara när mätningen gör det; en delbild påstår bara att bilden under texten är vår.
+- 95 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

@@ -246,8 +246,15 @@ inget: "Inget för dig i dag."
   `--rapport --tvinga`. **Filmer som inte matchade på text eller förhandsbild**
   (3 av 10 norska hade en annan förhandsbild) tas med som kandidater med
   `--lagg-till <id> --annonser <id,…>`. `--klipp <id> --alla` avgör, och en
-  kandidat utan rutor ur våra klipp kommer aldrig med (`bevisStatus`). Bildannonser
-  som inte matchar våra annonsbilder läggs inte till: säg dem till Axel.
+  kandidat utan rutor ur våra klipp kommer aldrig med (`bevisStatus`). **En
+  bildannons där de satt om texten i vår bild** (MatSokker 2026-10-01: vår d4
+  med norsk rubrik gav dHash 17/64 på hela bilden) läggs till med
+  `--lagg-till-bild <id> --annons <annons-id> --var-bild <länk eller fil> --var-annons "<vårt namn>"`
+  (`delbild.mjs`): mittpartiet av vår bild, utan rubrik och knapp, söks i deras
+  bild, och raden kommer bara med om både den grova (≤ 6/64) och den fina
+  jämförelsen (≤ 64/256) håller. Mätt: d4 2/64 + 20/256, kontroller med fel
+  bild 10–15/64 + 100–131/256. Annars läggs ingenting till, med talen.
+  Andra bildannonser som inte matchar läggs inte till: säg dem till Axel.
   Utskriften slutar med **Axels kriterier** (`konfig.json → trosklar.annons`,
   hans ord 2026-09-29): sidan är *värd att jaga* när minst EN kopierande
   annons har **över 10 000 i räckvidd** ELLER **minst 10 av dem är live** —
@@ -267,6 +274,25 @@ inget: "Inget för dig i dag."
   (formatet överst i `annonsfall.mjs`, `aktiv` och `exponeringar` per annons
   — hitta aldrig på ett tal) och kör
   `node konkurrenter/kor.mjs --hamta --annonser <fil>`.
+
+- **`shopify <id> <bild- eller GIF-länk> <sidan den ligger på>` — vårt material
+  på deras EGEN Shopify-sajt** (Axel 2026-10-01 om MatSokker: "Vi måste också
+  göra en DMCA via Shopify eftersom de har snott våra UGC videos … och lagt på
+  sin hemsida"). Läs sajten först i Chromium (alla `video`, `gif`, bilder) och
+  välj BARA det som mätts som vårt. `node konkurrenter/kor.mjs --shopify <id>
+  --bild <länk> --sida <länk> [--alla-filmer]` (`shopify-anmalan.mjs`) jämför
+  bilden ruta för ruta mot filmerna i ärendets par (`--alla-filmer`: hela
+  klippcachen) som kvadrat ur topp, mitt och botten av vår stående film, och
+  bygger bara på en mätt träff: ≥ 3 identiska rutor ur ≥ 2 sekunder och ≥ 30 %
+  av deras rutor. Skriver `arenden/<id>/shopify/` (anmalan.json, anmalan.txt,
+  bevis.png på butikens CDN) och kortet kommer med i `--granska`. Shopifys
+  formulär kräver inloggning, så Cowork fyller i det efter Axels Ja
+  (`--anmal-cowork <ärenden> --med-shopify <id>`), och kvittot är `--shopify
+  <id> --skickad --referens <r>`. Mätt på MatSokker: GIF 2 = 20 av 26 rutor ur
+  vår Nathalie-annons; GIF 1 fanns inte i någon av våra 243 filmer och anmäls
+  inte. ⚠️ Jämför mot ALLA våra filmer, inte bara de svenska med vårt
+  namnprefix: första mätningen missade Nathalie, vars svenska annons inte
+  heter `MATSTRUMP_…`. Produktbilder som kom från leverantören anmäls aldrig.
 
 - **`extern <länk eller mp4> <id> "ägare" "orsak"`** — ett klipp vi vet INTE
   är vårt (Eoka AB 2026-09-29: Specialised Covers TikTok låg i vårt
@@ -368,6 +394,14 @@ inget: "Inget för dig i dag."
      och `--skicka` tills `--klipp <id> --alla` körts. Två par som visar
      samma bild väljs aldrig båda (`SAMMA_TAGNING`, samma AI-klipp ligger
      ofta i flera av våra filmer) — titta ändå på översiktsarket.
+     **Två flaggor från MatSokker 2026-10-01:** `--bara-cache` gör inga
+     Meta-anrop för våra filmer (appens tak delas med alla rutiner — ~200
+     filmanrop gav kod 4 på 104 %, och varje film väntade 12,5 min i backoff;
+     mät `x-app-usage` med en `me`-fråga innan en stor körning). `--utan-film
+     <regex>` tar bort filmer som aldrig visats publikt: Matstrumpors
+     marknadsversioner `^MATSTRUMP_[A-Z]{2}_` är PAUSED och finns inte i
+     annonsbiblioteket, så ett par ur dem pekar på en film ingen granskare
+     kan se. Samma bild finns i den svenska annonsen som gått.
   0b. **Originalen: `node konkurrenter/kor.mjs --original <id>`** (Axel
      2026-09-29: "exemplet på vårt original leder bara till produktsidan … du
      måste hitta annonserna inne i vårt ad library"). Letar upp varje film
@@ -378,6 +412,8 @@ inget: "Inget för dig i dag."
      beskrivningen. Hittas inget för en annons blir exemplet vår sidas lista i
      annonsbiblioteket — aldrig produktsidan — och `--anmal` varnar: säg det
      till Axel. ~3 min för 15 filmer första gången, sekunder sedan (cache).
+     **Delar många av våra annonser samma text** (Matstrumpor: 30 träffar per
+     fras) räcker inte tio försök: `--max-prova 15` hittade 8 av 9 filmer.
   0c. **Är deras filmer VÅRA FÄRDIGA ANNONSER uppladdade igen** (samma klippning,
      vår svenska text i bilden vid samma tider, deras vattenstämpel ovanpå —
      Bustatio-busto 2026-09-30, `--klipp` gav deras 0:05 = vår 0:05 i alla 11):
@@ -459,7 +495,15 @@ inget: "Inget för dig i dag."
      ligger kvar. Ett mejl "We removed the content" bevisar inte vilken annons ärendet gällde.
      Kvittot med de ekade fälten gör det. ⚠️ Gmail-connectorn kan neka att läsa ett kvitto
      ("The caller does not have permission", mätt på ärende 921610674086655). Då skrivs kvittot
-     inte in förrän Axel har läst `Ref <id> <nr>/<antal>` i mejlet.
+     inte in förrän Axel har läst `Ref <id> <nr>/<antal>` i mejlet. Kan han inte, och annonsen
+     ligger kvar ett dygn medan de andra togs ner inom minuter, gick anmälan troligen aldrig
+     in: skicka den igen i nästa omgång. Så gjordes det med KD-2026-003 anmälan 2 den 1/10.
+     **Flera ärenden i EN prompt** (Axels order 2026-09-29: alla manuella klick i en enda
+     Cowork-prompt): `--anmal-cowork KD-2026-003,KD-2026-004 --bara "KD-2026-003:2"` skriver
+     `konkurrenter/cowork/anmalningar-<datum>.txt`. Ett ärende som inte nämns i `--bara` tar
+     alla sina oskickade. Reglerna och stegen står en gång, och varje block är märkt med sitt
+     ärende. Coworks svar blir "<ärende> anmälan <nr>: …". Bygg den bara av kort Axel sagt Ja
+     till (`--granska-svar <id>`), eftersom prompten tar alla oskickade.
 
 - **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
   2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och
@@ -543,6 +587,7 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] Varje annons i brev, faktura och anmälan är BEVISAD med vårt eget material (`bevisStatus`: text, film ur våra klipp eller en bildannons bild) — obevisade står med orsak i ärendet, och inget par bygger på en platt ruta eller en film publicerad efter deras annons
 - [ ] Sessionen har TITTAT på varje par (översiktsark av `output/klipp/<id>/<nr>-<bokstav>-egen/deras.jpg`) — inga av de lånade klippen från förhandsbilderna, och kortets två bilder är samma bild; ett lånat par är utpekat med `--klipp <id> --lanat <anmälan>:<bokstav>` och korten ombyggda
 - [ ] Varje ruta på VÅR sida i paren är inspelad eller gjord av oss — en lånad källa ligger i `konkurrenter/externa/` (`extern`) eller är utpekad med `--lanat`, och brevet räknar bara upp sekvenser med tidskoder (inga andelar, ingen marknadsföringslag, inga "produktsidor" utan uppmätt text)
+- [ ] Paren pekar på filmer som faktiskt visats publikt (`--utan-film` för aldrig visade marknadsversioner), och en Shopify-anmälan bygger bara på det som mätts som vårt på deras sajt (`--shopify`, jämfört mot alla våra filmer) — leverantörens produktbilder anmäls aldrig
 - [ ] Ett annonsfynd under Axels tröskel (ingen annons över 10 000 i räckvidd och färre än 10 live) blev INGET ärende — det står i rapporten under "Under din tröskel"
 - [ ] Commit + push till main (arenden.jsonl, arenden/, lage.json, sida.json) — aldrig `output/`
 - [ ] Svaret till Axel är på svenska, kort, och hans uppgifter står sist, numrerade

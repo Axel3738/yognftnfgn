@@ -43,6 +43,11 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
+  // Graden följer anmälans egen mätning: bär den bara "near-identical" (MatSokker 2026-10-01: 036 och d3 med
+  // norsk text, 7–8/64) står det aldrig "identical" i de 500 tecknen heller.
+  const baraNara = bilder && /near-identical, distance/.test(f.contentDescription ?? '') && !/(?<!near-)identical, distance/.test(f.contentDescription ?? '');
+  // Delbild (anmalan.mjs, MatSokker 2026-10-01): vår bild med texten omsatt — beviset är bilden under texten.
+  const delbild = /our own advertising image with its text re-set in another language/.test(f.contentDescription ?? '');
   // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal och tiderna hos dem. Ingen andel sedan 2026-09-29:
   // den räknade hela våra filmer som våra, även klipp vi lånat (Eoka AB:s bestridande).
   const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)/)
@@ -61,8 +66,9 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
   const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true, citat = true } = {}) => [
     m ? (citat ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : `Verbatim copy of our ad copy: ${m[2]} consecutive identical words.`) : null,
-    klipp && redigering ? `Its video is a re-upload of our ad film${flera} (same edit, our on-screen text): ${klipp[1]} stills${tider ? ` (at ${klipp[2]})` : ''} are identical. We claim the edit and text only.` : klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
-    !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
+    klipp && redigering ? `Its video is a re-upload of our ad film${flera} (same edit, our on-screen text): ${klipp[1]} stills${tider ? ` (at ${klipp[2]})` : ''} are identical. We claim the edit and text only.` : klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours.` : bilder ? `It uses our own advertising image, ${baraNara ? 'nearly identical' : 'identical'} to the image in our ad.` : null,
+    !klipp && delbild ? 'Its image is our own advertising image with the text re-set in another language: the picture under the text is identical to our ad.' : null,
+    !m && !bilder && !klipp && !delbild && video ? 'The video uses our material.' : null,
     org.length
       ? `Original: our ad${Math.min(org.length, antalFilmer) > 1 ? 's' : ''} in the Ad Library ${org.slice(0, antalFilmer).map((o) => o.lank).join(' ')}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published by us before this ad.`
       : filmer
@@ -111,7 +117,12 @@ export function formularVarden(a, { land = 'Sweden' } = {}) {
  * där v är formularVarden(). `klara`: numren som redan är skickade och inte står i
  * prompten — en ny Cowork-chatt minns inget (Axel tappade sessionen 2026-09-30). Ren.
  */
-export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden', klara = [] }) {
+export function coworkPrompt({ arende, sida = null, anmalningar, land = 'Sweden', klara = [], fall = null }) {
+  // Flera ärenden i EN prompt (Axels order 2026-09-29: alla manuella klick i en enda Cowork-prompt).
+  // `fall` = [{ arende, sida, anmalningar, klara }]; ett enda ärende ger exakt samma text som förut.
+  const grupper = fall?.length ? fall : [{ arende, sida, anmalningar, klara }];
+  if (grupper.length > 1) return coworkPromptFlera({ grupper, land });
+  ({ arende, sida, anmalningar, klara = [] } = grupper[0]);
   const n = anmalningar.length;
   const listan = (nr) => (nr.length > 1 ? `${nr.slice(0, -1).join(', ')} och ${nr.at(-1)}` : `${nr[0]}`);
   const redan = klara.length ? ` Anmälan ${listan(klara)} är redan skickade. Skicka dem aldrig igen.` : '';
@@ -152,6 +163,57 @@ ${block}
 
 NÄR ALLA ÄR KLARA
 Svara Axel med en rad per anmälan: "Anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "Anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.
+`;
+}
+
+/**
+ * Samma prompt för anmälningar ur FLERA ärenden: reglerna och stegen en gång, varje block
+ * märkt med sitt ärende, ärendena i tur och ordning. Ren.
+ */
+function coworkPromptFlera({ grupper, land }) {
+  const listan = (nr) => (nr.length > 1 ? `${nr.slice(0, -1).join(', ')} och ${nr.at(-1)}` : `${nr[0]}`);
+  const alla = grupper.flatMap((g) => g.anmalningar.map((a) => ({ ...a, arende: g.arende })));
+  const n = alla.length;
+  const forsta = alla[0];
+  const epost = forsta?.v?.epost ?? 'axel.odhner@stonebite.org';
+  const vilka = grupper.map((g) => `${g.arende}${g.sida ? ` (Facebooksidan ${g.sida})` : ''}: anmälan ${listan(g.anmalningar.map((a) => a.nr))}`).join(', och ');
+  const redan = grupper.filter((g) => g.klara?.length).map((g) => ` I ${g.arende} är anmälan ${listan(g.klara)} redan ${g.klara.length > 1 ? 'skickade' : 'skickad'}. Skicka ${g.klara.length > 1 ? 'dem' : 'den'} aldrig igen.`).join('');
+  const block = alla.map(({ arende, nr, antal, v }) => [
+    `===== ${arende} · ANMÄLAN ${nr} av ${antal} =====`,
+    `Fält "Provide the URLs/IDs leading directly to the content that you're reporting":`,
+    v.urls,
+    `Fält "Provide an example of your copyrighted work that you believe has been infringed":`,
+    v.original,
+    `Fält "Describe how you believe that this content infringes your intellectual property rights":`,
+    v.beskrivning,
+    `Fält "Your full name": ${v.namn}`,
+    `Fält "Email" och "Confirm email address": ${v.epost}`,
+    `Fält "Electronic signature": ${v.signatur}`,
+  ].join('\n')).join('\n\n');
+  return `Uppgift: skicka in ${n} upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, i ${grupper.length} ärenden: ${vilka}. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen.${redan}
+
+FÖRST
+Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som ${epost}. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."
+
+REGLER
+1. En anmälan i taget, i den ordning de står nedan (ärende för ärende, i nummerordning). Öppna formuläret på nytt för varje anmälan: ${forsta?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383'}
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code" ("Begär kod"): Meta mejlar en ny kod till ${epost} för varje anmälan. Mejlet kommer från notification@email.meta.com och heter "Please verify your email address" eller "Verifiera din e-postadress". Öppna Gmail i en ny flik med just det kontot och ta koden ur det senaste mejlet. Är Gmail inloggat som ett annat konto: STANNA och skriv till Axel: "Jag behöver koden till <ärende> anmälan <nr>." Vänta på svaret, för Axel hämtar koden från Claude. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla ${n}). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": ${land}. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: ${forsta?.v?.rattighetshavare ?? 'Stonebite Ecom AB'} → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+${block}
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "<ärende> anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "<ärende> anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.
 `;
 }
 

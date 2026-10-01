@@ -154,6 +154,9 @@ konkurrenter/arenden/*/anmalan/*.png
 konkurrenter/arenden/*/anmalan/*.jpg
 konkurrenter/arenden/*/anmalan/kod.txt*
 konkurrenter/arenden/*/anmalan/verifiering.html
+# Shopify-anmälans bevisbild (~5 MB PNG) — länken på CDN och fälten står i shopify/anmalan.json som committas.
+konkurrenter/arenden/*/shopify/*.png
+konkurrenter/arenden/*/shopify/*.jpg
 
 # Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
 matstrumpor/marknader/annonser/klar/*.mp4

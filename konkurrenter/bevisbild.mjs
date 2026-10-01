@@ -93,7 +93,9 @@ ${passage
     dom = annons.text?.styrka
       ? `<div class="dom">${annons.text.kopieradeOrd} words copied verbatim — longest identical run ${annons.text.langsta} consecutive words (highlighted).${bildBevis && annons.bilder?.length ? ` ${annons.bilder.length} image(s) identical or near-identical to ours.` : ''}</div>`
       : bildBevis && annons.bilder?.length
-        ? `<div class="dom">${annons.bilder.length} image(s) identical or near-identical to our own copyrighted advertising images — the still frame on the left is taken from our ad (perceptual hash distance ${annons.bilder.map((b) => b.avstand).join(', ')}/64).</div>`
+        ? annons.bilder.every((b) => b.del === 'mittparti')
+          ? `<div class="dom">Our advertising image on the left; the reported ad on the right is the same image with its text re-set in another language — the picture under the text is identical (perceptual hash distance ${annons.bilder.map((b) => `${b.avstand}/64, fine check ${b.fin}/256`).join('; ')} on that part).</div>`
+          : `<div class="dom">${annons.bilder.length} image(s) identical or near-identical to our own copyrighted advertising images — the still frame on the left is taken from our ad (perceptual hash distance ${annons.bilder.map((b) => b.avstand).join(', ')}/64).</div>`
         : '';
   }
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Evidence ${esc(arende.id)} — ad ${nr}</title>

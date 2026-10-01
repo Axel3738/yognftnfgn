@@ -171,3 +171,23 @@ test('coworkPrompt: en ny chatt efter en tappad session får veta vilka som reda
   assert.ok(p.includes('ANMÄLAN 3 av 4') && p.includes('ANMÄLAN 4 av 4'));
   assert.match(coworkPrompt({ arende: 'X', anmalningar: [{ nr: 4, antal: 4, formular: f, v }], klara: [1, 2, 3] }), /Anmälan 1, 2 och 3 är redan skickade/);
 });
+
+test('coworkPrompt: flera ärenden i EN prompt — varje block bär sitt ärende, reglerna står en gång', () => {
+  const f = 'https://www.facebook.com/help/contact/1758255661104383';
+  const v = (id, n) => ({ rattighetshavare: 'Stonebite Ecom AB', urls: `https://www.facebook.com/ads/library/?id=${id}`, original: 'https://www.facebook.com/ads/library/?id=9', beskrivning: `Ref ${n}.`, namn: 'Axel Odhner', epost: 'axel@example.se', signatur: 'Axel Odhner' });
+  const p = coworkPrompt({ land: 'Sweden', fall: [
+    { arende: 'KD-A', sida: 'Bustatio', anmalningar: [{ nr: 2, antal: 6, formular: f, v: v(11, 'KD-A 2/6') }], klara: [1] },
+    { arende: 'KD-B', sida: 'MatSokker', anmalningar: [{ nr: 1, antal: 2, formular: f, v: v(21, 'KD-B 1/2') }, { nr: 2, antal: 2, formular: f, v: v(22, 'KD-B 2/2') }] },
+  ] });
+  assert.match(p, /skicka in 3 upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, i 2 ärenden/);
+  assert.ok(p.includes('===== KD-A · ANMÄLAN 2 av 6 =====') && p.includes('===== KD-B · ANMÄLAN 1 av 2 =====') && p.includes('===== KD-B · ANMÄLAN 2 av 2 ====='));
+  assert.ok(p.indexOf('KD-A · ANMÄLAN 2') < p.indexOf('KD-B · ANMÄLAN 1'), 'ärende för ärende');
+  assert.match(p, /I KD-A är anmälan 1 redan skickad\. Skicka den aldrig igen\./);
+  assert.equal(p.match(/^REGLER$/gm).length, 1, 'reglerna en gång');
+  assert.match(p, /Jag behöver koden till <ärende> anmälan <nr>/);
+  assert.match(p, /"<ärende> anmälan <nr>: inskickad/);
+  for (const s of ['?id=11', '?id=21', '?id=22', 'Ref KD-A 2/6.', 'Ref KD-B 2/2.']) assert.ok(p.includes(s), `saknar ${s}`);
+  // Ett ärende i `fall` ger exakt samma text som det gamla anropet.
+  const en = { arende: 'KD-B', sida: 'MatSokker', anmalningar: [{ nr: 1, antal: 2, formular: f, v: v(21, 'x') }] };
+  assert.equal(coworkPrompt({ fall: [en], land: 'Sweden' }), coworkPrompt({ ...en, land: 'Sweden' }));
+});

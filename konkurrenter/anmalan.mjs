@@ -84,7 +84,12 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
       ? `The ad's video is a re-upload of our own ad film${namn}${nar}, with the same edit and our Swedish on-screen text at the same timestamps; the advertiser has added its own watermark. ${rutor}, including our on-screen text ${avst}.`
       : `The ad's video is cut from our own ad film${namn}${nar}: ${rutor} ${avst}.`);
   }
-  else if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${bilder.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
+  else if (bilder.length) {
+    // Delbild (MatSokker 2026-10-01): vår bild med texten omsatt — då gäller beviset bilden UNDER texten, inte texten.
+    const hela = bilder.filter((b) => b.del !== 'mittparti'); const mitt = bilder.filter((b) => b.del === 'mittparti');
+    if (hela.length) delar.push(`${hela.length} image${hela.length === 1 ? '' : 's'} in the ad ${hela.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${hela.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${hela.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
+    if (mitt.length) delar.push(`The ad's image is our own advertising image with its text re-set in another language: the picture under the text is identical to our ad (perceptual-hash comparison of that part: distance ${mitt.map((b) => `${b.avstand}/64, fine check ${b.fin}/256`).join('; ')}).`);
+  }
   if (s.overifierad && annons.video) delar.push('The ad is a video that uses our material.');
   const sida = deras.sidnamn ? `the Facebook page "${deras.sidnamn}"${deras.sidaId ? ` (page ID ${deras.sidaId})` : ''}` : `the advertiser${deras.doman ? ` behind ${deras.doman}` : ''}`;
   const exp = Number(annons.exponeringar) > 0 ? ` According to the Ad Library it has reached approximately ${talEn(annons.exponeringar)} people in the EU.` : '';

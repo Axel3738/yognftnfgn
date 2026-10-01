@@ -156,7 +156,7 @@ button{font:inherit}
     if (a) return a.svar;
     return B.svar?.[k.nyckel] ? 'ombyggd' : 'vantar';
   }
-  const kortNamn = (k) => (k.typ === 'anmalan' ? `anmälan ${k.nr}` : k.typ === 'mejl' ? 'mejlet' : 'sms:et');
+  const kortNamn = (k) => (k.typ === 'anmalan' ? `anmälan ${k.nr}` : k.typ === 'mejl' ? 'mejlet' : k.typ === 'shopify' ? 'Shopify-anmälan' : 'sms:et');
 
   async function sha256(text) {
     try {
@@ -175,11 +175,12 @@ button{font:inherit}
     const a = aktuellt(k);
     if (t === 'klar') {
       if (k.typ === 'mejl') return `<div class="lagesruta klar">Mejlet är skickat ${esc(tid(l.nar))}<small>till ${esc(l.till ?? k.till ?? '')}${l.fran ? ` från ${esc(l.fran)}` : ''}</small></div>`;
+      if (k.typ === 'shopify') return `<div class="lagesruta klar">Inskickad till Shopify ${esc(tid(l.nar))}<small>${l.referens ? `Shopifys referens: ${esc(l.referens)}` : 'Shopify gav inget referensnummer.'}</small></div>`;
       return `<div class="lagesruta klar">Inskickad till Meta ${esc(tid(l.nar))}<small>${l.referens ? `Metas referens: ${esc(l.referens)}` : 'Meta gav inget referensnummer på kvittot.'}</small></div>`;
     }
     if (t === 'pagar') return `<div class="lagesruta pagar">Claude ${k.typ === 'mejl' ? 'skickar mejlet' : 'skickar in anmälan'} just nu<small>Sidan uppdateras när det är klart.</small></div>`;
     if (t === 'fel') return `<div class="lagesruta fel">Det gick inte att ${k.typ === 'mejl' ? 'skicka mejlet' : 'skicka in anmälan'}<small>${esc(l.text ?? '')}</small></div>`;
-    if (t === 'ja') return `<div class="lagesruta ja">Du sa ja ${esc(tid(a.nar))}<small>${k.typ === 'mejl' ? 'Claude skickar mejlet så snart alla anmälningar har ett svar.' : 'Claude skickar in den till Meta.'}</small></div>`;
+    if (t === 'ja') return `<div class="lagesruta ja">Du sa ja ${esc(tid(a.nar))}<small>${k.typ === 'mejl' ? 'Claude skickar mejlet så snart alla anmälningar har ett svar.' : k.typ === 'shopify' ? 'Den kommer med i Cowork-prompten, och Cowork skickar in den till Shopify.' : 'Claude skickar in den till Meta.'}</small></div>`;
     if (t === 'nej') return `<div class="lagesruta nej">Du sa nej ${esc(tid(a.nar))}<small>${a.not ? `Din kommentar: ${esc(a.not)}` : 'Den skickas inte.'}</small></div>`;
     if (t === 'ombyggd') return '<div class="lagesruta vantar">Kortet är ändrat sedan du svarade. Titta igen och svara på nytt.</div>';
     return '';
@@ -212,6 +213,35 @@ button{font:inherit}
         <h3>Försäkran i formuläret, som du skriver under</h3>
         <ul class="forsakran">${k.forsakran.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
         ${k.formular ? `<p class="liten">Formuläret: <a href="${esc(k.formular)}" target="_blank" rel="noopener">Metas upphovsrättsformulär</a>. Meta mejlar en engångskod till adressen ovan, och Claude läser den i din Gmail.</p>` : ''}
+      </section>`;
+  }
+
+  function renderShopify(k) {
+    const falt = k.falt.map((f) => `<div class="faltrad"><dt>${esc(f.etikett)}</dt><dd class="${f.lang ? 'lang' : ''}">${f.lank ? lankar(f.varde) : esc(f.varde)}${f.sv ? `<span class="svensk">${esc(f.sv)}</span>` : ''}</dd></div>`).join('');
+    const m = k.matt;
+    return `
+      <p class="eyebrow">Anmälan till Shopify</p>
+      <h2>Vår film på ${esc((k.butik ?? '').replace(/^https?:\/\//, ''))}</h2>
+      <div class="fakta">
+        ${k.film ? `<span>Vår film: <b>${esc(k.film)}</b></span>` : ''}
+        ${m ? `<span><b>${esc(m.traffar)} av ${esc(m.antal)}</b> bildrutor identiska</span>` : ''}
+      </div>
+      ${k.sida ? `<p><a href="${esc(k.sida)}" target="_blank" rel="noopener">Öppna deras sida</a></p>` : ''}
+      ${renderLageRuta(k)}
+      <section class="bildram" aria-label="Bilden som följer med anmälan">
+        <h3>Bilden som följer med anmälan</h3>
+        ${k.bild ? `<img src="${esc(k.bild)}" data-zoom alt="Bildrutor ur vår film bredvid samma rutor på deras sida" loading="lazy">` : '<p class="liten">Bilden finns inte i den här versionen av sidan.</p>'}
+        <p class="liten">Tryck på bilden för att förstora. Vår film till vänster, deras sida till höger. <b>Ja betyder att du intygar att filmen är Matstrumpors: den är gjord åt er och ni har rätten till den.</b> Är du osäker: tryck Nej och skriv varför.${k.bildUrl ? ` Shopify får <a href="${esc(k.bildUrl)}" target="_blank" rel="noopener">den här filen</a>.` : ''}</p>
+      </section>
+      <section aria-label="Det här skrivs in i Shopifys formulär">
+        <h3>Det här skrivs in i Shopifys formulär</h3>
+        <dl>${falt}</dl>
+        ${k.fel?.length ? `<p class="lagesruta fel">Stoppas: ${esc(k.fel.join('; '))}</p>` : ''}
+      </section>
+      <section aria-label="Försäkran">
+        <h3>Försäkran i formuläret, som du skriver under</h3>
+        <ul class="forsakran">${k.forsakran.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+        ${k.formular ? `<p class="liten">Formuläret: <a href="${esc(k.formular)}" target="_blank" rel="noopener">Shopifys upphovsrättsformulär</a>. Det kräver att du är inloggad på Shopify, så Cowork fyller i det i din Chrome. Shopify kan skicka anmälan, med namn och e-post, vidare till butiken.</p>` : ''}
       </section>`;
   }
 
@@ -293,7 +323,7 @@ button{font:inherit}
   function renderPrickar() {
     document.getElementById('prickar').innerHTML = KORT.map((k, i) => {
       const t = tillstand(k);
-      const namn = k.typ === 'anmalan' ? String(k.nr) : k.typ === 'mejl' ? 'Mejl' : 'Sms';
+      const namn = k.typ === 'anmalan' ? String(k.nr) : k.typ === 'mejl' ? 'Mejl' : k.typ === 'shopify' ? 'Shopify' : 'Sms';
       return `<button type="button" class="prick ${t === 'ombyggd' ? '' : t}" data-gatill="${i}" aria-current="${i === index}" aria-label="${esc(kortNamn(k))}, ${esc(t)}">${esc(namn)}</button>`;
     }).join('');
   }
@@ -327,7 +357,7 @@ button{font:inherit}
     index = Math.max(0, Math.min(index, KORT.length - 1));
     const k = KORT[index];
     const el = document.getElementById('kort');
-    el.innerHTML = k.typ === 'anmalan' ? renderAnmalan(k) : k.typ === 'mejl' ? renderMejl(k) : renderSms(k);
+    el.innerHTML = k.typ === 'anmalan' ? renderAnmalan(k) : k.typ === 'mejl' ? renderMejl(k) : k.typ === 'shopify' ? renderShopify(k) : renderSms(k);
     renderLagesrad(); renderNotiser(); renderPrickar(); renderBotten();
     ss.set(NYCKEL_INDEX, String(index));
   }
