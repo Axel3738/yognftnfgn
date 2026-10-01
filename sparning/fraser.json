@@ -138,6 +138,7 @@
   "batch delivery to carrier": "Paketet är överlämnat till fraktbolaget",
   "accepted at usps regional origin facility": "Fraktbolaget har tagit emot paketet",
   "accepted at usps facility": "Fraktbolaget har tagit emot paketet",
+  "received": "Fraktbolaget har tagit emot paketet",
   "pick up by local carrier at destination port": "Paketet är överlämnat till fraktbolaget",
   "handed over to final mile carrier": "Paketet är överlämnat till fraktbolaget",
   "the parcel is delivered in the mailbox": "Paketet är levererat i din brevlåda",
