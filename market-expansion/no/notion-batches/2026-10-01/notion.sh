@@ -36,7 +36,16 @@ for j in jobb:
                  f"{mal.get('adsetNamn', '')}). Priser lest fra beverbutikken.no "
                  f"2026-10-01.")
     url = f"https://business.facebook.com/adsmanager/manage/ads?selected_ad_ids={mal['annonsId']}"
-    cmd = [sys.executable] if False else ["node", f"{R}/tools/notion-aterkoppling.mjs", sid,
+    # den norska filen läggs på radens "Filer och media" — REST kan bara lägga
+    # till block sist i sidan, och `insert_content position start` finns bara i
+    # Notion-MCP:n, som kostar ett godkännandeklick per anrop.
+    if fil and torr != "--torr":
+        fr = subprocess.run(["node", f"{R}/tools/notion-fil-upp.mjs", sid, "--fil", fil],
+                            capture_output=True, text=True)
+        if fr.returncode != 0:
+            print(f"  ⚠️ bilagan gick inte upp för {namn}: "
+                  f"{(fr.stderr or fr.stdout).strip()[-140:]}")
+    cmd = ["node", f"{R}/tools/notion-aterkoppling.mjs", sid,
            "--kommentar", kommentar, "--egenskap", f"Translated url={url}",
            "--status", status]
     if torr == "--torr":
