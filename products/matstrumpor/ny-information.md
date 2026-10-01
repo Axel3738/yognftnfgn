@@ -55,7 +55,18 @@ du vet") och om fredagen som leveransdag. Siffrorna gäller befolkningen och
 beställningarna, inte vår produkt. Lokalandelarna (10–12 %) går att använda
 geo-riktat.
 
-<!-- HOOK_F1 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅ i tre-frågorstestet; H = första raden i video/rubrik på bild, R = rubrik i Ads Manager):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 ★ | Sveriges topp tre Wolt-kategorier: burgare, pizza, sushi. Alla finns som strumpor. | Sweden's top three Wolt categories: burgers, pizza, sushi. All of them exist as socks. |
+| H2 | Var tionde Wolt-beställning i Stockholm är sushi. Den här går att bära. | Every tenth Wolt order in Stockholm is sushi. This one you can wear. |
+| H3 | Varannan svensk har sushi som japansk favorit. Den finns som strumpor. | Every other Swede has sushi as their Japanese favourite. It exists as socks. |
+| R | Topp tre på Wolt, fast i strumpor | Top three on Wolt, but as socks |
+
+★ Sessionens val: H1 (Wolt-trion känner alla igen). H2 bara geo-riktat mot Stockholm; Falun/Karlstad får "var åttonde" (12 %).
+
+⚠️ **Anmärkning som gäller alla tolv tabellerna:** sonnet avslutar många rader med "Ge tio sushibitar"/"Ge sushi-strumpor". Det är en krycka: FAKTUMET är hooken (sekund 0–3), produktraden är andra takten. I regi: klipp raden efter punkten, låt bilden visa lådan.
 
 ### 2. PRESENTKORTET ÄR DET MAN KÖPER NÄR MAN INTE VET
 
@@ -76,7 +87,16 @@ inte vad de ska köpa; den här säger att du visste". Pengasiffran för Sverige
 säger att en fysisk klapp måste förtjäna sin plats, vilket är argumentet för
 en som öppnas inför andra.
 
-<!-- HOOK_F2 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Bara 10 % i USA vill ha presentkort. Ge sushi-strumpor. | Only 10 % in the US want a gift card. Give sushi socks. |
+| H2 ★ | 43 % i USA har ett oanvänt presentkort. Ge tio sushibitar. | 43 % in the US have an unused gift card. Give ten pieces of sushi. |
+| H3 | 22 % av svenskarna blir gladast för pengar i julklapp. Ge sushi-strumpor. | 22 % of Swedes are happiest about money as a Christmas gift. Give sushi socks. |
+| R | Tio sushibitar. Ingen kod, inget saldo. | Ten pieces of sushi. No code, no balance. |
+
+★ H2 till USA/WW-kampanjerna (talen är amerikanska, landet står i raden). H3 är den enda svenska siffran; Bankrates "32 % visste inte vad de annars skulle köpa" ryms inte i 12 ord men är den starkaste raden som brödtext.
 
 ### 3. GIVAREN OROAR SIG MER ÄN MOTTAGAREN (GÅVOGAPET, MÄTT)
 
@@ -95,7 +115,16 @@ till vänköparen visas vad mottagaren GÖR med den, inte vad givaren känner.
 blir sur på strumpor, ingen blir uttråkad av ett sushitråg". Aldrig "du
 kommer ångra dig".
 
-<!-- HOOK_F3 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 ★ | Studie 2025: givaren oroar sig mer än mottagaren. Ge tio sushibitar. | Study 2025: the giver worries more than the recipient. Give ten pieces of sushi. |
+| H2 | Givare underskattar hur glad en liten gest gör mottagaren. Ge fem par. | Givers underestimate how happy a small gesture makes the recipient. Give five pairs. |
+| H3 | Givare väljer dyrare. Mottagare föredrar billigare. Köp 1 – få 1 gratis. | Givers pick pricier. Recipients prefer cheaper. Buy 1 – get 1 free. |
+| R | Oroa dig mindre. Ge tio sushibitar. | Worry less. Give ten pieces of sushi. |
+
+★ H1. Riktas till givaren som redan oroar sig (presentinköpet är julens största stressmoment, F9).
 
 ### 4. MOTTAGARNA VILL BLI ÖVERRASKADE, OCH "BÄSTA GÅVAN JAG GETT" VAR EN KREATIV
 
@@ -112,7 +141,16 @@ givarens önskan om originalitet och mottagarens önskan om något användbart.
 givaren, utan att lova mottagarens reaktion. Pappor och föräldrar är gruppen
 som minst vill bli tillfrågade (YouGov: 22 % av över 65 är "directive").
 
-<!-- HOOK_F4 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 ★ | 44 % av britterna vill bli överraskade, 32 % tillfrågade. Ge sushi-strumpor. | 44 % of Brits want to be surprised, 32 % want to be asked. Give sushi socks. |
+| H2 | Studie 2026: den bästa gåvan du gett minns du som kreativ. Sushi-strumpor? | Study 2026: the best gift you ever gave, you remember as creative. Sushi socks? |
+| H3 | Studie 2026: givare värderar originalitet mer än mottagare. Ge tio sushibitar, klart. | Study 2026: givers value originality more than recipients. Give ten pieces of sushi, done. |
+| R | Överraskningen har ätpinnar | The surprise comes with chopsticks |
+
+★ H1 (båda siffrorna i raden). Rubriken "Överraskningen har ätpinnar" är filens bästa rubrik: kort, bild, bara vår.
 
 ### 5. GÅVAN SÄGER VEM DU TROR ATT MOTTAGAREN ÄR, OCH HEN VÄXER IN I DET
 
@@ -132,7 +170,16 @@ ju deras favoriträtt".
 **Så används den etiskt:** "sushi-personen" som en kärleksfull etikett, aldrig
 en pik. Ett påstående om studien, inte om vad våra strumpor gör.
 
-<!-- HOOK_F5 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Fem studier: gåvan säger vem du tror att mottagaren är. Ge sushi-strumpor. | Five studies: a gift says who you think the recipient is. Give sushi socks. |
+| H2 ★ | Studie 2025: gåvan påverkar vad mottagaren väljer själv efteråt. Ge tio sushibitar. | Study 2025: the gift affects what the recipient chooses afterwards. Give ten pieces of sushi. |
+| H3 | Studie 2025: gåvan säger vad du tycker om mottagaren. Ge fem par. | Study 2025: the gift says what you think of the recipient. Give five pairs. |
+| R | Fem par. Tio sushibitar. En låda. | Five pairs. Ten pieces of sushi. One box. |
+
+★ H2. Bär M3 Favoriträtten; kombineras med Nathalies "du visste ju deras favoriträtt" i andra takten.
 
 ### 6. SKRATTET AVSLÖJAR ATT NI REDAN SER VÄRLDEN LIKADANT
 
@@ -148,7 +195,16 @@ skratta-tillsammans-ögonblick, och det är tecknet på relationen.
 **Så används den etiskt:** som ett konstaterande om mottagaren ("den du
 skrattar med"), aldrig som ett löfte om relationen.
 
-<!-- HOOK_F6 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Skratt följer av att ni redan ser världen likadant. Ge tio sushibitar. | Laughter follows from you already seeing the world the same way. Give ten pieces of sushi. |
+| H2 ★ | Studie 2026: skratt skapar inte samsyn, det speglar den. Ge sushi-strumpor. | Study 2026: laughter doesn't create shared outlook, it mirrors it. Give sushi socks. |
+| H3 | Den du skrattar med ser världen som du. Ge dem fem par. | The one you laugh with sees the world like you. Give them five pairs. |
+| R | Tio sushibitar för den du skrattar med | Ten pieces of sushi for the one you laugh with |
+
+★ H2 som video (vänder på det alla tror); H3 som bildrubrik. Bär M2 Duka fram den: skrattet vid bordet är tecknet.
 
 ### 7. SKÄMTET FÅR INTE VARA PÅ MOTTAGARENS BEKOSTNAD: ETT SKÄMT SOM GÅR ATT HA PÅ SIG
 
@@ -166,7 +222,16 @@ inte på personen, och innehållet går att ha på sig.
 **Så används den etiskt:** "praktiskt eller roligt? Den här är båda" med
 siffrorna; aldrig ett skämt om mottagaren i annonsen.
 
-<!-- HOOK_F7 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 ★ | Skämtpresenter har ofta en pik mot mottagaren. Här sitter skämtet på lådan. | Joke gifts often carry a dig at the recipient. Here the joke sits on the box. |
+| H2 | I Storbritannien är skämtpresenten nionde mest oönskad. Skämtet här är lådan. | In the UK the joke gift is the ninth most unwanted. Here the joke is the box. |
+| H3 | 23 % av amerikanerna utesluter skämtpresenter. Ett skämt som går att bära? | 23 % of Americans rule out joke gifts. A joke you can wear? | 
+| R | Skämtet sitter på lådan, inte på dig | The joke sits on the box, not on you |
+
+★ H1. Bilden med 57/25/23-siffrorna (F7 i testordningen) får H3 som rubrik och "Praktiskt eller roligt? Den här är båda." som underrad (sessionens rad, prövas i briefen).
 
 ### 8. DÄRFÖR SYNS SUSHIN GENOM LOCKET (FÖRPACKNINGSFORSKNINGEN)
 
@@ -185,7 +250,16 @@ MOTTAGARENS stol (blicken ner genom locket), inte i köparens hand.
 aldrig som kvalitetspåstående. Inslagningsstudien ger lådan dess roll: den
 sätter förväntan "sushi", och kontrasten går åt gåvans håll.
 
-<!-- HOOK_F8 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Genomskinligt fönster: ögat hittar produkten på 0,36 sekunder. Sushilådans lock är ett. | Transparent window: the eye finds the product in 0.36 seconds. The sushi box's lid is one. |
+| H2 ★ | Snyggt inslagen gåva från en vän gillas mindre. Sushilådan kräver ingen inslagning. | A nicely wrapped gift from a friend is liked less. The sushi box needs no wrapping. |
+| H3 | Se produkten, och den känns mer som din. Sushilådan har genomskinligt lock. | See the product and it feels more like yours. The sushi box has a transparent lid. |
+| R | Genomskinligt lock. Tio sushibitar. | Transparent lid. Ten pieces of sushi. |
+
+★ H2. H1 saknar jämförelsetalet (0,93 s för en bild) av platsbrist; lägg det i bildtexten. ⚠️ H2 går emot vinnarens egen film (Nathalie ger lådan inslagen, 0:13), så den testas som bild, inte på Nathalie-kroppen (samma förbehåll som M1).
 
 ### 9. KLAPPEN SOM GÖMS UNDAN: SVENSK JUL 2025 I SIFFROR
 
@@ -206,7 +280,16 @@ presentinköpet slår ekonomin som stressmoment, en rangordning få använt.
 utbildning: klappen som öppnas på bordet inför alla har inget gömställe.
 "Färre klappar i år" (25 %) talar för en klapp som är fem par i en.
 
-<!-- HOOK_F9 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | 87 % av svenskarna har fått en oönskad julklapp. Ge sushi-strumpor. | 87 % of Swedes have received an unwanted Christmas gift. Give sushi socks. |
+| H2 ★ | Första oönskade klappen ligger på Blocket före Kalle Anka. Ge tio sushibitar. | The first unwanted gift is on Blocket before Kalle Anka. Give ten pieces of sushi. |
+| H3 | Fel storlek hör till de vanligaste oönskade klapparna. Sushi-strumporna: one size 36–44. | Wrong size is among the most common unwanted gifts. The sushi socks: one size 36–44. |
+| R | One size 36–44. Tio sushibitar. | One size 36–44. Ten pieces of sushi. |
+
+★ H2 som julöppning. H3 är filens mest oväntade bevisrad: UNICEF-listans "kläder i fel storlek" mot one size, sant och bara vårt.
 
 ### 10. LEKEN ÄR TILLBAKA: JULKLAPPSSPELET OCH ÅRETS JULKLAPP 2025
 
@@ -224,7 +307,16 @@ säg aldrig att den passar "spelets budget". Vinkeln är lekfullheten (58 %)
 och kidult-skiftet, inte priset. "Köp 1 – få 1 gratis" = två paket till två
 spel är sant och får sägas.
 
-<!-- HOOK_F10 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Varannan svensk spelar julklappsspel. Här är ett paket: tio sushibitar, ätpinnar. | Every other Swede plays the gift game. Here's a package: ten pieces of sushi, chopsticks. |
+| H2 | Nära 70 % av 18–29-åringarna spelar julklappsspel. Ge sushi-strumpor. | Nearly 70 % of 18–29-year-olds play the gift game. Give sushi socks. |
+| H3 ★ | Årets julklapp 2025 var vuxenleksaken. Den här har ätpinnar och plastgräs. | Gift of the year 2025 was the adult toy. This one has chopsticks and plastic grass. |
+| R | Tio sushibitar, ätpinnar, plastgräs | Ten pieces of sushi, chopsticks, plastic grass |
+
+★ H3. ⚠️ H1/H2 nämner inte priset, och ska inte göra det: snittpaketet i spelet kostar 113 kr.
 
 ### 11. FARS DAG I SIFFROR: VAR TIONDE PAPPA FÅR STRUMPOR
 
@@ -247,7 +339,16 @@ https://www.market.se/affarsnyheter/forsaljning/fler-kampanjer-an-nagonsin-infor
 att hans är de han visar upp". Aldrig en pik mot pappan eller mot andras
 presenter.
 
-<!-- HOOK_F11 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | Fars dag: 11 % köper strumpor eller kalsonger. Här är tio sushibitar. | Father's Day: 11 % buy socks or underwear. Here are ten pieces of sushi. |
+| H2 | Fars dag-snittet är 244 kr. Sushi-strumpor: Köp 2 – få 2 gratis. | The Father's Day average is 244 kr. Sushi socks: Buy 2 – get 2 free. |
+| H3 ★ | Pappor önskar sig mest att få träffa sina barn. Ta med sushi-strumpor. | Dads most want to see their kids. Bring sushi socks. |
+| R | Fars dag 8 november: tio sushibitar | Father's Day 8 November: ten pieces of sushi |
+
+★ H3 (varm, oväntad, och "ta med" gör lådan till ursäkten för besöket = M2 Duka fram den). ⚠️ H2 parar snittet 244 kr med fyra lådor för 799 kr; hellre "Köp 1 – få 1 gratis" (499 kr för två) om erbjudandet ska stå i raden.
 
 ### 12. STRUMPOR ÄR DET MEST GEDDA KLÄDESPLAGGET, OCH REPRISER ÄR MER VÄLKOMNA ÄN GIVARE TROR
 
@@ -265,7 +366,18 @@ rätt (fyra finns), och mottagaren tycker inte det är lat.
 **Så används den etiskt:** kategorifakta, inga påståenden om våra strumpor.
 "Samma idé, ny rätt" till förra årets köpare (Spoks-flödena).
 
-<!-- HOOK_F12 -->
+**Hookar (sonnet 2026-10-01, alla tre ✅):**
+
+| # | Svenska | English meaning |
+|---|---|---|
+| H1 | I USA är nästan 30 % av julklappskläderna strumpor. Här: tio sushibitar. | In the US nearly 30 % of Christmas-gift clothes are socks. Here: ten pieces of sushi. |
+| H2 | 79 % av britterna blir glada för strumpor i julklapp. Ge sushi-strumpor. | 79 % of Brits are happy to get socks for Christmas. Give sushi socks. |
+| H3 ★ | Upprepade gåvor uppskattas mer än givare tror. Sushi, pizza, burgare, donut. | Repeated gifts are appreciated more than givers think. Sushi, pizza, burger, donut. |
+| R | Fyra rätter. Alla strumpor. | Four dishes. All socks. |
+
+★ H3, till förra årets köpare via Spoks. H1/H2 bär utländska siffror (landet står i raden) och är äldre än 24 månader: stödrader, inte rubriker.
+
+**Kontroll (sonnets egen + sessionens):** högst 12 ord per hook, högst 40 tecken per rubrik; "topp tre", aldrig "mest beställd"; USA/UK utskrivet där siffran inte är svensk; erbjudandena ordagrant; inget butiksnamn, inga material-, tvätt-, leverans- eller returpåståenden; inga live rader återanvända.
 
 ---
 
