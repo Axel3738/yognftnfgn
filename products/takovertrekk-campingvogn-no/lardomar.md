@@ -805,3 +805,44 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (7 kr, Metas dom, aldrig ABO): logga och släpp. Norge briefas aldrig separat (Axels beslut 2026-09-01): nästa steg tas på den svenska förlagan Takoverdrag_CS_9_H1, se products/takoverdraget-husvagn/lardomar.md.
 
+### Lärdom L-120252369858140233 — Takovertrekk_NO_OB_5_1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 36 kr / 39 274 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,08 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Rubrik, ordagrant (live 2026-10-01): "Ja, det blir tett. Men bare taket."
+- Primärtextens första rad, ordagrant: "Du har rett: et heldekkende trekk rundt hele vognen blir tett rundt om."
+- Ingen VO — annonsen är en bild (den norska översättningen av Takoverdrag_OB_5_1).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | norsk husvagnsägare som tvekar på att bara taket täcks (copyn: "Du har rett") | okänd |
+| Vinkel | — (brief saknas i repot) | OB — medgivandet av helöverdragsinvändningen, sedan "sidene er åpne, akkurat som før" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten: produkten namnges i rad 2 | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: regnet rinner av 210D-väven, taket 6,5 × 3 m, 1 189 kr (før 1 549 kr) | okänd |
+| Tro | — (brief saknas i repot) | tron "ett helöverdrag är tätare" bemöts med att sidorna är öppna med flit | okänd |
+| Positionering | — (brief saknas i repot) | mot helöverdraget | okänd |
+| Brådska | — (brief saknas i repot) | ingen — bara priset | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 36 kr och 0 köp på sju dygn är under grinden och ingen dom — i NO-kampanjen bärs auktionen av Takovertrekk_NO_SP_4_H1 (BREAKTHROUGH) och PD_10_1, så den norska OB_5_1 fick aldrig leverans; den svenska förlagan Takoverdrag_OB_5_1 fick samma vecka 2 936 kr, 7 köp och ROAS 2,96 (KPI_WINNER i dag), så idén är inte fälld, bara oprövad i Norge.
+
+**Nästa annonser:**
+- `SLÄPP` — under grinden (36 kr, 0 köp): en observation, ingen dom. Norge får inga egna briefer (Axels besked 2026-09-01); lärdomen för den svenska förlagan Takoverdrag_OB_5_1 (L-120250356982310291, KPI_WINNER 2026-10-01) styr nästa steg, och en ny svensk version översätts via /translate-no om den byggs.
+
