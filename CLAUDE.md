@@ -208,7 +208,12 @@ domäner??? Ska inte alla vara via .com domänen?"). .com-närvaron bär alla ut
 (`konfig.json` → `ocksa_domaner`, `bygg.mjs --steg domaner`). Alla utlandsannonser länkar dit, utom
 B-sidan på .no. .eu och .se/<språk> fungerar kvar, men inget länkar dit. ⚠️ "En egen domän hör till EN
 marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesToAdd)` delade .com utan fel
-(mätt 2026-09-29, också i ett prov som återställdes).
+(mätt 2026-09-29, också i ett prov som återställdes). ⛔ **En produktlänk i en språkmapp på .com utan
+`?country=` skickar en kund i Europa eller Norge till den ENGELSKA produktsidan** (302). Det mättes från
+riktiga länder 2026-10-01 med `marknader/geokoll.mjs`. Landet och valutan blir rätt, men språket fel.
+Det träffar DE- och FR-annonserna, som saknar landet eftersom de har flera länder. Shopify
+geolokaliserar bara webbläsare, aldrig botar, så mät med geokoll och aldrig med en bar curl. Hela
+sajtgranskningen står i `marknader/PROMPT-granskning-sajt.md`.
 ✅ **Kassans logga är MATSTRUMPOR, utan .SE, i alla länder och även i Sverige sedan 2026-09-29
 kväll.** Kassan har bara EN logga för hela butiken, eftersom en logga per marknad kräver Plus. API:t
 nekar också: `checkoutBranding` ger ACCESS_DENIED "must be on a Plus plan". Cowork bytte till filen
