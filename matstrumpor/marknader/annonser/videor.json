@@ -3,54 +3,55 @@
   "sha256": "29a337bab274163601466152df5bb602b82464c4cdcfd3f027657758e3df8224",
   "fil": "klar/DE_nathalie.mp4",
   "video_id": "4616870098459193",
-  "creative_id": "3302400016627120",
+  "creative_id": "1100287815705555",
   "annons_id": "120251767700350023",
   "skapad": "2026-09-28T16:53:46.214Z",
-  "text_bytt": "2026-09-30T20:44:55.588Z"
+  "text_bytt": "2026-10-01T16:17:32.555Z"
  },
  "MATSTRUMP_DE_sushi_gift_ugc_002_v1": {
   "sha256": "3b0564aeafd940e18207de3aabaa649b8724fbf667f5b792c8b73f09f1d64442",
   "fil": "klar/DE_sofie_h1.mp4",
   "video_id": "1859040478795202",
-  "creative_id": "1091617160393748",
+  "creative_id": "1070891955553906",
   "annons_id": "120251767709150023",
   "skapad": "2026-09-28T16:54:13.741Z",
-  "text_bytt": "2026-09-30T20:45:04.886Z"
+  "text_bytt": "2026-10-01T16:17:42.572Z"
  },
  "MATSTRUMP_DE_sushi_jul_ugc_003_v1": {
   "sha256": "992b49e0a05070d9a3495bd35ff74f1a8a79e746aef66fe6adb75c4d91382512",
   "fil": "klar/DE_sofie_h2.mp4",
   "video_id": "1142180378156014",
-  "creative_id": "1083396774417077",
+  "creative_id": "1741773090384556",
   "annons_id": "120251767714620023",
   "skapad": "2026-09-28T16:54:37.193Z",
-  "text_bytt": "2026-09-30T20:45:14.761Z"
+  "text_bytt": "2026-10-01T16:17:52.607Z"
  },
  "MATSTRUMP_FR_sushi_gift_ugc_001_v1": {
   "sha256": "b3fa4b8b0acbd7e4e2b78f00d4461f9ddd559a8b2cfb4f1bb4638ef2b3586e49",
   "fil": "klar/FR_nathalie.mp4",
   "video_id": "1156182446734890",
-  "creative_id": "1094404626777173",
+  "creative_id": "1637388961295243",
   "annons_id": "120251767746410023",
-  "bytt": "2026-10-01T07:37:38.105Z"
+  "bytt": "2026-10-01T07:37:38.105Z",
+  "text_bytt": "2026-10-01T16:19:12.142Z"
  },
  "MATSTRUMP_FR_sushi_gift_ugc_002_v1": {
   "sha256": "92c6c410d7cb551574fb7c94edd1da5d48266135a02922c8066618724c60edb4",
   "fil": "klar/FR_sofie_h1.mp4",
   "video_id": "1402819248498785",
-  "creative_id": "1113165121272993",
+  "creative_id": "1702254547531565",
   "annons_id": "120251767749360023",
   "skapad": "2026-09-28T16:58:12.183Z",
-  "text_bytt": "2026-09-30T20:46:20.096Z"
+  "text_bytt": "2026-10-01T16:19:22.123Z"
  },
  "MATSTRUMP_FR_sushi_jul_ugc_003_v1": {
   "sha256": "70f245ccf3f66ea7f67ad6e696d30ac23ce2908874616051ef1b04939d915e71",
   "fil": "klar/FR_sofie_h2.mp4",
   "video_id": "2205476863733774",
-  "creative_id": "1611156717405072",
+  "creative_id": "1875379870507113",
   "annons_id": "120251767752770023",
   "skapad": "2026-09-28T16:58:34.182Z",
-  "text_bytt": "2026-09-30T20:46:30.093Z"
+  "text_bytt": "2026-10-01T16:19:32.116Z"
  },
  "MATSTRUMP_NL_sushi_gift_ugc_001_v1": {
   "sha256": "3fa4912de3e5ffe131349fb99addafe728fe425a016aec76a1a0f291f7353c88",
@@ -317,9 +318,10 @@
   "sha256": "4fc74db69d43fbfa14704647c0fb86321aae162afd9d98be0aaf89795b243e55",
   "fil": "klar/DE_012v2.mp4",
   "video_id": "1080449211367235",
-  "creative_id": "4312932605685103",
+  "creative_id": "2021130875265432",
   "annons_id": "120251773827160023",
-  "bytt": "2026-09-30T19:20:24.830Z"
+  "bytt": "2026-09-30T19:20:24.830Z",
+  "text_bytt": "2026-10-01T16:18:02.563Z"
  },
  "MATSTRUMP_DK_sushi_gift_anim_004_v1": {
   "sha256": "138d2ab02f1a2d26f8ac4ce855797aa0896e2e0c86646e66a81de39893542935",
@@ -405,33 +407,37 @@
   "sha256": "8ebb6adf9671d97d87291a0ac32403f7f90c0d00591cfbb7214e3610e3e35ad7",
   "fil": "klar/FR_012v2.mp4",
   "video_id": "2372882670183909",
-  "creative_id": "934953423011455",
+  "creative_id": "1635059921367884",
   "annons_id": "120251774200960023",
-  "bytt": "2026-09-30T19:21:15.533Z"
+  "bytt": "2026-09-30T19:21:15.533Z",
+  "text_bytt": "2026-10-01T16:19:42.115Z"
  },
  "MATSTRUMP_DE_sushi_gift_ugc_005_v1": {
   "sha256": "cd7b3b62d57d1671ed356a33b48999821242f9f5d1e8846dfa07259f4a30962d",
   "fil": "klar/DE_haikuh3.mp4",
   "video_id": "2129080161046117",
-  "creative_id": "1538858038268332",
+  "creative_id": "965279379298419",
   "annons_id": "120251777200300023",
-  "bytt": "2026-09-30T21:25:07.436Z"
+  "bytt": "2026-09-30T21:25:07.436Z",
+  "text_bytt": "2026-10-01T16:18:12.587Z"
  },
  "MATSTRUMP_DE_sushi_gift_ugc_006_v1": {
   "sha256": "98bff5c3943898a53f1af123860e3954a1e69f0a99a976ef43fff264ab0a2d13",
   "fil": "klar/DE_haikuh2.mp4",
   "video_id": "4822533447989148",
-  "creative_id": "1652712842878073",
+  "creative_id": "1362089919333208",
   "annons_id": "120251777203700023",
-  "bytt": "2026-09-30T21:25:37.592Z"
+  "bytt": "2026-09-30T21:25:37.592Z",
+  "text_bytt": "2026-10-01T16:18:22.588Z"
  },
  "MATSTRUMP_DE_sushi_gift_ugc_007_v1": {
   "sha256": "40d16ef774e02b41d1ca1f61e22000c9dcfe786ca59d975907da62920a1bb1cb",
   "fil": "klar/DE_s001h1.mp4",
   "video_id": "1457034552905276",
-  "creative_id": "948104348377448",
+  "creative_id": "28479051401749626",
   "annons_id": "120251777208060023",
-  "bytt": "2026-09-30T21:26:07.850Z"
+  "bytt": "2026-09-30T21:26:07.850Z",
+  "text_bytt": "2026-10-01T16:18:32.586Z"
  },
  "MATSTRUMP_NO_sushi_gift_ugc_005_v1": {
   "sha256": "e7ea7ad7e41f98073c8cb9466ba0f28fdb490f708c43efe95501eeb84a31f97f",
@@ -538,28 +544,28 @@
   "sha256": "402dc8141c129e868b13b53264a6db0d979bfa6c29c980a5915ba3913a527576",
   "fil": "klar/FR_haikuh3.mp4",
   "video_id": "1113910017721208",
-  "creative_id": "2199125014150251",
+  "creative_id": "1784881853225060",
   "annons_id": "120251777657810023",
   "skapad": "2026-09-29T08:46:24.980Z",
-  "text_bytt": "2026-09-30T20:46:40.090Z"
+  "text_bytt": "2026-10-01T16:19:52.162Z"
  },
  "MATSTRUMP_FR_sushi_gift_ugc_006_v1": {
   "sha256": "0149ac44780e6ea4d9e81cc6004d23441fa43446aaf32fc6d1a78153273d88de",
   "fil": "klar/FR_haikuh2.mp4",
   "video_id": "1606392184269450",
-  "creative_id": "28178927161789169",
+  "creative_id": "1752330205992484",
   "annons_id": "120251777662970023",
   "skapad": "2026-09-29T08:46:47.324Z",
-  "text_bytt": "2026-09-30T20:46:50.105Z"
+  "text_bytt": "2026-10-01T16:20:02.163Z"
  },
  "MATSTRUMP_FR_sushi_gift_ugc_007_v1": {
   "sha256": "d727bfa38dfa86c7f642660c6f0b7f8d341fe5df980d32f141396fe7a63c1ae3",
   "fil": "klar/FR_s001h1.mp4",
   "video_id": "1777131473615759",
-  "creative_id": "2495735224253760",
+  "creative_id": "1576942683586399",
   "annons_id": "120251777670680023",
   "skapad": "2026-09-29T08:47:16.149Z",
-  "text_bytt": "2026-09-30T20:47:00.103Z"
+  "text_bytt": "2026-10-01T16:20:12.176Z"
  },
  "MATSTRUMP_NL_sushi_gift_ugc_005_v1": {
   "sha256": "680cfca3eb30c37b14d043b87f7f67b0a6766604bae0c011bce623afdbfa8d99",
@@ -841,18 +847,19 @@
   "sha256": "55d4677359fc25a79b7d72d08dc7f02c971e8cefbe938e589027061bc1221cbe",
   "fil": "klar/DE_d3.jpg",
   "image_hash": "a9d09f99961014d3899a660650d824b9",
-  "creative_id": "1083816691046664",
+  "creative_id": "1125898806759955",
   "annons_id": "120251779483200023",
-  "bytt": "2026-09-30T19:20:34.835Z"
+  "bytt": "2026-09-30T19:20:34.835Z",
+  "text_bytt": "2026-10-01T16:18:40.082Z"
  },
  "MATSTRUMP_FR_sushi_offer_static_008_v1": {
   "sha256": "c85cf9333e41f5d90f38c990480080ff101316660a1b103844ce12a18262f7d9",
   "fil": "klar/FR_d3.jpg",
   "image_hash": "974cb1f9d14afb29a1e12a7cc4c4fecd",
-  "creative_id": "1744348943334315",
+  "creative_id": "2318741252269379",
   "annons_id": "120251779487060023",
   "skapad": "2026-09-29T10:56:22.168Z",
-  "text_bytt": "2026-09-29T20:31:06.279Z"
+  "text_bytt": "2026-10-01T16:20:19.661Z"
  },
  "MATSTRUMP_NL_sushi_offer_static_008_v1": {
   "sha256": "31149396112335af4d05d869c33c7b5f5cba19fe93413a18dd28334377593dcc",
