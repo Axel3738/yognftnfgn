@@ -128,7 +128,7 @@ function skrivRapport({ idag, kalla, dagar, senasteAvlasning, alder, hoppade, be
   L.push('');
   for (const [butik, text] of Object.entries(konfig.butiker_utanfor_arket ?? {})) {
     const rader = bedomningar.filter((b) => b.butik === butik && b.status === 'slut');
-    if (rader.length) L.push(`- ⚠️ **${butik}: arket stämmer inte.** ${rader.map((b) => b.namn).join(', ')} står på 0. ${text}`);
+    if (rader.length) L.push(`- ⚠️ **${butik}:** ${rader.map((b) => b.namn).join(', ')} står på 0. ${text}`);
   }
   if (!atgard.length) L.push('- Ingen annan vara i arket behöver beställas de närmaste 14 dagarna.');
   for (const b of atgard) {

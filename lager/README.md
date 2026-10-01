@@ -24,10 +24,13 @@ Mätt 2026-10-01 i arket (49 flikar, 31/7–30/9):
 
 - **2 051 enheter i lager.** Störst: Mastern 650, sticker 291, Borst + PolérHuvud 179,
   Bävertratt 458 i fem färger, D2-kopplingen 123, Bäverkoppling 93, Bäverlampa Pro 90.
-- **Matstrumpors strumpor står på 0** (sushi sedan 19/9). Ändå skickas alla Matstrumpors ordrar
-  inom ett dygn (Shopify, 455 ordrar senaste 14 dagarna). Lagret ligger alltså inte där arket
-  säger, eller så köper CWD per order. Det är den viktigaste frågan till CWD inför julen:
-  `leverantor/meddelanden/1-matstrumpor-lager.md`.
+- **Matstrumpors strumpor står på 0** (sushi sedan 19/9), och det stämmer: lagret är slut.
+  Förra lagerbeställningen var en bluff mot CWD, nytt är beställt och Axels 1 000 kommer inom
+  tre dagar (Axel 2026-10-01). ⚠️ **"Fulfilled" i Shopify betyder inte skickat hos CWD** — de
+  markerar ordern och skapar spårningsnumret direkt. Den här filen sa först att "allt skickas
+  inom ett dygn" ur Shopifys fulfillments; spårningen visade samma kväll 415 ordrar
+  (#4807–#5247, 819 sushilådor) vars paket inte rört sig sedan 22–23/9. Mät alltid skickat ur
+  spårningen (`sparning/butiker/<id>/lage.json`: `CONFIRMED` = bara etikett), aldrig ur Shopify.
 - **Uppmätt ledtid:** Mastern beställdes 1 000 st 13/8 och stod i lager 17/8 = 4 dagar.
   Planen räknar med 7 (4 + marginal) tills fler påfyllningar är mätta.
 - **Mastern var slut 15–17/8** med 77 ordrar som väntade ("sold out:77" i arket).

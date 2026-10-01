@@ -1493,9 +1493,12 @@ butiker … planera lagerinköp … förhandla priser med leverantören". Börja
   TYST första fliken för ett namn som inte finns), räknar takt bara på dagar med lager, dagar kvar,
   beställ senast/antal, överlager och kinesiska nyåret (6/2 2027, `lager/konfig.json`). Mätt
   2026-10-01: 2 051 enheter; Mastern 650 st (222 dagar); **uppmätt ledtid 4 dagar** (Mastern 13→17/8).
-  ⛔ **Matstrumpors strumpor står på 0 i arket sedan 19/9 men alla ordrar skickas inom ett dygn** —
-  lagret ligger någon annanstans eller köps per order; frågan till CWD är
-  `leverantor/meddelanden/1-matstrumpor-lager.md`. Säsongsplanen: dagens takt ~62 lådor/dag,
+  ⛔ **Matstrumpors lager är SLUT sedan 22–23/9** (Axel 2026-10-01: förra lagerbeställningen var en
+  bluff mot CWD, nytt beställt, hans 1 000 kommer inom tre dagar). ⚠️ **"Fulfilled" i Shopify betyder
+  inte skickat:** CWD markerar ordern och skapar spårningsnumret direkt, så Shopify såg "allt skickat
+  inom ett dygn" medan spårningen visade 415 ordrar (819 sushilådor) som inte rört sig. Mät skickat ur
+  spårningen (`CONFIRMED` = bara etikett), aldrig ur Shopify. CWD postar från Kina — fråga aldrig
+  var. Meddelandet till CWD: `leverantor/meddelanden/0-q4-minimum.md`. Säsongsplanen: dagens takt ~62 lådor/dag,
   ~1,9 per order; glappet över nyåret 28/1–13/3 = 2 700–5 000 lådor som ska ligga hos CWD före 28/1.
 - **Leverantören:** `leverantor/FORHANDLING.md` (strategin ur Kanary: landad kostnad, jämförelseoffert,
   villkor före pris, prognos, defekter, Q4-volym i januari) + fem färdiga engelska meddelanden.

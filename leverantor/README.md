@@ -7,7 +7,7 @@ ingen bra strategi"). Leverantören är **CWD**, agenten i Kina (Slack `cwd-yqg1
 | Fil | Vad |
 |---|---|
 | `FORHANDLING.md` | **Strategin**: varför, var vi börjar, sex steg, regler, tidplan. |
-| **`meddelanden/0-q4-minimum.md`** | **Det enda som ska skickas nu:** Matstrumpors lager, sushilådor till jul och nyåret, taköverdragets kapacitet, CWD:s nyårsdatum. |
+| **`meddelanden/0-q4-minimum.md`** | **Det enda som ska skickas nu:** de 415 väntande Matstrumpor-ordrarna, nästa sushibeställning, taköverdragets första lager, sista beställningsdag före Black Friday och delbetalning. |
 | `meddelanden/1-matstrumpor-lager.md` | Brådskande: var ligger Matstrumpors lager och hur mycket finns inför julen? |
 | `meddelanden/2-nyaret.md` | CWD:s stängning inför kinesiska nyåret 6/2 2027. |
 | `meddelanden/3-prisgenomgang.md` | Prisuppdelning och volympriser, taköverdraget först. |
