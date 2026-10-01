@@ -1,0 +1,19 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-10-01",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Nothing to translate today: zero rows in SE-ACTIVE to be translated, second day in a row.",
+    "Checked the whole Approved queue as well: 72 rows, every one of them live in Norway. Nothing lagging behind.",
+    "The campaign CARASHELL_NO_Takovertrekket is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK.",
+    "Nothing rendered, nothing uploaded, no HeyGen credits used, no Notion status touched. Meta answered both accounts without throttling today."
+  ],
+  "varningar": [
+    "Still open, and reported again because nothing has changed since 23 Sep: the gift angle runs in two ad sets in the same CBO - CARASHELL_NO_Takovertrekket - G and - GT. Both are live with spend, so no session touches them; the owner decides whether both keep running or he pauses one himself. No ping today, the decision is already with him."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-10-02"
+}

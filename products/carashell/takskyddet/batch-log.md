@@ -3040,3 +3040,16 @@ Kön läst i ett försök: samma två rader i `To be Reviewed`
 exakt, så priset är inte stoppet. Inget uppladdat, ingen status ändrad, inga
 nya kommentarer (feedbacken från 2026-09-21 står kvar på båda raderna).
 De två LISTICLE-kampanjerna filtrerades som egna spår.
+
+## 2026-10-01 — NO-rundan: kön tom andra dagen i rad
+
+**0 rader** i `SE-ACTIVE to be translated`. Approved-kollen: **72 rader, 0 utan
+NO-annons** (samma 72 som i går). Kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE
+med 12 adsets, ärvd länk `carashell.se/nb/products/takskyddet?country=NO`, pris
+1 106 NOK läst ur butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits,
+ingen Notion-status rörd. Metas båda konton svarade utan strypning i dag (i går
+backade kön av fyra gånger och Approved-passet dog en gång). Discord-rapport
+postad i `#annons-uppladdning` (`1555220498533716029`), ingen ping.
+
+Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på Axels
+besked, obesvarat sedan 2026-09-23.
