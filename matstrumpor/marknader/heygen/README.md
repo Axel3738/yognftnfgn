@@ -81,6 +81,28 @@ proofread-session**, utan ny proofread:
 4. QA ny mot gammal: `seglyssna.py` på båda med sina SRT:er, röstkollen, sedan `no-captions.py
    --rutor` till `annonser/klar/` och `bygg.mjs --byt-video`.
 
+**Utfallet 2026-09-30/10-01: elva omrenderingar, alla godkända och bytta i de pausade annonserna.**
+Ny mot gammal med `seglyssna.py` på båda filerna och deras egna SRT:er (Whisper medium; danska med
+large-v3), röstkollen ✅ på alla elva. Ett lägre snitt i den nya filen är inte i sig ett fel: siffror
+(`Ti` → "10") och sammansättningar räknas som miss, så raden som ändrades är den som avgör.
+
+| Video | Ny / gammal | Det som avgjorde |
+|---|---|---|
+| DK Nathalie | 0,84 / 0,87 | "De bliver brugt år efter år" hörs rätt (gamla raden hördes "den bruges af og til"). "yndlingsret" hörs "yndlingsfat" med sammanhang i large-v3, samma betydelse; gamla "livret" hördes rätt först med sammanhang |
+| ES Nathalie | 0,98 / 0,98 | inget fel |
+| FI Nathalie | 0,89 / 0,83 | Whisper skriver aldrig š, så "suši" står som "susi" i båda |
+| FI Sofie H1 / H2 | 0,87 / 0,89 · 0,89 / 0,80 | samma š-sak; H2 bättre |
+| IT Nathalie | 0,93 / 0,95 | den nya öppningen hörs rätt |
+| NL Nathalie | 0,91 / 0,95 | öppningen: large-v3 hör nya "Dit is je seintje" som "Dit is Jezijnje", gamla "Dit is je teken" som "Dit is je cake" — nu hörs nästan rätt ord |
+| NO Nathalie / Sofie H1 | 0,89 / 0,89 · 0,86 / 0,79 | "minst ti personer" hörs rätt (gamla "typ ti" hördes "jeg sier jeg modererede") |
+| FR Nathalie | 0,99 / 0,97 | inget fel |
+| JP Sofie H1 | 0,90 / 0,94 | large-v3 med sammanhang: nya "全部で5足" rätt, gamla "五足入り" hördes "不足入り" (brist) |
+
+Kostnad: elva omrenderingar à ~42–45 API-enheter. Plånboken stod på 8 531 enheter (≈ 142 USD)
+efter omgången, mätt med `translate-batch.mjs status`. ⚠️ FR och NO Sofie H1 låg i HeyGens
+moderationskö i över en timme; `download` med `timeout 3000` gav upp, och en ny `download`
+morgonen efter hämtade båda.
+
 ## USA: "alla nya ads vi inte hade innan" (Axel 2026-09-27)
 
 Den gamla US-kampanjen (`MATSTRUMP_SALES_US_20260828`, PAUSED) hade 49 annonser (38 video,

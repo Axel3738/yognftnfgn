@@ -47,6 +47,13 @@ export const RÖST = 'lRBvixWrjVcBSKxchtgC'; // "Matstrumpor AI-kvinna (klon ur 
 // klonen säga det svenska "socker", och den infödda Freja (ElevenLabs röstbibliotek) "sokker" i fyra av fem
 // repliker. Whisper medium kan inte döma här: den hörde "sukker" även från fyra infödda röster, och large-v3
 // hör "det er sukker" från alla röster i den meningen (språkmodellen gissar). Mät danska med large-v3.
+// I de byggda videorna hörde large-v3 sedan Freja säga "sokker" i varje dansk replik, också avslöjandet.
+// Norska behåller klonen (prövat 2026-10-01): large-v3 hörde klonens 007 säga "så skjønner man det er sukker".
+// Den infödda Celine (k5IgYJw2jfo6mO5HhagG, "Clear and Confident") hördes "sokker" sex av sex i ett prov på
+// lösa klipp (klonen fem av sex), men i de mixade videorna var hon inte bättre: 007:s avslöjande hördes
+// "sukker" med båda rösterna, och 006 hördes "satt i to" med Celine men "sokker" med klonen. Celine kommer
+// ut ~21 dB tystare än klonen; med förstärkning 8 hördes 006 rätt men 007 fortfarande "sukker", och
+// begränsaren slog i 0 dB. Mät norska med large-v3, och mät i den mixade videon, aldrig bara klippet.
 export const RÖSTER = { TW: '9lHjugDhwqoxA5MhX0az', DK: 'h5TGSgjuArqhPBRRe0mM', 'JP/s001h1': '4lOQ7A2l7HPuG7UIHiKA' }; // Anna Su, Freja, Kyoko
 
 // En röst för EN video går före marknadens (nyckeln "<KOD>/<video>"). Japanska s001h1 2026-09-30 (granskningen
@@ -67,6 +74,10 @@ export const MODELL = { NO: 'eleven_turbo_v2_5', TW: 'eleven_turbo_v2_5' };
 export const lasText = (s) => s.las ?? s.text;
 const STANDARDMODELL = 'eleven_multilingual_v2';
 const MAXFART = 1.2, MAXTEMPO = 1.15;
+// Högsta förstärkning av rösten mot källans talnivå (se nivån i main). Klonen ligger på ~0,9, Freja/Kyoko
+// på ~2,4 och Anna Su på ~1,3 (mätt 2026-09-30). En röst som behöver mer (Celine ~4,3–5,5) läggs för lågt
+// mot musiken — byt röst eller prova för hand med DUBBA_GAIN, och lyssna på den mixade videon.
+const GAIN_TAK = 4;
 const OM = process.argv.includes('--om'); // ❌ i QA: nytt frö, nya klipp (cachenyckeln bär fröet)
 
 /** Ren: tidsfönstret per talat segment — från segmentets start till nästa segments start
@@ -212,10 +223,12 @@ async function main() {
     logg.push({ seg: i + 1, a: s.a, max: fon[i].max, d: +dUt.toFixed(2), fart, tempo, over: dUt > fon[i].max + 0.05, ...(tag > 1 ? { tagning: tag } : {}) });
     lok.segment[i]._fil = slutfil;
   }
-  // nivån: klonens tal läggs på källans talnivå, bakgrunden som den var
+  // nivån: klonens tal läggs på källans talnivå, bakgrunden som den var (taket GAIN_TAK, se ovan).
   const klippNiva = lok.segment.map((s) => talnivå(s._fil)).reduce((x, y) => x + y, 0) / lok.segment.length;
   const kallNiva = talnivå(join(stam, 'vocals.wav'));
-  const gain = kallNiva && klippNiva ? Math.min(4, kallNiva / klippNiva) : 1;
+  // DUBBA_GAIN=<tal> i miljön sätter förstärkningen för hand (prov på en röst som ligger för lågt i mixen).
+  const gain = process.env.DUBBA_GAIN ? Number(process.env.DUBBA_GAIN)
+    : kallNiva && klippNiva ? Math.min(GAIN_TAK, kallNiva / klippNiva) : 1;
   const inn = ['-nostdin', '-y', '-v', 'error', '-i', join(stam, 'no_vocals.wav')];
   const filt = [];
   lok.segment.forEach((s, i) => { inn.push('-i', s._fil); const ms = Math.round(s.a * 1000); filt.push(`[${i + 1}:a]aresample=44100,volume=${gain.toFixed(3)},adelay=${ms}|${ms},aformat=channel_layouts=stereo[v${i}]`); });

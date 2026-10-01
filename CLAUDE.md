@@ -223,6 +223,16 @@ verifierad annonsör** (Taiwans lag; mätt samma dag: Meta vägrar annonsgruppen
 --skarpt`. ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
 helfilsmåttet var grönt medan 靴下 hördes som "ガックザ". Japanskan läser uttalsfältet `las`
 (kanji → hiragana), och Taiwan har en infödd röst. Allt i `marknader/README.md` → "Japan och Taiwan".
+🔊 **Rösterna efter granskningen 2026-09-30/10-01** (`marknader/egna/README.md` → "Granskningen 2026-09-30"):
+infödda röster där klonen hördes fel — **Danmark Freja, Japans 007 Kyoko, Taiwan Anna Su** (`dubba.mjs` →
+`RÖSTER`); övriga språk har klonen, också Norge (Celine prövades 2026-10-01 och var inte bättre i mixen).
+⚠️ **Lyssna på danska och norska med Whisper large-v3, i den MIXADE videon**: medium hör "sukker" för
+"sokker" från alla röster, och ett klipp som hörs rätt ensamt kan drunkna i musiken. ⚠️ **Avslöjandet kan
+låta som en förolämpning**: i USA:s 006 hördes "wait, it's socks" som "wait, it sucks" av båda modellerna
+(nu "they're socks"). ⚠️ Norska 007:s avslöjande hörs fortfarande "sukker" av large-v3 — en norsk lyssnare
+bör höra det innan Norge slås på. Elva
+HeyGen-videor renderades om i samma proofread-session (~0,7 USD styck, `heygen/README.md`); plånboken stod
+på ≈ 142 USD efteråt. Taiwans röst: large-v3 hör tonfel (壽司 → 受死) — lyssna innan TW-kampanjen byggs.
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan

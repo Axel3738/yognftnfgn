@@ -272,8 +272,14 @@ som `dubba.mjs` (frö 29):**
   det svenska "socker", Freja "sokker" i fyra av fem repliker (i "…det er sokker" hör large-v3 "sukker"
   från alla röster — språkmodellen gissar på den vanliga frasen). `seglyssna.py --modell large-v3` för danska.
   Stavningsknep hjälpte inte: "såkker" gav "sukker", "sakker" gav "Saga".
-- **Norska behåller klonen** (eleven_turbo_v2_5): i provet hördes "sokker" rätt, och i nya 007 går
-  slutpoängen fram ("Ser ut som sushi, men er sokker. Sushisokker."). En replik av fem hörs "sukker".
+- **Norska behåller klonen** (eleven_turbo_v2_5), prövat 2026-10-01 morgon. I den byggda 007 hörde large-v3
+  avslöjandet "så skjønner man det er sokker" som "sukker". På lösa klipp (frö 29, med och utan "sushi" före
+  i Whisper) hördes den infödda Celine "sokker" sex av sex, klonen fem av sex, Mia och Emma fyra av sex. Men
+  i de MIXADE videorna var Celine inte bättre: 007 hördes "sukker" med båda rösterna, och 006 hördes
+  "satt i to" med Celine men "sokker" med klonen. Celine kommer ut ~21 dB tystare än klonen och hamnar för
+  nära musiken (förstärkningen stannar på taket); med förstärkning 8 hördes 006 rätt men 007 fortfarande
+  "sukker", och begränsaren slog i 0 dB. Klonens 006 och 007 byggdes om ur cachen (0 tecken, samma filer som
+  kvällen innan). Lärdom: lyssna på den mixade videon, aldrig bara på klippet.
 - **Japanska 007 (s001h1) → den infödda rösten Kyoko** (`RÖSTER['JP/s001h1']`, per video). Granskningen
   (G-B01) hörde 靴下 som "kusushita" tre gånger (sänkt till 🔵 vid dess andra prövning: en av två repliker
   utan ledtråd). Katakana クツシタ i `las` hjälpte inte (fortfarande
@@ -285,3 +291,23 @@ som `dubba.mjs` (frö 29):**
   till en fråga till Axel, eftersom samma rad går i Sverige — sessionen valde den försiktiga vägen i
   USA/UK, där regeln är uttrycklig, och annonsen är PAUSED). Ny replik av sonnet: "I keep
   giving everyone the same candle." Övriga språk bär grundarraden som den svenska originalet.
+
+**Ombyggda 2026-09-30 kväll, lyssnade replik för replik** (`seglyssna.py`, Whisper medium; danska och
+norska med large-v3, i den mixade videon). "Snitt" är täckningen av manusets ord i det Whisper hör. Ett lågt tal är oftast siffror
+(`Tre:` → "3.") eller sammansättningar (`Sushisokker` → "Sushi-sokker"); raderna nedan är de som betydde något.
+
+| Video | Röst | Snitt | Det som hördes, och vad som gjordes |
+|---|---|---|---|
+| DE 005/006/007 | klonen | 0,98 / 0,97 / 0,97 | inget fel |
+| DK 005/006/007 | Freja | 0,96 / 0,96 / 0,92 | large-v3 hör "sokker" i varje replik, också avslöjandet i 005, 006 och 007 ("Så opdager man, at det er sokker") |
+| NO 006/007 | klonen | 0,92 / 0,85 | large-v3: 006 "Og så, vent, det er jo sokker" rätt; 007 slutpoängen rätt ("Ser ut som sushi, men er sokker. Sushi-sokker."), men avslöjandet "så skjønner man det er sokker" hörs "sukker" med båda rösterna (se ovan). En norsk lyssnare bör höra 007 innan Norge slås på |
+| ES 005/006/007 | klonen | 0,96 / 0,96 / 1,00 | 006 replik 2 går 0,10 s in i nästa (slutet på "únicos"), lämnad |
+| US 006/007 | klonen | 0,97 / 1,00 | **006 replik 6 "wait, it's socks" hördes "it sucks"** av medium och large-v3 i två tagningar (frö 29 och 1029) ⇒ syskonvideons godkända "they're socks", hörs rätt av båda |
+| IT 006/007 | klonen | 0,98 / 0,99 | inget fel |
+| PL 005/006 | klonen | 0,98 / 0,98 | inget fel |
+| JP 005/006 | klonen | 0,89 / 0,89 | homofoner (ほこり → 誇り, 五足 → 誤則); 履いて hörs 生えて en gång i 005 |
+| JP 007 | Kyoko | 0,86 | ソックス rätt i alla produktrepliker; replik 13 utan kommatecken i `las` (gick 0,38 s över fönstret) |
+| TW 005/006/007 | Anna Su | 0,83 / 0,85 / 0,80 | Taiwan har ingen annonsgrupp än. large-v3 hör samma tonfel som medium (壽司 → 受死 "ta emot döden", 襪 → 挖, 獨一無二 → 豆乙无二): en infödd lyssnare eller en annan röst innan TW-kampanjen byggs |
+
+WW bär USA:s filer. Alla filer bytta i de pausade annonserna med `bygg.mjs --byt-video` per marknad
+(NOB får NO:s nya media med `--byt-text`, som jämför lånad media).
