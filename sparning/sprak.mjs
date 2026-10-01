@@ -165,6 +165,17 @@ const UNDERSTATUS_PREFIX = {
 // okänd och läggs in då — den säger något annat och ska inte gissas.
 const ANLAGGNINGSRAD = /^\s*【[^】]+】\s*arrived\.?\s*$/i;
 const ANLAGGNING_MOTTAGET = /^\s*【[^】]+】\s*received\.?\s*$/i;
+// Samma fraktbolag skriver också sista biten med anläggningen i 【…】:
+// "【MEL CSP 3】Dispatch task assigned to DA." följt av "【MEL CSP 3】Shipment
+// out for delivery." (mätt 2026-10-01 på CaraShell, samma paket i Australien).
+// Första raden är att ett bud fått uppdraget, andra att det är ute på vägen —
+// två olika steg, därför två mönster och två meningar.
+const ANLAGGNING_UTKORNING = /^\s*【[^】]+】\s*dispatch task assigned to\b/i;
+const ANLAGGNING_UTE = /^\s*【[^】]+】\s*shipment out for delivery\.?\s*$/i;
+// Yanwens amerikanska terminaler skrivs som flygplatskod: "Parcel received by
+// in JFK01." och "… in DFW01." (mätt 2026-10-01 på CaraShell). Koden byts per
+// terminal, så den kan aldrig vara en ordboksrad.
+const TERMINAL_MOTTOG = /^\s*parcel received by in \S+\.?\s*$/i;
 // Yanwen skriver ibland ut DATUM OCH KLOCKSLAG i leveransraden: "The shipment
 // item was delivered on 9/30/2026 at 10:33 AM" (mätt 2026-09-30 på CaraShell).
 // Varje leverans hade blivit en egen ordboksrad som aldrig slutar växa, och
@@ -175,6 +186,9 @@ const MONSTER = [
   [OMBUDSRAD, 'Paketet har kommit till ombudet'],
   [ANLAGGNINGSRAD, 'Paketet har kommit till terminalen'],
   [ANLAGGNING_MOTTAGET, 'Fraktbolaget har tagit emot paketet'],
+  [ANLAGGNING_UTKORNING, 'Paketet är inlagt för utkörning'],
+  [ANLAGGNING_UTE, 'Paketet är ute för leverans'],
+  [TERMINAL_MOTTOG, 'Paketet har kommit till terminalen'],
   [LEVERERAD_MED_TID, 'Paketet är levererat'],
   [/planlagt levering natt til/i, 'Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat'],
   [/离开.*(转运中心|分拨中心)/, 'Paketet har lämnat omlastningsterminalen'],
