@@ -12,6 +12,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { rensa as rensaSvenskaBilder } from '../granskning/svenska-bilder.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const EN_MAPP = join(ROT, 'en');
@@ -41,6 +42,9 @@ export function siffror(s, locale = 'en') {
 export function granskaProdukt(kalla, en, { locale = 'en' } = {}) {
   const fel = [];
   if (!en) return [`saknar ${locale}-fil`];
+  // Bilder med inbränd svensk text tas bort ur översättningarna med flit (granskning/svenska-bilder.mjs,
+  // 2026-10-01) — källan jämförs därför efter samma rensning, så att allt annat fortfarande måste stämma.
+  kalla = { ...kalla, descriptionHtml: rensaSvenskaBilder(kalla.descriptionHtml ?? '', kalla.handle, locale) };
   if (en.handle !== kalla.handle) fel.push(`handle ${en.handle} ≠ ${kalla.handle}`);
   if (!String(en.title ?? '').trim()) fel.push('titel saknas');
   for (const [f, k] of [['seo_title', 'seo_title'], ['seo_description', 'seo_description']]) {

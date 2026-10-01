@@ -355,7 +355,10 @@ async function oversattningarFor(k, { skarpt }, locale) {
   // Alternativ och alternativvärden (Färg → Color, Svart → Black) — på värde.
   for (const typ of ['PRODUCT_OPTION', 'PRODUCT_OPTION_VALUE']) {
     for (const res of await allaResurser(k, typ, locale)) {
-      const rader = res.translatableContent.filter((c) => c.key === 'name' && alternativ.has(norm(c.value)) && norm(alternativ.get(norm(c.value))) !== norm(c.value)).map((c) => ({ key: c.key, value: alternativ.get(norm(c.value)), digest: c.digest }));
+      // Samma ord på båda språken ("Lila" → "Lila") registreras bara när en gammal översättning säger
+      // något annat — mätt 2026-10-01: tyska "Purple", franska "Khaki" och portugisiska "Pink" låg kvar så.
+      const annan = (c) => res.translations?.some((t) => t.key === c.key && norm(t.value) !== norm(c.value));
+      const rader = res.translatableContent.filter((c) => c.key === 'name' && alternativ.has(norm(c.value)) && (norm(alternativ.get(norm(c.value))) !== norm(c.value) || annan(c))).map((c) => ({ key: c.key, value: alternativ.get(norm(c.value)), digest: c.digest }));
       lagg('alternativ', await registrera(k, res, rader, { skarpt, etikett: typ, locale }));
     }
   }

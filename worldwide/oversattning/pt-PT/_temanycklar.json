@@ -1,4 +1,11 @@
 {
  "products.product.stock_label.one": "Stock reduzido: resta {{ count }} unidade",
- "products.product.stock_label.other": "Stock reduzido: restam {{ count }} unidades"
+ "products.product.stock_label.other": "Stock reduzido: restam {{ count }} unidades",
+ "general.accessibility.skip_to_content": "Saltar para o conteúdo",
+ "general.accessibility.close_modal": "Fechar (Esc)",
+ "general.accessibility.close": "Fechar",
+ "collections.general.all_of_collection": "Ver tudo",
+ "products.general.sale": "Promoção",
+ "products.product.in_stock_label": "Em stock, pronto a enviar",
+ "shopify.online_store.spam_detection.disclaimer_html": "Este site está protegido pelo hCaptcha e aplicam-se a <a href=\"https://hcaptcha.com/privacy\">Política de Privacidade</a> e os <a href=\"https://hcaptcha.com/terms\">Termos de Serviço</a> do hCaptcha."
 }

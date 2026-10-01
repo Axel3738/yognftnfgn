@@ -1180,10 +1180,16 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   `worldwide/granskning/2026-10-01.md`, verktygen i `worldwide/granskning/`): Kachings och Judge.me:s
   svenska, temats engelska på it/nl/pl, returpolicyns länk till en annan butiks kundkonto, svenska
   rubriker, fraktnamnet, färgnamnen, "Recently viewed" och "You may also like" rättade och lästa
-  tillbaka som kund. Kvar: spårningssidan på svenska (rättad i `sparning/butiker.json`, går live när
+  tillbaka som kund. Samma kväll: bilder med inbränd svensk text (OCR på 152 bilder) borta ur
+  beskrivningarna och galleriet i världsläget, storleksguiderna som tabeller på kundens språk,
+  kollektionens svenska reabanner dold, villkorens Shopify-mallanteckningar borta, spanska/franska/
+  portugisiska/tyska ordval och färgkategorins engelska rester ("Pink", "Purple") rättade (temat a9).
+  Kvar: spårningssidan på svenska (rättad i `sparning/butiker.json`, går live när
   grenen är på `main`), Kachings rabattnamn och BÄVERBUTIKEN-loggan i kassan (Axels beslut, ändrar
   Sverige), recensionstexterna och färgnamnen i kassan (`worldwide/cowork/3-granskningen.txt`) och 17
-  annonser med påhittad brådska ("TODAY ONLY") som bara Axel får röra. ⚠️ Shopifys kassa spärrar
+  annonser med påhittad brådska ("TODAY ONLY") som bara Axel får röra, plus Axels beslut i
+  rapportens tabell (fraktpolicyns moms-/tullmening och "lager i Kina", Kachings motsägande
+  paketpriser, överstrukna priser i en ny EU-marknad, Impressum). ⚠️ Shopifys kassa spärrar
   IP:t efter ~18 kassor i rad — kör kassagranskningen glest.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)

@@ -33,7 +33,12 @@ export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s sv
 // a2 2026-10-01: Kachings paketnamn, Judge.me:s hela widget som hela meningar (appord.json → exakt; jdgm är källan), korgens rabattrader, Trust Badges dold, platshållarprodukter dolda, bara besökarens språk skickas.
 // a3 2026-10-01: färgvärden kopplade till Shopifys färgkategori (appord.json → varden) i produktens väljare och korgens rad, och "Recently viewed" hämtar produkterna på besökarens språk.
 // a4 2026-10-01: texterna jämförs med enkla mellanslag (Kachings "1x  MC-Kapell 218×118 cm" stod kvar på svenska).
-export const APPORD_VERSION = 'a4';
+// a5 2026-10-01: länkar till butikens sidor får besökarens språkprefix, "Customer support from Sweden", "Sätesöverdrag" i korgen.
+// a6 2026-10-01: kollektionssidans svenska reabanner dold, Bäverlampans bild med svensk text byts mot produktens andra bild.
+// a7 2026-10-01: galleribilder med svensk text tas bort ur produktsidornas bildspel (GALLERI).
+// a8 2026-10-01: färgkategorins engelska rester (Pink, Purple, Khaki) på es/it/pt-PT, de och fr.
+// a9 2026-10-01: samma tre färger på alla sju språk (tyskan visade fortfarande "Pink" i Kaching).
+export const APPORD_VERSION = 'a9';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -140,9 +145,11 @@ export function byggAppord(ord = JSON.parse(readFileSync(join(ROT, 'appord.json'
 {%- comment -%}Ultimate Trust Badges ritar "Betala säkert med våra samarbetspartners." + Klarna- och Swish-logor
 under köpknappen, bara på svenska (worldwide-granskningen 2026-10-01, samma som Matstrumpor 2026-09-30).
 I världsläget döljs raden.{%- endcomment -%}
-<style>#ultimateTrustBadgeswidgetDiv{display:none!important}.shopify-section:has(.grid-product .placeholder-svg){display:none!important}</style>
+<style>#ultimateTrustBadgeswidgetDiv{display:none!important}.shopify-section:has(.grid-product .placeholder-svg){display:none!important}body.template-collection .shopify-section[id$="__promo-grid"]{display:none!important}</style>
 {%- comment -%}Andra regeln: korgsidans "Popular picks" har ingen kollektion vald och visade fyra "Example product
-$29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i världsläget.{%- endcomment -%}
+$29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i världsläget.
+Tredje regeln: kollektionssidans banner (promo-grid, bilden hf_20260622_143757…) är en svensk reabild
+(mätt 2026-10-01). Den döljs i världsläget; den svenska sidan visar den som förut.{%- endcomment -%}
 <script>
 (function () {
   var O;
@@ -153,6 +160,52 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
   function medRot(u, rot) { return typeof u === 'string' && rot && rot !== '/' && u.slice(0, 10) === '/products/' && u.split('?')[0].slice(-3) === '.js' && u.indexOf('/', 10) < 0 ? rot.slice(0, -1) + u : u; }
   var rot = window.Shopify && Shopify.routes && Shopify.routes.root;
   if (rot && rot !== '/' && window.fetch) { var f0 = window.fetch; window.fetch = function (u, o) { return f0.call(this, medRot(u, rot), o); }; }
+  // Sektionernas länkar är sparade utan språkprefix ("Mehr über uns" → /pages/om-oss gav den engelska
+  // sidan på /de, mätt 2026-10-01). Länkar till butikens egna sidor får besökarens prefix.
+  function medPrefix(h, rot, dom) {
+    if (!h || !rot || rot === '/') return h;
+    var p = h.indexOf(dom + '/') === 0 ? h.slice(dom.length) : h;
+    if (p.charAt(0) !== '/' || p.charAt(1) === '/' || p.indexOf(rot) === 0 || p + '/' === rot) return h;
+    var del = p.split('/')[1].split('?')[0];
+    if (['pages', 'products', 'collections', 'policies', 'blogs', 'search'].indexOf(del) < 0) return h;
+    return (p === h ? '' : dom) + rot.slice(0, -1) + p;
+  }
+  function lankar(dom) { if (!rot || rot === '/' || !dom.querySelectorAll) return; dom.querySelectorAll('a[href]').forEach(function (a) { var h = a.getAttribute('href'), ny = medPrefix(h, rot, location.origin); if (ny !== h) a.setAttribute('href', ny); }); }
+  // Bäverlampans första bild bär svensk text ("3X kraftfullt LED-ljus", OCR 2026-10-01) och visas på
+  // startsidans steg och produktsidan. I världsläget får den produktens andra bild, som saknar text.
+  // Galleribilder med inbränd svensk text (OCR på alla 103 galleribilder i de 16 annonsprodukterna,
+  // 2026-10-01): "Effektiv fixering", "Fyra färgalternativ", "Multifunktionell spöhållare", "Före/Efter",
+  // "Setet i siffror", "Måttskiss", "Justerbart spänne", "Andas och leder bort fukt", "Storlek 41–46",
+  // "Storleksguide", "Storlek på utombordsmotorkåpa". Ingen av dem är en variantbild. Bilden och dess
+  // miniatyr tas bort INNAN temats bildspel startar (theme.min.js är defer, det här skriptet körs medan
+  // sidan läses in), och resten numreras om så att miniatyr, bildspel och zoom pekar på samma bild.
+  // Måtten i två av dem står i produkttexten i stället (granskning/svenska-bilder.mjs).
+  var GALLERI = /\\/files\\/(?:hf_20260817_0533(?:07|29|44)|hf_20260817_053401|klart-forefter-tankoverdrag-sv|b8-sotarset-fakta-se|mc-matt-sv|klart-(?:spanne|matt|karborre)-benskydd-sv|b10-taljset-fakta-se|15-sv|batmotor-tabell-sv|Namnlosdesign)[._]/;
+  function galleri(dom) {
+    if (!dom.querySelectorAll) return;
+    dom.querySelectorAll('[data-product-images]').forEach(function (g) {
+      var bort = [];
+      g.querySelectorAll('.product-main-slide').forEach(function (s) {
+        var i = s.querySelector('img[data-src], img[src]'), u = i && (i.getAttribute('data-src') || i.getAttribute('src'));
+        if (u && GALLERI.test(u)) { bort.push(s.getAttribute('data-index')); s.remove(); }
+      });
+      if (!bort.length) return;
+      g.querySelectorAll('.product__thumb-item').forEach(function (t) { if (bort.indexOf(t.getAttribute('data-index')) >= 0) t.remove(); });
+      var sl = g.querySelectorAll('.product-main-slide');
+      sl.forEach(function (s, n) { s.setAttribute('data-index', n); s.querySelectorAll('.photoswipe__image').forEach(function (p) { p.setAttribute('data-index', n + 1); }); });
+      g.querySelectorAll('.product__thumb-item').forEach(function (t, n) { t.setAttribute('data-index', n); t.querySelectorAll('[data-product-thumb]').forEach(function (a) { a.setAttribute('data-index', n); }); });
+      if (sl.length <= 1) { g.setAttribute('data-has-slideshow', 'false'); var th = g.querySelector('[data-product-thumbs]'); if (th) th.classList.add('medium-up--hide'); }
+    });
+  }
+  galleri(document);
+  var BILDBYTE = [[/3XKraftfulltLEDLjus((?:_[0-9x]+)?)\\.png/g, 'WhatsAppImage2026-03-02at09.54.06_1$1.jpg']];
+  function bytBild(v) { for (var i = 0; i < BILDBYTE.length; i++) v = v.replace(BILDBYTE[i][0], BILDBYTE[i][1]); return v; }
+  function bilder(dom) {
+    if (!dom.querySelectorAll) return;
+    dom.querySelectorAll('img, source').forEach(function (e) {
+      ['src', 'srcset', 'data-src', 'data-srcset', 'data-bgset'].forEach(function (a) { var v = e.getAttribute(a); if (v && v.indexOf('3XKraftfulltLEDLjus') >= 0) e.setAttribute(a, bytBild(v)); });
+    });
+  }
   // ⚠️ window.jdgmSettings skrivs INTE om. Prövat 2026-10-01: Judge.me:s nya widget (jm-*) blandade då
   // ihop språken ("Write a recension", "Reviews på andra språk", recensionsrubriken "Great skydd!").
   // Texterna byts i stället i sidan, som hela meningar, och aldrig inne i kundernas egna recensioner.
@@ -190,7 +243,7 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
     if (rot.querySelectorAll) rot.querySelectorAll('[aria-label]').forEach(function (e) { var a = e.getAttribute('aria-label'); if (a && e.closest(SEL) && O.exakt[a.trim()]) e.setAttribute('aria-label', tr(O.exakt[a.trim()])); });
   }
   var väntar = false;
-  function kör() { väntar = false; gå(document.body); }
+  function kör() { väntar = false; gå(document.body); lankar(document); bilder(document); }
   new MutationObserver(function () { if (!väntar) { väntar = true; requestAnimationFrame(kör); } }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   if (document.readyState !== 'loading') kör(); else document.addEventListener('DOMContentLoaded', kör);
 })();

@@ -22,7 +22,7 @@ Fråga mig om inloggning när du behöver den. Datorn är en Windows-dator.
 Admin: https://admin.shopify.com/store/4snrw0-mg
 
 ------------------------------------------------------------------------------
-STEG 1 — Tio färgnamn på åtta språk (Translate & Adapt)
+STEG 1 — Tolv färgnamn på åtta språk (Translate & Adapt)
 ------------------------------------------------------------------------------
 
 Sju produkter har färgen kopplad till Shopifys färgkategori. Då översätts färgen inte
@@ -51,9 +51,13 @@ produktsidan och i varukorgen, men kassan och mejlen kommer bara åt dem härifr
    | Vitt                | White      | Weiß        | Blanc       | Blanco       | Bianco    | Wit          | Biały       | Branco       |
    | Rött                | Red        | Rot         | Rouge       | Rojo         | Rosso     | Rood         | Czerwony    | Vermelho     |
    | Marin               | Navy       | Marineblau  | Bleu marine | Azul marino  | Blu navy  | Marineblauw  | Granatowy   | Azul-marinho |
+   | Lila                | Purple     | Lila        | Violet      | Morado       | Viola     | Paars        | Fioletowy   | Roxo         |
+   | Khaki               | Khaki      | Khaki       | Kaki        | Caqui        | Cachi     | Kaki         | Khaki       | Caqui        |
 
-   Andra färger i listan (Orange, Khaki, Silver, Light Gray …) är redan engelska.
-   Rör dem inte.
+   Står det redan en annan översättning i rutan (till exempel "Pink" på spanska,
+   italienska och portugisiska, "Purple" på tyska eller "Khaki" på franska): skriv över
+   den med ordet i tabellen. Andra färger i listan (Orange, Silver, Light Gray …) rör
+   du inte.
 6. Går metaobjekten inte att översätta (raden saknas, eller fälten är låsta): gör
    ingenting mer här, och skriv exakt vad appen visar.
 

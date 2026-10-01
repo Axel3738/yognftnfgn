@@ -10,6 +10,7 @@ import { PATCHAR, patchaFil, MARKOR } from '../tema/patch.mjs';
 import { fraktplan, saknadeScopes, vardeKarta, produktKarta, KONFIG } from '../bygg.mjs';
 import { granskaProdukt, siffror } from '../oversattning/granska.mjs';
 import { wwNamn, geoFor, farAktiveras, kampanjNamn } from '../annonser/bygg.mjs';
+import { rensa as rensaSvenskaBilder } from '../granskning/svenska-bilder.mjs';
 import { narmasteFormat, prompt } from '../annonser/bilder.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -160,6 +161,19 @@ test('apptexterna (bw-appord): reglerna i det genererade skriptet behåller sina
   assert.equal(a5.nodeValue, 'Verde - unavailable');
   const a4 = nod('Bra köp'); byt(a4, false);
   assert.equal(a4.nodeValue, 'Bra köp', 'okänd text rörs inte');
+  // Länkar utan språkprefix ("Mehr über uns" → /pages/om-oss) får besökarens prefix — bara butikens egna sidor.
+  const medPrefix = new Function(`${/(function medPrefix\(h, rot, dom\) \{[\s\S]*?\n  \})/.exec(skript)[1]}; return medPrefix;`)();
+  const D = 'https://beaverstoreco.com';
+  assert.equal(medPrefix(`${D}/pages/om-oss`, '/de/', D), `${D}/de/pages/om-oss`);
+  assert.equal(medPrefix('/collections/all?x=1', '/fr/', D), '/fr/collections/all?x=1');
+  assert.equal(medPrefix('/de/pages/om-oss', '/de/', D), '/de/pages/om-oss', 'redan rätt språk rörs inte');
+  assert.equal(medPrefix('/de', '/de/', D), '/de');
+  assert.equal(medPrefix('/pt-PT/pages/x', '/pt-pt/', D), '/pt-PT/pages/x', 'ett annat språkprefix rörs inte');
+  assert.equal(medPrefix('/cart', '/de/', D), '/cart', 'korgen och kassan rörs inte');
+  assert.equal(medPrefix('https://baverbutiken.se/pages/data-sharing-opt-out', '/de/', D), 'https://baverbutiken.se/pages/data-sharing-opt-out', 'andra domäner rörs inte');
+  assert.equal(medPrefix('//cdn.shopify.com/pages/x', '/de/', D), '//cdn.shopify.com/pages/x');
+  assert.equal(medPrefix('/pages/om-oss', '/', D), '/pages/om-oss', 'engelska roten rörs inte');
+  assert.equal(Oen.exakt['Sätesöverdrag'], 'Seat Cover');
   // "Recently viewed": bara /products/<handle>.js får språkprefixet.
   const medRot = new Function(`${/(function medRot\(u, rot\) \{[^\n]*\})/.exec(skript)[1]}; return medRot;`)();
   assert.equal(medRot('/products/abc.js', '/de/'), '/de/products/abc.js');
@@ -168,5 +182,29 @@ test('apptexterna (bw-appord): reglerna i det genererade skriptet behåller sina
   assert.equal(medRot('/cart/add.js', '/de/'), '/cart/add.js');
   assert.equal(medRot('/de/products/abc.js', '/de/'), '/de/products/abc.js');
   assert.equal(medRot('/products/abc', '/de/'), '/products/abc');
+  // Bäverlampans bild med svensk text byts mot den andra bilden, med storleken kvar.
+  const bytBild = new Function(`${/(var BILDBYTE = [^\n]*)/.exec(skript)[1]} ${/(function bytBild\(v\) \{[^\n]*\})/.exec(skript)[1]}; return bytBild;`)();
+  assert.equal(bytBild('//x/cdn/shop/files/3XKraftfulltLEDLjus_600x600.png?v=1'), '//x/cdn/shop/files/WhatsAppImage2026-03-02at09.54.06_1_600x600.jpg?v=1');
+  assert.equal(bytBild('/files/3XKraftfulltLEDLjus.png?width=360 360w, /files/3XKraftfulltLEDLjus.png?width=720 720w'), '/files/WhatsAppImage2026-03-02at09.54.06_1.jpg?width=360 360w, /files/WhatsAppImage2026-03-02at09.54.06_1.jpg?width=720 720w');
+  assert.equal(bytBild('/files/annan.png'), '/files/annan.png');
+  // Galleriets svenska bilder: rätt filer träffas, strandtofflornas "Namnlosdesign-2026-…" och andra rörs inte.
+  const GALLERI = new Function(`${/(var GALLERI = [^\n]*)/.exec(skript)[1]}; return GALLERI;`)();
+  for (const u of ['//d/cdn/shop/files/mc-matt-sv_{width}x.jpg?v=1', '//d/cdn/shop/files/Namnlosdesign_{width}x.png?v=1', '//d/cdn/shop/files/hf_20260817_053401_5af027d7_{width}x.png', '//d/cdn/shop/files/15-sv_{width}x.jpg', '//d/cdn/shop/files/klart-karborre-benskydd-sv_{width}x.jpg']) assert.ok(GALLERI.test(u), u);
+  for (const u of ['//d/cdn/shop/files/Namnlosdesign-2026-07-27T131715.079_{width}x.png', '//d/cdn/shop/files/mc-regn_{width}x.jpg', '//d/cdn/shop/files/hf_20260817_053410_x.png', '//d/cdn/shop/files/115-sv_{width}x.jpg', '//d/cdn/shop/files/damask-se-SV_{width}x.png']) assert.ok(!GALLERI.test(u), u);
+  assert.ok(skript.indexOf('galleri(document);') > 0, 'galleriet rensas direkt när skriptet läses, före temats bildspel');
+  assert.match(t, /body\.template-collection \.shopify-section\[id\$="__promo-grid"\]\{display:none!important\}/, 'kollektionens svenska banner döljs');
   assert.ok(Buffer.byteLength(t, 'utf8') < 250 * 1024, 'snippeten måste rymmas under Shopifys gräns för en Liquid-fil');
+});
+
+test('svenska bilder: tas bort ur översättningen, storlekstabellerna på kundens språk, en gång', () => {
+  const html = '<p>A</p><p><img src="//x/files/mc-matt-sv.jpg?v=1" alt=""></p><p>B</p>';
+  assert.equal(rensaSvenskaBilder(html, 'mc-kapell-220-120-regn-damm-uv', 'de'), '<p>A</p><p>B</p>');
+  const bat = rensaSvenskaBilder('<p><img src="//x/files/batmotor-tabell-sv.jpg"></p>', 'batmotorskydd-420d-heltackande-for-utombordare', 'fr');
+  assert.match(bat, /Guide des tailles/); assert.match(bat, /226 cm/); assert.doesNotMatch(bat, /batmotor-tabell-sv/);
+  const marin = '<h3>Features</h3><ul><li>x</li></ul><p>14 days</p>';
+  const en = rensaSvenskaBilder(marin, 'marin-motorholje-420d-universellt-skydd', 'en');
+  assert.match(en, /<\/ul>\n<h3>Size guide/); assert.match(en, /82 cm \/ 32\.3 in/); assert.match(en, /175–250 hp/);
+  assert.equal(rensaSvenskaBilder(en, 'marin-motorholje-420d-universellt-skydd', 'en'), en, 'tabellen läggs bara in en gång');
+  assert.match(rensaSvenskaBilder(marin, 'marin-motorholje-420d-universellt-skydd', 'pl'), /Pasujące silniki.*175–250 KM/s);
+  assert.equal(rensaSvenskaBilder(html, 'annan-produkt', 'de'), html, 'andra produkter rörs inte');
 });

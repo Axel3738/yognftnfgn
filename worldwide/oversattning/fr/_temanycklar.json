@@ -1,4 +1,18 @@
 {
  "products.product.stock_label.one": "Stock faible : plus que {{ count }} article",
- "products.product.stock_label.other": "Stock faible : plus que {{ count }} articles"
+ "products.product.stock_label.other": "Stock faible : plus que {{ count }} articles",
+ "general.newsletter_form.newsletter_email": "Inscrivez-vous à notre newsletter",
+ "contact.form.email": "E-mail",
+ "blogs.comments.email": "E-mail",
+ "customer.login.email": "E-mail",
+ "customer.register.email": "E-mail",
+ "customer.recover_password.email": "E-mail",
+ "general.password_page.signup_form_email_label": "E-mail",
+ "customer.recover_password.subtext": "Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.",
+ "customer.recover_password.success": "Nous vous avons envoyé un e-mail pour réinitialiser votre mot de passe.",
+ "general.password_page.signup_form_success": "Nous vous enverrons un e-mail juste avant l’ouverture !",
+ "collections.general.items_with_count.one": "{{ count }} produit",
+ "collections.general.items_with_count.other": "{{ count }} produits",
+ "products.general.save_html": "Économisez {{ saved_amount }}",
+ "products.general.sale": "Promo"
 }

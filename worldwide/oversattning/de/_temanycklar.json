@@ -1,4 +1,7 @@
 {
  "products.product.stock_label.one": "Nur noch {{ count }} Artikel auf Lager",
- "products.product.stock_label.other": "Nur noch {{ count }} Artikel auf Lager"
+ "products.product.stock_label.other": "Nur noch {{ count }} Artikel auf Lager",
+ "general.pagination.next": "Weiter",
+ "products.general.from_text_html": "Ab {{ price }}",
+ "shopify.online_store.spam_detection.disclaimer_html": "Diese Website ist durch hCaptcha geschützt. Es gelten die <a href=\"https://hcaptcha.com/privacy\">Datenschutzerklärung</a> und die <a href=\"https://hcaptcha.com/terms\">Nutzungsbedingungen</a> von hCaptcha."
 }

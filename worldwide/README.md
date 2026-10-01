@@ -94,7 +94,7 @@ Shopify att planen inte räcker är det Axels beslut (uppgradering kostar pengar
 Hela rapporten med tabellen: `granskning/2026-10-01.md`. Det viktigaste för nästa session:
 
 - **Temats världsläge byter apparnas svenska i sidan** (`tema/appord.json` → `snippets/bw-appord.liquid`,
-  version a4): Kachings paketväljare, Judge.me-rutans knappar och rubriker, korgens rabattrader,
+  version a9): Kachings paketväljare, Judge.me-rutans knappar och rubriker, korgens rabattrader,
   färgvärden kopplade till Shopifys färgkategori (`varden`) och Kachings "X - inte tillgängligt".
   Texterna jämförs med enkla mellanslag — Kaching sparar ibland två ("1x  MC-Kapell 218×118 cm").
   Ny svensk text i ett Kaching-erbjudande ⇒ en rad i `appord.json` + `tema/patch.mjs --tema <gid>
@@ -113,6 +113,22 @@ Hela rapporten med tabellen: `granskning/2026-10-01.md`. Det viktigaste för nä
   → `presentment_name`.
 - **Butiken stryper vid fler än två webbläsare** (429 och Cloudflares "Just a moment"): kör högst två
   `kund.mjs` samtidigt och aldrig matrisen bredvid.
+- **Bilder med inbränd svensk text** (OCR 2026-10-01 på alla 49 beskrivningsbilder och 103 galleribilder
+  i de 16 annonsprodukterna): beskrivningarnas tas bort ur ÖVERSÄTTNINGARNA och storleksguiderna blir
+  tabeller på kundens språk (`granskning/svenska-bilder.mjs --skriv`, `granska.mjs` rensar källan på
+  samma sätt); galleriets tas bort i världsläget innan temats bildspel startar (`GALLERI` i
+  `tema/patch.mjs`, a7 — `theme.min.js` är `defer`, så skriptet i sidfoten hinner först) och
+  numreras om. Kollektionens svenska reabanner döljs och Bäverlampans bild byts (a6). Ny produkt i
+  annonserna ⇒ kör OCR på dess bilder först. Spöhållaren har bara en bild kvar i världsläget.
+- **Kaching visar färgkategorins engelska namn** ("Purple", "Pink", "Khaki") där Shopify saknar
+  översättning av metaobjektet; `varden` byter dem på alla sju språk (a9). Kassan kräver Translate &
+  Adapt (`cowork/3-granskningen.txt` steg 1).
+- **Shopifys systemtexter går inte att skriva över i temat** (mätt 2026-10-01:
+  `shopify.online_store.spam_detection.disclaimer_html` i `locales/de.json` ändrade ingenting på
+  kontaktsidan). hCaptcha-meningen står kvar fel på tyska och portugisiska.
+- **Villkoren (terms-of-service) är Shopifys mall**: mallanteckningarna "[General disclaimer …]" och
+  "[NOTE TO MERCHANT …]" är borta ur de åtta översättningarna (`oversattning/<l>/_villkor-1/2.json`);
+  den svenska står kvar som den är.
 
 ## Lärdomar (mätta)
 

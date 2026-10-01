@@ -1,4 +1,12 @@
 {
  "products.product.stock_label.one": "Pocas unidades: queda {{ count }}",
- "products.product.stock_label.other": "Pocas unidades: quedan {{ count }}"
+ "products.product.stock_label.other": "Pocas unidades: quedan {{ count }}",
+ "products.general.save_html": "Ahorra {{ saved_amount }}",
+ "products.general.sale": "Oferta",
+ "products.general.from_text_html": "Desde {{ price }}",
+ "products.product.add_to_cart": "Añadir al carrito",
+ "layout.customer.log_in": "Iniciar sesión",
+ "cart.general.empty": "Tu carrito está vacío.",
+ "cart.general.continue_browsing_html": "Sigue explorando <a href='{{ url }}'>aquí</a>.",
+ "general.404.subtext_html": "<p>La página que buscas no existe. </p><p><a href='{{ url }}'>Sigue comprando</a></p>"
 }

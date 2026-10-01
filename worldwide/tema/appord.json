@@ -1,7 +1,7 @@
 {
  "_om": "Kaching Bundles (paketväljaren) och Judge.me (recensionsrutan) visar sina svenska texter även utomlands — Kachings språkväljare har bara svenska och Judge.me:s inställningar gick inte att nå (Cowork 2026-09-30). snippets/bw-appord.liquid (ur worldwide/tema/patch.mjs) byter texterna i sidan, BARA i världsläget. Nycklarna är den svenska texten exakt som apparna ritar den; [[n]] = ett tal, [[sprak]] = ett språknamn. en är reserven.",
  "exakt": {
-  "14 Dagars Ångerrätt & Svensk kundsupport": {"en":"14-day returns · Swedish customer support","de":"14 Tage Rückgaberecht · Schwedischer Kundenservice","fr":"14 jours pour changer d’avis · Service client suédois","es":"14 días para cambiar de opinión · Atención al cliente sueca","it":"14 giorni per cambiare idea · Assistenza clienti svedese","nl":"14 dagen bedenktijd · Zweedse klantenservice","pl":"14 dni na zmianę decyzji · Szwedzka obsługa klienta","pt-PT":"14 dias para mudar de ideia · Apoio ao cliente sueco"},
+  "14 Dagars Ångerrätt & Svensk kundsupport": {"en":"14-day returns · Customer support from Sweden","de":"14 Tage Rückgaberecht · Kundenservice aus Schweden","fr":"14 jours pour changer d’avis · Service client basé en Suède","es":"14 días para cambiar de opinión · Atención al cliente desde Suecia","it":"14 giorni per cambiare idea · Assistenza clienti dalla Svezia","nl":"14 dagen bedenktijd · Klantenservice vanuit Zweden","pl":"14 dni na zmianę decyzji · Obsługa klienta ze Szwecji","pt-PT":"14 dias para mudar de ideia · Apoio ao cliente a partir da Suécia"},
   "1 st": {"en":"1 pack","de":"1 Stück","fr":"1 pièce","es":"1 unidad","it":"1 pezzo","nl":"1 stuk","pl":"1 szt.","pt-PT":"1 unidade"},
   "2 st": {"en":"2 pack","de":"2 Stück","fr":"2 pièces","es":"2 unidades","it":"2 pezzi","nl":"2 stuks","pl":"2 szt.","pt-PT":"2 unidades"},
   "3 st": {"en":"3 pack","de":"3 Stück","fr":"3 pièces","es":"3 unidades","it":"3 pezzi","nl":"3 stuks","pl":"3 szt.","pt-PT":"3 unidades"},
@@ -33,6 +33,7 @@
   "Grön": {"en":"Green","de":"Grün","fr":"Vert","es":"Verde","it":"Verde","nl":"Groen","pl":"Zielony","pt-PT":"Verde"},
   "Svart": {"en":"Black","de":"Schwarz","fr":"Noir","es":"Negro","it":"Nero","nl":"Zwart","pl":"Czarny","pt-PT":"Preto"},
   "Fri Frakt & 30 Dagars Öppet Köp": {"en":"Free Shipping & 14 Days to Change Your Mind","de":"Kostenloser Versand & 14 Tage Rückgaberecht","fr":"Livraison gratuite et 14 jours pour changer d'avis","es":"Envío gratis y 14 días para cambiar de opinión","it":"Spedizione gratuita e 14 giorni per cambiare idea","nl":"Gratis verzending & 14 dagen bedenktijd","pl":"Darmowa dostawa i 14 dni na zmianę decyzji","pt-PT":"Portes grátis e 14 dias para mudar de ideia"},
+  "Sätesöverdrag": {"en":"Seat Cover","de":"Sitzbezug","fr":"Housse de siège","es":"Funda de asiento","it":"Coprisedile","nl":"Zadelhoes","pl":"Pokrowiec na siedzisko","pt-PT":"Capa de assento"},
   "1x Sätesöverdrag": {"en":"1x Seat Cover","de":"1x Sitzbezug","fr":"1x Housse de siège","es":"1x Funda de asiento","it":"1x Coprisedile","nl":"1x Zadelhoes","pl":"1x Pokrowiec na siedzisko","pt-PT":"1x Capa de assento"},
   "2x Sätesöverdrag": {"en":"2x Seat Cover","de":"2x Sitzbezug","fr":"2x Housse de siège","es":"2x Funda de asiento","it":"2x Coprisedile","nl":"2x Zadelhoes","pl":"2x Pokrowiec na siedzisko","pt-PT":"2x Capa de assento"},
   "1x Skyddshölje": {"en":"1x Marine Engine Cover","de":"1x Bootsmotor-Abdeckung","fr":"1x Housse de moteur marin","es":"1x Funda para motor marino","it":"1x Copertura per motore","nl":"1x Bootmotorhoes","pl":"1x Pokrowiec na silnik","pt-PT":"1x Capa para motor marítimo"},
@@ -217,7 +218,7 @@
   "Bäverbutiken.se": {"en":"Beaver Store","de":"Beaver Store","fr":"Beaver Store","es":"Beaver Store","it":"Beaver Store","nl":"Beaver Store","pl":"Beaver Store","pt-PT":"Beaver Store"}
  },
  "monster": [
-  {"sv":"^Du sparar ([\\d%,.\\s ]+%)$","en":"You save [[n]]","de":"Sie sparen [[n]]","fr":"Vous économisez [[n]]","es":"Ahorras [[n]]","it":"Risparmi [[n]]","nl":"Je bespaart [[n]]","pl":"Oszczędzasz [[n]]","pt-PT":"Poupa [[n]]"},
+  {"sv":"^Du sparar ([\\d%,.\\s ]+%)$","en":"You save [[n]]","de":"Sie sparen [[n]]","fr":"Vous économisez [[n]]","es":"Ahorras [[n]]","it":"Risparmi [[n]]","nl":"Je bespaart [[n]]","pl":"Oszczędzasz [[n]]","pt-PT":"Poupe [[n]]"},
   {"sv":"^([\\d\\s ]+) recensioner$","en":"[[n]] reviews","de":"[[n]] Bewertungen","fr":"[[n]] avis","es":"[[n]] opiniones","it":"[[n]] recensioni","nl":"[[n]] beoordelingen","pl":"[[n]] opinii","pt-PT":"[[n]] avaliações"},
   {"sv":"^1 recension$","en":"1 review","de":"1 Bewertung","fr":"1 avis","es":"1 opinión","it":"1 recensione","nl":"1 beoordeling","pl":"1 opinia","pt-PT":"1 avaliação"},
   {"sv":"^Baserat på ([\\d\\s ]+) recensioner$","en":"Based on [[n]] reviews","de":"Basierend auf [[n]] Bewertungen","fr":"Basé sur [[n]] avis","es":"Basado en [[n]] opiniones","it":"Basato su [[n]] recensioni","nl":"Gebaseerd op [[n]] beoordelingen","pl":"Na podstawie [[n]] opinii","pt-PT":"Com base em [[n]] avaliações"},
@@ -457,7 +458,7 @@
   "reply_name": {"en":"Beaver Store","de":"Beaver Store","fr":"Beaver Store","es":"Beaver Store","it":"Beaver Store","nl":"Beaver Store","pl":"Beaver Store","pt-PT":"Beaver Store"},
   "reply_name_text": {"en":"Beaver Store","de":"Beaver Store","fr":"Beaver Store","es":"Beaver Store","it":"Beaver Store","nl":"Beaver Store","pl":"Beaver Store","pt-PT":"Beaver Store"}
  },
- "_varden_om": "Alternativvärden som är kopplade till Shopifys färgkategori (metaobjekt shopify--color-pattern) går inte att översätta som vanliga alternativvärden och stod på svenska på produktsidan, i korgen och i kassan (mätt 2026-10-01: spöhållaren, kameran, MC-kapellet m.fl., 7 produkter). Temat byter dem i produktens väljare och korgens rad; kassan och mejlen kräver översättningen i Translate & Adapt (worldwide/cowork/3-granskningen.txt).",
+ "_varden_om": "Alternativvärden som är kopplade till Shopifys färgkategori (metaobjekt shopify--color-pattern) går inte att översätta som vanliga alternativvärden och stod på svenska på produktsidan, i korgen och i kassan (mätt 2026-10-01: spöhållaren, kameran, MC-kapellet m.fl., 7 produkter). Temat byter dem i produktens väljare och korgens rad; kassan och mejlen kräver översättningen i Translate & Adapt (worldwide/cowork/3-granskningen.txt). Pink/Purple/Khaki (tillagda 2026-10-01 kväll): färgkategorins engelska namn som stod kvar på es/it/pt-PT (\"Pink\"), de (\"Purple\") och fr (\"Khaki\") bland översatta färger — bara det språket får bytet.",
  "varden": {
   "Grön": {"en":"Green","de":"Grün","fr":"Vert","es":"Verde","it":"Verde","nl":"Groen","pl":"Zielony","pt-PT":"Verde"},
   "Rosa": {"en":"Pink","de":"Rosa","fr":"Rose","es":"Rosa","it":"Rosa","nl":"Roze","pl":"Różowy","pt-PT":"Rosa"},
@@ -468,6 +469,9 @@
   "Gul": {"en":"Yellow","de":"Gelb","fr":"Jaune","es":"Amarillo","it":"Giallo","nl":"Geel","pl":"Żółty","pt-PT":"Amarelo"},
   "Vitt": {"en":"White","de":"Weiß","fr":"Blanc","es":"Blanco","it":"Bianco","nl":"Wit","pl":"Biały","pt-PT":"Branco"},
   "Rött": {"en":"Red","de":"Rot","fr":"Rouge","es":"Rojo","it":"Rosso","nl":"Rood","pl":"Czerwony","pt-PT":"Vermelho"},
-  "Marin": {"en":"Navy","de":"Marineblau","fr":"Bleu marine","es":"Azul marino","it":"Blu navy","nl":"Marineblauw","pl":"Granatowy","pt-PT":"Azul-marinho"}
+  "Marin": {"en":"Navy","de":"Marineblau","fr":"Bleu marine","es":"Azul marino","it":"Blu navy","nl":"Marineblauw","pl":"Granatowy","pt-PT":"Azul-marinho"},
+  "Pink": {"de":"Rosa","fr":"Rose","es":"Rosa","it":"Rosa","nl":"Roze","pl":"Różowy","pt-PT":"Rosa"},
+  "Purple": {"de":"Lila","fr":"Violet","es":"Morado","it":"Viola","nl":"Paars","pl":"Fioletowy","pt-PT":"Roxo"},
+  "Khaki": {"fr":"Kaki","es":"Caqui","it":"Cachi","nl":"Kaki","pt-PT":"Caqui"}
  }
 }
