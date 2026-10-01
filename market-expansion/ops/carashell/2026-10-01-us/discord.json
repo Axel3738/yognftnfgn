@@ -1,0 +1,23 @@
+{
+ "brand": "CaraShell",
+ "butik": "carashell/takskyddet",
+ "datum": "2026-10-01",
+ "lage": "brief",
+ "server": "CaraShell — OPS",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "🇺🇸 US translation round: the queue was empty in both statuses — nothing new to translate today",
+  "SE-ACTIVE to be translated: 0 rows. Approved: 72 rows, every one already live in the US account",
+  "The queue now targets the new main campaign from the register: Taköverdrag 5 reasons USA TEST (120251633656390435)",
+  "Fixed: the market watch only looked at campaigns whose name contains CARASHELL_US_, so the new main campaign was outside it — placements were never checked there and its spend was never counted",
+  "The watch now reads the register's target campaign explicitly as well, the same way the company dashboard reads ad accounts by id",
+  "Re-run after the fix: 13 of 13 ad sets on the right placements across both campaigns, 107 ads active",
+  "Spend yesterday 17 319 kr and today 7 988 kr across 6 placements — all of it inside the feed, nothing outside",
+  "Both landing pages, all product pages and the checkout read as English, checkout defaults to United States"
+ ],
+ "varningar": [
+  "The old CARASHELL_US_Taköverdrag campaign is still PAUSED with 2 246 kr spend — owner's decision, nothing uploaded there.",
+  "The previous main campaign (the lagerrensning one) is still ACTIVE at 6 000 kr/day beside the new one at 10 000 kr/day."
+ ],
+ "nasta_korning": "2026-10-02"
+}

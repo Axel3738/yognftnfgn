@@ -3053,3 +3053,80 @@ postad i `#annons-uppladdning` (`1555220498533716029`), ingen ping.
 
 Presentvinkelns två adsets (`- G` och `- GT`) står kvar orörda i väntan på Axels
 besked, obesvarat sedan 2026-09-23.
+
+---
+
+## 2026-10-01 — speglingen: 0 speglade, 3 stoppade, EN-kön tom
+
+Samma tre rader som i går i `CaraShell SE ready to be active`, alla stoppade —
+inget uppladdat, ingen status ändrad, inga nya kommentarer (stopp-kommentarerna
+från tidigare körningar står kvar på alla tre raderna).
+
+| Källrad | Format | Stoppskäl |
+|---|---|---|
+| `Takoverdrag_FD_2_2` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | video | nämner butiken — **åttonde dygnet** (24/9–1/10) |
+
+**`CaraShell EN ready to be active` är tom** — i går gick de tre sista raderna
+(`SP_4_H2`, `CS_12_H1`, `UG_2_H1`) till `Approved` när US-annonserna låg uppe,
+och inga nya har kommit in. Ingen rad väntar alltså på USA.
+
+Lästa live i dag: SE-kampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 |
+2026-09-11` ACTIVE med 11 adsets, NO-kampanjen `CARASHELL_NO_Takovertrekket`
+ACTIVE med 12 adsets, pris SE 1 129 kr och NO 1 106 NOK ur butiken (båda
+stämmer mot creativens 1 129 — priset är inte stoppet på någon rad). 162
+källannonser lästa i Bäverbutikens konto. Metas tre konton svarade utan
+strypning i dag, till skillnad från i går (~50 minuters kod 17 på UK-kontot).
+
+Inget loggat i registret: `register.mjs log` vägrar 0.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555231858881593357`).
+`action_axel` skrevs om för hand igen, av samma skäl som 2026-09-30: verktyget
+lägger fars dag-raderna i ACTION NEEDED med texten "decide whether the editor
+should make a store version", men **de två fars dag-bildannonserna kan ALDRIG
+speglas, och det är inte Axels beslut** — de ligger som förklaring under
+Warnings, och bara `GT_11_H1` står kvar som hans beslut.
+
+---
+
+## USA-runda 18 — 2026-10-01 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i båda statusarna.** `SE-ACTIVE to be translated` 0 rader, `Approved`
+72 rader som alla redan bär sin US-annons. Ingenting översatt, ingenting
+uppladdat, ingen HeyGen-kredit rörd.
+
+Kön pekar sedan 2026-09-30 på registrets målkampanj **`Taköverdrag 5 reasons
+USA TEST`** (`120251633656390435`, Axels byte) i stället för namnsökningen —
+den varningen skrivs ut varje körning och är rätt.
+
+### ⛔ Fyndet: den nya huvudkampanjen låg UTANFÖR marknadsvakten
+
+Vakten letar kampanjer på namnbasen `CARASHELL_US_`. Axels nya huvudkampanj
+heter "Taköverdrag 5 reasons USA TEST" och matchade alltså inte: **dess adsets
+placeringskontrollerades aldrig, och dess spend räknades inte** — trots att den
+bär 10 000 kr/dag mot den gamlas 6 000.
+
+Kampanjen råkade ha rätt placeringar (läst i Meta: `facebook, instagram` /
+`feed` / `stream`), så ingenting hade läckt. Men en kampanj utanför vakten är
+exakt det läge natten 26→27/9 uppstod ur, och den här gången hade vakten
+rapporterat "✅ allt i tillåtna placeringar" medan den inte ens tittat.
+
+**Rättat samma körning** (`factory/marknadskoll.mjs`): `malkampanjIdn()` läser
+registrets `malkampanj.<marknad>.kampanj_id` för butikens alla produkter, och
+kampanjen hämtas uttryckligen på id — samma princip som `extraIds` i
+stonebite, där `me/adaccounts` inte listar "nya kungen". Fel konto eller inte
+ACTIVE ⇒ den hoppas. Spenden läses med ett andra insights-anrop filtrerat på
+`campaign.id IN [...]`, och dubbletter faller bort på
+kampanjnamn + plattform + position. 8 tester gröna.
+
+**Efter rättningen, samma dag:** 2 kampanjer, **13 av 13 adsets rätt**, 107
+annonser ACTIVE, spend i går **17 319 kr** och i dag **7 988 kr** på 6
+placeringar — allt i flödet. Före rättningen visade samma körning 7 500 respektive
+2 958 kr, alltså bara den gamla kampanjen. Båda landningssidorna
+(lagerrensningen och listiclen `rv-roof-cover-5-reasons`), alla produktsidor och
+kassan lästa som amerikansk kund: engelska, United States förvalt.
+
+**Lärdomen, samma som flera gånger förr i repot:** ett namnmönster är inte en
+lista. Vakten som letar på prefix ser inte kampanjen ägaren själv byggde i
+appen — och den säger inte "jag hittade inget", den säger "allt är bra".

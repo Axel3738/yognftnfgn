@@ -542,8 +542,23 @@ loggan utan .SE.
   - Rättas i Judge.me, en recension i taget: Reviews → "⋯" på recensionen → Review details →
     "Detected review language" → Swedish → Save
     ([Sorting reviews by language](https://judge.me/help/en/articles/10506442-sorting-reviews-by-language)).
-- Läses om med **`node matstrumpor/marknader/judgeme-koll.mjs`**: alla fjorton språk, `--visa` visar
-  varje recension, och `--med-webblasare` visar vad en Chrome-kund ser.
+  - ✅ **Rättat 2026-10-01 kväll av Cowork** (`cowork/5-judgeme-texter.txt` del B): alla sju på
+    sushistrumporna står nu som Swedish. I adminen heter fältet "Upptäckt recensionsspråk". Widgetdatan
+    visar 0 recensioner märkta engelska på sushistrumporna. **Engelska sidan läst som kund efteråt:** de
+    svenska recensionerna översätts till engelska ("Show original (Swedish)"), och ingen svensk text står
+    överst längre. ⚠️ **Svenska sidan visade samma kväll fortfarande den gamla märkningen** på Kent, Wide
+    Pia och Niklas: "Visa original (engelska)" under svensk text. Det ser ut som Judge.me:s cache av
+    produktens data, för widgetdatan är redan rätt. Kolla igen nästa dag.
+  - ⚠️ **En åttonde Shop-app-recension var också märkt engelska:** Irénes på **ätpinnarna**
+    (`sushipinnar-i-akta-tra`, **olistad** i Shopify, så kunden når sidan bara via länk). Texten är
+    "jättefina strumpor och rolig som julklapp". Cowork såg den men lät den vara, eftersom den inte stod i
+    prompten.
+  - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
+    varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
+    ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
+- Läses om med **`node matstrumpor/marknader/judgeme-koll.mjs`**: alla fjorton språk, antalet i rutan
+  ("11 recenzji"), språkmärkningen sist. `--visa` visar varje recension, och `--med-webblasare` visar
+  vad en Chrome-kund ser.
 - **Mätt igen 2026-10-01 ~10:30 CEST (~36 timmar efter inställningen):** fortfarande 0 översatta recensioner
   på de, nb, fr, ja och zh-TW, bara knappen "Översätt …". Rubrikerna är rätt på de, nb, fr och en, men
   japanska och kinesiska sidan visar "Kundrecensioner" och "Recensioner på andra språk" på svenska —
@@ -560,10 +575,10 @@ loggan utan .SE.
   - **Antalet i rutan:** böjningen var fel på finska ("11 arvostelut", ska vara "11 arvostelua") och polska
     ("11 recenzje", ska vara "11 recenzji"). Det är Review Widget-fältet "Review word (plural)" per språk
     (Inställningar → Widgetar → Review Widget → Text → "Currently editing in"), i
-    `cowork/5-judgeme-texter.txt`. **Finskan rättad 2026-10-01** av Cowork, och läst som kund: "11
-    arvostelua". **Polskan står kvar på "11 recenzje".** Judge.me-panelen blev tom och laddade om sig
-    varje gång Cowork valde Polska, två försök, och Coworks klick hamnade fel i fönstret. Polskans
-    "recenzji" blir fel igen vid 22–24 recensioner (då "recenzje").
+    `cowork/5-judgeme-texter.txt`. **Finskan och polskan är rättade 2026-10-01** av Cowork och lästa som
+    kund: "11 arvostelua" och "11 recenzji". Polskan krävde tre försök. Judge.me-panelen blev tom och
+    laddade om sig när Cowork valde Polska, tills Chrome startats om. Polskans "recenzji" blir fel igen
+    vid 22–24 recensioner (då "recenzje").
 - ✅ **Recensionerna översätts när kunden rullar fram dem: 14 av 14 språk, mätt 2026-10-01 16:15 CEST**
   (48 timmar efter inställningen, `judgeme-koll.mjs`, webbläsarens översättare av). De recensioner
   som syns först står på sidans språk, med knappen "Visa original (svenska)" på samma språk. Exempel:

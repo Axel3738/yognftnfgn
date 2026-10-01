@@ -223,16 +223,53 @@ async function metaDel() {
   return m;
 }
 
-async function hamtaKampanjer(api, alla, act, prefix) {
-  const lista = await alla(`act_${act}/campaigns`, { fields: 'id,name,status,effective_status,daily_budget', filtering: JSON.stringify([{ field: 'name', operator: 'CONTAIN', value: prefix }]) });
-  return (lista ?? []).filter((k) => k.effective_status === 'ACTIVE');
+/**
+ * Ägarens målkampanjer för marknaden, ur factory/produkter/register.json.
+ *
+ * ⚠️ Mätt 2026-10-01: vakten letade kampanjer på namnbasen `CARASHELL_US_`,
+ * och Axels nya huvudkampanj i USA heter "Taköverdrag 5 reasons USA TEST"
+ * (registrets `malkampanj.US`, bytt 2026-09-30). Den låg alltså UTANFÖR
+ * vakten: placeringarna rättades aldrig där, och spenden räknades inte.
+ * Kampanjen råkade bära rätt placeringar, men en kampanj utanför vakten är
+ * precis det läge natten 26→27/9 uppstod ur. Målkampanjen läses därför
+ * uttryckligen, som `extraIds` i stonebite — namnet får aldrig avgöra ensamt.
+ */
+function malkampanjIdn(butikId, marknad, rot = ROT) {
+  const fil = join(rot, 'produkter', 'register.json');
+  if (!existsSync(fil)) return [];
+  let reg;
+  try { reg = JSON.parse(readFileSync(fil, 'utf8')); } catch { return []; }
+  const ut = [];
+  for (const [nyckel, post] of Object.entries(reg?.poster ?? {})) {
+    if (String(nyckel).split('/')[0] !== butikId) continue;
+    const id = post?.malkampanj?.[String(marknad).toUpperCase()]?.kampanj_id;
+    if (id && !ut.includes(String(id))) ut.push(String(id));
+  }
+  return ut;
 }
 
-async function hamtaSpend(alla, act, prefix, preset) {
-  return (await alla(`act_${act}/insights`, {
-    level: 'campaign', fields: 'campaign_name,spend,impressions,actions', breakdowns: 'publisher_platform,platform_position',
-    filtering: JSON.stringify([{ field: 'campaign.name', operator: 'CONTAIN', value: prefix }]), date_preset: preset,
-  })) ?? [];
+async function hamtaKampanjer(api, alla, act, prefix, extraIds = []) {
+  const lista = await alla(`act_${act}/campaigns`, { fields: 'id,name,status,effective_status,daily_budget', filtering: JSON.stringify([{ field: 'name', operator: 'CONTAIN', value: prefix }]) });
+  const ut = (lista ?? []).filter((k) => k.effective_status === 'ACTIVE');
+  for (const id of extraIds) {
+    if (ut.some((k) => String(k.id) === String(id))) continue;
+    try {
+      const k = await api(id, { params: { fields: 'id,name,status,effective_status,daily_budget,account_id' } });
+      if (String(k.account_id) !== String(act)) continue;   // fel konto = inte vår att vakta
+      if (k.effective_status !== 'ACTIVE') continue;
+      ut.push(k);
+    } catch { /* borta eller oläsbar: namnsökningens kampanjer står kvar */ }
+  }
+  return ut;
+}
+
+async function hamtaSpend(alla, act, prefix, preset, extraIds = []) {
+  const bas = { level: 'campaign', fields: 'campaign_name,spend,impressions,actions', breakdowns: 'publisher_platform,platform_position', date_preset: preset };
+  const rader = (await alla(`act_${act}/insights`, { ...bas, filtering: JSON.stringify([{ field: 'campaign.name', operator: 'CONTAIN', value: prefix }]) })) ?? [];
+  if (!extraIds.length) return rader;
+  const extra = (await alla(`act_${act}/insights`, { ...bas, filtering: JSON.stringify([{ field: 'campaign.id', operator: 'IN', value: extraIds }]) })) ?? [];
+  const sedda = new Set(rader.map((r) => `${r.campaign_name}|${r.publisher_platform}|${r.platform_position}`));
+  return [...rader, ...extra.filter((r) => !sedda.has(`${r.campaign_name}|${r.publisher_platform}|${r.platform_position}`))];
 }
 
 // --------------------------------------------------------------- Chromium
@@ -353,7 +390,9 @@ export async function kor({ nyckel, marknad, torr = false, utanSidor = false, lo
   const r = { brand, butik: butikId, marknad: M, datum, act: m.act, prefix, country: m.country, placeringar: m.placeringar ?? null, torr, kampanjer: [], adsets: [], senastAndrad: null, spend: {}, spendUtanfor: {}, spendFore: {}, sidor: null };
 
   // 1. Placeringarna.
-  const kampanjer = await hamtaKampanjer(api, alla, m.act, prefix);
+  const malIdn = malkampanjIdn(butikId, M);
+  r.malkampanjer = malIdn;
+  const kampanjer = await hamtaKampanjer(api, alla, m.act, prefix, malIdn);
   const annonser = [];
   for (const k of kampanjer) {
     const adsets = await alla(`${k.id}/adsets`, { fields: 'id,name,status,effective_status,targeting,updated_time' });
@@ -395,7 +434,7 @@ export async function kor({ nyckel, marknad, torr = false, utanSidor = false, lo
     const start = preset === 'yesterday' ? idagUTC - 86400e3 : idagUTC;
     r.spendFore[namn] = Boolean(r.senastAndrad && Date.parse(r.senastAndrad) >= start - 2 * 3600e3);
     try {
-      const rows = await hamtaSpend(alla, m.act, prefix, preset);
+      const rows = await hamtaSpend(alla, m.act, prefix, preset, malIdn);
       r.spend[namn] = rows;
       r.spendUtanfor[namn] = tillatna ? spendUtanfor(rows, tillatna) : [];
     } catch (e) { r.spend[namn] = []; r.spendUtanfor[namn] = []; logg(`⚠️ spend ${namn} gick inte att läsa: ${e.message.split('\n')[0]}`); }

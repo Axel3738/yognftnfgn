@@ -4,6 +4,7 @@
 //   node matstrumpor/marknader/judgeme-koll.mjs --produkt <handle>
 //   node matstrumpor/marknader/judgeme-koll.mjs --bara de,pl,ja
 //   node matstrumpor/marknader/judgeme-koll.mjs --med-webblasare   # som en Chrome-kund, se nedan
+//   node matstrumpor/marknader/judgeme-koll.mjs --bara-markning    # bara språkmärkningen, se sist
 //
 // Axel slog på Judge.me:s flerspråk + "Translate reviews automatically" 2026-09-29. Judge.me översätter
 // en recension FÖRST när den rullas fram på skärmen: "Översätter..." och sedan texten på sidans språk
@@ -25,6 +26,12 @@
 //   knapp     bara knappen "Översätt …": texten står kvar på originalspråket
 //   samma     ingen knapp: Judge.me anser att recensionen redan är på sidans språk
 //   pågår / misslyckad  översättningen blev inte klar under väntan, eller Judge.me gav upp
+//
+// Sist kommer SPRÅKMÄRKNINGEN. Judge.me märkte Shop-appens recensioner som engelska, också de svenska
+// (mätt 2026-10-01: 8 av 8, på sushistrumporna och ätpinnarna). En svensk recension märkt engelska
+// hamnar överst på den engelska sidan och oöversatt. Listan visar varje recension märkt `en` med
+// början av texten, så att den som läser ser vilket språk den faktiskt är skriven på.
+// Rättas i Judge.me: Reviews → "⋯" → Review details → "Detected review language".
 
 const PLAYWRIGHT = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs';
 const CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
@@ -33,6 +40,8 @@ const varde = (flagga) => (arg.includes(flagga) ? arg[arg.indexOf(flagga) + 1] :
 const handle = varde('--produkt') || 'sushi-strumpor';
 const bara = (varde('--bara') || '').split(',').filter(Boolean);
 const medWebblasare = arg.includes('--med-webblasare');
+const baraMarkning = arg.includes('--bara-markning');
+const BUTIK = '1r46tp-qx.myshopify.com';
 
 // Utlandet går via matstrumpor.com sedan 2026-09-29. .se/<språk> och .eu fungerar kvar, men inget länkar dit.
 const SIDOR = [
@@ -75,9 +84,13 @@ function lasRutan() {
       text: rent(e.querySelector('.jdgm-review-content__body-content, .jm-review-content__body')?.innerText).slice(0, 90),
     };
   });
+  // Antalet i rutans huvud ("11 recenzji"): första synliga textnod med tal + ord i recensionsrutan.
+  const rot = document.querySelector('.jdgm-review-widget') ?? document;
+  const antalText = [...rot.querySelectorAll('*')].find((e) => e.children.length === 0 && e.offsetParent !== null && /^\d+\s+\S+$/.test(rent(e.textContent)))?.textContent;
   return {
     lang: document.documentElement.lang,
     titel: falt('widget_title'),
+    antal: rent(antalText),
     paslagen: /"widget_translate_review_content_enabled":true/.test(skript),
     metod: falt('widget_translate_review_content_method'),
     webblasare: typeof window.Translator !== 'undefined',
@@ -85,6 +98,8 @@ function lasRutan() {
   };
 }
 
+// Sidorna: varje språk som kund i Chromium.
+async function sidorna() {
 const { chromium } = await import(PLAYWRIGHT);
 const b = await chromium.launch({ headless: true, executablePath: CHROME, args: ['--no-sandbox', '--ignore-certificate-errors'], proxy: process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined });
 const ut = [];
@@ -134,7 +149,54 @@ for (const r of ut) {
   const franText = Object.entries(fran).map(([k, v]) => `${v} från ${k}`).join(', ');
   const ok = n('knapp') + n('pagar') + n('misslyckad') === 0 && r.recensioner.length > 0;
   if (ok) klara++;
-  console.log(`${ok ? '✅' : '⏳'} ${r.sprak.padEnd(5)} "${r.titel}" · ${r.recensioner.length} visas: översatta ${n('oversatt')}${franText ? ` (${franText})` : ''}, bara knapp ${n('knapp')}, samma språk ${n('samma')}, pågår ${n('pagar')}, misslyckade ${n('misslyckad')} · api ${r.api} · inställning ${r.paslagen}/${r.metod}`);
+  console.log(`${ok ? '✅' : '⏳'} ${r.sprak.padEnd(5)} "${r.titel}" · "${r.antal}" · ${r.recensioner.length} visas: översatta ${n('oversatt')}${franText ? ` (${franText})` : ''}, bara knapp ${n('knapp')}, samma språk ${n('samma')}, pågår ${n('pagar')}, misslyckade ${n('misslyckad')} · api ${r.api} · inställning ${r.paslagen}/${r.metod}`);
   if (arg.includes('--visa')) for (const x of r.recensioner) console.log(`      ${x.sektion.padEnd(5)} ${x.namn.padEnd(14)} ${x.tillstand.padEnd(10)} ${x.knapp.padEnd(34)} ${x.text}`);
 }
 console.log(`\n${klara} av ${ut.filter((r) => !r.fel).length} språk visar recensionerna på sidans språk utan att kunden klickar "Översätt".`);
+}
+
+// Språkmärkningen: varje recension Judge.me märkt engelska, på alla produkter kunden kan nå (också
+// olistade, som ätpinnarna). Produkterna läses ur Shopify när nycklarna finns, annars ur products.json
+// (då saknas de olistade, och det står i utskriften). Med primary_language=en ligger de engelskmärkta
+// i widgetdatans `primary_language_reviews`.
+async function produkterna() {
+  try {
+    const { lasButik, skapaKlient } = await import('../../sparning/butik.mjs');
+    const k = await skapaKlient(lasButik('matstrumpor'));
+    const d = await k.graphql('{ products(first: 100) { nodes { legacyResourceId handle status } } }');
+    const nar = d.products.nodes.filter((p) => p.status === 'ACTIVE' || p.status === 'UNLISTED');
+    return { kalla: 'Shopify (aktiva och olistade)', produkter: nar.map((p) => ({ id: p.legacyResourceId, handle: p.handle })) };
+  } catch (e) {
+    const j = await (await fetch('https://matstrumpor.se/products.json?limit=250')).json();
+    return { kalla: `products.json, utan olistade produkter (Shopify gick inte: ${e.message.split('\n')[0].slice(0, 120)})`, produkter: j.products.map((p) => ({ id: String(p.id), handle: p.handle })) };
+  }
+}
+async function markningen() {
+  const { kalla, produkter } = await produkterna();
+  const en = [];
+  let totalt = 0;
+  for (const p of produkter) {
+    const sett = new Set();
+    for (let sida = 1; sida <= 20; sida++) {
+      const u = `https://judge.me/reviews/reviews_for_widget?url=${BUTIK}&shop_domain=${BUTIK}&platform=shopify&page=${sida}&per_page=10&product_id=${p.id}&primary_language=en&translation_locale=en`;
+      const j = await (await fetch(u)).json();
+      if (sida === 1) totalt += Number(j.number_of_reviews ?? 0);
+      const rader = (j.primary_language_reviews ?? []).filter((r) => r?.uuid && !sett.has(r.uuid));
+      if (!rader.length) break;
+      for (const r of rader) {
+        sett.add(r.uuid);
+        if (r.language === 'en') en.push({ produkt: p.handle, namn: r.reviewer_name, kalla: r.source ?? 'judge.me', datum: String(r.created_at ?? '').slice(0, 10), text: String(r.body_html ?? '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 70) });
+      }
+    }
+  }
+  console.log(`\nSpråkmärkningen: ${produkter.length} produkter ur ${kalla}, ${totalt} recensioner, ${en.length} märkta engelska.`);
+  for (const r of en) console.log(`  ⚠️ ${r.produkt} · ${r.namn} · ${r.kalla} · ${r.datum} · "${r.text}"`);
+  if (en.some((r) => r.kalla === 'shop-app')) {
+    console.log('  Shop-appens recensioner kom in märkta engelska också när de var svenska (mätt 2026-10-01). Är texten svensk står den');
+    console.log('  överst och oöversatt på den engelska sidan. Rättas i Judge.me: Reviews → "⋯" → Review details → "Detected review language".');
+  }
+  return en;
+}
+
+if (!baraMarkning) await sidorna();
+await markningen();

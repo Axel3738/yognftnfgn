@@ -3605,7 +3605,12 @@
         "annonsNamn": "Spikkesett_NO_BOF_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515541400233",
+        "creativeId": "2622687501500563",
+        "adsetId": "120252515539760233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -3671,7 +3676,12 @@
         "annonsNamn": "Spikkesett_NO_OB_2_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515543660233",
+        "creativeId": "1601897435008075",
+        "adsetId": "120252502320830233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -3737,7 +3747,12 @@
         "annonsNamn": "Spikkesett_NO_CS_4_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515544890233",
+        "creativeId": "1069738062596981",
+        "adsetId": "120252434083980233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -3803,7 +3818,12 @@
         "annonsNamn": "Spikkesett_NO_OB_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515635290233",
+        "creativeId": "2194962571451338",
+        "adsetId": "120252502320830233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -3869,7 +3889,12 @@
         "annonsNamn": "Spikkesett_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515637220233",
+        "creativeId": "2094213007869434",
+        "adsetId": "120252515636280233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -3935,7 +3960,12 @@
         "annonsNamn": "Spikkesett_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252515725410233",
+        "creativeId": "1567919007923744",
+        "adsetId": "120252434076620233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
