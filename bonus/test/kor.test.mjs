@@ -87,3 +87,20 @@ test('reglerna går att läsa och har fyra program', () => {
   assert.deepEqual(Object.keys(r.program).sort(), ['produkttest', 'redigerare', 'support_chef', 'va']);
   assert.equal(r.valuta, 'USD');
 });
+
+// Månadsväljaren på sajten (2026-10-01) läser gångna månader ur utfallsmappen.
+test('sparadeManader/lasKvitto: månaderna ur utfallsmappen, nyast först — bara riktiga kvitton', async () => {
+  const { mkdtempSync, writeFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { tmpdir } = await import('node:os');
+  const { sparadeManader, lasKvitto } = await import('../kor.mjs');
+  const mapp = mkdtempSync(join(tmpdir(), 'utfall-'));
+  writeFileSync(join(mapp, '2026-08.json'), JSON.stringify({ period: { namn: '2026-08' }, summa: 1 }));
+  writeFileSync(join(mapp, '2026-09.json'), JSON.stringify({ period: { namn: '2026-09' }, summa: 2 }));
+  writeFileSync(join(mapp, 'anteckning.txt'), 'inte ett kvitto');
+  assert.deepEqual(sparadeManader(mapp), ['2026-09', '2026-08']);
+  assert.equal(lasKvitto('2026-09', mapp).summa, 2);
+  assert.equal(lasKvitto('2026-07', mapp), null);
+  assert.equal(lasKvitto('../etc/passwd', mapp), null, 'bara YYYY-MM godtas');
+  assert.deepEqual(sparadeManader(join(mapp, 'finns-inte')), []);
+});

@@ -92,6 +92,14 @@ månaden, commission för sig. Min sida har ett kort per del, Bonus-sidan en
 tabell per del med vem som får vad. Definitionerna bor i `bonus/regler.json`
 → `utbetalningar`; talen är motorns (`bonus/README.md` → Utbetalningarna).
 
+**Förra månaden väljs på sidan** (`/app/bonus?manad=2026-09`, byggt
+2026-10-01 — Axel skulle betala ut september och sidan stod redan på oktober).
+Månaden som räknas just nu är snapshotens; en gången månad läses ur sitt
+sparade kvitto `bonus/utfall/<manad>.json` (hämtningen skriver det varje timme,
+så det fryser av sig självt när månaden är slut). Vyn räknar aldrig om något,
+och "Recensioner med namn" (60 dagar live) visas inte för en gången månad.
+En månad utan kvitto säger det — aldrig en annan månads pengar.
+
 ---
 
 ## Så hänger datan ihop

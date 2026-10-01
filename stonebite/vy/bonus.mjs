@@ -22,6 +22,27 @@ import { sedan } from '../berakna.mjs';
 import { harRatt, personIdFor, ROLLER } from '../roller.mjs';
 import { uppdragForRoll, utbetalningarFor, utbetalningFor, utbetalningsdefinitioner, halvmanader } from '../../bonus/motor.mjs';
 
+const MANADSNAMN = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
+
+/** "september 2026" på läsarens språk. */
+export function manadsnamn(manad) {
+  const [ar, m] = String(manad ?? '').split('-').map(Number);
+  if (!ar || !m) return String(manad ?? '');
+  return `${t(MANADSNAMN[m - 1])} ${ar}`;
+}
+
+/**
+ * Månadsväljaren. Förra månadens pengar betalas ut i början av den nya, och
+ * då står sidan redan på den nya månaden (Axel 2026-10-01: "ska precis skicka
+ * bonus för förra månaden men det kan inte välja datum"). Månaderna är de som
+ * har ett sparat kvitto i bonus/utfall/ plus den som räknas just nu.
+ */
+function manadsval(manader, vald) {
+  if (manader.length < 2) return '';
+  return `<nav class="flikar" aria-label="${attr(t('Månad'))}">${manader.map((m) => `
+    <a class="flik" href="${attr(`/app/bonus?manad=${m}`)}"${m === vald ? ' aria-current="page"' : ''}>${esc(manadsnamn(m))}</a>`).join('')}</nav>`;
+}
+
 const USD = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
 const USD0 = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { maximumFractionDigits: 0 })}`);
 
@@ -134,8 +155,16 @@ function paVad(person, regler, del) {
 
 // ------------------------------------------------------------- Bonus-sidan
 
-export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = '' }) {
-  const b = snapshot?.bonus ?? null;
+export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = '', manad = null, kvitto = null, manader = [] }) {
+  // Månaden som räknas just nu ligger i snapshoten; en gången månad läses ur
+  // sitt sparade kvitto (bonus/utfall/<manad>.json, skrivet av varje hämtning
+  // och fryst när månaden är slut). Vyn räknar aldrig om något.
+  const aktuell = snapshot?.bonus ?? null;
+  const vald = /^\d{4}-\d{2}$/.test(String(manad ?? '')) ? manad : (aktuell?.period?.namn ?? null);
+  const arkiv = Boolean(vald && aktuell?.period?.namn && vald !== aktuell.period.namn);
+  const b = arkiv ? (kvitto?.period?.namn === vald ? kvitto : null) : aktuell;
+  const allaManader = [...new Set([aktuell?.period?.namn, ...manader].filter(Boolean))].sort().reverse();
+  const val = manadsval(allaManader, vald);
   const regler = snapshot?.bonusProgram ?? null;
   const program = regler?.program ?? {};
   const serAlla = harRatt(anvandare, 'bonus-alla');
@@ -176,10 +205,13 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
     return {
       titel: 'Bonus',
       innehall: `${sidhuvud({ rubrik: 'Bonus', under: 'Vad alla tjänar utöver lönen.' })}
+      ${val}
       ${meddelande ? `<div class="ok-ruta">${esc(meddelande)}</div>` : ''}
       ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
       ${kon('Att godkänna')}
-      ${tomt('Ingen bonus uträknad än', 'Kör "node bonus/kor.mjs" — eller vänta på nästa hämtning. Inrapporterade insatser går att godkänna ändå.')}`,
+      ${arkiv
+        ? tomt(`${t('Inget kvitto sparat för')} ${manadsnamn(vald)}`, 'Kvittot skrivs av hämtningen varje timme och fryses när månaden är slut. En månad utan kvitto räknades aldrig.')
+        : tomt('Ingen bonus uträknad än', 'Kör "node bonus/kor.mjs" — eller vänta på nästa hämtning. Inrapporterade insatser går att godkänna ändå.')}`,
     };
   }
 
@@ -217,7 +249,7 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
       varde: USD(d.summa),
       forklaring: `${d.betalas} ${antalText(d.rader.length)}.`,
     })),
-    kort({
+    arkiv ? null : kort({
       etikett: 'Recensioner med namn',
       varde: tal(snapshot?.recensioner?.medNamn ?? null),
       forklaring: `Av ${tal(snapshot?.recensioner?.antal ?? null)} recensioner senaste 60 dagarna. Varje sådan är pengar till någon i teamet.`,
@@ -260,7 +292,7 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
     under: 'Träffar som inte gick att koppla till en person. Oftast: recensionen nämner inget namn, eller så saknar personen konto.',
     innehall: panel({
       innehall: `<ul class="lista">${Object.entries(
-        b.otilldelat.reduce((acc, o) => { const k = `${o.uppdrag} · ${o.orsak}`; acc[k] = (acc[k] ?? 0) + 1; return acc; }, {}),
+        b.otilldelat.reduce((acc, o) => { const k = `${o.uppdrag} · ${o.orsak}`; acc[k] = (acc[k] ?? 0) + (Number(o.antal) || 1); return acc; }, {}),
       ).sort((a, c) => c[1] - a[1]).slice(0, 8).map(([text, antal]) => `
         <li><span class="tid">${tal(antal)} st</span><span class="namn">${esc(text)}</span></li>`).join('')}</ul>`,
       fot: 'En recension utan namn kan ingen få betalt för. Det är själva poängen med att be kunden skriva namnet.',
@@ -283,8 +315,11 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
     innehall: `${sidhuvud({
       rubrik: 'Bonus',
       under: serAlla ? 'Vad som betalas ut, till vem och när — och vad som driver det.' : 'Dina pengar utöver lönen.',
-      farsk: b.raknat ? `Räknat <b>${esc(sedan(b.raknat))}</b>` : '',
+      farsk: arkiv
+        ? `${esc(t('Kvitto för'))} <b>${esc(manadsnamn(vald))}</b>${b.raknat ? ` · ${esc(t('räknat'))} ${esc(String(b.raknat).slice(0, 10))}` : ''}`
+        : (b.raknat ? `Räknat <b>${esc(sedan(b.raknat))}</b>` : ''),
     })}
+    ${val}
     ${meddelande ? `<div class="ok-ruta">${esc(meddelande)}</div>` : ''}
     ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
     <div class="kort-rad">${kortRad}</div>
