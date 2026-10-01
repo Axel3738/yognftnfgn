@@ -985,6 +985,16 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
 - ⚠️ Förberedelsen tog över en timme: Meta strypte anropen (kod 17/613, upp till 2 minuters väntan per
   anrop) medan en utredning samtidigt provade `validate_only` mot samma konto. Kör inte tunga
   Meta-utredningar parallellt med en skarp körning.
+- ✅ **Utfallet: igång fre 2/10 00:03–00:20, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
+  `starta`, skrivet 22:20:48 UTC). NO, NOB, DK, FI, US, WW, DE, FR och NL startade 00:03–00:07. Mitt
+  i ES svarade Meta kod 17 i cirka 13 minuter, och verktygets egen väntan (30 s, sedan upp till 5 min)
+  tog det utan omkörning. ES, IT, PL, PT och JP startade därför cirka 00:20. Varje kampanj var
+  ACTIVE/ACTIVE med `marknader.json`:s budget, sammanlagt 13 000 kr/dag. Adseten var ACTIVE med rätt
+  länder (WW: GB, CA, NZ). 110 annonser var på och Norges två 007 PAUSED. Meta visade inga problem på
+  adseten. DE- och FR-annonserna med `?country=` var redan granskade (ACTIVE). TW rördes inte (inget
+  adset, `lansering_stopp`). ⚠️ Mitt under strypningen visade kontots `x-business-use-case-usage`
+  (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
+  kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
 
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 
