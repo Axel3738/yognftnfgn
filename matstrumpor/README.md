@@ -36,44 +36,67 @@ node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node matstrumpor/ringlista.mjs                   # ringlistan: kunder med 2+ ordrar → output/ringlista/ (se nedan)
-node --test matstrumpor/test/*.test.mjs          # 80 tester
+node matstrumpor/ringlista.mjs                   # ringlistan: återköpare (2+ datum) + lottade nya kunder → output/ringlista/
+node matstrumpor/presentkort.mjs [--ja]          # presentkortet till återköparna EFTER samtalen (torrt utan --ja)
+node --test matstrumpor/test/*.test.mjs          # 85 tester
 ```
 
 Inga npm-beroenden. Node ≥ 20.
 
-## Ringlistan (byggd 2026-09-27)
+## Ringlistan (byggd 2026-09-27, omgjord 2026-10-01)
 
 Axels beställning: "en lista med alla kunder som köpt 2 gånger eller fler …
 en ringlista … 1–3 frågor per kund", han ringer själv och skriver medan de
-pratar (inget spelas in). `node matstrumpor/ringlista.mjs` läser alla ordrar
-ur Shopify (appen "Fabriken", läs-bart) och skriver **`output/ringlista/`**:
-`RINGLISTA.md` (läsbar), `ringlista.html` (tryck-för-att-ringa, statusknappar,
-anteckningsfält per kund som sparas i webbläsaren, knappen *Kopiera
-anteckningar* ger markdown att klistra in i chatten) och `ringlista.json`.
-`--spara-ordrar` lägger råordrarna bredvid, `--fran <fil>` bygger om utan nät.
+pratar (inget spelas in). Hans ändring 2026-10-01: **bara kunder som köpt på
+separata datum** — tacksidans donut-tillägg minuter efter köpet och två ordrar
+i samma besök är impuls, inte återköp — **plus ett slumpat urval av förra
+veckans förstagångsköpare**, och **en fil med återköparnas e-post** så att de
+kan exkluderas ur en annan undersökning per mejl.
+
+`node matstrumpor/ringlista.mjs` läser alla ordrar ur Shopify (appen
+"Fabriken", läs-bart), besöksdatan (UTM) för de senaste sju dagarnas ordrar och
+annonsnamnen ur Meta (`META_ACCESS_TOKEN`; utan den visas annons-id:t), och
+skriver **`output/ringlista/`**: `RINGLISTA.md` (läsbar), `ringlista.html`
+(tryck-för-att-ringa, statusknappar, anteckningsfält per kund som sparas i
+webbläsaren, knappen *Kopiera anteckningar* ger markdown att klistra in i
+chatten), `ringlista.json` och `aterkopare-epost.txt` (en adress per rad).
+`--urval N` styr hur många nya kunder som lottas (standard 15; samma lottning
+hela dagen, fröet är datumet), `--spara-ordrar` lägger råordrarna bredvid,
+`--fran <fil>` bygger om utan nät.
 
 ⛔ **Utdatan bär namn, telefonnummer och e-post.** Mappen är gitignorerad och
 filerna får aldrig committas, postas i Discord eller läggas i Notion. Ett test
 bevisar att utmappen ligger under `output/`.
 
-Tre saker datan visade (4 012 ordrar, 2026-09-27):
+Vad datan visade (4 012 ordrar 2026-09-27, besöksdatan 2026-10-01):
 
 | Fynd | Vad det betyder för listan |
 |---|---|
-| 70 av 71 `shopify_draft_order` är Donut-strumpor 299 kr, skapade 1–5 min efter en webborder (dec 2025–mars 2026) | Tacksidans tillägg, inte ett återköp. Ordrar inom en timme räknas som **samma köptillfälle**; kunden hamnar i gruppen *Tog donut-tillägget* |
+| 70 av 71 `shopify_draft_order` är Donut-strumpor 299 kr, skapade 1–5 min efter en webborder (dec 2025–mars 2026) | Tacksidans tillägg. Ett **köptillfälle = ett kalenderdatum i svensk tid**; 66 kunder med bara tillägget och 12 med två ordrar samma dag räknas bort (två identiska ordrar samma dag flaggas i huvudet som möjligt dubbelköp) |
 | Butiken sålde Fixkliniken-produkter (Skrubbmattan, FixToes …) före strumporna: 322 ordrar | En order utan strumpor/ätpinnar/presentkort räknas inte — de kunderna är inte Matstrumpors |
-| Kassan kräver inte telefon: 800 av 4 006 ordrar bär ett nummer | 114 kunder har 2+ ordrar, **37 går att ringa**; de 77 utan nummer står sist med e-post |
+| Kassan kräver inte telefon: 800 av 4 006 ordrar bär ett nummer; 61 av 350 förstagångsköpare veckan 24/9–1/10 | 42 återköpare på 2+ datum (av 4 237 ordrar 2026-10-01), **17 går att ringa**; de 25 utan nummer står sist med e-post och får presentkortet ändå. Nya kunder lottas bara bland dem med nummer |
+| `utm_content` bär annons-id på 36 av 46 ordrar med besöksdata | Varje ny kund står med annonsen hen kom från ("Facebook-annons: 09-17 Nathalie …"), så samtalet kan börja i rätt video |
 
-Grupperna, i den ordning de står i listan: **Kom tillbaka och köpte igen**
-(42, 16 med telefon — två eller fler köptillfällen), **Två beställningar i
-samma besök** (6, 3 med telefon — två identiska ordrar flaggas som möjligt
-dubbelköp) och **Tog donut-tillägget direkt efter köpet** (66, 18 med telefon).
-Frågorna är tre per kund, den mest specifika först (antal köp, byte av sort,
-tid mellan köpen, tillägget eller dubbelordern), sedan alltid *Vem fick
-strumporna, och hur reagerade den som fick dem?* och *Var det något som nästan
-fick dig att inte köpa?* Manuset står överst i filen. Presentkortet i
-"Köp 2 – få 2"-paketet räknas inte som en sort kunden valt.
+Frågorna är tre per kund. **Återköpare:** den mest specifika först (antal
+datum, byte av sort, tiden mellan köpen), sedan alltid *Vem fick strumporna,
+och hur reagerade den som fick dem?* och *Var det något som nästan fick dig
+att inte köpa?* **Nya kunder** (paketet har oftast inte kommit än, leverans
+median 11 dagar, så frågorna gäller köpet): *Minns du vad du såg i annonsen?
+Vad fick dig att klicka?*, *Vem är strumporna till, och vad är det för
+tillfälle?*, *Tvekade du på något innan du köpte?* Manuset per grupp står i
+filen. Presentkortet i "Köp 2 – få 2"-paketet räknas inte som en sort kunden
+valt. Evolve-boten får samma frågor att granska i
+`EVOLVE-FRAGOR-kundsamtal.md` (utan brand); svaret sparas bredvid.
+
+**Presentkortet (Axels beslut 2026-10-01: 200 kr, skapas efteråt):**
+`node matstrumpor/presentkort.mjs` är torrt tills `--ja`, läser mottagarna ur
+`ringlista.json` (alla återköpare, eller `--bara-nadda <export.md>` för dem
+Axel nådde), skapar korten med `giftCardCreate` (kund kopplad, gäller till
+`--till`, standard 2026-12-31), läser tillbaka varje kort och loggar kund-id
+och HELA koden i `output/ringlista/presentkort-logg.jsonl` — Shopify visar
+koden bara vid skapandet, och loggen gör att ingen får två kort. Taket är
+300 kr per kort (marginalen på en standardorder är 245 kr). `--skicka` låter
+Shopify mejla kortet med sin egen mall. Belöningen nämns aldrig i samtalet.
 
 Sammanfattningen efter samtalen skrivs av sessionen ur Axels anteckningar och
 landar i `products/matstrumpor/` (avatarerna i `dna.md` bygger i dag på
