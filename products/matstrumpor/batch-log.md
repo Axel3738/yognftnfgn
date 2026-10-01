@@ -415,3 +415,26 @@ sa "no Christmas". Notion-raderna → `Approved + Launched in SE` (statusen hete
 **Kvar i kön:** `B_Mini-clip_UGC_04` (pizzastrumpor) och `BURGER B_Mini-clip_UGC_02`
 (hamburgarstrumpor) — inte sushi, namnmallen har bara `sushi`, och kampanjen länkar
 till sushisidan. Väntar på Axels beslut.
+
+---
+
+## 2026-10-01 — `/matstrumpor`: Nathalie-iterationerna 054–057 + 063 live, femton annonser
+
+**Vad:** redigerarnas leveranser för briefer 054–057 (rond 2, 2026-09-24, omdöpta från
+048–052) och 063 (rond 3, 2026-09-30), tre krokar per rad (briefens H1 + arkivkrokarna),
+upp ACTIVE via `META_ACCESS_TOKEN`. Copyn = briefernas fasta copy-kort (primärtext "Ingen
+jublar åt tvättmedel … fem par strumpor.", rubrik "Rolig i kväll. På fötterna i morgon.",
+beskrivning "Fem par strumpor i en sushilåda. Ätpinnar ingår."). Pris 399/369 kr läst live.
+Alla femton tittade på: sushistrumporna i bild, inget pris, inget butiksnamn på slutkortet.
+
+| Annons | Adset | Id |
+|---|---|---|
+| `jul_ugc_057h1/h2/h3_v1` | jul_video | 120251817103660023 / 120251817113940023 / 120251817122530023 |
+| `curiosity_ugc_063h1/h2/h3_v1` | nya16 | 120251817128420023 / 120251817134280023 / 120251817140230023 |
+| `gift_ugc_054h1/h2/h3_v1` | nya16 | 120251817144650023 / 120251817151090023 / 120251817157830023 |
+| `gift_ugc_055h1/h2/h3_v1` | nya16 | 120251817161630023 / 120251817167690023 / 120251817173900023 |
+| `gift_ugc_056h1/h2/h3_v1` | nya16 | 120251817179880023 / 120251817186350023 / 120251817191960023 |
+
+Notion-raderna → `Approved + Launched in SE`. **Kvar i kön:** pizza- och hamburgarklippen
+(`B_Mini-clip_UGC_04`, `BURGER B_Mini-clip_UGC_02`) — väntar fortfarande på Axels svar
+från 2026-09-29.
