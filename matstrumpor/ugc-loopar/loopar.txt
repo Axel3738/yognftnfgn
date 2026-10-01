@@ -1,0 +1,11 @@
+# namn  källa  start(s)  slut(s)  y(px, kvadratens överkant i 720x1280)  bildruta-för-skärmdump(s)
+# Källorna: video-id i ../marknader/heygen/kallor.json. ⛔ *_sv = Katarina, bara svenska sidan.
+# y väljs så att kvadraten 720x720 slutar ovanför filmernas inbrända text (börjar vid y ≈ 820).
+avslojandet sofie_h1 10.6 13.95 80 1.5
+rullen nathalie 0.0 2.4 0 2.0
+uppackningen nathalie 5.8 8.95 60 2.6
+ladan sofie_h2 3.5 8.0 40 3.0
+soffan nathalie 22.35 24.4 80 0.45
+strumpan_sv katarina_alskaren 16.5 18.8 40 1.6
+reaktionen_sv katarina_unge 9.0 11.8 40 2.3
+tamago_sv katarina_alskaren 25.3 27.1 40 0.9

@@ -174,3 +174,6 @@ mejl/output/butiker/*/lankkoll/
 enkat/output/
 # Värva en vän: skärmdumpar från kundvyn (matstrumpor/varva/kundvy.mjs)
 matstrumpor/varva/output/
+
+# UGC-looparna till matstrumpor.se: källfilmer, loopar och skärmdumpar byggs om av klipp.sh/mockup.mjs
+matstrumpor/ugc-loopar/output/

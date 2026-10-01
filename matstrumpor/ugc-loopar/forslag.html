@@ -1,0 +1,248 @@
+<title>Matstrumpor i rörelse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Mochiy+Pop+P+One&display=swap">
+<style>
+/* Layout: en smal läskolumn (telefon först); varje förslag är ett kort med NU bredvid FÖRSLAG, svaret samlas längst ner. */
+:root {
+  --bg: #ffffff;
+  --yta: #faf5ee;          /* butikens ljusa ton, bara i band */
+  --fg: #1d1915;
+  --dim: #6b6157;
+  --linje: #eadfd2;
+  --orange: #dd821d;       /* butikens knappfärg */
+  --orange-text: #b8660d;  /* orange som håller kontrast som text */
+  --gron: #2f7d4f;
+  --rod: #b23b2e;
+  --rubrik: "Mochiy Pop P One", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --text: "Atkinson Hyperlegible", "Verdana", "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161210; --yta: #211b17; --fg: #f3ece4; --dim: #b3a79a; --linje: #3a312a;
+  --orange: #e8913a; --orange-text: #f0a65a; --gron: #6cc792; --rod: #ee8476; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #161210; --yta: #211b17; --fg: #f3ece4; --dim: #b3a79a; --linje: #3a312a;
+  --orange: #e8913a; --orange-text: #f0a65a; --gron: #6cc792; --rod: #ee8476; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--text); font-size: 18px; line-height: 1.55; padding-inline: 16px; padding-block: 0 48px }
+.ram { max-width: 980px; margin: 0 auto }
+h1, h2, h3 { font-family: var(--rubrik); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.2 }
+h1 { font-size: clamp(2rem, 6vw, 3.1rem) }
+h2 { font-size: clamp(1.45rem, 4.2vw, 2rem) }
+h3 { font-size: 1.25rem }
+p { margin: 0; max-width: 62ch }
+.etikett { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--dim) }
+
+/* topp */
+.topp { display: grid; gap: 14px; padding-block: 36px 28px }
+.topp h1 .acc { color: var(--orange-text) }
+.status { display: inline-flex; gap: 8px; align-items: center; width: fit-content; font-weight: 700; font-size: .9rem; padding: 6px 12px; border-radius: 999px; background: var(--yta); border: 1px solid var(--linje) }
+.status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--rod) }
+.ingress { font-size: 1.12rem }
+
+/* loopar */
+.block { display: grid; gap: 16px; padding-block: 28px; border-top: 1px solid var(--linje) }
+.loopar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
+@media (min-width: 720px) { .loopar { grid-template-columns: repeat(4, minmax(0, 1fr)) } }
+.loop { display: grid; gap: 6px; min-width: 0 }
+.loop video, .mini video { width: 100%; max-width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 14px; display: block; background: var(--yta) }
+.loop b { font-family: var(--rubrik); font-weight: 400; font-size: 1rem }
+.loop small { color: var(--dim); font-size: .85rem; line-height: 1.35 }
+.chip { width: fit-content; font-size: .78rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; border: 1.5px solid currentColor }
+.chip.alla { color: var(--gron) }
+.chip.sv { color: var(--orange-text) }
+
+/* förslag */
+.forslag { display: grid; gap: 14px; padding-block: 26px; border-top: 1px solid var(--linje) }
+.forslag-huvud { display: flex; gap: 14px; align-items: flex-start }
+.nr { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: #fff; font-family: var(--rubrik); font-size: 1.2rem }
+.forslag-huvud > div { display: grid; gap: 4px; min-width: 0 }
+.var { color: var(--dim); font-size: .95rem }
+.par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start }
+.par figure { margin: 0; display: grid; gap: 6px; min-width: 0 }
+.par img { width: 100%; max-width: 100%; border-radius: 12px; border: 1px solid var(--linje); display: block }
+.par figure.efter img { border: 3px solid var(--orange) }
+.par figcaption { font-weight: 700; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--dim) }
+.par figure.efter figcaption { color: var(--orange-text) }
+@media (min-width: 720px) { .par { max-width: 760px } }
+.mini { display: flex; gap: 10px; flex-wrap: wrap; align-items: center }
+.mini video { width: 92px; border-radius: 12px }
+.mini span { color: var(--dim); font-size: .9rem }
+details { border: 1px solid var(--linje); border-radius: 12px; padding: 10px 14px }
+summary { cursor: pointer; font-weight: 700 }
+details img { width: 100%; max-width: 100%; border-radius: 8px; margin-top: 10px; display: block }
+.val { display: flex; gap: 10px; flex-wrap: wrap }
+.val button { font: inherit; font-weight: 700; font-size: 1rem; padding: 10px 22px; border-radius: 999px; border: 2px solid var(--linje); background: var(--bg); color: var(--fg); cursor: pointer; min-width: 92px }
+.val button[aria-pressed="true"].ja { background: var(--gron); border-color: var(--gron); color: #fff }
+.val button[aria-pressed="true"].nej { background: var(--rod); border-color: var(--rod); color: #fff }
+button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px }
+
+/* jämförelsen */
+.stapel { display: grid; gap: 10px }
+.rad { display: grid; gap: 4px }
+.rad .bar { height: 26px; border-radius: 6px; background: var(--dim); max-width: 100% }
+.rad.vi .bar { background: var(--orange) }
+.rad span { font-size: .95rem; font-variant-numeric: tabular-nums }
+ul.regler { margin: 0; padding-left: 1.1em; display: grid; gap: 8px; max-width: 64ch }
+
+/* svaret */
+.svar { background: var(--yta); border: 2px solid var(--orange); border-radius: 16px; padding: 14px 16px; display: grid; gap: 10px; margin-top: 18px }
+.svar code { font-family: var(--text); font-weight: 700; font-size: 1.05rem; user-select: all; word-break: break-word }
+.svar button { font: inherit; font-weight: 700; padding: 9px 18px; border-radius: 999px; border: 0; background: var(--orange); color: #fff; cursor: pointer; width: fit-content }
+@media (prefers-reduced-motion: reduce) { video { animation: none } }
+</style>
+
+<div class="ram">
+  <header class="topp">
+    <span class="status">Utkast · inget är publicerat</span>
+    <h1>Matstrumpor <span class="acc">i rörelse</span></h1>
+    <p class="ingress">8 korta loopar ur våra egna UGC-filmer, utplacerade på 7 ställen på startsidan och produktsidan. Tryck <b>Ja</b> eller <b>Nej</b> på varje förslag. Svaret samlas längst ner.</p>
+  </header>
+
+  <section class="block" aria-labelledby="loopar-rubrik">
+    <h2 id="loopar-rubrik">Looparna</h2>
+    <p>Klippta ur filmerna i annonskontot. Kvadratiska, utan ljud, utan den svenska texten som är inbränd i filmerna.</p>
+    <div class="loopar">
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/avslojandet.jpg" src="loopar/avslojandet.mp4"></video><b>Avslöjandet</b><small>Sofie H1, 0:10–0:14 · 576 kB</small><span class="chip alla">Alla språk</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/rullen.jpg" src="loopar/rullen.mp4"></video><b>Rullen</b><small>Nathalie, 0:00–0:02 · 196 kB</small><span class="chip alla">Alla språk</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/uppackningen.jpg" src="loopar/uppackningen.mp4"></video><b>Uppackningen</b><small>Nathalie, 0:06–0:09 · 236 kB</small><span class="chip alla">Alla språk</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/ladan.jpg" src="loopar/ladan.mp4"></video><b>Lådan</b><small>Sofie H2, 0:03–0:08 · 404 kB</small><span class="chip alla">Alla språk</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/soffan.jpg" src="loopar/soffan.mp4"></video><b>Myskvällen</b><small>Nathalie, 0:22–0:24 · 164 kB</small><span class="chip alla">Alla språk</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/strumpan_sv.jpg" src="loopar/strumpan_sv.mp4"></video><b>Strumpan</b><small>Katarina, 0:16–0:19 · 228 kB</small><span class="chip sv">Bara svenska sidan</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/reaktionen_sv.jpg" src="loopar/reaktionen_sv.mp4"></video><b>Reaktionen</b><small>Katarina, 0:09–0:12 · 264 kB</small><span class="chip sv">Bara svenska sidan</span></div>
+      <div class="loop"><video autoplay muted loop playsinline poster="loopar/tamago_sv.jpg" src="loopar/tamago_sv.mp4"></video><b>Gula strumpan</b><small>Katarina, 0:25–0:27 · 116 kB</small><span class="chip sv">Bara svenska sidan</span></div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="start-rubrik">
+    <span class="etikett">Startsidan</span>
+    <h2 id="start-rubrik">4 förslag</h2>
+  </section>
+
+  <article class="forslag" data-nr="1">
+    <div class="forslag-huvud"><span class="nr">1</span><div><h3>Toppbilden rör sig</h3><p class="var">Det första kunden ser. Sushin plockas upp och rullas ut till en strumpa.</p></div></div>
+    <div class="par"><figure><figcaption>Nu</figcaption><img src="bilder/1-hero-fore-390.jpg" alt="Startsidans toppbild i dag: foto på sushilådan"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/1-hero-efter-390.jpg" alt="Förslag: loopen Avslöjandet som toppbild"></figure></div>
+    <div class="mini"><video autoplay muted loop playsinline poster="loopar/avslojandet.jpg" src="loopar/avslojandet.mp4"></video><span>Loopen här: Avslöjandet</span></div>
+    <details><summary>Se på dator</summary><p>Fotot står kvar. Loopen ligger som ett kort bredvid texten.</p><img src="bilder/1-hero-efter-1440.jpg" alt="Förslag på dator: fotot kvar, loopen som kort till höger"></details>
+    <div class="val" role="group" aria-label="Förslag 1"><button class="ja" id="f1-ja" aria-pressed="false">Ja</button><button class="nej" id="f1-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <article class="forslag" data-nr="2">
+    <div class="forslag-huvud"><span class="nr">2</span><div><h3>Loop-band under Trustpilot</h3><p class="var">Fem små loopar i rad som man sveper. Det är här det känns som GIF:ar överallt.</p></div></div>
+    <div class="par"><figure><figcaption>Nu (inget band)</figcaption><img src="bilder/2-band-fore-390.jpg" alt="Trustpilot-raden i dag"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/2-band-efter-390.jpg" alt="Förslag: rubriken Så ser det ut när lådan öppnas och fem loopar"></figure></div>
+    <div class="mini"><video autoplay muted loop playsinline poster="loopar/ladan.jpg" src="loopar/ladan.mp4"></video><video autoplay muted loop playsinline poster="loopar/avslojandet.jpg" src="loopar/avslojandet.mp4"></video><video autoplay muted loop playsinline poster="loopar/strumpan_sv.jpg" src="loopar/strumpan_sv.mp4"></video><span>Utomlands byts Katarina mot Rullen.</span></div>
+    <details><summary>Se på dator</summary><img src="bilder/2-band-efter-1440.jpg" alt="Förslag på dator: fem loopar i rad"></details>
+    <div class="val" role="group" aria-label="Förslag 2"><button class="ja" id="f2-ja" aria-pressed="false">Ja</button><button class="nej" id="f2-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <article class="forslag" data-nr="3">
+    <div class="forslag-huvud"><span class="nr">3</span><div><h3>Berättelsen får en loop</h3><p class="var">Samma text som i dag. Loopen ovanför, och halva rubriken i orange som hos MatSokker.</p></div></div>
+    <div class="par"><figure><figcaption>Nu</figcaption><img src="bilder/3-berattelse-fore-390.jpg" alt="Textblocket Strumpor man aldrig blandar ihop i dag"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/3-berattelse-efter-390.jpg" alt="Förslag: loopen Rullen ovanför texten, orange rubrikdel"></figure></div>
+    <details><summary>Se på dator</summary><p>Loopen till vänster, texten till höger.</p><img src="bilder/3-berattelse-efter-1440.jpg" alt="Förslag på dator"></details>
+    <div class="val" role="group" aria-label="Förslag 3"><button class="ja" id="f3-ja" aria-pressed="false">Ja</button><button class="nej" id="f3-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <article class="forslag" data-nr="4">
+    <div class="forslag-huvud"><span class="nr">4</span><div><h3>"Som de används" med riktiga loopar</h3><p class="var">I dag är bilderna AI-illustrationer med en ursäktande rad under. Fyra riktiga loopar i stället, och raden försvinner.</p></div></div>
+    <div class="par"><figure><figcaption>Nu</figcaption><img src="bilder/4-somdeanvands-fore-390.jpg" alt="Som de används i dag: AI-bild av filmkväll"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/4-somdeanvands-efter-390.jpg" alt="Förslag: fyra loopar i rutnät"></figure></div>
+    <details><summary>Se på dator</summary><img src="bilder/4-somdeanvands-efter-1440.jpg" alt="Förslag på dator: fyra loopar i rad"></details>
+    <div class="val" role="group" aria-label="Förslag 4"><button class="ja" id="f4-ja" aria-pressed="false">Ja</button><button class="nej" id="f4-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <section class="block" aria-labelledby="produkt-rubrik">
+    <span class="etikett">Produktsidan · Sushi-Strumpor</span>
+    <h2 id="produkt-rubrik">3 förslag</h2>
+  </section>
+
+  <article class="forslag" data-nr="5">
+    <div class="forslag-huvud"><span class="nr">5</span><div><h3>Tre loopar direkt under köpknappen</h3><p class="var">Lådan, avslöjandet och reaktionen, precis innan kunden scrollar vidare.</p></div></div>
+    <div class="par"><figure><figcaption>Nu</figcaption><img src="bilder/5-kopruta-fore-390.jpg" alt="Köprutan i dag"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/5-kopruta-efter-390.jpg" alt="Förslag: tre små loopar under leveransrutan"></figure></div>
+    <details><summary>Se på dator</summary><img src="bilder/5-kopruta-efter-1440.jpg" alt="Förslag på dator"></details>
+    <div class="val" role="group" aria-label="Förslag 5"><button class="ja" id="f5-ja" aria-pressed="false">Ja</button><button class="nej" id="f5-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <article class="forslag" data-nr="6">
+    <div class="forslag-huvud"><span class="nr">6</span><div><h3>Beskrivningen: våra loopar i stället för leverantörens</h3><p class="var">Den rörliga bilden där i dag är leverantörens film, samma som MatSokker har. Den byts mot Uppackningen, och Avslöjandet läggs under "Ser ut som sushi. Är strumpor."</p></div></div>
+    <div class="par"><figure><figcaption>Nu</figcaption><img src="bilder/6-beskrivning-fore-390.jpg" alt="Beskrivningen i dag"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/6-beskrivning-efter-390.jpg" alt="Förslag: två loopar i beskrivningen"></figure></div>
+    <div class="val" role="group" aria-label="Förslag 6"><button class="ja" id="f6-ja" aria-pressed="false">Ja</button><button class="nej" id="f6-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <article class="forslag" data-nr="7">
+    <div class="forslag-huvud"><span class="nr">7</span><div><h3>Mörkt block med knapp, före recensionerna</h3><p class="var">MatSokkers grepp: stor loop, orange knapp fast under. Texten är vår egen från toppbilden.</p></div></div>
+    <div class="par"><figure><figcaption>Nu (finns inte)</figcaption><img src="bilder/7-morkt-block-fore-390.jpg" alt="Recensionerna i dag"></figure><figure class="efter"><figcaption>Förslag</figcaption><img src="bilder/7-morkt-block-efter-390.jpg" alt="Förslag: mörkt block med loopen Rullen och knappen Lägg i varukorgen"></figure></div>
+    <details><summary>Se på dator</summary><img src="bilder/7-morkt-block-efter-1440.jpg" alt="Förslag på dator"></details>
+    <div class="val" role="group" aria-label="Förslag 7"><button class="ja" id="f7-ja" aria-pressed="false">Ja</button><button class="nej" id="f7-nej" aria-pressed="false">Nej</button></div>
+  </article>
+
+  <section class="block" aria-labelledby="gif-rubrik">
+    <h2 id="gif-rubrik">GIF eller video?</h2>
+    <p>Det ser likadant ut för kunden: rör sig, loopar, inget ljud. Men en GIF är tung, och en tung sida säljer sämre på mobilen. Därför blir det korta videofiler som beter sig som GIF:ar.</p>
+    <div class="stapel">
+      <div class="rad"><span>MatSokkers 2 GIF:ar · 19,6 MB · 500 px · 10 bilder/s</span><div class="bar" style="width:100%"></div></div>
+      <div class="rad vi"><span>Våra 8 loopar · 2,2 MB · 600 px · 30 bilder/s</span><div class="bar" style="width:11.2%"></div></div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="regler-rubrik">
+    <h2 id="regler-rubrik">Det som följer med bygget</h2>
+    <ul class="regler">
+      <li><b>Katarina syns bara på svenska sidan.</b> Utomlands byts hennes loopar mot Nathalie och Sofie.</li>
+      <li><b>Ingen svensk text i bilden.</b> Looparna är beskurna ovanför filmernas inbrända text.</li>
+      <li><b>Spelas bara när de syns.</b> Looparna laddas när kunden scrollar fram till dem.</li>
+      <li><b>Stilla bild</b> för den som har stängt av rörelse i telefonen.</li>
+      <li><b>Testas först i ett kopierat tema.</b> Du ser det på riktigt innan något går live.</li>
+    </ul>
+  </section>
+
+  <div class="svar" aria-live="polite">
+    <span class="etikett">Ditt svar</span>
+    <code id="svartext">Inget valt än. Tryck Ja eller Nej ovanför.</code>
+    <button id="kopiera" type="button">Kopiera svaret</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var NYCKEL = 'ms-loopar-val';
+  var val = {};
+  try { val = JSON.parse(localStorage.getItem(NYCKEL) || '{}') || {}; } catch (e) { val = {}; }
+  var text = document.getElementById('svartext');
+
+  function rita() {
+    var ja = [], nej = [];
+    for (var i = 1; i <= 7; i++) {
+      var v = val[i];
+      document.getElementById('f' + i + '-ja').setAttribute('aria-pressed', v === 'ja' ? 'true' : 'false');
+      document.getElementById('f' + i + '-nej').setAttribute('aria-pressed', v === 'nej' ? 'true' : 'false');
+      if (v === 'ja') ja.push(i); else if (v === 'nej') nej.push(i);
+    }
+    if (!ja.length && !nej.length) { text.textContent = 'Inget valt än. Tryck Ja eller Nej ovanför.'; return; }
+    text.textContent = 'Loopar på sajten: Ja ' + (ja.join(', ') || 'inga') + '. Nej ' + (nej.join(', ') || 'inga') + '.';
+  }
+
+  document.querySelectorAll('.val button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var nr = b.closest('.forslag').getAttribute('data-nr');
+      var nytt = b.classList.contains('ja') ? 'ja' : 'nej';
+      val[nr] = val[nr] === nytt ? undefined : nytt;
+      try { localStorage.setItem(NYCKEL, JSON.stringify(val)); } catch (e) {}
+      rita();
+    });
+  });
+
+  document.getElementById('kopiera').addEventListener('click', function () {
+    var knapp = this;
+    var markera = function () { var r = document.createRange(); r.selectNodeContents(text); var s = getSelection(); s.removeAllRanges(); s.addRange(r); knapp.textContent = 'Markerat, kopiera själv'; };
+    try {
+      navigator.clipboard.writeText(text.textContent).then(function () { knapp.textContent = 'Kopierat'; setTimeout(function () { knapp.textContent = 'Kopiera svaret'; }, 1800); }, markera);
+    } catch (e) { markera(); }
+  });
+
+  // Stilla bild för den som stängt av rörelse
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+  }
+  rita();
+})();
+</script>
