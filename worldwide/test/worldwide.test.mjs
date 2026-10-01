@@ -144,6 +144,22 @@ test('apptexterna (bw-appord): reglerna i det genererade skriptet behåller sina
   // Färgvärdena byts bara i väljaren och korgens alternativrad, aldrig i inputens value.
   assert.match(skript, /var VARDEN = '\.cart__item--variants, \.variant-input-wrap, \.variant__label-info'/);
   assert.ok(!/\.value\s*=/.test(skript), 'skriptet får aldrig skriva om en inputs value');
+  // byt() kört på riktigt: Kaching sparar "1x  MC-Kapell …" med två mellanslag (mätt 2026-10-01),
+  // och mönstergrenen får inte skriva över den råa texten den ska ersätta.
+  const Oen = new Function(`${/\{%- else -%\}\{% raw %\}([\s\S]*?)\{% endraw %\}/.exec(skript)[1]}; return O;`)();
+  const bytKalla = skript.slice(skript.indexOf('function bytVarde('), skript.indexOf('function gå('));
+  const [byt, bytVarde] = new Function('O', 'M', 'tr', `${bytKalla}; return [byt, bytVarde];`)(Oen, Oen.monster.map((m) => ({ re: new RegExp(m.sv), m: m.t })), (v) => v || null);
+  const nod = (v) => ({ nodeValue: v });
+  const a1 = nod('\n  1x  MC-Kapell 218×118 cm  '); byt(a1, false);
+  assert.equal(a1.nodeValue.trim(), Oen.exakt['1x MC-Kapell 218×118 cm']);
+  const a2 = nod(' 12 recensioner '); byt(a2, false);
+  assert.equal(a2.nodeValue, ' 12 reviews ');
+  const a3 = nod(' Grön '); bytVarde(a3);
+  assert.equal(a3.nodeValue, ' Green ');
+  const a5 = nod('Verde - inte tillgängligt'); byt(a5, false);
+  assert.equal(a5.nodeValue, 'Verde - unavailable');
+  const a4 = nod('Bra köp'); byt(a4, false);
+  assert.equal(a4.nodeValue, 'Bra köp', 'okänd text rörs inte');
   // "Recently viewed": bara /products/<handle>.js får språkprefixet.
   const medRot = new Function(`${/(function medRot\(u, rot\) \{[^\n]*\})/.exec(skript)[1]}; return medRot;`)();
   assert.equal(medRot('/products/abc.js', '/de/'), '/de/products/abc.js');

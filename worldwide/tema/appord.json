@@ -223,6 +223,7 @@
   {"sv":"^Baserat på ([\\d\\s ]+) recensioner$","en":"Based on [[n]] reviews","de":"Basierend auf [[n]] Bewertungen","fr":"Basé sur [[n]] avis","es":"Basado en [[n]] opiniones","it":"Basato su [[n]] recensioni","nl":"Gebaseerd op [[n]] beoordelingen","pl":"Na podstawie [[n]] opinii","pt-PT":"Com base em [[n]] avaliações"},
   {"sv":"^Översätt recension till (.+)$","en":"Translate review to [[n]]","de":"Bewertung übersetzen: [[n]]","fr":"Traduire l’avis : [[n]]","es":"Traducir opinión: [[n]]","it":"Traduci recensione: [[n]]","nl":"Beoordeling vertalen: [[n]]","pl":"Przetłumacz opinię: [[n]]","pt-PT":"Traduzir avaliação: [[n]]"},
   {"sv":"^Spara ([\\d%,.\\s ]+%)$","en":"Save [[n]]","de":"Sparen Sie [[n]]","fr":"Économisez [[n]]","es":"Ahorra [[n]]","it":"Risparmia [[n]]","nl":"Bespaar [[n]]","pl":"Oszczędzasz [[n]]","pt-PT":"Poupe [[n]]"},
+  {"sv":"^(.+) - inte tillgängligt$","en":"[[n]] - unavailable","de":"[[n]] - nicht verfügbar","fr":"[[n]] - indisponible","es":"[[n]] - no disponible","it":"[[n]] - non disponibile","nl":"[[n]] - niet beschikbaar","pl":"[[n]] - niedostępny","pt-PT":"[[n]] - indisponível"},
   {"sv":"^Spara (.+)$","en":"Save [[n]]","de":"Sparen Sie [[n]]","fr":"Économisez [[n]]","es":"Ahorra [[n]]","it":"Risparmia [[n]]","nl":"Bespaar [[n]]","pl":"Oszczędzasz [[n]]","pt-PT":"Poupe [[n]]"}
  ],
  "jdgm": {

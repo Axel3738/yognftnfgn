@@ -32,7 +32,8 @@ export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s sv
 // filerna rörs inte när bara appord ändras — då behövs ingen ny VERSION).
 // a2 2026-10-01: Kachings paketnamn, Judge.me:s hela widget som hela meningar (appord.json → exakt; jdgm är källan), korgens rabattrader, Trust Badges dold, platshållarprodukter dolda, bara besökarens språk skickas.
 // a3 2026-10-01: färgvärden kopplade till Shopifys färgkategori (appord.json → varden) i produktens väljare och korgens rad, och "Recently viewed" hämtar produkterna på besökarens språk.
-export const APPORD_VERSION = 'a3';
+// a4 2026-10-01: texterna jämförs med enkla mellanslag (Kachings "1x  MC-Kapell 218×118 cm" stod kvar på svenska).
+export const APPORD_VERSION = 'a4';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -167,18 +168,19 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
   var VARDEN = '.cart__item--variants, .variant-input-wrap, .variant__label-info';
   function bytVarde(n) {
     var t = n.nodeValue; if (!t || !t.trim()) return;
-    var k = t.trim(); if (O.varden[k] && O.varden[k] !== k) n.nodeValue = t.replace(k, O.varden[k]);
+    var ra = t.trim(), k = ra.replace(/\\s+/g, ' '); if (O.varden[k] && O.varden[k] !== k) n.nodeValue = t.replace(ra, O.varden[k]);
   }
   function byt(n, baraRabatt) {
     var t = n.nodeValue; if (!t || !t.trim()) return;
-    var k = t.trim(), ny = null;
+    // Kaching sparar ibland två mellanslag ("1x  MC-Kapell 218×118 cm"): nyckeln jämförs med enkla mellanslag.
+    var ra = t.trim(), k = ra.replace(/\\s+/g, ' '), ny = null;
     var par = /^(.+?)( \\(.+\\))$/.exec(k);
     if (par && O.exakt[par[1]]) ny = tr(O.exakt[par[1]]) + par[2];
     else if (baraRabatt) ny = O.exakt[k] && /^\\d+x |^\\d+ ?-? ?Par$/.test(k) ? tr(O.exakt[k]) : null;
     else if (O.exakt[k]) ny = tr(O.exakt[k]);
     else if (O.varden[k]) ny = O.varden[k];
     else for (var i = 0; i < M.length; i++) { var r = M[i].re.exec(k); if (r) { var x = tr(M[i].m); if (x) ny = x.replace('[[n]]', r[1] || ''); break; } }
-    if (ny && ny !== k) n.nodeValue = t.replace(k, ny);
+    if (ny && ny !== k) n.nodeValue = t.replace(ra, ny);
   }
   function gå(rot) {
     var w = document.createTreeWalker(rot, NodeFilter.SHOW_TEXT, null), n;
