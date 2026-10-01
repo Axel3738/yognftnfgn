@@ -389,8 +389,9 @@ mäter vilken adress som helst.
 - **matstrumpor.se från Sverige:** 200, sv, SE, SEK.
 - **12 av 14 kampanjlänkar rätt från sina länder:** NO, NOB, DK, FI, US, WW (GB, CA, NZ), NL, ES,
   IT, PL, PT och JP.
-- ❌ **DE och FR landar på engelska.** En produktsida i en språkmapp på .com utan `?country=` får
-  302 till den engelska produktsidan när Shopify placerar besökaren i en annan marknad än USA.
+- ✅ **DE och FR landade på engelska — rättat samma kväll** (se nedan). En produktsida i en
+  språkmapp på .com utan `?country=` får 302 till den engelska produktsidan när Shopify placerar
+  besökaren i en annan marknad än USA.
   - Mätt från DE, AT, CH, FR, BE, ES och NO. Det händer även när Facebooks `fbclid` sitter på
     länken.
   - Landet och valutan blir rätt, men språket blir fel.
@@ -415,8 +416,28 @@ Prober hos vanliga nätoperatörer svarar bäst.
 ⚠️ Globalping och Shopify kan placera en prob i olika länder. "Luxembourg" hos WEDOS blev CZ hos
 Shopify, och geokoll ger då ⚪ i stället för en dom.
 
-**Regeln för nya länkar:** en länk till en produktsida i en språkmapp på .com ska bära `?country=`.
-Annars hamnar en kund i Europa på engelska.
+**Rättningen, Axels val A 2026-10-01 kväll** (frågan: A landet i länken nu, B starta som det är,
+C vänta med DE och FR):
+
+- DE-kampanjens länk bär `?country=DE` och FR:s `?country=FR` (`annonser/marknader.json`).
+- Alla 16 annonser fick ny creative med `bygg.mjs --marknad DE|FR --skarpt --byt-text`, lästa
+  tillbaka 18:2x CEST. Statusen rördes inte: annonserna står ACTIVE i en kampanj som är PAUSED
+  till starten 00:01. `--byt-text` byter sedan dess också i en sådan förberedd annons, men aldrig
+  i en som går.
+- Mätt efteråt med `geokoll.mjs --annonser --bara DE,FR`: 6 av 6 rätt. Sidan är tysk med euro i
+  DE, AT och CH, och fransk med euro i FR, BE och LU, utan omdirigering.
+- Priset för att ha en länk till tre länder: Shopify tror att österrikare och schweizare är i
+  Tyskland, och belgare och luxemburgare i Frankrike.
+  - Fraktrutan säger Deutschland respektive France.
+  - Kassan förväljer det landet, så kunden väljer sitt eget där.
+  - En schweizare ser euro, inte franc.
+- Den rena lösningen är ett adset per land med egen länk. Den är inte byggd.
+- `schemalagg.mjs` torrt efteråt: 14 av 15 skulle startas. Taiwan stoppas som förut.
+
+**Regeln för nya länkar sitter i koden:** `lankOk` (`annonser/bygg.mjs`) godkänner en länk till en
+språkmapp bara om den bär `?country=` med ett av kampanjens länder. `farAktiveras` och
+`schemalagg.mjs` startar alltså aldrig en sådan länk utan land. Regeln är mätt på .com, och
+.se/<mapp> delar samma uppbyggnad men är inte mätt. Ingen kampanj länkar dit.
 
 Hela sajtgranskningen i alla marknader står i `PROMPT-granskning-sajt.md`.
 

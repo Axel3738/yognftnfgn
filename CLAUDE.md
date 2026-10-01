@@ -211,9 +211,13 @@ marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesTo
 (mätt 2026-09-29, också i ett prov som återställdes). ⛔ **En produktlänk i en språkmapp på .com utan
 `?country=` skickar en kund i Europa eller Norge till den ENGELSKA produktsidan** (302). Det mättes från
 riktiga länder 2026-10-01 med `marknader/geokoll.mjs`. Landet och valutan blir rätt, men språket fel.
-Det träffar DE- och FR-annonserna, som saknar landet eftersom de har flera länder. Shopify
-geolokaliserar bara webbläsare, aldrig botar, så mät med geokoll och aldrig med en bar curl. Hela
-sajtgranskningen står i `marknader/PROMPT-granskning-sajt.md`.
+DE- och FR-annonserna saknade landet eftersom de har flera länder. ✅ Sedan samma kväll (Axels val A)
+bär de `?country=DE` och `?country=FR`: 16 annonser fick ny creative före starten, och mätningen gav 6
+av 6 rätt från DE, AT, CH, FR, BE och LU. Priset är att österrikare och schweizare ser "Deutschland" i
+fraktrutan, belgare och luxemburgare "France". `lankOk` godkänner sedan dess ingen länk till en
+språkmapp utan ett av kampanjens länder. Shopify geolokaliserar bara webbläsare, aldrig botar, så mät
+med geokoll och aldrig med en bar curl. Hela sajtgranskningen står i
+`marknader/PROMPT-granskning-sajt.md`.
 ✅ **Kassans logga är MATSTRUMPOR, utan .SE, i alla länder och även i Sverige sedan 2026-09-29
 kväll.** Kassan har bara EN logga för hela butiken, eftersom en logga per marknad kräver Plus. API:t
 nekar också: `checkoutBranding` ger ACCESS_DENIED "must be on a Plus plan". Cowork bytte till filen

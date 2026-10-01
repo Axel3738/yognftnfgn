@@ -127,7 +127,14 @@ export function lankOk(k, lank) {
   if (!lank.startsWith(`https://${doman}/`)) return false;
   const mapp = k.sprakmapp ?? (STANDARDSPRAK[doman] === k.locale ? '' : k.locale);
   if (mapp && !lank.startsWith(`https://${doman}/${mapp}/`)) return false;
-  if (k.geo.length === 1 && !lank.includes(`country=${k.geo[0]}`)) return false;
+  let land = null;
+  try { land = new URL(lank).searchParams.get('country'); } catch { return false; }
+  if (k.geo.length === 1 && land !== k.geo[0]) return false;
+  // En produktsida i en språkmapp utan ?country= skickar en kund som Shopify placerar i en annan
+  // marknad vidare (302) till domänens huvudspråk. Mätt från riktiga länder 2026-10-01 med geokoll.mjs:
+  // .com/de, /fr, /es och /nb gick till den engelska sidan. Landet måste alltså stå i länken, också för
+  // en kampanj med flera länder, och vara ett av kampanjens (DE-kampanjen: ?country=DE).
+  if (mapp && !k.geo.includes(land)) return false;
   return true;
 }
 
@@ -217,7 +224,10 @@ async function byggMarknad(kod) {
         const story = gammal.creative?.object_story_spec;
         const andrat = [...textSkillnad(an, story), ...identitetSkillnad(M, story), ...lankSkillnad(k, story), ...(lanad ? mediaSkillnad(videor[an.video_fran ?? an.bild_fran], story) : [])];
         if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
-        if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
+        // En annons som inte går: pausad själv, eller förberedd (ACTIVE) i en kampanj som fortfarande är
+        // PAUSED (schemalagg.mjs förbereder så före starttiden). Statusen rörs inte, bara creativen.
+        const vilar = gammal.status === 'PAUSED' || (kampanj?.status === 'PAUSED' && gammal.effective_status !== 'ACTIVE');
+        if (!vilar || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}, kampanjen ${kampanj?.status}) — texten byts bara i annonser som inte går`); continue; }
         if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
         // Samma media som annonsen redan bär: ingen ny uppladdning.
         const v = videor[an.video_fran ?? an.bild_fran ?? an.namn];

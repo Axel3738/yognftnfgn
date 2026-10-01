@@ -122,12 +122,13 @@ Mätt från riktiga länder med Globalping, som Facebook-appens webbläsare:
 | ✅ | **matstrumpor.no från Norge** (Haugesund, Lyse Tele) | 200, nb, land NO, NOK. Gäller roten, produktsidan och NOB-annonsens länk, utan omdirigering. |
 | ✅ | **matstrumpor.se från Sverige** | 200, sv, SE, SEK, 369 kr. matstrumpor.no från Sverige ger 302 → matstrumpor.se. |
 | ✅ | **12 av 14 kampanjlänkar från sina länder** | Rätt språk, land och valuta: NO, NOB, DK, FI, US, WW (GB, CA, NZ), NL, ES, IT, PL, PT och JP. |
-| ❌ | **DE och FR** | Länken saknar `?country=`, och Shopify skickar kunden i DE, AT, CH, FR och BE vidare (302) till den **engelska** produktsidan, med rätt land och valuta. Detta gäller varje produktsida i en språkmapp på .com utan `?country=` (också /es och /nb), även när Facebooks `fbclid` sitter på länken. Startsidan `/de` och `/de/pages/spara` stannar på tyska. Med `?country=DE` blir sidan tysk även från AT och CH, men landet blir DE. |
+| ❌→✅ | **DE och FR, rättat samma kväll** | Länken saknade `?country=`, och Shopify skickade kunden i DE, AT, CH, FR och BE vidare (302) till den **engelska** produktsidan, med rätt land och valuta. Det gäller varje produktsida i en språkmapp på .com utan `?country=` (också /es och /nb), även när Facebooks `fbclid` sitter på länken. Startsidan `/de` och `/de/pages/spara` stannar på tyska. Rättat 18:2x CEST (Axels val A): länkarna bär `?country=DE` och `?country=FR` i alla 16 annonser, och mätningen gav 6 av 6 rätt. Priset är att österrikare och schweizare ser "Deutschland" i fraktrutan, och belgare och luxemburgare "France". |
 | 🟡 | **En norrman på matstrumpor.se** | Får svensk text med NOK. På matstrumpor.com/ får hen engelska med NOK. |
 
-Axel avgör samma kväll hur DE och FR rättas. Läs därför läget själv: bär DE- och FR-annonsernas
-länk i Meta `?country=`, eller har DE och FR fått ett adset per land? Mät det som är live. Står
-fyndet kvar är det 🔴.
+Läs läget själv ändå. Bär DE- och FR-annonsernas länk i Meta `?country=DE` respektive `?country=FR`?
+Mät det som är live med `geokoll.mjs --annonser`. En annonslänk till en språkmapp utan land är 🔴.
+Att österrikare, schweizare, belgare och luxemburgare får grannlandet i fraktrutan och kassan är
+känt (nedan). Mät det och lägg det som 🔵 med ett förslag, till exempel ett adset per land.
 
 ⚠️ **Lärdomen som gör att du ser det:** Shopify geolokaliserar inte en förfrågan som ser ut som en
 bot. Med Globalpings egen User-Agent fick prober i DE, GB och FR landet US och dollar på .com, utan
@@ -355,7 +356,9 @@ kunder enligt din mätning: lägg det under "Frågor till Axel", med bevis.
    - inget världskollage;
    - elva norska omdömen i stället för Judge.me-rutan;
    - aldrig ett påstående om att butiken är norsk.
-3. **Belgien och Luxemburg** ligger i FR-kampanjen, alltså på franska.
+3. **Belgien och Luxemburg** ligger i FR-kampanjen, alltså på franska. DE-länken bär `?country=DE`
+   och FR-länken `?country=FR` (Axels val A 2026-10-01). Därför ser AT och CH "Deutschland" och
+   BE och LU "France" i fraktrutan, och kassan förväljer det landet.
 4. **Australien** säljs men har inga annonser (`geo_vantar`).
 5. **Taiwan** har inga annonser och lanseras inte (`lansering_stopp`). zh-TW lovar 5–10 dagar, medan
    leverantören säger 11–23. Det ändras före start.
