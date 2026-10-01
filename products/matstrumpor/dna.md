@@ -184,6 +184,12 @@ arbetshypoteser tills kommentarerna går att läsa.
 
 ## Nästa steg (i ordning, vinst snabbast först)
 
+⚠️ **Nya vinklar hämtas ur `mekanismer.md` (2026-10-01):** fem mekanismer
+mot marknadssofistikeringen (locket, duka fram den, favoriträtten,
+byrålådetestet, fem sorter), med hookar som klarat tre-frågorstestet,
+anti-positioneringar och skeptikerns dom. En rond som behöver sin "1 av 5
+nya" vinkel tar den därifrån, i den ordning filen anger.
+
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;
    `nya16` + `jul_video` fick 5 618 kr på 45 annonser, batch #1 35 kr på 11.
