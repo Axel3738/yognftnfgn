@@ -116,4 +116,16 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   syntes efter 15:59. Tiden i ärendet är när kvittot skrevs in (22:32 CEST),
   inte när anmälan skickades. Anmälan 2 står kvar som utkast tills Axel läst
   `1/6` eller `2/6` i Metas mejl.
-- Taköverdragets 5 är fortfarande inte med.
+- **Morgonkollen 1/10 09:08 CEST:** annons 2, 4 och 6 är fortfarande `ELIGIBLE`
+  och aktiva. Annons 4 och 6 skickades cirka 12 timmar tidigare. Annons 1, 3 och
+  5 togs ner inom minuter, så 4 och 6 ligger troligen hos en människa på Meta.
+  Det är inte bekräftat, eftersom kvittomejlen fortfarande är dolda för
+  Gmail-connectorn. Gmail visar inga nya mejl från Meta sedan 30/9 15:59.
+- Taköverdragets 5 är fortfarande inte med. Axel frågade 30/9 kväll om de inte
+  också var snodda. Svaret: jo, Bustatio kör fem av våra taköverdrag-filmer
+  (räckvidd 24 345, 1 234, 1 059, 449 och 243), men alla fem bär lånade klipp.
+  Fyra finns i Specialised Covers-mätningen (`KD-2026-001/specialised-covers.json`).
+  Den femte, `Takoverdrag_PD_2_H1` (annons 50), saknades där, men dess
+  bildrutor visar Specialised Covers logga på överdraget och mannen i mörk
+  jacka. Mätningen i går missade alltså minst en film. Frågan A (låt vara)
+  eller B (anmäl ändå, bara klippning och text) ligger hos Axel.
