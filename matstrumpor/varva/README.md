@@ -159,6 +159,18 @@ visas exempelnumret `EXEMPEL1` (`logik.js nummerFor`). Före
 `matstrumpor-tacksida-3` syntes kortet inte alls där (Cowork 2026-10-01). Alla
 riktiga ordrar har ett nummer: 250 av de 250 senaste, mätt samma dag.
 
+⚠️ **Läget 2026-10-01 (Cowork + sessionen):** blocket ligger SPARAT på **tacksidan**
+direkt under Bekräftelse och visar "Ge en vän en värdecheck på 50 kr" med
+förhandsorderns nummer. På **orderstatussidan** (kundkontot) ritar
+förhandsvisningen ingenting, inte ens felraden som `matstrumpor-tacksida-4` visar
+för en order utan nummer, trots att paketet registrerar båda målen
+(`shopify.extend("customer-account.order-status.block.render", …)` i
+`dist/varva-kort.js`, kontrollerat). Shopifys kundkontoförhandsvisning kör alltså
+inte kortet, och det går inte att se härifrån om riktiga kunder får det. Blocket
+sparas där ändå (sessionens beslut): det är ofarligt (en riktig order har alltid ett nummer, så
+felraden visas aldrig för en kund) och kan visa kortet för riktiga kunder.
+Verifieras först när en riktig order öppnas i kundkontot.
+
 ✅ **Deployat och releasat 2026-09-30 23:36 CEST** som `matstrumpor-tacksida-2`, och
 **2026-10-01 10:58 CEST som `matstrumpor-tacksida-3`** (värdecheck-texterna + kortet
 på orderstatussidan, se nedan)
