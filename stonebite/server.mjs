@@ -50,6 +50,8 @@ import { startaVakt, loggmappFor, harLogg } from './autosvar-vakt.mjs';
 import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
 import { lasUppfoljning, skrivUppfoljning } from './uppfoljning.mjs';
 import { lasDolda, skrivDold } from './tavla-dolda.mjs';
+import { fakturorSida } from './vy/fakturor.mjs';
+import { lasFakturor, sparaFaktura, taBortFaktura, fakturaSokvag, arEgen, tolkaMultipart, byggZip, nedladdningsnamn, giltigManad, MAX_BYTES as FAKTURA_MAX, FAKTURAREGISTER, FAKTURAMAPP } from './fakturor.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = dirname(HAR);
@@ -162,6 +164,49 @@ async function lasKropp(req, max = 64 * 1024) {
     req.on('end', () => klar(Buffer.concat(bitar).toString('utf8')));
     req.on('error', fel);
   });
+}
+
+/** Kroppen som Buffer — för filuppladdningar, där texttolkning förstör bytes. */
+async function lasKroppRaa(req, max) {
+  return new Promise((klar, fel) => {
+    let langd = 0;
+    const bitar = [];
+    req.on('data', (b) => {
+      langd += b.length;
+      if (langd > max) { fel(new Error('För stor fil.')); req.destroy(); return; }
+      bitar.push(b);
+    });
+    req.on('end', () => klar(Buffer.concat(bitar)));
+    req.on('error', fel);
+  });
+}
+
+/** Alla fakturor, eller bara den inloggades egna. Trasigt register ⇒ tom lista, aldrig krasch. */
+function fakturorFor(anvandare, { alla = false } = {}) {
+  let rader = [];
+  try { rader = lasFakturor(FAKTURAREGISTER); } catch { rader = []; }
+  return alla ? rader : rader.filter((r) => arEgen(r, anvandare));
+}
+
+/** Personerna ägaren kan ladda upp åt: bonusregistret + alla konton, utan dubbletter. */
+function personerForFakturor() {
+  const ut = new Map();
+  try { for (const p of lasPersoner(undefined, PERSONFIL)) ut.set(p.id, { id: p.id, namn: p.namn }); } catch { /* registret saknas */ }
+  try { for (const k of anv.lista(ANVANDARFIL)) { const id = k.personId || `konto:${k.id}`; if (!ut.has(id)) ut.set(id, { id, namn: k.namn }); } } catch { /* kontofilen saknas */ }
+  return [...ut.values()].sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
+}
+
+/** Skickar en fil som nedladdning. */
+function svaraFil(res, { sokvag, namn, typ, nonce, https }) {
+  sakerhetsrubriker(res, { nonce, https });
+  const data = readFileSync(sokvag);
+  res.writeHead(200, {
+    'Content-Type': typ || 'application/octet-stream',
+    'Content-Length': data.length,
+    'Content-Disposition': `attachment; filename="${namn.replace(/[^\x20-\x7e]/g, '_').replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(namn)}`,
+    'Cache-Control': 'private, no-store',
+  });
+  res.end(data);
 }
 
 function tolkaFormular(text) {
@@ -303,7 +348,8 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
       manader: (() => { try { return sparadeManader(); } catch { return []; } })(),
     });
     case 'system': return systemSida({ snapshot: snap });
-    case 'mig': return migSida({ snapshot: snap, anvandare, ...extra });
+    case 'fakturor': return fakturorSida({ rader: fakturorFor(anvandare, { alla: true }), anvandare, csrf: extra.csrf ?? '', manad: extra.manad ?? null, personer: personerForFakturor() });
+    case 'mig': return migSida({ snapshot: snap, anvandare, ...extra, fakturor: fakturorFor(anvandare) });
     case 'konton': return kontonSida({
       konton: anv.lista(ANVANDARFIL),
       anvandare,
@@ -450,6 +496,33 @@ export async function hantera(req, res) {
     return omdirigera(res, anvandare ? '/app' : '/logga-in');
   }
 
+  // ------------------------------------------------------- API: fakturorna
+  // Claude hämtar månadens fakturor till redovisningsbyrån (Axel 2026-10-01)
+  // med `STONEBITE_API_NYCKEL` som Bearer. Saknas nyckeln i miljön finns inget
+  // API alls. Bara läsning, bara fakturor.
+  if (stig === '/api/fakturor' || stig.startsWith('/api/fakturor/')) {
+    const nyckel = process.env.STONEBITE_API_NYCKEL;
+    const given = String(req.headers.authorization ?? '').replace(/^Bearer\s+/i, '');
+    if (!nyckel || nyckel.length < 20 || given !== nyckel) {
+      res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
+      return res.end(JSON.stringify({ fel: 'Fel eller saknad API-nyckel.' }));
+    }
+    const rader = fakturorFor(null, { alla: true });
+    if (stig === '/api/fakturor') {
+      const m = giltigManad(url.searchParams.get('manad'));
+      const ut = (m ? rader.filter((r) => r.manad === m) : rader).map((r) => ({
+        id: r.id, person: r.personNamn, personNyckel: r.personNyckel, manad: r.manad, namn: r.namn, typ: r.typ, storlek: r.storlek, anteckning: r.anteckning, uppladdad: r.uppladdad, fil: `/api/fakturor/${r.id}`,
+      }));
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      return res.end(JSON.stringify({ manad: m, antal: ut.length, fakturor: ut }));
+    }
+    const id = stig.slice('/api/fakturor/'.length);
+    const rad = rader.find((r) => r.id === id);
+    const sokvag = rad ? fakturaSokvag(rad, FAKTURAMAPP) : null;
+    if (!sokvag) { res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' }); return res.end(JSON.stringify({ fel: 'Fakturan finns inte.' })); }
+    return svaraFil(res, { sokvag, namn: nedladdningsnamn(rad), typ: rad.typ, nonce, https });
+  }
+
   // ------------------------------------------------------------- appen
   if (stig === '/app' || stig.startsWith('/app/')) {
     if (!anvandare) return omdirigera(res, `/logga-in?nasta=${encodeURIComponent(stig)}`);
@@ -475,6 +548,37 @@ export async function hantera(req, res) {
 
     // POST-åtgärderna först
     if (req.method === 'POST') {
+      // Fakturauppladdningen är multipart (en fil) — den läses rå, aldrig som
+      // text, och CSRF-nyckeln ligger som fält i formuläret.
+      if (stig === '/app/fakturor/ladda-upp') {
+        let delar;
+        try {
+          delar = tolkaMultipart(await lasKroppRaa(req, FAKTURA_MAX + 64 * 1024), req.headers['content-type']);
+        } catch (e) {
+          return felsida(res, { kod: 413, rubrik: 'Kunde inte ladda upp', text: e.message.includes('stor') ? `Filen är för stor (max ${Math.round(FAKTURA_MAX / 1024 / 1024)} MB).` : e.message, nonce, https });
+        }
+        const f2 = delar.falt;
+        if (!kollaCsrf(f2.csrf, kakvarde, HEMLIGHET)) {
+          return felsida(res, { kod: 400, rubrik: 'Försök igen', text: 'Formuläret var för gammalt. Gå tillbaka och försök igen.', nonce, https });
+        }
+        const nasta = sakerNasta(f2.nasta, '/app/mig#fakturor');
+        const fil = delar.filer.find((x) => x.falt === 'fil');
+        // Ägaren/chefen får ladda upp åt någon annan; alla andra bara åt sig själva.
+        let personId = anvandare.personId ?? null;
+        let personNamn = anvandare.namn;
+        let kontoId = anvandare.id;
+        if (f2.personId && harRatt(anvandare, 'fakturor-alla')) {
+          const p = personerForFakturor().find((x) => x.id === f2.personId);
+          if (p) { personId = p.id; personNamn = p.namn; kontoId = p.id.startsWith('konto:') ? p.id.slice(6) : null; }
+        }
+        try {
+          sparaFaktura({ personId, personNamn, kontoId, manad: f2.manad, filnamn: fil?.filnamn, data: fil?.data, anteckning: f2.anteckning }, { register: FAKTURAREGISTER, mapp: FAKTURAMAPP });
+        } catch (e) {
+          return felsida(res, { kod: 400, rubrik: 'Kunde inte ladda upp', text: e.message, nonce, https });
+        }
+        return omdirigera(res, nasta);
+      }
+
       const f = tolkaFormular(await lasKropp(req));
       if (!kollaCsrf(f.csrf, kakvarde, HEMLIGHET)) {
         return felsida(res, { kod: 400, rubrik: 'Försök igen', text: 'Formuläret var för gammalt. Gå tillbaka och försök igen.', nonce, https });
@@ -495,6 +599,15 @@ export async function hantera(req, res) {
           return felsida(res, { kod: 400, rubrik: 'Kunde inte spara', text: e.message, nonce, https });
         }
         return omdirigera(res, nasta);
+      }
+
+      // --------------------------------------------------- Fakturor: ta bort
+      if (stig === '/app/fakturor/ta-bort') {
+        if (!harRatt(anvandare, 'fakturor-alla')) return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Bara ägaren eller chefen tar bort fakturor.', nonce, https });
+        try { taBortFaktura(String(f.id ?? ''), { av: anvandare.namn }, FAKTURAREGISTER); } catch (e) {
+          return felsida(res, { kod: 400, rubrik: 'Kunde inte ta bort', text: e.message, nonce, https });
+        }
+        return omdirigera(res, sakerNasta(f.nasta, '/app/fakturor'));
       }
 
       // ------------------------------------------------------- Laget: dölj
@@ -723,6 +836,29 @@ export async function hantera(req, res) {
       }
 
       return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Den knappen finns inte.', nonce, https });
+    }
+
+    // Fakturor: ladda ner en (egen, eller vilken som helst för ägare/chef) och
+    // hela månaden som zip (bara ägare/chef).
+    if (stig.startsWith('/app/fakturor/fil/')) {
+      const id = stig.slice('/app/fakturor/fil/'.length);
+      const rad = fakturorFor(anvandare, { alla: harRatt(anvandare, 'fakturor-alla') }).find((r) => r.id === id);
+      const sokvag = rad ? fakturaSokvag(rad, FAKTURAMAPP) : null;
+      if (!sokvag) return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Fakturan finns inte, eller är inte din.', nonce, https });
+      return svaraFil(res, { sokvag, namn: nedladdningsnamn(rad), typ: rad.typ, nonce, https });
+    }
+    if (stig === '/app/fakturor/zip') {
+      if (!harRatt(anvandare, 'fakturor-alla')) return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Bara ägaren eller chefen hämtar allas fakturor.', nonce, https });
+      const m = giltigManad(url.searchParams.get('manad'));
+      if (!m) return felsida(res, { kod: 400, rubrik: 'Välj månad', text: 'Ange månaden som ÅÅÅÅ-MM.', nonce, https });
+      const filer = fakturorFor(anvandare, { alla: true }).filter((r) => r.manad === m)
+        .map((r) => ({ rad: r, sokvag: fakturaSokvag(r, FAKTURAMAPP) })).filter((x) => x.sokvag)
+        .map((x) => ({ namn: nedladdningsnamn(x.rad), data: readFileSync(x.sokvag), tid: new Date(x.rad.uppladdad) }));
+      if (!filer.length) return felsida(res, { kod: 404, rubrik: 'Inga fakturor', text: `Inga fakturor uppladdade för ${m}.`, nonce, https });
+      const zip = byggZip(filer);
+      sakerhetsrubriker(res, { nonce, https });
+      res.writeHead(200, { 'Content-Type': 'application/zip', 'Content-Length': zip.length, 'Content-Disposition': `attachment; filename="fakturor-${m}.zip"`, 'Cache-Control': 'private, no-store' });
+      return res.end(zip);
     }
 
     // GET-sidorna

@@ -1,0 +1,16 @@
+Du arbetar i Railway (projektet strong-solace, tjänsten yognftnfgn) och i claude.ai → Settings → Environments.
+
+Uppgiften: ge sajtens faktura-API en nyckel, samma värde på två ställen.
+
+1. Skapa ett slumpmässigt lösenord på 48 tecken (bokstäver och siffror, inga specialtecken). Visa det inte i chatten mer än en gång.
+2. Railway → strong-solace → tjänsten yognftnfgn → Variables → New Variable:
+   Namn: STONEBITE_API_NYCKEL
+   Värde: nyckeln från steg 1
+   Spara och tryck Deploy om Railway frågar.
+3. claude.ai → Settings → Environments → miljön "Default ENV" (env_01PBy3BU66p5AEJYSfm8EbjP) → Environment variables → lägg till:
+   Namn: STONEBITE_API_NYCKEL
+   Värde: exakt samma nyckel
+   Spara.
+4. Kontrollera: öppna https://www.stonebite.org/api/fakturor?manad=2026-09 i webbläsaren. Svaret ska vara {"fel":"Fel eller saknad API-nyckel."} — det betyder att API:t finns och är låst. Kommer en 404 har deployen inte gått igenom än, vänta tio minuter och prova igen.
+
+Rör ingenting annat i Railway: inga andra variabler, ingen volym, ingen domän. Rör aldrig MX, SPF, DKIM eller DNS.
