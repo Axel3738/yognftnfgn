@@ -159,10 +159,19 @@ export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGA
  * Ingen skickade in något, och klockan hann före. Dagen innan hände samma sak
  * med order `17584203399517` (509 kr). Larmet hade namngett båda i förväg.
  *
- * En sådan rad är inte längre en uppgift — bevisfönstret går inte att öppna
- * igen — men den får inte tigas bort heller: den är kvittot på vad uteblivet
- * svar kostade. Därför står den under egen rubrik i larmet, aldrig i listan
- * "need evidence" bland dem som fortfarande går att vinna.
+ * ⛔ **Rättat 2026-10-01: "fönstret går inte att öppna igen" var FALSKT.**
+ * Samma #4914 fick sitt bevis inskickat **09:32 den 30 september** — 8,5 timmar
+ * efter deadline — och Shopify tog emot det: status `under_review`,
+ * `evidence_sent_on: 2026-09-30T09:32:09+02:00`. #5053 gick in sex timmar sent
+ * den 28 september och togs också emot. Två mätningar, två gånger accepterat.
+ * Larmet sa samtidigt "Not a task: the window cannot be reopened" — hade VA:n
+ * följt den raden hade hon inte skickat in, och 348 kr hade varit borta för att
+ * vårt eget larm sa åt henne att låta det vara. **Skicka alltid in ändå.**
+ *
+ * Raden ligger därför kvar under egen rubrik — inte för att den är avskriven,
+ * utan för att dess dygnsräkning är meningslös bland dem som har tid kvar — och
+ * rubriken säger åt VA:n att skicka in i dag. Att Shopify tar emot är bankens
+ * goodwill, inte en regel: det ersätter aldrig att skicka in i tid.
  */
 export function fonstretStangt(t, nu = new Date()) {
   // ⚠️ Bara ett AVLÄST och tomt bevisfält bevisar att ingen svarade. Saknas
@@ -285,8 +294,10 @@ export function renderaLarm(alla, { brand, nu = new Date(), grans = LARMGRANS_DA
   if (stangda.length) {
     ut.push(
       '',
-      `⛔ **The evidence window has closed on ${stangda.length === 1 ? 'this one' : `these ${stangda.length}`} — nothing was ever submitted.**`,
-      'Not a task: the window cannot be reopened. It is here so the cost is visible, and so nobody spends time on it today.',
+      `⏰ **Past the deadline with no evidence in — ${stangda.length === 1 ? 'this one' : `these ${stangda.length}`}. SUBMIT ANYWAY, TODAY.**`,
+      'Measured twice in this shop: Shopify accepted evidence 6 hours late (28 Sep) and 8.5 hours late (30 Sep), both times',
+      'reaching `under_review`. Late is not the same as closed. Build the pack, press **Submit now**, and do it before',
+      'anything else on this list — these are the only rows where waiting another day can make the money unreachable.',
       '',
     );
     for (const x of stangda) {
@@ -296,8 +307,8 @@ export function renderaLarm(alla, { brand, nu = new Date(), grans = LARMGRANS_DA
     }
     ut.push(
       '',
-      '**Still do one thing: email the customer.** A chargeback can be withdrawn by the cardholder even after our window shuts,',
-      'and an inquiry that nobody answered escalates into a chargeback — talking to the customer is the only lever left.',
+      '**And email the customer the same day.** A chargeback can be withdrawn by the cardholder even after our window shuts,',
+      'and an inquiry that nobody answered escalates into a chargeback — so talking to the customer is a second lever, not a substitute.',
     );
   }
   return ut.join('\n');
