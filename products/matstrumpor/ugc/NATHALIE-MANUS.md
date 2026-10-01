@@ -24,18 +24,18 @@ Read off the captions on 2026-10-01; the first second has no words.
 | 5 | Ta med till kalaset eller spara till julstrumpan. | Bring them to the party or save them for the Christmas stocking. | She opens the lid, lifts one tray out. |
 | 6 | När du ger bort dom här så är det som att du vet allt om personen, du visste ju deras favoriträtt. | When you give these away it is like you know everything about the person; you knew their favourite dish. | To camera, box in hand. |
 | 7 | Tio sushibitar med ätpinnar i trä. | Ten sushi pieces with wooden chopsticks. | Top-down: the tray, chopsticks across. |
-| 8 | Pizza, burgare och donut i egna lådor. | Pizza, burger and donut in their own boxes. | The other three boxes on the table. |
-| 9 | Fyra looks som verkligen lurar blicken totalt. | Four looks that really fool the eye. | A friend opens the package; camera on her face. |
-| 10 | Ja, hon blev verkligen överraskad. | Yes, she was really surprised. | The friend laughs, looking at the tray. |
-| 11 | Rolig att öppna och används år efter år. | Fun to open and used year after year. | The friend lifts a sock out of the tray. |
-| 12 | Dom som tog slut i november förra året, så säkra dina innan det händer igen. | The ones that sold out last November, so secure yours before it happens again. | Sofa, feet up, the salmon socks on, laughing. |
+| 8 | Ja, hon blev verkligen överraskad. | Yes, she was really surprised. | A friend opens the package and laughs, looking at the tray; camera on her face. |
+| 9 | Rolig att öppna och används år efter år. | Fun to open and used year after year. | The friend lifts a sock out of the tray. |
+| 10 | Dom som tog slut i november förra året, så säkra dina innan det händer igen. | The ones that sold out last November, so secure yours before it happens again. | Sofa, feet up, the salmon socks on, laughing. |
 
-Spoken at a natural pace it runs about 35 seconds. The creator says every line on camera; the
+⛔ **Two of the winner's lines are not given to creators** (Axel 2026-10-01 evening: only the sushi socks are marketed): "Pizza, burgare och donut i egna lådor." and "Fyra looks som verkligen lurar blicken totalt." The live ad has them; new videos do not, and the other boxes are never in frame.
+
+Spoken at a natural pace it runs about 30 seconds. The creator says every line on camera; the
 editors burn the same words in as captions (max two lines) and add the music.
 
 **Never:** the store's name or web address (also on packaging, labels and screens), prices,
 offers, delivery times, guarantees, claims about material or quality. A reaction is never
 faked or re-staged. The socks must be shown as socks within the first 10 seconds.
 
-The full order for the first two creators (Sofie and Katarina, 2026-10) with the iteration
-and imitation scripts: `products/matstrumpor/ugc/2026-10-briefer.md`.
+The full October 2026 order (four briefs, three videos per creator):
+`products/matstrumpor/ugc/2026-10-briefer.md`. Axel talks to the creators himself.

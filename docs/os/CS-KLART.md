@@ -97,8 +97,10 @@ grön när koden eller kommandofilen tvingar fram den och en körning visat det.
     • Det som saknas är tro, auktoritet eller tillit, alltså precis det en
       redigerare med lagerfilm inte kan skapa. Går det att lösa med
       befintligt material ska det lösas så i stället.
-21. Föreslår rutinen UGC skriver den ett färdigt beställningsmeddelande till
-    Lovely, som sköter hela produktionen. Meddelandet ska innehålla: produkt,
+21. Föreslår rutinen UGC skriver den ett färdigt beställningsmeddelande som
+    **Axel själv skickar till kreatören** (Axels beslut 2026-10-01 kväll: ingen
+    VA pratar med kreatörerna; meddelandet är från honom, utan pris eller
+    villkor, `factory/ugc/villkor.md`). Beställningen ska innehålla: produkt,
     vilken vinnande annons vi bygger på, vilka komponenter kreatören ska
     träffa (avatar, vinkel, mekanism, tro, brådska), manuset som ska följas,
     vad som måste synas på kameran, och deadline. Beställs flera videor

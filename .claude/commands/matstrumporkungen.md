@@ -260,14 +260,18 @@ behörighetsreglerna matchar på första ordet.
      `Draft`. **Hela briefen ligger i Notion-itemet** — aldrig en länk till
      en .md-fil. Finns raden redan hoppar verktyget över den och säger det.
    - **Föreslår ronden UGC** (en riktig kreatör i bild, `format-2`): skriv
-     beställningen till Lovely enligt `docs/os/CS-KLART.md` punkt 21 och
-     **bifoga alltid Nathalies manus som video A** —
-     `products/matstrumpor/ugc/NATHALIE-MANUS.md` (Axels order 2026-10-01: "Jag
-     ger gärna Nathalies manus till nya kreatörer, PÅMINN MIG BARA"). Varje ny
-     kreatör gör tre videor: kopian (A), en iteration (B) och en imitation (C).
-     Mönstret är `products/matstrumpor/ugc/2026-10-briefer.md` +
-     `LOVELY-2026-10-01.md`. Axels uppgift i rapporten: "Skicka meddelandet till
-     Lovely", med meddelandet i ett kodblock.
+     beställningen enligt `docs/os/CS-KLART.md` punkt 21 och **bifoga alltid
+     Nathalies manus som video A** — `products/matstrumpor/ugc/NATHALIE-MANUS.md`
+     (Axels order 2026-10-01: "Jag ger gärna Nathalies manus till nya kreatörer,
+     PÅMINN MIG BARA"). Varje ny kreatör gör tre videor: kopian, en iteration
+     och en till ur briefpaketet. Mönstret är
+     `products/matstrumpor/ugc/2026-10-briefer.md`. ⛔ **Axel pratar själv med
+     kreatörerna** (hans beslut 2026-10-01 kväll: ingen VA, inte Lovely) —
+     rapportens uppgift till Axel är meddelandet till kreatören i ett kodblock,
+     från honom själv, utan pris eller villkor (`factory/ugc/villkor.md`).
+     ⛔ **Bara sushi i varje brief** (samma kväll: "vi ska inte marknadsföra de
+     andra produkterna heller, bara sushi") — pizza-, burgar- och donutlådan
+     står aldrig i en rad och syns aldrig i bild.
    - Logga varje brief: `{kod:"BRIEF", annons, koncept, typ, brieftyp, parent, lardom, iteration, playbook, kalla, brief}` — `brief` är sökvägen till brief.md, så arkivet läser VARIABELTAGGAR därifrån.
 
 7. **Tipsen till Axel — förslag, aldrig ändringar.**

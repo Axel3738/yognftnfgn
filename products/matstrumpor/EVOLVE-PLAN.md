@@ -30,19 +30,25 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
    `factory/ugc/utskick/2026-10-01-matstrumpor.md` (9 st + 4 reserver; listan i
    `factory/ugc/kreatorer.md`). Sofie och Katarina först, sedan de nya.
 2. **Skriv "merga"** här i chatten. Annars kör rutinen lör 3/10 07:00 på den gamla koden.
-3. **ROUTING, A eller B:** A = nya UGC-videor laddas upp i `09-17 UGC` (Nathalies adset,
-   85 % av spenden); B = som förut (`nya16`/`jul_video`, där Gilz 11 videor fick 35 kr på en vecka).
+3. **ROUTING, A, B eller C:** A = nya UGC-videor laddas upp i `09-17 UGC` (Nathalies adset,
+   85 % av spenden); B = som förut (`nya16`/`jul_video`, där Gilz 11 videor fick 35 kr på en vecka);
+   **C = Chadbots svar: DCT 3:2:2**, ett nytt adset per batch med dynamic creative (≥ 3 videor,
+   2 rubriker, 2 primärtexter), flytt till huvudadsetet vid 20–30 % budgetandel. C kräver att
+   `/matstrumpor` byggs om (sessionen gör det när Axel sagt C).
+3b. **Nathalie:** fråga henne om en löpande runda (Chadbot fråga 1: fler från den som redan
+   levererat, före nya). Meddelandet står först i `factory/ugc/utskick/2026-10-01-matstrumpor.md`.
 
 ## ☀️ I morgon fre 2/10 (Axel, 15 minuter)
 
-4. **Dela briefsidan** med Lovely och kreatörerna som sagt ja:
+4. **Dela briefsidan** och skicka länken själv till de som sagt ja:
    https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn → **Share** → **Anyone with the link**.
-5. **Skicka Lovely-meddelandet** (`products/matstrumpor/ugc/LOVELY-2026-10-01.md`): hon
-   sköter paket, brief, deadline och råfiler för de som sagt ja. Hon letar inga kreatörer.
-6. **Klistra in Chadbot-frågan** (`products/matstrumpor/CHADBOT-2026-10-02.md`, utan brand)
-   och klistra tillbaka svaret här. Fyra frågor: UGC-vinnare med bara en video, spend
-   winner med hög hold men låg konvertering, hit rate per idékälla, och om nya annonser ska
-   testas i vinnarens adset.
+   ⛔ Axels beslut 2026-10-01 kväll: **Lovely pratar inte med kreatörerna, Axel sköter allt**
+   (paket, brief, deadline, pengar). Lovely-meddelandet är borttaget. **Bara sushi** i alla
+   briefer, de andra lådorna marknadsförs inte.
+5. ~~Lovely-meddelandet~~ utgår.
+6. ✅ **Chadbot svarade 2026-10-01 kväll** (`products/matstrumpor/CHADBOT-SVAR-2026-10-02.md`):
+   fler från Nathalie först, ATC-graden avgör funnel/urgency, hit rate 2–4 % är super
+   winner-nivå, och routing = DCT 3:2:2 (alternativ C nedan).
 7. **Ett regelbeslut:** Evolves hookregel säger "jämför aldrig med ett märke, skriv först/enda",
    vår `copy-regler.md` säger "jämför med det kunden redan känner". **A** = Evolves regel
    vinner, **B** = vår står kvar. Sedan skrivs Evolves sju prompt-regler in i copy-reglerna.
@@ -54,6 +60,9 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
   --logga`, `--arkiv`, playbook-taggar). Jag läser utfallet och rättar det som brister.
 - **När en kreatör sagt ja:** rad i UGC-pipelinen i Notion med deadlines (`/ugc`, SOP-03), och
   uppladdaren loggar `--kreator <namn>` så arkivet räknar vinst per kreatör.
+- **ATC-graden i rutinen** (Chadbot fråga 2): `kor.mjs --hamta` läser `add_to_cart` + `landing_page_view`,
+  domen skriver ATC % för varje spend winner, tröskel 8 %. Byggs i nästa session.
+- **DCT-uppladdaren** (Chadbot fråga 4) om Axel väljer ROUTING C.
 - **Research in i briefen** (läcka 3): kungen läser enkäten, kommentarerna och recensionerna
   före varje brief. Byggs i nästa session.
 - **Evolves sju prompt-regler** in i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` efter
@@ -68,7 +77,7 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 | När | Vad |
 |---|---|
 | Varje ny kreatör | **Ge Nathalies manus** (`ugc/NATHALIE-MANUS.md`) som video A. Står i kungens steg 6, så rutinen tar med det i varje UGC-förslag. |
-| Mån 5/10 07:45 | Push till Axel: Lovely-meddelandet, merge, ROUTING (`trig_01DNvip1ELUUsGDSFNDYDXoU`). |
+| Mån 5/10 07:45 | Push till Axel: merge, ROUTING (A/B/C), copyregeln (`trig_01DNvip1ELUUsGDSFNDYDXoU`). |
 | Från fre 9/10 | Rutinen 07:00 ger utlandets första etiketter per land, när kampanjerna gått en vecka. |
 | Mån 12/10 07:45 | Push till Axel: är Sofies och Katarinas råfiler inne? (`trig_01AvCmc4qrFPQNAaakezRxTX`) |
 | Tis 20/10 07:45 | Push till Axel: tre dagar kvar att beställa UGC till Black Friday (23/10), med beställningen färdigskriven (`trig_01TLJbdZ9nCC9EVTCUFYc7PU`). |
@@ -81,7 +90,7 @@ Ur Evolve-kursen (A10 UGC, A3 Research). Allt på engelska, en SOP per rad innan
 
 | Uppgift | Vem i dag | Kurslektion |
 |---|---|---|
-| Hitta och kontakta nya kreatörer, skicka manus, följa upp, ladda upp råfiler | Lovely (delvis) | A10: Process Creators, Sending Frameworks, Follow Up & Upload |
+| Hitta och kontakta nya kreatörer, skicka manus, följa upp, ladda upp råfiler | **Axel själv** (hans beslut 2026-10-01: Lovely pratar inte med kreatörerna) | A10: Process Creators, Sending Frameworks, Follow Up & Upload |
 | Research-dokument per produkt (Reddit, TikTok, Amazon-recensioner) | ingen | A3 Research action items |
 | Svara på Matstrumpors annonskommentarer | Axel | — |
 | Judge.me-rättningarna (polskan, felmärkta recensioner) | Axel | — |
@@ -91,7 +100,7 @@ Ur Evolve-kursen (A10 UGC, A3 Research). Allt på engelska, en SOP per rad innan
 
 ## 🔧 Nästa bygg (kvar av de fem läckorna)
 
-1. **Svälten** (läcka 2): hälften av allt vi laddat upp har aldrig fått leverans. Löses av ROUTING-beslutet ovan.
+1. **Svälten** (läcka 2): hälften av allt vi laddat upp har aldrig fått leverans. Chadbots svar: DCT 3:2:2 (ROUTING C). Löses av beslutet ovan.
 2. **Research in i briefen** (läcka 3): 0 av 12 briefer kom ur kundernas egna ord. Kungen ska läsa enkäten, kommentarerna och recensionerna innan den briefar.
 3. **Copyreglerna ur Evolves prompter** (läcka 5): sju regler (hook ~5 ord, kall trafik 0–3–8–35 s, slippery slope …). En krockar med våra regler ("jämför aldrig med ett märke" mot "jämför med det kunden känner"). Där behövs Axels val.
-4. **Tre frågor till Chadbot** som inte är ställda (gap-analysen avsnitt 8).
+4. ✅ Chadbot-frågorna ställda och besvarade 2026-10-01 (`CHADBOT-SVAR-2026-10-02.md`).

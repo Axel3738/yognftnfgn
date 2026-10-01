@@ -9,19 +9,25 @@
 - **Avsändaren är Axel, inte ett varumärke.** Han byter inte identitet mellan
   butikerna, och de återkommande kreatörerna känner honom.
 
-Produkten kreatören får: **alla fyra lådorna** (sushi, pizza, burgare, donut),
-så att raden "pizza, burgare och donut i egna lådor" går att filma.
+Produkten kreatören filmar: **sushilådan** (Axel 2026-10-01 kväll: bara sushi
+marknadsförs; de andra lådorna syns aldrig i bild). ⚠️ Meddelande 1–2 gick i väg
+innan beslutet och nämner "alla fyra lådorna" — vad som skickas är Axels sak,
+briefen är sushi ändå. ⛔ Ingen VA pratar med kreatörerna, bara Axel.
 
 Briefen de får när de sagt ja: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn
 (delas av Axel: Share → Anyone with the link).
 
 ---
 
-## 1. Sofie (@husetmellanhagarna) — IG-DM. Återkommande.
+## 0. Nathalie — Axel har kontakten. Återkommande, vinnaren. (Chadbot 2026-10-01: fler från den som redan levererat, före nya.)
+
+Hej Nathalie! Axel här. Din video är vår bästa någonsin, den drog in två av tre köp i hela kampanjen första veckan. Jag vill inte göra en video till med dig, jag vill göra flera, löpande, hemma hos dig som förut. Samma sak som funkade: någon som öppnar lådan utan att veta vad som är i. Är du sugen på att ta dig an det? Då hör jag av mig med detaljerna.
+
+## 1. Sofie (@husetmellanhagarna) — IG-DM. Återkommande. ✅ Skickat 2026-10-01.
 
 Hej Sofie! Axel här. Dina videor höll kvar tittarna längst av allt vi har, så jag vill göra en runda till med dig. Den här gången med manus: vårt bästa manus ord för ord, plus en ny version med en annan öppning. Tre korta videor hemma hos dig som förut, och du får alla fyra lådorna. Är du sugen på att ta dig an det? Då skickar jag manuset direkt.
 
-## 2. Katarina Kruger — DM eller mejl (Axel har kontakten). Återkommande.
+## 2. Katarina Kruger — DM eller mejl (Axel har kontakten). Återkommande. ✅ Skickat 2026-10-01.
 
 Hej Katarina! Axel här. Din video om sushiälskaren gav köp redan första veckan, så jag vill göra tre till med dig. Den här gången med manus: vårt bästa manus ord för ord, plus en ny version med en annan öppning och någon som öppnar lådan utan att veta vad som är i. Hemma som förut, och du får alla fyra lådorna. Är du sugen på att ta dig an det? Då skickar jag manuset direkt.
 
@@ -33,7 +39,7 @@ Hej Jennie och Emelie! Axel heter jag. Jag säljer strumpor som ser ut som sushi
 
 Hej! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Ni gör roliga utmaningar som familj, och det jag vill filma är precis det: någon i familjen får lådan utan att veta vad som är i, tror att det är sushi, och så är det strumpor. Tre korta videor på svenska, med mobilen hemma hos er, efter ett kort manus. Är ni sugna på att ta er an det?
 
-## 5. Per Myrhill — IG-DM @myrhill (50 år, serietecknare, Floda)
+## 5. Per Myrhill — IG-DM @myrhill (50 år, serietecknare, Floda). ✅ Skickat 2026-10-01.
 
 Hej Per! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Nästan alla som gör reklamfilm är 25 och ser ut som reklam. Du är serietecknare, 50, och ser ut som en människa, och det är därför jag hör av mig. Jag vill ha dig som den som ger bort lådan, till frun, ett barn eller en polare, och filma när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?
 
@@ -45,7 +51,7 @@ Hej Mikael! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, bu
 
 Hej Emma! Axel heter jag, jag sitter i Göteborg och säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör annonsinnehåll åt bland annat Jollyroom och Axkid, och det är exakt den sortens video jag vill ha. Jag har ett manus som redan bevisat sig och vill ha det filmat av dig, plus en version med en annan öppning och någon som öppnar lådan utan att veta. Tre korta videor på svenska, med mobilen hemma. Är du sugen på att ta dig an det?
 
-## 8. Sara Glavin — mejl till blogg@saraglavin.se (Göteborg, UGC, familjeliv; IG/TikTok @ugcsaraswe)
+## 8. Sara Glavin — mejl till blogg@saraglavin.se (Göteborg, UGC, familjeliv; IG/TikTok @ugcsaraswe). ✅ Skickat 2026-10-01.
 
 Ämne: Tre korta UGC-videor på svenska, från Göteborg
 
