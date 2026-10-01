@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import {
-  MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
+  MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaEsLocale, ES_BYTEN, BETAL_MARK, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
   patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR, patchaVarlden, VARLDEN_MARK,
 } from '../domantema.mjs';
@@ -163,6 +163,37 @@ test('sidfoten: bara menyrader med @ hoppas, och bara på .no', () => {
   const r = patchaFooter(FOT);
   assert.match(r.kod, /\{%- if link\.title contains '@' and request\.host contains 'matstrumpor\.no' -%\}\{%- continue -%\}\{%- endif -%\}/);
   assert.equal(patchaFooter(r.kod).kod, r.kod);
+});
+
+test('sidfoten: betalikonerna i Japan och Taiwan är bara kort, PayPal och plånböckerna, idempotent', () => {
+  const FOT = `                        {%- for link in block.settings.menu.links -%}
+                          <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                        {%- endfor -%}
+            <ul class="list list-payment" role="list">
+              {%- for type in shop.enabled_payment_types -%}
+                <li class="list-payment__item">
+                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                </li>
+              {%- endfor -%}
+            </ul>`;
+  const r = patchaFooter(FOT);
+  assert.ok(r.byten.includes('betalikoner_asien'));
+  assert.ok(r.kod.includes(BETAL_MARK));
+  assert.match(r.kod, /request\.locale\.iso_code == 'ja' or request\.locale\.iso_code == 'zh-TW'/);
+  assert.match(r.kod, /'visa,master,american_express,paypal,apple_pay,google_pay,shopify_pay' \| split: ','/);
+  assert.ok(!/klarna/.test(r.kod), 'Klarna står aldrig på listan');
+  assert.equal(patchaFooter(r.kod).kod, r.kod);
+  assert.deepEqual(patchaFooter(r.kod).byten, []);
+});
+
+test('spanska locale-filen: Spaniens "Añadir", bara de kundsynliga raderna, idempotent', () => {
+  const fil = '{\n' + ES_BYTEN.map(([fel]) => `  ${fel},`).join('\n') + '\n  "otro": "Agregar algo"\n}';
+  const r = patchaEsLocale(fil);
+  assert.equal(r.byten.length, ES_BYTEN.length);
+  assert.ok(r.kod.includes('"add_to_cart": "Añadir al carrito"'));
+  assert.ok(r.kod.includes('"otro": "Agregar algo"'), 'bara de uppräknade raderna byts');
+  assert.doesNotThrow(() => JSON.parse(r.kod));
+  assert.deepEqual(patchaEsLocale(r.kod).byten, []);
 });
 
 test('ms-head: CSS:en för .no ligger bakom värdvillkoret', () => {

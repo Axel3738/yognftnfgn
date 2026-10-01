@@ -34,6 +34,8 @@ Alla tre röstvideorna har **samma svenska AI-kvinnoröst** (mediantonhöjd 198�
    - `<KOD>/012v2.json` innehåller de sju bildtexterna.
 3. **012v2 (ingen röst):** `python3 matstrumpor/marknader/egna/rendera-012v2.py <KOD>` →
    `../annonser/klar/<KOD>_012v2.mp4`. Samma sju orange rutor ritas med ny text och täcker de svenska helt.
+   Kontrollera sedan varje bildruta: `python3 matstrumpor/marknader/egna/kolla-012v2.py <KOD> …`
+   (svensk text synlig eller två av våra rutor samtidigt ⇒ ❌, exit 1).
 4. **Röstvideorna, textlagret:** `python3 matstrumpor/marknader/egna/textlager.py <KOD> <video>`
    → `ut/<KOD>_<video>.text.mp4`. Alla svenska texter byts, originalljudet ligger kvar. Tar ~2,5 min per video.
 5. **Röstvideorna, rösten:** `node matstrumpor/marknader/egna/dubba.mjs <KOD> <video>` →
@@ -230,3 +232,82 @@ logga, knappen på marknadens språk.
 Whisper small stavar fel på produktord och hör ibland ett kort ord fel. DE haikuh3 "Kein Geschenk"
 lästes som "Das ist ein Geschenk", men Whisper medium på klippet hörde rätt. Norskan hörs som `no`
 med lägre säkerhet (0,73–0,86): klonen är svensk, och Whisper blandar ihop språken.
+
+## Granskningen 2026-09-30: 004 och röstvideorna 005–007
+
+**004 (012v2), alla tretton språk.** Granskningen (G-B04) såg två rutor samtidigt vid varje byte och
+källans svenska ruta en bildruta vid 6,08 s. Två fel, båda rättade:
+
+- `pipeline/textbyte.py` tände en ruta med `between(t,a,b)`, som gäller båda ändpunkterna. Bildrutan
+  på gränsen visade då både den gamla och den nya rutan. Nu `gte(t,a)*lt(t,b)`: en ruta slutar precis
+  när nästa börjar. Det gäller också undertexterna i röstvideorna (`textlager.py` ritar med `textbyte.py`).
+- Gränsen mellan ruta 3 och 4 stod på 6,1 s i `012v2.boxar.json` (mätt med 10 bilder/s), men källan
+  byter på bildruta 152 = 6,08 s. Gränsen är nu 6,06 s, mätt bildruta för bildruta med orange-andelen i
+  källans rutor. De andra gränserna ligger exakt på källans byten (bildruta 50/100/200/250/300).
+- `kolla-012v2.py` jämför varje bildruta med källan. Den fångade det gamla felet (bildruta 152 +
+  nio dubbla) och godkände alla tretton nya filer (354 bildrutor var, 0 fel).
+- Nio rutor fick ny text (sonnet, fynden G-C-DA-04, en-03, es-04, it-08, NL-08, PT-11, JA-07), t.ex.
+  DK "Fakepizzaen / er sokker.", US "In the sock drawer. / Never mixed up.", JP
+  「寿司、ピザ、バーガー、ドーナツ／ひとり一つ、好きなのを選ぼう。」 (en sort var, inte ett par var).
+
+**005–007: repliker och rubriker.** 45 ändringar i 22 filer (sonnet, `rost.ut.json` i sessionens
+scratchpad; varje ändring bär sitt fynd). Exempel: DE "Du wirst zur Person …", NO "Det er gaven som
+får deg til å se smart ut.", PL "Po pierwsze/Po drugie/Po trzecie" i tal och rubrik, TW 「第二：超值到誇張」.
+
+**En replik om, inte hela videon:** `tagning: 2` på ett segment ger det segmentet ett nytt frö
+(`froFor`, 1029 i stället för 29); resten av videon behåller sina klipp. `--om` byter fortfarande alla.
+ES haikuh3 segment 19 ("Pincha ya…") fick tagning 2, eftersom rösten sa "allá".
+
+⚠️ **De europeiska röstvideorna fanns inte i den här containern.** De byggdes i ElevenLabs-sessionen
+(PR #266) och varken klippen i `ut/tts/` eller filerna i `annonser/klar/` följde med. En ändrad text
+bygger därför om hela videon (samma frö 29 ger nästan samma tagning som förut) och kostar ~1 000 tecken.
+
+**Rösterna efter granskningen (2026-09-30 kväll), mätt med Whisper på provklipp med samma inställningar
+som `dubba.mjs` (frö 29):**
+
+- **Danska → den infödda rösten Freja** (`RÖSTER.DK`, ElevenLabs röstbibliotek, eleven_multilingual_v2).
+  Granskningen (G-B02) hörde "sokker" som "sukker" sex av sex i 007; dess andra prövning strök fyndet,
+  eftersom Whisper medium hör "sukker" även i referenserna. Det stämmer: medium hörde "sukker" från
+  klonen OCH från fyra infödda röster. Bytet gjordes ändå, på large-v3-mätningen: Whisper large-v3 hörde klonen säga
+  det svenska "socker", Freja "sokker" i fyra av fem repliker (i "…det er sokker" hör large-v3 "sukker"
+  från alla röster — språkmodellen gissar på den vanliga frasen). `seglyssna.py --modell large-v3` för danska.
+  Stavningsknep hjälpte inte: "såkker" gav "sukker", "sakker" gav "Saga".
+- **Norska behåller klonen** (eleven_turbo_v2_5), prövat 2026-10-01 morgon. I den byggda 007 hörde large-v3
+  avslöjandet "så skjønner man det er sokker" som "sukker". På lösa klipp (frö 29, med och utan "sushi" före
+  i Whisper) hördes den infödda Celine "sokker" sex av sex, klonen fem av sex, Mia och Emma fyra av sex. Men
+  i de MIXADE videorna var Celine inte bättre: 007 hördes "sukker" med båda rösterna, och 006 hördes
+  "satt i to" med Celine men "sokker" med klonen. Celine kommer ut ~21 dB tystare än klonen och hamnar för
+  nära musiken (förstärkningen stannar på taket); med förstärkning 8 hördes 006 rätt men 007 fortfarande
+  "sukker", och begränsaren slog i 0 dB. Klonens 006 och 007 byggdes om ur cachen (0 tecken, samma filer som
+  kvällen innan). Lärdom: lyssna på den mixade videon, aldrig bara på klippet.
+- **Japanska 007 (s001h1) → den infödda rösten Kyoko** (`RÖSTER['JP/s001h1']`, per video). Granskningen
+  (G-B01) hörde 靴下 som "kusushita" tre gånger (sänkt till 🔵 vid dess andra prövning: en av två repliker
+  utan ledtråd). Katakana クツシタ i `las` hjälpte inte (fortfarande
+  くすした), och デス/バメン gjorde det sämre ("ディエス"). Kyoko läser kanji fel (靴下 → がっか) men
+  hiragana rätt i 3 av 4 produktrepliker, klonen i 1 av 3. Poängraden säger nu ソックス, som båda
+  rösterna uttalar rätt varje gång. haikuh3 och haikuh2 behåller klonen (0,89 replik för replik).
+- **USA/UK 007:** "I started this brand out of pure frustration." är borta (granskningen G-C-en-01:
+  en AI-person påstår att hon grundat varumärket, FTC 16 CFR 465 / CPRs; andra prövningen gjorde det
+  till en fråga till Axel, eftersom samma rad går i Sverige — sessionen valde den försiktiga vägen i
+  USA/UK, där regeln är uttrycklig, och annonsen är PAUSED). Ny replik av sonnet: "I keep
+  giving everyone the same candle." Övriga språk bär grundarraden som den svenska originalet.
+
+**Ombyggda 2026-09-30 kväll, lyssnade replik för replik** (`seglyssna.py`, Whisper medium; danska och
+norska med large-v3, i den mixade videon). "Snitt" är täckningen av manusets ord i det Whisper hör. Ett lågt tal är oftast siffror
+(`Tre:` → "3.") eller sammansättningar (`Sushisokker` → "Sushi-sokker"); raderna nedan är de som betydde något.
+
+| Video | Röst | Snitt | Det som hördes, och vad som gjordes |
+|---|---|---|---|
+| DE 005/006/007 | klonen | 0,98 / 0,97 / 0,97 | inget fel |
+| DK 005/006/007 | Freja | 0,96 / 0,96 / 0,92 | large-v3 hör "sokker" i varje replik, också avslöjandet i 005, 006 och 007 ("Så opdager man, at det er sokker") |
+| NO 006/007 | klonen | 0,92 / 0,85 | large-v3: 006 "Og så, vent, det er jo sokker" rätt; 007 slutpoängen rätt ("Ser ut som sushi, men er sokker. Sushi-sokker."), men avslöjandet "så skjønner man det er sokker" hörs "sukker" med båda rösterna (se ovan). En norsk lyssnare bör höra 007 innan Norge slås på |
+| ES 005/006/007 | klonen | 0,96 / 0,96 / 1,00 | 006 replik 2 går 0,10 s in i nästa (slutet på "únicos"), lämnad |
+| US 006/007 | klonen | 0,97 / 1,00 | **006 replik 6 "wait, it's socks" hördes "it sucks"** av medium och large-v3 i två tagningar (frö 29 och 1029) ⇒ syskonvideons godkända "they're socks", hörs rätt av båda |
+| IT 006/007 | klonen | 0,98 / 0,99 | inget fel |
+| PL 005/006 | klonen | 0,98 / 0,98 | inget fel |
+| JP 005/006 | klonen | 0,89 / 0,89 | homofoner (ほこり → 誇り, 五足 → 誤則); 履いて hörs 生えて en gång i 005 |
+| JP 007 | Kyoko | 0,86 | ソックス rätt i alla produktrepliker; replik 13 utan kommatecken i `las` (gick 0,38 s över fönstret) |
+| TW 005/006/007 | Anna Su | 0,83 / 0,85 / 0,80 | Taiwan har ingen annonsgrupp än. large-v3 hör samma tonfel som medium (壽司 → 受死 "ta emot döden", 襪 → 挖, 獨一無二 → 豆乙无二): en infödd lyssnare eller en annan röst innan TW-kampanjen byggs |
+
+WW bär USA:s filer. Alla filer bytta i de pausade annonserna med `bygg.mjs --byt-video` per marknad
+(NOB får NO:s nya media med `--byt-text`, som jämför lånad media).

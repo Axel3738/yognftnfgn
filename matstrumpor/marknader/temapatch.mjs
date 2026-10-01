@@ -186,6 +186,29 @@ const JS_SOK_MONEY = "    var text = kr.toLocaleString('sv-SE', {\n      minimum
 const JS_NY_MONEY = "    // Annan valuta än butikens (marknaderna): formatera i kundens valuta och språk —\n    // butikens format säger \"kr\" och hade skrivit \"59 kr\" om 59 dollar.\n    var aktiv = (window.Shopify && Shopify.currency && Shopify.currency.active) || null;\n    var butikens = (window.Shopify && Shopify.shop && Shopify.shop.currency) || 'SEK';\n    if (aktiv && aktiv !== 'SEK' && aktiv !== butikens) {\n      try {\n        return new Intl.NumberFormat(LANG, { style: 'currency', currency: aktiv, minimumFractionDigits: visaOren ? 2 : 0, maximumFractionDigits: 2 }).format(kr);\n      } catch (e) { /* okänd valuta: fall tillbaka på butikens format */ }\n    }\n    var text = kr.toLocaleString(LANG, {\n      minimumFractionDigits: visaOren ? 2 : 0,\n      maximumFractionDigits: visaOren ? 2 : 0\n    });\n    return f.replace(/\\{\\{\\s*amount[a-z_]*\\s*\\}\\}/gi, text);";
 const JS_SOK_DATUM = "    return new Intl.DateTimeFormat('sv-SE', withWeekday";
 const JS_NY_DATUM = "    return new Intl.DateTimeFormat(LANG, withWeekday";
+// Leveransfönstret i samma månad skrev månaden två gånger ("7 października – 14 października",
+// granskningen 2026-09-30, G-C-PL-08). Intl.formatRange skriver den en gång ("7–14 października",
+// "7.–14. Oktober", "October 7 – 14"), men bara på de språk där formen mättes rätt i Node:s ICU
+// 2026-09-30. Italienskan gav "07–14 ottobre" och japanskan/kinesiskan siffror ("10/07～10/14"),
+// så de och svenskan skrivs som förut. Vakten faller tillbaka om månadsnamnet saknas i svaret.
+const JS_SOK_INTERVALL = "          : svDate(from, false) + ' – ' + svDate(to, false);";
+const JS_NY_INTERVALL = "          : datumIntervall(from, to);";
+const JS_SOK_PAD = "  function pad(n) {";
+const JS_NY_PAD = `  // Samma månad: månaden en gång ("7–14 października"). Bara språk där Intl ger den formen,
+  // svenska, italienska, japanska och kinesiska som förut (matstrumpor/marknader/temapatch.mjs).
+  var INTERVALL_SPRAK = /^(pl|nb|da|fi|de|fr|nl|es|pt|en)\\b/;
+  function datumIntervall(from, to) {
+    var vanlig = svDate(from, false) + ' – ' + svDate(to, false);
+    try {
+      var f = new Intl.DateTimeFormat(LANG, { day: 'numeric', month: 'long' });
+      if (!INTERVALL_SPRAK.test(LANG) || typeof f.formatRange !== 'function') return vanlig;
+      var r = f.formatRange(from, to);
+      var manad = f.formatToParts(to).filter(function (p) { return p.type === 'month'; })[0];
+      return (manad && r.indexOf(manad.value) !== -1 && !/^0/.test(r)) ? r : vanlig;
+    } catch (e) { return vanlig; }
+  }
+
+  function pad(n) {`;
 
 export function patchaJs(kod) {
   const byten = [];
@@ -196,6 +219,12 @@ export function patchaJs(kod) {
   else { kod = bytExakt(kod, JS_SOK_MONEY, JS_NY_MONEY, 1); byten.push('money'); }
   if (kod.includes('Intl.DateTimeFormat(LANG')) hoppade.push('datum: redan patchad');
   else { kod = bytExakt(kod, JS_SOK_DATUM, JS_NY_DATUM, 1); byten.push('datum'); }
+  if (kod.includes('function datumIntervall(')) hoppade.push('intervall: redan patchad');
+  else {
+    kod = bytExakt(kod, JS_SOK_INTERVALL, JS_NY_INTERVALL, 1);
+    kod = bytExakt(kod, JS_SOK_PAD, JS_NY_PAD, 1);
+    byten.push('intervall');
+  }
   return { kod, byten, hoppade };
 }
 

@@ -1,7 +1,7 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { arVerifieringsfel, farAktiveras, identitetSkillnad, lankOk, lankSkillnad, regionalFalt, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { arVerifieringsfel, farAktiveras, identitetSkillnad, lankOk, lankSkillnad, mediaSkillnad, regionalFalt, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
 import { readFileSync } from 'node:fs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
@@ -107,6 +107,16 @@ test('--byt-text: bara de fält som skiljer mot annonsens creative byts, video o
   const bild = { link_data: { name: 'Rubrik', message: 'Rad 1\nRad 2', description: an.link_description } };
   assert.deepEqual(textSkillnad(an, bild), []);
   assert.deepEqual(textSkillnad(an, {}), ['title', 'message', 'link_description']);
+});
+
+test('mediaSkillnad: en lånad annons (NOB) som bär A-annonsens GAMLA video eller bild märks, samma media gör det inte', () => {
+  assert.deepEqual(mediaSkillnad({ video_id: '2' }, { video_data: { video_id: '1' } }), ['media']);
+  assert.deepEqual(mediaSkillnad({ video_id: '1' }, { video_data: { video_id: '1' } }), []);
+  assert.deepEqual(mediaSkillnad({ image_hash: 'b' }, { link_data: { image_hash: 'a' } }), ['media']);
+  assert.deepEqual(mediaSkillnad({ image_hash: 'a' }, { link_data: { image_hash: 'a' } }), []);
+  // Okänt åt något håll ⇒ ingen dom (hellre en tom jämförelse än en creative byggd på gissning).
+  assert.deepEqual(mediaSkillnad(undefined, { video_data: { video_id: '1' } }), []);
+  assert.deepEqual(mediaSkillnad({ video_id: '1' }, {}), []);
 });
 
 test('--byt-text byter också sidan: utlandsannonserna visas som sidan Matstrumpor, aldrig Matstrumpor.se', () => {
