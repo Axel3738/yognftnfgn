@@ -1,0 +1,190 @@
+# Module 1: Contribution Margin
+
+Lektionstexten ur Skool (Evolve Finance), hämtad 2026-10-01.
+
+Module 1: Contribution Margin
+4:17
+1) What this lesson covers (in plain English)
+
+If you don’t know your contribution margin, you don’t know:
+
+how much you can spend to acquire a customer (CAC),
+
+whether scaling will make you rich or bankrupt you,
+
+or why “we’re doing $1M/month” can still mean “we’re broke.”
+
+Contribution margin is the truth serum.
+
+2) The core concept
+Contribution Margin ≠ Profit
+
+Profit (Operating Income) = what’s left after everything gets paid (rent, payroll, software, all overhead).
+
+Contribution Margin = what’s left after variable costs (costs that go up and down with revenue).
+
+Why it matters: Scaling decisions are made on contribution, not “profit vibes.”
+
+3) The formula
+Contribution Margin (dollars)
+
+Contribution Margin $ = Revenue − Variable Costs
+
+Contribution Margin (percent)
+
+Contribution Margin % = (Revenue − Variable Costs) / Revenue
+
+That’s it. Everything else is just arguing about what you include as “variable.”
+
+4) What counts as “variable costs” (the list people screw up)
+
+These are costs that increase as revenue increases.
+
+The obvious ones
+
+COGS (Fully loaded)
+ Not “raw materials.”
+ Think: cost to get the product delivered to the customer (product + packaging + fulfillment + shipping, if that’s how you run your accounting).
+
+Ad Spend
+ If you spend more to get more customers, that’s variable. Simple.
+
+The ones that quietly steal your margin
+
+Payment processing fees
+ Shopify Payments is commonly ~2.8% + $0.30 (varies).
+ Round to ~3% if you’re moving fast.
+
+Subscription / app fees (“sub-x fees”)
+ Seals / Skio / Loop / etc. often take ~0.5%–1%.
+ That sounds small until you do the math:
+
+1% of $1,000,000 = $10,000/month
+ That’s a salary. Or two. Every month. Forever.
+
+Variable team / agency costs tied to spend
+ If someone gets paid % of ad spend, that is variable.
+
+Spend $1,000,000 → 5% = $50,000
+
+Spend $100,000 → 5% = $5,000
+ It moves with spend, so it belongs in contribution margin.
+
+5) The advanced part (where this becomes a cheat code)
+First order vs. repeat orders have different cost stacks
+
+CAC (ad spend) is typically tied to the first order
+
+So are agency fees tied to ad spend
+
+Repeat orders usually have better contribution margin because those costs disappear
+
+This is why it can be rational to:
+
+Lose $20 on the first order
+ if you make $30 back over the next 90 days.
+
+That’s not “copium.” That’s math.
+
+6) Worked example (copy this into your brain)
+
+Assume:
+
+First order revenue: $100
+
+Fully loaded COGS delivered: $35
+
+Processing: 3% + $0.30 ≈ $3.30
+
+Subscription platform fee: 1% = $1.00
+
+CAC (ad spend): $40
+
+Agency fee: 5% of ad spend = $2.00
+
+First order contribution margin
+
+Variable costs = 35 + 3.30 + 1.00 + 40 + 2 = $81.30
+ Contribution Margin $ = 100 − 81.30 = $18.70
+ Contribution Margin % = 18.70 / 100 = 18.7%
+
+Repeat order contribution margin (no CAC, no % ad-spend fee)
+
+Variable costs = 35 + 3.30 + 1.00 = $39.30
+ Contribution Margin $ = 100 − 39.30 = $60.70
+ Contribution Margin % = 60.7%
+
+Now the “Lose money to make money” scenario
+
+If CAC jumps to $70:
+
+First order CM = 100 − (35 + 3.30 + 1.00 + 70 + 3.50)
+ (agency is 5% of 70 = 3.50)
+ = 100 − 112.80 = –$12.80
+
+But if the average customer makes one repeat order in the next 90 days:
+
+90-day contribution = –12.80 + 60.70 = $47.90
+
+That’s the entire game.
+
+7) Quick checklist (what to do in your business today)
+
+Step 1: Pick your default “variable cost stack” for orders
+
+COGS (fully loaded)
+
+Processing fees
+
+Subscription/app fees
+
+Returns/refunds allowance (if you want to be conservative)
+
+Step 2: Separate first order costs vs. repeat order costs
+
+First order: include CAC + any % of ad spend fees
+
+Repeat: remove CAC + those spend-tied fees
+
+Step 3: Calculate:
+
+First Order Contribution Margin $
+
+Repeat Order Contribution Margin $
+
+Then ask: “How many repeat orders (or how much time) until the first-order loss is paid back?”
+
+Step 4: Decide your payback window (you referenced ~3 months)
+ That becomes your operating rule for scaling.
+
+8) Common mistakes (aka why people go broke at scale)
+
+Calling “profit” and “contribution margin” the same thing
+
+Ignoring processing fees (death by 3%)
+
+Ignoring subscription platform fees (death by 1%)
+
+Forgetting variable agency/team costs tied to spend
+
+Using raw COGS instead of delivered COGS (lying to yourself)
+
+Averaging everything and missing that first-order economics are different than repeats
+
+9) Quiz (with answers)
+
+What’s the difference between profit and contribution margin?
+ Answer: Profit is after all overhead; contribution margin is after variable costs only.
+
+Write the contribution margin formula.
+ Answer: CM$ = Revenue − Variable Costs. CM% = CM$ / Revenue.
+
+Name 5 variable costs most ecom brands should include.
+ Answer: Fully loaded COGS, ad spend (CAC), processing fees, subscription/app fees, variable agency/team fees tied to spend.
+
+Why do repeat orders usually have higher contribution margin than first orders?
+ Answer: Because CAC (and spend-tied fees) usually only apply to the first order.
+
+When is it rational to have negative contribution margin on the first order?
+Answer: When the modeled contribution profit over the payback window (ex: 90 days) exceeds the initial loss with a safety buffer.
+

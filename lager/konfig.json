@@ -1,0 +1,79 @@
+{
+  "comment": "Lagerplanen (lager/kor.mjs). Ändra talen här, aldrig i koden. Varje tal bär var det kommer ifrån.",
+  "kallor": [
+    {
+      "id": "cwd",
+      "namn": "CWD — agenten i Kina (Slack cwd-yqg1304, kanalen #axel-odhner-fulfill, Colleen och Larry)",
+      "ark": "12x-hoXw9gd82IAiDq6vO2vgH2GvxDk8uA5l-QhMLXGg",
+      "ark_namn": "Axel stock",
+      "kalla": "Arket delades av 暴富 (baofu6567@gmail.com) 2026-07-29. CWD fyller i en ny flik varje vardag (\"9.30updated\"). Larry 2026-07-27: \"for any products that are in stock or have orders placed, the inventory quantity needs to be synchronized with you every day\"."
+    }
+  ],
+  "standard": {
+    "ledtid_dagar": 7,
+    "ledtid_kalla": "Mätt i arket: Mastern beställdes 1000 st 2026-08-13 och stod i lager 2026-08-17 = 4 dagar (CWD köper från fabrik i Kina). +3 dagar marginal. Ny produkt eller egen förpackning tar längre tid: sätt ledtid per artikel nedan.",
+    "sakerhet_dagar": 14,
+    "sakerhet_kalla": "Sessionens val 2026-10-01: Bäverbutikens ordrar dubblades på en vecka i september (snapshoten: 54 → 126 ordrar/dag 10/9 → 20/9) när annonserna skalade. 14 dagar täcker en sådan topp.",
+    "cykel_dagar": 30,
+    "cykel_kalla": "En beställning ska täcka 30 dagars försäljning utöver ledtid och säkerhet. Kortare cykel = mindre kapital bundet, fler beställningar.",
+    "overtackning_dagar": 120,
+    "overtackning_kalla": "Mer än 120 dagars lager räknas som överlager: pengar som ligger i en hylla i Kina i stället för i annonserna (Evolve Finance modul 4)."
+  },
+  "kinesiska_nyaret": {
+    "datum": "2027-02-06",
+    "sista_utskick": "2027-01-28",
+    "normal_igen": "2027-03-06",
+    "kalla": "Nyårsdagen 2027 är 6 februari. Kanary (Evolve, \"Last Minute CNY Prep\", inspelad jan 2026 inför nyåret 17 feb 2026): sista skeppningar ~7–9 dagar före, fabrikerna tillbaka sista veckan feb/första mars men normal kapacitet först runt mitten av mars, ledtiderna dubblas veckorna före. Samma avstånd på 2027. CWD:s egna stängningsdatum är inte frågade än — byt talen när de svarat."
+  },
+  "butiksregler": [
+    {
+      "monster": "strumpor|ätpinnar",
+      "butik": "Matstrumpor"
+    },
+    {
+      "monster": "^bäver|terminal block|no-stripping|cable organizer",
+      "butik": "Bäverbutiken"
+    },
+    {
+      "monster": "mastern|grill|förkläde|borst|korv|potatis|bbq|hamburgerpress|knivset|skärbräda|smashburger|majskolv|flipgrill|spett|tänger|knife sharpener",
+      "butik": "Grillkliniken"
+    }
+  ],
+  "kostnad_butiker": [
+    "baverbutiken",
+    "matstrumpor"
+  ],
+  "artiklar": {
+    "KF-081-W5891-RY01": {
+      "notering": "Mastern = Grillkliniken (legacy). Grillsäsongen är över — takten faller."
+    }
+  },
+  "sasong": [
+    {
+      "id": "matstrumpor-sushi",
+      "butik": "matstrumpor",
+      "namn": "Matstrumpor — sushistrumporna",
+      "monster": "sushi",
+      "manader": {
+        "2025-08": 132,
+        "2025-09": 4,
+        "2025-10": 134,
+        "2025-11": 52,
+        "2025-12": 1613,
+        "2026-01": 799,
+        "2026-02": 655,
+        "2026-03": 280
+      },
+      "manader_kalla": "Ordrar per månad, hela butiken, ur klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md (Shopify, mätt 2026-09-25). November 2025 är låg för att sushilådan tog slut (Axel 2026-09-24) — den månaden underskattar efterfrågan.",
+      "scenarier": [
+        1,
+        2,
+        3
+      ],
+      "scenarier_kalla": "1× = samma antal ordrar som förra säsongen. 2× och 3× för att butiken säljer i 21 länder och kör 13 000 kr/dag från 2026-10-02 (förra året bara Sverige)."
+    }
+  ],
+  "butiker_utanfor_arket": {
+    "Matstrumpor": "Arket har inte fyllts på sedan sushilådan tog slut 19/9, men Matstrumpor sålde 850 sushilådor 20/9–1/10 och Shopify visar alla ordrar skickade inom ett dygn (mätt 2026-10-01). Lagret ligger alltså någon annanstans, eller så köper CWD per order — då vet ingen hur mycket som finns inför julen. Fråga CWD: leverantor/meddelanden/1-matstrumpor-lager.md."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "comment": "Barometrarna (ekonomi/barometrar.mjs). Verksamheterna, butikerna och kontona kommer ur stonebite/varumarken.json; här står bara det som saknas där.",
+  "extra_konton": {
+    "matstrumpor": [
+      {
+        "id": "1346450049878358",
+        "namn": "SnarkLös (Matstrumpors annonser förra säsongen)",
+        "prefix": [
+          "SUSHI",
+          "STRUMP"
+        ],
+        "kalla": "Mätt 2026-10-01: kontot 'nya kungen' skapades 2025-11-29 men har spend först från augusti 2026. Julen 2025–mars 2026 gick i SnarkLös (Grillklinikens konto): kampanjerna SUSHISTRUMPOR (293 213 kr), Testning av lite nya grejer sushiiii (34 079 kr) m.fl., nov 2025–mars 2026. Prefixen matchas som ord i kampanjnamnet, så Grillklinikens egna kampanjer räknas inte."
+      }
+    ]
+  },
+  "standard_verksamheter": [
+    "baverbutiken",
+    "beverbutikken",
+    "majavakauppa",
+    "matstrumpor",
+    "carashell"
+  ],
+  "egna_verksamheter": [
+    {
+      "id": "beverbutikken",
+      "namn": "Beverbutikken (Bäverbutiken Norge)",
+      "butiker": [
+        "beverbutikken"
+      ],
+      "konton": [
+        {
+          "id": "1050941584152547",
+          "namn": "Magiborsten NO",
+          "hela": true
+        }
+      ],
+      "kalla": "Bäverbutikens systerbutik med eget annonskonto — räknas för sig så att Norge syns även när den svenska butiken inte går att läsa."
+    },
+    {
+      "id": "majavakauppa",
+      "namn": "Majavakauppa (Bäverbutiken Finland)",
+      "butiker": [
+        "majavakauppa"
+      ],
+      "konton": [
+        {
+          "id": "1619718346388201",
+          "namn": "Magiborsten FI",
+          "hela": true
+        }
+      ],
+      "kalla": "Som Norge. Danmark har inget eget konto och räknas bara i hela Bäverbutiken."
+    }
+  ]
+}

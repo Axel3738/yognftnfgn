@@ -1,0 +1,469 @@
+# Chargebacks / Management Services ECT
+
+Lektionstexten ur Skool (Evolve Finance), hämtad 2026-10-01.
+
+Chargebacks / Management Services ECT
+
+
+
+
+Hit me up on Discord if you have any questions or need any help on this ( Your best friend Grayson Lancer Cross)
+
+1. What's up Gamers?
+
+Alright guys, in this module we’re going to talk about chargebacks.
+
+And before everybody panics, chargebacks are not automatically bad.
+
+A chargeback is kind of like a fire alarm.
+One fire alarm going off does not mean your house is burning down. Maybe you burned toast. Maybe your customer forgot they bought your protein powder at 2:00 a.m. while emotionally unstable. Maybe the billing descriptor looks like a fake LLC your cousin made in Wyoming.
+
+The problem is not one chargeback.
+
+The problem is when your payment processor looks at your account and goes, “Hey buddy, why does your business look like a nightclub bathroom at 1:30 a.m.?”
+
+That’s when you have a real issue.
+
+So this module is not just about “winning chargebacks.” Honestly, that’s the baby version of this conversation.
+
+This module is about managing chargeback risk so your store can keep scaling, keep processing payments, and not wake up to the most terrifying email in ecommerce:
+
+“Your payments account is under review.”
+
+Which is basically the ecommerce version of seeing your dad standing in the doorway with the lights off.
+
+
+2. Why Chargebacks Are Not Always Bad
+
+Here’s the first idea: chargebacks are not inherently bad.
+
+They are bad when they are disproportionate to the value of the customer.
+
+So imagine two offers.
+
+Offer one has a 0.4% chargeback ratio, but the six-month LTV is only 70%.
+
+Offer two has a 0.9% chargeback ratio, but the six-month LTV is 410%.
+
+Offer two has more chargebacks, yes. But it may also be massively more profitable.
+
+That’s why you cannot look at chargebacks in isolation.
+
+You have to look at:
+
+chargeback rate,
+customer LTV,
+refund rate,
+subscription retention,
+gross margin,
+processor risk,
+and how aggressive your offer is.
+
+Because sometimes your best offer is also your messiest offer.
+
+It’s like adopting a raccoon. Is it chaotic? Yes. Is it possibly illegal? Also maybe yes. But is it producing 410% LTV? Now we have to have an adult conversation.
+
+3. The Main Kinds of Chargebacks
+
+Before we talk about reducing chargebacks, you need to understand the basic categories.
+
+On Shopify, the main chargeback reason buckets include fraudulent, unrecognized, duplicate, subscription canceled, product not received, product unacceptable, credit not processed, and general.
+
+Here’s how I’d think about them in normal human language:
+
+Fraudulent
+The customer says, “I did not buy this.”
+Sometimes that is real fraud. Sometimes their spouse bought it. Sometimes they bought it and now their bank statement is snitching on them.
+
+Unrecognized
+The customer does not recognize the merchant name.
+This is where your billing descriptor matters. If your brand is called “Happy Greens” but the bank statement says “HG HOLDINGS PROCESSING 8271,” congratulations, you built a chargeback machine.
+
+Duplicate
+The customer thinks they got charged twice.
+This is usually either a real duplicate charge or a communication problem.
+
+Subscription canceled
+The customer says they canceled, but they were charged again.
+This is the classic subscription business landmine. They might have canceled. They might have tried to cancel. They might have sent an email to support at 11:58 p.m. and now they think that counts as a legal document.
+
+Product not received
+They say the product never arrived.
+This is where tracking, delivery proof, and support response time matter.
+
+Product unacceptable
+They say the product showed up damaged, defective, wrong, or not as described.
+
+Credit not processed
+They say they returned/canceled/refunded and never got their money back.
+
+General/customer dispute
+This is the junk drawer. It catches everything else: confusion, frustration, bad support, unclear offer terms, and customers who woke up and chose violence.
+
+4. Chargeback Management Has Three Jobs
+
+When people say “chargeback agency” or “chargeback tool,” they usually blend three totally different jobs together.
+
+And this is where people get confused.
+
+There are really three buckets:
+
+1. Prevention alerts
+This is: “Refund this before it becomes a chargeback.”
+
+A customer contacts their bank and says, “I don’t recognize this charge,” or “This was fraud,” or “I want to dispute this.”
+
+Before it turns into a full chargeback, an alert system warns the merchant.
+
+Then the merchant can refund it, cancel the subscription, stop fulfillment, or log a response.
+
+This is the “please don’t let this turn into a real problem” bucket.
+
+2. Deflection
+This is: “Show the bank/customer enough info so they don’t dispute.”
+
+This is different from alerts.
+
+Instead of refunding immediately, the system gives the issuer better transaction information.
+
+Order details, merchant name, customer info, product details, shipping info, refund status, subscription details, stuff like that.
+
+The goal is: customer sees it and goes, “Oh yeah, that was me. I was just being an idiot.”
+
+For Visa, this is the kind of lane where Order Insight matters. For Mastercard, this is where Ethoca Consumer Clarity matters, because it gives richer merchant and purchase information inside bank apps and issuer support tools.
+
+3. Representment
+This is: “The chargeback already happened. Now we fight it.”
+
+This is where you submit evidence:
+
+order confirmation,
+tracking,
+delivery proof,
+customer messages,
+IP/device data,
+billing/shipping match,
+subscription terms,
+refund policy,
+cancellation policy,
+screenshots showing consent.
+
+But here’s the important part: representment does not prevent the chargeback from hitting your dispute rate.
+
+It may help you win the money back.
+
+But if your processor is already nervous, “don’t worry, bro, I’ll win it later” is not a strategy.
+
+That’s like telling the fire marshal, “Relax, I put the fire out after the building was already gone.”
+
+5. The Main Networks and Tools
+
+Now let’s make this simple.
+
+RDR: Rapid Dispute Resolution
+Best way to think about it: automated refund rules.
+
+RDR is part of the Verifi ecosystem. You set rules like: auto-refund fraud disputes under $100, auto-refund subscription disputes under $50, don’t refund orders above a certain amount, or don’t refund certain reason codes.
+
+The upside is it’s hands-off.
+The downside is if your rules are too loose, you can hemorrhage refunds.
+
+CDRN: Cardholder Dispute Resolution Network
+Best way to think about it: manual or semi-automated alerts.
+
+You get a short window to act before it becomes a chargeback. More control than pure auto-refund, but more operational work.
+
+Ethoca Alerts
+Best way to think about it: Mastercard-heavy issuer alert network.
+
+Ethoca connects issuers, acquirers, and merchants to share fraud/dispute data so merchants can act faster and reduce the need for chargebacks.
+
+Order Insight and Consumer Clarity
+Best way to think about it: transaction clarification.
+
+Instead of refunding the customer, you give the bank/cardholder better information so the customer recognizes the purchase.
+
+This matters a lot because a bunch of “fraud” is not actually fraud.
+
+It’s “I forgot what this was.”
+It’s “My wife bought it.”
+It’s “The descriptor looks sketchy.”
+It’s “I bought collagen gummies at midnight and now I’m pretending that wasn’t me.”
+
+6. What About VAMP?
+
+Now, VAMP.
+
+VAMP is not a chargeback reason.
+VAMP is not a network.
+VAMP is not a little vampire that lives inside your Shopify account, although honestly that would be easier to explain.
+
+VAMP stands for Visa Acquirer Monitoring Program.
+
+Best way to think about it: Visa’s risk scorecard for fraud plus disputes.
+
+The formula is basically:
+
+fraud reports plus disputes, divided by settled transactions.
+
+So the annoying part is that fraud and disputes can stack together.
+
+That means fraud is bad, but enough non-fraud disputes can still put you in trouble.
+
+So when people ask, “Is fraud the worst chargeback reason?”
+
+The answer is: fraud is definitely dangerous, but it is not the only thing that matters.
+
+Enough subscription canceled, product not received, unrecognized, or general disputes can still make your account look risky.
+
+Your goal is not just “lower fraud.”
+
+Your goal is: lower the total risk signal your processor and card networks see.
+
+7. How to Actually Reduce Chargebacks
+
+Now let’s talk about the five practical levers.
+
+Not theory. Not “provide good customer service” like a LinkedIn post written by a hostage.
+
+Actual levers.
+
+Lever 1: Customer Service Is a Dial
+
+Think of customer service like a dial.
+
+When chargebacks are low, you can be a little more conservative with refunds.
+
+When chargebacks are high, you turn the dial up.
+
+That means faster refunds, more proactive cancellations, more “don’t fight this customer over $39” decisions.
+
+Because if your processor is already staring at you, this is not the moment to prove a point to a customer named Susan who has emailed support seven times and is clearly about to call her bank.
+
+Give Susan the refund.
+
+Let Susan win.
+
+Susan is not the enemy. Your payment processor putting you on hold is the enemy.
+
+So the SOP here is simple:
+
+If a customer is confused, angry, elderly, international, threatening a dispute, or claiming fraud, escalate faster.
+
+Not because the customer is always right.
+
+Because the processor does not care that you were technically right.
+
+The processor cares that your dispute ratio looks ugly.
+
+Lever 2: Stop Acquiring Bad Customers Disproportionately
+
+This one is huge.
+
+Export your chargeback data.
+
+Minimum 100 chargebacks. Ideally 1,000 if you have enough volume.
+
+Then look for patterns.
+
+Where are they coming from?
+
+Country, state, product, offer, payment method, traffic source, ad angle, age of customer, subscription type, shipping method, device type, discount code, whatever data you can get.
+
+You are not looking for “chargebacks exist.”
+
+You are looking for disproportionate results.
+
+Example:
+
+Australia might be 10% of revenue, but 80% of chargebacks.
+
+That is not “international has some issues.”
+
+That is your business getting mugged by a kangaroo.
+
+So your response might be:
+
+stop pushing that market,
+remove free shipping,
+raise shipping costs,
+change the offer,
+route that traffic differently,
+require stronger fraud checks,
+or shut it off entirely.
+
+And this applies to payment method too.
+
+Maybe PayPal Wallet customers charge back at a higher rate. Maybe American Express users behave differently. Maybe a specific region is a dumpster fire.
+
+The point is: stop treating all customers like they are equal.
+
+They are not.
+
+Some customers are profitable.
+
+Some customers are expensive.
+
+Some customers are basically little raccoons with Apple Pay.
+
+Lever 3: Routing Through Secondary Processors and MIDs
+
+Now we get into the varsity section.
+
+This is more advanced, and you need to be careful with it.
+
+This is not “hide bad behavior from processors.”
+That is stupid. Do not do that.
+
+This is risk segmentation.
+
+If you are not currently on Shopify Payments, you might have multiple processors or MIDs. For example, something like Stripe, Adyen, or other processors depending on your setup.
+
+The idea is:
+
+Your highest-quality processor should get your cleanest, highest-value volume.
+
+Your riskier offers, aggressive front-end offers, international tests, or sketchier subscription flows may need to be segmented differently.
+
+For example:
+
+One-time purchase offers go through your best processing lane.
+
+Aggressive subscription offers go through a secondary lane.
+
+Then as subscription chargeback ratios rise or fall, you adjust what volume flows where.
+
+Again, this is not a magic trick. This is not “processor laundering.” This is just being smart about not letting one aggressive offer nuke your entire payment stack.
+
+The meme version is:
+
+Do not send your most chaotic customers through the processor that pays your mortgage.
+
+Lever 4: Customer Service Portal
+
+This one hurts LTV, but it helps chargebacks.
+
+If customers can cancel easily through a customer portal, fewer of them go to the bank.
+
+Yes, some people will cancel who otherwise would have stayed.
+
+That sucks.
+
+But also, some of those people were not really “retained customers.”
+
+They were future chargebacks wearing a fake mustache.
+
+So you have to decide what season the business is in.
+
+If chargebacks are low, maybe you can keep a little more friction.
+
+If chargebacks are high, open the portal, make cancellation easier, and let the customers leave before they start throwing chairs.
+
+This is especially important for subscription brands.
+
+Because subscription LTV is amazing until customers feel trapped.
+
+The second they feel trapped, they stop acting like customers and start acting like unpaid attorneys.
+
+Lever 5: Email and SMS Rebill Reminders
+
+Same idea here.
+
+Rebill reminders reduce surprise.
+
+Surprise creates disputes.
+
+Nobody likes waking up and seeing a mystery $79 charge from a brand they forgot about.
+
+So reminders help.
+
+Send emails. Send SMS. Make the upcoming charge clear.
+
+But again, this can hurt LTV.
+
+Some customers will see the reminder and cancel.
+
+That is the tradeoff.
+
+But if your chargeback rate is getting too high, that tradeoff may be worth it.
+
+Because the worst customer is not the one who cancels.
+
+The worst customer is the one who keeps billing, gets angry, files a chargeback, complains to their bank, and then somehow you lose processing because they forgot they ordered mushroom coffee three months ago.
+
+8. The Operating System I’d Build
+
+So if I were managing this for a serious Shopify store, I’d build a simple operating system.
+
+Every week, review:
+
+chargeback rate,
+fraud rate,
+refund rate,
+subscription cancellation disputes,
+product not received disputes,
+unrecognized disputes,
+chargebacks by country,
+chargebacks by payment method,
+chargebacks by product,
+chargebacks by offer,
+chargebacks by traffic source.
+
+Then every chargeback gets tagged.
+
+Not just “lost” or “won.”
+
+Tag the actual root cause:
+
+unclear descriptor,
+bad support response,
+late shipping,
+customer forgot subscription,
+hard-to-cancel portal,
+international shipping issue,
+aggressive offer,
+fraud pattern,
+bad cohort,
+bad product expectation.
+
+Because the goal is not to win more arguments.
+
+The goal is to remove the reason the argument happened.
+
+Winning a chargeback is nice.
+
+Preventing the customer from calling the bank in the first place is better.
+
+9. Closing
+
+So the big takeaway is this:
+
+Chargeback management is not one thing.
+
+It is customer service, offer design, processor strategy, subscription UX, reminders, fraud prevention, and data analysis all stacked together.
+
+If your chargebacks are high, do not just ask, “How do we fight these?”
+
+Ask:
+
+Why are they happening?
+Which customers are causing them?
+Which offers are causing them?
+Which markets are causing them?
+Which processor lane is taking the damage?
+Are customers confused, angry, fraudulent, or trapped?
+And what do we change before this becomes a processor problem?
+
+Because the goal is not zero chargebacks.
+
+The goal is controlled chargebacks.
+
+Profitable chargebacks.
+
+Chargebacks that do not make your processor look at your account like you just walked into a bank wearing a ski mask.
+
+That’s the game.
+
+Not “never get disputed.”
+
+It’s “scale aggressively without lighting your payment stack on fire.”

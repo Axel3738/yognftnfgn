@@ -1466,6 +1466,43 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
 - 🌍 **Matstrumpor i Spoks på alla tolv språk (Axels beslut A 2026-09-29, grenen `claude/pensive-dirac-s1ac2o`):** sex nya flöden "… · alla språk" (ett sändsteg per språk med landsfilter; ⛔ **LIVE sedan 2026-09-29 21:10–22:27 CEST**, bytta av Cowork med `klaviyo/spoks/cowork/1-matstrumpor-sprakbyte.txt`, de gamla svenska flödenas triggers av, tillbakaläst med `get_flow`; sidfoten tvåspråkig sv + en sedan samma kväll), 12 språksegment `SEG_samtycke_<sprak>`, alla 121 kampanjutkast (277 av 277 mejl uppe och kontrollerade 2026-09-29 kväll; ⚠️ Judge.me:s widget svarar sedan samma kväll med recensionerna i `primary_language_reviews`/`other_language_reviews`, `klaviyo/recensioner.mjs` läser båda). Nytt land = en rad i `klaviyo/brands/matstrumpor.json` → `spoks_sprak.lander` (land utan rad får engelska, aldrig svenska); nytt språk = raden i `sparning/butiker.json` → `mejl_sprak` + `klaviyo/innehall/matstrumpor/sprak/<kod>.json`. Motorn `klaviyo/spoks-sprak.mjs`, kontrollerna `klaviyo/spoks/sprak-koll.mjs` + `sprak-floden-koll.mjs`, allt i `klaviyo/spoks/README.md` → "Matstrumpor på alla språk". ⚠️ Spoks rate-limitar vid ~35 anrop/45 s: EN uppladdare i taget.
 - ✅ **Matstrumpor i Spoks sedan 2026-09-26** (Axels order samma dag: "FÖRBERED BARA FÖR MATSTRUMPOR TILL SPOKS", sedan "kör" — förberett, inget påslaget): egen workspace **Matstrumpor.se `71c2d4c8-b9ec-488a-b15c-5dfe8dbd2226`** (Shopify 1r46tp-qx, plan **Free = 5 000 mejl/mån** vid bygget; **Paid** vid mätningen 2026-09-30), 6 flöden (F01–F05, F07) — byggda inaktiva, ⛔ **LIVE sedan 2026-09-26 ~07:57 CEST genom Axels egna klick i appen** (sändstegen på, flödena aktiverade; mätt med `get_flows`, kontakter inrullade direkt), 16 kampanjutkast (K01–K14 + F06 E1/E2 — F06 Sunset har ingen trigger i Spoks och skickas för hand till `SEG_oengagerade_180d`), 14 segment. Motorn är **`klaviyo/spoks-paket.mjs`** (Klaviyo-innehållet → Spoks-block, facit `klaviyo/konto/matstrumpor/spoks.json`, logg `spoks-uppladdat.jsonl`); uppladdningen sker via Spoks-MCP:n i en session, alla id:n och skillnaderna i `klaviyo/spoks/README.md` → Matstrumpor. ⛔ Bäverbutikens Spoks-yta `f716ae36-…` rörs aldrig från Matstrumpor-motorn, och Klaviyo-utkasten i `UV6Rqg` lämnas orörda (inget påslaget där heller). ⚠️ Spoks saknar Fulfilled Order (⇒ `order_created`), spårningsnummer i mejl (⇒ `/pages/spara` + MS-raden), segmenttrigger, fonten Mochiy Pop P One (⇒ Tilt Warp + Nunito Sans) och all händelsehistorik för importerade kontakter — engagemangssegmenten är nästan tomma tills Spoks registrerat egna händelser, så K01/K02 går till `SEG_samtycke` tills dess. Att slå på flöden, aktivera sändsteg, välja publik och schemalägga går bara i appen = Axels klick. ⚠️ **Behörigheterna:** Spoks-verktygen frågade om lov per anrop tills Axel satte dem på "Tillåt alltid" på https://claude.ai/customize/connectors (2026-09-26, "jag pallar inte godkänna") — `.claude/settings.json` bär `mcp__Spoks__*` för rutinerna, men den listan styr inte connector-prompterna i en interaktiv session.
 
+## `ekonomi/`, `lager/`, `leverantor/` — siffrorna, lagret och leverantören (NY 2026-10-01)
+
+Axels order: "gå igenom Evolve Finance så att du har all data … se vad jag saknar för mina olika
+butiker … planera lagerinköp … förhandla priser med leverantören". Börja i `ekonomi/LUCKOR.md`.
+
+- **Evolve-kursen ligger i repot:** `ekonomi/evolve/FINANCE.md` (alla sju Finance-lektioner),
+  `SUPPLY-CHAIN.md` + `supply/NN.md` (Kanarys 15 lektioner), `OVRIGT.md` (P&L, kundanskaffning,
+  KPI, Q4, Matedropshipping, Dubai-mastermindet), källtexterna i `ekonomi/evolve/kalla/`. Skool:
+  `skool.com/evolve-8484`, inloggning `SKOOL_EMAIL`/`SKOOL_PASSWORD` i miljön. ⚠️ Skool-videorna har
+  engelska undertexter (`subtitles.m3u8` i videons HLS-manifest, kräver `Referer: https://www.skool.com/`)
+  — läs dem i stället för att transkribera.
+- **`ekonomi/barometrar.mjs`** = kursens modul 1–4 per verksamhet: nCAC ur Shopifys NYA kunder,
+  bidrag första order mot återköp, kohorter, stresstest. Mätt 2026-10-01 (september): **68–194 kr
+  kvar per ny kund efter reklam** (NO 70, FI 194, Matstrumpor 68, CaraShell 185), nästan inget
+  återköp — första ordern måste bära sig själv; CAC +20 % gör Norge olönsamt. Bäverbutiken SE
+  kräver `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER` (rutinens miljö); saknas en butik blir reklamtalen
+  tomma. ⚠️ Matstrumpors annonser dec 2025–mars 2026 gick i **SnarkLös** (kampanjerna SUSHI…), inte
+  i "nya kungen" (skapat 2025-11-29, spend först aug 2026) — `ekonomi/konfig.json` → `extra_konton`.
+- ⚠️ **Alla sex annonskonton betalas med VISA-kort, ingen månadsfaktura** (Meta API
+  `funding_source_details`, 2026-10-01). Shopify Payments utbetalningsschema går inte att läsa via API.
+- **Lagret ligger hos CWD**, agenten i Kina (Slack `cwd-yqg1304` → `#axel-odhner-fulfill`, Colleen
+  och Larry; Mechile är med). CWD fyller i Google-arket **"Axel stock"**
+  (`12x-hoXw9gd82IAiDq6vO2vgH2GvxDk8uA5l-QhMLXGg`, delat med länk) varje vardag, en flik per dag.
+  `node lager/kor.mjs --skriv` läser alla flikar (egen xlsx-läsare — CSV-exporten per fliknamn ger
+  TYST första fliken för ett namn som inte finns), räknar takt bara på dagar med lager, dagar kvar,
+  beställ senast/antal, överlager och kinesiska nyåret (6/2 2027, `lager/konfig.json`). Mätt
+  2026-10-01: 2 051 enheter; Mastern 650 st (222 dagar); **uppmätt ledtid 4 dagar** (Mastern 13→17/8).
+  ⛔ **Matstrumpors strumpor står på 0 i arket sedan 19/9 men alla ordrar skickas inom ett dygn** —
+  lagret ligger någon annanstans eller köps per order; frågan till CWD är
+  `leverantor/meddelanden/1-matstrumpor-lager.md`. Säsongsplanen: dagens takt ~62 lådor/dag,
+  ~1,9 per order; glappet över nyåret 28/1–13/3 = 2 700–5 000 lådor som ska ligga hos CWD före 28/1.
+- **Leverantören:** `leverantor/FORHANDLING.md` (strategin ur Kanary: landad kostnad, jämförelseoffert,
+  villkor före pris, prognos, defekter, Q4-volym i januari) + fem färdiga engelska meddelanden.
+  `node leverantor/inkopsvarde.mjs` rangordnar inköpet: **taköverdraget är ≥ 381 559 kr av 614 318 kr
+  på 30 dagar** (utan Bäverbutiken SE). Vi köper in för ~1,9 miljoner kr i månaden; 1 % = ~19 000 kr.
+  Ingen session skriver till CWD — Axel eller Mechile skickar.
+
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
 
 Axels uppdrag: "vi behöver verkligen något system för VA:erna". De hade fem
@@ -1888,6 +1925,9 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
 | Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
 | Grillklinikens COGS, marginaler och moms (legacy) | `docs/grillkliniken-ekonomi.md` |
+| **Evolve Finance + Supply Chain på svenska, luckorna per butik, barometrarna (nCAC, bidrag, kohorter)** | `ekonomi/` — `LUCKOR.md`, `evolve/`, `barometrar.mjs` |
+| **Lagerplanen ur CWD:s dagliga lagerark** (slut, beställ, överlager, kinesiska nyåret) | `lager/` — `README.md`, `konfig.json`, `kor.mjs` |
+| **Leverantören: förhandlingsstrategi, meddelanden till CWD, inköpsvärde per produkt** | `leverantor/` — `FORHANDLING.md`, `meddelanden/`, `inkopsvarde.mjs` |
 | **Bolagets sajt: publik sida + inloggade dashboards** (stonebite.org) | `stonebite/` — `README.md`, `roller.mjs` (vem ser vad), `hamta.mjs` (datan), `profil.json` (texten på publika sidan) |
 | **Kundmejlen + gratisprodukt-erbjudandet** (Shopify-notiser, kod `TACKIGEN`, kollektion `din-gratisprodukt`) | `mejl/` — `README.md`, `konfig.json`, `copy.json`. ⚠️ Shopify har inget API för notismallar: Axel klistrar in från sidan `/mejl` bygger. Rabattkoden kräver `write_discounts` som appen "Bäver uppladdare" saknar (mätt 2026-09-12) |
 

@@ -1,0 +1,291 @@
+# Module 3: The Barometers (Fix Fast vs Kill You)
+
+Lektionstexten ur Skool (Evolve Finance), hämtad 2026-10-01.
+
+Module 3: The Barometers (Fix Fast vs Kill You)
+9:18
+Module 3: The Barometers (What You Can Fix Fast vs What Will Kill You)
+1) Before you watch this
+
+If you didn’t grab the template from the last video and fill it in with your real numbers… pause this video and do it.
+
+Seriously.
+
+Because everything I’m about to say only matters if you can see your numbers move in real time.
+
+If you didn’t do it, that’s on you. I’m still going to teach it anyway.
+
+2) The big idea
+
+In e-commerce (and in life) there are:
+
+things you can fix,
+
+things you can’t fix,
+
+and things you technically can fix, but they’ll take so long they might as well be impossible.
+
+So the game isn’t “fix everything.”
+ The game is fix the right thing first based on the easy-to-hard ratio.
+
+3) The “ideal business” baseline (what good looks like)
+
+Let’s use the example you walked through:
+
+AOV: $64
+
+CAC: $74
+
+That’s a 0.86 ROAS (64 / 74)
+
+And here’s the point:
+ You can run a 0.86 all day if the rest of the model is healthy.
+
+Most brands lose because they’re obsessed with ROAS…
+ and they ignore the only question that matters:
+
+“Do I make contribution profit within a reasonable payback window?”
+
+4) What’s achievable vs what’s fantasy
+Scenario A: “My CAC is worse than this”
+
+You say: “Grayson, I’m at $100 CAC with a $64 AOV.”
+
+That’s a 0.64 ROAS.
+
+And my answer is: Cool. That can still work.
+
+Because if your LTV curve is strong enough, you’re still profitable by:
+
+Month 3
+
+Month 6
+
+Month 12
+
+The spreadsheet shows it. This is not opinion. This is math.
+
+Rule of thumb:
+ Try to keep yourself around 0.7 ROAS or higher as a general target.
+ Not because it’s magical — because it gives you room for reality (CPM spikes, refund spikes, creative fatigue).
+
+5) The “LTV sucks” scenario (and why it’s often fixable)
+
+Now you say: “Grayson, my LTV is trash.”
+
+Okay — let’s cut the LTV curve in half like you did.
+
+And what happens?
+
+A lot of the time… you’re still making money by Month 3.
+
+And that tells you something important:
+
+If your LTV is low but you’re still profitable:
+
+You’re not “doomed.” You’re just leaving money on the table.
+
+The fix is usually:
+
+better offer structure
+
+higher take rate
+
+better pricing
+
+better first-order economics vs repeat economics
+
+Here’s the key lesson from your example:
+
+It can be MORE profitable to accept a higher CAC
+ if it increases LTV enough to massively improve payback.
+
+Translation:
+
+CAC up $10
+
+but month 3 profit goes from like $1 to $22+
+
+you win
+
+That’s grown-up scaling. Not “cheap CAC” scaling.
+
+
+
+
+6) “My COGS suck” scenario (also fixable)
+
+You said: “What if my COGS are 35%?”
+
+Yeah, that’s not great.
+
+But even then, in your walkthrough:
+
+you’re still making money by Month 3
+
+So the conclusion is:
+
+COGS is usually fixable
+
+And the fixes are straightforward:
+
+raise prices (most brands are underpriced)
+
+renegotiate terms
+
+change manufacturers
+
+improve fulfillment costs
+
+stop giving away margin in dumb ways
+
+Rule:
+ For most brands, 30% COGS is the upper bound you want to live at long-term.
+
+If you’re above it:
+
+either your pricing is too low,
+
+or your supplier is taking you to dinner and you’re paying.
+
+7) The hard one: Low AOV (this is where people die)
+
+Here’s the brutal truth:
+
+Low AOV is hard to fix
+
+Not impossible, but hard.
+
+Because platforms have floors:
+
+CPMs won’t go below a certain point
+
+CPCs won’t go below a certain point
+
+even with great ads and a great landing page, you hit limits
+
+So if you’re selling a $19.99 subscription, you can have:
+
+insane margins
+
+great product
+
+great brand
+
+…and still lose, because there isn’t enough “meat on the bone” to buy customers consistently.
+
+Minimum thresholds (your rules from the video)
+
+Absolute minimum subscription price: $29.99
+
+Realistically: $39–$49
+
+Under $39? Only if:
+
+margins are insane or
+
+it’s a very specific micro-subscription setup
+
+Low AOV usually creates the same problem:
+
+Your CAC doesn’t have enough room to breathe.
+
+8) Why Month 3 / Month 6 / Month 12 matter
+
+You drew lines at Month 3, Month 6, Month 12 because those are real-world operating windows.
+
+They map to how businesses actually run:
+
+cash planning
+
+inventory cycles
+
+ad fatigue cycles
+
+monthly budgeting
+
+runway decisions
+
+We’ll go way harder on this in the next video, but for now:
+
+Payback windows tell you how aggressive you can be
+
+Yes, you can be profitable by Month 3…
+
+…but that doesn’t mean you can scale infinitely.
+
+Because scaling requires upfront capital.
+
+9) The scaling trap (why “profitable by Month 3” still breaks people)
+
+You asked the right question:
+
+“If I’m making money by Month 3, can’t I scale as much as I want?”
+
+Answer: kinda.
+
+Here’s why not:
+
+If you want to acquire 100,000 customers, you might need like $1.7M upfront depending on CAC.
+
+Most people don’t have that cash sitting around.
+
+Which is why the next video matters:
+
+I’m going to show you how to scale hard without running out of money
+ even if you don’t have $1.7M sitting in your bank account.
+
+10) Quick action steps (do this right now)
+
+Put your real numbers in the template:
+
+AOV
+
+CAC
+
+COGS / margin
+
+LTV curve (Month 0–12)
+
+Stress test 3 scenarios:
+
+CAC +20%
+
+LTV -20%
+
+COGS +5%
+
+Identify your “one lever that matters most”:
+
+If payback is slow → fix AOV / offer
+
+If CAC is ugly → fix creative / landing page
+
+If margin is crushed → fix pricing / COGS
+
+11) Common mistakes
+
+Obsessing over ROAS and ignoring contribution payback
+
+Trying to “optimize” a low AOV business instead of fixing the offer
+
+Treating COGS as unchangeable (it’s usually not)
+
+Refusing to raise prices because you’re emotionally attached to being cheap
+
+12) Quiz (with answers)
+
+What’s the goal of this video?
+ Answer: Identify which business levers are easy vs hard to fix so you prioritize correctly.
+
+Can a 0.6–0.7 ROAS ever work?
+ Answer: Yes—if the LTV curve and margins create positive contribution profit within the payback window.
+
+What’s typically easier to fix: COGS or AOV?
+ Answer: COGS is usually easier; low AOV is harder because of platform cost floors.
+
+What’s the minimum subscription price you recommend as a baseline?
+ Answer: $29.99 absolute minimum; realistically $39–$49 for most brands.
+
+Why can’t “profitable by Month 3” automatically scale forever?
+Answer: Because scaling requires upfront capital; payback timing creates cash constraints.

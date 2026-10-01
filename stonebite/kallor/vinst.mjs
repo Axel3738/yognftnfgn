@@ -95,7 +95,7 @@ export function kostnadFor(li, kostnader) {
 }
 
 /** Varukostnaden per variant-id, ur vilken app som helst som får läsa produkter. */
-async function lasKostnader(shop, token, fetchFn) {
+export async function lasKostnader(shop, token, fetchFn = fetch) {
   const karta = new Map();
   let efter = null;
   for (let sida = 0; sida < 40; sida++) {

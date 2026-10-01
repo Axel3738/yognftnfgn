@@ -1,0 +1,1080 @@
+{
+ "idag": "2026-10-01",
+ "historikFran": "2025-07-28",
+ "kurser": {
+  "datum": "2026-10-01",
+  "sekPer": {
+   "SEK": 1,
+   "EUR": 11.331,
+   "USD": 10.029209,
+   "JPY": 0.063483,
+   "CZK": 0.463265,
+   "DKK": 1.515691,
+   "GBP": 13.272346,
+   "HUF": 0.03086,
+   "PLN": 2.590831,
+   "RON": 2.144804,
+   "CHF": 12.006994,
+   "ISK": 0.082708,
+   "NOK": 1.041931,
+   "TRY": 0.204533,
+   "AUD": 6.970778,
+   "BRL": 1.932958,
+   "CAD": 7.040075,
+   "CNY": 1.495881,
+   "HKD": 1.278057,
+   "IDR": 0.000559,
+   "ILS": 3.26025,
+   "INR": 0.104115,
+   "KRW": 0.007368,
+   "MXN": 0.552056,
+   "MYR": 2.455414,
+   "NZD": 5.63143,
+   "PHP": 0.159704,
+   "SGD": 7.8361,
+   "THB": 0.298004,
+   "ZAR": 0.60615
+  }
+ },
+ "resultat": [
+  {
+   "id": "baverbutiken",
+   "namn": "Bäverbutiken",
+   "komplett": false,
+   "saknas": [
+    "Bäverbutiken: SHOPIFY_*_SE: ordrar 403 {\"errors\":\"[API] This action requires merchant approval for read_orders scope.\"}"
+   ],
+   "butiker": [
+    {
+     "id": "beverbutikken",
+     "namn": "Beverbutikken",
+     "valuta": "NOK",
+     "via": "SHOPIFY_*_NO",
+     "ordrar": 1237,
+     "avgiftsandel": 0.044715773935609646,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.34526913769259837,
+      "tackning": 0.9123917035121402
+     }
+    },
+    {
+     "id": "baeverbutiken",
+     "namn": "bæverbutiken.dk",
+     "valuta": "DKK",
+     "via": "SHOPIFY_*_DK",
+     "ordrar": 42,
+     "avgiftsandel": 0.03,
+     "avgiftKalla": "antagen 3 %",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.3276491136279698,
+      "tackning": 1
+     }
+    },
+    {
+     "id": "majavakauppa",
+     "namn": "majavakauppa.fi",
+     "valuta": "EUR",
+     "via": "SHOPIFY_*_FI",
+     "ordrar": 97,
+     "avgiftsandel": 0.043903174253806326,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.3124753663494366,
+      "tackning": 1
+     }
+    }
+   ],
+   "bedombarFran": "2026-08-09",
+   "nu": {
+    "fran": "2026-09-01",
+    "till": "2026-09-30",
+    "ordrar": 974,
+    "nya": 947,
+    "aterkop": 27,
+    "okanda": 0,
+    "netto": 769476.9942468983,
+    "spend": null,
+    "mer": null,
+    "aov": 790.0174478920927,
+    "aovNy": 788.6394140484671,
+    "aovAter": 838.3507089999998,
+    "cogsAndel": 0.33642171271420335,
+    "kostnadsTackning": 0.9083486300074193,
+    "avgiftsAndel": 0.04463131893428351,
+    "tullPerOrder": 31.726800000000306,
+    "ncac": null,
+    "bidragForstaOrder": null,
+    "bidragForeReklamNy": 456.49983200199887,
+    "bidragAterkop": 483.6373592392055,
+    "breakEvenCac": 456.49983200199887,
+    "roasMotNya": null
+   },
+   "forra": {
+    "fran": "2026-08-02",
+    "till": "2026-08-31",
+    "ordrar": 383,
+    "nya": 378,
+    "aterkop": 5,
+    "okanda": 0,
+    "netto": 161324.59446737918,
+    "spend": null,
+    "mer": null,
+    "aov": 421.213040384802,
+    "aovNy": 418.63295418089746,
+    "aovAter": 616.2675574000001,
+    "cogsAndel": 0.36562747930738826,
+    "kostnadsTackning": 0.9861205335300396,
+    "avgiftsAndel": 0.042815456427017846,
+    "tullPerOrder": 31.72680000000022,
+    "ncac": null,
+    "bidragForstaOrder": null,
+    "bidragForeReklamNy": 216.49430683731595,
+    "bidragAterkop": 289.29822249112425,
+    "breakEvenCac": 216.49430683731595,
+    "roasMotNya": null
+   },
+   "ltv90": {
+    "kunder": 0,
+    "perKund": null
+   },
+   "stress": null,
+   "kohorter": [
+    {
+     "manad": "2026-08",
+     "kunder": 378,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      426.78464144809305,
+      442.8598726621142
+     ],
+     "kumBidrag": [
+      220.46652997842173,
+      229.60358144899556
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 2
+    },
+    {
+     "manad": "2026-09",
+     "kunder": 947,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      806.1251920253417
+     ],
+     "kumBidrag": [
+      466.296348388953
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 1
+    },
+    {
+     "manad": "2026-10",
+     "kunder": 19,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [],
+     "kumBidrag": [],
+     "paybackManad": null,
+     "avslutadeManader": 0
+    }
+   ],
+   "spendPerManad": {}
+  },
+  {
+   "id": "beverbutikken",
+   "namn": "Beverbutikken (Bäverbutiken Norge)",
+   "komplett": true,
+   "saknas": [],
+   "butiker": [
+    {
+     "id": "beverbutikken",
+     "namn": "Beverbutikken",
+     "valuta": "NOK",
+     "via": "SHOPIFY_*_NO",
+     "ordrar": 1237,
+     "avgiftsandel": 0.044715773935609646,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.34526913769259837,
+      "tackning": 0.9123917035121402
+     }
+    }
+   ],
+   "bedombarFran": "2026-08-09",
+   "nu": {
+    "fran": "2026-09-01",
+    "till": "2026-09-30",
+    "ordrar": 929,
+    "nya": 903,
+    "aterkop": 26,
+    "okanda": 0,
+    "netto": 696479.7146878976,
+    "spend": 323065.76000000007,
+    "mer": 2.1558450350414646,
+    "aov": 749.7090577910631,
+    "aovNy": 748.2724977241394,
+    "aovAter": 799.6018939615385,
+    "cogsAndel": 0.3406919572931467,
+    "kostnadsTackning": 0.8987427498414599,
+    "avgiftsAndel": 0.04471577393561017,
+    "tullPerOrder": 31.726800000000303,
+    "ncac": 357.7693909191584,
+    "bidragForstaOrder": 70.43805540533032,
+    "bidragForeReklamNy": 428.2074463244887,
+    "bidragAterkop": 457.90487585266897,
+    "breakEvenCac": 428.2074463244887,
+    "roasMotNya": 2.091493897232866
+   },
+   "forra": {
+    "fran": "2026-08-02",
+    "till": "2026-08-31",
+    "ordrar": 290,
+    "nya": 287,
+    "aterkop": 3,
+    "okanda": 0,
+    "netto": 114122.88997757979,
+    "spend": 58400.04000000001,
+    "mer": 1.9541577364943548,
+    "aov": 393.52720681924063,
+    "aovNy": 394.8561982598599,
+    "aovAter": 266.38702566666666,
+    "cogsAndel": 0.3771447308415935,
+    "kostnadsTackning": 0.9803799281622655,
+    "avgiftsAndel": 0.044715773935609826,
+    "tullPerOrder": 31.72680000000017,
+    "ncac": 203.48445993031362,
+    "bidragForstaOrder": -6.9433102412126,
+    "bidragForeReklamNy": 196.54114968910102,
+    "bidragAterkop": 123.62268141090988,
+    "breakEvenCac": 196.54114968910102,
+    "roasMotNya": 1.9404734808500093
+   },
+   "ltv90": {
+    "kunder": 0,
+    "perKund": null
+   },
+   "stress": [
+    {
+     "namn": "Som nu",
+     "forstaOrder": 70.43805540533032,
+     "nittioDagar": 70.43805540533032
+    },
+    {
+     "namn": "CAC +20 %",
+     "forstaOrder": -1.1158227785013537,
+     "nittioDagar": -1.1158227785013537
+    },
+    {
+     "namn": "LTV −20 %",
+     "forstaOrder": 70.43805540533032,
+     "nittioDagar": 70.43805540533032
+    },
+    {
+     "namn": "Varukostnad +5 procentenheter",
+     "forstaOrder": 33.02443051912337,
+     "nittioDagar": 33.02443051912337
+    }
+   ],
+   "kohorter": [
+    {
+     "manad": "2026-08",
+     "kunder": 287,
+     "spend": 58400.04000000001,
+     "cac": 203.48445993031362,
+     "kumIntakt": [
+      397.6407316291979,
+      418.81298737449407
+     ],
+     "kumBidrag": [
+      198.08205792091238,
+      210.11622327239985
+     ],
+     "paybackManad": 1,
+     "avslutadeManader": 2
+    },
+    {
+     "manad": "2026-09",
+     "kunder": 903,
+     "spend": 323065.76000000007,
+     "cac": 357.7693909191584,
+     "kumIntakt": [
+      764.5661985481702
+     ],
+     "kumBidrag": [
+      437.20957476515673
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 1
+    },
+    {
+     "manad": "2026-10",
+     "kunder": 18,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [],
+     "kumBidrag": [],
+     "paybackManad": null,
+     "avslutadeManader": 0
+    }
+   ],
+   "spendPerManad": {
+    "2026-08": 58400.04000000001,
+    "2026-09": 323065.76000000007
+   }
+  },
+  {
+   "id": "majavakauppa",
+   "namn": "Majavakauppa (Bäverbutiken Finland)",
+   "komplett": true,
+   "saknas": [],
+   "butiker": [
+    {
+     "id": "majavakauppa",
+     "namn": "majavakauppa.fi",
+     "valuta": "EUR",
+     "via": "SHOPIFY_*_FI",
+     "ordrar": 97,
+     "avgiftsandel": 0.043903174253806326,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.3124753663494366,
+      "tackning": 1
+     }
+    }
+   ],
+   "bedombarFran": "2026-08-13",
+   "nu": {
+    "fran": "2026-09-01",
+    "till": "2026-09-30",
+    "ordrar": 44,
+    "nya": 43,
+    "aterkop": 1,
+    "okanda": 0,
+    "netto": 72589.55868000005,
+    "spend": 36728.68,
+    "mer": 1.9763726515627582,
+    "aov": 1649.7626972727282,
+    "aovNy": 1645.2032274418614,
+    "aovAter": 1845.8199,
+    "cogsAndel": 0.30009303371067125,
+    "kostnadsTackning": 1,
+    "avgiftsAndel": 0.0439031742538063,
+    "tullPerOrder": 31.72679999999999,
+    "ncac": 854.1553488372093,
+    "bidragForstaOrder": 193.99266579013772,
+    "bidragForeReklamNy": 1048.148014627347,
+    "bidragAterkop": 1152.6819272891569,
+    "breakEvenCac": 1048.148014627347,
+    "roasMotNya": 1.9261171046713368
+   },
+   "forra": {
+    "fran": "2026-08-02",
+    "till": "2026-08-31",
+    "ordrar": 52,
+    "nya": 50,
+    "aterkop": 2,
+    "okanda": 0,
+    "netto": 27910.292579999987,
+    "spend": 19948.510000000002,
+    "mer": 1.3991166548278535,
+    "aov": 536.7363957692305,
+    "aovNy": 512.5623173999996,
+    "aovAter": 1141.088355,
+    "cogsAndel": 0.3445505403583985,
+    "kostnadsTackning": 1,
+    "avgiftsAndel": 0.043903174253806375,
+    "tullPerOrder": 31.726799999999976,
+    "ncac": 398.97020000000003,
+    "bidragForstaOrder": -112.10981833674731,
+    "bidragForeReklamNy": 286.8603816632527,
+    "bidragAterkop": 537.8115341114459,
+    "breakEvenCac": 286.8603816632527,
+    "roasMotNya": 1.2847132878595935
+   },
+   "ltv90": {
+    "kunder": 0,
+    "perKund": null
+   },
+   "stress": [
+    {
+     "namn": "Som nu",
+     "forstaOrder": 193.99266579013772,
+     "nittioDagar": 193.99266579013772
+    },
+    {
+     "namn": "CAC +20 %",
+     "forstaOrder": 23.161596022695903,
+     "nittioDagar": 23.161596022695903
+    },
+    {
+     "namn": "LTV −20 %",
+     "forstaOrder": 193.99266579013772,
+     "nittioDagar": 193.99266579013772
+    },
+    {
+     "namn": "Varukostnad +5 procentenheter",
+     "forstaOrder": 111.73250441804464,
+     "nittioDagar": 111.73250441804464
+    }
+   ],
+   "kohorter": [
+    {
+     "manad": "2026-08",
+     "kunder": 50,
+     "spend": 19948.510000000002,
+     "cac": 398.97020000000003,
+     "kumIntakt": [
+      558.2058515999997,
+      558.2058515999997
+     ],
+     "kumBidrag": [
+      308.37284302771053,
+      308.37284302771053
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 2
+    },
+    {
+     "manad": "2026-09",
+     "kunder": 43,
+     "spend": 36728.68,
+     "cac": 854.1553488372093,
+     "kumIntakt": [
+      1688.129271627908
+     ],
+     "kumBidrag": [
+      1074.954571075932
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 1
+    },
+    {
+     "manad": "2026-10",
+     "kunder": 1,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [],
+     "kumBidrag": [],
+     "paybackManad": null,
+     "avslutadeManader": 0
+    }
+   ],
+   "spendPerManad": {
+    "2026-08": 19948.510000000002,
+    "2026-09": 36728.68
+   }
+  },
+  {
+   "id": "matstrumpor",
+   "namn": "Matstrumpor",
+   "komplett": true,
+   "saknas": [],
+   "butiker": [
+    {
+     "id": "matstrumpor",
+     "namn": "Matstrumpor.se",
+     "valuta": "SEK",
+     "via": "SHOPIFY_*_1r46tp_qx",
+     "ordrar": 4231,
+     "avgiftsandel": 0.03181079949769778,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.3287897245789529,
+      "tackning": 0.6071250530630424
+     }
+    }
+   ],
+   "bedombarFran": "2025-08-04",
+   "nu": {
+    "fran": "2026-09-01",
+    "till": "2026-09-30",
+    "ordrar": 493,
+    "nya": 480,
+    "aterkop": 13,
+    "okanda": 0,
+    "netto": 214487,
+    "spend": 112417.54,
+    "mer": 1.9079495957659278,
+    "aov": 435.0649087221095,
+    "aovNy": 433.9875,
+    "aovAter": 474.84615384615387,
+    "cogsAndel": 0.199672131147541,
+    "kostnadsTackning": 0.022183162615916116,
+    "avgiftsAndel": 0.031810799497697675,
+    "tullPerOrder": 31.726800000000253,
+    "ncac": 234.20320833333332,
+    "bidragForstaOrder": 67.59679330326631,
+    "bidragForeReklamNy": 301.80000163659963,
+    "bidragAterkop": 333.20057454822626,
+    "breakEvenCac": 301.80000163659963,
+    "roasMotNya": 1.8530382358482493
+   },
+   "forra": {
+    "fran": "2026-08-02",
+    "till": "2026-08-31",
+    "ordrar": 30,
+    "nya": 27,
+    "aterkop": 3,
+    "okanda": 0,
+    "netto": 13077,
+    "spend": 27594.210000000003,
+    "mer": 0.47390376459409417,
+    "aov": 435.9,
+    "aovNy": 425.22222222222223,
+    "aovAter": 532,
+    "cogsAndel": null,
+    "kostnadsTackning": 0,
+    "avgiftsAndel": 0.03181079949769778,
+    "tullPerOrder": 31.72680000000002,
+    "ncac": 1022.0077777777778,
+    "bidragForstaOrder": null,
+    "bidragForeReklamNy": null,
+    "bidragAterkop": null,
+    "breakEvenCac": null,
+    "roasMotNya": 0.4160655441848127
+   },
+   "ltv90": {
+    "kunder": 3550,
+    "perKund": 8.289380872870197
+   },
+   "stress": [
+    {
+     "namn": "Som nu",
+     "forstaOrder": 67.59679330326631,
+     "nittioDagar": 75.8861741761365
+    },
+    {
+     "namn": "CAC +20 %",
+     "forstaOrder": 20.756151636599668,
+     "nittioDagar": 29.045532509469865
+    },
+    {
+     "namn": "LTV −20 %",
+     "forstaOrder": 67.59679330326631,
+     "nittioDagar": 74.22829800156246
+    },
+    {
+     "namn": "Varukostnad +5 procentenheter",
+     "forstaOrder": 45.89741830326628,
+     "nittioDagar": 54.186799176136475
+    }
+   ],
+   "kohorter": [
+    {
+     "manad": "2025-08",
+     "kunder": 131,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      204.45809160305342,
+      204.45809160305342,
+      204.45809160305342,
+      206.35885496183204,
+      208.64129770992366,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526,
+      210.92374045801526
+     ],
+     "kumBidrag": [
+      107.10114970949925,
+      107.10114970949925,
+      107.10114970949925,
+      108.31865679275273,
+      109.67386115115112,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951,
+      111.02906550954951
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 14
+    },
+    {
+     "manad": "2025-09",
+     "kunder": 4,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255,
+      251.255
+     ],
+     "kumBidrag": [
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783,
+      156.36397010050783
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 13
+    },
+    {
+     "manad": "2025-10",
+     "kunder": 131,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      207.80541984732827,
+      207.80541984732827,
+      207.80541984732827,
+      207.80541984732827,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582,
+      210.85122137404582
+     ],
+     "kumBidrag": [
+      117.73159273330351,
+      117.73159273330351,
+      117.73159273330351,
+      117.73159273330351,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913,
+      119.82843499500913
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 12
+    },
+    {
+     "manad": "2025-11",
+     "kunder": 50,
+     "spend": 2042.8600000000001,
+     "cac": 40.857200000000006,
+     "kumIntakt": [
+      206,
+      206,
+      206,
+      206,
+      206,
+      206,
+      206,
+      206,
+      206,
+      206,
+      206
+     ],
+     "kumBidrag": [
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567,
+      115.77505610850567
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 11
+    },
+    {
+     "manad": "2025-12",
+     "kunder": 1556,
+     "spend": 157063.74999999997,
+     "cac": 100.94071336760923,
+     "kumIntakt": [
+      378.7381426735218,
+      380.50099614395884,
+      381.27091902313623,
+      382.42516066838044,
+      382.8101221079691,
+      382.8101221079691,
+      383.1950835475578,
+      383.1950835475578,
+      383.1950835475578,
+      384.0601221079691
+     ],
+     "kumBidrag": [
+      215.22315431268945,
+      216.33796339637232,
+      216.88844781897694,
+      217.69329093571005,
+      217.96853314701238,
+      217.96853314701238,
+      218.2437753583147,
+      218.2437753583147,
+      218.2437753583147,
+      218.82652417869068
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 10
+    },
+    {
+     "manad": "2026-01",
+     "kunder": 769,
+     "spend": 56538.48,
+     "cac": 73.52208062418725,
+     "kumIntakt": [
+      368.8657347204161,
+      371.32997399219767,
+      372.6264629388817,
+      372.6264629388817,
+      372.6264629388817,
+      372.6264629388817,
+      372.6264629388817,
+      373.14531859557866,
+      374.46781534460337
+     ],
+     "kumBidrag": [
+      206.69054013148164,
+      208.29724823280856,
+      209.16911879762955,
+      209.16911879762955,
+      209.16911879762955,
+      209.16911879762955,
+      209.16911879762955,
+      209.5263181946171,
+      210.50067595638254
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 9
+    },
+    {
+     "manad": "2026-02",
+     "kunder": 634,
+     "spend": 94579.43000000002,
+     "cac": 149.1789116719243,
+     "kumIntakt": [
+      378.2184542586751,
+      380.10804416403784,
+      380.10804416403784,
+      380.10804416403784,
+      380.10804416403784,
+      380.10804416403784,
+      381.3667192429022,
+      382.6253943217666
+     ],
+     "kumBidrag": [
+      238.91216084364456,
+      240.2631920133178,
+      240.2631920133178,
+      240.2631920133178,
+      240.2631920133178,
+      240.2631920133178,
+      241.17975269559994,
+      242.0963133778821
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 8
+    },
+    {
+     "manad": "2026-03",
+     "kunder": 264,
+     "spend": 54444.55,
+     "cac": 206.22935606060608,
+     "kumIntakt": [
+      402.13352272727275,
+      402.13352272727275,
+      402.13352272727275,
+      402.13352272727275,
+      402.13352272727275,
+      402.13352272727275,
+      402.13352272727275
+     ],
+     "kumBidrag": [
+      263.3221355368771,
+      263.3221355368771,
+      263.3221355368771,
+      263.3221355368771,
+      263.3221355368771,
+      263.3221355368771,
+      263.3221355368771
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 7
+    },
+    {
+     "manad": "2026-04",
+     "kunder": 5,
+     "spend": 720.3599999999999,
+     "cac": 144.07199999999997,
+     "kumIntakt": [
+      379,
+      379,
+      379,
+      379,
+      379,
+      379
+     ],
+     "kumBidrag": [
+      255.2554232167876,
+      255.2554232167876,
+      255.2554232167876,
+      255.2554232167876,
+      255.2554232167876,
+      255.2554232167876
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 6
+    },
+    {
+     "manad": "2026-05",
+     "kunder": 6,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [
+      399,
+      399,
+      399,
+      399,
+      399
+     ],
+     "kumBidrag": [
+      274.57445452243115,
+      274.57445452243115,
+      274.57445452243115,
+      274.57445452243115,
+      274.57445452243115
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 5
+    },
+    {
+     "manad": "2026-07",
+     "kunder": 2,
+     "spend": 213.8,
+     "cac": 106.9,
+     "kumIntakt": [
+      399,
+      399,
+      399
+     ],
+     "kumBidrag": [
+      274.6863362834374,
+      274.6863362834374,
+      274.6863362834374
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 3
+    },
+    {
+     "manad": "2026-08",
+     "kunder": 27,
+     "spend": 27594.210000000003,
+     "cac": 1022.0077777777778,
+     "kumIntakt": [
+      440,
+      454.77777777777777
+     ],
+     "kumBidrag": [
+      304.9973312398809,
+      315.1708992503786
+     ],
+     "paybackManad": null,
+     "avslutadeManader": 2
+    },
+    {
+     "manad": "2026-09",
+     "kunder": 480,
+     "spend": 112417.54,
+     "cac": 234.20320833333332,
+     "kumIntakt": [
+      439.43125
+     ],
+     "kumBidrag": [
+      305.34463388366805
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 1
+    },
+    {
+     "manad": "2026-10",
+     "kunder": 30,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [],
+     "kumBidrag": [],
+     "paybackManad": null,
+     "avslutadeManader": 0
+    }
+   ],
+   "spendPerManad": {
+    "2026-08": 27594.210000000003,
+    "2026-09": 112417.54,
+    "2025-11": 2042.8600000000001,
+    "2025-12": 157063.74999999997,
+    "2026-01": 56538.48,
+    "2026-02": 94579.43000000002,
+    "2026-03": 54444.55,
+    "2026-04": 720.3599999999999,
+    "2026-07": 213.8
+   }
+  },
+  {
+   "id": "carashell",
+   "namn": "CaraShell",
+   "komplett": true,
+   "saknas": [],
+   "butiker": [
+    {
+     "id": "carashell",
+     "namn": "Carashell",
+     "valuta": "SEK",
+     "via": "SHOPIFY_*_yitrbk_m3",
+     "ordrar": 565,
+     "avgiftsandel": 0.04318782376839597,
+     "avgiftKalla": "uppmätt: Shopify Payments avgifter ÷ netto, 8 dagar i snapshoten",
+     "tullSek": 31.726799999999997,
+     "cogs": {
+      "andel": 0.34640106983643937,
+      "tackning": 0.8469298231309373
+     }
+    }
+   ],
+   "bedombarFran": "2026-09-12",
+   "nu": {
+    "fran": "2026-09-01",
+    "till": "2026-09-30",
+    "ordrar": 537,
+    "nya": 533,
+    "aterkop": 4,
+    "okanda": 0,
+    "netto": 891656.8200000004,
+    "spend": 423735.73,
+    "mer": 2.1042757475278293,
+    "aov": 1660.4410055865928,
+    "aovNy": 1663.9917073170739,
+    "aovAter": 1187.31,
+    "cogsAndel": 0.3487315901934724,
+    "kostnadsTackning": 0.8378819779564962,
+    "avgiftsAndel": 0.04318782376839596,
+    "tullPerOrder": 31.726800000000257,
+    "ncac": 795.0013696060037,
+    "bidragForstaOrder": 185.20435444055545,
+    "bidragForeReklamNy": 980.2057240465591,
+    "bidragAterkop": 678.0647834203053,
+    "breakEvenCac": 980.2057240465591,
+    "roasMotNya": 2.0930677240741544
+   },
+   "forra": {
+    "fran": "2026-08-02",
+    "till": "2026-08-31",
+    "ordrar": 0,
+    "nya": 0,
+    "aterkop": 0,
+    "okanda": 0,
+    "netto": 0,
+    "spend": 0,
+    "mer": null,
+    "aov": null,
+    "aovNy": null,
+    "aovAter": null,
+    "cogsAndel": null,
+    "kostnadsTackning": 0,
+    "avgiftsAndel": null,
+    "tullPerOrder": null,
+    "ncac": null,
+    "bidragForstaOrder": null,
+    "bidragForeReklamNy": null,
+    "bidragAterkop": null,
+    "breakEvenCac": null,
+    "roasMotNya": null
+   },
+   "ltv90": {
+    "kunder": 0,
+    "perKund": null
+   },
+   "stress": [
+    {
+     "namn": "Som nu",
+     "forstaOrder": 185.20435444055545,
+     "nittioDagar": 185.20435444055545
+    },
+    {
+     "namn": "CAC +20 %",
+     "forstaOrder": 26.20408051935476,
+     "nittioDagar": 26.20408051935476
+    },
+    {
+     "namn": "LTV −20 %",
+     "forstaOrder": 185.20435444055545,
+     "nittioDagar": 185.20435444055545
+    },
+    {
+     "namn": "Varukostnad +5 procentenheter",
+     "forstaOrder": 102.0047690747017,
+     "nittioDagar": 102.0047690747017
+    }
+   ],
+   "kohorter": [
+    {
+     "manad": "2026-09",
+     "kunder": 533,
+     "spend": 423735.73,
+     "cac": 795.0013696060037,
+     "kumIntakt": [
+      1672.9021013133215
+     ],
+     "kumBidrag": [
+      985.9264451242037
+     ],
+     "paybackManad": 0,
+     "avslutadeManader": 1
+    },
+    {
+     "manad": "2026-10",
+     "kunder": 28,
+     "spend": null,
+     "cac": null,
+     "kumIntakt": [],
+     "kumBidrag": [],
+     "paybackManad": null,
+     "avslutadeManader": 0
+    }
+   ],
+   "spendPerManad": {
+    "2026-09": 423735.73
+   }
+  }
+ ]
+}

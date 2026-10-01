@@ -1,0 +1,241 @@
+# Module 4: The Cash Conversion Cycle
+
+Lektionstexten ur Skool (Evolve Finance), hämtad 2026-10-01.
+
+Module 4: The Cash Conversion Cycle
+9:36
+1) What this lesson is really about
+
+This is the part that separates “nice little brand” from “holy sht we just did $3M this month.”*
+
+Because most people don’t lose in e-commerce because their ads are bad.
+
+They lose because they hit the Great Wall of Death:
+
+Your model says you’re profitable by Month 3…
+ but your bank account says you’re dead by Week 3.
+
+So this lesson is about building a cashflow engine where you can scale hard without needing a pile of your own cash upfront
+
+2) The Great Wall of Death (why profitable businesses still die)
+
+In your spreadsheet, you can literally see it:
+
+Month 0: negative
+
+Month 1: negative
+
+Month 2: negative
+
+Month 3: finally positive
+
+Now scale that to 100,000 customers.
+
+Even if it “works,” you might need millions of dollars floating before payback shows up.
+
+And most people don’t have $2M–$3M sitting around to “temporarily lose” while they wait for LTV to save them.
+
+3) The cheat code: match payback timing to payment timing
+
+Here’s the whole strategy in one sentence:
+
+If your customer pays you before you have to pay your bills, you can scale without bleeding cash.
+
+That’s the advanced cash conversion cycle.
+
+So instead of asking:
+
+“Am I profitable eventually?”
+
+You start asking:
+
+“When does money leave my bank account?”
+
+“When does money hit my bank account?”
+
+“Do I go positive before the bill is due?”
+
+That’s the real game.
+
+4) Layer 1: Ad platform terms (the first “float” lever)
+
+Many advertisers can qualify for monthly invoicing / credit line style billing with Meta, where you get an invoice and pay later (commonly around 30 days from invoice issue date, but your terms can vary).
+
+What this does:
+
+You can spend now
+
+collect customer revenue now
+
+and only pay Meta later
+
+So instead of needing $1.2M to spend $1.2M, you’re borrowing the timing.
+
+Important: This only works if:
+
+your fulfillment doesn’t implode
+
+your refunds/chargebacks don’t spike
+
+your LTV assumptions aren’t fantasy
+
+Because this is still a liability — it’s just a smart liability.
+
+5) Layer 2: “Bills you can’t normally pay with a card”
+
+Here’s the annoying truth:
+
+Most big invoices (manufacturers, vendors, some platforms) can’t be paid with a credit card.
+
+So companies like Melio and Plastiq exist specifically to solve that problem: they let you fund payments with a card and deliver the money to the vendor (often via ACH/check), typically for a fee around ~2.9–2.99% (check your exact rate).
+
+The practical takeaway
+
+If you can move a big invoice onto a card:
+
+you just bought yourself extra days
+
+which can be the difference between scaling and dying
+
+The adult takeaway (don’t be dumb here)
+
+That fee is real.
+
+If you pay ~2.9–2.99% to fund an invoice and your card rewards are 1–2%, you are still paying for the float.
+ Sometimes it’s worth it. Sometimes it’s not.
+
+You decide with math, not vibes.
+
+6) Layer 3: Extend the float with longer charge-card terms
+
+You mentioned the American Express Plum Card for “up to 60 days to pay without interest” (when you pay the minimum due by the due date).
+
+Why this matters:
+ If your business turns profitable around Month 2–3, longer payment terms can move you from:
+
+“I need cash upfront”
+ to
+
+“I pay when I’m already positive”
+
+That’s how you can be “first-order profitable” in practice — because your cash timing is positive even if your spreadsheet shows early-month negative margin.
+
+7) The full “stack” (the advanced cash conversion cycle)
+
+Think of it like stacking time advantages:
+
+Meta monthly invoicing → delay ad spend cash-out
+
+Card-funded invoice tools (Melio/Plastiq) → move payable bills onto card float
+
+Longer-term charge card (ex: up to 60 days) → delay when cash actually leaves
+
+Vendor terms (Net 30 / Net 60) → reduce inventory cash strain (if you can negotiate it)
+
+When those align, you can scale fast because:
+
+you’re collecting revenue
+
+while your bills are still not due
+
+and by the time they’re due, your cohort margin has already crossed positive
+
+That’s the “no capital” feel.
+
+(Reality check: you still need operational competence. You can’t finance chaos.)
+
+8) The rule that keeps you alive: your numbers must be correct
+
+This part is not optional.
+
+If your cohort LTV is off by even ~5%, you showed exactly what happens:
+
+you can swing from +profit to massive negative fast
+
+At scale, 1% errors become five-figure mistakes.
+ 10% errors become “why is my bank account on fire?”
+
+What I recommend until you’re dialed:
+
+Build the system assuming a shorter payback window than your optimistic model.
+ Give yourself wiggle room.
+
+9) Guardrails (so you don’t turn this into a bankruptcy speedrun)
+
+Use these like rules, not suggestions:
+
+Never scale debt faster than your ability to fulfill.
+ If fulfillment breaks, refunds spike, chargebacks hit, and your whole float collapses.
+
+Stress test the model before you scale.
+ Run scenarios:
+
+CAC +20%
+
+Month 1–2 LTV -10%
+
+Refund rate +2%
+
+Delayed payouts by 7–14 days
+
+Always know your “cash-out date.”
+ Not “month 3 profitability.”
+ The date the bill hits.
+
+Don’t rely on rewards math unless you’ve actually done it.
+ If the fee is ~2.99%, “it zeroes out” is not guaranteed.
+
+10) Action steps (do this right after the video)
+
+In the template, find the first month where cumulative margin turns positive
+
+Write down your real payment timing:
+
+Meta invoice due date (your terms)
+
+Manufacturer terms (Net 0 / Net 30 / Net 60)
+
+Card statement close + due date
+
+Ask one question:
+
+Does my cohort go positive BEFORE the bill is due?
+
+If not, your options are:
+
+improve payback (AOV, margin, LTV)
+
+reduce CAC
+
+extend terms (vendor, platform, card)
+
+slow growth to match cash capacity
+
+11) Common mistakes
+
+Scaling because “the model says Month 3 is profitable” while ignoring cash timing
+
+Being sloppy with cohort data (5% wrong = six figures wrong at scale)
+
+Thinking float fixes a broken offer (it doesn’t)
+
+Using credit to cover operational incompetence
+
+Not accounting for inventory cash needs (COGS is still real)
+
+12) Quiz (with answers)
+
+What is the “Great Wall of Death”?
+ Answer: The cash gap where you’re “profitable later” but you run out of money before payback hits.
+
+What’s the core strategy of the advanced cash conversion cycle?
+ Answer: Align payback timing so you collect revenue before bills are due.
+
+What does monthly invoicing with Meta do for cashflow?
+ Answer: It delays when you pay for ad spend (commonly ~30 days from invoice issue date, depending on terms).
+
+Why would someone use Melio/Plastiq?
+ Answer: To pay bills that don’t accept cards using card funding (often ~2.9–2.99% fee).
+
+What’s the #1 requirement before using float to scale?
+Answer: Your cohort math must be accurate and stress-tested

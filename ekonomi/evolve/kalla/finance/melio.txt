@@ -1,0 +1,142 @@
+﻿Course Module: Meta Billing Changed — Here’s How to Still Pay With Cards (and Get 90–105 Days of Float)
+What you’re going to learn (the promise)
+Meta pushing advertisers onto monthly invoicing / bank payments is not the apocalypse. For the right business (especially subscription), it can be the unlock that lets you scale hard without your bank balance being the bottleneck.
+This module teaches you the Chad Scaling Billing Workflow:
+Meta Monthly Invoicing → 3rd-party bill pay → the right business charge card terms
+ …so you can delay when cash leaves your account long enough for LTV to turn the cohort positive.
+Note: Meta’s “no more credit cards” change appears to be rolling out to affected accounts (not necessarily everyone). If you got the notice, you’ll need to switch by the deadline shown in your account. Reports cite late March / April 1, 2026 as key dates for impacted accounts.
+________________
+
+
+1) The 3 ways people pay Meta (ranked from broke to baller)
+Tier 1 — “Pay Now” (debit/bank immediately)
+What it is: Meta charges you in smaller thresholds; you pay immediately from your bank/debit.
+Pro: No debt.
+Con: Worst possible use of capital. You’re strangling your ability to scale because you’re funding Meta in real time.
+________________
+
+
+Tier 2 — “Legacy Credit Card Threshold Billing” (going away for some accounts)
+What it is: Meta bills thresholds, you pay on a card, you get ~net-30-ish breathing room (statement cycle).
+Pros:
+* Extends your cash conversion cycle
+
+* Points can add up at scale
+
+Con: For impacted accounts, this option is getting removed in favor of monthly invoicing / bank payments.
+________________
+
+
+Tier 3 — The Chad Scaling Workflow (this is the whole module)
+Step A — Switch to Meta Monthly Invoicing
+Meta monthly invoicing is a credit line / monthly invoice setup where payment is due within 30 days of the invoice issue date (terms can vary by country/legal terms).
+Step B — Pay the Meta invoice using a 3rd-party tool (so you can still use a card)
+Because Meta invoicing is typically paid via bank transfer/ACH methods, the move is:
+Use a 3rd party that lets you fund the payment with a credit card (they send the vendor bank payment, you get card terms).
+Options you mentioned:
+   * Melio (commonly ~2.9% card fee)
+
+   * Plastiq (base fee commonly 2.99% for card-funded payments)
+
+   * Bill.com (varies by plan/rails; verify in your account)
+
+Step C — Use the right card (terms > “sexy points”)
+The point isn’t clout. It’s time.
+      * Amex Business Gold: 4X points in top categories (cap applies) — great for some spend, not necessarily the best “infinite scaling” bill-pay card.
+
+      * Amex Business Platinum: can earn 2X points on eligible purchases $5K+ (up to $2M/year, then standard earn) — good for large payments, but it’s points, not “2% cash.”
+
+      * Amex Plum: the “grandpa card” that prints money via time — up to 60 days to pay (when you pay minimum due), plus 1.5% Early Pay Discount when you pay eligible charges within 10 days of statement closing.
+
+The stack (why this gets stupid powerful)
+When you combine:
+         * Meta invoice due window (net 30)
+
+         * 3rd-party tool funding with card (fee ~2.9–2.99%)
+
+         * a card with longer float (ex: Plum up to 60 days)
+
+…you can manufacture a very long runway before cash leaves your bank account.
+That’s how you can be negative on:
+            * acquisition
+
+            * first rebill
+
+            * second rebill
+…and still be positive by the time the bill is actually due (IF your cohort math is real).
+
+________________
+
+
+2) The math that makes this safe (or makes you blow up)
+This whole system revolves around one thing:
+Your cohort math must be accurate
+Being off by “just 5%” on early months can swing you from profit to pain at scale. (You said it best: small % errors become massive dollars.)
+My rule until you’re dialed:
+Operate with a shorter payback target than your optimistic model (give yourself wiggle room).
+________________
+
+
+3) The actual workflow (what to do)
+Checklist
+               1. Check if your ad account is being required to move to monthly invoicing (Billing & Payments).
+
+               2. Apply / enable monthly invoicing if eligible.
+
+               3. Choose your 3rd-party payer:
+
+                  * Melio (2.9% card fee)
+
+                  * Plastiq (2.99% base fee)
+
+                     4. Choose your card based on terms + net cost, not vibes:
+
+                        * Want max float? Plum (up to 60 days + early pay discount)
+
+                           5. Put guardrails in place:
+
+                              * Don’t scale spend faster than fulfillment capacity
+
+                              * Stress test: CAC +20%, early LTV -10%, refunds +2%
+
+                              * Know the exact due dates (invoice issue date + statement close + due date)
+
+________________
+
+
+4) Common mistakes
+                                 * Treating this like “free money” instead of structured debt
+
+                                 * Not knowing your cohort payback timing and then getting surprise-killed by the bill
+
+                                 * Ignoring fees (2.9–2.99% is real)
+
+                                 * Choosing cards for ego points instead of scaling terms
+
+________________
+
+
+5) Quiz (with answers)
+                                    1. Why is Meta monthly invoicing a scaling unlock?
+ Because it can delay cash-out (invoice due within ~30 days of issue), letting revenue/LTV arrive before payment is due.
+
+                                    2. Why use Melio/Plastiq in this workflow?
+ To fund a bank-paid invoice with a credit card (for float), paying a fee (~2.9–2.99%).
+
+                                    3. What’s the #1 requirement for using this safely?
+ Accurate cohort math + stress testing so you’re confident cash will be there when the bill is due.
+
+                                    4. What’s special about the Amex Plum in this context?
+ Up to 60 days to pay (with minimum due paid) and a 1.5% early pay discount when paying within 10 days of statement close.
+
+                                    5. What’s the fastest way to bankrupt yourself with this system?
+ Scaling spend aggressively while your LTV assumptions are wrong and fulfillment/refunds aren’t controlled.
+
+________________
+
+
+CTA (for the module page)
+If you want me to sanity-check your setup (terms + fee math + payback timing), message me:
+                                       * Discord: crossygraysonentrepreneur
+
+                                       * Instagram: @graysoncross.official

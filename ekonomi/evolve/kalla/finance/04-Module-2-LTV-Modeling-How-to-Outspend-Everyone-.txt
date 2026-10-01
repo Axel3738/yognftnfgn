@@ -1,0 +1,321 @@
+# Module 2: LTV Modeling (How to Outspend Everyone)
+
+Lektionstexten ur Skool (Evolve Finance), hämtad 2026-10-01.
+
+Module 2: LTV Modeling (How to Outspend Everyone)
+10:51
+
+TEMPLATE
+
+https://docs.google.com/spreadsheets/d/1L5hl4jERkf9PRx758K6RjNHjCbZt0aqqKiJ2YEfWe9w/edit?gid=107178596#gid=107178596
+
+1) What this lesson covers
+
+This video answers one question:
+
+How do I spend more than every competitor… and still make money?
+
+That’s the real reason LTV exists. Not because it’s a “nice metric.”
+ Because it tells you how hard you can press the gas without dying.
+
+Your goal (and mine) is simple:
+
+Spend as much as humanly possible
+
+while generating positive contribution margin
+
+and still leaving profit at the business level
+
+2) The purpose of LTV (in this course)
+LTV is a weapon
+
+In our context, LTV exists to answer:
+
+“How can I outspend everyone else in the marketplace while still making a profit?”
+
+Because if you can spend more than everyone else, you win distribution.
+ And if you win distribution, you win the market.
+
+3) Where the data comes from (and where it doesn’t)
+Pull customer metrics from Shopify, not Facebook
+
+You can use Meta/Google for spend, but you should measure new customers from Shopify.
+
+Why? Because ad platforms will happily lie to your face with attribution.
+
+4) CAC vs CPA (stop mixing these)
+CAC (Customer Acquisition Cost)
+
+CAC in this module means:
+
+CAC = Total ad spend in a time period / Net new customers acquired in that same time period
+
+And “net new customers” means Shopify-filtered:
+
+New customer = TRUE
+
+Not returning customers
+
+Not blended “orders”
+
+Example:
+
+Spend $1,000,000
+
+Acquire 1,000,000 new customers
+
+CAC = $1
+
+CPA (Cost per Purchase)
+
+CPA is cost per purchase/event.
+ CAC is cost per new customer.
+
+If you mix those, your model is fake.
+
+5) LTV vs retention (also not the same thing)
+
+Retention is people staying.
+ LTV is dollars they generate.
+
+You can have:
+
+decent retention but low dollars (small orders)
+
+mediocre retention but huge dollars (high AOV + upsells)
+
+That’s why we model LTV in dollars, not “customer counts.”
+
+Recommended tool: Lifetimely
+
+You can do it other ways, but Lifetimely is:
+
+cheap
+
+accurate
+
+easy for cohort LTV by month
+
+Use whatever you want as long as you get correct cohort LTV.
+
+
+
+
+6) The spreadsheet: what it’s doing (so you know how to use it)
+
+This template is the backbone for the whole module.
+
+The big concept: cohort math
+
+A cohort = customers acquired in the same period (ex: February).
+
+We track what that February cohort does over time:
+
+Month 0 (purchase month)
+
+Month 1
+
+Month 2
+
+etc.
+
+Column A: “Post this month cohort retention (LTV %)”
+
+Month 0 is 100% by definition (baseline).
+
+You’ll often see Month 0 at 101–102% in real data because some customers reorder inside the same 28-day window. Don’t overthink it—just use the data.
+
+This column is an LTV multiplier.
+ If Month 1 is 60%, that means:
+
+If Month 0 = $1, Month 1 adds $0.60 more.
+ If Month 0 = $100, Month 1 adds $60 more.
+
+Column B: Revenue
+
+Revenue is just:
+ LTV % × AOV
+
+So Month 1 revenue is:
+ Month 1 LTV % × AOV
+
+Column C/D: Margin and CAC interaction (the “truth” column)
+
+This is where the model stops being cute and starts being useful.
+
+You take:
+
+revenue
+
+multiply by your contribution margin %
+
+then subtract CAC (first order only)
+
+This shows you:
+
+are we negative on Month 0?
+
+when do we cross into profit?
+
+how long is payback?
+
+Total revenue (cohort) and Total margin (cohort)
+
+Total revenue shows cumulative dollars collected from that cohort over time.
+
+Total margin shows cumulative contribution profit from that cohort over time.
+
+Total margin is the scaling decision.
+ If total margin is positive fast enough, you can scale.
+ If it isn’t, you’re buying revenue and renting dopamine.
+
+7) The orange vs gray cells (how to interact with the sheet)
+Orange = inputs you can change
+Gray = formulas you don’t touch
+
+The key orange inputs:
+
+AOV (first order)
+
+CAC
+
+Total customers acquired (scenario planning)
+
+COGS / variable cost assumptions
+
+AOV (second order) + margin (second order)
+
+OpEx (optional advanced layer)
+
+8) Why first order and repeat order are split (this is huge)
+
+Your margin is often different on:
+
+first order
+
+repeat orders
+
+Because first orders can include:
+
+free gifts
+
+special intro bundles
+
+higher discounting
+
+one-click upsells that don’t repeat
+
+Classic example: razor companies
+
+first shipment includes the razor handle (costly)
+
+repeats are just blades (higher margin)
+
+So the model lets you input:
+
+AOV + margin on first order
+
+AOV + margin on repeat orders
+
+
+
+This is how you stop lying to yourself.
+
+9) OpEx (the “don’t worry yet, but you’ll thank me later” section)
+
+OpEx = operating expenses (payroll, rent, software, etc.)
+
+You generally don’t need it for early modeling, but once you scale, OpEx matters because it tells you how much overhead gets absorbed by LTV.
+
+The template uses a simple approach:
+
+Estimate monthly revenue
+
+Estimate transactions (revenue ÷ AOV)
+
+Divide OpEx across transactions
+
+Convert to OpEx-per-order or OpEx as % of revenue
+
+Example from your transcript:
+
+OpEx = $100,000
+
+Revenue target = $10,000,000
+
+AOV = $64
+
+Transactions ≈ 10,000,000 / 64 = 156,250
+
+OpEx per transaction ≈ 100,000 / 156,250 = $0.64
+
+Which is about ~1%
+
+
+
+That’s how your “true” cost stack evolves:
+
+COGS % might be 20%
+
+COGS + OpEx might become 21.6% depending on inputs
+
+Again: not required at first. Powerful later.
+
+10) Quick checklist (what to do after watching this video)
+
+Pull new customers from Shopify for the last 30/60/90 days
+
+Pull ad spend for the same period
+
+Compute CAC = spend / new customers
+
+Pull cohort LTV from Lifetimely (Month 0–12)
+
+Input:
+
+AOV (first + repeat)
+
+margins (first + repeat)
+
+CAC
+
+Look at:
+
+Month 0 margin (negative or positive?)
+
+Month 1–3 payback
+
+Total margin at 90 days
+
+If your payback is ugly, you don’t need motivation. You need different inputs.
+
+11) Common mistakes
+
+Pulling CAC from Facebook instead of Shopify new customers
+
+Using CPA and calling it CAC
+
+Modeling “customers” instead of “dollars”
+
+Ignoring that first order margin ≠ repeat margin
+
+Treating upsells as recurring when they’re usually one-time
+
+Overcomplicating OpEx too early and never shipping decisions
+
+12) Quiz (with answers)
+
+What’s the purpose of LTV in this course?
+ Answer: To determine how much you can outspend competitors while still making contribution margin and profit.
+
+How do you calculate CAC the way we’re using it here?
+ Answer: Total spend in a time period ÷ net new customers from Shopify in that same period.
+
+Why not pull “new customers” from Facebook?
+ Answer: Attribution distortion—Shopify is the source of truth for new vs returning.
+
+Why is LTV not the same as retention?
+ Answer: Retention is about people staying; LTV is about dollars generated over time.
+
+Why split first order and repeat order AOV/margins?
+Answer: The cost stack and revenue stack often change after the first order (free gifts, intro bundles, one-time upsells, etc.)
