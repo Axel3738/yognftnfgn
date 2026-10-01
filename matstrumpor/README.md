@@ -92,15 +92,19 @@ Vad datan visade (4 012 ordrar 2026-09-27, besöksdatan 2026-10-01):
 | Spårningen: 95 paket levererade 2026-09-21–10-01, 84 av dem förstagångsköpare, 21 med telefon | **7 nya kunder lottas** bland de 21. Nya kunder lottas bara bland dem med nummer och framme paket |
 | `utm_content` bär annons-id på 36 av 46 ordrar med besöksdata | Varje ny kund står med annonsen hen kom från ("Facebook-annons: 09-17 Nathalie …"), så samtalet kan börja i rätt video |
 
-Frågorna är tre per kund. **Återköpare:** den mest specifika först (antal
-datum, byte av sort, tiden mellan köpen), sedan alltid *Vem fick strumporna,
-och hur reagerade den som fick dem?* och *Var det något som nästan fick dig
-att inte köpa?* **Nya kunder** (paketet är framme): *Minns du vad du såg i
-annonsen? Vad fick dig att klicka?*, *Vem är strumporna till, och vad tyckte du
-när du öppnade paketet?*, *Var det något som nästan fick dig att inte köpa?*
-Manuset per grupp står i filen. Presentkortet i "Köp 2 – få 2"-paketet räknas
-inte som en sort kunden valt. Evolve-boten får frågorna att granska i
-`EVOLVE-FRAGOR-kundsamtal.md` (EN fråga, utan brand); svaret sparas bredvid.
+**Samtalet är ett samtal, inte ett formulär** (Evolves svar 2026-10-01,
+`EVOLVE-SVAR-kundsamtal.md`): öppningen, sedan alltid *Hur hittade du oss
+egentligen? Vad var det du letade efter?* och tyst — kunden pratar. De tre
+raderna per kund är **ämnen att styra mot** när det passar. **Återköpare:**
+det specifika först (antal datum, byte av sort, tiden mellan köpen), sedan
+*Vem fick strumporna? Hur reagerade hen?* och *Var det något som nästan fick
+dig att inte köpa?* **Nya kunder** (paketet är framme): *Vad minns du av
+annonsen?*, *Vem är de till? Hur blev det när paketet kom?*, *Var det något som
+nästan fick dig att inte köpa?* Inga ledande frågor. Presentkortet i "Köp 2 –
+få 2"-paketet räknas inte som en sort kunden valt. Frågan till Evolve står i
+`EVOLVE-FRAGOR-kundsamtal.md` (EN fråga, utan brand), svaret och hur
+anteckningarna blir koncept (daemns pipeline, Gregs varning om
+mikro-avatarer) i `EVOLVE-SVAR-kundsamtal.md`.
 Påminnelsen om Evolve-svaret och presentkorten ligger som en `send_later` i
 sessionen som byggde listan (2026-10-02 17:15 CEST).
 

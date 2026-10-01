@@ -209,15 +209,20 @@ export function lasLeveranser(fil = LAGEFIL) {
   return { leveranser: leveranserUr(lage), kalla: `${fil} (${Object.keys(lage.paket ?? {}).length} paket, senaste körning ${lage.senaste_korning?.tid ?? lage.senaste_korning?.datum ?? '?'})` };
 }
 
-/** Frågorna. Alltid högst tre, den mest specifika först. Skrivna för att läsas högt. */
+/**
+ * Ämnena att styra mot. Högst tre per kund, det mest specifika först. Skrivna
+ * för att läsas högt — men INTE som checklista: Evolves svar 2026-10-01 var
+ * att samtalet ska börja öppet ("hur hittade du oss? vad letade du efter?")
+ * och att kunden ska få prata; frågorna är ämnen man styr mot när det passar.
+ */
 export const FRAGA = {
-  vemFick: 'Vem fick strumporna, och hur reagerade den som fick dem?',
+  vemFick: 'Vem fick strumporna? Hur reagerade hen?',
   nastanInte: 'Var det något som nästan fick dig att inte köpa?',
   beskriv: 'Om du skulle beskriva dem för en kompis, hur skulle du säga då?',
-  // nya kunder — paketet är framme, så fråga om köpet OCH om första intrycket
-  annonsen: 'Minns du vad du såg i annonsen? Vad var det som fick dig att klicka?',
-  vemTill: 'Vem är strumporna till, och vad tyckte du när du öppnade paketet?',
-  settForut: 'Hade du sett oss förut, eller köpte du direkt första gången du såg annonsen?',
+  // nya kunder — paketet är framme, så både köpet och första intrycket
+  annonsen: 'Vad minns du av annonsen?',
+  vemTill: 'Vem är de till? Hur blev det när paketet kom?',
+  settForut: 'Hade du sett oss förut, eller köpte du direkt?',
 };
 
 export function fragorFor(k) {
@@ -228,23 +233,27 @@ export function fragorFor(k) {
   const namnge = (arr) => (arr.length ? arr.map((s) => `${s.toLowerCase()}strumporna`).join(' och ') : 'strumporna');
   if (k.antalTillfallen >= 3) ut.push(`Du har beställt ${k.antalTillfallen} gånger hos oss. Vad är det som gör att du kommer tillbaka?`);
   else if (k.bytteProdukt) ut.push(`Första gången tog du ${namnge(s1)}, andra gången ${namnge(s2.filter((s) => !s1.includes(s)))}. Vad fick dig att byta?`);
-  else ut.push(`Du beställde ${namnge(s1)} i ${k.tillfallen[0].datum.split(' ').slice(1).join(' ')} och igen ${k.mellanrum[0]} senare. Vad fick dig att beställa en gång till?`);
+  else ut.push(`Du beställde ${namnge(s1)} i ${k.tillfallen[0].datum.split(' ').slice(1).join(' ')} och igen ${k.mellanrum[0]} senare. Vad hände däremellan?`);
   ut.push(FRAGA.vemFick, FRAGA.nastanInte);
   return ut.slice(0, 3);
 }
 
-/** Manuset runt frågorna. */
+/** Manuset runt ämnena. Öppningen och starten är Evolves (D1, D2): casual, sedan låt dem prata. */
 export const MANUS = {
   oppning: {
-    aterkop: 'Hej, det är Axel, jag driver Matstrumpor.se. Du har beställt hos oss ett par gånger och jag ringer bara för att fråga två, tre snabba saker. Har du en minut?',
-    ny: 'Hej, det är Axel, jag driver Matstrumpor.se. Du beställde sushistrumpor hos oss för ett par veckor sedan, och jag ringer bara för att fråga två, tre snabba saker om hur det blev. Har du en minut?',
+    aterkop: 'Hej, det är Axel, jag driver Matstrumpor.se. Du har beställt hos oss ett par gånger och jag blev nyfiken på hur du tänkte. Har du en minut?',
+    ny: 'Hej, det är Axel, jag driver Matstrumpor.se. Du beställde sushistrumpor hos oss för ett par veckor sedan, och jag blev nyfiken på hur det blev. Har du en minut?',
   },
+  start: 'Hur hittade du oss egentligen? Vad var det du letade efter?',
+  startRegel: 'Sedan tyst. Låt kunden prata så länge det går. Blir det tyst: "berätta mer".',
   omNej: 'Absolut, tack ändå. Ha en fin dag!',
   omTidFinns: { aterkop: FRAGA.beskriv, ny: FRAGA.settForut },
   avslut: 'Tack, det hjälper oss jättemycket. Ha det fint!',
   regler: [
+    'Ämnena är inte en checklista. Styr dit när det passar, hoppa över det kunden redan berättat.',
+    'Inga ledande frågor ("var det presenten som lockade?"). Fråga öppet och vänta.',
+    'Skriv kundens egna ord, inte din tolkning. Låter något som en annons: skriv det ord för ord, i citattecken.',
     'Inga erbjudanden och inga löften i samtalet. Presentkortet till återköparna nämns inte — det skickas efteråt, skriftligt.',
-    'Skriv kundens egna ord, inte din tolkning. Ord i citat är guld för annonserna.',
     'Alla på listan har fått sitt paket enligt spårningen. Frågar någon ändå om en order: säg att du kollar och återkommer, lova ingen tid.',
     'Samtalet spelas inte in. Du skriver själv medan ni pratar.',
   ],
@@ -391,8 +400,8 @@ function kundBlock(k, i) {
     '',
     ...k.ordrar.map((o) => `- ${o.datum} · ${o.nummer}${o.tillagg ? ' (tillägg på tacksidan)' : ''} · ${o.produkter} · ${kr(o.belopp)}${o.kod ? ` · kod ${o.kod}` : ''}`),
     '',
-    '**Frågor:**',
-    ...k.fragor.map((f, n) => `${n + 1}. ${f}`),
+    '**Ämnen att styra mot:**',
+    ...k.fragor.map((f) => `- ${f}`),
     '',
     '**Anteckningar:**',
     '',
@@ -416,11 +425,12 @@ export function tillMarkdown(lista) {
     '',
     `**E-postlistan** för att exkludera återköparna ur en annan undersökning: \`aterkopare-epost.txt\` (${lista.epost.length} adresser, en per rad).`,
     '',
-    '## Manus',
+    '## Manus — samma gång varje samtal',
     '',
-    `**Om nej:** ${MANUS.omNej}`,
-    '',
-    `**Avslut:** ${MANUS.avslut}`,
+    `1. Öppningen (står per grupp nedan).`,
+    `2. **Börja alltid med:** ${MANUS.start} ${MANUS.startRegel}`,
+    `3. Styr mot kundens tre ämnen när det passar.`,
+    `4. **Om nej:** ${MANUS.omNej} **Avslut:** ${MANUS.avslut}`,
     '',
     ...MANUS.regler.map((r) => `- ${r}`),
     '',
@@ -428,12 +438,14 @@ export function tillMarkdown(lista) {
     '',
     `**Öppning:** ${MANUS.oppning.aterkop}`,
     '',
-    `**Extra fråga om tid finns:** ${MANUS.omTidFinns.aterkop}`,
+    `**Sedan:** ${MANUS.start}`,
+    '',
+    `**Om tid finns:** ${MANUS.omTidFinns.aterkop}`,
     '',
   ];
   let i = 0;
   for (const k of huvud) ut.push(kundBlock(k, ++i));
-  ut.push(`## ${GRUPP.ny.rubrik} (${lista.nya.length})`, '', `**Öppning:** ${MANUS.oppning.ny}`, '', `**Extra fråga om tid finns:** ${MANUS.omTidFinns.ny}`, '');
+  ut.push(`## ${GRUPP.ny.rubrik} (${lista.nya.length})`, '', `**Öppning:** ${MANUS.oppning.ny}`, '', `**Sedan:** ${MANUS.start}`, '', `**Om tid finns:** ${MANUS.omTidFinns.ny}`, '');
   if (!lista.nya.length) ut.push('*Ingen förstagångsköpare med telefonnummer har fått paketet de senaste dagarna.*', '');
   for (const k of lista.nya) ut.push(kundBlock(k, ++i));
   ut.push(`## Reserv — återköpare med telefon som inte fick plats (${lista.reserv.length})`, '', '| Namn | Telefon | Köp | |', '|---|---|---|---|');
@@ -463,7 +475,8 @@ export function tillHtml(lista) {
   <a class="ring" href="tel:${esc(k.telefon)}">📞 ${esc(k.telefonVisning)}</a>
   <p class="meta">${k.grupp === 'ny' ? `Levererat ${esc(k.ordrar[0].levererad ? svDatum(k.ordrar[0].levererad) : '?')} · kom via: <b>${esc(k.komVia)}</b>` : `${k.antalTillfallen} datum, ${k.antalOrdrar} ordrar · ${esc(kr(k.summa))} totalt · mellan köpen: ${esc(k.mellanrum.join(', '))}`}</p>
   <ul class="ordrar">${k.ordrar.map((o) => `<li>${esc(o.datum)} · ${esc(o.nummer)}${o.tillagg ? ' <i>(tillägg på tacksidan)</i>' : ''} · ${esc(o.produkter)} · ${esc(kr(o.belopp))}</li>`).join('')}</ul>
-  <ol class="fragor">${k.fragor.map((f) => `<li>${esc(f)}</li>`).join('')}</ol>
+  <p class="amnen">Ämnen att styra mot:</p>
+  <ul class="fragor">${k.fragor.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
   <div class="status" role="group" aria-label="Status">
     <button type="button" data-status="nadd">✅ Nådd</button>
     <button type="button" data-status="ingetsvar">📵 Inget svar</button>
@@ -472,7 +485,7 @@ export function tillHtml(lista) {
   </div>
   <label>Anteckningar — kundens egna ord<textarea rows="5" placeholder="Skriv medan ni pratar…"></textarea></label>
 </article>`;
-  const manus = (g) => `<div class="manus"><p><b>Öppning:</b> ${esc(MANUS.oppning[g])}</p><p><b>Extra fråga om tid finns:</b> ${esc(MANUS.omTidFinns[g])}</p></div>`;
+  const manus = (g) => `<div class="manus"><p><b>Öppning:</b> ${esc(MANUS.oppning[g])}</p><p><b>Sedan:</b> ${esc(MANUS.start)} <i>${esc(MANUS.startRegel)}</i></p><p><b>Om tid finns:</b> ${esc(MANUS.omTidFinns[g])}</p></div>`;
 
   return `<!doctype html>
 <html lang="sv">
@@ -503,7 +516,8 @@ button[aria-pressed="true"] { border-color:var(--acc); box-shadow:0 0 0 2px var(
 .ring { display:inline-block; margin:10px 0 4px; font-size:1.5rem; font-weight:700; color:var(--acc); text-decoration:none }
 .meta { margin:.2em 0; color:var(--mut) }
 .ordrar { margin:.4em 0; padding-left:1.2em; color:var(--mut); font-size:.95rem }
-.fragor { margin:.8em 0; padding-left:1.4em } .fragor li { margin:.5em 0; font-size:1.1rem }
+.amnen { margin:.8em 0 0; color:var(--mut); font-size:.95rem }
+.fragor { margin:.2em 0 .8em; padding-left:1.4em } .fragor li { margin:.5em 0; font-size:1.1rem }
 .status { display:flex; flex-wrap:wrap; gap:8px; margin:.6em 0 }
 label { display:block; color:var(--mut); font-size:.95rem }
 textarea { display:block; width:100%; margin-top:6px; font:inherit; font-size:1.05rem; padding:10px; border-radius:10px; border:1px solid var(--kant); background:var(--bg); color:var(--fg) }
@@ -517,6 +531,7 @@ footer { color:var(--mut); font-size:.9rem; margin:2em 0 }
 <body>
 <h1>Ringlista Matstrumpor.se</h1>
 <div class="intro"><b>${huvud.length + lista.nya.length} samtal:</b> ${huvud.length} återköpare och ${lista.nya.length} nya kunder. Alla har fått sitt paket enligt spårningen. Läst ur Shopify ${esc(datum)}. Reserven och de ${utan.length} återköparna utan telefonnummer står längst ner. Anteckningarna sparas i den här webbläsaren — tryck <b>Kopiera anteckningar</b> när du är klar och klistra in dem i chatten.
+  <p><b>Samma gång varje samtal:</b> öppningen → <b>${esc(MANUS.start)}</b> ${esc(MANUS.startRegel)} → styr mot kundens tre ämnen när det passar.</p>
   <p><b>Om nej:</b> ${esc(MANUS.omNej)} <b>Avslut:</b> ${esc(MANUS.avslut)}</p>
   <ul>${MANUS.regler.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
 </div>
