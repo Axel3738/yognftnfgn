@@ -130,3 +130,7 @@ tidsstämplar.
 ### Vad vi gör med svaret
 
 Planen för själva enkäten står i `ENKAT.md` här bredvid.
+
+## Följdfrågan (frågan 2026-10-01)
+
+_(väntar på svaret: Spencers CRO-enkät i dokumenten, enkätlänk i orderbekräftelsen, verktyg för tacksidan utan Plus)_

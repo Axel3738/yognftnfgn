@@ -50,3 +50,22 @@ We know Spencer's Dec 5 call (missed desire; survey-built objection ad became to
 4. Into the creative funnel: how do you tag answers (desires, objections, avatars) and which feed cold hooks vs objection ads? Answers needed to trust a pattern? Testing outliers without chasing noise? New angle vs iteration? Do you tie answers to the ad that drove the order?
 5. Proof: has anyone measured hit rate of survey-sourced concepts vs comments, swipes and iterations? How tracked?
 ```
+
+---
+
+## Fråga 2 (2026-10-01): följdfrågan efter svaret
+
+Svaret på fråga 1 står i `SVAR.md`. Boten läser Discord-trådar och kursdokument,
+inte de inspelade samtalen, så den här frågan ber bara om det som kan finnas
+där. Planen den stöder står i `ENKAT.md`. Ett meddelande, 1 013 tecken, utan
+brand.
+
+```
+@Chad Follow-up on buyer surveys (your answer earlier). Three short things only; say plainly per item if no source covers it, and don't repeat what you already said.
+
+Context: several Shopify stores (Nordics + EU/English, 10+ languages), hobby niches + one gift product, ~100% Meta, a few thousand orders/month, not Plus. We plan 1-3 open-text questions right after purchase, no incentive: what happened that made you buy this now, where did you see it, is it for you or someone else. One store gets a card on its thank-you page; the others get a link in the order confirmation email.
+
+1. Spencer's customer feedback survey framework from the CRO program: is it in your course documents? If yes, quote the exact questions. If not, just say no.
+2. Has any member put a survey link in the order confirmation email instead of on the thank-you page? Rough reply rate per 100 orders, or say none.
+3. For a thank-you page survey without Plus: which app or setup did Sem or other members actually use? Name + tool only.
+```
