@@ -374,6 +374,52 @@ och texten läses tillbaka. En annons som går rörs aldrig. Första användning
 2026-09-29: erbjudanderaden följer nu sidans rättade paketrubriker ("1 acheté – 1 offert",
 "otrzymaj").
 
+### Sett från riktiga länder: `geokoll.mjs` (2026-10-01)
+
+Containern går ut på nätet från USA, så `?country=` och `POST /localization` simulerar bara landet.
+Vad Shopify gör med en riktig besökare syns bara från landet. `node matstrumpor/marknader/geokoll.mjs`
+mäter det med Globalpings prober (gratis, ingen nyckel, 250 mätningar i timmen per IP).
+`--annonser` tar varje kampanjlänk från varje land i kampanjens geo, och `<url> --land NO,SE --folj`
+mäter vilken adress som helst.
+
+**Mätt 2026-10-01 17:20–17:45 CEST, som Facebook-appens webbläsare:**
+
+- **matstrumpor.no från Norge:** 200, nb, NO, NOK, utan omdirigering. Det gäller roten,
+  produktsidan och NOB-länken. Från Sverige ger .no 302 → matstrumpor.se.
+- **matstrumpor.se från Sverige:** 200, sv, SE, SEK.
+- **12 av 14 kampanjlänkar rätt från sina länder:** NO, NOB, DK, FI, US, WW (GB, CA, NZ), NL, ES,
+  IT, PL, PT och JP.
+- ❌ **DE och FR landar på engelska.** En produktsida i en språkmapp på .com utan `?country=` får
+  302 till den engelska produktsidan när Shopify placerar besökaren i en annan marknad än USA.
+  - Mätt från DE, AT, CH, FR, BE, ES och NO. Det händer även när Facebooks `fbclid` sitter på
+    länken.
+  - Landet och valutan blir rätt, men språket blir fel.
+  - Startsidan `/de` och `/de/pages/spara` stannar på tyska.
+  - Med `?country=` stannar sidan i mappen. Från AT och CH med `?country=DE` blir sidan tysk, men
+    landet blir DE.
+  - DE- och FR-kampanjerna har flera länder och fick därför ingen `?country=` (2026-09-29). Då
+    antogs att "Shopify väljer land efter IP", och det var aldrig mätt.
+  - Produkten har inga översatta handles, så det är inte orsaken. Varför Shopify gör så är inte
+    utrett.
+- 🟡 **En norrman utanför .no:** på matstrumpor.se får hen svensk text med NOK, och på
+  matstrumpor.com/ engelska med NOK.
+- **Mejlens spårningsknapp** `.com/<mapp>/pages/spara?nummer=` stannar på språket. Mätt på de,
+  nb, ja och da.
+
+⚠️ **Shopify geolokaliserar inte en förfrågan som ser ut som en bot.** Med Globalpings egen
+User-Agent fick prober i DE, GB och FR landet US och dollar på .com, utan omdirigering. Det var fel
+bild åt andra hållet. Med en webbläsares User-Agent, Accept-Language och Accept fick samma prober
+sitt eget land. geokoll skickar därför Facebook-appens UA, och `--bot` visar botens svar.
+⚠️ 429 är Shopifys botskydd mot datacenter-IP, inte ett fel på sajten. Mät med två eller tre prober.
+Prober hos vanliga nätoperatörer svarar bäst.
+⚠️ Globalping och Shopify kan placera en prob i olika länder. "Luxembourg" hos WEDOS blev CZ hos
+Shopify, och geokoll ger då ⚪ i stället för en dom.
+
+**Regeln för nya länkar:** en länk till en produktsida i en språkmapp på .com ska bära `?country=`.
+Annars hamnar en kund i Europa på engelska.
+
+Hela sajtgranskningen i alla marknader står i `PROMPT-granskning-sajt.md`.
+
 ## Presentkortets egen sidmall (`presentkort.mjs`, 2026-09-29)
 
 Presentkortet delade `templates/product.json` med strumporna. Det visade därför "Passar strl
