@@ -534,6 +534,10 @@ loggan utan .SE.
   48 timmar. Rättar inte språkigenkänningen dem, är det Judge.me:s sak.
 - Läses om med `scratchpad`-skriptet `judgeme5.mjs`, som räknar per språk hur många recensioner som
   visas översatta ("Visa original") och hur många som bara har knappen.
+- **Mätt igen 2026-10-01 ~10:30 CEST (~36 timmar efter inställningen):** fortfarande 0 översatta recensioner
+  på de, nb, fr, ja och zh-TW, bara knappen "Översätt …". Rubrikerna är rätt på de, nb, fr och en, men
+  japanska och kinesiska sidan visar "Kundrecensioner" och "Recensioner på andra språk" på svenska —
+  texterna ligger i `cowork/4-judgeme-australien.txt` (B2). Läs om efter 48 timmar.
 
 ### Facebook-sidan "Matstrumpor" på utlandsannonserna (Axel 2026-09-29 kväll)
 
