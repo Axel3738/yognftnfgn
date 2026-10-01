@@ -63,6 +63,12 @@ node --test enkat/test/*.test.mjs
   "Våra allmänna villkor för personuppgifter står i integritetspolicyn", inte att
   policyn nämner enkäten. Vill Axel ha stycket i policyn måste automatiken av,
   och då uppdateras policyn inte längre av sig själv.
-- Orderbekräftelsen med rutan är byggd men **inte inklistrad**. Kvar före
-  inklistringen: timrutinen för `las.mjs --skarpt` byggd på `main`, sedan
-  Cowork-prompten som klistrar in `cowork/orderbekraftelse.liquid`.
+- **Mergat till `main` (PR #327) och timrutinen byggd 2026-10-01 14:28 CEST:**
+  trigger `trig_01UGsKAAKVUp6PBwLkvD5hCD` (`36 * * * *`, varje timme :36),
+  fast session `session_014kfgLfJNj3uYUpe9rppmBX`, miljö
+  `env_018aG5VVb69sSagge8CfgghK` (bär `KUNDTJANST_MAIL_PASS_MATSTRUMPOR`),
+  prompt `/enkat`. Sedd i `list_triggers`.
+- Orderbekräftelsen med rutan klistras in med `cowork/2-orderbekraftelse.txt`.
+  Först då får kunderna enkäten.
+- **Läsa svaren:** `node enkat/las.mjs --mapp INBOX.ENKAT --sidor 10` (strukna
+  svar i `enkat/output/`). Första avläsning om cirka en vecka.
