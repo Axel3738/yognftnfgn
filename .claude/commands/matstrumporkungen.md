@@ -168,6 +168,17 @@ behörighetsreglerna matchar på första ordet.
    begär eller en annan känslomässig ingång — samma löfte med nya ord är en
    iteration, inte en ny vinkel.
 
+   **Varifrån den nya vinkeln kommer (2026-10-01):** ur
+   `products/matstrumpor/mekanismer.md` (§4, ordningen efter skeptikern) och
+   `products/matstrumpor/ny-information.md` (testordningen längst ner), i den
+   ordningen, aldrig ur huvudet. Första nya vinkeln är fynd 1 där (56 % av
+   svenskarna har sushi som favoriträtt, sushi topp tre i takeaway) som ny
+   öppning på Nathalie-kroppen, sedan fynd 7 (praktiskt eller roligt? båda)
+   som bild. Ett frö som använts märks `[använd i batch #N]` i filen. Är alla
+   frön använda: kör `/ny-information matstrumpor <url>` igen innan ronden
+   hittar på något. Hooken bär siffran exakt som källan skriver den och
+   landet när siffran inte är svensk.
+
    Per utfall:
    - **Breakthrough** → tre iterationer inom 14 dagar: nya hookar (I1), längre
      problemdel (I2), in media res (I3). Aldrig en ren kopia.

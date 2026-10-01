@@ -30,7 +30,7 @@ Gör i ordning, utan att invänta godkännande:
    fanns — inte att det saknar värde.)*
    Filerna är produktens stabila minne och skrivs ALDRIG om av en `/cs`-körning.
    `dna.md` är prestandaminnet och är en annan sak.
-2. **Research:** produktsidan via Shopify (pris, varianter), raden i product sheetet (kostnader, Note, AD ideas, konkurrentlänk — länk i SOP-06), Meta Ad Library på svenska söktermer. Allt är hypotes — markera det.
+2. **Research:** produktsidan via Shopify (pris, varianter), raden i product sheetet (kostnader, Note, AD ideas, konkurrentlänk — länk i SOP-06), Meta Ad Library på svenska söktermer. Allt är hypotes — markera det. **Skriv sofistikeringsnivån (Schwartz 1–5) i `avatar.md`** med konkurrenternas rader som belägg: steg 1–2 ⇒ raka löften räcker i första batchen; steg 3+ ⇒ minst en static bär HUR produkten gör det (en mekanism), inte ett löfte. Hela `/mekanismer`/`/ny-information` körs först när produkten går vidare till `/forsta-batch`, inte här.
 3. **Första testbatchen:** 6 statiska (demo, problem/lösning, social proof-stil, offer, listicle, jämförelse) + 2 videokoncept. Leveransformat, naming och arbetsregler enligt `.claude/commands/forsta-batch.md`. Priser = produktsidans pris.
    **Copy/voiceover via subagent med `model: "sonnet"`** (`"haiku"` för bulkvarianter); strategi i huvudsessionen.
    **Hard rule i varje brief: annonsen nämner aldrig butikens namn** (Axels beslut 2026-09-18, `docs/copy-regler.md`) — annonserna speglas till OPS-butikerna och ska gå att återanvända utan att göras om.
