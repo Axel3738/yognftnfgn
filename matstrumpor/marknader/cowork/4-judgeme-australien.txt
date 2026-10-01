@@ -34,6 +34,11 @@ Fel som syns i dag:
 B1. Öppna Judge.me i Shopify-admin för butiken Matstrumpor.se (1r46tp-qx): Appar → Judge.me.
 B2. Hitta där texterna per språk ställs in (heter ofta "Languages", "Multi-language", "Text customization" eller "Translations"). Välj ett språk i taget och sätt texterna nedan. Ändra bara de här fälten. Om ett fält har en platshållare som {{ n }}, {{ count }} eller liknande: behåll platshållaren exakt och byt bara orden runt den.
 
+   Rubriken och mellanrubriken (står på SVENSKA på japanska och kinesiska sidor, mätt 2026-10-01: "Kundrecensioner" och "Recensioner på andra språk"):
+   ja: お客様のレビュー · 他の言語のレビュー
+   zh-TW: 顧客評價 · 其他語言的評價
+   Rör inte rubriken på de andra språken, den är rätt där.
+
    Märket ("X reviews"):
    nb: {{ n }} anmeldelser   · da: {{ n }} anmeldelser   · fi: {{ n }} arvostelua   · en: {{ n }} reviews
    de: {{ n }} Bewertungen   · fr: {{ n }} avis   · nl: {{ n }} beoordelingen   · es: {{ n }} reseñas
