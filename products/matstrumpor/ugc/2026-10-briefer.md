@@ -1,17 +1,28 @@
-# UGC order 2026-10: Sofie and Katarina film Nathalie's script
+# UGC-briefer oktober 2026: fyra briefer, tre videor per kreatör
 
-*Written 2026-10-01 by the session that read the Evolve iteration playbook (`docs/os/evolve/ITERATIONS-PLAYBOOK.md`). Script lines written by a sonnet subagent against `docs/copy-regler.md`; the three-question test is in column 6. Owner: Axel. Coordinator: Lovely.*
+*Written 2026-10-01 by the session that read the Evolve iteration playbook (`docs/os/evolve/ITERATIONS-PLAYBOOK.md`). Script lines by a sonnet subagent against `docs/copy-regler.md`; the three-question test is in column 6. Owner: Axel. Coordinator: Lovely. Creators: `factory/ugc/kreatorer.md` (Matstrumpor section), messages in `factory/ugc/utskick/2026-10-01-matstrumpor.md`. The creator-facing page: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn*
 
-**Who films what**
+⚠️ Axel 2026-10-01 kväll: Sofie hade redan gjort julstrumpan och Katarina redan presenten, och första versionen av den här filen gav dem samma sak igen. Därför tabellen nedan: ingen filmar något hon redan filmat.
 
-| Creator | A (copy) | B (iteration) | C (imitation) |
-|---|---|---|---|
-| **Sofie** (Instagram @husetmellanhagarna) | yes | yes, all three hook takes | **C3 "Det här ska ner i julstrumpan"** (her earlier stocking video is her best-held one) |
-| **Katarina Kruger** | yes | yes, all three hook takes | **C1 "POV: Du ger bort en sushilåda"** (her earlier video was the gift angle) |
+**Already filmed, so nobody repeats it**
 
-Six videos in total. Raw files back by **Monday 12 October 2026**, so they have run for weeks before Black Friday (27 November) and the Christmas peak. (Our own order deadline for Black Friday UGC is 23 October; this order is well inside it.)
-Names in the ad account (built by the uploader with `node matstrumpor/kor.mjs --namn`, never by hand): A = iteration on Nathalie, `--iter nat`, playbook `format-2` (new UGC creators: copy); B = `--iter nat --hookar 3`, playbook `manus-5` (longer problem); C = `--im` (imitation). Upload with `--kreator Sofie` / `--kreator Katarina` so the archive counts profit per creator.
-⛔ Katarina's footage is used in Sweden only (owner's rule 2026-09-27).
+| Creator | Already filmed | This time |
+|---|---|---|
+| Nathalie | The winner: the gift, a real friend opens it, "dom sålde slut i november" | Her script is brief 1; editors cut nine recuts from her footage (054–063) |
+| Sofie (@husetmellanhagarna) | H1 alone to camera "jag trodde helt seriöst att det här var riktig sushi"; H2 the stocking line with a stocking in hand | Brief 1 + 2. No stocking, no "I thought it was sushi" opening |
+| Katarina Kruger | "sushiälskaren i ditt liv" (gift) and "sushigalen unge" (kid) | Brief 1 + 2, a different recipient |
+| New creators | nothing | Brief 1 + 2, then brief 3 (men) or brief 4 |
+
+**The four briefs** (each creator films three: 1 and 2 for everyone, then 3 if the creator is a man, otherwise 4)
+
+| # | Brief | Tests (one variable) | Playbook | Name in the account |
+|---|---|---|---|---|
+| 1 | **Kopian**: Nathalie's script word for word | the creator (new face, same script) | `format-2` | `--namn gift ugc 1 --iter nat` |
+| 2 | **Problemet först**: boring-gift drawer, three hooks, Nathalie's body, "Material?" shown not said | longer problem section + hook | `manus-5` (+ `manus-7`) | `--namn gift ugc 1 --iter nat --hookar 3` |
+| 3 | **Mannen**: a man gives it to his partner or a friend | avatar: the male gift buyer (all UGC so far is women) | `manus-9` | `--namn gift ugc 1 --iter nat` |
+| 4 | **Fikaskämtet**: the box to fika or a dinner, a colleague tries to eat it | angle: the prank (skämtaren), unaware entry | new angle (`053` is the recut version) | `--namn skamt ugc 1` |
+
+Upload with `--kreator <namn>` so the archive counts profit per creator. Raw files by **Monday 12 October 2026**. ⛔ Katarina's footage is used in Sweden only (owner's rule 2026-09-27).
 
 ---
 
@@ -33,7 +44,7 @@ Names in the ad account (built by the uploader with `node matstrumpor/kor.mjs --
 
 ---
 
-## A) THE COPY: Nathalie's script, line by line
+## Brief 1, THE COPY: Nathalie's script, line by line
 
 Only two things differ from the live ad:
 1. **Row 12:** the end of the last caption named the store and its web address. Those words are struck. The rest of the line is untouched.
@@ -58,7 +69,7 @@ Timing: the original ran 27.7 s because it was captions only. Spoken at a natura
 
 ---
 
-## B) THE ITERATION: longer problem first, Nathalie's core, one objection answered
+## Brief 2, THE ITERATION: longer problem first, Nathalie's core, one objection answered
 
 Same winner, new version, using three Evolve moves: **extended problem section** (the gift that always goes wrong), **emotional hook testing** (three different hooks, one shared body), **overcoming objections** (one line answering a real comment).
 
@@ -101,53 +112,16 @@ The other objection in the comments is about delivery time and "cheap goods". It
 
 ---
 
-## C) THE IMITATION: three viral formats (frameworks, not scripts)
-
-Creators get frameworks, actors get scripts. The creator writes her own words. We give the format, a first line to start from, and what the viewer must see. Pick ONE format per creator. Target length 15-25 s. The global lists at the end apply to all three.
-
-### C1. "POV:" (the giver's eyes)
-
-| # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
-|---|---|---|---|---|---|
-| C1 | 0:00-0:02 | POV: Du ger bort en sushilåda. | POV: you give away a sushi box. | First frame: her hands hold the closed box toward the lens, as if handing it to the viewer. | ✅ ✅ ✅ box in hands; "sushi box" is our own word for the packaging; our box |
-
-- **Loose beats:** the hand-over, the recipient opens, the reveal of a sock, the reaction, one sentence in her own words about why she would give it again, socks on feet.
-- **Must be visible:** the box in her hands in the first second; the recipient's face when the lid opens; at least one sock taken out of the tray; the wooden chopsticks; socks on feet at the end.
-- **Her call:** who she gives it to, the setting, her own words.
-- **Rule:** the viewer must understand these are socks within the first 8 seconds.
-
-### C2. Reaction video (the blind opening)
-
-| # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
-|---|---|---|---|---|---|
-| C2 | 0:00-0:02 | Hon har ingen aning. | She has no idea. | First frame: the friend in the background, unaware; the creator in front holds the box to the lens with a finger over her lips. | ✅ ✅ ✅ visible; true by rule (she was told nothing); our box |
-
-- **Loose beats:** the setup whisper, the hand-over, the opening held on the face, the reveal, the reaction, the friend holds up or puts on a sock.
-- **Must be visible:** the recipient's face the whole time; the lid opening; the first sock out of the tray; her reaction, whatever it is.
-- **Her call:** who the recipient is, what she says (the recipient's words are never scripted or coached).
-- **Rule:** if the reaction is flat, say so to the coordinator. Never fake or re-stage a reaction to look surprised.
-
-### C3. "Saker till julstrumpan" (the stocking fill)
-
-| # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
-|---|---|---|---|---|---|
-| C3 | 0:00-0:02 | Det här ska ner i julstrumpan. | This is going into the Christmas stocking. | First frame: an empty stocking held open; her other hand drops in the first small thing (unbranded, no price visible). | ✅ ✅ ✅ she does it on camera; the stocking format is common, so this passes only through the last item (ours) |
-
-- **Loose beats:** three or four small real things go in, one by one, quick cuts; ours goes in LAST as the payoff, with the reveal that it is socks; one line of her own about why it belongs in a stocking.
-- **Must be visible:** the stocking; each item as it goes in; our box or a sock unrolled from the tray; the wooden chopsticks.
-- **Her call:** the other items (real, unbranded, no prices), her words.
-- **Rule:** do not claim the box fits in the stocking. If it does not, drape one unrolled sock over the top.
-
----
+<!--BRIEF34-->
 
 ## Notes for the coordinator (judgment calls)
 
-1. **A is the unchanged control.** The ❌ cells sit in the instruction and opinion lines (rows 2, 4, 5, 6, 9, 11); the proof sits in rows 3, 7, 8, 10, 12 (facts and a real reaction). That fits our hypothesis above, and it is why B keeps rows 3, 7, 8, 10 and 12 untouched and rewrites around them.
+1. **Brief 1 is the unchanged control.** The ❌ cells sit in the instruction and opinion lines (rows 2, 4, 5, 6, 9, 11); the proof sits in rows 3, 7, 8, 10, 12 (facts and a real reaction). That fits our hypothesis above, and it is why B keeps rows 3, 7, 8, 10 and 12 untouched and rewrites around them.
 2. **Two winner lines are soft claims, kept in A as the winner has them:** row 11 "används år efter år" (durability, cannot be checked) and the end of row 12 "innan det händer igen" (a forecast). If the owner wants A free of them, cut row 11 and end row 12 at "förra året". B already drops row 11.
 3. **The store's name and web address** from the original last caption are struck in A and B. Nothing in this pack names the store.
 4. **B10** is the only objection line. If the owner later gets a real material fact from the supplier, replace B10 with a plain statement of that fact.
 5. **Katarina's footage never leaves Sweden** (owner's rule, 2026-09-27). No translation, no use in other markets.
-6. **Naming and tagging:** A = copy, B = iteration (type ITER), C = imitation (type IMIT), per the naming rules. Parent: `09-17 Nathalie captions musik`.
+6. **Naming and tagging:** brief 1–3 are iterations on Nathalie (type ITER, `--iter nat`), brief 4 is a new angle (type IDEA). Parent for 1–3: `09-17 Nathalie captions musik`.
 
 ---
 

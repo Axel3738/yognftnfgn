@@ -38,4 +38,4 @@ offers, delivery times, guarantees, claims about material or quality. A reaction
 faked or re-staged. The socks must be shown as socks within the first 10 seconds.
 
 The full order for the first two creators (Sofie and Katarina, 2026-10) with the iteration
-and imitation scripts: `products/matstrumpor/ugc/2026-10-sofie-katarina.md`.
+and imitation scripts: `products/matstrumpor/ugc/2026-10-briefer.md`.

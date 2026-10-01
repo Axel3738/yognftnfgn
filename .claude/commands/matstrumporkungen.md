@@ -265,7 +265,7 @@ behörighetsreglerna matchar på första ordet.
      `products/matstrumpor/ugc/NATHALIE-MANUS.md` (Axels order 2026-10-01: "Jag
      ger gärna Nathalies manus till nya kreatörer, PÅMINN MIG BARA"). Varje ny
      kreatör gör tre videor: kopian (A), en iteration (B) och en imitation (C).
-     Mönstret är `products/matstrumpor/ugc/2026-10-sofie-katarina.md` +
+     Mönstret är `products/matstrumpor/ugc/2026-10-briefer.md` +
      `LOVELY-2026-10-01.md`. Axels uppgift i rapporten: "Skicka meddelandet till
      Lovely", med meddelandet i ett kodblock.
    - Logga varje brief: `{kod:"BRIEF", annons, koncept, typ, brieftyp, parent, lardom, iteration, playbook, kalla, brief}` — `brief` är sökvägen till brief.md, så arkivet läser VARIABELTAGGAR därifrån.

@@ -24,13 +24,44 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 
 ---
 
-## ⏳ Väntar på Axel
+## 🌙 I kväll (Axel, 10 minuter)
 
-1. **Skicka Lovely-meddelandet** (`ugc/LOVELY-2026-10-01.md`) och dela sidan med henne.
-2. **Merga** grenen `claude/funny-cannon-pu0t89` till `main`, annars kör 07:00-rutinen den gamla koden.
-3. **ROUTING:** ska nya UGC-videor (Sofie, Katarina, Gilz) laddas upp i `09-17 UGC`, där Nathalie ligger? Det adsetet tog 85 % av spenden på 14 dagar, och nya videor i andra adsets får nästan ingenting (Gilz 11 videor: 35 kr på sju dygn). Förslaget står i loggen sedan 30/9.
+1. **Skicka DM:en/mejlen till kreatörerna.** Texterna står färdiga i
+   `factory/ugc/utskick/2026-10-01-matstrumpor.md` (9 st + 4 reserver; listan i
+   `factory/ugc/kreatorer.md`). Sofie och Katarina först, sedan de nya.
+2. **Skriv "merga"** här i chatten. Annars kör rutinen lör 3/10 07:00 på den gamla koden.
+3. **ROUTING, A eller B:** A = nya UGC-videor laddas upp i `09-17 UGC` (Nathalies adset,
+   85 % av spenden); B = som förut (`nya16`/`jul_video`, där Gilz 11 videor fick 35 kr på en vecka).
 
----
+## ☀️ I morgon fre 2/10 (Axel, 15 minuter)
+
+4. **Dela briefsidan** med Lovely och kreatörerna som sagt ja:
+   https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn → **Share** → **Anyone with the link**.
+5. **Skicka Lovely-meddelandet** (`products/matstrumpor/ugc/LOVELY-2026-10-01.md`): hon
+   sköter paket, brief, deadline och råfiler för de som sagt ja. Hon letar inga kreatörer.
+6. **Klistra in Chadbot-frågan** (`products/matstrumpor/CHADBOT-2026-10-02.md`, utan brand)
+   och klistra tillbaka svaret här. Fyra frågor: UGC-vinnare med bara en video, spend
+   winner med hög hold men låg konvertering, hit rate per idékälla, och om nya annonser ska
+   testas i vinnarens adset.
+7. **Ett regelbeslut:** Evolves hookregel säger "jämför aldrig med ett märke, skriv först/enda",
+   vår `copy-regler.md` säger "jämför med det kunden redan känner". **A** = Evolves regel
+   vinner, **B** = vår står kvar. Sedan skrivs Evolves sju prompt-regler in i copy-reglerna.
+8. **Fiverr-ordrarna** (Wallin Twins, ev. Sami/Andrea) är köp och görs av dig när de svarat.
+
+## 🤖 Mitt (sessionen eller rutinen, inget för Axel)
+
+- **Lör 3/10 07:00:** första ronden på den nya koden (`--hamta` alla marknader, `--dom-alla
+  --logga`, `--arkiv`, playbook-taggar). Jag läser utfallet och rättar det som brister.
+- **När en kreatör sagt ja:** rad i UGC-pipelinen i Notion med deadlines (`/ugc`, SOP-03), och
+  uppladdaren loggar `--kreator <namn>` så arkivet räknar vinst per kreatör.
+- **Research in i briefen** (läcka 3): kungen läser enkäten, kommentarerna och recensionerna
+  före varje brief. Byggs i nästa session.
+- **Evolves sju prompt-regler** in i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` efter
+  Axels A/B i punkt 7.
+- **Samma rättning till Bäverbutiken:** hook/hold-måttet och Evolve-etiketterna (vecka 2–3,
+  spend mot veckan före) in i Skalnings kungens `agent/etikett.mjs`.
+- **Kreatörslistan:** djupkollen (3 videor per kreatör, poängmallen) görs när någon svarat,
+  innan pengar skickas.
 
 ## 🔔 Påminnelser (sessionen påminner, Axel behöver inte komma ihåg)
 
