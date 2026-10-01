@@ -245,6 +245,45 @@ mätningen, och miniatyrerna visar människor mot kameran. Regeln "UGC alltid
 HeyGen, dyraste läget" (Axel 2026-09-27) gäller alltså fortfarande — den här
 delningen tar den regeln och gör den mätbar i stället för namnbaserad.
 
+✅ **Delningen gäller i BÅDA kommandona sedan 2026-10-01** (Axels svar B).
+`/translate-no` hade sedan 29/9 kört ElevenLabs på allt; nu kör den samma
+delning. Det ändrar hans beslut bara för talande ansikten.
+
+## Ordkollen — rösten kontrolleras per video, inte per röst
+
+```bash
+node pipeline/ordkoll.mjs <video.mp4> <manus.srt> --sprak no
+```
+
+`rostkoll.py` hör **att** det låter något (tyst spår, längddrift, avhugget
+slut). Den hör inte **vad** som sägs. Ordkollen läser tillbaka ljudet med
+Scribe och jämför orden mot manuset, cue för cue.
+
+⚠️ **Varför den behövs — och varför en engångstest av rösten inte räcker.**
+Första gången `Martin - Clear and Comforting` (eleven_v3) fick läsa tre riktiga
+annonsrepliker 2026-10-01 blev två ord fel: **"Taket" lästes som "Pake"** och
+**"210D-duk" som "Dedok"**. Samma ord, genererade på nytt några minuter senare,
+lästes helt rätt — **sex av sex**, också när "Taket" stod först i klippet.
+Felet är alltså slumpmässigt, inte en egenskap hos rösten eller formuleringen,
+och det träffade produktens eget ord. Det enda som fångar det är en kontroll på
+varje renderad video.
+
+Att ljudet verkligen sa fel är mätt, inte antaget: samma mp3 transkriberades om
+med språkkoderna `no`, `nb` och `da` och gav "Pake" alla tre gångerna.
+
+**Exit:** 0 = inga avvikelser · 1 = minst en cue avviker · 2 = kunde inte mätas
+(ingen nyckel, inget ljudspår) — och 2 är aldrig ett godkännande.
+Vid exit 1: radera den cuens mp3 i `<utmapp>/vo/<namn>/<i>.mp3` och kör
+`elevenlabs-omdubb` igen, så genereras bara den om.
+
+⚠️ **Transkriberingen har egna fel.** Ett utslag är ett skäl att lyssna, inte en
+dom. Men en cue som avviker levereras aldrig oläst.
+
+⚠️ **Bindestreck är inte ett ord.** Jämförelsen normaliserar `-` till mellanslag.
+Utan det fick en helt korrekt uppläst prisrad **12 fel av 15 ord**, för att
+"åtti-ni" mot "åtti ni" försköt hela raden — en mätmetod som inte tål sin egen
+indata mäter ingenting.
+
 ## Röstkollen — obligatorisk före leverans (Axels beslut 2026-09-08)
 
 "Se till att det inte är någon keff röst från och med nu."

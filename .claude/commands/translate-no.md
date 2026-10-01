@@ -23,7 +23,25 @@ per rad, max 10 ord per rad, inga filnamn, inga kommandon, ingen teknik, inget
 ⛔ **RÖSTEN GÖRS MED ELEVENLABS, INTE HEYGEN — Axels beslut 2026-09-29** ("istället
 för HeyGen borde du använda ElevenLabs för voice over, det blir så jävla mycket
 bättre … och det blev billigare"). Fas 1–2 nedan beskriver den gamla HeyGen-vägen;
-den används inte längre. Kedjan per video:
+den används inte längre.
+
+⚠️ **ETT undantag sedan 2026-10-01, Axels beslut B:** videor där en människa
+syns **prata mot kameran** går till HeyGen, för läppsynken. ElevenLabs byter
+bara ljudet, och då rör munnen sig fel i varje visning. Kör därför delningen
+först, på varje nedladdad källvideo:
+
+```bash
+pip install "opencv-python-headless<5"      # en gång per körning
+python3 pipeline/pratar-i-bild.py <up>/*.mp4 --json > <batch>/rostvag.json
+```
+
+`VOICEOVER` → ElevenLabs-kedjan nedan. `PRATAR` och `OKAND` → HeyGen
+(`translate-batch.mjs`, Fas 1–2). **Osäkerhet kostar krediter, aldrig
+kvalitet.** Trösklarna och hela mätningen: `docs/video-localization.md` →
+"HeyGen eller ElevenLabs". Mätt på Bäverbutikens eget material: 78 av 84
+produktvideor går till ElevenLabs, och båda de kända UGC-annonserna fångades.
+
+Kedjan per video:
 1. ElevenLabs Speech-to-Text (`scribe_v1`, `swe`, ordtider) → svensk SRT med källans tider.
 2. Norska rader cue för cue av sonnet-subagent (samma antal cues, NOK-priser, claims
    mot butiken, copy-reglerna) + regexgrind.
@@ -31,6 +49,13 @@ den används inte längre. Kedjan per video:
    man: "Martin - Clear and Comforting" / "Helge", kvinna: "Celine F".
 4. `python3 pipeline/no-captions.py <ut> <ut>.srt <final>` (den omtajmade srt:n), läs QA-bilderna.
 5. `python3 pipeline/rostkoll.py --kalla … --ny … --srt … --omtajmad`.
+6. **`node pipeline/ordkoll.mjs <final> <ut>.srt --sprak no`** — obligatorisk.
+   Rostkoll hör att det LÅTER något; ordkollen hör VAD. Mätt 2026-10-01: rösten
+   läste "Taket" som "Pake" och "D-duk" som "Dedok" i första generationen, och
+   samma text helt rätt i nästa — **felet är slumpmässigt och går inte att mäta
+   bort en gång för alla.** Exit 1 ⇒ generera om just den cuen (radera dess mp3
+   i `<utmapp>/vo/<namn>/<i>.mp3`) och kör om. Exit 2 = kunde inte mätas, aldrig
+   ett godkännande.
 Kvoten som räknas är ElevenLabs tecken (`GET /v1/user/subscription`), inte HeyGen.
 ⚠️ Omdubben kastar källans ljud — resultatet är röst utan musik (samma som
 CaraShell DK/Termoskydd NO som redan gått live).
