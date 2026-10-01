@@ -98,6 +98,10 @@ large-v3), röstkollen ✅ på alla elva. Ett lägre snitt i den nya filen är i
 | FR Nathalie | 0,99 / 0,97 | inget fel |
 | JP Sofie H1 | 0,90 / 0,94 | large-v3 med sammanhang: nya "全部で5足" rätt, gamla "五足入り" hördes "不足入り" (brist) |
 
+**G-B03 är Whispers, inte rösternas** (mätt 2026-10-01): granskningen hörde "sukker" i NO/DK Sofie H1/H2
+med Whisper medium. large-v3 hör "sokker" alla tio gånger i de fyra videorna (`seglyssna.py --modell
+large-v3`). Rendera inte om dem för det fyndet.
+
 Kostnad: elva omrenderingar à ~42–45 API-enheter. Plånboken stod på 8 531 enheter (≈ 142 USD)
 efter omgången, mätt med `translate-batch.mjs status`. ⚠️ FR och NO Sofie H1 låg i HeyGens
 moderationskö i över en timme; `download` med `timeout 3000` gav upp, och en ny `download`
