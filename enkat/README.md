@@ -68,7 +68,13 @@ node --test enkat/test/*.test.mjs
   fast session `session_014kfgLfJNj3uYUpe9rppmBX`, miljö
   `env_018aG5VVb69sSagge8CfgghK` (bär `KUNDTJANST_MAIL_PASS_MATSTRUMPOR`),
   prompt `/enkat`. Sedd i `list_triggers`.
-- Orderbekräftelsen med rutan klistras in med `cowork/2-orderbekraftelse.txt`.
-  Först då får kunderna enkäten.
+- ✅ **Live för kunderna sedan 2026-10-01 eftermiddag:** Cowork klistrade in
+  `cowork/orderbekraftelse.liquid` (219 853 tecken, hämtad från GitHub) i den
+  svenska orderbekräftelsen, sparad, rutan syns före sidfoten, resten
+  oförändrat. Testmejlets knapp går till
+  `1r46tp-qx.myshopify.com/pages/enkat?k=ob&p=ortoflex-pro` (`{{ shop.url }}`
+  är myshopify-adressen). Sessionen mätte samma dag att den adressen
+  omdirigeras till `https://matstrumpor.se/pages/enkat?k=ob&p=ortoflex-pro`
+  med svar 200, så knappen fungerar. Produkthandlen följer med.
 - **Läsa svaren:** `node enkat/las.mjs --mapp INBOX.ENKAT --sidor 10` (strukna
   svar i `enkat/output/`). Första avläsning om cirka en vecka.
