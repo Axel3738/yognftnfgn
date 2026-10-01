@@ -45,6 +45,32 @@ Matstrumpor / STONEBITE ECOM AB
 
 ---
 
+## Svar 2026-10-01 (leverantören, vidarebefordrat av Axel)
+
+> Taiwan offers low prices for general cargo, with an estimated delivery time of 11-23 business days.
+> Other regions with higher shipping costs for general cargo include: Brazil, Israel, New Zealand,
+> Greece, Cyprus, South Africa, Nigeria, Ghana, Uganda, Kenya, Tanzania, Rwanda, Angola, Puerto Rico,
+> Morocco, and Azerbaijan. Senegal, Mauritius, Reunion Island, Madagascar, Seychelles, Zambia, Mayotte,
+> Iceland, Argentina, Colombia, India. Pakistan, and other unmentioned island nations.
+>
+> You can sell, but it's best to consider this factor when setting prices. We also provide alerts when
+> orders arrive in areas with excessively high shipping costs.
+
+Vad det betyder för oss:
+
+- **Taiwan går att skicka till, billigt, men 11–23 arbetsdagar.** Sajten lovar 5–10 (`konfig.json` →
+  `TW.leveranstid`; fyra texter i `output/underlag-zh-TW.json` och spårningssidans `sparning/sprak/zh.json`). Texten ändras innan Taiwan startar — det
+  står i `annonser/marknader.json` → `TW.lansering_stopp`, bredvid tull-ID:t (`TAIWAN-TULL.md`). Inget
+  kronbelopp gavs, så Taiwan har fortfarande inget kostnadsblock i `cogs.json`.
+- **Japan nämns inte.** Löftet 5–10 arbetsdagar för Japan är Axels (2026-09-30: "Det är 5 - 10
+  arbetsdagar japan osv"), och Japan startar fre 2026-10-02 00:01 med det.
+- **Nya Zeeland står på listan med dyrare frakt**, men leverantörens tidigare offert (`cogs.json` →
+  `big5`) ger nästan samma frakt som USA: 5-paret 2,6 + 8,1 USD till NZ mot 2,6 + 8,0 USD till USA. NZ
+  ligger kvar i WW.
+- **Grekland, Cypern och Island** ligger i Shopifys marknad Europa med fri frakt men har ingen kampanj
+  (inget eget språk). Leverantören varnar när en order kommer från ett dyrt område.
+- Övriga länder på listan (Brasilien, Israel, Sydafrika …) ingår inte i någon av butikens marknader.
+
 ## När svaret kommer
 
 1. Skriv raderna i `matstrumpor/cogs.json` i samma form som `big5.rader` (USD per order), med

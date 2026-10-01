@@ -239,8 +239,9 @@ vara registrerad i appen EZ WAY 易利委 (ID-nummer + mobil) och sedan 2026-03-
 expresspaket i appen innan det landar, annars kan det skickas tillbaka. Shopify har ett eget
 kassafält "National ID Number" för Taiwan i early access (slås på av Shopify Support); butiken är inte
 Plus. Japan har inget sådant krav. Allt i `marknader/TAIWAN-TULL.md` och `marknader/README.md` → "Taiwans tull-ID". ⚠️ Leverantören
-har aldrig bekräftat att den skickar till Japan eller Taiwan (`LEVERANTOR-FRAGA-JP-TW.md`, parkerad på
-Axels ord 2026-09-30 tills en marknad sålt). ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
+svarade 2026-10-01 (`LEVERANTOR-FRAGA-JP-TW.md` → Svar): Taiwan går billigt men tar **11–23
+arbetsdagar** — sajten lovar 5–10 på zh-TW, och den texten ändras innan Taiwan startar (står i
+`lansering_stopp`). Japan nämndes inte; löftet 5–10 där är Axels eget (2026-09-30). ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
 helfilsmåttet var grönt medan 靴下 hördes som "ガックザ". Japanskan läser uttalsfältet `las`
 (kanji → hiragana), och Taiwan har en infödd röst. Allt i `marknader/README.md` → "Japan och Taiwan".
 🔊 **Rösterna efter granskningen 2026-09-30/10-01** (`marknader/egna/README.md` → "Granskningen 2026-09-30"):
