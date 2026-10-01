@@ -11,10 +11,24 @@ Det här skriptet skiljer de två: det letar själv efter pillret i KÄLLAN
 rutor no-precis faktiskt bytte. Differensen är rutor där källan hade en
 svensk caption som blev kvar.
 
-⚠️ Måttet hittade två verkliga fel 2026-10-01: CS_2_H2 har TVÅ pillerstorlekar
-(en stor fet och en liten), och no-precis bytte bara den lilla — den stora
-svenska stod kvar i en tredjedel av videon. OB_11_H1 har en caption som tonar
-in utan piller, grå text direkt på bilden, som inte går att byta alls.
+⛔ MÅTTET DÖG INTE — läs det aldrig som ett facit. Det gav OB_7_H1 tolv rutor
+"kvar" samma körning som kontaktarket visade en helt norsk video: skriptets
+pillertest räknar också slutkortets ljusa text som ett piller, och
+jämförelsen mot piller.json är inte i fas med ffmpegs utglesning. Facit är
+kontaktarket (`<ut>.ark.jpg`) och ögat, precis som 2026-09-30.
+
+Det ÖGAT hittade 2026-10-01, och som är skälet till att inga videor gick live:
+
+  * Varje video öppnar med en caption som ritas UTAN vitt piller — texten tonar
+    in ord för ord direkt på bilden ("Ett löst hörn" / "flyger iväg." i OB_9,
+    "Sjynkets hörn" / "vinden trots" i OB_13, "210 D Oxfordväv" i OB_11).
+    no-precis letar efter ett ljust band och hittar ingenting, så de första
+    1-2 sekunderna står kvar på svenska. Det är hookens viktigaste sekunder.
+  * OB_9_H1 har dessutom "1129 kronor" kvar i ett LJUSGRÅTT piller mot vit
+    bakgrund — fel pris i Norge. Pillertestet kräver vitt (>212) med mörk text
+    och ser varken pillret eller den grå texten.
+  * CS_2_H2 har TVÅ pillerstorlekar (en stor fet och en liten), och bara den
+    lilla byttes; den stora svenska stod kvar i en tredjedel av videon.
 
   python3 market-expansion/no/notion-batches/2026-10-01/svenskkoll.py
 """

@@ -1231,7 +1231,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_1_H3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1294,7 +1295,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_1_H2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1357,7 +1359,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_1_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1420,7 +1423,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_22_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1484,7 +1488,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_21_1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252515243600233",
+        "creativeId": "1947721893298869",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1548,7 +1558,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_15_1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252515246390233",
+        "creativeId": "1651824649840788",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1611,7 +1627,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_14_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1674,7 +1691,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_13_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1737,7 +1755,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_11_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1800,7 +1819,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_9_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1863,7 +1883,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_7_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1926,7 +1947,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_6_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1989,7 +2011,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - CS",
         "annonsNamn": "Takovertrekk_NO_CS_2_H2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -2052,7 +2075,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - CS",
         "annonsNamn": "Takovertrekk_NO_CS_2_H3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -3083,7 +3107,13 @@
         "adsetNamn": "Golfkalender NO - FD",
         "annonsNamn": "Golfkalender_NO_FD_2_2",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515250950233",
+        "creativeId": "2190975391835800",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3148,7 +3178,13 @@
         "adsetNamn": "Golfkalender NO - FD",
         "annonsNamn": "Golfkalender_NO_FD_2_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515361650233",
+        "creativeId": "1107163001866401",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3213,7 +3249,13 @@
         "adsetNamn": "Golfkalender NO - BOF",
         "annonsNamn": "Golfkalender_NO_BOF_2_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515364900233",
+        "creativeId": "1887065686037665",
+        "adsetId": "120252515363960233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3278,7 +3320,13 @@
         "adsetNamn": "Golfkalender NO - BOF",
         "annonsNamn": "Golfkalender_NO_BOF_1_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515367260233",
+        "creativeId": "2097259961182580",
+        "adsetId": "120252515363960233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3343,7 +3391,13 @@
         "adsetNamn": "Golfkalender NO - CS",
         "annonsNamn": "Golfkalender_NO_CS_4_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515467130233",
+        "creativeId": "944312631607034",
+        "adsetId": "120252450001830233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3408,7 +3462,13 @@
         "adsetNamn": "Golfkalender NO - LI",
         "annonsNamn": "Golfkalender_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515468980233",
+        "creativeId": "2334218050722359",
+        "adsetId": "120252515468030233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3473,7 +3533,13 @@
         "adsetNamn": "Golfkalender NO - PD",
         "annonsNamn": "Golfkalender_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
-        "prefix": "Golfkalender"
+        "prefix": "Golfkalender",
+        "status": "ACTIVE",
+        "annonsId": "120252515471240233",
+        "creativeId": "1281993971672250",
+        "adsetId": "120252449444060233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -3538,7 +3604,8 @@
         "adsetNamn": "Spikkesett NO - BOF",
         "annonsNamn": "Spikkesett_NO_BOF_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
@@ -3603,7 +3670,8 @@
         "adsetNamn": "Spikkesett NO - OB",
         "annonsNamn": "Spikkesett_NO_OB_2_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
@@ -3668,7 +3736,8 @@
         "adsetNamn": "Spikkesett NO - CS",
         "annonsNamn": "Spikkesett_NO_CS_4_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
@@ -3733,7 +3802,8 @@
         "adsetNamn": "Spikkesett NO - OB",
         "annonsNamn": "Spikkesett_NO_OB_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
@@ -3798,7 +3868,8 @@
         "adsetNamn": "Spikkesett NO - LI",
         "annonsNamn": "Spikkesett_NO_LI_1_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
@@ -3863,7 +3934,8 @@
         "adsetNamn": "Spikkesett NO - PD",
         "annonsNamn": "Spikkesett_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",
