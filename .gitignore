@@ -167,5 +167,7 @@ matstrumpor/marknader/egna/ut/
 matstrumpor/marknader/annonser/klar/*_d3.jpg
 mejl/output/butiker/*/lankkoll/
 
+# Köparenkätens svar: aldrig i repot (GDPR-raden lovar högst 12 månader)
+enkat/output/
 # Värva en vän: skärmdumpar från kundvyn (matstrumpor/varva/kundvy.mjs)
 matstrumpor/varva/output/

@@ -1,0 +1,23 @@
+Du hjälper Axel med Matstrumpors köparenkät. Två korta uppgifter i Shopify-admin för butiken Matstrumpor.se (1r46tp-qx) och på butikens sajt. Ingen annan butik.
+
+RÖR ALDRIG: andra notiser eller mejlmallar, språk/översättningar, temat, betalningar (Shopify Payments), domäner/DNS, Loopia, andra butiker. Lägg inte in någon länk till enkäten någonstans. Skapa inga konton.
+
+UPPGIFT 1 – integritetspolicyn ska nämna enkäten
+1. Gå till Inställningar → Policyer → Integritetspolicy.
+2. Om policyn sköts automatiskt av Shopify och det INTE finns ett sätt att lägga till egen text utan att stänga av automatiken: STANNA. Stäng inte av automatiken. Skriv i din rapport exakt vad du ser (skärmens text) och gå till uppgift 2.
+3. Går det att lägga till text: lägg in det här stycket sist i policyn, ordagrant, och spara:
+
+Kundenkät efter köp
+Efter ett köp kan du frivilligt svara på tre korta frågor om varför du handlade. Vi frågar inte efter namn eller e-post. Svaren skickas till vår kundtjänst, sparas i högst 12 månader och används för att förbättra våra produkter och vår marknadsföring. Avidentifierade citat utan namn kan sparas längre. Ansvarig är STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg.
+
+4. Kontrollera som kund: öppna https://matstrumpor.se/policies/privacy-policy i en ny flik och se att stycket står där.
+
+UPPGIFT 2 – ett provsvar
+1. Öppna https://matstrumpor.se/pages/enkat?k=prov&p=prov
+2. Skriv "PROV från Cowork, inte en kund" i alla tre rutorna.
+3. Klicka "Skicka svaren". Kommer en säkerhetskontroll (captcha): be Axel klicka i den.
+4. Kontrollera att sidan visar "Tack för dina svar!".
+
+RAPPORT (kort, på svenska)
+- Uppgift 1: inlagt och sett som kund / stannade (citera skärmens text).
+- Uppgift 2: "Tack för dina svar!" syntes ja/nej, och om en captcha visades.
