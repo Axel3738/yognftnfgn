@@ -199,6 +199,52 @@ loggas den dessutom som vanligt i `ad-tracker.md` (den är ett eget test).
 | NO-batch 2026-09-13, rutinen `/translate-no`: Staketstolpslagare 12 videor + 4 bildannonser | no / Norwegian Bokmål (Norway) | ✅ 12/12 (4 sessioner fångades av omkörningen) | ✅ sonnet-SRT: "Staketstolpslagaren"→**Gjerdestolpebøylen** (inte direktöversatt), "svenska hemmafixare"/"Tusentals svenska hem"→generaliserat bort landsreferensen · regexgrind grön, timecodes identiska · en stray `</content>`-rad subagenten skrivit i alla 12 filer städad bort | ✅ `no-captions.py` 12/12, band auto-uppmätt och höjt för tvårads-cues, 36 QA-bilder + 12 slutkort granskade | ✅ 12 mp4 (168 MB, ingen chatt-zip — över 30 MiB-gränsen, obevakad rutin) + 4 png i chatten via Drive · Drive: MAKE TO NORWAY → "NO Staketstolpsbygel" (12 video + 4 bild + 4 adcopy-txt) · launchad ACTIVE: **Gjerdestolpebøyle NO \| BE-ROAS 1,63 \| 2026-09-13** (`120252216935950233`), CBO 1000 kr/dag, 4 adset × (3 video + 1 bild) = 16 annonser, API-verifierad ACTIVE | ⚠️ **prispolicy:** CS-annonsernas "30 % rabatt" höjde jämförpriset i Shopify NO 1539→1685 kr (`shopify-fix-compareat.mjs --rabatt 30`) — samma fix återanvänd på bildannonsernas claim · Kie-rensningen krävde ett andra pass på GT (lämnade kvar rubriktext) och PD (la till felaktiga vita "piller") · `no-image-ads.mjs`s adName-regex matchar inte H-suffixade videonamn (`..._1_H1`) → falskt "finns redan", löst med ett fristående uppladdarskript i batchmappen · röstkollen (`rostkoll.py`) 12/12 gröna · kontot rate-limitat (Meta-fel 17) under PD/SP-adsetens skapande, inbyggd backoff löste det · kvot 8 786 → 8 497 · 6 av 7 LAUNCHED-produkter redan täckta sedan tidigare, ingen kö |
 | Matstrumpor UGC 2026-09-28/29: Nathalie, Sofie H1, Sofie H2 (Katarina aldrig) | nb, da, fi, en, de, fr, nl, es, it, pl, pt (11 språk × 3 = 33) | ✅ **precision** (v3 `mode`) — de första 24 i speed kastades, se anteckning | ✅ sonnet-skribent + skeptisk infödd granskare per video och språk, `kolla-srt.mjs`; texterna flyttade till precision-blocken med `pipeline/srt-block.mjs` | ✅ `no-captions.py --rutor` (suddar bara rutan runt den svenska raden, bild för bild) | ✅ 36 annonser PAUSED i nya kungen (12 kampanjer × 3) | **Speed utan att någon valt det:** `heygen.mjs` skickade inget läge, HeyGens standard blev `speed`; nu `precision` som standard. Precision ger andra block än speed (26 av 33; 7 gick att foga ihop mekaniskt) — en godkänd text laddas aldrig upp mot andra block. Röstkollen 33/33 grön; `pipeline/lyssna.py` (Whisper) hörde rätt språk i alla 33, 77–100 % av orden, rösten inom 21 % av källans tonhöjd. Tre renderingar låg i HeyGens moderationskö över natten och släpptes. ≈ 49 USD. |
 
+## HeyGen eller ElevenLabs — vem gör rösten (Axels beslut 2026-09-30)
+
+"Det blir faktiskt mycket billigare om vi bara kör med ElevenLabs."
+
+Han har rätt, och han hade redan fattat halva beslutet: **2026-09-16 dömde han
+ut HeyGens klonröst** och ElevenLabs-vägen byggdes i `pipeline/omdubb/` för
+OPS-butikernas marknader. Det som var kvar var `/oversatt`, som skickade varenda
+video till HeyGen oavsett vad som fanns i bild.
+
+**HeyGen gör exakt en sak ElevenLabs inte gör: läppsynk.** Det spelar roll i
+precis ett fall — när en människa syns prata mot kameran. Har videon bara
+voiceover över produktbilder kan ljudet bytas rakt av.
+
+| Videon | Verktyg | Varför |
+|---|---|---|
+| Produktfilm, drönare, b-roll, recensionskort | **ElevenLabs** | ingen mun att synka mot |
+| UGC, en människa pratar mot kameran | **HeyGen** | munnen måste följa repliken |
+| Går inte att avgöra | **HeyGen** | osäkerhet kostar krediter, aldrig kvalitet |
+
+Domen mäts av **`pipeline/pratar-i-bild.py`** (Haar-kaskaden ur OpenCV, helt
+offline, ingen modell att ladda ner) och tas i `/oversatt` Fas 4.1.
+
+**Mätningen bakom trösklarna, 2026-09-30, 86 riktiga videor:**
+
+| | ansiktsyta (median) | ansikte i andel bildrutor | munrörelse |
+|---|---|---|---|
+| Talande ansikte (2 UGC-annonser) | **2,9–3,1 %** | 37–52 % | ~20 |
+| Produktvideo (84 st) | **0,66 %** | 3–50 % | 0–22 |
+
+⚠️ **Ytan är grinden, inte träfffrekvensen.** Kaskaden hittar "ansikten" i tyg,
+gräs och rutiga skjortor. `Batmotortrekk RV_1_H1` fick ansikte i **halva**
+bildrutorna och är en ren produktvideo — alla träffarna var 0,39 % av bildytan.
+Hade frekvensen fått bestämma hade varenda produktvideo gått till HeyGen.
+
+⚠️ **Kalibrera aldrig bara mot negativa exempel.** Första mätserien innehöll 84
+produktvideor och noll talande ansikten, och med bara dem hade vilken tröskel
+som helst sett rätt ut. De två positiva fallen (`Termoskydd_UG_1_H1`,
+`Takoverdrag_UG_1_H1`) är det som gör trösklarna meningsfulla — och de gick inte
+att hämta med den vanliga token:en: **page-ägda reels returnerar tom `source`
+utan felmeddelande**, de kräver sidtoken.
+
+⚠️ **UGC finns i Bäverbutiken.** Åtta aktiva `*_UG_*`-annonser med video vid
+mätningen, och miniatyrerna visar människor mot kameran. Regeln "UGC alltid
+HeyGen, dyraste läget" (Axel 2026-09-27) gäller alltså fortfarande — den här
+delningen tar den regeln och gör den mätbar i stället för namnbaserad.
+
 ## Röstkollen — obligatorisk före leverans (Axels beslut 2026-09-08)
 
 "Se till att det inte är någon keff röst från och med nu."
@@ -285,3 +331,4 @@ blir grön.
 | LAUNCHED-mappen 2026-09-29 (rutin 04:15): **krediterna påfyllda — 10 840 api vid start** (6 kvar 09-26 till 09-28). Kört: **ATV-Kapell** (11 av 12 videor + 4 bilder live, 539/709 kr, BE-ROAS 1,62, kampanj `ATV-Trekk NO … 2026-09-29`) och **Kapell till snöslunga** (10 av 12 + 4 bilder, 389/509 kr, `Snøfresertrekk NO … 2026-09-29`), båda från proofread/SRT gjorda 09-24. Röstkollen fällde 3 videor (ATV G_1_H3, snöslunga CS_1_H1/H2 — avhugget slut; omrendering gav identiskt resultat) → strukna. 8 videor fick captions om med `--band=1225:1527` (svensk remsa låg ovanför standardbandet). Kajakhållare-resten och Dörr-/Fönsterlarm ej körda (tid) → kö. Krediter 10 840 → ca 10 312 | NO / norsk bokmål | 24 renderingar + 3 omrenderingar | — | 21 | Drive: NO ATV-Kapell, NO Kapell till snöslunga | ACTIVE, CBO 1000 kr/dag |
 | 2026-09-29 dag (Axels order i chatten, ElevenLabs i stället för HeyGen): sex produkter parallellt — **Täljset** (Spikkesett NO, 12 videor, 1 039 kr, BE-ROAS 1,63), **Maskinhyllan** (Verktøyhylle NO, 12, 1 139 kr, 1,63), **Värmesits** (Varmesete NO, 11, 719 kr, 1,63), **Värmesulorna** (Varmesåler NO, 12, 799 kr, 1,63), **Rullknivslipen** (Rulleknivsliper NO, 12, 519 kr, 1,62), **Golfkalender** (Golfkalender NO, 12, 619 kr, 1,48) + 4 bilder var. Kedjan: ElevenLabs STT → norskt manus → `elevenlabs-omdubb.mjs` (röst "Martin - Clear and Comforting", eleven_v3) → `no-captions.py` → rostkoll `--omtajmad`, 71 av 71 gröna. HeyGen orört (9 956). ElevenLabs ~78 000 av 100 017 tecken använda efteråt. Videor utan musik (omdubben kastar källans ljud). Alla kampanjer ACTIVE, CBO 1000 kr/dag, lästa tillbaka i Meta | NO / norsk bokmål | ElevenLabs | 0 | 71 + 24 bilder | Drive: NO <källmapp> ×6 | ACTIVE |
 | LAUNCHED-mappen 2026-09-30 (rutin 04:15): kört **Dörr- och Fönsterlarm 110 dB** (Dør- og Vindusalarm NO, 389/509 kr, BE-ROAS 1,63, 12 videor + 4 bilder) och **Läktarponchon** (Tribuneponcho NO, 679/889 kr, BE-ROAS 1,63, 12 videor + 4 bilder), alla ACTIVE, 1000 kr/dag CBO. Lövsilarna hoppad (saknar Norge-kostnad i batch-sheeten, problem skickat). Kö: Motorlås utombordare, Radiostyrd driftbil, Solcellsladdare, Spabadskapell (Boblebadtrekk finns, orört), Sorkkorgarna (saknas i norska butiken). ElevenLabs (ej HeyGen), ca 11 000 TTS-tecken. Röstkoll ✅ på alla 24. Öppet: "Bare nå" i CS-copyn obelagd. |
+| LAUNCHED-mappen 2026-10-01 (rutin 04:15): **Kamadohuven** (Kamadotrekk NO, 629/819 kr, BE-ROAS 1,64) och **Motorlås utombordare** (Motorlås NO, 1079/1409 kr, BE-ROAS 1,64), 12 videor + 4 bilder var, ACTIVE, 1000 kr/dag CBO | NO / norsk bokmål | ElevenLabs (~5 500 tecken), HeyGen orört (8 451) | sonnet-copy, obelagda påståenden strukna, svenska priser bytta | no-captions.py, rostkoll grön på alla 24 | Drive: NO 11 Kamadohuven, NO Motorlås utombordare | Hoppade pga saknad Norge-kostnad: Radiostyrd driftbil, Regntunnehuven, Solcellsladdare, Sorkkorgarna. Motorlås-launchen tog flera försök pga Meta fel 17. |

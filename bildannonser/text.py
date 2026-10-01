@@ -84,12 +84,61 @@ def _font(sokvag, storlek):
         raise TextFel(f"Hittar inte typsnittet {sokvag}: {fel}") from fel
 
 
+def _delar_meningar(block):
+    """Rubriker och citat bryts normalt vid meningsslut — det ger en hook en rad
+    per pastaende. Men en rubrik som ar ett prispastaende ("489 kr till fars dag.
+    Ord. 978 kr.") far da "Ord." som en egen rad mitt i, vilket ser sonderbrutet
+    ut (matt 2026-09-30 i fars dag-ronden). `"meningar": false` later den raden
+    brytas pa ordgrans i stallet. Texten ar ordagrann oavsett."""
+    if block.get("meningar") is False:
+        return False
+    return block["stil"] in ("rubrik", "citat")
+
+
+def _storlek(stil, block):
+    """Startgraden för blocket. `storlek` i spec:en låter en layout matcha en
+    förälder-creative exakt (Beltgrinder_PD_2_3 ärver Balteslipmaskin_PD_2_1:s
+    rubrikgrad, mätt i den live-annonsen). passa_in krymper fortfarande texten
+    tills den ryms, så fältet kan bara välja utgångspunkt, aldrig spränga ramen."""
+    storlek = block.get("storlek")
+    if storlek is None:
+        return stil["storlek"]
+    storlek = int(storlek)
+    if storlek < 12 or storlek > 240:
+        raise TextFel(f'"storlek" ska ligga mellan 12 och 240, inte {storlek}')
+    return storlek
+
+
+def _rader(stil, block):
+    """Hur många rader blocket får ta. `rader` i spec:en höjer taket för en hook
+    som består av flera korta meningar — passa_in krymper annars texten tills den
+    ryms på stilens antal rader, och en fyrmeningarshook blir då pytteliten bredvid
+    sin egen underrad (mätt 2026-09-29 på Rodholder_JF_1_1: "Spinnspö. Havsspö.
+    Kastspö. Samma klämma, alla håller." renderades i halva underradens grad)."""
+    rader = block.get("rader")
+    if rader is None:
+        return stil["rader"]
+    rader = int(rader)
+    if rader < 1 or rader > 8:
+        raise TextFel(f'"rader" ska ligga mellan 1 och 8, inte {rader}')
+    return rader
+
+
 def _blackfarg(stil, block):
     """Vit text på en ljus platta är osynlig. Plattan finns just för att bära
     mörk text, så en ljus stil vänds till mörkt bläck när plattan ritas.
-    (Knappen har sin egen mörka pill och går aldrig via plattan.)"""
+    (Knappen har sin egen mörka pill och går aldrig via plattan.)
+
+    `"ljus": true` vänder åt andra hållet: mörk text blir vit. Fältet finns för
+    annonser vars foto är en riktig miljö i stället för en studioyta — mätt
+    2026-09-29 på Rodholder_PD_32_1, där rubriken och bottenraden låg som svart
+    text mot vatten och betong och knappt gick att läsa. Scrimmen tittar på just
+    den här funktionen, så en ljus rad drar automatiskt med sig sin mörka toning
+    och blir läsbar mot vilket foto som helst."""
     if block.get("platta") and stil["farg"].upper() == "#FFFFFF":
         return "#141210"
+    if block.get("ljus") and stil["farg"].upper() != "#FFFFFF":
+        return "#FFFFFF"
     return stil["farg"]
 
 
@@ -263,12 +312,16 @@ def rita_lista(rita, rader, font, bredd, y, farg):
     return rh * len(rensade)
 
 
-def rita_etikett(bild, rita, text, font, x, y):
+def rita_etikett(bild, rita, text, font, x, y, plattfarg=None):
+    """Liten tagg med text. `plattfarg` (t.ex. "#C4271F") byter plattans färg —
+    fars dag-batchen 2026-09-28 vill ha en röd badge i hörnet, och utan fältet
+    hade badgen ritats i standardmörkret och avvikit från briefen."""
     bredd = int(rita.textlength(text, font=font))
     hoj = _radhojd(font)
     pad = 14
+    fyll = plattfarg or (10, 14, 18, 190)
     rita.rounded_rectangle(
-        [x - pad, y - pad, x + bredd + pad, y + hoj + pad], radius=8, fill=(10, 14, 18, 190)
+        [x - pad, y - pad, x + bredd + pad, y + hoj + pad], radius=8, fill=fyll
     )
     rita.text((x, y), text, font=font, fill="#FFFFFF")
 
@@ -316,15 +369,18 @@ def lagg_pa_text(spec):
         rita_scrim(bild, int(hojd * 0.66), int(hojd * 0.34), uppifran=False)
     rita = ImageDraw.Draw(bild)
 
-    y_topp = MARGINAL
+    # "marginal_topp" flyttar ner hela toppstapeln. Fars dag-batchen 2026-09-28
+    # har en badge i övre vänstra hörnet, och utan fältet börjar rubriken på
+    # samma höjd som badgen och skrivs rakt igenom den (mätt i första renderingen).
+    y_topp = int(spec.get("marginal_topp", MARGINAL))
     y_botten = hojd - MARGINAL
 
     # Botten ritas nerifrån och upp, så blocken staplas i angiven ordning.
     for b in reversed(bottenblock):
         stil = STILAR[b["stil"]]
-        kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
-        font, rader = passa_in(kalla, stil["font"], stil["storlek"],
-                               maxbredd, stil["rader"], rita)
+        kalla = dela_meningar(b["text"]) if _delar_meningar(b) else b["text"]
+        font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
+                               maxbredd, _rader(stil, b), rita)
         if b["stil"] == "knapp":
             y_botten -= rita_knapp(bild, rita, b["text"], font, y_botten - _radhojd(font) // 2)
             continue
@@ -344,9 +400,9 @@ def lagg_pa_text(spec):
 
     for b in toppblock:
         stil = STILAR[b["stil"]]
-        kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
-        font, rader = passa_in(kalla, stil["font"], stil["storlek"],
-                               maxbredd, stil["rader"], rita)
+        kalla = dela_meningar(b["text"]) if _delar_meningar(b) else b["text"]
+        font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
+                               maxbredd, _rader(stil, b), rita)
         rh = _radhojd(font)
         stjarnor = int(b.get("stjarnor") or 0)
         stjarnhojd = int(rh * 0.9) + 12 if stjarnor else 0
@@ -373,13 +429,22 @@ def lagg_pa_text(spec):
         if zon.startswith(("topp", "botten")):
             continue
         stil = STILAR[b["stil"]]
-        font, rader = passa_in(b["text"], stil["font"], stil["storlek"],
-                               maxbredd // 2, stil["rader"], rita)
+        font, rader = passa_in(b["text"], stil["font"], _storlek(stil, b),
+                               maxbredd // 2, _rader(stil, b), rita)
         rh = _radhojd(font)
+        sidfarg = _blackfarg(stil, b)
         if zon == "mitt":
+            # Plattan gick tidigare bara att fa i topp- och bottenzonen. Ett citat
+            # mitt i bilden ligger ofta over himmel eller vatten och blir olasligt
+            # dar (matt 2026-09-30 pa Rodholder_SP_3_1: mork bla text over en ljus
+            # solnedgang). "platta": true ritar samma ljusa ruta har.
+            if b.get("platta"):
+                rita_platta(bild, MARGINAL // 2, hojd / 2 - 18,
+                            bredd - MARGINAL // 2, hojd / 2 + rh * len(rader) + 12)
+                rita = ImageDraw.Draw(bild)
             for i, rad in enumerate(rader):
                 rita.text((bredd / 2, hojd / 2 + i * rh), rad, font=font,
-                          fill=stil["farg"], anchor="ma")
+                          fill=sidfarg, anchor="ma")
         else:
             x = MARGINAL if zon.startswith("vanster") else bredd // 2 + MARGINAL // 2
             # Sidozonerna ligger på fasta höjder, och de räcker inte alltid till:
@@ -395,17 +460,17 @@ def lagg_pa_text(spec):
                 andel = 0.46 if zon.endswith("mitt") else 0.775
             y = int(hojd * float(andel))
             if b["stil"] == "etikett":
-                rita_etikett(bild, rita, b["text"], font, x, y)
+                rita_etikett(bild, rita, b["text"], font, x, y, b.get("plattfarg"))
             elif b["stil"] == "badge":
                 b_bredd = maxbredd // 2 - MARGINAL // 2
                 rita.rounded_rectangle([x, y, x + b_bredd, y + rh * len(rader) + 36],
                                        radius=24, outline=BADGEKANT, width=3)
                 for i, rad in enumerate(rader):
                     rita.text((x + b_bredd / 2, y + 18 + i * rh), rad, font=font,
-                              fill=stil["farg"], anchor="ma")
+                              fill=sidfarg, anchor="ma")
             else:
                 for i, rad in enumerate(rader):
-                    rita.text((x, y + i * rh), rad, font=font, fill=stil["farg"])
+                    rita.text((x, y + i * rh), rad, font=font, fill=sidfarg)
 
     ut = Path(spec["ut"]).with_suffix(".jpg")
     ut.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,24 @@
+{
+  "hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+  "hub_titel": "Fish rod holder",
+  "slug": "fish-rod-holder-3c3270ab",
+  "rond": "2026-09-29",
+  "idag": "2026-10-01",
+  "antal": 9,
+  "rena": 0,
+  "anm": 9,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3ec270ab-908c-81af-8845-d2584c756dce",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-29-3ec270ab908c81af8845d2584c756dce",
+    "titel": "Brief review 2026-09-29",
+    "block": 19
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

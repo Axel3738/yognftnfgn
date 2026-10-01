@@ -1,0 +1,358 @@
+{
+ "C1_1_H1": [
+  {
+   "tale": "Kamadotrekk på tilbud, nå seks hundre og tjue-ni kroner.",
+   "tekst": "Kamadotrekk på tilbud, nå 629 kr."
+  },
+  {
+   "tale": "Kamadotrekket er på tilbud.",
+   "tekst": "Kamadotrekket er på tilbud."
+  },
+  {
+   "tale": "Nå får du det for bare seks hundre og tjue-ni kroner.",
+   "tekst": "Nå får du det for bare 629 kr."
+  },
+  {
+   "tale": "Ordinær pris er åtte hundre og nitten kroner.",
+   "tekst": "Ordinær pris er 819 kr."
+  },
+  {
+   "tale": "Det betyr hundre og nitti kroner i rabatt.",
+   "tekst": "Det betyr 190 kr i rabatt."
+  },
+  {
+   "tale": "Regnet holdes unna lokket og ventilen på grillen.",
+   "tekst": "Regnet holdes unna lokket og ventilen."
+  },
+  {
+   "tale": "Fire spennremmer og en snøring holder trekket på plass i vind.",
+   "tekst": "Fire spennremmer og snøring holder trekket på plass i vind."
+  },
+  {
+   "tale": "Seks hundre og tjue-ni kroner - bestill via lenken.",
+   "tekst": "629 kr - bestill via lenken."
+  }
+ ],
+ "_tre_C1_1_H1": "Pris/mål konkret ✅, alle linjer falsifiserbare mot faktaark ✅, produktspesifikke detaljer (mål, remmer, ventil) ingen konkurrent kan kopiere ✅",
+ "C1_1_H2": [
+  {
+   "tale": "Hundre og nitti kroner rabatt på kamadotrekket.",
+   "tekst": "190 kr rabatt på kamadotrekket."
+  },
+  {
+   "tale": "Kamadotrekket er på tilbud.",
+   "tekst": "Kamadotrekket er på tilbud."
+  },
+  {
+   "tale": "Nå får du det for seks hundre og tjue-ni kroner.",
+   "tekst": "Nå får du det for 629 kr."
+  },
+  {
+   "tale": "Ordinær pris er åtte hundre og nitten kroner.",
+   "tekst": "Ordinær pris er 819 kr."
+  },
+  {
+   "tale": "Det betyr hundre og nitti kroner i rabatt.",
+   "tekst": "Det betyr 190 kr i rabatt."
+  },
+  {
+   "tale": "Trekket holder regnet unna lokket og ventilen.",
+   "tekst": "Trekket holder regnet unna lokket og ventilen."
+  },
+  {
+   "tale": "Mål grillen din før du bestiller.",
+   "tekst": "Mål grillen din før du bestiller."
+  },
+  {
+   "tale": "Seks hundre og tjue-ni kroner er prisen nå.",
+   "tekst": "629 kr er prisen nå."
+  }
+ ],
+ "_tre_C1_1_H2": "Konkret pris/mål = visualisere ✅, tall og fakta er sjekkbare = falsifisere ✅, produktspesifikke mål/pris gjør at ingen konkurrent kan kopiere linjen 1:1 = ✅",
+ "C1_1_H3": [
+  {
+   "tale": "Åtte hundre og nitten kroner?",
+   "tekst": "819 kr?"
+  },
+  {
+   "tale": "Nei, nå bare seks hundre og tjue-ni kroner.",
+   "tekst": "Nei, nå bare 629 kr."
+  },
+  {
+   "tale": "Kamadotrekket er på tilbud.",
+   "tekst": "Kamadotrekket er på tilbud."
+  },
+  {
+   "tale": "Nå får du det for seks hundre og tjue-ni kroner.",
+   "tekst": "Nå får du det for 629 kr."
+  },
+  {
+   "tale": "Normalpris er åtte hundre og nitten kroner.",
+   "tekst": "Normalpris er 819 kr."
+  },
+  {
+   "tale": "Det betyr hundre og nitti kroner i besparelse.",
+   "tekst": "Det betyr 190 kr i besparelse."
+  },
+  {
+   "tale": "Trekket holder regnet unna lokket og ventilen.",
+   "tekst": "Trekket holder regnet unna lokket og ventilen."
+  },
+  {
+   "tale": "Mål grillen din først - åtti ganger hundre og to centimeter.",
+   "tekst": "Mål grillen din først - 80 × 102 cm."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_C1_1_H3": "Priser og mål er konkrete og falsifiserbare (✅/✅), men generiske nok til at ingen konkurrent kan hevde unikhet uten produktnavn (❌ delvis - vanlig for prisannonser).",
+ "G_1_H1": [
+  {
+   "tale": "Har du en grillelsker å kjøpe gave til?",
+   "tekst": "Har du en grillelsker å kjøpe gave til?"
+  },
+  {
+   "tale": "Leter du etter en gave til noen som elsker å grille?",
+   "tekst": "Leter du etter en gave til noen som elsker å grille?"
+  },
+  {
+   "tale": "Gi bort noe som faktisk blir brukt.",
+   "tekst": "Gi bort noe som faktisk blir brukt."
+  },
+  {
+   "tale": "Dette kamadotrekket er en praktisk gave til grillelskeren.",
+   "tekst": "Dette kamadotrekket er en praktisk gave til grillelskeren."
+  },
+  {
+   "tale": "Perfekt for noen som gjerne har grillen stående ute.",
+   "tekst": "Perfekt for noen som gjerne har grillen stående ute."
+  },
+  {
+   "tale": "En sånn gave som føles gjennomtenkt - og som faktisk blir brukt.",
+   "tekst": "En sånn gave som føles gjennomtenkt - og som faktisk blir brukt."
+  }
+ ],
+ "_tre_G_1_H1": "Visualisere ✅ (gave, grill ute), falsifisere ⚠️ (delvis - 'blir brukt' er myk påstand), ingen konkurrent kan si det ✅ (kamadotrekk er produktspesifikt)",
+ "G_1_H2": [
+  {
+   "tale": "Gave til noen som elsker kamadoen sin.",
+   "tekst": "Gave til noen som elsker kamadoen sin."
+  },
+  {
+   "tale": "Leter du etter en gave til noen som elsker å grille?",
+   "tekst": "Leter du etter en gave til noen som elsker å grille?"
+  },
+  {
+   "tale": "Gi bort noe som faktisk kommer til nytte.",
+   "tekst": "Gi bort noe som faktisk kommer til nytte."
+  },
+  {
+   "tale": "Dette kamadotrekket er en praktisk gave til grillelskeren.",
+   "tekst": "Dette kamadotrekket er en praktisk gave til grillelskeren."
+  },
+  {
+   "tale": "Perfekt for den som har grillen stående ute.",
+   "tekst": "Perfekt for den som har grillen stående ute."
+  },
+  {
+   "tale": "En gave som føles gjennomtenkt - og som faktisk kommer til nytte.",
+   "tekst": "En gave som føles gjennomtenkt - og som faktisk kommer til nytte."
+  }
+ ],
+ "_tre_G_1_H2": "Visualisere: delvis ✅ (kamado/grill konkret), falsifiserbar: ❌ (myke gavepåstander), ingen konkurrent kan si det: ❌ (generisk gavespråk) - svakt manus, men følger kildens nivå uten å legge til ubelagte påstander.",
+ "G_1_H3": [
+  {
+   "tale": "Den perfekte gaven til grillentusiasten.",
+   "tekst": "Den perfekte gaven til grillentusiasten."
+  },
+  {
+   "tale": "Leter du etter en gave til noen som elsker å grille?",
+   "tekst": "Leter du etter en gave til noen som elsker å grille?"
+  },
+  {
+   "tale": "Gi bort noe som faktisk blir brukt.",
+   "tekst": "Gi bort noe som faktisk blir brukt."
+  },
+  {
+   "tale": "Dette kamadotrekket er en praktisk gave til grillentusiasten.",
+   "tekst": "Dette kamadotrekket er en praktisk gave til grillentusiasten."
+  },
+  {
+   "tale": "Perfekt for noen som liker å ha grillen stående ute.",
+   "tekst": "Perfekt for noen som liker å ha grillen stående ute."
+  },
+  {
+   "tale": "En gave som føles gjennomtenkt - og som faktisk blir brukt.",
+   "tekst": "En gave som føles gjennomtenkt - og som faktisk blir brukt."
+  }
+ ],
+ "_tre_G_1_H3": "Visualisere: delvis ✅ (grill ute, trekk), Falsifiserbar: ❌ (gjennomtenkt/praktisk er meninger), Ingen konkurrent kan si det: ❌ (generisk gavevinkel) - akseptabel lokalisering, ikke en ny hook.",
+ "PD_1_H1": [
+  {
+   "tale": "Har du en kamadogrill som står ute?",
+   "tekst": "Har du en kamadogrill som står ute?"
+  },
+  {
+   "tale": "Har du en kamadogrill som står ute?",
+   "tekst": "Har du en kamadogrill som står ute?"
+  },
+  {
+   "tale": "Da er dette trekket perfekt for å holde grillen beskyttet når den ikke er i bruk.",
+   "tekst": "Da er dette trekket perfekt for å holde grillen beskyttet når den ikke er i bruk."
+  },
+  {
+   "tale": "Det holder regnet unna lokket og ventilen.",
+   "tekst": "Det holder regnet unna lokket og ventilen."
+  },
+  {
+   "tale": "Håndtak, fire spennremmer og en snøring holder det på plass.",
+   "tekst": "Håndtak, fire spennremmer og en snøring holder det på plass."
+  },
+  {
+   "tale": "Og når du griller, legger du trekket i den medfølgende oppbevaringsposen.",
+   "tekst": "Og når du griller, legger du trekket i den medfølgende oppbevaringsposen."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkrete, pekende setninger (visualisere ✅, falsifiserbart ✅), men generisk produktbeskrivelse som konkurrenter også kunne sagt (ingen unik ✅/❌ blandet).",
+ "PD_1_H2": [
+  {
+   "tale": "Ikke la været ødelegge kamadogrillen din.",
+   "tekst": "Ikke la været ødelegge kamadogrillen din."
+  },
+  {
+   "tale": "Har du en kamadogrill som står ute?",
+   "tekst": "Har du en kamadogrill som står ute?"
+  },
+  {
+   "tale": "Da er dette trekket perfekt for å holde grillen beskyttet når den ikke er i bruk.",
+   "tekst": "Da er dette trekket perfekt for å holde grillen beskyttet når den ikke er i bruk."
+  },
+  {
+   "tale": "Det holder regnet unna lokket og ventilen.",
+   "tekst": "Det holder regnet unna lokket og ventilen."
+  },
+  {
+   "tale": "Med håndtak, spennremmer og snøring sitter det godt festet.",
+   "tekst": "Med håndtak, spennremmer og snøring sitter det godt festet."
+  },
+  {
+   "tale": "Og når du griller, legger du trekket i posen som følger med.",
+   "tekst": "Og når du griller, legger du trekket i posen som følger med."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret (regn/ventil/håndtak/posen) ✅, falsifiserbar ✅, konkurrent-nøytral (ingen produktnavn/butikk) ✅",
+ "PD_1_H3": [
+  {
+   "tale": "En enkel måte å beskytte kamadogrillen din på når den ikke er i bruk.",
+   "tekst": "En enkel måte å beskytte kamadogrillen din på når den ikke er i bruk."
+  },
+  {
+   "tale": "Har du en kamadogrill som står ute?",
+   "tekst": "Har du en kamadogrill som står ute?"
+  },
+  {
+   "tale": "Da er dette kamadotrekket laget for å holde grillen beskyttet.",
+   "tekst": "Da er dette kamadotrekket laget for å holde grillen beskyttet."
+  },
+  {
+   "tale": "Det holder regnet unna lokket og ventilen, ellers kan lokket fryse fast om vinteren.",
+   "tekst": "Det holder regnet unna lokket og ventilen - ellers kan lokket fryse fast om vinteren."
+  },
+  {
+   "tale": "Med håndtak, fire spennremmer og en snøring sitter det godt på plass i vind.",
+   "tekst": "Håndtak, fire spennremmer og snøring holder det på plass i vind."
+  },
+  {
+   "tale": "Og når du griller, legger du bare trekket i posen som følger med.",
+   "tekst": "Når du griller, legger du trekket i posen som følger med."
+  }
+ ],
+ "_tre_PD_1_H3": "Linje 1,3,5,6 konkrete/faktabaserte (visualisere ✅, falsifisere ✅, unik nok ⚠️ delvis generisk); linje 4 sterk pga. konkret regn/ventil-fakta (✅✅✅).",
+ "SP_1_H1": [
+  {
+   "tale": "Har du kamadogrillen stående ute?",
+   "tekst": "Har du kamadogrillen stående ute?"
+  },
+  {
+   "tale": "Har du en kamadogrill hjemme?",
+   "tekst": "Har du en kamadogrill hjemme?"
+  },
+  {
+   "tale": "Dette er et enkelt trekk for deg som har grillen stående ute.",
+   "tekst": "Dette er et enkelt trekk for deg som har grillen stående ute."
+  },
+  {
+   "tale": "Dra trekket over når grillingen er ferdig.",
+   "tekst": "Dra trekket over når grillingen er ferdig."
+  },
+  {
+   "tale": "Spenn det fast med remmene, så gjør trekket jobben.",
+   "tekst": "Spenn det fast med remmene, så gjør trekket jobben."
+  },
+  {
+   "tale": "En enkel detalj som holder regnet unna lokket og ventilen.",
+   "tekst": "En enkel detalj som holder regnet unna lokket og ventilen."
+  }
+ ],
+ "_tre_SP_1_H1": "Konkret grill/trekk/ventil ✅, falsifiserbart (regn/ventil-faktum) ✅, produktspesifikt så konkurrent kan ikke si det ✅",
+ "SP_1_H2": [
+  {
+   "tale": "Dette er et must for grillen som står ute.",
+   "tekst": "Dette er et must for grillen som står ute."
+  },
+  {
+   "tale": "Har du en kamadogrill hjemme?",
+   "tekst": "Har du en kamadogrill hjemme?"
+  },
+  {
+   "tale": "Dette er et enkelt trekk for deg som har grillen stående utendørs.",
+   "tekst": "Dette er et enkelt trekk for deg som har grillen stående utendørs."
+  },
+  {
+   "tale": "Dra trekket over når grillingen er ferdig.",
+   "tekst": "Dra trekket over når grillingen er ferdig."
+  },
+  {
+   "tale": "Spenn fast remmene og la trekket gjøre jobben.",
+   "tekst": "Spenn fast remmene og la trekket gjøre jobben."
+  },
+  {
+   "tale": "En enkel detalj som holder regnet unna lokket og ventilen.",
+   "tekst": "En enkel detalj som holder regnet unna lokket og ventilen."
+  }
+ ],
+ "_tre_SP_1_H2": "Linje 6 (regn unna lokk/ventil): visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅ – de andre er konkrete scene-beskrivelser, samme vurdering.",
+ "SP_1_H3": [
+  {
+   "tale": "Grillen klar?",
+   "tekst": "Grillen klar?"
+  },
+  {
+   "tale": "Beskytt den før du går inn.",
+   "tekst": "Beskytt den før du går inn."
+  },
+  {
+   "tale": "Har du en kamadogrill hjemme?",
+   "tekst": "Har du en kamadogrill hjemme?"
+  },
+  {
+   "tale": "Dette er et enkelt trekk for deg som har grillen stående ute.",
+   "tekst": "Dette er et enkelt trekk for deg som har grillen stående ute."
+  },
+  {
+   "tale": "Dra trekket over når grillingen er ferdig.",
+   "tekst": "Dra trekket over når grillingen er ferdig."
+  },
+  {
+   "tale": "Spenn det fast og la trekket gjøre jobben.",
+   "tekst": "Spenn det fast og la trekket gjøre jobben."
+  },
+  {
+   "tale": "En enkel detalj som holder regnet unna lokket og ventilen.",
+   "tekst": "En enkel detalj som holder regnet unna lokket og ventilen."
+  }
+ ],
+ "_tre_SP_1_H3": "Visualisere ✅ (dra trekk over, spenne fast), falsifisere ✅ (regn unna lokk/ventil er belagt faktum), ingen konkurrent kan si det ✅ (konkret produktfunksjon, ikke generisk påstand)"
+}

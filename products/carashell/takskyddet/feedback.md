@@ -102,3 +102,33 @@ Inga påhittade siffror — allt kommer ur briefarna, butiken (läst live) och d
 | `Takoverdrag_OB_8_1` | ⚠️ | — | Already live (CaraShell EN ready). Good catch that tak-spanne.jpg is a supplier pack shot — the frame from SP_4_H1 is the right fallback. |
 | `Takoverdrag_OB_7_H1` | ⚠️ | — | Rows 1–2 stock clip: name the library and the fallback still. |
 | `Takoverdrag_OB_6_H1` | ❌ | Row 3 line `Överdraget stannar vid takkanten, hela vägen runt vagnen.` and the picture note `nothing hanging below it` contradict the product page: the edge hangs 30–40 cm down over the sides so the roof/wall seam is covered. Do not frame the edge away — show it hanging over the side, and use the alt line for row 3 (`Sidoväggen, fönstret och dörren syns hela varvet runt.`) or `Bara taket och kanten.` | The lap is NEW FOOTAGE with a fallback — right; `duken` for the cover is loose next to `överdraget` everywhere else. |
+
+## Rond 2026-09-29 — batch okänd (9 briefer) · granskad 2026-10-01 · hub BÄVER Taköverdraget för Husvagn
+
+**Bra**
+- Rule 1 from the 2026-09-28 review held: `never stannar vid takkanten` is in the Rules and FD_2_2 says `Kanten hänger 30 till 40 cm ner`; rule 3 (stock sources) does not apply — the round uses the parent's own footage.
+- The parent is chosen on profit contribution (Takoverdrag_GT_2_H1, 13 124 kr) with the top spender named as benchmark, not parent — exactly the ANALYSMETOD order.
+- From-price `från 1 129 kr, ord. 1 469 kr` is right for the two smallest of nine sizes (read live from the product page 2026-10-01).
+
+**Missat**
+- Rule 2 from 2026-09-28 broke: the break-even is now 760 kr (AOV 1 238 ÷ 1,63) — after 715 kr and 693 kr in earlier rounds. Three numbers for one product, and kill decisions hang on it.
+- Takoverdrag_FD_1_H3 (primary text) and Takoverdrag_FD_2_2 (sub-line) say `Vattentät 210D`. The page uses the word, but this hub has avoided it since 2026-09-19 because commenters ask "is it waterproof?" and the ads answer with the run-off instead.
+- Takoverdrag_FD_4_2's sub-line repeats `Fars dag-rea:` that the badge already shows.
+- The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`.
+
+**Tre regler för nästa rond**
+1. One break-even for this product: 715, 693 and now 760 kr have all been written. Until the owner settles it, cite 693 kr (CaraShell dna.md, price minus cost) and never derive a new one.
+2. Never `vattentät` as a bare word in this hub: say `vattnet rinner av` — the hub's own answer to the waterproof question.
+3. The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again.
+
+| Brief | Dom | Fel | Anmärkningar |
+|---|---|---|---|
+| `Takoverdrag_FD_4_4` | ⚠️ | — | One of four statics on the same pixels; only the text box changes. Fine. |
+| `Takoverdrag_FD_4_3` | ⚠️ | — | Deadline twice (headline and bottom line). |
+| `Takoverdrag_FD_4_2` | ⚠️ | — | Price twice (headline and band), `Fars dag-rea` twice (badge and sub-line). |
+| `Takoverdrag_FD_4_1` | ⚠️ | — | One of four statics on the same pixels; only the text box changes. Fine. |
+| `Takoverdrag_FD_3_H3` | ⚠️ | — | Hook variant; rows 2–4 shared with the two siblings. Fine. |
+| `Takoverdrag_FD_3_H2` | ⚠️ | — | Hook variant; rows 2–4 shared with the two siblings. Fine. |
+| `Takoverdrag_FD_3_H1` | ⚠️ | — | Hook variant; rows 2–4 shared with the two siblings. Fine. |
+| `Takoverdrag_FD_1_H3` | ⚠️ | — | Primary text says `Vattentät 210D-oxfordväv` — write `vattnet rinner av` as the hub always has. · Break-even 760 kr — a third number for this product. |
+| `Takoverdrag_FD_2_2` | ⚠️ | — | Already live (CaraShell SE ready). Sub-line `Vattentät 210D-väv` — next version says `vattnet rinner av`. |

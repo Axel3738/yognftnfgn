@@ -8,7 +8,7 @@ import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad, torrPerBrand } from '../autosvar.mjs';
-import { HINK, hinka, beslut, arSaljmejl, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
+import { HINK, hinka, beslut, arSaljmejl, harTvistord, arArg, arSvarsamne, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
 import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
@@ -1201,6 +1201,48 @@ test('säljmejl till butiken blir SKIP, inte ARG — men en kund med ordernummer
   assert.equal(arSaljmejl({ text: 'If I help you make $35K in a 10 day trial, would you give me 4% commission? What is the best WhatsApp to reach u?' }), true);
   assert.equal(arSaljmejl({ text: 'Where is my order? I paid by WhatsApp link' }), false, 'en fras räcker aldrig');
   assert.equal(arSaljmejl({ text: 'order 1234: seller said dropshipping and whatsapp', klass: { ordernummer: ['1234'] } }), false, 'ordernummer ⇒ kund');
+});
+
+test('byråns och SaaS-säljarens pitch blir SKIP — "joke" i en komplimang ger aldrig eskaleringsmallen', () => {
+  // Matstrumpor 2026-09-25: AdPeak Studio fick "I completely understand your frustration … escalated"
+  // som utkast. 2026-09-30: Klaviyos säljare räddades bara av ordet "unsubscribe" i en länk.
+  const brand = { id: 'matstrumpor', supportmail: 'kundsupport@matstrumpor.se' };
+  const adpeak = 'Hi Matstrumpor, "Ingen jublar at tvattmedel." is the best gift-ad line I have read this week. Then the ad runs 34 seconds and the takeaway box that makes the joke land is barely on screen. Examples of our work are at the link below. Would you be open to seeing a quick concept for the sock box? -- AdPeak Studio - AI product ads. Not useful? Reply "no thanks" and I\'ll leave it.';
+  const h1 = hinka({ mejl: { fran: { adress: 'adpeakstudio@gmail.com' }, amne: 'Your copy is funnier than your ad', text: adpeak }, brand });
+  assert.equal(h1.hink, HINK.SKIP, h1.orsak);
+  assert.match(h1.orsak, /säljmejl/);
+  const klaviyo = 'Wanted to follow up on my last message - when works best for you? Thanks! Growth Specialist klaviyo.com. My role is to help you get set up properly and remove any roadblocks before upgrading. Feel free to book time on my calendar here!';
+  const h2 = hinka({ mejl: { fran: { adress: 'mollyella.star@klaviyo.com' }, amne: 'Re: your free Klaviyo account', text: klaviyo }, brand });
+  assert.equal(h2.hink, HINK.SKIP, h2.orsak);
+  assert.match(h2.orsak, /säljmejl/);
+  // En kund som ber om ett samtal är fortfarande en kund: en fras räcker aldrig.
+  assert.equal(arSaljmejl({ text: 'Kan vi boka ett samtal? Mitt paket har inte kommit.' }), false);
+});
+
+test('ilskeord i ett SVARS-ämne är butikens egna ord — kundens eget "skämt" och "is a joke" räknas fortfarande', () => {
+  // Matstrumpor 2026-09-30: recensionsförfrågan "Landade skämtet, eller inte?" gjorde en vidarebefordrad
+  // orderbekräftelse till ARG.
+  const k = (amne, text) => ({ klass: klassificera({ amne, text }), amne, text });
+  assert.equal(arArg(k('Re: Landade skämtet, eller inte?', 'Tack för ditt köp! Vi förbereder din order för leverans. ORDER #1740')).arg, false);
+  assert.equal(arArg(k('SV: Landade skämtet, eller inte?', 'Tack, de var jättefina!')).arg, false);
+  assert.equal(arArg(k('Re: Landade skämtet, eller inte?', 'Ärligt talat är produkten ett skämt.')).arg, true, 'kundens egna ord');
+  assert.equal(arArg(k('Re: Order 1740', 'This product is a joke.')).arg, true, 'kundens egna ord på engelska');
+  assert.equal(arArg(k('Ert bemötande är ett skämt', 'Hej')).arg, true, 'ett ämne kunden skrivit själv räknas');
+  assert.equal(arSvarsamne('Re: Re: Fwd: x'), true);
+  assert.equal(arSvarsamne('[Matstrumpor] AW: x'), true);
+  assert.equal(arSvarsamne('Reklamation'), false);
+  assert.equal(arSvarsamne('Svar saknas!'), false, '"Svar" utan kolon är ingen svarsmarkör');
+});
+
+test('"två gånger" är dubbeldebitering bara med pengar i närheten — kampanjrubriken är det inte', () => {
+  // Matstrumpor 2026-09-30: "Re: De tittar två gånger, sen skrattar de" + "Tack 😊" blev okand_debitering.
+  const alla = (amne, text) => klassificera({ amne, text }).alla.map((x) => x.id);
+  assert.ok(!alla('Re: De tittar två gånger, sen skrattar de', 'Tack 😊').includes('okand_debitering'));
+  assert.ok(!alla('Beställning', 'Jag har beställt två gånger förut, nöjd kund').includes('okand_debitering'));
+  assert.ok(alla('Hjälp', 'Ni har dragit pengar två gånger från mitt kort').includes('okand_debitering'));
+  assert.ok(alla('Order', 'I was charged twice for my order').includes('okand_debitering'));
+  assert.ok(alla('Ordre', 'Dere har trukket meg to ganger').includes('okand_debitering'));
+  assert.ok(alla('Betaling', 'Jeg har betalt to gange for samme ordre').includes('okand_debitering'));
 });
 
 test('CaraShells kontaktformulär ("Kommentar"/"Comment") läses som kundens mejl, språket ur landskoden', () => {

@@ -102,4 +102,30 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   skickad, för inget kvitto kom. Den nya prompten byggdes med `--anmal-cowork
   KD-2026-003 --bara 3,4,5,6` och innehåller bara anmälan 3–6. Den säger att 1 och
   2 redan är skickade, och alla 44 fält stämmer ord för ord mot korten Axel godkände.
-- Taköverdragets 5 är fortfarande inte med.
+- **Anmälan 3–6 skickades in samma kväll** från en ny Cowork-chatt, och Axel
+  gjorde säkerhetskontrollerna. Metas tacksida visade "Tack!" utan nummer på
+  alla fyra, och kodmejlen kom 20:34–22:05 CEST. Cowork skrev själv att
+  beskrivningen i anmälan 3 kan ha tappat tecken, även i länkarna. Anmälan 4–6
+  kontrollerades tecken för tecken före inskicket.
+- **Utfallet i annonsbiblioteket 22:30 CEST (`gated_type`):** annons 1, 3 och 5
+  är `TAKEN_DOWN` med texten "This content was removed because it didn't follow
+  our Advertising Standards". Annons 2, 4 och 6 är fortfarande aktiva. Anmälan 3
+  gick alltså igenom trots de tecken som kan ha tappats.
+- **Kvittona för 3–6 skrevs in utan referens.** Metas kvittomejl syns inte för
+  Gmail-connectorn, och inga nya trådar "Anmälan om immateriella rättigheter"
+  syntes efter 15:59. Tiden i ärendet är när kvittot skrevs in (22:32 CEST),
+  inte när anmälan skickades. Anmälan 2 står kvar som utkast tills Axel läst
+  `1/6` eller `2/6` i Metas mejl.
+- **Morgonkollen 1/10 09:08 CEST:** annons 2, 4 och 6 är fortfarande `ELIGIBLE`
+  och aktiva. Annons 4 och 6 skickades cirka 12 timmar tidigare. Annons 1, 3 och
+  5 togs ner inom minuter, så 4 och 6 ligger troligen hos en människa på Meta.
+  Det är inte bekräftat, eftersom kvittomejlen fortfarande är dolda för
+  Gmail-connectorn. Gmail visar inga nya mejl från Meta sedan 30/9 15:59.
+- Taköverdragets 5 är fortfarande inte med. Axel frågade 30/9 kväll om de inte
+  också var snodda. Svaret: jo, Bustatio kör fem av våra taköverdrag-filmer
+  (räckvidd 24 345, 1 234, 1 059, 449 och 243), men alla fem bär lånade klipp.
+  Fyra finns i Specialised Covers-mätningen (`KD-2026-001/specialised-covers.json`).
+  Den femte, `Takoverdrag_PD_2_H1` (annons 50), saknades där, men dess
+  bildrutor visar Specialised Covers logga på överdraget och mannen i mörk
+  jacka. Mätningen i går missade alltså minst en film. Frågan A (låt vara)
+  eller B (anmäl ändå, bara klippning och text) ligger hos Axel.

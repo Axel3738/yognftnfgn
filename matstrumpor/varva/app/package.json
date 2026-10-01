@@ -1,0 +1,15 @@
+{
+  "name": "matstrumpor-varva",
+  "private": true,
+  "description": "Värva en vän på Matstrumpors tacksida (checkout UI extension). Deployas till Matstrumpors egen tacksides-app med matstrumpor/varva/deploy.sh — se matstrumpor/varva/README.md.",
+  "workspaces": [
+    "extensions/*"
+  ],
+  "scripts": {
+    "build": "shopify app build --skip-dependencies-installation",
+    "deploy": "shopify app deploy --allow-updates"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^4.8.2"
+  }
+}

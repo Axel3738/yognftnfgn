@@ -1287,3 +1287,47 @@ legat i `for_tidigt` passerade 3 × target-CPA utan köp. När spenden per annon
 stiger i en krympande kampanj faller fler igenom grinden samtidigt. Räkna med
 fler pausningar de närmaste nätterna och läs dem som en effekt av nivån, inte
 som en ny signal per annons.
+
+## 2026-10-01 — första lönsamma dygnet på en vecka, och ronden sänkte dagen efter
+
+Ronden gjorde tre ändringar: pausade `SP_3_H1` (LISTICLE, 1 607 kr / 2 köp /
+CPA 803) och `CS_1_H1 – kopia` (nya listicle, 1 395 kr / 0 köp), och sänkte
+**huvudkampanjen 3 000 → 2 100 kr** när kadensspärren släppte. Taket på tre
+ändringar nåddes igen: sänkningarna av LISTICLE (2 800 → 2 000) och NYA LISTICLE
+(2 000 → 1 400) ligger först i kön nästa natt.
+
+✅ **30 september var det första lönsamma dygnet sedan den 23:e:** alla tre
+kampanjerna 7 764 kr, **12 köp, ROAS 1,96, CPA 647 kr** mot break-even 693 ⇒
+vinstbidrag **+552 kr** för dygnet.
+
+| Kampanj 30/9 | Spend | ROAS | Köp |
+|---|---|---|---|
+| LISTICLE | 2 897 kr | **2,59** | 6 |
+| NYA LISTICLE | 2 126 kr | 1,82 | 3 |
+| Huvudkampanjen | 2 741 kr | 1,41 | 3 |
+
+⚠️ **Två dygn, två motsatta svar om listicle-spåret.** Den 29:e föll LISTICLE
+hårdast av alla tre (ROAS 0,53) och gårdagens anteckning sa att spåret "inte
+landade". Den 30:e bar det hela dagen (2,59 och 1,82 mot huvudkampanjens 1,41).
+**Ingen av de två dagarna räcker till en slutsats** — det är vad som händer när
+man läser ett spår på ett dygn, och det är andra gången på tre nätter den här
+filen fått ta tillbaka något. Nästa mätning som betyder något är de tre
+kampanjernas CPA över en hel vecka på sina nya budgetar, tidigast 6 oktober.
+
+⚠️ **Ronden sänkte Axels eget tal.** Den 29:e skrev jag i rapporten att
+kadensspärren räknas ur vår logg, inte ur Meta, och att ronden skulle sänka
+3 000 → 2 100 den 1 oktober om 3-dygnsvinsten låg under 16 %. Inget svar kom,
+3-dygnsvinsten var −19,0 %, och ronden gjorde det. Det är regelriktigt — men
+det skedde dygnet efter det bästa dygnet på en vecka, eftersom 3-dygnsfönstret
+(28–30/9) fortfarande bär den 29:e. **Läs det som en tidsfördröjning i reglerna,
+inte som en dom över den 30:e.**
+
+**`SP_5_1`, femte mätningen — och nu står 14-dygnstalet på gränsen:** 7d-CPA
+765 → 951 → 1 164 → 1 090 → **1 364 kr** (8 köp på 10 915 kr), och
+**14-dygns-CPA 692 kr mot break-even 693.** En krona. Nästa natt faller den
+sannolikt över, och då pausar ronden den själv utan att någon behöver besluta.
+→ **Instruktion:** föregrip inte. Vänta in 14-dygnstalet.
+
+**7 dygn SE:** 60 557 kr, 64 köp, ROAS 1,42, CPA 946 kr ⇒ vinstbidrag
+**−16 205 kr** (i går −16 864). Veckofönstret bär fortfarande de tre värsta
+dygnen och vänder inte förrän de rullat ut.

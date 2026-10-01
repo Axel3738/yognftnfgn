@@ -1,0 +1,25 @@
+# Värva en vän — checkout UI extension för Matstrumpor.
+# Visas på tacksidan direkt efter köpet och på kundens orderstatussida.
+# Byggd 2026-09-30 (Axels beställning, Ty Chapmans reel om Redeemly).
+# Dokumentation: matstrumpor/varva/README.md
+api_version = "2026-07"
+
+[[extensions]]
+name = "Värva en vän"
+handle = "varva-kort"
+uid = "6cb40c06-42c9-06ba-dbf9-1e405bed0731a4a6dc28"
+type = "ui_extension"
+description = "Kundens egen länk: vännen får rabatt på sitt första köp, kunden får butikskredit när vännens paket har skickats."
+
+[[extensions.targeting]]
+target = "purchase.thank-you.block.render"
+module = "./src/Tack.jsx"
+
+[[extensions.targeting]]
+target = "customer-account.order-status.block.render"
+module = "./src/Order.jsx"
+
+[extensions.capabilities]
+api_access = false
+network_access = false
+block_progress = false

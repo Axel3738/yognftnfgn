@@ -30,17 +30,41 @@ Write off the 603 SEK, tag the customer in Shopify so future orders are reviewed
 
 **Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email, add the reply first. Then click **Submit now**.
 
-> ✅ **Answered — measured 2026-09-28.** Both disputes are `under_review`:
+> ⛔ **BOTH DISPUTES ESCALATED TO CHARGEBACK — measured 2026-10-01. This is open
+> work again, and the evidence did NOT carry over.**
+> Same two dispute ids (`17773822301`, 348 SEK and `17773723997`, 255 SEK), same
+> order, but `type` is now **chargeback**, `status` is back to
+> **`needs_response`**, `evidence_sent_on` is **null** again, and the deadline is
+> new: **2026-10-12T01:00:00+02:00** — so the window shuts as Sunday 11 October
+> ends, and **Friday 9 October is the last working day.**
+>
+> **What this means in practice:** winning the inquiry stage does not end a
+> dispute, and an escalation wipes the evidence field. The pack above must be
+> **submitted again** on the chargeback — same delivery scan of 2026-09-11, same
+> cover text, same two disputes separately. Money is already taken now, so this
+> is the stage where it is actually lost: chargebacks in this shop stand at 1 won
+> of 4, while inquiries stand at 29 of 29.
+> ⚠️ Re-run the surname search before submitting (point 5) — the customer may
+> have written since 2026-09-20, and a reply changes the "no prior contact"
+> sentence from an argument into a false statement.
+>
+> ✅ **The inquiry stage was answered — measured 2026-09-28.** Both disputes were
+> `under_review`:
 > `17773822301` had its evidence sent at **07:10:14** and `17773723997` at
-> **07:41:42** that morning. Nothing more to do here; watch for an escalation
-> to chargeback the way #5122 and #4446 both did.
+> **07:41:42** that morning. The sheet then said "nothing more to do here; watch
+> for an escalation the way #5122 and #4446 both did" — the escalation came three
+> days later, and the block above is what to do about it. **Never write "nothing
+> more to do" on an answered dispute again; write what to watch for and what it
+> would cost.**
 >
 > ⛔ **But they went in six hours LATE, and the reason is written down here.**
 > The real deadline was `2026-09-28T01:00:00+02:00` — **one o'clock at night**,
 > not "some time on Monday". This sheet said "submit on Monday", the daily alarm
 > said "due 2026-09-28 — 1 day left", and both were reading a date where Shopify
 > had written a timestamp. Shopify accepted the late evidence anyway; that is
-> the bank's goodwill, not a rule to lean on. Fixed the same day: the alarm now
+> the bank's goodwill, not a rule to lean on — **but lean on it rather than give
+> up: #4914 went in 8.5 hours late on 2026-09-30 and was accepted too, so a
+> passed deadline is always still worth a submission.** Fixed the same day: the alarm now
 > prints "due 2026-09-28 at 01:00 — 19h left". **On any dispute, read the
 > clock time in `evidence_due_by`, not just the day.**
 

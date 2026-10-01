@@ -1,0 +1,125 @@
+{
+  "hub_id": "3ea270ab-908c-8157-a2a2-ca2cb28cb792",
+  "rond": "2026-09-29",
+  "bra": [
+    "The parent's live copy claims `vattentätt`, `vindtätt`, `UV-skyddat` and a brand list the page does not carry — every brief drops them and says why.",
+    "One size, measured: every line points to `3XL, 256 × 110 × 120 cm, mät först`, the page's own instruction (read live from the product page 2026-10-01).",
+    "PD_1_H4–H6 are the three manuscript steps on a breakthrough (new hook, longer problem, in media res), one variable each, NEW FOOTAGE blocks at the top with fallbacks."
+  ],
+  "missat": [
+    "The FD_3/FD_4 Why says `Earlier Father's Day rows on this product (FD_1_H1–H3, FD_2_1/FD_2_2)` and FD_4 references `ATVKapell_FD_2_1 (the same layout, live since 2026-09-29)` — this product has no FD_1 or FD_2 rows (docs/briefs/farsdag-2026 has none). The template text was not checked against the product.",
+    "Two break-evens in one round: 422 kr (684 ÷ 1,62) in FD_3/FD_4, ~450 kr (684 ÷ 1,52) in PD_1_H4–H6. One of the two campaign-name readings is wrong.",
+    "PD_1_H4–H6 row 5 cites `CDN https://baverbutiken.se/products/…` — that is the product page, not an image; FD_3_H3 names the right file (b10-atvkapell-fakta-se.jpg).",
+    "ATVKapell_PD_1_H6 opens on `Skräpet ligger på kapellet. ATV:n under är ren.` over the cover-on clip played in reverse — that clip has no debris on the fabric, so the line describes something the picture does not show.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "Cite only rows that exist: a Why that names earlier rows or a reference ad is checked against the hub first.",
+    "One break-even for this product, read once from the campaign name (1,62 or 1,52 — not both) and reused.",
+    "A `CDN` source is an image file URL; a hook line describes what the clip under it shows."
+  ],
+  "rader": [
+    {
+      "namn": "ATVKapell_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "Reference to a non-existent FD_2_1."
+      ],
+      "bra": [
+        "Measurements as words, the page's three dimensions."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Reference to a non-existent FD_2_1; deadline twice."
+      ],
+      "bra": [
+        "`mellan turerna` is the page's scene."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "References `ATVKapell_FD_2_1 … live since 2026-09-29`, which does not exist."
+      ],
+      "bra": [
+        "One size in the headline, measurements in the sub-line."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Reference to a non-existent FD_2_1; price twice."
+      ],
+      "bra": [
+        "`Helsvart kapell som läggs över hela ATV:n` is the page's line."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Why cites FD_1/FD_2 rows that do not exist."
+      ],
+      "bra": [
+        "Names the real dimension image."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Why cites FD_1/FD_2 rows that do not exist."
+      ],
+      "bra": [
+        "`Mät din ATV först` answers the fit objection with the page's instruction."
+      ]
+    },
+    {
+      "namn": "ATVKapell_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Why cites FD_1/FD_2 rows that do not exist."
+      ],
+      "bra": [
+        "Price-first opening on the demo shot."
+      ]
+    },
+    {
+      "namn": "ATVKapell_PD_1_H6",
+      "fel": [],
+      "anmarkningar": [
+        "The reversed cover-on clip shows no debris, so the hook `Skräpet ligger på kapellet` is not in the picture — use a real cover-off take, or change the line.",
+        "Row 5 source is the product page URL, not an image."
+      ],
+      "bra": [
+        "In media res as the third manuscript step."
+      ]
+    },
+    {
+      "namn": "ATVKapell_PD_1_H5",
+      "fel": [],
+      "anmarkningar": [
+        "Row 6 source is the product page URL, not an image."
+      ],
+      "bra": [
+        "Three-shot problem section, every line the page's."
+      ]
+    },
+    {
+      "namn": "ATVKapell_PD_1_H4",
+      "fel": [],
+      "anmarkningar": [
+        "Row 5 source is the product page URL, not the dimension image.",
+        "Break-even ~450 kr here, 422 kr in the FD rows."
+      ],
+      "bra": [
+        "New hook is the page's own scene, parent's false claims dropped."
+      ]
+    }
+  ]
+}

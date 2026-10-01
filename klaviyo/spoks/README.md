@@ -5,8 +5,11 @@ först i den här filen, Matstrumpor efter strecket.
 
 Axels order 2026-09-25/26: "bygg i spoks". Samma innehåll som Klaviyo
 (`klaviyo/innehall/baverbutiken/`), konverterat till Spoks-block av
-`konvertera.mjs` och uppladdat via Spoks-MCP:n. Det finns inget publikt Spoks-API,
-så uppladdningen görs av en session, inte av ett skript.
+`konvertera.mjs` och uppladdat via Spoks-MCP:n. Uppladdningen görs av en session,
+inte av ett skript. ⚠️ Här stod förut "det finns inget publikt Spoks-API". Det är
+fel sedan Spoks Public API (beta, version 2026-07): det finns, men det kan inte
+uttrycka produktkort, kuponger eller flöden, så innehållet går fortfarande via
+MCP:n. Vad API:t används till står i nästa avsnitt.
 
 ```bash
 node klaviyo/spoks/konvertera.mjs                    # innehall → baverbutiken/payload/*.json + plan.json (oförändrat sedan 2026-09-26)
@@ -14,6 +17,92 @@ node klaviyo/spoks/konvertera.mjs --brand carashell  # flerspråkigt: payload/<s
 ```
 
 Workspace: Bäverbutiken `f716ae36-68ae-4f1c-a45e-96c35d5637a0` (Shopify 4snrw0-mg).
+
+## Spoks officiella API: CLI + egen MCP `spoks-api` (byggt 2026-09-30)
+
+Axels order 2026-09-30: "Kan du bygga en cli ... för att kunna koppla en mcp så du kan
+interagera med allt ... och göra allt själv". Spoks-connectorn skriver utkast, segment och
+avstängda flöden men väljer aldrig publik. Det officiella API:t gör det, och det går med en
+nyckel i miljön, alltså även i rutiner som inte har connectors.
+
+```bash
+node klaviyo/spoks/api.mjs kolla                                  # nycklarna: finns, rätt arbetsyta, rättigheter
+node klaviyo/spoks/api.mjs kampanjer --butik baverbutiken --status draft
+node klaviyo/spoks/api.mjs kampanj <id> --butik carashell         # ämne, förhandstext, publik, block, länk
+node klaviyo/spoks/api.mjs publik <id> --butik baverbutiken --segment <segment-id>[,<id>] --ja
+node klaviyo/spoks/api.mjs amnesrad <id> --butik matstrumpor --amne "…" --forhand "…" --ja
+node klaviyo/spoks/api.mjs anrop GET /collections --butik carashell
+```
+
+Utan `--ja` skrivs ingenting: CLI:n visar före och efter. Samma sak som MCP-verktyg i varje
+Claude Code-session i repot (`.mcp.json` → `spoks-api`, `klaviyo/spoks/api-mcp.mjs`):
+`spoks_kolla`, `spoks_kampanjer`, `spoks_kampanj`, `spoks_publik`, `spoks_amnesrad`,
+`spoks_kontakter`, `spoks_produkter`, `spoks_taggar`, `spoks_anrop`. Arbetsytorna och
+nyckelnamnen står i `api-konfig.json`, testerna (26) i `klaviyo/test/spoks-api.test.mjs`
+mot den falska servern `klaviyo/test/falsk-spoks.mjs`.
+
+**Mätt 2026-09-30** (specen `https://api.spoks.com/openapi.json`, version 2026-07, 17 anrop;
+dokumentationen `https://docs.spoks.com`):
+
+- **Kan:** läsa kampanjer med status (`draft`/`scheduled`/`published`/`failed`) och
+  publiceringstid, skapa utkast, ändra ett UTKAST (publik = `recipients.segmentIds`,
+  ämnesrad max 45 tecken, förhandstext max 130, titel, text, block), söka kontakter och
+  produkter, lista taggar, arbetsytor och team, avregistrera en kontakt.
+- **Kan inte, och ingen annan väg heller:** schemalägga, publicera, skicka, slå på flöden
+  eller sändsteg, läsa segment eller flöden. Specens egen mening: "Campaigns are always
+  created as drafts. Publishing and scheduling happen in the app." Det är Axels klick eller
+  en Cowork-prompt.
+- **Blocken:** API:t känner bara h1, h2, text, citat, lista, avdelare, knapp och bild.
+  Produktkort, kuponger och allt annat kommer tillbaka som `unsupported`, och skickar man
+  nya block raderas de. Innehåll med produktkort ändras därför med Spoks-connectorn.
+- **Takt:** 60 anrop per minut och nyckel, skurar över ~20 klipps med 429 + Retry-After.
+- **Nyckeln:** en per arbetsyta, rättigheter per del (read-only eller read-write). Fel
+  nyckel ger 403 "Forbidden resource" (mätt samma dag mot riktiga API:t med en påhittad
+  nyckel, traceId i svaret).
+- ⛔ **Spoks villkor förbjuder att "reverse-engineer the Services"** (spoks.com/legal/terms,
+  läst 2026-09-30). Appens interna anrop används därför aldrig, bara det officiella API:t.
+
+**Spärrarna i koden** (`api.mjs`, alla testade): nyckeln jämförs med arbetsytans id i
+`api-konfig.json` via `GET /authorization` före första anropet (fel nyckel = en annan butiks
+kunder, `FEL_ARBETSYTA`); skrivning bara mot en vitlista (nytt utkast, ändra ett utkast,
+avregistrering); aldrig skapa kontakter, ge samtycke (MFL 19 §), sätta taggar (de kan starta
+ett flöde) eller skriva över produkter; nya block vägras på ett utkast som bär block API:t
+inte kan uttrycka; If-Match med kampanjens hash (412 = någon sparade i appen emellan, inget
+skrivs); varje ändring läses tillbaka; en skrivning görs aldrig om efter 5xx eller nätfel.
+
+**Nycklarna:** `SPOKS_API_KEY_BAVERBUTIKEN`, `SPOKS_API_KEY_CARASHELL`,
+`SPOKS_API_KEY_MATSTRUMPOR` (och `SPOKS_API_KEY_BEVERBUTIKKEN` när den norska arbetsytan
+finns; id:t saknas med flit i konfigen och fylls i då). Axel lägger in dem i Claude-miljön själv
+(Cowork skriver aldrig in nycklar). Nyckeln hamnar aldrig i repot. **Vid bygget fanns ingen
+nyckel:** MCP-servern laddades i byggsessionen och `spoks_kolla` svarade "saknas" för alla fyra.
+
+**Var nyckeln görs** (läst 2026-09-30 i appens egen kod `main.dart.js` och översättningsfilen
+`app.spoks.com/assets/assets/translations/sv-SE.json`, inte gissat): **Inställningar →
+Integrationer → rutan "API-nyckel" → GENERERA NYCKEL** (engelska: Settings → Integrations →
+API key → GENERATE KEY). Tre saker i koden som styr allt:
+- **En nyckel per arbetsyta, ingen rättighetsväljare.** Knappen syns bara när nyckeln saknas.
+  Finns nyckeln visar rutan den dold, med ett öga och en kopiera-ikon ("Kopierade till urklipp").
+  Det finns ingen knapp för att rotera, så att trycka på knappen kan aldrig ta sönder en nyckel
+  som redan används. Nyckelns rättigheter sätter Spoks; `kolla` skriver ut vilka den fick, och
+  vitlistan i `api.mjs` bestämmer vad vi skriver oavsett.
+- **Knappen kräver betald plan.** På Free öppnar den "Uppgradera butiken: Den här funktionen
+  kräver en betald plan." Planerna 2026-09-30 (whoami): **Bäverbutiken Paid, Matstrumpor Paid**
+  (9 104 mejl i september, obegränsat), **CaraShell Free** (410 av 5 000). CaraShell får alltså
+  ingen nyckel utan en uppgradering. `api-konfig.json` → `anteckning` gör att `kolla` säger
+  just det.
+- ⛔ **Nyckeln ska vara för CaraShell** (Axels besked 2026-09-30 kväll, efter att sessionen
+  tagit bort CaraShell ur Cowork-prompten: "Det ska vara för Carashell"). Hela CLI:n byggdes för
+  CaraShell, så Bäverbutikens och Matstrumpors nycklar är inte det som saknas. Vägen: Axel
+  uppgraderar CaraShell själv med knappen **UPPGRADERA NU** i rutan "Uppgradera butiken"
+  (spoks.com/pricing, läst samma kväll: 35 dollar i månaden), och sedan skapas nyckeln. Cowork
+  uppgraderar aldrig, och prompten stannar vid rutan.
+- **Cowork såg en vit sida** 2026-09-30 ~23:23: appen är Flutter och ritar allt som en bild, så
+  en läsare av sidans text ser bara Intercom-knappen. Prompten
+  `klaviyo/spoks/cowork/2-api-nycklar.txt` gäller bara CaraShell, säger åt Cowork att läsa med
+  skärmdumpar och att aldrig klicka på ögat eller kopiera-ikonen: det gör Axel själv.
+
+**Arbetsdelningen:** innehållet (produktkort, kuponger, flöden) → Spoks-connectorn;
+publik, ämnesrad och läsning → `spoks-api`; schemaläggning och att slå på flöden → appen.
 
 ## ⛔ Läget 2026-09-27 09:30 CEST — rättade kopior live, originalens triggers av (mätt med get_flows, get_flow och search_campaigns)
 
@@ -941,7 +1030,8 @@ tills dess kör var och en bara sin butik — Bäverbutikens yta `f716ae36-…` 
 `spoks-paket.mjs`, och `konvertera.mjs` rör aldrig Matstrumpor.
 
 **Ytan** (mätt med whoami/get_settings 2026-09-26): Matstrumpor.se, Shopify
-`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**,
+`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**
+(⚠️ **Paid** vid mätningen 2026-09-30, 9 104 mejl i september),
 4 370 kontakter varav **2 911 med samtycke**. Inställningarna satta via MCP:n: avsändare
 "Matstrumpor", reply-to `kundsupport@matstrumpor.se`, loggan, färgerna (`#dd821d` på
 `#f3ede2`, vitt sidhuvud), fonten **Tilt Warp + Nunito Sans** (Mochiy Pop P One finns inte i

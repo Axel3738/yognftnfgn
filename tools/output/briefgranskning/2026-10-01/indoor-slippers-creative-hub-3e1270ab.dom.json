@@ -1,0 +1,101 @@
+{
+  "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+  "rond": "2026-09-30",
+  "bra": [
+    "All three rules from the 2026-09-28 review held: EDITOR PICKS in English, `AI content:` says how the voice is made, new footage in a NEW FOOTAGE block at the top with its fallback.",
+    "SP_1_H4 replaces the lesson's `real review` hook because the ten reviews are launch imports — the false proof stays out.",
+    "The scene batch (FD_5/FD_6) is built from the page's own moments; price 489 / 978 kr matches (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Inomhustofflor_FD_6_2's headline says `Nerör källartrappan` — a typo for `Nerför`, in the line the image routine burns into the static. The row is in To be Reviewed.",
+    "Break-even moved: SP_1_H4 and FD_5/FD_6 say ~350 kr, the 2026-09-25 round said 383 kr.",
+    "The FD_3/FD_4 rows on this product were created 2026-09-29 and are not in this review: the tool reads the newest day only (2026-09-30)."
+  ],
+  "regler": [
+    "Spell-check every Swedish line that gets burned into a picture before it goes to the image routine (`Nerför`, not `Nerör`).",
+    "One break-even for this product: 383 kr or ~350 kr — settle it once and reuse it.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "Inomhustofflor_FD_5_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "The firewood scene stays inside the page's `snabb sväng ut`."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_5_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean; new footage with fallback."
+      ],
+      "bra": [
+        "The page's headline as the hook."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_5_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "`kliv i dem på en sekund` is the page's line."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_SP_1_H4",
+      "fel": [],
+      "anmarkningar": [
+        "Break-even ~350 kr against 383 kr in the previous round."
+      ],
+      "bra": [
+        "Fake-review hook replaced by the page's own scene."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_6_4",
+      "fel": [],
+      "anmarkningar": [
+        "Clean; stays inside the page's outdoor limit."
+      ],
+      "bra": [
+        "`Grov sula och hälrem` is the page's fact."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_6_2",
+      "fel": [
+        "Typo in the headline and primary text: `Nerör källartrappan glider gamla tofflor av.` must be `Nerför källartrappan glider gamla tofflor av.` If the static is already rendered, it carries the typo — render it again with the corrected line."
+      ],
+      "anmarkningar": [],
+      "bra": [
+        "The page's own stairs scene."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_6_3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "Page line as headline."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_FD_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "Clean."
+      ],
+      "bra": [
+        "Page line as headline."
+      ]
+    }
+  ]
+}
