@@ -1176,6 +1176,15 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   videorna dubbade med ElevenLabs och kontrollerade med `annonser/textkoll.py` (OCR över hela
   filmen: svenska, kronor, butiksnamn). ⛔ **Takskyddsvideorna med Specialised Covers klipp laddas
   aldrig upp här** (samma sekvens som fällde KD-2026-001) — `media.json` → `hoppa`.
+- **Granskad som kund 2026-10-01** (dagen annonserna gick live; rapporten
+  `worldwide/granskning/2026-10-01.md`, verktygen i `worldwide/granskning/`): Kachings och Judge.me:s
+  svenska, temats engelska på it/nl/pl, returpolicyns länk till en annan butiks kundkonto, svenska
+  rubriker, fraktnamnet, färgnamnen, "Recently viewed" och "You may also like" rättade och lästa
+  tillbaka som kund. Kvar: spårningssidan på svenska (rättad i `sparning/butiker.json`, går live när
+  grenen är på `main`), Kachings rabattnamn och BÄVERBUTIKEN-loggan i kassan (Axels beslut, ändrar
+  Sverige), recensionstexterna och färgnamnen i kassan (`worldwide/cowork/3-granskningen.txt`) och 17
+  annonser med påhittad brådska ("TODAY ONLY") som bara Axel får röra. ⚠️ Shopifys kassa spärrar
+  IP:t efter ~18 kassor i rad — kör kassagranskningen glest.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)
 

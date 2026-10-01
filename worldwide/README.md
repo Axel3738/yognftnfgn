@@ -85,7 +85,34 @@ Shopify att planen inte räcker är det Axels beslut (uppgradering kostar pengar
 | `tema/` | `patch.mjs`, snippets (`bw-lage`, `bw-land`), loggan, originalen |
 | `annonser/` | `bygg.mjs` (Meta), `bildrita.mjs` + `zonrita.py` (bilderna), `video.mjs` (videorna), `copy-en.json`, `bildtext.json`, `media.json`, `konto.json`, reglerna |
 | `cowork/1-app-och-doman.txt` | Axels enda klickrunda: appens rättigheter, domänen, Kachings engelska |
+| `granskning/` | Kundgranskningen 2026-10-01: `kund.mjs` (Chromium som kund per land och språk, kassan utan att betala), `matris.mjs` (HTTP, alla länder × språk), `annonser.mjs`, `ordrar.mjs`, `tackning.mjs`, `temanycklar.mjs`, `temafil-sync.mjs`; rapporten `2026-10-01.md` |
+| `cowork/3-granskningen.txt` | Granskningens klick: färgnamnen i Translate & Adapt, Judge.me-översättningen, kundkontroll från svensk IP |
 | `test/worldwide.test.mjs` | Temat, frakten, konfigen, granskningen, annonserna (i `npm test`) |
+
+## Granskningen som kund 2026-10-01 (dagen annonserna gick live)
+
+Hela rapporten med tabellen: `granskning/2026-10-01.md`. Det viktigaste för nästa session:
+
+- **Temats världsläge byter apparnas svenska i sidan** (`tema/appord.json` → `snippets/bw-appord.liquid`,
+  version a4): Kachings paketväljare, Judge.me-rutans knappar och rubriker, korgens rabattrader,
+  färgvärden kopplade till Shopifys färgkategori (`varden`) och Kachings "X - inte tillgängligt".
+  Texterna jämförs med enkla mellanslag — Kaching sparar ibland två ("1x  MC-Kapell 218×118 cm").
+  Ny svensk text i ett Kaching-erbjudande ⇒ en rad i `appord.json` + `tema/patch.mjs --tema <gid>
+  --skarpt`. Kundernas egna recensioner byts aldrig. Trust Badges-raden (Klarna/Swish, svenska) och
+  korgens "Popular picks" med Shopifys platshållarprodukter döljs i världsläget.
+- **Temat når inte kassan.** Kachings rabattnamn ("2 ST", "2X SKYDDSHÖLJE") och färgnamnen kopplade
+  till färgkategorin står kvar på svenska i kassan och mejlen; färgerna rättas i Translate & Adapt
+  (`cowork/3-granskningen.txt`), rabattnamnen är Axels beslut (byter man dem ändras Sverige också).
+- **Temats språkfiler tappar registreringar i snabb följd** (mätt 2026-10-01: 262 nycklar i tre
+  omgångar à 100 — den första hamnade aldrig i `locales/it.json`, fast API:t svarade OK).
+  `granskning/temafil-sync.mjs --sprak <l> --skarpt` läser filen och registrerar om det som saknas;
+  `bygg.mjs` pausar 12 s mellan omgångarna.
+- **Shopifys kassa spärrar efter ~18 kassor i rad från samma IP** ("Deine Verbindung muss
+  verifiziert werden") och släppte inte på flera timmar. Kör kassorna glest, högst ett par åt
+  gången. Fraktsättets namn går att läsa som kund utan kassan: `/<språk>/cart/shipping_rates.json`
+  → `presentment_name`.
+- **Butiken stryper vid fler än två webbläsare** (429 och Cloudflares "Just a moment"): kör högst två
+  `kund.mjs` samtidigt och aldrig matrisen bredvid.
 
 ## Lärdomar (mätta)
 
