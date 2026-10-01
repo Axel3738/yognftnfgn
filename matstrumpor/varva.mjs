@@ -41,6 +41,7 @@ export const MINNESFIL = join(MAPP, 'krediterat.jsonl');
 export const SPRAKFIL = join(MAPP, 'sprak.json');
 export const TEMASKRIPT_KALLA = join(MAPP, 'ms-varva.js');
 export const KORTDATA = join(MAPP, 'app', 'extensions', 'varva-kort', 'src', 'data.js');
+export const KORTTEXTER = join(MAPP, 'app', 'extensions', 'varva-kort', 'src', 'texter.js');
 export const KORTSPRAK = join(MAPP, 'app', 'extensions', 'varva-kort', 'locales');
 export const KORTNYCKLAR = ['rubrik', 'text', 'lank', 'kopiera', 'kopierad', 'villkor'];
 export const BUTIK_ID = 'matstrumpor';
@@ -177,6 +178,15 @@ export function byggData(konfig) {
 
 export function kortdataJs(data) {
   return `// GENERERAD av \`node matstrumpor/varva.mjs --bygg\` ur matstrumpor/varva/konfig.json — ändra aldrig här.\nexport const DATA = ${JSON.stringify(data, null, 2)};\n`;
+}
+
+/** Kortets texter som JS: reserven när i18n.translate inte svarar (kundkontots
+ *  orderstatussida, där Shopify skriver att i18n-hjälparna kan saknas). Samma
+ *  nycklar som språkfilerna, ur samma sprak.json (ren). */
+export function korttexterJs(sprak) {
+  const t = {};
+  for (const [kod, rad] of Object.entries(sprak)) t[kod] = Object.fromEntries(KORTNYCKLAR.map((n) => [n, rad[n]]));
+  return `// GENERERAD av \`node matstrumpor/varva.mjs --bygg\` ur matstrumpor/varva/sprak.json — ändra aldrig här.\nexport const TEXTER = ${JSON.stringify(t, null, 2)};\n`;
 }
 
 /** Kortets språkfiler ur sprak.json: { 'sv.default.json': {...}, 'nb.json': {...} } (ren). */
@@ -577,6 +587,7 @@ async function main() {
     if (utanText.length) throw new Error(`sprak.json saknar ${utanText.join(', ')} — kortet hade visat nycklar i stället för text.`);
     mkdirSync(dirname(KORTDATA), { recursive: true });
     writeFileSync(KORTDATA, kortdataJs(data));
+    writeFileSync(KORTTEXTER, korttexterJs(sprak));
     mkdirSync(KORTSPRAK, { recursive: true });
     const filer = kortSprakfiler(sprak);
     for (const [namn, innehall] of Object.entries(filer)) writeFileSync(join(KORTSPRAK, namn), JSON.stringify(innehall, null, 2) + '\n');
