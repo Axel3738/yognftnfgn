@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:02,571
+Dette er et must for grillen som står ute.
+
+2
+00:00:02,821 --> 00:00:04,421
+Har du en kamadogrill hjemme?
+
+3
+00:00:04,671 --> 00:00:08,336
+Dette er et enkelt trekk for deg som har grillen stående utendørs.
+
+4
+00:00:08,586 --> 00:00:10,877
+Dra trekket over når grillingen er ferdig.
+
+5
+00:00:11,127 --> 00:00:13,900
+Spenn fast remmene og la trekket gjøre jobben.
+
+6
+00:00:14,150 --> 00:00:17,472
+En enkel detalj som holder regnet unna lokket og ventilen.
