@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 1/61 (2 %) (etikett.mjs --frekvens 2026-09-30)
+Breakthrough-frekvens: 1/63 (2 %) (etikett.mjs --frekvens 2026-10-01)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -568,3 +568,57 @@ Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna förs
 | Takoverdrag_CO_5_H1 | 3 | **KPI_WINNER** | 1 % | 482 kr | 2 | 5,30 / 2,18 | 33 % / 8 % | nej |
 | Takoverdrag_CS_9_H1 | 2 | **LOSER** | 1 % | 452 kr | 0 | 0,00 / 2,18 | 25 % / 9 % | nej |
 | Takoverdrag_OB_4_H1 | 4 | **LOSER** | 1 % | 446 kr | 0 | 0,00 / 2,18 | 30 % / 10 % | nej |
+
+## Batch #8 — 2026-10-01 (`/rond-auto` steg 4b, 3-dagarsrundan efter batch #7)
+
+**Läget (avläst 2026-10-01 morgon):** kampanjen ACTIVE, budgeten höjd till 9 600 kr/dag (SKALA) — under funnelgränsen 10 000, så invändningsmatrisen är en varning, inte spärr (6 rader lästa, inga tomma rutor stoppade). Behovsraden: "3 dagar sedan senaste batchen — dags för 3-dagarsrundan (8 annonser; budgeten hade gett 8, lärdomarna sedan förra batchen 36 + 5 namngivna: PD_10_2, PD_10_3, RI_2_H2, RI_3_H2, RI_3_H3). Mix 80 % vidarebyggen / 20 % nya vinklar (levande breakthrough SP_4_H1 — dess tre iterationer SP_4_H2/H3/H4 finns redan)." Priset läst live 2026-10-01 08:08 CEST: 1 129 / 1 469 kr (3 × 5,5 och 3 × 6,5 m), oförändrat. **Brief review 2026-09-29** (Feedback-raden i hubben, skapad 05:30 i dag) läst före skrivandet och tillämpad i varje brief: (1) ett break-even — cite 693 kr tills ägaren bestämt, härled aldrig ett nytt; (2) aldrig "vattentät" som blankt ord; (3) FD-marknadsraden "Sweden and Norway only; never US, GB, CA or DK". Annonsidéer: 1 rad Ny (2026-09-27, AI-avatarer/amerikaner) — byggd som `Takoverdrag_TR_4_H1`.
+
+**Rundan blev 7, inte 8 — med flit.** De fem namngivna platserna togs exakt som lärdomarna föreskriver. CO_5_H1 (KPI_WINNER under grinden, lärdom: SLÄPP tills dag 14) och PD_10_H1 (LOSER, lärdom: SLÄPP) ger ingen åttonde plats. Lärdomen för `OB_5_1` (KPI_WINNER, etikett i morse, L-120250356982310291) namnger `OB_5_2/3/4` — alla statiska, och rundan får högst två statiska; de två gick till PD_10_2/PD_10_3 (huvudsessionens strategi). OB_5_2–4 står i backlog.md och tas nästa runda (platserna lever kvar i lärdomen, gratis mot taket). Hellre 7 med tanke än 8 utan.
+
+### Batch #8 — 5 video + 2 bild, alla i Notion som Draft (BÄVER Taköverdraget för Husvagn, `7ec270ab…`)
+
+| Annons | Typ | Parent / källa | Isolerad variabel | Hookrad | Lärdom | Notion | rev | brief → live |
+|---|---|---|---|---|---|---|---|---|
+| `Takoverdrag_PD_10_2` | I (bild) | PD_10_1 (KPI_WINNER 29/9, 17 köp, CPA 473) | bara rubriken: mekanismen först, storlekarna som underrad | "Sitter kvar när det blåser. Nio storlekar." | L-120250330247960291 | `3ec270ab908c81a99373e5ef4112ad5c` | okänd | okänd |
+| `Takoverdrag_PD_10_3` | I (bild) | PD_10_1 | bara rubriken: måttet på den egna vagnen, sidans mätregel som underrad | "3 × 5,5 till 3 × 13,5 meter. En passar din." | L-120250330247960291 | `3ec270ab908c81809c04eccb76a86307` | okänd | okänd |
+| `Takoverdrag_RI_2_H2` | I (video 15 s) | RI_2_H1 (KPI_WINNER, 5 köp, hook 46 %) | hooken: presenningen som spricker VISAD (stock Pexels, fallback före/efter-bilden); recensionsraden borta | "Frostig presenning i gryningen. Hörnet knäcker i handen." | L-120250330348390291 | `3ec270ab908c8187b0f7dd78bdd3d8cc` | okänd | okänd |
+| `Takoverdrag_RI_3_H2` | I (video 20 s) | RI_3_H1 (KPI_WINNER prel., 4 köp, hook 34 %) | hooken: taket rakt uppifrån med stående vatten vid luckan (NEW FOOTAGE, fallback); förälderns två rader ordagrant (20 + 18 ord ⇒ 7 + 6 s) | "Takluckan står i vatten. Från marken syns det inte." | L-120250330352260291 | `3ec270ab908c8169acc2d51688e66ed3` | okänd | okänd |
+| `Takoverdrag_RI_3_H3` | I (video 23 s) | RI_3_H1 | längre problemdel: två rader 4–5 s ur sidans text (tätmassan mjuknar, "då är det en reparation"), ingen kronsiffra | förälderns hook ordagrant | L-120250330352260291 | `3ec270ab908c815e85aadaf7ffeb9408` | okänd | okänd |
+| `Takoverdrag_TR_4_H1` | N (video 22 s, AI-avatar) | **Axels annonsidé 2026-09-27** (kalla=axel), lärdomen SP_4_H1:s | ny vinkel: en HeyGen-presentatör från vårt klimat (höstregn, blötsnö, nätter under noll) + sidans svar i produktfilm; US VERSION-block (amerikansk avatar, görs om direkt i HeyGen, $199/$249 läst live) | "Regn på hösten, blötsnö, nätter under noll. Allt landar på taket." | L-120250242482300291 | `3ec270ab908c8121ab4dca3220c5b6e2` | okänd | okänd |
+| `Takoverdrag_TR_5_H1` | N (video 18 s) | kundrösten (kalla=voc, lead VOC-122187148058859973_1085107617595243: "samma som på marknadsplatsen?"), lärdomen SP_4_H1:s | ny vinkel: materialet och remmarna i närbild som hela argumentet, ingen konkurrent namngiven | "Lika på bild. Olika i handen: 210D-väv." | L-120250242482300291 | `3ec270ab908c81c18a15f3575cf84026` | okänd | okänd |
+
+**Avataren i TR_4 presenterar, påstår aldrig eget köp eller egen vinter** — en påhittad personlig historia är en påhittad recension (CLAUDE.md regel 3). Axels ord var "någon här i vårt klimat som har använt dem"; briefen svarar med klimatet i klartext + sidans FAQ "från höst till vår" + produktfilm, och säger det rakt ut i Why. Vill Axel ha ett ägarpåstående i avatarens mun är det hans beslut.
+
+**Spärren** (`briefgranskning.mjs --manifest`, main-worktree 35c42205 — `/tmp/main-sparr` var låst av en annan session med halv utcheckning, så en egen worktree i scratchpad): första körningen 7/7 ✅ (regi 4/4, 4/4, 5/5, 6/6, 5/5), exit 0; en anmärkning kvar ("Isolated variable … may name more than one variable" på PD_10_3 — verktyget läser kolon/semikolon som flera variabler, samma som omgång 4), inga fel. **`lardom.mjs --brief`** (`--befintliga` 106 namn = hubben 90 + kontot 94 + batch-loggen 102, union; `--budget 9600`): "Briefkvot: 38 fria platser kvar av 38 + 8 namngivna i lärdomarna (PD_10_2, PD_10_3, RI_2_H2, RI_3_H2, RI_3_H3, OB_5_2, OB_5_3, OB_5_4)"; 7 ✅, iterationsnumren ur loggen (PD_10 1/2, RI_2 1, RI_3 1/2, TR_4 1, TR_5 1), **7 BRIEF-rader skrivna**. **Notion** (`tools/notion-brief-upp.mjs`, REST): 7 rader skapade och tillbakalästa block för block (42–54 block var); kontroll via databases-query: 14 rader skapade 2026-10-01 med Status Draft, 8 Video + 6 Image (inkl. FD-blocket), Landing page ifylld; `Takoverdrag_TR_4_H1` öppnad: Hook, tre-frågorstabellen, shot list (4 kol), regitabellen (10 kol), US VERSION-tabellen, Rules och COPY CARD ligger som riktiga Notion-tabeller.
+
+**Copy:** sonnet via `claude -p --model sonnet` (Agent-verktyget fanns inte i sessionen; CLI-subagenten är samma modell och samma arbetsdelning), 75 testade rader, 0 ❌; sonnets tre varningar (förälderraderna i RI_3 över tre ord/sekund) löstes med längre tidsrutor, inte omskrivning; huvudsessionens sex småändringar står överst i `batch-08/copy-sonnet.md`. Butiksneutralt (speglas till CaraShell): inget butiksnamn, ingen frakt/Klarna/öppet köp/leveranstid/"14 dagar", inga recensioner, inga tankstreck i svenska rader, inga andra siffror än sidans. **Ingen annons lovar torrt tak** (leads.md 2026-09-28: Axel har bekräftat fuktfrågan, distansprodukt på väg).
+
+**Ingen Drive-mapp** (som batch #5–7): hela briefen ligger i Notion-raden. **Filer:** `batch-08/manifest.json`, `manifest-fd.json`, `regi.json`, `copy-sonnet.md`, `befintliga.json`, `notion-rader.json`, `video-ads-briefs/*/brief.md`, `image-ads-briefs/*/brief.md`.
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. PD_10_2 mot PD_10_3 mot PD_10_1 = rubriken på samma pixlar; RI_2_H2 mot RI_2_H1 = hook rate (46 % att slå); RI_3_H2 mot RI_3_H3 mot RI_3_H1 = hook (34 %) resp. hold (8 %); TR_4/TR_5 = får TR-vinkeln någonsin spend (TR_1–3 dog under grinden). Etikett dag 7, lärdom, sedan dna.md.
+
+## Fars dag omgång 5 — batch #8:s FD-block (2026-10-01, stående regel ur `agent/farsdag.json`)
+
+Invändningen i den här omgången: **"pappa har redan ett helöverdrag"** — en annan än omgång 4:s "finns den för min husvagn?" (FD_3/FD_4, förälder GT_2_H1). Svaret är sidans jämförelsetabell (får på det ensam / rör inte lacken / dörr, fönster och luckor fria / famnstor packe). Förälder: breakthrough `Takoverdrag_SP_4_H1` (L-120250242482300291) — dess första bild bevisar "ensam". Marknadsraden: "Sweden and Norway only; never US, GB, CA or DK" (Brief review 2026-09-29, regel 3). Rean = sidans pris mot jämförpris, "Beställ senast 19 oktober". Copy av sonnet mot GEMENSAMT + BOF-GEMENSAMT (28 testade rader, 0 ❌; FD_6-underraderna upprepar aldrig "Fars dag-rea" — granskningens anmärkning på FD_4_2). Spärren 7/7 ✅, regi 4/4 på alla tre videor, 0 fel. FD-raderna går INTE genom `lardom.mjs --brief` (fria mot taket, som omgång 4) — loggkoden `FARSDAG_BATCH_KLAR` skrivs av huvudsessionen.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Takoverdrag_FD_5_H1 | video 13 s, BOF-omklipp (freeze) | Han står ensam på stegen. Helöverdraget behöver oftast två. | https://www.notion.so/3ec270ab908c8170871cdd92c4696c17 |
+| Takoverdrag_FD_5_H2 | video 13 s, BOF-omklipp (cut-in) | Från 1 129 kr, ord. 1 469 kr. Taköverdraget. | https://www.notion.so/3ec270ab908c81428b10ced003410e73 |
+| Takoverdrag_FD_5_H3 | video 13 s, BOF-omklipp (zoom-in) | Beställ senast 19 oktober. Fars dag: taköverdraget hakas fast. | https://www.notion.so/3ec270ab908c8159bcc9d0a11d9a6f0e |
+| Takoverdrag_FD_6_1 | bild, BOF (invändningen) | Helöverdrag behöver oftast två. Taket klarar han ensam. | https://www.notion.so/3ec270ab908c81f99892f8c18566d9d4 |
+| Takoverdrag_FD_6_2 | bild, BOF (priset först) | Från 1 129 kr, inte 1 469 kr. | https://www.notion.so/3ec270ab908c815ca3f1ee26a8d6a480 |
+| Takoverdrag_FD_6_3 | bild, BOF (sista dagen) | Till fars dag: beställ senast 19 oktober. | https://www.notion.so/3ec270ab908c81929167c1437c0e7186 |
+| Takoverdrag_FD_6_4 | bild, BOF (vad han får) | Dörr, fönster och luckor är fria. | https://www.notion.so/3ec270ab908c81958c6edd9953b07705 |
+
+Rad 2–4 gemensamma: "En person hakar remmen. Det rör inte lacken." / "Kanten hänger 30 till 40 cm. Dörr, fönster fria." / "Fars dag-rea: från 1 129 kr, ord. 1 469 kr." (deadline på slutkortet). Samma foto (grusplanen) som FD_4_1–4, så omgång 4 mot 5 läses på textrutan ensam. Mätning: H1/H2/H3 = öppningen den produktmedvetna behöver; FD_6_1–4 mot varandra = budskapet; omgång 5 mot omgång 4 = invändningen (helöverdrag mot passform).
+
+
+## Etiketter dag 7 (2026-10-01) — Taköverdraget för Husvagn 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/63 (2 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_OB_5_1 | 4 | **KPI_WINNER** | 4 % | 2 936 kr | 7 | 2,96 / 2,37 | — | ja |
+| Takoverdrag_UG_2_H1 | 2 | **LOSER** | 0 % | 128 kr | 0 | 0,00 / 2,37 | 20 % / 6 % | nej |

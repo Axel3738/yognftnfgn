@@ -22,6 +22,22 @@ Koncept som väntar, ännu inte briefade. Skapad 2026-09-14.
 
 ## Väntande idéer
 
+- **`Takoverdrag_OB_5_2`, `OB_5_3`, `OB_5_4` — namngivna platser ur lärdomen
+  L-120250356982310291 (OB_5_1 KPI_WINNER, etikett 2026-10-01), inte byggda i
+  batch #8.** Alla tre är statiska (samma bild, ny rubrik), och rundan får högst
+  två statiska — de två gick till PD_10_2/PD_10_3 enligt huvudsessionens strategi
+  2026-10-01. Platserna lever kvar i lärdomen och är gratis mot taket: ta dem i
+  nästa runda. OB_5_4 kräver copy av sonnet mot kommentarsklustret om fukt och
+  får aldrig lova torrt tak. *Källa: lardomar.md → OB_5_1.*
+- **Avatarvideon i USA med amerikansk avatar (Axels idé 2026-09-27).** Den svenska
+  `Takoverdrag_TR_4_H1` (batch #8) bär ett US VERSION-block med engelskt manus;
+  när raden speglas till CaraShell görs den amerikanska versionen om direkt i
+  HeyGen (aldrig översatt). Faller TR_4 under grinden som TR_1–3: släpp TR-vinkeln
+  på produkten. *Källa: Annonsidéer 2026-09-27 + leads.md (klimat-/legit-frågorna i USA).*
+- **Materialet i handen som statisk.** Om `Takoverdrag_TR_5_H1` (batch #8, kalla=voc:
+  marknadsplatsjämförelsen) köper under 693 kr CPA: samma tre närbilder (väven,
+  spännet och kroken, de två förstärkta remmarna) som bild. *Källa: TR_5_H1:s Memo.*
+
 - **Vad kostar en takreparation på en husvagn, på riktigt?** Så fort siffran är
   belagd (verkstadsprislista, försäkringsbolag, skriftlig offert) blir
   prisankaret mycket vassare än 1 129 mot 1 469. **Ta den aldrig ur luften** —
