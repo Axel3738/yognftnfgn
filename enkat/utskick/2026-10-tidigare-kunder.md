@@ -50,3 +50,7 @@ Sidfoten och "Avregistrera dig" lägger Spoks till själv.
   studsande bortdragna). Kampanjtitel "Enkät tidigare kunder · fre 2/10 18:00". Testmejl till Axel
   kom fram och knappen öppnade enkäten på matstrumpor.se. Inget annat i Spoks ändrat.
 - Mät efteråt: svar med `Kanal: mejl` per 100 mottagare (2 649), skilt från `ob`.
+- **Ingen värdecheck, Axels beslut A 2026-10-01 kväll.** Han frågade om 100 kr till alla som
+  svarar ("vill du ha 100 kr gratis" i ämnesraden). Valen var A ingen, B överraskning på
+  tacksidan, C i ämnesraden. Skälen mot C: belöningen ger tomma svar för kodens skull, lockar
+  rabattjägare och en gemensam kod sprids. Mejlet och sidan står kvar som de är.
