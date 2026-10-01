@@ -244,5 +244,9 @@ test('färgnamnen: planen översätter bara etikettfältet, på alla åtta språ
   assert.equal(plan.length, 8);
   assert.deepEqual(plan.find((p) => p.locale === 'de'), { locale: 'de', key: 'label', value: 'Grün', translatableContentDigest: 'd1', kalla: 'Grön' });
   assert.ok(!plan.some((p) => p.locale === 'sv'));
-  assert.equal(planFor({ resourceId: 'y', translatableContent: [{ key: 'label', value: 'Orange', digest: 'd' }] }).length, 0);
+  assert.equal(planFor({ resourceId: 'y', translatableContent: [{ key: 'label', value: 'Turkos', digest: 'd' }] }).length, 0);
+  // Färger som redan heter engelska i Shopify får de sju andra språken, aldrig en engelsk rad.
+  const orange = planFor({ resourceId: 'z', translatableContent: [{ key: 'label', value: 'Orange', digest: 'd' }] });
+  assert.equal(orange.length, 7);
+  assert.ok(!orange.some((p) => p.locale === 'en'));
 });
