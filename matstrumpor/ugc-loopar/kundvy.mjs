@@ -2,8 +2,9 @@
 //
 //   node matstrumpor/ugc-loopar/kundvy.mjs [--bilder]
 //
-// Per vy: antal loopar, vilka (data-loop), Katarina-loopar (*_sv), Liquid-fel, bandets rubrik
-// och produktbeskrivningens videor. ⛔ En Katarina-loop utanför Sverige = exit 1.
+// Per vy: antal loopar, vilka (data-loop), Katarina-loopar (*_sv), Liquid-fel, toppbildens foto +
+// kort, bandets rubrik och produktbeskrivningens videor. ⛔ En Katarina-loop utanför Sverige, eller
+// bandet kvar i beskrivningen (borttaget 2026-10-01 kväll), = exit 1.
 // --bilder sparar skärmdumpar i output/kundvy/ (mobil 390 px). Chromium här spelar inte H.264,
 // så skärmdumparna visar loopens bildruta (postern), aldrig rörelsen.
 
@@ -46,28 +47,31 @@ async function main() {
       const loopar = [...document.querySelectorAll('video.ms-loop__v')].map((x) => x.dataset.loop);
       const beskr = document.querySelector('.product__description');
       const beskrVideor = beskr ? [...beskr.querySelectorAll('video source')].map((s) => s.src.split('/').pop()) : [];
-      const etiketter = beskr ? [...beskr.querySelectorAll('[data-t]')].map((d) => getComputedStyle(d, '::after').content) : [];
+      const kort = document.querySelector('.ms-loop-hero--mobil');
+      const kortRuta = kort ? kort.getBoundingClientRect() : null;
       return {
         lang: document.documentElement.lang,
         loopar,
         laddade: [...document.querySelectorAll('video.ms-loop__v')].filter((x) => x.getAttribute('src')).length,
         liquidFel: /Liquid (syntax )?error/i.test(document.body.innerText),
-        band: document.querySelector('.ms-loop-band__rubrik')?.innerText ?? null,
+        bandRubrik: document.querySelector('.ms-loop-band__rubrik')?.innerText ?? null,
         rubrikEm: document.querySelector('.ms-loop-wrapper .rich-text__heading em')?.innerText ?? null,
         grid: document.querySelector('.ms-loop-grid__rubrik')?.innerText ?? null,
         ai: /AI-gener|KI-gener|AI-generated/i.test(document.body.innerText),
         ezgif: !!document.querySelector('img[src*="ezgif"]'),
         beskrVideor: beskrVideor.length,
-        etiketter,
+        band: !!(beskr && beskr.querySelector('.ms-loop-mini')),
+        heroKort: kortRuta && getComputedStyle(kort).display !== 'none' ? `${Math.round(kortRuta.width)} px brett kort över fotot` : 'inget kort',
+        heroFoto: !!document.querySelector('.banner__media img'),
         meta: document.querySelector('meta[name="description"]')?.content?.slice(0, 90) ?? null,
       };
     });
     const katarina = m.loopar.filter((x) => x?.endsWith('_sv'));
     const brott = !v.sverige && katarina.length > 0;
-    if (brott || m.liquidFel) fel += 1;
+    if (brott || m.liquidFel || m.band) fel += 1;
     console.log(`${v.namn} (${m.lang}): ${m.loopar.length} loopar [${m.loopar.join(', ')}], ${m.laddade} laddade vid start${katarina.length ? `, Katarina ${katarina.length}` : ''}${brott ? ' ⛔ KATARINA UTANFÖR SVERIGE' : ''}${m.liquidFel ? ' ⛔ LIQUID-FEL' : ''}`);
-    if (v.sida === 'start') console.log(`   band: "${m.band}" · rubrikens orange del: "${m.rubrikEm}" · rutnät: "${m.grid}" · AI-raden kvar: ${m.ai ? 'ja' : 'nej'}`);
-    if (v.sida === 'produkt') console.log(`   beskrivningen: ${m.beskrVideor} videor, etiketter ${m.etiketter.join(' ')}, ezgif kvar: ${m.ezgif ? 'JA' : 'nej'} · meta: "${m.meta}"`);
+    if (v.sida === 'start') console.log(`   toppbilden: foto ${m.heroFoto ? 'kvar' : 'SAKNAS'}, ${m.heroKort} · band: "${m.bandRubrik}" · rubrikens orange del: "${m.rubrikEm}" · rutnät: "${m.grid}" · AI-raden kvar: ${m.ai ? 'ja' : 'nej'}`);
+    if (v.sida === 'produkt') console.log(`   beskrivningen: ${m.beskrVideor} videor, bandet kvar: ${m.band ? 'JA ⛔' : 'nej'}, ezgif kvar: ${m.ezgif ? 'JA' : 'nej'} · meta: "${m.meta}"`);
     if (bilder) await p.screenshot({ path: join(UT, `${v.namn}.png`), fullPage: true });
     await c.close();
   }

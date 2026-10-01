@@ -3,7 +3,8 @@
 //
 //   node matstrumpor/ugc-loopar/live.mjs --steg tema     [--skarpt]  # startsidan: förslag 1–4
 //   node matstrumpor/ugc-loopar/live.mjs --steg rubrik   [--skarpt]  # orange del i berättelsens rubrik, alla språk
-//   node matstrumpor/ugc-loopar/live.mjs --steg produkt  [--skarpt]  # produktbeskrivningen: förslag 5–6, alla språk
+//   node matstrumpor/ugc-loopar/live.mjs --steg produkt  [--skarpt]  # produktbeskrivningen: förslag 6, alla språk
+//                                                                     # (bandet, förslag 5, togs bort 2026-10-01 kväll)
 //   node matstrumpor/ugc-loopar/live.mjs --aterstall     [--skarpt]  # lägger tillbaka originalen ur backup/
 //
 // Utan --skarpt skrivs ingenting, skriptet säger bara vad som skulle ändras. Före första
@@ -25,12 +26,13 @@ export const MARK = 'ms-loopar';
 export const PRODUKT_HANDLE = 'sushi-strumpor';
 const SPRAK = () => JSON.parse(readFileSync(join(HAR, 'sprak.json'), 'utf8'));
 const FILER = () => JSON.parse(readFileSync(join(HAR, 'filer.json'), 'utf8'));
-const LOOPAR = ['avslojandet', 'rullen', 'uppackningen', 'ladan', 'soffan', 'strumpan_sv', 'reaktionen_sv', 'tamago_sv'];
+const LOOPAR = ['avslojandet', 'rullen', 'uppackningen', 'plocka', 'ladan', 'soffan', 'strumpan_sv', 'reaktionen_sv', 'tamago_sv'];
+/** Looparna i produktbeskrivningen, i ordning. */
+export const BESKRIVNINGENS_LOOPAR = ['uppackningen', 'avslojandet'];
 
 // ------------------------------------------------------------------ rena byggare
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
 
 /** case-grenarna i ms-loop.liquid: loopnamn → mp4 + jpg ur filer.json. */
 export function byggKallor(filer) {
@@ -145,15 +147,52 @@ export function accentRubrik(text, lok) {
   return text.replace(d, `<em>${d}</em>`);
 }
 
-/** Produktbeskrivningen: bandet överst, uppackningen i stället för leverantörens webp, avslöjandet efter "Ser ut som sushi". */
-export function byggBeskrivning(html, lok, sprak, filer) {
-  if (html.includes('ms-loop-mini')) return html;
+/** Tar bort elementet som börjar vid `start`, med allt inuti (räknar inre element av samma tagg). */
+function utanElement(html, start) {
+  const tagg = /^<(\w+)/.exec(html.slice(start))?.[1];
+  if (!tagg) throw new Error('inget element vid start.');
+  const re = new RegExp(`</?${tagg}\\b[^>]*>`, 'g');
+  re.lastIndex = start;
+  let djup = 0;
+  for (let m = re.exec(html); m; m = re.exec(html)) {
+    djup += m[0][1] === '/' ? -1 : 1;
+    if (djup === 0) {
+      const slut = re.lastIndex + (html[re.lastIndex] === '\n' ? 1 : 0);
+      return html.slice(0, start) + html.slice(slut);
+    }
+  }
+  throw new Error(`<${tagg}> vid ${start} stängs aldrig.`);
+}
+
+/** Bandet med tre små loopar överst (live 2026-10-01 kväll) bort — Axel: etiketterna krockade på mobilen. */
+export function utanBand(html) {
+  let ut = html.replace(/<style>\.ms-loop-mini[^<]*<\/style>\n?/g, '');
+  for (let i = ut.indexOf('<div class="ms-loop-mini"'); i >= 0; i = ut.indexOf('<div class="ms-loop-mini"')) ut = utanElement(ut, i);
+  return ut;
+}
+
+/** Loopnamnet ur en posteradress (ms-loop-uppackningen-v2.jpg → uppackningen). */
+export function loopUrPoster(url) {
+  const m = /\/ms-loop-([a-z-]+?)(?:-v\d+)?\.jpg/.exec(url);
+  return m ? m[1].replace(/-sv$/, '_sv') : null;
+}
+
+/** Byter varje loops poster och källa i beskrivningen mot filer.json:s (nya versioner av klippen). */
+export function nyaAdresser(html, filer) {
+  return html.replace(/<video\b[^>]*>[\s\S]*?<\/video>/g, (v) => {
+    const poster = /poster="([^"]*)"/.exec(v)?.[1];
+    const namn = poster && loopUrPoster(poster);
+    if (!namn) return v;
+    if (!filer[namn]?.mp4 || !filer[namn]?.jpg) throw new Error(`filer.json saknar ${namn}.`);
+    return v.replace(/poster="[^"]*"/, `poster="${filer[namn].jpg}"`).replace(/<source src="[^"]*"/, `<source src="${filer[namn].mp4}"`);
+  });
+}
+
+/** Produktbeskrivningen: uppackningen i stället för leverantörens webp, avslöjandet efter "Ser ut som sushi".
+ *  Bär beskrivningen redan looparna tas bandet bort och adresserna byts till filer.json:s. */
+export function byggBeskrivning(html, lok, filer) {
+  if (html.includes('ms-loop-beskr')) return nyaAdresser(utanBand(html), filer);
   const video = (n, stil, extra = '') => `<video autoplay muted loop playsinline preload="metadata" poster="${filer[n].jpg}" style="${stil}"${extra}><source src="${filer[n].mp4}" type="video/mp4"></video>`;
-  // Etiketten ritas av CSS ur data-t, inte som text: produkten har ingen egen SEO-beskrivning
-  // (mätt 2026-10-01), så Shopify tar meta- och delningstexten ur beskrivningens början, och
-  // strip_html tar bort <style> med innehåll. Annars hade texten börjat "Lådan Avslöjandet …".
-  const ruta = (n, text) => `<div data-t="${escAttr(text)}" style="flex:1 1 0;min-width:0;text-align:center">${video(n, 'display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:3px solid #dd821d;box-sizing:border-box', ' aria-hidden="true"')}</div>`;
-  const band = `<style>.ms-loop-mini [data-t]::after{content:attr(data-t);display:block;margin-top:6px;font-size:1.3rem;font-weight:700;line-height:1.3}</style>\n<div class="ms-loop-mini" style="display:flex;gap:8px;margin:0 0 20px">${ruta('ladan', sprak[lok]?.ladan ?? sprak.sv.ladan)}${ruta('avslojandet', sprak[lok]?.avslojandet ?? sprak.sv.avslojandet)}${ruta('uppackningen', sprak[lok]?.reaktionen ?? sprak.sv.reaktionen)}</div>\n`;
   const stor = 'display:block;width:100%;max-width:420px;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px';
   // 1. Leverantörens webp (15,7 MB, samma film som MatSokker har) → vår uppackning, med webp:ens alt-text.
   const webp = /<p>\s*<img[^>]*ezgif[^>]*>\s*<\/p>/;
@@ -168,7 +207,18 @@ export function byggBeskrivning(html, lok, sprak, filer) {
   if (slut < 0 || (h3[2] != null && slut > h3[2])) throw new Error(`${lok}: stycket efter andra rubriken hittas inte.`);
   const efter = slut + '</p>'.length;
   ut = ut.slice(0, efter) + `\n<div class="ms-loop-beskr" style="margin:14px 0 18px">${video('avslojandet', stor, ' aria-hidden="true"')}</div>` + ut.slice(efter);
-  return band + ut;
+  return ut;
+}
+
+/** Kontrollen efter skrivning: två loopar med filer.json:s adresser, inget band, ingen webp. */
+export function beskrivningsfel(html, filer) {
+  const fel = [];
+  const videor = (html.match(/<video\b/g) ?? []).length;
+  if (videor !== BESKRIVNINGENS_LOOPAR.length) fel.push(`${videor} videor`);
+  if (html.includes('ms-loop-mini')) fel.push('bandet kvar');
+  if (html.includes('ezgif')) fel.push('ezgif kvar');
+  for (const n of BESKRIVNINGENS_LOOPAR) if (!html.includes(filer[n].mp4) || !html.includes(filer[n].jpg)) fel.push(`${n} har inte filer.json:s adress`);
+  return fel;
 }
 
 // ------------------------------------------------------------------ butiken
@@ -294,7 +344,7 @@ async function stegProdukt(k, { skarpt }) {
   const p = await k.graphql(`{ productByHandle(handle: "${PRODUKT_HANDLE}") { id descriptionHtml seo { description } } }`);
   const prod = p.productByHandle;
   console.log(`Produkten ${PRODUKT_HANDLE}: SEO-beskrivning ${prod.seo?.description ? 'satt' : 'TOM (Shopify tar den ur beskrivningens text)'}`);
-  const nySv = byggBeskrivning(prod.descriptionHtml, 'sv', sprak, filer);
+  const nySv = byggBeskrivning(prod.descriptionHtml, 'sv', filer);
   console.log(`  sv: ${nySv === prod.descriptionHtml ? 'står redan rätt' : `ändras (${prod.descriptionHtml.length} → ${nySv.length} tecken)`}`);
   const lokaler = Object.keys(sprak).filter((l) => l !== 'sv');
   const nuTr = {};
@@ -302,7 +352,8 @@ async function stegProdukt(k, { skarpt }) {
     const r = await k.graphql(`query($id: ID!, $l: String!) { translatableResource(resourceId: $id) { translations(locale: $l) { key value outdated } } }`, { id: prod.id, l: lok });
     nuTr[lok] = r.translatableResource.translations.find((x) => x.key === 'body_html');
     if (!nuTr[lok]) throw new Error(`${lok}: produkten saknar översatt beskrivning.`);
-    byggBeskrivning(nuTr[lok].value, lok, sprak, filer); // kastar om strukturen inte stämmer — före första skrivningen
+    const ny = byggBeskrivning(nuTr[lok].value, lok, filer); // kastar om strukturen inte stämmer — före första skrivningen
+    console.log(`  ${lok}: ${ny === nuTr[lok].value ? 'står redan rätt' : `ändras (${nuTr[lok].value.length} → ${ny.length} tecken)`}`);
   }
   if (!skarpt) { console.log('  torrt: alla 14 språk går att bygga, inget skrivet (--skarpt skriver).'); return; }
   if (backupa('produkt-sv.html', prod.descriptionHtml)) console.log('  original sparat: backup/produkt-sv.html');
@@ -312,12 +363,12 @@ async function stegProdukt(k, { skarpt }) {
   }
   const las = await k.graphql(`query($id: ID!) { product(id: $id) { descriptionHtml } translatableResource(resourceId: $id) { translatableContent { key digest } } }`, { id: prod.id });
   const tillbaka = las.product.descriptionHtml;
-  const vRakna = (h) => (h.match(/<video/g) ?? []).length;
-  if (vRakna(tillbaka) !== 5 || !tillbaka.includes('ms-loop-mini') || tillbaka.includes('ezgif')) throw new Error(`sv lästes tillbaka med ${vRakna(tillbaka)} videor${tillbaka.includes('ezgif') ? ' och ezgif kvar' : ''}.`);
-  console.log(`  ✓ sv skriven och tillbakaläst: 5 videor, ingen ezgif${tillbaka === nySv ? '' : ' (Shopify har normaliserat HTML:en)'}`);
+  const svFel = beskrivningsfel(tillbaka, filer);
+  if (svFel.length) throw new Error(`sv lästes tillbaka med: ${svFel.join(', ')}.`);
+  console.log(`  ✓ sv skriven och tillbakaläst: ${BESKRIVNINGENS_LOOPAR.join(' + ')}, inget band, ingen ezgif${tillbaka === nySv ? '' : ' (Shopify har normaliserat HTML:en)'}`);
   const digest = las.translatableResource.translatableContent.find((c) => c.key === 'body_html').digest;
   for (const lok of lokaler) {
-    const ny = byggBeskrivning(nuTr[lok].value, lok, sprak, filer);
+    const ny = byggBeskrivning(nuTr[lok].value, lok, filer);
     let svar;
     for (let f = 0; f < 3; f += 1) {
       try {
@@ -329,9 +380,10 @@ async function stegProdukt(k, { skarpt }) {
     if (svar.translationsRegister?.userErrors?.length) throw new Error(`${lok}: ${svar.translationsRegister.userErrors[0].message}`);
     const r = await k.graphql(`query($id: ID!, $l: String!) { translatableResource(resourceId: $id) { translations(locale: $l) { key value outdated } } }`, { id: prod.id, l: lok });
     const b = r.translatableResource.translations.find((x) => x.key === 'body_html');
-    const etikett = `data-t="${escAttr(sprak[lok].ladan)}"`;
-    if (vRakna(b.value) !== 5 || b.value.includes('ezgif') || b.outdated || !b.value.includes(etikett)) throw new Error(`${lok}: lästes tillbaka med ${vRakna(b.value)} videor${b.outdated ? ', inaktuell' : ''}.`);
-    console.log(`  ✓ ${lok} registrerad och tillbakaläst (5 videor, "${sprak[lok].ladan}")`);
+    const fel = beskrivningsfel(b.value, filer);
+    if (b.outdated) fel.push('inaktuell');
+    if (fel.length) throw new Error(`${lok}: lästes tillbaka med: ${fel.join(', ')}.`);
+    console.log(`  ✓ ${lok} registrerad och tillbakaläst`);
   }
 }
 

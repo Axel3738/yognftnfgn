@@ -1,7 +1,8 @@
 {%- comment -%}
   ms-loopar: "Som de används" med riktiga loopar på startsidan (matstrumpor/ugc-loopar).
   Ersätter multicolumn-sektionen ugc_galleri (AI-illustrationerna), som står kvar avstängd i mallen.
-  Katarinas loopar (reaktionen_sv, tamago_sv) bara i Sverige; utomlands Avslöjandet och Lådan.
+  Katarinas loop (tamago_sv) bara i Sverige; utomlands Lådan. Reaktionen (Katarinas ansikte utan
+  produkt) ersattes 2026-10-01 av Första rullen — Axel: produkten ska synas mitt i bild.
 {%- endcomment -%}
 {{ 'ms-loopar.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'ms-loopar.js' | asset_url }}" defer="defer"></script>
@@ -17,11 +18,10 @@
     <div class="ms-loop-grid">
       <div class="ms-loop-kort">{% render 'ms-loop', loop: 'uppackningen' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'uppackningen' %}</span></div>
       <div class="ms-loop-kort">{% render 'ms-loop', loop: 'soffan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'myskvallen' %}</span></div>
+      <div class="ms-loop-kort">{% render 'ms-loop', loop: 'plocka' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'forsta' %}</span></div>
       {%- if ms_sverige -%}
-        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'reaktionen_sv', ersatt: 'avslojandet' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'reaktionen' %}</span></div>
         <div class="ms-loop-kort">{% render 'ms-loop', loop: 'tamago_sv', ersatt: 'ladan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'strumpan' %}</span></div>
       {%- else -%}
-        <div class="ms-loop-kort">{% render 'ms-loop', loop: 'avslojandet' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'avslojandet' %}</span></div>
         <div class="ms-loop-kort">{% render 'ms-loop', loop: 'ladan' %}<span class="ms-loop-grid__txt">{% render 'ms-loop-text', t: 'ladan' %}</span></div>
       {%- endif -%}
     </div>

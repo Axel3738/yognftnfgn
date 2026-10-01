@@ -2,7 +2,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { patchaBanner, patchaRichText, patchaIndex, accentRubrik, byggBeskrivning, byggTexter, byggKallor, ACCENT } from '../ugc-loopar/live.mjs';
+import { patchaBanner, patchaRichText, patchaIndex, accentRubrik, byggBeskrivning, byggTexter, byggKallor, ACCENT, utanBand, loopUrPoster, beskrivningsfel } from '../ugc-loopar/live.mjs';
+import { loopar, filnamnFor } from '../ugc-loopar/filer.mjs';
 
 const sprak = JSON.parse(readFileSync(new URL('../ugc-loopar/sprak.json', import.meta.url), 'utf8'));
 const filer = JSON.parse(readFileSync(new URL('../ugc-loopar/filer.json', import.meta.url), 'utf8'));
@@ -16,29 +17,65 @@ const BESKRIVNING = `<h3>Rubrik ett</h3>
 <h3>Det här får du</h3>
 <ul><li>5 par</li></ul>`;
 
-test('beskrivningen: band överst, leverantörens webp ersatt, avslöjandet efter andra rubrikens stycke', () => {
-  const ut = byggBeskrivning(BESKRIVNING, 'sv', sprak, filer);
-  assert.equal((ut.match(/<video/g) ?? []).length, 5);
+test('beskrivningen: leverantörens webp ersatt, avslöjandet efter andra rubrikens stycke, inget band', () => {
+  const ut = byggBeskrivning(BESKRIVNING, 'sv', filer);
+  assert.equal((ut.match(/<video/g) ?? []).length, 2);
   assert.ok(!ut.includes('ezgif'));
-  assert.ok(ut.startsWith('<style>'), 'bandet ligger först');
+  assert.ok(!ut.includes('ms-loop-mini'), 'bandet med tre små loopar är borttaget (Axel 2026-10-01)');
+  assert.ok(ut.startsWith('<h3>'), 'beskrivningen börjar med sin egen text igen');
   assert.ok(ut.includes('aria-label="Lådan öppnas"'), 'webp:ens alt-text följer med till videon');
   assert.ok(ut.indexOf(filer.avslojandet.mp4, ut.indexOf('Text två.')) > 0, 'avslöjandet efter stycket under andra rubriken');
-  assert.equal(byggBeskrivning(ut, 'sv', sprak, filer), ut, 'idempotent');
+  assert.deepEqual(beskrivningsfel(ut, filer), []);
+  assert.equal(byggBeskrivning(ut, 'sv', filer), ut, 'idempotent');
 });
 
-test('beskrivningen: etiketterna är data-t, aldrig text (meta-beskrivningen tas ur texten)', () => {
-  const ut = byggBeskrivning(BESKRIVNING, 'de', sprak, filer);
-  const text = ut.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, '');
-  assert.ok(!text.includes(sprak.de.ladan));
-  assert.ok(ut.includes(`data-t="${sprak.de.ladan}"`));
+// Så som den låg live 2026-10-01 kväll: bandet överst (Shopify radbryter mellan rutorna) och v1-adresserna.
+const GAMMAL = (lok) => `<style>.ms-loop-mini [data-t]::after{content:attr(data-t);display:block}</style>
+<div class="ms-loop-mini" style="display:flex;gap:8px">
+<div data-t="Lådan" style="flex:1 1 0"><video autoplay muted loop playsinline poster="https://cdn.shopify.com/s/files/1/x/files/ms-loop-ladan.jpg?v=1"><source src="https://cdn.shopify.com/videos/c/o/v/gammal1.mp4" type="video/mp4"></video></div>
+<div data-t="Avslöjandet" style="flex:1 1 0"><video autoplay muted loop playsinline poster="https://cdn.shopify.com/s/files/1/x/files/ms-loop-avslojandet.jpg?v=1"><source src="https://cdn.shopify.com/videos/c/o/v/gammal2.mp4" type="video/mp4"></video></div>
+<div data-t="Reaktionen" style="flex:1 1 0"><video autoplay muted loop playsinline poster="https://cdn.shopify.com/s/files/1/x/files/ms-loop-uppackningen.jpg?v=1"><source src="https://cdn.shopify.com/videos/c/o/v/gammal3.mp4" type="video/mp4"></video></div>
+</div>
+<h3>Rubrik ett</h3>
+<p>Text ett.</p>
+<div class="ms-loop-beskr" style="margin:14px 0 18px"><video autoplay muted loop playsinline poster="https://cdn.shopify.com/s/files/1/x/files/ms-loop-uppackningen.jpg?v=1" aria-label="${lok}"><source src="https://cdn.shopify.com/videos/c/o/v/gammal3.mp4" type="video/mp4"></video></div>
+<h3>Ser ut som sushi. Är strumpor.</h3>
+<p>Text två.</p>
+<div class="ms-loop-beskr" style="margin:14px 0 18px"><video autoplay muted loop playsinline poster="https://cdn.shopify.com/s/files/1/x/files/ms-loop-avslojandet.jpg?v=1"><source src="https://cdn.shopify.com/videos/c/o/v/gammal2.mp4" type="video/mp4"></video></div>
+<h3>Det här får du</h3>`;
+
+test('beskrivningen som redan är live: bandet bort, looparna får filer.json:s adresser, texten orörd', () => {
+  const ut = byggBeskrivning(GAMMAL('Lådan öppnas'), 'sv', filer);
+  assert.ok(!ut.includes('ms-loop-mini') && !ut.includes('data-t='));
+  assert.ok(!/gammal\d/.test(ut), 'inga gamla videoadresser kvar');
+  assert.deepEqual(beskrivningsfel(ut, filer), []);
+  assert.ok(ut.startsWith('<h3>Rubrik ett</h3>'));
+  assert.ok(ut.includes('aria-label="Lådan öppnas"'));
+  assert.equal(utanBand(ut), ut);
+  assert.equal(byggBeskrivning(ut, 'sv', filer), ut, 'idempotent');
+});
+
+test('posterns filnamn ger loopen, med eller utan version', () => {
+  assert.equal(loopUrPoster('https://cdn.shopify.com/s/files/1/x/files/ms-loop-uppackningen-v2.jpg?v=9'), 'uppackningen');
+  assert.equal(loopUrPoster('https://cdn.shopify.com/s/files/1/x/files/ms-loop-strumpan-sv.jpg?v=9'), 'strumpan_sv');
+  assert.equal(loopUrPoster('https://cdn.shopify.com/s/files/1/x/files/annat.jpg'), null);
 });
 
 test('beskrivningen: Katarina finns aldrig i produktbeskrivningen (den går inte att villkora på land)', () => {
-  for (const l of Object.keys(sprak)) assert.ok(!/_sv|strumpan-sv|reaktionen-sv|tamago-sv/.test(byggBeskrivning(BESKRIVNING, l, sprak, filer)));
+  for (const html of [BESKRIVNING, GAMMAL('x')]) assert.ok(!/_sv|-sv\.|strumpan|reaktionen-sv|tamago/.test(byggBeskrivning(html, 'sv', filer)));
+});
+
+test('loopar.txt: nio kolumner, version ≥ 1, och filnamnet bär versionen från 2', () => {
+  const l = loopar();
+  assert.ok(l.some((x) => x.namn === 'plocka'));
+  for (const x of l) assert.equal(filer[x.namn]?.v ?? 1, x.v, `filer.json bär inte ${x.namn} v${x.v} — kör filer.mjs --skarpt`);
+  assert.equal(filnamnFor('uppackningen', 1, 'mp4'), 'ms-loop-uppackningen.mp4');
+  assert.equal(filnamnFor('strumpan_sv', 2, 'jpg'), 'ms-loop-strumpan-sv-v2.jpg');
+  assert.throws(() => loopar('rullen nathalie 0 2 0 0 720 2.0'), /nio kolumner/);
 });
 
 test('beskrivningen: stoppar hellre än att gissa när strukturen inte stämmer', () => {
-  assert.throws(() => byggBeskrivning('<h3>A</h3><p>x</p>', 'sv', sprak, filer), /ezgif/);
+  assert.throws(() => byggBeskrivning('<h3>A</h3><p>x</p>', 'sv', filer), /ezgif/);
 });
 
 test('ms-loop.liquid: en *_sv-loop byts utanför Sverige', () => {
@@ -80,5 +117,5 @@ test('texterna och källorna byggs för alla loopar och språk', () => {
   const t = byggTexter(sprak);
   for (const l of Object.keys(sprak).filter((x) => x !== 'sv')) assert.ok(t.includes(`{%- when '${l}' -%}`));
   const k = byggKallor(filer);
-  for (const n of ['avslojandet', 'rullen', 'uppackningen', 'ladan', 'soffan', 'strumpan_sv', 'reaktionen_sv', 'tamago_sv']) assert.ok(k.includes(`when '${n}'`));
+  for (const n of ['avslojandet', 'rullen', 'uppackningen', 'plocka', 'ladan', 'soffan', 'strumpan_sv', 'reaktionen_sv', 'tamago_sv']) assert.ok(k.includes(`when '${n}'`));
 });

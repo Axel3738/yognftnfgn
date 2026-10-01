@@ -1,0 +1,9 @@
+# källa  typ  id  vad
+# meta  = video-id i kontot "nya kungen" (GET /<id>?fields=source, META_ACCESS_TOKEN), 720 × 1280
+# drive = Drive-fil-id, länkdelad av redigeraren (drive.usercontent.google.com), 1080 × 1920
+sofie_h1 meta 2577232842703704 Sofie H1 Sushi.mp4
+sofie_h2 meta 28225249640488512 Sofie H2 Julsushi.mp4
+nathalie meta 1531210268763716 Nathalie UGC musik.mp4 (09-17 Nathalie captions musik)
+katarina_unge meta 1626879769030756 Sushigalen ungen.mp4
+katarina_alskaren meta 1707631337001126 Sushiälskaren i ditt liv.mp4
+n056 drive 1l2NjrBz5TwrLW5RDFEgajQRKplowtoYy MATSTRUMP_sushi_gift_ugc_056_v1_H1.mov (Nathalies råfil, ny klippning 2026-10-01, Notion-raden 056)

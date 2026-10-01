@@ -19,9 +19,20 @@ export const FILER_JSON = join(HAR, 'filer.json');
 const LOOPMAPP = join(HAR, 'output', 'loopar');
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Loopnamnen ur loopar.txt. */
-export function loopnamn() {
-  return readFileSync(join(HAR, 'loopar.txt'), 'utf8').split('\n').filter((r) => r.trim() && !r.startsWith('#')).map((r) => r.trim().split(/\s+/)[0]);
+/** Looparna ur loopar.txt: namn + version (kolumn 8). */
+export function loopar(text = readFileSync(join(HAR, 'loopar.txt'), 'utf8')) {
+  return text.split('\n').filter((r) => r.trim() && !r.startsWith('#')).map((r) => {
+    const k = r.trim().split(/\s+/);
+    const v = Number(k[7]);
+    if (k.length !== 9 || !Number.isInteger(v) || v < 1) throw new Error(`loopar.txt: raden "${r.trim()}" har inte nio kolumner med en version ≥ 1.`);
+    return { namn: k[0], v };
+  });
+}
+export const loopnamn = () => loopar().map((l) => l.namn);
+
+/** Filnamnet i filarkivet: version 1 utan suffix (de första uppladdningarna), sedan -v2, -v3 … */
+export function filnamnFor(namn, v, ext) {
+  return `ms-loop-${namn.replace(/_/g, '-')}${v > 1 ? `-v${v}` : ''}.${ext}`;
 }
 
 export async function klientFor() {
@@ -70,9 +81,9 @@ async function vanta(k, id, namn) {
   throw new Error(`${namn} blev aldrig READY.`);
 }
 
-async function laddaUpp(k, namn, typ) {
+async function laddaUpp(k, namn, v, typ) {
   const sokvag = join(LOOPMAPP, `${namn}.${typ === 'VIDEO' ? 'mp4' : 'jpg'}`);
-  const filnamn = `ms-loop-${namn.replace(/_/g, '-')}.${typ === 'VIDEO' ? 'mp4' : 'jpg'}`;
+  const filnamn = filnamnFor(namn, v, typ === 'VIDEO' ? 'mp4' : 'jpg');
   if (!existsSync(sokvag)) throw new Error(`${sokvag} saknas — kör klipp.sh först.`);
   const mime = typ === 'VIDEO' ? 'video/mp4' : 'image/jpeg';
   const kalla = await staged(k, sokvag, filnamn, mime, typ);
@@ -97,19 +108,21 @@ async function main() {
   const finns = await befintliga(k);
   const tidigare = existsSync(FILER_JSON) ? JSON.parse(readFileSync(FILER_JSON, 'utf8')) : {};
   const ut = { _om: 'Looparnas adresser i Matstrumpors filarkiv (matstrumpor/ugc-loopar/filer.mjs). mp4 = originalet, jpg = bildrutan (poster).', ...tidigare };
-  for (const namn of loopnamn()) {
-    const post = ut[namn] ?? {};
+  for (const { namn, v } of loopar()) {
+    // Ny version ⇒ nya filer: adresserna till den gamla versionen gäller inte längre.
+    const post = (ut[namn]?.v ?? 1) === v ? (ut[namn] ?? {}) : {};
+    post.v = v;
     for (const typ of ['VIDEO', 'IMAGE']) {
       const nyckel = typ === 'VIDEO' ? 'mp4' : 'jpg';
-      const filnamn = `ms-loop-${namn.replace(/_/g, '-')}.${nyckel}`;
+      const filnamn = filnamnFor(namn, v, nyckel);
       if (post[nyckel] && finns[filnamn]) { console.log(`  ${filnamn}: finns`); continue; }
       if (finns[filnamn]) { post[nyckel] = finns[filnamn].url; console.log(`  ${filnamn}: finns i filarkivet`); continue; }
       if (!skarpt) { console.log(`  ${filnamn}: saknas (torrt, laddas upp med --skarpt)`); continue; }
-      const r = await laddaUpp(k, namn, typ);
+      const r = await laddaUpp(k, namn, v, typ);
       post[nyckel] = r.url;
       console.log(`  ✓ ${filnamn} → ${r.url}`);
     }
-    ut[namn] = post;
+    ut[namn] = { v, mp4: post.mp4, jpg: post.jpg };
   }
   if (skarpt) {
     writeFileSync(FILER_JSON, JSON.stringify(ut, null, 2) + '\n');

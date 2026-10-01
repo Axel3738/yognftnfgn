@@ -7,6 +7,7 @@
   "myskvallen": "Myskvällen",
   "skrattet": "Skrattet",
   "reaktionen": "Reaktionen",
+  "forsta": "Första rullen",
   "strumpan": "Strumpan",
   "somdeanvands": "Som de används"
  },
@@ -18,6 +19,7 @@
   "myskvallen": "Kosekveld",
   "skrattet": "Latteren",
   "reaktionen": "Reaksjonen",
+  "forsta": "Den første rullen",
   "somdeanvands": "Slik de brukes"
  },
  "da": {
@@ -28,6 +30,7 @@
   "myskvallen": "Hyggeaften",
   "skrattet": "Latteren",
   "reaktionen": "Reaktionen",
+  "forsta": "Den første rulle",
   "somdeanvands": "Sådan bruges de"
  },
  "fi": {
@@ -38,6 +41,7 @@
   "myskvallen": "Kotoisa ilta",
   "skrattet": "Nauru",
   "reaktionen": "Reaktio",
+  "forsta": "Ensimmäinen rulla",
   "somdeanvands": "Näin niitä käytetään"
  },
  "en": {
@@ -48,6 +52,7 @@
   "myskvallen": "Cozy night in",
   "skrattet": "The laugh",
   "reaktionen": "The reaction",
+  "forsta": "The first roll",
   "somdeanvands": "How they're worn"
  },
  "de": {
@@ -58,6 +63,7 @@
   "myskvallen": "Gemütlicher Abend",
   "skrattet": "Das Lachen",
   "reaktionen": "Die Reaktion",
+  "forsta": "Die erste Rolle",
   "somdeanvands": "So werden sie getragen"
  },
  "fr": {
@@ -68,6 +74,7 @@
   "myskvallen": "Soirée cocooning",
   "skrattet": "Le rire",
   "reaktionen": "La réaction",
+  "forsta": "Le premier rouleau",
   "somdeanvands": "Comme on les porte"
  },
  "nl": {
@@ -78,6 +85,7 @@
   "myskvallen": "Gezellige avond",
   "skrattet": "De lach",
   "reaktionen": "De reactie",
+  "forsta": "De eerste rol",
   "somdeanvands": "Zo worden ze gedragen"
  },
  "es": {
@@ -88,6 +96,7 @@
   "myskvallen": "Noche de sofá",
   "skrattet": "La risa",
   "reaktionen": "La reacción",
+  "forsta": "El primer rollito",
   "somdeanvands": "Así los llevan"
  },
  "it": {
@@ -98,6 +107,7 @@
   "myskvallen": "Serata sul divano",
   "skrattet": "La risata",
   "reaktionen": "La reazione",
+  "forsta": "Il primo rotolo",
   "somdeanvands": "Come si indossano"
  },
  "pl": {
@@ -108,6 +118,7 @@
   "myskvallen": "Wieczór na kanapie",
   "skrattet": "Śmiech",
   "reaktionen": "Reakcja",
+  "forsta": "Pierwsza rolka",
   "somdeanvands": "Tak się je nosi"
  },
  "pt-PT": {
@@ -118,6 +129,7 @@
   "myskvallen": "Noite no sofá",
   "skrattet": "O riso",
   "reaktionen": "A reação",
+  "forsta": "O primeiro rolinho",
   "somdeanvands": "Como se usam"
  },
  "ja": {
@@ -128,6 +140,7 @@
   "myskvallen": "夜のおうち時間",
   "skrattet": "笑い",
   "reaktionen": "リアクション",
+  "forsta": "最初のひと巻き",
   "somdeanvands": "使用シーン"
  },
  "zh-TW": {
@@ -138,6 +151,7 @@
   "myskvallen": "溫馨夜晚",
   "skrattet": "笑聲",
   "reaktionen": "反應",
+  "forsta": "第一卷",
   "somdeanvands": "實際使用的樣子"
  }
 }
