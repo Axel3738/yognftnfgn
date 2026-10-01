@@ -1193,7 +1193,7 @@ Sverige. Allt i `worldwide/README.md` (läget, besluten, körordningen).
   **Impressum** (§ 5 DDG, Axel Odhner som VD) i de tyska översättningarna av retursidan och AGB, länken
   "Impressum" i sidfoten bara på `de` (temat a10). **Kassaloggan blir bävern + nio flaggor** (Axels val C,
   filen `beaver-store-kassa-logga-flaggor.png` i Filer, bytet `worldwide/cowork/4-slutklick.txt`) —
-  kassan har EN logga, så Sverige får den också (hans beslut). ⚠️ Shopifys kassa spärrar
+  kassan har EN logga, så Sverige får den också (hans beslut). **Nio produkter hette "Color"/"Size" på svenska sidan** (stod så före worldwide); bytt till "Färg"/"Storlek" 2026-10-01 (Axels val A, `worldwide/granskning/alternativnamn.mjs`, loggen bär originalen). Översättningarna nycklas på det svenska namnet (`options[].name` i `oversattning/<l>/`), så ett nytt namnbyte kräver filerna först, sedan `bygg.mjs --steg oversattningar`. ⚠️ Shopifys kassa spärrar
   IP:t efter ~18 kassor i rad — kör kassagranskningen glest.
 
 ## `akut/` — Akutlarmet: det som bara Axel kan påverka, i Slack `#urgent` (NY 2026-09-27)

@@ -77,7 +77,7 @@
   "seo_description": null,
   "options": [
    {
-    "name": "Color",
+    "name": "Färg",
     "values": [
      "Grön",
      "Orange",
@@ -141,7 +141,7 @@
   "seo_description": null,
   "options": [
    {
-    "name": "Color",
+    "name": "Färg",
     "values": [
      "Svart",
      "Frosted Dragon",
@@ -161,7 +161,7 @@
   "seo_description": null,
   "options": [
    {
-    "name": "Color",
+    "name": "Färg",
     "values": [
      "Svart"
     ]

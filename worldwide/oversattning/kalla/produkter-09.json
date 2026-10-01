@@ -6,7 +6,7 @@
   "seo_description": null,
   "options": [
    {
-    "name": "Color",
+    "name": "Färg",
     "values": [
      "Blå",
      "Grön",
@@ -73,7 +73,7 @@
   "seo_description": null,
   "options": [
    {
-    "name": "Color",
+    "name": "Färg",
     "values": [
      "Gul",
      "Vitt"
