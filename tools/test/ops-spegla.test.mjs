@@ -46,6 +46,9 @@ test('brandtraff: bäver/beaver i vilken text som helst stoppar, ren copy släpp
   assert.deepEqual(brandtraff('6,5 × 3 meter – hela taket, inget mer.', 'Tåler vinteren'), []);
   assert.deepEqual(brandtraff('Köp hos Bäverbutiken idag', 'from baverbutiken.se'), ['Bäverbutiken', 'baverbutiken']);
   assert.deepEqual(brandtraff(null, undefined, 'Beaver Store'), ['Beaver']);
+  // Hubbens namn i briefens metadatarad är inte annonstext (2026-10-01).
+  assert.deepEqual(brandtraff('Notion hub: https://app.notion.com/p/7ec2 (BÄVER Taköverdraget för Husvagn — no Drive batch folder)\nRubrik: Sidorna fria'), []);
+  assert.deepEqual(brandtraff('Notion hub: x\nKöp hos Bäverbutiken'), ['Bäverbutiken']);
   // Briefens "Landing page: https://baverbutiken.se/…" är metadata, inte annonstext.
   assert.deepEqual(brandtraff('Landing page: https://baverbutiken.se/products/takoverdrag\nHook: Hela taket.'), []);
   assert.deepEqual(brandtraff('Se https://baverbutiken.se/x — köp hos Bäverbutiken'), ['Bäverbutiken']);

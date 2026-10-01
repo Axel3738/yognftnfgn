@@ -1,0 +1,137 @@
+[
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   330,
+   958,
+   630,
+   994
+  ]
+ },
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   330,
+   994,
+   760,
+   1045
+  ]
+ },
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   200,
+   1078,
+   880,
+   1140
+  ]
+ },
+ {
+  "box": [
+   54,
+   62,
+   1025,
+   139
+  ],
+  "fet": true,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 71,
+  "text": "Sides hang free, on purpose"
+ },
+ {
+  "box": [
+   12,
+   178,
+   1066,
+   225
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 187,
+  "text": "Edge drops 12 to 16 inches, door and windows free, one person"
+ },
+ {
+  "box": [
+   443,
+   236,
+   634,
+   270
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 245,
+  "text": "can do it."
+ },
+ {
+  "box": [
+   359,
+   962,
+   722,
+   1032
+  ],
+  "fet": true,
+  "storlek": 72,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 971,
+  "text": "$199",
+  "utvidga": 6
+ },
+ {
+  "box": [
+   225,
+   1084,
+   852,
+   1133
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 1093,
+  "text": "(reg. $249), save $50 (20%)",
+  "utvidga": 6
+ }
+]
