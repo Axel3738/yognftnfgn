@@ -3027,3 +3027,16 @@ LISTICLE 2,59 och NYA LISTICLE 1,82 bar det; huvudkampanjen låg på 1,41.
 7-dygnstalet 1 364 kr. Reglerna tar den själv om 14-dygnstalet faller över.
 
 **Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.
+
+## 2026-10-01 — leveransrundan: elfte dygnet, oförändrat
+
+Kön läst i ett försök: samma två rader i `To be Reviewed`
+(`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`), samma md5 (`d9ab48ff…` /
+`271bf976…`), samma slutkort med `carashell.se`. Kontrollen kördes med OCR
+(`rapidocr_onnxruntime` + `imageio_ffmpeg` fanns i containern), så domen
+`slutkort-med-brand` är mätt och inte en degraderad `okand`. Kampanjen
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+(`120249050544990172`) ACTIVE med 11 adsets; butikspriset 1 129 kr stämmer
+exakt, så priset är inte stoppet. Inget uppladdat, ingen status ändrad, inga
+nya kommentarer (feedbacken från 2026-09-21 står kvar på båda raderna).
+De två LISTICLE-kampanjerna filtrerades som egna spår.
