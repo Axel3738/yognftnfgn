@@ -1,0 +1,44 @@
+{
+  "arende": "KD-2026-004",
+  "formular": "https://www.shopify.com/legal/tools/report-an-issue/dmca",
+  "byggd": "2026-10-01T13:27:03.646Z",
+  "sida": "https://matsokker.shop/products/sushi-sokker",
+  "fil": "https://cdn.shopify.com/s/files/1/1084/6168/7114/files/gif2_800x800.gif",
+  "film": "09-17 Nathalie captions musik",
+  "filmSkapad": "2026-09-17T15:21:45+0200",
+  "beskarning": "mitt",
+  "matt": {
+    "traffar": 20,
+    "antal": 26,
+    "andel": 0.77,
+    "sekunder": 7
+  },
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis.png?v=1790861027",
+  "falt": {
+    "foretag": "Stonebite Ecom AB (reg. no. 559576-2401)",
+    "rollTillVerket": "I'm authorised to act on behalf of the copyright owner",
+    "namn": "Axel Odhner",
+    "titel": "CEO",
+    "epost": "axel.odhner@stonebite.org",
+    "telefon": null,
+    "adress": "Stenkolsgatan 1B, 417 07 Göteborg, Sweden",
+    "land": "Sweden",
+    "butik": "https://matsokker.shop",
+    "sidor": [
+      "https://matsokker.shop/products/sushi-sokker",
+      "https://cdn.shopify.com/s/files/1/1084/6168/7114/files/gif2_800x800.gif"
+    ],
+    "verk": "An advertising video made for our store Matstrumpor (matstrumpor.se) for our product \"Sushi-Strumpor\" (our ad \"09-17 Nathalie captions musik\", published by us on 17 September 2026). The animated image on the reported page is cut from this video: 20 of its 26 sampled frames are identical to frames of our video (perceptual-hash distance at most 6/64, compared as a square crop of our vertical video), as shown side by side on the evidence image.",
+    "original": [
+      "https://www.facebook.com/ads/library/?id=2127001151229429",
+      "https://matstrumpor.se/products/sushi-strumpor"
+    ],
+    "bevis": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis.png?v=1790861027",
+    "signatur": "Axel Odhner"
+  },
+  "forsakringar": [
+    "I have a good faith belief that use of the copyrighted material described above is not authorized by the copyright owner, its agent, or the law.",
+    "I swear, under penalty of perjury, that the information in this notification is accurate and that I am the copyright owner or am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed."
+  ],
+  "fel": []
+}

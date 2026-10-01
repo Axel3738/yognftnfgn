@@ -46,7 +46,11 @@ export function sammanfattning(paket) {
   else if (k) delar.push(`Annonsens film är klippt ur ${filmer.length === 1 ? 'en av våra filmer' : `${filmer.length || 'flera'} av våra filmer`}. ${k[1]} bildrutor ur olika scener (vid ${k[2]}) är identiska med våra${p ? `, och ${p[1]} % av annonsens bildrutor matchar våra filmer` : ''}.`);
   const t = d.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words/);
   if (t) delar.push(`${t[1]} ord ur vår annonstext står ordagrant i annonsen, som längst ${t[2]} ord i följd.`);
-  if (/image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(d)) delar.push('Bilden i annonsen är vår egen annonsbild.');
+  if (/image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(d)) {
+    const baraNara = /near-identical, distance/.test(d) && !/(?<!near-)identical, distance/.test(d);
+    delar.push(baraNara ? 'Bilden i annonsen är vår egen annonsbild, nästan identisk med vår (mätningen säger "near-identical", inte "identical").' : 'Bilden i annonsen är vår egen annonsbild.');
+  }
+  if (/our own advertising image with its text re-set in another language/.test(d)) delar.push('Bilden i annonsen är vår egen annonsbild med texten omsatt till deras språk. Bilden under texten är identisk med vår.');
   return delar.join(' ');
 }
 
@@ -137,6 +141,44 @@ export function kortMejl({ brev, faktura, fran, franNot = null, antalByggda = 0,
 }
 
 /**
+ * Kortet för Shopify-anmälan (vårt material på deras egen sajt, shopify-anmalan.mjs). Fälten står som
+ * Cowork skriver in dem i Shopifys formulär, med svenska etiketter. `version` följer innehållet. Ren.
+ */
+export function kortShopify(s, paket, { bild = null } = {}) {
+  const f = paket?.falt ?? {};
+  const falt = [
+    { etikett: 'Butiken som anmäls', varde: f.butik, lank: true },
+    { etikett: 'Sidan och filen med vårt material', varde: (f.sidor ?? []).join('\n'), lank: true },
+    { etikett: 'Vårt verk', varde: f.verk, lang: true },
+    { etikett: 'Var originalet finns', varde: (f.original ?? []).join('\n'), lank: true },
+    { etikett: 'Bevisbilden', varde: f.bevis ?? 'ingen länk (bara bilagan)', lank: Boolean(f.bevis) },
+    { etikett: 'Rättighetshavare', varde: f.foretag },
+    { etikett: 'Din roll', varde: f.rollTillVerket, sv: 'du företräder bolaget som äger rätten' },
+    { etikett: 'Ditt namn', varde: `${f.namn ?? ''}${f.titel ? `, ${f.titel}` : ''}` },
+    { etikett: 'E-post', varde: f.epost },
+    { etikett: 'Telefon', varde: f.telefon ?? 'tomt (Cowork frågar dig om formuläret kräver ett nummer)' },
+    { etikett: 'Adress', varde: f.adress },
+    { etikett: 'Elektronisk underskrift', varde: f.signatur },
+  ];
+  return {
+    nyckel: 'shopify',
+    typ: 'shopify',
+    version: kort12(JSON.stringify({ falt: paket?.falt ?? null, bild: paket?.bevisbildUrl ?? null, forsakringar: paket?.forsakringar ?? [] })),
+    butik: f.butik ?? null,
+    sida: paket?.sida ?? null,
+    film: paket?.film ?? null,
+    matt: paket?.matt ?? null,
+    bild,
+    bildUrl: paket?.bevisbildUrl ?? null,
+    formular: paket?.formular ?? null,
+    falt,
+    fel: paket?.fel ?? [],
+    forsakran: paket?.forsakringar ?? [],
+    status: s?.status ?? null,
+  };
+}
+
+/**
  * Hela sidans data. `not` = en mening under ingressen (t.ex. varför rundan saknar
  * mejl: brevet gick redan i ett annat ärende mot samma sida). Ren.
  */
@@ -169,6 +211,7 @@ export function statusFor(a, { pagar = [], fel = {}, notis = null, sms = null, n
     if (r.status === 'inskickad') kort[n] = { lage: 'inskickad', referens: r.referens ?? null, nar: r.inskickad ?? null };
   }
   if (a.brev?.skickat) kort.mejl = { lage: 'skickad', nar: a.brev.skickat.nar ?? null, till: a.brev.skickat.till ?? a.brev.mottagare ?? null, fran: a.brev.skickat.fran ?? null };
+  if (a.shopify?.status === 'inskickad') kort.shopify = { lage: 'inskickad', referens: a.shopify.referens ?? null, nar: a.shopify.inskickad ?? null };
   for (const n of pagar) if (!kort[n]) kort[n] = { lage: 'pagar', nar: nu };
   for (const [n, text] of Object.entries(fel)) if (!kort[n]) kort[n] = { lage: 'fel', text: String(text).slice(0, 400), nar: nu };
   return { uppdaterad: nu, notis: notis ?? null, kort, sms: sms ? { text: sms } : null };
@@ -218,8 +261,10 @@ export function attGora({ granskning, beslut, status }) {
     if (obesvarade.length) mejlVantar = `${obesvarade.length} anmälning(ar) saknar svar (nr ${obesvarade.join(', ')})`;
     else mejl = { antal: jaAntal, av: anm.length };
   }
+  const sk = (granskning?.kort ?? []).find((k) => k.typ === 'shopify');
+  const shopify = Boolean(sk && aktuellt(sk)?.svar === 'ja' && !klar(sk) && !pagar(sk));
   const gamla = Object.keys(svar).filter((n) => { const k = (granskning?.kort ?? []).find((x) => x.nyckel === n); return k && svar[n].version !== k.version; });
-  return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla };
+  return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla, shopify };
 }
 
 /**

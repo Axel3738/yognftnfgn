@@ -1,0 +1,52 @@
+{
+  "nr": 7,
+  "antal": 9,
+  "arende": "KD-2026-004",
+  "verksamhet": "Matstrumpor",
+  "plattform": "facebook",
+  "formular": "https://www.facebook.com/help/contact/1758255661104383",
+  "lank": "https://www.facebook.com/ads/library/?id=1089177487343268",
+  "libraryId": "1089177487343268",
+  "annonsNr": 9,
+  "exponeringar": null,
+  "video": false,
+  "grund": "bild",
+  "filmer": [],
+  "originaler": [],
+  "produkt": "Sushi-Strumpor",
+  "ansprak": null,
+  "falt": {
+    "reporter": {
+      "fullName": "Axel Odhner",
+      "email": "axel.odhner@stonebite.org",
+      "phone": "",
+      "address": "Stenkolsgatan 1B, 417 07 Göteborg, Sweden",
+      "country": "Sweden"
+    },
+    "rightsOwner": {
+      "name": "Stonebite Ecom AB",
+      "registrationNumber": "559576-2401",
+      "relationship": "CEO of the rights owner Stonebite Ecom AB (Swedish company, reg. no. 559576-2401)"
+    },
+    "contentUrls": [
+      "https://www.facebook.com/ads/library/?id=1089177487343268"
+    ],
+    "contentDescription": "This advertisement, run by the Facebook page \"MatSokker\" (page ID 1338643506004296), reproduces our copyrighted advertising material without authorisation. 1 image in the ad is our own copyrighted advertising image — a still frame or photo taken from our own ad (perceptual-hash comparison: near-identical, distance 8/64). The ad has been running since 30 September 2026. It copies our ad \"MATSTRUMP_sushi_offer_static_d3_v1\" for the product \"Sushi-Strumpor\", which our page ran before this ad appeared. This is report 7 of 9 concerning ads from the same advertiser; each ad is reported separately.",
+    "originalWorkDescription": "Original advertising copy, product photographs and video produced by Stonebite Ecom AB for our store https://matstrumpor.se (product: \"Sushi-Strumpor\"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.",
+    "originalWorkUrls": [
+      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=820358954504320",
+      "https://matstrumpor.se/products/sushi-strumpor"
+    ],
+    "additionalInfo": "Evidence screenshot (our original on the left, the reported ad on the right, copied passage highlighted): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_d216f04b-f0a7-4367-9eec-2fd0ec2744ba.png?v=1790861128. Internal reference: KD-2026-004, report 7/9, prepared 1 October 2026.",
+    "declarations": [
+      "I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.",
+      "The information in this notification is accurate.",
+      "I declare, under penalty of perjury, that I am the owner, or am authorised to act on behalf of the owner, of an exclusive right that is allegedly infringed."
+    ],
+    "signature": "Axel Odhner"
+  },
+  "bevisbild": "arenden/KD-2026-004/anmalan/bevis-7.png",
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_d216f04b-f0a7-4367-9eec-2fd0ec2744ba.png?v=1790861128",
+  "status": "utkast",
+  "skapad": "2026-10-01T13:24:22.181Z"
+}
