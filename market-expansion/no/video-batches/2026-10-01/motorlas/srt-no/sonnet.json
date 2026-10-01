@@ -1,0 +1,494 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Over tjuetre prosent avslag på motorlåset.",
+   "tekst": "Over 23% avslag på motorlåset."
+  },
+  {
+   "tale": "Prisen nå.",
+   "tekst": "Prisen nå."
+  },
+  {
+   "tale": "Motorlås i rustfritt stål låser festskruene på påhengsmotoren.",
+   "tekst": "Motorlås i rustfritt stål låser festskruene på påhengsmotoren."
+  },
+  {
+   "tale": "Nå tusen og syttini kroner i stedet for fjorten hundre og ni kroner.",
+   "tekst": "Nå 1079 kr i stedet for 1409 kr."
+  },
+  {
+   "tale": "Spar tre hundre og tretti kroner.",
+   "tekst": "Spar 330 kr."
+  },
+  {
+   "tale": "To nøkler følger med - én til deg, én i reserve.",
+   "tekst": "To nøkler følger med - én til deg, én i reserve."
+  },
+  {
+   "tale": "Nøkkelringen flyter - mister du den i vannet, flyter den opp.",
+   "tekst": "Nøkkelringen flyter - mister du den i vannet, flyter den opp."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp.",
+   "tekst": "30 dagers åpent kjøp."
+  },
+  {
+   "tale": "Laget i rustfritt stål for å sitte ute ved bryggen.",
+   "tekst": "Laget i rustfritt stål for å sitte ute ved bryggen."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H1": "Konkrete fakta-rader (pris, antall nøkler, flytende nøkkelring, 30 dagers åpent kjøp): visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅ (produktspesifikt); generelle rader (dag/CTA) er bevisst nøytrale.",
+ "CS_1_H2": [
+  {
+   "tale": "Nå tusen og syttini kroner, før fjorten hundre og ni kroner.",
+   "tekst": "Nå 1079 kr, før 1409 kr."
+  },
+  {
+   "tale": "Spar tre hundre og tretti kroner.",
+   "tekst": "Spar 330 kr."
+  },
+  {
+   "tale": "Motorlåset i rustfritt stål låser festskruene på påhengsmotoren.",
+   "tekst": "Motorlås i rustfritt stål låser festskruene."
+  },
+  {
+   "tale": "Nå tusen og syttini kroner, før fjorten hundre og ni kroner.",
+   "tekst": "Nå 1079 kr, før 1409 kr."
+  },
+  {
+   "tale": "Over tjuetre prosent rabatt.",
+   "tekst": "Over 23% rabatt."
+  },
+  {
+   "tale": "To nøkler følger med.",
+   "tekst": "To nøkler følger med."
+  },
+  {
+   "tale": "Mister du nøkkelen i vannet, flyter den opp.",
+   "tekst": "Nøkkelringen flyter i vann."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp.",
+   "tekst": "30 dagers åpent kjøp."
+  },
+  {
+   "tale": "Festskruene går ikke an å skru løs uten nøkkelen.",
+   "tekst": "Går ikke an å skru løs uten nøkkelen."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H2": "Visualisere ✅ (pris, nøkkel, lås konkret), Falsifisere ✅ (alle tall og funksjoner fra fakta), Ingen konkurrent kan si det ✅ (eksakte priser og produktdetaljer)",
+ "CS_1_H3": [
+  {
+   "tale": "Motorlås i rustfritt stål beskytter festskruene på påhengsmotoren.",
+   "tekst": "Motorlås i rustfritt stål beskytter festskruene på påhengsmotoren."
+  },
+  {
+   "tale": "Nå tusen og syttini kroner, før fjorten hundre og ni.",
+   "tekst": "Nå 1079 kr, før 1409 kr."
+  },
+  {
+   "tale": "Spar tre hundre og tretti kroner.",
+   "tekst": "Spar 330 kr."
+  },
+  {
+   "tale": "Over tjuetre prosent rabatt.",
+   "tekst": "Over 23% rabatt."
+  },
+  {
+   "tale": "To nøkler følger med, én til deg og én i reserve.",
+   "tekst": "To nøkler følger med - én til deg, én i reserve."
+  },
+  {
+   "tale": "Nøkkelringen flyter, så den kommer opp igjen i vannet.",
+   "tekst": "Nøkkelringen flyter i vannet."
+  },
+  {
+   "tale": "Laget i rustfritt stål for å sitte ute ved brygga.",
+   "tekst": "Laget i rustfritt stål for å sitte ute ved brygga."
+  },
+  {
+   "tale": "Festskruene går ikke an å skru løs uten nøkkelen.",
+   "tekst": "Festskruene går ikke an å skru løs uten nøkkelen."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp, pengene tilbake.",
+   "tekst": "30 dagers åpent kjøp - pengene tilbake."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H3": "Konkret fakta man kan peke på (✅), falsifiserbart pris/garanti (✅), ingen konkurrent kan skrive under disse eksakte tallene (✅).",
+ "GT_1_H1": [
+  {
+   "tale": "Den perfekte gaven til han som har alt.",
+   "tekst": "Den perfekte gaven til han som har alt."
+  },
+  {
+   "tale": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren sin?",
+   "tekst": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren sin?"
+  },
+  {
+   "tale": "Dette er gaven som viser at du faktisk lytter.",
+   "tekst": "Dette er gaven som viser at du faktisk lytter."
+  },
+  {
+   "tale": "Enkel og praktisk - noe han faktisk kommer til å bruke.",
+   "tekst": "Enkel og praktisk - noe han faktisk kommer til å bruke."
+  },
+  {
+   "tale": "Se for deg ansiktet hans når han åpner pakken.",
+   "tekst": "Se for deg ansiktet hans når han åpner pakken."
+  },
+  {
+   "tale": "Ikke bare en greie i en eske, men et vern for det han bryr seg om.",
+   "tekst": "Ikke bare en greie i en eske, men et vern for det han bryr seg om."
+  },
+  {
+   "tale": "Hvem har tenkt på alt?",
+   "tekst": "Hvem har tenkt på alt?"
+  },
+  {
+   "tale": "Det var deg.",
+   "tekst": "Det var deg."
+  }
+ ],
+ "_tre_GT_1_H1": "Visualisere: ✅ (skrutrekkere/fiskeutstyr/ansikt), Falsifiserbar: ⚠️ (gavefølelse subjektiv, konkrete deler ✅), Unik for konkurrent: ❌ (generisk gavevinkel kan sies av de fleste)",
+ "GT_1_H2": [
+  {
+   "tale": "Vil du se ansiktet hans lyse opp?",
+   "tekst": "Vil du se ansiktet hans lyse opp?"
+  },
+  {
+   "tale": "Gi ham denne.",
+   "tekst": "Gi ham denne."
+  },
+  {
+   "tale": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren?",
+   "tekst": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren?"
+  },
+  {
+   "tale": "Dette er gaven som viser at du har lyttet.",
+   "tekst": "Dette er gaven som viser at du har lyttet."
+  },
+  {
+   "tale": "Enkel å bruke, noe han faktisk kommer til å ta i bruk.",
+   "tekst": "Enkel å bruke, noe han faktisk kommer til å ta i bruk."
+  },
+  {
+   "tale": "Se for deg ansiktet hans når han åpner pakken.",
+   "tekst": "Se for deg ansiktet hans når han åpner pakken."
+  },
+  {
+   "tale": "Ikke bare en ting i en eske, men en sikring for det han bryr seg om.",
+   "tekst": "Ikke bare en ting i en eske, men en sikring for det han bryr seg om."
+  },
+  {
+   "tale": "Hvem har tenkt på alt?",
+   "tekst": "Hvem har tenkt på alt?"
+  },
+  {
+   "tale": "Det var deg.",
+   "tekst": "Det var deg."
+  }
+ ],
+ "_tre_GT_1_H2": "Visualisere ✅ (ansikt, eske, motor), falsifisere ❌ (følelsesladde påstander kan ikke sjekkes), ingen konkurrent kan si det ❌ (generisk gavebudskap)",
+ "GT_1_H3": [
+  {
+   "tale": "Han prater om båten hele tiden.",
+   "tekst": "Han prater om båten hele tiden."
+  },
+  {
+   "tale": "Gi ham noe han faktisk trenger.",
+   "tekst": "Gi ham noe han faktisk trenger."
+  },
+  {
+   "tale": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren?",
+   "tekst": "Han har allerede skrutrekkere og fiskeutstyr, men har han sikret motoren?"
+  },
+  {
+   "tale": "Dette er gaven som viser at du har lyttet.",
+   "tekst": "Dette er gaven som viser at du har lyttet."
+  },
+  {
+   "tale": "Rustfritt stål, laget for å henge ved brygga.",
+   "tekst": "Rustfritt stål, laget for å henge ved brygga."
+  },
+  {
+   "tale": "Se for deg ansiktet hans når han åpner pakken.",
+   "tekst": "Se for deg ansiktet hans når han åpner pakken."
+  },
+  {
+   "tale": "Ikke bare en ting i en eske, men en sikring for det han er glad i.",
+   "tekst": "Ikke bare en ting i en eske, men en sikring for det han er glad i."
+  },
+  {
+   "tale": "Hvem har tenkt på alt?",
+   "tekst": "Hvem har tenkt på alt?"
+  },
+  {
+   "tale": "Det var deg.",
+   "tekst": "Det var deg."
+  }
+ ],
+ "_tre_GT_1_H3": "Linje 3 og 5 er konkrete (skrutrekkere, rustfritt stål ved brygga) ✅; linje 1,2,4,6-9 er mer narrative/abstrakte ❌ visualisere; falsifiserbart kun for linje 3 og 5 ✅ (resten er følelsesmessig fortelling ❌); ingen konkurrent kan kopiere linje 3 og 5 pga konkret produktfakta ✅, resten er generisk gavebudskap ❌",
+ "PD_1_H1": [
+  {
+   "tale": "Ingen tror at det skal skje dem, før motoren er borte.",
+   "tekst": "Ingen tror at det skal skje dem, før motoren er borte."
+  },
+  {
+   "tale": "Påhengsmotoren din sitter fast med noen festskruer.",
+   "tekst": "Påhengsmotoren din sitter fast med noen festskruer."
+  },
+  {
+   "tale": "Det er alt som skiller den fra en tyv.",
+   "tekst": "Det er alt som skiller den fra en tyv."
+  },
+  {
+   "tale": "Motorlåset i rustfritt stål dekker festskruene helt.",
+   "tekst": "Motorlåset i rustfritt stål dekker festskruene helt."
+  },
+  {
+   "tale": "Lås fast med nøkkelen.",
+   "tekst": "Lås fast med nøkkelen."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Mister du nøkkelen i vannet?",
+   "tekst": "Mister du nøkkelen i vannet?"
+  },
+  {
+   "tale": "Den flyter opp.",
+   "tekst": "Den flyter opp."
+  },
+  {
+   "tale": "Rustfritt stål, laget for å sitte ute ved bryggen.",
+   "tekst": "Rustfritt stål, laget for å sitte ute ved bryggen."
+  },
+  {
+   "tale": "Et ekstra lag beskyttelse for motoren din.",
+   "tekst": "Et ekstra lag beskyttelse for motoren din."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkret før/etter-scenario (✅), falsifiserbare faktapåstander uten overdrivelser (✅), produktspesifikk detalj (flytende nøkkel, festskruer) ingen konkurrent kan kopiere direkte (✅)",
+ "PD_1_H2": [
+  {
+   "tale": "Festskruene går an å løsne på et par minutter med riktig verktøy.",
+   "tekst": "Festskruene går an å løsne på et par minutter med riktig verktøy."
+  },
+  {
+   "tale": "Påhengsmotoren din sitter fast med noen festskruer.",
+   "tekst": "Påhengsmotoren din sitter fast med noen festskruer."
+  },
+  {
+   "tale": "Det er alt som skiller den fra en tyv.",
+   "tekst": "Det er alt som skiller den fra en tyv."
+  },
+  {
+   "tale": "Motorlåset i rustfritt stål dekker festskruene helt.",
+   "tekst": "Motorlåset i rustfritt stål dekker festskruene helt."
+  },
+  {
+   "tale": "Lås den fast med nøkkelen.",
+   "tekst": "Lås den fast med nøkkelen."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Mister du nøkkelen i vannet?",
+   "tekst": "Mister du nøkkelen i vannet?"
+  },
+  {
+   "tale": "Den flyter opp.",
+   "tekst": "Den flyter opp."
+  },
+  {
+   "tale": "Rustfritt stål.",
+   "tekst": "Rustfritt stål."
+  },
+  {
+   "tale": "Laget for å sitte ute ved brygga.",
+   "tekst": "Laget for å sitte ute ved brygga."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret fakta om skruer/nøkkel/stål: visualisere ✅, falsifisere ✅, ingen konkurrent kan si det (pga. spesifikk produktdetalj) ✅",
+ "PD_1_H3": [
+  {
+   "tale": "Påhengsmotoren din sitter bare fast med noen festskruer.",
+   "tekst": "Påhengsmotoren din sitter bare fast med noen festskruer."
+  },
+  {
+   "tale": "Den sitter fast med noen få festskruer.",
+   "tekst": "Den sitter fast med noen få festskruer."
+  },
+  {
+   "tale": "Det er alt som skiller den fra en tyv.",
+   "tekst": "Det er alt som skiller den fra en tyv."
+  },
+  {
+   "tale": "Motorlåset i rustfritt stål dekker festskruene helt.",
+   "tekst": "Motorlåset i rustfritt stål dekker festskruene helt."
+  },
+  {
+   "tale": "Lås den fast med nøkkelen.",
+   "tekst": "Lås den fast med nøkkelen."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Mister du nøkkelen i vannet?",
+   "tekst": "Mister du nøkkelen i vannet?"
+  },
+  {
+   "tale": "Den flyter opp.",
+   "tekst": "Den flyter opp."
+  },
+  {
+   "tale": "Laget i rustfritt stål for å sitte ute ved bryggen.",
+   "tekst": "Laget i rustfritt stål for å sitte ute ved bryggen."
+  },
+  {
+   "tale": "Et ekstra lag beskyttelse for motoren din.",
+   "tekst": "Et ekstra lag beskyttelse for motoren din."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkrete, faktabaserte linjer (festskruer, nøkkel, flyter opp, rustfritt stål ved bryggen): visualisere ✅, falsifisere ✅, ingen konkurrent kan si det akkurat slik ✅",
+ "SP_1_H1": [
+  {
+   "tale": "Jeg trodde aldri motoren min skulle bli stjålet, helt til det skjedde med naboen.",
+   "tekst": "Jeg trodde aldri motoren min skulle bli stjålet, helt til det skjedde med naboen."
+  },
+  {
+   "tale": "Jeg trodde aldri det skulle skje meg.",
+   "tekst": "Jeg trodde aldri det skulle skje meg."
+  },
+  {
+   "tale": "Nå tusen og syttini, før fjorten hundre og ni.",
+   "tekst": "Nå 1079 kr, før 1409 kr."
+  },
+  {
+   "tale": "To nøkler følger med – én til deg, én i reserve.",
+   "tekst": "To nøkler følger med – én til deg, én i reserve."
+  },
+  {
+   "tale": "Den dekker festskruene.",
+   "tekst": "Den dekker festskruene."
+  },
+  {
+   "tale": "Går ikke an å skru løs uten nøkkelen.",
+   "tekst": "Går ikke an å skru løs uten nøkkelen."
+  },
+  {
+   "tale": "Nøkkelringen flyter, så du finner den igjen i vannet.",
+   "tekst": "Nøkkelringen flyter, så du finner den igjen i vannet."
+  },
+  {
+   "tale": "Laget i rustfritt stål for å tåle livet ved bryggen.",
+   "tekst": "Laget i rustfritt stål for å tåle livet ved bryggen."
+  },
+  {
+   "tale": "Er motoren din beskyttet ennå?",
+   "tekst": "Er motoren din beskyttet ennå?"
+  }
+ ],
+ "_tre_SP_1_H1": "Konkrete fakta (pris, to nøkler, flytende nøkkelring, rustfritt stål) - visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅",
+ "SP_1_H2": [
+  {
+   "tale": "Påhengsmotoren sitter fast med noen festskruer.",
+   "tekst": "Påhengsmotoren sitter fast med noen festskruer."
+  },
+  {
+   "tale": "Jeg trodde aldri det skulle skje meg.",
+   "tekst": "Jeg trodde aldri det skulle skje meg."
+  },
+  {
+   "tale": "Festskruene kan løsnes på et par minutter med riktig verktøy.",
+   "tekst": "Festskruene kan løsnes på et par minutter med riktig verktøy."
+  },
+  {
+   "tale": "Derfor bruker jeg et motorlås i rustfritt stål.",
+   "tekst": "Derfor bruker jeg et motorlås i rustfritt stål."
+  },
+  {
+   "tale": "Det legges rett over festskruene.",
+   "tekst": "Det legges rett over festskruene."
+  },
+  {
+   "tale": "Går ikke an å skru løs uten nøkkelen.",
+   "tekst": "Går ikke an å skru løs uten nøkkelen."
+  },
+  {
+   "tale": "To nøkler følger med - én til deg, én i reserve.",
+   "tekst": "2 nøkler følger med - én til deg, én i reserve."
+  },
+  {
+   "tale": "Mister du en nøkkel i vannet, flyter den opp igjen.",
+   "tekst": "Mister du en nøkkel i vannet, flyter den opp igjen."
+  },
+  {
+   "tale": "Er motoren din beskyttet ennå?",
+   "tekst": "Er motoren din beskyttet ennå?"
+  }
+ ],
+ "_tre_SP_1_H2": "Konkret ✅ (festskruer, nøkler, stål), Falsifiserbar ✅ (alt hentet fra produktfakta), Ingen konkurrent kan si det ✅ (viser til dette spesifikke låsesystemet)",
+ "SP_1_H3": [
+  {
+   "tale": "Spør hvem som helst som har mistet påhengsmotoren sin.",
+   "tekst": "Spør hvem som helst som har mistet påhengsmotoren sin."
+  },
+  {
+   "tale": "Jeg trodde aldri det skulle skje meg.",
+   "tekst": "Jeg trodde aldri det skulle skje meg."
+  },
+  {
+   "tale": "Festskruene løsner på et par minutter med riktig verktøy.",
+   "tekst": "Festskruene løsner på et par minutter med riktig verktøy."
+  },
+  {
+   "tale": "Løsningen: et motorlås i rustfritt stål.",
+   "tekst": "Løsningen: et motorlås i rustfritt stål."
+  },
+  {
+   "tale": "Det legges over festskruene.",
+   "tekst": "Det legges over festskruene."
+  },
+  {
+   "tale": "Går ikke an å skru løs uten nøkkelen.",
+   "tekst": "Går ikke an å skru løs uten nøkkelen."
+  },
+  {
+   "tale": "To nøkler følger med.",
+   "tekst": "To nøkler følger med."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp, pengene tilbake.",
+   "tekst": "30 dagers åpent kjøp - pengene tilbake."
+  },
+  {
+   "tale": "Er motoren din beskyttet ennå?",
+   "tekst": "Er motoren din beskyttet ennå?"
+  }
+ ],
+ "_tre_SP_1_H3": "Konkret ✅ (festskruer, to nøkler, tretti dager), falsifiserbart ✅ (hentet fra produktfakta), ingen konkurrent kan signere ✅ – alle linjer består testet."
+}

@@ -100,3 +100,33 @@ Inga påhittade siffror — allt kommer ur briefarna, butiken (läst live) och d
 | `Termoskydd_RI_2_1` | ⚠️ | — | Fine. The static twin asks the right question (frame vs body); `Två mornar` is an accepted plural but the hub also writes `morgnar` — pick one. |
 | `Termoskydd_RI_1_H3` | ⚠️ | — | Row 2 `Kvällen innan var det en annan morgon` is nonsense read aloud — `Morgonen innan var en annan.` · Row 2: 14 words in 2 s; row 3: 13 words in 3 s — too dense. · Row 5 on-screen text ends `932 kr..` (double period). · Row 3 and the dry-inside shot in row 4 are NEW FOOTAGE — flag at the top. |
 | `Termoskydd_RI_1_H2` | ⚠️ | — | Rows 3 and 5 are 18 words on 2-second rows — unspeakable; cut or re-time. · Three NEW FOOTAGE takes (rows 2, 3, 4) only in table cells — a block at the top with the fallback. · `mornar` (H1) and `morgnar` (H3) in the same brief. · Row 6 on-screen text ends `932 kr..`. |
+
+## Rond 2026-09-30 — batch okänd (8 briefer) · granskad 2026-10-01 · hub BÄVER Termoskyddet för Husbil
+
+**Bra**
+- All three rules from the 2026-09-27 review held: no row carries more than three words per second, one spelling per brief, and every new shot sits in a `NEW FOOTAGE` block at the top with its fallback.
+- The scene batch (FD_5/FD_6) is built from the page's own moments and says why the warmth scene was left out (the page makes no warmth claim, `trettio grader` is a banned summer line).
+- FD_6_1 caught that the old hero photo carries burned measurements and switched to the page's own scene photo — the asset check the image routine needs.
+- Price 559 / 932 kr, 211 × 171 cm, `två minuter`, `utanpå glaset, inte innanför` match the page (read live from the product page 2026-10-01).
+
+**Missat**
+- Termoskydd_FD_5_H1 row 1 asks for the raw clip behind Termoskydd_RI_1_H1 WITHOUT its burned `Två månar` text, but says `NEW FOOTAGE: none` — if no raw file exists, the editor has no fallback.
+- The Source column again labels a Notion page id as `DRIVE 3db270ab…` (CS_12_H2, FD_5_H1–H3) — the bracket explains it, the label still sends the editor to the wrong place.
+- The FD_3/FD_4 rows on this product were created 2026-09-29 and are not in this review: the tool reads the newest day only (2026-09-30).
+- The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`.
+
+**Tre regler för nästa rond**
+1. A clip `without burned text` needs a fallback in the NEW FOOTAGE block whenever no raw file is known to exist.
+2. The Source label says where the file is: a Notion row is `NOTION <id>`, a Drive file `DRIVE <id>` — the second round this was missed.
+3. The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again.
+
+| Brief | Dom | Fel | Anmärkningar |
+|---|---|---|---|
+| `Termoskydd_FD_5_H2` | ⚠️ | — | Clean; the new dusk take has its fallback. |
+| `Termoskydd_FD_5_H3` | ⚠️ | — | Clean. |
+| `Termoskydd_FD_5_H1` | ⚠️ | — | Row 1 depends on a raw clip without burned text that may not exist — add a fallback. · Source label `DRIVE` on a Notion page id. |
+| `Termoskydd_CS_12_H2` | ⚠️ | — | Clean. The 6-second problem section is the only variable against CS_12_H1. |
+| `Termoskydd_FD_6_3` | ⚠️ | — | Clean. |
+| `Termoskydd_FD_6_4` | ⚠️ | — | Clean; the brief says why it stays close to FD_4_1. |
+| `Termoskydd_FD_6_2` | ⚠️ | — | Clean. |
+| `Termoskydd_FD_6_1` | ⚠️ | — | Clean. |

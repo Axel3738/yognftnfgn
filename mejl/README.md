@@ -739,6 +739,11 @@ av timrutinen eller `notis-oversattning.mjs --skarpt` efter merge):
   `mallar.mjs → adressrad`): USA, Kanada och Australien får "Ort, DELSTAT POSTNR",
   Storbritannien ort och postnummer på var sin rad, Nya Zeeland "Ort Postnr". Alla andra
   språk behåller "postnr ort".
+- **Loggans länk (G-D04):** knappen gick till matstrumpor.com/<mapp> men loggan till
+  matstrumpor.se. Nu följer loggan språkets adress (`bygg-butik.mjs` → `hemFranSida`, bara i
+  översättningarna som registreras via API): tyskan → matstrumpor.com/de, japanskan →
+  matstrumpor.com/ja. Den svenska huvudmallen och CaraShells handinklistrade marknadsgrenar
+  är orörda. Supportadressen kundsupport@matstrumpor.se står kvar: det är den brevlåda som finns.
 
 **Shopifys egna levererad-notiser** ("En försändelse … har levererats", "Ordern … har
 levererats") går ut när spårningsrutinen skriver ett DELIVERED-event, och de bar Shopifys

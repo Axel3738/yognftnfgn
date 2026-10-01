@@ -7,7 +7,11 @@ grön, men replik för replik hördes produktordet 靴下 som "ガックザ" och
 går fram försvinner i ett snitt över hela filen. Facit för "bra" med det här måttet: HeyGens japanska
 (Nathalie) 0,91, där bara siffror och homofoner skilde.
 
-  python3 pipeline/seglyssna.py <video> <srt> <språk> [antal=6] [--json ut.json]
+  python3 pipeline/seglyssna.py <video> <srt> <språk> [antal=6] [--json ut.json] [--modell large-v3]
+
+--modell väljer Whisper-modellen (standard medium). Danska mäts med large-v3 (2026-09-30): medium hörde
+"sokker" som "sukker" även från fyra infödda danska röster, så den kunde inte skilja en röst som säger
+fel från en som säger rätt; large-v3 hörde klonen som svenska "socker" och två infödda som "sokker".
 
 Täckningen räknas i tecken-bigram för ja/zh (inga mellanslag) och i ord för andra språk. Kinesiska
 görs om till traditionell skrift (opencc s2twp), och siffror skrivna med kanji/hanzi (十一月, 五足)
@@ -48,7 +52,12 @@ def cues(srt):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    flaggor_med_varde = {'--json', '--modell'}
+    args, hoppa = [], False
+    for a in sys.argv[1:]:
+        if hoppa: hoppa = False; continue
+        if a in flaggor_med_varde: hoppa = True; continue
+        if not a.startswith('--'): args.append(a)
     if len(args) < 3:
         sys.exit(__doc__)
     video, srt, sprak = args[:3]
@@ -69,7 +78,8 @@ def main():
             return {t[i:i + 2] for i in range(len(t) - 1)} if len(t) > 1 else {t}
         return set(re.findall(r"[\w']+", t.lower()))
 
-    modell = WhisperModel('medium', device='cpu', compute_type='int8')
+    modellnamn = sys.argv[sys.argv.index('--modell') + 1] if '--modell' in sys.argv else 'medium'
+    modell = WhisperModel(modellnamn, device='cpu', compute_type='int8')
     rader = []
     with tempfile.TemporaryDirectory() as d:
         for nr, a, e, text in cues(srt):

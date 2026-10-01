@@ -2,78 +2,78 @@
  "_om": "Annonstext (pt) för MATSTRUMP_PT_SALES (Portugal), skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅ per mening. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är PT-batchens (heygen/PT.json), klar/PT_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
  "instagram_user_id": "17841423405715219",
  "copy": {
-  "title": "Diversão à noite. Nos teus pés amanhã.",
+  "title": "Divertidas esta noite. Nos teus pés amanhã.",
   "title_alt": [
    "O presente de brincadeira que não acaba numa gaveta.",
    "Meias de sushi que usas mesmo."
   ],
-  "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-  "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+  "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+  "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
  },
  "annonser": [
   {
    "namn": "MATSTRUMP_PT_sushi_gift_ugc_001_v1",
    "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
    "video": "klar/PT_nathalie.mp4",
-   "title": "Diversão à noite. Nos teus pés amanhã.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "title": "Divertidas esta noite. Nos teus pés amanhã.",
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_gift_ugc_002_v1",
    "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
    "video": "klar/PT_sofie_h1.mp4",
    "title": "O presente de brincadeira que não acaba numa gaveta.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_jul_ugc_003_v1",
    "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
    "video": "klar/PT_sofie_h2.mp4",
    "title": "Meias de sushi que usas mesmo.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_gift_anim_004_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_012v2_v1 (video 4323418044575220) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/PT_012v2.mp4",
-   "title": "Diversão à noite. Nos teus pés amanhã.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "title": "Divertidas esta noite. Nos teus pés amanhã.",
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_gift_ugc_005_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1 (video 996449943431525) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/PT_haikuh3.mp4",
-   "title": "Diversão à noite. Nos teus pés amanhã.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "title": "Divertidas esta noite. Nos teus pés amanhã.",
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_gift_ugc_006_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1 (video 3084560565211662) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/PT_haikuh2.mp4",
-   "title": "Diversão à noite. Nos teus pés amanhã.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "title": "Divertidas esta noite. Nos teus pés amanhã.",
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_gift_ugc_007_v1",
    "kalla": "MATSTRUMP_sushi_gift_ugc_s001h1_v2 (video 1593728122281460) — egen video, egen text/röst (matstrumpor/marknader/egna/)",
    "video": "klar/PT_s001h1.mp4",
-   "title": "Diversão à noite. Nos teus pés amanhã.",
-   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
-   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+   "title": "Divertidas esta noite. Nos teus pés amanhã.",
+   "message": "Ninguém se entusiasma com detergente. Ninguém guarda um presente de brincadeira.\nA resposta para os dois: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nAs meias não ficam esquecidas na caixa. Ficam nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 sabores. Compra 1 – Recebe 1 GRÁTIS. Envio grátis."
   },
   {
    "namn": "MATSTRUMP_PT_sushi_offer_static_008_v1",
    "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/PT.json, granskad av infödda 2026-09-29)",
    "bild": "klar/PT_d3.jpg",
-   "title": "Compre 2, receba 2 grátis: quatro caixas",
-   "message": "Recebes quatro caixas.\nCompre 2 – receba 2 grátis, vinte pares de meias ao todo.\nEnroladas como maki, pauzinhos de madeira em cada caixa.\nTamanho único, serve do 36 ao 44.\nUma marca sueca.",
-   "link_description": "Compre 2 – Receba 2 GRÁTIS. Envio grátis."
+   "title": "Compra 2, recebe 2 grátis: quatro caixas",
+   "message": "Recebes quatro caixas.\nCompra 2 – recebe 2 grátis, vinte pares de meias ao todo.\nEnroladas como maki, pauzinhos de madeira em cada caixa.\nTamanho único, serve do 36 ao 44.\nUma marca sueca.",
+   "link_description": "Compra 2 – Recebe 2 GRÁTIS. Envio grátis."
   }
  ],
  "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Uma marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",

@@ -464,6 +464,30 @@ rad". Stevans eget mejl ger SVÅR när det körs om; det skarpa ARG-svaret kom
 troligen ur utropstecken i det citerade Shopify-mejlet — inte fastställt, men
 avbeställning stoppas nu före ilsketesten oavsett.
 
+### Matstrumpors första dygn, 2026-09-30 — tre regler rättade
+
+Matstrumpor och CaraShell gick skarpt 2026-09-30 (Axel tog bort
+`AUTOSVAR_LAGE_*` på Railway; `/halsa` visade tre skarpa butiker, omstart
+20:03:41 UTC). Dagens fem Matstrumpor-mejl kom alla medan butiken var torr:
+0 skickade, 0 utkast, fyra flaggade till Mechile (#1722 "Tack 😊", #1723
+"Inget kvitto på köp", #1725, #1726) och Klaviyos säljmejl (#1724) hoppat.
+Mechile svarar på allt i Matstrumpors brevlåda (Skickat sedan 24/9), så varje
+svar på en kampanj stannar hos henne ändå (`redanBesvaradAvOss`, 14-dagarsregeln).
+Genomgången med två oberoende granskare hittade tre regelfel, rättade samma kväll:
+
+| Fynd | Före | Nu |
+|---|---|---|
+| AdPeak Studio (AI-annonsbyrå, utkast 25/9 i Drafts) fick eskaleringsmallen "I completely understand your frustration" | "the joke land" i komplimangen = ARG; ingen säljfras träffade | 17 byrå-/SaaS-fraser i `SALJFRASER` ("examples of our work", "would you be open to seeing", "reply no thanks", "AI product ads", "growth specialist", "when works best", "book time on my calendar", "before upgrading" …) ⇒ SKIP. Två fraser krävs fortfarande, ordernummer ⇒ alltid kund |
+| Klaviyos säljare (#1724) | SKIP bara för att ordet "unsubscribe" råkade stå i en länk | säljmejl på egna meriter |
+| Svar på kampanjen "Landade skämtet, eller inte?" (#1726) | ordet "skämt" i VÅR rubrik gjorde kunden ARG | ilskeorden prövas inte mot ett svars-ämne (`Re:/Sv:/Vs:/AW:/Fwd:/VB:`, `arSvarsamne`); kundens egna "är ett skämt"/"is a joke" i texten räknas som förut |
+| Svar på kampanjen "De tittar två gånger, sen skrattar de" (#1722) | "två gånger" = `okand_debitering` — också i veckorapportens chargeback-risk | "två gånger/to ganger/to gange/twice" räknas bara med pengaord inom 40 tecken ("dragit pengar två gånger", "charged twice") |
+
+`joke` ligger kvar i ilskeorden med flit: "this product is a joke" är en arg
+kund. #1726 ("Re: Landade skämtet", en vidarebefordrad orderbekräftelse +
+önskan om kompensation) hamnar nu hos VA:n via tråden, inte via ett falskt
+ARG. Öppet, inte rättat: "Inget kvitto på köp" (#1723) går till VA:n för att
+"kvitto" räknas som faktura/Klarna — Axels fråga om boten ska svara själv.
+
 ### ⛔ SKARPT sedan 2026-09-23 ~13:10 CEST — Axels beslut A
 
 Axel trodde botten redan skickade ("Nej va??? Varför kör inte botten, den ska

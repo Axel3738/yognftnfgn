@@ -1,0 +1,43 @@
+{
+  "kod": "WW",
+  "locale": "en",
+  "wordmark": "SUSHI SOCKS",
+  "underrubrik": "Looks like takeaway. It's 20 pairs of socks.",
+  "banner": "BUY 2 – GET 2 FREE",
+  "message": "You get four boxes.\nBuy 2 – get 2 free: 20 pairs of socks in total.\nRolled like maki. Wooden chopsticks in every box.\nOne size, fits EU 36–44 (about UK 3.5–9.5, US men's 4–10, US women's 5.5–11.5).\nA Swedish brand.",
+  "title": "Buy 2, get 2 free: 4 boxes",
+  "link_description": "Buy 2, get 2 free. Free shipping.",
+  "tre_fragor": [
+    {
+      "rad": "Looks like takeout. It's 20 pairs of socks.",
+      "visualisera": "✅",
+      "falsifiera": "✅",
+      "unik": "✅"
+    },
+    {
+      "rad": "You get four boxes.",
+      "visualisera": "✅",
+      "falsifiera": "✅",
+      "unik": "✅"
+    },
+    {
+      "rad": "Buy 2 – get 2 free: 20 pairs of socks in total.",
+      "visualisera": "✅",
+      "falsifiera": "✅",
+      "unik": "✅"
+    },
+    {
+      "rad": "Rolled like maki. Wooden chopsticks in every box.",
+      "visualisera": "✅",
+      "falsifiera": "✅",
+      "unik": "✅"
+    },
+    {
+      "rad": "One size, fits EU 36–44.",
+      "visualisera": "✅",
+      "falsifiera": "✅",
+      "unik": "✅"
+    }
+  ],
+  "sajt_fel": "produkt.sushi-strumpor.body_html (H3): \"Looks like sushi. Is socks.\" saknar subjekt och låter översatt (det är svenskans \"Är strumpor\"). Skriv \"Looks like sushi. It's socks.\" Annonsens underrubrik använder redan \"It's\"."
+}

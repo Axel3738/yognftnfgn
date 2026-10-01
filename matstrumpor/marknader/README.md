@@ -269,7 +269,10 @@ USA låg mellan +34 och +73 %.
 Sverige: Shopifys Cost per item (landad, SEK) — sushi 5 par 80,23, 3 par 67,51;
 donut/pizza/hamburgare **saknas i Shopify**. Big 5: Axels ark (USD per order, vara +
 frakt, rad för 1 och 2 lådor). Norden: **ingen kostnad känd** — står som saknas med
-orsak. `kor.mjs --ekonomi --marknad US` räknar break-even per produkt med ECB-kurs;
+orsak. ⚠️ **Europa (DE, AT, CH, FR, BE, LU, NL, ES, IT, PL, PT), Japan och Taiwan har inget
+kostnadsblock alls** — 13 av de 21 länder som har en kampanj (granskningen G-F08, 2026-09-30).
+Break-even går inte att räkna där förrän leverantörens pris per land finns (Axel: först när
+marknaden har sålt). `kor.mjs --ekonomi --marknad US` räknar break-even per produkt med ECB-kurs;
 vinsten på stonebite.org räknar Matstrumpors Big 5-ordrar på leveranslandets kostnad
 (`stonebite/kallor/vinst.mjs` → `kostnadPerLand`).
 
@@ -531,6 +534,30 @@ loggan utan .SE.
   48 timmar. Rättar inte språkigenkänningen dem, är det Judge.me:s sak.
 - Läses om med `scratchpad`-skriptet `judgeme5.mjs`, som räknar per språk hur många recensioner som
   visas översatta ("Visa original") och hur många som bara har knappen.
+- **Mätt igen 2026-10-01 ~10:30 CEST (~36 timmar efter inställningen):** fortfarande 0 översatta recensioner
+  på de, nb, fr, ja och zh-TW, bara knappen "Översätt …". Rubrikerna är rätt på de, nb, fr och en, men
+  japanska och kinesiska sidan visar "Kundrecensioner" och "Recensioner på andra språk" på svenska —
+  texterna ligger i `cowork/4-judgeme-australien.txt` (B2). Läs om efter 48 timmar.
+- **2026-10-01 eftermiddag, efter Coworks körning och Axels klick:**
+  - **Japanska och kinesiska är på.** Judge.me:s språklista gjordes innan Japan och Taiwan lades till
+    (2026-09-30) och visade bara elva språk. Axel tryckte **Inställningar → Språk → "Uppdatera lista"**,
+    och listan bär nu Japanese och Chinese (Traditional). Judge.me hämtar annars nya Shopify-språk själv
+    inom upp till 24 timmar. Läst som kund samma eftermiddag: カスタマーレビュー · レビューを書く ·
+    他の言語のレビュー · märket 11件のレビュー, och 客戶評論 · 寫評論 · 其他語言的評論 · märket 11 條評論.
+  - **Datumet är dd/mm/yyyy** (Cowork, Inställningar → Språk; ett enda format för alla språk, Judge.me har
+    inget format per språk). Förut stod 09/28/2026 överallt, även på svenska.
+  - **Översättningen av recensionerna har börjat:** den första tyska recensionen visas på tyska med "Original
+    anzeigen (Schwedisch)", polska och finska står på "Tłumaczenie…" / "Käännetään…". På japanska och
+    kinesiska finns bara knappen ännu.
+  - **Kvar:** rutans antal har fel böjning på finska ("11 arvostelut", ska vara "11 arvostelua") och polska
+    ("11 recenzje", ska vara "11 recenzji"). Det är Review Widget-fältet "Review word (plural)" per språk
+    (Inställningar → Widgetar → Review Widget → Text → "Currently editing in"), i
+    `cowork/5-judgeme-texter.txt`. Polskans "recenzji" blir fel igen vid 22–24 recensioner (då "recenzje").
+  - **Går inte att ändra:** "Sort reviews by" är en dold skärmläsartext (syns inte för kunden), "5 stars:
+    6 (55%)" ligger i ett dolt SEO-block som widgeten ersätter, och "Anonym" är namnet Judge.me lämnar ut på
+    butikens språk för en anonym recensent (en fråga till Judge.me:s support om det ska rättas).
+    Källorna: [Using multi-language widgets](https://judge.me/help/en/articles/8389840-using-multi-language-widgets-to-match-your-store-languages)
+    och [Judge.me supported languages](https://judge.me/help/en/articles/8420621-judge-me-supported-languages).
 
 ### Facebook-sidan "Matstrumpor" på utlandsannonserna (Axel 2026-09-29 kväll)
 
@@ -589,8 +616,9 @@ shipping"/"Kostenloser Versand" utan land på de andra språken.
   landet av sig självt; ett land vi inte säljer till får frasen utan land och lastbilen. Landnamnet är
   Shopifys eget på kundens språk (`localization.country.name`), flaggan Shopifys egen (`country |
   image_url`, 4:3), 1,25em hög så att texterna står i linje med ikonerna bredvid.
-- **Mätt som kund 2026-09-30 i 24 länder** (SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT, CH, FR, BE,
-  LU, NL, ES, IT, PL, PT, IE, CZ): rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
+- **Mätt som kund 2026-09-30 i 22 länder** (23 prov: SE, NO A och B, DK, FI, US, GB, AU, CA, NZ, DE, AT,
+  CH, FR, BE, LU, NL, ES, IT, PL, PT, IE, CZ), och samma kväll i Japan och Taiwan (「日本全国送料無料」 /
+  「全台免運費」, se Japan och Taiwan), alltså 24: rätt flagga och rätt land överallt, provtemat först och sedan MAIN.
   `test/domantema.test.mjs` kör snippeten i en liten Liquid-tolk för alla 13 språk × 38 länder och
   jämför med `fraktText`.
 - Magnetchess gick inte att läsa härifrån (magnetchess.com svarar 502/503 mot containern). Deras .se
@@ -651,7 +679,10 @@ svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbets
   burger 5 680 / ätpinnar 1 080; Taiwan NT$1 690 / 1 490 / 1 190 / 1 790 / 1 190 / 209.
 - **Översättningen** (207 texter per språk): sonnet-översättare per del (A–D) mot `REGLER.md` +
   `oversattning/REGLER-ASIEN.md`, en skeptisk infödd granskare per del (C och D parvis), alla fynd
-  inlagda. De viktigaste fynden: Klarna finns inte i Japan eller Taiwan och är borttaget där (regel 13),
+  inlagda. De viktigaste fynden: Klarna finns inte i Japan eller Taiwan och är borttaget där (regel 13;
+  texten sedan bygget, och sidfotens betalikoner sedan 2026-09-30 kväll — de visade Klarna, BLIK, iDEAL,
+  Twint … för japanska och taiwanesiska kunder tills `domantema.mjs` → `BETAL_ASIEN` begränsade dem till
+  kort, PayPal, Apple Pay, Google Pay och Shop Pay),
   två betydelsefel i japanska integritetspolicyn (klagorätten hos tillsynsmyndigheten, "verkställa
   överträdelser"), åldersgränsen "16 歲以下" (= 16 och yngre) i kinesiskan, 雙數 (läses "jämnt tal") →
   組合, 真正木頭筷子 → 實木筷子. `granska.mjs` kontrollerar skriften (förenklade tecken, kana i
@@ -715,6 +746,43 @@ svenskt varumärke", sedan val **B** ("som i Europa") och "Det är 5 - 10 arbets
   Manager med förmånstagare och betalare valda, och `bygg.mjs` lägger annonserna i det och skriver ut
   id:na.
 
+### Taiwans tull-ID — stopp för lanseringen (Axel 2026-10-01)
+
+Axel: "vi borde inte launcha taiwan heller än pga en annan anledning och det är detta med att man behöver
+ha ett speciellt spårningsnummer pga kina som kudnerna får fylla i i kassan". `marknader.json` →
+`TW.lansering_stopp`, och `farAktiveras` (bygg.mjs + schemalagg.mjs) vägrar varje marknad med fältet.
+Raden tas bort på Axels ord, när kassan tar emot uppgiften.
+
+Utrett samma dag (läsning; källorna och citaten i `TAIWAN-TULL.md`):
+
+- **Kravet är Taiwans tull, och det gäller alla avsändarländer.** Ett expresspaket till en privatperson
+  deklareras på mottagarens namn och mobilnummer, och kunden ska vara registrerad i tullens app
+  **EZ WAY 易利委** med sitt ID-nummer (身分證字號, eller 統一證號 för den som bor i Taiwan utan
+  medborgarskap). **Sedan 2026-03-01 måste kunden dessutom godkänna varje paket i appen** (預先確認委任,
+  「申報相符」) innan tullen tar emot deklarationen. Annars förs paketet inte in och kan skickas tillbaka
+  inom sju arbetsdagar (空運快遞貨物通關辦法 art. 17 och 17-1; 關務署 pressmeddelanden 2025-12-19 och
+  2026-02-24). Tullen har bett ombuden att inte fråga en registrerad kund efter ID-numret: namn + det
+  registrerade mobilnumret räcker (關務署 FAQ). "Pga Kina" stämmer i praktiken: över 90 % av Taiwans små
+  expresspaket kommer från Kina och Hongkong, och Matstrumpors paket går med YunExpress från Kina
+  (523 av 525 paket i `sparning/butiker/matstrumpor/lage.json`).
+- **Tullfritt:** tullvärde högst NT$2 000 och högst sex tullfria paket per person och halvår. Den enkla
+  lådan (NT$1 690) ryms; "Köp 2 – få 2" (NT$3 380) blir tullpliktig för kunden om frakten inte är DDP.
+  Axels regel "alltid noll moms och tull, det hanterar jag själv" gäller.
+- **Shopify:** det finns ett eget kassafält för Taiwan, **"National ID Number"** (värdet hamnar i
+  `order.localizedFields` som `SHIPPING_CREDENTIAL_TW`), men det är early access och slås bara på av
+  Shopify Support — och då kommer fälten för Spanien (NIF/DNI) och Portugal (NIF) med i samma veva.
+  Butiken har planen "Shopify", inte Plus, så egna fält i kassans informationssteg går inte. Andra
+  vägar utan Plus: ett fält bara för Taiwan i varukorgen (cart attribute, som "AB paket" redan är),
+  kassans text på zh-TW, ett kort på tacksidan, ett block i orderbekräftelsen eller obligatorisk telefon
+  (gäller då hela butiken). Fraktbolaget behöver namnet och mobilnumret på etiketten.
+- **Butiken säljer redan till Taiwan:** marknaden Taiwan är ACTIVE med fri frakt, och telefon är frivillig
+  i kassan (24 av de 250 senaste ordrarna har nummer). 0 av 4 233 ordrar har gått till Taiwan eller
+  Japan (läst 2026-10-01).
+- **Japan har inget sådant krav.** Inget ID och ingen app för privatpersoners paket, och strumporna
+  (6115.9x) ryms i den tullfria gränsen på 10 000 yen även med "Köp 2 – få 2" (¥15 960 × 0,6). ⚠️ Men
+  leverantören har aldrig bekräftat att den skickar till Japan eller Taiwan, vad det kostar eller hur
+  lång tid det tar (`LEVERANTOR-FRAGA-JP-TW.md`, parkerad på Axels ord 2026-09-30 tills en marknad sålt).
+
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
 Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",
@@ -772,7 +840,106 @@ videor fick SRT i `transkript/` (11 av dem är nästan tysta — musik/text, ska
 17 lämnade Meta inte ut (`source` saknas — id:n i `transkript/README.md`). HeyGen behövs
 inte för transkriptet, bara för dubbningen, och den står still på API-krediterna.
 
-## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
+## Start fredag 2026-10-02 00:01 — 14 kampanjer, 13 000 kr/dag (Axels ord 2026-10-01)
+
+Axel: "ska vi skriva en ny prompt för att granska eller kan inte du bara schemalägga alla kampanjer
+annars eller? Till 00:01 2 oktober elller?", sedan "Varför skulle vi inte schemalägga alla och japan.
+Eller är det problem med japan?" (sessionens svar: inget problem med Japan, budgeten var bara aldrig
+given). Han valde alltså bort sin egen granskning; granskningen 2026-09-30 hade läst alla 112 annonser
+och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för alla fjorton.
+
+- **Med:** NO + NOB (500 + 500), DK, FI, US, WW (GB, CA, NZ), DE, FR, NL, ES, IT, PL, PT och JP, 1 000
+  kr/dag var — 13 000 kr/dag, ≈ 91 000 kr/vecka.
+- **De 16 Europaländerna utan eget språk** (Irland, Malta, Tjeckien, Ungern, Rumänien, Bulgarien,
+  Kroatien, Slovakien, Slovenien, Litauen, Lettland, Estland, Grekland, Cypern, Island, Liechtenstein):
+  ingen kampanj. Axel valde 2026-10-01 C, att vänta en vecka med de 14 ("Vi kan säkert lägga till fler
+  sen"), före A, en egen engelsk kampanj för tolv av dem, och B, Irland + Malta i WW. Sajten visar dem
+  engelska och landets valuta (mätt: HUF, RON). Grekland, Cypern och Island har dyrare frakt enligt
+  leverantören.
+- **Står kvar avstängt:** Norges annons 007 i A och B (`hall_av`: avslöjandet hörs "sukker", se
+  `egna/README.md` → Granskningen 2026-09-30) — de andra sju går; Australien (se nedan, ⚠️ Australien);
+  hela Taiwan (`lansering_stopp`, se "Taiwans tull-ID").
+- **Två steg, eftersom Meta inte låter en starttid flyttas:** ett försök att sätta adsetets `start_time`
+  till 00:01 svarade 400 "Det går inte att redigera starttiden om annonsuppsättningen redan har
+  startats" — fast adseten aldrig levererat (de skapades med starttid = skapelsetid). Därför
+  `annonser/schemalagg.mjs`:
+  1. **Förbered** (2026-10-01 eftermiddag): adsetets länder synkas mot `geo`, annonserna (utom
+     `hall_av`) och adsetet slås på, kampanjen står kvar PAUSED. Inget levereras och inget kostar,
+     men Meta börjar granska annonserna (effektiv status `IN_PROCESS` under `CAMPAIGN_PAUSED`).
+  2. **Starta** 00:01: `schemalagg.mjs --start 2026-10-02T00:01:00+02:00 --alla --skarpt --starta` slår
+     bara på kampanjerna och läser tillbaka allt. Verktyget vägrar före starttiden − 2 minuter och efter
+     starttiden + 6 timmar, och en kampanj vars adset inte är förberett. Väckningen är send_later
+     `trig_01NVdXzi1vLMKY8id9FxzT9N` (22:01 UTC) in i sessionen som byggde det.
+- Spärrarna är `bygg.mjs`:s (`farAktiveras`: lanseringsstopp, ⛔/platshållare i budgetbeslutet, fel
+  länk) plus dagsbudgeten, som måste vara exakt `marknader.json`:s — en budget ändras aldrig i
+  förbigående. Läget efter varje steg står i `annonser/schemalagt.json`.
+- ⚠️ Förberedelsen tog över en timme: Meta strypte anropen (kod 17/613, upp till 2 minuters väntan per
+  anrop) medan en utredning samtidigt provade `validate_only` mot samma konto. Kör inte tunga
+  Meta-utredningar parallellt med en skarp körning.
+
+## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
+
+Läst ur kontot med `annonser/bygg.mjs --lage` (id:n och annonserna i `annonser/lage.json`, länkarna
+i `annonser/marknader.json`). Sida `1285064981363590` "Matstrumpor" och Instagram-identiteten
+`17841423405715219` på alla 112, länken går till matstrumpor.com utom B-sidan.
+
+| Kod | Kampanj | Id | Länder | Språk | kr/dag | Annonser | Länk |
+|---|---|---|---|---|---|---|---|
+| NO | `MATSTRUMP_NO_SALES` | 120251749551520023 | NO | nb | 500 (A/B) | 8 | .com/nb |
+| NOB | `MATSTRUMP_NOB_SALES` | 120251777339520023 | NO | nb | 500 (A/B) | 8 | matstrumpor.no |
+| DK | `MATSTRUMP_DK_SALES` | 120251749599180023 | DK | da | 1 000 | 8 | .com/da |
+| FI | `MATSTRUMP_FI_SALES` | 120251749604200023 | FI | fi | 1 000 | 8 | .com/fi |
+| US | `MATSTRUMP_US_SALES` | 120251749609010023 | US | en | 1 000 | 8 | .com |
+| WW | `MATSTRUMP_WW_SALES` | 120251749612350023 | GB, AU, CA, NZ | en | 1 000 | 8 | .com |
+| DE | `MATSTRUMP_DE_SALES` | 120251750242530023 | DE, AT, CH | de | 1 000 | 8 | .com/de |
+| FR | `MATSTRUMP_FR_SALES` | 120251750244370023 | FR, BE, LU | fr | 1 000 | 8 | .com/fr |
+| NL | `MATSTRUMP_NL_SALES` | 120251750246440023 | NL | nl | 1 000 | 8 | .com/nl |
+| ES | `MATSTRUMP_ES_SALES` | 120251750248310023 | ES | es | 1 000 | 8 | .com/es |
+| IT | `MATSTRUMP_IT_SALES` | 120251750250830023 | IT | it | 1 000 | 8 | .com/it |
+| PL | `MATSTRUMP_PL_SALES` | 120251750321130023 | PL | pl | 1 000 | 8 | .com/pl |
+| PT | `MATSTRUMP_PT_SALES` | 120251750324340023 | PT | pt-PT | 1 000 | 8 | .com/pt-pt |
+| JP | `MATSTRUMP_JP_SALES` | 120251797899280023 | JP | ja | 1 000 (platshållare) | 8 | .com/ja |
+| TW | `MATSTRUMP_TW_SALES` | 120251796778420023 | TW | zh-TW | 1 000 (platshållare) | **0** | .com/zh-tw |
+
+- **Budgeten:** Axels 1 000 kr/dag per kampanj (2026-09-27 kväll) gäller NO–PT; Norge delas 500 + 500 i
+  A/B-testet. JP och TW bär en platshållare som `--aktivera` vägrar tills Axel sagt en budget.
+- **TW är tom med flit:** åtta annonsfiler är klara i `annonser/TW.json`, men Meta vägrar adsetet tills
+  bolaget är verifierad annonsör i Taiwan (se Japan och Taiwan).
+- **En kampanj per språk, inte per land** (Axel 2026-09-29: "en kampanj per marknad borde bli bäst").
+  Länder med samma språk delar kampanj (DE + AT + CH, FR + BE + LU, GB + AU + CA + NZ), och inget land
+  ligger i två kampanjer. Shopifys marknad Europa bär 29 länder, och 13 av dem har en kampanj. De 16 utan
+  kampanj (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan handla i butiken men får
+  inga annonser: deras språk är inte översatt. Irland och Malta (engelska) och Liechtenstein (tyska)
+  skulle kunna läggas i WW respektive DE utan ny översättning.
+- ⚠️ **Tre gamla kampanjer från augusti ligger kvar i samma konto** (granskningen G-F07):
+  `MATSTRUMP_SALES AU` 120251251965440023, `MATSTRUMP_SALES UK` 120251251897940023 och
+  `MATSTRUMP_SALES_US_20260828` 120251241772530023. Kampanjerna är PAUSED, men deras adsets och 155 annonser
+  står ACTIVE och länkar till sushisock.com (den gamla engelska butiken, sidan `1229557150250240`). Ett
+  klick "slå på allt" på kampanjnivå startar alltså 3 000 kr/dag till en annan butik, i länder som US och
+  WW redan bär. Rör dem aldrig härifrån. Arkiveringen är Axels klick i Ads Manager.
+- ⚠️ **Flerlandskampanjernas länkar saknar `?country=`** (DE, FR, WW: ett adset bär flera länder). Från
+  containern (amerikansk IP) svarar `/de/…` utan land med 429/engelska, med `?country=DE` tyska och
+  `localization=DE` (mätt 2026-09-30 kväll, granskningen G-D02, sänkt till 🔵 vid dess andra prövning).
+  Shopifys marknad Europa bär `de` och `fr` på matstrumpor.com, så en tysk IP bör stanna på tyska — men
+  det går inte att mäta härifrån. Pröva länken via en tysk/fransk VPN innan DE/FR slås på.
+- ⚠️ **Australien kräver verifierad annonsör och betalare** (granskningen G-A01, `issues_info` på
+  WW-adsetet `120251749614670023`: SOFT_ERROR 3858810). Samma sorts krav som Taiwan. Om Meta då stoppar
+  bara AU eller hela adsetet går inte att läsa ur API:t, och det prövas aldrig genom att slå på.
+  **Utrett 2026-10-01 och löst för UK/Kanada/NZ:** felet heter på engelska "Universal regulation Ads
+  Targeting Regulated Countries (Australia) without verified Identities … Verified advertiser and payer
+  required" — inte finansregeln. Metas Verifieringar i kontot har bara raden "Australien (annonser för
+  finansiella tjänster)" (Cowork, `cowork/4-judgeme-australien.txt`), och den är fel väg; kontots allmänna
+  "Standardannonsör och standardbetalare" gäller alla regioner, även de svenska kampanjerna, och rörs inte.
+  API:t tar emot kategorin `AUSTRALIA_UNIVERSAL` (bara prövat med `execution_options: ["validate_only"]`,
+  som inte kontrollerar identiteterna); nyckelparet är troligen `universal_beneficiary`/`universal_payer`
+  (det finns inga `australia_universal_*`). Bara WW bar felet, och de tre gamla AU-adseten från augusti
+  (sushisock.com) bär det inte, så kravet syns på adset som skapats eller ändrats efter början av
+  september. **Australien togs ur WW 2026-10-01** (förberedelsen till starten, `marknader.json` →
+  `WW.geo = GB, CA, NZ` och `geo_vantar.AU`), och felet försvann samma minut: 0 av 37 adset i kontot bär
+  `issues_info` (läst ~11:30 UTC). Australien läggs tillbaka när Meta godkänt STONEBITE ECOM AB, som
+  Taiwan väntar på — Taiwan-check-in:en `trig_013nZKYRvQ3P52ANsT5QuZFd` bär steget.
+
+## Kampanjerna i kontot — historik: bygget 2026-09-27 ~16:00 CEST (ersatt av tabellen ovan)
 
 Axels order: "Nu har api tillgång också. Bygg upp alla kampanjer. Bygg upp worldwide kampanj.
 Förbered usa kampanj med alla nya ads vi inte hade innan och UGC heygennad. Katarina får vi
@@ -809,7 +976,9 @@ utan butiksnamnet, så regeln "butikens namn står aldrig i en annons" håller. 
 `annonser/lage.json`, `bygg.mjs --lage`. Metas rate limit slog till mitt i bygget (kod 17,
 backoff 30/60/120 s …) — bygget tar en kvart för sju kampanjer, inte en minut.
 
-## Annonserna i kontot (2026-09-28/29) — 36 st, alla PAUSED
+## Annonserna i kontot — historik: de första 36 (2026-09-28/29), alla PAUSED
+
+(Läget nu: åtta per kampanj, 001–008, se tabellen ovan.)
 
 Varje kampanj har tre annonser med Axels egen UGC, gjord i HeyGens **dyraste läge (`precision`)**
 på kampanjens språk (WW bär de engelska): `MATSTRUMP_<KOD>_sushi_gift_ugc_001_v1` (Nathalie),
@@ -908,8 +1077,10 @@ och "Finland DK" `1356652809967926` saknar betalmetod och nås inte av token.
 Rutinen som saknas är `/ops-oversatt` för Matstrumpor: SE-vinnarna i hubben →
 `pipeline/translate-batch.mjs --marknad <M>` (HeyGen för video, `translate-images` för
 bild) → en kampanj per land i nya kungen (`MATSTRUMP_<LAND>_SALES`, geo = landet,
-länk `https://matstrumpor.se/<språk>/products/<handle>?country=<LAND>`) → annonsnamn
+länk `https://matstrumpor.com/<språk>/products/<handle>?country=<LAND>`) → annonsnamn
 `MATSTRUMP_<LAND>_sushi_<vinkel>_<format>_<nnn>_v<n>`. Break-even per land ur
-`cogs.json` (US 1,22 · GB 1,17 … för sushi 5 par; se `--ekonomi --marknad`). Byggs
+`cogs.json` via `kor.mjs --ekonomi --marknad <LAND>` (talen rör sig med kursen och priserna:
+US 1,22 · GB 1,17 när planen skrevs 2026-09-27, 1,182 / 1,137 vid granskningen 2026-09-30;
+citera aldrig ett gammalt tal). Byggs
 som `/matstrumpor-marknader` när Axel sagt budget per land — augustis test låg under
 break-even i alla tre länder, och den frågan är hans.

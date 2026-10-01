@@ -1,0 +1,113 @@
+{
+  "hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+  "rond": "2026-09-29",
+  "bra": [
+    "The page says little and the briefs stay inside it: four holders, sturdy, beach, lake and boat, one colour per set — no load, size or speed claim (read live from the product page 2026-10-01).",
+    "The top spender (PD_EXTRA) is paused, so the briefs build on the best ACTIVE video and say why — the right reading of a pause decision.",
+    "Every parent caption with fake urgency or a policy line (`Idag och bara idag`, `Fri frakt`, `30 dagars öppet köp`) is banned by name."
+  ],
+  "missat": [
+    "Rodholder_FD_4_1–4 Assets line is broken: the note `(bytt 2026-09-30 …)` sits INSIDE the URL, before `?v=1782033165`. The image routine reads a URL with a sentence in it.",
+    "Rodholder_FD_3_H1 names the objection `passar de mina spön?` and answers `Passar proffs och nybörjare` — that answers who, not which rods.",
+    "Rodholder_FD_1_H3 row 1 shows one holder carrying two rods, then row 2 says `Fyra spön, fyra egna platser` — the line and the picture disagree.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "A URL stands alone on its line; a note about it goes after it, never inside it.",
+    "The hook answers the objection the brief names: `passar de mina spön?` needs a fact about the rods, not about the angler.",
+    "The line and the picture agree: `en till varje spö` is never written over one holder with two rods."
+  ],
+  "rader": [
+    {
+      "namn": "Rodholder_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "Assets URL broken by the note inside it."
+      ],
+      "bra": [
+        "Four colours named exactly as the variants."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Assets URL broken; deadline twice."
+      ],
+      "bra": [
+        "Sub-line is the page's own."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Assets URL broken by the note inside it; price twice."
+      ],
+      "bra": [
+        "`en färg per set` — the page's variant fact."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "Assets URL broken by the note written inside it."
+      ],
+      "bra": [
+        "Switched to the page's own photo without people."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "The objection is the rods, the answer is the angler — the hook does not answer it."
+      ],
+      "bra": [
+        "The page's own `Passar både proffs och nybörjare`."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 shows one holder with two rods; row 2 says one rod per holder."
+      ],
+      "bra": [
+        "Parent captions with fake urgency banned by name."
+      ]
+    },
+    {
+      "namn": "Rodholder_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

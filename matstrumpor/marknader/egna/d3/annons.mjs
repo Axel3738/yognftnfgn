@@ -6,7 +6,7 @@
 //
 // Texterna i texter/<KOD>.json skrevs av en sonnet-subagent mot docs/copy-regler.md och granskades av
 // infödda granskare per språk 2026-09-29 (fynden inlagda samma dag: rad 1 säger vad kunden FÅR — fyra
-// lådor — eftersom bilden visar sex). WW är engelskspråkig och bär USA:s text och bild. Bilden ritas av
+// lådor — eftersom bilden visar sex). WW har egen brittisk text och bild sedan 2026-09-30. Bilden ritas av
 // rita.py på den textfria basen bas.png: ordmärket, underraden och pillret som skarp text, aldrig av
 // bildmodellen.
 
@@ -18,10 +18,14 @@ import { join, dirname } from 'node:path';
 const ROT = dirname(fileURLToPath(import.meta.url));
 const ANNONSER = join(ROT, '..', '..', 'annonser');
 export const KODER = ['NO', 'DK', 'FI', 'US', 'WW', 'DE', 'FR', 'NL', 'ES', 'IT', 'PL', 'PT', 'JP', 'TW'];
-export const textKod = (kod) => (kod === 'WW' ? 'US' : kod);
+// WW (Storbritannien, Australien, Kanada, Nya Zeeland) har egen text sedan 2026-09-30: brittisk
+// engelska ("takeaway", granskningen G-C-en-04). Finns ingen texter/WW.json bär WW USA:s text och bild.
+export const textKod = (kod) => (kod === 'WW' && !existsSync(join(ROT, 'texter', 'WW.json')) ? 'US' : kod);
 export const namnFor = (kod) => `MATSTRUMP_${kod}_sushi_offer_static_008_v1`;
 // Butikens namn och domän står aldrig i en annons (Axels beslut 2026-09-18).
 const BUTIKSORD = /matstrumpor|\.se\b|\.no\b|\.com\b|\.eu\b/i;
+/** Ren: bär texten talet fyra i någon form (四, 肆, 4 eller helbredds-４)? */
+export const sagerFyra = (v) => /[四肆4４]/u.test(v ?? '');
 
 /** Ren: textfilen → annonsen i kampanjfilens form. */
 export function annonsFor(kod, t) {
@@ -47,10 +51,12 @@ export function fel(kampanjfil, annons, t) {
     else if (BUTIKSORD.test(v)) ut.push(`${falt} nämner butiken eller en domän: "${v}"`);
     if (v && /\d+\s*(kr|€|\$|zł|nok|sek|eur|usd)/i.test(v)) ut.push(`${falt} bär ett pris — priset står bara på sidan`);
   }
-  // Japan och Taiwan: talet fyra (四, en ensam 4:a) undviks i presenter — storleken 36–44 räknas inte.
+  // Japan och Taiwan: talet fyra står aldrig i en annons, inte heller i storleken. Granskningen
+  // 2026-09-30 (G-C-JA-01): "EUサイズ36–44" läses som två fyror, och 44 (shi-shi) är en
+  // olycksfigur — undantaget för 36–44 som stod här var fel. Storleken skrivs i centimeter.
   if (/^(JP|TW)$/.test(t.kod ?? '')) {
-    for (const [falt, v] of Object.entries({ title: annons.title, message: annons.message, link_description: annons.link_description, underrubrik: t.underrubrik, banner: t.banner })) {
-      if (v && /四|(?<![\d–-])4(?![\d–-])/u.test(v)) ut.push(`${falt} säger fyra — undviks i presenter i Japan och Taiwan`);
+    for (const [falt, v] of Object.entries({ title: annons.title, message: annons.message, link_description: annons.link_description, underrubrik: t.underrubrik, banner: t.banner, wordmark: t.wordmark })) {
+      if (v && sagerFyra(v)) ut.push(`${falt} säger fyra — står aldrig i en annons i Japan och Taiwan`);
     }
   }
   const kryss = (t.tre_fragor ?? []).filter((r) => [r.visualisera, r.falsifiera, r.unik].includes('❌'));

@@ -18,6 +18,18 @@
         "KUNDTJANST_MAIL_PASS_BAEVERBUTIKEN": "${KUNDTJANST_MAIL_PASS_BAEVERBUTIKEN:-}",
         "KUNDTJANST_MAIL_PASS_MAJAVAKAUPPA": "${KUNDTJANST_MAIL_PASS_MAJAVAKAUPPA:-}"
       }
+    },
+    "spoks-api": {
+      "command": "node",
+      "args": ["klaviyo/spoks/api-mcp.mjs"],
+      "env": {
+        "NODE_USE_ENV_PROXY": "1",
+        "NODE_NO_WARNINGS": "1",
+        "SPOKS_API_KEY_BAVERBUTIKEN": "${SPOKS_API_KEY_BAVERBUTIKEN:-}",
+        "SPOKS_API_KEY_CARASHELL": "${SPOKS_API_KEY_CARASHELL:-}",
+        "SPOKS_API_KEY_MATSTRUMPOR": "${SPOKS_API_KEY_MATSTRUMPOR:-}",
+        "SPOKS_API_KEY_BEVERBUTIKKEN": "${SPOKS_API_KEY_BEVERBUTIKKEN:-}"
+      }
     }
   }
 }

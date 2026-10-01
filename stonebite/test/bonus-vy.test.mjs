@@ -197,3 +197,50 @@ test('en snapshot från före bygget (bara halvor på raderna) visar samma uppde
   assert.match(forsta, /\$240,00/);
   assert.match(forsta, /Färdig produkt(?! ×)/, 'utan antal per halva står bara uppdraget');
 });
+
+// Månadsväljaren (Axel 2026-10-01: "ska precis skicka bonus för förra månaden
+// men det kan inte välja datum"): snapshoten räknar oktober, septembers
+// kvitto ligger sparat — och det är kvittot som ritas när september väljs.
+const OKTOBER = {
+  ...BONUS,
+  period: { namn: '2026-10', fran: '2026-10-01', till: '2026-10-31' },
+  raknat: '2026-10-01T10:12:24.486Z', summa: 0.09,
+  personer: [{ ...JOSH, summa: 0.09, rader: [], utbetalningar: { ...noll(), commission: { takt: 'manad', summa: 0.09 } } }],
+};
+const KVITTO_SEP = { ...BONUS, raknat: '2026-10-01T00:12:37.592Z', otilldelat: [{ uppdrag: 'recension_med_namn', orsak: 'inget (eller flera) namn i texten', antal: 879, summa: 0 }] };
+
+test('Bonus-sidan: septembers kvitto väljs med ?manad=2026-09 och ritas i stället för oktober', () => {
+  sattSprak('sv');
+  const snapshot = { ...SNAPSHOT, bonus: OKTOBER };
+  const okt = bonusSida({ snapshot, anvandare: axel, csrf: 'x', manader: ['2026-09'] }).innehall;
+  assert.match(okt, /aria-current="page">oktober 2026</, 'oktober är vald utan parameter');
+  assert.match(okt, /href="\/app\/bonus\?manad=2026-09">september 2026</);
+  assert.doesNotMatch(okt, /\$240,00/, 'oktober bär inte septembers pengar');
+
+  const sep = bonusSida({ snapshot, anvandare: axel, csrf: 'x', manad: '2026-09', kvitto: KVITTO_SEP, manader: ['2026-09'] }).innehall;
+  assert.match(sep, /aria-current="page">september 2026</);
+  assert.match(sep, /Kvitto för <b>september 2026<\/b> · räknat 2026-10-01/);
+  assert.match(sep, /Betalas den 15:e\. 2026-09-01 – 2026-09-15/);
+  assert.match(sep, /\$240,00/);
+  assert.match(sep, /Maria Santos/);
+  assert.match(sep, /879 st/, 'kvittots räkningar per orsak visas som antal, inte som en rad');
+  assert.doesNotMatch(sep, /Recensioner med namn<\/div>/, '60-dagarskortet hör till nu, inte till en gången månad');
+});
+
+test('Bonus-sidan: en månad utan sparat kvitto säger det — och visar aldrig en annan månads pengar', () => {
+  sattSprak('sv');
+  const snapshot = { ...SNAPSHOT, bonus: OKTOBER };
+  const html = bonusSida({ snapshot, anvandare: axel, csrf: 'x', manad: '2026-08', kvitto: null, manader: ['2026-09'] }).innehall;
+  assert.match(html, /Inget kvitto sparat för augusti 2026/);
+  assert.doesNotMatch(html, /\$240,00|\$0,09/);
+  // Ett kvitto för FEL månad räknas som saknat
+  const fel = bonusSida({ snapshot, anvandare: axel, csrf: 'x', manad: '2026-08', kvitto: KVITTO_SEP, manader: ['2026-09'] }).innehall;
+  assert.match(fel, /Inget kvitto sparat för augusti 2026/);
+});
+
+test('Bonus-sidan (engelska): månadsväljaren följer läsaren', () => {
+  sattSprak('en');
+  const html = bonusSida({ snapshot: { ...SNAPSHOT, bonus: OKTOBER }, anvandare: axel, csrf: 'x', manad: '2026-09', kvitto: KVITTO_SEP, manader: ['2026-09'] }).innehall;
+  assert.match(html, /aria-current="page">September 2026</);
+  assert.match(html, /Receipt for <b>September 2026<\/b> · calculated 2026-10-01/);
+});

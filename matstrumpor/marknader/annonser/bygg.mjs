@@ -14,7 +14,9 @@
 //       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
 //       Byter också Facebook-sidan, Instagram-kontot och länken när marknader.json säger något
 //       annat (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se";
-//       länken matstrumpor.com/<språk> sedan samma kväll — inte matstrumpor.se).
+//       länken matstrumpor.com/<språk> sedan samma kväll — inte matstrumpor.se). En LÅNAD annons
+//       (B-kampanjen NOB bär A-annonsens media) får också A-annonsens nuvarande video/bild här, så
+//       kör --byt-video på A först och --byt-text på den lånade sedan (2026-09-30).
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -51,6 +53,9 @@ const sparaVideor = () => writeFileSync(VIDEOR, JSON.stringify(videor, null, 1) 
  *  inte att du aktiverar kampanjerna i meta för ens jag har granskat alla". Budgeten är given, men
  *  aktiveringen är hans — texten i marknader.json ändras när han sagt ja, aldrig av en session själv. */
 export function farAktiveras(k, annonser) {
+  // Ett stopp för hela marknaden går före allt annat: Taiwan (Axel 2026-10-01) lanseras inte förrän
+  // kassan tar emot kundens tull-ID, hur rätt budget och annonser än är. Raden tas bort på hans ord.
+  if (k.lansering_stopp) return { ok: false, skal: `marknaden får inte lanseras än (${k.lansering_stopp})` };
   if (/EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `budgeten är en platshållare (${k.budget_beslut})` };
   if (/⛔|tills Axel granskat/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `väntar på Axels granskning (${k.budget_beslut})` };
   if (!annonser.length) return { ok: false, skal: 'inga annonser i adsetet' };
@@ -80,6 +85,16 @@ export function textSkillnad(an, story = {}) {
   const live = v ? { title: v.title, message: v.message, link_description: v.link_description }
     : l ? { title: l.name, message: l.message, link_description: l.description } : {};
   return ['title', 'message', 'link_description'].filter((f) => (live[f] ?? '') !== (an[f] ?? ''));
+}
+
+/** Ren: bär annonsens creative en annan video eller bild än `v` (raden i videor.json)? Används för
+ *  LÅNADE annonser (B-kampanjen på .no bär A-annonsens media, `video_fran`/`bild_fran`): när A-annonsen
+ *  får en ny fil med --byt-video hoppar den lånade över sig själv, och textjämförelsen ser ingen skillnad.
+ *  Granskningen 2026-09-30 räknade på det: NOB hade annars fått behålla de gamla norska videorna. */
+export function mediaSkillnad(v, story = {}) {
+  const live = story.video_data?.video_id ?? story.link_data?.image_hash ?? '';
+  const ska = v?.video_id ?? v?.image_hash ?? '';
+  return live && ska && live !== ska ? ['media'] : [];
 }
 
 /** Ren: vilken Facebook-sida och vilket Instagram-konto annonsen visas som, mot marknader.json. */
@@ -197,8 +212,10 @@ async function byggMarknad(kod) {
       const fil = kallfil(an) ? join(ROT, kallfil(an)) : null;
       const gammal = finns.find((x) => x.name === an.namn);
       if (gammal && bytText) {
-        // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida).
-        const andrat = [...textSkillnad(an, gammal.creative?.object_story_spec), ...identitetSkillnad(M, gammal.creative?.object_story_spec), ...lankSkillnad(k, gammal.creative?.object_story_spec)];
+        // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida),
+        // och för en lånad annons: att den bär A-annonsens NUVARANDE video eller bild.
+        const story = gammal.creative?.object_story_spec;
+        const andrat = [...textSkillnad(an, story), ...identitetSkillnad(M, story), ...lankSkillnad(k, story), ...(lanad ? mediaSkillnad(videor[an.video_fran ?? an.bild_fran], story) : [])];
         if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
         if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
         if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
@@ -210,7 +227,7 @@ async function byggMarknad(kod) {
         await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
         const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
         if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
-        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec), ...lankSkillnad(k, las.creative.object_story_spec)];
+        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec), ...lankSkillnad(k, las.creative.object_story_spec), ...(lanad ? mediaSkillnad(v, las.creative.object_story_spec) : [])];
         if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
         videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
         sparaVideor();

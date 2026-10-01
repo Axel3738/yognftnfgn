@@ -1,0 +1,111 @@
+{
+  "hub_id": "3e8270ab-908c-817b-9e74-efe7a636609e",
+  "rond": "2026-09-29",
+  "bra": [
+    "Only the page's contents are named (golf balls, tees, ball markers, green repair tool, club brush, towel); the parent's flat lay with golf socks is banned because the page does not list socks.",
+    "FD_1_H3's primary text says honestly that the doors open in December — the gift is given 8 November and opened from 1 December.",
+    "Parent on profit contribution: CPA 209 kr against break-even 409 kr, 20 purchases; price 549 / 719 kr (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Only FD_1_H3 tells the buyer that an advent calendar given on 8 November is opened from 1 December — the BOF rows sell it as a Father's Day gift without saying when it is used.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "Every Father's Day line on an advent calendar says when the doors open (`24 luckor från 1 december`) — a gift that waits three weeks must say so.",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "Golfkalender_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Deadline twice (headline and bottom line)."
+      ],
+      "bra": [
+        "`går att skicka direkt som present` is the page's line."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "`Ett paket att slå in` is the page's line."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Golfkalender_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

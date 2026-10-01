@@ -1,7 +1,7 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { arVerifieringsfel, farAktiveras, identitetSkillnad, lankOk, lankSkillnad, regionalFalt, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { arVerifieringsfel, farAktiveras, identitetSkillnad, lankOk, lankSkillnad, mediaSkillnad, regionalFalt, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
 import { readFileSync } from 'node:fs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
@@ -38,13 +38,26 @@ test('farAktiveras: en given budget med ⛔ "tills Axel granskat" stoppar ändå
   const ok = [{ name: 'a', lank: 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO' }];
   const vantar = { ...NO, budget_beslut: "Axel 2026-09-27: '1000kr per dag'. ⛔ Förblir PAUSED tills Axel granskat annonserna" };
   assert.match(farAktiveras(vantar, ok).skal, /Axels granskning/);
-  // Facit är filen: varje kampanj som ännu inte granskats ska stoppas av spärren.
+  // Facit är filen: en kampanj utan Axels ja (⛔/platshållare i beslutet) eller med lanseringsstopp
+  // stoppas, och sedan 2026-10-01 ("schemalägg alla och japan") får de andra gå — Taiwan aldrig.
   const { readFileSync } = await import('node:fs');
   const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
   for (const [kod, k] of Object.entries(M.kampanjer)) {
     const lank = [{ name: kod, lank: k.lank }];
-    assert.equal(farAktiveras(k, lank).ok, false, `${kod} skulle kunna aktiveras: ${k.budget_beslut}`);
+    const stopp = !!k.lansering_stopp || /⛔|EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '');
+    assert.equal(farAktiveras(k, lank).ok, !stopp, `${kod}: ${k.budget_beslut}`);
   }
+  assert.equal(farAktiveras(M.kampanjer.TW, [{ name: 'TW', lank: M.kampanjer.TW.lank }]).ok, false, 'Taiwan får aldrig gå utan Axels ord');
+});
+
+test('farAktiveras: lansering_stopp stoppar marknaden även med given budget och rätt länkar — Taiwan bär det', async () => {
+  const ok = [{ name: 'a', lank: 'https://matstrumpor.com/zh-tw/products/sushi-strumpor?country=TW' }];
+  const TW = { locale: 'zh-TW', geo: ['TW'], doman: 'matstrumpor.com', sprakmapp: 'zh-tw', budget_beslut: 'Axel: 1000 kr/dag', lansering_stopp: 'tull-ID i kassan' };
+  assert.equal(farAktiveras({ ...TW, lansering_stopp: undefined }, ok).ok, true, 'utan stoppet hade den gått');
+  assert.match(farAktiveras(TW, ok).skal, /får inte lanseras än \(tull-ID i kassan\)/);
+  const { readFileSync } = await import('node:fs');
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  assert.match(M.kampanjer.TW.lansering_stopp ?? '', /tull/i, 'Taiwan ska bära stoppet tills Axel sagt annat');
 });
 
 test('lankOk: B-kampanjen på egen domän måste gå dit, aldrig till .se', () => {
@@ -107,6 +120,16 @@ test('--byt-text: bara de fält som skiljer mot annonsens creative byts, video o
   const bild = { link_data: { name: 'Rubrik', message: 'Rad 1\nRad 2', description: an.link_description } };
   assert.deepEqual(textSkillnad(an, bild), []);
   assert.deepEqual(textSkillnad(an, {}), ['title', 'message', 'link_description']);
+});
+
+test('mediaSkillnad: en lånad annons (NOB) som bär A-annonsens GAMLA video eller bild märks, samma media gör det inte', () => {
+  assert.deepEqual(mediaSkillnad({ video_id: '2' }, { video_data: { video_id: '1' } }), ['media']);
+  assert.deepEqual(mediaSkillnad({ video_id: '1' }, { video_data: { video_id: '1' } }), []);
+  assert.deepEqual(mediaSkillnad({ image_hash: 'b' }, { link_data: { image_hash: 'a' } }), ['media']);
+  assert.deepEqual(mediaSkillnad({ image_hash: 'a' }, { link_data: { image_hash: 'a' } }), []);
+  // Okänt åt något håll ⇒ ingen dom (hellre en tom jämförelse än en creative byggd på gissning).
+  assert.deepEqual(mediaSkillnad(undefined, { video_data: { video_id: '1' } }), []);
+  assert.deepEqual(mediaSkillnad({ video_id: '1' }, {}), []);
 });
 
 test('--byt-text byter också sidan: utlandsannonserna visas som sidan Matstrumpor, aldrig Matstrumpor.se', () => {

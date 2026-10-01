@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-10-01",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the main campaign is cut 3 000 → 2 100 kr. Its cadence lock released after three days and the 3-day profit is -19.0 % at ROAS 1.24. Read back and logged",
+    "Paused two ads: SP_3_H1 in the LISTICLE campaign (1 607 kr, two purchases, CPA 803) and CS_1_H1 – kopia in the new listicle one (1 395 kr, zero purchases in 14 days)",
+    "The cap of three changes a night was reached again. Two cuts go first tomorrow: LISTICLE 2 800 → 2 000 and the new listicle copy 2 000 → 1 400, which just passed the judging threshold with 4 877 kr and five purchases",
+    "64 purchases over 7 days on 60 557 kr at ROAS 1.42. Profit contribution -16 205 kr against -16 864 last night. The week still carries the three worst days"
+  ],
+  "siffror": { "spend_7d": 60557, "kop_7d": 64, "roas_7d": 1.42, "vinstbidrag_7d": -16205 },
+  "briefer": [],
+  "action_axel": [
+    "Two things you should know, and only the second needs a decision. First: yesterday, 30 September, was the first profitable day since the 23rd. All three campaigns together spent 7 764 kr for 12 purchases at ROAS 1.96, CPA 647 against break-even 693. The listicle track carried it, LISTICLE at 2.59 and the new copy at 1.82 against the main campaign's 1.41 — which is the opposite of what the 29th said, when LISTICLE fell hardest of the three. Two days, two opposite answers: neither is enough to conclude anything, and I will not read this again until all three have run a full week on their new budgets, so 6 October at the earliest. Second: the round cut your 3 000 kr to 2 100 tonight. I flagged on the 29th that it counts cadence from its own log and would do exactly this if the 3-day profit was still under 16 %; no answer came, the 3-day profit was -19.0 %, so it did. That is the rules working, but the cut landed the day after the best day of the week, because the 3-day window still carries the 29th. If you want the main campaign back at 3 000, say so and I will set it"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-10-02",
+  "varningar": [
+    "SP_5_1 is now one krona from being handled by the rules themselves. Its 14-day CPA reads 692 against break-even 693, and its 7-day CPA is 1 364 on eight purchases. If the 14-day number crosses tomorrow the round pauses it with no decision from you. I am not pre-empting it — waiting for that number is the right move",
+    "The new listicle campaign got its first verdict tonight: 4 877 kr and five purchases over three days, ROAS 1.45, profit -7.6 %. That is under the floor, so it is queued for a cut. It is not a failed campaign, it is a campaign that has now earned a reading",
+    "Norway and Denmark still run unwatched. Measured 23 September, not re-measured since. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}

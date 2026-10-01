@@ -2,6 +2,15 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-10-01
+
+- [ ] **CaraShell · CaraShellRoof** · invändning — Tre amerikaner frågar varför skyddet är svart ('heat absorbing', 'Black attracts more heat', 'Any colors other than black'). Produktfakta säger inget om färgen eller värmen. → Leverantörsfråga: tål det svarta tyget sol och värme på taket, finns andra färger?
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_1479347807339242, 122108439363473983_2143982803187194, 122115450333473983_1956644648335782 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · fråga — AC-aggregat, ventiler och solceller igen (fem kommentarer), plus 'kan man köra AC:n med skyddet på'. → OB/bild: skyddet över ett tak med AC-aggregat (backloggen, väntar på leverantören)
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_2216184538992723, 122115450333473983_4105215119778589, 122107043547473983_28491660537199283, 122115450333473983_2934960830193718, 122107043547473983_1801679747630534 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · förtroende — En tråd på US_PD_7_1 där köpare säger att ingen svarar på mejl och frågar om det är en bluff. Obesvarade mejl syns nu offentligt under annonsen. → Kundtjänst först: svara amerikanska mejl samma dag
+  - Källa: voc · `kalla=voc` · belägg: 122108439363473983_1069290199248269, 122108439363473983_1657369235818060, 122108439363473983_1389671212897478, 122109041217473983_1675996990901193 · status: väntar
+
 ## 2026-09-30
 
 - [ ] **CaraShell · CaraShellRoof** · invändning — AC-aggregat och takluckor igen i USA (4 kommentarer i dag, en har två AC och frågar efter ett telefonnummer). 'Ni visar bara platta tak' återkommer. → OB/bild: skyddet över ett tak med AC-aggregat, redan i backloggen (väntar på leverantörens svar)

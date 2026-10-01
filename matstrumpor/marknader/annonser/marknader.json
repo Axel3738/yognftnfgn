@@ -22,7 +22,13 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 500,
-   "budget_beslut": "Axel 2026-09-27: '1000kr per dag'. A/B-test 2026-09-29 (Axel: 'AB-testa att köra det som att det är ett norskt varumärke … ett svenskt varumärke … skillnaden efter typ två veckor'): 1 000 kr/dag delas 500 här (A, svenskt varumärke, matstrumpor.se/nb) + 500 i NOB (B, matstrumpor.no) — sessionens förslag, sagt till Axel samma dag. ⛔ Förblir PAUSED tills Axel granskat annonserna (hans ord 2026-09-27: 'jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla')",
+   "budget_beslut": "Axel 2026-09-27: '1000kr per dag'. A/B-test 2026-09-29 (Axel: 'AB-testa att köra det som att det är ett norskt varumärke … ett svenskt varumärke … skillnaden efter typ två veckor'): 1 000 kr/dag delas 500 här (A, svenskt varumärke, matstrumpor.se/nb) + 500 i NOB (B, matstrumpor.no) — sessionens förslag, sagt till Axel samma dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser).",
+   "hall_av": [
+    {
+     "namn": "MATSTRUMP_NO_sushi_gift_ugc_007_v1",
+     "skal": "Avslöjandet \"så skjønner man det er sokker\" hörs \"sukker\" (socker) av Whisper large-v3 i den mixade videon, med både klonen och Celine (egna/README.md → Granskningen 2026-09-30). Står kvar PAUSED tills en norsk lyssnare hört den — sessionens beslut 2026-10-01, sagt till Axel."
+    }
+   ],
    "ab": {
     "test": "NO svensk mot norsk (2026-09-29)",
     "variant": "A",
@@ -40,7 +46,13 @@
    "heygen_sprak": "Norwegian Bokmål (Norway)",
    "lank": "https://matstrumpor.no/products/sushi-strumpor?country=NO",
    "budget_sek_dag": 500,
-   "budget_beslut": "A/B-test Norge 2026-09-29, B-sidan: 500 kr/dag av Axels 1 000 (A = MATSTRUMP_NO_SALES 500) — sessionens förslag, sagt till Axel samma dag. ⛔ Förblir PAUSED tills Axel granskat annonserna.",
+   "budget_beslut": "A/B-test Norge 2026-09-29, B-sidan: 500 kr/dag av Axels 1 000 (A = MATSTRUMP_NO_SALES 500) — sessionens förslag, sagt till Axel samma dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser).",
+   "hall_av": [
+    {
+     "namn": "MATSTRUMP_NOB_sushi_gift_ugc_007_v1",
+     "skal": "Avslöjandet \"så skjønner man det er sokker\" hörs \"sukker\" (socker) av Whisper large-v3 i den mixade videon, med både klonen och Celine (egna/README.md → Granskningen 2026-09-30). Står kvar PAUSED tills en norsk lyssnare hört den — sessionens beslut 2026-10-01, sagt till Axel."
+    }
+   ],
    "ab": {
     "test": "NO svensk mot norsk (2026-09-29)",
     "variant": "B",
@@ -60,7 +72,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "FI": {
    "kampanj": "MATSTRUMP_FI_SALES",
@@ -74,7 +86,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "US": {
    "kampanj": "MATSTRUMP_US_SALES",
@@ -88,18 +100,20 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "WW": {
    "kampanj": "MATSTRUMP_WW_SALES",
    "adset": "MATSTRUMP_WW_ugc",
    "geo": [
     "GB",
-    "AU",
     "CA",
     "NZ"
    ],
-   "geo_beslut": "2026-09-29: Axel 'en kampanj per marknad borde bli bäst'. NO, DK, FI och US har egna kampanjer, så WW bär bara de engelska länderna utan egen kampanj (sessionens beslut; före det NO+DK+FI+US+GB+AU+CA+NZ, alltså två kampanjer på samma land). Adsetet 120251749614670023 ändrat PAUSED och tillbakaläst samma dag. Vill Axel ha GB/AU/CA/NZ som fyra egna kampanjer: nya rader här + bygg.mjs --marknad <KOD> --skarpt.",
+   "geo_beslut": "2026-09-29: Axel 'en kampanj per marknad borde bli bäst'. NO, DK, FI och US har egna kampanjer, så WW bär bara de engelska länderna utan egen kampanj (sessionens beslut; före det NO+DK+FI+US+GB+AU+CA+NZ, alltså två kampanjer på samma land). Adsetet 120251749614670023 ändrat PAUSED och tillbakaläst samma dag. Vill Axel ha GB/AU/CA/NZ som fyra egna kampanjer: nya rader här + bygg.mjs --marknad <KOD> --skarpt. 2026-10-01: Australien UR adsetet tills Meta godkänt STONEBITE ECOM AB (issues_info 3858810 \"Universal regulation … (Australia) … Verified advertiser and payer required\"; granskningen G-A01). Felet sitter på hela adsetet, så UK, Kanada och Nya Zeeland hade riskerat att stå still. Sessionens beslut inför Axels schemaläggning, sagt till honom. Tillbaka med regional_regulated_categories AUSTRALIA_UNIVERSAL + identiteterna när verifieringen är klar (geo_vantar).",
+   "geo_vantar": {
+    "AU": "väntar på att Meta godkänner STONEBITE ECOM AB (samma verifiering som Taiwan, \"Granskas\" 2026-10-01)"
+   },
    "locale": "en",
    "heygen_sprak": "English (United States)",
    "lank": "https://matstrumpor.com/products/sushi-strumpor",
@@ -107,8 +121,8 @@
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla fyra länderna ligger i marknaden USA/UK/AU/CA/NZ med egen valuta). Sverige ingår inte — SE har egen kampanj.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord",
-   "geo_not": "WW = de engelska länderna utan egen kampanj (GB, AU, CA, NZ sedan 2026-09-29). De sju språkkampanjerna täcker sina länder på eget språk; övriga europeiska länder (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan läggas i WW när engelskan är bekräftad som deras språk — Axels beslut."
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser).",
+   "geo_not": "WW = de engelska länderna utan egen kampanj (GB, AU, CA, NZ sedan 2026-09-29). De sju språkkampanjerna täcker sina länder på eget språk; övriga europeiska länder (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan läggas i WW när engelskan är bekräftad som deras språk — Axels beslut. 2026-10-01: Axel valde C av tre (A en egen engelsk kampanj för IE, MT och tio länder i öst, 1 000 kr/dag; B IE + MT i WW; C vänta en vecka med de 14 som startar 2026-10-02): \"A egentligen c dock. Vi kan säkert lägga till fler sen\". Inget av de 16 länderna får en kampanj förrän han sagt till. Leverantören 2026-10-01: Grekland, Cypern och Island har dyrare frakt."
   },
   "DE": {
    "kampanj": "MATSTRUMP_DE_SALES",
@@ -125,7 +139,7 @@
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Tre länder i samma språk ⇒ utan ?country= (Shopify väljer marknad/valuta efter IP; alla tre ligger i marknaden Europa)",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "FR": {
    "kampanj": "MATSTRUMP_FR_SALES",
@@ -142,7 +156,7 @@
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Belgien ligger BARA här, på franska. Rättat 2026-09-30: anteckningen sa att nederländsktalande belgare också får NL-kampanjen, men NL-adsetet 120251750247190023 bär bara NL (mätt i kontot samma dag). Flamländare (ungefär 60 % av Belgien) ser alltså franska annonser. Belgien också i NL hade lagt landet i två kampanjer, vilket Axel inte vill ('en kampanj per marknad'). Frågan är Axels.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "NL": {
    "kampanj": "MATSTRUMP_NL_SALES",
@@ -156,7 +170,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "ES": {
    "kampanj": "MATSTRUMP_ES_SALES",
@@ -170,7 +184,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "IT": {
    "kampanj": "MATSTRUMP_IT_SALES",
@@ -184,7 +198,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "PL": {
    "kampanj": "MATSTRUMP_PL_SALES",
@@ -198,7 +212,7 @@
    "doman": "matstrumpor.com",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "PT": {
    "kampanj": "MATSTRUMP_PT_SALES",
@@ -213,7 +227,7 @@
    "sprakmapp": "pt-pt",
    "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "JP": {
    "kampanj": "MATSTRUMP_JP_SALES",
@@ -228,7 +242,7 @@
    "sprakmapp": "ja",
    "lank_beslut": "2026-09-30: Axel \"Jag hade också viljat testa Japan och Taiwan … i Japan speciellt kan vi trycka på att det är ett svenskt varumärke\", val B \"som i Europa\" ⇒ egen marknad Japan (JPY) i Shopify, japanska på matstrumpor.com/ja som alla utlandsspråk.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "PLATSHÅLLARE 1 000 kr/dag (som de andra utlandskampanjerna) så att CBO-kampanjen kan skapas PAUSED — EJ GIVEN av Axel för Japan/Taiwan. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
+   "budget_beslut": "Axel 2026-10-01: \"Varför skulle vi inte schemalägga alla och japan. Eller är det problem med japan?\" (sessionens svar: inget problem, bara att budgeten aldrig var given) ⇒ 1 000 kr/dag som de andra utlandskampanjerna. ✅ Axel 2026-10-01: \"kan inte du bara schemalägga alla kampanjer … Till 00:01 2 oktober\" och \"Varför skulle vi inte schemalägga alla och japan\" ⇒ schemalagd med schemalagg.mjs, start fre 2026-10-02 00:01 (kontots tid, Europe/Stockholm), utan Axels egen granskning (han valde bort den; granskningen 2026-09-30 läste alla 112 annonser)."
   },
   "TW": {
    "kampanj": "MATSTRUMP_TW_SALES",
@@ -244,6 +258,7 @@
    "lank_beslut": "2026-09-30: Axel \"Jag hade också viljat testa Japan och Taiwan\", val B \"som i Europa\" ⇒ egen marknad Taiwan (TWD) i Shopify, traditionell kinesiska på matstrumpor.com/zh-tw.",
    "budget_sek_dag": 1000,
    "budget_beslut": "PLATSHÅLLARE 1 000 kr/dag (som de andra utlandskampanjerna) så att CBO-kampanjen kan skapas PAUSED — EJ GIVEN av Axel för Japan/Taiwan. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord",
+   "lansering_stopp": "⛔ Axel 2026-10-01: \"vi borde inte launcha taiwan heller än … man behöver ha ett speciellt [nummer] … som kunderna får fylla i i kassan\". Taiwan lanseras inte förrän kassan tar emot kundens tull-ID (detaljerna i README → Japan och Taiwan). Leverantören 2026-10-01 (vidarebefordrat av Axel): Taiwan går som 'general cargo' till lågt pris men tar 11–23 arbetsdagar — sajten lovar 5–10 (marknader/konfig.json → TW.leveranstid), så den texten ska ändras innan Taiwan startar. farAktiveras vägrar så länge raden står här; den tas bort på Axels ord.",
    "regional_regulated_categories": [
     "TAIWAN_UNIVERSAL"
    ],

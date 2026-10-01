@@ -299,3 +299,15 @@ test('notis-oversattning: läget per språk och spärren mot en främmande huvud
   const framling = { graphql: async (q, v) => ({ translatableResource: { resourceId: v.id, translatableContent: [{ key: 'title', value: 'x', digest: 'a' }, { key: 'body_html', value: 'Shopifys standard', digest: 'b' }] } }) };
   await assert.rejects(() => kor('matstrumpor', { klient: framling, skarpt: true, logg: () => {} }), /inte vår/);
 });
+
+test('loggans länk följer språkets adress: tyskan till matstrumpor.com/de, svenskan kvar på .se (granskningen G-D04)', () => {
+  const sv = butikIndata('matstrumpor');
+  assert.equal(sv.konfig.butik.url, 'https://matstrumpor.se');
+  const de = butikIndata('matstrumpor', { sprakKod: 'de', sida: 'https://matstrumpor.com/de/pages/spara', hemFranSida: true });
+  assert.equal(de.konfig.butik.url, 'https://matstrumpor.com/de');
+  assert.equal(de.konfig.sparning.sida, 'https://matstrumpor.com/de/pages/spara');
+  // En sida som inte är spårningssidan ändrar inte loggans länk.
+  assert.equal(butikIndata('matstrumpor', { sprakKod: 'de', sida: 'https://exempel.se/annat', hemFranSida: true }).konfig.butik.url, 'https://matstrumpor.se');
+  // CaraShells handinklistrade marknadsgrenar (utan hemFranSida) behåller butikens adress.
+  assert.equal(butikIndata('matstrumpor', { sprakKod: 'de', sida: 'https://matstrumpor.com/de/pages/spara' }).konfig.butik.url, 'https://matstrumpor.se');
+});

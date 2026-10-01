@@ -319,11 +319,60 @@ export function patchaHeader(kod) {
   return { kod, byten: ['logga_villkor', 'logga_if', 'logga_alt', 'logga_hojd', 'logga_bild'], hoppade: [] };
 }
 
+// Sidfotens betalikoner i Japan och Taiwan (granskningen 2026-09-30, G-D06/G-F05/G-C-JA-10):
+// Shopify ritar butikens alla betalsätt i alla länder, så en japansk kund såg Klarna, Bancontact,
+// Bizum, BLIK, MB WAY, MobilePay, iDEAL|Wero, Twint och Maestro, som inte finns i hens kassa (Klarna
+// mätt borta i JP/TW-kassan). På ja och zh-TW visas bara korten, PayPal, Apple Pay, Google Pay och
+// Shop Pay. Namnen är Shopifys (`pi-<typ>` i ikonen, mätt på .com/ja samma dag).
+export const BETAL_MARK = `${MARK}: betalikoner Japan och Taiwan`;
+export const BETAL_ASIEN = ['visa', 'master', 'american_express', 'paypal', 'apple_pay', 'google_pay', 'shopify_pay'];
+const BETAL_SLINGA = '{%- for type in shop.enabled_payment_types -%}';
+
 export function patchaFooter(kod) {
-  if (kod.includes(MARK)) return { kod, byten: [], hoppade: ['footer: redan patchad'] };
-  const sok = '{%- for link in block.settings.menu.links -%}\n';
-  kod = bytExakt(kod, sok, `${sok}                          {%- comment -%} ${MARK}: e-postraden i menyn visas inte på .no — adressen står i Selskapet-blocket och på Kontakt {%- endcomment -%}\n                          {%- if link.title contains '@' and ${OM_NORSK} -%}{%- continue -%}{%- endif -%}\n`, 1);
-  return { kod, byten: ['epostraden'], hoppade: [] };
+  const byten = [];
+  const hoppade = [];
+  if (kod.includes(`${MARK}: e-postraden`)) hoppade.push('footer: e-postraden redan patchad');
+  else {
+    const sok = '{%- for link in block.settings.menu.links -%}\n';
+    kod = bytExakt(kod, sok, `${sok}                          {%- comment -%} ${MARK}: e-postraden i menyn visas inte på .no — adressen står i Selskapet-blocket och på Kontakt {%- endcomment -%}\n                          {%- if link.title contains '@' and ${OM_NORSK} -%}{%- continue -%}{%- endif -%}\n`, 1);
+    byten.push('epostraden');
+  }
+  if (kod.includes(BETAL_MARK)) hoppade.push('footer: betalikonerna redan patchade');
+  else if (!kod.includes(BETAL_SLINGA)) hoppade.push('footer: ingen betalikonslinga i filen');
+  else {
+    const lista = BETAL_ASIEN.join(',');
+    kod = bytExakt(
+      kod,
+      BETAL_SLINGA,
+      `${BETAL_SLINGA}{%- comment -%} ${BETAL_MARK} (matstrumpor/marknader/domantema.mjs) {%- endcomment -%}{%- if request.locale.iso_code == 'ja' or request.locale.iso_code == 'zh-TW' -%}{%- assign ms_betal_asien = '${lista}' | split: ',' -%}{%- unless ms_betal_asien contains type -%}{%- continue -%}{%- endunless -%}{%- endif -%}`,
+      1,
+    );
+    byten.push('betalikoner_asien');
+  }
+  return { kod, byten, hoppade };
+}
+
+// Spanskan i Dawns locale-fil är latinamerikansk ("Agregar al carrito"). Kampanjen riktar sig till
+// Spanien, där det heter "Añadir" (granskningen 2026-09-30, G-C-es-08). Bara verbet byts, i de
+// kundsynliga raderna; allt annat i filen står som Dawn skrev det.
+export const ES_BYTEN = [
+  ['"add_to_cart": "Agregar al carrito"', '"add_to_cart": "Añadir al carrito"'],
+  ['"cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito."', '"cart_quantity_error_html": "Solo puedes añadir {{ quantity }} de este artículo a tu carrito."'],
+  ['"step_error": "Solo puedes agregar este artículo en incrementos de {{ step }}"', '"step_error": "Solo puedes añadir este artículo en incrementos de {{ step }}"'],
+  ['"add_new": "Agregar una nueva dirección"', '"add_new": "Añadir una nueva dirección"'],
+  ['"add": "Agregar dirección"', '"add": "Añadir dirección"'],
+  ['"add_to_apple_wallet": "Agregar a Apple Wallet"', '"add_to_apple_wallet": "Añadir a Apple Wallet"'],
+];
+export function patchaEsLocale(kod) {
+  const byten = [];
+  const hoppade = [];
+  for (const [fel, ratt] of ES_BYTEN) {
+    const nyckel = fel.slice(1, fel.indexOf('"', 1));
+    if (kod.includes(ratt)) { hoppade.push(`es.json ${nyckel}: redan rätt`); continue; }
+    kod = bytExakt(kod, fel, ratt, 1);
+    byten.push(`es_${nyckel}`);
+  }
+  return { kod, byten, hoppade };
 }
 
 export const CSS_NORSK = `
@@ -637,6 +686,7 @@ export const PATCHAR = {
   'sections/footer.liquid': patchaFooter,
   'snippets/ms-head.liquid': patchaMsHead,
   'locales/fi.json': patchaFiLocale,
+  'locales/es.json': patchaEsLocale,
   'sections/main-product.liquid': patchaProduktMoms,
   'sections/featured-product.liquid': patchaProduktMoms,
   'sections/main-cart-footer.liquid': patchaKorgMoms,
@@ -712,6 +762,8 @@ async function huvud() {
   // därför upp till tre läsningar innan en fil döms.
   const okFor = (n) => (n.filename === 'templates/product.json' ? n.body.content.includes('ms_omdomen_no')
     : n.filename === 'locales/fi.json' ? n.body.content.includes(FI_RATT)
+    : n.filename === 'locales/es.json' ? n.body.content.includes('"add_to_cart": "Añadir al carrito"')
+    : n.filename === 'sections/footer.liquid' ? n.body.content.includes(BETAL_MARK)
       : MOMSFILER.includes(n.filename) ? n.body.content.includes(MOMS_MARK)
         : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) && n.body.content.includes(VILLKOR_V6)
           : n.filename === 'sections/header.liquid' ? n.body.content.includes(HEADER_V2)

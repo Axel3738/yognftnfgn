@@ -276,6 +276,18 @@
       "namn": "Kapell till snöslunga",
       "drive_sheet": "14SbTXqEBGt7MAsBobySKyBXhRxTMWgnxApG95xVVjRg",
       "no_handle": "trekk-til-snofreser-120-82-60-cm-holder-skitt-unna"
+    },
+    {
+      "id": "tribuneponcho",
+      "namn": "Läktarponchon",
+      "drive_sheet": "1yJqFhoI9sFMeLaMgJAI9XXsC-ft1mGP6S3e7pkF0DZ0",
+      "no_handle": "tribuneponcho-med-varme-tre-varmenivaer-via-usb"
+    },
+    {
+      "id": "dorvindusalarm",
+      "namn": "Dörr- och Fönsterlarm 110 dB",
+      "drive_sheet": "1p_WA8xT9c4DGcAzVqqSmrQsld3cOpZVk9Y-u7aXweig",
+      "no_handle": "dor-og-vindusalarm-110-db-tradlos-fjernkontroll"
     }
   ]
 }

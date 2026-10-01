@@ -182,6 +182,21 @@ rapporten vilken väg du gick och vilka databaser som lästes.
 
 ⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. REST-vägen gör det själv och skriver "OPS-hubbar undantagna: N" — ta med raden i rapporten.
 
+⛔ **"0 leveranser väntar" är ALDRIG ett svar i sig — räkna hubbarna först.**
+Rundan läser normalt **~29 hubbar**. Står det fyra är det `products.json`:s golv
+ensamt, alltså att sökningen felat: `notion-kalla.mjs` provar fyra gånger och
+skriver då en **⛔-rad** om att kön bara bär golvet. Och svarar Notion inte alls
+skriver `leveranskon.mjs` "**NOTION-KÄLLAN: Notion kunde inte läsas**". Läs båda
+raderna innan du tror på en tom kö.
+
+Är det Notion som ligger nere: **vänta in det och läs om** (poll var minut,
+upp till tre timmar), gör allt som inte kräver Notion under tiden (priserna ur
+butiken, kampanjernas status ur kontot), och rapportera avbrottet som ett **FEL**
+med Notions egen felsträng — aldrig som "inget att göra i dag". Mätt 2026-10-01
+11:26–11:33 UTC: Notion svarade 500 `Cross-cell memcached access is not allowed`
+på **allt**, både via `NOTION_TOKEN` och via MCP:n. Två oberoende vägar med samma
+fel betyder Notions avbrott, inte vår token — mät det innan du felsöker nycklar.
+
 **Hämta hem bilagan** innan QA och uppladdning:
 ```bash
 node tools/notion-fil.mjs <page-id> --ut <mapp>

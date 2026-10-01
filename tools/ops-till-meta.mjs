@@ -48,6 +48,7 @@ import {
 import { laddaButik, sakerstallKonto, annonskontoFor, tillhorButiken, OPS_ANNONSKONTO } from '../factory/register.mjs';
 import { valjKampanjer } from '../factory/budgetrond.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
+import { malkampanjFor } from './lib/malkampanj.mjs';
 import { filtreraPaMarknad, marknadskoderI, MARKNADSKODER } from '../factory/skalning.mjs';
 import { OPS_MARKNADSKODER, marknadFor, marknadslank } from '../factory/opsmarknader.mjs';
 
@@ -319,6 +320,10 @@ async function huvud() {
     if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: post.brand, marknad, produkt: butik.produkt })];
   } catch (e) { logg(`   ⚠ kampanjbas: ${e.message}`); }
   let kampanj;
+  // Ägarens uttryckliga mål (register.json → malkampanj) vinner över namnsökningen.
+  const fastMal = malkampanjFor(post, marknad);
+  if (!args.kampanj && fastMal) args.kampanj = fastMal.kampanj_id;
+  if (args.kampanj && fastMal && String(args.kampanj) !== fastMal.kampanj_id) stopp(`--kampanj ${args.kampanj} är inte registrets målkampanj för ${marknad} (${fastMal.kampanj_id}). Rätta registret eller kön — laddar inte upp.`);
   if (args.kampanj) {
     kampanj = await api(String(args.kampanj), { params: { fields: KAMPANJFÄLT } });
     if (String(kampanj.account_id) !== konto) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte marknadens konto ${konto} (${marknaden.kontonamn}). Avbryter.`);
@@ -356,7 +361,15 @@ async function huvud() {
   const adsetnamn = adsetNamn(kampanj.name, koncept);
   // koncept: hittar även kampanjens egen konvention (DRYTREK_SE_PD) och döper
   // ett nytt adset efter den, så ett koncept aldrig får två adsets.
-  const { adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, koncept, torr: TORR });
+  let adset, skapad = false, mall = null;
+  if (fastMal?.adset_id) {
+    // Registret låser adsetet: kampanjen bär ett adset, inte ett per koncept.
+    const a = await api(fastMal.adset_id, { params: { fields: 'id,name,status,campaign_id' } }).catch((e) => stopp(`registrets adset ${fastMal.adset_id} gick inte att läsa: ${e.message}`));
+    if (String(a.campaign_id) !== String(kampanj.id)) stopp(`registrets adset ${a.id} ligger i kampanj ${a.campaign_id}, inte ${kampanj.id}.`);
+    adset = a;
+  } else {
+    ({ adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, koncept, torr: TORR }));
+  }
   logg(`5. Koncept ${koncept} → adset "${adset.name}" (${adset.id})${skapad ? ` — ${TORR ? 'skulle skapas' : 'nyskapat'} som klon av "${mall}", föds PAUSED` : ` — finns, ${adset.status}`}`);
 
   // 6. Sida + IG, länk och DSA ur kampanjens befintliga annonser. En NY

@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-30T16:45:11.866Z",
+ "uppdaterad": "2026-10-01T09:45:39.684Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -123,7 +123,22 @@
    "nyckel": "spend:120251451415280435:2026-09-30:0",
    "tid": "2026-09-30T16:45:11.866Z",
    "rubrik": "Ad `CaraShellRoof_US_SP_2_1` spending badly"
+  },
+  {
+   "nyckel": "overspend:kampanj:120250383023830291:2026-10-01",
+   "tid": "2026-10-01T09:45:39.684Z",
+   "rubrik": "Campaign `LOCK_IN_Bänkhyllan | Engagemang Indien | 2026-09-26` over budget"
+  },
+  {
+   "nyckel": "overspend:kampanj:120250383022120291:2026-10-01",
+   "tid": "2026-10-01T09:45:39.684Z",
+   "rubrik": "Campaign `LOCK_IN_Spabadskapellet | Engagemang Indien | 2026-09-26` over budget"
+  },
+  {
+   "nyckel": "overspend:kampanj:120250383019880291:2026-10-01",
+   "tid": "2026-10-01T09:45:39.684Z",
+   "rubrik": "Campaign `LOCK_IN_Bordtennisnätet | Engagemang Indien | 2026-09-26` over budget"
   }
  ],
- "hjartslag": "2026-09-30"
+ "hjartslag": "2026-10-01"
 }

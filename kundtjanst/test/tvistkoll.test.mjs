@@ -366,14 +366,17 @@ test('obesvarad följer bevisfältet, med statusen som reserv för gammal data',
   assert.equal(obesvarad({ status: 'needs_response' }), true);
 });
 
-// ------------------------------------------- stängt fönster är inte en uppgift
+// ------------------------------- passerad deadline utan bevis: skicka in ändå
 // #4914 (chargeback, 348 kr) hade deadline 2026-09-30T01:00 och
-// evidence_sent_on: null — ingen skickade in något, och klockan hann före.
-// Dagen innan gick order 17584203399517 (509 kr) samma väg. Larmet namngav
-// båda i förväg, så det som brast var inskickningen, inte mätningen. En rad
-// vars fönster är stängt hör inte i uppgiftslistan: den går inte att göra
-// något åt, och blandad med de räddningsbara lär den VA:n att rött inte betyder
-// något.
+// evidence_sent_on: null när larmet gick 07:40. Larmet kallade den då "not a
+// task: the window cannot be reopened".
+//
+// ⛔ Det var fel, mätt 2026-10-01: bevisen gick in **09:32 samma morgon**, 8,5
+// timmar efter deadline, och Shopify tog emot dem (`under_review`,
+// `evidence_sent_on: 2026-09-30T09:32:09+02:00`). #5053 gick in sex timmar sent
+// den 28 september och togs också emot. VA:n gjorde alltså rätt tvärtemot vad
+// vårt eget larm sa. Raden ligger kvar under egen rubrik — dess dygnsräkning
+// hör inte bland dem som har tid kvar — men rubriken säger SKICKA IN I DAG.
 
 test('fonstretStangt kräver både passerad deadline och uteblivet bevis', () => {
   const nu = new Date('2026-09-30T05:40:00Z');
@@ -395,14 +398,28 @@ test('larmet skiljer stängt fönster från det som fortfarande går att vinna',
       evidensSenast: '2026-10-03', evidensSenastTid: '2026-10-03T01:00:00+02:00' }),
   ];
   const text = renderaLarm(bradskande(lista, { nu, grans: 3 }), { brand: 'B', nu, grans: 3 });
-  assert.match(text, /1 open dispute needs evidence/, 'bara den räddningsbara räknas som uppgift');
-  assert.match(text, /window has closed on this one/);
+  assert.match(text, /1 open dispute needs evidence/, 'bara den med tid kvar räknas i uppgiftsraden');
+  assert.match(text, /SUBMIT ANYWAY, TODAY/);
   assert.match(text, /\*\*#4914\*\*.*window closed 2026-09-30 at 01:00/);
-  assert.match(text, /email the customer/i, 'det enda som återstår ska stå där');
-  // Den förlorade får inte stå bland raderna som ska skickas in.
-  const uppgifter = text.slice(0, text.indexOf('window has closed'));
-  assert.doesNotMatch(uppgifter, /#4914/, '#4914 hör inte i uppgiftslistan');
+  assert.match(text, /email the customer/i, 'det andra spåret ska stå där');
+  // Den passerade får sin egen rubrik, inte en rad mitt bland de andra.
+  const uppgifter = text.slice(0, text.indexOf('SUBMIT ANYWAY'));
+  assert.doesNotMatch(uppgifter, /#4914/, '#4914 hör inte bland dem som har tid kvar');
   assert.match(uppgifter, /#4845/);
+});
+
+// Regeln som kostade 348 kr i ett larm: texten får aldrig säga åt VA:n att
+// låta en passerad tvist vara. Sent är inte samma sak som stängt.
+test('larmet säger aldrig att en passerad tvist inte går att göra något åt', () => {
+  const nu = new Date('2026-09-30T05:40:00Z');
+  const lista = [tvist({ ordernamn: '#4914', bevisSkickat: null,
+    evidensSenast: '2026-09-30', evidensSenastTid: '2026-09-30T01:00:00+02:00' })];
+  const text = renderaLarm(bradskande(lista, { nu, grans: 3 }), { brand: 'B', nu, grans: 3 });
+  assert.doesNotMatch(text, /cannot be reopened/i);
+  assert.doesNotMatch(text, /not a task/i);
+  assert.doesNotMatch(text, /nobody spends time on it/i);
+  assert.match(text, /Shopify accepted evidence 6 hours late .* and 8\.5 hours late/,
+    'mätningen som motiverar "skicka in ändå" ska stå i texten');
 });
 
 test('bara stängda fönster ger ingen falsk uppgiftsrad', () => {

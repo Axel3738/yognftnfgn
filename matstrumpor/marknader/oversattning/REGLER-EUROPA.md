@@ -36,7 +36,7 @@ länder och för utlandsboende). Därför:
 | Startsida | Startseite | Accueil | Home | Inicio | Home | Strona główna | Início |
 | 30 dagars öppet köp | 30 Tage Rückgaberecht | 30 jours pour changer d'avis | 30 dagen retourrecht | 30 días de devolución | 30 giorni per il reso | 30 dni na zwrot | 30 dias para devolução |
 | Levereras presentklart | Kommt geschenkfertig an | Livré prêt à offrir | Cadeauklaar geleverd | Llega listo para regalar | Arriva pronto da regalare | Gotowe na prezent | Chega pronto a oferecer |
-| Köp 1 – Få 1 GRATIS | Kauf 1 – Bekomm 1 GRATIS | Achetez-en 1 – Recevez-en 1 GRATUIT | Koop 1 – Krijg 1 GRATIS | Compra 1 – Llévate 1 GRATIS | Compri 1 – Ricevi 1 GRATIS | Kup 1 – Otrzymaj 1 GRATIS | Compre 1 – Receba 1 GRÁTIS |
+| Köp 1 – Få 1 GRATIS | Kaufe 1 – erhalte 1 GRATIS | 1 acheté – 1 OFFERT | Koop 1 – krijg 1 GRATIS | Compra 1 – Llévate 1 GRATIS | Compra 1 – Ricevi 1 GRATIS | Kup 1 – otrzymaj 1 GRATIS | Compra 1 – Recebe 1 GRÁTIS |
 | Mest Populär | Am beliebtesten | Le plus populaire | Populairst | El más popular | Il più popolare | Najpopularniejsze | Mais popular |
 | Handla nu / Köp nu | Jetzt kaufen | Acheter | Nu kopen | Comprar ahora | Acquista ora | Kup teraz | Comprar agora |
 | Vanliga frågor | Häufige Fragen | Questions fréquentes | Veelgestelde vragen | Preguntas frecuentes | Domande frequenti | Najczęstsze pytania | Perguntas frequentes |
@@ -45,6 +45,12 @@ länder och för utlandsboende). Därför:
 | Ångra köp | Kauf stornieren | Annuler la commande | Bestelling annuleren | Cancelar pedido | Annulla ordine | Anuluj zamówienie | Cancelar encomenda |
 | Verifierat köp | Verifizierter Kauf | Achat vérifié | Geverifieerde aankoop | Compra verificada | Acquisto verificato | Zweryfikowany zakup | Compra verificada |
 | Trygg betalning | Sichere Zahlung | Paiement sécurisé | Veilig betalen | Pago seguro | Pagamento sicuro | Bezpieczna płatność | Pagamento seguro |
+
+⚠️ **Erbjudandet står som sajten skriver det** (rättat 2026-09-30 efter granskningen): raden
+"Köp 1 – Få 1 GRATIS" stod här i andra former än paketväljaren (`paket.sushi-2.rubrik` i
+`output/underlag-<locale>.json`), och annonserna och bilden 008 följde listan. En kund som
+läser "Kauf 1 – Bekomm 1" i annonsen och "Kaufe 1 – erhalte 1" på sidan ser två butiker.
+Underlaget är facit; ändras det ska raden ändras samma dag.
 
 5. **Option-värden med talet först:** `5 - Par` ⇒ de `5 Paar`, fr `5 paires`, nl `5 paar`,
    es `5 pares`, it `5 paia`, pl `5 par`, pt `5 pares`; `One Size` ⇒ `Einheitsgröße` /

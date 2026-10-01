@@ -15,6 +15,7 @@ process.env.STONEBITE_ANVANDARE = join(tmp, 'anvandare.json');
 process.env.STONEBITE_HEMLIGHET = 'test-hemlighet-som-ar-tillrackligt-lang';
 // Föränderliga filer (insatser, personer) i tmp — testet får aldrig skriva i repot.
 process.env.STONEBITE_DATA = tmp;
+process.env.STONEBITE_API_NYCKEL = 'test-api-nyckel-som-ar-tillrackligt-lang-123';
 
 const { skapaServer } = await import('../server.mjs');
 const anv = await import('../anvandare.mjs');
@@ -745,4 +746,116 @@ test('okänd sida ger 404, inte ett kast', async () => {
   const { kaka } = await loggaIn('axel@test.se', 'agarlosenord1');
   assert.equal((await hamta('/finns-inte', kaka)).status, 404);
   assert.equal((await hamta('/app/finns-inte', kaka)).status, 404);
+});
+
+// ------------------------------------------------------------ fakturorna
+// Axel 2026-10-01: de anställda laddar upp sina fakturor på sajten, ägaren
+// hämtar dem per person och per månad, Claude via API-nyckeln. Den som laddar
+// upp ser bara sina egna — det bevisas här med två konton.
+
+async function laddaUpp(kaka, { manad, namn, innehall, anteckning = '', personId = '' }) {
+  const csrf = await farskCsrf('/app/mig', kaka);
+  const fd = new FormData();
+  fd.set('csrf', csrf);
+  fd.set('nasta', '/app/mig#fakturor');
+  fd.set('manad', manad);
+  if (personId) fd.set('personId', personId);
+  fd.set('anteckning', anteckning);
+  fd.set('fil', new Blob([innehall], { type: 'application/pdf' }), namn);
+  return fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: kaka }, body: fd });
+}
+
+test('fakturor: var och en laddar upp och ser bara sina egna; ägaren ser allas och hämtar månaden som zip', async () => {
+  const josh = await loggaIn('josh@test.se', 'redigerare123');
+  const vera = await loggaIn('vera@test.se', 'kundtjanst123');
+  const agare = await loggaIn('axel@test.se', 'agarlosenord1');
+
+  const upp1 = await laddaUpp(josh.kaka, { manad: '2026-09', namn: 'josh-september.pdf', innehall: '%PDF-1.4 josh sep', anteckning: 'lön september' });
+  assert.equal(upp1.status, 303);
+  assert.equal(upp1.headers.get('location'), '/app/mig#fakturor');
+  const upp2 = await laddaUpp(vera.kaka, { manad: '2026-09', namn: 'vera.pdf', innehall: '%PDF-1.4 vera sep' });
+  assert.equal(upp2.status, 303);
+  // Fel typ stoppas med ett begripligt fel
+  const csrf = await farskCsrf('/app/mig', josh.kaka);
+  const fd = new FormData(); fd.set('csrf', csrf); fd.set('manad', '2026-09'); fd.set('fil', new Blob(['x']), 'virus.exe');
+  const fel = await fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: josh.kaka }, body: fd });
+  assert.equal(fel.status, 400);
+  assert.match(await fel.text(), /Bara PDF eller bild/);
+
+  // Josh ser sin egen på Min sida, inte Veras
+  const mig = await (await hamta('/app/mig', josh.kaka)).text();
+  assert.match(mig, /josh-september\.pdf/);
+  assert.match(mig, /lön september/);
+  assert.doesNotMatch(mig, /vera\.pdf/);
+  const idJosh = /\/app\/fakturor\/fil\/([\w-]+)/.exec(mig)[1];
+  const migVera = await (await hamta('/app/mig', vera.kaka)).text();
+  const idVera = /\/app\/fakturor\/fil\/([\w-]+)/.exec(migVera)[1];
+  assert.notEqual(idJosh, idVera);
+
+  // Nedladdning: egen går, någon annans är 404, sidan Fakturor är stängd
+  const egen = await hamta(`/app/fakturor/fil/${idJosh}`, josh.kaka);
+  assert.equal(egen.status, 200);
+  assert.match(egen.headers.get('content-disposition'), /attachment/);
+  assert.equal(await egen.text(), '%PDF-1.4 josh sep');
+  assert.equal((await hamta(`/app/fakturor/fil/${idVera}`, josh.kaka)).status, 404);
+  assert.equal((await hamta('/app/fakturor', josh.kaka)).status, 303, 'redigeraren skickas bort från Fakturor');
+  assert.equal((await hamta('/app/fakturor/zip?manad=2026-09', josh.kaka)).status, 403);
+
+  // Ägaren ser båda, per person, och hämtar zippen
+  const sida = await (await hamta('/app/fakturor?manad=2026-09', agare.kaka)).text();
+  assert.match(sida, /Josh Redigerare/);
+  assert.match(sida, /Vera VA/);
+  assert.match(sida, /josh-september\.pdf/);
+  assert.match(sida, /vera\.pdf/);
+  assert.match(sida, /\/app\/fakturor\/zip\?manad=2026-09/);
+  const zip = await hamta('/app/fakturor/zip?manad=2026-09', agare.kaka);
+  assert.equal(zip.status, 200);
+  const buf = Buffer.from(await zip.arrayBuffer());
+  assert.equal(buf.readUInt32LE(0), 0x04034b50, 'zip börjar med lokalt filhuvud');
+  assert.equal(buf.readUInt16LE(buf.length - 22 + 10), 2, 'två filer i zippen');
+  assert.match(buf.toString('latin1'), /2026-09 Josh Redigerare - josh-september\.pdf/);
+
+  // Två filer i samma uppladdning = två fakturor samma månad
+  const csrf2 = await farskCsrf('/app/mig', josh.kaka);
+  const fd2 = new FormData(); fd2.set('csrf', csrf2); fd2.set('manad', '2026-07'); fd2.set('nasta', '/app/mig#fakturor');
+  fd2.append('fil', new Blob(['%PDF-1.4 juli 1']), 'juli-1.pdf'); fd2.append('fil', new Blob(['%PDF-1.4 juli 2']), 'juli-2.pdf');
+  const tva = await fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: josh.kaka }, body: fd2 });
+  assert.equal(tva.status, 303);
+  const migJuli = await (await hamta('/app/mig', josh.kaka)).text();
+  assert.match(migJuli, /juli-1\.pdf/); assert.match(migJuli, /juli-2\.pdf/);
+  // En trasig fil i paret ⇒ ingen av dem sparas
+  const csrf3 = await farskCsrf('/app/mig', josh.kaka);
+  const fd3 = new FormData(); fd3.set('csrf', csrf3); fd3.set('manad', '2026-06');
+  fd3.append('fil', new Blob(['ok']), 'juni-ok.pdf'); fd3.append('fil', new Blob(['x']), 'juni-fel.exe');
+  const par = await fetch(`${bas}/app/fakturor/ladda-upp`, { method: 'POST', redirect: 'manual', headers: { Cookie: josh.kaka }, body: fd3 });
+  assert.equal(par.status, 400);
+  assert.doesNotMatch(await (await hamta('/app/mig', josh.kaka)).text(), /juni-ok\.pdf/);
+
+  // Ägaren laddar upp åt Vera — hamnar på henne
+  const atVera = await laddaUpp(agare.kaka, { manad: '2026-08', namn: 'vera-aug.pdf', innehall: '%PDF-1.4 aug', personId: 'vera' });
+  assert.equal(atVera.status, 303);
+  const migVera2 = await (await hamta('/app/mig', vera.kaka)).text();
+  assert.match(migVera2, /vera-aug\.pdf/);
+
+  // Ägaren tar bort en — den försvinner från sidan men filen ligger kvar
+  const csrfA = await farskCsrf('/app/fakturor', agare.kaka);
+  const bort = await fetch(`${bas}/app/fakturor/ta-bort`, { method: 'POST', redirect: 'manual', headers: { Cookie: agare.kaka, 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ csrf: csrfA, id: idVera, nasta: '/app/fakturor' }).toString() });
+  assert.equal(bort.status, 303);
+  assert.doesNotMatch(await (await hamta('/app/fakturor', agare.kaka)).text(), /vera\.pdf/);
+});
+
+test('fakturor: API:t kräver nyckeln och ger månadens lista + filen', async () => {
+  const utan = await fetch(`${bas}/api/fakturor?manad=2026-09`);
+  assert.equal(utan.status, 401);
+  const fel = await fetch(`${bas}/api/fakturor?manad=2026-09`, { headers: { Authorization: 'Bearer fel-nyckel-fel-nyckel-fel-nyckel' } });
+  assert.equal(fel.status, 401);
+  const ok = await fetch(`${bas}/api/fakturor?manad=2026-09`, { headers: { Authorization: `Bearer ${process.env.STONEBITE_API_NYCKEL}` } });
+  assert.equal(ok.status, 200);
+  const j = await ok.json();
+  assert.equal(j.manad, '2026-09');
+  assert.equal(j.antal, 1, 'Veras borttagna räknas inte, Joshs finns');
+  assert.equal(j.fakturor[0].person, 'Josh Redigerare');
+  const fil = await fetch(`${bas}${j.fakturor[0].fil}`, { headers: { Authorization: `Bearer ${process.env.STONEBITE_API_NYCKEL}` } });
+  assert.equal(fil.status, 200);
+  assert.equal(await fil.text(), '%PDF-1.4 josh sep');
 });

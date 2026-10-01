@@ -3001,3 +3001,42 @@ väntan eller kör om direkt.
 
 Priserna lästa live: SE 1 129 kr, NO 1 106 NOK. Båda kampanjerna ACTIVE
 (SE 11 adsets, NO 12). Inget loggat i registret — `register.mjs log` vägrar 0.
+
+## Nattvakten 2026-10-01 — huvudkampanjen sänkt till 2 100 kr, två annonser pausade
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK): 3 ändringar,
+tillbakalästa.**
+- `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` **3 000 → 2 100 kr**
+  (SÄNK, 3d-vinst −19,0 %, ROAS 1,24; kadensspärren släppte efter 3 dygn).
+  3 000 var Axels eget tal från 28/9 — ronden räknar kadens ur vår logg och
+  visste inte det; frågan ställdes i rapporten 29/9 och besvarades inte.
+- Pausade `CaraShellRoof_SP_3_H1` (LISTICLE, 1 607 kr / 2 köp / CPA 803) och
+  `CaraShellRoof_CS_1_H1 – kopia` (nya listicle, 1 395 kr / 0 köp på 14 dygn).
+- **Taket nått.** Kvar till nästa natt: LISTICLE 2 800 → 2 000 (3d-vinst −1,4 %)
+  och NYA LISTICLE 2 000 → 1 400 (3d-vinst −7,6 %, första domen — kampanjen
+  passerade grinden med 4 877 kr och 5 köp).
+
+**30 september, alla tre kampanjerna: 7 764 kr, 12 köp, ROAS 1,96, CPA 647 kr**
+mot break-even 693 ⇒ **+552 kr** — första lönsamma dygnet sedan den 23:e.
+LISTICLE 2,59 och NYA LISTICLE 1,82 bar det; huvudkampanjen låg på 1,41.
+
+**7 dygn SE:** 60 557 kr, 64 köp, ROAS 1,42, CPA 946 kr ⇒ vinstbidrag
+**−16 205 kr** (i går −16 864).
+
+**`SP_5_1`:** 14-dygns-CPA **692 kr** mot break-even 693 — en krona under.
+7-dygnstalet 1 364 kr. Reglerna tar den själv om 14-dygnstalet faller över.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.
+
+## 2026-10-01 — leveransrundan: elfte dygnet, oförändrat
+
+Kön läst i ett försök: samma två rader i `To be Reviewed`
+(`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`), samma md5 (`d9ab48ff…` /
+`271bf976…`), samma slutkort med `carashell.se`. Kontrollen kördes med OCR
+(`rapidocr_onnxruntime` + `imageio_ffmpeg` fanns i containern), så domen
+`slutkort-med-brand` är mätt och inte en degraderad `okand`. Kampanjen
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+(`120249050544990172`) ACTIVE med 11 adsets; butikspriset 1 129 kr stämmer
+exakt, så priset är inte stoppet. Inget uppladdat, ingen status ändrad, inga
+nya kommentarer (feedbacken från 2026-09-21 står kvar på båda raderna).
+De två LISTICLE-kampanjerna filtrerades som egna spår.

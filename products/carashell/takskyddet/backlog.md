@@ -73,6 +73,7 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 |---|---|---|---|
 | **Sidfix, inte brief: "Ta av skyddet innan du kör"** | Samma dygn frågade tre personer i SE, NO och US om man kan köra med skyddet på (en ironiskt). Ingen sida säger att skyddet är till för en parkerad vagn, så granskarna fick inte svara. | kommentarer på CaraShellRoof_US_OB_105_1, NO_CS_107_H1 + Bäverbutikens Takoverdrag_RI_3_H1, 3 belägg, 30 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels ord om raden får stå |
 | **"Waterproof. Sunproof." som bild för US** | Två US-kommentarer frågade om skyddet är vattentätt och en om materialet. Svaret finns hos leverantören men syns inte i annonsen. | kommentarer på CaraShellRoof_US_SP_2_1, US_PD_7_1, 2 belägg, 30 sep, `kalla=voc` | **väntar** |
+| **Leverantörsfråga: varför svart?** | Tre amerikaner frågade 1 okt om skyddet drar åt sig värme och om det finns andra färger. Produktfakta säger inget om färg eller värme, så de fick inget svar. Ingen brief förrän leverantören svarat. | kommentarer på CaraShell US-annonserna, 3 belägg, 1 okt, `kalla=voc`, se `kommentarer/leads.md` | **väntar** på leverantören |
 
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5

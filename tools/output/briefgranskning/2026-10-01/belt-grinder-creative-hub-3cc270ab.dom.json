@@ -1,0 +1,112 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "rond": "2026-09-29",
+  "bra": [
+    "All three rules from the 2026-09-28 review held: no `10 sekunder` anywhere (banned in the Rules), the primary text opens declaratively without `idag`, and the FD family is named as one concept with H-variants.",
+    "The parent's 0:09–0:10 (a different machine on a green mat) is banned by timestamp.",
+    "Page facts only in the videos (7 speeds, 15°, three machines in one); price 909 / 1 182 kr (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "Break-even moved again: 568 kr (983 ÷ 1,73) — after 554 and 566 kr. The 2026-09-24 rule asked for one number.",
+    "Beltgrinder_FD_4_4's sub-line `För knivar, mejslar, yxor och trä.` — the page lists knives, wood, metal and jewellery; `yxor` and `mejslar` are not on it.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "One break-even for this product — 554, 566 and now 568 kr; settle it from COGS once and write it where every writer reads it.",
+    "Only the page's uses: `knivar, trä, metall och smycken` — never `yxor` or `mejslar`.",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says."
+  ],
+  "rader": [
+    {
+      "namn": "Beltgrinder_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "`yxor` and `mejslar` are not on the page — write `knivar, trä, metall och smycken`."
+      ],
+      "bra": [
+        "Three tools named as on the page."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Deadline twice (headline and bottom line)."
+      ],
+      "bra": [
+        "`hobbybänken` is the page's place."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "Sub-line names the three tools."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

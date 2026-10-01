@@ -1,0 +1,112 @@
+{
+  "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+  "rond": "2026-09-29",
+  "bra": [
+    "All three rules from the 2026-09-28 review held: the parent's typo is banned (`Spell it sotarset`, none of the parent's captions visible), every video says `AI content: voice`, and the `No time claim` rule is in every Rules block.",
+    "Every mechanism line is the page's own (9 rods of 41 cm, 3,69 m, 100 mm nylon brush, `Rensa själv mellan sotarens besök`), price 459 / 599 kr matches (read live from the product page 2026-10-01).",
+    "The parent is chosen on profit contribution with numbers in one sentence: CPA 183 kr against break-even 325 kr, 59 purchases, 9 143 kr.",
+    "FD_1_H3 and FD_2_2 carry the same line in two formats, declared as a pair; FD_3 tests objection, price and deadline as openings on one body."
+  ],
+  "missat": [
+    "Sotarset_FD_3_H1 uses the same source seconds twice: rows 1 and 3 both cut OUR AD Sotarset_PD_1_H2 0:09–0:12 (the man screwing the rods together), so the viewer sees the same shot twice in nine seconds.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "One clip appears once per ad: never the same source seconds in two rows (Sotarset_FD_3_H1 rows 1 and 3 both use 0:09–0:12).",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "Sotarset_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Deadline in the headline and in the bottom line — the static says it twice."
+      ],
+      "bra": [
+        "`når bakom kaminen` is the page's own claim."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band — the static says it twice."
+      ],
+      "bra": [
+        "Sub-line names the set's own facts."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Rows 1 and 3 use the same source seconds (0:09–0:12) — pick another assembly take for row 3."
+      ],
+      "bra": [
+        "The objection hook is the page's own line."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "Sotarset_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

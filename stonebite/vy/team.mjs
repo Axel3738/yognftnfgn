@@ -13,6 +13,7 @@ import { sidhuvud } from './layout.mjs';
 import { sedan } from '../berakna.mjs';
 import { ROLLER, ROLLNYCKLAR, roll as hamtaRoll, menyFor, harRatt, personIdFor, serEkonomi } from '../roller.mjs';
 import { minBonus } from './bonus.mjs';
+import { minaFakturor } from './fakturor.mjs';
 import { SPRAKEN } from '../sprak.mjs';
 
 const USD = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
@@ -103,7 +104,7 @@ export function redigerareSida({ snapshot, anvandare }) {
 
 // -------------------------------------------------------------- min sida
 
-export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }) {
+export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf, fakturor = [] }) {
   const r = hamtaRoll(anvandare.roll);
   const mittId = personIdFor(anvandare);
   const person = (snapshot?.personer ?? []).find((p) => p.id === mittId) ?? null;
@@ -125,6 +126,7 @@ export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }
     ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
     ${koppling}
     ${minBonus({ snapshot, anvandare, person, csrf })}
+    ${minaFakturor({ rader: fakturor, csrf })}
     ${topplistedel}
 
     ${block({

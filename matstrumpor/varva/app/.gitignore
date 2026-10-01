@@ -1,0 +1,8 @@
+node_modules/
+.shopify/
+dist/
+# Appkonfigen hämtas med `shopify app config link` från Dev Dashboard och
+# committas när den är hämtad — aldrig handskriven (den skriver över appens
+# scopes vid deploy).
+shopify.app.test.toml
+extensions/*/manifest.json

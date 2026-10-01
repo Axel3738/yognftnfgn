@@ -137,6 +137,8 @@ stonebite/data/kalender.jsonl
 stonebite/data/kontakter.jsonl
 # Autosvarets logg när minutservern körs lokalt utan STONEBITE_DATA (i drift: volymen). Repots logg är kundtjanst/autosvar/logg/.
 stonebite/data/autosvar/
+stonebite/data/fakturor.jsonl
+stonebite/data/fakturor/
 
 # Klaviyo-motorn: byggda mejl, galleri, produkt- och recensionscache (klaviyo/bygg.mjs)
 klaviyo/output/
@@ -167,3 +169,5 @@ mejl/output/butiker/*/lankkoll/
 
 # Köparenkätens svar: aldrig i repot (GDPR-raden lovar högst 12 månader)
 enkat/output/
+# Värva en vän: skärmdumpar från kundvyn (matstrumpor/varva/kundvy.mjs)
+matstrumpor/varva/output/

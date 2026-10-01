@@ -3,11 +3,11 @@
   "Una di queste pizze\nè finta.",
   "La finta?\nSono calzini.",
   "Prima non ci crede.\nPoi ride.",
-  "Il tuo non si presta.",
-  "Nel cassetto,\ntra quelli normali",
+  "Il tuo paio non si presta.",
+  "Sta nel cassetto\ntra quelli normali.",
   "A ognuno il suo.",
   "Quattro gusti. Uno a testa."
  ],
  "granskad": true,
- "not": "text 4: granskarens eget förslag efter runda 3 ('I tuoi non si prestano.' underkänd)"
+ "not": "text 4: granskarens eget förslag efter runda 3 ('I tuoi non si prestano.' underkänd). 2026-09-30: text 4 och 5 omskrivna efter granskningen (G-C-it-08): 'Il tuo paio non si presta.' och 'Sta nel cassetto / tra quelli normali.'"
 }

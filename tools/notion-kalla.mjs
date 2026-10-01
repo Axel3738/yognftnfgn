@@ -154,29 +154,48 @@ function utanAtkomst(id) {
 /** Alla creative hub-databaser: sokningen PLUS products.json.
  *  Sokningen finns for att nya produkter ska komma med av sig sjalva.
  *  products.json finns for att de gamla aldrig ska kunna falla bort. */
-export async function hittaHubbar() {
+export async function hittaHubbar({ logg = console.error, försök = 4 } = {}) {
+  // ⚠️ Sokningen MASTE lyckas. Faller den tyst blir kon products.json:s fyra
+  // hubbar — alltsa en kort ko och noll felmeddelanden, precis det CLAUDE.md
+  // varnar for ("en hubb som inte hittas ger aldrig ett felmeddelande, bara en
+  // kortare ko"). Matt 2026-10-01: forsta korningen gav 4 hubbar, omkorningen
+  // 29 — sokningen hade felat en gang. Darfor: prova om, och SAG det hogt om
+  // alla forsok felar. Tystnaden var felet, inte golvet.
   let sökta = [];
-  try {
-    let cursor;
-    do {
-      const r = await notion('search', {
-        method: 'POST',
-        body: {
-          // Ingen sokterm: alla databaser integrationen ser (teamspacet Baverbutiken).
-          filter: { value: 'database', property: 'object' },
-          page_size: 100,
-          ...(cursor ? { start_cursor: cursor } : {}),
-        },
-      });
-      for (const d of r.results ?? []) {
-        const titel = text(d.title ?? []);
-        if (ÄR_HUB(titel)) sökta.push({ id: d.id, titel, url: d.url, kalla: 'sök' });
-      }
-      cursor = r.has_more ? r.next_cursor : null;
-    } while (cursor);
-  } catch (e) {
-    if (e.saknarToken) throw e;
-    sökta = [];                       // sokningen kan fela; golvet nedan star kvar
+  let sökFel = null;
+  for (let i = 1; i <= Math.max(1, försök); i++) {
+    sökta = [];
+    sökFel = null;
+    try {
+      let cursor;
+      do {
+        const r = await notion('search', {
+          method: 'POST',
+          body: {
+            // Ingen sokterm: alla databaser integrationen ser (teamspacet Baverbutiken).
+            filter: { value: 'database', property: 'object' },
+            page_size: 100,
+            ...(cursor ? { start_cursor: cursor } : {}),
+          },
+        });
+        for (const d of r.results ?? []) {
+          const titel = text(d.title ?? []);
+          if (ÄR_HUB(titel)) sökta.push({ id: d.id, titel, url: d.url, kalla: 'sök' });
+        }
+        cursor = r.has_more ? r.next_cursor : null;
+      } while (cursor);
+      break;
+    } catch (e) {
+      if (e.saknarToken) throw e;
+      sökta = [];                     // sokningen kan fela; golvet nedan star kvar
+      sökFel = e;
+      if (logg) logg(`⚠️ Notion-sökningen efter hubbar felade (försök ${i}/${försök}): ${e.message}`);
+      if (i < försök) await new Promise(r => setTimeout(r, 2000 * i));
+    }
+  }
+  if (sökFel && logg) {
+    logg('⛔ HUBBSÖKNINGEN FELADE I ALLA FÖRSÖK. Kön bygger bara på products.json:s');
+    logg('   hubbar, alltså fyra av ~29 — rapportera det som ett FEL, aldrig som en tom kö.');
   }
 
   const på = new Map();
