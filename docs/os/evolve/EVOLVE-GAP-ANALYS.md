@@ -198,7 +198,7 @@ ROUTING), domänköp, annonsörsverifiering, app-tokens, nya produkter.
 | hit rate = (BT + SW) ÷ alla | bara BT-frekvensen | ur loggen: 2 av 96 (2 %) |
 | klickattribution, CBO utan minbudget | `7d_click`, CBO, nej till minbudget 24/9 | lika |
 
-### ⛔ Hook rate och hold rate i `matstrumpor/meta.mjs` är fel (mätt mot Meta 2026-10-01)
+### ✅ Rättat 2026-10-01: hook rate och hold rate i `matstrumpor/meta.mjs` var fel (mätt mot Meta samma dag)
 
 `varde()` tar nyckeln `7d_click` när den finns, och med `action_attribution_windows`
 satt skickar Meta den nyckeln även på `video_play_actions` — ett attribuerat tal, inte
@@ -221,6 +221,10 @@ hook = `actions:video_view` ÷ visningar, hold = ThruPlay ÷ visningar, och ett 
 det (`matstrumpor/meta.mjs` `varde`/`tolkaRad`, `matstrumpor/test/`).
 
 ### Topp 5 byggen för Matstrumpor, i ordning
+
+✅ **Alla fem byggda 2026-10-01 samma kväll** (Axels "kan du göra det?", ordningen B), 151
+tester gröna, läst mot Meta samma kväll. Checklistan med det som återstår:
+`products/matstrumpor/EVOLVE-PLAN.md`. Arkivet: `products/matstrumpor/arkiv.md`.
 
 1. **Rätt D0 + etiketter för de 14 utlandskampanjerna** innan första veckan tar slut 8/10
    (`meta.mjs`, `kor.mjs`, `namn.mjs`, `etikett.mjs`).

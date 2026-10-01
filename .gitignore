@@ -177,3 +177,8 @@ matstrumpor/varva/output/
 
 # Skool-läsaren: inloggad session + hämtade lektioner (tools/skool/)
 tools/skool/.state/
+
+# Matstrumpors arkiv som JSON (~170 kB) byggs om av `kor.mjs --arkiv` varje rond ur logg.jsonl +
+# arkiv/matningar.jsonl + briefernas taggar — härledd data, committas inte (samma lärdom som
+# sparning/lage.json). arkiv.md och matningar.jsonl committas.
+products/matstrumpor/arkiv.json
