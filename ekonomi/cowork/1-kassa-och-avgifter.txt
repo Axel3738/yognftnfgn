@@ -1,0 +1,79 @@
+Jag vill veta när pengarna kommer in och går ut i mina butiker, och vad
+betalningarna kostar. Du ska BARA LÄSA och skriva upp — inte ändra något.
+Gör allt i Chrome med mina inloggade konton och fråga mig om inloggning när
+du behöver den. Datorn är en Windows-dator.
+
+⛔ DET VIKTIGASTE: ÄNDRA INGENTING.
+- Klicka aldrig på Spara, Ändra, Uppgradera, Ansök, Byt betalmetod, Lägg till
+  kort eller något liknande. Läs bara det som står.
+- Skriv aldrig in ett kortnummer, ett lösenord eller en bankuppgift. Be mig
+  när sidan frågar.
+- Rör inte teman, produkter, rabatter, appar eller annonser.
+- Ansök INTE om månadsfaktura hos Meta, även om knappen finns. Skriv bara upp
+  att den finns.
+- Skriv aldrig till någon support. Fastnar du: stoppa och säg till mig.
+
+------------------------------------------------------------------------------
+DEL 1 — SHOPIFY: UTBETALNINGAR OCH AVGIFTER (sex butiker)
+------------------------------------------------------------------------------
+
+Butikerna (admin-adressen):
+| Butik              | Admin                                         |
+|--------------------|-----------------------------------------------|
+| Bäverbutiken (SE)  | https://admin.shopify.com/store/4snrw0-mg     |
+| Beverbutikken (NO) | butiken med domänen beverbutikken.no          |
+| Bæverbutiken (DK)  | butiken med domänen baeverbutiken.dk          |
+| Majavakauppa (FI)  | butiken med domänen majavakauppa.fi           |
+| CaraShell          | https://admin.shopify.com/store/yitrbk-m3     |
+| Matstrumpor        | https://admin.shopify.com/store/1r46tp-qx     |
+
+För varje butik:
+1. Öppna Inställningar (Settings) → Betalningar (Payments).
+2. Under Shopify Payments: öppna "Hantera" (Manage) och läs
+   - utbetalningsschemat (Payout schedule): varje dag, varje vecka eller
+     varje månad, och hur många dagar det tar,
+   - avgifterna (Fee rates / Transaction fees) för kort, och om det står
+     något för internationella kort eller valutaväxling.
+3. Läs vilka andra betalsätt som är på (Klarna, PayPal, Apple Pay, Google Pay
+   …). Står det en avgift eller ett utbetalningsschema för dem, skriv upp det.
+4. Öppna Utbetalningar (Payouts) och skriv upp datum och belopp för de tre
+   senaste utbetalningarna.
+
+------------------------------------------------------------------------------
+DEL 2 — META: HUR ANNONSERNA BETALAS (sex annonskonton)
+------------------------------------------------------------------------------
+
+Kontona (id):
+| Konto            | Id                 |
+|------------------|--------------------|
+| MagiBorsten      | 1867947880635861   |
+| nya kungen       | 730973156224390    |
+| Magiborsten DK   | 915422744950975    |
+| Magiborsten UK   | 1107817401910319   |
+| Magiborsten NO   | 1050941584152547   |
+| Magiborsten FI   | 1619718346388201   |
+
+För varje konto:
+1. Öppna https://business.facebook.com/billing_hub/accounts/details?asset_id=<id>
+   (byt <id> mot kontots id). Hittar du inte sidan: Ads Manager → menyn →
+   Fakturering och betalningar (Billing & payments), välj kontot.
+2. Läs och skriv upp:
+   - betalmetoden (kort, och de sista fyra siffrorna),
+   - betalningsgränsen (Payment threshold / Faktureringströskel) i kronor,
+   - nästa debiteringsdatum om det står,
+   - om det finns ett erbjudande om månadsfaktura (Monthly invoicing /
+     Faktura varje månad) eller kreditlinje. Bara om det FINNS — klicka inte.
+
+------------------------------------------------------------------------------
+RAPPORTEN
+------------------------------------------------------------------------------
+
+Skriv två tabeller i chatten, så att jag kan klistra in dem i min Claude-session:
+
+Shopify:
+| Butik | Utbetalning (schema, dagar) | Kortavgift | Andra betalsätt + avgift | 3 senaste utbetalningar |
+
+Meta:
+| Konto | Betalmetod | Betalningsgräns | Nästa debitering | Månadsfaktura erbjuds? |
+
+Skriv "syns inte" där något inte står på sidan. Gissa aldrig.

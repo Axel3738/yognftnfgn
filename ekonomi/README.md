@@ -13,6 +13,7 @@ igenom min business och se vad jag saknar … och vad vi behöver göra".
 | `barometrar.mjs` + `berakna.mjs` | Kursens modul 1–4 på våra siffror (se nedan). |
 | `konfig.json` | Verksamheter och annonskonton som inte står i `stonebite/varumarken.json`. |
 | `rapporter/` | Körningarna, en per dag (`barometrar-<datum>.md` och `.json`). |
+| `cowork/1-kassa-och-avgifter.txt` | Cowork LÄSER utbetalningsschema och avgifter i Shopify och hur Meta betalas (kort, gräns, månadsfaktura). Underlaget för kassakalendern (lucka 4). |
 
 Lagret och leverantören har egna mappar: `lager/` och `leverantor/`.
 
