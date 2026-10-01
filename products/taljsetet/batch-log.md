@@ -1,6 +1,6 @@
 # Batch-log — Täljsetet 30 Delar (6 knivar och 6 järn)
 
-Breakthrough-frekvens: — (inga etiketter än, första dag 7 = 2026-10-01)
+Breakthrough-frekvens: 1/16 (6 %) (etikett.mjs --frekvens 2026-10-01)
 
 Kampanj `120250349169940291` (MagiBorsten SE), launch 2026-09-24 02:15.
 Budget 1 000 → **2 000 kr/dag** (SKALA ×2 2026-09-26 05:54: ROAS 6,37 =
@@ -165,3 +165,26 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Taljset_FD_4_4 | bild, BOF | 6 knivar och 6 järn för olika snitt | https://www.notion.so/3ea270ab908c8116bdd3ff8340a3cc3f |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-10-01) — Täljsetet 30 Delar
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/16 (6 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Taljset_PD_1 | 1 | **BREAKTHROUGH** | 58 % | 10 251 kr | 31 | 2,82 / 2,98 | 41 % / 16 % | ja |
+| Taljset_PD_3 | 1 | **KPI_WINNER** | 26 % | 4 597 kr | 18 | 3,40 / 2,98 | 44 % / 16 % | ja |
+| Taljset_SP_1 | okänd | **KPI_WINNER** | 2 % | 436 kr | 2 | 3,99 / 2,98 | 26 % / 10 % | nej |
+| Taljset_PD_2 | okänd | **LOSER** | 2 % | 277 kr | 0 | 0,00 / 2,98 | 27 % / 8 % | nej |
+| Taljset_PD_2_1 | okänd | **KPI_WINNER** | 1 % | 200 kr | 2 | 8,70 / 2,98 | — | nej |
+| Taljset_SP_3 | okänd | **LOSER** | 0 % | 76 kr | 0 | 0,00 / 2,98 | 43 % / 14 % | nej |
+| Taljset_CS_2 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,98 | 71 % / 23 % | nej |
+| Taljset_CS_3 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,98 | 71 % / 14 % | nej |
+| Taljset_SP_2 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,98 | 13 % / — | nej |
+| Taljset_CS_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,98 | 56 % / 22 % | nej |
+| Taljset_G_2 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,98 | 25 % / 17 % | nej |
+| Taljset_CS_2_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,98 | — | nej |
+| Taljset_G_1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,98 | — | nej |
+| Taljset_SP_2_1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,98 | — | nej |
+| Taljset_G_3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,98 | — | nej |
+| Taljset_G_2_1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,98 | — | nej |

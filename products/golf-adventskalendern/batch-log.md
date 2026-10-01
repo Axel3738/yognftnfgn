@@ -1,6 +1,6 @@
 # Batch-log — Golf Adventskalendern (24 golftillbehör)
 
-Breakthrough-frekvens: — (inga etiketter än, första dag 7 = 2026-10-01)
+Breakthrough-frekvens: 1/15 (7 %) (etikett.mjs --frekvens 2026-10-01)
 
 Kampanj `120250349257210291` (MagiBorsten SE), launch 2026-09-24 02:31.
 Budget 1 000 → **1 200 kr/dag** (SKALA 2026-09-26 05:54: ROAS 3,28 = 126 %
@@ -163,3 +163,25 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | Golfkalender_FD_4_4 | bild, BOF | Golfhandduk, klubbrengöringsborste, greenlagare med spegel | https://www.notion.so/3ea270ab908c8174aec9d02928d5d4ed |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-10-01) — Golf Adventskalendern
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/15 (7 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Golfkalender_PD_1 | 1 | **BREAKTHROUGH** | 96 % | 11 083 kr | 53 | 3,22 / 3,17 | 29 % / 11 % | ja |
+| Golfkalender_SP_3 | okänd | **KPI_WINNER** | 1 % | 144 kr | 1 | 6,48 / 3,17 | 25 % / 6 % | nej |
+| Golfkalender_PD_2_1 | okänd | **LOSER** | 1 % | 88 kr | 0 | 0,00 / 3,17 | — | nej |
+| Golfkalender_PD_3 | okänd | **LOSER** | 1 % | 61 kr | 0 | 0,00 / 3,17 | 28 % / 8 % | nej |
+| Golfkalender_CS_2 | okänd | **LOSER** | 0 % | 44 kr | 0 | 0,00 / 3,17 | 30 % / 9 % | nej |
+| Golfkalender_SP_2_1 | okänd | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 3,17 | — | nej |
+| Golfkalender_G_2 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 3,17 | 23 % / 6 % | nej |
+| Golfkalender_SP_2 | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 3,17 | 33 % / 9 % | nej |
+| Golfkalender_CS_1 | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 3,17 | 47 % / 13 % | nej |
+| Golfkalender_PD_2 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 3,17 | 10 % / 3 % | nej |
+| Golfkalender_SP_1 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 3,17 | 5 % / 5 % | nej |
+| Golfkalender_G_2_1 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 3,17 | — | nej |
+| Golfkalender_G_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,17 | — | nej |
+| Golfkalender_G_3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,17 | 9 % / — | nej |
+| Golfkalender_CS_3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,17 | 13 % / 13 % | nej |

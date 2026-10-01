@@ -1279,7 +1279,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 9: \"LEAORLD 12V 10W MPPT Solar Battery Charger Maintainer\"), 1 st till Sverige: produkt + frakt 8,62 + 7,34 = 15,96 USD, plus 2,9 EUR EU-avgift per order. Priset 559 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "minne": "products/solcellsladdaren",
+      "minne_not": "mappen skapad 2026-10-01 av /rond-auto lärdomssteget (etiketter dag 7, kampanjen PAUSED av ronden) — ingen annan mapp fanns, så ingen splittring"
     },
     {
       "campaign_id": "120250349317190291",
@@ -1295,7 +1297,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Pussel kalender (Julkalenderpussel 1008 bitar)\"), 1 st till Sverige: produkt + frakt 4,92 + 9,64 = 14,56 USD, plus 2,9 EUR EU-avgift per order. Priset 449 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "minne": "products/pussel-adventskalendern",
+      "minne_not": "mappen skapad 2026-10-01 av /rond-auto lärdomssteget (etiketter dag 7, kampanjen PAUSED av ronden) — ingen annan mapp fanns, så ingen splittring"
     },
     {
       "campaign_id": "120250349292760291",
@@ -1311,7 +1315,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Motorlåset rostfritt utombordare\"), 1 st till Sverige: produkt + frakt 14,62 + 13,86 = 28,48 USD, plus 2,9 EUR EU-avgift per order. Priset 909 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "minne": "products/motorlaset",
+      "minne_not": "mappen skapad 2026-10-01 av /rond-auto lärdomssteget (etiketter dag 7, kampanjen PAUSED av ronden) — ingen annan mapp fanns, så ingen splittring"
     },
     {
       "campaign_id": "120250349257210291",
@@ -1351,7 +1357,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 8: \"New 110dB Door And Window Vibration Alarm Wireless\"), 1 st till Sverige: produkt + frakt 5,30 + 6,95 = 12,25 USD, plus 2,9 EUR EU-avgift per order. Priset 449 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "minne": "products/dorr-fonsterlarmet",
+      "minne_not": "mappen skapad 2026-10-01 av /rond-auto lärdomssteget (etiketter dag 7, kampanjen PAUSED av ronden) — ingen annan mapp fanns, så ingen splittring"
     },
     {
       "campaign_id": "120250349169940291",

@@ -1,0 +1,51 @@
+[
+  {
+    "namn": "Batmotor_FD_5_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Batmotor_FD_5_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Batmotor_FD_5_H2",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Batmotor_FD_5_H2/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Batmotor_FD_5_H3",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Batmotor_FD_5_H3/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Batmotor_FD_6_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Batmotor_FD_6_1/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Batmotor_FD_6_2",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Batmotor_FD_6_2/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Batmotor_FD_6_3",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Batmotor_FD_6_3/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Batmotor_FD_6_4",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Batmotor_FD_6_4/brief.md",
+    "format": "static"
+  }
+]

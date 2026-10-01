@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/69 (1 %) (etikett.mjs --frekvens 2026-09-30)
+Breakthrough-frekvens: 1/70 (1 %) (etikett.mjs --frekvens 2026-10-01)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -650,3 +650,119 @@ Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna förs
 | Batmotor_UG_3_H1 | 3 | **LOSER** | 1 % | 188 kr | 0 | 0,00 / 1,78 | 27 % / 9 % | nej |
 | Batmotor_RV_12_H1 | 3 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,78 | 40 % / — | nej |
 | Batmotor_GT_3_H1 | 1 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,78 | 50 % / — | nej |
+
+## Feedbackloop + batch #8 — 2026-10-01 (`/rond-auto` steg 4b, brief-runda + fars dag-blocket)
+
+**Läget:** kampanjen ACTIVE, 500 kr/dag (VANTA_KONSEKVENT i dag), 31,8 % vinst. Behovsraden: "5 dagar
+sedan senaste batchen — dags för 3-dagarsrundan (4 annonser; budgeten hade gett 4, lärdomarna sedan
+förra batchen 15). Mix 80 % vidarebyggen / 20 % nya vinklar (levande breakthrough: Batmotor_SP_1_H3)."
+Priset läst live 2026-10-01 ur `baverbutiken.se/products.json`: **579 kr / jämförpris 965 kr, nio
+varianter 0–5 … 250–350 hk, alla i lager** — oförändrat sedan 2026-09-29. Kundrösten läst
+(`agent/leads.mjs --prefix Batmotor`): 1 lead, ⏸ sidan/Axel (se nedan).
+
+**Lärdomarna sedan batch #7 (15 st, etiketter 27/9, 29/9, 30/9) namnger INGEN annons.** Alla femton
+säger SLÄPP: KPI_WINNER under grinden (BOF_3_1 189 kr/1 köp, SP_1_H9 109 kr/2 köp, SP_1_H12 542 kr/2 köp,
+BF_14_1 40 kr/1 köp — "läs om dag 14"), LOSER under grinden (SP_1_H10, BOF_2_1, SP_3_H1, FM_4_H1 1 442 kr/
+2 köp ROAS 0,80, SP_1_H11, PD_8_H1, CS_11_1, UG_3_H1) och INGEN_LEVERANS (PD_6_H1, RV_12_H1, GT_3_H1).
+`lardom.mjs` bekräftar: "0 namngivna i lärdomarna, struket för att de redan finns: OB_3_H1, CS_5_H2".
+Steg (a) i strategin gav alltså noll briefer — platserna fylldes med (b) iterationer på KPI-vinnarna
+och (c) en ny vinkel, enligt huvudsessionens beslut i dag.
+
+**Varför SP_1_H5 är förälder, inte H9/H12:** H9:s och H12:s öppningar ("Vattnet rinner av tyget",
+"420D Oxford-tyg. Vattnet rinner rakt av.") är förbjudna sedan ⛔ 2026-09-29, och båda ligger under
+grinden ("ingen iteration byggs på färre än 3 köp"). SP_1_H5 är bedömbar (27 509 kr, 125 köp, CPA 220 kr
+mot BE 384 kr) och dess egen lärdom låste nya hook-iterationer "tills H11/H12 fått etikett" — båda fick
+det 2026-09-29, låset är släppt. H12:s KPI_WINNER säger att familjen fortfarande säljer; H16/H17 ger
+den de två öppningar ⛔ tillåter (problem, pris). ⚠️ Spänning mot 2026-09-29-anteckningen "SP_1-familjen
+har redan H7–H15 i kön": H13–H15 (parent SP_1_H3) saknar etikett än. Huvudsessionens beslut i dag
+går före; nästa runda bör INTE lägga fler SP_1-hookar förrän H13–H17 har etiketter.
+
+**Kroppen i H16/H17 är förälderns minus de förbjudna beaten** (vattenmakro 0:08–0:10, snö 0:15–0:19,
+telefonslutkortet 0:23–0:27): kvar är pull-over 0:00–0:03, remmen (Drive SP_1_H5, EDITOR PICKS),
+garagebeaten 0:10–0:12 och slutkortet. Förälderns "Kraftigt 420D Oxford-tyg" rättas i iterationen
+(Brief review 2026-09-26) ⇒ "Ett tygöverdrag i 420D Oxford". Rad 2–5 identiska i H16 och H17.
+
+### Batch #8 — 3 video + 1 bild i rundan, alla i Notion som Draft (Boat motor cover creative hub)
+
+| Annons | Format | Typ | Parent · iteration (loggen) | Hypotes | Isolerad variabel | Källa | Lärdom | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `Batmotor_SP_1_H16` | video 20 s | I | SP_1_H5 · 1 | SP_1-kroppen med PROBLEM-hook (bar kåpa i regn, "regn, löv och smuts lägger sig på motorn") säljer utan materiallöftet H9/H12 bar | hooken (rad 1) | egen-data | L-120250125804850291 | okänd | — | `3ec270ab908c81ea9e02d08ba9e2688f` |
+| `Batmotor_SP_1_H17` | video 20 s | I | SP_1_H5 · 2 | samma kropp med PRIS-hook ("579 kr. Ett tygöverdrag …") — H16/H17 säger vilken ⛔-öppning SP_1-kroppen vill ha | hooken (rad 1) | egen-data | L-120250125804850291 | okänd | — | `3ec270ab908c81b79088d6c8c709c29b` |
+| `Batmotor_OB_4_H1` | video 20 s | N | — · 1 | den ärliga positioneringen (Axel 2026-09-29): "Ett tygöverdrag för 579 kr. Inte ett kapell … Inte mer än så" medger kvalitetskritiken ("600 spänn för en plastpåse") och konverterar skeptikern i stället för att ge en retur; fyller skepsis × video i matrisen | ny vinkel | voc | L-120250125804850291 | okänd | — | `3ec270ab908c81249bfed163b0167dca` |
+| `Batmotor_BF_15_1` | bild | I | BF_14_1 · 1 | förälderns bild oförändrad, rubriken byter mekanism ("Täcker kåpan och riggen. En rem.") mot problem ("Regn, löv och smuts. Rakt på motorn.") — bildens jobb: variant på en vinnare, en variabel | rubriken | egen-data | L-120250327271400291 | okänd | — | `3ec270ab908c8128b427c3c789dd8aa7` |
+
+Mix: 3 vidarebyggen / 1 ny vinkel (75/25 ≈ 80/20). En statisk (tak 2). BOF-bild byggdes inte i rundan:
+BOF_3_1 är KPI_WINNER (villkoret uppfyllt) men under grinden och storleks-BOF:en är täckt av FD_3/FD_4 +
+OB_3_H1 som väntar på etikett. Hook-mekanik: H16 slow-mo, H17 freeze, OB_4_H1 zoom-in (olika per variant).
+`confidence=low` på BF_15_1 med flit — föräldern har 1 köp.
+
+### Fars dag-blocket (Axels order 2026-09-29, `agent/farsdag.json`) — 3 video + 4 bild, alla Draft
+
+Invändningen **"behöver han ett skydd alls? motorn står ju bara där"** — en annan än FD_3/FD_4:s "passar
+den min motor?" — besvarad med sidans två fakta: regn, löv och smuts lägger sig på motorn när båten står
+still; övertäckt syns motorn mindre från vägen. Förälder `Batmotor_SP_1_H5` (omklipp, 13 s, fyra rader;
+rad 2–4 identiska, hooken enda variabeln). Marknadsraden: Sweden and Norway only; never US, GB, CA or DK.
+"Beställ senast 19 oktober"; ingen framkomst lovas (Brief review 2026-09-29 regel 3). Samma foto/badge/
+prisband/bottenrad som FD_4 — bara textrutan skiljer, varje fakta en gång över de fyra.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Batmotor_FD_5_H1 | video 13 s, BOF-omklipp, invändningen (slow-mo, bar kåpa i regn ur SP_1_H14:s fil) | Fars dag: regn och löv lägger sig på motorn. | https://www.notion.so/3ec270ab908c81ad9264fdadce924440 |
+| Batmotor_FD_5_H2 | video 13 s, priset först (freeze, garagebeaten 0:10–0:12) | Ord. 965 kr. Till fars dag: 579 kr. | https://www.notion.so/3ec270ab908c819f839efd5bb088a80d |
+| Batmotor_FD_5_H3 | video 13 s, sista dagen först (zoom-in, produktfotot) | Beställ senast 19 oktober. Ett motorskydd till fars dag. | https://www.notion.so/3ec270ab908c8194a61ce326e3717d98 |
+| Batmotor_FD_6_1 | bild, invändningen | Regn och löv lägger sig på motorn. | https://www.notion.so/3ec270ab908c817a985fc944628670d6 |
+| Batmotor_FD_6_2 | bild, priset först | 579 kr för ett tygöverdrag till motorn. | https://www.notion.so/3ec270ab908c8159a5a5f2f98a52a6d0 |
+| Batmotor_FD_6_3 | bild, sista beställningsdagen | Fars dag: beställ motorskyddet senast 19 oktober. | https://www.notion.so/3ec270ab908c815481dadc4d38672fec |
+| Batmotor_FD_6_4 | bild, vad han får | Ett tygöverdrag i 420D Oxford, nio storlekar. | https://www.notion.so/3ec270ab908c8181ac36c39596487490 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = öppningen; FD_6_1–4 mot
+varandra = textrutans budskap; hela blocket mot FD_3/FD_4 = vilken tvekan (passform eller behov) presentköparen
+faktiskt har. FD-blocket ligger i `batch-08/manifest-fd.json` och är INTE loggat som BRIEF-rader (utanför
+rundaAntal/brieftak enligt farsdag.json); `FARSDAG_BATCH_KLAR` loggas av huvudsessionen.
+
+**Källfiler (regel 2):** H16 rad 1 och FD_5_H1 rad 1 → SP_1_H14:s levererade fil (Drive
+`1bC77ihMAZb98UziGSMPg52LZtEYz_pOo`, bar kåpa i regn, EDITOR PICKS); H17 rad 1 → CS_5_H1:s marinabild
+(Drive `1Dluov4n3B9CEIk95cbGhGHrbdvhVW6O9`, prisgrafiken byggs om till bara "579 kr"); pull-over `OUR AD
+Batmotor_SP_1_H5 0:00–0:03`, garagebeaten `0:10–0:12` (tidskoder ur FD_1/FD_3:s Assets-rader, inga nya);
+remmen → Drive SP_1_H5 `1IdL2RpOCyMhqae5hqenI9ii1mI4q5ltv` (EDITOR PICKS); stillbilder CDN. Ingen NEW
+FOOTAGE, ingen påhittad sekund. `AI content: voice` på alla sex videor.
+
+**Spärrarna:** `briefgranskning.mjs --manifest … --prefix Batmotor --pris 579 --jamforpris 965` ⇒ rundan
+exit 0, **regi 5/5 på alla tre videor, 4 av 4 klara** (två rättningar innan grönt: `begar=inte-bli-lurad`
+fanns inte i den fasta listan ⇒ `trygghet`; "Isolated variable"-raden hade ett "and" ⇒ bara hooken);
+FD-blocket exit 0, **regi 4/4 på alla tre videor, 7 av 7 klara**, 0 anmärkningar. `lardom.mjs --brief …
+--batch 8 --befintliga … --torr` ⇒ "Briefkvot: 15 fria platser kvar av 15 + 0 namngivna i lärdomarna + 1 på
+tomma rutor i matrisen (Batmotor_OB_4_H1) · struket för att de redan finns: OB_3_H1, CS_5_H2 · rutor som
+byggs: skepsis / kritik × video · tomma rutor kvar: fukt"; skarpt: **4 BRIEF-rader skrivna** (iteration
+1/2 på `sp-1-kroppen-arlig-hook`, 1 på `arligt-tygoverdrag-skepsis-video`, 1 på `bf-14-ny-rubrik`).
+Notion: 11 rader via `tools/notion-brief-upp.mjs` (REST), alla tillbakalästa med rätt blockantal;
+OB_4_H1 läst tillbaka separat: Status Draft, Typ Video - Pending Approval, Skapad 2026-10-01, rätt hub.
+Id:n i `batch-08/notion-rader.json`. `befintliga.json`: 104 namn (hubben + loggen + batch-loggen +
+batch-07), ingen krock.
+
+**Modellpolicy-avvikelse (som batch #1–#3, #7):** inget Agent/Task-verktyg i sessionen och ingen
+`ANTHROPIC_NYCKEL` — huvudsessionen skrev de svenska raderna själv, taggade `copy_model=huvudsession` och
+körde tre-frågorstestet rad för rad (`batch-08/copy-sonnet.md`).
+
+**Inte byggt, och varför:** `OB_2_1` (fukt/kondens, 43 % av kommentarerna, enda tomma rutan kvar) —
+sidan ger fortfarande ingen ventilationsmekanism, väntar på Axel. Fler CS_5-hookar — H2/H3 (batch #7)
+saknar etikett. Fler storleks-briefer — OB_3_H1 saknar etikett. Recensionsvideo — RV_12_H1:s lärdom
+kräver ett citat om något annat än materialet; inget sådant finns. GT — parkerad till FD-fönstret, och
+FD-blocket bär presentköparen redan. BOF-bild i rundan — se ovan.
+
+⏸ **Sidfix åt Axel, inte en annons (kundrösten 2026-09-24):** "600 spänn för en plastpåse", "inga
+spännband, bara ett snöre", tre kallar det skräp, plus kondens under kåpan. Sidan säger "spänns med
+remmen" — Axel jämför sidans rem/material med det kunden får innan någon brief lovar mer än "en rem".
+Ingen brief i dag lovar remmar; OB_4_H1 bär kritiken som ingång i stället.
+
+**Upptagna AD-ID:n efter batch #8:** SP_1_H1–H17, OB_1_1, OB_3_H1, OB_4_H1 (OB_2_1 reserverat, ej byggt),
+BF_1_1–BF_15_1, FD_1–FD_6 — läs alltid hubben OCH kontot före nästa numrering (`batch-08/befintliga.json`).
+
+
+## Etiketter dag 7 (2026-10-01) — Båtmotorskyddet 420D
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/70 (1 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Batmotor_OB_1_1 | 3 | **LOSER** | 2 % | 292 kr | 0 | 0,00 / 1,82 | — | nej |

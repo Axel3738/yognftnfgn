@@ -386,3 +386,21 @@ ny inloggning, och skrivningen via API-nyckel stoppades av sessionens
 spärr mot produktionsändringar. Läggs in via Shopify-MCP:n så fort den är
 återkopplad, eller av Axel själv. Tills dess får ingen brief citera sidans
 gamla materialrader.
+
+## Uppdatering 2026-10-01 (`/rond-auto` steg 4b, batch #8 + fars dag-blocket FD_5/FD_6)
+
+Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **Alla 15 lärdomar sedan batch #7 säger SLÄPP** (fyra KPI_WINNER under grinden, åtta LOSER under
+   grinden, tre INGEN_LEVERANS) — ingen annons namngiven. Rundan byggdes på huvudsessionens beslut:
+   iterationer på KPI-vinnarna med ⛔-hookar + en ny vinkel.
+2. **SP_1_H5:s lås är släppt** (H11 LOSER, H12 KPI_WINNER 2026-09-29) ⇒ `SP_1_H16` (problemhook) och
+   `SP_1_H17` (prishook) på förälderns kropp utan vatten- och snöbeaten. H9/H12:s "vattnet rinner av"
+   är förbjudet och upprepas aldrig.
+3. **Första ärliga annonsen:** `OB_4_H1` ("Ett tygöverdrag för 579 kr. Inte ett kapell … Inte mer än så")
+   fyller skepsis × video; kvalitetskritiken ("600 spänn för en plastpåse") är ingången, inte ett löfte.
+4. **FD-blocket byter invändning:** FD_5/FD_6 svarar på "behöver han ett skydd alls?" (regn, löv, smuts;
+   övertäckt syns motorn mindre) — FD_3/FD_4 tog passformen.
+
+Priset avläst live 2026-10-01: 579 kr, jämförpris 965 kr. Produktsidans nya text (⛔-kompatibel) är
+fortfarande inte inlagd — brieferna citerar bara de tillåtna raderna.

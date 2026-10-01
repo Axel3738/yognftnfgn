@@ -217,3 +217,23 @@ men det kräver Axels ok innan det skrivs.
 ## Uppdatering 2026-09-27 — förstabatchen skriven på Axels beslut ("NU")
 
 Batch #1 (18 briefer) skrevs 2026-09-27 utan dag 7-etikett, på ägarens override. Data dag 4: PD_1 2 969 kr (91 %), 13 köp, ROAS 3,05, CPA 228 kr mot break-even-CPA 452 kr, hold 12 %, CVR 3,3 % — fortfarande enda annonsen med leverans; videon/öppningen är variabeln (H4–H6). Preliminär lärdom i `lardomar.md` (ersätts 2026-10-01). Ingen svensk VoC hittades (redovisat i batch-log). Notion-hub: Golf advent calendar creative hub `3e8270ab-908c-817b-9e74-efe7a636609e`.
+
+## Komponentkarta Golfkalender_PD_1 (BREAKTHROUGH, etikett 2026-10-01 — ANALYSMETOD steg 6b)
+
+Raderna är **lästa ur den live annonsen (Meta, 2026-10-01), inte ur brief** — lanseringsbriefen ligger i Product test center i Notion, inte i repot. Videon är inte transkriberad (VO okänd); första bildrutan är thumbnailen läst 2026-09-26.
+
+**Datan, första veckan 24–30/9 (7d_click):** 11 083 kr (96 % av kampanjens 11 552 kr) · 53 köp · ROAS 3,22 mot kampanjens 3,17 · CPA 209 kr mot break-even-CPA **426 kr** (AOV 673 kr ÷ 1,58) · vinstbidrag (426 − 209) × 53 = **11 501 kr** · konverteringsgrad 3,0 % (53 köp / 1 763 LPV) · hook rate 28,7 % · hold rate 11,2 % · budget dag 0 → dag 7: 1 000 → 3 000 kr/dag (ronden 1 000 → 1 200 → 1 400 → 1 650, Axel själv till 3 000; i dag 3 600). Systrarna med identisk primärtext: PD_2 8 kr (INGEN_LEVERANS), PD_3 61 kr (LOSER), PD_2_1 (bild) 88 kr — videon är variabeln, inte texten.
+
+| Komponent | Exakt rad (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK (text) | "Glöm chokladkalendern. Det här är för golfaren. ⛳" | konflikt choklad ↔ golf, identitet | problem-medveten (julklappen/kalendern är fel sort) | den som köper till golfaren, och golfaren själv |
+| HOOK (bild, första bildrutan) | tät närbild på den gröna kalenderkartongen med numrerade luckor (17, 21, 10, 03, 11, 18, 08, 12, 04), järneksblad, caption-ruta "pitchgaffel," | produkten i bild sekund 0 | — | samma |
+| BRIDGE | "24 luckor med 24 golfgrejer." | positiv | lösnings-medveten | samma |
+| HOLD | "Tees, bollmarkörer, pitchgaffel, klubbborste, handduk och mer." + "En liten överraskning varje dag fram till jul." — i videon innehållet som captions över luckorna | konkret, svarar på "vad ligger i den?" | produkt-medveten | samma |
+| CTA | "Och allt kommer till användning på banan. Beställ din Golf Adventskalender i dag 👇" · rubrik "24 dagar av golfglädje" | positiv (inte-i-en-låda) | — | samma |
+
+**Variabeltaggar (ANALYSMETOD 6b):** vinkel PD · hook-typ negation/konflikt ("Glöm …") · format video med produktnärbild + captions (VO okänd) · proof demo av innehållet · offer inget pris i copyn (om priset står i videon är oläst) · talare okänd · brådska ingen · tro ingen trosbarriär bemöts.
+
+**Bärande komponent = hypotes (gissning):** videons öppning — kartongen med luckorna i bild sekund 0 under chokladkonflikten. Skälet: tre videor och en bild delar primärtexten ordagrant, och bara den här fick leverans (96 %); hook rate 28,7 % är inte hög (Täljsetets PD_1: 40,9 %) men hold 11,2 % och 3,0 % konverteringsgrad säger att den som stannar köper. Alltså: öppningen väljer publiken, uppräkningen (HOLD) stänger. Vad i de tre första sekunderna som skiljer PD_1 från PD_2/PD_3 går inte att säga förrän videorna lästs (qa-frames på Drive `K Golfkalender_PD_1_H1.mp4`). Kundernas kommentarer: 0 leads (`agent/leads.mjs --prefix Golfkalender`, 2026-10-01) — ingen invändning att läsa in. Stöd utanför produkten: Racingbilars PD_2_1 bar samma choklad-mot-innehåll-konflikt (n=1) — fortfarande hypotes, inte playbook.
+
+**Vidarebyggena (CS-KLART punkt 9, tre iterationer inom 14 dagar — deadline 2026-10-15):** `Golfkalender_PD_1_H4` (ny hook: lucka 1 öppnas), `PD_1_H5` (längre problemdel: "golfbagen tömmer sig i det tysta"), `PD_1_H6` (in media res: sidofacket fullt) — briefade 2026-09-27 i batch #1, ligger i hubben Golf advent calendar creative hub. Dagens 14 småannonslärdomar pekar alla dit eller på batch #1:s namngivna platser; ingen ny iteration namngavs ur brus. Etikett dag 7 på H4–H6 avgör om öppningen var variabeln.

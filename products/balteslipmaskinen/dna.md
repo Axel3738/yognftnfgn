@@ -365,3 +365,14 @@ Batchtabellen står i `batch-log.md` under samma datum. Det datan flyttade:
 3. **Fynd ur lärdomarna:** PD_10_1 (88 kr, svalt) bar PD_19_1:s kostnadsargument sex dagar före breakthroughen — rätt idé, fel placering; fyra annonspar i batch #2/#3 delar primärtext ord för ord (bara bild/rubrik skiljer); REV_2_1 är DISAPPROVED i Meta på ett "verifierad recension"-påstående.
 
 Priset avläst live 2026-09-25: 909 kr, jämförpris 1 182 kr (spara 273 kr, 23 %).
+
+## Uppdatering 2026-10-01 (`/rond-auto` steg 4b, batch #10 + fars dag-blocket) — observationer, inga domar
+
+Batchtabellen står i `batch-log.md` under samma datum. Det som är nytt i minnet:
+
+1. **OBSERVATION (mätt 2026-10-01, Notion-bilagan + transkript):** `Beltgrinder_PD_29_H1` (KPI_WINNER, hook 31 %, CVR 3,2 %) gick live med briefens platshållare som ord — VO och caption säger ordagrant *"Antal knivar i lådan. Ska se om den fixar dem alla."* Briefens editor note ("[ANTAL] = räkna kniven ur tagningen") följdes inte. Lärdomen för hook rate på den annonsen mäter alltså en trasig hook, inte idén; PD_29_H2/H3 byter bara raden. ⚠️ Samma fälla finns i `PD_35_1` (`[ANTAL] knivar vässade på [TID]`, Draft) — uppladdaren måste se att ett tal står där innan Meta.
+2. **OBSERVATION:** ingen annons på produkten har visat polerhjulet i arbete — alla bedömbara demos visar bältet. Sidan säger "polerar metall" och "smycken". `SO_8_H1` (batch #10, typ N, GISSNING) visar det första gången; utfallet säger om den tredje maskinen bär en vinkel.
+3. **Taket:** `kostnad-en-gang` (PD_19_1) står på 3 av 3 iterationer utan lärdom (PD_32_1 och CS_6_1 KPI_WINNER under grinden, PD_33_H1 inte live), `pd-3-i-1-demo` (PD_1) på 3 av 3 (PD_34_H1, PD_1_H3, PD_1_H4 — inte live). Nästa vidarebygge på dem kräver deras lärdomar, inte fler briefer.
+4. **Kundröst (hjälpmedel, inte dom):** 1 lead i `kommentarer/leads.md` — kornstorlek/förbrukningsmaterial efterfrågas före köp (2 kommentarer, ⏸ sidfix: står varken på sidan eller hos leverantören). Ingen annons byggs på det förrän sidan har svaret.
+
+Priset avläst live 2026-10-01: 909 kr, jämförpris 1 182 kr. Break-even-CPA som citeras i batch #10: 561 kr (batch #9:s tal, ärvt).

@@ -18,12 +18,14 @@
     "kopieringsregler": "docs/briefs/farsdag-2026/copy/GEMENSAMT.md + copy/BOF-GEMENSAMT.md; rean = produktsidans pris mot jämförpriset (Axel 2026-09-28); inga recensioner, ingen påhittad brådska, inget butiksnamn; Båtmotorskyddet: ⛔-blocket överst i products/batmotorskyddet-420d/dna.md gäller"
   },
   "namnraknare": {
-    "kommentar": "FD_<koncept>_<variant>. Upptagna konceptnummer per produkt — läs alltid av kontot och hubben innan du numrerar (namnkonventionen regel 8).",
+    "kommentar": "FD_<koncept>_<variant>. Upptagna konceptnummer per produkt — läs alltid av kontot och hubben innan du numrerar (namnkonventionen regel 8). FD_5/FD_6 är hittills bara upptagna på Båtmotorskyddet — på andra produkter är nästa lediga FD_5.",
     "FD_1": "video, omklipp av bästa videon, presentvinkeln (H1/H2 2026-09-28, H3 'faktiskt använder' 2026-09-29)",
     "FD_2": "bild, presentvinkeln (_1 2026-09-28, _2 rubrikvariant 2026-09-29)",
     "FD_3": "video BOF, invändning/pris/sista dagen som hook (H1–H3, 2026-09-29 kväll)",
     "FD_4": "bild BOF ×4 (_1 invändningen, _2 priset först, _3 sista beställningsdagen, _4 vad han får; 2026-09-29 kväll)",
-    "nasta_lediga": "FD_5"
+    "nasta_lediga": "FD_7",
+    "FD_5": "video BOF, Båtmotorskyddet: invändningen \"behöver han ett skydd alls?\" (regn/löv/smuts på motorn, övertäckt syns den mindre) som H1, pris H2, sista dagen H3 (2026-10-01, batch-08) · Bälteslipmaskinen: invändningen \"han har redan en brynsten\" (tre maskiner i en, bandet håller 15 grader, 7 hastigheter) som H1, pris H2, sista dagen H3, omklipp av PD_4_H1 (2026-10-01, batch-10)",
+    "FD_6": "bild BOF ×4, Båtmotorskyddet: samma jobb som FD_4 men invändningen \"behöver han ett skydd alls?\" (2026-10-01, batch-08) · Bälteslipmaskinen: samma fyra jobb, invändningen \"han har redan en brynsten\"; Brief review 2026-09-29 regel 3 tillämpad — priset bara i bandet, datumet bara i bottenraden, rubriken pekar dit utan att upprepa talet (2026-10-01, batch-10)"
   },
   "loggkod": "FARSDAG_BATCH_KLAR — en rad per produkt och batch i agent/budgetlogg.jsonl (bär aldrig ny_budget; nollställer inte CS-klockan)",
   "batcher": [
@@ -50,6 +52,18 @@
       "omgang": "4b (Värmesulorna + Värmesitsen: förstabatch + FD-blocket i nya hubbar)",
       "annonser": "Värmesulorna PD_1_H4/H5, PD_3_H1 + FD_3_H1–H3 + FD_4_1–4 · Varmesits PD_3_H2, PD_4_H1 + FD_3_H1–H3 + FD_4_1–4",
       "logg": "docs/briefs/farsdag-2026/README-bof.md"
+    },
+    {
+      "datum": "2026-10-01",
+      "omgang": "5 (brief-rundans FD-block, Båtmotorskyddet)",
+      "annonser": "Batmotor_FD_5_H1–H3 + FD_6_1–4 (invändningen \"behöver han ett skydd alls?\")",
+      "logg": "products/batmotorskyddet-420d/batch-log.md → Batch #8"
+    },
+    {
+      "datum": "2026-10-01",
+      "omgang": "5 (brief-rundans FD-block, Bälteslipmaskinen)",
+      "annonser": "Beltgrinder_FD_5_H1–H3 + FD_6_1–4 (invändningen \"han har redan en brynsten\")",
+      "logg": "products/balteslipmaskinen/batch-log.md → Batch #10"
     }
   ]
 }

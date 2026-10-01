@@ -1,6 +1,6 @@
 # Batch-log — IBC-Tanköverdraget
 
-Breakthrough-frekvens: 1/55 (2 %) — spend winners 0, KPI winners 5, losers 28, ej levererade 21 (etikett.mjs --frekvens 2026-09-27)
+Breakthrough-frekvens: 1/62 (2 %) (etikett.mjs --frekvens 2026-10-01)
 
 ## Batch #1 — 2026-09-01 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -671,3 +671,14 @@ Axel: "gör en till extra batch för fars dag för alla produkter och gärna dub
 | IBC_FD_4_4 | bild, BOF | Måtten 120 × 100 × 116 cm. | https://www.notion.so/3ea270ab908c81ca9d27f5424f74eb81 |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+## Etiketter dag 7 (2026-10-01) — IBC-Tanköverdraget
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/62 (2 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| IBC_PD_12_H1 | 8 | **LOSER** | 3 % | 106 kr | 0 | 0,00 / 2,81 | 43 % / 5 % | nej |
+| IBC_PD_12_H2 | 8 | **LOSER** | 1 % | 48 kr | 0 | 0,00 / 2,81 | 35 % / 4 % | nej |
+| IBC_PD_12_H3 | 8 | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,81 | 28 % / 5 % | nej |
+| IBC_PD_8_H2 | 5 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,81 | 15 % / — | nej |

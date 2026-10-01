@@ -76,3 +76,17 @@ Koncept som bygger på "tål vintern"/"vattnet rinner av" (SP_1_H9-familjens
 "Vattnet rinner av tyget", RI-vinkelns "tål en hel vinter") stryks som
 vidarebyggen. Skälet: returer. Produktsidans egna rader ("Tål en hel vinter
 ute", "slitstarkt") behöver Axel skriva om innan de får citeras igen.
+
+## Nytt 2026-10-01 (batch #8, ej briefat)
+
+- **Nästa SP_1-steg avgörs av etiketterna på H13–H17** (H13–H15 parent SP_1_H3, H16/H17 parent SP_1_H5
+  med ⛔-hookar problem/pris). Inga fler SP_1-hookar förrän alla fem har etikett; vinner H16 ⇒ problem-
+  öppning på nästa kropp, vinner H17 ⇒ prisöppning.
+- **Den ärliga positioneringen i fler format:** `OB_4_H1` (video) är första testet. KPI_WINNER ⇒ samma
+  "Inte mer än så"-rad som statisk (OB_4_1) och som CS-slutkort; LOSER ⇒ kritiken ska inte medges i
+  hooken utan bara styra vad som INTE lovas.
+- **Fars dag: FD_5/FD_6 (behovet) mot FD_3/FD_4 (passformen)** — dag 7-etiketterna säger vilken tvekan
+  presentköparen har; nästa FD-block (senast 31/10) bygger på den vinnande invändningen. Från 20/10 ingen
+  "Beställ senast"-rad.
+- **OB_2_1 (fukt) väntar fortfarande på Axel** (ventilationsmekanism saknas på sidan) — enda tomma rutan
+  i matrisen.

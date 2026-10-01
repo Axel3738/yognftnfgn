@@ -1,0 +1,23 @@
+{
+  "datum": "2026-10-01",
+  "hub": "Belt grinder creative hub",
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "datakalla": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
+  "verktyg": "tools/notion-brief-upp.mjs (REST, NOTION_TOKEN) ur /tmp/main-sparr (origin/main 35c42205) — alla 11 tillbakalästa, blockantalet stämmer",
+  "status": "Draft",
+  "rundan": [
+    { "namn": "Beltgrinder_PD_29_H2", "typ": "Video - Pending Approval", "id": "3ec270ab908c819e8909eeb76b572635", "url": "https://www.notion.so/3ec270ab908c819e8909eeb76b572635" },
+    { "namn": "Beltgrinder_PD_29_H3", "typ": "Video - Pending Approval", "id": "3ec270ab908c813ca255da4c6a20c53d", "url": "https://www.notion.so/3ec270ab908c813ca255da4c6a20c53d" },
+    { "namn": "Beltgrinder_SO_8_H1", "typ": "Video - Pending Approval", "id": "3ec270ab908c8112876ec347d2f0f87f", "url": "https://www.notion.so/3ec270ab908c8112876ec347d2f0f87f" },
+    { "namn": "Beltgrinder_PD_27_2", "typ": "Image - Pending Approval", "id": "3ec270ab908c81ba96cbcd5ed015e235", "url": "https://www.notion.so/3ec270ab908c81ba96cbcd5ed015e235" }
+  ],
+  "fars_dag": [
+    { "namn": "Beltgrinder_FD_5_H1", "typ": "Video - Pending Approval", "id": "3ec270ab908c8162aad4c30331923206", "url": "https://www.notion.so/3ec270ab908c8162aad4c30331923206" },
+    { "namn": "Beltgrinder_FD_5_H2", "typ": "Video - Pending Approval", "id": "3ec270ab908c8188b175cb9b4ef3e959", "url": "https://www.notion.so/3ec270ab908c8188b175cb9b4ef3e959" },
+    { "namn": "Beltgrinder_FD_5_H3", "typ": "Video - Pending Approval", "id": "3ec270ab908c81f68783d9a01fc3401a", "url": "https://www.notion.so/3ec270ab908c81f68783d9a01fc3401a" },
+    { "namn": "Beltgrinder_FD_6_1", "typ": "Image - Pending Approval", "id": "3ec270ab908c816c90aeed15577e3ce4", "url": "https://www.notion.so/3ec270ab908c816c90aeed15577e3ce4" },
+    { "namn": "Beltgrinder_FD_6_2", "typ": "Image - Pending Approval", "id": "3ec270ab908c81eca492c03549404992", "url": "https://www.notion.so/3ec270ab908c81eca492c03549404992" },
+    { "namn": "Beltgrinder_FD_6_3", "typ": "Image - Pending Approval", "id": "3ec270ab908c8178966fdd3ee9159371", "url": "https://www.notion.so/3ec270ab908c8178966fdd3ee9159371" },
+    { "namn": "Beltgrinder_FD_6_4", "typ": "Image - Pending Approval", "id": "3ec270ab908c814a930bd0c361bc6602", "url": "https://www.notion.so/3ec270ab908c814a930bd0c361bc6602" }
+  ]
+}

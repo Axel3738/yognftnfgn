@@ -557,3 +557,245 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
 
+### Lärdom L-120249250677510172 — CaraShellRoof_OB_105_1 (KPI_WINNER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 884 kr / 39 794 kr (2 %) |
+| Köp | 1 |
+| ROAS / CPA | 1,64 / 884 kr — kampanjens ROAS 1,23 |
+| Konverteringsgrad | 3,3 % (1 köp / 30 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "Du har rätt: ett helöverdrag runt hela vagnen blir tätt runt om." · rubrik: "Ja, det blir tätt. Fast bara taket."
+- VO: ingen VO (statisk bild, image_hash 7df544fa…). Bildens egen text är inte avläst i den här ronden.
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | ägare som tvekar på tyget för att ett helöverdrag kapslar in fukt — copyn ger honom rätt först | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | OB (invändning), medhåll: "Du har rätt: ett helöverdrag … blir tätt runt om" | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | solution — svaret på en känd invändning om produkten | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | "täcker bara taket, 6,5 × 3 m – sidorna är öppna"; "Regnet rinner av den silverbelagda 210D-oxfordväven i stället för att bli stående" | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | "ett helöverdrag blir tätt" medges och vänds: bara taket, sidorna öppna | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | medhåll först, sedan pris 1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %), länk carashell.se | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_OB_5_1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: samma statiska medhåll-bild som i Bäverbutiken (Takoverdrag_OB_5_1: 7 köp, ROAS 2,96, 6,9 % konvertering samma vecka) ger i CaraShells SE-kampanj 1 köp på 884 kr och 3,3 % konvertering — ett köp är brus, men riktningen (ROAS 1,64 över kampanjens 1,23 och över break-even 1,51) följer förlagan, och skillnaden i konvertering kan ligga i den speglade butiken snarare än i annonsen.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief (kommer ur Bäverbutikens hub via /ops-spegla); under grinden (884 kr, 1 köp): läs om dag 14 (--uppgradering). Konceptets utfall läses på förlagan: Takoverdrag_OB_5_1 = L-120250356982310291 i products/takoverdraget-husvagn/lardomar.md (KPI_WINNER 2026-10-01, 7 köp / ROAS 2,96 / CPA 419 kr i SE; skrivs i dagens rond ur lardom-skelett-2026-10-01-se-tak.md). Spegeln ligger på 884 kr av förlagans 2 936 kr — summerat 3 820 kr / 8 köp.
+
+### Lärdom L-120249250968760172 — CaraShellRoof_CO_105_H1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 245 kr / 39 794 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,23 |
+| Konverteringsgrad | 0,0 % (0 köp / 14 LPV) |
+| Hook rate / hold rate | 25 % / 6 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "Det har ju gått bra hittills." · rubrik: "1 129 kr nu. Inget att gissa på sen."
+- VO: okänd (videon inte transkriberad). Förlagans brief (agent/utdata/takoverdrag-batch3/Takoverdrag_CO_5_H1.md) anger VO/caption 0–4 s "Det har ju gått bra hittills."
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | husvagnsägaren som skjuter upp det — "Det har ju gått bra hittills." öppnar | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | CO (jämförelse mot att göra ingenting): "1 129 kr nu, eller ett tak du upptäcker är trasigt i vår" | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | "Taket är ytan du aldrig ser efter – förrän något är fel." | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | "det har gått bra hittills" är hookens egen tro, vänd till risk i vår | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | pris 1 129 kr, ord. 1 469 kr, spara 340 kr / 23 % | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_CO_5_H1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: passivitets-hooken fick 245 kr och 14 sidvisningar i spegelkampanjen — hook rate 25 % och hold rate 6 % är lågt, men underlaget är för litet för att säga att vinkeln föll; förlagan i SE är en KPI_WINNER på lika litet underlag (2 köp på 482 kr), så båda är brus åt varsitt håll.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief; under grinden (245 kr, 0 köp): en observation, ingen dom. Konceptets utfall läses på förlagan: Takoverdrag_CO_5_H1 = L-120250341545560291 i products/takoverdraget-husvagn/lardomar.md (KPI_WINNER 2026-09-30, 2 köp / ROAS 5,30 på 482 kr, släppt tills dag 14).
+
+### Lärdom L-120249251052800172 — CaraShellRoof_PD_110_H1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 158 kr / 39 794 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,23 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | 33 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "Din husvagn är kanske inte 6,5 meter." · rubrik: "Nio storlekar, från 1 129 kr."
+- VO: okänd (videon inte transkriberad). Förlagans brief (agent/utdata/takoverdrag-batch3/Takoverdrag_PD_10_H1.md) anger VO/caption 0–2 s "Din husvagn är kanske inte 6,5 meter. Den finns i nio storlekar …"
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | husvagnsägare vars vagn inte är 6,5 m (ur copyns första rad) | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | PD (produktfakta/pris): nio storlekar + "från 1 129 kr" i primärtext och rubrik | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | produktmedveten — produkten och storlekarna presenteras direkt | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | "nio storlekar, 3 × 5,5 till 3 × 13,5 meter. En person får på plats – bara remmarna spänns fast i kanten" | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | passar-invändningen ("den passar nog inte min husvagn") möts i första raden | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | "Från 1 129 kr" utan jämförpris i copyn | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_PD_10_H1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: Meta gav storleksvideon 158 kr och 5 sidvisningar i spegelkampanjen, så utfallet säger inget om idén — i Bäverbutiken fick samma video 8 234 kr och 11 köp (bedömbar LOSER, ROAS 1,80), vilket är där konceptet faktiskt avgörs.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief; under grinden (158 kr, 0 köp): en observation, ingen dom. Konceptets utfall läses på förlagan: Takoverdrag_PD_10_H1 = L-120250341572220291 i products/takoverdraget-husvagn/lardomar.md (LOSER, bedömbar, 2026-09-30: 8 234 kr / 11 köp / ROAS 1,80 mot break-even 1,63, släppt — storleksraden bärs av PD_10_1).
+
+### Lärdom L-120249251079280172 — CaraShellRoof_CS_109_H1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 135 kr / 39 794 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,23 |
+| Konverteringsgrad | 0,0 % (0 köp / 9 LPV) |
+| Hook rate / hold rate | 24 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "340 kr rabatt på 19,5 kvadratmeter skydd – hela takytan, 6,5 × 3 meter." · rubrik: "19,5 m² skydd för 1 129 kr."
+- VO: okänd (videon inte transkriberad; ingen brief i repot).
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | husvagnsägare med 6,5 × 3 m-vagn — copyn nämner måttet | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | CS (prisankare): rabatten i kronor mot ytan, 340 kr på 19,5 m² | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | produktmedveten — pris och yta direkt | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | "Samma 210D-väv skyddar hela ytan en vintersäsong ute. En person spänner fast den med rem i kanten och den ligger stilla i blåst" | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | recensionsrad: "Betyg 5,0 av 5 på 10 recensioner" | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | "1 129 kr för 19,5 m² skydd" — kronor per yta som ram | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_CS_9_H1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: kronor-per-yta-ramen öppnar svagt även i spegeln — hook rate 24 % är kampanjens lägsta bland dagens sex och 135 kr utan köp — vilket rimmar med förlagans 25 % och 452 kr utan köp i SE, men summan 587 kr över båda butikerna är fortfarande under grinden.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief; under grinden (135 kr, 0 köp): en observation, ingen dom. Konceptets utfall läses på förlagan: Takoverdrag_CS_9_H1 = L-120250341609420291 i products/takoverdraget-husvagn/lardomar.md (LOSER 2026-09-30, 452 kr / 0 köp, släppt — prisankarfamiljen bärs av PD_10_1).
+
+### Lärdom L-120249250828910172 — CaraShellRoof_OB_104_H1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 98 kr / 39 794 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,23 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | 35 % / 14 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "Du har rätt – ett helöverdrag blir tätt runt hela vagnen." · rubrik: "Ja, det blir tätt. Fast bara taket."
+- VO: okänd (videon inte transkriberad). Förlagans brief (products/takoverdraget-husvagn/batch-04/video-ads-briefs/Takoverdrag_OB_4_H1/brief.md) anger VO 0–4 s "Nu blir det väl tätt, tänker du."
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | ägare som tvekar för att ett överdrag kapslar in fukt — copyn ger honom rätt först | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | OB (invändning), medhåll: "Du har rätt – ett helöverdrag blir tätt" | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | solution — svaret på en känd invändning om produkten | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | "täcker bara taket, 6,5 × 3 m. Sidorna är öppna"; "Solen och regnet möter den silverbelagda 210D-väven i stället för taket" | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | "helöverdrag kapslar in fukt" — medges och vänds i första raden | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | medhåll först, sedan pris 1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %) | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_OB_4_H1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: videoversionen av medhåll-hooken fick 98 kr och 5 sidvisningar medan den statiska systern OB_105_1 i samma kampanj fick 884 kr och ett köp — Meta tycks föredra bilden framför videon på samma invändning, men 98 kr avgör ingenting.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief; under grinden (98 kr, 0 köp): en observation, ingen dom. Konceptets utfall läses på förlagan: Takoverdrag_OB_4_H1 = L-120250341482970291 i products/takoverdraget-husvagn/lardomar.md (LOSER 2026-09-30, 446 kr / 0 köp, släppt — fukt-raden bärs av OB_5_1 och de briefade OB_6_H1/OB_7_H1).
+
+### Lärdom L-120249250865390172 — CaraShellRoof_OB_103_H1 (LOSER, etikett 2026-10-01)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-24 – 2026-09-30 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 11 kr / 39 794 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,23 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 26 % / 10 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-01): "En fråga vi fick: "Är det vattentätt?"" · rubrik: "Vattnet rinner av taket, inte kvar."
+- VO: okänd (videon inte transkriberad). Förlagans brief (products/takoverdraget-husvagn/batch-04/video-ads-briefs/Takoverdrag_OB_3_H1/brief.md) anger kommentarbubbla 0–3 s utan VO, sedan VO "Inte "vattentät" – men vattnet rinner av."
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | ägare som tvekar på tyget — copyn återger kundens egen fråga | okänd |
+| Vinkel | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | OB (invändning): "En fråga vi fick" + ärligt nej | okänd |
+| Medvetandenivå | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | solution — svaret på en fråga om en känd produkt | okänd |
+| Mekanism | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | "vattnet rinner av den silverbelagda väven i stället för att samlas"; takluckornas tätning slipper stå i vatten | okänd |
+| Tro | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | kundens fråga bemöts med "Ärligt svar: nej" — vattnet rinner av i stället | okänd |
+| Positionering | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | ärligt medgivande först, sedan pris 1 129 kr, jämförpris 1 469 kr (spara 340 kr / 23 %) | okänd |
+| Brådska | — (brief saknas i repot; speglad från Takoverdrag_OB_3_H1) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 11 kr på sju dagar är ingen leverans att läsa — Meta valde bort det ärliga neje:t i spegelkampanjen, och förlagan i SE (2 034 kr, 2 köp, CPA 1 017 kr) är där raden "vattnet rinner av" faktiskt prövas.
+
+**Nästa annonser:**
+- `SLÄPP` — speglad annons får aldrig egen brief; under grinden (11 kr, 0 köp): en observation, ingen dom. Konceptets utfall läses på förlagan: Takoverdrag_OB_3_H1 = L-120250341520820291 i products/takoverdraget-husvagn/lardomar.md (LOSER 2026-09-30, 2 034 kr / 2 köp, släppt — raden Vattentätt × video bärs av OB_10_1 live och OB_11_H1/OB_14_H1 briefade).
+
+## CARASHELL_NO_Takovertrekket (120249050596730172)
+

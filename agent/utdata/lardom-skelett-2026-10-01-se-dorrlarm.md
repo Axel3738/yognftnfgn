@@ -22,26 +22,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Hör direkt när dörren öppnas" · primärtext rad 1: "Vet du alltid när nån öppnar dörren hemma? 🚪"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | husägaren som inte hör när altandörren eller källarfönstret öppnas | okänd |
+| Vinkel | — (brief saknas i repot) | PD enligt namnkoden — frågan om dörren, sedan larmet | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten in, produktmedveten ut (tre funktionsrader) | okänd |
+| Mekanism | — (brief saknas i repot) | 110 dB hörs i hela huset, fjärrkontroll på/av utan att gå dit, ingen app, inget abonnemang, ingen elektriker | okänd |
+| Tro | — (brief saknas i repot) | "Sätt upp på 5 minuter. Sov lugnare i natt." | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "Sov lugnare i natt" (mild) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Spend winner: läs FÖRST kommentarerna på annonsen (node tools/annonskommentarer.mjs --annons <id>) — vad invänder publiken mot? Sedan konverteringsgraden, sedan manuset. Saknas tro, brådska, insats eller funnel-kongruens? Lägg bara till den delen, bygg inte om hela annonsen.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: kommentarerna gav inget (0 leads, "inga kundröster"), konverteringsgraden 2,8 % (3 köp / 108 LPV) ligger i nivå med kampanjens andra PD-rader, och ROAS 1,50 ligger 0,02 under break-even 1,52 — så det som saknas är troligen inte tro (110 dB, fjärrkontroll, ingen app står alla i copyn) utan hållningen: hook 36 % men hold 10 %, publiken tappar videon innan larmets funktion visas, och VO:n är inte transkriberad så manuset efter hooken går inte att döma.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Diagnos i spend winner-ordningen: (1) kommentarer: 0 leads på Dorrlarm (node agent/leads.mjs --prefix Dorrlarm) — inget att bemöta; (2) konverteringsgrad 2,8 % på 108 LPV, 3 köp, CPA 508 kr mot break-even-CPA ~295 kr (449 kr ÷ 1,52) — säljer, men för dyrt; (3) manuset: VO okänd, hold 10 % mot hook 36 %. Observation för en omstart: PD_1 bar 67 % av spenden och 3 av veckans 4 köp på ROAS 1,50 — den enda bedömbara annonsen i alla fyra testkampanjerna; en iteration som förlänger problemdelen (dörren som öppnas utan att någon hör) före funktionsraderna är den första att pröva, men bara om Axel slår på kampanjen igen.
 
 ### Lärdom L-120250349253770291 — Dorrlarm_SP_2 (KPI_WINNER, etikett 2026-10-01)
 
@@ -61,26 +62,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Trygghet tusentals redan valt" · primärtext rad 1: ""Jag hör direkt om nån öppnar altandörren — även när jag sover på övervåningen." ⭐⭐⭐⭐⭐"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | villaägaren som sover på övervåningen och vill höra altandörren | okänd |
+| Vinkel | — (brief saknas i repot) | SP enligt namnkoden — kundcitat med fem stjärnor | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | enkelt att sätta upp själv, trådlös fjärrkontroll ingår | okänd |
+| Tro | — (brief saknas i repot) | citatet + "hundratals svenska hem" i texten och "tusentals" i rubriken (obelagt och motsägande: lanserad 2026-09-24) | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad; "14 dagars öppet köp" | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 1 köp på 18 sidvisningar (222 kr, ROAS 2,03, hook 38 %, hold 15 %) på citatet om altandörren — hållningen är högre än PD_1:s, men CBO:n valde PD_1; ett köp är ingen dom och citatet står inte på sidan.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Observation: SP_2 hade kampanjens bästa hold (15 %) och ROAS över break-even på ett köp — "tusentals"/"hundratals" i rubrik och text är obelagt och måste bort innan den någonsin visas igen.
 
 ### Lärdom L-120250349248630291 — Dorrlarm_PD_3 (LOSER, etikett 2026-10-01)
 
@@ -100,26 +102,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Hör direkt när dörren öppnas" · primärtext rad 1: "Vet du alltid när nån öppnar dörren hemma? 🚪"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | husägaren som inte hör när altandörren eller källarfönstret öppnas | okänd |
+| Vinkel | — (brief saknas i repot) | PD enligt namnkoden — frågan om dörren, sedan larmet | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten in, produktmedveten ut (tre funktionsrader) | okänd |
+| Mekanism | — (brief saknas i repot) | 110 dB hörs i hela huset, fjärrkontroll på/av utan att gå dit, ingen app, inget abonnemang, ingen elektriker | okänd |
+| Tro | — (brief saknas i repot) | "Sätt upp på 5 minuter. Sov lugnare i natt." | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "Sov lugnare i natt" (mild) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: samma PD-copy som PD_1 men en annan video — 170 kr, 8 sidvisningar, 0 köp, hook 32 % / hold 10 %; Meta valde syskonet PD_1 med samma text.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349234470291 — Dorrlarm_CS_2_1 (LOSER, etikett 2026-10-01)
 
@@ -139,26 +142,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Skydda hemmet — snart öppnas dörren" · primärtext rad 1: "⏳ Bara i dag: -24% på vårt dörr- och fönsterlarm."
+- VO: ingen VO (bild) — bildens egen text inte läst (ingen bild hämtad).
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som redan vill ha ett larm och väntar på rätt pris | okänd |
+| Vinkel | — (brief saknas i repot) | CS enligt namnkoden — rea, priset först (bild — samma copy som videosyskonen) | okänd |
+| Medvetandenivå | — (brief saknas i repot) | mest medveten | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — bara "Trådlös fjärrkontroll ingår" | okänd |
+| Tro | — (brief saknas i repot) | 449 kr i stället för 589 kr (stämmer med sidan 449 / 589) | okänd |
+| Positionering | — (brief saknas i repot) | -24 %, 449 kr mot 589 kr, fri frakt över 300 kr, Klarna | okänd |
+| Brådska | — (brief saknas i repot) | "Bara i dag", "lagret är begränsat och priset gäller inte länge till" (obelagt) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 99 kr, 4 sidvisningar och 0 köp på rea-copyn — för lite för en dom; hook okänd / hold okänd säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349236090291 — Dorrlarm_G_1 (LOSER, etikett 2026-10-01)
 
@@ -178,26 +182,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Den present han faktiskt använder" · primärtext rad 1: "Jag visste inte vad jag skulle ge honom i år. Sen hittade jag det här. 🎁"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som ger present till "honom" (partner/pappa med garage) | okänd |
+| Vinkel | — (brief saknas i repot) | G enligt namnkoden — presentvinkel berättad i jag-form | okänd |
+| Medvetandenivå | — (brief saknas i repot) | presentletaren är omedveten om produkten; larmet nämns inte vid namn | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — "Satte upp det på garaget samma kväll" är det enda om produkten | okänd |
+| Tro | — (brief saknas i repot) | "Han blev faktiskt rörd" / "jag vill att du ska känna dig trygg" | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "i år" | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 83 kr, 6 sidvisningar och 0 köp på present-copyn — för lite för en dom; hook 45 % / hold 14 % säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349249120291 — Dorrlarm_PD_2_1 (LOSER, etikett 2026-10-01)
 
@@ -217,26 +222,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Hör direkt när dörren öppnas" · primärtext rad 1: "Vet du alltid när nån öppnar dörren hemma? 🚪"
+- VO: ingen VO (bild) — bildens egen text inte läst (ingen bild hämtad).
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | husägaren som inte hör när altandörren eller källarfönstret öppnas | okänd |
+| Vinkel | — (brief saknas i repot) | PD enligt namnkoden — frågan om dörren, sedan larmet (bild — samma copy som videosyskonen) | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten in, produktmedveten ut (tre funktionsrader) | okänd |
+| Mekanism | — (brief saknas i repot) | 110 dB hörs i hela huset, fjärrkontroll på/av utan att gå dit, ingen app, inget abonnemang, ingen elektriker | okänd |
+| Tro | — (brief saknas i repot) | "Sätt upp på 5 minuter. Sov lugnare i natt." | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "Sov lugnare i natt" (mild) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 70 kr, 3 sidvisningar och 0 köp på PD-copyn — för lite för en dom; hook okänd / hold okänd säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349238910291 — Dorrlarm_G_3 (LOSER, etikett 2026-10-01)
 
@@ -256,26 +262,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Den present han faktiskt använder" · primärtext rad 1: "Jag visste inte vad jag skulle ge honom i år. Sen hittade jag det här. 🎁"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som ger present till "honom" (partner/pappa med garage) | okänd |
+| Vinkel | — (brief saknas i repot) | G enligt namnkoden — presentvinkel berättad i jag-form | okänd |
+| Medvetandenivå | — (brief saknas i repot) | presentletaren är omedveten om produkten; larmet nämns inte vid namn | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — "Satte upp det på garaget samma kväll" är det enda om produkten | okänd |
+| Tro | — (brief saknas i repot) | "Han blev faktiskt rörd" / "jag vill att du ska känna dig trygg" | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "i år" | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 35 kr, okänt antal sidvisningar och 0 köp på present-copyn — för lite för en dom; hook 35 % / hold 10 % säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349229050291 — Dorrlarm_CS_1 (LOSER, etikett 2026-10-01)
 
@@ -295,26 +302,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Skydda hemmet — snart öppnas dörren" · primärtext rad 1: "⏳ Bara i dag: -24% på vårt dörr- och fönsterlarm."
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som redan vill ha ett larm och väntar på rätt pris | okänd |
+| Vinkel | — (brief saknas i repot) | CS enligt namnkoden — rea, priset först | okänd |
+| Medvetandenivå | — (brief saknas i repot) | mest medveten | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — bara "Trådlös fjärrkontroll ingår" | okänd |
+| Tro | — (brief saknas i repot) | 449 kr i stället för 589 kr (stämmer med sidan 449 / 589) | okänd |
+| Positionering | — (brief saknas i repot) | -24 %, 449 kr mot 589 kr, fri frakt över 300 kr, Klarna | okänd |
+| Brådska | — (brief saknas i repot) | "Bara i dag", "lagret är begränsat och priset gäller inte länge till" (obelagt) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 18 kr, 1 sidvisningar och 0 köp på rea-copyn — för lite för en dom; hook 47 % / hold 21 % säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349233230291 — Dorrlarm_CS_2 (LOSER, etikett 2026-10-01)
 
@@ -334,26 +342,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Skydda hemmet — snart öppnas dörren" · primärtext rad 1: "⏳ Bara i dag: -24% på vårt dörr- och fönsterlarm."
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som redan vill ha ett larm och väntar på rätt pris | okänd |
+| Vinkel | — (brief saknas i repot) | CS enligt namnkoden — rea, priset först | okänd |
+| Medvetandenivå | — (brief saknas i repot) | mest medveten | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — bara "Trådlös fjärrkontroll ingår" | okänd |
+| Tro | — (brief saknas i repot) | 449 kr i stället för 589 kr (stämmer med sidan 449 / 589) | okänd |
+| Positionering | — (brief saknas i repot) | -24 %, 449 kr mot 589 kr, fri frakt över 300 kr, Klarna | okänd |
+| Brådska | — (brief saknas i repot) | "Bara i dag", "lagret är begränsat och priset gäller inte länge till" (obelagt) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 16 kr, okänt antal sidvisningar och 0 köp på rea-copyn — för lite för en dom; hook 24 % / hold 6 % säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349246190291 — Dorrlarm_PD_2 (LOSER, etikett 2026-10-01)
 
@@ -373,26 +382,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Hör direkt när dörren öppnas" · primärtext rad 1: "Vet du alltid när nån öppnar dörren hemma? 🚪"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | husägaren som inte hör när altandörren eller källarfönstret öppnas | okänd |
+| Vinkel | — (brief saknas i repot) | PD enligt namnkoden — frågan om dörren, sedan larmet | okänd |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten in, produktmedveten ut (tre funktionsrader) | okänd |
+| Mekanism | — (brief saknas i repot) | 110 dB hörs i hela huset, fjärrkontroll på/av utan att gå dit, ingen app, inget abonnemang, ingen elektriker | okänd |
+| Tro | — (brief saknas i repot) | "Sätt upp på 5 minuter. Sov lugnare i natt." | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "Sov lugnare i natt" (mild) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: 14 kr, 2 sidvisningar och 0 köp på PD-copyn — för lite för en dom; hook 62 % / hold 18 % säger bara att Meta hittade ett syskon med samma text som den hellre visade.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Under 300 kr: observation, ingen dom — ingen iteration på en imiterad format-kopia utan research (CS-KLART punkt 12).
 
 ### Lärdom L-120250349254630291 — Dorrlarm_SP_3 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -412,26 +422,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Trygghet tusentals redan valt" · primärtext rad 1: ""Jag hör direkt om nån öppnar altandörren — även när jag sover på övervåningen." ⭐⭐⭐⭐⭐"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | villaägaren som sover på övervåningen och vill höra altandörren | okänd |
+| Vinkel | — (brief saknas i repot) | SP enligt namnkoden — kundcitat med fem stjärnor | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | enkelt att sätta upp själv, trådlös fjärrkontroll ingår | okänd |
+| Tro | — (brief saknas i repot) | citatet + "hundratals svenska hem" i texten och "tusentals" i rubriken (obelagt och motsägande: lanserad 2026-09-24) | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad; "14 dagars öppet köp" | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 10 kr på sju dygn — CBO:n lade citat-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 
 ### Lärdom L-120250349234390291 — Dorrlarm_CS_3 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -451,26 +462,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Skydda hemmet — snart öppnas dörren" · primärtext rad 1: "⏳ Bara i dag: -24% på vårt dörr- och fönsterlarm."
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som redan vill ha ett larm och väntar på rätt pris | okänd |
+| Vinkel | — (brief saknas i repot) | CS enligt namnkoden — rea, priset först | okänd |
+| Medvetandenivå | — (brief saknas i repot) | mest medveten | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — bara "Trådlös fjärrkontroll ingår" | okänd |
+| Tro | — (brief saknas i repot) | 449 kr i stället för 589 kr (stämmer med sidan 449 / 589) | okänd |
+| Positionering | — (brief saknas i repot) | -24 %, 449 kr mot 589 kr, fri frakt över 300 kr, Klarna | okänd |
+| Brådska | — (brief saknas i repot) | "Bara i dag", "lagret är begränsat och priset gäller inte länge till" (obelagt) | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 10 kr på sju dygn — CBO:n lade rea-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 
 ### Lärdom L-120250349237600291 — Dorrlarm_G_2 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -490,26 +502,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Den present han faktiskt använder" · primärtext rad 1: "Jag visste inte vad jag skulle ge honom i år. Sen hittade jag det här. 🎁"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som ger present till "honom" (partner/pappa med garage) | okänd |
+| Vinkel | — (brief saknas i repot) | G enligt namnkoden — presentvinkel berättad i jag-form | okänd |
+| Medvetandenivå | — (brief saknas i repot) | presentletaren är omedveten om produkten; larmet nämns inte vid namn | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — "Satte upp det på garaget samma kväll" är det enda om produkten | okänd |
+| Tro | — (brief saknas i repot) | "Han blev faktiskt rörd" / "jag vill att du ska känna dig trygg" | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "i år" | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 5 kr på sju dygn — CBO:n lade present-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 
 ### Lärdom L-120250349240250291 — Dorrlarm_G_2_1 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -529,26 +542,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Den present han faktiskt använder" · primärtext rad 1: "Jag visste inte vad jag skulle ge honom i år. Sen hittade jag det här. 🎁"
+- VO: ingen VO (bild) — bildens egen text inte läst (ingen bild hämtad).
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | den som ger present till "honom" (partner/pappa med garage) | okänd |
+| Vinkel | — (brief saknas i repot) | G enligt namnkoden — presentvinkel berättad i jag-form (bild — samma copy som videosyskonen) | okänd |
+| Medvetandenivå | — (brief saknas i repot) | presentletaren är omedveten om produkten; larmet nämns inte vid namn | okänd |
+| Mekanism | — (brief saknas i repot) | ingen — "Satte upp det på garaget samma kväll" är det enda om produkten | okänd |
+| Tro | — (brief saknas i repot) | "Han blev faktiskt rörd" / "jag vill att du ska känna dig trygg" | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad | okänd |
+| Brådska | — (brief saknas i repot) | "i år" | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 3 kr på sju dygn — CBO:n lade present-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 
 ### Lärdom L-120250349254710291 — Dorrlarm_SP_2_1 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -568,26 +582,27 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Trygghet tusentals redan valt" · primärtext rad 1: ""Jag hör direkt om nån öppnar altandörren — även när jag sover på övervåningen." ⭐⭐⭐⭐⭐"
+- VO: ingen VO (bild) — bildens egen text inte läst (ingen bild hämtad).
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | villaägaren som sover på övervåningen och vill höra altandörren | okänd |
+| Vinkel | — (brief saknas i repot) | SP enligt namnkoden — kundcitat med fem stjärnor (bild — samma copy som videosyskonen) | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | enkelt att sätta upp själv, trådlös fjärrkontroll ingår | okänd |
+| Tro | — (brief saknas i repot) | citatet + "hundratals svenska hem" i texten och "tusentals" i rubriken (obelagt och motsägande: lanserad 2026-09-24) | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad; "14 dagars öppet köp" | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 2 kr på sju dygn — CBO:n lade citat-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 
 ### Lärdom L-120250349250970291 — Dorrlarm_SP_1 (INGEN_LEVERANS, etikett 2026-10-01)
 
@@ -607,24 +622,25 @@
 
 
 **Hookar (ordagrant, med hook rate / hold rate ovan):**
-- [FYLL I: hooken ordagrant ur briefen eller den live annonsen — bild/text och VO var för sig; "ingen text" om bilden saknar text]
+- Rubrik (live 2026-10-01, Meta creative): "Trygghet tusentals redan valt" · primärtext rad 1: ""Jag hör direkt om nån öppnar altandörren — även när jag sover på övervåningen." ⭐⭐⭐⭐⭐"
+- VO: okänd (videon inte transkriberad) — hook rate / hold rate står i tabellen ovan.
 
 **Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
 | Komponent | Planerat | Utfört | Stämmer |
 |---|---|---|---|
-| Avatar | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Vinkel | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Medvetandenivå | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Mekanism | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Tro | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Positionering | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-| Brådska | — (brief saknas i repot) | [FYLL I: ur den live annonsen] | [ja/nej/okänd] |
-**Utförandet föll:** [ja/nej/okänd] · utford_som_briefad: okänd
+| Avatar | — (brief saknas i repot) | villaägaren som sover på övervåningen och vill höra altandörren | okänd |
+| Vinkel | — (brief saknas i repot) | SP enligt namnkoden — kundcitat med fem stjärnor | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | enkelt att sätta upp själv, trådlös fjärrkontroll ingår | okänd |
+| Tro | — (brief saknas i repot) | citatet + "hundratals svenska hem" i texten och "tusentals" i rubriken (obelagt och motsägande: lanserad 2026-09-24) | okänd |
+| Positionering | — (brief saknas i repot) | ingen prisrad; "14 dagars öppet köp" | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
 
 **Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
 
-**Hypotes (gissning):** [FYLL I: varför blev utfallet som det blev — en mening, märkt gissning, aldrig fakta]
+**Hypotes (gissning):** Gissning: Meta gav annonsen bara 2 kr på sju dygn — CBO:n lade citat-copyns spend på syskonannonsen med samma text, och under 300 kr finns ingen dom, bara att den aldrig fick leverans.
 
 **Nästa annonser:**
-- [FYLL I: `<Prefix>_<K>_<n>_<variant>` — typ N/IM/I, parent, vad som ändras — eller `SLÄPP` med skälet]
+- `SLÄPP` — kampanjen stängdes av 2026-09-26 (STANG_AV, trappan: 2 057 kr / 4 köp / ROAS 1,33 på 3 d mot break-even 1,52, INGEN_TJUV); ingen brief på en avstängd kampanj (rond-auto 4b-spärren). Ingen leverans på sju dygn är en förlorare (CLAUDE.md regel 11, INGEN_LEVERANS).
 

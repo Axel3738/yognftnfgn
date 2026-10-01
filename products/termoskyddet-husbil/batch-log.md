@@ -1,6 +1,6 @@
 # Batch-log — Termoskyddet för Husbil
 
-Breakthrough-frekvens: 2/30 (7 %) (etikett.mjs --frekvens 2026-09-30)
+Breakthrough-frekvens: 2/31 (6 %) (etikett.mjs --frekvens 2026-10-01)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -504,3 +504,11 @@ Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna förs
 | Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
 |---|---|---|---|---|---|---|---|---|
 | Termoskydd_CS_9_1 | 2 | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,82 | — | nej |
+
+## Etiketter dag 7 (2026-10-01) — Termoskyddet för Husbil 211 × 171 cm
+
+Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna första vecka 2026-09-24–2026-09-30, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 2/31 (6 %) (etikett.mjs --frekvens 2026-10-01).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Termoskydd_CS_10_1 | 2 | **LOSER** | 5 % | 785 kr | 0 | 0,00 / 1,83 | — | nej |
