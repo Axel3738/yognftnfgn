@@ -1,0 +1,171 @@
+Två delar: först Meta-anmälningarna (DEL 1), sedan en anmälan till Shopify (DEL 2 längst ner).
+
+DEL 1: META
+Uppgift: skicka in 10 upphovsrättsanmälningar till Meta åt Stonebite Ecom AB, i 2 ärenden: KD-2026-003 (Facebooksidan Bustatio-busto): anmälan 2, och KD-2026-004 (Facebooksidan MatSokker): anmälan 1, 2, 3, 4, 5, 6, 7, 8 och 9. Axel har granskat och godkänt varje anmälan i sin granskningsapp. Du fyller i Metas formulär med EXAKT texterna nedan och klickar Submit. Axel sitter bredvid och gör säkerhetskontrollen. I KD-2026-003 är anmälan 1 redan skickad. Skicka den aldrig igen.
+
+FÖRST
+Du arbetar i Axels egen Chrome via Claude in Chrome, där Gmail är inloggat som axel.odhner@stonebite.org. Kan du inte styra Chrome i den här chatten: STANNA direkt och skriv till Axel: "Claude in Chrome är av i den här chatten. Slå på Claude in Chrome i menyn Connectors i chatten och klistra in prompten igen."
+
+REGLER
+1. En anmälan i taget, i den ordning de står nedan (ärende för ärende, i nummerordning). Öppna formuläret på nytt för varje anmälan: https://www.facebook.com/help/contact/1758255661104383
+2. Kopiera texterna tecken för tecken. Ändra, korta eller lägg aldrig till något.
+3. Visar Meta en säkerhetskontroll ("Security check", captcha, "I'm not a robot", pussel): STANNA och skriv till Axel: "Säkerhetskontroll — gör den du, klicka sedan Submit och säg till." Försök aldrig lösa den själv.
+4. Knappen "Request code" ("Begär kod"): Meta mejlar en ny kod till axel.odhner@stonebite.org för varje anmälan. Mejlet kommer från notification@email.meta.com och heter "Please verify your email address" eller "Verifiera din e-postadress". Öppna Gmail i en ny flik med just det kontot och ta koden ur det senaste mejlet. Är Gmail inloggat som ett annat konto: STANNA och skriv till Axel: "Jag behöver koden till <ärende> anmälan <nr>." Vänta på svaret, för Axel hämtar koden från Claude. Syns ingen sådan knapp: fortsätt.
+5. Efter Submit: vänta på Metas bekräftelse (en tacksida, ofta med ett ärendenummer). Skriv upp numret, eller "inget nummer" om inget visas.
+6. Skicka aldrig samma anmälan två gånger. Hoppa aldrig över en anmälan. Ser ett steg annorlunda ut än nedan, eller saknas ett fält: STANNA och beskriv vad du ser.
+7. Rör ingenting annat: inga andra sidor, inställningar eller formulär, och ingenting på Axels Facebooksidor.
+
+STEGEN I FORMULÄRET (samma för alla 10). Formuläret kan visas på svenska; stegen och fälten kommer i samma ordning.
+Steg 1 "What right is being violated or infringed?": välj Copyright (Upphovsrätt) → Next.
+Steg 2 plattformen: välj Facebook → Next.
+Steg 3: "Where are you asserting rights?": Sweden. "Are you the rights owner?": välj "No, but I'm authorised to represent the rights owner". Rättighetshavarens namn: Stonebite Ecom AB → Next.
+Steg 4: fyll i fälten för anmälan nedan. Rutan om domstolsbeslut (court order) rörs inte. Request code → koden (regel 4) → Submit.
+
+===== KD-2026-003 · ANMÄLAN 2 av 6 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1652495996287809
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2048782039094883
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is a re-upload of our ad film (same edit, our on-screen text): 3 stills (at 0:11, 0:16, 0:21) are identical. We claim the edit and text only. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=2048782039094883 for "Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare", published by us before this ad. Evidence: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-2_9ce15a1a-1fbb-4c6f-8eac-6fab5ed3436e.png?v=1790749286 Ref KD-2026-003 2/6.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 1 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1588778508829249
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1684992010012039
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad film: 3 stills from different scenes (at 0:07, 0:17, 0:20) are identical to ours. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=1684992010012039 for "Sushi-Strumpor", published by us before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_3509ed04-a91c-4148-a6ad-3cb747719045.png?v=1790861083 Ref KD-2026-004 1/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 2 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1421148489985407
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1660194462177066
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad film: 3 stills from different scenes (at 0:09, 0:11, 0:22) are identical to ours. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=1660194462177066 for "Sushi-Strumpor", published by us before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-2_91d2e0ae-b0dd-41d5-a120-053a23f0439b.png?v=1790861088 Ref KD-2026-004 2/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 3 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1971339910227691
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2127001151229429
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad film: 3 stills from different scenes (at 0:10, 0:12, 0:21) are identical to ours. Original: our ad in the Ad Library https://www.facebook.com/ads/library/?id=2127001151229429 for "Sushi-Strumpor", published by us before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_0899b563-92da-4791-811a-9ee8ded3ea30.png?v=1790861098 Ref KD-2026-004 3/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 4 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1718305039270282
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=2244688169808902
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:13, 0:15, 0:21) are identical to ours. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=2244688169808902 https://www.facebook.com/ads/library/?id=1603206358174314 for "Sushi-Strumpor", published by us before this ad. Evidence (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-4_eb88beb0-2c30-4a07-9d0c-33cb61fcbfb7.png?v=1790861102 Ref KD-2026-004 4/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 5 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1803489827652941
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=863619966705432
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:17, 0:21, 0:51) are identical to ours. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=863619966705432 https://www.facebook.com/ads/library/?id=1603206358174314 for "Sushi-Strumpor", published by us before this ad. Evidence (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-5_5d6b9281-f8ca-4ec7-b23a-ceaa7971c006.png?v=1790861118 Ref KD-2026-004 5/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 6 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1094601896903875
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=820358954504320
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+It uses our own advertising image, nearly identical to the image in our ad. Original: our ad "MATSTRUMP_sushi_gift_product_036_v1" for "Sushi-Strumpor", running before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_ea6e9756-c73a-4696-a9d7-86e6d74bf1b2.png?v=1790861122 Ref KD-2026-004 6/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 7 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1089177487343268
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=820358954504320
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+It uses our own advertising image, nearly identical to the image in our ad. Original: our ad "MATSTRUMP_sushi_offer_static_d3_v1" for "Sushi-Strumpor", running before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_d216f04b-f0a7-4367-9eec-2fd0ec2744ba.png?v=1790861128 Ref KD-2026-004 7/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 8 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=1451348046846473
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?id=1025151246952508
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its video is cut from our own ad films: 3 stills from different scenes (at 0:07, 0:17, 0:38) are identical to ours. Original: our ads in the Ad Library https://www.facebook.com/ads/library/?id=1025151246952508 https://www.facebook.com/ads/library/?id=1644608697367862 for "Sushi-Strumpor", published by us before this ad. Evidence (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-8_4887f6a9-56f5-4de9-a981-b713bc805091.png?v=1790861093 Ref KD-2026-004 8/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+===== KD-2026-004 · ANMÄLAN 9 av 9 =====
+Fält "Provide the URLs/IDs leading directly to the content that you're reporting":
+https://www.facebook.com/ads/library/?id=38648454021464406
+Fält "Provide an example of your copyrighted work that you believe has been infringed":
+https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=820358954504320
+Fält "Describe how you believe that this content infringes your intellectual property rights":
+Its image is our own advertising image with the text re-set in another language: the picture under the text is identical to our ad. Original: our ad "MATSTRUMP_sushi_offer_static_d4_v1" for "Sushi-Strumpor", running before this ad. Evidence screenshot (ours left, theirs right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-9_f546abad-28b9-4bfe-9789-1d8aa3524721.png?v=1790861112 Ref KD-2026-004 9/9.
+Fält "Your full name": Axel Odhner
+Fält "Email" och "Confirm email address": axel.odhner@stonebite.org
+Fält "Electronic signature": Axel Odhner
+
+NÄR ALLA ÄR KLARA
+Svara Axel med en rad per anmälan: "<ärende> anmälan <nr>: inskickad, ärendenummer <nummer eller 'inget nummer'>" eller "<ärende> anmälan <nr>: INTE inskickad, <varför>". Han klistrar in listan till Claude, som skriver in kvittona.
+
+DEL 2: SHOPIFY. Gör den när alla Meta-anmälningar är klara. Regel 7 ovan gäller med ett undantag: Shopifys upphovsrättsformulär nedan.
+
+===== KD-2026-004 · SHOPIFY-ANMÄLAN (butiken https://matsokker.shop) =====
+Axel har godkänt den här anmälan i granskningsappen. Den gäller bara sidorna nedan.
+1. Öppna https://www.shopify.com/legal/tools/report-an-issue/dmca och klicka Continue. Kräver Shopify inloggning: Axel loggar in med sitt eget Shopify-konto. Skapa aldrig ett nytt konto och skriv aldrig in ett lösenord själv.
+2. Välj det som betyder upphovsrättsintrång (copyright / DMCA) och, om det frågas, att butiken säljer på Shopify.
+3. Fyll i fälten med EXAKT texterna nedan. Fält som inte finns nedan: lämna tomma om de är frivilliga. Kräver formuläret något som inte står här (till exempel ett telefonnummer): STANNA och fråga Axel. Allt du skriver här kan Shopify skicka vidare till butiken.
+4. Bevisbilden: står det ett fält för länkar eller beskrivning, räcker länken nedan. Ladda aldrig upp någon annan fil.
+5. Kryssa i försäkringarna bara om de säger samma sak som raderna under "Statements". Underskriften är namnet nedan.
+6. Visar Shopify en säkerhetskontroll: STANNA och låt Axel göra den.
+7. Skicka in. Skriv upp Shopifys bekräftelse eller ärendenummer, eller "inget nummer".
+
+Rights owner (company): Stonebite Ecom AB (reg. no. 559576-2401)
+Your relationship to the copyright owner: I'm authorised to act on behalf of the copyright owner
+Full name: Axel Odhner
+Title (only if the form asks for one): CEO
+Email: axel.odhner@stonebite.org
+Address: Stenkolsgatan 1B, 417 07 Göteborg, Sweden
+Country: Sweden
+Store being reported: https://matsokker.shop
+URL(s) of the infringing content:
+https://matsokker.shop/products/sushi-sokker
+https://cdn.shopify.com/s/files/1/1084/6168/7114/files/gif2_800x800.gif
+Description of the copyrighted work:
+An advertising video made for our store Matstrumpor (matstrumpor.se) for our product "Sushi-Strumpor" (our ad "09-17 Nathalie captions musik", published by us on 17 September 2026). The animated image on the reported page is cut from this video: 20 of its 26 sampled frames are identical to frames of our video (perceptual-hash distance at most 6/64, compared as a square crop of our vertical video), as shown side by side on the evidence image.
+URL(s) of the original work:
+https://www.facebook.com/ads/library/?id=2127001151229429
+https://matstrumpor.se/products/sushi-strumpor
+Evidence image: https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis.png?v=1790861027
+Electronic signature: Axel Odhner
+Statements:
+- I have a good faith belief that use of the copyrighted material described above is not authorized by the copyright owner, its agent, or the law.
+- I swear, under penalty of perjury, that the information in this notification is accurate and that I am the copyright owner or am authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.
+
+Svara Axel också med en rad per Shopify-anmälan: "<ärende> Shopify: inskickad, referens <nummer eller 'inget nummer'>" eller "<ärende> Shopify: INTE inskickad, <varför>".

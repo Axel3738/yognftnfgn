@@ -119,9 +119,12 @@ export function shopifyText(an) {
   return [
     `Rights owner (company): ${f.foretag}`,
     `Your relationship to the copyright owner: ${f.rollTillVerket}`,
-    `Full name: ${f.namn}${f.titel ? ` (${f.titel})` : ''}`,
+    // Namnet ensamt och telefonraden bara med ett nummer: Cowork skriver texterna tecken för tecken, så
+    // "Axel Odhner (CEO)" hade hamnat i namnfältet och "(none given)" i telefonfältet (sett 2026-10-01).
+    `Full name: ${f.namn}`,
+    ...(f.titel ? [`Title (only if the form asks for one): ${f.titel}`] : []),
     `Email: ${f.epost}`,
-    `Phone: ${f.telefon ?? '(none given)'}`,
+    ...(f.telefon ? [`Phone: ${f.telefon}`] : []),
     `Address: ${f.adress}`,
     `Country: ${f.land}`,
     `Store being reported: ${f.butik}`,
