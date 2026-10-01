@@ -1,0 +1,95 @@
+[
+ {
+  "box": [
+   14,
+   66,
+   1064,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "Skarpt blad, hansker som verner"
+ },
+ {
+  "box": [
+   390,
+   157,
+   689,
+   217
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "ink_topp": 166,
+  "text": "hånden"
+ },
+ {
+  "box": [
+   43,
+   259,
+   1036,
+   310
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 268,
+  "text": "Hanskene beskytter når kniven sklir, bladvern på hvert blad"
+ },
+ {
+  "box": [
+   380,
+   969,
+   700,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "1 039 kr"
+ },
+ {
+  "box": [
+   358,
+   1089,
+   717,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "Før 1 359 kr."
+ },
+ {
+  "box": [
+   265,
+   1206,
+   816,
+   1308
+  ]
+ }
+]

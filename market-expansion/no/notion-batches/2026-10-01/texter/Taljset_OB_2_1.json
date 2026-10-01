@@ -1,0 +1,95 @@
+[
+ {
+  "box": [
+   8,
+   60,
+   1071,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 69,
+  "text": "En trebit følger med, for å øve før"
+ },
+ {
+  "box": [
+   352,
+   157,
+   728,
+   228
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 166,
+  "text": "det ekte"
+ },
+ {
+  "box": [
+   138,
+   259,
+   940,
+   310
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 268,
+  "text": "Trebiten følger med, hansken på, øv før det ekte"
+ },
+ {
+  "box": [
+   380,
+   969,
+   700,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "1 039 kr"
+ },
+ {
+  "box": [
+   358,
+   1089,
+   717,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "Før 1 359 kr."
+ },
+ {
+  "box": [
+   325,
+   1206,
+   756,
+   1308
+  ]
+ }
+]

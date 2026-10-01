@@ -1,0 +1,112 @@
+[
+ {
+  "box": [
+   0,
+   66,
+   1080,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "24 luker med golftilbehør i stedet for"
+ },
+ {
+  "box": [
+   375,
+   157,
+   702,
+   217
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 166,
+  "text": "sjokolade"
+ },
+ {
+  "box": [
+   60,
+   263,
+   1015,
+   310
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 272,
+  "text": "Golfballer, tees, ballmarkører, pitchgaffel med speil,"
+ },
+ {
+  "box": [
+   232,
+   315,
+   845,
+   362
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "ink_topp": 324,
+  "text": "køllebørste og golfhåndkle."
+ },
+ {
+  "box": [
+   390,
+   969,
+   689,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "619 kr"
+ },
+ {
+  "box": [
+   375,
+   1089,
+   701,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "før 809 kr."
+ },
+ {
+  "box": [
+   334,
+   1206,
+   746,
+   1308
+  ]
+ }
+]

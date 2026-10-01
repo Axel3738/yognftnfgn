@@ -1,0 +1,78 @@
+[
+ {
+  "box": [
+   46,
+   60,
+   1033,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 69,
+  "text": "14 dagers angrerett etter loven"
+ },
+ {
+  "box": [
+   66,
+   168,
+   1012,
+   219
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 177,
+  "text": "14 dager fra du får varen, ferdig fylt, ingenting å fylle selv."
+ },
+ {
+  "box": [
+   390,
+   969,
+   689,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "619 kr"
+ },
+ {
+  "box": [
+   375,
+   1089,
+   701,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "før 809 kr."
+ },
+ {
+  "box": [
+   384,
+   1206,
+   696,
+   1308
+  ]
+ }
+]

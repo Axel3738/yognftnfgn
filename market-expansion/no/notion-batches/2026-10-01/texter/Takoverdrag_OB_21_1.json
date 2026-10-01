@@ -1,0 +1,95 @@
+[
+ {
+  "box": [
+   103,
+   62,
+   977,
+   139
+  ],
+  "fet": true,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 71,
+  "text": "Sidene står frie, med vilje"
+ },
+ {
+  "box": [
+   42,
+   178,
+   1037,
+   225
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 187,
+  "text": "Kanten henger 30-40 cm ned, dør og vindu frie, én person"
+ },
+ {
+  "box": [
+   443,
+   236,
+   634,
+   270
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 245,
+  "text": "holder."
+ },
+ {
+  "box": [
+   359,
+   962,
+   722,
+   1032
+  ],
+  "fet": true,
+  "storlek": 72,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 971,
+  "text": "1 189 kr"
+ },
+ {
+  "box": [
+   225,
+   1084,
+   852,
+   1133
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 1093,
+  "text": "(før 1 549 kr), spar 360 kr (23 %)"
+ },
+ {
+  "box": [
+   295,
+   1202,
+   786,
+   1308
+  ]
+ }
+]

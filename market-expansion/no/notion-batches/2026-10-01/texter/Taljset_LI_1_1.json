@@ -1,0 +1,169 @@
+[
+ {
+  "box": [
+   184,
+   66,
+   895,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "Dette ligger i vesken"
+ },
+ {
+  "box": [
+   530,
+   442,
+   1070,
+   481
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "ink_topp": 451,
+  "vanster_x": 573,
+  "text": "6 kniver"
+ },
+ {
+  "box": [
+   530,
+   489,
+   1070,
+   534
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 498,
+  "vanster_x": 573,
+  "text": "6 jern"
+ },
+ {
+  "box": [
+   530,
+   536,
+   1070,
+   581
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "ink_topp": 545,
+  "vanster_x": 573,
+  "text": "Bladvern til hvert blad"
+ },
+ {
+  "box": [
+   530,
+   583,
+   1070,
+   628
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 592,
+  "vanster_x": 573,
+  "text": "Lærstrop og polermiddel"
+ },
+ {
+  "box": [
+   530,
+   630,
+   1070,
+   675
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 639,
+  "vanster_x": 573,
+  "text": "Slipepapir og trebit"
+ },
+ {
+  "box": [
+   530,
+   677,
+   1070,
+   722
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 686,
+  "vanster_x": 573,
+  "text": "Kuttsikre hansker"
+ },
+ {
+  "box": [
+   380,
+   969,
+   700,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "1 039 kr"
+ },
+ {
+  "box": [
+   358,
+   1089,
+   717,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "Før 1 359 kr."
+ },
+ {
+  "box": [
+   385,
+   1206,
+   695,
+   1308
+  ]
+ }
+]

@@ -1,0 +1,163 @@
+[
+ {
+  "box": [
+   225,
+   79,
+   855,
+   158
+  ],
+  "fet": true,
+  "storlek": 66,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 88,
+  "text": "Farsdagsgave"
+ },
+ {
+  "box": [
+   176,
+   174,
+   898,
+   253
+  ],
+  "fet": true,
+  "storlek": 66,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "ink_topp": 183,
+  "text": "fylt med golfutstyr."
+ },
+ {
+  "box": [
+   28,
+   275,
+   1048,
+   324
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   73,
+   69,
+   63
+  ],
+  "ink_topp": 284,
+  "text": "24 luker med golftilbehør i stedet for sjokolade, klar til å gi."
+ },
+ {
+  "box": [
+   52,
+   388,
+   382,
+   490
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   62,
+   398,
+   372,
+   481
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   200,
+   15,
+   46
+  ],
+  "radie": 41,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 40,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 419,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   239,
+   1223,
+   842,
+   1270
+  ],
+  "fet": true,
+  "storlek": 42,
+  "farg": [
+   198,
+   15,
+   43
+  ],
+  "ink_topp": 1232,
+  "text": "Bestill innen 19. oktober"
+ },
+ {
+  "box": [
+   250,
+   1109,
+   1000,
+   1208
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   250,
+   1109,
+   580,
+   1208
+  ],
+  "fet": true,
+  "storlek": 97,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1118,
+  "vanster_x": 282,
+  "text": "619 kr,"
+ },
+ {
+  "box": [
+   584,
+   1144,
+   1000,
+   1193
+  ],
+  "fet": false,
+  "storlek": 44,
+  "farg": [
+   73,
+   68,
+   62
+  ],
+  "ink_topp": 1153,
+  "vanster_x": 592,
+  "text": "før 809 kr"
+ }
+]

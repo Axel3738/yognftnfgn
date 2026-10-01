@@ -1,0 +1,169 @@
+[
+ {
+  "box": [
+   76,
+   66,
+   1007,
+   137
+  ],
+  "fet": true,
+  "storlek": 58,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 75,
+  "text": "Dette ligger bak lukene"
+ },
+ {
+  "box": [
+   530,
+   442,
+   1070,
+   481
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "ink_topp": 451,
+  "vanster_x": 573,
+  "text": "Golfballer"
+ },
+ {
+  "box": [
+   530,
+   489,
+   1070,
+   534
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 498,
+  "vanster_x": 573,
+  "text": "Tees, plast og tre"
+ },
+ {
+  "box": [
+   530,
+   536,
+   1070,
+   581
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "ink_topp": 545,
+  "vanster_x": 573,
+  "text": "Ballmarkører"
+ },
+ {
+  "box": [
+   530,
+   583,
+   1070,
+   628
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 592,
+  "vanster_x": 573,
+  "text": "Pitchgaffel med speil"
+ },
+ {
+  "box": [
+   530,
+   630,
+   1070,
+   675
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 639,
+  "vanster_x": 573,
+  "text": "Rensebørste til køller"
+ },
+ {
+  "box": [
+   530,
+   677,
+   1070,
+   722
+  ],
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 686,
+  "vanster_x": 573,
+  "text": "Golfhåndkle med klips"
+ },
+ {
+  "box": [
+   390,
+   969,
+   689,
+   1038
+  ],
+  "fet": true,
+  "storlek": 70,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 978,
+  "text": "619 kr"
+ },
+ {
+  "box": [
+   375,
+   1089,
+   701,
+   1129
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1098,
+  "text": "før 809 kr."
+ },
+ {
+  "box": [
+   375,
+   1206,
+   706,
+   1308
+  ]
+ }
+]
