@@ -19,7 +19,7 @@ import {
   valjRond, redanGranskad, hittaBatch, nastaGranskning, harSektion, domFor, giltigDom, kommentarText, feedbackSektion, laggInSektion,
   feedbackRadMarkdown, feedbackEgenskaper, byggRapport, samlaKorning,
   REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra, spegelPris,
-  tolkaMatstrumporNamn,
+  tolkaMatstrumporNamn, variabelKarna,
 } from '../briefgranskning.mjs';
 import { serUtSomSvenska } from '../lib/engelska.mjs';
 
@@ -984,4 +984,16 @@ test('Matstrumpors namnmönster läses av spärren (vinkel = koncept, numret på
   const b = tolkaMatstrumporNamn('MATSTRUMP_sushi_jul_static_049_v1');
   assert.deepEqual({ koncept: b.koncept, nummer: b.nummer, variant: b.variant }, { koncept: 'JUL', nummer: 49, variant: '1' });
   assert.equal(tolkaMatstrumporNamn('Takoverdrag_BOF_3_1'), null);
+});
+
+test('variabelKarna: syskonlistan efter semikolon och ", against <förälder>" är inte fler variabler', () => {
+  assert.equal(variabelKarna('the hook (row 1); the two sibling hooks are Sotarset_FD_3_H1 and Sotarset_FD_3_H2'), 'the hook');
+  assert.equal(variabelKarna('the text box message; the three sibling statics are IBC_FD_4_1, IBC_FD_4_2, IBC_FD_4_3'), 'the text box message');
+  assert.equal(variabelKarna('the headline, against Sotarset_FD_2_1'), 'the headline');
+  // Två riktiga variabler fälls fortfarande.
+  assert.match(variabelKarna('the hook and the price'), /\sand\s/);
+  const brief = (iso) => `Make: x\nWhy: Hook variant of Sotarset_PD_1_H2, CPA 183 kr against break-even 325 kr, 59 purchases.\nVARIABELTAGGAR: typ=I · parent=Sotarset_PD_1_H2 · iteration=1\nIsolated variable: ${iso}\n`;
+  const kod = (iso) => { const u = granskaBrief({ text: brief(iso), namn: 'Sotarset_FD_3_H1', typ: 'video' }, { prefix: 'Sotarset' }); return [...(u.fel ?? []), ...(u.anmarkningar ?? u.anm ?? [])].some((a) => a.kod === 'variabel'); };
+  assert.equal(kod('the hook (row 1); the two sibling hooks are Sotarset_FD_3_H1 and Sotarset_FD_3_H2'), false);
+  assert.equal(kod('the hook and the end card'), true);
 });

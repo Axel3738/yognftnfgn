@@ -1,0 +1,112 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "rond": "2026-09-29",
+  "bra": [
+    "All three rules from the 2026-09-28 review held: every hook is a declarative, the colour rule is written into the Rules (`no colour word the picture does not show`), and the parent stands with CPA 256 kr against break-even 442 kr on 132 purchases.",
+    "FD_3_H1 answers the tarp objection with the page's own line (`Presenningen … blåser av`) instead of an invented weakness.",
+    "Price 489 / 636 kr, 210D, 120 × 100 × 116 cm and the top opening match the page (read live from the product page 2026-10-01)."
+  ],
+  "missat": [
+    "IBC_FD_3_H3 and IBC_FD_4_3 say `Luckan upptill når locket` — the flap does not reach the lid; the page says `Öppningen upptill gör att du kommer åt locket`. Read aloud, it says the wrong thing.",
+    "Break-even is 442 kr here and 441 kr in the 2026-09-28 round — the same 667 ÷ 1,51, rounded two ways; write it one way.",
+    "The four FD_4 statics share one layout, so FD_4_2 puts the price in the headline AND the price band, and FD_4_3 puts the deadline in the headline AND the bottom line. Each of those statics says one fact twice and leaves a slot empty. Give the headline a fact the band does not carry.",
+    "The Rules still say `Sweden only … never translated`. Since 2026-09-29 19:00 the translation routine sends FD ads to Norway too (`tools/lib/bara-sverige.mjs`: Norwegian Father's Day is also 8 November, delivery p90 18,8 days). The line is stale. Write `Sweden and Norway only; never US, GB, CA or DK`."
+  ],
+  "regler": [
+    "Every Swedish line is read aloud before it goes out: `Luckan upptill når locket` says the flap reaches the lid — write `Luckan upptill: du kommer åt locket`.",
+    "A static says each fact once: the price lives in the price band, the deadline in the bottom line, so the headline carries something neither of them says.",
+    "The market line follows the routine: FD ads run in Sweden and Norway only, never US, GB, CA or DK (`tools/lib/bara-sverige.mjs` since 2026-09-29) — never `Sweden only` again."
+  ],
+  "rader": [
+    {
+      "namn": "IBC_FD_4_4",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "IBC_FD_4_3",
+      "fel": [],
+      "anmarkningar": [
+        "Sub-line `Lucka upptill når locket utan att ta av något` — same wording problem; and the deadline stands twice."
+      ],
+      "bra": [
+        "The page's top-opening fact."
+      ]
+    },
+    {
+      "namn": "IBC_FD_4_2",
+      "fel": [],
+      "anmarkningar": [
+        "Price in the headline and in the band."
+      ],
+      "bra": [
+        "Sub-line names size and zip."
+      ]
+    },
+    {
+      "namn": "IBC_FD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "One of four statics on the same pixels; only the text box changes. Fine."
+      ],
+      "bra": [
+        "The text box is the only variable against the three siblings."
+      ]
+    },
+    {
+      "namn": "IBC_FD_3_H3",
+      "fel": [],
+      "anmarkningar": [
+        "`Luckan upptill når locket` — write `Luckan upptill: du kommer åt locket` (the page's meaning)."
+      ],
+      "bra": [
+        "Deadline-first opening on the lid beat."
+      ]
+    },
+    {
+      "namn": "IBC_FD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "IBC_FD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant; rows 2–4 shared with the two siblings. Fine."
+      ],
+      "bra": [
+        "Objection, price and deadline as three openings on one body — the test can read which one the product-aware viewer needs."
+      ]
+    },
+    {
+      "namn": "IBC_FD_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Hook variant of FD_1 with the static FD_2_2's line — declared pair, rows 2–5 shared. Fine."
+      ],
+      "bra": [
+        "The `faktiskt` hook from the account's proven gift ad, on the product's best video by profit contribution."
+      ]
+    },
+    {
+      "namn": "IBC_FD_2_2",
+      "fel": [],
+      "anmarkningar": [
+        "Headline variant against FD_2_1, same pixels otherwise. Fine."
+      ],
+      "bra": [
+        "One variable, the parent named with spend, purchases and CPA against break-even."
+      ]
+    }
+  ]
+}

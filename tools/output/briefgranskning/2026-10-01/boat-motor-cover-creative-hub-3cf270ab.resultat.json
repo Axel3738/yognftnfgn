@@ -1,0 +1,35 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "hub_titel": "Boat motor cover creative hub",
+  "slug": "boat-motor-cover-creative-hub-3cf270ab",
+  "rond": "2026-09-29",
+  "idag": "2026-10-01",
+  "antal": 9,
+  "rena": 0,
+  "anm": 7,
+  "fel": 2,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3ec270ab-908c-8132-a369-db37596beab6",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-29-3ec270ab908c8132a369db37596beab6",
+    "titel": "Brief review 2026-09-29",
+    "block": 19
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Batmotor_FD_1_H3",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-29 (Boat motor cover creative hub) — this brief has an error the editor must know about:\n1. This video breaks the owner's decision of 2026-09-29 for this product (no water demo, no snow, no UV, no winter promise). Before it goes live: row 2 must not use the water-bead macro (OUR AD 0:08–0:10) and row 3 must not use the snow shot (0:17–0:19) — use the trailer and garage beats instead; the primary text `420D Oxford-tyg håller regn, snö och UV ute hela vintern` becomes `420D Oxford-tyg håller regn, smuts och löv borta`, and the headline `motorn skyddad i vinter` becomes `Fars dag-present: dra över, spänn remmen`.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_FD_2_2",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-29 (Boat motor cover creative hub) — this brief has an error the editor must know about:\n1. The sub-line `420D Oxford-tyg mot regn, snö och UV. Nio storlekar, inga verktyg.` breaks the owner's decision of 2026-09-29 (no UV, no weather promise). Next version: `420D Oxford-tyg, nio storlekar, inga verktyg.`\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}
