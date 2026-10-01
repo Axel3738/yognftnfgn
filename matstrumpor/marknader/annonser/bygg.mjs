@@ -53,6 +53,9 @@ const sparaVideor = () => writeFileSync(VIDEOR, JSON.stringify(videor, null, 1) 
  *  inte att du aktiverar kampanjerna i meta för ens jag har granskat alla". Budgeten är given, men
  *  aktiveringen är hans — texten i marknader.json ändras när han sagt ja, aldrig av en session själv. */
 export function farAktiveras(k, annonser) {
+  // Ett stopp för hela marknaden går före allt annat: Taiwan (Axel 2026-10-01) lanseras inte förrän
+  // kassan tar emot kundens tull-ID, hur rätt budget och annonser än är. Raden tas bort på hans ord.
+  if (k.lansering_stopp) return { ok: false, skal: `marknaden får inte lanseras än (${k.lansering_stopp})` };
   if (/EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `budgeten är en platshållare (${k.budget_beslut})` };
   if (/⛔|tills Axel granskat/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `väntar på Axels granskning (${k.budget_beslut})` };
   if (!annonser.length) return { ok: false, skal: 'inga annonser i adsetet' };

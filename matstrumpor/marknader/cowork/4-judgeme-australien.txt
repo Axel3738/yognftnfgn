@@ -1,3 +1,9 @@
+⛔ KÖRD 2026-10-01 — kör inte igen. Del A stoppade rätt: Australien har ingen vanlig landrad i Metas
+verifieringar, bara "finansiella tjänster", och kontots allmänna standardannonsör ska inte röras.
+Australien togs i stället ur WW-adsetet (marknader.json → WW.geo_vantar) tills Meta godkänt bolaget.
+Del B: datumformatet blev dd/mm/yyyy; japanska och kinesiska kom in när Axel tryckte "Uppdatera lista".
+Det som är kvar i Judge.me står i 5-judgeme-texter.txt.
+
 Uppdrag: två små saker för Matstrumpors utlandsbutik. Del A i Meta, del B i Judge.me. Gör bara det som står nedan.
 
 Rör ALDRIG:

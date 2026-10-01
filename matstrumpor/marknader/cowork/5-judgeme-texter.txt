@@ -1,0 +1,30 @@
+Uppdrag: två små texträttningar i Judge.me för Matstrumpors utlandsbutik. Gör bara det som står nedan.
+
+Rör ALDRIG:
+- Recensionerna själva: radera, dölj, redigera eller besvara aldrig en recension.
+- Språklistan (japanska och kinesiska är redan på sedan 2026-10-01) och datumformatet (dd/mm/yyyy är redan valt).
+- Märket under produktnamnet (Star Rating Badge): det är redan rätt på alla språk.
+- Judge.me-planen, betalningar, e-postinställningar och recensionsförfrågningar.
+- Shopify-temat, Shopify Payments, Meta, DNS och Loopia.
+Betala ingenting.
+
+Varför: recensionsrutan på produktsidan skriver antalet i fel form på två språk.
+- Finska: står "11 arvostelut", ska vara "11 arvostelua".
+- Polska: står "11 recenzje", ska vara "11 recenzji".
+Texten kommer från Review Widget-fältet "Review word (plural)" för respektive språk.
+
+1. Öppna Shopify-admin för butiken Matstrumpor.se (1r46tp-qx) och klicka Appar → Judge.me.
+2. Gå till Settings → Widgets → Review Widget. Den svenska adminen kan visa Inställningar → Widgetar → Review Widget, och knappen kan heta "Anpassa".
+3. Öppna sektionen "Text".
+4. Öppna rullistan "Currently editing in" (kan ha ett svenskt namn som "Redigerar just nu") och välj Finnish / Finska.
+5. Skriv arvostelua i fältet "Review word (plural)". Rör inte singularfältet ("Review word (singular)" = arvostelu) och inga andra fält. Klicka Save / Spara.
+6. Välj Polish / Polska i samma rullista.
+7. Skriv recenzji i fältet "Review word (plural)". Rör inte singularfältet (recenzja). Klicka Save / Spara.
+8. Om rullistan eller fälten inte finns, eller om panelen slutar svara: stanna, ändra ingenting mer och beskriv exakt vad du ser med en skärmdump.
+9. Kontrollera som kund. Öppna i en ny flik, en i taget, och ladda om sidan:
+   https://matstrumpor.com/fi/products/sushi-strumpor?country=FI — i recensionsrutan, bredvid betyget 4.4, ska det stå "11 arvostelua".
+   https://matstrumpor.com/pl/products/sushi-strumpor?country=PL — där ska det stå "11 recenzji".
+   (Talet kan vara högre än 11 om nya recensioner har kommit.) Ta en skärmdump av rutan på båda sidorna.
+
+Rapportera: vilka fält du ändrade, per språk, och de två skärmdumparna. Säg rakt ut om ett fält inte fanns.
+Skriv sedan "Judge.me-texterna klara" i chatten med Claude. Claude läser sidorna som kund efteråt.

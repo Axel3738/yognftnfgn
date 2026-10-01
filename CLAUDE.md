@@ -125,8 +125,8 @@ Shopify vägrar locale `pt` — portugisiskan är **`pt-PT`** (URL-mappen `/pt`)
 Spårningssidan får de sju språken (`sparning/sprak/*.json`, `sprak_extra`)
 men rutinen bygger från `main`. Axels beslut samma kväll: butiken heter
 **Matstrumpor** i alla länder och annonserna bär raden "svenskt varumärke"
-(CaraShell-principen); alla kampanjer 1 000 kr/dag men ⛔ **ingen aktiveras
-förrän Axel granskat annonserna**. HeyGen-nyckeln sitter på
+(CaraShell-principen); alla kampanjer 1 000 kr/dag, och ingen aktiverades förrän Axel
+sa till (2026-10-01: "schemalägg alla och japan", se Start fre 2/10 nedan). HeyGen-nyckeln sitter på
 `subscriptions@stonebite.org`; plånboken fylldes på 2026-09-28 (243 USD, 170 kvar
 efter alla 33 videor). Domänerna `.no`/`.eu` köper Axel,
 `.com` finns; kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys
@@ -151,8 +151,20 @@ GB+AU+CA+NZ delar), så 13 av Europamarknadens 29 länder har en kampanj; de 16 
 inget översatt språk. Tabellen, id:n och regler i `marknader/README.md` → Kampanjerna.
 ⚠️ Tre gamla augustikampanjer (sushisock.com) ligger PAUSED i samma konto med 155 ACTIVE
 annonser under sig — rör dem aldrig, arkivering är Axels klick (granskningen G-F07).
-⚠️ **Australien kräver verifierad annonsör och betalare** (WW-adsetet, SOFT_ERROR 3858810,
-granskningen G-A01) — samma väg som Taiwan.
+⚠️ **Australien kräver verifierad annonsör och betalare** (WW-adsetet, SOFT_ERROR 3858810
+"Universal regulation … (Australia)", granskningen G-A01) — inte finansreglen, så kontots ruta
+"Australien (annonser för finansiella tjänster)" är fel väg och kontots allmänna standardannonsör
+rörs inte (gäller alla regioner, även Sverige). **Australien är UR WW sedan 2026-10-01**
+(`marknader.json` → `WW.geo_vantar`) och läggs tillbaka med `AUSTRALIA_UNIVERSAL` +
+`universal_beneficiary/payer` när Meta godkänt STONEBITE ECOM AB (samma granskning som Taiwan);
+Taiwan-check-in:en `trig_013nZKYRvQ3P52ANsT5QuZFd` bär steget.
+✅ **Start fredag 2026-10-02 00:01: 14 kampanjer, 13 000 kr/dag** (Axel 2026-10-01: "kan inte du
+bara schemalägga alla kampanjer … Till 00:01 2 oktober", "Varför skulle vi inte schemalägga alla och
+japan" — han valde bort sin egen granskning). Meta vägrar ändra starttiden på ett adset som redan
+finns ("…redan har startats", mätt), så `annonser/schemalagg.mjs` gör det i två steg: förbered
+(annonser + adset ACTIVE, kampanjen PAUSED — Meta granskar annonserna i förväg, inget kostar) och
+`--starta` 00:01 (bara kampanjerna), väckt av send_later `trig_01NVdXzi1vLMKY8id9FxzT9N`. Står
+kvar avstängda: Norges 007 i NO och NOB (`hall_av`, "sukker"), Australien (ovan), hela Taiwan.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
@@ -160,8 +172,8 @@ tolv, alla i HeyGens **dyraste läge `precision`**. ⚠️ `pipeline/heygen.mjs`
 läge före 2026-09-28 och fick då HeyGens standard `speed`: 24 speed-renderingar kastades,
 precision är nu standard i repot (`--mode=speed` måste skrivas ut). Precision delar talet i
 andra block än speed — en godkänd text flyttas med `pipeline/srt-block.mjs`, aldrig rakt
-upp. QA och id:n: `marknader/README.md` → Annonserna i kontot. ⛔ Inget aktiverat — Axel
-granskar först. **Egna videor (inte UGC) görs med egen röst, aldrig med HeyGens
+upp. QA och id:n: `marknader/README.md` → Annonserna i kontot. Inget aktiverades före Axels
+"schemalägg alla" 2026-10-01 (start fre 2/10 00:01, se ovan). **Egna videor (inte UGC) görs med egen röst, aldrig med HeyGens
 översättning** (Axel 2026-09-28): haikuh3, haikuh2, s001h1 (en svensk AI-kvinnoröst →
 ElevenLabs-dubbning i manuellt läge med granskade manus — `ELEVENLABS_API_KEY` syntes inte i
 den session som byggde verktygen, så rösten görs i en egen session enligt
@@ -220,7 +232,16 @@ Meta godkänt annonsören. Klarna är borta ur texterna och sidfotens betalikone
 (`domantema.mjs` → `BETAL_ASIEN`). ⛔ **Taiwan kräver att bolaget är
 verifierad annonsör** (Taiwans lag; mätt samma dag: Meta vägrar annonsgruppen med "Annonsör saknas"):
 `matstrumpor/marknader/cowork/3-taiwan-verifiering.txt`, sedan `annonser/bygg.mjs --marknad TW
---skarpt`. ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
+--skarpt`. ⛔ **Taiwan lanseras inte förrän kassan tar emot kundens tull-ID** (Axel 2026-10-01: "vi
+borde inte launcha taiwan heller än … ett speciellt [nummer] … som kunderna får fylla i i kassan";
+`marknader.json` → `TW.lansering_stopp`, `farAktiveras` vägrar). Kravet är Taiwans tull: kunden ska
+vara registrerad i appen EZ WAY 易利委 (ID-nummer + mobil) och sedan 2026-03-01 godkänna varje
+expresspaket i appen innan det landar, annars kan det skickas tillbaka. Shopify har ett eget
+kassafält "National ID Number" för Taiwan i early access (slås på av Shopify Support); butiken är inte
+Plus. Japan har inget sådant krav. Allt i `marknader/TAIWAN-TULL.md` och `marknader/README.md` → "Taiwans tull-ID". ⚠️ Leverantören
+svarade 2026-10-01 (`LEVERANTOR-FRAGA-JP-TW.md` → Svar): Taiwan går billigt men tar **11–23
+arbetsdagar** — sajten lovar 5–10 på zh-TW, och den texten ändras innan Taiwan startar (står i
+`lansering_stopp`). Japan nämndes inte; löftet 5–10 där är Axels eget (2026-09-30). ⚠️ **Lyssna på japanska och kinesiska replik för replik** (`pipeline/seglyssna.py`):
 helfilsmåttet var grönt medan 靴下 hördes som "ガックザ". Japanskan läser uttalsfältet `las`
 (kanji → hiragana), och Taiwan har en infödd röst. Allt i `marknader/README.md` → "Japan och Taiwan".
 🔊 **Rösterna efter granskningen 2026-09-30/10-01** (`marknader/egna/README.md` → "Granskningen 2026-09-30"):
@@ -241,9 +262,14 @@ Sidans profilbild var tom, så annonserna visade en grå gubbe. Sedan 2026-09-29
 (sessionen, `POST /{sida}/picture`, tillbakaläst). ✅ Alla utlandsannonser bär sidan, Instagram-
 identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll: 104 av 104 då, **112 av 112
 2026-09-30 med Japan** (granskningens egen avläsning), alla PAUSED.
-**Judge.me:** rutans texter är översatta på alla tolv språk. Axel slog på "automatic" 2026-09-29, men
-recensionerna var ännu inte översatta samma kväll, eftersom Judge.me anger upp till 48 timmar
-(`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
+**Judge.me:** rutans texter är översatta på alla tolv språk — japanska och kinesiska sedan
+2026-10-01, när Axel tryckte "Uppdatera lista" (Inställningar → Språk; ett språk som publiceras i
+Shopify efter att listan gjorts syns inte annars förrän efter upp till 24 timmar). Datumet är
+dd/mm/yyyy, ett enda format för alla språk. Recensionerna översätts automatiskt (upp till 48 timmar;
+den första tyska var klar 2026-10-01). Fel böjning i rutans antal på finska och polska rättas i
+Inställningar → Widgetar → Review Widget → Text → "Currently editing in" → "Review word (plural)"
+(`marknader/cowork/5-judgeme-texter.txt`). "Sort reviews by" är en dold skärmläsartext och "Anonym" är
+recensionens namn — inget av dem går att ändra i Judge.me (`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
