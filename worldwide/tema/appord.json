@@ -455,5 +455,18 @@
   "branding_text": {"en":"Powered by Judge.me","de":"Bereitgestellt von Judge.me","fr":"Propulsé par Judge.me","es":"Con tecnología de Judge.me","it":"Con tecnologia Judge.me","nl":"Mogelijk gemaakt door Judge.me","pl":"Obsługiwane przez Judge.me","pt-PT":"Desenvolvido por Judge.me"},
   "reply_name": {"en":"Beaver Store","de":"Beaver Store","fr":"Beaver Store","es":"Beaver Store","it":"Beaver Store","nl":"Beaver Store","pl":"Beaver Store","pt-PT":"Beaver Store"},
   "reply_name_text": {"en":"Beaver Store","de":"Beaver Store","fr":"Beaver Store","es":"Beaver Store","it":"Beaver Store","nl":"Beaver Store","pl":"Beaver Store","pt-PT":"Beaver Store"}
+ },
+ "_varden_om": "Alternativvärden som är kopplade till Shopifys färgkategori (metaobjekt shopify--color-pattern) går inte att översätta som vanliga alternativvärden och stod på svenska på produktsidan, i korgen och i kassan (mätt 2026-10-01: spöhållaren, kameran, MC-kapellet m.fl., 7 produkter). Temat byter dem i produktens väljare och korgens rad; kassan och mejlen kräver översättningen i Translate & Adapt (worldwide/cowork/3-granskningen.txt).",
+ "varden": {
+  "Grön": {"en":"Green","de":"Grün","fr":"Vert","es":"Verde","it":"Verde","nl":"Groen","pl":"Zielony","pt-PT":"Verde"},
+  "Rosa": {"en":"Pink","de":"Rosa","fr":"Rose","es":"Rosa","it":"Rosa","nl":"Roze","pl":"Różowy","pt-PT":"Rosa"},
+  "Blå": {"en":"Blue","de":"Blau","fr":"Bleu","es":"Azul","it":"Blu","nl":"Blauw","pl":"Niebieski","pt-PT":"Azul"},
+  "Kamouflage": {"en":"Camouflage","de":"Camouflage","fr":"Camouflage","es":"Camuflaje","it":"Mimetico","nl":"Camouflage","pl":"Kamuflaż","pt-PT":"Camuflagem"},
+  "Svart": {"en":"Black","de":"Schwarz","fr":"Noir","es":"Negro","it":"Nero","nl":"Zwart","pl":"Czarny","pt-PT":"Preto"},
+  "Grått": {"en":"Gray","de":"Grau","fr":"Gris","es":"Gris","it":"Grigio","nl":"Grijs","pl":"Szary","pt-PT":"Cinzento"},
+  "Gul": {"en":"Yellow","de":"Gelb","fr":"Jaune","es":"Amarillo","it":"Giallo","nl":"Geel","pl":"Żółty","pt-PT":"Amarelo"},
+  "Vitt": {"en":"White","de":"Weiß","fr":"Blanc","es":"Blanco","it":"Bianco","nl":"Wit","pl":"Biały","pt-PT":"Branco"},
+  "Rött": {"en":"Red","de":"Rot","fr":"Rouge","es":"Rojo","it":"Rosso","nl":"Rood","pl":"Czerwony","pt-PT":"Vermelho"},
+  "Marin": {"en":"Navy","de":"Marineblau","fr":"Bleu marine","es":"Azul marino","it":"Blu navy","nl":"Marineblauw","pl":"Granatowy","pt-PT":"Azul-marinho"}
  }
 }

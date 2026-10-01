@@ -31,7 +31,8 @@ export const VERSION = 'v5'; // v5 2026-09-30 kväll: Kachings och Judge.me:s sv
 // Apptexternas egen version (snippets/bw-appord.liquid skrivs om varje körning; de nio patchade
 // filerna rörs inte när bara appord ändras — då behövs ingen ny VERSION).
 // a2 2026-10-01: Kachings paketnamn, Judge.me:s hela widget som hela meningar (appord.json → exakt; jdgm är källan), korgens rabattrader, Trust Badges dold, platshållarprodukter dolda, bara besökarens språk skickas.
-export const APPORD_VERSION = 'a2';
+// a3 2026-10-01: färgvärden kopplade till Shopifys färgkategori (appord.json → varden) i produktens väljare och korgens rad, och "Recently viewed" hämtar produkterna på besökarens språk.
+export const APPORD_VERSION = 'a3';
 const CAP = `{%- capture bw -%}{%- render 'bw-lage' -%}{%- endcapture -%}{%- comment -%}${MARKOR} ${VERSION}{%- endcomment -%}`;
 /** Världslägets text på besökarens språk. */
 // Utan bindestreck: mellanslaget före och efter texten ska stå kvar ("4,8 von 5").
@@ -127,7 +128,8 @@ export function byggAppord(ord = JSON.parse(readFileSync(join(ROT, 'appord.json'
   const forSprak = (l) => {
     const exakt = {}; for (const [k, v] of Object.entries(ord.exakt)) { const t = valj(v, l); if (t) exakt[k] = t; }
     const monster = ord.monster.map((m) => ({ sv: m.sv, t: valj(m, l) })).filter((m) => m.t);
-    const j = JSON.stringify({ exakt, monster }).replace(/</g, '\\u003c');
+    const varden = {}; for (const [k, v] of Object.entries(ord.varden ?? {})) { const t = valj(v, l); if (t) varden[k] = t; }
+    const j = JSON.stringify({ exakt, monster, varden }).replace(/</g, '\\u003c');
     if (/\{%-?\s*endraw/.test(j)) throw new Error('appord.json innehåller endraw');
     return j;
   };
@@ -145,6 +147,11 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
   var O;
   ${data}
   function tr(v) { return v || null; }
+  // Temats "Recently viewed" hämtar /products/<handle>.js utan språkprefix, så /de, /fr … fick engelska
+  // titlar (mätt 2026-10-01). Bara den sortens adress får prefixet; allt annat går orört.
+  function medRot(u, rot) { return typeof u === 'string' && rot && rot !== '/' && u.slice(0, 10) === '/products/' && u.split('?')[0].slice(-3) === '.js' && u.indexOf('/', 10) < 0 ? rot.slice(0, -1) + u : u; }
+  var rot = window.Shopify && Shopify.routes && Shopify.routes.root;
+  if (rot && rot !== '/' && window.fetch) { var f0 = window.fetch; window.fetch = function (u, o) { return f0.call(this, medRot(u, rot), o); }; }
   // ⚠️ window.jdgmSettings skrivs INTE om. Prövat 2026-10-01: Judge.me:s nya widget (jm-*) blandade då
   // ihop språken ("Write a recension", "Reviews på andra språk", recensionsrubriken "Great skydd!").
   // Texterna byts i stället i sidan, som hela meningar, och aldrig inne i kundernas egna recensioner.
@@ -155,6 +162,13 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
   // Kundernas egna ord (rubrik, text, namn, butikens svar) byts aldrig: "Bra" i en recensionsrubrik är kundens.
   var EGNA = '.jm-review-content, [class*="review-content"], .jm-review-author, [class*="reviewer-name"], .jdgm-rev__title, .jdgm-rev__body, .jdgm-rev__author, .jdgm-rev__reply, .jdgm-rev__content, .jdgm-carousel-item__review, .jdgm-carousel-item__reviewer-name';
   var KORG = '#CartDrawer, .drawer, [data-section-type="cart"], .cart__page, form[action*="/cart"]';
+  // Färgvärden kopplade till Shopifys färgkategori ("Color: Grön") går inte att översätta som vanliga
+  // alternativvärden. De byts i produktens väljare och korgens rad — bara textnoden, aldrig inputens value.
+  var VARDEN = '.cart__item--variants, .variant-input-wrap, .variant__label-info';
+  function bytVarde(n) {
+    var t = n.nodeValue; if (!t || !t.trim()) return;
+    var k = t.trim(); if (O.varden[k] && O.varden[k] !== k) n.nodeValue = t.replace(k, O.varden[k]);
+  }
   function byt(n, baraRabatt) {
     var t = n.nodeValue; if (!t || !t.trim()) return;
     var k = t.trim(), ny = null;
@@ -162,12 +176,13 @@ $29" (mätt 2026-10-01). En produktsektion med Shopifys platshållare döljs i v
     if (par && O.exakt[par[1]]) ny = tr(O.exakt[par[1]]) + par[2];
     else if (baraRabatt) ny = O.exakt[k] && /^\\d+x |^\\d+ ?-? ?Par$/.test(k) ? tr(O.exakt[k]) : null;
     else if (O.exakt[k]) ny = tr(O.exakt[k]);
+    else if (O.varden[k]) ny = O.varden[k];
     else for (var i = 0; i < M.length; i++) { var r = M[i].re.exec(k); if (r) { var x = tr(M[i].m); if (x) ny = x.replace('[[n]]', r[1] || ''); break; } }
     if (ny && ny !== k) n.nodeValue = t.replace(k, ny);
   }
   function gå(rot) {
     var w = document.createTreeWalker(rot, NodeFilter.SHOW_TEXT, null), n;
-    while ((n = w.nextNode())) { var p = n.parentElement; if (!p || !p.closest || p.closest(EGNA)) continue; if (p.closest(SEL)) byt(n, false); else if (p.closest(KORG)) byt(n, true); }
+    while ((n = w.nextNode())) { var p = n.parentElement; if (!p || !p.closest || p.closest(EGNA)) continue; if (p.closest(SEL)) byt(n, false); else if (p.closest(VARDEN)) bytVarde(n); else if (p.closest(KORG)) byt(n, true); }
     if (rot.querySelectorAll) rot.querySelectorAll('[placeholder]').forEach(function (e) { if (e.closest(SEL) && O.exakt[e.placeholder]) e.placeholder = tr(O.exakt[e.placeholder]); });
     // Skärmläsarens texter (aria-label="Se alla recensioner" på stjärnorna) byts också.
     if (rot.querySelectorAll) rot.querySelectorAll('[aria-label]').forEach(function (e) { var a = e.getAttribute('aria-label'); if (a && e.closest(SEL) && O.exakt[a.trim()]) e.setAttribute('aria-label', tr(O.exakt[a.trim()])); });

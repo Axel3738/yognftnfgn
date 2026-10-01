@@ -1,0 +1,105 @@
+Jag säljer Bäverbutikens produkter i hela världen som Beaver Store på beaverstoreco.com,
+från SAMMA Shopify-butik som baverbutiken.se, på åtta språk: engelska, tyska, franska,
+spanska, italienska, nederländska, polska och portugisiska. En granskning som kund
+2026-10-01 hittade två saker som bara går att rätta i Shopify-admin, plus en sak som
+bara går att se från en svensk dator. Du gör dem i Chrome med mitt inloggade konto.
+Fråga mig om inloggning när du behöver den. Datorn är en Windows-dator.
+
+⛔ DET HÄR RÖR DU ALDRIG
+- Loopia, DNS, namnservrar, MX-poster, domäner.
+- Marknader, språk, valutor, priser, frakt, betalsätt, Shopify Payments, skatter,
+  rabatter, Kachings erbjudanden.
+- Den SVENSKA texten någonstans. Svenskan står kvar som den är.
+- Produkterna själva: inga namn, varianter, färger eller alternativ ändras. Du lägger
+  bara till ÖVERSÄTTNINGAR.
+- Judge.me: inga recensioner raderas, döljs, redigeras eller importeras. Inga
+  recensionsförfrågningar slås på (de är AV med flit sedan 2026-09-28).
+- Temat, Meta, annonser, andra appar.
+- Ingenting köps. Ingen app installeras. Inget abonnemang uppgraderas. Kräver något
+  en betald plan eller en ny app: STOPPA det steget och skriv vad som krävs.
+- Lägg ALDRIG en order. Fyll aldrig i ett kortnummer.
+
+Admin: https://admin.shopify.com/store/4snrw0-mg
+
+------------------------------------------------------------------------------
+STEG 1 — Tio färgnamn på åtta språk (Translate & Adapt)
+------------------------------------------------------------------------------
+
+Sju produkter har färgen kopplad till Shopifys färgkategori. Då översätts färgen inte
+som en vanlig variant, och kunder utomlands ser "Color: Grön" i kassan och i mejlen.
+Färgerna är "metaobjekt" av typen Color (Färg). Temat byter dem redan på
+produktsidan och i varukorgen, men kassan och mejlen kommer bara åt dem härifrån.
+
+1. Admin → Appar → Translate & Adapt. (Finns appen inte: gå till Inställningar →
+   Språk → Tyska → "Översätt". Finns ingen av vägarna: STOPPA och skriv vad du ser.)
+2. Välj språket Tyska (German) uppe i appen.
+3. I listan över vad som går att översätta: välj "Metaobjekt" / "Metaobjects" och sedan
+   "Color" / "Färg" / "Color pattern".
+4. Översätt fältet med färgens namn ("Label" / "Etikett" / "Namn") för varje rad i
+   tabellen nedan. "Svart" finns två gånger — översätt båda. Spara.
+5. Gör samma sak för de sju andra språken. Spara efter varje språk.
+
+   | Svenska (står kvar) | en         | de          | fr          | es           | it        | nl           | pl          | pt-PT        |
+   |---------------------|------------|-------------|-------------|--------------|-----------|--------------|-------------|--------------|
+   | Grön                | Green      | Grün        | Vert        | Verde        | Verde     | Groen        | Zielony     | Verde        |
+   | Rosa                | Pink       | Rosa        | Rose        | Rosa         | Rosa      | Roze         | Różowy      | Rosa         |
+   | Blå                 | Blue       | Blau        | Bleu        | Azul         | Blu       | Blauw        | Niebieski   | Azul         |
+   | Kamouflage          | Camouflage | Camouflage  | Camouflage  | Camuflaje    | Mimetico  | Camouflage   | Kamuflaż    | Camuflagem   |
+   | Svart (×2)          | Black      | Schwarz     | Noir        | Negro        | Nero      | Zwart        | Czarny      | Preto        |
+   | Grått               | Gray       | Grau        | Gris        | Gris         | Grigio    | Grijs        | Szary       | Cinzento     |
+   | Gul                 | Yellow     | Gelb        | Jaune       | Amarillo     | Giallo    | Geel         | Żółty       | Amarelo      |
+   | Vitt                | White      | Weiß        | Blanc       | Blanco       | Bianco    | Wit          | Biały       | Branco       |
+   | Rött                | Red        | Rot         | Rouge       | Rojo         | Rosso     | Rood         | Czerwony    | Vermelho     |
+   | Marin               | Navy       | Marineblau  | Bleu marine | Azul marino  | Blu navy  | Marineblauw  | Granatowy   | Azul-marinho |
+
+   Andra färger i listan (Orange, Khaki, Silver, Light Gray …) är redan engelska.
+   Rör dem inte.
+6. Går metaobjekten inte att översätta (raden saknas, eller fälten är låsta): gör
+   ingenting mer här, och skriv exakt vad appen visar.
+
+------------------------------------------------------------------------------
+STEG 2 — Judge.me: recensionerna på kundens språk
+------------------------------------------------------------------------------
+
+Kunder utomlands ser recensionerna på svenska. Rutans knappar och rubriker byter temat
+redan, men själva recensionstexterna kan bara Judge.me översätta.
+
+1. Admin → Appar → Judge.me Product Reviews.
+2. Leta upp språkinställningen: "Settings" → "Languages" / "Translations" /
+   "Multi-language" / "Auto-translate reviews".
+3. Finns automatisk översättning av recensionerna och ingår den i planen butiken HAR:
+   slå på den för en, de, fr, es, it, nl, pl och pt-PT. Svenskan ändras inte.
+4. Kostar den extra: slå INTE på den. Skriv namnet på planen och priset.
+5. Spara. Skriv exakt vilka inställningar du ändrade, med de namn appen använder.
+
+------------------------------------------------------------------------------
+STEG 3 — Kontrollera som kund (från den här datorn, alltså en svensk/EU-IP)
+------------------------------------------------------------------------------
+
+Öppna ett inkognitofönster för varje adress. Lägg aldrig en order.
+
+1. https://beaverstoreco.com/de?country=DE
+   - Kommer en cookie-ruta upp? Skriv vilket språk den har (rubrik och knappar), och
+     ta en skärmdump. Klicka INTE på något i rutan förrän du skrivit av den.
+   - Längst ner på sidan: klicka på länken om integritet/datadelning ("Datenschutz",
+     "Ihre Datenschutzoptionen" eller liknande). Skriv vilket språk sidan har.
+2. https://beaverstoreco.com/fr?country=FR — samma två saker på franska.
+3. https://beaverstoreco.com/de/products/fiskespohallare-4-pack-kraftig-forvaring?country=DE
+   - Vilken färg står vald? (Ska vara "Grün", inte "Grön".)
+   - Lägg EN i varukorgen, öppna varukorgen: står det "Grün"?
+   - Klicka till kassan. Fyll INTE i något. I ordersammanfattningen till höger (eller
+     "Bestellübersicht anzeigen" på mobil): står färgen som "Grün" eller "Grön"?
+     Ta en skärmdump. Stäng sedan kassan och töm varukorgen.
+4. https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring?country=SE
+   - Ska vara SVENSKA, färgen "Grön". Lägg ingenting i varukorgen.
+
+Om en adress inte öppnar produkten: gå till startsidan på samma adress och sök på
+"Fishing rod holder" (tyska: "Rutenhalter").
+
+------------------------------------------------------------------------------
+RAPPORTEN
+------------------------------------------------------------------------------
+
+Kort, i punktform: vad du ändrade (app, språk, fält), vad som inte gick och varför,
+och svaren på steg 3 med skärmdumparna. Skriv aldrig in lösenord, tokens eller
+nycklar i rapporten.

@@ -138,6 +138,19 @@ test('apptexterna (bw-appord): reglerna i det genererade skriptet behåller sina
     const O = new Function(`${re.exec(skript)[1]}; return O;`)();
     assert.equal(typeof O.exakt['1x Skyddshölje'], 'string', `${l}: Kachings paketnamn saknas`);
     assert.ok(!/[åäö]/.test(O.exakt['Fri Frakt & 30 Dagars Öppet Köp']) && !/30/.test(O.exakt['Fri Frakt & 30 Dagars Öppet Köp']), `${l}: 30 dagar eller svenska kvar`);
+    // Färgvärdena i korgens rad ("Color: Grön") — kopplade till Shopifys färgkategori, inte översättningsbara.
+    for (const f of ['Grön', 'Blå', 'Grått', 'Rött', 'Vitt']) assert.ok(O.varden[f] && !/[åäö]/.test(O.varden[f]), `${l}: färgen ${f} saknas eller är svensk`);
   }
+  // Färgvärdena byts bara i väljaren och korgens alternativrad, aldrig i inputens value.
+  assert.match(skript, /var VARDEN = '\.cart__item--variants, \.variant-input-wrap, \.variant__label-info'/);
+  assert.ok(!/\.value\s*=/.test(skript), 'skriptet får aldrig skriva om en inputs value');
+  // "Recently viewed": bara /products/<handle>.js får språkprefixet.
+  const medRot = new Function(`${/(function medRot\(u, rot\) \{[^\n]*\})/.exec(skript)[1]}; return medRot;`)();
+  assert.equal(medRot('/products/abc.js', '/de/'), '/de/products/abc.js');
+  assert.equal(medRot('/products/abc.js?x=1', '/pt-pt/'), '/pt-pt/products/abc.js?x=1');
+  assert.equal(medRot('/products/abc.js', '/'), '/products/abc.js', 'engelska roten rörs inte');
+  assert.equal(medRot('/cart/add.js', '/de/'), '/cart/add.js');
+  assert.equal(medRot('/de/products/abc.js', '/de/'), '/de/products/abc.js');
+  assert.equal(medRot('/products/abc', '/de/'), '/products/abc');
   assert.ok(Buffer.byteLength(t, 'utf8') < 250 * 1024, 'snippeten måste rymmas under Shopifys gräns för en Liquid-fil');
 });
