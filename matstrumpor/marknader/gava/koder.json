@@ -1,0 +1,155 @@
+{
+ "_om": "gava.mjs: paketkoderna före ändringen och de skapade hjälpkoderna, för --aterstall.",
+ "e": {
+  "SUSHI-K1F1": {
+   "id": "gid://shopify/DiscountCodeNode/1829894848851",
+   "sparat": "2026-10-02T12:39:44.584Z",
+   "fore": {
+    "titel": "Sushi: Köp 1 få 1 + ätpinnar",
+    "kop": 1,
+    "fa": 3,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10286130889043"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10286130889043",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "SUSHI-K2F2": {
+   "id": "gid://shopify/DiscountCodeNode/1829894881619",
+   "sparat": "2026-10-02T12:39:45.203Z",
+   "fore": {
+    "titel": "Sushi: Köp 2 få 2 + ätpinnar",
+    "kop": 2,
+    "fa": 6,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10286130889043"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10286130889043",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "PIZZA-K1F1": {
+   "id": "gid://shopify/DiscountCodeNode/1830047285587",
+   "sparat": "2026-10-02T12:39:45.846Z",
+   "fore": {
+    "titel": "Pizza: Köp 1 få 1 + ätpinnar",
+    "kop": 1,
+    "fa": 3,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10314752852307"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10314752852307",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "PIZZA-K2F2": {
+   "id": "gid://shopify/DiscountCodeNode/1830047351123",
+   "sparat": "2026-10-02T12:39:46.500Z",
+   "fore": {
+    "titel": "Pizza: Köp 2 få 2 + ätpinnar",
+    "kop": 2,
+    "fa": 6,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10314752852307"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10314752852307",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "HAMBURGARE-K1F1": {
+   "id": "gid://shopify/DiscountCodeNode/1830047383891",
+   "sparat": "2026-10-02T12:39:47.184Z",
+   "fore": {
+    "titel": "Hamburgare: Köp 1 få 1 + ätpinnar",
+    "kop": 1,
+    "fa": 3,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10314753769811"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10314753769811",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "HAMBURGARE-K2F2": {
+   "id": "gid://shopify/DiscountCodeNode/1830047416659",
+   "sparat": "2026-10-02T12:39:47.802Z",
+   "fore": {
+    "titel": "Hamburgare: Köp 2 få 2 + ätpinnar",
+    "kop": 2,
+    "fa": 6,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10314753769811"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10314753769811",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "DONUT-K1F1": {
+   "id": "gid://shopify/DiscountCodeNode/1830047449427",
+   "sparat": "2026-10-02T12:39:48.457Z",
+   "fore": {
+    "titel": "Donut: Köp 1 få 1 + ätpinnar",
+    "kop": 1,
+    "fa": 3,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10286979449171"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10286979449171",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  },
+  "DONUT-K2F2": {
+   "id": "gid://shopify/DiscountCodeNode/1830047482195",
+   "sparat": "2026-10-02T12:39:49.076Z",
+   "fore": {
+    "titel": "Donut: Köp 2 få 2 + ätpinnar",
+    "kop": 2,
+    "fa": 6,
+    "grans": 1,
+    "kop_produkter": [
+     "gid://shopify/Product/10286979449171"
+    ],
+    "fa_produkter": [
+     "gid://shopify/Product/10286979449171",
+     "gid://shopify/Product/10408204468563"
+    ]
+   }
+  }
+ },
+ "udda": {
+  "PAKET-1": {
+   "id": "gid://shopify/DiscountCodeNode/1843080495443",
+   "skapad": "2026-10-02T12:39:42.449Z"
+  },
+  "PAKET-3": {
+   "id": "gid://shopify/DiscountCodeNode/1843080528211",
+   "skapad": "2026-10-02T12:39:43.411Z"
+  },
+  "PAKET-5": {
+   "id": "gid://shopify/DiscountCodeNode/1843080560979",
+   "skapad": "2026-10-02T12:39:44.314Z"
+  }
+ }
+}

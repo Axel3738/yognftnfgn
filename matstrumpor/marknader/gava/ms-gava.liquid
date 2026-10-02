@@ -1,0 +1,23 @@
+{%- comment -%}
+  ms-gava — gåvan följer varje låda (matstrumpor/marknader/gava.mjs, Axel 2026-10-02).
+  Paketnivåerna ur metaobjekten (Innehåll → Metaobjekt → Paketnivå): vilka sorter som får en gåva,
+  vilken variant gåvan är och vilka rabattkoder som hör ihop. "udda" är hjälpkoderna för ett udda
+  antal lådor (köp 1 få 1 + ett par ätpinnar per låda), skrivna av gava.mjs.
+  assets/ms-gava.js håller vagnen i takt efter varje ändring.
+{%- endcomment -%}
+<script id="ms-gava-config" type="application/json">
+{"udda": __UDDA__, "nivaer": [
+{%- for n in shop.metaobjects.ms_paketniva.values -%}
+  {%- assign ms_gv = n.gratis_produkt.value.selected_or_first_available_variant -%}
+  {%- unless forloop.first -%},{%- endunless -%}
+  {"produkt": {{ n.produkt.value.id | default: 0 | json }}, "gava": {{ ms_gv.id | default: 0 | json }}, "kod": {{ n.rabattkod.value | default: '' | strip | json }}, "antal": {{ n.antal.value | default: 0 | plus: 0 }}, "bogo": {{ n.bogo_gratis.value | default: 0 | plus: 0 }}, "ab": {{ n.ab_variant.value | default: '' | strip | downcase | json }}}
+{%- endfor -%}
+]}
+</script>
+<style>
+  .ms-gava-pagar { pointer-events: none; }
+  {%- comment -%} Gåvoraden är låst (och en rad temat självt låst): knapparna syns inte, antalet står kvar. {%- endcomment -%}
+  .cart-item quantity-input .quantity__button[disabled] { visibility: hidden; }
+  .cart-item .quantity__input[disabled] { opacity: 1; color: inherit; -webkit-text-fill-color: currentColor; }
+</style>
+<script src="{{ 'ms-gava.js' | asset_url }}" defer></script>
