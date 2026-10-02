@@ -185,3 +185,32 @@ Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna förs
 | Golfkalender_G_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,17 | — | nej |
 | Golfkalender_G_3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,17 | 9 % / — | nej |
 | Golfkalender_CS_3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,17 | 13 % / 13 % | nej |
+
+## Batch #2 — 2026-10-02 (`/rond-auto` steg 4b, brief-runda: rundaAntal 8, mix 80 % vidarebyggen på Golfkalender_PD_1 / 20 % nya, fokus "mata vinnaren — skalats 4 gånger på en vecka")
+
+**Läget (3 d, avläst 2026-10-02):** FOR_LITE_DATA (ROAS saknas i 3-dygnsfönstret efter gårdagens höjning 3 000 → 3 600 kr), CPA 👀 två stigande dygn (146 → 212 → 275 kr), spendtjuv grönt läge INGEN_TJUV. Dag 7-etiketten 2026-10-01: Golfkalender_PD_1 BREAKTHROUGH (96 %, 53 köp, ROAS 3,22, CPA 209 kr mot BE-CPA 426 kr), 14 lärdomar skrivna 2026-10-01 — alla pekar tillbaka på PD_1 (inga namngivna platser). Brieftak 14, rundan 8. Brief review 2026-09-29 (hubbens Feedback-rad) tillämpad: (1) varje fars dag-rad säger "24 luckor från 1 december", (2) en statisk säger varje fakta en gång, (3) marknadsraden "Sweden and Norway only". Kommentarer: 0 leads. Copy av sonnet (batch-02/copy-sonnet.md, 110 rader testade), spärren `briefgranskning.mjs` (main) 8/8 + 7/7 gröna, `lardom.mjs --brief` 8 BRIEF-rader (iterationsnumren ur loggen: pd-luckan-oppnas 4–7). Alla 15 i Notion (Golf advent calendar creative hub) som Draft, tillbakalästa block för block.
+
+| Annons | Format | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|---|---|
+| Golfkalender_PD_1_H7 | video 14 s | I | PD_1 | hooken VISAD: chokladkalendern åker ut ur bild, golfkartongen tar platsen (NEW FOOTAGE) | konflikten i bild slår konflikten i text | hook rate > 29 % | okänd | — | https://www.notion.so/3ed270ab908c81e69c3dcdc40c70bcc3 |
+| Golfkalender_PD_1_H8 | video 14 s | I | PD_1 | inventariet först (innehållet på bordet som sekund 0) | HOLD-listan som öppning stoppar lika många men konverterar bättre | CVR ≥ 3,0 % | okänd | — | https://www.notion.so/3ed270ab908c81b0b962f5219e975368 |
+| Golfkalender_PD_1_H9 | video 14 s | I | PD_1 | ingen VO — bara captions och musik | problemmedvetenheten bär utan röst | hook rate ≥ 29 %, CPA ≤ 209 kr | okänd | — | https://www.notion.so/3ed270ab908c81cfb86ce33e5533fbfb |
+| Golfkalender_PD_6_H1 | video 10 s | I | PD_1 | klipplängden (samma hook, 10 s) | kort klipp ger lägre CPA (IBC PD_Extra-hypotesen) | CPA < 209 kr | okänd | — | https://www.notion.so/3ed270ab908c81b6b5ecc9dc2dbf7311 |
+| Golfkalender_PD_1_1 | bild | I | PD_1 | vinnarens öppning som stillbild (kartongen + hookraden), prisband | formatöverföring: stillbilden bär konflikten | ≥ 300 kr och ROAS_7d ≥ 1,58 | okänd | — | https://www.notion.so/3ed270ab908c81f68bd1d944038cb368 |
+| Golfkalender_GT_5_H1 | video 14 s | I | PD_1 | hooken till presentköparen: "Klubborna har han. Bagen tömmer sig i det tysta." | avatarn (partnern) på vinnarens kropp | CVR ≥ 3,0 % | okänd | — | https://www.notion.so/3ed270ab908c81f9a33ad16bdcf210ba |
+| Golfkalender_GT_6_H1 | video 14 s | N | — | ett paket att slå in, inte 24 småpresenter (sidans rad) | ny vinkel: presentköparens krångel | ≥ 300 kr, 3 köp innan dom | okänd | — | https://www.notion.so/3ed270ab908c81148895cf731b0316ed |
+| Golfkalender_PD_7_H1 | video 13 s | N | — | från lucka till bag: varje pryl hamnar i sidofacket (NEW FOOTAGE) | "allt kommer till användning på banan" som koncept | ≥ 300 kr, 3 köp innan dom | okänd | — | https://www.notion.so/3ed270ab908c81d1985df89da5454eeb |
+
+**Fars dag-blocket omgång 5 (EXTRA, `agent/farsdag.json`):** invändningen **"han har redan allt i bagen"** → det som tar slut (bollar, peggar, markörer), luckorna öppnas från 1 december. FD_5_H1 (invändningen besvarad) / H2 (priset först) / H3 (sista dagen först) = omklipp av PD_1, rad 2–4 identiska; FD_6_1–4 = fyra statiska på samma foto, bara textrutan skiljer (regel 2: priset bara i bandet, datumet bara i bottenraden). Marknad: Sverige och Norge. Inga BRIEF-rader (utanför taket), loggat som FARSDAG_BATCH_KLAR.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Golfkalender_FD_5_H1 | video 13 s, BOF-omklipp | invändningen besvarad | https://www.notion.so/3ed270ab908c81f1abb6eddf4e9f2024 |
+| Golfkalender_FD_5_H2 | video 13 s, BOF-omklipp | priset först | https://www.notion.so/3ed270ab908c8173aa55e7dbc9bdca36 |
+| Golfkalender_FD_5_H3 | video 13 s, BOF-omklipp | sista dagen först | https://www.notion.so/3ed270ab908c811fb6e8c3efdd5c83b9 |
+| Golfkalender_FD_6_1 | bild, BOF | invändningen | https://www.notion.so/3ed270ab908c81caa6acdb61f165d169 |
+| Golfkalender_FD_6_2 | bild, BOF | priset först (rubriken utan talet) | https://www.notion.so/3ed270ab908c8155843ddfd6c3c7f155 |
+| Golfkalender_FD_6_3 | bild, BOF | sista dagen (rubriken utan datumet) | https://www.notion.so/3ed270ab908c81a29bccd014982565f5 |
+| Golfkalender_FD_6_4 | bild, BOF | vad han får | https://www.notion.so/3ed270ab908c81e3996ed94b4be8068d |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. Etikett dag 7, lärdom, sedan dna.md. ⚠️ Hubben bar redan 19 orörda drafts från batch #1 (09-27) när rundan byggdes — Axels regel "hellre några briefs för mycket".

@@ -1,5 +1,7 @@
 # Värmesitsen 45 × 90 cm — batch-log
 
+Breakthrough-frekvens: 1/14 (7 %) (etikett.mjs --frekvens 2026-10-02)
+
 Kampanj `Värmesitsen 45 × 90 cm | BE ROAS 1.63 | Launch 2026-09-25` (id 120250365205900291, MagiBorsten SE). Break-even ur prissheetet 1,52 (raden "Värmesitsen för älgpasset", pris 599 kr läst 2026-09-25). Produkttest-raden i Product test center: "10 Värmesits 45 × 90 cm – Test 2 (handbag angle)" (Axels egen idé i Annonsidéer 2026-09-26, Status Byggd — byggd som produkttest, inte som brief).
 
 ## Förstabatchen — VÄNTAR (2026-09-29)
@@ -24,3 +26,24 @@ Hubben **Heated seat cushion creative hub** (3ea270ab-908c-81cf-a1e4-f281af5ba11
 | Varmesits_FD_4_4 | bild, fars dag BOF | 45 × 90 cm. Täcker sits och rygg. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c81469d8ee126b7eea9fc |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; varje annons mot förälderns CPA (414 kr) och break-even-CPA (519 kr), aldrig mot ROAS ensam. Etikett dag 7 → lärdom → dna.md.
+
+## Etiketter dag 7 (2026-10-02) — Värmesitsen 45 × 90 cm
+
+Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Spegel: CaraShell-kampanjerna i DK/UK-kontona läses med `--konto spegel`.
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Varmesits_PD_3 | 1 | **BREAKTHROUGH** | 94 % | 6 806 kr | 25 | 3,27 / 3,09 | 43 % / 10 % | ja |
+| Varmesits_PD_2_1 | okänd | **LOSER** | 3 % | 208 kr | 0 | 0,00 / 3,09 | — / — | nej |
+| Varmesits_SP_2 | okänd | **LOSER** | 1 % | 59 kr | 0 | 0,00 / 3,09 | 24 % / 9 % | nej |
+| Varmesits_SP_3 | okänd | **LOSER** | 0 % | 27 kr | 0 | 0,00 / 3,09 | 26 % / 5 % | nej |
+| Varmesits_G_2 | okänd | **LOSER** | 0 % | 25 kr | 0 | 0,00 / 3,09 | 56 % / 22 % | nej |
+| Varmesits_CS_2_1 | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 3,09 | — / — | nej |
+| Varmesits_PD_2 | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 3,09 | 19 % / 6 % | nej |
+| Varmesits_G_2_1 | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 3,09 | — / — | nej |
+| Varmesits_SP_1 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 3,09 | 30 % / 7 % | nej |
+| Varmesits_CS_1 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 3,09 | 40 % / 4 % | nej |
+| Varmesits_CS_2 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 3,09 | 40 % / 13 % | nej |
+| Varmesits_G_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,09 | 47 % / 20 % | nej |
+| Varmesits_CS_3 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,09 | — / — | nej |
+| Varmesits_G_3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,09 | — / — | nej |

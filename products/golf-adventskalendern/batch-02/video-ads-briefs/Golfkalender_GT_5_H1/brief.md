@@ -18,7 +18,7 @@ Notion hub: https://app.notion.com/p/3e8270ab908c817b9e74efe7a636609e (Golf adve
 
 AI content: voice
 
-**Isolated variable:** the hook: it speaks to the gift-buyer's belief (he has the clubs) and shows the nearly empty side pocket. The body is the parent's
+**Isolated variable:** the hook written for the gift-buyer's belief (he has the clubs; the nearly empty side pocket is shown). The body is the parent's
 
 ## Hook
 

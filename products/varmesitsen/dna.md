@@ -105,3 +105,23 @@ idag … när den är slut är den slut") och G bär copy som bryter reglerna oc
 
 Invändningen "hur får den ström ute?" → USB från en powerbank (ingår inte), knappen med tre lägen.
 FD_3_H1–H3 + FD_4_1–4 i hubben (regel: `agent/farsdag.json`).
+
+## Komponentkarta Varmesits_PD_3 (BREAKTHROUGH, etikett 2026-10-02 — ANALYSMETOD steg 6b)
+
+Raderna är **lästa ur den live annonsen (Meta Graph v21.0, 2026-10-02) och videons posterbild (160 px), inte ur brief** — lanseringsbriefen ligger i Product test center ("10 Värmesits 45 × 90 cm – Test 2 (handbag angle)", Josh), inte i repot. Videon (30,3 s) är inte transkriberad (VO okänd).
+
+**Datan, första veckan 25/9–1/10 (7d_click):** 6 806 kr (94 % av kampanjens 7 203 kr) · 25 köp · ROAS 3,27 mot kampanjens 3,09 · CPA 272 kr mot break-even-CPA **585 kr** (AOV 889 kr ÷ 1,52) · vinstbidrag (585 − 272) × 25 = **7 825 kr** · konverteringsgrad 3,3 % (25 köp / 770 LPV) · hook rate 43 % · hold rate 10 % · budget dag 0 → dag 7: 1 000 → 1 000 kr/dag (SKALA till 1 200 sköts upp 29/9; ronden höjde till 1 500 kr i morse 2/10). Systern PD_2 med identisk primärtext: 17 kr (LOSER); bilden PD_2_1 med samma text: 208 kr, 0 köp — videon är variabeln, inte texten. Lärdom: `lardomar.md` → L-120250365214170291 (dag 7-blocket; det preliminära dag 5-blocket från 2026-09-29 står kvar ovanför).
+
+| Komponent | Exakt rad (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK (text) | "Står du och fryser på sidlinjen? 🥶" | smärta, igenkänning (en fråga — mot copyreglerna, men den bar) | problem-medveten (kylan på läktaren är känd, lösningen inte) | läktarföräldern som fryser på sidlinjen |
+| HOOK (bild, posterbilden) | ett finger trycker på den svarta knappen på den kviltade grå sitsen som ligger i en blå läktarstol; inbränd text "stolen och plötsligt" (mitt i en VO-mening) | produkten i bild och i bruk | — | samma |
+| BRIDGE | "Lägg den här i stolen, så blir det varmt direkt." | positiv, ett tidslöfte ("direkt") som sidan inte gör | lösnings-medveten | samma |
+| HOLD | "🔥 4 värmezoner över hela sitsen / ⚡ 3 värmelägen, du väljer själv / 🔌 USB-driven, funkar med powerbank / 🎒 Viks ihop och ryms i väskan" | konkret inventarium ("viks ihop" står inte på sidan; powerbank ingår inte — sidan säger det) | produkt-medveten | samma |
+| CTA | "Perfekt till fotbollsmatchen, campingen eller fisketuren. Slipp frysa. Tryck på knappen och beställ din." · rubrik "Sitt varmt, även när det är kallt ute" | positiv | — | samma |
+
+**Variabeltaggar (ANALYSMETOD 6b):** vinkel PD · hook-typ fråga (smärta/scen) · format video, demo i läktarstolen (VO okänd) · proof produkten i bruk (fingret på knappen) · offer inget pris i copyn · talare okänd · brådska ingen · tro ingen trosbarriär bemöts.
+
+**Bärande komponent = hypotes (gissning):** läktarscenen i bild — sitsen i den blå stolen och fingret på knappen under sidlinjefrågan. Skälet: PD_2 delar texten ordagrant och fick 17 kr, så det är klippet Meta valde; hook 43 % är hög (Golfkalenderns breakthrough 29 %, Täljsetets 41 %), hold 10 % är låg, och ändå konverterar 3,3 % — alltså väljer öppningen publiken och demon stänger, medan kroppen efter sekund 3 tappar folk utan att det kostar köp. Kundernas kommentarer: 0 leads (agent/leads.mjs --prefix Varmesits, 2026-10-02). Två rader ärvs aldrig i iterationerna: "direkt" (tidslöfte sidan inte gör) och "viks ihop" (står inte på sidan).
+
+**Vidarebyggena (CS-KLART punkt 9, tre iterationer inom 14 dagar — deadline 2026-10-16):** `Varmesits_PD_3_H2` (påstående-hook ur sidans scen — briefad 2026-09-29 i batch #1, Draft i Heated seat cushion creative hub), `Varmesits_PD_3_H3` (längre problemdel: 5 s på läktaren i kylan före sitsen) och `Varmesits_PD_3_H4` (in media res: posterbilden som sekund 0) — de två sista namngivna i dag, briefas i nästa runda på produkten. Etikett dag 7 på H2–H4 avgör om öppningen var variabeln. ⚠️ Batch #1:s BRIEF-rader saknas i loggen (byggd 2026-09-29 kväll på Axels order utan `lardom.mjs --brief`), så iterationsräknaren ser 0 av 3 tills H3/H4 loggas.

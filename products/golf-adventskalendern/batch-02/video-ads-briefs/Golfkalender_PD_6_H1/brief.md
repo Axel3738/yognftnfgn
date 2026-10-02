@@ -18,7 +18,7 @@ Notion hub: https://app.notion.com/p/3e8270ab908c817b9e74efe7a636609e (Golf adve
 
 AI content: voice
 
-**Isolated variable:** clip length: 10 s instead of 22,3 s, same hook line, same beats, same order
+**Isolated variable:** clip length (10 s instead of 22,3 s, same hook line, same beats, same order)
 
 ## Hook
 

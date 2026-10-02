@@ -23,3 +23,11 @@ Ur `agent/etikett-backfill.mjs` 2026-09-30 (Magiborsten UK, annonsens egna förs
 | CaraShellRoof_US_GT_108_H1 | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,55 | 41 % / 6 % | nej |
 | CaraShellRoof_US_OB_102_H1 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,55 | 20 % / — | nej |
 | CaraShellRoof_US_TR_103_H1 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,55 | 25 % / — | nej |
+
+## Etiketter dag 7 (2026-10-02) — 1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Spegel: CaraShell-kampanjerna i DK/UK-kontona läses med `--konto spegel`.
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| CaraShellRoof_US_OB_105_1 | okänd | **LOSER** | 7 % | 5 765 kr | 2 | 1,10 / 1,25 | — / — | nej |

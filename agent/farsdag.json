@@ -24,8 +24,8 @@
     "FD_3": "video BOF, invändning/pris/sista dagen som hook (H1–H3, 2026-09-29 kväll)",
     "FD_4": "bild BOF ×4 (_1 invändningen, _2 priset först, _3 sista beställningsdagen, _4 vad han får; 2026-09-29 kväll)",
     "nasta_lediga": "FD_7",
-    "FD_5": "video BOF, Båtmotorskyddet: invändningen \"behöver han ett skydd alls?\" (regn/löv/smuts på motorn, övertäckt syns den mindre) som H1, pris H2, sista dagen H3 (2026-10-01, batch-08) · Bälteslipmaskinen: invändningen \"han har redan en brynsten\" (tre maskiner i en, bandet håller 15 grader, 7 hastigheter) som H1, pris H2, sista dagen H3, omklipp av PD_4_H1 (2026-10-01, batch-10)",
-    "FD_6": "bild BOF ×4, Båtmotorskyddet: samma jobb som FD_4 men invändningen \"behöver han ett skydd alls?\" (2026-10-01, batch-08) · Bälteslipmaskinen: samma fyra jobb, invändningen \"han har redan en brynsten\"; Brief review 2026-09-29 regel 3 tillämpad — priset bara i bandet, datumet bara i bottenraden, rubriken pekar dit utan att upprepa talet (2026-10-01, batch-10)"
+    "FD_5": "video BOF, Båtmotorskyddet: invändningen \"behöver han ett skydd alls?\" (regn/löv/smuts på motorn, övertäckt syns den mindre) som H1, pris H2, sista dagen H3 (2026-10-01, batch-08) · Bälteslipmaskinen: invändningen \"han har redan en brynsten\" (tre maskiner i en, bandet håller 15 grader, 7 hastigheter) som H1, pris H2, sista dagen H3, omklipp av PD_4_H1 (2026-10-01, batch-10) · Golf Adventskalendern: invändningen \"han har redan allt i bagen\" (det som tar slut: bollar, peggar, markörer; luckorna öppnas från 1 december — Brief review-regel 1) som H1, pris H2, sista dagen H3, omklipp av PD_1 (2026-10-02, batch-02) · IBC-Tanköverdraget: invändningen \"kommer han åt locket med överdraget på?\" (öppningen upptill, aldrig \"når locket\") som H1, pris H2, sista dagen H3, omklipp av PD_1_H1 (2026-10-02, batch-11)",
+    "FD_6": "bild BOF ×4, Båtmotorskyddet: samma jobb som FD_4 men invändningen \"behöver han ett skydd alls?\" (2026-10-01, batch-08) · Bälteslipmaskinen: samma fyra jobb, invändningen \"han har redan en brynsten\"; Brief review 2026-09-29 regel 3 tillämpad — priset bara i bandet, datumet bara i bottenraden, rubriken pekar dit utan att upprepa talet (2026-10-01, batch-10) · Golf Adventskalendern och IBC-Tanköverdraget: samma fyra jobb på respektive invändning ovan; regel 2 tillämpad — priset bara i bandet, datumet bara i bottenraden (2026-10-02)"
   },
   "loggkod": "FARSDAG_BATCH_KLAR — en rad per produkt och batch i agent/budgetlogg.jsonl (bär aldrig ny_budget; nollställer inte CS-klockan)",
   "batcher": [
@@ -64,6 +64,12 @@
       "omgang": "5 (brief-rundans FD-block, Bälteslipmaskinen)",
       "annonser": "Beltgrinder_FD_5_H1–H3 + FD_6_1–4 (invändningen \"han har redan en brynsten\")",
       "logg": "products/balteslipmaskinen/batch-log.md → Batch #10"
+    },
+    {
+      "datum": "2026-10-02",
+      "omgang": "5 (brief-rundans FD-block, Golf Adventskalendern + IBC-Tanköverdraget)",
+      "annonser": "Golfkalender_FD_5_H1–H3 + FD_6_1–4 (invändningen \"han har redan allt i bagen\") · IBC_FD_5_H1–H3 + FD_6_1–4 (invändningen \"kommer han åt locket?\")",
+      "logg": "products/golf-adventskalendern/batch-log.md → Batch #2; products/ibc-tankoverdraget/batch-log.md → Batch #11"
     }
   ]
 }

@@ -682,3 +682,28 @@ Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna förs
 | IBC_PD_12_H2 | 8 | **LOSER** | 1 % | 48 kr | 0 | 0,00 / 2,81 | 35 % / 4 % | nej |
 | IBC_PD_12_H3 | 8 | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,81 | 28 % / 5 % | nej |
 | IBC_PD_8_H2 | 5 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,81 | 15 % / — | nej |
+
+## Batch #11 — 2026-10-02 (`/rond-auto` steg 4b, brief-runda: rundaAntal 4, mix 80 % vidarebyggen på IBC_PD_1_H1 / 20 % nya)
+
+**Läget (3 d, avläst 2026-10-02):** VANTA_KONSEKVENT — 500 kr/dag, ROAS 3d 2,61 mot break-even 1,51 (42,1 % vinst), inte konsekvent över target två dygn än; spendtjuv grönt läge INGEN_TJUV. Lärdomar sedan batch #10: PD_12_H1–H3 + PD_8_H2 (2026-10-01, alla under grinden, "ingen fjärde iteration ur brus" — de tre manusiterationerna på PD_1_H1 är utförda och svalt i CBO:n), så rundan bygger på breakthroughen i ANDRA dimensioner (röst, första bildruta, format) + ett nytt PD-koncept ur sidans egen rad. Den namngivna platsen IBC_PD_14_H1 togs inte: lärdomen för IBC_PD_11_H1 (2026-10-01) släppte den uttryckligen. Brief review 2026-09-29 tillämpad (aldrig "når locket"; en break-even 442 kr; "Sweden and Norway"). Kommentarer: 0 leads. Copy av sonnet (batch-11/copy-sonnet.md), spärren 4/4 + 7/7 gröna, `lardom.mjs --brief` 4 BRIEF-rader (pd-alger-mekanism iteration 5–7 ur loggen). Alla 11 i Notion (BÄVER IBC-Tanköverdraget) som Draft, tillbakalästa.
+
+| Annons | Format | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|---|---|
+| IBC_PD_17_H1 | video | I | PD_1_H1 | ingen VO — förälderns struktur som captions + musik (ett 1 s-klipp av den täckta tanken vid 0:02 för produktregeln) | problemmedvetenheten bär utan röst | hook rate ≥ 37 % | okänd | — | https://www.notion.so/3ed270ab908c81dbb6cbf9f8101d6562 |
+| IBC_PD_17_H2 | video | I | PD_1_H1 | första bildrutan: den täckta tanken i ruta 0 i stället för den tomma | produkten först kostar eller lyfter 37 % hook | hook rate mot förälderns 37 % | okänd | — | https://www.notion.so/3ed270ab908c8131b08aea2ab1aa05f8 |
+| IBC_PD_17_1 | bild | I | PD_1_H1 | före/efter-fotot + förälderns live-rubrik "Klart vatten. Ingen alg. Enkelt." + prisband | formatöverföring av vinnaren | ≥ 300 kr och ROAS_7d ≥ 1,51 | okänd | — | https://www.notion.so/3ed270ab908c8170b117e1687ee8e7f4 |
+| IBC_PD_18_H1 | video | N | — | hanteringen som demo: "På och av med dragkedja: ingen presenning, inga gummiband" + öppningen upptill (NEW FOOTAGE) | sidans egen hanteringsrad som nytt PD-koncept | ≥ 300 kr, 3 köp innan dom | okänd | — | https://www.notion.so/3ed270ab908c81f88ef1c332a9a58c6b |
+
+**Fars dag-blocket omgång 5 (EXTRA):** invändningen **"kommer han åt locket med överdraget på?"** → "Öppningen upptill: han kommer åt locket utan att ta av något" (aldrig "når locket"). FD_5_H1/H2/H3 = omklipp av PD_1_H1 (rad 2–4 identiska), FD_6_1–4 = fyra statiska på samma foto (regel 2). Marknad: Sverige och Norge. Loggat som FARSDAG_BATCH_KLAR.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| IBC_FD_5_H1 | video 13 s, BOF-omklipp | invändningen besvarad | https://www.notion.so/3ed270ab908c8157943fec4786c1905d |
+| IBC_FD_5_H2 | video 13 s, BOF-omklipp | priset först | https://www.notion.so/3ed270ab908c81d69a3cf90023e497c9 |
+| IBC_FD_5_H3 | video 13 s, BOF-omklipp | sista dagen först | https://www.notion.so/3ed270ab908c8174a523ce6b4d3ea40a |
+| IBC_FD_6_1 | bild, BOF | invändningen | https://www.notion.so/3ed270ab908c8181b55ffca361c6cd04 |
+| IBC_FD_6_2 | bild, BOF | priset först (rubriken utan talet) | https://www.notion.so/3ed270ab908c814da035f5e08f9955c8 |
+| IBC_FD_6_3 | bild, BOF | sista dagen (rubriken utan datumet: "Fars dag är söndag 8 november.") | https://www.notion.so/3ed270ab908c81bfb2fcf69079b84c6c |
+| IBC_FD_6_4 | bild, BOF | vad han får | https://www.notion.so/3ed270ab908c81aab8aec406263f3aaa |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. Etikett dag 7, lärdom, sedan dna.md.

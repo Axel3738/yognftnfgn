@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/70 (1 %) (etikett.mjs --frekvens 2026-10-01)
+Breakthrough-frekvens: 1/73 (1 %) (etikett.mjs --frekvens 2026-10-02)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -766,3 +766,13 @@ Ur `agent/etikett-backfill.mjs` 2026-10-01 (MagiBorsten SE, annonsens egna förs
 | Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
 |---|---|---|---|---|---|---|---|---|
 | Batmotor_OB_1_1 | 3 | **LOSER** | 2 % | 292 kr | 0 | 0,00 / 1,82 | — | nej |
+
+## Etiketter dag 7 (2026-10-02) — Båtmotorskyddet 420D
+
+Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Spegel: CaraShell-kampanjerna i DK/UK-kontona läses med `--konto spegel`.
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Batmotor_SP_1_H15 | 3 | **KPI_WINNER** | 2 % | 223 kr | 2 | 5,18 / 1,69 | 15 % / 3 % | nej |
+| Batmotor_SP_1_H14 | 3 | **LOSER** | 1 % | 196 kr | 0 | 0,00 / 1,69 | 40 % / 10 % | nej |
+| Batmotor_SP_1_H13 | 3 | **LOSER** | 1 % | 138 kr | 0 | 0,00 / 1,69 | 20 % / 4 % | nej |

@@ -1,6 +1,6 @@
 # Batch-logg — Inomhustofflorna i Kamouflage
 
-Breakthrough-frekvens: 0/28 (0 %) (etikett.mjs --frekvens 2026-09-30)
+Breakthrough-frekvens: 0/29 (0 %) (etikett.mjs --frekvens 2026-10-02)
 
 ## Batch #1 (förstabatch) — 2026-09-20 (`/rond-auto` steg 4b)
 
@@ -144,3 +144,12 @@ Ur `agent/etikett-backfill.mjs` 2026-09-30 (MagiBorsten SE, annonsens egna förs
 | Inomhustofflor_TR_1_1 | 1 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,15 | — | nej |
 | Inomhustofflor_GT_3_H1 | 1 | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,15 | 33 % / — | nej |
 | Inomhustofflor_PD_4_1 | 1 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,15 | — | nej |
+
+## Etiketter dag 7 (2026-10-02) — Inomhustofflorna i Kamouflage
+
+Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Spegel: CaraShell-kampanjerna i DK/UK-kontona läses med `--konto spegel`.
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Inomhustofflor_OB_1_1 | 1 | **LOSER** | 3 % | 103 kr | 0 | 0,00 / 1,49 | — / — | nej |
+| Inomhustofflor_BOF_1_1 | 1 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,49 | — / — | nej |
