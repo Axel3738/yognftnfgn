@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-10-01",
+  "uppdaterad": "2026-10-02",
   "kampanjer": [
     {
       "campaign_id": "120252423658210233",
@@ -1606,6 +1606,70 @@
       "lage_motivering": "ny norsk kampanj startad 2026-09-30 13:14, 742 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-01. Break-even står i kampanjnamnet (BE-ROAS 1,63).",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250453837770291",
+      "produkt": "Husbilens Tak-AC-Huv",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-10-02T03:02:07+0200, 134.13 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-02. Kampanjnamnet säger BE ROAS 1.61, men kostnadsblocket ur prissheetet vinner (Axels beslut 2026-09-22). Priset i butiken 449 kr (jämförpris 589) läst ur baverbutiken.se/products.json 2026-10-02 (handle husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 449,
+        "usd": 12.12,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-10-02, raden \"Husbilens tak-AC-huv (09-15)\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 4,77 + 7,35 = 12.12 USD, plus 2,9 EUR EU-avgift per order. Priset 449 kr läst ur baverbutiken.se/products.json 2026-10-02.",
+        "datum": "2026-10-02"
+      }
+    },
+    {
+      "campaign_id": "120250453784690291",
+      "produkt": "Regnkedjan 3,8 m",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-10-02T02:50:28+0200, 172.67 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-02. Kampanjnamnet säger BE ROAS 1.63, men kostnadsblocket ur prissheetet vinner (Axels beslut 2026-09-22). Priset i butiken 719 kr (jämförpris 939) läst ur baverbutiken.se/products.json 2026-10-02 (handle regnkedjan-3-8-m-12-koppar-vattnet-syns-rinna-ner).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 719,
+        "usd": 21.69,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-10-02, raden \"Regnkedjan 3,8 m med 12 koppar (09-13)\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 9,23 + 12,46 = 21.69 USD, plus 2,9 EUR EU-avgift per order. Priset 719 kr läst ur baverbutiken.se/products.json 2026-10-02.",
+        "datum": "2026-10-02"
+      }
+    },
+    {
+      "campaign_id": "120250453779230291",
+      "produkt": "Ädelstenskalendern 24 Luckor",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-10-02T02:48:22+0200, 156.12 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-02. Kampanjnamnet säger BE ROAS 1.58, men kostnadsblocket ur prissheetet vinner (Axels beslut 2026-09-22). Priset i butiken 469 kr (jämförpris 619) läst ur baverbutiken.se/products.json 2026-10-02 (handle adelstenskalendern-24-luckor-grav-fram-en-sten-varje-dag).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 469,
+        "usd": 13.02,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-10-02, raden \"Ädelstenskalendern, 24 grävblock (09-13)\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 5,54 + 7,48 = 13.02 USD, plus 2,9 EUR EU-avgift per order. Priset 469 kr läst ur baverbutiken.se/products.json 2026-10-02.",
+        "datum": "2026-10-02"
+      }
+    },
+    {
+      "campaign_id": "120250453755860291",
+      "produkt": "Highland Cow-Kalendern 3D",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-10-02T02:41:31+0200, 133.32 kr (SEK) spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-10-02. Kampanjnamnet säger BE ROAS 1.61, men kostnadsblocket ur prissheetet vinner (Axels beslut 2026-09-22). Priset i butiken 469 kr (jämförpris 619) läst ur baverbutiken.se/products.json 2026-10-02 (handle highland-cow-kalendern-3d-24-figurer-en-ny-ko-varje-dag).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 469,
+        "usd": 12.85,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-10-02, raden \"Highland Cow-kalendern 3D, 24 figurer (09-13)\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 4,77 + 8,08 = 12.85 USD, plus 2,9 EUR EU-avgift per order. Priset 469 kr läst ur baverbutiken.se/products.json 2026-10-02.",
+        "datum": "2026-10-02"
+      }
     }
   ],
   "valutakurser": {
