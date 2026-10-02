@@ -155,3 +155,21 @@ Adresserna lästa på deras sida/Linktree/Stan samma dag. Hoppade över: Boundle
 | 49 | Danielle & Tommy — Slow Car Fast Home | [sajt](https://www.slowcarfasthome.com) | Airstream | slowcarfasthome@gmail.com | 1a0fd386c29ecec2 | kontaktad 2026-10-05 |
 | 50 | Lauren & Chris — AsWeRoam | [Stan](https://stan.store/asweroam) | okänd | Asweroam1@gmail.com | 1a0fd38767be50ee | kontaktad 2026-10-05 |
 | 51 | Scott & Van — The Adventure Detour | [sajt](https://theadventuredetour.com/contact/) | okänd, heltid sedan 2015 | scott@theadventuredetour.com | 1a0fd387ed10a8e3 | kontaktad 2026-10-05 |
+
+## Omgång 5 — 2026-10-05, blogg/Instagram-agenten, 11 mejl
+
+Adresserna lästa på deras sida/Linktree samma dag. Följartal gick inte att läsa (Instagram spärrar).
+
+| # | Namn | Sida | Rigg | Mejl | Gmail-id | Status |
+|---|---|---|---|---|---|---|
+| 52 | Carolyn — Carolyn's RV Life | [sajt](https://www.carolynsrvlife.com) | 29 ft Class C | carolynrose@CarolynsRVLife.com | 1a0fd4366e721545 | kontaktad 2026-10-05 |
+| 53 | Christina — Travels with Ted | [sajt](https://www.travelswithted.com) | heltid | christina@travelswithted.com | 1a0fd43705641d94 | kontaktad 2026-10-05 |
+| 54 | Janae — Adventures with TuckNae | [sajt](https://adventureswithtucknae.com) | okänd | janae@adventureswithtucknae.com | 1a0fd437ad72f4cb | kontaktad 2026-10-05 |
+| 55 | Alex — El Paso Travel Family | [sajt](https://elpasotravelfamily.com) | Jay Flight 263BHS | alex@elpasotravelfamily.com | 1a0fd438591ae71c | kontaktad 2026-10-05 |
+| 56 | RV Mama of 4 | [Linktree](https://linktr.ee/rvmamaof4) | Open Range | RVmamaof4@gmail.com | 1a0fd438f6696195 | kontaktad 2026-10-05 |
+| 57 | Jordan — A Path of Their Own | [Linktree](https://linktr.ee/apathoftheirown) | Jayco | jordan@apathoftheirown.com | 1a0fd43961e149e3 | kontaktad 2026-10-05 |
+| 58 | Outside the Box Travel | [Linktree](https://linktr.ee/outsidetheboxtravel) | Jayco | outsidetheboxcreator@gmail.com | 1a0fd43a1a816a95 | kontaktad 2026-10-05 |
+| 59 | Lynn — RV America | [Linktree](https://linktr.ee/rvamerica) | Jayco Precept Class A | rvAmerica3@gmail.com | 1a0fd43ad0811b06 | kontaktad 2026-10-05 |
+| 60 | Big Hearts Tiny Spaces | [Linktree](https://linktr.ee/bigheartstinyspaces) | Keystone | selesfamily@gmail.com | 1a0fd43b43c19cab | kontaktad 2026-10-05 |
+| 61 | Parents Unleashed | [Linktree](https://linktr.ee/parents_unleashed) | Thor/Keystone | ParentsUnleashed17@gmail.com | 1a0fd43bf10830b1 | kontaktad 2026-10-05 |
+| 62 | Kris — Where Wild Ones Roam | [sajt](https://wherewildonesroam.com) | okänd, Michigan | hello@wildonesroam.com | 1a0fd43c9f928511 | kontaktad 2026-10-05 |
