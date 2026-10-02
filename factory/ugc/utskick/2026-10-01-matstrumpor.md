@@ -160,6 +160,20 @@ Sara-sushi-sock-briefs.pdf` (brief 1, 2, 4) och `Sofie-sushi-sock-briefs.pdf` (1
 byggskriptet ligger i sessionens scratchpad (`ugc-order/pdf.mjs`, utskriftsstil med fast
 tabellbredd). Sara hade redan fått sidlänken, så svaret till henne nämner ingen länk.
 
+### Brieferna förenklade 2026-10-02 kväll (Axels dom på de första PDF:erna)
+
+Axel: "fööööör stricta", B1-raden "Ljus. Tvål. Grå strumpor. Ingen av dom vet hennes favoriträtt"
+var "svag och slarvig" (hans rad: **"Men ingen av dom vet vad hon faktiskt gillar."**), alla
+strumporna ska visas, och brief 1 + brief 2 var samma kropp två gånger ("då kan ju vi bara klippa
+så det blir bra och bara betala för 3 hooks"). Ny struktur i `products/matstrumpor/ugc/pdf/
+mall-kvinna.html` (`node products/matstrumpor/ugc/pdf/bygg.mjs Sara Sofie`), tre sidor:
+**Video 1** = vinnarens manus ord för ord + rad 11 "alla fem par" · **Extra tagningar A–E** för
+video 1 = A de tråkiga presenterna med Axels rad (talad), B locket, C lådan på bordet, D efter
+maten (tysta 3-sekundare, bildtext från oss), E "Material? Titta, jag drar i den" (valfri) ·
+**Video 2** = skämtet "Jag tog med sushi" · **Extra tagningar F–H** = tysta öppningar. Fem regler
+i stället för två listor. Kreatören betalas för två videor + tagningar (Axels sak). Mansversionen
+(brief 3 i stället för skämtet) byggs när en man sagt ja.
+
 ### Nathalies pris 2026-10-02 10:25 (via Axel) och motbudet
 
 Nathalie: brieferna ser bra ut; 3 500 kr per video med 6 månaders annonsrättigheter (samma som
