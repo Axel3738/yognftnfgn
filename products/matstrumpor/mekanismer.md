@@ -316,7 +316,13 @@ kontot kört; skeptikern läste transkripten och fällde dem.
    ✅ **Axels ja 2026-10-02** ("JÄÄÄÄVLAR du är smart … Ja skriv briefen"):
    brief `MATSTRUMP_sushi_gift_ugc_065_v1` i `batch-04/`, med en svensk
    inspelningsplan till Nathalie. Raden stannar i Draft tills hennes material
-   finns (`NEW FOOTAGE`-källor).
+   finns (`NEW FOOTAGE`-källor). **Formatet, Axels order samma dag:** fast
+   kamera vid bordet riktad mot MOTTAGAREN, som är Nathalie själv (hon vågar
+   reagera stort); händer ställer fram lådan, hon öppnar, lyfter, rullar upp,
+   reagerar. Referensen är Lindner & Co:s vinkylar-blindtest i
+   annonsbiblioteket (id 847458791210953: sittande person, servitör bakom,
+   stilla kamera, live-ljud) — men **ingen ögonbindel**. Mekanismen är
+   oförändrad: lådan ställs fram, räcks inte över.
 2. **M1 Locket**: ett kamerabeslut på Nathalie-kroppen (blicken genom locket
    i sekund 0–3). Men 061 och 063 står redan på samma ruta; läs deras
    etiketter först. Lyfter de hook rate får locket en egen videolinje, och
