@@ -606,7 +606,12 @@
         "annonsNamn": "Takovertrekk_NO_FD_1_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527435630233",
+        "creativeId": "1134202292456363",
+        "adsetId": "120252433113940233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -670,7 +675,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_22_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527439000233",
+        "creativeId": "28754475897519657",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -734,7 +744,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_19_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527441860233",
+        "creativeId": "2350391115700942",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -798,7 +813,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_18_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527448170233",
+        "creativeId": "2610886842682350",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
