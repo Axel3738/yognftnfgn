@@ -148,9 +148,20 @@ export function flyttMal(s) {
   return tillCom(s.sprak !== rotSprak && COM_MAPP[s.sprak] !== undefined ? s.sprak : valjSprak(), true);
 }
 
+// Tar bort kommentarerna ur en funktions källtext: hela kommentarsrader och en kommentar efter koden
+// (minst två blanksteg före //). En adress som https://… rörs inte, den har inget blanksteg före //.
+export function utanKommentarer(kod) {
+  return String(kod).split('\n')
+    .filter((rad) => !/^\s*\/\//.test(rad))
+    .map((rad) => rad.replace(/\s{2,}\/\/\s.*$/, ''))
+    .join('\n');
+}
+
 // JS-versionen i snippeten. Byggs ur flyttMal:s källkod, så testerna och sajten kör samma regler.
+// Utan kommentarerna: snippeten står i källan på varje sida, och granskningen (S-029) ville inte ha
+// utvecklarkommentarer där.
 function flyttJs() {
-  const kod = [webblasarSprak, flyttMal].map((f) => f.toString()).join('\n');
+  const kod = [webblasarSprak, flyttMal].map((f) => utanKommentarer(f.toString())).join('\n');
   return `var COM_MAPP=${JSON.stringify(COM_MAPP)},LAND_SPRAK=${JSON.stringify(LAND_SPRAK)},UTLANDET=${JSON.stringify(UTLANDET)};
 var BOT=${BOT.toString()},EGNA=${EGNA.toString()};
 ${kod.replace(/\bexport\s+/g, '')}`;
@@ -648,7 +659,7 @@ async function huvud() {
   const k = await skapaKlient(lasButik(KONFIG.butik));
   const log = (s) => console.log(s);
   const temaId = arg.includes('--tema') ? arg[arg.indexOf('--tema') + 1] : KONFIG.tema_id;
-  const namn = [...Object.keys(PATCHAR), 'templates/product.json', 'templates/product.tillbehor.json'];
+  const namn = [...Object.keys(PATCHAR), ...Object.keys(NYA_FILER), 'templates/product.json', 'templates/product.tillbehor.json'];
   const d = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { name role files(filenames: $f, first: 30) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: namn });
   log(`Tema: ${d.theme.name} (${d.theme.role})${skarpt ? '  SKARPT' : '  (torrt — --skarpt skriver)'}`);
   const filer = Object.fromEntries(d.theme.files.nodes.map((n) => [n.filename, n.body.content]));
@@ -662,7 +673,12 @@ async function huvud() {
   const tb = patchaTillbehor(filer['templates/product.tillbehor.json'], filer['templates/product.json']);
   log(`templates/product.tillbehor.json: ${tb.byten.length ? 'ändras (' + tb.byten.join(', ') + ')' : tb.hoppade.join(', ')}`);
   if (tb.byten.length) ut.push({ filename: 'templates/product.tillbehor.json', body: { type: 'TEXT', value: tb.kod } });
-  for (const [fil, innehall] of Object.entries(NYA_FILER)) ut.unshift({ filename: fil, body: { type: 'TEXT', value: innehall } });
+  // De nya filerna byggs hela ur repot: skrivs bara när temats version skiljer sig.
+  for (const [fil, innehall] of Object.entries(NYA_FILER)) {
+    const lika = filer[fil] === innehall;
+    log(`${fil}: ${lika ? 'redan som i repot' : filer[fil] === undefined ? 'ny fil' : 'ändras (byggd om ur sajtfix.mjs)'}`);
+    if (!lika) ut.unshift({ filename: fil, body: { type: 'TEXT', value: innehall } });
+  }
 
   const mapp = join(ROT, 'output', 'sajtfix', String(temaId).split('/').pop());
   for (const f of ut) {
