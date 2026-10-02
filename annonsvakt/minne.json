@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-10-02T06:46:07.869Z",
+ "uppdaterad": "2026-10-02T13:45:15.391Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -142,6 +142,11 @@
   {
    "nyckel": "spend:120251633656450435:2026-10-02:0",
    "tid": "2026-10-02T06:46:07.869Z",
+   "rubrik": "Ad `CaraShellRoof_US_SP_2_1 – kopia` spending badly"
+  },
+  {
+   "nyckel": "spend:120251633656450435:2026-10-02:1",
+   "tid": "2026-10-02T13:45:15.391Z",
    "rubrik": "Ad `CaraShellRoof_US_SP_2_1 – kopia` spending badly"
   }
  ],
