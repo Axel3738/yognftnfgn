@@ -196,6 +196,40 @@ arbetshypoteser tills kommentarerna går att läsa.
 
 ## Nästa steg (i ordning, vinst snabbast först)
 
+⚠️ **Nya vinklar hämtas ur `mekanismer.md` (2026-10-01):** fem mekanismer
+mot marknadssofistikeringen prövade av en skeptiker mot kontots transkript.
+En genuint ny (**duka fram den**, kräver ny inspelning, Axels beslut), två
+uppvärmda med test redan i kön (locket via 061/063, favoriträtten via 060 +
+Katarina), en hook (fem sorter), en förbrukad (byrålådetestet, står på varje
+annons). Hookarna har klarat tre-frågorstestet. ⚠️ **Hookarna för de 30
+annonser `lardomar.md` aldrig läste står i `matstrumpor/marknader/transkript/`
+(69 transkript).** Läs dem innan en vinkel kallas oprövad; den här sessionen
+kallade två redan körda vinklar nya tills skeptikern läste transkripten.
+📚 **Ny information (steg 4) i `ny-information.md` (2026-10-01):** tolv
+belagda fynd med källa och datum, varje källa öppnad av sessionen. De
+viktigaste för Sverige: 56 % av svenskarna har sushi som favoriträtt
+(Verian/HelloFresh 2024) och sushi är topp tre i takeaway (Wolt jan 2026);
+"den första oönskade julklappen läggs ut innan Kalle Anka" (Blocket/SVT
+dec 2025) och 87 % har fått en klapp de inte ville ha (UNICEF dec 2024);
+57 % vill ge praktiskt, 25 % roligt, 23 % säger nej till skämtpresenter
+(Talker nov 2025); se-igenom-förpackning höjer viljan att äga (IJRM maj
+2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är FALSKT (cheeseburgare
+är), skriv "topp tre". ⛔ **Axels dom 2026-10-02: en faktarad är aldrig
+första raden i en video** (Wolt-raden "känns onaturlig och konstig"); videons
+start är en gåta som bilden löser vid avslöjandet, faktan går som bild,
+rubrik eller mejl. ✅ **Batch #4 samma dag, Axels order (2 briefer, Draft i
+hubben):** `065` = mekanismen "duka fram den" som NY INSPELNING med Nathalie
+(Axels ja; raden väntar på hennes råklipp, inspelningsplanen står sist i
+briefen) och `066` = gåtan "Sushi att ge bort till den som hatar fisk." som
+ny öppning på Nathalie-kroppen, upprullningen som svar. Mönstret för allt
+nytt här: **iterera på vinnaren** — samma kropp, en ny mekanism eller en ny
+ingång åt gången, aldrig ett större löfte. **Två sidor, publiceras om på samma länkar:** den
+engelska briefen till creative strat (`CS-BRIEF-sophistication.md`)
+https://claude.ai/artifact/5xGD7q2EtJfdVQr1aS8eKn och Axels enkla svenska
+sammanfattning https://claude.ai/artifact/4V8B41zhKmExD2qUumasf5 (Axels
+order samma dag: "jag kan inte läsa något sånt komplicerat struktur" —
+regeln står i CLAUDE.md under "Så här ska du svara Axel").
+
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;
    `nya16` + `jul_video` fick 5 618 kr på 45 annonser, batch #1 35 kr på 11.

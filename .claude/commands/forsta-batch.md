@@ -49,7 +49,7 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 3 – Djupanalys av toppannonser:** copy + (när transkript finns) rad-för-rad med psykologisk mekanism kopplad till retention. Hook-formler. Attention/Persuasion/Conversion. Data skild från hypotes.
 - **FAS 4 – Förlorarna:** exakt vad som är sämre än vinnarna. Tabell: Element/Vinnare/Förlorare/Trolig påverkan/Nästa test. Pausa, iterera eller stryk.
 - **FAS 5 – Creative DNA:** Winning/Losing DNA + Behåll alltid/Testa kontrollerat/Undvik/Obevisat. **Skriv till `products/<id>/dna.md`.**
-- **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer.
+- **FAS 6 – Kund- & konkurrentresearch:** kundspråk (direktcitat/mönster/hypotes), direkta + indirekta konkurrenter, 3 lånade mekanismer. **Döm marknadens sofistikeringsnivå (Schwartz 1–5) med belägg ur annonsbiblioteket** (konkurrenternas rader ordagrant). Steg 3 eller högre ⇒ minst ett koncept i FAS 8–9 bär en NY MEKANISM (hur produkten gör det) eller NY INFORMATION (ett belagt faktum om kundens värld), inte ett större löfte — kör `/mekanismer <id> <url>` och `/ny-information <id> <url>` och ta fröna ur `products/<id>/mekanismer.md` och `ny-information.md`.
 - **FAS 7 – Variationer:** 3 per vinnare (nära iteration / format transfer / ny persuasion-angle).
 - **FAS 8 – Nya videokoncept:** 3 st med olika persuasion-mekanismer, inspelningsklara manus.
 - **FAS 9 – Nya statiska koncept:** 6 st (demo, jämförelse, testimonial, listicle, offer, risk/cost-of-inaction).

@@ -202,6 +202,20 @@ behörighetsreglerna matchar på första ordet.
    begär eller en annan känslomässig ingång — samma löfte med nya ord är en
    iteration, inte en ny vinkel.
 
+   **Varifrån den nya vinkeln kommer (2026-10-01):** ur
+   `products/matstrumpor/mekanismer.md` (§4, ordningen efter skeptikern) och
+   `products/matstrumpor/ny-information.md` (testordningen längst ner), i den
+   ordningen, aldrig ur huvudet. ⛔ **En faktarad är aldrig första raden i en
+   video** (Axel 2026-10-02 om Wolt-raden som start på Nathalie-kroppen:
+   "känns onaturlig och konstig"): videons start är en gåta som bilden löser
+   vid avslöjandet (`066` är förlagan), och faktan går som bild (fynd 7 först),
+   rubrik i Ads Manager eller Spoks-mejl. Mekanismen "duka fram den" är brief
+   `065` (ny inspelning, Axels ja 2026-10-02). Ett frö som använts märks
+   `[använd i batch #N]` i filen. Är alla frön använda: kör
+   `/ny-information matstrumpor <url>` igen innan ronden hittar på något.
+   En siffra i en bild eller rubrik skrivs exakt som källan skriver den och
+   med landet när siffran inte är svensk.
+
    Per utfall — iterationerna ur `PLAYBOOK_PER_UTFALL` / `ITERATIONER`
    (`matstrumpor/lardom.mjs`, ordagrant ur Evolves playbook):
    - **Breakthrough** → alltid, alla tre typerna (ITER + IDEA + IMIT). De två

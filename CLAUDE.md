@@ -18,6 +18,12 @@ vilka connectors som måste kopplas) → `docs/os/ACTIONPLAN.md`.
 
 Axel har grov dyslexi. Skriv kort och konkret — inga bibelsvar.
 
+⛔ **Axels order 2026-10-01: "jag kan inte läsa något sånt komplicerat struktur".**
+I chatten till Axel: inga tabeller, inga filnamn, inga parenteser, inga
+siffror i prosan. Korta rader. En sak per rad. Högst tre rubriker. Det
+krångliga får ligga i filerna och på sidorna; chatten säger vad det betyder
+och vad han ska göra. En lista till honom är aldrig längre än sex punkter.
+
 **Det enda formatkravet: gör HANS uppgifter omöjliga att missa.**
 Ska han göra något, sätt det sist under en egen rubrik, numrerat, en mening
 per rad, med exakt var han ska klicka och vad knappen heter. Ska han inte
@@ -1627,6 +1633,8 @@ v2 i Spoks, och VA-bonusen "recension med ditt namn" räknas på Trustpilot
 | `/forsta-batch <namn>` | Full CS-analys från noll i en NY chatt |
 | `/cs <id> [egna idéer]` | **Kärnloopen:** CS på senaste annonserna, feedbackloop, nästa batch |
 | `/koncept <id> <idé> [AKUT]` | Släng in koncept i backloggen (AKUT = bygg briefen nu) |
+| `/mekanismer <id> <url>` | **Nya mekanismer mot marknadssofistikeringen (Schwartz steg 3), byggd 2026-10-01 på Axels prompt:** sofistikeringstabell med belägg ur annonsbiblioteket → ≤ 5 mekanismer (HUR produkten gör det, inte ett större löfte) med anti-positionering och första test → **skeptiker-subagent som läser kontots transkript** och dömer NY/UPPVÄRMD/FÖRBRUKAD → hookar av sonnet med tre-frågorstestet → `products/<id>/mekanismer.md`. Första körningen (Sushi-Strumpor): 1 genuint ny av 5 ("duka fram den"), 2 uppvärmda med test i kön, 1 hook, 1 förbrukad; sessionen kallade två redan körda vinklar nya tills skeptikern läste `matstrumpor/marknader/transkript/` — därför är skeptikern obligatorisk. `/cs`, `/matstrumporkungen`, `/notionscalercs` och `/forsta-batch` tar sina nya vinklar ur filen |
+| `/ny-information <id> <url>` | **Ny information mot marknadssofistikeringen (Schwartz steg 4), byggd samma dag:** tre researchagenter (vetenskapen om köparens beteende, svensk marknadsdata, branschen) → huvudsessionen öppnar varje källa själv och kontrollerar DOI:er mot Crossref → 8–14 fynd med källa, datum, URL, "varför ny", "så används den etiskt" → hookar av sonnet (faktumet är hooken, produkten andra takten) → koppling till mekanismerna + testordning → `products/<id>/ny-information.md`. Första körningen: tolv fynd, bland dem 56 % av svenskarna har sushi som favoriträtt (Verian 2024), sushi topp tre i takeaway (Wolt jan 2026), "första oönskade julklappen på Blocket innan Kalle Anka" (SVT dec 2025), 57/25/23 praktiskt/roligt/skämtpresent uteslutet (Talker nov 2025), se-igenom-förpackning ökar viljan att äga (IJRM maj 2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är falskt (cheeseburgaren är): varje "mest" kräver belägg, varje siffra skrivs som källan skriver den, med land när den inte är svensk |
 | `/checkin <id>` | Daglig check-in: kvot, Slack-kontroll, grönmarkering, larm |
 | `/logga <id> <antal>` | Launch-avstämning: kvot + Notion-sync + tracking-sheet |
 | `/notion <db>, <mapplänk>` | Ladda upp batchens briefer till Notion |
