@@ -1,0 +1,54 @@
+NO_buskjakke_SP_1_H1.mp4: 10 cues, 10 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Sånn beskytter du buskene dine mot kulden i høst med denne jakken.
+    hörs:  Sånn beskytter du buskene dine mot kulden i høst med denne jakken. Hver høst
+    — → hver | — → høst
+
+  cue 2 @ 3.9s
+    manus: Hver høst lurer hagefolk på det samme: hvordan redder jeg plantene mine fra kulden?
+    hörs:  jakken. Hver høst lurer hagefolk på det samme. Hvordan redder jeg plantene mine fra kulden? Buskjakken
+    hver → jakken | høst → hver | lurer → høst | hagefolk → lurer | på → hagefolk | det → på
+
+  cue 3 @ 8.3s
+    manus: Buskjakken er laget nettopp for det.
+    hörs:  fra kulden? Buskjakken er laget nettopp for det. Hvorfor
+    buskjakken → fra | er → kulden | laget → buskjakken | nettopp → er | for → laget | det → nettopp
+
+  cue 4 @ 10.5s
+    manus: Hvorfor virker den?
+    hörs:  for det. Hvorfor virker den? Fordi den
+    hvorfor → for | virker → det | den → hvorfor | — → virker | — → den | — → fordi
+
+  cue 5 @ 11.6s
+    manus: Fordi den er enkel.
+    hörs:  virker den? Fordi den er enkel. Trekk den
+    fordi → virker | er → fordi | enkel → den | — → er | — → enkel | — → trekk
+
+  cue 6 @ 12.6s
+    manus: Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen eller potten.
+    hörs:  er enkel. Trekk den over busken. Lukk glidelåsen. Stram snøringen rundt stammen eller potten. Ferdig.
+    trekk → er | den → enkel | over → trekk | busken → den | lukk → over | glidelåsen → busken
+
+  cue 7 @ 17.6s
+    manus: Ferdig.
+    hörs:  eller potten. Ferdig. Den skjermer
+    ferdig → eller | — → potten | — → ferdig | — → den | — → skjermer
+
+  cue 8 @ 18.6s
+    manus: Den skjermer mot vind og kulde.
+    hörs:  Ferdig. Den skjermer mot vind og kulde. Du får
+    den → ferdig | skjermer → den | mot → skjermer | vind → mot | og → vind | kulde → og
+
+  cue 9 @ 20.6s
+    manus: Du får to stykker i pakken, så det rekker til både busker og potteplanter.
+    hörs:  kulde. Du får to stykker i pakken, så det rekker til både busker og potteplanter. Beskytt
+    du → kulde | får → du | to → får | stykker → to | i → stykker | pakken → i
+
+  cue 10 @ 24.8s
+    manus: Beskytt det du har brukt år på å dyrke.
+    hörs:  potteplanter. Beskytt det du har brukt år på å dyrke.
+    beskytt → potteplanter | det → beskytt | du → det | har → du | brukt → har | år → brukt
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

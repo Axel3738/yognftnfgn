@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:02,720
+Buskjackan är 130 kronor billigare just nu.
+
+2
+00:00:03,000 --> 00:00:04,620
+Rea på buskjackan.
+
+3
+00:00:04,760 --> 00:00:09,680
+Förut 559 kronor, nu bara 429 kronor.
+
+4
+00:00:09,780 --> 00:00:15,840
+Du sparar 130 kronor, 23% rabatt och du får två stycken i paketet.
+
+5
+00:00:15,960 --> 00:00:18,880
+Skyddar mot frost, snö och kalla vindar.
+
+6
+00:00:19,080 --> 00:00:21,060
+Erbjudandet gäller bara i dag.
+
+7
+00:00:21,180 --> 00:00:22,660
+Det är nästan slutsålt.
+
+8
+00:00:22,740 --> 00:00:26,880
+Tryck på knappen och ta din buskjacka nu innan priset går upp.
+

@@ -1,0 +1,69 @@
+NO_buskjakke_PD_1_H2.mp4: 13 cues, 13 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Slik redder du buskene før vinteren kommer.
+    hörs:  Slik redder du buskene før vinteren kommer. Den første
+    — → den | — → første
+
+  cue 2 @ 2.6s
+    manus: Den første kalde natten kommer ofte tidligere enn ventet.
+    hörs:  kommer. Den første kalde natten kommer ofte tidligere enn ventet. Dette
+    den → kommer | første → den | kalde → første | natten → kalde | kommer → natten | ofte → kommer
+
+  cue 3 @ 5.8s
+    manus: Dette er buskjakken.
+    hörs:  ventet. Dette er buskjakken. Trekk
+    dette → ventet | er → dette | buskjakken → er | — → buskjakken | — → trekk
+
+  cue 4 @ 7.3s
+    manus: Trekk den over busken.
+    hörs:  buskjakken. Trekk den over busken, lukk
+    trekk → buskjakken | den → trekk | over → den | busken → over | — → busken | — → lukk
+
+  cue 5 @ 8.9s
+    manus: Lukk glidelåsen.
+    hörs:  busken, lukk glidelåsen, stram
+    lukk → busken | glidelåsen → lukk | — → glidelåsen | — → stram
+
+  cue 6 @ 10.5s
+    manus: Stram snøringen rundt stammen eller potten.
+    hörs:  glidelåsen, stram snøringen rundt stammen eller potten. Ferdig.
+    stram → glidelåsen | snøringen → stram | rundt → snøringen | stammen → rundt | eller → stammen | potten → eller
+
+  cue 7 @ 12.8s
+    manus: Ferdig.
+    hörs:  potten. Ferdig. Du slipper
+    ferdig → potten | — → ferdig | — → du | — → slipper
+
+  cue 8 @ 13.4s
+    manus: Du slipper å løfte den av for å vanne.
+    hörs:  Ferdig. Du slipper å løfte den av for å vanne. Den
+    du → ferdig | slipper → du | å → slipper | løfte → å | den → løfte | av → den
+
+  cue 9 @ 15.7s
+    manus: Den skjermer mot vind og kulde.
+    hörs:  å vanne. Den skjermer mot vind og kulde. Du får
+    den → å | skjermer → vanne | mot → den | vind → skjermer | og → mot | kulde → vind
+
+  cue 10 @ 18.1s
+    manus: Du får to stykker i pakken.
+    hörs:  og kulde. Du får to stykker i pakken. Størrelsen
+    du → og | får → kulde | to → du | stykker → får | i → to | pakken → stykker
+
+  cue 11 @ 20.1s
+    manus: Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så den passer store busker og potteplanter.
+    hörs:  pakken. Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så den passer store busker og potteplanter. Den enkleste
+    størrelsen → pakken | er → størrelsen | hundre → er | og → hundre | tjue → og | ganger → tjue
+
+  cue 12 @ 25.6s
+    manus: Den enkleste måten å beskytte hagen før vinteren kommer.
+    hörs:  potteplanter. Den enkleste måten å beskytte hagen før vinteren kommer. Bestill
+    den → potteplanter | enkleste → den | måten → enkleste | å → måten | beskytte → å | hagen → beskytte
+
+  cue 13 @ 29.1s
+    manus: Bestill buskjakken via lenken.
+    hörs:  vinteren kommer. Bestill buskjakken via lenken.
+    bestill → vinteren | buskjakken → kommer | via → bestill | lenken → buskjakken | — → via | — → lenken
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

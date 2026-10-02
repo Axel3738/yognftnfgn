@@ -318,6 +318,10 @@ av bildmodellen; prompten säger "no text, leave clean space". *(CaraShell
 2026-09-14: fyra bildbriefer med rubrik och pris gick live som rena foton,
 för textlagret fanns inte.)*
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
+**Nya vinklar tas ur `products/<nyckel>/mekanismer.md` och `ny-information.md`**
+när filerna finns (byggs med `/mekanismer` och `/ny-information`, Schwartz
+steg 3 och 4); ett använt frö märks `[använd i batch #N]` där. Finns de inte
+skrivs den nya vinkeln som förut, märkt **(gissning)**.
 Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.
 **De tre reglerna ur `feedback.md` (steg 0) gäller varje brief** — bryts en

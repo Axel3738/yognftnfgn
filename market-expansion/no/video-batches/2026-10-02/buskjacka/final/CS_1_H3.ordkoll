@@ -1,0 +1,54 @@
+NO_buskjakke_CS_1_H3.mp4: 10 cues, 10 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Tjuefire prosent rabatt på buskjakken.
+    hörs:  Tjuefire prosent rabatt på buskjakken. Den første
+    — → den | — → første
+
+  cue 2 @ 2.6s
+    manus: Den første kalde natten kommer ofte tidligere enn du tror.
+    hörs:  buskjakken. Den første kalde natten kommer ofte tidligere enn du tror. Rea
+    den → buskjakken | første → den | kalde → første | natten → kalde | kommer → natten | ofte → kommer
+
+  cue 3 @ 5.5s
+    manus: Rea på buskjakken.
+    hörs:  du tror. Rea på buskjakken før
+    rea → du | på → tror | buskjakken → rea | — → på | — → buskjakken | — → før
+
+  cue 4 @ 7.3s
+    manus: Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.
+    hörs:  buskjakken før firehundreognitti nikroner, nå bare trehundreogsettini kroner. Du sparer
+    før → buskjakken | fire → før | hundre → firehundreognitti | og → nikroner | nittini → nå | kroner → bare
+
+  cue 5 @ 11.2s
+    manus: Du sparer hundre og tjue kroner.
+    hörs:  kroner. Du sparer hundreogtjue kroner. Tjuefire
+    du → kroner | sparer → du | hundre → sparer | og → hundreogtjue | tjue → kroner | kroner → tjuefire
+
+  cue 6 @ 13.6s
+    manus: Tjuefire prosent rabatt, og du får to stykker i pakken.
+    hörs:  kroner. Tjuefire prosent rabatt og du får to stykker i pakken. Skjermer
+    tjuefire → kroner | prosent → tjuefire | rabatt → prosent | og → rabatt | du → og | får → du
+
+  cue 7 @ 16.7s
+    manus: Skjermer mot vind og kulde.
+    hörs:  pakken. Skjermer mot vind og kulde. Glidelåsen
+    skjermer → pakken | mot → skjermer | vind → mot | og → vind | kulde → og | — → kulde
+
+  cue 8 @ 18.9s
+    manus: Glidelåsen gjør at du kan vanne uten å løfte av jakken.
+    hörs:  kulde. Glidelåsen gjør at du kan vanne uten å løfte av jakken, og du har
+    glidelåsen → kulde | gjør → glidelåsen | at → gjør | du → at | kan → du | vanne → kan
+
+  cue 9 @ 22.2s
+    manus: Og du har fjorten dagers angrerett.
+    hörs:  jakken, og du har fjorten dagers angrerett. Trykk på
+    og → jakken | du → og | har → du | fjorten → har | dagers → fjorten | angrerett → dagers
+
+  cue 10 @ 24.5s
+    manus: Trykk på knappen og bestill buskjakken din nå.
+    hörs:  angrerett. Trykk på knappen og bestill buskjakken din nå.
+    trykk → angrerett | på → trykk | knappen → på | og → knappen | bestill → og | buskjakken → bestill
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

@@ -2,6 +2,15 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-10-02
+
+- [ ] **CaraShell · CaraShellRoof** · invändning — En amerikan har frågat tre gånger under annonsen om spännbanden går att justera ("Third time- are the tie down straps adjustable?"). Frågan blev obesvarad två gånger. → Visa justeringen av banden i annonsen (bild eller ett klipp där bandet dras åt), bara det produktsidan säger.
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_1126865426352326, 122107043547473983_1631909371911180 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · segment — Ägare av långa vagnar i USA frågar vilken storlek som passar: 34 ft gooseneck-hästtrailer, 40 ft släp, Thor Chateau 24'11" och fifth wheel. → Bild eller video som visar de största storlekarna (upp till 44 ft) på en lång vagn, med storleksraden synlig.
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_858123204056664, 122107043547473983_2131419274415379, 122107043547473983_1656867056055147, 122107043547473983_1460227089360864 · status: väntar
+- [ ] **Bäverbutiken · Sotarset** · produktfeedback — Två norska kommentarer säger att 100 mm-borsten är för liten ("100 m/m børste er for lite", "vanlig ovnsrør er vel 125 m/m"). → Axel: finns en större borste (125 eller 150 mm) hos leverantören? Annonsen kan säga vilken rördiameter setet är gjort för.
+  - Källa: voc · `kalla=voc` · belägg: 122135379219209535_2394614748028405, 122135379231209535_1706964347710474 · status: väntar
+
 ## 2026-10-01
 
 - [ ] **CaraShell · CaraShellRoof** · invändning — Tre amerikaner frågar varför skyddet är svart ('heat absorbing', 'Black attracts more heat', 'Any colors other than black'). Produktfakta säger inget om färgen eller värmen. → Leverantörsfråga: tål det svarta tyget sol och värme på taket, finns andra färger?

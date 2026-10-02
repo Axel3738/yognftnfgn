@@ -96,6 +96,7 @@ behörighetsreglerna matchar på första ordet.
    node matstrumpor/kor.mjs --hamta
    node matstrumpor/kor.mjs --dom-alla --json --logga
    node matstrumpor/kor.mjs --arkiv
+   node matstrumpor/growthguide.mjs --skarpt   # Growth Guide i Notion: arkivet som databas Axel och creative strat kan ändra i (Axels beslut 2026-10-02). Koden skriver bara mätkolumnerna; Anteckning, Beslut, Nästa steg, Ägare rörs aldrig. Id i matstrumpor/growthguide.json
    ```
    `--hamta` läser **Sverige och varje utlandskampanj** ur
    `matstrumpor/marknader/annonser/lage.json` (14 st 2026-10-01; före det
@@ -202,6 +203,20 @@ behörighetsreglerna matchar på första ordet.
    begär eller en annan känslomässig ingång — samma löfte med nya ord är en
    iteration, inte en ny vinkel.
 
+   **Varifrån den nya vinkeln kommer (2026-10-01):** ur
+   `products/matstrumpor/mekanismer.md` (§4, ordningen efter skeptikern) och
+   `products/matstrumpor/ny-information.md` (testordningen längst ner), i den
+   ordningen, aldrig ur huvudet. ⛔ **En faktarad är aldrig första raden i en
+   video** (Axel 2026-10-02 om Wolt-raden som start på Nathalie-kroppen:
+   "känns onaturlig och konstig"): videons start är en gåta som bilden löser
+   vid avslöjandet (`066` är förlagan), och faktan går som bild (fynd 7 först),
+   rubrik i Ads Manager eller Spoks-mejl. Mekanismen "duka fram den" är brief
+   `065` (ny inspelning, Axels ja 2026-10-02). Ett frö som använts märks
+   `[använd i batch #N]` i filen. Är alla frön använda: kör
+   `/ny-information matstrumpor <url>` igen innan ronden hittar på något.
+   En siffra i en bild eller rubrik skrivs exakt som källan skriver den och
+   med landet när siffran inte är svensk.
+
    Per utfall — iterationerna ur `PLAYBOOK_PER_UTFALL` / `ITERATIONER`
    (`matstrumpor/lardom.mjs`, ordagrant ur Evolves playbook):
    - **Breakthrough** → alltid, alla tre typerna (ITER + IDEA + IMIT). De två
@@ -294,7 +309,7 @@ behörighetsreglerna matchar på första ordet.
    ```bash
    node matstrumpor/kor.mjs --rond-klar
    git pull --rebase origin main
-   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv products/matstrumpor
+   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv matstrumpor/growthguide.json products/matstrumpor
    git commit -m "matstrumporkungen: <datum> — <N> etiketter, <M> lärdomar, <K> briefer, <F> förslag"
    git push origin main
    ```

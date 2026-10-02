@@ -1,0 +1,64 @@
+NO_buskjakke_G_1_H2.mp4: 12 cues, 12 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Gaven mamma faktisk kommer til å bruke.
+    hörs:  Gaven mamma faktisk kommer til å bruke. Hva gir
+    — → hva | — → gir
+
+  cue 2 @ 2.7s
+    manus: Hva gir man til den som elsker hagen sin?
+    hörs:  bruke. Hva gir man til den som elsker hagen sin? Ikke enda
+    hva → bruke | gir → hva | man → gir | til → man | den → til | som → den
+
+  cue 3 @ 5.2s
+    manus: Ikke enda en ting som havner i et skap, men noe hen faktisk trenger.
+    hörs:  hagen sin? Ikke enda en ting som havner i et skap, men noe hen faktisk trenger. Dette
+    ikke → hagen | enda → sin | en → ikke | ting → enda | som → en | havner → ting
+
+  cue 4 @ 9.2s
+    manus: Dette er buskjakken.
+    hörs:  trenger. Dette er buskjakken. Den skjermer
+    dette → trenger | er → dette | buskjakken → er | — → buskjakken | — → den | — → skjermer
+
+  cue 5 @ 10.9s
+    manus: Den skjermer mammas roser og pappas busker mot vind og kulde.
+    hörs:  buskjakken. Den skjermer mammas roser og pappas busker mot vind og kulde. Tenk
+    den → buskjakken | skjermer → den | mammas → skjermer | roser → mammas | og → roser | pappas → og
+
+  cue 6 @ 15.1s
+    manus: Tenk deg reaksjonen.
+    hörs:  kulde. Tenk deg reaksjonen. Åh,
+    tenk → kulde | deg → tenk | reaksjonen → deg | — → reaksjonen | — → åh
+
+  cue 7 @ 16.5s
+    manus: Å, hvordan visste du det?
+    hörs:  reaksjonen. Åh, hvordan visste du det? Og du vet
+    å → reaksjonen | hvordan → åh | visste → hvordan | du → visste | det → du | — → det
+
+  cue 8 @ 17.9s
+    manus: Og du vet at du ga noe som betyr noe,
+    hörs:  visste du det? Og du vet at du ga noe som betyr noe. Noe
+    og → visste | vet → det | at → og | ga → vet | noe → at | som → du
+
+  cue 9 @ 20.3s
+    manus: noe som beskytter plantene hen har passet på i årevis.
+    hörs:  betyr noe. Noe som beskytter plantene hen har passet på i årevis. Det er en gave
+    noe → betyr | som → noe | beskytter → noe | plantene → som | hen → beskytter | har → plantene
+
+  cue 10 @ 23.5s
+    manus: Det er en gave som sier: Jeg ser hva du elsker.
+    hörs:  årevis. Det er en gave som sier "Jeg ser hva du elsker." To stykker
+    det → årevis | er → det | en → er | gave → en | som → gave | sier → som
+
+  cue 11 @ 26.7s
+    manus: To stykker i pakken.
+    hörs:  elsker." To stykker i pakken. Perfekt
+    to → elsker | stykker → to | i → stykker | pakken → i | — → pakken | — → perfekt
+
+  cue 12 @ 28.2s
+    manus: Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven.
+    hörs:  i pakken. Perfekt til jul, bursdag eller bare for å gi den perfekte gaven.
+    perfekt → i | til → pakken | jul → perfekt | bursdag → til | eller → jul | bare → bursdag
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

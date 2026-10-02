@@ -1,0 +1,49 @@
+NO_buskjakke_G_1_H3.mp4: 9 cues, 9 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Pappa kommer til å smile når han pakker opp denne.
+    hörs:  Pappa kommer til å smile når han pakker opp denne. Hva gir
+    — → hva | — → gir
+
+  cue 2 @ 2.3s
+    manus: Hva gir du til den som elsker hagen sin?
+    hörs:  opp denne. Hva gir du til den som elsker hagen sin? Ikke enda
+    hva → opp | gir → denne | du → hva | til → gir | den → du | som → til
+
+  cue 3 @ 4.9s
+    manus: Ikke enda en ting som havner i et skap, men noe hen faktisk trenger.
+    hörs:  hagen sin? Ikke enda en ting som havner i et skap, men noe hen faktisk trenger. Dette
+    ikke → hagen | enda → sin | en → ikke | ting → enda | som → en | havner → ting
+
+  cue 4 @ 8.7s
+    manus: Dette er buskjakken.
+    hörs:  trenger. Dette er buskjakken. Den skjermer
+    dette → trenger | er → dette | buskjakken → er | — → buskjakken | — → den | — → skjermer
+
+  cue 5 @ 10.4s
+    manus: Den skjermer mammas roser og pappas busker mot vind og kulde.
+    hörs:  buskjakken. Den skjermer mammas roser og pappas busker mot vind og kulde. Se for
+    den → buskjakken | skjermer → den | mammas → skjermer | roser → mammas | og → roser | pappas → og
+
+  cue 6 @ 14.4s
+    manus: Se for deg reaksjonen: «Å, hvordan visste du det?» Og du vet at du ga noe som betyr noe,
+    hörs:  kulde. Se for deg reaksjonen. Åh, hvordan visste du det? Og du vet at du ga noe som betyr noe, noe som
+    se → kulde | for → se | deg → for | reaksjonen → deg | å → reaksjonen | hvordan → åh
+
+  cue 7 @ 20.3s
+    manus: noe som beskytter plantene hen har stelt med i årevis.
+    hörs:  betyr noe, noe som beskytter plantene hen har stelt med i årevis. Det er en gave
+    noe → betyr | som → noe | beskytter → noe | plantene → som | hen → beskytter | har → plantene
+
+  cue 8 @ 23.2s
+    manus: Det er en gave som sier: «Jeg ser hva du elsker.» To stykker i pakken.
+    hörs:  årevis. Det er en gave som sier "Jeg ser hva du elsker." To stykker i pakken. Perfekt
+    det → årevis | er → det | en → er | gave → en | som → gave | sier → som
+
+  cue 9 @ 27.8s
+    manus: Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven.
+    hörs:  i pakken. Perfekt til jul, bursdag eller bare for å gi den perfekte gaven.
+    perfekt → i | til → pakken | jul → perfekt | bursdag → til | eller → jul | bare → bursdag
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

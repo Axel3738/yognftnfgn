@@ -1,0 +1,12 @@
+🔊 CS_1_H1.mp4                  VOICEOVER  → elevenlabs  största ansiktet 1.0% av bildytan — för litet för att vara en talande person (ansikte i 17% av bildrutorna)
+❓ CS_1_H2.mp4                  OKAND      → heygen      gråzon: ansikte 22%, yta 1.7%, munrörelse 3.8 — går inte att avgöra, kör HeyGen
+❓ CS_1_H3.mp4                  OKAND      → heygen      gråzon: ansikte 26%, yta 2.0%, munrörelse 3.5 — går inte att avgöra, kör HeyGen
+🔊 G_1_H1.mp4                   VOICEOVER  → elevenlabs  största ansiktet 0.9% av bildytan — för litet för att vara en talande person (ansikte i 23% av bildrutorna)
+🔊 G_1_H2.mp4                   VOICEOVER  → elevenlabs  största ansiktet 1.2% av bildytan — för litet för att vara en talande person (ansikte i 22% av bildrutorna)
+🔊 G_1_H3.mp4                   VOICEOVER  → elevenlabs  största ansiktet 1.0% av bildytan — för litet för att vara en talande person (ansikte i 19% av bildrutorna)
+🔊 PD_1_H1.mp4                  VOICEOVER  → elevenlabs  största ansiktet 0.7% av bildytan — för litet för att vara en talande person (ansikte i 11% av bildrutorna)
+❓ PD_1_H2.mp4                  OKAND      → heygen      gråzon: ansikte 13%, yta 1.6%, munrörelse 11.6 — går inte att avgöra, kör HeyGen
+🔊 PD_1_H3.mp4                  VOICEOVER  → elevenlabs  största ansiktet 1.1% av bildytan — för litet för att vara en talande person (ansikte i 18% av bildrutorna)
+🔊 SP_1_H1.mp4                  VOICEOVER  → elevenlabs  största ansiktet 1.0% av bildytan — för litet för att vara en talande person (ansikte i 18% av bildrutorna)
+🔊 SP_1_H2.mp4                  VOICEOVER  → elevenlabs  största ansiktet 1.3% av bildytan — för litet för att vara en talande person (ansikte i 21% av bildrutorna)
+🔊 SP_1_H3.mp4                  VOICEOVER  → elevenlabs  största ansiktet 0.7% av bildytan — för litet för att vara en talande person (ansikte i 14% av bildrutorna)
