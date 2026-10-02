@@ -174,7 +174,7 @@ maten (tysta 3-sekundare, bildtext från oss), E "Material? Titta, jag drar i de
 i stället för två listor. Kreatören betalas för två videor + tagningar (Axels sak). Mansversionen
 (brief 3 i stället för skämtet) byggs när en man sagt ja.
 
-### Nathalies pris 2026-10-02 10:25 (via Axel) och motbudet
+### Nathalies pris 2026-10-02 10:25 (via Axel) och motbudet — Axel sköter förhandlingen själv ("Jag fixar konversationen med Nathalie", 2026-10-02 kväll); utfallet skrivs in här när han säger till
 
 Nathalie: brieferna ser bra ut; 3 500 kr per video med 6 månaders annonsrättigheter (samma som
 sist), 7 000 kr för två; annars 3 500 + 500 kr/mån per video för rättigheterna, så hon "bjuder på"
