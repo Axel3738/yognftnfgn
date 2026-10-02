@@ -1,4 +1,24 @@
-# Produktsidans copy, två versioner (2026-10-02) — ✅ Fable LIVE sedan 2026-10-02 08:08 UTC
+# Produktsidans copy, två versioner (2026-10-02) — ✅ LIVE: Fable omskriven i butikens röst, 08:21 UTC
+
+⛔ **Axels dom 08:15 UTC på den första live-versionen:** "I USA gav 32 procent ett presentkort för
+att de inte visste vad de annars skulle köpa, enligt Bankrate 2024." är "inte bra copy … fan va
+keft". Han hade godkänt Fable utan att läsa raden. Alla tre statistikmeningar (Wolt, Bankrate,
+YouGov) är strukna; problemet är de tråkiga presenterna (ljus, tvål, grå strumpor — samma bild som
+UGC-brief 2), lösningen Fables rader utan "verifierad köpare … på Judge.me", 234 ord. Regeln står i
+`docs/copy-regler.md` → "Statistik på produktsidan" och som spärr i `matstrumpor/produktsida.mjs`
+(stoppar "enligt", "procent" och %). Tre kontroller 08:21–08:25 UTC: API tillbakaläst, publika
+`.json`, publika HTML-sidan via curl (0 statistikrader, nya texten 5 träffar). Chromium-läsningen
+fick Shopifys "Vänta…"-mellansida efter tre besök på tio minuter — kundvyn är därför curl, inte
+skärmdump, den här gången. Säkerhetskopia av 08:08-versionen:
+`matstrumpor/produktsida/backup/2026-10-02T08-21-35-200Z-sushi-strumpor.html`.
+
+## Lärdom (sessionens)
+
+Tre-frågorstestet och domarpanelen släppte igenom tre rader som klarade "se / falsk / bara vi"
+men lät som en uppsats. Faktabladet sa redan "fakta lever i bild, rubrik, mejl" — workflowens
+instruktion krävde ändå "minst två fynd" i copyn, och det kravet var fel. Nästa gång: läs sidan
+högt som en kund innan den visas för Axel, och be aldrig en skribent väva in en källa i
+produktcopy.
 
 **Utfall:** Axel valde Fable ("jag gillar fables version") med kravet att beskrivningen följer hans
 struktur **Problem → gif → Lösning → gif/bild → Funktioner → bild → Garanti** (samma skelett som

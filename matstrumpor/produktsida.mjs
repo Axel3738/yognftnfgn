@@ -44,6 +44,10 @@ export function kontrollera(html) {
   if (/pizza|burgare|donut/i.test(text)) fel.push('en annan låda nämns');
   if (/\b\d{3,4} ?kr\b/.test(text)) fel.push('ett pris i beskrivningen (priset ägs av temat)');
   if (/material|mjuk|tvätt/i.test(text)) fel.push('materialpåstående');
+  // Axels dom 2026-10-02 på "I USA gav 32 procent … enligt Bankrate 2024": en statistikmening med
+  // källa är rapportspråk, inte butikscopy. Siffror ur researchen hör hemma i bilder, rubriker och
+  // mejl — aldrig som en mening i produktbeskrivningen.
+  if (/\benligt\b|\bprocent\b|\d+ ?%/i.test(utanGaranti)) fel.push('statistikmening med källa eller procent (Axel 2026-10-02: "inte bra copy")');
   return fel;
 }
 
