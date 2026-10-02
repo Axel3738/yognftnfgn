@@ -1,0 +1,54 @@
+NO_buskjakke_G_1_H1.mp4: 10 cues, 10 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Hva gir man til en forelder som allerede har alt?
+    hörs:  Hva gir man til en forelder som allerede har alt? Hva gir
+    — → hva | — → gir
+
+  cue 2 @ 3.0s
+    manus: Hva gir man til den som elsker hagen sin?
+    hörs:  alt? Hva gir man til den som elsker hagen sin? Ikke enda
+    hva → alt | gir → hva | man → gir | til → man | den → til | som → den
+
+  cue 3 @ 5.9s
+    manus: Ikke enda en ting som havner i et skap, men noe hun faktisk trenger.
+    hörs:  sin? Ikke enda en ting som havner i et skap, men noe hun faktisk trenger. Dette
+    ikke → sin | enda → ikke | en → enda | ting → en | som → ting | havner → som
+
+  cue 4 @ 9.5s
+    manus: Dette er buskjakken.
+    hörs:  trenger. Dette er buskjakken. Den skjermer
+    dette → trenger | er → dette | buskjakken → er | — → buskjakken | — → den | — → skjermer
+
+  cue 5 @ 11.2s
+    manus: Den skjermer mammas roser og pappas busker mot vind og kulde.
+    hörs:  buskjakken. Den skjermer mammas roser og pappas busker mot vind og kulde. Se for
+    den → buskjakken | skjermer → den | mammas → skjermer | roser → mammas | og → roser | pappas → og
+
+  cue 6 @ 15.2s
+    manus: Se for deg reaksjonen: «Å,
+    hörs:  kulde. Se for deg reaksjonen. Åh, hvordan
+    se → kulde | for → se | deg → for | reaksjonen → deg | å → reaksjonen | — → åh
+
+  cue 7 @ 17.4s
+    manus: hvordan visste du det?» Og du vet at du ga noe som betyr noe.
+    hörs:  Åh, hvordan visste du det? Og du vet at du ga noe som betyr noe. Noe som
+    hvordan → åh | visste → hvordan | du → visste | det → du | og → det | du → og
+
+  cue 8 @ 21.0s
+    manus: Noe som skjermer plantene hun har stelt i årevis, mot vind og kulde.
+    hörs:  betyr noe. Noe som skjermer plantene hun har stelt i årevis mot vind og kulde. Det er en gave
+    noe → betyr | som → noe | skjermer → noe | plantene → som | hun → skjermer | har → plantene
+
+  cue 9 @ 25.2s
+    manus: Det er en gave som sier: «Jeg ser hva du elsker.» To jakker i pakken.
+    hörs:  kulde. Det er en gave som sier "Jeg ser hva du elsker." To jakker i pakken. Perfekt
+    det → kulde | er → det | en → er | gave → en | som → gave | sier → som
+
+  cue 10 @ 29.4s
+    manus: Perfekt til jul, bursdag eller bare for å gi den perfekte gaven.
+    hörs:  i pakken. Perfekt til jul, bursdag eller bare for å gi den perfekte gaven.
+    perfekt → i | til → pakken | jul → perfekt | bursdag → til | eller → jul | bare → bursdag
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

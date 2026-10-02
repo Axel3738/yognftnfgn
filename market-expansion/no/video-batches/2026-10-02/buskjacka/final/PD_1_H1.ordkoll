@@ -1,0 +1,74 @@
+NO_buskjakke_PD_1_H1.mp4: 14 cues, 14 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Kalde netter ødelegger plantene dine.
+    hörs:  Kalde netter ødelegger plantene dine. Dette
+    — → dette
+
+  cue 2 @ 2.2s
+    manus: Dette er løsningen.
+    hörs:  plantene dine. Dette er løsningen. Kalde
+    dette → plantene | er → dine | løsningen → dette | — → er | — → løsningen | — → kalde
+
+  cue 3 @ 3.7s
+    manus: Kalde netter ødelegger plantene dine.
+    hörs:  løsningen. Kalde netter ødelegger plantene dine. Dette
+    kalde → løsningen | netter → kalde | ødelegger → netter | plantene → ødelegger | dine → plantene | — → dine
+
+  cue 4 @ 6.0s
+    manus: Dette er buskjakken.
+    hörs:  plantene dine. Dette er buskjakken. Trekk
+    dette → plantene | er → dine | buskjakken → dette | — → er | — → buskjakken | — → trekk
+
+  cue 5 @ 7.7s
+    manus: Trekk den over busken.
+    hörs:  buskjakken. Trekk den over busken. Lukk
+    trekk → buskjakken | den → trekk | over → den | busken → over | — → busken | — → lukk
+
+  cue 6 @ 9.3s
+    manus: Lukk glidelåsen.
+    hörs:  busken. Lukk glidelåsen. Stram
+    lukk → busken | glidelåsen → lukk | — → glidelåsen | — → stram
+
+  cue 7 @ 10.9s
+    manus: Stram snøringen rundt stammen.
+    hörs:  glidelåsen. Stram snøringen rundt stammen. Klart!
+    stram → glidelåsen | snøringen → stram | rundt → snøringen | stammen → rundt | — → stammen | — → klart
+
+  cue 8 @ 12.6s
+    manus: Klart!
+    hörs:  stammen. Klart! Så
+    klart → stammen | — → klart | — → så
+
+  cue 9 @ 13.4s
+    manus: Så enkelt er det.
+    hörs:  Klart! Så enkelt er det. Den skjermer
+    så → klart | enkelt → så | er → enkelt | det → er | — → det | — → den
+
+  cue 10 @ 14.9s
+    manus: Den skjermer mot vind og kulde.
+    hörs:  er det. Den skjermer mot vind og kulde. Du får
+    den → er | skjermer → det | mot → den | vind → skjermer | og → mot | kulde → vind
+
+  cue 11 @ 16.9s
+    manus: Du får to jakker i pakken.
+    hörs:  kulde. Du får to jakker i pakken. Størrelsen
+    du → kulde | får → du | to → får | jakker → to | i → jakker | pakken → i
+
+  cue 12 @ 18.7s
+    manus: Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så det rekker til store busker og potteplanter.
+    hörs:  pakken. Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så det rekker til store busker og potteplanter. Den enkleste
+    størrelsen → pakken | er → størrelsen | hundre → er | og → hundre | tjue → og | ganger → tjue
+
+  cue 13 @ 24.4s
+    manus: Den enkleste måten å skjerme plantene dine på før første kalde natt.
+    hörs:  potteplanter. Den enkleste måten å skjerme plantene dine på før første kalde natt. Bestill
+    den → potteplanter | enkleste → den | måten → enkleste | å → måten | skjerme → å | plantene → skjerme
+
+  cue 14 @ 28.4s
+    manus: Bestill via lenken.
+    hörs:  natt. Bestill via lenken.
+    bestill → natt | via → bestill | lenken → via | — → lenken
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

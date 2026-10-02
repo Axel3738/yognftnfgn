@@ -1,0 +1,554 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Buskjakken er hundre og tjue kroner billigere akkurat nå.",
+   "tekst": "Buskjakken er 120 kr billigere akkurat nå."
+  },
+  {
+   "tale": "Rea på buskjakken.",
+   "tekst": "Rea på buskjakken."
+  },
+  {
+   "tale": "Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.",
+   "tekst": "Før 499 kr, nå bare 379 kr."
+  },
+  {
+   "tale": "Du sparer hundre og tjue kroner, det er tjuefire prosent, og du får to stykker i pakken.",
+   "tekst": "Du sparer 120 kr (24%) og får to stykker i pakken."
+  },
+  {
+   "tale": "Skjermer mot vind og kulde.",
+   "tekst": "Skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Den første kalde natten kommer ofte tidligere enn du tror.",
+   "tekst": "Den første kalde natten kommer ofte tidligere enn du tror."
+  },
+  {
+   "tale": "Tretti dagers åpent kjøp - du får pengene tilbake.",
+   "tekst": "30 dagers åpent kjøp - pengene tilbake."
+  },
+  {
+   "tale": "Trykk på knappen og bestill din buskjakke nå.",
+   "tekst": "Trykk på knappen og bestill din buskjakke nå."
+  }
+ ],
+ "_tre_CS_1_H1": "Konkrete tall/pris ✅, falsifiserbart (pris, mål, dager) ✅, men generiske linjer som 'rea'/'trykk på knappen' kan sies av konkurrent ❌ - akseptert da det lokaliserer kildebudskap uten å dikte nye fakta",
+ "CS_1_H2": [
+  {
+   "tale": "Fra fire hundre og nittini kroner til tre hundre og sytti-ni, nå.",
+   "tekst": "Fra 499 kr til 379 kr, nå."
+  },
+  {
+   "tale": "Rea på buskjakken.",
+   "tekst": "Rea på buskjakken."
+  },
+  {
+   "tale": "Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.",
+   "tekst": "Før 499 kr, nå bare 379 kr."
+  },
+  {
+   "tale": "Du sparer hundre og tjue kroner,",
+   "tekst": "Du sparer 120 kr,"
+  },
+  {
+   "tale": "tjuefire prosent rabatt, og du får to stykker i pakken.",
+   "tekst": "24 % rabatt, og du får 2 stk i pakken."
+  },
+  {
+   "tale": "Skjermer mot vind og kulde.",
+   "tekst": "Skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Den første kalde natten kommer ofte tidligere enn du tror.",
+   "tekst": "Den første kalde natten kommer ofte tidligere enn du tror."
+  },
+  {
+   "tale": "Du får tretti dagers åpent kjøp, pengene tilbake.",
+   "tekst": "30 dagers åpent kjøp – pengene tilbake."
+  },
+  {
+   "tale": "Trykk på knappen og bestill din buskjakke nå.",
+   "tekst": "Trykk på knappen og bestill din buskjakke nå."
+  }
+ ],
+ "_tre_CS_1_H2": "Priser/mål konkrete og falsifiserbare ✅✅, men generiske linjer som 'Rea på buskjakken' og CTA er noe konkurrent også kunne sagt ❌ på unikhet-spørsmålet.",
+ "CS_1_H3": [
+  {
+   "tale": "Tjuefire prosent rabatt på buskjakken.",
+   "tekst": "24 % rabatt på buskjakken."
+  },
+  {
+   "tale": "Den første kalde natten kommer ofte tidligere enn du tror.",
+   "tekst": "Den første kalde natten kommer ofte tidligere enn du tror."
+  },
+  {
+   "tale": "Rea på buskjakken.",
+   "tekst": "Rea på buskjakken."
+  },
+  {
+   "tale": "Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.",
+   "tekst": "Før 499 kr, nå bare 379 kr."
+  },
+  {
+   "tale": "Du sparer hundre og tjue kroner.",
+   "tekst": "Du sparer 120 kr."
+  },
+  {
+   "tale": "Tjuefire prosent rabatt, og du får to stykker i pakken.",
+   "tekst": "24 % rabatt, og du får 2 stykker i pakken."
+  },
+  {
+   "tale": "Skjermer mot vind og kulde.",
+   "tekst": "Skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Glidelåsen gjør at du kan vanne uten å løfte av jakken.",
+   "tekst": "Glidelåsen gjør at du kan vanne uten å løfte av jakken."
+  },
+  {
+   "tale": "Og du har fjorten dagers angrerett.",
+   "tekst": "Og du har 14 dagers angrerett."
+  },
+  {
+   "tale": "Trykk på knappen og bestill buskjakken din nå.",
+   "tekst": "Trykk på knappen og bestill buskjakken din nå."
+  }
+ ],
+ "_tre_CS_1_H3": "Visualisere ✅ (konkret jakke, pris, pakke), Falsifisere ✅ (pris og mengde kan sjekkes), Ingen konkurrent kan si det ✅ (spesifikk pris og funksjon knyttet til produktet)",
+ "G_1_H1": [
+  {
+   "tale": "Hva gir man til en forelder som allerede har alt?",
+   "tekst": "Hva gir man til en forelder som allerede har alt?"
+  },
+  {
+   "tale": "Hva gir man til den som elsker hagen sin?",
+   "tekst": "Hva gir man til den som elsker hagen sin?"
+  },
+  {
+   "tale": "Ikke enda en ting som havner i et skap, men noe hun faktisk trenger.",
+   "tekst": "Ikke enda en ting som havner i et skap, men noe hun faktisk trenger."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Den skjermer mammas roser og pappas busker mot vind og kulde.",
+   "tekst": "Den skjermer mammas roser og pappas busker mot vind og kulde."
+  },
+  {
+   "tale": "Se for deg reaksjonen: «Å,",
+   "tekst": "Se for deg reaksjonen: «Å,"
+  },
+  {
+   "tale": "hvordan visste du det?» Og du vet at du ga noe som betyr noe.",
+   "tekst": "hvordan visste du det?» Og du vet at du ga noe som betyr noe."
+  },
+  {
+   "tale": "Noe som skjermer plantene hun har stelt i årevis, mot vind og kulde.",
+   "tekst": "Noe som skjermer plantene hun har stelt i årevis, mot vind og kulde."
+  },
+  {
+   "tale": "Det er en gave som sier: «Jeg ser hva du elsker.» To jakker i pakken.",
+   "tekst": "Det er en gave som sier: «Jeg ser hva du elsker.» To jakker i pakken."
+  },
+  {
+   "tale": "Perfekt til jul, bursdag eller bare for å gi den perfekte gaven.",
+   "tekst": "Perfekt til jul, bursdag eller bare for å gi den perfekte gaven."
+  }
+ ],
+ "_tre_G_1_H1": "Konkret (busker/roser/to jakker) ✅, falsifiserbart (skjermer mot vind og kulde, to i pakken) ✅, konkurrent kan ikke signere den personlige foreldre-vinkelen ✅",
+ "G_1_H2": [
+  {
+   "tale": "Gaven mamma faktisk kommer til å bruke.",
+   "tekst": "Gaven mamma faktisk kommer til å bruke."
+  },
+  {
+   "tale": "Hva gir man til den som elsker hagen sin?",
+   "tekst": "Hva gir man til den som elsker hagen sin?"
+  },
+  {
+   "tale": "Ikke enda en ting som havner i et skap, men noe hen faktisk trenger.",
+   "tekst": "Ikke enda en ting som havner i et skap, men noe hen faktisk trenger."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Den skjermer mammas roser og pappas busker mot vind og kulde.",
+   "tekst": "Den skjermer mammas roser og pappas busker mot vind og kulde."
+  },
+  {
+   "tale": "Tenk deg reaksjonen.",
+   "tekst": "Tenk deg reaksjonen."
+  },
+  {
+   "tale": "Å, hvordan visste du det?",
+   "tekst": "Å, hvordan visste du det?"
+  },
+  {
+   "tale": "Og du vet at du ga noe som betyr noe,",
+   "tekst": "Og du vet at du ga noe som betyr noe,"
+  },
+  {
+   "tale": "noe som beskytter plantene hen har passet på i årevis.",
+   "tekst": "noe som beskytter plantene hen har passet på i årevis."
+  },
+  {
+   "tale": "Det er en gave som sier: Jeg ser hva du elsker.",
+   "tekst": "Det er en gave som sier: Jeg ser hva du elsker."
+  },
+  {
+   "tale": "To stykker i pakken.",
+   "tekst": "To stykker i pakken."
+  },
+  {
+   "tale": "Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven.",
+   "tekst": "Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven."
+  }
+ ],
+ "_tre_G_1_H2": "Konkret produkt og handling (visualisere ✅), vind/kulde-skjerming er sjekkbart (falsifisere ✅), men 'beskytter det hen elsker'-vinkelen er generisk gavespråk konkurrenter også kan bruke (ingen konkurrent ✅/❌ blandet).",
+ "G_1_H3": [
+  {
+   "tale": "Pappa kommer til å smile når han pakker opp denne.",
+   "tekst": "Pappa kommer til å smile når han pakker opp denne."
+  },
+  {
+   "tale": "Hva gir du til den som elsker hagen sin?",
+   "tekst": "Hva gir du til den som elsker hagen sin?"
+  },
+  {
+   "tale": "Ikke enda en ting som havner i et skap, men noe hen faktisk trenger.",
+   "tekst": "Ikke enda en ting som havner i et skap, men noe hen faktisk trenger."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Den skjermer mammas roser og pappas busker mot vind og kulde.",
+   "tekst": "Den skjermer mammas roser og pappas busker mot vind og kulde."
+  },
+  {
+   "tale": "Se for deg reaksjonen: «Å, hvordan visste du det?» Og du vet at du ga noe som betyr noe,",
+   "tekst": "Se for deg reaksjonen: «Å, hvordan visste du det?» Og du vet at du ga noe som betyr noe,"
+  },
+  {
+   "tale": "noe som beskytter plantene hen har stelt med i årevis.",
+   "tekst": "noe som beskytter plantene hen har stelt med i årevis."
+  },
+  {
+   "tale": "Det er en gave som sier: «Jeg ser hva du elsker.» To stykker i pakken.",
+   "tekst": "Det er en gave som sier: «Jeg ser hva du elsker.» 2 stk i pakken."
+  },
+  {
+   "tale": "Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven.",
+   "tekst": "Perfekt til jul, bursdag, eller bare for å gi den perfekte gaven."
+  }
+ ],
+ "_tre_G_1_H3": "Konkrete bilder (roser/busker/pakke ✅), falsifiserbart (2 stk, skjermer mot vind/kulde ✅), ingen konkurrent kan si nøyaktig dette uten samme produktfakta ✅",
+ "PD_1_H1": [
+  {
+   "tale": "Kalde netter ødelegger plantene dine.",
+   "tekst": "Kalde netter ødelegger plantene dine."
+  },
+  {
+   "tale": "Dette er løsningen.",
+   "tekst": "Dette er løsningen."
+  },
+  {
+   "tale": "Kalde netter ødelegger plantene dine.",
+   "tekst": "Kalde netter ødelegger plantene dine."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Trekk den over busken.",
+   "tekst": "Trekk den over busken."
+  },
+  {
+   "tale": "Lukk glidelåsen.",
+   "tekst": "Lukk glidelåsen."
+  },
+  {
+   "tale": "Stram snøringen rundt stammen.",
+   "tekst": "Stram snøringen rundt stammen."
+  },
+  {
+   "tale": "Klart!",
+   "tekst": "Klart!"
+  },
+  {
+   "tale": "Så enkelt er det.",
+   "tekst": "Så enkelt er det."
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to jakker i pakken.",
+   "tekst": "2 jakker i pakken."
+  },
+  {
+   "tale": "Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så det rekker til store busker og potteplanter.",
+   "tekst": "120 × 180 cm – passer til store busker og potteplanter."
+  },
+  {
+   "tale": "Den enkleste måten å skjerme plantene dine på før første kalde natt.",
+   "tekst": "Enkel måte å skjerme plantene før første kalde natt."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkrete, pekbare handlinger (trekk over busk, lukk glidelås, stram snøring) ✅ visualiserbart, ✅ falsifiserbart (fakta fra produktside), ✅ ingen konkurrent kan si nøyaktig dette uten samme produkt/mål.",
+ "PD_1_H2": [
+  {
+   "tale": "Slik redder du buskene før vinteren kommer.",
+   "tekst": "Slik redder du buskene før vinteren kommer."
+  },
+  {
+   "tale": "Den første kalde natten kommer ofte tidligere enn ventet.",
+   "tekst": "Den første kalde natten kommer ofte tidligere enn ventet."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Trekk den over busken.",
+   "tekst": "Trekk den over busken."
+  },
+  {
+   "tale": "Lukk glidelåsen.",
+   "tekst": "Lukk glidelåsen."
+  },
+  {
+   "tale": "Stram snøringen rundt stammen eller potten.",
+   "tekst": "Stram snøringen rundt stammen eller potten."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Du slipper å løfte den av for å vanne.",
+   "tekst": "Du slipper å løfte den av for å vanne."
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to stykker i pakken.",
+   "tekst": "Du får 2 stykker i pakken."
+  },
+  {
+   "tale": "Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så den passer store busker og potteplanter.",
+   "tekst": "120 × 180 cm – passer store busker og potteplanter."
+  },
+  {
+   "tale": "Den enkleste måten å beskytte hagen før vinteren kommer.",
+   "tekst": "Den enkleste måten å beskytte hagen før vinteren kommer."
+  },
+  {
+   "tale": "Bestill buskjakken via lenken.",
+   "tekst": "Bestill buskjakken via lenken."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret ✅ (steg-for-steg visning av bruk), falsifiserbart ✅ (mål og funksjon kan sjekkes), ingen konkurrent kan si det ❌ (generisk produktbeskrivelse uten unikt bevis)",
+ "PD_1_H3": [
+  {
+   "tale": "Vil du virkelig miste rosene i år?",
+   "tekst": "Vil du virkelig miste rosene i år?"
+  },
+  {
+   "tale": "Den første kalde natten kommer ofte tidligere enn du tror.",
+   "tekst": "Den første kalde natten kommer ofte tidligere enn du tror."
+  },
+  {
+   "tale": "Dette er buskjakken.",
+   "tekst": "Dette er buskjakken."
+  },
+  {
+   "tale": "Trekk den over busken.",
+   "tekst": "Trekk den over busken."
+  },
+  {
+   "tale": "Lukk glidelåsen.",
+   "tekst": "Lukk glidelåsen."
+  },
+  {
+   "tale": "Stram snøringen rundt stammen.",
+   "tekst": "Stram snøringen rundt stammen."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Du kan åpne den for å vanne planten.",
+   "tekst": "Du kan åpne den for å vanne planten."
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to stykker i pakken.",
+   "tekst": "Du får to stykker i pakken."
+  },
+  {
+   "tale": "Størrelsen er hundre og tjue ganger hundre og åtti centimeter, så den passer til store busker og potteplanter.",
+   "tekst": "120 × 180 cm – passer til store busker og potteplanter."
+  },
+  {
+   "tale": "Enkel måte å skjerme plantene på før vinteren kommer.",
+   "tekst": "Enkel måte å skjerme plantene på før vinteren kommer."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_PD_1_H3": "Visualisere ✅ (jakke, glidelås, snøring, mål i cm), Falsifisere ✅ (konkrete, faktabaserte påstander), Ingen konkurrent kan si det ⚠️ (generisk produktbeskrivelse uten unikt bevis)",
+ "SP_1_H1": [
+  {
+   "tale": "Sånn beskytter du buskene dine mot kulden i høst med denne jakken.",
+   "tekst": "Sånn beskytter du buskene dine mot kulden i høst med denne jakken."
+  },
+  {
+   "tale": "Hver høst lurer hagefolk på det samme: hvordan redder jeg plantene mine fra kulden?",
+   "tekst": "Hver høst lurer hagefolk på det samme: hvordan redder jeg plantene mine fra kulden?"
+  },
+  {
+   "tale": "Buskjakken er laget nettopp for det.",
+   "tekst": "Buskjakken er laget nettopp for det."
+  },
+  {
+   "tale": "Hvorfor virker den?",
+   "tekst": "Hvorfor virker den?"
+  },
+  {
+   "tale": "Fordi den er enkel.",
+   "tekst": "Fordi den er enkel."
+  },
+  {
+   "tale": "Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen eller potten.",
+   "tekst": "Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen eller potten."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to stykker i pakken, så det rekker til både busker og potteplanter.",
+   "tekst": "Du får 2 stk i pakken, så det rekker til både busker og potteplanter."
+  },
+  {
+   "tale": "Beskytt det du har brukt år på å dyrke.",
+   "tekst": "Beskytt det du har brukt år på å dyrke."
+  }
+ ],
+ "_tre_SP_1_H1": "Konkret handling (trekk over, lukk glidelås, stram snøring) ✅ visualisere, ✅ falsifiserbart (kan sjekkes mot produktsiden), ✅ ingen konkurrent kan si nøyaktig dette om sin egen 2-pk 120×180 buskjakke.",
+ "SP_1_H2": [
+  {
+   "tale": "Hvorfor snakker alle om buskjakken i år?",
+   "tekst": "Hvorfor snakker alle om buskjakken i år?"
+  },
+  {
+   "tale": "Hver høst lurer hageeiere på det samme: hvordan beskytter jeg plantene mot kulden?",
+   "tekst": "Hver høst lurer hageeiere på det samme: hvordan beskytter jeg plantene mot kulden?"
+  },
+  {
+   "tale": "Den legges rett over hele planten.",
+   "tekst": "Den legges rett over hele planten."
+  },
+  {
+   "tale": "Hvorfor?",
+   "tekst": "Hvorfor?"
+  },
+  {
+   "tale": "Sånn gjør du det:",
+   "tekst": "Sånn gjør du det:"
+  },
+  {
+   "tale": "Trekk den over busken, lukk glidelåsen, og stram snøringen rundt stammen eller potten.",
+   "tekst": "Trekk den over busken, lukk glidelåsen, og stram snøringen rundt stammen eller potten."
+  },
+  {
+   "tale": "Ferdig!",
+   "tekst": "Ferdig!"
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to stykker i pakken, så det rekker til både busker og potteplanter.",
+   "tekst": "Du får to stykker i pakken, så det rekker til både busker og potteplanter."
+  },
+  {
+   "tale": "Beskytt det du har brukt år på å dyrke.",
+   "tekst": "Beskytt det du har brukt år på å dyrke."
+  }
+ ],
+ "_tre_SP_1_H2": "Visualisere ✅ (trekke over, lukke glidelås, stramme snøring), falsifisere ✅ (konkrete, faktabaserte påstander), ingen konkurrent kan si det ❌ (generisk produktbeskrivelse som kunne gjelde liknende produkter)",
+ "SP_1_H3": [
+  {
+   "tale": "Kulden kommer.",
+   "tekst": "Kulden kommer."
+  },
+  {
+   "tale": "Dette er det hageeiere bruker.",
+   "tekst": "Dette er det hageeiere bruker."
+  },
+  {
+   "tale": "Hver høst stiller hageeiere seg det samme spørsmålet: hvordan redder jeg plantene fra kulda?",
+   "tekst": "Hver høst stiller hageeiere seg det samme spørsmålet: hvordan redder jeg plantene fra kulda?"
+  },
+  {
+   "tale": "Svaret er buskjakke.",
+   "tekst": "Svaret er buskjakke."
+  },
+  {
+   "tale": "Hvorfor?",
+   "tekst": "Hvorfor?"
+  },
+  {
+   "tale": "Den er enkel.",
+   "tekst": "Den er enkel."
+  },
+  {
+   "tale": "Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen.",
+   "tekst": "Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen."
+  },
+  {
+   "tale": "Ferdig.",
+   "tekst": "Ferdig."
+  },
+  {
+   "tale": "Den skjermer mot vind og kulde.",
+   "tekst": "Den skjermer mot vind og kulde."
+  },
+  {
+   "tale": "Du får to jakker i pakken - nok til både busker og potteplanter.",
+   "tekst": "Du får to jakker i pakken - nok til både busker og potteplanter."
+  },
+  {
+   "tale": "Beskytt det du har brukt år på å dyrke.",
+   "tekst": "Beskytt det du har brukt år på å dyrke."
+  }
+ ],
+ "_tre_SP_1_H3": "Visualisere: ✅ (trekk over busken, glidelås, snøring rundt stammen) | Falsifiserbart: ✅ (to jakker, skjermer mot vind og kulde) | Ingen konkurrent kan si det: ❌ (generisk produktbeskrivelse, ikke unik for denne buskjakken)"
+}
