@@ -60,7 +60,19 @@ Read the reason code in Shopify, check column 2, take the decision in column 3. 
 | Money | Not taken yet | **Already taken from us, plus a fee** |
 | Can we refund to end it? | **Yes.** Shopify Help Center: *"If you issue a full refund, then the cardholder can't initiate a chargeback."* | **No.** Shopify Help Center: *"You can't issue a refund after a cardholder initiates a chargeback."* |
 | If we ignore it | It is not lost on the spot — but it can escalate into a chargeback. Measured: three unanswered inquiries escalated (#4914, #5044, #4706) | The loss becomes final |
-| Measured outcome (one store, **66 disputes, 2026-09-26**) | **39 of 39 decided inquiries won** | **3 won of 7 decided** (was 1 of 4 on 2026-09-20) |
+| Measured outcome (one store, **80 disputes, 2026-10-02**) | **44 of 44 decided inquiries won** | **5 won of 9 decided** (3 of 7 on 2026-09-26, 1 of 4 on 2026-09-20) |
+
+⚠️ **A chargeback is winnable — the old "1 of 4" is three measurements out of date.**
+It now stands at **5 of 9, over half**, and the direction has been upward at every
+re-measurement. Never tell the VA or the owner that a chargeback is mostly hopeless;
+that framing is what makes a winnable one get skipped.
+⛔ **And a passed deadline is still worth a submission.** **#4914** (chargeback,
+348 SEK) had its evidence submitted **8.5 hours after** the 01:00 deadline on
+2026-09-30, Shopify accepted it, and it was decided **WON on 2026-10-01**. The daily
+alarm had called that window closed and "not a task" — the money came back because
+the VA submitted anyway. Measured in the same pull: of the 9 decided chargebacks,
+4 carried our evidence and 3 were won with **no** evidence at all, so evidence is
+neither a guarantee nor a precondition. Submit, every time, however late.
 
 ⚠️ **"Inquiries are never lost" is partly true by construction — do not lean on it.**
 When an inquiry escalates, Shopify does not add a second row: **the same dispute
