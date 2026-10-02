@@ -327,7 +327,7 @@ export function annonstextUr(text) {
     }
     if (/swedish\s*\(use this\)/i.test(s) && /\|/.test(s)) { iTabell = true; continue; }
     if (/copy card/i.test(s) && arRubrik(s)) { iCopy = true; continue; }
-    if (/^(hook idea|hook|caption overlays?|alternative hooks?|primary text|headline|description)\s*[:(]/i.test(s)) ut.push(s);
+    if (/^(hook idea|hook|caption overlays?|alternative hooks?|primary text(?:\s*\d)?|headline(?:\s*\d)?|description)\s*[:(]/i.test(s)) ut.push(s);
   }
   return ut.join('\n').replace(/https?:\/\/\S+/gi, ' ');
 }

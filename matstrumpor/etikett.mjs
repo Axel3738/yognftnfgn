@@ -26,6 +26,12 @@
 // ⚠️ ETIKETTEN ÄR INGEN DOM. Kill och skalning kräver `bedombar` (≥ 300 kr
 // ELLER ≥ 3 köp, ANALYSMETOD) — båda fälten står på samma rad.
 //
+// ⛔ Sedan 3:2:2 (Axels beslut ROUTING C 2026-10-02) stängs ALDRIG en annons på
+// sin etikett. Etiketten per annons är lärdomen (vad gick, vilken hook, vilket
+// fel); stängningsbeslutet tas per ADSET i dom.mjs ("With this method we are only
+// turning off at the ad set level not ad level", kursens 3:2:2-lektion) och blir
+// ett FÖRSLAG till Axel.
+//
 // 30 % är högt mot Evolves band 10–30 % ("högre spend, lägre andel"), men
 // deras breakthroughs på nivån $0–100k/mån tog i median 67,9 % av kampanjen.
 // Vi ligger på den nivån, så tröskeln står kvar.

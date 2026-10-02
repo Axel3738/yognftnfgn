@@ -36,9 +36,24 @@ test('en annons som inte startat saknar mätning utan att kasta', () => {
 });
 
 test('planen skiljer nya, ändrade och oförändrade på etikett, status, mätdag och spend', () => {
-  const bef = new Map([[rad.namn, { id: 'p1', etikett: 'LOSER', status: 'ACTIVE', matt: '2026-10-01', spend: 4389 }]]);
+  const bef = new Map([[rad.namn, { id: 'p1', etikett: 'LOSER', status: 'ACTIVE', matt: '2026-10-01', spend: 4389, adset: 'broad_advplus_purchase_nya16', adset_dom: null }]]);
   assert.deepEqual(planera([rad], bef), { nya: [], andrade: [], oandrade: 1 });
+  // 3:2:2: en ny adsetdom (eller ett nytt adset) är en ändring — raden skrivs om.
+  assert.equal(planera([{ ...rad, adset_dom: 'STANG' }], bef).andrade.length, 1);
+  assert.equal(planera([{ ...rad, adset: 'MATSTRUMP_T065_gift_video' }], bef).andrade.length, 1);
   const bef2 = new Map([[rad.namn, { id: 'p1', etikett: 'LOSER', status: 'ACTIVE', matt: '2026-09-30', spend: 4000 }]]);
   assert.equal(planera([rad], bef2).andrade.length, 1);
   assert.equal(planera([{ ...rad, namn: 'NY' }], bef).nya.length, 1);
+});
+
+test('3:2:2-kolumnerna: Adset-id, Adset-roll och Adset-dom skrivs av koden, och de som saknas i schemat läggs till', async () => {
+  const { saknadeKolumner } = await import('../growthguide.mjs');
+  const e = egenskaperFor({ ...rad, adset_id: '120251591832340023', adset_roll: 'champions', adset_dom: 'CHAMPIONS' });
+  assert.equal(e['Adset-id'].rich_text[0].text.content, '120251591832340023');
+  assert.equal(e['Adset-roll'].select.name, 'champions');
+  assert.equal(e['Adset-dom'].select.name, 'CHAMPIONS');
+  const gammaltSchema = Object.fromEntries(Object.keys(MASKINKOLUMNER).filter((k) => !k.startsWith('Adset-')).map((k) => [k, {}]));
+  assert.deepEqual(Object.keys(saknadeKolumner({ ...gammaltSchema, Anteckning: {} })).sort(), ['Adset-dom', 'Adset-id', 'Adset-roll']);
+  assert.deepEqual(saknadeKolumner(Object.fromEntries(Object.keys(MASKINKOLUMNER).map((k) => [k, {}]))), {});
+  for (const k of Object.keys(MANNISKOKOLUMNER)) assert.equal(k in saknadeKolumner({}), false, `${k} läggs aldrig till av koden`);
 });

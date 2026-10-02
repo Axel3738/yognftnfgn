@@ -175,6 +175,11 @@ test('hamtaAvlasning gör bara GET-anrop, ett fönster per distinkt D0, och väg
     },
     alla: async (sokvag, params) => {
       anrop.push(['alla', sokvag, 'GET', params]);
+      if (sokvag.endsWith('/adsets')) return [
+        { id: 'x', name: 'nya16', status: 'ACTIVE', effective_status: 'ACTIVE', created_time: '2026-08-27T04:00:00+0200' },
+        { id: 'y', name: 'bilder', status: 'ACTIVE', effective_status: 'ACTIVE', created_time: '2026-08-27T04:00:00+0200' },
+      ];
+      if (sokvag.endsWith('/insights') && params?.level === 'adset') return [{ adset_id: 'x', date_start: '2026-09-20', spend: '40.00', actions: [], purchase_roas: [] }];
       if (sokvag.endsWith('/ads')) return [
         { id: '1', name: 'A', created_time: '2026-08-27T04:49:55+0200', effective_status: 'ACTIVE', adset: { id: 'x', name: 'nya16' } },
         { id: '2', name: 'B', created_time: '2026-08-27T09:00:00+0200', effective_status: 'ACTIVE', adset: { id: 'x', name: 'nya16' } },
@@ -195,7 +200,10 @@ test('hamtaAvlasning gör bara GET-anrop, ett fönster per distinkt D0, och väg
   // Två distinkta D0 × (ad-nivå + kampanjnivå) = 4, plus vecka 2 och 3 för
   // båda grupperna (D0 26 resp. 20 dygn gamla, under omprövningsgränsen 35) = 4.
   assert.equal(fonsterAnrop.length, 8);
-  assert.equal(anrop.filter((a) => a[3]?.time_increment).length, 1, 'kampanjens dagserie läses EN gång');
+  assert.equal(anrop.filter((a) => a[3]?.time_increment && a[3]?.level !== 'adset').length, 1, 'kampanjens dagserie läses EN gång');
+  assert.equal(anrop.filter((a) => a[3]?.time_increment && a[3]?.level === 'adset').length, 1, 'adsetens dagserie (3:2:2) läses EN gång, för hela kampanjen');
+  assert.deepEqual(jobb.adsets.map((a) => [a.id, a.annonser, a.aktiva_annonser, a.serie.length]), [['x', 2, 2, 1], ['y', 1, 0, 0]]);
+  assert.ok(jobb.kampanj_serie.length > 0, 'kampanjens dagserie följer med till domen per adset');
   assert.equal(jobb.kampanj_start, '2026-08-27');
   assert.equal(jobb.annonser[0].forsta_vecka.since, '2026-08-27');
   assert.equal(jobb.annonser[2].forsta_vecka.since, '2026-09-02');

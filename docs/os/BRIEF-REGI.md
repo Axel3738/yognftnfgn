@@ -114,6 +114,39 @@ regeln fanns inte när de skrevs. En brief utan datum (spärrläget) döms fullt
 
 ---
 
+## Matstrumpor: ett koncept = tre hookar + COPY CARD med 2 + 2 (3:2:2, 2026-10-02)
+
+Axels beslut ROUTING C: Matstrumpors annonser byggs som Evolves 3:2:2 — ett
+koncept är ett testadset med **tre annonser (samma kropp, tre hookar)**, och varje
+annons bär **två rubriker och två primärtexter**. Briefen bär därför:
+
+- en hooktabell H1–H3 (`Swedish (use this) | English meaning`) med regin för hook-
+  raden per variant; kroppen är densamma,
+- tre namn `…_<nnn>_h1_v1 … _h3_v1` (`node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3`)
+  och tre Notion-rader med samma brief,
+- ett COPY CARD i den här formen — uppladdaren (`matstrumpor/struktur.mjs lasCopyKort`)
+  läser det, och en brief med en rubrik eller en text laddas aldrig upp:
+
+```
+## COPY CARD (goes in Ads Manager, not in the creative) — shared by the three hook ads
+**Primary text 1:**
+> …
+**Primary text 2:**
+> …
+**Headline 1:** `…`
+**Headline 2:** `…`
+**Description:** `…`
+**CTA button:** `Handla nu` (Shop Now)
+**Destination:** https://matstrumpor.se/products/sushi-strumpor
+```
+
+De två texterna säger två olika saker (en vinkel var), och de två rubrikerna likaså —
+skrivna av sonnet-subagenten mot `docs/copy-regler.md`, tre-frågorstestet på varje.
+Butikens namn står aldrig i dem. Bild och video blir aldrig samma koncept. Skriv
+aldrig "upload goes to adset …": adsetet är konceptets eget.
+
+---
+
 ## Mät från dag 1 — annars finns ingen före-siffra
 
 Per annons i `products/<id>/batch-log.md`, fylls i av varje `/cs`-läsning och

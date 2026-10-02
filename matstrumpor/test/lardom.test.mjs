@@ -138,3 +138,27 @@ test('omdöpta annonser följer med: etiketten på det nya namnet räknas för d
   assert.equal(s.beslut, 'FORTSATT');
   assert.equal(s.utfall[0].annons, 'NY');
 });
+
+test('3:2:2: tre hookar på samma löpnummer är ETT försök i taket, inte tre', async () => {
+  const { konceptStatus, nastaIteration, koncepttak, vantandeKoncept } = await import('../lardom.mjs');
+  const { tolka } = await import('../namn.mjs');
+  const brief = (annons) => ({ kod: 'BRIEF', annons, koncept: 'nytt', parent: 'ingen' });
+  const rader = ['MATSTRUMP_sushi_gift_ugc_090_h1_v1', 'MATSTRUMP_sushi_gift_ugc_090_h2_v1', 'MATSTRUMP_sushi_gift_ugc_090_h3_v1'].map(brief);
+  const etiketter = [
+    { kod: 'ETIKETT', annons: rader[0].annons, etikett: 'LOSER', datum: '2026-10-10' },
+    { kod: 'ETIKETT', annons: rader[1].annons, etikett: 'INGEN_LEVERANS', datum: '2026-10-10' },
+    { kod: 'ETIKETT', annons: rader[2].annons, etikett: 'INGEN_LEVERANS', datum: '2026-10-10' },
+  ];
+  const s = konceptStatus('nytt', rader, etiketter, { kalla: 'gissning' });
+  assert.equal(s.iterationer, 1);
+  assert.equal(s.med_utfall, 1);
+  assert.equal(s.beslut, 'FORTSATT', 'ett test av tre — taket döms först efter tre');
+  assert.equal(s.utfall[0].etikett, 'LOSER', 'försökets utfall = hookarnas bästa etikett');
+  assert.equal(nastaIteration(rader, 'nytt'), 2);
+  const t = koncepttak({ lardomarSedanForraRonden: 5, kadensBriefer: 6, hookarPerKoncept: 3, vantandeKoncept: 3, testplatser: 4 });
+  assert.equal(t.antal, 1, 'platserna sätter taket: 4 testplatser − 3 koncept på väg');
+  assert.equal(t.briefer, 3);
+  assert.equal(koncepttak({ lardomarSedanForraRonden: 5, kadensBriefer: 6, hookarPerKoncept: 3 }).antal, 2, 'kadensen: 6 briefer = 2 koncept');
+  const logg = [...rader.map((r) => ({ ...r, datum: '2026-10-03' })), { kod: 'BRIEF', annons: 'MATSTRUMP_sushi_gift_ugc_091_h1_v1', datum: '2026-10-03', status: 'Väntar på råklipp (NEW FOOTAGE)' }];
+  assert.deepEqual(vantandeKoncept(logg, { sedan: '2026-10-02', tolka }), [90], 'en inspelning som väntar på råklipp väntar inte på en plats');
+});

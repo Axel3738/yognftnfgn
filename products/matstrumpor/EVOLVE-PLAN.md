@@ -4,7 +4,7 @@ Axel 2026-10-01: "jag kör så många tasks så det är viktigt att du är struk
 jag allt". Det här är EN lista. Den uppdateras av sessionen som gör något på den, aldrig av minnet.
 Bakgrunden står i `docs/os/evolve/EVOLVE-GAP-ANALYS.md`.
 
-Senast uppdaterad: 2026-10-02 kväll (Axels tre beslut: C, produktsidan, A).
+Senast uppdaterad: 2026-10-02 kväll (Axels tre beslut: C, produktsidan, A; Bygge 1 = 3:2:2 byggt).
 
 ---
 
@@ -29,7 +29,7 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 | # | Beslut | Vad det betyder | Vem gör |
 |---|---|---|---|
 | 1 | **"merga"** | Grenen ligger på `main` (3d764c01). Rutinen lör 3/10 07:00 kör den nya koden. | klart |
-| 2 | **ROUTING = C, 3:2:2** ("Jag gillar chadbots sätt") | ⚠️ Läst i kursen 2026-10-02 (lektionen "How To Set Up a 3:2:2 Campaign" + Media Buying Structure 2026): ordet DCT/dynamic creative finns INTE i kursen. 3:2:2 = **tre vanliga annonser per adset (samma koncept, tre hookar), var och en med 2 rubriker + 2 primärtexter**, i EN CBO med ett Champions-adset och flera testadsets; ett koncept = ett adset; bild och video aldrig i samma adset. Under några hundra dollar/dag **max 5 adsets inkl. champions**, varje adset ska kunna få 3 × CPA per dag (≈ 925 kr), test 7 dagar, stäng på ADSET-nivå, aldrig annons; vinnare = adsetet tar majoriteten av spenden vid KPI eller kampanjens ROAS förbättras; flytt till champions vid 20–30 % budgetandel. Under $1k/dag: fokus på vinnarannonser, ingen ABO-skalning. Så för Matstrumpor (~2 700 kr/dag): champions + högst 2–3 testadsets i taget. | sessionen bygger om `/matstrumpor` (Adsmanager-MCP:n) OCH `/matstrumporkungen` (domen per adset, 7-dagarsregeln, flyttregeln, max 5 adsets) |
+| 2 | **ROUTING = C, 3:2:2** ("Jag gillar chadbots sätt") | ⚠️ Läst i kursen 2026-10-02 (lektionen "How To Set Up a 3:2:2 Campaign" + Media Buying Structure 2026): ordet DCT/dynamic creative finns INTE i kursen. 3:2:2 = **tre vanliga annonser per adset (samma koncept, tre hookar), var och en med 2 rubriker + 2 primärtexter**, i EN CBO med ett Champions-adset och flera testadsets; ett koncept = ett adset; bild och video aldrig i samma adset. Under några hundra dollar/dag **max 5 adsets inkl. champions**, varje adset ska kunna få 3 × CPA per dag (≈ 925 kr), test 7 dagar, stäng på ADSET-nivå, aldrig annons; vinnare = adsetet tar majoriteten av spenden vid KPI eller kampanjens ROAS förbättras; flytt till champions vid 20–30 % budgetandel. Under $1k/dag: fokus på vinnarannonser, ingen ABO-skalning. Så för Matstrumpor (~2 700 kr/dag): champions + högst 2–3 testadsets i taget. | ✅ **Byggt 2026-10-02 kväll** (Bygge 1 nedan): `/matstrumpor` gör ett testadset per koncept via Adsmanager-MCP:n och vägrar det sjätte; `/matstrumporkungen` dömer per adset och föreslår stäng/flytta. Budgeten var 10 000 kr/dag vid bygget (inte 2 700) — den läses live, och taket blev 5 (budgeten bär 10). Champions = `09-17 UGC`. Torrkörd mot kontot: 8 adsets levererar mot taket 5, kungen föreslår att fyra gamla stängs (de som fungerar står kvar — kursen: stäng aldrig det som fungerar). Inget skapat i Meta — första uppladdningen väntar på Axels "kör" |
 | 2b | **Growth sheet i Matstrumpors teamspace** (Axels ord: "lägg gärna notiondatabasen i matstrumpors teamspace") | Arkivet (`arkiv.md`) är bara läsbart och skrivs över av koden. Byggs som en Notion-databas "Matstrumpor Growth Guide": rutinen skriver mätkolumnerna (etikett, typ, förälder, hook/hold, spend, köp, ROAS, playbook), människor äger kolumnerna Anteckning/Beslut/Nästa steg som koden aldrig rör. Axel ser den i Notion. | ✅ **Byggd 2026-10-02** under Axels sida (han skapade sidan och bjöd in integrationen samma förmiddag): databasen `3ed270ab-908c-811a-9eff-feddb5f5e2de`, 128 rader, https://www.notion.so/3ed270ab908c811a9efffeddb5f5e2de. `matstrumpor/growthguide.mjs --skarpt` körs i kungens rond efter `--arkiv`; koden skriver bara mätkolumnerna, Anteckning/Beslut/Nästa steg/Ägare är människornas. Id i `matstrumpor/growthguide.json` |
 | 3 | **Produktsidans copy ändras så den säger samma sak som Nathalies video** (present, favoriträtt, "sålde slut i november") + NY INFORMATION och MEKANISM ur `ny-information.md`/`mekanismer.md` (Axel 2026-10-02: "detta kommer bli bra eftersom vi nyss fått all denna information"); två versioner, Sonnet 4.6 och Fable 5.1 ultracode, före lansering | Inte en ny sida: den vanliga `matstrumpor.se/products/sushi-strumpor`. Axels fråga står kvar: är kunderna de som har svårt för presenter, eller de som köper tusen julklappar? **Svaret mäts, gissas inte:** enkäten (`enkat/`), Judge.me-recensionerna, annonskommentarerna och ordermönstret (par per order, decemberandel, presentmeddelanden). Sedan skrivs copyn av huvudsessionen (landningssideundantaget, regel 6), visas som före/efter, och går live på Axels ok. ATC-graden efteråt är facit (5,5 % nu). | ✅ **Två versioner levererade 2026-10-02** (workflow `wf_b17ebc96-70c` med ny informationen): jämförelsesidan https://claude.ai/artifact/DN6qLRcQeN1GSPhycSMuSu, texterna + granskningen i `produktsida/2026-10-02-tva-versioner.md`, hela underlaget i `2026-10-02-v2-med-ny-information.json`. Sonnet bar ett faktafel i YouGov-raden. ✅ **Axels val: Fable, LIVE 2026-10-02 08:08 UTC i hans struktur Problem → gif → Lösning → gif/bild → Funktioner → bild → Garanti; ⛔ omskriven 08:21 UTC efter hans dom ("I USA gav 32 procent … enligt Bankrate" = "inte bra copy"): alla statistikmeningar borta, regeln i `docs/copy-regler.md` + spärr i verktyget** (`matstrumpor/produktsida/sushi-strumpor.html`, verktyget `matstrumpor/produktsida.mjs`, säkerhetskopia i `produktsida/backup/`, läst som kund i Chromium). ⏰ Påminnelse 26/10: novemberraderna ses över före 1/11 (Axel: "vi får inte glömma att uppdatera den innan november"). ✅ Tretton språk bär den nya texten sedan samma förmiddag (översättare + granskare per språk, kontroll 13 av 13). v1 utan ny informationen: `2026-10-02-v1-utan-ny-information.json` |
 | 4 | **Copyregeln = A** (Evolves: aldrig ett märke som referens) | Inskriven i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` med de sex andra prompt-reglerna. Vardagsreferenser (takeaway, julstrumpa) kvar. | klart |
@@ -51,8 +51,7 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
   uppladdaren loggar `--kreator <namn>` så arkivet räknar vinst per kreatör.
 - **ATC-graden i rutinen** (Chadbot fråga 2): `kor.mjs --hamta` läser `add_to_cart` + `landing_page_view`,
   domen skriver ATC % för varje spend winner, tröskel 8 %. Byggs i nästa session.
-- **DCT-uppladdaren** (ROUTING C, beslutat 2026-10-02): ett dynamic creative-adset per batch,
-  3:2:2, promovering vid 20–30 % budgetandel. Bygg i `.claude/commands/matstrumpor.md` + motorn.
+- ✅ **3:2:2-uppladdaren och adsetdomen** (ROUTING C) byggda 2026-10-02 kväll — se Bygge 1.
 - **Growth Guide i Notion** (beslut 2b): databas + rutinen skriver mätkolumnerna varje rond.
 - **Produktsidans copy** (beslut 3): research ur egen data → copy → före/efter till Axel.
 - **Research in i briefen** (läcka 3): kungen läser enkäten, kommentarerna och recensionerna
@@ -107,7 +106,19 @@ aldrig statistik på produktsidan). Produktsidan säger samma sak som vinnarvide
 **Det som INTE är i rutinerna än** är tre byggen. Varje prompt nedan är skriven för en NY
 session på repot (CLAUDE.md läses automatiskt); klistra in den som första meddelande.
 
-### Bygge 1: 3:2:2 i uppladdaren och kungen (svälten, läcka 2)
+### Bygge 1: 3:2:2 i uppladdaren och kungen (svälten, läcka 2) — ✅ BYGGT 2026-10-02 kväll
+
+Gjort (grenen `claude/confident-cannon-c5p7kh`, mergad till `main`):
+`matstrumpor/struktur.mjs` (taket, koncepten, adsetnamnet `MATSTRUMP_T<nnn>_<vinkel>_<video|bild>`,
+COPY CARD 2 + 2, Meta-specarna, tillbakaläsningen), `matstrumpor/dom.mjs` (domen per adset),
+`kor.mjs --struktur/--ko/--creative/--adset-skapad/--kontroll`, adseten i `--hamta` och
+`--dom-alla --logga` (`ADSET_DOM` + `FORSLAG` per adset), arkivets och Growth Guidens adsetkolumner,
+koncepttaket i `--status`, båda kommandofilerna, `docs/os/BRIEF-REGI.md` (COPY CARD 2 + 2) och
+`ITERATIONS-PLAYBOOK.md` avsnitt 11. 233 tester, granskat av fem oberoende granskare med skeptiker (26 fynd rättade). Torrkört mot nya kungen (läs-bart). Kvar:
+första skarpa uppladdningen på Axels "kör" — den visar om Meta tar `asset_feed_spec` med två
+texter genom MCP:n (`--kontroll` läser tillbaka det; en annons med en text går aldrig upp tyst).
+
+Prompten som byggde det:
 
 ```
 Bygg om Matstrumpors annonsstruktur till Evolves 3:2:2, Axels beslut ROUTING C 2026-10-02.
