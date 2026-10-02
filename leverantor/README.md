@@ -13,6 +13,7 @@ ingen bra strategi"). Leverantören är **CWD**, agenten i Kina (Slack `cwd-yqg1
 | `meddelanden/3-prisgenomgang.md` | Prisuppdelning och volympriser, taköverdraget först. |
 | `meddelanden/4-villkor.md` | Frakten varannan vecka, betala när det skickas, garantipolicy för defekter. |
 | `meddelanden/5-jamforelseoffert.md` | Offert från Matedropshipping (Evolves leverantör) att jämföra med. |
+| **`svar.md`** | **Det CWD har svarat, med datum.** 2026-10-01: deposition + rest vid leverans, beställ 1–2 veckor i förväg, ätpinnar bara när de står på ordern. |
 | `inkopsvarde.mjs` | Vilka produkter vi köper in mest av, i kronor (sålda × Cost per item). |
 | `rapporter/` | Körningarna av `inkopsvarde.mjs`. |
 

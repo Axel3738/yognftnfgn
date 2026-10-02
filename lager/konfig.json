@@ -74,6 +74,13 @@
     }
   ],
   "butiker_utanfor_arket": {
-    "Matstrumpor": "Lagret är SLUT. CWD markerar ordrarna fulfilled automatiskt (spårningsnumret skapas direkt), men inget har lämnat sedan 22–23/9: förra lagerbeställningen var en bluff mot CWD, de har beställt nytt och Axel har beställt 1 000, som kommer inom tre dagar (Axel 2026-10-01). Mätt samma kväll: 415 ordrar #4807–#5247 med paket som inte rört sig, 819 sushilådor + 42 donut/pizza/hamburgare + 810 ätpinnar. De 1 000 går nästan helt åt till de väntande. CWD postar från Kina. Arket visar 0 tills CWD fyller på."
+    "Matstrumpor": "Lagret är SLUT. CWD markerar ordrarna fulfilled automatiskt (spårningsnumret skapas direkt), men inget har lämnat sedan 22–23/9: förra lagerbeställningen var en bluff mot CWD, de har beställt nytt och Axel har beställt 1 000, som kommer inom tre dagar (Axel 2026-10-01). Mätt samma kväll: 415 ordrar #4807–#5247 med paket som inte rört sig, 819 sushilådor + 42 donut/pizza/hamburgare + 810 ätpinnar. De 1 000 går nästan helt åt till de väntande. CWD postar från Kina. CWD 2026-10-01: ny fabrik (den gamla klarade inte massproduktion), allt utom sushistrumporna finns i lager och de väntande ordrarna skickas när sushistrumporna kommer. Ankomstdag inte angiven. Arket visar 0 tills CWD fyller på."
+  },
+  "cwd_villkor": {
+    "comment": "CWD:s svar 2026-10-01 kväll, hela loggen i leverantor/svar.md.",
+    "deposition": "Deposition vid beställning, resten vid leverans. Procent och vad \"leverans\" betyder är inte besvarat.",
+    "storbestallning_i_forvag_dagar": "7-14 (\"säkrast minst 1-2 veckor i förväg\"). Black Week börjar 23/11, alltså beställ 9-16/11.",
+    "atpinnar": "Skickas bara när de står på ordern (paketerbjudandena), aldrig som tillägg till varje sushilåda.",
+    "takoverdrag_tyg": "Tillverkaren har cirka 60 000 m tyg förberett."
   }
 }

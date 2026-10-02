@@ -115,6 +115,7 @@ Q4-siffrorna i handen.** Efter mitten av Q2 har du ingen hävstång kvar.
 | **Nu, oktober** | CWD:s stängning och sista beställningsdag inför kinesiska nyåret 6/2 2027 | `2-nyaret.md` |
 | Oktober | Prisuppdelning på taköverdraget och topp 5, plus volympriser | `3-prisgenomgang.md` |
 | Oktober | Jämförelseoffert från en andra agent | `5-jamforelseoffert.md` |
-| November | Villkor: frakten varannan vecka, pay-as-you-ship, garantipolicy | `4-villkor.md` |
+| **9–16 november** | Black Friday-beställningen (CWD 2026-10-01: "minst 1–2 veckor i förväg", Black Week börjar 23/11). Deposition + rest vid leverans är redan erbjudet (`svar.md`) | — |
+| November | Villkor: frakten varannan vecka, garantipolicy | `4-villkor.md` |
 | December | Betala alla fakturor, skicka julpaket till packarna | — |
 | **Januari** | Den stora förhandlingen: Q4-siffrorna, Q1-order, priser och villkor för Q2 | ny, byggs på Q4-utfallet |
