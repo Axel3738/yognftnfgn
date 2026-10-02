@@ -18,7 +18,10 @@ test('reglerna i konfigen är kursens 3:2:2: 5 adsets, 3 annonser, 2 rubriker, 2
 
 test('adsetnamnet bär konceptets löpnummer, vinkeln och video/bild — och läses tillbaka', () => {
   assert.equal(adsetNamn({ nummer: 65, vinkel: 'gift', mediatyp: 'video' }), 'MATSTRUMP_T065_gift_video');
-  assert.deepEqual(tolkaAdsetNamn('MATSTRUMP_T065_gift_video'), { nummer: 65, vinkel: 'gift', mediatyp: 'video' });
+  assert.deepEqual(tolkaAdsetNamn('MATSTRUMP_T065_gift_video'), { nummer: 65, uppladdning: null, vinkel: 'gift', mediatyp: 'video' });
+  // Uppladdningens adset (Axels beslut 2026-10-02): datum, bokstav, vinkel eller mix.
+  assert.deepEqual(tolkaAdsetNamn('MATSTRUMP_U261005b_mix_bild'), { nummer: null, uppladdning: 'U261005b', vinkel: 'mix', mediatyp: 'bild' });
+  assert.equal(rollFor({ id: '7', namn: 'MATSTRUMP_U261005_mix_video' }, KONFIG), 'test');
   assert.equal(tolkaAdsetNamn('broad_advplus_purchase_nya16'), null);
   assert.throws(() => adsetNamn({ nummer: 65, vinkel: 'gift', mediatyp: 'okand' }), /blandas aldrig/);
 });

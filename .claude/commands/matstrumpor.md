@@ -37,12 +37,16 @@ säger vad som gäller i båda fallen.
 
 ## 3:2:2 — reglerna (kursen "How To Set Up a 3:2:2 Campaign", läst 2026-10-02)
 
-- **Ett koncept = ett testadset.** Tre vanliga annonser per adset: samma koncept,
-  **tre hookar** (`_h1 _h2 _h3` på samma löpnummer). Varje annons bär
+- ⛔ **En uppladdning = ett nytt adset** (Axels beslut 2026-10-02 kväll, ersatte
+  "ett koncept = ett adset med tre hookar" samma dag): varianterna blir inte klara
+  samtidigt, så allt som är klart vid körningen går upp i ETT nytt adset per
+  mediatyp — `MATSTRUMP_U<ÅÅMMDD>[b …]_<vinkel|mix>_<video|bild>`, högst sex
+  annonser (fler ⇒ ett adset till, b). En ensam annons får ett eget adset.
+  Koncept kan blandas i en uppladdning. Varje annons bär
   **2 rubriker + 2 primärtexter** ur briefens COPY CARD (Ads Managers "flera
   textalternativ" — en vanlig annons, **aldrig ett dynamic creative-adset**;
   ordet DCT finns inte i kursen).
-- **Bild och video aldrig i samma adset.** Ett blandat koncept stoppas.
+- **Bild och video aldrig i samma adset.** En uppladdning med båda blir två adsets.
 - **Högst 5 levererande adsets inklusive Champions** (Champions + högst 4 test),
   och aldrig fler än budgeten bär med 3 × break-even-CPA per adset och dag
   (~925 kr). **Uppladdaren vägrar ett sjätte** — konceptet väntar i hubben tills
@@ -86,12 +90,11 @@ Bash-anrop.
    Notion-sidan) och strukturen, och skriver planen i
    `matstrumpor/output/ko-<datum>.json`. Varje koncept får en status — skriv ut
    ALLA i svaret, en rad som försvinner tyst är värre än en rad som stoppas:
-   - `✅ BYGG` — tre hookar, 2 + 2 copy, en ledig plats. Byggs i steg 5.
+   - `✅ BYGG` — en uppladdning (ett adset): annonserna med 2 + 2 copy, en ledig plats. Byggs i steg 5.
    - `⏳ PLATS` — klart, men strukturen är full. Väntar i hubben (status orörd).
-   - `⏳ HOOKAR` — färre än tre hookvarianter i kön. Väntar.
    - `⏳ COPY` — COPY CARD har inte 2 rubriker + 2 primärtexter (alla briefer
      före 2026-10-02 har en av varje). Väntar — se steg 4.
-   - `⛔ STOPP` — bild och video blandat, fler än tre annonser, dubblett, eller
+   - `⛔ STOPP` — dubblett, okänt format, eller
      **redan byggt** (testadsetet finns i kampanjen, eller en annons är redan
      uppladdad — ett koncept byggs aldrig två gånger). Finns adsetet i kampanjen
      men inga `UPPLADDAD`-rader för dess annonser (Axel publicerade det, 5c): kör
@@ -133,7 +136,7 @@ Bash-anrop.
      `--ko` körs om. Tre-frågorstestet på varje ny rad.
    - Kör `--ko` igen efter varje ändring.
 
-5. **Bygg varje `✅ BYGG`-koncept — ett i taget, och läs tillbaka varje.**
+5. **Bygg varje `✅ BYGG`-uppladdning (ett adset) — en i taget, och läs tillbaka varje.**
    Allt du skickar till Meta står färdigt i `matstrumpor/output/ko-<datum>.json`
    (`koncept[].adset_spec`, `koncept[].annonser[].copy`) — skriv aldrig om det
    för hand.
@@ -143,9 +146,9 @@ Bash-anrop.
       budstrategi** — kampanjen är CBO. Aldrig `is_dynamic_creative: true`.
       Logga adsetet direkt, FÖRE annonserna:
       ```bash
-      node matstrumpor/kor.mjs --adset-skapad <adset-id> <adset-namn> --koncept <nnn>
+      node matstrumpor/kor.mjs --adset-skapad <adset-id> <adset-namn>
       ```
-   b. **De tre annonserna**, en i taget:
+   b. **Uppladdningens annonser**, en i taget:
       - Hämta filen (bilaga med `tools/notion-fil.mjs`, eller Drive-mappen med
         `tools/drive-ls.py`; Drive-filen laddas via
         `https://drive.usercontent.google.com/download?id=<id>&confirm=t`).
@@ -175,9 +178,9 @@ Bash-anrop.
         på en människa" (Axel kastar utkasten i Ads Manager, sedan kvitteras det
         med `node matstrumpor/kor.mjs --adset-kasserat <adset-id>` — utan kvittot
         byggs konceptet aldrig igen). Bygg inga fler koncept.
-   c. **Publicera — bara det körningen skapat, bara ett helt koncept.**
-      - Kontrollera först: exakt **tre** annonser skapade, med exakt planens namn
-        (`_h1 _h2 _h3` ur `ko-<datum>.json`), utan `active_errors`. Annars:
+   c. **Publicera — bara det körningen skapat, bara en hel uppladdning.**
+      - Kontrollera först: exakt planens annonser skapade, med exakt planens namn
+        (ur `ko-<datum>.json`), utan `active_errors`. Annars:
         publicera inte (se 5b).
       - Försök läsa utkastet: `ads_get_ad_entities`, `object_state: "draft"`,
         `object_ids: [<adset-id>]`. **Går det:** varje annons ska bära två
@@ -189,7 +192,7 @@ Bash-anrop.
         `UPPLADDAD`-rad med `struktur: "3:2:2"`, alltså ett koncept som klarat
         `--kontroll` med 2 + 2 texter genom MCP:n.
         - **Inte bevisad (första 3:2:2-konceptet):** publicera INTE. Bygg bara
-          det konceptet, och skriv adset-id:t och de tre annons-id:na under
+          det konceptet, och skriv adset-id:t och annons-id:na under
           "Väntar på en människa": Axel öppnar utkastet i Ads Manager, ser att
           varje annons har två rubriker och två texter, och publicerar själv.
           Nästa körning läser tillbaka det (steg 3, "redan byggt").
@@ -197,10 +200,10 @@ Bash-anrop.
           är mätt; `--kontroll` i 5d är kontrollen. Fortfarande ett koncept i taget.
       - Svarade `ads_create_ad` med `status: DRAFT`: publicera med
         `ads_activate_entity`, `entity_type: "ad_set"`, `entity_id: <adset-id>`,
-        `object_ids` = adsetet + dess tre annonser och INGET annat,
+        `object_ids` = adsetet + dess annonser och INGET annat,
         `publish_as_active: true`. `PUBLISHING` betyder överlämnat, inte live —
         vänta två minuter. Svarade den med en riktig annons i `PAUSED`: slå på
-        just adsetet och de tre annonserna med `ads_activate_entity`, en i taget.
+        just adsetet och dess annonser med `ads_activate_entity`, en i taget.
       - ⛔ `ads_activate_entity` anropas ALDRIG med `entity_type: "campaign"`,
         aldrig utan `object_ids` vid en utkastpublicering, aldrig med kampanjens,
         Champions eller ett gammalt adsets id. **Axels egna utkast och allt PAUSED
@@ -209,7 +212,7 @@ Bash-anrop.
       ```bash
       node matstrumpor/kor.mjs --kontroll <adset-id>
       ```
-      Exit 0 = adsetet och de tre annonserna är på, exakt planens tre annonser,
+      Exit 0 = adsetet och annonserna är på, exakt planens annonser,
       2 + 2 texter på varje (briefens), rätt sida och pixel, länk till
       matstrumpor.se, en mediatyp, ingen egen budget, inget dynamic creative.
       Står något PAUSED som körningen skapade: slå på just det (5c) och kör om.
@@ -221,10 +224,10 @@ Bash-anrop.
       i efterhand) — felet går till nästa version.
    e. **Logga varje annons** — av koden, aldrig med `node -e`:
       ```bash
-      node matstrumpor/kor.mjs --uppladdad <namn> <annons-id> <adset-id> --koncept <nnn> --notion <sid-id> --kalla "<Drive-fil eller Notion>" --kreator <namn om en människa syns>
+      node matstrumpor/kor.mjs --uppladdad <namn> <annons-id> <adset-id> --notion <sid-id> --kalla "<Drive-fil eller Notion>" --kreator <namn om en människa syns>
       ```
       Raden får typen (IDEA/ITER/IMIT), föräldern ur namnet, adset-id:t och
-      konceptet. Den vägrar Champions, en gammal hink, en fjärde annons i adsetet
+      konceptet. Den vägrar Champions, en gammal hink, en annons som inte hör till uppladdningen
       och bild i ett videoadset. `--kreator` gör att arkivet kan räkna
       vinstbidrag per kreatör.
    f. Sätt radens status till **`Approved`** i Notion.
@@ -262,16 +265,16 @@ Bash-anrop.
 - [ ] `ad_account_id` verifierat = `730973156224390` (aldrig på kontonamnet)
 - [ ] Kampanjens `effective_status` läst live INNAN något laddades upp
 - [ ] `--struktur` körd: "Levererar: N av taket M" och lediga platser i rapporten
-- [ ] `--ko` körd: varje koncept redovisat med status (bygg / plats / hookar / copy / stopp) + odöpta + stoppade rader
+- [ ] `--ko` körd: varje uppladdning och väntande koncept redovisat med status (bygg / plats / copy / stopp) + odöpta + stoppade rader
 - [ ] Varje odöpt rad döpt efter att creativen FAKTISKT setts — aldrig gissat; bara sushi
 - [ ] Ingen copy skriven av huvudsessionen — rubrik 2 / text 2 av sonnet-subagent, tre-frågorstestet redovisat
-- [ ] Ett testadset per koncept, ur `adset_spec`: ingen budget, inte dynamic creative, loggat med `--adset-skapad` före annonserna
-- [ ] Tre annonser per adset, var och en med 2 rubriker + 2 primärtexter (`--creative`); utkastet läst före publicering, ELLER vägen bevisad av ett tidigare 3:2:2-koncept och `--kontroll` exit 0 efteråt, ELLER publiceringen lämnad till Axel
+- [ ] Ett nytt adset per uppladdning och mediatyp, ur `adset_spec`: ingen budget, inte dynamic creative, loggat med `--adset-skapad` före annonserna
+- [ ] Uppladdningens annonser (högst sex), var och en med 2 rubriker + 2 primärtexter (`--creative`); utkastet läst före publicering, ELLER vägen bevisad av ett tidigare 3:2:2-koncept och `--kontroll` exit 0 efteråt, ELLER publiceringen lämnad till Axel
 - [ ] Bara körningens egna objekt publicerade; inget annat utkast, inget PAUSED, ingen annan kampanj rörd
-- [ ] Exakt tre annonser skapade utan fel före publiceringen; första konceptet någonsin byggt ensamt och kontrollerat innan nästa
+- [ ] Exakt planens annonser skapade utan fel före publiceringen; första uppladdningen någonsin byggd ensam och kontrollerad innan nästa
 - [ ] `--kontroll <adset-id>` exit 0 för varje byggt adset (eller felet stoppade nästa koncept, raderna lämnade kön och felet står i rapporten)
 - [ ] Inget sjätte levererande adset; inget i Champions eller en gammal hink; bild och video aldrig blandat
 - [ ] Prisspärren körd; stoppade rader kommenterade i Notion och satta till `Draft`
-- [ ] Uppladdade rader satta till `Approved`; varje annons loggad med `--uppladdad … <adset-id> --koncept`
+- [ ] Uppladdade rader satta till `Approved`; varje annons loggad med `--uppladdad … <adset-id>`
 - [ ] `logg.jsonl` committad och pushad
 - [ ] Slutrapport i två listor; Axels uppgifter sist, numrerade

@@ -37,7 +37,7 @@ volymen.
 | Kampanj | `MATSTRUMP_SALES_20260826` `120251217860260023`, CBO |
 | Hub | `Matstrumpor creative hub` `3a7270ab-908c-80d2-9f35-e73e51e457ff` |
 | Kadens | **6 briefer per rond, var tredje dag** (Axels beslut 2026-09-21) — sedan 3:2:2 är det **2 koncept à 3 hookar** |
-| Struktur | **3:2:2** (Axels beslut ROUTING C 2026-10-02): EN CBO, Champions-adsetet `09-17 UGC` + högst 4 testadsets, ett koncept = ett testadset med tre hookar, 2 rubriker + 2 primärtexter per annons. **Domen per ADSET, aldrig per annons** (`matstrumpor/dom.mjs`) |
+| Struktur | **3:2:2** (Axels beslut ROUTING C 2026-10-02): EN CBO, Champions-adsetet `09-17 UGC` + högst 4 testadsets som tar spend; **varje uppladdning är ett nytt adset** med det som är klart (Axels beslut 2026-10-02 kväll — briefarna är fortfarande koncept à tre hookar, men hookarna går upp när de blir klara), 2 rubriker + 2 primärtexter per annons. **Domen per ADSET, aldrig per annons** (`matstrumpor/dom.mjs`) |
 | Rutin | **07:00 svensk tid varje dag** — `kor.mjs --kordag` avgör om det är rond (var tredje dag från förra rondens `ROND_KLAR`). Byggd 2026-09-22 |
 | Budget | **Axel skalar själv.** Ronden föreslår, rör aldrig en budget |
 | Minne | `products/matstrumpor/` + `matstrumpor/logg.jsonl` |

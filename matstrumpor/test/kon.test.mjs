@@ -23,89 +23,75 @@ const LAGE = strukturLage({ kampanj: { dagsbudget_sek: 10000 }, adsets: [
   { id: '1', namn: 'MATSTRUMP_T060_gift_video', effective_status: 'ACTIVE', aktiva_annonser: 3 },
 ] }, KONFIG, { breakEvenCpa: 308.48 });
 
-test('tre hookar på samma löpnummer blir ETT koncept = ett testadset med tre annonser', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_070_h1_v1', 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', 'MATSTRUMP_sushi_gift_ugc_070_h3_v1'];
+const D = '2026-10-05';
+
+test('en uppladdning blir ETT adset med allt som är klart — oavsett koncept och antal hookar (Axels beslut 2026-10-02)', () => {
+  const namn = ['MATSTRUMP_sushi_gift_ugc_070_h1_v1', 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', 'MATSTRUMP_sushi_curiosity_ugc_071_h1_v1'];
   const p = planera(namn.map((n) => rad(n)), KONFIG);
-  assert.equal(p.klara.length, 3);
-  const k = planeraKoncept(p.klara, KONFIG, { kort: kortFor(namn), lage: LAGE });
-  assert.equal(k.koncept.length, 1);
+  const k = planeraKoncept(p.klara, KONFIG, { kort: kortFor(namn), lage: LAGE, datum: D });
   assert.equal(k.att_bygga.length, 1);
-  assert.equal(k.att_bygga[0].adset_namn, 'MATSTRUMP_T070_gift_video');
+  assert.equal(k.att_bygga[0].adset_namn, 'MATSTRUMP_U261005_mix_video');
   assert.deepEqual(k.att_bygga[0].annonser.map((a) => a.namn), namn);
+  assert.deepEqual(k.att_bygga[0].koncept_nycklar, ['070', '071']);
   assert.deepEqual(k.att_bygga[0].annonser[0].copy.rubriker, KORT.rubriker);
 });
 
-test('ett julkoncept är ett koncept som alla andra: eget testadset, ingen jul-hink', () => {
-  const namn = ['MATSTRUMP_sushi_jul_ugc_071_h1_v1', 'MATSTRUMP_sushi_jul_ugc_071_h2_v1', 'MATSTRUMP_sushi_jul_ugc_071_h3_v1'];
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: LAGE });
-  assert.equal(k.att_bygga[0].adset_namn, 'MATSTRUMP_T071_jul_video');
+test('en ensam annons går upp i ett eget adset — ingen väntan på tre hookar', () => {
+  const namn = ['MATSTRUMP_sushi_jul_ugc_072_h1_v1'];
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: LAGE, datum: D });
+  assert.equal(k.att_bygga.length, 1);
+  assert.equal(k.att_bygga[0].adset_namn, 'MATSTRUMP_U261005_jul_video');
 });
 
-test('bild och video aldrig i samma adset: blandat koncept stoppas', () => {
-  const p = planera([rad('MATSTRUMP_sushi_gift_ugc_072_h1_v1'), rad('MATSTRUMP_sushi_gift_ugc_072_h2_v1'), bildrad('MATSTRUMP_sushi_gift_static_072_h3_v1')], KONFIG);
-  const k = planeraKoncept(p.klara, KONFIG, { kort: kortFor(p.klara.map((a) => a.namn)), lage: LAGE });
-  assert.equal(k.koncept[0].status, 'stopp');
-  assert.match(k.koncept[0].skal.join(' '), /bild och video/);
-  assert.equal(k.att_bygga.length, 0);
+test('bild och video i samma uppladdning blir två adsets — de blandas aldrig', () => {
+  const p = planera([rad('MATSTRUMP_sushi_gift_ugc_073_h1_v1'), bildrad('MATSTRUMP_sushi_gift_static_074_v1')], KONFIG);
+  const k = planeraKoncept(p.klara, KONFIG, { kort: kortFor(p.klara.map((a) => a.namn)), lage: LAGE, datum: D });
+  assert.deepEqual(k.att_bygga.map((b) => b.adset_namn), ['MATSTRUMP_U261005_gift_video', 'MATSTRUMP_U261005_gift_bild']);
 });
 
-test('färre än tre hookar väntar i hubben — adsetet byggs aldrig halvt', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_073_h1_v1', 'MATSTRUMP_sushi_gift_ugc_073_h2_v1'];
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: LAGE });
-  assert.equal(k.koncept[0].status, 'vantar_hookar');
-  assert.match(k.koncept[0].skal[0], /2 av 3/);
-});
-
-test('fler än tre annonser i ett koncept stoppas — 3:2:2 tar tre', () => {
-  const namn = [1, 2, 3, 4].map((h) => `MATSTRUMP_sushi_gift_ugc_074_h${h}_v1`);
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: LAGE });
-  assert.equal(k.koncept[0].status, 'stopp');
+test('fler annonser än taket per uppladdning blir ett adset till (b), och ett upptaget namn hoppas över', () => {
+  const namn = [1, 2, 3, 4, 5, 6, 7].map((h) => `MATSTRUMP_sushi_gift_ugc_075_h${h}_v1`);
+  const lage = { ...LAGE, adsets: [...LAGE.adsets, { id: '8', namn: 'MATSTRUMP_U261005_gift_video', effective_status: 'ACTIVE' }] };
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage, datum: D });
+  assert.deepEqual(k.att_bygga.map((b) => [b.adset_namn, b.annonser.length]), [['MATSTRUMP_U261005b_gift_video', 6], ['MATSTRUMP_U261005c_gift_video', 1]]);
 });
 
 test('copy med bara 1 rubrik + 1 text (gamla briefen) väntar på copy — ingen annons går upp med en rubrik', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_075_h1_v1', 'MATSTRUMP_sushi_gift_ugc_075_h2_v1', 'MATSTRUMP_sushi_gift_ugc_075_h3_v1'];
+  const namn = ['MATSTRUMP_sushi_gift_ugc_076_h1_v1', 'MATSTRUMP_sushi_gift_ugc_076_h2_v1'];
   const enkel = { ...KORT, texter: ['Bara en.'], rubriker: ['Bara en.'] };
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn, enkel), lage: LAGE });
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn, enkel), lage: LAGE, datum: D });
+  assert.equal(k.att_bygga.length, 0);
   assert.equal(k.koncept[0].status, 'vantar_copy');
   assert.match(k.koncept[0].skal.join(' '), /2 \("Primary text 1:"/);
   assert.match(k.koncept[0].skal.join(' '), /sonnet/);
 });
 
 test('ett syskons COPY CARD gäller när en hookvariant saknar eget kort', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_076_h1_v1', 'MATSTRUMP_sushi_gift_ugc_076_h2_v1', 'MATSTRUMP_sushi_gift_ugc_076_h3_v1'];
+  const namn = ['MATSTRUMP_sushi_gift_ugc_077_h1_v1', 'MATSTRUMP_sushi_gift_ugc_077_h2_v1', 'MATSTRUMP_sushi_gift_ugc_077_h3_v1'];
   const kort = new Map([[namn[0], KORT], [namn[1], null], [namn[2], null]]);
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort, lage: LAGE });
-  assert.equal(k.koncept[0].status, 'klar');
-  assert.deepEqual(k.koncept[0].annonser.map((a) => a.copy_kalla), ['egen', 'syskon', 'syskon']);
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort, lage: LAGE, datum: D });
+  assert.equal(k.att_bygga[0].status, 'klar');
+  assert.deepEqual(k.att_bygga[0].annonser.map((a) => a.copy_kalla), ['egen', 'syskon', 'syskon']);
 });
 
-test('ett sjätte adset vägras: över taket väntar konceptet på en plats', () => {
+test('ett sjätte adset vägras: över taket väntar uppladdningen på en plats', () => {
   const full = strukturLage({ kampanj: { dagsbudget_sek: 10000 }, adsets: [
     { id: '120251591832340023', namn: '09-17 UGC', effective_status: 'ACTIVE', aktiva_annonser: 5 },
     ...[1, 2, 3, 4].map((i) => ({ id: String(i), namn: `MATSTRUMP_T06${i}_gift_video`, effective_status: 'ACTIVE', aktiva_annonser: 3 })),
   ] }, KONFIG, { breakEvenCpa: 308.48 });
   assert.equal(full.lediga, 0);
-  const namn = ['MATSTRUMP_sushi_gift_ugc_077_h1_v1', 'MATSTRUMP_sushi_gift_ugc_077_h2_v1', 'MATSTRUMP_sushi_gift_ugc_077_h3_v1'];
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: full });
+  const namn = ['MATSTRUMP_sushi_gift_ugc_078_h1_v1'];
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: full, datum: D });
   assert.equal(k.koncept[0].status, 'vantar_plats');
   assert.equal(k.att_bygga.length, 0);
   assert.match(k.koncept[0].skal.join(' '), /vägrar ett adset till/);
 });
 
 test('utan strukturen ur Meta laddas inget upp', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_078_h1_v1', 'MATSTRUMP_sushi_gift_ugc_078_h2_v1', 'MATSTRUMP_sushi_gift_ugc_078_h3_v1'];
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: null });
+  const namn = ['MATSTRUMP_sushi_gift_ugc_079_h1_v1'];
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: null, datum: D });
   assert.equal(k.koncept[0].status, 'vantar_struktur');
   assert.equal(k.att_bygga.length, 0);
-});
-
-test('--grupp slår ihop tre ensamma löpnummer (tre öppningar på samma kropp) till ett koncept', () => {
-  const namn = ['MATSTRUMP_sushi_curiosity_ugc_063_v1', 'MATSTRUMP_sushi_curiosity_ugc_066_v1', 'MATSTRUMP_sushi_curiosity_ugc_067_v1'];
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort: kortFor(namn), lage: LAGE, grupper: [['063', '066', '067']] });
-  assert.equal(k.koncept.length, 1);
-  assert.equal(k.koncept[0].adset_namn, 'MATSTRUMP_T063_curiosity_video');
-  assert.equal(k.koncept[0].sammanslagen, true);
-  assert.equal(k.koncept[0].status, 'klar');
 });
 
 test('en rad med tre hookfiler (--hookrad) blir tre annonser _h1 _h2 _h3', () => {
@@ -160,26 +146,26 @@ test('briefFil hittar briefen på namnet, på det omdöpta namnet, och syskonets
   assert.equal(briefFil('MATSTRUMP_sushi_gift_ugc_099_v1', logg), null);
 });
 
-test('ett koncept som redan är byggt byggs aldrig igen: adsetet i kampanjen, ADSET_SKAPAD i loggen eller en uppladdad annons', () => {
-  const namn = ['MATSTRUMP_sushi_gift_ugc_083_h1_v1', 'MATSTRUMP_sushi_gift_ugc_083_h2_v1', 'MATSTRUMP_sushi_gift_ugc_083_h3_v1'];
+test('en annons som redan byggts byggs aldrig igen: uppladdad, publicerad men ologgad, eller i ett opublicerat bygge', () => {
+  const namn = ['MATSTRUMP_sushi_gift_ugc_083_h1_v1', 'MATSTRUMP_sushi_gift_ugc_083_h2_v1'];
   const klara = planera(namn.map((n) => rad(n)), KONFIG).klara;
-  const iKampanjen = { ...LAGE, adsets: [...LAGE.adsets, { id: '9', namn: 'MATSTRUMP_T083_gift_video', effective_status: 'PAUSED' }] };
-  const a = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: iKampanjen });
-  assert.equal(a.koncept[0].status, 'stopp');
-  assert.equal(a.koncept[0].redan_byggd, true);
-  assert.match(a.koncept[0].skal.join(' '), /PAUSED/);
-  const b = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_T083_gift_video', koncept: '083', datum: '2026-10-05' }] });
-  assert.equal(b.koncept[0].status, 'stopp');
-  // Bara loggat: förra bygget publicerades inte — eget läge, aldrig "redan byggt" (Approved).
-  assert.equal(b.koncept[0].utkast_opublicerat, true);
-  assert.notEqual(b.koncept[0].redan_byggd, true);
-  assert.match(b.koncept[0].skal.join(' '), /--adset-kasserat 9/);
-  // Kvitterat som kasserat ⇒ konceptet byggs igen.
-  const kass = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_T083_gift_video', koncept: '083', datum: '2026-10-05' }, { kod: 'ADSET_KASSERAT', adset_id: '9', datum: '2026-10-05' }] });
-  assert.notEqual(kass.koncept[0].status, 'stopp');
-  const c = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'UPPLADDAD', annons: namn[1], annons_id: '77' }] });
-  assert.equal(c.koncept[0].status, 'stopp');
-  assert.equal(c.att_bygga.length, 0);
+  const skapad = { kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_U261004_gift_video', koncept: 'U261004', annonser: namn, datum: '2026-10-04' };
+  // Opublicerat bygge: annonserna hålls, aldrig Approved.
+  const b = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [skapad], datum: D });
+  assert.equal(b.att_bygga.length, 0);
+  assert.equal(b.stopp[0].utkast_opublicerat, true);
+  assert.match(b.stopp[0].skal.join(' '), /--adset-kasserat 9/);
+  // Kvitterat som kasserat ⇒ byggs igen.
+  const kass = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [skapad, { kod: 'ADSET_KASSERAT', adset_id: '9', datum: D }], datum: D });
+  assert.equal(kass.att_bygga.length, 1);
+  // Axel publicerade det (syns i kampanjen) men inget loggat: kontroll, inte nytt bygge.
+  const iKampanjen = { ...LAGE, adsets: [...LAGE.adsets, { id: '9', namn: skapad.adset_namn, effective_status: 'ACTIVE' }] };
+  const pub = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: iKampanjen, logg: [skapad], datum: D });
+  assert.equal(pub.att_bygga.length, 0);
+  assert.match(pub.stopp[0].skal.join(' '), /--kontroll 9/);
+  // Uppladdad annons ⇒ bara den andra går upp.
+  const c = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'UPPLADDAD', annons: namn[1], annons_id: '77' }], datum: D });
+  assert.deepEqual(c.att_bygga[0].annonser.map((a) => a.namn), [namn[0]]);
 });
 
 test('ett namn utan löpnummer (s010h1, haikuh3) stoppas synligt — det försvinner aldrig tyst ur kön', () => {
@@ -200,10 +186,11 @@ test('--hookrad tar id:t med eller utan bindestreck, eller hela länken, och sä
   assert.match(okandVinkel.stoppade[0].skal[0], /--hookrad/);
 });
 
-test('en hookvariants EGET underkända kort stoppar konceptet — syskonets kort gäller bara när eget saknas', () => {
+test('en hookvariants EGET underkända kort håller just den annonsen — syskonen går upp', () => {
   const namn = ['MATSTRUMP_sushi_gift_ugc_086_h1_v1', 'MATSTRUMP_sushi_gift_ugc_086_h2_v1', 'MATSTRUMP_sushi_gift_ugc_086_h3_v1'];
   const kort = new Map([[namn[0], KORT], [namn[1], { ...KORT, texter: ['Köp på Matstrumpor nu.', 'B.'] }], [namn[2], KORT]]);
-  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort, lage: LAGE });
-  assert.equal(k.koncept[0].status, 'vantar_copy');
-  assert.match(k.koncept[0].skal.join(' '), /_086_h2_v1: butikens namn/);
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort, lage: LAGE, datum: D });
+  assert.deepEqual(k.att_bygga[0].annonser.map((a) => a.namn), [namn[0], namn[2]]);
+  const v = k.koncept.find((x) => x.status === 'vantar_copy');
+  assert.match(v.skal.join(' '), /_086_h2_v1: butikens namn/);
 });
