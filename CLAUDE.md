@@ -339,12 +339,14 @@ på alla fjorton språk** (mätt 2026-10-01 med `marknader/judgeme-koll.mjs`). �
 förbi rutan ser bara knappen "Översätt" och har två gånger gett ett falskt "0 översatta". ⚠️ **Shop-appens
 recensioner kom in märkta engelska fast de var svenska** (8 av 8), och en sådan står överst och oöversatt
 på engelska sidan. Cowork rättade de sju på sushistrumporna 2026-10-01 (Reviews → ⋯ → Review details →
-"Detected review language"). Irénes på de olistade ätpinnarna är kvar (del C i
-`marknader/cowork/8-judgeme-kopian.txt`), och `judgeme-koll.mjs` listar sist varje recension märkt engelska.
+"Detected review language"). Irénes på de olistade ätpinnarna är kvar. Judge.me:s support ombads ändra den
+2026-10-02, och del C i `marknader/cowork/8-judgeme-kopian.txt` är reserven. `judgeme-koll.mjs` listar sist varje
+recension märkt engelska.
 ⚠️ **Den svenska sidan ritas ur Judge.me:s KOPIA i produktens metafält, inte ur Judge.me:s data** (mätt
 2026-10-02): kopian på sushistrumporna skrevs 2026-09-30 06:09 UTC, och ett ändrat språk skriver inte om
 den, så Kent, Wide Pia och Niklas stod kvar som engelska på svenska sidan dagen efter rättningen. De andra
-språken läser Judge.me direkt. Judge.me:s support synkar om (samma prompt, del D); en session skriver aldrig
+språken läser Judge.me direkt. Judge.me:s support ombads 2026-10-02 via mejl från kundsupport@matstrumpor.se
+att synka om kopian och märka Irénes recension som svensk. Del C och D i prompten är reserven. En session skriver aldrig
 i Judge.me:s metafält själv, och `judgeme-koll.mjs` jämför kopian med Judge.me allra sist. Böjningen i rutans antal ("Review word (plural)" per språk,
 `marknader/cowork/5-judgeme-texter.txt`) är rätt på finska och polska sedan 2026-10-01: "11 arvostelua",
 "11 recenzji". "Sort reviews by" är en dold skärmläsartext och "Anonym" är
