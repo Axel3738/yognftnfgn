@@ -81,6 +81,12 @@
     "deposition": "Deposition vid beställning, resten vid leverans. Procent och vad \"leverans\" betyder är inte besvarat.",
     "storbestallning_i_forvag_dagar": "7-14 (\"säkrast minst 1-2 veckor i förväg\"). Black Week börjar 23/11, alltså beställ 9-16/11.",
     "atpinnar": "Skickas bara när de står på ordern (paketerbjudandena), aldrig som tillägg till varje sushilåda.",
-    "takoverdrag_tyg": "Tillverkaren har cirka 60 000 m tyg förberett."
+    "takoverdrag_tyg": "Tillverkaren har cirka 60 000 m tyg förberett.",
+    "kapacitet_2026_10_02": {
+      "takoverdrag_per_dag": "600-800 (full personal, efter bekräftad order)",
+      "strumpor_produktion": "10 000 set på 5 dagar",
+      "strumpor_packning_per_dag": "200-300 set. Oklart om det är fabrikens lådpackning eller CWD:s orderpackning, frågat 2026-10-02."
+    },
+    "offert": "Google-ark 1LzOqPMlkYijF9hROliM9LNtVMbpPk78YzzYjNYbI2Ao, låst (401) 2026-10-02."
   }
 }
