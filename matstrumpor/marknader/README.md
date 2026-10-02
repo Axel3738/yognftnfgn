@@ -616,10 +616,23 @@ loggan utan .SE.
     överst längre. ⚠️ **Svenska sidan visade samma kväll fortfarande den gamla märkningen** på Kent, Wide
     Pia och Niklas: "Visa original (engelska)" under svensk text. Det ser ut som Judge.me:s cache av
     produktens data, för widgetdatan är redan rätt. Kolla igen nästa dag.
+  - ⚠️ **Kvar 2026-10-02 11:20 CEST (check-in-rutinen), och nu är orsaken mätt.** Den svenska sidan ritas
+    inte ur Judge.me:s data just då, utan ur den **kopia Judge.me sparar i produktens metafält i Shopify**:
+    `judgeme.review_widget_data` (sidans första recensioner, JSON) och `judgeme.review_widget_ssr_html`
+    (alla elva, HTML). Kopian skrevs senast **2026-09-30 06:05–06:09 UTC**, alltså före Coworks rättning,
+    och bär Kent, Wide Pia och Niklas som `en`; HTML:en har sju `en` och fyra `sv`. Judge.me:s widget-API
+    sa samtidigt `sv` på alla elva. Svenska sidan gjorde inget anrop till Judge.me (api 0), engelska sidan
+    tre: bara huvudspråket visar kopian. **Engelska sidan var rätt**, tre synliga, alla "Show original
+    (Swedish)". Att ändra språket skrev inte om kopian, och det gjorde inte heller Coworks textändringar
+    samma dag. Judge.me:s support ombeds synka om båda produkterna (`cowork/8-judgeme-kopian.txt` del D).
+    En session skriver aldrig i Judge.me:s metafält själv: det är Judge.me:s data, och deras nästa synk
+    skriver över det. `judgeme-koll.mjs` jämför sedan samma dag kopian med Judge.me per recension, allra
+    sist i utskriften ("Kopian i Shopify").
   - ⚠️ **En åttonde Shop-app-recension var också märkt engelska:** Irénes på **ätpinnarna**
     (`sushipinnar-i-akta-tra`, **olistad** i Shopify, så kunden når sidan bara via länk). Texten är
     "jättefina strumpor och rolig som julklapp". Cowork såg den men lät den vara, eftersom den inte stod i
-    prompten.
+    prompten. **Fortfarande `en` 2026-10-02**; den ändras på samma sätt som del B, i
+    `cowork/8-judgeme-kopian.txt` del C.
   - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
     varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
     ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
