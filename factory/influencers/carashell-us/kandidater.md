@@ -141,3 +141,17 @@ Hoppad över: RV Life DIY (nvmutts@gmail.com) — Leisure Travel Van, taköverdr
 | 42 | Cambriea & Bobby | [YT](https://www.youtube.com/@cambrieabobby4162) | 23,2K | RV → tiny home | cambrieaandbobby@influint.co (byrå) | 1a0fd365ac265b2e | kontaktad 2026-10-05 |
 | 43 | William & Robin — The Riverstone Life | [YT](https://www.youtube.com/@TheRiverstoneLife) | 16,7K | ny camper | hello@theriverstonelife.com | 1a0fd3665bb8df5f | kontaktad 2026-10-05 |
 | 44 | Byrd & Tasha — Sucka Free RV | [YT](https://www.youtube.com/@SuckaFreeRV) | 2,3K | okänd | Suckafreervusa@gmail.com | 1a0fd366fae82f65 | kontaktad 2026-10-05 |
+
+## Omgång 4 — 2026-10-05, UGC-agenten, 7 mejl
+
+Adresserna lästa på deras sida/Linktree/Stan samma dag. Hoppade över: Boundless Bronnekes (tillbakahållen, etrailer-sponsor), The Renegade Ramblers (redan #41).
+
+| # | Namn | Sida | Rigg | Mejl | Gmail-id | Status |
+|---|---|---|---|---|---|---|
+| 45 | Rachel — Wander Lawings | [sajt](https://wanderlawings.com) | 46 ft toy hauler | wanderlawings@gmail.com | 1a0fd38443e4a168 | kontaktad 2026-10-05 |
+| 46 | Natalie Himles (UGC) | [portfolio](https://fearlessfairygodmother.my.canva.site/natalie-himles-ugc-creator) | Jay Flight 212QB | fearlessfairygodmother@gmail.com | 1a0fd3852918f16b | kontaktad 2026-10-05 |
+| 47 | Sharissa Rendon (UGC) | [Linktree](https://linktr.ee/moonstonefool) | okänd | sharire.ugccreator@outlook.com | 1a0fd3858d845558 | kontaktad 2026-10-05 |
+| 48 | Bailey & Nicole — Bailey Goes Outside | [Linktree](https://linktr.ee/baileygoesoutside) | KZ Durango Gold | bgo2022@yahoo.com | 1a0fd38625315049 | kontaktad 2026-10-05 |
+| 49 | Danielle & Tommy — Slow Car Fast Home | [sajt](https://www.slowcarfasthome.com) | Airstream | slowcarfasthome@gmail.com | 1a0fd386c29ecec2 | kontaktad 2026-10-05 |
+| 50 | Lauren & Chris — AsWeRoam | [Stan](https://stan.store/asweroam) | okänd | Asweroam1@gmail.com | 1a0fd38767be50ee | kontaktad 2026-10-05 |
+| 51 | Scott & Van — The Adventure Detour | [sajt](https://theadventuredetour.com/contact/) | okänd, heltid sedan 2015 | scott@theadventuredetour.com | 1a0fd387ed10a8e3 | kontaktad 2026-10-05 |
