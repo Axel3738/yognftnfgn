@@ -140,7 +140,13 @@ varv gick inte att mäta (Playwright-timeout när två webbläsare körde samtid
 och räknas inte åt något håll. Kapplöpningen slår alltså inte varje gång, och
 den beror på nätet — en telefon med långsammare skrivningar träffas oftare.
 ⚠️ `bygg.mjs --steg tema` patchar `ms-paket.js` på plats (`patchaPaketJs`) —
-ankarna står kvar efter rättningen, testat. Inte inlagt i MAIN förrän Axel sagt till.
+ankarna står kvar efter rättningen, testat.
+
+✅ **Inlagt i det publicerade temat 2026-10-02 06:55 CEST (Axels "A")**: `korglada.mjs --skarpt`
+skrev båda filerna och läste tillbaka dem identiskt (originalen i `output/korglada/2026-10-02T04-55-36-643Z/`).
+Kundprov direkt efteråt mot det publicerade temat, ny session: standardvarianten (K1F1) och
+tvingad variant b (SUSHI-2FOR499), båda klicken öppnade lådan utan navigation, koden tillämplig,
+399 resp. 499 kr i lådan.
 
 ## Kommandon i terminalen
 
