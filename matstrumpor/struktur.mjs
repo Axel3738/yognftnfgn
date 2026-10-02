@@ -58,6 +58,7 @@ export function regler(konfig) {
     ung_annons_dagar: tal(s.ung_annons_dagar, 7),
     svalt_dagar: tal(s.svalt_dagar, 21),
     sasong: Array.isArray(s.sasong) ? s.sasong : [],
+    tak_min_andel: tal(s.tak_min_andel, 0.01),
     sedan: s.sedan ?? null,
   };
 }
@@ -101,6 +102,24 @@ export function levererar(adset) {
   return Number(adset?.aktiva_annonser ?? 0) > 0;
 }
 
+/** Räknas adsetet mot taket? Axels beslut A 2026-10-02: taket räknar bara
+ *  adsets som faktiskt TAR pengar — taket finns för att testerna ska få budget,
+ *  och ett adset Meta inte ger spend tar ingen budget från dem. Räknas: det
+ *  levererar OCH (det är Champions, ELLER yngre än testtiden — ett nytt test
+ *  har inte hunnit få spend, ELLER andelen av kampanjens spend senaste sju
+ *  dagarna ≥ tak_min_andel, ELLER andelen är okänd). Ren. */
+export function raknasMotTaket(adset, konfig, { idag = null } = {}) {
+  if (!levererar(adset)) return false;
+  const r = regler(konfig);
+  if (rollFor(adset, konfig) === 'champions' || rollFor(adset, konfig) === 'champions_bild') return true;
+  if (adset.andel_7d === null || adset.andel_7d === undefined) return true;
+  if (idag && adset.skapad) {
+    const dagar = Math.round((Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${String(adset.skapad).slice(0, 10)}T00:00:00Z`)) / 86400000);
+    if (Number.isFinite(dagar) && dagar < r.test_dagar) return true;
+  }
+  return Number(adset.andel_7d) >= r.tak_min_andel;
+}
+
 /** Kapaciteten: hur många adsets budgeten bär med 3 × CPA vardera. Ren. */
 export function kapacitet(dagsbudgetSek, breakEvenCpaSek, konfig) {
   const r = regler(konfig);
@@ -116,9 +135,11 @@ export function kapacitet(dagsbudgetSek, breakEvenCpaSek, konfig) {
  *  Ren. Taket = min(max_adsets_totalt, vad budgeten bär). */
 export function strukturLage(struktur, konfig, { breakEvenCpa = null } = {}) {
   const r = regler(konfig);
-  const adsets = (struktur?.adsets ?? []).map((a) => ({ ...a, roll: rollFor(a, konfig), levererar: levererar(a) }));
+  const idag = struktur?.datum ?? null;
+  const adsets = (struktur?.adsets ?? []).map((a) => ({ ...a, roll: rollFor(a, konfig), levererar: levererar(a), raknas: raknasMotTaket(a, konfig, { idag }) }));
   const champions = adsets.find((a) => a.roll === 'champions') ?? null;
-  const lev = adsets.filter((a) => a.levererar);
+  const lev = adsets.filter((a) => a.raknas);
+  const utanSpend = adsets.filter((a) => a.levererar && !a.raknas);
   const kap = kapacitet(struktur?.kampanj?.dagsbudget_sek, breakEvenCpa, konfig);
   const tak = Math.min(r.max_adsets_totalt, kap.ryms ?? r.max_adsets_totalt);
   const varningar = [];
@@ -127,6 +148,7 @@ export function strukturLage(struktur, konfig, { breakEvenCpa = null } = {}) {
   else if (!champions.levererar) varningar.push(`Champions-adsetet ${champions.namn} levererar inte (${champions.effective_status}, ${champions.aktiva_annonser ?? 0} aktiva annonser).`);
   if (kap.ryms === null) varningar.push(`Kapaciteten: ${kap.text} — taket blir max_adsets_totalt (${r.max_adsets_totalt}).`);
   else if (kap.ryms < r.max_adsets_totalt) varningar.push(`Budgeten bär bara ${kap.ryms} adsets à ${kap.per_adset_sek} kr/dag (${kap.text}) — taket är ${kap.ryms}, inte ${r.max_adsets_totalt}.`);
+  if (utanSpend.length) varningar.push(`${utanSpend.length} adsets är på men tar under ${Math.round(r.tak_min_andel * 100)} % av spenden och räknas inte mot taket (Axels beslut A 2026-10-02): ${utanSpend.map((a) => `${a.namn} ${a.andel_7d === null || a.andel_7d === undefined ? '' : `${Math.round(a.andel_7d * 1000) / 10} %`}`).join(', ')}.`);
   const gamlaLev = lev.filter((a) => a.roll === 'gammal');
   if (gamlaLev.length) varningar.push(`${gamlaLev.length} gamla adsets (före 3:2:2) levererar och räknas mot taket: ${gamlaLev.map((a) => a.namn).join(', ')}. Kungen dömer dem per adset; Axel stänger.`);
   const lediga = Math.max(0, tak - lev.length);
@@ -134,15 +156,16 @@ export function strukturLage(struktur, konfig, { breakEvenCpa = null } = {}) {
     kampanj: struktur?.kampanj ?? null,
     champions: champions ? { id: champions.id, namn: champions.namn, levererar: champions.levererar } : null,
     adsets,
-    levererande: lev.map((a) => ({ id: a.id, namn: a.namn, roll: a.roll })),
+    levererande: lev.map((a) => ({ id: a.id, namn: a.namn, roll: a.roll, andel_7d: a.andel_7d ?? null })),
+    utan_spend: utanSpend.map((a) => ({ id: a.id, namn: a.namn, roll: a.roll, andel_7d: a.andel_7d ?? null })),
     antal_levererande: lev.length,
     max_totalt: r.max_adsets_totalt,
     kapacitet: kap,
     tak,
     lediga,
     skal: lediga > 0
-      ? `${lev.length} av ${tak} adsets levererar — ${lediga} ${lediga === 1 ? 'plats' : 'platser'} för nya testadsets.`
-      : `Strukturen är full: ${lev.length} adsets levererar och taket är ${tak} — inget nytt testadset förrän ett stängts (kungens förslag, Axels klick).`,
+      ? `${lev.length} av ${tak} adsets tar spend — ${lediga} ${lediga === 1 ? 'plats' : 'platser'} för nya testadsets.`
+      : `Strukturen är full: ${lev.length} adsets tar spend och taket är ${tak} — inget nytt testadset förrän ett stängts (kungens förslag, Axels klick).`,
     varningar,
   };
 }

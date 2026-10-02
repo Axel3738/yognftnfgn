@@ -60,7 +60,7 @@ test('taket är det lägsta av 5 och vad budgeten bär; gamla levererande adsets
 test('åtta levererande adsets (läget 2026-10-02) ⇒ full struktur, noll lediga, och varför', () => {
   const lage = strukturLage({ kampanj: { dagsbudget_sek: 10000 }, adsets: [champ, ...[1, 2, 3, 4, 5, 6, 7].map((i) => gammal(i))] }, KONFIG, { breakEvenCpa: 308.48 });
   assert.equal(lage.lediga, 0);
-  assert.match(lage.skal, /Strukturen är full: 8 adsets levererar och taket är 5/);
+  assert.match(lage.skal, /Strukturen är full: 8 adsets tar spend och taket är 5/);
 });
 
 test('saknas Champions i kampanjen står det som en varning, aldrig tyst', () => {
@@ -196,4 +196,19 @@ test('sidNyckel: en Notion-länk med ?pvs=4 eller #block ger sidans id, inte fel
   assert.equal(sidNyckel(`https://www.notion.so/Rad-${id}?pvs=4`), id);
   assert.equal(sidNyckel(`https://www.notion.so/Rad-${id}#0123456789abcdef0123456789abcdef`), id);
   assert.equal(sidNyckel('3a7270ab-908c-80aa-bbcc-ddeeff001122'), id);
+});
+
+test('taket räknar bara adsets som tar spend (Axels beslut A 2026-10-02): under 1 % räknas inte, okänd andel och nya test räknas', () => {
+  const champA = { ...champ, andel_7d: 0.91 };
+  const g = (i, andel, extra = {}) => ({ ...gammal(i), andel_7d: andel, ...extra });
+  const lage = strukturLage({ datum: '2026-10-02', kampanj: { dagsbudget_sek: 10000 }, adsets: [champA, g(1, 0.05), g(2, 0.02), g(3, 0.009), g(4, 0.004), g(5, 0.0005), g(6, 0), g(7, null)] }, KONFIG, { breakEvenCpa: 308.48 });
+  assert.equal(lage.antal_levererande, 4, 'Champions, 5 %, 2 % och okänd');
+  assert.equal(lage.lediga, 1);
+  assert.equal(lage.utan_spend.length, 4);
+  assert.match(lage.varningar.join(' '), /räknas inte mot taket/);
+  // Ett nytt testadset med noll spend räknas ändå — det har inte hunnit få pengar.
+  const ny = { id: '900', namn: 'MATSTRUMP_T070_gift_video', effective_status: 'ACTIVE', aktiva_annonser: 3, skapad: '2026-09-30', andel_7d: 0 };
+  assert.equal(strukturLage({ datum: '2026-10-02', kampanj: { dagsbudget_sek: 10000 }, adsets: [champA, ny] }, KONFIG, { breakEvenCpa: 308.48 }).antal_levererande, 2);
+  // Champions räknas alltid.
+  assert.equal(strukturLage({ datum: '2026-10-02', kampanj: { dagsbudget_sek: 10000 }, adsets: [{ ...champ, andel_7d: 0 }] }, KONFIG, { breakEvenCpa: 308.48 }).antal_levererande, 1);
 });
