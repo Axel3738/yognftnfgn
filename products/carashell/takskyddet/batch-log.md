@@ -3234,3 +3234,41 @@ tre-frågorstestet redovisat per rad. 0 HeyGen-krediter — bild kostar inget.
 
 Marknadsvakten kördes inte: `placeringar` finns bara för US i
 `factory/opsmarknader.mjs`, så NO har ingen vakt att köra.
+
+---
+
+## 2026-10-02 — speglingen: 0 speglade, 3 stoppade, 2 källrader → Approved
+
+Samma tre rader som i går i `CaraShell SE ready to be active`, alla stoppade —
+inget uppladdat, ingen status ändrad, inga nya kommentarer (stopp-kommentarerna
+står kvar sedan tidigare körningar).
+
+| Källrad | Format | Stoppskäl |
+|---|---|---|
+| `Takoverdrag_FD_2_2` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | video | nämner butiken — **nionde dygnet** (24/9–2/10) |
+
+**Två källrader gick till `Approved`** — US-annonserna låg uppe i Magiborsten UK:
+
+| Källrad | Spegel i USA | Annons-id |
+|---|---|---|
+| `Takoverdrag_OB_21_1` | `CaraShellRoof_US_OB_121_1` | `120251717438280435` |
+| `Takoverdrag_OB_15_1` | `CaraShellRoof_US_OB_115_1` | `120251717431390435` |
+
+Raderna hade alltså kommit in i `CaraShell EN ready to be active` efter i går
+(kön stod tom då) — speglingen laddade upp dem i CaraShells hub tidigare, och
+US-rutinen 17:05 gjorde engelskan. Nu är den kön tom igen.
+
+Lästa live: SE-kampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 |
+2026-09-11` ACTIVE med 11 adsets, NO-kampanjen `CARASHELL_NO_Takovertrekket`
+ACTIVE med 12 adsets, pris SE 1 129 kr och NO 1 106 NOK ur butiken (båda
+stämmer mot creativens 1 129). 174 källannonser lästa i Bäverbutikens konto, 12
+fler än i går. Metas tre konton svarade utan strypning.
+
+Inget loggat i registret: `register.mjs log` vägrar 0 speglade.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555593435623456870`).
+`action_axel` skrevs om för hand av samma skäl som 2026-09-30 och 2026-10-01:
+fars dag-raderna hör inte i ACTION NEEDED, för de kan aldrig speglas och det är
+inte Axels beslut. Bara `GT_11_H1` står kvar där.
