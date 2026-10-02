@@ -24,7 +24,9 @@
 //    sänks aldrig. Före 2026-10-01 skrevs den en gång, utom till BREAKTHROUGH.
 //
 // ⚠️ ETIKETTEN ÄR INGEN DOM. Kill och skalning kräver `bedombar` (≥ 300 kr
-// ELLER ≥ 3 köp, ANALYSMETOD) — båda fälten står på samma rad.
+// OCH ≥ 3 köp, ANALYSMETOD; Axels beslut 2026-10-02 — till dess räknade
+// Matstrumpor ELLER, vilket gav 52 bedömbara mot 22 i Bäverbutiken samma
+// vecka). Båda fälten står på samma rad.
 //
 // 30 % är högt mot Evolves band 10–30 % ("högre spend, lägre andel"), men
 // deras breakthroughs på nivån $0–100k/mån tog i median 67,9 % av kampanjen.
@@ -57,7 +59,7 @@ export function etikettera(annons, kampanj, break_even, grindar) {
   const kop = Number.isFinite(num(annons.kop)) ? num(annons.kop) : 0;
   const roas = annons.roas === null || annons.roas === undefined ? null : num(annons.roas);
   const kampanjSpend = num(kampanj?.spend_sek);
-  const bedombar = spend >= grindar.signifikans_spend_sek || kop >= grindar.signifikans_kop;
+  const bedombar = spend >= grindar.signifikans_spend_sek && kop >= grindar.signifikans_kop;
   const bas = { namn: annons.namn, spend_sek: spend, kop, roas, bedombar };
 
   if (!Number.isFinite(spend)) return { ...bas, etikett: ETIKETT.INGEN_DATA, motivering: 'spend saknas i avläsningen.' };

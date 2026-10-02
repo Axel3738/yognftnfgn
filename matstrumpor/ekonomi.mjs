@@ -65,10 +65,10 @@ export function dom(annons, bryt, grindar) {
   const spend = num(annons.spend_sek);
   const kop = num(annons.kop);
   const roas = annons.roas === null || annons.roas === undefined ? null : num(annons.roas);
-  const bedombar = spend >= grindar.signifikans_spend_sek || kop >= grindar.signifikans_kop;
+  const bedombar = spend >= grindar.signifikans_spend_sek && kop >= grindar.signifikans_kop;
 
   if (!bedombar) {
-    return { namn: annons.namn, bedombar: false, dom: 'FOR_TIDIGT', motivering: `${spend.toFixed(0)} kr och ${kop} köp — under grinden ${grindar.signifikans_spend_sek} kr eller ${grindar.signifikans_kop} köp.` };
+    return { namn: annons.namn, bedombar: false, dom: 'FOR_TIDIGT', motivering: `${spend.toFixed(0)} kr och ${kop} köp — under grinden ${grindar.signifikans_spend_sek} kr OCH ${grindar.signifikans_kop} köp (båda krävs).` };
   }
   if (roas === null) {
     return { namn: annons.namn, bedombar: true, dom: 'DATA_SAKNAS', motivering: 'ROAS saknas i avläsningen — ingen dom hittas på.' };

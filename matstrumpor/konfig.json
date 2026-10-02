@@ -148,7 +148,7 @@
     "ingen_leverans_spend_sek": 10,
     "ingen_leverans_dagar": 7,
     "benchmark_andel": 0.3,
-    "comment": "Samma grindar som ANALYSMETOD.md. Ingen dom under 300 kr ELLER 3 köp. En annons med > 30 % av kampanjens vinstbidrag är benchmarken och dödas aldrig."
+    "comment": "Samma grindar som ANALYSMETOD.md. Ingen dom utan 300 kr OCH 3 köp (båda krävs, Axels beslut 2026-10-02). En annons med > 30 % av kampanjens vinstbidrag är benchmarken och dödas aldrig."
   },
   "skalning": {
     "vem": "Axel",

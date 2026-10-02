@@ -1,0 +1,135 @@
+{
+  "_kommentar": "Action item-banken för veckorapporten till redigerarna. Byggd 2026-10-02 ur kursens hantverksregler (docs/ecomtalent/fynd.json), Evolves iterationsplaybook (docs/os/evolve/ITERATIONS-PLAYBOOK.md) och matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL. ETT item per redigerare och vecka (Axels order), första ogjorda i listan för hennes högsta etikett. Engelska utan tankstreck, inga butiksnamn. typ: hantverk | omklipp | research | konkurrenter | läs.",
+  "per_utfall": {
+    "BREAKTHROUGH": [
+      {
+        "typ": "hantverk",
+        "text_en": "Write four lines with timestamps: which shot is the hook, which is the bridge, which is the hold, which is the CTA. We use it to build the next three iterations.",
+        "varfor": "Komponentkartan skrivs i dna.md när en annons blir breakthrough, och iterationerna byggs på den. Fyra rader med tidskod är mätbart och under en timme.",
+        "kalla": "docs/os/ANALYSMETOD.md 6b ('Komponentkarta <namn>' i dna.md); docs/os/evolve/ITERATIONS-PLAYBOOK.md §7.1 (components rewrite); docs/os/CS-KLART.md punkt 9"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Study this winning ad the way the course does: 20 to 30 minutes, then reply with one line on what you think carried it (hook, bridge, hold or CTA) and one line on what you would not change.",
+        "varfor": "Kursen lägger 20–30 minuter per vinnare och studerar en om dagen. Hennes två rader är hypotesen vi jämför med vår komponentkarta.",
+        "kalla": "docs/ecomtalent/fynd.json tal Learnings Call & Q&A w/ Spencer Nov 21 [29:28] och [34:16]; docs/os/CS-KLART.md punkt 3"
+      },
+      {
+        "typ": "omklipp",
+        "text_en": "Prepare the hook-swap master: duplicate the sequence and put the hook beat (0 to 3 s) on its own clip so the next three H-variants only replace that clip. Reply with the project link.",
+        "varfor": "CS-KLART 9: tre iterationer inom 14 dagar, första i manuslistan är nya hookar. Kursen duplicerar sekvensen och byter bara hookdelen; förberedd mall gör varje iteration en halvtimme.",
+        "kalla": "docs/os/CS-KLART.md punkt 9; docs/ecomtalent/fynd.json tal Video Editing Breakdown Part 1 3/3 [1:04:26]; matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL.BREAKTHROUGH"
+      },
+      {
+        "typ": "research",
+        "text_en": "Read the comments on your winner and reply with the three most repeated objections, quoted. They become the first objection-handling iteration.",
+        "varfor": "Manus-7 (invändningarna ur kommentarerna) är en av breakthrough-iterationerna, och på vinnaren finns flest kommentarer att läsa. Tre citat är mätbart.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §7.7; matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL.BREAKTHROUGH (manus-7); docs/os/CS-KLART.md punkt 17"
+      }
+    ],
+    "SPEND_WINNER": [
+      {
+        "typ": "research",
+        "text_en": "Read the last 30 comments on this ad and post the three most common objections word for word, with how many times each came up.",
+        "varfor": "CS-KLART 10: på en spend winner är kommentarerna första stället att leta efter vad som saknas i tro eller brådska. Tre citat med antal är mätbart.",
+        "kalla": "docs/os/CS-KLART.md punkt 10 och 17; docs/os/evolve/ITERATIONS-PLAYBOOK.md §5; matstrumpor/lardom.mjs ITERATIONER 'manus-7'"
+      },
+      {
+        "typ": "hantverk",
+        "text_en": "Open the page the ad links to and write one line: does the page make the same promise as the hook? Quote the first sentence on the page that says something different.",
+        "varfor": "Fel 11 funnel-kongruens: ATC under 8 % betyder att annons och sida säger olika saker, och vår egen mätning 2026-10-01 pekade på just det. Femton minuter, ett citat.",
+        "kalla": "products/matstrumpor/CHADBOT-SVAR-2026-10-02.md (ATC-ramen, Nathalie mot produktsidan); docs/os/evolve/ITERATIONS-PLAYBOOK.md §5 fel 11; matstrumpor/lardom.mjs FEL '11'"
+      },
+      {
+        "typ": "hantverk",
+        "text_en": "Find the timestamp of the ad's biggest claim and reply whether a proof shot (review, demo, number) is on screen within 2 seconds of it. If not, propose one from the source list.",
+        "varfor": "Tro (fel 7) och tomma påståenden (fel 5) är spend winner-felen, och bevisbilden ligger inom hennes latitude. 'Prata inte, peka' ur copy-reglerna.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §5 fel 7 och §4 fel 5; docs/copy-regler.md 'Prata inte. Peka.'; docs/os/BRIEF-REGI.md Editor latitude"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Read the Spend Winner playbook: fix belief, urgency or page congruence before any new hook or format. Reply with one sentence on which of the three this ad lacks.",
+        "varfor": "D4:s ordning, och fällan 'hooken funkar, nu testar jag format'. Hennes mening blir hypotes i lärdomen.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §5; docs/os/evolve/SVAR.md punkt 2 (D4); docs/os/CS-KLART.md punkt 10"
+      }
+    ],
+    "KPI_WINNER": [
+      {
+        "typ": "hantverk",
+        "text_en": "Compare this ad's hook rate with the campaign's top ad named in the post, and reply with one line on what the top ad shows in its first frame that yours does not.",
+        "varfor": "CS-KLART 11: läs hook rate först. Top spendern är riktmärket, och kursen säger 'compare to known winners'. En rad om första bilden är läsbar och leder rakt in i nästa H-variant.",
+        "kalla": "docs/os/CS-KLART.md punkt 11; docs/os/ANALYSMETOD.md steg 5; docs/os/evolve/SVAR.md punkt 4 (D2 'compare to known winners')"
+      },
+      {
+        "typ": "omklipp",
+        "text_en": "Duplicate the sequence and cut the next unused hook from the brief onto the same body, with the hook text on screen for 3 to 5 seconds. Deliver one file.",
+        "varfor": "En KPI winner konverterar men stoppar för få; kursens billigaste iteration är nya hookar på en kropp som visar potential. Hooktexten 3–5 s är kursens läsbarhetsregel.",
+        "kalla": "docs/ecomtalent/fynd.json Ad Ideas 101: ITERATION [9:33]; tal Video Editing Breakdown Part 2 [42:31] och Part 4 [6:28]; matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL.KPI_WINNER"
+      },
+      {
+        "typ": "research",
+        "text_en": "Read the comments on this ad and reply with the three most repeated questions or objections, quoted word for word.",
+        "varfor": "Invändningarna ur kommentarerna blir nästa brief (manus-7), och att hon läser dem själv ger henne avataren. Tre citat är mätbart.",
+        "kalla": "docs/os/CS-KLART.md punkt 17; docs/os/evolve/ITERATIONS-PLAYBOOK.md §7.7; matstrumpor/lardom.mjs ITERATIONER 'manus-7'; kommentarer/leads.md"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Read the KPI Winner note: a low share with a few purchases can be a loser that got lucky, and an offer ad is not expected to scale. Reply which of the two you think this is, in one line.",
+        "varfor": "Sätter förväntningen rätt så etiketten inte känns som ett löfte om skalning. Hennes svar blir en rad i lärdomen.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §4 (KPI Winner); matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL.KPI_WINNER.forsok"
+      }
+    ],
+    "LOSER": [
+      {
+        "typ": "hantverk",
+        "text_en": "Play the first second with the sound off and write down the one physical object you see. If the answer is a person, text only, or nothing, propose one replacement shot from the brief's source list.",
+        "varfor": "Hook-visual-regeln: ingenting eller en människa i sekund ett betyder trasig hook, och det är det vanligaste felet i förlorarlistan (fel 1 och 4). Svaret är ett ord plus en källrad.",
+        "kalla": "docs/hook-visual-rule-2026-08-04.md; docs/os/evolve/ITERATIONS-PLAYBOOK.md §4 fel 1 och 4; matstrumpor/lardom.mjs FEL '1', '4'"
+      },
+      {
+        "typ": "hantverk",
+        "text_en": "Watch seconds 3 to 8 and note the longest stretch where nothing new happens on screen. Reply with that number of seconds and the timestamp.",
+        "varfor": "Bryggan är make-or-break och tempot är redigerarens del: kursen vill ha något nytt var 2–3 sekund. Ett tal och en tidskod går att kontrollera.",
+        "kalla": "docs/os/evolve/SVAR.md punkt 1 (D3 'the bridge section is usually make-or-break'); docs/ecomtalent/fynd.json tal Mr. Beast Retention Techniques [6:13] och LIVE Example [45:40]; matstrumpor/lardom.mjs FEL '6'"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Read the eight causes in the Loser playbook and reply with the one number you think fits this ad, in one sentence.",
+        "varfor": "Kursen vill att redigerare analyserar lärdomar aktivt (D5). Hennes nummer blir en hypotes vi jämför med vår, och en mening är mätbart.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §4; matstrumpor/lardom.mjs FEL + PLAYBOOK_PER_UTFALL.LOSER; docs/os/evolve/SVAR.md punkt 4 (D5)"
+      },
+      {
+        "typ": "omklipp",
+        "text_en": "Re-cut only the first 3 seconds: same hook line, same timing, a different picture from the source list that shows the object the line talks about. Deliver as the next H number.",
+        "varfor": "Hooken är det vanligaste felet. Raden och timingen är MUST NOT, men bilden inom motivet är MAY, så det här är exakt det hon får ändra själv. En fil med nästa H-nummer är mätbart.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §4 fel 1; docs/os/BRIEF-REGI.md Editor latitude; docs/ecomtalent/fynd.json tal Action Item: UGC Ads [3:53] ('3 hook-visual variations when the spoken hook line is fixed')"
+      }
+    ],
+    "INGEN_LEVERANS": [
+      {
+        "typ": "hantverk",
+        "text_en": "Show the first frame of this ad to one person for two seconds, then ask what they saw first, second and third. Reply with the three answers.",
+        "varfor": "Meta valde ur första bilden och de första tre sekunderna; på en svulten annons finns inget annat att läsa. Testet tar fem minuter och ger tre svar att följa upp nästa vecka.",
+        "kalla": "docs/ecomtalent/fynd.json tal: The Art of 1 Frame [25:06] (2-second hierarchy test); fynd Q&A Shaun & Spencer [54:36] ('no spend = the hook'); docs/hook-visual-rule-2026-08-04.md"
+      },
+      {
+        "typ": "omklipp",
+        "text_en": "If the brief carries a hook you have not cut yet, cut it onto the same body and deliver it as the next H number. Only the first 3 seconds change, everything else stays identical.",
+        "varfor": "Lärdomen från batch 0c: de bästa hookarna är oprövade, och en H-variant på en kropp som redan gått slår en omladdning. Hooken står i briefen, så det ligger inom hennes latitude. En fil = mätbart.",
+        "kalla": "products/matstrumpor/lardomar.md L-batch-0c-nya20 ('plocka EN av dem som H-variant'); docs/ecomtalent/fynd.json tal Action Item: Organic Ads [4:39] (3 hookar, en hold); docs/os/BRIEF-REGI.md (tre hookar delar EN hold)"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Read the hook rule (emotion, curiosity gap, stakes, start in the action, understandable with sound off) and reply with one line on which of those your first 3 seconds had.",
+        "varfor": "Hooken avgör vem som får spend. Regeln ska sitta i hennes huvud, inte bara i briefen, och svaret är en rad vi kan läsa.",
+        "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §10 (hookregeln: 90 % kvar efter 6 s); docs/os/evolve/EVOLVE-GAP-ANALYS.md §3 punkt 5"
+      },
+      {
+        "typ": "konkurrenter",
+        "text_en": "Spend 30 minutes in the Meta Ad Library on three ads in our product's category that have run the longest; post a screenshot of each first frame and one line on what physical object is in it.",
+        "varfor": "Längst körda annonser är troligen lönsamma. Vi letar vad som är fysiskt i sekund ett, aldrig vad vi kan kopiera (kursen: kopiera gör dig näst bäst; copy-reglerna: aldrig ett märke i vår text).",
+        "kalla": "docs/ecomtalent/fynd.json lektion 'Ad Inspiration System' + tal [15:38]; fynd How To Do Deep Market Research [21:58] ('hooks that run the longest'); docs/copy-regler.md 'aldrig ett märke'"
+      }
+    ]
+  }
+}

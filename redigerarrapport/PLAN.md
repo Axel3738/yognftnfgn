@@ -214,21 +214,26 @@ inte automatiskt (kursen har inget format för det).
 6. **Efter två veckor:** mät om redigerarna svarar på action items och
    frågan i slutet. Inget svar på två veckor ⇒ frågan ändras, inte tas bort.
 
-## 8. Beslut som är Axels
+## 8. Axels beslut (2026-10-02)
 
-1. **Andel av kampanjens spend i procent till redigerarna?** A = ja, procent
-   och etikett. B = bara etikett och ordning bland hennes egna annonser.
-   Procent läcker inga kronor, men järnregeln 2026-09-02 gäller spend.
-2. **EN grind för `bedombar`:** A = 300 kr OCH 3 köp (ANALYSMETOD,
-   agent-grenen). B = 300 kr ELLER 3 köp (Matstrumpor i dag). Mätt W39 i SE:
-   22 bedömbara med A, 52 med B.
-3. **Var posten går för Josh, Annabelle, Gilz och Jerzee**, som saknar
-   Discord-id i repot (bara Carl och Jasper har). Matstrumpor har ingen
-   Discord-server. A = de får Discord-id insamlade (Mechile frågar i Slack
-   `#video-editors`) och posten går i Bäverbutikens server, Gilz inkluderad.
-   B = posten går i Slack `#video-editors` som DM per person.
-4. **`tools/discord-rapport.mjs` postar i dag "Spend: N SEK" i OPS-servrarnas
-   `#ads`** där redigeraren sitter. A = ta bort kronorna där. B = låt stå.
+1. **Andel av kampanjens spend i procent till redigerarna: A, ja.** Procent
+   och etikett visas. Kronor, ROAS, köp och CPA aldrig.
+2. **EN grind för `bedombar`: A, 300 kr OCH 3 köp** (ANALYSMETOD). Matstrumpor
+   räknade ELLER till och med 2026-10-02 och byts. Mätt W39 i SE: 22
+   bedömbara med OCH, 52 med ELLER.
+3. **Discord-id:n, Axels lista samma dag**, slagna upp med `members/search` i
+   Bäverbutikens server `1540322130388983921` och inskrivna i
+   `dashboard/data/team.json` (`discordUsername`, `discordUserId`): Josh
+   `wang3729` → `930484161070899252`, Annabelle `anna_gonzales_17839` →
+   `1194906296403632142`, Jerzee `jerz7108` → `540463446546841610`, Carl och
+   Jasper som förut. **Gilz `gilzbrucebiazon` finns inte i servern**: hans
+   post skrivs till fil tills han bjudits in (Axels klick), ingen gissad
+   mention. Posten går i Bäverbutikens server för alla.
+4. **`tools/discord-rapport.mjs` och "Spend: N SEK" i OPS-servrarnas `#ads`:**
+   inte avgjort än. Rapporten här kopierar inte den raden.
+5. **De olästa lektionerna: ja**, Axel lade in `SKOOL_EMAIL` och
+   `SKOOL_PASSWORD` i Environments 2026-10-02. Läses med `tools/skool/` så
+   snart nycklarna syns i en session.
 
 ## 9. Olästa lektioner som kan ändra reglerna
 
