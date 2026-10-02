@@ -304,6 +304,9 @@ export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampan
       marknad,
       adset: a.adset?.name ?? null,
       adset_id: a.adset?.id ?? null,
+      // Inläggets id: en vinnare flyttas till Champions med BEFINTLIGT inlägg
+      // (Axels krav 2026-10-02), så att likes och kommentarer följer med.
+      post_id: a.creative?.effective_object_story_id ?? null,
       status: a.status ?? null,
       effective_status: a.effective_status ?? null,
       skapad: String(a.created_time ?? '').slice(0, 10) || null,
@@ -365,7 +368,7 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
   if (kampanj.account_id && String(kampanj.account_id) !== konto) throw new Error(`Kampanj ${kampanjId} ligger i konto ${kampanj.account_id}, inte ${konto} — avbryter.`);
   logg(`  · [${mal.marknad}] kampanj ${kampanj.name}: ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag`);
 
-  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,created_time,status,effective_status,adset{id,name}' }, 200);
+  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,created_time,status,effective_status,adset{id,name},creative{effective_object_story_id}' }, 200);
   logg(`  · ${annonser.length} annonser i kampanjen`);
 
   const insikter14 = await klient.alla(`${kampanjId}/insights`, { level: 'ad', date_preset: 'last_14d', action_attribution_windows: ATTRIBUTION, fields: INSIGHTS_FALT }, 500);

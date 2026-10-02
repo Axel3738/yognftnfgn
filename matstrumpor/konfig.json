@@ -80,6 +80,10 @@
       "tidig_dom_dagar": 3,
       "majoritet_andel": 0.5,
       "flytt_andel": 0.2,
+      "ung_annons_dagar": 7,
+      "svalt_dagar": 21,
+      "sasong": [{ "vinkel": "jul", "doms_fran": "2026-12-01" }],
+      "axel_2026_10_02_comment": "Axels beslut 2026-10-02 (svar A + egen rad): (1) ett adset med en annons yngre än ung_annons_dagar döms inte — nya16 fick 054–063 veckan före. (2) Säsongsadsets (vinkeln i adsetnamnet, t.ex. broad_advplus_purchase_jul_video) döms inte förrän doms_fran. (3) Svält stänger ett adset först när det legat aktivt svalt_dagar utan spend: 'vi har bara haft typ 1 breakthrough och den har snott typ all spend hela tiden' — att svälta bredvid den är ingen dom. (4) Flytt till Champions görs med BEFINTLIGT inlägg (post-id i förslaget), så att likes och kommentarer följer med.",
       "andel_comment": "Vinnare (kursen): adsetet tar MAJORITETEN av spenden vid KPI, eller kampanjens ROAS förbättrades. Flytt till Champions (Chadbot ur kursen D2): annonsen/adsetet har tagit minst 20–30 % av budgeten — den undre gränsen, 20 %, är talet här. KPI = break-even-ROAS (kill mäts alltid mot break-even, CLAUDE.md regel 4).",
       "adsetnamn_mall": "MATSTRUMP_T<nnn>_<vinkel>_<video|bild>",
       "sedan": "2026-10-02"
