@@ -633,6 +633,17 @@ loggan utan .SE.
     "jättefina strumpor och rolig som julklapp". Cowork såg den men lät den vara, eftersom den inte stod i
     prompten. **Fortfarande `en` 2026-10-02**; den ändras på samma sätt som del B, i
     `cowork/8-judgeme-kopian.txt` del C.
+  - 📧 **Judge.me:s support ombedd 2026-10-02 15:21 CEST, i stället för del C och D** (Coworks körning
+    fastnade i del C, och Axel ville inte göra mer). Mejlet gick från kundsupport@matstrumpor.se till
+    support@judge.me, adressen ur Judge.me:s hjälpsida
+    ([How to contact our support team](https://judge.me/help/en/articles/15203152-how-to-contact-our-support-team)),
+    med ämnet "Re-sync review widget metafields + one review language (1r46tp-qx.myshopify.com)". Mejlet
+    ber om två saker. Den ena är att kopian i metafälten skrivs om för sushistrumporna (10286130889043)
+    och ätpinnarna (10408204468563). Den andra är att Irénes recension märks som svensk. Det ligger i
+    Skickat. Svaret landar i Matstrumpors inkorg. Autosvaret räknar judge.me som systemavsändare
+    (`kundtjanst/arenden.mjs` → `arSystem`) och svarar därför inte på det. Kontrollen är
+    `judgeme-koll.mjs` ("Kopian i Shopify" och språkmärkningen). Del C och D i prompten är reserven om
+    supporten inte gör det.
   - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
     varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
     ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
