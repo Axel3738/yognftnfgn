@@ -45,12 +45,14 @@
 | 11 | 23–26 s | Dom som tog slut i november förra året, så säkra dina (befintlig) | NO VO | Dom som tog slut i november förra året, så säkra dina | Wide: she sits on the black sofa, feet up on the table, salmon socks on, laughing. | none | OUR AD 09-17_Nathalie_captions_musik 0:22–0:25 | parent beat, same cut | none |
 | 12 | 26–28 s | Se innan det händer igen (befintlig) | NO VO | Se innan det händer igen | Top-down: the tray with chopsticks on a white table (end shot). No store name. | none | OUR AD 09-17_Nathalie_captions_musik 0:25–0:27 | parent beat, same cut | none |
 
-## Hook variants (archive — swap only if Axel asks; all passed the three-question test)
+## Hook variants (archive — swap only if Axel asks; all passed the three-question test. Owner's read 2026-10-02: H1 and H2 approved, the earlier H3 "Jag har sushi på mig. Det här är bara reservlådan." was dropped as weaker and replaced)
 | # | Swedish | English |
 |---|---|---|
 | H1 (this ad) | Sushi att ge bort till den som hatar fisk. | Sushi to give to someone who hates fish. |
 | H2 | Det finns inget bäst före-datum på den här sushin. | There is no best-before date on this sushi. |
-| H3 | Jag har sushi på mig. Det här är bara reservlådan. | I'm wearing sushi. This is just the spare box. |
+| H3 | Du kan glömma den här sushin i bilen. | You can forget this sushi in the car. |
+| archive | Den här sushin går att skicka till Japan. | This sushi can be shipped to Japan. |
+| archive | Den här sushin går att posta utan kylväska. | This sushi can be mailed without a cooler bag. |
 | archive | Den här sushin finns i storlek 36 till 44. | This sushi comes in sizes 36 to 44. |
 | archive | Måndag till fredag har jag sushi på mig. | Monday to Friday I have sushi on. |
 | jul (for `jul_video`, own row later) | Det ligger sushi under granen, och ingen oroar sig. | There's sushi under the tree, and nobody is worried. |
