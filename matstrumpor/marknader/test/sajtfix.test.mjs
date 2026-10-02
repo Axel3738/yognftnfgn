@@ -119,6 +119,36 @@ test('snippeten: bara de avsedda Liquid-taggarna, JS-reglerna byggda ur flyttMal
   assert.equal(fm(bas({ land: 'NO', verkligt: 'NO', sprakLista: ['nb'] })), 'https://matstrumpor.com/nb/products/sushi-strumpor?country=NO');
 });
 
+test('S-029: skriptet i varje sidas källa bär inga utvecklarkommentarer, och reglerna är desamma utan dem', () => {
+  const js = SNIPPET_FLYTT.split('<script>')[1].split('</script>')[0];
+  assert.ok(!js.split('\n').some((r) => /^\s*\/\//.test(r)), 'en hel kommentarsrad står kvar');
+  assert.ok(!/[^:]\/\/\s/.test(js), 'en kommentar efter koden står kvar');
+  assert.ok(!/\/\*/.test(js), 'en blockkommentar står kvar');
+  assert.ok(!/S-0\d\d|kunden|landväljaren|slinga/.test(js), 'granskningens id eller en svensk förklaring står kvar');
+  assert.ok(js.includes('https://matstrumpor.com') && js.includes('https://matstrumpor.se'), 'adresserna måste stå kvar');
+  // Samma svar som modulens egna regler, fall för fall.
+  const kropp = js.slice(js.indexOf('var COM_MAPP'), js.indexOf('var verkligt'));
+  const fm = new Function(`${kropp}; return flyttMal;`)();
+  const fall = [
+    bas({}),
+    bas({ land: 'NO', verkligt: 'NO', sok: '?utm_source=spoks', sprakLista: ['nb-NO'] }),
+    bas({ land: 'US', verkligt: 'US', sprakLista: ['en-US', 'sv-SE'] }),
+    bas({ land: 'DE', verkligt: 'DE', sprak: 'de', rot: '/de', vag: '/de/products/sushi-strumpor', sprakLista: ['de-DE'] }),
+    bas({ land: 'FR', verkligt: 'FR', referrer: 'https://matstrumpor.com/fr', sprakLista: ['fr-FR'] }),
+    bas({ land: 'FR', verkligt: 'FR', referrer: 'https://matstrumpor.com/fr', sida: 'data-sharing-opt-out', sprakLista: ['fr-FR'] }),
+    bas({ land: 'JP', verkligt: 'JP', stannaKaka: true, sprakLista: ['ja-JP'] }),
+    bas({ land: 'IT', verkligt: 'IT', senast: 1e12 - 5000, sprakLista: ['it-IT'] }),
+    bas({ vard: 'matstrumpor.eu', sprak: 'en', land: 'SE', verkligt: 'SE', sprakLista: ['sv-SE'] }),
+    bas({ vard: '1r46tp-qx.myshopify.com', land: 'BR', verkligt: 'BR', sprakLista: ['pt-BR'] }),
+    bas({ vard: '1r46tp-qx.myshopify.com', land: 'DE', verkligt: 'DE', sprakLista: ['sv-SE'] }),
+    bas({ land: 'NO', verkligt: 'NO', ua: 'Mozilla/5.0 (compatible; Googlebot/2.1)' }),
+    bas({ land: 'NO', verkligt: 'NO', typ: 'cart' }),
+    bas({ land: 'NO', verkligt: 'NO', sok: '?ms_stanna=1' }),
+    bas({ land: 'NO', verkligt: 'NO', roll: 'unpublished' }),
+  ];
+  for (const f of fall) assert.equal(fm(f), flyttMal(f), JSON.stringify(f));
+});
+
 // --- patcharna, på minsta möjliga indata med exakt de ankare temat har ---------------------------
 
 const KNAPP = `          >
