@@ -1137,7 +1137,85 @@ profil och 4 Mbit/s, CPU ×4) och från riktiga länder med Globalping.
 | 🟡 S-026 polska bokstäver | ✅ | Polskan ritas i M PLUS Rounded 1c (latin-ext). Kassans typsnitt finns bara för hela butiken. Cowork bytte rubrikerna från Mochiy Pop P One till M PLUS Rounded 1c 2026-10-02 i den aktiva kassan, "Kopia av FixKliniken-konfiguration", och brödtexten stod redan på Standard. Coworks skärmdump av den polska kassan visar "Płatność" i ett och samma typsnitt. |
 | 🟡 S-027 valutan på egen rad | ✅ | `nowrap` på korgens priser, sett på 390 px i DK, PL och NO. |
 | 🟡 S-028 språkfel | ✅ | es "está", pt-PT i du-form (37 texter, `sajtfix/pt-tu.json`, sonnet + granskning), italienskt "9–16 ottobre". |
+| 🟡 S-025 forts. korgen | ✅ 2026-10-02 eftermiddag | Ätpinnarna följer nu också när kunden ändrar antalet i korgen: avsnittet "Gåvan följer varje låda" nedan (`gava.mjs`). |
 | 🟡 S-029 kommentarer i källan | ✅ | .no-blockets CSS-kommentarer borta (temat och `domantema.mjs`). Spårningssidans inbäddade skript byggs utan kommentarsrader (`sparning/sida.mjs` → `utanKommentarer`, med test); mätt live 2026-10-02 07:58 UTC efter rutinens runda: 0 träffar på CaraShell och bävernumret. ⚠️ Rättningen av S-002 lade själv in nya utvecklarkommentarer i källan på varje sida (omdirigeringsskriptet byggs ur `flyttMal`:s källtext, och kommentarerna inne i funktionen följde med). Sedan samma förmiddag byggs skriptet utan dem (`sajtfix.mjs` → `utanKommentarer`, test som jämför skriptets svar med modulens fall för fall), skrivet till MAIN och läst som kund: inga kommentarer, och .se, .eu och svensk webbläsare beter sig som förut. De fem `//`-rader som står kvar i sidkällan kommer från appar och Shopify. Temats skriptfiler (`ms-cro.js`, `ms-ab.js`, `share.js`) bär kvar sina `ms-sajtfix`-kommentarer: de nämner ingen butik och är patcharnas markörer. |
+
+## Gåvan följer varje låda — också när kunden ändrar antalet (2026-10-02, `gava.mjs`)
+
+Axels ord samma dag: "ätpinnar ska alltid vara en gratis gåva som följer med varje enskild box", och
+sedan "JAg har redan asvarat A Och B" (S-025 val B, `b-koder.mjs`) och "du får fixa resten". Paketen
+gav redan ett par per låda (b-koder.mjs, förmiddagen). Det här avsnittet är korgen efteråt.
+
+**Felet, mätt i Shopifys egen prisräkning och i ordrarna (627 ordrar med lådor 3/8–2/10):**
+- Köp-X-få-Y-paketkoderna (variant A, hela utlandet, donut/pizza/hamburgare) var "köp 1, få 3 av
+  sorten + ätpinnar" (K2F2: köp 2, få 6), EN gång per order. Shopify ger de billigaste varorna gratis
+  först, och ger en användning bara när hela "få"-mängden finns.
+- Samma paket två gånger: 4 lådor + 4 par kostade **1 646 kr** i stället för 798 (ätpinnarna åt upp den
+  gratis lådan; Storefront-cart med `SUSHI-K1F1`).
+- Två olika paket: bara en kod räknas, och den andra sortens ätpinnar åt upp den gratis lådan.
+  #5214 betalade **1 746 kr** för 2 sushi + 2 pizza, #5302 **2 094 kr** för tre tvåpaket.
+  32 av 627 ordrar hade flera sorter.
+- Ändrat antal: en tredje låda fick inga ätpinnar (69 av 627 ordrar hade inte lika många par som lådor).
+  Ätpinnarna borttagna: hela paketrabatten försvann (#5255 i USA och #5056 i Sverige betalade två lådor fullt).
+- Variant B: `SUSHI-2FOR499`/`-4FOR799` har en minsta summa. Färre lådor än paketet ⇒ ingen kod, och
+  ätpinnarna kostade 50 kr.
+
+**Shopifys regler, mätta med dolda testkoder i Storefront-API:ts cart (samma räkning som kassan, prov 3–5;
+koderna avslutades efter varje prov, aldrig raderade):**
+1. Köp-X-få-Y: "köp"-varorna är de dyraste som finns kvar, "få"-varorna de billigaste, och en användning
+   gäller bara med HELA "få"-mängden. Därför går köp 1 få 1 + ett par per låda att ge med EN kod bara för
+   jämnt antal: "köp 1, få 3 av alla sorter + ätpinnar, utan gräns". Udda antal kräver en kod per antal.
+2. Flera koder som inte kombineras: Shopify väljer själv den som ger lägst pris, ordningen spelar ingen
+   roll, och kassan visar bara koden som används (skärmdump av kassan).
+3. **Högst fem koder räknas.** En sjätte kod i vagnen räknas inte alls (vännens kod som sjätte gav inget
+   avdrag; som första gav den 50 kr).
+4. `/cart/update.js` tar `updates`, `discount` (kommalista, ersätter koderna) och `sections` i ett och
+   samma anrop, och svaret bär lådan exakt som vagnen blev. En separat hämtning direkt efter en skrivning
+   kunde visa vagnen från före den. Lådan ritas tom via produktsidans adress (`/products/…?sections=`),
+   rätt via roten.
+5. Shopify delar en variant på flera rader när en rabatt bara gäller en del av den (1 låda + 2 par = en
+   gratis och en betald rad), och `updates` med variant-id ändrar bara den första raden ⇒ radnycklar.
+
+**Det som gjordes:**
+- **Koderna, 12:39 UTC** (`gava.mjs --koder --skarpt`, originalen i `gava/koder.json` först): de åtta
+  köp-X-få-Y-paketkoderna (`SUSHI/DONUT/PIZZA/HAMBURGARE-K1F1/K2F2`) är "köp 1, få 3 av alla fyra sorter
+  + ätpinnar, utan gräns" och heter som förut. Titeln i admin säger det. Nya hjälpkoder för udda antal:
+  `PAKET-1`, `PAKET-3`, `PAKET-5` (köp 1/2/3, få 1/4/7, en gång per order). Alla kombineras med vännens
+  kod som förut. Ingen av dem ger mer än det sidan redan lovar, om någon skriver in den själv.
+- **Temat, 13:11 UTC i MAIN `207180890451`**, provat först i kopian "PROV gåvan 2026-10-02" `208271376723`
+  (`gava.mjs --tema`, butikens filer i `gava/original/`):
+  - `assets/ms-gava.js` (+ `snippets/ms-gava.liquid`, renderad sist i `ms-head`): efter varje ändring i
+    korgen blir ätpinnarna lika många som lådorna, och koderna som hör ihop ligger i vagnen: en
+    paketkod + `PAKET-1/3/5`, eller B-nivåernas tre. Vännens kod och andra koder först, aldrig fler än fem.
+    Sorterna, gåvan och koderna läses ur metaobjekten (Paketnivå), inte ur koden.
+  - `ms-paket.js` `kop()`: synken körs efter koden och före lådan, så lådan visar slutpriset direkt.
+  - `cart-drawer.liquid` och `main-cart-items.liquid`: gåvoraden är låst — inget plus/minus, ingen papperskorg.
+- **Mätt efteråt, live:** `gava/prisprov.mjs` 21 av 21 fall ✅ (SE, DE, US, JP, NO, variant B 1–4 lådor,
+  blandade sorter). `gava.mjs --kundvy` i Chromium som kund, varje steg läst ur vagnen OCH lådan:
+  variant A 2 → plus 3 → plus 4 → minus 3 → minus 2 → minus 1 → papperskorg (399 / 798 / 798 / 798 /
+  399 / 399 / 0 kr, ätpinnarna 2-3-4-3-2-1-0), samma paket två gånger 798 kr, variant B 1 → 4 → 3
+  (399 / 499 / 748,50 / 799 / 748,50), Tyskland €44,90 → €89,80, korgsidan plus 798 kr, sushi + pizza 898 kr.
+  `b-koder.mjs`: alla tretton paket ger fortfarande gåvan gratis.
+
+**Följderna — sessionens beslut åt Axel ("du får fixa resten"), alla till kundens fördel eller lika:**
+- Köp 1 få 1 gäller nu varje antal: 3 lådor betalar 2 (som förut), 6 lådor betalar 3 (förut 4).
+  ⚠️ 7 och 9 eller fler udda lådor: en låda för mycket (`PAKET-7` hade tagit vännens plats bland fem koder).
+  Ingen order de senaste 60 dygnen hade fler än sex lådor.
+- Blandade sorter: EN köp 1 få 1 över alla sorter, de billigaste lådorna gratis. 2 sushi + 2 pizza =
+  898 kr (pizzorna betalas). Förut 1 746 kr; per sort hade varit 848 kr, men två koder som inte kombineras
+  kan inte ge det.
+- Variant B: korgen har alltid priset för antalet lådor — 1 = 399, 2 = 499, 3 = 748,50, 4 = 799 kr. Den
+  som ökar från två till fyra lådor i korgen betalar alltså 799 kr, inte 998.
+- ⚠️ En vagn som ändras FÖRBI temat (rena API-anrop) med färre ätpinnar än lådor kan få fler gratis lådor
+  än paketet. Det gick redan förut (4 lådor utan ätpinnar med `SUSHI-K1F1` = 399 kr). Temat låser gåvoraden
+  och synkar vagnen på varje sida.
+
+**Backa:** `node matstrumpor/marknader/gava.mjs --aterstall --skarpt` lägger tillbaka koderna ur
+`gava/koder.json`, avslutar `PAKET-1/3/5` (raderar aldrig) och tar bort temats ändringar (torrt först
+utan `--skarpt`). Prova en ändring: `--kopia`, sedan `--tema <gid> --skarpt` och `--kundvy --tema <gid>`.
+⛔ En ny köp-X-få-Y-paketkod måste ha samma form ("köp 1, få 3 av alla sorter + ätpinnar, utan gräns") —
+`gava.mjs` torrt visar avvikelsen. 18 tester i `test/gava.test.mjs` (modellen mot Shopifys priser,
+synken i en vm, patcharna fram och tillbaka).
 
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 

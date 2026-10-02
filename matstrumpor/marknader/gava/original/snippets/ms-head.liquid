@@ -1,0 +1,125 @@
+{%- comment -%}
+  ms-head — allt konverteringslagret behöver i <head>.
+  Läggs in i layout/theme.liquid, före </head>:
+
+      {% render 'ms-head' %}
+
+  Ordningen spelar roll:
+    1. CSS:en först, så inget hoppar till. ms-tema.css sist av de två — den
+       anpassar bastemat och ska kunna överstyra konverteringslagret.
+    2. A/B-konfigurationen som ren JSON.
+    3. ms-ab.js UTAN defer — den måste hinna välja variant innan sidan målas.
+    4. ms-cro.js med defer — beteende, behöver inte blockera.
+    5. ms-paket.js sist — paketnivåerna. Egen fil för att den är den enda
+       koden som rör pengar, och ska gå att läsa och byta ut för sig.
+
+  Testerna konfigureras i Temainställningar → Matstrumpor A/B, ett test per
+  rad på formen:   id            (50/50)
+                   id:90:10      (viktad, för försiktig utrullning)
+  Rader som börjar med # är avstängda.
+{%- endcomment -%}
+
+{{ 'ms-cro.css' | asset_url | stylesheet_tag }}
+{{ 'ms-paket.css' | asset_url | stylesheet_tag }}
+{{ 'ms-tema.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Radbrytningen måste plockas ut i ett eget assign-tag. Ett {% liquid %}-block
+  bryter satserna på radslut, så en sträng som spänner över två rader gör att
+  Shopify avvisar hela filen med "Unknown tag '''".
+{%- endcomment -%}
+{%- assign ms_nl = '
+' -%}
+{%- liquid
+  assign raw_tests = settings.ms_ab_tests | default: '' | split: ms_nl
+  assign cookie_days = settings.ms_ab_cookie_days | default: 30
+-%}
+<script id="ms-ab-config" type="application/json">
+{
+  "cookieDays": {{ cookie_days | json }},
+  "tests": [
+    {%- assign printed = 0 -%}
+    {%- for line in raw_tests -%}
+      {%- liquid
+        assign t = line | strip
+        assign skip = false
+        if t == blank
+          assign skip = true
+        endif
+        assign hash = t | slice: 0, 1
+        if hash == '#'
+          assign skip = true
+        endif
+      -%}
+      {%- unless skip -%}
+        {%- liquid
+          assign parts = t | split: ':'
+          assign id = parts[0] | strip
+          assign wa = parts[1] | default: 50 | plus: 0
+          assign wb = parts[2] | default: 50 | plus: 0
+        -%}
+        {%- if printed > 0 -%},{%- endif -%}
+        {"id": {{ id | json }}, "variants": ["a","b"], "weights": [{{ wa }}, {{ wb }}], "active": true}
+        {%- assign printed = printed | plus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- comment -%}
+  ms-sajtfix (matstrumpor/marknader/sajtfix.mjs, granskningen 2026-10-01):
+  - S-007: fel A/B-variant göms med CSS så fort ms-ab.js satt varianten på <html>, innan blocket ens ritats.
+  - S-010: Judge.me-märkets text står på svenska i serverns HTML; den döljs utanför svenskan tills Judge.me översatt den.
+  - S-026: Mochiy Pop P One saknar polska bokstäver (ą ę ł …), som då ritades i ett annat typsnitt mitt i orden.
+    Polskan får ett rundat typsnitt som har dem.
+  - S-027: pris och valuta på samma rad i korgen.
+  - S-024: ett belopp som Shopify själv formaterat i kundens valuta — ms-cro.js formaterar paketväljarens
+    priser likadant som köprutan och korgen.
+{%- endcomment -%}
+<style>
+  {%- for line in raw_tests -%}
+    {%- liquid
+      assign ms_t = line | strip
+      assign ms_h = ms_t | slice: 0, 1
+      assign ms_id = ms_t | split: ':' | first | strip
+    -%}
+    {%- if ms_t != blank and ms_h != '#' and ms_id != blank -%}
+  html[data-ms-ab-{{ ms_id }}="a"] [data-ms-ab="{{ ms_id }}:b"], html[data-ms-ab-{{ ms_id }}="b"] [data-ms-ab="{{ ms_id }}:a"] { display: none !important; }
+    {%- endif -%}
+  {%- endfor %}
+  html:not([lang="sv"]) .jdgm-widget:not(.jdgm--done-setup) .jdgm-prev-badge__text { visibility: hidden !important; }
+  .cart-item__price-wrapper .price, .cart-item__final-price, .cart-item__old-price, .cart-item .price, .totals__total-value, .cart-drawer .price { white-space: nowrap; }
+</style>
+{%- if request.locale.iso_code == 'pl' -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&display=swap">
+<style>
+  html[lang="pl"] { --font-body-family: "M PLUS Rounded 1c", ui-rounded, system-ui, sans-serif; --font-heading-family: "M PLUS Rounded 1c", ui-rounded, system-ui, sans-serif; --font-body-weight: 700; --font-heading-weight: 800; }
+</style>
+{%- endif -%}
+<script>window.MS = window.MS || {}; window.MS.pengaprov = { text: {{ 123456789 | money | json }}, valuta: {{ cart.currency.iso_code | json }} };</script>
+{%- comment -%} ms-sajtfix: knapplås — köpknappen tar inga klick förrän paketväljaren lyssnar (snippets/buy-buttons.liquid, S-001) {%- endcomment -%}
+<style>button[data-ms-las] { pointer-events: none; opacity: .6; cursor: progress; }</style>
+<script src="{{ 'ms-ab.js' | asset_url }}"></script>
+<script src="{{ 'ms-cro.js' | asset_url }}" defer></script>
+<script src="{{ 'ms-paket.js' | asset_url }}" defer></script>
+
+{%- comment -%} ms-domantema: B-sidan i Norge (matstrumpor.no) — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
+{%- if request.host contains 'matstrumpor.no' -%}
+<style>
+  localization-form, .desktop-localization-wrapper, .menu-drawer__localization, .footer__localization { display: none !important; }
+  .jdgm-widget, [id$="__judgeme_widget"] { display: none !important; }
+  .ms-varlden { display: none !important; }
+  .ms-omd-badge { display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 10px; color: inherit; text-decoration: none; font-size: 1.4rem; }
+  .ms-omd-badge:hover .ms-omd-badge__txt { text-decoration: underline; }
+  .ms-omd-stj { letter-spacing: 2px; font-size: 1.7rem; line-height: 1; background: linear-gradient(90deg, #f6a623 var(--ms-fyll), #d9d9d9 var(--ms-fyll)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ms-omd__snitt { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 8px 0 0; }
+  .ms-omd .ms-omd-tom { opacity: .22; display: inline-flex; }
+</style>
+{%- endif -%}
+
+{%- comment -%} ms-domantema: trust-badge-appen bara på svenska — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
+{%- unless request.locale.iso_code == 'sv' -%}
+<style>#ultimateTrustBadgeswidgetDiv { display: none !important; }</style>
+{%- endunless -%}

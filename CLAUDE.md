@@ -218,7 +218,13 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
   och det valde Axel. B-variantens enlådspaket fick ett par ätpinnar och koden `SUSHI-1FOR399`: köp en
   låda, få ett par gratis, för varje låda. `marknader/b-koder.mjs` kollar regeln för varje paket i
   butiken, och `--aterstall --skarpt` lägger tillbaka allt som det var.
-  ⚠️ Ändrar kunden antalet lådor i varukorgen följer ätpinnarna inte med av sig själva.
+  ✅ **Ätpinnarna följer också när kunden ändrar antalet i korgen, sedan 2026-10-02 eftermiddag**
+  (`marknader/gava.mjs`, allt i `marknader/README.md` → "Gåvan följer varje låda"). Köp-X-få-Y-paketkoderna
+  är "köp 1, få 3 av alla sorter + ätpinnar, utan gräns" (förut en gång per order: två paket kostade 1 646 kr
+  i stället för 798, och 2 sushi + 2 pizza 1 746 kr), `PAKET-1/3/5` tar udda antal, och temats
+  `assets/ms-gava.js` håller ätpinnarna = lådorna och koderna kompletta efter varje ändring. Gåvoraden är
+  låst i korgen. ⚠️ Shopify räknar högst fem koder i en vagn, och en köp-X-få-Y-kod ger bara HELA sin
+  "få"-mängd (båda mätta) — bygg aldrig en paketkod i en annan form utan att köra `gava.mjs` torrt.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
