@@ -1,0 +1,27 @@
+Inte körd än. Skriven 2026-10-02 efter sajtgranskningen 2026-10-01 (matstrumpor/marknader/granskning/SAJT-2026-10-01.md). Allt annat i granskningen är rättat via API och temat. Det här är de två klick som bara går att göra i Shopify admin.
+
+Uppdrag: två inställningar i Shopify-butiken Matstrumpor (admin.shopify.com/store/1r46tp-qx). Gör bara det som står nedan.
+
+Rör ALDRIG: produkter, priser, rabatter, marknader, frakt, betalningar (Shopify Payments), domäner, temat (Online Store → Themes → Customize), appar, kundkonton och kassans logga. Klicka aldrig "Publish" på ett annat tema. Ändra inget annat fält än de som står nedan.
+
+1. Kronor med mellanslag som tusentalstecken (granskningens S-024)
+   Varför: 1 796 kronor skrivs i dag "1,796 kr" i varukorgen. På svenska läses det som knappt två kronor. Skriptet på sidan skriver redan "1 796 kr", så nu står de två formaten bredvid varandra.
+   a. Settings → General → avsnittet "Store defaults" → "Currency display" → klicka "Change currency formatting".
+   b. Där finns fyra fält. Byt bara ordet amount_no_decimals mot amount_no_decimals_with_space_separator. Resten av varje fält ska stå kvar exakt som det står:
+      HTML with currency:     {{amount_no_decimals}} SEK  →  {{amount_no_decimals_with_space_separator}} SEK
+      HTML without currency:  {{amount_no_decimals}} kr   →  {{amount_no_decimals_with_space_separator}} kr
+      Email with currency:    {{amount_no_decimals}} SEK  →  {{amount_no_decimals_with_space_separator}} SEK
+      Email without currency: {{amount_no_decimals}} kr   →  {{amount_no_decimals_with_space_separator}} kr
+      Står det något annat i ett fält än vänstersidan ovan: ändra inte det fältet, skriv av exakt vad som står och rapportera det.
+   c. Spara.
+   d. Kontroll: öppna https://matstrumpor.se/products/sushi-strumpor?country=SE&ms_ab=paket:a i ett privat fönster. Välj "Köp 2 – Få 2" och tryck på köpknappen. Varukorgen ska visa "798 kr" att betala, och varje belopp över 1 000 kr ska skrivas med mellanslag, till exempel "1 596 kr". Inget belopp får ha kommatecken som tusentalstecken ("1,596 kr"). Ta en skärmdump av varukorgen. Töm sedan varukorgen och stäng fönstret. Gå aldrig till kassan.
+
+2. Kassans typsnitt för polska bokstäver (granskningens S-026)
+   Varför: kassans typsnitt Mochiy Pop P One saknar ą ę ł ń ś ć ź ż. Polska ord som "Płatność" ritas därför med ett annat typsnitt mitt i ordet. Sajten har redan bytt typsnitt för polskan. I kassan går det bara att byta för hela butiken.
+   a. Settings → Checkout → klicka "Customize" (eller "Redigera"/"Anpassa" om admin är på svenska) vid kassan.
+   b. Öppna inställningarna för typografi (penselikonen / "Typography").
+   c. Står "Mochiy Pop P One" på rubriker ("Headings") eller brödtext ("Body"): byt just det fältet till "M PLUS Rounded 1c". Finns inte det typsnittet i listan: välj "Nunito". Rör inga färger, ingen logga, inga andra fält.
+   d. Spara. Har kassan en "Publish"-knapp efter sparandet: tryck den bara om den gäller kassan du just ändrade.
+   e. Kontroll: öppna https://matstrumpor.com/pl/products/sushi-strumpor?country=PL i ett privat fönster. Tryck på den stora köpknappen och sedan "Realizuj zakup" i varukorgen. Ta en skärmdump av första kassasidan. Orden med ą, ł och ś ska ritas i samma typsnitt som resten av ordet. Skriv INGENTING i kassan och tryck aldrig betala. Stäng fönstret.
+
+Rapportera: steg 1 (vad de fyra fälten stod på före och efter, och vad varukorgen visade), steg 2 (vilket typsnitt som stod på rubriker och brödtext före och efter, och skärmdumpen av den polska kassan). Skriv sedan "Sajtfix klart" i chatten med Claude.

@@ -80,7 +80,7 @@
     "comment": "Mejlen i Spoks på alla språk (Axels beslut A 2026-09-29: 'alla tolv språk nu, som CaraShell … fler marknader kommer – bygg det så att ett nytt land eller språk bara är en rad till i konfigen'). Läses av klaviyo/spoks-sprak.mjs. ETT NYTT LAND = en rad i `lander` (ISO-kod → språk). Ett land som inte står här får `reserv`-språket, så en ny marknad i Shopify får engelska mejl av sig själv och aldrig svenska. ETT NYTT SPRÅK = en rad i sparning/butiker.json → matstrumpor.mejl_sprak (samma rad som fraktmejlen läser: locale, sprak, mapp) + en översatt fil klaviyo/innehall/matstrumpor/sprak/<sprak>.json (prompten: klaviyo/innehall/matstrumpor/sprak/README.md). Spoks vet bara kundens land (contact.country, engelskt landsnamn — mätt 2026-09-29: 'Sweden', 'United States'), inte språket, så språket följer landet. Kontakter utan land får huvudspråket.",
     "huvudsprak": "sv",
     "reserv": "en",
-    "reserv_comment": "Länder utan egen rad (i dag BG, HR, CY, CZ, EE, GR, HU, LV, LT, MT, RO, SK, SI, IS i Europa-marknaden, och varje land som läggs till senare) får engelska. Engelskans stegfilter är 'landet finns och är inte ett av de andra språkens länder', så ett felstavat eller nytt landsnamn i Spoks landar i engelska, aldrig i svenska.",
+    "reserv_comment": "Länder utan egen rad (i dag BG, HR, CY, CZ, EE, GR, HU, LV, LT, MT, RO, SK, SI, IS i Europa-marknaden, Taiwan, och varje land som läggs till senare) får engelska. Engelskans stegfilter är 'landet finns och är inte ett av de andra språkens länder', så ett felstavat eller nytt landsnamn i Spoks landar i engelska, aldrig i svenska.",
     "lander": {
       "SE": "sv",
       "NO": "nb",
@@ -92,12 +92,13 @@
       "LI": "de",
       "FR": "fr",
       "LU": "fr",
-      "BE": "nl",
+      "BE": "fr",
       "NL": "nl",
       "ES": "es",
       "IT": "it",
       "PL": "pl",
       "PT": "pt",
+      "JP": "ja",
       "US": "en",
       "GB": "en",
       "AU": "en",
@@ -105,8 +106,39 @@
       "NZ": "en",
       "IE": "en"
     },
-    "lander_comment": "Sessionens val 2026-09-29 där landet har flera språk: Belgien nederländska (flamländska är majoritetsspråket), Schweiz tyska, Luxemburg franska. Ändra raden om Axel vill annat. Finland finska (butiken har /fi sedan 2026-09-27). Landsnamnet i Spoks räknas ur ISO-koden med Intl (engelska) — avviker Spoks namn, lägg det i `landsnamn`.",
+    "lander_comment": "Där landet har flera språk: Schweiz tyska, Luxemburg franska (sessionens val 2026-09-29), och Belgien FRANSKA sedan 2026-10-02 (granskningen S-017: FR-kampanjen MATSTRUMP_FR_SALES har FR, BE och LU och visar belgarna franska, och Shopifys fraktmejl följer orderns språk, så en belgare som handlat på franska fick franska fraktmejl och nederländska Spoks-mejl; 2026-09-29 stod BE på nl, 'flamländska är majoritetsspråket'). Japan japanska sedan 2026-10-02 (S-018; Japan fick engelska Spoks-mejl sedan marknaden öppnade 2026-09-30). Taiwan står inte här med flit: zh-TW är inte lanserat (TW.lansering_stopp), så Taiwan får engelska. Finland finska (butiken har /fi sedan 2026-09-27). Ändra en rad = nya landsfilter på stegen, alltså en ny flödesversion (flodesversion). Landsnamnet i Spoks räknas ur ISO-koden med Intl (engelska): avviker Spoks namn, lägg det i `landsnamn`.",
     "landsnamn": {},
+    "flodesversion": 2,
+    "flodesversion_comment": "Flödena i Spoks kan inte ändras medan de är igång (update_flow_step: 'Cannot edit a step in an active flow', mätt 2026-09-26), så ett nytt språk eller ett ändrat landsfilter byggs som en NY version bredvid den som går och byts i appen (nytt på, gammalt av). 1 = de sex flödena '· alla språk' från 2026-09-29 (live sedan 21:10–22:27 samma kväll). 2 = '· alla språk v2' med japanska och Belgien på franska, förberedd 2026-10-02 (klaviyo/spoks/PROMPT-matstrumpor-ja-be.md bygger dem, klaviyo/spoks/cowork/2-matstrumpor-ja-be.txt byter dem). Höj talet nästa gång ett språk eller land ändras.",
+    "stopp": {
+      "ja": [
+        {
+          "monster": "[四肆4４]",
+          "orsak": "talet fyra (四 låter som 死) står aldrig i ett japanskt mejl, inte heller i 44 eller 4,5: skriv om meningen utan det (REGLER-ASIEN.md punkt 14)"
+        },
+        {
+          "monster": "[〇一二三五六七八九十百千]+(?:足|件|種類|種|組|箱|個|膳|枚|人|名|回|色|通|点|つ)",
+          "orsak": "skriv antal med halvbreddssiffror (5足, 3つ) så att motorn kan jämföra dem med svenskan"
+        },
+        {
+          "monster": "スウェーデン製|瑞典製",
+          "orsak": "strumporna är inte tillverkade i Sverige, varumärket är svenskt: スウェーデン発のブランド (REGLER-ASIEN.md punkt 5)"
+        },
+        {
+          "monster": "Klarna|Swish|クラーナ|スウィッシュ",
+          "orsak": "Klarna och Swish finns inte för kunder i Japan (REGLER-ASIEN.md punkt 13)"
+        },
+        {
+          "monster": "[¥￥]|クローナ|\\d[\\d,]*\\s*円",
+          "orsak": "inga belopp och inga valutor i mejlen (REGLER-ASIEN.md punkt 2)"
+        },
+        {
+          "monster": "\\{\\{fornamn\\}\\}(?!様)",
+          "orsak": "skriv alltid {{fornamn}}様: reservordet ui.du_reserv är お客, så ett namn som saknas blir お客様"
+        }
+      ]
+    },
+    "stopp_comment": "Stopp per språk, utöver motorns egna (påhittat tal, tankstreck, okänd token). Mönstret är ett reguljärt uttryck (flaggan u) som prövas mot varje översatt text: mejlens fält, ui-raderna och citaten. Japanskan (2026-10-02): talet fyra i alla former (samma regel som annonsernas sagerFyra i matstrumpor/marknader/egna/d3/annons.mjs), antal med kanji (då ser talkontrollen dem inte), スウェーデン製, Klarna/Swish, belopp, och tilltalet {{fornamn}}様.",
     "kampanjer_bara": {
       "k04-fars-dag-bestall-senast-24-okt": ["sv"],
       "k11-bestall-senast-8-dec": ["sv"],

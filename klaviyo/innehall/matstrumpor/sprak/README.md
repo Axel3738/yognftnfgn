@@ -48,6 +48,7 @@ tilltal och järnregler gäller här också. Sedan det här:
 **Järnreglerna (motorn stoppar på 1–4):**
 
 1. **Inga tal som inte står i den svenska texten.** Du får ta bort ett tal, aldrig lägga till.
+   Ett svenskt räkneord (två–tolv) räknas som tal: "Fem par" får bli "5", aldrig "6".
 2. **Inga tankstreck** (— eller –). Skriv om med komma, punkt eller kolon. Bindestreck i ord och
    i "36-44" är tillåtna.
 3. **Inga datum och ingen leveranstid.** Svenska sista beställningsdagar ("beställ senast 8
@@ -77,6 +78,32 @@ tilltal och järnregler gäller här också. Sedan det här:
     medlemskortet när namnet saknas. `medlem_i` behåller `{klubb}` exakt. `fakta_retur_rubrik` är
     rubriken över returrätten, `fakta_retur_text` är ordlistans "30 dagars öppet köp"-rad.
     `ms_rad` säger var kunden hittar paketnumret (i mejlet om att paketet skickats).
+
+### Japanska (ja), 2026-10-02
+
+Allt ovan gäller, plus `matstrumpor/marknader/oversattning/REGLER-ASIEN.md` (です・ます調,
+helbreddsinterpunktion 、。「」！？, halvbreddssiffror, inga mellanslag mellan japanska ord,
+ordlistan). Motorn stoppar på det som står i brandfilens `spoks_sprak.stopp.ja`.
+
+- **Talet fyra står aldrig i ett japanskt mejl**, i någon form (4, ４, 四, 肆), inte heller i
+  "36-44" eller "4,5" (四 låter som 死). Skriv om: "Fyra sorter" ⇒ nämn sorterna eller 全種類,
+  "Fyra par i en pizzakartong" ⇒ utan antalet, "Onesize 36-44" ⇒ bara フリーサイズ, "snitt 4,5"
+  ⇒ stryk snittet.
+- **Antal med halvbreddssiffror** (5足, 3つ, 8件), aldrig kanji (五足): motorn jämför siffrorna
+  med svenskan, där räkneorden två–tolv räknas som tal ("Fem par" ⇒ 5足 går, 6足 stoppar).
+  "en"/"ett" räknas inte (oftast artiklar): skriv ひとつ / もうひと箱, eller 1 där svenskan har
+  siffran ("Köp 1, få 1" ⇒ 1つ買うともう1つ無料).
+- **Tilltalet är `{{fornamn}}様`**, aldrig さん och aldrig namnet ensamt: `ui.du_reserv` är お客,
+  så ett namn som saknas blir お客様. `ui.hej_reserv` krävs men används inte av japanskan.
+- **Ordlistan för mejlen:** klubben Matstrumporクラブ (överallt), 寿司ソックス, ピザソックス,
+  ハンバーガーソックス, ドーナツソックス (butikens egna titlar i
+  `matstrumpor/marknader/output/underlag-ja.json`), lådorna 寿司ボックス / ピザボックス /
+  ハンバーガーボックス / ドーナツボックス, 木製のお箸, 1つ買うともう1つ無料, 30日間返品OK.
+- **Svenskt varumärke (Axels ord: "i Japan speciellt"):** välkomstmejlet `f01-valkomst-e1`
+  block 0 får säga att Matstrumpor är スウェーデン発のブランド, som sajtens hero och Om oss
+  och varje japansk annons. Ingen annanstans läggs det till, och スウェーデン製 är förbjudet.
+- **Klarna och Swish nämns aldrig**, och inga belopp eller valutor.
+- Japanska streck (―, ─, －) är tankstreck och stoppar som — och –. Katakanans ー är inget streck.
 
 **Leverans:** skriv filen med `Write` till `klaviyo/innehall/matstrumpor/sprak/<kod>.json`, kör
 `node klaviyo/spoks-sprak.mjs --brand matstrumpor --offline --sprak sv,<kod>` och rätta tills
