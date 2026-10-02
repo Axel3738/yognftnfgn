@@ -201,6 +201,19 @@ Lådor kommer så fort du säger adress.
 Axel
 ```
 
+### Nathalies flödesinlägg: resultatupplägget (Axels beslut 2026-10-02 kväll)
+
+Axel ville först svara att inlägget bara bär 300 kr (break-even-kalkyl på gissad räckvidd);
+sessionen avrådde (siffran bygger på en gissning, blandar två affärer, låter snål mot den bästa
+kreatören) och föreslog betalning per order. **Axels upplägg:** egen rabattkod **10 %**, giltig
+**30 dagar**, **50 kr till Nathalie per order** med koden, hon får pusha hur mycket content hon
+vill, Axel visar statistiken rakt av efter de 30 dagarna. Ekonomi: ~46 kr rabatt + 50 kr ≈ 96 kr
+per order mot break-even-CPA 308 kr. ⚠️ **Koden måste byggas som en orderrabatt som får
+kombineras med paketkoderna** (K1F1/K2F2, 85 % av ordrarna), annars väljer kunden paketet, koden
+används aldrig och hon känner sig lurad — samma lösning som värva en vän (`matstrumpor/varva/`).
+Byggs av sessionen när Nathalie sagt ja; räkningen efter 30 dagar = Shopifys användningar minus
+annullerade/återbetalda ordrar.
+
 ### Katarinas svar 2026-10-02 (via Axel) och vad som skickas
 
 Katarina: gärna, men osäker på om hon hittar någon som inte sett strumporna och vill vara med
