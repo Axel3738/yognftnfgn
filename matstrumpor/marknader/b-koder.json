@@ -1,0 +1,21 @@
+{
+ "_om": "b-koder.mjs: koderna före ändringen, för --aterstall.",
+ "koder": {
+  "SUSHI-2FOR499": {
+   "id": "gid://shopify/DiscountCodeNode/1842382831955",
+   "fore": {
+    "amount": 399,
+    "appliesOnEachItem": false
+   },
+   "sparat": "2026-10-02T08:32:41.740Z"
+  },
+  "SUSHI-4FOR799": {
+   "id": "gid://shopify/DiscountCodeNode/1842382864723",
+   "fore": {
+    "amount": 997,
+    "appliesOnEachItem": false
+   },
+   "sparat": "2026-10-02T08:32:42.441Z"
+  }
+ }
+}

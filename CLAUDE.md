@@ -199,7 +199,12 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
   ja/zh-TW.
 - Kvar: Spoks v2 (japanska, Belgien → franska) kräver en session med Spoks-connectorn
   (`klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`). SEK-formatet och kassans typsnitt är admin-klick
-  (`marknader/cowork/7-sajtfix.txt`). B-koden i A/B-testet (S-025) är Axels beslut.
+  (`marknader/cowork/7-sajtfix.txt`).
+- ✅ **Ätpinnarna är gratis i varje paket sedan 2026-10-02** (Axels val B på S-025: "Ätpinnarna ska alltid
+  vara gratis"). A/B-testets B-koder `SUSHI-2FOR499` och `SUSHI-4FOR799` ger ett belopp av per vara i
+  stället för en gång per order, så gåvan blir 0 kr och paketen kostar 499 resp. 799 kr som förut. En låda
+  utöver paketet får samma rabatt, och det valde Axel. `marknader/b-koder.mjs` kollar gåvan i alla tolv
+  paket, och `--aterstall --skarpt` lägger tillbaka de gamla beloppen.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
