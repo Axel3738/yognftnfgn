@@ -187,3 +187,12 @@ tools/skool/.state/
 # arkiv/matningar.jsonl + briefernas taggar — härledd data, committas inte (samma lärdom som
 # sparning/lage.json). arkiv.md och matningar.jsonl committas.
 products/matstrumpor/arkiv.json
+
+# /oversatt: färdiga videor och uppladdningsmappen committas ALDRIG. 2026-10-01
+# gick 11 mp4-filer (116 MB) in i historiken via no-video-txt/ — paketet var
+# 4,8 GiB 2026-10-02. Pillerloggen (*.piller.json) är liten och sparas.
+market-expansion/*/notion-batches/*/no-video-txt/*.mp4
+market-expansion/*/notion-batches/*/no-video-txt/*.png
+market-expansion/*/notion-batches/*/no-video-txt/*.jpg
+market-expansion/*/notion-batches/*/upp/
+market-expansion/*/notion-batches/*/heygen/
