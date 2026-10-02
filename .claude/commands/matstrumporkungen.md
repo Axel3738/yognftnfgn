@@ -96,6 +96,7 @@ behörighetsreglerna matchar på första ordet.
    node matstrumpor/kor.mjs --hamta
    node matstrumpor/kor.mjs --dom-alla --json --logga
    node matstrumpor/kor.mjs --arkiv
+   node matstrumpor/growthguide.mjs --skarpt   # Growth Guide i Notion: arkivet som databas Axel och creative strat kan ändra i (Axels beslut 2026-10-02). Koden skriver bara mätkolumnerna; Anteckning, Beslut, Nästa steg, Ägare rörs aldrig. Id i matstrumpor/growthguide.json
    ```
    `--hamta` läser **Sverige och varje utlandskampanj** ur
    `matstrumpor/marknader/annonser/lage.json` (14 st 2026-10-01; före det
@@ -308,7 +309,7 @@ behörighetsreglerna matchar på första ordet.
    ```bash
    node matstrumpor/kor.mjs --rond-klar
    git pull --rebase origin main
-   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv products/matstrumpor
+   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv matstrumpor/growthguide.json products/matstrumpor
    git commit -m "matstrumporkungen: <datum> — <N> etiketter, <M> lärdomar, <K> briefer, <F> förslag"
    git push origin main
    ```
