@@ -1,0 +1,242 @@
+{
+ "fil": "Takovertrekk_NO_FD_1_H3.mp4",
+ "cues": 7,
+ "trasiga": 7,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Til farsdag fikk campingvogntaket faktisk et dekke.",
+   "hord": "Til farsdag fikk campingmottaket faktisk et dekke. Vannet",
+   "ord": 7,
+   "avvikelser": [
+    {
+     "vantat": "campingvogntaket",
+     "hord": "campingmottaket"
+    },
+    {
+     "vantat": "—",
+     "hord": "vannet"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 2.9699999999999998,
+   "text": "Vannet renner av to hundre og ti D Oxford-stoffet og blir aldri stående.",
+   "hord": "dekke. Vannet renner av 210D Oxford-stoffet og blir aldri stående. Stram",
+   "ord": 14,
+   "avvikelser": [
+    {
+     "vantat": "vannet",
+     "hord": "dekke"
+    },
+    {
+     "vantat": "renner",
+     "hord": "vannet"
+    },
+    {
+     "vantat": "av",
+     "hord": "renner"
+    },
+    {
+     "vantat": "to",
+     "hord": "av"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "210d"
+    },
+    {
+     "vantat": "og",
+     "hord": "oxford"
+    },
+    {
+     "vantat": "ti",
+     "hord": "stoffet"
+    },
+    {
+     "vantat": "d",
+     "hord": "og"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "blir"
+    },
+    {
+     "vantat": "stoffet",
+     "hord": "aldri"
+    },
+    {
+     "vantat": "og",
+     "hord": "stående"
+    },
+    {
+     "vantat": "blir",
+     "hord": "stram"
+    },
+    {
+     "vantat": "aldri",
+     "hord": "—"
+    },
+    {
+     "vantat": "stående",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 7.1,
+   "text": "Stram stroppen.",
+   "hord": "stående. Stram stroppen. Krok",
+   "ord": 2,
+   "avvikelser": [
+    {
+     "vantat": "stram",
+     "hord": "stående"
+    },
+    {
+     "vantat": "stroppen",
+     "hord": "stram"
+    },
+    {
+     "vantat": "—",
+     "hord": "stroppen"
+    },
+    {
+     "vantat": "—",
+     "hord": "krok"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 8.564,
+   "text": "Krok den under kanten.",
+   "hord": "stroppen. Krok den under kanten. Den rører",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "krok",
+     "hord": "stroppen"
+    },
+    {
+     "vantat": "den",
+     "hord": "krok"
+    },
+    {
+     "vantat": "under",
+     "hord": "den"
+    },
+    {
+     "vantat": "kanten",
+     "hord": "under"
+    },
+    {
+     "vantat": "—",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "—",
+     "hord": "den"
+    },
+    {
+     "vantat": "—",
+     "hord": "rører"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 10.314,
+   "text": "Den rører bare taket, aldri lakken.",
+   "hord": "kanten. Den rører bare taket, aldri lakken. Farsdagsalg.",
+   "ord": 6,
+   "avvikelser": [
+    {
+     "vantat": "den",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "rører",
+     "hord": "den"
+    },
+    {
+     "vantat": "bare",
+     "hord": "rører"
+    },
+    {
+     "vantat": "taket",
+     "hord": "bare"
+    },
+    {
+     "vantat": "aldri",
+     "hord": "taket"
+    },
+    {
+     "vantat": "lakken",
+     "hord": "aldri"
+    },
+    {
+     "vantat": "—",
+     "hord": "lakken"
+    },
+    {
+     "vantat": "—",
+     "hord": "farsdagsalg"
+    }
+   ]
+  },
+  {
+   "nr": 6,
+   "start": 12.874,
+   "text": "Farsdagssalg.",
+   "hord": "lakken. Farsdagsalg. Bestill",
+   "ord": 1,
+   "avvikelser": [
+    {
+     "vantat": "farsdagssalg",
+     "hord": "lakken"
+    },
+    {
+     "vantat": "—",
+     "hord": "farsdagsalg"
+    },
+    {
+     "vantat": "—",
+     "hord": "bestill"
+    }
+   ]
+  },
+  {
+   "nr": 7,
+   "start": 14.644,
+   "text": "Bestill senest nittende oktober.",
+   "hord": "Farsdagsalg. Bestill senest 19. oktober.",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "bestill",
+     "hord": "farsdagsalg"
+    },
+    {
+     "vantat": "senest",
+     "hord": "bestill"
+    },
+    {
+     "vantat": "nittende",
+     "hord": "senest"
+    },
+    {
+     "vantat": "oktober",
+     "hord": "19"
+    },
+    {
+     "vantat": "—",
+     "hord": "oktober"
+    }
+   ]
+  }
+ ]
+}

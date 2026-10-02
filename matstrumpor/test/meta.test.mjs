@@ -12,6 +12,9 @@ const RAD = {
     { action_type: 'link_click', value: '65', '7d_click': '65' },
     { action_type: 'omni_landing_page_view', value: '56', '7d_click': '56' },
     { action_type: 'page_engagement', value: '2091', '7d_click': '513' },
+    // 3-sekundersvisningar. Med action_attribution_windows bär raden en
+    // 7d_click-nyckel som INTE är visningar (mätt 2026-10-01) — value gäller.
+    { action_type: 'video_view', value: '2300', '7d_click': '41' },
   ],
   purchase_roas: [{ action_type: 'omni_purchase', value: '1.634', '7d_click': '1.634' }],
   cost_per_action_type: [{ action_type: 'omni_purchase', value: '407.01', '7d_click': '407.01' }],
@@ -34,8 +37,11 @@ test('tolkaRad: spend, köp, ROAS, CPA, hook rate och hold rate ur en rad', () =
   assert.equal(r.cpa_sek, 407.01);
   assert.equal(r.lpv, 56);
   assert.equal(r.konv_lpv, 0.036);
-  assert.equal(r.hook_rate, 0.935, 'videostarter / visningar');
-  assert.equal(r.hold_rate, 0.196, 'thruplay / videostarter');
+  assert.equal(r.visningar_3s, 2300, 'value, aldrig 7d_click-nyckeln');
+  assert.equal(r.hook_rate, 0.467, '3-sekundersvisningar / impressions (Evolves hook rate)');
+  assert.equal(r.hold_rate, 0.183, 'ThruPlay / impressions (Evolves hold rate)');
+  assert.equal(r.hook_till_hold, 0.391, 'ThruPlay / 3-sekundersvisningar');
+  assert.equal(r.videostarter, 4600, 'videostarter står kvar som eget fält');
 });
 
 test('tolkaRad på en tom rad (annons utan data i fönstret): nollor där Meta säger noll, null där inget mättes', () => {
@@ -151,6 +157,11 @@ test('byggJobbfil: en ung annons har forsta_vecka.komplett=false och inga påhit
   assert.equal(ung.forsta_vecka.budget_d0, 1000, 'utan historik: nuvarande budget');
 });
 
+const DAGSERIE = Array.from({ length: 27 }, (_, i) => {
+  const dag = new Date(Date.parse('2026-08-26T00:00:00Z') + i * 86400000).toISOString().slice(0, 10);
+  return { date_start: dag, spend: dag === '2026-08-26' ? '0' : '1000.00', actions: [{ action_type: 'omni_purchase', value: '2', '7d_click': '2' }], purchase_roas: [{ action_type: 'omni_purchase', value: '1.5', '7d_click': '1.5' }] };
+});
+
 test('hamtaAvlasning gör bara GET-anrop, ett fönster per distinkt D0, och vägrar fel konto', async () => {
   const konfig = lasKonfig();
   const anrop = [];
@@ -158,17 +169,24 @@ test('hamtaAvlasning gör bara GET-anrop, ett fönster per distinkt D0, och väg
     api: async (sokvag, opt = {}) => {
       anrop.push(['api', sokvag, opt.method ?? 'GET', opt.params]);
       if (opt.form || (opt.method && opt.method !== 'GET')) throw new Error('SKRIVNING — får aldrig ske');
-      if (sokvag === konfig.meta.kampanj.id) return { id: konfig.meta.kampanj.id, name: konfig.meta.kampanj.namn, status: 'ACTIVE', effective_status: 'ACTIVE', daily_budget: '100000' };
+      if (sokvag === konfig.meta.kampanj.id) return { id: konfig.meta.kampanj.id, name: konfig.meta.kampanj.namn, status: 'ACTIVE', effective_status: 'ACTIVE', daily_budget: '100000', created_time: '2026-08-26T10:00:00+0200' };
       if (sokvag.endsWith('/insights')) return { data: [{ spend: '100.00', actions: [], purchase_roas: [] }] };
       throw new Error(`oväntat anrop ${sokvag}`);
     },
     alla: async (sokvag, params) => {
       anrop.push(['alla', sokvag, 'GET', params]);
+      if (sokvag.endsWith('/adsets')) return [
+        { id: 'x', name: 'nya16', status: 'ACTIVE', effective_status: 'ACTIVE', created_time: '2026-08-27T04:00:00+0200' },
+        { id: 'y', name: 'bilder', status: 'ACTIVE', effective_status: 'ACTIVE', created_time: '2026-08-27T04:00:00+0200' },
+      ];
+      if (sokvag.endsWith('/insights') && params?.level === 'adset') return [{ adset_id: 'x', date_start: '2026-09-20', spend: '40.00', actions: [], purchase_roas: [] }];
       if (sokvag.endsWith('/ads')) return [
         { id: '1', name: 'A', created_time: '2026-08-27T04:49:55+0200', effective_status: 'ACTIVE', adset: { id: 'x', name: 'nya16' } },
         { id: '2', name: 'B', created_time: '2026-08-27T09:00:00+0200', effective_status: 'ACTIVE', adset: { id: 'x', name: 'nya16' } },
         { id: '3', name: 'C', created_time: '2026-09-02T09:00:00+0200', effective_status: 'PAUSED', adset: { id: 'y', name: 'bilder' } },
       ];
+      // Dagserien (time_increment) — kampanjen spenderar från 2026-08-27.
+      if (sokvag.endsWith('/insights') && params?.time_increment) return DAGSERIE;
       if (sokvag.endsWith('/insights')) return [{ ad_id: '1', spend: '50.00', actions: [], purchase_roas: [] }];
       if (sokvag.endsWith('/activities')) return AKTIVITETER;
       throw new Error(`oväntat anrop ${sokvag}`);
@@ -178,8 +196,15 @@ test('hamtaAvlasning gör bara GET-anrop, ett fönster per distinkt D0, och väg
   assert.equal(jobb.konto, '730973156224390');
   assert.equal(jobb.annonser.length, 3);
   assert.ok(anrop.every((a) => a[2] === 'GET'), 'inte en enda skrivning');
-  const fonsterAnrop = anrop.filter((a) => a[1].endsWith('/insights') && a[3]?.time_range);
-  assert.equal(fonsterAnrop.length, 4, 'två distinkta D0 × (ad-nivå + kampanjnivå)');
+  const fonsterAnrop = anrop.filter((a) => a[1].endsWith('/insights') && a[3]?.time_range && !a[3]?.time_increment);
+  // Två distinkta D0 × (ad-nivå + kampanjnivå) = 4, plus vecka 2 och 3 för
+  // båda grupperna (D0 26 resp. 20 dygn gamla, under omprövningsgränsen 35) = 4.
+  assert.equal(fonsterAnrop.length, 8);
+  assert.equal(anrop.filter((a) => a[3]?.time_increment && a[3]?.level !== 'adset').length, 1, 'kampanjens dagserie läses EN gång');
+  assert.equal(anrop.filter((a) => a[3]?.time_increment && a[3]?.level === 'adset').length, 1, 'adsetens dagserie (3:2:2) läses EN gång, för hela kampanjen');
+  assert.deepEqual(jobb.adsets.map((a) => [a.id, a.annonser, a.aktiva_annonser, a.serie.length]), [['x', 2, 2, 1], ['y', 1, 0, 0]]);
+  assert.ok(jobb.kampanj_serie.length > 0, 'kampanjens dagserie följer med till domen per adset');
+  assert.equal(jobb.kampanj_start, '2026-08-27');
   assert.equal(jobb.annonser[0].forsta_vecka.since, '2026-08-27');
   assert.equal(jobb.annonser[2].forsta_vecka.since, '2026-09-02');
   assert.equal(jobb.budgethistorik.length, 2);

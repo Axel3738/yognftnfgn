@@ -1,0 +1,7 @@
+{
+  "comment": "Testfixtur — samma form som tools/lib/andra-verksamheter.json.",
+  "hubbar": [
+    { "id": "aaa10000-0000-4000-8000-000000000004", "namn": "Matstrumpor creative hub", "verksamhet": "Matstrumpor", "egen_rutin": "/matstrumpor" },
+    { "id": "aaa10000-0000-4000-8000-000000000005", "namn": "Creative Hub master", "verksamhet": "Grillkliniken", "egen_rutin": "ingen" }
+  ]
+}

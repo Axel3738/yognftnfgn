@@ -59,6 +59,15 @@
 //        → arenden/<id>/anmalan/COWORK-PROMPT.txt
 //   node konkurrenter/kor.mjs --anmald <id> --nr <n> --referens <r> | --angra "<skäl>"
 //        Kvittot för hand när en anmälan skickats på annat sätt; --angra tar tillbaka ett felaktigt kvitto.
+//   node konkurrenter/kor.mjs --epost <id> [--om]
+//        Shopify-anmälan som MEJL till Shopifys utsedda ombud (legal@shopify.com) när
+//        formuläret inte går: brödtext utan länkar + anmälan som PDF.
+//        ⛔ Inte Meta: Meta granskar bara formuläret (svar 2026-10-02 på åtta mejl till ip@fb.com).
+//        → arenden/<id>/epost/ (en .txt/.pdf/.b64 per mejl, index.json med sha256).
+//   node konkurrenter/kor.mjs --epost-koll <id> --namn <meta-N|shopify> --raw <fil>
+//        Kontrollen före Skicka: bilagan ur utkastets RAW ska vara filen (sha256).
+//   node konkurrenter/kor.mjs --epost-skickad <id> --namn <meta-N|shopify> --gmail <id> [--trad <id>]
+//        Kvittot för ett skickat mejl: epost/skickat.jsonl + anmälan/Shopify-anmälan "inskickad".
 //   node konkurrenter/kor.mjs --skicka <id> [--utan-meta] …
 //        --utan-meta: brevet och sms:et nämner inte Meta-anmälningarna alls (Axels beslut
 //        2026-09-29 för ORVO: "vi borde lugnt inte säga att vi har skickat DMCA").
@@ -106,6 +115,7 @@ import { kortAnmalan, kortMejl, kortShopify, byggGranskning, statusFor, smsText,
 import { tolkaAnnonsinput, byggAnnonsfynd, annonsUppfoljning } from './annonsfall.mjs';
 import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
 import { skickaAnmalan, formularVarden, coworkPrompt } from './anmal-skicka.mjs';
+import { metaMejlFor, shopifyMejl, noticePdf, kollaBilaga, skickatRad, META_OMBUD } from './epostanmalan.mjs';
 import { hittaFfmpeg, hamtaFil, varVideo, videoKalla, egnaFilmer, prefixUrNamn, rutorUrVideo, hashUrBild, bildRuta, graRuta, skillnadOvre, langd, skrivRutaNr, paraRutor, lanadeKlipp, klippbyten, tagningar, tid, avstand, FPS, MAX_AVSTAND, KONTRAST_MIN, KONTROLL_AVSTAND, SAMMA_TAGNING, FRO_AVSTAND, BOKSTAVER, RUTOR_VERSION, BIBLIOTEK_VERSION, bevisStatus, produktForPar, filmdatum } from './klipp.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
@@ -1886,12 +1896,111 @@ async function granskaSvar() {
   console.log(`${antal} kvitto(n) inskrivna i ${upp.id}; ${kvar} kvar. Bygg om statusen: --granska ${upp.id}${granskning.kort.some((x) => x.typ === 'mejl') ? '' : ' --utan-mejl'} --bara-status, och publicera data/status.json.`);
 }
 
+const EPOSTMAPP = (id) => join(ARENDEMAPP, id, 'epost');
+const lasJsonl = (fil) => (existsSync(fil) ? readFileSync(fil, 'utf8').split('\n').filter((r) => r.trim()).map((r) => JSON.parse(r)) : []);
+
+/**
+ * --epost <id> [--om]: anmälningarna som MEJL till plattformarnas utsedda ombud (epostanmalan.mjs),
+ * när formuläret inte går (Metas säkerhetskontroll, Coworks spärr 2026-10-01). Skriver
+ * arenden/<id>/epost/: <namn>.txt (Till, Ämne, brödtext utan länkar), <namn>.pdf (anmälan
+ * ordagrant med alla länkar), <namn>.b64 (bilagan till Gmail-anropet) och index.json med
+ * sha256. Bara det som inte är inskickat eller skickat. En fil som redan finns rörs inte utan
+ * --om — ett utkast som gjorts av den hade annars slutat stämma mot filen.
+ * Sessionen tar ETT mejl i taget: utkast i Gmail → --epost-koll → Skicka → --epost-skickad.
+ */
+async function epost() {
+  const { a } = hamtaArende(flagga('epost'));
+  const mapp = EPOSTMAPP(a.id); mkdirSync(mapp, { recursive: true });
+  const skickat = new Set(lasJsonl(join(mapp, 'skickat.jsonl')).map((r) => r.namn));
+  const gammalt = lasJson(join(mapp, 'index.json'), []);
+  const skapad = new Date(gammalt.find((x) => x.skapad)?.skapad ?? new Date().toISOString());
+  const lista = [];
+  const metaKvar = (a.anmalan?.rapporter ?? []).filter((x) => x.status !== 'inskickad');
+  // Meta granskar inte mejl (META_OMBUD.granskar, mätt 2026-10-02) — för Meta gäller bara formuläret.
+  if (metaKvar.length && !META_OMBUD.granskar) console.log(`Meta: inga mejl — Meta svarade 2026-10-02 "${META_OMBUD.svar}" De ${metaKvar.length} Meta-anmälningarna görs i formuläret (själv-läget: --granska ${a.id} --sjalv alla).`);
+  for (const r of META_OMBUD.granskar ? metaKvar : []) {
+    const an = lasJson(join(DATAMAPP, r.fil));
+    if (!an) { console.log(`anmälan ${r.nr}: ${r.fil} saknas — bygg den med --anmal ${a.id}`); process.exitCode = 1; continue; }
+    lista.push([`meta-${r.nr}`, metaMejlFor({ arende: a.id, sidnamn: a.deras?.sidnamn, sidaId: a.deras?.sidaId, a: an })]);
+  }
+  if (a.shopify && a.shopify.status !== 'inskickad') lista.push(['shopify', shopifyMejl({ arende: a.id, butiksnamn: a.deras?.sidnamn, an: lasJson(join(DATAMAPP, a.shopify.fil)) })]);
+  if (!lista.length) { console.log('Inget att mejla.'); return; }
+  const index = new Map(gammalt.map((x) => [x.namn, x]));
+  for (const [namn, x] of lista) {
+    if (skickat.has(namn)) { console.log(`${namn}: redan skickad (skickat.jsonl) — rörs inte`); continue; }
+    if (existsSync(join(mapp, `${namn}.pdf`)) && !har('om')) { console.log(`${namn}: finns redan — rörs inte (--om bygger om; gör då om utkastet)`); continue; }
+    const pdf = noticePdf({ ...x.pdf, skapad });
+    writeFileSync(join(mapp, `${namn}.pdf`), pdf);
+    writeFileSync(join(mapp, `${namn}.txt`), `To: ${x.till}\nSubject: ${x.amne}\nAttachment: ${namn}.pdf\n\n${x.text}\n`);
+    writeFileSync(join(mapp, `${namn}.b64`), pdf.toString('base64'));
+    index.set(namn, { namn, till: x.till, amne: x.amne, pdf: `${namn}.pdf`, bytes: pdf.length, sha256: createHash('sha256').update(pdf).digest('hex'), skapad: skapad.toISOString() });
+    console.log(`${namn.padEnd(8)} ${x.till.padEnd(18)} ${String(pdf.length).padStart(6)} B  ${index.get(namn).sha256.slice(0, 12)}`);
+  }
+  writeFileSync(join(mapp, 'index.json'), `${JSON.stringify([...index.values()], null, 1)}\n`);
+  console.log(`\nkonkurrenter/arenden/${a.id}/epost/ · ett mejl i taget: utkast i Gmail (brödtexten = .txt från rad 5, bilagan = .b64) → läs utkastet som RAW och kör --epost-koll ${a.id} --namn <namn> --raw <fil> → Skicka → --epost-skickad ${a.id} --namn <namn> --gmail <meddelande-id>.`);
+}
+
+/**
+ * --epost-koll <id> --namn <namn> --raw <fil>: kontrollen före Skicka. <fil> = utkastets RAW
+ * (get_draft messageFormat RAW), avskrivet ur verktygssvaret — hela eller från en bit före
+ * bilagan. Bilagans sha256 ska vara filens. Exit 1 annars, med var det skiljer.
+ */
+async function epostKoll() {
+  const { a } = hamtaArende(flagga('epost-koll'));
+  const namn = flagga('namn'); const rawFil = flagga('raw');
+  if (!namn || !rawFil) { console.log('Ange --namn <meta-N|shopify> --raw <fil>.'); process.exitCode = 1; return; }
+  const pdfFil = join(EPOSTMAPP(a.id), `${namn}.pdf`);
+  if (!existsSync(pdfFil)) { console.log(`${pdfFil} saknas — bygg med --epost ${a.id}.`); process.exitCode = 1; return; }
+  let r;
+  try { r = kollaBilaga(readFileSync(rawFil, 'utf8'), readFileSync(pdfFil)); } catch (e) { console.log(`FEL: ${e.message}`); process.exitCode = 1; return; }
+  console.log(`${r.filnamn ?? '?'}: ${r.sha.slice(0, 16)} ${r.ok ? '==' : '!='} ${r.shaFil.slice(0, 16)}`);
+  if (r.ok) { console.log('OK — bilagan i utkastet är filen.'); return; }
+  console.log(`FEL: ${r.olika} tecken skiljer, första vid ${r.forsta}. ${r.olika <= 3 ? 'Ett par tecken: troligen avskriftsfel i RAW-kopian — läs utkastet igen och skriv av på nytt.' : 'Många tecken: fel bilaga i utkastet — radera utkastet och gör om det.'} Skicka inte.`);
+  process.exitCode = 1;
+}
+
+/**
+ * --epost-skickad <id> --namn <meta-N|shopify> --gmail <meddelande-id> [--trad <id>] [--kontroll "<text>"]:
+ * kvittot för ett skickat mejl. Raden i epost/skickat.jsonl (aldrig två gånger; samma Gmail-id
+ * igen = redan inskrivet) och kvittot i ärendet: anmälan N resp. Shopify-anmälan "inskickad",
+ * referens "e-post till <ombud>, Gmail <id>". Kortet lämnar själv-läget.
+ */
+async function epostSkickad() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('epost-skickad'));
+  const namn = flagga('namn'); const gmail = flagga('gmail');
+  if (!namn || !gmail) { console.log('Ange --namn <meta-N|shopify> --gmail <meddelande-id>.'); process.exitCode = 1; return; }
+  const mapp = EPOSTMAPP(a.id);
+  const post = lasJson(join(mapp, 'index.json'), []).find((x) => x.namn === namn);
+  if (!post) { console.log(`${namn} finns inte i ${mapp}/index.json — bygg med --epost ${a.id}.`); process.exitCode = 1; return; }
+  const loggfil = join(mapp, 'skickat.jsonl');
+  const rader = lasJsonl(loggfil);
+  const nu = flagga('nar') ?? new Date().toISOString();
+  const fore = rader.find((r) => r.namn === namn);
+  if (fore && fore.gmail_id !== gmail) { console.log(`${namn} står redan som skickad med Gmail ${fore.gmail_id} — inte ${gmail}. Inget skrivs.`); process.exitCode = 1; return; }
+  if (!fore) writeFileSync(loggfil, `${rader.map((r) => JSON.stringify(r)).concat(JSON.stringify(skickatRad(rader, { namn, till: post.till, gmail, trad: flagga('trad'), sha256: post.sha256, nar: nu, kontroll: flagga('kontroll') }))).join('\n')}\n`);
+  if (namn !== 'shopify' && !META_OMBUD.granskar) { console.log(`${namn}: mejlet står i skickat.jsonl, men anmälan kvitteras INTE — Meta granskar inte mejl ("${META_OMBUD.svar}"). Den görs i formuläret.`); return; }
+  const referens = `e-post till ${post.till}, Gmail ${gmail}`;
+  const kort = namn === 'shopify' ? 'shopify' : `anmalan-${Number(namn.replace(/^meta-/, ''))}`;
+  let upp;
+  try {
+    upp = namn === 'shopify'
+      ? kvitteraShopify(a, { referens, nu, av: 'sessionen' })
+      : kvitteraAnmalan(a, { nr: Number(namn.replace(/^meta-/, '')), referens, nu, av: 'sessionen', kvitto: { kanal: 'e-post', till: post.till, gmail, sha256: post.sha256 } }).upp;
+  } catch (e) { console.log(`${fore ? 'Raden fanns redan i skickat.jsonl. ' : ''}${e.message}`); if (!/redan kvitterad/.test(e.message)) process.exitCode = 1; return; }
+  if (Array.isArray(upp.sjalv)) upp = { ...upp, sjalv: upp.sjalv.filter((x) => x !== kort) };
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  await byggSidaFil({ k, arenden });
+  const kvar = (upp.anmalan?.rapporter ?? []).filter((x) => x.status !== 'inskickad').length + (upp.shopify && upp.shopify.status !== 'inskickad' ? 1 : 0);
+  console.log(`✅ ${namn} kvitterad — ${referens}. ${kvar ? `${kvar} kvar.` : `Allt inskickat; ${upp.id} är ${upp.status}.`}`);
+}
+
 async function sidaEnbart() {
   const k = konfig();
   const f = await byggSidaFil({ k, arenden: lasArenden(ARENDEFIL, { logg }) });
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('granska-svar') ? granskaSvar : har('granska') ? granska : har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('original') ? original : har('anmal-skicka') ? anmalSkicka : har('anmal-cowork') ? anmalCowork : har('lagg-till-bild') ? laggTillBild : har('shopify') ? shopify : har('lagg-till') ? laggTill : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('extern') ? extern : har('sida') ? sidaEnbart : null;
-if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp, --extern <länk> --id … --agare … --orsak … eller --sida.'); process.exit(1); }
+const huvud = har('epost-skickad') ? epostSkickad : har('epost-koll') ? epostKoll : har('epost') ? epost : har('granska-svar') ? granskaSvar : har('granska') ? granska :har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('original') ? original : har('anmal-skicka') ? anmalSkicka : har('anmal-cowork') ? anmalCowork : har('lagg-till-bild') ? laggTillBild : har('shopify') ? shopify : har('lagg-till') ? laggTill : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('extern') ? extern : har('sida') ? sidaEnbart : null;
+if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --epost <id>, --epost-koll <id>, --epost-skickad <id>, --avfarda <id>, --eskalera <id>, --foljupp, --extern <länk> --id … --agare … --orsak … eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });

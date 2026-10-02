@@ -1,170 +1,174 @@
 {
-  "uppdaterad": "2026-10-01T04:16:21.477Z",
-  "kord": "2026-10-01T04:11:01.937Z",
+  "uppdaterad": "2026-10-02T04:17:17.627Z",
+  "kord": "2026-10-02T04:11:52.415Z",
   "manad": "2026-10",
   "period": {
     "fran": "2026-10-01",
-    "till": "2026-10-01"
+    "till": "2026-10-02"
   },
   "slutavrakning": false,
   "sats": 0.004,
   "valuta": {
     "kod": "USD",
-    "kurs": 0.10021,
-    "datum": "2026-09-30",
+    "kurs": 0.09971,
+    "datum": "2026-10-01",
     "gammal": false
   },
   "rader": [
     {
       "plats": 1,
-      "id": "josh",
-      "namn": "Josh Naelga",
-      "usd": 0.09,
-      "annonser": 22,
+      "id": "jasper",
+      "namn": "Jasper Tomboc",
+      "usd": 1.76,
+      "annonser": 76,
       "kampanjer": [
         {
-          "namn": "LOCK_IN_Bordtennisnätet | Engagemang Indien | 2026-09-26",
-          "usd": 0.04
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "usd": 1.15
         },
         {
-          "namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
-          "usd": 0.02
+          "namn": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+          "usd": 0.23
         },
         {
-          "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "usd": 0.01
+          "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+          "usd": 0.2
         }
       ],
       "basta": {
-        "namn": "Inomhustofflor_SP_1_H1",
-        "usd": 0.02
+        "namn": "Takoverdrag_FD_1_H3",
+        "usd": 0.64
       },
-      "okning": null,
-      "forraPlats": 1,
-      "flytt": 0
+      "okning": 1.71,
+      "forraPlats": 3,
+      "flytt": 2
     },
     {
       "plats": 2,
       "id": "carl",
       "namn": "Carl Vicente",
-      "usd": 0.07,
-      "annonser": 19,
+      "usd": 1.11,
+      "annonser": 40,
       "kampanjer": [
         {
           "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-          "usd": 0.06
+          "usd": 0.88
         },
         {
           "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "usd": 0.01
+          "usd": 0.18
         },
         {
-          "namn": "Mastern",
-          "usd": 0
+          "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+          "usd": 0.03
         }
       ],
       "basta": {
-        "namn": "Takoverdrag_SP_4_H1",
-        "usd": 0.03
+        "namn": "Takoverdrag_CS_2_H2",
+        "usd": 0.39
       },
-      "okning": null,
+      "okning": 1.04,
       "forraPlats": 2,
       "flytt": 0
     },
     {
       "plats": 3,
-      "id": "jasper",
-      "namn": "Jasper Tomboc",
-      "usd": 0.05,
-      "annonser": 37,
+      "id": "josh",
+      "namn": "Josh Naelga",
+      "usd": 0.92,
+      "annonser": 73,
       "kampanjer": [
         {
-          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-          "usd": 0.03
+          "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+          "usd": 0.23
         },
         {
-          "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-          "usd": 0.01
-        },
-        {
-          "namn": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
-          "usd": 0.01
-        }
-      ],
-      "basta": {
-        "namn": "Takoverdrag_FD_1_H3",
-        "usd": 0.01
-      },
-      "okning": null,
-      "forraPlats": 6,
-      "flytt": 3
-    },
-    {
-      "plats": 4,
-      "id": "jerzee",
-      "namn": "Jerzee",
-      "usd": 0.03,
-      "annonser": 18,
-      "kampanjer": [
-        {
-          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-          "usd": 0.01
-        },
-        {
-          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-          "usd": 0.01
+          "namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+          "usd": 0.22
         },
         {
           "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+          "usd": 0.21
+        }
+      ],
+      "basta": {
+        "namn": "IBC_PD_1_H1",
+        "usd": 0.2
+      },
+      "okning": 0.83,
+      "forraPlats": 1,
+      "flytt": -2
+    },
+    {
+      "plats": 4,
+      "id": "annabelle",
+      "namn": "Annabelle Gonzales",
+      "usd": 0.57,
+      "annonser": 32,
+      "kampanjer": [
+        {
+          "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+          "usd": 0.37
+        },
+        {
+          "namn": "ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22",
+          "usd": 0.2
+        },
+        {
+          "namn": "Mastern",
           "usd": 0
         }
       ],
       "basta": {
-        "namn": "Termoskydd_RI_1_H1",
-        "usd": 0.01
+        "namn": "Beltgrinder_PD_19_1",
+        "usd": 0.17
       },
-      "okning": null,
-      "forraPlats": 4,
-      "flytt": 0
+      "okning": 0.55,
+      "forraPlats": 5,
+      "flytt": 1
     },
     {
       "plats": 5,
-      "id": "annabelle",
-      "namn": "Annabelle Gonzales",
-      "usd": 0.02,
-      "annonser": 10,
+      "id": "jerzee",
+      "namn": "Jerzee",
+      "usd": 0.53,
+      "annonser": 40,
       "kampanjer": [
         {
-          "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 0.01
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "usd": 0.33
         },
         {
-          "namn": "ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22",
+          "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+          "usd": 0.19
+        },
+        {
+          "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
           "usd": 0.01
         }
       ],
       "basta": {
-        "namn": "Beltgrinder_PD_19_1",
-        "usd": 0.01
+        "namn": "Termoskydd_RI_1_H1",
+        "usd": 0.18
       },
-      "okning": null,
-      "forraPlats": 3,
-      "flytt": -2
+      "okning": 0.5,
+      "forraPlats": 4,
+      "flytt": -1
     },
     {
       "plats": 6,
       "id": "gilz",
       "namn": "Gilz Bruce Biazon",
-      "usd": 0.01,
-      "annonser": 11,
+      "usd": 0.25,
+      "annonser": 27,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 0
+          "usd": 0.17
         },
         {
           "namn": "MATSTRUMP_SALES_20260826",
-          "usd": 0
+          "usd": 0.07
         },
         {
           "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
@@ -173,16 +177,16 @@
       ],
       "basta": {
         "namn": "128 H3",
-        "usd": 0
+        "usd": 0.08
       },
-      "okning": null,
-      "forraPlats": 5,
-      "flytt": -1
+      "okning": 0.24,
+      "forraPlats": 6,
+      "flytt": 0
     }
   ],
   "totalt": {
-    "usd": 0.26,
-    "annonser": 117,
+    "usd": 5.13,
+    "annonser": 288,
     "redigerare": 6
   },
   "obetald": {
@@ -202,5 +206,17 @@
     "konton": 7,
     "fel": 0
   },
-  "historik": []
+  "historik": [
+    {
+      "datum": "2026-10-01",
+      "per": {
+        "josh": 0.09,
+        "carl": 0.07,
+        "jasper": 0.05,
+        "jerzee": 0.03,
+        "annabelle": 0.02,
+        "gilz": 0.01
+      }
+    }
+  ]
 }

@@ -1,0 +1,151 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   166,
+   156,
+   917,
+   229
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 164,
+  "utvidga": 4,
+  "text": "Bestill senest 19."
+ },
+ {
+  "box": [
+   65,
+   277,
+   1012,
+   365
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "oktober: spikkesett til"
+ },
+ {
+  "box": [
+   363,
+   398,
+   715,
+   486
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 406,
+  "utvidga": 4,
+  "text": "farsdag"
+ },
+ {
+  "box": [
+   170,
+   531,
+   907,
+   576
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   18,
+   17
+  ],
+  "ink_topp": 539,
+  "utvidga": 4,
+  "text": "Vesken med glidelås rekker frem til farsdag."
+ },
+ {
+  "box": [
+   0,
+   1059,
+   1080,
+   1159
+  ],
+  "fet": true,
+  "storlek": 96,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1067,
+  "utvidga": 4,
+  "text": "1 039 kr, ord. 1 359 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   17,
+   15
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]

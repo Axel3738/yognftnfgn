@@ -16,6 +16,13 @@ inget källklipp med sekund, ingen text-på-skärm per klipp, ingen frihet.
 Regin skrivs av **huvudsessionen** (CLAUDE.md regel 6 gäller texten —
 subagenten skriver de svenska raderna, sessionen bestämmer bilden).
 
+**Tidsstrukturen för kall trafik** (Evolves prompter, inskrivna 2026-10-02 —
+`docs/copy-regler.md` → "Ur Evolves prompter"): hook 0–3 s (~5 ord, max två
+rader, begriplig utan ljud), bridge 3–8 s, hold 8–35 s (invändning →
+påstående → bevis → nytta), CTA senast 45 s. Tre hookar med var sin bridge
+delar EN hold och EN CTA, så regitabellen skriver hookarna som tre separata
+tagningar och kroppen en gång. Ingen rad refererar till ett annat märke.
+
 ---
 
 ## Tabellen (engelska rubriker — redigerarna läser den)
@@ -104,6 +111,39 @@ I spärrläget stoppar dessutom anmärkningar med kod `regi`, `taggar` och
 **Kalibrering:** briefer skrivna före 2026-09-21 (`skapad_dag` < `REGI_FRAN`)
 får den saknade regin som anmärkning, aldrig som kommentar till redigeraren —
 regeln fanns inte när de skrevs. En brief utan datum (spärrläget) döms fullt.
+
+---
+
+## Matstrumpor: ett koncept = tre hookar + COPY CARD med 2 + 2 (3:2:2, 2026-10-02)
+
+Axels beslut ROUTING C: Matstrumpors annonser byggs som Evolves 3:2:2 — ett
+koncept är ett testadset med **tre annonser (samma kropp, tre hookar)**, och varje
+annons bär **två rubriker och två primärtexter**. Briefen bär därför:
+
+- en hooktabell H1–H3 (`Swedish (use this) | English meaning`) med regin för hook-
+  raden per variant; kroppen är densamma,
+- tre namn `…_<nnn>_h1_v1 … _h3_v1` (`node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3`)
+  och tre Notion-rader med samma brief,
+- ett COPY CARD i den här formen — uppladdaren (`matstrumpor/struktur.mjs lasCopyKort`)
+  läser det, och en brief med en rubrik eller en text laddas aldrig upp:
+
+```
+## COPY CARD (goes in Ads Manager, not in the creative) — shared by the three hook ads
+**Primary text 1:**
+> …
+**Primary text 2:**
+> …
+**Headline 1:** `…`
+**Headline 2:** `…`
+**Description:** `…`
+**CTA button:** `Handla nu` (Shop Now)
+**Destination:** https://matstrumpor.se/products/sushi-strumpor
+```
+
+De två texterna säger två olika saker (en vinkel var), och de två rubrikerna likaså —
+skrivna av sonnet-subagenten mot `docs/copy-regler.md`, tre-frågorstestet på varje.
+Butikens namn står aldrig i dem. Bild och video blir aldrig samma koncept. Skriv
+aldrig "upload goes to adset …": adsetet är konceptets eget.
 
 ---
 

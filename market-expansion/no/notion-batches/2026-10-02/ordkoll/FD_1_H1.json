@@ -1,0 +1,271 @@
+{
+ "fil": "Takovertrekk_NO_FD_1_H1.mp4",
+ "cues": 8,
+ "trasiga": 8,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Et tips til farsdag.",
+   "hord": "Et tips til farsdag. Taket",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "—",
+     "hord": "taket"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 1.446,
+   "text": "Taket han aldri sjekker.",
+   "hord": "farsdag. Taket han aldri sjekker. Vannet",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "taket",
+     "hord": "farsdag"
+    },
+    {
+     "vantat": "han",
+     "hord": "taket"
+    },
+    {
+     "vantat": "aldri",
+     "hord": "han"
+    },
+    {
+     "vantat": "sjekker",
+     "hord": "aldri"
+    },
+    {
+     "vantat": "—",
+     "hord": "sjekker"
+    },
+    {
+     "vantat": "—",
+     "hord": "vannet"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 3.196,
+   "text": "Vannet renner av to hundre og ti D Oxford-stoffet og blir aldri stående.",
+   "hord": "sjekker. Vannet renner av 210D Oxford-stoffet og blir aldri stående. Stram",
+   "ord": 14,
+   "avvikelser": [
+    {
+     "vantat": "vannet",
+     "hord": "sjekker"
+    },
+    {
+     "vantat": "renner",
+     "hord": "vannet"
+    },
+    {
+     "vantat": "av",
+     "hord": "renner"
+    },
+    {
+     "vantat": "to",
+     "hord": "av"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "210d"
+    },
+    {
+     "vantat": "og",
+     "hord": "oxford"
+    },
+    {
+     "vantat": "ti",
+     "hord": "stoffet"
+    },
+    {
+     "vantat": "d",
+     "hord": "og"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "blir"
+    },
+    {
+     "vantat": "stoffet",
+     "hord": "aldri"
+    },
+    {
+     "vantat": "og",
+     "hord": "stående"
+    },
+    {
+     "vantat": "blir",
+     "hord": "stram"
+    },
+    {
+     "vantat": "aldri",
+     "hord": "—"
+    },
+    {
+     "vantat": "stående",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 7.366,
+   "text": "Stram stroppen.",
+   "hord": "stående. Stram stroppen. Krok",
+   "ord": 2,
+   "avvikelser": [
+    {
+     "vantat": "stram",
+     "hord": "stående"
+    },
+    {
+     "vantat": "stroppen",
+     "hord": "stram"
+    },
+    {
+     "vantat": "—",
+     "hord": "stroppen"
+    },
+    {
+     "vantat": "—",
+     "hord": "krok"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 8.849,
+   "text": "Krok den under kanten.",
+   "hord": "stroppen. Krok den under kanten. Den rører",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "krok",
+     "hord": "stroppen"
+    },
+    {
+     "vantat": "den",
+     "hord": "krok"
+    },
+    {
+     "vantat": "under",
+     "hord": "den"
+    },
+    {
+     "vantat": "kanten",
+     "hord": "under"
+    },
+    {
+     "vantat": "—",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "—",
+     "hord": "den"
+    },
+    {
+     "vantat": "—",
+     "hord": "rører"
+    }
+   ]
+  },
+  {
+   "nr": 6,
+   "start": 10.779,
+   "text": "Den rører bare taket, aldri lakken.",
+   "hord": "kanten. Den rører bare taket, aldri lakken. Farsdagsalg.",
+   "ord": 6,
+   "avvikelser": [
+    {
+     "vantat": "den",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "rører",
+     "hord": "den"
+    },
+    {
+     "vantat": "bare",
+     "hord": "rører"
+    },
+    {
+     "vantat": "taket",
+     "hord": "bare"
+    },
+    {
+     "vantat": "aldri",
+     "hord": "taket"
+    },
+    {
+     "vantat": "lakken",
+     "hord": "aldri"
+    },
+    {
+     "vantat": "—",
+     "hord": "lakken"
+    },
+    {
+     "vantat": "—",
+     "hord": "farsdagsalg"
+    }
+   ]
+  },
+  {
+   "nr": 7,
+   "start": 13.499,
+   "text": "Farsdagssalg.",
+   "hord": "lakken. Farsdagsalg. Bestill",
+   "ord": 1,
+   "avvikelser": [
+    {
+     "vantat": "farsdagssalg",
+     "hord": "lakken"
+    },
+    {
+     "vantat": "—",
+     "hord": "farsdagsalg"
+    },
+    {
+     "vantat": "—",
+     "hord": "bestill"
+    }
+   ]
+  },
+  {
+   "nr": 8,
+   "start": 15.109,
+   "text": "Bestill senest nittende oktober.",
+   "hord": "Farsdagsalg. Bestill senest 19. oktober.",
+   "ord": 4,
+   "avvikelser": [
+    {
+     "vantat": "bestill",
+     "hord": "farsdagsalg"
+    },
+    {
+     "vantat": "senest",
+     "hord": "bestill"
+    },
+    {
+     "vantat": "nittende",
+     "hord": "senest"
+    },
+    {
+     "vantat": "oktober",
+     "hord": "19"
+    },
+    {
+     "vantat": "—",
+     "hord": "oktober"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-10-02",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Two image ads translated and live in Norway today, the first new rows in four days: CaraShellRoof_OB_115_1 and OB_121_1.",
+    "CaraShellRoof_NO_OB_115_1 (ad 120249381209540172) and CaraShellRoof_NO_OB_121_1 (ad 120249381220120172), both in CARASHELL_NO_Takovertrekket, ad set OB, uploaded live and read back ACTIVE in an ACTIVE ad set. Meta still has them in review (IN_PROCESS), which is normal for a fresh ad.",
+    "Both images were re-drawn in Norwegian, not machine-translated: every text box was already measured in the Swedish source, so only the words changed. Checked both finished images by eye - no Swedish left anywhere, no leftover marks, the button reads Norwegian.",
+    "Price in both images and in both ad texts is the Norwegian store price: 1 106 kr, was 1 382,50 kr, save 276,50 kr (20%). The Swedish 1 129 kr never leaves Sweden, and the Norwegian price was read live from the store before upload.",
+    "Both rows moved to Approved in Notion with a comment and the Ads Manager link, because the US version was already live - Norway was the last market missing.",
+    "Checked the whole Approved queue as well: 72 rows, every one of them live in Norway. Nothing lagging behind. No HeyGen credits used - these are images, which cost nothing to translate."
+  ],
+  "varningar": [
+    "Still open, and reported again because nothing has changed since 23 Sep: the gift angle runs in two ad sets in the same CBO - CARASHELL_NO_Takovertrekket - G and - GT. Both are live with spend, so no session touches them; the owner decides whether both keep running or he pauses one himself. No ping today, the decision is already with him.",
+    "The translated images are not attached back to the Notion rows - uploading files to Notion over the REST API is not built yet. Review them in Ads Manager instead; the link is on each row."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-10-03"
+}

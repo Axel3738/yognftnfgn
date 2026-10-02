@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { sprakKonfig, sprakFilter, mejlText, oversattMejl, hash, kalla, byggAllaSprak } from '../spoks-sprak.mjs';
+import { sprakKonfig, sprakFilter, mejlText, oversattMejl, hash, kalla, kallaUi, byggAllaSprak, textFel, uiOchCitatFel, talIKallan } from '../spoks-sprak.mjs';
 import { mejlTillSpoks, UI_SV } from '../spoks-paket.mjs';
 import { ROT } from '../mallar.mjs';
 
@@ -128,6 +128,87 @@ test('påhittat tal, tankstreck, okänd token och saknad nyckel stoppar', () => 
   assert.match(alla, /block 1 rubrik: saknas/);
 });
 
+test('svenska räkneord i källan räknas som tal: "Fem par" får bli 5 men inte 6, och en etta kräver en siffra', () => {
+  assert.deepEqual(talIKallan('Fem par, två lådor och Åtta recensioner, snitt 4,5.').sort(), ['2', '4', '5', '5', '8']);
+  // Ordgräns: "tio" i "trettio" och "tre" i "trettio" är inga räkneord.
+  assert.deepEqual(talIKallan('trettio nionde'), []);
+  assert.deepEqual(textFel('f', 'Fem par i en låda.', '5足のソックス'), []);
+  assert.match(textFel('f', 'Fem par i en låda.', '6足のソックス').join('\n'), /talet 6 finns inte/);
+  // "en"/"ett" är oftast artiklar och räknas inte.
+  assert.match(textFel('f', 'En låda till.', 'もう1箱').join('\n'), /talet 1 finns inte/);
+});
+
+test('helbreddssiffror räknas som siffror: ６足 stoppar precis som 6足', () => {
+  assert.match(textFel('f', 'Fem par.', '６足').join('\n'), /talet 6 finns inte/);
+  assert.deepEqual(textFel('f', 'Fem par.', '５足'), []);
+});
+
+test('japanska tankstreck stoppar, katakanans långa vokaltecken gör det inte', () => {
+  for (const t of ['寿司ソックス―本物そっくり', 'ソックス──寿司', '寿司－ソックス']) assert.match(textFel('f', 'x', t).join('\n'), /tankstreck/, t);
+  assert.deepEqual(textFel('f', 'Hamburgare-Strumpor och en medlem.', 'ハンバーガーソックスとメンバー'), []);
+});
+
+test('stopp per språk ur brandfilen: talet fyra, kanji-antal och tilltalet stoppar bara sitt språk', () => {
+  const b = { testbutik: { ...butiker.testbutik, mejl_sprak: [...butiker.testbutik.mejl_sprak, { locale: 'ja', sprak: 'ja', mapp: 'ja' }] } };
+  const br = { ...brand({ SE: 'sv', JP: 'ja', US: 'en' }), spoks_sprak: { huvudsprak: 'sv', reserv: 'en', lander: { SE: 'sv', JP: 'ja', US: 'en' }, stopp: { ja: [
+    { monster: '[四肆4４]', orsak: 'talet fyra' },
+    { monster: '[一二三五六七八九十]+(?:足|件|つ)', orsak: 'antal med siffror' },
+    { monster: '\\{\\{fornamn\\}\\}(?!様)', orsak: 'skriv {{fornamn}}様' },
+  ] } } };
+  const k = sprakKonfig(br, ROT, b);
+  const ja = k.stoppFor('ja');
+  assert.equal(k.stoppFor('en').length, 0);
+  assert.match(textFel('f', 'Onesize 36-44.', 'フリーサイズ（EU36-44）', ja).join('\n'), /talet fyra/);
+  assert.match(textFel('f', '4,5 av 5.', '平均4.5', ja).join('\n'), /talet fyra/);
+  assert.match(textFel('f', 'Fyra sorter.', '四種類', ja).join('\n'), /talet fyra/);
+  assert.match(textFel('f', 'Fem par.', '五足', ja).join('\n'), /antal med siffror/);
+  assert.match(textFel('f', 'Hej {{fornamn}},', '{{fornamn}}さん、こんにちは', ja).join('\n'), /skriv \{\{fornamn\}\}様/);
+  assert.deepEqual(textFel('f', 'Hej {{fornamn}}, fem par och ett klick.', '{{fornamn}}様、5足とワンクリック。一番人気。', ja), []);
+  // Samma text på engelska har inga japanska stopp.
+  assert.deepEqual(textFel('f', 'Fyra sorter, 36-44.', 'Four kinds, 36-44.', k.stoppFor('en')), []);
+  // Ett stavfel i språkkoden stoppar i stället för att tyst inte stoppa något.
+  assert.throws(() => sprakKonfig({ ...br, spoks_sprak: { ...br.spoks_sprak, stopp: { jp: [] } } }, ROT, b), /språket "jp"/);
+  assert.throws(() => sprakKonfig({ ...br, spoks_sprak: { ...br.spoks_sprak, stopp: { ja: [{ monster: 'x' }] } } }, ROT, b), /monster" och "orsak/);
+});
+
+test('ui-raderna och citaten går genom samma kontroller som mejltexten', () => {
+  const svUi = kallaUi({ angerratt_text: '30 dagars returrätt', klubb: { namn: 'Matstrumpor-klubben' } });
+  const svCitat = { [hash('Jätte sköna strumpor')]: 'Jätte sköna strumpor' };
+  const ok = { ui: { fakta_retur_text: '30日間返品OK', medlem_i: '{klubb}メンバー' }, citat: { [hash('Jätte sköna strumpor')]: 'とても履き心地のいいソックス' } };
+  assert.deepEqual(uiOchCitatFel(ok, svUi, svCitat, 'ja', [{ re: /[四4]/u, orsak: 'talet fyra' }]), []);
+  const fel = uiOchCitatFel({
+    ui: { fakta_retur_text: '45日間返品OK', medlem_i: 'メンバー', knapp_till: '商品へ―今すぐ' },
+    citat: { [hash('Jätte sköna strumpor')]: '4足とも最高' },
+  }, svUi, svCitat, 'ja', [{ re: /[四4]/u, orsak: 'talet fyra' }]).join('\n');
+  assert.match(fel, /ja: ui\.fakta_retur_text: talet 45 finns inte/);
+  assert.match(fel, /ui\.medlem_i: \{klubb\} saknas/);
+  assert.match(fel, /ui\.knapp_till: tankstreck/);
+  assert.match(fel, /citat [0-9a-f]{12}: "4" — talet fyra/);
+});
+
+test('flödesversionen: saknas den är det 1, annars ett heltal ≥ 1', () => {
+  assert.equal(sprakKonfig(brand(), ROT, butiker).version, 1);
+  const med = (v) => ({ ...brand(), spoks_sprak: { ...brand().spoks_sprak, flodesversion: v } });
+  assert.equal(sprakKonfig(med(2), ROT, butiker).version, 2);
+  assert.throws(() => sprakKonfig(med(0), ROT, butiker), /flodesversion/);
+  assert.throws(() => sprakKonfig(med('v2'), ROT, butiker), /flodesversion/);
+});
+
+test('Matstrumpor 2026-10-02 (S-017, S-018): Japan japanska, Belgien franska, Taiwan engelska', () => {
+  const br = JSON.parse(readFileSync(join(ROT, 'klaviyo', 'brands', 'matstrumpor.json'), 'utf8'));
+  const k = sprakKonfig(br, ROT);
+  assert.ok(k.sprak.some((x) => x.sprak === 'ja' && x.mapp === 'ja'), 'ja finns i Spoks-språken');
+  assert.ok(!k.sprak.some((x) => x.sprak === 'zh'), 'zh-TW är inte lanserat och har spoks: false');
+  assert.deepEqual(sprakFilter(k, 'ja'), { type: 'filter', field: 'country', operator: 'in', value: ['Japan'] });
+  assert.deepEqual(sprakFilter(k, 'fr').value.sort(), ['Belgium', 'France', 'Luxembourg']);
+  assert.deepEqual(sprakFilter(k, 'nl'), { type: 'filter', field: 'country', operator: 'in', value: ['Netherlands'] });
+  const en = JSON.stringify(sprakFilter(k, 'en'));
+  assert.ok(en.includes('"Japan"') && en.includes('"Belgium"'), 'engelskan utesluter Japan och Belgien');
+  assert.ok(!en.includes('Taiwan'), 'Taiwan får engelska');
+  assert.ok(k.stoppFor('ja').length > 0, 'japanskan har sina stopp');
+  assert.ok(k.version >= 2, 'ändrade landsfilter kräver en ny flödesversion');
+});
+
 test('ändrad svenska efter översättningen syns som gammal källa', () => {
   const r = oversattMejl({ ...mejl, forhandstext: 'Ny text' }, oversattning(), 'en');
   assert.match(r.fel.join('\n'), /ändrats sedan en översattes/);
@@ -169,13 +250,16 @@ test('Matstrumpor: alla flöden, ett sändsteg per språk och mejl, landsfilter 
   const r = await byggAllaSprak({ brandId: 'matstrumpor', produkter, recensioner, facit, bara: ['sv'], utDir: mkdtempSync(join(tmpdir(), 'spoks-sprak-')) });
   assert.deepEqual(r.manifest.fel, []);
   const f01 = r.manifest.floden.find((f) => f.id === 'f01-valkomst');
-  assert.equal(f01.namn, 'F01 Välkomst (Matstrumpor-klubben) · alla språk');
+  // Version 2 (2026-10-02): japanska + Belgien på franska byggs bredvid version 1, som är igång.
+  assert.equal(f01.namn, 'F01 Välkomst (Matstrumpor-klubben) · alla språk v2');
+  assert.equal(r.manifest.flodesversion, 2);
   const send = f01.steg.filter((s) => s.typ === 'send');
   assert.equal(send.length, 3);
   assert.ok(send.every((s) => JSON.stringify(s.filter).includes('Sweden')));
   // F06 är segment-triggat och blir aldrig ett flöde.
   assert.ok(!r.manifest.floden.some((f) => f.id === 'f06-sunset'));
-  assert.equal(r.manifest.segment.length, 12);
+  assert.equal(r.manifest.segment.length, 13);
+  assert.ok(r.manifest.segment.some((s) => s.namn === 'SEG_samtycke_ja'));
 });
 
 test('KALLA.json i repot är aktuell mot innehållet (kör --kalla när svenskan ändrats)', () => {

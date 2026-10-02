@@ -1,0 +1,276 @@
+/* ==========================================================================
+   ms-ab.js — A/B-testmotorn för Matstrumpor.se
+   --------------------------------------------------------------------------
+   Egen kod. Inga bibliotek, inga externa anrop, ingen tredjepartsapp.
+   Laddas TIDIGT i <head> (utan defer) så rätt variant hinner visas innan
+   sidan målas upp.
+
+   Så funkar det, i tre steg:
+
+   1. TILLDELNING  Varje ny besökare slantsinglas till A eller B och beslutet
+                   sparas i en förstapartskaka i 30 dagar. Samma besökare ser
+                   alltid samma variant, även vid återbesök.
+
+   2. VISNING      Sidan renderar BÅDA varianterna, där B ligger dold med
+                   attributet hidden. Motorn tar bort hidden från rätt variant.
+                   Stängs JavaScript av ser man variant A — aldrig en trasig
+                   sida, aldrig två varianter samtidigt.
+
+   3. MÄTNING      Varianten skrivs in som ett cart attribute innan varan
+                   läggs i kundvagnen. Attributet följer med hela vägen till
+                   ordern, så utfallet går att läsa ur Shopify i efterhand
+                   utan att vi behöver spara något själva.
+
+   Läsning av resultatet: ab/analys.mjs i det här repot.
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  var PREFIX = 'ms_ab_';
+  var ATTR_PREFIX = 'AB ';       // syns som "AB buybox: b" på ordern
+  var cfg = readConfig();
+  var assigned = {};
+
+  /* --- konfiguration ---------------------------------------------------- */
+
+  function readConfig() {
+    var el = document.getElementById('ms-ab-config');
+    if (!el) return { tests: [], cookieDays: 30 };
+    try {
+      var parsed = JSON.parse(el.textContent);
+      if (!parsed || !Array.isArray(parsed.tests)) return { tests: [], cookieDays: 30 };
+      if (!parsed.cookieDays) parsed.cookieDays = 30;
+      return parsed;
+    } catch (e) {
+      return { tests: [], cookieDays: 30 };
+    }
+  }
+
+  /* --- kakor ------------------------------------------------------------ */
+
+  function getCookie(name) {
+    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return m ? decodeURIComponent(m[2]) : null;
+  }
+
+  function setCookie(name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + days * 864e5);
+    document.cookie = name + '=' + encodeURIComponent(value) +
+      ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  /* --- tilldelning ------------------------------------------------------ */
+
+  function pick(test) {
+    // Vikter, default 50/50. Summan behöver inte vara 100.
+    var variants = test.variants && test.variants.length ? test.variants : ['a', 'b'];
+    var weights = test.weights && test.weights.length === variants.length
+      ? test.weights
+      : variants.map(function () { return 1; });
+    var total = weights.reduce(function (a, b) { return a + b; }, 0);
+    var r = Math.random() * total;
+    for (var i = 0; i < variants.length; i++) {
+      r -= weights[i];
+      if (r <= 0) return variants[i];
+    }
+    return variants[variants.length - 1];
+  }
+
+  function assign(test) {
+    var key = PREFIX + test.id;
+
+    // Med ?ms_ab=buybox:b går det att tvinga fram en variant för granskning.
+    // Tvingade besök markeras så att de går att räkna bort ur resultatet.
+    var forced = new URLSearchParams(window.location.search).get('ms_ab');
+    if (forced) {
+      var bits = forced.split(':');
+      if (bits[0] === test.id && bits[1]) {
+        setCookie(key, bits[1], cfg.cookieDays);
+        setCookie(key + '_forced', '1', cfg.cookieDays);
+        return bits[1];
+      }
+    }
+
+    var existing = getCookie(key);
+    if (existing) return existing;
+
+    var chosen = pick(test);
+    setCookie(key, chosen, cfg.cookieDays);
+    return chosen;
+  }
+
+  /* --- visning ---------------------------------------------------------- */
+
+  function applyVisibility(root) {
+    var nodes = (root || document).querySelectorAll('[data-ms-ab]');
+    Array.prototype.forEach.call(nodes, function (el) {
+      var spec = el.getAttribute('data-ms-ab').split(':');
+      var testId = spec[0], variant = spec[1];
+      if (!(testId in assigned)) return;          // testet är avstängt: lämna orört
+      if (assigned[testId] === variant) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    });
+  }
+
+  /* --- mätning ---------------------------------------------------------- */
+
+  function attributesPayload() {
+    var attrs = {};
+    Object.keys(assigned).forEach(function (id) {
+      attrs[ATTR_PREFIX + id] = assigned[id];
+      if (getCookie(PREFIX + id + '_forced')) attrs[ATTR_PREFIX + id + ' forced'] = 'ja';
+    });
+    return attrs;
+  }
+
+  var stamped = false;
+  var stampLofte = null; // skrivningen som pågår — den som väntar (ms-paket.js) väntar på den
+
+  /* Skyddsnätet.
+
+     Stämpeln skrivs normalt FÖRE varorna (stampCart nedan), men det finns
+     vägar in i kassan som aldrig passerar den koden: Shop Pay och andra
+     expressknappar, köp från kundvagnssidan, och en vagn som fyllts i ett
+     tidigare besök. Avläst i ordrarna 2026-09-19: ungefär tre av sju köp
+     saknade stämpel, två av dem bevisligen från variant B (de bar B:s egna
+     rabattkoder). Utan stämpel blir testet oläsbart.
+
+     Därför kontrolleras vagnen också vid varje sidvisning: har den varor men
+     fel eller ingen stämpel, skrivs den om. Då räcker det att besökaren ser
+     EN sida med den här koden någon gång innan kassan. */
+  function efterstampla() {
+    if (!Object.keys(assigned).length) return;
+    var rutt = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    fetch(rutt + 'cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (vagn) {
+        if (!vagn || !vagn.item_count) return;          // tom vagn: inget att märka
+        var vill = attributesPayload();
+        var har = vagn.attributes || {};
+        var saknas = Object.keys(vill).some(function (k) { return har[k] !== vill[k]; });
+        if (!saknas) return;
+        return fetch(rutt + 'cart/update.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ attributes: vill })
+        });
+      })
+      .catch(function () { /* nätet strulade — nästa sidvisning försöker igen */ });
+  }
+
+  function stampCart() {
+    // Skriver varianten till kundvagnen. Körs en gång per sidvisning, precis
+    // innan varan läggs i kundvagnen, och returnerar ett löfte så att
+    // anropande kod kan invänta det.
+    //
+    // Pågår skrivningen lämnas SAMMA löfte tillbaka: den som väntar in stämpeln
+    // (fetch-kroken före /cart/add, ms-paket.js) väntar då på den riktiga
+    // skrivningen, inte på ett löfte som redan är uppfyllt. Två skrivningar mot
+    // samma vagn i samma sekund slog ut paketväljarens rabattkod
+    // (mätt 2026-10-01, matstrumpor/korglada.mjs).
+    if (!Object.keys(assigned).length) return Promise.resolve();
+    if (stamped) return stampLofte || Promise.resolve();
+    stamped = true;
+    stampLofte = fetch(window.Shopify && window.Shopify.routes && window.Shopify.routes.root
+        ? window.Shopify.routes.root + 'cart/update.js'
+        : '/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ attributes: attributesPayload() })
+    }).then(function () { stampLofte = null; }, function () { stamped = false; stampLofte = null; });
+    return stampLofte;
+  }
+
+  function beaconStamp() {
+    // Reservväg för teman som gör en vanlig formulärpost i stället för fetch.
+    // Bäst möjliga försök: sidan hinner lämnas, men beacon skickas ändå.
+    // Har klicket redan stämplat (stampCart) skickas ingen beacon: det vore en
+    // andra skrivning mot samma vagn i samma sekund, och den raderade rabattkoden.
+    if (stamped || !Object.keys(assigned).length || !navigator.sendBeacon) return;
+    try {
+      var blob = new Blob([JSON.stringify({ attributes: attributesPayload() })],
+        { type: 'application/json' });
+      navigator.sendBeacon('/cart/update.js', blob);
+    } catch (e) { /* strunt samma */ }
+  }
+
+  function hookCartAdd() {
+    // Fångar temats anrop till /cart/add och stämplar kundvagnen först.
+    var origFetch = window.fetch;
+    if (typeof origFetch === 'function') {
+      window.fetch = function (input, init) {
+        var url = typeof input === 'string' ? input : (input && input.url) || '';
+        if (url.indexOf('/cart/add') !== -1) {
+          var args = arguments;
+          return stampCart()
+            .then(function () { return origFetch.apply(window, args); })
+            .then(function (svar) {
+              // Vagnen har varor nu — kontrollera att stämpeln sitter.
+              setTimeout(efterstampla, 0);
+              return svar;
+            });
+        }
+        return origFetch.apply(window, arguments);
+      };
+    }
+
+    // Klick på köpknappen: stämpla direkt, utan att blockera.
+    document.addEventListener('click', function (ev) {
+      var btn = ev.target && ev.target.closest &&
+        ev.target.closest('form[action*="/cart/add"] [type="submit"], form[action*="/cart/add"] [name="add"]');
+      if (btn) stampCart();
+    }, true);
+
+    // Klassisk formulärpost utan JavaScript-kundvagn.
+    document.addEventListener('submit', function (ev) {
+      var form = ev.target;
+      if (form && form.action && form.action.indexOf('/cart/add') !== -1) beaconStamp();
+    }, true);
+  }
+
+  function pushToAnalytics() {
+    Object.keys(assigned).forEach(function (id) {
+      var payload = { test_id: id, variant: assigned[id] };
+      if (typeof window.gtag === 'function') window.gtag('event', 'ms_ab_exposure', payload);
+      if (typeof window.fbq === 'function') window.fbq('trackCustom', 'MsAbExposure', payload);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: 'ms_ab_exposure' }, payload));
+    });
+  }
+
+  /* --- start ------------------------------------------------------------ */
+
+  cfg.tests.forEach(function (test) {
+    if (!test || !test.id || test.active === false) return;
+    assigned[test.id] = assign(test);
+    document.documentElement.setAttribute('data-ms-ab-' + test.id, assigned[test.id]);
+  });
+
+  applyVisibility();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      applyVisibility();
+      hookCartAdd();
+      pushToAnalytics();
+      efterstampla();
+    });
+  } else {
+    hookCartAdd();
+    pushToAnalytics();
+    efterstampla();
+  }
+
+  // Sektioner som laddas om i temaredigeraren måste få varianten applicerad igen.
+  document.addEventListener('shopify:section:load', function (e) { applyVisibility(e.target); });
+
+  window.MS = window.MS || {};
+  window.MS.ab = {
+    variants: assigned,
+    of: function (id) { return assigned[id] || null; },
+    apply: applyVisibility,
+    stamp: stampCart
+  };
+})();

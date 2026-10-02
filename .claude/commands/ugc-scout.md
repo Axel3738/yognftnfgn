@@ -12,9 +12,9 @@ batch** — utskick är en egen, bekräftad handling.
 
 1. Läs `factory/butiker/<id>.yaml` (brand, tonalitet) och
    `factory/produkter/<id>.yaml` (produkt, målgrupp, vinklar).
-2. Läs `factory/ugc/villkor.md` — ersättning, antal videor, rättigheter,
-   leveranstid. **Saknas filen: STOPP.** Skriv aldrig ett meddelande som
-   lovar villkor som inte är beslutade. Be Axel fylla i mallen i stället.
+2. Läs `factory/ugc/villkor.md` — den interna utgångspunkten för ersättning,
+   antal videor, rättigheter och leveranstid. Villkoren står ALDRIG i första
+   meddelandet (Axels regel 2026-10-01); de behövs först när en kreatör sagt ja.
 3. Läs `factory/ugc/kreatorer.md` om den finns — kontakta aldrig samma
    kreatör två gånger.
 
@@ -47,11 +47,13 @@ publika artefakter).
 ## Steg 2 — skriv meddelandena
 
 - Ett meddelande per kreatör, personligt (referera till något hen faktiskt
-  gjort), på svenska, avsändare = butikens brand.
-- Följ butikens tonalitet ur `branding:` (för Hemvakten: sakligt, lugnt,
-  inga utropstecken).
-- Innehåll: vem vi är, produkten, vad vi erbjuder (EXAKT ur villkor.md),
-  vad vi vill ha, hur man svarar. Max ~120 ord.
+  gjort), på svenska, **avsändare = Axel själv** (hans regel 2026-10-01: "jag
+  switchar inte mellan företag"; de återkommande kreatörerna känner honom).
+- Rak och kort, hans ton. Max ~90 ord.
+- Innehåll: vem Axel är, produkten i en mening, vad vi vill filma, och frågan
+  "är du sugen på att ta dig an det?". ⛔ **Aldrig pris eller villkor i första
+  meddelandet** (Axels regel 2026-10-01, se `villkor.md`) — ersättningen gör
+  han upp per kreatör efteråt.
 - Inga påhittade siffror, inga "vi älskar ditt konto"-floskler.
 - Meddelandena läggs i `factory/ugc/utskick/<datum>-<id>.md`, ett block per
   kreatör med kontaktväg ovanför.
@@ -68,9 +70,9 @@ publika artefakter).
    fastnar i spamfilter.
 
 ## DEFINITION OF DONE
-- [ ] villkor.md fanns och användes (annars stoppat och bett Axel fylla i)
+- [ ] Inget pris och inga villkor i meddelandena; avsändaren är Axel
 - [ ] Lista med kreatörer i `factory/ugc/kreatorer.md`, könsfördelning redovisad
 - [ ] Inga dubbletter mot tidigare kontaktade
-- [ ] Personliga meddelanden skrivna med exakta villkor, sparade i utskick-mappen
+- [ ] Personliga meddelanden skrivna, sparade i utskick-mappen
 - [ ] Axel har sett batchen och sagt ok FÖRE något utskick
 - [ ] Status uppdaterad per kreatör efter utskick

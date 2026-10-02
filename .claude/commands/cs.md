@@ -39,6 +39,13 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
   i `kommentarer/logg/`) och räknas som backlog-items i steg 3 (`kalla=voc`).
   Alla annonsers kommentarer för produkten, inte bara top spenderns:
   `node kommentarer/kor.mjs --lista <prefix> [--dagar 30]`.
+- **`products/<id>/mekanismer.md` och `ny-information.md` — konceptfröna mot
+  marknadssofistikeringen** (Schwartz steg 3 och 4, byggda 2026-10-01 på
+  Matstrumpor): varje NY vinkel i steg 3 tas därifrån, i filens ordning efter
+  skeptikerns dom, aldrig ur huvudet. Saknas filerna, eller är alla frön
+  redan testade: kör `/mekanismer <id> <url>` och `/ny-information <id> <url>`
+  först. En hook ur `ny-information.md` bär sin källa och sin siffra exakt
+  som källan skriver den.
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
 
 ### 1b. Saknas underlaget helt? (varken i chatten eller i `products/<id>/`)

@@ -46,7 +46,19 @@ Alla tal nedan är ur `matstrumpor/output/dom-2026-09-24.json` (Meta, token,
 till 2026-09-23. Break-even-ROAS 1,498 / break-even-CPA 308,48 kr (utan moms,
 Axels besked). Hook rate = videostarter ÷ visningar, hold rate = thruplay ÷
 videostarter, köp/LPV = köp ÷ landningssidevisningar — allt ur Meta, aldrig
-räknat om. ⚠️ På annonser med under ~50 visningar är hook rate och hold rate
+räknat om.
+
+⛔ **Rättat 2026-10-01: hook rate och hold rate i den här filen är FEL mått
+och ska inte jämföras med något.** Med attributionsfönster bär Metas
+videorader en `7d_click`-nyckel som inte är visningar, och koden läste den;
+dessutom var definitionen inte Evolves. Sedan 2026-10-01 (`matstrumpor/meta.mjs`):
+hook rate = 3-sekundersvisningar ÷ impressions, hold rate = ThruPlay ÷
+impressions, hook→hold = ThruPlay ÷ 3-sekundersvisningar, alla ur `value`.
+Rätt tal, last_14d till 2026-09-30: **Nathalie 0,47 / 0,15 / 0,31** (CTR 2,7 %,
+CPM 105 kr), haikuh2 0,49 / 0,11 / 0,23, 012v2 0,49 / 0,10 / 0,20,
+**Sofie H1 0,25 / 0,11 / 0,43** — Sofie hookar hälften så bra som Nathalie
+men behåller fler av dem hon hookar. Lärdomarna nedan bär de gamla talen;
+domarna om ROAS, CPA och köp/LPV står sig. ⚠️ På annonser med under ~50 visningar är hook rate och hold rate
 brus (100 % på 3 visningar är ingen mätning) — de står med i tabellen längst
 ner men bedöms inte.
 

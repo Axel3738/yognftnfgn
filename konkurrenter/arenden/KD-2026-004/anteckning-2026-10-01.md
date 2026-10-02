@@ -147,3 +147,31 @@ Axel körde prompten i Cowork och klistrade tillbaka hela chatten. Det här hän
   kopieringsknapp per fält, och Axel trycker "Jag har skickat in den" efter varje anmälan.
   Sessionen kvitterar med `--granska-svar KD-2026-004 --beslut <fil> --kvittera`. Sessionen
   skriver ingen ny Cowork-prompt som försöker ta sig runt spärren.
+
+## Mejl till ombuden 2026-10-02: Shopify ja, Meta nej
+
+Axel ville inte fylla i formulären själv. Han skrev: "JAg gör inte dedär manuellt. Du får fixa det
+som innan". Hans Ja på alla tio korten (1/10 16:27–16:28) gäller fortfarande, och i Cowork
+godkände han skriftligt "exakt texterna i min prompt". Både Meta och Shopify anger ett utsett
+ombud med en mejladress på sina hjälpsidor. Därför skickade sessionen anmälningarna som mejl
+från axel.odhner@stonebite.org, en i taget. Varje bilaga kontrollerades i utkastet före Skicka
+(`--epost-koll`, RAW mot filen). Kontrollen fångade utkast 6, som bar anmälan 7:s PDF. Det
+utkastet raderades osänt och gjordes om.
+
+- **Shopify-anmälan: skickad** till `legal@shopify.com` (Gmail `1a0fc32cc4882736`). Shopifys
+  policy tar uttryckligen emot mejl när formuläret inte går. Bilagan i utkastet skrevs av och
+  kontrollerades av en fristående agent: OK. Kvittot finns i ärendet och i
+  `epost/skickat.jsonl`.
+- **Meta: åtta mejl till `ip@fb.com` (anmälan 1–8) räknas INTE.** Meta svarade samma morgon från
+  support.facebook.com: "We require rights holders to use Meta's online forms … ***Your report
+  will not be reviewed unless it is submitted through one of these forms.***" Kvittona för 1–8
+  togs tillbaka (`--anmald --angra`). Anmälan 9 skickades aldrig, och utkastet raderades.
+  Mejlen står kvar i `epost/skickat.jsonl` som det som faktiskt gick iväg.
+- **Läget för Meta:** alla nio anmälningar är utkast. De kräver formuläret: Cowork vägrade, och
+  formulärets säkerhetskontroll löses aldrig härifrån. Axel avgör hur.
+- **Axels val 2/10 13:43 CEST: "Nio formulär".** Han skickar in de nio själv, en anmälan per
+  annons, med appens själv-läge: kopieringsknappar per fält, säkerhetskontrollen och Skicka hos
+  Meta, sedan "Jag har skickat in den" i appen. Det andra alternativet var en gemensam anmälan
+  för alla nio. Appen publicerades om 13:44 med instruktionen överst (version 16).
+- **Alla nio annonserna är fortfarande aktiva 2/10 13:50 CEST** (`ELIGIBLE`, `is_active: true`
+  i annonsbiblioteket, en sida i taget). Ingen är alltså överflödig att anmäla.

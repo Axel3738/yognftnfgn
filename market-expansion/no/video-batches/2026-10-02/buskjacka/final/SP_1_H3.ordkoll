@@ -1,0 +1,59 @@
+NO_buskjakke_SP_1_H3.mp4: 11 cues, 11 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Kulden kommer.
+    hörs:  Kulden kommer. Dette
+    — → dette
+
+  cue 2 @ 1.3s
+    manus: Dette er det hageeiere bruker.
+    hörs:  kommer. Dette er det hageeiere bruker. Hver høst
+    dette → kommer | er → dette | det → er | hageeiere → det | bruker → hageeiere | — → bruker
+
+  cue 3 @ 3.7s
+    manus: Hver høst stiller hageeiere seg det samme spørsmålet: hvordan redder jeg plantene fra kulda?
+    hörs:  bruker. Hver høst stiller hageeiere seg det samme spørsmålet: hvordan redder jeg plantene fra kulda? Svaret
+    hver → bruker | høst → hver | stiller → høst | hageeiere → stiller | seg → hageeiere | det → seg
+
+  cue 4 @ 9.3s
+    manus: Svaret er buskjakke.
+    hörs:  kulda? Svaret er buskjakke. Hvorfor?
+    svaret → kulda | er → svaret | buskjakke → er | — → buskjakke | — → hvorfor
+
+  cue 5 @ 11.5s
+    manus: Hvorfor?
+    hörs:  buskjakke. Hvorfor? Den er
+    hvorfor → buskjakke | — → hvorfor | — → den | — → er
+
+  cue 6 @ 12.3s
+    manus: Den er enkel.
+    hörs:  Hvorfor? Den er enkel. Trekk den
+    den → hvorfor | er → den | enkel → er | — → enkel | — → trekk | — → den
+
+  cue 7 @ 13.3s
+    manus: Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen.
+    hörs:  enkel. Trekk den over busken, lukk glidelåsen, stram snøringen rundt stammen. Ferdig.
+    trekk → enkel | den → trekk | over → den | busken → over | lukk → busken | glidelåsen → lukk
+
+  cue 8 @ 17.8s
+    manus: Ferdig.
+    hörs:  stammen. Ferdig. Den skjermer
+    ferdig → stammen | — → ferdig | — → den | — → skjermer
+
+  cue 9 @ 18.4s
+    manus: Den skjermer mot vind og kulde.
+    hörs:  Ferdig. Den skjermer mot vind og kulde. Du får
+    den → ferdig | skjermer → den | mot → skjermer | vind → mot | og → vind | kulde → og
+
+  cue 10 @ 20.5s
+    manus: Du får to jakker i pakken - nok til både busker og potteplanter.
+    hörs:  kulde. Du får to jakker i pakken, nok til både busker og potteplanter. Beskytt
+    du → kulde | får → du | to → får | jakker → to | i → jakker | pakken → i
+
+  cue 11 @ 24.3s
+    manus: Beskytt det du har brukt år på å dyrke.
+    hörs:  potteplanter. Beskytt det du har brukt år på å dyrke.
+    beskytt → potteplanter | det → beskytt | du → det | har → du | brukt → har | år → brukt
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

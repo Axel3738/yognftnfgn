@@ -2,6 +2,8 @@
 
 ⏸ **Parkerad (Axel 2026-09-30):** "vi ska bara vänta tills vi får försäljning på olika marknader … bara då får vi quotes på de olika marknaderna." Skicka inget förrän en marknad har sålt. Utlandspriserna ligger under tiden minst 20 % över Sverige (`paslag.mjs`), eftersom quoten väntas bli dyr.
 
+▶️ **Hävd 2026-10-02:** fredag morgon hade JP, CH, PT, DK, ES och FR redan sålt (StonePNL:s marknadsvy). Frågan skickas nu med **StonePNL:s egen offertförfrågan** i stället för utkastet nedan: länken "Ask your supplier for these countries' prices →" i marknadsvyn tar med varje såld variant och varje land som saknar egen kostnad, och leverantörens svar klistras in i samma ruta så att kostnaderna fylls i av sig själva. Se `README.md` → "StonePNL: vinsten per land". Utkastet nedan står kvar som historik.
+
 Axel 2026-09-30: "Jag hade också viljat testa Japan och Taiwan". `matstrumpor/cogs.json` har landad
 kostnad bara för USA/UK/AU/CA/NZ. För Japan och Taiwan vet vi inte ens om leverantören skickar dit,
 vad det kostar eller hur lång tid det tar. Svaren avgör om Japan och Taiwan går att sälja med fri

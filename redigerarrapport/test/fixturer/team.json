@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": "axel", "name": "Axel Odhner", "role": "admin", "notionUserId": "u-axel" },
+    { "id": "josh", "name": "Josh Naelga", "role": "editor", "notionUserId": "u-josh", "discordUserId": "1" },
+    { "id": "carl", "name": "Carl Vicente", "role": "editor", "notionUserId": "u-carl", "discordUserId": "2" },
+    { "id": "jerzee", "name": "Jerzee", "role": "editor", "notionUserId": "kommentar:jerzee", "notionUserIdAlias": ["u-jerzee-gast"], "notionKommentarMonster": "\\bjerz", "discordUserId": "3" }
+  ]
+}

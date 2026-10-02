@@ -174,3 +174,148 @@ Svaret kom 2026-10-01. Axel klistrade in det, och det står här ordagrant.
   CaraShell får ingen enkät.
 - **Ingen belöning.** Ett presentkort på 100 kr till alla svarande är "lowkey
   alldeles för mycket".
+
+## Veckorapporten till redigerarna (frågan 2026-10-02)
+
+Svaret kom 2026-10-02. Axel klistrade in det. Det står här ordagrant, bara med
+`>` framför varje rad; numreringen och radbrytningarna är som de kom. Källorna
+`[C1]`–`[C7]` är trådar i community-chatten och `[D1]`–`[D5]` är kursdokument,
+numrerade bara inom det här svaret. Frågan står i `FRAGOR.md` under samma
+rubrik.
+
+> 1. Diagnose edit-vs-script with metrics — hook rate, hold rate, retention curve — and frame every loss as a concept issue, not an editor failure.
+>    1. Edit vs script: diagnose with metrics, frame as "the concept didn't perform" — never "your edit failed."
+>
+>
+> Pull hook rate, hold rate (and hook-to-hold), average play time, and CVR per D2's custom metrics [D2]. Then map the failure pattern:
+>    * Low hook rate: first 1-3 seconds failed. If the angle/avatar callout is strong but the visual or pacing is weak = edit execution. If the hook concept itself doesn't create curiosity = script. D1 shows this split: "Good concept but needs better hook" = execution problem, not concept problem [D1].
+>    * Good hook, hold drops: bridge issue. D3: "the bridge section is usually make-or-break." Where it drops in the retention curve tells you if it's pacing (edit) or messaging (script) [D3]. C5's diagnostic: "Does the first 1-2 seconds hook the RIGHT user and KEEP them hooked?" [C5]
+>    * Good hook + hold, low CVR: spend-winner pattern. Per D4, the issue is belief, urgency, funnel congruence, or offer — all strategy-level, not edit [D4].
+>    * Off-brief text, wrong music, caption errors: clear edit execution — editor deviated from direction.
+>
+> When the editor followed the brief exactly and it still lost, the failure is strategy-level. D3's framework makes this explicit: TAM, broad, offer, and algorithm targeting issues are the strategist's call, not the editor's [D3]. Frame it using D2's principle: "Learnings are educated guesses, not facts" and "focus messaging/frames over 'image sucks'" [D2]. Say "this angle didn't stop enough people — here's what we'll test next," not "your edit underperformed." D2: always end with an action plan — iterate the top direction, apply to others, or note what to avoid [D2].
+> 2.
+>
+> 2. Per-outcome action items: sources give iteration directions (which you already have) but don't prescribe specific action item formats.
+>
+>
+>
+> You already have the iteration playbook per outcome. What the sources add — and don't:
+>
+> * Loser/no-delivery: C6 adds "iterate max 3 times" then do net-new swings. If 5+ concepts fail across all 3 iterations, "your bottleneck is research or creative conviction, not execution" [C6]. Whether that's a craft exercise, research doc, or competitor review — no source specifies.
+> * Spend winner: D4 says fix belief/urgency/congruence/stakes BEFORE changing format [D4]. The action item format isn't prescribed.
+> * Breakthrough: D4 says iterate into new hooks/angles/formats [D4]. No specific exercise prescribed.
+> * KPI winner: Course references a separate module but it's not in these documents.
+>
+>
+> On weekly volume before noise: C6 says 5-8 concepts/week with a 2-hour Friday call, batch-level [C6]. D2 says 10-15 min per loser, 30-40 min per winner [D2]. How many action items per editor per week is too much — not covered.
+>
+> 3. Editor hit rate with CBO starvation: use Shaun's formula, and D2's spend threshold supports excluding no-delivery ads.
+>
+>
+>
+> Shaun: "just how many winning ads / total creatives you tested" [C7].
+>
+> For starved ads: D2 says "Aim for 10%+ spend for data" and "For zero-spend ads: Analyze why customers ignore (no data)" [D2]. This principle supports excluding no-delivery ads from the denominator — you can't evaluate what was never tested. But no source explicitly says to exclude them, give a separate label, or exclude iterations of existing winners. Those specifics aren't covered.
+>
+> 4. Editors' learnings calls: batch-level, Friday, 2 hours — structure details partially covered.
+>
+> * C6: "Learnings call every Friday (2hrs) — go through every batch that needs learning" and "close every feedback loop on batch level" [C6].
+>
+> D1 shows the call in practice: reviewing specific ads, calling out exact metrics (hook rate 16%, hold rate 1.2%), diagnosing, suggesting specific alternate hooks [D1].
+>
+> Metrics to cover per D2: amount spent, ROAS/CPA, hook rate, hold rate, average play time, CVR, AOV — and "compare to known winners." Document verbally or in a doc. "Ping-pong ideas with others" [D2].
+>
+> D5: editors should "understand marketing fundamentals, process scripts, analyze ad learnings, and improve hit rates" — they're active participants, not passive recipients [D5].
+>
+> Not covered: per-ad vs per-week cadence, group channel vs 1:1, what editors shouldn't see, and how to prevent loser labels from feeling like rankings.
+>    5. Label timing: 7 days minimum, 10%+ spend share for a fair label.
+>
+>
+> D2: "Let ads run 7 days minimum for Meta optimization" and "calculate over 7 days for context" [D2]. C6: "7-day testing, longer than that? = CUT" [C6].
+>
+> Spend-share tiers from D2:
+>    * Below 10% of campaign spend: not enough data to label confidently
+>    * 10%+: enough data to evaluate fairly
+>    * 30-50%: potential winner
+>
+> D2: "For zero-spend ads: Analyze why customers ignore (no data)" — you can't fairly label an ad that never got spend [D2]. A label isn't fair until the ad has had 7 days AND enough spend to produce data.
+>
+> For mid-week launches: since D2 says calculate over 7 days, a Wednesday launch hasn't completed its window by Monday — wait for the full 7 days. If labels upgrade in weeks 2-3, that's expected: D2 says "Learnings are educated guesses, not facts. Validate by retesting" [D2].
+>
+> No source gives a minimum purchase threshold — D2 uses spend share, not purchase count.
+
+### Vad vi tar med oss (läst 2026-10-02)
+
+Varje punkt är kontrollerad mot Chads text ovan och mot kursens egna citat i
+`docs/ecomtalent/fynd.json` (516 fynd) och `ITERATIONS-PLAYBOOK.md`. Boten har
+rätt i det stora. **Inget av dess exakta tal står i kursen** (se tabellen).
+Reglerna nedan bygger därför på kursens citat och vår egen kod, inte på botens
+tal. Systemet som följer av dem står i `redigerarrapport/PLAN.md`.
+
+1. **Etiketten visas en människa först när annonsens EGEN första vecka är
+   komplett** (7 dygn från D0). En annons som startade mitt i veckan står i
+   måndagsposten som "launched this week, label next Monday", aldrig med ett
+   halvt utfall. Kursen: 3–7 dagar, "about a week" (How Do Ads Work? [4:41]).
+2. **Etiketten kan höjas vecka 2–3 och sänks aldrig.** Posten säger vilken
+   vecka den gäller och om den höjts. Redan i `matstrumpor/etikett.mjs`.
+3. **INGEN_LEVERANS räknas inte i redigerarens nämnare, men visas med orsak.**
+   Kursen: "no spend = no data" men också "no spend = the hook sucks" (Shaun).
+   Vår egen mätning säger att adsetet, inte hooken, svalt Gilz batch #1
+   (`products/matstrumpor/lardomar.md`). Tills adsetets spend läses står
+   "no delivery (reason not measured)", aldrig "your hook failed".
+4. **Hit rate alltid som bråk** ("2 of 9"), procent först vid ≥ 10 etiketter,
+   iterationer av en befintlig vinnare märkta separat (Nicolò: hit rate går att
+   spela med iterationer). Riktmärke 5–10 % / 2–4 %, aldrig som betyg.
+5. **Inga kronor, ingen ROAS, inga köp, ingen CPA i posten** — med köp och
+   ROAS går spenden att räkna ut baklänges. Det redigeraren ser: etikett,
+   hook % och hold %, "above/below campaign KPI". Andel av kampanjens spend i
+   procent bara om Axel säger ja (järnregeln 2026-09-02).
+6. **"Varför"-raden följer kursens ordning:** fick annonsen spend? nej ⇒
+   hooken. Spend men under KPI ⇒ tro, brådska, funnel, erbjudande, alltså
+   strategens sak. Först därefter mjuka mått (Mar 13th [46:22]). Klippet pekas
+   ut BARA vid en mätt avvikelse från regitabellen (`utford_som_briefad` = nej),
+   annars "you cut it as briefed, the concept didn't stop enough people".
+   Kursen: "editing plays the smallest role" (Breaking Down Winning Ads [20:41]).
+7. **Hook % och hold % bara när annonsen är bedömbar**, alltid bredvid
+   kampanjens vinnare som referens. Evolves definition: hook = 3-sek-visningar
+   ÷ visningar, hold = ThruPlay ÷ visningar. Botens 16 % / 1,2 % skrivs aldrig
+   in som riktvärde.
+8. **ETT action item per redigerare och vecka**, ur `PLAYBOOK_PER_UTFALL` för
+   hennes högst rankade etikett. Antalet är vårt beslut; boten: "not covered".
+9. **10 % av kampanjens spend är INTE en grind vi antar.** I kursen är 10–30 %
+   vinnartröskeln, inte en datagrind; boten gjorde om bandet. Vår grind för att
+   visa en etikett är komplett vecka 1 + spend ≥ 10 kr. `bedombar` står som
+   flaggan "thin data", inte som spärr, annars får en loser aldrig en lärdom.
+   ⚠️ `bedombar` räknas ELLER i Matstrumpor och OCH i ANALYSMETOD/agent-grenen:
+   Axels beslut, EN grind.
+10. **Förloraren får lika mycket text som vinnaren**, som lärdom + nästa test.
+    Ingen jämförelse mellan redigerare i posten (lagets tal på tavlan,
+    individens i 1:1). Kursen: förlorarna kräver MEST diagnos (The Feedback
+    Loop [15:05]), tvärtom mot botens "10–15 min per loser".
+11. **Annons → redigerare bara via hubbradens Ansvarig** (Jerzee via
+    kommentar). Ingen gissad mention. Redigerare utan Discord-id får posten
+    som fil tills id:t finns.
+12. **Posten ersätter inte lärdomscallen, den är underlaget till den.** Kursen
+    går igenom VARJE testad annons, spendade först (Mar 6th [18:27]), och
+    redigerarna har en egen call som matar huvudcallen (April 24th [1:05:05]).
+
+### Där kursens egna citat säger något annat än Chad
+
+| Chad säger | Kursen säger | Belägg |
+|---|---|---|
+| "10 %+ spend för data", trappan <10 / 10+ / 30–50 % | **Omtolkat.** 10–30 % är vinnartröskeln vecka 1; breakthroughs på vår nivå tog ≥ 67,9 %. 30–50 % som egen nivå finns inte | ITERATIONS-PLAYBOOK §1; fynd.json 0 träffar på 10 % som datagrind |
+| "7-day testing, longer than that = CUT" | **Hårdare än kursen.** Testa 3–7, normalt 7, aldrig över 14 dagar; stäng aldrig det som funkar; en loser vecka 1 tog 55 % vecka 2 | ITERATIONS-PLAYBOOK §1 och §10; Q&A Shaun & Spencer [43:43] |
+| KPI winner: "separat modul som inte finns i dokumenten" | **Fel.** KPI winner har samma lista som loser i kursens playbook, redan i `lardom.mjs` | ITERATIONS-PLAYBOOK §4 |
+| "hook rate 16 %, hold rate 1,2 %" som exempel | Talen finns inte i något av 516 fynd. 1,2 % hold är troligen en annan definition än vår (Nathalie 14 %) | EVOLVE-GAP-ANALYS rad 216–218 |
+| "10–15 min per förlorare, 30–40 per vinnare" | Talen finns inte. "30 minutes reviewing an ad is normal", och förlorarna är de som kräver att man "really sits down" | Nov 21st [29:28]; The Feedback Loop [15:05] |
+| "5–8 koncept per vecka, fredag 2 h" | Varken fredag, 2 h eller 5–8 finns. Kursen: 3–5 batcher per brand och vecka; vid 1 000 USD/dag "no more than five new concepts per week" | April 24th [1:10:35]; Mar 13th [1:04:51] |
+| "iterate max 3 times" | Inget universellt tak: 2–3 på loser/KPI winner, 3–5 på spend winner, 2–3 imitationer | ITERATIONS-PLAYBOOK §4–5 |
+| "close every feedback loop on batch level" | Kursen säger PER ANNONS: "from any ad that you run, you must learn something" | Overview [6:17] |
+| "ingen köptröskel i källorna" | Inget tal över 1, men gränsen går vid NOLL köp: "five days, no purchases, we shut it down" | Ad Creation Process [5:29] |
+| "säg aldrig 'your edit underperformed'" | Kursen föreskriver ingen ordalydelse och frågar förloraren rakt: "what could YOU have done better" — men editing "plays the smallest role" | Overview [28:14]; Breaking Down Winning Ads [20:41] |
+
+**Går inte att kontrollera mot kursen:** D1:s lärdomscall med exakta tal,
+C5:s "hook the RIGHT user", C6:s "5+ concepts fail ⇒ research", D5 om
+redigerarnas roll. Vi har aldrig läst botens källor. Kursens egna lektioner om
+just redigerare är fortfarande olästa (`FRAGOR.md`, samma rubrik).

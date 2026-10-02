@@ -1,0 +1,268 @@
+{
+ "fil": "Takovertrekk_NO_OB_14_H1.mp4",
+ "cues": 5,
+ "trasiga": 5,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "På tynn presenning står vannet i en pytt.",
+   "hord": "På tynn presenning står vannet i en pytt. På 210D",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "—",
+     "hord": "på"
+    },
+    {
+     "vantat": "—",
+     "hord": "210d"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 2.89,
+   "text": "På to hundre og ti D Oxford-stoffet renner vannet av i stedet for å bli stående.",
+   "hord": "pytt. På 210D Oxfordstoffet renner vannet av i stedet for å bli stående. Tetningen",
+   "ord": 17,
+   "avvikelser": [
+    {
+     "vantat": "på",
+     "hord": "pytt"
+    },
+    {
+     "vantat": "to",
+     "hord": "på"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "210d"
+    },
+    {
+     "vantat": "og",
+     "hord": "oxfordstoffet"
+    },
+    {
+     "vantat": "ti",
+     "hord": "renner"
+    },
+    {
+     "vantat": "d",
+     "hord": "vannet"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "av"
+    },
+    {
+     "vantat": "stoffet",
+     "hord": "i"
+    },
+    {
+     "vantat": "renner",
+     "hord": "stedet"
+    },
+    {
+     "vantat": "vannet",
+     "hord": "for"
+    },
+    {
+     "vantat": "av",
+     "hord": "å"
+    },
+    {
+     "vantat": "i",
+     "hord": "bli"
+    },
+    {
+     "vantat": "stedet",
+     "hord": "stående"
+    },
+    {
+     "vantat": "for",
+     "hord": "tetningen"
+    },
+    {
+     "vantat": "å",
+     "hord": "—"
+    },
+    {
+     "vantat": "bli",
+     "hord": "—"
+    },
+    {
+     "vantat": "stående",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 7.29,
+   "text": "Tetningen rundt lukene slipper å stå i vann hele vinteren.",
+   "hord": "stående. Tetningen rundt lukene slipper å stå i vann hele vinteren. Ett tusen",
+   "ord": 10,
+   "avvikelser": [
+    {
+     "vantat": "tetningen",
+     "hord": "stående"
+    },
+    {
+     "vantat": "rundt",
+     "hord": "tetningen"
+    },
+    {
+     "vantat": "lukene",
+     "hord": "rundt"
+    },
+    {
+     "vantat": "slipper",
+     "hord": "lukene"
+    },
+    {
+     "vantat": "å",
+     "hord": "slipper"
+    },
+    {
+     "vantat": "stå",
+     "hord": "å"
+    },
+    {
+     "vantat": "i",
+     "hord": "stå"
+    },
+    {
+     "vantat": "vann",
+     "hord": "i"
+    },
+    {
+     "vantat": "hele",
+     "hord": "vann"
+    },
+    {
+     "vantat": "vinteren",
+     "hord": "hele"
+    },
+    {
+     "vantat": "—",
+     "hord": "vinteren"
+    },
+    {
+     "vantat": "—",
+     "hord": "ett"
+    },
+    {
+     "vantat": "—",
+     "hord": "tusen"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 10.69,
+   "text": "Ett tusen ett hundre og åtti-ni kroner, spar tre hundre og seksti kroner.",
+   "hord": "vinteren. Ett tusen ett hundre og åtti ni kroner, spar tre hundre og seksti kroner. Tjue",
+   "ord": 14,
+   "avvikelser": [
+    {
+     "vantat": "ett",
+     "hord": "vinteren"
+    },
+    {
+     "vantat": "tusen",
+     "hord": "ett"
+    },
+    {
+     "vantat": "ett",
+     "hord": "tusen"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "ett"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "åtti",
+     "hord": "og"
+    },
+    {
+     "vantat": "ni",
+     "hord": "åtti"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "ni"
+    },
+    {
+     "vantat": "spar",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "tre",
+     "hord": "spar"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "tre"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "seksti",
+     "hord": "og"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "—",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "—",
+     "hord": "tjue"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 15.17,
+   "text": "Tjuetre prosent rabatt.",
+   "hord": "seksti kroner. Tjue tre prosent rabatt.",
+   "ord": 3,
+   "avvikelser": [
+    {
+     "vantat": "tjuetre",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "prosent",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "rabatt",
+     "hord": "tjue"
+    },
+    {
+     "vantat": "—",
+     "hord": "tre"
+    },
+    {
+     "vantat": "—",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  }
+ ]
+}

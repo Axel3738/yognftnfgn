@@ -44,9 +44,19 @@ Bakom varje bra annons ligger ett faktum. Börja med faktumet, bygg raden ur
 det. Har vi inget faktum: hämta ett (recension, studie, siffra ur kontot,
 material, tid). Hitta aldrig på ett — det är regel 3 i CLAUDE.md.
 
-### Jämför med det kunden redan känner
-Ny/oklar produkt förklaras genom kända referenser: "Tuffare än en F-150,
-snabbare än en 911." Kortare är bättre; parallellism gör raden minnesvärd.
+### Jämför med det kunden redan känner — men aldrig med ett märke
+Ny/oklar produkt förklaras genom kända referenser: "ser ut som riktig
+takeaway", "rullade som maki". Kortare är bättre; parallellism gör raden
+minnesvärd. ⛔ **Referensen är aldrig ett annat märke eller en konkurrents
+produkt** (Axels beslut 2026-10-02, val A mellan Evolves hookregel och den
+här). "Som [märke], fast …" och "bättre än [märke]" skrivs aldrig; skriv i
+stället vad bara vi är: "den enda strumpan som …", "den första …". Skälet
+är regel 3 i tre-frågorstestet: en rad som bär konkurrentens namn är en rad
+konkurrenten kan skriva under — och den ger tittaren ett annat namn att
+googla. Vardagssaker (takeaway-låda, julstrumpa, fika) är fortfarande
+tillåtna referenser; de är inga märken. ⚠️ Kursens egen motivering gick
+inte att läsa 2026-10-02 (lektionstexten är video, prompten en gissad
+Google-flik) — skälet ovan är vårt, inte ett citat.
 
 ### Konflikt driver allt
 Dra ett streck på mitten, skriv motsatspar. Tre fiendetyper:
@@ -98,6 +108,33 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 
 ---
 
+## Ur Evolves prompter (inskrivna 2026-10-02 efter Axels val A)
+
+Sex regler för videomanus som Harry Dry-reglerna ovan inte täcker, ur
+Evolve-kursens egna Claude-prompter (`docs/os/evolve/EVOLVE-GAP-ANALYS.md`
+avsnitt 7). Gäller varje videobrief; tidsstrukturen står också i
+`docs/os/BRIEF-REGI.md`.
+
+1. **Modulärt hooktest:** tre hookar med var sin matchad bridge, men EN
+   gemensam hold och EN CTA. Redigeraren klipper tre videor ur en kropp.
+2. **Kall trafik i fyra block:** hook 0–3 s, bridge 3–8 s, hold 8–35 s,
+   CTA senast 45 s. Holden går invändning → påstående → bevis → nytta.
+3. **Hooken är ~5 ord**, max två rader på mobil, begriplig med ljudet av.
+4. **Slippery slope:** varje mening slutar i en öppen loop. Läs högt och
+   leta stoppunkter — en mening som går att sluta lyssna efter skrivs om.
+5. **Måttet pekar på avsnittet före nytt manus:** låg hook ⇒ ny hook/bild,
+   låg hold ⇒ enklare mekanism och kortare b-roll, låg konvertering ⇒
+   erbjudande eller tro (aldrig "skriv om allt").
+6. **Läsnivå årskurs 5–7 för voiceover.** Testet: skulle du säga det vid
+   dörren?
+
+Den sjunde regeln (aldrig ett märke som referens) står i avsnittet "Jämför
+med det kunden redan känner" ovan. ⛔ Evolves exekveringsmodell "bara b-roll +
+AI-röst" tas inte in: Matstrumpors enda breakthrough är en riktig kreatör i
+bild.
+
+---
+
 ## Så hänger den ihop med resten av repot
 
 | Fil | Roll |
@@ -111,3 +148,28 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 Tre-frågorstestet ersätter inte analysmetoden (`docs/os/ANALYSMETOD.md`) —
 den dömer annonser på data. Det här dokumentet dömer rader innan de får
 kosta pengar.
+
+## Talet läses högt innan det går ut (Axels dom 2026-10-02)
+
+Ett kreatörsmanus är ETT sammanhängande tal, inte en rad påståenden efter
+varandra. Axel läste det första manuset till "sushin utan bäst före-datum"
+högt — sju vinnarrader hopfogade — och dömde: "Det kanske är ett optimalt
+skript enligt research men inte genom att lyssna på." Regeln:
+
+- Skriv talet som ett stycke först, där varje mening leder till nästa
+  (bindeord som så, sen, och, men, ju är tillåtna och testas inte).
+- Dela upp det per bild EFTERÅT. Aldrig tvärtom: sätt aldrig ihop godkända
+  rader till ett manus.
+- Läs det högt innan det lämnar sessionen. Hackar en övergång, skriv om.
+- Tre-frågorstestet gäller fortfarande varje mening som bär ett påstående.
+
+## Statistik på produktsidan (Axels dom 2026-10-02)
+
+Produktsidans beskrivning fick 2026-10-02 raden *"I USA gav 32 procent ett presentkort för att de
+inte visste vad de annars skulle köpa, enligt Bankrate 2024."* Axel: "det här är inte bra copy …
+fan va keft det var." Regeln sedan dess, inskriven i `matstrumpor/produktsida.mjs` som spärr:
+**en statistikmening med källa eller procent hör aldrig hemma i en produktbeskrivning.** Den läser
+som en rapport, inte som en butik. Fynden ur `ny-information.md` lever i bilder, rubriker och mejl
+(som faktabladet redan sa), och på sidan bara som den slutsats de leder till, i butikens egen röst
+("Ett presentkort säger: jag vet inte."). Tre-frågorstestet räcker inte: en rad kan klara alla tre
+och ändå låta som en uppsats. Läs sidan högt innan den går live.

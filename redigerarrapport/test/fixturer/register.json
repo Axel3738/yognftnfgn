@@ -1,0 +1,9 @@
+{
+  "kommentar": "Testfixtur för redigerarrapport/hubbar.mjs — ett litet factory/produkter/register.json. Id:n är påhittade testvärden utom formen.",
+  "poster": {
+    "baverbutiken/axelbaltet": { "notion": { "name": "Trimmer belt creative hub", "database_id": "aaa10000-0000-4000-8000-000000000001" } },
+    "hemvakten/overvakningskameran": { "notion": { "name": "Surveillance Camera creative hub", "database_id": "aaa10000-0000-4000-8000-000000000002" } },
+    "carashell/takskyddet": { "notion": { "name": "Carashell Taköverdrag creative hub", "database_id": "aaa10000-0000-4000-8000-000000000003" } },
+    "catcabin/utekattkojan": { "notion": { "name": "catcabin creative hub", "database_id": "" } }
+  }
+}

@@ -121,10 +121,22 @@ från 24/9 (`09-17 UGC`-adsetet, 85–89 kr var, 1 köp) och Gilz nio mini-clips
    ettbox-köpare (417 kr) men många. Break-even-CPA räknas därför på
    annonsens EGET ordervärde i `matstrumpor/ekonomi.mjs`.
 
-⚠️ **Nathalies hook rate (0,2 %) och hold rate är inte läsbara** — 139
-videostarter på 63 047 visningar rimmar inte med 1 124 klick. Sofie i samma
-adset visar 86–98 %. Troligen räknar Meta `video_play_actions` annorlunda
-för Axels uppladdning (DCO-varianter). Bedöm henne på klick/LPV/köp.
+✅ **Nathalies hook rate går att läsa sedan 2026-10-01 — felet var vårt, inte
+Metas.** De gamla talen (0,2 %, och 86–98 % för Sofie) kom ur Metas
+`7d_click`-nyckel på videoraderna, som inte är visningar. Rätt mått (Evolves,
+`matstrumpor/meta.mjs`), last_14d till 2026-09-30:
+
+| Annons | Hook (3 s ÷ visn.) | Hold (ThruPlay ÷ visn.) | Hook→hold | CTR länk | CPM |
+|---|---|---|---|---|---|
+| Nathalie (69 522 kr) | **0,47** | 0,15 | 0,31 | 2,7 % | 105 kr |
+| haikuh2 (4 389 kr) | 0,49 | 0,11 | 0,23 | 1,2 % | 112 kr |
+| 012v2 (698 kr) | 0,49 | 0,10 | 0,20 | 2,4 % | 168 kr |
+| Sofie H1 (501 kr) | **0,25** | 0,11 | **0,43** | 2,6 % | 162 kr |
+
+Hooken är alltså inte det som skiljer Nathalie från haikuh2 — det är att hon
+HÅLLER (0,31 mot 0,23) och att folk klickar (2,7 % mot 1,2 %). Sofie är
+tvärtom: svag hook, starkast hold. Det är skälet till att Sofie och Katarina
+får Nathalies manus med hennes öppning (`products/matstrumpor/ugc/`).
 
 ✅ **Kommentarerna läses sedan 2026-09-27** via `META_ACCESS_TOKEN_MATSTRUMPOR`
 (Axels egen app, sidan ligger i en annan Business Manager än `META_ACCESS_TOKEN`).
@@ -183,6 +195,51 @@ arbetshypoteser tills kommentarerna går att läsa.
 ---
 
 ## Nästa steg (i ordning, vinst snabbast först)
+
+⚠️ **Nya vinklar hämtas ur `mekanismer.md` (2026-10-01):** fem mekanismer
+mot marknadssofistikeringen prövade av en skeptiker mot kontots transkript.
+En genuint ny (**duka fram den**, kräver ny inspelning, Axels beslut), två
+uppvärmda med test redan i kön (locket via 061/063, favoriträtten via 060 +
+Katarina), en hook (fem sorter), en förbrukad (byrålådetestet, står på varje
+annons). Hookarna har klarat tre-frågorstestet. ⚠️ **Hookarna för de 30
+annonser `lardomar.md` aldrig läste står i `matstrumpor/marknader/transkript/`
+(69 transkript).** Läs dem innan en vinkel kallas oprövad; den här sessionen
+kallade två redan körda vinklar nya tills skeptikern läste transkripten.
+📚 **Ny information (steg 4) i `ny-information.md` (2026-10-01):** tolv
+belagda fynd med källa och datum, varje källa öppnad av sessionen. De
+viktigaste för Sverige: 56 % av svenskarna har sushi som favoriträtt
+(Verian/HelloFresh 2024) och sushi är topp tre i takeaway (Wolt jan 2026);
+"den första oönskade julklappen läggs ut innan Kalle Anka" (Blocket/SVT
+dec 2025) och 87 % har fått en klapp de inte ville ha (UNICEF dec 2024);
+57 % vill ge praktiskt, 25 % roligt, 23 % säger nej till skämtpresenter
+(Talker nov 2025); se-igenom-förpackning höjer viljan att äga (IJRM maj
+2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är FALSKT (cheeseburgare
+är), skriv "topp tre". ⛔ **Axels dom 2026-10-02: en faktarad är aldrig
+första raden i en video** (Wolt-raden "känns onaturlig och konstig"); videons
+start är en gåta som bilden löser vid avslöjandet, faktan går som bild,
+rubrik eller mejl. ✅ **Batch #4 samma dag, Axels order (2 briefer, Draft i
+hubben):** `065` = mekanismen "duka fram den" som NY INSPELNING med Nathalie
+(Axels ja; raden väntar på hennes råklipp, inspelningsplanen står sist i
+briefen) och `066` = gåtan "Sushi att ge bort till den som hatar fisk." som
+ny öppning på Nathalie-kroppen, upprullningen som svar. **Samma förmiddag,
+Axels "kör B också" + "en individuell video … till en annan kreatör":**
+`067` = gåta B "Det finns inget bäst före-datum på den här sushin." på exakt
+066:s klipp (enda skillnaden är första captionen, så A och B mäts mot
+varandra) och `068` = gåta B som HELA videon med en ny kreatör (lådan läggs i
+ett skåp, tas upp, rullas upp; "Min sushi väntar i skåpet tills någon fyller
+år." / "Glömde köpa present, men sushin låg ju kvar."; riktig mottagare
+öppnar), kreatörssidan https://claude.ai/artifact/5k7Xu1qYgJZutAeELRm7hE.
+⛔ **065 och 068 arkiverade i hubben samma dag (Axels order):** en
+kreatörsinspelning läggs aldrig som Notion-rad innan råklippen finns, för
+redigeraren tar varje rad han ser och klipper den ur det material som
+finns. Bara omklipp (066, 067) ligger i hubben.
+Mönstret för allt nytt här: **iterera på vinnaren** — samma kropp, en ny mekanism eller en ny
+ingång åt gången, aldrig ett större löfte. **Två sidor, publiceras om på samma länkar:** den
+engelska briefen till creative strat (`CS-BRIEF-sophistication.md`)
+https://claude.ai/artifact/5xGD7q2EtJfdVQr1aS8eKn och Axels enkla svenska
+sammanfattning https://claude.ai/artifact/4V8B41zhKmExD2qUumasf5 (Axels
+order samma dag: "jag kan inte läsa något sånt komplicerat struktur" —
+regeln står i CLAUDE.md under "Så här ska du svara Axel").
 
 0. **Rond 4 (2026-09-30): nya annonser får ingen leverans för att de hamnar i fel adset.**
    `09-17 UGC` (Nathalies) bär 85 % av spenden och 316 av 353 köp på 14 d;

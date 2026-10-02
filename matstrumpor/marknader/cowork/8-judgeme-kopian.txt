@@ -1,0 +1,46 @@
+Uppdrag: en liten rättning i Judge.me för Matstrumpor, och ett meddelande till Judge.me:s support. Gör bara det som står nedan.
+
+Rör ALDRIG:
+- Recensionernas text, betyg, namn, bilder eller synlighet. Radera, dölj, redigera eller besvara aldrig en recension.
+  Det enda som får ändras på en recension är "Detected review language" i del C, och bara på Irénes.
+- Knappar som importerar, exporterar, synkar eller tar bort recensioner. En import kan lägga in alla recensioner en gång till.
+- De sju recensioner som redan rättades 2026-10-01: Kent, Wide Pia, Niklas, Jonas, Gittan, Fredrik och Annika på Sushi-Strumpor.
+- Widgetarnas texter, språklistan, datumformatet och märket under produktnamnet.
+- Judge.me-planen, betalningar, e-postinställningar och recensionsförfrågningar. Tacka nej om supporten erbjuder
+  en annan plan, en uppgradering eller något annat som kostar.
+- Butikens åtkomst: ge aldrig supporten personalkonto, samarbetsåtkomst eller lösenord.
+- Shopify-temat, Shopify Payments, Meta, DNS och Loopia.
+Betala ingenting.
+
+DEL C: språket på Irénes recension
+Varför: Judge.me har märkt Irénes svenska recension som engelska. Den gäller produkten Sushipinnar i äkta trä
+(ätpinnarna) och börjar "jättefina strumpor och rolig som julklapp". Det är samma fel som de sju i del B förra gången.
+1. Öppna Shopify-admin för butiken Matstrumpor.se (1r46tp-qx) och klicka Appar → Judge.me.
+2. Gå till Recensioner (Reviews).
+3. Hitta Irénes recension. Klicka "⋯" på raden och sedan "Review details". Den svenska adminen kan kalla knappen något liknande.
+4. Öppna rullistan "Detected review language" (på svenska "Upptäckt recensionsspråk"), välj Swedish (Svenska) och klicka Save (Spara).
+5. Om rullistan inte finns: stanna, ändra ingenting och ta en skärmdump av "Review details". Gå sedan vidare till del D.
+
+DEL D: be Judge.me:s support skriva om kopian i Shopify
+Varför: Judge.me har rätt språk på sushistrumpornas recensioner sedan förra gången. Men den svenska produktsidan
+ritas ur en kopia som Judge.me sparar i Shopify, och den skrevs senast 30 september, före rättningen. Därför står
+Kent, Wide Pia och Niklas fortfarande under "Recensioner på andra språk" med knappen "Visa original (engelska)"
+på den svenska sidan. Ett ändrat språk skriver inte om kopian. Det kan Judge.me:s support göra.
+6. Öppna Judge.me:s supportchatt inne i appen: chattbubblan, eller Support eller Help i menyn.
+7. Klistra in meddelandet mellan strecken, exakt som det står, och skicka det.
+----------
+Hi! Shop: 1r46tp-qx.myshopify.com (Matstrumpor). On 1 October we changed the detected review language of seven Shop app reviews on the product Sushi-Strumpor (Shopify product ID 10286130889043) from English to Swedish. Your widget data already returns all eleven reviews as Swedish, but the copy stored in our Shopify product metafields (judgeme.review_widget_data and judgeme.review_widget_ssr_html) was last written on 30 September and still marks seven of them as English. Our Swedish product page renders that copy, so Kent, Wide Pia and Niklas still appear under "Reviews in other languages" with "Show original (English)". Could you please re-sync the review widget metafields for this product, and for "Sushipinnar i äkta trä" (product ID 10408204468563), where we changed one review's language from English to Swedish today? Please don't change anything else. Thank you!
+----------
+8. Om supporten svarar medan du är kvar: svara bara på frågor om vilken butik och vilka produkter det gäller.
+   Klicka inga knappar och ändra inga inställningar som supporten föreslår. Skriv av svaret ordagrant i rapporten.
+9. Om det inte finns någon supportchatt i appen: stanna, skicka inget mejl, och säg det i rapporten.
+
+KONTROLL SOM KUND (öppna i en ny flik och ladda om sidan):
+- https://matstrumpor.com/products/sushipinnar-i-akta-tra?country=US: rulla ner till recensionerna och vänta några
+  sekunder. Irénes recension ska stå på engelska med knappen "Show original (Swedish)". Ta en skärmdump.
+- Den svenska sidan blir rätt först när supporten skrivit om kopian. Den läser Claude efteråt.
+
+Rapportera vad du ändrade i del C, ordagrant vad du skickade och vad supporten svarade i del D, och skicka skärmdumparna.
+Säg rakt ut om en rullista, en knapp eller chatten inte fanns. Skriv sedan "Judge.me klar" i chatten med Claude.
+Claude läser sidorna som kund efteråt med node matstrumpor/marknader/judgeme-koll.mjs, som också jämför kopian
+i Shopify med Judge.me.

@@ -54,7 +54,44 @@
         "matt": "skapad 2026-09-21 av /matstrumpor, PAUSED och tom — slås på av körningen som laddar upp den första julbilden"
       }
     },
-    "adsets_comment": "Fyra hinkar, inget annat. Övriga aktiva adsets i kampanjen 2026-09-21 (nya8, nya20, alla17, batch03_bilder, '09-17 UGC') rörs aldrig av uppladdaren — de bär gamla batcher. PAUSED med spend är ett beslut och aktiveras ALDRIG.",
+    "adsets_comment": "⛔ GAMLA HINKAR sedan 2026-10-02 (3:2:2, struktur nedan): de tar aldrig emot en ny annons. Nycklarna står kvar för att gamla UPPLADDAD-rader i loggen pekar på dem. Före 3:2:2 var de de fyra hinkarna, och övriga aktiva adsets (nya8, nya20, alla17, batch03_bilder, '09-17 UGC') rördes aldrig av uppladdaren. PAUSED med spend är ett beslut och aktiveras ALDRIG.",
+    "sida_id": "820358954504320",
+    "instagram_id": "17841479011543544",
+    "identitet_comment": "Sidan Matstrumpor.se och Instagram-identiteten som alla svenska annonser bär — avlästa ur Champions-annonsernas creatives (object_story_spec) 2026-10-02 via token. Nya annonser får samma två, aldrig utlandets sida 1285064981363590.",
+    "struktur": {
+      "comment": "3:2:2, Axels beslut ROUTING C 2026-10-02 (products/matstrumpor/EVOLVE-PLAN.md beslut 2). Kursen: 'How To Set Up a 3:2:2 Campaign' + 'Full Media Buying Strategy Outline (2026)', lästa med tools/skool/ 2026-10-02 — anteckningarna i docs/os/evolve/ITERATIONS-PLAYBOOK.md avsnitt 11. EN CBO (kampanjen ovan), ett Champions-adset, testadsets: ett koncept = ett adset, tre vanliga annonser per adset (samma koncept, tre hookar), varje annons med 2 rubriker + 2 primärtexter, bild och video aldrig i samma adset. Inga dynamic creative-adsets (ordet DCT finns inte i kursen).",
+      "champions": {
+        "id": "120251591832340023",
+        "namn": "09-17 UGC",
+        "mediatyp": "video",
+        "valt": "2026-10-02 av sessionen: adsetet som bär Nathalies breakthrough — 63 167 kr av kampanjens 69 186 kr de senaste 7 dagarna (91 %), 305 köp, ROAS 2,06 (läst via token). Kursen: champions-adsetet bär bevisade vinnare. Det döps inte om och testas aldrig — uppladdaren lägger aldrig en ny annons här; vinnare flyttas in av Axel (FORSLAG FLYTTA_TILL_CHAMPIONS)."
+      },
+      "champions_bild": null,
+      "champions_bild_comment": "Bild och video blandas aldrig i ett adset. Champions bär video; en bildvinnare får ett eget Champions-adset för bild först när Axel skapat det (då står id + namn här) — förslaget säger det.",
+      "max_adsets_totalt": 5,
+      "max_comment": "Kursen (FAQ i 3:2:2-lektionen): spenderar du bara några hundra dollar om dagen, högst 5 adsets åt gången INKLUSIVE Champions om den har annonser. Media buying-arket 2026: under $1k/dag högst 5 nya testadsets. Axels regel (prompten 2026-10-02): Champions + högst 4 test = 5. Uppladdaren vägrar ett sjätte levererande adset.",
+      "annonser_per_adset": 3,
+      "rubriker_per_annons": 2,
+      "texter_per_annons": 2,
+      "cpa_multipel_per_adset": 3,
+      "cpa_comment": "Varje adset ska kunna få 3 × break-even-CPA per dag (308,48 kr ⇒ 925 kr). Budgeten läses live; ryms färre adsets än max_adsets_totalt är det taket. Kursens egen formel för volymen: max koncept per vecka = budget ÷ target-CPA.",
+      "test_dagar": 7,
+      "test_max_dagar": 14,
+      "tidig_dom_dagar": 3,
+      "majoritet_andel": 0.5,
+      "flytt_andel": 0.2,
+      "max_annonser_per_uppladdning": 6,
+      "uppladdning_comment": "Axels beslut 2026-10-02 kväll: VARJE UPPLADDNING är ett nytt adset (MATSTRUMP_U<ÅÅMMDD>[b …]_<vinkel|mix>_<video|bild>) med det som är klart just då — varianterna blir inte klara samtidigt. Högst 6 annonser per adset (sessionens val: nya16 med 40 annonser visade att Meta svälter resten), fler ⇒ nästa bokstav. Bild och video aldrig i samma.",
+      "tak_min_andel": 0.01,
+      "tak_comment": "Axels beslut A 2026-10-02: taket räknar bara adsets som TAR pengar — minst 1 % av kampanjens spend senaste sju dagarna (vid 10 000 kr/dag ≈ 100 kr/dag), eller yngre än testtiden, eller Champions. Ett adset Meta inte ger spend tar ingen budget från testerna.",
+      "ung_annons_dagar": 7,
+      "svalt_dagar": 21,
+      "sasong": [{ "vinkel": "jul", "doms_fran": "2026-12-01" }],
+      "axel_2026_10_02_comment": "Axels beslut 2026-10-02 (svar A + egen rad): (1) ett adset med en annons yngre än ung_annons_dagar döms inte — nya16 fick 054–063 veckan före. (2) Säsongsadsets (vinkeln i adsetnamnet, t.ex. broad_advplus_purchase_jul_video) döms inte förrän doms_fran. (3) Svält stänger ett adset först när det legat aktivt svalt_dagar utan spend: 'vi har bara haft typ 1 breakthrough och den har snott typ all spend hela tiden' — att svälta bredvid den är ingen dom. (4) Flytt till Champions görs med BEFINTLIGT inlägg (post-id i förslaget), så att likes och kommentarer följer med.",
+      "andel_comment": "Vinnare (kursen): adsetet tar MAJORITETEN av spenden vid KPI, eller kampanjens ROAS förbättrades. Flytt till Champions (Chadbot ur kursen D2): annonsen/adsetet har tagit minst 20–30 % av budgeten — den undre gränsen, 20 %, är talet här. KPI = break-even-ROAS (kill mäts alltid mot break-even, CLAUDE.md regel 4).",
+      "adsetnamn_mall": "MATSTRUMP_T<nnn>_<vinkel>_<video|bild>",
+      "sedan": "2026-10-02"
+    },
     "landningssida": "https://matstrumpor.se/products/sushi-strumpor"
   },
   "notion": {
@@ -81,7 +118,16 @@
   },
   "namn": {
     "prefix": "MATSTRUMP_sushi",
-    "mall": "MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>",
+    "mall": "MATSTRUMP_sushi_<vinkel>_<format>_<nnn>[_h<k>][_i<N>p<förälder>|_im]_v<n>",
+    "mall_comment": "Sedan 2026-10-01 (Evolve ITER#N_BATCH#ORIG, docs/os/evolve/ITERATIONS-PLAYBOOK.md avsnitt 9): _h<k> = hookvariant, _i<N>p<förälder> = iteration N på föräldern (löpnummer eller alias nedan), _im = imitation av en annan brands annons. Utan i/im = en ny idé ur research. Gamla namn tolkas som förut. Utlandets namn bär landskoden efter MATSTRUMP_ och numreras per marknad.",
+    "alias": {
+      "nat": "09-17 Nathalie captions musik",
+      "sof1": "Sofie H1 Sushi Captions Ingen musik",
+      "sof2": "Sofie H2 julstrumpa Sushi Captions Ingen musik",
+      "kat1": "09-24 Katarina sushiälskaren i ditt liv",
+      "kat2": "09-24 Katarina Sushigalen unge"
+    },
+    "alias_comment": "Axels egna uppladdningar utan löpnummer, så att en iteration kan peka på dem i namnet (_i5pnat). Namnen avlästa ur kanda-namn.json 2026-10-01.",
     "vinklar": [
       "gift",
       "jul",
@@ -122,10 +168,17 @@
     ],
     "comment": "Avläst ur kontot + hubben 2026-09-21. Vinkeln `jul` är ny och är ROUTINGNYCKELN: bär namnet `jul` hamnar annonsen i jul-adsetet, video eller bild efter formatet. Högsta upptagna nummer 2026-09-21: 043 (Notion, Draft). ⚠️ Fem annonser i kontot står utanför mönstret ('09-17 Nathalie captions musik', 'Sofie H1 …') — Axels egna uppladdningar. De räknas aldrig som upptagna nummer och döps aldrig om."
   },
+  "kreatorer": {
+    "nathalie": ["Nathalie", "nat"],
+    "sofie": ["Sofie", "sof1", "sof2", "husetmellanhagarna"],
+    "katarina": ["Katarina", "kat1", "kat2"],
+    "comment": "Vem som syns i bild, för arkivets vinstbidrag per kreatör (Evolve: vinnande kreatörer blir ambassadörer). Matchas mot annonsnamnet, BRIEF-radens `kreator`, och förälderns namn/alias för iterationer som klipps ur förälderns råfil. Ny kreatör = en rad här (2026-10-01)."
+  },
   "kadens": {
     "briefer_per_rond": 6,
     "rond_var_n_dag": 3,
-    "comment": "Axels beslut 2026-09-21 ('6 per rond, var tredje dag'). Taket är ändå antalet skrivna lärdomar sedan förra ronden — budgeten styr aldrig antalet (CS-KLART punkt 8)."
+    "hookar_per_koncept": 3,
+    "comment": "Axels beslut 2026-09-21 ('6 per rond, var tredje dag'). Taket är ändå antalet skrivna lärdomar sedan förra ronden — budgeten styr aldrig antalet (CS-KLART punkt 8). Sedan 3:2:2 (2026-10-02) är en brief = en annonsrad i hubben och ett koncept = tre hookar = tre briefer, så 6 briefer per rond = 2 koncept. Lärdomstaket räknas på koncept (en lärdom bär ett koncept med sina tre hookar), och kön av koncept som väntar på en testplats sätter taket uppåt (lardom.mjs koncepttak)."
   },
   "grindar": {
     "signifikans_spend_sek": 300,
@@ -133,7 +186,7 @@
     "ingen_leverans_spend_sek": 10,
     "ingen_leverans_dagar": 7,
     "benchmark_andel": 0.3,
-    "comment": "Samma grindar som ANALYSMETOD.md. Ingen dom under 300 kr ELLER 3 köp. En annons med > 30 % av kampanjens vinstbidrag är benchmarken och dödas aldrig."
+    "comment": "Samma grindar som ANALYSMETOD.md. Ingen dom utan 300 kr OCH 3 köp (båda krävs, Axels beslut 2026-10-02). En annons med > 30 % av kampanjens vinstbidrag är benchmarken och dödas aldrig."
   },
   "skalning": {
     "vem": "Axel",

@@ -21,16 +21,37 @@
 // Attribution 7d_click, som i kommandofilen. Metas date presets och time_range
 // utesluter innevarande dag — "i dag" finns aldrig i siffrorna.
 //
-// Rena funktioner (varde, tolkaRad, fonster, budgetHistorik, budgetVid,
-// byggJobbfil) är testade utan nät. hamtaAvlasning() gör anropen via
-// tools/meta-lib.mjs (rate limit-backoff, timeout) och tar en injicerbar klient.
+// ⛔ VIDEOMÅTTEN LÄSES ALLTID UR `value`, ALDRIG UR `7d_click` (rättat
+// 2026-10-01). Med action_attribution_windows satt skickar Meta nyckeln
+// `7d_click` även på video_play_actions — ett attribuerat tal, inte antalet
+// videostarter. Mätt samma kväll på Nathalie (last_14d): 4 594 under 7d_click
+// mot 621 588 i value, och 308 826 tresekundersvisningar. Därför stod hennes
+// hook rate som 0,2 % och 012v2:s hold rate som 450 % i lardomar.md.
+// Definitionerna följer Evolve (docs/os/evolve/ITERATIONS-PLAYBOOK.md):
+//   hook_rate      = tresekundersvisningar (actions: video_view) / visningar
+//   hold_rate      = ThruPlay / visningar
+//   hook_till_hold = ThruPlay / tresekundersvisningar
+//
+// Startdagen (D0) är max(annonsens created_time, kampanjens första dag med
+// spend) sedan 2026-10-01. En annons som skapas PAUSED i en kampanj som inte
+// gått än (utlandets 14 kampanjer: byggda 27–30/9, start 2/10) fick annars
+// nolldagar i sin första vecka och blev en falsk INGEN_LEVERANS.
+//
+// Rena funktioner (varde, vardeUtanFonster, tolkaRad, fonster, startdag,
+// summeraDagar, budgetHistorik, budgetVid, byggJobbfil) är testade utan nät.
+// hamtaAvlasning() gör anropen via tools/meta-lib.mjs (rate limit-backoff,
+// timeout) och tar en injicerbar klient.
 
 import { api, alla } from '../tools/meta-lib.mjs';
+import { LEVERERAR } from './struktur.mjs';
 
 export const FONSTER_DAGAR = 7;
 export const ATTRIBUTION = ['7d_click'];
-export const INSIGHTS_FALT = 'ad_id,ad_name,spend,impressions,inline_link_clicks,actions,purchase_roas,cost_per_action_type,video_play_actions,video_thruplay_watched_actions';
+export const INSIGHTS_FALT = 'ad_id,ad_name,spend,impressions,cpm,inline_link_clicks,inline_link_click_ctr,actions,purchase_roas,cost_per_action_type,video_play_actions,video_thruplay_watched_actions,video_p25_watched_actions,video_p50_watched_actions,video_p75_watched_actions,video_p100_watched_actions,video_avg_time_watched_actions';
 export const KAMPANJ_FALT = 'spend,actions,purchase_roas';
+/** Veckorna 2 och 3 läses bara för annonser vars D0 ligger inom så här många
+ *  dagar — äldre etiketter är avgjorda, och varje fönster kostar ett anrop. */
+export const OMPROVNING_DAGAR = 35;
 
 /** Svenskt datum i dag (YYYY-MM-DD, Europe/Stockholm). Rutinen går 07:00
  *  svensk tid — UTC-datumet råkar vara detsamma då, men bara råkar. */
@@ -57,10 +78,20 @@ export function varde(lista, typ, fonster = ATTRIBUTION[0]) {
   return Number.isFinite(n) ? n : null;
 }
 
+/** Värdet UTAN attributionsfönster — `value`, aldrig `7d_click`. För allt som
+ *  räknar visningar av videon (hook, hold, kvartilerna): de är händelser på
+ *  annonsen, inte konverteringar, och 7d_click-talet är något annat (mätt
+ *  2026-10-01, se huvudet). */
+export function vardeUtanFonster(lista, typ = 'video_view') {
+  const rad = (Array.isArray(lista) ? lista : []).find((x) => x?.action_type === typ);
+  if (!rad) return null;
+  const n = Number(rad.value);
+  return Number.isFinite(n) ? n : null;
+}
+
 /** En insights-rad (ad-nivå eller kampanjnivå) → våra fältnamn. Ren.
- *  hook_rate = videostarter / visningar, hold_rate = thruplay / videostarter —
- *  samma två tal ronden alltid skrivit i lärdomarna, namngivna så att ingen
- *  läser dem som något annat. */
+ *  Hook och hold enligt Evolve: per VISNING, så talen går att jämföra med
+ *  kursens riktmärken (hook under ~25 % och hold under ~5 % är lågt). */
 export function tolkaRad(rad = {}) {
   const spend = num(rad.spend);
   const kop = varde(rad.actions, 'omni_purchase') ?? 0;
@@ -68,22 +99,77 @@ export function tolkaRad(rad = {}) {
   const impressions = num(rad.impressions);
   const klick = num(rad.inline_link_clicks);
   const lpv = varde(rad.actions, 'omni_landing_page_view') ?? varde(rad.actions, 'landing_page_view');
-  const videostarter = varde(rad.video_play_actions, 'video_view');
-  const thruplay = varde(rad.video_thruplay_watched_actions, 'video_view');
+  const videostarter = vardeUtanFonster(rad.video_play_actions);
+  const visningar3s = vardeUtanFonster(rad.actions, 'video_view');
+  const thruplay = vardeUtanFonster(rad.video_thruplay_watched_actions);
+  const kvartil = (f) => vardeUtanFonster(rad[f]);
+  const snitt = vardeUtanFonster(rad.video_avg_time_watched_actions);
   return {
     spend_sek: r2(spend),
     kop,
     roas: roas === null ? null : r3(roas),
     cpa_sek: kop > 0 ? r2(spend / kop) : null,
     impressions: impressions ?? null,
+    cpm_sek: num(rad.cpm) === null ? (spend !== null && impressions ? r2((spend / impressions) * 1000) : null) : r2(num(rad.cpm)),
     klick: klick ?? null,
+    ctr_lank: num(rad.inline_link_click_ctr) === null ? (klick !== null && impressions ? r3((klick / impressions) * 100) : null) : r3(num(rad.inline_link_click_ctr)),
     lpv,
     konv_lpv: lpv && kop >= 0 ? r3(kop / lpv) : null,
     videostarter,
+    visningar_3s: visningar3s,
     thruplay,
-    hook_rate: videostarter !== null && impressions ? r3(videostarter / impressions) : null,
-    hold_rate: thruplay !== null && videostarter ? r3(thruplay / videostarter) : null,
+    p25: kvartil('video_p25_watched_actions'),
+    p50: kvartil('video_p50_watched_actions'),
+    p75: kvartil('video_p75_watched_actions'),
+    p100: kvartil('video_p100_watched_actions'),
+    snitt_speltid_s: snitt,
+    hook_rate: visningar3s !== null && impressions ? r3(visningar3s / impressions) : null,
+    hold_rate: thruplay !== null && impressions ? r3(thruplay / impressions) : null,
+    hook_till_hold: thruplay !== null && visningar3s ? r3(thruplay / visningar3s) : null,
   };
+}
+
+/** Kampanjens första dag med spend ur en dagserie (time_increment=1).
+ *  null = kampanjen har aldrig spenderat. Ren. */
+export function startdag(dagserie) {
+  const dagar = (dagserie ?? []).filter((d) => (num(d.spend) ?? 0) > 0).map((d) => String(d.date_start)).sort();
+  return dagar[0] ?? null;
+}
+
+/** Kampanjens tal i ett fönster ur dagserien: spend, köp och ROAS (spendvägd).
+ *  Ren. Används för veckan FÖRE annonsen (W0) och veckorna 2–3 — så de inte
+ *  kostar egna anrop. */
+export function summeraDagar(dagserie, since, until) {
+  let spend = 0, varde_ = 0, kop = 0, medRoas = 0;
+  for (const d of dagserie ?? []) {
+    const dag = String(d.date_start);
+    if (dag < since || dag > until) continue;
+    const s = num(d.spend) ?? 0;
+    spend += s;
+    const dagKop = varde(d.actions, 'omni_purchase') ?? 0;
+    kop += dagKop;
+    // En dag med spend och noll köp saknar purchase_roas hos Meta — den är ROAS 0
+    // och väger in (rättat 2026-10-02; förut räknades bara köpdagarna).
+    const r = varde(d.purchase_roas, 'omni_purchase') ?? (s > 0 && dagKop === 0 ? 0 : null);
+    if (r !== null) { varde_ += r * s; medRoas += s; }
+  }
+  return { since, until, spend_sek: r2(spend), kop, roas: medRoas > 0 ? r3(varde_ / medRoas) : null };
+}
+
+/** Vecka n (1, 2, 3 …) räknat från D0. Ren. */
+export function veckaFonster(d0, idag, vecka) {
+  return fonster(plusDagar(d0, FONSTER_DAGAR * (vecka - 1)), idag);
+}
+
+/** Annonsens startdag: max(created, kampanjens första spenddag). Ren.
+ *  kampanjStart === undefined ⇒ okänd (äldre jobbfiler) ⇒ created_time gäller.
+ *  kampanjStart === null ⇒ kampanjen har inte spenderat ⇒ ingen startdag än. */
+export function annonsD0(createdTime, kampanjStart) {
+  const skapad = String(createdTime ?? '').slice(0, 10) || null;
+  if (kampanjStart === undefined) return skapad;
+  if (kampanjStart === null) return null;
+  if (!skapad) return kampanjStart;
+  return skapad > kampanjStart ? skapad : kampanjStart;
 }
 
 /** Annonsens egna första vecka [D0, D0+6], kapad vid gårdagen (Meta har inga
@@ -123,44 +209,121 @@ export function budgetVid(historik, datum, nuvarandeSek = null) {
   return nuvarandeSek;
 }
 
+/** Antal dagar bakåt adsetens dagserie läses (3:2:2-domen, dom.mjs): ett test
+ *  döms på högst 14 dagar och jämförs med lika många dagar före, så 28 räcker. */
+export const ADSET_SERIE_DAGAR = 28;
+export const ADSET_FALT = 'id,name,status,effective_status,created_time,daily_budget,lifetime_budget,is_dynamic_creative';
+
+/** En dagserie ur Meta (kampanj- eller adsetnivå, time_increment=1) → kompakta
+ *  rader { d, spend_sek, kop, roas }, äldst först. Ren. */
+export function kompaktSerie(dagserie) {
+  return (dagserie ?? []).map((d) => {
+    const t = tolkaRad(d);
+    return { d: String(d.date_start), spend_sek: t.spend_sek ?? 0, kop: t.kop ?? 0, roas: t.roas };
+  }).sort((a, b) => a.d.localeCompare(b.d));
+}
+
+/** Kampanjens adsets med dagserie och antal levererande annonser — det
+ *  3:2:2-domen (dom.mjs) dömer. Ren. adsetserie = insights level=adset,
+ *  time_increment=1 (rader med adset_id). */
+export function byggAdsets({ adsets, annonser, adsetserie }) {
+  const perAdset = new Map();
+  for (const r of adsetserie ?? []) {
+    const id = String(r.adset_id ?? '');
+    if (!perAdset.has(id)) perAdset.set(id, []);
+    perAdset.get(id).push(r);
+  }
+  return (adsets ?? []).map((a) => {
+    const egna = (annonser ?? []).filter((x) => String(x.adset?.id ?? x.adset_id ?? '') === String(a.id));
+    return {
+      id: String(a.id),
+      namn: a.name,
+      status: a.status ?? null,
+      effective_status: a.effective_status ?? null,
+      skapad: String(a.created_time ?? '').slice(0, 10) || null,
+      dynamic_creative: a.is_dynamic_creative ?? null,
+      egen_budget: Boolean(a.daily_budget || a.lifetime_budget),
+      annonser: egna.length,
+      aktiva_annonser: egna.filter((x) => LEVERERAR.has(String(x.effective_status ?? ''))).length,
+      serie: kompaktSerie(perAdset.get(String(a.id)) ?? []),
+    };
+  });
+}
+
 /** Jobbfilen `--dom` läser: siffrorna ORDAGRANT ur Meta, aldrig räknade i
  *  huvudet. Ren — tar de råa svaren och bygger strukturen. */
-export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, historik, hamtat = new Date().toISOString() }) {
+export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka = {}, dagserie = null, kampanjStart, marknad = 'SE', historik, adsetLista = null, adsetserie = null, hamtat = new Date().toISOString() }) {
   const dagsbudget = kampanj?.daily_budget ? Number(kampanj.daily_budget) / 100 : null;
   const k14 = tolkaRad(kampanj14 ?? {});
   const via = new Map((insikter14 ?? []).map((r) => [String(r.ad_id), r]));
   const rader = (annonser ?? []).map((a) => {
-    const d0 = String(a.created_time ?? '').slice(0, 10);
-    const f = perFonster?.[d0] ?? null;
+    const d0 = annonsD0(a.created_time, kampanjStart);
+    const f = d0 ? perFonster?.[d0] ?? null : null;
     const egen = f?.annonser?.get?.(String(a.id)) ?? f?.annonser?.[String(a.id)] ?? null;
     const kamp = f?.kampanj ? tolkaRad(f.kampanj) : { spend_sek: 0, roas: null, kop: 0 };
+    // W0 = kampanjens vecka FÖRE annonsen. Breakthrough enligt Evolve: kampanjens
+    // spend växte vecka för vecka på grund av annonsen (etikett.mjs).
+    const w0 = d0 && dagserie ? summeraDagar(dagserie, plusDagar(d0, -FONSTER_DAGAR), plusDagar(d0, -1)) : null;
+    const andringar = d0 ? (historik ?? []).filter((h) => { const dag = String(h.tid).slice(0, 10); return dag >= d0 && dag <= plusDagar(d0, FONSTER_DAGAR - 1); }) : [];
     const fv = f ? {
       since: f.since, until: f.until, komplett: f.komplett, dagar_med_data: f.dagar_med_data,
       ...tolkaRad(egen ?? {}),
+      // Ett HELT fönster lästes men annonsen har ingen rad ⇒ Meta visade den inte: 0 kr,
+      // inte "saknas" (Meta utelämnar rader utan visningar). Före 2026-10-01 blev
+      // det INGEN_DATA i stället för INGEN_LEVERANS.
+      ...(egen || !f.komplett ? {} : { spend_sek: 0, kop: 0, ingen_rad: true }),
       kampanj_spend_sek: kamp.spend_sek,
       kampanj_roas: kamp.roas,
       kampanj_kop: kamp.kop,
+      kampanj_spend_w0_sek: w0 ? w0.spend_sek : null,
       budget_d0: budgetVid(historik, d0, dagsbudget),
       budget_d7: budgetVid(historik, plusDagar(d0, FONSTER_DAGAR - 1), dagsbudget),
-    } : null;
+      budgetandringar: andringar,
+    } : { komplett: false, dagar_med_data: 0, skal: d0 === null ? 'kampanjen har inte spenderat en krona än — veckan har inte börjat' : `D0 ${d0} — Meta har inga siffror för veckan än (i dag finns aldrig)` };
+    // Veckorna 2 och 3 (Evolve: en etikett kan uppgraderas vecka 2–3).
+    const veckor = {};
+    for (const n of [2, 3]) {
+      const v = d0 ? perVecka[`${d0}|${n}`] : null;
+      if (!v) continue;
+      const egenV = v.annonser?.get?.(String(a.id)) ?? v.annonser?.[String(a.id)] ?? null;
+      const kampV = dagserie ? summeraDagar(dagserie, v.since, v.until) : (v.kampanj ? tolkaRad(v.kampanj) : { spend_sek: null, roas: null, kop: null });
+      veckor[n] = {
+        since: v.since, until: v.until, komplett: v.komplett,
+        ...tolkaRad(egenV ?? {}),
+        ...(egenV || !v.komplett ? {} : { spend_sek: 0, kop: 0, ingen_rad: true }),
+        kampanj_spend_sek: kampV.spend_sek,
+        kampanj_roas: kampV.roas,
+        kampanj_spend_w0_sek: w0 ? w0.spend_sek : null,
+        budget_d0: budgetVid(historik, d0, dagsbudget),
+        budget_d7: budgetVid(historik, v.until, dagsbudget),
+      };
+    }
     return {
       id: String(a.id),
       namn: a.name,
+      marknad,
       adset: a.adset?.name ?? null,
       adset_id: a.adset?.id ?? null,
+      // Inläggets id: en vinnare flyttas till Champions med BEFINTLIGT inlägg
+      // (Axels krav 2026-10-02), så att likes och kommentarer följer med.
+      post_id: a.creative?.effective_object_story_id ?? null,
       status: a.status ?? null,
       effective_status: a.effective_status ?? null,
+      skapad: String(a.created_time ?? '').slice(0, 10) || null,
       d0,
       fonster: 'last_14d',
       ...tolkaRad(via.get(String(a.id)) ?? {}),
       forsta_vecka: fv,
+      veckor,
     };
   });
   const sedan14 = plusDagar(idag, -14);
   return {
     datum: idag,
     hamtat,
-    kalla: `META_ACCESS_TOKEN via Graph API, level=ad, action_attribution_windows ${ATTRIBUTION.join(',')}. Domarna på last_14d, etiketten på annonsens egna första vecka [D0, D0+6]. Budgethistoriken ur act/activities (update_campaign_budget). hook_rate = video_play_actions / impressions, hold_rate = video_thruplay_watched_actions / video_play_actions, konv_lpv = omni_purchase / omni_landing_page_view.`,
+    marknad,
+    kampanj_start: kampanjStart === undefined ? 'okänd (created_time gäller)' : kampanjStart,
+    kalla: `META_ACCESS_TOKEN via Graph API, level=ad, action_attribution_windows ${ATTRIBUTION.join(',')}. Domarna på last_14d, etiketten på annonsens egna första vecka [D0, D0+6] där D0 = max(created_time, kampanjens första spenddag), omprövning vecka 2 och 3. Budgethistoriken ur act/activities (update_campaign_budget), kampanjens dagserie (time_increment=1) för veckan före annonsen. Videomåtten ur value, aldrig 7d_click: hook_rate = actions:video_view (3 s) / impressions, hold_rate = video_thruplay_watched_actions / impressions, hook_till_hold = thruplay / 3 s-visningar, konv_lpv = omni_purchase / omni_landing_page_view.`,
     konto,
     kampanj: {
       id: String(kampanj?.id ?? ''),
@@ -177,6 +340,10 @@ export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampan
     },
     budgethistorik: historik ?? [],
     annonser: rader,
+    // 3:2:2 (2026-10-02): kampanjens dagserie och adseten med egna dagserier,
+    // så att kungen kan döma per ADSET (dom.mjs). Bara Sverige läser adseten.
+    kampanj_serie: dagserie ? kompaktSerie(dagserie) : [],
+    ...(adsetLista ? { adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie }) } : {}),
   };
 }
 
@@ -188,18 +355,20 @@ export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampan
  * aktivitetsloggen. Annonser laddas upp i batcher, så antalet distinkta D0 är
  * litet (fem på 96 annonser 2026-09-22).
  */
-export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, alla }, logg = (s) => console.error(s) } = {}) {
+export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, alla }, logg = (s) => console.error(s), kampanjKalla = null } = {}) {
   const konto = String(konfig.meta.ad_account_id);
-  const kampanjId = String(konfig.meta.kampanj.id);
+  const mal = kampanjKalla ?? { id: konfig.meta.kampanj.id, namn: konfig.meta.kampanj.namn, marknad: 'SE' };
+  const kampanjId = String(mal.id);
   if (konto !== '730973156224390') throw new Error(`ad_account_id ${konto} är inte "nya kungen" 730973156224390 — vägrar läsa ett annat konto ur Matstrumpors konfig.`);
 
-  const kampanj = await klient.api(kampanjId, { params: { fields: 'id,name,status,effective_status,daily_budget,lifetime_budget,created_time' } });
-  if (String(kampanj.name ?? '') !== String(konfig.meta.kampanj.namn)) {
-    throw new Error(`Kampanj ${kampanjId} heter "${kampanj.name}" i kontot, konfigen säger "${konfig.meta.kampanj.namn}" — stämmer inte, avbryter.`);
+  const kampanj = await klient.api(kampanjId, { params: { fields: 'id,name,status,effective_status,daily_budget,lifetime_budget,created_time,account_id' } });
+  if (String(kampanj.name ?? '') !== String(mal.namn)) {
+    throw new Error(`Kampanj ${kampanjId} heter "${kampanj.name}" i kontot, källan säger "${mal.namn}" — stämmer inte, avbryter.`);
   }
-  logg(`  · kampanj ${kampanj.name}: ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag`);
+  if (kampanj.account_id && String(kampanj.account_id) !== konto) throw new Error(`Kampanj ${kampanjId} ligger i konto ${kampanj.account_id}, inte ${konto} — avbryter.`);
+  logg(`  · [${mal.marknad}] kampanj ${kampanj.name}: ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag`);
 
-  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,created_time,status,effective_status,adset{id,name}' }, 200);
+  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,created_time,status,effective_status,adset{id,name},creative{effective_object_story_id}' }, 200);
   logg(`  · ${annonser.length} annonser i kampanjen`);
 
   const insikter14 = await klient.alla(`${kampanjId}/insights`, { level: 'ad', date_preset: 'last_14d', action_attribution_windows: ATTRIBUTION, fields: INSIGHTS_FALT }, 500);
@@ -207,17 +376,57 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
   const kampanj14 = k14?.data?.[0] ?? {};
   logg(`  · last_14d: ${insikter14.length} annonser med data, kampanjen ${kampanj14.spend ?? 0} kr`);
 
-  const d0s = [...new Set(annonser.map((a) => String(a.created_time ?? '').slice(0, 10)).filter(Boolean))].sort();
+  // Kampanjens dagserie från skapandet till i går: startdagen (första spend),
+  // veckan före varje annons (W0) och kampanjens tal för veckorna 2–3.
+  const igar = plusDagar(idag, -1);
+  const skapadK = String(kampanj.created_time ?? '').slice(0, 10) || plusDagar(idag, -90);
+  let dagserie = [];
+  if (skapadK <= igar) {
+    dagserie = await klient.alla(`${kampanjId}/insights`, { time_range: { since: skapadK, until: igar }, time_increment: 1, action_attribution_windows: ATTRIBUTION, fields: KAMPANJ_FALT }, 100);
+  }
+  const kampanjStart = startdag(dagserie);
+  logg(`  · kampanjens första spenddag: ${kampanjStart ?? 'INGEN — kampanjen har inte spenderat, inga annonser får etikett än'} (${dagserie.length} dagar i serien)`);
+
+  // 3:2:2 (Axels beslut 2026-10-02): adseten och deras dagserie, så att kungen
+  // dömer per ADSET (dom.mjs). Bara Sverige — utlandets kampanjer är inte byggda
+  // som 3:2:2. Två anrop: adseten och en adsetserie för hela kampanjen.
+  let adsetLista = null, adsetserie = null;
+  if (mal.marknad === 'SE') {
+    adsetLista = await klient.alla(`${kampanjId}/adsets`, { fields: ADSET_FALT }, 100);
+    const fran = plusDagar(idag, -ADSET_SERIE_DAGAR);
+    adsetserie = fran <= igar ? await klient.alla(`${kampanjId}/insights`, { level: 'adset', time_range: { since: fran > skapadK ? fran : skapadK, until: igar }, time_increment: 1, action_attribution_windows: ATTRIBUTION, fields: `adset_id,adset_name,${KAMPANJ_FALT}` }, 500) : [];
+    logg(`  · 3:2:2: ${adsetLista.length} adsets, ${adsetserie.length} adsetdagar (${ADSET_SERIE_DAGAR} dagar bakåt)`);
+  }
+
+  const d0s = [...new Set(annonser.map((a) => annonsD0(a.created_time, kampanjStart)).filter(Boolean))].sort();
   const perFonster = {};
+  const perVecka = {};
   for (const d0 of d0s) {
+    // En annons som startade i dag har inget fönster: Meta har inga siffror för
+    // i dag, och [D0, i går] svarar "(#100) since must be less than or equal to
+    // until" (mätt 2026-10-01 på Gilz uppladdning samma morgon).
+    if (d0 > igar) { logg(`  · D0 ${d0}: startade i dag — läses i morgon`); continue; }
     const f = fonster(d0, idag);
     const rader = await klient.alla(`${kampanjId}/insights`, { level: 'ad', time_range: { since: f.since, until: f.until }, action_attribution_windows: ATTRIBUTION, fields: INSIGHTS_FALT }, 500);
     const kamp = await klient.api(`${kampanjId}/insights`, { params: { time_range: { since: f.since, until: f.until }, action_attribution_windows: ATTRIBUTION, fields: KAMPANJ_FALT } });
     perFonster[d0] = { ...f, annonser: new Map(rader.map((r) => [String(r.ad_id), r])), kampanj: kamp?.data?.[0] ?? null };
     logg(`  · D0 ${d0}: fönster ${f.since}..${f.until}${f.komplett ? '' : ' (INTE komplett — ingen etikett än)'}, ${rader.length} annonser med data`);
+    // Omprövningen vecka 2 och 3 — bara för unga grupper, och bara veckor som börjat.
+    if (dagarMellanIso(d0, idag) > OMPROVNING_DAGAR) continue;
+    for (const n of [2, 3]) {
+      const v = veckaFonster(d0, idag, n);
+      if (v.since > igar) continue;
+      const vr = await klient.alla(`${kampanjId}/insights`, { level: 'ad', time_range: { since: v.since, until: v.until }, action_attribution_windows: ATTRIBUTION, fields: INSIGHTS_FALT }, 500);
+      perVecka[`${d0}|${n}`] = { ...v, annonser: new Map(vr.map((r) => [String(r.ad_id), r])) };
+      logg(`    vecka ${n}: ${v.since}..${v.until}${v.komplett ? '' : ' (pågår)'}, ${vr.length} annonser med data`);
+    }
   }
 
   let historik = [];
+  // Ingen annons med startdag (kampanjen har inte spenderat) ⇒ inget att
+  // etikettera och ingen budget att jämföra — aktivitetsloggen läses inte.
+  // Sparar ett tungt anrop per utlandskampanj före start (14 st 2026-10-01).
+  if (!d0s.length) return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik, adsetLista, adsetserie });
   try {
     // 50 per sida, inte 200: med 200 svarade Meta "Please reduce the amount of
     // data you're asking for" på sidan efter den första (mätt 2026-09-23,
@@ -229,7 +438,68 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
     logg(`  ⚠️ aktivitetsloggen gick inte att läsa (${e.message}) — budget_d0/budget_d7 blir nuvarande budget, etiketten kan då inte se en höjning`);
   }
 
-  return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, historik });
+  return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik, adsetLista, adsetserie });
+}
+
+/** Strukturen i den svenska kampanjen — det uppladdaren (/matstrumpor) räknar
+ *  platserna på: kampanjens budget, adseten med antal levererande annonser, och
+ *  Champions-adsetets inställningar som mall för ett nytt testadset (struktur.mjs
+ *  adsetSpec). LÄSER BARA, tre–fyra anrop. Fel konto eller fel kampanjnamn
+ *  avbryter, precis som avläsningen. */
+export async function hamtaStruktur(konfig, { klient = { api, alla }, logg = (s) => console.error(s), idag = idagSE() } = {}) {
+  const konto = String(konfig.meta.ad_account_id);
+  if (konto !== '730973156224390') throw new Error(`ad_account_id ${konto} är inte "nya kungen" 730973156224390 — vägrar läsa ett annat konto.`);
+  const kampanjId = String(konfig.meta.kampanj.id);
+  const kampanj = await klient.api(kampanjId, { params: { fields: 'id,name,status,effective_status,daily_budget,lifetime_budget,account_id,bid_strategy' } });
+  if (String(kampanj.name ?? '') !== String(konfig.meta.kampanj.namn)) throw new Error(`Kampanj ${kampanjId} heter "${kampanj.name}" i kontot, konfigen säger "${konfig.meta.kampanj.namn}" — avbryter.`);
+  if (kampanj.account_id && String(kampanj.account_id) !== konto) throw new Error(`Kampanj ${kampanjId} ligger i konto ${kampanj.account_id}, inte ${konto} — avbryter.`);
+  const adsetLista = await klient.alla(`${kampanjId}/adsets`, { fields: ADSET_FALT }, 100);
+  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,effective_status,adset{id,name}' }, 300);
+  const champId = konfig.meta.struktur?.champions?.id ? String(konfig.meta.struktur.champions.id) : null;
+  let mall = null;
+  if (champId && adsetLista.some((a) => String(a.id) === champId)) {
+    mall = await klient.api(champId, { params: { fields: 'id,name,targeting,optimization_goal,billing_event,promoted_object,attribution_spec,destination_type' } });
+  }
+  // Spenden per adset senaste sju dagarna (Axels beslut A 2026-10-02: taket
+  // räknar bara adsets som tar pengar). Går den inte att läsa blir andelen
+  // okänd, och då räknas adsetet — aldrig en gissad nolla.
+  let spend7 = null;
+  try {
+    const rader = await klient.alla(`${kampanjId}/insights`, { level: 'adset', date_preset: 'last_7d', fields: 'adset_id,spend' }, 200);
+    spend7 = new Map(rader.map((x) => [String(x.adset_id), Number(x.spend) || 0]));
+  } catch (e) { logg(`  ⚠️ spenden per adset gick inte att läsa (${e.message}) — alla levererande räknas mot taket`); }
+  const total7 = spend7 ? [...spend7.values()].reduce((a, b) => a + b, 0) : 0;
+  logg(`  · struktur: ${kampanj.name} ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag, ${adsetLista.length} adsets, ${annonser.length} annonser`);
+  return {
+    datum: idag,
+    hamtat: new Date().toISOString(),
+    konto,
+    kampanj: { id: String(kampanj.id), namn: kampanj.name, effective_status: kampanj.effective_status ?? null, dagsbudget_sek: kampanj.daily_budget ? Number(kampanj.daily_budget) / 100 : null, cbo: Boolean(kampanj.daily_budget || kampanj.lifetime_budget) },
+    adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie: [] }).map(({ serie, ...a }) => ({ ...a, spend_7d_sek: spend7 ? Math.round((spend7.get(String(a.id)) ?? 0) * 100) / 100 : null, andel_7d: spend7 && total7 > 0 ? Math.round(((spend7.get(String(a.id)) ?? 0) / total7) * 10000) / 10000 : null })),
+    champions_mall: mall,
+  };
+}
+
+/** Tillbakaläsningen av ett testadset efter uppladdningen (kor.mjs --kontroll):
+ *  adsetet och dess annonser med creatives, så att 2 rubriker + 2 texter, sida,
+ *  länk och mediatyp kontrolleras ur Meta och inte ur minnet. LÄSER BARA. */
+export async function hamtaAdsetKontroll(konfig, adsetId, { klient = { api, alla } } = {}) {
+  const adset = await klient.api(String(adsetId), { params: { fields: `${ADSET_FALT},campaign_id,account_id,promoted_object,optimization_goal` } });
+  if (adset.account_id && String(adset.account_id) !== String(konfig.meta.ad_account_id)) throw new Error(`Adset ${adsetId} ligger i konto ${adset.account_id} — inte nya kungen. Avbryter.`);
+  const annonser = await klient.alla(`${adsetId}/ads`, { fields: 'id,name,status,effective_status,creative{id,object_story_spec,asset_feed_spec}' }, 50);
+  return { adset, annonser, kampanj_id: adset.campaign_id ?? null };
+}
+
+/** Utlandets kampanjer i kontot, ur annonser/lage.json (skrivet av bygg.mjs
+ *  efter tillbakaläsning). Bara kampanjer med minst en annons. Ren. */
+export function utlandskampanjer(lage) {
+  return (lage?.kampanjer ?? [])
+    .filter((k) => k?.kampanj?.id && k?.kampanj?.name && (k.annonser ?? []).length > 0)
+    .map((k) => ({ id: String(k.kampanj.id), namn: k.kampanj.name, marknad: String(k.kod) }));
+}
+
+function dagarMellanIso(a, b) {
+  return Math.floor((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86400000);
 }
 
 /** Kort sammanfattning för terminalen. Ren. */
@@ -238,7 +508,7 @@ export function sammanfattning(jobb) {
   const medSpend = a.filter((x) => (x.spend_sek ?? 0) > 0).length;
   const unga = a.filter((x) => x.forsta_vecka && !x.forsta_vecka.komplett).length;
   return [
-    `Avläst ${jobb.datum} — konto ${jobb.konto}, kampanj ${jobb.kampanj.namn} (${jobb.kampanj.effective_status}, ${jobb.kampanj.dagsbudget_sek} kr/dag)`,
+    `Avläst ${jobb.datum} — konto ${jobb.konto}, [${jobb.marknad ?? 'SE'}] kampanj ${jobb.kampanj.namn} (${jobb.kampanj.effective_status}, ${jobb.kampanj.dagsbudget_sek} kr/dag), första spenddag ${jobb.kampanj_start === null ? 'ingen än (kampanjen har inte startat)' : jobb.kampanj_start ?? 'okänd'}`,
     `  last_14d: ${jobb.kampanj.spend_sek} kr · ${jobb.kampanj.kop} köp · ROAS ${jobb.kampanj.roas ?? 'okänd'}`,
     `  ${a.length} annonser, ${medSpend} med spend de senaste 14 dagarna, ${unga} vars första vecka inte är slut (ingen etikett än)`,
     `  budgethistorik: ${jobb.budgethistorik.length} ändringar${jobb.budgethistorik.length ? ' — ' + jobb.budgethistorik.map((h) => `${h.tid.slice(0, 10)} ${h.fran_sek}→${h.till_sek}`).join(', ') : ''}`,

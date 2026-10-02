@@ -1,0 +1,219 @@
+{
+ "butik": "matstrumpor",
+ "tid": "2026-10-02T06:41:25.800Z",
+ "lage": "skarpt",
+ "huvuddoman": "https://matstrumpor.se",
+ "adresser": {
+  "nb": "https://matstrumpor.com/nb",
+  "da": "https://matstrumpor.com/da",
+  "fi": "https://matstrumpor.com/fi",
+  "en": "https://matstrumpor.com",
+  "de": "https://matstrumpor.com/de",
+  "fr": "https://matstrumpor.com/fr",
+  "nl": "https://matstrumpor.com/nl",
+  "es": "https://matstrumpor.com/es",
+  "it": "https://matstrumpor.com/it",
+  "pl": "https://matstrumpor.com/pl",
+  "pt-PT": "https://matstrumpor.com/pt-pt",
+  "ja": "https://matstrumpor.com/ja",
+  "zh-TW": "https://matstrumpor.com/zh-tw"
+ },
+ "saknade_sprak": [],
+ "notiser": 66,
+ "fraktmallar": {
+  "126064296275": {
+   "titel": "Ditt paket är på väg",
+   "shop_url": 0
+  },
+  "126064361811": {
+   "titel": "Ny info om ditt paket",
+   "shop_url": 0
+  },
+  "126064427347": {
+   "titel": "Paketet kommer idag",
+   "shop_url": 0
+  }
+ },
+ "rader": [
+  "126543593811 \"Order {{name}} bekräftad\" — ja 0+k5✓ · zh-TW 0+k1✓",
+  "126543626579 \"Faktura {{name}}\" — inget att byta",
+  "126543659347 \"Ett paket från order {{ name }} är klart för hämtning\" — ja 0+k2✓ · zh-TW 0+k1✓",
+  "126543692115 \"Din order har hämtats ({{ name }})\" — ja 0+k2✓ · zh-TW 0+k1✓",
+  "126543724883 \"Ordern {{ name }} är på väg att levereras\" — inget att byta",
+  "126543757651 \"Ordern {{ name }} har levererats\" — inget att byta",
+  "126543790419 \"Leverans från ordern {{ name }} har missats\" — inget att byta",
+  "126543823187 \"{{ shop.name }} {{ gift_card.initial_value | money_without_t\" — inget att byta",
+  "126543855955 \"{{ shop.name }} {{ gift_card.initial_value | money_without_t\" — inget att byta",
+  "126543888723 \"{{ shop.name }} {{ issued_store_credit.amount | money_withou\" — inget att byta",
+  "126543921491 \"Faktura {{name}}\" — inget att byta",
+  "126543954259 \"Order {{name}} uppdaterad\" — ja 0+k3✓ · zh-TW 0+k1✓",
+  "126543987027 \"Order {{ name }} har annullerats\" — zh-TW 0+k1✓",
+  "126544019795 \"[{{ shop.name }}] Betalningskvitto för order {{ name }}\" — ja 0+k1✓",
+  "126544052563 \"Återbetalningsavisering\" — zh-TW 0+k1✓",
+  "126544085331 \"Slutför ditt köp\" — inget att byta",
+  "126544118099 \"Länk till ordern {{ order_name }}\" — inget att byta",
+  "126544150867 \"[{{shop.name}}] Betalningen kunde inte genomföras\" — inget att byta",
+  "126544183635 \"[{{shop.name}}] Betalning kunde inte behandlas för ordern {{\" — ja 0+k3✓",
+  "126544216403 \"[{{ shop.name }}] Betalningen för order {{ name }} kunde int\" — ja 0+k3✓ · zh-TW 0+k1✓",
+  "126544249171 \"[{{ shop.name }}] Betalning för {{ name }} har tagits emot\" — ja 0+k5✓ · zh-TW 0+k1✓",
+  "126544281939 \"Betalningspåminnelse för ordern {{ name }}\" — inget att byta",
+  "126544314707 \"Bankuppgifter krävs för återbetalning av order {{ name }}\" — inget att byta",
+  "126544347475 \"Slutför betalningen för order {{ name }}\" — inget att byta",
+  "126544380243 \"Streckkoden för {{ name }} har gått ut\" — inget att byta",
+  "126544413011 \"Faktura {{name}}\" — inget att byta",
+  "126544445779 \"Köp på nätet från {{ shop_name }} när du är redo!\" — ja 0+k2✓ · zh-TW 0+k1✓",
+  "126544478547 \"Köp online från {{ shop_name }} när du är redo!\" — inget att byta",
+  "126544511315 \"Kvitto för order {{name}}\" — zh-TW 0+k1✓",
+  "126544544083 \"Bytes-kvitto från {{ shop.name }}\" — inget att byta",
+  "126544576851 \"Begäran om beställningsdistribution för {{ shop_name }}\" — inget att byta",
+  "126544609619 \"En försändelse för order {{ name }} har levererats\" — inget att byta",
+  "126544642387 \"Slutför din retur för order {{ order.name }}\" — inget att byta",
+  "126544675155 \"{% if return.exchange_line_items.size > 0 %}Bytes{% else %}R\" — inget att byta",
+  "126544707923 \"Retursedel för order {{ order.name }}\" — inget att byta",
+  "126544740691 \"Retur begärd för order {{ order.name }}\" — inget att byta",
+  "126544773459 \"Retur godkänd för ordern {{ order.name }}\" — inget att byta",
+  "126544806227 \"Returförfrågan nekad för ordern {{ order.name }}\" — inget att byta",
+  "126544838995 \"{% if requested_edit and return %}Ändring begärd för order {\" — inget att byta",
+  "126544871763 \"Annulleringsförfrågan nekades för order {{ order.name }}\" — inget att byta",
+  "126544904531 \"Aktivering av kundkonto\" — inget att byta",
+  "126544937299 \"Bekräftelse av kundkonto\" — inget att byta",
+  "126544970067 \"Återställning av lösenord till kundkonto\" — inget att byta",
+  "126545002835 \"Lägg till en betalningsmetod för {{ shop.name }}\" — inget att byta",
+  "126545035603 \"Uppdatera din betalningsmetod för {{ shop.name }}\" — inget att byta",
+  "126545068371 \"Verifiera din betalningsinformation för {{ shop.name }}\" — inget att byta",
+  "126545101139 \"Välkommen till beställning B2B med {{shop.name}}\" — inget att byta",
+  "126545133907 \"Uppdatera din betalningsmetod för platsen {{ location_name }\" — inget att byta",
+  "126545166675 \"Bekräfta betalning för din prenumeration\" — inget att byta",
+  "126545199443 \"Meddelande från {{ shop.name }}\" — inget att byta",
+  "126545232211 \"Bekräfta att du vill få e-postmarknadsföring\" — inget att byta",
+  "126545264979 \"Din e-postadress har ändrats\" — inget att byta",
+  "126545297747 \"Prenumerationsorder {{ subscription_contract_billing_cycle.o\" — ja 0+k2✓",
+  "126545330515 \"Din nästa prenumerationsorder närmar sig\" — ja 0+k2✓",
+  "126545363283 \"Din kommande prenumeration har hoppats över\" — inget att byta",
+  "126545396051 \"Prenumerationen har pausats\" — inget att byta",
+  "126545428819 \"Din prenumeration har löpt ut\" — inget att byta",
+  "126545461587 \"Prenumerationen har återupptagits\" — ja 0+k2✓",
+  "126545494355 \"Prenumerationen har annullerats\" — inget att byta",
+  "126545527123 \"Din prenumeration har {{ status_after_dunning }}\" — ja 0+k2✓",
+  "126545559891 \"Betalning för din kommande prenumeration kunde inte behandla\" — ja 0+k2✓",
+  "126545592659 \"Sista betalningspåminnelsen för din kommande prenumerationso\" — ja 0+k2✓",
+  "126545625427 \"Kortet accepterades inte för order {{ order.name }}\" — ja 0+k3✓"
+ ],
+ "engelska": {
+  "126543593811 ja": [
+   "Tip"
+  ],
+  "126543593811 zh-TW": [
+   "Tip"
+  ],
+  "126543626579 zh-TW": [
+   "Free",
+   "Tip",
+   "Local pickup -"
+  ],
+  "126543659347 ja": [
+   "Pickup location",
+   "Tip"
+  ],
+  "126543659347 zh-TW": [
+   "Pickup location",
+   "Tip"
+  ],
+  "126543692115 ja": [
+   "Tip"
+  ],
+  "126543692115 zh-TW": [
+   "Tip"
+  ],
+  "126543921491 ja": [
+   "Tip"
+  ],
+  "126543921491 zh-TW": [
+   "Tip"
+  ],
+  "126543954259 ja": [
+   "Tip"
+  ],
+  "126543954259 zh-TW": [
+   "Tip"
+  ],
+  "126543987027 zh-TW": [
+   "Tip"
+  ],
+  "126544052563 zh-TW": [
+   "Tip"
+  ],
+  "126544183635 ja": [
+   "Tip"
+  ],
+  "126544183635 zh-TW": [
+   "Tip"
+  ],
+  "126544216403 ja": [
+   "Tip"
+  ],
+  "126544216403 zh-TW": [
+   "Tip"
+  ],
+  "126544249171 ja": [
+   "Tip"
+  ],
+  "126544249171 zh-TW": [
+   "Tip"
+  ],
+  "126544347475 ja": [
+   "Tip"
+  ],
+  "126544347475 zh-TW": [
+   "Tip"
+  ],
+  "126544380243 ja": [
+   "Tip"
+  ],
+  "126544380243 zh-TW": [
+   "Tip"
+  ],
+  "126544413011 ja": [
+   "Tip"
+  ],
+  "126544413011 zh-TW": [
+   "Tip"
+  ],
+  "126544445779 ja": [
+   "Tip"
+  ],
+  "126544445779 zh-TW": [
+   "Tip"
+  ],
+  "126544511315 ja": [
+   "Order",
+   "Order Summary",
+   "Customer Information"
+  ],
+  "126544511315 zh-TW": [
+   "Tip"
+  ],
+  "126545625427 ja": [
+   "Tip"
+  ],
+  "126545625427 zh-TW": [
+   "Tip"
+  ]
+ },
+ "fyror": {},
+ "summa": {
+  "andras": 26,
+  "oforandrad": 1612,
+  "inaktuell": 0,
+  "osaker": 0,
+  "saknas": 0,
+  "lankar": 0,
+  "filter": 0,
+  "slutsiffror": 0,
+  "fyra": 51,
+  "registrerade": 26,
+  "lika": 26,
+  "avviker": 0,
+  "fel": 0
+ }
+}

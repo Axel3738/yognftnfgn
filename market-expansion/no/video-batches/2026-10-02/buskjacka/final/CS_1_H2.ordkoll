@@ -1,0 +1,49 @@
+NO_buskjakke_CS_1_H2.mp4: 9 cues, 9 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Fra fire hundre og nittini kroner til tre hundre og sytti-ni, nå.
+    hörs:  Fra firehundre og nittini kroner til trehundre og syttini nå. Rea
+    fire → firehundre | hundre → og | og → nittini | nittini → kroner | kroner → til | til → trehundre
+
+  cue 2 @ 3.3s
+    manus: Rea på buskjakken.
+    hörs:  nå. Rea på buskjakken. Før
+    rea → nå | på → rea | buskjakken → på | — → buskjakken | — → før
+
+  cue 3 @ 5.3s
+    manus: Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.
+    hörs:  buskjakken. Før firehundre og nittini kroner, nå bare trehundre og syttini kroner. Du sparer
+    før → buskjakken | fire → før | hundre → firehundre | tre → trehundre | hundre → og | og → syttini
+
+  cue 4 @ 9.4s
+    manus: Du sparer hundre og tjue kroner,
+    hörs:  kroner. Du sparer hundre og tjue kroner. Tjuefire
+    du → kroner | sparer → du | hundre → sparer | og → hundre | tjue → og | kroner → tjue
+
+  cue 5 @ 11.4s
+    manus: tjuefire prosent rabatt, og du får to stykker i pakken.
+    hörs:  kroner. Tjuefire prosent rabatt og du får to stykker i pakken. Skjermer
+    tjuefire → kroner | prosent → tjuefire | rabatt → prosent | og → rabatt | du → og | får → du
+
+  cue 6 @ 15.1s
+    manus: Skjermer mot vind og kulde.
+    hörs:  pakken. Skjermer mot vind og kulde. Den første
+    skjermer → pakken | mot → skjermer | vind → mot | og → vind | kulde → og | — → kulde
+
+  cue 7 @ 17.1s
+    manus: Den første kalde natten kommer ofte tidligere enn du tror.
+    hörs:  kulde. Den første kalde natten kommer ofte tidligere enn du tror. Du får
+    den → kulde | første → den | kalde → første | natten → kalde | kommer → natten | ofte → kommer
+
+  cue 8 @ 20.1s
+    manus: Du får tretti dagers åpent kjøp, pengene tilbake.
+    hörs:  du tror. Du får tretti dagers åpent kjøp pengene tilbake. Trykk på
+    får → tror | tretti → du | dagers → får | åpent → tretti | kjøp → dagers | pengene → åpent
+
+  cue 9 @ 23.0s
+    manus: Trykk på knappen og bestill din buskjakke nå.
+    hörs:  tilbake. Trykk på knappen og bestill din buskjakke nå.
+    trykk → tilbake | på → trykk | knappen → på | og → knappen | bestill → og | din → bestill
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

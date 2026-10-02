@@ -157,6 +157,8 @@ konkurrenter/arenden/*/anmalan/verifiering.html
 # Shopify-anmälans bevisbild (~5 MB PNG) — länken på CDN och fälten står i shopify/anmalan.json som committas.
 konkurrenter/arenden/*/shopify/*.png
 konkurrenter/arenden/*/shopify/*.jpg
+# Mejlanmälans bilaga som base64 till Gmail-anropet — görs alltid om ur PDF:en bredvid (som committas).
+konkurrenter/arenden/*/epost/*.b64
 
 # Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
 matstrumpor/marknader/annonser/klar/*.mp4
@@ -169,8 +171,28 @@ matstrumpor/marknader/egna/ut/
 # D3-bildannonsens renderingar (ritas om av egna/d3/annons.mjs --skriv; hash:en ligger i videor.json)
 matstrumpor/marknader/annonser/klar/*_d3.jpg
 mejl/output/butiker/*/lankkoll/
+# mejl/notis-lankar.mjs: före/efter-kopior av Shopifys notisöversättningar (~50 MB per körning,
+# Shopifys egen text). Läget per körning (lage.json) ligger i mejl/output/butiker/<id>/notis-lankar/ och committas.
+mejl/output/notis-lankar/
 
 # Köparenkätens svar: aldrig i repot (GDPR-raden lovar högst 12 månader)
 enkat/output/
 # Värva en vän: skärmdumpar från kundvyn (matstrumpor/varva/kundvy.mjs)
 matstrumpor/varva/output/
+
+# Skool-läsaren: inloggad session + hämtade lektioner (tools/skool/)
+tools/skool/.state/
+
+# Matstrumpors arkiv som JSON (~170 kB) byggs om av `kor.mjs --arkiv` varje rond ur logg.jsonl +
+# arkiv/matningar.jsonl + briefernas taggar — härledd data, committas inte (samma lärdom som
+# sparning/lage.json). arkiv.md och matningar.jsonl committas.
+products/matstrumpor/arkiv.json
+
+# /oversatt: färdiga videor och uppladdningsmappen committas ALDRIG. 2026-10-01
+# gick 11 mp4-filer (116 MB) in i historiken via no-video-txt/ — paketet var
+# 4,8 GiB 2026-10-02. Pillerloggen (*.piller.json) är liten och sparas.
+market-expansion/*/notion-batches/*/no-video-txt/*.mp4
+market-expansion/*/notion-batches/*/no-video-txt/*.png
+market-expansion/*/notion-batches/*/no-video-txt/*.jpg
+market-expansion/*/notion-batches/*/upp/
+market-expansion/*/notion-batches/*/heygen/

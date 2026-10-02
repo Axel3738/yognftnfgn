@@ -32,6 +32,12 @@
 // hamnar överst på den engelska sidan och oöversatt. Listan visar varje recension märkt `en` med
 // början av texten, så att den som läser ser vilket språk den faktiskt är skriven på.
 // Rättas i Judge.me: Reviews → "⋯" → Review details → "Detected review language".
+//
+// Allra sist KOPIAN I SHOPIFY. Den svenska sidan (butikens huvudspråk) ritas ur den kopia Judge.me sparar
+// i produktens metafält (judgeme.review_widget_data och review_widget_ssr_html), inte ur Judge.me:s data
+// just då. Mätt 2026-10-02: kopian på sushistrumporna var skriven 2026-09-30 06:09 UTC, före Coworks
+// språkrättning, och bar Kent, Wide Pia och Niklas som engelska fast Judge.me sa svenska. Ett ändrat språk
+// skrev alltså inte om kopian. Listan visar varje recension vars språk i kopian skiljer sig från Judge.me:s.
 
 const PLAYWRIGHT = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs';
 const CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
@@ -171,8 +177,7 @@ async function produkterna() {
     return { kalla: `products.json, utan olistade produkter (Shopify gick inte: ${e.message.split('\n')[0].slice(0, 120)})`, produkter: j.products.map((p) => ({ id: String(p.id), handle: p.handle })) };
   }
 }
-async function markningen() {
-  const { kalla, produkter } = await produkterna();
+async function markningen({ kalla, produkter }) {
   const en = [];
   let totalt = 0;
   for (const p of produkter) {
@@ -198,5 +203,38 @@ async function markningen() {
   return en;
 }
 
+// Kopian i Shopify mot Judge.me nu, per recension (uuid). Utan Shopify-nycklar går kopian inte att läsa.
+async function kopian(produkter) {
+  let k;
+  try {
+    const { lasButik, skapaKlient } = await import('../../sparning/butik.mjs');
+    k = await skapaKlient(lasButik('matstrumpor'));
+  } catch (e) {
+    console.log(`\nKopian i Shopify gick inte att läsa: ${e.message.split('\n')[0].slice(0, 120)}`);
+    return;
+  }
+  console.log('\nKopian i Shopify, som den svenska sidan ritas ur:');
+  for (const p of produkter) {
+    const d = await k.graphql(`{ product(id: "gid://shopify/Product/${p.id}") { m: metafield(namespace: "judgeme", key: "review_widget_data") { updatedAt jsonValue } } }`);
+    const j = d.product?.m?.jsonValue;
+    if (!j) continue;
+    const kopia = [...(j.primary_language_reviews ?? []), ...(j.other_language_reviews ?? []), ...(j.reviews ?? [])].filter((r) => r?.uuid);
+    const nu = new Map();
+    for (let sida = 1; sida <= 20; sida++) {
+      const u = `https://judge.me/reviews/reviews_for_widget?url=${BUTIK}&shop_domain=${BUTIK}&platform=shopify&page=${sida}&per_page=10&product_id=${p.id}&primary_language=sv&translation_locale=sv`;
+      const x = await (await fetch(u)).json();
+      const rader = [...(x.primary_language_reviews ?? []), ...(x.other_language_reviews ?? [])].filter((r) => r?.uuid && !nu.has(r.uuid));
+      if (!rader.length) break;
+      for (const r of rader) nu.set(r.uuid, r.language);
+    }
+    const datum = String(j.metafield_updated_at ?? d.product.m.updatedAt).slice(0, 16).replace('T', ' ');
+    const avviker = kopia.filter((r) => nu.has(r.uuid) && nu.get(r.uuid) !== r.language);
+    if (!avviker.length) console.log(`  ✅ ${p.handle} · skriven ${datum} UTC · språket stämmer i kopian (${kopia.length} recensioner)`);
+    else console.log(`  ⚠️ ${p.handle} · skriven ${datum} UTC · ${avviker.map((r) => `${r.reviewer_name} ${r.language} i kopian, ${nu.get(r.uuid)} hos Judge.me`).join(' · ')}`);
+  }
+}
+
 if (!baraMarkning) await sidorna();
-await markningen();
+const lista = await produkterna();
+await markningen(lista);
+await kopian(lista.produkter);

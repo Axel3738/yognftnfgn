@@ -616,10 +616,34 @@ loggan utan .SE.
     överst längre. ⚠️ **Svenska sidan visade samma kväll fortfarande den gamla märkningen** på Kent, Wide
     Pia och Niklas: "Visa original (engelska)" under svensk text. Det ser ut som Judge.me:s cache av
     produktens data, för widgetdatan är redan rätt. Kolla igen nästa dag.
+  - ⚠️ **Kvar 2026-10-02 11:20 CEST (check-in-rutinen), och nu är orsaken mätt.** Den svenska sidan ritas
+    inte ur Judge.me:s data just då, utan ur den **kopia Judge.me sparar i produktens metafält i Shopify**:
+    `judgeme.review_widget_data` (sidans första recensioner, JSON) och `judgeme.review_widget_ssr_html`
+    (alla elva, HTML). Kopian skrevs senast **2026-09-30 06:05–06:09 UTC**, alltså före Coworks rättning,
+    och bär Kent, Wide Pia och Niklas som `en`; HTML:en har sju `en` och fyra `sv`. Judge.me:s widget-API
+    sa samtidigt `sv` på alla elva. Svenska sidan gjorde inget anrop till Judge.me (api 0), engelska sidan
+    tre: bara huvudspråket visar kopian. **Engelska sidan var rätt**, tre synliga, alla "Show original
+    (Swedish)". Att ändra språket skrev inte om kopian, och det gjorde inte heller Coworks textändringar
+    samma dag. Judge.me:s support ombeds synka om båda produkterna (`cowork/8-judgeme-kopian.txt` del D).
+    En session skriver aldrig i Judge.me:s metafält själv: det är Judge.me:s data, och deras nästa synk
+    skriver över det. `judgeme-koll.mjs` jämför sedan samma dag kopian med Judge.me per recension, allra
+    sist i utskriften ("Kopian i Shopify").
   - ⚠️ **En åttonde Shop-app-recension var också märkt engelska:** Irénes på **ätpinnarna**
     (`sushipinnar-i-akta-tra`, **olistad** i Shopify, så kunden når sidan bara via länk). Texten är
     "jättefina strumpor och rolig som julklapp". Cowork såg den men lät den vara, eftersom den inte stod i
-    prompten.
+    prompten. **Fortfarande `en` 2026-10-02**; den ändras på samma sätt som del B, i
+    `cowork/8-judgeme-kopian.txt` del C.
+  - 📧 **Judge.me:s support ombedd 2026-10-02 15:21 CEST, i stället för del C och D** (Coworks körning
+    fastnade i del C, och Axel ville inte göra mer). Mejlet gick från kundsupport@matstrumpor.se till
+    support@judge.me, adressen ur Judge.me:s hjälpsida
+    ([How to contact our support team](https://judge.me/help/en/articles/15203152-how-to-contact-our-support-team)),
+    med ämnet "Re-sync review widget metafields + one review language (1r46tp-qx.myshopify.com)". Mejlet
+    ber om två saker. Den ena är att kopian i metafälten skrivs om för sushistrumporna (10286130889043)
+    och ätpinnarna (10408204468563). Den andra är att Irénes recension märks som svensk. Det ligger i
+    Skickat. Svaret landar i Matstrumpors inkorg. Autosvaret räknar judge.me som systemavsändare
+    (`kundtjanst/arenden.mjs` → `arSystem`) och svarar därför inte på det. Kontrollen är
+    `judgeme-koll.mjs` ("Kopian i Shopify" och språkmärkningen). Del C och D i prompten är reserven om
+    supporten inte gör det.
   - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
     varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
     ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
@@ -985,6 +1009,224 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
 - ⚠️ Förberedelsen tog över en timme: Meta strypte anropen (kod 17/613, upp till 2 minuters väntan per
   anrop) medan en utredning samtidigt provade `validate_only` mot samma konto. Kör inte tunga
   Meta-utredningar parallellt med en skarp körning.
+- ✅ **Utfallet: igång fre 2/10 00:03–00:20, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
+  `starta`, skrivet 22:20:48 UTC). NO, NOB, DK, FI, US, WW, DE, FR och NL startade 00:03–00:07. Mitt
+  i ES svarade Meta kod 17 i cirka 13 minuter, och verktygets egen väntan (30 s, sedan upp till 5 min)
+  tog det utan omkörning. ES, IT, PL, PT och JP startade därför cirka 00:20. Varje kampanj var
+  ACTIVE/ACTIVE med `marknader.json`:s budget, sammanlagt 13 000 kr/dag. Adseten var ACTIVE med rätt
+  länder (WW: GB, CA, NZ). 110 annonser var på och Norges två 007 PAUSED. Meta visade inga problem på
+  adseten. DE- och FR-annonserna med `?country=` var redan granskade (ACTIVE). TW rördes inte (inget
+  adset, `lansering_stopp`). ⚠️ Mitt under strypningen visade kontots `x-business-use-case-usage`
+  (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
+  kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
+- ✅ **Första dygnets felkoll, fre 2/10 13:05–13:20 CEST** (Axel strax före 13: "kampanjerna spenderar
+  just nu fitt mycket pengar och kag hopas inte vi har massa fel"). Läs-bart, inget ändrat. **Inget fel
+  som kostar pengar hittades.**
+  - **Meta** (`/{kampanj}`, `/insights?date_preset=today`, `/ads`, `/adsets`): 14 kampanjer och 110
+    annonser ACTIVE, ingen avvisad, inga `issues_info`, ingen `ad_review_feedback`, adseten på rätt länder
+    (WW = GB + CA + NZ, DE = DE + AT + CH, FR = FR + BE + LU), TW PAUSED utan adset, Norges två 007 PAUSED.
+    Spend kl 13:14: **16 768 kr, 36 köp, 22 473 kr** (Metas attribuering) = 129 % av de 13 000 kr/dag,
+    varje kampanj 110–155 % av sin egen dagsbudget (13:05 var det 16 618 kr, alltså fortfarande cirka
+    1 000 kr i timmen). 00:00–07:40 gick 8 906 kr (mätt i StonePNL-avsnittet nedan). Det är inget fel:
+    Meta får dra upp till 75 % över dagsbudgeten en enskild dag men högst sju dagsbudgetar på en
+    kalendervecka ([Jon Loomer om Metas budgetregel](https://www.jonloomer.com/updates-to-meta-ads-budgeting/)).
+    Taket i dag är alltså cirka 22 750 kr för de 14. ⚠️ Kampanjerna startade en fredag, så veckotaket
+    (söndag–lördag) håller inte tillbaka fredag och lördag; utjämningen märks först från söndag. Hela kontot
+    13:13, med den svenska kampanjen (10 000 kr/dag, 4 617 kr, 16 köp): 21 367 kr, 52 köp, 32 060 kr.
+  - **Shopify** (ordrar sedan 00:00 CEST, läst 13:08): **41 utlandsordrar, 25 528 kr**, i 14 länder: PT 10, JP 5,
+    FI 5, US 3, ES 3, PL 3, CH 2, FR 2, DK 2, IT 2, CA, LU, BE och NL en var. Alla `PAID`, i landets valuta
+    och språk, landningssidan i rätt språkmapp. Metas köp per kampanj är lika med Shopifys ordrar per land i
+    PT, FI, US, PL, DK, IT, NL och WW (CA); JP, ES, DE (CH) och FR (FR + BE + LU) har en eller två fler
+    ordrar i Shopify än i Meta. **Pixeln räknar alltså rätt.** **Norge: 0 ordrar** (NO 583 kr, NOB 592 kr;
+    A hade 39 landningssidvisningar och 0 i varukorgen, B 25 och 2 till kassan). Sidan och kassan fungerar
+    där (nedan), så det är för tidigt att kalla det ett fel.
+  - **Länkarna:** 14 unika i de aktiva annonserna, en per kampanj. `geokoll.mjs --annonser` från riktiga
+    datorer i varje land (13:10): **19 av 20 rätt** (200, sidans språk, landet i kampanjens geo, valutan,
+    giltigt certifikat). US gav 429 (Shopifys botskydd mot proben), men tre riktiga US-ordrar kom samma dag.
+  - **Köpflödet som kund, alla 14 kampanjer** (WW:s länk som brittisk kund med `?country=GB`;
+    `granskning/kontroll-2026-10-01/prova.mjs` med
+    landslistan utökad, mobil, 4 Mbit/s, CPU 4×, pixeln blockerad, aldrig betalt, 13:10–13:20): paketet K2F2
+    → lådan öppnas inom 3–6,5 s → kassan på landets språk med paketets belopp och `SUSHI-K2F2` pålagd.
+    **14 av 14 rätt:** NO A och B 938 NOK (`nb-no`), DK 686 DKK, FI/DE/FR/NL/ES/IT/PT 89,80 €, US $138.00,
+    GB £108.00 (United Kingdom förvalt), PL 402,00 zł, JP ￥15,960. Inga 429, inga sidfel; konsolens
+    `ERR_FAILED` är den blockerade pixeln. Beloppsregexen saknade £ och zł, så GB och PL lästes ur
+    kassans text; `prova.mjs` bär sedan samma dag båda och alla annonslänkar
+    (`node prova.mjs k "NO:F:B,NOB:F:B,DK:F:B,…"`, 15 s mellan körningarna i stället för 22 gick utan 429).
+    Kassans dolda rubrik säger butiksnamnet "Matstrumpor.se" (syns inte, loggan är MATSTRUMPOR), samma i
+    alla länder.
+  - **Kanten som syns i ordrarna** är den kända från S-025: ändrar kunden antalet lådor i korgen följer
+    ätpinnarna inte med. #5291 och #5295 (PT) fick tre lådor och två par, #5307 (ES) en låda och tre par
+    gratis. Frågan A/B om att bygga om det ligger hos Axel.
+  - Annonsvakten och akutlarmet går varje timme över kontot och hade 0 nya larm för Matstrumpor under
+    dagen.
+
+## StonePNL: vinsten per land (2026-10-02)
+
+Axel skickade fredag morgon en skärmdump av StonePNL:s marknadsvy för Matstrumpor. Den hade fyra
+noteringar, och alla fyra stämde:
+
+- **"9,184 SEK of ad spend is on campaigns without a market"**: ingen kampanj i "nya kungen" hade
+  något land i StonePNL. Det är en slutsats ur mätningen, inte avläst i appen: kl 07:40 hade kontot
+  spenderat 9 650 kr sedan midnatt, varav 8 906 kr i de 14 nya kampanjerna och 744 kr i den svenska.
+  9 184 kr är mer än de 14 nya ensamma, så även den svenska kampanjen låg utan land. StonePNL lägger
+  hela kontots kostnad på "inget land" tills minst en kampanj är märkt (`harMarknader` i
+  `meta.server.ts`), så inget land fick sin egen annonskostnad.
+- **Nio länder "counted on the store's standard cost"**: StonePNL räknar varje land på Shopifys
+  svenska kostnad (Cost per item) tills landet har en egen. Axels Big5-ark (`../cogs.json` → `big5`)
+  fanns i repot men aldrig i StonePNL.
+- **"cost missing on 6–13 % of sales"**: donut-, pizza- och hamburgarstrumporna saknar Cost per item i
+  Shopify (läst 2026-10-02: tomt på alla tre, och på ätpinnarna). Sushistrumporna har 80,23 och 67,51 kr.
+- **"Default duty used for …"**: standardtullen ligger på alla länder, också USA och Kanada, där
+  arket säger dörr till dörr utan tullrad.
+
+**Rättningen är `cowork/6-stonepnl.txt`** (StonePNL har inget API härifrån; allt ligger i appens egen
+databas på Railway):
+
+1. Tolv kampanjer får sitt land (SE, NO ×2, DK, FI, US, NL, ES, IT, PL, PT, JP).
+2. Big5-priserna klistras in som ett leverantörssvar i StonePNL:s offertruta,
+   `stonepnl/offertsvar-big5.txt`. Texten är byggd med StonePNL:s EGEN mall (`byggOffertmeddelande`
+   ur `pnl-app/app/lib/offertforfragan.ts` på grenen `claude/bäverbutiken-settkopplingen-nba21z`,
+   commit 297a078a) och provläst med appens egen läsare (`tolkaOffertsvar` + `offertTillRader`): 25
+   rader (5 varianter × US, CA, GB, NZ, AU) i USD, inget pris stoppas, och Shopifys standardkostnad
+   rörs inte. Variant-id:n är lästa ur Shopify samma morgon. Sushins 2 och 3 lådor räknas linjärt
+   (arket har bara en låda), vilket överskattar kostnaden något.
+3. Tullen 0 för USA och Kanada (och GB, NZ, AU om de står i listan).
+
+⚠️ **DE-, FR- och WW-kampanjerna lämnas utan land med flit.** StonePNL tar ETT land per kampanj, och
+Meta sprider deras spend jämnt. Mätt fredag morgon i Meta (`breakdowns=country`, sedan midnatt): DE
+gav CH 302, DE 198 och AT 105 kr. FR gav FR 276, BE 219 och LU 46 kr. WW gav NZ 383, GB 307 och CA
+293 kr. Vilket land man än valde hade hälften eller mer av kostnaden hamnat i fel land. Utan land står
+de kvar i raden "without a market", och den raden är sann. Den rena lösningen är att StonePNL delar
+kostnaden efter Metas egen landuppdelning. Det är en ändring i appen, och frågan ligger hos Axel.
+
+**Priserna för resten av länderna kommer från leverantören, via StonePNL.** Länken "Ask your supplier
+for these countries' prices →" i marknadsvyn bygger ett meddelande med varje såld variant och varje
+land som saknar egen kostnad (läget "Also countries that use your standard cost"). Axel skickar det,
+och leverantörens svar klistras in i samma ruta. Då fylls kostnaderna i av sig själva, också Sveriges
+för donut, pizza och hamburgare. Parkeringen i `LEVERANTOR-FRAGA-JP-TW.md` ("vänta tills vi får
+försäljning") är därmed hävd: fredag morgon hade JP, CH, PT, DK, ES och FR redan sålt.
+
+✅ **Körd av Cowork fredag förmiddag** (Axels rapport): kortet säger "12 campaigns have a market"
+(NO, NL, IT och PL fick läggas till med "Add a country code" först). Offertrutan gav "10 costs added
+from the quote", och alla rader under "Not added" var de väntade: sushins 2 och 3 lådor räknas
+linjärt, inget pris för 3 lådor, GB/NZ/AU är inga marknader i butiken, och standardkostnaden är tom.
+Tullen är 0 för US och CA och står kvar efter omladdning. Marknadsvyn: "2,242 SEK of ad spend is on
+campaigns without a market" i dag (DE, FR och WW). På 30 dagar är det 5 781 kr, och då ingår augustis
+pausade kampanjer. DE, FR och WW visar "No spend last 30 days" eftersom 30-dagarsfönstret inte räknar
+med i dag. **"cost missing" stod kvar för US (6 %) och CA (10 %), och det var ätpinnarna.** Mätt i
+ordrarna: ätpinnarna är exakt 6,0 % av USA:s försäljning och 9,8 % av Kanadas. Deras Cost per item var
+TOMT, inte 0, och StonePNL räknar tomt som saknat. Axel har sagt att de kostar 0 (`../cogs.json`), så
+fältet sattes till 0 samma förmiddag via API (`inventoryItemUpdate`, tillbakaläst). Samma sak låg bakom
+10–13 % i de andra länderna.
+
+## Sajtgranskningen 2026-10-01: rättningarna (2026-10-02, `sajtfix.mjs`)
+
+Axels order: "rätta allt rött och gult" i `granskning/SAJT-2026-10-01.md`. Temadelen sitter i
+`sajtfix.mjs`, med 21 tester och butikens originalfiler i `sajtfix/original/` så att allt går att backa.
+Den provades i en färsk kopia av MAIN, "PROV sajtfix 2026-10-02" `208247456083`, och lades sedan i
+MAIN `207180890451`. Varje fil lästes tillbaka. Mätt som kund i Chromium på strypt mobilnät (PageSpeeds
+profil och 4 Mbit/s, CPU ×4) och från riktiga länder med Globalping.
+
+| Fynd | Läget | Hur |
+|---|---|---|
+| 🔴 S-001 köpknappen före paketväljaren | ✅ rättat | Knappen bär `data-ms-las` i HTML:en, och CSS stänger klick från första stund. Skriptet direkt efter knappen sätter `disabled`, och `ms-paket.js` låser upp när köplyssnaren sitter. Reserven låser upp vid DOMContentLoaded. Aldrig `disabled` i HTML:en: Dawn läser just det attributet ur den hämtade sektionen vid variantbyte. Varje kortgrupp har eget radionamn, och en dold väljare markerar aldrig ett kort. Mätt med v2 i 8 körningar (4 i kopian, 4 live, SE/DE/JP/DK, snabb och vanlig kund): knappen blev aldrig klickbar före paketväljaren (högst 3 ms, mätintervallet), korgen rätt (8 varor, koden, 798 kr / 89,80 € / ¥15 960 / 686 kr) och kassan lika med korgen i de 4 live. "Köp 2 – få 2" står kvar när skriptet släpps i SE, DE och JP. ⚠️ Låsets första version satt bara i ett skript efter knappen. Live på strypt nät kom HTML:en i bitar, och knappen syntes klickbar en kort stund innan skriptet kommit fram. Därför v2. |
+| 🔴 S-002 / S-003, 🟡 S-012 / S-013 / S-014 / S-016, 🟡 S-006 | ✅ rättat i temat | `snippets/ms-flytt.liquid`, först i `<head>`, skickar utlandsbesökare på matstrumpor.se, matstrumpor.eu och myshopify-adressen till matstrumpor.com. Språkmappen behålls om länken hade en. Annars väljs webbläsarens språk, sedan landets. Landet sätts med `?country=` och är besökarens riktiga, ur Shopifys `server-timing` (`country;desc="DE"`), också där Shopify ger Europa-marknaden landet Sverige. Stannar: svenskar (server-timing SE, mätt från Sverige), svenska webbläsare utomlands, botar, `?country=` i adressen, korgen, kontot, temaredigeraren och den som själv valt Sverige från en annan av våra domäner (kakan `ms_stanna`). "Dina integritetsval" flyttas alltid, för Shopifys integritetspolicy länkar den på .se. Spoks-länkarna står kvar på .se med flit: temat ger dem besökarens RIKTIGA land, och en statisk `?country=` per språk hade gett österrikare DE. Mätt live: Spoks /nb-, /en- och /de-länkarna, myshopify-blocket, .eu och .no utanför Norge hamnar på .com i rätt språk. Svensk webbläsare, Googlebot, `?country=SE` och .com rörs inte. |
+| 🟡 S-004 delningslänken | ✅ | Länken bär `?country=` utanför Sverige (`main-product.liquid` + `share.js`). |
+| 🟡 S-005 juridiskt meddelande | ✅ | `juridiskt.mjs`: STONEBITE ECOM AB, org.nr 559576-2401 (Bolagsverket) och momsnumret SE559576240101 (giltigt i VIES 2026-10-02) på 14 språk, tillbakaläst. ⛔ VIES visar den gamla privatadressen, och den skrivs aldrig. Fullständigt Impressum och 特商法 (S-033) är Axels beslut. |
+| 🟡 S-007 A/B-korten byts framför kunden | ✅ | `ms-ab.js` sätter synligheten medan sidan tolkas (MutationObserver), och CSS i `ms-head` gömmer fel variant så fort varianten satts på `<html>`. Mätt: variant b visar aldrig a:s kort (MAIN före rättningen: a:s kort 2,6–6,7 s). |
+| 🟡 S-008 / S-009 | ✅ | Reservpriset i kundens valuta. Nätfel visas med den översatta raden, aldrig "Failed to fetch". |
+| 🟡 S-010 Judge.me-märket | ✅ | Texten är dold utanför svenskan tills Judge.me ritat den (`.jdgm--done-setup`). |
+| 🟡 S-011 GIF på 15,7 MB | ✅ redan borta | Filen låg i beskrivningen hos två ARKIVERADE produkter (`sushistrumpor`, `legease-…`), som svarar 404. Sushisidan laddar ingen fil över 2 MB (mätt 2026-10-02). Den tyngsta är typsnittet Mochiy Pop P One på 2,0 MB. |
+| 🟡 S-015 / S-019 Shopifys mejl | ✅ | `mejl/notis-lankar.mjs`: `{{ shop.url }}` → språkets .com-adress i 806 översättningar (62 mallar × 13 språk). "(ending in …)" är japanska i fyra ja-mallar. Shopifys "下4桁"/"末四碼" är ersatta (26 översättningar), så ingen fyra står i ja/zh-TW-mejlen. |
+| 🟡 S-017 / S-018 Spoks | ⏸ förberett | Belgien → franska och japanska (`ja.json`, sonnet + granskare) i repot. Flödena v2 byggs av en session med Spoks-connectorn: `klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`. |
+| 🟡 S-020 kassan på okänt språk | accepterat | Med en tjeckisk webbläsare öppnar kassan på `en-CZ` med svenska produktnamn, också med `/checkout?locale=en` (mätt). Det gäller bara språk butiken inte har, och ingen kampanj riktar sig dit. |
+| 🟡 S-021 presentkortsbilden | ✅ | `presentkort-ja.png` och `presentkort-zh-TW.png` (rita.py med Noto Sans CJK) i Files, sedda som kund. |
+| 🟡 S-022 ätpinnarnas sida | ✅ | `product.tillbehor` har strumpsidornas trust- och leveransrad (ja, zh-TW, danskans "returret"). |
+| 🟡 S-023 TWD | ✅ | "NT$" i paketväljaren och på Liquid-priserna (`ms-cro.js`, bara i TWD). |
+| 🟡 S-024 prisformaten | ✅ | Paketväljaren formaterar som Liquids `\| money` ur ett prov som Shopify själv formaterat i kundens valuta (`MS.pengaprov`). Mätt: €44,90, 469,00 kr, 343,00 kr, $126.00, ¥7,980, NT$1,690.00 och 201,00 zł bredvid köprutans samma. SEK "1,796 kr" krävde butikens pengaformat (`amount_no_decimals_with_space_separator`), som inte har något API: Cowork bytte alla fyra fälten 2026-10-02 med `cowork/7-sajtfix.txt` steg 1, och admin bekräftade. Mätt efteråt: Liquids prov på .se ger "1 234 568 kr", och fyrpaketets kort visar "1 796 kr". |
+| 🟡 S-025 B-koden | ✅ Axels val B 2026-10-02 | "Ätpinnarna ska alltid vara gratis" (Axel). `b-koder.mjs --skarpt` gjorde `SUSHI-2FOR499` och `SUSHI-4FOR799` till belopp av **per vara**: 149,50 resp. 199,25 kr, räknat ur paketnivåerna (antal, fastpris, gåvan) och variantpriserna. Allt annat i koderna är orört och tillbakaläst. Mätt i Chromium i variant B: två lådor gav ätpinnarna 27,78 kr styck före och 0 kr efter, med lådan 249,50 kr och totalt 499 kr. Fyra lådor gav 22,25 kr före och 0 kr efter, med lådan 199,75 kr och totalt 799 kr. Kassan visar ätpinnarna som "GRATIS". Följden Axel valde: en låda utöver paketet får samma rabatt, så tre lådor med tvåpaketets kod kostar 748,50 kr i stället för 898 kr. Axel samma förmiddag: "ätpinnar ska alltid vara en gratis gåva som följer med varje enskild box". Variant B:s paket med en låda hade varken gåva eller kod. Det fick ett par ätpinnar och den nya koden `SUSHI-1FOR399`, köp en låda och få ett par gratis, upprepad för varje låda. Mätt: kortet visar 399 kr mot 449 kr, och korgen har lådan för 399 kr och ätpinnarna för 0 kr. `b-koder.mjs` kollar att alla tretton paket i butiken har lika många ätpinnar som lådor och att gåvan är gratis. Alla tretton klarar det. Originalen står i `b-koder.json`. `--aterstall --skarpt` lägger tillbaka dem, tar bort gåvan ur enlådspaketet och avslutar den nya koden utan att radera den. ~~Förut: `SUSHI-2FOR499` är "399 kr off" fördelat på strumpor och ätpinnar. Att ge ätpinnarna 0 kr kräver "amount off each item", och då blir en tredje låda 249,50 kr. Det är en rabattändring och Axels beslut.~~ |
+| 🟡 S-026 polska bokstäver | ✅ | Polskan ritas i M PLUS Rounded 1c (latin-ext). Kassans typsnitt finns bara för hela butiken. Cowork bytte rubrikerna från Mochiy Pop P One till M PLUS Rounded 1c 2026-10-02 i den aktiva kassan, "Kopia av FixKliniken-konfiguration", och brödtexten stod redan på Standard. Coworks skärmdump av den polska kassan visar "Płatność" i ett och samma typsnitt. |
+| 🟡 S-027 valutan på egen rad | ✅ | `nowrap` på korgens priser, sett på 390 px i DK, PL och NO. |
+| 🟡 S-028 språkfel | ✅ | es "está", pt-PT i du-form (37 texter, `sajtfix/pt-tu.json`, sonnet + granskning), italienskt "9–16 ottobre". |
+| 🟡 S-025 forts. korgen | ✅ 2026-10-02 eftermiddag | Ätpinnarna följer nu också när kunden ändrar antalet i korgen: avsnittet "Gåvan följer varje låda" nedan (`gava.mjs`). |
+| 🟡 S-029 kommentarer i källan | ✅ | .no-blockets CSS-kommentarer borta (temat och `domantema.mjs`). Spårningssidans inbäddade skript byggs utan kommentarsrader (`sparning/sida.mjs` → `utanKommentarer`, med test); mätt live 2026-10-02 07:58 UTC efter rutinens runda: 0 träffar på CaraShell och bävernumret. ⚠️ Rättningen av S-002 lade själv in nya utvecklarkommentarer i källan på varje sida (omdirigeringsskriptet byggs ur `flyttMal`:s källtext, och kommentarerna inne i funktionen följde med). Sedan samma förmiddag byggs skriptet utan dem (`sajtfix.mjs` → `utanKommentarer`, test som jämför skriptets svar med modulens fall för fall), skrivet till MAIN och läst som kund: inga kommentarer, och .se, .eu och svensk webbläsare beter sig som förut. De fem `//`-rader som står kvar i sidkällan kommer från appar och Shopify. Temats skriptfiler (`ms-cro.js`, `ms-ab.js`, `share.js`) bär kvar sina `ms-sajtfix`-kommentarer: de nämner ingen butik och är patcharnas markörer. |
+
+## Gåvan följer varje låda — också när kunden ändrar antalet (2026-10-02, `gava.mjs`)
+
+Axels ord samma dag: "ätpinnar ska alltid vara en gratis gåva som följer med varje enskild box", och
+sedan "JAg har redan asvarat A Och B" (S-025 val B, `b-koder.mjs`) och "du får fixa resten". Paketen
+gav redan ett par per låda (b-koder.mjs, förmiddagen). Det här avsnittet är korgen efteråt.
+
+**Felet, mätt i Shopifys egen prisräkning och i ordrarna (627 ordrar med lådor 3/8–2/10):**
+- Köp-X-få-Y-paketkoderna (variant A, hela utlandet, donut/pizza/hamburgare) var "köp 1, få 3 av
+  sorten + ätpinnar" (K2F2: köp 2, få 6), EN gång per order. Shopify ger de billigaste varorna gratis
+  först, och ger en användning bara när hela "få"-mängden finns.
+- Samma paket två gånger: 4 lådor + 4 par kostade **1 646 kr** i stället för 798 (ätpinnarna åt upp den
+  gratis lådan; Storefront-cart med `SUSHI-K1F1`).
+- Två olika paket: bara en kod räknas, och den andra sortens ätpinnar åt upp den gratis lådan.
+  #5214 betalade **1 746 kr** för 2 sushi + 2 pizza, #5302 **2 094 kr** för tre tvåpaket.
+  32 av 627 ordrar hade flera sorter.
+- Ändrat antal: en tredje låda fick inga ätpinnar (69 av 627 ordrar hade inte lika många par som lådor).
+  Ätpinnarna borttagna: hela paketrabatten försvann (#5255 i USA och #5056 i Sverige betalade två lådor fullt).
+- Variant B: `SUSHI-2FOR499`/`-4FOR799` har en minsta summa. Färre lådor än paketet ⇒ ingen kod, och
+  ätpinnarna kostade 50 kr.
+
+**Shopifys regler, mätta med dolda testkoder i Storefront-API:ts cart (samma räkning som kassan, prov 3–5;
+koderna avslutades efter varje prov, aldrig raderade):**
+1. Köp-X-få-Y: "köp"-varorna är de dyraste som finns kvar, "få"-varorna de billigaste, och en användning
+   gäller bara med HELA "få"-mängden. Därför går köp 1 få 1 + ett par per låda att ge med EN kod bara för
+   jämnt antal: "köp 1, få 3 av alla sorter + ätpinnar, utan gräns". Udda antal kräver en kod per antal.
+2. Flera koder som inte kombineras: Shopify väljer själv den som ger lägst pris, ordningen spelar ingen
+   roll, och kassan visar bara koden som används (skärmdump av kassan).
+3. **Högst fem koder räknas.** En sjätte kod i vagnen räknas inte alls (vännens kod som sjätte gav inget
+   avdrag; som första gav den 50 kr).
+4. `/cart/update.js` tar `updates`, `discount` (kommalista, ersätter koderna) och `sections` i ett och
+   samma anrop, och svaret bär lådan exakt som vagnen blev. En separat hämtning direkt efter en skrivning
+   kunde visa vagnen från före den. Lådan ritas tom via produktsidans adress (`/products/…?sections=`),
+   rätt via roten.
+5. Shopify delar en variant på flera rader när en rabatt bara gäller en del av den (1 låda + 2 par = en
+   gratis och en betald rad), och `updates` med variant-id ändrar bara den första raden ⇒ radnycklar.
+
+**Det som gjordes:**
+- **Koderna, 12:39 UTC** (`gava.mjs --koder --skarpt`, originalen i `gava/koder.json` först): de åtta
+  köp-X-få-Y-paketkoderna (`SUSHI/DONUT/PIZZA/HAMBURGARE-K1F1/K2F2`) är "köp 1, få 3 av alla fyra sorter
+  + ätpinnar, utan gräns" och heter som förut. Titeln i admin säger det. Nya hjälpkoder för udda antal:
+  `PAKET-1`, `PAKET-3`, `PAKET-5` (köp 1/2/3, få 1/4/7, en gång per order). Alla kombineras med vännens
+  kod som förut. Ingen av dem ger mer än det sidan redan lovar, om någon skriver in den själv.
+- **Temat, 13:11 UTC i MAIN `207180890451`**, provat först i kopian "PROV gåvan 2026-10-02" `208271376723`
+  (`gava.mjs --tema`, butikens filer i `gava/original/`):
+  - `assets/ms-gava.js` (+ `snippets/ms-gava.liquid`, renderad sist i `ms-head`): efter varje ändring i
+    korgen blir ätpinnarna lika många som lådorna, och koderna som hör ihop ligger i vagnen: en
+    paketkod + `PAKET-1/3/5`, eller B-nivåernas tre. Vännens kod och andra koder först, aldrig fler än fem.
+    Sorterna, gåvan och koderna läses ur metaobjekten (Paketnivå), inte ur koden.
+  - `ms-paket.js` `kop()`: synken körs efter koden och före lådan, så lådan visar slutpriset direkt.
+  - `cart-drawer.liquid` och `main-cart-items.liquid`: gåvoraden är låst — inget plus/minus, ingen papperskorg.
+- **Mätt efteråt, live:** `gava/prisprov.mjs` 21 av 21 fall ✅ (SE, DE, US, JP, NO, variant B 1–4 lådor,
+  blandade sorter). `gava.mjs --kundvy` i Chromium som kund, varje steg läst ur vagnen OCH lådan:
+  variant A 2 → plus 3 → plus 4 → minus 3 → minus 2 → minus 1 → papperskorg (399 / 798 / 798 / 798 /
+  399 / 399 / 0 kr, ätpinnarna 2-3-4-3-2-1-0), samma paket två gånger 798 kr, variant B 1 → 4 → 3
+  (399 / 499 / 748,50 / 799 / 748,50), Tyskland €44,90 → €89,80, korgsidan plus 798 kr, sushi + pizza 898 kr.
+  `b-koder.mjs`: alla tretton paket ger fortfarande gåvan gratis.
+
+**Följderna — sessionens beslut åt Axel ("du får fixa resten"), alla till kundens fördel eller lika:**
+- Köp 1 få 1 gäller nu varje antal: 3 lådor betalar 2 (som förut), 6 lådor betalar 3 (förut 4).
+  ⚠️ 7 och 9 eller fler udda lådor: en låda för mycket (`PAKET-7` hade tagit vännens plats bland fem koder).
+  Ingen order de senaste 60 dygnen hade fler än sex lådor.
+- Blandade sorter: EN köp 1 få 1 över alla sorter, de billigaste lådorna gratis. 2 sushi + 2 pizza =
+  898 kr (pizzorna betalas). Förut 1 746 kr; per sort hade varit 848 kr, men två koder som inte kombineras
+  kan inte ge det.
+- Variant B: korgen har alltid priset för antalet lådor — 1 = 399, 2 = 499, 3 = 748,50, 4 = 799 kr. Den
+  som ökar från två till fyra lådor i korgen betalar alltså 799 kr, inte 998.
+- ⚠️ En vagn som ändras FÖRBI temat (rena API-anrop) med färre ätpinnar än lådor kan få fler gratis lådor
+  än paketet. Det gick redan förut (4 lådor utan ätpinnar med `SUSHI-K1F1` = 399 kr). Temat låser gåvoraden
+  och synkar vagnen på varje sida.
+
+**Backa:** `node matstrumpor/marknader/gava.mjs --aterstall --skarpt` lägger tillbaka koderna ur
+`gava/koder.json`, avslutar `PAKET-1/3/5` (raderar aldrig) och tar bort temats ändringar (torrt först
+utan `--skarpt`). Prova en ändring: `--kopia`, sedan `--tema <gid> --skarpt` och `--kundvy --tema <gid>`.
+⛔ En ny köp-X-få-Y-paketkod måste ha samma form ("köp 1, få 3 av alla sorter + ätpinnar, utan gräns") —
+`gava.mjs` torrt visar avvikelsen. 18 tester i `test/gava.test.mjs` (modellen mot Shopifys priser,
+synken i en vm, patcharna fram och tillbaka).
 
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 
@@ -1193,3 +1435,23 @@ US 1,22 · GB 1,17 när planen skrevs 2026-09-27, 1,182 / 1,137 vid granskningen
 citera aldrig ett gammalt tal). Byggs
 som `/matstrumpor-marknader` när Axel sagt budget per land — augustis test låg under
 break-even i alla tre länder, och den frågan är hans.
+
+## Produktbeskrivningen på tretton språk (2026-10-02)
+
+Den svenska beskrivningen på `sushi-strumpor` byttes 2026-10-02 (Fables copy i Axels struktur
+Problem → gif → Lösning → gif → Funktioner → bild → Garanti, utan statistikmeningar;
+`matstrumpor/produktsida.mjs`). Samma dag fick de tretton språken den nya texten plus de tolv
+nycklar som tillkommit sedan 09-30 (paketkorten `paket.sushi-paket-1/2/4.*`, `policy.LEGAL_NOTICE.body`,
+`sida.enkat.title`) och startsidans rubrik med `<em>`. Flödet: `underlag.mjs` → källan
+`output/delar/2026-10-02-sv.json` (14 nycklar) → en sonnet-översättare per språk → en skeptisk
+infödd granskare per språk som rättade direkt i `output/delar/2026-10-02-<locale>.json` (3–6
+rättningar per språk: kalkeringar, fel genus, "agarrar" i Spanien, "afhaalbak" → "afhaalbakje",
+citatet omskrivet så det låter som en kund) → `merge-delar.py` (scratchpad) in i
+`output/underlag-<locale>.json` med `granska.mjs` 0 fel → `bygg.mjs --steg oversattningar --skarpt`
+(170–181 texter per språk) → `--steg kontroll`: **13 av 13 "ligger som i filen, 0 saknas, 0 avviker"**.
+Läst som kund via curl: en och nb visar de nya rubrikerna; de och ja fick Shopifys "Verifying your
+connection" (botspärren efter många anrop), API-tillbakaläsningen är facit där.
+
+Kvar: en läcka per språk, paketresursen `466474533203` `gratis_text` "Äkta ätpinnar i trä (1 par)"
+(ett paketkort som `underlag.mjs` inte tar med; syns inte på kortet för 1 låda). Och ja/zh-TW bär
+storleksradens cm-omräkning med tankstreck enligt `REGLER-ASIEN.md` punkt 7, med flit.

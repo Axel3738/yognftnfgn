@@ -139,3 +139,18 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   bildrutor visar Specialised Covers logga på överdraget och mannen i mörk
   jacka. Mätningen i går missade alltså minst en film. Frågan A (låt vara)
   eller B (anmäl ändå, bara klippning och text) ligger hos Axel.
+- **Anmälan 2 gick in 1/10 cirka 19:20 CEST**, i den gemensamma Cowork-prompten med
+  MatSokker (`KD-2026-004/anteckning-2026-10-01.md` → "Cowork stoppade anmälningarna").
+  Cowork fyllde i formuläret, och Axel skrev koden och gjorde säkerhetskontrollen. Alla
+  sex Bustatio-anmälningar är inskickade.
+- **Morgonkollen 2/10, gjord 13:48 CEST.** Väckningen 09:01 CEST försvann i en omstart av
+  sessionen, så kollen gjordes för hand drygt fyra timmar senare. Annons 2, bälteslipen
+  `1652495996287809`, är fortfarande `ELIGIBLE` och aktiv, drygt arton timmar efter att
+  anmälan 2 skickades. Annons 4 `973988949077032` och 6 `1051577917889579` är `ELIGIBLE`
+  men inaktiva (`is_active: false`). Meta har alltså inte tagit ner dem, för en nertagen
+  annons bär `TAKEN_DOWN` och texten "This content was removed". Bustatio har stängt av
+  dem själv, eller så har de slutat av sig själva. Gmail visar inga nya mejl från Meta om
+  Bustatio sedan 30/9 15:59. De två mejlen "Action Required" 2/10 gäller MatSokkers
+  anmälningar via mejl (KD-2026-004).
+- Frågan A/B om taköverdragen är fortfarande obesvarad 2/10. Tills Axel svarar gäller A:
+  de anmäls inte.

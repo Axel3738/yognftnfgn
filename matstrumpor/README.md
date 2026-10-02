@@ -4,26 +4,44 @@ Två kommandon, ett konto, en produkt.
 
 | Kommando | Vad |
 |---|---|
-| `/matstrumpor` | Hubbens `To be Reviewed` → rätt adset i **samma CBO** → `Approved` |
-| `/matstrumporkungen` | Etikett → lärdom → 6 briefer per rond, var tredje dag + budgetrond |
+| `/matstrumpor` | Hubbens `To be Reviewed` → **ett testadset per koncept** (3:2:2) i **samma CBO** → `Approved` |
+| `/matstrumporkungen` | Etikett → lärdom → 2 koncept à 3 hookar per rond, var tredje dag + **domen per adset** och förslagen till Axel |
 
 **Kontot heter "nya kungen"** (`730973156224390`, portfölj Matstrumpor.se).
 Inte Matstrumpor. Kolla alltid id:t.
 
-## Hinkarna
+## Strukturen: 3:2:2 (Axels beslut ROUTING C 2026-10-02)
 
-Allt i kampanjen `MATSTRUMP_SALES_20260826` (CBO, 1 000 kr/dag). Adsetet väljs
-**ur annonsnamnet** — `MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>`:
+Allt i kampanjen `MATSTRUMP_SALES_20260826` (CBO). Kursen ("How To Set Up a 3:2:2
+Campaign", läst 2026-10-02 — `docs/os/evolve/ITERATIONS-PLAYBOOK.md` avsnitt 11):
 
 ```
-vinkel jul + ugc/anim/beforeafter/comparison/lifestyle → broad_advplus_purchase_jul_video
-vinkel jul + static/product/textheavy                  → broad_advplus_purchase_jul_bilder
-annan vinkel + videoformat                             → broad_advplus_purchase_nya16
-annan vinkel + bildformat                              → broad_advplus_purchase_bilder
+Champions   09-17 UGC (120251591832340023) — bevisade vinnare, tar aldrig emot en ny annons
+Testadset   MATSTRUMP_T<nnn>_<vinkel>_<video|bild> — ETT koncept = tre annonser
+            (samma kropp, tre hookar _h1 _h2 _h3), var och en med 2 rubriker + 2 primärtexter
+Taket       högst 5 levererande adsets inkl. Champions, och aldrig fler än budgeten
+            bär med 3 × break-even-CPA (≈ 925 kr) per adset och dag — det sjätte vägras
+Domen       per ADSET (dom.mjs), aldrig per annons: test 7 dagar (max 14), stäng om det
+            svultit eller missar KPI, flytta bästa annonsen till Champions vid ≥ 20 %
+            av spenden vid KPI. Allt blir FÖRSLAG — Axel klickar
 ```
 
-Därför är namnet inte kosmetika: ett namn utanför mönstret går inte att routa
-och laddas aldrig upp på gissning.
+Bild och video blandas aldrig i ett adset. Inga dynamic creative-adsets (ordet DCT
+finns inte i kursen) — de två rubrikerna och texterna är Ads Managers "flera
+textalternativ" på en vanlig annons (`asset_feed_spec`, `DEGREES_OF_FREEDOM`).
+
+**De gamla hinkarna** (`nya16`, `bilder`, `jul_video`, `jul_bild` — före 2026-10-02
+valde annonsnamnet en av dem) tar inte längre emot något. De och de andra gamla
+adseten (`nya8`, `nya20`, `alla17`, `batch03_bilder`) döms av kungen som vilket adset
+som helst, på de senaste sju dagarna, och räknas mot taket så länge de levererar.
+Ett gammalt adset som FUNGERAR (över break-even) föreslås aldrig stängt — kursen:
+"DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE WORKING" — och ett som tappat en vecka
+döms också på sitt 28-dagarssnitt. Läget 2026-10-02 (torrkörning): åtta adsets
+levererar mot taket fem; kungen föreslår att fyra gamla stängs (`nya16` och `nya8`
+under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
+`batch03_bilder` fungerar och står kvar; `alla17` svälter men hade bra snitt och står
+så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
+testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
 ## Trustpilot på sajten (2026-09-29)
 
@@ -76,18 +94,94 @@ Trustpilot-rubriker som Trustpilot satt själva (textens början + "…") ritas
 inte (`egenRubrik`); texter klipps vid 280 tecken på ordgräns. Bara omdömen
 med ≥ 4 stjärnor visas som kort — betyget och fördelningen visas oavkortade.
 
+## Varukorgslådan vid första köpet (2026-10-01)
+
+Axels fel: "första gången man är inne på hemsidan i en ny session, när man lägger
+till något i varukorgen, skickas man till varukorgssidan. Varukorgen öppnas inte i
+en slide … andra gången i samma session fungerar det normalt."
+
+**Återskapat i Chromium (ny session, sushi-strumpor, paketet 2-pack):** klick 1
+landade på `/cart`, klick 2 öppnade lådan. Och det slår inte varje gång — det
+är en kapplöpning mellan två skrivningar i vagnen.
+
+**Orsaken, mätt:**
+
+1. Paketväljaren `assets/ms-paket.js` la rabattkoden **först**
+   (`/discount/<kod>?redirect=/cart.js`), sedan varorna (`/cart/add.js`), ritade
+   lådan och kontrollerade sist att koden låg i vagnen (`kontrollera`). Saknades
+   den tog den reservvägen `laddaOm()`: en riktig sidladdning till
+   `/discount/<kod>?redirect=/cart`. Det är "teleporteringen".
+2. I samma klick skriver A/B-motorn `assets/ms-ab.js` sin stämpel (`AB paket: b`)
+   i vagnen **två gånger**: ett `fetch` på klicket och en `sendBeacon` på submit,
+   båda `POST /cart/update.js`. Shopify skriver hela vagnen vid varje anrop. En
+   skrivning som läste vagnen före koden och avslutade efter den skrev tillbaka
+   vagnen **utan** koden.
+3. I en ny session är koden ny för vagnen, så det är rabattskrivningen som
+   försvinner. Andra gången ligger koden redan där innan någon läser, och inget
+   går förlorat.
+
+Mätvärdena: `/discount`-svaret visade koden på vagnen (`applicable: false`, tom
+vagn); ms-ab:s `update.js` svarade 400 ms senare med `discount_codes: []`;
+`/cart.js` efter `add.js`: 4 varor, 898 kr, inga koder → navigation till `/cart`,
+där koden lades på igen (499 kr). Med rena HTTP-anrop, utan webbläsare: koden
+överlever `add.js` i en tom vagn när inget annat skriver (4 av 4), men en
+`update.js` som startar 0–400 ms efter `/discount` raderar den (3 av 3); startar
+den 800 ms efter är koden kvar. Fabriken hade samma fel på heimguard.se
+2026-09-09 och rättade `factory/tema/assets/ms-paket.js` — Matstrumpors kopia
+(mixläget, ätpinnarna) fick aldrig rättningen.
+
+**Rättningen, `matstrumpor/korglada.mjs` (två filer, idempotent, exakta träffar):**
+
+- `ms-paket.js` `kop()`: A/B-stämpeln inväntas (`MS.ab.stamp()`) → varorna →
+  koden (`fastKod`, läser tillbaka vagnen, ett omförsök efter 600 ms) → lådan
+  hämtas färsk ur Shopifys sektions-API (`/?sections=cart-drawer,cart-icon-bubble`,
+  rätt språk under `/de/`, `/nb/` — mätt) och ritas med det rabatterade priset.
+  `kontrollera()` står kvar som sista nät; bara den kan nå `/cart`. Samma submit
+  hanteras en gång (`stopImmediatePropagation`), som i fabrikens fil.
+- `ms-ab.js`: `stampCart()` lämnar tillbaka den **pågående** skrivningen, så
+  fetch-kroken före `/cart/add` väntar på den riktiga stämpeln; ingen beacon när
+  klicket redan stämplat; `MS.ab.stamp` exponerad.
+
+```bash
+node --test matstrumpor/test/korglada.test.mjs     # 10 tester utan nät (originalen i korglada/original/)
+node matstrumpor/korglada.mjs                      # torrt mot MAIN: visar byten, skriver output/korglada/<tid>/
+node matstrumpor/korglada.mjs --tema <id> --skarpt # skriver i ett tema (originalen säkerhetskopierade), läser tillbaka
+node matstrumpor/korglada.mjs --kundvy [--tema <id>]   # Chromium, ny session: klick ×2 → låda? navigation? koden? priset?
+```
+
+Provat i provkopian `208019554643` (PROV, gjord lika med MAIN för köpflödets
+filer först), tre varv per A/B-variant, ny session varje gång, 2026-10-01 kväll:
+**MAIN (utan rättning): 2 av 4 giltiga varv gick till `/cart`** (lådan hann
+öppnas, sedan navigerade `kontrollera`); **PROV (med rättning): 0 av 5** —
+lådan öppen, ingen navigation, koden tillämplig, 399 resp. 499 kr i lådan. Tre
+varv gick inte att mäta (Playwright-timeout när två webbläsare körde samtidigt)
+och räknas inte åt något håll. Kapplöpningen slår alltså inte varje gång, och
+den beror på nätet — en telefon med långsammare skrivningar träffas oftare.
+⚠️ `bygg.mjs --steg tema` patchar `ms-paket.js` på plats (`patchaPaketJs`) —
+ankarna står kvar efter rättningen, testat.
+
+✅ **Inlagt i det publicerade temat 2026-10-02 06:55 CEST (Axels "A")**: `korglada.mjs --skarpt`
+skrev båda filerna och läste tillbaka dem identiskt (originalen i `output/korglada/2026-10-02T04-55-36-643Z/`).
+Kundprov direkt efteråt mot det publicerade temat, ny session: standardvarianten (K1F1) och
+tvingad variant b (SUSHI-2FOR499), båda klicken öppnade lådan utan navigation, koden tillämplig,
+399 resp. 499 kr i lådan.
+
 ## Kommandon i terminalen
 
 ```bash
 node matstrumpor/kor.mjs --kolla                 # konto, kampanj, adsets, nycklar, break-even
 node matstrumpor/kor.mjs --ekonomi               # break-even, båda momslinjerna
 node matstrumpor/kor.mjs --aov [--dagar 30]      # mät AOV ur Shopify på riktigt
-node matstrumpor/kor.mjs --ko [--json]           # Notion-kön → uppladdningsplan
-node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
+node matstrumpor/kor.mjs --struktur             # 3:2:2-läget ur Meta: Champions, levererande adsets, taket, lediga platser
+node matstrumpor/kor.mjs --ko [--json] [--grupp 063,066,067] [--hookrad <sid-id>]   # Notion-kön → koncept → testadsets (output/ko-<datum>.json)
+node matstrumpor/kor.mjs --creative <namn> --video <id> --thumb <url>   # creative-JSON till ads_create_ad (2 + 2 texter)
+node matstrumpor/kor.mjs --adset-skapad <id> <namn> --koncept <nnn>     # logga ett nytt testadset
+node matstrumpor/kor.mjs --kontroll <adset-id>   # läs tillbaka testadsetet ur Meta (exit 1 vid fel)
+node matstrumpor/kor.mjs --namn gift ugc 1 --hookar 3   # nästa koncept: _h1 _h2 _h3 på samma löpnummer
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
-node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
-node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node --test matstrumpor/test/*.test.mjs          # 46 tester
+node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter + domen per adset ur en avläsning
+node matstrumpor/kor.mjs --status                # lärdomar, briefer, koncepttak, mix
+node --test matstrumpor/test/*.test.mjs          # 233 tester (2026-10-02)
 ```
 
 Inga npm-beroenden. Node ≥ 20.
@@ -120,10 +214,12 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 | `ekonomi.mjs` | Break-even båda momslinjerna, dom, vinstbidrag, ranking, benchmark-skyddet |
 | `etikett.mjs` | Etiketten dag 7 — samma trösklar som Skalnings kungens `agent/etikett.mjs` |
 | `lardom.mjs` | Lärdomen, brieftaket, mixen, iterationsräkningen, konceptstatus |
-| `namn.mjs` | Namnmönstret, nästa lediga nummer, adset-routingen |
-| `kon.mjs` | Notion-kön → uppladdningsplan med stoppskäl |
+| `namn.mjs` | Namnmönstret, nästa lediga nummer, hookvarianter och iterationskedjan |
+| `struktur.mjs` | 3:2:2: strukturläget och taket, koncepten, adsetnamnet, COPY CARD 2 + 2, Meta-specarna, tillbakaläsningen |
+| `dom.mjs` | Domen per ADSET (7/14 dagar, stäng, flytta till Champions) och förslagen till Axel |
+| `kon.mjs` | Notion-kön → koncept → testadsets, med stoppskäl |
 | `kor.mjs` | CLI:n |
-| `logg.jsonl` | Minnet: `UPPLADDAD`, `ETIKETT`, `LARDOM`, `BRIEF`, `BUDGET`, `ROND_KLAR` |
+| `logg.jsonl` | Minnet: `UPPLADDAD` (med `adset_id` och `koncept` sedan 3:2:2), `ADSET_SKAPAD`, `ADSET_DOM`, `FORSLAG`, `ETIKETT`, `LARDOM`, `BRIEF`, `ROND_KLAR` |
 | `kanda-namn.json` | Ögonblicksbild av upptagna annonsnamn (reserven utan nät). `--namn` läser dessutom loggens UPPLADDAD-rader, kontot ur senaste `output/avlasning-*.json` och hubben live via `NOTION_TOKEN`, och skriver unionen tillbaka hit. ⚠️ Lärdom 2026-09-24/25: filen ensam gav 048 tre gånger i rad (rond 2:s Draft-briefer fanns bara i hubben) ⇒ nio annonser live med rond 2:s nummer, brieferna omdöpta 054–058 |
 
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,

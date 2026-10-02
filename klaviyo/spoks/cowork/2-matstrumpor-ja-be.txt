@@ -1,0 +1,69 @@
+Uppdrag: byt Matstrumpors sex mejlflöden "· alla språk" mot version 2, "· alla språk v2".
+Version 2 har också japanska och skickar franska mejl till Belgien.
+Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
+
+Läget före dig: de sex flödena "· alla språk" (utan v2) är på och har kunder i sig.
+De sex flödena "· alla språk v2" är av, har 0 kunder och alla sändsteg är av.
+Innehållet i v2 är färdigt och kontrollerat av sessionen. Du ska BARA slå på och stänga av.
+
+Finns inte alla sex v2-flöden med exakt namnen nedan, eller finns ett namn två gånger:
+STANNA innan du gör något, och skriv exakt vad du ser.
+
+Gör ETT flöde i taget, i den här ordningen. För varje rad nedan:
+
+  A. Öppna Flöden och klicka på v2-flödet med exakt det namn som står i raden.
+  B. Slå på VARJE sändsteg (mejlstegen), ett i taget, i flödesredigeraren. Väntestegen rör du inte.
+     Räkna: flödet ska ha exakt så många sändsteg på som står i raden.
+  C. Slå på själva flödet (knappen överst). Säger Spoks "Detta flöde har inga aktiva åtgärder"
+     är något sändsteg fortfarande av: gå tillbaka till B.
+  D. Öppna det GAMLA flödet (länken i raden) och stäng av det med den stora knappen överst.
+     Rör INTE dess sändsteg: de kunder som redan är inne ska få sina mejl klart.
+  E. Ladda om båda sidorna och läs av. v2: brickan "Aktiv" och Triggare på. Gamla: Triggare AV.
+     Det gamla flödets bricka står KVAR på "Aktiv". Det är rätt: knappen stänger bara triggern.
+     Skriv ned vad du såg och klockslaget.
+  Gå sedan till nästa rad. Gör aldrig nästa rad innan E är klart.
+
+1. Välkomst: 39 sändsteg
+   v2:      F01 Välkomst (Matstrumpor-klubben) · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/89976b01-a650-4ad5-94a5-0556c490ae03
+2. Övergiven kassa: 39 sändsteg
+   v2:      F02 Övergiven kassa · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/6b22283c-d686-405b-8b6d-7d0b1f762028
+3. Webbhistorik: 26 sändsteg
+   v2:      F03 Webbhistorik · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/17aa6927-46a0-405d-b787-cd5e0e2513dc
+4. Efter köp: 26 sändsteg
+   v2:      F04 Efter köp · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/0594aa1b-dfce-4a46-81ef-8bd20989c16c
+5. Vinna tillbaka: 26 sändsteg
+   v2:      F05 Vinna tillbaka · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/32d23706-635e-4e1e-9c1f-e25d61df7bdf
+6. En låda till (sushi, dag 21): 13 sändsteg
+   v2:      F07 En låda till (sushi, dag 21) · alla språk v2
+   Gammalt: https://app.spoks.com/matstrumpor/flows/8c9c1204-99bd-4b0f-a988-4d7af65e4702
+
+Kontrollen som kund, när alla sex är klara. Ändra ingenting och spara ingenting.
+Appen visar mejlstegen med sin ämnesrad. Öppna "F01 Välkomst (Matstrumpor-klubben) · alla språk v2":
+- Sändsteg nr 13 uppifrån är det första japanska (ämnesraden står med japanska tecken). Öppna
+  det: texten ska vara japansk, och knappen och bilderna ska leda till en adress som börjar med
+  https://matstrumpor.se/ja/ (håll pekaren över knappen). Stegets villkor ska bara gälla Japan.
+- Sändsteg nr 7 har ämnesraden "Vous faites partie du Club Matstrumpor". Dess villkor ska gälla
+  France, Luxembourg och Belgium.
+- Sändsteg nr 8 har ämnesraden "Je bent toegelaten tot de Matstrumpor-club". Dess villkor ska
+  bara gälla Netherlands.
+- Ta en skärmdump på vart och ett av de tre stegen. Stäng stegen utan att spara.
+
+Regler, utan undantag:
+- Ändra ALDRIG text, ämnesrad, bilder, filter, väntetider eller trigger i något flöde.
+- Rör INGA andra flöden. F08 Klubbdragningen, F09 Recensionen och de gamla svenska flödena
+  (utan "alla språk" i namnet) ska stå kvar som de är.
+- Rör inga kampanjer, segment eller inställningar. Schemalägg inget, skicka inget.
+- Radera ingenting.
+- Ser något annorlunda ut än beskrivet (fel antal sändsteg, en knapp som saknas, en varning du
+  inte känner igen, ett gammalt flöde som redan är av): STANNA på den raden, gör inget mer,
+  och skriv exakt vad du ser.
+- Går det inte att slå på ett v2-flöde: stäng INTE av det gamla. Då får kunderna fortfarande
+  sina mejl, vilket är bättre än inga mejl.
+
+Rapportera till sist, en rad per flöde: namn, antal sändsteg du slog på, v2 på/av,
+gammalt flöde på/av, klockslag. Bifoga skärmdumparna från kontrollen.

@@ -555,6 +555,33 @@ som GIF på deras produktsida. Axel: "Anmäla allt." Fem verktyg kom till.
   under `skickat`. Sessionen skriver in kvittot med hans tid. Sessionen skickar aldrig
   ett kort som står som `sjalv` eller `skickat`. Korten byter inte version, så hans Ja
   gäller fortfarande. Skriv aldrig en ny Cowork-prompt som försöker ta sig runt spärren.
+- **Shopify-anmälan som mejl till Shopifys utsedda ombud** (`epostanmalan.mjs`;
+  `--epost <id>`, `--epost-koll <id> --namn <n> --raw <fil>`, `--epost-skickad <id> --namn <n> --gmail <id>`).
+  Det är vägen när formuläret inte går och Axel inte vill fylla i själv ("Jag gör inte
+  det där manuellt", 2026-10-01). Shopifys copyright-policy säger "If you can't use the
+  online form, then you can send a notice … to Shopify's designated agent at …
+  legal@shopify.com". Brödtexten bär hela anspråket utan länkar eller domäner, eftersom
+  Gmail-connectorn skriver om dem. Anmälan följer ordagrant, med alla länkar, som en liten
+  PDF. Mejlet går från det kopplade Gmail-kontot (axel.odhner@stonebite.org).
+  ⛔ **Meta granskar INTE mejl.** Det mättes 2026-10-02: KD-2026-004 skickade åtta anmälningar
+  till Metas ombud `ip@fb.com`, och Meta svarade från support.facebook.com: "We require rights
+  holders to use Meta's online forms … ***Your report will not be reviewed unless it is
+  submitted through one of these forms.***" Hjälpsidan nämner andra vägar än formuläret, men i
+  praktiken räknas bara formuläret. `META_OMBUD.granskar: false` stoppar därför mejlvägen för
+  Meta, och kvittona för de åtta togs tillbaka (`--anmald … --angra`). En Meta-anmälan kräver
+  alltså formuläret: själv-läget i appen eller Cowork.
+  **Kontrollen före Skicka:** läs utkastet som RAW, skriv av det till en fil och kör
+  `--epost-koll`. Bilagans sha256 ska vara filens. Två fel fångades så den 2 oktober:
+  - Utkast 6 bar fel PDF, eftersom två nästan likadana `.b64` lästes i samma omgång. Det gav
+    många olika tecken, och utkastet raderades osänt.
+  - En avskrift läste ett O som en nolla. Det gav ett enda tecken, och felet satt i
+    avskriften.
+
+  Läs en `.b64` i taget, precis före sitt utkast. Låt helst en fristående agent skriva av
+  RAW, eftersom den inte har sett filen och inte kan "minnas" rätt svar. Agenten kan stoppas
+  av en säkerhetsspärr när den skriver av en lång RAW. Kvittot (`--epost-skickad`) skriver
+  raden i `epost/skickat.jsonl`, aldrig två gånger, och markerar Shopify-anmälan som
+  inskickad med referensen "e-post till legal@shopify.com, Gmail <id>".
 - **`--klipp … --utan-film <regex>`** tar bort filmer ur jämförelsen.
   Matstrumpors utlandsversioner `MATSTRUMP_<LAND>_*` har aldrig visats och finns
   inte i annonsbiblioteket, så ett par mot dem går inte att kontrollera för

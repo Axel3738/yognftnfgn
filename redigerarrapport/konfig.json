@@ -1,0 +1,50 @@
+{
+  "_kommentar": "Veckorapporten till redigerarna. Axels beslut 2026-10-02: andel i procent får visas, grinden är 300 kr OCH 3 köp, posten går i Bäverbutikens Discord-server i en privat kanal per redigerare. Ändra här, aldrig i koden.",
+  "guild": "1540322130388983921",
+  "guild_namn": "Bäverbutiken",
+  "kanal_prefix": "ad-report-",
+  "axel_discord": [
+    {
+      "namn": "confident_otter_25993",
+      "id": "1469423029783236689"
+    },
+    {
+      "namn": "ecom_chadking",
+      "id": "1543537450335477836"
+    }
+  ],
+  "veckodag": "måndag",
+  "cron_utc": "0 1 * * 1",
+  "cron_om": "Måndag 03:00 CEST = 09:00 Manila, efter nattvakten (00:01) och Matstrumporkungen (söndag 07:00). Vinter: 0 2 * * 1 för samma svenska tid.",
+  "grind": {
+    "spend_sek": 300,
+    "kop": 3,
+    "om": "bedombar = spend ≥ 300 kr OCH köp ≥ 3 (ANALYSMETOD). Under grinden visas etiketten men inte hook/hold."
+  },
+  "ingen_leverans_sek": 10,
+  "hitrate_veckor": 5,
+  "hook_lag": 0.3,
+  "gren_agent": "claude/daily-agent-discussion-uos5df",
+  "gren_agent_om": "Bäverbutikens och CaraShells etiketter skrivs av nattvakten på den grenen (agent/budgetlogg.jsonl). Rapporten hämtar filen med git fetch + git show vid varje körning, checkar aldrig ut grenen.",
+  "verksamheter": {
+    "baverbutiken": {
+      "loggkalla": "agent"
+    },
+    "carashell": {
+      "loggkalla": "agent"
+    },
+    "matstrumpor": {
+      "loggkalla": "matstrumpor"
+    }
+  },
+  "data": {
+    "actions": "redigerarrapport/data/actions.jsonl",
+    "poster": "redigerarrapport/data/poster.jsonl",
+    "om": "actions.jsonl: ett item per redigerare och vecka (index i action-items.json) så samma item aldrig ges två gånger. poster.jsonl: vad som postades, var och när (meddelande-id), som tillbakaläsning. Båda committas."
+  },
+  "utan_redigerare": [
+    "josh",
+    "annabelle"
+  ],
+  "utan_redigerare_om": "Axels beslut 2026-10-02: Josh och Annabelle gör andra uppgifter och får ingen rapport. De står inte som Ansvarig på någon hubbrad (0 av 554) och deras fyra skalningshubbar är arkiverade. Produktägarreserven (commission/produkter.json) fanns bara för dem och är borttagen."
+}
