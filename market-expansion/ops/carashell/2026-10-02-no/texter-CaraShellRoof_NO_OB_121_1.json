@@ -1,0 +1,137 @@
+[
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   330,
+   958,
+   630,
+   994
+  ]
+ },
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   330,
+   994,
+   760,
+   1045
+  ]
+ },
+ {
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "box": [
+   200,
+   1078,
+   880,
+   1140
+  ]
+ },
+ {
+  "box": [
+   103,
+   62,
+   977,
+   139
+  ],
+  "fet": true,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 71,
+  "text": "Sidene står frie, med vilje"
+ },
+ {
+  "box": [
+   38,
+   178,
+   1040,
+   225
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 187,
+  "text": "Kanten henger 30-40 cm ned, dør og vindu er frie, én person"
+ },
+ {
+  "box": [
+   443,
+   236,
+   634,
+   270
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   19,
+   17
+  ],
+  "ink_topp": 245,
+  "text": "holder."
+ },
+ {
+  "box": [
+   359,
+   962,
+   722,
+   1032
+  ],
+  "fet": true,
+  "storlek": 72,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 971,
+  "text": "1 106 kr",
+  "utvidga": 6
+ },
+ {
+  "box": [
+   191,
+   1084,
+   885,
+   1133
+  ],
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 1093,
+  "text": "(før 1 382,50 kr), spar 276,50 kr (20 %)",
+  "utvidga": 6
+ }
+]

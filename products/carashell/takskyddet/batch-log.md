@@ -3194,3 +3194,43 @@ Kön läst i ett försök: samma två rader i `To be Reviewed`
 (`120249050544990172`) ACTIVE med 11 adsets; butikspriset 1 129 kr stämmer
 exakt. Inget uppladdat, ingen status ändrad, inga nya kommentarer.
 De två LISTICLE-kampanjerna filtrerades som egna spår.
+
+## 2026-10-02 — NO-rundan: två bildannonser översatta och live
+
+Första nya raderna i Norge-kön på fyra dygn. Båda bild, båda redan live i USA,
+så Norge var sista marknaden som fattades — därför gick båda till `Approved`.
+
+| SE-rad | Norsk annons | Adset | Annons-id |
+|---|---|---|---|
+| `CaraShellRoof_OB_115_1` | `CaraShellRoof_NO_OB_115_1` | `CARASHELL_NO_Takovertrekket - OB` | `120249381209540172` |
+| `CaraShellRoof_OB_121_1` | `CaraShellRoof_NO_OB_121_1` | samma | `120249381220120172` |
+
+Kampanjen `CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11`
+(`120249050596730172`) ACTIVE med 12 adsets, konto `915422744950975`. Länk och
+sida ärvda ur kampanjen. Båda tillbakalästa ACTIVE i ett ACTIVE adset;
+`effective_status` stod `IN_PROCESS`, vilket är Metas granskning av en nyss
+skapad annons, inte ett fel.
+
+**Bilderna ritades om, de OCR-översattes inte.** Rutorna var redan mätta i den
+svenska källbilden av Bäverbutikens NO-runda 2026-10-01
+(`market-expansion/no/notion-batches/2026-10-01/texter/`), och källbilden är
+samma fil som CaraShells spegelrad — så bara orden byttes
+(`bygg-no.py`, samma mall som gårdagens `bygg-us.py`). Sessionen tittade på
+båda färdiga bilderna: ingen svenska kvar, inga spår efter den suddade texten,
+knappen på norska.
+
+⚠️ **Priset är CaraShells, inte Bäverbutikens.** Mätfilerna bär 1 189 / 1 549 kr
+— det är Beverbutikkens norska priser och får aldrig följa med. CaraShells
+norska pris står i `factory/produkter/takskyddet.yaml` →
+`ekonomi.marknadspriser` (NOK): **1 106 kr, ord. 1 382,50 kr, spar 276,50 kr
+(20 %)**, och kön läste samma 1 106 NOK live ur butiken före uppladdningen.
+Samma tal i bild och i annonstexten. Den som återanvänder en annan butiks
+mätfil ärver alltså dess pris om ingen byter det.
+
+Copyn skriven av en sonnet-subagent mot `docs/copy-regler.md` med
+tre-frågorstestet redovisat per rad. 0 HeyGen-krediter — bild kostar inget.
+
+**Approved-kollen:** 72 rader, 0 utan norsk annons.
+
+Marknadsvakten kördes inte: `placeringar` finns bara för US i
+`factory/opsmarknader.mjs`, så NO har ingen vakt att köra.
