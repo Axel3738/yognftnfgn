@@ -1,16 +1,16 @@
 # Matstrumpor.se: mail till Åsa Jonsson, @helt.orimligt (2026-10-02)
 
-Skrivet efter kursens sju meningar. Krok: författardebuten 1 september 2026 med
+Skrivet efter kursens sju meningar. Rättat 2026-10-02 efter Axel: hela boktiteln såg robotaktig ut, och hon bedöms svår att få samarbete med, så tonen hålls kort och mänsklig. Krok: författardebuten 1 september 2026 med
 "Helt orimligt – en hemmasittares berättelse" (står i hennes bio, Libris, TV4 2026-09-01).
 Skickas från axel.odhner@stonebite.org, bara till henne, ingen kopia. Mejladressen står inte
 i bion; ta den från Instagrams kontaktknapp. Finns ingen: skicka samma text som DM.
 
 ```
-Ämne: Grattis till författardebuten, Åsa
+Ämne: Grattis till din första bok, Åsa
 
 Hej Åsa!
 
-Jag heter Axel och driver Matstrumpor.se. Grattis till författardebuten med Helt orimligt – en hemmasittares berättelse.
+Jag heter Axel och driver Matstrumpor.se. Grattis till din första bok!
 
 Jag skriver för att jag vill skicka två av våra sushilådor till dig, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete inför jul.
 
