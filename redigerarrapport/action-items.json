@@ -103,6 +103,12 @@
         "text_en": "Re-cut only the first 3 seconds: same hook line, same timing, a different picture from the source list that shows the object the line talks about. Deliver as the next H number.",
         "varfor": "Hooken är det vanligaste felet. Raden och timingen är MUST NOT, men bilden inom motivet är MAY, så det här är exakt det hon får ändra själv. En fil med nästa H-nummer är mätbart.",
         "kalla": "docs/os/evolve/ITERATIONS-PLAYBOOK.md §4 fel 1; docs/os/BRIEF-REGI.md Editor latitude; docs/ecomtalent/fynd.json tal Action Item: UGC Ads [3:53] ('3 hook-visual variations when the spoken hook line is fixed')"
+      },
+      {
+        "typ": "läs",
+        "text_en": "Run the course's pre-submit questions on this ad: does the first 1 to 2 seconds hook the RIGHT person and keep them, is there a label for who it is for, does it look like an ad, which learning from a past winner did it use. Reply with the one question you would answer no to.",
+        "varfor": "Kursens egen checklista (How To Do Learnings - Questions, läst 2026-10-02) är skriven till den som gör annonsen; en fråga att svara nej på är ett mätbart svar.",
+        "kalla": "docs/os/evolve/REDIGERARE-LEKTIONER.md (How To Do Learnings - Questions, 7d9d6bbb…)"
       }
     ],
     "INGEN_LEVERANS": [
