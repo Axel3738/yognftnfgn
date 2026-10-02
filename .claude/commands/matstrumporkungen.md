@@ -142,13 +142,17 @@ behörighetsreglerna matchar på första ordet.
    säger då "kön lästes inte" på de raderna.
    **Adseten (3:2:2, bara Sverige):** `--hamta` läser kampanjens adsets och deras
    dagserie (28 dagar), och `--dom-alla` dömer varje adset — `CHAMPIONS` (döms
-   aldrig), `FOR_UNG` (under dag 7), `STANG_TIDIGT` (dag 3–6: tog majoriteten,
+   aldrig), `FOR_UNG` (under dag 7, ELLER en aktiv annons i gruppen yngre än sju
+   dagar — Axels beslut 2026-10-02), `SASONG` (säsongsvinkeln i adsetnamnet,
+   t.ex. jul: döms inte före `struktur.sasong[].doms_fran`, 1 december), `STANG_TIDIGT` (dag 3–6: tog majoriteten,
    under KPI, kampanjen gick ner), `VINNARE`/`FLYTTA` (≥ 20 % av spenden vid KPI ⇒
    flytta bästa annonsen till Champions; bild går aldrig in bland videorna),
    `VANTA` (tar spend, kampanjen förbättrades, under KPI — till dag 14), `LAT_STA`
    (bra ROAS, lite spend, inget väntar i kön — och ALLTID för ett gammalt adset
-   som fungerar), `STANG` (svält under grinden, under KPI, eller över 14 dagar
-   utan att vinna), `FLYTTAD` (vinnaren ligger redan i Champions men har inte
+   som fungerar), `STANG` (svält: aktivt minst 21 dagar och under 10 kr de
+   senaste 21 dagarna — Axels beslut 2026-10-02, "vi har bara haft typ 1
+   breakthrough och den har snott all spend"; under grinden före det är ingen
+   dom; under KPI med spend; eller över 14 dagar utan att vinna), `FLYTTAD` (vinnaren ligger redan i Champions men har inte
    levererat) och `AV` (pausat = ett beslut). Ett testadset döms på hela testet
    från starten; ett gammalt adset (före 3:2:2) på de senaste sju dagarna OCH
    det långa snittet (28 dagar) — det stängs bara när båda ligger under
@@ -383,8 +387,9 @@ behörighetsreglerna matchar på första ordet.
      ⛔ **Aldrig en enskild annons att pausa** — 3:2:2 stänger på adsetnivå.
    - **Annons att flytta till Champions** (`FORSLAG` `FLYTTA_TILL_CHAMPIONS`):
      annonsen, testadsetet den kommer från, andelen vid KPI. Flytten görs av Axel
-     genom att duplicera annonsen in i Champions (kursen: med post-id behålls
-     engagemanget); testadsetet står kvar tills kopian levererar. En bildvinnare
+     genom att duplicera annonsen in i Champions med BEFINTLIGT inlägg — förslaget
+     bär post-id:t (`post_id`, `hur`), skriv ut det till Axel så att likes och
+     kommentarer följer med (Axels krav 2026-10-02); testadsetet står kvar tills kopian levererar. En bildvinnare
      har inget Champions att gå till än — skriv det.
    - **Kampanjen att skala:** över break-even med ≥ 3 köp de senaste 7 dygnen.
      Skriv ut hur mycket (+20 % är motorns normalsteg) och vad det bygger på.

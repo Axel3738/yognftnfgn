@@ -55,6 +55,9 @@ export function regler(konfig) {
     tidig_dom_dagar: tal(s.tidig_dom_dagar, 3),
     majoritet_andel: tal(s.majoritet_andel, 0.5),
     flytt_andel: tal(s.flytt_andel, 0.2),
+    ung_annons_dagar: tal(s.ung_annons_dagar, 7),
+    svalt_dagar: tal(s.svalt_dagar, 21),
+    sasong: Array.isArray(s.sasong) ? s.sasong : [],
     sedan: s.sedan ?? null,
   };
 }

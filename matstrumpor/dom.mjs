@@ -38,6 +38,7 @@ export const DOM = Object.freeze({
   LAT_STA: 'LAT_STA',
   STANG: 'STANG',
   FLYTTAD: 'FLYTTAD',
+  SASONG: 'SASONG',
 });
 
 /** Åtgärden Axel får som förslag. null = inget att göra. */
@@ -137,6 +138,13 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
   if (roll === 'champions' || roll === 'champions_bild') return ut(DOM.CHAMPIONS, `Champions — ${pct(andel)} av kampanjens spend i fönstret, ${roasTxt}. Testas aldrig och stängs aldrig; vinnare flyttas hit.`);
   if (!ADSET_PA.has(String(adset.effective_status ?? ''))) return ut(DOM.AV, `${adset.effective_status ?? 'okänd status'} — avstängt är ett beslut, döms inte och aktiveras aldrig.`);
   if (dagar === null || !f) return ut(DOM.FOR_UNG, 'startade i dag — Meta har inga siffror för i dag.');
+  // Axels beslut 2026-10-02: säsongsadsets döms inte före säsongen.
+  const sas = sasongFor(adset, r.sasong);
+  if (sas && idag < sas.doms_fran) return ut(DOM.SASONG, `${sas.vinkel}-vinkeln — döms inte förrän ${sas.doms_fran} (Axels beslut 2026-10-02: säsongen har inte börjat, ${pct(andel)} av spenden nu säger inget). Räknas mot taket.`);
+  // Axels beslut 2026-10-02: en grupp med nya annonser i döms inte förrän den
+  // yngsta aktiva annonsen gått ung_annons_dagar dagar.
+  const yngst = (annonser ?? []).filter((x) => String(x.adset_id ?? '') === String(adset.id) && (!x.effective_status || ADSET_PA.has(String(x.effective_status))) && x.skapad).map((x) => String(x.skapad).slice(0, 10)).sort().pop() ?? null;
+  if (yngst && dagarMellan(yngst, idag) < r.ung_annons_dagar) return ut(DOM.FOR_UNG, `en annons i gruppen startade ${yngst} — gruppen döms inte förrän den yngsta annonsen gått ${r.ung_annons_dagar} dagar (Axels beslut 2026-10-02).`);
   if (dagar < r.tidig_dom_dagar) return ut(DOM.FOR_UNG, `dag ${dagar} av ${r.test_dagar} — kursen ger ett test minst ${r.tidig_dom_dagar} dagar.`);
   if (dagar < r.test_dagar) {
     if (andel !== null && andel >= r.majoritet_andel && bedombar && kpi === false && forbattrad === false) {
@@ -148,18 +156,15 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
 
   function efterTest() {
     if (!bedombar) {
-      // Svält. Kursen: lite spend efter 7 dagar och dålig ROAS ⇒ stäng; bra ROAS ⇒
-      // får stå om inget väntar i kön. Under grinden finns ingen ROAS-dom på
-      // veckan, så "bra" betyder köp över break-even inom testet, eller ett långt
-      // snitt över break-even för ett adset äldre än testtiden. Ett adset som
-      // svälter fungerar inte NU — skyddet för "befintliga som fungerar" gäller inte.
-      // Regel 11 (Axels beslut 2026-09-20): ingen spend på sju dygn är Metas dom
-      // INGEN_LEVERANS. Ett gammalt snitt räddar inte platsen — adsetet levererar
-      // inte och tar ändå en plats i taket.
+      // Svält. Axels beslut 2026-10-02: ett adset stängs för svält först när det
+      // legat aktivt svalt_dagar (21) utan spend — "vi har bara haft typ 1
+      // breakthrough och den har snott typ all spend". Att svälta bredvid den är
+      // ingen dom över annonserna. Ersätter kursens sju dagar och regel 11:s
+      // sju dygn för Matstrumpor.
       const ingenLev = Number(grindar?.ingen_leverans_spend_sek ?? 10);
-      if ((Number(a.spend_sek) || 0) < ingenLev) return ut(DOM.STANG, `${a.spend_sek ?? 0} kr på ${r.test_dagar} dagar — under ${ingenLev} kr: Meta levererar inte (regel 11, INGEN_LEVERANS)${lt ? `; ${zoomTxt}, men ett gammalt snitt räddar inte platsen` : ''}.`, { svalt: true });
-      if (ko === 0 && ((a.kop >= 1 && kpi === true && dagar <= r.test_max_dagar) || (lang && langtOk))) return ut(DOM.LAT_STA, `under grinden (${a.spend_sek} kr, ${a.kop} köp)${lang && langtOk ? `, men ${zoomTxt} ≥ ${beTxt}` : ''} — ingen dom; står bara för att inget koncept väntar på platsen.`);
-      return ut(DOM.STANG, `${dagar} dagar, ${a.spend_sek} kr och ${a.kop} köp — under grinden ${grindar.signifikans_spend_sek} kr / ${grindar.signifikans_kop} köp${lt ? ` (${zoomTxt})` : ''}. Meta gav den ingen spend: svält är Metas dom (kursen: "not getting much spend after 7 days"). Ingen dom över idén, bara över platsen.`, { svalt: true });
+      const sv = summera(adset.serie, plusDagar(igar, -(r.svalt_dagar - 1)), igar);
+      if (dagar >= r.svalt_dagar && (Number(sv.spend_sek) || 0) < ingenLev) return ut(DOM.STANG, `aktivt i ${dagar} dagar och ${sv.spend_sek ?? 0} kr de senaste ${r.svalt_dagar} dagarna — under ${ingenLev} kr: Meta levererar inte (Axels regel 2026-10-02: tre veckor utan spend)${lt ? `; ${zoomTxt}, men ett gammalt snitt räddar inte platsen` : ''}.`, { svalt: true });
+      return ut(DOM.LAT_STA, `under grinden (${a.spend_sek} kr, ${a.kop} köp senaste ${r.test_dagar} dagarna, ${sv.spend_sek ?? 0} kr på ${r.svalt_dagar}) — ingen dom. Svält stänger först efter ${r.svalt_dagar} dagar utan spend (Axels beslut 2026-10-02).`);
     }
     if (kpi === true && andel !== null && andel >= r.flytt_andel) {
       const majoritet = andel >= r.majoritet_andel;
@@ -209,6 +214,13 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
   }
 }
 
+/** Säsongen ett adset tillhör: vinkeln som ett ord i adsetnamnet
+ *  (broad_advplus_purchase_jul_video, MATSTRUMP_T070_jul_video). null = ingen. Ren. */
+export function sasongFor(adset, sasong = []) {
+  const ord = String(adset?.namn ?? '').toLowerCase().split(/[_\s-]+/);
+  return (sasong ?? []).find((x) => x?.vinkel && x?.doms_fran && ord.includes(String(x.vinkel).toLowerCase())) ?? null;
+}
+
 /** Vart en vinnare flyttas: Champions (video) eller Champions för bild om den
  *  finns. Bild och video blandas aldrig — finns inget bild-Champions står det. */
 export function malFor(adset, konfig) {
@@ -243,7 +255,7 @@ export function bastaAnnons(adsetId, annonser, breakEven, { grindar = null, flyt
   if (!kandidater.length) return null;
   kandidater.sort((x, y) => vb(y) - vb(x));
   const b = kandidater[0];
-  return { namn: b.namn, id: String(b.id), spend_sek: b.spend_sek ?? null, kop: b.kop ?? null, roas: b.roas ?? null, andel_av_adset: r3((Number(b.spend_sek) || 0) / adsetSpend) };
+  return { namn: b.namn, id: String(b.id), post_id: b.post_id ?? null, spend_sek: b.spend_sek ?? null, kop: b.kop ?? null, roas: b.roas ?? null, andel_av_adset: r3((Number(b.spend_sek) || 0) / adsetSpend) };
 }
 
 /** Alla adsets i en avläsning. Ren. Sorterad: åtgärder först (flytt, stäng),
@@ -270,7 +282,7 @@ export function forslagRader(domar, datum, { logg = [] } = {}) {
     if (d.atgard === 'STANG_ADSET') {
       ut.push({ kod: 'FORSLAG', datum, niva: 'adset', atgard: 'STANG_ADSET', objekt: d.adset, adset_id: d.adset_id, dom: d.dom, orsak: d.motivering, kronor: d.spend_sek, spend_sek: d.spend_sek, kop: d.kop, roas: d.roas, andel: d.andel, dagar: d.dagar, fonster: d.fonster, ...(d.lardom ? { lardom_kravs: true } : {}), beslut: 'Axel' });
     } else if (d.atgard === 'FLYTTA_TILL_CHAMPIONS') {
-      ut.push({ kod: 'FORSLAG', datum, niva: 'adset', atgard: 'FLYTTA_TILL_CHAMPIONS', objekt: d.basta_annons?.namn ?? d.adset, annons_id: d.basta_annons?.id ?? null, fran_adset: d.adset, adset_id: d.adset_id, till: d.till?.namn ?? null, till_id: d.till?.id ?? null, dom: d.dom, orsak: d.motivering, kronor: d.basta_annons?.spend_sek ?? d.spend_sek, spend_sek: d.spend_sek, kop: d.kop, roas: d.roas, andel: d.andel, dagar: d.dagar, fonster: d.fonster, beslut: 'Axel' });
+      ut.push({ kod: 'FORSLAG', datum, niva: 'adset', atgard: 'FLYTTA_TILL_CHAMPIONS', objekt: d.basta_annons?.namn ?? d.adset, annons_id: d.basta_annons?.id ?? null, post_id: d.basta_annons?.post_id ?? null, hur: d.basta_annons?.post_id ? `Duplicera in i ${d.till?.namn ?? 'Champions'} med BEFINTLIGT inlägg (post-id ${d.basta_annons.post_id}) så att likes och kommentarer följer med` : 'Duplicera in med befintligt inlägg (post-id saknas i avläsningen — läs det i Ads Manager)', fran_adset: d.adset, adset_id: d.adset_id, till: d.till?.namn ?? null, till_id: d.till?.id ?? null, dom: d.dom, orsak: d.motivering, kronor: d.basta_annons?.spend_sek ?? d.spend_sek, spend_sek: d.spend_sek, kop: d.kop, roas: d.roas, andel: d.andel, dagar: d.dagar, fonster: d.fonster, beslut: 'Axel' });
     }
   }
   return ut.sort((x, y) => (y.kronor ?? 0) - (x.kronor ?? 0));

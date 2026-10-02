@@ -51,11 +51,16 @@ test('dag 3–6: tog majoriteten av spenden, under KPI och kampanjen gick ner �
   assert.equal(domAdset(ad, ctx({ kampanjserie: [...serie('2026-09-22', 23, 10000, 40, 1.0), ...serie('2026-10-15', 5, 10000, 40, 1.4)] })).dom, DOM.FOR_UNG);
 });
 
-test('dag 7 och svultet (under 300 kr och 3 köp) ⇒ stäng — Metas dom, ingen dom över idén', () => {
-  const d = domAdset(test322({ serie: serie('2026-10-13', 7, 10, 0, 0) }), ctx());
+test('svält stänger först efter tre veckor utan spend (Axels beslut 2026-10-02) — dag 7 med lite spend är ingen dom', () => {
+  assert.equal(domAdset(test322({ serie: serie('2026-10-13', 7, 10, 0, 0) }), ctx({ koVantar: 2 })).dom, DOM.LAT_STA);
+  // Aktivt i 22 dagar och under 10 kr på 21 dagar ⇒ stäng.
+  const dott = test322({ skapad: '2026-09-28', serie: serie('2026-09-28', 22, 0.2, 0, 0) });
+  const d = domAdset(dott, ctx());
   assert.equal(d.dom, DOM.STANG);
   assert.equal(d.svalt, true);
-  assert.match(d.motivering, /svält/);
+  assert.match(d.motivering, /tre veckor/);
+  // Samma ålder men spend de senaste tre veckorna ⇒ får stå.
+  assert.equal(domAdset(test322({ skapad: '2026-09-28', serie: serie('2026-09-28', 22, 5, 0, 0) }), ctx()).dom, DOM.LAT_STA);
 });
 
 test('majoriteten av spenden vid KPI och kampanjen förbättrades ⇒ VINNARE, flytta bästa annonsen till Champions', () => {
@@ -178,11 +183,9 @@ test('benchmarken dödas aldrig: ett adset som bär annonsen med > 30 % av vinst
   assert.match(skyddad.motivering, /benchmarken/);
 });
 
-test('under grinden men köp över break-even och tom kö: ingen dom, får stå; med kö eller noll köp: stäng (svält)', () => {
+test('under grinden: ingen dom, vare sig kön är tom eller full — svält är ingen dom före tre veckor', () => {
   const ad = test322({ serie: serie('2026-10-13', 7, 40, 0.3, 3.3) });
-  assert.equal(domAdset(ad, ctx({ koVantar: 0 })).dom, DOM.LAT_STA);
-  assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.STANG);
-  assert.equal(domAdset(ad, ctx({ koVantar: null })).dom, DOM.STANG);
+  for (const ko of [0, 1, null]) assert.equal(domAdset(ad, ctx({ koVantar: ko })).dom, DOM.LAT_STA);
 });
 
 test('ett adset som Meta visar som IN_PROCESS eller WITH_ISSUES döms — bara PAUSED och liknande är AV', () => {
@@ -207,7 +210,7 @@ test('förslagen: bara adsetnivå (stäng / flytta), sorterade på kronor — al
       { id: CHAMP, namn: '09-17 UGC', effective_status: 'ACTIVE', skapad: '2026-09-17', aktiva_annonser: 5, serie: serie('2026-09-22', 28, 3000, 20, 2.0) },
       test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) }),
       test322({ id: '501', namn: 'MATSTRUMP_T072_pain_video', serie: serie('2026-10-13', 7, 300, 1, 0.9) }),
-      test322({ id: '502', namn: 'MATSTRUMP_T073_identity_video', serie: serie('2026-10-13', 7, 10, 0, 0) }),
+      test322({ id: '502', namn: 'MATSTRUMP_T073_identity_video', skapad: '2026-09-28', serie: serie('2026-09-28', 22, 0.2, 0, 0) }),
     ],
   };
   jobb.annonser[0].effective_status = 'ACTIVE';
@@ -245,18 +248,40 @@ test('koVantar ur dagens kö: färdiga koncept minus lediga platser; okänd stru
   assert.equal(koVantarUr({ summa: {} }), 0);
 });
 
-test('ett gammalt adset som SVÄLTER (bra snitt förr, lite spend nu) står bara om inget väntar — det fungerar inte nu', () => {
-  const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 17, 0, null)] };
-  assert.equal(domAdset(ad, ctx({ koVantar: 0 })).dom, DOM.LAT_STA);
-  assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.STANG);
-});
-
-test('regel 11: under 10 kr på sju dagar är INGEN_LEVERANS — stängs även med tom kö och bra gammalt snitt (alla17 2026-10-02)', () => {
+test('ett gammalt adset med lite spend senaste veckan men spend inom tre veckor står kvar, också med kö', () => {
   const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 0.13, 0, null)] };
-  const d = domAdset(ad, ctx({ koVantar: 0 }));
+  assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.LAT_STA);
+  // Tre veckor under 10 kr ⇒ stäng, även med bra snitt förr.
+  const dott = { ...ad, serie: [...serie('2026-09-22', 7, 300, 2, 2.4), ...serie('2026-09-29', 21, 0.1, 0, null)] };
+  const d = domAdset(dott, ctx({ koVantar: 0 }));
   assert.equal(d.dom, DOM.STANG);
   assert.equal(d.svalt, true);
-  assert.match(d.motivering, /regel 11/);
+});
+
+test('säsong: julgruppen döms inte före 1 december, sedan som vanligt (Axels beslut 2026-10-02)', () => {
+  const jul = { id: 'j', namn: 'broad_advplus_purchase_jul_video', effective_status: 'ACTIVE', skapad: '2026-09-21', aktiva_annonser: 14, serie: serie('2026-09-22', 28, 1, 0, 0) };
+  const d = domAdset(jul, ctx());
+  assert.equal(d.dom, DOM.SASONG);
+  assert.equal(d.atgard, null);
+  assert.notEqual(domAdset(jul, ctx({ idag: '2026-12-02', kampanjserie: serie('2026-10-01', 62, 10000, 40, 2.0) })).dom, DOM.SASONG);
+  // "jul" som ord, inte som del av ett annat ord.
+  assert.notEqual(domAdset({ ...jul, namn: 'broad_advplus_purchase_juli' }, ctx()).dom, DOM.SASONG);
+});
+
+test('en grupp med en annons yngre än sju dagar döms inte (nya16 fick 054–063 veckan före)', () => {
+  const ad = { id: 'g1', namn: 'broad_advplus_purchase_nya16', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 40, serie: serie('2026-09-22', 28, 200, 0, 0) };
+  const ung = [{ id: 'n', namn: 'MATSTRUMP_sushi_gift_ugc_063h1_v1', adset_id: 'g1', effective_status: 'ACTIVE', skapad: '2026-10-16' }];
+  assert.equal(domAdset(ad, ctx({ annonser: ung })).dom, DOM.FOR_UNG);
+  // Pausad ung annons räknas inte; äldre än sju dagar ⇒ döms.
+  assert.equal(domAdset(ad, ctx({ annonser: [{ ...ung[0], effective_status: 'PAUSED' }] })).dom, DOM.STANG);
+  assert.equal(domAdset(ad, ctx({ annonser: [{ ...ung[0], skapad: '2026-10-10' }] })).dom, DOM.STANG);
+});
+
+test('flyttförslaget bär inläggets id — vinnaren dupliceras med befintligt inlägg', () => {
+  const vinn = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', adset_id: '500', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'ACTIVE', post_id: '820358954504320_111' };
+  const f = forslagRader([domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) }), ctx({ annonser: [vinn] }))], IDAG);
+  assert.equal(f[0].post_id, '820358954504320_111');
+  assert.match(f[0].hur, /BEFINTLIGT inlägg/);
 });
 
 test('ett gammalt adset som fungerar stängs inte fast dess vinnare redan levererar i Champions', () => {

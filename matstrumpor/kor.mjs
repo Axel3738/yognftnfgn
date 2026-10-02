@@ -239,7 +239,7 @@ export function korAdsetDom(jobb, konfig, breakEven, { idag, koVantar = null, lo
     skriv(`  ${d.dom.padEnd(13)} ${d.adset} [${d.roll}${d.dagar !== null ? `, dag ${d.dagar}` : ''}${d.fonster ? `, ${d.fonster}` : ''}] ${d.spend_sek} kr · ${d.kop} köp · ROAS ${d.roas ?? '—'} · ${d.andel === null ? '—' : `${Math.round(d.andel * 100)} %`} av spenden`);
     skriv(`      ${d.motivering}${d.redan_foreslagen ? ' (flytten är redan föreslagen — ingen ny rad)' : ''}`);
   }
-  skriv(forslag.length ? `Förslag till Axel (${forslag.length}, på kronor): ${forslag.map((f) => `${f.atgard === 'STANG_ADSET' ? 'stäng' : 'flytta'} ${f.objekt}${f.atgard === 'FLYTTA_TILL_CHAMPIONS' ? ` → ${f.till}` : ''} (${Math.round(f.kronor ?? 0)} kr)`).join(' · ')}` : 'Inga adsetförslag i dag.');
+  skriv(forslag.length ? `Förslag till Axel (${forslag.length}, på kronor): ${forslag.map((f) => `${f.atgard === 'STANG_ADSET' ? 'stäng' : 'flytta'} ${f.objekt}${f.atgard === 'FLYTTA_TILL_CHAMPIONS' ? ` → ${f.till}, befintligt inlägg ${f.post_id ?? '(post-id saknas)'}` : ''} (${Math.round(f.kronor ?? 0)} kr)`).join(' · ')}` : 'Inga adsetförslag i dag.');
   if (logga) {
     const nya = nyaAdsetRader([...adsetDomRader(domar, idag), ...forslag], lasLogg(loggfil));
     for (const rad of nya) skrivRad(rad, loggfil);
