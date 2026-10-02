@@ -202,7 +202,16 @@ dec 2025) och 87 % har fått en klapp de inte ville ha (UNICEF dec 2024);
 57 % vill ge praktiskt, 25 % roligt, 23 % säger nej till skämtpresenter
 (Talker nov 2025); se-igenom-förpackning höjer viljan att äga (IJRM maj
 2026). ⚠️ "Sushi är Sveriges mest beställda rätt" är FALSKT (cheeseburgare
-är), skriv "topp tre". **Två sidor, publiceras om på samma länkar:** den
+är), skriv "topp tre". ⛔ **Axels dom 2026-10-02: en faktarad är aldrig
+första raden i en video** (Wolt-raden "känns onaturlig och konstig"); videons
+start är en gåta som bilden löser vid avslöjandet, faktan går som bild,
+rubrik eller mejl. ✅ **Batch #4 samma dag, Axels order (2 briefer, Draft i
+hubben):** `065` = mekanismen "duka fram den" som NY INSPELNING med Nathalie
+(Axels ja; raden väntar på hennes råklipp, inspelningsplanen står sist i
+briefen) och `066` = gåtan "Sushi att ge bort till den som hatar fisk." som
+ny öppning på Nathalie-kroppen, upprullningen som svar. Mönstret för allt
+nytt här: **iterera på vinnaren** — samma kropp, en ny mekanism eller en ny
+ingång åt gången, aldrig ett större löfte. **Två sidor, publiceras om på samma länkar:** den
 engelska briefen till creative strat (`CS-BRIEF-sophistication.md`)
 https://claude.ai/artifact/5xGD7q2EtJfdVQr1aS8eKn och Axels enkla svenska
 sammanfattning https://claude.ai/artifact/4V8B41zhKmExD2qUumasf5 (Axels

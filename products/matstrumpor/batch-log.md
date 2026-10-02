@@ -407,3 +407,16 @@ Copy: sonnet-subagent mot `docs/copy-regler.md`, tre-frågorstestet i varje brie
 **Miniklippen `B_Mini-clip_UGC_04` (pizza) och `BURGER B_Mini-clip_UGC_02`** står odöpta sedan 14–15/9. De visar pizza och burgare, men namnmönstret och landningssidan är bara sushi. De laddas inte upp förrän Axel sagt vilken sida de ska till.
 
 **Förslag (loggade som FORSLAG, inget gjort):** routing till `09-17 UGC`, budget +20 % till 12 000 kr/dag, pausa haikuh2 (−447 kr) och 012v2 (−396 kr).
+
+## 2026-10-02 — batch #4 (2 briefer, Axels order — utanför ronden)
+
+**Hypotes:** marknaden för roliga strumpor står på Schwartz steg 3 (löftet "rolig present som används" är uttjatat, fem svenska annonsörer säger det). En NY MEKANISM (hur presenten ges) och en GÅTA som öppning (inte en faktarad) når köparen där ett större löfte inte gör det.
+**Mix:** 1 ny mekanism (ny inspelning) / 1 vidarebygge på vinnaren (ny öppning) — Axels beslut 2026-10-02 ("Ja skriv briefen"; Wolt-raden "känns onaturlig och konstig", vill ha "något sorts mysterium … koppla till revealen").
+**Lärdomar bakom:** L-09-17_Nathalie_captions_musik (riktig kreatör + riktig mottagare + "sålde slut i november" är det enda som sålt), `mekanismer.md` M2 (skeptikerns rang 1), `ny-information.md` (faktan går som bild, aldrig som videostart — Axels dom).
+**Annonser:**
+- `MATSTRUMP_sushi_gift_ugc_065_v1` · N · ingen förälder (NEW FOOTAGE, Nathalie) · iteration 1 · källa egen-data (mekanismer.md M2 "duka fram den"). Hook "Tio bitar på middagsbordet. Ingen av dem är mat." Raden stannar i Draft tills Nathalies råklipp finns; inspelningsplanen på svenska ligger sist i briefen och på https://claude.ai/artifact/RvvVs454Kggxx5CpbJT7fU.
+- `MATSTRUMP_sushi_curiosity_ugc_066_v1` · I 10 · förälder Nathalie · källa axel. Gåtan "Sushi att ge bort till den som hatar fisk." över vännen som lyfter lådan (0:15–0:18), plocket (0:21–0:22) tyst, upprullningen (0:01–0:02) som svar, sedan kroppen oförändrad. Arkiv: "Det finns inget bäst före-datum på den här sushin." / "Jag har sushi på mig. Det här är bara reservlådan." Mäts mot föräldern och 063 (tre öppningar på en kropp).
+**Spärren:** `tools/briefgranskning.mjs --manifest` 2/2 gröna (en anmärkning om variabelns formulering, rättad).
+**Uppladdat:** Draft i hubben 2026-10-02 (`batch-04/notion-resultat.json`). Nya videor ska i `09-17 UGC` (rond 4:s routingförslag) — annars svält.
+**Utfall (dag 7):** —
+**Lärdom:** — (skrivs av ronden när etiketten finns)
