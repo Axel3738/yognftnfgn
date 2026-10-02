@@ -21,7 +21,7 @@ test('≥ 30 % av spenden + höjd budget + över break-even = BREAKTHROUGH', () 
 test('≥ 30 % men under break-even = SPEND_WINNER, inte breakthrough', () => {
   const e = etikettera({ namn: 'TOP', spend_sek: 7776, kop: 17, roas: 0.93 }, KAMPANJ, 1.5, G);
   assert.equal(e.etikett, ETIKETT.SPEND_WINNER);
-  assert.match(e.motivering, /ROAS under break-even/);
+  assert.match(e.motivering, /ROAS 0\.93 under break-even 1\.5/);
 });
 
 test('liten spend men bättre ROAS än kampanjen = KPI_WINNER', () => {
@@ -107,9 +107,34 @@ test('typ=N med samma avatar, begär och mekanism varnas som iteration i förkl�
   assert.ok(g.varning.some((v) => /ny vinkel/.test(v)));
 });
 
-test('taket: tre iterationer med lärdom, ingen slår originalet, svag källa ⇒ SLÄPP', () => {
-  const briefer = [{ koncept: 'k', lardom: 'L1' }, { koncept: 'k', lardom: 'L2' }, { koncept: 'k', lardom: 'L3' }];
-  assert.equal(konceptStatus('k', briefer, [], { kalla: 'gissning' }).beslut, 'SLAPP');
-  assert.equal(konceptStatus('k', briefer, [], { kalla: 'voc' }).beslut, 'FORTSATT');
-  assert.equal(konceptStatus('k', briefer.slice(0, 2), [], { kalla: 'gissning' }).beslut, 'FORTSATT');
+test('taket räknar försök MED UTFALL: tre loser-etiketter, svag källa ⇒ SLÄPP; stark källa ⇒ fortsätt', () => {
+  const briefer = [{ koncept: 'k', annons: 'A1', lardom: 'L1' }, { koncept: 'k', annons: 'A2', lardom: 'L2' }, { koncept: 'k', annons: 'A3', lardom: 'L3' }];
+  const etiketter = ['A1', 'A2', 'A3'].map((annons) => ({ kod: 'ETIKETT', annons, etikett: 'LOSER' }));
+  assert.equal(konceptStatus('k', briefer, etiketter, { kalla: 'gissning' }).beslut, 'SLAPP');
+  assert.equal(konceptStatus('k', briefer, etiketter, { kalla: 'voc' }).beslut, 'FORTSATT');
+  assert.equal(konceptStatus('k', briefer.slice(0, 2), etiketter, { kalla: 'gissning' }).beslut, 'FORTSATT', 'två försök är under taket');
+});
+
+test('tre briefer UTAN etikett släpps aldrig — då väntar konceptet på utfall (2026-10-01: före det dömdes briefer som aldrig gått live)', () => {
+  const briefer = [{ koncept: 'k', annons: 'A1' }, { koncept: 'k', annons: 'A2' }, { koncept: 'k', annons: 'A3' }];
+  const s = konceptStatus('k', briefer, [], { kalla: 'gissning' });
+  assert.equal(s.beslut, 'VANTA_UTFALL');
+  assert.equal(s.med_utfall, 0);
+});
+
+test('ribban är förälderns etikett: en spend winner under en breakthrough-förälder räcker inte', () => {
+  const briefer = [{ koncept: 'k', annons: 'A1', parent: 'P' }, { koncept: 'k', annons: 'A2', parent: 'P' }, { koncept: 'k', annons: 'A3', parent: 'P' }];
+  const etiketter = [{ annons: 'P', etikett: 'BREAKTHROUGH' }, { annons: 'A1', etikett: 'SPEND_WINNER' }, { annons: 'A2', etikett: 'LOSER' }, { annons: 'A3', etikett: 'KPI_WINNER' }];
+  const s = konceptStatus('k', briefer, etiketter, { kalla: 'gissning' });
+  assert.equal(s.foralder, 'BREAKTHROUGH');
+  assert.equal(s.beslut, 'SLAPP');
+  const lyft = konceptStatus('k', briefer, [...etiketter, { annons: 'A2', etikett: 'BREAKTHROUGH' }], { kalla: 'gissning' });
+  assert.equal(lyft.beslut, 'FORTSATT', 'en iteration som når förälderns nivå bär konceptet vidare');
+});
+
+test('omdöpta annonser följer med: etiketten på det nya namnet räknas för den gamla briefen', () => {
+  const briefer = [{ koncept: 'k', annons: 'GAMMAL' }];
+  const s = konceptStatus('k', briefer, [{ annons: 'NY', etikett: 'SPEND_WINNER' }], { omdopt: [{ fran: 'GAMMAL', till: 'NY' }] });
+  assert.equal(s.beslut, 'FORTSATT');
+  assert.equal(s.utfall[0].annons, 'NY');
 });

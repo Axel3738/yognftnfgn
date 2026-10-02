@@ -678,11 +678,16 @@ export function roasEnsamt(text) {
  *  med "has no number" (mätt 2026-09-24, första /matstrumporkungen-ronden).
  *  Vinkeln blir konceptet, formatet avgör video/bild; ingen H-variant finns. */
 const MATSTRUMP_VIDEO = ['ugc', 'beforeafter', 'comparison', 'lifestyle', 'anim'];
+//  Sedan 2026-10-01 bär namnet kedjan efter numret (matstrumpor/namn.mjs MALL):
+//  `_h<k>` hookvariant, `_i<N>p<förälder>` iteration, `_im` imitation — utan det
+//  här stoppades varje iterationsbrief med "has no number". Hookvarianten blir
+//  H-varianten; utan den gäller versionen som förut.
 export function tolkaMatstrumporNamn(namn) {
-  const m = /^(MATSTRUMP_sushi)_([a-zåäö]+)_([a-zåäö]+)_(\d+)[a-z0-9]*_v(\d+)$/i.exec(String(namn ?? '').trim());
+  const m = /^(MATSTRUMP_sushi)_([a-zåäö]+)_([a-zåäö]+)_(\d+)[a-z0-9]*(?:_h(\d+))?(?:_i\d+p[0-9a-zåäö]+|_im)?_v(\d+)$/i.exec(String(namn ?? '').trim());
   if (!m) return null;
   const video = MATSTRUMP_VIDEO.includes(m[3].toLowerCase());
-  return { prefix: m[1], koncept: m[2].toUpperCase(), nummer: Number(m[4]), variant: video ? `H${m[5]}` : m[5], matstrumpor: true, format: m[3].toLowerCase() };
+  const variant = m[5] ?? m[6];
+  return { prefix: m[1], koncept: m[2].toUpperCase(), nummer: Number(m[4]), variant: video ? `H${variant}` : variant, matstrumpor: true, format: m[3].toLowerCase() };
 }
 function tolkaNamnAllaMonster(namn) {
   return tolkaMatstrumporNamn(namn) ?? tolkaNamn(namn);

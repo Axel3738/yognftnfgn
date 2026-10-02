@@ -14,20 +14,23 @@
 //   node matstrumpor/kor.mjs --ekonomi --marknad US   break-even per marknad ur cogs.json (landad kostnad) + ECB-kurs
 //   node matstrumpor/kor.mjs --aov [--dagar 30] mät AOV ur Shopify på riktigt
 //   node matstrumpor/kor.mjs --ko [--json]      Notion "To be Reviewed" → uppladdningsplan
-//   node matstrumpor/kor.mjs --namn <vinkel> <format> [antal]   nästa lediga namn
+//   node matstrumpor/kor.mjs --namn <vinkel> <format> [antal] [--iter <förälder>|--im] [--hookar <k>]   nästa lediga namn
 //   node matstrumpor/kor.mjs --kordag [--idag YYYY-MM-DD]   är det rond i dag? exit 0 ja, 2 nej
-//   node matstrumpor/kor.mjs --hamta [--ut <fil.json>]      avläsningen ur Meta (token) → jobbfil
-//   node matstrumpor/kor.mjs --dom <fil.json> [--json]      döm annonser ur en avläsning
-//   node matstrumpor/kor.mjs --status           lärdomar, briefer, brieftak, mix
+//   node matstrumpor/kor.mjs --hamta [--marknad NO] [--bara-se]   avläsningen ur Meta (token) → jobbfiler, Sverige + utlandet
+//   node matstrumpor/kor.mjs --dom <fil.json> [--json] [--logga]  döm annonser ur en avläsning (--logga skriver ETIKETT-raderna)
+//   node matstrumpor/kor.mjs --dom-alla [--json] [--logga]        samma för alla dagens avläsningar (Sverige + varje marknad)
+//   node matstrumpor/kor.mjs --arkiv            bygg arkivet: products/matstrumpor/arkiv.json + arkiv.md
+//   node matstrumpor/kor.mjs --uppladdad <annons> <annons-id> <adset> [--notion <id>] [--kalla <fil>] [--kreator <namn>] [--landning <url>]
+//   node matstrumpor/kor.mjs --status           lärdomar, briefer, brieftak, mix, hit rate, koncepten
 //   node matstrumpor/kor.mjs --rond-klar        logga ROND_KLAR (sist i ronden)
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { brytpunkter, rangordna, dom } from './ekonomi.mjs';
-import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKETT } from './etikett.mjs';
-import { brieftak, mix, skelett } from './lardom.mjs';
-import { nastaNummer_flera, bygg, tolka, adsetNyckel, samlaKandaNamn } from './namn.mjs';
+import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKETT, RANG, arUppgradering, gallandeEtiketter, hitRate } from './etikett.mjs';
+import { brieftak, mix, skelett, konceptStatus } from './lardom.mjs';
+import { nastaNummer_flera, bygg, tolka, adsetNyckel, samlaKandaNamn, nastaIterationPa } from './namn.mjs';
 import { hamtaKo, planera, hubbNamn } from './kon.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -86,6 +89,123 @@ export function skrivRad(rad, fil = LOGGFIL) {
   mkdirSync(dirname(fil), { recursive: true });
   appendFileSync(fil, `${JSON.stringify({ ...rad, skrivet: new Date().toISOString() })}\n`);
   return rad;
+}
+
+/** Etiketterna ur en jobbfil — vecka 1 för annonser utan etikett, och vecka
+ *  2–3 som UPPGRADERING när de ger en högre etikett än loggen (Evolve: en KPI
+ *  winner kan bli breakthrough vecka 2–3). Ren: loggen och break-even in,
+ *  raderna ut. Sänker aldrig en etikett. */
+export function etikettraderFor(jobb, { logg = [], breakEven = null, grindar, idag }) {
+  const galler = gallandeEtiketter(logg.filter((r) => r.kod === 'ETIKETT'));
+  const unga = [];
+  const etiketter = [];
+  for (const a of jobb.annonser ?? []) {
+    const fv = a.forsta_vecka;
+    if (fv && fv.komplett === false) { unga.push({ namn: a.namn, d0: a.d0, until: fv.until ?? null, dagar: fv.dagar_med_data, skal: fv.skal ?? null }); continue; }
+    const kamp = (v) => ({ spend_sek: v.kampanj_spend_sek, roas: v.kampanj_roas, spend_w0_sek: v.kampanj_spend_w0_sek, budget_d0: v.budget_d0, budget_d7: v.budget_d7, budgetandringar: v.budgetandringar });
+    const tidigare = galler.get(a.namn) ?? null;
+    const kandidater = [];
+    const e1 = fv
+      ? etikettera({ namn: a.namn, spend_sek: fv.spend_sek, kop: fv.kop, roas: fv.roas }, kamp(fv), breakEven, grindar)
+      : etikettera(a, jobb.kampanj ?? {}, breakEven, grindar);
+    kandidater.push({ ...e1, vecka: 1, fonster: fv ? `${fv.since}..${fv.until}` : (jobb.kampanj?.fonster ?? 'okänt'), hook_rate: fv?.hook_rate ?? a.hook_rate ?? null, hold_rate: fv?.hold_rate ?? a.hold_rate ?? null });
+    for (const n of [2, 3]) {
+      const v = a.veckor?.[n];
+      if (!v || !v.komplett) continue;
+      const e = etikettera({ namn: a.namn, spend_sek: v.spend_sek, kop: v.kop, roas: v.roas }, kamp(v), breakEven, grindar);
+      kandidater.push({ ...e, vecka: n, fonster: `${v.since}..${v.until}`, hook_rate: v.hook_rate ?? null, hold_rate: v.hold_rate ?? null });
+    }
+    // Det som ska loggas: vecka 1 om loggen saknar etikett (aldrig om den finns
+    // — en regeländring får inte skriva om historien), sedan varje senare vecka
+    // som är en UPPGRADERING mot det som gäller. Aldrig nedåt. En uppgradering
+    // ska BÄRA: spend winner/breakthrough, eller över grinden (300 kr / 3 köp).
+    // Mätt 2026-10-01: utan grinden blev tio annonser "KPI winner" vecka 2–3 på
+    // ETT köp för 18–117 kr — brus, inte Evolves "blev en vinnare senare".
+    const att = [];
+    let bas = tidigare?.etikett ?? null;
+    for (const k of kandidater) {
+      if (RANG[k.etikett] === undefined) continue;
+      if (k.vecka === 1 && tidigare) continue;
+      const bar = RANG[k.etikett] >= RANG.SPEND_WINNER || k.bedombar;
+      if (k.vecka === 1 || (arUppgradering(bas, k.etikett) && bar)) {
+        att.push(rad(k, k.vecka === 1 ? null : bas));
+        bas = k.etikett;
+      }
+    }
+    etiketter.push({ ...kandidater[0], d0: a.d0 ?? null, marknad: a.marknad ?? jobb.marknad ?? 'SE', aktiv: a.effective_status ? a.effective_status === 'ACTIVE' : undefined, konv_lpv: a.konv_lpv ?? null, senare_veckor: kandidater.slice(1).map((k) => ({ vecka: k.vecka, etikett: k.etikett })), redan_loggad: tidigare ? { etikett: tidigare.etikett, datum: tidigare.datum, vecka: tidigare.vecka ?? 1 } : null, att_logga: att });
+
+    function rad(k, fran) {
+      return { kod: 'ETIKETT', datum: idag, annons: a.namn, marknad: a.marknad ?? jobb.marknad ?? 'SE', etikett: k.etikett, vecka: k.vecka, bedombar: k.bedombar, andel: k.andel ?? null, tillvaxt: k.tillvaxt ?? null, fonster: k.fonster, spend_sek: k.spend_sek, kop: k.kop, roas: k.roas, orsak: k.motivering, ...(k.yttre_handelse ? { yttre_handelse: k.yttre_handelse } : {}), ...(fran ? { uppgradering_fran: fran } : {}) };
+    }
+  }
+  return { etiketter, unga };
+}
+
+/** Domen över EN jobbfil: vinstbidraget (bara Sverige — break-even per
+ *  utlandsmarknad finns inte än, 13 av 21 kampanjländer saknar kostnad i
+ *  cogs.json), etiketterna med uppgraderingar, de unga och hit rate.
+ *  logga ⇒ ETIKETT-raderna skrivs i loggen (aldrig dubbletter: etikettraderFor
+ *  läser loggen först). json: false = ingen fil, null = standardnamnet, en
+ *  sträng = den sökvägen. Returnerar domen så att testerna kan läsa den. */
+export function korDom(jobb, konfig, bryt, { json = false, logga = false, loggfil = LOGGFIL, utmapp = UTMAPP, tyst = false } = {}) {
+  const skriv = tyst ? () => {} : (s = '') => console.log(s);
+  if (jobb.konto && String(jobb.konto) !== String(konfig.meta.ad_account_id)) throw new Error(`Jobbfilen är läst ur konto ${jobb.konto}, konfigen säger ${konfig.meta.ad_account_id} — fel konto, dömer inget.`);
+  const marknad = jobb.marknad ?? 'SE';
+  const sverige = marknad === 'SE';
+  const be = sverige ? (bryt.gallande?.break_even_roas ?? null) : null;
+  const idag = jobb.datum ?? idagSE();
+  skriv('');
+  skriv(`━━ ${marknad} · ${jobb.kampanj?.namn ?? 'kampanj okänd'} ━━`);
+  let rank = null;
+  if (sverige) {
+    rank = rangordna(jobb.annonser ?? [], bryt, konfig.grindar);
+    skriv(`Vinstbidrag, ${jobb.kampanj?.fonster ?? '14 dagar'} (${rank.rader.length} bedömbara, ${rank.for_tidigt.length} för tidigt):`);
+    for (const r of rank.rader) skriv(`  ${(r.vinstbidrag_sek ?? 0).toFixed(0).padStart(7)} kr  ${r.namn}  CPA ${r.cpa_sek ?? '—'} · ${r.dom}${r.benchmark ? (r.skydd ? '  ★ BENCHMARK — dödas aldrig' : '  ★ RIKTMÄRKE (ingen går plus — inte skyddad)') : ''}`);
+    if (rank.for_tidigt.length) skriv(`  För tidigt (${rank.for_tidigt.length} under grinden): ${rank.for_tidigt.slice(0, 8).join(', ')}${rank.for_tidigt.length > 8 ? ' … (alla i --json)' : ''}`);
+  } else {
+    if (jobb.kampanj_start !== null) skriv(`Vinstbidrag: räknas inte för ${marknad} — break-even per marknad saknas (cogs.json, granskningen G-F08). Etiketterna kan därför aldrig bli BREAKTHROUGH, bara SPEND_WINNER med "break-even okänt".`);
+  }
+
+  const { etiketter, unga } = etikettraderFor(jobb, { logg: lasLogg(loggfil), breakEven: be, grindar: konfig.grindar, idag });
+  const nyaRader = etiketter.flatMap((e) => e.att_logga);
+  // En kampanj som inte startat: en rad, inte åtta (14 utlandskampanjer 2026-10-01).
+  if (!etiketter.length && jobb.kampanj_start === null) {
+    skriv(`Kampanjen har inte spenderat än — ${unga.length} annonser väntar, ingen etikett förrän första spenddagen + 7 dygn.`);
+    const ut = { datum: jobb.datum ?? null, marknad, break_even_roas: be, kampanj: jobb.kampanj ?? null, ranking: rank, etiketter, for_unga: unga, att_logga: [] };
+    if (json !== false) {
+      const fil = json ?? join(utmapp, `dom-${idag}${sverige ? '' : `-${marknad}`}.json`);
+      mkdirSync(dirname(fil), { recursive: true });
+      writeFileSync(fil, `${JSON.stringify(ut, null, 2)}\n`);
+    }
+    return ut;
+  }
+  const forsta = etiketter.filter((e) => !e.redan_loggad);
+  skriv('');
+  skriv(`Etiketter (annonsens egna veckor): ${formateraFrekvens(etiketter.filter((e) => e.etikett === ETIKETT.BREAKTHROUGH).length, etiketter.length)} breakthrough vecka 1 · ${forsta.length} nya · ${nyaRader.filter((r) => r.uppgradering_fran).length} uppgraderingar · ${etiketter.length - forsta.length} redan i loggen`);
+  for (const e of etiketter) {
+    const upp = e.att_logga.filter((r) => r.uppgradering_fran).map((r) => `vecka ${r.vecka}: ${r.uppgradering_fran} → ${r.etikett}`);
+    skriv(`  ${e.etikett.padEnd(15)} ${e.namn}  [${e.fonster}] ${e.motivering}${e.redan_loggad ? `  (loggad ${e.redan_loggad.datum} som ${e.redan_loggad.etikett})` : ''}${upp.length ? `  ⬆ ${upp.join(', ')}` : ''}`);
+    if (e.yttre_handelse) skriv(`      ⚠️ ${e.yttre_handelse}`);
+  }
+  if (unga.length) skriv(`  För unga för etikett (${unga.length}): ${unga.slice(0, 8).map((u) => `${u.namn} (${u.d0 ? `D0 ${u.d0}, ${u.dagar} dagar` : u.skal ?? 'inte startad'})`).join(', ')}${unga.length > 8 ? ' … (alla i --json)' : ''}`);
+  const galler = [...gallandeEtiketter([...lasLogg(loggfil).filter((r) => r.kod === 'ETIKETT'), ...nyaRader]).values()].filter((r) => (r.marknad ?? 'SE') === marknad);
+  skriv(`Hit rate ${marknad} (breakthrough + spend winner): ${hitRate(galler).text}`);
+
+  if (logga) {
+    for (const r of nyaRader) skrivRad(r, loggfil);
+    skriv(nyaRader.length ? `${nyaRader.length} ETIKETT-rader loggade (${marknad}).` : `Inga nya ETIKETT-rader för ${marknad}.`);
+  } else if (nyaRader.length) {
+    skriv(`${nyaRader.length} ETIKETT-rader väntar — kör med --logga för att skriva dem.`);
+  }
+
+  const ut = { datum: jobb.datum ?? null, marknad, break_even_roas: be, kampanj: jobb.kampanj ?? null, ranking: rank, etiketter, for_unga: unga, att_logga: nyaRader };
+  if (json !== false) {
+    const fil = json ?? join(utmapp, `dom-${idag}${sverige ? '' : `-${marknad}`}.json`);
+    mkdirSync(dirname(fil), { recursive: true });
+    writeFileSync(fil, `${JSON.stringify(ut, null, 2)}\n`);
+    skriv(`Domen som JSON: ${fil}`);
+  }
+  return ut;
 }
 
 /** Senaste avläsningen på disk (`output/avlasning-YYYY-MM-DD.json`), eller null.
@@ -218,7 +338,19 @@ async function main() {
     if (hubbFel || !avlasning) console.error('⚠️  En källa saknas — numret kan krocka med en rad som bara finns där. Kör --hamta och sätt NOTION_TOKEN innan namnet används.');
     if (!kanda.length) console.error('⚠️  Inga kända namn alls — kör /matstrumpor som läser kontot + hubben först, annars kan numret krocka.');
     if (!hubbFel && avlasning) writeFileSync(filen, `${JSON.stringify(kanda, null, 1)}\n`); // ögonblicksbilden växer, krymper aldrig
-    for (const n of nastaNummer_flera(kanda, antal)) console.log(bygg({ vinkel, format, nummer: n }, konfig));
+    // Kedjan (Evolve ITER#N_BATCH#ORIG): --iter <förälder> = iteration på
+    // föräldern (löpnummer, alias eller fullt namn), numret räknat ur namnen +
+    // BRIEF-raderna; --im = imitation; --hookar <k> = k hookvarianter per nummer.
+    const foralder = varde('--iter');
+    const imitation = har('--im');
+    const hookar = Number(varde('--hookar', 0));
+    let iteration = foralder ? nastaIterationPa(foralder, { kandaNamn: kanda, briefrader: lasLogg().filter((r) => r.kod === 'BRIEF') }, konfig) : null;
+    for (const n of nastaNummer_flera(kanda, antal)) {
+      const bas = { vinkel, format, nummer: n, imitation, ...(foralder ? { iteration, foralder } : {}) };
+      if (hookar > 0) for (let h = 1; h <= hookar; h++) console.log(bygg({ ...bas, hook: h }, konfig));
+      else console.log(bygg(bas, konfig));
+      if (foralder) iteration++;
+    }
     return;
   }
 
@@ -267,60 +399,85 @@ async function main() {
     // proxyn först (tools/meta-lib.mjs). Funktionen återvänder aldrig i så fall.
     const { säkerställProxy } = await import('../tools/meta-lib.mjs');
     säkerställProxy();
-    const { hamtaAvlasning, sammanfattning } = await import('./meta.mjs');
+    const { hamtaAvlasning, sammanfattning, utlandskampanjer } = await import('./meta.mjs');
+    const { laggTillMatningar } = await import('./arkiv.mjs');
     const idag = varde('--idag', idagSE());
-    const ut = varde('--ut', join(UTMAPP, `avlasning-${idag}.json`));
-    console.error(`Läser ${konfig.meta.ad_account_namn} (${konfig.meta.ad_account_id}) via META_ACCESS_TOKEN …`);
-    const jobb = await hamtaAvlasning(konfig, { idag });
-    mkdirSync(dirname(ut), { recursive: true });
-    writeFileSync(ut, `${JSON.stringify(jobb, null, 2)}\n`);
-    console.log(sammanfattning(jobb));
-    console.log(`Jobbfil: ${ut}  →  node matstrumpor/kor.mjs --dom ${ut}`);
+    // Sverige + varje utlandskampanj ur annonser/lage.json (sedan 2026-10-01 —
+    // före det läste ronden bara den svenska kampanjen och utlandet fick aldrig
+    // en etikett). --marknad <KOD> läser en, --bara-se bara Sverige.
+    const lage = JSON.parse(readFileSync(join(ROT, 'marknader', 'annonser', 'lage.json'), 'utf8'));
+    const se = { id: konfig.meta.kampanj.id, namn: konfig.meta.kampanj.namn, marknad: 'SE' };
+    let mal = [se, ...(har('--bara-se') ? [] : utlandskampanjer(lage))];
+    if (varde('--marknad')) mal = mal.filter((m) => m.marknad === String(varde('--marknad')).toUpperCase());
+    if (!mal.length) throw new Error(`Ingen kampanj för marknaden ${varde('--marknad')} i lage.json.`);
+    console.error(`Läser ${konfig.meta.ad_account_namn} (${konfig.meta.ad_account_id}) via META_ACCESS_TOKEN — ${mal.length} kampanjer: ${mal.map((m) => m.marknad).join(', ')} …`);
+    const fel = [];
+    for (const m of mal) {
+      const ut = m.marknad === 'SE' ? varde('--ut', join(UTMAPP, `avlasning-${idag}.json`)) : join(UTMAPP, `avlasning-${idag}-${m.marknad}.json`);
+      try {
+        const jobb = await hamtaAvlasning(konfig, { idag, kampanjKalla: m });
+        mkdirSync(dirname(ut), { recursive: true });
+        writeFileSync(ut, `${JSON.stringify(jobb, null, 2)}\n`);
+        const n = laggTillMatningar(jobb);
+        console.log(sammanfattning(jobb));
+        console.log(`  Jobbfil: ${ut} · ${n} nya rader i arkivets mätningar`);
+      } catch (e) {
+        fel.push(`${m.marknad}: ${e.message}`);
+        console.log(`  ⚠️ [${m.marknad}] gick inte att läsa: ${e.message}`);
+      }
+    }
+    if (fel.length) console.log(`⚠️ ${fel.length} av ${mal.length} kampanjer lästes inte — skriv det i rapporten.`);
+    console.log(`Nästa: node matstrumpor/kor.mjs --dom-alla --json --logga  ·  node matstrumpor/kor.mjs --arkiv`);
+    if (fel.length === mal.length) process.exitCode = 1;
     return;
   }
 
-  if (har('--dom')) {
-    const jobb = JSON.parse(readFileSync(varde('--dom'), 'utf8'));
-    if (jobb.konto && String(jobb.konto) !== String(konfig.meta.ad_account_id)) throw new Error(`Jobbfilen är läst ur konto ${jobb.konto}, konfigen säger ${konfig.meta.ad_account_id} — fel konto, dömer inget.`);
+  if (har('--dom') || har('--dom-alla')) {
+    let filer;
+    if (har('--dom-alla')) {
+      const sista = senasteAvlasning();
+      if (!sista) throw new Error('Ingen avläsning på disk — kör --hamta först.');
+      filer = readdirSync(UTMAPP).filter((f) => f.startsWith(`avlasning-${sista.datum}`) && f.endsWith('.json')).sort().map((f) => join(UTMAPP, f));
+    } else {
+      filer = [varde('--dom')];
+    }
     const b = visaEkonomi(konfig);
-    const be = b.gallande?.break_even_roas ?? null;
-    console.log('');
-    const rank = rangordna(jobb.annonser ?? [], b, konfig.grindar);
-    console.log(`Vinstbidrag, ${jobb.kampanj?.fonster ?? '14 dagar'} (${rank.rader.length} bedömbara, ${rank.for_tidigt.length} för tidigt):`);
-    for (const r of rank.rader) {
-      console.log(`  ${(r.vinstbidrag_sek ?? 0).toFixed(0).padStart(7)} kr  ${r.namn}  CPA ${r.cpa_sek ?? '—'} · ${r.dom}${r.benchmark ? (r.skydd ? '  ★ BENCHMARK — dödas aldrig' : '  ★ RIKTMÄRKE (ingen går plus — inte skyddad)') : ''}`);
-    }
-    if (rank.for_tidigt.length) console.log(`  För tidigt (${rank.for_tidigt.length} under grinden): ${rank.for_tidigt.slice(0, 8).join(', ')}${rank.for_tidigt.length > 8 ? ` … (alla i --json)` : ''}`);
+    // --json <fil> gäller bara en enskild --dom; --dom-alla skriver dom-<datum>[-<KOD>].json.
+    const efter = arg[arg.indexOf('--json') + 1];
+    const json = !har('--json') ? false : (!har('--dom-alla') && efter && !efter.startsWith('--') ? efter : null);
+    for (const fil of filer) korDom(JSON.parse(readFileSync(fil, 'utf8')), konfig, b, { json, logga: har('--logga') });
+    return;
+  }
 
-    // Etiketten sätts på annonsens EGNA första vecka (etikett.mjs) — den ligger
-    // i `forsta_vecka` när jobbfilen kommer ur --hamta. En handskriven jobbfil
-    // utan det fältet etiketteras som förut, på de tal som står i raden.
-    // En etikett skrivs EN gång: annonser som redan har en ETIKETT-rad i loggen
-    // visas med den, så ingen rond etiketterar om.
-    const loggade = new Map(lasLogg().filter((r) => r.kod === 'ETIKETT' && r.annons).map((r) => [r.annons, r]));
-    const unga = [];
-    const etiketter = [];
-    for (const a of jobb.annonser ?? []) {
-      const fv = a.forsta_vecka;
-      if (fv && fv.komplett === false) { unga.push({ namn: a.namn, d0: a.d0, until: fv.until, dagar: fv.dagar_med_data }); continue; }
-      const e = fv
-        ? etikettera({ namn: a.namn, spend_sek: fv.spend_sek, kop: fv.kop, roas: fv.roas, d0: a.d0 }, { spend_sek: fv.kampanj_spend_sek, roas: fv.kampanj_roas, budget_d0: fv.budget_d0, budget_d7: fv.budget_d7 }, be, konfig.grindar)
-        : etikettera(a, jobb.kampanj ?? {}, be, konfig.grindar);
-      const tidigare = loggade.get(a.namn) ?? null;
-      etiketter.push({ ...e, d0: a.d0 ?? null, fonster: fv ? `${fv.since}..${fv.until}` : (jobb.kampanj?.fonster ?? 'okänt'), aktiv: a.effective_status ? a.effective_status === 'ACTIVE' : undefined, hook_rate: fv?.hook_rate ?? a.hook_rate ?? null, hold_rate: fv?.hold_rate ?? a.hold_rate ?? null, konv_lpv: a.konv_lpv ?? null, redan_loggad: tidigare ? { etikett: tidigare.etikett, datum: tidigare.datum } : null });
-    }
-    const nya = etiketter.filter((e) => !e.redan_loggad);
-    console.log('');
-    console.log(`Etiketter (annonsens egna första vecka): ${formateraFrekvens(etiketter.filter((e) => e.etikett === ETIKETT.BREAKTHROUGH).length, etiketter.length)} breakthrough · ${nya.length} nya att logga, ${etiketter.length - nya.length} redan i loggen`);
-    for (const e of etiketter) console.log(`  ${e.etikett.padEnd(15)} ${e.namn}  [${e.fonster}] ${e.motivering}${e.redan_loggad ? `  (redan loggad ${e.redan_loggad.datum} som ${e.redan_loggad.etikett}${e.redan_loggad.etikett !== e.etikett ? ' — loggen gäller, ändras aldrig utom till BREAKTHROUGH' : ''})` : ''}`);
-    if (unga.length) console.log(`  För unga för etikett (${unga.length}, första veckan inte slut): ${unga.slice(0, 8).map((u) => `${u.namn} (D0 ${u.d0}, ${u.dagar} dagar)`).join(', ')}${unga.length > 8 ? ' … (alla i --json)' : ''}`);
-    if (har('--json')) {
-      const efter = arg[arg.indexOf('--json') + 1];
-      const ut = efter && !efter.startsWith('--') ? efter : join(UTMAPP, `dom-${jobb.datum ?? idagSE()}.json`);
-      mkdirSync(dirname(ut), { recursive: true });
-      writeFileSync(ut, `${JSON.stringify({ datum: jobb.datum ?? null, break_even_roas: be, kampanj: jobb.kampanj ?? null, ranking: rank, etiketter, for_unga: unga }, null, 2)}\n`);
-      console.log(`Domen som JSON: ${ut}`);
-    }
+  if (har('--arkiv')) {
+    const { byggArkiv, arkivMarkdown, lasMatningar, lasTaggar, ARKIV_JSON, ARKIV_MD } = await import('./arkiv.mjs');
+    const logg = lasLogg();
+    const omdopt = new Map(logg.filter((r) => r.kod === 'OMDOPT').map((o) => [o.fran, o.till]));
+    const taggar = new Map();
+    for (const br of logg.filter((r) => r.kod === 'BRIEF' && r.brief)) taggar.set(omdopt.get(br.annons) ?? br.annons, await lasTaggar(br.brief));
+    const a = byggArkiv({ konfig, logg, matningar: lasMatningar(), taggar, idag: varde('--idag', idagSE()) });
+    mkdirSync(dirname(ARKIV_JSON), { recursive: true });
+    writeFileSync(ARKIV_JSON, `${JSON.stringify(a, null, 1)}\n`);
+    writeFileSync(ARKIV_MD, arkivMarkdown(a));
+    console.log(`Arkivet: ${a.annonser_totalt} annonser, ${a.etiketterade} med etikett · hit rate ${a.hit_rate}`);
+    console.log(`  koncept: ${a.koncept.map((k) => `${k.koncept} ${k.beslut} (${k.med_utfall}/${k.briefer} med utfall)`).join(' · ') || 'inga'}`);
+    console.log(`  kedjor: ${a.kedjor.map((k) => `${k.foralder} → ${k.barn.length}`).join(' · ') || 'inga'}`);
+    console.log(`  skrivet: ${ARKIV_JSON} + ${ARKIV_MD}`);
+    return;
+  }
+
+  if (har('--uppladdad')) {
+    // UPPLADDAD skrivs av koden, inte med node -e (Matstrumpors uppladdning
+    // 25/9 skrev inga rader alls — hål i loggen som arkivet inte kan läsa).
+    const i = arg.indexOf('--uppladdad');
+    const [annons, annonsId, adset] = [arg[i + 1], arg[i + 2], arg[i + 3]];
+    if (!annons || !/^\d{10,}$/.test(String(annonsId ?? '')) || !adset || adset.startsWith('--')) throw new Error('--uppladdad vill ha <annonsnamn> <annons-id (siffror)> <adset-nyckel>.');
+    if (!konfig.meta.adsets[adset]) throw new Error(`Adset-nyckeln "${adset}" finns inte i konfig.meta.adsets (${Object.keys(konfig.meta.adsets).join(', ')}).`);
+    if (lasLogg().some((r) => r.kod === 'UPPLADDAD' && r.annons_id === String(annonsId))) { console.log(`UPPLADDAD för ${annonsId} finns redan i loggen — skriver inte en till.`); return; }
+    const t = tolka(annons);
+    const rad = { kod: 'UPPLADDAD', datum: varde('--idag', idagSE()), annons, annons_id: String(annonsId), adset, typ: t?.typ ?? null, foralder: t?.foralder ?? null, ...(varde('--notion') ? { notion: varde('--notion') } : {}), ...(varde('--kalla') ? { kalla: varde('--kalla') } : {}), ...(varde('--kreator') ? { kreator: varde('--kreator') } : {}), ...(varde('--landning') ? { landning: varde('--landning') } : {}) };
+    skrivRad(rad);
+    console.log(`UPPLADDAD loggad: ${annons} (${annonsId}) → ${adset}`);
     return;
   }
 
@@ -331,11 +488,24 @@ async function main() {
     const sedanRond = logg.findLastIndex?.((r) => r.kod === 'ROND_KLAR') ?? -1;
     const nya = sedanRond > -1 ? logg.slice(sedanRond).filter((r) => r.kod === 'LARDOM').length : lardomar.length;
     const tak = brieftak({ lardomarSedanForraRonden: nya, kadensAntal: konfig.kadens.briefer_per_rond });
-    const levande = levandeBreakthrough(logg.filter((r) => r.kod === 'ETIKETT'), new Date().toISOString().slice(0, 10));
-    console.log(`Lärdomar totalt: ${lardomar.length} · sedan förra ronden: ${nya}`);
+    const etikettrader = logg.filter((r) => r.kod === 'ETIKETT');
+    const levande = levandeBreakthrough(etikettrader, new Date().toISOString().slice(0, 10));
+    const galler = [...gallandeEtiketter(etikettrader).values()];
+    // Brieftaket räknar SKRIVNA lärdomstexter (unika id), inte loggrader —
+    // 2026-09-30 gav en enda text om ett svultet adset elva rader och tak 11.
+    const unikaNya = new Set((sedanRond > -1 ? logg.slice(sedanRond) : logg).filter((r) => r.kod === 'LARDOM').map((r) => r.id ?? r.annons)).size;
+    const takUnika = brieftak({ lardomarSedanForraRonden: unikaNya, kadensAntal: konfig.kadens.briefer_per_rond });
+    const omdopt = logg.filter((r) => r.kod === 'OMDOPT');
+    console.log(`Lärdomar totalt: ${lardomar.length} rader · sedan förra ronden: ${nya} rader, ${unikaNya} skrivna texter`);
     console.log(`Briefer totalt: ${briefer.length} · på lärdom: ${briefer.filter((b) => b.lardom).length}`);
-    console.log(`Brieftak: ${tak.antal} — ${tak.orsak}`);
-    console.log(`Mix: ${JSON.stringify(mix(tak.antal, levande.length > 0))}`);
+    console.log(`Brieftak: ${takUnika.antal} — ${takUnika.orsak}${tak.antal !== takUnika.antal ? ` (räknat på loggrader hade det blivit ${tak.antal})` : ''}`);
+    console.log(`Mix: ${JSON.stringify(mix(takUnika.antal, levande.length > 0))}`);
+    console.log(`Hit rate (breakthrough + spend winner): ${hitRate(galler).text}`);
+    for (const k of [...new Set(briefer.map((x) => x.koncept).filter(Boolean))]) {
+      const rader = briefer.filter((x) => x.koncept === k);
+      const s = konceptStatus(k, rader, etikettrader, { kalla: rader[0]?.kalla ?? null, omdopt });
+      console.log(`  koncept ${k}: ${s.beslut} — ${s.motivering}`);
+    }
     return;
   }
 

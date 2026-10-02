@@ -1,0 +1,493 @@
+# Evolve-kursen på Skool — kursträdet (läst 2026-10-01)
+
+Gruppen heter `evolve-8484`. Lektionerna nås som
+`https://www.skool.com/evolve-8484/classroom/<kurs-id>?md=<lektions-id>`.
+Hämtas med `tools/skool/` (inloggning via `SKOOL_EMAIL`/`SKOOL_PASSWORD` i miljön).
+📝 = lektionen har egen text (inte bara video). Siffran är antal tecken.
+
+## 👣 Evolve (Start Here) — kurs-id `fc758841`
+
+- **👋 Start Here** (7 lektioner)
+  - 🆕 Start Here: Overview Of Evolve `e54ddf7d20df4d98b35242f57a90479f`
+  - 🆕 Win The $100k/Day Award `cf9604e75b16460aae5b0b8ec80c6ebb`
+  - 90 Seconds Tip to Hit $1m/Month `7003d7c8a1994ab295a1b787bb782c82`
+  - 📌 100+ Winning Ads Document `54a43b1a88b94f1782301301daff6c7d` 📝2319
+  - 📌 100+ Hook Templates (From Ads Doc) `62fdfe26f55b41268e010cd184296525`
+  - 📌 13 Winning Static Ad Templates `9cee537ef73747e4acde809f54c34675`
+  - 📌 Evolve Master Prompt Doc `401121b5787049fab4af205440eef34d` 📝950
+- **🧠 Why Ads Work (Psychology)** (9 lektioner)
+  - Overview Of Psychology `d887a167b24043c487cf32803719d945`
+  - Market Desires `3aa339c281184d27bfaf8c7733e920fc`
+  - Market Awareness `ca4c23ad36f7412082a43ad6a2ece72e`
+  - Understanding Unaware + Awareness Levels `a09b66a777d4414abff0865a4ef1cd04`
+  - Market Sophistication `3586a6444715460aa24430fa4c301e32`
+  - 💥 Action Item: Practicing The Core 3 `2cfc25e667004f7bad836ef4f21d169e`
+  - Rule Of 1 - 1 Desire, Avatar, Message `aa88c5a10bbd43199f5e43204710b648`
+  - Market Identification `bf175963290e4e738f5e224e63568500`
+  - Market Belief `e25d4ec1ddbf4becbb2821d4c8405e22`
+- **🔍 What Ads To Make (Research)** (39 lektioner)
+  - Overview & Self Onboarding `0b75c47cdc46497b8ede9fcbdb7417e0`
+  - 💥 Action Item: Self Onboarding `0256879849c94a71800c3cbed6ec609b`
+  - Getting Ready To Do Research - Part 1 `18b28d2531fd4b05b762e5274ef42951`
+  - Getting Ready To Do Research - Part 2 `7c861120066d46c0ad1a236fda793277`
+  - 💥 Action Item: Copy Research Document `0708066f19e648cfa55282609a1cebb4`
+  - Understanding Your Product - Part 1 `9b816b9f6cb645daa9d891d3b3354499`
+  - Understanding The Product - Part 2 `a0e31bbe32d64364bbc23c16abbbc9ee`
+  - 💥 Action Item: Understanding Product `c291bcfd351241b5acf9ba6f31e89933`
+  - Google Research - Part 1 `73c3b494226d4ab0a866d6b753043559`
+  - Google Research - Part 2 `01a5c37745de4e8f8e3b58bb68dcf8c1`
+  - 💥 Action Item: Google Research `e05ef724189449558fe1f0ab6bf1082a`
+  - Amazon Research - Part 1 `cc6cffb173d54fb29d797c40172f07ae`
+  - Amazon Research - Part 2 `318a5922b866405f8dc820605897ac2f`
+  - 💥 Action Item: Amazon Research `49cdb443dc9b4c16926ac2985b2fccff`
+  - Reddit Research `9fabdefdbc5c48dc91eae2a7c5f005af`
+  - 💥 Action Item: Reddit Research `c8c0a4d42a0c499e847f5205bc1467dc`
+  - YouTube Research `8f7497df82c34e7dad294a361c43602a`
+  - 💥 Action Item: YouTube Research `0d30a7ba064545eabfdef30bd85a240f`
+  - Competitor Research - Part 1 `72d7d63017fa4aea8ed19dd4930afc75`
+  - Competitor Research - Part 2 `9e09224fbfcd464eb1243790f5829fae`
+  - 💥 Action Item: Competitor Research `e74dacb417f645feae24dfb0a02b81ed`
+  - Facebook Research - Part 1 `29d1d5c3bd9b4265a2a696a56183d600`
+  - Facebook Research - Part 2 `c3f5f854e50249ada08f2055138ab34b`
+  - 💥 Action Item: Facebook Research `81964e7967b74cca862b397c5d6bd247`
+  - Creative Research - Part 1 (Atria) `cb504f6fd6e345e29432ca8ac6a87fbd`
+  - Creative Research - Part 2 `94a16470397d4b6a884ed055c0831857`
+  - 💥 Action Item: Creative Research `ec9efe7e29ca41bd897505e5f0150501`
+  - TikTok Research `6e07bc93a22942e897cf3a005708c228`
+  - 💥 Action Item: TikTok Research `6c65e0d4a6644e16b5abe8feed50e20c`
+  - Ad Account Research `332d9630a1954cb9971035bdd90111ce`
+  - 💥 Action Item: Ad Account Research `d3fdb1b9e3384465866d78b6e39ff654`
+  - Understanding Other Desires `c9455174c0714f789b7b5956e018954e`
+  - Understanding Objections `4f2ee3db18ac465ab9c1a3a68ae394fa`
+  - 💥 Action Item: Objections & Other Desires `da09a31e291f412686f9718609ea3082`
+  - Cleaning Up The Research Doc `2a75c2d3753e4263b43fb3f56cd2093b`
+  - 💥 Action Item: Clean Up The Research Doc `570375eaa827441aa1535c33621e6968`
+  - 🆕 Ad ONLY Instagram Research `c9ecaabcb0374b118aea574c4b76b7f7`
+  - Answer The Public - Research `4ecf172defb846f2b7c9b7152ce1d8ac`
+  - Customer Phone Call Research `6528606e3f4b4c628648cd98e335bb49`
+- **🗂️ How To Structure Insights (Organization)** (22 lektioner)
+  - 🆕 Organizing Insights Overview (Must-Watch) `302afc1fd5e948cfa215d9bdf057d429` 📝441
+  - Understanding Your Product - Part 1 `4df56e9549e94fbf84e93f7f0f0c4301`
+  - Understanding Your Product - Part 2 `b623bc975e224b13822a517b743fc3b8`
+  - Understanding Your Product - Part 3 `f49ffa01a9214d169e61d85042fbc229`
+  - 💥 Action Item: Complete Understanding Product Doc `ebe661abfdad47e7bff7956fa1a82012`
+  - Understanding & Applying Desire - Part 1 `e0c823c0e59c483497c7238348038c40`
+  - The Desire Calendar - Part 2 `97c4689046624898bb4bc916d8f03afd`
+  - How To Find Desires - Part 3 `8decdfed5f15476a89aa8db727ff153a`
+  - 💥 Action Item: Start Your Desire Hunt `de88e9caa2fc4879a9cafca467bef662`
+  - Understanding Market Sophistication - Part 1 `acf41a396aa643afa13d9b2f40149d2c`
+  - How To Find & Apply New Mechanisms - Part 2 `b3b1c0ae3db14c368453214db7989630`
+  - 💥 Action Item: Find New Mechanisms `83a6930385f64507b35d7182cc526fc0`
+  - How To Find & Apply New Information - Part 3 `7d9c9eab12d44136956da3db820460d7`
+  - 💥 Action Item: Find New Information `b33d72d8c3d84d56b91c2e936e66d62c`
+  - How To Find & Apply New Identities* - Part 4 `b0fea666def640469564402f78a6dbb6`
+  - ⭐️ The Evolve Avatar Training `35bb7031da9243c89e91ce67d71d8199` 📝473
+  - Evolve Avatar Training (AI Podcast Version) `7edfc31c14d84a048a394954a7a06df5`
+  - 💥 Action Item: Take a Breather `141d09fd4187488a84825f9677b226f3`
+  - How To Build Core Avatars `116b0e254a394a6791a6f420b72a5d17`
+  - 💥 Action Item: Identify Your Core Avatars `1ec33cf47cf0437c90e3217992842700`
+  - How To Build Sub Avatars `7e864bb6279b472ba04a79ae9182a5d1`
+  - 💥 Action Item: Create Your Sub Avatars `e3dfb56279e74626b337e4efe775d19c`
+- **📋 How To Plan Ads (Preparation)** (9 lektioner)
+  - Understanding Ad Definitions `0681166411a645678fe44adf7fd12f63` 📝6091
+  - How To Come Up With Ad Angles `789f1a823fb344cd853be54bbefc1627` 📝941
+  - 💥 Action Item: Come Up With New Ad Angles `541b06da32cf471c90de664165cabe08`
+  - The 3 Testing Methods - Part 1 `9c906e45e75f49719c00b86ed15305cb` 📝1174
+  - The 3 Testing Methods - Part 2 `ee2cf569ee1b426aa20e86a5bb32d158`
+  - Putting All The Planning Together (Examples) `5f3387f974b7444eba87c3f70b49b8eb`
+  - 💥 Action Item: Plan Your 5-10 First Concepts `078deeb1b9074eac8df10deb9e65b06c`
+  - ⭐️ The 3.0 Evolve Growth Guide `9e628d488bb74457974c81de6ccaca79` 📝826
+  - 💥 Action Item: Make a Copy + Add Your Concepts `77c6acd8243e47b2980dca6fe5d782b9`
+- **🎨 How To Make Ads (Execution)** (5 lektioner)
+  - 🆕 Overview Of How To Make Ads `1539f8a1a3e24204b0e1510ee53052c7`
+  - The Execution Problem `9cd56efa94874957bb434115207d19cb`
+  - Every Ad Format That You Can Use `11e639fbb21b4b2aa156d9abf14a9db6` 📝940
+  - 🆕 How To Get A-Players Editors & Content `542a4102971a4d328b9853609004422a` 📝13141
+  - 💥 Action Item: Go To Copywriting Program `37457e5dd0594f91a3888571b6548fe6`
+- **🏃‍♂️ How To Run Ads (Testing)** (18 lektioner)
+  - Evolve Facebook Ads Philosophy `74a7b6d0157b4565ad1dab65cb006edc`
+  - 🆕 Full Media Buying Strategy Outline (2026) `a5f24067d676464bbb3039a8b59485d2` 📝1305
+  - How To Set Up a 3:2:2 Campaign `7547f36b453945698d08ca894a78dfce` 📝7876
+  - How To Test Landing Pages 3:2:2:2 `253e34ba0f364083aebeb8670beae3c8`
+  - 🆕 How To Set Up Zombie/Graveyard Campaign `4c993c9e61e2498f93f575a1dd102c80`
+  - 🆕 How To Set Up ABO Scaling Campaign `f02870fb60314c14bcc9a71b14206a88`
+  - How To Set Up Raw Content Campaign `3867e46ba63049f0aab13ff6dfabb11e`
+  - 💥 Action Item - Launch Your Campaigns `f5a68b846af340dcb90b2e5f25b05e8e`
+  - How To See Ads Performance + Our Columns `1b74584216754b60a3415aca2f1a76b0` 📝3208
+  - How To Set Targets & KPIs `219493c0853f47c68cd9051cf282700c` 📝2720
+  - 💥 Action Item - Set Your Targets & KPIs `f6eefef2ac3645c7a3844c7451d26781`
+  - How To Duplicate Ads Into Champions (NEW WAY) `fce47cd24658438da90fdfc48d0696aa`
+  - How To Find Any Post IDs For Winning Ads `ace009811ddf4a1ba568e8e47c95b56d`
+  - 💥 Action Item - Add Your Winning Ads `38307a9d3f2a41828779a68577d7b7b6`
+  - Turning On "Seasonal" Ads For Quick Performance `7a349fe0741d4d828cac6be1dc532441`
+  - How To Protect Against "Bad Ads" Over Spending `7adccf4669814688b0432b8cc75c4202`
+  - How To Set Up A Promo Campaign `bf00d852cf024df28a256e9282d9c536`
+  - How To Set Up Naming Templates `9d61c97ac26848e5b289abc7e505ca07` 📝517
+- **📈 How To Manage Ads (Scaling)** (12 lektioner)
+  - 🆕 Winning Ads Definition - Part 1 `1ed82f9a19544011892cfdf3475dff68` 📝474
+  - 🆕 Winning Ads Definition - Part 2 `ea096def27c947fbba10562ed71614d4` 📝474
+  - 🆕 Winning Ad Definitions ($0/mo-$1M/mo) `0ceee33b1d4a47499591e9d964ef3f51` 📝6441
+  - 🆕 How To Generate + Submit Winning Ad Report `2b655c7e3e734e0988304b28165477f1` 📝2422
+  - 💥 Action Item - Generate + Submit Your Reports `2393e80c74194d48a4589bb7a5118016`
+  - How to Scale Facebook Ads (Up & Down) `171fc4bbb63b45179b5db6713002ca29`
+  - How To Understand Facebook Ads Attribution `5f212845df45495f829e06e7718a3579`
+  - How To View Attribution in TW (Triple Whale) `20e9cfaafa67494896af194ea139e513`
+  - (Advanced) Surf Scaling Method `7e482b9f37044353b26b7cb52c42d6c7`
+  - 💥 Action Item - Scale Your Ads `67a46241b2ac4ce98e92336f8210f3a8`
+  - How To See If You Should Turn Off High-Spend Ads `e5516d2a7ee04eee9515f74d19e9a14b`
+  - How To Deal With Roller Coaster Performance `d655e439e419473eb3c98159ab5a4ae2`
+- **🔁 How To Analyze Ads (Feedback)** (12 lektioner)
+  - How To Do Learnings - Part 1 (Losers) `e95724a477e0473e8bba48eaf2101f06` 📝44
+  - How To Do Learnings - Part 2 (Winning Ads) `f0c516983c2a49d482896657bc556a22` 📝963
+  - How To Do Learnings - Part 3 (Losers) `ec07c1b8c32d438e84de4ca1814dbb24`
+  - How To Do Learnings - Part 4 (Winning Ads) `ae9da7b722f74f4983064a2614607b5a`
+  - How To Pull Frameworks From Ads `6625783e3dde4c64a44b57609ba25a25` 📝1223
+  - How To Do Learnings - Part 5 (Winning Ads) `64f690d3d5484c0eb891b1ac61d92da2`
+  - How To Do Learnings - Questions `7d9d6bbb3f6f419b94cab6c24f3f7a0a`
+  - 💥 Action Item - Review Your Ads `1572614d52a8489c8debcacbbfcc69fc`
+  - How To Rewrite Losing Ads Into Winners `a142814a717d4d28b0e8441666c5c916` 📝563
+  - How To Do Iterations & Variations (Live Example) `5cb8602e34aa4112a44756cf5831a918` 📝44
+  - 💥 Action Item - Create Some Variations `6732d7ac0b454dde835c78bbbcb63cf0`
+  - Winning Humidifier Ad - Learnings (Shaun) `94655d684f94491da4db247d20e7c768`
+- **🕺 How To Get UGC (Content)** (30 lektioner)
+  - 🆕 Evolve 2026 UGC Strategy (Update) `a15ffa74112f4a8b90672b8c74f47ebb` 📝678
+  - 🆕 2026 Volume Strategy (EcomBounty) `657fabad81bf41eaab4e33c31c3e1be3` 📝878
+  - 🆕 How To Get Viral UGC Inspo For Creators & Ads `a4db7083d9654e6590cfcf06b14e3393` 📝478
+  - Why Content Is So Important - Part 1 `d28dbd8f47e84fc4bcd23975024462fe`
+  - Why Content Is So Important - Part 2 `d5126a0662d940a5989146158564be3a`
+  - Does Insense Still Work? `b0626797f4fe4d4bb4c6fa203d51a910`
+  - UGC Content Overview - Part 1 `0fe593e797bb4e11a8c5513070b4c9c7`
+  - UGC Content Overview - Part 2 `c47010acf836481b89f17b53b8a97e80`
+  - 💥 Action Item: Sign Up For Insense `3f2248ef663348dbbc8fbfa6f606ade7`
+  - How To Add a New Brand To Insense `d9ce13b8d72c41baabd1432fb2e47138`
+  - 💥 Action Item: Add Your Brand To Insense `be6830e594ad45f0bd206f5583fd9f01`
+  - How To Create an Insense Campaign `233c8dad8e9f445d942f42794b1e7e34`
+  - 💥 Action Item: Launch Your First Insense Campaign `1ef91c00c8174980b2fb83d47d842d57`
+  - How To Process Creators & Add To Shortlist `4003131159c64d6a80c8c4868a262ce8` 📝462
+  - How To Download Creators & Upload To Sheet `4008acbbb5f7446e9c33c6ca28a431bd`
+  - How to Hire Approved Creators - Part 1 `35c3e14544694747bd4099e81971d429`
+  - Sending Frameworks To Creators - Part 2 `5fffa7b6ed504591b82c6bf58432e1a3` 📝602
+  - How To Make B-Rolls For Frameworks `19474b7bbbae48c8973bd0e1a2c60022`
+  - 💥 Action Item: Hire Creators `48e5e7d84514416081d8e42860b3d154`
+  - How to Follow Up  & Upload Content - Part 1 `ee426683fdec432088f7bda0b8bc7b42`
+  - How to Follow Up  & Upload Content - Part 2 `98496a448d134da98d1d70aee59e229f`
+  - 💥 Action Item: Collect Content `3180a58789b2424aa635dd252c6960aa`
+  - How to Contact Winning Creators + Affiliate `4a5aa82763a8451994c6eb418bfa7323`
+  - 💥 Action Item: Contact Top Performing Creators `c3c8f5f312764c12af9d16facf4bed20`
+  - How To Onboard Brand Ambassadors `257bff5a6b204efe8d6253db67b197c6`
+  - 💥 Action Item: Onboard Brand Ambassador `38b73f1547e34a8a8a1af753599c890b`
+  - How To Communicate With Brand Ambassadors `239a6e91d2b041f797eecceab1ccac5f`
+  - 💥 Action Item: Communicate With Your Ambassadors! `124f708d52a2498aabcea107cda203a5`
+  - Feedback Loops With Your Brand Ambassadors `7645411a07174c8f8729c9f7ce369960`
+  - 💥 Action Item: Complete Your Feedback Loops `cb2bfdb1f45e443da1e9e00dd18cfba8`
+- **📄 How To Run Whitelisted Ads** (4 lektioner)
+  - Whitelisting Overview + Proof It Works `16297a70a44642c093565aa9c642a377`
+  - How To Setup Whitelisting (Creators) `2183303c2cd04218a8575436a3f6a700`
+  - How To Test Whitelisted Ads `a5bed604b8124dffbdc0e35333915ef3`
+  - 🆕 Partnership Ads (Updated Strategy) `8c2b7dd6950f447996e3a260cdf45712` 📝195
+- **✊ Productivity System & Mindset** (5 lektioner)
+  - How To Find Time And Get Shit Done `91997cd6cef04bbca61537e1c02d9c40`
+  - How To Focus & Quiet Your Mind `172ca4420ae04b509fb070255f1e9552`
+  - Endless Motivation - Rewiring Pain & Pleasure `f2d520c763ba4f85b9a721e993d04e71`
+  - Planning & Achieving Goals (Important) `998c4e691a9445eeba931728e0b2d9b6`
+  - Never Stop Growing YoY - Face Off With Devil `ac7252f5136146e19fddac982f91c242`
+- **🔎 Product Research** (3 lektioner)
+  - How To Make Any Product Work (Brand Building) Pt 1 `5a493a7ae08b48a7bf35540d1d8f6af2` 📝724
+  - Live Product Research w/ Kalodata - Pt 2 `9f8caadcc65c45fdbce5decc93c92e0f`
+  - How Brands Actually Scale to 8 Figures `f5152776cab245119414b5f811598304`
+- **🫨 Watch If Overwhelmed/Stuck** (2 lektioner)
+  - 🆕 I'm Overwhelmed /Stuck - Wat Do? `46592a8bb97949b2b3ef7bf779f3635f`
+  - What To Focus On To Scale To $10M/mth (By Rev) `35412698f2cb4c4194bf12b3dc2b3b56`
+
+## ✍️ Evolve Copywriting (NEW) — kurs-id `9917539c`
+
+- **📝 Copywriting Overview** (7 lektioner)
+  - Overview Of Copywriting Program `9cad00cc4e8a4187ae86631a4895c8a7`
+  - The current state of copywriting `7a7f674ff9b345539cea5b202638dc34`
+  - How to guarantee you get better at copywriting `935b1e4be6884a1b837b249257cb58c6`
+  - 💥 Schedule Your Writing Development Block `7b3eb325bb594e789f15360223eed143`
+  - Why you need to write in the environment `4af5fc1f31c94fcca45ffe2e5385976b`
+  - 💥 Update Your Milanote/Figma For Writing `67cf27faea6b41edafb16e9b486896b1`
+  - Why great copywriting requires boredom `491414676f8e4045b8ae0c933237e077`
+- **⚖️ Copywriting Principles** (9 lektioner)
+  - The 3 checks for great copywriting `02783a0d28014613a20a8aee6f7a3733` 📝739
+  - The importance of "how" you say it `e60f05d661d341fa8e6dd86bf69b7869`
+  - Why you need to write facts `50521000ecb44b6b84bdd9d954413fda`
+  - Why you need to write less fluff `121b5e691d0f4a4aa73f388236da96fa`
+  - Why you need to speak copy, not write it `7a3607d1f2f842c5badb24b08c65d502`
+  - Why you need to write at a 6th grade level `99777c57a47946e7a58dcb562dfbb7dd`
+  - Why you need to use unique mechanisms `bde44e9c455b4102a44319f53a683234`
+  - Why you need to understand beliefs `1fc361a0e5954e079c3d334ef67769ea`
+  - Why you need to understand authority `e9f032e128a9457b97d9f8c47eab72d3`
+- **🧱 Copywriting Fundamentals** (5 lektioner)
+  - Being aware of avatars `84224d03110b461ead0a808540d8354f`
+  - Being aware of angles `7e2c30739fc34477b4d69864d8f460a8`
+  - Being aware of mechanisms `2200137302014ae48cbcc472392d2ef5`
+  - Being aware of authorities `9306a42014b14b279787405e52d59ee7`
+  - Being aware of market awareness `d804ad2628114facb0767ee10fd2cb0f`
+- **♟️ Copywriting Strategies** (14 lektioner)
+  - How to finalize your ad ideas `4cd639835d1e44cd8e0c6d282b2e2599` 📝580
+  - The framework behind great hooks `12282075479d484499b80b03e566e413` 📝6421
+  - The 2 types of hooks `bdb1509117c443fcb4148ad62313807e`
+  - The 2 ways to write great hooks `cdec6042402a487eac5e0423ea135073`
+  - 1️⃣ - How to write open loops `a9dc6d5a56c6463c9d85f3341ef74a6e`
+  - 2️⃣ - How to write a bridge `a7f1ac99679d462e8bec49e83506db13`
+  - 3️⃣ - How to prevent/handle objections in writing `a384aa4589ce4a0f9c61bdf1412b2396`
+  - 4️⃣ - How to pitch without rejection `c727e05c5d734f988fe4226d4b6a6aa0`
+  - How to raise the stakes `4b106c3cd68f4d7ba055ecacf7421846`
+  - How to create ads that show, don't tell `c27e7278b1134d73a15bcaadd4ff5017`
+  - How to write ads that show and don't tell `2f57e61841f3447c8fd1fe3b08d5397d`
+  - How to use metaphors/similes/analogies `d1c6b1395b2e4b03a49ecaa9aa564f90`
+  - How to write with labels & customer language `43c09d1de0334a5ea873398f5a5efe43`
+  - How to write unaware ads (hooks) `b37be11a263548c59fc846d12b83120d`
+- **🤖 What About AI?** (2 lektioner)
+  - What about AI? `c780ec53bead479381ad8beb04164285`
+  - Evolve Writing Prompts `4753ea1f2b9d4df4880c94cd5beb4227` 📝560
+- **📖 Evolve Storytelling** (7 lektioner)
+  - Why storytelling is so powerful `c5fb04dc94b04529828c3d56c71593df`
+  - Why you can't just rely on education `ea255492bf8743829653cf55c54eb336`
+  - ⭐️ What makes a great story `fc02ab0a348c4c408d0c78cf037094c0`
+  - The laws of story telling `b220518417ee406e9171c12c873f31aa`
+  - The three enemies of storytelling `eb9855aaebdf450e9e45f452b0ae1dd3`
+  - The storytelling arcs/plots `e4dfda59a88d4bc6ad267a6ea71add72`
+  - Prompts to help you storytell `6d5a575a07254f20965ff2de9ee04a2d`
+- **🏆 How To Do Iterations** (10 lektioner)
+  - 🆕 Overview Of Iteration Section `41d7841ee2194d0381370ab8f1eda1ed` 📝918
+  - 🆕 The 10 Step Iteration Process `24942915be794b439798165fc98173c6` 📝10402
+  - 🆕 Claude Code - 10 Step Iteration Process `7aa431c81eb24695a7d02eb6cf834dfa` 📝1896
+  - 🆕 How To Iterate On Losing Ads `367a4866a0d046aea2359650dd91d040` 📝15421
+  - 🆕 How To Iterate On KPI Winners `c1ce1fa57eef45c7822a3d4417ab52fe` 📝16158
+  - 🆕 How To Iterate On Spend Winners `702c847ddde44de9b660862582772e9a` 📝17949
+  - 🆕 How To Iterate On 🏆 Breakthroughs `0f0e77f7f66544e9abe09a035c336b1f` 📝13525
+  - 🆕 The Iteration Playbook - Script `c79653d3abbd4859adc1334a0d4d04ea` 📝15759
+  - 🆕 The Iteration Playbook - Formats & Styles `1cf2ec79dac6493ba555aee1ebd6da78` 📝16892
+  - 📌 Iteration Examples & Breakdowns (Walkthrough) `878c604bafeb4fe4b0e56e5629fedc36` 📝918
+- **🎯 Evolve Positioning** (2 lektioner)
+  - ⭐️ Why you need to position your brand `a11539b6ca9f4d0eb7f3a5fd2c9a46aa`
+  - 💥 Positioning Exercise `ac1000824d9b45cc8857def2d513c0ab`
+- **🧰 Copywriting Toolkit** (7 lektioner)
+  - 📌 100 Hook Templates (Form Winning Ads Deck) `c6a0a35291b64daca2ba689e13858b76` 📝790
+  - Copywriting Checklist (when writing) `9fae60199ee949ceb3d37ea1bf3b589d` 📝2405
+  - Visual words `9a8286783bfc4331b7d073ef39792696`
+  - Facts list `de6e8b7057304549aaade90abb644682`
+  - Objections list `95e90d7451284d4387314a8a60696fe9`
+  - Value words `ae66d3cc5a164ac491139c45ba25ab67`
+  - Power words `182a6b801c8249cd925b32523215363f`
+- **📑  Additional Resources** (3 lektioner)
+  - Eugene's Headlines `ac89d269932748bdaeb24a0910388e16`
+  - Banger Static Ads Prompt `53c726fe4e7443808e64709d54d91976`
+  - Learn more about copywriting `5199fbd732c54e9996ccc5def88802f9`
+- **🔜 Live Ad Creation** (6 lektioner)
+  - How To Write Image Ads - Part 1 `4be11f3d66ef46efb8ef9280726caaae`
+  - How To Write Image Ads - Part 2 `a260a747ce5f46a693b61a972d5ab765`
+  - 💥 Action Item: Write Your Image Ad Briefs `55cc6443934c4606a6c83a02b93cbbc8`
+  - How To Write Video Ads - Part 1 `7630ea8648994b0e87adc46ea81c0fe2` 📝490
+  - How To Write Video Ads - Part 2 `5b5fcdcaadf347af8cda01c3349b3299`
+  - 💥 Action Item: Write Your Video Ad Briefs `93054cb0405346d1b04528404f518bf9`
+- **----** (0 lektioner)
+- **🗑️** (0 lektioner)
+
+## 🤖 Evolve AI — kurs-id `3992cc1b`
+
+- **🤖 Overview Of AI Program** (2 lektioner)
+  - 🆕 October 2025 - AI Program Overview `e50657a91bf1462bbe6c13c5589e74f3`
+  - 🆕 May 2026 - Claude Code Update `bd9c1c43d1664cbca5c78932b43fc88c`
+- **🛠️ Tools & Set Up** (8 lektioner)
+  - 🆕 My #1 AI Hack `eec92a92d4574104b1e1686f71f951dd`
+  - Claude AI vs Chat GPT `79960172e6d043ba9b730ee76c3c0a4b`
+  - 🆕 How To Use Claude Projects `1cdde1c20d42419b8a1c4619dde10b26`
+  - 🆕 Google Ai Studio - Video + Ad Review `568c5b5d4f5d45d081c6131b8b1fdce7`
+  - How To Make Personas/Avatars With Claude `df8799e816f94705aa73a0bbf739f22b`
+  - Multiple Personas/Avatars With Claude `6cb2fc5b49f7477c91dd509868cf0d53`
+  - Organize For Best Reviews (500+ Reviews) `762c139181a84abeba515b2b7fdf9142`
+  - What To Do If You Run Out Of Claude AI Credits `5230b92efdbd4ccca2ddb57fdd57377f`
+- **✍️ Ad Briefs & Scripts** (16 lektioner)
+  - 🆕 AI Ads With Camilo Castaneda `ec22d19acb424cfbaecb909071518f91`
+  - 🆕 How To Optimize Your Own Prompts `e74479e196af48c889186b4992c78e43`
+  - How To Do DEEP Research On Claude `46323abc33a54b83aca6c96bd00c7a8d`
+  - How To Write Basic AI Static Ads `37f0c2636b3a46889e7ac8198e614bcf`
+  - How To Write Banger AI Static Ads - Part 1 `d050fae0f4604f99bd89891bb2cd7ed3`
+  - How To Write Banger AI Static Ads - Part 2 `eecaf89c09f04fd7b8df3314353025f5`
+  - How To Get Inspo & Insights From Reviews `3a7ff0b9f8c747f0ba2c5f0d292dcca4`
+  - How To Get Headlines/Hooks From Reviews `628d20f97cf94ff18f666d615152cb7d`
+  - ⭐️ How To Write Banger AI Video Ads `d8a125dce2184003ba30c9380d553a7d`
+  - AI Viral Video Ads With Voiceover - Part 1 `92a24d375e4744fab7380ec2b435c015`
+  - AI Viral Video Ads With Voiceover - Part 2 `a85cb5ce6c6a4d10b5c44b71bbeaf13f`
+  - AI Viral Video Ads With Voiceover - Part 3 `89b08aa34bb74b70bdaac7a83d64be55`
+  - How To Write AI UGC Briefs `14eb8a43cc5c4372bcfe96b3d54f2d37`
+  - How To Use ElevenLabs For Voiceovers `734ae3f2016043d5be7fad89e4b5ad16`
+  - How To Ask AI To Review Ads (coming soon) `f7aa5c9537704f8a839b7f40c8ed09ba`
+  - 📌 Cleaned Prompts For Same Chat `b76793cf3ce54782b3575d0378252636`
+- **📷 Ad Content** (1 lektioner)
+  - 🆕 How To Train Editors On AI (Getting Content) `c68f2c9d87d04a38a4c01789c8acc531`
+- **🧑‍🔬 CRO** (1 lektioner)
+  - How To Write AI Landing Pages `bf04d1c3110f4b06be2a9477bc9464b9`
+- **🦾 Additional AI Tools** (5 lektioner)
+  - FreeAdCopy.com - Unlimited AI Copywriting `097043cdc8454e44992f456799aee2ea`
+  - Recharm - AI Content Organization - Part 1 `4c7e657a3d4a4877911d8a57d944711d`
+  - Recharm - AI Content Organization - Part 2 `d3694a3905734003b9469ee1cc05c53a`
+  - 🆕 Kitchn.io - AI Tool to Launch Ads Faster `1b6d28e8984b483192c260772af75f01`
+  - 🆕 Otto SEO - AI Search Engine Optimization Tool `db1d39606b3247c9aeab7598e598db83`
+
+## 💰 Evolve Q4 (2026) — kurs-id `8327c8c9`
+
+- **📋 2026 Evolve Strategy** (9 lektioner)
+  - 🆕 The 2026 Evolve Q4 Masterclass `56621002c6fb469093f1eef399537ae2` 📝955
+  - The Evolve Q4 Creative Blueprint `32cfc063820d44be87b0d3a9f1f6dfbe` 📝991
+  - Q4 - Ad Creative Templates `9d50c002eeb5433cbeebf67985f464dc`
+  - How To Setup Promo Campaigns `afc7d1bd4a53445391766122e17e0838`
+  - How To Create Rules For Promo Campaigns `10d88571c43b4a8481deabc8b44ebab8`
+  - (Advanced) Surf Scaling Method `18f80c27bea9476295eb4d266b8aa2c7`
+  - V.I.P Lead Gen Strategy + Calculator `e8f3acb9f8f443eeaa54dff112f978f9`
+  - Q4 FB Asset Backup - By AdRevival `b0d9a5403d4a4a58aaa8ef3e8a1eaf3f`
+  - Q4 Email Marketing Strategy `01ec600cf7e54592a54b7dc830d64431`
+- **🏷️ Q4 CRO Sales Optimizations** (15 lektioner)
+  - Overview Of This Section `dfdb2dc99faa41a1befa0aef07a11eac`
+  - Questions To Answer Before Launching a Sale `11ba93adcf324d86a01ad16eac377595`
+  - Discount Types Overview `f6357b2c45d34497b09eecf1d1d76537`
+  - How To Setup Automatic Discount Codes `8e856711024743c69af0a06cb20eeb41`
+  - How To Duplicate Themes + Prepare Offline `e91251c5434648879f6bf59c1f01b800`
+  - How To Update Announcement Bars `43cb15b469de4ec38fe05fde0e4fb100`
+  - How To Update The Home Page - Part 1 `661c4c2f72cf4c85b888c2c94b7c24b0`
+  - How To Update The Home Page - Part 2 `b245cabcebe145af8e958da44246a871`
+  - How To Edit Home Page Images (In Canva) `4c32cda072a7496eab023fda4c11fdff`
+  - Why You Need To Show Savings In The Cart `8e0de87aa8dd45678082319d288c6f7f`
+  - How To Supercharge Your Product Page - Part 1 `d12ee43b7ead45caa2b586f38a05767b`
+  - How To Supercharge Your Product Page - Part 2 `25f7b1b5455744e993fb39f4a175b42f`
+  - How To Optimize Your Landing Pages `c6ca49a291824cb88be094f8fcc92720`
+  - Why You Need To QA, QA, QA `90bbd09f773241698d5622e63b5f4cb6`
+  - How To Schedule Themes On Shopify Plus `6f70d527380747c4af52e70cd7cfc7ad`
+
+## 🧪 Evolve CRO — kurs-id `7eccf232`
+
+- **🧱 CRO Basics** (6 lektioner)
+  - What Is CRO `1211f6751f2f42c185c64dacad27f527`
+  - Types Of CRO `de9ce9820b4c481980daf3907c7b5aec`
+  - Key Metrics For CRO `1b50229e98cb4044908836fec6384f75`
+  - Tools Of The Trade `44659918c142494b8efad5ab741736c6`
+  - Analyze Your Store `ea2c8211a23649adbf58a5e44402fc51`
+  - 💥 Action Item: Fix Your Store! `df90469a86284869a06a9f21c312705c`
+- **🔍 CRO Research** (16 lektioner)
+  - (Evolve) Understanding Your Product `b4a2dbe26aed48968998d4d77167be54`
+  - 💥 Action Item: Self Onboarding `29ef64e3741449f6822341db91a64b6d`
+  - (Evolve) Getting Ready To Do Research + Branding `009f1035f39e44bfa03c9c8050d50c95`
+  - 💥 Action Item: Make A Copy & Start Research `6ea3db21323840268687ee3da7cfd2f5`
+  - Live Website Audit Walkthrough `b5eef4022806454492ffa728c70ed208`
+  - 💥 Action Item: Audit Your Site For Information `6320823c1aab45d0b288de11fea143f7`
+  - Ad Account Research For CRO `ec26f0e270624acb90c4f8fe671e8dcc`
+  - 💥 Action Item: Ad Account Research `db8efadb20fb4b2180ad020adb84ed82`
+  - Direct Competitor Research For CRO `e37339d769df4a0a96a5d69b5d81273d`
+  - 💥 Action Item: Conduct Competitor Research `aae4ebb19ba94f0c95a6ca8d8e966f72`
+  - Angle Research For CRO On Google + Reddit `4ad46e2aba4f4560baf5728a6dc0d8b8`
+  - 💥 Action Item: Conduct Angle Research `ecdce6d4f7fb42ccb0d9441216e3577e`
+  - Landing Page Research For CRO - Atria `c18e75952b804bfb95262837bd3fccb9`
+  - Landing Page Research For CRO - PageDeck `edc511d3398649e89d22edda303f351d`
+  - 💥 Action Item: Conduct Landing Page Research `595e7997ca594c098629704b994fcacc`
+  - CRO Research - Twitter `f465b98f9721455aa28ed67c5d092587`
+- **🔨 CRO Landing Pages** (26 lektioner)
+  - Page Deck | Setting Up Foundations `a811ddea4e40489b91daafa40088626e`
+  - 💥 Action Item: Setup Your Page Deck Foundation `24c75c33b5be4d90b2c409cef9d40a11`
+  - Page Deck | Customizing Themes `67eb4cd718e54acfb611076b7219c76c`
+  - 💥 Action Item: Setup Your Page Deck Theme `269b4a52195a4c55963755be16f18d1f`
+  - REMINDER: Identify The Angle Of Your Landing Page `c8aafebbeff94607bfb9a61f408da025`
+  - 💥 Action Item: Choose Your Landing Page Angle `51a0a6d128bc473bb8a8a780c9b34bb0`
+  - Strategizing Offers For Your Landing Page `66d581b1059041b38070ab0ab8d94b21`
+  - Page Deck | Offer Functionality In Page Deck `93a3de051dd54f9585f84e4ce13f4928`
+  - 💥 Action Item: Strategize Offers For Your Page `adf732c2cd2f43e58f5f0c78885ecc3f`
+  - Page Deck | Choosing Your Template `a144606af5284685b836a3765a7bc897`
+  - 💥 Action Item: Choose Your Template `986209db77314b6dadb2970eabfd7030`
+  - Page Deck | Writing Your Messaging `1f93dd41eef14a19b860b1f31361a2c8`
+  - 💥 Action Item: Optimize Your Messaging! `ed31ee375b40482bb2bc1d8bbfc82ed9`
+  - Page Deck | Optimizing Landing Page Content - 1 `ff58841d35cd4c27911fa3ef07e4f4d7`
+  - Page Deck | Optimizing Landing Page Content - 2 `5470c1fb44bf41b1a596a3db0f76b959`
+  - 💥 Action Item: Optimize Your Content! `694d518496b047fea4fda0fa5eef598e`
+  - The Importance Of Functionality `82327891809744ee9a60179cae794ab2`
+  - 💥 Action Item: Optimize Your Functionality! `c627ffbf6b33499984c3e1999f52836c`
+  - Page Deck | Optimizing Page Information `241fcb800cd14abab9e4f0fefd7ea7ba`
+  - 💥 Action Item: Optimize Your Page Info `4e133801c2d54168956a49705ea1b2e9`
+  - QA, QA, QA, And Then... More QA - Part 1 `0f1fe09e7216497e969c2a24618ba7c7`
+  - 💥 Action Item: QA Your Page Aggressively `33df7e69c619492f93cf848a2649af97`
+  - QA, QA, QA, And Then... More QA - Part 2 `24458517bdbb402f95fdd38165058209`
+  - 💥 Action Item: QA Your Page Again `01f4d47e6cee47eab136dee6bb7cadb7`
+  - Conversion Rate Optimization Hack `b556430f63d843e086939987d22d4d38`
+  - 💥 Action Item: Follow The CRO Hack `8ce7a0afd50b453a91c17c35a2a0e130`
+- **🧑‍🔬 CRO Testing** (17 lektioner)
+  - (Old Method) How To Test Landing Pages On Meta `336ea4cd2856481a98bff58e286cbd18`
+  - How To Analyze Landing Page Tests On Meta `31841647b304482aa9b08030a0e253db`
+  - How To Test Landing Pages On Meta `7429356f5e8f4f74a2ab7938f4193980`
+  - 💥 Action Item: Launch Your PageDeck Test `1e4e718a60394ddbb393dd4d9c180b39`
+  - Page Deck | How To A/B Test Landing Pages `9ac630c9b007482fb3de8461f3f49af7`
+  - Page Deck | What To A/B Test On Landing Pages `1b963ca9bda54f999345d405d48d8db8`
+  - 💥 Action Item: Launch Your A/B Test `1d51adfea06041e3ad7999a8b8d94fd5`
+  - Intelligems | Overview Of The Software + Setup `69061f7972134072b179b7763e3ca8b7`
+  - Intelligems | URL Redirect Test `258b46c923a54b2287a4fe3f0376d5f3`
+  - Intelligems | Visual A/B Test `b0f8275c8b3849d7aab5711357f40f94`
+  - Intelligems | Template Test `8ace5cc515f942668f087e9b97b99973`
+  - Intelligems | Theme Test `e361272a520b45518b17a4702e522ad0`
+  - Intelligems | Shipping Tests `1354c68dea6040449cac8193c60484d1`
+  - Intelligems | The Importance Of QA `12b1ef970b5a409498012129ba4e18ef`
+  - Intelligems | Analyzing Split Tests `b89f3f630dd74653b3bc0b6b6c1bdfa3`
+  - Intelligems | Understanding Powered Stat Sig `ea026a46ef1f47f9a7c63c10231b4018`
+  - Intelligems | How To Execute Winning Tests `0395d35f411b47e6a926c9d738dacfc4`
+- **🎡 CRO Ongoing** (5 lektioner)
+  - The Importance Of Ongoing Research `ce3902e23fcb4a60abae2c54134920cf`
+  - 💥 Action Item: Do Some More Research! `53e8f167b7644b8ea363d0df71995eed`
+  - CRO Easy Wins + Test Ideas `00791a4f99464bdca5ca894197ea18f9`
+  - Live Landing Page Progress - Part 1 `12e3caf6c290485bbbcd7815779c50dc`
+  - Live Landing Page Progress - Part 2 `2108ba6084e64cb6a92d7ac8463ce05d`
+- **💸 CRO Offers** (1 lektioner)
+  - COMING SOON (May 20 2026) `5c220977846744a49b75598f9ef6bc42`
+- **🏷️ Q4 CRO Sales Optimizations** (15 lektioner)
+  - Overview Of This Section `6b3c3b24b2b244d383b1d04cb78885e0`
+  - Questions To Answer Before Launching a Sale `f2d3ce1dfd2248d6ad4484fdf8295903`
+  - Discount Types Overview `81777b0ef0dc4331aa4dcf9f7dae4be4`
+  - How To Setup Automatic Discount Codes `dd2658a6cfff4073ae435ea9780a18d1`
+  - How To Duplicate Themes + Prepare Offline `87a74d4ce9fe49ebb92c8884110d7a78`
+  - How To Update Announcement Bars `bf4dd26de7c7470694515935d0a923f8`
+  - How To Update The Home Page - Part 1 `aa950f62bf2b4c7c8cbc0cc770991c08`
+  - How To Update The Home Page - Part 2 `cf3f014f6621424d814b65e8d2403cf0`
+  - How To Edit Home Page Images (In Canva) `4f5a0b4aed18460198feb3a492659817`
+  - Why You Need To Show Savings In The Cart `52fc0bce68c949b082b61a1fc6fabbe6`
+  - How To Supercharge Your Product Page - Part 1 `9d3c86aad926417eae151c4414cef0d1`
+  - How To Supercharge Your Product Page - Part 2 `c66648d411ca4fbfbea30e2e9c690ca9`
+  - How To Optimize Your Landing Pages `5dc10ca3b16b47a582f0e708c8234d4d`
+  - Why You Need To QA, QA, QA `59786395bf4c4cda9f0a12da96a2b392`
+  - How To Schedule Themes On Shopify Plus `1002cd86a0ce46d3bce2a67bde0c563d`
+- **📣 CRO Customer Feedback** (31 lektioner)
+  - Overview - The Importance Of Customer Feedback `eed2f27907d34874ad72acde04ba073a`
+  - IMPORTANT - How To See If You Qualify For This `22a2034bfb2943219adeca9be29fab56`
+  - How To Come Up With a Giveaway Offer `98a4156732a44de9af16b86956978816`
+  - 💥 Action Item: Come Up With a Giveaway Offer `5140e6a983e7433aadbc8452a352333e`
+  - How To Setup a Viral Sweep Giveaway `55b21643eeda4253bf44c150191c15ce`
+  - 💥 Action Item: Set Up Your Giveaway `f4f105b2858445b4a8b7250d22c4b0d0`
+  - Optimal Sending Schedule For Viral Sweep Campaign `a12f9176f8a744b4bbcc6cba0d42ccb9`
+  - Design Email Templates in Klaviyo `756d4e5713994618929c940630bc7400`
+  - 💥 Action Item: Design Your Templates `1d0a6d5f299548e2983642a9161d3785`
+  - How To Segment The Giveaway Sending List `279299eeb6e34519ad04ff852251e717`
+  - 💥 Action Item: Segment Your Lists `cdcd9b7e4aa94a9f918bbc8e9b2f3da5`
+  - Launch A Viral Sweep Giveaway Page `791c8e3b91594c2aa4695b368974f5a9`
+  - 💥 Action Item: Set Up Your Landing Page `a8ed7841156342818a0fa7711d64081c`
+  - 💥 Action Item: Set Up Your Entrants List `bab6da247d0446bb909413c5ccd1458f`
+  - How to Generate & Schedule Winners Email - Part 1 `f2e8c64edbae403791766e0498c11784`
+  - How to Generate & Schedule Winners Email - Part 2 `81fafac2df13419d9f8aba6f016ec3eb`
+  - How to Contact Individual Winners Email `7bd55136073d4bee9fef74b1939787bd`
+  - 💥 Action Item: Schedule And Send Winners Emails `320f092002f84348a988ac8a171d021a`
+  - How to Schedule The Founders Discount Email `ea8c5892512c4a37991d9f0746196924`
+  - 💥 Action Item: Schedule Founders Email `8fee138ea550428b91f1132a19a3cd80`
+  - How To Download Entrants & Upload To Sheet `99c162561c99429aafd927162ccf5210`
+  - 💥 Action Item: Download Entrants `11363b38bc924c3ab686d89e09bf5301`
+  - How To Organize Sheet With Feedback Data - Part 1 `291015c998064d44b0c4c02411e9ac3b`
+  - How To Organize Sheet With Feedback Data - Part 2 `28cc233c97fb40c8b6af6e93fd3c8b38`
+  - How To Organize Sheet With Feedback Data - Part 3 `5b106f92251c4ae3b12af695aecbe092`
+  - 💥 Action Item: Organize Your Sheet `b1ba8f5e367e4a29ae3049b6bed3452d`
+  - How To Upload Knowledge Basis To Chat GPT `fbb9a47290744142b39227eb714c2c75`
+  - 💥 Action Item: Upload Data To GPT `84e8e21375b44df9a93edd5d98e72499`
+  - How To Summarize All Data & Create a Custom GPT `7a698e4d191248798aba5f8f63838892`
+  - 💥 Action Item: Summarize Your Data `436f781c28b2421cb3e1c9e6ee061ab6`
+  - How To Calculate ROI From Survey `82f40ba6322c49e39962e531802cf544`
+- **🔥 CRO Heatmaps** (3 lektioner)
+  - Heatmap.com | Setting Up Heatmap `c72d7b9d64d44592bb2d760042d63a2c`
+  - Heatmap.com | Cleaning Up Heatmaps `1151e26d0392404a81b99ec80ef54caf`
+  - Heatmap.com | Leveraging EAM Heatmap Learnings `67eb8c3d80064902bcfb012404f94a36`
+
+Övriga kurser i klassrummet (inte lästa): 💸 Evolve Finance `cf68fcb8`, 🎥 Evolve Call Recordings `67ce5630`, 📦 Supply Chain `992407ee`, Origins Program `0d8aaebd`, Agency Edition `48adf39c`, Marrakesh 2026 `894b4b75`, $100k/Day Podcast `02e27f05`, Team Building/Hiring Mastermind `70956291`, Archive `6619b66c`.

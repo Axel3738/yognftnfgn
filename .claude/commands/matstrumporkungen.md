@@ -31,7 +31,8 @@ volymen.
 | Rutin | **07:00 svensk tid varje dag** — `kor.mjs --kordag` avgör om det är rond (var tredje dag från förra rondens `ROND_KLAR`). Byggd 2026-09-22 |
 | Budget | **Axel skalar själv.** Ronden föreslår, rör aldrig en budget |
 | Minne | `products/matstrumpor/` + `matstrumpor/logg.jsonl` |
-| Facit | `matstrumpor/konfig.json`, `docs/os/ANALYSMETOD.md`, `docs/os/CS-KLART.md` |
+| Facit | `matstrumpor/konfig.json`, `docs/os/ANALYSMETOD.md`, `docs/os/CS-KLART.md`, **`docs/os/evolve/ITERATIONS-PLAYBOOK.md`** (Evolves utfall, felkatalog och iterationer, läst ur kursen 2026-10-01) |
+| Arkivet | `products/matstrumpor/arkiv.md` (committas) + `arkiv.json` (gitignorerad), byggt av koden varje rond (`--arkiv`) ur loggen + `matstrumpor/arkiv/matningar.jsonl` |
 
 **CONNECTORS: inga.** Rutinen behöver inga MCP-connectors: Meta läses via
 `META_ACCESS_TOKEN` (`kor.mjs --hamta`), Notion via `NOTION_TOKEN`
@@ -93,30 +94,48 @@ behörighetsreglerna matchar på första ordet.
 2. **Avläsningen.** Ur Meta via token, aldrig ur huvudet:
    ```bash
    node matstrumpor/kor.mjs --hamta
-   node matstrumpor/kor.mjs --dom matstrumpor/output/avlasning-<datum>.json --json
+   node matstrumpor/kor.mjs --dom-alla --json --logga
+   node matstrumpor/kor.mjs --arkiv
    ```
-   `--hamta` läser kampanjen och alla annonser med `7d_click` i två fönster —
-   **14 dagar** (domarna) och **annonsens egna första vecka `[D0, D0+6]`**
-   (etiketten) — plus kampanjens spend i samma fönster och budgethistoriken
-   ur kontots aktivitetslogg (så etiketten ser om budgeten höjdes under
-   veckan). Siffrorna skrivs ORDAGRANT till jobbfilen
-   (`matstrumpor/output/`, gitignorerad): `amount_spent`, `omni_purchase`,
-   `purchase_roas`, `cost_per_omni_purchase`, `impressions`,
-   `video_play_actions`, `video_thruplay_watched_actions`,
-   `inline_link_clicks`, `omni_landing_page_view`, `created_time`,
-   `effective_status`. Kontot och kampanjnamnet kontrolleras mot konfigen
-   innan något läses — fel konto avbryter.
+   `--hamta` läser **Sverige och varje utlandskampanj** ur
+   `matstrumpor/marknader/annonser/lage.json` (14 st 2026-10-01; före det
+   läste ronden bara Sverige och utlandet fick aldrig en etikett). En fil per
+   kampanj: `output/avlasning-<datum>.json` (SE) och
+   `output/avlasning-<datum>-<KOD>.json`. Per kampanj: alla annonser med
+   `7d_click` i **14 dagar** (domarna), **annonsens egna första vecka
+   `[D0, D0+6]`** och **vecka 2 och 3** (omprövningen), kampanjens dagserie
+   (veckan FÖRE annonsen = W0) och budgethistoriken ur aktivitetsloggen.
+   **D0 = max(annonsen skapad, kampanjens första spenddag)**: utlandets
+   annonser byggdes PAUSED 27–30/9 och kampanjerna startar 2/10, så utan det
+   hade alla 112 fått INGEN_LEVERANS den 8/10. En kampanj som inte spenderat
+   ger en rad, ingen etikett. Kontot och kampanjnamnet kontrolleras innan
+   något läses — fel konto avbryter. Varje avläsning lägger dessutom en rad
+   per annons med spend i **`matstrumpor/arkiv/matningar.jsonl`** (committas:
+   det är arkivets minne, Metas tal dör annars med containern).
+   **Videomåtten ur `value`, aldrig `7d_click`** (mätt 2026-10-01: med
+   attributionsfönster bär raden en `7d_click`-nyckel som inte är visningar):
+   `hook_rate` = 3-sekundersvisningar (`actions:video_view`) / impressions,
+   `hold_rate` = ThruPlay / impressions, `hook_till_hold` = ThruPlay /
+   3-sekundersvisningar — Evolves definitioner. Före 2026-10-01 var hook rate
+   videostarter/impressions (~0,93 på allt) och hold rate thruplay/videostarter;
+   lärdomar skrivna före dess bär de gamla talen.
    Reserven, BARA i en interaktiv session om token-vägen felar: hämta samma
    fält med `mcp__Adsmanager__ads_get_ad_entities` och skriv jobbfilen för
    hand i samma format (`{ datum, kampanj: { spend_sek, roas, budget_d0,
    budget_d7 }, annonser: [{ namn, spend_sek, kop, roas, d0 }] }`).
-   Ut ur `--dom` kommer vinstbidragstabellen (ranking på `(break-even-CPA −
-   CPA) × köp`, **aldrig på ROAS eller CPA ensamt**), "för tidigt"-högen
-   utanför rankingen, benchmarken, etiketten per annons på dess egen första
-   vecka med breakthrough-frekvensen som bråk, och listan på annonser vars
-   första vecka inte är slut (ingen etikett än). `--json` skriver domen till
-   `matstrumpor/output/dom-<datum>.json` — läs ETIKETT-raderna därifrån när
-   du loggar, skriv aldrig av dem för hand.
+   Ut ur `--dom-alla` kommer per kampanj: vinstbidragstabellen (bara Sverige —
+   ranking på `(break-even-CPA − CPA) × köp`, **aldrig på ROAS eller CPA
+   ensamt**; utlandet saknar break-even per marknad, `cogs.json`), "för
+   tidigt"-högen, benchmarken, etiketterna (vecka 1 + uppgraderingar vecka
+   2–3), de unga och **hit rate** = (breakthrough + spend winner) / alla
+   etiketterade, med och utan INGEN_LEVERANS i nämnaren. `--logga` skriver
+   ETIKETT-raderna i loggen (koden, aldrig för hand, aldrig dubbelt — den läser
+   loggen först). `--json` skriver `output/dom-<datum>[-<KOD>].json`.
+   `--arkiv` bygger om **`products/matstrumpor/arkiv.md` + `arkiv.json`**:
+   varje test med typ (IDEA/ITER/IMIT), kedja förälder → iterationer, varianter
+   per löpnummer, koncepten mot taket, och vinstbidrag + hit rate per typ,
+   kreatör, vinkel, format, marknad och playbook-iteration. Läs den innan
+   du briefar — det är Evolves "Ad Roadmap".
 
    Regler som ingen bedömning får runda:
    - **Ingen dom under 300 kr spend eller 3 köp.**
@@ -125,10 +144,19 @@ behörighetsreglerna matchar på första ordet.
      spendern är riktmärke, inte en kandidat att döma mot småannonser.
    - **Kill mäts mot break-even**, aldrig mot en target-nivå.
    - **PAUSED med spend är ett beslut** och aktiveras aldrig.
-   - **Etiketten skrivs en gång** (`{kod:"ETIKETT", datum, annons, etikett,
-     bedombar, andel, fonster, spend_sek, kop, roas, orsak}`) och ändras
-     aldrig, utom uppgradering till BREAKTHROUGH. Annonser som redan har en
-     ETIKETT-rad i loggen etiketteras inte om.
+   - **Etiketten för vecka 1 skrivs en gång** (`{kod:"ETIKETT", datum,
+     annons, marknad, etikett, vecka, bedombar, andel, tillvaxt, fonster,
+     spend_sek, kop, roas, orsak}`) och skrivs aldrig om. **Vecka 2 och 3 får
+     UPPGRADERA** (Evolve: en KPI winner kan bli breakthrough vecka 2–3), aldrig
+     sänka, och bara när uppgraderingen bär: spend winner/breakthrough, eller
+     över grinden 300 kr / 3 köp (mätt 2026-10-01: utan grinden blev tio
+     annonser KPI winner på ett köp för 18–117 kr). Raden bär
+     `uppgradering_fran`.
+   - **Breakthrough kräver att kampanjens SPEND växte ≥ 10 % mot veckan före
+     annonsen** (Evolves mått), inte att budgeten höjdes. Står
+     `yttre_handelse` på raden höjde någon budgeten för hand i fönstret: säg i
+     lärdomen om annonsen bar höjningen eller bara åkte med (Nathalie 23/9:
+     1 000 → 10 000 kr samma dag — spenden växte ändå +30 % veckan innan).
 
 3. **Lärdomen — och den här är inte valfri.**
    *(CS-KLART punkt 1–5: ingen annons är klar förrän lärdomen är skriven.)*
@@ -138,10 +166,16 @@ behörighetsreglerna matchar på första ordet.
    För varje etiketterad annons utan lärdom, i ordningen breakthroughs →
    bedömbara → resten, skriv en lärdom i `products/matstrumpor/lardomar.md`:
    - batchnummer, utfall, annonsens spend OCH kampanjens spend i samma fönster
-   - **alla hookar ordagrant** med hook rate och hold rate (jobbfilen bär
-     `hook_rate` = videostarter/visningar och `hold_rate` =
-     thruplay/videostarter per annons — hookens TEXT hämtas ur briefen i
+   - **alla hookar ordagrant** med hook rate, hold rate och hook→hold
+     (jobbfilen: `hook_rate` = 3 s-visningar/impressions, `hold_rate` =
+     ThruPlay/impressions, `hook_till_hold` = ThruPlay/3 s-visningar; Nathalies
+     vinnare 2026-10-01: 0,47 / 0,15 / 0,31 — hookens TEXT hämtas ur briefen i
      hubben, `node tools/notion-klara.mjs --brief <page-id>`)
+   - **felet ur felkatalogen** (`FEL` i `matstrumpor/lardom.mjs`, 1–14 ur
+     `docs/os/evolve/ITERATIONS-PLAYBOOK.md` avsnitt 3): vilket nummer, och
+     vilket mått som visar det. Utfallet avgör vilka fel som ens är möjliga
+     (`PLAYBOOK_PER_UTFALL`): en loser kan ha fel 1–8, en spend winner 2.5,
+     7, 9–12, en breakthrough 2, 13, 14.
    - ROAS eller CPA, och konverteringsgrad (`konv_lpv` = köp per
      landningssidevisning; saknas den: `okänd`, aldrig 0)
    - **planerat mot utfört per komponent** (avatar, vinkel, medvetandenivå,
@@ -168,15 +202,23 @@ behörighetsreglerna matchar på första ordet.
    begär eller en annan känslomässig ingång — samma löfte med nya ord är en
    iteration, inte en ny vinkel.
 
-   Per utfall:
-   - **Breakthrough** → tre iterationer inom 14 dagar: nya hookar (I1), längre
-     problemdel (I2), in media res (I3). Aldrig en ren kopia.
-   - **Spend winner** → diagnosen på konverteringsgraden, sedan manuset. Lägg
-     till det som saknas (tro, brådska, insats, funnel-kongruens) — bygg inte
-     om hela annonsen.
-   - **KPI winner** → hook rate, sedan hold rate, sedan förbi hooken. Ingen
-     spend på sju dagar = förlorare.
-   - **Loser** → en lärdom, sedan släpp. Iterera bara om idén kom ur research.
+   Per utfall — iterationerna ur `PLAYBOOK_PER_UTFALL` / `ITERATIONER`
+   (`matstrumpor/lardom.mjs`, ordagrant ur Evolves playbook):
+   - **Breakthrough** → alltid, alla tre typerna (ITER + IDEA + IMIT). De två
+     första iterationerna: **längre problemdel (`manus-5`)** och **en
+     medvetandenivå upp eller ner (`manus-6`)**, sedan nya hookar (`manus-4`),
+     format (`format-1`, `format-2`, `format-11`, `format-12`). Aldrig en ren
+     kopia. Stäng aldrig av den för att ROAS sjunker när den skalas.
+   - **Spend winner** → diagnosen på konverteringsgraden och hook→hold, sedan
+     manuset. Lägg till det som saknas (`manus-1`, `manus-3`, `manus-7`) —
+     bygg inte om hela annonsen. Fällan: hooken kan vara rotorsaken.
+   - **KPI winner / loser** → hitta felet i UTFÖRANDET (fel 1–8). Iterera bara
+     om idén kom ur research; en imitation som förlorat itereras aldrig.
+   **Taket per koncept** (`konceptStatus`, `--status` och arkivet): tre försök
+   MED UTFALL (en etikett) utan att nå förälderns nivå ⇒ släpp, om källan är
+   svag. Briefer utan etikett räknas inte — då väntar konceptet
+   (`VANTA_UTFALL`) och nya iterationer på samma koncept briefas inte förrän
+   de första tre har fått sitt utfall.
 
 6. **Briefarna.** Format och regler som `/cs`:
    - **På engelska** (redigerarna är engelsktalande), svenska manusrader i
@@ -187,14 +229,24 @@ behörighetsreglerna matchar på första ordet.
    - Tre-frågorstestet på varje svensk rad; en rad med ❌ går inte ut.
    - Butikens namn står aldrig i en annons (Axels beslut 2026-09-18).
    - Taggraden: `typ=N|IM|I · koncept · parent · iteration · lardom · kalla ·
-     avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik`.
-     **Iterationsnumret räknas ur loggen**, aldrig ur briefens egen siffra.
-   - **Namnen byggs med namnmotorn, aldrig för hand:**
+     avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik`,
+     och på varje **typ=I** dessutom **`playbook=<manus-N|format-N>`** (vilken
+     rad ur `ITERATIONER`) och gärna `fel=<nr>` (vilket fel ur katalogen den
+     rättar). **Iterationsnumret räknas ur loggen**, aldrig ur briefens egen
+     siffra.
+   - **Namnen byggs med namnmotorn, aldrig för hand** — och namnet bär kedjan
+     (Evolves `ITER#N_BATCH#ORIG`, `docs/os/evolve/ITERATIONS-PLAYBOOK.md`
+     avsnitt 9), så att den syns i Ads Manager:
      ```bash
-     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal>
+     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal>                       # ny idé (IDEA)
+     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal> --iter <förälder>     # iteration: _i<N>p<förälder>
+     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal> --im                  # imitation av en annan brands annons: _im
+     node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --iter nat --hookar 3       # tre hookvarianter: _h1 _h2 _h3
      ```
-     Julmaterial får vinkeln `jul` — det är den som styr adsetet vid
-     uppladdningen.
+     `<förälder>` är löpnumret (`54`) eller ett alias ur `konfig.namn.alias`
+     för Axels egna uppladdningar (`nat` = Nathalie, `sof1`, `sof2`, `kat1`,
+     `kat2`). Iterationsnumret räknas ur namnen OCH BRIEF-raderna. Julmaterial
+     får vinkeln `jul` — det är den som styr adsetet vid uppladdningen.
    - **All slutgiltig copy och alla svenska manusrader skrivs av en subagent**
      (`model: "sonnet"`) som får DNA + hypotes + hook + formatkrav +
      `docs/copy-regler.md` (CLAUDE.md regel 6). Strategi, analys och
@@ -207,7 +259,20 @@ behörighetsreglerna matchar på första ordet.
      Typ `Video - Pending Approval` / `Image - Pending Approval`, Status
      `Draft`. **Hela briefen ligger i Notion-itemet** — aldrig en länk till
      en .md-fil. Finns raden redan hoppar verktyget över den och säger det.
-   - Logga varje brief: `{kod:"BRIEF", annons, koncept, typ, parent, lardom, iteration}`.
+   - **Föreslår ronden UGC** (en riktig kreatör i bild, `format-2`): skriv
+     beställningen enligt `docs/os/CS-KLART.md` punkt 21 och **bifoga alltid
+     Nathalies manus som video A** — `products/matstrumpor/ugc/NATHALIE-MANUS.md`
+     (Axels order 2026-10-01: "Jag ger gärna Nathalies manus till nya kreatörer,
+     PÅMINN MIG BARA"). Varje ny kreatör gör tre videor: kopian, en iteration
+     och en till ur briefpaketet. Mönstret är
+     `products/matstrumpor/ugc/2026-10-briefer.md`. ⛔ **Axel pratar själv med
+     kreatörerna** (hans beslut 2026-10-01 kväll: ingen VA, inte Lovely) —
+     rapportens uppgift till Axel är meddelandet till kreatören i ett kodblock,
+     från honom själv, utan pris eller villkor (`factory/ugc/villkor.md`).
+     ⛔ **Bara sushi i varje brief** (samma kväll: "vi ska inte marknadsföra de
+     andra produkterna heller, bara sushi") — pizza-, burgar- och donutlådan
+     står aldrig i en rad och syns aldrig i bild.
+   - Logga varje brief: `{kod:"BRIEF", annons, koncept, typ, brieftyp, parent, lardom, iteration, playbook, kalla, brief}` — `brief` är sökvägen till brief.md, så arkivet läser VARIABELTAGGAR därifrån.
 
 7. **Tipsen till Axel — förslag, aldrig ändringar.**
    En tabell: rad, nuläge, vad jag skulle göra, och **varför i en mening**.
@@ -229,7 +294,7 @@ behörighetsreglerna matchar på första ordet.
    ```bash
    node matstrumpor/kor.mjs --rond-klar
    git pull --rebase origin main
-   git add matstrumpor/logg.jsonl matstrumpor/konfig.json products/matstrumpor
+   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv products/matstrumpor
    git commit -m "matstrumporkungen: <datum> — <N> etiketter, <M> lärdomar, <K> briefer, <F> förslag"
    git push origin main
    ```
@@ -239,9 +304,10 @@ behörighetsreglerna matchar på första ordet.
    rapporten.
 
 9. **Rapportera.** Två listor: "Gjort av mig" / "Väntar på en människa".
-   Rapporten ska alltid innehålla: **breakthrough-frekvensen som bråk och
-   procent** ("2 av 14, alltså 14 %"), hur många lärdomar som skrevs, och hur
-   många briefer som byggde på en lärdom. Tipstabellen (steg 7) står med i
+   Rapporten ska alltid innehålla: **breakthrough-frekvensen och hit rate som
+   bråk och procent** ("2 av 14, alltså 14 %"), per marknad som har spenderat,
+   hur många lärdomar som skrevs, hur många briefer som byggde på en lärdom,
+   och koncepten som nått taket (ur arkivet). Tipstabellen (steg 7) står med i
    sin helhet. Axels uppgifter sist, numrerade.
 
 ---
@@ -251,15 +317,17 @@ behörighetsreglerna matchar på första ordet.
 - [ ] Repot pullat och `--kordag` kontrollerad (exit 0, eller `nu` som argument)
 - [ ] `ad_account_id` verifierat = `730973156224390`
 - [ ] Båda momslinjerna utskrivna; antagandet sagt rakt ut
-- [ ] Avläsningen gjord med `--hamta` (token) — eller reserven namngiven och skälet utskrivet
+- [ ] Avläsningen gjord med `--hamta` (token) för Sverige OCH utlandet — eller reserven namngiven och skälet utskrivet; kampanjer som inte gick att läsa namngivna
 - [ ] Vinstbidragstabellen visad — ranking på vinst, aldrig ROAS/CPA ensamt
 - [ ] "För tidigt"-högen utanför rankingen; benchmarken utpekad och orörd
-- [ ] Etikett på varje annons som fyllt sju dygn (på dess egen första vecka); frekvensen som bråk + procent; unga annonser namngivna utan etikett
+- [ ] Etikett på varje annons som fyllt sju dygn (på dess egen första vecka, D0 = max(skapad, kampanjens start)); uppgraderingar vecka 2–3 loggade av `--dom-alla --logga`; `yttre_handelse` bedömd i lärdomen; frekvens + hit rate som bråk + procent; unga annonser namngivna utan etikett
+- [ ] Arkivet ombyggt (`--arkiv`) och `matstrumpor/arkiv/matningar.jsonl` + `products/matstrumpor/arkiv.md` committade
 - [ ] **Lärdom skriven för varje etiketterad annons som saknade en** — med hookar ordagrant, hypotes märkt (gissning) och konkreta nästa annonser
 - [ ] Brieftaket räknat: briefer ≤ lärdomar sedan förra ronden
 - [ ] Mixen ur etiketterna (80/20), inte ur en tabell
-- [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen
-- [ ] Namnen byggda med `--namn`; julmaterial har vinkeln `jul`
+- [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen; typ=I bär `playbook=`
+- [ ] Felet ur felkatalogen namngivet i varje lärdom; iterationerna ur `PLAYBOOK_PER_UTFALL`, inget koncept över taket
+- [ ] Namnen byggda med `--namn` (iterationer med `--iter`, imitationer med `--im`); julmaterial har vinkeln `jul`
 - [ ] Copyn skriven av subagent med `model: "sonnet"` + copy-reglerna
 - [ ] Briefraderna skapade via `tools/notion-brief.mjs` (NOTION_TOKEN), aldrig via MCP
 - [ ] **Noll budgetändringar, noll pausningar, noll aktiveringar** — tipsen är en lista, inte en handling

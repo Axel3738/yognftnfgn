@@ -121,10 +121,22 @@ från 24/9 (`09-17 UGC`-adsetet, 85–89 kr var, 1 köp) och Gilz nio mini-clips
    ettbox-köpare (417 kr) men många. Break-even-CPA räknas därför på
    annonsens EGET ordervärde i `matstrumpor/ekonomi.mjs`.
 
-⚠️ **Nathalies hook rate (0,2 %) och hold rate är inte läsbara** — 139
-videostarter på 63 047 visningar rimmar inte med 1 124 klick. Sofie i samma
-adset visar 86–98 %. Troligen räknar Meta `video_play_actions` annorlunda
-för Axels uppladdning (DCO-varianter). Bedöm henne på klick/LPV/köp.
+✅ **Nathalies hook rate går att läsa sedan 2026-10-01 — felet var vårt, inte
+Metas.** De gamla talen (0,2 %, och 86–98 % för Sofie) kom ur Metas
+`7d_click`-nyckel på videoraderna, som inte är visningar. Rätt mått (Evolves,
+`matstrumpor/meta.mjs`), last_14d till 2026-09-30:
+
+| Annons | Hook (3 s ÷ visn.) | Hold (ThruPlay ÷ visn.) | Hook→hold | CTR länk | CPM |
+|---|---|---|---|---|---|
+| Nathalie (69 522 kr) | **0,47** | 0,15 | 0,31 | 2,7 % | 105 kr |
+| haikuh2 (4 389 kr) | 0,49 | 0,11 | 0,23 | 1,2 % | 112 kr |
+| 012v2 (698 kr) | 0,49 | 0,10 | 0,20 | 2,4 % | 168 kr |
+| Sofie H1 (501 kr) | **0,25** | 0,11 | **0,43** | 2,6 % | 162 kr |
+
+Hooken är alltså inte det som skiljer Nathalie från haikuh2 — det är att hon
+HÅLLER (0,31 mot 0,23) och att folk klickar (2,7 % mot 1,2 %). Sofie är
+tvärtom: svag hook, starkast hold. Det är skälet till att Sofie och Katarina
+får Nathalies manus med hennes öppning (`products/matstrumpor/ugc/`).
 
 ✅ **Kommentarerna läses sedan 2026-09-27** via `META_ACCESS_TOKEN_MATSTRUMPOR`
 (Axels egen app, sidan ligger i en annan Business Manager än `META_ACCESS_TOKEN`).

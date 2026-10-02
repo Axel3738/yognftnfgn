@@ -139,7 +139,9 @@ export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), tea
   for (const a of annonser) {
     if (!arSvensk(a)) continue;
     let koppling = kopplaAnnons(a, register, []);
-    const matNr = String(a.adNamn ?? '').match(/^MATSTRUMP_.*?_(\d{3})[a-z0-9]*_v\d+$/i)?.[1];
+    // Kedjan efter numret (`_h2`, `_i10pnat`, `_im`, matstrumpor/namn.mjs sedan
+    // 2026-10-01) får inte tappa numret.
+    const matNr = String(a.adNamn ?? '').match(/^MATSTRUMP_.*?_(\d{3})[a-z0-9]*(?:_[a-z0-9]+)*_v\d+$/i)?.[1];
     if (matNr) {
       const rad = matRegister.perNummer.get(matNr);
       koppling = rad ? { ansvariga: rad.ansvariga, via: 'hubb', radnamn: rad.radnamn } : null;

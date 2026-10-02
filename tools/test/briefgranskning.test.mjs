@@ -984,6 +984,11 @@ test('Matstrumpors namnmönster läses av spärren (vinkel = koncept, numret på
   const b = tolkaMatstrumporNamn('MATSTRUMP_sushi_jul_static_049_v1');
   assert.deepEqual({ koncept: b.koncept, nummer: b.nummer, variant: b.variant }, { koncept: 'JUL', nummer: 49, variant: '1' });
   assert.equal(tolkaMatstrumporNamn('Takoverdrag_BOF_3_1'), null);
+  // Kedjan i namnet (2026-10-01): hookvariant, iteration på förälder, imitation.
+  const i = tolkaMatstrumporNamn('MATSTRUMP_sushi_gift_ugc_065_h2_i10pnat_v1');
+  assert.deepEqual({ koncept: i.koncept, nummer: i.nummer, variant: i.variant }, { koncept: 'GIFT', nummer: 65, variant: 'H2' });
+  assert.equal(tolkaMatstrumporNamn('MATSTRUMP_sushi_gift_ugc_066_i3p054_v1').nummer, 66);
+  assert.equal(tolkaMatstrumporNamn('MATSTRUMP_sushi_jul_static_067_im_v1').variant, '1');
 });
 
 test('variabelKarna: syskonlistan efter semikolon och ", against <förälder>" är inte fler variabler', () => {
