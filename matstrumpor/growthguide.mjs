@@ -42,6 +42,9 @@ export const MASKINKOLUMNER = {
   Kreatör: { select: {} },
   Marknad: { select: {} },
   Adset: { select: {} },
+  'Adset-id': { rich_text: {} },
+  'Adset-roll': { select: {} },
+  'Adset-dom': { select: {} },
   Playbook: { rich_text: {} },
   Förälder: { rich_text: {} },
   Koncept: { rich_text: {} },
@@ -94,6 +97,9 @@ export function egenskaperFor(rad) {
     Kreatör: sel(rad.kreator),
     Marknad: sel(rad.marknad),
     Adset: sel(rad.adset),
+    'Adset-id': text(rad.adset_id),
+    'Adset-roll': sel(rad.adset_roll),
+    'Adset-dom': sel(rad.adset_dom),
     Playbook: text(rad.playbook),
     Förälder: text(rad.foralder),
     Koncept: text(rad.koncept),
@@ -121,7 +127,9 @@ export function planera(arkivrader, befintliga) {
     const bef = befintliga.get(rad.namn);
     if (!bef) { plan.nya.push(rad); continue; }
     const m = rad.senaste_matning || {};
-    const samma = bef.etikett === (rad.etikett || null) && bef.matt === (m.datum || null) && bef.spend === (m.spend_sek == null ? null : Math.round(m.spend_sek)) && bef.status === (rad.status || null);
+    // adset_dom: undefined = raden lästes innan kolumnen fanns ⇒ räknas som ändrad
+    // när arkivet har en dom, så kolumnen fylls första ronden efter bytet.
+    const samma = bef.etikett === (rad.etikett || null) && bef.matt === (m.datum || null) && bef.spend === (m.spend_sek == null ? null : Math.round(m.spend_sek)) && bef.status === (rad.status || null) && (bef.adset_dom ?? null) === (rad.adset_dom || null) && (bef.adset ?? null) === (rad.adset ? String(rad.adset).replace(/,/g, ' ').slice(0, 90) : null);
     if (samma) plan.oandrade++; else plan.andrade.push(rad);
   }
   return plan;
@@ -157,6 +165,23 @@ async function skapaDatabas(sidaId) {
   return db.id;
 }
 
+/** Maskinkolumner som saknas i databasens schema (nya kolumner läggs till i
+ *  koden efter att databasen skapats — 3:2:2:s Adset-id/-roll/-dom 2026-10-02).
+ *  Ren: schemats properties in, det som ska PATCH:as ut. Människornas kolumner
+ *  rörs aldrig, och en kolumn som finns ändras aldrig. */
+export function saknadeKolumner(schemaProps) {
+  const finns = new Set(Object.keys(schemaProps ?? {}));
+  return Object.fromEntries(Object.entries(MASKINKOLUMNER).filter(([namn]) => !finns.has(namn)));
+}
+
+async function sakerstallKolumner(dbId) {
+  const db = await notion(`/databases/${dbId}`);
+  const saknas = saknadeKolumner(db.properties);
+  if (!Object.keys(saknas).length) return [];
+  await notion(`/databases/${dbId}`, { method: 'PATCH', body: { properties: saknas } });
+  return Object.keys(saknas);
+}
+
 async function lasBefintliga(dbId) {
   const karta = new Map();
   let cursor;
@@ -171,6 +196,8 @@ async function lasBefintliga(dbId) {
         status: p.properties?.Status?.select?.name || null,
         matt: p.properties?.['Mätt']?.date?.start || null,
         spend: p.properties?.['Spend kr']?.number ?? null,
+        adset: p.properties?.Adset?.select?.name ?? null,
+        adset_dom: p.properties?.['Adset-dom']?.select?.name ?? null,
       });
     }
     cursor = q.has_more ? q.next_cursor : undefined;
@@ -204,6 +231,13 @@ async function main() {
     console.log(`Databasen skapad: ${dbId}`);
   }
 
+  if (skarpt) {
+    const nya = await sakerstallKolumner(dbId);
+    if (nya.length) console.log(`Nya maskinkolumner i databasen: ${nya.join(', ')}`);
+  } else {
+    const saknas = Object.keys(saknadeKolumner((await notion(`/databases/${dbId}`)).properties));
+    if (saknas.length) console.log(`TORRT: skulle lägga till kolumnerna ${saknas.join(', ')}`);
+  }
   const befintliga = await lasBefintliga(dbId);
   const plan = planera(rader, befintliga);
   console.log(`Notion har ${befintliga.size} rader. Nya: ${plan.nya.length}, ändrade: ${plan.andrade.length}, oförändrade: ${plan.oandrade}.`);

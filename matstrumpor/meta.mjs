@@ -145,8 +145,11 @@ export function summeraDagar(dagserie, since, until) {
     if (dag < since || dag > until) continue;
     const s = num(d.spend) ?? 0;
     spend += s;
-    kop += varde(d.actions, 'omni_purchase') ?? 0;
-    const r = varde(d.purchase_roas, 'omni_purchase');
+    const dagKop = varde(d.actions, 'omni_purchase') ?? 0;
+    kop += dagKop;
+    // En dag med spend och noll köp saknar purchase_roas hos Meta — den är ROAS 0
+    // och väger in (rättat 2026-10-02; förut räknades bara köpdagarna).
+    const r = varde(d.purchase_roas, 'omni_purchase') ?? (s > 0 && dagKop === 0 ? 0 : null);
     if (r !== null) { varde_ += r * s; medRoas += s; }
   }
   return { since, until, spend_sek: r2(spend), kop, roas: medRoas > 0 ? r3(varde_ / medRoas) : null };
@@ -205,9 +208,51 @@ export function budgetVid(historik, datum, nuvarandeSek = null) {
   return nuvarandeSek;
 }
 
+/** Antal dagar bakåt adsetens dagserie läses (3:2:2-domen, dom.mjs): ett test
+ *  döms på högst 14 dagar och jämförs med lika många dagar före, så 28 räcker. */
+export const ADSET_SERIE_DAGAR = 28;
+export const ADSET_FALT = 'id,name,status,effective_status,created_time,daily_budget,lifetime_budget,is_dynamic_creative';
+
+/** En dagserie ur Meta (kampanj- eller adsetnivå, time_increment=1) → kompakta
+ *  rader { d, spend_sek, kop, roas }, äldst först. Ren. */
+export function kompaktSerie(dagserie) {
+  return (dagserie ?? []).map((d) => {
+    const t = tolkaRad(d);
+    return { d: String(d.date_start), spend_sek: t.spend_sek ?? 0, kop: t.kop ?? 0, roas: t.roas };
+  }).sort((a, b) => a.d.localeCompare(b.d));
+}
+
+/** Kampanjens adsets med dagserie och antal levererande annonser — det
+ *  3:2:2-domen (dom.mjs) dömer. Ren. adsetserie = insights level=adset,
+ *  time_increment=1 (rader med adset_id). */
+export function byggAdsets({ adsets, annonser, adsetserie }) {
+  const perAdset = new Map();
+  for (const r of adsetserie ?? []) {
+    const id = String(r.adset_id ?? '');
+    if (!perAdset.has(id)) perAdset.set(id, []);
+    perAdset.get(id).push(r);
+  }
+  const LEV = new Set(['ACTIVE', 'PENDING_REVIEW', 'IN_PROCESS', 'PREAPPROVED', 'WITH_ISSUES']);
+  return (adsets ?? []).map((a) => {
+    const egna = (annonser ?? []).filter((x) => String(x.adset?.id ?? x.adset_id ?? '') === String(a.id));
+    return {
+      id: String(a.id),
+      namn: a.name,
+      status: a.status ?? null,
+      effective_status: a.effective_status ?? null,
+      skapad: String(a.created_time ?? '').slice(0, 10) || null,
+      dynamic_creative: a.is_dynamic_creative ?? null,
+      egen_budget: Boolean(a.daily_budget || a.lifetime_budget),
+      annonser: egna.length,
+      aktiva_annonser: egna.filter((x) => LEV.has(String(x.effective_status ?? ''))).length,
+      serie: kompaktSerie(perAdset.get(String(a.id)) ?? []),
+    };
+  });
+}
+
 /** Jobbfilen `--dom` läser: siffrorna ORDAGRANT ur Meta, aldrig räknade i
  *  huvudet. Ren — tar de råa svaren och bygger strukturen. */
-export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka = {}, dagserie = null, kampanjStart, marknad = 'SE', historik, hamtat = new Date().toISOString() }) {
+export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka = {}, dagserie = null, kampanjStart, marknad = 'SE', historik, adsetLista = null, adsetserie = null, hamtat = new Date().toISOString() }) {
   const dagsbudget = kampanj?.daily_budget ? Number(kampanj.daily_budget) / 100 : null;
   const k14 = tolkaRad(kampanj14 ?? {});
   const via = new Map((insikter14 ?? []).map((r) => [String(r.ad_id), r]));
@@ -292,6 +337,10 @@ export function byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampan
     },
     budgethistorik: historik ?? [],
     annonser: rader,
+    // 3:2:2 (2026-10-02): kampanjens dagserie och adseten med egna dagserier,
+    // så att kungen kan döma per ADSET (dom.mjs). Bara Sverige läser adseten.
+    kampanj_serie: dagserie ? kompaktSerie(dagserie) : [],
+    ...(adsetLista ? { adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie }) } : {}),
   };
 }
 
@@ -335,6 +384,17 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
   const kampanjStart = startdag(dagserie);
   logg(`  · kampanjens första spenddag: ${kampanjStart ?? 'INGEN — kampanjen har inte spenderat, inga annonser får etikett än'} (${dagserie.length} dagar i serien)`);
 
+  // 3:2:2 (Axels beslut 2026-10-02): adseten och deras dagserie, så att kungen
+  // dömer per ADSET (dom.mjs). Bara Sverige — utlandets kampanjer är inte byggda
+  // som 3:2:2. Två anrop: adseten och en adsetserie för hela kampanjen.
+  let adsetLista = null, adsetserie = null;
+  if (mal.marknad === 'SE') {
+    adsetLista = await klient.alla(`${kampanjId}/adsets`, { fields: ADSET_FALT }, 100);
+    const fran = plusDagar(idag, -ADSET_SERIE_DAGAR);
+    adsetserie = fran <= igar ? await klient.alla(`${kampanjId}/insights`, { level: 'adset', time_range: { since: fran > skapadK ? fran : skapadK, until: igar }, time_increment: 1, action_attribution_windows: ATTRIBUTION, fields: `adset_id,adset_name,${KAMPANJ_FALT}` }, 500) : [];
+    logg(`  · 3:2:2: ${adsetLista.length} adsets, ${adsetserie.length} adsetdagar (${ADSET_SERIE_DAGAR} dagar bakåt)`);
+  }
+
   const d0s = [...new Set(annonser.map((a) => annonsD0(a.created_time, kampanjStart)).filter(Boolean))].sort();
   const perFonster = {};
   const perVecka = {};
@@ -363,7 +423,7 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
   // Ingen annons med startdag (kampanjen har inte spenderat) ⇒ inget att
   // etikettera och ingen budget att jämföra — aktivitetsloggen läses inte.
   // Sparar ett tungt anrop per utlandskampanj före start (14 st 2026-10-01).
-  if (!d0s.length) return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik });
+  if (!d0s.length) return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik, adsetLista, adsetserie });
   try {
     // 50 per sida, inte 200: med 200 svarade Meta "Please reduce the amount of
     // data you're asking for" på sidan efter den första (mätt 2026-09-23,
@@ -375,7 +435,47 @@ export async function hamtaAvlasning(konfig, { idag = idagSE(), klient = { api, 
     logg(`  ⚠️ aktivitetsloggen gick inte att läsa (${e.message}) — budget_d0/budget_d7 blir nuvarande budget, etiketten kan då inte se en höjning`);
   }
 
-  return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik });
+  return byggJobbfil({ idag, konto, kampanj, annonser, insikter14, kampanj14, perFonster, perVecka, dagserie, kampanjStart, marknad: mal.marknad, historik, adsetLista, adsetserie });
+}
+
+/** Strukturen i den svenska kampanjen — det uppladdaren (/matstrumpor) räknar
+ *  platserna på: kampanjens budget, adseten med antal levererande annonser, och
+ *  Champions-adsetets inställningar som mall för ett nytt testadset (struktur.mjs
+ *  adsetSpec). LÄSER BARA, tre–fyra anrop. Fel konto eller fel kampanjnamn
+ *  avbryter, precis som avläsningen. */
+export async function hamtaStruktur(konfig, { klient = { api, alla }, logg = (s) => console.error(s), idag = idagSE() } = {}) {
+  const konto = String(konfig.meta.ad_account_id);
+  if (konto !== '730973156224390') throw new Error(`ad_account_id ${konto} är inte "nya kungen" 730973156224390 — vägrar läsa ett annat konto.`);
+  const kampanjId = String(konfig.meta.kampanj.id);
+  const kampanj = await klient.api(kampanjId, { params: { fields: 'id,name,status,effective_status,daily_budget,lifetime_budget,account_id,bid_strategy' } });
+  if (String(kampanj.name ?? '') !== String(konfig.meta.kampanj.namn)) throw new Error(`Kampanj ${kampanjId} heter "${kampanj.name}" i kontot, konfigen säger "${konfig.meta.kampanj.namn}" — avbryter.`);
+  if (kampanj.account_id && String(kampanj.account_id) !== konto) throw new Error(`Kampanj ${kampanjId} ligger i konto ${kampanj.account_id}, inte ${konto} — avbryter.`);
+  const adsetLista = await klient.alla(`${kampanjId}/adsets`, { fields: ADSET_FALT }, 100);
+  const annonser = await klient.alla(`${kampanjId}/ads`, { fields: 'id,name,effective_status,adset{id,name}' }, 300);
+  const champId = konfig.meta.struktur?.champions?.id ? String(konfig.meta.struktur.champions.id) : null;
+  let mall = null;
+  if (champId && adsetLista.some((a) => String(a.id) === champId)) {
+    mall = await klient.api(champId, { params: { fields: 'id,name,targeting,optimization_goal,billing_event,promoted_object,attribution_spec,destination_type' } });
+  }
+  logg(`  · struktur: ${kampanj.name} ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag, ${adsetLista.length} adsets, ${annonser.length} annonser`);
+  return {
+    datum: idag,
+    hamtat: new Date().toISOString(),
+    konto,
+    kampanj: { id: String(kampanj.id), namn: kampanj.name, effective_status: kampanj.effective_status ?? null, dagsbudget_sek: kampanj.daily_budget ? Number(kampanj.daily_budget) / 100 : null, cbo: Boolean(kampanj.daily_budget || kampanj.lifetime_budget) },
+    adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie: [] }).map(({ serie, ...a }) => a),
+    champions_mall: mall,
+  };
+}
+
+/** Tillbakaläsningen av ett testadset efter uppladdningen (kor.mjs --kontroll):
+ *  adsetet och dess annonser med creatives, så att 2 rubriker + 2 texter, sida,
+ *  länk och mediatyp kontrolleras ur Meta och inte ur minnet. LÄSER BARA. */
+export async function hamtaAdsetKontroll(konfig, adsetId, { klient = { api, alla } } = {}) {
+  const adset = await klient.api(String(adsetId), { params: { fields: `${ADSET_FALT},campaign_id,account_id` } });
+  if (adset.account_id && String(adset.account_id) !== String(konfig.meta.ad_account_id)) throw new Error(`Adset ${adsetId} ligger i konto ${adset.account_id} — inte nya kungen. Avbryter.`);
+  const annonser = await klient.alla(`${adsetId}/ads`, { fields: 'id,name,status,effective_status,creative{id,object_story_spec,asset_feed_spec}' }, 50);
+  return { adset, annonser, kampanj_id: adset.campaign_id ?? null };
 }
 
 /** Utlandets kampanjer i kontot, ur annonser/lage.json (skrivet av bygg.mjs

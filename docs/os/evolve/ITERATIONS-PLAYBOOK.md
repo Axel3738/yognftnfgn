@@ -219,3 +219,44 @@ en konkurrent, för smal sub-avatar/vinkel, ren erbjudandeannons (tömmer tratte
 - **Winning Ad Report**: Evolves egen Claude Code-rutin `/analyze-breakthrough` (GitHub
   `zjamesblake/analyze-breakthrough`, CSV in → rapport ut) som medlemmarna skickar in via
   ClickUp så definitionerna kan förfinas på gemensam data.
+
+## 11. 3:2:2 i detalj (lektionerna lästa 2026-10-02, Axels beslut ROUTING C)
+
+Lästa med `tools/skool/lektioner.mjs` 2026-10-02: "How To Set Up a 3:2:2 Campaign"
+(kurs `fc758841`, lektion `7547f36b…`), "Full Media Buying Strategy Outline (2026)"
+(`a5f24067…`, med media buying-arket som CSV), "Evolve Facebook Ads Philosophy",
+"How To Duplicate Ads Into Champions (NEW WAY)", "How To Protect Against Bad Ads".
+Byggt in i `/matstrumpor` + `/matstrumporkungen` samma dag (`matstrumpor/struktur.mjs`,
+`matstrumpor/dom.mjs`, `konfig.json → meta.struktur`).
+
+- **Uppställningen:** 1 kampanj (CBO), 1 Champions-adset, flera testadsets. **3 creatives
+  per adset (samma koncept), var och en med 2 rubriker och 2 primärtexter.** Media
+  buying-arket 2026: `🔁 Batch # Broad (Adset) — 3 Visuals, 2 Copies, 2 Headlines,
+  2 Landing Pages` (3:2:2:2). **Ordet DCT/dynamic creative finns inte i kursen** — det
+  är vanliga annonser med flera textalternativ.
+- **Hur många adsets:** spenderar du några hundra dollar om dagen, högst **5 adsets åt
+  gången, inklusive Champions om den har annonser**. Arket: under $1k/dag håll det till
+  5 nya testadsets; under $2k/dag kör inte 3:2:2:2 (en landningssida). Max antal koncept
+  per vecka = budget ÷ target-CPA.
+- **Ingen min/max-spend per adset** ("we tested it and it didn't help").
+- **Testtiden:** minst 3 dagar, nu 7; går de inte bra efter 7 (lite spend eller missad
+  KPI) stängs de. Längre än 14 dagar rekommenderas inte.
+- **Vinnare:** tar majoriteten av spenden vid KPI. Osäker: "Did my overall campaign
+  performance improve?" — förbättrades inte kampanjens ROAS är det ingen vinnare.
+- **Stänga:** bara på **adsetnivå, aldrig annonsnivå**. Lite spend efter 7 dagar och
+  dålig ROAS ⇒ stäng; bra ROAS ⇒ får stå om inga andra creatives väntar i kön. Tog
+  majoriteten av spenden de första 3 dagarna, dålig prestation och kampanjen gick ner ⇒
+  stäng, men gör lärdomen (något fick engagemang — gör den mer köpdriven). Stäng inte en
+  annons som gick bra och plötsligt dök — zooma ut, titta på snitten.
+- **Champions:** sätt upp det även utan vinnare, lägg in en annons först när den är
+  bevisad. Flytten görs genom att duplicera annonsen in (nya sättet behåller
+  IG-engagemanget; annars post-id). Chadbot (D2): flytta först när annonsen tagit
+  20–30 % av budgeten.
+- **Bild och video:** samma kampanj går bra, men separata adsets. Ett koncept = ett adset,
+  så ett bildkoncept = tre bildvarianter.
+- **Stäng aldrig av befintliga annonser som fungerar** när 3:2:2 sätts upp.
+- **Minsta budget:** $100/dag.
+
+Matstrumpors tal (konfig `meta.struktur`): Champions `09-17 UGC`, max 5 levererande
+adsets, 3 annonser × 2 rubriker × 2 texter, 3 × break-even-CPA (≈ 925 kr) per adset och
+dag, test 7 dagar (max 14), tidig dom från dag 3, majoritet 50 %, flytt 20 %.
