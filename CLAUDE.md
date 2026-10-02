@@ -209,8 +209,16 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
 - Shopifys mejl länkar till .com (`mejl/notis-lankar.mjs`, 806 översättningar), och ingen fyra står i
   ja/zh-TW.
 - Kvar: Spoks v2 (japanska, Belgien → franska) kräver en session med Spoks-connectorn
-  (`klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`). SEK-formatet och kassans typsnitt är admin-klick
-  (`marknader/cowork/7-sajtfix.txt`). B-koden i A/B-testet (S-025) är Axels beslut.
+  (`klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`). SEK-formatet och kassans typsnitt gjorde Cowork 2026-10-02
+  (`marknader/cowork/7-sajtfix.txt`). Mätt efteråt: "1 234 568 kr" med mellanslag.
+- ✅ **Ett par ätpinnar gratis till varje låda, i alla tretton paket, sedan 2026-10-02** (Axel: "ätpinnar
+  ska alltid vara en gratis gåva som följer med varje enskild box", hans val B på S-025). A/B-testets
+  B-koder `SUSHI-2FOR499` och `SUSHI-4FOR799` ger ett belopp av per vara i stället för en gång per order, så
+  gåvan blir 0 kr och paketen kostar 499 resp. 799 kr som förut. En låda utöver paketet får samma rabatt,
+  och det valde Axel. B-variantens enlådspaket fick ett par ätpinnar och koden `SUSHI-1FOR399`: köp en
+  låda, få ett par gratis, för varje låda. `marknader/b-koder.mjs` kollar regeln för varje paket i
+  butiken, och `--aterstall --skarpt` lägger tillbaka allt som det var.
+  ⚠️ Ändrar kunden antalet lådor i varukorgen följer ätpinnarna inte med av sig själva.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla

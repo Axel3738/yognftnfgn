@@ -1,4 +1,4 @@
-Inte körd än. Skriven 2026-10-02 efter sajtgranskningen 2026-10-01 (matstrumpor/marknader/granskning/SAJT-2026-10-01.md). Allt annat i granskningen är rättat via API och temat. Det här är de två klick som bara går att göra i Shopify admin.
+Körd 2026-10-02 av Cowork ("Sajtfix klart"). Steg 1: alla fyra pengafälten bytta, och sessionen mätte "1 234 568 kr" med mellanslag på .se efteråt. Steg 2: kassans rubriker bytta från Mochiy Pop P One till M PLUS Rounded 1c i den aktiva kassan, "Kopia av FixKliniken-konfiguration". Brödtexten stod redan på Standard, och den polska kassan visar "Płatność" i ett typsnitt. Skriven efter sajtgranskningen 2026-10-01 (matstrumpor/marknader/granskning/SAJT-2026-10-01.md).
 
 Uppdrag: två inställningar i Shopify-butiken Matstrumpor (admin.shopify.com/store/1r46tp-qx). Gör bara det som står nedan.
 
