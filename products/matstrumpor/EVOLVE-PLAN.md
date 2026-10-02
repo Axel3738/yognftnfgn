@@ -4,7 +4,7 @@ Axel 2026-10-01: "jag kör så många tasks så det är viktigt att du är struk
 jag allt". Det här är EN lista. Den uppdateras av sessionen som gör något på den, aldrig av minnet.
 Bakgrunden står i `docs/os/evolve/EVOLVE-GAP-ANALYS.md`.
 
-Senast uppdaterad: 2026-10-01 kväll.
+Senast uppdaterad: 2026-10-02 kväll (Axels tre beslut: C, produktsidan, A).
 
 ---
 
@@ -24,35 +24,21 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 
 ---
 
-## 🌙 I kväll (Axel, 10 minuter)
+## ✅ Axels beslut 2026-10-02 kväll
 
-1. **Skicka DM:en/mejlen till kreatörerna.** Texterna står färdiga i
-   `factory/ugc/utskick/2026-10-01-matstrumpor.md` (9 st + 4 reserver; listan i
-   `factory/ugc/kreatorer.md`). Sofie och Katarina först, sedan de nya.
-2. **Skriv "merga"** här i chatten. Annars kör rutinen lör 3/10 07:00 på den gamla koden.
-3. **ROUTING, A, B eller C:** A = nya UGC-videor laddas upp i `09-17 UGC` (Nathalies adset,
-   85 % av spenden); B = som förut (`nya16`/`jul_video`, där Gilz 11 videor fick 35 kr på en vecka);
-   **C = Chadbots svar: DCT 3:2:2**, ett nytt adset per batch med dynamic creative (≥ 3 videor,
-   2 rubriker, 2 primärtexter), flytt till huvudadsetet vid 20–30 % budgetandel. C kräver att
-   `/matstrumpor` byggs om (sessionen gör det när Axel sagt C).
-3b. **Nathalie:** fråga henne om en löpande runda (Chadbot fråga 1: fler från den som redan
-   levererat, före nya). Meddelandet står först i `factory/ugc/utskick/2026-10-01-matstrumpor.md`.
+| # | Beslut | Vad det betyder | Vem gör |
+|---|---|---|---|
+| 1 | **"merga"** | Grenen ligger på `main` (3d764c01). Rutinen lör 3/10 07:00 kör den nya koden. | klart |
+| 2 | **ROUTING = C, DCT 3:2:2** ("Jag gillar chadbots sätt") | Varje ny batch får ett eget adset i `MATSTRUMP_SALES_20260826` med dynamic creative: ≥ 3 videor, 2 rubriker, 2 primärtexter. Flytt till `09-17 UGC` när en video tagit 20–30 % av testadsetets budget. | sessionen bygger om `/matstrumpor` (Adsmanager-MCP:n) |
+| 2b | **Growth sheet** som Axel kan se OCH som han och creative strat kan ändra i | Arkivet (`arkiv.md`) är bara läsbart och skrivs över av koden. Byggs som en Notion-databas "Matstrumpor Growth Guide": rutinen skriver mätkolumnerna (etikett, typ, förälder, hook/hold, spend, köp, ROAS, playbook), människor äger kolumnerna Anteckning/Beslut/Nästa steg som koden aldrig rör. Axel ser den i Notion. | sessionen; Axel får en länk när den finns |
+| 3 | **Produktsidans copy ändras så den säger samma sak som Nathalies video** (present, favoriträtt, "sålde slut i november") | Inte en ny sida: den vanliga `matstrumpor.se/products/sushi-strumpor`. Axels fråga står kvar: är kunderna de som har svårt för presenter, eller de som köper tusen julklappar? **Svaret mäts, gissas inte:** enkäten (`enkat/`), Judge.me-recensionerna, annonskommentarerna och ordermönstret (par per order, decemberandel, presentmeddelanden). Sedan skrivs copyn av huvudsessionen (landningssideundantaget, regel 6), visas som före/efter, och går live på Axels ok. ATC-graden efteråt är facit (5,5 % nu). | sessionen: research → förslag → Axels ok → live |
+| 4 | **Copyregeln = A** (Evolves: aldrig ett märke som referens) | Inskriven i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` med de sex andra prompt-reglerna. Vardagsreferenser (takeaway, julstrumpa) kvar. | klart |
 
-## ☀️ I morgon fre 2/10 (Axel, 15 minuter)
+## ☀️ Kvar för Axel
 
-4. **Dela briefsidan** och skicka länken själv till de som sagt ja:
-   https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn → **Share** → **Anyone with the link**.
-   ⛔ Axels beslut 2026-10-01 kväll: **Lovely pratar inte med kreatörerna, Axel sköter allt**
-   (paket, brief, deadline, pengar). Lovely-meddelandet är borttaget. **Bara sushi** i alla
-   briefer, de andra lådorna marknadsförs inte.
-5. ~~Lovely-meddelandet~~ utgår.
-6. ✅ **Chadbot svarade 2026-10-01 kväll** (`products/matstrumpor/CHADBOT-SVAR-2026-10-02.md`):
-   fler från Nathalie först, ATC-graden avgör funnel/urgency, hit rate 2–4 % är super
-   winner-nivå, och routing = DCT 3:2:2 (alternativ C nedan).
-7. **Ett regelbeslut:** Evolves hookregel säger "jämför aldrig med ett märke, skriv först/enda",
-   vår `copy-regler.md` säger "jämför med det kunden redan känner". **A** = Evolves regel
-   vinner, **B** = vår står kvar. Sedan skrivs Evolves sju prompt-regler in i copy-reglerna.
-8. **Fiverr-ordrarna** (Wallin Twins, ev. Sami/Andrea) är köp och görs av dig när de svarat.
+1. **Nathalie:** skicka meddelandet (utskick 0 i `factory/ugc/utskick/2026-10-01-matstrumpor.md`), om det inte redan gått.
+2. **Produktsidan:** när förslaget kommer (före/efter), säg ok eller ändra. Inget går live innan dess.
+3. **Growth sheet:** om integrationen "Bäverbutiken RUTINER" inte får skapa en databas i Matstrumpors teamspace behövs ett klick: skapa en tom sida "Matstrumpor Growth Guide" och bjud in integrationen. Sessionen säger till om det behövs.
 
 ## 🤖 Mitt (sessionen eller rutinen, inget för Axel)
 
@@ -62,11 +48,13 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
   uppladdaren loggar `--kreator <namn>` så arkivet räknar vinst per kreatör.
 - **ATC-graden i rutinen** (Chadbot fråga 2): `kor.mjs --hamta` läser `add_to_cart` + `landing_page_view`,
   domen skriver ATC % för varje spend winner, tröskel 8 %. Byggs i nästa session.
-- **DCT-uppladdaren** (Chadbot fråga 4) om Axel väljer ROUTING C.
+- **DCT-uppladdaren** (ROUTING C, beslutat 2026-10-02): ett dynamic creative-adset per batch,
+  3:2:2, promovering vid 20–30 % budgetandel. Bygg i `.claude/commands/matstrumpor.md` + motorn.
+- **Growth Guide i Notion** (beslut 2b): databas + rutinen skriver mätkolumnerna varje rond.
+- **Produktsidans copy** (beslut 3): research ur egen data → copy → före/efter till Axel.
 - **Research in i briefen** (läcka 3): kungen läser enkäten, kommentarerna och recensionerna
   före varje brief. Byggs i nästa session.
-- **Evolves sju prompt-regler** in i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` efter
-  Axels A/B i punkt 7.
+- ✅ **Evolves sju prompt-regler** inskrivna 2026-10-02 i `docs/copy-regler.md` + `docs/os/BRIEF-REGI.md` (val A).
 - **Samma rättning till Bäverbutiken:** hook/hold-måttet och Evolve-etiketterna (vecka 2–3,
   spend mot veckan före) in i Skalnings kungens `agent/etikett.mjs`.
 - **Kreatörslistan:** djupkollen (3 videor per kreatör, poängmallen) görs när någon svarat,
@@ -100,7 +88,7 @@ Ur Evolve-kursen (A10 UGC, A3 Research). Allt på engelska, en SOP per rad innan
 
 ## 🔧 Nästa bygg (kvar av de fem läckorna)
 
-1. **Svälten** (läcka 2): hälften av allt vi laddat upp har aldrig fått leverans. Chadbots svar: DCT 3:2:2 (ROUTING C). Löses av beslutet ovan.
+1. **Svälten** (läcka 2): hälften av allt vi laddat upp har aldrig fått leverans. Beslutat 2026-10-02: DCT 3:2:2 (ROUTING C). Bygget är nästa.
 2. **Research in i briefen** (läcka 3): 0 av 12 briefer kom ur kundernas egna ord. Kungen ska läsa enkäten, kommentarerna och recensionerna innan den briefar.
-3. **Copyreglerna ur Evolves prompter** (läcka 5): sju regler (hook ~5 ord, kall trafik 0–3–8–35 s, slippery slope …). En krockar med våra regler ("jämför aldrig med ett märke" mot "jämför med det kunden känner"). Där behövs Axels val.
+3. ✅ **Copyreglerna ur Evolves prompter** (läcka 5) inskrivna 2026-10-02, Axels val A.
 4. ✅ Chadbot-frågorna ställda och besvarade 2026-10-01 (`CHADBOT-SVAR-2026-10-02.md`).
