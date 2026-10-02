@@ -80,6 +80,8 @@
       "tidig_dom_dagar": 3,
       "majoritet_andel": 0.5,
       "flytt_andel": 0.2,
+      "max_annonser_per_uppladdning": 6,
+      "uppladdning_comment": "Axels beslut 2026-10-02 kväll: VARJE UPPLADDNING är ett nytt adset (MATSTRUMP_U<ÅÅMMDD>[b …]_<vinkel|mix>_<video|bild>) med det som är klart just då — varianterna blir inte klara samtidigt. Högst 6 annonser per adset (sessionens val: nya16 med 40 annonser visade att Meta svälter resten), fler ⇒ nästa bokstav. Bild och video aldrig i samma.",
       "tak_min_andel": 0.01,
       "tak_comment": "Axels beslut A 2026-10-02: taket räknar bara adsets som TAR pengar — minst 1 % av kampanjens spend senaste sju dagarna (vid 10 000 kr/dag ≈ 100 kr/dag), eller yngre än testtiden, eller Champions. Ett adset Meta inte ger spend tar ingen budget från testerna.",
       "ung_annons_dagar": 7,

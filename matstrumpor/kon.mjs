@@ -27,7 +27,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { klaraRader } from '../tools/notion-kalla.mjs';
 import { tolka, mediatyp, bygg } from './namn.mjs';
-import { grupperaKoncept, tilldelaPlatser, granskaCopy, lasCopyKort, regler, sidNyckel, tolkaAdsetNamn } from './struktur.mjs';
+import { grupperaKoncept, tilldelaPlatser, granskaCopy, lasCopyKort, regler, sidNyckel, tolkaAdsetNamn, batchaUppladdning } from './struktur.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -110,62 +110,81 @@ export function planera(rader, konfig, { prisavvikelse = () => null, hookrader =
 /** Steg 2: koncepten. kort = Map(annonsnamn → lasCopyKort-resultat eller null);
  *  lage = struktur.mjs strukturLage (null ⇒ strukturen lästes inte ⇒ inget
  *  laddas upp). Ren. */
-export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, grupper = [], logg = [] } = {}) {
+export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, grupper = [], logg = [], datum = null } = {}) {
+  // Axels beslut 2026-10-02 (kväll): VARJE UPPLADDNING är ett eget adset, med
+  // det som är klart just då — varianterna blir inte klara samtidigt, och ibland
+  // laddas bara en upp. Koncepten (löpnumren) grupperas fortfarande för att
+  // granska copy och hålla isär det som redan byggts; själva adseten är
+  // uppladdningar (struktur.mjs batchaUppladdning), ett per mediatyp.
   let koncept = grupperaKoncept(klara, konfig, { grupper });
-  // Redan byggt? Ett koncept vars testadset finns i kampanjen (vilken status som
-  // helst — PAUSED med spend är ett beslut) eller i loggen, eller vars annons
-  // redan är uppladdad, byggs ALDRIG igen: ett andra adset med samma creatives
-  // tar en plats till och dubblerar annonserna.
-  const iKampanjen = new Map((lage?.adsets ?? []).filter((a) => tolkaAdsetNamn(a.namn)).map((a) => [a.namn, a]));
   const kasserade = new Set((logg ?? []).filter((r) => r.kod === 'ADSET_KASSERAT').map((r) => String(r.adset_id)));
   const skapade = (logg ?? []).filter((r) => r.kod === 'ADSET_SKAPAD' && !kasserade.has(String(r.adset_id)));
   const uppe = new Map((logg ?? []).filter((r) => r.kod === 'UPPLADDAD').map((r) => [String(r.annons).toLowerCase(), r]));
-  koncept = koncept.map((k) => {
-    const finns = k.adset_namn ? iKampanjen.get(k.adset_namn) : null;
-    const loggat = skapade.find((r) => (k.adset_namn && r.adset_namn === k.adset_namn) || String(r.koncept ?? '') === k.nyckel);
-    const redanUppe = k.annonser.filter((a) => uppe.has(a.namn.toLowerCase()));
-    // Bara loggat, inget i kampanjen och inget uppladdat: förra bygget avbröts
-    // (5b/5c publicerade inget). Det är inte "redan byggt" — raderna får ALDRIG
-    // Approved — men bygget stannar tills utkastet kasserats och kvitterats med
-    // --adset-kasserat, annars blir det två utkast med samma namn.
-    if (loggat && !finns && !redanUppe.length) {
-      return { ...k, status: 'stopp', utkast_opublicerat: true, skal: [...k.skal, `förra bygget publicerades inte: ADSET_SKAPAD ${loggat.adset_namn} (${loggat.adset_id}) ${loggat.datum} i loggen, men adsetet syns inte i kampanjen och inget är uppladdat. Väntar det på Axels publicering (förra rapporten säger det): vänta. Avbröts bygget: Axel kasserar utkastet och sessionen kör --adset-kasserat ${loggat.adset_id}. Raderna stannar i kön (aldrig Approved)`] };
-    }
-    if (finns || loggat || redanUppe.length) {
-      return { ...k, status: 'stopp', redan_byggd: true, skal: [...k.skal, `redan byggt: ${finns ? `adsetet ${finns.namn} (${finns.id}, ${finns.effective_status}) finns i kampanjen` : loggat ? `ADSET_SKAPAD ${loggat.adset_namn} (${loggat.adset_id}) ${loggat.datum} i loggen` : ''}${redanUppe.length ? `${finns || loggat ? ' · ' : ''}${redanUppe.map((a) => `${a.namn} är uppladdad (${uppe.get(a.namn.toLowerCase()).annons_id})`).join(', ')}` : ''} — byggs aldrig igen; raderna ska ut ur kön (Approved, eller kommentar + Draft om något saknas)`] };
-    }
-    return k;
-  });
+  const uppeAdset = new Set((logg ?? []).filter((r) => r.kod === 'UPPLADDAD' && r.adset_id).map((r) => String(r.adset_id)));
+  const iKampanjen = new Map((lage?.adsets ?? []).map((a) => [a.namn, a]));
+  // Ett bygge som inte publicerats (ADSET_SKAPAD, adsetet syns inte i kampanjen,
+  // inget uppladdat) håller sina annonser: de byggs inte i ett nytt adset förrän
+  // utkastet kasserats och kvitterats (--adset-kasserat), aldrig Approved.
+  // Syns adsetet i kampanjen men inget är loggat UPPLADDAD har Axel publicerat
+  // det (5c) — då ska det läsas tillbaka (--kontroll) och loggas, inte byggas igen.
+  const hallna = new Map();
+  for (const sk of skapade) {
+    if (uppeAdset.has(String(sk.adset_id))) continue;
+    for (const n of sk.annonser ?? []) hallna.set(String(n).toLowerCase(), sk);
+  }
+  const vantande = [];
+  const redo = [];
   koncept = koncept.map((k) => {
     if (k.status === 'stopp') return k;
-    // COPY CARD per annons. Syskonets kort (de tre hookarna delar normalt samma
-    // kort) gäller BARA när annonsen saknar eget kort — ett eget kort som
-    // underkänns stoppar konceptet, med felet märkt med annonsnamnet.
-    const per = k.annonser.map((a) => ({ a, egen: kort.get(a.namn) ?? null }));
-    const granskat = per.map(({ a, egen }) => ({ a, g: egen ? granskaCopy(egen, konfig) : null }));
+    // Gamla koncept-adset (före uppladdningsregeln) som loggats utan annonslista.
+    const gammaltLoggat = skapade.find((r) => !r.annonser && ((k.adset_namn && r.adset_namn === k.adset_namn) || String(r.koncept ?? '') === k.nyckel) && !uppeAdset.has(String(r.adset_id)));
+    // Ett koncept-adset från före uppladdningsregeln som redan finns i kampanjen.
+    const gammaltIKampanjen = k.adset_namn ? iKampanjen.get(k.adset_namn) : null;
+    const skal = [...k.skal];
+    const kvar = [];
+    for (const a of k.annonser) {
+      const nyckel = a.namn.toLowerCase();
+      const u = uppe.get(nyckel);
+      if (u) { skal.push(`${a.namn} är redan uppladdad (${u.annons_id}) — raden ska ut ur kön: Approved, eller kommentar + Draft om något saknas`); continue; }
+      const h = hallna.get(nyckel) ?? gammaltLoggat;
+      const publicerad = h ? iKampanjen.get(h.adset_namn) : gammaltIKampanjen;
+      if (publicerad) { skal.push(`${a.namn} ligger i adsetet ${publicerad.namn} (${publicerad.id}, ${publicerad.effective_status}) men är inte loggad som uppladdad — kör --kontroll ${publicerad.id}; exit 0 ⇒ logga med --uppladdad och sätt Approved. Byggs aldrig igen`); continue; }
+      if (h) { skal.push(`${a.namn}: förra bygget publicerades inte — ADSET_SKAPAD ${h.adset_namn} (${h.adset_id}) ${h.datum}, adsetet syns inte i kampanjen. Väntar det på Axels publicering: vänta. Avbröts det: Axel kasserar utkastet och sessionen kör --adset-kasserat ${h.adset_id}. Raden stannar i kön (aldrig Approved)`); kvar.push({ ...a, hallen: true }); continue; }
+      kvar.push(a);
+    }
+    // COPY CARD per annons. Syskonets kort gäller BARA när annonsen saknar eget
+    // kort — ett eget kort som underkänns håller annonsen, med felet märkt.
+    const granskat = kvar.map((a) => ({ a, g: kort.get(a.namn) ? granskaCopy(kort.get(a.namn), konfig) : null }));
     const godkand = granskat.find((p) => p.g?.ok)?.g ?? null;
     const annonser = granskat.map(({ a, g }) => ({ ...a, copy: g ? (g.ok ? g.copy : null) : godkand?.copy ?? null, copy_kalla: g ? (g.ok ? 'egen' : null) : godkand ? 'syskon' : null, copy_anm: g?.anm ?? [], copy_fel: g?.fel ?? [] }));
-    const fel = granskat.flatMap(({ a, g }) => (g?.fel ?? []).map((f) => `${a.namn}: ${f}`));
-    let { status, skal } = k;
-    if (status === 'klar' && annonser.some((a) => !a.copy)) {
-      status = 'vantar_copy';
-      skal = [...skal, ...(fel.length ? fel : ['inget COPY CARD hittades — varken i repots brief.md eller i Notion-sidan']), 'kungen (eller sessionen) låter en sonnet-subagent skriva rubrik 2 och text 2 mot docs/copy-regler.md och lägger dem i briefens COPY CARD']; // CLAUDE.md regel 6
+    for (const a of annonser) if (!a.hallen && a.copy) redo.push(a);
+    const utanCopy = annonser.filter((a) => !a.hallen && !a.copy);
+    const hallnaHar = annonser.filter((a) => a.hallen);
+    if (utanCopy.length) {
+      const fel = granskat.filter(({ a }) => utanCopy.some((x) => x.namn === a.namn)).flatMap(({ a, g }) => (g?.fel ?? []).map((f) => `${a.namn}: ${f}`));
+      vantande.push({ ...k, annonser: utanCopy, status: 'vantar_copy', skal: [...skal, ...(fel.length ? fel : ['inget COPY CARD hittades — varken i repots brief.md eller i Notion-sidan']), 'kungen (eller sessionen) låter en sonnet-subagent skriva rubrik 2 och text 2 mot docs/copy-regler.md och lägger dem i briefens COPY CARD'] }); // CLAUDE.md regel 6
     }
-    return { ...k, annonser, status, skal };
+    if (hallnaHar.length) vantande.push({ ...k, annonser: hallnaHar, status: 'stopp', utkast_opublicerat: true, skal });
+    if (!utanCopy.length && !hallnaHar.length && skal.length > k.skal.length && !annonser.length) vantande.push({ ...k, annonser: [], status: 'stopp', redan_byggd: true, skal });
+    return null;
   });
+  const stoppade = koncept.filter((k) => k && k.status === 'stopp');
+  const upptagna = new Set([...(lage?.adsets ?? []).map((a) => a.namn), ...skapade.map((r) => r.adset_namn)]);
+  let batcher = redo.length ? batchaUppladdning(redo, konfig, { datum: datum ?? new Date().toISOString().slice(0, 10), upptagna }) : [];
   if (!lage) {
-    koncept = koncept.map((k) => (k.status === 'klar' ? { ...k, status: 'vantar_struktur', skal: [...k.skal, 'strukturen i kampanjen lästes inte (kor.mjs --struktur) — utan den vet ingen hur många adsets som levererar, och inget laddas upp'] } : k));
+    batcher = batcher.map((k) => ({ ...k, status: 'vantar_struktur', skal: [...k.skal, 'strukturen i kampanjen lästes inte (kor.mjs --struktur) — utan den vet ingen hur många adsets som tar spend, och inget laddas upp'] }));
   } else {
-    koncept = tilldelaPlatser(koncept, lage);
+    batcher = tilldelaPlatser(batcher, lage);
   }
-  const rakna = (s) => koncept.filter((k) => k.status === s).length;
+  const alla = [...batcher, ...vantande, ...stoppade];
+  const rakna = (st) => alla.filter((k) => k.status === st).length;
   return {
-    koncept,
-    att_bygga: koncept.filter((k) => k.status === 'klar'),
-    vantar: koncept.filter((k) => k.status !== 'klar' && k.status !== 'stopp'),
-    stopp: koncept.filter((k) => k.status === 'stopp'),
+    koncept: alla,
+    att_bygga: alla.filter((k) => k.status === 'klar'),
+    vantar: alla.filter((k) => k.status !== 'klar' && k.status !== 'stopp'),
+    stopp: alla.filter((k) => k.status === 'stopp'),
     struktur: lage,
-    summa: { klara: rakna('klar'), vantar_plats: rakna('vantar_plats'), vantar_hookar: rakna('vantar_hookar'), vantar_copy: rakna('vantar_copy'), vantar_struktur: rakna('vantar_struktur'), stopp: rakna('stopp'), lediga: lage ? lage.lediga : null },
+    summa: { klara: rakna('klar'), vantar_plats: rakna('vantar_plats'), vantar_hookar: 0, vantar_copy: rakna('vantar_copy'), vantar_struktur: rakna('vantar_struktur'), stopp: rakna('stopp'), lediga: lage ? lage.lediga : null },
   };
 }
 
@@ -238,7 +257,7 @@ export async function hubbNamn(konfig, { fetchFn = fetch } = {}) {
 
 /** Läser Matstrumpors hub, briefernas COPY CARD och planerar. Kräver NOTION_TOKEN.
  *  lage kommer från kor.mjs (strukturen läst ur Meta) — null ⇒ inget laddas upp. */
-export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], hookrader = new Set(), prisavvikelse, ...val } = {}) {
+export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], hookrader = new Set(), prisavvikelse, datum = null, ...val } = {}) {
   const hub = { id: konfig.notion.hub_id, titel: konfig.notion.hub_namn };
   const rader = await klaraRader(hub, { statusar: (konfig.notion.ko_statusar ?? [konfig.notion.ko_status]).map((s) => s.toLowerCase()), ...val });
   const plan = planera(rader, konfig, { prisavvikelse, hookrader });
@@ -251,6 +270,6 @@ export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], ho
     kort.set(a.namn, k);
     a.copy_fil = kalla;
   }
-  const koncept = planeraKoncept(plan.klara, konfig, { kort, lage, grupper, logg });
+  const koncept = planeraKoncept(plan.klara, konfig, { kort, lage, grupper, logg, datum });
   return { rader, plan: { ...plan, ...koncept } };
 }

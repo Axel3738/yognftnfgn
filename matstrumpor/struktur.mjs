@@ -46,6 +46,7 @@ export function regler(konfig) {
     champions: s.champions ?? null,
     champions_bild: s.champions_bild ?? null,
     max_adsets_totalt: tal(s.max_adsets_totalt, 5),
+    max_annonser_per_uppladdning: tal(s.max_annonser_per_uppladdning, 6),
     annonser_per_adset: tal(s.annonser_per_adset, 3),
     rubriker_per_annons: tal(s.rubriker_per_annons, 2),
     texter_per_annons: tal(s.texter_per_annons, 2),
@@ -68,6 +69,18 @@ export function regler(konfig) {
 // hookarna delar det), så adset och annonser går att para ihop ur namnen ensamma.
 
 export const ADSET_MALL = /^MATSTRUMP_T(\d{3,})_([a-zåäö]+)_(video|bild)$/i;
+// Axels beslut 2026-10-02 (kväll): VARJE UPPLADDNING är ett eget adset, med det
+// som är klart just då — varianter blir inte klara samtidigt. Namnet bär datumet:
+// MATSTRUMP_U<ÅÅMMDD>[b, c …]_<vinkel|mix>_<video|bild>.
+export const UPPLADDNING_MALL = /^MATSTRUMP_U(\d{6})([b-z]?)_([a-zåäö]+)_(video|bild)$/i;
+
+export function uppladdningNamn({ datum, bokstav = '', vinkel, mediatyp: typ }) {
+  const d = String(datum ?? '').replace(/-/g, '');
+  if (!/^\d{8}$/.test(d)) throw new Error(`Uppladdningens adsetnamn kräver datumet ÅÅÅÅ-MM-DD, fick "${datum}".`);
+  if (!/^[a-zåäö]+$/i.test(String(vinkel ?? ''))) throw new Error(`Adsetnamnet kräver en vinkel (eller mix), fick "${vinkel}".`);
+  if (typ !== 'video' && typ !== 'bild') throw new Error(`Adsetnamnet kräver video eller bild, fick "${typ}" — bild och video blandas aldrig.`);
+  return `MATSTRUMP_U${d.slice(2)}${bokstav}_${String(vinkel).toLowerCase()}_${typ}`;
+}
 
 export function adsetNamn({ nummer, vinkel, mediatyp: typ }) {
   const n = Number(nummer);
@@ -78,9 +91,12 @@ export function adsetNamn({ nummer, vinkel, mediatyp: typ }) {
 }
 
 export function tolkaAdsetNamn(namn) {
-  const m = ADSET_MALL.exec(String(namn ?? '').trim());
+  const n = String(namn ?? '').trim();
+  const u = UPPLADDNING_MALL.exec(n);
+  if (u) return { nummer: null, uppladdning: `U${u[1]}${u[2].toLowerCase()}`, vinkel: u[3].toLowerCase(), mediatyp: u[4].toLowerCase() };
+  const m = ADSET_MALL.exec(n);
   if (!m) return null;
-  return { nummer: Number(m[1]), vinkel: m[2].toLowerCase(), mediatyp: m[3].toLowerCase() };
+  return { nummer: Number(m[1]), uppladdning: null, vinkel: m[2].toLowerCase(), mediatyp: m[3].toLowerCase() };
 }
 
 /** champions | champions_bild | test | gammal. Ett testadset är ett som bär
@@ -202,10 +218,7 @@ export function grupperaKoncept(annonser, konfig, { grupper = [] } = {}) {
     let status = 'klar';
     const namnen = lista.map((a) => a.namn.toLowerCase());
     if (new Set(namnen).size !== namnen.length) { status = 'stopp'; skal.push('samma annonsnamn två gånger i kön — en rad är en dubblett'); }
-    if (typer.length > 1) { status = 'stopp'; skal.push(`bild och video i samma koncept (${typer.join(' + ')}) — de blandas aldrig i ett adset: döp om så att bild och video får var sitt löpnummer`); }
     if (typer.includes('okand')) { status = 'stopp'; skal.push('formatet i namnet är varken video eller bild'); }
-    if (status === 'klar' && lista.length > r.annonser_per_adset) { status = 'stopp'; skal.push(`${lista.length} annonser i konceptet — 3:2:2 tar ${r.annonser_per_adset} per adset. Välj tre (resten blir ett eget koncept med nytt löpnummer)`); }
-    if (status === 'klar' && lista.length < r.annonser_per_adset) { status = 'vantar_hookar'; skal.push(`${lista.length} av ${r.annonser_per_adset} hookvarianter klara — adsetet byggs när alla ${r.annonser_per_adset} ligger i kön (kursen: minst tre annonser per adset)`); }
     const vinkel = vinklar[0];
     const typ = typer.length === 1 && typer[0] !== 'okand' ? typer[0] : null;
     ut.push({
@@ -220,6 +233,49 @@ export function grupperaKoncept(annonser, konfig, { grupper = [] } = {}) {
       status,
       skal,
     });
+  }
+  return ut;
+}
+
+/** Axels beslut 2026-10-02 (kväll): en uppladdning = ett adset per mediatyp,
+ *  med allt som är klart just då — oavsett koncept och antal hookar. Annonserna
+ *  (med copy) sorteras på löpnummer och hook; fler än max_annonser_per_uppladdning
+ *  blir nästa adset (bokstav b, c …). upptagna = adsetnamn som redan finns
+ *  (kampanjen + loggen), så ett namn aldrig används två gånger. Ren. */
+export function batchaUppladdning(annonser, konfig, { datum, upptagna = new Set() } = {}) {
+  const r = regler(konfig);
+  const max = Math.max(1, r.max_annonser_per_uppladdning);
+  const ut = [];
+  const tagna = new Set([...upptagna].map((x) => String(x).toLowerCase()));
+  for (const typ of ['video', 'bild']) {
+    const lista = (annonser ?? []).filter((a) => a.mediatyp === typ)
+      .sort((x, y) => (x.tolkat?.nummer ?? 0) - (y.tolkat?.nummer ?? 0) || (x.tolkat?.hook ?? 0) - (y.tolkat?.hook ?? 0) || x.namn.localeCompare(y.namn));
+    for (let i = 0; i < lista.length; i += max) {
+      const del = lista.slice(i, i + max);
+      const vinklar = [...new Set(del.map((a) => a.tolkat?.vinkel).filter(Boolean))];
+      const vinkel = vinklar.length === 1 ? vinklar[0] : 'mix';
+      let namn = null;
+      for (const b of ['', ...'bcdefghijklmnopqrstuvwxyz']) {
+        const n = uppladdningNamn({ datum, bokstav: b, vinkel, mediatyp: typ });
+        const nyckelDel = n.replace(/_[a-zåäö]+_(video|bild)$/i, '').toLowerCase();
+        if (![...tagna].some((t) => t === n.toLowerCase() || t.startsWith(`${nyckelDel}_`) && t.endsWith(`_${typ}`))) { namn = n; break; }
+      }
+      tagna.add(namn.toLowerCase());
+      const t = tolkaAdsetNamn(namn);
+      ut.push({
+        nyckel: t.uppladdning,
+        uppladdning: true,
+        nummer: null,
+        vinkel,
+        vinklar,
+        mediatyp: typ,
+        adset_namn: namn,
+        annonser: del,
+        koncept_nycklar: [...new Set(del.map((a) => String(a.tolkat?.nummer ?? '').padStart(3, '0')))],
+        status: 'klar',
+        skal: [],
+      });
+    }
   }
   return ut;
 }
@@ -392,7 +448,8 @@ export function kontrolleraAdset(las, konfig, { forvantat = null } = {}) {
   if (a.daily_budget || a.lifetime_budget) fel.push('adsetet har en egen budget — kampanjen är CBO');
   if (forvantat?.adset_namn && a.name !== forvantat.adset_namn) fel.push(`adsetet heter "${a.name}", planen sa "${forvantat.adset_namn}"`);
   const ads = las?.annonser ?? [];
-  if (ads.length !== r.annonser_per_adset) fel.push(`${ads.length} annonser i adsetet — ska vara ${r.annonser_per_adset}`);
+  const antal = forvantat?.annonser?.length ?? (tn?.uppladdning ? null : r.annonser_per_adset);
+  if (antal !== null && ads.length !== antal) fel.push(`${ads.length} annonser i adsetet — planen hade ${antal}`);
   const typer = new Set();
   for (const ad of ads) {
     const c = ad.creative ?? {};

@@ -375,14 +375,14 @@ export function visaKo(plan, skriv = (x) => console.log(x)) {
   for (const h of plan.hookrader_utan_traff ?? []) skriv(`  ⛔ --hookrad ${h} träffade ingen rad i kön`);
   if (!plan.koncept.length && !plan.stoppade.length) skriv('  (kön är tom)');
   for (const k of plan.koncept) {
-    skriv(`  ${(etikett[k.status] ?? k.status).padEnd(11)} koncept ${k.nyckel}${k.sammanslagen ? ' (sammanslaget)' : ''} → ${k.adset_namn ?? 'inget adset (bild och video blandat)'} · ${k.annonser.length} annonser`);
+    skriv(`  ${(etikett[k.status] ?? k.status).padEnd(11)} ${k.uppladdning ? `uppladdning → nytt adset ${k.adset_namn} (koncept ${(k.koncept_nycklar ?? []).join(', ')})` : `koncept ${k.nyckel}${k.sammanslagen ? ' (sammanslaget)' : ''}`} · ${k.annonser.length} annonser`);
     for (const a of k.annonser) skriv(`      ${a.namn}${a.fil_hook ? ` (fil H${a.fil_hook} på raden ${a.fran_rad})` : ''}${a.copy ? ` · copy ${a.copy.rubriker.length}+${a.copy.texter.length} (${a.copy_kalla === 'syskon' ? 'syskonets kort — eget saknas' : 'eget kort'}${a.copy_fil ? `, ${a.copy_fil}` : ''})` : ' · copy saknas'}${a.copy_anm?.length ? ` · ${a.copy_anm.join('; ')}` : ''}`);
     for (const x of k.skal) skriv(`      ↳ ${x}`);
     if (k.adset_spec_fel) skriv(`      ↳ ⛔ adsetets mall: ${k.adset_spec_fel}`);
   }
   for (const s of plan.stoppade) skriv(`  ${s.behover_namn ? '🏷️ ' : '⛔'} ${s.namn} — ${s.behover_namn ? 'odöpt rad med fil: titta på creativen och döp enligt steg 4 — en fil: --namn <vinkel> <format> 1 + --dop; tre hookfiler i raden: döp utan hook + --ko --hookrad <id>; tre odöpta rader med samma kropp: --namn … 1 --hookar 3, ett namn per rad' : s.skal.join(' · ')}`);
   const m = plan.summa ?? {};
-  skriv(`Summa: ${m.klara ?? 0} koncept att bygga · väntar på plats ${m.vantar_plats ?? 0} · på hookar ${m.vantar_hookar ?? 0} · på copy ${m.vantar_copy ?? 0}${m.vantar_struktur ? ` · på strukturen ${m.vantar_struktur}` : ''} · stoppade koncept ${m.stopp ?? 0} · stoppade rader ${plan.stoppade.length}`);
+  skriv(`Summa: ${m.klara ?? 0} nya adsets att bygga · väntar på plats ${m.vantar_plats ?? 0} · på copy ${m.vantar_copy ?? 0}${m.vantar_struktur ? ` · på strukturen ${m.vantar_struktur}` : ''} · stoppade koncept ${m.stopp ?? 0} · stoppade rader ${plan.stoppade.length}`);
 }
 
 function visaEkonomi(konfig) {
@@ -454,7 +454,7 @@ async function main() {
     if (!g.ok) throw new Error(`Namnet duger inte: ${g.fel.join(' · ')}`);
     await dopOm(sida, nytt);
     const t = tolka(nytt);
-    console.log(`Raden heter nu ${nytt} ⇒ koncept ${String(t.nummer).padStart(3, '0')}, testadset ${adsetNamn({ nummer: t.nummer, vinkel: t.vinkel, mediatyp: mediatyp(t, konfig) })} (3:2:2 — byggs när alla ${strukturRegler(konfig).annonser_per_adset} hookar ligger i kön)`);
+    console.log(`Raden heter nu ${nytt} ⇒ koncept ${String(t.nummer).padStart(3, '0')} — går upp i nästa uppladdnings adset (ett nytt adset per uppladdning, med det som är klart då)`);
     return;
   }
 
@@ -489,7 +489,7 @@ async function main() {
     }
     const grupper = arg.flatMap((x, i) => (x === '--grupp' ? [String(arg[i + 1] ?? '').split(',').map((n) => n.trim()).filter(Boolean)] : [])).filter((g) => g.length > 1);
     const hookrader = new Set(arg.flatMap((x, i) => (x === '--hookrad' ? [arg[i + 1]] : [])).filter(Boolean));
-    const { rader, plan } = await hamtaKo(konfig, { logg: lasLogg(), lage, grupper, hookrader });
+    const { rader, plan } = await hamtaKo(konfig, { logg: lasLogg(), lage, grupper, hookrader, datum: idag });
     // Specarna till Adsmanager-MCP:n för varje koncept som får byggas.
     for (const k of plan.koncept) {
       if (k.status !== 'klar' || !mall) continue;
@@ -536,7 +536,14 @@ async function main() {
     const kass = new Set(lasLogg().filter((r) => r.kod === 'ADSET_KASSERAT').map((r) => String(r.adset_id)));
     const sammaNamn = lasLogg().find((r) => r.kod === 'ADSET_SKAPAD' && r.adset_namn === namn && !kass.has(String(r.adset_id)));
     if (sammaNamn) throw new Error(`Testadsetet ${namn} finns redan (${sammaNamn.adset_id}, ${sammaNamn.datum}) — ett koncept byggs aldrig två gånger. Är det nya adsetet en dubblett: ladda inte upp i det, rapportera det.`);
-    skrivRad({ kod: 'ADSET_SKAPAD', datum: varde('--idag', idagSE()), adset_id: String(adsetId), adset_namn: namn, koncept: varde('--koncept', String(t.nummer).padStart(3, '0')), vinkel: t.vinkel, mediatyp: t.mediatyp, struktur: '3:2:2', kampanj_id: konfig.meta.kampanj.id });
+    // Uppladdningens annonser ur dagens plan — de hålls om bygget aldrig
+    // publiceras, så att de inte byggs en gång till i ett nytt adset.
+    const dag = varde('--idag', idagSE());
+    const planFil = join(UTMAPP, `ko-${dag}.json`);
+    const plan = existsSync(planFil) ? JSON.parse(readFileSync(planFil, 'utf8')) : null;
+    const batch = plan?.koncept?.find((k) => k.adset_namn === namn) ?? null;
+    if (t.uppladdning && !batch) throw new Error(`${namn} finns inte i dagens plan (${planFil}) — kör --ko först och använd planens adsetnamn.`);
+    skrivRad({ kod: 'ADSET_SKAPAD', datum: dag, adset_id: String(adsetId), adset_namn: namn, koncept: varde('--koncept', t.uppladdning ?? String(t.nummer).padStart(3, '0')), ...(batch ? { annonser: batch.annonser.map((a) => a.namn), koncept_nycklar: batch.koncept_nycklar ?? null } : {}), vinkel: t.vinkel, mediatyp: t.mediatyp, struktur: '3:2:2', kampanj_id: konfig.meta.kampanj.id });
     console.log(`ADSET_SKAPAD loggad: ${namn} (${adsetId})`);
     return;
   }
@@ -690,7 +697,9 @@ async function main() {
     const r3 = strukturRegler(konfig);
     if (adsetRad) {
       const syskon = logg.filter((r) => r.kod === 'UPPLADDAD' && r.adset_id === String(adset));
-      if (syskon.length >= r3.annonser_per_adset) throw new Error(`Adset ${adsetRad.adset_namn} bär redan ${syskon.length} annonser — 3:2:2 tar ${r3.annonser_per_adset}.`);
+      const ryms = adsetRad.annonser?.length ?? r3.annonser_per_adset;
+      if (adsetRad.annonser && !adsetRad.annonser.some((n) => n.toLowerCase() === annons.toLowerCase())) throw new Error(`${annons} hör inte till uppladdningen ${adsetRad.adset_namn} (${adsetRad.annonser.join(', ')}).`);
+      if (syskon.length >= ryms) throw new Error(`Adset ${adsetRad.adset_namn} bär redan ${syskon.length} annonser — uppladdningen hade ${ryms}.`);
       const ta = tolkaAdsetNamn(adsetRad.adset_namn);
       const typ = t ? (konfig.namn.video_format.includes(t.format) ? 'video' : konfig.namn.bild_format.includes(t.format) ? 'bild' : 'okand') : 'okand';
       if (ta && typ !== ta.mediatyp) throw new Error(`${annons} är ${typ}, adsetet ${adsetRad.adset_namn} är ${ta.mediatyp} — bild och video blandas aldrig.`);
