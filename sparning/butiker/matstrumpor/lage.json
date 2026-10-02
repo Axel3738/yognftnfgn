@@ -8,7 +8,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7223609590099",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626400706732148": {
@@ -40,7 +40,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7222533685587",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626200707243578": {
@@ -50,7 +50,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7217731699027",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626200704146683": {
@@ -60,7 +60,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7206281445715",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626200704146725": {
@@ -70,7 +70,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7206273155411",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626200704146659": {
@@ -90,9 +90,10 @@
    "order": "#4787",
    "fulfillment": "gid://shopify/Fulfillment/7206261195091",
    "registrerad": "2026-09-21",
-   "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
-   "status": "IN_TRANSIT"
+   "status17": "Delivered",
+   "senast": "2026-10-02T14:59",
+   "status": "DELIVERED",
+   "levererad": "2026-10-02"
   },
   "YT2626100708878788": {
    "bolag": "YunExpress",
@@ -112,7 +113,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7178248946003",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626100704518644": {
@@ -155,7 +156,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7147415175507",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626000704776376": {
@@ -319,7 +320,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7118796980563",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2625600702980317": {
@@ -329,7 +330,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7117943505235",
    "registrerad": "2026-09-21",
    "status17": "Exception",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "FAILURE"
   },
   "YT2625500704701804": {
@@ -669,7 +670,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7227051639123",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626400712241118": {
@@ -745,7 +746,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7092072251731",
    "registrerad": "2026-09-21",
    "status17": "Exception",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "FAILURE"
   },
   "YT2624700707776107": {
@@ -788,7 +789,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7087191982419",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2624700706189773": {
@@ -1205,7 +1206,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7228705374547",
    "registrerad": "2026-09-22",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626500705320520": {
@@ -1215,7 +1216,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7228705341779",
    "registrerad": "2026-09-22",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626500708992713": {
@@ -1236,7 +1237,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7231791071571",
    "registrerad": "2026-09-23",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626600705338413": {
@@ -1246,7 +1247,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7231791038803",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626600705338389": {
@@ -1267,7 +1268,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7231790416211",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626600705338298": {
@@ -1277,7 +1278,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7231790055763",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626600708802381": {
@@ -1287,7 +1288,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7232751272275",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626600708609158": {
@@ -1297,7 +1298,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7232751206739",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626600708802225": {
@@ -1307,7 +1308,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7232750649683",
    "registrerad": "2026-09-23",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706100364": {
@@ -1328,7 +1329,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235203105107",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154640": {
@@ -1338,7 +1339,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235203006803",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963033": {
@@ -1348,7 +1349,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235211460947",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700708963728": {
@@ -1358,7 +1359,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202875731",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963686": {
@@ -1368,7 +1369,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202777427",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963629": {
@@ -1378,7 +1379,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202679123",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154467": {
@@ -1388,7 +1389,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202548051",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154434": {
@@ -1398,7 +1399,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202384211",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154343": {
@@ -1408,7 +1409,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202285907",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963934": {
@@ -1418,7 +1419,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202122067",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963363": {
@@ -1428,7 +1429,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235202023763",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154772": {
@@ -1438,7 +1439,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201925459",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963314": {
@@ -1448,7 +1449,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201794387",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154814": {
@@ -1458,7 +1459,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201663315",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700708963280": {
@@ -1468,7 +1469,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201565011",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963223": {
@@ -1478,7 +1479,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201401171",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963199": {
@@ -1488,7 +1489,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201237331",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963165": {
@@ -1498,7 +1499,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235201106259",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154103": {
@@ -1508,7 +1509,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200975187",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963108": {
@@ -1518,7 +1519,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200844115",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700708963843": {
@@ -1528,7 +1529,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200680275",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700709154038": {
@@ -1538,7 +1539,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200549203",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706100711": {
@@ -1548,7 +1549,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200418131",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706095473": {
@@ -1558,7 +1559,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200287059",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706100315": {
@@ -1568,7 +1569,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235200155987",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706095010": {
@@ -1578,7 +1579,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199992147",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899172": {
@@ -1588,7 +1589,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235209265491",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706100562": {
@@ -1598,7 +1599,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199861075",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706094922": {
@@ -1608,7 +1609,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199730003",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094856": {
@@ -1618,7 +1619,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199631699",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094765": {
@@ -1628,7 +1629,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199533395",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899834": {
@@ -1638,7 +1639,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199402323",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094708": {
@@ -1648,7 +1649,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199336787",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706100422": {
@@ -1658,7 +1659,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235207922003",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706094658": {
@@ -1668,7 +1669,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199238483",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899685": {
@@ -1678,7 +1679,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235199107411",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094609": {
@@ -1688,7 +1689,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198976339",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899230": {
@@ -1698,7 +1699,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235207594323",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094567": {
@@ -1708,7 +1709,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198812499",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899578": {
@@ -1718,7 +1719,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198746963",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899537": {
@@ -1728,7 +1729,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198681427",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700706094435": {
@@ -1738,7 +1739,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198615891",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899479": {
@@ -1748,7 +1749,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198484819",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700705899461": {
@@ -1758,7 +1759,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198419283",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700705899438": {
@@ -1768,7 +1769,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198386515",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700706094286": {
@@ -1778,7 +1779,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198320979",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700705899347": {
@@ -1788,7 +1789,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198222675",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700705899305": {
@@ -1798,7 +1799,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235198157139",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700705899255": {
@@ -1808,7 +1809,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235197993299",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700710350443": {
@@ -1818,7 +1819,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800564051",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710157715": {
@@ -1828,7 +1829,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800432979",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710157459": {
@@ -1838,7 +1839,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800301907",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710157756": {
@@ -1848,7 +1849,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800236371",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350484": {
@@ -1858,7 +1859,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800072531",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700710350369": {
@@ -1868,7 +1869,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235800039763",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710157624": {
@@ -1878,7 +1879,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799777619",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350328": {
@@ -1888,7 +1889,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799712083",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350310": {
@@ -1898,7 +1899,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799613779",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350294": {
@@ -1908,7 +1909,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799449939",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350260": {
@@ -1918,7 +1919,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799286099",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350211": {
@@ -1928,7 +1929,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235799056723",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350195": {
@@ -1938,7 +1939,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235798925651",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350419": {
@@ -1948,7 +1949,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235798499667",
    "registrerad": "2026-09-24",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626700710157475": {
@@ -1958,7 +1959,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235798303059",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626700710350146": {
@@ -1968,7 +1969,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7235798204755",
    "registrerad": "2026-09-24",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703057169": {
@@ -1978,7 +1979,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290838867",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800703254550": {
@@ -1988,7 +1989,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290707795",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056724": {
@@ -1998,7 +1999,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290675027",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703057201": {
@@ -2008,7 +2009,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290609491",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703254428": {
@@ -2018,7 +2019,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290576723",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703254386": {
@@ -2028,7 +2029,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290543955",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703057078": {
@@ -2038,7 +2039,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290478419",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703057052": {
@@ -2048,7 +2049,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290445651",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056799": {
@@ -2058,7 +2059,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236288708947",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800703254311": {
@@ -2068,7 +2069,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290412883",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703254113": {
@@ -2078,7 +2079,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236290347347",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703254584": {
@@ -2088,7 +2089,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289659219",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056989": {
@@ -2098,7 +2099,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289626451",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056930": {
@@ -2108,7 +2109,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289560915",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056898": {
@@ -2118,7 +2119,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289528147",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703254188": {
@@ -2128,7 +2129,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289462611",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800703056815": {
@@ -2138,7 +2139,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7236289429843",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339507": {
@@ -2148,7 +2149,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237836177747",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800706145466": {
@@ -2158,7 +2159,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237857542483",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145433": {
@@ -2168,7 +2169,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237857411411",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145409": {
@@ -2178,7 +2179,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237857247571",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339333": {
@@ -2188,7 +2189,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237857083731",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339317": {
@@ -2198,7 +2199,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237856002387",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145516": {
@@ -2208,7 +2209,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237855347027",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800706339291": {
@@ -2218,7 +2219,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237855019347",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145300": {
@@ -2228,7 +2229,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237854822739",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339242": {
@@ -2238,7 +2239,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237854626131",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145268": {
@@ -2248,7 +2249,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237854069075",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339218": {
@@ -2258,7 +2259,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853872467",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145573": {
@@ -2268,7 +2269,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853708627",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800706339200": {
@@ -2278,7 +2279,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853643091",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339192": {
@@ -2288,7 +2289,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853479251",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339176": {
@@ -2298,7 +2299,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853413715",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145185": {
@@ -2308,7 +2309,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853249875",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145136": {
@@ -2318,7 +2319,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853217107",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145060": {
@@ -2328,7 +2329,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853184339",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706338954": {
@@ -2338,7 +2339,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853118803",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144956": {
@@ -2348,7 +2349,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237853053267",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706339457": {
@@ -2358,7 +2359,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852791123",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800706144931": {
@@ -2368,7 +2369,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852692819",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144907": {
@@ -2378,7 +2379,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852561747",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706338855": {
@@ -2388,7 +2389,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852397907",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144840": {
@@ -2398,7 +2399,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852234067",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706145482": {
@@ -2408,7 +2409,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237852135763",
    "registrerad": "2026-09-25",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626800706338780": {
@@ -2418,7 +2419,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237851808083",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144766": {
@@ -2428,7 +2429,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237851644243",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706338608": {
@@ -2438,7 +2439,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237851578707",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144600": {
@@ -2448,7 +2449,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237851513171",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800706144550": {
@@ -2458,7 +2459,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7237851349331",
    "registrerad": "2026-09-25",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452358": {
@@ -2468,7 +2469,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238573097299",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452291": {
@@ -2478,7 +2479,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238573064531",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705650050": {
@@ -2488,7 +2489,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572998995",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705649847": {
@@ -2498,7 +2499,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572966227",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452218": {
@@ -2508,7 +2509,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572900691",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452184": {
@@ -2518,7 +2519,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572835155",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705649706": {
@@ -2528,7 +2529,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572769619",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452119": {
@@ -2538,7 +2539,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572736851",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452085": {
@@ -2548,7 +2549,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572704083",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452036": {
@@ -2558,7 +2559,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572638547",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705452002": {
@@ -2568,7 +2569,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572573011",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705451970": {
@@ -2578,7 +2579,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572507475",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705649466": {
@@ -2588,7 +2589,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572474707",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705451905": {
@@ -2598,7 +2599,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572409171",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705650001": {
@@ -2608,7 +2609,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572343635",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900705451855": {
@@ -2618,7 +2619,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572114259",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900705650126": {
@@ -2628,7 +2629,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7238572081491",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900708191177": {
@@ -2638,7 +2639,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377289555",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708116596": {
@@ -2648,7 +2649,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377224019",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900707882321": {
@@ -2658,7 +2659,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377191251",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079620": {
@@ -2668,7 +2669,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377125715",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079596": {
@@ -2678,7 +2679,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377092947",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079570": {
@@ -2688,7 +2689,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239377027411",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079547": {
@@ -2698,7 +2699,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376994643",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900707882198": {
@@ -2708,7 +2709,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376929107",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079471": {
@@ -2718,7 +2719,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239380271443",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900707882156": {
@@ -2728,7 +2729,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376896339",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900707882115": {
@@ -2738,7 +2739,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376830803",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079406": {
@@ -2748,7 +2749,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376798035",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079349": {
@@ -2758,7 +2759,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239380074835",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079265": {
@@ -2768,7 +2769,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376732499",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900707881943": {
@@ -2778,7 +2779,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376666963",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079190": {
@@ -2788,7 +2789,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379910995",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900708079166": {
@@ -2798,7 +2799,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379878227",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900707881851": {
@@ -2808,7 +2809,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376634195",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900708079133": {
@@ -2818,7 +2819,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376568659",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657773": {
@@ -2828,7 +2829,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376535891",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657716": {
@@ -2838,7 +2839,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376503123",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657542": {
@@ -2848,7 +2849,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376470355",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657443": {
@@ -2858,7 +2859,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376339283",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657401": {
@@ -2868,7 +2869,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376240979",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706657344": {
@@ -2878,7 +2879,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376175443",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706857811": {
@@ -2888,7 +2889,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376077139",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706857712": {
@@ -2898,7 +2899,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239376011603",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706857365": {
@@ -2908,7 +2909,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239375978835",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706656718": {
@@ -2918,7 +2919,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239375913299",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706857043": {
@@ -2928,7 +2929,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239375847763",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706856961": {
@@ -2938,7 +2939,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379517779",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706856797": {
@@ -2948,7 +2949,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379485011",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744563": {
@@ -2958,7 +2959,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379419475",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744530": {
@@ -2968,7 +2969,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379288403",
    "registrerad": "2026-09-26",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2626900706744480": {
@@ -2978,7 +2979,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379222867",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744431": {
@@ -2988,7 +2989,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239379091795",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744415": {
@@ -2998,7 +2999,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239378960723",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744365": {
@@ -3008,7 +3009,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239378927955",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706544690": {
@@ -3018,7 +3019,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239378829651",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744290": {
@@ -3028,7 +3029,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239378764115",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626900706744266": {
@@ -3038,7 +3039,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7239378731347",
    "registrerad": "2026-09-26",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707820964": {
@@ -3048,7 +3049,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308949331",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708016471": {
@@ -3058,7 +3059,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308916563",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708016414": {
@@ -3068,7 +3069,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308621651",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708016224": {
@@ -3078,7 +3079,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308326739",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707820493": {
@@ -3088,7 +3089,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308293971",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708016000": {
@@ -3098,7 +3099,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308195667",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707820378": {
@@ -3108,7 +3109,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308130131",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000708015903": {
@@ -3118,7 +3119,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308097363",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708015846": {
@@ -3128,7 +3129,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240308031827",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000708015416": {
@@ -3138,7 +3139,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307736915",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707819651": {
@@ -3148,7 +3149,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307409235",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707819586": {
@@ -3158,7 +3159,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307376467",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000708015077": {
@@ -3168,7 +3169,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307343699",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708015044": {
@@ -3178,7 +3179,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307310931",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014955": {
@@ -3188,7 +3189,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307278163",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000707819313": {
@@ -3198,7 +3199,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307245395",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707819248": {
@@ -3208,7 +3209,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307147091",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014773": {
@@ -3218,7 +3219,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307114323",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707818893": {
@@ -3228,7 +3229,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240307016019",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014419": {
@@ -3238,7 +3239,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306983251",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014369": {
@@ -3248,7 +3249,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306950483",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014179": {
@@ -3258,7 +3259,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306884947",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014146": {
@@ -3268,7 +3269,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306852179",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708014112": {
@@ -3278,7 +3279,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306819411",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000707818539": {
@@ -3288,7 +3289,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306753875",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707818471": {
@@ -3298,7 +3299,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306721107",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707818406": {
@@ -3308,7 +3309,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306688339",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708013700": {
@@ -3318,7 +3319,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306622803",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707817895": {
@@ -3328,7 +3329,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306557267",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707817713": {
@@ -3338,7 +3339,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306524499",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708012884": {
@@ -3348,7 +3349,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306426195",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000707817077": {
@@ -3358,7 +3359,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306393427",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708012470": {
@@ -3368,7 +3369,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306360659",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708012306": {
@@ -3378,7 +3379,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306295123",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708012082": {
@@ -3388,7 +3389,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306262355",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708011951": {
@@ -3398,7 +3399,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306229587",
    "registrerad": "2026-09-27",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627000707816178": {
@@ -3408,7 +3409,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306098515",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627000708011563": {
@@ -3418,7 +3419,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7240306032979",
    "registrerad": "2026-09-27",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826559": {
@@ -3428,7 +3429,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242796695891",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826492": {
@@ -3438,7 +3439,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242796302675",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712021465": {
@@ -3448,7 +3449,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242795680083",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712021408": {
@@ -3458,7 +3459,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242795581779",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712021366": {
@@ -3468,7 +3469,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242794991955",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826237": {
@@ -3478,7 +3479,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242793451859",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826153": {
@@ -3488,7 +3489,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242793124179",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712021093": {
@@ -3498,7 +3499,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242792763731",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712021051": {
@@ -3508,7 +3509,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242792173907",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826013": {
@@ -3518,7 +3519,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242791813459",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712020657": {
@@ -3528,7 +3529,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242791649619",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100711826609": {
@@ -3538,7 +3539,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242791321939",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100711825635": {
@@ -3548,7 +3549,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242790240595",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712008249": {
@@ -3558,7 +3559,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242789486931",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100712008231": {
@@ -3568,7 +3569,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7242789355859",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707188626": {
@@ -3578,7 +3579,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243117134163",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100706993703": {
@@ -3588,7 +3589,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243116872019",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706993521": {
@@ -3598,7 +3599,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243116675411",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706993315": {
@@ -3608,7 +3609,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243116216659",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706990816": {
@@ -3618,7 +3619,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243116118355",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707186661": {
@@ -3628,7 +3629,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243115987283",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707186505": {
@@ -3638,7 +3639,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243115856211",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992887": {
@@ -3648,7 +3649,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243115725139",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706993901": {
@@ -3658,7 +3659,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243115528531",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707188717": {
@@ -3668,7 +3669,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243115331923",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100707186349": {
@@ -3678,7 +3679,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114905939",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706994115": {
@@ -3688,7 +3689,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114676563",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100707186257": {
@@ -3698,7 +3699,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114578259",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706994958": {
@@ -3708,7 +3709,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114348883",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100706994669": {
@@ -3718,7 +3719,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114185043",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100706994479": {
@@ -3728,7 +3729,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243114053971",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100707186182": {
@@ -3738,7 +3739,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243113922899",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992531": {
@@ -3748,7 +3749,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243113333075",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707186067": {
@@ -3758,7 +3759,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243113136467",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185994": {
@@ -3768,7 +3769,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243112939859",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185937": {
@@ -3778,7 +3779,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243112448339",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992291": {
@@ -3788,7 +3789,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243112022355",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185804": {
@@ -3798,7 +3799,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243111334227",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992168": {
@@ -3808,7 +3809,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243111104851",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992127": {
@@ -3818,7 +3819,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243110875475",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706992077": {
@@ -3828,7 +3829,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243110482259",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185630": {
@@ -3838,7 +3839,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243110318419",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185598": {
@@ -3848,7 +3849,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243110089043",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706991756": {
@@ -3858,7 +3859,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243109925203",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706991707": {
@@ -3868,7 +3869,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243109728595",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707187883": {
@@ -3878,7 +3879,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243109400915",
    "registrerad": "2026-09-28",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627100706990907": {
@@ -3888,7 +3889,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243108450643",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185150": {
@@ -3898,7 +3899,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243108254035",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707185069": {
@@ -3908,7 +3909,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243107893587",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706991350": {
@@ -3918,7 +3919,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243107598675",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706991301": {
@@ -3928,7 +3929,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243107402067",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707184831": {
@@ -3938,7 +3939,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243107205459",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100706991145": {
@@ -3948,7 +3949,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243106746707",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627100707184690": {
@@ -3958,7 +3959,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7243106419027",
    "registrerad": "2026-09-28",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2626800704776460": {
@@ -3977,7 +3978,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7245490848083",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200710388914": {
@@ -3987,7 +3988,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246682095955",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200710388872": {
@@ -3997,7 +3998,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681964883",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200710388963": {
@@ -4007,7 +4008,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681801043",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200710388831": {
@@ -4017,7 +4018,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681702739",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200710189650": {
@@ -4027,7 +4028,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681604435",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200710189619": {
@@ -4037,7 +4038,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681506131",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989771": {
@@ -4047,7 +4048,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246681309523",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989755": {
@@ -4057,7 +4058,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246680981843",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989714": {
@@ -4067,7 +4068,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246680883539",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989680": {
@@ -4077,7 +4078,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246680719699",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989805": {
@@ -4087,7 +4088,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246680523091",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200709791748": {
@@ -4097,7 +4098,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246680129875",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989656": {
@@ -4107,7 +4108,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679998803",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989565": {
@@ -4117,7 +4118,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679900499",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709792001": {
@@ -4127,7 +4128,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679736659",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200709791953": {
@@ -4137,7 +4138,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679605587",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200709989532": {
@@ -4147,7 +4148,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679310675",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791599": {
@@ -4157,7 +4158,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679179603",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709989458": {
@@ -4167,7 +4168,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246679081299",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791524": {
@@ -4177,7 +4178,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246678982995",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791466": {
@@ -4187,7 +4188,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246678917459",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791425": {
@@ -4197,7 +4198,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246678753619",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791417": {
@@ -4207,7 +4208,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246678557011",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200709791367": {
@@ -4217,7 +4218,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246676754771",
    "registrerad": "2026-09-29",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373144": {
@@ -4227,7 +4228,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7246710800723",
    "registrerad": "2026-09-29",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200709850239": {
@@ -4246,7 +4247,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7247788081491",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627300710106637": {
@@ -4256,7 +4257,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844502867",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710304083": {
@@ -4266,7 +4267,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844437331",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106579": {
@@ -4276,7 +4277,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844339027",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106546": {
@@ -4286,7 +4287,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844306259",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106512": {
@@ -4296,7 +4297,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844142419",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106694": {
@@ -4306,7 +4307,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249814978899",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627300710304000": {
@@ -4316,7 +4317,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844076883",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106454": {
@@ -4326,7 +4327,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844044115",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710304141": {
@@ -4336,7 +4337,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249844011347",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627300710303960": {
@@ -4346,7 +4347,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843945811",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106421": {
@@ -4356,7 +4357,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843847507",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303903": {
@@ -4366,7 +4367,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843683667",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106363": {
@@ -4376,7 +4377,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843585363",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303853": {
@@ -4386,7 +4387,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843454291",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303838": {
@@ -4396,7 +4397,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843355987",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710304125": {
@@ -4406,7 +4407,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843290451",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627300710106264": {
@@ -4416,7 +4417,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843192147",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303770": {
@@ -4426,7 +4427,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843126611",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303747": {
@@ -4436,7 +4437,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249843093843",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710106173": {
@@ -4446,7 +4447,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842995539",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303648": {
@@ -4456,7 +4457,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842897235",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303580": {
@@ -4466,7 +4467,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842831699",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710105944": {
@@ -4476,7 +4477,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842733395",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303275": {
@@ -4486,7 +4487,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842700627",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710303101": {
@@ -4496,7 +4497,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842471251",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710302889": {
@@ -4506,7 +4507,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842372947",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300710105183": {
@@ -4516,7 +4517,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842307411",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705196866": {
@@ -4526,7 +4527,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842241875",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705196569": {
@@ -4536,7 +4537,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842110803",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704999096": {
@@ -4546,7 +4547,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249842012499",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705196346": {
@@ -4556,7 +4557,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841881427",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705196270": {
@@ -4566,7 +4567,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841750355",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998908": {
@@ -4576,7 +4577,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841652051",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998726": {
@@ -4586,7 +4587,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841520979",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998528": {
@@ -4596,7 +4597,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841455443",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998478": {
@@ -4606,7 +4607,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841389907",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195702": {
@@ -4616,7 +4617,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841324371",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195652": {
@@ -4626,7 +4627,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841193299",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998296": {
@@ -4636,7 +4637,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841127763",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998254": {
@@ -4646,7 +4647,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249841029459",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195512": {
@@ -4656,7 +4657,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840898387",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998122": {
@@ -4666,7 +4667,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840734547",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704998072": {
@@ -4676,7 +4677,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840701779",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627300704998031": {
@@ -4686,7 +4687,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840570707",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195322": {
@@ -4696,7 +4697,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840505171",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195256": {
@@ -4706,7 +4707,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840374099",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195173": {
@@ -4716,7 +4717,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840308563",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705195082": {
@@ -4726,7 +4727,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840210259",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704997694": {
@@ -4736,7 +4737,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249840013651",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705194986": {
@@ -4746,7 +4747,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839784275",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704997579": {
@@ -4756,7 +4757,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839653203",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705194879": {
@@ -4766,7 +4767,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839522131",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704997348": {
@@ -4776,7 +4777,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839423827",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704997140": {
@@ -4786,7 +4787,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839259987",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704997041": {
@@ -4796,7 +4797,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839194451",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705194283": {
@@ -4806,7 +4807,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249839096147",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704996860": {
@@ -4816,7 +4817,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838997843",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705194135": {
@@ -4826,7 +4827,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838932307",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300705194077": {
@@ -4836,7 +4837,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838735699",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627300704996647": {
@@ -4846,7 +4847,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838604627",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706815300": {
@@ -4856,7 +4857,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838440787",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706173643": {
@@ -4866,7 +4867,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838309715",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373946": {
@@ -4876,7 +4877,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838145875",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373888": {
@@ -4886,7 +4887,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249838080339",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373805": {
@@ -4896,7 +4897,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249837949267",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200706373649": {
@@ -4906,7 +4907,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249837850963",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373540": {
@@ -4916,7 +4917,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249837687123",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706373417": {
@@ -4926,7 +4927,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249837556051",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706172918": {
@@ -4936,7 +4937,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249837162835",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706172686": {
@@ -4946,7 +4947,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836966227",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706172546": {
@@ -4956,7 +4957,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836769619",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706172413": {
@@ -4966,7 +4967,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836573011",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706372427": {
@@ -4976,7 +4977,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836376403",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706171928": {
@@ -4986,7 +4987,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836245331",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200706372211": {
@@ -4996,7 +4997,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249836081491",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706372153": {
@@ -5006,7 +5007,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249835721043",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706371932": {
@@ -5016,7 +5017,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249835557203",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706371726": {
@@ -5026,7 +5027,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249835393363",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706370900": {
@@ -5036,7 +5037,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249835229523",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706169856": {
@@ -5046,7 +5047,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249835065683",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706169765": {
@@ -5056,7 +5057,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249834869075",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706169682": {
@@ -5066,7 +5067,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249834639699",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706370108": {
@@ -5076,7 +5077,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249834443091",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369894": {
@@ -5086,7 +5087,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249833918803",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369761": {
@@ -5096,7 +5097,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249833656659",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706169153": {
@@ -5106,7 +5107,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249833394515",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369605": {
@@ -5116,7 +5117,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249833230675",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706169005": {
@@ -5126,7 +5127,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249832804691",
    "registrerad": "2026-09-30",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706168940": {
@@ -5136,7 +5137,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249832706387",
    "registrerad": "2026-09-30",
    "status17": "InTransit",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "IN_TRANSIT"
   },
   "YT2627200706168890": {
@@ -5146,7 +5147,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249832542547",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369332": {
@@ -5156,7 +5157,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249831919955",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706168635": {
@@ -5166,7 +5167,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249831756115",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369100": {
@@ -5176,7 +5177,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249831592275",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627200706369035": {
@@ -5186,7 +5187,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7249831264595",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703234212": {
@@ -5196,7 +5197,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251676397907",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703233735": {
@@ -5206,7 +5207,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251676168531",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032616": {
@@ -5216,7 +5217,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251676070227",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032236": {
@@ -5226,7 +5227,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251675611475",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032608": {
@@ -5236,7 +5237,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251675447635",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703234113": {
@@ -5246,7 +5247,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251675218259",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703234071": {
@@ -5256,7 +5257,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251674267987",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032285": {
@@ -5266,7 +5267,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251673612627",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032210": {
@@ -5276,7 +5277,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251673481555",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032160": {
@@ -5286,7 +5287,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251672170835",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703234014": {
@@ -5296,7 +5297,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251672006995",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703032418": {
@@ -5306,7 +5307,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251671843155",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703233917": {
@@ -5316,7 +5317,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251670892883",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703233875": {
@@ -5326,7 +5327,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251669811539",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703233834": {
@@ -5336,7 +5337,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251669549395",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400703233792": {
@@ -5346,7 +5347,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7251669254483",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243946": {
@@ -5356,7 +5357,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254356230483",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243888": {
@@ -5366,7 +5367,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254356001107",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050861": {
@@ -5376,7 +5377,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254354657619",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707051141": {
@@ -5386,7 +5387,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254354428243",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050838": {
@@ -5396,7 +5397,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254353576275",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243409": {
@@ -5406,7 +5407,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254353379667",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707051109": {
@@ -5416,7 +5417,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254353314131",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243789": {
@@ -5426,7 +5427,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254352986451",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050689": {
@@ -5436,7 +5437,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254352363859",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050663": {
@@ -5446,7 +5447,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254352200019",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243326": {
@@ -5456,7 +5457,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254351577427",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243755": {
@@ -5466,7 +5467,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254351118675",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243292": {
@@ -5476,7 +5477,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254350823763",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050812": {
@@ -5486,7 +5487,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254350659923",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707051018": {
@@ -5496,7 +5497,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254349381971",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050978": {
@@ -5506,7 +5507,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254349152595",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050804": {
@@ -5516,7 +5517,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254348824915",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243276": {
@@ -5526,7 +5527,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254348759379",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243474": {
@@ -5536,7 +5537,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254348530003",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050911": {
@@ -5546,7 +5547,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254348300627",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050887": {
@@ -5556,7 +5557,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254348136787",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243243": {
@@ -5566,7 +5567,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254347907411",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707050721": {
@@ -5576,7 +5577,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7254347022675",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   },
   "YT2627400707243458": {
@@ -5586,16 +5587,16 @@
    "fulfillment": "gid://shopify/Fulfillment/7254346826067",
    "registrerad": "2026-10-02",
    "status17": "InfoReceived",
-   "senast": "2026-10-02T13:59",
+   "senast": "2026-10-02T14:59",
    "status": "CONFIRMED"
   }
  },
  "senaste_korning": {
-  "datum": "2026-10-02T13:59:36.930Z",
+  "datum": "2026-10-02T14:59:15.001Z",
   "ordrar": 514,
-  "paket": 450,
+  "paket": 447,
   "registrerade": 0,
-  "skrivna": 3,
+  "skrivna": 1,
   "fel": 0,
   "torr": false
  }
