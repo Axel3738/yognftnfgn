@@ -43,6 +43,7 @@
 // timeout) och tar en injicerbar klient.
 
 import { api, alla } from '../tools/meta-lib.mjs';
+import { LEVERERAR } from './struktur.mjs';
 
 export const FONSTER_DAGAR = 7;
 export const ATTRIBUTION = ['7d_click'];
@@ -232,7 +233,6 @@ export function byggAdsets({ adsets, annonser, adsetserie }) {
     if (!perAdset.has(id)) perAdset.set(id, []);
     perAdset.get(id).push(r);
   }
-  const LEV = new Set(['ACTIVE', 'PENDING_REVIEW', 'IN_PROCESS', 'PREAPPROVED', 'WITH_ISSUES']);
   return (adsets ?? []).map((a) => {
     const egna = (annonser ?? []).filter((x) => String(x.adset?.id ?? x.adset_id ?? '') === String(a.id));
     return {
@@ -244,7 +244,7 @@ export function byggAdsets({ adsets, annonser, adsetserie }) {
       dynamic_creative: a.is_dynamic_creative ?? null,
       egen_budget: Boolean(a.daily_budget || a.lifetime_budget),
       annonser: egna.length,
-      aktiva_annonser: egna.filter((x) => LEV.has(String(x.effective_status ?? ''))).length,
+      aktiva_annonser: egna.filter((x) => LEVERERAR.has(String(x.effective_status ?? ''))).length,
       serie: kompaktSerie(perAdset.get(String(a.id)) ?? []),
     };
   });
@@ -472,7 +472,7 @@ export async function hamtaStruktur(konfig, { klient = { api, alla }, logg = (s)
  *  adsetet och dess annonser med creatives, så att 2 rubriker + 2 texter, sida,
  *  länk och mediatyp kontrolleras ur Meta och inte ur minnet. LÄSER BARA. */
 export async function hamtaAdsetKontroll(konfig, adsetId, { klient = { api, alla } } = {}) {
-  const adset = await klient.api(String(adsetId), { params: { fields: `${ADSET_FALT},campaign_id,account_id` } });
+  const adset = await klient.api(String(adsetId), { params: { fields: `${ADSET_FALT},campaign_id,account_id,promoted_object,optimization_goal` } });
   if (adset.account_id && String(adset.account_id) !== String(konfig.meta.ad_account_id)) throw new Error(`Adset ${adsetId} ligger i konto ${adset.account_id} — inte nya kungen. Avbryter.`);
   const annonser = await klient.alla(`${adsetId}/ads`, { fields: 'id,name,status,effective_status,creative{id,object_story_spec,asset_feed_spec}' }, 50);
   return { adset, annonser, kampanj_id: adset.campaign_id ?? null };

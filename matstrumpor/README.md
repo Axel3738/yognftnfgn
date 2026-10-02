@@ -34,10 +34,14 @@ textalternativ" på en vanlig annons (`asset_feed_spec`, `DEGREES_OF_FREEDOM`).
 valde annonsnamnet en av dem) tar inte längre emot något. De och de andra gamla
 adseten (`nya8`, `nya20`, `alla17`, `batch03_bilder`) döms av kungen som vilket adset
 som helst, på de senaste sju dagarna, och räknas mot taket så länge de levererar.
-Läget 2026-10-02 (torrkörning): åtta adsets levererar mot taket fem — kungen föreslår
-att fem gamla stängs (tre svultna under grinden, två under break-even med 1–2 % av
-spenden); `bilder` och `batch03_bilder` (över break-even, lite spend) får stå så länge
-inget koncept väntar. Sedan finns två platser för testadsets.
+Ett gammalt adset som FUNGERAR (över break-even) föreslås aldrig stängt — kursen:
+"DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE WORKING" — och ett som tappat en vecka
+döms också på sitt 28-dagarssnitt. Läget 2026-10-02 (torrkörning): åtta adsets
+levererar mot taket fem; kungen föreslår att fyra gamla stängs (`nya16` och `nya8`
+under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
+`batch03_bilder` fungerar och står kvar; `alla17` svälter men hade bra snitt och står
+så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
+testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
 ## Trustpilot på sajten (2026-09-29)
 
@@ -177,7 +181,7 @@ node matstrumpor/kor.mjs --namn gift ugc 1 --hookar 3   # nästa koncept: _h1 _h
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter + domen per adset ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, koncepttak, mix
-node --test matstrumpor/test/*.test.mjs          # 210 tester (2026-10-02)
+node --test matstrumpor/test/*.test.mjs          # 228 tester (2026-10-02)
 ```
 
 Inga npm-beroenden. Node ≥ 20.

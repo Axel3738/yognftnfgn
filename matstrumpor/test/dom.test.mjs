@@ -73,12 +73,13 @@ test('majoriteten av spenden vid KPI och kampanjen förbättrades ⇒ VINNARE, f
 });
 
 test('20–50 % av spenden vid KPI ⇒ FLYTTA (kursens flyttgräns), och majoritet när kampanjen föll är ingen vinnare', () => {
+  const bevisad = [{ id: 'b1', namn: 'MATSTRUMP_sushi_gift_ugc_070_h1_v1', adset_id: '500', spend_sek: 15000, kop: 60, roas: 1.9, effective_status: 'ACTIVE' }];
   // 25 % vid KPI men kampanjen förbättrades inte ⇒ flytta, men ingen vinnare.
-  const flytt = domAdset(test322({ serie: serie('2026-10-13', 7, 2500, 12, 1.9) }), ctx({ kampanjserie: kampanj(2.2, 2.1) }));
+  const flytt = domAdset(test322({ serie: serie('2026-10-13', 7, 2500, 12, 1.9) }), ctx({ kampanjserie: kampanj(2.2, 2.1), annonser: bevisad }));
   assert.equal(flytt.dom, DOM.FLYTTA);
   // Samma andel när kampanjen förbättrades ⇒ vinnare (kursens andra fråga).
-  assert.equal(domAdset(test322({ serie: serie('2026-10-13', 7, 2500, 12, 1.9) }), ctx()).dom, DOM.VINNARE);
-  const foll = domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 1.8) }), ctx({ kampanjserie: kampanj(2.4, 1.9) }));
+  assert.equal(domAdset(test322({ serie: serie('2026-10-13', 7, 2500, 12, 1.9) }), ctx({ annonser: bevisad })).dom, DOM.VINNARE);
+  const foll = domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 1.8) }), ctx({ kampanjserie: kampanj(2.4, 1.9), annonser: bevisad }));
   assert.equal(foll.dom, DOM.FLYTTA);
   assert.match(foll.motivering, /ingen vinnare än/);
 });
@@ -113,7 +114,80 @@ test('ett gammalt adset (före 3:2:2) döms på de senaste sju dagarna — inte 
   assert.equal(d.roll, 'gammal');
   assert.equal(d.fonster, '2026-10-13..2026-10-19');
   assert.equal(d.dom, DOM.LAT_STA);
-  assert.match(d.motivering, /över 14 dagar/);
+  assert.match(d.motivering, /före 3:2:2/);
+});
+
+test('ett gammalt adset som FUNGERAR stängs aldrig för köns skull — kursens versaler: stäng inte det som fungerar', () => {
+  const ad = { id: '120251218829760023', namn: 'broad_advplus_purchase_bilder', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 11, serie: serie('2026-09-22', 28, 530, 2, 1.6) };
+  const d = domAdset(ad, ctx({ koVantar: 2 }));
+  assert.equal(d.dom, DOM.LAT_STA);
+  assert.equal(d.atgard, null);
+  // Ett TESTadset med samma tal och en kö stängs däremot (kursens köregel).
+  assert.equal(domAdset(test322({ skapad: '2026-10-12', serie: serie('2026-10-12', 8, 500, 3, 2.0) }), ctx({ koVantar: 2 })).dom, DOM.STANG);
+});
+
+test('zooma ut: ett gammalt adset under break-even senaste veckan men över på 28 dagar står kvar; under på båda stängs', () => {
+  const dok = { id: 'g1', namn: 'broad_advplus_purchase_nya16', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 40, serie: [...serie('2026-09-22', 21, 800, 4, 2.2), ...serie('2026-10-13', 7, 200, 1, 1.2)] };
+  const d = domAdset(dok, ctx({ koVantar: 2 }));
+  assert.equal(d.dom, DOM.LAT_STA);
+  assert.match(d.motivering, /zoomat ut/);
+  const dalig = { ...dok, serie: [...serie('2026-09-22', 21, 800, 1, 0.9), ...serie('2026-10-13', 7, 200, 1, 1.2)] };
+  assert.equal(domAdset(dalig, ctx()).dom, DOM.STANG);
+});
+
+test('flyttkandidaten är en BEVISAD annons: aktiv, över grinden, över break-even och minst 20 % av adsetets spend', () => {
+  const ann = [
+    { id: 'p', namn: 'pausad', adset_id: '500', spend_sek: 9000, kop: 40, roas: 2.6, effective_status: 'PAUSED' },
+    { id: 's', namn: 'liten', adset_id: '500', spend_sek: 150, kop: 1, roas: 3.0, effective_status: 'ACTIVE' },
+    { id: 'u', namn: 'under', adset_id: '500', spend_sek: 9000, kop: 20, roas: 1.2, effective_status: 'ACTIVE' },
+    { id: 'v', namn: 'vinnare', adset_id: '500', spend_sek: 6000, kop: 30, roas: 2.0, effective_status: 'ACTIVE' },
+  ];
+  assert.equal(bastaAnnons('500', ann, BE, { grindar: KONFIG.grindar, flyttAndel: 0.2 }).id, 'v');
+  assert.equal(bastaAnnons('500', ann.filter((x) => x.id !== 'v'), BE, { grindar: KONFIG.grindar, flyttAndel: 0.2 }), null, 'pausad = beslut, liten = obevisad, under = under break-even');
+  // Adsetet vinner men ingen annons är bevisad ⇒ vänta, inget flyttförslag.
+  const d = domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) }), ctx({ annonser: ann.filter((x) => x.id !== 'v') }));
+  assert.equal(d.dom, DOM.VANTA);
+  assert.equal(d.atgard, null);
+});
+
+test('vinnaren redan i Champions: inget nytt flyttförslag; levererar kopian lämnar testadsetet platsen', () => {
+  const vinn = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', adset_id: '500', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'ACTIVE' };
+  const ad = test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) });
+  const vantar = domAdset(ad, ctx({ annonser: [vinn, { id: 'c', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1 - Kopia', adset_id: CHAMP, spend_sek: 0 }] }));
+  assert.equal(vantar.dom, DOM.FLYTTAD);
+  assert.equal(vantar.atgard, null);
+  const klar = domAdset(ad, ctx({ annonser: [vinn, { id: 'c', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1 – Copy', adset_id: CHAMP, spend_sek: 900 }] }));
+  assert.equal(klar.dom, DOM.STANG);
+  assert.equal(klar.flyttad, true);
+});
+
+test('en flytt föreslås en gång: samma annons och testadset i loggen ⇒ ingen ny FORSLAG-rad', () => {
+  const vinn = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', adset_id: '500', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'ACTIVE' };
+  const domar = [domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) }), ctx({ annonser: [vinn] }))];
+  assert.equal(forslagRader(domar, IDAG).length, 1);
+  assert.equal(forslagRader(domar, '2026-10-23', { logg: [{ kod: 'FORSLAG', atgard: 'FLYTTA_TILL_CHAMPIONS', adset_id: '500', annons_id: 'v', datum: IDAG }] }).length, 0);
+});
+
+test('benchmarken dödas aldrig: ett adset som bär annonsen med > 30 % av vinsten får inget stängningsförslag', () => {
+  const ad = test322({ serie: serie('2026-10-13', 7, 300, 1, 0.9) });
+  const ann = [{ id: 'b', namn: 'benchmarken', adset_id: '500', spend_sek: 300, kop: 1, roas: 0.9 }];
+  assert.equal(domAdset(ad, ctx({ annonser: ann })).dom, DOM.STANG);
+  const skyddad = domAdset(ad, ctx({ annonser: ann, skyddade: new Set(['benchmarken']) }));
+  assert.equal(skyddad.dom, DOM.LAT_STA);
+  assert.equal(skyddad.atgard, null);
+  assert.match(skyddad.motivering, /benchmarken/);
+});
+
+test('under grinden men köp över break-even och tom kö: ingen dom, får stå; med kö eller noll köp: stäng (svält)', () => {
+  const ad = test322({ serie: serie('2026-10-13', 7, 40, 0.3, 3.3) });
+  assert.equal(domAdset(ad, ctx({ koVantar: 0 })).dom, DOM.LAT_STA);
+  assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.STANG);
+  assert.equal(domAdset(ad, ctx({ koVantar: null })).dom, DOM.STANG);
+});
+
+test('ett adset som Meta visar som IN_PROCESS eller WITH_ISSUES döms — bara PAUSED och liknande är AV', () => {
+  assert.notEqual(domAdset(test322({ effective_status: 'WITH_ISSUES', serie: serie('2026-10-13', 7, 300, 1, 0.9) }), ctx()).dom, DOM.AV);
+  assert.equal(domAdset(test322({ effective_status: 'CAMPAIGN_PAUSED' }), ctx()).dom, DOM.AV);
 });
 
 test('en bildvinnare flyttas aldrig in bland videorna: Champions för bild saknas och det sägs', () => {
@@ -136,6 +210,7 @@ test('förslagen: bara adsetnivå (stäng / flytta), sorterade på kronor — al
       test322({ id: '502', namn: 'MATSTRUMP_T073_identity_video', serie: serie('2026-10-13', 7, 10, 0, 0) }),
     ],
   };
+  jobb.annonser[0].effective_status = 'ACTIVE';
   const domar = domAdsets(jobb, KONFIG, { breakEven: BE, koVantar: 1 });
   assert.equal(domar[0].atgard, 'FLYTTA_TILL_CHAMPIONS', 'flytten först');
   const f = forslagRader(domar, IDAG);
@@ -159,4 +234,19 @@ test('loggen får varje ADSET_DOM och adsetförslag en gång per dag', () => {
 
 test('bastaAnnons: null när adsetet inte har någon annons med spend', () => {
   assert.equal(bastaAnnons('500', [{ id: 'x', adset_id: '500', spend_sek: 0 }], BE), null);
+});
+
+test('koVantar ur dagens kö: färdiga koncept minus lediga platser; okänd struktur ⇒ null, aldrig ett påhittat 0', async () => {
+  const { koVantarUr } = await import('../kor.mjs');
+  assert.equal(koVantarUr({ summa: { klara: 1, vantar_plats: 0, lediga: 2 } }), 0, 'ett klart koncept har redan sin plats');
+  assert.equal(koVantarUr({ summa: { klara: 0, vantar_plats: 2, lediga: 0 } }), 2);
+  assert.equal(koVantarUr({ summa: { klara: 0, vantar_copy: 1, lediga: 0 } }), 1, 'filerna är klara, bara copyn saknas — den vill ha en plats');
+  assert.equal(koVantarUr({ summa: { vantar_struktur: 2, lediga: null }, struktur_fel: '(#17)' }), null);
+  assert.equal(koVantarUr({ summa: {} }), 0);
+});
+
+test('ett gammalt adset som SVÄLTER (bra snitt förr, ingen spend nu) står bara om inget väntar — det fungerar inte nu', () => {
+  const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 0.1, 0, null)] };
+  assert.equal(domAdset(ad, ctx({ koVantar: 0 })).dom, DOM.LAT_STA);
+  assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.STANG);
 });

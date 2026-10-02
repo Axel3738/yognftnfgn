@@ -26,9 +26,12 @@ fel konto kostar riktiga pengar.
 (`--kontroll`) går via token, utan klick. Allt som SKRIVER i Meta går genom
 **Adsmanager-MCP:n** (`mcp__Adsmanager__*`) i en session Axel startar, som förut.
 Finns inte de verktygen: **avbryt**, säg det rakt ut, ladda inte upp något.
-⚠️ MCP:n står i **utkastläge** (mätt 2026-10-02): `ads_create_ad` lägger annonsen
-som utkast i Ads Manager och inget går live förrän det publiceras med
-`ads_activate_entity` — se steg 5c.
+⚠️ Enligt MCP:ns egen verktygsbeskrivning 2026-10-02 står `ads_create_ad` i
+**utkastläge**: annonsen läggs som utkast i Ads Manager och går live först när den
+publiceras med `ads_activate_entity`. Det är INTE mätt i det här kontot än. Mätt
+samma dag: **utkastläsningen** (`ads_get_ad_entities` med `object_state: "draft"`)
+svarar "This tool is new and is being gradually rolled out" för nya kungen. Steg 5c
+säger vad som gäller i båda fallen.
 
 ---
 
@@ -88,7 +91,11 @@ Bash-anrop.
    - `⏳ HOOKAR` — färre än tre hookvarianter i kön. Väntar.
    - `⏳ COPY` — COPY CARD har inte 2 rubriker + 2 primärtexter (alla briefer
      före 2026-10-02 har en av varje). Väntar — se steg 4.
-   - `⛔ STOPP` — bild och video blandat, fler än tre annonser, dubblett.
+   - `⛔ STOPP` — bild och video blandat, fler än tre annonser, dubblett, eller
+     **redan byggt** (testadsetet finns i kampanjen eller i loggen, eller en
+     annons är redan uppladdad — ett koncept byggs aldrig två gånger; raderna ska
+     ut ur kön: `Approved`, eller kommentar + `Draft` om något saknas).
+   - `⛔ STRUKTUR` — strukturen gick inte att läsa ur Meta; inget laddas upp.
    - `🏷️` — odöpt rad (steg 4). `⛔` per rad — fil, pris, landningssida, utland.
 
 4. **Döp de odöpta och laga det som väntar.**
@@ -146,33 +153,54 @@ Bash-anrop.
         Utskriften är JSON-strängen till `ads_create_ad` → `creative`
         (`object_story_spec` med sidan `820358954504320` och Instagram
         `17841479011543544`, plus `asset_feed_spec` med 2 `bodies` + 2 `titles`
-        och `optimization_type: "DEGREES_OF_FREEDOM"`).
+        och `optimization_type: "DEGREES_OF_FREEDOM"`). Skriv aldrig om den.
       - `mcp__Adsmanager__ads_create_ad` med `ad_set_id` = testadsetet,
         `ad_name` = annonsnamnet exakt, `creative` = utskriften.
       - Länken är radens `Landing page`, annars
         `https://matstrumpor.se/products/sushi-strumpor`. Annan butik ⇒ stopp
         (fel pixel bokför köpen på fel verksamhet, och det syns aldrig som fel).
-   c. **Publicera — bara det körningen skapat.** Läs utkastet:
-      `ads_get_ad_entities` med `object_state: "draft"` och
-      `object_ids: [<adset-id>]`. Kontrollera att varje annons i utkastet bär två
-      `bodies` och två `titles`; **gör de inte det: publicera INTE**, rapportera
-      och stanna (en annons med en text går aldrig upp i tysthet). Publicera
-      sedan med `ads_activate_entity`, `entity_type: "ad_set"`,
-      `entity_id: <adset-id>`, `object_ids` = adsetet + dess tre annonser och
-      inget annat, `publish_as_active: true`. **Axels egna utkast i kontot rörs
-      aldrig.** `PUBLISHING` betyder överlämnat, inte live — vänta två minuter.
-      Är adsetet eller en av de tre annonserna PAUSED efteråt: aktivera just
-      den med `ads_activate_entity` (körningen skapade den — inget annat).
+      - **Svarar `ads_create_ad` med fel (`active_errors`), eller blir en video
+        aldrig `ready`:** försök en gång till med just den annonsen. Går det inte
+        då heller: publicera INGENTING av konceptet, raderna stannar i kön, och
+        rapporten listar adset-id:t och de annons-id som skapades (Axel kastar
+        utkasten i Ads Manager). Bygg inga fler koncept.
+   c. **Publicera — bara det körningen skapat, bara ett helt koncept.**
+      - Kontrollera först: exakt **tre** annonser skapade, med exakt planens namn
+        (`_h1 _h2 _h3` ur `ko-<datum>.json`), utan `active_errors`. Annars:
+        publicera inte (se 5b).
+      - Försök läsa utkastet: `ads_get_ad_entities`, `object_state: "draft"`,
+        `object_ids: [<adset-id>]`. **Går det:** varje annons ska bära två
+        `bodies` och två `titles` — gör en det inte, publicera INTE, rapportera,
+        stanna. **Går det inte** ("gradually rolled out", mätt för nya kungen
+        2026-10-02): JSON:en är byggd och testad av koden, så publicera — men då
+        är `--kontroll` i 5d den första riktiga kontrollen av texterna.
+      - **Första konceptet någonsin** (ingen `ADSET_SKAPAD` i loggen före det här):
+        bygg BARA det, kör 5d, och fortsätt med nästa koncept först när
+        `--kontroll` är grön. Då vet vi att Meta tar två texter genom MCP:n.
+      - Svarade `ads_create_ad` med `status: DRAFT`: publicera med
+        `ads_activate_entity`, `entity_type: "ad_set"`, `entity_id: <adset-id>`,
+        `object_ids` = adsetet + dess tre annonser och INGET annat,
+        `publish_as_active: true`. `PUBLISHING` betyder överlämnat, inte live —
+        vänta två minuter. Svarade den med en riktig annons i `PAUSED`: slå på
+        just adsetet och de tre annonserna med `ads_activate_entity`, en i taget.
+      - ⛔ `ads_activate_entity` anropas ALDRIG med `entity_type: "campaign"`,
+        aldrig utan `object_ids` vid en utkastpublicering, aldrig med kampanjens,
+        Champions eller ett gammalt adsets id. **Axels egna utkast och allt PAUSED
+        med spend rörs aldrig.**
    d. **Tillbakaläsningen** ur Meta via token:
       ```bash
       node matstrumpor/kor.mjs --kontroll <adset-id>
       ```
-      Exit 0 = tre annonser, 2 + 2 texter på varje (briefens), rätt sida, länk
-      till matstrumpor.se, en mediatyp, ingen egen budget, inget dynamic
-      creative. **Exit 1: stanna — bygg inget fler koncept**, skriv felraderna i
-      rapporten. Det som redan är live pausas inte (Axels beslut 2026-09-15:
-      en annons som är live stängs aldrig av i efterhand) — felet går till
-      rapporten och till nästa version.
+      Exit 0 = adsetet och de tre annonserna är på, exakt planens tre annonser,
+      2 + 2 texter på varje (briefens), rätt sida och pixel, länk till
+      matstrumpor.se, en mediatyp, ingen egen budget, inget dynamic creative.
+      Står något PAUSED som körningen skapade: slå på just det (5c) och kör om.
+      **Exit 1 av något annat skäl:** gör ändå 5e och 5f för det som gått live
+      (det ska ut ur kön, annars byggs det igen — koden vägrar visserligen, men
+      raderna ska inte ligga kvar), skriv felraderna som kommentar på raderna i
+      Notion och i rapporten, och **bygg inga fler koncept**. Det som är live
+      pausas inte (Axels beslut 2026-09-15: en annons som är live stängs aldrig av
+      i efterhand) — felet går till nästa version.
    e. **Logga varje annons** — av koden, aldrig med `node -e`:
       ```bash
       node matstrumpor/kor.mjs --uppladdad <namn> <annons-id> <adset-id> --koncept <nnn> --notion <sid-id> --kalla "<Drive-fil eller Notion>" --kreator <namn om en människa syns>
@@ -222,7 +250,8 @@ Bash-anrop.
 - [ ] Ett testadset per koncept, ur `adset_spec`: ingen budget, inte dynamic creative, loggat med `--adset-skapad` före annonserna
 - [ ] Tre annonser per adset, var och en med 2 rubriker + 2 primärtexter (`--creative`), utkastet kontrollerat före publicering
 - [ ] Bara körningens egna objekt publicerade; inget annat utkast, inget PAUSED, ingen annan kampanj rörd
-- [ ] `--kontroll <adset-id>` exit 0 för varje byggt adset (eller felet stoppade nästa koncept och står i rapporten)
+- [ ] Exakt tre annonser skapade utan fel före publiceringen; första konceptet någonsin byggt ensamt och kontrollerat innan nästa
+- [ ] `--kontroll <adset-id>` exit 0 för varje byggt adset (eller felet stoppade nästa koncept, raderna lämnade kön och felet står i rapporten)
 - [ ] Inget sjätte levererande adset; inget i Champions eller en gammal hink; bild och video aldrig blandat
 - [ ] Prisspärren körd; stoppade rader kommenterade i Notion och satta till `Draft`
 - [ ] Uppladdade rader satta till `Approved`; varje annons loggad med `--uppladdad … <adset-id> --koncept`

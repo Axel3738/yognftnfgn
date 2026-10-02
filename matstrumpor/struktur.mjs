@@ -26,6 +26,18 @@ import { tolka, mediatyp } from './namn.mjs';
  *  taket (kursen: Champions räknas "if it has ads inside"). */
 export const LEVERERAR = new Set(['ACTIVE', 'PENDING_REVIEW', 'IN_PROCESS', 'PREAPPROVED', 'WITH_ISSUES']);
 
+/** Adsetets egen effective_status som betyder "på" (levererar eller strax gör
+ *  det). Allt annat — PAUSED, CAMPAIGN_PAUSED, ARCHIVED, DELETED — är av. Samma
+ *  mängd i taket (levererar), domen (dom.mjs) och tillbakaläsningen. */
+export const ADSET_PA = new Set(['ACTIVE', 'IN_PROCESS', 'WITH_ISSUES']);
+
+/** Ett Notion-sid-id i jämförbar form: 32 hex-tecken, gemener, utan bindestreck.
+ *  Tar också en hel notion.so-länk (de sista 32 hex-tecknen). Ren. */
+export function sidNyckel(x) {
+  const s = String(x ?? '').toLowerCase().replace(/-/g, '');
+  return s.match(/[0-9a-f]{32}(?=[^0-9a-f]*$)/)?.[0] ?? s;
+}
+
 /** Reglerna ur konfigen, med kursens tal som reserv om ett fält saknas. */
 export function regler(konfig) {
   const s = konfig?.meta?.struktur ?? {};
@@ -78,9 +90,10 @@ export function rollFor(adset, konfig) {
   return 'gammal';
 }
 
-/** Levererar adsetet? ACTIVE i sig och minst en annons som levererar. */
+/** Levererar adsetet? På i sig (ACTIVE, IN_PROCESS, WITH_ISSUES) och minst en
+ *  annons som levererar. */
 export function levererar(adset) {
-  if (String(adset?.effective_status ?? '') !== 'ACTIVE') return false;
+  if (!ADSET_PA.has(String(adset?.effective_status ?? ''))) return false;
   return Number(adset?.aktiva_annonser ?? 0) > 0;
 }
 
@@ -223,15 +236,20 @@ export function lasCopyKort(text) {
   const ren = kort.join('\n')
     .replace(/\*\*/g, '')
     .replace(/`/g, '')
-    .replace(/^\s*>\s?/gm, '');
+    .replace(/^[ \t]*>[ \t]?/gm, '');   // [ \t], aldrig \s: en tom ">"-rad är en styckebrytning
   const traffar = [...ren.matchAll(ETIKETTER)];
   const texter = [], rubriker = [];
   let beskrivning = null, cta = null, lank = null;
   traffar.forEach((m, i) => {
     const fran = m.index + m[0].length;
     const till = i + 1 < traffar.length ? traffar[i + 1].index : ren.length;
-    const varde = ren.slice(fran, till).replace(/\s+/g, ' ').trim();
+    const ra = ren.slice(fran, till);
     const etikett = m[1].toLowerCase().replace(/\s+/g, ' ');
+    // En primärtext behåller sina rader (korta stycken, docs/copy-regler.md):
+    // varje rad trimmas, en tom rad blir en styckebrytning. Allt annat blir en rad.
+    const varde = etikett.startsWith('primary')
+      ? ra.split('\n').map((r) => r.replace(/[ \t]+/g, ' ').trim()).join('\n').replace(/\n{3,}/g, '\n\n').trim()
+      : ra.replace(/\s+/g, ' ').trim();
     if (!varde) return;
     if (etikett.startsWith('primary')) texter.push(varde);
     else if (etikett.startsWith('headline')) rubriker.push(varde);
@@ -341,6 +359,9 @@ export function kontrolleraAdset(las, konfig, { forvantat = null } = {}) {
   const tn = tolkaAdsetNamn(a.name);
   if (!tn) fel.push(`adsetet heter "${a.name}" — inget 3:2:2-namn`);
   if (a.is_dynamic_creative) fel.push('adsetet är ett dynamic creative-adset — 3:2:2 är vanliga annonser');
+  if (a.status && a.status !== 'ACTIVE') fel.push(`adsetet står ${a.status} — körningen skapade det och ska ha slagit på det (steg 5c)`);
+  else if (a.effective_status && !ADSET_PA.has(String(a.effective_status))) fel.push(`adsetet levererar inte (${a.effective_status})`);
+  if (konfig.meta.pixel_id && a.promoted_object && String(a.promoted_object.pixel_id ?? '') !== String(konfig.meta.pixel_id)) fel.push(`adsetets pixel ${a.promoted_object.pixel_id} är inte Matstrumpors ${konfig.meta.pixel_id} — köpen bokförs fel`);
   if (a.daily_budget || a.lifetime_budget) fel.push('adsetet har en egen budget — kampanjen är CBO');
   if (forvantat?.adset_namn && a.name !== forvantat.adset_namn) fel.push(`adsetet heter "${a.name}", planen sa "${forvantat.adset_namn}"`);
   const ads = las?.annonser ?? [];
@@ -359,6 +380,8 @@ export function kontrolleraAdset(las, konfig, { forvantat = null } = {}) {
     const lank = (oss.video_data ?? oss.link_data)?.call_to_action?.value?.link ?? oss.link_data?.link ?? '';
     if (!String(lank).includes(new URL(konfig.butik).hostname)) fel.push(`${ad.name}: länken "${lank}" går inte till ${konfig.butik}`);
     if (konfig.meta.sida_id && String(oss.page_id ?? '') !== String(konfig.meta.sida_id)) fel.push(`${ad.name}: sidan ${oss.page_id} är inte ${konfig.meta.sida_id}`);
+    if (ad.status && ad.status !== 'ACTIVE') fel.push(`${ad.name}: står ${ad.status} — körningen skapade den och ska ha slagit på den (steg 5c)`);
+    else if (ad.effective_status && !LEVERERAR.has(String(ad.effective_status))) fel.push(`${ad.name}: levererar inte (${ad.effective_status})`);
     const plan = forvantat?.annonser?.find((p) => p.namn === ad.name) ?? null;
     if (forvantat && !plan) fel.push(`${ad.name}: finns inte i planen`);
     const copy = plan?.copy ?? forvantat?.copy ?? null;
@@ -369,6 +392,7 @@ export function kontrolleraAdset(las, konfig, { forvantat = null } = {}) {
     }
     if (!fel.some((f) => f.startsWith(ad.name))) ok.push(`${ad.name}: ${typ}, ${bodies.length} + ${titles.length}, ${ad.effective_status ?? ad.status ?? '?'}`);
   }
+  if (forvantat?.annonser?.length) for (const p of forvantat.annonser) if (!ads.some((ad) => ad.name === p.namn)) fel.push(`${p.namn}: planens annons finns inte i adsetet`);
   if (typer.size > 1) fel.push(`bild och video i samma adset (${[...typer].join(' + ')})`);
   if (tn && typer.size === 1 && !typer.has(tn.mediatyp)) fel.push(`adsetnamnet säger ${tn.mediatyp}, annonserna är ${[...typer][0]}`);
   return { ok: fel.length === 0, fel, rader: ok };

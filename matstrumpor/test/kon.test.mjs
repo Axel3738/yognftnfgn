@@ -159,3 +159,44 @@ test('briefFil hittar briefen på namnet, på det omdöpta namnet, och syskonets
   assert.match(briefFil('MATSTRUMP_sushi_gift_ugc_082_v1', logg), /COPY CARD/, 'omdöpt rad hittar sin brief');
   assert.equal(briefFil('MATSTRUMP_sushi_gift_ugc_099_v1', logg), null);
 });
+
+test('ett koncept som redan är byggt byggs aldrig igen: adsetet i kampanjen, ADSET_SKAPAD i loggen eller en uppladdad annons', () => {
+  const namn = ['MATSTRUMP_sushi_gift_ugc_083_h1_v1', 'MATSTRUMP_sushi_gift_ugc_083_h2_v1', 'MATSTRUMP_sushi_gift_ugc_083_h3_v1'];
+  const klara = planera(namn.map((n) => rad(n)), KONFIG).klara;
+  const iKampanjen = { ...LAGE, adsets: [...LAGE.adsets, { id: '9', namn: 'MATSTRUMP_T083_gift_video', effective_status: 'PAUSED' }] };
+  const a = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: iKampanjen });
+  assert.equal(a.koncept[0].status, 'stopp');
+  assert.equal(a.koncept[0].redan_byggd, true);
+  assert.match(a.koncept[0].skal.join(' '), /PAUSED/);
+  const b = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_T083_gift_video', koncept: '083', datum: '2026-10-05' }] });
+  assert.equal(b.koncept[0].status, 'stopp');
+  const c = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'UPPLADDAD', annons: namn[1], annons_id: '77' }] });
+  assert.equal(c.koncept[0].status, 'stopp');
+  assert.equal(c.att_bygga.length, 0);
+});
+
+test('ett namn utan löpnummer (s010h1, haikuh3) stoppas synligt — det försvinner aldrig tyst ur kön', () => {
+  const p = planera([rad('MATSTRUMP_sushi_gift_ugc_s010h1_v1')], KONFIG);
+  assert.equal(p.klara.length, 0);
+  assert.equal(p.stoppade[0].skal[0], STOPPSKAL.NUMMER);
+  assert.equal(p.stoppade[0].behover_namn, true);
+});
+
+test('--hookrad tar id:t med eller utan bindestreck, eller hela länken, och säger till när det inte träffar', () => {
+  const r = rad('MATSTRUMP_sushi_gift_ugc_084_v1', { id: '3ed270ab-908c-81f6-bd39-fa33a209f382' });
+  assert.equal(planera([r], KONFIG, { hookrader: new Set(['3ED270AB908C81F6BD39FA33A209F382']) }).klara.length, 3);
+  assert.equal(planera([r], KONFIG, { hookrader: new Set(['https://www.notion.so/MATSTRUMP-084-3ed270ab908c81f6bd39fa33a209f382']) }).klara.length, 3);
+  const miss = planera([r], KONFIG, { hookrader: new Set(['ffffffffffffffffffffffffffffffff']) });
+  assert.deepEqual(miss.hookrader_utan_traff, ['ffffffffffffffffffffffffffffffff']);
+  const okandVinkel = planera([rad('MATSTRUMP_sushi_okand_ugc_085_v1', { id: 'x1' })], KONFIG, { hookrader: new Set(['x1']) });
+  assert.equal(okandVinkel.klara.length, 0, 'en vinkel som inte står i konfigen stoppar raden, inte hela kön');
+  assert.match(okandVinkel.stoppade[0].skal[0], /--hookrad/);
+});
+
+test('en hookvariants EGET underkända kort stoppar konceptet — syskonets kort gäller bara när eget saknas', () => {
+  const namn = ['MATSTRUMP_sushi_gift_ugc_086_h1_v1', 'MATSTRUMP_sushi_gift_ugc_086_h2_v1', 'MATSTRUMP_sushi_gift_ugc_086_h3_v1'];
+  const kort = new Map([[namn[0], KORT], [namn[1], { ...KORT, texter: ['Köp på Matstrumpor nu.', 'B.'] }], [namn[2], KORT]]);
+  const k = planeraKoncept(planera(namn.map((n) => rad(n)), KONFIG).klara, KONFIG, { kort, lage: LAGE });
+  assert.equal(k.koncept[0].status, 'vantar_copy');
+  assert.match(k.koncept[0].skal.join(' '), /_086_h2_v1: butikens namn/);
+});

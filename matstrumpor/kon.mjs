@@ -27,13 +27,14 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { klaraRader } from '../tools/notion-kalla.mjs';
 import { tolka, mediatyp, bygg } from './namn.mjs';
-import { grupperaKoncept, tilldelaPlatser, granskaCopy, lasCopyKort, regler } from './struktur.mjs';
+import { grupperaKoncept, tilldelaPlatser, granskaCopy, lasCopyKort, regler, sidNyckel, tolkaAdsetNamn } from './struktur.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 export const STOPPSKAL = {
   NAMN: 'namnet följer inte mönstret — går inte att para ihop med ett koncept',
   FORMAT: 'formatet i namnet är varken video eller bild i konfigen',
+  NUMMER: 'namnet saknar löpnummer (id:t börjar med bokstäver) — 3:2:2 parar hookarna på löpnumret: döp om med --namn <vinkel> <format> 1 och --dop',
   UTLAND: 'utlandets annonser laddas upp av marknader/annonser/bygg.mjs, aldrig av den svenska uppladdaren',
   FIL: 'ingen fil: varken bilaga, mediablock eller Drive-länk på raden',
   PRIS: 'priset i annonsen avviker mer än 20 % från butikens pris',
@@ -48,6 +49,9 @@ export function planera(rader, konfig, { prisavvikelse = () => null, hookrader =
   const r = regler(konfig);
   const klara = [];
   const stoppade = [];
+  // Sid-id:n jämförs normaliserade: med eller utan bindestreck, eller en hel länk.
+  const hookNycklar = new Set([...(hookrader ?? [])].map(sidNyckel));
+  const traffade = new Set();
   for (const rad of rader) {
     const skal = [];
     const tolkat = tolka(rad.namn);
@@ -55,18 +59,20 @@ export function planera(rader, konfig, { prisavvikelse = () => null, hookrader =
     if (!tolkat) skal.push(STOPPSKAL.NAMN);
     else if (tolkat.land) skal.push(STOPPSKAL.UTLAND);
     else if (typ === 'okand') skal.push(STOPPSKAL.FORMAT);
+    else if (tolkat.nummer === null) skal.push(STOPPSKAL.NUMMER);
     if (rad.leverans === 'saknas') skal.push(STOPPSKAL.FIL);
     const avvikelse = prisavvikelse(rad);
     if (avvikelse !== null && avvikelse !== undefined && Math.abs(avvikelse) > 0.2) skal.push(`${STOPPSKAL.PRIS} (${(avvikelse * 100).toFixed(0)} %)`);
     if (rad.landning && !String(rad.landning).includes(new URL(konfig.butik).hostname)) skal.push(`${STOPPSKAL.LANDNING}: ${rad.landning}`);
-    const hookrad = hookrader.has?.(rad.id) ?? false;
+    const hookrad = hookNycklar.has(sidNyckel(rad.id));
+    if (hookrad) traffade.add(sidNyckel(rad.id));
     if (hookrad && tolkat?.hook) skal.push(STOPPSKAL.HOOKRAD);
 
     if (skal.length) {
       // En rad som BARA saknar namn men har en fil är inte trasig — den är
       // odöpt. Redigerarna döper sina rader "022", "023" … (mätt 2026-09-15 på
       // Gilz fyra videor), och då är namngivningen uppladdarens jobb.
-      const baraNamn = skal.length === 1 && (skal[0] === STOPPSKAL.NAMN || skal[0] === STOPPSKAL.FORMAT);
+      const baraNamn = skal.length === 1 && [STOPPSKAL.NAMN, STOPPSKAL.FORMAT, STOPPSKAL.NUMMER].includes(skal[0]);
       stoppade.push({ ...rad, skal, behover_namn: baraNamn && rad.leverans !== 'saknas' });
       continue;
     }
@@ -82,29 +88,56 @@ export function planera(rader, konfig, { prisavvikelse = () => null, hookrader =
       drive: rad.drive,
     };
     if (hookrad) {
-      for (let k = 1; k <= r.annonser_per_adset; k++) {
-        klara.push({ ...bas, namn: bygg({ vinkel: tolkat.vinkel, format: tolkat.format, nummer: tolkat.nummer, version: tolkat.version, hook: k, ...(tolkat.typ === 'ITER' ? { iteration: tolkat.iteration, foralder: tolkat.foralder } : {}), imitation: tolkat.typ === 'IMIT' }, konfig), fil_hook: k, fran_rad: rad.namn });
+      // bygg() kastar på en vinkel/ett format som inte står i konfigen — då är
+      // det raden som stoppas, inte hela kön.
+      let utvidgad;
+      try {
+        utvidgad = Array.from({ length: r.annonser_per_adset }, (_, i) => ({ ...bas, namn: bygg({ vinkel: tolkat.vinkel, format: tolkat.format, nummer: tolkat.nummer, version: tolkat.version, hook: i + 1, ...(tolkat.typ === 'ITER' ? { iteration: tolkat.iteration, foralder: tolkat.foralder } : {}), imitation: tolkat.typ === 'IMIT' }, konfig), fil_hook: i + 1, fran_rad: rad.namn }));
+      } catch (e) {
+        stoppade.push({ ...rad, skal: [`--hookrad: ${e.message}`], behover_namn: false });
+        continue;
       }
+      klara.push(...utvidgad);
     } else {
       klara.push({ ...bas, namn: rad.namn });
     }
   }
   klara.sort((a, b) => a.namn.localeCompare(b.namn));
-  return { klara, stoppade, behover_namn: stoppade.filter((s) => s.behover_namn) };
+  const hookrader_utan_traff = [...(hookrader ?? [])].filter((h) => !traffade.has(sidNyckel(h)));
+  return { klara, stoppade, behover_namn: stoppade.filter((s) => s.behover_namn), hookrader_utan_traff };
 }
 
 /** Steg 2: koncepten. kort = Map(annonsnamn → lasCopyKort-resultat eller null);
  *  lage = struktur.mjs strukturLage (null ⇒ strukturen lästes inte ⇒ inget
  *  laddas upp). Ren. */
-export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, grupper = [] } = {}) {
+export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, grupper = [], logg = [] } = {}) {
   let koncept = grupperaKoncept(klara, konfig, { grupper });
+  // Redan byggt? Ett koncept vars testadset finns i kampanjen (vilken status som
+  // helst — PAUSED med spend är ett beslut) eller i loggen, eller vars annons
+  // redan är uppladdad, byggs ALDRIG igen: ett andra adset med samma creatives
+  // tar en plats till och dubblerar annonserna.
+  const iKampanjen = new Map((lage?.adsets ?? []).filter((a) => tolkaAdsetNamn(a.namn)).map((a) => [a.namn, a]));
+  const skapade = (logg ?? []).filter((r) => r.kod === 'ADSET_SKAPAD');
+  const uppe = new Map((logg ?? []).filter((r) => r.kod === 'UPPLADDAD').map((r) => [String(r.annons).toLowerCase(), r]));
   koncept = koncept.map((k) => {
-    // COPY CARD per annons; saknas det på en annons gäller syskonets (de tre
-    // hookarna delar normalt samma kort — samma 2 rubriker + 2 texter).
-    const per = k.annonser.map((a) => ({ a, g: kort.has(a.namn) ? granskaCopy(kort.get(a.namn), konfig) : null }));
-    const godkand = per.find((p) => p.g?.ok)?.g ?? null;
-    const annonser = per.map(({ a, g }) => ({ ...a, copy: g?.ok ? g.copy : godkand?.copy ?? null, copy_kalla: g?.ok ? 'egen' : godkand ? 'syskon' : null, copy_anm: g?.anm ?? [] }));
-    const fel = [...new Set(per.flatMap((p) => p.g?.fel ?? []))];
+    const finns = k.adset_namn ? iKampanjen.get(k.adset_namn) : null;
+    const loggat = skapade.find((r) => (k.adset_namn && r.adset_namn === k.adset_namn) || String(r.koncept ?? '') === k.nyckel);
+    const redanUppe = k.annonser.filter((a) => uppe.has(a.namn.toLowerCase()));
+    if (finns || loggat || redanUppe.length) {
+      return { ...k, status: 'stopp', redan_byggd: true, skal: [...k.skal, `redan byggt: ${finns ? `adsetet ${finns.namn} (${finns.id}, ${finns.effective_status}) finns i kampanjen` : loggat ? `ADSET_SKAPAD ${loggat.adset_namn} (${loggat.adset_id}) ${loggat.datum} i loggen` : ''}${redanUppe.length ? `${finns || loggat ? ' · ' : ''}${redanUppe.map((a) => `${a.namn} är uppladdad (${uppe.get(a.namn.toLowerCase()).annons_id})`).join(', ')}` : ''} — byggs aldrig igen; raderna ska ut ur kön (Approved, eller kommentar + Draft om något saknas)`] };
+    }
+    return k;
+  });
+  koncept = koncept.map((k) => {
+    if (k.status === 'stopp') return k;
+    // COPY CARD per annons. Syskonets kort (de tre hookarna delar normalt samma
+    // kort) gäller BARA när annonsen saknar eget kort — ett eget kort som
+    // underkänns stoppar konceptet, med felet märkt med annonsnamnet.
+    const per = k.annonser.map((a) => ({ a, egen: kort.get(a.namn) ?? null }));
+    const granskat = per.map(({ a, egen }) => ({ a, g: egen ? granskaCopy(egen, konfig) : null }));
+    const godkand = granskat.find((p) => p.g?.ok)?.g ?? null;
+    const annonser = granskat.map(({ a, g }) => ({ ...a, copy: g ? (g.ok ? g.copy : null) : godkand?.copy ?? null, copy_kalla: g ? (g.ok ? 'egen' : null) : godkand ? 'syskon' : null, copy_anm: g?.anm ?? [], copy_fel: g?.fel ?? [] }));
+    const fel = granskat.flatMap(({ a, g }) => (g?.fel ?? []).map((f) => `${a.namn}: ${f}`));
     let { status, skal } = k;
     if (status === 'klar' && annonser.some((a) => !a.copy)) {
       status = 'vantar_copy';
@@ -124,7 +157,7 @@ export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, g
     vantar: koncept.filter((k) => k.status !== 'klar' && k.status !== 'stopp'),
     stopp: koncept.filter((k) => k.status === 'stopp'),
     struktur: lage,
-    summa: { klara: rakna('klar'), vantar_plats: rakna('vantar_plats'), vantar_hookar: rakna('vantar_hookar'), vantar_copy: rakna('vantar_copy'), vantar_struktur: rakna('vantar_struktur'), stopp: rakna('stopp') },
+    summa: { klara: rakna('klar'), vantar_plats: rakna('vantar_plats'), vantar_hookar: rakna('vantar_hookar'), vantar_copy: rakna('vantar_copy'), vantar_struktur: rakna('vantar_struktur'), stopp: rakna('stopp'), lediga: lage ? lage.lediga : null },
   };
 }
 
@@ -210,6 +243,6 @@ export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], ho
     kort.set(a.namn, k);
     a.copy_fil = kalla;
   }
-  const koncept = planeraKoncept(plan.klara, konfig, { kort, lage, grupper });
+  const koncept = planeraKoncept(plan.klara, konfig, { kort, lage, grupper, logg });
   return { rader, plan: { ...plan, ...koncept } };
 }

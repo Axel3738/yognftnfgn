@@ -164,3 +164,28 @@ test('kontrolleraAdset: tre annonser med 2 + 2 i rätt adset är grönt — varj
   const fel = kontrolleraAdset({ adset, annonser: [lasAd('a'), lasAd('b'), lasAd('c', { creative: { ...lasAd('c').creative, asset_feed_spec: { bodies: [{ text: 'Annat.' }, { text: 'T2.' }], titles: [{ text: 'R1.' }, { text: 'R2.' }] } } })] }, KONFIG, { forvantat: plan });
   assert.match(fel.fel.join(' '), /primärtexterna i Meta är inte briefens/);
 });
+
+test('primärtexten behåller sina rader (korta stycken) — rubrikerna blir en rad', () => {
+  const k = lasCopyKort('## COPY CARD\n**Primary text 1:**\n> Ingen jublar åt tvättmedel.\n> Den här sålde slut.\n>\n> Köp 1 – Få 1.\n\n**Primary text 2:**\n> En rad.\n**Headline 1:** `R1`\n**Headline 2:** `R2`\n\n## Primary KPI\nx');
+  assert.equal(k.texter[0], 'Ingen jublar åt tvättmedel.\nDen här sålde slut.\n\nKöp 1 – Få 1.');
+  assert.equal(k.texter[1], 'En rad.');
+  assert.deepEqual(k.rubriker, ['R1', 'R2']);
+});
+
+test('ett adset i WITH_ISSUES eller IN_PROCESS med levererande annonser räknas mot taket', () => {
+  const lage = strukturLage({ kampanj: { dagsbudget_sek: 10000 }, adsets: [champ, { id: 'a', namn: 'MATSTRUMP_T090_gift_video', effective_status: 'WITH_ISSUES', aktiva_annonser: 3 }, { id: 'b', namn: 'MATSTRUMP_T091_gift_video', effective_status: 'IN_PROCESS', aktiva_annonser: 3 }] }, KONFIG, { breakEvenCpa: 308.48 });
+  assert.equal(lage.antal_levererande, 3);
+  assert.equal(lage.lediga, 2);
+});
+
+test('kontrolleraAdset: ett avstängt adset, en pausad annons, fel pixel eller en saknad planerad annons är rött', () => {
+  const adset = { name: 'MATSTRUMP_T065_gift_video', campaign_id: KONFIG.meta.kampanj.id, status: 'ACTIVE', effective_status: 'ACTIVE', promoted_object: { pixel_id: KONFIG.meta.pixel_id } };
+  const plan = { adset_namn: 'MATSTRUMP_T065_gift_video', annonser: ['a', 'b', 'c'].map((n) => ({ namn: n, copy: COPY })) };
+  const tre = [lasAd('a', { status: 'ACTIVE' }), lasAd('b', { status: 'ACTIVE' }), lasAd('c', { status: 'ACTIVE' })];
+  assert.equal(kontrolleraAdset({ adset, annonser: tre }, KONFIG, { forvantat: plan }).ok, true);
+  assert.match(kontrolleraAdset({ adset: { ...adset, status: 'PAUSED', effective_status: 'PAUSED' }, annonser: tre }, KONFIG).fel.join(' '), /står PAUSED/);
+  assert.match(kontrolleraAdset({ adset, annonser: [tre[0], tre[1], lasAd('c', { status: 'PAUSED', effective_status: 'PAUSED' })] }, KONFIG).fel.join(' '), /c: står PAUSED/);
+  assert.match(kontrolleraAdset({ adset, annonser: [tre[0], tre[1], lasAd('c', { effective_status: 'DISAPPROVED' })] }, KONFIG).fel.join(' '), /levererar inte \(DISAPPROVED\)/);
+  assert.match(kontrolleraAdset({ adset: { ...adset, promoted_object: { pixel_id: '1554276343018184' } }, annonser: tre }, KONFIG).fel.join(' '), /pixel/);
+  assert.match(kontrolleraAdset({ adset, annonser: [tre[0], tre[1], lasAd('x')] }, KONFIG, { forvantat: plan }).fel.join(' '), /c: planens annons finns inte/);
+});

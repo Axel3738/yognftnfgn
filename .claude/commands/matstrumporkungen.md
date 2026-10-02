@@ -146,10 +146,17 @@ behörighetsreglerna matchar på första ordet.
    under KPI, kampanjen gick ner), `VINNARE`/`FLYTTA` (≥ 20 % av spenden vid KPI ⇒
    flytta bästa annonsen till Champions; bild går aldrig in bland videorna),
    `VANTA` (tar spend, kampanjen förbättrades, under KPI — till dag 14), `LAT_STA`
-   (bra ROAS, lite spend, inget väntar i kön), `STANG` (svält under grinden, under
-   KPI, eller över 14 dagar utan att vinna) och `AV` (pausat = ett beslut). Ett
-   testadset döms på hela testet från starten; ett gammalt adset (före 3:2:2) på de
-   senaste sju dagarna. `--logga` skriver `ADSET_DOM` (en rad per adset och dag)
+   (bra ROAS, lite spend, inget väntar i kön — och ALLTID för ett gammalt adset
+   som fungerar), `STANG` (svält under grinden, under KPI, eller över 14 dagar
+   utan att vinna), `FLYTTAD` (vinnaren ligger redan i Champions men har inte
+   levererat) och `AV` (pausat = ett beslut). Ett testadset döms på hela testet
+   från starten; ett gammalt adset (före 3:2:2) på de senaste sju dagarna OCH
+   det långa snittet (28 dagar) — det stängs bara när båda ligger under
+   break-even ("zoom out, look at averages"). Ett adset som bär benchmarken får
+   aldrig ett stängningsförslag. Flyttkandidaten är en BEVISAD annons: aktiv,
+   över grinden, över break-even och minst 20 % av adsetets spend — annars
+   `VANTA`. En flytt föreslås en gång; ligger vinnaren redan i Champions och
+   levererar föreslås testadsetet stängt. `--logga` skriver `ADSET_DOM` (en rad per adset och dag)
    och `FORSLAG` med `niva: "adset"` (stäng/flytta) — av koden, aldrig dubbelt.
    Ut ur `--dom-alla` kommer per kampanj: vinstbidragstabellen (bara Sverige —
    ranking på `(break-even-CPA − CPA) × köp`, **aldrig på ROAS eller CPA
@@ -303,6 +310,12 @@ behörighetsreglerna matchar på första ordet.
    - **Bild och video aldrig i samma koncept** — de blir två koncept med var sitt
      löpnummer. Skriv aldrig "upload goes to adset …" i en brief: adsetet är
      konceptets eget och byggs av `/matstrumpor`.
+   - ⛔ **Utom NEW FOOTAGE** (en ny kreatörsinspelning — `format-2`, eller en ny
+     inspelning med Nathalie): briefen ligger i repot och kreatören får sin
+     svenska sida, BRIEF-raderna loggas med `status: "Väntar på råklipp (NEW
+     FOOTAGE)"`, och **inga Notion-rader skapas förrän Axel lagt råklippen i
+     Drive** (CLAUDE.md, Axels order 2026-10-02 — annars börjar redigeraren
+     klippa). Omklipp ur befintligt material får sina tre rader som vanligt.
    - **På engelska** (redigerarna är engelsktalande), svenska manusrader i
      tabellen `Swedish (use this) | English meaning`.
    - Regi rad för rad i varje videobrief (`docs/os/BRIEF-REGI.md`); spärren
@@ -371,7 +384,11 @@ behörighetsreglerna matchar på första ordet.
    - **Kampanjen att skala:** över break-even med ≥ 3 köp de senaste 7 dygnen.
      Skriv ut hur mycket (+20 % är motorns normalsteg) och vad det bygger på.
    - **Strukturen:** är den full (`--ko` säger "Levererar: N av taket M"), skriv
-     hur många koncept som väntar på en plats och vilka stängningar som gör plats.
+     hur många koncept som väntar på en plats och vilka av förslagen ovan som gör
+     plats. Ett gammalt adset (före 3:2:2) som FUNGERAR föreslås aldrig stängt —
+     kursens versaler: "DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE WORKING" —
+     och står som `LAT_STA`; säg i så fall rakt ut att platsen frigörs först när
+     det faller, eller om Axel själv väljer att stänga det.
    - **Rör inte:** Champions, benchmarken, allt under grinden, allt som redan är
      pausat.
    Sortera på kronor, mest först. Är listan tom: säg det i en rad.
@@ -423,7 +440,7 @@ behörighetsreglerna matchar på första ordet.
 - [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen; typ=I bär `playbook=`
 - [ ] Felet ur felkatalogen namngivet i varje lärdom; iterationerna ur `PLAYBOOK_PER_UTFALL`, inget koncept över taket
 - [ ] Namnen byggda med `--namn … --hookar 3` (iterationer med `--iter`, imitationer med `--im`); julmaterial har vinkeln `jul`
-- [ ] Varje koncept: tre hookar i en brief, tre Notion-rader, COPY CARD med Primary text 1/2 + Headline 1/2; bild och video aldrig i samma koncept
+- [ ] Varje koncept: tre hookar i en brief, tre Notion-rader (NEW FOOTAGE: inga rader förrän råklippen finns, BRIEF med status "Väntar på råklipp"), COPY CARD med Primary text 1/2 + Headline 1/2; bild och video aldrig i samma koncept
 - [ ] Copyn skriven av subagent med `model: "sonnet"` + copy-reglerna
 - [ ] Briefraderna skapade via `tools/notion-brief.mjs` (NOTION_TOKEN), aldrig via MCP
 - [ ] **Noll budgetändringar, noll pausningar, noll aktiveringar** — tipsen är en lista, inte en handling

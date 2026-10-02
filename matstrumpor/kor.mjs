@@ -36,7 +36,7 @@ import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKET
 import { brieftak, mix, skelett, konceptStatus, koncepttak, vantandeKoncept } from './lardom.mjs';
 import { nastaNummer_flera, bygg, tolka, adsetNyckel, samlaKandaNamn, nastaIterationPa, mediatyp } from './namn.mjs';
 import { hamtaKo, planera, planeraKoncept, hubbNamn } from './kon.mjs';
-import { strukturLage, regler as strukturRegler, adsetSpec, creativeSpec, kontrolleraAdset, tolkaAdsetNamn, adsetNamn } from './struktur.mjs';
+import { strukturLage, regler as strukturRegler, adsetSpec, creativeSpec, kontrolleraAdset, tolkaAdsetNamn, adsetNamn, levererar } from './struktur.mjs';
 import { domAdsets, forslagRader, adsetDomRader, nyaRader as nyaAdsetRader, DOM } from './dom.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -208,7 +208,10 @@ export function korDom(jobb, konfig, bryt, { json = false, logga = false, loggfi
   // Sverige — utlandets kampanjer är inte byggda som 3:2:2. Etiketterna ovan är
   // lärdomen per annons; stängningsbeslutet tas här, på adsetnivå, och blir ett
   // FÖRSLAG till Axel (kungen skalar aldrig, Axels beslut 2026-09-21).
-  const adsetDel = sverige && Array.isArray(jobb.adsets) ? korAdsetDom(jobb, konfig, be, { idag, koVantar, logga, loggfil, skriv }) : null;
+  // Benchmarken (annonsen med > 30 % av vinsten) dödas aldrig — adsetet som bär
+  // den får aldrig ett stängningsförslag (dom.mjs skydda).
+  const skyddade = new Set((rank?.rader ?? []).filter((r) => r.skydd).map((r) => r.namn));
+  const adsetDel = sverige && Array.isArray(jobb.adsets) ? korAdsetDom(jobb, konfig, be, { idag, koVantar, logga, loggfil, skriv, skyddade }) : null;
   if (sverige && !Array.isArray(jobb.adsets)) skriv('Adseten: avläsningen saknar adset-serien (äldre jobbfil) — kör --hamta igen för domen per adset.');
 
   const ut = { datum: jobb.datum ?? null, marknad, break_even_roas: be, kampanj: jobb.kampanj ?? null, ranking: rank, etiketter, for_unga: unga, att_logga: nyaRader, ...(adsetDel ? { adsets: adsetDel.domar, forslag_adset: adsetDel.forslag } : {}) };
@@ -224,16 +227,16 @@ export function korDom(jobb, konfig, bryt, { json = false, logga = false, loggfi
 /** Adsetdomen i en jobbfil: utskriften, ADSET_DOM- och FORSLAG-raderna (med
  *  logga, aldrig dubbelt). koVantar = koncept som väntar på en testplats (ur
  *  dagens --ko), null = okänt. Returnerar domarna och förslagen. */
-export function korAdsetDom(jobb, konfig, breakEven, { idag, koVantar = null, logga = false, loggfil = LOGGFIL, skriv = () => {} } = {}) {
+export function korAdsetDom(jobb, konfig, breakEven, { idag, koVantar = null, logga = false, loggfil = LOGGFIL, skriv = () => {}, skyddade = new Set() } = {}) {
   const r = strukturRegler(konfig);
-  const domar = domAdsets(jobb, konfig, { breakEven, koVantar, idag });
-  const forslag = forslagRader(domar, idag);
-  const lev = domar.filter((d) => d.effective_status === 'ACTIVE' && (jobb.adsets.find((a) => a.id === d.adset_id)?.aktiva_annonser ?? 0) > 0).length;
+  const domar = domAdsets(jobb, konfig, { breakEven, koVantar, idag, skyddade });
+  const forslag = forslagRader(domar, idag, { logg: lasLogg(loggfil) });
+  const lev = jobb.adsets.filter((a) => levererar(a)).length;
   skriv('');
   skriv(`Adseten (3:2:2 — dom per adset, aldrig per annons): ${domar.length} i kampanjen, ${lev} levererar, taket ${r.max_adsets_totalt} inkl. Champions · koncept som väntar på plats: ${koVantar ?? 'okänt (kör --ko först)'}`);
   for (const d of domar) {
     skriv(`  ${d.dom.padEnd(13)} ${d.adset} [${d.roll}${d.dagar !== null ? `, dag ${d.dagar}` : ''}${d.fonster ? `, ${d.fonster}` : ''}] ${d.spend_sek} kr · ${d.kop} köp · ROAS ${d.roas ?? '—'} · ${d.andel === null ? '—' : `${Math.round(d.andel * 100)} %`} av spenden`);
-    skriv(`      ${d.motivering}`);
+    skriv(`      ${d.motivering}${d.redan_foreslagen ? ' (flytten är redan föreslagen — ingen ny rad)' : ''}`);
   }
   skriv(forslag.length ? `Förslag till Axel (${forslag.length}, på kronor): ${forslag.map((f) => `${f.atgard === 'STANG_ADSET' ? 'stäng' : 'flytta'} ${f.objekt}${f.atgard === 'FLYTTA_TILL_CHAMPIONS' ? ` → ${f.till}` : ''} (${Math.round(f.kronor ?? 0)} kr)`).join(' · ')}` : 'Inga adsetförslag i dag.');
   if (logga) {
@@ -244,15 +247,28 @@ export function korAdsetDom(jobb, konfig, breakEven, { idag, koVantar = null, lo
   return { domar, forslag };
 }
 
-/** Koncept som väntar på en testplats enligt dagens kö (output/ko-<datum>.json):
- *  klara att bygga + väntar på plats. null = ingen kö läst i dag. */
+/** Koncept som väntar på en testplats enligt dagens kö (output/ko-<datum>.json).
+ *  Färdiga creatives som vill ha en plats = klara + väntar på plats + väntar på
+ *  copy (filerna är klara, bara rubrik 2/text 2 saknas) + väntar på strukturen;
+ *  minus de lediga platserna (ett klart koncept har redan en). Lästes inte
+ *  strukturen är platserna okända ⇒ null, så domen aldrig påstår att "inget
+ *  väntar" eller stänger på en gissning. null också när ingen kö lästs i dag. */
 export function koVantarIdag(idag, mapp = UTMAPP) {
   const fil = join(mapp, `ko-${idag}.json`);
   if (!existsSync(fil)) return null;
   try {
-    const k = JSON.parse(readFileSync(fil, 'utf8'));
-    return (k.summa?.klara ?? 0) + (k.summa?.vantar_plats ?? 0);
+    return koVantarUr(JSON.parse(readFileSync(fil, 'utf8')));
   } catch { return null; }
+}
+
+/** Ren kärna i koVantarIdag. */
+export function koVantarUr(k) {
+  const s = k?.summa ?? {};
+  const redo = (s.klara ?? 0) + (s.vantar_plats ?? 0) + (s.vantar_copy ?? 0) + (s.vantar_struktur ?? 0);
+  if (!redo) return 0;
+  const lediga = s.lediga ?? k?.struktur?.lediga ?? null;
+  if (lediga === null || lediga === undefined || k?.struktur_fel) return null;
+  return Math.max(0, redo - lediga);
 }
 
 /** Senaste avläsningen på disk (`output/avlasning-YYYY-MM-DD.json`), eller null.
@@ -355,14 +371,15 @@ export function visaStruktur(lage, skriv = (x) => console.log(x)) {
 /** Kön som koncept i terminalen: klara att bygga, väntande, stoppade. */
 export function visaKo(plan, skriv = (x) => console.log(x)) {
   const etikett = { klar: '✅ BYGG', vantar_plats: '⏳ PLATS', vantar_hookar: '⏳ HOOKAR', vantar_copy: '⏳ COPY', vantar_struktur: '⛔ STRUKTUR', stopp: '⛔ STOPP' };
+  for (const h of plan.hookrader_utan_traff ?? []) skriv(`  ⛔ --hookrad ${h} träffade ingen rad i kön`);
   if (!plan.koncept.length && !plan.stoppade.length) skriv('  (kön är tom)');
   for (const k of plan.koncept) {
     skriv(`  ${(etikett[k.status] ?? k.status).padEnd(11)} koncept ${k.nyckel}${k.sammanslagen ? ' (sammanslaget)' : ''} → ${k.adset_namn ?? 'inget adset (bild och video blandat)'} · ${k.annonser.length} annonser`);
-    for (const a of k.annonser) skriv(`      ${a.namn}${a.fil_hook ? ` (fil H${a.fil_hook} på raden ${a.fran_rad})` : ''}${a.copy ? ` · copy ${a.copy.rubriker.length}+${a.copy.texter.length} (${a.copy_kalla}${a.copy_fil ? `, ${a.copy_fil}` : ''})` : ' · copy saknas'}`);
+    for (const a of k.annonser) skriv(`      ${a.namn}${a.fil_hook ? ` (fil H${a.fil_hook} på raden ${a.fran_rad})` : ''}${a.copy ? ` · copy ${a.copy.rubriker.length}+${a.copy.texter.length} (${a.copy_kalla === 'syskon' ? 'syskonets kort — eget saknas' : 'eget kort'}${a.copy_fil ? `, ${a.copy_fil}` : ''})` : ' · copy saknas'}${a.copy_anm?.length ? ` · ${a.copy_anm.join('; ')}` : ''}`);
     for (const x of k.skal) skriv(`      ↳ ${x}`);
     if (k.adset_spec_fel) skriv(`      ↳ ⛔ adsetets mall: ${k.adset_spec_fel}`);
   }
-  for (const s of plan.stoppade) skriv(`  ${s.behover_namn ? '🏷️ ' : '⛔'} ${s.namn} — ${s.behover_namn ? 'odöpt rad med fil: titta på creativen, välj vinkel + format, döp den (--namn … --hookar 3), kör om' : s.skal.join(' · ')}`);
+  for (const s of plan.stoppade) skriv(`  ${s.behover_namn ? '🏷️ ' : '⛔'} ${s.namn} — ${s.behover_namn ? 'odöpt rad med fil: titta på creativen och döp enligt steg 4 — en fil: --namn <vinkel> <format> 1 + --dop; tre hookfiler i raden: döp utan hook + --ko --hookrad <id>; tre odöpta rader med samma kropp: --namn … 1 --hookar 3, ett namn per rad' : s.skal.join(' · ')}`);
   const m = plan.summa ?? {};
   skriv(`Summa: ${m.klara ?? 0} koncept att bygga · väntar på plats ${m.vantar_plats ?? 0} · på hookar ${m.vantar_hookar ?? 0} · på copy ${m.vantar_copy ?? 0}${m.vantar_struktur ? ` · på strukturen ${m.vantar_struktur}` : ''} · stoppade koncept ${m.stopp ?? 0} · stoppade rader ${plan.stoppade.length}`);
 }
@@ -478,11 +495,13 @@ async function main() {
       try { k.adset_spec = adsetSpec({ namn: k.adset_namn, mall, kampanjId: konfig.meta.kampanj.id, kontoId: konfig.meta.ad_account_id }); } catch (e) { k.adset_spec_fel = e.message; }
     }
     const ut = { datum: idag, hub: konfig.notion.hub_namn, rader: rader.length, struktur_fel: strukturFel, ...plan };
+    if (plan.hookrader_utan_traff?.length) process.exitCode = 1;
     mkdirSync(UTMAPP, { recursive: true });
     writeFileSync(join(UTMAPP, `ko-${idag}.json`), `${JSON.stringify(ut, null, 2)}\n`);
     if (har('--json')) { console.log(JSON.stringify(ut, null, 2)); return; }
     console.log(`Hubben "${konfig.notion.hub_namn}": ${rader.length} rader i ${(konfig.notion.ko_statusar ?? [konfig.notion.ko_status]).join(' / ')}`);
     if (strukturFel) console.log(`⛔ Strukturen lästes inte (${strukturFel}) — inget laddas upp förrän --struktur fungerar.`);
+    for (const h of plan.hookrader_utan_traff ?? []) console.log(`⛔ --hookrad ${h} träffade ingen rad i kön — kolla id:t (sid-id:t eller radens länk).`);
     if (lage) visaStruktur(lage);
     console.log('');
     visaKo(plan);
@@ -513,6 +532,8 @@ async function main() {
     if (!t) throw new Error(`"${namn}" är inget 3:2:2-adsetnamn (${konfig.meta.struktur?.adsetnamn_mall}).`);
     if (String(adsetId) === String(konfig.meta.struktur?.champions?.id)) throw new Error('Det är Champions-adsetet — det skapas aldrig av uppladdaren.');
     if (lasLogg().some((r) => r.kod === 'ADSET_SKAPAD' && r.adset_id === String(adsetId))) { console.log(`ADSET_SKAPAD för ${adsetId} finns redan i loggen — skriver inte en till.`); return; }
+    const sammaNamn = lasLogg().find((r) => r.kod === 'ADSET_SKAPAD' && r.adset_namn === namn);
+    if (sammaNamn) throw new Error(`Testadsetet ${namn} finns redan (${sammaNamn.adset_id}, ${sammaNamn.datum}) — ett koncept byggs aldrig två gånger. Är det nya adsetet en dubblett: ladda inte upp i det, rapportera det.`);
     skrivRad({ kod: 'ADSET_SKAPAD', datum: varde('--idag', idagSE()), adset_id: String(adsetId), adset_namn: namn, koncept: varde('--koncept', String(t.nummer).padStart(3, '0')), vinkel: t.vinkel, mediatyp: t.mediatyp, struktur: '3:2:2', kampanj_id: konfig.meta.kampanj.id });
     console.log(`ADSET_SKAPAD loggad: ${namn} (${adsetId})`);
     return;

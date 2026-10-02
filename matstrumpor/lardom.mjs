@@ -20,6 +20,15 @@
 // en rad i den: vilken iteration ur playbooken, och mot vilket fel.
 
 import { RANG, gallandeEtiketter } from './etikett.mjs';
+import { tolka } from './namn.mjs';
+
+/** Ett FÖRSÖK i taket är ett löpnummer — sedan 3:2:2 (2026-10-02) är tre hookar
+ *  (_h1 _h2 _h3) på samma nummer ETT test i ETT adset, inte tre försök. Namn som
+ *  inte går att tolka räknas var för sig, som förut. Ren. */
+export function forsokNyckel(annons) {
+  const t = tolka(annons);
+  return t && !t.land && t.nummer !== null ? `nr:${t.nummer}` : `namn:${String(annons ?? '').toLowerCase()}`;
+}
 
 /** Evolves nio komponenter (lektionen "Ad Learning & Iteration Process", steg 5).
  *  begar och valens tillkom 2026-10-01 — de sju första är de vi alltid haft. */
@@ -171,11 +180,13 @@ export function koncepttak({ lardomarSedanForraRonden, kadensBriefer, hookarPerK
 }
 
 /** Briefade 3:2:2-koncept som inte laddats upp än: BRIEF-rader sedan bytet,
- *  per löpnummer, utan en UPPLADDAD-rad på samma löpnummer. Ren. */
+ *  per löpnummer, utan en UPPLADDAD-rad på samma löpnummer. En arkiverad brief
+ *  och en kreatörsinspelning som väntar på råklipp (NEW FOOTAGE — ingen hubbrad
+ *  förrän råklippen finns, Axels order 2026-10-02) väntar inte på en plats. Ren. */
 export function vantandeKoncept(logg, { sedan = null, tolka } = {}) {
   const nr = (namn) => { const t = tolka(namn); return t && !t.land && t.nummer ? t.nummer : null; };
   const uppe = new Set((logg ?? []).filter((r) => r.kod === 'UPPLADDAD').map((r) => nr(r.annons)).filter(Boolean));
-  const briefade = new Set((logg ?? []).filter((r) => r.kod === 'BRIEF' && (!sedan || String(r.datum ?? '') >= sedan) && !/arkiverad/i.test(String(r.status ?? ''))).map((r) => nr(r.annons)).filter(Boolean));
+  const briefade = new Set((logg ?? []).filter((r) => r.kod === 'BRIEF' && (!sedan || String(r.datum ?? '') >= sedan) && !/arkiverad|råklipp|new footage/i.test(String(r.status ?? ''))).map((r) => nr(r.annons)).filter(Boolean));
   return [...briefade].filter((n) => !uppe.has(n)).sort((a, b) => a - b);
 }
 
@@ -194,7 +205,7 @@ export function mix(antal, harLevandeBreakthrough) {
 /** Iterationsnumret räknas ur loggen, aldrig ur minnet eller briefens egen siffra
  *  (punkt 14) — så vi alltid vet om vi gjort två eller trettio försök. */
 export function nastaIteration(briefrader, koncept) {
-  const n = (briefrader ?? []).filter((b) => b.koncept === koncept).length;
+  const n = new Set((briefrader ?? []).filter((b) => b.koncept === koncept).map((b, i) => (b.annons ? forsokNyckel(b.annons) : `rad:${i}`))).size;
   return n + 1;
 }
 
@@ -212,15 +223,21 @@ export function nastaIteration(briefrader, koncept) {
 export const STARK_KALLA = ['voc', 'swipe', 'egen-data', 'playbook', 'winning-line', 'feedback', 'parent'];
 
 export function konceptStatus(koncept, briefrader, etikettrader = [], { kalla = null, omdopt = [], foralderEtikett = null } = {}) {
-  const forsok = (briefrader ?? []).filter((b) => b.koncept === koncept);
+  const rader = (briefrader ?? []).filter((b) => b.koncept === koncept);
   const nyttNamn = new Map((omdopt ?? []).map((o) => [o.fran, o.till]));
   const galler = gallandeEtiketter(etikettrader);
-  const utfall = forsok.map((b) => {
+  // Ett försök per löpnummer; dess utfall är den högsta etiketten bland hookarna.
+  const grupper = new Map();
+  for (const [i, b] of rader.entries()) {
     const namn = nyttNamn.get(b.annons) ?? b.annons;
-    return { annons: namn, etikett: galler.get(namn)?.etikett ?? null };
-  });
+    const nyckel = namn ? forsokNyckel(namn) : `rad:${i}`;
+    if (!grupper.has(nyckel)) grupper.set(nyckel, []);
+    grupper.get(nyckel).push({ annons: namn, etikett: galler.get(namn)?.etikett ?? null });
+  }
+  const forsok = [...grupper.values()];
+  const utfall = forsok.map((g) => g.filter((u) => u.etikett).sort((x, y) => RANG[y.etikett] - RANG[x.etikett])[0] ?? { annons: g[0].annons, etikett: null });
   const medUtfall = utfall.filter((u) => u.etikett);
-  const foralder = foralderEtikett ?? (forsok[0]?.parent ? galler.get(forsok[0].parent)?.etikett ?? null : null);
+  const foralder = foralderEtikett ?? (rader[0]?.parent ? galler.get(rader[0].parent)?.etikett ?? null : null);
   const ribba = foralder && RANG[foralder] !== undefined ? RANG[foralder] : RANG.SPEND_WINNER;
   const vinnare = medUtfall.filter((u) => RANG[u.etikett] >= ribba);
   const stark = kalla ? STARK_KALLA.includes(String(kalla).toLowerCase()) : false;

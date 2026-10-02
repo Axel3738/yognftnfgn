@@ -24,7 +24,7 @@
 // Ren logik: serierna in (meta.mjs → jobb.adsets[].serie, jobb.kampanj_serie),
 // domen ut. Testad i test/dom.test.mjs.
 
-import { regler, rollFor, tolkaAdsetNamn } from './struktur.mjs';
+import { regler, rollFor, tolkaAdsetNamn, ADSET_PA } from './struktur.mjs';
 import { dagarMellan } from './etikett.mjs';
 
 export const DOM = Object.freeze({
@@ -37,6 +37,7 @@ export const DOM = Object.freeze({
   VANTA: 'VANTA',
   LAT_STA: 'LAT_STA',
   STANG: 'STANG',
+  FLYTTAD: 'FLYTTAD',
 });
 
 /** Åtgärden Axel får som förslag. null = inget att göra. */
@@ -75,19 +76,31 @@ export function summera(serie, since, until) {
   return { since, until, spend_sek: r2(spend), kop, roas: medRoas > 0 ? r3(varde / medRoas) : null, dagar_med_data: dagar };
 }
 
+/** Det långa snittet för ett adset äldre än testtiden (kursen: "zoom out, look
+ *  at averages") — hela serien (meta.mjs ADSET_SERIE_DAGAR). */
+export const LANGT_SNITT_DAGAR = 28;
+
+/** Ett annonsnamn utan Ads Managers kopiesuffix (" - Kopia", " – Copy", "(kopia)"),
+ *  gemener — så att en vinnare som duplicerats in i Champions känns igen. Ren. */
+export function normNamn(namn) {
+  return String(namn ?? '').replace(/(\s*[-–]\s*(kopia|copy)(\s*\d+)?|\s*\((kopia|copy)\))+$/i, '').trim().toLowerCase();
+}
+
 /** Domen för ETT adset. Ren.
  *  adset:  { id, namn, effective_status, skapad, serie, aktiva_annonser }
- *  ctx:    { kampanjserie, idag, breakEven, grindar, konfig, koVantar, annonser } */
-export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, grindar, konfig, koVantar = null, annonser = [] }) {
+ *  ctx:    { kampanjserie, idag, breakEven, grindar, konfig, koVantar, annonser, skyddade }
+ *          skyddade = annonsnamn som bär > 30 % av vinsten (rangordna → benchmark) */
+export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, grindar, konfig, koVantar = null, annonser = [], skyddade = new Set() }) {
   const r = regler(konfig);
   const roll = rollFor(adset, konfig);
   const igar = plusDagar(idag, -1);
   const skapad = String(adset.skapad ?? '').slice(0, 10) || null;
   const dagar = skapad ? Math.max(0, dagarMellan(skapad, idag)) : null;
   const lang = dagar === null || dagar > r.test_max_dagar;
-  // Ett test döms på hela testet (från starten, högst 14 dagar). Ett gammalt
-  // adset (före 3:2:2, äldre än testtiden) på de senaste sju dagarna — kursen:
-  // "zoom out, look at averages".
+  // Ett test döms på hela testet (från starten, högst 14 dagar). Ett adset äldre
+  // än testtiden (de gamla från före 3:2:2) på de senaste sju dagarna — men det
+  // stängs bara om också det långa snittet ligger under break-even (kursen: "we
+  // don't turn off ads that were doing well but suddenly tanked, zoom out").
   const since = lang ? plusDagar(igar, -(r.test_dagar - 1)) : skapad;
   const f = since && since <= igar ? { since, until: igar } : null;
   const a = f ? summera(adset.serie, f.since, f.until) : { spend_sek: 0, kop: 0, roas: null };
@@ -96,54 +109,89 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
   const fore = f ? summera(kampanjserie, plusDagar(f.since, -len), plusDagar(f.since, -1)) : null;
   const andel = k.spend_sek > 0 ? r3(a.spend_sek / k.spend_sek) : null;
   const forbattrad = fore && fore.spend_sek > 0 && fore.roas !== null && k.roas !== null ? k.roas > fore.roas : null;
-  const kpi = a.roas !== null && breakEven !== null && breakEven !== undefined ? a.roas >= breakEven : null;
-  const bedombar = a.spend_sek >= grindar.signifikans_spend_sek || a.kop >= grindar.signifikans_kop;
-  const basta = bastaAnnons(adset.id, annonser, breakEven);
+  const harBe = breakEven !== null && breakEven !== undefined;
+  const kpi = a.roas !== null && harBe ? a.roas >= breakEven : null;
+  const grind = (x) => x.spend_sek >= grindar.signifikans_spend_sek || x.kop >= grindar.signifikans_kop;
+  const bedombar = grind(a);
+  const lt = lang && f ? summera(adset.serie, plusDagar(igar, -(LANGT_SNITT_DAGAR - 1)), igar) : null;
+  const langtOk = Boolean(lt && grind(lt) && lt.roas !== null && harBe && lt.roas >= breakEven);
+  const kandidat = bastaAnnons(adset.id, annonser, breakEven, { grindar, flyttAndel: r.flytt_andel });
+  const benchmark = (annonser ?? []).find((x) => String(x.adset_id ?? '') === String(adset.id) && skyddade.has(x.namn)) ?? null;
+  const ko = koVantar === null || koVantar === undefined ? null : Number(koVantar);
 
   const bas = {
     adset_id: String(adset.id), adset: adset.namn, roll, effective_status: adset.effective_status ?? null,
     skapad, dagar, fonster: f ? `${f.since}..${f.until}` : null,
     spend_sek: a.spend_sek, kop: a.kop, roas: a.roas, andel, bedombar, kpi,
     kampanj_spend_sek: k.spend_sek, kampanj_roas: k.roas, kampanj_roas_fore: fore?.roas ?? null, forbattrad,
-    basta_annons: basta,
+    ...(lt ? { langt_snitt: { fonster: `${lt.since}..${lt.until}`, spend_sek: lt.spend_sek, kop: lt.kop, roas: lt.roas } } : {}),
+    basta_annons: kandidat,
   };
   const ut = (dom, motivering, extra = {}) => ({ ...bas, dom, atgard: ATGARD[dom] ?? null, motivering, ...extra });
   const pct = (x) => (x === null ? 'okänd andel' : `${Math.round(x * 100)} %`);
   const roasTxt = a.roas === null ? 'ingen ROAS' : `ROAS ${a.roas}`;
-  const beTxt = breakEven === null || breakEven === undefined ? 'break-even okänt' : `break-even ${breakEven}`;
+  const beTxt = harBe ? `break-even ${breakEven}` : 'break-even okänt';
   const kampTxt = forbattrad === null ? 'kampanjens ROAS före testet går inte att jämföra' : `kampanjens ROAS ${fore.roas} → ${k.roas}${forbattrad ? ' (förbättrades)' : ' (förbättrades inte)'}`;
+  const zoomTxt = lt ? `zoomat ut: ${LANGT_SNITT_DAGAR} dagar ${lt.spend_sek} kr, ${lt.kop} köp, ROAS ${lt.roas ?? '—'}` : '';
 
   if (roll === 'champions' || roll === 'champions_bild') return ut(DOM.CHAMPIONS, `Champions — ${pct(andel)} av kampanjens spend i fönstret, ${roasTxt}. Testas aldrig och stängs aldrig; vinnare flyttas hit.`);
-  if (String(adset.effective_status ?? '') !== 'ACTIVE') return ut(DOM.AV, `${adset.effective_status ?? 'okänd status'} — avstängt är ett beslut, döms inte och aktiveras aldrig.`);
+  if (!ADSET_PA.has(String(adset.effective_status ?? ''))) return ut(DOM.AV, `${adset.effective_status ?? 'okänd status'} — avstängt är ett beslut, döms inte och aktiveras aldrig.`);
   if (dagar === null || !f) return ut(DOM.FOR_UNG, 'startade i dag — Meta har inga siffror för i dag.');
   if (dagar < r.tidig_dom_dagar) return ut(DOM.FOR_UNG, `dag ${dagar} av ${r.test_dagar} — kursen ger ett test minst ${r.tidig_dom_dagar} dagar.`);
   if (dagar < r.test_dagar) {
     if (andel !== null && andel >= r.majoritet_andel && bedombar && kpi === false && forbattrad === false) {
-      return ut(DOM.STANG_TIDIGT, `dag ${dagar}: tog ${pct(andel)} av spenden men ${roasTxt} under ${beTxt}, och ${kampTxt}. Kursen: stäng — men skriv lärdomen, något i den fick engagemang; gör den mer köpdriven.`, { lardom: true });
+      return skydda(ut(DOM.STANG_TIDIGT, `dag ${dagar}: tog ${pct(andel)} av spenden men ${roasTxt} under ${beTxt}, och ${kampTxt}. Kursen: stäng — men skriv lärdomen, något i den fick engagemang; gör den mer köpdriven.`, { lardom: true }));
     }
     return ut(DOM.FOR_UNG, `dag ${dagar} av ${r.test_dagar} — ${pct(andel)} av spenden, ${roasTxt}. Domen kommer dag ${r.test_dagar}.`);
   }
-  if (!bedombar) {
-    return ut(DOM.STANG, `${dagar} dagar, ${a.spend_sek} kr och ${a.kop} köp — under grinden ${grindar.signifikans_spend_sek} kr / ${grindar.signifikans_kop} köp. Meta gav den ingen spend: svält är Metas dom (kursen: "not getting much spend after 7 days"). Ingen dom över idén, bara över platsen.`, { svalt: true });
+  return skydda(efterTest());
+
+  function efterTest() {
+    if (!bedombar) {
+      // Svält. Kursen: lite spend efter 7 dagar och dålig ROAS ⇒ stäng; bra ROAS ⇒
+      // får stå om inget väntar i kön. Under grinden finns ingen ROAS-dom på
+      // veckan, så "bra" betyder köp över break-even inom testet, eller ett långt
+      // snitt över break-even för ett adset äldre än testtiden. Ett adset som
+      // svälter fungerar inte NU — skyddet för "befintliga som fungerar" gäller inte.
+      if (ko === 0 && ((a.kop >= 1 && kpi === true && dagar <= r.test_max_dagar) || (lang && langtOk))) return ut(DOM.LAT_STA, `under grinden (${a.spend_sek} kr, ${a.kop} köp)${lang && langtOk ? `, men ${zoomTxt} ≥ ${beTxt}` : ''} — ingen dom; står bara för att inget koncept väntar på platsen.`);
+      return ut(DOM.STANG, `${dagar} dagar, ${a.spend_sek} kr och ${a.kop} köp — under grinden ${grindar.signifikans_spend_sek} kr / ${grindar.signifikans_kop} köp${lt ? ` (${zoomTxt})` : ''}. Meta gav den ingen spend: svält är Metas dom (kursen: "not getting much spend after 7 days"). Ingen dom över idén, bara över platsen.`, { svalt: true });
+    }
+    if (kpi === true && andel !== null && andel >= r.flytt_andel) {
+      const majoritet = andel >= r.majoritet_andel;
+      const vinnare = majoritet ? forbattrad !== false : forbattrad === true;
+      const mal = malFor(adset, konfig);
+      if (!kandidat) return ut(DOM.VANTA, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}), men ingen enskild annons är bevisad än (aktiv, över grinden, över break-even, minst ${pct(r.flytt_andel)} av adsetets spend) — Chadbot ur kursen: flytta aldrig en annons med liten spend och hög ROAS.`);
+      const kopia = (annonser ?? []).find((x) => mal.id && String(x.adset_id ?? '') === String(mal.id) && normNamn(x.namn) === normNamn(kandidat.namn));
+      if (kopia && (Number(kopia.spend_sek) || 0) > 0) return ut(DOM.STANG, `vinnaren ${kandidat.namn} levererar redan i ${mal.namn} (${kopia.spend_sek} kr på 14 dagar) — testadsetet har gjort sitt och lämnar platsen.`, { flyttad: true });
+      if (kopia) return ut(DOM.FLYTTAD, `vinnaren ${kandidat.namn} ligger i ${mal.namn} men har inte levererat än — testadsetet står kvar tills kopian levererar.`);
+      if (vinnare) return ut(DOM.VINNARE, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}), ${kampTxt}. Vinnare enligt kursen — flytta ${kandidat.namn} till ${mal.namn}.`, { till: mal });
+      return ut(DOM.FLYTTA, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}) — över flyttgränsen ${pct(r.flytt_andel)}${majoritet ? ', men ' + kampTxt + ' — kursen: då är den ingen vinnare än' : ''}. Flytta ${kandidat.namn} till ${mal.namn} och se om kampanjen håller.`, { till: mal });
+    }
+    const fungerar = kpi === true || (lang && langtOk);
+    if (fungerar) {
+      const varfor = kpi === true ? `${roasTxt} ≥ ${beTxt}` : `${roasTxt} senaste ${r.test_dagar} dagarna, men ${zoomTxt} ≥ ${beTxt}`;
+      // De gamla adseten (före 3:2:2) stängs aldrig när de fungerar — kursens
+      // varning i versaler: "DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE
+      // WORKING". Köregeln nedan gäller bara testadset.
+      if (roll === 'gammal') return ut(DOM.LAT_STA, `${varfor}, ${pct(andel)} av spenden — fungerar och är från före 3:2:2: kursen säger stäng aldrig av befintliga annonser som fungerar. Räknas mot taket.`);
+      if (ko !== null && ko > 0) return ut(DOM.STANG, `${varfor} men bara ${pct(andel)} av spenden efter ${dagar} dagar, och ${ko} koncept väntar på en plats — kursen: bra ROAS får stå bara när inget annat väntar.`);
+      return ut(DOM.LAT_STA, `${varfor} men bara ${pct(andel)} av spenden — får stå ${ko === 0 ? 'eftersom inget koncept väntar på en plats' : 'OM inget koncept väntar på en plats (kön lästes inte)'}${dagar > r.test_max_dagar ? `; över ${r.test_max_dagar} dagar, som kursen inte rekommenderar` : ''}.`);
+    }
+    if (kpi === null) return ut(DOM.VANTA, `ROAS eller break-even saknas (${roasTxt}, ${beTxt}) — ingen dom hittas på.`);
+    if (andel !== null && andel >= r.flytt_andel && forbattrad === true && dagar <= r.test_max_dagar) {
+      return ut(DOM.VANTA, `tar ${pct(andel)} av spenden och ${kampTxt}, men ${roasTxt} under ${beTxt}. Får gå till dag ${r.test_max_dagar}, sedan stängs den om den inte når KPI.`);
+    }
+    return ut(DOM.STANG, `${dagar} dagar, ${pct(andel)} av spenden, ${roasTxt} under ${beTxt}${lt ? ` (${zoomTxt} — också under)` : ''}${andel !== null && andel >= r.flytt_andel ? `, ${kampTxt}. Kursen: stäng, men skriv lärdomen — den fick spend av ett skäl` : ''}.`, andel !== null && andel >= r.flytt_andel ? { lardom: true } : {});
   }
-  if (kpi === true && andel !== null && andel >= r.flytt_andel) {
-    const majoritet = andel >= r.majoritet_andel;
-    const vinnare = majoritet ? forbattrad !== false : forbattrad === true;
-    const mal = malFor(adset, konfig);
-    if (vinnare) return ut(DOM.VINNARE, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}), ${kampTxt}. Vinnare enligt kursen — flytta ${basta ? basta.namn : 'den bästa annonsen'} till ${mal.namn}.`, { till: mal });
-    return ut(DOM.FLYTTA, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}) — över flyttgränsen ${pct(r.flytt_andel)}${majoritet ? ', men ' + kampTxt + ' — kursen: då är den ingen vinnare än' : ''}. Flytta ${basta ? basta.namn : 'den bästa annonsen'} till ${mal.namn} och se om kampanjen håller.`, { till: mal });
+
+  /** Benchmarken dödas aldrig (ANALYSMETOD, kungens regel): ett adset som bär
+   *  annonsen med > 30 % av vinsten får aldrig ett stängningsförslag. */
+  function skydda(d) {
+    if ((d.dom === DOM.STANG || d.dom === DOM.STANG_TIDIGT) && benchmark && !d.flyttad) {
+      return { ...d, dom: DOM.LAT_STA, atgard: null, lardom: undefined, motivering: `bär benchmarken ${benchmark.namn} (> 30 % av vinsten) — dödas aldrig. (Utan den: ${d.motivering})` };
+    }
+    return d;
   }
-  if (kpi === true) {
-    const ko = koVantar === null || koVantar === undefined ? null : Number(koVantar);
-    if (ko !== null && ko > 0) return ut(DOM.STANG, `${roasTxt} ≥ ${beTxt} men bara ${pct(andel)} av spenden efter ${dagar} dagar, och ${ko} koncept väntar på en plats — kursen: bra ROAS får stå bara när inget annat väntar.`);
-    const over = dagar > r.test_max_dagar;
-    return ut(DOM.LAT_STA, `${roasTxt} ≥ ${beTxt} men bara ${pct(andel)} av spenden — får stå ${ko === 0 ? 'eftersom inget koncept väntar i kön' : 'OM inget koncept väntar i kön (kön lästes inte)'}${over ? `; över ${r.test_max_dagar} dagar, som kursen inte rekommenderar` : ''}.`);
-  }
-  if (kpi === null) return ut(DOM.VANTA, `ROAS eller break-even saknas (${roasTxt}, ${beTxt}) — ingen dom hittas på.`);
-  if (andel !== null && andel >= r.flytt_andel && forbattrad === true && dagar <= r.test_max_dagar) {
-    return ut(DOM.VANTA, `tar ${pct(andel)} av spenden och ${kampTxt}, men ${roasTxt} under ${beTxt}. Får gå till dag ${r.test_max_dagar}, sedan stängs den om den inte når KPI.`);
-  }
-  return ut(DOM.STANG, `${dagar} dagar, ${pct(andel)} av spenden, ${roasTxt} under ${beTxt}${andel !== null && andel >= r.flytt_andel ? `, ${kampTxt}. Kursen: stäng, men skriv lärdomen — den fick spend av ett skäl` : ''}.`, andel !== null && andel >= r.flytt_andel ? { lardom: true } : {});
 }
 
 /** Vart en vinnare flyttas: Champions (video) eller Champions för bild om den
@@ -160,22 +208,34 @@ export function malFor(adset, konfig) {
   return { id: r.champions?.id ? String(r.champions.id) : null, namn: r.champions?.namn ?? 'Champions', saknas: !r.champions?.id };
 }
 
-/** Den annons i adsetet som ska flyttas: över break-even med köp först, sedan
- *  mest spend (14 dagar). null om adsetet inte har någon annons med spend. Ren. */
-export function bastaAnnons(adsetId, annonser, breakEven) {
+/** Annonsen i adsetet som ska flyttas till Champions. Bara en BEVISAD annons
+ *  (Chadbot ur kursen D2: "don't move small-spend, high-ROAS ads … at 5-15 %
+ *  spend share they haven't been validated"): den levererar (ACTIVE — en pausad
+ *  annons är ett beslut), den är över grinden 300 kr / 3 köp, över break-even
+ *  med köp, och den bär minst flytt_andel av adsetets spend. Bland dem vinner
+ *  vinstbidraget spend × (ROAS ÷ break-even − 1), aldrig ROAS ensamt. null =
+ *  ingen bevisad annons. 14-dagarstalen ur avläsningen. Ren. */
+export function bastaAnnons(adsetId, annonser, breakEven, { grindar = null, flyttAndel = null } = {}) {
+  if (breakEven === null || breakEven === undefined) return null;
   const egna = (annonser ?? []).filter((x) => String(x.adset_id ?? '') === String(adsetId) && (Number(x.spend_sek) || 0) > 0);
   if (!egna.length) return null;
-  const over = (x) => (Number(x.kop) || 0) > 0 && breakEven !== null && breakEven !== undefined && Number(x.roas) >= breakEven;
-  egna.sort((x, y) => Number(over(y)) - Number(over(x)) || (Number(y.spend_sek) || 0) - (Number(x.spend_sek) || 0));
-  const b = egna[0];
-  return { namn: b.namn, id: String(b.id), spend_sek: b.spend_sek ?? null, kop: b.kop ?? null, roas: b.roas ?? null };
+  const adsetSpend = egna.reduce((s, x) => s + (Number(x.spend_sek) || 0), 0);
+  const vb = (x) => (Number(x.spend_sek) || 0) * (Number(x.roas) / breakEven - 1);
+  const kandidater = egna.filter((x) => (!x.effective_status || String(x.effective_status) === 'ACTIVE')
+    && (Number(x.kop) || 0) > 0 && Number(x.roas) >= breakEven
+    && (!grindar || (Number(x.spend_sek) || 0) >= grindar.signifikans_spend_sek || (Number(x.kop) || 0) >= grindar.signifikans_kop)
+    && (!flyttAndel || (Number(x.spend_sek) || 0) / adsetSpend >= flyttAndel));
+  if (!kandidater.length) return null;
+  kandidater.sort((x, y) => vb(y) - vb(x));
+  const b = kandidater[0];
+  return { namn: b.namn, id: String(b.id), spend_sek: b.spend_sek ?? null, kop: b.kop ?? null, roas: b.roas ?? null, andel_av_adset: r3((Number(b.spend_sek) || 0) / adsetSpend) };
 }
 
 /** Alla adsets i en avläsning. Ren. Sorterad: åtgärder först (flytt, stäng),
  *  sedan resten; inom varje på kronor (spend i fönstret), mest först. */
-export function domAdsets(jobb, konfig, { breakEven = null, koVantar = null, idag = null } = {}) {
+export function domAdsets(jobb, konfig, { breakEven = null, koVantar = null, idag = null, skyddade = new Set() } = {}) {
   const dag = idag ?? jobb.datum;
-  const rader = (jobb.adsets ?? []).map((a) => domAdset(a, { kampanjserie: jobb.kampanj_serie ?? [], idag: dag, breakEven, grindar: konfig.grindar, konfig, koVantar, annonser: jobb.annonser ?? [] }));
+  const rader = (jobb.adsets ?? []).map((a) => domAdset(a, { kampanjserie: jobb.kampanj_serie ?? [], idag: dag, breakEven, grindar: konfig.grindar, konfig, koVantar, annonser: jobb.annonser ?? [], skyddade }));
   const ordning = { FLYTTA_TILL_CHAMPIONS: 0, STANG_ADSET: 1 };
   rader.sort((x, y) => (ordning[x.atgard] ?? 2) - (ordning[y.atgard] ?? 2) || (y.spend_sek ?? 0) - (x.spend_sek ?? 0));
   return rader;
@@ -183,9 +243,13 @@ export function domAdsets(jobb, konfig, { breakEven = null, koVantar = null, ida
 
 /** FORSLAG-raderna till Axel (en per åtgärd). Kronorna: för en stängning det
  *  adsetet spenderade i fönstret, för en flytt annonsens 14 dagar. Ren. */
-export function forslagRader(domar, datum) {
+export function forslagRader(domar, datum, { logg = [] } = {}) {
   const ut = [];
+  // En flytt föreslås EN gång per annons och testadset — annars duplicerar Axel
+  // samma vinnare två gånger. Stängningar påminns varje rond (samma dag aldrig två).
+  const flyttade = new Set((logg ?? []).filter((r) => r.kod === 'FORSLAG' && r.atgard === 'FLYTTA_TILL_CHAMPIONS').map((r) => `${r.adset_id}|${r.annons_id}`));
   for (const d of domar ?? []) {
+    if (d.atgard === 'FLYTTA_TILL_CHAMPIONS' && flyttade.has(`${d.adset_id}|${d.basta_annons?.id ?? null}`)) { d.redan_foreslagen = true; continue; }
     if (d.atgard === 'STANG_ADSET') {
       ut.push({ kod: 'FORSLAG', datum, niva: 'adset', atgard: 'STANG_ADSET', objekt: d.adset, adset_id: d.adset_id, dom: d.dom, orsak: d.motivering, kronor: d.spend_sek, spend_sek: d.spend_sek, kop: d.kop, roas: d.roas, andel: d.andel, dagar: d.dagar, fonster: d.fonster, ...(d.lardom ? { lardom_kravs: true } : {}), beslut: 'Axel' });
     } else if (d.atgard === 'FLYTTA_TILL_CHAMPIONS') {
