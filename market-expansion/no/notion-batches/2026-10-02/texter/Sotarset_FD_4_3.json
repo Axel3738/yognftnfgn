@@ -1,0 +1,151 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   166,
+   156,
+   917,
+   229
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 164,
+  "utvidga": 4,
+  "text": "Bestill senest 19."
+ },
+ {
+  "box": [
+   62,
+   277,
+   1016,
+   350
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "oktober: feiesett til"
+ },
+ {
+  "box": [
+   351,
+   398,
+   727,
+   486
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 406,
+  "utvidga": 4,
+  "text": "farsdag."
+ },
+ {
+  "box": [
+   101,
+   527,
+   976,
+   576
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 535,
+  "utvidga": 4,
+  "text": "Feiesett med 9 fleksible stenger som når bak ovnen."
+ },
+ {
+  "box": [
+   62,
+   1059,
+   1015,
+   1159
+  ],
+  "fet": true,
+  "storlek": 96,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1067,
+  "utvidga": 4,
+  "text": "389 kr, ord. 509 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]

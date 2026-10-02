@@ -1,0 +1,249 @@
+{
+ "fil": "Takovertrekk_NO_OB_19_H1.mp4",
+ "cues": 6,
+ "trasiga": 6,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Et målebånd viser hvor langt kanten henger ned.",
+   "hord": "Et målebånd viser hvor langt kanten henger ned. Skjøten",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "—",
+     "hord": "skjøten"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 2.94,
+   "text": "Skjøten mellom tak og vegg ligger under kanten.",
+   "hord": "henger ned. Skjøten mellom tak og vegg ligger under kanten. Hold hele",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "skjøten",
+     "hord": "henger"
+    },
+    {
+     "vantat": "mellom",
+     "hord": "ned"
+    },
+    {
+     "vantat": "tak",
+     "hord": "skjøten"
+    },
+    {
+     "vantat": "og",
+     "hord": "mellom"
+    },
+    {
+     "vantat": "vegg",
+     "hord": "tak"
+    },
+    {
+     "vantat": "ligger",
+     "hord": "og"
+    },
+    {
+     "vantat": "under",
+     "hord": "vegg"
+    },
+    {
+     "vantat": "kanten",
+     "hord": "ligger"
+    },
+    {
+     "vantat": "—",
+     "hord": "under"
+    },
+    {
+     "vantat": "—",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "—",
+     "hord": "hold"
+    },
+    {
+     "vantat": "—",
+     "hord": "hele"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 5.91,
+   "text": "Rundt hele vognen er døren, vinduene og lukene frie.",
+   "hord": "kanten. Hold hele vognen er døren, vinduene og lukene fri. Ett",
+   "ord": 9,
+   "avvikelser": [
+    {
+     "vantat": "rundt",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "hele",
+     "hord": "hold"
+    },
+    {
+     "vantat": "vognen",
+     "hord": "hele"
+    },
+    {
+     "vantat": "er",
+     "hord": "vognen"
+    },
+    {
+     "vantat": "døren",
+     "hord": "er"
+    },
+    {
+     "vantat": "vinduene",
+     "hord": "døren"
+    },
+    {
+     "vantat": "og",
+     "hord": "vinduene"
+    },
+    {
+     "vantat": "lukene",
+     "hord": "og"
+    },
+    {
+     "vantat": "frie",
+     "hord": "lukene"
+    },
+    {
+     "vantat": "—",
+     "hord": "fri"
+    },
+    {
+     "vantat": "—",
+     "hord": "ett"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 9.22,
+   "text": "Ett tusen ett hundre og åtti-ni kroner.",
+   "hord": "fri. Ett tusen ett hundre og åtti ni kroner. Spar",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "ett",
+     "hord": "fri"
+    },
+    {
+     "vantat": "tusen",
+     "hord": "ett"
+    },
+    {
+     "vantat": "ett",
+     "hord": "tusen"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "ett"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "åtti",
+     "hord": "og"
+    },
+    {
+     "vantat": "ni",
+     "hord": "åtti"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "ni"
+    },
+    {
+     "vantat": "—",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "—",
+     "hord": "spar"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 12.03,
+   "text": "Spar tre hundre og seksti kroner.",
+   "hord": "kroner. Spar tre hundre og seksti kroner. Tjue",
+   "ord": 6,
+   "avvikelser": [
+    {
+     "vantat": "spar",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "tre",
+     "hord": "spar"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "tre"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "seksti",
+     "hord": "og"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "—",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "—",
+     "hord": "tjue"
+    }
+   ]
+  },
+  {
+   "nr": 6,
+   "start": 14.2,
+   "text": "Tjuetre prosent rabatt.",
+   "hord": "kroner. Tjue tre prosent rabatt.",
+   "ord": 3,
+   "avvikelser": [
+    {
+     "vantat": "tjuetre",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "prosent",
+     "hord": "tjue"
+    },
+    {
+     "vantat": "rabatt",
+     "hord": "tre"
+    },
+    {
+     "vantat": "—",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  }
+ ]
+}

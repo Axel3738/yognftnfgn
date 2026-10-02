@@ -1,0 +1,133 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   89,
+   156,
+   992,
+   244
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   17,
+   16
+  ],
+  "ink_topp": 164,
+  "utvidga": 4,
+  "text": "6 kniver og 6 jern for"
+ },
+ {
+  "box": [
+   318,
+   277,
+   763,
+   350
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "ulike snitt"
+ },
+ {
+  "box": [
+   103,
+   406,
+   975,
+   455
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 414,
+  "utvidga": 4,
+  "text": "Lærstropp, pussemiddel, trebit å øve på og hansker."
+ },
+ {
+  "box": [
+   0,
+   1059,
+   1080,
+   1159
+  ],
+  "fet": true,
+  "storlek": 96,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1067,
+  "utvidga": 4,
+  "text": "1 039 kr, ord. 1 359 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]

@@ -1,0 +1,268 @@
+{
+ "fil": "Takovertrekk_NO_OB_17_H1.mp4",
+ "cues": 5,
+ "trasiga": 5,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Et helovertrekk ligger i en stor haug på garasjegulvet.",
+   "hord": "Et hel overtrek ligger i en stor haug på garasjegulvet. Vårt",
+   "ord": 9,
+   "avvikelser": [
+    {
+     "vantat": "helovertrekk",
+     "hord": "hel"
+    },
+    {
+     "vantat": "ligger",
+     "hord": "overtrek"
+    },
+    {
+     "vantat": "i",
+     "hord": "ligger"
+    },
+    {
+     "vantat": "en",
+     "hord": "i"
+    },
+    {
+     "vantat": "stor",
+     "hord": "en"
+    },
+    {
+     "vantat": "haug",
+     "hord": "stor"
+    },
+    {
+     "vantat": "på",
+     "hord": "haug"
+    },
+    {
+     "vantat": "garasjegulvet",
+     "hord": "på"
+    },
+    {
+     "vantat": "—",
+     "hord": "garasjegulvet"
+    },
+    {
+     "vantat": "—",
+     "hord": "vårt"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 3.31,
+   "text": "Vårt brettes til en liten bunt etter sesongen.",
+   "hord": "garasjegulvet. Vårt blettes til en liten bunt etter sesongen. Badetagel",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "vårt",
+     "hord": "garasjegulvet"
+    },
+    {
+     "vantat": "brettes",
+     "hord": "vårt"
+    },
+    {
+     "vantat": "til",
+     "hord": "blettes"
+    },
+    {
+     "vantat": "en",
+     "hord": "til"
+    },
+    {
+     "vantat": "liten",
+     "hord": "en"
+    },
+    {
+     "vantat": "bunt",
+     "hord": "liten"
+    },
+    {
+     "vantat": "etter",
+     "hord": "bunt"
+    },
+    {
+     "vantat": "sesongen",
+     "hord": "etter"
+    },
+    {
+     "vantat": "—",
+     "hord": "sesongen"
+    },
+    {
+     "vantat": "—",
+     "hord": "badetagel"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 6.04,
+   "text": "Bare taket, ikke hele vognen, og én person er nok.",
+   "hord": "sesongen. Badetagel ig hel i vognen og en person er nok. Ett tusen",
+   "ord": 10,
+   "avvikelser": [
+    {
+     "vantat": "bare",
+     "hord": "sesongen"
+    },
+    {
+     "vantat": "taket",
+     "hord": "badetagel"
+    },
+    {
+     "vantat": "ikke",
+     "hord": "ig"
+    },
+    {
+     "vantat": "hele",
+     "hord": "hel"
+    },
+    {
+     "vantat": "vognen",
+     "hord": "i"
+    },
+    {
+     "vantat": "og",
+     "hord": "vognen"
+    },
+    {
+     "vantat": "én",
+     "hord": "og"
+    },
+    {
+     "vantat": "person",
+     "hord": "en"
+    },
+    {
+     "vantat": "er",
+     "hord": "person"
+    },
+    {
+     "vantat": "nok",
+     "hord": "er"
+    },
+    {
+     "vantat": "—",
+     "hord": "nok"
+    },
+    {
+     "vantat": "—",
+     "hord": "ett"
+    },
+    {
+     "vantat": "—",
+     "hord": "tusen"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 9.4,
+   "text": "Ett tusen ett hundre og åtti-ni kroner, spar tre hundre og seksti kroner, tjuetre prosent",
+   "hord": "er nok. Ett tusen ett hundre og åtti ni kroner. Spar tre hundre og seksti kroner. Tjue-tre prosent rabatt.",
+   "ord": 16,
+   "avvikelser": [
+    {
+     "vantat": "ett",
+     "hord": "er"
+    },
+    {
+     "vantat": "tusen",
+     "hord": "nok"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "tusen"
+    },
+    {
+     "vantat": "og",
+     "hord": "ett"
+    },
+    {
+     "vantat": "åtti",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "ni",
+     "hord": "og"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "åtti"
+    },
+    {
+     "vantat": "spar",
+     "hord": "ni"
+    },
+    {
+     "vantat": "tre",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "spar"
+    },
+    {
+     "vantat": "og",
+     "hord": "tre"
+    },
+    {
+     "vantat": "seksti",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "og"
+    },
+    {
+     "vantat": "tjuetre",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "prosent",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "—",
+     "hord": "tjue"
+    },
+    {
+     "vantat": "—",
+     "hord": "tre"
+    },
+    {
+     "vantat": "—",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 15,
+   "text": "rabatt.",
+   "hord": "prosent rabatt.",
+   "ord": 1,
+   "avvikelser": [
+    {
+     "vantat": "rabatt",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  }
+ ]
+}

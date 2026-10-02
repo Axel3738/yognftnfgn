@@ -1,0 +1,151 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   255,
+   156,
+   823,
+   240
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 164,
+  "utvidga": 4,
+  "text": "Golfhåndkle,"
+ },
+ {
+  "box": [
+   82,
+   277,
+   997,
+   365
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "køllebørste,"
+ },
+ {
+  "box": [
+   0,
+   398,
+   1080,
+   486
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 406,
+  "utvidga": 4,
+  "text": "greenreparatør med speil"
+ },
+ {
+  "box": [
+   38,
+   531,
+   1041,
+   576
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 539,
+  "utvidga": 4,
+  "text": "Pluss ballmarkører. 24 luker, ferdig fylt, ingenting å fylle selv."
+ },
+ {
+  "box": [
+   63,
+   1059,
+   1016,
+   1159
+  ],
+  "fet": true,
+  "storlek": 96,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1067,
+  "utvidga": 4,
+  "text": "619 kr, ord. 809 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]
