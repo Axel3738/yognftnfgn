@@ -38,8 +38,8 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 
 ## ☀️ Kvar för Axel
 
-1. **Nathalie:** skicka meddelandet (utskick 0 i `factory/ugc/utskick/2026-10-01-matstrumpor.md`), om det inte redan gått.
-2. **Produktsidan:** när förslaget kommer (före/efter), säg ok eller ändra. Inget går live innan dess.
+1. ✅ **Nathalie, Sofie och creative strategen:** Axel skickade svaren och WhatsApp-texten 2026-10-02 ("Jag har skickat allt"). Väntar på Nathalies pris för två videor, Sofies pris för tre och strategens feedback på brieferna.
+2. ✅ **Produktsidan:** Fable vald, omskriven utan statistik efter Axels dom, live på fjorton språk 2026-10-02.
 3. ✅ Growth Guide-sidan skapad och integrationen inbjuden (Axel 2026-10-02 förmiddag); databasen byggd.
 4. ✅ **Ätpinnarna ligger i alla lådor** (Axels svar 2026-10-02: "Ätpinnar ligger egentligen i alla lådor. Men jag har dom som en gratis gåva, men de ingår i alla lådor"). "Ätpinnar i trä ingår" får stå i copyn; gåvoraden i kassan är bara hur de bokförs.
 
