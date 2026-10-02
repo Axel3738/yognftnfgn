@@ -60,7 +60,7 @@ Hej Sara! Axel heter jag, jag sitter i Göteborg och säljer strumpor som ser ut
 Hälsningar
 Axel
 
-### Saras svar 2026-10-01 20:55 och Axels svar (utkast 2026-10-02)
+### Saras svar 2026-10-01 20:55 och Axels svar — ✅ SKICKAT 2026-10-02 av sessionen via Gmail-connectorn (Axels ord: "Du kan skicka mailet"), Gmail-id `1a0fb7947d555a04`, med "paket med tre korta videor" (Axels val A: tre videor per kreatör, paketpris)
 
 Sara svarade samma kväll: "Är absolut intresserad av ett samarbete. Skulle gärna
 vilja veta lite mer om era tankar kring videorna, vad ni är intresserade av och er
@@ -68,7 +68,7 @@ budget!" Budgeten är Axels: utkastet nedan ber om HENNES pris (ankrar inget), b
 mot ett belopp om Axel hellre säger sitt.
 
 ```
-Hej Sara! Vad kul. Så här tänker jag: tre korta videor på svenska, filmade hemma hos dig med mobilen. En av dem är en present som någon i familjen öppnar utan att veta vad som är i. Du får en sida med manuset rad för rad, med tre öppningar att välja på, och lådan med sushistrumporna skickar jag så fort du säger ja. Vad brukar du ta för tre korta videor? Säg din siffra så ser vi om vi möts. Och vilken adress ska lådan till?
+Hej Sara! Vad kul. Så här tänker jag: tre korta videor på svenska, filmade hemma hos dig med mobilen. En av dem är en present som någon i familjen öppnar utan att veta vad som är i. Du får en sida med manuset rad för rad, med tre öppningar att välja på, och lådan med sushistrumporna skickar jag så fort du säger ja. Vad tar du för ett paket med tre korta videor? Säg din siffra så ser vi om vi möts. Och vilken adress ska lådan till?
 
 Hälsningar
 Axel
