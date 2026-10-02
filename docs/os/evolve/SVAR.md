@@ -174,3 +174,73 @@ Svaret kom 2026-10-01. Axel klistrade in det, och det står här ordagrant.
   CaraShell får ingen enkät.
 - **Ingen belöning.** Ett presentkort på 100 kr till alla svarande är "lowkey
   alldeles för mycket".
+
+## Veckorapporten till redigerarna (frågan 2026-10-02)
+
+Svaret kom 2026-10-02. Axel klistrade in det. Det står här ordagrant, bara med
+`>` framför varje rad; numreringen och radbrytningarna är som de kom. Källorna
+`[C1]`–`[C7]` är trådar i community-chatten och `[D1]`–`[D5]` är kursdokument,
+numrerade bara inom det här svaret. Frågan står i `FRAGOR.md` under samma
+rubrik.
+
+> 1. Diagnose edit-vs-script with metrics — hook rate, hold rate, retention curve — and frame every loss as a concept issue, not an editor failure.
+>    1. Edit vs script: diagnose with metrics, frame as "the concept didn't perform" — never "your edit failed."
+>
+>
+> Pull hook rate, hold rate (and hook-to-hold), average play time, and CVR per D2's custom metrics [D2]. Then map the failure pattern:
+>    * Low hook rate: first 1-3 seconds failed. If the angle/avatar callout is strong but the visual or pacing is weak = edit execution. If the hook concept itself doesn't create curiosity = script. D1 shows this split: "Good concept but needs better hook" = execution problem, not concept problem [D1].
+>    * Good hook, hold drops: bridge issue. D3: "the bridge section is usually make-or-break." Where it drops in the retention curve tells you if it's pacing (edit) or messaging (script) [D3]. C5's diagnostic: "Does the first 1-2 seconds hook the RIGHT user and KEEP them hooked?" [C5]
+>    * Good hook + hold, low CVR: spend-winner pattern. Per D4, the issue is belief, urgency, funnel congruence, or offer — all strategy-level, not edit [D4].
+>    * Off-brief text, wrong music, caption errors: clear edit execution — editor deviated from direction.
+>
+> When the editor followed the brief exactly and it still lost, the failure is strategy-level. D3's framework makes this explicit: TAM, broad, offer, and algorithm targeting issues are the strategist's call, not the editor's [D3]. Frame it using D2's principle: "Learnings are educated guesses, not facts" and "focus messaging/frames over 'image sucks'" [D2]. Say "this angle didn't stop enough people — here's what we'll test next," not "your edit underperformed." D2: always end with an action plan — iterate the top direction, apply to others, or note what to avoid [D2].
+> 2.
+>
+> 2. Per-outcome action items: sources give iteration directions (which you already have) but don't prescribe specific action item formats.
+>
+>
+>
+> You already have the iteration playbook per outcome. What the sources add — and don't:
+>
+> * Loser/no-delivery: C6 adds "iterate max 3 times" then do net-new swings. If 5+ concepts fail across all 3 iterations, "your bottleneck is research or creative conviction, not execution" [C6]. Whether that's a craft exercise, research doc, or competitor review — no source specifies.
+> * Spend winner: D4 says fix belief/urgency/congruence/stakes BEFORE changing format [D4]. The action item format isn't prescribed.
+> * Breakthrough: D4 says iterate into new hooks/angles/formats [D4]. No specific exercise prescribed.
+> * KPI winner: Course references a separate module but it's not in these documents.
+>
+>
+> On weekly volume before noise: C6 says 5-8 concepts/week with a 2-hour Friday call, batch-level [C6]. D2 says 10-15 min per loser, 30-40 min per winner [D2]. How many action items per editor per week is too much — not covered.
+>
+> 3. Editor hit rate with CBO starvation: use Shaun's formula, and D2's spend threshold supports excluding no-delivery ads.
+>
+>
+>
+> Shaun: "just how many winning ads / total creatives you tested" [C7].
+>
+> For starved ads: D2 says "Aim for 10%+ spend for data" and "For zero-spend ads: Analyze why customers ignore (no data)" [D2]. This principle supports excluding no-delivery ads from the denominator — you can't evaluate what was never tested. But no source explicitly says to exclude them, give a separate label, or exclude iterations of existing winners. Those specifics aren't covered.
+>
+> 4. Editors' learnings calls: batch-level, Friday, 2 hours — structure details partially covered.
+>
+> * C6: "Learnings call every Friday (2hrs) — go through every batch that needs learning" and "close every feedback loop on batch level" [C6].
+>
+> D1 shows the call in practice: reviewing specific ads, calling out exact metrics (hook rate 16%, hold rate 1.2%), diagnosing, suggesting specific alternate hooks [D1].
+>
+> Metrics to cover per D2: amount spent, ROAS/CPA, hook rate, hold rate, average play time, CVR, AOV — and "compare to known winners." Document verbally or in a doc. "Ping-pong ideas with others" [D2].
+>
+> D5: editors should "understand marketing fundamentals, process scripts, analyze ad learnings, and improve hit rates" — they're active participants, not passive recipients [D5].
+>
+> Not covered: per-ad vs per-week cadence, group channel vs 1:1, what editors shouldn't see, and how to prevent loser labels from feeling like rankings.
+>    5. Label timing: 7 days minimum, 10%+ spend share for a fair label.
+>
+>
+> D2: "Let ads run 7 days minimum for Meta optimization" and "calculate over 7 days for context" [D2]. C6: "7-day testing, longer than that? = CUT" [C6].
+>
+> Spend-share tiers from D2:
+>    * Below 10% of campaign spend: not enough data to label confidently
+>    * 10%+: enough data to evaluate fairly
+>    * 30-50%: potential winner
+>
+> D2: "For zero-spend ads: Analyze why customers ignore (no data)" — you can't fairly label an ad that never got spend [D2]. A label isn't fair until the ad has had 7 days AND enough spend to produce data.
+>
+> For mid-week launches: since D2 says calculate over 7 days, a Wednesday launch hasn't completed its window by Monday — wait for the full 7 days. If labels upgrade in weeks 2-3, that's expected: D2 says "Learnings are educated guesses, not facts. Validate by retesting" [D2].
+>
+> No source gives a minimum purchase threshold — D2 uses spend share, not purchase count.
