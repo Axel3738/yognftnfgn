@@ -1,0 +1,57 @@
+StonePNL quote request · Matstrumpor · 2026-10-02 · USD
+
+Hi! Could you please send us your prices for the products below?
+
+HOW TO REPLY — please follow this exactly:
+1. Reply with ONE single message.
+2. Copy this whole message and write your price instead of every ___.
+3. Every price is the TOTAL price for that many pieces sent together in one order: product + shipping to that country. Example: "2 pcs = 30 USD" means 2 pieces cost 30 USD together, shipping included. Write only the total — not "+ shipping" and not "each".
+4. All prices in USD. If you use another currency, write it instead of USD after each price.
+5. Keep the "ID:" lines, and keep the country code at the start of each line.
+6. One line per country. Do not group countries (for example "EU").
+7. If you cannot ship a product to a country, write X instead of the prices on that line.
+8. If import duty/VAT is already included in the price (DDP), write DDP at the end of that line.
+
+----------------------------------------
+#1 Sushi-Strumpor — 5 - Par / One Size
+ID: 52506473365843
+US (United States): 1 pc = 10.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 9.80 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 8.30 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 10.70 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 11.40 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+----------------------------------------
+#2 Sushi-Strumpor — 3 - Par / One Size
+ID: 52506473398611
+US (United States): 1 pc = 8.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 7.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 6.50 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.10 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 8.40 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+----------------------------------------
+#3 Donut-strumpor — One Size
+ID: 52510025253203
+US (United States): 1 pc = 9.10 USD | 2 pcs = 14.20 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.10 USD | 2 pcs = 12.70 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.10 USD | 2 pcs = 11.40 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.80 USD | 2 pcs = 14.60 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 9.10 USD | 2 pcs = 15.00 USD | 3 pcs = ___ USD
+----------------------------------------
+#4 Pizza-Strumpor — One Size
+ID: 52579705225555
+US (United States): 1 pc = 9.80 USD | 2 pcs = 16.10 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.80 USD | 2 pcs = 14.30 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.60 USD | 2 pcs = 12.40 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 9.90 USD | 2 pcs = 16.80 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 10.30 USD | 2 pcs = 17.20 USD | 3 pcs = ___ USD
+----------------------------------------
+#5 Hamburgare-Strumpor — One Size
+ID: 52579707027795
+US (United States): 1 pc = 8.90 USD | 2 pcs = 14.40 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.20 USD | 2 pcs = 12.80 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.10 USD | 2 pcs = 11.30 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.90 USD | 2 pcs = 14.80 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 9.30 USD | 2 pcs = 15.20 USD | 3 pcs = ___ USD
+----------------------------------------
+
+5 products, 5 countries. Thank you!

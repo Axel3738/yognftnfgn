@@ -996,6 +996,52 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
   (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
   kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
 
+## StonePNL: vinsten per land (2026-10-02)
+
+Axel skickade fredag morgon en skärmdump av StonePNL:s marknadsvy för Matstrumpor. Den hade fyra
+noteringar, och alla fyra stämde:
+
+- **"9,184 SEK of ad spend is on campaigns without a market"**: ingen kampanj i "nya kungen" hade
+  något land i StonePNL. Det är en slutsats ur mätningen, inte avläst i appen: kl 07:40 hade kontot
+  spenderat 9 650 kr sedan midnatt, varav 8 906 kr i de 14 nya kampanjerna och 744 kr i den svenska.
+  9 184 kr är mer än de 14 nya ensamma, så även den svenska kampanjen låg utan land. StonePNL lägger
+  hela kontots kostnad på "inget land" tills minst en kampanj är märkt (`harMarknader` i
+  `meta.server.ts`), så inget land fick sin egen annonskostnad.
+- **Nio länder "counted on the store's standard cost"**: StonePNL räknar varje land på Shopifys
+  svenska kostnad (Cost per item) tills landet har en egen. Axels Big5-ark (`../cogs.json` → `big5`)
+  fanns i repot men aldrig i StonePNL.
+- **"cost missing on 6–13 % of sales"**: donut-, pizza- och hamburgarstrumporna saknar Cost per item i
+  Shopify (läst 2026-10-02: tomt på alla tre, och på ätpinnarna). Sushistrumporna har 80,23 och 67,51 kr.
+- **"Default duty used for …"**: standardtullen ligger på alla länder, också USA och Kanada, där
+  arket säger dörr till dörr utan tullrad.
+
+**Rättningen är `cowork/6-stonepnl.txt`** (StonePNL har inget API härifrån; allt ligger i appens egen
+databas på Railway):
+
+1. Tolv kampanjer får sitt land (SE, NO ×2, DK, FI, US, NL, ES, IT, PL, PT, JP).
+2. Big5-priserna klistras in som ett leverantörssvar i StonePNL:s offertruta,
+   `stonepnl/offertsvar-big5.txt`. Texten är byggd med StonePNL:s EGEN mall (`byggOffertmeddelande`
+   ur `pnl-app/app/lib/offertforfragan.ts` på grenen `claude/bäverbutiken-settkopplingen-nba21z`,
+   commit 297a078a) och provläst med appens egen läsare (`tolkaOffertsvar` + `offertTillRader`): 25
+   rader (5 varianter × US, CA, GB, NZ, AU) i USD, inget pris stoppas, och Shopifys standardkostnad
+   rörs inte. Variant-id:n är lästa ur Shopify samma morgon. Sushins 2 och 3 lådor räknas linjärt
+   (arket har bara en låda), vilket överskattar kostnaden något.
+3. Tullen 0 för USA och Kanada (och GB, NZ, AU om de står i listan).
+
+⚠️ **DE-, FR- och WW-kampanjerna lämnas utan land med flit.** StonePNL tar ETT land per kampanj, och
+Meta sprider deras spend jämnt. Mätt fredag morgon i Meta (`breakdowns=country`, sedan midnatt): DE
+gav CH 302, DE 198 och AT 105 kr. FR gav FR 276, BE 219 och LU 46 kr. WW gav NZ 383, GB 307 och CA
+293 kr. Vilket land man än valde hade hälften eller mer av kostnaden hamnat i fel land. Utan land står
+de kvar i raden "without a market", och den raden är sann. Den rena lösningen är att StonePNL delar
+kostnaden efter Metas egen landuppdelning. Det är en ändring i appen, och frågan ligger hos Axel.
+
+**Priserna för resten av länderna kommer från leverantören, via StonePNL.** Länken "Ask your supplier
+for these countries' prices →" i marknadsvyn bygger ett meddelande med varje såld variant och varje
+land som saknar egen kostnad (läget "Also countries that use your standard cost"). Axel skickar det,
+och leverantörens svar klistras in i samma ruta. Då fylls kostnaderna i av sig själva, också Sveriges
+för donut, pizza och hamburgare. Parkeringen i `LEVERANTOR-FRAGA-JP-TW.md` ("vänta tills vi får
+försäljning") är därmed hävd: fredag morgon hade JP, CH, PT, DK, ES och FR redan sålt.
+
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 
 Läst ur kontot med `annonser/bygg.mjs --lage` (id:n och annonserna i `annonser/lage.json`, länkarna
