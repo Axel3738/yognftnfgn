@@ -1,4 +1,21 @@
-# Produktsidans copy, två versioner (2026-10-02) — väntar på Axels val
+# Produktsidans copy, två versioner (2026-10-02) — ✅ Fable LIVE sedan 2026-10-02 08:08 UTC
+
+**Utfall:** Axel valde Fable ("jag gillar fables version") med kravet att beskrivningen följer hans
+struktur **Problem → gif → Lösning → gif/bild → Funktioner → bild → Garanti** (samma skelett som
+den gamla texten). Fables ord ordnades om i den följden (inget nytt påstående; "Många ger bort den
+till jul" och "Det var långt före jul" sitter nu i novemberstycket före bilden), videorna och
+bilden står kvar på sina platser, garantiblocket är orört. Filen: `matstrumpor/produktsida/
+sushi-strumpor.html`, verktyget `node matstrumpor/produktsida.mjs [--skarpt]` (kontrollerar
+tankstreck, parenteser, "mest beställda", andra lådor, pris och material innan den skriver; sparar
+den gamla texten i `produktsida/backup/` och läser tillbaka via API + publika `.json`). Säkerhets-
+kopia: `matstrumpor/produktsida/backup/2026-10-02T08-08-13-879Z-sushi-strumpor.html` — återställ
+med `--aterstall <fil> --skarpt`. Läst som svensk mobilkund i Chromium 08:10 UTC: fyra rubriker i
+rätt ordning, 3 media, 302 ord, `lang=sv`.
+
+⏰ **Påminnelse satt** (`trig_01X2fCvnnheQh7fpghkiLtDL`, mån 26/10 07:45 CET): Axels ord "vi får
+inte glömma att uppdatera den innan november" — novemberraderna ses över mot lagret innan 1/11.
+⚠️ **Kvar:** de elva översättningarna bär fortfarande den gamla svenska texten (eget steg, se
+punkt 5 nedan). ATC-graden mäts om i rutinen (5,5 % var utgångsläget).
 
 Axels beställning 2026-10-02: "Ge mig copyn innan du lanserar, och ge mig två versioner, en där den
 är skriven av sonnet 4.6 och en där den är skriven av fable 5.1 ultracode." Sidan som ska bytas:
