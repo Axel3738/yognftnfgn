@@ -1,5 +1,5 @@
 // Kontrollskript ur sajtgranskningen 2026-10-01 (matstrumpor/marknader/granskning/SAJT-2026-10-01.md, fynd K-01).
-// Köpknappen och paketväljaren som ny kund på strypt mobilnät. node prova.mjs <bana> "SE:N:A,DE:F:B,…" (land:N vanlig/F snabb kund:A PageSpeeds mobilprofil/B 4 Mbit/s). Länder: SE, DE, DK, JP.
+// Köpknappen och paketväljaren som ny kund på strypt mobilnät. node prova.mjs <bana> "SE:N:A,DE:F:B,…" (land:N vanlig/F snabb kund:A PageSpeeds mobilprofil/B 4 Mbit/s). Länder: SE, DE, DK, JP och sedan 2026-10-02 varje annonslänk (NO, NOB, FI, US, GB, FR, NL, ES, IT, PL, PT).
 // Läs-bart enligt granskningens regler: väljer land, lägger i korgen och öppnar kassan, men skriver aldrig
 // något i kassan och trycker aldrig betala. Metas pixel och formulärposter blockeras av webb.mjs.
 // Utdata (JSON och skärmdumpar) hamnar i $UT, annars i systemets tmp-mapp, aldrig i repot.
@@ -22,6 +22,18 @@ const LAND = {
   DE: { url: 'https://matstrumpor.com/de/products/sushi-strumpor?country=DE', locale: 'de-DE', rot: '/de/', vantat: 8980 },
   DK: { url: 'https://matstrumpor.com/da/products/sushi-strumpor?country=DK', locale: 'da-DK', rot: '/da/', vantat: 68600 },
   JP: { url: 'https://matstrumpor.com/ja/products/sushi-strumpor?country=JP', locale: 'ja-JP', rot: '/ja/', vantat: 15960 },
+  // Resten av annonslänkarna, tillagda vid första dygnets felkoll 2026-10-02 (README → Start fredag).
+  NO: { url: 'https://matstrumpor.com/nb/products/sushi-strumpor?country=NO', locale: 'nb-NO', rot: '/nb/', vantat: 93800 },
+  NOB: { url: 'https://matstrumpor.no/products/sushi-strumpor?country=NO', locale: 'nb-NO', rot: '/', vantat: 93800 },
+  FI: { url: 'https://matstrumpor.com/fi/products/sushi-strumpor?country=FI', locale: 'fi-FI', rot: '/fi/', vantat: 8980 },
+  US: { url: 'https://matstrumpor.com/products/sushi-strumpor?country=US', locale: 'en-US', rot: '/', vantat: 13800 },
+  GB: { url: 'https://matstrumpor.com/products/sushi-strumpor?country=GB', locale: 'en-GB', rot: '/', vantat: 10800 },
+  FR: { url: 'https://matstrumpor.com/fr/products/sushi-strumpor?country=FR', locale: 'fr-FR', rot: '/fr/', vantat: 8980 },
+  NL: { url: 'https://matstrumpor.com/nl/products/sushi-strumpor?country=NL', locale: 'nl-NL', rot: '/nl/', vantat: 8980 },
+  ES: { url: 'https://matstrumpor.com/es/products/sushi-strumpor?country=ES', locale: 'es-ES', rot: '/es/', vantat: 8980 },
+  IT: { url: 'https://matstrumpor.com/it/products/sushi-strumpor?country=IT', locale: 'it-IT', rot: '/it/', vantat: 8980 },
+  PL: { url: 'https://matstrumpor.com/pl/products/sushi-strumpor?country=PL', locale: 'pl-PL', rot: '/pl/', vantat: 40200 },
+  PT: { url: 'https://matstrumpor.com/pt-pt/products/sushi-strumpor?country=PT', locale: 'pt-PT', rot: '/pt-pt/', vantat: 8980 },
 };
 const PROFIL = {
   A: { namn: 'Fast 3G-nivå', latency: 150, downloadThroughput: 1.6e6 / 8, uploadThroughput: 750e3 / 8 },
@@ -212,7 +224,7 @@ async function enKorning(browser, bana, nr, land, typ, profilKod) {
       await sov(1500);
       const u = new URL(page.url());
       const text = await page.evaluate(() => document.body ? document.body.innerText.replace(/\s+/g, ' ').trim() : '').catch(() => '');
-      landning = { t: rel(), sedanKassaKlick: kassaKlickLage ? rel() - kassaKlickLage.t : null, vag: (u.pathname).replace(/\/checkouts\/cn\/[^/]+/, '/checkouts/cn/<id>'), iKassan: /\/checkouts?\//.test(u.pathname), belopp: (text.match(/(?:[€$¥￥]\s?[\d.,\s]+\d|[\d.,\s]+\d\s?(?:kr|SEK|DKK|EUR|€|円|JPY))/g) || []).slice(0, 12), utdrag: text.slice(0, 700) };
+      landning = { t: rel(), sedanKassaKlick: kassaKlickLage ? rel() - kassaKlickLage.t : null, vag: (u.pathname).replace(/\/checkouts\/cn\/[^/]+/, '/checkouts/cn/<id>'), iKassan: /\/checkouts?\//.test(u.pathname), belopp: (text.match(/(?:[€$¥￥£]\s?[\d.,\s]+\d|[\d.,\s]+\d\s?(?:kr|SEK|DKK|EUR|€|円|JPY|zł|PLN))/g) || []).slice(0, 12), utdrag: text.slice(0, 700) };
       await page.screenshot({ path: `${BILD}/${id}-2-landning.png` }).catch(() => {});
     }
     ut.landning = landning;

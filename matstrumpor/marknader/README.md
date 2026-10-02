@@ -1008,6 +1008,46 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
   adset, `lansering_stopp`). ⚠️ Mitt under strypningen visade kontots `x-business-use-case-usage`
   (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
   kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
+- ✅ **Första dygnets felkoll, fre 2/10 13:05–13:20 CEST** (Axel strax före 13: "kampanjerna spenderar
+  just nu fitt mycket pengar och kag hopas inte vi har massa fel"). Läs-bart, inget ändrat. **Inget fel
+  som kostar pengar hittades.**
+  - **Meta** (`/{kampanj}`, `/insights?date_preset=today`, `/ads`, `/adsets`): 14 kampanjer och 110
+    annonser ACTIVE, ingen avvisad, inga `issues_info`, ingen `ad_review_feedback`, adseten på rätt länder
+    (WW = GB + CA + NZ, DE = DE + AT + CH, FR = FR + BE + LU), TW PAUSED utan adset, Norges två 007 PAUSED.
+    Spend kl 13:14: **16 768 kr, 36 köp, 22 473 kr** (Metas attribuering) = 129 % av de 13 000 kr/dag,
+    varje kampanj 110–155 % av sin egen dagsbudget (13:05 var det 16 618 kr, alltså fortfarande cirka
+    1 000 kr i timmen). 00:00–07:40 gick 8 906 kr (mätt i StonePNL-avsnittet nedan). Det är inget fel:
+    Meta får dra upp till 75 % över dagsbudgeten en enskild dag men högst sju dagsbudgetar på en
+    kalendervecka ([Jon Loomer om Metas budgetregel](https://www.jonloomer.com/updates-to-meta-ads-budgeting/)).
+    Taket i dag är alltså cirka 22 750 kr för de 14. ⚠️ Kampanjerna startade en fredag, så veckotaket
+    (söndag–lördag) håller inte tillbaka fredag och lördag; utjämningen märks först från söndag. Hela kontot
+    13:13, med den svenska kampanjen (10 000 kr/dag, 4 617 kr, 16 köp): 21 367 kr, 52 köp, 32 060 kr.
+  - **Shopify** (ordrar sedan 00:00 CEST, läst 13:08): **41 utlandsordrar, 25 528 kr**, i 14 länder: PT 10, JP 5,
+    FI 5, US 3, ES 3, PL 3, CH 2, FR 2, DK 2, IT 2, CA, LU, BE och NL en var. Alla `PAID`, i landets valuta
+    och språk, landningssidan i rätt språkmapp. Metas köp per kampanj är lika med Shopifys ordrar per land i
+    PT, FI, US, PL, DK, IT, NL och WW (CA); JP, ES, DE (CH) och FR (FR + BE + LU) har en eller två fler
+    ordrar i Shopify än i Meta. **Pixeln räknar alltså rätt.** **Norge: 0 ordrar** (NO 583 kr, NOB 592 kr;
+    A hade 39 landningssidvisningar och 0 i varukorgen, B 25 och 2 till kassan). Sidan och kassan fungerar
+    där (nedan), så det är för tidigt att kalla det ett fel.
+  - **Länkarna:** 14 unika i de aktiva annonserna, en per kampanj. `geokoll.mjs --annonser` från riktiga
+    datorer i varje land (13:10): **19 av 20 rätt** (200, sidans språk, landet i kampanjens geo, valutan,
+    giltigt certifikat). US gav 429 (Shopifys botskydd mot proben), men tre riktiga US-ordrar kom samma dag.
+  - **Köpflödet som kund, alla 14 kampanjer** (WW:s länk som brittisk kund med `?country=GB`;
+    `granskning/kontroll-2026-10-01/prova.mjs` med
+    landslistan utökad, mobil, 4 Mbit/s, CPU 4×, pixeln blockerad, aldrig betalt, 13:10–13:20): paketet K2F2
+    → lådan öppnas inom 3–6,5 s → kassan på landets språk med paketets belopp och `SUSHI-K2F2` pålagd.
+    **14 av 14 rätt:** NO A och B 938 NOK (`nb-no`), DK 686 DKK, FI/DE/FR/NL/ES/IT/PT 89,80 €, US $138.00,
+    GB £108.00 (United Kingdom förvalt), PL 402,00 zł, JP ￥15,960. Inga 429, inga sidfel; konsolens
+    `ERR_FAILED` är den blockerade pixeln. Beloppsregexen saknade £ och zł, så GB och PL lästes ur
+    kassans text; `prova.mjs` bär sedan samma dag båda och alla annonslänkar
+    (`node prova.mjs k "NO:F:B,NOB:F:B,DK:F:B,…"`, 15 s mellan körningarna i stället för 22 gick utan 429).
+    Kassans dolda rubrik säger butiksnamnet "Matstrumpor.se" (syns inte, loggan är MATSTRUMPOR), samma i
+    alla länder.
+  - **Kanten som syns i ordrarna** är den kända från S-025: ändrar kunden antalet lådor i korgen följer
+    ätpinnarna inte med. #5291 och #5295 (PT) fick tre lådor och två par, #5307 (ES) en låda och tre par
+    gratis. Frågan A/B om att bygga om det ligger hos Axel.
+  - Annonsvakten och akutlarmet går varje timme över kontot och hade 0 nya larm för Matstrumpor under
+    dagen.
 
 ## StonePNL: vinsten per land (2026-10-02)
 
