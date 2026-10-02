@@ -60,6 +60,23 @@ Hej Sara! Axel heter jag, jag sitter i Göteborg och säljer strumpor som ser ut
 Hälsningar
 Axel
 
+### Saras svar 2026-10-01 20:55 och Axels svar (utkast 2026-10-02)
+
+Sara svarade samma kväll: "Är absolut intresserad av ett samarbete. Skulle gärna
+vilja veta lite mer om era tankar kring videorna, vad ni är intresserade av och er
+budget!" Budgeten är Axels: utkastet nedan ber om HENNES pris (ankrar inget), byt
+mot ett belopp om Axel hellre säger sitt.
+
+```
+Hej Sara! Vad kul. Så här tänker jag: tre korta videor på svenska, filmade hemma hos dig med mobilen. En av dem är en present som någon i familjen öppnar utan att veta vad som är i. Du får en sida med manuset rad för rad, med tre öppningar att välja på, och lådan med sushistrumporna skickar jag så fort du säger ja. Vad brukar du ta för tre korta videor? Säg din siffra så ser vi om vi möts. Och vilken adress ska lådan till?
+
+Hälsningar
+Axel
+```
+
+Efter ja: dela briefsidan (Share → Anyone with the link) och skicka länken; hon
+filmar brief 1, 2 och 4 (fikaskämtet funkar vid middagsbordet).
+
 ## 9. Hassanien Madjed (@fynder) — Collabstr-chatt (https://collabstr.com/fynder), Norrköping
 
 Hej Hassanien! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör selfie-videor för annonser på svenska, och jag behöver en manlig röst: du som ger bort lådan till flickvännen eller en polare, och filmar när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?

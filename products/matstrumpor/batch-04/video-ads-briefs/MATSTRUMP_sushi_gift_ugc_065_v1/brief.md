@@ -97,7 +97,7 @@ Hej Nathalie! Din förra video är vår bästa annons. Nu vill vi filma en till.
 **Idén**
 - Du sitter vid middagsbordet. Någon ställer en sushilåda framför dig.
 - Du öppnar, tar ätpinnarna, lyfter en bit och rullar upp den. Det är en strumpa.
-- Din reaktion är hela videon. Ju större desto bättre.
+- Din reaktion är hela videon. Precis som den blir, inte större.
 
 **Kameran**
 - Mobilen står stilla på bordet eller på ett stativ, mitt emot dig. Den rör sig inte under hela klippet.
