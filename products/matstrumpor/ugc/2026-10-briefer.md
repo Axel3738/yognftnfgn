@@ -72,19 +72,24 @@ Timing: the original ran 27.7 s because it was captions only. Spoken at a natura
 
 Same winner, new version, using three Evolve moves: **extended problem section** (the gift that always goes wrong), **emotional hook testing** (three different hooks, one shared body), **overcoming objections** (one line answering a real comment).
 
-**Filming plan:** film H1, H2 and H3 as three separate 3-second takes, then film the body once. Editors cut three videos: H1 + body (skip row B4), H2 + body (skip row B3), H3 + body. Length: about 37 s. "She" is "he" if the recipient is a man.
+**Filming plan:** film H1, H2 and H3 as three separate silent 3-second takes (phone fixed, nobody speaks, the line is a caption the editors burn in), then film the body once. Editors cut three videos: H1 + body, H2 + body, H3 + body; no body row is skipped, because no hook repeats a body line or shot. Length: about 37 s. "She" is "he" if the recipient is a man; the hooks need no change.
 
-### Hooks (first 1-3 seconds, five words each, understandable with the sound off)
+### Hooks (first 3 seconds, silent, caption only, understandable with the sound off)
+
+Rewritten 2026-10-02 from `products/matstrumpor/mekanismer.md` (M1 the clear lid, M2 "duka fram den") and the riddle form of `MATSTRUMP_sushi_curiosity_ugc_066_v1`, after Axel's rule that a fact or number is never the first line of a video. Written by the sonnet subagent against `docs/copy-regler.md`; the earlier hooks ("Dom sålde slut i november." as opener, Nathalie's own opener, "Hon trodde det var sushi.") are out. Per brief: one M1, one M2, one riddle. No hook says socks, promises a reaction or carries a number.
 
 | # | Tid | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
 |---|---|---|---|---|---|
-| H1 | 0:00-0:03 | Dom sålde slut i november. | They sold out in November. | Close-up: ONE salmon maki sock held up to the lens, she pinches it. Same words burned in as caption. | ✅ ✅ ✅ true (owner, 2026-09-24); only we sold out |
-| H2 | 0:00-0:03 | Det här är ditt tecken. | This is your sign. | Nathalie's own opening: her fingers unroll one salmon maki sock in front of her face. | W, as brief 1 row 2 (sushi only, so the four-box hook is out) |
-| H3 | 0:00-0:03 | Hon trodde det var sushi. | She thought it was sushi. | Close-up of the friend: she lifts the lid, picks up a piece with chopsticks, looks at it, bursts out laughing. | ✅ ✅ ✅ her face; true only if staged as below; our box |
+| H1 (M1, huvudhook) | 0:00-0:03 | Locket visar halva sanningen. | The lid shows half the truth. | 0:00-0:02: the recipient's seat. Phone at seated eye height, looking straight down at the closed tray through the clear lid, plastic grass and the pieces visible under it, table edge at the top of the frame. No hands, no face, no sock. Caption on from frame 1, room sound only. 0:02-0:03: hands enter from the lower edge, lift the lid off, the chopsticks lift one piece and it falls open into a salmon maki sock hanging from the chopsticks, fully open on the last frame. | ✅ ✅ ✅ the lid and the tray are the whole first frame; checkable, the lid shows a sushi look and the tray holds socks; nobody else in Sweden runs a clear lid over sushi that is not sushi |
+| H2 (M2) | 0:00-0:03 | Enda regeln: ingen säger vad det är. | The only rule: nobody says what it is. | 0:00-0:01: her kitchen table, a mug and a plate, nothing else. 0:01-0:02: two hands slide the closed tray (wooden chopsticks across the lid) to the middle of the table and withdraw out of frame. Nobody speaks. 0:02-0:03: hold on the tray alone, lid on, still silent. No sock in this hook; the first one is B3 at 0:09. | ✅ ✅ ✅ a silent take, hands set the tray down, no mouth moves; false the moment anyone says a word, checkable in the file; a rule about "what it is" only makes sense for a tray that is not what it looks like |
+| H3 (gåta) | 0:00-0:03 | Sushi till den som redan är mätt. | Sushi for someone who is already full. | 0:00-0:02: the kitchen table after a meal, a plain empty plate and a fork pushed to the side, two hands slide the sealed tray into the free space. No pizza, burger or donut anywhere in frame. 0:02-0:03: the chopsticks lift one piece and it falls open into a sock. One take. | ✅ ✅ ✅ empty plate and sealed tray in one frame; false if the pieces were edible, the sock proves it; only a tray that is not food can be given to someone who is full |
 
-Levers: H1 scarcity and fear of missing out (a fact). H2 the winner's own opening (control). H3 emotion and real proof (a real reaction).
-- **H3 is only true if she believed it.** Before filming, the creator tells the recipient she has brought sushi (a harmless prank). If the recipient did not believe it, do not use H3. Use the fallback caption "Hon skrattade direkt." only if the laugh really comes within one second of the lid opening. Never fake it.
-- H3 uses the first two seconds of the same take as row B10.
+Regi for the hooks:
+- **H1 (M1):** the camera sits in the recipient's seat for the first frame, her eyes looking down through the clear lid, no hands, the lid stays on until she lifts a piece. Prop the phone on a book at the height of a seated person's eyes. First sock no earlier than 0:02. The hands are the friend's own if she is at the table, otherwise the creator's; no face in frame. A hook take, not the reaction: the friend's real reaction stays in B10 and is never re-staged.
+- **H2 (M2):** the box is set on the table, nobody says a word. Phone fixed against something on the table edge. No word, no laugh, no music in the take.
+- **H3:** the table first, the unroll last, in one take. Clear every plate of anything that looks like another kind of box.
+- The creator says nothing in these three seconds; captions are burned in by the editors.
+- Flag: H2 is the weakest of the nine new hooks, because in this brief the recipient's discovery is only three seconds (B10). M1's first frame is close to `061`/`063` (closed tray first): read their labels before a second M1 line gets budget.
 
 ### Body (shared by all three hooks)
 
@@ -93,7 +98,7 @@ Levers: H1 scarcity and fear of missing out (a fact). H2 the winner's own openin
 | B1 | 0:03-0:07 | Ljus. Tvål. Grå strumpor. Ingen av dom vet hennes favoriträtt. | Candle. Soap. Grey socks. None of them knows her favourite dish. | Hard cut to the kitchen table. On each word she puts one thing down: a plain candle in a glass, a bar of soap in a little gift bag, a pair of plain grey socks rolled together. On the last sentence she gives the lens a flat look. No logos or brand names in frame. | ✅ ✅ ✅ three objects; nothing on them points to food; a candle or soap seller cannot say it |
 | B2 | 0:07-0:09 | *(tyst, inga ord)* | (silent, no words) | She opens a drawer already half full of unopened candles, soaps and envelopes (use what you have or stage it). She drops the three things in and shuts it with her hip. | no line; picture only ✅ |
 | B3 | 0:09-0:11 | Det här är ditt tecken. | This is your sign. | Close-up: her fingers unroll one salmon maki sock in front of her face. | W, as A row 2 |
-| B4 | 0:11-0:13 | Dom sålde slut i november. | They sold out in November. | Medium: she holds the unrolled sock up by the cuff and laughs. **Skip when H1 is the hook.** | W, as A row 3 |
+| B4 | 0:11-0:13 | Dom sålde slut i november. | They sold out in November. | Medium: she holds the unrolled sock up by the cuff and laughs. | W, as A row 3 |
 | B5 | 0:13-0:14 | Ge bort dom. | Give them away. (as a gift) | She holds the closed box out toward the lens, like handing it to the viewer. | W, as A row 4 |
 | B6 | 0:14-0:17 | Ta med till kalaset eller spara till julstrumpan. | Bring them to the party or save them for the Christmas stocking. | She opens the lid and lifts one tray out. | W, as A row 5 |
 | B7 | 0:17-0:23 | När du ger bort dom här så är det som att du vet allt om personen, du visste ju deras favoriträtt. | When you give these away it is like you know everything about the person, you knew their favourite dish after all. | To camera, box in hand. This pays off the favourite-dish line in B1. | W, as A row 6 |
@@ -105,7 +110,7 @@ Levers: H1 scarcity and fear of missing out (a fact). H2 the winner's own openin
 **Why B9 is built this way.** The only product question in our ad comments is "Material?" (a comment on the winner, 2026-09-27). We have no material fact: the product page states none (read 2026-09-30) and the supplier has said nothing. So the line answers by showing, not by claiming. The creator must test the stretch before filming. If the sock looks thin or tears, do not film B9 and tell Axel.
 The other objection in the comments is about delivery time and "cheap goods". It cannot be answered in a video, because delivery claims are not allowed.
 
-**What changed against A:** (1) a 6-second problem section comes first (B1 and B2); (2) three hooks; (3) the objection beat B9; (4) two lines are dropped, "Fyra looks som verkligen lurar blicken totalt" and "används år efter år", to keep the length and to avoid an opinion and an uncheckable claim; (5) B1 is built so the later line "du visste ju deras favoriträtt" lands as a payoff.
+**What changed against A:** (1) a 6-second problem section comes first (B1 and B2); (2) three silent hooks built on the clear lid, the silent table and a riddle (2026-10-02); (3) the objection beat B9; (4) two lines are dropped, "Fyra looks som verkligen lurar blicken totalt" and "används år efter år", to keep the length and to avoid an opinion and an uncheckable claim; (5) B1 is built so the later line "du visste ju deras favoriträtt" lands as a payoff.
 
 ---
 
@@ -113,13 +118,15 @@ The other objection in the comments is about delivery time and "cheap goods". It
 
 Avatar test: the male gift buyer (all our UGC so far is women). One body, three hook takes filmed separately; editors cut H1 + body, H2 + body, H3 + body. About 27 s. Keeps the winner's three ingredients: a real person, a real recipient who does not know what is in the box, the November line. Script lines by the sonnet subagent 2026-10-01 (`docs/copy-regler.md`); the only ❌ is the instruction line B2.
 
-### Hooks (filmed separately, 3 s each)
+### Hooks (filmed separately, 3 s each, silent, caption only; rewritten 2026-10-02 on M1/M2 as in brief 2)
 
 | # | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
 |---|---|---|---|---|
-| H1 (huvudhook) | Sushi till henne. Fast strumpor. | Sushi for her. Except it is socks. | His kitchen, handheld. 1 s: the closed box in both hands, held toward the lens. 2 s: lid off, the tray seen from above, ten pieces, wooden chopsticks across. 3 s: one piece lifted out and let fall open into a sock. | ✅ ✅ ✅ seen, true, only ours |
-| H2 | Hennes favoriträtt. På fötterna. | Her favourite dish. On her feet. | Close-up, his kitchen behind him. 1 s: one salmon maki sock pinched between two fingers, held to the lens. 2 to 3 s: his other hand unrolls it halfway in front of his face. | ✅ ✅ ✅ sock seen, true, ours |
-| H3 | Hon anar ingenting. | She suspects nothing. | Wide. She sits in the background with her phone or a book, not looking his way. In front he holds the closed box toward the lens, one finger over his lips. Nothing else happens. | ✅ ✅ ✅ seen, true, our box |
+| H1 (M2, huvudhook) | Jag ställer fram den och tiger. | I set it out and say nothing. | 0:00-0:01: his living room or kitchen table, one chair pulled out, nobody in it. 0:01-0:02: his hands set the closed tray (chopsticks across the lid) on the table in front of the chair. 0:02-0:03: he leans back, arms crossed, mouth closed, eyes on the tray. Nobody speaks. No sock in this hook; B1 at 0:03 holds one up. | ✅ ✅ ✅ his hands set it down and his mouth stays closed in frame; false if he says a word, checkable in the file; a takeaway tray with wooden chopsticks served on a table |
+| H2 (M1) | Du vet bara vad locket visar. | You only know what the lid shows. | 0:00-0:02: the recipient's seat. Closed tray seen from above through the clear lid, plastic grass and pieces under it, no hands, no face, no sock. Caption on from frame 1, room sound only. 0:02-0:03: his hands enter, lift the lid, chopsticks lift one piece and it falls open into a salmon maki sock, hanging open on the last frame, cutting straight into B1. | ✅ ✅ ✅ the lid view is the whole first frame; true for the viewer by construction, and for the real recipient only if she has not been told what is inside (check before filming); a clear lid over sushi that is not sushi |
+| H3 (gåta) | Sushi du inte behöver äta upp. | Sushi you do not have to finish. | 0:00-0:02: his kitchen counter, his hand pushes a plain plate with a few crumbs and a fork aside and slides the sealed tray into the space. No pizza, burger or donut in frame. 0:02-0:03: chopsticks lift one piece and it falls open into a sock. | ✅ ✅ ✅ plate pushed aside, tray slid in; false if the pieces were edible, the sock settles it; only a tray that is not food has nothing to finish |
+
+The hook lines are neutral: no hon/han change is needed in them.
 
 ### Body (shared by all three hooks)
 
@@ -141,10 +148,10 @@ Avatar test: the male gift buyer (all our UGC so far is women). One body, three 
 - The three hook takes, each filmed on its own.
 
 **Rules for this video:**
-- The recipient must know nothing about what is in the box and must really love sushi. H2 says it is her favourite dish, so use H2 only if that is true. If she guesses before she opens it, change the person or the day, never the line.
+- The recipient must know nothing about what is in the box and must really love sushi. H2 is only true if she has not been told what is inside, so check that before filming. If she guesses before she opens it, change the person or the day, never the line.
 - Never fake, coach or re-stage the reaction. Film it once and use whatever happens. If it is flat, say so and do not ask for a second go.
 - Consent: before filming, tell her only that you are filming a short video. Right after the reaction, ask if the clip may be used. No yes, no use.
-- Film H1 and H2 on their own at any time. Film H3 before the hand-over, with her busy with something else; in that shot she is not reacting to anything. If the recipient is a man, change only these words in the captions: hon to han, henne to honom, hennes to hans.
+- Film all three hooks alone, any time; she never needs to know about them. H2 (M1) is filmed from her chair before or after the hand-over, never during it, phone fixed at the eye height of the seated recipient, first sock no earlier than 0:02, no face in frame; it is a hook take, not her reaction. H1 (M2): he is in frame (hands, then crossed arms), she is not, phone fixed, no music, no word. H3: the plate and the tray first, the unroll last, in one take. He says nothing in these three seconds; the editors burn the caption in. If the recipient is a man, change only these words in the body captions: hon to han, henne to honom, hennes to hans.
 - Never say, write or show the store's name or web address (check the box, labels and phone screens before filming). No prices, offers, delivery times, guarantees or returns, and nothing about what the socks are made of, how they feel, or how they wash or last. Say only the lines in the Swedish column.
 
 ---
@@ -153,13 +160,13 @@ Avatar test: the male gift buyer (all our UGC so far is women). One body, three 
 
 Angle test: the prank (skämtaren), unaware entry; `053` is the recut version of the same idea, this is the first filmed one. One body, three hook takes; editors cut H1 + body, H2 + body, H3 + body. About 21 s. "Jag tog med sushi." is the only line that is false on purpose: it is the joke, said to the colleague in the scene, never to the camera, and the hooks tell the viewer the truth in the first 3 seconds. The only ❌ is the instruction line B4.
 
-### Hooks (filmed separately, 3 s each)
+### Hooks (filmed separately, 3 s each, silent, caption only; rewritten 2026-10-02 on M1/M2 as in brief 2)
 
 | # | Swedish (use this) | English meaning | Vad syns i bild | 3-frågorstest (se/falsk/bara vi) |
 |---|---|---|---|---|
-| H1 (huvudhook) | Jag lurade en kollega. | I fooled a colleague. | At the fika table, coffee cups in frame, handheld. 1 s: he looks into the lens, the open tray in front of him. 2 to 3 s: wooden chopsticks lift one piece, the other hand lets it fall open into a sock. Filmed after the prank has worked. | ✅ ✅ ✅ sock seen, true, ours |
-| H2 | Fika. Sushi. Strumpor. | Coffee break. Sushi. Socks. | Three shots of one second each, same table: (1) a coffee cup, (2) the open tray from above, ten pieces, wooden chopsticks across, (3) one piece unrolled into a sock in his hand. | ✅ ✅ ✅ three objects, true, ours |
-| H3 | Det här är inte sushi. | This is not sushi. | Close-up, handheld. 1 s: wooden chopsticks hold one piece up to the lens. 2 to 3 s: his other hand unrolls it into a sock, his face behind it. | ✅ ✅ ✅ seen, true, only ours |
+| H1 (M1, huvudhook) | Det här ser kollegan först. | This is what the colleague sees first. | 0:00-0:02: the fika table from the colleague's chair. Phone at seated eye height looking down at the closed tray through the clear lid, a coffee cup in the lower corner of the frame, plastic grass and pieces under the lid. No hands, no face, no sock. Caption on from frame 1, room sound only. 0:02-0:03: hands lift the lid, chopsticks lift one piece and it falls open into a salmon maki sock, hanging open on the last frame. Filmed alone before or after the prank, never during it. | ✅ ✅ ✅ the shot is taken from her chair; true because it is the view she had of the closed box, false if the shot is from the wrong seat; a clear lid over sushi that is not sushi, wooden chopsticks on it |
+| H2 (M2) | Jag ställer fram lådan. Sen väntar jag. | I set the box out. Then I wait. | 0:00-0:01: a break-room table, two coffee cups, nothing else. 0:01-0:02: his hands set the closed tray between the cups and withdraw. Nobody speaks. 0:02-0:03: hard cut, top-down on the same table: the open tray with one piece unrolled into a sock lying next to it (filmed after the prank has worked), so the truth is on screen by 0:03. | ✅ ✅ ✅ tray set down, then the sock; B2 shows him waiting, false if he leaves or speaks in the take; a takeaway tray set out between coffee cups |
+| H3 (gåta) | Varje bit har en tvilling. | Every piece has a twin. | 0:00-0:02: top-down on the fika table, a coffee cup at the edge, the clear lid on, the pieces laid out so each one sits next to one of the same colour. No hands, no face. Check before filming: if two pieces do not match from above, move them until they do, or drop this line. 0:02-0:03: hands lift the lid, chopsticks lift one piece and it falls open into a sock; its twin stays in the tray beside it. | ✅ ✅ ✅ matching pairs in the tray, then one unrolled; countable, false if any piece has no twin; sushi pieces that come in matching pairs, only our tray |
 
 ### Body (shared by all three hooks)
 
@@ -182,7 +189,7 @@ Angle test: the prank (skämtaren), unaware entry; `053` is the recut version of
 - The colleague must not know what is in the box. Do not tell, hint or rehearse. If they guess before they pick up a piece, do not use the take. Never fake, coach or re-stage the reaction: one take, use whatever happens, their words and sounds are never scripted.
 - Consent: before filming, tell the colleague only that you are filming a short video. Right after the take, ask if the clip may be used. No yes, no use. Nobody else in frame, no other brands, no readable screens or papers.
 - "Jag tog med sushi." is the only line that is false on purpose: it is the joke, said to the colleague in the scene, never to the camera. The hooks tell the viewer the truth in the first 3 seconds, and a sock must be on screen within 10 seconds. The editors trim waiting time, never the reaction.
-- Film H2 and H3 any time, alone. Film H1 only after the prank has worked, because the line has to be true. At a dinner instead of fika, change these words only: kollega to vän (H1), Fika to Middag (H2), fikat to middagen (B4).
+- Film H1 and H3 alone, before or after the prank, never during it; the sock insert at the end of H2 is filmed after the prank has worked. Phone fixed in every hook, no music, no word in the first two seconds; the creator says nothing in these three seconds and the editors burn the caption in. The colleague's real reaction in B2 is untouched and never re-staged. At a dinner instead of fika, change these words only: kollegan to vännen (H1), fikat to middagen (B4); H2 and H3 have no fika word.
 - Never say, write or show the store's name or web address (check the box, labels and phone screens before filming). No prices, offers, delivery times, guarantees or returns, and nothing about what the socks are made of, how they feel, or how they wash or last. Say only the lines in the Swedish column. Giving them away is the only thing the ending points to; no line tells anyone to buy.
 
 ---
