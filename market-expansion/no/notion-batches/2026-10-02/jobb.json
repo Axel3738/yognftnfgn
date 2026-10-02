@@ -2771,7 +2771,12 @@
         "annonsNamn": "Sotarset_NO_FD_4_4",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527598420233",
+        "creativeId": "1424357156547242",
+        "adsetId": "120252433117460233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -2836,7 +2841,12 @@
         "annonsNamn": "Sotarset_NO_FD_4_3",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527599820233",
+        "creativeId": "1798582917853445",
+        "adsetId": "120252433117460233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -2901,7 +2911,12 @@
         "annonsNamn": "Sotarset_NO_FD_4_2",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527601190233",
+        "creativeId": "2571779406585055",
+        "adsetId": "120252433117460233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -2966,7 +2981,12 @@
         "annonsNamn": "Sotarset_NO_FD_4_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527602470233",
+        "creativeId": "896447493497510",
+        "adsetId": "120252433117460233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
