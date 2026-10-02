@@ -1,8 +1,8 @@
 {
   "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
-  "uppdaterad": "2026-10-01",
-  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-10-01 ~06:40 UTC via Notion-MCP: notion-query-data-sources på testcentret (64 rader i Ads review/Ready to launch/In progress/Testing/To be Reviewed — nya sedan igår, alla Ads review: 13 Buskjackan 2-pack, 12 Radiostyrd offroadbil 1:16, 12 Radiostyrd driftbil 1:24, 13 Lövsilarna 6-pack, 13 Regntunnehuven, 13 Magnetblocken 200 st, 13 Ädelstenskalendern, 13 Husbilskalendern), notion-search på \"creative hub\" och \"BÄVER\" (is_archived läst per träff), SQL-räkning av Status × Typ i 14 levande hubbar (13 + ATV cover creative hub, som saknades i registret). Annonsidéer (collection b950b849) läst: 1 rad Ny (Taköverdraget, USA-AI-video 2026-09-27 — byggs i dagens Taköverdrags-runda), 7 Byggd.",
+  "uppdaterad": "2026-10-02",
+  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-10-02 ~06:35 UTC via Notion-MCP: notion-query-data-sources på testcentret (67 rader i Ads review/Ready to launch/In progress/Testing — i går 64; nya Ads review-rader: 13 Tak-AC-huven, 13 Regnkedjan 12 koppar, 13 Highland Cow-kalendern, 13 Rullknivslipen, 12 Läktarponchon, 13 Sorkkorgarna, 11 Kamadohuven m.fl. — de fyra förstnämnda startade som kampanjer i natt), notion-search på \"creative hub\" och \"BÄVER\" (is_archived läst per träff: 14 levande hubbar, samma som i går, inga nya och inga nyss arkiverade), SQL-räkning av Status × Typ i alla 14. Annonsidéer (collection b950b849): 0 rader Ny, 8 Byggd — inget att bygga i dag.",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
   "databas_1_product_test_center": {
     "namn": "Product test center SE BÄVER",
@@ -154,44 +154,44 @@
         "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
         "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
         "collection": "collection://5f2270ab-908c-82ef-b029-0767819050db",
-        "drafts": 3,
-        "drafts_video": 2,
+        "drafts": 7,
+        "drafts_video": 6,
         "drafts_bild": 1,
-        "not": "3 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 2, bild 1)",
-        "avlast": "2026-10-01"
+        "not": "7 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 1; i går 3)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "BÄVER Termoskyddet för Husbil",
         "produkt": "Termoskyddet för Husbil 211 × 171 cm",
         "hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
         "collection": "collection://7d0270ab-908c-831e-8021-8758336851c8",
-        "drafts": 8,
-        "drafts_video": 7,
+        "drafts": 6,
+        "drafts_video": 5,
         "drafts_bild": 1,
-        "not": "8 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 7, bild 1)",
-        "avlast": "2026-10-01"
+        "not": "6 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 1; i går 8)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Belt grinder creative hub",
         "produkt": "Bälteslipmaskinen",
         "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 6,
+        "drafts": 7,
         "drafts_video": 5,
-        "drafts_bild": 1,
-        "not": "6 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 5, bild 1)",
-        "avlast": "2026-10-01"
+        "drafts_bild": 2,
+        "not": "7 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 2; i går 6)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Boat motor cover creative hub",
         "produkt": "Båtmotorskyddet 420D",
         "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
         "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
-        "drafts": 3,
-        "drafts_video": 3,
+        "drafts": 10,
+        "drafts_video": 10,
         "drafts_bild": 0,
-        "not": "3 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 3, bild 0)",
-        "avlast": "2026-10-01"
+        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 10, bild 0; i går 3)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "BÄVER IBC-Tanköverdraget",
@@ -201,19 +201,19 @@
         "drafts": 0,
         "drafts_video": 0,
         "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 0, bild 0)",
-        "avlast": "2026-10-01"
+        "not": "0 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 0; i går 0)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Indoor slippers creative hub",
         "produkt": "Inomhustofflorna i Kamouflage",
         "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
         "collection": "collection://63a270ab-908c-8215-a509-87aeee113477",
-        "drafts": 6,
-        "drafts_video": 6,
+        "drafts": 3,
+        "drafts_video": 3,
         "drafts_bild": 0,
-        "not": "6 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 6, bild 0)",
-        "avlast": "2026-10-01"
+        "not": "3 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 3, bild 0; i går 6)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Chimney sweep set creative hub",
@@ -223,19 +223,19 @@
         "drafts": 4,
         "drafts_video": 4,
         "drafts_bild": 0,
-        "not": "4 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 4, bild 0)",
-        "avlast": "2026-10-01"
+        "not": "4 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 4, bild 0; i går 4)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Solar motion sensor light creative hub",
         "produkt": "Solcellslampan med Rörelsesensor 210 LED",
         "hub_id": "3e5270ab-908c-81ed-8316-f0f4327d75db",
         "collection": "collection://397270ab-908c-8253-ae5b-87a01a38c0c4",
-        "drafts": 2,
-        "drafts_video": 2,
+        "drafts": 0,
+        "drafts_video": 0,
         "drafts_bild": 0,
-        "not": "2 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 2, bild 0)",
-        "avlast": "2026-10-01"
+        "not": "0 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 0; i går 2)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Golf advent calendar creative hub",
@@ -245,30 +245,30 @@
         "drafts": 19,
         "drafts_video": 15,
         "drafts_bild": 4,
-        "not": "19 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 15, bild 4)",
-        "avlast": "2026-10-01"
+        "not": "19 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 15, bild 4; i går 19)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Whittling set creative hub",
         "produkt": "Täljsetet 30 Delar",
         "hub_id": "3e8270ab-908c-8156-bd42-e5fcbe833705",
         "collection": "collection://99c270ab-908c-83f9-b32d-07c644fed308",
-        "drafts": 9,
+        "drafts": 8,
         "drafts_video": 6,
-        "drafts_bild": 3,
-        "not": "9 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 6, bild 3)",
-        "avlast": "2026-10-01"
+        "drafts_bild": 2,
+        "not": "8 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 2; i går 9)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Fish rod holder",
         "produkt": "Fiskespöhållaren",
         "hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
         "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
-        "drafts": 37,
+        "drafts": 24,
         "drafts_video": 0,
-        "drafts_bild": 37,
-        "not": "37 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 0, bild 37)",
-        "avlast": "2026-10-01"
+        "drafts_bild": 24,
+        "not": "24 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 24; i går 37)",
+        "avlast": "2026-10-02"
       },
       {
         "namn": "Heated insoles creative hub",
@@ -279,8 +279,8 @@
         "drafts_video": 6,
         "drafts_bild": 4,
         "skapad": "2026-09-29 (ur MALL, rondens kvällssession på Axels order)",
-        "avlast": "2026-10-01",
-        "not": "10 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 6, bild 4)"
+        "avlast": "2026-10-02",
+        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 4; i går 10)"
       },
       {
         "namn": "Heated seat cushion creative hub",
@@ -291,19 +291,19 @@
         "drafts_video": 5,
         "drafts_bild": 4,
         "skapad": "2026-09-29 (ur MALL, rondens kvällssession på Axels order)",
-        "avlast": "2026-10-01",
-        "not": "9 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 5, bild 4)"
+        "avlast": "2026-10-02",
+        "not": "9 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 4; i går 9)"
       },
       {
         "namn": "ATV cover creative hub",
         "produkt": "ATV-Kapellet 3XL 256 × 110 × 120 cm",
         "hub_id": "3ea270ab-908c-8157-a2a2-ca2cb28cb792",
         "collection": "collection://e68270ab-908c-8316-a89c-07bd784ea4bd",
-        "not": "10 drafts (mätt 2026-10-01 ~06:40 UTC via MCP SQL: video 6, bild 4)",
+        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 4; i går 10)",
         "drafts": 10,
         "drafts_video": 6,
         "drafts_bild": 4,
-        "avlast": "2026-10-01"
+        "avlast": "2026-10-02"
       }
     ],
     "arkiverade": [
