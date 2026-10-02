@@ -3,6 +3,47 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-10-02 — 20 nya på två produkter, 50 i `sources.json`
+
+**Två nya mappar i MAKE TO NORWAY** (48 → 50 produkter i registret, 54 → 56
+Drive-mappar): **Kamadohuven** och **Motorlås utombordare**. Båda hade ett
+`_REVIEW`/`_REVIEWS`-ark i sin svenska mapp med riktiga betyg och riktiga namn —
+inga TEST- eller exempelrader — och båda norska handles fanns i feeden:
+
+| Produkt | id | Norskt handle | Rader |
+|---|---|---|---|
+| Kamadohuven | `kamadotrekk` | `kamadotrekk-80-102-cm-med-oppbevaringspose` | 10 |
+| Motorlås utombordare | `motorlas` | `motorlas-i-rustfritt-stal-laser-pahengsmotorens-festskruer` | 10 |
+
+Kartorna: 630 → 651 översättningar, 146 → 152 namn (Lene Karlsen, Marit
+Andersen, Anne Lindberg, Sara Olsen, Erik Pedersen, Mikkel Berg). Bygget
+418 → 438 klara, 10 bortvalda — alla gamasjer, som alltid.
+
+⚠️ **Motorlåsets ark heter `Motorlås_REVIEWS`, inte `Motorlås utombordare_…`** —
+arkets namn följer inte alltid mappens. Matchningen på "rev" i fas 2 är därför
+rätt väg; en sökning på produktnamnet hade missat det.
+
+**Spamfiltret tog BÅDA importerna** (10 av 10 och 10 av 10), rättat i samma
+körning med `judgeme-publicera.mjs` och tillbakaläst: 10 synliga / 0 spam på
+båda, sedan en avslutande `--dry` som svarade "redan 10 synliga". Det är
+normen, inte undantaget — fjärde dagen i rad att varje ny import tas.
+
+**Kvar, och varför:**
+
+- **Kajakkholder: tio identiska titlar** ("Bra og stabile" på alla tio) —
+  nionde dygnet. Källarket behöver varierade titlar, sedan en omimport med
+  `--anda` på Axels uttryckliga begäran. Jag skriver inga egna rubriker.
+- **Fyra ark väntar, oförändrade sedan 2026-09-18** (fjortonde dygnet):
+  `Dinosauriekalender_REVIEW` (alla namn "(EXEMPEL)"), `Gravstenspenna_Reviews`
+  (TEST-rader), `Medicinask i Fickformat_REVIEW` (exempelrader +
+  `not-a-real-product-handle`; produkten är utgången och kan strykas),
+  `5.1 Lövblåsare_REVIEW` = Jetviften (personnamn i `title`, utekattkojans
+  `product_handle`).
+- **Gamasjer/Damasker**: källarket saknar betyg, alla 10 rader ratas varje
+  bygge. Produkten är redan klar i Judge.me sedan 2026-08-30 — harmlöst.
+- **Datumen**: varje importerad recension bär importdagen. Enda rättningen är
+  CSV-import inne i Judge.me-appen.
+
 ## Läget 2026-10-01 — 18 nya på två produkter, 48 i `sources.json`
 
 **Två nya mappar i MAKE TO NORWAY** (46 → 48 produkter i registret, 52 → 54
