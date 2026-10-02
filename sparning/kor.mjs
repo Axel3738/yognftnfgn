@@ -164,8 +164,14 @@ const oregistrerade = kandidater.filter((k) => !lage.paket[k.nummer]?.registrera
 const nya = oregistrerade.slice(0, MAX_REG);
 console.log(`Oregistrerade: ${oregistrerade.length}, registreras nu (tak ${MAX_REG}): ${nya.length}${nya.length ? ` — ${nya.slice(0, 5).map((k) => k.nummer).join(', ')}${nya.length > 5 ? ' …' : ''}` : ''}`);
 if (oregistrerade.length > MAX_REG) console.log(`  ${oregistrerade.length - MAX_REG} väntar till nästa körning (eller --max ${oregistrerade.length}).`);
+// Antalet som 17TRACK faktiskt tog emot. Rapporten och lagefilen räknade
+// förut `nya.length` (försöken): när kvoten var slut 30/9–2/10 sa
+// Bäverbutikens commit "150 registrerade" varje timme medan 17TRACK avvisade
+// alla 150 och quota_used stod still. Nu räknas bara accepterade.
+let registreradeNu = 0;
 if (!torr && nya.length) {
   const r = await registrera(nya.map((k) => ({ number: k.nummer, carrier: k.kod ?? undefined })));
+  registreradeNu = r.accepterade.length;
   for (const k of nya) {
     const p = (lage.paket[k.nummer] ??= {});
     Object.assign(p, { bolag: k.bolag, kod: k.kod, order: k.order, fulfillment: k.fulfillment });
@@ -235,7 +241,7 @@ for (const [n, p] of Object.entries(lage.paket)) {
   // Manuella paket (sparning/lagg-till.mjs) får aldrig event, så de städas på tillagd-datum.
   else if (p.manuell && p.tillagd && new Date(p.tillagd).getTime() < grans) delete lage.paket[n];
 }
-lage.senaste_korning = { datum: new Date().toISOString(), ordrar: ordrar.length, paket: kandidater.length, registrerade: nya.length, skrivna, fel, torr };
+lage.senaste_korning = { datum: new Date().toISOString(), ordrar: ordrar.length, paket: kandidater.length, registrerade: registreradeNu, forsokta: nya.length, skrivna, fel, torr };
 if (!torr) writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`);
 console.log(`${torr ? '--torr: ' : ''}Event ${torr ? 'som skulle skrivas' : 'skrivna'} i Shopify: ${skrivna}, fel: ${fel}. ${torr ? 'Inget sparat.' : `Sparat i ${LAGE_NAMN}.`}`);
 
