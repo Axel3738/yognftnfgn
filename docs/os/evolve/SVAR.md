@@ -244,3 +244,78 @@ rubrik.
 > For mid-week launches: since D2 says calculate over 7 days, a Wednesday launch hasn't completed its window by Monday — wait for the full 7 days. If labels upgrade in weeks 2-3, that's expected: D2 says "Learnings are educated guesses, not facts. Validate by retesting" [D2].
 >
 > No source gives a minimum purchase threshold — D2 uses spend share, not purchase count.
+
+### Vad vi tar med oss (läst 2026-10-02)
+
+Varje punkt är kontrollerad mot Chads text ovan och mot kursens egna citat i
+`docs/ecomtalent/fynd.json` (516 fynd) och `ITERATIONS-PLAYBOOK.md`. Boten har
+rätt i det stora. **Inget av dess exakta tal står i kursen** (se tabellen).
+Reglerna nedan bygger därför på kursens citat och vår egen kod, inte på botens
+tal. Systemet som följer av dem står i `redigerarrapport/PLAN.md`.
+
+1. **Etiketten visas en människa först när annonsens EGEN första vecka är
+   komplett** (7 dygn från D0). En annons som startade mitt i veckan står i
+   måndagsposten som "launched this week, label next Monday", aldrig med ett
+   halvt utfall. Kursen: 3–7 dagar, "about a week" (How Do Ads Work? [4:41]).
+2. **Etiketten kan höjas vecka 2–3 och sänks aldrig.** Posten säger vilken
+   vecka den gäller och om den höjts. Redan i `matstrumpor/etikett.mjs`.
+3. **INGEN_LEVERANS räknas inte i redigerarens nämnare, men visas med orsak.**
+   Kursen: "no spend = no data" men också "no spend = the hook sucks" (Shaun).
+   Vår egen mätning säger att adsetet, inte hooken, svalt Gilz batch #1
+   (`products/matstrumpor/lardomar.md`). Tills adsetets spend läses står
+   "no delivery (reason not measured)", aldrig "your hook failed".
+4. **Hit rate alltid som bråk** ("2 of 9"), procent först vid ≥ 10 etiketter,
+   iterationer av en befintlig vinnare märkta separat (Nicolò: hit rate går att
+   spela med iterationer). Riktmärke 5–10 % / 2–4 %, aldrig som betyg.
+5. **Inga kronor, ingen ROAS, inga köp, ingen CPA i posten** — med köp och
+   ROAS går spenden att räkna ut baklänges. Det redigeraren ser: etikett,
+   hook % och hold %, "above/below campaign KPI". Andel av kampanjens spend i
+   procent bara om Axel säger ja (järnregeln 2026-09-02).
+6. **"Varför"-raden följer kursens ordning:** fick annonsen spend? nej ⇒
+   hooken. Spend men under KPI ⇒ tro, brådska, funnel, erbjudande, alltså
+   strategens sak. Först därefter mjuka mått (Mar 13th [46:22]). Klippet pekas
+   ut BARA vid en mätt avvikelse från regitabellen (`utford_som_briefad` = nej),
+   annars "you cut it as briefed, the concept didn't stop enough people".
+   Kursen: "editing plays the smallest role" (Breaking Down Winning Ads [20:41]).
+7. **Hook % och hold % bara när annonsen är bedömbar**, alltid bredvid
+   kampanjens vinnare som referens. Evolves definition: hook = 3-sek-visningar
+   ÷ visningar, hold = ThruPlay ÷ visningar. Botens 16 % / 1,2 % skrivs aldrig
+   in som riktvärde.
+8. **ETT action item per redigerare och vecka**, ur `PLAYBOOK_PER_UTFALL` för
+   hennes högst rankade etikett. Antalet är vårt beslut; boten: "not covered".
+9. **10 % av kampanjens spend är INTE en grind vi antar.** I kursen är 10–30 %
+   vinnartröskeln, inte en datagrind; boten gjorde om bandet. Vår grind för att
+   visa en etikett är komplett vecka 1 + spend ≥ 10 kr. `bedombar` står som
+   flaggan "thin data", inte som spärr, annars får en loser aldrig en lärdom.
+   ⚠️ `bedombar` räknas ELLER i Matstrumpor och OCH i ANALYSMETOD/agent-grenen:
+   Axels beslut, EN grind.
+10. **Förloraren får lika mycket text som vinnaren**, som lärdom + nästa test.
+    Ingen jämförelse mellan redigerare i posten (lagets tal på tavlan,
+    individens i 1:1). Kursen: förlorarna kräver MEST diagnos (The Feedback
+    Loop [15:05]), tvärtom mot botens "10–15 min per loser".
+11. **Annons → redigerare bara via hubbradens Ansvarig** (Jerzee via
+    kommentar). Ingen gissad mention. Redigerare utan Discord-id får posten
+    som fil tills id:t finns.
+12. **Posten ersätter inte lärdomscallen, den är underlaget till den.** Kursen
+    går igenom VARJE testad annons, spendade först (Mar 6th [18:27]), och
+    redigerarna har en egen call som matar huvudcallen (April 24th [1:05:05]).
+
+### Där kursens egna citat säger något annat än Chad
+
+| Chad säger | Kursen säger | Belägg |
+|---|---|---|
+| "10 %+ spend för data", trappan <10 / 10+ / 30–50 % | **Omtolkat.** 10–30 % är vinnartröskeln vecka 1; breakthroughs på vår nivå tog ≥ 67,9 %. 30–50 % som egen nivå finns inte | ITERATIONS-PLAYBOOK §1; fynd.json 0 träffar på 10 % som datagrind |
+| "7-day testing, longer than that = CUT" | **Hårdare än kursen.** Testa 3–7, normalt 7, aldrig över 14 dagar; stäng aldrig det som funkar; en loser vecka 1 tog 55 % vecka 2 | ITERATIONS-PLAYBOOK §1 och §10; Q&A Shaun & Spencer [43:43] |
+| KPI winner: "separat modul som inte finns i dokumenten" | **Fel.** KPI winner har samma lista som loser i kursens playbook, redan i `lardom.mjs` | ITERATIONS-PLAYBOOK §4 |
+| "hook rate 16 %, hold rate 1,2 %" som exempel | Talen finns inte i något av 516 fynd. 1,2 % hold är troligen en annan definition än vår (Nathalie 14 %) | EVOLVE-GAP-ANALYS rad 216–218 |
+| "10–15 min per förlorare, 30–40 per vinnare" | Talen finns inte. "30 minutes reviewing an ad is normal", och förlorarna är de som kräver att man "really sits down" | Nov 21st [29:28]; The Feedback Loop [15:05] |
+| "5–8 koncept per vecka, fredag 2 h" | Varken fredag, 2 h eller 5–8 finns. Kursen: 3–5 batcher per brand och vecka; vid 1 000 USD/dag "no more than five new concepts per week" | April 24th [1:10:35]; Mar 13th [1:04:51] |
+| "iterate max 3 times" | Inget universellt tak: 2–3 på loser/KPI winner, 3–5 på spend winner, 2–3 imitationer | ITERATIONS-PLAYBOOK §4–5 |
+| "close every feedback loop on batch level" | Kursen säger PER ANNONS: "from any ad that you run, you must learn something" | Overview [6:17] |
+| "ingen köptröskel i källorna" | Inget tal över 1, men gränsen går vid NOLL köp: "five days, no purchases, we shut it down" | Ad Creation Process [5:29] |
+| "säg aldrig 'your edit underperformed'" | Kursen föreskriver ingen ordalydelse och frågar förloraren rakt: "what could YOU have done better" — men editing "plays the smallest role" | Overview [28:14]; Breaking Down Winning Ads [20:41] |
+
+**Går inte att kontrollera mot kursen:** D1:s lärdomscall med exakta tal,
+C5:s "hook the RIGHT user", C6:s "5+ concepts fail ⇒ research", D5 om
+redigerarnas roll. Vi har aldrig läst botens källor. Kursens egna lektioner om
+just redigerare är fortfarande olästa (`FRAGOR.md`, samma rubrik).
