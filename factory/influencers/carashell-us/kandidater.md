@@ -116,3 +116,28 @@ Fanatic, The Mom Trotter.
 6. Först när produkten kommit fram: samtalet, och ett betalt upplägg enligt
    `../METOD.md` avsnitt 6 (bara stories 3–5 sekvenser + två veckors
    innehållsrätt). Priset är Axels beslut.
+
+## Omgång 3 — 2026-10-05 (Axels order "hitta fler kreatörer och maila dom"), 17 mejl
+
+Hittade av YouTube-agenten; varje adress läst på kanalens About-sida samma dag. Samma erbjudande och mall.
+Hoppad över: RV Life DIY (nvmutts@gmail.com) — Leisure Travel Van, taköverdraget passar inte.
+
+| # | Namn | Kanal | Prenumeranter | Rigg | Mejl | Gmail-id | Status |
+|---|---|---|---|---|---|---|---|
+| 28 | Sharing the Journey | [YT](https://www.youtube.com/@SHARINGJOURNEY) | 7,3K | heltid | SharingTheJourneyOfficial@gmail.com | 1a0fd35cbf4863cd | kontaktad 2026-10-05 |
+| 29 | Bob & Karri — Life Redesigned | [YT](https://www.youtube.com/@liferedesigned) | 45,8K | heltid | liferedesignedrv@gmail.com | 1a0fd35d791c4f28 | kontaktad 2026-10-05 |
+| 30 | Lana — Lana and Lilly Explore | [YT](https://www.youtube.com/@Lanandlillymae) | 3K | Jay Flight 195RB | contact@lanaandlillyexplore.com | 1a0fd35e1906876b | kontaktad 2026-10-05 |
+| 31 | Nat Moran | [YT](https://www.youtube.com/@NatMoran) | 25,9K | Casita 17 ft | theNatMoran@gmail.com | 1a0fd35ea76a4bd9 | kontaktad 2026-10-05 |
+| 32 | Vikki & Jason — Livin' That Fun Life | [YT](https://www.youtube.com/@livinthatfunlife) | 60,4K | söker ny RV | connect@livinthatfunlife.com | 1a0fd35f693b94fa | kontaktad 2026-10-05 |
+| 33 | Harold & Cindy — 1StrangeAdventure | [YT](https://www.youtube.com/@1StrangeAdventure) | 25,4K | okänd | 1StrangeAdventure@gmail.com | 1a0fd36012c4aa65 | kontaktad 2026-10-05 |
+| 34 | Chase & Jacqueline — Travel Reimagined | [YT](https://www.youtube.com/@TravelReimagined_) | 9,8K | Brinkley 47 ft | travelreimaginedusa@gmail.com | 1a0fd360bf998d16 | kontaktad 2026-10-05 |
+| 35 | David & Sondra — Big Truck Big Travels | [YT](https://www.youtube.com/@bigtruckbigtravels) | 83,2K | SpaceCraft 47 ft | bigtrucksbigtravel@gmail.com | 1a0fd36141b4005d | kontaktad 2026-10-05 |
+| 36 | Tarilyn — The Good Life 924 | [YT](https://www.youtube.com/@thegoodlife924) | 11,3K | StarCraft AR One 15RB | thegoodlife924@gmail.com | 1a0fd3621669db13 | kontaktad 2026-10-05 |
+| 37 | TSquad RVing | [YT](https://www.youtube.com/@TSquadRVing) | 11,3K | okänd | Tsquadrving@gmail.com | 1a0fd3628421a34f | kontaktad 2026-10-05 |
+| 38 | Sierra Lescalante | [YT](https://www.youtube.com/@sierralescalante) | 3,8K | 30 ft camper | sierralescalante@gmail.com | 1a0fd3632981e80f | kontaktad 2026-10-05 |
+| 39 | GiGi — Bougie GenXer | [YT](https://www.youtube.com/@bougiegenxer) | 3,6K | renoverad vintage-RV | bougiegenxer@gmail.com | 1a0fd363c79d1078 | kontaktad 2026-10-05 |
+| 40 | Outdoor Gypsy | [YT](https://www.youtube.com/@Outdoorgypsy) | 2,9K | okänd, Arizona | Lucille.reese@yahoo.com | 1a0fd3649ad58308 | kontaktad 2026-10-05 |
+| 41 | The Renegade Ramblers | [YT](https://www.youtube.com/@TheRenegadeRamblers) | 4,8K | heltid 8 år | therenegaderamblers@gmail.com | 1a0fd36514d47d26 | kontaktad 2026-10-05 |
+| 42 | Cambriea & Bobby | [YT](https://www.youtube.com/@cambrieabobby4162) | 23,2K | RV → tiny home | cambrieaandbobby@influint.co (byrå) | 1a0fd365ac265b2e | kontaktad 2026-10-05 |
+| 43 | William & Robin — The Riverstone Life | [YT](https://www.youtube.com/@TheRiverstoneLife) | 16,7K | ny camper | hello@theriverstonelife.com | 1a0fd3665bb8df5f | kontaktad 2026-10-05 |
+| 44 | Byrd & Tasha — Sucka Free RV | [YT](https://www.youtube.com/@SuckaFreeRV) | 2,3K | okänd | Suckafreervusa@gmail.com | 1a0fd366fae82f65 | kontaktad 2026-10-05 |
