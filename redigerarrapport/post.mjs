@@ -24,6 +24,7 @@ const HAR = dirname(fileURLToPath(import.meta.url));
 export const ACTION_FIL = join(HAR, 'action-items.json');
 
 export const HOOK_LAG = 0.30; // Evolve: under ~30 % är lågt (ITERATIONS-PLAYBOOK §4)
+export const MAX_OVRIGA = 12; // fler än så i "Also labelled" blir en vägg, resten räknas
 
 /** Etikettraden, ordagrant ur PLAN.md avsnitt 4. `andel` skrivs bara när den finns. */
 export const ETIKETTRAD = {
@@ -52,8 +53,17 @@ export function klippRad(r) {
 }
 
 /** Hook/hold-raden — bara när annonsen är bedömbar. Referensen är kampanjens topp. */
+export const HOOK_ORIMLIG = 0.9; // ≥ 90 % av visningarna "hookade" är ett mätfel eller en bildannons, aldrig ett riktmärke
+
+export function hookOrimlig(r) {
+  const h = num(r.hook_rate);
+  return h !== null && h >= HOOK_ORIMLIG;
+}
+
 export function mattRad(r) {
   if (!r.bedombar) return 'Hook and hold: too little data on this ad to read them fairly.';
+  if (r.hook_rate === null || r.hook_rate === undefined) return 'Hook and hold: not measured on this ad.';
+  if (hookOrimlig(r)) return 'Hook and hold: the measurement on this ad is not reliable, so we leave them out.';
   const egen = `Hook rate ${procent(r.hook_rate)}, hold ${procent(r.hold_rate)}.`;
   if (r.topp && r.topp.annons && r.topp.annons !== r.annons && Number.isFinite(Number(r.topp.hook_rate))) {
     return `${egen} The campaign's top ad sits at ${procent(r.topp.hook_rate)} / ${procent(r.topp.hold_rate)}.`;
@@ -67,6 +77,7 @@ export function diagnos(r) {
   if (r.etikett === 'INGEN_LEVERANS') return null;
   if (r.utford_som_briefad === false) return null; // klippraden säger det redan
   if (!r.bedombar) return null;
+  if (hookOrimlig(r)) return null;
   const hook = num(r.hook_rate), hold = num(r.hold_rate), toppHold = num(r.topp?.hold_rate);
   if (r.etikett === 'SPEND_WINNER') {
     return 'Our best guess, not a fact: people stopped and stayed, so the cut did its job. The ad did not turn that into enough purchases, which is about belief, urgency or the landing page, and that is ours to fix in the next brief.';
@@ -93,10 +104,17 @@ export const NASTA_TEST = {
 };
 
 /** Hela blocket för en annons. */
+export function marknadsRad(r) {
+  const m = (r.marknader ?? []).filter((x) => x && x.marknad);
+  if (m.length < 2) return '';
+  return `Across markets: ${m.map((x) => `${x.marknad} ${ETIKETTNAMN[x.etikett] ?? x.etikett}`).join(', ')}.`;
+}
+
 export function annonsBlock(r, { rubrik }) {
   const rader = [
     `${rubrik}: ${r.annons}. Label: ${ETIKETTNAMN[r.etikett] ?? r.etikett} (week ${r.vecka ?? 1}${r.uppgradering_fran ? `, up from ${ETIKETTNAMN[r.uppgradering_fran] ?? r.uppgradering_fran}` : ''}).`,
     ETIKETTRAD[r.etikett]?.(r) ?? '',
+    marknadsRad(r),
   ];
   if (r.etikett !== 'INGEN_LEVERANS') {
     if (Number.isFinite(num(r.andel))) rader.push(`Share of its campaign's budget in its first 7 days: ${procent(r.andel)}.`);
@@ -170,7 +188,7 @@ export function byggPost({ redigerare, vecka, annonser = [], unga = [], hitrate 
       : 'No ads of yours finished their first 7 days this week.');
   } else {
     const basta = sorterade[0];
-    rader.push(annonsBlock(basta, { rubrik: 'Best first' }));
+    rader.push(annonsBlock(basta, { rubrik: RANG[basta.etikett] >= RANG.KPI_WINNER ? 'Best first' : 'Largest share first' }));
     const forlorare = sorterade.find((a) => a !== basta && a.etikett === 'LOSER');
     if (forlorare) {
       rader.push('');
@@ -179,7 +197,9 @@ export function byggPost({ redigerare, vecka, annonser = [], unga = [], hitrate 
     const rest = sorterade.filter((a) => a !== basta && a !== forlorare);
     if (rest.length) {
       rader.push('');
-      rader.push(`Also labelled this week: ${rest.map((a) => `${a.annons} (${ETIKETTNAMN[a.etikett] ?? a.etikett}${a.uppgradering_fran ? `, up from ${ETIKETTNAMN[a.uppgradering_fran] ?? a.uppgradering_fran}` : ''})`).join('; ')}.`);
+      const visa = rest.slice(0, MAX_OVRIGA);
+      const kvar = rest.length - visa.length;
+      rader.push(`Also labelled this week: ${visa.map((a) => `${a.annons} (${ETIKETTNAMN[a.etikett] ?? a.etikett}${a.uppgradering_fran ? `, up from ${ETIKETTNAMN[a.uppgradering_fran] ?? a.uppgradering_fran}` : ''}${(a.marknader?.length ?? 0) > 1 ? `, ${a.marknader.length} markets` : ''})`).join('; ')}${kvar > 0 ? `; and ${kvar} more` : ''}.`);
     }
   }
 
@@ -217,12 +237,18 @@ export function veckodagEn(iso) {
   return Number.isFinite(t) ? VECKODAGAR[new Date(t).getUTCDay()] : 'this week';
 }
 
-/** Spärren: inga kronor, ingen ROAS/CPA, inga tankstreck, inga butiksnamn. Kastar. */
-export const FORBJUDET = [/\bSEK\b/, /\d\s?kr\b/i, /\bROAS\b/, /\bCPA\b/, /[—–]/, /b[äa]verbutiken/i, /matstrumpor/i, /carashell/i, /\.se\b/i, /\bköp\b/i];
+/** Spärren: inga kronor, ingen ROAS/CPA, inga tankstreck, inga butiksnamn i
+ *  löptexten. Annonsnamnen (CaraShellRoof_DK_SP_104_H1, MATSTRUMP_…) är
+ *  redigerarnas egna och får stå — regeln om butiksnamn gäller annonsens
+ *  copy, inte dess namn — så ord med understreck tas bort före butikskollen. */
+export const FORBJUDET_ALLTID = [/\bSEK\b/, /\d\s?kr\b/i, /\bROAS\b/, /\bCPA\b/, /[—–]/, /\bköp\b/i];
+export const FORBJUDET_I_LOPTEXT = [/b[äa]verbutiken/i, /matstrumpor/i, /carashell/i, /\.se\b/i];
+export const FORBJUDET = [...FORBJUDET_ALLTID, ...FORBJUDET_I_LOPTEXT];
 export function kontrollera(text) {
-  for (const re of FORBJUDET) {
-    const m = text.match(re);
-    if (m) throw new Error(`Posten bär förbjudet innehåll (${re}): "…${text.slice(Math.max(0, m.index - 30), m.index + 30)}…"`);
+  const utanNamn = String(text).replace(/\S+_\S+/g, ' ');
+  for (const [re, t] of [...FORBJUDET_ALLTID.map((r) => [r, text]), ...FORBJUDET_I_LOPTEXT.map((r) => [r, utanNamn])]) {
+    const m = t.match(re);
+    if (m) throw new Error(`Posten bär förbjudet innehåll (${re}): "…${t.slice(Math.max(0, m.index - 30), m.index + 30)}…"`);
   }
   return true;
 }

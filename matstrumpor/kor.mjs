@@ -135,7 +135,7 @@ export function etikettraderFor(jobb, { logg = [], breakEven = null, grindar, id
     etiketter.push({ ...kandidater[0], d0: a.d0 ?? null, marknad: a.marknad ?? jobb.marknad ?? 'SE', aktiv: a.effective_status ? a.effective_status === 'ACTIVE' : undefined, konv_lpv: a.konv_lpv ?? null, senare_veckor: kandidater.slice(1).map((k) => ({ vecka: k.vecka, etikett: k.etikett })), redan_loggad: tidigare ? { etikett: tidigare.etikett, datum: tidigare.datum, vecka: tidigare.vecka ?? 1 } : null, att_logga: att });
 
     function rad(k, fran) {
-      return { kod: 'ETIKETT', datum: idag, annons: a.namn, marknad: a.marknad ?? jobb.marknad ?? 'SE', etikett: k.etikett, vecka: k.vecka, bedombar: k.bedombar, andel: k.andel ?? null, tillvaxt: k.tillvaxt ?? null, fonster: k.fonster, spend_sek: k.spend_sek, kop: k.kop, roas: k.roas, orsak: k.motivering, ...(k.yttre_handelse ? { yttre_handelse: k.yttre_handelse } : {}), ...(fran ? { uppgradering_fran: fran } : {}) };
+      return { kod: 'ETIKETT', datum: idag, annons: a.namn, marknad: a.marknad ?? jobb.marknad ?? 'SE', etikett: k.etikett, vecka: k.vecka, bedombar: k.bedombar, andel: k.andel ?? null, tillvaxt: k.tillvaxt ?? null, fonster: k.fonster, spend_sek: k.spend_sek, kop: k.kop, roas: k.roas, hook_rate: k.hook_rate ?? null, hold_rate: k.hold_rate ?? null, konv_lpv: a.konv_lpv ?? null, orsak: k.motivering, ...(k.yttre_handelse ? { yttre_handelse: k.yttre_handelse } : {}), ...(fran ? { uppgradering_fran: fran } : {}) };
     }
   }
   return { etiketter, unga };

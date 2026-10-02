@@ -4,26 +4,49 @@
   "guild_namn": "Bäverbutiken",
   "kanal_prefix": "ad-report-",
   "axel_discord": [
-    { "namn": "confident_otter_25993", "id": "1469423029783236689" },
-    { "namn": "ecom_chadking", "id": "1543537450335477836" }
+    {
+      "namn": "confident_otter_25993",
+      "id": "1469423029783236689"
+    },
+    {
+      "namn": "ecom_chadking",
+      "id": "1543537450335477836"
+    }
   ],
   "veckodag": "måndag",
   "cron_utc": "0 1 * * 1",
   "cron_om": "Måndag 03:00 CEST = 09:00 Manila, efter nattvakten (00:01) och Matstrumporkungen (söndag 07:00). Vinter: 0 2 * * 1 för samma svenska tid.",
-  "grind": { "spend_sek": 300, "kop": 3, "om": "bedombar = spend ≥ 300 kr OCH köp ≥ 3 (ANALYSMETOD). Under grinden visas etiketten men inte hook/hold." },
+  "grind": {
+    "spend_sek": 300,
+    "kop": 3,
+    "om": "bedombar = spend ≥ 300 kr OCH köp ≥ 3 (ANALYSMETOD). Under grinden visas etiketten men inte hook/hold."
+  },
   "ingen_leverans_sek": 10,
   "hitrate_veckor": 5,
-  "hook_lag": 0.30,
+  "hook_lag": 0.3,
   "gren_agent": "claude/daily-agent-discussion-uos5df",
   "gren_agent_om": "Bäverbutikens och CaraShells etiketter skrivs av nattvakten på den grenen (agent/budgetlogg.jsonl). Rapporten hämtar filen med git fetch + git show vid varje körning, checkar aldrig ut grenen.",
   "verksamheter": {
-    "baverbutiken": { "loggkalla": "agent" },
-    "carashell": { "loggkalla": "agent" },
-    "matstrumpor": { "loggkalla": "matstrumpor" }
+    "baverbutiken": {
+      "loggkalla": "agent"
+    },
+    "carashell": {
+      "loggkalla": "agent"
+    },
+    "matstrumpor": {
+      "loggkalla": "matstrumpor"
+    }
   },
   "data": {
     "actions": "redigerarrapport/data/actions.jsonl",
     "poster": "redigerarrapport/data/poster.jsonl",
     "om": "actions.jsonl: ett item per redigerare och vecka (index i action-items.json) så samma item aldrig ges två gånger. poster.jsonl: vad som postades, var och när (meddelande-id), som tillbakaläsning. Båda committas."
+  },
+  "produktagare": {
+    "Enginecover_": "Motorhölje",
+    "Trimmerbelt_": "Axelbälte",
+    "Beachslippers_": "Strandtofflor",
+    "Seatcover_": "Sätesöverdrag",
+    "_om": "Produktägarreserven: bara skalningsprodukterna (products.json scaling: true). Prefixet i kontot → produktnamnet i commission/produkter.json → ansvarig (Notion-id) → team.json. Deras hubbar är arkiverade (404 sedan 2026-09-30); så betalas commission i dag. Posten säger 'ads on a product you own in the test center'."
   }
 }

@@ -11,6 +11,11 @@ planen vi bygger efter. Inget är byggt än.
 
 ---
 
+> **Läget 2026-10-02 kväll: byggt och torrkört, inte postat.** Koden ligger i
+> den här mappen (`README.md` har delarna, körningen och vad som återstår),
+> 71 tester gröna, W39 torrkörd: 21 av 59 bedömbara annonser fick en person
+> (36 %, upp från 8 %). Axels beslut i avsnitt 8. Rutinen byggs efter merge.
+
 ## 1. Det viktigaste fyndet: kopplingen annons → redigerare är flaskhalsen
 
 Mätt 2026-10-02 över ISO-veckorna W36–W40 (annonsens egen första vecka,
