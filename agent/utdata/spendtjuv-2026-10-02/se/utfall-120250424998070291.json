@@ -1,0 +1,37 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250425001690291",
+      "namn": "Kamadohuven_PD_1_H3",
+      "status": "ACTIVE",
+      "spend": 1022.68,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 1022.68,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 1010.9099999999999,
+    "intakt": 648.9999595200001,
+    "kop": 1,
+    "roas": 0.6419957855001931
+  },
+  "break_even": 1.5134985884118712,
+  "kampanj_spend": 2033.43,
+  "tjuvSpend": 1022.68,
+  "tjuvAndel": 0.5029334670974658,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 0,64 mot break-even 1,51 (1 011 kr, 1 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120250424998070291",
+  "kampanj_namn": "Kamadohuven | BE ROAS 1.62 | Launch 2026-09-30"
+}

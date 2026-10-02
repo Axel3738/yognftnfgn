@@ -1,0 +1,207 @@
+[
+  {
+    "kampanj_id": "120252500291200233",
+    "namn": "Tribuneponcho NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 16,
+    "break_even": 1.63,
+    "break_even_cpa": 433.12270660122704,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,47 (break-even 1,63 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120252500169420233",
+    "namn": "Dør- og Vindusalarm NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 16,
+    "break_even": 1.63,
+    "break_even_cpa": null,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,47 (break-even 1,63 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120252448770490233",
+    "namn": "Golfkalender NO",
+    "lage": "gron",
+    "dom_i_planen": "LAT_VARA",
+    "annonser": 23,
+    "break_even": 1.48,
+    "break_even_cpa": 536.4267792668919,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,33 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252444577580233",
+    "namn": "Rulleknivsliper NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 16,
+    "break_even": 1.62,
+    "break_even_cpa": null,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "STANG_AV",
+    "tjuvar": [
+      "Rulleknivsliper_NO_SP_1_H1 727.74 roas 0 NOLL_KOP",
+      "Rulleknivsliper_NO_SP_1_H2 532.64 roas 0 NOLL_KOP"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 833.09,
+      "intakt": 0,
+      "kop": 0,
+      "roas": 0
+    },
+    "raddade": [],
+    "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 833 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda."
+  },
+  {
+    "kampanj_id": "120252434667620233",
+    "namn": "Varmesete NO",
+    "lage": "gron",
+    "dom_i_planen": "LAT_VARA",
+    "annonser": 12,
+    "break_even": 1.63,
+    "break_even_cpa": 780.2104297505114,
+    "raddningar_14d": 1,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,47 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252434371440233",
+    "namn": "Verktøyhylle NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 16,
+    "break_even": 1.63,
+    "break_even_cpa": null,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "STANG_AV",
+    "tjuvar": [
+      "Verktoyhylle_NO_CS_1_H3 739.22 roas 0 NOLL_KOP"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 1225.9,
+      "intakt": 0,
+      "kop": 0,
+      "roas": 0
+    },
+    "raddade": [],
+    "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 1 226 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda."
+  },
+  {
+    "kampanj_id": "120252434076200233",
+    "namn": "Spikkesett NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 33,
+    "break_even": 1.63,
+    "break_even_cpa": 663.6071143374232,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "PAUSA_TJUVAR",
+    "tjuvar": [
+      "Spikkesett_NO_PD_1_H3 1571.01 roas 0.688525 UNDER_BE"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 445.22999999999996,
+      "intakt": 1081.68003278,
+      "kop": 1,
+      "roas": 2.4294859573254275
+    },
+    "raddade": [
+      {
+        "id": "120252434242340233",
+        "namn": "Spikkesett_NO_PD_2_1",
+        "status": "ACTIVE",
+        "spend": 156.34,
+        "roas": 6.918767,
+        "kop": 1,
+        "alder_dagar": 3,
+        "spend_7d": 156.34,
+        "roas_7d": 6.918767,
+        "backdagar_i_rad": null,
+        "etikett": null,
+        "etikett_datum": null,
+        "roas_livstid": 6.512222,
+        "intakt": 1081.68003278
+      }
+    ],
+    "motivering": "1 spendtjuv tog 78 % av spenden under break-even 1,63: Spikkesett_NO_PD_1_H3 (1 571 kr, ROAS 0,69). Resten av kampanjen ligger på ROAS 2,43 (445 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar."
+  },
+  {
+    "kampanj_id": "120252321093160233",
+    "namn": "Feiesett NO",
+    "lage": "gron",
+    "dom_i_planen": "LAT_VARA",
+    "annonser": 30,
+    "break_even": 1.62,
+    "break_even_cpa": 291.1539784557098,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [
+      "Sotarset_NO_PD_1_H2: BREAKTHROUGH (2026-09-28) med livstids-ROAS 2,72 över break-even — nåd. Dränering 7 d: −1 011 kr (tak 873 kr), back-dygn 3 (tak 5)."
+    ],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA). 1 annons(er) väntar (nåd eller ung)."
+  },
+  {
+    "kampanj_id": "120252183519570233",
+    "namn": "Takovertrekk Campingvogn NO",
+    "lage": "gron",
+    "dom_i_planen": "HOGZON_AVVAKTA",
+    "annonser": 79,
+    "break_even": 1.62,
+    "break_even_cpa": 855.2914601035386,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [
+      "Takovertrekk_NO_SP_4_H1: BREAKTHROUGH (2026-09-23) med livstids-ROAS 3,09 över break-even — nåd. Dränering 7 d: −9 257 kr (tak 2 566 kr), back-dygn 0 (tak 5)."
+    ],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA). 1 annons(er) väntar (nåd eller ung)."
+  }
+]

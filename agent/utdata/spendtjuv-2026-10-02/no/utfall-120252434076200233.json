@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252434081080233",
+      "namn": "Spikkesett_NO_PD_1_H3",
+      "status": "ACTIVE",
+      "spend": 1571.01,
+      "roas": 0.688525,
+      "kop": 1,
+      "alder_dagar": 3,
+      "spend_7d": 1571.01,
+      "roas_7d": 0.688525,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0.673852,
+      "intakt": 1081.67966025,
+      "trott_vinnare": false,
+      "orsak": "UNDER_BE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120252434242340233",
+      "namn": "Spikkesett_NO_PD_2_1",
+      "status": "ACTIVE",
+      "spend": 156.34,
+      "roas": 6.918767,
+      "kop": 1,
+      "alder_dagar": 3,
+      "spend_7d": 156.34,
+      "roas_7d": 6.918767,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 6.512222,
+      "intakt": 1081.68003278
+    }
+  ],
+  "rest": {
+    "spend": 445.22999999999996,
+    "intakt": 1081.68003278,
+    "kop": 1,
+    "roas": 2.4294859573254275
+  },
+  "break_even": 1.63,
+  "kampanj_spend": 2016.24,
+  "tjuvSpend": 1571.01,
+  "tjuvAndel": 0.7791780740388049,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 78 % av spenden under break-even 1,63: Spikkesett_NO_PD_1_H3 (1 571 kr, ROAS 0,69). Resten av kampanjen ligger på ROAS 2,43 (445 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120252434076200233",
+  "kampanj_namn": "Spikkesett NO | BE-ROAS 1,63 | 2026-09-29"
+}

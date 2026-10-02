@@ -1,0 +1,55 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252446272970233",
+      "namn": "Rulleknivsliper_NO_SP_1_H1",
+      "status": "ACTIVE",
+      "spend": 727.74,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 727.74,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    },
+    {
+      "id": "120252446288220233",
+      "namn": "Rulleknivsliper_NO_SP_1_H2",
+      "status": "ACTIVE",
+      "spend": 532.64,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 532.64,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 833.09,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.62,
+  "kampanj_spend": 2093.47,
+  "tjuvSpend": 1260.38,
+  "tjuvAndel": 0.602053050676628,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 833 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120252444577580233",
+  "kampanj_namn": "Rulleknivsliper NO | BE-ROAS 1,62 | 2026-09-29"
+}

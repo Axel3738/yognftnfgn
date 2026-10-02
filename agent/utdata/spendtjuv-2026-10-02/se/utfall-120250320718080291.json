@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250320728410291",
+      "namn": "ATVKapell_PD_1_H1",
+      "status": "ACTIVE",
+      "spend": 1943.43,
+      "roas": 0.297927,
+      "kop": 1,
+      "alder_dagar": 10,
+      "spend_7d": 6820.47,
+      "roas_7d": 1.477112,
+      "backdagar_i_rad": 4,
+      "etikett": "BREAKTHROUGH",
+      "etikett_datum": "2026-09-29",
+      "roas_livstid": 2.041544,
+      "intakt": 579.00026961,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250320724300291",
+      "namn": "ATVKapell_G_1_H1",
+      "status": "ACTIVE",
+      "spend": 54.03,
+      "roas": 10.716269,
+      "kop": 1,
+      "alder_dagar": 10,
+      "spend_7d": 145.11,
+      "roas_7d": 3.990076,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-29",
+      "roas_livstid": 3.751944,
+      "intakt": 579.00001407
+    }
+  ],
+  "rest": {
+    "spend": 358.75000000000006,
+    "intakt": 579.00001407,
+    "kop": 1,
+    "roas": 1.6139373214494772
+  },
+  "break_even": 1.5162573426529475,
+  "kampanj_spend": 2302.18,
+  "tjuvSpend": 1943.43,
+  "tjuvAndel": 0.8441694394009157,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 84 % av spenden under break-even 1,52: ATVKapell_PD_1_H1 (1 943 kr, ROAS 0,30). Resten av kampanjen ligger på ROAS 1,61 (359 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120250320718080291",
+  "kampanj_namn": "ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22"
+}
