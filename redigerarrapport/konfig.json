@@ -42,11 +42,9 @@
     "poster": "redigerarrapport/data/poster.jsonl",
     "om": "actions.jsonl: ett item per redigerare och vecka (index i action-items.json) så samma item aldrig ges två gånger. poster.jsonl: vad som postades, var och när (meddelande-id), som tillbakaläsning. Båda committas."
   },
-  "produktagare": {
-    "Enginecover_": "Motorhölje",
-    "Trimmerbelt_": "Axelbälte",
-    "Beachslippers_": "Strandtofflor",
-    "Seatcover_": "Sätesöverdrag",
-    "_om": "Produktägarreserven: bara skalningsprodukterna (products.json scaling: true). Prefixet i kontot → produktnamnet i commission/produkter.json → ansvarig (Notion-id) → team.json. Deras hubbar är arkiverade (404 sedan 2026-09-30); så betalas commission i dag. Posten säger 'ads on a product you own in the test center'."
-  }
+  "utan_redigerare": [
+    "josh",
+    "annabelle"
+  ],
+  "utan_redigerare_om": "Axels beslut 2026-10-02: Josh och Annabelle gör andra uppgifter och får ingen rapport. De står inte som Ansvarig på någon hubbrad (0 av 554) och deras fyra skalningshubbar är arkiverade. Produktägarreserven (commission/produkter.json) fanns bara för dem och är borttagen."
 }

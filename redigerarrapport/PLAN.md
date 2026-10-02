@@ -236,9 +236,11 @@ inte automatiskt (kursen har inget format för det).
    mention. Posten går i Bäverbutikens server för alla.
 4. **`tools/discord-rapport.mjs` och "Spend: N SEK" i OPS-servrarnas `#ads`:**
    inte avgjort än. Rapporten här kopierar inte den raden.
-5. **De olästa lektionerna: ja**, Axel lade in `SKOOL_EMAIL` och
-   `SKOOL_PASSWORD` i Environments 2026-10-02. Läses med `tools/skool/` så
-   snart nycklarna syns i en session.
+5. **De olästa lektionerna: lästa 2026-10-02** (`docs/os/evolve/REDIGERARE-LEKTIONER.md`),
+   ingen regel ändrad.
+6. **Josh och Annabelle får ingen rapport** (Axel 2026-10-02: "dom gör andra
+   uppgifter"). `konfig.json` → `utan_redigerare`. Produktägarreserven är borttagen.
+7. **Första posten går måndag 2026-10-05 via rutinen**, inte som testpost.
 
 ## 9. Olästa lektioner som kan ändra reglerna
 

@@ -24,11 +24,11 @@ aldrig Meta själv och skriver aldrig i Notion.
 | `kallor.mjs` | Etiketterna ur `matstrumpor/logg.jsonl` och `agent/budgetlogg.jsonl` (grenen `claude/daily-agent-discussion-uos5df`, via `git fetch --depth 1` + `git show`, ~1 s, cachad i `output/`) till EN radform; grinden räknas om till 300 kr OCH 3 köp | `matstrumpor/etikett.mjs` RANG, `stonebite/data.mjs` kampanjTillhor |
 | `hubbar.mjs` | Alla hubbar integrationen ser (39 kandidater, 26 lästa, 13 hoppade med orsak), alla rader med Ansvarig oavsett status, Jerzee via kommentar; cache `output/hubbar.json`; ~55 s utan kommentarssteget, ~5 min med | `tools/notion-kalla.mjs`, `commission/notion.mjs`, `commission/kommentarer.mjs` |
 | `namn.mjs` + `no-prefix.json` | Kontots namn → hubbradens: marknadskod, CaraShells speglar (+100), 46 NO-prefix med belägg, Matstrumpors arbetsnamn ur loggens UPPLADDAD/OMDOPT | `commission/koppling.mjs`, `tools/ops-spegla.mjs`, `factory/opsmarknader.mjs` |
-| `kor.mjs` | Kedjan: vecka → koppling (hubbrad med EN Ansvarig; basregeln när alla H-varianter har samma; produktägaren bara för de fyra skalningsprodukterna) → grupp per klipp över marknader → post → fil → Discord → minnet | allt ovan |
+| `kor.mjs` | Kedjan: vecka → koppling (hubbrad med EN Ansvarig; basregeln när alla H-varianter har samma) → grupp per klipp över marknader → post → fil → Discord → minnet | allt ovan |
 | `post.mjs` | Texten (engelska): bästa först, en förlorare, resten som en rad, unga, ingen leverans, hit rate som bråk, ett action item, frågan tillbaka; spärren mot kronor/ROAS/köp/tankstreck | `matstrumpor/etikett.mjs` formateraFrekvens |
 | `action-items.json` | 21 action items, 4–5 per utfall, ur kursens hantverksregler och playbooken | |
 | `discord.mjs` | Privat kanal `ad-report-<förnamn>` i Bäverbutikens server (@everyone nekas, redigeraren + Axels två konton + boten), post med `<@id>`, delning under 1 900 tecken | `annonsvakt/regler.mjs` delaText |
-| `konfig.json` | Guild, kanalprefix, Axels id:n, grinden, cron, produktägarprefixen | |
+| `konfig.json` | Guild, kanalprefix, Axels id:n, grinden, cron, `utan_redigerare` (Josh och Annabelle, Axels beslut 2026-10-02) | |
 | `data/actions.jsonl`, `data/poster.jsonl` | Minnet: vilket item som gavs (aldrig samma två gånger), vad som postades var | committas |
 
 ## Mätt 2026-10-02 (W39, torrt)
@@ -39,8 +39,8 @@ aldrig Meta själv och skriver aldrig i Notion.
   tillskrivs aldrig videoredigeraren).
 - Poster: Carl 13 klipp (8 bedömbara, breakthrough), Jerzee 33 klipp (13
   bedömbara, breakthrough), Gilz 11 klipp (10 utan leverans), Jasper 3 klipp.
-  Josh och Annabelle: inga annonser — de står inte som Ansvarig på någon
-  hubbrad (0 av 554), och de fyra skalningsprodukterna hade inga nya etiketter.
+  Josh och Annabelle får ingen rapport (Axels beslut 2026-10-02: de gör andra
+  uppgifter; `konfig.json` → `utan_redigerare`).
 - Hook/hold visas inte när talet är ≥ 90 % (mätfel eller bildannons; agent-
   loggen bär 27 sådana), och `utford_som_briefad` är "okänd" på alla rader i
   dag ⇒ "Cut as briefed: not measured yet".
@@ -53,10 +53,7 @@ aldrig Meta själv och skriver aldrig i Notion.
    fast session med repot som källa) byggs EFTER att grenen mergats till
    `main` — rutinerna klonar `main`.
 2. Gilz är inte med i Bäverbutikens server (ingen post förrän han bjudits in).
-3. Josh och Annabelle får bara rapport om de står som Ansvarig på sina rader,
-   eller om Axel säger att produktägaren i `commission/produkter.json` gäller
-   fler produkter än de fyra skalningsprodukterna.
-4. `/matstrumporkungen` skriver hook/hold/konv_lpv i ETIKETT-raden sedan
+3. `/matstrumporkungen` skriver hook/hold/konv_lpv i ETIKETT-raden sedan
    2026-10-02 (`matstrumpor/kor.mjs` rad()); äldre rader saknar dem.
-5. Täckningen över 80 % kräver att hubbraderna bär Ansvarig — redigerarnas
+4. Täckningen över 80 % kräver att hubbraderna bär Ansvarig — redigerarnas
    egen rutin, inte kod.

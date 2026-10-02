@@ -15,10 +15,9 @@
 // koppla() (person, via, orsak) → post.mjs (texten) → discord.mjs.
 //
 // Regler: redigerarrapport/PLAN.md. Hellre okopplad än fel person: en rad med
-// två Ansvariga ger ingen. Produktägaren i commission/produkter.json används
-// BARA för de fyra skalningsprodukterna (products.json scaling: true) — deras
-// hubbar är arkiverade (404 sedan 2026-09-30) och det är så commission betalar
-// Josh och Annabelle; posten säger då "ads on a product you own".
+// två Ansvariga ger ingen, och bara hubbradens Ansvarig räknas (ingen
+// produktägarreserv — Josh och Annabelle får ingen rapport, Axels beslut
+// 2026-10-02, konfig.json utan_redigerare).
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -66,29 +65,15 @@ export function lasPersoner(team) {
   return { personer, notionTill, redigerare: [...personer.values()].filter((p) => p.roll === 'editor') };
 }
 
-/** Produktägarreserven: annonsprefix → person, bara skalningsprodukterna. */
-export function produktagareKarta({ products, produkter, notionTill, prefixTillProdukt }) {
-  const ut = new Map();
-  const lista = Array.isArray(products?.products) ? products.products : Array.isArray(products) ? products : Object.values(products ?? {});
-  for (const p of lista) {
-    if (!p?.scaling || !p.creative_prefix) continue;
-    const produktnamn = prefixTillProdukt?.[p.creative_prefix];
-    const post = (produkter?.produkter ?? []).find((x) => x.namn === produktnamn);
-    const person = post ? notionTill.get(post.ansvarig) : null;
-    if (person) ut.set(p.creative_prefix.toLowerCase(), person);
-  }
-  return ut;
-}
 
 // ─── kopplingen ─────────────────────────────────────────────────────────
 
 /**
  * Vem gjorde annonsen? Returnerar { person, via, orsak, kandidat }.
  *  via: 'hubb' (rad med exakt EN Ansvarig) · 'bas' (kontots namn utan
- *  variant, alla H-varianter i hubben har SAMMA Ansvarig) · 'produkt'
- *  (skalningsprodukt, commission/produkter.json) · null med orsak.
+ *  variant, alla H-varianter i hubben har SAMMA Ansvarig) · null med orsak.
  */
-export function koppla(rad, { idx, namnOpt, notionTill, produktagare = new Map() }) {
+export function koppla(rad, { idx, namnOpt, notionTill }) {
   const namnet = kallnamn(rad.annons, { konto: rad.konto, kampanj: rad.kampanj, ...namnOpt });
   const { kandidater } = namnet;
   const extra = { namnvia: namnet.via ?? null, marknad: namnet.marknad ?? null, svenskt: svensktNamn(rad.annons, kandidater, namnOpt) };
@@ -108,8 +93,6 @@ export function koppla(rad, { idx, namnOpt, notionTill, produktagare = new Map()
   }
   const bas = basKoppling(kandidater, idx, notionTill);
   if (bas) return { ...bas, ...extra };
-  const prefix = String(rad.annons ?? '').toLowerCase();
-  for (const [pre, person] of produktagare) if (prefix.startsWith(pre)) return { person, via: 'produkt', orsak: null, kandidat: rad.annons, ...extra };
   return { person: null, via: null, orsak: 'ingen hubbrad', kandidat: kandidater[0] ?? null, ...extra };
 }
 
@@ -242,10 +225,9 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
   const konfig = lasJson(KONFIGFIL);
   const vecka = arg.vecka ?? senasteHelaVeckan();
   const team = lasJson(join(ROT, 'dashboard', 'data', 'team.json'));
-  const { notionTill, redigerare } = lasPersoner(team);
-  const produkter = lasJson(join(ROT, 'commission', 'produkter.json'));
-  const products = lasJson(join(ROT, 'products', 'products.json'));
-  const produktagare = produktagareKarta({ products, produkter, notionTill, prefixTillProdukt: konfig.produktagare ?? {} });
+  const { notionTill, redigerare: allaRedigerare } = lasPersoner(team);
+  const utan = new Set(konfig.utan_redigerare ?? []);
+  const redigerare = allaRedigerare.filter((p) => !utan.has(p.id));
 
   // 1. etiketterna
   const kallor = lasKallor({ hamta: !arg.utanFetch });
@@ -274,7 +256,7 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
   const hitFran = plusDagar(veckan.till, -(Number(konfig.hitrate_veckor ?? 5) * 7 - 1));
   const relevanta = kallor.rader.filter((r) => r.fonster_slut && r.fonster_slut >= hitFran && r.fonster_slut <= veckan.till);
   const kopplat = new Map();
-  for (const r of relevanta) kopplat.set(annonsnyckel(r), koppla(r, { idx, namnOpt, notionTill, produktagare }));
+  for (const r of relevanta) kopplat.set(annonsnyckel(r), koppla(r, { idx, namnOpt, notionTill }));
 
   const veckansAlla = [...veckan.forsta, ...veckan.uppgraderingar];
   const bedombara = veckansAlla.filter((r) => r.bedombar);
@@ -315,8 +297,6 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
     const hitrate = hitrateFor(p.id, relevanta, kopplat, { till: veckan.till, veckor: Number(konfig.hitrate_veckor ?? 5) });
 
     let text = byggPost({ redigerare: p, vecka: { iso: veckan.vecka, fran: veckan.fran, till: veckan.till }, annonser, unga: unga.map((u) => ({ annons: u.annons, d0: u.d0 })), hitrate, action, forraAction });
-    const viaProdukt = annonser.filter((a) => a.via === 'produkt').length;
-    if (viaProdukt) text = text.replace('\n\nBest first:', `\n\n(${viaProdukt === annonser.length ? 'These are' : `${viaProdukt} of these are`} ads on a product you own in the test center, so the cut may be someone else's.)\n\nBest first:`);
     kontrollera(text);
     if (serUtSomSvenska(text.replace(/[A-Za-zåäöÅÄÖ0-9_]+_[A-Za-z0-9_]+/g, ''))) skriv(`⚠️ ${p.id}: posten ser svensk ut för engelskspärren — läs den innan den postas`);
     const fil = join(UTMAPP, veckan.vecka, `${p.id}.md`);
@@ -345,6 +325,7 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
 
   // 6. sammanfattningen
   skriv('');
+  if (utan.size) skriv(`Utan rapport (konfig utan_redigerare): ${[...utan].join(', ')}`);
   for (const u of utfall) {
     if (!u.post) { skriv(`${u.id}: ingen post (${u.orsak})`); continue; }
     skriv(`${u.id}: ${u.klipp} klipp i ${u.annonser} annonser (${u.bedombara} bedömbara, ${u.ingen_leverans} klipp utan leverans, ${u.unga} unga) · via ${u.via} · högsta ${u.hogsta ?? '-'} · action ${u.action ?? '-'} · hit rate ${u.hitrate.traff}/${u.hitrate.levererade}${u.discord ? ` · Discord: ${u.discord}` : ''}`);

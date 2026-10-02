@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { koppla, basKoppling, grupperaFor, hitrateFor, toppPerKampanj, tolkaArgv, senasteHelaVeckan, lasPersoner, produktagareKarta, AR_FELSPRAK, marknadFor, svensktNamn } from '../kor.mjs';
+import { koppla, basKoppling, grupperaFor, hitrateFor, toppPerKampanj, tolkaArgv, senasteHelaVeckan, lasPersoner, AR_FELSPRAK, marknadFor, svensktNamn } from '../kor.mjs';
 import { kallnamn } from '../namn.mjs';
 import { byggRadindex } from '../namn.mjs';
 import { annonsnyckel } from '../kallor.mjs';
@@ -54,16 +54,9 @@ test('basregeln: kontots namn utan variant kopplar bara när ALLA varianter har 
   assert.equal(koppla(rad('Solcellslampa_PD_3'), { idx, namnOpt, notionTill }).via, 'bas');
 });
 
-test('produktägaren bara för skalningsprodukterna, via prefixet', () => {
-  const karta = produktagareKarta({
-    products: { products: [{ id: 'axelbaltet', scaling: true, creative_prefix: 'Trimmerbelt_' }, { id: 'x', scaling: false, creative_prefix: 'Gravsten_' }] },
-    produkter: { produkter: [{ namn: 'Axelbälte', ansvarig: 'n-josh' }, { namn: 'Gravsten', ansvarig: 'n-josh' }] },
-    notionTill, prefixTillProdukt: { Trimmerbelt_: 'Axelbälte', Gravsten_: 'Gravsten' },
-  });
-  assert.equal(karta.size, 1);
-  const k = koppla(rad('Trimmerbelt_SP_2_H1'), { idx, namnOpt, notionTill, produktagare: karta });
-  assert.equal(k.person.id, 'josh'); assert.equal(k.via, 'produkt');
-  assert.equal(koppla(rad('Gravsten_CS_1_H1'), { idx, namnOpt, notionTill, produktagare: karta }).person, null);
+test('ingen produktägarreserv: en annons utan hubbrad kopplas till ingen', () => {
+  const k = koppla(rad('Trimmerbelt_SP_2_H1'), { idx, namnOpt, notionTill });
+  assert.equal(k.person, null); assert.equal(k.orsak, 'ingen hubbrad');
 });
 
 test('samma klipp i flera marknader blir en grupp med en etikett per marknad; FELSPRAK utesluts', () => {
