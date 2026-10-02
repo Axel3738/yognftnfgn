@@ -66,6 +66,15 @@ geo-riktat.
 
 ★ Sessionens val: H1 (Wolt-trion känner alla igen). H2 bara geo-riktat mot Stockholm; Falun/Karlstad får "var åttonde" (12 %).
 
+⛔ **Axels dom 2026-10-02 på H1 som videostart: "känns onaturlig och konstig".**
+Han vill ha "något sorts mysterium … som gör att man faktiskt vill kolla",
+kopplat till avslöjandet. Därför: **en faktarad är aldrig första raden i en
+video på Nathalie-kroppen.** Videons start är en gåta som bilden löser när
+vännen rullar upp en bit (brief `MATSTRUMP_sushi_curiosity_ugc_066_v1`,
+batch #4). Faktan lever vidare där den passar: som bild i d3-layouten (F7
+först), som rubrik i Ads Manager, i Spoks-mejlen och i kommentarssvar. F1
+står kvar som fynd, men `[struken som videostart 2026-10-02]`.
+
 ⚠️ **Anmärkning som gäller alla tolv tabellerna:** sonnet avslutar många rader med "Ge tio sushibitar"/"Ge sushi-strumpor". Det är en krycka: FAKTUMET är hooken (sekund 0–3), produktraden är andra takten. I regi: klipp raden efter punkten, låt bilden visa lådan.
 
 ### 2. PRESENTKORTET ÄR DET MAN KÖPER NÄR MAN INTE VET
@@ -410,9 +419,10 @@ rätt (fyra finns), och mottagaren tycker inte det är lat.
 | M5 Fem sorter | F12 (repriser välkomna, fyra rätter) | Till förra årets köpare via Spoks, inte som kall annons |
 | Tro-lagret | F3 (givaren oroar sig mer än mottagaren), F4 (44 % vill bli överraskade), F7 (skämtet på förpackningen, inte personen) | Sänker köparens insats i stället för att höja den |
 
-**Rekommenderad ordning för test (sessionens dom):**
-1. **F1 Varannan svensk har sushi som favoriträtt** som ny öppning på Nathalie-kroppen eller som bild i d3-layout. Mest svensk, mest konkret, och den rättar gissningen i alla briefer.
-2. **F7 Praktiskt eller roligt? Båda** som bild (57/25/23-siffrorna) i `bilder`-adsetet: bild + erbjudande är kontots näst bästa recept, och siffrorna är tre veckor gamla.
+**Rekommenderad ordning för test (sessionens dom, rättad 2026-10-02 efter Axels nej till faktaraden som videostart):**
+0. **Gåtan som öppning på Nathalie-kroppen** (`066`, batch #4): en rad som planterar något omöjligt om sushi och som bilden löser när vännen rullar upp en bit. Ingen siffra i sekund 0–3.
+1. **F1 Varannan svensk har sushi som favoriträtt** `[struken som videostart 2026-10-02]` — bara som bild i d3-layout, rubrik eller mejl. Den rättar fortfarande gissningen "sushiälskaren" i alla briefer.
+2. **F7 Praktiskt eller roligt? Båda** som bild (57/25/23-siffrorna) i `bilder`-adsetet: bild + erbjudande är kontots näst bästa recept, och siffrorna är tre veckor gamla. Första faktabilden.
 3. **F9 "Innan Kalle Anka"** som julöppning (`jul_video`/`jul_bilder`), när jul-adseten får leverans.
 4. **F2 Presentkortet** som rubrik på en bild till USA-/WW-kampanjerna (talen är amerikanska) och som Spoks-mejl i Sverige med YouGov-globalsiffran.
 5. **F8 Locket** som regi i varje ny video (ingen egen annons): första bildrutan är mottagarens blick genom locket.

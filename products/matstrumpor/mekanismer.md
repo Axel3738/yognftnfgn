@@ -311,9 +311,12 @@ en hook snarare än en mekanism (M5), och en är förbrukad (M4). Sessionens
 första ordning (M3 först, M4 trea) stod på två felaktiga påståenden om vad
 kontot kört; skeptikern läste transkripten och fällde dem.
 
-1. **M2 Duka fram den**: den enda som ingen annons burit, och den enda som i
-   sig är en scen med riktig mottagare. Priset är en ny inspelning
-   (Axels beslut). Skrivs som brief först när han sagt ja till inspelningen.
+1. **M2 Duka fram den** `[använd i batch #4]`: den enda som ingen annons burit, och den enda som i
+   sig är en scen med riktig mottagare. Priset är en ny inspelning.
+   ✅ **Axels ja 2026-10-02** ("JÄÄÄÄVLAR du är smart … Ja skriv briefen"):
+   brief `MATSTRUMP_sushi_gift_ugc_065_v1` i `batch-04/`, med en svensk
+   inspelningsplan till Nathalie. Raden stannar i Draft tills hennes material
+   finns (`NEW FOOTAGE`-källor).
 2. **M1 Locket**: ett kamerabeslut på Nathalie-kroppen (blicken genom locket
    i sekund 0–3). Men 061 och 063 står redan på samma ruta; läs deras
    etiketter först. Lyfter de hook rate får locket en egen videolinje, och

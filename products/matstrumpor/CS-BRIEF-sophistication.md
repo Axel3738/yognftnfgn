@@ -65,10 +65,16 @@ exists); "socks are the most unwanted gift" (no survey 2023–2026 says so).
 - Educate, never scare. Relationship research is stated, never promised.
 - Real creator, real recipient, real reaction. No generated people.
 
-## 5. What we test first
+## 5. What we test first (owner's decisions 2 Oct 2026)
 
-1. Fact 1 (the Wolt top three) as a new opening on the Nathalie body, in
-   adset `09-17 UGC`.
-2. Fact 7 (practical or fun? both) as an image in the D3 layout with the offer.
-3. Fact 9 ("before Kalle Anka") as the Christmas opening in `jul_video`.
-4. Mechanism "serve it" as a fresh shoot, if the owner approves it.
+**A fact is never the first line of a video.** The owner's verdict on the
+Wolt line as an opening: it reads as unnatural. The video opens with a
+riddle the picture answers at the reveal (the friend unrolls a piece). Facts
+go into images, headlines and e-mails instead.
+
+1. Brief 066: the riddle opening on the Nathalie body, in adset `09-17 UGC`.
+   One line that plants something impossible about sushi; the unroll explains it.
+2. Brief 065: the "serve it, don't hand it over" shoot with Nathalie
+   (approved by the owner). Row stays in Draft until her footage exists.
+3. Fact 7 (practical or fun? both) as an image in the D3 layout with the offer.
+4. Fact 9 ("before Kalle Anka") as the Christmas opening in `jul_video`.

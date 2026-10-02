@@ -171,13 +171,16 @@ behörighetsreglerna matchar på första ordet.
    **Varifrån den nya vinkeln kommer (2026-10-01):** ur
    `products/matstrumpor/mekanismer.md` (§4, ordningen efter skeptikern) och
    `products/matstrumpor/ny-information.md` (testordningen längst ner), i den
-   ordningen, aldrig ur huvudet. Första nya vinkeln är fynd 1 där (56 % av
-   svenskarna har sushi som favoriträtt, sushi topp tre i takeaway) som ny
-   öppning på Nathalie-kroppen, sedan fynd 7 (praktiskt eller roligt? båda)
-   som bild. Ett frö som använts märks `[använd i batch #N]` i filen. Är alla
-   frön använda: kör `/ny-information matstrumpor <url>` igen innan ronden
-   hittar på något. Hooken bär siffran exakt som källan skriver den och
-   landet när siffran inte är svensk.
+   ordningen, aldrig ur huvudet. ⛔ **En faktarad är aldrig första raden i en
+   video** (Axel 2026-10-02 om Wolt-raden som start på Nathalie-kroppen:
+   "känns onaturlig och konstig"): videons start är en gåta som bilden löser
+   vid avslöjandet (`066` är förlagan), och faktan går som bild (fynd 7 först),
+   rubrik i Ads Manager eller Spoks-mejl. Mekanismen "duka fram den" är brief
+   `065` (ny inspelning, Axels ja 2026-10-02). Ett frö som använts märks
+   `[använd i batch #N]` i filen. Är alla frön använda: kör
+   `/ny-information matstrumpor <url>` igen innan ronden hittar på något.
+   En siffra i en bild eller rubrik skrivs exakt som källan skriver den och
+   med landet när siffran inte är svensk.
 
    Per utfall:
    - **Breakthrough** → tre iterationer inom 14 dagar: nya hookar (I1), längre
