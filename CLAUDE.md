@@ -88,6 +88,11 @@ kommer Bruce att tro att han ska redigera videorna, och då kommer han ju att
 redigera dem"). Briefen bor i repot, kreatören får en svensk sida, och raden
 skapas först när Axel lagt råklippen i Drive. Omklipp ur befintligt material får
 ligga i hubben som vanligt. (065 och 068 arkiverades samma dag av det skälet.)
+⛔ **Ett kreatörsmanus är ett sammanhängande tal, aldrig hopfogade rader**
+(Axels dom samma dag på 068:s första version: "det kanske är ett optimalt
+skript enligt research men inte genom att lyssna på"). Sonnet skriver talet
+som ett stycke, sessionen läser det högt, sedan delas det per bild — regeln
+står i `docs/copy-regler.md` → "Talet läses högt".
 ⚠️ **Annonsnumren räknas ur kontot OCH hubben, aldrig ur en fil ensam**
 (mätt 2026-09-24/25: `--namn` gav 048 tre gånger — rond 2:s Draft-briefer
 fanns bara i hubben, och uppladdaren gav Gilz mini-clips samma nummer dagen

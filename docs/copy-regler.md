@@ -148,3 +148,17 @@ bild.
 Tre-frågorstestet ersätter inte analysmetoden (`docs/os/ANALYSMETOD.md`) —
 den dömer annonser på data. Det här dokumentet dömer rader innan de får
 kosta pengar.
+
+## Talet läses högt innan det går ut (Axels dom 2026-10-02)
+
+Ett kreatörsmanus är ETT sammanhängande tal, inte en rad påståenden efter
+varandra. Axel läste det första manuset till "sushin utan bäst före-datum"
+högt — sju vinnarrader hopfogade — och dömde: "Det kanske är ett optimalt
+skript enligt research men inte genom att lyssna på." Regeln:
+
+- Skriv talet som ett stycke först, där varje mening leder till nästa
+  (bindeord som så, sen, och, men, ju är tillåtna och testas inte).
+- Dela upp det per bild EFTERÅT. Aldrig tvärtom: sätt aldrig ihop godkända
+  rader till ett manus.
+- Läs det högt innan det lämnar sessionen. Hackar en övergång, skriv om.
+- Tre-frågorstestet gäller fortfarande varje mening som bär ett påstående.
