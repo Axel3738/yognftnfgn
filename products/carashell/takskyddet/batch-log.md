@@ -3272,3 +3272,49 @@ Discord-rapport postad i `#annons-uppladdning` (`1555593435623456870`).
 `action_axel` skrevs om för hand av samma skäl som 2026-09-30 och 2026-10-01:
 fars dag-raderna hör inte i ACTION NEEDED, för de kan aldrig speglas och det är
 inte Axels beslut. Bara `GT_11_H1` står kvar där.
+
+## USA-runda 19 — 2026-10-02 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i båda statusarna.** `SE-ACTIVE to be translated` 0 rader, `Approved`
+**74** rader (två fler än i går) som alla redan bär sin US-annons. Ingenting
+översatt, ingenting uppladdat, ingen HeyGen-kredit rörd. De två nya är
+`CaraShellRoof_US_OB_121_1` och `_OB_115_1` — speglingens rader, uppladdade av
+en annan session i går kväll (`306624f5`), så de kom in i `Approved` redan
+färdiga.
+
+### Verktyget rättat i går kväll av en annan session: målkampanjen lästes som svensk
+
+`tools/ops-till-meta.mjs` körde registrets fasta målkampanj genom
+`filtreraPaMarknad()`, och eftersom "Taköverdrag 5 reasons USA TEST" inte bär
+någon marknadskod i namnet dömdes den som **SE** och uppladdningen stoppade.
+Rättningen (`624e3d2a`): är kampanjen registrets `malkampanj`-id ÄR den
+marknadens per definition — marknadsfiltret hoppas för just den. Samma
+grundfel som mitt eget fynd i går, en annan plats: **ett namnmönster är inte en
+marknadsvakt och inte heller en marknadsdom.** Kampanjer ägaren bygger i appen
+heter vad han vill.
+
+### Marknadsvakten (steg 6b), körd fast kön var tom
+
+Allt grönt, med vaktens egna tal:
+
+| | |
+|---|---|
+| Kampanjer | 2 ACTIVE — `… lagerrensning – kopia` (12 adsets, 87 annonser, **8 000 kr/dag**) och `Taköverdrag 5 reasons USA TEST` (1 adset, 22 annonser, **12 000 kr/dag**) |
+| Adsets | **13 av 13** bär `facebook, instagram` / `feed` / `stream` — inget rättat |
+| Spend i går | **17 380 kr** på 6 placeringar, allt i flödet |
+| Spend i dag | **10 989 kr** på 6 placeringar, allt i flödet |
+| Kundvy | startsida, båda landningssidorna, fyra produktsidor och kassan engelska; kassan förvalde United States, 0 svenska rader |
+
+Budgetfördelningen har alltså vänt sedan i går: den nya kampanjen bär nu
+12 000 kr/dag mot den gamlas 8 000 (i går 10 000 mot 6 000). Nattvakten sänkte
+dessutom `LISTICLE` 2 800 → 2 000 kr natten till i dag (`73d8e8cf`).
+
+### Rapporterat, inte rört
+
+- Gamla `CARASHELL_US_Taköverdrag …` är fortfarande PAUSED med 2 246 kr spend —
+  ägarens beslut, nionde rundan i rad.
+- Annonsvakten larmade 15:45 i dag på `CaraShellRoof_US_SP_2_1 – kopia`:
+  3 426 kr utan köp (`e4fe1ef3`). Den här rutinen är läs-bar och rörde ingen
+  annons; larmet ligger redan hos Axel.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555599332177215520`).

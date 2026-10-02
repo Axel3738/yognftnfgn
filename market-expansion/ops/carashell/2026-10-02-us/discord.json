@@ -1,0 +1,22 @@
+{
+ "brand": "CaraShell",
+ "butik": "carashell/takskyddet",
+ "datum": "2026-10-02",
+ "lage": "brief",
+ "server": "CaraShell — OPS",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "🇺🇸 US translation round: the queue was empty in both statuses — nothing new to translate today",
+  "SE-ACTIVE to be translated: 0 rows. Approved: 74 rows (two more than yesterday), every one already live in the US account",
+  "Market watch: 13 of 13 ad sets on the right placements across both campaigns, 109 ads active",
+  "Spend yesterday 17 380 kr and today 10 989 kr across 6 placements — all of it inside the feed, nothing outside",
+  "Homepage, both landing pages, all four product pages and the checkout read as English; checkout defaults to United States",
+  "The uploader no longer reads the register's target campaign as a Swedish one: a campaign named Taköverdrag 5 reasons USA TEST carries no market code, and the market filter rejected it (fixed in tools/ops-till-meta.mjs by another session yesterday evening)"
+ ],
+ "varningar": [
+  "The old CARASHELL_US_Taköverdrag campaign is still PAUSED with 2 246 kr spend — owner's decision, nothing uploaded there.",
+  "Budgets side by side: the lagerrensning campaign 8 000 kr/day, the new 5 reasons campaign 12 000 kr/day.",
+  "The ad watch already alarmed today 15:45 on CaraShellRoof_US_SP_2_1 – kopia: 3 426 kr with no purchase. Read-only here, no ad was touched."
+ ],
+ "nasta_korning": "2026-10-03"
+}
