@@ -1249,3 +1249,23 @@ US 1,22 · GB 1,17 när planen skrevs 2026-09-27, 1,182 / 1,137 vid granskningen
 citera aldrig ett gammalt tal). Byggs
 som `/matstrumpor-marknader` när Axel sagt budget per land — augustis test låg under
 break-even i alla tre länder, och den frågan är hans.
+
+## Produktbeskrivningen på tretton språk (2026-10-02)
+
+Den svenska beskrivningen på `sushi-strumpor` byttes 2026-10-02 (Fables copy i Axels struktur
+Problem → gif → Lösning → gif → Funktioner → bild → Garanti, utan statistikmeningar;
+`matstrumpor/produktsida.mjs`). Samma dag fick de tretton språken den nya texten plus de tolv
+nycklar som tillkommit sedan 09-30 (paketkorten `paket.sushi-paket-1/2/4.*`, `policy.LEGAL_NOTICE.body`,
+`sida.enkat.title`) och startsidans rubrik med `<em>`. Flödet: `underlag.mjs` → källan
+`output/delar/2026-10-02-sv.json` (14 nycklar) → en sonnet-översättare per språk → en skeptisk
+infödd granskare per språk som rättade direkt i `output/delar/2026-10-02-<locale>.json` (3–6
+rättningar per språk: kalkeringar, fel genus, "agarrar" i Spanien, "afhaalbak" → "afhaalbakje",
+citatet omskrivet så det låter som en kund) → `merge-delar.py` (scratchpad) in i
+`output/underlag-<locale>.json` med `granska.mjs` 0 fel → `bygg.mjs --steg oversattningar --skarpt`
+(170–181 texter per språk) → `--steg kontroll`: **13 av 13 "ligger som i filen, 0 saknas, 0 avviker"**.
+Läst som kund via curl: en och nb visar de nya rubrikerna; de och ja fick Shopifys "Verifying your
+connection" (botspärren efter många anrop), API-tillbakaläsningen är facit där.
+
+Kvar: en läcka per språk, paketresursen `466474533203` `gratis_text` "Äkta ätpinnar i trä (1 par)"
+(ett paketkort som `underlag.mjs` inte tar med; syns inte på kortet för 1 låda). Och ja/zh-TW bär
+storleksradens cm-omräkning med tankstreck enligt `REGLER-ASIEN.md` punkt 7, med flit.

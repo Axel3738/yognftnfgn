@@ -34,8 +34,10 @@ rätt ordning, 3 media, 302 ord, `lang=sv`.
 
 ⏰ **Påminnelse satt** (`trig_01X2fCvnnheQh7fpghkiLtDL`, mån 26/10 07:45 CET): Axels ord "vi får
 inte glömma att uppdatera den innan november" — novemberraderna ses över mot lagret innan 1/11.
-⚠️ **Kvar:** de elva översättningarna bär fortfarande den gamla svenska texten (eget steg, se
-punkt 5 nedan). ATC-graden mäts om i rutinen (5,5 % var utgångsläget).
+✅ **De tretton språken bär den nya texten sedan 2026-10-02 ~09:30 UTC** (sonnet-översättare +
+infödd granskare per språk, `granska.mjs` 0 fel, `bygg.mjs --steg oversattningar --skarpt`,
+`--steg kontroll` 13 av 13 rätt; `marknader/README.md` → "Produktbeskrivningen på tretton
+språk"). ATC-graden mäts om i rutinen (5,5 % var utgångsläget).
 
 Axels beställning 2026-10-02: "Ge mig copyn innan du lanserar, och ge mig två versioner, en där den
 är skriven av sonnet 4.6 och en där den är skriven av fable 5.1 ultracode." Sidan som ska bytas:
