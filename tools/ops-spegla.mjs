@@ -117,7 +117,11 @@ export function kontoUrUrl(url) {
 export function brandtraff(...texter) {
   const ut = new Set();
   for (const t of texter) {
-    const utanLankar = String(t ?? '').replace(/https?:\/\/\S+/gi, ' ');
+    // Briefens metadatarad "Notion hub: <länk> (BÄVER Taköverdraget …)" bär
+    // hubbens NAMN, inte annonsens text — den stoppade OB_15_1 och OB_21_1
+    // falskt 2026-10-01 (annonstexten i Meta nämnde ingen butik).
+    const utanMeta = String(t ?? '').replace(/^\s*notion\s*hub\s*:.*$/gim, ' ');
+    const utanLankar = utanMeta.replace(/https?:\/\/\S+/gi, ' ');
     // bäver/baver (svenska), bever (norska: Beverbutikken, beverbutikken.no),
     // beaver (engelska). NO-copyn namnger butiken lika gärna som den svenska
     // — den går live i butikens NO-kampanj och måste stoppas där också.

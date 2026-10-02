@@ -1,7 +1,15 @@
 # UGC-villkor — beslutade av Axel 2026-09-06
 
-Beslutade i chatt 2026-09-06. `/ugc-scout` får skriva meddelanden med exakt
-dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddelande.
+Beslutade i chatt 2026-09-06. Ändras de: uppdatera här först, aldrig i ett
+enskilt meddelande.
+
+⛔ **Axels regel 2026-10-01: priset och villkoren nämns ALDRIG i första
+meddelandet till en kreatör.** Han har betalat betydligt mer än tabellen nedan
+till flera kreatörer, och ersättningen görs upp per person efteråt. Första
+meddelandet frågar bara om kreatören är sugen på att ta sig an uppdraget.
+Tabellen är alltså en intern utgångspunkt, inte en text att skicka.
+**Avsändaren är Axel själv**, inte ett varumärke ("jag switchar inte mellan
+företag").
 
 | Fält | Värde |
 |---|---|

@@ -1,0 +1,38 @@
+Du hjälper Axel att skicka Matstrumpors köparenkät till tidigare kunder. Allt sker i Spoks, i arbetsytan Matstrumpor.se: https://app.spoks.com/matstrumpor. Ingen annan arbetsyta, ingen annan butik.
+
+RÖR ALDRIG: flöden, andra kampanjer eller utkast, befintliga segment (skapa ett NYTT), kontakternas samtycke eller taggar, inställningar, avsändare, domäner/DNS, Shopify. Avregistrera ingen kontakt. Skapa inga konton.
+
+UNDANTAGEN (41 adresser som ALDRIG får mejlet):
+[LISTAN STÅR I AXELS CHATT, INTE I REPOT]
+
+STEG
+1. Segment → nytt segment med namnet "Enkät tidigare kunder (utan 41 undantag)". Villkor, alla måste gälla:
+   a) e-postsamtycke = prenumererar (subscribed)
+   b) antal ordrar (total orders) är minst 1
+   c) land är Sverige ELLER land saknas (samma som segmentet SEG_samtycke_sv; öppna det och kopiera villkoren om du är osäker)
+   d) e-post är INTE någon av de 41 adresserna ovan. Spoks saknar "not in" för e-post (mätt av Cowork 2026-10-01: bara eq, ne, like, nlike, slike, elike, is, nis). Bygg därför d som 41 separata villkor "e-post är inte lika med" (ne), ett per adress, i "alla måste gälla"-grupper. Det betyder samma sak som "not in".
+   Innan du sparar: förhandsvisa segmentet UTAN villkor d och skriv ner antalet. Med villkor d får antalet bli högst 41 lägre.
+2. Spara segmentet. Skriv ner antalet kontakter. Kontrollera undantaget: sök på tre av de 41 adresserna i segmentets förhandsvisning (eller i kontaktlistan med segmentet som filter). Ingen av dem får synas. Syns en: STANNA.
+3. Kampanjer → ny e-postkampanj. Titel: "Enkät tidigare kunder · fre 2/10 18:00". Publik: bara segmentet från steg 1.
+4. Ämnesrad: Tre snabba frågor från oss
+   Förhandstext: Varför köpte du? Svara med egna ord, det tar en minut.
+5. Innehåll: ett textblock och en knapp, inga produkter, inga bilder utöver loggan, ingen rabatt:
+
+Hej!
+
+Du har handlat hos oss, och vi skulle gärna vilja veta varför. Vad hände som fick dig att köpa? Var såg du oss första gången? Och köpte du till dig själv eller till någon annan?
+
+Tänk tillbaka på när du köpte och svara med egna ord, så kort eller långt du vill. Alla frågor är frivilliga, och vi frågar inte efter namn eller e-post.
+
+   Knapp: "Svara på frågorna" → https://matstrumpor.se/pages/enkat?k=mejl
+
+   Under knappen: Tack för att du tar dig tid!
+
+6. Skicka ett testmejl till Axel. Klicka på knappen i testmejlet: sidan "Tre snabba frågor" ska öppnas på matstrumpor.se.
+7. Schemalägg kampanjen till fredag 2 oktober 2026 kl 18:00 (svensk tid). Skicka INTE direkt.
+
+RAPPORT (kort, på svenska)
+- Segmentet: sparat ja/nej, antal utan undantaget och med undantaget, de tre provade undantagsadresserna syntes inte ja/nej.
+- Kampanjen: publik = bara det nya segmentet ja/nej, ämnesrad och text rätt ja/nej.
+- Testmejlet: knappen öppnade enkäten ja/nej.
+- Schemalagd fre 2/10 18:00 ja/nej.

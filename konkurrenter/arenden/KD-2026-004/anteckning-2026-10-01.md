@@ -89,8 +89,9 @@ och botten), blev det:
   video-taggar och 0 videoanrop. Undersidorna hade varken videor eller GIF:ar.
 - **Produktbilderna är identiska med matstrumpor.se:s** (dHash 0–3). Men våra filer heter
   `WhatsAppImage2025-11-…` och `Skarmbild2026-01-29…`, och en bär kortet "FALCONER". De kom
-  via WhatsApp, troligen från leverantören, så de anmäls inte (ORVO-lärdomen). Undantaget är
-  om Axel säger att han tagit dem själv. Den frågan ställdes 2026-10-01.
+  via WhatsApp, troligen från leverantören, så de anmäls inte (ORVO-lärdomen). **Axels svar
+  samma eftermiddag:** "Dom flesta är faktiskt inte våra produktbilder. Men vi får lägga DMCA
+  på gifsen som DMCA via Shopify. De andra via Meta." Produktbilderna anmäls alltså inte.
 - **Recensionsbilderna och märket "Öppet köp 60 dagar"** är inte våra.
 
 Shopify-anmälan byggdes med `--shopify KD-2026-004 --bild <gif2> --sida <produktsidan>`. Den
@@ -109,6 +110,40 @@ KD-2026-004`). Kvittot skrivs med `--shopify KD-2026-004 --skickad --referens <r
   betyder att bolaget har rätten till deras filmer. Haikuh2, haikuh3 och s001h1 är bolagets
   egna videor (CLAUDE.md, 2026-09-28). Vem som gjort haikuh1, 039h1 och fomo november är inte
   utrett här.
-- **Inget är inskickat.** Efter Axels Ja byggs EN Cowork-prompt med Bustatios anmälan 2 (KD-2026-003, skickas igen eftersom kvittot inte gick att läsa) och de anmälningar han sagt Ja till:
+- **Axel sa Ja till alla tio korten 2026-10-01 16:27–16:28 CEST** (9 Meta + Shopify, alla på
+  kortens aktuella version, `data/beslut.json`). Han valde Cowork före att låta sessionen fylla
+  i formulären ("Som vi gjorde i går. Ge mig bara en co-work-prompt").
+- **Cowork-prompten:** `konkurrenter/cowork/anmalningar-2026-10-01.txt`, byggd med
   `node konkurrenter/kor.mjs --anmal-cowork KD-2026-003,KD-2026-004 --bara
-  "KD-2026-003:2;KD-2026-004:<ja-nr>" --med-shopify KD-2026-004`.
+  "KD-2026-003:2;KD-2026-004:1,2,3,4,5,6,7,8,9" --med-shopify KD-2026-004`. Den tar med
+  Bustatios anmälan 2 (KD-2026-003), som skickas igen eftersom kvittot inte gick att läsa.
+  Två rader i Shopify-delen rättades innan den lämnades ut. Cowork skriver texterna tecken för
+  tecken, så "Full name: Axel Odhner (CEO)" hade lagt titeln i namnfältet, och
+  "Phone: (none given)" hade skrivits in som telefonnummer.
+- **GIF 1 är inte med**, eftersom den inte finns i någon av våra 243 videor. Axel skrev "gifsen",
+  men bara GIF 2 är mätt som vår.
+- **Inget är inskickat förrän Coworks lista kommit tillbaka.** Kvittona skrivs in med
+  `--anmald <id> --nr <n> --referens <r>` och `--shopify KD-2026-004 --skickad --referens <r>`.
+
+## Cowork stoppade anmälningarna (samma kväll)
+
+Axel körde prompten i Cowork och klistrade tillbaka hela chatten. Det här hände:
+
+- Cowork stannade först för att "Bypass all permissions" inte sa vad som godkändes. Axel
+  skrev då ett uttryckligt godkännande med alla nummer uppräknade.
+- **KD-2026-003 anmälan 2 (Bustatio) gick in.** Cowork fyllde i formuläret, och Axel skrev
+  koden, gjorde säkerhetskontrollen och klickade Skicka själv. Meta visade "Tack!" utan nummer.
+  Kvittot skrevs in med `--anmald KD-2026-003 --nr 2`, och alla sex Bustatio-anmälningar är nu
+  inskickade.
+- **KD-2026-004 anmälan 1–9 och Shopify-anmälan gick INTE in.** Coworks säkerhetsspärr
+  stoppade anmälan 1 och sa att spärren gäller allt som återstår. Cowork skriver heller aldrig
+  in verifieringskoden, inte ens när Axel klistrar in den i chatten.
+- **Axels fråga efteråt:** "Men den har ju väl bara rapporterat dom här MatSokker eller? Jag
+  vill ju ta ner dom." Svaret: inget av MatSokker var anmält. Det är de tio anmälningarna som
+  tar ner dem. Meta tar bort annonserna (Bustatio förlorade annons 1, 3 och 5 inom ett dygn),
+  och Shopify tar bort vår film från deras sida.
+- **Vägen nu är själv-läget i appen** (`--granska KD-2026-004 --utan-mejl --sjalv alla`,
+  publicerat som version 14). Varje kort visar stegen i Metas ordning med en
+  kopieringsknapp per fält, och Axel trycker "Jag har skickat in den" efter varje anmälan.
+  Sessionen kvitterar med `--granska-svar KD-2026-004 --beslut <fil> --kvittera`. Sessionen
+  skriver ingen ny Cowork-prompt som försöker ta sig runt spärren.

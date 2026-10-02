@@ -1,0 +1,151 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "konto": "1107817401910319",
+  "kontonamn": "Magiborsten UK",
+  "marknad": "US",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/takskyddet?country=US",
+  "valuta": "USD",
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub"
+  },
+  "kampanj": {
+    "id": "120251633656390435",
+    "namn": "Taköverdrag 5 reasons USA TEST",
+    "bas": "Taköverdrag 5 reasons USA TEST",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "fast": true,
+    "adsets": [
+      {
+        "id": "120251633656400435",
+        "name": "Taköverdrag 5 reasons USA TEST",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 24,
+  "lank_arvd": "https://carashell.com/pages/rv-roof-cover-5-reasons?country=US",
+  "pris_butik": null,
+  "pris_skal": "länken \"https://carashell.com/pages/rv-roof-cover-5-reasons?country=US\" pekar inte på /products/<handle>",
+  "rader": [
+    {
+      "namn": "CaraShellRoof_OB_115_1",
+      "mal_namn": "CaraShellRoof_US_OB_115_1",
+      "page_id": "3ec270ab-908c-8153-90f0-f1c73f01ebd6",
+      "url": "https://app.notion.com/p/CaraShellRoof_OB_115_1-3ec270ab908c815390f0f1c73f01ebd6",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_OB_115_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_OB_115_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/rv-roof-cover-5-reasons?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "OB",
+      "nummer": 115,
+      "variant": "1",
+      "adset_namn": "Taköverdrag 5 reasons USA TEST",
+      "adset": {
+        "id": "120251633656400435",
+        "name": "Taköverdrag 5 reasons USA TEST",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "mal_namn_alias": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249364731180172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-10-01T16:44:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-10-01-us/se/CaraShellRoof_OB_115_1/CaraShellRoof_OB_115_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-10-01-us/se/CaraShellRoof_OB_115_1/CaraShellRoof_OB_115_1.jpg"
+      ],
+      "fil_fel": null,
+      "slutkort": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_OB_121_1",
+      "mal_namn": "CaraShellRoof_US_OB_121_1",
+      "page_id": "3ec270ab-908c-8152-a704-ec8a7075f7ef",
+      "url": "https://app.notion.com/p/CaraShellRoof_OB_121_1-3ec270ab908c8152a704ec8a7075f7ef",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_OB_121_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_OB_121_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/rv-roof-cover-5-reasons?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "OB",
+      "nummer": 121,
+      "variant": "1",
+      "adset_namn": "Taköverdrag 5 reasons USA TEST",
+      "adset": {
+        "id": "120251633656400435",
+        "name": "Taköverdrag 5 reasons USA TEST",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "mal_namn_alias": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249364705750172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-10-01T16:43:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-10-01-us/se/CaraShellRoof_OB_121_1/CaraShellRoof_OB_121_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-10-01-us/se/CaraShellRoof_OB_121_1/CaraShellRoof_OB_121_1.jpg"
+      ],
+      "fil_fel": null,
+      "slutkort": null,
+      "landning_avviker": true
+    }
+  ],
+  "varningar": [
+    "kampanj: målkampanjen kommer ur registret (malkampanj), inte ur namnsökningen: \"Taköverdrag 5 reasons USA TEST\"",
+    "\"CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16\" är PAUSED med 2246 kr spend — avvecklad, aldrig mål",
+    "pris: länken \"https://carashell.com/pages/rv-roof-cover-5-reasons?country=US\" pekar inte på /products/<handle>"
+  ],
+  "hamtad": "2026-10-01T16:45:33.331Z"
+}

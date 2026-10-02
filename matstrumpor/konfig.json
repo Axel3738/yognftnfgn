@@ -81,7 +81,16 @@
   },
   "namn": {
     "prefix": "MATSTRUMP_sushi",
-    "mall": "MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>",
+    "mall": "MATSTRUMP_sushi_<vinkel>_<format>_<nnn>[_h<k>][_i<N>p<förälder>|_im]_v<n>",
+    "mall_comment": "Sedan 2026-10-01 (Evolve ITER#N_BATCH#ORIG, docs/os/evolve/ITERATIONS-PLAYBOOK.md avsnitt 9): _h<k> = hookvariant, _i<N>p<förälder> = iteration N på föräldern (löpnummer eller alias nedan), _im = imitation av en annan brands annons. Utan i/im = en ny idé ur research. Gamla namn tolkas som förut. Utlandets namn bär landskoden efter MATSTRUMP_ och numreras per marknad.",
+    "alias": {
+      "nat": "09-17 Nathalie captions musik",
+      "sof1": "Sofie H1 Sushi Captions Ingen musik",
+      "sof2": "Sofie H2 julstrumpa Sushi Captions Ingen musik",
+      "kat1": "09-24 Katarina sushiälskaren i ditt liv",
+      "kat2": "09-24 Katarina Sushigalen unge"
+    },
+    "alias_comment": "Axels egna uppladdningar utan löpnummer, så att en iteration kan peka på dem i namnet (_i5pnat). Namnen avlästa ur kanda-namn.json 2026-10-01.",
     "vinklar": [
       "gift",
       "jul",
@@ -121,6 +130,12 @@
       "textheavy"
     ],
     "comment": "Avläst ur kontot + hubben 2026-09-21. Vinkeln `jul` är ny och är ROUTINGNYCKELN: bär namnet `jul` hamnar annonsen i jul-adsetet, video eller bild efter formatet. Högsta upptagna nummer 2026-09-21: 043 (Notion, Draft). ⚠️ Fem annonser i kontot står utanför mönstret ('09-17 Nathalie captions musik', 'Sofie H1 …') — Axels egna uppladdningar. De räknas aldrig som upptagna nummer och döps aldrig om."
+  },
+  "kreatorer": {
+    "nathalie": ["Nathalie", "nat"],
+    "sofie": ["Sofie", "sof1", "sof2", "husetmellanhagarna"],
+    "katarina": ["Katarina", "kat1", "kat2"],
+    "comment": "Vem som syns i bild, för arkivets vinstbidrag per kreatör (Evolve: vinnande kreatörer blir ambassadörer). Matchas mot annonsnamnet, BRIEF-radens `kreator`, och förälderns namn/alias för iterationer som klipps ur förälderns råfil. Ny kreatör = en rad här (2026-10-01)."
   },
   "kadens": {
     "briefer_per_rond": 6,

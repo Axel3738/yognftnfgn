@@ -329,7 +329,10 @@ async function huvud() {
     if (String(kampanj.account_id) !== konto) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte marknadens konto ${konto} (${marknaden.kontonamn}). Avbryter.`);
     const v = valjKampanjer([kampanj], butik.prefix, butikens, kampanjbaser);
     if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar varken med ${butik.prefix.join(' / ')} eller kampanjbasen ${kampanjbaser.join(' / ') || '(saknas)'}, och ingen annons med prefixet ligger där.`);
-    const m = filtreraPaMarknad([{ ...kampanj, campaign_name: kampanj.name }], marknad);
+    // Registrets målkampanj ÄR marknadens per definition — namnet bär ingen
+    // marknadskod ("Taköverdrag 5 reasons USA TEST" lästes som SE, 2026-10-01).
+    const arFastMal = fastMal && String(kampanj.id) === fastMal.kampanj_id;
+    const m = arFastMal ? { behall: [kampanj] } : filtreraPaMarknad([{ ...kampanj, campaign_name: kampanj.name }], marknad);
     if (!m.behall.length) stopp(`Kampanj "${kampanj.name}" ligger på marknad ${Object.keys(m.bortfiltrerade).join('/')}, inte ${marknad}.`);
     logg(`2. Kampanj (--kampanj): "${kampanj.name}" (${kampanj.id}) ${kampanj.status}/${kampanj.effective_status}${v.baraViaAnnons.length ? ' — matchar via annonserna, inte namnet' : ''}`);
   } else {

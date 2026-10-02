@@ -80,9 +80,66 @@ export function faltLista(paket, { land = 'Sweden' } = {}) {
   };
 }
 
+const LAND_SV = { Sweden: 'Sverige', Norway: 'Norge', Denmark: 'Danmark', Finland: 'Finland' };
+
+/**
+ * Stegen när Axel skickar in en Meta-anmälan SJÄLV, i den ordning Metas formulär frågar
+ * och med orden som formuläret visar honom på svenska. `kopiera` är exakt fältets värde,
+ * samma som anmal-skicka.mjs och Cowork-prompten skriver in. Cowork vägrade skicka in
+ * anmälningar mot andra bolag 2026-10-01 (spärren stoppade 10 av 11 trots Axels uttryckliga
+ * godkännande), så det här är vägen när spärren säger nej. Ren.
+ */
+export function sjalvStegMeta(paket, { land = 'Sweden' } = {}) {
+  const v = formularVarden(paket, { land });
+  return [
+    { text: 'Öppna Metas formulär för upphovsrätt.', lank: paket?.formular ?? 'https://www.facebook.com/help/contact/1758255661104383' },
+    { text: 'Välj Upphovsrätt. Tryck Nästa.' },
+    { text: `Välj ${v.plattform}. Tryck Nästa.` },
+    { text: `Välj landet ${LAND_SV[v.land] ?? v.land}. Välj sedan "Nej, men jag är behörig att företräda rättighetsinnehavaren".` },
+    { text: 'Rättighetsinnehavarens namn. Tryck sedan Nästa.', kopiera: v.rattighetshavare },
+    { text: 'Första rutan: länken till det du anmäler.', kopiera: v.urls },
+    { text: 'Andra rutan: exempel på ert verk.', kopiera: v.original },
+    { text: 'Tredje rutan: beskrivningen.', kopiera: v.beskrivning },
+    { text: 'Rutan om domstolsbeslut: rör den inte.' },
+    { text: 'Ditt fullständiga namn.', kopiera: v.namn },
+    { text: 'E-post. Klistra in samma adress i rutan där du bekräftar den.', kopiera: v.epost },
+    { text: `Tryck Begär kod. Meta mejlar en kod till ${v.epost}. Skriv in koden.` },
+    { text: 'Elektronisk signatur.', kopiera: v.signatur },
+    { text: 'Visar Meta en säkerhetskontroll: gör den. Tryck Skicka.' },
+    { text: 'Tryck "Jag har skickat in den" längst ner här. Visar Meta ett ärendenummer, skriv det också.' },
+  ];
+}
+
+/** Samma sak för Shopify-anmälan. Formulärets exakta rutor är inte kartlagda, så stegen säger vad varje text ÄR. Ren. */
+export function sjalvStegShopify(paket) {
+  const f = paket?.falt ?? {};
+  return [
+    { text: 'Öppna Shopifys formulär. Logga in med ditt Shopify-konto om det frågar.', lank: paket?.formular ?? 'https://www.shopify.com/legal/tools/report-an-issue/dmca' },
+    { text: 'Välj det som betyder upphovsrätt (copyright eller DMCA).' },
+    { text: 'Rättighetsinnehavaren, alltså bolaget.', kopiera: f.foretag },
+    { text: 'Din relation till rättighetsinnehavaren.', kopiera: f.rollTillVerket },
+    { text: 'Ditt fullständiga namn.', kopiera: f.namn },
+    ...(f.titel ? [{ text: 'Titel, bara om formuläret frågar efter en.', kopiera: f.titel }] : []),
+    { text: 'E-post.', kopiera: f.epost },
+    f.telefon ? { text: 'Telefon.', kopiera: f.telefon } : { text: 'Telefon: lämna tomt. Kräver formuläret ett nummer, skriv ditt eget.' },
+    { text: 'Adress.', kopiera: f.adress },
+    { text: 'Land.', kopiera: f.land },
+    { text: 'Butiken du anmäler.', kopiera: f.butik },
+    { text: 'Länkarna till det du anmäler.', kopiera: (f.sidor ?? []).join('\n') },
+    { text: 'Beskrivningen av ert verk.', kopiera: f.verk },
+    { text: 'Länkarna till originalet.', kopiera: (f.original ?? []).join('\n') },
+    ...(f.bevis ? [{ text: 'Bevisbilden: klistra in länken där formuläret ber om mer information eller bevis.', kopiera: f.bevis }] : []),
+    { text: 'Kryssa i försäkringarna. De står längre ner på kortet.' },
+    { text: 'Elektronisk signatur.', kopiera: f.signatur },
+    { text: 'Visar Shopify en säkerhetskontroll: gör den. Skicka in.' },
+    { text: 'Tryck "Jag har skickat in den" längst ner här. Visar Shopify ett ärendenummer, skriv det också.' },
+  ].filter((s) => !('kopiera' in s) || s.kopiera);
+}
+
 /**
  * Kortet för EN anmälan. `version` följer paketets innehåll: byggs anmälan om
- * (en lånad ruta utesluten, en ny bild) gäller ett gammalt ja/nej inte längre. Ren.
+ * (en lånad ruta utesluten, en ny bild) gäller ett gammalt ja/nej inte längre.
+ * `sjalv` (stegen när Axel skickar in själv) räknas inte in i versionen: den är ur samma fält. Ren.
  */
 export function kortAnmalan(rapport, paket, { annons = null, bild = null, land = 'Sweden' } = {}) {
   const { falt, fel } = faltLista(paket, { land });
@@ -109,6 +166,7 @@ export function kortAnmalan(rapport, paket, { annons = null, bild = null, land =
     falt,
     fel,
     forsakran: paket.falt?.declarations ?? [],
+    sjalv: sjalvStegMeta(paket, { land }),
   };
 }
 
@@ -175,6 +233,7 @@ export function kortShopify(s, paket, { bild = null } = {}) {
     fel: paket?.fel ?? [],
     forsakran: paket?.forsakringar ?? [],
     status: s?.status ?? null,
+    sjalv: sjalvStegShopify(paket),
   };
 }
 
@@ -202,9 +261,11 @@ export function mejlRedanNot(a, andra) {
 
 /**
  * Läget per kort ur ärendet: inskickade anmälningar (kvittot) och skickat brev.
- * `pagar` = nycklar sessionen arbetar med just nu, `fel` = { nyckel: text }. Ren.
+ * `pagar` = nycklar sessionen arbetar med just nu, `fel` = { nyckel: text }.
+ * `sjalv` = nycklar Axel skickar in själv (kortet visar stegen och kopieringsknapparna);
+ * standard är ärendets egen lista `a.sjalv`, så att en ombyggd status aldrig tappar läget. Ren.
  */
-export function statusFor(a, { pagar = [], fel = {}, notis = null, sms = null, nu = new Date().toISOString() } = {}) {
+export function statusFor(a, { pagar = [], sjalv = a?.sjalv ?? [], fel = {}, notis = null, sms = null, nu = new Date().toISOString() } = {}) {
   const kort = {};
   for (const r of a.anmalan?.rapporter ?? []) {
     const n = `anmalan-${r.nr}`;
@@ -214,6 +275,7 @@ export function statusFor(a, { pagar = [], fel = {}, notis = null, sms = null, n
   if (a.shopify?.status === 'inskickad') kort.shopify = { lage: 'inskickad', referens: a.shopify.referens ?? null, nar: a.shopify.inskickad ?? null };
   for (const n of pagar) if (!kort[n]) kort[n] = { lage: 'pagar', nar: nu };
   for (const [n, text] of Object.entries(fel)) if (!kort[n]) kort[n] = { lage: 'fel', text: String(text).slice(0, 400), nar: nu };
+  for (const n of sjalv) if (!kort[n]) kort[n] = { lage: 'sjalv', nar: nu };
   return { uppdaterad: nu, notis: notis ?? null, kort, sms: sms ? { text: sms } : null };
 }
 
@@ -242,14 +304,17 @@ export function smsText(mall, { faktura, n, antal }) {
 /**
  * Vad sessionen ska göra med Axels svar. Ett svar gäller bara kortets AKTUELLA
  * version. Mejlet går först när varje anmälan har ett svar — brevet säger hur
- * många som anmäls. Aldrig något som redan är inskickat, skickat eller pågår. Ren.
+ * många som anmäls. Aldrig något som redan är inskickat, skickat eller pågår, och
+ * aldrig något Axel skickar in själv (läget `sjalv`). `kvittera` = det Axel själv
+ * markerat som inskickat på sidan (`beslut.skickat`): sessionen skriver in kvittot. Ren.
  */
 export function attGora({ granskning, beslut, status }) {
   const svar = beslut?.svar ?? {};
+  const skickat = beslut?.skickat ?? {};
   const st = status?.kort ?? {};
   const aktuellt = (k) => { const s = svar[k.nyckel]; return s && s.version === k.version ? s : null; };
   const klar = (k) => ['inskickad', 'skickad'].includes(st[k.nyckel]?.lage);
-  const pagar = (k) => st[k.nyckel]?.lage === 'pagar';
+  const pagar = (k) => st[k.nyckel]?.lage === 'pagar' || st[k.nyckel]?.lage === 'sjalv' || Boolean(skickat[k.nyckel]);
   const anm = (granskning?.kort ?? []).filter((k) => k.typ === 'anmalan');
   const anmalningar = anm.filter((k) => aktuellt(k)?.svar === 'ja' && !klar(k) && !pagar(k)).map((k) => k.nr);
   const nej = (granskning?.kort ?? []).filter((k) => aktuellt(k)?.svar === 'nej' && !klar(k)).map((k) => ({ nyckel: k.nyckel, nr: k.nr ?? null, not: String(aktuellt(k).not ?? '').slice(0, 2000), nar: aktuellt(k).nar ?? null }));
@@ -264,7 +329,9 @@ export function attGora({ granskning, beslut, status }) {
   const sk = (granskning?.kort ?? []).find((k) => k.typ === 'shopify');
   const shopify = Boolean(sk && aktuellt(sk)?.svar === 'ja' && !klar(sk) && !pagar(sk));
   const gamla = Object.keys(svar).filter((n) => { const k = (granskning?.kort ?? []).find((x) => x.nyckel === n); return k && svar[n].version !== k.version; });
-  return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla, shopify };
+  const kvittera = (granskning?.kort ?? []).filter((k) => skickat[k.nyckel] && !klar(k) && ['anmalan', 'shopify'].includes(k.typ))
+    .map((k) => ({ nyckel: k.nyckel, typ: k.typ, nr: k.nr ?? null, referens: String(skickat[k.nyckel].referens ?? '').trim().slice(0, 80) || null, nar: skickat[k.nyckel].nar ?? null }));
+  return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla, shopify, kvittera };
 }
 
 /**

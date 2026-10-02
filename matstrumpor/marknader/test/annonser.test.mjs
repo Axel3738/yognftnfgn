@@ -17,13 +17,30 @@ test('slaIhopLage: en körning för en marknad byter bara ut den raden, resten s
 const NO = { kampanj: 'MATSTRUMP_NO_SALES', geo: ['NO'], locale: 'nb', budget_beslut: "Axel 2026-09-27: '1000kr per dag'" };
 const WW = { kampanj: 'MATSTRUMP_WW_SALES', geo: ['NO', 'DK', 'US'], locale: 'en', budget_beslut: 'EJ GIVEN — platshållare' };
 
-test('lankOk: enlandskampanj kräver locale OCH land, flerlandskampanj bara locale', () => {
+test('lankOk: enlandskampanj kräver locale OCH land, flerlandskampanj i en språkmapp ett av sina länder', () => {
   assert.equal(lankOk(NO, 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO'), true);
   assert.equal(lankOk(NO, 'https://matstrumpor.se/nb/products/sushi-strumpor'), false);
   assert.equal(lankOk(NO, 'https://matstrumpor.se/products/sushi-strumpor?country=NO'), false);
-  assert.equal(lankOk(WW, 'https://matstrumpor.se/en/products/sushi-strumpor'), true);
-  assert.equal(lankOk(WW, 'https://matstrumpor.se/nb/products/sushi-strumpor'), false);
+  assert.equal(lankOk(NO, 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NOR'), false, 'landet måste vara exakt');
+  // Sedan 2026-10-01: en språkmapp utan ?country= skickar kunden till domänens huvudspråk (302, geokoll.mjs).
+  assert.equal(lankOk(WW, 'https://matstrumpor.se/en/products/sushi-strumpor'), false);
+  assert.equal(lankOk(WW, 'https://matstrumpor.se/en/products/sushi-strumpor?country=DK'), true);
+  assert.equal(lankOk(WW, 'https://matstrumpor.se/en/products/sushi-strumpor?country=SE'), false, 'landet ska vara kampanjens');
+  assert.equal(lankOk(WW, 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO'), false);
   assert.equal(lankOk(NO, ''), false);
+  assert.equal(lankOk(NO, 'inte en adress'), false);
+});
+
+test('lankOk: DE- och FR-kampanjen (flera länder) i språkmappen på .com måste bära ett av sina länder — mätt 2026-10-01', () => {
+  const DE = { doman: 'matstrumpor.com', locale: 'de', geo: ['DE', 'AT', 'CH'] };
+  // Utan landet gav Shopify 302 till den engelska produktsidan för kunder i DE, AT och CH (geokoll.mjs).
+  assert.equal(lankOk(DE, 'https://matstrumpor.com/de/products/sushi-strumpor'), false);
+  assert.equal(lankOk(DE, 'https://matstrumpor.com/de/products/sushi-strumpor?fbclid=abc'), false, 'fbclid hjälper inte — mätt');
+  assert.equal(lankOk(DE, 'https://matstrumpor.com/de/products/sushi-strumpor?country=DE'), true);
+  assert.equal(lankOk(DE, 'https://matstrumpor.com/de/products/sushi-strumpor?country=AT'), true);
+  assert.equal(lankOk(DE, 'https://matstrumpor.com/de/products/sushi-strumpor?country=FR'), false);
+  // Engelskan i .com-roten har ingen språkmapp: Shopify geolokaliserar där, och WW får gå utan land (GB, CA, NZ mätta).
+  assert.equal(lankOk({ doman: 'matstrumpor.com', locale: 'en', geo: ['GB', 'CA', 'NZ'] }, 'https://matstrumpor.com/products/sushi-strumpor'), true);
 });
 
 test('farAktiveras: platshållarbudget, tomt adset eller fel länk stoppar', () => {

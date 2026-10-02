@@ -76,6 +76,78 @@ Trustpilot-rubriker som Trustpilot satt själva (textens början + "…") ritas
 inte (`egenRubrik`); texter klipps vid 280 tecken på ordgräns. Bara omdömen
 med ≥ 4 stjärnor visas som kort — betyget och fördelningen visas oavkortade.
 
+## Varukorgslådan vid första köpet (2026-10-01)
+
+Axels fel: "första gången man är inne på hemsidan i en ny session, när man lägger
+till något i varukorgen, skickas man till varukorgssidan. Varukorgen öppnas inte i
+en slide … andra gången i samma session fungerar det normalt."
+
+**Återskapat i Chromium (ny session, sushi-strumpor, paketet 2-pack):** klick 1
+landade på `/cart`, klick 2 öppnade lådan. Och det slår inte varje gång — det
+är en kapplöpning mellan två skrivningar i vagnen.
+
+**Orsaken, mätt:**
+
+1. Paketväljaren `assets/ms-paket.js` la rabattkoden **först**
+   (`/discount/<kod>?redirect=/cart.js`), sedan varorna (`/cart/add.js`), ritade
+   lådan och kontrollerade sist att koden låg i vagnen (`kontrollera`). Saknades
+   den tog den reservvägen `laddaOm()`: en riktig sidladdning till
+   `/discount/<kod>?redirect=/cart`. Det är "teleporteringen".
+2. I samma klick skriver A/B-motorn `assets/ms-ab.js` sin stämpel (`AB paket: b`)
+   i vagnen **två gånger**: ett `fetch` på klicket och en `sendBeacon` på submit,
+   båda `POST /cart/update.js`. Shopify skriver hela vagnen vid varje anrop. En
+   skrivning som läste vagnen före koden och avslutade efter den skrev tillbaka
+   vagnen **utan** koden.
+3. I en ny session är koden ny för vagnen, så det är rabattskrivningen som
+   försvinner. Andra gången ligger koden redan där innan någon läser, och inget
+   går förlorat.
+
+Mätvärdena: `/discount`-svaret visade koden på vagnen (`applicable: false`, tom
+vagn); ms-ab:s `update.js` svarade 400 ms senare med `discount_codes: []`;
+`/cart.js` efter `add.js`: 4 varor, 898 kr, inga koder → navigation till `/cart`,
+där koden lades på igen (499 kr). Med rena HTTP-anrop, utan webbläsare: koden
+överlever `add.js` i en tom vagn när inget annat skriver (4 av 4), men en
+`update.js` som startar 0–400 ms efter `/discount` raderar den (3 av 3); startar
+den 800 ms efter är koden kvar. Fabriken hade samma fel på heimguard.se
+2026-09-09 och rättade `factory/tema/assets/ms-paket.js` — Matstrumpors kopia
+(mixläget, ätpinnarna) fick aldrig rättningen.
+
+**Rättningen, `matstrumpor/korglada.mjs` (två filer, idempotent, exakta träffar):**
+
+- `ms-paket.js` `kop()`: A/B-stämpeln inväntas (`MS.ab.stamp()`) → varorna →
+  koden (`fastKod`, läser tillbaka vagnen, ett omförsök efter 600 ms) → lådan
+  hämtas färsk ur Shopifys sektions-API (`/?sections=cart-drawer,cart-icon-bubble`,
+  rätt språk under `/de/`, `/nb/` — mätt) och ritas med det rabatterade priset.
+  `kontrollera()` står kvar som sista nät; bara den kan nå `/cart`. Samma submit
+  hanteras en gång (`stopImmediatePropagation`), som i fabrikens fil.
+- `ms-ab.js`: `stampCart()` lämnar tillbaka den **pågående** skrivningen, så
+  fetch-kroken före `/cart/add` väntar på den riktiga stämpeln; ingen beacon när
+  klicket redan stämplat; `MS.ab.stamp` exponerad.
+
+```bash
+node --test matstrumpor/test/korglada.test.mjs     # 10 tester utan nät (originalen i korglada/original/)
+node matstrumpor/korglada.mjs                      # torrt mot MAIN: visar byten, skriver output/korglada/<tid>/
+node matstrumpor/korglada.mjs --tema <id> --skarpt # skriver i ett tema (originalen säkerhetskopierade), läser tillbaka
+node matstrumpor/korglada.mjs --kundvy [--tema <id>]   # Chromium, ny session: klick ×2 → låda? navigation? koden? priset?
+```
+
+Provat i provkopian `208019554643` (PROV, gjord lika med MAIN för köpflödets
+filer först), tre varv per A/B-variant, ny session varje gång, 2026-10-01 kväll:
+**MAIN (utan rättning): 2 av 4 giltiga varv gick till `/cart`** (lådan hann
+öppnas, sedan navigerade `kontrollera`); **PROV (med rättning): 0 av 5** —
+lådan öppen, ingen navigation, koden tillämplig, 399 resp. 499 kr i lådan. Tre
+varv gick inte att mäta (Playwright-timeout när två webbläsare körde samtidigt)
+och räknas inte åt något håll. Kapplöpningen slår alltså inte varje gång, och
+den beror på nätet — en telefon med långsammare skrivningar träffas oftare.
+⚠️ `bygg.mjs --steg tema` patchar `ms-paket.js` på plats (`patchaPaketJs`) —
+ankarna står kvar efter rättningen, testat.
+
+✅ **Inlagt i det publicerade temat 2026-10-02 06:55 CEST (Axels "A")**: `korglada.mjs --skarpt`
+skrev båda filerna och läste tillbaka dem identiskt (originalen i `output/korglada/2026-10-02T04-55-36-643Z/`).
+Kundprov direkt efteråt mot det publicerade temat, ny session: standardvarianten (K1F1) och
+tvingad variant b (SUSHI-2FOR499), båda klicken öppnade lådan utan navigation, koden tillämplig,
+399 resp. 499 kr i lådan.
+
 ## Kommandon i terminalen
 
 ```bash
@@ -87,7 +159,7 @@ node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node --test matstrumpor/test/*.test.mjs          # 46 tester
+node --test matstrumpor/test/*.test.mjs          # 56 tester
 ```
 
 Inga npm-beroenden. Node ≥ 20.

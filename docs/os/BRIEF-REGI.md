@@ -16,6 +16,13 @@ inget källklipp med sekund, ingen text-på-skärm per klipp, ingen frihet.
 Regin skrivs av **huvudsessionen** (CLAUDE.md regel 6 gäller texten —
 subagenten skriver de svenska raderna, sessionen bestämmer bilden).
 
+**Tidsstrukturen för kall trafik** (Evolves prompter, inskrivna 2026-10-02 —
+`docs/copy-regler.md` → "Ur Evolves prompter"): hook 0–3 s (~5 ord, max två
+rader, begriplig utan ljud), bridge 3–8 s, hold 8–35 s (invändning →
+påstående → bevis → nytta), CTA senast 45 s. Tre hookar med var sin bridge
+delar EN hold och EN CTA, så regitabellen skriver hookarna som tre separata
+tagningar och kroppen en gång. Ingen rad refererar till ett annat märke.
+
 ---
 
 ## Tabellen (engelska rubriker — redigerarna läser den)

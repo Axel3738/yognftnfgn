@@ -11,17 +11,32 @@
 // mönstret går därför aldrig upp automatiskt — det skulle hamna i fel hink utan
 // felmeddelande.
 //
+// Sedan 2026-10-01 bär namnet också iterationskedjan, så att den går att läsa
+// ur KONTOT (Evolves `ITER#N_BATCH#ORIG`, docs/os/evolve/ITERATIONS-PLAYBOOK.md
+// avsnitt 9). Alla delar efter löpnumret är valfria, och gamla namn tolkas som förut:
+//
+//   MATSTRUMP_[<LAND>_]sushi_<vinkel>_<format>_<nnn>[_h<k>][_i<N>p<förälder>|_im]_v<n>
+//   MATSTRUMP_sushi_gift_ugc_065_h2_i5pnat_v1   ← hookvariant 2, iteration 5 på Nathalie
+//   MATSTRUMP_sushi_gift_ugc_066_im_v1          ← imitation av en annan brands annons
+//   MATSTRUMP_NO_sushi_gift_ugc_007_v1          ← utlandet, numrerat per marknad
+//
+// <förälder> är förälderns löpnummer (`p054`) eller ett alias ur konfig.namn.alias
+// för Axels egna uppladdningar utan nummer (`pnat` = '09-17 Nathalie captions musik').
+// En annons utan i/im-segment är en IDEA (ny idé ur research) — typen står också i
+// BRIEF-raden, men namnet är det enda som syns i Ads Manager.
+//
 // Ren logik, inga nätanrop.
 
-export const MALL = /^MATSTRUMP_sushi_([a-zåäö]+)_([a-zåäö]+)_([0-9a-zåäö]+)_v(\d+)$/i;
+export const MALL = /^MATSTRUMP_(?:([A-Z]{2,3})_)?sushi_([a-zåäö]+)_([a-zåäö]+)_([0-9a-zåäö]+)(?:_h(\d+))?(?:_(?:i(\d+)p([0-9a-zåäö]+)|(im)))?_v(\d+)$/i;
 
 /** Delar upp ett annonsnamn. Returnerar null om namnet inte följer mönstret. */
 export function tolka(namn) {
   const m = MALL.exec(String(namn ?? '').trim());
   if (!m) return null;
-  const [, vinkel, format, id, version] = m;
+  const [, land, vinkel, format, id, hook, iteration, foralder, imitation, version] = m;
   return {
     namn: String(namn).trim(),
+    land: land ? land.toUpperCase() : null,
     vinkel: vinkel.toLowerCase(),
     format: format.toLowerCase(),
     id: id.toLowerCase(),
@@ -30,28 +45,101 @@ export function tolka(namn) {
     // med bokstäver (`haikuh3`, `s001h1`) är ett äldre namn utan nummer.
     // Mätt 2026-09-24: utan det här gav --namn 044 igen fast 044–047 låg live.
     nummer: /^\d/.test(id) ? Number(/^\d+/.exec(id)[0]) : null,
+    // Hookvarianten: nya segmentet `_h2`, eller den äldre formen inne i id:t (`044h1`).
+    hook: hook ? Number(hook) : (/^\d+h(\d+)$/.exec(id) ? Number(/^\d+h(\d+)$/.exec(id)[1]) : null),
+    typ: iteration ? 'ITER' : imitation ? 'IMIT' : null,
+    iteration: iteration ? Number(iteration) : null,
+    foralder: foralder ? foralder.toLowerCase() : null,
     version: Number(version),
   };
 }
 
-/** Bygger ett namn. Kastar hellre än gissar — ett fel namn är ett fel adset. */
-export function bygg({ vinkel, format, nummer, version = 1 }, konfig) {
+/** Bygger ett namn. Kastar hellre än gissar — ett fel namn är ett fel adset.
+ *  hook, iteration + foralder (eller imitation) är valfria — se huvudet. */
+export function bygg({ vinkel, format, nummer, version = 1, hook = null, iteration = null, foralder = null, imitation = false }, konfig) {
   const n = konfig.namn;
   const v = String(vinkel ?? '').toLowerCase();
   const f = String(format ?? '').toLowerCase();
   if (!n.vinklar.includes(v)) throw new Error(`Okänd vinkel "${vinkel}". Tillåtna: ${n.vinklar.join(', ')} (matstrumpor/konfig.json).`);
   if (!n.format.includes(f)) throw new Error(`Okänt format "${format}". Tillåtna: ${n.format.join(', ')}.`);
   if (!Number.isInteger(nummer) || nummer < 1) throw new Error('nummer måste vara ett heltal ≥ 1 — ta det ur nastaNummer(), räkna aldrig i huvudet.');
-  return `${n.prefix}_${v}_${f}_${String(nummer).padStart(3, '0')}_v${version}`;
+  if (iteration !== null && imitation) throw new Error('En annons är antingen en iteration eller en imitation, inte båda.');
+  let kedja = '';
+  if (hook !== null) {
+    if (!Number.isInteger(hook) || hook < 1) throw new Error('hook måste vara ett heltal ≥ 1.');
+    kedja += `_h${hook}`;
+  }
+  if (iteration !== null) {
+    if (!Number.isInteger(iteration) || iteration < 1) throw new Error('iteration måste vara ett heltal ≥ 1 — räkna det ur loggen (nastaIteration), aldrig i huvudet.');
+    const p = foralderToken(foralder, konfig);
+    kedja += `_i${iteration}p${p}`;
+  } else if (imitation) {
+    kedja += '_im';
+  }
+  return `${n.prefix}_${v}_${f}_${String(nummer).padStart(3, '0')}${kedja}_v${version}`;
+}
+
+/** Förälderns token i namnet: ett löpnummer (54 ⇒ '054') eller ett alias ur
+ *  konfig.namn.alias ('nat'). Ett okänt alias kastar — en kedja som pekar på
+ *  fel förälder är värre än ingen kedja. */
+export function foralderToken(foralder, konfig) {
+  if (Number.isInteger(foralder) && foralder > 0) return String(foralder).padStart(3, '0');
+  const s = String(foralder ?? '').toLowerCase();
+  if (/^\d+$/.test(s)) return s.padStart(3, '0');
+  const alias = konfig.namn.alias ?? {};
+  if (alias[s]) return s;
+  // Ett fullständigt namn: Axels egna uppladdningar slås upp baklänges i aliaslistan.
+  const traff = Object.entries(alias).find(([, namn]) => String(namn).toLowerCase() === s);
+  if (traff) return traff[0];
+  const t = tolka(foralder);
+  if (t?.nummer && !t.land) return String(t.nummer).padStart(3, '0');
+  throw new Error(`Föräldern "${foralder}" är varken ett löpnummer eller ett alias i konfig.namn.alias (${Object.keys(alias).join(', ') || 'tomt'}).`);
+}
+
+/** Förälderns fullständiga namn ur en token ('054' eller 'nat'). Letar bland
+ *  kända namn efter löpnumret; null om det inte finns. Ren. */
+export function foralderNamn(token, kandaNamn, konfig) {
+  if (!token) return null;
+  const alias = konfig.namn.alias ?? {};
+  if (alias[token]) return alias[token];
+  if (!/^\d+$/.test(token)) return null;
+  const nr = Number(token);
+  const traffar = (kandaNamn ?? []).map(tolka).filter((t) => t && !t.land && t.nummer === nr);
+  // Huvudversionen först: utan hookvariant och lägst version.
+  traffar.sort((a, b) => (a.hook ?? 0) - (b.hook ?? 0) || a.version - b.version);
+  return traffar[0]?.namn ?? null;
+}
+
+/** Nästa iterationsnummer på en förälder: högsta `_i<N>p<token>` bland kända
+ *  namn ELLER högsta `iteration` bland BRIEF-rader vars `parent` är samma
+ *  förälder, plus ett. Båda källorna: Nathalies nio första iterationer
+ *  (054–063, 2026-09-30) briefades före namnregeln och bär ingen kedja i namnet.
+ *  Ren. */
+export function nastaIterationPa(foralder, { kandaNamn = [], briefrader = [] } = {}, konfig) {
+  const token = foralderToken(foralder, konfig);
+  let hogst = 0;
+  for (const n of kandaNamn) {
+    const t = tolka(n);
+    if (t && !t.land && t.foralder === token && t.iteration > hogst) hogst = t.iteration;
+  }
+  for (const b of briefrader) {
+    if (!b?.parent || b.parent === 'ingen') continue;
+    let p = null;
+    try { p = foralderToken(b.parent, konfig); } catch { p = null; }
+    if (p === token && Number(b.iteration) > hogst) hogst = Number(b.iteration);
+  }
+  return hogst + 1;
 }
 
 /** Nästa lediga löpnummer ur ALLA kända namn (kontot + Notion i samma lista).
  *  Namn utanför mönstret räknas aldrig som upptagna — Axels egna uppladdningar
- *  ('09-17 Nathalie captions musik') ska inte flytta numreringen. */
+ *  ('09-17 Nathalie captions musik') ska inte flytta numreringen. Utlandets
+ *  namn (`MATSTRUMP_NO_…`) numreras per marknad och räknas inte heller. */
 export function nastaNummer(kandaNamn = []) {
   let hogst = 0;
   for (const namn of kandaNamn) {
     const t = tolka(namn);
+    if (t?.land) continue;
     if (t?.nummer && t.nummer > hogst) hogst = t.nummer;
   }
   return hogst + 1;
@@ -101,6 +189,9 @@ export function mediatyp(namnEllerDelar, konfig) {
 export function adsetNyckel(namn, konfig) {
   const t = tolka(namn);
   if (!t) return null;
+  // Utlandets annonser laddas upp av marknader/annonser/bygg.mjs, aldrig av den
+  // svenska uppladdaren — ett NO-namn får inte hamna i ett svenskt adset.
+  if (t.land) return null;
   const typ = mediatyp(t, konfig);
   if (typ === 'okand') return null;
   return t.vinkel === 'jul' ? (typ === 'video' ? 'jul_video' : 'jul_bild') : typ;

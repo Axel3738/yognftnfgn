@@ -44,9 +44,19 @@ Bakom varje bra annons ligger ett faktum. Börja med faktumet, bygg raden ur
 det. Har vi inget faktum: hämta ett (recension, studie, siffra ur kontot,
 material, tid). Hitta aldrig på ett — det är regel 3 i CLAUDE.md.
 
-### Jämför med det kunden redan känner
-Ny/oklar produkt förklaras genom kända referenser: "Tuffare än en F-150,
-snabbare än en 911." Kortare är bättre; parallellism gör raden minnesvärd.
+### Jämför med det kunden redan känner — men aldrig med ett märke
+Ny/oklar produkt förklaras genom kända referenser: "ser ut som riktig
+takeaway", "rullade som maki". Kortare är bättre; parallellism gör raden
+minnesvärd. ⛔ **Referensen är aldrig ett annat märke eller en konkurrents
+produkt** (Axels beslut 2026-10-02, val A mellan Evolves hookregel och den
+här). "Som [märke], fast …" och "bättre än [märke]" skrivs aldrig; skriv i
+stället vad bara vi är: "den enda strumpan som …", "den första …". Skälet
+är regel 3 i tre-frågorstestet: en rad som bär konkurrentens namn är en rad
+konkurrenten kan skriva under — och den ger tittaren ett annat namn att
+googla. Vardagssaker (takeaway-låda, julstrumpa, fika) är fortfarande
+tillåtna referenser; de är inga märken. ⚠️ Kursens egen motivering gick
+inte att läsa 2026-10-02 (lektionstexten är video, prompten en gissad
+Google-flik) — skälet ovan är vårt, inte ett citat.
 
 ### Konflikt driver allt
 Dra ett streck på mitten, skriv motsatspar. Tre fiendetyper:
@@ -95,6 +105,33 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 - **Korta stycken:** max två rader. Apbarer — lätta att svinga sig mellan.
 - **Struktur = skiljelinjer + parallellism.** Dela upp i 2–3 namngivna delar
   med samma form ("throw money and pray" / "learn copywriting").
+
+---
+
+## Ur Evolves prompter (inskrivna 2026-10-02 efter Axels val A)
+
+Sex regler för videomanus som Harry Dry-reglerna ovan inte täcker, ur
+Evolve-kursens egna Claude-prompter (`docs/os/evolve/EVOLVE-GAP-ANALYS.md`
+avsnitt 7). Gäller varje videobrief; tidsstrukturen står också i
+`docs/os/BRIEF-REGI.md`.
+
+1. **Modulärt hooktest:** tre hookar med var sin matchad bridge, men EN
+   gemensam hold och EN CTA. Redigeraren klipper tre videor ur en kropp.
+2. **Kall trafik i fyra block:** hook 0–3 s, bridge 3–8 s, hold 8–35 s,
+   CTA senast 45 s. Holden går invändning → påstående → bevis → nytta.
+3. **Hooken är ~5 ord**, max två rader på mobil, begriplig med ljudet av.
+4. **Slippery slope:** varje mening slutar i en öppen loop. Läs högt och
+   leta stoppunkter — en mening som går att sluta lyssna efter skrivs om.
+5. **Måttet pekar på avsnittet före nytt manus:** låg hook ⇒ ny hook/bild,
+   låg hold ⇒ enklare mekanism och kortare b-roll, låg konvertering ⇒
+   erbjudande eller tro (aldrig "skriv om allt").
+6. **Läsnivå årskurs 5–7 för voiceover.** Testet: skulle du säga det vid
+   dörren?
+
+Den sjunde regeln (aldrig ett märke som referens) står i avsnittet "Jämför
+med det kunden redan känner" ovan. ⛔ Evolves exekveringsmodell "bara b-roll +
+AI-röst" tas inte in: Matstrumpors enda breakthrough är en riktig kreatör i
+bild.
 
 ---
 

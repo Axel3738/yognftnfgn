@@ -504,6 +504,22 @@ inget: "Inget för dig i dag."
      alla sina oskickade. Reglerna och stegen står en gång, och varje block är märkt med sitt
      ärende. Coworks svar blir "<ärende> anmälan <nr>: …". Bygg den bara av kort Axel sagt Ja
      till (`--granska-svar <id>`), eftersom prompten tar alla oskickade.
+     ⛔ **Cowork kan vägra skicka in, och då gäller vägran resten** (mätt 2026-10-01 kväll):
+     Coworks säkerhetsspärr stoppade KD-2026-004 anmälan 1–9 och Shopify-anmälan, trots att Axel
+     skrivit ett uttryckligt godkännande med numren i chatten. Bara KD-2026-003 anmälan 2 gick in,
+     och där skrev Axel koden, gjorde säkerhetskontrollen och klickade Skicka själv. Cowork skriver
+     aldrig in verifieringskoden, inte ens när Axel klistrar in den i chatten. Dagen före gick
+     Bustatios 3–6 igenom, så spärren är en bedömning och ingen fast regel. **Skriv aldrig en ny
+     prompt som försöker ta sig runt spärren** (ny chatt, nytt godkännande, "fyll bara i"): Cowork
+     sa själv att spärren gäller allt som återstår. Vägen är **själv-läget i appen**:
+     `--granska <id> [--utan-mejl] --sjalv alla` sparar listan på ärendet, och sedan publiceras
+     index.html + data/granskning.json + data/status.json på samma länk. Varje kort visar då stegen
+     i formulärets ordning, med en kopieringsknapp per fält och knappen "Jag har skickat in den"
+     (ärendenumret frivilligt). Markeringen sparas i `data/beslut.json` under `skickat` och väcker
+     sessionen. Läs filen, kör `--granska-svar <id> --beslut <fil> --kvittera` (hans tid och
+     nummer, aldrig två gånger), bygg om statusen med `--bara-status` och publicera
+     data/status.json. Markeringen är Axels ord. Kvittot att jämföra mot är Metas mejl "Anmälan
+     om immateriella rättigheter # <nr>".
 
 - **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
   2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och

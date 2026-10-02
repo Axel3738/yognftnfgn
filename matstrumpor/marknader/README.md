@@ -374,6 +374,73 @@ och texten läses tillbaka. En annons som går rörs aldrig. Första användning
 2026-09-29: erbjudanderaden följer nu sidans rättade paketrubriker ("1 acheté – 1 offert",
 "otrzymaj").
 
+### Sett från riktiga länder: `geokoll.mjs` (2026-10-01)
+
+Containern går ut på nätet från USA, så `?country=` och `POST /localization` simulerar bara landet.
+Vad Shopify gör med en riktig besökare syns bara från landet. `node matstrumpor/marknader/geokoll.mjs`
+mäter det med Globalpings prober (gratis, ingen nyckel, 250 mätningar i timmen per IP).
+`--annonser` tar varje kampanjlänk från varje land i kampanjens geo, och `<url> --land NO,SE --folj`
+mäter vilken adress som helst.
+
+**Mätt 2026-10-01 17:20–17:45 CEST, som Facebook-appens webbläsare:**
+
+- **matstrumpor.no från Norge:** 200, nb, NO, NOK, utan omdirigering. Det gäller roten,
+  produktsidan och NOB-länken. Från Sverige ger .no 302 → matstrumpor.se.
+- **matstrumpor.se från Sverige:** 200, sv, SE, SEK.
+- **12 av 14 kampanjlänkar rätt från sina länder:** NO, NOB, DK, FI, US, WW (GB, CA, NZ), NL, ES,
+  IT, PL, PT och JP.
+- ✅ **DE och FR landade på engelska — rättat samma kväll** (se nedan). En produktsida i en
+  språkmapp på .com utan `?country=` får 302 till den engelska produktsidan när Shopify placerar
+  besökaren i en annan marknad än USA.
+  - Mätt från DE, AT, CH, FR, BE, ES och NO. Det händer även när Facebooks `fbclid` sitter på
+    länken.
+  - Landet och valutan blir rätt, men språket blir fel.
+  - Startsidan `/de` och `/de/pages/spara` stannar på tyska.
+  - Med `?country=` stannar sidan i mappen. Från AT och CH med `?country=DE` blir sidan tysk, men
+    landet blir DE.
+  - DE- och FR-kampanjerna har flera länder och fick därför ingen `?country=` (2026-09-29). Då
+    antogs att "Shopify väljer land efter IP", och det var aldrig mätt.
+  - Produkten har inga översatta handles, så det är inte orsaken. Varför Shopify gör så är inte
+    utrett.
+- 🟡 **En norrman utanför .no:** på matstrumpor.se får hen svensk text med NOK, och på
+  matstrumpor.com/ engelska med NOK.
+- **Mejlens spårningsknapp** `.com/<mapp>/pages/spara?nummer=` stannar på språket. Mätt på de,
+  nb, ja och da.
+
+⚠️ **Shopify geolokaliserar inte en förfrågan som ser ut som en bot.** Med Globalpings egen
+User-Agent fick prober i DE, GB och FR landet US och dollar på .com, utan omdirigering. Det var fel
+bild åt andra hållet. Med en webbläsares User-Agent, Accept-Language och Accept fick samma prober
+sitt eget land. geokoll skickar därför Facebook-appens UA, och `--bot` visar botens svar.
+⚠️ 429 är Shopifys botskydd mot datacenter-IP, inte ett fel på sajten. Mät med två eller tre prober.
+Prober hos vanliga nätoperatörer svarar bäst.
+⚠️ Globalping och Shopify kan placera en prob i olika länder. "Luxembourg" hos WEDOS blev CZ hos
+Shopify, och geokoll ger då ⚪ i stället för en dom.
+
+**Rättningen, Axels val A 2026-10-01 kväll** (frågan: A landet i länken nu, B starta som det är,
+C vänta med DE och FR):
+
+- DE-kampanjens länk bär `?country=DE` och FR:s `?country=FR` (`annonser/marknader.json`).
+- Alla 16 annonser fick ny creative med `bygg.mjs --marknad DE|FR --skarpt --byt-text`, lästa
+  tillbaka 18:2x CEST. Statusen rördes inte: annonserna står ACTIVE i en kampanj som är PAUSED
+  till starten 00:01. `--byt-text` byter sedan dess också i en sådan förberedd annons, men aldrig
+  i en som går.
+- Mätt efteråt med `geokoll.mjs --annonser --bara DE,FR`: 6 av 6 rätt. Sidan är tysk med euro i
+  DE, AT och CH, och fransk med euro i FR, BE och LU, utan omdirigering.
+- Priset för att ha en länk till tre länder: Shopify tror att österrikare och schweizare är i
+  Tyskland, och belgare och luxemburgare i Frankrike.
+  - Fraktrutan säger Deutschland respektive France.
+  - Kassan förväljer det landet, så kunden väljer sitt eget där.
+  - En schweizare ser euro, inte franc.
+- Den rena lösningen är ett adset per land med egen länk. Den är inte byggd.
+- `schemalagg.mjs` torrt efteråt: 14 av 15 skulle startas. Taiwan stoppas som förut.
+
+**Regeln för nya länkar sitter i koden:** `lankOk` (`annonser/bygg.mjs`) godkänner en länk till en
+språkmapp bara om den bär `?country=` med ett av kampanjens länder. `farAktiveras` och
+`schemalagg.mjs` startar alltså aldrig en sådan länk utan land. Regeln är mätt på .com, och
+.se/<mapp> delar samma uppbyggnad men är inte mätt. Ingen kampanj länkar dit.
+
+Hela sajtgranskningen i alla marknader står i `PROMPT-granskning-sajt.md`.
+
 ## Presentkortets egen sidmall (`presentkort.mjs`, 2026-09-29)
 
 Presentkortet delade `templates/product.json` med strumporna. Det visade därför "Passar strl
@@ -542,8 +609,23 @@ loggan utan .SE.
   - Rättas i Judge.me, en recension i taget: Reviews → "⋯" på recensionen → Review details →
     "Detected review language" → Swedish → Save
     ([Sorting reviews by language](https://judge.me/help/en/articles/10506442-sorting-reviews-by-language)).
-- Läses om med **`node matstrumpor/marknader/judgeme-koll.mjs`**: alla fjorton språk, `--visa` visar
-  varje recension, och `--med-webblasare` visar vad en Chrome-kund ser.
+  - ✅ **Rättat 2026-10-01 kväll av Cowork** (`cowork/5-judgeme-texter.txt` del B): alla sju på
+    sushistrumporna står nu som Swedish. I adminen heter fältet "Upptäckt recensionsspråk". Widgetdatan
+    visar 0 recensioner märkta engelska på sushistrumporna. **Engelska sidan läst som kund efteråt:** de
+    svenska recensionerna översätts till engelska ("Show original (Swedish)"), och ingen svensk text står
+    överst längre. ⚠️ **Svenska sidan visade samma kväll fortfarande den gamla märkningen** på Kent, Wide
+    Pia och Niklas: "Visa original (engelska)" under svensk text. Det ser ut som Judge.me:s cache av
+    produktens data, för widgetdatan är redan rätt. Kolla igen nästa dag.
+  - ⚠️ **En åttonde Shop-app-recension var också märkt engelska:** Irénes på **ätpinnarna**
+    (`sushipinnar-i-akta-tra`, **olistad** i Shopify, så kunden når sidan bara via länk). Texten är
+    "jättefina strumpor och rolig som julklapp". Cowork såg den men lät den vara, eftersom den inte stod i
+    prompten.
+  - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
+    varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
+    ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
+- Läses om med **`node matstrumpor/marknader/judgeme-koll.mjs`**: alla fjorton språk, antalet i rutan
+  ("11 recenzji"), språkmärkningen sist. `--visa` visar varje recension, och `--med-webblasare` visar
+  vad en Chrome-kund ser.
 - **Mätt igen 2026-10-01 ~10:30 CEST (~36 timmar efter inställningen):** fortfarande 0 översatta recensioner
   på de, nb, fr, ja och zh-TW, bara knappen "Översätt …". Rubrikerna är rätt på de, nb, fr och en, men
   japanska och kinesiska sidan visar "Kundrecensioner" och "Recensioner på andra språk" på svenska —
@@ -560,10 +642,10 @@ loggan utan .SE.
   - **Antalet i rutan:** böjningen var fel på finska ("11 arvostelut", ska vara "11 arvostelua") och polska
     ("11 recenzje", ska vara "11 recenzji"). Det är Review Widget-fältet "Review word (plural)" per språk
     (Inställningar → Widgetar → Review Widget → Text → "Currently editing in"), i
-    `cowork/5-judgeme-texter.txt`. **Finskan rättad 2026-10-01** av Cowork, och läst som kund: "11
-    arvostelua". **Polskan står kvar på "11 recenzje".** Judge.me-panelen blev tom och laddade om sig
-    varje gång Cowork valde Polska, två försök, och Coworks klick hamnade fel i fönstret. Polskans
-    "recenzji" blir fel igen vid 22–24 recensioner (då "recenzje").
+    `cowork/5-judgeme-texter.txt`. **Finskan och polskan är rättade 2026-10-01** av Cowork och lästa som
+    kund: "11 arvostelua" och "11 recenzji". Polskan krävde tre försök. Judge.me-panelen blev tom och
+    laddade om sig när Cowork valde Polska, tills Chrome startats om. Polskans "recenzji" blir fel igen
+    vid 22–24 recensioner (då "recenzje").
 - ✅ **Recensionerna översätts när kunden rullar fram dem: 14 av 14 språk, mätt 2026-10-01 16:15 CEST**
   (48 timmar efter inställningen, `judgeme-koll.mjs`, webbläsarens översättare av). De recensioner
   som syns först står på sidans språk, med knappen "Visa original (svenska)" på samma språk. Exempel:
@@ -903,6 +985,62 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
 - ⚠️ Förberedelsen tog över en timme: Meta strypte anropen (kod 17/613, upp till 2 minuters väntan per
   anrop) medan en utredning samtidigt provade `validate_only` mot samma konto. Kör inte tunga
   Meta-utredningar parallellt med en skarp körning.
+- ✅ **Utfallet: igång fre 2/10 00:03–00:20, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
+  `starta`, skrivet 22:20:48 UTC). NO, NOB, DK, FI, US, WW, DE, FR och NL startade 00:03–00:07. Mitt
+  i ES svarade Meta kod 17 i cirka 13 minuter, och verktygets egen väntan (30 s, sedan upp till 5 min)
+  tog det utan omkörning. ES, IT, PL, PT och JP startade därför cirka 00:20. Varje kampanj var
+  ACTIVE/ACTIVE med `marknader.json`:s budget, sammanlagt 13 000 kr/dag. Adseten var ACTIVE med rätt
+  länder (WW: GB, CA, NZ). 110 annonser var på och Norges två 007 PAUSED. Meta visade inga problem på
+  adseten. DE- och FR-annonserna med `?country=` var redan granskade (ACTIVE). TW rördes inte (inget
+  adset, `lansering_stopp`). ⚠️ Mitt under strypningen visade kontots `x-business-use-case-usage`
+  (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
+  kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
+
+## StonePNL: vinsten per land (2026-10-02)
+
+Axel skickade fredag morgon en skärmdump av StonePNL:s marknadsvy för Matstrumpor. Den hade fyra
+noteringar, och alla fyra stämde:
+
+- **"9,184 SEK of ad spend is on campaigns without a market"**: ingen kampanj i "nya kungen" hade
+  något land i StonePNL. Det är en slutsats ur mätningen, inte avläst i appen: kl 07:40 hade kontot
+  spenderat 9 650 kr sedan midnatt, varav 8 906 kr i de 14 nya kampanjerna och 744 kr i den svenska.
+  9 184 kr är mer än de 14 nya ensamma, så även den svenska kampanjen låg utan land. StonePNL lägger
+  hela kontots kostnad på "inget land" tills minst en kampanj är märkt (`harMarknader` i
+  `meta.server.ts`), så inget land fick sin egen annonskostnad.
+- **Nio länder "counted on the store's standard cost"**: StonePNL räknar varje land på Shopifys
+  svenska kostnad (Cost per item) tills landet har en egen. Axels Big5-ark (`../cogs.json` → `big5`)
+  fanns i repot men aldrig i StonePNL.
+- **"cost missing on 6–13 % of sales"**: donut-, pizza- och hamburgarstrumporna saknar Cost per item i
+  Shopify (läst 2026-10-02: tomt på alla tre, och på ätpinnarna). Sushistrumporna har 80,23 och 67,51 kr.
+- **"Default duty used for …"**: standardtullen ligger på alla länder, också USA och Kanada, där
+  arket säger dörr till dörr utan tullrad.
+
+**Rättningen är `cowork/6-stonepnl.txt`** (StonePNL har inget API härifrån; allt ligger i appens egen
+databas på Railway):
+
+1. Tolv kampanjer får sitt land (SE, NO ×2, DK, FI, US, NL, ES, IT, PL, PT, JP).
+2. Big5-priserna klistras in som ett leverantörssvar i StonePNL:s offertruta,
+   `stonepnl/offertsvar-big5.txt`. Texten är byggd med StonePNL:s EGEN mall (`byggOffertmeddelande`
+   ur `pnl-app/app/lib/offertforfragan.ts` på grenen `claude/bäverbutiken-settkopplingen-nba21z`,
+   commit 297a078a) och provläst med appens egen läsare (`tolkaOffertsvar` + `offertTillRader`): 25
+   rader (5 varianter × US, CA, GB, NZ, AU) i USD, inget pris stoppas, och Shopifys standardkostnad
+   rörs inte. Variant-id:n är lästa ur Shopify samma morgon. Sushins 2 och 3 lådor räknas linjärt
+   (arket har bara en låda), vilket överskattar kostnaden något.
+3. Tullen 0 för USA och Kanada (och GB, NZ, AU om de står i listan).
+
+⚠️ **DE-, FR- och WW-kampanjerna lämnas utan land med flit.** StonePNL tar ETT land per kampanj, och
+Meta sprider deras spend jämnt. Mätt fredag morgon i Meta (`breakdowns=country`, sedan midnatt): DE
+gav CH 302, DE 198 och AT 105 kr. FR gav FR 276, BE 219 och LU 46 kr. WW gav NZ 383, GB 307 och CA
+293 kr. Vilket land man än valde hade hälften eller mer av kostnaden hamnat i fel land. Utan land står
+de kvar i raden "without a market", och den raden är sann. Den rena lösningen är att StonePNL delar
+kostnaden efter Metas egen landuppdelning. Det är en ändring i appen, och frågan ligger hos Axel.
+
+**Priserna för resten av länderna kommer från leverantören, via StonePNL.** Länken "Ask your supplier
+for these countries' prices →" i marknadsvyn bygger ett meddelande med varje såld variant och varje
+land som saknar egen kostnad (läget "Also countries that use your standard cost"). Axel skickar det,
+och leverantörens svar klistras in i samma ruta. Då fylls kostnaderna i av sig själva, också Sveriges
+för donut, pizza och hamburgare. Parkeringen i `LEVERANTOR-FRAGA-JP-TW.md` ("vänta tills vi får
+försäljning") är därmed hävd: fredag morgon hade JP, CH, PT, DK, ES och FR redan sålt.
 
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 

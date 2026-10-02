@@ -1,0 +1,18 @@
+{
+ "brand": "CaraShell",
+ "datum": "2026-10-01",
+ "lage": "spegla",
+ "gjort": [
+  "Nothing to mirror today: all 3 rows in the SE queue were stopped, so no new ads were created.",
+  "The \"CaraShell EN ready to be active\" queue is empty — no source row is waiting for a US ad."
+ ],
+ "varningar": [
+  "Takoverdrag_FD_2_2 and Takoverdrag_FD_2_1 (Father's Day image ads): permanently not mirrorable. Father's Day is 8 November in Sweden but June in the US, UK, Canada and Denmark, and the order-by date is calculated on delivery time to Sweden. Correct behaviour, no decision needed — these two stay in the Swedish store only. (They also name the source store, but fixing that would not make them mirrorable.)",
+  "Takoverdrag_GT_11_H1: end card could not be checked — ffmpeg is not installed in this container, so it could not read the duration. Does not block anything today.",
+  "SE campaign \"CARASHELL_SE_Taköverdraget LISTICLE\" is its own track (LISTICLE in the name) and did not receive the ads — correct behaviour."
+ ],
+ "action_axel": [
+  "Takoverdrag_GT_11_H1: still skipped — the copy names the source store. Eighth day in a row (24 Sep - 1 Oct). Decide whether the editor should make a store-neutral version, or the row stays parked."
+ ],
+ "nasta_korning": "tomorrow 16:20 + slot"
+}

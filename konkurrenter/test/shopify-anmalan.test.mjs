@@ -59,6 +59,11 @@ test('byggShopifyAnmalan: fälten på engelska, butiken med namn, inget saknas',
   assert.deepEqual(an.falt.original, ['https://www.facebook.com/ads/library/?id=2127001151229429', 'https://matstrumpor.se/products/sushi-strumpor']);
   assert.equal(an.forsakringar.length, 2);
   assert.match(shopifyText(an), /Statements:\n- I have a good faith belief/);
+  // Cowork skriver tecken för tecken: titeln aldrig i namnfältet, ingen påhittad telefonrad.
+  assert.match(shopifyText(an), /^Full name: Test Testsson$/m);
+  assert.match(shopifyText(an), /^Title \(only if the form asks for one\): CEO$/m);
+  assert.doesNotMatch(shopifyText(an), /Phone:/);
+  assert.match(shopifyText(bygg({ konfig: { ...KONFIG, anmalan: { undertecknare: { ...KONFIG.anmalan.undertecknare, telefon: '+46 70 000 00 00' } } } })), /^Phone: \+46 70 000 00 00$/m);
 });
 
 test('kontrolleraShopify: ett mått som inte räcker och saknade fält stoppar', () => {

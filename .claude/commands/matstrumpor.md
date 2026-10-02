@@ -116,10 +116,18 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
      är inte gjord.
    - Sätt radens status till **`Approved`** i Notion (Matstrumpor har ingen
      översättningskö — NO- och FI-kontona i portföljen saknar betalmetod).
-   - Logga en rad per uppladdning:
+   - Logga en rad per uppladdning — av koden, aldrig med `node -e` (uppladdningen
+     25/9 skrev inga rader alls, och arkivet kan inte läsa ett hål):
      ```bash
-     node -e 'import("./matstrumpor/kor.mjs").then(m=>m.skrivRad({kod:"UPPLADDAD",annons:"<namn>",annons_id:"<id>",adset:"<nyckel>",notion:"<sid-id>",datum:"<YYYY-MM-DD>"}))'
+     node matstrumpor/kor.mjs --uppladdad <namn> <annons-id> <adset-nyckel> --notion <sid-id> --kalla "<Drive-fil eller Notion>" --kreator <namn om en människa syns>
      ```
+     Raden får typen (IDEA/ITER/IMIT) och föräldern ur namnet, och en andra
+     körning för samma annons-id skriver inget. `--kreator` (Nathalie, Sofie,
+     Katarina …, `konfig.kreatorer`) är det som gör att arkivet kan räkna
+     vinstbidrag per kreatör.
+   - Ett namn som ska döpas (odöpt rad) byggs med kedjan när det är en
+     iteration: `node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --iter <förälder>`
+     — se `/matstrumporkungen` steg 6.
 
 6. **Stoppreglerna** (samma två som `/notionkorning`, inget mer):
    - **Pris som avviker mer än 20 %** från produktsidan ⇒ kommentar i Notion,
