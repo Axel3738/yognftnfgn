@@ -23,9 +23,56 @@ Briefen de får när de sagt ja: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5C
 
 Hej Nathalie! Axel här. Din video är vår bästa någonsin, den drog in två av tre köp i hela kampanjen första veckan. Jag vill inte göra en video till med dig, jag vill göra flera, löpande, hemma hos dig som förut. Samma sak som funkade: någon som öppnar lådan utan att veta vad som är i. Är du sugen på att ta dig an det? Då hör jag av mig med detaljerna.
 
+### Nathalies svar 2026-10-01 22:01 och Axels svar (utkast 2026-10-02, skickas av Axel själv)
+
+Nathalie svarade: "Kul att höra! Amen självklart vill jag höra mer om dina tankar
+kring ett fortsatt samarbete!" Svaret nedan ger henne två videor nu som ett paket
+(val A: paketpris) och säger att fler kommer löpande (Chadbot: fler från den som
+redan levererat, före nya). Länk 1 = reaktionsklippet 065 (hon är mottagaren,
+fast kamera), länk 2 = "Sushin i skåpet" (066:s H2 "inget bäst före-datum" som
+filmad video; sessionens rekommendation: Nathalie, eftersom hela kroppen är hennes
+egna bevisade rader och kursen itererar vinnaren med samma kreatör först). Båda
+sidorna är delade "Anyone with the link" (läst 2026-10-02).
+
+```
+Hej Nathalie! Vad kul. Så här tänker jag. Vi börjar med två videor nu, båda hemma hos dig med mobilen.
+
+Den första är du som får lådan. Du sitter vid middagsbordet, någon ställer fram en sushilåda, kameran står stilla, du öppnar och reagerar. Allt står här:
+https://claude.ai/artifact/RvvVs454Kggxx5CpbJT7fU
+
+Den andra heter Sushin i skåpet. Du berättar om sushi som aldrig blir gammal, lägger lådan i skåpet, och ger den sen till en kompis som inte vet vad det är. Allt står här:
+https://claude.ai/artifact/5k7Xu1qYgJZutAeELRm7hE
+
+Sen vill jag ha fler från dig framåt, en eller två i månaden, med nya idéer från mig varje gång. Vad tar du för de här två som ett paket? Säg din siffra så ser vi om vi möts. Behöver du nya lådor, och vart ska de i så fall?
+
+Hälsningar
+Axel
+```
+
 ## 1. Sofie (@husetmellanhagarna) — IG-DM. Återkommande. ✅ Skickat 2026-10-01.
 
 Hej Sofie! Axel här. Dina videor höll kvar tittarna längst av allt vi har, så jag vill göra en runda till med dig. Den här gången med manus: vårt bästa manus ord för ord, plus en ny version med en annan öppning. Tre korta videor hemma hos dig som förut, och du får alla fyra lådorna. Är du sugen på att ta dig an det? Då skickar jag manuset direkt.
+
+### Sofies svar 2026-10-02 och Axels svar (utkast, skickas av Axel själv)
+
+Sofie svarade: sugen på en runda till, vill ha manuset, och frågar hur länge vi vill
+använda materialet i annonser så hon kan ge en prisbild. Rättigheterna är Axels
+beslut 2026-09-06 i `villkor.md`: betald annonsering, alla kanaler, utan
+tidsgräns. Hon filmar brief 1, 2 och 4 på kreatörssidan. ⚠️ Sidan är PRIVAT tills
+Axel delar den (Share → Anyone with the link). Första meddelandet lovade "alla
+fyra lådorna"; svaret säger bara "lådorna", vad som skickas är Axels sak.
+
+```
+Hej Sofie! Vad kul. Manuset ligger här, det är en sida med fyra briefer och du filmar ett, två och fyra:
+https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn
+
+Brief ett är vårt bästa manus ord för ord. Brief två är samma manus med en ny start och tre olika öppningar, så vi klipper tre videor av den. Brief fyra är skämtet: du tar med lådan till ett fikabord eller en middag och någon försöker äta en bit.
+
+Rättigheterna: vi vill kunna använda videorna i våra annonser utan tidsgräns, så räkna på det. Ge gärna ett pris för tre videor som ett paket. Lådorna skickar jag så fort jag har din adress.
+
+Hälsningar
+Axel
+```
 
 ## 2. Katarina Kruger — DM eller mejl (Axel har kontakten). Återkommande. ✅ Skickat 2026-10-01.
 
@@ -82,6 +129,46 @@ filmar brief 1, 2 och 4 (fikaskämtet funkar vid middagsbordet).
 Hej Hassanien! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör selfie-videor för annonser på svenska, och jag behöver en manlig röst: du som ger bort lådan till flickvännen eller en polare, och filmar när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?
 
 ---
+
+## Vem får "Sushin i skåpet" (Axels fråga 2026-10-02, https://claude.ai/artifact/5k7Xu1qYgJZutAeELRm7hE)
+
+Sidan är byggd av en annan session ur 066:s hook H2 ("Det finns inget bäst
+före-datum på den här sushin."): kreatören berättar, lådan i skåpet, upprullningen,
+"glömde köpa present till en kompis", kompisens reaktion, soffan. Sessionens
+rekommendation: **Nathalie**, i paketet med reaktionsklippet 065 (svaret ovan).
+Skäl: kroppen är hennes egna rader som redan sålt, kursen itererar vinnaren med
+samma kreatör före nya, hon har sagt ja till fler, och det är den enda som bevisat
+reaktionsslutet. Vill Axel ha två tagningar på samma manus: Sofie som nummer två
+(håller tittarna längst i ensamt tal, publik kvinnor 40+ = "present till en
+kompis"), men då får hon fyra videor i stället för tre.
+
+## WhatsApp till creative strategen (engelska, Axels beställning 2026-10-02: "så han kan ge sina åsikter")
+
+```
+Hi! Quick one. We are ordering new UGC for the sushi socks and I want your eyes on the briefs before the creators film. Everything is on three pages:
+
+1. The creator brief page, four briefs: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn
+Brief 1 is Nathalie's winning script word for word. Brief 2 is the same body with a boring-gift problem first and three new silent openings (the clear lid, the box set on the table with nobody speaking, a riddle). Brief 3 is a man giving the box, camera on the recipient's face. Brief 4 is the prank: a colleague tries to eat a piece at fika.
+
+2. Nathalie's reaction clip, fixed camera, she is the recipient: https://claude.ai/artifact/RvvVs454Kggxx5CpbJT7fU
+
+3. "Sushi in the cupboard", the no-best-before-date story, ends on a friend's reaction: https://claude.ai/artifact/5k7Xu1qYgJZutAeELRm7hE
+
+Who gets what:
+- Nathalie (our winner, two of three sales in week one): the reaction clip + the cupboard video. Said yes to more.
+- Sofie (held viewers longest): brief 1, 2 and 4. Said yes, pricing now.
+- Sara (Gothenburg, new): brief 1, 2 and 4. Said yes, pricing now.
+- Katarina and Per (a 50-year-old cartoonist, brief 3 for him): asked, waiting for an answer.
+- More creators lined up if we end up with fewer than four yes.
+
+What I want from you:
+- Which of the nine new openings in brief 2, 3 and 4 would you cut first, and why?
+- Is the cupboard video right for Nathalie, or should a second creator film it too?
+- Anything in the briefs a creator will trip on, or anything missing?
+- Anything here you would not pay for?
+
+Reply here, short is fine.
+```
 
 ## Reserver (skickas bara om listan ovan ger färre än fyra ja)
 
