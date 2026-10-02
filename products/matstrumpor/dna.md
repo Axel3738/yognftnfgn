@@ -229,6 +229,10 @@ varandra) och `068` = gåta B som HELA videon med en ny kreatör (lådan läggs 
 ett skåp, tas upp, rullas upp; "Min sushi väntar i skåpet tills någon fyller
 år." / "Glömde köpa present, men sushin låg ju kvar."; riktig mottagare
 öppnar), kreatörssidan https://claude.ai/artifact/5k7Xu1qYgJZutAeELRm7hE.
+⛔ **065 och 068 arkiverade i hubben samma dag (Axels order):** en
+kreatörsinspelning läggs aldrig som Notion-rad innan råklippen finns, för
+redigeraren tar varje rad han ser och klipper den ur det material som
+finns. Bara omklipp (066, 067) ligger i hubben.
 Mönstret för allt nytt här: **iterera på vinnaren** — samma kropp, en ny mekanism eller en ny
 ingång åt gången, aldrig ett större löfte. **Två sidor, publiceras om på samma länkar:** den
 engelska briefen till creative strat (`CS-BRIEF-sophistication.md`)
