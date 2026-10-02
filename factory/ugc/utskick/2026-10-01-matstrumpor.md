@@ -124,6 +124,34 @@ Axel
 Efter ja: dela briefsidan (Share → Anyone with the link) och skicka länken; hon
 filmar brief 1, 2 och 4 (fikaskämtet funkar vid middagsbordet).
 
+### Saras andra svar 2026-10-02 09:32 CEST (läst i Gmail av sessionen) och Axels svar (utkast)
+
+Sara: "Min ordinarie prisnivå är 2 000 kr exkl. moms per video. För tre videos på ca 20-35
+sekunder kan jag erbjuda ett paketpris på 5000 ex moms, inklusive 3 månaders annonsrättigheter.
+I det ingår en revidering. Skicka gärna över manusen så kikar jag på dem."
+Mot `villkor.md`: priset ligger inom Axels ram (1 500 standard, upp till 3 000 per video för
+de bästa), men **rättigheterna är 3 månader mot våra "utan tidsgräns"** — en vinnare körs i
+månader, och Nathalies video från september är fortfarande vår bästa. Utkastet nedan skickar
+sidan (delad av Axel 2026-10-02) och ber om hennes pris utan tidsgräns i stället för att
+ankra; vill Axel hellre säga sitt tal är 6 000 ex moms för tre med obegränsade rättigheter
+ett rimligt bud (1 000 över hennes paket för rättigheterna). Pengarna är Axels beslut.
+
+```
+Hej Sara! Tack för priset, det låter rimligt. Här är manuset, en sida med fyra briefer där du filmar ett, två och fyra:
+https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn
+
+En sak behöver vi ändra: vi vill kunna använda videorna i våra annonser utan tidsgräns, det är vårt standardupplägg med alla kreatörer. Vad blir paketpriset för tre videor med det? Säg din siffra så ser vi om vi möts. En revidering är perfekt.
+
+Kika på manusen och säg till om något känns fel för dig, då löser vi det. Och vilken adress ska lådan till?
+
+Hälsningar
+Axel
+```
+
+Nathalies och Sofies svar finns inte i Gmail-kontot axel.odhner@stonebite.org (sökt
+2026-10-02 på namn, handtag och domäner) — de kommer i en annan brevlåda eller i DM. Axel läser
+dem själv och klistrar in.
+
 ## 9. Hassanien Madjed (@fynder) — Collabstr-chatt (https://collabstr.com/fynder), Norrköping
 
 Hej Hassanien! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör selfie-videor för annonser på svenska, och jag behöver en manlig röst: du som ger bort lådan till flickvännen eller en polare, och filmar när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?
