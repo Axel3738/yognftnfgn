@@ -374,6 +374,73 @@ och texten läses tillbaka. En annons som går rörs aldrig. Första användning
 2026-09-29: erbjudanderaden följer nu sidans rättade paketrubriker ("1 acheté – 1 offert",
 "otrzymaj").
 
+### Sett från riktiga länder: `geokoll.mjs` (2026-10-01)
+
+Containern går ut på nätet från USA, så `?country=` och `POST /localization` simulerar bara landet.
+Vad Shopify gör med en riktig besökare syns bara från landet. `node matstrumpor/marknader/geokoll.mjs`
+mäter det med Globalpings prober (gratis, ingen nyckel, 250 mätningar i timmen per IP).
+`--annonser` tar varje kampanjlänk från varje land i kampanjens geo, och `<url> --land NO,SE --folj`
+mäter vilken adress som helst.
+
+**Mätt 2026-10-01 17:20–17:45 CEST, som Facebook-appens webbläsare:**
+
+- **matstrumpor.no från Norge:** 200, nb, NO, NOK, utan omdirigering. Det gäller roten,
+  produktsidan och NOB-länken. Från Sverige ger .no 302 → matstrumpor.se.
+- **matstrumpor.se från Sverige:** 200, sv, SE, SEK.
+- **12 av 14 kampanjlänkar rätt från sina länder:** NO, NOB, DK, FI, US, WW (GB, CA, NZ), NL, ES,
+  IT, PL, PT och JP.
+- ✅ **DE och FR landade på engelska — rättat samma kväll** (se nedan). En produktsida i en
+  språkmapp på .com utan `?country=` får 302 till den engelska produktsidan när Shopify placerar
+  besökaren i en annan marknad än USA.
+  - Mätt från DE, AT, CH, FR, BE, ES och NO. Det händer även när Facebooks `fbclid` sitter på
+    länken.
+  - Landet och valutan blir rätt, men språket blir fel.
+  - Startsidan `/de` och `/de/pages/spara` stannar på tyska.
+  - Med `?country=` stannar sidan i mappen. Från AT och CH med `?country=DE` blir sidan tysk, men
+    landet blir DE.
+  - DE- och FR-kampanjerna har flera länder och fick därför ingen `?country=` (2026-09-29). Då
+    antogs att "Shopify väljer land efter IP", och det var aldrig mätt.
+  - Produkten har inga översatta handles, så det är inte orsaken. Varför Shopify gör så är inte
+    utrett.
+- 🟡 **En norrman utanför .no:** på matstrumpor.se får hen svensk text med NOK, och på
+  matstrumpor.com/ engelska med NOK.
+- **Mejlens spårningsknapp** `.com/<mapp>/pages/spara?nummer=` stannar på språket. Mätt på de,
+  nb, ja och da.
+
+⚠️ **Shopify geolokaliserar inte en förfrågan som ser ut som en bot.** Med Globalpings egen
+User-Agent fick prober i DE, GB och FR landet US och dollar på .com, utan omdirigering. Det var fel
+bild åt andra hållet. Med en webbläsares User-Agent, Accept-Language och Accept fick samma prober
+sitt eget land. geokoll skickar därför Facebook-appens UA, och `--bot` visar botens svar.
+⚠️ 429 är Shopifys botskydd mot datacenter-IP, inte ett fel på sajten. Mät med två eller tre prober.
+Prober hos vanliga nätoperatörer svarar bäst.
+⚠️ Globalping och Shopify kan placera en prob i olika länder. "Luxembourg" hos WEDOS blev CZ hos
+Shopify, och geokoll ger då ⚪ i stället för en dom.
+
+**Rättningen, Axels val A 2026-10-01 kväll** (frågan: A landet i länken nu, B starta som det är,
+C vänta med DE och FR):
+
+- DE-kampanjens länk bär `?country=DE` och FR:s `?country=FR` (`annonser/marknader.json`).
+- Alla 16 annonser fick ny creative med `bygg.mjs --marknad DE|FR --skarpt --byt-text`, lästa
+  tillbaka 18:2x CEST. Statusen rördes inte: annonserna står ACTIVE i en kampanj som är PAUSED
+  till starten 00:01. `--byt-text` byter sedan dess också i en sådan förberedd annons, men aldrig
+  i en som går.
+- Mätt efteråt med `geokoll.mjs --annonser --bara DE,FR`: 6 av 6 rätt. Sidan är tysk med euro i
+  DE, AT och CH, och fransk med euro i FR, BE och LU, utan omdirigering.
+- Priset för att ha en länk till tre länder: Shopify tror att österrikare och schweizare är i
+  Tyskland, och belgare och luxemburgare i Frankrike.
+  - Fraktrutan säger Deutschland respektive France.
+  - Kassan förväljer det landet, så kunden väljer sitt eget där.
+  - En schweizare ser euro, inte franc.
+- Den rena lösningen är ett adset per land med egen länk. Den är inte byggd.
+- `schemalagg.mjs` torrt efteråt: 14 av 15 skulle startas. Taiwan stoppas som förut.
+
+**Regeln för nya länkar sitter i koden:** `lankOk` (`annonser/bygg.mjs`) godkänner en länk till en
+språkmapp bara om den bär `?country=` med ett av kampanjens länder. `farAktiveras` och
+`schemalagg.mjs` startar alltså aldrig en sådan länk utan land. Regeln är mätt på .com, och
+.se/<mapp> delar samma uppbyggnad men är inte mätt. Ingen kampanj länkar dit.
+
+Hela sajtgranskningen i alla marknader står i `PROMPT-granskning-sajt.md`.
+
 ## Presentkortets egen sidmall (`presentkort.mjs`, 2026-09-29)
 
 Presentkortet delade `templates/product.json` med strumporna. Det visade därför "Passar strl
@@ -918,6 +985,16 @@ och fynden var rättade. `budget_beslut` i `marknader.json` bär hans ord för a
 - ⚠️ Förberedelsen tog över en timme: Meta strypte anropen (kod 17/613, upp till 2 minuters väntan per
   anrop) medan en utredning samtidigt provade `validate_only` mot samma konto. Kör inte tunga
   Meta-utredningar parallellt med en skarp körning.
+- ✅ **Utfallet: igång fre 2/10 00:03–00:20, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
+  `starta`, skrivet 22:20:48 UTC). NO, NOB, DK, FI, US, WW, DE, FR och NL startade 00:03–00:07. Mitt
+  i ES svarade Meta kod 17 i cirka 13 minuter, och verktygets egen väntan (30 s, sedan upp till 5 min)
+  tog det utan omkörning. ES, IT, PL, PT och JP startade därför cirka 00:20. Varje kampanj var
+  ACTIVE/ACTIVE med `marknader.json`:s budget, sammanlagt 13 000 kr/dag. Adseten var ACTIVE med rätt
+  länder (WW: GB, CA, NZ). 110 annonser var på och Norges två 007 PAUSED. Meta visade inga problem på
+  adseten. DE- och FR-annonserna med `?country=` var redan granskade (ACTIVE). TW rördes inte (inget
+  adset, `lansering_stopp`). ⚠️ Mitt under strypningen visade kontots `x-business-use-case-usage`
+  (ads_management, development_access) 3 % och 0 minuters väntan, och en läsning svarade 200. Koden 17
+  kom alltså inte från kontots eget tak. Orsaken är inte fastställd.
 
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 

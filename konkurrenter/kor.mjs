@@ -62,11 +62,14 @@
 //   node konkurrenter/kor.mjs --skicka <id> [--utan-meta] …
 //        --utan-meta: brevet och sms:et nämner inte Meta-anmälningarna alls (Axels beslut
 //        2026-09-29 för ORVO: "vi borde lugnt inte säga att vi har skickat DMCA").
-//   node konkurrenter/kor.mjs --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]
+//   node konkurrenter/kor.mjs --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--sjalv nyckel,…|alla|av] [--fel nyckel=text] [--notis text]
 //        Axels granskningsapp (ett kort per anmälan + mejlet med fakturan + sms:et,
 //        Ja/Nej som sidan sparar i data/beslut.json) → output/granska/<id>/.
-//   node konkurrenter/kor.mjs --granska-svar <id> --beslut <fil> [--granskning <fil>]
+//        --sjalv: Axel skickar in de korten själv (Cowork vägrade 2026-10-01) — stegen
+//        med en kopieringsknapp per fält och knappen "Jag har skickat in den".
+//   node konkurrenter/kor.mjs --granska-svar <id> --beslut <fil> [--granskning <fil>] [--kvittera]
 //        Vad Axels svar betyder: vilka anmälningar som ska in, om mejlet ska gå.
+//        --kvittera: skriver in kvittot för varje kort Axel själv markerat som inskickat.
 //   node konkurrenter/kor.mjs --lista
 //   node konkurrenter/kor.mjs --brev <id> [--sprak sv|en] [--paminnelse]
 //   node konkurrenter/kor.mjs --skicka <id> [--ja] [--till adress] [--sprak sv|en] [--utkast] [--paminnelse]
@@ -1055,10 +1058,9 @@ async function shopify() {
   const { arenden, a } = hamtaArende(flagga('shopify'));
   const nu = new Date().toISOString();
   if (har('skickad')) {
-    if (!a.shopify) { console.log(`${a.id} har ingen Shopify-anmälan — bygg den med --shopify ${a.id} --bild <länk> --sida <länk>.`); process.exitCode = 1; return; }
-    if (a.shopify.status === 'inskickad') { console.log(`Shopify-anmälan i ${a.id} är redan kvitterad ${a.shopify.inskickad} — den skickas aldrig två gånger.`); process.exitCode = 1; return; }
-    const ref = flagga('referens') && flagga('referens') !== true ? String(flagga('referens')) : null;
-    const upp = { ...a, shopify: { ...a.shopify, status: 'inskickad', inskickad: nu, referens: ref }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'sessionen', not: `Shopify-anmälan inskickad${ref ? `, referens ${ref}` : ''}` }] };
+    const ref = flagga('referens') ? String(flagga('referens')) : null;
+    let upp;
+    try { upp = kvitteraShopify(a, { referens: ref, nu }); } catch (e) { console.log(e.message); process.exitCode = 1; return; }
     sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
     console.log(`Shopify-anmälan i ${a.id} kvitterad som inskickad${ref ? ` (referens ${ref})` : ''}.`);
     return;
@@ -1441,6 +1443,13 @@ function kvitteraAnmalan(a, { nr, referens = null, nu = new Date().toISOString()
   return { upp, alla, kvar: nya.filter((x) => x.status !== 'inskickad').length };
 }
 
+/** Kvittot för Shopify-anmälan — delas av --shopify --skickad och --granska-svar --kvittera. Kastar när den saknas eller redan är kvitterad. Ren. */
+function kvitteraShopify(a, { referens = null, nu = new Date().toISOString(), av = 'sessionen' } = {}) {
+  if (!a.shopify) throw new Error(`${a.id} har ingen Shopify-anmälan — bygg den med --shopify ${a.id} --bild <länk> --sida <länk>.`);
+  if (a.shopify.status === 'inskickad') throw new Error(`Shopify-anmälan i ${a.id} är redan kvitterad ${a.shopify.inskickad} — den skickas aldrig två gånger.`);
+  return { ...a, shopify: { ...a.shopify, status: 'inskickad', inskickad: nu, referens }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av, not: `Shopify-anmälan inskickad${referens ? `, referens ${referens}` : ''}` }] };
+}
+
 /**
  * --anmald <id> --nr <n> --referens <r>: kvittot för EN inskickad anmälan, för hand. Alla inskickade ⇒ ärendet märks "anmält vidare".
  * --anmald <id> --nr <n> --angra "<skäl>": tar tillbaka ett kvitto som var fel (anmälan blir utkast igen).
@@ -1756,17 +1765,31 @@ function smsFor(a) {
 }
 
 /**
- * --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]:
+ * --granska <id> [--forsta] [--bara-status] [--utan-mejl] [--pagar nyckel,…] [--sjalv nyckel,…|alla|av] [--fel nyckel=text] [--notis text]:
  * Axels granskningsapp → output/granska/<id>/ (index.html, data/*.json, bilder/).
  * Sessionen publicerar mappen på verifieringslänken med capabilities {artifact: {}}.
  * `--forsta` skriver också en tom data/beslut.json — BARA vid första publiceringen,
  * sedan äger sidan den filen (Axels svar). `--bara-status` skriver bara data/status.json.
  * `--utan-mejl` = bara anmälningarna (ORVO Norge 2026-09-29: brevet och fakturan gick
  * redan i KD-2026-001 mot samma sida) — skicka flaggan vid VARJE ombyggnad av den rundan.
+ * `--sjalv` = Axel skickar in de korten själv (Cowork vägrade 2026-10-01): kortet visar stegen
+ * med en kopieringsknapp per fält och knappen "Jag har skickat in den". Listan sparas på
+ * ärendet (`a.sjalv`), så varje senare statusbygge behåller läget; `alla` = allt som inte är
+ * inskickat, `av` = tillbaka till vanliga läget. Axels markering kvitteras med --granska-svar --kvittera.
  */
 async function granska() {
   const k = konfig();
-  const { arenden, a } = hamtaArende(flagga('granska'));
+  let { arenden, a } = hamtaArende(flagga('granska'));
+  if (har('sjalv')) {
+    const v = flagga('sjalv') ?? 'alla';
+    const ej = [...(a.anmalan?.rapporter ?? []).filter((r) => r.status !== 'inskickad').map((r) => `anmalan-${r.nr}`), ...(a.shopify && a.shopify.status !== 'inskickad' ? ['shopify'] : [])];
+    const lista = v === 'alla' ? ej : v === 'av' ? [] : listaFlagga('sjalv');
+    const fel = lista.filter((n) => !ej.includes(n));
+    if (fel.length) { console.log(`--sjalv: ${fel.join(', ')} finns inte bland korten som inte är inskickade (${ej.join(', ') || 'inga'}).`); process.exitCode = 1; return; }
+    const nu = new Date().toISOString();
+    a = { ...a, sjalv: lista, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'sessionen', not: lista.length ? `Axel skickar in själv i appen: ${lista.join(', ')}` : 'själv-läget av' }] };
+    sparaArende(a, ARENDEFIL, { nu }); skrivArendefiler(a); arenden.set(a.id, a);
+  }
   const utanMejl = har('utan-mejl');
   const ut = flagga('ut') ?? GRANSKAMAPP(a.id);
   mkdirSync(join(ut, 'data'), { recursive: true });
@@ -1820,12 +1843,15 @@ async function granska() {
 }
 
 /**
- * --granska-svar <id> --beslut <fil> [--granskning <fil>]: vad Axels svar i appen
+ * --granska-svar <id> --beslut <fil> [--granskning <fil>] [--kvittera]: vad Axels svar i appen
  * betyder just nu. Sessionen läser data/beslut.json (och vid behov
- * data/granskning.json) ur artifacten och kör detta. Skriver ingenting.
+ * data/granskning.json) ur artifacten och kör detta. Skriver ingenting — utom med
+ * `--kvittera`: då skrivs kvittot in för varje kort Axel själv markerat "Jag har skickat
+ * in den" (beslut.skickat), med hans tid och ärendenummer. Aldrig två gånger.
  */
 async function granskaSvar() {
-  const { a } = hamtaArende(flagga('granska-svar'));
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('granska-svar'));
   const gFil = flagga('granskning') ?? join(GRANSKAMAPP(a.id), 'data', 'granskning.json');
   const granskning = lasJson(gFil);
   if (!granskning) { console.log(`${gFil} saknas — läs data/granskning.json ur artifacten (Artifact read med path) och ange --granskning <fil>.`); process.exitCode = 1; return; }
@@ -1840,8 +1866,24 @@ async function granskaSvar() {
     ...(r.shopify ? [`Shopify-anmälan: Ja — tas med i Cowork-prompten (--anmal-cowork <ärenden> --med-shopify ${a.id}); kvittot: --shopify ${a.id} --skickad --referens <r>`] : []),
     ...r.nej.map((n) => `Nej på ${n.nyckel}${n.not ? `: "${n.not}"` : ' (utan kommentar)'}`),
     ...(r.gamla.length ? [`Svar på äldre versioner av korten (gäller inte längre): ${r.gamla.join(', ')}`] : []),
+    ...r.kvittera.map((x) => `Axel har skickat in ${x.typ === 'shopify' ? 'Shopify-anmälan' : `anmälan ${x.nr}`} själv${x.referens ? ` (ärendenummer ${x.referens})` : ''}${x.nar ? ` ${x.nar}` : ''} — ${har('kvittera') ? 'kvitteras nu' : `kvittera: --granska-svar ${a.id} --beslut <fil> --kvittera`}`),
   ];
   console.log(`${rader.join('\n')}\n${JSON.stringify(r)}`);
+  if (!har('kvittera') || !r.kvittera.length) return;
+  let upp = a; let antal = 0;
+  for (const x of r.kvittera) {
+    const nu = x.nar && !Number.isNaN(+new Date(x.nar)) ? new Date(x.nar).toISOString() : new Date().toISOString();
+    try {
+      upp = x.typ === 'shopify' ? kvitteraShopify(upp, { referens: x.referens, nu, av: 'axel' }) : kvitteraAnmalan(upp, { nr: x.nr, referens: x.referens, nu, av: 'axel' }).upp;
+      antal++;
+      console.log(`✅ ${x.typ === 'shopify' ? 'Shopify-anmälan' : `Anmälan ${x.nr}`} kvitterad${x.referens ? ` — ärendenummer ${x.referens}` : ''}.`);
+    } catch (e) { console.log(`⚠️ ${x.nyckel}: ${e.message}`); process.exitCode = 1; }
+  }
+  if (!antal) return;
+  sparaArende(upp, ARENDEFIL); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  await byggSidaFil({ k, arenden });
+  const kvar = (upp.anmalan?.rapporter ?? []).filter((x) => x.status !== 'inskickad').length + (upp.shopify && upp.shopify.status !== 'inskickad' ? 1 : 0);
+  console.log(`${antal} kvitto(n) inskrivna i ${upp.id}; ${kvar} kvar. Bygg om statusen: --granska ${upp.id}${granskning.kort.some((x) => x.typ === 'mejl') ? '' : ' --utan-mejl'} --bara-status, och publicera data/status.json.`);
 }
 
 async function sidaEnbart() {

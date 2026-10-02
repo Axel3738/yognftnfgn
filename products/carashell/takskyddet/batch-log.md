@@ -3130,3 +3130,55 @@ kassan lästa som amerikansk kund: engelska, United States förvalt.
 **Lärdomen, samma som flera gånger förr i repot:** ett namnmönster är inte en
 lista. Vakten som letar på prefix ser inte kampanjen ägaren själv byggde i
 appen — och den säger inte "jag hittade inget", den säger "allt är bra".
+
+## 2026-10-01 kväll — ikapp till USA för hand (Axels order "ta ikapp … se till att det blir klart")
+
+Mätt i kontona 18:30 CEST: varje svensk CaraShell-annons fanns redan i USA. Det
+som låg efter var Bäverbutikens nya taköverdrag-annonser 30/9–1/10.
+
+* **OB_15_1 och OB_21_1 (bilder) stoppades falskt av speglingen** för "BÄVER" —
+  ordet stod i briefens metadatarad `Notion hub: … (BÄVER Taköverdraget för
+  Husvagn …)`, inte i annonsen. `brandtraff` hoppar nu den raden (test tillagt).
+  Speglade för hand: SE `120249364731180172` (OB_115_1) och `120249364705750172`
+  (OB_121_1) i `CARASHELL_SE_Taköverdraget`, rader i CaraShells hub.
+* **USA samma kväll:** `CaraShellRoof_US_OB_115_1` `120251717431390435` och
+  `CaraShellRoof_US_OB_121_1` `120251717438280435`, ACTIVE i "Taköverdrag 5
+  reasons USA TEST" (fasta adsetet), länk rv-roof-cover-5-reasons. Text av
+  sonnet-subagent, $199 / reg. $249 ur carashell.com (21 × 10 ft). Bilderna
+  ritade om med NO-rundans mätta rutor (`market-expansion/ops/carashell/
+  2026-10-01-us/bygg-us.py`); OB_121_1 fick rent vitt runt priset mot spår av
+  den bredare svenska raden. Raderna kvar i `SE-ACTIVE to be translated` — NO
+  för CaraShell är inte gjord (källraden hade ingen NO-version).
+* **Bugg i gårdagens målkampanj rättad:** uppladdaren läste marknaden ur
+  kampanjnamnet och dömde "…USA TEST" som SE — morgondagens US-runda hade
+  stoppat. Registrets mål räknas nu alltid som marknadens.
+* **Hålls med flit:** FD_* (fars dag, bara Sverige), GT_11_H1 (copyn nämner
+  Bäverbutiken). Elva videor (CS_2_H2/H3, OB_*) hålls i Bäverbutikens NO-runda
+  för svensk text inbränd i källan — de når CaraShell och USA först när den
+  rättats.
+
+## 2026-10-02 natt — budgetrond (nattvakten), briefronden pausad
+
+**Budget:** LISTICLE **2 800 → 2 000 kr** (3d-vinst −16,5 %, 7d +2,4 %, 5 dygn
+sedan senaste ändring). Huvudkampanjen står kvar på 2 100 kr — kadensspärr,
+1 dygn sedan gårdagens sänkning, öppnar 4/10 (3d-vinst −70,4 %, ROAS 0,76).
+**I kö till nästa natt:** NYA LISTICLE **2 000 → 1 400 kr** (3d −34,5 %,
+7d −22,4 %) — taket på tre ändringar.
+
+**Pausade annonser:**
+* `CaraShellRoof_SP_5_1` (huvudkampanjen) — 14d 26 373 kr / 37 köp / CPA **713 kr**
+  mot break-even 693, klassen vände till `forlorare`, 7d-CPA 1 624 kr.
+  Reglerna tog den själva, två nätter efter att 14d-talet stod på 692.
+* `CaraShellRoof_CS_2_1` (huvudkampanjen) — 14d 2 168 kr / 3 köp / CPA 723 kr,
+  7d-CPA 1 493 kr. Samma annonsnamn i LISTICLE är benchmarken (CPA 453 kr) och
+  rörs inte; se dna.md för hypotesen och vad som ska mätas innan den tros.
+
+**Dygn:** 30/9 7 824 kr / 12 köp / ROAS 1,95 (+492 kr) · 1/10 6 884 kr / 3 köp /
+ROAS 0,49 (−4 805 kr, preliminär — kontots dygn stängde nyss).
+**7 dygn SE:** 56 222 kr, 58 köp, ROAS 1,37, CPA 969 kr, vinstbidrag −16 028 kr.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut — CaraShell briefas i
+Bäverbutikens teamspace och speglas hit). Bara `kord` stämplad.
+
+**NO och DK:** 4 000 kr/dag vardera, mätt 2026-09-23, inte mätta om sedan dess.
+Nattvakten rör bara marknad SE.

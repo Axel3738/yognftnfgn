@@ -42,3 +42,15 @@ Sidfoten och "Avregistrera dig" lägger Spoks till själv.
 
 - 2026-10-01: mejlet och Cowork-prompten (`../cowork/3-utskick-tidigare-kunder.txt`) skrivna.
   Prompten i repot saknar adresslistan med flit; Axel fick den hela i chatten.
+- ✅ **2026-10-01 kväll: schemalagd fre 2/10 18:00 ("Planerad" i Spoks)**, av Cowork i Axels
+  webbläsare. Segmentet "Enkät tidigare kunder (utan 41 undantag)": 2 729 utan undantaget,
+  **2 690 med** (39 färre; två av de 41 fanns inte bland samtyckande svenska köpare).
+  Spoks saknar `not in` för e-post, så undantaget är 41 `ne`-villkor i "alla måste gälla"-grupper.
+  Tre undantagsadresser provade, ingen syntes. Spoks räknar med **2 649 utskick** (spärrade och
+  studsande bortdragna). Kampanjtitel "Enkät tidigare kunder · fre 2/10 18:00". Testmejl till Axel
+  kom fram och knappen öppnade enkäten på matstrumpor.se. Inget annat i Spoks ändrat.
+- Mät efteråt: svar med `Kanal: mejl` per 100 mottagare (2 649), skilt från `ob`.
+- **Ingen värdecheck, Axels beslut A 2026-10-01 kväll.** Han frågade om 100 kr till alla som
+  svarar ("vill du ha 100 kr gratis" i ämnesraden). Valen var A ingen, B överraskning på
+  tacksidan, C i ämnesraden. Skälen mot C: belöningen ger tomma svar för kodens skull, lockar
+  rabattjägare och en gemensam kod sprids. Mejlet och sidan står kvar som de är.

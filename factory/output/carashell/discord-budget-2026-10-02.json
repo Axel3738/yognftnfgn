@@ -1,0 +1,32 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/takskyddet",
+  "datum": "2026-10-02",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Paused ad CaraShellRoof_SP_5_1 (main campaign) — 14-day CPA 713 kr crossed break-even 693 kr on 26 373 kr / 37 purchases, 7-day CPA 1 624 kr. The kill rule fired on its own; no manual decision was needed.",
+    "Paused ad CaraShellRoof_CS_2_1 in the main campaign — 14-day CPA 723 kr, 7-day CPA 1 493 kr. The ad with the same name in the LISTICLE campaign is the benchmark (CPA 453 kr) and was left untouched.",
+    "Lowered budget on CARASHELL_SE_Taköverdraget LISTICLE: 2 800 kr → 2 000 kr (3-day profit −16.5 %, 7-day +2.4 %). Read back after the write.",
+    "Main campaign left at 2 100 kr — cadence lock, only 1 day since yesterday's cut. The window opens 4 October.",
+    "Brief round stays paused (owner's decision 2026-09-18): CaraShell creatives are briefed in Bäverbutiken's teamspace and mirrored here."
+  ],
+  "siffror": {
+    "spend_7d": 56222,
+    "kop_7d": 58,
+    "roas_7d": 1.37,
+    "vinstbidrag_7d": -16028
+  },
+  "briefer": [],
+  "action_axel": [
+    "Queued by the 3-change cap: NYA LISTICLE 2 000 kr → 1 400 kr (3-day profit −34.5 %, 7-day −22.4 %). The round takes it first thing tomorrow night unless you want it now or want it left alone.",
+    "Main campaign is at 2 100 kr with a 3-day ROAS of 0.76 (break-even 1.63). When the cadence lock opens on 4 October the round will cut it to 1 470 kr. Say so if it should instead go back up or stay where it is.",
+    "Open question, third night running: should the kill rules read the 7-day window and not only the 14-day class? SP_5_1 kept the label 'winner' for about a week while its 7-day CPA was already far above break-even — roughly 10 000 kr of spend."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-10-03 00:41 CEST",
+  "varningar": [
+    "1 October is a preliminary reading: 6 884 kr, 3 purchases, ROAS 0.49. The account day closed minutes before the round ran and purchase attribution can still move up. 30 September was the opposite — 12 purchases at ROAS 1.95. Single days do not carry a verdict on this product; the first measurement that means anything is a full week on the new budgets, from 6 October.",
+    "Norway and Denmark run at 4 000 kr/day each. Those were measured 23 September and have not been re-measured since. The night watch only manages Sweden."
+  ]
+}

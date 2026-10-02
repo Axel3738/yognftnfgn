@@ -288,6 +288,18 @@
       "namn": "Dörr- och Fönsterlarm 110 dB",
       "drive_sheet": "1p_WA8xT9c4DGcAzVqqSmrQsld3cOpZVk9Y-u7aXweig",
       "no_handle": "dor-og-vindusalarm-110-db-tradlos-fjernkontroll"
+    },
+    {
+      "id": "kamadotrekk",
+      "namn": "Kamadohuven",
+      "drive_sheet": "1iiSB2UQG9-BwxcjlDODy_gpVI8eQboou--Y1xit0OM4",
+      "no_handle": "kamadotrekk-80-102-cm-med-oppbevaringspose"
+    },
+    {
+      "id": "motorlas",
+      "namn": "Motorlås utombordare",
+      "drive_sheet": "1i9nFX8_-lLGC7_BK65T8uvgkq_Z15lD64osck1vxTUI",
+      "no_handle": "motorlas-i-rustfritt-stal-laser-pahengsmotorens-festskruer"
     }
   ]
 }
