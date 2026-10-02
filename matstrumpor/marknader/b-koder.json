@@ -17,5 +17,23 @@
    },
    "sparat": "2026-10-02T08:32:42.441Z"
   }
+ },
+ "nivaer": {
+  "sushi-paket-1": {
+   "id": "gid://shopify/Metaobject/466474533203",
+   "fore": {
+    "rabattkod": null,
+    "gratis_produkt": null,
+    "gratis_antal": "0",
+    "gratis_text": null
+   },
+   "sparat": "2026-10-02T08:45:50.472Z"
+  }
+ },
+ "skapade_koder": {
+  "SUSHI-1FOR399": {
+   "id": "gid://shopify/DiscountCodeNode/1843023774035",
+   "skapad": "2026-10-02T08:45:51.119Z"
+  }
  }
 }

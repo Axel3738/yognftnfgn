@@ -1,7 +1,7 @@
 // Tester för b-koder.mjs — utan nät.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { beloppPerVara, gavanGratis } from '../b-koder.mjs';
+import { beloppPerVara, gavanGratis, gavaPlan } from '../b-koder.mjs';
 
 test('B-paketen: rabatten per vara ger paketets pris och gratis ätpinnar', () => {
   // Uppmätt 2026-10-02: lådan 399 kr, ätpinnarna 50 kr, paketen 499 och 799 kr.
@@ -50,4 +50,26 @@ test('gåvan gratis: ett belopp en gång per order sprids på raderna (S-025), e
   assert.equal(gavanGratis(basic('149.5', true), { gavaProdukt: GAVA, gavaPris: '50.00' }).ok, true);
   assert.equal(gavanGratis(basic('40.0', true), { gavaProdukt: GAVA, gavaPris: '50.00' }).ok, false);
   assert.equal(gavanGratis(null, { gavaProdukt: GAVA, gavaPris: '50.00' }).ok, false);
+});
+
+test('en gåva per låda: enlådspaketet i variant B får ätpinnarna och en egen kod (Axel 2026-10-02)', () => {
+  // Paketnivåerna som de stod i Shopify 2026-10-02 (ms_paketniva).
+  const nivaer = [
+    { handle: 'sushi-2', produkt: LADA, ab_variant: 'a', antal: '2', fastpris: '399.0', gratis_produkt: GAVA, gratis_antal: '2', gratis_text: 'Äkta ätpinnar i trä (2 par)', rabattkod: 'SUSHI-K1F1' },
+    { handle: 'sushi-paket-1', produkt: LADA, ab_variant: 'paket-b', antal: '1', fastpris: '399.0' },
+    { handle: 'sushi-paket-2', produkt: LADA, ab_variant: 'paket-b', antal: '2', fastpris: '499.0', gratis_produkt: GAVA, gratis_antal: '2', gratis_text: 'Äkta ätpinnar i trä (2 par)', rabattkod: 'SUSHI-2FOR499' },
+    { handle: 'sushi-paket-4', produkt: LADA, ab_variant: 'paket-b', antal: '4', fastpris: '799.0', gratis_produkt: GAVA, gratis_antal: '4', gratis_text: 'Äkta ätpinnar i trä (4 par)', rabattkod: 'SUSHI-4FOR799' },
+  ];
+  const plan = gavaPlan(nivaer);
+  assert.equal(plan.length, 1);
+  assert.deepEqual(plan[0], {
+    handle: 'sushi-paket-1', kod: 'SUSHI-1FOR399', nyKod: true,
+    falt: { rabattkod: 'SUSHI-1FOR399', gratis_produkt: GAVA, gratis_antal: '1', gratis_text: 'Äkta ätpinnar i trä (1 par)' },
+    fore: { rabattkod: null, gratis_produkt: null, gratis_antal: null, gratis_text: null },
+  });
+  // Syskonet hämtas bara ur samma A/B-variant: utan B-syskon finns inget att utgå från.
+  const utanSyskon = gavaPlan([nivaer[0], nivaer[1]]);
+  assert.match(utanSyskon[0].fel, /inget syskon/);
+  // Alla paket med en gåva per låda: ingen plan.
+  assert.deepEqual(gavaPlan([nivaer[0], nivaer[2], nivaer[3]]), []);
 });

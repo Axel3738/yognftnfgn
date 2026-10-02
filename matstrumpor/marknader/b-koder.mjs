@@ -10,13 +10,19 @@
 // kostar tillsammans paketets fasta pris. Priset för det, som Axel valde med vetskap: en låda utöver
 // paketet får samma rabatt per styck.
 //
+// Axel samma dag, andra meddelandet: "ätpinnar ska alltid vara en gratis gåva som följer med varje
+// enskild box". Variant B:s paket med EN låda (399 kr) hade ingen gåva och ingen kod. Det får nu ett par
+// ätpinnar och en egen kod, köp en låda och få ett par gratis, upprepad för varje låda (SUSHI-1FOR399).
+// Regeln som kollas för varje paket: lika många gåvor som lådor, och gåvan gratis.
+//
 // Verktyget räknar beloppet ur paketnivåerna (metaobjektet ms_paketniva: antal, fastpris, gåvan) och
 // ur variantpriserna i koden, aldrig ur huvudet. Det kollar också att gåvan är gratis i VARJE paket
 // i butiken, också "köp X, få Y"-koderna i variant A och de andra strumporna.
 //
 //   node matstrumpor/marknader/b-koder.mjs                        # torrt: läser och visar planen
 //   node matstrumpor/marknader/b-koder.mjs --skarpt               # skriver, läser tillbaka
-//   node matstrumpor/marknader/b-koder.mjs --aterstall --skarpt   # beloppen per order som före 2026-10-02
+//   node matstrumpor/marknader/b-koder.mjs --aterstall --skarpt   # som före 2026-10-02: beloppen per order,
+//                                                                 # enlådspaketet utan gåva, nya koder avslutade
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -40,6 +46,37 @@ export function beloppPerVara({ antal, fastpris, ladaPris, gavaPris }) {
   const perVaraOre = rabattOre / n;
   if (ore(gavaPris) > perVaraOre) throw new Error(`gåvan kostar ${gavaPris} kr, mer än rabatten per vara ${perVaraOre / 100} kr: den hade inte blivit gratis`);
   return { belopp: perVaraOre / 100, perLada: (ore(ladaPris) - perVaraOre) / 100 };
+}
+
+/**
+ * Ren: paketnivåerna som har färre gåvor än lådor, och vad de ska få. Gåvan, texten och kodens prefix
+ * läses ur ett syskon (samma produkt och samma A/B-variant) som redan ger en gåva per låda — aldrig
+ * påhittade. En nivå utan kod får en ny kod: <prefix>-<antal>FOR<fastpris>, som SUSHI-2FOR499.
+ */
+export function gavaPlan(nivaer) {
+  const ut = [];
+  for (const n of nivaer) {
+    const antal = Number(n.antal);
+    if (!(antal > 0) || Number(n.gratis_antal || 0) >= antal) continue;
+    const syskon = nivaer.find((s) => s !== n && s.produkt === n.produkt && (s.ab_variant || '') === (n.ab_variant || '')
+      && s.gratis_produkt && Number(s.gratis_antal) === Number(s.antal) && /\(\d+ par\)/.test(s.gratis_text || '') && /^[A-Z]+-/.test(s.rabattkod || ''));
+    if (!syskon) { ut.push({ handle: n.handle, fel: 'inget syskon med en gåva per låda att utgå från' }); continue; }
+    const prefix = syskon.rabattkod.split('-')[0];
+    const fast = Math.round(Number(n.fastpris));
+    ut.push({
+      handle: n.handle,
+      kod: n.rabattkod || `${prefix}-${antal}FOR${fast}`,
+      nyKod: !n.rabattkod,
+      falt: {
+        rabattkod: n.rabattkod || `${prefix}-${antal}FOR${fast}`,
+        gratis_produkt: syskon.gratis_produkt,
+        gratis_antal: String(antal),
+        gratis_text: syskon.gratis_text.replace(/\(\d+ par\)/, `(${antal} par)`),
+      },
+      fore: { rabattkod: n.rabattkod ?? null, gratis_produkt: n.gratis_produkt ?? null, gratis_antal: n.gratis_antal ?? null, gratis_text: n.gratis_text ?? null },
+    });
+  }
+  return ut;
 }
 
 /** Ren: blir gåvan gratis med den här koden? Svarar med orsaken när den inte blir det. */
@@ -82,8 +119,35 @@ async function lasKod(k, kod) {
 }
 
 async function lasNivaer(k) {
-  const d = await k.graphql(`{ metaobjects(type: "ms_paketniva", first: 100) { nodes { handle fields { key value } } } }`);
-  return d.metaobjects.nodes.map((n) => ({ handle: n.handle, ...Object.fromEntries(n.fields.map((f) => [f.key, f.value])) }));
+  const d = await k.graphql(`{ metaobjects(type: "ms_paketniva", first: 100) { nodes { id handle fields { key value } } } }`);
+  return d.metaobjects.nodes.map((n) => ({ id: n.id, handle: n.handle, ...Object.fromEntries(n.fields.map((f) => [f.key, f.value])) }));
+}
+
+async function skrivNiva(k, id, falt) {
+  const fields = Object.entries(falt).map(([key, value]) => ({ key, value: value ?? '' }));
+  const r = await k.graphql(`mutation($id: ID!, $m: MetaobjectUpdateInput!) { metaobjectUpdate(id: $id, metaobject: $m) { metaobject { id fields { key value } } userErrors { field message code } } }`, { id, m: { fields } });
+  const fel = r.metaobjectUpdate.userErrors;
+  if (fel.length) throw new Error(`metaobjektet ${id}: ${fel.map((e) => `${e.field} ${e.message}`).join('; ')}`);
+  const efter = Object.fromEntries(r.metaobjectUpdate.metaobject.fields.map((f) => [f.key, f.value]));
+  return Object.entries(falt).every(([key, value]) => (efter[key] ?? '') === (value ?? ''));
+}
+
+/** Köp en låda, få ett par gratis — upprepad för varje låda (ingen gräns per order). */
+async function skapaGavokod(k, { kod, lada, gava }) {
+  const input = {
+    title: `Paket B: ätpinnar gratis till varje låda (${kod})`,
+    code: kod,
+    startsAt: new Date().toISOString(),
+    customerSelection: { all: true },
+    customerBuys: { value: { quantity: '1' }, items: { products: { productsToAdd: [lada] } } },
+    customerGets: { value: { discountOnQuantity: { quantity: '1', effect: { percentage: 1 } } }, items: { products: { productsToAdd: [gava] } } },
+    // Som paketkoderna i variant A: vännens kod (en orderrabatt) får följa med, inga andra produktrabatter.
+    combinesWith: { orderDiscounts: true, productDiscounts: false, shippingDiscounts: false },
+  };
+  const r = await k.graphql(`mutation($d: DiscountCodeBxgyInput!) { discountCodeBxgyCreate(bxgyCodeDiscount: $d) { codeDiscountNode { id } userErrors { field message code } } }`, { d: input });
+  const fel = r.discountCodeBxgyCreate.userErrors;
+  if (fel.length) throw new Error(`${kod}: ${fel.map((e) => `${e.field} ${e.message}`).join('; ')}`);
+  return r.discountCodeBxgyCreate.codeDiscountNode.id;
 }
 
 async function gavansPris(k, produktId) {
@@ -144,13 +208,58 @@ async function huvud() {
     }
   }
 
-  // 2. Gåvan gratis i varje paket i butiken (läses efter ev. skrivning).
+  // 2. En gåva per låda: paket med färre gåvor än lådor får gåvan och, saknas en kod, en egen kod.
+  const allaNivaer = await lasNivaer(k);
+  const gplan = aterstall ? [] : gavaPlan(allaNivaer);
+  log(`\nEn gåva per låda: ${gplan.length ? gplan.map((g) => g.fel ? `${g.handle} ❌ ${g.fel}` : `${g.handle} → ${g.falt.gratis_antal} × gåvan, kod ${g.kod}${g.nyKod ? ' (ny, köp en låda få ett par)' : ''}, texten "${g.falt.gratis_text}"`).join('; ') : 'alla paket har det redan'}`);
+  if (skarpt && !aterstall) {
+    lage.nivaer ??= {};
+    lage.skapade_koder ??= {};
+    for (const g of gplan) {
+      if (g.fel) { process.exitCode = 1; continue; }
+      const niva = allaNivaer.find((n) => n.handle === g.handle);
+      if (!lage.nivaer[g.handle]) {
+        lage.nivaer[g.handle] = { id: niva.id, fore: g.fore, sparat: new Date().toISOString() };
+        writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`); // originalet sparas INNAN något skrivs
+      }
+      if (g.nyKod && !(await lasKod(k, g.kod))) {
+        const id = await skapaGavokod(k, { kod: g.kod, lada: niva.produkt, gava: g.falt.gratis_produkt });
+        lage.skapade_koder[g.kod] = { id, skapad: new Date().toISOString() };
+        writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`);
+        const ny = await lasKod(k, g.kod);
+        const ok = ny?.__typename === 'DiscountCodeBxgy' && ['ACTIVE', 'SCHEDULED'].includes(ny.status);
+        log(`${ok ? '✅' : '❌'} ${g.kod} skapad: ${ny?.__typename} ${ny?.status}`);
+        if (!ok) { process.exitCode = 1; continue; }
+      }
+      const ok = await skrivNiva(k, niva.id, g.falt);
+      log(`${ok ? '✅' : '❌'} ${g.handle}: ${JSON.stringify(g.falt)}`);
+      if (!ok) process.exitCode = 1;
+    }
+  }
+  if (skarpt && aterstall) {
+    for (const [handle, n] of Object.entries(lage.nivaer ?? {})) {
+      const ok = await skrivNiva(k, n.id, n.fore);
+      log(`${ok ? '✅' : '❌'} ${handle} tillbaka: ${JSON.stringify(n.fore)}`);
+    }
+    for (const [kod, s] of Object.entries(lage.skapade_koder ?? {})) {
+      // Avslutas, raderas aldrig: ordrarna som använt koden pekar på den.
+      const r = await k.graphql(`mutation($id: ID!) { discountCodeDeactivate(id: $id) { codeDiscountNode { id } userErrors { field message } } }`, { id: s.id });
+      log(`${r.discountCodeDeactivate.userErrors.length ? '❌' : '✅'} ${kod} avslutad`);
+    }
+  }
+
+  // 3. Varje paket i butiken: lika många gåvor som lådor, och gåvan gratis (läses efter ev. skrivning).
   log('\nGåvan i varje paket:');
-  for (const n of nivaer.filter((x) => x.gratis_produkt && Number(x.gratis_antal) > 0)) {
+  for (const n of await lasNivaer(k)) {
+    if (!n.gratis_produkt || Number(n.gratis_antal || 0) < Number(n.antal)) {
+      log(`❌ ${n.handle.padEnd(16)} ${String(n.rabattkod || '-').padEnd(18)} ${n.gratis_antal || 0} gåvor till ${n.antal} lådor`);
+      if (skarpt && !aterstall) process.exitCode = 1;
+      continue;
+    }
     const kod = await lasKod(k, n.rabattkod);
     const gava = await gavansPris(k, n.gratis_produkt);
     const g = gavanGratis(kod, { gavaProdukt: n.gratis_produkt, gavaPris: gava.pris });
-    log(`${g.ok ? '✅' : '❌'} ${n.handle.padEnd(16)} ${n.rabattkod.padEnd(18)} ${gava.handle}: ${g.orsak}`);
+    log(`${g.ok ? '✅' : '❌'} ${n.handle.padEnd(16)} ${n.rabattkod.padEnd(18)} ${n.gratis_antal} ${gava.handle} till ${n.antal} lådor: ${g.orsak}`);
     if (!g.ok && skarpt && !aterstall) process.exitCode = 1;
   }
 }
