@@ -152,6 +152,65 @@ Nathalies och Sofies svar finns inte i Gmail-kontot axel.odhner@stonebite.org (s
 2026-10-02 på namn, handtag och domäner) — de kommer i en annan brevlåda eller i DM. Axel läser
 dem själv och klistrar in.
 
+⚠️ **Axels dom på den gemensamma briefsidan 2026-10-02 kväll:** "det är ju alla andras briefs på
+den länken" — sidan bar alla fyra brieferna OCH tabellen med de andra kreatörernas namn, och
+Sofie kunde inte öppna artifacten. Därför **en PDF per kreatör**, byggd ur samma HTML utan
+andras namn och utan den brief kreatören inte filmar: `products/matstrumpor/ugc/pdf/
+Sara-sushi-sock-briefs.pdf` (brief 1, 2, 4) och `Sofie-sushi-sock-briefs.pdf` (1, 2, 4);
+byggskriptet ligger i sessionens scratchpad (`ugc-order/pdf.mjs`, utskriftsstil med fast
+tabellbredd). Sara hade redan fått sidlänken, så svaret till henne nämner ingen länk.
+
+### Nathalies pris 2026-10-02 10:25 (via Axel) och motbudet
+
+Nathalie: brieferna ser bra ut; 3 500 kr per video med 6 månaders annonsrättigheter (samma som
+sist), 7 000 kr för två; annars 3 500 + 500 kr/mån per video för rättigheterna, så hon "bjuder på"
+rättigheterna. Ny idé: hon lägger ut videorna i sitt eget flöde med köplänk mot extra betalning
+(förra klippet fick ovanligt stor räckvidd hos henne). Axel: "mina vänner köpt för 2 500 kr av
+henne så vi måste förhandla lite ner priset".
+
+Sessionens råd: **rättigheterna är pengafrågan, inte tusenlappen.** Hennes septembervideo är
+fortfarande vår bästa och körs i månader; med hennes modell kostar månad sju och framåt 500 kr
+per video och månad (6 000 kr per video och år). Motbudet byter volym mot pris OCH rättigheter:
+löpande samarbete (minst två videor i månaden så länge det funkar) mot 2 500 kr per video med
+rättigheter utan tidsgräns. Reträtt i ordning: 3 000 utan tidsgräns, sedan 3 500 utan tidsgräns.
+Aldrig 6 månader. Flödesidén är värd ett test: be om hennes pris för ett inlägg med länk och ge
+henne en egen rabattkod så det går att mäta (koden byggs i Shopify när hon sagt ja). Pengarna är
+Axels.
+
+```
+Hej Nathalie! Kul att brieferna funkar. Jag vill köra med dig löpande, inte bara två videor nu, så jag tänker paket: 2 500 kr per video med rättigheter utan tidsgräns, och minst två videor i månaden framåt så länge det funkar för oss båda. Då blir det 5 000 för de två nu, och mer jobb över tid. Din förra video körs fortfarande, så rättigheter som tar slut efter sex månader funkar tyvärr inte för mig.
+
+Flödesidén gillar jag. Vad vill du ha för ett inlägg med länk? Då ger jag dig en egen kod så vi ser exakt vad det ger, och funkar det gör vi om det.
+
+Lådor kommer så fort du säger adress.
+
+Axel
+```
+
+### Katarinas svar 2026-10-02 (via Axel) och vad som skickas
+
+Katarina: gärna, men osäker på om hon hittar någon som inte sett strumporna och vill vara med
+på film; har inga strumpor kvar (öppnade), vill ha nya; frågar om det blir två eller tre videor.
+Axels reaktion: tveksam ("vill säkert bara ge bort dom och ha nya gratis"), överväger att hoppa
+över henne och hitta "en banger kreatör". Sessionens råd: behåll henne — hennes förra video gav
+köp första veckan (en av tre kreatörer som bevisat sig), en låda kostar ~121 kr mot en video
+värd 1 500–3 000, och mottagaren kan vara vem som helst utanför hushållet. Avbryt bara om Axel
+hittar en bättre. Pengarna och valet är hans.
+
+Behåll (svar):
+```
+Hej Katarina! Tre videor, som förut. Jag skickar en ny låda, säg bara adressen. Mottagaren behöver inte vara någon hemma hos dig, det räcker med en granne, en kollega eller en kompis barn som aldrig sett strumporna. Du får en sida med manuset rad för rad. Vad tar du för tre videor som ett paket?
+
+Axel
+```
+
+Avböj (svar):
+```
+Hej Katarina! Tack för svaret. Den här rundan går till kreatörer som har någon hemma att filma med, så vi avvaktar med fler från dig just nu. Jag hör av mig när nästa runda kommer.
+
+Axel
+```
+
 ## 9. Hassanien Madjed (@fynder) — Collabstr-chatt (https://collabstr.com/fynder), Norrköping
 
 Hej Hassanien! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör selfie-videor för annonser på svenska, och jag behöver en manlig röst: du som ger bort lådan till flickvännen eller en polare, och filmar när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?
