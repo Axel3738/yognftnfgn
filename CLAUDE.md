@@ -168,6 +168,13 @@ kvar avstängda: Norges 007 i NO och NOB (`hall_av`, "sukker"), Australien (ovan
 ✅ **IGÅNG sedan 00:03–00:20 fre 2/10, 14 av 15, tillbakaläst** (`annonser/schemalagt.json` →
 `starta`): 110 annonser på, de två 007 PAUSED, summa 13 000 kr/dag. Meta strypte (kod 17) i cirka 13
 minuter mitt i ES, och verktygets egen väntan tog det utan omkörning. TW rördes inte.
+📊 **StonePNL:s vinst per land (2026-10-02, Axels skärmdump):** ingen kampanj hade land i StonePNL, inget
+land hade egen kostnad och standardtullen låg på USA och Kanada. Rättningen är
+`marknader/cowork/6-stonepnl.txt`: tolv kampanjer får land, Big5-priserna klistras in som leverantörssvar
+(`marknader/stonepnl/offertsvar-big5.txt`, provläst med StonePNL:s egen läsare) och tullen blir 0 för US och CA.
+DE, FR och WW lämnas utan land, eftersom StonePNL tar ett land per kampanj och Meta sprider deras spend
+jämnt. Resten av ländernas priser kommer via StonePNL:s offertförfrågan till leverantören
+(`marknader/README.md` → "StonePNL: vinsten per land").
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
