@@ -1,0 +1,82 @@
+[
+ {
+  "namn": "meta-1",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 1/9: ad 1588778508829249 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-1.pdf",
+  "bytes": 5569,
+  "sha256": "f711d0b8bd8bfa77a997d021e65fcbafd959e586e5a0e6114c7cff8e77ac0402"
+ },
+ {
+  "namn": "meta-2",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 2/9: ad 1421148489985407 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-2.pdf",
+  "bytes": 5566,
+  "sha256": "4e75ef2c0029b5cc10a7affe036c19a0a54dcd3a78b9f78bcf05c548c38859a0"
+ },
+ {
+  "namn": "meta-3",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 3/9: ad 1971339910227691 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-3.pdf",
+  "bytes": 5566,
+  "sha256": "7044accae0c03f9a086f6bfadad9c455280a35216bf06992b756b7496323eb67"
+ },
+ {
+  "namn": "meta-4",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 4/9: ad 1718305039270282 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-4.pdf",
+  "bytes": 6293,
+  "sha256": "74c38bc4e4c49c72b7c09b3f47c242e8658c1aad96a8b0a6b7b2f0bc106a86da"
+ },
+ {
+  "namn": "meta-5",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 5/9: ad 1803489827652941 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-5.pdf",
+  "bytes": 6260,
+  "sha256": "3d7201cbe8b49384b1a2ef9303eb527aab71fa9129384511a44e7911960bce20"
+ },
+ {
+  "namn": "meta-6",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 6/9: ad 1094601896903875 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-6.pdf",
+  "bytes": 4969,
+  "sha256": "5fd9b78a42023f04208e79d4a7d5700d6d8e8627c703f2ccb3a4139d0c93b29c"
+ },
+ {
+  "namn": "meta-7",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 7/9: ad 1089177487343268 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-7.pdf",
+  "bytes": 4969,
+  "sha256": "bf9dae0d40836d1c8ba2d155686b7c9c0f92deb5f068173f0109e593ca6295b5"
+ },
+ {
+  "namn": "meta-8",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 8/9: ad 1451348046846473 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-8.pdf",
+  "bytes": 6285,
+  "sha256": "58c39ed2b17539b76638acd9090776894c9c55c1544c05ddc394fc34fd6de7ea"
+ },
+ {
+  "namn": "meta-9",
+  "till": "ip@fb.com",
+  "amne": "Copyright infringement notice 9/9: ad 38648454021464406 by the Facebook Page \"MatSokker\"",
+  "pdf": "meta-9.pdf",
+  "bytes": 5016,
+  "sha256": "bd3dc49e31bcbce805731f810e1a98bd5352236ef6014422f8bdb9f4048b5642"
+ },
+ {
+  "namn": "shopify",
+  "till": "legal@shopify.com",
+  "amne": "Copyright infringement notice (DMCA): our video on the Shopify store \"MatSokker\"",
+  "pdf": "shopify.pdf",
+  "bytes": 3362,
+  "sha256": "b639f68273fec9cec3735823ce34d0fe1aef6c7199d539b94ab95f46662776c3"
+ }
+]
