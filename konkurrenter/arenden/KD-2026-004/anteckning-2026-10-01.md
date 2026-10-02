@@ -169,3 +169,9 @@ utkastet raderades osänt och gjordes om.
   Mejlen står kvar i `epost/skickat.jsonl` som det som faktiskt gick iväg.
 - **Läget för Meta:** alla nio anmälningar är utkast. De kräver formuläret: Cowork vägrade, och
   formulärets säkerhetskontroll löses aldrig härifrån. Axel avgör hur.
+- **Axels val 2/10 13:43 CEST: "Nio formulär".** Han skickar in de nio själv, en anmälan per
+  annons, med appens själv-läge: kopieringsknappar per fält, säkerhetskontrollen och Skicka hos
+  Meta, sedan "Jag har skickat in den" i appen. Det andra alternativet var en gemensam anmälan
+  för alla nio. Appen publicerades om 13:44 med instruktionen överst (version 16).
+- **Alla nio annonserna är fortfarande aktiva 2/10 13:50 CEST** (`ELIGIBLE`, `is_active: true`
+  i annonsbiblioteket, en sida i taget). Ingen är alltså överflödig att anmäla.
