@@ -1,0 +1,136 @@
+
+## Takoverdrag_FD_4_1  (produkt: Takovertrekk til Campingvogn)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 451px  max=1016px  «Mät vagnen.»
+  [2] rubrik fet=True   78px  svensk= 836px  max=1016px  «Ta storleken minst lika»
+  [3] rubrik fet=True   78px  svensk= 182px  max=1016px  «lång.»
+  [4] under  fet=False  32px  svensk= 710px  max=1016px  «Nio längder, 5,5 till 13,5 meter. Alla 3 meter breda.»
+  [5] pris   fet=True   74px  svensk= 930px  max=1016px  «Från 1 129 kr, ord. 1 469 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Takoverdrag_FD_4_2  (produkt: Takovertrekk til Campingvogn)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 898px  max=1016px  «Från 1 129 kr. Ord. 1 469»
+  [2] rubrik fet=True   79px  svensk=  92px  max=1016px  «kr.»
+  [3] under  fet=False  32px  svensk= 651px  max=1016px  «Fars dag-rea: taket täckt, dörr och fönster fria.»
+  [4] pris   fet=True   74px  svensk= 930px  max=1016px  «Från 1 129 kr, ord. 1 469 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Takoverdrag_FD_4_3  (produkt: Takovertrekk til Campingvogn)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 633px  max=1016px  «Beställ senast 19»
+  [2] rubrik fet=True   78px  svensk= 893px  max=1016px  «oktober: taköverdrag till»
+  [3] rubrik fet=True   78px  svensk= 325px  max=1016px  «fars dag.»
+  [4] under  fet=False  32px  svensk= 567px  max=1016px  «Bara taket täcks, så han får på det själv.»
+  [5] pris   fet=True   74px  svensk= 930px  max=1016px  «Från 1 129 kr, ord. 1 469 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Takoverdrag_FD_4_4  (produkt: Takovertrekk til Campingvogn)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 742px  max=1016px  «Remmar på alla fyra»
+  [2] rubrik fet=True   78px  svensk= 208px  max=1016px  «sidor.»
+  [3] rubrik fet=True   78px  svensk= 511px  max=1016px  «Spänne, krok.»
+  [4] under  fet=False  32px  svensk= 913px  max=1016px  «Kroka under karossens nederkant, dra åt. Bara taket, en person.»
+  [5] pris   fet=True   74px  svensk= 930px  max=1016px  «Från 1 129 kr, ord. 1 469 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Sotarset_FD_4_1  (produkt: Feiesett med fleksible stenger)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 698px  max=1016px  «Rensa själv mellan»
+  [2] rubrik fet=True   78px  svensk= 573px  max=1016px  «sotarens besök»
+  [3] under  fet=False  32px  svensk= 751px  max=1016px  «Stängerna böjer med i kröken i stället för att ta stopp.»
+  [4] pris   fet=True   96px  svensk= 811px  max=1016px  «459 kr, ord. 599 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Sotarset_FD_4_2  (produkt: Feiesett med fleksible stenger)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 867px  max=1016px  «459 kr till fars dag. Ord.»
+  [2] rubrik fet=True   78px  svensk= 243px  max=1016px  «599 kr.»
+  [3] under  fet=False  32px  svensk= 847px  max=1016px  «Sotarset med 9 böjliga stänger och nylonborste på 100 mm.»
+  [4] pris   fet=True   96px  svensk= 811px  max=1016px  «459 kr, ord. 599 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Sotarset_FD_4_3  (produkt: Feiesett med fleksible stenger)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 633px  max=1016px  «Beställ senast 19»
+  [2] rubrik fet=True   78px  svensk= 914px  max=1016px  «oktober: sotarset till fars»
+  [3] rubrik fet=True   78px  svensk= 160px  max=1016px  «dag.»
+  [4] under  fet=False  32px  svensk= 802px  max=1016px  «Sotarset med 9 böjliga stänger som når bakom kaminen.»
+  [5] pris   fet=True   96px  svensk= 811px  max=1016px  «459 kr, ord. 599 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Sotarset_FD_4_4  (produkt: Feiesett med fleksible stenger)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 676px  max=1016px  «9 stänger à 41 cm.»
+  [2] rubrik fet=True   78px  svensk= 403px  max=1016px  «3,69 meter.»
+  [3] under  fet=False  32px  svensk= 745px  max=1016px  «Nylonborste på 100 mm. Sexkantsadapter medföljer.»
+  [4] pris   fet=True   96px  svensk= 811px  max=1016px  «459 kr, ord. 599 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Golfkalender_FD_4_1  (produkt: Golf Adventskalender – 24 golftilbehør)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 854px  max=1016px  «Luckorna är fyllda med»
+  [2] rubrik fet=True   78px  svensk= 797px  max=1016px  «golfbollar och peggar»
+  [3] under  fet=False  32px  svensk= 776px  max=1016px  «Peggar i plast och trä. Han öppnar en lucka om dagen.»
+  [4] pris   fet=True   96px  svensk= 811px  max=1016px  «549 kr, ord. 719 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Golfkalender_FD_4_2  (produkt: Golf Adventskalender – 24 golftilbehør)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 867px  max=1016px  «549 kr till fars dag. Ord.»
+  [2] rubrik fet=True   78px  svensk= 243px  max=1016px  «719 kr.»
+  [3] under  fet=False  32px  svensk= 582px  max=1016px  «24 luckor, färdigfyllda. Ett paket att slå in.»
+  [4] pris   fet=True   96px  svensk= 811px  max=1016px  «549 kr, ord. 719 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Golfkalender_FD_4_3  (produkt: Golf Adventskalender – 24 golftilbehør)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 633px  max=1016px  «Beställ senast 19»
+  [2] rubrik fet=True   78px  svensk= 901px  max=1016px  «oktober, golfkalender till»
+  [3] rubrik fet=True   78px  svensk= 303px  max=1016px  «fars dag»
+  [4] under  fet=False  32px  svensk= 742px  max=1016px  «Ett paket att slå in, går att skicka direkt som present.»
+  [5] pris   fet=True   96px  svensk= 811px  max=1016px  «549 kr, ord. 719 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Golfkalender_FD_4_4  (produkt: Golf Adventskalender – 24 golftilbehør)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 503px  max=1016px  «Golfhandduk,»
+  [2] rubrik fet=True   78px  svensk= 875px  max=1016px  «klubbrengöringsborste,»
+  [3] rubrik fet=True   78px  svensk= 893px  max=1016px  «greenlagare med spegel»
+  [4] under  fet=False  32px  svensk= 831px  max=1016px  «Plus bollmarkeringar. 24 luckor, färdigfyllda, inget att fylla i.»
+  [5] pris   fet=True   96px  svensk= 811px  max=1016px  «549 kr, ord. 719 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Taljset_FD_4_1  (produkt: Spikkesett 30 deler)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 897px  max=1016px  «Skärskyddade handskar»
+  [2] rubrik fet=True   78px  svensk= 520px  max=1016px  «ingår i väskan»
+  [3] under  fet=False  32px  svensk= 882px  max=1016px  «Handskarna skyddar när kniven slinter. Vassa verktyg, använd»
+  [4] under  fet=False  32px  svensk= 176px  max=1016px  «handskarna.»
+  [5] pris   fet=True   96px  svensk= 891px  max=1016px  «869 kr, ord. 1 139 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Taljset_FD_4_2  (produkt: Spikkesett 30 deler)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 941px  max=1016px  «869 kr. Ord. 1 139 kr. Fars»
+  [2] rubrik fet=True   78px  svensk= 160px  max=1016px  «dag.»
+  [3] under  fet=False  32px  svensk= 651px  max=1016px  «6 knivar, 6 järn, strop och handskar i en väska»
+  [4] pris   fet=True   96px  svensk= 891px  max=1016px  «869 kr, ord. 1 139 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Taljset_FD_4_3  (produkt: Spikkesett 30 deler)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 633px  max=1016px  «Beställ senast 19»
+  [2] rubrik fet=True   78px  svensk= 828px  max=1016px  «oktober, täljset till fars»
+  [3] rubrik fet=True   78px  svensk= 139px  max=1016px  «dag»
+  [4] under  fet=False  32px  svensk= 671px  max=1016px  «Väskan med dragkedja hinner fram till fars dag.»
+  [5] pris   fet=True   96px  svensk= 891px  max=1016px  «869 kr, ord. 1 139 kr»
+  [6] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»
+
+## Taljset_FD_4_4  (produkt: Spikkesett 30 deler)
+  [0] badge  fet=True   30px  svensk= 180px  max=300px  «Fars dag-rea»
+  [1] rubrik fet=True   78px  svensk= 811px  max=1016px  «6 knivar och 6 järn för»
+  [2] rubrik fet=True   78px  svensk= 364px  max=1016px  «olika snitt»
+  [3] under  fet=False  32px  svensk= 776px  max=1016px  «Läderstrop, polermedel, träbit att öva på och handskar.»
+  [4] pris   fet=True   96px  svensk= 891px  max=1016px  «869 kr, ord. 1 139 kr»
+  [5] botten fet=False  32px  svensk= 360px  max=1016px  «Beställ senast 19 oktober»

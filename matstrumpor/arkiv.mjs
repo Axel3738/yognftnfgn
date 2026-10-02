@@ -45,7 +45,7 @@ export function matningsrader(jobb) {
   return (jobb?.annonser ?? [])
     .filter((a) => (a.spend_sek ?? 0) > 0)
     .map((a) => {
-      const rad = { datum: jobb.datum, marknad: a.marknad ?? jobb.marknad ?? 'SE', id: a.id, namn: a.namn, adset: a.adset ?? null, d0: a.d0 ?? null, status: a.effective_status ?? null, fonster: a.fonster ?? 'last_14d' };
+      const rad = { datum: jobb.datum, marknad: a.marknad ?? jobb.marknad ?? 'SE', id: a.id, namn: a.namn, adset: a.adset ?? null, adset_id: a.adset_id ?? null, d0: a.d0 ?? null, status: a.effective_status ?? null, fonster: a.fonster ?? 'last_14d' };
       for (const f of MATFALT) rad[f] = a[f] ?? null;
       return rad;
     });
@@ -100,6 +100,14 @@ export function byggArkiv({ konfig, logg = [], matningar = [], taggar = new Map(
   const briefPer = new Map(briefer.map((b) => [b.annons, b]));
   const uppladdad = new Map(logg.filter((r) => r.kod === 'UPPLADDAD').map((r) => [r.annons, r]));
   const lardomPer = new Map(logg.filter((r) => r.kod === 'LARDOM' && r.annons).map((r) => [r.annons, r.id ?? `L-${r.annons}`]));
+  // 3:2:2 (2026-10-02): domen per adset (dom.mjs, loggad som ADSET_DOM av
+  // --dom-alla --logga) och testadseten uppladdaren byggt (ADSET_SKAPAD).
+  const adsetDom = new Map();
+  for (const r of logg.filter((x) => x.kod === 'ADSET_DOM' && x.adset_id)) {
+    const nu = adsetDom.get(r.adset_id);
+    if (!nu || String(r.datum) >= String(nu.datum)) adsetDom.set(r.adset_id, r);
+  }
+  const adsetSkapad = new Map(logg.filter((r) => r.kod === 'ADSET_SKAPAD' && r.adset_id).map((r) => [r.adset_id, r]));
 
   // Senaste mätningen per annons, och den högsta 14-dagarsspenden den haft.
   const senast = new Map();
@@ -146,6 +154,9 @@ export function byggArkiv({ konfig, logg = [], matningar = [], taggar = new Map(
       batch: brief?.batch ?? null,
       brief: brief?.notion_url ?? null,
       adset: m?.adset ?? uppladdad.get(namn)?.adset ?? null,
+      adset_id: m?.adset_id ?? uppladdad.get(namn)?.adset_id ?? null,
+      adset_roll: adsetDom.get(m?.adset_id ?? uppladdad.get(namn)?.adset_id ?? '')?.roll ?? (adsetSkapad.has(uppladdad.get(namn)?.adset_id ?? '') ? 'test' : null),
+      adset_dom: adsetDom.get(m?.adset_id ?? uppladdad.get(namn)?.adset_id ?? '')?.dom ?? null,
       d0: m?.d0 ?? null,
       status: m?.status ?? null,
       etikett: galler.get(namn)?.etikett ?? null,
@@ -208,6 +219,29 @@ export function byggArkiv({ konfig, logg = [], matningar = [], taggar = new Map(
     perVariabel[d] = grupper;
   }
 
+  // Adseten: testadseten uppladdaren byggt + varje adset kungen dömt, med sina
+  // annonser. Det är 3:2:2-arkivet — beslutet fattas här, inte per annons.
+  const adsetIds = new Set([...adsetSkapad.keys(), ...adsetDom.keys()]);
+  const adsets = [...adsetIds].map((id) => {
+    const d = adsetDom.get(id) ?? null;
+    const sk = adsetSkapad.get(id) ?? null;
+    return {
+      adset_id: id,
+      adset: d?.adset ?? sk?.adset_namn ?? null,
+      roll: d?.roll ?? (sk ? 'test' : null),
+      skapad: sk?.datum ?? null,
+      koncept: sk?.koncept ?? null,
+      dom: d?.dom ?? null,
+      dom_datum: d?.datum ?? null,
+      dagar: d?.dagar ?? null,
+      spend_sek: d?.spend_sek ?? null,
+      kop: d?.kop ?? null,
+      roas: d?.roas ?? null,
+      andel: d?.andel ?? null,
+      annonser: annonser.filter((a) => a.adset_id === id).map((a) => a.namn),
+    };
+  }).sort((x, y) => (y.spend_sek ?? 0) - (x.spend_sek ?? 0));
+
   const etiketterade = annonser.filter((a) => a.etikett).map((a) => ({ etikett: a.etikett }));
   return {
     skrivet: idag,
@@ -220,6 +254,7 @@ export function byggArkiv({ konfig, logg = [], matningar = [], taggar = new Map(
     koncept,
     kedjor: Object.values(kedjor),
     varianter,
+    adsets,
     annonser,
   };
 }
@@ -245,6 +280,13 @@ export function arkivMarkdown(a) {
   tabell('format', a.per_variabel.format);
   tabell('marknad', a.per_variabel.marknad);
   tabell('iteration ur playbooken', a.per_variabel.playbook);
+  ut.push('## Adseten (3:2:2: domen per adset, aldrig per annons)', '');
+  if (!(a.adsets ?? []).length) ut.push('Inga adsets dömda än — första domen kommer i kungens nästa rond (`--dom-alla --logga`).', '');
+  else {
+    ut.push('| Adset | Roll | Dom | Dömd | Dag | Spend | Köp | ROAS | Andel | Annonser |', '|---|---|---|---|---|---|---|---|---|---|');
+    for (const x of a.adsets) ut.push(`| ${x.adset ?? x.adset_id} | ${x.roll ?? '—'} | ${x.dom ?? '—'} | ${x.dom_datum ?? '—'} | ${x.dagar ?? '—'} | ${x.spend_sek ?? '—'} kr | ${x.kop ?? '—'} | ${x.roas ?? '—'} | ${x.andel === null || x.andel === undefined ? '—' : `${Math.round(x.andel * 100)} %`} | ${x.annonser.length} |`);
+    ut.push('');
+  }
   ut.push('## Koncepten och taket (tre försök med utfall)', '', '| Koncept | Briefer | Med utfall | Förälderns etikett | Beslut | Varför |', '|---|---|---|---|---|---|');
   for (const k of a.koncept) ut.push(`| ${k.koncept} | ${k.briefer} | ${k.med_utfall} | ${k.foralder} | ${k.beslut} | ${k.motivering} |`);
   ut.push('', '## Kedjorna: förälder och iterationer', '');

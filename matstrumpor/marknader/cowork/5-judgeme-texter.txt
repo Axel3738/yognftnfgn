@@ -1,7 +1,8 @@
 ⛔ KÖRD 2026-10-01 kväll, kör inte igen. Finskan, polskan (del A) och alla sju i del B är klara. Allt är läst
 som kund: "11 arvostelua", "11 recenzji", och engelska sidan visar de svenska recensionerna översatta.
 Kvar är bara Irénes recension på ätpinnarna (`sushipinnar-i-akta-tra`, olistad). Den ändras på samma sätt
-som del B: "Detected review language" → Swedish. Cowork hittade den själv och frågade.
+som del B: "Detected review language" → Swedish. Cowork hittade den själv och frågade. Den står i
+8-judgeme-kopian.txt del C, tillsammans med supportfrågan om den svenska sidans gamla kopia (del D).
 Coworks Chrome-flik hängde sig två gånger när Polska valdes. Det gick först efter att Chrome startats om.
 
 Uppdrag: två små rättningar i Judge.me för Matstrumpors utlandsbutik. Gör bara det som står nedan.

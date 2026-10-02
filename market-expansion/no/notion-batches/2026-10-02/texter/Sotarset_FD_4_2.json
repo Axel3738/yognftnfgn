@@ -1,0 +1,133 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   54,
+   156,
+   1022,
+   244
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 164,
+  "utvidga": 4,
+  "text": "389 kr til farsdag. Ord."
+ },
+ {
+  "box": [
+   384,
+   277,
+   692,
+   350
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "509 kr."
+ },
+ {
+  "box": [
+   40,
+   406,
+   1037,
+   455
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 414,
+  "utvidga": 4,
+  "text": "Feiesett med 9 fleksible stenger og nylonbørste på 100 mm."
+ },
+ {
+  "box": [
+   62,
+   1059,
+   1015,
+   1159
+  ],
+  "fet": true,
+  "storlek": 96,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1067,
+  "utvidga": 4,
+  "text": "389 kr, ord. 509 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]

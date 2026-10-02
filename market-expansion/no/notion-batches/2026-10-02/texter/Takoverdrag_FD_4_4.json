@@ -1,0 +1,151 @@
+[
+ {
+  "box": [
+   21,
+   19,
+   288,
+   108
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   255,
+   255,
+   255
+  ],
+  "radie": 0,
+  "alfa": 255
+ },
+ {
+  "box": [
+   29,
+   27,
+   280,
+   100
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   192,
+   36,
+   30
+  ],
+  "radie": 36,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 30,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 46,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   110,
+   148,
+   974,
+   244
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 156,
+  "utvidga": 4,
+  "text": "Stropper på alle fire"
+ },
+ {
+  "box": [
+   407,
+   277,
+   670,
+   350
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 285,
+  "utvidga": 4,
+  "text": "sider."
+ },
+ {
+  "box": [
+   229,
+   398,
+   847,
+   486
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 406,
+  "utvidga": 4,
+  "text": "Spenn, stram."
+ },
+ {
+  "box": [
+   43,
+   527,
+   1035,
+   574
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 535,
+  "utvidga": 4,
+  "text": "2,5 m stropper, justerbare i spennen. Bare taket, én person."
+ },
+ {
+  "box": [
+   23,
+   1084,
+   1060,
+   1171
+  ],
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 1092,
+  "utvidga": 4,
+  "text": "Fra 1 189 kr, ord. 1 549 kr"
+ },
+ {
+  "box": [
+   321,
+   1216,
+   759,
+   1254
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "utvidga": 4,
+  "text": "Bestill senest 19. oktober"
+ }
+]

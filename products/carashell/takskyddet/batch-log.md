@@ -3182,3 +3182,139 @@ Bäverbutikens teamspace och speglas hit). Bara `kord` stämplad.
 
 **NO och DK:** 4 000 kr/dag vardera, mätt 2026-09-23, inte mätta om sedan dess.
 Nattvakten rör bara marknad SE.
+
+## 2026-10-02 — leveransrundan: tolfte dygnet, oförändrat
+
+Kön läst i ett försök: samma två rader i `To be Reviewed`
+(`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`), samma md5 (`d9ab48ff…` /
+`271bf976…`), samma slutkort med `carashell.se`. Kontrollen kördes med OCR
+(`rapidocr_onnxruntime` + `imageio_ffmpeg` fanns i containern), så domen
+`slutkort-med-brand` är mätt. Kampanjen
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+(`120249050544990172`) ACTIVE med 11 adsets; butikspriset 1 129 kr stämmer
+exakt. Inget uppladdat, ingen status ändrad, inga nya kommentarer.
+De två LISTICLE-kampanjerna filtrerades som egna spår.
+
+## 2026-10-02 — NO-rundan: två bildannonser översatta och live
+
+Första nya raderna i Norge-kön på fyra dygn. Båda bild, båda redan live i USA,
+så Norge var sista marknaden som fattades — därför gick båda till `Approved`.
+
+| SE-rad | Norsk annons | Adset | Annons-id |
+|---|---|---|---|
+| `CaraShellRoof_OB_115_1` | `CaraShellRoof_NO_OB_115_1` | `CARASHELL_NO_Takovertrekket - OB` | `120249381209540172` |
+| `CaraShellRoof_OB_121_1` | `CaraShellRoof_NO_OB_121_1` | samma | `120249381220120172` |
+
+Kampanjen `CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11`
+(`120249050596730172`) ACTIVE med 12 adsets, konto `915422744950975`. Länk och
+sida ärvda ur kampanjen. Båda tillbakalästa ACTIVE i ett ACTIVE adset;
+`effective_status` stod `IN_PROCESS`, vilket är Metas granskning av en nyss
+skapad annons, inte ett fel.
+
+**Bilderna ritades om, de OCR-översattes inte.** Rutorna var redan mätta i den
+svenska källbilden av Bäverbutikens NO-runda 2026-10-01
+(`market-expansion/no/notion-batches/2026-10-01/texter/`), och källbilden är
+samma fil som CaraShells spegelrad — så bara orden byttes
+(`bygg-no.py`, samma mall som gårdagens `bygg-us.py`). Sessionen tittade på
+båda färdiga bilderna: ingen svenska kvar, inga spår efter den suddade texten,
+knappen på norska.
+
+⚠️ **Priset är CaraShells, inte Bäverbutikens.** Mätfilerna bär 1 189 / 1 549 kr
+— det är Beverbutikkens norska priser och får aldrig följa med. CaraShells
+norska pris står i `factory/produkter/takskyddet.yaml` →
+`ekonomi.marknadspriser` (NOK): **1 106 kr, ord. 1 382,50 kr, spar 276,50 kr
+(20 %)**, och kön läste samma 1 106 NOK live ur butiken före uppladdningen.
+Samma tal i bild och i annonstexten. Den som återanvänder en annan butiks
+mätfil ärver alltså dess pris om ingen byter det.
+
+Copyn skriven av en sonnet-subagent mot `docs/copy-regler.md` med
+tre-frågorstestet redovisat per rad. 0 HeyGen-krediter — bild kostar inget.
+
+**Approved-kollen:** 72 rader, 0 utan norsk annons.
+
+Marknadsvakten kördes inte: `placeringar` finns bara för US i
+`factory/opsmarknader.mjs`, så NO har ingen vakt att köra.
+
+---
+
+## 2026-10-02 — speglingen: 0 speglade, 3 stoppade, 2 källrader → Approved
+
+Samma tre rader som i går i `CaraShell SE ready to be active`, alla stoppade —
+inget uppladdat, ingen status ändrad, inga nya kommentarer (stopp-kommentarerna
+står kvar sedan tidigare körningar).
+
+| Källrad | Format | Stoppskäl |
+|---|---|---|
+| `Takoverdrag_FD_2_2` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_FD_2_1` | bild | fars dag-regeln + nämner butiken |
+| `Takoverdrag_GT_11_H1` | video | nämner butiken — **nionde dygnet** (24/9–2/10) |
+
+**Två källrader gick till `Approved`** — US-annonserna låg uppe i Magiborsten UK:
+
+| Källrad | Spegel i USA | Annons-id |
+|---|---|---|
+| `Takoverdrag_OB_21_1` | `CaraShellRoof_US_OB_121_1` | `120251717438280435` |
+| `Takoverdrag_OB_15_1` | `CaraShellRoof_US_OB_115_1` | `120251717431390435` |
+
+Raderna hade alltså kommit in i `CaraShell EN ready to be active` efter i går
+(kön stod tom då) — speglingen laddade upp dem i CaraShells hub tidigare, och
+US-rutinen 17:05 gjorde engelskan. Nu är den kön tom igen.
+
+Lästa live: SE-kampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 |
+2026-09-11` ACTIVE med 11 adsets, NO-kampanjen `CARASHELL_NO_Takovertrekket`
+ACTIVE med 12 adsets, pris SE 1 129 kr och NO 1 106 NOK ur butiken (båda
+stämmer mot creativens 1 129). 174 källannonser lästa i Bäverbutikens konto, 12
+fler än i går. Metas tre konton svarade utan strypning.
+
+Inget loggat i registret: `register.mjs log` vägrar 0 speglade.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555593435623456870`).
+`action_axel` skrevs om för hand av samma skäl som 2026-09-30 och 2026-10-01:
+fars dag-raderna hör inte i ACTION NEEDED, för de kan aldrig speglas och det är
+inte Axels beslut. Bara `GT_11_H1` står kvar där.
+
+## USA-runda 19 — 2026-10-02 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom kö i båda statusarna.** `SE-ACTIVE to be translated` 0 rader, `Approved`
+**74** rader (två fler än i går) som alla redan bär sin US-annons. Ingenting
+översatt, ingenting uppladdat, ingen HeyGen-kredit rörd. De två nya är
+`CaraShellRoof_US_OB_121_1` och `_OB_115_1` — speglingens rader, uppladdade av
+en annan session i går kväll (`306624f5`), så de kom in i `Approved` redan
+färdiga.
+
+### Verktyget rättat i går kväll av en annan session: målkampanjen lästes som svensk
+
+`tools/ops-till-meta.mjs` körde registrets fasta målkampanj genom
+`filtreraPaMarknad()`, och eftersom "Taköverdrag 5 reasons USA TEST" inte bär
+någon marknadskod i namnet dömdes den som **SE** och uppladdningen stoppade.
+Rättningen (`624e3d2a`): är kampanjen registrets `malkampanj`-id ÄR den
+marknadens per definition — marknadsfiltret hoppas för just den. Samma
+grundfel som mitt eget fynd i går, en annan plats: **ett namnmönster är inte en
+marknadsvakt och inte heller en marknadsdom.** Kampanjer ägaren bygger i appen
+heter vad han vill.
+
+### Marknadsvakten (steg 6b), körd fast kön var tom
+
+Allt grönt, med vaktens egna tal:
+
+| | |
+|---|---|
+| Kampanjer | 2 ACTIVE — `… lagerrensning – kopia` (12 adsets, 87 annonser, **8 000 kr/dag**) och `Taköverdrag 5 reasons USA TEST` (1 adset, 22 annonser, **12 000 kr/dag**) |
+| Adsets | **13 av 13** bär `facebook, instagram` / `feed` / `stream` — inget rättat |
+| Spend i går | **17 380 kr** på 6 placeringar, allt i flödet |
+| Spend i dag | **10 989 kr** på 6 placeringar, allt i flödet |
+| Kundvy | startsida, båda landningssidorna, fyra produktsidor och kassan engelska; kassan förvalde United States, 0 svenska rader |
+
+Budgetfördelningen har alltså vänt sedan i går: den nya kampanjen bär nu
+12 000 kr/dag mot den gamlas 8 000 (i går 10 000 mot 6 000). Nattvakten sänkte
+dessutom `LISTICLE` 2 800 → 2 000 kr natten till i dag (`73d8e8cf`).
+
+### Rapporterat, inte rört
+
+- Gamla `CARASHELL_US_Taköverdrag …` är fortfarande PAUSED med 2 246 kr spend —
+  ägarens beslut, nionde rundan i rad.
+- Annonsvakten larmade 15:45 i dag på `CaraShellRoof_US_SP_2_1 – kopia`:
+  3 426 kr utan köp (`e4fe1ef3`). Den här rutinen är läs-bar och rörde ingen
+  annons; larmet ligger redan hos Axel.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555599332177215520`).

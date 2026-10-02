@@ -1,0 +1,44 @@
+NO_buskjakke_CS_1_H1.mp4: 8 cues, 8 med avvikelse
+
+  cue 1 @ 0.0s
+    manus: Buskjakken er hundre og tjue kroner billigere akkurat nå.
+    hörs:  Buskjakken er hundre og tjue kroner billigere akkurat nå. Rea
+    — → rea
+
+  cue 2 @ 3.4s
+    manus: Rea på buskjakken.
+    hörs:  akkurat nå. Rea på buskjakken. Før
+    rea → akkurat | på → nå | buskjakken → rea | — → på | — → buskjakken | — → før
+
+  cue 3 @ 4.9s
+    manus: Før fire hundre og nittini kroner, nå bare tre hundre og sytti-ni kroner.
+    hörs:  buskjakken. Før fire hundre og nittini kroner, nå bare tre hundre og syttini kroner. Du sparer
+    før → buskjakken | fire → før | hundre → fire | og → hundre | nittini → og | kroner → nittini
+
+  cue 4 @ 8.9s
+    manus: Du sparer hundre og tjue kroner, det er tjuefire prosent, og du får to stykker i pakken.
+    hörs:  kroner. Du sparer hundre og tjue kroner. Det er tjuefire prosent og du får to stykker i pakken. Skjermer
+    du → kroner | sparer → du | hundre → sparer | og → hundre | tjue → og | kroner → tjue
+
+  cue 5 @ 13.4s
+    manus: Skjermer mot vind og kulde.
+    hörs:  i pakken. Skjermer mot vind og kulde. Den første
+    skjermer → i | mot → pakken | vind → skjermer | og → mot | kulde → vind | — → og
+
+  cue 6 @ 15.4s
+    manus: Den første kalde natten kommer ofte tidligere enn du tror.
+    hörs:  kulde. Den første kalde natten kommer ofte tidligere enn du tror. Tretti
+    den → kulde | første → den | kalde → første | natten → kalde | kommer → natten | ofte → kommer
+
+  cue 7 @ 18.5s
+    manus: Tretti dagers åpent kjøp - du får pengene tilbake.
+    hörs:  du tror. Tretti dagers åpent kjøp. Du får pengene tilbake. Trykk på
+    tretti → du | dagers → tror | åpent → tretti | kjøp → dagers | du → åpent | får → kjøp
+
+  cue 8 @ 21.5s
+    manus: Trykk på knappen og bestill din buskjakke nå.
+    hörs:  tilbake. Trykk på knappen og bestill din buskjakke nå.
+    trykk → tilbake | på → trykk | knappen → på | og → knappen | bestill → og | din → bestill
+
+⚠️ Generera om de cuesarna (radera deras mp3 i <utmapp>/vo/<namn>/) och kör igen.
+   Transkriberingen kan ha fel — lyssna innan du dömer, men leverera inte oläst.

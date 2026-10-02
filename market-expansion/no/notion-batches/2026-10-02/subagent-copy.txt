@@ -1,0 +1,129 @@
+--- COPY 1 (gäller: Takovertrekk_NO_FD_4_4) ---
+MESSAGE: Remmar på alla fyra sidor, med spänne och krok under karossens nederkant. Bara taket täcks, och en person klarar att få på det. Fars dag-rea: från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.
+HEADLINE: Remmar på alla fyra sidor
+DESCRIPTION: 
+
+--- COPY 2 (gäller: Takovertrekk_NO_FD_4_3) ---
+MESSAGE: Fars dag är söndag 8 november. Ska taköverdraget till husvagnen vara en present, då ska beställningen in senast 19 oktober. Från 1 129 kr, ord. 1 469 kr.
+HEADLINE: Beställ senast 19 oktober
+DESCRIPTION: 
+
+--- COPY 3 (gäller: Takovertrekk_NO_FD_4_2) ---
+MESSAGE: Från 1 129 kr i stället för 1 469 kr. Det är priset på de två minsta längderna, de större kostar mer. Taket täckt, dörr och fönster fria. Beställ senast 19 oktober.
+HEADLINE: Från 1 129 kr, ord. 1 469 kr
+DESCRIPTION: 
+
+--- COPY 4 (gäller: Takovertrekk_NO_FD_4_1) ---
+MESSAGE: Passar det min husvagn? Mät den och ta storleken som är minst lika lång. Det finns nio längder, från 5,5 till 13,5 meter, och alla är 3 meter breda. Fars dag-rea från 1 129 kr.
+HEADLINE: Mät vagnen, välj längd
+DESCRIPTION: 
+
+--- COPY 5 (gäller: Takovertrekk_NO_FD_3_H2) ---
+MESSAGE: Taköverdrag från 1 129 kr, ord. 1 469 kr. Remmar på alla fyra sidor som du ställer in i spännet, och vattnet rinner av. Alla nio längder är 3 meter breda. Beställ senast 19 oktober.
+HEADLINE: Fars dag-rea på taköverdrag
+DESCRIPTION: 
+
+--- COPY 6 (gäller: Takovertrekk_NO_FD_3_H1) ---
+MESSAGE: Mät husvagnen först. Det finns nio längder, från 5,5 till 13,5 meter. Sedan remmar på alla fyra sidor, och vattnet rinner av. Fars dag-rea från 1 129 kr.
+HEADLINE: Nio längder till husvagnen
+DESCRIPTION: 
+
+--- COPY 7 (gäller: Takovertrekk_NO_FD_1_H3, Takovertrekk_NO_FD_1_H2, Takovertrekk_NO_FD_1_H1) ---
+MESSAGE: En present till fars dag. Taket han aldrig kollar. Vattentät 210D-oxfordväv med remmar på alla fyra sidor håller den på plats. Fars dag-rea: Från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.
+HEADLINE: Taket pappa aldrig kollar.
+DESCRIPTION: 
+
+--- COPY 8 (gäller: Takovertrekk_NO_OB_22_H1) ---
+MESSAGE: Efter en vinter undrar många vad som händer sen. Till våren lossas remmarna, en efter en, och överdraget viks ihop till en famnstor packe. Från höst till vår är det så det är tänkt att användas, igen nästa säsong.
+HEADLINE: Av till våren, på igen
+DESCRIPTION: 
+
+--- COPY 9 (gäller: Takovertrekk_NO_OB_19_H1) ---
+MESSAGE: Lägg ett måttband mot kanten på sidoväggen. Den hänger 30 till 40 cm ner. Skarven mellan tak och vägg ligger under kanten, och dörr, fönster och luckor är fria. Fars dag-rea: från 1 129 kr, ord. 1 469 kr.
+HEADLINE: Kanten hänger 30 till 40 cm ner
+DESCRIPTION: 
+
+--- COPY 10 (gäller: Takovertrekk_NO_OB_18_H1) ---
+MESSAGE: Ett helöverdrag skyddar mer av vagnen, det stämmer. Det här täcker bara taket, och kanten hänger 30 till 40 cm ner över sidorna. Skarven ligger under kanten och dörr, fönster och luckor är fria. Från 1 129 kr.
+HEADLINE: Bara taket täcks
+DESCRIPTION: 
+
+--- COPY 11 (gäller: Takovertrekk_NO_OB_17_H1) ---
+MESSAGE: Efter säsongen blir ett helöverdrag en stor hög på garagegolvet. Det här viks ihop till en famnstor packe, och en person klarar att få på det. Bara taket täcks. Fars dag-rea från 1 129 kr.
+HEADLINE: Famnstor packe efter säsongen
+DESCRIPTION: 
+
+--- COPY 12 (gäller: Takovertrekk_NO_OB_14_H1) ---
+MESSAGE: Tunna presenningar låter vatten bli stående i en pöl. På 210D-oxfordväven rinner vattnet av i stället. Tätmassan kring takluckorna slipper stå i vatten hela vintern.
+HEADLINE: Vattnet rinner av 210D-väven
+DESCRIPTION: 
+
+--- COPY 13 (gäller: Takovertrekk_NO_OB_13_H1) ---
+MESSAGE: Ett vanligt skynke kan lyfta i vinden. Våra remmar hakar fast under karossens nederkant på alla fyra sidor. Två förstärkta remmar går tvärs över taket och håller väven nere.
+HEADLINE: Remmar hakar fast, alla fyra sidor
+DESCRIPTION: 
+
+--- COPY 14 (gäller: Takovertrekk_NO_OB_11_H1) ---
+MESSAGE: Vattnet ska inte bli stående på taket. Vår silverbelagda 210D-oxfordväv låter det rinna av i stället, inte en tunn presenning. Remmarna sitter på alla fyra sidor och håller kvar överdraget när det blåser. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).
+HEADLINE: Vattnet rinner av, inte taket.
+DESCRIPTION: 
+
+--- COPY 15 (gäller: Sotarset_NO_FD_4_4) ---
+MESSAGE: Nio böjliga stänger på 41 cm som skruvas ihop en och en till 3,69 meters räckvidd. Nylonborste på 100 mm och sexkantsadapter ingår. Bygg bara den längd du behöver. Fars dag-rea: 459 kr, ord. 599 kr.
+HEADLINE: 9 stänger à 41 cm. 3,69 meter.
+DESCRIPTION: 
+
+--- COPY 16 (gäller: Sotarset_NO_FD_4_3) ---
+MESSAGE: Fars dag är söndag 8 november. Sotarset med böjliga stänger och en nylonborste på 100 mm. 459 kr, ord. 599 kr. Sista beställningsdag är 19 oktober.
+HEADLINE: Beställ senast 19 oktober
+DESCRIPTION: 
+
+--- COPY 17 (gäller: Sotarset_NO_FD_4_2) ---
+MESSAGE: Det du får: nio böjliga stänger, en nylonborste och en adapter. Stängerna följer kröken i röret i stället för att fastna i första böjen. Fars dag-rea, beställ senast 19 oktober.
+HEADLINE: 459 kr, ord. 599 kr
+DESCRIPTION: 
+
+--- COPY 18 (gäller: Sotarset_NO_FD_4_1) ---
+MESSAGE: Du skruvar ihop precis så många stänger som röret kräver. Sotet borstas loss, inte skrapas. Du kommer även åt bakom kaminen eller torktumlaren. 459 kr i fars dag-rean.
+HEADLINE: Rensa kaminröret själv
+DESCRIPTION: 
+
+--- COPY 19 (gäller: Golfkalender_NO_FD_4_4) ---
+MESSAGE: Golfbollar och peggar i plast och trä, golfhandduk, klubbrengöringsborste, greenlagare med spegel och bollmarkörer. Allt ligger bakom luckorna.
+HEADLINE: 24 luckor med golfgrejer
+DESCRIPTION: 
+
+--- COPY 20 (gäller: Golfkalender_NO_FD_4_3) ---
+MESSAGE: Han som redan har allt för golf får en lucka om dagen. Ett paket att slå in och ge bort till fars dag.
+HEADLINE: Golfkalender till fars dag
+DESCRIPTION: 
+
+--- COPY 21 (gäller: Golfkalender_NO_FD_4_2) ---
+MESSAGE: 549 kr i stället för 719 kr. 24 luckor med golfgrejer, färdigfyllda och i ett enda paket att slå in.
+HEADLINE: 549 kr, ord. 719 kr
+DESCRIPTION: 
+
+--- COPY 22 (gäller: Golfkalender_NO_FD_4_1) ---
+MESSAGE: Du fyller ingenting själv. Alla 24 luckor är redan fyllda, så det du får är ett paket att slå in. Han öppnar en lucka om dagen.
+HEADLINE: Luckorna är redan fyllda
+DESCRIPTION: 
+
+--- COPY 23 (gäller: Spikkesett_NO_FD_4_4) ---
+MESSAGE: Läderstrop och polermedel, en träbit att öva på och skärskyddade handskar. Allt ligger i väskan med dragkedja.
+HEADLINE: 6 knivar och 6 järn i en väska
+DESCRIPTION: 
+
+--- COPY 24 (gäller: Spikkesett_NO_FD_4_3) ---
+MESSAGE: Sex knivar och sex järn för olika snitt. Allt får plats i väskan med dragkedja, redo att ge bort till fars dag.
+HEADLINE: Täljset till fars dag
+DESCRIPTION: 
+
+--- COPY 25 (gäller: Spikkesett_NO_FD_4_2) ---
+MESSAGE: 869 kr i stället för 1 139 kr. 30 delar i en väska med dragkedja: 6 knivar, 6 järn, strop och handskar.
+HEADLINE: 869 kr, ord. 1 139 kr
+DESCRIPTION: 
+
+--- COPY 26 (gäller: Spikkesett_NO_FD_4_1) ---
+MESSAGE: Du behöver inte börja på ett riktigt stycke. En träbit att öva på ingår, och skärskyddade handskar för när kniven slinter.
+HEADLINE: Träbit att öva på ingår
+DESCRIPTION: 

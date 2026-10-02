@@ -120,6 +120,9 @@ test('summeraDagar: kampanjens spend, köp och spendvägd ROAS i ett fönster', 
   const serie = [dag('2026-09-01', 1000, 2, 1), dag('2026-09-02', 3000, 6, 2), dag('2026-09-09', 500)];
   const s = summeraDagar(serie, '2026-09-01', '2026-09-07');
   assert.deepEqual([s.spend_sek, s.kop, s.roas], [4000, 8, 1.75]);
+  // En dag med spend och noll köp (Meta skickar ingen purchase_roas) väger in som ROAS 0.
+  const medTomDag = summeraDagar([...serie, { date_start: '2026-09-03', spend: '4000', actions: [], purchase_roas: [] }], '2026-09-01', '2026-09-07');
+  assert.deepEqual([medTomDag.spend_sek, medTomDag.roas], [8000, 0.875]);
   assert.deepEqual(veckaFonster('2026-09-01', '2026-09-30', 2).since, '2026-09-08');
 });
 
@@ -282,4 +285,26 @@ test('byggArkiv räknar kedjor, varianter, koncept och hit rate ur loggen + mät
   const md = arkivMarkdown(a);
   assert.match(md, /Kedjorna/);
   assert.match(md, /#2 MATSTRUMP_sushi_gift_ugc_065_h2_i2pnat_v1/);
+});
+
+test('arkivet bär 3:2:2: adset-id per annons, testadseten med sina annonser och den senaste domen per adset', () => {
+  const logg = [
+    { kod: 'ADSET_SKAPAD', datum: '2026-10-05', adset_id: '777', adset_namn: 'MATSTRUMP_T070_gift_video', koncept: '070' },
+    { kod: 'UPPLADDAD', annons: 'MATSTRUMP_sushi_gift_ugc_070_h1_v1', annons_id: '1', adset: 'MATSTRUMP_T070_gift_video', adset_id: '777' },
+    { kod: 'UPPLADDAD', annons: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', annons_id: '2', adset: 'MATSTRUMP_T070_gift_video', adset_id: '777' },
+    { kod: 'ADSET_DOM', datum: '2026-10-08', adset_id: '777', adset: 'MATSTRUMP_T070_gift_video', roll: 'test', dom: 'FOR_UNG', spend_sek: 900 },
+    { kod: 'ADSET_DOM', datum: '2026-10-12', adset_id: '777', adset: 'MATSTRUMP_T070_gift_video', roll: 'test', dom: 'FLYTTA', spend_sek: 4000, andel: 0.24 },
+    { kod: 'ADSET_DOM', datum: '2026-10-12', adset_id: '120251591832340023', adset: '09-17 UGC', roll: 'champions', dom: 'CHAMPIONS', spend_sek: 60000 },
+  ];
+  const matningar = [{ datum: '2026-10-12', marknad: 'SE', id: '9', namn: '09-17 Nathalie captions musik', adset: '09-17 UGC', adset_id: '120251591832340023', spend_sek: 12000, kop: 40, roas: 1.8 }];
+  const a = byggArkiv({ konfig, logg, matningar, idag: '2026-10-12' });
+  const h1 = a.annonser.find((x) => x.namn === 'MATSTRUMP_sushi_gift_ugc_070_h1_v1');
+  assert.equal(h1.adset_id, '777');
+  assert.equal(h1.adset_dom, 'FLYTTA', 'den SENASTE domen gäller');
+  assert.equal(a.annonser.find((x) => x.namn === '09-17 Nathalie captions musik').adset_roll, 'champions');
+  const t = a.adsets.find((x) => x.adset_id === '777');
+  assert.deepEqual([t.roll, t.dom, t.koncept, t.annonser.length], ['test', 'FLYTTA', '070', 2]);
+  assert.equal(a.adsets[0].adset_id, '120251591832340023', 'mest spend först');
+  assert.match(arkivMarkdown(a), /## Adseten \(3:2:2/);
+  assert.deepEqual(matningsrader({ datum: '2026-10-12', annonser: [{ id: '1', namn: 'x', adset: 'a', adset_id: '777', spend_sek: 5 }] })[0].adset_id, '777');
 });

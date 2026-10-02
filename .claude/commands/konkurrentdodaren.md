@@ -520,6 +520,25 @@ inget: "Inget för dig i dag."
      nummer, aldrig två gånger), bygg om statusen med `--bara-status` och publicera
      data/status.json. Markeringen är Axels ord. Kvittot att jämföra mot är Metas mejl "Anmälan
      om immateriella rättigheter # <nr>".
+     ⛔ **Meta granskar INTE mejl.** KD-2026-004 skickade åtta anmälningar till Metas ombud
+     `ip@fb.com` den 2/10, och Meta svarade: "Your report will not be reviewed unless it is
+     submitted through one of these forms." En Meta-anmälan går alltså bara i formuläret, via
+     själv-läget eller Cowork. Mejla aldrig Meta igen.
+     **Shopify-anmälan kan däremot mejlas** till Shopifys utsedda ombud (2026-10-02,
+     KD-2026-004: "Jag gör inte det där manuellt"). Hans Ja i appen räcker.
+     1. `node konkurrenter/kor.mjs --epost <id>` skriver `arenden/<id>/epost/` för
+        Shopify-anmälan. Där finns `shopify.txt` (Till, Ämne och brödtext utan länkar), anmälan
+        som `.pdf` med alla länkar och `.b64` till bilagan. Mottagaren är `legal@shopify.com`.
+     2. Läs `.b64`-filen ensam och gör utkastet med `create_draft`: to, subject, body = `.txt`
+        från rad 5, och bilagan `copyright-notice-<id>-shopify.pdf`.
+     3. Kontrollera innan något skickas. Brödtexten (`get_draft` PLAIN_TEXT) ska sakna
+        google.com/url. Bilagan: läs utkastet som RAW, skriv av hela värdet till en fil och
+        kör `--epost-koll <id> --namn <n> --raw <fil>`. Det ska ge OK.
+        - Många olika tecken betyder fel bilaga: radera utkastet och gör om det.
+        - Ett par tecken betyder ett avskriftsfel: läs igen och skriv av på nytt.
+        - Låt helst en agent som aldrig sett filen göra avskriften.
+     4. `send_message` med draftId, sedan `--epost-skickad <id> --namn <n> --gmail <id> --trad <tråd>`.
+     Bygg därefter om statusen (`--granska <id> --bara-status`) och publicera data/status.json.
 
 - **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
   2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och

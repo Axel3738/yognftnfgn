@@ -1,0 +1,114 @@
+[
+ {
+  "video": "Takovertrekk_NO_FD_1_H1",
+  "cue": 1,
+  "fran": "En procent till fars dag.",
+  "till": "Et tips til farsdag.",
+  "skal": "\"En procent\" står ikke i faktalisten og er trolig en felhørt setning; ingen prosentpåstand kan gjøres"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_13_H1",
+  "cue": 3,
+  "fran": "Två förstärkta remmar tvärs över taket håller väven nere i vinden.",
+  "till": "Justerbare stropper holder stoffet nede i vinden.",
+  "skal": "\"To forsterkede stropper tvers over taket\" står ikke i faktalisten; faktaene er stropper på alle fire sider, justerbare"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_18_H1",
+  "cue": 2,
+  "fran": "kanten hänger trettio till fyrtio centimeter ner över sidorna",
+  "till": "kanten henger ned over sidene",
+  "skal": "30 til 40 cm står ikke i faktalisten; tallet fjernet"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_19_H1",
+  "cue": 1,
+  "fran": "Ett måttband visar trettio till fyrtio centimeter vid kanten.",
+  "till": "Et målebånd viser hvor langt kanten henger ned.",
+  "skal": "30 til 40 cm står ikke i faktalisten; tallet fjernet"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_17_H1",
+  "cue": 4,
+  "fran": "Ettusen etthundratjugonionde kronor",
+  "till": "ett tusen ett hundre og åtti-ni kroner",
+  "skal": "Felhørt \"tjugonionde\"; norsk pris 1 189"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_1_H1",
+  "cue": 0,
+  "fran": "tvåhundratio D Oxford-väven",
+  "till": "210D Oxford-stoff",
+  "skal": "Felhørt materialnavn rettet"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_1_H2",
+  "cue": 0,
+  "fran": "tvåhundratio Deox Ford Waven",
+  "till": "210D Oxford-stoff",
+  "skal": "Felhørt materialnavn rettet"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_1_H3",
+  "cue": 0,
+  "fran": "tvåhundratio D Oxfordväven",
+  "till": "210D Oxford-stoff",
+  "skal": "Felhørt materialnavn rettet"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_11_H1",
+  "cue": 0,
+  "fran": "tvåhundratio Deox förväv / Deoxväven / Deoxförväv",
+  "till": "210D Oxford-stoff",
+  "skal": "Felhørt materialnavn rettet"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_14_H1",
+  "cue": 0,
+  "fran": "tvåhundratio D Oxford-väven",
+  "till": "210D Oxford-stoff",
+  "skal": "Felhørt materialnavn rettet"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_1_H3",
+  "cue": 4,
+  "fran": "Koka den under kanten.",
+  "till": "Krok den under kanten.",
+  "skal": "Felhørt: krok, ikke koking"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_3_H1",
+  "cue": 7,
+  "fran": "1129 kronor / 1469 kronor",
+  "till": "1 189 kr / 1 549 kr",
+  "skal": "Norske priser"
+ },
+ {
+  "video": "Takovertrekk_NO_FD_3_H2",
+  "cue": 1,
+  "fran": "1129 kronor / 1469 kronor",
+  "till": "1 189 kr / 1 549 kr",
+  "skal": "Norske priser"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_13_H1",
+  "cue": 4,
+  "fran": "spara trehundrafyrtio kronor",
+  "till": "spar tre hundre og seksti kroner",
+  "skal": "Norsk besparelse 360 kr"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_14_H1",
+  "cue": 3,
+  "fran": "Tätmassan kring takluckorna slipper stå i vatten hela vintern",
+  "till": "Tetningen rundt lukene slipper å stå i vann hele vinteren",
+  "skal": "Omformulert nær faktaen om at vannet ikke samler seg ved lukene (cue 0 = flere cues, se fil)"
+ },
+ {
+  "video": "Takovertrekk_NO_OB_11_H1",
+  "cue": 4,
+  "fran": "Solen tar på ytan istället för på taket.",
+  "till": "Solen tar overflaten i stedet for taket.",
+  "skal": "Kortet ned for å rekke cuens lengde"
+ }
+]

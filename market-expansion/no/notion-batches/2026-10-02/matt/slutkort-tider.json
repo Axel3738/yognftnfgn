@@ -1,0 +1,57 @@
+{
+ "Takovertrekk_NO_FD_1_H1": {
+  "familj": "A",
+  "slutkort_fran": 13.35,
+  "langd": 17.8
+ },
+ "Takovertrekk_NO_FD_1_H2": {
+  "familj": "A",
+  "slutkort_fran": 12.1,
+  "langd": 16.1
+ },
+ "Takovertrekk_NO_FD_1_H3": {
+  "familj": "A",
+  "slutkort_fran": 12.8,
+  "langd": 17.4
+ },
+ "Takovertrekk_NO_FD_3_H1": {
+  "familj": "B",
+  "slutkort_fran": 11.7,
+  "langd": 19.2
+ },
+ "Takovertrekk_NO_FD_3_H2": {
+  "familj": "B",
+  "slutkort_fran": 12.8,
+  "langd": 19.3
+ },
+ "Takovertrekk_NO_OB_11_H1": {
+  "familj": "C",
+  "slutkort_fran": 10.8,
+  "langd": 14.3
+ },
+ "Takovertrekk_NO_OB_13_H1": {
+  "familj": "D13",
+  "slutkort_fran": 10.7,
+  "langd": 16.9
+ },
+ "Takovertrekk_NO_OB_14_H1": {
+  "familj": "D14",
+  "slutkort_fran": 10.45,
+  "langd": 17.4
+ },
+ "Takovertrekk_NO_OB_17_H1": {
+  "familj": "E",
+  "slutkort_fran": 9.3,
+  "langd": 16.2
+ },
+ "Takovertrekk_NO_OB_18_H1": {
+  "familj": "E",
+  "slutkort_fran": 11.75,
+  "langd": 17.3
+ },
+ "Takovertrekk_NO_OB_19_H1": {
+  "familj": "E",
+  "slutkort_fran": 9.75,
+  "langd": 16.7
+ }
+}

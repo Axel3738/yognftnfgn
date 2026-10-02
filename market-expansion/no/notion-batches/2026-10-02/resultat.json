@@ -1,0 +1,294 @@
+{
+ "Takoverdrag_FD_4_4": {
+  "malnamn": "Takovertrekk_NO_FD_4_4",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_4.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_4.jpg.qa.png"
+ },
+ "Takoverdrag_FD_4_3": {
+  "malnamn": "Takovertrekk_NO_FD_4_3",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_3.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_3.jpg.qa.png"
+ },
+ "Takoverdrag_FD_4_2": {
+  "malnamn": "Takovertrekk_NO_FD_4_2",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_2.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_2.jpg.qa.png"
+ },
+ "Takoverdrag_FD_4_1": {
+  "malnamn": "Takovertrekk_NO_FD_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Takovertrekk_NO_FD_4_1.jpg.qa.png"
+ },
+ "Takoverdrag_FD_3_H2": {
+  "malnamn": "Takovertrekk_NO_FD_3_H2",
+  "status": "FEL",
+  "skal": "'Takoverdrag_FD_3_H2'"
+ },
+ "Takoverdrag_FD_3_H1": {
+  "malnamn": "Takovertrekk_NO_FD_3_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_FD_3_H1'"
+ },
+ "Takoverdrag_FD_1_H3": {
+  "malnamn": "Takovertrekk_NO_FD_1_H3",
+  "status": "FEL",
+  "skal": "'Takoverdrag_FD_1_H3'"
+ },
+ "Takoverdrag_FD_1_H2": {
+  "malnamn": "Takovertrekk_NO_FD_1_H2",
+  "status": "FEL",
+  "skal": "'Takoverdrag_FD_1_H2'"
+ },
+ "Takoverdrag_FD_1_H1": {
+  "malnamn": "Takovertrekk_NO_FD_1_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_FD_1_H1'"
+ },
+ "Takoverdrag_OB_22_H1": {
+  "malnamn": "Takovertrekk_NO_OB_22_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_22_H1'"
+ },
+ "Takoverdrag_OB_19_H1": {
+  "malnamn": "Takovertrekk_NO_OB_19_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_19_H1'"
+ },
+ "Takoverdrag_OB_18_H1": {
+  "malnamn": "Takovertrekk_NO_OB_18_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_18_H1'"
+ },
+ "Takoverdrag_OB_17_H1": {
+  "malnamn": "Takovertrekk_NO_OB_17_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_17_H1'"
+ },
+ "Takoverdrag_OB_14_H1": {
+  "malnamn": "Takovertrekk_NO_OB_14_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_14_H1'"
+ },
+ "Takoverdrag_OB_13_H1": {
+  "malnamn": "Takovertrekk_NO_OB_13_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_13_H1'"
+ },
+ "Takoverdrag_OB_11_H1": {
+  "malnamn": "Takovertrekk_NO_OB_11_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_11_H1'"
+ },
+ "Sotarset_FD_4_4": {
+  "malnamn": "Sotarset_NO_FD_4_4",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_4.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_4.jpg.qa.png"
+ },
+ "Sotarset_FD_4_3": {
+  "malnamn": "Sotarset_NO_FD_4_3",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_3.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_3.jpg.qa.png"
+ },
+ "Sotarset_FD_4_2": {
+  "malnamn": "Sotarset_NO_FD_4_2",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_2.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_2.jpg.qa.png"
+ },
+ "Sotarset_FD_4_1": {
+  "malnamn": "Sotarset_NO_FD_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Sotarset_NO_FD_4_1.jpg.qa.png"
+ },
+ "Golfkalender_FD_4_4": {
+  "malnamn": "Golfkalender_NO_FD_4_4",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_4.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_4.jpg.qa.png"
+ },
+ "Golfkalender_FD_4_3": {
+  "malnamn": "Golfkalender_NO_FD_4_3",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_3.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_3.jpg.qa.png"
+ },
+ "Golfkalender_FD_4_2": {
+  "malnamn": "Golfkalender_NO_FD_4_2",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_2.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_2.jpg.qa.png"
+ },
+ "Golfkalender_FD_4_1": {
+  "malnamn": "Golfkalender_NO_FD_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Golfkalender_NO_FD_4_1.jpg.qa.png"
+ },
+ "Taljset_FD_4_4": {
+  "malnamn": "Spikkesett_NO_FD_4_4",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_4.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_4.jpg.qa.png"
+ },
+ "Taljset_FD_4_3": {
+  "malnamn": "Spikkesett_NO_FD_4_3",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_3.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_3.jpg.qa.png"
+ },
+ "Taljset_FD_4_2": {
+  "malnamn": "Spikkesett_NO_FD_4_2",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_2.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_2.jpg.qa.png"
+ },
+ "Taljset_FD_4_1": {
+  "malnamn": "Spikkesett_NO_FD_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-10-02/no/Spikkesett_NO_FD_4_1.jpg.qa.png"
+ }
+}

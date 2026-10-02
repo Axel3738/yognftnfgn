@@ -1,0 +1,223 @@
+{
+ "fil": "Takovertrekk_NO_OB_13_H1.mp4",
+ "cues": 4,
+ "trasiga": 4,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Hjørnene løfter seg i vinden, selv med snor.",
+   "hord": "Hjørnene løfter seg i vinden, selv med snor. På vårt",
+   "ord": 8,
+   "avvikelser": [
+    {
+     "vantat": "—",
+     "hord": "på"
+    },
+    {
+     "vantat": "—",
+     "hord": "vårt"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 2.971,
+   "text": "På vårt hekter stroppen seg under karosseriets nederkant på alle fire sider.",
+   "hord": "snor. På vårt hekkter stroppen seg under karosseriets nederkant på alle fire sider. Justerbare",
+   "ord": 12,
+   "avvikelser": [
+    {
+     "vantat": "på",
+     "hord": "snor"
+    },
+    {
+     "vantat": "vårt",
+     "hord": "på"
+    },
+    {
+     "vantat": "hekter",
+     "hord": "vårt"
+    },
+    {
+     "vantat": "stroppen",
+     "hord": "hekkter"
+    },
+    {
+     "vantat": "seg",
+     "hord": "stroppen"
+    },
+    {
+     "vantat": "under",
+     "hord": "seg"
+    },
+    {
+     "vantat": "karosseriets",
+     "hord": "under"
+    },
+    {
+     "vantat": "nederkant",
+     "hord": "karosseriets"
+    },
+    {
+     "vantat": "på",
+     "hord": "nederkant"
+    },
+    {
+     "vantat": "alle",
+     "hord": "på"
+    },
+    {
+     "vantat": "fire",
+     "hord": "alle"
+    },
+    {
+     "vantat": "sider",
+     "hord": "fire"
+    },
+    {
+     "vantat": "—",
+     "hord": "sider"
+    },
+    {
+     "vantat": "—",
+     "hord": "justerbare"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 8.181,
+   "text": "Justerbare stropper holder stoffet nede i vinden.",
+   "hord": "sider. Justerbare stropper holder staffen nede i vinden. Ett tusen",
+   "ord": 7,
+   "avvikelser": [
+    {
+     "vantat": "justerbare",
+     "hord": "sider"
+    },
+    {
+     "vantat": "stropper",
+     "hord": "justerbare"
+    },
+    {
+     "vantat": "holder",
+     "hord": "stropper"
+    },
+    {
+     "vantat": "stoffet",
+     "hord": "holder"
+    },
+    {
+     "vantat": "nede",
+     "hord": "staffen"
+    },
+    {
+     "vantat": "i",
+     "hord": "nede"
+    },
+    {
+     "vantat": "vinden",
+     "hord": "i"
+    },
+    {
+     "vantat": "—",
+     "hord": "vinden"
+    },
+    {
+     "vantat": "—",
+     "hord": "ett"
+    },
+    {
+     "vantat": "—",
+     "hord": "tusen"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 10.891,
+   "text": "Ett tusen ett hundre og åtti-ni kroner, spar tre hundre og seksti kroner, tjuetre prosent rabatt.",
+   "hord": "vinden. Ett tusen ett hundre og åtti ni kroner. Spar tre hundre og seksti kroner. Tjue tre prosent rabatt.",
+   "ord": 17,
+   "avvikelser": [
+    {
+     "vantat": "ett",
+     "hord": "vinden"
+    },
+    {
+     "vantat": "tusen",
+     "hord": "ett"
+    },
+    {
+     "vantat": "ett",
+     "hord": "tusen"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "ett"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "åtti",
+     "hord": "og"
+    },
+    {
+     "vantat": "ni",
+     "hord": "åtti"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "ni"
+    },
+    {
+     "vantat": "spar",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "tre",
+     "hord": "spar"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "tre"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "seksti",
+     "hord": "og"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "tjuetre",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "prosent",
+     "hord": "tjue"
+    },
+    {
+     "vantat": "rabatt",
+     "hord": "tre"
+    },
+    {
+     "vantat": "—",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  }
+ ]
+}

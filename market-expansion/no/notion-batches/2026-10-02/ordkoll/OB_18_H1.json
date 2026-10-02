@@ -1,0 +1,280 @@
+{
+ "fil": "Takovertrekk_NO_OB_18_H1.mp4",
+ "cues": 5,
+ "trasiga": 5,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Et helovertrekk beskytter mer av vognen.",
+   "hord": "Et helt overtrekk beskytter mer av vognen. Dette",
+   "ord": 6,
+   "avvikelser": [
+    {
+     "vantat": "helovertrekk",
+     "hord": "helt"
+    },
+    {
+     "vantat": "beskytter",
+     "hord": "overtrekk"
+    },
+    {
+     "vantat": "mer",
+     "hord": "beskytter"
+    },
+    {
+     "vantat": "av",
+     "hord": "mer"
+    },
+    {
+     "vantat": "vognen",
+     "hord": "av"
+    },
+    {
+     "vantat": "—",
+     "hord": "vognen"
+    },
+    {
+     "vantat": "—",
+     "hord": "dette"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 2.65,
+   "text": "Dette dekker taket, og kanten henger ned over sidene.",
+   "hord": "vognen. Dette dekker taket og kanten henger ned over sidene. Skjøten",
+   "ord": 9,
+   "avvikelser": [
+    {
+     "vantat": "dette",
+     "hord": "vognen"
+    },
+    {
+     "vantat": "dekker",
+     "hord": "dette"
+    },
+    {
+     "vantat": "taket",
+     "hord": "dekker"
+    },
+    {
+     "vantat": "og",
+     "hord": "taket"
+    },
+    {
+     "vantat": "kanten",
+     "hord": "og"
+    },
+    {
+     "vantat": "henger",
+     "hord": "kanten"
+    },
+    {
+     "vantat": "ned",
+     "hord": "henger"
+    },
+    {
+     "vantat": "over",
+     "hord": "ned"
+    },
+    {
+     "vantat": "sidene",
+     "hord": "over"
+    },
+    {
+     "vantat": "—",
+     "hord": "sidene"
+    },
+    {
+     "vantat": "—",
+     "hord": "skjøten"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 6.17,
+   "text": "Skjøten mellom tak og vegg ligger også under dekket.",
+   "hord": "sidene. Skjøten mellom tak og vegg ligger også under dekket. Døren,",
+   "ord": 9,
+   "avvikelser": [
+    {
+     "vantat": "skjøten",
+     "hord": "sidene"
+    },
+    {
+     "vantat": "mellom",
+     "hord": "skjøten"
+    },
+    {
+     "vantat": "tak",
+     "hord": "mellom"
+    },
+    {
+     "vantat": "og",
+     "hord": "tak"
+    },
+    {
+     "vantat": "vegg",
+     "hord": "og"
+    },
+    {
+     "vantat": "ligger",
+     "hord": "vegg"
+    },
+    {
+     "vantat": "også",
+     "hord": "ligger"
+    },
+    {
+     "vantat": "under",
+     "hord": "også"
+    },
+    {
+     "vantat": "dekket",
+     "hord": "under"
+    },
+    {
+     "vantat": "—",
+     "hord": "dekket"
+    },
+    {
+     "vantat": "—",
+     "hord": "døren"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 9.22,
+   "text": "Døren, vinduer og luker er frie.",
+   "hord": "dekket. Døren, vinduer og luker er frie. Ett tusen",
+   "ord": 6,
+   "avvikelser": [
+    {
+     "vantat": "døren",
+     "hord": "dekket"
+    },
+    {
+     "vantat": "vinduer",
+     "hord": "døren"
+    },
+    {
+     "vantat": "og",
+     "hord": "vinduer"
+    },
+    {
+     "vantat": "luker",
+     "hord": "og"
+    },
+    {
+     "vantat": "er",
+     "hord": "luker"
+    },
+    {
+     "vantat": "frie",
+     "hord": "er"
+    },
+    {
+     "vantat": "—",
+     "hord": "frie"
+    },
+    {
+     "vantat": "—",
+     "hord": "ett"
+    },
+    {
+     "vantat": "—",
+     "hord": "tusen"
+    }
+   ]
+  },
+  {
+   "nr": 5,
+   "start": 11.46,
+   "text": "Ett tusen ett hundre og åtti-ni kroner, spar tre hundre og seksti kroner, tjuetre prosent rabatt.",
+   "hord": "frie. Ett tusen ett hundre og åtti ni kroner. Spar tre hundre og seksti kroner. Tjue tre prosent rabatt.",
+   "ord": 17,
+   "avvikelser": [
+    {
+     "vantat": "ett",
+     "hord": "frie"
+    },
+    {
+     "vantat": "tusen",
+     "hord": "ett"
+    },
+    {
+     "vantat": "ett",
+     "hord": "tusen"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "ett"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "åtti",
+     "hord": "og"
+    },
+    {
+     "vantat": "ni",
+     "hord": "åtti"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "ni"
+    },
+    {
+     "vantat": "spar",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "tre",
+     "hord": "spar"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "tre"
+    },
+    {
+     "vantat": "og",
+     "hord": "hundre"
+    },
+    {
+     "vantat": "seksti",
+     "hord": "og"
+    },
+    {
+     "vantat": "kroner",
+     "hord": "seksti"
+    },
+    {
+     "vantat": "tjuetre",
+     "hord": "kroner"
+    },
+    {
+     "vantat": "prosent",
+     "hord": "tjue"
+    },
+    {
+     "vantat": "rabatt",
+     "hord": "tre"
+    },
+    {
+     "vantat": "—",
+     "hord": "prosent"
+    },
+    {
+     "vantat": "—",
+     "hord": "rabatt"
+    }
+   ]
+  }
+ ]
+}

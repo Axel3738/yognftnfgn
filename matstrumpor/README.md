@@ -4,26 +4,44 @@ Två kommandon, ett konto, en produkt.
 
 | Kommando | Vad |
 |---|---|
-| `/matstrumpor` | Hubbens `To be Reviewed` → rätt adset i **samma CBO** → `Approved` |
-| `/matstrumporkungen` | Etikett → lärdom → 6 briefer per rond, var tredje dag + budgetrond |
+| `/matstrumpor` | Hubbens `To be Reviewed` → **ett testadset per koncept** (3:2:2) i **samma CBO** → `Approved` |
+| `/matstrumporkungen` | Etikett → lärdom → 2 koncept à 3 hookar per rond, var tredje dag + **domen per adset** och förslagen till Axel |
 
 **Kontot heter "nya kungen"** (`730973156224390`, portfölj Matstrumpor.se).
 Inte Matstrumpor. Kolla alltid id:t.
 
-## Hinkarna
+## Strukturen: 3:2:2 (Axels beslut ROUTING C 2026-10-02)
 
-Allt i kampanjen `MATSTRUMP_SALES_20260826` (CBO, 1 000 kr/dag). Adsetet väljs
-**ur annonsnamnet** — `MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>`:
+Allt i kampanjen `MATSTRUMP_SALES_20260826` (CBO). Kursen ("How To Set Up a 3:2:2
+Campaign", läst 2026-10-02 — `docs/os/evolve/ITERATIONS-PLAYBOOK.md` avsnitt 11):
 
 ```
-vinkel jul + ugc/anim/beforeafter/comparison/lifestyle → broad_advplus_purchase_jul_video
-vinkel jul + static/product/textheavy                  → broad_advplus_purchase_jul_bilder
-annan vinkel + videoformat                             → broad_advplus_purchase_nya16
-annan vinkel + bildformat                              → broad_advplus_purchase_bilder
+Champions   09-17 UGC (120251591832340023) — bevisade vinnare, tar aldrig emot en ny annons
+Testadset   MATSTRUMP_T<nnn>_<vinkel>_<video|bild> — ETT koncept = tre annonser
+            (samma kropp, tre hookar _h1 _h2 _h3), var och en med 2 rubriker + 2 primärtexter
+Taket       högst 5 levererande adsets inkl. Champions, och aldrig fler än budgeten
+            bär med 3 × break-even-CPA (≈ 925 kr) per adset och dag — det sjätte vägras
+Domen       per ADSET (dom.mjs), aldrig per annons: test 7 dagar (max 14), stäng om det
+            svultit eller missar KPI, flytta bästa annonsen till Champions vid ≥ 20 %
+            av spenden vid KPI. Allt blir FÖRSLAG — Axel klickar
 ```
 
-Därför är namnet inte kosmetika: ett namn utanför mönstret går inte att routa
-och laddas aldrig upp på gissning.
+Bild och video blandas aldrig i ett adset. Inga dynamic creative-adsets (ordet DCT
+finns inte i kursen) — de två rubrikerna och texterna är Ads Managers "flera
+textalternativ" på en vanlig annons (`asset_feed_spec`, `DEGREES_OF_FREEDOM`).
+
+**De gamla hinkarna** (`nya16`, `bilder`, `jul_video`, `jul_bild` — före 2026-10-02
+valde annonsnamnet en av dem) tar inte längre emot något. De och de andra gamla
+adseten (`nya8`, `nya20`, `alla17`, `batch03_bilder`) döms av kungen som vilket adset
+som helst, på de senaste sju dagarna, och räknas mot taket så länge de levererar.
+Ett gammalt adset som FUNGERAR (över break-even) föreslås aldrig stängt — kursen:
+"DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE WORKING" — och ett som tappat en vecka
+döms också på sitt 28-dagarssnitt. Läget 2026-10-02 (torrkörning): åtta adsets
+levererar mot taket fem; kungen föreslår att fyra gamla stängs (`nya16` och `nya8`
+under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
+`batch03_bilder` fungerar och står kvar; `alla17` svälter men hade bra snitt och står
+så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
+testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
 ## Trustpilot på sajten (2026-09-29)
 
@@ -154,12 +172,16 @@ tvingad variant b (SUSHI-2FOR499), båda klicken öppnade lådan utan navigation
 node matstrumpor/kor.mjs --kolla                 # konto, kampanj, adsets, nycklar, break-even
 node matstrumpor/kor.mjs --ekonomi               # break-even, båda momslinjerna
 node matstrumpor/kor.mjs --aov [--dagar 30]      # mät AOV ur Shopify på riktigt
-node matstrumpor/kor.mjs --ko [--json]           # Notion-kön → uppladdningsplan
-node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
+node matstrumpor/kor.mjs --struktur             # 3:2:2-läget ur Meta: Champions, levererande adsets, taket, lediga platser
+node matstrumpor/kor.mjs --ko [--json] [--grupp 063,066,067] [--hookrad <sid-id>]   # Notion-kön → koncept → testadsets (output/ko-<datum>.json)
+node matstrumpor/kor.mjs --creative <namn> --video <id> --thumb <url>   # creative-JSON till ads_create_ad (2 + 2 texter)
+node matstrumpor/kor.mjs --adset-skapad <id> <namn> --koncept <nnn>     # logga ett nytt testadset
+node matstrumpor/kor.mjs --kontroll <adset-id>   # läs tillbaka testadsetet ur Meta (exit 1 vid fel)
+node matstrumpor/kor.mjs --namn gift ugc 1 --hookar 3   # nästa koncept: _h1 _h2 _h3 på samma löpnummer
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
-node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
-node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node --test matstrumpor/test/*.test.mjs          # 56 tester
+node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter + domen per adset ur en avläsning
+node matstrumpor/kor.mjs --status                # lärdomar, briefer, koncepttak, mix
+node --test matstrumpor/test/*.test.mjs          # 233 tester (2026-10-02)
 ```
 
 Inga npm-beroenden. Node ≥ 20.
@@ -192,10 +214,12 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 | `ekonomi.mjs` | Break-even båda momslinjerna, dom, vinstbidrag, ranking, benchmark-skyddet |
 | `etikett.mjs` | Etiketten dag 7 — samma trösklar som Skalnings kungens `agent/etikett.mjs` |
 | `lardom.mjs` | Lärdomen, brieftaket, mixen, iterationsräkningen, konceptstatus |
-| `namn.mjs` | Namnmönstret, nästa lediga nummer, adset-routingen |
-| `kon.mjs` | Notion-kön → uppladdningsplan med stoppskäl |
+| `namn.mjs` | Namnmönstret, nästa lediga nummer, hookvarianter och iterationskedjan |
+| `struktur.mjs` | 3:2:2: strukturläget och taket, koncepten, adsetnamnet, COPY CARD 2 + 2, Meta-specarna, tillbakaläsningen |
+| `dom.mjs` | Domen per ADSET (7/14 dagar, stäng, flytta till Champions) och förslagen till Axel |
+| `kon.mjs` | Notion-kön → koncept → testadsets, med stoppskäl |
 | `kor.mjs` | CLI:n |
-| `logg.jsonl` | Minnet: `UPPLADDAD`, `ETIKETT`, `LARDOM`, `BRIEF`, `BUDGET`, `ROND_KLAR` |
+| `logg.jsonl` | Minnet: `UPPLADDAD` (med `adset_id` och `koncept` sedan 3:2:2), `ADSET_SKAPAD`, `ADSET_DOM`, `FORSLAG`, `ETIKETT`, `LARDOM`, `BRIEF`, `ROND_KLAR` |
 | `kanda-namn.json` | Ögonblicksbild av upptagna annonsnamn (reserven utan nät). `--namn` läser dessutom loggens UPPLADDAD-rader, kontot ur senaste `output/avlasning-*.json` och hubben live via `NOTION_TOKEN`, och skriver unionen tillbaka hit. ⚠️ Lärdom 2026-09-24/25: filen ensam gav 048 tre gånger i rad (rond 2:s Draft-briefer fanns bara i hubben) ⇒ nio annonser live med rond 2:s nummer, brieferna omdöpta 054–058 |
 
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,

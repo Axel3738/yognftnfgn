@@ -1,0 +1,203 @@
+{
+ "fil": "Takovertrekk_NO_OB_11_H1.mp4",
+ "cues": 4,
+ "trasiga": 4,
+ "resultat": [
+  {
+   "nr": 1,
+   "start": 0,
+   "text": "Sølvbelagt to hundre og ti D Oxford-stoff slipper vannet rett av.",
+   "hord": "Sølvbelagt 210D Oxford stoff slipper vannet rett av. Hell",
+   "ord": 12,
+   "avvikelser": [
+    {
+     "vantat": "to",
+     "hord": "210d"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "oxford"
+    },
+    {
+     "vantat": "og",
+     "hord": "stoff"
+    },
+    {
+     "vantat": "ti",
+     "hord": "slipper"
+    },
+    {
+     "vantat": "d",
+     "hord": "vannet"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "rett"
+    },
+    {
+     "vantat": "stoff",
+     "hord": "av"
+    },
+    {
+     "vantat": "slipper",
+     "hord": "hell"
+    },
+    {
+     "vantat": "vannet",
+     "hord": "—"
+    },
+    {
+     "vantat": "rett",
+     "hord": "—"
+    },
+    {
+     "vantat": "av",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 2,
+   "start": 4.25,
+   "text": "Hell vann på to hundre og ti D Oxford-stoffet, det bare renner.",
+   "hord": "rett av. Hell vann på 210D Oxford stoffet. Det bare renner. 210D",
+   "ord": 13,
+   "avvikelser": [
+    {
+     "vantat": "hell",
+     "hord": "rett"
+    },
+    {
+     "vantat": "vann",
+     "hord": "av"
+    },
+    {
+     "vantat": "på",
+     "hord": "hell"
+    },
+    {
+     "vantat": "to",
+     "hord": "vann"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "på"
+    },
+    {
+     "vantat": "og",
+     "hord": "210d"
+    },
+    {
+     "vantat": "ti",
+     "hord": "oxford"
+    },
+    {
+     "vantat": "d",
+     "hord": "stoffet"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "det"
+    },
+    {
+     "vantat": "stoffet",
+     "hord": "bare"
+    },
+    {
+     "vantat": "det",
+     "hord": "renner"
+    },
+    {
+     "vantat": "bare",
+     "hord": "210d"
+    },
+    {
+     "vantat": "renner",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 3,
+   "start": 8.07,
+   "text": "To hundre og ti D Oxford-stoff, ikke presenning.",
+   "hord": "renner. 210D Oxford stoff. Ikke presenning. Solen",
+   "ord": 9,
+   "avvikelser": [
+    {
+     "vantat": "to",
+     "hord": "renner"
+    },
+    {
+     "vantat": "hundre",
+     "hord": "210d"
+    },
+    {
+     "vantat": "og",
+     "hord": "oxford"
+    },
+    {
+     "vantat": "ti",
+     "hord": "stoff"
+    },
+    {
+     "vantat": "d",
+     "hord": "ikke"
+    },
+    {
+     "vantat": "oxford",
+     "hord": "presenning"
+    },
+    {
+     "vantat": "stoff",
+     "hord": "solen"
+    },
+    {
+     "vantat": "ikke",
+     "hord": "—"
+    },
+    {
+     "vantat": "presenning",
+     "hord": "—"
+    }
+   ]
+  },
+  {
+   "nr": 4,
+   "start": 11.356,
+   "text": "Solen tar overflaten i stedet for taket.",
+   "hord": "presenning. Solen tar overflaten istedenfor taket.",
+   "ord": 7,
+   "avvikelser": [
+    {
+     "vantat": "solen",
+     "hord": "presenning"
+    },
+    {
+     "vantat": "tar",
+     "hord": "solen"
+    },
+    {
+     "vantat": "overflaten",
+     "hord": "tar"
+    },
+    {
+     "vantat": "i",
+     "hord": "overflaten"
+    },
+    {
+     "vantat": "stedet",
+     "hord": "istedenfor"
+    },
+    {
+     "vantat": "for",
+     "hord": "taket"
+    },
+    {
+     "vantat": "taket",
+     "hord": "—"
+    }
+   ]
+  }
+ ]
+}

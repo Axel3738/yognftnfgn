@@ -1,0 +1,2514 @@
+{
+ "Takoverdrag_FD_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      268,
+      159,
+      812,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 167,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      17,
+      277,
+      1063,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      420,
+      390,
+      658,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 398,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      134,
+      531,
+      944,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 539,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      23,
+      1084,
+      1060,
+      1171
+     ],
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 1092,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Takoverdrag_FD_4_2": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      42,
+      148,
+      1039,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      16
+     ],
+     "ink_topp": 156,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      471,
+      277,
+      607,
+      349
+     ],
+     "fet": true,
+     "storlek": 79,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      131,
+      410,
+      947,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 418,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      23,
+      1084,
+      1060,
+      1171
+     ],
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 1092,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Takoverdrag_FD_4_3": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      166,
+      156,
+      917,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      17,
+      277,
+      1059,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      349,
+      398,
+      725,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      191,
+      527,
+      887,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      21,
+      19,
+      17
+     ],
+     "ink_topp": 535,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      23,
+      1084,
+      1060,
+      1171
+     ],
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 1092,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Takoverdrag_FD_4_4": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      110,
+      148,
+      974,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 156,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      407,
+      277,
+      670,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      229,
+      398,
+      847,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      43,
+      527,
+      1035,
+      574
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 535,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      23,
+      1084,
+      1060,
+      1171
+     ],
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 1092,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Sotarset_FD_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      149,
+      156,
+      929,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      214,
+      277,
+      867,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      113,
+      410,
+      965,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      17
+     ],
+     "ink_topp": 418,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      62,
+      1059,
+      1015,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Sotarset_FD_4_2": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      54,
+      156,
+      1022,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      384,
+      277,
+      692,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      40,
+      406,
+      1037,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      18
+     ],
+     "ink_topp": 414,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      62,
+      1059,
+      1015,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Sotarset_FD_4_3": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      166,
+      156,
+      917,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      62,
+      277,
+      1016,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      351,
+      398,
+      727,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      101,
+      527,
+      976,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      18
+     ],
+     "ink_topp": 535,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      62,
+      1059,
+      1015,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Sotarset_FD_4_4": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      138,
+      155,
+      938,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 163,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      293,
+      279,
+      782,
+      361
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 287,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      85,
+      406,
+      992,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 414,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      62,
+      1059,
+      1015,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Golfkalender_FD_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      92,
+      156,
+      986,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      98,
+      277,
+      982,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      110,
+      410,
+      967,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 418,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      63,
+      1059,
+      1016,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Golfkalender_FD_4_2": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      54,
+      156,
+      1022,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      385,
+      277,
+      693,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      196,
+      406,
+      881,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 414,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      63,
+      1059,
+      1016,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Golfkalender_FD_4_3": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      166,
+      156,
+      917,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      22,
+      277,
+      1054,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      361,
+      398,
+      713,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      148,
+      527,
+      930,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 535,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      63,
+      1059,
+      1016,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Golfkalender_FD_4_4": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      255,
+      156,
+      823,
+      240
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      82,
+      277,
+      997,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      0,
+      398,
+      1080,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      38,
+      531,
+      1041,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 539,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      63,
+      1059,
+      1016,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Taljset_FD_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      71,
+      156,
+      1008,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      110,
+      269,
+      969,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 277,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      38,
+      410,
+      1040,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      18,
+      17
+     ],
+     "ink_topp": 418,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      431,
+      462,
+      647,
+      500
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 470,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      0,
+      1059,
+      1080,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Taljset_FD_4_2": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      49,
+      156,
+      1030,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      338,
+      277,
+      739,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      137,
+      410,
+      942,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      21,
+      19,
+      17
+     ],
+     "ink_topp": 418,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      0,
+      1059,
+      1080,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Taljset_FD_4_3": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      166,
+      156,
+      917,
+      229
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      65,
+      277,
+      1012,
+      365
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      363,
+      398,
+      715,
+      486
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 406,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      170,
+      531,
+      907,
+      576
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      18,
+      17
+     ],
+     "ink_topp": 539,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      0,
+      1059,
+      1080,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "6": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      19,
+      17,
+      15
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ },
+ "Taljset_FD_4_4": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      21,
+      19,
+      288,
+      108
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      255,
+      255,
+      255
+     ],
+     "radie": 0,
+     "alfa": 255
+    },
+    {
+     "post": 0,
+     "box": [
+      29,
+      27,
+      280,
+      100
+     ],
+     "fyll": "mork",
+     "fyllfarg": [
+      192,
+      36,
+      30
+     ],
+     "radie": 36,
+     "alfa": 255,
+     "fet": true,
+     "storlek": 30,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "ink_topp": 46
+    }
+   ],
+   "1": [
+    {
+     "post": 0,
+     "box": [
+      89,
+      156,
+      992,
+      244
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      17,
+      16
+     ],
+     "ink_topp": 164,
+     "utvidga": 4
+    }
+   ],
+   "2": [
+    {
+     "post": 0,
+     "box": [
+      318,
+      277,
+      763,
+      350
+     ],
+     "fet": true,
+     "storlek": 78,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 285,
+     "utvidga": 4
+    }
+   ],
+   "3": [
+    {
+     "post": 0,
+     "box": [
+      103,
+      406,
+      975,
+      455
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      20,
+      19,
+      17
+     ],
+     "ink_topp": 414,
+     "utvidga": 4
+    }
+   ],
+   "4": [
+    {
+     "post": 0,
+     "box": [
+      0,
+      1059,
+      1080,
+      1159
+     ],
+     "fet": true,
+     "storlek": 96,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "ink_topp": 1067,
+     "utvidga": 4
+    }
+   ],
+   "5": [
+    {
+     "post": 0,
+     "box": [
+      321,
+      1216,
+      759,
+      1254
+     ],
+     "fet": false,
+     "storlek": 32,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "ink_topp": 1224,
+     "utvidga": 4
+    }
+   ]
+  }
+ }
+}

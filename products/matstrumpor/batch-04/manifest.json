@@ -1,0 +1,46 @@
+[
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_065_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_065_v1/brief.md",
+    "koncept": "duka-fram",
+    "parent": "ingen",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 1,
+    "brieftyp": "N",
+    "kalla": "mekanismer.md M2 Duka fram den — Axels ja 2026-10-02, ny inspelning med Nathalie"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_066_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_curiosity_ugc_066_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 10,
+    "brieftyp": "I",
+    "kalla": "Axels order 2026-10-02: gåta som öppning i stället för Wolt-raden, löses vid avslöjandet"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_067_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_curiosity_ugc_067_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 11,
+    "brieftyp": "I",
+    "kalla": "Axels order 2026-10-02 (kör B också): gåta B som öppning på Nathalie-kroppen, samma klipp som 066"
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_068_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_curiosity_ugc_068_v1/brief.md",
+    "koncept": "bast-fore",
+    "parent": "ingen",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 1,
+    "brieftyp": "N",
+    "kalla": "Axels order 2026-10-02: en egen video med gåta B till en annan kreatör, ny inspelning"
+  }
+]

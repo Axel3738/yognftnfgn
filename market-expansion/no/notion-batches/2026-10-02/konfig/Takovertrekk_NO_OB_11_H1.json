@@ -1,0 +1,77 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-10-02/no-video/Takovertrekk_NO_OB_11_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-10-02/no-video-txt/Takovertrekk_NO_OB_11_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-10-02/no-video/Takovertrekk_NO_OB_11_H1.mp4.srt",
+ "captions": {
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 700,
+  "h_min": 36,
+  "h_max": 95,
+  "max_chars": 30,
+  "font_px": 27,
+  "pad_x": 6,
+  "pad_y": 6,
+  "zon": [
+   790,
+   900
+  ],
+  "standard_cy": 845,
+  "av": [
+   [
+    10.8,
+    14.600000000000001
+   ]
+  ],
+  "fyll": [
+   {
+    "rect": [
+     160,
+     815,
+     600,
+     906
+    ],
+    "t": [
+     6.03,
+     6.8
+    ]
+   }
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    74,
+    312,
+    637,
+    373
+   ],
+   "t": [
+    10.8,
+    14.600000000000001
+   ]
+  },
+  {
+   "rect": [
+    136,
+    372,
+    582,
+    433
+   ],
+   "t": [
+    10.8,
+    14.600000000000001
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-10-02/lager/Takovertrekk_NO_OB_11_H1.png",
+   "t": [
+    10.8,
+    14.600000000000001
+   ]
+  }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-10-02/qa"
+}

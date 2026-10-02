@@ -372,3 +372,56 @@ blir grön.
 | LAUNCHED-mappen 2026-09-30 (rutin 04:15): kört **Dörr- och Fönsterlarm 110 dB** (Dør- og Vindusalarm NO, 389/509 kr, BE-ROAS 1,63, 12 videor + 4 bilder) och **Läktarponchon** (Tribuneponcho NO, 679/889 kr, BE-ROAS 1,63, 12 videor + 4 bilder), alla ACTIVE, 1000 kr/dag CBO. Lövsilarna hoppad (saknar Norge-kostnad i batch-sheeten, problem skickat). Kö: Motorlås utombordare, Radiostyrd driftbil, Solcellsladdare, Spabadskapell (Boblebadtrekk finns, orört), Sorkkorgarna (saknas i norska butiken). ElevenLabs (ej HeyGen), ca 11 000 TTS-tecken. Röstkoll ✅ på alla 24. Öppet: "Bare nå" i CS-copyn obelagd. |
 | LAUNCHED-mappen 2026-10-01 (rutin 04:15): **Kamadohuven** (Kamadotrekk NO, 629/819 kr, BE-ROAS 1,64) och **Motorlås utombordare** (Motorlås NO, 1079/1409 kr, BE-ROAS 1,64), 12 videor + 4 bilder var, ACTIVE, 1000 kr/dag CBO | NO / norsk bokmål | ElevenLabs (~5 500 tecken), HeyGen orört (8 451) | sonnet-copy, obelagda påståenden strukna, svenska priser bytta | no-captions.py, rostkoll grön på alla 24 | Drive: NO 11 Kamadohuven, NO Motorlås utombordare | Hoppade pga saknad Norge-kostnad: Radiostyrd driftbil, Regntunnehuven, Solcellsladdare, Sorkkorgarna. Motorlås-launchen tog flera försök pga Meta fel 17. |
 | Notion-kön 2026-10-01 (rutin 15:00): Takovertrekk 12 videor (CS_2_H2, CS_2_H3, FD_1_H1/H2/H3, OB_6/7/9/11/13/14_H1) | NO / norsk bokmål | 11 dubbade i precision, 8 451 → 7 964 krediter (CS_2_H2 gick aldrig genom HeyGen: proofread svarade "No speaker is detected" — nästan bara musik, järnregeln säger att den inte ska översättas) | sonnet-SRT, priserna 869 → 1 189 kr och 1 139 → 1 549 kr i ord, längdkoll gjord (norskan blev lika lång eller kortare, ingen överrunning) | `no-precis.py` per video + `lager.py` (norska slutkort i 9 av 12) + `cs2h2.py` (prisruta med röd kontur och överstrykning, 6 caption-cues) | **INTE levererade — medvetet** | **Röstkoll 11/11 grön, längddrift −0,1 s, och videorna gick ändå inte live.** Tre fel ligger i hur KÄLLVIDEORNA ritar text, inte i dubbningen: (1) **varje video öppnar med en caption UTAN vitt piller** — orden tonar in ord för ord direkt på bilden ("Ett löst hörn" i OB_9, "Sjynkets hörn" i OB_13, "210 D Oxfordväv" i OB_11), `no-precis.py` letar efter ett ljust band med mörk text i och hittar ingenting, så 1-2 s svenska står kvar i hookens viktigaste sekunder; (2) `OB_9_H1` har "1129 kronor" kvar i ett LJUSGRÅTT piller mot vit botten — fel pris i Norge, och pillertestet kräver vitt (>212); (3) `CS_2_H2` har TVÅ pillerstorlekar och bara den lilla byttes, så den stora svenska stod kvar i en tredjedel av videon. **Rättningen är ett andra textpass som hittar pillerlösa captions — en ändring i verktyget, inte i batchen.** Två mätlärdomar: mitt eget `svenskkoll.py` dömde `OB_7_H1` till tolv kvarstående rutor i samma körning som kontaktarket visade en helt norsk video (det räknar slutkortets ljusa text som ett piller och ligger ur fas med utglesningen) — nedgraderat till varning, facit är kontaktarket och ögat; och två slutkortstider låg för sent (`OB_7` satt till 10,8 s medan kortet kommer 9,25 — två sekunder svenskt pris i den färdiga videon), fångat i kontaktarket och sedan mätt maskinellt i det kända y-bandet. `OB_14`:s slutkort SÅG ut att flytta sig (y 760/478/498): fel — mätningen läste hela rutan, och efter 13 s kommer en buske med hårda dagrar in; en mätning i y 740..1000 gav identiska rader vid 12,0 och 14,45 s. `CS_2_H3`:s pillerzon ligger lägre än de andras (y 997..1059) och fick en egen zon. En `no-precis` som skriver samma utfil två gånger parallellt ger en 48-byte-fil — kör en i taget. |
+
+### 2026-10-02 — Buskjakke NO (/translate-no)
+12 videor (ElevenLabs, band 1215:1345) + 3 bilder i kampanj Buskjakke NO | BE-ROAS 2,28 | 2026-10-02 (120252521076050233), ACTIVE. Lärdom: ordkoll.mjs ger falsk avvikelse på varje cue (fönstret läcker in i grannrader); ordsvep.py i batchmappen kollar exakt träff. Felläsningar är slumpmässiga, 6 cues gjordes om. Meta fel 17: kör om no-video-launch.mjs (idempotent).
+
+### 2026-10-02 — Takovertrekk NO, tolv videor (/oversatt NO, Notion-kön)
+
+De tolv videorna som 2026-10-01 var "tekniskt klara men medvetet inte uppe" kördes
+klart. Tio gick live, två hålls kvar. Allt som gick fel var **mätningen av var och
+när den svenska texten syns** — aldrig dubbningen, som var grön hela vägen.
+
+**Tre automatiska mått på slutkortets starttid prövades, och alla tre hade fel på
+minst en video:**
+
+| Mått | Vad det missade |
+|---|---|
+| Jaccard mot sista bildrutan, 5 fps (2026-10-01) | En halv sekund för sent på fem av elva. Unionen växer medan texten tänds, så kvoten håller sig under tröskeln för länge. |
+| Täckning (recall) mot sista bildrutan, 10 fps | Ser inte en TONING alls: halvgenomskinlig vit text på ett ljust foto har varken pixlar över 212 eller mörka grannar. `FD_1_H2` nådde 25 % först 12,90 s medan den svenska texten gick att läsa i kontaktarket vid 12,0. |
+| Närmaste scenbyte före 25 %-punkten | `OB_11` klipper 10,2 och texten tonar in 11,0 — suddrutan hade legat över en ren himmel i 1,4 sekunder. |
+
+Facit blev **ögat**: varje video avlästes 0,2 s i taget i källan, och tiden sattes
+strax före den första bildruta där den svenska texten går att ana
+(`lager.py` → `TIDER`). Familj E (de tre OB_17/18/19) klipper däremot HÅRT från
+captionpillret till prisraden, utan toning — där är en marginal farlig, för den
+stänger av pillersuddningen för tidigt och släpper fram den svenska captionen i
+stället.
+
+⚠️ **Pillret försvinner när det ligger mot husbilens vita sida.** Den vita ytan och
+pillret blir en enda sammanhängande grupp som är högre än `h_max`, och
+`hitta_piller` kastar den. Det gav kvarstående svensk text i tre videor
+(`OB_11` "210 D Oxfordväv" 20 bildrutor, `OB_18` "luckor är fria." 27, `OB_19` 17).
+Rättningen är `captions.fyll` — en manuell pillerplatta med uppmätt ruta och tid,
+som både vitmålar och tvingar fram den norska captionen.
+
+⚠️ **Två textlager kan ha två olika tider.** `OB_22` (den enda som gick
+HeyGen-vägen) har prisraderna över ett foto från 10,25 s och det vita slutkortet
+med loggan först 14,5 s. Första bygget la loggöverstrykningen i samma fönster och
+ritade en vit rektangel rakt över fotot i fyra sekunder. Och **ordningen mellan
+lagren spelar roll**: stjärnrutan överlappar prisrad 1, så med kortet sist målades
+den norska prisraden över igen.
+
+⚠️ **`ordkoll.mjs` ger falsk avvikelse på varje cue i ElevenLabs-kedjan** — samma
+fynd som `/translate-no` gjorde samma dag. Fönstret läcker in i grannarna, så
+orden ligger ett steg fel genom hela listan. Läs vad som HÖRS, inte avvikelselistan.
+Den fällde ändå ett riktigt fel: "Dør, vindu og luker er frie" hördes som
+"Da vindu og luker er fri" i två oberoende inläsningar. En omgenerering av samma
+cue hjälpte inte; repliken skrevs om av en sonnet-subagent till "Døren, vinduer og
+luker er frie." och då hördes den exakt rätt. **Ett kort enstavigt ord först i en
+replik efter en paus är det som inte går fram.**
+
+⚠️ **Röstkollens längddrift gäller inte ElevenLabs-kedjan.** Fyra videor fick ❌ på
+18–28 % drift. `elevenlabs-omdubb` tempo-anpassar varje klipp med flit (Axels
+beslut 2026-09-16), inom sina egna gränser 0,70–1,35, och alla segment låg inom
+dem. Läs `<ut>.tidslinje.json` → `segment[].f` innan en sådan dom tas på allvar.

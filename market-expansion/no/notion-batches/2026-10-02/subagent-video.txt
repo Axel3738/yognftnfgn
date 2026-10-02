@@ -1,0 +1,283 @@
+
+===== Takovertrekk_NO_FD_1_H1 =====
+1
+00:00:00,060 --> 00:00:00,960
+En procent till fars dag.
+
+2
+00:00:01,020 --> 00:00:01,940
+Taket han aldrig kollar.
+
+3
+00:00:02,340 --> 00:00:06,180
+Vattnet rinner av tvåhundratio D Oxford-väven, blir aldrig stående.
+
+4
+00:00:06,340 --> 00:00:06,900
+Spänn remmen.
+
+5
+00:00:06,940 --> 00:00:07,960
+Kroka den under kanten.
+
+6
+00:00:08,300 --> 00:00:10,220
+Den rör bara taket, aldrig lacken.
+
+7
+00:00:10,800 --> 00:00:11,520
+Fars dag-rea.
+
+8
+00:00:12,040 --> 00:00:13,480
+Beställ senast nittonde oktober.
+
+===== Takovertrekk_NO_FD_1_H2 =====
+1
+00:00:00,040 --> 00:00:01,920
+Presenten till fars dag ligger redan på taket.
+
+2
+00:00:01,960 --> 00:00:05,860
+Vattnet rinner av tvåhundratio Deox Ford Waven blir aldrig stående.
+
+3
+00:00:05,960 --> 00:00:06,520
+Spänn remmen.
+
+4
+00:00:06,560 --> 00:00:07,580
+Kroka den under kanten.
+
+5
+00:00:07,940 --> 00:00:09,840
+Den rör bara taket, aldrig lacken.
+
+6
+00:00:10,420 --> 00:00:11,160
+Fars dag rea.
+
+7
+00:00:11,660 --> 00:00:13,100
+Beställ senast 19 oktober.
+
+===== Takovertrekk_NO_FD_1_H3 =====
+1
+00:00:00,140 --> 00:00:02,580
+Till fars dag, husvagnstaket hann faktiskt ta täcke av.
+
+2
+00:00:02,620 --> 00:00:06,480
+Vattnet rinner av tvåhundratio D Oxfordväven blir aldrig stående.
+
+3
+00:00:06,620 --> 00:00:07,160
+Spänn remmen.
+
+4
+00:00:07,220 --> 00:00:08,240
+Koka den under kanten.
+
+5
+00:00:08,600 --> 00:00:10,520
+Den rör bara taket, aldrig lacken.
+
+6
+00:00:11,080 --> 00:00:11,820
+Fars dag rea.
+
+7
+00:00:12,320 --> 00:00:13,760
+Beställ senast nittonde oktober.
+
+===== Takovertrekk_NO_FD_3_H1 =====
+1
+00:00:00,140 --> 00:00:01,220
+Mät husvagnen.
+
+2
+00:00:01,440 --> 00:00:05,560
+Nio längder, 5,5 till 13,5 meter.
+
+3
+00:00:05,820 --> 00:00:07,660
+Remmar på alla fyra sidor.
+
+4
+00:00:07,780 --> 00:00:09,020
+Ställ in i spännet.
+
+5
+00:00:09,280 --> 00:00:10,280
+Vattnet rinner av.
+
+6
+00:00:10,460 --> 00:00:12,500
+Alla nio är tre meter breda.
+
+7
+00:00:12,720 --> 00:00:16,260
+Fars dag-rea: från 1129 kronor.
+
+8
+00:00:16,480 --> 00:00:19,620
+Ordinarie: 1469 kronor.
+
+===== Takovertrekk_NO_FD_3_H2 =====
+1
+00:00:00,120 --> 00:00:03,540
+Taköverdrag från 1129 kronor.
+
+2
+00:00:03,680 --> 00:00:06,780
+Ordinarie 1469 kronor.
+
+3
+00:00:07,000 --> 00:00:08,840
+Remmar på alla fyra sidor.
+
+4
+00:00:08,960 --> 00:00:10,180
+Ställ in i spännet.
+
+5
+00:00:10,440 --> 00:00:11,460
+Vattnet rinner av.
+
+6
+00:00:11,620 --> 00:00:13,640
+Alla nio är tre meter breda.
+
+7
+00:00:13,900 --> 00:00:17,440
+Fars Dag-rea från 1129 kronor.
+
+8
+00:00:17,660 --> 00:00:20,820
+Ordinarie 1469 kronor.
+
+===== Takovertrekk_NO_OB_11_H1 =====
+1
+00:00:00,080 --> 00:00:03,380
+Silverbelagd tvåhundratio Deox förväv släpper vattnet direkt av taket.
+
+2
+00:00:03,420 --> 00:00:06,400
+Häll vatten på tvåhundratio Deoxväven, den bara rinner vidare.
+
+3
+00:00:06,420 --> 00:00:08,620
+Tvåhundratio Deoxförväv, inte tunn presenning.
+
+4
+00:00:08,680 --> 00:00:10,640
+Solen tar på ytan istället för på taket.
+
+5
+00:00:10,640 --> 00:00:15,560
+[ljud av vatten]
+
+===== Takovertrekk_NO_OB_13_H1 =====
+1
+00:00:00,140 --> 00:00:02,200
+Skynkets hörn lyfter i vinden trots snöret.
+
+2
+00:00:02,220 --> 00:00:06,040
+På vårt hakar remmen fast under karossens nederkant på alla fyra sidor.
+
+3
+00:00:06,100 --> 00:00:09,440
+Två förstärkta remmar tvärs över taket håller väven nere i vinden.
+
+4
+00:00:09,500 --> 00:00:14,760
+Ettusen etthundratjugonio kronor, spara trehundrafyrtio kronor, tjugotre procent rabatt
+
+===== Takovertrekk_NO_OB_14_H1 =====
+1
+00:00:00,140 --> 00:00:02,140
+På en tunn presenning står vattnet kvar i en pöl.
+
+2
+00:00:02,200 --> 00:00:06,360
+På tvåhundratio D Oxford-väven rinner vattnet av istället för att bli stående.
+
+3
+00:00:06,400 --> 00:00:09,420
+Tätmassan kring takluckorna slipper stå i vatten hela vintern.
+
+4
+00:00:09,480 --> 00:00:12,960
+Ettusen etthundratjugonio kronor, spara trehundrafyrtio kronor.
+
+5
+00:00:12,980 --> 00:00:14,560
+Tjugotre procent rabatt.
+
+===== Takovertrekk_NO_OB_17_H1 =====
+1
+00:00:00,020 --> 00:00:02,580
+Ett helöverdrag ligger i en stor hög på garagegolvet.
+
+2
+00:00:02,640 --> 00:00:05,360
+Vårt viks ihop till en famnstor packe efter säsongen.
+
+3
+00:00:05,560 --> 00:00:08,560
+Bara taket, inte hela vagnen och en person räcker.
+
+4
+00:00:08,800 --> 00:00:13,300
+Ettusen etthundratjugonionde kronor, spara trehundrafyrtio kronor, tjugotre procent
+
+5
+00:00:13,340 --> 00:00:13,740
+rabatt.
+
+===== Takovertrekk_NO_OB_18_H1 =====
+1
+00:00:00,040 --> 00:00:02,020
+Ett helöverdrag skyddar mer av vagnen.
+
+2
+00:00:02,200 --> 00:00:06,560
+Det här täcker taket och kanten hänger trettio till fyrtio centimeter ner över sidorna.
+
+3
+00:00:06,840 --> 00:00:09,700
+Skarven mellan tak och vägg ligger under skydd den också.
+
+4
+00:00:09,900 --> 00:00:11,540
+Dörr, fönster och luckor är fria.
+
+5
+00:00:11,760 --> 00:00:16,700
+Ettusen etthundratjugonio kronor, spara trehundrafyrtio kronor, tjugotre procent rabatt.
+
+===== Takovertrekk_NO_OB_19_H1 =====
+1
+00:00:00,080 --> 00:00:03,480
+Ett måttband visar trettio till fyrtio centimeter vid kanten.
+
+2
+00:00:03,700 --> 00:00:06,400
+Skarven mellan tak och vägg ligger under kanten.
+
+3
+00:00:06,580 --> 00:00:10,080
+Ett varv runt vagnen, dörr, fönster och luckor är fria.
+
+4
+00:00:10,280 --> 00:00:12,060
+Ettusen etthundratjugonio kronor.
+
+5
+00:00:12,340 --> 00:00:14,060
+Spara trehundrafyrtio kronor.
+
+6
+00:00:14,340 --> 00:00:15,660
+Tjugotre procent rabatt

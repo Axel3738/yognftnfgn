@@ -1,0 +1,154 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "ms_trust": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% capture ms_trust_items %}{% case request.locale.iso_code %}{% when 'nb' %}truck:Fri frakt til Norge|refresh:30 dagers åpent kjøp|lock:Trygg betaling{% when 'da' %}truck:Fri fragt til Danmark|refresh:30 dages fortrydelsesret|lock:Sikker betaling{% when 'fi' %}truck:Ilmainen toimitus Suomeen|refresh:30 päivän palautusoikeus|lock:Turvallinen maksu{% when 'de' %}truck:Kostenloser Versand|refresh:30 Tage Rückgaberecht|lock:Sichere Zahlung{% when 'fr' %}truck:Livraison gratuite|refresh:30 jours pour changer d’avis|lock:Paiement sécurisé{% when 'nl' %}truck:Gratis verzending|refresh:30 dagen retourrecht|lock:Veilig betalen{% when 'es' %}truck:Envío gratis|refresh:30 días de devolución|lock:Pago seguro{% when 'it' %}truck:Spedizione gratuita|refresh:30 giorni per il reso|lock:Pagamento sicuro{% when 'pl' %}truck:Darmowa dostawa|refresh:30 dni na zwrot|lock:Bezpieczna płatność{% when 'pt-PT' %}truck:Envio grátis|refresh:30 dias para devolução|lock:Pagamento seguro{% when 'en' %}truck:Free shipping|refresh:30-day returns|lock:Secure payment{% else %}truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning{% endcase %}{% endcapture %}{% render 'ms-trust-row', items: ms_trust_items %}"
+          }
+        },
+        "ms_delivery": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% capture ms_delivery_text %}{% case request.locale.iso_code %}{% when 'nb' %}Beregnet levering{% when 'da' %}Forventet levering{% when 'fi' %}Arvioitu toimitusaika{% when 'de' %}Voraussichtliche Lieferung{% when 'fr' %}Livraison estimée{% when 'nl' %}Geschatte levering{% when 'es' %}Entrega estimada{% when 'it' %}Consegna stimata{% when 'pl' %}Szacowana dostawa{% when 'pt-PT' %}Entrega estimada{% when 'en' %}Estimated delivery{% else %}Beräknad leverans{% endcase %}{% endcapture %}{% render 'ms-delivery-estimate', min_days: 5, max_days: 10, cutoff_hour: 0, text: ms_delivery_text %}"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Dela"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "judgeme_stjarnor": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "ms_sista_dag": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-sista-dag' %}"
+          }
+        },
+        "ms_stjarnor_no": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- render 'ms-omdomen-badge', product: product -%}"
+          }
+        },
+        "ms_trustpilot": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ms-trustpilot-rad', kompakt: true %}"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "judgeme_stjarnor",
+        "ms_stjarnor_no",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "ms_trust",
+        "ms_trustpilot",
+        "ms_delivery",
+        "ms_sista_dag",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "ms_sticky": {
+      "type": "ms-sticky-atc",
+      "settings": {
+        "label": "Köp nu",
+        "position": "bottom",
+        "show_image": true
+      }
+    },
+    "judgeme_widget": {
+      "type": "apps",
+      "blocks": {
+        "w": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "w"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "ms_omdomen_no": {
+      "type": "ms-omdomen-no",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "judgeme_widget",
+    "ms_omdomen_no",
+    "ms_sticky"
+  ]
+}

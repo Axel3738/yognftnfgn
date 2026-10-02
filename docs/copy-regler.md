@@ -148,3 +148,28 @@ bild.
 Tre-frågorstestet ersätter inte analysmetoden (`docs/os/ANALYSMETOD.md`) —
 den dömer annonser på data. Det här dokumentet dömer rader innan de får
 kosta pengar.
+
+## Talet läses högt innan det går ut (Axels dom 2026-10-02)
+
+Ett kreatörsmanus är ETT sammanhängande tal, inte en rad påståenden efter
+varandra. Axel läste det första manuset till "sushin utan bäst före-datum"
+högt — sju vinnarrader hopfogade — och dömde: "Det kanske är ett optimalt
+skript enligt research men inte genom att lyssna på." Regeln:
+
+- Skriv talet som ett stycke först, där varje mening leder till nästa
+  (bindeord som så, sen, och, men, ju är tillåtna och testas inte).
+- Dela upp det per bild EFTERÅT. Aldrig tvärtom: sätt aldrig ihop godkända
+  rader till ett manus.
+- Läs det högt innan det lämnar sessionen. Hackar en övergång, skriv om.
+- Tre-frågorstestet gäller fortfarande varje mening som bär ett påstående.
+
+## Statistik på produktsidan (Axels dom 2026-10-02)
+
+Produktsidans beskrivning fick 2026-10-02 raden *"I USA gav 32 procent ett presentkort för att de
+inte visste vad de annars skulle köpa, enligt Bankrate 2024."* Axel: "det här är inte bra copy …
+fan va keft det var." Regeln sedan dess, inskriven i `matstrumpor/produktsida.mjs` som spärr:
+**en statistikmening med källa eller procent hör aldrig hemma i en produktbeskrivning.** Den läser
+som en rapport, inte som en butik. Fynden ur `ny-information.md` lever i bilder, rubriker och mejl
+(som faktabladet redan sa), och på sidan bara som den slutsats de leder till, i butikens egen röst
+("Ett presentkort säger: jag vet inte."). Tre-frågorstestet räcker inte: en rad kan klara alla tre
+och ändå låta som en uppsats. Läs sidan högt innan den går live.

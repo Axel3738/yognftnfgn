@@ -14,8 +14,17 @@ ens när siffrorna är tydliga. Den läser, dömer och **föreslår**. Axel tryc
 på knappen. `matstrumpor/meta.mjs` har inga skrivfunktioner alls — det som
 inte finns kan inte köras av misstag.
 
-Det enda som skriver i Meta för Matstrumpor är `/matstrumpor`: nya annonser i
-rätt adset. Allt den här ronden gör i Meta är att läsa.
+Det enda som skriver i Meta för Matstrumpor är `/matstrumpor`: nya testadsets
+med tre annonser var. Allt den här ronden gör i Meta är att läsa.
+
+**3:2:2 (Axels beslut ROUTING C 2026-10-02, kursen läst samma dag — anteckningarna
+i `docs/os/evolve/ITERATIONS-PLAYBOOK.md` avsnitt 11):** ronden dömer och
+föreslår **per adset, aldrig per annons** ("With this method we are only turning
+off at the ad set level not ad level"). Etiketten per annons (`etikett.mjs`) är
+lärdomen, aldrig ett stängningsbeslut. Testet: minst 3 dagar, normalt 7, aldrig
+över 14. Vinnare = adsetet tar majoriteten av spenden vid KPI (break-even-ROAS)
+eller kampanjens ROAS förbättrades; flytt till Champions vid 20 % av spenden vid
+KPI. Förslagen — stäng adset, flytta en annons till Champions — är Axels klick.
 
 Samma hjärna som Bäverbutikens **"Skalnings kungen"** (`/rond-auto`,
 `agent/`-motorn), nedskalad till **en produkt, en kampanj, 6 briefer per
@@ -27,7 +36,8 @@ volymen.
 | Konto | **"nya kungen" `730973156224390`** — aldrig MagiBorsten |
 | Kampanj | `MATSTRUMP_SALES_20260826` `120251217860260023`, CBO |
 | Hub | `Matstrumpor creative hub` `3a7270ab-908c-80d2-9f35-e73e51e457ff` |
-| Kadens | **6 briefer per rond, var tredje dag** (Axels beslut 2026-09-21) |
+| Kadens | **6 briefer per rond, var tredje dag** (Axels beslut 2026-09-21) — sedan 3:2:2 är det **2 koncept à 3 hookar** |
+| Struktur | **3:2:2** (Axels beslut ROUTING C 2026-10-02): EN CBO, Champions-adsetet `09-17 UGC` + högst 4 testadsets som tar spend; **varje uppladdning är ett nytt adset** med det som är klart (Axels beslut 2026-10-02 kväll — briefarna är fortfarande koncept à tre hookar, men hookarna går upp när de blir klara), 2 rubriker + 2 primärtexter per annons. **Domen per ADSET, aldrig per annons** (`matstrumpor/dom.mjs`) |
 | Rutin | **07:00 svensk tid varje dag** — `kor.mjs --kordag` avgör om det är rond (var tredje dag från förra rondens `ROND_KLAR`). Byggd 2026-09-22 |
 | Budget | **Axel skalar själv.** Ronden föreslår, rör aldrig en budget |
 | Minne | `products/matstrumpor/` + `matstrumpor/logg.jsonl` |
@@ -94,8 +104,10 @@ behörighetsreglerna matchar på första ordet.
 2. **Avläsningen.** Ur Meta via token, aldrig ur huvudet:
    ```bash
    node matstrumpor/kor.mjs --hamta
+   node matstrumpor/kor.mjs --ko
    node matstrumpor/kor.mjs --dom-alla --json --logga
    node matstrumpor/kor.mjs --arkiv
+   node matstrumpor/growthguide.mjs --skarpt   # Growth Guide i Notion: arkivet som databas Axel och creative strat kan ändra i (Axels beslut 2026-10-02). Koden skriver bara mätkolumnerna; Anteckning, Beslut, Nästa steg, Ägare rörs aldrig. Id i matstrumpor/growthguide.json
    ```
    `--hamta` läser **Sverige och varje utlandskampanj** ur
    `matstrumpor/marknader/annonser/lage.json` (14 st 2026-10-01; före det
@@ -123,6 +135,33 @@ behörighetsreglerna matchar på första ordet.
    fält med `mcp__Adsmanager__ads_get_ad_entities` och skriv jobbfilen för
    hand i samma format (`{ datum, kampanj: { spend_sek, roas, budget_d0,
    budget_d7 }, annonser: [{ namn, spend_sek, kop, roas, d0 }] }`).
+   `--ko` läser uppladdningskön (Notion + strukturen ur Meta, båda läs-bara) och
+   skriver `output/ko-<datum>.json` — domen behöver veta **hur många koncept som
+   väntar på en testplats** (kursen: ett adset med bra ROAS men lite spend får stå
+   BARA om inget annat väntar). Felar `--ko` (Notion nere): kör vidare, domen
+   säger då "kön lästes inte" på de raderna.
+   **Adseten (3:2:2, bara Sverige):** `--hamta` läser kampanjens adsets och deras
+   dagserie (28 dagar), och `--dom-alla` dömer varje adset — `CHAMPIONS` (döms
+   aldrig), `FOR_UNG` (under dag 7, ELLER en aktiv annons i gruppen yngre än sju
+   dagar — Axels beslut 2026-10-02), `SASONG` (säsongsvinkeln i adsetnamnet,
+   t.ex. jul: döms inte före `struktur.sasong[].doms_fran`, 1 december), `STANG_TIDIGT` (dag 3–6: tog majoriteten,
+   under KPI, kampanjen gick ner), `VINNARE`/`FLYTTA` (≥ 20 % av spenden vid KPI ⇒
+   flytta bästa annonsen till Champions; bild går aldrig in bland videorna),
+   `VANTA` (tar spend, kampanjen förbättrades, under KPI — till dag 14), `LAT_STA`
+   (bra ROAS, lite spend, inget väntar i kön — och ALLTID för ett gammalt adset
+   som fungerar), `STANG` (svält: aktivt minst 21 dagar och under 10 kr de
+   senaste 21 dagarna — Axels beslut 2026-10-02, "vi har bara haft typ 1
+   breakthrough och den har snott all spend"; under grinden före det är ingen
+   dom; under KPI med spend; eller över 14 dagar utan att vinna), `FLYTTAD` (vinnaren ligger redan i Champions men har inte
+   levererat) och `AV` (pausat = ett beslut). Ett testadset döms på hela testet
+   från starten; ett gammalt adset (före 3:2:2) på de senaste sju dagarna OCH
+   det långa snittet (28 dagar) — det stängs bara när båda ligger under
+   break-even ("zoom out, look at averages"). Ett adset som bär benchmarken får
+   aldrig ett stängningsförslag. Flyttkandidaten är en BEVISAD annons: aktiv,
+   över grinden, över break-even och minst 20 % av adsetets spend — annars
+   `VANTA`. En flytt föreslås en gång; ligger vinnaren redan i Champions och
+   levererar föreslås testadsetet stängt. `--logga` skriver `ADSET_DOM` (en rad per adset och dag)
+   och `FORSLAG` med `niva: "adset"` (stäng/flytta) — av koden, aldrig dubbelt.
    Ut ur `--dom-alla` kommer per kampanj: vinstbidragstabellen (bara Sverige —
    ranking på `(break-even-CPA − CPA) × köp`, **aldrig på ROAS eller CPA
    ensamt**; utlandet saknar break-even per marknad, `cogs.json`), "för
@@ -138,7 +177,12 @@ behörighetsreglerna matchar på första ordet.
    du briefar — det är Evolves "Ad Roadmap".
 
    Regler som ingen bedömning får runda:
-   - **Ingen dom under 300 kr spend eller 3 köp.**
+   - **Stäng på ADSET-nivå, aldrig per annons.** Ingen ronden föreslår en paus av
+     en enskild annons — inte i en testadset, inte i Champions ("zoom out, look at
+     averages"). Etiketten per annons är lärdomen.
+   - **Champions döms aldrig och stängs aldrig.** Vinnare flyttas dit.
+   - **Ingen dom under 300 kr spend eller 3 köp.** Ett adset som efter sju dygn
+     ligger under grinden har svultit — det är Metas dom, inte en dom över idén.
    - **Benchmarken dödas aldrig** — annonsen som bär > 30 % av vinsten (går
      ingen plus: > 30 % av spenden, då riktmärke men inte skyddad). Top
      spendern är riktmärke, inte en kandidat att döma mot småannonser.
@@ -190,17 +234,39 @@ behörighetsreglerna matchar på första ordet.
    som bemöter dem (`kalla=voc`).
    Logga varje skriven lärdom som `{kod:"LARDOM", annons, id:"L-<annons>"}`.
 
-4. **Antalet briefer räknas — det bestäms inte.**
-   `--status` ger brieftaket: **antalet briefer får aldrig överstiga antalet
-   lärdomar skrivna sedan förra ronden.** Kadensen (6) är taket uppåt,
-   lärdomarna är taket neråt. Är taket 0: skriv lärdomarna, kör om, bygg
-   sedan. Budgeten styr aldrig antalet.
+   **Ett adset som föreslås stängt med `lardom_kravs`** (tog spend men föll —
+   kursen: "do learnings on the ad because something about it got a lot of
+   engagement") får en lärdom om VARFÖR det fick spend och vad som ska göra
+   nästa version mer köpdriven.
 
-5. **Mixen kommer ur etiketterna.** Finns en levande breakthrough (≤ 28 dygn,
-   inte tjuvpausad): **80 % vidarebyggen** på den, 20 % nya vinklar. Finns
-   ingen: **80 % nya vinklar**. En ny vinkel är en annan avatar, ett annat
+4. **Antalet koncept räknas — det bestäms inte.**
+   `--status` ger **koncepttaket** (3:2:2: ett koncept = tre hookar = tre briefer
+   = ett testadset): det lägsta av kadensen (6 briefer ÷ 3 = **2 koncept**),
+   **ett koncept per lärdom** skriven sedan förra ronden, och **testplatserna**
+   (4) minus koncept som redan är briefade men inte uppladdade — fler hinner inte
+   testas. Är taket 0: skriv lärdomarna, kör om, bygg sedan. Budgeten styr aldrig
+   antalet.
+
+5. **Mixen kommer ur etiketterna** (räknad i koncept). Finns en levande
+   breakthrough (≤ 28 dygn, inte tjuvpausad): **80 % vidarebyggen** på den, 20 %
+   nya vinklar. Finns ingen: **80 % nya vinklar**. Med två koncept per rond: ett
+   av varje är 50/50 — avrundningen går till majoriteten. En ny vinkel är en annan avatar, ett annat
    begär eller en annan känslomässig ingång — samma löfte med nya ord är en
    iteration, inte en ny vinkel.
+
+   **Varifrån den nya vinkeln kommer (2026-10-01):** ur
+   `products/matstrumpor/mekanismer.md` (§4, ordningen efter skeptikern) och
+   `products/matstrumpor/ny-information.md` (testordningen längst ner), i den
+   ordningen, aldrig ur huvudet. ⛔ **En faktarad är aldrig första raden i en
+   video** (Axel 2026-10-02 om Wolt-raden som start på Nathalie-kroppen:
+   "känns onaturlig och konstig"): videons start är en gåta som bilden löser
+   vid avslöjandet (`066` är förlagan), och faktan går som bild (fynd 7 först),
+   rubrik i Ads Manager eller Spoks-mejl. Mekanismen "duka fram den" är brief
+   `065` (ny inspelning, Axels ja 2026-10-02). Ett frö som använts märks
+   `[använd i batch #N]` i filen. Är alla frön använda: kör
+   `/ny-information matstrumpor <url>` igen innan ronden hittar på något.
+   En siffra i en bild eller rubrik skrivs exakt som källan skriver den och
+   med landet när siffran inte är svensk.
 
    Per utfall — iterationerna ur `PLAYBOOK_PER_UTFALL` / `ITERATIONER`
    (`matstrumpor/lardom.mjs`, ordagrant ur Evolves playbook):
@@ -220,7 +286,45 @@ behörighetsreglerna matchar på första ordet.
    (`VANTA_UTFALL`) och nya iterationer på samma koncept briefas inte förrän
    de första tre har fått sitt utfall.
 
-6. **Briefarna.** Format och regler som `/cs`:
+6. **Briefarna — ett koncept i taget, tre hookar per koncept.** Format och regler som `/cs`, plus 3:2:2:
+   - **Ett koncept = tre hookvarianter på samma kropp**, i EN `brief.md` med en
+     hooktabell H1–H3 (`Swedish (use this) | English meaning`). Namnen:
+     `node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3 [--iter …|--im]`
+     ger `_h1 _h2 _h3` på samma löpnummer. **Tre Notion-rader** (en per hooknamn,
+     samma brief) och **tre BRIEF-rader** i loggen med samma `koncept` — så kan
+     redigeraren leverera en fil per rad och uppladdaren bygga ett adset av dem.
+   - **COPY CARD med 2 + 2** (3:2:2: varje annons bär två rubriker och två
+     primärtexter, delade av konceptets tre annonser):
+     ```
+     ## COPY CARD (goes in Ads Manager, not in the creative) — shared by the three hook ads
+     **Primary text 1:**
+     > …
+     **Primary text 2:**
+     > …
+     **Headline 1:** `…`
+     **Headline 2:** `…`
+     **Description:** `…`
+     **CTA button:** `Handla nu` (Shop Now)
+     **Destination:** https://matstrumpor.se/products/sushi-strumpor
+     ```
+     Två texter som säger två olika saker (en vinkel per text, inte samma mening
+     omskriven), skrivna av sonnet-subagenten, tre-frågorstestet på varje.
+     `node matstrumpor/kor.mjs --ko` läser kortet — en brief med en rubrik eller
+     en text laddas aldrig upp.
+   - **Bild och video aldrig i samma koncept** — de blir två koncept med var sitt
+     löpnummer. Skriv aldrig "upload goes to adset …" i en brief: adsetet är
+     konceptets eget och byggs av `/matstrumpor`.
+   - ⛔ **Utom NEW FOOTAGE** (en ny kreatörsinspelning — `format-2`, eller en ny
+     inspelning med Nathalie): briefen ligger i repot och kreatören får sin
+     svenska sida, BRIEF-raderna loggas med `status: "Väntar på råklipp (NEW
+     FOOTAGE)"`, och **inga Notion-rader skapas förrän Axel lagt råklippen i
+     Drive** (CLAUDE.md, Axels order 2026-10-02 — annars börjar redigeraren
+     klippa). Omklipp ur befintligt material får sina tre rader som vanligt.
+     **När råklippen ligger i Drive** (en senare rond, eller Axel säger det):
+     skapa konceptets tre Notion-rader och logga tre nya BRIEF-rader för samma
+     annonsnamn UTAN `status` — då räknas konceptet som väntande i kön och
+     koncepttaket. Fältet `status` är valfritt på BRIEF-raden och används bara
+     för väntelägen.
    - **På engelska** (redigerarna är engelsktalande), svenska manusrader i
      tabellen `Swedish (use this) | English meaning`.
    - Regi rad för rad i varje videobrief (`docs/os/BRIEF-REGI.md`); spärren
@@ -238,15 +342,16 @@ behörighetsreglerna matchar på första ordet.
      (Evolves `ITER#N_BATCH#ORIG`, `docs/os/evolve/ITERATIONS-PLAYBOOK.md`
      avsnitt 9), så att den syns i Ads Manager:
      ```bash
-     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal>                       # ny idé (IDEA)
-     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal> --iter <förälder>     # iteration: _i<N>p<förälder>
-     node matstrumpor/kor.mjs --namn <vinkel> <format> <antal> --im                  # imitation av en annan brands annons: _im
-     node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --iter nat --hookar 3       # tre hookvarianter: _h1 _h2 _h3
+     node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3                     # ny idé (IDEA): ett koncept, _h1 _h2 _h3
+     node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3 --iter <förälder>   # iteration: _h<k>_i<N>p<förälder>
+     node matstrumpor/kor.mjs --namn <vinkel> <format> 1 --hookar 3 --im                # imitation av en annan brands annons: _h<k>_im
+     node matstrumpor/kor.mjs --namn <vinkel> <format> 2 --hookar 3 --iter nat          # två koncept (två löpnummer) à tre hookar
      ```
      `<förälder>` är löpnumret (`54`) eller ett alias ur `konfig.namn.alias`
      för Axels egna uppladdningar (`nat` = Nathalie, `sof1`, `sof2`, `kat1`,
      `kat2`). Iterationsnumret räknas ur namnen OCH BRIEF-raderna. Julmaterial
-     får vinkeln `jul` — det är den som styr adsetet vid uppladdningen.
+     får vinkeln `jul` — den står i testadsetets namn (`MATSTRUMP_T<nnn>_jul_video`);
+     sedan 3:2:2 finns inga jul-hinkar.
    - **All slutgiltig copy och alla svenska manusrader skrivs av en subagent**
      (`model: "sonnet"`) som får DNA + hypotes + hook + formatkrav +
      `docs/copy-regler.md` (CLAUDE.md regel 6). Strategi, analys och
@@ -277,16 +382,31 @@ behörighetsreglerna matchar på första ordet.
 7. **Tipsen till Axel — förslag, aldrig ändringar.**
    En tabell: rad, nuläge, vad jag skulle göra, och **varför i en mening**.
    Siffran bakom varje rad ska stå där, annars är det en åsikt.
-   - **Kandidater att pausa:** bedömbar, under break-even, negativt
-     vinstbidrag — med kronorna det kostar per 14 dagar.
-   - **Kandidater att skala:** över break-even med ≥ 3 köp de senaste 7 dygnen.
+   - **Adset att stänga** (`FORSLAG` `STANG_ADSET` ur `--dom-alla`): adsetets
+     namn, dag i testet, spend, köp, ROAS, andel av spenden och skälet ur domen.
+     ⛔ **Aldrig en enskild annons att pausa** — 3:2:2 stänger på adsetnivå.
+   - **Annons att flytta till Champions** (`FORSLAG` `FLYTTA_TILL_CHAMPIONS`):
+     annonsen, testadsetet den kommer från, andelen vid KPI. Flytten görs av Axel
+     genom att duplicera annonsen in i Champions med BEFINTLIGT inlägg — förslaget
+     bär post-id:t (`post_id`, `hur`), skriv ut det till Axel så att likes och
+     kommentarer följer med (Axels krav 2026-10-02); testadsetet står kvar tills kopian levererar. En bildvinnare
+     har inget Champions att gå till än — skriv det.
+   - **Kampanjen att skala:** över break-even med ≥ 3 köp de senaste 7 dygnen.
      Skriv ut hur mycket (+20 % är motorns normalsteg) och vad det bygger på.
-   - **Rör inte:** benchmarken, allt under grinden, allt som redan är pausat.
+   - **Strukturen:** är den full (`--ko` säger "Levererar: N av taket M"), skriv
+     hur många koncept som väntar på en plats och vilka av förslagen ovan som gör
+     plats. Ett gammalt adset (före 3:2:2) som FUNGERAR föreslås aldrig stängt —
+     kursens versaler: "DO NOT TURN OFF YOUR EXISTING ADS IF THEY ARE WORKING" —
+     och står som `LAT_STA`; säg i så fall rakt ut att platsen frigörs först när
+     det faller, eller om Axel själv väljer att stänga det.
+   - **Rör inte:** Champions, benchmarken, allt under grinden, allt som redan är
+     pausat.
    Sortera på kronor, mest först. Är listan tom: säg det i en rad.
    **Utför ingenting av det här.** Ingen budgetändring, ingen paus, ingen
    aktivering — inte via token, inte via MCP — oavsett hur tydlig siffran
-   är. Loggas som `{kod:"FORSLAG", …}` så nästa rond ser vad som föreslogs
-   och vad Axel valde.
+   är. Adsetförslagen loggas av `--dom-alla --logga` (`niva: "adset"`);
+   kampanjförslag (budget) loggas som `{kod:"FORSLAG", niva:"kampanj", …}` — så
+   nästa rond ser vad som föreslogs och vad Axel valde.
 
 8. **Skriv minnet, stäng ronden, pusha.** `products/matstrumpor/dna.md` (vad
    vi lärt oss om produkten), `batch-log.md` (batchen + hypoteserna +
@@ -294,7 +414,7 @@ behörighetsreglerna matchar på första ordet.
    ```bash
    node matstrumpor/kor.mjs --rond-klar
    git pull --rebase origin main
-   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv products/matstrumpor
+   git add matstrumpor/logg.jsonl matstrumpor/konfig.json matstrumpor/arkiv matstrumpor/growthguide.json products/matstrumpor
    git commit -m "matstrumporkungen: <datum> — <N> etiketter, <M> lärdomar, <K> briefer, <F> förslag"
    git push origin main
    ```
@@ -319,15 +439,18 @@ behörighetsreglerna matchar på första ordet.
 - [ ] Båda momslinjerna utskrivna; antagandet sagt rakt ut
 - [ ] Avläsningen gjord med `--hamta` (token) för Sverige OCH utlandet — eller reserven namngiven och skälet utskrivet; kampanjer som inte gick att läsa namngivna
 - [ ] Vinstbidragstabellen visad — ranking på vinst, aldrig ROAS/CPA ensamt
+- [ ] `--ko` körd före domen; adseten dömda per ADSET (3:2:2) — `ADSET_DOM` + adset-`FORSLAG` loggade av koden; inget förslag per annons
+- [ ] Champions dömd aldrig, stängd aldrig; flytt till Champions bara vid ≥ 20 % av spenden vid KPI; bildvinnare aldrig bland videorna
 - [ ] "För tidigt"-högen utanför rankingen; benchmarken utpekad och orörd
 - [ ] Etikett på varje annons som fyllt sju dygn (på dess egen första vecka, D0 = max(skapad, kampanjens start)); uppgraderingar vecka 2–3 loggade av `--dom-alla --logga`; `yttre_handelse` bedömd i lärdomen; frekvens + hit rate som bråk + procent; unga annonser namngivna utan etikett
 - [ ] Arkivet ombyggt (`--arkiv`) och `matstrumpor/arkiv/matningar.jsonl` + `products/matstrumpor/arkiv.md` committade
 - [ ] **Lärdom skriven för varje etiketterad annons som saknade en** — med hookar ordagrant, hypotes märkt (gissning) och konkreta nästa annonser
-- [ ] Brieftaket räknat: briefer ≤ lärdomar sedan förra ronden
+- [ ] Koncepttaket räknat (`--status`): koncept ≤ lärdomar, ≤ kadensens 2, ≤ testplatserna (4) minus briefade koncept som inte laddats upp än
 - [ ] Mixen ur etiketterna (80/20), inte ur en tabell
 - [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen; typ=I bär `playbook=`
 - [ ] Felet ur felkatalogen namngivet i varje lärdom; iterationerna ur `PLAYBOOK_PER_UTFALL`, inget koncept över taket
-- [ ] Namnen byggda med `--namn` (iterationer med `--iter`, imitationer med `--im`); julmaterial har vinkeln `jul`
+- [ ] Namnen byggda med `--namn … --hookar 3` (iterationer med `--iter`, imitationer med `--im`); julmaterial har vinkeln `jul`
+- [ ] Varje koncept: tre hookar i en brief, tre Notion-rader (NEW FOOTAGE: inga rader förrän råklippen finns, BRIEF med status "Väntar på råklipp"), COPY CARD med Primary text 1/2 + Headline 1/2; bild och video aldrig i samma koncept
 - [ ] Copyn skriven av subagent med `model: "sonnet"` + copy-reglerna
 - [ ] Briefraderna skapade via `tools/notion-brief.mjs` (NOTION_TOKEN), aldrig via MCP
 - [ ] **Noll budgetändringar, noll pausningar, noll aktiveringar** — tipsen är en lista, inte en handling
