@@ -18,7 +18,7 @@ Senast uppdaterad: 2026-10-02 kväll (Axels tre beslut: C, produktsidan, A).
 | 4 | **Etiketterna som Evolve.** Breakthrough kräver att kampanjens spend växte 10 %, och etiketten kan bli bättre vecka 2–3. Budgethöjningar för hand flaggas. | `matstrumpor/etikett.mjs` |
 | 5 | **Namnen bär kedjan.** `_i10pnat` = iteration 10 på Nathalie, `_h2` = hook 2, `_im` = imitation. | `matstrumpor/namn.mjs`, `--namn … --iter nat` |
 | 6 | **Playbooken i kungen.** Felkatalogen och iterationerna per utfall, och taket räknas på försök med utfall. | `.claude/commands/matstrumporkungen.md` |
-| 7 | **UGC-beställningen: fyra briefer, tre videor per kreatör.** Kopian, problemet först, mannen som ger bort, fikaskämtet. Ingen filmar det hon redan filmat. 9 kreatörer + 4 reserver med färdiga meddelanden, från Axel själv, utan pris. | `products/matstrumpor/ugc/2026-10-briefer.md`, `factory/ugc/` |
+| 7 | **UGC-beställningen: fyra briefer, tre videor per kreatör.** Kopian, problemet först, mannen som ger bort, fikaskämtet. Ingen filmar det hon redan filmat. 9 kreatörer + 4 reserver med färdiga meddelanden, från Axel själv, utan pris. ✅ **Öppningarna i brief 2–4 bytta 2026-10-02 mot mekanismerna** (M1 blicken genom locket, M2 lådan ställs fram utan ett ord, en gåta per brief; tysta tagningar med bildtext, kropparna orörda, inga hoppregler kvar) efter Axels fråga om researchen var inlagd. Kreatörssidan version 5: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn | `products/matstrumpor/ugc/2026-10-briefer.md`, `factory/ugc/`, `scratchpad/UGC-OPPNINGAR-M.md` (sessionens underlag) |
 
 Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15 kampanjer, 131 + 112 annonser).
 
