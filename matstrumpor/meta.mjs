@@ -460,13 +460,22 @@ export async function hamtaStruktur(konfig, { klient = { api, alla }, logg = (s)
   if (champId && adsetLista.some((a) => String(a.id) === champId)) {
     mall = await klient.api(champId, { params: { fields: 'id,name,targeting,optimization_goal,billing_event,promoted_object,attribution_spec,destination_type' } });
   }
+  // Spenden per adset senaste sju dagarna (Axels beslut A 2026-10-02: taket
+  // räknar bara adsets som tar pengar). Går den inte att läsa blir andelen
+  // okänd, och då räknas adsetet — aldrig en gissad nolla.
+  let spend7 = null;
+  try {
+    const rader = await klient.alla(`${kampanjId}/insights`, { level: 'adset', date_preset: 'last_7d', fields: 'adset_id,spend' }, 200);
+    spend7 = new Map(rader.map((x) => [String(x.adset_id), Number(x.spend) || 0]));
+  } catch (e) { logg(`  ⚠️ spenden per adset gick inte att läsa (${e.message}) — alla levererande räknas mot taket`); }
+  const total7 = spend7 ? [...spend7.values()].reduce((a, b) => a + b, 0) : 0;
   logg(`  · struktur: ${kampanj.name} ${kampanj.effective_status}, ${Number(kampanj.daily_budget) / 100} kr/dag, ${adsetLista.length} adsets, ${annonser.length} annonser`);
   return {
     datum: idag,
     hamtat: new Date().toISOString(),
     konto,
     kampanj: { id: String(kampanj.id), namn: kampanj.name, effective_status: kampanj.effective_status ?? null, dagsbudget_sek: kampanj.daily_budget ? Number(kampanj.daily_budget) / 100 : null, cbo: Boolean(kampanj.daily_budget || kampanj.lifetime_budget) },
-    adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie: [] }).map(({ serie, ...a }) => a),
+    adsets: byggAdsets({ adsets: adsetLista, annonser, adsetserie: [] }).map(({ serie, ...a }) => ({ ...a, spend_7d_sek: spend7 ? Math.round((spend7.get(String(a.id)) ?? 0) * 100) / 100 : null, andel_7d: spend7 && total7 > 0 ? Math.round(((spend7.get(String(a.id)) ?? 0) / total7) * 10000) / 10000 : null })),
     champions_mall: mall,
   };
 }

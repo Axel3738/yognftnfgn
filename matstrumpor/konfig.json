@@ -80,6 +80,8 @@
       "tidig_dom_dagar": 3,
       "majoritet_andel": 0.5,
       "flytt_andel": 0.2,
+      "tak_min_andel": 0.01,
+      "tak_comment": "Axels beslut A 2026-10-02: taket räknar bara adsets som TAR pengar — minst 1 % av kampanjens spend senaste sju dagarna (vid 10 000 kr/dag ≈ 100 kr/dag), eller yngre än testtiden, eller Champions. Ett adset Meta inte ger spend tar ingen budget från testerna.",
       "ung_annons_dagar": 7,
       "svalt_dagar": 21,
       "sasong": [{ "vinkel": "jul", "doms_fran": "2026-12-01" }],
