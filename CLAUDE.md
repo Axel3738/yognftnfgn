@@ -174,7 +174,26 @@ land hade egen kostnad och standardtullen låg på USA och Kanada. Rättningen �
 (`marknader/stonepnl/offertsvar-big5.txt`, provläst med StonePNL:s egen läsare) och tullen blir 0 för US och CA.
 DE, FR och WW lämnas utan land, eftersom StonePNL tar ett land per kampanj och Meta sprider deras spend
 jämnt. Resten av ländernas priser kommer via StonePNL:s offertförfrågan till leverantören
-(`marknader/README.md` → "StonePNL: vinsten per land").
+(`marknader/README.md` → "StonePNL: vinsten per land"). ✅ Körd av Cowork samma förmiddag. "cost missing" som
+stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat, inte som 0). Fältet är satt till
+0 via API, som Axel bestämt.
+🔧 **Sajtgranskningen 2026-10-01 rättad 2026-10-02** (Axels "rätta allt rött och gult",
+`marknader/sajtfix.mjs`, prov i en kopia av MAIN, tabellen i `marknader/README.md` → "Sajtgranskningen
+2026-10-01: rättningarna"):
+- **Köpknappen är låst tills paketväljaren lyssnar** (`data-ms-las` i HTML:en + CSS, ALDRIG `disabled` i
+  HTML:en, eftersom Dawn läser det vid variantbyte). Varje kortgrupp har eget radionamn.
+- **Utlandsbesökare på .se, .eu och .no utanför Norge, och på myshopify-adressen, skickas av temat till
+  matstrumpor.com** (`snippets/ms-flytt.liquid`, först i `<head>`). De får rätt språk och sitt RIKTIGA land
+  ur Shopifys `server-timing`. ⛔ Den flyttar aldrig svenskar (server-timing SE, mätt från Sverige), svenska
+  webbläsare, botar, `?country=`, korgen, kontot eller den som själv valt Sverige. Spoks-länkarna står kvar
+  på .se med flit.
+- Juridiskt meddelande på 14 språk (`marknader/juridiskt.mjs`). ⛔ Momsnumret är giltigt i VIES, men VIES
+  visar den gamla privatadressen, och den skrivs aldrig.
+- Shopifys mejl länkar till .com (`mejl/notis-lankar.mjs`, 806 översättningar), och ingen fyra står i
+  ja/zh-TW.
+- Kvar: Spoks v2 (japanska, Belgien → franska) kräver en session med Spoks-connectorn
+  (`klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`). SEK-formatet och kassans typsnitt är admin-klick
+  (`marknader/cowork/7-sajtfix.txt`). B-koden i A/B-testet (S-025) är Axels beslut.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla

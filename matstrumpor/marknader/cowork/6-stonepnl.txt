@@ -1,4 +1,4 @@
-Inte körd än. Skriven 2026-10-02 efter Axels skärmdump av StonePNL:s marknadsvy (9 184 kr "on campaigns without a market", nio länder på standardkostnad, standardtull).
+✅ Körd av Cowork 2026-10-02 förmiddag (Axels rapport): 12 kampanjer med land, "10 costs added from the quote", tullen 0 för US och CA. "cost missing" som stod kvar var ätpinnarnas tomma Cost per item, satt till 0 via API samma förmiddag (README → StonePNL). Skriven 2026-10-02 efter Axels skärmdump av StonePNL:s marknadsvy (9 184 kr "on campaigns without a market", nio länder på standardkostnad, standardtull).
 
 Uppdrag: tre inställningar i appen StonePNL i Shopify-butiken Matstrumpor (admin.shopify.com/store/1r46tp-qx → Appar → StonePNL), så att vinsten per land stämmer. Gör bara det som står nedan.
 

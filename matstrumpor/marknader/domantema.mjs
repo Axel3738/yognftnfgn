@@ -375,15 +375,15 @@ export function patchaEsLocale(kod) {
   return { kod, byten, hoppade };
 }
 
+// Inga CSS-kommentarer i blocket: de syns i sidans källkod (sajtgranskningen 2026-10-01, S-029).
+// Varför: inga land- eller språkväljare på .no; Judge.me-rutan döljs (de norska recensionerna ritas
+// av ms-omdomen-no); "Nå i hele verden" (.ms-varlden) säger internationellt, och .no ska inte göra det.
 export const CSS_NORSK = `
 {%- comment -%} ${MARK}: B-sidan i Norge (matstrumpor.no) — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
 {%- if ${OM_NORSK} -%}
 <style>
-  /* Bara Norge och norska på .no: inga land- eller språkväljare. */
   localization-form, .desktop-localization-wrapper, .menu-drawer__localization, .footer__localization { display: none !important; }
-  /* Judge.me visar recensionerna på svenska på norska sidor; de norska ritas av ms-omdomen-no. */
   .jdgm-widget, [id$="__judgeme_widget"] { display: none !important; }
-  /* "Nå i hele verden" säger internationellt, B-sidan ska kännas norsk. */
   .ms-varlden { display: none !important; }
   .ms-omd-badge { display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 10px; color: inherit; text-decoration: none; font-size: 1.4rem; }
   .ms-omd-badge:hover .ms-omd-badge__txt { text-decoration: underline; }

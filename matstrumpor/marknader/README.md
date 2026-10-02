@@ -1042,6 +1042,50 @@ och leverantörens svar klistras in i samma ruta. Då fylls kostnaderna i av sig
 för donut, pizza och hamburgare. Parkeringen i `LEVERANTOR-FRAGA-JP-TW.md` ("vänta tills vi får
 försäljning") är därmed hävd: fredag morgon hade JP, CH, PT, DK, ES och FR redan sålt.
 
+✅ **Körd av Cowork fredag förmiddag** (Axels rapport): kortet säger "12 campaigns have a market"
+(NO, NL, IT och PL fick läggas till med "Add a country code" först). Offertrutan gav "10 costs added
+from the quote", och alla rader under "Not added" var de väntade: sushins 2 och 3 lådor räknas
+linjärt, inget pris för 3 lådor, GB/NZ/AU är inga marknader i butiken, och standardkostnaden är tom.
+Tullen är 0 för US och CA och står kvar efter omladdning. Marknadsvyn: "2,242 SEK of ad spend is on
+campaigns without a market" i dag (DE, FR och WW). På 30 dagar är det 5 781 kr, och då ingår augustis
+pausade kampanjer. DE, FR och WW visar "No spend last 30 days" eftersom 30-dagarsfönstret inte räknar
+med i dag. **"cost missing" stod kvar för US (6 %) och CA (10 %), och det var ätpinnarna.** Mätt i
+ordrarna: ätpinnarna är exakt 6,0 % av USA:s försäljning och 9,8 % av Kanadas. Deras Cost per item var
+TOMT, inte 0, och StonePNL räknar tomt som saknat. Axel har sagt att de kostar 0 (`../cogs.json`), så
+fältet sattes till 0 samma förmiddag via API (`inventoryItemUpdate`, tillbakaläst). Samma sak låg bakom
+10–13 % i de andra länderna.
+
+## Sajtgranskningen 2026-10-01: rättningarna (2026-10-02, `sajtfix.mjs`)
+
+Axels order: "rätta allt rött och gult" i `granskning/SAJT-2026-10-01.md`. Temadelen sitter i
+`sajtfix.mjs`, med 21 tester och butikens originalfiler i `sajtfix/original/` så att allt går att backa.
+Den provades i en färsk kopia av MAIN, "PROV sajtfix 2026-10-02" `208247456083`, och lades sedan i
+MAIN `207180890451`. Varje fil lästes tillbaka. Mätt som kund i Chromium på strypt mobilnät (PageSpeeds
+profil och 4 Mbit/s, CPU ×4) och från riktiga länder med Globalping.
+
+| Fynd | Läget | Hur |
+|---|---|---|
+| 🔴 S-001 köpknappen före paketväljaren | ✅ rättat | Knappen bär `data-ms-las` i HTML:en, och CSS stänger klick från första stund. Skriptet direkt efter knappen sätter `disabled`, och `ms-paket.js` låser upp när köplyssnaren sitter. Reserven låser upp vid DOMContentLoaded. Aldrig `disabled` i HTML:en: Dawn läser just det attributet ur den hämtade sektionen vid variantbyte. Varje kortgrupp har eget radionamn, och en dold väljare markerar aldrig ett kort. Mätt med v2 i 8 körningar (4 i kopian, 4 live, SE/DE/JP/DK, snabb och vanlig kund): knappen blev aldrig klickbar före paketväljaren (högst 3 ms, mätintervallet), korgen rätt (8 varor, koden, 798 kr / 89,80 € / ¥15 960 / 686 kr) och kassan lika med korgen i de 4 live. "Köp 2 – få 2" står kvar när skriptet släpps i SE, DE och JP. ⚠️ Låsets första version satt bara i ett skript efter knappen. Live på strypt nät kom HTML:en i bitar, och knappen syntes klickbar en kort stund innan skriptet kommit fram. Därför v2. |
+| 🔴 S-002 / S-003, 🟡 S-012 / S-013 / S-014 / S-016, 🟡 S-006 | ✅ rättat i temat | `snippets/ms-flytt.liquid`, först i `<head>`, skickar utlandsbesökare på matstrumpor.se, matstrumpor.eu och myshopify-adressen till matstrumpor.com. Språkmappen behålls om länken hade en. Annars väljs webbläsarens språk, sedan landets. Landet sätts med `?country=` och är besökarens riktiga, ur Shopifys `server-timing` (`country;desc="DE"`), också där Shopify ger Europa-marknaden landet Sverige. Stannar: svenskar (server-timing SE, mätt från Sverige), svenska webbläsare utomlands, botar, `?country=` i adressen, korgen, kontot, temaredigeraren och den som själv valt Sverige från en annan av våra domäner (kakan `ms_stanna`). "Dina integritetsval" flyttas alltid, för Shopifys integritetspolicy länkar den på .se. Spoks-länkarna står kvar på .se med flit: temat ger dem besökarens RIKTIGA land, och en statisk `?country=` per språk hade gett österrikare DE. Mätt live: Spoks /nb-, /en- och /de-länkarna, myshopify-blocket, .eu och .no utanför Norge hamnar på .com i rätt språk. Svensk webbläsare, Googlebot, `?country=SE` och .com rörs inte. |
+| 🟡 S-004 delningslänken | ✅ | Länken bär `?country=` utanför Sverige (`main-product.liquid` + `share.js`). |
+| 🟡 S-005 juridiskt meddelande | ✅ | `juridiskt.mjs`: STONEBITE ECOM AB, org.nr 559576-2401 (Bolagsverket) och momsnumret SE559576240101 (giltigt i VIES 2026-10-02) på 14 språk, tillbakaläst. ⛔ VIES visar den gamla privatadressen, och den skrivs aldrig. Fullständigt Impressum och 特商法 (S-033) är Axels beslut. |
+| 🟡 S-007 A/B-korten byts framför kunden | ✅ | `ms-ab.js` sätter synligheten medan sidan tolkas (MutationObserver), och CSS i `ms-head` gömmer fel variant så fort varianten satts på `<html>`. Mätt: variant b visar aldrig a:s kort (MAIN före rättningen: a:s kort 2,6–6,7 s). |
+| 🟡 S-008 / S-009 | ✅ | Reservpriset i kundens valuta. Nätfel visas med den översatta raden, aldrig "Failed to fetch". |
+| 🟡 S-010 Judge.me-märket | ✅ | Texten är dold utanför svenskan tills Judge.me ritat den (`.jdgm--done-setup`). |
+| 🟡 S-011 GIF på 15,7 MB | ✅ redan borta | Filen låg i beskrivningen hos två ARKIVERADE produkter (`sushistrumpor`, `legease-…`), som svarar 404. Sushisidan laddar ingen fil över 2 MB (mätt 2026-10-02). Den tyngsta är typsnittet Mochiy Pop P One på 2,0 MB. |
+| 🟡 S-015 / S-019 Shopifys mejl | ✅ | `mejl/notis-lankar.mjs`: `{{ shop.url }}` → språkets .com-adress i 806 översättningar (62 mallar × 13 språk). "(ending in …)" är japanska i fyra ja-mallar. Shopifys "下4桁"/"末四碼" är ersatta (26 översättningar), så ingen fyra står i ja/zh-TW-mejlen. |
+| 🟡 S-017 / S-018 Spoks | ⏸ förberett | Belgien → franska och japanska (`ja.json`, sonnet + granskare) i repot. Flödena v2 byggs av en session med Spoks-connectorn: `klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`. |
+| 🟡 S-020 kassan på okänt språk | accepterat | Med en tjeckisk webbläsare öppnar kassan på `en-CZ` med svenska produktnamn, också med `/checkout?locale=en` (mätt). Det gäller bara språk butiken inte har, och ingen kampanj riktar sig dit. |
+| 🟡 S-021 presentkortsbilden | ✅ | `presentkort-ja.png` och `presentkort-zh-TW.png` (rita.py med Noto Sans CJK) i Files, sedda som kund. |
+| 🟡 S-022 ätpinnarnas sida | ✅ | `product.tillbehor` har strumpsidornas trust- och leveransrad (ja, zh-TW, danskans "returret"). |
+| 🟡 S-023 TWD | ✅ | "NT$" i paketväljaren och på Liquid-priserna (`ms-cro.js`, bara i TWD). |
+| 🟡 S-024 prisformaten | ✅ / Cowork | Paketväljaren formaterar som Liquids `\| money` ur ett prov som Shopify själv formaterat i kundens valuta (`MS.pengaprov`). Mätt: €44,90, 469,00 kr, 343,00 kr, $126.00, ¥7,980, NT$1,690.00 och 201,00 zł bredvid köprutans samma. SEK "1,796 kr" kräver butikens pengaformat (`amount_no_decimals_with_space_separator`), som inte har något API: `cowork/7-sajtfix.txt` steg 1. |
+| 🟡 S-025 B-koden | ❓ Axel | `SUSHI-2FOR499` är "399 kr off" fördelat på strumpor och ätpinnar. Att ge ätpinnarna 0 kr kräver "amount off each item", och då blir en tredje låda 249,50 kr. Det är en rabattändring och Axels beslut. |
+| 🟡 S-026 polska bokstäver | ✅ sajten / Cowork kassan | Polskan ritas i M PLUS Rounded 1c (latin-ext). Kassans typsnitt finns bara för hela butiken: `cowork/7-sajtfix.txt` steg 2. |
+| 🟡 S-027 valutan på egen rad | ✅ | `nowrap` på korgens priser, sett på 390 px i DK, PL och NO. |
+| 🟡 S-028 språkfel | ✅ | es "está", pt-PT i du-form (37 texter, `sajtfix/pt-tu.json`, sonnet + granskning), italienskt "9–16 ottobre". |
+| 🟡 S-029 kommentarer i källan | ✅ | .no-blockets CSS-kommentarer borta (temat och `domantema.mjs`). Spårningssidans inbäddade skript byggs utan kommentarsrader (`sparning/sida.mjs` → `utanKommentarer`, med test) från nästa timrunda efter merge. |
+
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 
 Läst ur kontot med `annonser/bygg.mjs --lage` (id:n och annonserna i `annonser/lage.json`, länkarna
