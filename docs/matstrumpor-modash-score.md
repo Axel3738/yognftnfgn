@@ -98,3 +98,19 @@ redovisade rad för rad så att det går att kontrollera.
 Siffran i parentes är delpoängen 0–10 för den kolumnen. Källa: Modash-rapporter exporterade av Axel 18–19 september 2026 (15 PDF:er, `docs/source/modash-2026-09-18/`). Avläsningen är maskinell ur PDF-texten och kontrollerad mot bilderna för Åhman, Jonsson, Hermansen, Nyholm och Hallin. Modash delar bara upp åldern i 13–17, 18–24, 25–34, 35–44 och 45–64, så kolumnen 45–64 är det närmaste "45+" som går att få; 65+ redovisas inte.
 
 **Vad siffrorna säger.** Bara två klarar kursens 60 kommentarer: Hallin (106, men bara 46 % Sverige, och hon har redan sagt nej) och Åhman (69). Svenska profiler ligger genomgående lågt på kommentarer, vilket är ett skäl till att kursen lägger 70 % av beslutet på observationen. Åhman är den enda som matchar kursens mönster på alla sju siffror samtidigt, med 91 % av publiken som följer färre än 500 konton, ett värde kursen kallar sällsynt. Hermansen har svagare siffror än ProAd-profilen antydde: 18 % falska, 13 % misstänkt massföljare, 31 kommentarer, och Modash uppskattar story-räckvidden till 7 900 mot ProAd:s 16 500. Adelsköld har Indonesien och Indien som näst och tredje största följarland, ett vanligt mönster för köpta följare, och 19 % falska. Av Axels fem egna fynd har Showbonden den renaste publiken i hela materialet (5,6 % falska, 90 % riktiga) men bara 15 % i åldern 45–64, och Tjockkocken har 12 % av följarna i USA och en publik som mest är 35–44, vilket är segmentet Axel valt bort.
+
+## Tillägg 2026-10-02: Åsa Jonsson @helt.orimligt
+
+| Profil | Följare | Falska | Real people | ≤500 | Kommentarer | Kvinnor | 45–64 | Sverige | Råpoäng | Spärr | **Betyg** |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Åsa Jonsson @helt.orimligt | 161.7k | 6.53 % (10) | 88.18 % (10) | 64.69 % (8) | 95 (8) | 88.65 % (10) | 12.10 % (0) | 91.25 % (10) | 7.8 | – | **7.8** |
+
+Källa: `docs/source/modash-2026-10-02/report-helt.orimligt-Oct-02-2026.pdf`, avläst med samma skript
+(`docs/source/modash-2026-09-18/avlasning.py`). Plats 3 av 16, efter Åhman och Susanne Jonsson.
+Story-räckvidd 11.1k (trea efter Åhman 15.7k och Sjödin 12.2k).
+
+**Den enda svaga punkten är åldern, och den är tvetydig.** Följarna är unga: 18–24 40.6 %, 25–34 27.5 %,
+35–44 13.3 %, 45–64 12.1 %. Men bland dem som faktiskt gillar inläggen (Modash "Likers") är 45–64 hela
+43.2 % och 35–44 22.3 %, och 94.5 % är kvinnor. Skalan räknar på följare för att vara jämförbar med de
+andra 15; räknat på likers hade betyget blivit 9.0. Hon är high performer, inte ikon, så Modash väger
+30 % och två veckors observation av hennes stories 70 %.
