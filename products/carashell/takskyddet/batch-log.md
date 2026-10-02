@@ -3182,3 +3182,15 @@ Bäverbutikens teamspace och speglas hit). Bara `kord` stämplad.
 
 **NO och DK:** 4 000 kr/dag vardera, mätt 2026-09-23, inte mätta om sedan dess.
 Nattvakten rör bara marknad SE.
+
+## 2026-10-02 — leveransrundan: tolfte dygnet, oförändrat
+
+Kön läst i ett försök: samma två rader i `To be Reviewed`
+(`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`), samma md5 (`d9ab48ff…` /
+`271bf976…`), samma slutkort med `carashell.se`. Kontrollen kördes med OCR
+(`rapidocr_onnxruntime` + `imageio_ffmpeg` fanns i containern), så domen
+`slutkort-med-brand` är mätt. Kampanjen
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+(`120249050544990172`) ACTIVE med 11 adsets; butikspriset 1 129 kr stämmer
+exakt. Inget uppladdat, ingen status ändrad, inga nya kommentarer.
+De två LISTICLE-kampanjerna filtrerades som egna spår.
