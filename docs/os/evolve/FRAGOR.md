@@ -69,3 +69,85 @@ Context: several Shopify stores (Nordics + EU/English, 10+ languages), hobby nic
 2. Has any member put a survey link in the order confirmation email instead of on the thank-you page? Rough reply rate per 100 orders, or say none.
 3. For a thank-you page survey without Plus: which app or setup did Sem or other members actually use? Name + tool only.
 ```
+
+---
+
+## Veckorapporten till redigerarna (frågan 2026-10-02)
+
+**Axels beställning 2026-10-02:** en rutin som varje vecka säger redigerarna
+vilka av DERAS annonser som fick mest spend och hur de gick (spend winner,
+KPI winner, breakthrough, loser), skickar ett Discord-meddelande till var och
+en, förklarar varför utfallet kan ha blivit som det blev utifrån briefen och
+klippningen, och ger ett litet action item per vecka (testa en sak, läs ett
+researchdokument, titta på konkurrenters annonser) med förberedda action
+items per utfallstyp. Först frågar vi Chadbot. Sedan utvecklar Axel och
+sessionen systemet ihop.
+
+**Underlaget** (fem läsare + en kritiker över repot, 2026-10-02): det mesta
+finns redan byggt eller besvarat, så frågan rör bara det som saknas.
+
+Byggstenar som finns: etiketterna i `matstrumpor/etikett.mjs` (Evolves fyra
+utfall + INGEN_LEVERANS, uppgradering vecka 2–3, `hitRate()` med två nämnare)
+och Bäverbutikens kopia `agent/etikett.mjs` på grenen
+`claude/daily-agent-discussion-uos5df` (3 827 ETIKETT-rader med
+`utford_som_briefad`); annons → redigerare i `commission/koppling.mjs`
+(hubbradens Ansvarig, Jerzee via kommentar); Meta per annons med hook/hold
+i `matstrumpor/meta.mjs`; playbooken per utfall i `matstrumpor/lardom.mjs`
+(`PLAYBOOK_PER_UTFALL`); regitabellen i briefen sedan 2026-09-21
+(`tools/briefgranskning.mjs regiUr`); Discord-postarna med engelskspärr
+(`tools/discord-rapport.mjs`, `stonebite/kallor/discord.mjs`).
+
+**Redan besvarat — fråga inte igen:** vinnardefinitionerna
+(`ITERATIONS-PLAYBOOK.md` avsnitt 1), Karlos fem redigerar-KPI:er, "visa
+datan, fråga hur du kan hjälpa", ersättningen (% av spend, aldrig fart,
+hit rate går att fuska med), tvålagerstavlan, Spencers "alla vinnare + 1
+förlorare per batch" och Lewis måndagsgranskning
+(`stonebite/evolve/SVAR.md` svar 2 och 3), hit rate 5–10 % / 2–4 %
+(`products/matstrumpor/CHADBOT-SVAR-2026-10-02.md`), felkatalogen och de
+24 iterationerna per utfall (`ITERATIONS-PLAYBOOK.md` avsnitt 4–8). Boten
+har redan sagt "no source" om hur en redigerare ser sitt resultat utan att se
+spend, och om hook/hold/CTR som dashboardmått — därför frågar vi 4 som "vad
+GÖR ni", inte "vad säger kursen".
+
+**Olästa lektioner som kan svara före boten** (kräver `SKOOL_EMAIL` +
+`SKOOL_PASSWORD`, saknas i den här miljön 2026-10-02; `tools/skool/`):
+"How To Get A-Players Editors & Content" `542a4102971a4d328b9853609004422a`
+(📝13 141 tecken), "How To See Ads Performance + Our Columns"
+`1b74584216754b60a3415aca2f1a76b0`, "How To Do Learnings - Questions"
+`7d9d6bbb3f6f419b94cab6c24f3f7a0a`, "How To Train Editors On AI"
+`c68f2c9d87d04a38a4c01789c8acc531`, "How To Get Viral UGC Inspo For Creators
+& Ads" `a4db7083d9654e6590cfcf06b14e3393`. Läs dem i en session som bär
+nycklarna innan systemet byggs.
+
+**Fyra saker att reda ut med Axel, inte med boten, innan bygget:**
+1. Ordern "mest spend per redigerare" mot järnregeln 2026-09-02 "spend visas
+   aldrig för redigerare" — andel av kampanjen i procent, rang och etikett
+   läcker inga kronor (Laget-sidan visar redan andel), men det är hans beslut.
+2. `bedombar` räknas ELLER i `matstrumpor/etikett.mjs` (300 kr eller 3 köp)
+   men OCH i ANALYSMETOD och agent-grenen. En etikett som visas en människa
+   måste ha EN grind.
+3. `tools/discord-rapport.mjs` postar redan "Spend: N SEK" + ROAS i
+   OPS-servrarnas `#ads`, där redigeraren sitter — regeln bryts där i dag.
+4. Josh, Annabelle, Gilz och Jerzee saknar Discord-id i repot (bara Carl och
+   Jasper/jazzer1522 har), Matstrumpor har ingen Discord-server och Gilz har
+   bara Slack-id. Ingen kod skickar Discord-DM; allt är kanalpost med `<@id>`.
+   Och INGEN_LEVERANS är inte alltid redigerarens: Gilz batch #1 svalt av
+   adsetet (`products/matstrumpor/lardomar.md`).
+
+**Frågan**, 1 991 tecken räknat med node, utan brand, domän, produkttitel
+eller exakta tal. Svaret klistras in ordagrant i `SVAR.md` under rubriken
+"Veckorapporten till redigerarna (frågan 2026-10-02)".
+
+```
+Context: several Shopify stores (Nordics/EU), ~100 % Meta, remote video editors paid a % of spend on their ads, never shown money. Every ad gets a day-7 label (Breakthrough / Spend Winner / KPI Winner / Loser / no delivery) and a written learning; briefs have a per-line direction table (time, line, text, picture, editor latitude). We're building a weekly Discord message per editor: her ads, label, why, one small action item. We already have the winner definitions, Karlo's editor KPIs, % of spend comp, the two-layer board, "winners + 1 loser per batch", Lewis's Monday review, the hit-rate benchmarks and the iteration playbook per outcome; don't repeat those. Say plainly where no source covers it.
+
+1. Brief vs edit: when an ad loses or stalls as a KPI winner, what tells you the EDIT failed (hook rate below expectation, hold dropping at one cut, text off the direction, pacing, music, captions) rather than the script? When she cut exactly as briefed and it still lost, how do you word it as a learning, not criticism?
+
+2. Action items per outcome: the one thing you give an editor after a loser/no-delivery, a KPI winner, a spend winner (good hold, weak conversion) and a breakthrough: a craft exercise (re-cut the first 3 s, study the top hook), a research doc, or competitor ads? How much per week before it's noise?
+
+3. Editor hit rate in a CBO: about half our labelled ads got almost no delivery in week 1 (the CBO fed the champion ad set). Her losers, excluded, or a separate label? And exclude iterations of an existing winner?
+
+4. Your editors' own learnings call: which ads and numbers (label, share of campaign spend in %, hook/hold, retention curve), which they don't see, what they bring to the main call? Per ad or per week, channel or 1:1, and how do you stop a loser label from feeling like a ranking?
+
+5. Weekly report vs the 7-day label: ads launched mid-week, labels upgraded in week 2-3, and the minimum spend or purchases before a label is fair to show a person?
+```

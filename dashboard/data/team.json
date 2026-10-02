@@ -72,7 +72,9 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": ""
-      }
+      },
+      "discordUsername": "wang3729",
+      "discordUserId": "930484161070899252"
     },
     {
       "id": "annabelle",
@@ -100,7 +102,9 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Slack-namnet visar Anna - INTE Anna Odhner (managern). Notion-ID bekraftat 2026-08-31."
-      }
+      },
+      "discordUsername": "anna_gonzales_17839",
+      "discordUserId": "1194906296403632142"
     },
     {
       "id": "gilz",
@@ -128,7 +132,9 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Ar i #video-editors men inte i #baver-scaling-products. Notion-kontot anvander gbruce.biazon@gmail.com, inte adressen i email-faltet."
-      }
+      },
+      "discordUsername": "gilzbrucebiazon",
+      "discordUserId": ""
     },
     {
       "id": "carl",
@@ -156,7 +162,9 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Ar i #video-editors men inte i #baver-scaling-products. Notion-ID bekraftat mot workspace 2026-08-30."
-      }
+      },
+      "discordUsername": "carlvicente.working",
+      "discordUserId": "1411720622484095089"
     },
     {
       "id": "jasper",
@@ -184,7 +192,9 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Hittad som Ansvarig pa godkanda rader i Trimmer belt creative hub 2026-08-30. Saknar Slack-ID."
-      }
+      },
+      "discordUsername": "jazzer1522",
+      "discordUserId": "740814777374343259"
     },
     {
       "id": "jerzee",
@@ -216,7 +226,10 @@
         "endOfDayReportTime": "21:30",
         "skills": [],
         "notes": "Hans aldre rader har INGEN Ansvarig (Axels besked 2026-09-15) och markeras i stallet med en kommentar - 'jerzee is working on this', 'By Jerzee' - skriven fran gastkontot 05b30396-13bd-41c1-b205-94169150bde3. Darfor ar notionUserId syntetiskt och satts av commission/kommentarer.mjs. Matt 2026-09-15: 50 rader i 8 hubbar. UPPDATERAT 2026-09-21: samma gastkonto visar nu namnet 'Jerzee Robe' i Notion och star som Ansvarig pa fyra Approved-rader i Boat motor cover (Batmotor_SP_1_H9, SP_3_H1, PD_6_H1, SP_1_H10, 49,32 SEK). Kontots id ligger darfor i notionUserIdAlias sa att spenden gar till honom i stallet for att ligga kvar som okand. Ar det NAGON ANNAN som skriver fran kontot: ta bort alias-raden, sa gar pengarna tillbaka till obetald hogen."
-      }
+      },
+      "discordUsername": "jerz7108",
+      "discordUserId": "540463446546841610"
     }
-  ]
+  ],
+  "discordKommentar": "discordUsername/discordUserId: Axels lista 2026-10-02, id:n slagna upp med members/search i Bäverbutikens server 1540322130388983921 samma dag. Gilz (gilzbrucebiazon) fanns inte i servern — tomt id tills han bjudits in."
 }

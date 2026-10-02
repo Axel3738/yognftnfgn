@@ -1,0 +1,7 @@
+{
+  "comment": "Testfixtur — samma form som tools/lib/hubbar-utan-atkomst.json.",
+  "beslut": "Axel 2026-09-30",
+  "hubbar": [
+    { "id": "aaa10000-0000-4000-8000-000000000001", "titel": "Trimmer belt creative hub", "produkt": "axelbaltet" }
+  ]
+}

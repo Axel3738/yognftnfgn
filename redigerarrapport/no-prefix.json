@@ -1,0 +1,873 @@
+{
+ "_kommentar": "NO-prefix (Bäverbutikens NO-konto Magiborsten NO 1050941584152547) → SE-prefix (MagiBorsten 1867947880635861). Byggd 2026-10-02 ur mätning, aldrig ur minnet: (1) /oversatt-tabellen market-expansion/no/produkter.json + jobbfilerna market-expansion/no/notion-batches/*/jobb.json (jobb_kor = rader med status KÖR/KLAR = faktiskt uppladdade SE-namn → NO-namn); (2) /translate-no: pipeline/waves/no-*.config.mjs (NO-annonsnamn → fil NO_<slug>_K_n.mp4) + market-expansion/no/video-batches/*/batch.json (slug → svenskt produktnamn → SE-kampanjen i kontot → dess prefix); (3) factory/produkter/*.yaml no_annonsprefix; (4) samma prefix i båda kontona. suffix_overlapp = antal NO-annonser vars suffix (_<VINKEL>_<nr>(_H<n>)?) också finns under SE-prefixet i kontots etiketter W36–W40 — det är BELÄGG, aldrig avgörande: mallprodukterna delar exakt samma 12–16 suffix. se_prefix null = ingen källa namnger kopplingen; suffixkandidater_ANVANDS_INTE visas bara så att en människa kan lägga in raden. Flera SE-prefix för samma produkt (Beltesliper: Beltgrinder i hubben, Balteslipmaskin i kontot — products/prefix-alias.json) står som alternativ, och namn.mjs prövar alla. Kontonamnen lästes ur scratchpadens etiketter-unika.json + budgetlogg.jsonl (agent-grenens logg). Kommando: node scratchpad/no-prefix-matning.mjs <scratchpad>. Ny NO-kampanj = en rad här, eller en rad i produkter.json och kör om.",
+ "_format": {
+  "se_prefix": "SE-prefixet, null om okänt",
+  "alternativ": "fler SE-prefix för samma produkt (prövas efter se_prefix)",
+  "belagg": "per SE-prefix: kallor, jobb_kor/jobb_alla ur jobbfilerna, suffix_overlapp"
+ },
+ "prefix": {
+  "Adventskalender": {
+   "se_prefix": "Adventskalender",
+   "no_kampanjer": [
+    "Adventskalender NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Adventskalender": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 37,
+     "suffix_overlapp": 3,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Arbeidslampe": {
+   "se_prefix": "Arbetslampa för Makita-batteri",
+   "no_kampanjer": [
+    "Arbeidslampe NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Arbetslampa för Makita-batteri": {
+     "kallor": [
+      "market-expansion/no/video-batches/2026-09-06/batch.json produkt \"Arbetslampa för Makita-batteri\" = SE-kampanjen [\"Arbetslampan för Makita-batteri\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 11
+    }
+   }
+  },
+  "Badeshorts": {
+   "se_prefix": "Badshorts",
+   "no_kampanjer": [
+    "Badeshorts NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Badshorts": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 4
+    }
+   }
+  },
+  "Batmotortrekk": {
+   "se_prefix": "Batmotor",
+   "no_kampanjer": [
+    "Båtmotortrekk NO"
+   ],
+   "annonser_i_no_kontot": 44,
+   "belagg": {
+    "Batmotor": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 31,
+     "jobb_alla": 95,
+     "jobb_exempel": "Batmotor_PD_5_1 => Batmotortrekk_NO_PD_5_1",
+     "suffix_overlapp": 40
+    }
+   }
+  },
+  "Beltesliper": {
+   "se_prefix": "Beltgrinder",
+   "no_kampanjer": [
+    "Beltesliper NO"
+   ],
+   "annonser_i_no_kontot": 28,
+   "belagg": {
+    "Beltgrinder": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 12,
+     "jobb_alla": 67,
+     "jobb_exempel": "Beltgrinder_PD_5_1 => Beltesliper_NO_PD_5_1",
+     "suffix_overlapp": 12
+    },
+    "Balteslipmaskin": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 16
+    }
+   },
+   "alternativ": [
+    "Balteslipmaskin"
+   ]
+  },
+  "Benkehylle": {
+   "se_prefix": null,
+   "no_kampanjer": [
+    "Benkehylle NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {},
+   "varfor_null": "ingen källa namnger SE-prefixet (varken /oversatt-tabellen, /translate-no-vågen + batch.json, factory-yaml eller samma prefix i SE-kontot); suffixen delas av många produkter och avgör aldrig",
+   "suffixkandidater_ANVANDS_INTE": [
+    "Termoskydd (15 av 15)",
+    "Damasker (15 av 15)",
+    "Balteslipmaskin (15 av 15)",
+    "Gravsten (15 av 15)"
+   ]
+  },
+  "Dinosauriekalender": {
+   "se_prefix": "Dinosauriekalender",
+   "no_kampanjer": [
+    "Dinosaur Adventskalender NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Dinosauriekalender": {
+     "kallor": [
+      "pipeline/waves (no-dinosauriekalender-video.config.mjs) fil NO_dinosauriekalender_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-19/batch.json produkt \"Dinosauriekalender\" = SE-kampanjen [\"Dinosauriekalendern 24 Dinosaurier\"]",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 4,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Fagelmatare": {
+   "se_prefix": "Fagelmatare",
+   "no_kampanjer": [
+    "Fågelmatare NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Fagelmatare": {
+     "kallor": [
+      "pipeline/waves (no-fagelmatare-video.config.mjs) fil NO_fagelmatare_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-17/batch.json produkt \"Fågelmatare med kamera\" = SE-kampanjen [\"Fågelmataren med Kamera\"]",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Fiskespöhållare": {
+   "se_prefix": "Fiskespöhållare",
+   "no_kampanjer": [
+    "Fiskespöhållaren NO"
+   ],
+   "annonser_i_no_kontot": 5,
+   "belagg": {
+    "Fiskespöhållare": {
+     "kallor": [
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Frontrutetrekk": {
+   "se_prefix": "Termoskydd",
+   "no_kampanjer": [
+    "Frontrutetrekk til Bobil NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Termoskydd": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-termoskydd-video.config.mjs) fil NO_termoskydd_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-12/batch.json produkt \"Termoskydd Husbil\" = SE-kampanjen [\"Termoskyddet för Husbil 211 × 171 cm\"]",
+      "factory/produkter/termoskyddet.yaml no_annonsprefix"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 57,
+     "suffix_overlapp": 15
+    }
+   }
+  },
+  "Gamasjer": {
+   "se_prefix": "Damasker",
+   "no_kampanjer": [
+    "Gamasjer NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Damasker": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-damasker-video.config.mjs) fil NO_damasker_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-08-29/batch.json produkt \"Damasker Vandring\" = SE-kampanjen [\"Damasker Vandring\"]",
+      "factory/produkter/damasker.yaml no_annonsprefix"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 4,
+     "suffix_overlapp": 16
+    }
+   }
+  },
+  "Gjerdestolpebøyle": {
+   "se_prefix": null,
+   "no_kampanjer": [
+    "Gjerdestolpebøyle NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {},
+   "varfor_null": "ingen källa namnger SE-prefixet (varken /oversatt-tabellen, /translate-no-vågen + batch.json, factory-yaml eller samma prefix i SE-kontot); suffixen delas av många produkter och avgör aldrig",
+   "translate_no": [
+    {
+     "slug": "staketstolpsbygel",
+     "produkt": "Staketstolpsbygel 2-pack",
+     "se_kampanjer": []
+    }
+   ],
+   "suffixkandidater_ANVANDS_INTE": [
+    "Fiskespöhållare (16 av 16)",
+    "Staketstolpslagare (16 av 16)",
+    "Kranskydd (16 av 16)",
+    "3D-sandbild (16 av 16)"
+   ]
+  },
+  "Gravsteinspenn": {
+   "se_prefix": "Gravsten",
+   "no_kampanjer": [
+    "Gravsteinspenn NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Gravsten": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 16
+    }
+   }
+  },
+  "IBC-tanktrekk": {
+   "se_prefix": "IBC",
+   "no_kampanjer": [
+    "IBC-tanktrekk NO"
+   ],
+   "annonser_i_no_kontot": 64,
+   "belagg": {
+    "IBC": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-ibc-video.config.mjs) fil NO_ibc_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-08-29/batch.json produkt \"IBC-tanköverdrag\" = SE-kampanjen [\"IBC-Tanköverdraget\"]"
+     ],
+     "jobb_kor": 75,
+     "jobb_alla": 90,
+     "jobb_exempel": "IBC_CO_1_1 => IBC-tanktrekk_NO_CO_1_1",
+     "suffix_overlapp": 64
+    }
+   }
+  },
+  "Infartslarm": {
+   "se_prefix": "Infartslarm",
+   "no_kampanjer": [
+    "Infartslarm NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Infartslarm": {
+     "kallor": [
+      "pipeline/waves (no-infartslarm-video.config.mjs) fil NO_infartslarm_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-16/batch.json produkt \"Infartslarm Trådlöst\" = SE-kampanjen [\"Infartslarmet Trådlöst\"]",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Inomhustofflor": {
+   "se_prefix": "Inomhustofflor",
+   "no_kampanjer": [
+    "Innetøfler NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Inomhustofflor": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-inomhustofflor-video.config.mjs) fil NO_inomhustofflor_* = SE-prefixet",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 19,
+     "suffix_overlapp": 15,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Iskrembokser": {
+   "se_prefix": "Glasspints",
+   "no_kampanjer": [
+    "Iskrembokser NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Glasspints": {
+     "kallor": [
+      "pipeline/waves (no-glasspints-video.config.mjs) fil NO_glasspints_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-06/batch.json produkt \"Glasspints med Lock 2-pack\" = SE-kampanjen [\"Glasspintsen med Lock 2-pack\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12
+    }
+   }
+  },
+  "Jetvifte": {
+   "se_prefix": null,
+   "no_kampanjer": [
+    "Jetvifte NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {},
+   "varfor_null": "ingen källa namnger SE-prefixet (varken /oversatt-tabellen, /translate-no-vågen + batch.json, factory-yaml eller samma prefix i SE-kontot); suffixen delas av många produkter och avgör aldrig",
+   "translate_no": [
+    {
+     "slug": "jetvifte",
+     "produkt": "Lövblåsare",
+     "se_kampanjer": []
+    }
+   ],
+   "suffixkandidater_ANVANDS_INTE": [
+    "Termoskydd (15 av 15)",
+    "Damasker (15 av 15)",
+    "Balteslipmaskin (15 av 15)",
+    "Gravsten (15 av 15)"
+   ]
+  },
+  "Kajakkholder": {
+   "se_prefix": "Kajakhallare",
+   "no_kampanjer": [
+    "Kajakkholder NO"
+   ],
+   "annonser_i_no_kontot": 4,
+   "belagg": {
+    "Kajakhallare": {
+     "kallor": [
+      "pipeline/waves (no-kajakhallare-video.config.mjs) fil NO_kajakhallare_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-24/batch.json produkt \"Kajakhållare\" = SE-kampanjen [\"Kajakhållaren 2-pack\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 4
+    }
+   }
+  },
+  "Kamuflasjeteip": {
+   "se_prefix": "Kamouflagetejp",
+   "no_kampanjer": [
+    "Kamuflasjeteip NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Kamouflagetejp": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "KastFang": {
+   "se_prefix": "Kastafanga",
+   "no_kampanjer": [
+    "Kast & Fang NO"
+   ],
+   "annonser_i_no_kontot": 14,
+   "belagg": {
+    "Kastafanga": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 14
+    }
+   }
+  },
+  "Kjempefotball": {
+   "se_prefix": "Fotboll",
+   "no_kampanjer": [
+    "Kjempefotball NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Fotboll": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "market-expansion/no/video-batches/2026-08-29/batch.json produkt \"Jättefotboll\" = SE-kampanjen [\"Jättefotbollen\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12
+    }
+   }
+  },
+  "Kranbeskyttelse": {
+   "se_prefix": "Kranskydd",
+   "no_kampanjer": [
+    "Kranbeskyttelse Frost NO"
+   ],
+   "annonser_i_no_kontot": 26,
+   "belagg": {
+    "Kranskydd": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-kranskydd-video.config.mjs) fil NO_kranskydd_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-08-29/batch.json produkt \"Kranskydd Frost 420D\" = SE-kampanjen [\"Kranskydd Frost 420D\"]"
+     ],
+     "jobb_kor": 15,
+     "jobb_alla": 17,
+     "jobb_exempel": "Kranskydd_PD_3_1 => Kranbeskyttelse_NO_PD_3_1",
+     "suffix_overlapp": 25
+    }
+   }
+  },
+  "KryssBolle": {
+   "se_prefix": "Luffarschack",
+   "no_kampanjer": [
+    "Kryss og Bolle NO"
+   ],
+   "annonser_i_no_kontot": 14,
+   "belagg": {
+    "Luffarschack": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 11
+    }
+   }
+  },
+  "MCtrekk": {
+   "se_prefix": "MC-Kapell",
+   "no_kampanjer": [
+    "MC-Trekk NO"
+   ],
+   "annonser_i_no_kontot": 27,
+   "belagg": {
+    "MC-Kapell": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 11,
+     "jobb_alla": 38,
+     "jobb_exempel": "MC-Kapell_RE_2_1 => MCtrekk_NO_RE_2_1",
+     "suffix_overlapp": 27
+    }
+   }
+  },
+  "Magnethylle": {
+   "se_prefix": "Magnethylla",
+   "no_kampanjer": [
+    "Magnethylle NO"
+   ],
+   "annonser_i_no_kontot": 15,
+   "belagg": {
+    "Magnethylla": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 15
+    }
+   }
+  },
+  "Magnetplater": {
+   "se_prefix": "Magnetplattor",
+   "no_kampanjer": [
+    "Magnetplater NO"
+   ],
+   "annonser_i_no_kontot": 11,
+   "belagg": {
+    "Magnetplattor": {
+     "kallor": [
+      "pipeline/waves (no-magnetplattor-video.config.mjs) fil NO_magnetplattor_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-04/batch.json produkt \"Magnetplattor i Storformat\" = SE-kampanjen [\"Magnetplattorna i Storformat\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 11
+    }
+   }
+  },
+  "Medisinboks": {
+   "se_prefix": "Medicinask",
+   "no_kampanjer": [
+    "Medisinboks NO"
+   ],
+   "annonser_i_no_kontot": 2,
+   "belagg": {
+    "Medicinask": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 2
+    }
+   }
+  },
+  "Motocentric": {
+   "se_prefix": "Motocentric Bakväska",
+   "no_kampanjer": [
+    "Motocentric NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Motocentric Bakväska": {
+     "kallor": [
+      "market-expansion/no/video-batches/2026-09-04/batch.json produkt \"Motocentric Bakväska\" = SE-kampanjen [\"Motocentric Bakväskan 37 L\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12
+    }
+   }
+  },
+  "Oppvaskstativ": {
+   "se_prefix": "Diskstall",
+   "no_kampanjer": [
+    "Oppvaskstativ NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Diskstall": {
+     "kallor": [
+      "pipeline/waves (no-diskstall-video.config.mjs) fil NO_diskstall_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-05/batch.json produkt \"Diskställ i Två Våningar\" = SE-kampanjen [\"Diskstället i Två Våningar\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "Overvåkingskamera": {
+   "se_prefix": "Overvakningskamera",
+   "no_kampanjer": [
+    "Overvåkingskamera NO"
+   ],
+   "annonser_i_no_kontot": 37,
+   "belagg": {
+    "Overvakningskamera": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-overvakningskamera-video.config.mjs) fil NO_overvakningskamera_* = SE-prefixet",
+      "factory/produkter/overvakningskameran.yaml no_annonsprefix"
+     ],
+     "jobb_kor": 24,
+     "jobb_alla": 27,
+     "jobb_exempel": "Overvakningskamera_RI_2_1 => Overvåkingskamera_NO_RI_2_1",
+     "suffix_overlapp": 34
+    }
+   }
+  },
+  "Pelsbørste": {
+   "se_prefix": "Palsborste",
+   "no_kampanjer": [
+    "Pelsbørste NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Palsborste": {
+     "kallor": [
+      "pipeline/waves (no-palsborste-video.config.mjs) fil NO_palsborste_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-04/batch.json produkt \"Pälsborste till Dyson-dammsugare\" = SE-kampanjen [\"Pälsborsten till Dyson-dammsugare\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "Plysjtofler": {
+   "se_prefix": "Plyschtofflor",
+   "no_kampanjer": [
+    "Plysjtøfler NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Plyschtofflor": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 16
+    }
+   }
+  },
+  "Sandbilde": {
+   "se_prefix": "3D-sandbild",
+   "no_kampanjer": [
+    "Sandbilde NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "3D-sandbild": {
+     "kallor": [
+      "market-expansion/no/video-batches/2026-09-06/batch.json produkt \"3D-sandbild\" = SE-kampanjen [\"3D-sandbilden\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 12
+    }
+   }
+  },
+  "Solcellealarm": {
+   "se_prefix": "Solcellslarm",
+   "no_kampanjer": [
+    "Solcellealarm 2-pk NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Solcellslarm": {
+     "kallor": [
+      "pipeline/waves (no-solcellslarm-video.config.mjs) fil NO_solcellslarm_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-12/batch.json produkt \"Solcellslarm 2-pack\" = SE-kampanjen [\"Solcellslarmet 2-pack\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 15
+    }
+   }
+  },
+  "Solcellslampa": {
+   "se_prefix": "Solcellslampa",
+   "no_kampanjer": [
+    "Solcellslampa NO"
+   ],
+   "annonser_i_no_kontot": 14,
+   "belagg": {
+    "Solcellslampa": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-solcellslampa-video.config.mjs) fil NO_solcellslampa_* = SE-prefixet",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 8,
+     "suffix_overlapp": 14,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Sotarset": {
+   "se_prefix": "Sotarset",
+   "no_kampanjer": [
+    "Feiesett NO"
+   ],
+   "annonser_i_no_kontot": 24,
+   "belagg": {
+    "Sotarset": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-sotarset-video.config.mjs) fil NO_sotarset_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-21/batch.json produkt \"Sotarset Böjliga Stänger\" = SE-kampanjen [\"Sotarsetet med Böjliga Stänger\"]",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 18,
+     "jobb_alla": 18,
+     "jobb_exempel": "Sotarset_PD_2_1 => Sotarset_NO_PD_2_1",
+     "suffix_overlapp": 23,
+     "samma_prefix": true
+    }
+   }
+  },
+  "Spikkesett": {
+   "se_prefix": "Taljset",
+   "no_kampanjer": [
+    "Spikkesett NO"
+   ],
+   "annonser_i_no_kontot": 1,
+   "belagg": {
+    "Taljset": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-taljset-video.config.mjs) fil NO_taljset_* = SE-prefixet"
+     ],
+     "jobb_kor": 14,
+     "jobb_alla": 14,
+     "jobb_exempel": "Taljset_BOF_1_1 => Spikkesett_NO_BOF_1_1",
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "Stigestotte": {
+   "se_prefix": "Stegstod",
+   "no_kampanjer": [
+    "Stigestøtte 2-pk NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Stegstod": {
+     "kallor": [
+      "pipeline/waves (no-stegstod-video.config.mjs) fil NO_stegstod_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-11/batch.json produkt \"Stegstöd 2-pack\" = SE-kampanjen [\"Stegstödet 2-pack\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 11
+    }
+   }
+  },
+  "Sykkelshorts": {
+   "se_prefix": "Cykelshorts",
+   "no_kampanjer": [
+    "Sykkelshorts NO"
+   ],
+   "annonser_i_no_kontot": 14,
+   "belagg": {
+    "Cykelshorts": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-cykelshorts-video.config.mjs) fil NO_cykelshorts_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-08-29/batch.json produkt \"Cykelshorts Herr\" = SE-kampanjen [\"Cykelshorts Herr\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 13
+    }
+   }
+  },
+  "Sysett": {
+   "se_prefix": "Somnadskit",
+   "no_kampanjer": [
+    "Sysett NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Somnadskit": {
+     "kallor": [
+      "market-expansion/no/produkter.json"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 11
+    }
+   }
+  },
+  "Takovertrekk": {
+   "se_prefix": "Takoverdrag",
+   "no_kampanjer": [
+    "Takovertrekk Campingvogn NO"
+   ],
+   "annonser_i_no_kontot": 67,
+   "belagg": {
+    "Takoverdrag": {
+     "kallor": [
+      "market-expansion/no/produkter.json",
+      "pipeline/waves (no-takoverdrag-video.config.mjs) fil NO_takoverdrag_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-11/batch.json produkt \"Taköverdrag Husvagn\" = SE-kampanjen [\"Taköverdraget för Husvagn 6,5 × 3 m\"]"
+     ],
+     "jobb_kor": 111,
+     "jobb_alla": 111,
+     "jobb_exempel": "Takoverdrag_BOF_1_1 => Takovertrekk_NO_BOF_1_1",
+     "suffix_overlapp": 55
+    }
+   }
+  },
+  "Ukedosett": {
+   "se_prefix": "Veckodosett",
+   "no_kampanjer": [
+    "Ukedosett NO"
+   ],
+   "annonser_i_no_kontot": 12,
+   "belagg": {
+    "Veckodosett": {
+     "kallor": [
+      "pipeline/waves (no-veckodosett-video.config.mjs) fil NO_veckodosett_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-05/batch.json produkt \"Veckodosett 21 Fack\" = SE-kampanjen [\"Veckodosetten 21 Fack\"]"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "Utekattehus": {
+   "se_prefix": "Utekattkoja",
+   "no_kampanjer": [
+    "Isolert Utekattehus NO"
+   ],
+   "annonser_i_no_kontot": 11,
+   "belagg": {
+    "Utekattkoja": {
+     "kallor": [
+      "pipeline/waves (no-utekattkoja-video.config.mjs) fil NO_utekattkoja_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-11/batch.json produkt \"Isolerad Utekattkoja\" = SE-kampanjen [\"Isolerade Utekattkojan\"]",
+      "factory/produkter/utekattkojan.yaml no_annonsprefix"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 0
+    }
+   }
+  },
+  "Varmesete": {
+   "se_prefix": "Varmesits",
+   "no_kampanjer": [
+    "Varmesete NO"
+   ],
+   "annonser_i_no_kontot": 1,
+   "belagg": {
+    "Varmesits": {
+     "kallor": [
+      "pipeline/waves (no-varmesits-video.config.mjs) fil NO_varmesits_* = SE-prefixet"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 1
+    }
+   }
+  },
+  "Vedklyvborr": {
+   "se_prefix": "Vedklyvborr",
+   "no_kampanjer": [
+    "Vedkløyverbor NO"
+   ],
+   "annonser_i_no_kontot": 16,
+   "belagg": {
+    "Vedklyvborr": {
+     "kallor": [
+      "pipeline/waves (no-vedklyvborr-video.config.mjs) fil NO_vedklyvborr_* = SE-prefixet",
+      "market-expansion/no/video-batches/2026-09-19/batch.json produkt \"Vedklyvborr Ø32 mm\" = SE-kampanjen [\"Vedklyvborren Ø32 mm\"]",
+      "samma prefix i SE-kontot"
+     ],
+     "jobb_kor": 0,
+     "jobb_alla": 0,
+     "suffix_overlapp": 16,
+     "samma_prefix": true
+    }
+   }
+  }
+ }
+}

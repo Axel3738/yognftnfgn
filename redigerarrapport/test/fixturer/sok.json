@@ -1,0 +1,22 @@
+{
+  "comment": "Testfixtur: det tools/notion-kalla.mjs hittaHubbar() skulle ge, FÖRE dess OPS-/andra-verksamheter-spärr — alltså alla databaser integrationen ser. Titlarna är de riktiga formerna från sökningen 2026-10-02, id:n är testvärden.",
+  "hubbar": [
+    { "id": "bbb10000-0000-4000-8000-000000000001", "titel": "BÄVER Taköverdraget för Husvagn", "url": "https://app.notion.com/x1", "kalla": "sök" },
+    { "id": "aaa10000-0000-4000-8000-000000000002", "titel": "Dont work here Surveillance Camera creative hub", "url": "https://app.notion.com/x2", "kalla": "sök" },
+    { "id": "aaa10000-0000-4000-8000-000000000003", "titel": "Carashell Taköverdrag creative hub", "url": "https://app.notion.com/x3", "kalla": "sök" },
+    { "id": "aaa10000-0000-4000-8000-000000000004", "titel": "Matstrumpor creative hub", "url": "https://app.notion.com/x4", "kalla": "sök" },
+    { "id": "aaa10000-0000-4000-8000-000000000005", "titel": "Creative Hub master", "url": "https://app.notion.com/x5", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000006", "titel": "Customer support bäverbutiken", "url": "https://app.notion.com/x6", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000007", "titel": "Product test center SE BÄVER", "url": "https://app.notion.com/x7", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000008", "titel": "MALL Creative hub MALL", "url": "https://app.notion.com/x8", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000009", "titel": "Bäverkoppling.se", "url": "https://app.notion.com/x9", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000010", "titel": "", "url": "https://app.notion.com/x10", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000011", "titel": "Matstrumpor Growth Guide", "url": "https://app.notion.com/x11", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000012", "titel": "Annonsidéer", "url": "https://app.notion.com/x12", "kalla": "sök" },
+    { "id": "aaa10000-0000-4000-8000-000000000001", "titel": "Trimmer belt creative hub", "url": "https://app.notion.com/x13", "kalla": "products.json" },
+    { "id": "bbb10000-0000-4000-8000-000000000014", "titel": "Ny okänd databas", "url": "https://app.notion.com/x14", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000015", "titel": "Belt grinder creative hub", "url": "https://app.notion.com/x15", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000016", "titel": "kundsupport Grillkliniken", "url": "https://app.notion.com/x16", "kalla": "sök" },
+    { "id": "bbb10000-0000-4000-8000-000000000017", "titel": "ADVENTLANE Product test center", "url": "https://app.notion.com/x17", "kalla": "sök" }
+  ]
+}
