@@ -4882,7 +4882,12 @@
         "annonsNamn": "Golfkalender_NO_FD_4_4",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
         "prefix": "Golfkalender",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527709510233",
+        "creativeId": "1412803510254075",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -4948,7 +4953,12 @@
         "annonsNamn": "Golfkalender_NO_FD_4_3",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
         "prefix": "Golfkalender",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527713460233",
+        "creativeId": "4542213032678896",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -5014,7 +5024,12 @@
         "annonsNamn": "Golfkalender_NO_FD_4_2",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
         "prefix": "Golfkalender",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527716750233",
+        "creativeId": "2867266413645886",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -5080,7 +5095,12 @@
         "annonsNamn": "Golfkalender_NO_FD_4_1",
         "link": "https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor",
         "prefix": "Golfkalender",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527802800233",
+        "creativeId": "3044975389178897",
+        "adsetId": "120252515248010233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "619.00",
@@ -5146,7 +5166,12 @@
         "annonsNamn": "Spikkesett_NO_FD_4_4",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527807790233",
+        "creativeId": "1427707792653214",
+        "adsetId": "120252502468340233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -5212,7 +5237,12 @@
         "annonsNamn": "Spikkesett_NO_FD_4_3",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527810500233",
+        "creativeId": "1617009376541935",
+        "adsetId": "120252502468340233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -5278,7 +5308,12 @@
         "annonsNamn": "Spikkesett_NO_FD_4_2",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527883470233",
+        "creativeId": "971960419283531",
+        "adsetId": "120252502468340233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
@@ -5344,7 +5379,12 @@
         "annonsNamn": "Spikkesett_NO_FD_4_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252527891750233",
+        "creativeId": "1398657708966774",
+        "adsetId": "120252502468340233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
