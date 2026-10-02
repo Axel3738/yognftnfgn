@@ -38,8 +38,8 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 
 ## ☀️ Kvar för Axel
 
-1. **Nathalie:** skicka meddelandet (utskick 0 i `factory/ugc/utskick/2026-10-01-matstrumpor.md`), om det inte redan gått.
-2. **Produktsidan:** när förslaget kommer (före/efter), säg ok eller ändra. Inget går live innan dess.
+1. ✅ **Nathalie, Sofie och creative strategen:** Axel skickade svaren och WhatsApp-texten 2026-10-02 ("Jag har skickat allt"). Väntar på Nathalies pris för två videor, Sofies pris för tre och strategens feedback på brieferna.
+2. ✅ **Produktsidan:** Fable vald, omskriven utan statistik efter Axels dom, live på fjorton språk 2026-10-02.
 3. ✅ Growth Guide-sidan skapad och integrationen inbjuden (Axel 2026-10-02 förmiddag); databasen byggd.
 4. ✅ **Ätpinnarna ligger i alla lådor** (Axels svar 2026-10-02: "Ätpinnar ligger egentligen i alla lådor. Men jag har dom som en gratis gåva, men de ingår i alla lådor"). "Ätpinnar i trä ingår" får stå i copyn; gåvoraden i kassan är bara hur de bokförs.
 
@@ -90,9 +90,84 @@ Ur Evolve-kursen (A10 UGC, A3 Research). Allt på engelska, en SOP per rad innan
 
 ---
 
-## 🔧 Nästa bygg (kvar av de fem läckorna)
+## 🔧 Nästa bygg (kvar av de fem läckorna) — med en prompt per bygge för en ny session
 
-1. **Svälten** (läcka 2): hälften av allt vi laddat upp har aldrig fått leverans. Beslutat 2026-10-02: DCT 3:2:2 (ROUTING C). Bygget är nästa.
-2. **Research in i briefen** (läcka 3): 0 av 12 briefer kom ur kundernas egna ord. Kungen ska läsa enkäten, kommentarerna och recensionerna innan den briefar.
-3. ✅ **Copyreglerna ur Evolves prompter** (läcka 5) inskrivna 2026-10-02, Axels val A.
-4. ✅ Chadbot-frågorna ställda och besvarade 2026-10-01 (`CHADBOT-SVAR-2026-10-02.md`).
+Axels fråga 2026-10-02: "vad har vi ens lärt oss från allt och från Evolve? Vi har ju inte
+implementerat nått i några rutiner". Svaret, mätt mot repot:
+
+**Det som ÄR i rutinerna i dag** (kör utan Axel, varje rond 07:00 i `/matstrumporkungen`):
+hook rate och hold rate räknade som Evolve (`meta.mjs`), etiketterna med vecka 2–3 och
+breakthrough-kravet (`etikett.mjs`), namnen som bär iterationskedjan (`namn.mjs`), arkivet och
+Growth Guide i Notion skrivna av koden varje rond (`kor.mjs --arkiv`, `growthguide.mjs`),
+playbooken och felkatalogen i kungens briefsteg, utlandets kampanjer med rätt startdag, och
+copyreglerna ur Evolves prompter som varje briefskrivare och `/briefgranskning` läser
+(`docs/copy-regler.md`: aldrig ett märke som referens, aldrig en faktarad först i en video,
+aldrig statistik på produktsidan). Produktsidan säger samma sak som vinnarvideon på fjorton språk.
+
+**Det som INTE är i rutinerna än** är tre byggen. Varje prompt nedan är skriven för en NY
+session på repot (CLAUDE.md läses automatiskt); klistra in den som första meddelande.
+
+### Bygge 1: 3:2:2 i uppladdaren och kungen (svälten, läcka 2)
+
+```
+Bygg om Matstrumpors annonsstruktur till Evolves 3:2:2, Axels beslut ROUTING C 2026-10-02.
+Läs först products/matstrumpor/EVOLVE-PLAN.md (beslut 2), docs/os/evolve/ITERATIONS-PLAYBOOK.md,
+docs/os/evolve/KURSTRAD.md (lektionen "How To Set Up a 3:2:2 Campaign" + Media Buying Structure
+2026, läs dem med tools/skool/lektioner.mjs) och products/matstrumpor/CHADBOT-SVAR-2026-10-02.md.
+Reglerna som gäller: EN CBO med ett Champions-adset och högst 4 testadsets (max 5 totalt under
+några hundra dollar/dag); ett koncept = ett adset; tre vanliga annonser per adset (samma koncept,
+tre hookar), varje annons med 2 rubriker + 2 primärtexter; bild och video aldrig i samma adset;
+varje adset ska rymma 3 × CPA per dag (break-even-CPA 308 kr ⇒ ~925 kr); test 7 dagar, max 14;
+döm och stäng på ADSET-nivå, aldrig per annons; vinnare = adsetet tar majoriteten av spenden vid
+KPI eller kampanjens ROAS förbättras; flytt till Champions vid 20–30 % budgetandel. Ordet DCT finns
+inte i kursen — inga dynamic creative-adsets.
+Gör: (1) /matstrumpor (.claude/commands/matstrumpor.md + matstrumpor/kor.mjs): en ny batch från
+hubbens To be Reviewed blir ett testadset per koncept med tre hookvarianter som tre annonser,
+2 rubriker + 2 texter per annons ur briefen; vägra ett sjätte adset; logga adset-id i loggen och
+arkivet. Uppladdningen går via Adsmanager-MCP:n som i dag. (2) /matstrumporkungen
+(.claude/commands/matstrumporkungen.md + matstrumpor/etikett.mjs, dom.mjs): domen per adset
+(7-dagarsregeln, stäng adset, aldrig annons), flyttförslaget till Champions som FORSLAG-rad i
+tabellen till Axel (kungen skalar ALDRIG själv, Axels beslut 2026-09-21), och Growth Guide får
+kolumnen Adset. (3) Tester för domen och adsetvalet, torrkörning mot kontot nya kungen
+730973156224390 (läs-bart), inget skapas i Meta förrän Axel säger kör. Rapportera på svenska i
+Axels format (inga tabeller, inga filnamn, inga siffror i prosan, hans uppgifter sist numrerade),
+committa, pusha, merga till main.
+```
+
+### Bygge 2: ATC-graden och kundernas ord in i rutinen (läcka 3)
+
+```
+Bygg in två saker i /matstrumporkungen, enligt products/matstrumpor/EVOLVE-PLAN.md ("Mitt" och
+"Nästa bygg") och products/matstrumpor/CHADBOT-SVAR-2026-10-02.md.
+(1) ATC-graden: matstrumpor/kor.mjs --hamta läser add_to_cart och landing_page_view per annons ur
+Meta (last_14d), domen skriver ATC-procent för varje annons med spend över grinden, tröskeln är
+Chadbots: under 8 % = glapp mellan annons och sida (föreslå sidändring, ingen ny annons), 8–12 % =
+friktion på sidan, över 12 % = sidan håller. Facit i dag: Nathalies vinnare 5,5 %, erbjudandebilden
+d3 12,9 % på samma sida (2026-09-30). Produktsidan byttes 2026-10-02 — jämför före och efter i
+rapporten och i Growth Guide (ny kolumn ATC).
+(2) Research in i briefen: innan kungen skriver en brief ska den läsa kundernas egna ord:
+köparenkäten (enkat/, INBOX.ENKAT — lösenordet KUNDTJANST_MAIL_PASS_MATSTRUMPOR finns bara i
+rutinens miljö, så bygg läsningen i rutinen, inte i sessionen), annonskommentarerna
+(kommentarer/leads.md, kalla=voc) och recensionerna (Judge.me + Trustpilot, matstrumpor/trustpilot/).
+Varje brief ska peka på minst ett citat eller mönster därifrån, annars märks den som gissning
+(CLAUDE.md "Så lär sig systemet"). Produktsidans faktablad från 2026-10-02 ligger i
+products/matstrumpor/produktsida/2026-10-02-v2-med-ny-information.json som exempel på formen.
+Tester utan nät, torrkörning, rapport i Axels format, committa, pusha, merga till main.
+```
+
+### Bygge 3: samma rättning till Bäverbutiken (hook/hold och etiketterna)
+
+```
+Porta Matstrumpors Evolve-rättningar till Bäverbutikens Skalnings kung. Läs
+products/matstrumpor/EVOLVE-PLAN.md (Klart 1 och 4), matstrumpor/meta.mjs (hook rate = 3-sekunders-
+visningar ÷ visningar, hold rate = ThruPlay ÷ visningar) och matstrumpor/etikett.mjs (etiketten
+kan bli bättre vecka 2–3, breakthrough kräver att kampanjens spend växte 10 % mot veckan före,
+budgethöjningar för hand flaggas). Lägg samma mått och samma etikettregler i agent/etikett.mjs och
+det Skalnings kungen läser (.claude/commands/skalningskungen.md), utan att ändra dess
+budgetbeslut eller trösklar — bara måtten och etiketterna. Kontot är MagiBorsten 1867947880635861,
+läs-bart under bygget. Kör de befintliga testerna, lägg till tester för de nya måtten, torrkör mot
+kontot, rapport i Axels format, committa, pusha, merga till main.
+```
+
+Sedan tidigare (kvar): ✅ copyreglerna ur Evolves prompter (läcka 5) inskrivna 2026-10-02; ✅
+Chadbot-frågorna besvarade (`CHADBOT-SVAR-2026-10-02.md`).

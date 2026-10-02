@@ -23,7 +23,7 @@ Briefen de får när de sagt ja: https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5C
 
 Hej Nathalie! Axel här. Din video är vår bästa någonsin, den drog in två av tre köp i hela kampanjen första veckan. Jag vill inte göra en video till med dig, jag vill göra flera, löpande, hemma hos dig som förut. Samma sak som funkade: någon som öppnar lådan utan att veta vad som är i. Är du sugen på att ta dig an det? Då hör jag av mig med detaljerna.
 
-### Nathalies svar 2026-10-01 22:01 och Axels svar (utkast 2026-10-02, skickas av Axel själv)
+### Nathalies svar 2026-10-01 22:01 och Axels svar — ✅ SKICKAT av Axel 2026-10-02 (hans ord: "Jag har skickat allt")
 
 Nathalie svarade: "Kul att höra! Amen självklart vill jag höra mer om dina tankar
 kring ett fortsatt samarbete!" Svaret nedan ger henne två videor nu som ett paket
@@ -53,7 +53,7 @@ Axel
 
 Hej Sofie! Axel här. Dina videor höll kvar tittarna längst av allt vi har, så jag vill göra en runda till med dig. Den här gången med manus: vårt bästa manus ord för ord, plus en ny version med en annan öppning. Tre korta videor hemma hos dig som förut, och du får alla fyra lådorna. Är du sugen på att ta dig an det? Då skickar jag manuset direkt.
 
-### Sofies svar 2026-10-02 och Axels svar (utkast, skickas av Axel själv)
+### Sofies svar 2026-10-02 och Axels svar — ✅ SKICKAT av Axel 2026-10-02 (kreatörssidan delad av honom samtidigt)
 
 Sofie svarade: sugen på en runda till, vill ha manuset, och frågar hur länge vi vill
 använda materialet i annonser så hon kan ge en prisbild. Rättigheterna är Axels
@@ -142,7 +142,7 @@ reaktionsslutet. Vill Axel ha två tagningar på samma manus: Sofie som nummer t
 (håller tittarna längst i ensamt tal, publik kvinnor 40+ = "present till en
 kompis"), men då får hon fyra videor i stället för tre.
 
-## WhatsApp till creative strategen (engelska, Axels beställning 2026-10-02: "så han kan ge sina åsikter")
+## WhatsApp till creative strategen — ✅ SKICKAT av Axel 2026-10-02 (engelska, hans beställning: "så han kan ge sina åsikter"; svaret väntas)
 
 ```
 Hi! Quick one. We are ordering new UGC for the sushi socks and I want your eyes on the briefs before the creators film. Everything is on three pages:
