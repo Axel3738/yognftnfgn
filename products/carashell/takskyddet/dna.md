@@ -1388,3 +1388,58 @@ tidigast **6 oktober**.
 vecka står still — fönstret bär fortfarande de tre värsta dygnen, och
 kronan-för-kronan har alltså inte blivit bättre än den var. Det syns först när
 28–30/9 rullat ut.
+
+## Nattvakten 2026-10-03 — Sverige är avstängt, och nu syns det: Danmark är produktens bästa marknad
+
+**Ronden gjorde ingenting, och det är rätt.** Alla tre svenska kampanjerna står
+**PAUSED/PAUSED**, pausade för hand **2026-10-02 mellan 16:45:28 och 16:53:30
+CEST** (mätt på kampanjernas `updated_time`, inte gissat). Ingen session rörde
+dem — ronden skrev 0 rader och lämnade dem som de står, enligt regeln att
+PAUSED med spend är ett beslut. 122 annonser: 16 PAUSED, 106 `CAMPAIGN_PAUSED`,
+**0 ACTIVE**. Inget spenderar på den här produkten i Sverige just nu.
+
+📊 **Hela produkten läst över alla marknader samma natt** (torr läsning, inget
+skrivet; vinstbidrag = `spend × (ROAS ÷ 1,63 − 1)`, break-even ur produktfilen):
+
+| Kampanj | Läge | 7d spend | Köp | ROAS | CPA | AOV | Vinstbidrag 7d |
+|---|---|---|---|---|---|---|---|
+| **DK** Taköverdrag | ACTIVE 2 000 kr/d | 13 879 kr | 25 | **2,76** | 555 kr | 1 535 kr | **+9 658 kr** |
+| **NO** Takovertrekket | ACTIVE 4 000 kr/d | 27 238 kr | 37 | **1,78** | 736 kr | 1 313 kr | **+2 565 kr** |
+| SE LISTICLE | PAUSED | 16 138 kr | 21 | 1,67 | 768 kr | 1 285 kr | +415 kr |
+| SE NYA LISTICLE | PAUSED | 8 042 kr | 8 | 1,32 | 1 005 kr | 1 328 kr | −1 525 kr |
+| SE huvudkampanjen | PAUSED | 27 577 kr | 26 | 1,21 | 1 061 kr | 1 281 kr | **−7 141 kr** |
+
+→ **Pausningen träffade exakt de tre som förlorade pengar** (−8 251 kr
+tillsammans), och lämnade de två som tjänar (+12 223 kr). LISTICLE låg
+marginellt positivt (+415) och stängdes med — det är den enda av de tre som
+hade kunnat argumenteras för.
+→ ⛔ **Danmark är produktens bästa marknad och ingen vaktar den.** Den kör på
+HALVA Norges budget med 1,55 gånger ROAS:en. `annonsmarknader` är `SE,NO` (+US
+på UK-kontot), budgetronden tar inte ens flaggan `--marknad DK` (usage säger
+`SE|NO|ALLA`), så ingen rutin har någonsin dömt en dansk annons eller rört den
+budgeten. Det är den mest uppenbara pengaskillnaden i hela serien, och den
+ligger i ett blint fält.
+⚠️ **Norges 4 000 kr stod oförändrade sedan 23/9, men Danmarks budget är 2 000 kr —
+inte 4 000 som den här filen skrivit i en vecka.** Den uppgiften kom ur en
+mätning 23/9 och har citerats vidare utan att läsas om. Mät, citera inte.
+
+⚠️ **Kill-domarna på NORSKA annonser går inte att lita på som de räknas i dag.**
+Torrläsningen av NO föreslog fem pausningar och en sänkning 4 000 → 2 800 kr,
+alla mot break-even-CPA **693 kr** — och det talet är Sveriges, räknat på AOV
+1 130 kr. Norges uppmätta AOV är **1 313 kr**, vilket ger break-even-CPA
+≈ 806 kr; `NO_GT_105_H1` (14d-CPA 709) och `NO_LI_102_1` (713) ligger alltså
+UNDER sin marknads break-even och är inga förlorare. **Ingen av dem rördes** —
+ronden kör bara SE. → **Instruktion:** inga NO- eller DK-domar förrän
+`ekonomi.marknadspriser` bär break-even per marknad. Tills dess är ROAS-linjen
+(1,63) den enda jämförbara över marknaderna, inte CPA-linjen.
+
+**Dygnen:** 1/10 6 945 kr / 3 köp / ROAS 0,49 (−4 866 kr) · **2/10 4 100 kr /
+7 köp / ROAS 2,04 ⇒ +751 kr** — ett halvt dygn, eftersom allt stängdes 16:4x,
+och LISTICLE låg på 3,17 den sista förmiddagen. Det är andra lönsamma dygnet på
+tio, och det kom dagen det stängdes. **Säg inget om det:** samma fil har tre
+gånger fått ta tillbaka en slutsats byggd på ett dygn, och ett halvt dygn är
+sämre underlag än ett helt.
+
+**7 dygn SE (nu avslutat):** 51 756 kr, 55 köp, ROAS 1,37, CPA 941 kr ⇒
+vinstbidrag **−13 641 kr**. Serien från toppen: +12 712 → −9 693 → −10 179 →
+−16 864 → −16 205 → −16 028 → −13 641. Fönstret töms nu av sig själv.
