@@ -882,7 +882,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_17_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527521810233",
+        "creativeId": "1442527137303016",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -946,7 +951,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_14_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_MEDIA"
+        "status": "ACTIVE",
+        "annonsId": "120252527526040233",
+        "creativeId": "1482980507005069",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
