@@ -170,6 +170,13 @@ test('ett koncept som redan är byggt byggs aldrig igen: adsetet i kampanjen, AD
   assert.match(a.koncept[0].skal.join(' '), /PAUSED/);
   const b = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_T083_gift_video', koncept: '083', datum: '2026-10-05' }] });
   assert.equal(b.koncept[0].status, 'stopp');
+  // Bara loggat: förra bygget publicerades inte — eget läge, aldrig "redan byggt" (Approved).
+  assert.equal(b.koncept[0].utkast_opublicerat, true);
+  assert.notEqual(b.koncept[0].redan_byggd, true);
+  assert.match(b.koncept[0].skal.join(' '), /--adset-kasserat 9/);
+  // Kvitterat som kasserat ⇒ konceptet byggs igen.
+  const kass = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'ADSET_SKAPAD', adset_id: '9', adset_namn: 'MATSTRUMP_T083_gift_video', koncept: '083', datum: '2026-10-05' }, { kod: 'ADSET_KASSERAT', adset_id: '9', datum: '2026-10-05' }] });
+  assert.notEqual(kass.koncept[0].status, 'stopp');
   const c = planeraKoncept(klara, KONFIG, { kort: kortFor(namn), lage: LAGE, logg: [{ kod: 'UPPLADDAD', annons: namn[1], annons_id: '77' }] });
   assert.equal(c.koncept[0].status, 'stopp');
   assert.equal(c.att_bygga.length, 0);

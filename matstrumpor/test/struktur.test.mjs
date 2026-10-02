@@ -189,3 +189,11 @@ test('kontrolleraAdset: ett avstängt adset, en pausad annons, fel pixel eller e
   assert.match(kontrolleraAdset({ adset: { ...adset, promoted_object: { pixel_id: '1554276343018184' } }, annonser: tre }, KONFIG).fel.join(' '), /pixel/);
   assert.match(kontrolleraAdset({ adset, annonser: [tre[0], tre[1], lasAd('x')] }, KONFIG, { forvantat: plan }).fel.join(' '), /c: planens annons finns inte/);
 });
+
+test('sidNyckel: en Notion-länk med ?pvs=4 eller #block ger sidans id, inte fel 32 tecken', async () => {
+  const { sidNyckel } = await import('../struktur.mjs');
+  const id = '3a7270ab908c80aabbccddeeff001122';
+  assert.equal(sidNyckel(`https://www.notion.so/Rad-${id}?pvs=4`), id);
+  assert.equal(sidNyckel(`https://www.notion.so/Rad-${id}#0123456789abcdef0123456789abcdef`), id);
+  assert.equal(sidNyckel('3a7270ab-908c-80aa-bbcc-ddeeff001122'), id);
+});

@@ -117,12 +117,20 @@ export function planeraKoncept(klara, konfig, { kort = new Map(), lage = null, g
   // redan är uppladdad, byggs ALDRIG igen: ett andra adset med samma creatives
   // tar en plats till och dubblerar annonserna.
   const iKampanjen = new Map((lage?.adsets ?? []).filter((a) => tolkaAdsetNamn(a.namn)).map((a) => [a.namn, a]));
-  const skapade = (logg ?? []).filter((r) => r.kod === 'ADSET_SKAPAD');
+  const kasserade = new Set((logg ?? []).filter((r) => r.kod === 'ADSET_KASSERAT').map((r) => String(r.adset_id)));
+  const skapade = (logg ?? []).filter((r) => r.kod === 'ADSET_SKAPAD' && !kasserade.has(String(r.adset_id)));
   const uppe = new Map((logg ?? []).filter((r) => r.kod === 'UPPLADDAD').map((r) => [String(r.annons).toLowerCase(), r]));
   koncept = koncept.map((k) => {
     const finns = k.adset_namn ? iKampanjen.get(k.adset_namn) : null;
     const loggat = skapade.find((r) => (k.adset_namn && r.adset_namn === k.adset_namn) || String(r.koncept ?? '') === k.nyckel);
     const redanUppe = k.annonser.filter((a) => uppe.has(a.namn.toLowerCase()));
+    // Bara loggat, inget i kampanjen och inget uppladdat: förra bygget avbröts
+    // (5b/5c publicerade inget). Det är inte "redan byggt" — raderna får ALDRIG
+    // Approved — men bygget stannar tills utkastet kasserats och kvitterats med
+    // --adset-kasserat, annars blir det två utkast med samma namn.
+    if (loggat && !finns && !redanUppe.length) {
+      return { ...k, status: 'stopp', utkast_opublicerat: true, skal: [...k.skal, `förra bygget publicerades inte: ADSET_SKAPAD ${loggat.adset_namn} (${loggat.adset_id}) ${loggat.datum} i loggen, men adsetet syns inte i kampanjen och inget är uppladdat. Väntar det på Axels publicering (förra rapporten säger det): vänta. Avbröts bygget: Axel kasserar utkastet och sessionen kör --adset-kasserat ${loggat.adset_id}. Raderna stannar i kön (aldrig Approved)`] };
+    }
     if (finns || loggat || redanUppe.length) {
       return { ...k, status: 'stopp', redan_byggd: true, skal: [...k.skal, `redan byggt: ${finns ? `adsetet ${finns.namn} (${finns.id}, ${finns.effective_status}) finns i kampanjen` : loggat ? `ADSET_SKAPAD ${loggat.adset_namn} (${loggat.adset_id}) ${loggat.datum} i loggen` : ''}${redanUppe.length ? `${finns || loggat ? ' · ' : ''}${redanUppe.map((a) => `${a.namn} är uppladdad (${uppe.get(a.namn.toLowerCase()).annons_id})`).join(', ')}` : ''} — byggs aldrig igen; raderna ska ut ur kön (Approved, eller kommentar + Draft om något saknas)`] };
     }

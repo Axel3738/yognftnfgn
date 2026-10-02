@@ -153,6 +153,11 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
       // veckan, så "bra" betyder köp över break-even inom testet, eller ett långt
       // snitt över break-even för ett adset äldre än testtiden. Ett adset som
       // svälter fungerar inte NU — skyddet för "befintliga som fungerar" gäller inte.
+      // Regel 11 (Axels beslut 2026-09-20): ingen spend på sju dygn är Metas dom
+      // INGEN_LEVERANS. Ett gammalt snitt räddar inte platsen — adsetet levererar
+      // inte och tar ändå en plats i taket.
+      const ingenLev = Number(grindar?.ingen_leverans_spend_sek ?? 10);
+      if ((Number(a.spend_sek) || 0) < ingenLev) return ut(DOM.STANG, `${a.spend_sek ?? 0} kr på ${r.test_dagar} dagar — under ${ingenLev} kr: Meta levererar inte (regel 11, INGEN_LEVERANS)${lt ? `; ${zoomTxt}, men ett gammalt snitt räddar inte platsen` : ''}.`, { svalt: true });
       if (ko === 0 && ((a.kop >= 1 && kpi === true && dagar <= r.test_max_dagar) || (lang && langtOk))) return ut(DOM.LAT_STA, `under grinden (${a.spend_sek} kr, ${a.kop} köp)${lang && langtOk ? `, men ${zoomTxt} ≥ ${beTxt}` : ''} — ingen dom; står bara för att inget koncept väntar på platsen.`);
       return ut(DOM.STANG, `${dagar} dagar, ${a.spend_sek} kr och ${a.kop} köp — under grinden ${grindar.signifikans_spend_sek} kr / ${grindar.signifikans_kop} köp${lt ? ` (${zoomTxt})` : ''}. Meta gav den ingen spend: svält är Metas dom (kursen: "not getting much spend after 7 days"). Ingen dom över idén, bara över platsen.`, { svalt: true });
     }
@@ -160,10 +165,20 @@ export function domAdset(adset, { kampanjserie = [], idag, breakEven = null, gri
       const majoritet = andel >= r.majoritet_andel;
       const vinnare = majoritet ? forbattrad !== false : forbattrad === true;
       const mal = malFor(adset, konfig);
+      // Kopian i Champions letas FÖRE kravet på en aktiv kandidat: när vinnaren
+      // flyttats och originalet pausats är originalet inte längre en kandidat,
+      // men flytten är gjord. Bland adsetets annonser med spend, vilken status som helst.
+      const egna = (annonser ?? []).filter((x) => String(x.adset_id ?? '') === String(adset.id) && (Number(x.spend_sek) || 0) > 0);
+      const kopior = mal.id ? (annonser ?? []).filter((x) => String(x.adset_id ?? '') === String(mal.id) && egna.some((e) => normNamn(e.namn) === normNamn(x.namn))) : [];
+      const kopia = kopior.find((x) => (Number(x.spend_sek) || 0) > 0) ?? kopior[0] ?? null;
+      if (kopia && (Number(kopia.spend_sek) || 0) > 0) {
+        // Ett gammalt adset som fungerar stängs aldrig (kursen), inte ens när
+        // dess vinnare redan levererar i Champions.
+        if (roll === 'gammal') return ut(DOM.LAT_STA, `${kopia.namn} levererar redan i ${mal.namn} (${kopia.spend_sek} kr på 14 dagar); adsetet är från före 3:2:2 och fungerar (${roasTxt} ≥ ${beTxt}) — kursen: stäng aldrig av befintliga annonser som fungerar. Räknas mot taket.`);
+        return ut(DOM.STANG, `vinnaren ${kopia.namn} levererar redan i ${mal.namn} (${kopia.spend_sek} kr på 14 dagar) — testadsetet har gjort sitt och lämnar platsen.`, { flyttad: true });
+      }
+      if (kopia) return ut(DOM.FLYTTAD, `vinnaren ${kopia.namn} ligger i ${mal.namn} men har inte levererat än — testadsetet står kvar tills kopian levererar.`);
       if (!kandidat) return ut(DOM.VANTA, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}), men ingen enskild annons är bevisad än (aktiv, över grinden, över break-even, minst ${pct(r.flytt_andel)} av adsetets spend) — Chadbot ur kursen: flytta aldrig en annons med liten spend och hög ROAS.`);
-      const kopia = (annonser ?? []).find((x) => mal.id && String(x.adset_id ?? '') === String(mal.id) && normNamn(x.namn) === normNamn(kandidat.namn));
-      if (kopia && (Number(kopia.spend_sek) || 0) > 0) return ut(DOM.STANG, `vinnaren ${kandidat.namn} levererar redan i ${mal.namn} (${kopia.spend_sek} kr på 14 dagar) — testadsetet har gjort sitt och lämnar platsen.`, { flyttad: true });
-      if (kopia) return ut(DOM.FLYTTAD, `vinnaren ${kandidat.namn} ligger i ${mal.namn} men har inte levererat än — testadsetet står kvar tills kopian levererar.`);
       if (vinnare) return ut(DOM.VINNARE, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}), ${kampTxt}. Vinnare enligt kursen — flytta ${kandidat.namn} till ${mal.namn}.`, { till: mal });
       return ut(DOM.FLYTTA, `${pct(andel)} av kampanjens spend vid KPI (${roasTxt} ≥ ${beTxt}) — över flyttgränsen ${pct(r.flytt_andel)}${majoritet ? ', men ' + kampTxt + ' — kursen: då är den ingen vinnare än' : ''}. Flytta ${kandidat.namn} till ${mal.namn} och se om kampanjen håller.`, { till: mal });
     }
@@ -247,7 +262,9 @@ export function forslagRader(domar, datum, { logg = [] } = {}) {
   const ut = [];
   // En flytt föreslås EN gång per annons och testadset — annars duplicerar Axel
   // samma vinnare två gånger. Stängningar påminns varje rond (samma dag aldrig två).
-  const flyttade = new Set((logg ?? []).filter((r) => r.kod === 'FORSLAG' && r.atgard === 'FLYTTA_TILL_CHAMPIONS').map((r) => `${r.adset_id}|${r.annons_id}`));
+  // Bara FÖREGÅENDE dagars förslag räknas: en omkörning samma dag ska visa
+  // flytten igen (nyaRader hindrar att den loggas två gånger).
+  const flyttade = new Set((logg ?? []).filter((r) => r.kod === 'FORSLAG' && r.atgard === 'FLYTTA_TILL_CHAMPIONS' && r.datum !== datum).map((r) => `${r.adset_id}|${r.annons_id}`));
   for (const d of domar ?? []) {
     if (d.atgard === 'FLYTTA_TILL_CHAMPIONS' && flyttade.has(`${d.adset_id}|${d.basta_annons?.id ?? null}`)) { d.redan_foreslagen = true; continue; }
     if (d.atgard === 'STANG_ADSET') {

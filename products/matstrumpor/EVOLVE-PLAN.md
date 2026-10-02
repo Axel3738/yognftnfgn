@@ -114,7 +114,7 @@ COPY CARD 2 + 2, Meta-specarna, tillbakaläsningen), `matstrumpor/dom.mjs` (dome
 `kor.mjs --struktur/--ko/--creative/--adset-skapad/--kontroll`, adseten i `--hamta` och
 `--dom-alla --logga` (`ADSET_DOM` + `FORSLAG` per adset), arkivets och Growth Guidens adsetkolumner,
 koncepttaket i `--status`, båda kommandofilerna, `docs/os/BRIEF-REGI.md` (COPY CARD 2 + 2) och
-`ITERATIONS-PLAYBOOK.md` avsnitt 11. 228 tester, granskat av fem oberoende granskare med skeptiker (26 fynd rättade). Torrkört mot nya kungen (läs-bart). Kvar:
+`ITERATIONS-PLAYBOOK.md` avsnitt 11. 233 tester, granskat av fem oberoende granskare med skeptiker (26 fynd rättade). Torrkört mot nya kungen (läs-bart). Kvar:
 första skarpa uppladdningen på Axels "kör" — den visar om Meta tar `asset_feed_spec` med två
 texter genom MCP:n (`--kontroll` läser tillbaka det; en annons med en text går aldrig upp tyst).
 

@@ -181,7 +181,7 @@ node matstrumpor/kor.mjs --namn gift ugc 1 --hookar 3   # nästa koncept: _h1 _h
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter + domen per adset ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, koncepttak, mix
-node --test matstrumpor/test/*.test.mjs          # 228 tester (2026-10-02)
+node --test matstrumpor/test/*.test.mjs          # 233 tester (2026-10-02)
 ```
 
 Inga npm-beroenden. Node ≥ 20.

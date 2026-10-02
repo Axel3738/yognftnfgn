@@ -17,6 +17,7 @@
 //   node matstrumpor/kor.mjs --ko [--json] [--grupp 063,066,067] [--hookrad <sid-id>] [--utan-struktur]   Notion-kön → koncept → testadsets (3:2:2)
 //   node matstrumpor/kor.mjs --creative <annonsnamn> (--video <id> --thumb <url> | --bild <hash>)   creative-JSON till ads_create_ad (2 rubriker + 2 texter)
 //   node matstrumpor/kor.mjs --adset-skapad <adset-id> <adset-namn> [--koncept <nnn>]   logga ett nytt testadset (före annonserna)
+//   node matstrumpor/kor.mjs --adset-kasserat <adset-id> [--orsak "…"]   kvittera ett avbrutet bygge (utkastet kasserat)
 //   node matstrumpor/kor.mjs --kontroll <adset-id>   läs tillbaka ett testadset ur Meta: 3 annonser, 2 + 2 texter, sida, länk, en mediatyp
 //   node matstrumpor/kor.mjs --namn <vinkel> <format> [antal] [--iter <förälder>|--im] [--hookar <k>]   nästa lediga namn
 //   node matstrumpor/kor.mjs --kordag [--idag YYYY-MM-DD]   är det rond i dag? exit 0 ja, 2 nej
@@ -532,10 +533,25 @@ async function main() {
     if (!t) throw new Error(`"${namn}" är inget 3:2:2-adsetnamn (${konfig.meta.struktur?.adsetnamn_mall}).`);
     if (String(adsetId) === String(konfig.meta.struktur?.champions?.id)) throw new Error('Det är Champions-adsetet — det skapas aldrig av uppladdaren.');
     if (lasLogg().some((r) => r.kod === 'ADSET_SKAPAD' && r.adset_id === String(adsetId))) { console.log(`ADSET_SKAPAD för ${adsetId} finns redan i loggen — skriver inte en till.`); return; }
-    const sammaNamn = lasLogg().find((r) => r.kod === 'ADSET_SKAPAD' && r.adset_namn === namn);
+    const kass = new Set(lasLogg().filter((r) => r.kod === 'ADSET_KASSERAT').map((r) => String(r.adset_id)));
+    const sammaNamn = lasLogg().find((r) => r.kod === 'ADSET_SKAPAD' && r.adset_namn === namn && !kass.has(String(r.adset_id)));
     if (sammaNamn) throw new Error(`Testadsetet ${namn} finns redan (${sammaNamn.adset_id}, ${sammaNamn.datum}) — ett koncept byggs aldrig två gånger. Är det nya adsetet en dubblett: ladda inte upp i det, rapportera det.`);
     skrivRad({ kod: 'ADSET_SKAPAD', datum: varde('--idag', idagSE()), adset_id: String(adsetId), adset_namn: namn, koncept: varde('--koncept', String(t.nummer).padStart(3, '0')), vinkel: t.vinkel, mediatyp: t.mediatyp, struktur: '3:2:2', kampanj_id: konfig.meta.kampanj.id });
     console.log(`ADSET_SKAPAD loggad: ${namn} (${adsetId})`);
+    return;
+  }
+
+  if (har('--adset-kasserat')) {
+    // 5b/5c-avbrottet: adsetet skapades men inget publicerades, och utkastet
+    // kasseras. Raden upphäver ADSET_SKAPAD så konceptet kan byggas igen.
+    const adsetId = varde('--adset-kasserat');
+    const logg = lasLogg();
+    const skapad = logg.find((r) => r.kod === 'ADSET_SKAPAD' && r.adset_id === String(adsetId ?? ''));
+    if (!skapad) throw new Error(`--adset-kasserat: ${adsetId} är inte loggat som ADSET_SKAPAD.`);
+    if (logg.some((r) => r.kod === 'UPPLADDAD' && String(r.adset_id ?? '') === String(adsetId))) throw new Error(`${adsetId} har uppladdade annonser — det är live och kasseras aldrig härifrån.`);
+    if (logg.some((r) => r.kod === 'ADSET_KASSERAT' && r.adset_id === String(adsetId))) { console.log(`${adsetId} är redan kvitterat som kasserat.`); return; }
+    skrivRad({ kod: 'ADSET_KASSERAT', datum: varde('--idag', idagSE()), adset_id: String(adsetId), adset_namn: skapad.adset_namn, koncept: skapad.koncept, orsak: varde('--orsak', 'bygget avbröts före publicering') });
+    console.log(`ADSET_KASSERAT loggad: ${skapad.adset_namn} (${adsetId}) — konceptet kan byggas igen.`);
     return;
   }
 

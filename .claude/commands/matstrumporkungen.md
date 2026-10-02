@@ -316,6 +316,11 @@ behörighetsreglerna matchar på första ordet.
      FOOTAGE)"`, och **inga Notion-rader skapas förrän Axel lagt råklippen i
      Drive** (CLAUDE.md, Axels order 2026-10-02 — annars börjar redigeraren
      klippa). Omklipp ur befintligt material får sina tre rader som vanligt.
+     **När råklippen ligger i Drive** (en senare rond, eller Axel säger det):
+     skapa konceptets tre Notion-rader och logga tre nya BRIEF-rader för samma
+     annonsnamn UTAN `status` — då räknas konceptet som väntande i kön och
+     koncepttaket. Fältet `status` är valfritt på BRIEF-raden och används bara
+     för väntelägen.
    - **På engelska** (redigerarna är engelsktalande), svenska manusrader i
      tabellen `Swedish (use this) | English meaning`.
    - Regi rad för rad i varje videobrief (`docs/os/BRIEF-REGI.md`); spärren
@@ -435,7 +440,7 @@ behörighetsreglerna matchar på första ordet.
 - [ ] Etikett på varje annons som fyllt sju dygn (på dess egen första vecka, D0 = max(skapad, kampanjens start)); uppgraderingar vecka 2–3 loggade av `--dom-alla --logga`; `yttre_handelse` bedömd i lärdomen; frekvens + hit rate som bråk + procent; unga annonser namngivna utan etikett
 - [ ] Arkivet ombyggt (`--arkiv`) och `matstrumpor/arkiv/matningar.jsonl` + `products/matstrumpor/arkiv.md` committade
 - [ ] **Lärdom skriven för varje etiketterad annons som saknade en** — med hookar ordagrant, hypotes märkt (gissning) och konkreta nästa annonser
-- [ ] Koncepttaket räknat (`--status`): koncept ≤ lärdomar, ≤ kadensens 2, ≤ lediga testplatser
+- [ ] Koncepttaket räknat (`--status`): koncept ≤ lärdomar, ≤ kadensens 2, ≤ testplatserna (4) minus briefade koncept som inte laddats upp än
 - [ ] Mixen ur etiketterna (80/20), inte ur en tabell
 - [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen; typ=I bär `playbook=`
 - [ ] Felet ur felkatalogen namngivet i varje lärdom; iterationerna ur `PLAYBOOK_PER_UTFALL`, inget koncept över taket

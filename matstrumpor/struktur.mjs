@@ -34,7 +34,8 @@ export const ADSET_PA = new Set(['ACTIVE', 'IN_PROCESS', 'WITH_ISSUES']);
 /** Ett Notion-sid-id i jämförbar form: 32 hex-tecken, gemener, utan bindestreck.
  *  Tar också en hel notion.so-länk (de sista 32 hex-tecknen). Ren. */
 export function sidNyckel(x) {
-  const s = String(x ?? '').toLowerCase().replace(/-/g, '');
+  // Query och fragment bort först (?pvs=4, #block-id) — annars blir det fel 32 tecken.
+  const s = String(x ?? '').split(/[?#]/)[0].toLowerCase().replace(/-/g, '');
   return s.match(/[0-9a-f]{32}(?=[^0-9a-f]*$)/)?.[0] ?? s;
 }
 

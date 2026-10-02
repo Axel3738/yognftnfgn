@@ -92,9 +92,18 @@ Bash-anrop.
    - `⏳ COPY` — COPY CARD har inte 2 rubriker + 2 primärtexter (alla briefer
      före 2026-10-02 har en av varje). Väntar — se steg 4.
    - `⛔ STOPP` — bild och video blandat, fler än tre annonser, dubblett, eller
-     **redan byggt** (testadsetet finns i kampanjen eller i loggen, eller en
-     annons är redan uppladdad — ett koncept byggs aldrig två gånger; raderna ska
-     ut ur kön: `Approved`, eller kommentar + `Draft` om något saknas).
+     **redan byggt** (testadsetet finns i kampanjen, eller en annons är redan
+     uppladdad — ett koncept byggs aldrig två gånger). Finns adsetet i kampanjen
+     men inga `UPPLADDAD`-rader för dess annonser (Axel publicerade det, 5c): kör
+     `--kontroll <adset-id>`; exit 0 ⇒ logga de tre med `--uppladdad` (5e) och
+     sätt `Approved`; exit 1 ⇒ kommentar på raderna, inget Approved. Har alla
+     annonserna `UPPLADDAD`: raderna ska ut ur kön — `Approved`, eller kommentar
+     + `Draft` om något saknas.
+     **Förra bygget publicerades inte** (`ADSET_SKAPAD` i loggen men adsetet syns
+     inte i kampanjen och inget är uppladdat): väntar det på Axels publicering
+     enligt förra rapporten, låt det vänta. Avbröts det (5b): Axel kasserar
+     utkastet, sedan `node matstrumpor/kor.mjs --adset-kasserat <adset-id>`.
+     Raderna sätts ALDRIG till `Approved` i det läget.
    - `⛔ STRUKTUR` — strukturen gick inte att läsa ur Meta; inget laddas upp.
    - `🏷️` — odöpt rad (steg 4). `⛔` per rad — fil, pris, landningssida, utland.
 
@@ -162,8 +171,10 @@ Bash-anrop.
       - **Svarar `ads_create_ad` med fel (`active_errors`), eller blir en video
         aldrig `ready`:** försök en gång till med just den annonsen. Går det inte
         då heller: publicera INGENTING av konceptet, raderna stannar i kön, och
-        rapporten listar adset-id:t och de annons-id som skapades (Axel kastar
-        utkasten i Ads Manager). Bygg inga fler koncept.
+        rapporten listar adset-id:t och de annons-id som skapades under "Väntar
+        på en människa" (Axel kastar utkasten i Ads Manager, sedan kvitteras det
+        med `node matstrumpor/kor.mjs --adset-kasserat <adset-id>` — utan kvittot
+        byggs konceptet aldrig igen). Bygg inga fler koncept.
    c. **Publicera — bara det körningen skapat, bara ett helt koncept.**
       - Kontrollera först: exakt **tre** annonser skapade, med exakt planens namn
         (`_h1 _h2 _h3` ur `ko-<datum>.json`), utan `active_errors`. Annars:
@@ -171,12 +182,19 @@ Bash-anrop.
       - Försök läsa utkastet: `ads_get_ad_entities`, `object_state: "draft"`,
         `object_ids: [<adset-id>]`. **Går det:** varje annons ska bära två
         `bodies` och två `titles` — gör en det inte, publicera INTE, rapportera,
-        stanna. **Går det inte** ("gradually rolled out", mätt för nya kungen
-        2026-10-02): JSON:en är byggd och testad av koden, så publicera — men då
-        är `--kontroll` i 5d den första riktiga kontrollen av texterna.
-      - **Första konceptet någonsin** (ingen `ADSET_SKAPAD` i loggen före det här):
-        bygg BARA det, kör 5d, och fortsätt med nästa koncept först när
-        `--kontroll` är grön. Då vet vi att Meta tar två texter genom MCP:n.
+        stanna.
+      - **Går det inte** ("gradually rolled out", mätt för nya kungen
+        2026-10-02), eller svarade `ads_create_ad` med en riktig annons i
+        `PAUSED`, beror det på om vägen är bevisad. Bevisad = loggen har en
+        `UPPLADDAD`-rad med `struktur: "3:2:2"`, alltså ett koncept som klarat
+        `--kontroll` med 2 + 2 texter genom MCP:n.
+        - **Inte bevisad (första 3:2:2-konceptet):** publicera INTE. Bygg bara
+          det konceptet, och skriv adset-id:t och de tre annons-id:na under
+          "Väntar på en människa": Axel öppnar utkastet i Ads Manager, ser att
+          varje annons har två rubriker och två texter, och publicerar själv.
+          Nästa körning läser tillbaka det (steg 3, "redan byggt").
+        - **Bevisad:** publicera. JSON:en är byggd och testad av koden och vägen
+          är mätt; `--kontroll` i 5d är kontrollen. Fortfarande ett koncept i taget.
       - Svarade `ads_create_ad` med `status: DRAFT`: publicera med
         `ads_activate_entity`, `entity_type: "ad_set"`, `entity_id: <adset-id>`,
         `object_ids` = adsetet + dess tre annonser och INGET annat,
@@ -248,7 +266,7 @@ Bash-anrop.
 - [ ] Varje odöpt rad döpt efter att creativen FAKTISKT setts — aldrig gissat; bara sushi
 - [ ] Ingen copy skriven av huvudsessionen — rubrik 2 / text 2 av sonnet-subagent, tre-frågorstestet redovisat
 - [ ] Ett testadset per koncept, ur `adset_spec`: ingen budget, inte dynamic creative, loggat med `--adset-skapad` före annonserna
-- [ ] Tre annonser per adset, var och en med 2 rubriker + 2 primärtexter (`--creative`), utkastet kontrollerat före publicering
+- [ ] Tre annonser per adset, var och en med 2 rubriker + 2 primärtexter (`--creative`); utkastet läst före publicering, ELLER vägen bevisad av ett tidigare 3:2:2-koncept och `--kontroll` exit 0 efteråt, ELLER publiceringen lämnad till Axel
 - [ ] Bara körningens egna objekt publicerade; inget annat utkast, inget PAUSED, ingen annan kampanj rörd
 - [ ] Exakt tre annonser skapade utan fel före publiceringen; första konceptet någonsin byggt ensamt och kontrollerat innan nästa
 - [ ] `--kontroll <adset-id>` exit 0 för varje byggt adset (eller felet stoppade nästa koncept, raderna lämnade kön och felet står i rapporten)

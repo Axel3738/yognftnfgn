@@ -245,8 +245,42 @@ test('koVantar ur dagens kö: färdiga koncept minus lediga platser; okänd stru
   assert.equal(koVantarUr({ summa: {} }), 0);
 });
 
-test('ett gammalt adset som SVÄLTER (bra snitt förr, ingen spend nu) står bara om inget väntar — det fungerar inte nu', () => {
-  const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 0.1, 0, null)] };
+test('ett gammalt adset som SVÄLTER (bra snitt förr, lite spend nu) står bara om inget väntar — det fungerar inte nu', () => {
+  const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 17, 0, null)] };
   assert.equal(domAdset(ad, ctx({ koVantar: 0 })).dom, DOM.LAT_STA);
   assert.equal(domAdset(ad, ctx({ koVantar: 1 })).dom, DOM.STANG);
+});
+
+test('regel 11: under 10 kr på sju dagar är INGEN_LEVERANS — stängs även med tom kö och bra gammalt snitt (alla17 2026-10-02)', () => {
+  const ad = { id: 'g17', namn: 'broad_advplus_purchase_alla17', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 17, serie: [...serie('2026-09-22', 21, 56, 0.25, 2.4), ...serie('2026-10-13', 7, 0.13, 0, null)] };
+  const d = domAdset(ad, ctx({ koVantar: 0 }));
+  assert.equal(d.dom, DOM.STANG);
+  assert.equal(d.svalt, true);
+  assert.match(d.motivering, /regel 11/);
+});
+
+test('ett gammalt adset som fungerar stängs inte fast dess vinnare redan levererar i Champions', () => {
+  const vinn = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_030_v1', adset_id: 'g1', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'ACTIVE' };
+  const ad = { id: 'g1', namn: 'broad_advplus_purchase_nya16', effective_status: 'ACTIVE', skapad: '2026-08-27', aktiva_annonser: 10, serie: serie('2026-10-13', 7, 6000, 30, 2.4) };
+  const d = domAdset(ad, ctx({ annonser: [vinn, { id: 'c', namn: vinn.namn, adset_id: CHAMP, spend_sek: 900 }] }));
+  assert.equal(d.dom, DOM.LAT_STA);
+  assert.notEqual(d.atgard, 'STANG_ADSET');
+});
+
+test('vinnaren flyttad och originalet pausat: kopian levererar ⇒ testadsetet lämnar platsen, inte VANTA för alltid', () => {
+  const orig = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', adset_id: '500', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'PAUSED' };
+  const ad = test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) });
+  const klar = domAdset(ad, ctx({ annonser: [orig, { id: 'c', namn: orig.namn, adset_id: CHAMP, spend_sek: 900 }] }));
+  assert.equal(klar.dom, DOM.STANG);
+  assert.equal(klar.flyttad, true);
+  assert.equal(domAdset(ad, ctx({ annonser: [orig, { id: 'c', namn: orig.namn, adset_id: CHAMP, spend_sek: 0 }] })).dom, DOM.FLYTTAD);
+});
+
+test('omkörning samma dag: flytten som redan loggats i dag visas igen, men loggas inte två gånger', () => {
+  const vinn = { id: 'v', namn: 'MATSTRUMP_sushi_gift_ugc_070_h2_v1', adset_id: '500', spend_sek: 20000, kop: 70, roas: 2.4, effective_status: 'ACTIVE' };
+  const domar = [domAdset(test322({ serie: serie('2026-10-13', 7, 6000, 30, 2.4) }), ctx({ annonser: [vinn] }))];
+  const logg = forslagRader(domar, IDAG);
+  const igen = forslagRader(domar, IDAG, { logg });
+  assert.equal(igen.length, 1);
+  assert.equal(nyaRader(igen, logg).length, 0);
 });
