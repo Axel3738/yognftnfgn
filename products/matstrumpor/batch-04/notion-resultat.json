@@ -3,13 +3,29 @@
     "namn": "MATSTRUMP_sushi_gift_ugc_065_v1",
     "page_id": "3ed270ab-908c-81d6-b6b5-f8cd2d776a08",
     "url": "https://app.notion.com/p/MATSTRUMP_sushi_gift_ugc_065_v1-3ed270ab908c81d6b6b5f8cd2d776a08",
-    "skapad": true,
-    "fel": null
+    "skapad": false,
+    "fel": null,
+    "finnsRedan": true
   },
   {
     "namn": "MATSTRUMP_sushi_curiosity_ugc_066_v1",
     "page_id": "3ed270ab-908c-81f6-bd39-fa33a209f382",
     "url": "https://app.notion.com/p/MATSTRUMP_sushi_curiosity_ugc_066_v1-3ed270ab908c81f6bd39fa33a209f382",
+    "skapad": false,
+    "fel": null,
+    "finnsRedan": true
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_067_v1",
+    "page_id": "3ed270ab-908c-812a-bec2-fa703eb32717",
+    "url": "https://app.notion.com/p/MATSTRUMP_sushi_curiosity_ugc_067_v1-3ed270ab908c812abec2fa703eb32717",
+    "skapad": true,
+    "fel": null
+  },
+  {
+    "namn": "MATSTRUMP_sushi_curiosity_ugc_068_v1",
+    "page_id": "3ed270ab-908c-8127-b159-e3ffbf32fb77",
+    "url": "https://app.notion.com/p/MATSTRUMP_sushi_curiosity_ugc_068_v1-3ed270ab908c8127b159e3ffbf32fb77",
     "skapad": true,
     "fel": null
   }

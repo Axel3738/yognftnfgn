@@ -264,6 +264,15 @@
    ]
   },
   {
+   "id": "gid://shopify/Page/184085610835",
+   "typ": "sida",
+   "handle": "enkat",
+   "prefix": "sida.enkat",
+   "keys": [
+    "title"
+   ]
+  },
+  {
    "id": "gid://shopify/ShopPolicy/48690168147",
    "typ": "policy",
    "handle": null,
@@ -286,6 +295,15 @@
    "typ": "policy",
    "handle": null,
    "prefix": "policy.TERMS_OF_SERVICE",
+   "keys": [
+    "body"
+   ]
+  },
+  {
+   "id": "gid://shopify/ShopPolicy/66251555155",
+   "typ": "policy",
+   "handle": null,
+   "prefix": "policy.LEGAL_NOTICE",
    "keys": [
     "body"
    ]
@@ -656,6 +674,40 @@
    "typ": "paket",
    "handle": "mix-4",
    "prefix": "paket.mix-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/466474533203",
+   "typ": "paket",
+   "handle": "sushi-paket-1",
+   "prefix": "paket.sushi-paket-1",
+   "keys": [
+    "rubrik",
+    "underrubrik"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/466474565971",
+   "typ": "paket",
+   "handle": "sushi-paket-2",
+   "prefix": "paket.sushi-paket-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/466474598739",
+   "typ": "paket",
+   "handle": "sushi-paket-4",
+   "prefix": "paket.sushi-paket-4",
    "keys": [
     "rubrik",
     "underrubrik",
