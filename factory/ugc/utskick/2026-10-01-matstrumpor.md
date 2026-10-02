@@ -224,6 +224,10 @@ köp första veckan (en av tre kreatörer som bevisat sig), en låda kostar ~121
 värd 1 500–3 000, och mottagaren kan vara vem som helst utanför hushållet. Avbryt bara om Axel
 hittar en bättre. Pengarna och valet är hans.
 
+**Axels beslut 2026-10-02 kväll: Ebba Nilsson (nr 10 nedan) i stället för Katarina** ("Hon här
+ska vi köra istället för Katarina!"). Inget svar har gått till Katarina; avböj-texten nedan står
+kvar om han vill stänga artigt.
+
 Behåll (svar):
 ```
 Hej Katarina! Tre videor, som förut. Jag skickar en ny låda, säg bara adressen. Mottagaren behöver inte vara någon hemma hos dig, det räcker med en granne, en kollega eller en kompis barn som aldrig sett strumporna. Du får en sida med manuset rad för rad. Vad tar du för tre videor som ett paket?
@@ -241,6 +245,29 @@ Axel
 ## 9. Hassanien Madjed (@fynder) — Collabstr-chatt (https://collabstr.com/fynder), Norrköping
 
 Hej Hassanien! Axel heter jag. Jag säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Du gör selfie-videor för annonser på svenska, och jag behöver en manlig röst: du som ger bort lådan till flickvännen eller en polare, och filmar när de öppnar. Tre korta videor på svenska, med mobilen hemma, efter ett kort manus. Är du sugen på att ta dig an det?
+
+## 10. Ebba Nilsson — mejl till ebban.nilsson@gmail.com (IG @ebbannilssson, 95K+ följare; Collabstr: svensk UGC-kreatör och modell, från Karlskrona, bor i Spanien). ✅ SKICKAT 2026-10-02 ~17:50 UTC av sessionen via Gmail-connectorn från axel.odhner@stonebite.org, Gmail-id `1a0fdc2d8f06d84c`
+
+Axels order 2026-10-02 kväll: "Hon här ska vi köra istället för Katarina! Kolla hennes instagram
+och släng iväg ett mail med brieferna i pdf format och sen kör vi!" Hans hypotes: en tvärsnygg
+kreatör med vår mest vinnande UGC-brief brukar performa. Första mejlet: inget pris, inga villkor.
+
+Ämne: Två korta UGC-videor på svenska, från Göteborg
+
+Hej Ebba! Axel heter jag, jag sitter i Göteborg och säljer strumpor som ser ut som sushi, pizza, burgare och donuts, i lådor som ser ut som takeaway. Jag såg din Instagram och vill ha med dig i vår nästa runda. Det jag vill filma är en present: någon hemma hos dig öppnar lådan utan att veta vad som är i, tror att det är sushi, och så är det strumpor. Två korta videor på svenska plus några extra tagningar på några sekunder, med mobilen hemma. Manuset ligger rad för rad i bifogad PDF, så enkelt som det går. Är du sugen på att ta dig an det? Svara gärna på det här mejlet med adressen lådan ska till, Sverige eller utomlands funkar lika bra, så skickar jag den direkt.
+
+Hälsningar
+Axel
+
+Bilagan: `products/matstrumpor/ugc/pdf/Ebba-sushi-sock-briefs-liten.pdf` (6 kB, tre sidor, samma
+innehåll som `mall-kvinna.html`: video 1 = vinnarmanuset ord för ord med alla fem paren i slutet,
+video 2 = pranket, extra tagningar A–H, fem regler, checklista). ⚠️ Chromium-PDF:en ur `bygg.mjs`
+(78 kB ≈ 105 000 tecken base64) ryms inte säkert i connectorns verktygsanrop — därför
+`bygg-liten.mjs` (Helvetica utan inbäddning, samma väg som konkurrenternas faktura). Kontroll före
+sändning: utkastet skapades med bilagan, dess råa MIME lästes tillbaka, bilagan plockades ut och
+hade samma sha256 som filen; först då skickades utkastet. **Nästa steg när hon svarar:** adressen
+(Spanien går, Europa-marknaden skickar dit med fri frakt), lådan, sedan priset som paket (två videor
++ extra tagningar, samma förhandlingsregler som Sara och Nathalie).
 
 ---
 

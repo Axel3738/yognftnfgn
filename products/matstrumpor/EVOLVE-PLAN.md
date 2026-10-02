@@ -69,7 +69,7 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
 | Varje ny kreatör | **Ge Nathalies manus** (`ugc/NATHALIE-MANUS.md`) som video A. Står i kungens steg 6, så rutinen tar med det i varje UGC-förslag. |
 | Mån 5/10 07:45 | Push till Axel: merge, ROUTING (A/B/C), copyregeln (`trig_01DNvip1ELUUsGDSFNDYDXoU`). |
 | Från fre 9/10 | Rutinen 07:00 ger utlandets första etiketter per land, när kampanjerna gått en vecka. |
-| Mån 12/10 07:45 | Push till Axel: är Sofies och Katarinas råfiler inne? (`trig_01AvCmc4qrFPQNAaakezRxTX`) |
+| Mån 12/10 07:45 | Push till Axel: är Sofies, Saras och Ebbas råfiler inne? (`trig_01AvCmc4qrFPQNAaakezRxTX`; Katarina ersatt av Ebba Nilsson 2/10, Axels beslut) |
 | Tis 20/10 07:45 | Push till Axel: tre dagar kvar att beställa UGC till Black Friday (23/10), med beställningen färdigskriven (`trig_01TLJbdZ9nCC9EVTCUFYc7PU`). |
 | Mån 26/10 07:45 | Produktsidan före november: novemberraderna ("tog slut i november", "långt före jul", "finns att köpa nu", "säkra dina") ses över mot lagret, förslag före/efter till Axel, inget live utan hans ok; översättningarna på elva språk kontrolleras (`trig_01X2fCvnnheQh7fpghkiLtDL`). |
 
