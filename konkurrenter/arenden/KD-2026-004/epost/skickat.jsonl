@@ -1,0 +1,9 @@
+{"namn":"meta-1","till":"ip@fb.com","gmail_id":"1a0fb17d7821f685","trad":"1a0f8c0411fe3526","kontroll":"RAW: pdf sha256 = fil, ingen google.com/url"}
+{"namn":"meta-2","till":"ip@fb.com","gmail_id":"1a0fb2c582e29a19","trad":"1a0fb1acbadf4baa","kontroll":"RAW-svans: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
+{"namn":"meta-3","till":"ip@fb.com","gmail_id":"1a0fb372d2bdc114","trad":"1a0fb2e1bad419bf","kontroll":"RAW-svans: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
+{"namn":"meta-4","till":"ip@fb.com","gmail_id":"1a0fb4d1568e4e96","trad":"1a0fb3be9347bfe4","kontroll":"RAW-svans: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
+{"namn":"meta-5","till":"ip@fb.com","gmail_id":"1a0fb74739029742","trad":"1a0fb57840fe263f","kontroll":"RAW-svans: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
+{"namn":"meta-6","till":"ip@fb.com","gmail_id":"1a0fba5ee1f770ea","trad":"1a0fb9fee2b281c9","kontroll":"RAW-svans: pdf sha256 = fil (nytt utkast; det första hade fel PDF och raderades osänt); MINIMAL: ingen länk"}
+{"namn":"meta-7","till":"ip@fb.com","gmail_id":"1a0fba64aac48895","trad":"1a0fb8389700c4fc","kontroll":"RAW-svans: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
+{"namn":"meta-8","till":"ip@fb.com","gmail_id":"1a0fbaeffc2a2387","trad":"1a0fb855065640fc","kontroll":"RAW-svans: pdf sha256 = fil (andra läsningen; första avskriften hade ett eget fel); PLAIN_TEXT: ingen länk"}
+{"namn":"shopify","till":"legal@shopify.com","gmail_id":"1a0fc32cc4882736","trad":"1a0fb876dcb6938e","sha256":"b639f68273fec9cec3735823ce34d0fe1aef6c7199d539b94ab95f46662776c3","nar":"2026-10-02T10:40:55.270Z","kontroll":"RAW, hela meddelandet, avskrivet av en fristående agent: pdf sha256 = fil; PLAIN_TEXT: ingen länk"}
