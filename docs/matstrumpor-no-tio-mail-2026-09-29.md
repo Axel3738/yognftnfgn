@@ -281,9 +281,10 @@ Gmail. Ett mail per mottagare, ingen kopia eller hemlig kopia. Texterna är exak
 | 8 | Jannecke Weeden | elisabeth.saether@egmont.com | 1a0ed1bd4139dab3 |
 | 9 | Martha Leivestad | hei@baff.no | 1a0ed1c3fd3c5c4a |
 | 10 | Else Kåss Furuseth | Kristin@bookingogsant.no | 1a0ed1c73a7fef76 |
+| 7 | Charlotte Hvide Smith | sebastian.r@plan-b.no | 1a0fb6a2a0f4f48f (skickat 2026-10-02, Sebastian hade inte svarat på Kathrine) |
 
-Nummer 7, Charlotte Hvide Smith, är inte skickat. Det går till samma Sebastian som Kathrine
-och skickas fredag 2 oktober. Påminnelsen enligt mallen skickas måndag 5 oktober till dem
+Nummer 7, Charlotte Hvide Smith, skickades fredag 2 oktober, eftersom det går till samma Sebastian
+som Kathrine. Påminnelsen enligt mallen skickas måndag 5 oktober till dem
 som inte svarat (fyra vardagar).
 
 ## Svar
@@ -293,3 +294,4 @@ som inte svarat (fyra vardagar).
 | 2026-09-29 17:18 | Else Kåss Furuseth | Kristin Starheim, Booking & Sånt | **Nej.** "På grunn av hennes NRK avtale kan hun dessverre ikke gjøre betalte samarbeid." | Tack skickat 2026-09-29 kväll i samma tråd (Gmail-id 1a0eecc990b60568). Avslutad. NRK-flaggan stämde; samma risk finns för Martha Leivestad. |
 
 Inga studsar på de nio mailen per 2026-09-29 kväll, inte heller på Marnas obekräftade adress.
+Per 2026-10-02: inga fler svar och inga studsar. Påminnelse måndag 5/10 till de åtta som inte svarat (Kathrine, Sandra, Marna, Henriette, Tiril, Linn, Jannecke, Martha); Charlotte får sin först 8/10.
