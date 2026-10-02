@@ -650,7 +650,10 @@ Shopifys egna översättningar av notisen**, lagda via API.
   kund hade fått Shopifys tyska standardmejl, med fraktbolagets
   spårningslänk och Shop-knappen — inte vårt mejl, inte svenska.
 - Standardnotiserna (orderbekräftelse, återbetalning, avbokning,
-  presentkort) går alltså redan på kundens språk. Vi rör dem inte.
+  presentkort) går alltså redan på kundens språk. Texten rör vi bara
+  punktvis (levererad-rättningen, japanskans betalrad), och sedan 2026-10-02
+  går deras länkar till matstrumpor.com (`notis-lankar.mjs`, se "Shopifys
+  egna notiser länkar till .com" nedan).
 - Huvudspråket (svenska) går inte att skriva via API, bara i admin.
   Översättningarna går, med huvudtextens digest (`translationsRegister`).
 - Shopify väljer språket själv: "If translations are available for an email
@@ -755,6 +758,37 @@ Det stoppar om Shopifys text inte är den som lästes, och en andra körning gö
 **Utfall 2026-09-30 ~20:15 CEST:** 9 översättningar registrerade och lästa tillbaka (zh-TW
 båda i du-form, ja ämne + brödtext, nb två stavfel, fr ämne + hårt mellanslag före
 kolon). pt-PT:s ni-form ("você") står kvar — det är Axels val (G-C-PT-07 a).
+
+**Shopifys egna notiser länkar till .com sedan 2026-10-02** (sajtgranskningen 2026-10-01,
+S-015 och S-019). Loggan och "Besök vår butik" i orderbekräftelsen, levererat-, annullerings-,
+återbetalnings-, presentkorts-, retur- och kundkontomejlen var `{{ shop.url }}` =
+`https://matstrumpor.se` på alla språk, där utlandet får svenska (Europa dessutom Sverige och
+SEK). `node mejl/notis-lankar.mjs matstrumpor [--skarpt] [--bara <mall,…>]` byter
+utskriftstaggen mot språkets adress på matstrumpor.com i de tretton ÖVERSÄTTNINGARNA
+(`mejl_sprak[].sida` utan `/pages/spara`, kontrollerad mot Shopifys rootUrls varje körning;
+engelskan i roten, ingen `?country=`). `{% if shop.url %}` står kvar med flit. Samma körning
+gör japanskans betalrad "Visa (ending in 1234)" till "Visa（末尾 1234）" i Shopifys fyra
+äldre korta japanska mallar (annullering, återbetalning, faktura, kvitto). Den svenska
+huvudmallen och våra tre fraktmallar rörs inte. Torrt sparas före/efter i
+`mejl/output/notis-lankar/` (gitignorerad), skarpt dessutom läget i
+`output/butiker/matstrumpor/notis-lankar/lage.json`.
+**Utfall 2026-10-02 08:29–08:34 CEST (06:29–06:34 UTC):** 806 översättningar registrerade (62 mallar × 13 språk;
+den 63:e, beställningsdistributionen, har ingen länk), 1 390 länkar och 4 japanska betalrader,
+alla lästa tillbaka lika och aktuella. En ny läsning av hela butiken mot läsningen före gav
+exakt de väntade bytena, 0 `{{ shop.url }}` kvar och 0 "ending in" på ja/zh-TW.
+**Talet fyra på kortraden, samma dag 08:41 CEST** (repots regel: aldrig 4, 四 eller ４ i en
+japansk eller kinesisk kundtext): Shopifys egen text sa "下4桁" på japanska och "末四碼" på
+kinesiska, också i orderbekräftelsen. Skriptet byter dem nu, bara utanför Liquid:
+"ギフトカード (下4桁が1234)" → "ギフトカード (末尾 1234)", "(カード番号下4桁: 1234)" →
+"(カード番号末尾: 1234)", "下4桁1234" → "末尾 1234", "末四碼" → "末碼". 26 översättningar
+(ja 16, zh-TW 10), 51 ställen, lästa tillbaka lika; ny läsning av butiken: bara de 26 ändrade,
+0 fyror kvar i ja/zh-TW-kundtext. `lage.json` är den sista körningens (de 26). En körning till
+gör ingenting.
+⚠️ Översättningarna är nu våra och står still: Shopify uppdaterar dem inte när de ändrar sina
+standardmallar, och klistras en svensk mall om i admin märks dess översättningar `outdated`
+(skriptet hoppar dem och säger det). ⚠️ Kvar i Shopifys egen text, inte rättat: engelska ord
+som "Tip", "Pickup location" och kvittots "Order Summary" (skriptet listar dem, och varje fyra
+som står kvar i ja/zh-TW, vid varje körning).
 
 ⚠️ Bygget 2026-09-30 skrev också om CaraShells, NO:s, DK:s och FI:s mallar i
 `output/butiker/`, eftersom nb/da/fi ändrats i källan sedan förra bygget. Shopify bär deras

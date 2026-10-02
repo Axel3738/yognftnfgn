@@ -470,6 +470,23 @@ function stil(c) {
 // Källkoden till `sparning/uppacka.mjs` med `export ` bortstrippat, så den
 // kan ligga rakt i sidans <script>. Filen är skriven för att tåla just det:
 // ingen import, inget Node-API, inget nyare än ES2019.
+// Kommentarerna i det inbäddade skriptet följer annars med till kunden, och där stod andra
+// butikers namn och interna ord (sajtgranskningen 2026-10-01, S-029). Bara HELA kommentarsrader
+// tas bort: skriptet är ES5 utan mallsträngar, så en rad som börjar med // är alltid en kommentar.
+// Blockkommentarer /* … */ som börjar och slutar på egna rader tas också bort.
+export function utanKommentarer(kod) {
+  const ut = [];
+  let iBlock = false;
+  for (const rad of String(kod).split('\n')) {
+    const t = rad.trim();
+    if (iBlock) { if (t.endsWith('*/')) iBlock = false; continue; }
+    if (t.startsWith('/*')) { if (!t.endsWith('*/')) iBlock = true; continue; }
+    if (t.startsWith('//')) continue;
+    ut.push(rad);
+  }
+  return ut.join('\n');
+}
+
 export function uppackarkalla() {
   const kod = readFileSync(new URL('./uppacka.mjs', import.meta.url), 'utf8');
   const utan = kod.split('export ').join('');
@@ -1203,8 +1220,8 @@ ${tillaggBlock(c)}${erbjudandeBlock(c)}</div>
 <script type="application/json" ${DATAMARKOR}>${json}</script>
 <script type="application/json" ${COPYMARKOR}>${copy}</script>
 <script>(function(){"use strict";
-${uppackarkalla()}
-${skript()}
+${utanKommentarer(uppackarkalla())}
+${utanKommentarer(skript())}
 })();</script>
 </div>`;
 }

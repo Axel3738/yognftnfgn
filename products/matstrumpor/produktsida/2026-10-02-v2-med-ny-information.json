@@ -1,0 +1,1642 @@
+{
+ "datum": "2026-10-02",
+ "olasta": [
+  "enkat: Lösenordet KUNDTJANST_MAIL_PASS_MATSTRUMPOR finns inte i den här sessionens miljö (bara Bäverbutikens). Enligt enkat/README.md ligger det i rutinens miljö env_018aG5VVb69sSagge8CfgghK (timrutinen /enkat, trig_01UGsKAAKVUp6PBwLkvD5hCD). Utan det går varken MCP:n (loopia-mail) eller CLI:n (enkat/las.mjs, kundtjanst/mail.mjs) att använda mot kundsupport@matstrumpor.se. Ingen annan källa finns: råsvaren committas aldrig till repot och enkat/output/ är gitignorerad och tom här. Antalet svar i INBOX.ENKAT är därför OKÄNT, inte noll."
+ ],
+ "faktablad": {
+  "vem_koper": [
+   {
+    "fakta": "Standardordern är två lådor: 502 av 590 ordrar senaste 90 d (2026-07-04→10-02) har 2 lådor; 1 låda 34 (5,8 %), 3 lådor 10 (1,7 %), 4+ lådor 44 (7,5 %). 424 av 590 (71,9 %) = 10 par, dvs 2 × 5-par-lådan. AOV median 399 kr, snitt 445 kr. 0 annullerade, alla källa web.",
+    "kalla": "ordrar — Shopify orders-query 2026-10-02 (lineItems quantity, variantTitle, totalPriceSet)",
+    "antal": "502 av 590 (85,1 %)"
+   },
+   {
+    "fakta": "Köp 1 få 1-kod på 496 av 590 ordrar (84,1 %), K2F2 40 (6,8 %), SUSHI-2FOR499 13, ingen kod 40 (6,8 %). Erbjudandet styr alltså att två lådor köps.",
+    "kalla": "ordrar — discountCodes",
+    "antal": "496 av 590 (84,1 %)"
+   },
+   {
+    "fakta": "Julen 2025 köpte majoriteten EN låda: nov–dec 2025 1 670 ordrar, 1 låda 885 (53,0 %), 2 lådor 579 (34,7 %), 4+ lådor 143 (8,6 %); AOV median 299 kr (priset var 299 kr/låda, bara 1 av 1 670 bar rabattkod, erbjudandet låg i automatisk rabatt).",
+    "kalla": "ordrar — Shopify orders-query created_at 2025-11-01..2025-12-31",
+    "antal": "885 av 1 670 (53,0 %) = 1 låda"
+   },
+   {
+    "fakta": "Julprodukt: 3 911 ordrar ej annullerade 2025-08-04→2026-09-25 från 3 776 kunder; december 2025 ensam 1 613 ordrar / 589 675 kr; 86 % av alla ordrar lades december–mars; april–juli i praktiken stängt.",
+    "kalla": "ordrar — klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md avsnitt 0",
+    "antal": "dec 2025 1 613 av 3 911"
+   },
+   {
+    "fakta": "Nästan ingen köper igen: riktiga återköp 44 av 3 776 kunder (1,2 %), median 19,4 dygn, 38 av 44 köpte samma sushilåda igen; inget korsförsäljningspar (sushi→donut 1 kund). 86 % av återköpen lades dec–mars.",
+    "kalla": "ordrar — ATERKOP-ANALYS avsnitt 1–2",
+    "antal": "44 av 3 776 (1,2 %)"
+   },
+   {
+    "fakta": "Nästan bara sushi, nästan aldrig blandat: 560 av 590 ordrar (94,9 %) har en sort; 30 (5,1 %) blandar (donut+sushi 14, pizza+sushi 10, hamburgare+sushi 3). Orderrader: sushi 1 052, donut 48, pizza 29, hamburgare 11. Nov–dec 2025: 0 av 1 670 blandade.",
+    "kalla": "ordrar — distinkta handles per order",
+    "antal": "30 av 590 (5,1 %) blandar"
+   },
+   {
+    "fakta": "Skickas till någon annan än köparen (annan leveransadress än faktureringsadress): 42 av 590 (7,1 %) senaste 90 d, 106 av 1 670 (6,3 %) nov–dec 2025; samma adress men annat namn 10 resp. 18. UNDRE GRÄNS: Shopify Payments rymmer Klarna/Shop Pay/Apple Pay där faktureringsadressen ofta kopieras från leveransadressen.",
+    "kalla": "ordrar — shippingAddress vs billingAddress, paymentGatewayNames",
+    "antal": "42 av 590 (7,1 %) · 106 av 1 670 (6,3 %)"
+   },
+   {
+    "fakta": "Julpaket med presentkort: 134 av 1 670 julordrar (8,0 %) bar ett Shopify-presentkort à 150 kr; 132 av 134 hade 4+ lådor (20 par) och 125 slutade på exakt 599 kr → paketet '4 lådor + presentkort 150 kr för 599 kr'.",
+    "kalla": "ordrar — handle presentkort, isGiftCard, totalPriceSet",
+    "antal": "134 av 1 670 (8,0 %)"
+   },
+   {
+    "fakta": "Nästan bara Sverige: leveransland SE 569 av 590 (96,4 %) senaste 90 d (utland 21: PT 5, US 3, JP 3, CH 2, PL 2 …); nov–dec 2025 SE 1 670 av 1 670.",
+    "kalla": "ordrar — shippingAddress.countryCodeV2",
+    "antal": "SE 569 av 590 (96,4 %)"
+   },
+   {
+    "fakta": "När de köper: torsdag toppar (120 av 590, 20,3 %), söndag lägst (65, 11,0 %); klockan 09–11 är toppen (143, 24,2 %), 06–14 bär 56 %. Julen 2025 jämnt över veckan (fredag lägst 11,9 %), samma förmiddagstopp 09–11 (427 av 1 670, 25,6 %).",
+    "kalla": "ordrar — createdAt i Europe/Stockholm",
+    "antal": "tors 120 av 590 · 09–11 143 av 590"
+   },
+   {
+    "fakta": "Ätpinnar följer lådorna: 2 st i 489 av 590 ordrar (82,9 %), 4 st i 42 (7,1 %), 0 i 31 (5,3 %). Ekonomifacit: AOV 462,10 kr på 110 betalda ordrar/30 d (mätt 2026-09-21), 90 av 110 bär exakt 2 strumpprodukter; break-even-ROAS 1,498, break-even-CPA 308,48 kr, utan moms.",
+    "kalla": "ordrar — handle sushipinnar-i-akta-tra; repot — matstrumpor/konfig.json rad 70–81, dna.md rad 22–28",
+    "antal": "489 av 590 = 2 ätpinnar · 90 av 110 = 2 lådor"
+   },
+   {
+    "fakta": "Vinnaren drar ettbox-köpare: ordervärdet skiljer per annons 374–798 kr — Nathalie 417 kr, erbjudandebilden d3 (Köp 2 – få 2) 623 kr.",
+    "kalla": "repot — products/matstrumpor/dna.md rad 119–122",
+    "antal": "417 kr mot 623 kr"
+   },
+   {
+    "fakta": "Vinnarens köpare i tal: '09-17 Nathalie captions musik' 77 806 kr / 382 köp senaste 30 d (näst största inlägg 11 462 kr / 24 köp); last_14d till 30/9: 69 522 kr, 15 134 LPV, 827 ATC (5,5 %), 351 köp (2,3 % CVR), ROAS 2,14. Första veckan 17–23/9: 29 köp på 845 LPV = 3,4 % köp/LPV, CPA 172 kr mot break-even 308.",
+    "kalla": "kommentarer — insights last_30d; repot — CHADBOT-SVAR-2026-10-02.md rad 15–31, lardomar.md rad 108–114",
+    "antal": "382 köp / 30 d · ATC 5,5 %"
+   },
+   {
+    "fakta": "Recensionsbasen är tudelad: 28 recensioner totalt (Judge.me 12 + Trustpilot 16), alla på svenska; 14 inbjudna recensioner på fyra dagar i sep 2026 är glada gåvoköpare (flera om köp i feb–juli), 4 spontana 1★ är decemberkunder som inte fick paketet före jul. Råsnitt 4,18; Judge.me sushi 4,36 (5★6 / 4★3 / 3★2), Trustpilot 4,2 (5★12 / 1★4).",
+    "kalla": "recensioner — Judge.me reviews_for_widget + Trustpilot __NEXT_DATA__, läst 2026-10-02",
+    "antal": "28 (12 + 16)"
+   },
+   {
+    "fakta": "Publiken kommenterar nästan inte men taggar: 12 av vinnarens 35 lästa kommentarer (34 %) taggar en annan person (8 FB med 10 personer taggade, 4 IG med @), dvs köper eller tipsar åt någon. Hela kontot: 47 kommentarer på 8 av 128 lästa inlägg (120 inlägg har 0).",
+    "kalla": "kommentarer — Graph API message_tags/@-prefix, per-inlagg.json",
+    "antal": "12 av 35 (34 %)"
+   },
+   {
+    "fakta": "Avatarer i repot är ARBETSHYPOTESER, ingen kundintervju: 'presentkoparen' kvinna 30–55 som köper till mamma/brorsa/partner/väninna; 'julstrumpefyllaren' samma köpare okt–dec; 'skamtaren' som vill lura kollegan/barnen/partnern (oprövad). Fjärde saknas och ska inte hittas på.",
+    "kalla": "repot — products/matstrumpor/dna.md rad 172–184",
+    "antal": "3 hypoteser"
+   },
+   {
+    "fakta": "Köparenkäten (fråga 1 'Vad hände som gjorde att du köpte just nu?', fråga 2 'Var såg du produkten?', fråga 3 'Till dig själv eller någon annan? Till vem, vid vilket tillfälle?') har 0 lästa svar: brevlådan kundsupport@matstrumpor.se går inte att läsa härifrån. Rutan har varit live under ett dygn på högst ~53 ordrar (38 den 1/10 + 15 den 2/10 till 05:06 UTC), utskicket till 2 649 tidigare kunder går först fre 2/10 18:00.",
+    "kalla": "enkat — enkat/konfig.json, enkat/README.md, stonebite/data/snapshot.json 2026-10-02T05:14Z",
+    "antal": "0 lästa · ≤ 53 ordrar med rutan · 2 649 i utskicket"
+   }
+  ],
+  "till_vem": [
+   {
+    "fakta": "Gåva uttryckligen (present/presenter, julklapp, gåva, 'ge bort'/'ge till', 'mottagaren'): 16 av 28 recensioner (57 %) — Judge.me 7 av 12, Trustpilot 9 av 16. Bland de positiva (≥4★, 22 st): 15 (68 %). Räknas mottagarberättelser utan gåvoord in (sonen, barnbarnet som blev glad, 'min pojkvän köpte'): 19 av 28 (68 %).",
+    "kalla": "recensioner — regex + manuell läsning av alla 28",
+    "antal": "16 av 28 uttryckligt · 19 av 28 inkl. underförstått"
+   },
+   {
+    "fakta": "Mottagaren (uttalad): barn (son/dotter/'barn') 4 recensioner, barnbarn 2, sonhustru 1, partner 1 (mottagaren skriver att pojkvännen köpte), 'en sushi-älskare' utan relation 1; sig själv uttalat 1 ('man fryser inte om föterna'), 1 trolig egen användning. Mottagare utan angiven relation: 9. Pappa 0, kollega 0, mamma/vän 0.",
+    "kalla": "recensioner — manuell läsning av alla 28",
+    "antal": "barn 4 · barnbarn 2 · sonhustru 1 · partner 1 · sig själv 1 · pappa 0 · kollega 0"
+   },
+   {
+    "fakta": "Tre recensioner beskriver mottagaren som sushiälskare (dotter, barnbarn, 'en sushi-älskare'); 1 beskriver en mottagare som INTE äter sushi — 'så det blev väldigt lyckat'.",
+    "kalla": "recensioner — ord 'sushi-älskare'/'sushiälskande' ×3, 'äter inte sushi'",
+    "antal": "3 sushiälskare · 1 icke-sushiätare"
+   },
+   {
+    "fakta": "Tillfälle: jul i någon form 5 av 28 (4 'julklapp' + 1 'före 24.12'); fars dag 0; födelsedag 0. Fars dag-vinkeln har alltså inget stöd i recensionerna, jul har det.",
+    "kalla": "recensioner — rakna.mjs-tabellen",
+    "antal": "jul 5 · fars dag 0 · födelsedag 0"
+   },
+   {
+    "fakta": "Ordräkning gåvo-ord: 'present/presenter' 6 recensioner (JM 3, TP 3), 'julklapp' 4, 'gåva' 2, 'ge bort'/'ge till' 3, 'mottagaren' 3.",
+    "kalla": "recensioner — rakna.mjs-tabellen",
+    "antal": "present 6 · julklapp 4 · gåva 2"
+   },
+   {
+    "fakta": "Reaktionen vid öppnandet (uttalad): 5 recensioner — 'mottagaren vart så glad', 'blev jätteglad över matlådan', 'överraskad och glad', 'förvånad över hur realistiska dom såg ut', 'tog en stund innan poletten ramlade ned'. Realism-temat ('trodde det var sushi'): 4. Förpackningen nämns positivt 5. 2 hade inte öppnat/gett bort än.",
+    "kalla": "recensioner — citaten ordagrant",
+    "antal": "reaktion 5 · realism 4 · förpackning 5 · ännu inte öppnad 2"
+   },
+   {
+    "fakta": "I kommentarsfälten köper/tipsar man åt någon: 12 av vinnarens 35 kommentarer taggar en annan person; taggarna bär sällan text, när de gör det: 'nåt för er 😜', 'perfekt ju 🤣🤣', '🍣🍱', 'Jag vill ha sushistrumpor!! 😘' (4 likes, flest på IG).",
+    "kalla": "kommentarer — message_tags FB, @-prefix IG",
+    "antal": "12 av 35 · 14 personer taggade"
+   },
+   {
+    "fakta": "Ordrarna säger inget om mottagaren i ord: 0 av 2 260 lästa ordrar (590 + 1 670) bär någon orderanteckning, och kassan har inget presentmeddelande-fält (customAttributes är bara spårning + A/B-test). Enda indirekta måtten: annan leveransadress 7,1 % / 6,3 % (undre gräns) och julpaketet med presentkort 8,0 % av julordrarna.",
+    "kalla": "ordrar — orders.note + customAttributes[].key, båda fönstren",
+    "antal": "0 av 2 260 anteckningar"
+   },
+   {
+    "fakta": "Återköparna köper samma låda igen 'till en annan person' (analysfilens fynd): 38 av 44 återköp var samma sushilåda.",
+    "kalla": "ordrar — ATERKOP-ANALYS avsnitt 2 + rapportens notering",
+    "antal": "38 av 44"
+   },
+   {
+    "fakta": "Vinnarannonsen säger själv vem: 'ge bort dom', 'ta med till kalaset eller spara till julstrumpan', 'du visste ju deras favoriträtt', 'ja hon blev verkligen överraskad' — mottagaren är en vän/familjemedlem vars favoriträtt är sushi. Vinkel 'gift' bär 79 av arkivets 128 annonser.",
+    "kalla": "repot — lardomar.md rad 125–139; arkiv.md rad 5–24",
+    "antal": "79 av 128 annonser vinkel 'gift'"
+   },
+   {
+    "fakta": "Enkätens fråga 3 är exakt frågan 'till vem och vid vilket tillfälle' (exempel i frågan: pappa, en vän, en kollega) — 0 svar lästa; kodningsregel: ingen andel förrän en produkt har 30 svar, ett mönster kräver minst 6 svar, minst 20 % och två kalenderveckor.",
+    "kalla": "enkat — enkat/konfig.json fragor[2]; docs/os/evolve/ENKAT.md rad 102–103",
+    "antal": "0 svar lästa"
+   }
+  ],
+  "kundernas_ord": [
+   "[Judge.me 5★] Strumppaketen var så roliga att ge barn och barnbarnen i present! Och vad jag hört efteråt så var det bra kvalitet också!",
+   "[Judge.me 4★] Mycket uppskattad julklapp till sushiälskande dotter!",
+   "[Judge.me 5★] Underbara strumpor, mottagaren vart så glad.",
+   "[Judge.me 4★] Ser helt fantastiskt ut. Ej öppnat då de är en gåva.",
+   "[Judge.me 4★] Lång leveranstid men kul present/produkt till en sushi-älskare.",
+   "[Judge.me 5★] Jättefina i rolig förpackning! Snabb leverans",
+   "[Judge.me 3★] Kul förpackning, vet inte ännu om kvalitet på strumpor",
+   "[Judge.me 3★] Uppskattades inte så mycket av sonen. Inget fel på kvaliten.",
+   "[Trustpilot 5★] Fantastiskt rolig idé! Mitt sushiälskande barnbarn blev jätteglad över ”matlådan” med alla olika typer av sushi.",
+   "[Trustpilot 5★] Det var verkligen ett snyggt packet med sockor, en snabb blick och det såg ut som en äkta sushi-låda. Mottagaren i mitt fall äter inte sushi, så det blev väldigt lyckat. Det tog en stund innan poletten ramlade ned.",
+   "[Trustpilot 5★] Det var en rolig sak att ge bort.Mottagaren blev verkligen överraskad och glad.",
+   "[Trustpilot 5★] Min pojkvän köpte sushi strumpor och jag blev väldigt förvånad över hur realistiska dom såg ut. Och hur sköna dom var att ha på.",
+   "[Trustpilot 5★] Otroligt uppskattad present till dotter och sonhustru. Fina strumpor i härlig förpackning.",
+   "[Trustpilot 5★] Allt går inte att åta! Men man fryser inte om föterna.",
+   "[Trustpilot 5★] Jätterolig julklapp väntar redan på hur det ska tas emot snabb leverans🥰🙏❤️",
+   "[Trustpilot 1★] Beställde detta 10/12 med tanke att det skulle bli en julklapp. Men ni lyckades inte leverera detta i tid trots 14 dagars leveranstid. Paketet kom idag den 29/12.",
+   "[Trustpilot 1★] Orimligt lång leveranstid. Beställde 13.12 i tron att få leveransen före 24.12. Idag ( 30.12) ännu inte kommit. Spårningstjänsten är inte speciellt detaljerad.",
+   "[FB-kommentar på vinnaren, 3 likes] Gillar vanligtvis inte strumpor med mönster och färg men det här tycker jag var en riktigt rolig idé. En kul present",
+   "[IG-kommentar på vinnaren, via tagg, 4 likes] Jag vill ha sushistrumpor!! 😘",
+   "[FB-kommentar på vinnaren] Material?",
+   "[FB-kommentar på vinnaren] Skickas de från Sverige?",
+   "[IG-kommentar på vinnaren] Har köpt. Roliga men inte högsta kvalitet. Inte jättesköna och noppriga redan efter första tvätten. Men en kul grej. 🙃",
+   "[IG-kommentar på vinnaren] Synd att de inte har resåren direkt vid ankeln- såna strumpor kasar bara ned å är obekväma. Skulle lätt ha dessa annars. Kul m färg & mönster. :)",
+   "[IG-kommentar på vinnaren, 3 likes] Köp på Temu för en fjärdedel av priset",
+   "[IG-kommentar på vinnaren, 2 likes] Instruktör till inhyrd skådespelare: \"Se hysteriskt glad ut varje gång du ser strumporna\" 🤣",
+   "[FB-kommentar på vinnaren, 1 like] 1+vecka leveranstid så är det kina skräp man köper ifrån ett oseriöst företag.",
+   "[FB-kommentar på annons d3] Har köpt dessa men undrar om tvättråd, 40 eller 60 grader?",
+   "[FB-kommentar på annons d3] Strumporna är väldigt små Passar ingen vuxen"
+  ],
+  "invandningar": [
+   {
+    "fakta": "Leveranstiden är enda riktiga klagomålsklustret i recensionerna: 5 av 28 (4 st 1★ Trustpilot + 1 st 4★ Judge.me som ändå kallar den 'kul present'), alla daterade 19 dec 2025–8 jan 2026; de fyra 1★ gäller beställningar 10–13 december som inte kom före jul. 2 ber uttryckligen att leveranstiden ska stå före köp; spårningen 'inte speciellt detaljerad' 1; 'visar inte att ursprungsland är China' 1; 'dropshipping'/'ockerpriser' 1; kundtjänsten 'ber bara om ursäkt' 1; Klarna-anmälan nämnd 1. 0 av 16 Trustpilot-omdömen har butikssvar.",
+    "kalla": "recensioner — TP 1★ ×4 (text + experiencedDate), JM 4★ 2026-01-02",
+    "antal": "leverans 5 av 28, alla dec 2025–jan 2026"
+   },
+   {
+    "fakta": "Största invändningen på vinnaren i kommentarsfältet: 'det är Temu/dropshipping, billigare annanstans' — 7 kommentarer (1 FB, 6 IG) med sammanlagt 7 likes, inkl. den mest gillade kritiska ('Köp på Temu för en fjärdedel av priset', 3 likes), plus 1 ren priskommentar ('Omg vad dyra!') och 1 länk till en konkurrent (kalsongshop.se, sushistrumpor i presentförpackning). Samma tema på d3: '50 spänn på Temu'. Likes-vikten går jämnt: positiva 7, Temu/dropshipping 7, skådespel 2.",
+    "kalla": "kommentarer — FB + IG på inlägg 820358954504320_122140270233154794 / IG 17994196776012388",
+    "antal": "8 på vinnaren (+1 på d3), 7 likes"
+   },
+   {
+    "fakta": "Äkthet: kreatörens reaktion uppfattas som skådespel och hon känns igen från andra annonser — 'Instruktör till inhyrd skådespelare…' (2 likes) med svaret 'så uppenbart skådespel Kan dom inte bara ge en NY MÄNNISKA DEM & klippa ihop ett genuint'; 'REKLAMKANINEN igen 🤣'.",
+    "kalla": "kommentarer — IG + FB på vinnaren",
+    "antal": "3 (2 + 1 svar), 2 likes"
+   },
+   {
+    "fakta": "Material/tvättråd är den obesvarade köpfrågan: 'Material?' 1 på vinnaren (obesvarad); 'Hur tvättar man dessa? 40 eller 60 grader?' 3 gånger på 3 andra annonser (d3, 012v2, s001h1) av EN och samma person, utan svar. Butiken svarar aldrig i kommentarsfälten: 0 av 46 lästa kommentarer är skrivna av sidan. Inget materialfaktum finns i repot; leverantören har inte svarat.",
+    "kalla": "kommentarer — from.id; repot — lardomar.md rad 641, ugc/2026-10-briefer.md rad 101, 105, 216",
+    "antal": "material 1 · tvättråd 3 (1 person) · 0 svar"
+   },
+   {
+    "fakta": "Övriga köpfrågor på vinnaren: leverans/avsändarland 1 ('Skickas de från Sverige?'), storlek 0, pris 0 (bara utrop), var köper man 0.",
+    "kalla": "kommentarer — alla 46 lästa",
+    "antal": "1"
+   },
+   {
+    "fakta": "Produktinvändningar från folk som köpt: kvalitet (noppriga efter första tvätten, 'inte jättesköna') 1 på vinnaren; för små för vuxna 2 på andra annonser (d3 'Passar ingen vuxen', Katarina 'Passar bara till barn'); resår som gör att strumpan kasar ned 1 (vinnaren, 'Skulle lätt ha dessa annars'). I recensionerna: kvalitet dålig 0, storlek/passform 0, trasig/fel vara 0; kvalitet nämns 5 ggr (3 positiva, 1 'vet inte ännu', 1 i en 1★).",
+    "kalla": "kommentarer — ig-kommentarer.json, andra-inlagg.json; recensioner — 0 träffar på storlek/passform/trasig",
+    "antal": "kvalitet 1 · storlek 2 · resår 1 (kommentarer) · 0 · 0 · 0 (recensioner)"
+   },
+   {
+    "fakta": "Mottagaren uppskattade inte: 1 recension (3★, 'Uppskattades inte så mycket av sonen. Inget fel på kvaliten.'); kvalitet okänd ännu 1 (3★). Ingen 2★ någonstans.",
+    "kalla": "recensioner — JM 3★ ×2",
+    "antal": "1 + 1"
+   },
+   {
+    "fakta": "Enstaka på vinnaren: leveranstid + 'kina skräp'/'oseriöst företag' 1 (FB, 1 like), 'onödigt mycket plast' 1 (IG), 'reklam för något som sålt slut' 1 (FB 2026-10-01 — stämmer inte 2026-10-02: alla sushivarianter tillgängliga i products.json).",
+    "kalla": "kommentarer — matstrumpor.se/products.json available true",
+    "antal": "3"
+   },
+   {
+    "fakta": "Mot själva premissen: på haikuh3 ('trodde det var sushi'-vinkeln) är enda IG-kommentaren aggressiv ('NEJ INGEN TROR ATT DET ÄR RIKTIG SUSHI …'); på s007h3 ifrågasätts strumpor-som-julklapp ironiskt ('Det enda de inte ärver är strumpor och därför ger vi dem fler strumpor??').",
+    "kalla": "kommentarer — IG haikuh3, FB s007h3",
+    "antal": "2"
+   },
+   {
+    "fakta": "Marknadens 'hört förut': löftet 'rolig present som faktiskt används/minns' sägs redan av fem svenska annonsörer (Soxo, My Angry Socks, svenskhusman_socks, Presenthuset, Bäverbutiken) plus vår egen 'Rolig i kväll. På fötterna i morgon.' = sofistikering steg 3; sushilådan globalt steg 2 (tre dropship-sidor med identisk rubrik), i Sverige steg 1.",
+    "kalla": "ny-information — mekanismer.md §1 (annonsbiblioteket 2026-10-01)",
+    "antal": "fem annonsörer · steg 3 / 2 / 1"
+   },
+   {
+    "fakta": "Kundens egen tvekan ('Var det något som nästan fick dig att låta bli att köpa?') mäts inte i dag: det är enkätens reservfråga, inaktiv tills minst 80 % av de 50 första svaren på fråga 2 bara säger Facebook/Instagram/annons.",
+    "kalla": "enkat — enkat/konfig.json → reserv; ENKAT.md rad 26",
+    "antal": "reserv.aktiv = false"
+   }
+  ],
+  "produktfakta": [
+   {
+    "fakta": "5 par strumpor, rullade som sushibitar/maki = 'tio sushibitar'.",
+    "kalla": "sidan — body_html 'Det här får du'; repot — dna.md rad 19–21, ugc/2026-10-briefer.md rad 38–41 (en av två tillåtna videofakta)"
+   },
+   {
+    "fakta": "Fem sorter i lådan: laxnigiri, tamago, laxmaki, gurkmaki, röd rulle. Fem par = tio bitar = TVÅ bitar per sort ('varje par är en egen sort' är sant; 'varje par är en egen bit' och 'tio olika sushirullar' är fel). Belägg: produktbild 1, fem olika par bredvid tråget. Färger: laxnigiri orange med vita ränder, tamago gult med svart band.",
+    "kalla": "ny-information — mekanismer.md M5 + §4 punkt 4; CS-BRIEF §2"
+   },
+   {
+    "fakta": "Ätpinnar av trä ingår ('Äkta ätpinnar i trä').",
+    "kalla": "sidan — body_html + paketväljaren; repot — underlag-sv.json paket.sushi-2/4"
+   },
+   {
+    "fakta": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi/ingefära; den 'ser ut som takeaway tills du öppnar den'. Alla par levereras i en presentförpackning som ser ut som riktig mat, redo att ges bort utan inslagning.",
+    "kalla": "ny-information — mekanismer.md M1/M2 'Belägg i produkten'; sidan — body_html + FAQ 'Kan jag skicka dem som present direkt?' + header-bar 'Levereras presentklart'"
+   },
+   {
+    "fakta": "One size, passar strl 36–44, stretchigt material.",
+    "kalla": "sidan — body_html, .ms-storlek, FAQ; repot — dna.md"
+   },
+   {
+    "fakta": "Pris: Sushi-Strumpor 5-par 399 kr, 3-par 369 kr (jämförpris = pris i JSON, ingen överstrykning i prisraden). Erbjudanden exakt som sidan skriver dem: 'Köp 1 – Få 1 GRATIS / Du får 2 lådor – betalar för 1 / Mest Populär / Äkta ätpinnar i trä (2 par)' = 2 lådor 499 kr (förr 898 kr), 10 par; 'Köp 2 – Få 2 GRATIS / Du får 4 lådor – betalar för 2 / Mest gratis / Äkta ätpinnar i trä (4 par)' = 4 lådor 799 kr (förr 1 796 kr), 20 par. Inga andra siffror får stå i copy.",
+    "kalla": "sidan — produkt-JSON variants + .ms-paket; repot — dna.md rad 19–21, underlag-sv.json paket.sushi-2/sushi-4"
+   },
+   {
+    "fakta": "'Sushilådan tog slut i november förra året' — bekräftat av Axel 2026-09-24, står på produktsidan ('Förra året tog sushilådan slut i november.'), den andra av två tillåtna videofakta och den enda brådskan i kontot som sitter i en annons över break-even.",
+    "kalla": "repot — dna.md rad 105–109; sidan — body_html; ugc/2026-10-briefer.md rad 38–41"
+   },
+   {
+    "fakta": "Fri frakt i Sverige, 5–10 arbetsdagar (fraktrutan räknar om till kalenderdatum, i dag 9–16 oktober).",
+    "kalla": "sidan — body_html, FAQ, .ms-delivery; repot — dna.md"
+   },
+   {
+    "fakta": "Mot dropshippers får sägas och är sant: svenskt företag (sidfoten: 'Matstrumpor.se drivs av STONEBITE ECOM AB Org.nr 559576-2401'), Klarna i kassan (FAQ: Klarna, kort, Apple Pay, Google Pay, PayPal, Shop Pay), fri frakt i Sverige, 5–10 arbetsdagar, riktiga recensioner i butiken.",
+    "kalla": "ny-information — mekanismer.md §3 'Mot dropshippers'; sidan — sidfot + FAQ"
+   },
+   {
+    "fakta": "Riktiga recensioner i butiken: Judge.me 11 recensioner på sushi-strumporna, snitt 4,36 (histogram 5★6 / 4★3 / 3★2 / 2★0 / 1★0), alla verifierade köp; Trustpilot 16 omdömen, TrustScore 4,2. Sidan visar båda talen (Judge.me 11/4.4, Trustpilot-raden 16/4,2) — två källor, två tal.",
+    "kalla": "recensioner — reviews_for_widget, __NEXT_DATA__; sidan — Judge.me-badge + .ms-tp"
+   },
+   {
+    "fakta": "Citat som får användas ordagrant (verifierad köpare, Judge.me 2026-09-28; ändras ett ord är det inte längre ett citat): \"Mycket uppskattad julklapp till sushiälskande dotter!\"",
+    "kalla": "ny-information — mekanismer.md M3 H4; recensioner — JM 4★ 2026-09-28"
+   },
+   {
+    "fakta": "Fyra rätter finns i butiken (sushi, pizza, hamburgare, donut) — men BARA sushi får marknadsföras (Axel 2026-10-01: 'bara sushi'); de andra får nämnas bara som faktum om sortimentet, aldrig i bild eller rad i en annons.",
+    "kalla": "repot — EVOLVE-PLAN.md, ugc/2026-10-briefer.md rad 25; ny-information — F12/M3"
+   },
+   {
+    "fakta": "Returrätt — MOTSTRIDIGT, rapporteras som det står: sidan och policyn säger '30 dagars öppet köp' / '30 dagars returpolicy från det att du mottog artikeln' (4 ställen på sidan i dag); brandfilen: returfonster_dagar 30, angerratt_dagar 14 (lag), kunden betalar returfrakten. I ANNONSER heter det ENDAST '14 dagars ångerrätt enligt lag', aldrig '30 dagar', aldrig 'garanti' (/notionkorning stoppar 30-dagarslöften sedan 2026-09-30); UGC-briefer: inga returlöften alls. Vad SIDAN ska säga är inte avgjort.",
+    "kalla": "sidan — body_html, header-bar, trust-rad, FAQ; repot — kundtjanst/brands/matstrumpor.yaml rad 80–84, docs/copy-regler.md rad 85–90"
+   }
+  ],
+  "vinnarens_rader": [
+   "(1) 0:00–0:01 ingen text — en lax-maki hålls upp mot kameran, hon nyper i den.",
+   "(2) 0:01–0:02 'det här är ditt tecken'",
+   "(3) 0:02–0:04 'dom sålde slut i november'",
+   "(4) 0:04–0:06 'ge bort dom'",
+   "(5) 0:06–0:09 'ta med till kalaset eller spara till julstrumpan'",
+   "(6) 0:09–0:12 'när du ger bort dom här så är det som att du vet allt om personen — du visste ju deras favoriträtt'",
+   "(7) 0:12–0:13 'tio sushibitar med ätpinnar i trä'",
+   "(8) 0:13–0:15 'pizza, burgare och donut i egna (lådor)' — live i annonsen, STRUKEN för allt nytt (bara sushi, Axel 2026-10-01)",
+   "(9) 0:15–0:18 'fyra looks som verkligen lurar blicken totalt' (vännen öppnar paketet) — live i annonsen, STRUKEN för allt nytt",
+   "(10) 0:18–0:21 'ja hon blev verkligen överraskad'",
+   "(11) 0:21–0:22 'rolig att öppna och används år efter år'",
+   "(12) 0:22–0:27 'dom som tog slut i november förra året, så säkra dina på matstrumpor punkt se innan det händer igen' (soffan, strumporna på fötterna) — butiksnamnet/webbadressen struket i manuset till nya kreatörer",
+   "MANUSET TILL NYA KREATÖRER (rensat): 'Det här är ditt tecken.' / 'Dom sålde slut i november.' / 'Ge bort dom.' / 'Ta med till kalaset eller spara till julstrumpan.' / 'När du ger bort dom här så är det som att du vet allt om personen, du visste ju deras favoriträtt.' / 'Tio sushibitar med ätpinnar i trä.' / 'Ja, hon blev verkligen överraskad.' / 'Rolig att öppna och används år efter år.' / 'Dom som tog slut i november förra året, så säkra dina innan det händer igen.'",
+   "Källa: products/matstrumpor/lardomar.md rad 125–139 (avläst ur videons frames); ugc/NATHALIE-MANUS.md rad 13–31; ugc/2026-10-briefer.md rad 49–67. Annons 120251591832350023 '09-17 Nathalie captions musik', 27,7 s, verklig kvinna i eget kök, captions + musik, etikett BREAKTHROUGH (kontots enda)."
+  ],
+  "sidan_i_dag": {
+   "titel": "Sushi-Strumpor",
+   "beskrivning_text": "Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl.\n\nDen roliga håller en kväll, sen hamnar den i en byrålåda. Den praktiska gör nytta, men pappret rivs av i tystnad. Du slipper välja: den här är rolig i kväll och på fötterna i morgon.\n\n[VIDEO: loop ms-loop-beskr, poster ms-loop-uppackningen-v2.jpg, aria-label \"Sushilådan öppnas och strumporna visar sig\"]\n\nSer ut som sushi. Är strumpor.\n\nDe tror att det är riktig sushi – tills de inser vad det egentligen är. De tittar två gånger. Sen skrattar de. När skrattet lagt sig är det fortfarande strumpor – något man faktiskt behöver och använder.\n\n[VIDEO: loop, poster ms-loop-avslojandet.jpg]\n\nDet här får du:\n· 5 par strumpor, rullade som sushibitar\n· Sushilåda som lurar ögat – ser ut som takeaway tills du öppnar den\n· Ätpinnar av trä ingår, för hela illusionen\n· Onesize – passar 36–44\n· Fri frakt i Sverige – framme på 5–10 arbetsdagar\n\nFörra året tog sushilådan slut i november.\n\n[BILD: WhatsAppImage2025-11-27…, alt \"Sushi-strumporna upplagda med lådan och ätpinnarna\"]\n\n30 dagar att ändra dig.\n\n30 dagars öppet köp. Funkar det inte, skickar du bara tillbaka det – inga konstiga frågor.",
+   "ord": 151,
+   "temats_block": [
+    "Sidhuvudets roterande annonsrad: 'Fri frakt i hela Sverige / 30 dagars öppet köp / Levereras presentklart' (y≈0–90)",
+    "Bildgalleri: 5 bilder i JSON (alla utan alt-text), 4 synliga mediemodaler",
+    "Eyebrow 'MATSTRUMPOR.SE' (p.product__text, y 685) — med .SE för svensk kund",
+    "H1 'Sushi-Strumpor' (ur product.title, y 697)",
+    "Judge.me-badge '11 recensioner' (stjärnor, y 747)",
+    "Prisrad 'Ordinarie pris 399 kr' (ur varianten, ingen överstruken jämförelse, y 784)",
+    "Variantväljare 'Par: 5 - Par / 3 - Par' (y 840–868) och 'Storlek: One Size' (y 918–947)",
+    "Storleksrad 'Passar strl 36–44 · stretchigt material' (p.ms-storlek, y 1000)",
+    "Paketväljaren .ms-paket (y 1064–1371), tre kort: [1] '1 låda / 5 par strumpor / 399 kr'; [2] bricka 'Mest populär' / '2 lådor' / '10 par strumpor + ätpinnar' / nu '499 kr' förr '898 kr' / 'GRATIS PÅ KÖPET' / 'Äkta ätpinnar i trä (2 par)' / 'värde 100 kr'; [3] bricka 'Mest valt' / '4 lådor' / '20 par strumpor + ätpinnar' / nu '799 kr' förr '1,796 kr' (engelskt komma) / 'GRATIS PÅ KÖPET' / 'Äkta ätpinnar i trä (4 par)' / 'värde 200 kr' — temats JS/Liquid, JSON:s varianter har bara 399/369",
+    "Köpknappen 'Lägg i varukorgen' (button--primary, y 1435–1451)",
+    "Trust-rad 'Fri frakt i Sverige · 30 dagars öppet köp · Trygg betalning' (.ms-trust, y 1652)",
+    "Trustpilot-rad 'Bra · 4,2 av 5 · 16 omdömen på Trustpilot' (.ms-tp, läser shop-metafältet, y 1729)",
+    "Fraktrutan 'Beräknad leverans' + '9 oktober – 16 oktober' (.ms-delivery, y 1777–1795)",
+    "Fars dag-raden 'Beställ senast 24 oktober så är paketet framme till fars dag.' (p.ms-sista-dag, y 1845)",
+    "[Produktbeskrivningen .product__description.rte, y 1904–3971, 2 067 px hög i mobilvy — det enda en ny body_html byter; de två loop-videorna och WhatsApp-bilden ligger I body_html och försvinner med en ny body_html utan dem]",
+    "'Dela' (share-button, y 3996)",
+    "Judge.me-widgeten #judgeme_product_reviews (y från 4132): 'Kundrecensioner', snitt 4.4, '11 recensioner', 4 svenska först (28/09 ×3, 25/09, alla 'Verifierad'), sedan 'Recensioner på andra språk' med 3 svenska texter märkta engelska (Shop App) utan Verifierad-märke; dold skärmläsartext 'Sort reviews by' på engelska",
+    "FAQ .ms-faq 'Vanliga frågor' (y 6365–6823), 6 hopfällda frågor: 'Passar de alla?' / 'Hur fungerar Köp 1 – Få 1?' / 'Kan jag skicka dem som present direkt?' / 'Hur snabbt kommer de?' / 'Vilka betalsätt kan jag använda?' / 'Vad gäller om jag ångrar mig?' — svaren syns inte i innerText",
+    "Tagline-sektion (.rte, y 6977, 18 ord): 'Strumpor som ser ut som mat – gåvan de skrattar åt först och använder varje vecka.'",
+    "Sidfot: Följ oss, Snabblänkar, Information (kundsupport@matstrumpor.se, policyer, Ångra köp, Spåra paket), Företaget ('Matstrumpor.se drivs av STONEBITE ECOM AB Org.nr 559576-2401'), klubbrutan 'Din plats i klubben väntar' + E-post, Betalningsmetoder, '© 2026, Matstrumpor.se Powered by Shopify'",
+    "Ingen momsrad (.tax-note tom, 0 px) — enligt Axels beslut 2026-09-29",
+    "Avvikelser: compare_at_price = price i JSON (rabatten lever bara i paketväljaren); '1,796 kr' med engelskt komma; Trustpilot-raden 16/4,2 mot Judge.me 11/4.4; 3 recensioner svensk text märkt engelska; fri frakt/30 dagar står 4 gånger på sidan, 5–10 arbetsdagar 2 gånger; mätt i mobilvy 390 px 2026-10-02 ~05:50 UTC (sv-SE, ?country=SE, ingen .com-omdirigering); updated_at 2026-10-02T07:48:24+02:00"
+   ]
+  },
+  "evolve_332": [
+   {
+    "regel": "3:2:2 = 1 kampanj (CBO), 1 Champions-adset + flera creative-test-adsets; 3 creatives i varje adset (SAMMA koncept), var och en med 2 rubriker och 2 texter. 1 koncept = 1 adset ('1 image concept with 3 variations'); bild och video får ligga i samma kampanj men i separata adsets. För video är de tre varianterna tre olika HOOKAR (första 3–10 s) på samma hold.",
+    "kalla": "evolve — How To Set Up a 3:2:2 Campaign ('To Sum Up' + FAQ); Understanding Ad Definitions; Planning Examples-dokumentet"
+   },
+   {
+    "regel": "DCT / dynamic creative nämns ingenstans i det läsbara materialet (0 träffar i 56 lektionsdumpar, 5 dokument, 3 ark). Kursens '3' är tre separata annonser i ett adset, inte Metas dynamiska creative. Flexibla annonser används bara i Raw Content-kampanjen.",
+    "kalla": "evolve — grep över alla dumpar; Media Buying 2026-arket; Full Media Buying Strategy Outline (2026) 3:12"
+   },
+   {
+    "regel": "Landningssidor testas i 3:2:2:2 för NYA creatives (3 creatives, 2 copies, 2 headlines, 2 landningssidor i samma adset). För BEFINTLIGA vinnare: 'Page #'-adset — duplicera topp 3–5 annonser, byt URL till den nya sidan, launcha i huvudkampanjen.",
+    "kalla": "evolve — How To Test Landing Pages 3:2:2:2; Media Buying 2026-arket flik Media Buying Structure"
+   },
+   {
+    "regel": "Under 2 000 USD/dag ska 3:2:2:2 INTE köras — testa bara EN landningssida ('to avoid spreading spend too thin'). Under 1 000 USD/dag: 'FOCUS MORE ON WINNING ADS', högst 5 nya test-adsets. ABO-skalningskampanjen bara för konton över 1 000 USD/dag.",
+    "kalla": "evolve — Media Buying 2026-arket; How To Set Up ABO Scaling Campaign"
+   },
+   {
+    "regel": "Kongruens: en spend winner som inte blir breakthrough saknar oftast konverteringsgrad, inte CTR; orsak #1 är en hook som vilseleder — det folk förväntar sig ur annonsen stämmer inte med sidan; sidan är för generisk, talar om en annan vinkel/avatar eller har fel offer. Brist på tro ⇒ mer auktoritet, brist på urgency ⇒ eskalera problemet, funnelproblem ⇒ optimera landningssidan. Chadbot: 'the most common fixes are trust and urgency, with funnel congruence as a third'.",
+    "kalla": "evolve — How To Iterate On Spend Winners '#11 Funnel/Congruence Issue'; Winning Ad Definitions-dokumentet 'SPEND WINNER (KPI Issue)'; repot — CHADBOT-SVAR rad 45–52"
+   },
+   {
+    "regel": "'Whatever the ad promises, the site must meet or beat it.' Annonser med BÄTTRE offer än sajten måste stängas av; sämre får ligga kvar. Språket på landningssidorna uppdateras så det är kongruent med annonsen, och sidorna split-testas.",
+    "kalla": "evolve — Q4 2026-dokumentet 'Ad Creative Management During Sale Phases' + 'Landing Pages'"
+   },
+   {
+    "regel": "Sidan speglar annonsens bevis: exemplet på en vinnande LP i Growth Guide 3.0 har 'Trusted by Doctors' ovanför vecket för att annonsen som skickar dit visar en läkare; hero, djärvt påstående ovanför vecket, tagline som träffar kärnbegäret, CTA 'Learn More'. Page Roadmap loggar varje sida med begär/kärnavatar, subavatar, offer, format och resultat; 'Page Hit Rate' bredvid 'Ad Hit Rate'.",
+    "kalla": "evolve — Growth Guide 3.0-arket, flikarna CRO, Page Roadmap, Overview"
+   },
+   {
+    "regel": "Kursen avråder från att alltid skicka direkt till en köp-sida: en del kunder behöver mer information först ('Congruent Funnels'). I kundexemplet mot berg-och-dalbana: 3 nya vinnande annonser, 1 nytt vinnande offer, 1 ny vinnande LP — ingen ny mediaköpsstrategi.",
+    "kalla": "evolve — Roller Coaster-presentationen 'Congruent Funnels' + 'What we did / What we didn't do'"
+   },
+   {
+    "regel": "Produktsidan: prisöverstrykningar så kunden ser besparingen redan på produktsidan, samma pris/besparing på produktsida, varukorg och kassa; QA: allt kongruent, överstrykningar syns, korgen visar, koden funkar, kolla på telefonen. I rea-receptet uppdateras hero-sektionen bara på direct response-/PDP-sidor, INTE listicles/advertorials.",
+    "kalla": "evolve — How To Supercharge Your Product Page 1–2; Why You Need To Show Savings In The Cart; Why You Need To QA; How To Optimize Your Landing Pages (6 steg)"
+   },
+   {
+    "regel": "Testtid: minst 3 dagar, numera 7; efter 7 dagar utan nämnvärd spend eller under KPI stängs ADSETET (aldrig på annonsnivå); aldrig längre än 14 dagar. Varje adset bör kunna få 3 × CPA i spend per dag. Lärdomar först vid betydande spend (minst 1 000 USD efter 7 dagar).",
+    "kalla": "evolve — How To Set Up a 3:2:2 Campaign FAQ; How To See If You Should Turn Off High-Spend Ads; The 10 Step Iteration Process"
+   },
+   {
+    "regel": "Vinnare: adsetet får majoriteten av spenden vid KPI, annars 'förbättrades hela kampanjens ROAS?' — 'If your overall campaign ROAS didn't improve, it's not a winner.' Veckoetiketter efter 7 dagar: Spend Winner 10–30 %+ av kampanjens spend utan budgethöjning; KPI Winner under 10–30 % men ROAS ≥ kampanjens; Loser under båda; Breakthrough 10–30 %+ OCH kampanjbudgeten har ökat vecka mot vecka. Bara klickdata och nya kunder räknas. Mätt median 0–100k USD/mån: breakthrough tar 67,9 % av kampanjens spend.",
+    "kalla": "evolve — How To Set Up a 3:2:2 Campaign FAQ; Winning Ad Definitions-dokumentet; Winning Ads Analysis-arket"
+   },
+   {
+    "regel": "Budget: inga min/max-gränser per adset ('tested it and it didn't help'); minsta kampanjbudget 100 USD/dag; vid några hundra dollar/dag högst 5 adsets samtidigt, alla får launchas samma dag; max koncept per vecka = budget ÷ target-CPA. Ingen fast kadens för nya adsets. Vinnar-adset i ABO startar på 5–20 % av dagsbudgeten; originalet i huvud-CBO:n stängs ALDRIG.",
+    "kalla": "evolve — How To Set Up a 3:2:2 Campaign FAQ; How To Set Up ABO Scaling Campaign"
+   },
+   {
+    "regel": "Varför CBO: ABO/minimibudget TVINGAR Meta att hämta köp som ofta inte är inkrementella; 'by testing in CBO, you're essentially telling the machine: Hey, please only spend on these ads if you think they're good enough to scale.' ABO slår sällan CBO. Stäng aldrig kampanjer som fungerar — lägg 3:2:2-kampanjen bredvid.",
+    "kalla": "evolve — Winning Ad Definitions-dokumentet 'The EVOLVE Testing Process'; Turning On Seasonal Ads NOTE #3; Action Item - Launch Your Campaigns"
+   },
+   {
+    "regel": "Testmetoder: Marksman först (flera vinklar, en variant var; för video specifika hookar, generisk hold), Sniper sedan (en vinkel, olika utföranden) när en vinkel får spend, Marksman igen när vinkeln planar ut; Shotgun bara för råinnehåll.",
+    "kalla": "evolve — 3 Testing Methods-dokumentet; Planning Examples-dokumentet"
+   },
+   {
+    "regel": "Namnet bär vart annonsen skickas: URL-fältet CP/PDP/HP/LP-Namn; landningssidetest-adset 'Page #4//Vinkel//7DC//Broad//US//25+//Male//Purchasers-180d'; annonsnamnet bär Batch#/UGC#/Page#, koncept, URL-typ, format, IDEA/ITER/IMIT, redigerare, variant, Copy#,# och Headline#,#.",
+    "kalla": "evolve — Naming Templates-dokumentet Level #2–3"
+   },
+   {
+    "regel": "Axels beslut i repot: ROUTING = C, DCT 3:2:2 ('Jag gillar chadbots sätt'); Chadbot: 3 annonser, 2 rubriker, 2 primärtexter per eget testadset i samma kampanj, flytt till huvudadset vid 20–30 % budgetandel, 'engagement does not decide spend'. ⚠️ Kursen själv säger inte DCT (se ovan).",
+    "kalla": "repot — EVOLVE-PLAN.md rad 51–57; CHADBOT-SVAR-2026-10-02.md rad 35–66"
+   }
+  ],
+  "ny_information": [
+   {
+    "fynd": "F1 Sushi som favoriträtt och topp tre i takeaway-Sverige. 56 % av svenskarna har sushi som favoriträtt i det japanska köket; 67 % beställer japanskt på restaurang, 32 % lagar hemma, 71 % har en japansk favoriträtt. Wolt-året 2025: mest beställda restaurangkategorier burgare, pizza, sushi; foodora 2025: burgare, pizza och sushi toppar, mest beställda enskilda rätt är cheeseburgare. Wolt stad för stad: Stockholm sushi 10 %, Falun 12 %, Karlstad 12 %.",
+    "tal": "56 % · topp tre · 10 % Stockholm · 12 % Falun/Karlstad",
+    "kalla": "Verian för HelloFresh, 1 005 intervjuer 16–24 april 2024, publ. 27 juni 2024 (Livets Goda) · Wolt 'Wolt-året i siffror 2025', 8 januari 2026 · foodora in bites 2025, 13 januari 2026 · Wolt stad för stad 20–21 maj 2026 (IT-Retail)",
+    "land": "Sverige",
+    "far_anvandas_som": "Skriv 'topp tre', ALDRIG 'mest beställda'. ⛔ Struken som videostart 2026-10-02 (Axel: 'känns onaturlig och konstig'); lever som bild i d3, rubrik i Ads Manager, Spoks-mejl, kommentarssvar. R: 'Topp tre på Wolt, fast i strumpor'."
+   },
+   {
+    "fynd": "F2 Presentkortet är det man köper när man inte vet. I USA ger 39 % presentkort men bara 10 % vill ha dem; 43 % har ett oanvänt presentkort, ≈27 miljarder dollar totalt, 244 dollar per person; 32 % gav presentkort för att de inte visste vad de annars skulle köpa; 23 % har fått ett till en butik de inte gillar. Globalt vill 38 % helst ha pengar; Sverige 22 %, näst lägst i Europa efter Danmark (15 %); presentkort 14 %. 47 % av svenskarna tycker pengar är en bra julklapp, 22 % vill hellre ha julklappar än pengar.",
+    "tal": "39 % ger / 10 % vill ha (USA) · 43 % oanvänt (USA) · 32 % visste inte (USA) · 22 % Sverige pengar",
+    "kalla": "YouGov USA 'Holiday shopping 2025', 15 oktober 2025 · Bankrate/YouGov Plc, 2 373 amerikaner 19–21 aug 2024, publ. 23 september 2024 · YouGov global 'Show me the money', 20 december 2023 (äldre, oanvänd) · PayPal/Sifo, 1 030 svenskar 22–25 nov 2023, publ. 20 december 2023 (äldre, oanvänd)",
+    "land": "USA (presentkortstalen) · Sverige (22 %/47 %)",
+    "far_anvandas_som": "Inga svenska presentkortssiffror finns: skriv 'i USA' när USA-talen används. Inte 'presentkort är dåligt' utan 'så många vet inte vad de ska köpa'. R: 'Tio sushibitar. Ingen kod, inget saldo.' Rubrik på bild till USA/WW och Spoks-mejl i Sverige. Kontots bild 032 sa saken utan siffra och svalt."
+   },
+   {
+    "fynd": "F3 Givaren oroar sig mer än mottagaren (gåvogapet, mätt). Meta-analys av 153 effekter, 114 studier, 29 artiklar: gapet givare–mottagare förvärras när gåvan är sentimental, konsumeras privat och ges mellan vänner. Fem studier: givare tycker det är viktigare än mottagare att välja rätt gåva, för att de överskattar hur illa en dålig gåva tas emot. Givare värderar dyrare gåvor högre (d = 1,43), mottagare föredrar den billigare och lättare använda (d = 0,74). Givare underskattar hur glad en liten gest gör mottagaren (förutsagt 2,7, rapporterat 3,5 på skalan −5 till +5).",
+    "tal": "153 effekter / 114 studier / 29 artiklar · fem studier 2025 · d = 1,43 mot 0,74 · 2,7 mot 3,5",
+    "kalla": "Freling m.fl., Psychology & Marketing, 20 februari 2024, DOI 10.1002/mar.21981 (verifierad via Crossref) · Mu & Givi, European Journal of Marketing 59(1), 2 januari 2025 · Liu m.fl., Frontiers in Psychology 2022 (äldre) · Kumar & Epley, JEP: General 2022 (äldre)",
+    "land": "Internationell forskning, inget land i raden",
+    "far_anvandas_som": "Sänk insatsen, aldrig 'du kommer ångra dig'. H1 ★: 'Studie 2025: givaren oroar sig mer än mottagaren. Ge tio sushibitar.' Utbildar, skrämmer inte."
+   },
+   {
+    "fynd": "F4 Mottagarna vill bli överraskade, och 'bästa gåvan jag gett' var en kreativ. I Storbritannien vill 44 % hellre bli överraskade, 32 % tillfrågade först, 15 % vill inte ha något; 67 % har börjat handla före november månads slut; 22 % av över 65 är 'directive'. Tre experiment: givare värderar originalitet och effekt högre än mottagare, förmedlat av vikten de lägger vid överraskning; 'bästa gåvan jag någonsin gett' minns som mer kreativ än en vanlig gåva; att ge kreativt höjer givarens moraliska självbild.",
+    "tal": "44 % överraskade / 32 % tillfrågade / 15 % inget (Storbritannien) · tre experiment 2026",
+    "kalla": "YouGov Storbritannien 'The YouGov Big Survey on Christmas', 28 november 2025 · Puente-Díaz & Cavazos-Arroyo, Behavioral Sciences 16(9):1522, 29 augusti 2026, DOI 10.3390/bs16091522 (verifierad via Crossref och Semantic Scholar)",
+    "land": "Storbritannien (44/32/15) · internationell forskning (experimenten)",
+    "far_anvandas_som": "'Den present du minns att du gav', riktat till givaren, utan att lova mottagarens reaktion. R (filens bästa rubrik: kort, bild, bara vår): 'Överraskningen har ätpinnar'. Skriv 'av britterna'."
+   },
+   {
+    "fynd": "F5 Gåvan säger vem du tror att mottagaren är, och hen växer in i det. Fem studier (scenario och riktiga gåvor): en gåva formar mottagarens 'reflected appraisal' (vad hen tror att givaren tycker om hen), och när den rubbar identiteten ändrar den mottagarens senare val, skilt från själva ägandet.",
+    "tal": "fem studier 2025",
+    "kalla": "Ashworth, Rath & Robitaille, Journal of Experimental Social Psychology vol. 118, online 16 januari 2025, DOI 10.1016/j.jesp.2024.104717 (verifierad via Crossref)",
+    "land": "Internationell forskning",
+    "far_anvandas_som": "Vetenskaplig rygg till M3 Favoriträtten och Nathalies rad 'du visste ju deras favoriträtt'. 'Sushi-personen' som kärleksfull etikett, aldrig en pik; ett påstående om studien, inte om våra strumpor. R: 'Fem par. Tio sushibitar. En låda.' H2 ★: 'Studie 2025: gåvan påverkar vad mottagaren väljer själv efteråt. Ge tio sushibitar.'"
+   },
+   {
+    "fynd": "F6 Skrattet avslöjar att ni redan ser världen likadant. 132 par: upplevd likhet förutsäger skratt, och skrattet speglar en redan existerande samsyn i stället för att skapa den. Stöd: 71 par, delat skratt unikt kopplat till närhet och upplevt stöd.",
+    "tal": "132 par (2026) · 71 par (2015)",
+    "kalla": "Wood m.fl., 'Laughter Indicates Perceived Similarity Among Friends and Strangers', Journal of Nonverbal Behavior, 28 januari 2026, DOI 10.1007/s10919-026-00501-x (verifierad via Crossref och Semantic Scholar) · Kurtz & Algoe, Personal Relationships 2015 (äldre, stöd)",
+    "land": "Internationell forskning",
+    "far_anvandas_som": "Riktningen avgör copyn: 'för den du skrattar med', ALDRIG 'det här gör er närmare'. Konstaterande om mottagaren, aldrig löfte om relationen. Bär M2 Duka fram den: skrattet vid bordet är tecknet. H3 (bildrubrik): 'Den du skrattar med ser världen som du. Ge dem fem par.'"
+   },
+   {
+    "fynd": "F7 Skämtet får inte vara på mottagarens bekostnad: ett skämt som går att ha på sig. I USA vill 57 % helst ge något praktiskt, 25 % något roligt (Gen Z 30 % roligt, millennials 62 % praktiskt); skämtpresenter/pranks 'off-limits' för 23 %; snittbudget kollega 38 dollar, vän 56, syskon 65. Kvalitativ studie: skämtpresenten parar gåvan med 'a joke at the expense of the recipient (i.e., a poke)'; humor kan öka den uttryckta tillgivenheten men ökar också risken. I Storbritannien är skämtpresenten nionde mest oönskade gåvotypen; 49 % låtsas gilla oönskade presenter; 29 % får en oönskad från samma person varje år. Bara 4 % av britterna tycker en rolig present är den bästa sorten; 30 % av männen och 16 % av kvinnorna vill helst ha praktiskt.",
+    "tal": "57 % praktiskt / 25 % roligt / 23 % utesluter skämtpresenter (USA) · nionde mest oönskad (Storbritannien)",
+    "kalla": "Talker Research för AliExpress, 2 000 amerikanska näthandlare 20–22 okt 2025, publ. 11 november 2025 · Schindler, Albinsson & Burman, 'Gag Gifting: The Joke and the Poke', Psychology & Marketing, 4 maj 2025, DOI 10.1002/mar.22226 (verifierad via Crossref) · Oxfam GB/OnePoll, 2 772 britter, 2 januari 2023 (äldre, stöd) · YouGov Storbritannien 18 december 2018 (äldre, stöd)",
+    "land": "USA (57/25/23) · Storbritannien (nionde, 49 %, 29 %, 4 %)",
+    "far_anvandas_som": "Vår fördel: skämtet sitter på förpackningen, inte på personen, och innehållet går att ha på sig. 'Praktiskt eller roligt? Den här är båda' med siffrorna; aldrig ett skämt om mottagaren i annonsen. Rekommenderad som första faktabild (d3-layout med erbjudande). R: 'Skämtet sitter på lådan, inte på dig'. H1 ★: 'Skämtpresenter har ofta en pik mot mottagaren. Här sitter skämtet på lådan.'"
+   },
+   {
+    "fynd": "F8 Därför syns sushin genom locket (förpackningsforskningen). Sju studier, 2 157 deltagare: att se produkten ökar den psykologiska önskan att äga den; genomskinlig förpackning föredras oavsett färg, varumärke och information; effekten är svagare för oattraktiva produkter och när man inte köper åt sig själv. Eye-tracking (n = 160, choklad): tid till första fixering 0,36 s (genomskinligt fönster) mot 0,93 s (produktbild); fixering 5,89 mot 3,95 s; förväntad kvalitet 4,96 mot 4,00; köpintention 4,88 mot 3,86. Tre experiment: en snyggt inslagen gåva från en vän gillas MINDRE (höga förväntningar), från en bekant tvärtom.",
+    "tal": "sju studier / 2 157 deltagare · 0,36 s mot 0,93 s · n = 160",
+    "kalla": "Marckhgott, Kamleitner & Estes, International Journal of Research in Marketing, EurekAlert 20 maj 2026 · 'Seeing Through Packaging: Eye-Tracking Evidence…', Journal of Eye Movement Research, 10 mars 2026 · Rixom, Mas & Rixom, Journal of Consumer Psychology 2020 (äldre, oanvänd)",
+    "land": "Internationell forskning",
+    "far_anvandas_som": "Regi, inte hook: kameran i mottagarens stol, blicken ner genom locket. Som förklaring ('därför är locket genomskinligt'), aldrig som kvalitetspåstående. ⚠️ Anti-inslagning går emot vinnarens egen film (Nathalie ger lådan inslagen 0:13): testas som bild, aldrig på Nathalie-kroppen. H2 ★ (bara bild): 'Snyggt inslagen gåva från en vän gillas mindre. Sushilådan kräver ingen inslagning.'"
+   },
+   {
+    "fynd": "F9 Klappen som göms undan: svensk jul 2025 i siffror. 87 % har någon gång fått en julklapp de egentligen inte vill ha; majoriteten av oönskade klappar ges bort, göms undan eller förblir oanvända; 80,3 % spenderar mer än planerat; vanligast oönskade: böcker, kläder i fel stil eller storlek, underkläder, choklad, handdukar. Blockets kommunikationschef: 'Vi brukar se den första oönskad julklappen redan innan Kalle anka har börjat'; 7 av 10 har fått klappar de inte uppskattat, 1 av 10 har sålt eller försökt sälja. Årets julklapp 2024 (unisexdoften) bland de mest vidaresålda på Tradera 25–26 december. Julklappar för 24,5 miljarder kronor; 57 % handlar oförändrat antal, en av fyra färre; nästan en av fem tänker handla från Temu eller Shein. Åtta av tio julfirare känner stress; presentinköp 33 % störst, ekonomisk press 28 %, trängsel 20 %; 89 % köper någon klapp på rea.",
+    "tal": "87 % · 7 av 10 · 1 av 10 · 24,5 miljarder kr · en av fyra färre · presentinköp 33 % störst stress",
+    "kalla": "UNICEF Sverige/Bilendi, 1 000 svenskar 18–79 år 19–24 nov 2024, publ. 12 december 2024 · SVT Västernorrland 19 december 2025 (uppd. 23 dec), Blocket; Sifo Kantar för Blocket inför julen 2021 · Tradera 27 december 2024 · Svensk Handel Julrapport 2025, 11 december 2025, 2 000 svarande · Amazon Sverige/YouGov, 1 020 svenskar 3–6 okt 2025, publ. 12 november 2025",
+    "land": "Sverige",
+    "far_anvandas_som": "Inte skam utan utbildning — klappen som öppnas på bordet inför alla har inget gömställe; 'färre klappar i år' (25 %) talar för en klapp som är fem par i en. 'Fel storlek' mot one size 36–44 är filens mest oväntade bevisrad. H2 ★ (julöppning, jul_video/jul_bilder): 'Första oönskade klappen ligger på Blocket före Kalle Anka. Ge tio sushibitar.' H3: 'Fel storlek hör till de vanligaste oönskade klapparna. Sushi-strumporna: one size 36–44.'"
+   },
+   {
+    "fynd": "F10 Leken är tillbaka: julklappsspelet och Årets julklapp 2025. Drygt hälften av alla julfirare (52 %) kastar tärning om julklapparna, nära 70 % bland 18–29; snittpriset på ett paket till julklappsleken är drygt 113 kronor; 58 % spelar för att det är lekfullt och underhållande, 43 % för gemenskapen; Skåne/Halland/Blekinge 66 %. Årets julklapp 2025 är vuxenleksaken (byggsatser, målarböcker, samlarfigurer), kidult-trenden.",
+    "tal": "52 % · nära 70 % (18–29) · 113 kr snitt · 58 % lekfullt",
+    "kalla": "Amazon Sverige/YouGov, 1 020 svenskar 3–6 okt 2025, publ. 20 november 2025 · HUI Research, Årets julklapp 2025, 13 november 2025 (TV4/TT), Emma Hernell",
+    "land": "Sverige",
+    "far_anvandas_som": "⚠️ Snittpaketet kostar 113 kr och lådan 399 kr: säg ALDRIG att den passar 'spelets budget'; vinkeln är lekfullheten (58 %) och kidult-skiftet. 'Köp 1 – få 1 gratis' = två paket till två spel är sant och får sägas. R: 'Tio sushibitar, ätpinnar, plastgräs'. H3 ★: 'Årets julklapp 2025 var vuxenleksaken. Den här har ätpinnar och plastgräs.'"
+   },
+   {
+    "fynd": "F11 Fars dag i siffror: var tionde pappa får strumpor. Nära hälften av svenskarna planerar att uppmärksamma dagen; de som firar planerar att spendera 244 kronor på far i genomsnitt (188 kr år 2023); cirka 950 miljoner kronor, +30 % mot 2023; 22 % planerar choklad eller andra sötsaker; 11 % planerar strumpor eller kalsonger till far; papporna själva önskar sig mest att få träffa sina barn. Fars dag 2026 är söndag 8 november; lådan sålde slut i november förra året.",
+    "tal": "244 kr snitt · 11 % strumpor/kalsonger · 22 % choklad · ca 950 miljoner kr · 8 november 2026",
+    "kalla": "Svensk Handel, rapporten 'Fars dag 2025', 5 november 2025 (+ Market.se samma dag)",
+    "land": "Sverige",
+    "far_anvandas_som": "'Var tionde pappa får strumpor på söndag; se till att hans är de han visar upp'; aldrig en pik mot pappan eller andras presenter. ⚠️ Snittet 244 kr parat med 'Köp 2 – få 2' (799 kr) rimmar illa; hellre 'Köp 1 – få 1 gratis' (499 kr för två). Bara i oktober–november. H3 ★ (= M2): 'Pappor önskar sig mest att få träffa sina barn. Ta med sushi-strumpor.' ⚠️ Recensionerna nämner fars dag 0 gånger."
+   },
+   {
+    "fynd": "F12 Strumpor är det mest gedda klädesplagget, och repriser är mer välkomna än givare tror. I USA står strumpor för nästan 30 % av klädesplaggen sålda som julklappar; 25 % av alla strumpor sålda 2022 köptes i november och december; 40 % av damstrumpor köpta i butik under julen var impulsköp. I Storbritannien är 79 % glada vid tanken på strumpor från tomten (tröjor 88 %, tofflor 81 %). Nio experiment: givare upprepar gåvor mer sällan än mottagare vill, för att de tror att en repris verkar tanklös, även när reprisen passar mottagaren bättre. Happy Socks vd: presentytorna i säsong 'play a crucial role in our business'.",
+    "tal": "nästan 30 % (USA) · 79 % (Storbritannien) · nio experiment",
+    "kalla": "Circana (Maria Rugolo), 1 december 2023 (äldre, oanvänd) · YouGov Storbritannien 14 december 2022 (äldre, oanvänd) · Givi, Journal of Business Research 117 (2020), nio experiment (äldre, oanvänd) · Alexander Meyer/Happy Socks, FashionUnited 12 mars 2024",
+    "land": "USA (30 %) · Storbritannien (79 %) · internationell forskning (experimenten)",
+    "far_anvandas_som": "Klyschan 'ingen vill ha strumpor' motsägs; risken är 'förutsägbart'. 'Samma idé, ny rätt' till förra årets köpare via Spoks, inte kall annons. H1/H2 är utländska och äldre än 24 månader: stödrader, aldrig rubriker. H3 ★ (Spoks): 'Upprepade gåvor uppskattas mer än givare tror. Sushi, pizza, burgare, donut.' ⚠️ nämner de andra sorterna — går emot 'bara sushi' i annons."
+   }
+  ],
+  "mekanismer": [
+   "M2 Duka fram den (genuint ny, 1 av 5): presenten serveras i stället för att överlämnas — ätpinnarna ligger med och tråget ser ut som takeaway, så den ställs på bordet (fikat, middagen, julbordet, kalaset) bland riktig mat och mottagaren upptäcker själv. På sidan: beskriv överlämningen som en scen ('så gav jag bort den', bord i stället för presentpapper) där reaktionen är bevismaterialet — men 'säg inget, vänta' är ett beteendepåstående utan produktbelägg som visas (video/bild), aldrig påstås; bärs av F6 (skrattet vid bordet är tecknet), F11 ('ta med' = lådan som ursäkt för besöket) och F9 (klappen som öppnas på bordet har inget gömställe). Axels ja 2026-10-02: brief MATSTRUMP_sushi_gift_ugc_065_v1 (Nathalie vid bordet, fast kamera mot mottagaren). H4 ★: 'Säg ingenting tills någon rullar upp en bit.' H2: 'Räck den inte över. Duka fram den.' (mekanismer.md M2 + §3 + §4 punkt 1 + §6)",
+   "M3 Favoriträtten (uppvärmd, redan i kön — 060 Draft + Katarina ×2 ÄR testet): presenten bevisar att du lyssnat — presentkortet säger 'jag vet inte', lådan säger 'jag vet vad du alltid beställer'; en personlig present utan gravyr. På sidan får 'sushiälskaren' en mätt grupp (F1: 56 % favoriträtt, topp tre takeaway), en mekanism (F5: gåvan sätter en etikett mottagaren behåller) och ett anti-presentkortsargument med siffra (F2: 32 % i USA köpte presentkort för att de inte visste); belägg i produkten: recensionen 'Mycket uppskattad julklapp till sushiälskande dotter!' och Nathalies rad 'du visste ju deras favoriträtt'. ⚠️ Skeptikern dömde den FÖRBRUKAD ('jag vet vad du älskar' körs av hela svenska strumpmarknaden); ⚠️ 'en låda per vana' lovar pizza/burgare/donut, som bara sushi får marknadsföra och som blandas i 5,1 % av ordrarna — på sushisidan skrivs den om sushi ensam. H3 ★: 'Pizza-pappan. Sushi-dottern. Burgar-brodern. Donut-mamman.' (går emot 'bara sushi'). (mekanismer.md M3 + §3 + §4 punkt 3 + §6)"
+  ],
+  "aldrig_pastas": [
+   "Butikens namn eller domän i en annons (Axel 2026-09-18); Nathalies sista rad bär 'matstrumpor punkt se' live men är struken i manuset. (Sidan själv får förstås heta Matstrumpor.)",
+   "Andra siffror än 399 kr, 5 par, tio bitar, 36–44, 5–10 arbetsdagar och erbjudandena exakt som sidan skriver dem (499 kr 2 lådor, 799 kr 4 lådor, ätpinnar 2/4 par). Procent om produkten/erbjudandet. (mekanismer.md §5) ⚠️ Spänning: ny-information.md:s hookar bär källprocent (56 %, 43 % i USA …) — läses som fakta om världen, inte om produkten; filerna löser inte motsägelsen uttryckligen.",
+   "Antal sålda: '2 576 sushilådor sålda förra julen' (bild 033) finns inte i repot och får inte köras igen.",
+   "'30 dagar', 'öppet köp', 'garanti' i en annons — bara '14 dagars ångerrätt enligt lag' (copy-regler rad 85–90; /notionkorning stoppar 30-dagarslöften sedan 2026-09-30). ⚠️ Sidan säger 30 dagar på fyra ställen i dag; vad sidan ska säga är inte avgjort.",
+   "Material, kvalitet, tjocklek, tvätt, 'handrullade', mjukhet — inget materialfaktum finns, leverantören har inte svarat, 'Material?' är obesvarad och ska besvaras på sidan först (men bara med ett belagt faktum). Brief 2 visar (dra i strumpan), påstår inte.",
+   "'Svenskt lager', 'snabb leverans' (mekanismer.md §5) — leverans p90 14,9 dygn; julens 1★ handlar om just leveranstiden.",
+   "'Sushi är Sveriges mest beställda rätt' — falskt (foodora 2025: cheeseburgare); skriv 'topp tre'. 'Mest googlade rätten' — ej belagt.",
+   "'Garanterat skratt', 'Du blir personen som ger de bästa presenterna', 'högkvalité, mjukt material, håller länge' (haikuh3/h2 — adjektiv utan bevis, dömt dött).",
+   "'Det här gör er närmare' / något löfte om relationen eller mottagarens reaktion — relationsforskning konstateras, lovas aldrig (F6, F4, CS-BRIEF §4). ⚠️ Frasen 'garanterat skratt' står inte ordagrant i ny-information-filerna; 'aldrig lova reaktionen' gör det.",
+   "Ett skämt om mottagaren eller en pik mot pappan/andras presenter — skämtet sitter på lådan, aldrig på personen (F7, F5, F11).",
+   "'Du kommer ångra dig', skam ('din klapp hamnar på Blocket'), skrämsel — fynden utbildar och väcker nyfikenhet (F3, F9).",
+   "'Presentkort är dåligt' — i stället 'så många vet inte vad de ska köpa' (F2). USA-tal utan 'i USA', brittiska utan 'i Storbritannien/av britterna'.",
+   "'Passar spelets budget' — snittpaketet 113 kr mot lådan 399 kr (F10).",
+   "En faktarad som första rad i en VIDEO (Axel 2026-10-02: 'känns onaturlig och konstig') — fakta lever i bild, rubrik, mejl, kommentarssvar och som bevisrader; produktsidan nämns inte ordagrant som plats i filerna men inget talar emot.",
+   "Ett annat märke som referens i copy (Axel val A 2026-10-02) — vardagsreferenser som takeaway/julstrumpa ok.",
+   "Pizza, burgare eller donut i bild eller rad i en annons (Axel 2026-10-01: 'bara sushi') — gäller också Nathalies rader 8–9 och hookar som räknar upp sorterna (M3 H3, F12 H3).",
+   "'Varje par är en egen bit' / 'tio olika sushirullar' (048h1–h3 live) — fel räkning; fem par = tio bitar = två per sort.",
+   "Svenska primärtexten/landningscopyn får inte lova något sidan inte möter ('Whatever the ad promises, the site must meet or beat it') — i dag lovar annonsen present/favoriträtt/'sålde slut' och sidan 'tvättmedel/skämtpryl' (ATC 5,5 % mot d3:s 12,9 % på samma sida).",
+   "Återanvändning av live rader ordagrant i nya annonser; Katarinas och Nathalies material lämnar aldrig Sverige utan Axels ord.",
+   "Ett kundcitat som inte är ordagrant och verifierat (citat i mejl kräver verifierad: true; de tre Shop-app-recensionerna står utan Verifierad-märke på sidan); enkätsvar blir aldrig kundcitat, recension eller 'verifierad kund'.",
+   "OVERIFIERAT/opålitligt som aldrig får användas: Etsy '+81 % funny gift', PostNord e-barometern Q3 2025, Åhléns presentrapport 2025, novelty-sock-marknad '4,5 miljarder dollar', Vichiengior IJRM 2024, svensk presentkortsförfallosiffra, 'strumpor är den mest oönskade gåvan', sushi-hashtags, Nordens sushikonsumtion, Meta-policyändringar för presentannonser, blind box-studien; Morot & Co/Sifo mars 2026 bara med uppdragsgivaren sagd.",
+   "Hook/hold-tal ur lardomar.md äldre än 2026-10-01 (0,2 %, 86–98 %) — fel mått; bara dna.md-tabellen (0,47 / 0,15 / 0,31) gäller.",
+   "Fars dag som belagd kundvinkel — 0 av 28 recensioner, 0 kommentarer nämner den; får användas bara som F11-fakta i oktober–november med datumet 8 november."
+  ],
+  "axels_fraga": "Datan räcker inte för att välja mellan de två — ingen källa mäter 'svårt för presenter' eller 'antal julklappar per år', och det enda instrumentet som frågar (enkätens fråga 1 och 3) har 0 lästa svar: brevlådan går inte att läsa härifrån, rutan har varit live under ett dygn på högst ~53 ordrar, utskicket till 2 649 tidigare kunder går först fre 2/10 18:00, och ingen andel får räknas förrän 30 svar finns. Det datan säger: (1) Kunden är en GÅVOKÖPARE till EN namngiven person, inte en storköpare: 16 av 28 recensioner (57 %) säger gåva uttryckligen, 19 av 28 (68 %) med mottagarberättelser; mottagaren är barn 4, barnbarn 2, sonhustru 1, partner 1 (pappa 0, kollega 0); 12 av vinnarens 35 kommentarer (34 %) taggar en person; vinnarannonsen säger 'ge bort dom … du visste ju deras favoriträtt'. (2) Volymen per order är liten: 85,1 % av ordrarna senaste 90 d har 2 lådor (styrt av Köp 1 få 1 på 84,1 %), bara 7,5 % har 4+ lådor; i julen 2025 köpte 53,0 % EN låda, 34,7 % två, 8,6 % 4+ (och 8,0 % tog paketet 4 lådor + presentkort för 599 kr); 94,9 % tar en enda sort. En som köper 'tusentals julklappar' hade blandat sorter och tagit 4+ — det gör 5–9 %. Återköp 1,2 % och då samma låda igen till en annan person. Nathalie drar ettbox-köpare (417 kr) mot erbjudandebildens tvåbox-köpare (623 kr). (3) Om de har 'svårt för presenter' syns inte i någon kundtext: 0 av 2 260 ordrar bär en anteckning (kassan har inget fält), ingen recension och ingen kommentar säger 'visste inte vad jag skulle köpa'; det motsatta syns — 3 recensioner valde lådan för att mottagaren älskar sushi, 1 för att mottagaren INTE gör det ('blev väldigt lyckat'), och 4 beskriver förväxlingen som poängen. 'Givaren oroar sig mer än mottagaren' (F3) och '32 % i USA köpte presentkort för att de inte visste' (F2) är forskning om världen, inte mätningar på våra kunder. (4) Vad som INTE kan skiljas ut: Shopify Payments döljer Klarna/Shop Pay så 'skickas till någon annan' är en undre gräns (7,1 % / 6,3 %); paket per recension och land per Judge.me-recension är tomma; recensionsbasen är 28, varav 14 inbjudna på fyra dagar. Svaret i dag: en köpare som redan vet vem hon ger till (ofta ett barn/barnbarn som gillar sushi) och köper en eller två lådor — varken 'svårt för presenter' eller 'tusen julklappar' är belagt, och det avgörs först av enkätens fråga 1 och 3 (minst 30 svar, mönster ≥ 6 svar, ≥ 20 %, två kalenderveckor).",
+  "kunde_inte_lasas": [
+   "Köparenkäten (INBOX.ENKAT, kundsupport@matstrumpor.se): KUNDTJANST_MAIL_PASS_MATSTRUMPOR saknas i den här miljön (bara Bäverbutikens finns); lösenordet ligger i rutinens miljö env_018aG5VVb69sSagge8CfgghK. Antalet svar är OKÄNT, inte noll; minst ett provsvar (Coworks test 2026-10-01 13:52) ligger där och ska räknas bort. Reservfrågan 'vad tvekade du på' finns inte i enkäten i dag (inaktiv).",
+   "Judge.me: paketstorlek per recension (product_variant_title tomt ×12), kundens land per recension (location_country_code tomt ×12), review_keywords null, ai_summary_text tom, och opublicerade/dolda recensioner (ingen API-nyckel — bara publicerade syns).",
+   "Trustpilot svarar 403 på vanlig fetch (?stars=1, ?languages=all) — innehållet lästes ur __NEXT_DATA__ i Chromium; repots cache data.json bär bara 9 av 16.",
+   "Kommentarer på den gamla sushisock-sidan 1229557150250240 (US/AU-annonserna, 38 inlägg, 6 396 kr spend 30 d, MATSTRUMP_US_sushi_ugc_november_v1 6 086 kr / 6 köp): token:en saknar pages_read_engagement/pages_read_user_content på den sidan. En IG-kommentar på vinnaren saknas (comments_count 16, 15 listade, 0 dolda — troligen raderad av skribenten).",
+   "Andelen presentköp i ordrarna: kassan har inget presentmeddelande-fält, 0 av 2 260 ordrar bär note; customAttributes är bara spårning + A/B-test. Shopify Payments särskiljer inte Klarna/Shop Pay/Apple Pay i paymentGatewayNames, så adressmåttet (7,1 % / 6,3 %) kan inte rensas för express-kassor och är en undre gräns. Par per order är exakt bara för sushi (531 av 590): donut/pizza/hamburgare säljs i 'One Size' utan partal.",
+   "Evolve: lektionen 'How To Write AI Landing Pages' (Evolve AI 3992cc1b) och hela Evolve CRO-kursen 7eccf232 (Page Deck-lektionerna, A/B-test, How To Test/Analyze Landing Pages On Meta, 'Unlock for $1,500') är låsta för kontot — 'You don't have access to this course'. Kursens ordnade lära om vad en landningssida ska innehålla finns därmed inte att läsa; det öppna materialet ger bara kongruenskravet + 3:2:2:2/Page #. Videorna (Philosophy, Winning Ads Definition Part 1–2, Scale Up & Down, Surf Scaling) hämtades inte. 'DCT'/'dynamic creative' har 0 träffar i allt läsbart material.",
+   "Den svenska primärtexten i SE-kampanjen finns inte som egen svensk källfil i repot — bara som produktsidans ingress (underlag-sv.json) och som återöversättningar i granskningen 2026-09-30, som intygar att de är lika. 2026-09-30-vad-annonserna-sager.md lästes rad 1–512 av 1299 (resten samma svenska källtext på fr/nl/es/it/pl/pt/ja/zh-TW).",
+   "Materialfaktum om strumporna: finns inte i repot, inte på sidan (mätt 2026-09-30), leverantören har inte svarat. Kommentaren 'Material?' är obesvarad.",
+   "kommentarer/leads.md och kommentarer/produktfakta.md: läsbara men 0 Matstrumpor-rader — inget VoC-underlag därifrån.",
+   "Vad som var slut kvällen 2026-10-01 (kommentaren 'reklam för något som sålt slut'): går inte att se i efterhand; 2026-10-02 står alla sushivarianter tillgängliga.",
+   "Sidans skärmdump (scratchpad/sida-mobil.png) togs men tittades inte på — innerText + DOM-blocken är mätningen; y-värdena gäller mobil 390 px, inte desktop.",
+   "Repot-rapporten läste INTE Judge.me, enkäten eller Shopify (läs-bart repouppdrag) — dess kommentarstal (4 på Nathalie, läst 2026-09-27) är äldre än kommentarsrapportens (35 på vinnaren, 2026-10-02); kommentarsrapportens tal gäller.",
+   "CLAUDE.md:s rad att Matstrumpors sida kräver META_ACCESS_TOKEN_MATSTRUMPOR stämmer inte längre (mätt 2026-10-02: META_ACCESS_TOKEN gav sidtoken och läste FB + IG) — kommentarer/konfig.json:s konton_valfria-rad kan bytas. Inte en lucka, men en rättelse att ta vidare."
+  ]
+ },
+ "sonnet": {
+  "modell": "claude-sonnet-4-6",
+  "utkast": {
+   "skriven_av": "Sonnet 4.6 (modell claude-sonnet-4-6), en skribent, ett utkast",
+   "titel": "Sushi-Strumpor",
+   "underrubrik": "Fem par. Tio sushibitar. Ätpinnar ingår.",
+   "block": [
+    {
+     "rubrik": "Du visste ju vad de alltid beställer.",
+     "text": "Sushi landade bland de tre mest beställda rätterna på Wolt i Sverige 2025. Det är vad folk väljer när de kan välja vad som helst.\n\nDen här lådan innehåller tio sushibitar i fem sorter, packade i ett tråg med genomskinligt lock. Mottagaren tror att det är sushi. Sedan lyfter de locket."
+    },
+    {
+     "rubrik": "Dom sålde slut i november förra året.",
+     "text": "Förra hösten stod det 'slut i lager' på den här sidan. Det gick fort.\n\nNu finns de igen."
+    },
+    {
+     "rubrik": "Räck den inte över. Duka fram den.",
+     "text": "Ätpinnar av trä ingår i varje låda. Det gör plastgräset också.\n\nStäll tråget på bordet. Lägg ätpinnarna bredvid. Låt mottagaren hitta det själv.\n\n44 procent av britterna uppger att de helst vill ge en present som visar att man lyssnat (YouGov 2025). Det är vad en låda sushi på fötterna gör."
+    },
+    {
+     "rubrik": "Rolig att öppna. På fötterna dagen efter.",
+     "text": "Förpackningen öppnas. Strumporna har på sig. Sedan är det gjort.\n\n57 procent i USA vill helst ge något praktiskt när de ger presenter. 25 procent vill ge något roligt (Talker Research 2025). Den här lådan är båda på en gång.\n\nSkämtet sitter på lådan, inte på personen. One size passar storlek 36–44. Levereras presentklart."
+    }
+   ],
+   "punkter": [
+    "5 par sushistrumpor (tio bitar, fem sorter)",
+    "Sorter: laxnigiri, tamago, laxmaki, gurkmaki, röd maki",
+    "Ätpinnar av trä (ingår i alla lådor)",
+    "Tråg med genomskinligt lock",
+    "Plastgräs",
+    "One size 36–44",
+    "Levereras presentklart"
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Fem par. Tio sushibitar. Ätpinnar ingår. (underrubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja. Kombinationen är produktens egna och falsifierbar."
+    },
+    {
+     "rad": "Du visste ju vad de alltid beställer. (block 1 rubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Ett nej (bara_vi): den sociala signalen är generell. Funkar som ingång till blocket — ett nej är OK."
+    },
+    {
+     "rad": "Sushi landade bland de tre mest beställda rätterna på Wolt i Sverige 2025. (block 1 öppningsmening)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Ett nej (bara_vi): Wolt-faktumet äger Wolt, inte vi. Det är ett belägg, inte ett löfte — ett nej är OK."
+    },
+    {
+     "rad": "Dom sålde slut i november förra året. (block 2 rubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja. Bara vi kan säga detta om vår egen lagerhistorik."
+    },
+    {
+     "rad": "Förra hösten stod det 'slut i lager' på den här sidan. (block 2 öppningsmening)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja."
+    },
+    {
+     "rad": "Räck den inte över. Duka fram den. (block 3 rubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja. Mekanismen M2 (Duka fram den) är identifierad som genuint ny för den här produkten."
+    },
+    {
+     "rad": "Ätpinnar av trä ingår i varje låda. (block 3 öppningsmening)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja. Bara vi kan påstå att vår specifika låda innehåller detta."
+    },
+    {
+     "rad": "Rolig att öppna. På fötterna dagen efter. (block 4 rubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Alla tre ja. Dubbelrörelsen glädje vid öppning plus praktisk användning är unik för en presentstrumpa."
+    },
+    {
+     "rad": "Förpackningen öppnas. Strumporna har på sig. Sedan är det gjort. (block 4 öppningsmening)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Ett nej (bara_vi): tre generiska meningar om att öppna ett paket. De skapar rytm och sänker tempot inför forskningsfaktat — ett nej är OK som ingång."
+    }
+   ],
+   "fakta_anvanda": [
+    "Sushi topp tre Wolt Sverige 2025 (F1 ur ny-information.md, källa: Wolt Top Takeaway 2025)",
+    "Fem sorter: laxnigiri, tamago, laxmaki, gurkmaki, röd maki (produktfaktabladet)",
+    "5 par sushistrumpor, tio bitar i fem sorter (produktfaktabladet)",
+    "Ätpinnar av trä ingår i alla lådor (Axels korrigering 2026-10-02 — gäller alla lådor, inte bara flerpaketet)",
+    "Tråg med genomskinligt lock (produktfaktabladet)",
+    "Plastgräs ingår (produktfaktabladet)",
+    "Sålde slut i november förra året (orderdata ur faktabladet)",
+    "44 procent av britterna vill helst ge en present som visar att man lyssnat (YouGov 2025, F4 ur ny-information.md)",
+    "57 procent i USA vill helst ge något praktiskt, 25 procent något roligt (Talker Research 2025, F7 ur ny-information.md)",
+    "One size passar storlek 36–44 (produktfaktabladet)"
+   ],
+   "lasbarhet": "Testat högt. Block 1 slutar med en punchline ('Sedan lyfter de locket') som är naturlig stoppunkt — inget hänger in i block 2. Block 2 är avsiktligt kort, tre meningar, lugnt tempo efter block 1:s snabbare rytm. Block 3 skiftar till imperativ ('Ställ... Lägg... Låt...') som bryter mönstret och gör blocket muntligt innan det landar i ett faktum. Block 4 öppnar med tre korta satser i rad som sänker tempot och förbereder läsaren inför forskningsfaktat, avslutar sedan med tre raka produktrader. Ingen mening hänger syntaktiskt på blocket före — varje block kan läsas fristående utan att tappa mening."
+  },
+  "kontroll": null
+ },
+ "fable": {
+  "utkast": [
+   {
+    "skriven_av": "Fable 5.1 utkast 1 av 3 (ultracode: panel + domare + syntes)",
+    "titel": "Sushi-Strumpor",
+    "underrubrik": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt.",
+    "block": [
+     {
+      "rubrik": "Till den som alltid beställer sushi.",
+      "text": "Du känner någon som alltid beställer sushi. Du vet vad som står på kvittot. Och de är många: sushi låg topp tre på Wolt i Sverige 2025.\n\nFörra året tog den här lådan slut i november. Så det här är ditt tecken. Ge bort deras favoriträtt. Fast som strumpor.\n\nEtt presentkort säger: jag vet inte. I USA gav 32 % ett presentkort för att de inte visste vad de annars skulle köpa, enligt Bankrate 2024. Lådan säger: jag vet vad du alltid beställer."
+     },
+     {
+      "rubrik": "Räck den inte över. Duka fram den.",
+      "text": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnarna ligger redan i. Ställ den på bordet bland den riktiga maten. På fikat, middagen eller julbordet.\n\nSkratt mellan två personer visar att de redan ser världen likadant, enligt en studie på 132 par från 2026. Den här är för den du skrattar med."
+     },
+     {
+      "rubrik": "Tio sushibitar. Två av varje sort.",
+      "text": "Varje strumpa är rullad som en sushibit. Det här ligger i tråget:"
+     },
+     {
+      "rubrik": "Först sushi. Sen strumpor.",
+      "text": "Genom locket ser det ut som sushi. Först när locket går av syns strumporna. En verifierad köpare på Judge.me: \"Mycket uppskattad julklapp till sushiälskande dotter!\"\n\nJust överraskningen vill många ha: 44 % av britterna vill hellre bli överraskade, 32 % vill bli tillfrågade först, enligt YouGov 2025."
+     },
+     {
+      "rubrik": "Förra året var den slut i november.",
+      "text": "Många ger bort den till jul. Köp den nu och spara den till julstrumpan. Säkra dina innan det händer igen."
+     }
+    ],
+    "punkter": [
+     "5 par strumpor, rullade som sushibitar",
+     "Två bitar av varje sort: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle",
+     "Ätpinnar i trä",
+     "Tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi och ingefära",
+     "One size, passar storlek 36 till 44",
+     "Levereras presentklart"
+    ],
+    "tre_fragor": [
+     {
+      "rad": "Sushi-Strumpor (titel)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Produktnamnet som det står i Shopify i dag. Går att se och är sant eller falskt, men vilken sushistrumpsäljare som helst kan skriva det. Behålls för att titeln är sökord, inte copy."
+     },
+     {
+      "rad": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt. (underrubrik)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Nathalies rad 6 och 7 ur vinnaren. Tio bitar och träpinnar går att räkna; sushilådan är steg 1 i Sverige och raden är vår kreatörs. 3 ja."
+     },
+     {
+      "rad": "Till den som alltid beställer sushi. (rubrik block 1)",
+      "se": true,
+      "falsk": false,
+      "bara_vi": true,
+      "kommentar": "Man ser personen och beställningen. Det är en adress, inte ett påstående, så det går inte att falsifiera. Ingen annan strumpannonsör i Sverige pekar på sushibeställaren (de fem konkurrenterna säger 'rolig present som används'). 2 ja. Panelens alternativ 'Det här är ditt tecken.' föll med två nej och flyttades in i brödtexten."
+     },
+     {
+      "rad": "Du känner någon som alltid beställer sushi. (första mening block 1)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Går att se, kan vara falskt för läsaren. Vem som helst kan skriva den. 2 ja."
+     },
+     {
+      "rad": "Räck den inte över. Duka fram den. (rubrik block 2)",
+      "se": true,
+      "falsk": false,
+      "bara_vi": true,
+      "kommentar": "Mekanismen M2, skeptikerns enda genuint nya av fem. Bilden är lådan på bordet. En uppmaning, inte ett påstående. 2 ja."
+     },
+     {
+      "rad": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnarna ligger redan i. (första mening block 2)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Produktfakta 3 och 4. Tråget, locket och pinnarna syns på bild 1. 3 ja."
+     },
+     {
+      "rad": "Tio sushibitar. Två av varje sort. (rubrik block 3)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Räkningen fem par = tio bitar = två per sort är vår och rättar 048h1 som säger fel live. 3 ja."
+     },
+     {
+      "rad": "Varje strumpa är rullad som en sushibit. (första mening block 3)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Går att se och kontrollera. Dropship-sidorna utomlands säger samma sak. 2 ja. Skrevs om från 'varje par är rullat som en bit', som är fel räkning (ett par är två bitar)."
+     },
+     {
+      "rad": "Först sushi. Sen strumpor. (rubrik block 4)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Avslöjandet i två ord, i videons ordning. Globalt steg 2: tre dropship-sidor bär samma idé i rubrik. I Sverige säger ingen annan det. 2 ja."
+     },
+     {
+      "rad": "Genom locket ser det ut som sushi. (första mening block 4)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Det genomskinliga locket är vårt tråg (produktfakta 4). Ett påstående om lådan, inte om mottagarens reaktion. 3 ja."
+     },
+     {
+      "rad": "Förra året var den slut i november. (rubrik block 5)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Produktfakta 7, bekräftad av Axel 2026-09-24. Vår låda, vårt november. 3 ja. Panelens alternativ 'Säkra dina innan det händer igen' föll som rubrik (ser inget, påstår inget) och står i stället som sista mening."
+     },
+     {
+      "rad": "Många ger bort den till jul. (första mening block 5)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Belagt i faktabladet (jul 5 av 28 recensioner, december 2025 störst). Går att se och kan vara falskt. Vilken julprodukt som helst kan skriva den. 2 ja."
+     }
+    ],
+    "fakta_anvanda": [
+     "Fem par strumpor, rullade som sushibitar, tio bitar: produktfakta 1 (sidan body_html 'Det här får du'; dna.md rad 19–21). Skrivs i underrubriken, rubrik block 3, punkt 1.",
+     "Fem sorter, två bitar per sort, laxnigiri, tamago, laxmaki, gurkmaki, röd rulle; varje strumpa är en bit: produktfakta 2 (mekanismer.md M5 + §4 punkt 4, produktbild 1). Rubrik block 3, första meningen block 3, punkt 2.",
+     "Ätpinnar i trä ingår i lådan: produktfakta 3 (sidan body_html + paketväljaren; underlag-sv.json). Axels ord i uppgiften: ätpinnarna ligger i alla lådor. Underrubriken, block 2, punkt 3.",
+     "Riktigt takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi/ingefära; ser ut som takeaway tills du öppnar; presentförpackning redo att ges bort utan inslagning / 'Levereras presentklart': produktfakta 4 (mekanismer.md M1/M2; sidan body_html, FAQ, header-bar). Block 2, block 4, punkt 4 och 6.",
+     "One size, passar 36–44 (skrivet '36 till 44' för att tankstreck är förbjudna): produktfakta 5 (sidan .ms-storlek, FAQ, dna.md). Punkt 5.",
+     "Sushilådan tog slut i november förra året: produktfakta 7 (dna.md rad 105–109, sidan body_html, Axel 2026-09-24; vinnarens rad 3 och 12). Block 1 stycke 2, rubrik block 5, 'säkra dina innan det händer igen'.",
+     "Många ger bort den till jul: till_vem 'Tillfälle: jul 5 av 28' + 'julklapp 4' och vem_koper 'december 2025 ensam 1 613 ordrar, 86 % dec–mars' (ATERKOP-ANALYS avsnitt 0). Första meningen block 5. Inga antal skrivs ut (antal sålda är förbjudet).",
+     "Kundcitatet 'Mycket uppskattad julklapp till sushiälskande dotter!': produktfakta 11, verifierad köpare, Judge.me 4★ 2026-09-28, ordagrant med utropstecknet. Block 4.",
+     "F1: sushi topp tre på Wolt i Sverige 2025: ny_information F1 (Wolt 'Wolt-året i siffror 2025', 8 januari 2026). Skrivet 'topp tre', aldrig 'mest beställda'. Block 1 stycke 1.",
+     "F2: i USA gav 32 % ett presentkort för att de inte visste vad de annars skulle köpa: ny_information F2 (Bankrate/YouGov Plc, 2 373 amerikaner, publ. 23 september 2024). Landet utskrivet, talet som källan. Block 1 stycke 3.",
+     "F6: skratt visar att två personer redan ser världen likadant, 132 par: ny_information F6 (Wood m.fl., Journal of Nonverbal Behavior, 28 januari 2026). Riktningen 'för den du skrattar med', inget löfte om relationen. Block 2 stycke 2.",
+     "F4: 44 % av britterna vill hellre bli överraskade, 32 % tillfrågade först: ny_information F4 (YouGov Storbritannien 'The YouGov Big Survey on Christmas', 28 november 2025). 'av britterna' utskrivet. Block 4 stycke 2.",
+     "Mekanismen M3 i ord: 'presentkortet säger jag vet inte, lådan säger jag vet vad du alltid beställer': mekanismer M3 i faktabladet. Block 1 stycke 3.",
+     "Mekanismen M2 'Räck den inte över. Duka fram den.' + bordet (fikat, middagen, julbordet): mekanismer M2 H2 + §3. Rubrik och stycke 1 block 2.",
+     "Vinnarens rader som sidan speglar: 'det här är ditt tecken' (rad 2), 'sålde slut i november' (rad 3), 'ge bort dom' (rad 4), 'spara till julstrumpan' (rad 5), 'du visste ju deras favoriträtt' (rad 6), 'tio sushibitar med ätpinnar i trä' (rad 7), 'säkra dina innan det händer igen' (manuset till nya kreatörer): vinnarens_rader, lardomar.md rad 125–139, ugc/NATHALIE-MANUS.md rad 13–31.",
+     "Vardagsreferenserna takeaway, fika, julstrumpa: docs/copy-regler.md 'Jämför med det kunden redan känner, men aldrig med ett märke'. Inget annat märke nämns."
+    ],
+    "lasbarhet": "Högläsningstestet kördes tre gånger per block. Regeln jag följde: varje mening tar upp ett ord ur meningen före, så att ingen mening står ensam. Block 1: sushi → kvittot → topp tre; lådan → tecken → ge bort → strumpor; presentkort → vet inte → lådan säger. Block 2: tråg och pinnar → bordet → fikat/middagen/julbordet → skratt mellan två vid bordet → den du skrattar med. Block 4: locket → strumporna → köparen → överraskningen → siffran. Block 5: november → jul → julstrumpan → säkra dina. Faktafynden står aldrig först i ett stycke utan som andra mening efter ett vanligt påstående, med källan sist efter kommatecknet, så att talet landar som bevis och inte som en avbruten rubrik; alla fyra är konstateranden om världen, inget lovar hur mottagaren reagerar. Panelen prövade tre rubriker per block; domaren fällde 'Det här är ditt tecken' och 'Säkra dina innan det händer igen' som rubriker (två nej) och syntesen la dem som meningar i brödtexten, där testet inte gäller. 'Varje gång' och 'Och det är ingen liten grupp' hackade vid högläsning och ströks respektive kortades till 'Och de är många'. Inga tankstreck finns, så intervallet skrivs '36 till 44'; ett enda utropstecken, det i citatet. Längsta meningen är Bankrate-raden (20 ord) och den ligger mitt i ett stycke med korta meningar runt sig. Hela sidan är cirka 290 ord med underrubrik och lista (dagens 151, taket 302); det längsta blocket, block 1, är tre stycken på två till tre rader var i mobilvy."
+   },
+   {
+    "skriven_av": "Fable 5.1 utkast 2 av 3 (ultracode: panel + domare + syntes)",
+    "titel": "Sushi-Strumpor",
+    "underrubrik": "Tio sushibitar med ätpinnar i trä. Fast det är fem par strumpor.",
+    "block": [
+     {
+      "rubrik": "Locket går av. Först ser det ut som sushi.",
+      "text": "Där ligger tio bitar på plastgräs, med ätpinnar i trä bredvid. Den som öppnar nyper i en bit. Det är en strumpa.\n\nEn kund skrev på Trustpilot: ”Det tog en stund innan poletten ramlade ned.”"
+     },
+     {
+      "rubrik": "Du visste ju deras favoriträtt",
+      "text": "Du vet vad de alltid beställer. Nu kommer det som strumpor, i en låda. Och de är i gott sällskap: 56 % av svenskarna har sushi som favoriträtt i det japanska köket, enligt en undersökning av Verian 2024. På Wolt låg sushi topp tre bland restaurangkategorierna 2025.\n\nEtt presentkort säger: jag visste inte. Lådan säger: jag vet vad du beställer. En kund skrev: ”Mycket uppskattad julklapp till sushiälskande dotter!”"
+     },
+     {
+      "rubrik": "Räck den inte över. Ställ den på bordet.",
+      "text": "Förra året tog sushilådan slut i november. Ge bort den i tid, och utan presentpapper. Lådan ser ut som takeaway, så ställ den bland maten. På fikat, på middagen eller på julbordet.\n\nMånga vill ha det så. Av britterna vill 44 % hellre bli överraskade med en present än tillfrågade först, enligt YouGov 2025."
+     },
+     {
+      "rubrik": "Skämtet sitter på lådan, inte på personen",
+      "text": "Den som öppnar får fem par strumpor i ett tråg som ser ut som takeaway. Och blir det skratt vid bordet säger det något.\n\nI en studie från 2026 i Journal of Nonverbal Behavior tittade forskare på 132 par. De som kände sig lika varandra skrattade mer ihop. Den här är för den du skrattar med."
+     },
+     {
+      "rubrik": "Tio bitar. Fem sorter. Ett tråg.",
+      "text": "Fem par strumpor, rullade som sushibitar. Två av varje sort, så det blir tio: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle. Ätpinnarna är av trä. Locket är genomskinligt, så bitarna syns innan någon öppnar."
+     },
+     {
+      "rubrik": "De tog slut i november förra året",
+      "text": "Lådan är klar att ge bort direkt, utan inslagning. Säkra dina innan det händer igen."
+     }
+    ],
+    "punkter": [
+     "5 par strumpor, rullade som tio sushibitar",
+     "Två bitar av varje sort: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle",
+     "Ätpinnar i trä",
+     "Takeaway-tråg med genomskinligt lock, plastgräs och små kulor som ser ut som wasabi och ingefära",
+     "One size, passar storlek 36 till 44",
+     "Klar att ge bort direkt, utan inslagning"
+    ],
+    "tre_fragor": [
+     {
+      "rad": "Tio sushibitar med ätpinnar i trä. Fast det är fem par strumpor.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Underrubriken. Vinnarens rad 7 plus avslöjandet. Bitarna och ätpinnarna går att räkna på produktbild 1; i Sverige säljer ingen annan ett tråg med ätpinnar (sushilådan är steg 1 här)."
+     },
+     {
+      "rad": "Locket går av. Först ser det ut som sushi.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 1. Ett lock finns bara på ett tråg, en strumpa i presentask har inget lock. Realismen bärs av fyra recensioner (realism-temat) och är ett påstående om lådan, inte ett löfte om personen."
+     },
+     {
+      "rad": "Där ligger tio bitar på plastgräs, med ätpinnar i trä bredvid.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Första mening block 1. Plastgräs, tio bitar och träpinnar är exakt vårt tråg (mekanismer M1/M2)."
+     },
+     {
+      "rad": "Du visste ju deras favoriträtt",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 2. Vinnarens egen rad ordagrant. Marknaden säger 'jag vet vad du älskar'; ingen annan pekar på en rätt. Skeptikern dömde mekanismen uppvärmd, raden står kvar för att sidan ska säga samma sak som videon."
+     },
+     {
+      "rad": "Du vet vad de alltid beställer.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Första mening block 2. En annan sushistrumpa kunde skriva under raden ensam. Meningen direkt efter, 'Nu kommer det som strumpor, i en låda', gör den till vår. Ett nej, får stå."
+     },
+     {
+      "rad": "Räck den inte över. Ställ den på bordet.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 3. En uppmaning som går att följa eller bryta: lådan står på bordet eller i handen. Bara en låda som ser ut som takeaway kan stå bland maten (M2)."
+     },
+     {
+      "rad": "Förra året tog sushilådan slut i november.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Första mening block 3. Tomma hyllan går att se, påståendet är bekräftat av Axel 2026-09-24 och ingen annan har en sushilåda som tog slut."
+     },
+     {
+      "rad": "Skämtet sitter på lådan, inte på personen",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 4. Marknadens skämtpresent har en pik mot mottagaren (F7); hos oss ligger skämtet i tråget. Ett påstående om var skämtet sitter, inte om hur någon reagerar."
+     },
+     {
+      "rad": "Den som öppnar får fem par strumpor i ett tråg som ser ut som takeaway.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Första mening block 4. Tråget bär raden."
+     },
+     {
+      "rad": "Tio bitar. Fem sorter. Ett tråg.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 5. Räknas på bilden: fem sorter, två av varje, ett tråg (mekanismer M5)."
+     },
+     {
+      "rad": "Fem par strumpor, rullade som sushibitar.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Första mening block 5. Rullade som bitar: ingen annan i Sverige rullar strumporna så."
+     },
+     {
+      "rad": "De tog slut i november förra året",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Rubrik block 6. Vinnarens sista rad, bekräftat faktum."
+     },
+     {
+      "rad": "Lådan är klar att ge bort direkt, utan inslagning.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Första mening block 6. Tråget är förpackningen; sidan säger 'Levereras presentklart' och FAQ 'Kan jag skicka dem som present direkt?'."
+     }
+    ],
+    "fakta_anvanda": [
+     "Fem par strumpor, rullade som sushibitar, alltså tio bitar. Källa: produktfakta 1 (sidan body_html 'Det här får du'; dna.md rad 19 till 21; ugc-briefen, en av två tillåtna videofakta).",
+     "Fem sorter, två bitar av varje: laxnigiri, tamago, laxmaki, gurkmaki, röd rulle. Fem par = tio bitar = två per sort. Källa: produktfakta 2 (mekanismer.md M5 + §4 punkt 4; produktbild 1 med fem olika par bredvid tråget).",
+     "Ätpinnar i trä ingår. Källa: produktfakta 3 (sidan body_html + paketväljaren 'Äkta ätpinnar i trä') och vinnarens rad 7 'tio sushibitar med ätpinnar i trä'.",
+     "Takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi och ingefära; ser ut som takeaway tills du öppnar den. Källa: produktfakta 4 (mekanismer.md M1/M2 'Belägg i produkten'; sidan body_html).",
+     "Redo att ges bort utan inslagning, 'Levereras presentklart'. Källa: produktfakta 4 (sidan FAQ 'Kan jag skicka dem som present direkt?' + header-bar).",
+     "One size, passar storlek 36 till 44. Källa: produktfakta 5 (sidan .ms-storlek, FAQ, dna.md). 'Stretchigt material' utelämnat eftersom materialpåståenden är förbjudna.",
+     "Sushilådan tog slut i november förra året. Källa: produktfakta 7 (dna.md rad 105 till 109, bekräftat av Axel 2026-09-24, står på sidan i dag, vinnarens rad 3 och 12).",
+     "Vinnarens rader som sidan speglar i samma ordning där det går: 'ge bort dom' (4), 'ta med till kalaset eller spara till julstrumpan' (5, här fikat/middagen/julbordet), 'du visste ju deras favoriträtt' (6), 'tio sushibitar med ätpinnar i trä' (7), 'hon blev verkligen överraskad' (10, här som ordagrant kundcitat i stället), 'säkra dina innan det händer igen' (12, rensat manus). Källa: vinnarens_rader, lardomar.md rad 125 till 139, NATHALIE-MANUS.md.",
+     "F1: 56 % av svenskarna har sushi som favoriträtt i det japanska köket (Verian för HelloFresh, 1 005 intervjuer 16 till 24 april 2024, publicerad 27 juni 2024); sushi topp tre bland Wolts restaurangkategorier 2025 (Wolt-året i siffror, 8 januari 2026). Skrivet 'topp tre', aldrig 'mest beställda'; talet exakt som källan. Källa: ny_information F1.",
+     "F4: 44 % av britterna vill hellre bli överraskade med en present än tillfrågade först (YouGov Storbritannien, The YouGov Big Survey on Christmas, 28 november 2025). Landet utskrivet som 'britterna'. Källa: ny_information F4.",
+     "F6: 132 par, upplevd likhet förutsäger skratt (Wood m.fl., Journal of Nonverbal Behavior, 28 januari 2026, DOI verifierad via Crossref). Skrivet 'för den du skrattar med', aldrig som löfte om relationen; 'blir det skratt' står som villkor, inte som utfall. Källa: ny_information F6.",
+     "Mekanism M2 Duka fram den: lådan ställs på bordet bland riktig mat (fikat, middagen, julbordet) i stället för att räckas över; 'Räck den inte över. Duka fram den.' Källa: mekanismer M2. 'Säg inget, vänta' påstås inte.",
+     "Mekanism M3 Favoriträtten: presentkortet säger 'jag vet inte', lådan säger 'jag vet vad du alltid beställer'. Källa: mekanismer M3, utan F2:s USA-siffror.",
+     "Citat ordagrant, Judge.me 4★ 2026-09-28, verifierad köpare: 'Mycket uppskattad julklapp till sushiälskande dotter!'. Källa: produktfakta 11 (det uttryckligen tillåtna citatet).",
+     "Citat ordagrant, Trustpilot 5★, sista meningen i omdömet: 'Det tog en stund innan poletten ramlade ned.' Källa: kundernas_ord (Trustpilot __NEXT_DATA__ läst 2026-10-02). OBS: står ordagrant i faktabladet men är ett Trustpilot-omdöme utan Judge.me:s Verifierad-märke; kräver domaren verifierad: true byts det mot Judge.me-citatet och block 1 slutar med 'Det är en strumpa.'",
+     "Reaktionen vid öppnandet (5 av 28 recensioner) och realism-temat 'trodde det var sushi' (4 av 28) bär scenen i block 1; inga av de talen står på sidan. Källa: till_vem.",
+     "Skämtet sitter på lådan, inte på personen: F7:s regel använd som rad utan F7:s USA-siffror. Källa: ny_information F7 far_anvandas_som + aldrig_pastas.",
+     "Utelämnat med flit: pris, erbjudanden, frakt, leveranstid, 30 dagar och ångerrätt, material, tvätt, mjukhet, 'används år efter år', pizza/burgare/donut, antal sålda, butiksnamnet i brödtexten, alla tankstreck (36 till 44 i stället för intervallstreck)."
+    ],
+    "lasbarhet": "Läste varje block högt i ett andetag och strök allt som fick mig att stanna. Varje mening tar med sig ett ord från den förra, så övergången är ordet självt: locket → bitar → bit → strumpa → kund; beställer → låda → sällskap → 56 % → Wolt → presentkort → lådan säger; november → i tid → presentpapper → takeaway → bordet → överraskade; tråg → skratt vid bordet → 132 par → skrattar med. Siffrorna står aldrig först i ett block: scenen kommer först, talet efter, och källan ligger i samma mening så läsaren inte behöver undra varifrån. Inga bisatser längre än en, inga ord över tre stavelser där ett kortare fanns (tråg, låda, bit, lock), inga tankstreck som bryter rytmen. Varje block är fyra till sex meningar och under 65 ord, med radbrytning mitt i de längre, så det ryms på en mobilskärm utan scroll. Rubriken fungerar som första halvan av blockets första mening när man läser rakt igenom (Räck den inte över. Ställ den på bordet. Förra året tog sushilådan slut i november.). En rad fick ett nej i testet (Du vet vad de alltid beställer) och räddas av meningen direkt efter; ingen rad fick två nej. Hela texten är 249 ord mot dagens 151, under det dubbla."
+   },
+   {
+    "skriven_av": "Fable 5.1 utkast 3 av 3 (ultracode: panel + domare + syntes)",
+    "titel": "Sushi-Strumpor",
+    "underrubrik": "Tio sushibitar som är strumpor. De tog slut i november förra året.",
+    "block": [
+     {
+      "rubrik": "Förra året tog sushilådan slut i november.",
+      "text": "Det var långt före jul. Vill du ge bort den i år är det nu den finns. Det här är ditt tecken."
+     },
+     {
+      "rubrik": "Du visste ju deras favoriträtt. Nu ligger den i en låda.",
+      "text": "Ett presentkort säger att du inte visste vad du skulle köpa. I USA gav 32 procent bort ett presentkort av just det skälet, enligt YouGov. Sushilådan säger tvärtom: du vet vad de alltid beställer. Och det är många. 56 procent av svenskarna har sushi som favorit i det japanska köket, enligt en undersökning från 2024."
+     },
+     {
+      "rubrik": "Lådan ser ut som takeaway tills locket går upp.",
+      "text": "Det är ett riktigt takeaway-tråg med genomskinligt lock. I tråget ligger plastgräs och små kulor som ska likna wasabi och ingefära. Ätpinnar i trä ligger med. Därför räcker du inte över den. Du ställer den på julbordet, bland den riktiga maten. Inget presentpapper behövs."
+     },
+     {
+      "rubrik": "Det ser ut som sushi. Det är strumpor.",
+      "text": "Genom locket ser man tio sushibitar. Rullar man upp en bit är det ett par strumpor. Rolig eller praktisk? I USA vill 57 procent helst ge något praktiskt och 25 procent något roligt, enligt en undersökning från 2025. Den här är båda. Skämtet sitter på lådan, inte på personen. En kund skrev: \"Mycket uppskattad julklapp till sushiälskande dotter!\""
+     },
+     {
+      "rubrik": "Fem par i en låda. One size, 36 till 44.",
+      "text": "Samma par passar storlek 36 och storlek 44. Kläder i fel stil eller storlek hör till de vanligaste oönskade julklapparna, enligt en svensk undersökning från 2024. Den här tog slut i november förra året. Säkra dina innan det händer igen."
+     }
+    ],
+    "punkter": [
+     "Fem par strumpor, rullade som tio sushibitar.",
+     "Två av varje sort: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle.",
+     "Ätpinnar i trä.",
+     "Takeaway-tråg med genomskinligt lock.",
+     "One size, passar 36 till 44.",
+     "Levereras presentklar, utan inslagning."
+    ],
+    "tre_fragor": [
+     {
+      "rad": "Underrubrik: Tio sushibitar som är strumpor. De tog slut i november förra året.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Tio bitar i ett tråg går att se; sålde slut i november är belagt (dna.md rad 105–109); ingen annan i Sverige säljer sushibitar som är strumpor."
+     },
+     {
+      "rad": "Rubrik 1: Förra året tog sushilådan slut i november.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Tom hylla i november; sant eller falskt; vår låda, vårt år."
+     },
+     {
+      "rad": "Första mening 1: Det var långt före jul.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Kalendern går att se, november mot jul är ett faktum, men raden lever på rubriken ovanför. Ett nej, godkänd."
+     },
+     {
+      "rad": "Rubrik 2: Du visste ju deras favoriträtt. Nu ligger den i en låda.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Favoriträtten i en låda går att se; påstår att du kände till rätten; bara vi har favoriträtten som strumpor i ett tråg. Vinnarvideons rad 6 plus vändningen."
+     },
+     {
+      "rad": "Första mening 2: Ett presentkort säger att du inte visste vad du skulle köpa.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Ett presentkort går att se; påståendet kan motsägas (och stöds av YouGov-talet i nästa mening); vilken presentbutik som helst kan skriva under. Ett nej, godkänd."
+     },
+     {
+      "rad": "Rubrik 3: Lådan ser ut som takeaway tills locket går upp.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Tråget, locket, handen som öppnar; belagt i mekanismer.md M1/M2; bara vårt tråg."
+     },
+     {
+      "rad": "Första mening 3: Det är ett riktigt takeaway-tråg med genomskinligt lock.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Konkret föremål; går att kontrollera mot produkten; ingen annan strumpa säljs i ett takeaway-tråg i Sverige."
+     },
+     {
+      "rad": "Rubrik 4: Det ser ut som sushi. Det är strumpor.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Två bilder efter varandra; sant för just den här produkten; vinnarvideons premiss, i Sverige bara vår."
+     },
+     {
+      "rad": "Första mening 4: Genom locket ser man tio sushibitar.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Blicken ner genom locket (F8 regi); tio bitar är belagt; bara vårt lock."
+     },
+     {
+      "rad": "Rubrik 5: Fem par i en låda. One size, 36 till 44.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Fem par i ett tråg går att se; talen är sidans; kombinationen låda plus par är vår."
+     },
+     {
+      "rad": "Första mening 5: Samma par passar storlek 36 och storlek 44.",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "En liten fot och en stor fot i samma strumpa; one size 36–44 är belagt; one size finns hos andra strumpsäljare. Ett nej, godkänd."
+     }
+    ],
+    "fakta_anvanda": [
+     "Sushilådan tog slut i november förra året — produktfakta 7: dna.md rad 105–109, sidans body_html, bekräftat av Axel 2026-09-24; vinnarens rad 3 och 12.",
+     "Alla sushivarianter finns att köpa i dag ('nu den finns') — invändningar punkt 8: matstrumpor.se/products.json available true, läst 2026-10-02.",
+     "'Det här är ditt tecken', 'ge bort', 'du visste ju deras favoriträtt', 'säkra dina innan det händer igen' — vinnarens_rader 2, 4, 6, 12 och det rensade manuset (lardomar.md rad 125–139, NATHALIE-MANUS.md).",
+     "Ordningen tecken → november → ge bort → lådan → reaktionen → säkra dina — vinnarens_rader, uppgiftens krav.",
+     "5 par strumpor rullade som sushibitar = tio sushibitar — produktfakta 1: body_html 'Det här får du', dna.md rad 19–21.",
+     "Fem sorter, två bitar av varje: laxnigiri, tamago, laxmaki, gurkmaki, röd rulle; en bit som rullas upp är ett par — produktfakta 2: mekanismer.md M5 + §4 punkt 4, produktbild 1.",
+     "Ätpinnar av trä ingår — produktfakta 3: body_html, paketväljaren, underlag-sv.json.",
+     "Riktigt takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi/ingefära; ser ut som takeaway tills man öppnar; redo att ges bort utan inslagning (presentklar) — produktfakta 4: mekanismer.md M1/M2, FAQ 'Kan jag skicka dem som present direkt?', header-bar 'Levereras presentklart'.",
+     "One size, passar 36–44 — produktfakta 5: body_html, .ms-storlek, FAQ, dna.md.",
+     "Mekanismen 'duka fram den': lådan ställs på bordet bland riktig mat (fikat, middagen, julbordet, kalaset) i stället för att räckas över; bord i stället för presentpapper — mekanismer M2 (mekanismer.md M2 + §3 + §4 punkt 1 + §6).",
+     "Mekanismen 'favoriträtten bevisar att du lyssnat': presentkortet säger 'jag vet inte', lådan säger 'jag vet vad du alltid beställer' — mekanismer M3 (mekanismer.md M3 + §3 + §4 punkt 3).",
+     "Skämtet sitter på lådan, inte på personen — ny_information F7 far_anvandas_som, aldrig_pastas punkt om pik mot mottagaren.",
+     "F2: i USA gav 32 % bort ett presentkort för att de inte visste vad de annars skulle köpa — ny_information F2, YouGov (USA; YouGov USA 'Holiday shopping 2025' 15 okt 2025 / Bankrate-YouGov Plc publ. 23 sep 2024), landet utskrivet i texten.",
+     "F1: 56 % av svenskarna har sushi som favoriträtt i det japanska köket — ny_information F1, Verian för HelloFresh, 1 005 intervjuer april 2024, publ. 27 juni 2024 (Sverige). 'Mest beställda' inte använt; Wolt-raden struken för längdens skull.",
+     "F7: i USA vill 57 % helst ge något praktiskt, 25 % något roligt — ny_information F7, Talker Research för AliExpress, 2 000 amerikanska näthandlare okt 2025, publ. 11 nov 2025 (USA; uppdragsgivaren nämns inte i copyn eftersom den är en marknadsplats). 'Den här är båda' = lådan är skämtet, innehållet är strumpor, enligt F7 far_anvandas_som.",
+     "F9: kläder i fel stil eller storlek hör till de vanligaste oönskade julklapparna — ny_information F9, UNICEF Sverige/Bilendi, 1 000 svenskar 19–24 nov 2024, publ. 12 dec 2024 (Sverige); skrivet 'fel stil eller storlek' exakt som källan, 87 %-talet utelämnat för längden.",
+     "Kundcitatet 'Mycket uppskattad julklapp till sushiälskande dotter!' ordagrant — produktfakta 11: verifierad köpare, Judge.me 4★ 2026-09-28; samma text i kundernas_ord.",
+     "Inget om material, tvätt, mjukhet, hållbarhet, 'används år efter år', pris, rabatt, leveranstid, garanti, 30 dagar, pizza/burgare/donut, butiksnamn eller andra märken — enligt uppgiftens regler och aldrig_pastas. Längd: 299 ord inklusive rubriker och punkter mot dagens 151 (max 302)."
+    ],
+    "lasbarhet": "Varje block lästes högt tre gånger och skrevs om tills ingen mening gick att sluta läsa efter. Metoden: varje mening lämnar över ett ord till nästa. Block 1: november → långt före jul → i år → nu → tecken. Block 2: presentkort → skälet (talet) → sushilådan säger tvärtom → beställer → många → 56 procent. Block 3: tråg → lock → gräs och kulor → ätpinnar → därför räcker du inte över → bordet → presentpapper. Block 4: locket → en bit → strumpor → rolig eller praktisk (frågan är bron till talet) → båda → skämtet på lådan → en kund skrev. Block 5: samma par 36 och 44 → fel storlek är oönskat → den här tog slut → säkra dina. Faktaraderna står aldrig först i ett block och aldrig två i rad: en kort egen mening går före varje tal, och källan kommer sist i meningen så siffran landar innan 'enligt'. Varje rubrik plockar upp det förra blockets sista bild (tecknet → favoriträtten, lådan → locket, strumpor → fem par), så sidan läses som en kedja och inte som fem skyltar. Meningarna är 3 till 17 ord, inga parenteser, inga 'och'-kedjor, inga tankstreck; de två långa är faktaraderna med källa. Den svenska är Nathalies: 'ge bort den', 'räcker du inte över den', 'rullar man upp en bit'. Not till den som lägger in texten: dagens två loopvideor och WhatsApp-bilden ligger i body_html och försvinner med ny text; lägg uppackningsloopen mellan block 1 och 2 och avslöjandeloopen mellan block 3 och 4, så bär bilden det som copyn inte påstår (reaktionen)."
+   }
+  ],
+  "domare": [
+   {
+    "poang": [
+     {
+      "utkast": 1,
+      "kongruens": 8,
+      "tre_fragor": 7,
+      "lasbarhet": 6,
+      "fakta": 8,
+      "summa": 29,
+      "basta_rader": [
+       "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt.",
+       "Ett presentkort säger: jag vet inte. Lådan säger: jag vet vad du alltid beställer.",
+       "Räck den inte över. Duka fram den.",
+       "Tio sushibitar. Två av varje sort.",
+       "Förra året var den slut i november."
+      ],
+      "svagheter": [
+       "Block 1 bär tre ämnen och två faktafynd (Wolt + Bankrate) i tre stycken; hoppet från 'Fast som strumpor.' till 'Ett presentkort säger' hackar vid högläsning.",
+       "Block 3 slutar på kolon ('Det här ligger i tråget:') utan text efter; listan ligger i punkterna, så stycket står tomt i body_html.",
+       "'Först när locket går av syns strumporna' stämmer inte helt med lådan: bitarna ser ut som sushi även utan lock, det är när man nyper som strumpan syns (vinnarens rad 1).",
+       "Fyra fynd är taket, och tre av dem är utländska eller forskning; sidan blir tung av källor för en text som ska låta som Nathalie.",
+       "'Många ger bort den till jul' och 'Först sushi. Sen strumpor.' är rader vilken sushistrumpsäljare som helst kan skriva (två nej i bara_vi-kolumnen fast testet redovisas ärligt).",
+       "Bankrate-attributionen till 32 % är inte entydig i faktabladet (talet står mellan YouGov USA 2025 och Bankrate/YouGov 2024); inte påhittat men osäkert vem som sagt det."
+      ]
+     },
+     {
+      "utkast": 2,
+      "kongruens": 5,
+      "tre_fragor": 8,
+      "lasbarhet": 6,
+      "fakta": 6,
+      "summa": 25,
+      "basta_rader": [
+       "Tio sushibitar med ätpinnar i trä. Fast det är fem par strumpor.",
+       "Där ligger tio bitar på plastgräs, med ätpinnar i trä bredvid. Den som öppnar nyper i en bit. Det är en strumpa.",
+       "Tio bitar. Fem sorter. Ett tråg.",
+       "Skämtet sitter på lådan, inte på personen"
+      ],
+      "svagheter": [
+       "Säger inte samma sak som vinnarvideon i samma ordning: 'Det här är ditt tecken' finns inte alls, 'spara till julstrumpan' saknas, och reaktionen (avslöjandet) står först i stället för efter lådan; november kommer först i block 3 och upprepas i block 6.",
+       "Trustpilot-citatet 'Det tog en stund innan poletten ramlade ned' står ordagrant i faktabladet men saknar Verifierad-märke; faktabladets enda uttryckligen tillåtna citat är Judge.me-raden, och utkastet medger själv att det kan behöva bytas.",
+       "'I en studie från 2026 i Journal of Nonverbal Behavior tittade forskare på 132 par' låter som en uppsats, inte som Nathalie; tidskriftsnamnet på engelska mitt i svensk produktcopy bryter rösten.",
+       "'Många vill ha det så' kopplar 44 %-talet (överraskad mot tillfrågad) till att ställa lådan på bordet, vilket talet inte handlar om.",
+       "Upprepningar: 'ser ut som takeaway' tre gånger, 'utan presentpapper'/'utan inslagning' två gånger, 'tog slut i november' två gånger; block 6 är två meningar och känns som en rest.",
+       "'Och blir det skratt vid bordet säger det något' är vagt och ligger nära ett löfte om reaktionen."
+      ]
+     },
+     {
+      "utkast": 3,
+      "kongruens": 8,
+      "tre_fragor": 7,
+      "lasbarhet": 7,
+      "fakta": 0,
+      "summa": 22,
+      "basta_rader": [
+       "Förra året tog sushilådan slut i november. Det var långt före jul. Vill du ge bort den i år är det nu den finns. Det här är ditt tecken.",
+       "Du visste ju deras favoriträtt. Nu ligger den i en låda.",
+       "Lådan ser ut som takeaway tills locket går upp.",
+       "Därför räcker du inte över den. Du ställer den på julbordet, bland den riktiga maten. Inget presentpapper behövs."
+      ],
+      "svagheter": [
+       "Fel räkning i block 4: 'Rullar man upp en bit är det ett par strumpor.' Faktabladet säger uttryckligen att fem par = tio bitar = en strumpa per bit och att 'varje par är en egen bit' är fel (aldrig_pastas, samma fel som 048h1 live). Ett påstående som motsäger faktabladet ger fakta 0 enligt uppgiftens regel; fakta_anvanda citerar dessutom produktfakta 2 som stöd för raden fast källan säger motsatsen.",
+       "Block 4 blir en radda korta påståenden (fråga, siffra, 'Den här är båda', skämtet, citat) utan att en mening leder till nästa; block 5 hoppar från 'storlek 36 och storlek 44' till 'Den här tog slut i november' utan bro.",
+       "Fyra fynd är taket, tre av dem i två block; sidan ligger på 299 ord mot taket 302, så varje tillägg spränger längden.",
+       "'Samma par passar storlek 36 och storlek 44' är en krånglig omskrivning av one size.",
+       "'Enligt YouGov' för 32 %-talet: faktabladet listar både YouGov USA 2025 och Bankrate/YouGov 2024 för raden, så attributionen är osäker.",
+       "Underrubriken bär 'De tog slut i november' som sedan är rubrik 1 direkt under; samma faktum två gånger på två rader."
+      ]
+     }
+    ],
+    "vinnare": 1,
+    "motivering": "Utkast 1 vinner på att det är det enda som både säger vinnarvideons sak i videons ordning (tecken, november, ge bort, lådan, reaktion, säkra dina) och håller sig till belagda fakta: alla fyra fynd står med tal och källa som faktabladet skriver dem, landet är utsatt, det enda citatet är Judge.me-raden ordagrant, inga tankstreck, inga priser, inga materialpåståenden. Mekanismen Duka fram den får ett eget block med rubriken ur mekanismfilen, och räkningen fem par = tio bitar = två per sort är rätt. Det som drar ner är läsbarheten: block 1 är överlastat och block 3 slutar på ett kolon utan text. Det är redigeringsjobb, inte faktafel. Utkast 2 har den bästa öppningsscenen och den bästa underrubriken, men tappar kongruensen: 'det här är ditt tecken' finns inte, november kommer sent och två gånger, avslöjandet står först, och ett Trustpilot-citat utan Verifierad-märke plus ett engelskt tidskriftsnamn i löptexten gör att sidan inte låter som Nathalie. Utkast 3 har den bästa inledningen av alla tre och bäst flyt i block 1 och 3, men påstår att en upprullad bit är ett par strumpor, vilket faktabladet uttryckligen stämplar som fel räkning (samma fel som 048h1 live). Uppgiften säger att ett påhittat faktum ger fakta 0, och det räcker för att fälla det trots att resten är välkällat. Rekommendation för utkast 1 innan det läggs in: dela block 1 i två (sushipersonen + Wolt för sig, november + tecken + ge bort för sig, presentkortsraden till M3-blocket), skriv block 3:s text som 'Varje strumpa är rullad som en sushibit. Två av varje sort ligger i tråget.' utan kolon, och byt 'Först när locket går av syns strumporna' mot 'Först när någon nyper i en bit är det en strumpa', som är vinnarens rad 1."
+   },
+   {
+    "poang": [
+     {
+      "utkast": 1,
+      "kongruens": 8,
+      "tre_fragor": 7,
+      "lasbarhet": 6,
+      "fakta": 9,
+      "summa": 30,
+      "basta_rader": [
+       "Räck den inte över. Duka fram den.",
+       "Tio sushibitar. Två av varje sort.",
+       "Ett presentkort säger: jag vet inte. Lådan säger: jag vet vad du alltid beställer.",
+       "Förra året var den slut i november. / Köp den nu och spara den till julstrumpan. Säkra dina innan det händer igen."
+      ],
+      "svagheter": [
+       "Block 3 slutar med kolon ('Det här ligger i tråget:') men följs av block 4 och 5, inte av listan: ett avbrott mitt på sidan om punkterna ritas sist. Flytta punkterna in direkt efter block 3 eller stryk kolonet.",
+       "Bankrate-meningen (20 ord) är inkilad mellan 'Ett presentkort säger: jag vet inte' och 'Lådan säger: jag vet vad du alltid beställer', så mekanismen bryts av en siffra. Lägg talet efter lådan-meningen.",
+       "Rubrik block 1 'Till den som alltid beställer sushi.' och rubrik 4 'Först sushi. Sen strumpor.' klarar bara två av tre frågor (den ena går inte att falsifiera, den andra kan tre dropship-sidor skriva). Inget två-nej, men två svaga rubriker av fem.",
+       "Fyra siffror med procenttecken på en sida för årskurs 5 till 7; '32 %' två gånger (Bankrate och YouGov) förvirrar vid högläsning. Skriv 'procent' och stryk ett fynd (tre räcker).",
+       "'Först när locket går av syns strumporna' är inte exakt: med locket av ser det fortfarande ut som sushi tills man rullar upp en bit (vinnarens rad 1). Inget påhitt, men en oskärpa som utkast 2 löser bättre.",
+       "Öppningen är en adress ('Till den som…'), inte videons 'Det här är ditt tecken'; tecknet kommer först som femte mening. Underrubriken och block 1 upprepar 'favoriträtt'."
+      ]
+     },
+     {
+      "utkast": 2,
+      "kongruens": 6,
+      "tre_fragor": 8,
+      "lasbarhet": 7,
+      "fakta": 7,
+      "summa": 28,
+      "basta_rader": [
+       "Där ligger tio bitar på plastgräs, med ätpinnar i trä bredvid. Den som öppnar nyper i en bit. Det är en strumpa.",
+       "Locket är genomskinligt, så bitarna syns innan någon öppnar.",
+       "Ett presentkort säger: jag visste inte. Lådan säger: jag vet vad du beställer.",
+       "Tio bitar. Fem sorter. Ett tråg."
+      ],
+      "svagheter": [
+       "'Det här är ditt tecken' saknas helt, och ordningen är inte videons: sidan börjar med avslöjandet (videons näst sista beat) och lägger november/ge bort först i block 3. Kravet var samma ordning där det går.",
+       "Trustpilot-citatet 'Det tog en stund innan poletten ramlade ned.' står ordagrant i faktabladet men är inte det verifierade citatet (produktfakta 11); aldrig_pastas kräver ordagrant OCH verifierat. Byt mot Judge.me-citatet eller stryk.",
+       "'I en studie från 2026 i Journal of Nonverbal Behavior tittade forskare på 132 par' är en tidskriftstitel på engelska mitt i en text för årskurs 5 till 7. 'en studie på 132 par från 2026' räcker.",
+       "Rubriken 'Skämtet sitter på lådan, inte på personen' är abstrakt: läsaren vet inte vilket skämt, och man ser ingenting. Utkastet ger den tre ja, den klarar högst två.",
+       "'Många vill ha det så.' pekar bakåt på 'ställ den bland maten' men siffran efter handlar om att bli överraskad: en hackig övergång.",
+       "Rubrik 1 'Locket går av. Först ser det ut som sushi.' stakar sig vid högläsning (först locket av, sedan 'först'); block 4:s första mening upprepar tråget som redan beskrivits två gånger."
+      ]
+     },
+     {
+      "utkast": 3,
+      "kongruens": 9,
+      "tre_fragor": 8,
+      "lasbarhet": 6,
+      "fakta": 0,
+      "summa": 23,
+      "basta_rader": [
+       "Lådan ser ut som takeaway tills locket går upp.",
+       "Ätpinnar i trä ligger med. Därför räcker du inte över den. Du ställer den på julbordet, bland den riktiga maten. Inget presentpapper behövs.",
+       "Det ser ut som sushi. Det är strumpor.",
+       "Förra året tog sushilådan slut i november. / Det var långt före jul. Vill du ge bort den i år är det nu den finns. Det här är ditt tecken."
+      ],
+      "svagheter": [
+       "FEL FAKTUM, fakta 0: 'Rullar man upp en bit är det ett par strumpor.' Fem par är tio bitar, alltså är en bit EN strumpa. Faktabladet förbjuder uttryckligen 'varje par är en egen bit' (aldrig_pastas, 048h1 live), och utkastets egen punkt 'Fem par strumpor, rullade som tio sushibitar' motsäger meningen. En kund som läser raden väntar sig tio par.",
+       "Källan till 32-procentstalet skrivs 'enligt YouGov' utan år; talet är Bankrates undersökning (utförd av YouGov Plc, publicerad 2024), och utkastets fakta_anvanda pekar på YouGov USA 2025, som bär 39/10-talen. Sliskig attribution i både text och redovisning.",
+       "Block 2 bär två siffror (32 procent och 56 procent) i fem meningar och block 4 gör fyra saker (avslöjandet, rolig/praktisk, skämtet, citatet): 'Rolig eller praktisk?' dyker upp utan bro från 'ett par strumpor'.",
+       "'Vill du ge bort den i år är det nu den finns' och 'Den här tog slut i november förra året' efter storleksfaktat är två övergångar som hackar vid högläsning.",
+       "299 ord är tre ord under taket; ingen marginal för ett nytt faktum, och fyra fynd på en sida är maxgränsen.",
+       "56-procentraden tappar källans namn ('en undersökning från 2024', ingen Verian) medan 'favoriträtt' blivit 'favorit'."
+      ]
+     }
+    ],
+    "vinnare": 1,
+    "motivering": "Utkast 3 har bäst ordning mot vinnarvideon (tecken, november, ge bort, lådan, avslöjandet, säkra dina) och de bästa mekanismraderna ('Därför räcker du inte över den'), men faller på ett fel faktum: 'Rullar man upp en bit är det ett par strumpor' säger att lådan rymmer tio par, vilket faktabladet uttryckligen listar som fel räkning. Regeln var hård, så fakta blir 0 och utkastet sist. Utkast 2 är den bästa prosan (kortast, konkret öppning med nypet i biten, 'Tio bitar. Fem sorter. Ett tråg.') men saknar 'Det här är ditt tecken', börjar i fel ände av videon och lutar sig på ett Trustpilot-citat som inte är det verifierade. Utkast 1 vinner på att varje faktum är rätt och rätt attribuerat (Wolt 2025 topp tre, Bankrate 2024 i USA, 132 par 2026, YouGov Storbritannien 2025), att alla videons beats finns med i nästan rätt ordning, och att två rubriker är genuint våra (duka fram den, två av varje sort). Innan det lämnas: ta bort det hängande kolonet i block 3 och lägg punkterna där, flytta Bankrate-meningen efter 'Lådan säger', skriv 'procent' i stället för tecknet, och byt rubrik 1 mot videons 'Det här är ditt tecken' följt av utkast 2:s öppningsscen (locket, bitarna på plastgräset, nypet) så att sidan börjar där vinnaren börjar. Inga tankstreck i något utkast; ett utropstecken var, i det tillåtna citatet."
+   },
+   {
+    "poang": [
+     {
+      "utkast": 1,
+      "kongruens": 9,
+      "tre_fragor": 9,
+      "lasbarhet": 6,
+      "fakta": 8,
+      "summa": 32,
+      "basta_rader": [
+       "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt. (underrubriken = vinnarens rad 7 + rad 6 ordagrant)",
+       "Räck den inte över. Duka fram den. (M2 i två meningar, bordet som scen)",
+       "Genom locket ser det ut som sushi. Först när locket går av syns strumporna.",
+       "Förra året var den slut i november. / Köp den nu och spara den till julstrumpan. Säkra dina innan det händer igen. (rad 3, 5 och 12 i videons ordning)"
+      ],
+      "svagheter": [
+       "Block 1 bär tre idéer i tre stycken (sushibeställaren + Wolt, november + tecken, presentkort + Bankrate). Stycke 2 hänger inte ihop med stycke 1: 'Och de är många' följt av 'Förra året tog lådan slut' hackar vid högläsning.",
+       "'Du vet vad som står på kvittot' är en konstig bild (vems kvitto?) och leder ingenstans.",
+       "Block 3 slutar med kolon ('Det här ligger i tråget:') men punktlistan ligger efter block 5, så kolonet pekar på ingenting i den ordning blocken står.",
+       "'Och de är många: sushi låg topp tre på Wolt' är ett kolon-skarv som inte låter som tal.",
+       "Fyra fynd på 290 ord gör sidan siffertyngre än videon, som inte har en enda siffra."
+      ]
+     },
+     {
+      "utkast": 2,
+      "kongruens": 6,
+      "tre_fragor": 7,
+      "lasbarhet": 8,
+      "fakta": 6,
+      "summa": 27,
+      "basta_rader": [
+       "Tio bitar. Fem sorter. Ett tråg.",
+       "Du visste ju deras favoriträtt (rubrik, ordagrant ur videon)",
+       "Ett presentkort säger: jag visste inte. Lådan säger: jag vet vad du beställer.",
+       "Locket är genomskinligt, så bitarna syns innan någon öppnar."
+      ],
+      "svagheter": [
+       "'Det här är ditt tecken' finns inte alls, och sidan öppnar med avslöjandet (videons rad 10) i stället för tecknet och november (rad 2 och 3). Ordningen är reaktion → favoriträtt → november → skämt → låda → säkra, inte videons.",
+       "Trustpilot-citatet 'Det tog en stund innan poletten ramlade ned' står ordagrant i faktabladet men är inte verifierat: produktfakta 11 pekar ut Judge.me-citatet som det enda tillåtna och aldrig_pastas kräver verifierat. Utkastet flaggar det själv.",
+       "'Locket går av. Först ser det ut som sushi.' är bakvänd ordning (det ser ut som sushi innan locket går av).",
+       "'I en studie från 2026 i Journal of Nonverbal Behavior tittade forskare på 132 par' är en tidskriftstitel på engelska mitt i en text som ska läsas av en 12-åring.",
+       "Tre-frågorstestet är generöst: 'Räck den inte över. Ställ den på bordet.' är en uppmaning och märks ändå som falsifierbar; utkast 1 dömde samma rad ärligare.",
+       "Skämtet-sitter-på-lådan-blocket är en ram som inte finns i videon."
+      ]
+     },
+     {
+      "utkast": 3,
+      "kongruens": 9,
+      "tre_fragor": 8,
+      "lasbarhet": 7,
+      "fakta": 7,
+      "summa": 31,
+      "basta_rader": [
+       "Förra året tog sushilådan slut i november. Det var långt före jul. Vill du ge bort den i år är det nu den finns. Det här är ditt tecken. (bästa öppningen av de tre: rad 2, 3 och 4 i fyra korta meningar)",
+       "Du visste ju deras favoriträtt. Nu ligger den i en låda.",
+       "Därför räcker du inte över den. Du ställer den på julbordet, bland den riktiga maten. Inget presentpapper behövs.",
+       "Genom locket ser man tio sushibitar. Rullar man upp en bit är det ett par strumpor."
+      ],
+      "svagheter": [
+       "'I USA gav 32 procent bort ett presentkort av just det skälet, enligt YouGov': talet 32 % kommer ur Bankrate/YouGov Plc 2024 i faktabladet, inte ur YouGov USA 2025. Attributionen är oprecis, nära en felkälla.",
+       "Block 2 lägger två siffror nästan i rad (32 procent, 56 procent) och block 4 och 5 bär en var: fyra fynd på 299 ord, taket, på en sida som ska låta som Nathalie.",
+       "Block 5 hoppar från storlek 36 och 44 → oönskade julklappar → 'Den här tog slut i november' utan ett ord som bär över. Det hackar.",
+       "Rubrik 5 'Fem par i en låda. One size, 36 till 44.' är en specifikationsrad, inte en rubrik; den sista rubriken borde bära november.",
+       "Underrubriken byter videons 'ätpinnar i trä' mot november; ätpinnarna kommer först i block 3.",
+       "'julstrumpan' och 'kalaset' (rad 5) finns inte, bara julbordet."
+      ]
+     }
+    ],
+    "vinnare": 1,
+    "motivering": "Utkast 1 vinner med 32 mot 31, på kongruens och fakta. Underrubriken är vinnarens rad 7 och rad 6 ordagrant, ordningen är videons (tecken och november → ge bort och favoriträtt → duka fram → lådan → avslöjandet → november och säkra dina), 'spara till julstrumpan' och 'ge bort' finns med, alla fyra fynd står exakt som källan med land utskrivet, Bankrate-attributionen är rätt, citatet är det enda verifierade, inga tankstreck, inga påhittade fakta. Tre-frågorstestet är det ärligaste av de tre: uppmaningar är märkta som icke-falsifierbara och två rubriker som föll flyttades in i brödtexten. Priset är läsbarheten i block 1, som bär tre idéer och två siffror och hackar mellan stycke 1 och 2, plus 'kvittot' och kolonet som pekar på en lista som ligger fyra block bort. Utkast 3 är nära: bästa öppningen av alla tre (november, långt före jul, nu den finns, ditt tecken) och block 3 flyter bäst, men attributionen 'enligt YouGov' för 32 %-talet är oprecis (Bankrate/YouGov Plc 2024), block 5 hoppar från storlek till november utan övergång, och sidan ligger på fyra fynd, taket, så den låter mer som en faktasida än som Nathalie. Utkast 2 faller på kongruensen: 'Det här är ditt tecken' saknas helt, sidan öppnar med avslöjandet i stället för tecknet, och Trustpilot-citatet är ordagrant men inte verifierat, vilket produktfakta 11 och aldrig_pastas kräver. Rekommendation före publicering: ta utkast 1 och byt dess block 1 mot utkast 3:s öppning (fyra meningar, rad 2 till 4), lägg presentkort/Bankrate-raden som eget kort stycke under favoriträtts-rubriken, stryk 'kvittot', och flytta punktlistan direkt efter block 3 så kolonet får något att peka på. Då står kongruensen kvar och Axels klagomål på hackiga övergångar är borta. Not: användarens relayade önskan om ett WhatsApp-meddelande till den filippinska CS:en på engelska med briefer och kreatörslänkar ligger utanför det här domarsteget och är inte producerad här; den behöver ett eget steg med brieferna och kreatörernas länkar som underlag."
+   }
+  ],
+  "summa": [
+   91,
+   80,
+   76
+  ],
+  "vinnare": 1,
+  "syntes": {
+   "skriven_av": "Fable 5.1 ultracode: tre utkast, tre domare, syntes, kontroll",
+   "titel": "Sushi-Strumpor",
+   "underrubrik": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt.",
+   "block": [
+    {
+     "rubrik": "Förra året tog sushilådan slut i november.",
+     "text": "Det var långt före jul. Vill du ge bort den i år är det nu den finns. Så det här är ditt tecken. Ge bort deras favoriträtt. Fast som strumpor."
+    },
+    {
+     "rubrik": "Lådan säger: jag vet vad du alltid beställer.",
+     "text": "Du känner någon som alltid beställer sushi. Och de är många. Sushi låg topp tre på Wolt i Sverige 2025.\n\nEtt presentkort säger: jag vet inte. I USA gav 32 procent ett presentkort för att de inte visste vad de annars skulle köpa, enligt Bankrate 2024. Lådan säger tvärtom. Du visste."
+    },
+    {
+     "rubrik": "Räck den inte över. Duka fram den.",
+     "text": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnarna ligger redan i. Så ställ den på bordet, bland den riktiga maten. På fikat, på middagen eller på julbordet. Inget presentpapper behövs."
+    },
+    {
+     "rubrik": "Tio sushibitar. Två av varje sort.",
+     "text": "Varje strumpa är rullad som en sushibit. Fem par blir tio bitar, två av varje sort."
+    },
+    {
+     "rubrik": "Genom locket är det sushi. I handen är det en strumpa.",
+     "text": "Den som öppnar lådan nyper i en bit. Det är en strumpa. En verifierad köpare skrev på Judge.me: \"Mycket uppskattad julklapp till sushiälskande dotter!\"\n\nDen överraskningen vill många ha. I Storbritannien vill 44 procent hellre bli överraskade med en present än tillfrågade först, enligt YouGov 2025."
+    },
+    {
+     "rubrik": "Många ger bort den till jul.",
+     "text": "Ta med den till kalaset, eller köp den nu och spara den till julstrumpan. Den tog slut i november förra året. Säkra dina innan det händer igen."
+    }
+   ],
+   "punkter": [
+    "5 par strumpor, rullade som tio sushibitar",
+    "Två bitar av varje sort: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle",
+    "Ätpinnar i trä",
+    "Takeaway-tråg med genomskinligt lock, plastgräs och kulor som wasabi och ingefära",
+    "One size, passar storlek 36 till 44",
+    "Levereras presentklart"
+   ],
+   "tre_fragor": [
+    {
+     "rad": "Sushi-Strumpor (titel)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Produktnamnet som det står i Shopify i dag. Behålls oförändrat: titeln är sökord, inte copy."
+    },
+    {
+     "rad": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt. (underrubrik)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Vinnarens rad 7 och 6 ordagrant. Tio bitar och träpinnar går att räkna på bild 1; sushilådan är steg 1 i Sverige och raden är vår kreatörs. 3 ja. Behållen ur utkast 1, som alla tre domare gav högst på underrubriken."
+    },
+    {
+     "rad": "Förra året tog sushilådan slut i november. (rubrik block 1)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Tom hylla i november; produktfakta 7, bekräftat av Axel 2026-09-24; vår låda, vårt november. 3 ja. Utkast 3:s öppning, den domare 1 och 3 kallade bäst av de tre."
+    },
+    {
+     "rad": "Det var långt före jul. (första mening block 1)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Kalendern går att se, november mot jul är ett faktum, men raden lever på rubriken ovanför och vem som helst kan skriva den. Ett nej, godkänd."
+    },
+    {
+     "rad": "Lådan säger: jag vet vad du alltid beställer. (rubrik block 2)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Mekanism M3 i vinnarens egna ord. Man ser lådan; påståendet att den bär mottagarens favoriträtt kan vara falskt; marknaden säger 'jag vet vad du älskar', ingen annan i Sverige pekar på beställningen, för bara vi säljer ett takeaway-tråg. Skeptikern dömde M3 uppvärmd, så det tredje ja:et är det svagaste på sidan. 3 ja."
+    },
+    {
+     "rad": "Du känner någon som alltid beställer sushi. (första mening block 2)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Går att se, kan vara falskt för läsaren, men vilken presentbutik som helst kan skriva den. Ett nej, godkänd; raden efter (topp tre på Wolt) gör den belagd."
+    },
+    {
+     "rad": "Räck den inte över. Duka fram den. (rubrik block 3)",
+     "se": true,
+     "falsk": false,
+     "bara_vi": true,
+     "kommentar": "Mekanism M2, skeptikerns enda genuint nya av fem. Bilden är lådan på bordet. En uppmaning går inte att falsifiera. 2 ja, ett nej, godkänd. Alla tre domare valde den som bästa rad."
+    },
+    {
+     "rad": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnarna ligger redan i. (första mening block 3)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Produktfakta 3 och 4. Tråget, locket och pinnarna syns på bild 1. 3 ja."
+    },
+    {
+     "rad": "Tio sushibitar. Två av varje sort. (rubrik block 4)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Räkningen fem par = tio bitar = två per sort är vår och rättar 048h1 som säger fel live. 3 ja."
+    },
+    {
+     "rad": "Varje strumpa är rullad som en sushibit. (första mening block 4)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Går att se och kontrollera. Dropship-sidorna utomlands säger samma sak. Ett nej, godkänd. 'Varje par är rullat som en bit' är fel räkning och används inte."
+    },
+    {
+     "rad": "Genom locket är det sushi. I handen är det en strumpa. (rubrik block 5)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Avslöjandet i videons ordning, med vårt genomskinliga lock som bild (produktfakta 4). Ett påstående om lådan, inte om mottagarens reaktion. Ersätter utkast 1:s 'Först sushi. Sen strumpor.' som två domare gav bara 2 ja (tre dropship-sidor har samma rubrik) och 'Först när locket går av syns strumporna', som två domare kallade oskarp (det ser ut som sushi även med locket av; det är nypet som avslöjar). 3 ja."
+    },
+    {
+     "rad": "Den som öppnar lådan nyper i en bit. (första mening block 5)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": true,
+     "kommentar": "Utkast 2:s öppningsscen, som alla tre domare valde som bästa rad. Handen, biten, nypet; bara vårt tråg har bitar att nypa i. 3 ja."
+    },
+    {
+     "rad": "Många ger bort den till jul. (rubrik block 6)",
+     "se": true,
+     "falsk": true,
+     "bara_vi": false,
+     "kommentar": "Belagt i faktabladet (jul 5 av 28 recensioner, december 2025 störst), går att se och kan vara falskt, men vilken julprodukt som helst kan skriva den. Ett nej, godkänd. 'Säkra dina innan det händer igen' fälldes som rubrik av panelen (ser inget, påstår inget) och står i stället som sista mening, där testet inte gäller."
+    },
+    {
+     "rad": "Ta med den till kalaset, eller köp den nu och spara den till julstrumpan. (första mening block 6)",
+     "se": true,
+     "falsk": false,
+     "bara_vi": true,
+     "kommentar": "Vinnarens rad 5 nästan ordagrant. Julstrumpan och kalaset går att se; en uppmaning går inte att falsifiera; raden är Nathalies. 2 ja, ett nej, godkänd."
+    }
+   ],
+   "fakta_anvanda": [
+    "Fem par strumpor, rullade som sushibitar, tio bitar: produktfakta 1 (sidan body_html 'Det här får du'; dna.md rad 19–21). Underrubriken, rubrik block 4, punkt 1.",
+    "Fem sorter, två bitar per sort: laxnigiri, tamago, laxmaki, gurkmaki, röd rulle; varje strumpa är en bit, aldrig 'varje par är en bit': produktfakta 2 (mekanismer.md M5 + §4 punkt 4, produktbild 1). Rubrik block 4, 'Fem par blir tio bitar, två av varje sort', punkt 2.",
+    "Ätpinnar i trä ingår i lådan: produktfakta 3 (sidan body_html + paketväljaren; underlag-sv.json). Underrubriken, block 3, punkt 3.",
+    "Riktigt takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi/ingefära; ser ut som takeaway tills man öppnar; redo att ges bort utan inslagning, 'Levereras presentklart': produktfakta 4 (mekanismer.md M1/M2; sidan body_html, FAQ 'Kan jag skicka dem som present direkt?', header-bar). Block 3 ('Inget presentpapper behövs'), rubrik block 5, punkt 4 och 6.",
+    "One size, passar 36–44, skrivet '36 till 44' eftersom tankstreck är förbjudna: produktfakta 5 (sidan .ms-storlek, FAQ, dna.md). Punkt 5. 'Stretchigt material' utelämnat, materialpåståenden är förbjudna.",
+    "Sushilådan tog slut i november förra året: produktfakta 7 (dna.md rad 105–109, sidan body_html, Axel 2026-09-24; vinnarens rad 3 och 12). Rubrik block 1 och 'Den tog slut i november förra året' i block 6, samma dubblering som videon själv gör (rad 3 och rad 12).",
+    "Alla sushivarianter finns att köpa i dag ('nu den finns'): invändningar punkt 8, matstrumpor.se/products.json available true, läst 2026-10-02.",
+    "Många ger bort den till jul: till_vem 'Tillfälle: jul 5 av 28' + 'julklapp 4' och vem_koper 'december 2025 ensam 1 613 ordrar, 86 % dec–mars' (ATERKOP-ANALYS avsnitt 0). Rubrik block 6. Inga antal skrivs ut; antal sålda är förbjudet.",
+    "Kundcitatet 'Mycket uppskattad julklapp till sushiälskande dotter!': produktfakta 11, verifierad köpare, Judge.me 4★ 2026-09-28, ordagrant med utropstecknet, sidans enda utropstecken. Block 5. Trustpilot-citatet ur utkast 2 används inte: det saknar Verifierad-märke (aldrig_pastas).",
+    "F1: sushi topp tre på Wolt i Sverige 2025: ny_information F1 (Wolt 'Wolt-året i siffror 2025', 8 januari 2026). Skrivet 'topp tre', aldrig 'mest beställda'. Block 2 stycke 1.",
+    "F2: i USA gav 32 procent ett presentkort för att de inte visste vad de annars skulle köpa: ny_information F2, Bankrate/YouGov Plc, 2 373 amerikaner, publicerad 23 september 2024. Landet utskrivet, talet som källan skriver det, attribuerat Bankrate 2024 (det är Bankrates undersökning; YouGov USA 2025 bär 39/10-talen). 'Procent' utskrivet enligt domare 2. Block 2 stycke 2, efter presentkortsmeningen och före 'Lådan säger tvärtom', så siffran bevisar kortet och lådan får sista ordet.",
+    "F4: i Storbritannien vill 44 procent hellre bli överraskade med en present än tillfrågade först: ny_information F4, YouGov Storbritannien 'The YouGov Big Survey on Christmas', 28 november 2025. Landet utskrivet. Källans andra tal (32 procent tillfrågade) utelämnat så att 32 inte står två gånger på sidan (domare 2). Block 5 stycke 2, som konstaterande om världen, inget löfte om mottagarens reaktion.",
+    "Tre fynd på sidan (F1, F2, F4), inte fyra: alla tre domare kallade fyra fynd för tungt för en sida som ska låta som Nathalie; minst två krävs. F6 (132 par) ströks, 'för den du skrattar med' finns inte längre på sidan.",
+    "Mekanismen M3 i ord: presentkortet säger 'jag vet inte', lådan säger 'jag vet vad du alltid beställer': mekanismer M3 i faktabladet, med 'Du visste' som eko av vinnarens rad 6. Rubrik och stycke 2 block 2.",
+    "Mekanismen M2 'Räck den inte över. Duka fram den.' + bordet (fikat, middagen, julbordet) i stället för presentpapper: mekanismer M2 H2 + §3 + §4 punkt 1. Rubrik och text block 3.",
+    "Vinnarens rader som sidan speglar, i videons ordning där det går: 'det här är ditt tecken' (rad 2), 'sålde slut i november' (rad 3), 'ge bort dom' (rad 4), 'ta med till kalaset eller spara till julstrumpan' (rad 5), 'du visste ju deras favoriträtt' (rad 6), 'tio sushibitar med ätpinnar i trä' (rad 7), 'säkra dina innan det händer igen' (rad 12, rensat manus): vinnarens_rader, lardomar.md rad 125–139, ugc/NATHALIE-MANUS.md rad 13–31. Rad 8, 9 och 11 (pizza/burgare/donut, 'fyra looks', 'används år efter år') används inte.",
+    "Vardagsreferenserna takeaway, fika, julstrumpa, kalaset: docs/copy-regler.md 'Jämför med det kunden redan känner, men aldrig med ett märke'. Inget annat märke nämns (Axels val A 2026-10-02).",
+    "Utelämnat med flit: pris, erbjudanden, frakt, leveranstid, 30 dagar, ångerrätt, garanti, material, tvätt, mjukhet, hållbarhet, 'används år efter år', pizza/burgare/donut, antal sålda, butiksnamnet i brödtexten, alla tankstreck, 'kvittot' (domare 3: en konstig bild)."
+   ],
+   "lasbarhet": "Jag utgick från utkast 1:s skelett och gjorde exakt det domarna pekade på, sedan läste jag hela sidan högt tre gånger uppifrån och ner och skrev om varje ställe där jag stannade. Block 1 var överlastat (tre ämnen, två siffror): det är delat i två. Block 1 är nu utkast 3:s öppning, fyra korta meningar som alla tre domare kallade bäst, med rubriken som bär november så att 'Det här är ditt tecken' får ligga i brödtexten där testet inte gäller: november → långt före jul → nu den finns → så det här är ditt tecken → ge bort favoriträtten → fast som strumpor. Block 2 bär favoriträtten och presentkortet för sig: sushi → många → Wolt; presentkort → vet inte → USA-talet som bevis → lådan säger tvärtom → du visste. Bankrate-meningen står efter presentkortsmeningen och före lådan-meningen, som domare 2 ville, så mekanismen inte bryts av en siffra mitt i. 'Och de är många: sushi låg topp tre' var ett kolon-skarv som inte låter som tal; nu två meningar. 'Kvittot' är struket. Block 3: tråg och pinnar → så ställ den på bordet → fikat, middagen, julbordet → inget presentpapper; 'så' och 'bland den riktiga maten' bär över från pinnarna till bordet. Block 4 slutar inte längre på ett hängande kolon: texten står som två hela meningar, och punktlistan ska in direkt efter block 4 i body_html, så den har något att hänga på (domare 1 och 2). Block 5 börjar med utkast 2:s nyp i biten i stället för 'först när locket går av', som två domare kallade oskarpt: nyper → strumpa → köparen skrev → den överraskningen → britterna. Block 6: kalaset → julstrumpan → november → säkra dina, vinnarens egna slutrader. 'Procent' är utskrivet i stället för tecknet, och 32 står bara en gång på sidan. Tre fynd i stället för fyra, aldrig först i ett stycke, alltid efter en vanlig mening och med källan sist efter kommatecknet. Inga tankstreck (grep 0), ett enda utropstecken, det i citatet. Längsta meningen är Bankrate-raden på 20 ord, resten 3 till 15. Hela sidan är 300 ord med underrubrik, rubriker och punkter, mot dagens 151 och taket 302, räknat med wc. Rubrikerna låter som första halvan av blockets text när man läser rakt igenom. Två rubriker ('Räck den inte över' och 'Många ger bort den till jul') och tre första meningar har ett nej i testet; ingen rad har två nej. Not till den som lägger in texten: dagens två loopvideor och WhatsApp-bilden ligger i body_html och försvinner med ny text; lägg uppackningsloopen mellan block 3 och 4 och avslöjandeloopen i block 5, så bär bilden reaktionen som copyn aldrig påstår. Not utanför schemat: den relayade användarönskan om ett WhatsApp-meddelande på engelska till den filippinska CS:en med alla briefer och länkar till vilka kreatörer som får dem är inte producerad i det här steget, som bara bär produktsidans copy; det kräver ett eget steg med brieferna (ugc/2026-10-briefer.md) och kreatörernas länkar som underlag."
+  },
+  "kontroll": {
+   "fel_hittade": [
+    "Block 3, första meningen: 'och ätpinnarna ligger redan i' är obelagt. Faktabladet säger bara att ätpinnar i trä INGÅR (produktfakta 3) och att de 'ligger med' (M2); i ordrarna är de en egen orderrad (handle sushipinnar-i-akta-tra, 31 av 590 ordrar har 0 pinnar) och paketväljaren visar dem som 'GRATIS PÅ KÖPET' på 2 och 4 lådor. Att de ligger I tråget står ingenstans. Rättat med minsta ändring.",
+    "Block 1, andra meningen: 'Vill du ge bort den i år är det nu den finns.' hackar vid högläsning (ordföljden 'är det nu den finns' låter inte som tal). Rättad utan nytt påstående; belägget är fortfarande 'alla sushivarianter available true 2026-10-02'.",
+    "Notering utan ändring: underrubriken och punkten 'Ätpinnar i trä' står på produktfakta 3 ('ingår') och vinnarens rad 7 ordagrant, men sidans paketväljare ger pinnarna bara på paketen med 2 och 4 lådor (kort 1 '1 låda / 5 par / 399 kr' nämner inga pinnar). Motstridigt i källan, rapporteras som det står; copyn följer faktabladet.",
+    "Notering utan ändring: 'Den som öppnar lådan nyper i en bit.' (block 5) är ett beteendepåstående om mottagaren. Det är inte ett löfte om reaktion, och faktabladets M2 bär samma scen (H4 'tills någon rullar upp en bit') liksom vinnarens rad 1 (hon nyper i en bit). Godkänd.",
+    "Kontroller som gick igenom: tankstreck 0 (grep), utropstecken 1 och bara i det ordagranna citatet, inget pris, ingen leveranstid, ingen garanti, inget '30 dagar', inget material/tvätt/hållbarhet/mjukhet, ingen pizza/burgare/donut, inget annat märke som jämförelse (Wolt, Bankrate, YouGov och Judge.me är källor, inte jämförelser). Tre fynd (F1, F2, F4) med talet som källan skriver det ('topp tre', '32 procent', '44 procent'), landet utskrivet för USA och Storbritannien, aldrig 'mest beställda'. Citatet matchar kundernas_ord ordagrant inklusive utropstecknet. Sorterna och räkningen fem par = tio bitar = två per sort är produktfakta 2. Ingen rad har två nej i tre-frågorstestet. Längd 301 ord (underrubrik, rubriker, text, punkter; wc) mot taket 302.",
+    "Not till orkestreringen: den relayade önskan om ett WhatsApp-meddelande på engelska till den filippinska CS:en med alla briefer och länkar till kreatörerna ryms inte i det här stegets schema (produktsidans copy). Underlaget finns: ugc/2026-10-briefer.md (fyra briefer, tre videor per kreatör), factory/ugc/kreatorer.md (Matstrumpor-avsnittet), factory/ugc/utskick/2026-10-01-matstrumpor.md och kreatörssidan https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn. Det är ett eget steg."
+   ],
+   "andringar": [
+    "Block 3, text: 'Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnarna ligger redan i.' → 'Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnar i trä följer med.'",
+    "Block 1, text: 'Vill du ge bort den i år är det nu den finns.' → 'Vill du ge bort den i år finns den att köpa nu.'",
+    "tre_fragor: raden för block 3:s första mening uppdaterad till den nya lydelsen (samma tre ja: tråg, lock och pinnar syns på bild 1).",
+    "fakta_anvanda: ätpinnarnas rad säger nu 'följer med', inte 'ligger i lådan', och anger att pinnarna är en egen orderrad.",
+    "Inget annat rört: skriven_av, titel, underrubrik, rubriker, punkter, citat och de tre fynden står som i utkastet."
+   ],
+   "copy": {
+    "skriven_av": "Fable 5.1 ultracode: tre utkast, tre domare, syntes, kontroll",
+    "titel": "Sushi-Strumpor",
+    "underrubrik": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt.",
+    "block": [
+     {
+      "rubrik": "Förra året tog sushilådan slut i november.",
+      "text": "Det var långt före jul. Vill du ge bort den i år finns den att köpa nu. Så det här är ditt tecken. Ge bort deras favoriträtt. Fast som strumpor."
+     },
+     {
+      "rubrik": "Lådan säger: jag vet vad du alltid beställer.",
+      "text": "Du känner någon som alltid beställer sushi. Och de är många. Sushi låg topp tre på Wolt i Sverige 2025.\n\nEtt presentkort säger: jag vet inte. I USA gav 32 procent ett presentkort för att de inte visste vad de annars skulle köpa, enligt Bankrate 2024. Lådan säger tvärtom. Du visste."
+     },
+     {
+      "rubrik": "Räck den inte över. Duka fram den.",
+      "text": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnar i trä följer med. Så ställ den på bordet, bland den riktiga maten. På fikat, på middagen eller på julbordet. Inget presentpapper behövs."
+     },
+     {
+      "rubrik": "Tio sushibitar. Två av varje sort.",
+      "text": "Varje strumpa är rullad som en sushibit. Fem par blir tio bitar, två av varje sort."
+     },
+     {
+      "rubrik": "Genom locket är det sushi. I handen är det en strumpa.",
+      "text": "Den som öppnar lådan nyper i en bit. Det är en strumpa. En verifierad köpare skrev på Judge.me: \"Mycket uppskattad julklapp till sushiälskande dotter!\"\n\nDen överraskningen vill många ha. I Storbritannien vill 44 procent hellre bli överraskade med en present än tillfrågade först, enligt YouGov 2025."
+     },
+     {
+      "rubrik": "Många ger bort den till jul.",
+      "text": "Ta med den till kalaset, eller köp den nu och spara den till julstrumpan. Den tog slut i november förra året. Säkra dina innan det händer igen."
+     }
+    ],
+    "punkter": [
+     "5 par strumpor, rullade som tio sushibitar",
+     "Två bitar av varje sort: laxnigiri, tamago, laxmaki, gurkmaki och röd rulle",
+     "Ätpinnar i trä",
+     "Takeaway-tråg med genomskinligt lock, plastgräs och kulor som wasabi och ingefära",
+     "One size, passar storlek 36 till 44",
+     "Levereras presentklart"
+    ],
+    "tre_fragor": [
+     {
+      "rad": "Sushi-Strumpor (titel)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Produktnamnet som det står i Shopify i dag. Behålls oförändrat: titeln är sökord, inte copy."
+     },
+     {
+      "rad": "Tio sushibitar med ätpinnar i trä. Du visste ju deras favoriträtt. (underrubrik)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Vinnarens rad 7 och 6 ordagrant. Tio bitar och träpinnar går att räkna på bild 1; raden är vår kreatörs. 3 ja. Not: pinnarna är en egen orderrad och ges bara med paketen på 2 och 4 lådor i paketväljaren; faktabladets produktfakta 3 säger 'ingår', copyn följer faktabladet."
+     },
+     {
+      "rad": "Förra året tog sushilådan slut i november. (rubrik block 1)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Tom hylla i november; produktfakta 7, bekräftat av Axel 2026-09-24; vår låda, vårt november. 3 ja."
+     },
+     {
+      "rad": "Det var långt före jul. (första mening block 1)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Kalendern går att se, november mot jul är ett faktum, men raden lever på rubriken ovanför och vem som helst kan skriva den. Ett nej, godkänd."
+     },
+     {
+      "rad": "Lådan säger: jag vet vad du alltid beställer. (rubrik block 2)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Mekanism M3 i faktabladets egna ord. Man ser lådan; påståendet att den bär mottagarens favoriträtt kan vara falskt; ingen annan i Sverige pekar på beställningen, för bara vi säljer ett takeaway-tråg. Skeptikern dömde M3 uppvärmd, så det tredje ja:et är det svagaste på sidan. 3 ja."
+     },
+     {
+      "rad": "Du känner någon som alltid beställer sushi. (första mening block 2)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Går att se, kan vara falskt för läsaren, men vilken presentbutik som helst kan skriva den. Ett nej, godkänd; raden efter (topp tre på Wolt) gör den belagd."
+     },
+     {
+      "rad": "Räck den inte över. Duka fram den. (rubrik block 3)",
+      "se": true,
+      "falsk": false,
+      "bara_vi": true,
+      "kommentar": "Mekanism M2 H2 ordagrant, skeptikerns enda genuint nya av fem. Bilden är lådan på bordet. En uppmaning går inte att falsifiera. 2 ja, ett nej, godkänd."
+     },
+     {
+      "rad": "Lådan är ett riktigt takeaway-tråg med genomskinligt lock, och ätpinnar i trä följer med. (första mening block 3)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Produktfakta 3 och 4. Tråget, locket och pinnarna syns på bild 1. Rättad från 'ligger redan i' till 'följer med': att pinnarna ligger i tråget står ingenstans i faktabladet. 3 ja."
+     },
+     {
+      "rad": "Tio sushibitar. Två av varje sort. (rubrik block 4)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Räkningen fem par = tio bitar = två per sort är produktfakta 2 och rättar 048h1 som säger fel live. 3 ja."
+     },
+     {
+      "rad": "Varje strumpa är rullad som en sushibit. (första mening block 4)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Går att se och kontrollera. Dropship-sidorna utomlands säger samma sak. Ett nej, godkänd."
+     },
+     {
+      "rad": "Genom locket är det sushi. I handen är det en strumpa. (rubrik block 5)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Avslöjandet i videons ordning, med vårt genomskinliga lock som bild (produktfakta 4). Ett påstående om lådan, inte om mottagarens reaktion. 3 ja."
+     },
+     {
+      "rad": "Den som öppnar lådan nyper i en bit. (första mening block 5)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": true,
+      "kommentar": "Handen, biten, nypet; bara vårt tråg har bitar att nypa i. Beteendet, inte reaktionen: samma scen som vinnarens rad 1 och M2:s H4. 3 ja."
+     },
+     {
+      "rad": "Många ger bort den till jul. (rubrik block 6)",
+      "se": true,
+      "falsk": true,
+      "bara_vi": false,
+      "kommentar": "Belagt i faktabladet (jul 5 av 28 recensioner, december 2025 störst), går att se och kan vara falskt, men vilken julprodukt som helst kan skriva den. Ett nej, godkänd."
+     },
+     {
+      "rad": "Ta med den till kalaset, eller köp den nu och spara den till julstrumpan. (första mening block 6)",
+      "se": true,
+      "falsk": false,
+      "bara_vi": true,
+      "kommentar": "Vinnarens rad 5 nästan ordagrant. Julstrumpan och kalaset går att se; en uppmaning går inte att falsifiera; raden är Nathalies. 2 ja, ett nej, godkänd."
+     }
+    ],
+    "fakta_anvanda": [
+     "Fem par strumpor, rullade som sushibitar, tio bitar: produktfakta 1 (sidan body_html 'Det här får du'; dna.md rad 19–21). Underrubriken, rubrik block 4, punkt 1.",
+     "Fem sorter, två bitar per sort: laxnigiri, tamago, laxmaki, gurkmaki, röd rulle; varje strumpa är en bit, aldrig 'varje par är en bit': produktfakta 2 (mekanismer.md M5 + §4 punkt 4, produktbild 1). Rubrik block 4, 'Fem par blir tio bitar, två av varje sort', punkt 2.",
+     "Ätpinnar i trä ingår/följer med: produktfakta 3 (sidan body_html + paketväljaren; underlag-sv.json). Underrubriken (vinnarens rad 7 ordagrant), block 3 skrivet 'följer med' eftersom pinnarna är en egen orderrad (vem_koper: handle sushipinnar-i-akta-tra) och 'ligger i tråget' inte står i faktabladet, punkt 3.",
+     "Riktigt takeaway-tråg med genomskinligt lock, plastgräs och pompomkulor som wasabi/ingefära; ser ut som takeaway tills man öppnar; redo att ges bort utan inslagning, 'Levereras presentklart': produktfakta 4 (mekanismer.md M1/M2; sidan body_html, FAQ 'Kan jag skicka dem som present direkt?', header-bar). Block 3 ('Inget presentpapper behövs'), rubrik block 5, punkt 4 och 6.",
+     "One size, passar 36–44, skrivet '36 till 44' eftersom tankstreck är förbjudna: produktfakta 5 (sidan .ms-storlek, FAQ, dna.md). Punkt 5. 'Stretchigt material' utelämnat, materialpåståenden är förbjudna.",
+     "Sushilådan tog slut i november förra året: produktfakta 7 (dna.md rad 105–109, sidan body_html, Axel 2026-09-24; vinnarens rad 3 och 12). Rubrik block 1 och 'Den tog slut i november förra året' i block 6, samma dubblering som videon själv gör.",
+     "Alla sushivarianter finns att köpa i dag ('finns den att köpa nu'): invändningar punkt 8, matstrumpor.se/products.json available true, läst 2026-10-02.",
+     "Många ger bort den till jul: till_vem 'Tillfälle: jul 5 av 28' + 'julklapp 4' och vem_koper 'december 2025 ensam 1 613 ordrar, 86 % dec–mars' (ATERKOP-ANALYS avsnitt 0). Rubrik block 6. Inga antal skrivs ut; antal sålda är förbjudet.",
+     "Kundcitatet 'Mycket uppskattad julklapp till sushiälskande dotter!': produktfakta 11 och kundernas_ord, verifierad köpare, Judge.me 4★ 2026-09-28, ordagrant med utropstecknet, sidans enda utropstecken. Block 5.",
+     "F1: sushi topp tre på Wolt i Sverige 2025: ny_information F1 (Wolt 'Wolt-året i siffror 2025', 8 januari 2026). Skrivet 'topp tre', aldrig 'mest beställda'. Block 2 stycke 1.",
+     "F2: i USA gav 32 procent ett presentkort för att de inte visste vad de annars skulle köpa: ny_information F2, Bankrate/YouGov Plc, 2 373 amerikaner, publicerad 23 september 2024. Landet utskrivet, talet som källan skriver det, attribuerat Bankrate 2024. Block 2 stycke 2, mellan presentkortsmeningen och 'Lådan säger tvärtom'.",
+     "F4: i Storbritannien vill 44 procent hellre bli överraskade med en present än tillfrågade först: ny_information F4, YouGov Storbritannien 'The YouGov Big Survey on Christmas', 28 november 2025. Landet utskrivet. Block 5 stycke 2, som konstaterande om världen, inget löfte om mottagarens reaktion.",
+     "Tre fynd på sidan (F1, F2, F4), inom kravet minst två och högst fyra.",
+     "Mekanismen M3 i ord: presentkortet säger 'jag vet inte', lådan säger 'jag vet vad du alltid beställer': mekanismer M3 i faktabladet, med 'Du visste' som eko av vinnarens rad 6. Rubrik och stycke 2 block 2.",
+     "Mekanismen M2 'Räck den inte över. Duka fram den.' + bordet (fikat, middagen, julbordet) bland riktig mat i stället för presentpapper: mekanismer M2 H2 + §3 + §4 punkt 1. Rubrik och text block 3.",
+     "Vinnarens rader som sidan speglar, i videons ordning där det går: 'det här är ditt tecken' (rad 2), 'sålde slut i november' (rad 3), 'ge bort dom' (rad 4), 'ta med till kalaset eller spara till julstrumpan' (rad 5), 'du visste ju deras favoriträtt' (rad 6), 'tio sushibitar med ätpinnar i trä' (rad 7), 'säkra dina innan det händer igen' (rad 12, rensat manus), nypet i biten (rad 1): vinnarens_rader. Rad 8, 9 och 11 (pizza/burgare/donut, 'fyra looks', 'används år efter år') används inte.",
+     "Vardagsreferenserna takeaway, fika, julstrumpa, kalaset: docs/copy-regler.md 'Jämför med det kunden redan känner, men aldrig med ett märke'. Inget annat märke som jämförelse (Axels val A 2026-10-02); Wolt, Bankrate, YouGov och Judge.me står bara som källor.",
+     "Utelämnat med flit: pris, erbjudanden, frakt, leveranstid, 30 dagar, ångerrätt, garanti, material, tvätt, mjukhet, hållbarhet, 'används år efter år', pizza/burgare/donut, antal sålda, butiksnamnet i brödtexten, alla tankstreck."
+    ],
+    "lasbarhet": "Jag läste utkastet högt uppifrån och ner två gånger och stannade på ett ställe: 'Vill du ge bort den i år är det nu den finns' har en ordföljd ingen säger. Nu 'finns den att köpa nu', så block 1 går november → långt före jul → finns att köpa nu → så det här är ditt tecken → ge bort favoriträtten → fast som strumpor. Den andra ändringen, 'ätpinnar i trä följer med' i stället för 'ligger redan i', läses lika lätt och 'Så ställ den på bordet' hänger fortfarande på meningen före. Allt annat i utkastets övergångar stod kvar som det var: block 2 sushi → många → Wolt; presentkort → vet inte → USA-talet → lådan säger tvärtom → du visste; block 3 tråg → bordet → fikat/middagen/julbordet → inget presentpapper; block 4 två hela meningar som punktlistan hänger på; block 5 nyper → strumpa → köparen skrev → den överraskningen → britterna; block 6 kalaset → julstrumpan → november → säkra dina. Fynden står aldrig först i ett stycke, alltid efter en vanlig mening och med källan sist efter kommatecknet. Mätt efter rättningen: 0 tankstreck, 1 utropstecken (citatet), 301 ord med underrubrik, rubriker och punkter (wc) mot dagens 151 och taket 302. Not till den som lägger in texten: dagens två loopvideor och WhatsApp-bilden ligger i body_html och försvinner med ny text; lägg uppackningsloopen mellan block 3 och 4 och avslöjandeloopen i block 5. Not utanför schemat: WhatsApp-meddelandet på engelska till den filippinska CS:en (alla briefer + länkar till vilka kreatörer som får dem, för hans feedback) är inte producerat här; underlaget är ugc/2026-10-briefer.md, factory/ugc/kreatorer.md, factory/ugc/utskick/2026-10-01-matstrumpor.md och kreatörssidan https://claude.ai/artifact/NrD4m6BmZ8E7kupZXk5CWn. Eget steg."
+   }
+  }
+ }
+}

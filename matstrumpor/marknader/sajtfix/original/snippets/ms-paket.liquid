@@ -1,0 +1,274 @@
+{%- comment -%}
+  ms-paket — paketnivåer i köpblocket ("1-pack / 2-pack / 4-pack").
+
+  Samma sorts erbjudande som Kaching Bundles, men vi äger både widgeten och
+  rabatten. Det är hela poängen: en widget som bara ritar kort kan visa ett
+  paketpris som kassan inte ger, och det upptäcker kunden i sista steget.
+
+  VAR INNEHÅLLET BOR
+  Nivåerna redigeras i Shopify-adminen under Innehåll → Metaobjekt →
+  Paketnivå. En post per nivå och produkt. Inget här i koden behöver röras
+  för att ändra ett erbjudande.
+
+  ÄRLIGHETSSPÄRREN
+  Ett rabatterat pris visas BARA om nivån har både ett totalpris OCH en
+  rabattkod. Saknas koden vet vi inte att kassan ger priset, och då visar vi
+  fullpris. Rabatten är ett belopp (inte en procent), precis som Shopifys
+  rabattkod fungerar — därför räknas den av från det verkliga variantpriset,
+  vilket gör att den blir rätt även när kunden byter variant.
+
+  Parametrar:
+    product       (obligatorisk)
+    variant       nuvarande A/B-variant, 'a' | 'b' | tom
+    section_id    för unika fältnamn
+    fast_variant  variant-id att köpa när produkten INTE är sidans egen —
+                  då läses inte formulärets variantfält, som tillhör en annan produkt
+    mix           true = testet "sortval": varje låda i ett paket får en
+                  dropdown med alla sorter (mixa och matcha). Visar då BARA
+                  nivåer märkta med samma A/B-variant som `variant`. Mix-
+                  nivåernas rabattkod är en BAS (STRUMPOR-K1F1 / STRUMPOR-K2F2);
+                  JS lägger till -P<antal ätpinnar> vid köpet, för koden måste
+                  ge exakt så många varor gratis som vagnen rymmer utöver de
+                  betalda lådorna (Shopify ger de billigaste gratis först).
+                  Ätpinnarna följer bara med sushilådor: 1 par per sushilåda.
+    sorter        handles till sorterna i dropdownen, kommaseparerade
+{%- endcomment -%}
+{%- liquid
+  assign p = product
+  assign v = p.selected_or_first_available_variant
+  comment
+    ms-paket-test: fast_variant — ett block som skickar fast_variant (pakettestets B) räknar och köper ALLTID den varianten,
+    oavsett variantväljaren. Utan fast_variant är v exakt som förut (matstrumpor/erbjudanden/paket-test.mjs).
+  endcomment
+  if fast_variant != blank
+    for fx in p.variants
+      if fx.id == fast_variant
+        assign v = fx
+      endif
+    endfor
+  endif
+  assign uid = section_id | default: 'ms'
+  assign ab = variant | default: ''
+  assign alla = shop.metaobjects.ms_paketniva.values
+-%}
+
+{%- if p and p.available and alla.size > 0 -%}
+  {%- comment -%}
+    Variantpriserna som JSON, så JS kan räkna om vid variantbyte.
+
+    MÅSTE köras genom `escape`. JSON:ens citattecken avslutar annars
+    HTML-attributet, JSON.parse felar, och då räknar JS varje nivå på
+    styckpriset 0 — hela köprutan visar 0 kr. Sidan ser rätt ut tills
+    JavaScript hinner köra.
+  {%- endcomment -%}
+  {%- liquid
+    assign sort_handles = sorter | default: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' | split: ','
+  -%}
+  {%- capture priskarta_inre -%}
+    {%- for x in p.variants -%},"{{ x.id }}":{{ x.price }}{%- endfor -%}
+    {%- if mix -%}
+      {%- for h in sort_handles -%}
+        {%- assign hh = h | strip -%}
+        {%- assign sp = all_products[hh] -%}
+        {%- if sp != blank and sp.id != p.id -%}
+          {%- for x in sp.variants -%},"{{ x.id }}":{{ x.price }}{%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign priskarta = priskarta_inre | strip | remove_first: ',' | prepend: '{' | append: '}' -%}
+  {%- capture egna_inre -%}{%- for x in p.variants -%},{{ x.id }}{%- endfor -%}{%- endcapture -%}
+  {%- assign egna = egna_inre | strip | remove_first: ',' -%}
+  {%- if mix -%}
+    {%- comment -%} Dropdown-alternativen: sidans egen sort först (värdet "egen" = det som är valt i variantväljaren), sen de andra. {%- endcomment -%}
+    {%- capture sort_options -%}
+      {%- for h in sort_handles -%}
+        {%- assign hh = h | strip -%}
+        {%- assign sp = all_products[hh] -%}
+        {%- if sp != blank and sp.available -%}
+          {%- assign namn = sp.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', '' -%}
+          {%- if sp.id == p.id -%}
+            <option value="egen" selected data-bild="{{ sp.featured_image | image_url: width: 120 }}">{{ namn }}</option>
+          {%- else -%}
+            <option value="{{ sp.selected_or_first_available_variant.id }}" data-bild="{{ sp.featured_image | image_url: width: 120 }}">{{ namn }} · {{ sp.selected_or_first_available_variant.price | money }}</option>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+  {%- endif -%}
+
+  <ms-paket class="ms-scope ms-paket{% if mix %} ms-paket--mix{% endif %}"
+    data-money-format="{{ shop.money_format | strip_html | escape }}"
+    {% if fast_variant != blank %}data-variant-id="{{ fast_variant }}"{% endif %}
+    {% if mix %}data-mix="1"{% endif %}
+    data-egna="{{ egna }}"
+    data-varianter="{{ priskarta | strip | escape }}">
+
+    <div class="ms-paket__lista" role="radiogroup" aria-label="{% case request.locale.iso_code %}{% when 'nb' %}Velg pakke{% when 'da' %}Vælg pakke{% when 'fi' %}Valitse paketti{% when 'de' %}Paket wählen{% when 'fr' %}Choisir le pack{% when 'nl' %}Kies pakket{% when 'es' %}Elegir paquete{% when 'it' %}Scegli il pacchetto{% when 'pl' %}Wybierz zestaw{% when 'pt-PT' %}Escolhe o pacote{% when 'en' %}Choose bundle{% when 'ja' %}セットを選ぶ{% when 'zh-TW' %}選擇組合{% else %}Välj paket{% endcase %}">
+      {%- assign visade = 0 -%}
+      {%- for niva in alla -%}
+        {%- liquid
+          assign hor_hit = false
+          if niva.produkt.value.id == p.id
+            assign hor_hit = true
+          endif
+
+          assign nivans_ab = niva.ab_variant.value | default: '' | strip | downcase
+          if nivans_ab != '' and nivans_ab != ab
+            assign hor_hit = false
+          endif
+          if mix and nivans_ab != ab
+            assign hor_hit = false
+          endif
+        -%}
+        {%- if hor_hit -%}
+          {%- liquid
+            assign antal = niva.antal.value | plus: 0
+            if antal < 1
+              assign antal = 1
+            endif
+
+            assign gvar = niva.gratis_produkt.value.selected_or_first_available_variant
+            assign gantal = niva.gratis_antal.value | default: 0 | plus: 0
+            assign gvarde = 0
+            if gvar and gantal > 0
+              assign gvarde = gvar.price | times: gantal
+            endif
+
+            assign kod = niva.rabattkod.value | default: '' | strip
+            assign bogo = niva.bogo_gratis.value | default: 0 | plus: 0
+            assign rabatt = 0
+            if bogo > 0 and kod != ''
+              comment
+                BOGO-läge: koden är en köp-X-få-Y-rabatt som ger `bogo` strumpor
+                och gåvan till 100 %. Rabatten SKALAR därför med variantpriset —
+                3-par-lådan ger mindre avdrag än 5-par-lådan, precis som kassan
+                räknar. Ett fast belopp här hade visat fel pris på 3-par.
+              endcomment
+              assign rabatt = v.price | times: bogo | plus: gvarde
+            else
+              comment
+                Fastprisläge: rabatten är ett BELOPP räknat mot standardvarianten,
+                för det är så en vanlig rabattkod fungerar. Samma belopp dras
+                vilken variant kunden än väljer.
+              endcomment
+              assign standard = v.price
+              assign ordinarie_standard = standard | times: antal | plus: gvarde
+              assign fast = niva.fastpris.value
+              if kod != '' and fast != blank
+                assign fast_ore = fast | times: 100 | round
+                assign rabatt = ordinarie_standard | minus: fast_ore
+                if rabatt < 0
+                  assign rabatt = 0
+                endif
+              endif
+            endif
+
+            assign ordinarie = v.price | times: antal | plus: gvarde
+            assign kundpris = ordinarie | minus: rabatt
+            assign vald = niva.forvald.value
+          -%}
+          <label class="ms-paket__opt">
+            {%- if niva.bricka.value != blank -%}
+              <span class="ms-paket__bricka">{{ niva.bricka.value }}</span>
+            {%- endif -%}
+            <input
+              class="ms-paket__input"
+              type="radio"
+              name="ms-paket-{{ uid }}"
+              value="{{ niva.system.handle }}"
+              data-antal="{{ antal }}"
+              data-rabatt="{{ rabatt }}"
+              data-bogo="{{ bogo }}"
+              data-kod="{{ kod | escape }}"
+              data-gratis-variant="{{ gvar.id }}"
+              data-gratis-antal="{{ gantal }}"
+              data-gratis-varde="{{ gvarde }}"
+              {%- if mix and gvar and antal > 0 %} data-pinnar-per="{{ gantal | divided_by: antal }}" data-pinne-pris="{{ gvar.price }}"{% endif %}
+              {% if vald %}checked{% endif %}>
+            <span class="ms-paket__kort">
+              <span class="ms-paket__dot" aria-hidden="true"></span>
+              <span class="ms-paket__text">
+                <span class="ms-paket__rubrik">{{ niva.rubrik.value }}</span>
+                {%- if niva.underrubrik.value != blank -%}
+                  <span class="ms-paket__under">{{ niva.underrubrik.value }}</span>
+                {%- endif -%}
+              </span>
+              <span class="ms-paket__pris">
+                <span class="ms-paket__nu" data-ms-paket-nu>{{ kundpris | money }}</span>
+                {%- if rabatt > 0 -%}
+                  <span class="ms-paket__forr" data-ms-paket-forr>{{ ordinarie | money }}</span>
+                {%- endif -%}
+              </span>
+            </span>
+            {%- if mix -%}
+              {%- comment -%}
+                Mixläget: en dropdown per låda, synliga bara på det valda kortet.
+                "egen" = sidans egen sort i den variant som är vald ovanför
+                (5 eller 3 par); de andra sorterna bär sitt variant-id.
+              {%- endcomment -%}
+              {%- assign betalda = antal | minus: bogo -%}
+              {%- assign egen_namn = p.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', '' -%}
+              <span class="ms-paket__lador">
+                {%- for n in (1..antal) -%}
+                  {%- comment -%}
+                    Hela raden är dropdownen: den riktiga <select> ligger osynlig
+                    ovanpå, så mobilens egen väljare öppnas vid tryck. Bild, etikett
+                    och valt värde uppdateras av JS när valet ändras.
+                  {%- endcomment -%}
+                  <span class="ms-paket__lada">
+                    <img class="ms-paket__lada-bild" data-ms-lada-bild src="{{ p.featured_image | image_url: width: 120 }}" alt="" width="44" height="44" loading="lazy">
+                    <span class="ms-paket__lada-text">
+                      <span class="ms-paket__lada-etikett">{% case request.locale.iso_code %}{% when 'nb' %}Boks{% when 'da' %}Boks{% when 'fi' %}Laatikko{% when 'de' %}Box{% when 'fr' %}Boîte{% when 'nl' %}Doos{% when 'es' %}Caja{% when 'it' %}Scatola{% when 'pl' %}Pudełko{% when 'pt-PT' %}Caixa{% when 'en' %}Box{% when 'ja' %}ボックス{% when 'zh-TW' %}盒{% else %}Låda{% endcase %} {{ n }}{% if n > betalda %} · {% case request.locale.iso_code %}{% when 'fi' %}ilmainen{% when 'fr' %}offerte{% when 'pt-PT' %}grátis{% when 'en' %}free{% when 'ja' %}無料{% when 'zh-TW' %}免費{% else %}gratis{% endcase %}{% endif %}</span>
+                      <span class="ms-paket__lada-val" data-ms-lada-val>{{ egen_namn }}</span>
+                    </span>
+                    <span class="ms-paket__lada-pil" aria-hidden="true">{% render 'ms-icon', name: 'chevron' %}</span>
+                    <select class="ms-paket__sort" data-lada="{{ n }}" aria-label="{% case request.locale.iso_code %}{% when 'nb' %}Velg sokker til boks{% when 'da' %}Vælg sokker til boks{% when 'fi' %}Valitse sukat laatikkoon{% when 'de' %}Sorte für Box{% when 'fr' %}Choisir les chaussettes pour la boîte{% when 'nl' %}Kies sokken voor doos{% when 'es' %}Elige los calcetines de la caja{% when 'it' %}Scegli i calzini per la scatola{% when 'pl' %}Wybierz skarpetki do pudełka{% when 'pt-PT' %}Escolhe as meias da caixa{% when 'en' %}Choose socks for box{% when 'ja' %}種類を選ぶ：ボックス{% when 'zh-TW' %}選擇款式：盒{% else %}Sort i låda{% endcase %} {{ n }}">{{ sort_options }}</select>
+                  </span>
+                {%- endfor -%}
+              </span>
+              {%- if gvar and gantal > 0 -%}
+                <span class="ms-paket__gava">
+                  {%- if niva.gratis_produkt.value.featured_image -%}
+                    <img class="ms-paket__gava-bild" src="{{ niva.gratis_produkt.value.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+                  {%- endif -%}
+                  <span class="ms-paket__gava-text">
+                    <span class="ms-paket__gava-etikett">{% render 'ms-icon', name: 'gift' %} {% case request.locale.iso_code %}{% when 'nb' %}Gratis per sushiboks{% when 'da' %}Gratis pr. sushiboks{% when 'fi' %}Ilmaiseksi joka sushilaatikkoon{% when 'de' %}Gratis pro Sushi-Box{% when 'fr' %}Offert avec chaque boîte à sushi{% when 'nl' %}Gratis per sushidoos{% when 'es' %}Gratis por caja de sushi{% when 'it' %}Gratis per scatola sushi{% when 'pl' %}Gratis na pudełko sushi{% when 'pt-PT' %}Grátis por caixa de sushi{% when 'en' %}Free with every sushi box{% when 'ja' %}寿司ボックスごとに無料{% when 'zh-TW' %}每個壽司盒免費附贈{% else %}Gratis per sushilåda{% endcase %}</span>
+                    <span>{% case request.locale.iso_code %}{% when 'nb' %}Spisepinner i tre{% when 'da' %}Spisepinde i træ{% when 'fi' %}Puiset syömäpuikot{% when 'de' %}Essstäbchen aus Holz{% when 'fr' %}Baguettes en bois{% when 'nl' %}Houten eetstokjes{% when 'es' %}Palillos de madera{% when 'it' %}Bacchette di legno{% when 'pl' %}Drewniane pałeczki{% when 'pt-PT' %}Pauzinhos de madeira{% when 'en' %}Wooden chopsticks{% when 'ja' %}木製のお箸{% when 'zh-TW' %}實木筷子{% else %}Ätpinnar i trä{% endcase %} · <span data-ms-paket-gava-antal>{{ gantal }}</span> {% case request.locale.iso_code %}{% when 'fi' %}paria{% when 'de' %}Paar{% when 'fr' %}paires{% when 'nl' %}paar{% when 'es' %}pares{% when 'it' %}paia{% when 'pl' %}pary{% when 'pt-PT' %}pares{% when 'en' %}pairs{% when 'ja' %}膳{% when 'zh-TW' %}雙{% else %}par{% endcase %}</span>
+                  </span>
+                  <span class="ms-paket__gava-varde">{% case request.locale.iso_code %}{% when 'nb' %}verdi{% when 'da' %}værdi{% when 'fi' %}arvo{% when 'de' %}Wert{% when 'fr' %}valeur{% when 'nl' %}waarde{% when 'es' %}valor{% when 'it' %}valore{% when 'pl' %}wartość{% when 'pt-PT' %}valor{% when 'en' %}worth{% when 'ja' %}通常価格{% when 'zh-TW' %}價值{% else %}värde{% endcase %} <span data-ms-paket-gava-varde>{{ gvarde | money }}</span></span>
+                </span>
+              {%- endif -%}
+            {%- elsif gantal > 0 and niva.gratis_text.value != blank -%}
+              {%- comment -%}
+                Gåvan hänger under kortet som en egen remsa, utanför ramen —
+                den ska läsas som något EXTRA man får, inte som en rad i
+                erbjudandet. Samma grepp som Kaching Bundles använder.
+              {%- endcomment -%}
+              <span class="ms-paket__gava">
+                {%- if niva.gratis_produkt.value.featured_image -%}
+                  <img class="ms-paket__gava-bild" src="{{ niva.gratis_produkt.value.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+                {%- endif -%}
+                <span class="ms-paket__gava-text">
+                  <span class="ms-paket__gava-etikett">{% render 'ms-icon', name: 'gift' %} {% case request.locale.iso_code %}{% when 'nb' %}Gratis på kjøpet{% when 'da' %}Gratis med i købet{% when 'fi' %}Ilmaiseksi kaupan päälle{% when 'de' %}Gratis dazu{% when 'fr' %}Offert avec votre achat{% when 'nl' %}Gratis erbij{% when 'es' %}Gratis con la compra{% when 'it' %}Gratis con l'acquisto{% when 'pl' %}Gratis przy zakupie{% when 'pt-PT' %}Oferta com a compra{% when 'en' %}Free with purchase{% when 'ja' %}ご購入で無料プレゼント{% when 'zh-TW' %}購買即贈{% else %}Gratis på köpet{% endcase %}</span>
+                  <span>{{ niva.gratis_text.value }}</span>
+                </span>
+                <span class="ms-paket__gava-varde">{% case request.locale.iso_code %}{% when 'nb' %}verdi{% when 'da' %}værdi{% when 'fi' %}arvo{% when 'de' %}Wert{% when 'fr' %}valeur{% when 'nl' %}waarde{% when 'es' %}valor{% when 'it' %}valore{% when 'pl' %}wartość{% when 'pt-PT' %}valor{% when 'en' %}worth{% when 'ja' %}通常価格{% when 'zh-TW' %}價值{% else %}värde{% endcase %} {{ gvarde | money }}</span>
+              </span>
+            {%- endif -%}
+          </label>
+          {%- assign visade = visade | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if visade == 0 and request.design_mode -%}
+      <div class="ms-video__tom">
+        Inga paketnivåer för den här produkten ännu. Lägg till dem under
+        <strong>Innehåll → Metaobjekt → Paketnivå</strong> i Shopify-adminen.
+      </div>
+    {%- endif -%}
+
+    <p class="ms-paket__fel" data-ms-paket-fel hidden role="alert"></p>
+  </ms-paket>
+{%- endif -%}

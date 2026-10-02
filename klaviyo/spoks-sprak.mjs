@@ -17,6 +17,12 @@
 //     En rad med `"spoks": false` hoppas här (fraktmejl finns, Spoks-innehåll inte än).
 //   - Flödena blir INTE fler när språken blir fler: F01 är ett flöde med ett
 //     sändsteg per språk (landsfilter på steget), så Spoks lista förblir sex flöden.
+//   - Ett flöde som är igång går inte att ändra i Spoks ("Cannot edit a step in an
+//     active flow", mätt 2026-09-26). Ett nytt språk eller ett ändrat landsfilter
+//     byggs därför som en NY version bredvid den som går (spoks_sprak.flodesversion
+//     ⇒ "… · alla språk v2") och byts i appen: nytt på, gammalt av.
+//   - Ett språk kan ha egna stopp (spoks_sprak.stopp.<sprak>: mönster + orsak),
+//     t.ex. japanskans tal fyra. De gäller mejltexten, ui-raderna och citaten.
 //
 // Spoks vet bara kundens land (contact.country, engelskt landsnamn — mätt
 // 2026-09-29 i Matstrumpors arbetsyta: "Sweden", "United States"), inte vilket
@@ -52,8 +58,9 @@ export function sprakKonfig(brand, rot = ROT, butiker = null) {
   const sprak = [{ sprak: huvud, locale: huvud, mapp: '' }];
   for (const r of butik.mejl_sprak ?? []) {
     if (!r?.sprak || r.sprak === huvud) continue;
-    // `spoks: false` = språket har fraktmejl och spårningssida men inget Spoks-innehåll än (Japan och
-    // Taiwan 2026-09-30). Kunderna där får reservspråket, som varje land utan egen rad.
+    // `spoks: false` = språket har fraktmejl och spårningssida men inget Spoks-innehåll än (Taiwan
+    // sedan 2026-09-30; Japan hade det till 2026-10-02). Kunderna där får reservspråket, som varje
+    // land utan egen rad.
     if (r.spoks === false) continue;
     if (sprak.some((x) => x.sprak === r.sprak)) throw new Error(`mejl_sprak har ${r.sprak} två gånger.`);
     sprak.push({ sprak: r.sprak, locale: r.locale ?? r.sprak, mapp: r.mapp ?? r.sprak });
@@ -68,7 +75,23 @@ export function sprakKonfig(brand, rot = ROT, butiker = null) {
     lander[iso] = s;
   }
   const landsnamn = (iso) => k.landsnamn?.[iso] ?? REGION_EN.of(iso);
-  return { huvud, reserv, sprak, lander, landsnamn, kampanjerBara: k.kampanjer_bara ?? {} };
+  // Stopp per språk (mönster + orsak). Ett språk som inte finns i mejl_sprak är ett
+  // stavfel ("jp" i stället för "ja") och hade annars inte stoppat något alls.
+  const kandaSprak = new Set([huvud, ...(butik.mejl_sprak ?? []).map((r) => r?.sprak).filter(Boolean)]);
+  const stopp = {};
+  for (const [s, lista] of Object.entries(k.stopp ?? {})) {
+    if (!kandaSprak.has(s)) throw new Error(`spoks_sprak.stopp har språket "${s}", som saknas i sparning/butiker.json → ${brand.id}.mejl_sprak.`);
+    if (!Array.isArray(lista)) throw new Error(`spoks_sprak.stopp.${s} ska vara en lista.`);
+    stopp[s] = lista.map((r) => {
+      if (!r?.monster || !r?.orsak) throw new Error(`spoks_sprak.stopp.${s}: varje rad behöver "monster" och "orsak".`);
+      return { re: new RegExp(r.monster, 'u'), orsak: r.orsak };
+    });
+  }
+  // Flödesversionen (1 = de sex flödena från 2026-09-29). Högre version ⇒ " v<n>" i
+  // flödesnamnet, så att den nya versionen syns bredvid den som är igång.
+  const version = Number(k.flodesversion ?? 1);
+  if (!Number.isInteger(version) || version < 1) throw new Error(`spoks_sprak.flodesversion ska vara ett heltal ≥ 1 (är ${JSON.stringify(k.flodesversion)}).`);
+  return { huvud, reserv, sprak, lander, landsnamn, kampanjerBara: k.kampanjer_bara ?? {}, stoppFor: (s) => stopp[s] ?? [], version };
 }
 
 const bitar = (lista, n = 25) => {
@@ -138,25 +161,75 @@ export function mejlText(mejl) {
 export const hash = (v) => createHash('sha256').update(typeof v === 'string' ? v : JSON.stringify(v)).digest('hex').slice(0, 12);
 
 // Talen i en text (48, 36-44, 8.11 …) — en översättning får tappa ett tal
-// men aldrig hitta på ett som den svenska texten inte har.
-const tal = (t) => String(t ?? '').replace(/\{\{[^}]*\}\}/g, '').match(/\d+/g) ?? [];
+// men aldrig hitta på ett som den svenska texten inte har. NFKC först, så att
+// helbreddssiffror (５) räknas som siffror (2026-10-02, japanskan): annars hade
+// ett påhittat tal kunnat skrivas förbi kontrollen.
+const tal = (t) => String(t ?? '').normalize('NFKC').replace(/\{\{[^}]*\}\}/g, '').match(/\d+/g) ?? [];
+
+// Svenska räkneord i KÄLLAN räknas som tal (2026-10-02): "Fem par" får bli "5足"
+// på ett språk som skriver antal med siffror, men "6足" stoppar fortfarande, och
+// ett tal som inte står i svenskan, varken som siffra eller som ord, stoppar som
+// förut. "en"/"ett" räknas inte: de är oftast artiklar, och då hade en etta gått
+// igenom nästan överallt.
+const RAKNEORD = { två: 2, tre: 3, fyra: 4, fem: 5, sex: 6, sju: 7, åtta: 8, nio: 9, tio: 10, elva: 11, tolv: 12 };
+const RAKNEORD_RE = new RegExp(`(?<!\\p{L})(${Object.keys(RAKNEORD).join('|')})(?!\\p{L})`, 'giu');
+export const talIKallan = (t) => [...tal(t), ...[...String(t ?? '').matchAll(RAKNEORD_RE)].map((m) => String(RAKNEORD[m[1].toLowerCase()]))];
+
+// Tankstreck i alla skrifter: — och –, och de streck japansk typografi använder
+// (― ─ ━), plus ‒ ⸺ ⸻ ﹘ och helbreddsstrecket －. Katakanans långa vokaltecken
+// ー (U+30FC, "ハンバーガー") är inget streck och stoppar inte.
+const TANKSTRECK = /[—–―─━‒⸺⸻﹘－]/u;
+
+// Kontrollerna för EN översatt text mot sin svenska källa: tom, tankstreck,
+// påhittat tal, okänd token och språkets egna stopp. Samma regler för mejlens
+// fält, ui-raderna och citaten.
+export function textFel(falt, sv, ov, stopp = []) {
+  if (ov === null) return [];
+  if (typeof ov !== 'string' || !ov.trim()) return [`${falt}: tom översättning.`];
+  const fel = [];
+  if (TANKSTRECK.test(ov)) fel.push(`${falt}: tankstreck ("${ov.slice(0, 50)}") — skriv om med komma eller punkt.`);
+  const kalla = talIKallan(sv);
+  const extra = tal(ov).filter((n) => !kalla.includes(n));
+  if (extra.length) fel.push(`${falt}: talet ${extra.join(', ')} finns inte i den svenska texten — hitta aldrig på ett tal.`);
+  const tokens = String(ov).match(/\{\{[^}]*\}\}/g) ?? [];
+  if (tokens.some((x) => x !== '{{fornamn}}')) fel.push(`${falt}: okänd token ${tokens.join(' ')} — bara {{fornamn}} är tillåten.`);
+  for (const r of stopp) {
+    const m = String(ov).match(r.re);
+    if (m) fel.push(`${falt}: "${m[0]}" — ${r.orsak}`);
+  }
+  return fel;
+}
+
+// ui-raderna och citaten står i varje mejl (knappar, faktarutan, medlemskortet,
+// citatens signatur) och går därför genom samma kontroller som mejltexten.
+// svUi = kallaUi(brand), svCitat = hash → svensk recension.
+export function uiOchCitatFel(ov, svUi, svCitat, s, stopp = []) {
+  const fel = [];
+  for (const [n, sv] of Object.entries(svUi)) {
+    const v = ov?.ui?.[n];
+    if (v == null) continue; // saknade krav-nycklar rapporteras av UI_KRAV
+    fel.push(...textFel(`ui.${n}`, sv, v, stopp));
+  }
+  if (ov?.ui?.medlem_i != null && !String(ov.ui.medlem_i).includes('{klubb}')) fel.push('ui.medlem_i: {klubb} saknas — klubbens namn ska stå där.');
+  for (const [h, sv] of Object.entries(svCitat ?? {})) {
+    const v = ov?.citat?.[h];
+    if (v == null) continue;
+    fel.push(...textFel(`citat ${h}`, sv, v, stopp));
+  }
+  return fel.map((f) => `${s}: ${f}`);
+}
 
 // Den svenska texten + översättningen → ett mejl på språket. Fel samlas, aldrig
-// tyst: saknad nyckel, gammal källa, påhittat tal, tankstreck, okänd token.
-export function oversattMejl(mejl, t, s) {
+// tyst: saknad nyckel, gammal källa, påhittat tal, tankstreck, okänd token,
+// språkets egna stopp.
+export function oversattMejl(mejl, t, s, { stopp = [] } = {}) {
   const fel = [];
   const kalla = mejlText(mejl);
   if (!t) return { fel: [`${mejl.id}: saknar översättning på ${s}.`] };
   if (t.kalla !== hash(kalla)) fel.push(`${mejl.id}: den svenska texten har ändrats sedan ${s} översattes (kalla ${t.kalla} ≠ ${hash(kalla)}) — översätt om.`);
   const ny = structuredClone(mejl);
   const kontrollera = (falt, sv, ov) => {
-    if (ov === null) return;
-    if (typeof ov !== 'string' || !ov.trim()) return fel.push(`${mejl.id} ${falt}: tom översättning.`);
-    if (/[—–]/.test(ov)) fel.push(`${mejl.id} ${falt}: tankstreck ("${ov.slice(0, 50)}") — skriv om med komma eller punkt.`);
-    const extra = tal(ov).filter((n) => !tal(sv).includes(n));
-    if (extra.length) fel.push(`${mejl.id} ${falt}: talet ${extra.join(', ')} finns inte i den svenska texten — hitta aldrig på ett tal.`);
-    const tokens = String(ov).match(/\{\{[^}]*\}\}/g) ?? [];
-    if (tokens.some((x) => x !== '{{fornamn}}')) fel.push(`${mejl.id} ${falt}: okänd token ${tokens.join(' ')} — bara {{fornamn}} är tillåten.`);
+    fel.push(...textFel(`${mejl.id} ${falt}`, sv, ov, stopp));
   };
   for (const f of ['amne', 'forhandstext']) {
     if (kalla[f] == null) continue;
@@ -209,6 +282,18 @@ export function produktTitlar(rot, locale) {
   return ut;
 }
 
+// ui-raderna på svenska: de fasta orden motorn skriver in + brandets egna
+// (returraden, klubbens namn). Det översättaren får i KALLA.ui, och det
+// översättningens ui-rader kontrolleras mot.
+export function kallaUi(brand = {}) {
+  return {
+    ...Object.fromEntries(Object.entries(UI_SV).filter(([, v]) => v !== null)),
+    fakta_retur_text: brand.angerratt_text ?? null,
+    oversatt: 'översatt från svenska',
+    klubb: brand.klubb?.namn ?? brand.namn ?? null,
+  };
+}
+
 // KALLA.json: allt som ska översättas, med kallhash per mejl — det översättaren
 // får, och det --kolla jämför mot.
 export function kalla({ innehall, recensioner, brand = {}, citatAntal = 4 }) {
@@ -221,13 +306,7 @@ export function kalla({ innehall, recensioner, brand = {}, citatAntal = 4 }) {
   for (const lista of Object.values(recensioner ?? {})) {
     for (const r of lista.slice(0, citatAntal)) if (r?.text) citat[hash(r.text)] = r.text;
   }
-  const ui = {
-    ...Object.fromEntries(Object.entries(UI_SV).filter(([, v]) => v !== null)),
-    fakta_retur_text: brand.angerratt_text ?? null,
-    oversatt: 'översatt från svenska',
-    klubb: brand.klubb?.namn ?? brand.namn ?? null,
-  };
-  return { ui, citat, mejl };
+  return { ui: kallaUi(brand), citat, mejl };
 }
 
 // ---------------------------------------------------------------------------
@@ -259,6 +338,10 @@ export async function byggAllaSprak({ brandId = 'matstrumpor', rot = ROT, offlin
   const plan = planeraMejl(innehall);
   const butikUrl = brand.butik_url.replace(/\/$/, '');
   const sparSida = (brand.sparningssida ?? `${butikUrl}/pages/spara`).replace(butikUrl, '');
+  // Det svenska som ui-raderna och citaten kontrolleras mot.
+  const svUi = kallaUi(brand);
+  const svCitat = {};
+  for (const l of Object.values(rec ?? {})) for (const r of l ?? []) if (r?.text) svCitat[hash(r.text)] = r.text;
 
   const sprakListan = bara ? k.sprak.filter((x) => bara.includes(x.sprak)) : k.sprak;
   const mejlPerSprak = new Map();
@@ -268,7 +351,9 @@ export async function byggAllaSprak({ brandId = 'matstrumpor', rot = ROT, offlin
     const ov = huvud ? null : lasOversattning(rot, brandId, s);
     if (!huvud && !ov) { fel.push(`${s}: filen klaviyo/innehall/${brandId}/sprak/${s}.json saknas — översätt KALLA.json (sprak/README.md).`); continue; }
     const ui = huvud ? UI_SV : { ...UI_SV, ...(ov.ui ?? {}) };
+    const stopp = k.stoppFor(s);
     if (!huvud) for (const n of UI_KRAV) if (ov.ui?.[n] == null) fel.push(`${s}: ui.${n} saknas.`);
+    if (!huvud) fel.push(...uiOchCitatFel(ov, svUi, svCitat, s, stopp));
     const titlar = huvud ? null : produktTitlar(rot, sp.locale);
     const citat = huvud ? null : (ov.citat ?? {});
     const bas = huvud ? null : `${butikUrl}/${sp.mapp}`;
@@ -287,7 +372,7 @@ export async function byggAllaSprak({ brandId = 'matstrumpor', rot = ROT, offlin
     for (const p of plan) {
       let m = p.mejl;
       if (!huvud) {
-        const r = oversattMejl(m, ov.mejl?.[m.id], s);
+        const r = oversattMejl(m, ov.mejl?.[m.id], s, { stopp });
         fel.push(...r.fel.map((f) => `${s}: ${f}`));
         if (!r.mejl) continue;
         m = r.mejl;
@@ -325,7 +410,7 @@ export async function byggAllaSprak({ brandId = 'matstrumpor', rot = ROT, offlin
         steg.push({ typ: 'send', sprak: sp.sprak, mejl_id: send.mejl_id, nr: slot, filter: stegFilter ? och(sprakFilter(k, sp.sprak), stegFilter) : sprakFilter(k, sp.sprak) });
       });
     }
-    const namn = `${bas.namn.split(' · ')[0]} · alla språk`.slice(0, 120);
+    const namn = `${bas.namn.split(' · ')[0]} · alla språk${k.version > 1 ? ` v${k.version}` : ''}`.slice(0, 120);
     floden.push({ id: f.id, namn, create: { ...bas.create, name: namn }, steg, anmarkningar: bas.anmarkningar });
   }
 
@@ -371,6 +456,7 @@ export async function byggAllaSprak({ brandId = 'matstrumpor', rot = ROT, offlin
     brand: brand.id,
     arbetsyta: fac.arbetsyta,
     byggd: new Date().toISOString(),
+    flodesversion: k.version,
     sprak: k.sprak.map((x) => ({ ...x, lander: x.sprak === k.reserv ? 'alla utan egen rad' : Object.entries(k.lander).filter(([, v]) => v === x.sprak).map(([iso]) => `${iso} ${k.landsnamn(iso)}`) })),
     floden,
     kampanjer,

@@ -1207,7 +1207,7 @@ språk det än blir. Ett nytt språk = tolv nya sändsteg i de befintliga flöde
 
 | Ändring | Vad du gör |
 |---|---|
-| Nytt LAND | En rad i `klaviyo/brands/matstrumpor.json` → `spoks_sprak.lander` (`"AT": "de"`). Ett land UTAN rad får engelska av sig självt (reservspråket), aldrig svenska. Kör om bygget och uppdatera landsfiltren på stegen. |
+| Nytt LAND | En rad i `klaviyo/brands/matstrumpor.json` → `spoks_sprak.lander` (`"AT": "de"`). Ett land UTAN rad får engelska av sig självt (reservspråket), aldrig svenska. Kör om bygget. Stegens landsfilter går inte att ändra i ett flöde som är igång: höj `spoks_sprak.flodesversion`, bygg den nya versionen bredvid och byt i appen (se 2026-10-02 nedan). |
 | Nytt SPRÅK | En rad i `sparning/butiker.json` → `matstrumpor.mejl_sprak` (samma rad som fraktmejlen) + `klaviyo/innehall/matstrumpor/sprak/<kod>.json` (sonnet-översättare + skeptisk granskare enligt `sprak/README.md`) + raderna i `lander`. |
 | Ändrad svenska | `node klaviyo/spoks-sprak.mjs --kalla` → bygget säger vilka mejl som är gamla på vilket språk (`kalla`-hashen). Bara de översätts om. |
 
@@ -1308,3 +1308,42 @@ får sina svenska mejl klart. F08 (v1+v2) och F09 orörda.
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
 svenska mejl klart). Två flöden med samma trigger på samtidigt ger svenska kunder dubbla mejl, så
 byt ett flöde i taget, nytt på och gammalt av i samma minut.
+
+### Japanska och Belgien på franska: förberett 2026-10-02, INTE live
+
+Sajtgranskningen 2026-10-01 (S-017, S-018): belgare som handlar på franska fick nederländska
+Spoks-mejl, och Japan fick engelska sedan marknaden öppnade 30/9. **I repot:** `BE: fr` och
+`JP: ja` i `spoks_sprak.lander`, `spoks: false` borttaget på ja-raden i `sparning/butiker.json`
+(bara Spoks-motorn läser flaggan; fraktmejlen och spårningssidan påverkas inte), Taiwan kvar
+avstängt (zh-TW är inte lanserat, Taiwan får engelska). Motorn: `flodesversion: 2` ger namnen
+"… · alla språk v2", japanskans stopp i `spoks_sprak.stopp.ja` (talet fyra i alla former,
+antal med kanji, {{fornamn}} utan 様, スウェーデン製, Klarna/Swish, belopp), helbreddssiffror
+räknas som siffror, svenska räkneord två–tolv räknas som tal i källan, japanska streck (― ─ －)
+som tankstreck, och ui-raderna och citaten går genom samma kontroller som mejltexten (de tolv
+språken klarade dem oförändrade). Väntat bygge: 13 språk, 169 sändsteg (F01 39, F02 39, F03 26,
+F04 26, F05 26, F07 13), 132 kampanjutkast, 13 språksegment.
+
+✅ **`ja.json` är skriven 2026-10-02** av en sonnet-översättare (Bilaga A i
+`klaviyo/spoks/PROMPT-matstrumpor-ja-be.md`) och läst av en skeptisk sonnet-granskare (Bilaga B).
+Huvudsessionen bedömde fynden, och sju är införda av en sonnet-skrivare:
+- K06 säger att lådan sålde slut **i Sverige** (Japan fanns inte förra året).
+- K10 säger inte 今日, eftersom 18:00 svensk tid är natt i Japan.
+- K01:s ämnesrad har subjektet もらった人.
+- ブラックウィーク blev ブラックフライデー.
+- まとめ買い割引 blev 購入数に応じた割引.
+- K09:s rubrik har ett predikat.
+- "listan" blev 贈る相手.
+
+Avvisat: 「」 runt citaten (det är motorns citattecken, valfritt senare), さん/様 (様 är låst i README:n),
+och K04/K11/K12, som bara skickas på svenska.
+
+Det som återstår kräver Spoks-connectorn. Samma prompt bygger segmenten, de sex v2-flödena (inaktiva)
+och elva japanska kampanjutkast via MCP, och `klaviyo/spoks/cowork/2-matstrumpor-ja-be.txt` byter
+flödena i appen. **Tills båda har körts gäller version 1:** Japan får engelska och Belgien nederländska.
+
+ja-länkarna har samma form som de andra språkens (`matstrumpor.se/ja/…`). Temat (`ms-flytt`,
+`matstrumpor/marknader/sajtfix.mjs`) skickar sedan 2026-10-02 varje utlandsbesökare därifrån till
+matstrumpor.com i rätt språk och med besökarens riktiga land, så S-002/S-003 är rättade utan att
+länkarna byts.
+
+⏰ Japanska kampanjer schemaläggs 10:00 japansk tid, inte 18:00 svensk tid.

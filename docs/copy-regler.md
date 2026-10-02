@@ -162,3 +162,14 @@ skript enligt research men inte genom att lyssna på." Regeln:
   rader till ett manus.
 - Läs det högt innan det lämnar sessionen. Hackar en övergång, skriv om.
 - Tre-frågorstestet gäller fortfarande varje mening som bär ett påstående.
+
+## Statistik på produktsidan (Axels dom 2026-10-02)
+
+Produktsidans beskrivning fick 2026-10-02 raden *"I USA gav 32 procent ett presentkort för att de
+inte visste vad de annars skulle köpa, enligt Bankrate 2024."* Axel: "det här är inte bra copy …
+fan va keft det var." Regeln sedan dess, inskriven i `matstrumpor/produktsida.mjs` som spärr:
+**en statistikmening med källa eller procent hör aldrig hemma i en produktbeskrivning.** Den läser
+som en rapport, inte som en butik. Fynden ur `ny-information.md` lever i bilder, rubriker och mejl
+(som faktabladet redan sa), och på sidan bara som den slutsats de leder till, i butikens egen röst
+("Ett presentkort säger: jag vet inte."). Tre-frågorstestet räcker inte: en rad kan klara alla tre
+och ändå låta som en uppsats. Läs sidan högt innan den går live.

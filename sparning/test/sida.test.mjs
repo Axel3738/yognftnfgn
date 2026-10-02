@@ -781,3 +781,11 @@ test('butikskrediten ersätter hjulet under paketet (Axels beslut 2026-09-26)', 
   const halv = byggSidkropp(fixtur(), { ...KONFIG, kredit: { kod: 'KREDIT100' } });
   assert.ok(!halv.includes('KREDIT100'));
 });
+
+test('det inbäddade skriptet bär inga kommentarer: inga andra butikers namn eller interna ord hos kunden (S-029)', () => {
+  const kropp = byggSidkropp(fixtur(), KONFIG);
+  const skript = kropp.slice(kropp.lastIndexOf('<script>'));
+  assert.ok(!/carashell|bävernumret|bävernummer/i.test(skript), 'skriptet nämner en annan butik eller ett internt ord');
+  assert.ok(!/^\s*\/\//m.test(skript), 'en hel kommentarsrad följde med');
+  assert.ok(skript.includes('function packaUppEtt(') && skript.includes('function starta()'), 'koden finns kvar');
+});
