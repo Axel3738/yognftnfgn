@@ -3527,3 +3527,43 @@ UGC: ingen beställning ur den här lärdomen — det som saknas är inte tro/au
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (2 kr, Metas dom, aldrig ABO): samma avvikelse som PD_8_H1 (spec först + pris i en PD-annons), så hypotesen "grönt vatten som öppning" testades inte här — den kördes i IBC_PD_12_H1 (ovan). Ingen tredje PD_8-variant; ny PD-copy får aldrig bära pris.
 
+### Lärdom L-120252383855470233 — IBC-tanktrekk_NO_PD_8_H2 (LOSER, etikett 2026-10-02)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-25 – 2026-10-01 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 18 kr / 1 574 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 0,29 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 24 % / 1 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-02, Graph v21.0): "210D Oxford-stoff blokkerer sollyset helt." · rubrik: "IBC-tanktrekk blokkerer algevekst"
+- VO/första frame: okänd — videon är inte transkriberad och thumbnailen är inte läst i den här körningen (hook rate 24 %, hold rate 1 % ur etikettraden)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | okänd | okänd |
+| Vinkel | — (brief saknas i repot) | NO enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: Algene får ingen sjanse. / 439 kr. Førpris 586 kr – spar 147 kr. | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | produkten/funktionen, inte priset | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 18 kr och 0 köp under grinden är CBO-fördelning bredvid vinnaren IBC-tanktrekk_NO_PD_1_H1 (den norska översättningen av SE-vinnaren), inte en dom; hook rate 24 % / hold 1 % säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (18 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln byggs på IBC-tanktrekk_NO_PD_1_H1 (den norska översättningen av SE-vinnaren), inte här.
+
