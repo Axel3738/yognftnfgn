@@ -43,9 +43,15 @@
  "caraShell_beslut": "Axels beslut A 2026-09-30 kväll: taköverdraget och termoskyddet annonseras INTE i CaraShells länder (US, GB, CA, AU, NZ, NO, DK, FI), så de två butikerna inte bjuder mot varandra i samma auktion. CaraShell säljer dem där.",
  "datum": "2026-09-30",
  "annons_utan_lander": [
-  "SG"
+  "SG",
+  "JP",
+  "HK",
+  "KR",
+  "MY",
+  "AE",
+  "IL"
  ],
- "annons_utan_lander_beslut": "Meta 400 vid adset-skapandet 2026-09-30: 'Om du vill publicera annonser som inkluderar platser i Singapore ska du använda … SINGAPORE_UNIVERSAL' (regionalt reglerad kategori, kräver en deklaration). Singapore ligger kvar i Shopify-marknaden men annonseras inte.",
+ "annons_utan_lander_beslut": "Meta 400 vid adset-skapandet 2026-09-30: 'Om du vill publicera annonser som inkluderar platser i Singapore ska du använda … SINGAPORE_UNIVERSAL' (regionalt reglerad kategori, kräver en deklaration). Singapore ligger kvar i Shopify-marknaden men annonseras inte. · 2026-10-03, Axels beslut A: Japan, Hongkong, Sydkorea, Malaysia, Förenade Arabemiraten och Israel annonseras inte heller (engelska annonser där kostade ~2 400 kr för 1 köp de första två dygnen). Alla engelsktalande länder ligger kvar. Länderna ligger kvar i Shopify-marknaden.",
  "sida_namn_beslut": "Axels svar 2026-09-30: sidan döps om till Beaver Store (cowork/1-app-och-doman.txt steg 6).",
  "aktivering_beslut": "Axels order 2026-09-30: \"aktivera alla kampanjer och schemalägg dem till 00.01 imorgon, svensk tid\". Meta vägrar start_time på redan skapade adset, så: --aktivera --forbered (annonser + adset ACTIVE, kampanjen PAUSED) samma eftermiddag, --aktivera --bara-kampanj 2026-10-01 00:01 CEST via sessionens schemalagda väckning."
 }
