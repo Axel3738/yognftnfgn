@@ -43,7 +43,7 @@ nl 4, es 4, pl 3, nb 1 = 542.
   Cowork-prompten läser av mottagarantalet innan något skickas: visar Spoks ungefär antalet med
   samtycke i stället för hela segmentet, då når kampanjen inte de 84 utan samtycke, och det är
   Axels beslut hur de ska nås.
-- **Flödet** startar på `order_created`, väntar en timme (Shopifys orderbekräftelse först) och har
+- **Flödet** startar på `order_created`, väntar ett dygn (Axels ändring i appen 2026-10-03, byggt med en timme) och har
   ett sändsteg per språk med samma landsfilter som de andra Matstrumpor-flödena
   (`klaviyo/spoks-sprak.mjs` → `sprakFilter`). Varje sändsteg kräver dessutom att kundens senaste
   köp är före 10/10 00:00 svensk tid (eller att fältet är tomt), så **flödet slutar skicka av sig

@@ -5,8 +5,8 @@
   "kopt_fran_comment": "Kampanjens publik: köpt från och med 23/9 00:00 svensk tid, alltså de tio dagarna före 3/10 då mejlet beställdes. Kontaktfältet lastPurchase (Spoks tar bara gt, lt och between på det, mätt 2026-10-03) räknar även ordrar före Spoks-kopplingen 26/9, till skillnad från händelsen orderedProducts (429 mot 559 samma minut). Fast datum med flit: skickas kampanjen några dagar senare blir fönstret längre, aldrig kortare, och flödet tar alla beställningar efter utskicket.",
   "flode_slut": "2026-10-09T22:00:00Z",
   "flode_slut_comment": "Flödet stänger sig självt: sändstegen kräver att kundens senaste köp är före 10/10 00:00 svensk tid (eller att fältet ännu är tomt). Det är sex hela dagar om flödet slås på 3/10. Slås det på senare: flytta datumet och bygg om INNAN flödet slås på; i ett aktivt flöde går stegen inte att ändra.",
-  "flode_vanta_ms": 3600000,
-  "flode_vanta_comment": "En timme efter beställningen, så att Shopifys orderbekräftelse hinner komma först.",
+  "flode_vanta_ms": 86400000,
+  "flode_vanta_comment": "Ett dygn efter beställningen: Axels ändring i appen 2026-10-03 07:37 CEST, tillbakaläst med get_flow (delay 86400000). Byggt var det en timme. Flödets slutdatum håller ändå: en beställning 9/10 får mejlet 10/10 eftersom villkoret är köpdatumet, inte sändtiden.",
   "namn_flode": "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10",
   "namn_segment": "SEG_ursakt_kopt_fran_23_9_{sprak}",
   "namn_kampanj": "URSAKT · {sprak} · köpt från 23/9 · publik SEG_ursakt_kopt_fran_23_9_{sprak}"
