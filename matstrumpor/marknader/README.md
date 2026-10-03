@@ -1228,6 +1228,33 @@ utan `--skarpt`). Prova en ändring: `--kopia`, sedan `--tema <gid> --skarpt` oc
 `gava.mjs` torrt visar avvikelsen. 18 tester i `test/gava.test.mjs` (modellen mot Shopifys priser,
 synken i en vm, patcharna fram och tillbaka).
 
+## Pakettestets B la sushi i korgen på donut-, pizza- och hamburgarsidan (2026-10-03, `paket-b-sushi.mjs`)
+
+Kundmejl 2026-10-03: "Försöker beställa ett 5-pack sushistrumpor och ett 3-pack donutstrumpor. Varje gång jag
+lägger till donutstrumpor läggs istället till sushi + ätpinnar." Mätt som kund i Chromium samma morgon:
+sant för hälften av Sverige.
+
+**Orsaken.** `templates/product.json` delas av alla fyra sorterna och bär två paketblock i köprutan:
+`ms_paket` (den vanliga väljaren, i Sverige märkt `data-ms-ab="paket:a"`, så ms-ab gömmer den för
+variant b) och `ms_paket_b` (pakettestets "1 låda 399 / 2 lådor 499 / 4 lådor 799", märkt `paket:b`, med
+`fast_variant: 52506473365843` = sushins 5-parslåda). B-nivåerna finns bara för sushi, så på donutsidan
+visade B-blocket donutens vanliga kort ("Köp 1 – Få 1", DONUT-K1F1) — men `ms-paket.js` köper alltid
+`data-variant-id`. Donut, variant b ⇒ 2 × Sushi-Strumpor 5-par + 2 par ätpinnar, 399 kr, koden
+DONUT-K1F1. Kundens flöde (sushi "1 låda" + donut) ⇒ 3 sushilådor, 798 kr, ingen donut. Pizza likadant.
+Testet slogs på 2026-09-30 13:48 UTC (S-034). **Ingen order sedan 2026-09-01 bär en annan sorts kod än
+varorna** (647 ordrar lästa), så ingen hann betala för fel vara — skadan är tappade köp och arga mejl.
+Raden "ätpinnar läggs till i totalen" gick inte att återskapa: ätpinnarna var 0 kr i varje steg.
+
+**Rättningen, i MAIN 2026-10-03 03:17 UTC efter prov i en kopia:** båda blockens villkor är
+`localization.country.iso_code == 'SE' and product.id == 10286130889043`. Sushisidan i Sverige testar
+vidare som förut (a mot b), och donut, pizza och hamburgare visar den vanliga väljaren för alla, som
+utlandet redan gör. Kundvyn live efteråt, 6 av 6: donut a och b 299 kr med donut i korgen, pizza b
+449 kr, sushi a 399 kr (SUSHI-K1F1), sushi b "1 låda" 399 kr (SUSHI-1FOR399), och kundens flöde
+1 sushi + 2 donut + 3 par ätpinnar för 698 kr (PAKET-3), ätpinnarna 0 kr. Originalet ligger i
+`paket-b-sushi/original/`, `--aterstall --skarpt` lägger tillbaka det. 4 tester i
+`test/paket-b-sushi.test.mjs`. ⛔ Ett block med `fast_variant` hör till EN produkt — sätt alltid
+produktvillkoret i mallen, för mallen delas av alla sorter.
+
 ## Kampanjerna i kontot — läget 2026-09-30 kväll: 15 kampanjer, 112 annonser, alla PAUSED
 
 Läst ur kontot med `annonser/bygg.mjs --lage` (id:n och annonserna i `annonser/lage.json`, länkarna

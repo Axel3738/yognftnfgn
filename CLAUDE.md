@@ -225,6 +225,13 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
   `assets/ms-gava.js` håller ätpinnarna = lådorna och koderna kompletta efter varje ändring. Gåvoraden är
   låst i korgen. ⚠️ Shopify räknar högst fem koder i en vagn, och en köp-X-få-Y-kod ger bara HELA sin
   "få"-mängd (båda mätta) — bygg aldrig en paketkod i en annan form utan att köra `gava.mjs` torrt.
+- ⛔ **Pakettestets B-block la sushi i korgen på donut-, pizza- och hamburgarsidan 2026-09-30–10-03**
+  (kundmejl: "varje gång jag lägger till donutstrumpor läggs istället till sushi + ätpinnar"):
+  `templates/product.json` delas av alla sorter, och B-blocket bar `fast_variant` = sushins låda medan
+  den vanliga väljaren gömdes för variant b. Rättat i MAIN 2026-10-03 (`marknader/paket-b-sushi.mjs`,
+  båda blocken kräver `product.id == 10286130889043`), kundvyn 6 av 6 live, ingen order hann bära fel
+  sort. Ett block med `fast_variant` hör till EN produkt — produktvillkoret i mallen är inte valfritt.
+  Allt i `marknader/README.md` → "Pakettestets B la sushi i korgen".
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla
