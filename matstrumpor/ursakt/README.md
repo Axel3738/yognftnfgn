@@ -58,7 +58,22 @@ nl 4, es 4, pl 3, nb 1 = 542.
 ## Återbetalningen
 
 Mätt i Shopify 2026-10-03 07:00: 568 ordrar sedan 23/9, **45 inte skickade (25 733 kr)**, den
-äldsta från 1/10. Det är de som kan få pengarna tillbaka om kampanjen går ut i dag. Kunden svarar
+äldsta från 1/10.
+
+⚠️ **"Skickad" i Shopify betyder bara att etiketten är gjord** (Axels fråga samma morgon, mätt med
+17TRACK:s `gettrackinfo` på alla 523 spårningsnummer, 0 avvisade): **461 paket har bara händelsen
+"Shipment information received"**, alltså att leverantören skapat etiketten men inte lämnat paketet
+till fraktbolaget. Det gäller ordrar ända från 24/9. Bara 62 paket har en riktig skanning (exportklarerat,
+flyget avgått, framme), varav 1 levererat; ingen order lagd efter 30/9 har rört sig. I pengar:
+
+| Läge | Ordrar | Värde |
+|---|---|---|
+| Ingen etikett (ej skickad i Shopify) | 45 | 25 733 kr |
+| Bara etikett, inget fraktbolag har skannat | 461 | 212 339 kr |
+| Har rört sig hos fraktbolaget | 62 | 24 843 kr |
+
+Vad "inte gått iväg" betyder i erbjudandet är därför Axels beslut: bara de 45 (~26 000 kr), eller alla
+506 utan en skanning (~238 000 kr). `VA-NOTE.md` följer Shopifys status tills han bestämt. Kunden svarar
 på mejlet; autosvaret flaggar återbetalning till VA:n (det återbetalar aldrig själv), och VA:n
 följer `VA-NOTE.md`.
 
