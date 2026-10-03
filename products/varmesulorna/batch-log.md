@@ -52,3 +52,20 @@ Ur `agent/etikett-backfill.mjs` 2026-10-03 (MagiBorsten SE, annonsens egna förs
 | Värmesulorna_G_1_H3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,19 | 67 % / 17 % | nej |
 | Värmesulorna_CS_1_H2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,19 | 50 % / 25 % | nej |
 | Värmesulorna_CS_1_H1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,19 | 29 % / — | nej |
+
+## Batch #2 — 2026-10-03 (`/rond-auto` steg 4b: vidarebygg på Värmesulorna_PD_1_H2, plats 3, + fars dag omgång 5)
+
+Hubben **Heated insoles creative hub**. Briefmapp `products/varmesulorna/batch-02/` (manifest.json = rundans briefer, manifest-fd.json = fars dag-blocket, notion-rader.json = sid-id:n). Vidarebygg på breakthroughen Värmesulorna_PD_1_H2 (etikett i dag, lärdom L-120250377855700291, komponentkartan i dna.md): platserna PD_1_H4/H5 fanns redan i hubben (ingen BRIEF-rad på dem), plats 3 (in media res, tummen på fjärren) byggd som PD_1_H6. 1 BRIEF-rad. Hubben har ingen Feedback-rad "Brief review" än. FD-blocket extra, bara FARSDAG_BATCH_KLAR. Spärren grön på alla 8. Notion-raderna skrevs av en subagent — PD_1_H6 läst tillbaka av agenten.
+
+| Annons | Typ | Hook / rubrik | Hypotes / mätning | Notion |
+|---|---|---|---|---|
+| Värmesulorna_PD_1_H6 | video, iteration på Värmesulorna_PD_1_H2 | Tummen på fjärren. Sulan ligger redan i skon. | iteration 3 on Värmesulorna_PD_1_H2: in media res (second 0 is the thumb on the remote, the insole already in the boot) | https://www.notion.so/3ee270ab908c81a98da3ce2c8e6bb1ed |
+| Värmesulorna_FD_5_H1 | video 13 s, fars dag BOF | Fjärren byter värmeläge. Han rör inte foten. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81caa779f10f8c9a4bc1 |
+| Värmesulorna_FD_5_H2 | video 13 s, fars dag BOF | 869 kr, ord. 1 139 kr. Värmesulor med fjärrkontroll. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c8127b466f2261a2cde90 |
+| Värmesulorna_FD_5_H3 | video 13 s, fars dag BOF | Beställ senast 19 oktober. Fjärren byter värmeläge. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c812886e8e57c914478f6 |
+| Värmesulorna_FD_6_1 | bild, fars dag BOF | Fjärren byter värmeläge. Han rör inte foten. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81d5abffe5d4e7f9e477 |
+| Värmesulorna_FD_6_2 | bild, fars dag BOF | Laddas med vanlig USB-kabel. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c817fac11da11519649d5 |
+| Värmesulorna_FD_6_3 | bild, fars dag BOF | Håller värmen i fötterna genom hela passet. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c8190a256e4af9f459eca |
+| Värmesulorna_FD_6_4 | bild, fars dag BOF | Han står stilla timme efter timme. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81518ea4e26d158b822c |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; vinstbidrag (break-even-CPA − CPA) × köp mot kampanjens top spender som benchmark, aldrig ROAS ensam. Etikett dag 7 → lärdom → dna.md. rev/brief→live fylls i av etikettronden.

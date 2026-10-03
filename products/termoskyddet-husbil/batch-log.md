@@ -523,3 +523,20 @@ Ur `agent/etikett-backfill.mjs` 2026-10-03 (MagiBorsten SE, annonsens egna förs
 | Termoskydd_SP_2_H3 | 2 | **LOSER** | 0 % | 64 kr | 0 | 0,00 / 1,95 | 29 % / 8 % | nej |
 | Termoskydd_CS_11_H1 | 2 | **LOSER** | 0 % | 47 kr | 0 | 0,00 / 1,95 | 20 % / 9 % | nej |
 | Termoskydd_SP_2_H2 | 2 | **LOSER** | 0 % | 31 kr | 0 | 0,00 / 1,95 | 35 % / 13 % | nej |
+
+## Batch #9 — 2026-10-03 (`/rond-auto` steg 4b: rundaAntal 5, en brief byggd, + fars dag omgång 6)
+
+Hubben **Termoskyddet**. Briefmapp `products/termoskyddet-husbil/batch-09/` (manifest.json = rundans briefer, manifest-fd.json = fars dag-blocket, notion-rader.json = sid-id:n). rundaAntal blev 5 efter dagens lärdomar, men fyra av de nya lärdomarna är SLÄPP (under grinden) och cs-konceptet ligger vid koncepttaket — därför bara Termoskydd_OB_3_H1 (invändningen "Passar den min husbil?" besvarad med sidans mått och fästet). Taggen `invandning=storlek` är borttagen: matrisens rader ligger på 9 %, under 10 %-gränsen (Memo bär raden). 1 BRIEF-rad. Brief review 2026-09-30 följd. FD-blocket extra, bara FARSDAG_BATCH_KLAR. Spärren grön på alla 8.
+
+| Annons | Typ | Hook / rubrik | Hypotes / mätning | Notion |
+|---|---|---|---|---|
+| Termoskydd_OB_3_H1 | video, ny vinkel | Husbilsskydd: 211 cm bred, 171 cm över mitten. | objection video: "Passar den min husbil?" answered with the page's measures and the fastening | https://www.notion.so/3ee270ab908c81279fbfd0666616b2f2 |
+| Termoskydd_FD_7_H1 | video 13 s, fars dag BOF | Fars dag: flikarna håller i blåst. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c813b9bbaf339d619bc5c |
+| Termoskydd_FD_7_H2 | video 13 s, fars dag BOF | 559 kr, ord. 932 kr. Flikarna håller i blåst. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81c5af90d6d9fae54e73 |
+| Termoskydd_FD_7_H3 | video 13 s, fars dag BOF | Beställ senast 19 oktober. Husbilsskydd till fars dag. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81f9b071e8eafed4f4a8 |
+| Termoskydd_FD_8_1 | bild, fars dag BOF | Flikarna håller i blåst | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81eba67cc568c24eb4da |
+| Termoskydd_FD_8_2 | bild, fars dag BOF | Fast utan att öppna dörrarna | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81818798c8e5f61ee613 |
+| Termoskydd_FD_8_3 | bild, fars dag BOF | Utanpå glaset, inte innanför | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c815cbb54ca31ac6f39dd |
+| Termoskydd_FD_8_4 | bild, fars dag BOF | Täcker vindrutan och sidorutorna | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c8161be78e6077d86a1b8 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; vinstbidrag (break-even-CPA − CPA) × köp mot kampanjens top spender som benchmark, aldrig ROAS ensam. Etikett dag 7 → lärdom → dna.md. rev/brief→live fylls i av etikettronden.

@@ -153,3 +153,21 @@ Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_cli
 |---|---|---|---|---|---|---|---|---|
 | Inomhustofflor_OB_1_1 | 1 | **LOSER** | 3 % | 103 kr | 0 | 0,00 / 1,49 | — / — | nej |
 | Inomhustofflor_BOF_1_1 | 1 | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,49 | — / — | nej |
+
+## Batch #4 — 2026-10-03 (`/rond-auto` steg 4b: rundaAntal 2, två nya vinklar, + fars dag omgång 6)
+
+Hubben **Indoor slippers creative hub**. Briefmapp `products/inomhustofflorna/batch-04/` (manifest.json = rundans briefer, manifest-fd.json = fars dag-blocket, notion-rader.json = sid-id:n). Ingen levande breakthrough ⇒ mix 80/20 mot nya vinklar: SO_1_H1 (sidans första scen, hallgolvet innan kaffet) och PD_5_H1 (sidans "Följer med ut efter veden"). Båda pekar på L-120250268524830291 (SP_1_H2 KPI_WINNER). 2 BRIEF-rader. Brief review 2026-09-30 följd. FD-blocket extra, bara FARSDAG_BATCH_KLAR, bara Sverige. Spärren grön på alla 9. Notion-raderna skrevs av en subagent (texten inskriven, inte kopierad) — SO_1_H1 läst tillbaka av sessionen och stämmer med filen.
+
+| Annons | Typ | Hook / rubrik | Hypotes / mätning | Notion |
+|---|---|---|---|---|
+| Inomhustofflor_SO_1_H1 | video, ny vinkel | Hallgolvet är iskallt långt innan kaffet är klart. | new concept: the cold hall floor before the coffee, and the slipper that is on in one second | https://www.notion.so/3ee270ab908c8178ae4afe22a6e4880d |
+| Inomhustofflor_PD_5_H1 | video, ny vinkel | Tofflorna följer med ut efter veden. | new concept: the slippers follow you out to the woodpile (the page's "Följer med ut efter veden") | https://www.notion.so/3ee270ab908c81eaa651ff172249f678 |
+| Inomhustofflor_FD_7_H1 | video 13 s, fars dag BOF | Fars dag: hälremmen håller, tofflan glider inte av. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81f08737eff6f814f674 |
+| Inomhustofflor_FD_7_H2 | video 13 s, fars dag BOF | Fars dag: 489 kr, ord. 978 kr. Fodrade tofflor. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c810db3a8c151d743dd43 |
+| Inomhustofflor_FD_7_H3 | video 13 s, fars dag BOF | Beställ senast 19 oktober. Tofflor till fars dag. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c8121ac0ae09663b4c8b0 |
+| Inomhustofflor_FD_8_1 | bild, fars dag BOF | Remmen håller. Tofflan sitter kvar. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81a6b044fcbdc7402f57 |
+| Inomhustofflor_FD_8_2 | bild, fars dag BOF | Plysch från häl till tå | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c811ea26fc4be14a26cb2 |
+| Inomhustofflor_FD_8_3 | bild, fars dag BOF | Kliv i på en sekund | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81bfae6dd086fa6fe75c |
+| Inomhustofflor_FD_8_4 | bild, fars dag BOF | Följer med ut efter veden | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c8159bf19ee4649d7b80b |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; vinstbidrag (break-even-CPA − CPA) × köp mot kampanjens top spender som benchmark, aldrig ROAS ensam. Etikett dag 7 → lärdom → dna.md. rev/brief→live fylls i av etikettronden.

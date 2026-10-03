@@ -47,3 +47,21 @@ Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_cli
 | Varmesits_G_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,09 | 47 % / 20 % | nej |
 | Varmesits_CS_3 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 3,09 | — / — | nej |
 | Varmesits_G_3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,09 | — / — | nej |
+
+## Batch #2 — 2026-10-03 (`/rond-auto` steg 4b: vidarebygg på Varmesits_PD_3, platserna 2–3, + fars dag omgång 5)
+
+Hubben **Heated seat cushion creative hub**. Briefmapp `products/varmesitsen/batch-02/` (manifest.json = rundans briefer, manifest-fd.json = fars dag-blocket, notion-rader.json = sid-id:n). Vidarebygg på breakthroughen Varmesits_PD_3 (lärdom L-120250365214170291): plats 1 (PD_3_H2) fanns redan i hubben, platserna 2 (längre problemdel) och 3 (in media res) byggda. 2 BRIEF-rader (`lardom.mjs --brief`, loggen räknar iteration 1 och 2 på konceptet). FD-blocket är extra (`agent/farsdag.json`), aldrig BRIEF-loggat, bara FARSDAG_BATCH_KLAR. Hubben har ingen Feedback-rad "Brief review" än — det står i varje brief. Spärren grön på alla 9.
+
+| Annons | Typ | Hook / rubrik | Hypotes / mätning | Notion |
+|---|---|---|---|---|
+| Varmesits_PD_3_H3 | video, iteration på Varmesits_PD_3 | Stolen på sidlinjen är iskall. | iteration 2 on Varmesits_PD_3: longer problem section (the cold chair on the sideline before the cushion) | https://www.notion.so/3ee270ab908c8191a2f0c1774c9f1b1c |
+| Varmesits_PD_3_H4 | video, iteration på Varmesits_PD_3 | Ett finger på knappen. Sitsen ligger redan i stolen. | iteration 3 on Varmesits_PD_3: in media res (second 0 is the finger on the button) | https://www.notion.so/3ee270ab908c816ba3baf0a273b1bbae |
+| Varmesits_FD_5_H1 | video 13 s, fars dag BOF | Han väljer själv hur varmt det blir. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81d2bf21d2e981d39b52 |
+| Varmesits_FD_5_H2 | video 13 s, fars dag BOF | 599 kr, ord. 779 kr. Värmesits för fars dag. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c8185ac7fdb510b974e9b |
+| Varmesits_FD_5_H3 | video 13 s, fars dag BOF | Värmesitsen till fars dag: beställ senast 19 oktober. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ee270ab908c81c2aae2f01285b0c22d |
+| Varmesits_FD_6_1 | bild, fars dag BOF | Han väljer själv hur varmt det blir. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c811ab356ef820b544d7a |
+| Varmesits_FD_6_2 | bild, fars dag BOF | Den kalla sitsen känns i hela kroppen. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c81e8b672d6c2573f0529 |
+| Varmesits_FD_6_3 | bild, fars dag BOF | Värmer där han sitter och lutar sig. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c814fb2ebc5f2eae7a63e |
+| Varmesits_FD_6_4 | bild, fars dag BOF | Bilsätet, kontorsstolen och campingstolen är iskalla. | textrutans budskap mot syskonen | https://www.notion.so/3ee270ab908c8149a6e8c254717931a1 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; vinstbidrag (break-even-CPA − CPA) × köp mot kampanjens top spender som benchmark, aldrig ROAS ensam. Etikett dag 7 → lärdom → dna.md. rev/brief→live fylls i av etikettronden.
