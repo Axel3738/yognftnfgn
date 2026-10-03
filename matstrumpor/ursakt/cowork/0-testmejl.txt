@@ -1,0 +1,28 @@
+Uppdrag: skicka TVÅ testmejl av Matstrumpors ursäktsmejl till Axel, så att han ser hur kunderna får det.
+Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
+Det här är BARA test. Inget får gå till en kund.
+
+Mottagare för testerna: axelodhner.business@gmail.com
+
+TEST 1. Mejlet till kunder som redan har köpt (kampanjen, svenska).
+  Öppna https://app.spoks.com/matstrumpor/post/e1071a3c-fd98-4cc0-a3a4-5276c4df2af1/edit
+  Ämnesraden ska vara "Din leverans från Matstrumpor kan dröja".
+  Hitta funktionen för testutskick, till exempel "Skicka test", "Send test" eller "Testmejl".
+  Skicka testet till axelodhner.business@gmail.com och bara dit.
+
+TEST 2. Mejlet som nya kunder får ett dygn efter köpet (flödet, svenska).
+  Öppna https://app.spoks.com/matstrumpor/post/82d2619a-5fc1-471b-8a03-68ca5dd3a03c/edit
+  Går länken inte att öppna: öppna flödet
+  https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb
+  och klicka på det FÖRSTA mejlsteget, det svenska. Öppna mejlet därifrån.
+  Mejlet ska börja med "Tack för din beställning hos Matstrumpor".
+  Skicka testet till axelodhner.business@gmail.com och bara dit.
+
+Regler, utan undantag:
+- Tryck ALDRIG Skicka till publiken, Schemalägg eller Publicera. Bara testutskick.
+- Välj ingen publik eller segment. Slå inte på något flöde eller sändsteg.
+- Ändra ingen text, ämnesrad, knapp, filter eller väntetid.
+- Finns ingen funktion för testutskick: STANNA. Skicka ingenting och skriv exakt vilka knappar du ser.
+- Ser något annorlunda ut än beskrivet: STANNA och skriv exakt vad du ser.
+
+Rapportera: för varje test, skickat ja/nej, klockslag och knappens namn du använde.
