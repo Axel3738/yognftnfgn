@@ -18,7 +18,7 @@ eller lansera inget."
 | Segment per språk | Spoks, `SEG_ursakt_kopt_fran_23_9_<sprak>` | köpt från 23/9, alla köpare som inte tackat nej, landet → språket |
 | Kampanjutkast per språk | Spoks, `URSAKT · <sprak> · …` | utkast, ingen publik, inget datum |
 | Flödet | Spoks, "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10" | AV, alla sändsteg AV |
-| VA:ns instruktion | `VA-NOTE.md` (engelska) | inte publicerad i Notion än |
+| VA:ns instruktion | `kundtjanst/va-sop/matstrumpor-delivery-delay-refunds.md` (engelska) | i Notion 2026-10-03 (`3ee270ab-…`), Mechile meddelad i Discord `#customer-service` samma dag |
 | Klicken i appen | `cowork/1-skicka.txt` | körs först när Axel säger till |
 
 Id:n för allt som laddats upp står i `uppladdat.json`. Flödet:
@@ -72,10 +72,13 @@ flyget avgått, framme), varav 1 levererat; ingen order lagd efter 30/9 har rör
 | Bara etikett, inget fraktbolag har skannat | 461 | 212 339 kr |
 | Har rört sig hos fraktbolaget | 62 | 24 843 kr |
 
-Vad "inte gått iväg" betyder i erbjudandet är därför Axels beslut: bara de 45 (~26 000 kr), eller alla
-506 utan en skanning (~238 000 kr). `VA-NOTE.md` följer Shopifys status tills han bestämt. Kunden svarar
-på mejlet; autosvaret flaggar återbetalning till VA:n (det återbetalar aldrig själv), och VA:n
-följer `VA-NOTE.md`.
+✅ **Axels beslut 2026-10-03: B — alla paket som inget fraktbolag skannat** (~506 ordrar, ~238 000 kr
+vid mätningen), inte bara de 45 utan etikett. VA:n avgör per order på spårningssidans rubrik:
+"Paketet är bokat" (bara etikett) eller ej skickad ⇒ full återbetalning; "Paketet är på väg" eller
+senare ⇒ erbjudandet gäller inte. Kunden svarar på mejlet; autosvaret flaggar återbetalning till VA:n
+(det återbetalar aldrig själv), och VA:n följer Notion-sidan "Matstrumpor delivery delay — who gets a
+refund". ⚠️ Ett återbetalt paket med etikett kan ändå skickas av leverantören; att stoppa det är inte
+löst.
 
 ⚠️ Autosvaret svarar fortfarande på "var är mitt paket" med det vanliga leveranslöftet
 (`kundtjanst/brands/matstrumpor.yaml` → `svar`). Det har inte ändrats.

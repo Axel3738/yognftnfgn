@@ -82,7 +82,7 @@ första gången 2026-09-27): sidan `820358954504320` ligger i Business Manager
 Matstrumpor.se, medan `META_ACCESS_TOKEN`:s systemanvändare sitter i SnarkLös
 — samma namn "API long term", två olika användare. `tools/annonskommentarer.mjs
 --sidtoken-env META_ACCESS_TOKEN_MATSTRUMPOR`.
-📨 **Ursäktsmejlet om leveransförseningen är BYGGT men INTE skickat (2026-10-03, Axels order "skicka eller lansera inget")**: 13 kampanjutkast + ett flöde på order_created i Spoks, 542 köpare sedan 23/9, full återbetalning bara för oskickade paket (45 ordrar, 25 733 kr vid mätningen). Allt i `matstrumpor/ursakt/README.md`; utskicket är `matstrumpor/ursakt/cowork/1-skicka.txt` på Axels ord.
+📨 **Ursäktsmejlet om leveransförseningen är BYGGT men INTE skickat (2026-10-03, Axels order "skicka eller lansera inget")**: 13 kampanjutkast + ett flöde på order_created i Spoks, 542 köpare sedan 23/9, full återbetalning för alla paket som inget fraktbolag skannat (Axels B samma dag, ~506 ordrar, ~238 000 kr). Allt i `matstrumpor/ursakt/README.md`; utskicket är `matstrumpor/ursakt/cowork/1-skicka.txt` på Axels ord.
 ⛔ **En kreatörsinspelning (NEW FOOTAGE) läggs ALDRIG som rad i hubben förrän
 råklippen finns** (Axels order 2026-10-02: "om du lägger den som ett Notion-item
 kommer Bruce att tro att han ska redigera videorna, och då kommer han ju att
