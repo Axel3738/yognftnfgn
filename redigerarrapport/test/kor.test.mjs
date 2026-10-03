@@ -96,6 +96,15 @@ test('kampanjens topp är den bedömbara annonsen med störst andel och ett hook
   assert.equal(t.get(`${SE}|Taköverdraget | BE ROAS 1.63`).annons, 'B');
 });
 
+test('konfig: Josh, Annabelle och Gilz får ingen post (Axels beslut 2026-10-02 och 2026-10-03)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const konfig = JSON.parse(readFileSync(new URL('../konfig.json', import.meta.url), 'utf8'));
+  assert.deepEqual([...konfig.utan_redigerare].sort(), ['annabelle', 'gilz', 'josh']);
+  const utan = new Set(konfig.utan_redigerare);
+  const { redigerare } = lasPersoner({ users: [...TEAM.users, { id: 'gilz', name: 'Gilz Bruce Biazon', role: 'editor' }] });
+  assert.deepEqual(redigerare.filter((p) => !utan.has(p.id)).map((p) => p.id), ['carl', 'jerzee'], 'Gilz är Matstrumpors creative strat och utvärderar sig själv enligt matstrumpor/sop/');
+});
+
 test('argumenten och veckan', () => {
   assert.deepEqual(tolkaArgv(['--vecka', '2026-W39', '--discord', '--cache']).vecka, '2026-W39');
   assert.equal(tolkaArgv([]).discord, false);
