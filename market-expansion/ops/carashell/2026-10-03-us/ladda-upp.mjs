@@ -18,6 +18,10 @@ const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = resolve(HÄR, '..', '..', '..', '..');
 const SKARPT = process.argv.includes('--skarpt');
 const BARA = process.argv.includes('--bara') ? process.argv[process.argv.indexOf('--bara') + 1] : null;
+// ⚠️ Ett mål tar ~13 min skarpt (Meta kod 17 backar av på kontots 634 annonser).
+// Kör ETT land i taget, så en felande väg inte äter en timme av den andra:
+// AU:s IG-id vägrades av Meta och sex AU-försök hade kostat ~80 min (mätt 2026-10-03).
+const BARA_LAND = process.argv.includes('--land') ? process.argv[process.argv.indexOf('--land') + 1].toUpperCase() : null;
 
 const jobb = JSON.parse(readFileSync(join(HÄR, 'jobb.json'), 'utf8'));
 const copy = JSON.parse(readFileSync(join(HÄR, 'underlag', 'us-copy.json'), 'utf8'));
@@ -46,6 +50,7 @@ for (const rad of jobb.rader) {
   }
 
   for (const m of mal) {
+    if (BARA_LAND && m.land !== BARA_LAND) continue;
     // ⛔ Priset: USA-copyn bär $199/$249 ur produktfilens marknadspriser. Australien
     //    har INGEN AUD-rad där, och sidan visar Shopifys egen omräkning som rör sig
     //    (A$286 den 17/9, A$292 den 3/10) — regel 4 i /ops-oversatt: saknas raden
