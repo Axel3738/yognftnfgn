@@ -296,6 +296,24 @@ Done; sedan EN ny rad med BREAKTHROUGH MEMO (WHY/WHAT/HOW) före briefen.
 Skala är Axels. PDF:en byggs om med `node matstrumpor/sop/bygg.mjs`
 (Chromium, samma väg som `products/matstrumpor/ugc/pdf/bygg.mjs`).
 
+### Strategrapporten: rutinen som granskar hans vecka (2026-10-03)
+
+Axels beställning samma dag: "skapa en rutin som granskar det här varje vecka
+… evaluerar Bruce och rapporterar någonstans där det gör nytta ifall det
+behövs … ger han feedback". **`strategrapport/`** (kommandot
+`/strategrapport`, rutin tisdag 03:00 CEST = 09:00 Manila, dagen efter hans
+måndagskoll): läser Ad Roadmap och hubben, mäter mot förra veckans snapshot
+(stängda rader med lärdom, "Too little data"/"Guess:"-reglerna, EN ny
+konceptrad med de sex cellerna, inlämnade briefer, levande vinnare och deras
+iterationer, veckans etiketter på hans koncept, hit rate som bråk) och skriver
+feedbacken på engelska med ETT action item som en Log-rad `<vecka> Weekly
+review` + en kommentar med @Bruce på raden. Axel pingas i samma rad bara vid
+eskalering (ingen koll två veckor i rad, vinnare utan iteration efter 14
+dagar, butikens namn i en människocell). Allt mäts, inget bedöms av en
+modell; inga kronor, ROAS, köp eller butiksnamn i texten
+(`redigerarrapport/post.mjs kontrollera`). Måtten, fönstren, det som inte går
+att mäta och första torrkörningen: `strategrapport/README.md`.
+
 ## E-posten (Klaviyo, byggd 2026-09-25)
 
 Matstrumpor har ett eget Klaviyo-konto, **`UV6Rqg`** (nyckeln
