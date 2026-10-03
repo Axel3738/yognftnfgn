@@ -1,0 +1,100 @@
+{
+  "comment": "Id:n i Spoks (arbetsyta Matstrumpor.se 71c2d4c8-…) för allt ursäktsmejlet laddat upp 2026-10-03. Medlemsantalet är Spoks eget svar vid skapandet.",
+  "segment": {
+    "sv": {
+      "id": "f44467e8-3f8a-4b1c-8cf3-a7bba908cf41",
+      "antal": 466
+    },
+    "nb": {
+      "id": "0376bb99-34f8-4bee-bfdd-2ce283ab20f0",
+      "antal": 1
+    },
+    "da": {
+      "id": "90ee6016-a6f9-420c-a5b7-339464a16170",
+      "antal": 4
+    },
+    "fi": {
+      "id": "2bd58c73-35a6-4e07-8c82-a164e36ccf7a",
+      "antal": 9
+    },
+    "en": {
+      "id": "4baed224-3b31-4255-b636-0eeccb2faea8",
+      "antal": 8
+    },
+    "de": {
+      "id": "35bbb6a7-6313-4ccd-a895-ddc236e797dd",
+      "antal": 5
+    },
+    "fr": {
+      "id": "4b4e8182-090c-459b-8f10-47d09dd54e93",
+      "antal": 7
+    },
+    "nl": {
+      "id": "2b47bfe5-f6e3-4fe6-b8c6-6231a716a64c",
+      "antal": 4
+    },
+    "es": {
+      "id": "7c2a94f1-98e7-4110-a1cc-306a6596dab5",
+      "antal": 4
+    },
+    "it": {
+      "id": "0d4d1429-61c0-45fa-8c86-1287876117bc",
+      "antal": 6
+    },
+    "pl": {
+      "id": "43f4a1af-3ab0-4aca-a605-a806c5ea5cc8",
+      "antal": 3
+    },
+    "pt": {
+      "id": "4a6af9c1-9b15-49c4-8f49-2f3478d463e2",
+      "antal": 17
+    },
+    "ja": {
+      "id": "357afc5d-c588-45f0-b01c-6eaba978cb2d",
+      "antal": 8
+    }
+  },
+  "kampanjer": {
+    "sv": "e1071a3c-fd98-4cc0-a3a4-5276c4df2af1",
+    "nb": "933b8b0d-1f3d-4419-bce6-4ae6f3d9c095",
+    "da": "061b3dac-6b79-4418-9a69-90efdbb6f37c",
+    "fi": "2c39239e-ee17-4aff-9096-daeda989b9fe",
+    "en": "9dc2eb19-306b-48b8-b154-0015a285e1f5",
+    "de": "ce13755b-9e3b-4153-b581-394fb9f9a739",
+    "fr": "5b1a2fac-8aa4-4fda-95ca-de8aa8655ae8",
+    "nl": "6fa2079e-74bf-4102-b39e-2992da8ed4c6",
+    "es": "9dbd8a66-1c37-4d2e-82d0-2d5acc71148d",
+    "it": "9c8623af-f847-4d55-a346-9e0dbd662f08",
+    "pl": "07a1aa6f-9627-43cd-9263-7203a4f4b2bc",
+    "pt": "bebf588f-7fe2-4889-bdc2-8ac4f1b13f12",
+    "ja": "423f29cb-4946-48aa-b5bd-722e34003446"
+  },
+  "flode": {
+    "id": "7420cfc7-5ee8-416b-b1a6-08c7a2d301bb",
+    "lank": "https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb",
+    "lage": "AV: flödet, triggern och alla 13 sändsteg av, 0 inrullade (get_flow 2026-10-03 07:02)",
+    "steg": 26,
+    "sandsteg": {
+      "sv": "82d2619a-5fc1-471b-8a03-68ca5dd3a03c",
+      "nb": "0ce9e3f0-04df-4aea-a7f4-80e522b28127",
+      "da": "29b60019-4127-4f9a-9a80-22fcf88640fb",
+      "fi": "5f333ad1-0adc-4556-882d-a75e8e10093e",
+      "en": "4aaa7b15-c4e9-4e51-9a18-3a29f9ca551a",
+      "de": "92c69b50-3a1c-4b53-b62a-e8dd31f03b1c",
+      "fr": "c53c5295-39cd-43e6-be70-965bd7ad0ecf",
+      "nl": "cceb1de4-edd9-4ac1-ba40-6600046f4763",
+      "es": "8ce4b9b5-0f78-4047-85b7-9025038404cd",
+      "it": "01ac2784-9809-4c13-86f2-e6bdf05426cf",
+      "pl": "8ee6e23d-3984-46fb-b965-6f487b94a038",
+      "pt": "31461493-eadd-4b18-9115-804d27272c2d",
+      "ja": "467ae5e5-8fb7-4e6f-96d3-bdbefa01cbb3"
+    }
+  },
+  "segment_summa": 542,
+  "kontroll": "node matstrumpor/ursakt/koll.mjs 2026-10-03: 26 av 26 mejl lika med planen (13 kampanjutkast + 13 flödesmejl)",
+  "testutkast_flode_sv": {
+    "id": "ec246ff3-3c08-4dee-907f-b7d82a1c2d5e",
+    "varfor": "Flödessidan var vit för Cowork 2026-10-03; samma text som flödets svenska mejl, bara för testutskick, skickas aldrig. Kan raderas i appen efter testet.",
+    "skapad": "2026-10-03T05:56Z"
+  }
+}

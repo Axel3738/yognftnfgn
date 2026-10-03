@@ -1,0 +1,17 @@
+{
+  "amne": "Nous sommes désolés, votre colis arrivera plus tard",
+  "forhand": "Cela peut prendre 5-10 jours ouvrés de plus que d'habitude. Voici ce que cela signifie pour vous.",
+  "rubrik": "Pardon, votre colis aura du retard",
+  "hej": "Bonjour {{fornamn}},",
+  "du_reserv": "à vous",
+  "intro_kampanj": "C'est un e-mail que nous aurions préféré ne pas avoir à écrire. Vous avez commandé chez nous, et votre colis pourrait arriver plus tard que prévu. Nous nous sentons vraiment mal à ce sujet, et nous voulons que vous l'appreniez directement de notre part.",
+  "intro_flode": "Merci pour votre commande chez Matstrumpor. Nous sommes heureux chaque fois que quelqu'un nous choisit. C'est pourquoi il est d'autant plus pénible de devoir vous annoncer dès maintenant que la livraison pourrait être retardée.",
+  "forsening": "Il y a eu une perturbation dans la chaîne d'approvisionnement. Votre colis peut donc mettre 5-10 jours ouvrés de plus que d'habitude. Nous ne pouvons pas en dire davantage pour le moment. Nous nous battons pour expédier chaque commande le plus vite possible, mais nous n'osons pas promettre de date.\n\nSi vous avez acheté ce colis comme cadeau, nous voulons que vous le sachiez dès maintenant, pour que vous puissiez vous organiser.",
+  "aterbetalning": "Si votre colis n'a pas encore été expédié et que vous préférez être remboursé, vous recevrez la totalité du montant. Sans complication et sans mauvaise conscience. Répondez simplement à cet e-mail en indiquant votre numéro de commande et écrivez-nous que vous souhaitez annuler votre commande et obtenir un remboursement, et nous nous en occupons. Nous vous comprenons tout à fait.",
+  "behalla": "Si vous pouvez patienter encore un peu avec nous, cela compte énormément pour nous. Vous n'avez rien à faire. Votre colis arrivera, simplement plus tard qu'il ne le devrait. Nous faisons tout notre possible pour qu'il trouve le chemin jusqu'à chez vous.",
+  "redan_framme_kampanj": "Si vous avez déjà reçu votre colis, cet e-mail ne vous concerne pas. Nous espérons alors simplement qu'il vous plaît.",
+  "sparning": "Votre numéro de colis commence par MS et figure dans l'e-mail que vous avez reçu lors de l'expédition de votre colis. Vous pouvez suivre votre colis via ce lien :",
+  "knapp": "Suivre mon colis",
+  "avslut": "Nous sommes vraiment désolés, et nous le pensons sincèrement. Si vous avez la moindre question, répondez simplement à cet e-mail. Merci de nous avoir lus, et merci de nous laisser une chance.",
+  "signatur": "Matstrumpor"
+}

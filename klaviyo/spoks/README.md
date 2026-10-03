@@ -1347,3 +1347,12 @@ matstrumpor.com i rätt språk och med besökarens riktiga land, så S-002/S-003
 länkarna byts.
 
 ⏰ Japanska kampanjer schemaläggs 10:00 japansk tid, inte 18:00 svensk tid.
+
+### Ursäktsmejlet om leveransförseningen: byggt 2026-10-03, INTE skickat
+
+Axels order 2026-10-03: ursäkt till alla som köpt de senaste tio dagarna (5-10 arbetsdagar längre
+leverans, full återbetalning om paketet inte skickats) + ett flöde i sex dagar för nya beställningar,
+"skicka eller lansera inget". 13 segment `SEG_ursakt_kopt_fran_23_9_<sprak>` (542 köpare), 13
+kampanjutkast `URSAKT · <sprak> · …` och flödet "Ursäkt leveransförsening · alla språk · beställningar
+till och med 9/10" `7420cfc7-…` (av, alla sändsteg av, stänger sig självt efter 9/10). Allt, id:n
+och klicken i `matstrumpor/ursakt/README.md`.

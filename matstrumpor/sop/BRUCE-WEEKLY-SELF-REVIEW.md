@@ -1,38 +1,28 @@
-# Your weekly self review
+# Your Monday check
 
-For Bruce, Matstrumpor only. Every Monday 15:00 Manila, 30 minutes. Read time 3 minutes.
+For Bruce. Matstrumpor. Every Monday 15:00 Manila. 15 minutes.
 
-## Where
+## Open
 
-Open two pages in Notion:
+Growth Guide: https://www.notion.so/3ed270ab908c80a3beb7e0090eebce5d
 
-- **Growth Guide**: https://www.notion.so/3ed270ab908c811a9efffeddb5f5e2de
-- **Matstrumpor creative hub** (your briefs and rows): https://www.notion.so/3a7270ab908c80d29f35e73e51e457ff
+Go to the table **Ad Roadmap**. Cannot open it? Tell Axel.
 
-Cannot open one of them? Tell Axel.
+## Rows with a RESULTS and STATUS not Done
 
-Your ads are the hub rows where you are Ansvarig. The Guide has a row with the same ad name. The first Monday, set **Ägare** = you on those rows. After that, filter the Guide on Ägare = you.
+1. Under 300 kr spent or under 3 purchases? Write "Too little data" in **LEARNINGS**. Next row.
+2. Did the video come out as the brief said? If not, write what differed.
+3. Hook rate or Hold rate lower than the best batch in the table? Write "hook" or "hold". Ignore a hook rate of 90 percent or more.
+4. One line on why, starting with "Guess:".
 
-## The six steps
+Write 2 to 4 in **LEARNINGS**, under any text already there. Set **STATUS = Done**.
 
-Take your rows with an **Etikett** but no **Beslut**, and rows with a new **Etikett v2** or **v3**. Biggest **Spend kr** first.
+## Then add ONE row
 
-1. **Did you do last week's Nästa steg?** Write yes or no in Anteckning on that row.
-2. **Is there enough data?** The minimum is 300 kr spent AND 3 purchases (Köp). Under it: Beslut = Vänta (wait) and move on.
-3. **Did the video come out as the brief said?** Same hook line, same order, same timing? If not, the cut failed, not the idea. In Anteckning write "As briefed" or what differed.
-4. **Where did people leave?** Compare Hook rate and Hold rate with the biggest ad in the Guide. In Anteckning write "hook", "hold", or "after the click" when both are fine but few buy. A hook rate of 90 percent or more is a wrong number, skip it.
-5. **Why? What would you do differently?** One or two lines in Anteckning, starting with "Guess:". Then Beslut: BREAKTHROUGH or SPEND_WINNER = Iterera. KPI_WINNER or LOSER = Släpp. Exception: Typ is not IMIT and one line says what you would change, then Iterera once. Skala is Axel's call, write it only as your recommendation.
-6. **Hit rate and one test.** Count your labelled ads. Winners = BREAKTHROUGH or SPEND_WINNER. Write a fraction, never a percent: "2 of 15, 2 of 9 delivered" (the second number leaves out INGEN_LEVERANS). Then pick ONE test for next week and write it in Nästa steg on the row it builds on. Build on a winner if you have one. Nothing working: a new angle, not a copy.
+Next week's test, before it is briefed. Fill in: **AD CONCEPT**, **BREAKTHROUGH MEMO** (WHY we make it, WHAT it is about, HOW we make it), **DESIRE/CORE AVATAR**, **SUB AVATAR**, **ANGLE(S)**, **AWARENESS LEVEL**, **AD TYPE**, **STATUS = Working**. Then brief it in the hub as usual. The system fills the rest.
 
-Needs new filming? Write "NEW FOOTAGE" in Nästa steg and stop. No cut from old clips, no hub row. Axel orders the filming, and the row comes when the raw clips are in Drive.
+Build on a 🏆 or 💸 row if you have one. Nothing working: a new angle, not a copy.
 
-The store's name never appears in an ad.
+New filming needed? STATUS = Filming and stop. No hub row until the raw clips are in Drive.
 
-## The words in the Guide
-
-- **Etikett** = the label. The system sets it after the ad's own first week. It can go up in week 2 and 3, never down. You only read it.
-- BREAKTHROUGH = big share of the campaign, the campaign grew, made money. SPEND_WINNER = big share, but one of those is missing. KPI_WINNER = small share, 1 or more purchases, as efficient as the campaign or better. LOSER = was shown, none of the above. INGEN_LEVERANS = never really shown, says nothing about the idea.
-- **Spend kr, Köp, Hook rate, Hold rate** = the last 14 days up to the date in **Mätt**. **Vinstbidrag 14 d kr** = profit after ad cost, below zero loses money. **Typ** = IDEA new idea, ITER new version, IMIT copy of another brand's ad.
-- **Anteckning** = your note. **Beslut** = Skala (scale), Iterera (iterate), Vänta (wait), Släpp (drop). **Nästa steg** = next week's one thing. **Ägare** = you.
-
-Axel reads your four columns. The system never touches them. The money numbers stay between you and Axel.
+The hit rate is at the top of the page. The store's name never appears in an ad. Skala is Axel's call.

@@ -505,16 +505,24 @@ const DAG_MS = 86_400_000;
 
 /**
  * Förbeställning (brandfilens `svar.forbestallning: { skickas_fran: 'ÅÅÅÅ-MM-DD' }`): datumet
- * då nästa leverans skickas, så länge det inte passerat med mer än packtiden + 3 dagar —
+ * då nästa leverans skickas, för ordrar lagda före skickdagen och så länge den inte passerat med
+ * mer än packtiden + 3 dagar —
  * sedan gäller vanliga regler igen och en oskickad order går till VA:n. Annars null. Ren.
  */
-export function forbestallningSkickas(sv = {}, nu = Date.now()) {
+export function forbestallningSkickas(sv = {}, nu = Date.now(), skapad = null) {
   const iso = sv?.forbestallning?.skickas_fran;
   if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
   const d = new Date(`${iso}T12:00:00Z`);
   const nuMs = nu instanceof Date ? nu.getTime() : Number(nu);
   const marginal = ((Number(sv.packas_dagar) || 2) + 3) * DAG_MS;
-  return nuMs <= d.getTime() + marginal ? d : null;
+  if (nuMs > d.getTime() + marginal) return null;
+  // Bara ordrar lagda FÖRE skickdagen är förbeställningar (Axel 2026-10-03: boten ska sluta säga det
+  // när förbeställningen är över). En order lagd efter går på vanliga regler.
+  if (skapad) {
+    const s = skapad instanceof Date ? skapad : new Date(skapad);
+    if (!Number.isNaN(s.getTime()) && s.getTime() >= Date.parse(`${iso}T00:00:00+02:00`)) return null;
+  }
+  return d;
 }
 
 /** "13 oktober" / "October 13" — dag och hel månad utan år. */
@@ -619,7 +627,7 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
     if (!o.skapad) throw new Error('order utan datum');
     // Förbeställning (Matstrumpor 2026-10-03: allt slutsålt): inget skickas före lagret är inne,
     // så "packas inom N dagar" vore osant. Datumet ur brandfilens svar.forbestallning.
-    const fb = forbestallningSkickas(sv, nuMs);
+    const fb = forbestallningSkickas(sv, nuMs, o.skapad);
     if (fb) rader.push(t.forbestalld(o.namn, datumText(o.skapad, sprak), kortDatumLang(fb, sprak)));
     else rader.push(t.ejSkickad(o.namn, datumText(o.skapad, sprak), packas));
     rader.push(t.fonsterDagar(levMin, levMax));

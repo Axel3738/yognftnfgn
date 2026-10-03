@@ -326,6 +326,10 @@ test('förbeställning: oskickad order får nästa leveransdag i stället för "
   const sent = new Date('2026-10-19T08:00:00Z');
   assert.equal(forbestallningSkickas(brand.svar, sent), null, 'passerat med mer än packtid + 3 dagar');
   assert.match(staltFakta(fakta, { nu: sent, packasDagar: 2, forbestallning: forbestallningSkickas(brand.svar, sent) }), /inte skickad efter 16 dagar/);
+  // En order lagd efter skickdagen är ingen förbeställning: vanliga regler.
+  const efter = { order: { namn: '#9002', skapad: new Date('2026-10-13T08:00:00Z') }, sandning: null };
+  assert.match(skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand, fakta: efter, nu: new Date('2026-10-14T08:00:00Z') }).text, /packas inom 2 arbetsdagar/);
+  assert.equal(forbestallningSkickas(brand.svar, new Date('2026-10-14T08:00:00Z'), efter.order.skapad), null);
   // Utan blocket: som förut.
   assert.match(skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand: KONFIG, fakta, nu }).text, /packas inom 2 arbetsdagar/);
 });

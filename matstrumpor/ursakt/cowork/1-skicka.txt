@@ -1,0 +1,42 @@
+Uppdrag: skicka Matstrumpors ursäktsmejl och slå på flödet som redan finns. Axel har sagt: skicka allt nu.
+Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
+Allt är redan byggt, skrivet och testat. Du bygger INGENTING nytt. Du väljer publik, trycker skicka och slår på.
+
+ORDNING: svenska kampanjen först, sedan flödet, sedan de små kampanjerna.
+
+1. SVENSKA KAMPANJEN
+   Öppna https://app.spoks.com/matstrumpor/post/e1071a3c-fd98-4cc0-a3a4-5276c4df2af1/edit
+   Ämnesraden ska vara "Vi är så ledsna, ditt paket kommer senare".
+   Välj publiken SEG_ursakt_kopt_fran_23_9_sv (ungefär 466 mottagare). Bara det segmentet.
+   Visar Spoks klart färre än ungefär 400: STANNA och skriv vad du ser.
+   Skicka nu. Ladda om och kontrollera att den står som skickad eller på väg.
+
+2. FLÖDET (finns redan, ska bara slås på)
+   Öppna https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb
+   Det heter "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10".
+   Slå på alla 13 mejlsteg, ett i taget. Väntestegen rör du inte.
+   Slå sedan på flödet med knappen överst.
+   Säger Spoks "Detta flöde har inga aktiva åtgärder": något mejlsteg är av, slå på det och försök igen.
+
+3. DE SMÅ KAMPANJERNA, samma sak för varje rad: öppna, välj segmentet, skicka nu.
+   Ingen kontroll av antal. Visar ett segment 0 mottagare: hoppa över raden.
+   Publiken heter alltid SEG_ursakt_kopt_fran_23_9_ följt av koden på raden.
+   nb  https://app.spoks.com/matstrumpor/post/933b8b0d-1f3d-4419-bce6-4ae6f3d9c095/edit
+   da  https://app.spoks.com/matstrumpor/post/061b3dac-6b79-4418-9a69-90efdbb6f37c/edit
+   fi  https://app.spoks.com/matstrumpor/post/2c39239e-ee17-4aff-9096-daeda989b9fe/edit
+   en  https://app.spoks.com/matstrumpor/post/9dc2eb19-306b-48b8-b154-0015a285e1f5/edit
+   de  https://app.spoks.com/matstrumpor/post/ce13755b-9e3b-4153-b581-394fb9f9a739/edit
+   fr  https://app.spoks.com/matstrumpor/post/5b1a2fac-8aa4-4fda-95ca-de8aa8655ae8/edit
+   nl  https://app.spoks.com/matstrumpor/post/6fa2079e-74bf-4102-b39e-2992da8ed4c6/edit
+   es  https://app.spoks.com/matstrumpor/post/9dbd8a66-1c37-4d2e-82d0-2d5acc71148d/edit
+   it  https://app.spoks.com/matstrumpor/post/9c8623af-f847-4d55-a346-9e0dbd662f08/edit
+   pl  https://app.spoks.com/matstrumpor/post/07a1aa6f-9627-43cd-9263-7203a4f4b2bc/edit
+   pt  https://app.spoks.com/matstrumpor/post/bebf588f-7fe2-4889-bdc2-8ac4f1b13f12/edit
+   ja  https://app.spoks.com/matstrumpor/post/423f29cb-4946-48aa-b5bd-722e34003446/edit
+
+Regler:
+- Ändra ingen text, ämnesrad, filter, väntetid eller trigger. Bygg inget nytt. Radera ingenting.
+- Rör inga andra flöden, kampanjer eller segment.
+- Utkastet "TEST av flödesmejlet sv · bara för testutskick · skickas aldrig" skickas ALDRIG.
+
+Rapportera kort: svenska skickad ja/nej och antal, flödet på/av, och vilka små kampanjer som skickades.

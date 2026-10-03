@@ -909,6 +909,80 @@ export function speglingFor(post) {
   return giltigSpegling(post?.spegling) ? post.spegling : null;
 }
 
+/** Marknaderna speglingen får ladda upp i OPS-kontot. */
+export const SPEGLING_MARKNADER = Object.freeze(['SE', 'NO']);
+
+/**
+ * Vilka marknader speglingen laddar upp i butikens eget konto. Standard SE +
+ * NO (så som rutinen byggdes 2026-09-18). En tom lista betyder att butiken
+ * bara säljer på de ENGELSKA marknaderna: speglingen laddar då inget upp
+ * utan lämnar bara över den svenska filen till butikens hub, så US-rutinen
+ * gör engelskan. Axels beslut 2026-10-03 för CaraShell Taköverdraget: SE och
+ * NO körs i Bäverbutiken, CaraShell bara i USA/AU. Ren funktion.
+ */
+export function speglingLaddarUpp(spegling) {
+  const l = spegling?.ladda_upp;
+  if (!Array.isArray(l)) return [...SPEGLING_MARKNADER];
+  return l.map((k) => String(k).trim().toUpperCase()).filter((k) => SPEGLING_MARKNADER.includes(k));
+}
+
+/** Tolkar "SE,NO" / "inga" / "" till listan speglingen får ladda upp i. */
+export function speglingUppladdningUr(text) {
+  const t = String(text ?? '').trim().toLowerCase();
+  if (!t || ['inga', 'ingen', 'none', '-', 'tom'].includes(t)) return [];
+  const ut = [...new Set(t.split(/[,\s]+/).filter(Boolean).map((k) => k.toUpperCase()))];
+  const fel = ut.filter((k) => !SPEGLING_MARKNADER.includes(k));
+  if (fel.length) throw new Error(`speglingen kan bara ladda upp i ${SPEGLING_MARKNADER.join(', ')} — inte ${fel.join(', ')}. Engelskan gör US-rutinen.`);
+  return ut;
+}
+
+/**
+ * Skriver in (eller tar bort med `av`) ett extra mål för marknadens
+ * målkampanj: `malkampanj.<M>.ocksa[]`. Kräver att huvudmålet finns —
+ * ett extra mål utan huvudmål är ingen marknad. Landet är nyckeln: samma
+ * land skrivs över, aldrig dubblerat. `kampanj_namn` fylls av kön vid
+ * nästa läsning om det utelämnas.
+ */
+export function sattMalkampanjOcksa(nyckel, marknad, land, kampanjId, { motivering = '', kampanjNamn = '', satt = svenskDatum() } = {}) {
+  const M = String(marknad ?? '').toUpperCase();
+  const L = String(land ?? '').toUpperCase();
+  if (!/^[A-Z]{2}$/.test(L)) throw new Error(`landet ska vara en tvåbokstavskod (AU, GB …), fick "${land}"`);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  const mal = rad.malkampanj?.[M];
+  if (!mal?.kampanj_id) throw new Error(`${post.nyckel} har ingen målkampanj för ${M} i registret — ett extra mål kräver ett huvudmål (malkampanj.${M}).`);
+  const ocksa = (Array.isArray(mal.ocksa) ? mal.ocksa : []).filter((o) => String(o?.land ?? '').toUpperCase() !== L);
+  if (normalisera(kampanjId) !== 'av') {
+    if (!/^\d{6,}$/.test(String(kampanjId))) throw new Error(`kampanj_id ska vara Metas numeriska id, fick "${kampanjId}"`);
+    if (String(kampanjId) === String(mal.kampanj_id)) throw new Error('det extra målet är samma kampanj som huvudmålet');
+    ocksa.push({ land: L, namnkod: L, kampanj_id: String(kampanjId), ...(kampanjNamn ? { kampanj_namn: kampanjNamn } : {}), satt, ...(motivering ? { motivering } : {}) });
+  }
+  mal.ocksa = ocksa;
+  rad.malkampanj[M] = mal;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, malkampanj: rad.malkampanj };
+}
+
+/** Skriver in vilka marknader speglingen laddar upp i. Kräver en spegling. */
+export function sattSpeglingUppladdning(nyckel, text, { satt = svenskDatum(), motivering = '' } = {}) {
+  const lista = speglingUppladdningUr(text);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel];
+  if (!giltigSpegling(rad?.spegling)) throw new Error(`${post.nyckel} har ingen spegling — skriv in den först: node factory/register.mjs spegling ${post.nyckel} <hub-id>`);
+  rad.spegling.ladda_upp = lista;
+  rad.spegling.ladda_upp_satt = satt;
+  if (motivering) rad.spegling.ladda_upp_motivering = motivering;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, spegling: rad.spegling };
+}
+
 /** Skriver in speglingen: källhubben (Bäverbutikens) + de två statusnamnen.
  *  `av` tar bort den. Statusnamnen skrivs ut i klartext så /oversatt och
  *  /ops-spegla läser samma sträng — aldrig två stavningar. */
@@ -931,6 +1005,8 @@ export function sattSpegling(nyckel, idEllerUrl, { namn = '', satt = svenskDatum
       status_se: statusar.se,
       status_en: statusar.en,
       satt,
+      // Uppladdningsmarknaderna följer med när källhubben skrivs om.
+      ...(Array.isArray(rad.spegling?.ladda_upp) ? { ladda_upp: rad.spegling.ladda_upp, ladda_upp_satt: rad.spegling.ladda_upp_satt, ...(rad.spegling.ladda_upp_motivering ? { ladda_upp_motivering: rad.spegling.ladda_upp_motivering } : {}) } : {}),
     };
   }
   rad.lage = rad.lage ?? post.lage;
@@ -1102,6 +1178,25 @@ function huvud() {
     console.log(`Spegling på ${post.namn}: från ${post.spegling.kalla_namn || '(namnlös)'} (${post.spegling.kalla_hub})`);
     console.log(`  Steg i källhubben (Axels klick: lägg till som Status-alternativ): "${post.spegling.status_se}" och "${post.spegling.status_en}"`);
     console.log(`  Rutin: node factory/rutin.mjs --tider ${post.nyckel} visar /ops-spegla-tiden; /notionscalercs setup ${post.nyckel} bygger den.`);
+    console.log(`  Laddar upp i butiken: ${speglingLaddarUpp(post.spegling).join(', ') || 'inget — bara överlämning till engelska (spegling-uppladdning)'}`);
+    return;
+  }
+  if (arg[0] === 'malkampanj-ocksa') {
+    // Extra målkampanj för en marknad (tools/lib/malkampanj.mjs): samma
+    // engelska annons en gång till, i t.ex. Axels AU-kampanj, under _AU_-namnet.
+    //   malkampanj-ocksa <nyckel> <marknad> <LAND> <kampanj_id|av> [kampanjnamn | motivering…]
+    const [, nyckel, marknad, land, kampanjId, ...rest] = arg;
+    if (!nyckel || !marknad || !land || !kampanjId) throw new Error('Ange: malkampanj-ocksa <nyckel> <marknad> <LAND> <kampanj_id|av> [motivering…]');
+    const post = sattMalkampanjOcksa(nyckel, marknad, land, kampanjId, { motivering: rest.join(' '), satt: idag });
+    const lista = post.malkampanj?.[String(marknad).toUpperCase()]?.ocksa ?? [];
+    console.log(`Extra mål för ${post.namn} på ${String(marknad).toUpperCase()}: ${lista.length ? lista.map((o) => `${o.land} → ${o.kampanj_id}${o.kampanj_namn ? ` "${o.kampanj_namn}"` : ''}`).join(' · ') : 'inga'}`);
+    return;
+  }
+  if (arg[0] === 'spegling-uppladdning') {
+    if (!arg[2]) throw new Error('Ange marknaderna speglingen laddar upp i: spegling-uppladdning <nyckel> <SE,NO|inga> [motivering…]');
+    const post = sattSpeglingUppladdning(arg[1], arg[2], { satt: idag, motivering: arg.slice(3).join(' ') });
+    const l = speglingLaddarUpp(post.spegling);
+    console.log(`Speglingen på ${post.namn} laddar upp i butiken: ${l.length ? l.join(', ') : 'INGET — den svenska filen lämnas bara över till butikens hub, US-rutinen gör engelskan'}`);
     return;
   }
   if (arg[0] === 'annonsmarknader') {

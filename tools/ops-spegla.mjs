@@ -9,6 +9,18 @@
 // renderade NORSKA version i NO-kampanjen. Raden kopieras till butikens hub
 // i "SE-ACTIVE to be translated", så butikens US-rutin gör engelskan.
 //
+// ⚠️ Sedan 2026-10-03 avgör registret VAD som laddas upp i butikens konto
+// (`spegling.ladda_upp`, `node factory/register.mjs spegling-uppladdning`).
+// Standard är SE + NO som ovan. En TOM lista betyder att butiken bara säljer
+// på de engelska marknaderna (Axels beslut för CaraShell Taköverdraget:
+// "jag kommer bara skala taköverdraget på Bäverbutiken i Sverige och Norge,
+// sen skalar jag det i USA på CaraShell"): då laddas INGET upp här — raden
+// kopieras bara till butikens hub med den svenska filen, så US-rutinen gör
+// engelskan, och källraden går vidare till "<Brand> EN ready to be active".
+// Utan det stoppade "ingen SE-kampanj i butiken" varje rad så fort Axel
+// pausat CaraShells svenska kampanj, och ingenting nådde USA (mätt
+// 2026-10-03: sju OB-videor stod still ett dygn).
+//
 // Två nya steg i KÄLLHUBBEN (Bäverbutikens) bär läget, namngivna efter brandet
 // (`factory/register.mjs speglingsstatusar`):
 //   "<Brand> SE ready to be active"  ← Bäverbutikens /oversatt NO sätter den när Norge är uppe
@@ -258,8 +270,11 @@ export function kopieraBlock(block = []) {
 
 /** Kalloutet överst i spegelraden — säger var briefen kommer ifrån och att
  *  butiken aldrig nämns i annonsen. Engelska: redigerarna läser hubben. */
-export function kalloutBlock({ kallNamn, kallUrl, brand, datum }) {
-  const text = `Mirrored ${datum} from Bäverbutiken's hub (${kallNamn}). SE and NO creatives are the source files — already live in ${brand}'s campaigns. Only the English version is produced here. The ad must never name the store.`;
+export function kalloutBlock({ kallNamn, kallUrl, brand, datum, laddaUpp = ['SE', 'NO'] }) {
+  const kallor = laddaUpp.length
+    ? `SE and NO creatives are the source files — already live in ${brand}'s campaigns.`
+    : `The Swedish creative is the source file — it runs in Bäverbutiken (SE + NO); ${brand} only sells on the English markets.`;
+  const text = `Mirrored ${datum} from Bäverbutiken's hub (${kallNamn}). ${kallor} Only the English version is produced here. The ad must never name the store.`;
   const rich = [{ type: 'text', text: { content: text } }];
   if (kallUrl) rich.push({ type: 'text', text: { content: ' Source row', link: { url: kallUrl } } });
   return { object: 'block', type: 'callout', callout: { rich_text: rich, icon: { type: 'emoji', emoji: '🪞' }, color: 'gray_background' } };
@@ -287,32 +302,48 @@ export function arSlutstatus(status, statusar = {}) {
   return s === SLUTSTATUS.toLowerCase() || s === String(statusar.en ?? '').trim().toLowerCase();
 }
 
-/** Ren dom per rad: får SE laddas upp? får NO? Skälen står i klartext. */
+/**
+ * Ren dom per rad: får SE laddas upp? får NO? Skälen står i klartext.
+ * `rad.ladda_upp` (ur registret, standard SE + NO) säger vilka marknader
+ * speglingen laddar upp i butikens konto. Står SE inte med är "SE-domen"
+ * domen över ÖVERLÄMNINGEN: får raden kopieras till butikens hub för den
+ * engelska versionen? Då krävs ingen SE-kampanj, inget SE-pris och ingen
+ * SE-copy — men filen, brandspärren, slutkortet och bara-Sverige-regeln
+ * gäller lika, för den svenska filen är det US-rutinen översätter.
+ * `bara_sverige` är satt när vinkeln aldrig lämnar Sverige/Norge: raden är
+ * då färdig i alla marknader den kan nå, och körningen sätter Approved.
+ */
 export function bedom(rad) {
+  const laddaUpp = new Set((rad.ladda_upp ?? ['SE', 'NO']).map((k) => String(k).toUpperCase()));
+  const seUpp = laddaUpp.has('SE');
   const se = { ok: true, skal: [] };
   if (!rad.spegel) se.skal.push('spegelnamn kan inte bildas ur namnet');
-  // Fars dag-annonserna (FD) lämnar aldrig Sverige — /oversatt flyttar dem
-  // till Approved, så hit ska de aldrig nå. Hängslen om någon ändå sätter
-  // raden i speglingens kö för hand.
+  // Fars dag-annonserna (FD) lämnar aldrig Sverige (och Norge) — i USA firas
+  // fars dag i juni. De når hit via Bäverbutikens NO-runda; körningen sätter
+  // dem till Approved i stället för att rapportera samma stopp varje dag.
   const svensk = baraSverige(rad.namn);
   if (svensk) se.skal.push(svensk);
   if (rad.brand?.length) se.skal.push(`nämner Bäverbutiken: ${rad.brand.join(', ')}`);
   // Slutkortet i bilden. Bara "med-brand" stoppar; "utan-brand" och "okänd"
   // är rapportrader, inte stopp (factory/bildbrand.mjs).
   if (slutkortBlockerar(rad.slutkort?.se?.dom)) se.skal.push(`slutkortet namnger en butik: ${(rad.slutkort.se.fynd ?? []).map((f) => `"${f.ord}"`).join(', ')}`);
-  if (!rad.paritet_se?.ok) se.skal.push(`pris SE: ${rad.paritet_se?.skal ?? 'okänt'}`);
-  if (!rad.kampanj_se) se.skal.push('ingen SE-kampanj i butiken');
-  if (!rad.finns_i_meta?.SE) {
+  if (seUpp && !rad.paritet_se?.ok) se.skal.push(`pris SE: ${rad.paritet_se?.skal ?? 'okänt'}`);
+  if (seUpp && !rad.kampanj_se) se.skal.push('ingen SE-kampanj i butiken');
+  // Filen krävs alltid när något ska laddas upp eller lämnas över; bara en
+  // SE-annons som redan finns i kontot slipper (då är hubbraden det enda som
+  // återstår, och den kan bära filen från en tidigare körning).
+  if (!seUpp || !rad.finns_i_meta?.SE) {
     // Utan --ut har ingen fil HÄMTATS än — det är inte samma sak som att raden
     // saknar fil. En läsning av kön får aldrig se ut som ett fel på raden.
     if (!rad.fil) se.skal.push(rad.fil_fel ? `filen gick inte att hämta — ${rad.fil_fel}` : rad.hamtat === false ? 'filen hämtas vid körning (--ut)' : 'ingen svensk fil');
-    if (!rad.copy_se) se.skal.push('ingen copy — källannonsen finns inte i Bäverbutikens konto');
+    if (seUpp && !rad.copy_se) se.skal.push('ingen copy — källannonsen finns inte i Bäverbutikens konto');
   }
   se.ok = se.skal.length === 0;
 
   const no = { ok: true, skal: [] };
   if (!se.ok) no.skal.push('SE stoppad');
-  if (!rad.no) no.skal.push('ingen NO-version på källraden (Translated url saknas)');
+  if (!laddaUpp.has('NO')) no.skal.push('NO laddas inte upp i butiken (spegling.ladda_upp)');
+  else if (!rad.no) no.skal.push('ingen NO-version på källraden (Translated url saknas)');
   else {
     if (rad.no.fel) no.skal.push(rad.no.fel);
     if (!rad.no.copy) no.skal.push('NO-annonsen saknar copy');
@@ -320,9 +351,33 @@ export function bedom(rad) {
     if (!rad.finns_i_meta?.NO && !rad.no.fil) no.skal.push('NO-filen gick inte att hämta');
     if (!rad.paritet_no?.ok) no.skal.push(`pris NO: ${rad.paritet_no?.skal ?? 'okänt'}`);
   }
-  if (!rad.kampanj_no) no.skal.push('ingen NO-kampanj i butiken');
+  if (laddaUpp.has('NO') && !rad.kampanj_no) no.skal.push('ingen NO-kampanj i butiken');
   no.ok = no.skal.length === 0;
-  return { se, no };
+  return { se, no, bara_sverige: svensk || null, ladda_upp: [...laddaUpp] };
+}
+
+/** Stoppskälen ur bedom() på engelska — Discord stoppar svensk text (exit 3),
+ *  och utan ANTHROPIC_NYCKEL i containern översätts inget automatiskt. Mätt
+ *  2026-10-03: rapporten stoppade på "nämner Bäverbutiken" i en skipped-rad.
+ *  Okända skäl lämnas som de är, hellre ett stopp än en påhittad översättning. */
+export function engelskaSkal(skal) {
+  return String(skal ?? '')
+    .replace(/nämner Bäverbutiken:/g, 'names Bäverbutiken:')
+    .replace(/slutkortet namnger en butik:/g, 'the end card names a store:')
+    .replace(/NO-slutkortet namnger en butik:/g, 'the NO end card names a store:')
+    .replace(/ingen SE-kampanj i butiken/g, 'no SE campaign in the store')
+    .replace(/ingen NO-kampanj i butiken/g, 'no NO campaign in the store')
+    .replace(/ingen svensk fil/g, 'no Swedish file')
+    .replace(/filen gick inte att hämta — /g, 'file could not be fetched — ')
+    .replace(/filen hämtas vid körning \(--ut\)/g, 'file is fetched at run time (--ut)')
+    .replace(/ingen copy — källannonsen finns inte i Bäverbutikens konto/g, 'no copy — source ad not found in Bäverbutiken\'s account')
+    .replace(/spegelnamn kan inte bildas ur namnet/g, 'mirror name cannot be derived from the name')
+    .replace(/pris SE: /g, 'SE price: ')
+    .replace(/pris NO: /g, 'NO price: ')
+    .replace(/creativen säger (\S+), butiken (\S+) \((\d+) % avvikelse, gräns (\d+) %\)/g, 'creative says $1, store says $2 ($3 % off, limit $4 %)')
+    .replace(/priset går inte att jämföra \(creativen ([^,]+), butiken ([^)]+)\)/g, 'price cannot be compared (creative $1, store $2)')
+    .replace(/NO laddas inte upp i butiken \(spegling\.ladda_upp\)/g, 'NO is not uploaded in the store (spegling.ladda_upp)')
+    .replace(/SE stoppad/g, 'SE blocked');
 }
 
 /** Discord-jobbet ur ett körresultat. Ren, engelska rader. */
@@ -332,17 +387,21 @@ export function byggDiscordJobb(resultat) {
   const action = [];
   for (const r of resultat.rader ?? []) {
     if (r.utfall === 'speglad') {
-      const delar = [`SE ad ${r.se?.ad_id ?? '?'} live in ${r.se?.kampanj ?? '?'}${r.se?.adset ? ` (adset ${r.se.adset})` : ''}`];
+      const delar = [];
+      if (r.se?.ad_id) delar.push(`SE ad ${r.se.ad_id} live in ${r.se.kampanj ?? '?'}${r.se.adset ? ` (adset ${r.se.adset})` : ''}`);
+      else delar.push(`handed over for the English version only (${resultat.brand ?? 'the store'} does not run SE/NO)`);
       if (r.no?.ad_id) delar.push(`NO ad ${r.no.ad_id} live in ${r.no.kampanj ?? '?'}`);
-      else if (r.no?.skal) varningar.push(`${r.spegel}: NO not mirrored — ${r.no.skal} (the NO routine will translate it)`);
+      else if (r.no?.skal && !/ladda_upp/.test(r.no.skal)) varningar.push(`${r.spegel}: NO not mirrored — ${r.no.skal} (the NO routine will translate it)`);
       gjort.push(`${r.namn} → ${r.spegel}: ${delar.join(', ')}${r.hubb?.url ? ` — row in hub` : ''}`);
+    } else if (r.utfall === 'klar_sverige') {
+      gjort.push(`${r.namn}: Sweden/Norway-only angle — never mirrored, source row set to ${SLUTSTATUS}`);
     } else if (r.utfall === 'hoppad') {
-      varningar.push(`${r.namn}: skipped — ${r.skal}`);
+      varningar.push(`${r.namn}: skipped — ${engelskaSkal(r.skal)}`);
       // Brand- och prisstopp kräver ett beslut; saknad fil eller kampanj löser sig själv.
-      if (/nämner|slutkortet namnger|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${r.skal} — decide whether the editor should make a store version`);
+      if (/nämner|slutkortet namnger|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${engelskaSkal(r.skal)} — decide whether the editor should make a store version`);
     } else if (r.utfall === 'fel') {
-      varningar.push(`${r.namn}: FAILED — ${r.skal}`);
-      action.push(`${r.namn} failed: ${r.skal}`);
+      varningar.push(`${r.namn}: FAILED — ${engelskaSkal(r.skal)}`);
+      action.push(`${r.namn} failed: ${engelskaSkal(r.skal)}`);
     }
   }
   // Slutkorten. Ett fynd namnges ALLTID, också när det inte stoppade något:
@@ -363,6 +422,9 @@ export function byggDiscordJobb(resultat) {
     return m === 'NO' ? /NO-slutkortet namnger/i.test(skal) : /(?:^|;\s*)slutkortet namnger/i.test(skal);
   };
   for (const r of resultat.rader ?? []) {
+    // En rad som bara går i Sverige/Norge laddas inte upp någonstans härifrån
+    // — dess slutkort är ingen varning för någon marknad.
+    if (r.utfall === 'klar_sverige') continue;
     for (const [m, g] of [['SE', r.slutkort?.se], ['NO', r.slutkort?.no]]) {
       if (!g) continue;
       // Stoppade rader bär redan skälet i sin "skipped"-rad — en gång räcker.
@@ -610,7 +672,7 @@ async function malkampanj({ butik, m, kampanjer, butikens, logg }) {
 // ------------------------------------------------------------ kön
 
 export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...a) => console.error(...a) }) {
-  const { laddaButik, sakerstallKonto, annonskontoFor, OPS_ANNONSKONTO, tillhorButiken, speglingFor, svenskDatum, utmapp } = await import('../factory/register.mjs');
+  const { laddaButik, sakerstallKonto, annonskontoFor, OPS_ANNONSKONTO, tillhorButiken, speglingFor, speglingLaddarUpp, svenskDatum, utmapp } = await import('../factory/register.mjs');
   const butik = laddaButik(nyckel);
   const baskonto = sakerstallKonto(butik.post);
   if (baskonto !== OPS_ANNONSKONTO) throw new Error(`STOPP: ${butik.post.nyckel} pekar på konto ${baskonto}, inte OPS-kontot ${OPS_ANNONSKONTO}.`);
@@ -624,11 +686,17 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
   const datum = svenskDatum();
   const konto = OPS_ANNONSKONTO;
   const annonsmarknader = butik.post.annonsmarknader ?? ['NO'];
+  // Vad speglingen laddar upp i butikens konto (registret). Tom lista = bara
+  // överlämning till butikens hub för engelskan.
+  const laddaUpp = speglingLaddarUpp(spegling);
+  const laddarSE = laddaUpp.includes('SE');
+  const laddarNO = laddaUpp.includes('NO') && annonsmarknader.includes('NO');
   const kallstatusar = String(fran ?? spegling.status_se).split(',').map((s) => s.trim()).filter(Boolean);
   for (const s of kallstatusar) {
     if (s.toLowerCase() === FORBJUDEN_KALLSTATUS.toLowerCase()) throw new Error(`"${s}" är Bäverbutikens NO-kö och får aldrig speglas — de raderna väntar på /oversatt NO.`);
   }
   logg(`Butik: ${butik.post.brand} (${butik.post.nyckel}) · konto ${konto} · prefix ${butik.post.annonsprefix} · datum ${datum}`);
+  logg(`Laddar upp i butiken: ${laddaUpp.length ? laddaUpp.join(' + ') : 'INGET — bara överlämning till butikens hub för den engelska versionen (spegling.ladda_upp = [])'}`);
 
   // 1. Hubbarna.
   const kalla = await hamtaSchema(spegling.kalla_hub);
@@ -665,10 +733,29 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
   let kartaUk = new Map();
+  let usLast = false;
   const usKonto = annonsmarknader.includes('US') ? annonskontoFor(butik.post, 'US') : null;
   if (usKonto) {
     logg(`Läser US-kontot ${usKonto} (${marknadFor('US').kontonamn}) …`);
-    kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
+    // US-kontot läses bara för att se om engelskan redan är uppe (→ Approved).
+    // Det delas av sex timrutiner och stryps ofta (kod 17, subkod 2446079,
+    // mätt 2026-10-03: 8 försök à upp till 5 min). En strypt läsning får
+    // inte stoppa överlämningen: då sätts ingen rad till Approved i dag, och
+    // nästa körning läser om. Hellre en dag sen än sju rader som står still.
+    try {
+      // En sondering UTAN backoff först: meta-libs kedja väntar ~27 min innan
+      // den ger upp, och ett strypt konto svarar kod 17 direkt. Är kontot
+      // strypt hoppas läsningen nu, inte om en halvtimme.
+      const sond = await fetch(`https://graph.facebook.com/v21.0/act_${usKonto}/ads?fields=id&limit=1&access_token=${process.env.META_ACCESS_TOKEN}`, { signal: AbortSignal.timeout(60_000) });
+      const sj = await sond.json().catch(() => ({}));
+      // Engelska: raden går rakt in i Discord-rapporten.
+      if (sj.error?.code === 17) throw new Error('throttled by Meta (code 17: too many API calls from this ad account)');
+      kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
+      usLast = true;
+    } catch (e) {
+      varningar.push(`US account ${usKonto} could not be read (${e.message}) — no source row is set to ${SLUTSTATUS} this run; the next run reads it again`);
+      logg(`  ⚠️  ${varningar.at(-1)}`);
+    }
   }
   const kallprefix = [...new Set([...raa, ...enRader].map((r) => tolkaNamn(annonsdel(r.namn)).prefix).filter(Boolean))];
   const kallannonser = [];
@@ -678,21 +765,24 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
   }
   logg(`  ${kallannonser.length} källannonser hittade`);
 
-  // 4. Butikens kampanjer SE + NO, priser.
-  const se = await malkampanj({ butik, m: 'SE', kampanjer, butikens, logg });
-  const no = annonsmarknader.includes('NO') ? await malkampanj({ butik, m: 'NO', kampanjer, butikens, logg }) : { kampanj: null, skal: 'NO står inte i annonsmarknader', adsets: [], lank: null };
+  // 4. Butikens kampanjer SE + NO, priser — bara för marknaderna som laddas upp.
+  //    En butik som bara säljer på engelska har ingen SE-kampanj att hitta, och
+  //    ett "INGEN" där är inget fel, bara ett faktum.
+  const INGET = (m) => ({ kampanj: null, skal: `${m} laddas inte upp i butiken (spegling.ladda_upp)`, varning: null, adsets: [], lank: null });
+  const se = laddarSE ? await malkampanj({ butik, m: 'SE', kampanjer, butikens, logg }) : INGET('SE');
+  const no = laddarNO ? await malkampanj({ butik, m: 'NO', kampanjer, butikens, logg }) : (annonsmarknader.includes('NO') ? INGET('NO') : { kampanj: null, skal: 'NO står inte i annonsmarknader', adsets: [], lank: null });
   if (se.varning) varningar.push(`SE-kampanj: ${se.varning}`);
   if (no.varning) varningar.push(`NO-kampanj: ${no.varning}`);
   const handle = butik.produkt?.produkt?.handle || butik.produkt?.produkt?.id || butik.post.id;
   const lank_se = se.lank ?? marknadslank(butik.butik, { handle, kod: 'SE' });
   let lank_no = no.lank;
   if (!lank_no) { try { lank_no = marknadslank(butik.butik, { handle, kod: 'NO' }); } catch { lank_no = null; } }
-  const pris_se = await hamtaPris(lank_se, butik.post.valuta ?? 'SEK');
-  if (!pris_se.pris_butik) varningar.push(`butikens SE-pris: ${pris_se.skal}`);
-  else logg(`Pris SE ur butiken: ${pris_se.pris_butik.pris} ${pris_se.pris_butik.valuta} via ${pris_se.pris_butik.kalla}`);
-  const pris_no = lank_no ? await hamtaPris(lank_no, marknadFor('NO').valuta, 'NO', butik.post.valuta ?? 'SEK') : { pris_butik: null, skal: 'ingen NO-länk' };
-  if (!pris_no.pris_butik || pris_no.pris_butik.basvaluta) varningar.push(`butikens NO-pris: ${pris_no.skal ?? 'okänt'}`);
-  else logg(`Pris NO ur butiken: ${pris_no.pris_butik.pris} ${pris_no.pris_butik.valuta} via ${pris_no.pris_butik.kalla}`);
+  const pris_se = laddarSE ? await hamtaPris(lank_se, butik.post.valuta ?? 'SEK') : { pris_butik: null, skal: 'SE laddas inte upp — priset jämförs inte' };
+  if (laddarSE && !pris_se.pris_butik) varningar.push(`butikens SE-pris: ${pris_se.skal}`);
+  else if (pris_se.pris_butik) logg(`Pris SE ur butiken: ${pris_se.pris_butik.pris} ${pris_se.pris_butik.valuta} via ${pris_se.pris_butik.kalla}`);
+  const pris_no = !laddarNO ? { pris_butik: null, skal: 'NO laddas inte upp — priset jämförs inte' } : lank_no ? await hamtaPris(lank_no, marknadFor('NO').valuta, 'NO', butik.post.valuta ?? 'SEK') : { pris_butik: null, skal: 'ingen NO-länk' };
+  if (laddarNO && (!pris_no.pris_butik || pris_no.pris_butik.basvaluta)) varningar.push(`butikens NO-pris: ${pris_no.skal ?? 'okänt'}`);
+  else if (pris_no.pris_butik && !pris_no.pris_butik.basvaluta) logg(`Pris NO ur butiken: ${pris_no.pris_butik.pris} ${pris_no.pris_butik.valuta} via ${pris_no.pris_butik.kalla}`);
   // Butikens egna former till slutkortskollen: "CaraShell", carashell.se,
   // carashell.com. Axels regel gäller ALLA butiksnamn, inte bara källans.
   const butiksord = butiksordUr({ brand: butik.post.brand, lankar: [lank_se, lank_no] });
@@ -728,7 +818,9 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
       if (p.pris_butik) { pris_kalla = p.pris_butik.pris; pris_kalla_fran = p.pris_butik.kalla; }
     }
     const radmapp = ut ? join(ut, namn.replace(/[^\w åäöÅÄÖ.-]/g, '_')) : null;
-    const noV = r.translated_url ? await hamtaNoVersion(r.translated_url, { ut: radmapp, filnamn: spegel_no ?? `${namn}_NO`, logg }) : null;
+    // NO-versionen hämtas bara när den ska laddas upp — annars är den varken
+    // bevis eller fil för något, bara ett Meta-anrop och en nedladdning.
+    const noV = r.translated_url && laddarNO ? await hamtaNoVersion(r.translated_url, { ut: radmapp, filnamn: spegel_no ?? `${namn}_NO`, logg }) : null;
     // Källans NO-pris: NO-annonsens länk går till beverbutikken.no, vars
     // egen valuta ÄR NOK — produkt-JSON:en läses rakt av (utan ?country=,
     // som bara finns på flerspråkiga butiker). Mätt 2026-09-18: 1 189 NOK
@@ -754,6 +846,7 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
       kampanj_no: no.kampanj ? { id: no.kampanj.id, namn: no.kampanj.namn, bas: no.kampanj.bas } : null,
       adset_se: se.kampanj ? hittaAdset(se.adsets, adsetNamn(se.kampanj.bas, tolkaNamn(namn).koncept), tolkaNamn(namn).koncept) : null,
       block: block.length, fil: null, fil_kalla: null, fil_alla: [], fil_fel: null, hamtat: Boolean(ut),
+      ladda_upp: laddaUpp,
     };
     // Filen hämtas ÄVEN när SE-annonsen redan finns: hubbraden ska bära den,
     // och en omkörning efter ett Notion-fel skapar raden då utan svensk fil.
@@ -778,7 +871,9 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     // ingenting att granska). ~0,7 s per video, mätt: factory/bildbrand.mjs.
     rad.slutkort = { se: null, no: null };
     if (ut) {
-      rad.slutkort.se = await granskaOmVideo({ fil: rad.fil, typ: rad.typ, hoppa: dSe.finns_i_meta, butiksord });
+      // Vid ren överlämning finns ingen SE-dubblett att hoppa för: den svenska
+      // filen är det US-rutinen översätter, så slutkortet granskas alltid.
+      rad.slutkort.se = await granskaOmVideo({ fil: rad.fil, typ: rad.typ, hoppa: laddarSE && dSe.finns_i_meta, butiksord });
       // NO-filen kommer ur Meta och kan vara en bild även när raden är video —
       // mediatypen där är facit, inte Notion-raden.
       rad.slutkort.no = await granskaOmVideo({ fil: noV?.fil ?? null, typ: noV?.media?.typ ?? rad.typ, hoppa: dNo.finns_i_meta, butiksord });
@@ -807,12 +902,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     const namn = annonsdel(r.namn);
     const spegel = spegelnamn(namn, butik.post.annonsprefix);
     const spegel_us = spegel ? marknadsNamn(spegel, 'US') : null;
-    const d = spegel_us && usKonto ? dubblett(spegel_us, kartaUk) : { finns_i_meta: false, ad_id: null };
-    return { namn, spegel, spegel_us, page_id: r.id, url: r.url, us_uppe: d.finns_i_meta, us_ad_id: d.ad_id, klar_for_approved: d.finns_i_meta };
+    const d = spegel_us && usKonto && usLast ? dubblett(spegel_us, kartaUk) : { finns_i_meta: false, ad_id: null };
+    return { namn, spegel, spegel_us, page_id: r.id, url: r.url, us_uppe: d.finns_i_meta, us_ad_id: d.ad_id, klar_for_approved: usLast && d.finns_i_meta, us_last: usLast };
   });
 
   return {
-    brand: butik.post.brand, nyckel: butik.post.nyckel, konto, us_konto: usKonto, datum, annonsmarknader,
+    brand: butik.post.brand, nyckel: butik.post.nyckel, konto, us_konto: usKonto, us_last: usLast, datum, annonsmarknader, ladda_upp: laddaUpp,
     kalla_hub: { id: kalla.id, titel: kalla.titel, url: kalla.url }, hub: { id: hub.id, titel: hub.titel, url: hub.url },
     statusar: { se: spegling.status_se, en: spegling.status_en, spegel: SPEGEL_STATUS, slut: SLUTSTATUS }, kallstatusar, saknade_statusar,
     kampanj_se: se.kampanj ? { ...se.kampanj, adsets: se.adsets.map((a) => ({ id: a.id, name: a.name, status: a.status })) } : null, kampanj_se_skal: se.skal,
@@ -848,6 +943,19 @@ function korUppladdning({ nyckel, marknad, kampanjId, namn, fil, copy, torr }) {
   return { ok: true, ...json, logg: String(r.stderr ?? '') };
 }
 
+/** Kommentarsraden om SE: live, fanns, eller ingen SE-uppladdning alls. */
+export function seText(ut, ko) {
+  if (ut.se?.ad_id) return `SE ad ${ut.se.ad_id} live in ${ut.se.kampanj ?? '?'}${ut.se.adset ? ` (adset ${ut.se.adset})` : ''}.`;
+  return `Not uploaded in ${ko.brand}'s SE campaign — ${ko.brand} runs only on the English markets; SE + NO run in Bäverbutiken.`;
+}
+
+/** Kommentarsraden om NO: live, eller varför inte. Tom när NO inte laddas upp alls. */
+export function noText(ut, laddaUpp = new Set(['SE', 'NO'])) {
+  if (ut.no?.ad_id) return ` NO ad ${ut.no.ad_id} live in ${ut.no.kampanj ?? '?'}.`;
+  if (!laddaUpp.has('NO')) return '';
+  return ` NO not mirrored: ${ut.no?.skal ?? 'the NO routine translates it'}.`;
+}
+
 export async function korSpegling({ ko, torr = false, logg = (...a) => console.error(...a) }) {
   const { laddaUppTillRad } = await import('./notion-fil-upp.mjs');
   const { kalla, hub } = ko._hubbar;
@@ -860,9 +968,31 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
     if (!torr) return resultat;
   }
 
+  const laddaUpp = new Set(ko.ladda_upp ?? ['SE', 'NO']);
+  const laddarSE = laddaUpp.has('SE');
   for (const rad of ko.rader) {
     const ut = { namn: rad.namn, spegel: rad.spegel, page_id: rad.page_id, utfall: null, skal: null, se: null, no: null, hubb: null, slutkort: rad.slutkort ?? null };
     resultat.rader.push(ut);
+    // Vinklar som aldrig lämnar Sverige/Norge (fars dag): raden är färdig i
+    // alla marknader den kan nå. Sätt slutläget i stället för att rapportera
+    // samma stopp varje dag — de hör inte i ACTION NEEDED (batch-log
+    // 2026-09-30, 10-01, 10-02: action_axel skrevs om för hand tre dagar i rad).
+    if (rad.bedomning.bara_sverige) {
+      ut.utfall = 'klar_sverige';
+      ut.skal = rad.bedomning.bara_sverige;
+      logg(`✓ ${rad.namn}: ${ut.skal} → ${torr ? 'skulle bli' : ''} ${SLUTSTATUS}`);
+      if (!torr) {
+        try {
+          if (arSlutstatus(rad.status, ko.statusar)) { ut.status_rord = false; }
+          else {
+            await kommentera(rad.page_id, `🇸🇪🇳🇴 Sweden/Norway-only angle (${rad.namn.split('_')[1] ?? '?'}): never mirrored to ${ko.brand} — Father's Day is in June on the English markets. Live in SE + NO, complete in every market it can reach — set to ${SLUTSTATUS}.`);
+            await sattStatus(rad.page_id, kalla, SLUTSTATUS);
+            ut.status_rord = true;
+          }
+        } catch (e) { ut.utfall = 'fel'; ut.skal = `kunde inte sättas till ${SLUTSTATUS} — ${e.message}`; }
+      }
+      continue;
+    }
     if (!rad.bedomning.se.ok) {
       ut.utfall = 'hoppad';
       ut.skal = rad.bedomning.se.skal.join('; ');
@@ -876,14 +1006,15 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
       // kommentar på källraden. En rad som stoppades ENBART av slutkortet fick
       // alltså ingen — redigeraren såg aldrig varför den inte speglades.
       const slutkortsstopp = slutkortBlockerar(rad.slutkort?.se?.dom);
-      if (!torr && (rad.brand.length || slutkortsstopp || !rad.paritet_se.ok)) {
+      const prisstopp = laddarSE && !rad.paritet_se?.ok;
+      if (!torr && (rad.brand.length || slutkortsstopp || prisstopp)) {
         const marke = `⛔ Not mirrored to ${ko.brand}: ${ut.skal}`;
         // Kravet i kommentaren följer stoppet — en prisrad ska inte be om ett
         // nytt slutkort, och tvärtom.
         const krav = [];
         if (rad.brand.length) krav.push('must not name Bäverbutiken');
         if (slutkortsstopp) krav.push(`must end without any store name, domain or logo in the last ${rad.slutkort.se.slut_sek ?? 3} seconds — rebuild the end card`);
-        if (!rad.paritet_se.ok) krav.push(`must carry ${ko.brand}'s price (${ko.pris_se?.pris ?? '?'} ${ko.pris_se?.valuta ?? 'SEK'})`);
+        if (prisstopp) krav.push(`must carry ${ko.brand}'s price (${ko.pris_se?.pris ?? '?'} ${ko.pris_se?.valuta ?? 'SEK'})`);
         try {
           if (await harKommentar(rad.page_id, marke)) logg('  (stopp-kommentaren står redan på raden — skriver ingen ny)');
           else await kommentera(rad.page_id, `${marke}. The store version ${krav.join(' and ')}.`);
@@ -892,8 +1023,12 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
       continue;
     }
     try {
-      // 1. SE live (eller redan uppe).
-      if (rad.finns_i_meta.SE) {
+      // 1. SE live (eller redan uppe) — eller ingen SE alls när butiken bara
+      //    säljer på engelska: då är det här steget bara överlämningen.
+      if (!laddarSE) {
+        ut.se = { ad_id: null, kampanj: null, adset: null, fanns: false, hoppad: true, skal: `${ko.brand} laddar inte upp SE (spegling.ladda_upp)` };
+        logg(`→ ${rad.namn} → ${rad.spegel}: ingen SE-uppladdning — lämnas över till ${ko.hub.titel} för engelskan`);
+      } else if (rad.finns_i_meta.SE) {
         ut.se = { ad_id: rad.ad_ids.SE, kampanj: rad.kampanj_se.namn, adset: null, fanns: true };
         logg(`= ${rad.spegel}: finns redan i kontot (${rad.ad_ids.SE}) — laddas inte upp`);
       } else {
@@ -923,15 +1058,16 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
       } else if (torr) {
         ut.hubb = { page_id: null, url: null, torr: true };
         logg(`○ skulle skapa raden ${rad.spegel} i ${hub.titel} (${rad.block} block kopieras, SE${rad.no?.fil ? ' + NO' : ''}-fil bifogas)`);
-      } else if (rad.finns_i_meta.SE && !rad.fil) {
+      } else if (laddarSE && rad.finns_i_meta.SE && !rad.fil) {
         // Annonsen finns i kontot men hubbraden saknas OCH ingen fil gick att
         // hämta. Det kan vara en avbruten körning — eller att namnet krockar
         // med en av butikens EGNA annonser (docs/naming-convention.md regel 0).
         // Att skapa en rad utan fil ger US-rutinen ingenting att översätta.
         throw new Error(`"${rad.spegel}" finns i kontot (${rad.ad_ids.SE}) men har varken hubbrad eller fil. Kontrollera att annonsen är spegeln och inte butikens egen — ingen rad skapas.`);
       } else {
+        if (!rad.fil) throw new Error('ingen svensk fil att lämna över — hubbraden skapas inte utan den');
         const kopia = kopieraBlock(rad._block);
-        const block = [kalloutBlock({ kallNamn: ko.kalla_hub.titel, kallUrl: rad.url, brand: ko.brand, datum: ko.datum }), ...kopia.block];
+        const block = [kalloutBlock({ kallNamn: ko.kalla_hub.titel, kallUrl: rad.url, brand: ko.brand, datum: ko.datum, laddaUpp: [...laddaUpp] }), ...kopia.block];
         const { properties, fel } = byggEgenskaper(hub.properties, { namn: rad.spegel, typ: rad.typ, status: SPEGEL_STATUS, landning: ko.lank_se, datum: ko.datum });
         if (fel.length) throw new Error(`hubbraden kan inte byggas: ${fel.join(' ')}`);
         const omg = delaBlock(block);
@@ -955,7 +1091,7 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
             catch (e) { resultat.varningar.push(`${rad.spegel}: ${basename(rad.no.fil)} kunde inte bifogas — ${e.message}`); logg(`  ⚠ ${basename(rad.no.fil)}: ${e.message}`); }
           }
         }
-        await kommentera(sida.id, `Mirrored from Bäverbutiken row ${rad.namn}. SE ad ${ut.se.ad_id} live in ${ut.se.kampanj}${ut.se.adset ? ` (adset ${ut.se.adset})` : ''}.${ut.no?.ad_id ? ` NO ad ${ut.no.ad_id} live in ${ut.no.kampanj}.` : ' NO not mirrored — the NO routine translates it.'} Next: English version via the US routine.`);
+        await kommentera(sida.id, `Mirrored from Bäverbutiken row ${rad.namn}. ${seText(ut, ko)}${noText(ut, laddaUpp)} Next: English version via the US routine.`);
       }
       // 4. Källraden → "<Brand> EN ready to be active". En rad som redan är
       //    Approved rörs ALDRIG: `--fran "…,Approved"` är efterjusteringen av
@@ -963,7 +1099,7 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
       //    hade tagit bort dem ur slutläget (samma regel som /ops-oversatt:
       //    "Statusen rörs inte — raden är redan Approved").
       if (!torr) {
-        await kommentera(rad.page_id, `✅ Mirrored to ${ko.brand} as ${rad.spegel}: SE ad ${ut.se.ad_id} live in ${ut.se.kampanj}${ut.se.adset ? ` (adset ${ut.se.adset})` : ''}.${ut.no?.ad_id ? ` NO ad ${ut.no.ad_id} live in ${ut.no.kampanj}.` : ` NO not mirrored: ${ut.no?.skal ?? '?'}.`}${ut.hubb?.url ? ` Hub row: ${ut.hubb.url}.` : ''} English version follows via ${ko.brand}'s US routine.`);
+        await kommentera(rad.page_id, `✅ Mirrored to ${ko.brand} as ${rad.spegel}: ${seText(ut, ko)}${noText(ut, laddaUpp)}${ut.hubb?.url ? ` Hub row: ${ut.hubb.url}.` : ''} English version follows via ${ko.brand}'s US routine.`);
         if (arSlutstatus(rad.status, ko.statusar)) {
           ut.status_rord = false;
           logg(`  källraden står i "${rad.status}" — statusen rörs inte`);
@@ -1005,19 +1141,24 @@ export function tabell(ko) {
   ut.push(`=== Speglingen · ${ko.brand} (${ko.nyckel}) · ${ko.datum} ===`);
   ut.push(`Källhub: ${ko.kalla_hub.titel} (${ko.kalla_hub.id}) · status ${ko.kallstatusar.map((s) => `"${s}"`).join(', ')}`);
   ut.push(`Butikens hub: ${ko.hub.titel} (${ko.hub.id}) · spegelrader får "${ko.statusar.spegel}"`);
-  ut.push(`Kampanj SE: ${ko.kampanj_se ? `${ko.kampanj_se.namn} [${ko.kampanj_se.status}]` : `⚠️  INGEN — ${ko.kampanj_se_skal}`}`);
-  ut.push(`Kampanj NO: ${ko.kampanj_no ? `${ko.kampanj_no.namn} [${ko.kampanj_no.status}]` : `⚠️  INGEN — ${ko.kampanj_no_skal}`}`);
-  ut.push(`Pris SE: ${ko.pris_se ? `${ko.pris_se.pris} ${ko.pris_se.valuta}` : '⚠️  okänt'} · Pris NO: ${ko.pris_no ? `${ko.pris_no.pris} ${ko.pris_no.valuta}` : '⚠️  okänt'}`);
+  const lu = ko.ladda_upp ?? ['SE', 'NO'];
+  ut.push(`Laddar upp i butiken: ${lu.length ? lu.join(' + ') : 'INGET — bara överlämning till butikens hub för engelskan (spegling.ladda_upp = [])'}`);
+  const kampanjrad = (m, k, skal) => (!lu.includes(m) ? `Kampanj ${m}: hoppas — ${m} laddas inte upp här` : `Kampanj ${m}: ${k ? `${k.namn} [${k.status}]` : `⚠️  INGEN — ${skal}`}`);
+  ut.push(kampanjrad('SE', ko.kampanj_se, ko.kampanj_se_skal));
+  ut.push(kampanjrad('NO', ko.kampanj_no, ko.kampanj_no_skal));
+  const prisrad = (m, p) => (!lu.includes(m) ? `Pris ${m}: jämförs inte` : `Pris ${m}: ${p ? `${p.pris} ${p.valuta}` : '⚠️  okänt'}`);
+  ut.push(`${prisrad('SE', ko.pris_se)} · ${prisrad('NO', ko.pris_no)}`);
   if (ko.saknade_statusar.length) ut.push(`⛔ Källhubben saknar statusalternativen: ${ko.saknade_statusar.map((s) => `"${s}"`).join(', ')} — Axels klick`);
   ut.push('');
   if (!ko.rader.length) ut.push('Inga rader att spegla.');
   for (const r of ko.rader) {
     const b = r.bedomning;
-    ut.push(`• ${r.namn} → ${r.spegel ?? '⚠️ inget spegelnamn'}  [${r.typ}]  ${b.se.ok ? '✅ SE' : `⛔ SE: ${b.se.skal.join('; ')}`}${r.finns_i_meta.SE ? ' (finns redan)' : ''}`);
+    const seEtikett = lu.includes('SE') ? 'SE' : 'överlämning';
+    ut.push(`• ${r.namn} → ${r.spegel ?? '⚠️ inget spegelnamn'}  [${r.typ}]  ${b.bara_sverige ? `🇸🇪 bara Sverige/Norge → ${SLUTSTATUS}` : b.se.ok ? `✅ ${seEtikett}` : `⛔ ${seEtikett}: ${b.se.skal.join('; ')}`}${r.finns_i_meta.SE ? ' (finns redan)' : ''}`);
     ut.push(`    copy:     ${r.copy_se ? `"${r.copy_se.rubrik}" ur ${r.kall_ad?.kampanj ?? '?'}` : '⚠️  ingen källannons'}${r.brand.length ? `  ⛔ brand: ${r.brand.join(', ')}` : ''}`);
-    ut.push(`    pris:     creativen ${r.pris_kalla ?? '?'} (${r.pris_kalla_fran ?? 'okänt'}) · butiken ${ko.pris_se?.pris ?? '?'} → ${r.paritet_se.ok ? 'ok' : r.paritet_se.skal}`);
+    if (lu.includes('SE')) ut.push(`    pris:     creativen ${r.pris_kalla ?? '?'} (${r.pris_kalla_fran ?? 'okänt'}) · butiken ${ko.pris_se?.pris ?? '?'} → ${r.paritet_se.ok ? 'ok' : r.paritet_se.skal}`);
     ut.push(`    fil:      ${r.fil ? `${r.fil} (${r.fil_kalla})` : r.fil_fel ? `✗ ${r.fil_fel}` : `(hämtas med --ut: ur Meta-annons ${r.kall_ad?.id ?? '?'}${r.filer.length ? `, reserv bilaga ${r.filer.join(', ')}` : ''})`}`);
-    ut.push(`    NO:       ${r.no ? `${r.no.namn ?? r.no.ad_id} [${r.no.status ?? '?'}] ${r.no.fil ? `→ ${r.no.fil}` : r.no.fel ? `✗ ${r.no.fel}` : '(hämtas med --ut)'} · pris ${r.pris_kalla_no ?? '?'} vs ${ko.pris_no?.pris ?? '?'} → ${b.no.ok ? '✅' : `⛔ ${b.no.skal.join('; ')}`}` : '— ingen NO-version på källraden'}`);
+    if (lu.includes('NO')) ut.push(`    NO:       ${r.no ? `${r.no.namn ?? r.no.ad_id} [${r.no.status ?? '?'}] ${r.no.fil ? `→ ${r.no.fil}` : r.no.fel ? `✗ ${r.no.fel}` : '(hämtas med --ut)'} · pris ${r.pris_kalla_no ?? '?'} vs ${ko.pris_no?.pris ?? '?'} → ${b.no.ok ? '✅' : `⛔ ${b.no.skal.join('; ')}`}` : '— ingen NO-version på källraden'}`);
     for (const [m, g] of [['SE', r.slutkort?.se], ['NO', r.slutkort?.no]]) {
       if (!g) continue;
       const ikon = SLUTKORTSIKON[g.dom] ?? '?';
@@ -1028,7 +1169,7 @@ export function tabell(ko) {
   if (ko.klara_en.length) {
     ut.push('');
     ut.push(`Väntar på US (${ko.klara_en.length}):`);
-    for (const r of ko.klara_en) ut.push(`  · ${r.namn} → ${r.spegel_us ?? '?'}: ${r.us_uppe ? `✅ uppe (${r.us_ad_id}) → Approved` : 'inte uppe än'}`);
+    for (const r of ko.klara_en) ut.push(`  · ${r.namn} → ${r.spegel_us ?? '?'}: ${r.us_uppe ? `✅ uppe (${r.us_ad_id}) → Approved` : r.us_last === false ? 'US-kontot gick inte att läsa — avgörs nästa körning' : 'inte uppe än'}`);
   }
   if (ko.varningar.length) {
     ut.push('');
@@ -1084,7 +1225,8 @@ async function huvud() {
   writeFileSync(`${bas}.discord.json`, `${JSON.stringify(jobb, null, 2)}\n`);
   console.error(`\nResultat: ${bas}.json · Discord-jobb: ${bas}.discord.json`);
   const speglade = resultat.rader.filter((r) => r.utfall === 'speglad').length;
-  console.error(`${torr ? 'TORR: ' : ''}${speglade} speglad(e) · ${resultat.rader.filter((r) => r.utfall === 'hoppad').length} hoppad(e) · ${resultat.rader.filter((r) => r.utfall === 'fel').length} fel · ${resultat.approved.length} → ${SLUTSTATUS}`);
+  const klaraSverige = resultat.rader.filter((r) => r.utfall === 'klar_sverige').length;
+  console.error(`${torr ? 'TORR: ' : ''}${speglade} speglad(e) · ${resultat.rader.filter((r) => r.utfall === 'hoppad').length} hoppad(e) · ${resultat.rader.filter((r) => r.utfall === 'fel').length} fel · ${klaraSverige} bara Sverige/Norge → ${SLUTSTATUS} · ${resultat.approved.length} US uppe → ${SLUTSTATUS}`);
   if (finns('json')) console.log(JSON.stringify({ ...resultat, ko: undefined }, null, 2));
 }
 

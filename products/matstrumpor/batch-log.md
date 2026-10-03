@@ -424,6 +424,34 @@ Copy: sonnet-subagent mot `docs/copy-regler.md`, tre-frågorstestet i varje brie
 **Utfall (dag 7):** —
 **Lärdom:** — (skrivs av ronden när etiketten finns)
 
+
+## 2026-10-03 — rond 5 (första ronden under 3:2:2)
+
+**Läget:** Champions `09-17 UGC` tar 90 % av spenden (64 299 kr på 7 d, 303 köp, ROAS 2,04). Kampanjen 7 d: 71 123 kr, 331 köp, ROAS 2,04, CPA 215 kr. Inga adsetförslag: de gamla adseten fungerar (LAT_STA), `nya16` är FOR_UNG till 8/10 (054–056 live sedan 1/10), `jul_video` är SASONG till 1/12. Utlandet (14 kampanjer, start 2/10) är 1 dygn gammalt — ingen etikett före 9/10, och break-even per marknad saknas (cogs.json).
+
+**Etiketter i dag (13):** Gilz batch #2 (048–052, nio annonser) 7 INGEN_LEVERANS + 1 LOSER, Katarina sushiälskaren KPI_WINNER, Katarina ungen LOSER; uppgraderade Sofie H1 (LOSER → KPI_WINNER vecka 2) och 012v2 (KPI_WINNER vecka 2 → LOSER vecka 3). Breakthrough 1 av 107 (1 %), hit rate 2 av 107 (2 %), 2 av 48 med leverans (4 %).
+
+**Lärdomar (3 texter, 11 rader):** L-09-24_Katarina_sushialskaren_i_ditt_liv (fel 6: åsikt i öppningen; manuset är s001h1:s, med en riktig människa ROAS 2,05 mot AI-kvinnans 1,40), L-09-24_Katarina_Sushigalen_unge (fel 2: barnmottagaren, hook→hold halveras), L-batch-2-gilz-miniklipp (svält i `nya16`/`jul_video`, samma som batch #1).
+
+**Brief (1 koncept, 3 hookar, taket 3 briefer = 3 lärdomar):**
+| Annons | Typ | Koncept | Iteration | Lärdom | Playbook | Hook |
+|---|---|---|---|---|---|---|
+| `MATSTRUMP_sushi_gift_ugc_069_h1_i1pkat1_v1` | I | katarina-favoritratt | 1 | L-09-24_Katarina_sushialskaren_i_ditt_liv | manus-3 | Hon beställer alltid lax. Vad ligger i den här lådan? |
+| `…_069_h2_i1pkat1_v1` | I | katarina-favoritratt | 1 | samma | manus-3 | Den här sushin går inte att äta. Den är till honom. |
+| `…_069_h3_i1pkat1_v1` | I | katarina-favoritratt | 1 | samma | manus-3 | Vad ger man någon som beställer sushi varje fredag? |
+
+Omklipp av Katarinas befintliga video (ingen ny inspelning), Notion-rader 3ee270ab-…-81cd / -81a2 / -814c i Draft. **Mixen avviker medvetet:** levande breakthrough ⇒ 80 % vidarebyggen på Nathalie, men konceptet `nathalie` är VANTA_UTFALL (11 briefade, 0 med utfall) och får inga nya iterationer förrän tre har etikett. Det enda vidarebygget som får byggas är därför på KPI-vinnaren `kat1`, med vinnarens lärdom (gåta i stället för påstående, Axels order 2026-10-02).
+Hypotes: en gåta om mottagaren slår en åsikt som öppning på en kropp som redan säljer **(gissning)**.
+
+**COPY CARD 2+2 för åtta väntande koncept** (053, 059, 060, 061, 062, 064, 066, 067): de stod i kön som "väntar på copy" — redigerarnas videor var klara men hade bara en text och en rubrik. Sonnet-subagenten skrev Primary text 2 + Headline 2, en gemensam kontroll så att videon förblir variabeln:
+| Rad | Svenska | Visualisera? | Falsifierbart? | Ingen annan kan säga det? |
+|---|---|---|---|---|
+| Primary text 2 | Dom sålde slut i november förra året. Den som väntade fick ingen. Fem par strumpor i en låda som ser ut som sushi. Köp 1 – Få 1 GRATIS. | ✅ tomt tråg, sedan lådan | ✅ slutsålt bekräftat av Axel 2026-09-24 | ✅ bara vi sålde slut på den här lådan |
+| Headline 2 | Du vet vad dom alltid beställer | ✅ någon vid takeaway-disken | ✅ lådan finns som sushi | ✅ rätten som strumpor är vår |
+Efter det: `--ko` ger **ETT nytt testadset att bygga** (`MATSTRUMP_U261003_mix_video`, 053/059/060/061/062/064 — sex videor) och 066/067 som väntar på plats (strukturen 4 av 5).
+
+**Förslag till Axel (FORSLAG, inget utfört):** höj CBO:n 10 000 → 12 000 kr/dag (7 d ROAS 2,04, CPA 215 mot 308, budgeten går åt). Inga adset att stänga.
+
 ---
 
 ## 2026-10-03 — A/B-testet `paket`, avläsning 1 (Axels fråga: "vad för offer ska vi köra på?")

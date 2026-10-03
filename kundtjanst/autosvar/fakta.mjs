@@ -175,7 +175,7 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
     ut.sparning = { status17: null, status: 'DELIVERED', levererad: true, senaste: null, sista: null };
     ut.kalla.push('Shopify: levererad');
   }
-  ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar, forbestallning: forbestallningSkickas(konfig?.svar, nu) });
+  ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar, forbestallning: forbestallningSkickas(konfig?.svar, nu, ut.order?.skapad) });
   if (ut.sparr) ut.kalla.push(ut.sparr);
   return ut;
 }

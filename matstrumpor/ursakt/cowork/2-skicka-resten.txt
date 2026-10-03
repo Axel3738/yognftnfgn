@@ -1,0 +1,25 @@
+Uppdrag: skicka de nio sista ursäktskampanjerna i Spoks, arbetsytan "Matstrumpor.se". Axel har sagt: skicka.
+Svenska, norska, danska, finska och flödet är redan klara. Rör dem inte.
+
+Förra gången gick segmentlistan inte att scrolla. Gör så här i stället:
+- Klicka i publikfältet och SKRIV segmentets namn, eller bara slutet, till exempel "23_9_en". Välj träffen.
+- Går det inte att skriva i fältet: zooma ut sidan med Ctrl och minus tills hela listan syns.
+
+För varje rad: öppna länken, välj segmentet SEG_ursakt_kopt_fran_23_9_ plus koden på raden,
+tryck "Titta igenom" och sedan "Publicera nu". Visar segmentet 0 mottagare: hoppa över raden.
+
+   en  https://app.spoks.com/matstrumpor/post/9dc2eb19-306b-48b8-b154-0015a285e1f5/edit
+   de  https://app.spoks.com/matstrumpor/post/ce13755b-9e3b-4153-b581-394fb9f9a739/edit
+   fr  https://app.spoks.com/matstrumpor/post/5b1a2fac-8aa4-4fda-95ca-de8aa8655ae8/edit
+   nl  https://app.spoks.com/matstrumpor/post/6fa2079e-74bf-4102-b39e-2992da8ed4c6/edit
+   es  https://app.spoks.com/matstrumpor/post/9dbd8a66-1c37-4d2e-82d0-2d5acc71148d/edit
+   it  https://app.spoks.com/matstrumpor/post/9c8623af-f847-4d55-a346-9e0dbd662f08/edit
+   pl  https://app.spoks.com/matstrumpor/post/07a1aa6f-9627-43cd-9263-7203a4f4b2bc/edit
+   pt  https://app.spoks.com/matstrumpor/post/bebf588f-7fe2-4889-bdc2-8ac4f1b13f12/edit
+   ja  https://app.spoks.com/matstrumpor/post/423f29cb-4946-48aa-b5bd-722e34003446/edit
+
+Regler: ändra ingen text eller ämnesrad, rör inga andra kampanjer, flöden eller segment, radera ingenting.
+Utkastet "TEST av flödesmejlet sv · bara för testutskick · skickas aldrig" skickas ALDRIG.
+Går ett segment inte att välja ens efter båda knepen: hoppa över raden och skriv vilken.
+
+Rapportera kort: vilka som skickades och hur många mottagare.
