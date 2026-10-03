@@ -49,10 +49,15 @@ aldrig Meta själv och skriver aldrig i Notion.
 
 ## Kvar
 
-1. Rutinen (måndag `0 1 * * 1` UTC, prompt `/redigerarrapport --discord`,
-   fast session med repot som källa) byggs EFTER att grenen mergats till
-   `main` — rutinerna klonar `main`.
+1. ✅ Rutinen är byggd 2026-10-03 på Barkås-kontot, efter att PR #351 mergats
+   till `main`: trigger `trig_01McuhAA4Xm8aFA7PJPwwAGp`, fast session
+   `session_01GneESZrfpo5tLCp2jnZuYM`, cron `0 1 * * 1` UTC, prompt
+   `/redigerarrapport --discord`, sedd i `list_triggers`. Första fyrning
+   måndag 2026-10-05 03:06 CEST. Vinteromställningen: `0 2 * * 1`.
 2. Gilz är inte med i Bäverbutikens server (ingen post förrän han bjudits in).
+   Boten behöver Manage Channels för att skapa de privata kanalerna första
+   gången; misslyckas en post slutar körningen med exit 4 och filerna finns i
+   `output/<vecka>/`.
 3. `/matstrumporkungen` skriver hook/hold/konv_lpv i ETIKETT-raden sedan
    2026-10-02 (`matstrumpor/kor.mjs` rad()); äldre rader saknar dem.
 4. Täckningen över 80 % kräver att hubbraderna bär Ansvarig — redigerarnas

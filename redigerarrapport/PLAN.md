@@ -14,7 +14,10 @@ planen vi bygger efter. Inget är byggt än.
 > **Läget 2026-10-02 kväll: byggt och torrkört, inte postat.** Koden ligger i
 > den här mappen (`README.md` har delarna, körningen och vad som återstår),
 > 71 tester gröna, W39 torrkörd: 21 av 59 bedömbara annonser fick en person
-> (36 %, upp från 8 %). Axels beslut i avsnitt 8. Rutinen byggs efter merge.
+> (36 %, upp från 8 %). Axels beslut i avsnitt 8. **PR #351 mergad och
+> rutinen byggd 2026-10-03** (trigger `trig_01McuhAA4Xm8aFA7PJPwwAGp`, fast
+> session `session_01GneESZrfpo5tLCp2jnZuYM`); första posten måndag
+> 2026-10-05 03:06 CEST.
 
 ## 1. Det viktigaste fyndet: kopplingen annons → redigerare är flaskhalsen
 
@@ -215,7 +218,9 @@ inte automatiskt (kursen har inget format för det).
 5. **Rutinen** `/redigerarrapport`, måndag 09:00 Manila (03:00 CEST, cron
    `0 1 * * 1` UTC) så posten ligger där när de börjar dagen, efter att
    nattvakten (00:01) och kungen (07:00 CEST söndag) skrivit etiketterna.
-   Fast session med repot som källa, som alla andra rutiner.
+   Fast session med repot som källa, som alla andra rutiner. ✅ Byggd
+   2026-10-03 på Barkås-kontot: `trig_01McuhAA4Xm8aFA7PJPwwAGp` +
+   `session_01GneESZrfpo5tLCp2jnZuYM`, sedd i `list_triggers`.
 6. **Efter två veckor:** mät om redigerarna svarar på action items och
    frågan i slutet. Inget svar på två veckor ⇒ frågan ändras, inte tas bort.
 
@@ -241,6 +246,7 @@ inte automatiskt (kursen har inget format för det).
 6. **Josh och Annabelle får ingen rapport** (Axel 2026-10-02: "dom gör andra
    uppgifter"). `konfig.json` → `utan_redigerare`. Produktägarreserven är borttagen.
 7. **Första posten går måndag 2026-10-05 via rutinen**, inte som testpost.
+   Rutinen finns (punkt 5 ovan); kvar för Axel är bara att bjuda in Gilz.
 
 ## 9. Olästa lektioner som kan ändra reglerna
 
