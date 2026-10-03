@@ -1,0 +1,143 @@
+UPPDRAG: Samla underlag (kvitton, fakturor, rapporter) till STONEBITE ECOM AB:s kontoutdrag april–augusti 2026
+
+Redovisningsbyrån saknar underlag till 347 rader på Lunar-kontona (huvudkonto 566 och kontot -361). 63 av dem är redan klara (augusti-zippen eller bankavgifter) och står INTE med nedan. Du ska hitta resten: 284 rader. Du arbetar i Chrome i Axels Google-konton och sparar filer på datorn.
+
+===== DET HÄR FÅR DU ALDRIG GÖRA =====
+- Aldrig betala, köpa, förnya, säga upp eller ändra något abonnemang eller betalkort.
+- Aldrig radera, arkivera, flytta eller svara på ett mejl. Bara söka, öppna och ladda ner.
+- Aldrig ändra en inställning i Gmail, Google Admin, Meta, Google Ads, Snapchat, Shopify, Wise, Lunar eller någon annan tjänst.
+- Aldrig skapa konton och aldrig skriva in lösenord eller koder. Kräver en sida inloggning: hoppa över den, skriv "kräver inloggning: <sida>" i listan, och fortsätt.
+- Aldrig skicka något till redovisningsbyrån eller någon annan. Axel skickar själv.
+- Aldrig öppna Lunar eller banken.
+
+===== MEJLKONTONA (alla finns i kontoväljaren uppe till höger i Gmail) =====
+1. axelodhner.business@gmail.com  (de flesta fakturor; augusti är redan genomsökt här)
+2. axel.odhner@stonebite.org
+3. subscriptions@stonebite.org  (HeyGen m.fl. abonnemang)
+4. claude5@stonebite.org
+5. claude6@stonebite.org
+6. barkas.kundservice@gmail.com  (Anthropic-fakturor har gått hit)
+Sök i ALLA sex för varje leverantör. Samma leverantör kan skicka till olika konton olika månader.
+
+===== VAR DU SPARAR =====
+Mappen "Underlag 2026 till byrån" på skrivbordet, med undermapparna 2026-04, 2026-05, 2026-06, 2026-07, 2026-08 (månaden då pengarna drogs från kontot).
+Filnamn: ÅÅÅÅ-MM-DD_Leverantör_belopp.pdf, t.ex. 2026-06-11_OpenAI_203,45.pdf.
+Har mejlet en PDF-bilaga: ladda ner bilagan. Är kvittot bara text i mejlet: öppna mejlet, Skriv ut (Ctrl+P), välj "Spara som PDF".
+En faktura i annan valuta (USD, EUR) räknas som rätt om datumet stämmer inom 3 dagar och beloppet stämmer ungefär med kronbeloppet efter växelkurs.
+
+===== SÅ SÖKER DU I GMAIL =====
+Använd sökfältet med datum, till exempel:
+  from:(heygen) after:2026/06/01 before:2026/09/05
+  (faktura OR kvitto OR receipt OR invoice) heygen after:2026/06/01
+  has:attachment filename:pdf openai after:2026/05/25
+Sök från cirka 5 dagar före till 5 dagar efter datumet på raden. Kolla även fliken "Kampanjer"/"Uppdateringar" och skräpposten (Gmail söker där bara om du lägger till in:anywhere).
+
+Tips per leverantör:
+- Wise: mejl "You sent …", "Transfer sent", "Your transfer to … is complete" eller "money received". Spara mejlet som PDF. Mottagarens namn ska stå med.
+- CapCut: kvittomejl från CapCut/ByteDance. Raderna märkta "(Lunar -361)" är det andra kortet.
+- Shopify-fakturor: ämnet "Faktura … för <butik>", numret på raden är fakturanumret.
+- Fortnox Finans AB: fakturor från Jemsu AB och andra som betalats via Fortnox ("Här kommer din faktura", "Förfallen faktura"). Matcha beloppet.
+- HeyGen, Higgsfield, ElevenLabs, Wetracked, Anthropic, OpenAI, Klaviyo, Railway: kvitto/invoice från Stripe ("Your receipt from …", "Invoice …"). Anthropic 1 879,20 kr 7/8 heter troligen Invoice ZZSLUJXA-0001 (septembers -0002 finns redan).
+- Google Workspace: ämnet "Your Google Workspace invoice is available" eller sök "Google Workspace" + "invoice". Finns ingen PDF i mejlet: se Del B.
+- Google One / Google Play: "Your Google Play order receipt".
+- Spotify, DeepL, Atlassian (Loom), Loopia, STRATO, dotno.domains, Whop (Ecomtalent), Freemius, Temu, AliExpress, Amazon, Booking.com: orderbekräftelse/kvitto i mejlen.
+- "Ads" 10 365,20 kr 25/8: okänd annonstjänst. Sök på beloppet "10 365" och "10365" och på "ads" + "receipt" runt 25/8 (TikTok, Pinterest, Microsoft, Snapchat).
+- Butiksköp (Clas Ohlson, Jysk, NetOnNet, Kjell, Preem, OKQ8, restauranger, Johans MC-service, Autolane, SP Siloe, Hereford, Kaldeiska föreningen): sök butiksnamnet. E-kvitto, orderbekräftelse eller Kivra-notis räcker. Finns inget: skriv "inget i mejlen".
+- International transfer och de två rader som bara heter ett nummer (253364340 och 2668873405): sök Wise-, Lunar- och betalmejl samma dag och beloppet. 253364340 med 640 573 kr den 6/7 kan vara en betalning till Skatteverket eller en leverantör: sök "253364340" och "640 573" i alla konton. Skriv vem mottagaren var om du hittar det.
+
+===== DEL A: SÖK I MEJLEN =====
+Gå igenom raderna under "Mejl" och "Mejl + Axel" nedan, en i taget.
+
+===== DEL B: PORTALER (bara om Axel redan är inloggad i Chrome) =====
+- Meta: business.facebook.com → Fakturering och betalningar → Betalningsaktivitet. Välj annonskontot, sätt datum, och ladda ner kvittot för varje rad. Koden efter "FACEBK *" (t.ex. GZ9WAW5NX2) är transaktions-id:t och står på kvittot. Kontona att kolla: MagiBorsten 1867947880635861, SnarkLös 1346450049878358, Sushi kanske? 1550615276530638, nya kungen 730973156224390, Magiborsten NO 1050941584152547, FI 1619718346388201, DK 915422744950975, UK 1107817401910319, Snark mexico 918424617391896. "SP META STORE - INTL" 6 069 kr 4/6 är ett köp i Meta Store (glasögon?): sök mejl "Meta Store" + "order".
+- Google Ads: ads.google.com → Fakturering → Dokument, konto 361-188-7178 och 139-156-9447. Ladda ner kvittona/kontoutdragen för juli och augusti.
+- Snapchat: ads.snapchat.com → Billing → Payment history (eller Invoices) för augusti. En månadsrapport som täcker alla 39 dragningar räcker.
+- Shopify-utbetalningar: butikens admin → Ekonomi (Finance) → Utbetalningar (Payouts). Ladda ner utbetalningsrapporten för varje datum nedan. Datumen 19–31/8 hör mest till Bäverbutiken (baverbutiken.se), men kolla också Matstrumpor och CaraShell om beloppet inte finns.
+- Google Workspace: admin.google.com → Fakturering → Konton → Transaktioner, ladda ner fakturorna för maj–augusti för stonebite.org och för beverkobling-domänen.
+- HeyGen, Higgsfield, ElevenLabs, Wetracked, Klaviyo, OpenAI: Settings → Billing → Invoices, bara för de rader mejlen inte gav.
+
+===== DEL C: RADER SOM BARA AXEL KAN SVARA PÅ =====
+Leta inte efter dem i portaler. Skriv bara upp dem i slutrapporten:
+- Egna överföringar till Axel Odhner (EUR): byrån behöver kontoutdraget från det mottagande kontot och vad pengarna användes till.
+- Tre inbetalningar på 18 133,51 kr (Oscar 6/8, "2026-001" 7/8, Awais 8/8): byrån behöver kundfakturan som skickades.
+Sök ändå en gång i mejlen på "2026-001" och "18 133" och spara det du hittar.
+
+===== RADERNA =====
+Format: datum belopp. "INBETALNING" = pengar in. Allt annat = pengar ut.
+
+### Mejl
+- Wise (18 st): 2026-04-21 200,00 kr INBETALNING; 2026-05-13 520,00 kr; 2026-05-13 520,00 kr; 2026-05-16 1 557,00 kr; 2026-05-20 520,00 kr INBETALNING; 2026-05-23 200,00 kr; 2026-06-04 190,48 kr; 2026-06-16 2 106,48 kr; 2026-06-16 5 102,66 kr; 2026-06-19 19 389,89 kr; 2026-07-03 3 100,00 kr; 2026-07-03 5 182,50 kr; 2026-07-07 19 613,36 kr; 2026-07-16 2 304,05 kr; 2026-07-16 3 396,99 kr; 2026-07-16 6 400,13 kr; 2026-07-16 6 646,29 kr; 2026-07-17 993,60 kr
+- CapCut (9 st): 2026-05-08 14,57 kr (Lunar -361); 2026-06-03 349,00 kr; 2026-06-08 74,52 kr (Lunar -361); 2026-07-03 349,00 kr; 2026-07-07 76,62 kr (Lunar -361); 2026-07-08 299,00 kr; 2026-07-12 799,00 kr; 2026-08-07 76,36 kr (Lunar -361); 2026-08-12 799,00 kr
+- Google One / Google Play (4 st): 2026-06-26 257,71 kr; 2026-07-26 257,52 kr; 2026-07-30 5,00 kr; 2026-08-26 257,81 kr
+- Shopify-fakturor (7 st): 2026-05-06 504,97 kr 524607020; 2026-05-18 510,50 kr 530107068; 2026-05-29 504,74 kr 528650370; 2026-05-29 100,64 kr 536138851; 2026-06-04 1 429,42 kr 538572928; 2026-07-30 2 068,90 kr 565549351; 2026-08-11 182,68 kr 571696440
+- Fortnox Finans AB (6 st): 2026-05-13 12 498,00 kr; 2026-05-13 5 091,00 kr; 2026-06-08 5 031,00 kr; 2026-07-13 4 525,00 kr; 2026-08-05 4 778,82 kr; 2026-08-05 1 301,69 kr
+- HEYGEN TECHNOLOGY INC. (6 st): 2026-06-12 285,77 kr; 2026-06-26 197,08 kr; 2026-07-12 482,85 kr; 2026-08-09 982,83 kr; 2026-08-17 482,85 kr; 2026-08-30 4 982,28 kr
+- HIGGSFIELD INC. (6 st): 2026-06-21 675,73 kr; 2026-07-04 502,18 kr; 2026-07-07 492,69 kr; 2026-07-20 2 571,12 kr; 2026-08-01 485,30 kr; 2026-08-19 355,46 kr
+- ELEVENLABS.IO (5 st): 2026-05-20 105,44 kr; 2026-06-09 192,00 kr; 2026-06-18 190,82 kr; 2026-06-20 213,29 kr; 2026-08-20 212,27 kr
+- WETRACKED.IO (5 st): 2026-05-26 1 413,93 kr; 2026-06-25 1 474,33 kr; 2026-07-26 1 473,41 kr; 2026-08-11 962,70 kr; 2026-08-25 2 391,73 kr
+- Google Workspace, domänen beverkobling/beverbutikken ('_beverko', 'WORKSPACE BEVE') (4 st): 2026-05-03 24,55 kr; 2026-06-03 74,95 kr; 2026-07-03 91,06 kr; 2026-08-03 90,31 kr
+- Google Workspace, domänen stonebite.org ('_stonebi') (3 st): 2026-05-03 33,68 kr; 2026-06-03 67,20 kr; 2026-08-03 151,65 kr
+- Spotify (4 st): 2026-06-02 129,00 kr; 2026-06-27 129,00 kr; 2026-07-27 129,00 kr; 2026-08-27 129,00 kr
+- ANTHROPIC* CLAUDE SUB (4 st): 2026-07-03 202,01 kr; 2026-07-21 2 011,90 kr; 2026-08-04 200,71 kr; 2026-08-07 1 879,20 kr
+- WHOP*ECOMTALENT (3 st): 2026-06-10 9 608,40 kr; 2026-07-10 9 812,32 kr; 2026-08-09 9 598,14 kr
+- OPENAI *CHATGPT SUBSCR (3 st): 2026-06-11 203,45 kr; 2026-07-11 206,23 kr; 2026-08-11 204,80 kr
+- ATLASSIAN (2 st): 2026-07-02 221,02 kr; 2026-07-29 236,72 kr
+- LOOPIA AB (2 st): 2026-07-02 485,00 kr; 2026-07-07 123,75 kr
+- WWW.DOTNO.DOMAINS (1 st): 2026-05-04 271,60 kr
+- ÖVERFÖRING (1 st): 2026-05-04 100,00 kr INBETALNING
+- Transfer (1 st): 2026-05-06 500,00 kr (Lunar -361) INBETALNING
+- STRATO AG (1 st): 2026-05-19 141,00 kr
+- WL*GOOGLE (1 st): 2026-07-03 0,11 kr
+- DEEPL* SUB 19AENGVLWVJ (1 st): 2026-07-09 802,93 kr
+- Temu.com (1 st): 2026-07-19 1 681,64 kr
+- www aliexpress com (1 st): 2026-07-20 1 276,13 kr
+- AmazonMktplc (1 st): 2026-07-30 455,81 kr
+- BKG*Hotel at Booking.c (1 st): 2026-07-31 3 190,74 kr
+- KLAVIYO INC. SOFTWARE (1 st): 2026-08-11 673,89 kr
+- Ads (1 st): 2026-08-25 10 365,20 kr
+- FREEMIUS* WHOP DOWNLOA (1 st): 2026-08-25 119,97 kr
+
+### Portal
+- Meta (FACEBK) (53 st): 2026-06-03 37,50 kr RZ999RMUT2; 2026-06-06 3 512,47 kr 8XY49RMNX2; 2026-06-06 2 654,37 kr 9ZKQUSVMX2; 2026-06-06 3 714,49 kr RK3MLS5NX2; 2026-06-07 3 491,05 kr UDF8SSHNX2; 2026-06-08 4 728,61 kr BGWMLRZMX2; 2026-06-08 3 420,48 kr 9J57ZSHNX2; 2026-06-08 4 512,80 kr 7RRQCSDNX2; 2026-06-09 4 050,70 kr HTBBQRMNX2; 2026-06-09 3 943,99 kr Z6U84THNX2; 2026-07-08 129 395,14 kr GZ9WAW5NX2; 2026-07-16 114 136,88 kr BHS2BXVMX2; 2026-07-17 15 436,00 kr FFMTPWDNX2; 2026-07-18 15 436,00 kr P9QH6WZMX2; 2026-07-20 15 436,00 kr 49CB2XDNX2; 2026-07-21 251,00 kr WS696X5VT2; 2026-07-21 251,00 kr 4BBTQYMVT2; 2026-07-21 251,00 kr P5SE7YRUT2; 2026-07-22 15 436,00 kr 7M4QRX5NX2; 2026-07-22 251,00 kr TGJXBXHVT2; 2026-07-22 448,00 kr S5UEDXHVT2; 2026-07-22 448,00 kr LQJHCXVUT2; 2026-07-22 448,00 kr C9PRUYMVT2; 2026-07-22 448,00 kr XA83EXHVT2; 2026-07-23 448,00 kr RKMJDYRUT2; 2026-07-23 448,00 kr FQBNGYRUT2; 2026-07-23 448,00 kr JSTVFXVUT2; 2026-07-23 448,00 kr 2ENNDYRUT2; 2026-07-23 448,00 kr NQRPYYMVT2; 2026-07-23 448,00 kr 8B9HFX9VT2; 2026-07-23 448,00 kr M4C6WYMVT2; 2026-07-24 448,00 kr 6NWW3XMUT2; 2026-07-24 448,00 kr 8S4VEX5VT2; 2026-07-24 448,00 kr ZX37KX9VT2; 2026-07-24 735,00 kr SSPTKYRUT2; 2026-07-26 1 202,00 kr ASVQ5ZMVT2; 2026-07-26 15 436,00 kr 7YCWVWZMX2; 2026-07-26 773,00 kr 4LE5QXHVT2; 2026-07-26 2 277,51 kr LE9TWWMNX2; 2026-07-26 1 527,00 kr XKW99ZMVT2; 2026-07-27 2 479,00 kr M2DFYXVUT2; 2026-07-27 2 479,00 kr S258GWZUT2; 2026-07-27 2 479,00 kr M3ARTYRUT2; 2026-07-27 2 479,00 kr 9EZJDZMVT2; 2026-07-28 1 768,00 kr W3G9YYRUT2; 2026-07-28 15 436,00 kr 7ASKNYVMX2; 2026-07-28 3 762,00 kr BNZBGZMVT2; 2026-07-29 3 454,00 kr K7K9HYDVT2; 2026-07-29 3 362,00 kr BYHZMXMUT2; 2026-07-30 15 436,00 kr E3BLSYHNX2; 2026-07-30 15 436,00 kr YDM7QXRNX2; 2026-07-30 5 327,00 kr SEMFCYHVT2; 2026-07-31 15 436,00 kr DEQ2JXMNX2
+- Snapchat Ads (39 st): 2026-08-13 43,34 kr; 2026-08-13 54,33 kr; 2026-08-13 50,03 kr; 2026-08-13 44,55 kr; 2026-08-13 105,95 kr; 2026-08-13 45,97 kr; 2026-08-13 282,68 kr; 2026-08-13 72,78 kr; 2026-08-13 106,24 kr; 2026-08-13 13,98 kr; 2026-08-13 48,08 kr; 2026-08-13 51,96 kr; 2026-08-13 117,99 kr; 2026-08-13 93,18 kr; 2026-08-13 41,85 kr; 2026-08-14 161,05 kr; 2026-08-14 123,98 kr; 2026-08-14 139,43 kr; 2026-08-14 86,19 kr; 2026-08-14 88,72 kr; 2026-08-14 211,00 kr; 2026-08-14 197,46 kr; 2026-08-14 49,89 kr; 2026-08-15 24,61 kr; 2026-08-15 502,78 kr; 2026-08-16 386,05 kr; 2026-08-16 205,49 kr; 2026-08-16 103,08 kr; 2026-08-16 50,29 kr; 2026-08-16 169,40 kr; 2026-08-16 86,27 kr; 2026-08-17 500,00 kr; 2026-08-18 500,00 kr; 2026-08-19 1 000,00 kr; 2026-08-20 1 000,00 kr; 2026-08-21 1 000,00 kr; 2026-08-22 171,88 kr; 2026-08-22 25,87 kr; 2026-08-23 4,81 kr
+- Shopify-utbetalningar (STRIPE Shopi) (20 st): 2026-08-19 10 720,25 kr INBETALNING; 2026-08-20 7 279,03 kr INBETALNING; 2026-08-21 2 359,81 kr INBETALNING; 2026-08-21 9 137,53 kr INBETALNING; 2026-08-24 369,91 kr INBETALNING; 2026-08-24 6 180,39 kr INBETALNING; 2026-08-24 7 996,31 kr INBETALNING; 2026-08-25 2 197,65 kr INBETALNING; 2026-08-25 4 335,90 kr INBETALNING; 2026-08-25 5 282,55 kr INBETALNING; 2026-08-26 2 565,27 kr INBETALNING; 2026-08-26 6 627,19 kr INBETALNING; 2026-08-26 15 199,96 kr INBETALNING; 2026-08-27 8 585,00 kr INBETALNING; 2026-08-28 2 208,40 kr INBETALNING; 2026-08-28 2 577,39 kr INBETALNING; 2026-08-28 2 809,28 kr INBETALNING; 2026-08-31 829,53 kr INBETALNING; 2026-08-31 2 773,74 kr INBETALNING; 2026-08-31 8 440,39 kr INBETALNING
+- Google Ads 3611887178 (16 st): 2026-07-19 2 000,00 kr; 2026-07-31 3 500,00 kr; 2026-08-03 499,31 kr; 2026-08-11 5 000,00 kr; 2026-08-12 5 000,00 kr; 2026-08-13 5 000,00 kr; 2026-08-16 5 000,00 kr; 2026-08-17 5 000,00 kr; 2026-08-18 5 000,00 kr; 2026-08-19 5 000,00 kr; 2026-08-20 5 000,00 kr; 2026-08-21 5 000,00 kr; 2026-08-22 5 000,00 kr; 2026-08-23 5 000,00 kr; 2026-08-24 5 000,00 kr; 2026-08-29 5 000,00 kr
+- Google Ads 1391569447 (6 st): 2026-07-21 100,00 kr; 2026-07-21 500,00 kr; 2026-07-24 1 000,00 kr; 2026-07-31 2 000,00 kr; 2026-08-03 557,30 kr; 2026-08-13 3 500,00 kr
+- SP META STORE - INTL (1 st): 2026-06-04 6 069,00 kr
+
+### Mejl + Axel
+- International transfer (16 st): 2026-04-10 43 623,01 kr; 2026-04-13 32 825,84 kr; 2026-04-16 32 636,85 kr; 2026-04-21 32 467,03 kr; 2026-04-22 473,98 kr; 2026-04-27 29 299,14 kr; 2026-05-11 10 000,00 kr; 2026-05-13 1 875,00 kr; 2026-05-15 50 000,00 kr; 2026-05-20 110 000,00 kr; 2026-06-17 89 000,00 kr; 2026-07-06 104 152,12 kr; 2026-07-09 1 627,25 kr; 2026-07-16 34 957,85 kr; 2026-07-20 9 469,38 kr; 2026-08-03 3 500,00 kr
+- CLAS OHLSON (1 st): 2026-05-03 297,70 kr
+- PREEM KUNG?LV YTTERBY (1 st): 2026-05-08 797,17 kr
+- RESTAURANG GRILL (1 st): 2026-05-10 2 560,95 kr
+- Korvbyran AB (1 st): 2026-05-11 159,00 kr
+- OKQ8 NYKOPING BRANDKaR (1 st): 2026-05-14 952,09 kr
+- Restoria AB - Dinner (1 st): 2026-05-19 3 063,50 kr
+- JOHANS MC-SERVI (1 st): 2026-06-30 14 820,30 kr
+- 253364340.0 (1 st): 2026-07-06 640 573,00 kr
+- Hej! (1 st): 2026-07-15 4 000,00 kr
+- AUTOLANE AB (1 st): 2026-07-17 12 782,00 kr
+- 2668873405.0 (1 st): 2026-07-29 1 583,00 kr
+- KjellCo Huddinge (1 st): 2026-08-01 149,90 kr
+- SP SILOE (1 st): 2026-08-10 2 200,00 kr
+- JYSK BACKAPLAN (1 st): 2026-08-16 2 162,00 kr
+- KALDEISKA FORENINGEN I G (1 st): 2026-08-19 1 020,00 kr
+- NETONNET UDDEVALLA 102 (1 st): 2026-08-24 8 558,00 kr
+- CLAS OHLSON AB (1 st): 2026-08-26 379,90 kr
+- HEREFORD SENTRU (1 st): 2026-08-31 1 210,40 kr
+
+### Bara Axel
+- AXEL ODHNER (5 st): 2026-07-28 19 351,49 kr; 2026-08-10 37 121,96 kr; 2026-08-20 169 840,24 kr; 2026-08-24 119 268,33 kr; 2026-08-27 112 773,24 kr
+- Axel Odhner (2 st): 2026-08-03 66 741,86 kr; 2026-08-06 56 916,85 kr
+- Axel ODHNER (1 st): 2026-07-22 9 053,84 kr
+- Oscar (1 st): 2026-08-06 18 133,51 kr INBETALNING
+- 2026-001 (1 st): 2026-08-07 18 133,51 kr INBETALNING
+- Awais (1 st): 2026-08-08 18 133,51 kr INBETALNING
+
+===== SLUTRAPPORT (det sista du gör) =====
+1. Skapa i mappen "Underlag 2026 till byrån" ett Google-ark eller en textfil "LISTA.txt" med EN rad per rad ovan: datum, leverantör, belopp, filnamn du sparade ELLER "inget hittat" / "kräver inloggning: <sida>" / "Axel".
+2. Räkna: hittade, inte hittade, kräver inloggning.
+3. Packa mappen som "Underlag 2026 till byrån.zip".
+4. Skriv till Axel, kort, på svenska: hur många av 284 rader som har underlag, vilka sidor han måste logga in på, och vilka rader bara han kan svara på.
+
+KONTROLL: öppna tre slumpvisa PDF:er och se att datum och belopp stämmer med raden.
