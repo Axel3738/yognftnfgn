@@ -1,0 +1,130 @@
+{
+  "OB_111": {
+    "srt": [
+      "This silver-coated weave sheds water off the roof.",
+      "Pour water on two hundred ten D Oxford. It runs off. Not a thin tarp.",
+      "Sun wears the surface, not the roof.",
+      "One hundred ninety-nine dollars, was two hundred forty-nine. Save fifty dollars, twenty percent off."
+    ],
+    "platta": [
+      "$199 (regular $249),",
+      "save $50 (20% off)"
+    ],
+    "message": "Water shouldn't sit on your RV roof.\n\nOur silver-coated 210D oxford weave lets it run off instead. Not a thin tarp.\n\nThe sun wears on the surface, not the roof.\n\nStraps on all four sides, 8 ft each, hook under the bottom edge of the body.\n\n$199 (was $249) for the 21 × 10 ft size. Save $50, 20% off.",
+    "headline": "Water runs straight off the roof",
+    "description": "Silver-coated 210D weave",
+    "au": {
+      "message": "Water shouldn't sit on your RV roof.\n\nOur silver-coated 210D oxford weave lets it run away instead. Not a thin tarp.\n\nThe sun wears on the surface, not the roof.\n\nStraps on all four sides, 8 ft each, hook under the bottom edge of the body.",
+      "headline": "Water runs clear of the roof",
+      "description": "Silver-coated 210D weave"
+    }
+  },
+  "OB_113": {
+    "srt": [
+      "A tarp's corner lifts in the wind, despite the string. Ours hooks under the body's bottom edge, all four sides.",
+      "Two reinforced roof straps hold the fabric down in the wind.",
+      "One hundred ninety-nine dollars. Save fifty dollars. Twenty percent off."
+    ],
+    "platta": [
+      "$199",
+      "Save $50",
+      "20% off"
+    ],
+    "message": "A basic tarp can lift at the corner in the wind, even with a string tied on.\n\nOurs has straps on all four sides, 8 ft each, set in a buckle. They hook under the bottom edge of the body.\n\nTwo reinforced 34 ft ratchet straps go across the roof. Both are included.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "Straps hook under all four sides",
+    "description": "Strapped on all four sides",
+    "au": {
+      "message": "A basic tarp can lift at the corner in the wind, even with a string tied on.\n\nOurs has straps on all four sides, 8 ft each, set in a buckle. They hook under the bottom edge of the body.\n\nTwo reinforced 34 ft ratchet straps go across the roof. Both are included.",
+      "headline": "Straps hook under all four sides",
+      "description": "Strapped on all four sides"
+    }
+  },
+  "OB_114": {
+    "srt": [
+      "On a thin tarp, water puddles.",
+      "On two hundred ten D Oxford, water runs off instead of standing.",
+      "Hatch sealant isn't left sitting in water all winter.",
+      "One hundred ninety-nine dollars. Save fifty dollars. Twenty percent off."
+    ],
+    "platta": [
+      "$199",
+      "Save $50",
+      "20% off"
+    ],
+    "message": "On a thin tarp, water can sit in a puddle.\n\nOn our 210D oxford weave, it runs off instead of standing.\n\nThe sealant around your roof hatches doesn't sit in water all winter.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "Water runs off the 210D weave",
+    "description": "Sealant out of standing water",
+    "au": {
+      "message": "On a thin tarp, water can sit in a puddle.\n\nOn our 210D oxford weave, it runs away instead of standing.\n\nThe sealant around your roof hatches doesn't sit in water all winter.",
+      "headline": "Water drains from the 210D weave",
+      "description": "Sealant out of standing water"
+    }
+  },
+  "OB_117": {
+    "srt": [
+      "A full cover piles up on the garage floor.",
+      "Ours folds to an arm-sized pack after the season. Just the roof, not the whole trailer. One person.",
+      "One hundred ninety-nine dollars. Save fifty dollars. Twenty percent off."
+    ],
+    "message": "A full cover protects more of the trailer. After winter, it's also a big pile to deal with.\n\nOurs covers just the roof and folds to an arm-sized pack.\n\nOne person is enough to put it on and take it off.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "An arm-sized pack after the season",
+    "description": "Roof only, one person",
+    "au": {
+      "message": "A full cover protects more of the trailer. After winter, it's also a big pile to deal with.\n\nOurs covers just the roof and folds to an arm-sized pack.\n\nOne person is enough to put it on and take it down.",
+      "headline": "An arm-sized pack after the season",
+      "description": "Roof only, one person"
+    }
+  },
+  "OB_118": {
+    "srt": [
+      "Full covers protect more of the trailer.",
+      "This covers the roof. The edge hangs twelve to sixteen inches down the sides.",
+      "The roof and wall seam is covered too.",
+      "Door, windows, hatches stay clear.",
+      "One hundred ninety-nine dollars. Save fifty dollars. Twenty percent off."
+    ],
+    "message": "A full cover protects more of the trailer.\n\nOurs covers the roof, and the edge hangs 12 to 16 in down over the sides, so the seam where roof meets wall is covered too.\n\nDoor, windows and hatches stay clear.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "The edge hangs 12 to 16 in",
+    "description": "Door, windows, hatches clear",
+    "au": {
+      "message": "A full cover protects more of the trailer.\n\nOurs covers the roof, and the edge hangs 12 to 16 in down over the sides, so the seam where roof meets wall is covered too.\n\nDoor, windows and hatches stay clear.",
+      "headline": "The edge hangs 12 to 16 in",
+      "description": "Door, windows, hatches clear"
+    }
+  },
+  "OB_119": {
+    "srt": [
+      "Tape measure at the edge: twelve to sixteen inches.",
+      "The roof-to-wall seam is under the edge.",
+      "One lap around the trailer. Door, windows, hatches clear.",
+      "One hundred ninety-nine dollars,",
+      "save fifty dollars,",
+      "twenty percent off."
+    ],
+    "message": "A full cover protects more of the trailer.\n\nOn ours, the edge hangs 12 to 16 in down, measured with a tape. The roof and wall seam sits under it.\n\nDoor, windows and hatches stay clear all winter.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "12 to 16 in down, measured",
+    "description": "Seam sits under the edge",
+    "au": {
+      "message": "A full cover protects more of the trailer.\n\nOn ours, the edge hangs 12 to 16 in down, measured with a tape. The roof and wall seam sits under it.\n\nDoor, windows and hatches stay clear all winter.",
+      "headline": "12 to 16 in down, measured",
+      "description": "Seam sits under the edge"
+    }
+  },
+  "OB_122": {
+    "srt": [
+      "In spring, the straps unhook, one by one.",
+      "It folds to an arm-sized pack after the season.",
+      "On from fall to spring. Next fall, the same straps go back on.",
+      "One hundred ninety-nine dollars,",
+      "save fifty dollars, twenty percent off."
+    ],
+    "message": "After a winter, a lot of people wonder what happens next.\n\nIn spring, the straps unhook one by one and the cover folds to an arm-sized pack.\n\nIt goes on from fall to spring, and the same straps go back on next fall.\n\n$199 (was $249). Save $50, 20% off.",
+    "headline": "Off in spring, back on in fall",
+    "description": "Folds to an arm-sized pack",
+    "au": {
+      "message": "After a winter, a lot of people wonder what happens next.\n\nIn spring, the straps unhook one by one and the cover folds to an arm-sized pack.\n\nIt goes on from fall to spring, and the same straps go back on next fall.",
+      "headline": "Unhooked in spring, back on in fall",
+      "description": "Folds to an arm-sized pack"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "in": "../forbehandlad/carashell_CaraShellRoof_OB_111_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_OB_111_H1.mp4",
+ "srt": "../srt-us/carashell_CaraShellRoof_OB_111_H1.srt",
+ "captions": {
+  "zon": [
+   800,
+   950
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 861,
+  "h_min": 30,
+  "h_max": 120,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    10.8,
+    30
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/ob111-pris.png",
+   "t": [
+    11.0,
+    30
+   ]
+  }
+ ],
+ "qa": "qa-CaraShellRoof_OB_111_H1"
+}
