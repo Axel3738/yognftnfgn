@@ -61,7 +61,7 @@ bär då de rader konceptet kräver (`kraver`). Saknas raden väljer rutinen.
 ```bash
 node bildannonser/koncept.mjs --valj --vinkel CS --produkt Takoverdrag \
   --scen "on a caravan in a Swedish garden in October" \
-  --produkt-beskrivning "black 420D caravan roof cover with straps"
+  --produkt-beskrivning "black 210D caravan roof cover with straps"
 ```
 
 ger konceptet, orsaken (vinkeln, hur många gånger produkten fått det, vilka

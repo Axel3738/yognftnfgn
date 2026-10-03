@@ -283,7 +283,8 @@
         }
       ],
       "regler": [
-        "Badgen är ett faktum ur produktsidan (420D, 6,5 × 3 m), aldrig ett värdeord."
+        "Badgen är ett faktum läst ur produktsidan vid körningen (väven, måttet, remlängden), aldrig ett värdeord och aldrig ur minnet: taköverdragets sida säger 210D-oxfordväv och 3 × 6,5 m, medan ett tidigare exempel här sa 420D.",
+        "Rubriken är MEKANISMEN, och mekanismen står på produktsidan eller i briefen. En mekanism som inte går att peka på där är ett falskt löfte (Axels dom 2026-10-03 på demon \"Överdraget gör att snön glider av\": sidan säger inget om snö som glider)."
       ],
       "evolve_namn": "5) Specific Pain Point",
       "prioritet": "hog",
@@ -595,7 +596,8 @@
         }
       ],
       "regler": [
-        "'Dem' är det kunden använder i dag, aldrig ett konkurrentnamn (docs/copy-regler.md)."
+        "'Dem' är det kunden använder i dag, aldrig ett konkurrentnamn (docs/copy-regler.md).",
+        "Anmärkningarna om alternativet kommer ur produktsidans egen jämförelse (taköverdraget mot helöverdraget: två behövs, skaver mot lacken, täcker dörr och fönster, stort och tungt), aldrig ur sessionens huvud."
       ],
       "evolve_namn": "13) Minimal Us vs Them",
       "prioritet": "hog",
@@ -855,5 +857,10 @@
     "Säsong (fars dag, Black Friday): en kampanj, tre adsets, de bästa annonserna med rea-sticker (K16) plus några nya rea-bilder (K01, K17, K18). Aldrig ny creative från noll för en rea.",
     "Prioritet hog väljs först, normal sedan, lag bara när briefen ber om det. Chadbot gav ingen gräns för antal koncept per vecka; problemet var en layout på 350 bilder, inte för få layouter.",
     "Konceptet skrivs i logg.jsonl, inte i annonsnamnet: Chadbot hade inget om namnkonventioner, och docs/naming-convention.md är normativ."
+  ],
+  "regler_for_varje_rad": [
+    "Varje påstående i bild kommer ordagrant ur briefen, och briefens påståenden ur produktsidan, DNA:n eller en mätt lärdom. Basen ger layout och bild, aldrig ett ord copy.",
+    "Mätt 2026-10-03 i demon åt Axel: sessionen skrev fyra rader själv (snön som glider av, presenningens fyra fel, \"Lagerrensning\" utan beslut, snöns vikt). Axel: \"K07 har falskt löfte\". Rutinen får aldrig fylla en rad själv; saknas raden i briefen väljs ett koncept som inte kräver den.",
+    "En rea-rad (\"Lagerrensning\", \"sista dagen\") kräver REA BESLUTAD AV ÄGAREN i briefen. Ett överstruket jämförpris ur produktsidan är inte en rea."
   ]
 }
