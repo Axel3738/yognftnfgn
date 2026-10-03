@@ -1,0 +1,24 @@
+{
+ "feiesett": {
+  "produkt": "Sotarset",
+  "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+  "pris_nok": 389,
+  "jamforpris_nok": 509,
+  "videos": {
+   "Sotarset_NO_FD_3_H3": "meta:1104601858631025",
+   "Sotarset_NO_FD_3_H2": "meta:1080887241524668",
+   "Sotarset_NO_FD_3_H1": "meta:1310527885483074",
+   "Sotarset_NO_PD_1_H5": "meta:1122749150178668"
+  }
+ },
+ "takovertrekk": {
+  "produkt": "Takovertrekk",
+  "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+  "pris_nok": 1189,
+  "jamforpris_nok": 1549,
+  "videos": {
+   "Takovertrekk_NO_CS_2_H2": "meta:1797020414825295",
+   "Takovertrekk_NO_CS_2_H3": "meta:2857875084598208"
+  }
+ }
+}

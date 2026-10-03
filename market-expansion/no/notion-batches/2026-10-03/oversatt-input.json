@@ -1,0 +1,993 @@
+{
+ "_om": "Allt underlag subagenten behöver. Fakta är LÄSTA live ur beverbutikken.no i dag, aldrig ur den svenska bilden.",
+ "marknad": {
+  "kod": "NO",
+  "sprak": "norsk bokmål",
+  "valuta": "NOK",
+  "farsdag": "søndag 8. november 2026 — samme dag som i Sverige (målt, timeanddate.no/snl.no)",
+  "sista_bestallning": "19. oktober — holder til Norge (leveranse p90 18,8 døgn, målt på 587 leverte ordrer)",
+  "angerrett": "14 dager fra den dagen du får varen",
+  "fri_frakt_over_nok": 300
+ },
+ "produkter": {
+  "Takovertrekk": {
+   "produkt": "Takovertrekk til campingvogn/bobil",
+   "pris_nok": 1189,
+   "jamforpris_nok": 1549,
+   "spar_nok": 360,
+   "spar_procent": 23,
+   "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+   "fakta": [
+    "9 størrelser: 3 × 5,5 til 3 × 13,5 meter (lest i butikken i dag)",
+    "210D oksfordduk med sølvbelagt overside",
+    "stropper på alle fire sider, 2,5 m, justerbare i spennen",
+    "to ekstra forsterkede strammestropper, 10,5 m, følger med",
+    "strammes med reim og strammesnor",
+    "ligger i ro i vind",
+    "håndteres av én person — bare taket, ikke hele vognen å kjempe med alene",
+    "et helovertrekk er tungt å få på plass alene og skurer mot lakken hele vinteren; dette ligger bare på taket",
+    "kanten henger 30 til 40 cm ned over sidene, så skjøten mellom tak og vegg ligger under duken",
+    "dør, vinduer og luker er fri",
+    "tåler en hel vintersesong ute",
+    "brettes sammen til en favnstor pakke etter sesongen, og får plass i oppbevaringsposen som følger med",
+    "vannet renner av i stedet for å samle seg ved lukene"
+   ],
+   "_fakta_kalla": "Alla rader är lästa live i dag. De elva första står på den NORSKA produktsidan. Raden om kanten 30 till 40 cm och raden om favnstor pakke står bara på den SVENSKA sidan — den norska texten är en översättning av en äldre svensk version. Påståendena är alltså SANNA om produkten (samma fynd som 2026-09-26), så de översätts, men den norska produkttexten bör kompletteras. Står i briefen."
+  },
+  "Spikkesett": {
+   "produkt": "Spikkesett 30 deler",
+   "pris_nok": 1039,
+   "jamforpris_nok": 1359,
+   "spar_nok": 320,
+   "spar_procent": 24,
+   "lank": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
+   "fakta": [
+    "30 deler i én veske",
+    "6 kniver og 6 små jern",
+    "bladbeskyttelse til hvert blad",
+    "lærstropp og pussemiddel"
+   ]
+  },
+  "Sotarset": {
+   "produkt": "Feiesett med fleksible stenger",
+   "pris_nok": 389,
+   "jamforpris_nok": 509,
+   "spar_nok": 120,
+   "spar_procent": 24,
+   "lank": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+   "fakta": [
+    "9 fleksible stenger på 41 cm",
+    "skrus sammen til 3,69 meter",
+    "nylonbørste på 100 mm"
+   ]
+  }
+ },
+ "bilder": {
+  "Takoverdrag_FD_6_1": {
+   "mall": "FD_6",
+   "former": [
+    {
+     "id": "badge",
+     "typ": "knapp",
+     "box": [
+      50,
+      26,
+      258,
+      100
+     ],
+     "farg": [
+      192,
+      36,
+      30
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Fars dag-rea"
+     ]
+    },
+    {
+     "id": "rubrik1",
+     "typ": "text",
+     "box": [
+      155,
+      164,
+      928,
+      236
+     ],
+     "fet": true,
+     "rader": [
+      "Helöverdrag behöver"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rubrik2",
+     "typ": "text",
+     "box": [
+      359,
+      277,
+      718,
+      342
+     ],
+     "fet": true,
+     "rader": [
+      "oftast två."
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rubrik3",
+     "typ": "text",
+     "box": [
+      100,
+      406,
+      975,
+      463
+     ],
+     "fet": true,
+     "rader": [
+      "Taket klarar han ensam."
+     ]
+    },
+    {
+     "id": "underrad",
+     "typ": "text",
+     "box": [
+      209,
+      539,
+      869,
+      568
+     ],
+     "rader": [
+      "Det här ligger bara på taket och rör inte lacken."
+     ]
+    },
+    {
+     "id": "pris",
+     "typ": "text",
+     "box": [
+      80,
+      1092,
+      1003,
+      1163
+     ],
+     "fet": true,
+     "rader": [
+      "Från 1 129 kr, ord. 1 469 kr"
+     ]
+    },
+    {
+     "id": "botten",
+     "typ": "text",
+     "box": [
+      363,
+      1224,
+      718,
+      1246
+     ],
+     "rader": [
+      "Beställ senast 19 oktober"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_FD_6_2": {
+   "mall": "FD_6",
+   "former": [
+    {
+     "id": "badge",
+     "typ": "knapp",
+     "box": [
+      50,
+      26,
+      258,
+      100
+     ],
+     "farg": [
+      192,
+      36,
+      30
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Fars dag-rea"
+     ]
+    },
+    {
+     "id": "rubrik1",
+     "typ": "text",
+     "box": [
+      76,
+      156,
+      1002,
+      227
+     ],
+     "fet": true,
+     "rader": [
+      "Från 1 129 kr, inte 1 469 kr."
+     ]
+    },
+    {
+     "id": "underrad",
+     "typ": "text",
+     "box": [
+      148,
+      292,
+      930,
+      321
+     ],
+     "rader": [
+      "Fars dag-present: taköverdrag i 210D-väv, nio storlekar."
+     ]
+    },
+    {
+     "id": "pris",
+     "typ": "text",
+     "box": [
+      80,
+      1092,
+      1003,
+      1163
+     ],
+     "fet": true,
+     "rader": [
+      "Från 1 129 kr, ord. 1 469 kr"
+     ]
+    },
+    {
+     "id": "botten",
+     "typ": "text",
+     "box": [
+      363,
+      1224,
+      718,
+      1246
+     ],
+     "rader": [
+      "Beställ senast 19 oktober"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_FD_6_3": {
+   "mall": "FD_6",
+   "former": [
+    {
+     "id": "badge",
+     "typ": "knapp",
+     "box": [
+      50,
+      26,
+      258,
+      100
+     ],
+     "farg": [
+      192,
+      36,
+      30
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Fars dag-rea"
+     ]
+    },
+    {
+     "id": "rubrik1",
+     "typ": "text",
+     "box": [
+      175,
+      164,
+      898,
+      236
+     ],
+     "fet": true,
+     "rader": [
+      "Till fars dag: beställ"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rubrik2",
+     "typ": "text",
+     "box": [
+      203,
+      285,
+      874,
+      342
+     ],
+     "fet": true,
+     "rader": [
+      "senast 19 oktober."
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "underrad",
+     "typ": "text",
+     "box": [
+      115,
+      414,
+      962,
+      447
+     ],
+     "rader": [
+      "Taköverdraget får han på själv. Bara taket, inte hela vagnen."
+     ]
+    },
+    {
+     "id": "pris",
+     "typ": "text",
+     "box": [
+      80,
+      1092,
+      1003,
+      1163
+     ],
+     "fet": true,
+     "rader": [
+      "Från 1 129 kr, ord. 1 469 kr"
+     ]
+    },
+    {
+     "id": "botten",
+     "typ": "text",
+     "box": [
+      363,
+      1224,
+      718,
+      1246
+     ],
+     "rader": [
+      "Beställ senast 19 oktober"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_FD_6_4": {
+   "mall": "FD_6",
+   "former": [
+    {
+     "id": "badge",
+     "typ": "knapp",
+     "box": [
+      50,
+      26,
+      258,
+      100
+     ],
+     "farg": [
+      192,
+      36,
+      30
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Fars dag-rea"
+     ]
+    },
+    {
+     "id": "rubrik1",
+     "typ": "text",
+     "box": [
+      103,
+      164,
+      980,
+      232
+     ],
+     "fet": true,
+     "rader": [
+      "Dörr, fönster och luckor"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rubrik2",
+     "typ": "text",
+     "box": [
+      423,
+      285,
+      653,
+      342
+     ],
+     "fet": true,
+     "rader": [
+      "är fria."
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "underrad1",
+     "typ": "text",
+     "box": [
+      317,
+      418,
+      762,
+      440
+     ],
+     "rader": [
+      "Kanten hänger 30 till 40 cm ner."
+     ]
+    },
+    {
+     "id": "underrad2",
+     "typ": "text",
+     "box": [
+      290,
+      470,
+      788,
+      499
+     ],
+     "rader": [
+      "Efter säsongen: en famnstor packe."
+     ]
+    },
+    {
+     "id": "pris",
+     "typ": "text",
+     "box": [
+      80,
+      1092,
+      1003,
+      1163
+     ],
+     "fet": true,
+     "rader": [
+      "Från 1 129 kr, ord. 1 469 kr"
+     ]
+    },
+    {
+     "id": "botten",
+     "typ": "text",
+     "box": [
+      363,
+      1224,
+      718,
+      1246
+     ],
+     "rader": [
+      "Beställ senast 19 oktober"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_PD_10_2": {
+   "mall": "PD_10",
+   "_om": "Den här mallen DETEKTERAS rätt — formerna kommer ur oversatt-bild.py --analys, inte ur matrader.py.",
+   "former": [
+    {
+     "id": "topplatta",
+     "typ": "platta",
+     "box": [
+      32,
+      133,
+      1047,
+      475
+     ],
+     "farg": [
+      252,
+      252,
+      252
+     ],
+     "rader": [
+      "Sitter kvar när det blåser.",
+      "Nio storlekar.",
+      "Från 3 × 5,5 till 3 × 13,5 meter."
+     ],
+     "fet_rader": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "prisplatta",
+     "typ": "platta",
+     "box": [
+      33,
+      901,
+      1047,
+      1151
+     ],
+     "farg": [
+      246,
+      246,
+      246
+     ],
+     "rader": [
+      "Från 1 129 kr.",
+      "Remmar på alla fyra sidor, 2,5 m, ställs in efter din vagn."
+     ],
+     "fet_rader": [
+      0
+     ]
+    },
+    {
+     "id": "knapp",
+     "typ": "knapp",
+     "box": [
+      294,
+      1201,
+      787,
+      1308
+     ],
+     "farg": [
+      24,
+      72,
+      120
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Se alla nio storlekar."
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_PD_10_3": {
+   "mall": "PD_10",
+   "former": [
+    {
+     "id": "topplatta",
+     "typ": "platta",
+     "box": [
+      32,
+      133,
+      1047,
+      475
+     ],
+     "farg": [
+      252,
+      252,
+      252
+     ],
+     "rader": [
+      "3 × 5,5 till 3 × 13,5 meter.",
+      "En passar din.",
+      "Mät från front till bakkant. Ta storleken minst lika lång."
+     ],
+     "fet_rader": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "prisplatta",
+     "typ": "platta",
+     "box": [
+      33,
+      901,
+      1047,
+      1151
+     ],
+     "farg": [
+      246,
+      246,
+      246
+     ],
+     "rader": [
+      "Från 1 129 kr.",
+      "Remmar på alla fyra sidor, 2,5 m, ställs in efter din vagn."
+     ],
+     "fet_rader": [
+      0
+     ]
+    },
+    {
+     "id": "knapp",
+     "typ": "knapp",
+     "box": [
+      294,
+      1201,
+      787,
+      1308
+     ],
+     "farg": [
+      24,
+      72,
+      120
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Se alla nio storlekar."
+     ]
+    }
+   ]
+  },
+  "Taljset_BOF_2_1": {
+   "mall": "BOF_2",
+   "former": [
+    {
+     "id": "rubrik1",
+     "typ": "text",
+     "box": [
+      81,
+      156,
+      997,
+      236
+     ],
+     "fet": true,
+     "rader": [
+      "14 dagar från den dag du"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rubrik2",
+     "typ": "text",
+     "box": [
+      376,
+      277,
+      699,
+      342
+     ],
+     "fet": true,
+     "rader": [
+      "får varan"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "underrad1",
+     "typ": "text",
+     "box": [
+      114,
+      414,
+      966,
+      447
+     ],
+     "rader": [
+      "14 dagars ångerrätt räknat från den dag du får varan, alla 30"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "underrad2",
+     "typ": "text",
+     "box": [
+      411,
+      470,
+      669,
+      492
+     ],
+     "rader": [
+      "delarna i en väska"
+     ],
+     "block": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "pris",
+     "typ": "text",
+     "box": [
+      73,
+      1031,
+      1004,
+      1088
+     ],
+     "fet": true,
+     "rader": [
+      "869 kr. Ordinarie 1 139 kr."
+     ]
+    },
+    {
+     "id": "knapp",
+     "typ": "knapp",
+     "box": [
+      259,
+      1200,
+      820,
+      1308
+     ],
+     "farg": [
+      24,
+      72,
+      120
+     ],
+     "textfarg": [
+      255,
+      255,
+      255
+     ],
+     "fet": true,
+     "rader": [
+      "Se väskan med 30 delar"
+     ]
+    }
+   ]
+  }
+ },
+ "annonser": [
+  {
+   "mal": "Sotarset_NO_FD_3_H3",
+   "kalla": "Sotarset_FD_3_H3",
+   "typ": "video",
+   "produkt": "Sotarset",
+   "se_copy": {
+    "message": "Rensa själv mellan sotarens besök. 9 böjliga stänger à 41 cm skruvas ihop till 3,69 meter, med nylonborste på 100 mm i toppen. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+    "headline": "Sotarset till fars dag",
+    "description": "",
+    "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+   },
+   "no_lank": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "mal": "Sotarset_NO_FD_3_H2",
+   "kalla": "Sotarset_FD_3_H2",
+   "typ": "video",
+   "produkt": "Sotarset",
+   "se_copy": {
+    "message": "Rensa själv mellan sotarens besök. 9 böjliga stänger à 41 cm skruvas ihop till 3,69 meter, med nylonborste på 100 mm i toppen. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+    "headline": "Sotarset till fars dag",
+    "description": "",
+    "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+   },
+   "no_lank": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "mal": "Sotarset_NO_FD_3_H1",
+   "kalla": "Sotarset_FD_3_H1",
+   "typ": "video",
+   "produkt": "Sotarset",
+   "se_copy": {
+    "message": "Rensa själv mellan sotarens besök. 9 böjliga stänger à 41 cm skruvas ihop till 3,69 meter, med nylonborste på 100 mm i toppen. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+    "headline": "Sotarset till fars dag",
+    "description": "",
+    "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+   },
+   "no_lank": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "mal": "Sotarset_NO_PD_1_H5",
+   "kalla": "Sotarset_PD_1_H5",
+   "typ": "video",
+   "produkt": "Sotarset",
+   "se_copy": {
+    "message": "Böjliga stänger följer kröken i röret i stället för att fastna. Det gör att borsten tar sig förbi böjen. Sotarset för 459 kr, ord. 599 kr.",
+    "headline": "Följer kröken. Fastnar inte.",
+    "description": "",
+    "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+   },
+   "no_lank": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_6_4",
+   "kalla": "Takoverdrag_FD_6_4",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Helöverdrag behöver oftast två, taköverdraget får han på själv. Det ligger bara på taket, rör inte lacken och lämnar dörr, fönster och luckor fria. Fars dag-rea: från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "headline": "Taköverdrag han får på ensam",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_6_3",
+   "kalla": "Takoverdrag_FD_6_3",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Helöverdrag behöver oftast två, taköverdraget får han på själv. Det ligger bara på taket, rör inte lacken och lämnar dörr, fönster och luckor fria. Fars dag-rea: från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "headline": "Taköverdrag han får på ensam",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_6_2",
+   "kalla": "Takoverdrag_FD_6_2",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Helöverdrag behöver oftast två, taköverdraget får han på själv. Det ligger bara på taket, rör inte lacken och lämnar dörr, fönster och luckor fria. Fars dag-rea: från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "headline": "Taköverdrag han får på ensam",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_6_1",
+   "kalla": "Takoverdrag_FD_6_1",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Helöverdrag behöver oftast två, taköverdraget får han på själv. Det ligger bara på taket, rör inte lacken och lämnar dörr, fönster och luckor fria. Fars dag-rea: från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "headline": "Taköverdrag han får på ensam",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_PD_10_3",
+   "kalla": "Takoverdrag_PD_10_3",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Mät vagnen från front till bakkant, utan dragstången. Ta den storlek som är minst lika lång. Alla nio är 3 meter breda, från 1 129 kr.",
+    "headline": "En av nio passar din vagn",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_PD_10_2",
+   "kalla": "Takoverdrag_PD_10_2",
+   "typ": "bild",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Sitter kvar när det blåser. Nio storlekar, från 3 × 5,5 till 3 × 13,5 meter. Remmar på alla fyra sidor, 2,5 m, ställs in efter din vagn.",
+    "headline": "Sitter kvar när det blåser",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_3_H2",
+   "kalla": "Takoverdrag_FD_3_H2",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Taköverdrag från 1 129 kr, ord. 1 469 kr. Remmar på alla fyra sidor som du ställer in i spännet, och vattnet rinner av. Alla nio längder är 3 meter breda. Beställ senast 19 oktober.",
+    "headline": "Fars dag-rea på taköverdrag",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_FD_3_H1",
+   "kalla": "Takoverdrag_FD_3_H1",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Mät husvagnen först. Det finns nio längder, från 5,5 till 13,5 meter. Sedan remmar på alla fyra sidor, och vattnet rinner av. Fars dag-rea från 1 129 kr.",
+    "headline": "Nio längder till husvagnen",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_OB_9_H1",
+   "kalla": "Takoverdrag_OB_9_H1",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Ett löst hörn räcker för att ett överdrag ska flyga i väg. Se remmen haka fast i en krok i nederkant, på alla fyra sidor, 2,5 m och justerbara efter din vagn. Två extra spännremmar (10,5 m) ingår, utan extra kostnad. Taket är det du aldrig ser, och det som kostar mest att laga. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).",
+    "headline": "Hakar i krok, inte i en knut",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_OB_7_H1",
+   "kalla": "Takoverdrag_OB_7_H1",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Ett helöverdrag som viras runt hela vagnen blir tätt runt om, det stämmer. Det här överdraget ligger bara på taket, solen tar på ytan i stället för på taket, och vattnet rinner av i stället för att bli stående, tack vare den silverbelagda 210D-oxfordväven. Sidorna, fönstret och dörren är öppna som vanligt. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %).",
+    "headline": "Tätt och skyddat är inte samma sak",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_OB_6_H1",
+   "kalla": "Takoverdrag_OB_6_H1",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Ett helöverdrag som viras ner till marken blir tätt runt hela vagnen. Det här ligger bara på taket, så sidoväggarna, fönstren och dörren är fria. Remmarna sitter på alla fyra sidor, är 2,5 m långa och hakas i en krok i nederkant, plus två 10,5 m spännremmar. Från 1 129 kr i stället för 1 469 kr, en besparing på 340 kr, 23 %.",
+    "headline": "Bara taket täcks, inte hela vagnen",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_CS_2_H2",
+   "kalla": "Takoverdrag_CS_2_H2",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Taket kostar mest att laga, och vatten blir stående kring takluckorna om det inte skyddas.\nDet här överdraget täcker bara taket, en person sätter på det själv.\n1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %). Beställ ditt taköverdrag.",
+    "headline": "Taket kostar mest att laga.",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Takovertrekk_NO_CS_2_H3",
+   "kalla": "Takoverdrag_CS_2_H3",
+   "typ": "video",
+   "produkt": "Takovertrekk",
+   "se_copy": {
+    "message": "Taket är det du aldrig ser, och det som kostar mest att laga.\nDet här överdraget täcker bara taket: silverbelagd 210D-väv, remmar på alla fyra sidor som hakas fast i kanten.\nNio storlekar, från 3 × 5,5 till 3 × 13,5 meter. En av dem passar din husvagn.\nFrån 1 129 kr (ord. 1 469 kr, spara 340 kr / 23 %). Beställ ditt taköverdrag.",
+    "headline": "Nio storlekar. En för din husvagn.",
+    "description": "",
+    "link": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+   },
+   "no_lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "mal": "Spikkesett_NO_BOF_2_1",
+   "kalla": "Taljset_BOF_2_1",
+   "typ": "bild",
+   "produkt": "Spikkesett",
+   "se_copy": {
+    "message": "14 dagars ångerrätt räknat från den dag du får varan. Alla 30 delarna, 6 knivar och 6 järn, ligger samlade i en väska. 869 kr, ordinarie 1 139 kr.",
+    "headline": "14 dagar att ångra köpet",
+    "description": "",
+    "link": "https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn"
+   },
+   "no_lank": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern"
+  }
+ ],
+ "_rattelse": "RÄTTELSE till första omgången: fakta-listan var för kort, och subagenten strök därför annonsernas vinklar (en person klarar det, ligger stilla i vind, kanten 30 till 40 cm, favnstor pakke). De är alla belagda på produktsidan och ska ÖVERSÄTTAS, inte strykas. Regeln gäller påståenden som inte går att verifiera i Norge: svenska betyg, antal recensioner, fri frakt inom Sverige. En fysisk egenskap hos produkten är sann oavsett marknad."
+}
