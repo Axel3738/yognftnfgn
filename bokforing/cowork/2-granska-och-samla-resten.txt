@@ -7,8 +7,8 @@ Kräver en sida inloggning, kod eller lösenord: stanna och be Axel. Skriv aldri
 Skapa aldrig konton.
 
 EN MAPP FÖR ALLT
-Packa upp "Bokforing-september-2026-KOMPLETT.zip" i nedladdningsmappen. Det ger mappen
-"Bokforing-september-2026". Allt du hämtar sparas DÄR, i rätt undermapp:
+Packa upp de tre zipfilerna Del1, Del2 och Del3 i nedladdningsmappen, alla på samma ställe.
+Tillsammans blir de EN mapp: "Bokforing-september-2026". Allt du hämtar sparas DÄR, i rätt undermapp:
 - kvitton från tjänster: 02-Kvitton-september/Hamtat-av-Cowork/
 - Meta: 04-Meta/kvitton/<kontonamn>/
 - Shopify-utbetalningar: 03-Shopify/
