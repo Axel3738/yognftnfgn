@@ -1,5 +1,22 @@
 {
   "sida_id": "3ed270ab-908c-80a3-beb7-e0090eebce5d",
-  "database_id": "3ed270ab-908c-811a-9eff-feddb5f5e2de",
-  "skapad": "2026-10-02"
+  "gammal_database_id": "3ed270ab-908c-811a-9eff-feddb5f5e2de",
+  "gammal_skapad": "2026-10-02",
+  "databaser": {
+    "results": "3ee270ab-908c-8196-afe2-f765e8ef84c8",
+    "roadmap": "3ee270ab-908c-8199-a03a-fc1b8f78a1a2",
+    "log": "3ee270ab-908c-8122-a062-ce6185b3899c",
+    "desires": "3ee270ab-908c-815c-bfd4-f3de5f1ceaec",
+    "subavatars": "3ee270ab-908c-81fd-92fd-edd6711fd6d2",
+    "avatars": "3ee270ab-908c-811c-a990-d4fac96d23db",
+    "awareness": "3ee270ab-908c-81a1-b296-e2a30a86b6d1",
+    "creators": "3ee270ab-908c-8164-ae11-f4655a9dd522"
+  },
+  "block": {
+    "lasa": "3ee270ab-908c-81e8-90ec-c4b5df4f3420",
+    "overview": "3ee270ab-908c-8152-9fda-feb5f70d380c"
+  },
+  "gammal_arkiverad": "2026-10-03",
+  "ads_relation": "3ee270ab-908c-8196-afe2-f765e8ef84c8",
+  "flyttad_results": "2026-10-03"
 }

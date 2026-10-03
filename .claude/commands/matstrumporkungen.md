@@ -107,7 +107,7 @@ behörighetsreglerna matchar på första ordet.
    node matstrumpor/kor.mjs --ko
    node matstrumpor/kor.mjs --dom-alla --json --logga
    node matstrumpor/kor.mjs --arkiv
-   node matstrumpor/growthguide.mjs --skarpt   # Growth Guide i Notion: arkivet som databas Axel och creative strat kan ändra i (Axels beslut 2026-10-02). Koden skriver bara mätkolumnerna; Anteckning, Beslut, Nästa steg, Ägare rörs aldrig. Id i matstrumpor/growthguide.json
+   node matstrumpor/growthguide.mjs --skarpt   # Growth Guide i Notion, byggd som Evolves 3.0 (ombyggd 2026-10-03 efter Axels dom): Overview (hit rate), Ad Roadmap (EN rad per batch), Log, planeringsflikarna, Ad Results (per annons). Koden skriver mät- och systemkolumnerna och sår DESIRE/SUB AVATAR/ANGLE(S)/MEMO/AWARENESS/LEARNINGS en gång där cellen är tom; STATUS bara tom→förslag eller Working→Learning; UPVOTE, NOTES, LEARNINGS och planeringsflikarna rörs aldrig efter sådden. Id:n i matstrumpor/growthguide.json. Kolumnordningen i vyn är Coworks (matstrumpor/cowork/1-growth-guide-vyer.txt), inte API:ts
    ```
    `--hamta` läser **Sverige och varje utlandskampanj** ur
    `matstrumpor/marknader/annonser/lage.json` (14 st 2026-10-01; före det

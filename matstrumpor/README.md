@@ -225,23 +225,63 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.
 
-## Bruces vecko-SOP (2026-10-03)
+## Growth Guide i Notion (Evolves 3.0, ombyggd 2026-10-03)
+
+Axels dom på första versionen (2026-10-02: en platt databas med 36
+mätkolumner per annons, i bokstavsordning): "det ser inte alls ut som en
+Evolve Growth Guide … som en jävla horunge som är ett litet ägg". Evolves
+guide (kurslektionen ⭐️ The 3.0 Evolve Growth Guide, Google Sheet
+`1zdDeYK0gwjFWbp4nq5VVm1COXqL1v8TailKJNHZ_pDI`, läst med `tools/skool/`
+samma dag) är en **planerare per koncept**, inte en mätlista. Sidan
+https://www.notion.so/3ed270ab908c80a3beb7e0090eebce5d (`growthguide.json`
+→ `sida_id`, workspace-roten) bär nu samma flikar som inline-databaser, i
+Evolves ordning, byggda av **`growthguide.mjs`**:
+
+| Flik | Vad | Vem skriver |
+|---|---|---|
+| Overview | hit rate = breakthrough + spend winner ÷ etiketterade, två nämnare (med/utan INGEN_LEVERANS), utfallen räknade, breakthroughs | koden, varje rond |
+| Ad Roadmap | **EN rad per batch** (105 st 2026-10-03): Evolves kolumner STATUS · UPVOTE · BATCH # · DATE ADDED · AUTHOR · AD CONCEPT · DESIRE/CORE AVATAR · SUB AVATAR · ANGLE(S) · BREAKTHROUGH MEMO · AWARENESS LEVEL · FILE TYPE · AD TYPE · LINK TO BRIEF · LINK TO AD · RESULTS · LEARNINGS, plus CREATOR, MARKET, SPEND/PURCHASES/ROAS/HOOK/HOLD/PROFIT 14D och relationen ADS. Radens kropp har en hopfällbar "System data" med annonstabellen | koden: mät- och systemkolumnerna varje rond; **sår** DESIRE, SUB AVATAR, ANGLE(S), MEMO (WHY/WHAT/HOW ur briefens taggar), AWARENESS och LEARNINGS (ur `lardomar.md`) EN gång där cellen är tom; STATUS bara tom → Filming/Working/Learning eller Working → Learning. Människan: UPVOTE, LEARNINGS, Done |
+| Log | en rad per dag rutinen gjorde något (etiketter, förslag, briefer, uppladdningar, adsetdomar) + NOTES | koden SYSTEM, människan NOTES |
+| Desires/Core Avatar · Sub Avatars/Angles · Avatars · Awareness · Creators | Evolves planeringsflikar, sådda ur repots research (`growthguide/underlag.json`: 9 + 9 + 4 + 5 + 3 rader, varje rad med fil:rad i SOURCE; läst av en sonnet-läsare, inget påhittat — det som saknas står i `saknas`) | koden sår bara rader vars titel saknas (`--sa`); sedan människornas |
+| Ad Results | mätlistan per annons (146 st), det gamla innehållet | bara koden |
+
+**Batch** = Evolves koncept med sina variationer: hookvarianter (h1/h2/h3)
+och omklipp av samma löpnummer hör ihop (`batchNyckel`); ett id utan
+löpnummer (haikuh2, s004h4, d3) är sin egen batch, för haikuh2 och haikuh3
+var två olika koncept. RESULTS = högsta etiketten i batchen, talen
+summeras, hook/hold vägs på spend. AUTHOR = hubbradens Ansvarig. Varje rad
+bär `SYSTEM` (datum · hash · toggle-id) så bara ändrade rader skrivs om; en
+andra körning ger 0 ändringar (mätt). Den gamla platta databasen
+`3ed270ab-908c-811a-9eff-feddb5f5e2de` (0 rader med människotext) ligger i
+papperskorgen sedan 2026-10-03 (`--migrera`, återställbar 30 dagar).
+
+```bash
+node matstrumpor/growthguide.mjs --kolla            # sidan, databaserna, token
+node matstrumpor/growthguide.mjs --torr             # vad som skulle skrivas
+node matstrumpor/growthguide.mjs --skarpt           # bygg det som saknas, skriv raderna (ronden)
+node matstrumpor/growthguide.mjs --skarpt --sa      # så planeringsflikarna (bara nya rader)
+```
+
+⚠️ **Notions API kan inte ordna kolumner, dölja SYSTEM, sortera eller
+dela sidan** — det är Cowork-prompten
+**`matstrumpor/cowork/1-growth-guide-vyer.txt`** (Evolves kolumnordning per
+tabell, SYSTEM dold, sortering, en Board-vy "By result", Bruce bjuds in med
+"Kan redigera"). Tills den körts står kolumnerna i bokstavsordning. Om
+Bruce kan öppna sidan syns inte i API:t.
+
+### Bruces vecko-SOP
 
 Bruce (Gilz Bruce Biazon) jobbar bara på Matstrumpor och är creative
 strategist där, så redigerarnas veckorapport gäller inte honom (Axels beslut
 2026-10-03, `redigerarrapport/konfig.json` → `utan_redigerare`). I stället
-utvärderar han sig själv varje måndag 15:00 Manila efter
-**`sop/BRUCE-WEEKLY-SELF-REVIEW.md`** (engelska, en A4-sida, PDF bredvid):
-sex steg i Growth Guide (grinden 300 kr OCH 3 köp, briefen mot klippet,
-hook/hold mot kampanjens topp, "Guess:" i Anteckning, Beslut ur etiketten,
-hit rate som bråk, ETT test i Nästa steg). Han skriver bara i de fyra
-människokolumnerna; Skala är Axels. Texten byggdes av fyra läsare, tre
-utkast, två domare och tre skeptiker (fakta mot `etikett.mjs`,
-`growthguide.mjs`, `struktur.mjs`; enkelhet; repots regler). PDF:en byggs om
-med `node matstrumpor/sop/bygg.mjs` (Chromium, samma väg som
-`products/matstrumpor/ugc/pdf/bygg.mjs`). ⚠️ Om Bruce kan öppna Growth
-Guide-sidan är inte mätt (API:t ser inte delningar): sidan ligger i
-workspace-roten, och SOP:en säger "Cannot open one of them? Tell Axel".
+utvärderar han sig själv varje måndag 15:00 Manila i **Ad Roadmap** efter
+**`sop/BRUCE-WEEKLY-SELF-REVIEW.md`** (engelska, en halv A4-sida, PDF
+bredvid; Axels dom på första versionen: "hur mycket text som helst"):
+raderna med RESULTS men inte Done → grinden 300 kr OCH 3 köp, klippet mot
+briefen, hook/hold mot bästa batchen, "Guess:" → allt i LEARNINGS, STATUS
+Done; sedan EN ny rad med BREAKTHROUGH MEMO (WHY/WHAT/HOW) före briefen.
+Skala är Axels. PDF:en byggs om med `node matstrumpor/sop/bygg.mjs`
+(Chromium, samma väg som `products/matstrumpor/ugc/pdf/bygg.mjs`).
 
 ## E-posten (Klaviyo, byggd 2026-09-25)
 
