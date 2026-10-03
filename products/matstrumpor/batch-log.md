@@ -463,3 +463,20 @@ bär därför A:s koder (36 × SUSHI-K1F1). Avläsningen räknas bara på **SE/S
 `analys.mjs` ordagrant (SE): lyft B mot A −34,4 %, p = 0,0414, konfidens 95,9 %; snittorder +6 kr
 (p = 0,891). **"B är sämre, -34.4 % (p = 0.041). Behåll A."** Alla länder ihop: −28,0 %, p = 0,0247.
 Sessioner per variant mäts inte. Förslag: avsluta testet (`paket-test.mjs --av --skarpt`) på Axels ok.
+
+**⛔ Testet AVSTÄNGT 2026-10-03 ~10:40 CEST — Axels beslut ("stäng av") efter avläsning 2.**
+`paket-test.mjs --av` vägrades av sin egen simulering (dubbla köprutor: andra sessioner hade
+ändrat mallarna efter 30/9 — `ms_trust`, startsidans hero/`ms_loop_*`, snippeten 2/10). Gjordes i
+stället med `matstrumpor/erbjudanden/paket-av-2026-10-03.mjs`, bara våra egna delar, i ordning:
+(1) `ms_ab_tests` `paket:50:50` → `# paket:50:50`, (2) `sushi-2`/`sushi-4` `ab_variant` → tom,
+(3) `product.json`: blocket `ms_paket` tillbaka till läget före testet, `ms_paket_b` bort,
+(4) `index.json`: `produkt/paket` tillbaka. Allt annat i mallarna orört; kopior före avstängningen i
+`erbjudanden/output/tema-original/fore-av-2026-10-03/`. Tillbakaläst. Kundvy i Chromium: ny svensk
+besökare, svensk besökare med gamla kakan `ms_ab_paket=b`, svenska startsidan, NO och DE — alla
+`tests: []`, EN köpruta, "Köp 1 – Få 1 GRATIS" / "Köp 2 – Få 2 GRATIS". B-nivåerna och koderna
+SUSHI-2FOR499/-4FOR799/-1FOR399 ligger kvar i Shopify men visas ingenstans. Snippetens
+`fast_variant`-rader ligger kvar (oanvända).
+
+**Lärdom:** kunden väljer "Köp 1 – Få 1 GRATIS" framför ett lägre per-låda-pris utan ordet gratis —
+B gav 34 % färre köp och 1 lådor/order mindre. Höj marginalen via leverantörspriset, inte via
+paketpriset. Nästa pristest: testa ett högre pris på SAMMA Köp 1 – Få 1-form (t.ex. 449 kr för 2).
