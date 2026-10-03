@@ -1,7 +1,7 @@
 {
   "kommentar": "Axels beslut 2026-09-15: /bildannonser gör bildannonser ENBART för hubbarna nedan. Skalningen på Bäverbutiken drogs igång igen och de här produkterna är de som aktivt får nya annonser. Övriga hubbar i teamspacet lämnas i fred — de listas i rapporten men rörs aldrig. Axel ändrar listan; lägg aldrig till en hubb själv.",
   "sa_matchas_de": "Matcha i första hand på 'datakalla' (data source-id), i andra hand på 'namn'. Hubbarna döps om i Notion utan förvarning — 2026-09-19 hette 'BÄVER Taköverdraget för Husvagn' plötsligt 'BÄVER  For CARL Taköverdraget för Husvagn', och en ren namnmatchning hade tappat hela hubben tyst. Ett nytt namn är inte en ny hubb: står id:t kvar är det samma hubb.",
-  "andrad": "2026-09-29",
+  "andrad": "2026-10-03",
   "aktiva": [
     {
       "namn": "Golf advent calendar creative hub",
@@ -81,6 +81,24 @@
     {
       "namn": "Belt grinder creative hub",
       "datakalla": "a1d270ab-908c-82e2-b3be-07b523257509"
+    },
+    {
+      "namn": "ATV cover creative hub",
+      "datakalla": "e68270ab-908c-8316-a89c-07bd784ea4bd",
+      "notering": "Axels order 2026-10-03 (skärmbild på sidomenyn: \"Gå igenom alla hubbar här och kolla efter bildannonser\"). Hubben hade 4 bildrader i Draft ur fars dag-ronden och stod bara under ÖVRIGA i rapporten, alltså orörd. Annonsprefixet är svenskt (ATVKapell_) medan hubben heter engelska.",
+      "annonsprefix": "ATVKapell_"
+    },
+    {
+      "namn": "Heated seat cushion creative hub",
+      "datakalla": "a92270ab-908c-8208-90cd-87592dc36847",
+      "notering": "Axels order 2026-10-03, samma skärmbild. 4 bildrader i Draft ur fars dag-ronden. Annonsprefixet är svenskt (Varmesits_).",
+      "annonsprefix": "Varmesits_"
+    },
+    {
+      "namn": "Heated insoles creative hub",
+      "datakalla": "7ff270ab-908c-821b-990e-074e579f3062",
+      "notering": "Axels order 2026-10-03, samma skärmbild. 4 bildrader i Draft ur fars dag-ronden. Annonsprefixet bär å/ä/ö (Värmesulorna_) och bryter mot namnkonventionen — det är briefskrivarens namn och ändras inte här, men nästa rond bör döpa om det.",
+      "annonsprefix": "Värmesulorna_"
     }
   ]
 }
