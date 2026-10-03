@@ -16,9 +16,10 @@ Fyra mönster, alla belagda nedan:
 1. **Påstådda fakta som inte stämmer.** "Oväntad försening" till två kunder vars
    paket låg helt inom normal leveranstid. "Problem hos leverantören" till en kund
    vars paket försvann i mars. "Defekt vara" till en kund som fick fel storlek.
-2. **SOP:en för retur bryts.** Kund inom ångerrätten erbjuds 30 % för att behålla
-   varan (SOP:en säger uttryckligen: ångerrätt ⇒ full retur, inget erbjudande, och
-   ägarens godkännande före varje belopp).
+2. ~~SOP:en för retur bryts.~~ **Rättat av Axel 2026-10-03:** erbjudandet "30 % tillbaka
+   och behåll varan" ÄR strategin och ska göras. Det som kvarstår i Coco-tråden är
+   bara att utfallet inte följdes upp (sa hon ja eller nej?). SOP:ens rad om
+   ångerrätt (full retur om kunden kräver det) gäller fortfarande.
 3. **Ärenden tappas efter första svaret.** Helen (#4527) sa ja till omskick 29/9,
    inget hände, hon skrev igen 2/10 — obesvarat. Anette (kassafel) och Marcus
    (samma kassafel) fick ingen lösning och ingen eskalering.
@@ -171,8 +172,8 @@ Fyra mönster, alla belagda nedan:
 ## Det Axel måste avgöra
 
 1. Marie-Louise: goodwill (ett nytt set) eller stå fast. Grundarens mejl lovade.
-2. Coco: dra tillbaka 30 %-erbjudandet och köra full retur enligt ångerrätten, eller
-   godkänna beloppet.
+2. Coco: ~~dra tillbaka 30 %-erbjudandet~~ — Axel 3/10: erbjudandet är rätt, Mechile
+   ska följa upp vad hon valde.
 3. Helen: omskick (hon har sagt ja) eller återbetalning av 399 kr.
 4. Javier #5307: avbeställa eller byta adress.
 5. Om svaren verkligen är Sheilas: ska hon signera med eget namn?
