@@ -25,6 +25,23 @@ gör engelskan, och källraden flyttas till **`<Brand> EN ready to be active`**.
 När US-annonsen finns i Magiborsten UK sätter rutinen källraden till
 **`Approved`**. Butikens egna briefronder är pausade (`briefantal … paus`).
 
+⛔ **Sedan 2026-10-03 avgör registret vad som laddas upp i butikens konto**
+(`spegling.ladda_upp`, satt med `node factory/register.mjs
+spegling-uppladdning <nyckel> <SE,NO|inga>`). Standard är SE + NO som ovan.
+**Taköverdraget står på `inga`** — Axels beslut samma dag: "jag kommer bara
+skala taköverdraget på Bäverbutiken, i Sverige och Norge, sen skalar jag det i
+USA på CaraShell". CaraShells SE-kampanj pausade han 2026-10-02 16:53, och
+med den gamla regeln stoppade "ingen SE-kampanj i butiken" varje rad — sju
+OB-videor stod still och nådde aldrig USA. I läget `inga` gör rutinen bara
+**överlämningen**: ingen SE, ingen NO, inget pris jämförs; den svenska filen
+hämtas ur Bäverbutikens live-annons, raden kopieras till butikens hub i
+`SE-ACTIVE to be translated` och källraden får `<Brand> EN ready to be
+active`. Brandspärren, slutkortet och bara-Sverige-regeln gäller lika — den
+svenska filen är det US-rutinen översätter. **Fars dag-rader (FD) sätts till
+`Approved`** med en kommentar i stället för att stoppas varje dag: de går i
+SE + NO i Bäverbutiken och aldrig till engelska marknader (fars dag är i
+juni där). Termoskyddet står kvar på standard (SE + NO).
+
 Allt sitter i `tools/ops-spegla.mjs`. Speglingen står i `register.json`
 (`node factory/register.mjs spegling <nyckel> <bäver-hub-id> <namn>`), och
 statusnamnen kommer därifrån — skriv dem aldrig ur minnet:
@@ -74,8 +91,10 @@ Färsk `main`: `git fetch origin main && git checkout main && git reset --hard o
 ```
 node tools/ops-spegla.mjs <nyckel>
 ```
-Utskriften visar källhub, butikens hub, SE-/NO-kampanj, båda priserna och
-varje rad med dom (✅/⛔ + skäl). Läs den innan något skrivs.
+Utskriften visar källhub, butikens hub, raden **"Laddar upp i butiken"**
+(SE + NO, eller INGET = bara överlämning), SE-/NO-kampanj och priser för de
+marknader som laddas upp, och varje rad med dom (✅/⛔ + skäl, `🇸🇪 bara
+Sverige/Norge → Approved` för FD). Läs den innan något skrivs.
 
 - **`⛔ Källhubben saknar statusalternativen …`** ⇒ steget finns inte i
   Notion än. Inget kan speglas. Rapportera under ACTION NEEDED: Axel lägger
@@ -120,7 +139,9 @@ aldrig media. Pusha till `main`.
 - [ ] Färsk `main`; spegling läst ur registret; källhub och butikens hub hittade, ingen i papperskorgen
 - [ ] Båda statusstegen finns i källhubben — annars redovisat under ACTION NEEDED med exakt stavning
 - [ ] Kön läst och visad; varje rad redovisad: speglad / hoppad med skäl / fel med skäl
-- [ ] Pris kollat per rad (creativen mot butikens SE-pris, NO mot NO-pris); avvikelse > 20 % eller okänt ⇒ inte uppladdad
+- [ ] `ladda_upp` läst ur registret och redovisat: SE + NO uppladdade, eller bara överlämning (Taköverdraget)
+- [ ] Pris kollat per rad för marknaderna som laddas upp (creativen mot butikens SE-pris, NO mot NO-pris); avvikelse > 20 % eller okänt ⇒ inte uppladdad
+- [ ] Fars dag-rader (FD) satta till `Approved` med kommentar, inte rapporterade som stopp
 - [ ] Ingen rad som nämner Bäverbutiken uppladdad
 - [ ] Torrkörning före skarp; tillbakaläst ACTIVE/ACTIVE i rätt kampanj; rätt konto
 - [ ] Rad skapad i butikens hub med filer bifogade; källraden kommenterad + flyttad till `<Brand> EN ready to be active`

@@ -332,7 +332,9 @@ export const INSIGHTS_FALT = [
 // koderna (`_TR_`, `_PD_`, `_SP_`) som länder.
 // US lades till 2026-09-16 (OPS-butikernas USA-annonser i Magiborsten UK,
 // factory/opsmarknader.mjs). "US" är ingen vinkelkod i namnkonventionen.
-export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE', 'US'];
+// AU sedan 2026-10-03: CaraShells australiska kopior av de engelska annonserna
+// heter `CaraShellRoof_AU_…` (extra målkampanj, tools/lib/malkampanj.mjs).
+export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE', 'US', 'AU'];
 export const STANDARDMARKNAD = 'SE';
 
 /** Marknadskoderna ett namn bär, t.ex. "TANKGUARD_NO_SALES" → ["NO"]. Skiftlägesokänsligt. */

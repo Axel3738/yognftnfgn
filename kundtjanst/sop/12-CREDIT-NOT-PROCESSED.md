@@ -352,6 +352,24 @@ Check the dispute status again after a few days and record the outcome in the or
 
 ## 8. What we know, and what we must not claim
 
+### ⭐ What decides THIS reason — measured 2026-10-03 on all 23 `credit_not_processed` disputes in one store
+
+**A refund on the order is the whole case. Every decided dispute that had one was won; both readable losses had none.**
+
+| Our records | Decided outcome |
+|---|---|
+| A refund exists on the order (full or partial) | **5 won, 0 lost** — #7092, #6867, #6051, #6447 (partial 244 of 349), #5109 |
+| `paid`, no refund, nothing ever returned | **0 won, 2 lost** — #5584 (348), #4971 (837) |
+
+⚠️ **And the refund worked even when it was paid AFTER the dispute opened:** #6867 refunded 1 Oct → won 2 Oct; #7092 refunded 2 Oct → won 3 Oct. That matches Shopify's own line for inquiries ("if you issue a full refund, then the cardholder can't initiate a chargeback") and it is why row 4 and row 4b say *pay today, then respond* instead of *argue*.
+
+⛔ **The 8 open ones all look the same, and the customer is probably right.**
+Measured the same day: every open `credit_not_processed` whose order could be read is **`financial_status: paid` with ZERO refunds** — #5664, #7312, #6935, #6504, #4974, #5097, #5435, and 17731354973 whose order returns 404. So the customer says the money never came back, and our own records agree. **Do not open these by writing evidence.** Open them with **step 3.2, the mailbox search**: whether the customer asked for a refund or we promised one is the fact that picks row 2, 4, 4b or 5 — and it is the one fact no tool here can see.
+
+⚠️ **#4974 carries TWO disputes for the same 544,18 SEK** (`17872978269` already won, `17873207645` still open). Check for a second dispute on the order before refunding anything, or the same money goes out twice.
+
+⚠️ Seven of the 23 orders answer **404** from the Admin API — too old or removed, not "no refund". Write "could not be read" on those, never a zero.
+
 **Measured on one store, 2026-09-20 — 50 disputes. These are our own numbers, not card-network rules, and one store is a small sample:**
 
 - **Inquiries: 43 in total, 29 decided, 29 won, 0 lost (100 %). Chargebacks: 7 in total, 4 decided, 1 won, 3 lost (25 %).** Every loss that store has ever had was a chargeback; total lost 1 435 SEK.

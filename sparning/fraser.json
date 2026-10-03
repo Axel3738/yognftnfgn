@@ -138,6 +138,7 @@
   "parcel received by transit facility": "Paketet har kommit till terminalen",
   "your parcel is in our care, your parcel has arrived at our aramex depot": "Paketet har kommit till terminalen",
   "arrived at usps regional origin facility": "Paketet har kommit till terminalen",
+  "arrived at usps regional facility": "Paketet har kommit till terminalen",
   "the package's weight and/or size have been updated": "Paketets vikt och mått är uppdaterade",
   "the package has been delivered in a bag at the mailbox": "Paketet är levererat i en påse vid brevlådan",
   "paketet har uppdaterats till ombud": "Paketet skickas till ett ombud i stället",
@@ -281,5 +282,6 @@
   "shipping label created, usps awaiting item": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
   "the shipment has arrived at terminal and will be forwarded": "Paketet har kommit till terminalen och är klart att skickas vidare",
   "the parcel has been forwarded to a pickup point because the recipient's door wasn't found. please ensure the door is clearly labelled with a name and provide delivery instructions whenever possible": "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare",
-  "the parcel is on its way to your pickup point as it could not be delivered to your home": "Paketet kunde inte lämnas hemma hos dig och är på väg till ditt ombud"
+  "the parcel is on its way to your pickup point as it could not be delivered to your home": "Paketet kunde inte lämnas hemma hos dig och är på väg till ditt ombud",
+  "barcode is not read by the production system, a new label has been produced": "Streckkoden gick inte att läsa i sorteringen, så paketet har fått en ny fraktetikett"
 }

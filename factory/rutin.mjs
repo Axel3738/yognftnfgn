@@ -151,7 +151,9 @@ export const BUTIKSRUTINER = Object.freeze({
   // butikens hub så US-rutinen 16:40 tar den till engelska. Efter Bäverbutikens
   // /oversatt NO (15:00), före US-rutinen. Byggs bara för poster med
   // `spegling` i register.json (kraver).
-  'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här → butikens hub för US)', kraver: 'spegling' },
+  // Sedan 2026-10-03 avgör `spegling.ladda_upp` om SE + NO laddas upp här alls:
+  // tom lista = butiken säljer bara på engelska, raden lämnas bara över.
+  'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här om registret säger det → butikens hub för US)', kraver: 'spegling' },
   // ⚠️ Briefgranskningen är INTE en butiksrutin sedan 2026-09-18 (kväll):
   // OPS-projektet är nedlagt utom CaraShell, och CaraShells briefer skrivs i
   // Bäverbutikens hubbar. `/briefgranskning` går som EN husrutin för hela

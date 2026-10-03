@@ -1,6 +1,6 @@
 # Creative DNA — Matstrumpor (Sushi-Strumpor)
 
-**Skapad 2026-09-21. Uppdaterad 2026-09-30, rond 4** (rond 2 var 2026-09-24,
+**Skapad 2026-09-21. Uppdaterad 2026-10-03, rond 5** (rond 4 2026-09-30) (rond 2 var 2026-09-24,
 den första riktiga `/matstrumporkungen`-ronden). Allt nedan är avläst ur kontot "nya kungen"
 `730973156224390` (token, 7d_click), Shopify och Notion. Ingen siffra är
 hämtad ur en tidigare chatt, och ingen är uppskattad. Talen per annons står
@@ -137,6 +137,15 @@ Hooken är alltså inte det som skiljer Nathalie från haikuh2 — det är att h
 HÅLLER (0,31 mot 0,23) och att folk klickar (2,7 % mot 1,2 %). Sofie är
 tvärtom: svag hook, starkast hold. Det är skälet till att Sofie och Katarina
 får Nathalies manus med hennes öppning (`products/matstrumpor/ugc/`).
+
+6. **Avsändaren slår orden — mätt på samma manus två gånger (2026-10-03).**
+   s001h1:s manus ("den perfekta balansen mellan praktiskt och oväntat") med en
+   AI-kvinna i augusti: ROAS 1,40, strypt. Samma manus med Katarina i sitt kök
+   ("sushiälskaren i ditt liv"): ROAS 2,05 på 413 kr, köp/LPV 4,5 %, hook 0,40,
+   hook→hold 0,34 (Nathalie-nivå). Samma inspelning med en BARN-mottagare
+   ("sushigalen unge"): hook 0,40 men hook→hold 0,18 och 0 köp på 343 kr.
+   Mottagaren är en vuxen som älskar sushi. Båda fick under 1 % av spenden i
+   Champions — svält bredvid Nathalie, inte en dom.
 
 ✅ **Kommentarerna läses sedan 2026-09-27** via `META_ACCESS_TOKEN_MATSTRUMPOR`
 (Axels egen app, sidan ligger i en annan Business Manager än `META_ACCESS_TOKEN`).

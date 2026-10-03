@@ -1,0 +1,33 @@
+{
+  "brand": "CaraShell",
+  "datum": "2026-10-03",
+  "lage": "spegla",
+  "gjort": [
+    "Takoverdrag_FD_4_4: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_4_3: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_4_2: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_4_1: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_1_H3: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_2_2: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_2_1: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_1_H2: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_FD_1_H1: Sweden/Norway-only angle — never mirrored, source row set to Approved",
+    "Takoverdrag_OB_22_H1 → CaraShellRoof_OB_122_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_19_H1 → CaraShellRoof_OB_119_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_18_H1 → CaraShellRoof_OB_118_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_17_H1 → CaraShellRoof_OB_117_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_14_H1 → CaraShellRoof_OB_114_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_13_H1 → CaraShellRoof_OB_113_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub",
+    "Takoverdrag_OB_11_H1 → CaraShellRoof_OB_111_H1: handed over for the English version only (CaraShell does not run SE/NO) — row in hub"
+  ],
+  "varningar": [
+    "Takoverdrag_GT_11_H1: skipped — names Bäverbutiken: Bäverbutiken; the end card names a store: \"baverbutiken\"",
+    "Takoverdrag_OB_17_H1 (SE): has an end card (last 3s, no store name read). Does not block the upload — check that the card is in the market's language.",
+    "Takoverdrag_OB_11_H1 (SE): has an end card (last 3s, no store name read). Does not block the upload — check that the card is in the market's language.",
+    "US account 1107817401910319 could not be read (throttled by Meta (code 17: too many API calls from this ad account)) — no source row is set to Approved this run; the next run reads it again"
+  ],
+  "action_axel": [
+    "Takoverdrag_GT_11_H1: names Bäverbutiken: Bäverbutiken; the end card names a store: \"baverbutiken\" — decide whether the editor should make a store version"
+  ],
+  "nasta_korning": "tomorrow 16:20 + slot"
+}

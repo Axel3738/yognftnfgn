@@ -2,6 +2,15 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-10-03
+
+- [ ] **Bäverbutiken · Batmotor** · produktfeedback — Två köpare skriver samma dag att de fick ett enkelt skydd med snodd och dåligt tyg: "Det jag fick var en säck med snodd" och "fick ett enkelt skydd med snodd och dåligt tyg". Samma klagomål kom 23–24 september. Det tyder på att den skickade varan inte matchar annonsens heltäckande 420D-skydd. → Ingen brief. Axel frågar leverantören vilken version som skickas, med köparnas ord, och jämför med produktsidan innan fler annonser lovar ett heltäckande skydd.
+  - Källa: kommentarer på Batmotor_SP_1_H5 och Batmotor_UG_1_H1, 2 st, 2 okt · `kalla=voc` · belägg: 122185702190859973_2579644819165310, 122185704902859973_2199465440616953 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · invändning — Rädslan att remmarna slår mot väggarna i vind kommer tillbaka i USA och Norge: "Wind is going to vibrate those straps and they're going to damage the exterior walls", "there will be marks on the side of the camper from the flapping straps" och "Blir det ikke gnagemerker av alle de stroppene?". → Stärker den väntande Sebra-idén i takskyddets backlog: en OB-annons som visar vad remmarna är gjorda av och hur de sitter, bara det produktsidan och leverantören säger.
+  - Källa: kommentarer på CaraShellRoof_US_SP_2_1 och CaraShellRoof_NO_CS_107_H1, 3 st, 2–3 okt · `kalla=voc` · belägg: 122107043547473983_4589035374681172, 122107043547473983_1634992178349748, 122113236861473983_1100733602470388 · status: väntar
+- [ ] **Bäverbutiken · Ny Försäljning-annons** · produktfeedback — Två personer under katalogannonsen klagar på strömkabeln: "Levereras med endast 80cm ström kabel!!!!" och "hur fan ska den räcka????". Katalogannonsen visar flera produkter, så vilken produkt det gäller syns inte i kommentaren. → Ingen brief. Axel kollar vilken produkt i katalogen som har en 80 cm kabel och om längden ska stå på produktsidan.
+  - Källa: kommentarer på katalogannonsen, 2 st, 2 okt · `kalla=voc` · belägg: 122187284672859973_2014116049283006, 122187284672859973_2430953497714972 · status: väntar
+
 ## 2026-10-02
 
 - [ ] **CaraShell · CaraShellRoof** · invändning — En amerikan har frågat tre gånger under annonsen om spännbanden går att justera ("Third time- are the tie down straps adjustable?"). Frågan blev obesvarad två gånger. → Visa justeringen av banden i annonsen (bild eller ett klipp där bandet dras åt), bara det produktsidan säger.
