@@ -297,6 +297,30 @@ Wrong facts, wrong tone, wrong language, a customer you had already answered, or
 promise it should not have made. Put it right with the customer first, in the same
 voice, then report it. Do not wait for the owner to fix the text with the customer.
 
+**Three things you never write** (owner's decision 2026-10-03, after two real
+follow-ups):
+
+- Never *"det tidigare mejlet skickades av misstag"* or anything like it. Both
+  replies come from the store. If the first one was wrong, correct the facts with
+  the template below; do not disown the reply.
+- Never pick a template from the subject line or the bot's card alone. Read what
+  the customer actually wrote, from the first email in the thread. A customer who
+  forwards a shipping confirmation is not complaining about a delay, and a
+  customer asking a question before buying has no order to apologise for.
+- Never ask a customer who has already said what is wrong to explain it again.
+  Answer that.
+
+**Two cases the bot now leaves to you, with no reply sent** (so the first reply is
+yours, per the ordinary SOP):
+
+- *Complaint about a faulty, wrong or mis-described item that asks how to return
+  it* (a "reklamation"). The store pays the return postage on these; never send
+  the standard return instructions where the customer pays. Follow **Wrong
+  product delivered** or **Product arrived broken**, with the owner's approval.
+- *The parcel went back to the carrier or to us* (damaged at the pickup point,
+  returned to sender). The customer has nothing to photograph. Check the tracking
+  and the carrier, then tell the customer what happens next and when.
+
 **Template**
 
 | Swedish (use this) | English meaning |

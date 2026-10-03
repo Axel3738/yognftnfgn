@@ -177,8 +177,8 @@ const X_SV = Object.freeze({
   okand_debitering: 'okänd debitering', chargeback_hot: 'hotar med banken', vantat: 'har väntat på svar',
   levererat_ej_mottaget: 'levererat men inte mottaget', standard: 'allmänt klagomål',
 });
-const FOTON_SV = Object.freeze({ vara: 'bild eller kort video på varan där felet syns', passform: 'bild på varan på plats, plus mått eller modell', leverans: 'varan, förpackningen och fraktetiketten' });
-const FOTON_EN = Object.freeze({ vara: 'a photo or short video of the item showing the fault', passform: 'a photo of the item in place, plus measurements or model', leverans: 'the item, the packaging and the shipping label' });
+const FOTON_SV = Object.freeze({ vara: 'bild eller kort video på varan där felet syns', passform: 'bild på varan på plats, plus mått eller modell', avviker: 'bild på varan som den kom, där avvikelsen syns', leverans: 'varan, förpackningen och fraktetiketten' });
+const FOTON_EN = Object.freeze({ vara: 'a photo or short video of the item showing the fault', passform: 'a photo of the item in place, plus measurements or model', avviker: 'a photo of the item as received, showing what differs', leverans: 'the item, the packaging and the shipping label' });
 
 /** Vad boten faktiskt skrev till kunden, i en mening VA:n kan bygga vidare på. Ren. */
 export function botSvarText(r, { etiketter = null } = {}) {

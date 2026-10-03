@@ -488,6 +488,27 @@ kund. #1726 ("Re: Landade skämtet", en vidarebefordrad orderbekräftelse +
 ARG. Öppet, inte rättat: "Inget kvitto på köp" (#1723) går till VA:n för att
 "kvitto" räknas som faktura/Klarna — Axels fråga om boten ska svara själv.
 
+### Axels granskning 2026-10-03 av de åtta svaren 1–2/10 — fyra regler ändrade
+
+Axel: "Vad är det för mail den har svarat på? Kan du granska det och läsa som
+en människa?" Alla åtta mejl och svar lästa i brevlådorna
+(`autosvar/GRANSKNING-2026-10-03.md`): 3 rätt, 2 skickade kunden fel väg i
+pengar, 3 svarade på något annat än kunden frågade. Hans order: "rätta".
+
+| Fynd | Före | Nu |
+|---|---|---|
+| Johan #7884 ("passar inte enligt beskrivningen", vill returnera) och Annica #7361 ("Reklamation … felsytt") fick returmallen med "Returfrakten står du själv för" | returfrågan vann över allt | **`arReklamation`** (skadad_defekt, eller fel/trasig/felsydd/stämmer inte/enligt beskrivningen/saknar band …) ⇒ aldrig ENKEL `retur` och aldrig returblocket i det arga svaret — SVÅR till VA:n, som ordnar returen på butikens bekostnad. Ett bart "passar inte" (Karl-Arne #7425) är ångerrätt och får mallen som förut |
+| Christer (före köp: "hoppas att detta inte är samma som Temu säljer … rena skräpet") fick "det du beskriver är helt oacceptabelt" | ordet skräp = ARG | förköpsfraserna "hoppas att detta/den", "samma som Temu/Wish/Aliexpress/…"; och **ett argt ord utan något ärende hos oss** (`harArende`: inget ordernummer, ingen order, ingen mottagen vara, inget klagomål, ingen köpkategori, ingen obesvarad tråd) ⇒ SVÅR, inte ARG |
+| Coco (Matstrumpor, snällt "om jag ångrat mitt köp, hur går jag till väga?") fick ARG + "levererat, kolla brevlådan" | HTML-mejl utan plain-del: Shopifys orderbekräftelse i ett `<blockquote>` under Apple Mails "21 sep. 2026 kl. 11:42 skrev …:" klipptes aldrig — "Tack för din order!" blev kundens utropstecken | `mime.htmlTillText` ger blockquote en ">"-rad, `taBortCitat` känner ett citathuvud med klockslag + skrev/wrote + kolon. Texten är nu bara hennes fråga ⇒ SVÅR (retur_angerratt) |
+| Lars (trasigt vid uthämtningen, ombudet skickade tillbaka till DHL) ombads fota varan | skadad_defekt ⇒ foton | **`arVaranBorta`** ("sänt tillbaka till dhl", "gått i retur", "returned to sender" …) ⇒ SVÅR, ingen bildförfrågan ens i det arga svaret |
+| Tony ("stämmer inte med bilden, finns inga band") ombads fota förpackningen och fraktetiketten | fel_vara ⇒ `leverans` | fotonTyp **`avviker`**: "varan inte stämmer med det du beställde" + bild på varan som den kom (fem språk). `leverans` bara vid transportord, fel antal eller felskickad vara |
+
+Mechiles uppföljningar samma dagar: Christer fick en förseningsmall när han
+vidarebefordrat fraktbekräftelsen, och Tony fick "det tidigare
+e-postmeddelandet skickades av misstag". SOP:en *Following up the auto-reply*
+säger nu uttryckligen att den meningen aldrig skrivs, och att hon läser vad
+kunden faktiskt skrev innan hon väljer mall.
+
 ### ⛔ SKARPT sedan 2026-09-23 ~13:10 CEST — Axels beslut A
 
 Axel trodde botten redan skickade ("Nej va??? Varför kör inte botten, den ska
