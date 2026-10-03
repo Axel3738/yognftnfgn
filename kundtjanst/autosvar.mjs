@@ -52,7 +52,7 @@ import { byggArenden } from './arenden.mjs';
 import { ShopifyLasare } from './shopify.mjs';
 import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
-import { HINK, hinka, beslut, redanBesvaradAvOss, arReturfraga } from './autosvar/hinkar.mjs';
+import { HINK, hinka, beslut, redanBesvaradAvOss, arReturfraga, arReklamation, arVaranBorta } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
 import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning, namnerHamtaUt, baraBekraftelse } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
@@ -198,12 +198,14 @@ export async function korBrand(brand, {
               if (dagar > (Number(konfig.svar.packas_dagar) || 2)) opostadDagar = dagar;
             }
             post.opostadDagar = opostadDagar;
-            // Vill kunden returnera ⇒ returinformationen i samma svar (Axels beslut 2026-09-22, Peter).
-            const retur = returfraga ? returText({ sprak: post.sprak, brand: konfig, ordernummer }) : null;
+            // Vill kunden returnera ⇒ returinformationen i samma svar (Axels beslut 2026-09-22, Peter) — men aldrig vid en
+            // reklamation (Axels order 2026-10-03): fel eller trasig vara får inte "Returfrakten står du själv för", VA:n ordnar returen.
+            const retur = returfraga && !arReklamation({ klass: hink.klass, amne: mejl.amne, text: mejl.text }) ? returText({ sprak: post.sprak, brand: konfig, ordernummer }) : null;
             post.retur = Boolean(retur);
             // SOP 05/08: skadad, fel eller undermålig vara ("skräp", "ser inte ut som på bilden") ⇒ be om de tre bilderna i samma svar (Axels feedback 2026-09-22: "jättebra att vi frågar efter bilder direkt").
             // "Ser inte ut som på bilden" får ingen bildförfrågan (Axels granskning 2026-09-29, Peter: bilderna hjälper inte, ordernumret gör det).
-            const foton = x !== 'som_pa_bilden' && (villHaFoton(hink.klass) || ['kvalitet', 'skadad_defekt', 'fel_vara'].includes(x));
+            // Ingen bildförfrågan heller när paketet gått tillbaka till fraktbolaget (Lars 2026-10-02): kunden har inget att fota.
+            const foton = x !== 'som_pa_bilden' && !arVaranBorta(`${mejl.amne}\n${mejl.text}`) && (villHaFoton(hink.klass) || ['kvalitet', 'skadad_defekt', 'fel_vara'].includes(x));
             // Vilka bilder: 'vara' (slutat fungera ⇒ bild/video på felet) eller 'leverans' (transportskada/fel vara ⇒ varan, förpackningen, fraktetiketten). Hans bränslepump 2026-09-22.
             const fotonTyp = fotonTypFor({ klass: hink.klass, text: `${mejl.amne}\n${mejl.text}` });
             if (foton) post.fotonTyp = fotonTyp;
