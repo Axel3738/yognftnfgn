@@ -706,10 +706,22 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
   let kartaUk = new Map();
+  let usLast = false;
   const usKonto = annonsmarknader.includes('US') ? annonskontoFor(butik.post, 'US') : null;
   if (usKonto) {
     logg(`Läser US-kontot ${usKonto} (${marknadFor('US').kontonamn}) …`);
-    kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
+    // US-kontot läses bara för att se om engelskan redan är uppe (→ Approved).
+    // Det delas av sex timrutiner och stryps ofta (kod 17, subkod 2446079,
+    // mätt 2026-10-03: 8 försök à upp till 5 min). En strypt läsning får
+    // inte stoppa överlämningen: då sätts ingen rad till Approved i dag, och
+    // nästa körning läser om. Hellre en dag sen än sju rader som står still.
+    try {
+      kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
+      usLast = true;
+    } catch (e) {
+      varningar.push(`US-kontot ${usKonto} gick inte att läsa (${e.message}) — ingen rad sätts till ${SLUTSTATUS} i den här körningen; nästa körning läser om`);
+      logg(`  ⚠️  ${varningar.at(-1)}`);
+    }
   }
   const kallprefix = [...new Set([...raa, ...enRader].map((r) => tolkaNamn(annonsdel(r.namn)).prefix).filter(Boolean))];
   const kallannonser = [];
@@ -856,12 +868,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     const namn = annonsdel(r.namn);
     const spegel = spegelnamn(namn, butik.post.annonsprefix);
     const spegel_us = spegel ? marknadsNamn(spegel, 'US') : null;
-    const d = spegel_us && usKonto ? dubblett(spegel_us, kartaUk) : { finns_i_meta: false, ad_id: null };
-    return { namn, spegel, spegel_us, page_id: r.id, url: r.url, us_uppe: d.finns_i_meta, us_ad_id: d.ad_id, klar_for_approved: d.finns_i_meta };
+    const d = spegel_us && usKonto && usLast ? dubblett(spegel_us, kartaUk) : { finns_i_meta: false, ad_id: null };
+    return { namn, spegel, spegel_us, page_id: r.id, url: r.url, us_uppe: d.finns_i_meta, us_ad_id: d.ad_id, klar_for_approved: usLast && d.finns_i_meta, us_last: usLast };
   });
 
   return {
-    brand: butik.post.brand, nyckel: butik.post.nyckel, konto, us_konto: usKonto, datum, annonsmarknader, ladda_upp: laddaUpp,
+    brand: butik.post.brand, nyckel: butik.post.nyckel, konto, us_konto: usKonto, us_last: usLast, datum, annonsmarknader, ladda_upp: laddaUpp,
     kalla_hub: { id: kalla.id, titel: kalla.titel, url: kalla.url }, hub: { id: hub.id, titel: hub.titel, url: hub.url },
     statusar: { se: spegling.status_se, en: spegling.status_en, spegel: SPEGEL_STATUS, slut: SLUTSTATUS }, kallstatusar, saknade_statusar,
     kampanj_se: se.kampanj ? { ...se.kampanj, adsets: se.adsets.map((a) => ({ id: a.id, name: a.name, status: a.status })) } : null, kampanj_se_skal: se.skal,
@@ -1123,7 +1135,7 @@ export function tabell(ko) {
   if (ko.klara_en.length) {
     ut.push('');
     ut.push(`Väntar på US (${ko.klara_en.length}):`);
-    for (const r of ko.klara_en) ut.push(`  · ${r.namn} → ${r.spegel_us ?? '?'}: ${r.us_uppe ? `✅ uppe (${r.us_ad_id}) → Approved` : 'inte uppe än'}`);
+    for (const r of ko.klara_en) ut.push(`  · ${r.namn} → ${r.spegel_us ?? '?'}: ${r.us_uppe ? `✅ uppe (${r.us_ad_id}) → Approved` : r.us_last === false ? 'US-kontot gick inte att läsa — avgörs nästa körning' : 'inte uppe än'}`);
   }
   if (ko.varningar.length) {
     ut.push('');
