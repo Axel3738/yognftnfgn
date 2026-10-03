@@ -716,6 +716,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     // inte stoppa överlämningen: då sätts ingen rad till Approved i dag, och
     // nästa körning läser om. Hellre en dag sen än sju rader som står still.
     try {
+      // En sondering UTAN backoff först: meta-libs kedja väntar ~27 min innan
+      // den ger upp, och ett strypt konto svarar kod 17 direkt. Är kontot
+      // strypt hoppas läsningen nu, inte om en halvtimme.
+      const sond = await fetch(`https://graph.facebook.com/v21.0/act_${usKonto}/ads?fields=id&limit=1&access_token=${process.env.META_ACCESS_TOKEN}`, { signal: AbortSignal.timeout(60_000) });
+      const sj = await sond.json().catch(() => ({}));
+      if (sj.error?.code === 17) throw new Error(`strypt av Meta (kod 17): ${sj.error.error_user_msg ?? sj.error.message}`);
       kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
       usLast = true;
     } catch (e) {
