@@ -50,4 +50,4 @@ Belopp i USD per order. COST = varan, SHIPPING FEE = frakten, price = summan.
 | Hamburgare | CA | 1 set (3 par) | 2,5 | 5,7 | 8,2 |
 | Hamburgare | CA | 2 set | 4,9 | 7,9 | 12,8 |
 
-Avläst ur en skärmdump — kontrollera mot arket innan något räknas på det.
+Avläst ur en skärmdump 2026-09-27 — KONTROLLERAD 2026-10-03 mot en andra skärmdump av hela arket (två oberoende avläsare): alla tal stämmer. Kolumnen Summa är arkets egen totalkolumn och vinner över vara + frakt där de skiljer 0,1 (`pris` i cogs.json). Norden (SE, NO, DK, FI) ligger i cogs.json → `sverige.ark_usd` och `norden.rader`.

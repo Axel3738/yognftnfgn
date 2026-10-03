@@ -1,38 +1,707 @@
 {
-  "comment": "Matstrumpors varukostnad (COGS) per produkt och LEVERANSLAND — landad kostnad = varan + frakten till kunden. Källor står per block. Belopp i den valuta källan gav; omräkning till SEK sker vid läsning med ECB:s dagskurs (stonebite/kallor/valuta.mjs), aldrig med ett inbränt tal. Saknas ett land står det som null med orsak — aldrig en gissning.",
-  "matt": "2026-09-27",
+  "comment": "Matstrumpors varukostnad (COGS) per produkt och LEVERANSLAND — landad kostnad = varan + frakten till kunden. Källor står per block. Belopp i den valuta källan gav; omräkning till SEK sker vid läsning med ECB:s dagskurs (stonebite/kallor/valuta.mjs), aldrig med ett inbränt tal. Saknas ett land står det som null med orsak — aldrig en gissning. Raden `pris` är arkets egen totalkolumn (price $) där den avviker 0,1 från cost + frakt — den vinner, det är vad leverantören fakturerar.",
+  "matt": "2026-10-03",
   "produkter": {
-    "sushi-strumpor": { "varianter": { "5 - Par / One Size": "sushi-5", "3 - Par / One Size": "sushi-3" }, "comment": "Två varianter = två kostnadsrader." },
-    "donut-strumpor": { "varianter": { "*": "donut" } },
-    "pizza-strumpor": { "varianter": { "*": "pizza" } },
-    "hamburger-strumpor": { "varianter": { "*": "hamburgare" } },
-    "sushipinnar-i-akta-tra": { "varianter": { "*": "atpinnar" }, "comment": "Axel 2026-09-27: ätpinnarna ingår i sushipaketen och kostar 0 (Cost per item i Shopify)." },
-    "presentkort": { "varianter": { "*": "presentkort" }, "comment": "Ett presentkort har ingen varukostnad." }
+    "sushi-strumpor": {
+      "varianter": {
+        "5 - Par / One Size": "sushi-5",
+        "3 - Par / One Size": "sushi-3"
+      },
+      "comment": "Två varianter = två kostnadsrader."
+    },
+    "donut-strumpor": {
+      "varianter": {
+        "*": "donut"
+      }
+    },
+    "pizza-strumpor": {
+      "varianter": {
+        "*": "pizza"
+      }
+    },
+    "hamburger-strumpor": {
+      "varianter": {
+        "*": "hamburgare"
+      }
+    },
+    "sushipinnar-i-akta-tra": {
+      "varianter": {
+        "*": "atpinnar"
+      },
+      "comment": "Axel 2026-09-27: ätpinnarna ingår i sushipaketen och kostar 0 (Cost per item i Shopify)."
+    },
+    "presentkort": {
+      "varianter": {
+        "*": "presentkort"
+      },
+      "comment": "Ett presentkort har ingen varukostnad."
+    }
   },
   "sverige": {
-    "comment": "SE-kostnaden är Shopifys 'Cost per item' (inventoryItem.unitCost, SEK, landad — inköp + frakt till Sverige), läst 2026-09-27. Donut/pizza/hamburgare SAKNAR Cost per item i Shopify — Axel fyller i (han sa 2026-09-27 'har inte Sverige än'). Tull 2,9 EUR per order läggs på ordern (matstrumpor/konfig.json ekonomi.tull_eur).",
+    "comment": "SE-kostnaden är Shopifys 'Cost per item' (inventoryItem.unitCost, SEK, landad — inköp + frakt till Sverige, utan tull). Sushi: Axels tal 2026-09-21 (arkets pris × 9,784). Donut, pizza och hamburgare: skrivna 2026-10-03 av `cogs-skriv.mjs` ur Axels ark (skärmdumparna samma dag, `ark_usd` nedan) × ECB-kursen 10,0579 (kursdag 2026-10-02), tillbakalästa. Arket har också '2 set' = två lådor i ett paket: frakten är inte dubbel (sushi 5 par: 8,2 USD för en låda, 12,3 för två) — det är Axels 120,92 kr för standardordern i konfig.json. Cost per item är EN låda; StonePNL får 2-set-steget via offertsvaret. Tull 2,9 EUR per order läggs på ordern (matstrumpor/konfig.json ekonomi.tull_eur).",
     "valuta": "SEK",
-    "kostnad": { "sushi-5": 80.23, "sushi-3": 67.51, "donut": null, "pizza": null, "hamburgare": null, "atpinnar": 0, "presentkort": 0 },
-    "saknas_orsak": "Cost per item tomt i Shopify för donut-strumpor, pizza-strumpor och hamburger-strumpor (mätt 2026-09-27). Fyll i under Produkter → produkten → Kostnad per artikel, så läser vinsten det nästa timme."
+    "kostnad": {
+      "sushi-5": 80.23,
+      "sushi-3": 67.51,
+      "donut": 73.42,
+      "pizza": 81.47,
+      "hamburgare": 76.44,
+      "atpinnar": 0,
+      "presentkort": 0
+    },
+    "saknas_orsak": "Cost per item tomt i Shopify. Fyll i med `node matstrumpor/cogs-skriv.mjs <handle>=<kr> --skarpt`, så läser vinsten det nästa timme.",
+    "kurs_usd_sek": {
+      "kurs": 10.057906,
+      "kursdag": "2026-10-02",
+      "kalla": "ECB via stonebite/kallor/valuta.mjs, hämtad 2026-10-03"
+    },
+    "ark_usd": {
+      "sushi-3": [
+        {
+          "antal": 1,
+          "cost": 1.7,
+          "frakt": 5.2,
+          "pris": 6.9
+        },
+        {
+          "antal": 2,
+          "cost": 3.4,
+          "frakt": 7.0,
+          "pris": 10.4
+        }
+      ],
+      "sushi-5": [
+        {
+          "antal": 1,
+          "cost": 2.6,
+          "frakt": 5.6,
+          "pris": 8.2
+        },
+        {
+          "antal": 2,
+          "cost": 5.2,
+          "frakt": 7.1,
+          "pris": 12.3
+        }
+      ],
+      "donut": [
+        {
+          "antal": 1,
+          "cost": 2.1,
+          "frakt": 5.2,
+          "pris": 7.3
+        },
+        {
+          "antal": 2,
+          "cost": 4.2,
+          "frakt": 7.0,
+          "pris": 11.3
+        }
+      ],
+      "pizza": [
+        {
+          "antal": 1,
+          "cost": 2.7,
+          "frakt": 5.4,
+          "pris": 8.1
+        },
+        {
+          "antal": 2,
+          "cost": 5.4,
+          "frakt": 7.7,
+          "pris": 13.1
+        }
+      ],
+      "hamburgare": [
+        {
+          "antal": 1,
+          "cost": 2.5,
+          "frakt": 5.2,
+          "pris": 7.6
+        },
+        {
+          "antal": 2,
+          "cost": 4.9,
+          "frakt": 7.3,
+          "pris": 12.2
+        }
+      ]
+    }
   },
   "big5": {
-    "comment": "Axels ark 2026-09-27 (matstrumpor/cogs-big5.md, avläst ur en skärmdump — kontrollera mot arket innan något räknas skarpt). USD per ORDER: cost = varan för hela raden, frakt = frakten för hela raden. Raden '1 set' är en låda, '2 set' två lådor i samma paket (frakten är inte dubbel). Sushi har raderna per variant (3 par / 5 par), en låda per rad.",
+    "comment": "Axels ark (matstrumpor/cogs-big5.md, avläst ur en skärmdump 2026-09-27 och KONTROLLERAD mot en andra skärmdump av hela arket 2026-10-03 — alla tal stämmer). USD per ORDER: cost = varan för hela raden, frakt = frakten för hela raden, pris = arkets egen totalkolumn där den avviker. Raden '1 set' är en låda, '2 set' två lådor i samma paket (frakten är inte dubbel). Sushi har raderna per variant (3 par / 5 par), en låda per rad.",
     "valuta": "USD",
-    "lander": ["US", "GB", "NZ", "AU", "CA"],
+    "lander": [
+      "US",
+      "GB",
+      "NZ",
+      "AU",
+      "CA"
+    ],
     "rader": {
-      "sushi-3":    { "US": [ { "antal": 1, "cost": 1.7, "frakt": 6.9 } ], "GB": [ { "antal": 1, "cost": 1.7, "frakt": 4.8 } ], "NZ": [ { "antal": 1, "cost": 1.7, "frakt": 6.4 } ], "AU": [ { "antal": 1, "cost": 1.7, "frakt": 6.7 } ], "CA": [ { "antal": 1, "cost": 1.7, "frakt": 5.9 } ] },
-      "sushi-5":    { "US": [ { "antal": 1, "cost": 2.6, "frakt": 8.0 } ], "GB": [ { "antal": 1, "cost": 2.6, "frakt": 5.7 } ], "NZ": [ { "antal": 1, "cost": 2.6, "frakt": 8.1 } ], "AU": [ { "antal": 1, "cost": 2.6, "frakt": 8.8 } ], "CA": [ { "antal": 1, "cost": 2.6, "frakt": 7.2 } ] },
-      "donut":      { "US": [ { "antal": 1, "cost": 2.6, "frakt": 6.5 }, { "antal": 2, "cost": 5.2, "frakt": 9.0 } ], "GB": [ { "antal": 1, "cost": 2.6, "frakt": 4.5 }, { "antal": 2, "cost": 5.2, "frakt": 6.2 } ], "NZ": [ { "antal": 1, "cost": 2.6, "frakt": 6.2 }, { "antal": 2, "cost": 5.2, "frakt": 9.4 } ], "AU": [ { "antal": 1, "cost": 2.6, "frakt": 6.5 }, { "antal": 2, "cost": 5.2, "frakt": 9.8 } ], "CA": [ { "antal": 1, "cost": 2.6, "frakt": 5.5 }, { "antal": 2, "cost": 5.2, "frakt": 7.5 } ] },
-      "pizza":      { "US": [ { "antal": 1, "cost": 2.7, "frakt": 7.1 }, { "antal": 2, "cost": 5.4, "frakt": 10.7 } ], "GB": [ { "antal": 1, "cost": 2.7, "frakt": 4.9 }, { "antal": 2, "cost": 5.4, "frakt": 7.0 } ], "NZ": [ { "antal": 1, "cost": 2.7, "frakt": 7.2 }, { "antal": 2, "cost": 5.4, "frakt": 11.4 } ], "AU": [ { "antal": 1, "cost": 2.7, "frakt": 7.6 }, { "antal": 2, "cost": 5.4, "frakt": 11.8 } ], "CA": [ { "antal": 1, "cost": 2.7, "frakt": 6.1 }, { "antal": 2, "cost": 5.4, "frakt": 8.9 } ] },
-      "hamburgare": { "US": [ { "antal": 1, "cost": 2.5, "frakt": 6.4 }, { "antal": 2, "cost": 4.9, "frakt": 9.5 } ], "GB": [ { "antal": 1, "cost": 2.5, "frakt": 4.6 }, { "antal": 2, "cost": 4.9, "frakt": 6.4 } ], "NZ": [ { "antal": 1, "cost": 2.5, "frakt": 6.4 }, { "antal": 2, "cost": 4.9, "frakt": 9.9 } ], "AU": [ { "antal": 1, "cost": 2.5, "frakt": 6.8 }, { "antal": 2, "cost": 4.9, "frakt": 10.3 } ], "CA": [ { "antal": 1, "cost": 2.5, "frakt": 5.7 }, { "antal": 2, "cost": 4.9, "frakt": 7.9 } ] },
-      "atpinnar":   { "US": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "GB": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "NZ": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "AU": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "CA": [ { "antal": 1, "cost": 0, "frakt": 0 } ] }
+      "sushi-3": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 6.9
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 4.8
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 6.4
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 6.7
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 5.9
+          }
+        ]
+      },
+      "sushi-5": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 8
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 5.7
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 8.1
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 8.8
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 7.2
+          }
+        ]
+      },
+      "donut": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.5
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 9
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 4.5
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 6.2
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.2,
+            "pris": 8.7
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 9.4,
+            "pris": 14.5
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.5
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 9.8,
+            "pris": 14.9
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 5.5
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 7.5,
+            "pris": 12.6
+          }
+        ]
+      },
+      "pizza": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 7.1
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 10.7
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 4.9
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 7
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 7.2
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 11.4
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 7.6
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 11.8
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 6.1
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 8.9
+          }
+        ]
+      },
+      "hamburgare": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 6.4
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 9.5
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 4.6,
+            "pris": 7.0
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 6.4
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 6.4
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 9.9
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 6.8,
+            "pris": 9.2
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 10.3
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 5.7
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 7.9
+          }
+        ]
+      },
+      "atpinnar": {
+        "US": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "GB": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "NZ": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "AU": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "CA": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ]
+      }
     },
     "tull": "Ingen tullrad i arket. Big 5-frakten är dörr till dörr enligt Axels ark — tull läggs INTE på (till skillnad från Sverige). Ändra här om Axel säger annat."
   },
   "norden": {
-    "comment": "NO, DK och FI: INGEN kostnad känd (varken i Shopify eller i något ark, mätt 2026-09-27). Marknaderna öppnas ändå, men break-even per land kan inte räknas förrän Axel ger landad kostnad per låda, eller säger att Sveriges kostnad + tullen ska gälla.",
-    "lander": ["NO", "DK", "FI"],
-    "kostnad": null,
-    "saknas_orsak": "Axel har inte gett fraktkostnaden till Norge, Danmark eller Finland. Frågan står i rapporten 2026-09-27."
+    "comment": "NO, DK och FI ur Axels ark, skärmdumparna 2026-10-03 (två oberoende avläsningar, lika). USD per ORDER som big5: '1 set' en låda, '2 set' två lådor i samma paket. ⚠️ Arket ger sushi 3 par varan 2,6 i DK/FI men 1,7 i SE/NO — arkets tal, inte rättat; pris-kolumnen gäller.",
+    "valuta": "USD",
+    "lander": [
+      "NO",
+      "DK",
+      "FI"
+    ],
+    "tull_lander": [
+      "DK",
+      "FI"
+    ],
+    "tull": "EU-tullen (konfig.json ekonomi.tull_eur) läggs på ordrar till DK och FI — paketet går in i EU där. Norge ligger utanför EU: ingen tull (Axel 2026-10-03 om StonePNL: 'den räknar ju tull på länder som inte ens är med i EU').",
+    "rader": {
+      "sushi-3": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 1.7,
+            "frakt": 6.3,
+            "pris": 8.0
+          },
+          {
+            "antal": 2,
+            "cost": 3.4,
+            "frakt": 7.9,
+            "pris": 11.3
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 5.8,
+            "pris": 8.4
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 6.2,
+            "pris": 11.4
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.3,
+            "pris": 8.9
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 7.5,
+            "pris": 12.7
+          }
+        ]
+      },
+      "sushi-5": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.8,
+            "pris": 9.4
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 8.5,
+            "pris": 13.7
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 7.1,
+            "pris": 9.7
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 8.4,
+            "pris": 13.6
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 7.7,
+            "pris": 10.3
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 10.1,
+            "pris": 15.3
+          }
+        ]
+      },
+      "donut": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.6,
+            "pris": 9.2
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 8.8,
+            "pris": 13.9
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 6.8,
+            "pris": 9.4
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 8.9,
+            "pris": 14.0
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 2.6,
+            "frakt": 7.3,
+            "pris": 9.9
+          },
+          {
+            "antal": 2,
+            "cost": 5.2,
+            "frakt": 9.4,
+            "pris": 14.5
+          }
+        ]
+      },
+      "pizza": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 6.8,
+            "pris": 9.5
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 8.9,
+            "pris": 14.3
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 6.9,
+            "pris": 9.6
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 8.9,
+            "pris": 14.3
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 2.7,
+            "frakt": 7.4,
+            "pris": 10.1
+          },
+          {
+            "antal": 2,
+            "cost": 5.4,
+            "frakt": 10.5,
+            "pris": 15.9
+          }
+        ]
+      },
+      "hamburgare": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 6.4,
+            "pris": 8.9
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 8.3,
+            "pris": 13.2
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 6.5,
+            "pris": 9.0
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 8.4,
+            "pris": 13.3
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 2.5,
+            "frakt": 7.1,
+            "pris": 9.5
+          },
+          {
+            "antal": 2,
+            "cost": 4.9,
+            "frakt": 9.8,
+            "pris": 14.7
+          }
+        ]
+      },
+      "atpinnar": {
+        "NO": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "DK": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ],
+        "FI": [
+          {
+            "antal": 1,
+            "cost": 0,
+            "frakt": 0
+          }
+        ]
+      }
+    }
   }
 }

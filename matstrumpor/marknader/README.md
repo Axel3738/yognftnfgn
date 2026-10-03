@@ -1138,9 +1138,20 @@ fältet sattes till 0 samma förmiddag via API (`inventoryItemUpdate`, tillbakal
    ⚠️ Standardtullen 27,50 kr är appens startvärde för en SEK-butik; Axels egen siffra är 2,9 EUR
    (`../konfig.json`) och sajten stonebite.org räknar 2,8 EUR (`stonebite/kostnader.json`). Tre tal, alla
    Axels; prompten rör inte standardvärdet.
-3. **Kvar, Axels:** donut-, pizza- och hamburgarstrumporna saknar Cost per item i Shopify (null, 100 lådor
-   på 14 dagar = det "cost missing" panelen visar), och alla länder utom US/CA räknas på svensk kostnad tills
-   leverantören svarat via StonePNL:s offertlänk.
+3. **Kostnaderna, samma eftermiddag (Axels fem skärmdumpar av leverantörens ark):** Sverige, Norge, Danmark
+   och Finland för alla fyra produkterna, med en och två lådor i samma paket, plus hela Big 5-arket igen (som
+   bekräftade `../cogs-big5.md` rad för rad). Två oberoende avläsare läste samma tal. **Shopify:** Cost per item
+   för donut 73,42, pizza 81,47 och hamburgare 76,44 kr (arkets pris × ECB 10,0579, kursdag 2026-10-02), skrivna
+   och tillbakalästa med `../cogs-skriv.mjs --skarpt`; sushins 80,23 / 67,51 är Axels egna (arket × 9,784) och
+   rörs inte. **`../cogs.json`:** `sverige.ark_usd`, blocket `norden` med rader för NO/DK/FI (`cogs.mjs` läser det
+   som big5, arkets pris-kolumn vinner över cost + frakt där de skiljer 0,1), `tull_lander: DK, FI`. **StonePNL:**
+   `stonepnl/bygg-offertsvar.mjs` bygger `offertsvar-alla.txt` ur cogs.json (nio länder × fem varianter, 1 och
+   2 pcs), provläst med appens egen läsare `tolkaOffertsvar` + `offertTillRader`: 45 av 45 rader skrivs, de 45
+   noteringarna är "no price for 3 pcs" och sushins linjära Big 5-steg. Texten ligger i prompt 9. Sveriges rad
+   ger appen tvålådesteget (8,2 USD för en låda, 12,3 för två = Axels 120,92 kr) — utan det räknade appen varje
+   "Köp 1, få 1"-order som två fulla frakter. ⚠️ Arket ger sushi 3 par varan 2,6 USD i DK/FI men 1,7 i SE/NO —
+   arkets eget tal, inte rättat. **Kvar, Axels:** Europa (DE, AT, CH, FR, BE, LU, NL, ES, IT, PL, PT), Japan och
+   Taiwan har ingen kostnad; de räknas på svensk kostnad tills leverantören svarat via StonePNL:s offertlänk.
 
 ## Sajtgranskningen 2026-10-01: rättningarna (2026-10-02, `sajtfix.mjs`)
 

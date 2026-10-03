@@ -53,6 +53,17 @@ export function tillSek(belopp, valuta, kurser) {
   return belopp * per;
 }
 
+/** Arkets egen totalkolumn vinner när den finns (avviker 0,1 från cost + frakt på några rader). */
+const radPris = (rad) => (rad.pris != null ? rad.pris : rad.cost + rad.frakt);
+
+/** Tullen (konfig.json ekonomi.tull_eur) gäller paket som går in i EU: Sverige och blockets `tull_lander`. */
+export function tullGaller(cogs, land) {
+  const l = String(land ?? '').toUpperCase();
+  if (l === 'SE') return true;
+  const block = blockFor(cogs, l);
+  return Boolean(block && (cogs[block]?.tull_lander ?? []).includes(l));
+}
+
 /**
  * Landad kostnad för EN orderrad (antal lådor av samma variant) till ett land.
  * → { sek, valuta, belopp, kalla } eller { saknas: '<orsak>' }
@@ -68,25 +79,27 @@ export function landadKostnad({ handle, variantTitel = '', antal = 1, land }, ku
     if (k === null || k === undefined) return { saknas: `${handle}: ${cogs.sverige.saknas_orsak}` };
     return { sek: r2(k * n), valuta: 'SEK', belopp: r2(k * n), kalla: `Cost per item ${k} SEK × ${n}` };
   }
-  if (block === 'norden') return { saknas: `${land}: ${cogs.norden.saknas_orsak}` };
-  const rader = cogs.big5.rader?.[nyckel]?.[String(land).toUpperCase()];
-  if (!rader || rader.length === 0) return { saknas: `${handle} till ${land}: ingen rad i Big 5-arket` };
+  const blk = cogs[block];
+  if (!blk.rader) return { saknas: `${land}: ${blk.saknas_orsak ?? 'inget kostnadsark'}` };
+  const rader = blk.rader?.[nyckel]?.[String(land).toUpperCase()];
+  if (!rader || rader.length === 0) return { saknas: `${handle} till ${land}: ingen rad i arket (${block})` };
   const exakt = rader.find((x) => x.antal === n);
   let belopp, kalla;
-  if (exakt) { belopp = exakt.cost + exakt.frakt; kalla = `arket ${land} ${n} set: ${exakt.cost} + ${exakt.frakt} USD`; }
+  if (exakt) { belopp = radPris(exakt); kalla = `arket ${land} ${n} set: ${exakt.pris != null ? `${exakt.pris} (pris)` : `${exakt.cost} + ${exakt.frakt}`} ${blk.valuta}`; }
   else {
     const storst = [...rader].sort((a, b) => b.antal - a.antal)[0];
     const faktor = n / storst.antal;
-    belopp = (storst.cost + storst.frakt) * faktor;
+    belopp = radPris(storst) * faktor;
     kalla = `arket ${land} ${storst.antal} set × ${r2(faktor)} (linjärt — arket saknar rad för ${n})`;
   }
-  return { sek: r2(tillSek(belopp, cogs.big5.valuta, kurser)), valuta: cogs.big5.valuta, belopp: r2(belopp), kalla };
+  return { sek: r2(tillSek(belopp, blk.valuta, kurser)), valuta: blk.valuta, belopp: r2(belopp), kalla };
 }
 
 /**
- * Hela orderns varukostnad: rader = [{ handle, variantTitel, antal }]. Big 5-frakten
- * i arket är per produktrad, så en blandad order (sushi + donut) får två frakter — det
- * överskattar; står i `anmarkning`. Sverige: tull per order läggs på när `tullSek` ges.
+ * Hela orderns varukostnad: rader = [{ handle, variantTitel, antal }]. Arkets frakt (Big 5
+ * och Norden) är per produktrad, så en blandad order (sushi + donut) får två frakter — det
+ * överskattar; står i `anmarkning`. Tull per order läggs på när `tullSek` ges och landet
+ * ligger i EU (`tullGaller`: SE, DK, FI).
  */
 export function orderKostnad(rader, land, kurser, { tullSek = 0, cogs = lasCogs() } = {}) {
   let sek = 0;
@@ -99,8 +112,8 @@ export function orderKostnad(rader, land, kurser, { tullSek = 0, cogs = lasCogs(
     delar.push({ ...rad, ...k });
   }
   const block = blockFor(cogs, land);
-  if (block === 'sverige' && tullSek) { sek += tullSek; delar.push({ tull: true, sek: r2(tullSek), kalla: 'tull per order (konfig.json)' }); }
-  const anmarkning = block === 'big5' && delar.filter((d) => !d.tull).length > 1 ? 'blandad order: arkets frakt är per produktrad — summan överskattar frakten' : null;
+  if (tullSek && tullGaller(cogs, land)) { sek += tullSek; delar.push({ tull: true, sek: r2(tullSek), kalla: 'tull per order (konfig.json)' }); }
+  const anmarkning = block && cogs[block]?.rader && delar.filter((d) => !d.tull).length > 1 ? 'blandad order: arkets frakt är per produktrad — summan överskattar frakten' : null;
   return { sek: r2(sek), delar, saknas, komplett: saknas.length === 0, anmarkning };
 }
 

@@ -1,4 +1,4 @@
-Skriven 2026-10-03 efter Axels fråga om StonePNL:s marknadsvy ("den räknar ju tull på länder som inte ens är med i EU"). Mätt samma dag: standardtullen 27,50 kr låg på 26 av dagens 27 ordrar (715 kr), också på Japan, Schweiz, Storbritannien och Norge. Bara USA och Kanada hade 0 (prompt 6). Avgiftsfelet (yen lästes som kronor) rättades i appens kod samma dag och kräver inget klick.
+Skriven 2026-10-03 efter Axels fråga om StonePNL:s marknadsvy ("den räknar ju tull på länder som inte ens är med i EU"). Mätt samma dag: standardtullen 27,50 kr låg på 26 av dagens 27 ordrar (715 kr), också på Japan, Schweiz, Storbritannien och Norge. Bara USA och Kanada hade 0 (prompt 6). Avgiftsfelet (yen lästes som kronor) rättades i appens kod samma dag och kräver inget klick. Samma eftermiddag skickade Axel leverantörens ark för Sverige, Norge, Danmark och Finland: Sveriges Cost per item för donut, pizza och hamburgare är skrivet i Shopify via API, och leverantörssvaret nedan (byggt ur ../../cogs.json med stonepnl/bygg-offertsvar.mjs, provläst med appens egen läsare: 45 av 45 rader) bär nu alla nio länder med priset för en och två lådor.
 
 Uppdrag: två inställningar i appen StonePNL i Shopify-butiken Matstrumpor (admin.shopify.com/store/1r46tp-qx → Appar → StonePNL), så att tullen bara räknas på paket som går in i EU. Gör bara det som står nedan.
 
@@ -21,19 +21,111 @@ Rör ALDRIG: Shopifys produkter, priser och "Cost per item", standardkostnaden i
    d. Spara.
    e. Kontroll: ladda om sidan. De nio länderna i b ska visa 0 i "Duty per order", och EU-länderna ska vara tomma.
 
-2. Leverantörens priser för Storbritannien, Nya Zeeland och Australien (StonePNL → Costs)
-   Varför: prompt 6 klistrade in leverantörens priser, men StonePNL svarade "is not one of your store's markets" för GB, NZ och AU, så bara USA och Kanada fick sina priser. Nu finns koderna i appen (steg 1a), så samma text ger de tre länderna sina priser.
+2. Leverantörens priser för alla nio länder (StonePNL → Costs)
+   Varför: prompt 6 gav bara USA och Kanada sina priser (GB, NZ och AU var inga marknader i appen, och arket för Norden fanns inte då). Nu bär texten Sverige, Norge, Danmark, Finland, USA, Kanada, Storbritannien, Nya Zeeland och Australien, med priset för EN låda och för TVÅ lådor i samma paket (frakten är inte dubbel — "Köp 1, få 1" är två lådor i ett paket). Sveriges rad ger StonePNL tvålådepriset för hemmamarknaden; Cost per item för en låda ligger redan i Shopify.
    a. StonePNL → Costs. Välj "Standard (all markets)" i rutan "Market" överst.
    b. Öppna kortet "Ask your supplier for a quote". Kopiera INTE meddelandet och skicka inget till någon.
-   c. Klistra in HELA texten mellan ===BÖRJAN=== och ===SLUT=== längst ner i rutan "Your supplier's answer", exakt som den står. Raderna ===BÖRJAN=== och ===SLUT=== ska inte med. Det är samma text som i prompt 6; USA:s och Kanadas priser skrivs då om med samma värden, det är rätt.
+   c. Klistra in HELA texten mellan ===BÖRJAN=== och ===SLUT=== längst ner i rutan "Your supplier's answer", exakt som den står. Raderna ===BÖRJAN=== och ===SLUT=== ska inte med. USA:s och Kanadas priser skrivs då om med samma värden som i prompt 6, det är rätt.
    d. Klicka "Read answer". Klicka bara en gång.
-   e. Förväntat kvitto: "… costs added from the quote". Under "Not added" kan det stå sådant som är rätt: "counted as that many × the 1 pc price" (sushi, 2 och 3 lådor), "no price for 3 pcs" (donut, pizza, hamburgare) och "your store's standard cost is still empty" (Sveriges kostnad för donut, pizza och hamburgare är fortfarande tom i Shopify). "is not one of your store's markets" ska INTE längre stå för GB, NZ eller AU.
+   e. Förväntat kvitto: "45 costs added from the quote" (eller nära det). Under "Not added" kan det stå sådant som är rätt och inget att åtgärda: "no price for 3 pcs" (arket har ingen rad för tre lådor) och "counted as that many × the 1 pc price" (sushi till USA, Kanada, Storbritannien, Nya Zeeland och Australien: arket har bara priset för en låda där). "is not one of your store's markets" ska INTE stå för något av de nio länderna, och "your store's standard cost is still empty" ska INTE stå (Sveriges Cost per item finns för alla fem varianter sedan 2026-10-03).
    f. Står det "Nothing was saved", "Nothing was added" eller ett pris "at or above the product's own price": stanna, rapportera texten ordagrant och gör inget mer i steg 2. Klistra aldrig in svaret två gånger.
 
 Kontroll efteråt: StonePNL → översikten → marknadsvyn ("Per market").
 - Raden "Default duty used for" ska bara lista EU-länder. Japan, Switzerland, United Kingdom, Norway, United States och Canada ska inte stå där.
 - Rutan "Duty" överst ska visa ett lägre snitt per order än 27,50 kr när dagen har ordrar utanför EU.
-- United Kingdom, Australia och New Zealand ska inte längre stå i raden "counted on the store's standard cost" (när de har ordrar i perioden).
+- Norway, Denmark, Finland, United Kingdom, Australia och New Zealand ska inte längre stå i raden "counted on the store's standard cost" (när de har ordrar i perioden).
+- "cost missing" ska vara borta för alla länder som bara säljer sushi, donut, pizza och hamburgare.
+
+Rapportera: steg 1 (vilka länder som fick 0 och vilka koder som lades till), steg 2 (kvittot ordagrant), och en skärmdump av marknadsvyns noteringar efteråt. Skriv sedan "StonePNL tull klart" i chatten med Claude.
+
+===BÖRJAN===
+StonePNL quote request · Matstrumpor · 2026-10-03 · USD
+
+Hi! Could you please send us your prices for the products below?
+
+HOW TO REPLY — please follow this exactly:
+1. Reply with ONE single message.
+2. Copy this whole message and write your price instead of every ___.
+3. Every price is the TOTAL price for that many pieces sent together in one order: product + shipping to that country. Example: "2 pcs = 30 USD" means 2 pieces cost 30 USD together, shipping included. Write only the total — not "+ shipping" and not "each".
+4. All prices in USD. If you use another currency, write it instead of USD after each price.
+5. Keep the "ID:" lines, and keep the country code at the start of each line.
+6. One line per country. Do not group countries (for example "EU").
+7. If you cannot ship a product to a country, write X instead of the prices on that line.
+8. If import duty/VAT is already included in the price (DDP), write DDP at the end of that line.
+
+----------------------------------------
+#1 Sushi-Strumpor — 5 - Par / One Size
+ID: 52506473365843
+SE (Sweden): 1 pc = 8.20 USD | 2 pcs = 12.30 USD | 3 pcs = ___ USD
+NO (Norway): 1 pc = 9.40 USD | 2 pcs = 13.70 USD | 3 pcs = ___ USD
+DK (Denmark): 1 pc = 9.70 USD | 2 pcs = 13.60 USD | 3 pcs = ___ USD
+FI (Finland): 1 pc = 10.30 USD | 2 pcs = 15.30 USD | 3 pcs = ___ USD
+US (United States): 1 pc = 10.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 9.80 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 8.30 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 10.70 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 11.40 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+----------------------------------------
+#2 Sushi-Strumpor — 3 - Par / One Size
+ID: 52506473398611
+SE (Sweden): 1 pc = 6.90 USD | 2 pcs = 10.40 USD | 3 pcs = ___ USD
+NO (Norway): 1 pc = 8.00 USD | 2 pcs = 11.30 USD | 3 pcs = ___ USD
+DK (Denmark): 1 pc = 8.40 USD | 2 pcs = 11.40 USD | 3 pcs = ___ USD
+FI (Finland): 1 pc = 8.90 USD | 2 pcs = 12.70 USD | 3 pcs = ___ USD
+US (United States): 1 pc = 8.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 7.60 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 6.50 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.10 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 8.40 USD | 2 pcs = ___ USD | 3 pcs = ___ USD
+----------------------------------------
+#3 Donut-strumpor — One Size
+ID: 52510025253203
+SE (Sweden): 1 pc = 7.30 USD | 2 pcs = 11.30 USD | 3 pcs = ___ USD
+NO (Norway): 1 pc = 9.20 USD | 2 pcs = 13.90 USD | 3 pcs = ___ USD
+DK (Denmark): 1 pc = 9.40 USD | 2 pcs = 14.00 USD | 3 pcs = ___ USD
+FI (Finland): 1 pc = 9.90 USD | 2 pcs = 14.50 USD | 3 pcs = ___ USD
+US (United States): 1 pc = 9.10 USD | 2 pcs = 14.20 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.10 USD | 2 pcs = 12.60 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.10 USD | 2 pcs = 11.40 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.70 USD | 2 pcs = 14.50 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 9.10 USD | 2 pcs = 14.90 USD | 3 pcs = ___ USD
+----------------------------------------
+#4 Pizza-Strumpor — One Size
+ID: 52579705225555
+SE (Sweden): 1 pc = 8.10 USD | 2 pcs = 13.10 USD | 3 pcs = ___ USD
+NO (Norway): 1 pc = 9.50 USD | 2 pcs = 14.30 USD | 3 pcs = ___ USD
+DK (Denmark): 1 pc = 9.60 USD | 2 pcs = 14.30 USD | 3 pcs = ___ USD
+FI (Finland): 1 pc = 10.10 USD | 2 pcs = 15.90 USD | 3 pcs = ___ USD
+US (United States): 1 pc = 9.80 USD | 2 pcs = 16.10 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.80 USD | 2 pcs = 14.30 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.60 USD | 2 pcs = 12.40 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 9.90 USD | 2 pcs = 16.80 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 10.30 USD | 2 pcs = 17.20 USD | 3 pcs = ___ USD
+----------------------------------------
+#5 Hamburgare-Strumpor — One Size
+ID: 52579707027795
+SE (Sweden): 1 pc = 7.60 USD | 2 pcs = 12.20 USD | 3 pcs = ___ USD
+NO (Norway): 1 pc = 8.90 USD | 2 pcs = 13.20 USD | 3 pcs = ___ USD
+DK (Denmark): 1 pc = 9.00 USD | 2 pcs = 13.30 USD | 3 pcs = ___ USD
+FI (Finland): 1 pc = 9.50 USD | 2 pcs = 14.70 USD | 3 pcs = ___ USD
+US (United States): 1 pc = 8.90 USD | 2 pcs = 14.40 USD | 3 pcs = ___ USD
+CA (Canada): 1 pc = 8.20 USD | 2 pcs = 12.80 USD | 3 pcs = ___ USD
+GB (United Kingdom): 1 pc = 7.00 USD | 2 pcs = 11.30 USD | 3 pcs = ___ USD
+NZ (New Zealand): 1 pc = 8.90 USD | 2 pcs = 14.80 USD | 3 pcs = ___ USD
+AU (Australia): 1 pc = 9.20 USD | 2 pcs = 15.20 USD | 3 pcs = ___ USD
+----------------------------------------
+
+5 products, 9 countries. Thank you!
+===SLUT=== längst ner i rutan "Your supplier's answer", exakt som den står. Raderna ===BÖRJAN=== och ===SLUT=== ska inte med. Det är samma text som i prompt 6; USA:s och Kanadas priser skrivs då om med samma värden, det är rätt.
+   d. Klicka "Read answer". Klicka bara en gång.
+   e. Förväntat kvitto: "45 costs added from the quote" (eller nära det). Under "Not added" kan det stå sådant som är rätt och inget att åtgärda: "no price for 3 pcs" (arket har ingen rad för tre lådor) och "counted as that many × the 1 pc price" (sushi till USA, Kanada, Storbritannien, Nya Zeeland och Australien: arket har bara priset för en låda där). "is not one of your store's markets" ska INTE stå för något av de nio länderna, och "your store's standard cost is still empty" ska INTE stå (Sveriges Cost per item finns för alla fem varianter sedan 2026-10-03).
+   f. Står det "Nothing was saved", "Nothing was added" eller ett pris "at or above the product's own price": stanna, rapportera texten ordagrant och gör inget mer i steg 2. Klistra aldrig in svaret två gånger.
+
+Kontroll efteråt: StonePNL → översikten → marknadsvyn ("Per market").
+- Raden "Default duty used for" ska bara lista EU-länder. Japan, Switzerland, United Kingdom, Norway, United States och Canada ska inte stå där.
+- Rutan "Duty" överst ska visa ett lägre snitt per order än 27,50 kr när dagen har ordrar utanför EU.
+- Norway, Denmark, Finland, United Kingdom, Australia och New Zealand ska inte längre stå i raden "counted on the store's standard cost" (när de har ordrar i perioden).
+- "cost missing" ska vara borta för alla länder som bara säljer sushi, donut, pizza och hamburgare.
 
 Rapportera: steg 1 (vilka länder som fick 0 och vilka koder som lades till), steg 2 (kvittot ordagrant), och en skärmdump av marknadsvyns noteringar efteråt. Skriv sedan "StonePNL tull klart" i chatten med Claude.
 

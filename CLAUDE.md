@@ -199,7 +199,10 @@ Shopify Payments skriver avgiften i KUNDENS valuta och appen summerade yen som k
 break-even-MER 1,90 mot 1,41–1,67 per land) — rättat i appens kod samma dag (build `avgiftsvaluta-v120` på deploy-grenen;
 sparade dagar rättas när returkollen skrivit om dem, 45 dagar inom 6 timmar). Standardtullen 27,50 kr låg på varje land utan
 eget belopp, också JP, CH, GB, NO: regeln är EU-tull bara på paket in i EU, 0 utanför EU — `marknader/cowork/9-stonepnl-tull.txt`.
-Donut, pizza och hamburgare saknar fortfarande Cost per item (Axels siffror). Allt i `marknader/README.md` → "StonePNL: vinsten per land".
+✅ Samma eftermiddag gav Axel leverantörens ark (SE, NO, DK, FI + Big 5): Cost per item för donut/pizza/hamburgare skrivet i Shopify
+(`matstrumpor/cogs-skriv.mjs`, arkets pris × ECB), `cogs.json` bär `norden` och `sverige.ark_usd`, och `marknader/stonepnl/bygg-offertsvar.mjs`
+bygger leverantörssvaret till StonePNL (nio länder, 1 + 2 lådor, provläst med appens läsare) — det ligger i prompt 9. Europa, JP och TW saknar
+fortfarande kostnad. Allt i `marknader/README.md` → "StonePNL: vinsten per land".
 🔧 **Sajtgranskningen 2026-10-01 rättad 2026-10-02** (Axels "rätta allt rött och gult",
 `marknader/sajtfix.mjs`, prov i en kopia av MAIN, tabellen i `marknader/README.md` → "Sajtgranskningen
 2026-10-01: rättningarna"):
