@@ -162,10 +162,12 @@ rättvist.
 
 ## Kvar
 
-1. Rutinen byggs på Barkås-kontot efter merge (`create_session` med repot
-   som källa + `create_trigger` med `persistent_session_id`, cron `0 1 * * 2`,
-   prompt `/strategrapport --skarpt`), id:n skrivs i CLAUDE.md:s rutintabell
-   när de setts i `list_triggers`.
+1. ✅ Rutinen är byggd 2026-10-03 kl 14:25 CEST på Barkås-kontot, på Opus 5.5 (Axels ord: "du cookar min limit"; rutinen kör bara skriptet), efter att
+   PR #361 mergats till `main`: trigger `trig_01HThVzk3PVDiqz3SyFUGmJx`, fast
+   session `session_017XH7tcxJZCqrUW25AEZhY2` (repot som källa, `main` som
+   utgren, miljön med `NOTION_TOKEN`), cron `0 1 * * 2` UTC, prompt
+   `/strategrapport --skarpt`, sedd i `list_triggers`. Första fyrning tisdag
+   2026-10-06 03:04 CEST. Vinteromställningen: `0 2 * * 2`.
 2. Registrera rutinen i `stonebite/rutiner.json` EFTER första riktiga
    commiten (mönstret skrivs ur commit-rubriken `strategrapport <vecka>: …`,
    aldrig gissat).

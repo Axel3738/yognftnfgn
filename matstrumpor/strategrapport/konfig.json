@@ -13,6 +13,14 @@
   "ko_statusar": ["Creative strat review", "To be Reviewed"],
   "veckodag": "tisdag",
   "cron_utc": "0 1 * * 2",
+  "rutin": {
+    "trigger_id": "trig_01HThVzk3PVDiqz3SyFUGmJx",
+    "session_id": "session_017XH7tcxJZCqrUW25AEZhY2",
+    "konto": "barkas.kundservice@gmail.com",
+    "byggd": "2026-10-03",
+    "modell": "claude-opus-5-5",
+    "om": "Sedd i list_triggers samma körning. Första fyrning tisdag 2026-10-06 03:08 CEST."
+  },
   "cron_om": "Tisdag 03:00 CEST = 09:00 Manila, dagen efter Bruces måndagskoll (15:00 Manila) och efter Matstrumporkungens eventuella rond måndag 07:00. Vinter: 0 2 * * 2 för samma svenska tid.",
   "grind": { "spend_sek": 300, "kop": 3, "om": "bedömbar = spend ≥ 300 kr OCH köp ≥ 3 (ANALYSMETOD, Axels beslut 2026-10-02). Under grinden är den enda ärliga lärdomen 'Too little data'." },
   "vinnare_levande_dagar": 28,
