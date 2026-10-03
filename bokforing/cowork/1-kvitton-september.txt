@@ -68,11 +68,8 @@ B. SHOPIFY ABONNEMANG OCH APPAR, 24 dragningar, 12 886,94 kr
    BeaverShop UK (1wucum-x0), och de vilande: HeimGuard (pzjagy-mz), CatCabin (ras1t2-2x),
    AdventLane (ikf0tu-5e), TackleBay (iahe0c-b1), j0p8qz-kp, aphkky-ke, y1sj1i-3d.
 
-C. SHOPIFY UTBETALNINGAR (pengar IN), 109 rader, 2 518 620,66 kr
-   CaraShell och Matstrumpor är redan klara (shopify/-mappen). Gör resten:
-   Bäverbutiken, Beverbutikken NO, DK, FI och UK:
-   Shopify admin > Finanser > Utbetalningar > välj 1-30 september > Exportera (CSV).
-   Hämta också månadens avgiftsfaktura om butiken har en (Inställningar > Fakturering).
+C. SHOPIFY-FÖRSÄLJNINGEN (STRIPE Shopi, pengar IN) rör du INTE.
+   Den är redan kopplad till bokföringen. Bara Shopifys egna fakturor i punkt B.
 
 D. GOOGLE
    Google Ads, 11 dragningar, 51 610,77 kr. ads.google.com > Verktyg > Fakturering > Dokument.
