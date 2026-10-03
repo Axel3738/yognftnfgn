@@ -3426,3 +3426,11 @@ som inte laddar upp SE — den svenska annonsen bor i Bäverbutikens konto.
 USA, och AU-kopiorna görs av nästa runda bara om raderna fortfarande saknar AU
 och inte redan är Approved (gamla koden sätter Approved efter USA). Mergas
 grenen före 17:05 får de både USA och AU i samma runda.
+
+**Axels tre svar samma förmiddag:** "merga" (grenen in på `main` 2026-10-03,
+US-rutinen 17:05 kör alltså nya koden i dag: USA + AU för de sju), "igång" om
+norska CaraShell (ACTIVE är rätt, rörs inte), och "gör om om den inte redan är
+launchad" om `Takoverdrag_GT_11_H1` — den är live i Bäverbutiken SE + NO sedan
+23/9, så ingen omgörning; raden satt till Approved med kommentar (aldrig
+CaraShell: copy och slutkort nämner Bäverbutiken). Kön i `CaraShell SE ready
+to be active` är därmed tom.
