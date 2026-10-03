@@ -6,6 +6,8 @@
 //
 //   node matstrumpor/marknader/stonepnl/bygg-offertsvar.mjs            # skriver offertsvar-alla.txt
 //   node matstrumpor/marknader/stonepnl/bygg-offertsvar.mjs --stdout   # bara till skärmen
+//   node matstrumpor/marknader/stonepnl/bygg-offertsvar.mjs --fraga FR,BE,LU,IT,PT,JP   # FÖRFRÅGAN till leverantören
+//       för länder utan ark: samma mall med ___ i stället för pris (skrivs till offertfraga-<datum>.txt)
 //
 // Länderna: Sverige (ark_usd — ger StonePNL 2-set-steget för hemmamarknaden; Cost per item för
 // EN låda ligger redan i Shopify), Norden (norden.rader) och Big 5 (big5.rader). Belopp i USD,
@@ -25,7 +27,8 @@ const VARIANTER = [
   { nyckel: 'pizza', rubrik: 'Pizza-Strumpor — One Size', id: '52579705225555' },
   { nyckel: 'hamburgare', rubrik: 'Hamburgare-Strumpor — One Size', id: '52579707027795' },
 ];
-const LANDNAMN = { SE: 'Sweden', NO: 'Norway', DK: 'Denmark', FI: 'Finland', US: 'United States', CA: 'Canada', GB: 'United Kingdom', NZ: 'New Zealand', AU: 'Australia' };
+const LANDNAMN = { SE: 'Sweden', NO: 'Norway', DK: 'Denmark', FI: 'Finland', US: 'United States', CA: 'Canada', GB: 'United Kingdom', NZ: 'New Zealand', AU: 'Australia',
+  FR: 'France', BE: 'Belgium', LU: 'Luxembourg', IT: 'Italy', PT: 'Portugal', JP: 'Japan', DE: 'Germany', AT: 'Austria', CH: 'Switzerland', NL: 'Netherlands', ES: 'Spain', PL: 'Poland', TW: 'Taiwan' };
 const ORDNING = ['SE', 'NO', 'DK', 'FI', 'US', 'CA', 'GB', 'NZ', 'AU'];
 
 const pris = (rad) => (rad.pris != null ? rad.pris : rad.cost + rad.frakt);
@@ -40,9 +43,9 @@ function raderFor(nyckel, land) {
   return null;
 }
 
-export function byggOffertsvar(datum = new Date().toISOString().slice(0, 10)) {
-  const delar = [];
-  delar.push(`StonePNL quote request · Matstrumpor · ${datum} · USD`, '', 'Hi! Could you please send us your prices for the products below?', '',
+/** Huvudet ur StonePNL:s offertmall (byggOffertmeddelande) — samma text som appen själv skriver. */
+function huvud(datum) {
+  return [`StonePNL quote request · Matstrumpor · ${datum} · USD`, '', 'Hi! Could you please send us your prices for the products below?', '',
     'HOW TO REPLY — please follow this exactly:',
     '1. Reply with ONE single message.',
     '2. Copy this whole message and write your price instead of every ___.',
@@ -52,7 +55,24 @@ export function byggOffertsvar(datum = new Date().toISOString().slice(0, 10)) {
     '6. One line per country. Do not group countries (for example "EU").',
     '7. If you cannot ship a product to a country, write X instead of the prices on that line.',
     '8. If import duty/VAT is already included in the price (DDP), write DDP at the end of that line.',
-    '');
+    ''];
+}
+
+/** Förfrågan för länder utan ark: varje pris är ___, leverantören fyller i. */
+export function byggOffertfraga(lander, datum = new Date().toISOString().slice(0, 10)) {
+  const okanda = lander.filter((l) => !LANDNAMN[l]);
+  if (okanda.length) throw new Error(`okänd landskod: ${okanda.join(', ')} — lägg till i LANDNAMN`);
+  const delar = huvud(datum);
+  VARIANTER.forEach((v, i) => {
+    delar.push('----------------------------------------', `#${i + 1} ${v.rubrik}`, `ID: ${v.id}`);
+    for (const land of lander) delar.push(`${land} (${LANDNAMN[land]}): 1 pc = ___ USD | 2 pcs = ___ USD | 3 pcs = ___ USD`);
+  });
+  delar.push('----------------------------------------', '', `${VARIANTER.length} products, ${lander.length} countries. Thank you!`);
+  return delar.join('\n') + '\n';
+}
+
+export function byggOffertsvar(datum = new Date().toISOString().slice(0, 10)) {
+  const delar = huvud(datum);
   let lander = new Set();
   VARIANTER.forEach((v, i) => {
     delar.push('----------------------------------------', `#${i + 1} ${v.rubrik}`, `ID: ${v.id}`);
@@ -71,6 +91,16 @@ export function byggOffertsvar(datum = new Date().toISOString().slice(0, 10)) {
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const fi = process.argv.indexOf('--fraga');
+  if (fi > 0) {
+    const lander = (process.argv[fi + 1] ?? '').split(',').map((l) => l.trim().toUpperCase()).filter(Boolean);
+    if (!lander.length) throw new Error('--fraga kräver landskoder, t.ex. --fraga FR,BE,LU,IT,PT,JP');
+    const datum = new Date().toISOString().slice(0, 10);
+    const text = byggOffertfraga(lander, datum);
+    if (process.argv.includes('--stdout')) process.stdout.write(text);
+    else { const ut = join(HAR, `offertfraga-${datum}.txt`); writeFileSync(ut, text); console.log(`skrev ${ut}: ${lander.length} länder (${lander.join(', ')})`); }
+    process.exit(0);
+  }
   const { text, lander } = byggOffertsvar();
   if (process.argv.includes('--stdout')) process.stdout.write(text);
   else {
