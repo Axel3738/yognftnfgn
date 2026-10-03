@@ -108,6 +108,14 @@ for (const [p, kampanjer] of Object.entries(karta._uteslutna ?? {})) {
   }
 }
 
+/** Prefix-aliasets tvingade landningssida och extra butiksord (TackleBayRod_
+ *  2026-10-03: briefen säger tacklebay.se, annonsen ska till baverbutiken.se).
+ *  Följer med i --json så /notionkorning tar länken härifrån, aldrig ur briefen. */
+const aliasFalt = (landningssida, butiksord_extra) => ({
+  ...(landningssida ? { landningssida_tvingad: landningssida } : {}),
+  ...(butiksord_extra?.length ? { butiksord_extra } : {}),
+});
+
 // 2. Leveranserna i Drive — bara med --drive. Sedan 2026-09-02 är Notion enda
 // källan; Drive-vägen finns kvar för att kunna läsa gamla leveransmappar vid behov.
 const veckor = finns('drive') ? driveLs(EDITED_FOLDER).filter(x => x.typ === 'mapp') : [];
@@ -118,10 +126,11 @@ for (const v of veckor) {
     const namn = annonsdel(m.titel);
     const pfx = prefixAv(namn);
     if (!pfx) continue;                       // inte ett annonsnamn — hoppa tyst
-    const { p, kampanj, kalla, blockerad } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
+    const { p, kampanj, kalla, blockerad, landningssida, butiksord_extra } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
     leveranser.push({
       vecka: v.titel, mapp: m.id, namn, prefix: pfx,
       produktId: p?.id ?? pfx, kampanj, kalla, ...(blockerad ? { blockerad } : {}),
+      ...aliasFalt(landningssida, butiksord_extra),
     });
   }
 }
@@ -165,10 +174,11 @@ try {
     if (!pfx) { otolkade.push({ namn: r.namn, hub: r.hub, url: r.url }); continue; }
     // Kampanjkartan ur MagiBorsten ar ocksa teamspace-sparren: en hub vars prefix inte
     // finns i Baverbutikens konto hor till en annan verksamhet och laddas aldrig upp.
-    const { p, kampanj, kalla, blockerad } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
+    const { p, kampanj, kalla, blockerad, landningssida, butiksord_extra } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
     leveranser.push({
       vecka: r.hub, mapp: r.id, namn, prefix: pfx,
       produktId: p?.id ?? pfx, kampanj, kalla, ...(blockerad ? { blockerad } : {}),
+      ...aliasFalt(landningssida, butiksord_extra),
       kalla2: 'notion', notionUrl: r.url, notionFiler: r.filer, skapad: r.skapad,
       leverans: r.leverans, drive: r.drive ?? [], notionMedia: r.media ?? [],
     });
@@ -318,6 +328,8 @@ for (const [pid, rader] of Object.entries(perProdukt)) {
   for (const r of rader) {
     const media = r.filer.filter(f => f.typ === 'notion' || ÄR_MEDIA(f.titel));
     console.log(`  • ${r.namn}  (${r.kalla2 === 'notion' ? 'Notion: ' + r.vecka : r.vecka})`);
+    if (r.landningssida_tvingad) console.log(`      ⚠ landningssida TVINGAD ur prefix-alias.json: ${r.landningssida_tvingad} — briefens länk gäller inte`);
+    if (r.butiksord_extra) console.log(`      ⚠ räknas också som butiksnamn i stoppregel 1c: ${r.butiksord_extra.join(', ')}`);
     if (!media.length) {
       if (r.leverans === 'saknas') console.log(`      ⚠ VÄNTAR PÅ FIL — varken bilaga i "Filer och media", mediablock i sidan eller Drive-länk i sidan. Fråga redigeraren.`);
       else if (r.leverans === 'drive-lank') console.log(`      ⚠ Drive-länk i sidan men ingen video i mappen (${r.drive.map(k => k.id).join(', ')}) — inte klar. Fråga redigeraren.`);

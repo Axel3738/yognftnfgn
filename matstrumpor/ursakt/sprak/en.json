@@ -1,0 +1,17 @@
+{
+  "amne": "We are so sorry, your parcel is going to be late",
+  "forhand": "It may take 5-10 business days longer than usual. Here is what that means for you.",
+  "rubrik": "Sorry, your parcel is delayed",
+  "hej": "Hi {{fornamn}},",
+  "du_reserv": "there",
+  "intro_kampanj": "This is an email we really did not want to write. You ordered from us, and your parcel may arrive later than you expected. We feel awful about it, and we want you to hear it from us straight away.",
+  "intro_flode": "Thank you for your order from Matstrumpor. It makes us happy every time someone chooses us. That is why it is especially sad that we already have to tell you your delivery may be delayed.",
+  "forsening": "There has been a disruption in our supply chain. Because of that, your parcel may take 5-10 business days longer than usual. We cannot say more than that right now. We are fighting to get every single order out as fast as we can, but we do not dare promise a date.\n\nIf you bought the parcel as a gift, we want you to know now, so you have time to plan.",
+  "aterbetalning": "If your parcel has not shipped yet and you would rather have your money back, you get the full amount. No hassle and no guilt. Just reply to this email with your order number and tell us you want to cancel your order and get a refund, and we will take care of it. We completely understand.",
+  "behalla": "If you can put up with us a little longer, it means a great deal. You do not need to do anything. Your parcel is coming, just later than it should. We are doing everything we can to make sure it finds its way to you.",
+  "redan_framme_kampanj": "If you have already received your parcel, this email is not about you. We just hope you enjoy it.",
+  "sparning": "Your parcel number starts with MS and is in the email you got when your parcel shipped. You can track your parcel using this link:",
+  "knapp": "Track your parcel",
+  "avslut": "We are so very sorry, and we mean it. If you have any questions, just reply to this email. Thank you for reading, and thank you for giving us a chance.",
+  "signatur": "Matstrumpor"
+}

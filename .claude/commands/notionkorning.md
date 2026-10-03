@@ -284,6 +284,18 @@ node tools/notion-klara.mjs --brief <page-id>       # dumpa briefen som text
 **Priset hämtas från produktsidan i Shopify vid varje körning** — URL:en står i
 radens `Landing page`. Aldrig ur briefen, aldrig ur en äldre creative.
 
+**Alias-rader med tvingad landningssida** (`landningssida_tvingad` i
+`leveranskon.mjs --json`, raden "⚠ landningssida TVINGAD" i textläget): länken
+tas ur kön, **aldrig ur briefen**, och priset läses på just den sidan. Radens
+`butiksord_extra` räknas som butiksnamn i stoppregel 1c, precis som
+Bäverbutiken. Exemplet sedan 2026-10-03 (Axels beslut): `TackleBayRod_`-raderna
+i Fish rod holder går till Fiskespöhållaren med
+`https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring` —
+briefernas tacklebay.se gäller aldrig, och "TackleBay"/"tacklebay.se" i bild,
+slutkort eller voiceover ⇒ 🔁 Draft. `notion-till-meta.mjs` tar aliasets länk
+själv när `--lank` utelämnas, vägrar en annan sida, och vägrar varje länk
+utanför baverbutiken.se.
+
 ### 2b. Gör creativen granskningsbar
 
 ```bash

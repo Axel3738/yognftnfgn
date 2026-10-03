@@ -68,17 +68,30 @@ export function prefixKarta(annonser) {
  * Kampanjen för ett prefix: products.json först, sedan kontot, sedan
  * prefix-alias.json. Ett BLOCKERAT prefix (prefix-alias.json → `blockerade`)
  * får ingen kampanj alls, vad kontot än säger — raden rapporteras och rörs
- * aldrig. *(2026-09-29: hubben Fish rod holder flyttades från TackleBay till
- * Bäverbutiken på Axels ord. I den låg elva gamla `TackleBayRod_`-annonser med
- * tacklebay.se som landningssida; de får aldrig gissas in i Bäverbutikens
- * Fiskespöhållaren-kampanj bara för att det är samma produkt.)*
+ * aldrig.
+ *
+ * Bär prefixets alias `landningssida` och/eller `butiksord_extra` följer de med
+ * i svaret, OAVSETT vilken källa kampanjen kom ur. Med flit: efter första
+ * uppladdningen känner kontot prefixet och vinner över aliaset, men landningssidan
+ * är fortfarande produktens, inte briefens. Hade fälten bara följt med när
+ * aliaset valde kampanjen hade den andra raden fått briefens länk igen.
+ *
+ * *(Historik: 2026-09-29 flyttades hubben Fish rod holder från TackleBay till
+ * Bäverbutiken, och de gamla `TackleBayRod_`-raderna med tacklebay.se som
+ * landningssida blockerades här. 2026-10-03 sa Axel att de ska upp i
+ * Fiskespöhållaren — nu är `tacklebayrod` ett alias med tvingad landningssida
+ * på baverbutiken.se, och TackleBay räknas som butiksnamn i slutkortskollen.)*
  */
 export function kampanjForPrefix(pfx, { konfig = {}, karta = {}, alias = {}, blockerade = {} } = {}) {
   const p = konfig[pfx] ?? null;
   if (blockerade[pfx]) return { p, kampanj: null, kalla: 'blockerad', blockerad: blockerade[pfx].orsak ?? 'blockerat prefix' };
   const al = alias[pfx];
-  if (p) return { p, kampanj: { id: p.campaign_ids[0], name: null, status: null }, kalla: 'products.json' };
-  if (karta[pfx]) return { p, kampanj: karta[pfx], kalla: 'kontot' };
-  if (al) return { p, kampanj: { id: al.kampanj_id, name: al.kampanj_namn, status: null }, kalla: 'prefix-alias.json' };
+  const extra = {
+    ...(al?.landningssida ? { landningssida: al.landningssida } : {}),
+    ...(al?.butiksord_extra?.length ? { butiksord_extra: [...al.butiksord_extra] } : {}),
+  };
+  if (p) return { p, kampanj: { id: p.campaign_ids[0], name: null, status: null }, kalla: 'products.json', ...extra };
+  if (karta[pfx]) return { p, kampanj: karta[pfx], kalla: 'kontot', ...extra };
+  if (al) return { p, kampanj: { id: al.kampanj_id, name: al.kampanj_namn, status: null }, kalla: 'prefix-alias.json', ...extra };
   return { p, kampanj: null, kalla: null };
 }

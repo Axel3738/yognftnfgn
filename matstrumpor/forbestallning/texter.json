@@ -1,0 +1,241 @@
+{
+  "sv": {
+    "rubrik": "Förbeställning",
+    "produkt": "Vi sålde slut på lagret. Nästa leverans är på väg in, och din beställning skickas från {datum}.",
+    "bradska": "Förbeställ nu så får du en plats i den innan den också tar slut.",
+    "korg": "Förbeställning: din beställning skickas från {datum}.",
+    "paket": {
+      "rubrik_igen": "Slutsålt igen. Säkra din låda ur nästa leverans.",
+      "rubrik": "Slutsålt. Säkra din låda ur nästa leverans.",
+      "text_igen": "Lådan sålde slut i november förra året, och nu är lagret tomt igen. Nästa leverans skickas från {datum}, och förbeställningarna skickas först.",
+      "text": "Lagret är tomt just nu. Nästa leverans skickas från {datum}, och förbeställningarna skickas först.",
+      "nedrakning": "Skickas om",
+      "kort": "Förbeställning · skickas från {datum}",
+      "knapp": "Förbeställ nu",
+      "egenskap_nyckel": "Förbeställning",
+      "egenskap_varde": "skickas från {datum}"
+    }
+  },
+  "nb": {
+    "rubrik": "Forhåndsbestilling",
+    "produkt": "Vi er utsolgt. Neste leveranse er på vei inn, og bestillingen din sendes fra {datum}.",
+    "bradska": "Forhåndsbestill nå, så sikrer du deg en plass i neste leveranse før den også blir utsolgt.",
+    "korg": "Forhåndsbestilling: bestillingen din sendes fra {datum}.",
+    "paket": {
+      "rubrik_igen": "Utsolgt igjen. Sikre deg esken din fra neste leveranse.",
+      "rubrik": "Utsolgt. Sikre deg esken din fra neste leveranse.",
+      "text_igen": "Esken ble utsolgt i november i fjor, og nå er lageret tomt igjen. Neste leveranse sendes fra {datum}, og forhåndsbestillingene sendes først.",
+      "text": "Lageret er tomt akkurat nå. Neste leveranse sendes fra {datum}, og forhåndsbestillingene sendes først.",
+      "nedrakning": "Sendes om",
+      "kort": "Forhåndsbestilling · sendes fra {datum}",
+      "knapp": "Forhåndsbestill nå",
+      "egenskap_nyckel": "Forhåndsbestilling",
+      "egenskap_varde": "sendes fra {datum}"
+    }
+  },
+  "da": {
+    "rubrik": "Forudbestilling",
+    "produkt": "Vi er udsolgt. Næste levering er på vej ind, og din bestilling sendes fra {datum}.",
+    "bradska": "Forudbestil nu, så sikrer du dig en plads i næste levering, før den også bliver udsolgt.",
+    "korg": "Forudbestilling: din bestilling sendes fra {datum}.",
+    "paket": {
+      "rubrik_igen": "Udsolgt igen. Sikr din æske fra næste levering.",
+      "rubrik": "Udsolgt. Sikr din æske fra næste levering.",
+      "text_igen": "Æsken blev udsolgt i november sidste år, og nu er lageret tomt igen. Næste levering sendes fra {datum}, og forudbestillingerne sendes først.",
+      "text": "Lageret er tomt lige nu. Næste levering sendes fra {datum}, og forudbestillingerne sendes først.",
+      "nedrakning": "Sendes om",
+      "kort": "Forudbestilling · sendes fra {datum}",
+      "knapp": "Forudbestil nu",
+      "egenskap_nyckel": "Forudbestilling",
+      "egenskap_varde": "sendes fra {datum}"
+    }
+  },
+  "fi": {
+    "rubrik": "Ennakkotilaus",
+    "produkt": "Varasto on myyty loppuun. Seuraava erä on tulossa, ja tilauksesi lähetetään {datum} alkaen.",
+    "bradska": "Tee ennakkotilaus nyt, niin varmistat paikan seuraavasta erästä ennen kuin sekin myydään loppuun.",
+    "korg": "Ennakkotilaus: tilauksesi lähetetään {datum} alkaen.",
+    "paket": {
+      "rubrik_igen": "Loppuunmyyty taas. Varmista rasiasi seuraavasta erästä.",
+      "rubrik": "Loppuunmyyty. Varmista rasiasi seuraavasta erästä.",
+      "text_igen": "Rasia myytiin loppuun viime marraskuussa, ja nyt varasto on taas tyhjä. Seuraava erä lähetetään {datum} alkaen, ja ennakkotilaukset lähetetään ensin.",
+      "text": "Varasto on tällä hetkellä tyhjä. Seuraava erä lähetetään {datum} alkaen, ja ennakkotilaukset lähetetään ensin.",
+      "nedrakning": "Lähetykseen aikaa",
+      "kort": "Ennakkotilaus · lähetetään {datum} alkaen",
+      "knapp": "Tilaa ennakkoon",
+      "egenskap_nyckel": "Ennakkotilaus",
+      "egenskap_varde": "lähetetään {datum} alkaen"
+    }
+  },
+  "de": {
+    "rubrik": "Vorbestellung",
+    "produkt": "Wir sind ausverkauft. Die nächste Lieferung ist schon auf dem Weg zu uns, und deine Bestellung wird ab dem {datum} versendet.",
+    "bradska": "Bestell jetzt vor und sichere dir einen Platz in der nächsten Lieferung, bevor auch sie ausverkauft ist.",
+    "korg": "Vorbestellung: Deine Bestellung wird ab dem {datum} versendet.",
+    "paket": {
+      "rubrik_igen": "Schon wieder ausverkauft. Sichere dir deine Box aus der nächsten Lieferung.",
+      "rubrik": "Ausverkauft. Sichere dir deine Box aus der nächsten Lieferung.",
+      "text_igen": "Die Box war letzten November ausverkauft, und jetzt ist das Lager wieder leer. Die nächste Lieferung wird ab dem {datum} versendet, und Vorbestellungen gehen zuerst raus.",
+      "text": "Das Lager ist gerade leer. Die nächste Lieferung wird ab dem {datum} versendet, und Vorbestellungen gehen zuerst raus.",
+      "nedrakning": "Versand in",
+      "kort": "Vorbestellung · Versand ab dem {datum}",
+      "knapp": "Jetzt vorbestellen",
+      "egenskap_nyckel": "Vorbestellung",
+      "egenskap_varde": "wird ab dem {datum} versendet"
+    }
+  },
+  "fr": {
+    "rubrik": "Précommande",
+    "produkt": "Notre stock est épuisé. Le prochain arrivage est en route, et votre commande sera expédiée à partir du {datum}.",
+    "bradska": "Précommandez maintenant pour réserver votre place dans le prochain arrivage, avant qu'il ne soit lui aussi épuisé.",
+    "korg": "Précommande : votre commande sera expédiée à partir du {datum}.",
+    "paket": {
+      "rubrik_igen": "De nouveau épuisé. Réservez votre boîte dans le prochain arrivage.",
+      "rubrik": "Épuisé. Réservez votre boîte dans le prochain arrivage.",
+      "text_igen": "La boîte s'est épuisée en novembre dernier, et le stock est de nouveau vide. Le prochain arrivage sera expédié à partir du {datum}, et les précommandes partent en premier.",
+      "text": "Le stock est vide pour le moment. Le prochain arrivage sera expédié à partir du {datum}, et les précommandes partent en premier.",
+      "nedrakning": "Expédition dans",
+      "kort": "Précommande · expédition à partir du {datum}",
+      "knapp": "Précommander",
+      "egenskap_nyckel": "Précommande",
+      "egenskap_varde": "expédié à partir du {datum}"
+    }
+  },
+  "nl": {
+    "rubrik": "Voorbestelling",
+    "produkt": "Onze voorraad is uitverkocht. De volgende levering is onderweg, en je bestelling wordt verzonden vanaf {datum}.",
+    "bradska": "Bestel nu vooraf en reserveer je plek in de volgende levering, voordat ook die uitverkocht is.",
+    "korg": "Voorbestelling: je bestelling wordt verzonden vanaf {datum}.",
+    "paket": {
+      "rubrik_igen": "Weer uitverkocht. Reserveer je doos uit de volgende levering.",
+      "rubrik": "Uitverkocht. Reserveer je doos uit de volgende levering.",
+      "text_igen": "De doos was afgelopen november uitverkocht, en nu is de voorraad weer leeg. De volgende levering wordt verzonden vanaf {datum}, en voorbestellingen gaan als eerste de deur uit.",
+      "text": "De voorraad is op dit moment leeg. De volgende levering wordt verzonden vanaf {datum}, en voorbestellingen gaan als eerste de deur uit.",
+      "nedrakning": "Verzonden over",
+      "kort": "Voorbestelling · verzonden vanaf {datum}",
+      "knapp": "Nu voorbestellen",
+      "egenskap_nyckel": "Voorbestelling",
+      "egenskap_varde": "verzonden vanaf {datum}"
+    }
+  },
+  "es": {
+    "rubrik": "Reserva anticipada",
+    "produkt": "Nos hemos quedado sin stock. La próxima remesa ya está en camino y tu pedido se enviará a partir del {datum}.",
+    "bradska": "Reserva ahora y asegura tu sitio en la próxima remesa antes de que también se agote.",
+    "korg": "Reserva anticipada: tu pedido se enviará a partir del {datum}.",
+    "paket": {
+      "rubrik_igen": "Agotado otra vez. Asegura tu caja de la próxima remesa.",
+      "rubrik": "Agotado. Asegura tu caja de la próxima remesa.",
+      "text_igen": "La caja se agotó el pasado noviembre y ahora el stock vuelve a estar vacío. La próxima remesa se enviará a partir del {datum}, y las reservas se envían primero.",
+      "text": "Ahora mismo no hay stock. La próxima remesa se enviará a partir del {datum}, y las reservas se envían primero.",
+      "nedrakning": "Se envía en",
+      "kort": "Reserva anticipada · se envía a partir del {datum}",
+      "knapp": "Reservar ahora",
+      "egenskap_nyckel": "Reserva anticipada",
+      "egenskap_varde": "se envía a partir del {datum}"
+    }
+  },
+  "it": {
+    "rubrik": "Preordine",
+    "produkt": "Il magazzino è esaurito. La prossima consegna è in arrivo e il tuo ordine verrà spedito dal {datum}.",
+    "bradska": "Preordina ora e assicurati un posto nella prossima consegna prima che anche questa sia esaurita.",
+    "korg": "Preordine: il tuo ordine verrà spedito dal {datum}.",
+    "paket": {
+      "rubrik_igen": "Di nuovo esaurito. Assicurati la tua confezione dalla prossima consegna.",
+      "rubrik": "Esaurito. Assicurati la tua confezione dalla prossima consegna.",
+      "text_igen": "La confezione è andata esaurita lo scorso novembre e ora il magazzino è di nuovo vuoto. La prossima consegna verrà spedita dal {datum}, e i preordini partono per primi.",
+      "text": "Il magazzino è vuoto al momento. La prossima consegna verrà spedita dal {datum}, e i preordini partono per primi.",
+      "nedrakning": "Spedizione tra",
+      "kort": "Preordine · spedizione dal {datum}",
+      "knapp": "Preordina ora",
+      "egenskap_nyckel": "Preordine",
+      "egenskap_varde": "spedito dal {datum}"
+    }
+  },
+  "pl": {
+    "rubrik": "Przedsprzedaż",
+    "produkt": "Wyprzedaliśmy cały zapas. Kolejna dostawa jest już w drodze, a Twoje zamówienie zostanie wysłane od {datum}.",
+    "bradska": "Zamów w przedsprzedaży już teraz i zarezerwuj sobie miejsce w kolejnej dostawie, zanim i ta się wyprzeda.",
+    "korg": "Przedsprzedaż: Twoje zamówienie zostanie wysłane od {datum}.",
+    "paket": {
+      "rubrik_igen": "Znowu wyprzedane. Zarezerwuj swoje pudełko z kolejnej dostawy.",
+      "rubrik": "Wyprzedane. Zarezerwuj swoje pudełko z kolejnej dostawy.",
+      "text_igen": "Pudełko wyprzedało się w listopadzie zeszłego roku, a teraz magazyn znów jest pusty. Kolejna dostawa zostanie wysłana od {datum}, a zamówienia w przedsprzedaży wysyłamy w pierwszej kolejności.",
+      "text": "Magazyn jest teraz pusty. Kolejna dostawa zostanie wysłana od {datum}, a zamówienia w przedsprzedaży wysyłamy w pierwszej kolejności.",
+      "nedrakning": "Wysyłka za",
+      "kort": "Przedsprzedaż · wysyłka od {datum}",
+      "knapp": "Zamów w przedsprzedaży",
+      "egenskap_nyckel": "Przedsprzedaż",
+      "egenskap_varde": "wysyłka od {datum}"
+    }
+  },
+  "pt-PT": {
+    "rubrik": "Pré-encomenda",
+    "produkt": "Esgotámos o stock. A próxima entrega já vem a caminho e a tua encomenda será enviada a partir de {datum}.",
+    "bradska": "Faz já a tua pré-encomenda e garante um lugar na próxima entrega antes que também esgote.",
+    "korg": "Pré-encomenda: a tua encomenda será enviada a partir de {datum}.",
+    "paket": {
+      "rubrik_igen": "Esgotado outra vez. Garante a tua caixa na próxima entrega.",
+      "rubrik": "Esgotado. Garante a tua caixa na próxima entrega.",
+      "text_igen": "A caixa esgotou em novembro do ano passado e agora o stock está outra vez vazio. A próxima entrega será enviada a partir de {datum}, e as pré-encomendas seguem primeiro.",
+      "text": "O stock está vazio neste momento. A próxima entrega será enviada a partir de {datum}, e as pré-encomendas seguem primeiro.",
+      "nedrakning": "Envio em",
+      "kort": "Pré-encomenda · envio a partir de {datum}",
+      "knapp": "Pré-encomendar agora",
+      "egenskap_nyckel": "Pré-encomenda",
+      "egenskap_varde": "envio a partir de {datum}"
+    }
+  },
+  "en": {
+    "rubrik": "Pre-order",
+    "produkt": "We're sold out. The next delivery is on its way in, and your order ships from {datum}.",
+    "bradska": "Pre-order now to secure your spot in the next batch before it sells out too.",
+    "korg": "Pre-order: your order ships from {datum}.",
+    "paket": {
+      "rubrik_igen": "Sold out again. Secure your box from the next delivery.",
+      "rubrik": "Sold out. Secure your box from the next delivery.",
+      "text_igen": "The box sold out last November, and now stock is empty again. The next delivery ships from {datum}, and pre-orders ship first.",
+      "text": "We're out of stock right now. The next delivery ships from {datum}, and pre-orders ship first.",
+      "nedrakning": "Ships in",
+      "kort": "Pre-order · ships from {datum}",
+      "knapp": "Pre-order now",
+      "egenskap_nyckel": "Pre-order",
+      "egenskap_varde": "ships from {datum}"
+    }
+  },
+  "ja": {
+    "rubrik": "予約注文",
+    "produkt": "現在、在庫は完売しています。次回分の入荷が進んでおり、ご注文は{datum}以降に発送されます。",
+    "bradska": "今すぐ予約注文すれば、次回入荷分の枠を確保できます。次回分も売り切れる前にどうぞ。",
+    "korg": "予約注文：ご注文は{datum}以降に発送されます。",
+    "paket": {
+      "rubrik_igen": "再び完売しました。次回入荷分のボックスを確保しましょう。",
+      "rubrik": "完売しました。次回入荷分のボックスを確保しましょう。",
+      "text_igen": "ボックスは昨年11月に完売し、現在また在庫がありません。次回入荷分は{datum}から発送され、予約注文を先に発送します。",
+      "text": "現在、在庫がありません。次回入荷分は{datum}から発送され、予約注文を先に発送します。",
+      "nedrakning": "発送まで",
+      "kort": "予約注文 · {datum}から発送",
+      "knapp": "今すぐ予約",
+      "egenskap_nyckel": "予約注文",
+      "egenskap_varde": "{datum}から発送"
+    }
+  },
+  "zh-TW": {
+    "rubrik": "預購",
+    "produkt": "庫存已售完。下一批貨正在送來的路上，你的訂單將於{datum}起寄出。",
+    "bradska": "立即預購，搶在下一批也售完之前，保留你的名額。",
+    "korg": "預購：你的訂單將於{datum}起寄出。",
+    "paket": {
+      "rubrik_igen": "又售完了。搶先預留下一批到貨的盒裝。",
+      "rubrik": "已售完。搶先預留下一批到貨的盒裝。",
+      "text_igen": "這款盒裝去年11月就已售完，現在庫存又空了。下一批貨將於{datum}起寄出，預購訂單優先寄出。",
+      "text": "目前庫存已空。下一批貨將於{datum}起寄出，預購訂單優先寄出。",
+      "nedrakning": "寄出倒數",
+      "kort": "預購 · {datum}起寄出",
+      "knapp": "立即預購",
+      "egenskap_nyckel": "預購",
+      "egenskap_varde": "{datum}起寄出"
+    }
+  },
+  "_kalla": "sv: sessionen 2026-10-03. Övriga 13 språk: sonnet-subagent mot matstrumpor/marknader/oversattning/REGLER.md samma dag. Paketväljarens texter (paket.*) samma kväll: svenskan av sessionen efter Chadbots svar, resten av en sonnet-subagent mot samma regler."
+}

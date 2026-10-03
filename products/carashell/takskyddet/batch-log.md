@@ -3434,3 +3434,22 @@ launchad" om `Takoverdrag_GT_11_H1` — den är live i Bäverbutiken SE + NO sed
 23/9, så ingen omgörning; raden satt till Approved med kommentar (aldrig
 CaraShell: copy och slutkort nämner Bäverbutiken). Kön i `CaraShell SE ready
 to be active` är därmed tom.
+
+## 2026-10-03 — leveransrundan: SE-kampanjen är PAUSAD, ingen uppladdning möjlig
+
+⛔ **Ingen ACTIVE SE-kampanj finns längre.** Alla tre är PAUSED med spend och
+räknas därför som avvecklade, aldrig mål:
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` (`120249050544990172`,
+94 452 kr, pausad 2026-10-02 16:53 CEST enligt Metas `updated_time` — alltså
+efter gårdagens runda 14:05, ett mänskligt beslut),
+`CARASHELL_SE_Taköverdraget LISTICLE` (35 410 kr) och
+`NYA LISTICLE … – kopia` (8 044 kr). Statusen lästes både av
+`ops-leveranskon.mjs` och i en egen direktläsning mot Meta. Ingen session
+aktiverar en pausad kampanj med spend — rundan har alltså inget mål förrän
+en människa startar en SE-kampanj igen.
+
+Kön i övrigt oförändrad, trettonde dygnet: samma två rader i `To be Reviewed`
+(`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`), samma md5 (`d9ab48ff…` /
+`271bf976…`), samma slutkort med `carashell.se` (OCR fanns i containern).
+Butikspriset 1 129 kr oförändrat. Inget uppladdat, ingen status ändrad, inga
+nya kommentarer.

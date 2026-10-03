@@ -21,6 +21,7 @@ import { oversattFras, stadaPlats, landFor } from '../../sparning/sprak.mjs';
 import { skapaOversattare } from '../../sparning/oversatt.mjs';
 import { bavernummer } from '../../sparning/bavernummer.mjs';
 import { sistaBiten } from '../../sparning/sistabiten.mjs';
+import { forbestallningSkickas } from './svar.mjs';
 
 const DAG = 86_400_000;
 export const ORDERFONSTER_DAGAR = 120;
@@ -174,7 +175,7 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
     ut.sparning = { status17: null, status: 'DELIVERED', levererad: true, senaste: null, sista: null };
     ut.kalla.push('Shopify: levererad');
   }
-  ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar });
+  ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar, forbestallning: forbestallningSkickas(konfig?.svar, nu, ut.order?.skapad) });
   if (ut.sparr) ut.kalla.push(ut.sparr);
   return ut;
 }
@@ -186,9 +187,9 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
  * första skanningen 2–4 dagar efter" om ett paket skickat 26 dagar tidigare.
  *   • Leveransfönstret har passerat och paketet är inte levererat ⇒ försenat — VA:n.
  *   • Skickat för mer än 5 dagar sedan utan en enda skanning ⇒ VA:n.
- *   • Inte skickad fast ordern är äldre än packtiden + 3 dagar ⇒ VA:n.
+ *   • Inte skickad fast ordern är äldre än packtiden + 3 dagar ⇒ VA:n (utom under en förbeställning).
  */
-export function staltFakta(fakta, { nu = new Date(), packasDagar = 2 } = {}) {
+export function staltFakta(fakta, { nu = new Date(), packasDagar = 2, forbestallning = null } = {}) {
   const t = nu instanceof Date ? nu.getTime() : Number(nu);
   const dagar = (d) => Math.floor((t - d.getTime()) / DAG);
   if (fakta?.sparning?.levererad) return null;
@@ -198,6 +199,8 @@ export function staltFakta(fakta, { nu = new Date(), packasDagar = 2 } = {}) {
     if (!fakta.sparning?.senaste && dagar(s.skickad) > 5) return `inga skanningar ${dagar(s.skickad)} dagar efter att paketet skickades — VA:n`;
     return null;
   }
+  // Förbeställning: en oskickad order är väntad tills nästa leverans skickats (forbestallningSkickas).
+  if (forbestallning) return null;
   if (fakta?.order?.skapad && dagar(fakta.order.skapad) > (Number(packasDagar) || 2) + 3) return `ordern är inte skickad efter ${dagar(fakta.order.skapad)} dagar — VA:n`;
   return null;
 }

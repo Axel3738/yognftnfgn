@@ -43,6 +43,48 @@ under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
 så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
 testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
+## Förbeställning medan lagret är slut (2026-10-03)
+
+Axels beslut 2026-10-03: allt är slutsålt, nästa leverans är i lagret 11/10, och den säljer också
+slut snabbt. Butiken säljer vidare (lagret står på "fortsätt sälja") men säger det ärligt, enligt
+Evolve Q4 (`docs/os/evolve/Q4-2026.md` → Backend): annars tror kunden att paketet kommer om några
+dagar, och det blir arga mejl och chargebacks.
+
+- **Sajten:** `node matstrumpor/forbestallning.mjs --skarpt` (torrt utan flaggan). Först (förmiddag)
+  rutan "Förbeställning … skickas från 13 oktober" ovanför "Beräknad leverans", och en
+  rad i varukorgslådan och på korgsidan, på alla fjorton språk. "Beräknad leverans" räknas från
+  packningsdagen 12/10 (19–26 oktober) i stället för från i dag. Datumen står i
+  `forbestallning/konfig.json`, texterna i `forbestallning/texter.json` (svenskan av sessionen,
+  resten av en sonnet-subagent mot `marknader/oversattning/REGLER.md`).
+- **I paketväljaren sedan samma kväll** (Axels order efter Chadbots svar,
+  `forbestallning/EVOLVE-FRAGA.md` + `EVOLVE-SVAR.md`: behåll nivåerna, lägg ärlig brist ovanpå,
+  märk varje förbeställning): mörk ruta överst i väljaren, "Slutsålt igen. Säkra din låda ur nästa
+  leverans." (bara sushilådan säger "igen", den sålde slut i november 2025; de andra sorterna säger
+  "Slutsålt."), texten om nästa leverans och en nedräkning till skickdagen; raden
+  "Förbeställning · skickas från 13 oktober" under varje paket; köpknappen "Förbeställ nu"
+  (aldrig på presentkortet); och varje låda i korgen bär radegenskapen
+  `Förbeställning: skickas från 13 oktober`, som syns i kassan, på ordern och i orderbekräftelsen
+  (Chadbot [D3]: juridik och bevis i en tvist). Ätpinnarna märks inte. Mätt som kund 2026-10-03:
+  sushi, pizza, sv/en/de/ja, köp av 2 lådor ⇒ 399 kr med märkningen på båda lådraderna.
+  Den gamla rutan ovanför "Beräknad leverans" ritar ingenting längre. Filerna:
+  `snippets/ms-paket.liquid`, `snippets/buy-buttons.liquid`, `assets/ms-paket.js`.
+- **Inget mätare "X av Y förbeställda" än:** leveransen är minst 5 000 lådor och Axel kan beställa
+  fler, så Y är inte bestämt. En mätare med låg andel säljer dessutom sämre. Chadbot: testa den mot
+  "nästa batch skickas …" när talen finns.
+- **Av och på:** shop-metafältet `matstrumpor.forbestallning` (`aktiv`, `packning_fran`,
+  `skickas_fran`). Rutan släcker sig själv den dag `skickas_fran` inträffar; `--av --skarpt` släcker
+  den direkt. Temafilerna står kvar och ritar ingenting.
+- **Kundtjänstboten:** `svar.forbestallning.skickas_fran` i `kundtjanst/brands/matstrumpor.yaml`. En
+  oskickad order får "förbeställning, nästa leverans skickas från 13 oktober" i stället för "packas
+  inom 2 arbetsdagar", och går inte till VA:n förrän datumet passerat med packtid + 3 dagar.
+  Railway kör `main`, så ändringen gäller först efter merge. Ta bort blocket när det är över.
+- **Mätt 2026-10-03 som kund** (`--kundvy`): rutan på sv, en, de och ja, raden på korgsidan,
+  leveransfönstret 19–26 oktober. Originalfilerna i `forbestallning/original/`.
+- ⚠️ Shopifys lagersiffror säger inget om vad som är slut: alla varianter står på "fortsätt sälja"
+  och sushilådan på −2 627 (mätt samma dag). Vad som är slut kommer från Axel, inte från Shopify.
+- ⚠️ Kassan och orderbekräftelsen säger inget om förbeställningen (kassan kräver Plus, mejlmallen
+  har inget API). Det kunden ser är produktsidan och korgen.
+
 ## Trustpilot på sajten (2026-09-29)
 
 Axels beställning: "flexa Matstrumpors Trustpilot på hemsidan … lite widgets
@@ -225,23 +267,104 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.
 
-## Bruces vecko-SOP (2026-10-03)
+## Growth Guide i Notion (Evolves 3.0, ombyggd 2026-10-03)
+
+Axels dom på första versionen (2026-10-02: en platt databas med 36
+mätkolumner per annons, i bokstavsordning): "det ser inte alls ut som en
+Evolve Growth Guide … som en jävla horunge som är ett litet ägg". Evolves
+guide (kurslektionen ⭐️ The 3.0 Evolve Growth Guide, Google Sheet
+`1zdDeYK0gwjFWbp4nq5VVm1COXqL1v8TailKJNHZ_pDI`, läst med `tools/skool/`
+samma dag) är en **planerare per koncept**, inte en mätlista. Sidan
+https://www.notion.so/3ed270ab908c80a3beb7e0090eebce5d (`growthguide.json`
+→ `sida_id`, workspace-roten) bär nu samma flikar som inline-databaser, i
+Evolves ordning, byggda av **`growthguide.mjs`**:
+
+| Flik | Vad | Vem skriver |
+|---|---|---|
+| Overview | hit rate = breakthrough + spend winner ÷ etiketterade, två nämnare (med/utan INGEN_LEVERANS), utfallen räknade, breakthroughs | koden, varje rond |
+| Ad Roadmap | **EN rad per batch** (105 st 2026-10-03): Evolves kolumner STATUS · UPVOTE · BATCH # · DATE ADDED · AUTHOR · AD CONCEPT · DESIRE/CORE AVATAR · SUB AVATAR · ANGLE(S) · BREAKTHROUGH MEMO · AWARENESS LEVEL · FILE TYPE · AD TYPE · LINK TO BRIEF · LINK TO AD · RESULTS · LEARNINGS, plus CREATOR, MARKET, SPEND/PURCHASES/ROAS/HOOK/HOLD/PROFIT 14D och relationen ADS. Radens kropp har en hopfällbar "System data" med annonstabellen | koden: mät- och systemkolumnerna varje rond; **sår** DESIRE, SUB AVATAR, ANGLE(S), MEMO (WHY/WHAT/HOW ur briefens taggar), AWARENESS och LEARNINGS (ur `lardomar.md`) EN gång där cellen är tom; STATUS bara tom → Filming/Working/Learning eller Working → Learning. Människan: UPVOTE, LEARNINGS, Done |
+| Log | en rad per dag rutinen gjorde något (etiketter, förslag, briefer, uppladdningar, adsetdomar) + NOTES | koden SYSTEM, människan NOTES |
+| Desires/Core Avatar · Sub Avatars/Angles · Avatars · Awareness · Creators | Evolves planeringsflikar, sådda ur repots research (`growthguide/underlag.json`: 9 + 9 + 4 + 5 + 3 rader, varje rad med fil:rad i SOURCE; läst av en sonnet-läsare, inget påhittat — det som saknas står i `saknas`) | koden sår bara rader vars titel saknas (`--sa`); sedan människornas |
+| Ad Results | mätlistan per annons (146 st), det gamla innehållet | bara koden |
+
+**Batch** = Evolves koncept med sina variationer: hookvarianter (h1/h2/h3)
+och omklipp av samma löpnummer hör ihop (`batchNyckel`); ett id utan
+löpnummer (haikuh2, s004h4, d3) är sin egen batch, för haikuh2 och haikuh3
+var två olika koncept. RESULTS = högsta etiketten i batchen, talen
+summeras, hook/hold vägs på spend. AUTHOR = hubbradens Ansvarig. Varje rad
+bär `SYSTEM` (datum · hash · toggle-id) så bara ändrade rader skrivs om; en
+andra körning ger 0 ändringar (mätt). Den gamla platta databasen
+`3ed270ab-908c-811a-9eff-feddb5f5e2de` (0 rader med människotext) ligger i
+papperskorgen sedan 2026-10-03 (`--migrera`, återställbar 30 dagar).
+
+```bash
+node matstrumpor/growthguide.mjs --kolla            # sidan, databaserna, token
+node matstrumpor/growthguide.mjs --torr             # vad som skulle skrivas
+node matstrumpor/growthguide.mjs --skarpt           # bygg det som saknas, skriv raderna (ronden)
+node matstrumpor/growthguide.mjs --skarpt --sa      # så planeringsflikarna (bara nya rader)
+```
+
+⚠️ **Notions API kan inte ordna kolumner, dölja SYSTEM, sortera eller
+dela sidan** — det är Cowork-prompten
+**`matstrumpor/cowork/1-growth-guide-vyer.txt`** (Evolves kolumnordning per
+tabell, SYSTEM dold, sortering, en Board-vy "By result", Bruce bjuds in med
+"Kan redigera"). ✅ **Körd 2026-10-03 förmiddag** (utfallet överst i
+prompten): allt utom kolumnbredderna gjort, Bruce (gbruce.biazon@gmail.com)
+står i delningslistan med "Kan redigera", tillbakaläst via API efteråt — 0
+ändrade celler, en tom Log-rad från ett felklick lagd i papperskorgen av
+sessionen. ⚠️ Sidans "Allmän åtkomst" stod på "Vem som helst med länken →
+Kan redigera" redan före körningen (Coworks avläsning; API:t ser inte
+delningar) — **Axels beslut 2026-10-03: "vem som helst får kolla", länken
+står kvar öppen.** Samma dag sa Axel att han vill säga upp
+Notion-prenumerationen ("kostar 4000kr i månaden"); inventeringen av vad
+som betalas och vad i repot som hänger på Notion är
+`stonebite/cowork/11-notion-kostnad.txt`, inget är uppsagt. Axels dom på
+utseendet samma dag: "det ser inte snyggt ut fortfarande" — sidan och
+tabellerna fick ikoner via API (📈 🗺️ 📊 📋 …), resten väntar på hans
+skärmdump. Vyer och delning går
+inte att läsa via API:t, så Coworks rapport är facit för dem.
+
+### Bruces vecko-SOP
 
 Bruce (Gilz Bruce Biazon) jobbar bara på Matstrumpor och är creative
 strategist där, så redigerarnas veckorapport gäller inte honom (Axels beslut
 2026-10-03, `redigerarrapport/konfig.json` → `utan_redigerare`). I stället
-utvärderar han sig själv varje måndag 15:00 Manila efter
-**`sop/BRUCE-WEEKLY-SELF-REVIEW.md`** (engelska, en A4-sida, PDF bredvid):
-sex steg i Growth Guide (grinden 300 kr OCH 3 köp, briefen mot klippet,
-hook/hold mot kampanjens topp, "Guess:" i Anteckning, Beslut ur etiketten,
-hit rate som bråk, ETT test i Nästa steg). Han skriver bara i de fyra
-människokolumnerna; Skala är Axels. Texten byggdes av fyra läsare, tre
-utkast, två domare och tre skeptiker (fakta mot `etikett.mjs`,
-`growthguide.mjs`, `struktur.mjs`; enkelhet; repots regler). PDF:en byggs om
-med `node matstrumpor/sop/bygg.mjs` (Chromium, samma väg som
-`products/matstrumpor/ugc/pdf/bygg.mjs`). ⚠️ Om Bruce kan öppna Growth
-Guide-sidan är inte mätt (API:t ser inte delningar): sidan ligger i
-workspace-roten, och SOP:en säger "Cannot open one of them? Tell Axel".
+utvärderar han sig själv varje måndag 15:00 Manila i **Ad Roadmap** efter
+**`sop/BRUCE-WEEKLY-SELF-REVIEW.md`** (engelska, en halv A4-sida, PDF
+bredvid; Axels dom på första versionen: "hur mycket text som helst"):
+raderna med RESULTS men inte Done → grinden 300 kr OCH 3 köp, klippet mot
+briefen, hook/hold mot bästa batchen, "Guess:" → allt i LEARNINGS, STATUS
+Done; sedan EN ny rad med BREAKTHROUGH MEMO (WHY/WHAT/HOW) före briefen.
+Skala är Axels. PDF:en byggs om med `node matstrumpor/sop/bygg.mjs`
+(Chromium, samma väg som `products/matstrumpor/ugc/pdf/bygg.mjs`).
+
+### Strategrapporten: rutinen som granskar hans vecka (2026-10-03)
+
+Axels beställning samma dag: "skapa en rutin som granskar det här varje vecka
+… evaluerar Bruce och rapporterar någonstans där det gör nytta ifall det
+behövs … ger han feedback". **`strategrapport/`** (kommandot
+`/strategrapport`, rutin tisdag 03:00 CEST = 09:00 Manila, dagen efter hans
+måndagskoll): läser Ad Roadmap och hubben, mäter mot förra veckans snapshot
+(stängda rader med lärdom, "Too little data"/"Guess:"-reglerna, EN ny
+konceptrad med de sex cellerna, inlämnade briefer, levande vinnare och deras
+iterationer, veckans etiketter på hans koncept, hit rate som bråk) och skriver
+feedbacken på engelska med ETT action item som en Log-rad `<vecka> Weekly
+review` + en kommentar med @Bruce på raden. Axel pingas i samma rad bara vid
+eskalering (ingen koll två veckor i rad, vinnare utan live iteration efter 14
+dagar). Allt mäts, inget bedöms av en modell; inga kronor, ROAS, köp eller
+butiksnamn i texten (`redigerarrapport/post.mjs kontrollera`), och hans egna
+ord tvättas innan de citeras. Måtten, fönstren, det som inte går att mäta och
+första torrkörningen: `strategrapport/README.md`.
+
+Två saker i `growthguide.mjs` ändrades för rutinens skull, samma dag: (1)
+**sådden slutar med markören `(end of seed)`** — Bruces SOP säger "write
+under any text already there", och utan markören hade ronden skrivit över
+hans text när sådden ändrades och rutinen räknat raden som obesvarad; en
+sådd rörs nu bara när inget står efter markören, och FILE TYPE/AD TYPE skrivs
+bara när de är kända så hans val står kvar. (2) **Hubbraden hittas i fyra
+steg** (`hubbUppslag`: exakt namn, utan `_v<n>`, uppladdarens källa "022_H1"
+⇒ raden "022", samma löpnummer `…_048h1_v1` ⇒ `…_048_v1`) — exakt namn
+träffade 25 av 260 annonser, så AUTHOR saknades på hans batcher.
 
 ## E-posten (Klaviyo, byggd 2026-09-25)
 

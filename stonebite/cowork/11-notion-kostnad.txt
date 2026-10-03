@@ -1,0 +1,15 @@
+Uppdrag: läs av vad Notion kostar och varför, utan att ändra någonting. Axel sa 2026-10-03 att prenumerationen kostar cirka 4 000 kr i månaden och att han vill säga upp den. Innan något sägs upp behöver Claude veta vad som betalas för. Allt i det här uppdraget är LÄSNING.
+
+Rör ALDRIG: planen, betalningen, medlemmar och gäster (ta inte bort någon, ändra ingen roll), integrationer och kopplingar (Connections), delningar, inget innehåll på någon sida. Klicka aldrig på "Säg upp", "Nedgradera", "Ta bort" eller "Byt plan". Lägg inte till något.
+
+1. Logga in på notion.so med Axels konto och öppna arbetsytan (teamutrymmena Bäverbutiken, Matstrumpor m.fl. ligger i samma arbetsyta om inget annat syns). Finns FLERA arbetsytor i växlaren uppe till vänster: gör steg 2 till 4 för varje arbetsyta och skriv arbetsytans namn först i rapporten.
+
+2. Inställningar (Settings) → Fakturering (Billing eller Plans). Skriv av exakt: planens namn (Free, Plus, Business, Enterprise), pris per medlem, faktureringsintervall (månad eller år), antal betalda platser, nästa faktureringsdatum, totalbeloppet på senaste fakturan och valutan. Finns tillägg (Notion AI, Notion Mail, Calendar, extra lagring): skriv av var och en med pris. Ta en skärmdump av sidan.
+
+3. Inställningar → Personer (People eller Members). Räkna och skriv av: antal medlemmar (Members), antal gäster (Guests), antal väntande inbjudningar. Lista varje MEDLEM med namn, e-post och roll (Owner, Membership admin, Member). Lista gästerna med namn och e-post. Ta en skärmdump av varje flik. Viktigt: medlemmar kostar, gäster är normalt gratis, så listan avgör vad som går att spara.
+
+4. Inställningar → Teamutrymmen (Teamspaces): skriv av namnen och antal medlemmar per teamutrymme.
+
+5. Inställningar → Kopplingar (Connections): skriv av namnen på de integrationer som är kopplade (till exempel "Bäverbutiken RUTINER"). Ändra inget.
+
+Rapportera på svenska, kort, med skärmdumparna: planen och priset, antal betalda platser, vilka personerna är, tilläggen, nästa faktureringsdatum, och om det finns fler än en betald arbetsyta. Skriv sedan "Notion-kostnaden läst" i chatten med Claude, så räknar Claude ut vad som går att spara och vad som hänger på Notion i rutinerna innan Axel bestämmer.

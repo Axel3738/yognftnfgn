@@ -19,10 +19,14 @@
 //     är ett beslut (Axels, skalningsrondens eller åtgärdstrappans) — heligt.
 //     (Incident 2026-08-29/30: ett namnsvep slog på ett dussin avstängda kampanjer.)
 //  4. Dubblettspärr på annonsnamn i hela kontot — samma creative laddas aldrig upp två gånger.
+//  5. --lank måste ligga på baverbutiken.se. Har annonsnamnets prefix en tvingad
+//     landningssida i products/prefix-alias.json vinner den: saknas --lank används
+//     den, är --lank en annan sida avbryts körningen (2026-10-03, TackleBayRod_).
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { basename, extname, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { lankTillaten, valjLank } from './lib/landningssida.mjs';
 
 // Utan detta går fetch() rakt ut förbi miljöns agentproxy och Metas Graph-API
 // slår i ett delat per-IP-tak nästan direkt ("User request limit reached"
@@ -368,13 +372,25 @@ async function main() {
   // som inte finns pa en enda produkt i repot) och sedan pa butikens startsida — sa
   // varje uppladdad annons hade skickat trafiken till forstasidan i stallet for
   // produktsidan, varje natt, utan felmeddelande. Hellre avbryta an gissa.
-  const länk = flagga('lank', produkt.landing_url || null);
+  // Prefixets alias kan tvinga landningssidan (TackleBayRod_ 2026-10-03: briefen
+  // säger tacklebay.se, butiken är nedlagd — annonsen ska till baverbutiken.se).
+  let alias = {};
+  try { alias = JSON.parse(readFileSync(`${ROT}products/prefix-alias.json`, 'utf8')).alias ?? {}; }
+  catch (e) { dö(`products/prefix-alias.json gick inte att läsa: ${e.message}`); }
+  const val = valjLank({ namn, lank: flagga('lank', produkt.landing_url || null), alias });
+  if (val.fel) dö(val.fel);
+  const länk = val.lank;
+  if (val.kalla === 'prefix-alias.json') logg(`  · Landningssida ur prefix-alias.json (tvingad): ${länk}`);
   if (!länk) {
     dö(`Ingen landningssida angiven för "${namn}". Ange --lank <produktsidans url>.\n`
      + `   Notion-raden bär den i fältet "Landing page"; leveranskon.mjs skriver ut den.\n`
      + `   Utan den skulle annonsen peka på butikens startsida.`);
   }
   if (!/^https?:\/\//.test(länk)) dö(`--lank måste vara en full URL, fick: ${länk}`);
+  if (!lankTillaten(länk)) {
+    dö(`--lank pekar inte på baverbutiken.se: ${länk}\n`
+     + `   Fel butiks domän — fel pixel/fel butik kostar riktiga pengar. MagiBorsten är Bäverbutikens konto.`);
+  }
   if (!namn) dö('Ange --namn <annonsnamn enligt docs/naming-convention.md>.');
   if (!fil || !existsSync(fil)) dö(`Filen finns inte: ${fil}`);
   if (!primär || !rubrik) dö('Ange både --primar och --rubrik (ad copy ur briefen).');

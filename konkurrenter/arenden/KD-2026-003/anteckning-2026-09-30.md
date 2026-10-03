@@ -154,3 +154,8 @@ inskickningen går via `--anmal-cowork KD-2026-003` i Axels egen Chrome.
   anmälningar via mejl (KD-2026-004).
 - Frågan A/B om taköverdragen är fortfarande obesvarad 2/10. Tills Axel svarar gäller A:
   de anmäls inte.
+- **Morgonkollen 3/10, cirka 09:10 CEST.** Annons 2, bälteslipen `1652495996287809`, är
+  fortfarande `ELIGIBLE` och aktiv, cirka 38 timmar efter att anmälan 2 skickades. Annons 4
+  `973988949077032` och 6 `1051577917889579` är fortfarande `ELIGIBLE` och inaktiva. Gmail
+  visar inga nya mejl från Meta om Bustatio sedan 30/9 15:59. Frågan A/B om taköverdragen är
+  fortfarande obesvarad, så A gäller.

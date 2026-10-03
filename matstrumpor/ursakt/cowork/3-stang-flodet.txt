@@ -1,0 +1,14 @@
+Uppdrag: stäng av triggern på ett flöde i Spoks, arbetsytan "Matstrumpor.se". Inget annat.
+Axel har sagt till: butiken säljer nu förbeställning, så nya kunder ska inte få ursäktsmejlet.
+
+1. Öppna https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb
+   Flödet heter "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10".
+2. Stäng av flödet med den stora knappen överst. Bekräfta om Spoks frågar.
+3. Ladda om och läs av att flödet står som av.
+
+Regler:
+- Rör INTE mejlstegen. De som redan väntar i flödet ska få sitt mejl.
+- Ändra ingen text, inget filter, ingen väntetid. Radera ingenting.
+- Rör inga andra flöden eller kampanjer.
+
+Rapportera: flödet på eller av, och klockslaget.
