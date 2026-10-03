@@ -1,75 +1,42 @@
-Uppdrag: skicka Matstrumpors ursäktsmejl till alla som köpt sedan 23 september, och slå på flödet för nya beställningar.
+Uppdrag: skicka Matstrumpors ursäktsmejl och slå på flödet som redan finns. Axel har sagt: skicka allt nu.
 Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
-Axel har sagt till: skicka allt nu. Texterna är färdiga, granskade och testade. Du ska BARA välja publik, skicka och slå på.
+Allt är redan byggt, skrivet och testat. Du bygger INGENTING nytt. Du väljer publik, trycker skicka och slår på.
 
-STEG 0. Datumet.
-  Flödet slutar skicka av sig självt efter 9 oktober. Är det i dag senare än 4 oktober: STANNA och skriv det.
+ORDNING: svenska kampanjen först, sedan flödet, sedan de små kampanjerna.
 
-STEG 1. Kampanjerna, en i taget i den här ordningen. För varje rad:
-  A. Öppna länken.
-  B. Kontrollera att ämnesraden är den som står på raden.
-  C. Välj publiken (segmentet) som står på raden. Inget annat segment, och bara det segmentet.
-  D. Läs av hur många mottagare Spoks visar och skriv ned talet.
-     Visar Spoks klart FÄRRE än talet på raden (till exempel ungefär 400 i stället för 466 på svenskan):
-     STANNA, skicka ingenting och skriv exakt vad du ser.
-     Ett segment med 0 mottagare: hoppa över den raden och skriv det.
-  E. Skicka nu (inte schemalägga till ett senare datum).
-  F. Ladda om och läs av att kampanjen står som skickad eller på väg. Skriv ned klockslaget.
-  Gå sedan till nästa rad.
+1. SVENSKA KAMPANJEN
+   Öppna https://app.spoks.com/matstrumpor/post/e1071a3c-fd98-4cc0-a3a4-5276c4df2af1/edit
+   Ämnesraden ska vara "Vi är så ledsna, ditt paket kommer senare".
+   Välj publiken SEG_ursakt_kopt_fran_23_9_sv (ungefär 466 mottagare). Bara det segmentet.
+   Visar Spoks klart färre än ungefär 400: STANNA och skriv vad du ser.
+   Skicka nu. Ladda om och kontrollera att den står som skickad eller på väg.
 
- 1. svenska: ämnesraden "Vi är så ledsna, ditt paket kommer senare"
-    https://app.spoks.com/matstrumpor/post/e1071a3c-fd98-4cc0-a3a4-5276c4df2af1/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_sv (466 i morse)
- 2. norska: ämnesraden "Vi er så lei oss, pakken din kommer senere"
-    https://app.spoks.com/matstrumpor/post/933b8b0d-1f3d-4419-bce6-4ae6f3d9c095/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_nb (1 i morse)
- 3. danska: ämnesraden "Vi er så kede af det, din pakke kommer senere"
-    https://app.spoks.com/matstrumpor/post/061b3dac-6b79-4418-9a69-90efdbb6f37c/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_da (4 i morse)
- 4. finska: ämnesraden "Olemme todella pahoillamme, pakettisi myöhästyy"
-    https://app.spoks.com/matstrumpor/post/2c39239e-ee17-4aff-9096-daeda989b9fe/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_fi (9 i morse)
- 5. engelska: ämnesraden "We are so sorry, your parcel is going to be late"
-    https://app.spoks.com/matstrumpor/post/9dc2eb19-306b-48b8-b154-0015a285e1f5/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_en (8 i morse)
- 6. tyska: ämnesraden "Es tut uns so leid, dein Paket kommt später"
-    https://app.spoks.com/matstrumpor/post/ce13755b-9e3b-4153-b581-394fb9f9a739/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_de (5 i morse)
- 7. franska: ämnesraden "Nous sommes désolés, votre colis arrivera plus tard"
-    https://app.spoks.com/matstrumpor/post/5b1a2fac-8aa4-4fda-95ca-de8aa8655ae8/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_fr (7 i morse)
- 8. nederländska: ämnesraden "Het spijt ons zo, je pakket komt later"
-    https://app.spoks.com/matstrumpor/post/6fa2079e-74bf-4102-b39e-2992da8ed4c6/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_nl (4 i morse)
- 9. spanska: ämnesraden "Lo sentimos mucho, tu paquete llegará más tarde"
-    https://app.spoks.com/matstrumpor/post/9dbd8a66-1c37-4d2e-82d0-2d5acc71148d/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_es (4 i morse)
-10. italienska: ämnesraden "Ci dispiace tanto, il tuo pacco arriverà più tardi"
-    https://app.spoks.com/matstrumpor/post/9c8623af-f847-4d55-a346-9e0dbd662f08/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_it (6 i morse)
-11. polska: ämnesraden "Bardzo przepraszamy, twoja paczka dotrze później"
-    https://app.spoks.com/matstrumpor/post/07a1aa6f-9627-43cd-9263-7203a4f4b2bc/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_pl (3 i morse)
-12. portugisiska: ämnesraden "Lamentamos muito, a tua encomenda vai chegar mais tarde"
-    https://app.spoks.com/matstrumpor/post/bebf588f-7fe2-4889-bdc2-8ac4f1b13f12/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_pt (17 i morse)
-13. japanska: ämnesraden "お届けが遅れて申し訳ございません"
-    https://app.spoks.com/matstrumpor/post/423f29cb-4946-48aa-b5bd-722e34003446/edit
-    Publik: SEG_ursakt_kopt_fran_23_9_ja (8 i morse)
+2. FLÖDET (finns redan, ska bara slås på)
+   Öppna https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb
+   Det heter "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10".
+   Slå på alla 13 mejlsteg, ett i taget. Väntestegen rör du inte.
+   Slå sedan på flödet med knappen överst.
+   Säger Spoks "Detta flöde har inga aktiva åtgärder": något mejlsteg är av, slå på det och försök igen.
 
-STEG 2. Flödet, när alla kampanjer är skickade.
-  Öppna https://app.spoks.com/matstrumpor/flows/7420cfc7-5ee8-416b-b1a6-08c7a2d301bb
-  Flödet heter "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10".
-  A. Slå på VARJE mejlsteg (sändsteg), ett i taget. Det är 13 stycken. Väntestegen rör du inte.
-  B. Slå på själva flödet (knappen överst). Säger Spoks "Detta flöde har inga aktiva åtgärder" är
-     något mejlsteg fortfarande av: gå tillbaka till A.
-  C. Ladda om och läs av: brickan "Aktiv", triggern på, 13 mejlsteg på.
+3. DE SMÅ KAMPANJERNA, samma sak för varje rad: öppna, välj segmentet, skicka nu.
+   Ingen kontroll av antal. Visar ett segment 0 mottagare: hoppa över raden.
+   Publiken heter alltid SEG_ursakt_kopt_fran_23_9_ följt av koden på raden.
+   nb  https://app.spoks.com/matstrumpor/post/933b8b0d-1f3d-4419-bce6-4ae6f3d9c095/edit
+   da  https://app.spoks.com/matstrumpor/post/061b3dac-6b79-4418-9a69-90efdbb6f37c/edit
+   fi  https://app.spoks.com/matstrumpor/post/2c39239e-ee17-4aff-9096-daeda989b9fe/edit
+   en  https://app.spoks.com/matstrumpor/post/9dc2eb19-306b-48b8-b154-0015a285e1f5/edit
+   de  https://app.spoks.com/matstrumpor/post/ce13755b-9e3b-4153-b581-394fb9f9a739/edit
+   fr  https://app.spoks.com/matstrumpor/post/5b1a2fac-8aa4-4fda-95ca-de8aa8655ae8/edit
+   nl  https://app.spoks.com/matstrumpor/post/6fa2079e-74bf-4102-b39e-2992da8ed4c6/edit
+   es  https://app.spoks.com/matstrumpor/post/9dbd8a66-1c37-4d2e-82d0-2d5acc71148d/edit
+   it  https://app.spoks.com/matstrumpor/post/9c8623af-f847-4d55-a346-9e0dbd662f08/edit
+   pl  https://app.spoks.com/matstrumpor/post/07a1aa6f-9627-43cd-9263-7203a4f4b2bc/edit
+   pt  https://app.spoks.com/matstrumpor/post/bebf588f-7fe2-4889-bdc2-8ac4f1b13f12/edit
+   ja  https://app.spoks.com/matstrumpor/post/423f29cb-4946-48aa-b5bd-722e34003446/edit
 
-Regler, utan undantag:
-- Ändra ALDRIG text, ämnesrad, knapp, filter, väntetider eller trigger, varken i kampanjerna eller i flödet.
-- Rör inga andra flöden, kampanjer, segment eller inställningar. Radera ingenting.
+Regler:
+- Ändra ingen text, ämnesrad, filter, väntetid eller trigger. Bygg inget nytt. Radera ingenting.
+- Rör inga andra flöden, kampanjer eller segment.
 - Utkastet "TEST av flödesmejlet sv · bara för testutskick · skickas aldrig" skickas ALDRIG.
-- Ser något annorlunda ut än beskrivet: STANNA på den raden och skriv exakt vad du ser.
 
-Rapportera till sist: en rad per kampanj (språk, mottagare enligt Spoks, skickad ja/nej, klockslag),
-och för flödet: antal mejlsteg på, flödet på/av, klockslag.
+Rapportera kort: svenska skickad ja/nej och antal, flödet på/av, och vilka små kampanjer som skickades.
