@@ -308,8 +308,14 @@ node matstrumpor/growthguide.mjs --skarpt --sa      # så planeringsflikarna (ba
 dela sidan** — det är Cowork-prompten
 **`matstrumpor/cowork/1-growth-guide-vyer.txt`** (Evolves kolumnordning per
 tabell, SYSTEM dold, sortering, en Board-vy "By result", Bruce bjuds in med
-"Kan redigera"). Tills den körts står kolumnerna i bokstavsordning. Om
-Bruce kan öppna sidan syns inte i API:t.
+"Kan redigera"). ✅ **Körd 2026-10-03 förmiddag** (utfallet överst i
+prompten): allt utom kolumnbredderna gjort, Bruce (gbruce.biazon@gmail.com)
+står i delningslistan med "Kan redigera", tillbakaläst via API efteråt — 0
+ändrade celler, en tom Log-rad från ett felklick lagd i papperskorgen av
+sessionen. ⚠️ Sidans "Allmän åtkomst" stod på "Vem som helst med länken →
+Kan redigera" redan före körningen (Coworks avläsning; API:t ser inte
+delningar) — Axels beslut, rekommendationen är av. Vyer och delning går
+inte att läsa via API:t, så Coworks rapport är facit för dem.
 
 ### Bruces vecko-SOP
 
