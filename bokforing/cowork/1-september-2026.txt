@@ -1,0 +1,119 @@
+UPPDRAG: Hämta de kvitton och rapporter för SEPTEMBER 2026 som inte fanns i mejlen. Bolaget är STONEBITE ECOM AB.
+
+Du arbetar i Axels egen Chrome, där han redan är inloggad. Du ska BARA LADDA NER och LÄSA.
+
+ALDRIG:
+- Betala något, inte ens en faktura som ser obetald ut.
+- Ändra, säga upp eller uppgradera ett abonnemang eller en betalmetod.
+- Ändra DNS, domäner, annonser, budgetar eller butiksinställningar.
+- Skicka ett mejl eller ett meddelande.
+- Radera något.
+
+Kräver en sida inloggning, en kod eller ett lösenord: stanna och be Axel logga in. Skriv aldrig in ett lösenord själv.
+
+SPARA ALLT i EN mapp: Hämtade filer/Bokforing-september-2026-cowork/
+Namnge varje fil: ÅÅÅÅ-MM-DD_Handlare_belopp, till exempel 2026-09-22_KieAI_4988.pdf. Använd beloppet i kronor från listan nedan.
+Hittar du flera kvitton för samma handlare: ta bara de som matchar datum och belopp i listan, plus eller minus 3 dagar.
+
+==================================================
+DEL 1. META, ANNONSKVITTON (273 dragningar, 1 734 135 kr)
+==================================================
+Gå till https://business.facebook.com/billing_hub/payment_activity
+Gör detta för vart och ett av de sju annonskontona:
+- MagiBorsten 1867947880635861
+- SnarkLös 1346450049878358
+- nya kungen 730973156224390
+- Magiborsten DK 915422744950975
+- Magiborsten UK 1107817401910319
+- Magiborsten FI 1619718346388201
+- Magiborsten NO 1050941584152547
+
+Steg för varje konto:
+1. Välj kontot i listan uppe till vänster.
+2. Sätt datumet till 1 september 2026 till 30 september 2026.
+3. Markera alla betalningar och klicka "Ladda ner", eller "Download".
+4. Välj PDF-kvitton och spara dem i mappen, i en undermapp som heter Meta-<kontonamn>.
+
+Kontroll: varje dragning i kontoutdraget heter "FACEBK *" plus en kod, till exempel FACEBK *CZW669NUT4. Koden står på Metas kvitto som referensnummer. Räkna kvittona per konto och skriv antalet i rapporten.
+Hittar du ett konto med avvisade eller misslyckade betalningar: skriv det i rapporten, och betala inte.
+
+==================================================
+DEL 2. SHOPIFY, UTBETALNINGAR FÖR FYRA BUTIKER
+==================================================
+Fakturorna från Shopify har vi redan, alla 24. Det som saknas är utbetalningsrapporterna. De här fyra butikerna:
+- Bäverbutiken: admin.shopify.com/store/4snrw0-mg
+- Beverbutikken: admin.shopify.com/store/1acuam-s5
+- bæverbutiken.dk: admin.shopify.com/store/v0xqtk-tx
+- Majavakauppa: admin.shopify.com/store/q0uthu-xq
+
+Steg för varje butik:
+1. Gå till Inställningar, sedan Betalningar, sedan Shopify Payments, sedan Visa utbetalningar. Det kan också heta Finance och sedan Payouts.
+2. Filtrera på 1 till 30 september 2026.
+3. Exportera utbetalningarna som CSV.
+4. Exportera också "Transaktioner" eller "Balance transactions" för september som CSV.
+
+Spara filerna som <butik>_utbetalningar_september.csv och <butik>_transaktioner_september.csv.
+Om exporten skickas som mejl i stället: skriv i rapporten till vilken adress den gick.
+
+==================================================
+DEL 3. GOOGLE
+==================================================
+Google Ads, två konton:
+- 139-156-9447. Dragningar: 3/9 3 472,04 kr, sedan 12/9, 20/9, 24/9 och 28/9 med 5 000 kr vardera.
+- 361-188-7178. Dragningar: 3/9 3 138,73 kr, sedan 6/9, 11/9, 16/9, 22/9 och 26/9 med 5 000 kr vardera.
+
+Steg: gå till ads.google.com, sedan Fakturering, sedan Dokument. Ladda ner kvittona eller månadsutdraget för september 2026.
+
+Google Workspace, två fakturor 3/9:
+- stonebite.org, 153,26 kr
+- beverkoppling, 91,27 kr
+
+Steg: gå till admin.google.com, sedan Fakturering, sedan Betalningskonton, sedan Visa transaktioner och dokument. Ladda ner septemberfakturan. Det kan behövas två olika inloggningar.
+
+Google One eller AI-abonnemang, 262,90 kr den 26/9, referens G1AI101M:
+Steg: gå till pay.google.com, sedan Aktivitet, och leta på de Google-konton Axel är inloggad på. Skriv i rapporten vilket konto köpet låg på.
+
+==================================================
+DEL 4. PROGRAM OCH AI-TJÄNSTER
+==================================================
+De här kvittona går till andra mejladresser än axelodhner.business@gmail.com. Prova i den här ordningen:
+1. Mejlen på axel.odhner@stonebite.org och subscriptions@stonebite.org. Sök på handlarens namn i september och ladda ner PDF:en eller skriv ut mejlet som PDF.
+2. Tjänstens egen fakturasida, som står inom parentes nedan.
+
+- Claude, 4 dragningar: 8/9 2 030,33, 11/9 2 034,59, 20/9 2 057,04, 24/9 205,65. (claude.ai, sedan Inställningar, sedan Fakturering, sedan Fakturor, på varje Claude-konto Axel har)
+- Anthropic, 4 dragningar: 4/9 202,76, 5/9 1 836,84, 7/9 1 879,20, 13/9 196,56 som är Anthropic Ireland. (console.anthropic.com, sedan Settings, sedan Billing, sedan Invoices, och även claude.ai)
+- Kie AI, 3 dragningar: 18/9 498,90, 22/9 4 988,39, 30/9 12 618,82. (kie.ai, sedan Billing eller Billing History)
+- HeyGen, 2 dragningar: 12/9 482,85, 28/9 2 581,21. (app.heygen.com, sedan Settings, sedan Billing, med kontot subscriptions@stonebite.org)
+- ElevenLabs, 2 dragningar: 12/9 195,87, 20/9 219,49. De hör till ett annat ElevenLabs-konto än det med fakturaserien HVGXGIBZ. (elevenlabs.io, sedan Subscription, sedan Invoices)
+- Higgsfield, 1/9 488,87. (higgsfield.ai, sedan Billing)
+- vmake, 25/9 100,41. (vmake.ai, sedan Billing)
+- Notion, 3/9 4 118,04, faktura G9NRQSSQ-0004. (notion.so, sedan Settings, sedan Billing, sedan Invoices)
+- Klaviyo, 2 dragningar: 11/9 1 456,62, 25/9 1 409,40. (klaviyo.com, sedan Settings, sedan Billing, sedan Billing history)
+- WeTracked, 2 dragningar: 22/9 2 235,80, 25/9 2 506,73. (app.wetracked.io, sedan Billing)
+- 17Returns, 20/9 1 189,28. (17track.net eller 17returns, sedan Billing)
+- Skool, 23/9 21 143,24 kr. (skool.com, sedan Settings, sedan Payment history)
+- Whop/Ecomtalent, 17/9 967,86. (whop.com, sedan Orders eller Payments)
+- Spotify, 27/9 129 kr. (spotify.com/account, sedan Kvitton)
+- Discord, 2 dragningar: 16/9 34,18 och 80,02. (discord.com, sedan Användarinställningar, sedan Fakturering, sedan Transaktioner)
+- OpenAI, 11/9 207,98. (chatgpt.com, sedan Inställningar, sedan Prenumeration eller Fakturor)
+- CapCut, 3 dragningar: 3/9 349, 8/9 299, 12/9 799. Öppna länkarna i CapCut-mejlen "Du har fått ett nytt kvitto från CapCut" i axelodhner.business@gmail.com och spara varje kvitto som PDF.
+- Pocket (SP POCKET), 2 dragningar 9/9: 1 764,72 och 1 229,33. (heypocket.com, sedan konto eller ordrar)
+- dotno.domains, 29/9 292,76. (dotno.domains, sedan konto eller fakturor, gäller matstrumpor.no)
+- SJ, 28/9 944 kr, bokning WZJECL4J. (sj.se, sedan Mina resor, sedan kvitto)
+
+Atlassian/Loom, 5/9 234 kr och 28/9 241,47 kr: kontot är Jessica Odhners. Rör det inte. Skriv bara i rapporten att Axel ska be Jessica om kvittona.
+
+==================================================
+DEL 5. PAYPAL, MÅNADSUTDRAG
+==================================================
+Steg: gå till paypal.com, sedan Aktivitet, sedan Kontoutdrag eller Rapporter. Ladda ner kontoutdraget för september 2026 som PDF och aktivitetsrapporten för september som CSV.
+
+==================================================
+KONTROLL OCH RAPPORT, sist
+==================================================
+1. Öppna mappen Bokforing-september-2026-cowork och räkna filerna.
+2. Skriv en kort rapport till Axel i chatten, på svenska, med tre listor:
+   - Hämtat: handlare, datum, belopp, filnamn.
+   - Gick inte: handlare och varför, till exempel inloggning saknas, fel konto eller sidan visar inga kvitton.
+   - Meta: antal kvitton per annonskonto.
+3. Skriv i rapporten att du inte har betalat, ändrat eller raderat något.
