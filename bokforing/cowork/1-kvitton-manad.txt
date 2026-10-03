@@ -16,9 +16,16 @@ PDF i mappen kvitton/. Filnamn: "ÅÅÅÅ-MM-DD Leverantör Belopp.pdf"
 
 ORDNING (enklast först):
 
-1. MEJLEN. Sök i Gmail i varje konto Axel är inloggad på i Chrome:
+0. DET AXEL REDAN HAR. Mejlen i axelodhner.business@gmail.com är redan genomgångna
+   och kvittona därifrån finns redan hos Axel. Sök INTE i den inkorgen igen.
+   Fråga Axel en gång var de kvittona ligger (mapp eller Drive). Gå igenom dem och
+   sätt "HITTAT" på raderna de täcker i transaktioner-september.csv. Ladda aldrig
+   ner samma kvitto två gånger.
+
+1. MEJLEN. Sök i Gmail i de ANDRA kontona Axel är inloggad på i Chrome:
    axel.odhner@stonebite.org, subscriptions@stonebite.org, claude5@stonebite.org,
-   claude6@stonebite.org, axelodhner.business@gmail.com, barkas.kundservice@gmail.com.
+   claude6@stonebite.org, barkas.kundservice@gmail.com.
+   Hoppa över axelodhner.business@gmail.com (redan gjord, se steg 0).
    Sök: (receipt OR kvitto OR invoice OR faktura OR "payment confirmation")
    after:2026/08/31 before:2026/10/02
    Ladda ner PDF-bilagan. Finns ingen bilaga men en knapp "View receipt"/"Download
