@@ -3,6 +3,45 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-10-03 — 8 nya på en produkt, 51 i `sources.json`
+
+**En ny mapp i MAKE TO NORWAY** (50 → 51 produkter i registret, 56 → 57
+Drive-mappar): **Buskjackan 2-pack**. Arket `Buskjackan_REVIEW` i den svenska
+mappen bar riktiga betyg och riktiga namn, och det norska handlet fanns i
+feeden: `buskjakke-2-pk-120-180-cm-skjermer-mot-vind-og-kulde` (id `buskjakke`,
+8 rader).
+
+Kartorna: 651 → 659 översättningar, namnen oförändrade 152 — arket använder
+ensamma förnamn (Anna, Lars, Maria …) som alla redan fanns. Bygget 438 → 446
+klara, 10 bortvalda — alla gamasjer, som alltid.
+
+**Spamfiltret tog importen** (8 av 8), rättat i samma körning med
+`judgeme-publicera.mjs` och tillbakaläst: 8 synliga / 0 spam, sedan en
+avslutande `--dry` som svarade "redan 8 synliga". Femte dagen i rad att varje
+ny import tas — det är normen.
+
+⚠️ **Buskjackan har samma titel på alla åtta rader** ("Bra produkt"), precis som
+Kajakkholder. Jag importerade ändå: kommandots stoppregler är saknat betyg,
+saknad översättning och okänt namn — aldrig "titeln ser tråkig ut" — och att
+skriva egna rubriker vore påhittad data. Det står i rapporten i stället, och
+båda produkterna behöver varierade titlar i källarket plus en omimport med
+`--anda` på Axels uttryckliga begäran.
+
+**Kvar, och varför:**
+
+- **Buskjakke: åtta identiska titlar** — första dygnet.
+- **Kajakkholder: tio identiska titlar** ("Bra og stabile") — tionde dygnet.
+- **Fyra ark väntar, oförändrade sedan 2026-09-18** (femtonde dygnet):
+  `Dinosauriekalender_REVIEW` (alla namn "(EXEMPEL)"), `Gravstenspenna_Reviews`
+  (TEST-rader), `Medicinask i Fickformat_REVIEW` (exempelrader +
+  `not-a-real-product-handle`; produkten är utgången och kan strykas),
+  `5.1 Lövblåsare_REVIEW` = Jetviften (personnamn i `title`, utekattkojans
+  `product_handle`).
+- **Gamasjer/Damasker**: källarket saknar betyg, alla 10 rader ratas varje
+  bygge. Produkten är redan klar i Judge.me sedan 2026-08-30 — harmlöst.
+- **Datumen**: varje importerad recension bär importdagen. Enda rättningen är
+  CSV-import inne i Judge.me-appen.
+
 ## Läget 2026-10-02 — 20 nya på två produkter, 50 i `sources.json`
 
 **Två nya mappar i MAKE TO NORWAY** (48 → 50 produkter i registret, 54 → 56
