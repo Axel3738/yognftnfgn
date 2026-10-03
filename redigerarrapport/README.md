@@ -40,7 +40,11 @@ aldrig Meta själv och skriver aldrig i Notion.
 - Poster: Carl 13 klipp (8 bedömbara, breakthrough), Jerzee 33 klipp (13
   bedömbara, breakthrough), Gilz 11 klipp (10 utan leverans), Jasper 3 klipp.
   Josh och Annabelle får ingen rapport (Axels beslut 2026-10-02: de gör andra
-  uppgifter; `konfig.json` → `utan_redigerare`).
+  uppgifter; `konfig.json` → `utan_redigerare`). **Gilz (Bruce) får ingen
+  heller sedan 2026-10-03** (Axel: "Bruce jobbar bara på Matstrumpor och han
+  är creative strat"): han utvärderar sig själv varje vecka enligt
+  `matstrumpor/sop/BRUCE-WEEKLY-SELF-REVIEW.md` i stället. Posterna går
+  alltså till Carl, Jerzee och Jasper.
 - Hook/hold visas inte när talet är ≥ 90 % (mätfel eller bildannons; agent-
   loggen bär 27 sådana), och `utford_som_briefad` är "okänd" på alla rader i
   dag ⇒ "Cut as briefed: not measured yet".
@@ -54,9 +58,10 @@ aldrig Meta själv och skriver aldrig i Notion.
    `session_01GneESZrfpo5tLCp2jnZuYM`, cron `0 1 * * 1` UTC, prompt
    `/redigerarrapport --discord`, sedd i `list_triggers`. Första fyrning
    måndag 2026-10-05 03:06 CEST. Vinteromställningen: `0 2 * * 1`.
-2. Gilz är inte med i Bäverbutikens server (ingen post förrän han bjudits in).
-   Boten behöver Manage Channels för att skapa de privata kanalerna första
-   gången; misslyckas en post slutar körningen med exit 4 och filerna finns i
+2. Gilz får ingen post (`utan_redigerare`, Axels beslut 2026-10-03), så att
+   han inte är med i Bäverbutikens server spelar ingen roll längre. Boten
+   behöver Manage Channels för att skapa de privata kanalerna första gången;
+   misslyckas en post slutar körningen med exit 4 och filerna finns i
    `output/<vecka>/`.
 3. `/matstrumporkungen` skriver hook/hold/konv_lpv i ETIKETT-raden sedan
    2026-10-02 (`matstrumpor/kor.mjs` rad()); äldre rader saknar dem.
