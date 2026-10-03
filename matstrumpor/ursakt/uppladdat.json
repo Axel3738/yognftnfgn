@@ -91,5 +91,10 @@
     }
   },
   "segment_summa": 542,
-  "kontroll": "node matstrumpor/ursakt/koll.mjs 2026-10-03: 26 av 26 mejl lika med planen (13 kampanjutkast + 13 flödesmejl)"
+  "kontroll": "node matstrumpor/ursakt/koll.mjs 2026-10-03: 26 av 26 mejl lika med planen (13 kampanjutkast + 13 flödesmejl)",
+  "testutkast_flode_sv": {
+    "id": "ec246ff3-3c08-4dee-907f-b7d82a1c2d5e",
+    "varfor": "Flödessidan var vit för Cowork 2026-10-03; samma text som flödets svenska mejl, bara för testutskick, skickas aldrig. Kan raderas i appen efter testet.",
+    "skapad": "2026-10-03T05:56Z"
+  }
 }
