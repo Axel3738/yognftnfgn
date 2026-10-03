@@ -1,0 +1,17 @@
+{
+  "amne": "Your Matstrumpor delivery may be delayed",
+  "forhand": "Your parcel may be delayed by 5-10 business days. If it has not shipped, you can get your money back.",
+  "rubrik": "Your delivery may be delayed",
+  "hej": "Hi {{fornamn}},",
+  "du_reserv": "there",
+  "intro_kampanj": "We are sorry. Your order from Matstrumpor may arrive later than usual, and we want you to hear it directly from us.",
+  "intro_flode": "Thank you for your order from Matstrumpor. We are sorry, but we need to tell you that the delivery may be delayed.",
+  "forsening": "The cause is a supply chain disruption. Because of that, your parcel may take 5-10 business days longer than usual to arrive. If you bought it as a gift, it is good to know now.",
+  "aterbetalning": "If your parcel has not shipped yet, you can get the full amount back. Reply to this email with your order number and we will take care of it.",
+  "behalla": "If you want to keep your order, you do not need to do anything. Your parcel will arrive, just a little later.",
+  "redan_framme_kampanj": "If you have already received your parcel, you can ignore this email.",
+  "sparning": "You can follow your parcel on the tracking page.",
+  "knapp": "Track your parcel",
+  "avslut": "Sorry again. You can reach our customer support by replying to this email.",
+  "signatur": "Matstrumpor"
+}

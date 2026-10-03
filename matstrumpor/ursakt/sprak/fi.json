@@ -1,0 +1,17 @@
+{
+  "amne": "Matstrumpor-tilauksesi voi myöhästyä",
+  "forhand": "Paketti voi myöhästyä 5-10 arkipäivää. Jos sitä ei ole vielä lähetetty, voit saada rahasi takaisin.",
+  "rubrik": "Toimituksesi voi myöhästyä",
+  "hej": "Hei {{fornamn}},",
+  "du_reserv": "ystävä",
+  "intro_kampanj": "Pahoittelemme. Matstrumpor-tilauksesi voi saapua tavallista myöhemmin, ja haluamme, että kuulet siitä suoraan meiltä.",
+  "intro_flode": "Kiitos Matstrumpor-tilauksestasi. Pahoittelemme, mutta meidän on kerrottava, että toimitus voi myöhästyä.",
+  "forsening": "Syynä on häiriö toimitusketjussa. Siksi pakettisi saapuminen voi kestää 5-10 arkipäivää tavallista kauemmin. Jos ostit sen lahjaksi, on hyvä tietää tämä jo nyt.",
+  "aterbetalning": "Jos pakettiasi ei ole vielä lähetetty, voit saada koko summan takaisin. Vastaa tähän sähköpostiin ja kerro tilausnumerosi, niin hoidamme asian.",
+  "behalla": "Jos haluat pitää tilauksesi, sinun ei tarvitse tehdä mitään. Pakettisi tulee, vain hieman myöhemmin.",
+  "redan_framme_kampanj": "Jos olet jo saanut pakettisi, voit jättää tämän viestin huomiotta.",
+  "sparning": "Voit seurata pakettiasi seurantasivulla.",
+  "knapp": "Seuraa pakettiasi",
+  "avslut": "Pahoittelut vielä kerran. Tavoitat asiakaspalvelumme vastaamalla tähän sähköpostiin.",
+  "signatur": "Matstrumpor"
+}

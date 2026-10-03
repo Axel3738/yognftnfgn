@@ -1,0 +1,17 @@
+{
+  "amne": "Din leverans från Matstrumpor kan dröja",
+  "forhand": "Paketet kan dröja 5-10 arbetsdagar. Är det inte skickat kan du få pengarna tillbaka.",
+  "rubrik": "Din leverans kan bli försenad",
+  "hej": "Hej {{fornamn}},",
+  "du_reserv": "du",
+  "intro_kampanj": "Vi ber om ursäkt. Din beställning från Matstrumpor kan komma fram senare än vanligt, och vi vill att du ska få veta det direkt från oss.",
+  "intro_flode": "Tack för din beställning hos Matstrumpor. Vi ber om ursäkt, men vi måste berätta att leveransen kan bli försenad.",
+  "forsening": "Orsaken är en störning i leveranskedjan. Därför kan ditt paket ta 5-10 arbetsdagar längre än vanligt att komma fram. Köpte du det som present är det bra att veta redan nu.",
+  "aterbetalning": "Har ditt paket inte hunnit skickas ännu kan du få hela beloppet tillbaka. Svara på det här mejlet med ditt ordernummer, så ordnar vi det.",
+  "behalla": "Vill du behålla din beställning behöver du inte göra något. Ditt paket kommer, bara lite senare.",
+  "redan_framme_kampanj": "Har du redan fått ditt paket kan du bortse från det här mejlet.",
+  "sparning": "Du kan följa ditt paket på spårningssidan.",
+  "knapp": "Följ ditt paket",
+  "avslut": "Förlåt än en gång. Du når vår kundtjänst genom att svara på det här mejlet.",
+  "signatur": "Matstrumpor"
+}

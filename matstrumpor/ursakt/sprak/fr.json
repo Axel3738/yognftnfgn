@@ -1,0 +1,17 @@
+{
+  "amne": "Votre livraison Matstrumpor pourrait être retardée",
+  "forhand": "Votre colis pourrait avoir 5-10 jours ouvrés de retard. S'il n'est pas encore expédié, vous pouvez être remboursé.",
+  "rubrik": "Votre livraison pourrait être retardée",
+  "hej": "Bonjour {{fornamn}},",
+  "du_reserv": "à vous",
+  "intro_kampanj": "Nous vous présentons nos excuses. Votre commande Matstrumpor pourrait arriver plus tard que d'habitude, et nous voulons que vous l'appreniez directement de notre part.",
+  "intro_flode": "Merci pour votre commande chez Matstrumpor. Nous sommes désolés, mais nous devons vous informer que la livraison pourrait être retardée.",
+  "forsening": "La cause est une perturbation de la chaîne d'approvisionnement. Votre colis pourrait donc mettre 5-10 jours ouvrés de plus que d'habitude à arriver. Si vous l'avez acheté comme cadeau, mieux vaut le savoir dès maintenant.",
+  "aterbetalning": "Si votre colis n'a pas encore été expédié, vous pouvez être remboursé du montant total. Répondez à cet e-mail en indiquant votre numéro de commande, et nous nous en occupons.",
+  "behalla": "Si vous souhaitez garder votre commande, vous n'avez rien à faire. Votre colis arrivera, simplement un peu plus tard.",
+  "redan_framme_kampanj": "Si vous avez déjà reçu votre colis, vous pouvez ignorer cet e-mail.",
+  "sparning": "Vous pouvez suivre votre colis sur la page de suivi.",
+  "knapp": "Suivre mon colis",
+  "avslut": "Encore toutes nos excuses. Vous pouvez joindre notre service client en répondant à cet e-mail.",
+  "signatur": "Matstrumpor"
+}

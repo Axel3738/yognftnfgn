@@ -1,0 +1,17 @@
+{
+  "amne": "Din levering fra Matstrumpor kan blive forsinket",
+  "forhand": "Pakken kan blive 5-10 hverdage forsinket. Er den ikke sendt, kan du få pengene tilbage.",
+  "rubrik": "Din levering kan blive forsinket",
+  "hej": "Hej {{fornamn}},",
+  "du_reserv": "du",
+  "intro_kampanj": "Vi beklager. Din ordre fra Matstrumpor kan nå frem senere end normalt, og vi vil gerne have, at du hører det direkte fra os.",
+  "intro_flode": "Tak for din ordre hos Matstrumpor. Vi beklager, men vi må fortælle dig, at leveringen kan blive forsinket.",
+  "forsening": "Årsagen er en forstyrrelse i forsyningskæden. Derfor kan din pakke bruge 5-10 hverdage længere end normalt på at nå frem. Har du købt den som gave, er det godt at vide allerede nu.",
+  "aterbetalning": "Er din pakke ikke sendt endnu, kan du få hele beløbet tilbage. Svar på denne mail med dit ordrenummer, så ordner vi det.",
+  "behalla": "Vil du beholde din ordre, behøver du ikke gøre noget. Din pakke kommer, bare lidt senere.",
+  "redan_framme_kampanj": "Har du allerede modtaget din pakke, kan du se bort fra denne mail.",
+  "sparning": "Du kan følge din pakke på sporingssiden.",
+  "knapp": "Følg din pakke",
+  "avslut": "Undskyld endnu en gang. Du kan kontakte vores kundeservice ved at svare på denne mail.",
+  "signatur": "Matstrumpor"
+}

@@ -1,0 +1,17 @@
+{
+  "amne": "Deine Lieferung von Matstrumpor kann sich verzögern",
+  "forhand": "Dein Paket kann sich um 5-10 Werktage verzögern. Wurde es noch nicht verschickt, kannst du dein Geld zurückbekommen.",
+  "rubrik": "Deine Lieferung kann sich verzögern",
+  "hej": "Hallo {{fornamn}},",
+  "du_reserv": "du",
+  "intro_kampanj": "Das tut uns leid. Deine Bestellung von Matstrumpor kommt möglicherweise später an als sonst, und wir möchten, dass du das direkt von uns erfährst.",
+  "intro_flode": "Danke für deine Bestellung bei Matstrumpor. Es tut uns leid, aber wir müssen dir sagen, dass sich die Lieferung verzögern kann.",
+  "forsening": "Der Grund ist eine Störung in der Lieferkette. Deshalb kann dein Paket 5-10 Werktage länger als sonst brauchen, bis es ankommt. Wenn du es als Geschenk gekauft hast, ist es gut, das schon jetzt zu wissen.",
+  "aterbetalning": "Wurde dein Paket noch nicht verschickt, kannst du den vollen Betrag zurückbekommen. Antworte auf diese E-Mail mit deiner Bestellnummer, dann kümmern wir uns darum.",
+  "behalla": "Möchtest du deine Bestellung behalten, musst du nichts tun. Dein Paket kommt, nur etwas später.",
+  "redan_framme_kampanj": "Hast du dein Paket schon erhalten, kannst du diese E-Mail ignorieren.",
+  "sparning": "Den Stand deines Pakets siehst du auf der Seite zur Paketverfolgung.",
+  "knapp": "Paket verfolgen",
+  "avslut": "Nochmals Entschuldigung. Unseren Kundenservice erreichst du, indem du auf diese E-Mail antwortest.",
+  "signatur": "Matstrumpor"
+}
