@@ -2,7 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { roasUnderDagen } = await import("../app/lib/roas-under-dagen.ts");
+const { roasUnderDagen, jamntBeloppstak } = await import("../app/lib/roas-under-dagen.ts");
 
 const noll = () => Array(24).fill(0);
 
@@ -31,4 +31,30 @@ test("ingen kostnad än = ingen ROAS, aldrig 0 eller oändligt", () => {
 
 test("i dag slutar kurvan vid nuvarande timme", () => {
   assert.equal(roasUnderDagen({ day: "d", sales: noll(), spend: noll(), orders: noll() }, 13).length, 14);
+});
+
+test("utan ROAS bär varje timme sin EGEN försäljning, inte summan hittills", () => {
+  const sales = noll(), orders = noll();
+  sales[2] = 300; orders[2] = 1;
+  sales[5] = 500; orders[5] = 2;
+  sales[6] = 200; orders[6] = 1;
+  const p = roasUnderDagen({ day: "2026-10-03", sales, spend: null, orders }, 10);
+  // staplarna: timmens egna tal
+  assert.deepEqual(p.map((x) => x.salesTimme), [0, 0, 300, 0, 0, 500, 200, 0, 0, 0, 0]);
+  assert.deepEqual(p.map((x) => x.ordersTimme), [0, 0, 1, 0, 0, 2, 1, 0, 0, 0, 0]);
+  // summan under grafen: hittills
+  assert.equal(p[10].salesHittills, 1000);
+  assert.equal(p[10].ordersHittills, 4);
+  // och en stapel får aldrig vara summan: timme 6 är 200, inte 1000
+  assert.notEqual(p[6].salesTimme, p[6].salesHittills);
+});
+
+test("staplarnas tak är jämnt och rymmer alltid maxvärdet", () => {
+  assert.equal(jamntBeloppstak(3791 * 1.1), 5000);
+  assert.equal(jamntBeloppstak(180), 200);
+  assert.equal(jamntBeloppstak(2400), 2500);
+  assert.equal(jamntBeloppstak(1000), 1000);
+  assert.equal(jamntBeloppstak(0), 1);
+  assert.equal(jamntBeloppstak(NaN), 1);
+  for (const v of [1, 7, 42, 999, 12345, 98765]) assert.ok(jamntBeloppstak(v) >= v, `${v}`);
 });

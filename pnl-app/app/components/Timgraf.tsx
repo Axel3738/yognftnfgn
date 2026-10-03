@@ -11,15 +11,22 @@
  * som en streckad vågrät linje. Under: ROAS hittills, annonser och
  * försäljning för dagen.
  *
+ * Utan ROAS (Axel 2026-10-03: "revenue per hour … som den vanliga
+ * Shopify-dashboarden"): STAPLAR med omsättningen per timme, som Shopifys
+ * egen översikt. Förut ritades omsättningen hopräknad som en stigande linje,
+ * och då syns inte vilken timme som sålde — bara att dagen växte.
+ *
  * Medvetet:
  * 1. **Ingen ROAS utan annonskostnad.** Före första spenderade kronan finns
  *    ingen ROAS hittills — linjen börjar där. Aldrig 0, aldrig oändligt.
  * 2. **Ingen ROAS utan gemensam klocka.** Går annonskontot och butiken inte
- *    att lägga på samma klocka i hela timmar visas försäljning hittills i
+ *    att lägga på samma klocka i hela timmar visas försäljning per timme i
  *    stället. En förskjuten ROAS-kurva är värre än ingen.
- * 3. **I dag slutar kurvan vid nuvarande timme.**
+ * 3. **I dag slutar kurvan (och staplarna) vid nuvarande timme.**
  * 4. **Timmarnas ROAS klipps vid grafens tak.** En timme med 40× på 50 kr
  *    hade annars pressat ihop allt annat till en platt rad.
+ * 5. **Staplarna är timmens egen försäljning, aldrig summan hittills.**
+ *    Dagens summa står under grafen och i tipset ("Omsättning hittills").
  *
  * Inga externa bibliotek, ingen CDN — samma handritade SVG som resten.
  */
@@ -27,7 +34,7 @@
 import { useMemo, useState, type MouseEvent } from "react";
 import { BlockStack, Button, Card, InlineGrid, InlineStack, Text } from "@shopify/polaris";
 import type { Texts } from "../lib/texts";
-import { roasUnderDagen, type TimDag } from "../lib/roas-under-dagen";
+import { jamntBeloppstak, roasUnderDagen, type TimDag } from "../lib/roas-under-dagen";
 
 export interface TimvisData {
   timmar: { hour: number; orders: number; totalSales: number; netSales: number }[];
@@ -45,6 +52,7 @@ export interface TimvisData {
 }
 
 const GRON = "#29845a";
+const GRON_LJUS = "#9ccbb3";
 const ROD = "#c5280c";
 const GRA = "#8a8a8a";
 
@@ -81,6 +89,7 @@ export function Timgraf({
     v == null ? "—" : new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
   const datum = (iso: string) =>
     new Intl.DateTimeFormat(locale, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(`${iso}T12:00:00Z`));
+  const hh = (h: number) => String(h).padStart(2, "0");
 
   const punkter = useMemo(
     () => (dag ? roasUnderDagen(dag, dag.day === d.idag ? d.nuTimme : 23) : []),
@@ -92,17 +101,23 @@ export function Timgraf({
   const harRoas = dag.spend != null && punkter.some((p) => p.spendHittills > 0);
   const be = harRoas && breakEven != null && Number.isFinite(breakEven) && breakEven > 0 ? breakEven : null;
 
-  /* Värdet som ritas: ROAS hittills, eller försäljning hittills utan ROAS. */
-  const huvud = (i: number): number | null => (harRoas ? punkter[i]?.hittills ?? null : punkter[i]?.salesHittills ?? null);
+  /* Värdet som ritas: ROAS hittills som linje, eller timmens försäljning som stapel. */
+  const huvud = (i: number): number | null => (harRoas ? punkter[i]?.hittills ?? null : punkter[i]?.salesTimme ?? null);
   const huvudVarden = punkter.map((_, i) => huvud(i)).filter((v): v is number => v != null);
   const timVarden = harRoas ? punkter.map((p) => p.timme).filter((v): v is number => v != null) : [];
   const maxHuvud = Math.max(0, ...huvudVarden);
   const tak = harRoas
     ? jamntTak(Math.max(maxHuvud * 1.25, (be ?? 0) * 1.5, Math.min(Math.max(0, ...timVarden), Math.max(maxHuvud, be ?? 0) * 2.5), 2))
-    : Math.max(maxHuvud * 1.15, 1);
+    : jamntBeloppstak(maxHuvud * 1.1);
 
-  const W = 860, H = 260, padL = 52, padR = 16, padT = 16, padB = 28;
-  const x = (h: number) => padL + ((W - padL - padR) * h) / 23;
+  /* Beloppsaxeln ("1 000 SEK") behöver mer plats än ROAS-axeln ("2,5"). */
+  const W = 860, H = 260, padL = harRoas ? 52 : 92, padR = 16, padT = 16, padB = 28;
+  const bredd = W - padL - padR;
+  /* Linjen: timme 0 vid vänsterkanten, 23 vid högerkanten. Staplarna: 24 lika
+     fack, varje timme mitt i sitt fack — som Shopifys egen graf. */
+  const fack = bredd / 24;
+  const x = (h: number) => (harRoas ? padL + (bredd * h) / 23 : padL + fack * h + fack / 2);
+  const stapelBredd = fack * 0.62;
   const y = (v: number) => padT + (H - padT - padB) * (1 - Math.min(v, tak) / tak);
   const botten = H - padB;
   const axelSteg = harRoas ? [0, tak / 4, tak / 2, (tak * 3) / 4, tak] : [0, tak / 2, tak];
@@ -115,10 +130,12 @@ export function Timgraf({
 
   /* Linjen för ROAS hittills, bit för bit: färgen följer break-even. */
   const bitar: { x1: number; y1: number; x2: number; y2: number; c: string }[] = [];
-  for (let i = 1; i < punkter.length; i++) {
-    const a = huvud(i - 1), b = huvud(i);
-    if (a == null || b == null) continue;
-    bitar.push({ x1: x(i - 1), y1: y(a), x2: x(i), y2: y(b), c: be != null && (a < be || b < be) ? ROD : GRON });
+  if (harRoas) {
+    for (let i = 1; i < punkter.length; i++) {
+      const a = huvud(i - 1), b = huvud(i);
+      if (a == null || b == null) continue;
+      bitar.push({ x1: x(i - 1), y1: y(a), x2: x(i), y2: y(b), c: be != null && (a < be || b < be) ? ROD : GRON });
+    }
   }
   const timLinje = harRoas
     ? punkter
@@ -134,7 +151,8 @@ export function Timgraf({
   const valj = (e: MouseEvent<SVGRectElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
     const andel = (e.clientX - r.left) / r.width;
-    const h = Math.round(((andel * W - padL) / (W - padL - padR)) * 23);
+    const px = andel * W - padL;
+    const h = harRoas ? Math.round((px / bredd) * 23) : Math.floor(px / fack);
     setTip(Math.max(0, Math.min(punkter.length - 1, h)));
   };
   const tp = tip != null ? punkter[tip] : null;
@@ -163,8 +181,8 @@ export function Timgraf({
             ))}
             {Array.from({ length: 8 }, (_, i) => i * 3).map((h) => (
               <g key={h}>
-                <line x1={x(h)} x2={x(h)} y1={padT} y2={botten} stroke="#f1f1f1" strokeWidth="1" />
-                <text x={x(h)} y={H - 7} textAnchor="middle" fontSize="13" fill="#6d7175">{`${String(h).padStart(2, "0")}:00`}</text>
+                {harRoas ? <line x1={x(h)} x2={x(h)} y1={padT} y2={botten} stroke="#f1f1f1" strokeWidth="1" /> : null}
+                <text x={x(h)} y={H - 7} textAnchor="middle" fontSize="13" fill="#6d7175">{`${hh(h)}:00`}</text>
               </g>
             ))}
             {be != null ? (
@@ -175,6 +193,27 @@ export function Timgraf({
                 </text>
               </g>
             ) : null}
+
+            {/* Staplarna: en per timme, timmens egen försäljning. */}
+            {!harRoas
+              ? punkter.map((p, i) => {
+                  const v = p.salesTimme;
+                  const topp = v > 0 ? y(v) : botten;
+                  const hojd = Math.max(botten - topp, v > 0 ? 2 : 0);
+                  return (
+                    <rect
+                      key={`b${p.hour}`}
+                      x={x(p.hour) - stapelBredd / 2}
+                      y={botten - hojd}
+                      width={stapelBredd}
+                      height={hojd}
+                      rx="2"
+                      fill={tip == null || tip === i ? GRON : GRON_LJUS}
+                    />
+                  );
+                })
+              : null}
+
             {timLinje.map((s, i) => (
               <polyline key={i} points={s.join(" ")} fill="none" stroke={GRA} strokeWidth="1.2" strokeDasharray="3 3" />
             ))}
@@ -184,25 +223,27 @@ export function Timgraf({
             {bitar.map((b, i) => (
               <line key={i} x1={b.x1} y1={b.y1} x2={b.x2} y2={b.y2} stroke={b.c} strokeWidth="2.5" strokeLinecap="round" />
             ))}
-            {punkter.map((p, i) => {
-              const v = huvud(i);
-              return v == null ? null : (
-                <circle key={`h${p.hour}`} cx={x(p.hour)} cy={y(v)} r={tip === i ? 4.5 : 3} fill="#fff" stroke={farg(harRoas ? v : null)} strokeWidth="1.8" />
-              );
-            })}
-            {sista && huvud(punkter.length - 1) != null ? (
+            {harRoas
+              ? punkter.map((p, i) => {
+                  const v = huvud(i);
+                  return v == null ? null : (
+                    <circle key={`h${p.hour}`} cx={x(p.hour)} cy={y(v)} r={tip === i ? 4.5 : 3} fill="#fff" stroke={farg(v)} strokeWidth="1.8" />
+                  );
+                })
+              : null}
+            {harRoas && sista && hittills != null ? (
               <text
                 x={Math.min(x(sista.hour) + 6, W - padR - 30)}
-                y={y(huvud(punkter.length - 1)!) - 8}
+                y={y(hittills) - 8}
                 fontSize="15"
                 fontWeight="600"
-                fill={farg(harRoas ? hittills : null)}
+                fill={farg(hittills)}
               >
-                {harRoas ? kvot(hittills) : money(sista.salesHittills)}
+                {kvot(hittills)}
               </text>
             ) : null}
-            {tp ? <line x1={x(tp.hour)} x2={x(tp.hour)} y1={padT} y2={botten} stroke="#b5b5b5" strokeWidth="1" /> : null}
-            <rect x={padL} y={padT} width={W - padL - padR} height={botten - padT} fill="transparent" onMouseMove={valj} onMouseLeave={() => setTip(null)} />
+            {tp && harRoas ? <line x1={x(tp.hour)} x2={x(tp.hour)} y1={padT} y2={botten} stroke="#b5b5b5" strokeWidth="1" /> : null}
+            <rect x={padL} y={padT} width={bredd} height={botten - padT} fill="transparent" onMouseMove={valj} onMouseLeave={() => setTip(null)} />
           </svg>
           {tp ? (
             <div
@@ -222,21 +263,31 @@ export function Timgraf({
                 zIndex: 5,
               }}
             >
-              <strong>{g.untilHour(`${String(tp.hour).padStart(2, "0")}:59`)}</strong>
-              <br />
               {harRoas ? (
                 <>
+                  <strong>{g.untilHour(`${hh(tp.hour)}:59`)}</strong>
+                  <br />
                   {g.soFar}: {kvot(tp.hittills)}
                   <br />
                   {g.perHour}: {kvot(tp.timme)}
                   <br />
                   {g.ads}: {money(tp.spendHittills)}
                   <br />
+                  {g.salesLabel}: {money(tp.salesHittills)}
+                  <br />
+                  {g.ordersCount(nf.format(tp.ordersHittills))}
                 </>
-              ) : null}
-              {g.salesLabel}: {money(tp.salesHittills)}
-              <br />
-              {g.ordersCount(nf.format(tp.ordersHittills))}
+              ) : (
+                <>
+                  <strong>{g.hourLabel(hh(tp.hour))}</strong>
+                  <br />
+                  {g.salesLabel}: {money(tp.salesTimme)}
+                  <br />
+                  {g.ordersCount(nf.format(tp.ordersTimme))}
+                  <br />
+                  {g.salesSoFar}: {money(tp.salesHittills)}
+                </>
+              )}
             </div>
           ) : null}
         </div>
@@ -260,7 +311,12 @@ export function Timgraf({
                 </InlineStack>
               ) : null}
             </>
-          ) : null}
+          ) : (
+            <InlineStack gap="100" blockAlign="center">
+              <span style={{ display: "inline-block", width: 10, height: 10, borderRadius: 2, background: GRON }} />
+              <Text as="span" variant="bodySm" tone="subdued">{g.salesTitle}</Text>
+            </InlineStack>
+          )}
         </InlineStack>
 
         <div style={{ borderTop: "1px solid #ebebeb", paddingTop: 12 }}>

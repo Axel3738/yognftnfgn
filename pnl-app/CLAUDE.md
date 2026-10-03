@@ -1354,6 +1354,30 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Omsättning per timme som staplar (2026-10-03, build omsattning-per-timme-v121)
+Axel, med skärmbild av Matstrumpors panel ("Revenue through the day", en
+stigande linje 0 → 3 791 kr): *"den ska visa revenue per hour … som den
+vanliga Shopify-dashboarden gör."* Kortet har två lägen, och bara det ena
+ändrades:
+- **Utan ROAS** (ingen gemensam klocka, eller ingen annonskostnad den
+  dagen — Matstrumpors läge): `Timgraf.tsx` ritar nu **24 staplar med
+  timmens egen försäljning** (`TimPunkt.salesTimme`/`ordersTimme`, nya fält
+  i `lib/roas-under-dagen.ts`), som Shopifys "Total sales over time". Förut
+  ritades `salesHittills` som linje — summan växte, men ingen timme gick
+  att läsa av. Tipset säger "10:00–10:59 · Omsättning · N ordrar ·
+  Omsättning hittills"; den stapel man pekar på behåller färgen, de andra
+  bleknar. Axeln får ett jämnt beloppstak (`jamntBeloppstak`: 1/2/2,5/5 ×
+  10^n). Summan och ordrarna för dagen står kvar under grafen. Titeln:
+  "Revenue per hour" / "Omsättning per timme".
+- **Med ROAS**: orört. ROAS hittills som linje mot break-even är det Axel
+  beställde 2026-09-28 ("så vi kan se när vi ska skala") — en stapel per
+  timme hade inte svarat på det.
+- 2 nya tester i `test/roas-under-dagen.test.mjs` (timmens tal ≠ summan;
+  taket rymmer alltid maxvärdet). Inga nya texter utöver `salesSoFar` i
+  båda ordböckerna.
+- Byggt på grenen `claude/kind-meitner-tcl9az` (sessionens arbetsgren);
+  deployas när den pushas till `claude/bäverbutiken-settkopplingen-nba21z`.
+
 ### Avgifterna i kundens valuta (2026-10-03, build avgiftsvaluta-v120)
 Axel, om Matstrumpors panel: *"Hur fan är vår break-even 1,9?"* Shopify
 Payments skriver `fees` på transaktionen i **kundens valuta** (presentment),
