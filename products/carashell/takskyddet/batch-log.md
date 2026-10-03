@@ -3500,3 +3500,35 @@ Två skäl:
 ligger med och snurrar.
 
 Marknadsvakten kördes inte: `placeringar` finns bara för US.
+
+---
+
+## 2026-10-03 16:45 — speglingen: tom kö, 7 rader väntar på USA
+
+Första körningen under den nya regeln (`spegling.ladda_upp = []`, mergad
+04:46 UTC i dag): speglingen laddar inte längre upp SE eller NO i CaraShell
+utan lämnar bara över raden till butikens hub för den engelska versionen.
+Kalloutet säger det själv, och varken SE-kampanj, pris eller copy läses.
+
+**Inget att göra i dag.** `CaraShell SE ready to be active` har 0 rader —
+morgonens körning (`f3b4101e`) lämnade över alla sju OB-videorna och satte de
+nio fars dag-raderna till Approved. `Takoverdrag_GT_11_H1` är borta ur kön
+sedan samma förmiddag: Axels svar "gör om om den inte redan är launchad" ⇒
+ingen omgörning, raden Approved med kommentar, eftersom den är live i
+Bäverbutiken SE + NO sedan 23/9. Den nio dygn långa punkten är därmed stängd,
+av Axel.
+
+**7 rader i `CaraShell EN ready to be active`, ingen engelsk annons uppe än:**
+`Takoverdrag_OB_11_H1`, `_13_H1`, `_14_H1`, `_17_H1`, `_18_H1`, `_19_H1`,
+`_22_H1`. Det är väntat, inte ett fel — US-rundan går 17:05, tjugo minuter
+efter den här, och kör nya koden på `main` (USA + Australien i samma runda).
+
+Lästa live: 175 källannonser i Bäverbutikens konto, OPS-kontot och UK-kontot
+utan strypning. 0 speglade, 0 hoppade, 0 fel, 0 → Approved. Inget uppladdat,
+ingen status ändrad, inga kommentarer skrivna.
+
+Discord-rapport postad i `#annons-uppladdning` (`1555955250605850715`), utan
+ACTION NEEDED — för första gången sedan 24/9 står ingen rad på Axel.
+Verktyget skrev ett tomt Discord-jobb (0 rader ⇒ inga `gjort`-punkter); texten
+ovan skrevs för hand, eftersom en tom rapport inte säger om kön är tom eller
+om körningen inte gjorde sitt jobb.

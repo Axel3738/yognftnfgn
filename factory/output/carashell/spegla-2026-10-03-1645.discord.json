@@ -1,0 +1,15 @@
+{
+ "brand": "CaraShell",
+ "datum": "2026-10-03",
+ "lage": "spegla",
+ "gjort": [
+  "Nothing to hand over today: the \"CaraShell SE ready to be active\" queue is empty. This morning's run (04:46 UTC) handed over all 7 OB videos and set the 9 Father's Day rows to Approved.",
+  "New rule live since this morning: the roof cover is scaled in the source store (SE + NO) and in CaraShell only on the English markets, so the mirror no longer uploads anything here — it only hands rows over for the English version."
+ ],
+ "varningar": [
+  "7 rows are waiting in \"CaraShell EN ready to be active\" and none of the English ads are up yet: Takoverdrag_OB_11_H1, 13, 14, 17, 18, 19 and 22. Expected, not a problem — the US round runs 20 minutes after this one and makes the English (and now Australian) versions.",
+  "Takoverdrag_GT_11_H1 is no longer in the queue: it was set to Approved this morning on the owner's decision, because it is already live in the source store. It will never be mirrored — both the copy and the end card name the source store."
+ ],
+ "action_axel": [],
+ "nasta_korning": "tomorrow 16:20 + slot"
+}

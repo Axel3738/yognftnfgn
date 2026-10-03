@@ -1,0 +1,136 @@
+{
+  "brand": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "datum": "2026-10-03",
+  "torr": false,
+  "kalla_hub": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "kalla_hub_namn": "BÄVER Taköverdraget för Husvagn",
+  "saknade_statusar": [],
+  "rader": [],
+  "approved": [],
+  "varningar": [],
+  "ko": {
+    "brand": "CaraShell",
+    "nyckel": "carashell/takskyddet",
+    "konto": "915422744950975",
+    "us_konto": "1107817401910319",
+    "us_last": true,
+    "datum": "2026-10-03",
+    "annonsmarknader": [
+      "NO",
+      "US"
+    ],
+    "ladda_upp": [],
+    "kalla_hub": {
+      "id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+      "titel": "BÄVER Taköverdraget för Husvagn",
+      "url": "https://app.notion.com/p/7ec270ab908c82f6a2a80153159b20fa"
+    },
+    "hub": {
+      "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+      "titel": "Carashell Taköverdrag creative hub",
+      "url": "https://app.notion.com/p/3da270ab908c80c480d1fbdb3fefd3b4"
+    },
+    "statusar": {
+      "se": "CaraShell SE ready to be active",
+      "en": "CaraShell EN ready to be active",
+      "spegel": "SE-ACTIVE to be translated",
+      "slut": "Approved"
+    },
+    "kallstatusar": [
+      "CaraShell SE ready to be active"
+    ],
+    "saknade_statusar": [],
+    "kampanj_se": null,
+    "kampanj_se_skal": "SE laddas inte upp i butiken (spegling.ladda_upp)",
+    "kampanj_no": null,
+    "kampanj_no_skal": "NO laddas inte upp i butiken (spegling.ladda_upp)",
+    "lank_se": "https://carashell.se/products/takskyddet",
+    "lank_no": "https://carashell.se/nb/products/takskyddet?country=NO",
+    "pris_se": null,
+    "pris_no": null,
+    "rader": [],
+    "klara_en": [
+      {
+        "namn": "Takoverdrag_OB_22_H1",
+        "spegel": "CaraShellRoof_OB_122_H1",
+        "spegel_us": "CaraShellRoof_US_OB_122_H1",
+        "page_id": "3e9270ab-908c-81af-98cf-d69885df7e31",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_22_H1-3e9270ab908c81af98cfd69885df7e31",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_19_H1",
+        "spegel": "CaraShellRoof_OB_119_H1",
+        "spegel_us": "CaraShellRoof_US_OB_119_H1",
+        "page_id": "3e9270ab-908c-8184-8344-e22a325a8618",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_19_H1-3e9270ab908c81848344e22a325a8618",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_18_H1",
+        "spegel": "CaraShellRoof_OB_118_H1",
+        "spegel_us": "CaraShellRoof_US_OB_118_H1",
+        "page_id": "3e9270ab-908c-814e-92e1-fbcb1b64a0cf",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_18_H1-3e9270ab908c814e92e1fbcb1b64a0cf",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_17_H1",
+        "spegel": "CaraShellRoof_OB_117_H1",
+        "spegel_us": "CaraShellRoof_US_OB_117_H1",
+        "page_id": "3e9270ab-908c-8142-811a-e4d3fedb9a4d",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_17_H1-3e9270ab908c8142811ae4d3fedb9a4d",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_14_H1",
+        "spegel": "CaraShellRoof_OB_114_H1",
+        "spegel_us": "CaraShellRoof_US_OB_114_H1",
+        "page_id": "3e9270ab-908c-81fe-8f4f-e1dfe943a48e",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_14_H1-3e9270ab908c81fe8f4fe1dfe943a48e",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_13_H1",
+        "spegel": "CaraShellRoof_OB_113_H1",
+        "spegel_us": "CaraShellRoof_US_OB_113_H1",
+        "page_id": "3e9270ab-908c-816a-8607-c0666b96bd8f",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_13_H1-3e9270ab908c816a8607c0666b96bd8f",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      },
+      {
+        "namn": "Takoverdrag_OB_11_H1",
+        "spegel": "CaraShellRoof_OB_111_H1",
+        "spegel_us": "CaraShellRoof_US_OB_111_H1",
+        "page_id": "3e6270ab-908c-81a4-9a7f-fc042ee08cca",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_11_H1-3e6270ab908c81a49a7ffc042ee08cca",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false,
+        "us_last": true
+      }
+    ],
+    "varningar": [],
+    "utmapp": "/home/user/yognftnfgn/factory/output/carashell",
+    "hamtad": "2026-10-03T14:49:54.976Z"
+  }
+}
