@@ -272,7 +272,14 @@ står i delningslistan med "Kan redigera", tillbakaläst via API efteråt — 0
 ändrade celler, en tom Log-rad från ett felklick lagd i papperskorgen av
 sessionen. ⚠️ Sidans "Allmän åtkomst" stod på "Vem som helst med länken →
 Kan redigera" redan före körningen (Coworks avläsning; API:t ser inte
-delningar) — Axels beslut, rekommendationen är av. Vyer och delning går
+delningar) — **Axels beslut 2026-10-03: "vem som helst får kolla", länken
+står kvar öppen.** Samma dag sa Axel att han vill säga upp
+Notion-prenumerationen ("kostar 4000kr i månaden"); inventeringen av vad
+som betalas och vad i repot som hänger på Notion är
+`stonebite/cowork/11-notion-kostnad.txt`, inget är uppsagt. Axels dom på
+utseendet samma dag: "det ser inte snyggt ut fortfarande" — sidan och
+tabellerna fick ikoner via API (📈 🗺️ 📊 📋 …), resten väntar på hans
+skärmdump. Vyer och delning går
 inte att läsa via API:t, så Coworks rapport är facit för dem.
 
 ### Bruces vecko-SOP
