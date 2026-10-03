@@ -1354,6 +1354,40 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Avgifterna i kundens valuta (2026-10-03, build avgiftsvaluta-v120)
+Axel, om Matstrumpors panel: *"Hur fan är vår break-even 1,9?"* Shopify
+Payments skriver `fees` på transaktionen i **kundens valuta** (presentment),
+inte butikens. Appen hämtade `fees { amount { amount } }` utan valutakod och
+summerade beloppet som butikens valuta. Mätt 2026-10-03 på Matstrumpor
+(SEK-butik som säljer i tio valutor): en japansk order på 7 980 JPY
+(507,54 kr) bar avgifterna 268 + 156 JPY och fick **424 kr** i avgift —
+Japans avgift blev 84 % av omsättningen, per-marknadsraden visade
+−54 % bidrag, och butikens break-even-MER stod på 1,90 medan varje land
+visade 1,41–1,67. EUR, DKK, PLN, CHF, GBP, NOK blev i stället **för låga**
+(0,83 EUR lästes som 0,83 kr). En butik som bara säljer i sin egen valuta
+märkte inget.
+- Fixen: `avgiftFalt` hämtar `currencyCode` på varje fee, orderfrågan
+  hämtar `totalPriceSet { shopMoney presentmentMoney }` (båda vägarna,
+  paginerad och bulk — MoneyBag-objekt ligger inline på orderraden i JSONL,
+  och `transactions` är en lista, inte en connection). `valutaOmrakning`
+  (orderrader.ts) tar orderns EGEN kurs = shopMoney ÷ presentmentMoney,
+  `iButikensValuta` räknar om; `summeraAvgifter(transaktioner, kurs)`.
+  Ingen dagskurs, inget nätanrop — det är kursen Shopify själv använde.
+- Okänd valuta (varken butikens eller kundens, eller kund utan kurs) ⇒
+  hela transaktionen hoppas: `sp` förblir falskt och ordern får SATSEN.
+  Hellre en uppskattning än ett tal i fel valuta. Fee utan valutakod
+  (äldre fixturer) räknas som butikens, som förut.
+- Mätt på 657 Matstrumpor-ordrar sedan 2026-09-05: 162 avgifter i kundens
+  valuta, 570 i butikens, 0 i någon tredje, 0 ordrar med presentment 0.
+- **Fälla:** avgiften ligger i den LAGRADE dagsraden (`DailyPnl.fees`,
+  `markets[].fees`). Redan skrivna dagar bär yen-beloppen tills de hämtas
+  om — returkollen skriver om de senaste 45 dagarna inom 6 h efter deploy,
+  äldre dagar bara när panelen exporterar om dem. Så panelen rättar sig i
+  omgångar, inte i samma sekund som deployen.
+- 4 nya tester i `test/orderrader.test.mjs` (kundens valuta, butikens/utan
+  kod, okänd valuta, presentment 0). Granskad adversariellt före push:
+  typecheck, build och 314 tester gröna.
+
 ### ROAS under dagen (2026-09-28, build roas-under-dagen-v119)
 Axel, med en skärmbild som förlaga: *"gör om timvisaren så här i
 dashboarden"*. `Timgraf.tsx` visar nu EN dag i taget (‹ dag ›, standard i

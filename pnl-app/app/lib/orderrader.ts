@@ -36,7 +36,12 @@ export interface OrderNode {
   createdAt: string;
   cancelledAt: string | null;
   test: boolean;
-  totalPriceSet: { shopMoney: { amount: string } };
+  /** shopMoney i butikens valuta; presentmentMoney i kundens — kvoten är
+      orderns kurs, som avgifterna räknas om med (`valutaOmrakning`). */
+  totalPriceSet: {
+    shopMoney: { amount: string; currencyCode?: string };
+    presentmentMoney?: { amount: string; currencyCode: string };
+  };
   subtotalPriceSet: { shopMoney: { amount: string } };
   totalDiscountsSet: { shopMoney: { amount: string } };
   totalShippingPriceSet: { shopMoney: { amount: string } };
@@ -246,7 +251,7 @@ export function parseOrderLines(
          genom Shopify Payments — bara då täcker avgiften orderns omsättning.
          En PayPal-order har inga fees, och räknades den som täckt blev dess
          avgift 0 i stället för handlarens sats. */
-      const betalning = medAvgifter ? summeraAvgifter(line.transactions) : null;
+      const betalning = medAvgifter ? summeraAvgifter(line.transactions, valutaOmrakning(line.totalPriceSet)) : null;
       const avgift = betalning?.avgift ?? 0;
       const fyll = (b: SalesDay) => {
         b.orders += 1;
@@ -348,6 +353,42 @@ export function parseOrderLines(
   };
 }
 
+/** Orderns egen kurs: shopMoney ÷ presentmentMoney ur totalPriceSet. */
+export interface Valutaomrakning {
+  butik: string | null;
+  kund: string | null;
+  faktor: number | null;
+}
+
+/**
+ * Kursen Shopify själv använde på ordern. Shopify Payments skriver avgifterna
+ * i kundens valuta (presentment), orderns belopp läses i butikens (shopMoney),
+ * så kvoten mellan de två totalerna räknar om avgiften exakt — ingen
+ * dagskurs, inget nätanrop.
+ */
+export function valutaOmrakning(totalPriceSet: any): Valutaomrakning | null {
+  const butik = totalPriceSet?.shopMoney?.currencyCode ?? null;
+  const kund = totalPriceSet?.presentmentMoney?.currencyCode ?? null;
+  if (!butik && !kund) return null;
+  const s = num(totalPriceSet?.shopMoney?.amount);
+  const p = num(totalPriceSet?.presentmentMoney?.amount);
+  return { butik, kund, faktor: s > 0 && p > 0 ? s / p : null };
+}
+
+/**
+ * Ett avgiftsbelopp i butikens valuta. Saknas valutakoden (äldre data,
+ * testfixturer) är beloppet butikens, som förut. Kundens valuta räknas om med
+ * orderns kurs. Annan valuta, eller kundens utan kurs: null — okänt, aldrig
+ * en siffra i fel valuta.
+ */
+export function iButikensValuta(belopp: number, valuta: unknown, kurs: Valutaomrakning | null): number | null {
+  if (!valuta || typeof valuta !== "string") return belopp;
+  if (!kurs) return belopp;
+  if (kurs.butik && valuta === kurs.butik) return belopp;
+  if (kurs.kund && valuta === kurs.kund && kurs.faktor != null) return belopp * kurs.faktor;
+  return null;
+}
+
 /** Orderns betalning: faktiska avgifter, Shopify Payments eller ej, betalväg. */
 export interface Betalning {
   avgift: number;
@@ -373,7 +414,7 @@ const DRAGNING = new Set(["SALE", "CAPTURE"]);
  * `transactions` (lista) på orderraden; pagineringen likaså. Bara lyckade
  * transaktioner räknas — en nekad betalning har ingen avgift som drogs.
  */
-export function summeraAvgifter(transaktioner: unknown): Betalning {
+export function summeraAvgifter(transaktioner: unknown, kurs: Valutaomrakning | null = null): Betalning {
   const lista: any[] = Array.isArray(transaktioner)
     ? transaktioner
     : Array.isArray((transaktioner as any)?.nodes)
@@ -392,7 +433,11 @@ export function summeraAvgifter(transaktioner: unknown): Betalning {
     nagonVag ??= vag;
     if (t.status && t.status !== "SUCCESS") continue;
     const avgifter: any[] = Array.isArray(t.fees) ? t.fees : [];
-    for (const f of avgifter) summa += num(f?.amount?.amount);
+    const belopp = avgifter.map((f) => iButikensValuta(num(f?.amount?.amount), f?.amount?.currencyCode, kurs));
+    /* En avgift i en valuta vi inte kan räkna om lämnar transaktionen otäckt,
+       så satsen räknas i stället — hellre en uppskattning än ett tal i fel valuta. */
+    if (belopp.some((b) => b == null)) continue;
+    for (const b of belopp) summa += b as number;
     /* Saknas kind (äldre testfixturer) räknas transaktionen som en dragning,
        samma milda regel som för status ovan. */
     const drar = !t.kind || DRAGNING.has(String(t.kind).toUpperCase());

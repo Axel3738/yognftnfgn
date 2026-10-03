@@ -226,9 +226,12 @@ const landFalt = (land: boolean) =>
    vilken betalväxel pengarna gick genom: bara Shopify Payments skriver fees,
    så en PayPal-order utan fees är INTE en order utan avgift — dess omsättning
    ska räknas med satsen (summeraAvgifter i orderrader.ts). Samma fält i den
-   paginerade vägen och i bulk-exporten, via den här enda strängen. */
+   paginerade vägen och i bulk-exporten, via den här enda strängen.
+   ⚠️ Avgiften står i KUNDENS valuta (mätt 2026-10-03 på Matstrumpor: en
+   japansk order bar "268 JPY + 156 JPY"), så valutakoden måste med — utan den
+   räknades 424 yen som 424 kr och Japan fick avgift 84 % av omsättningen. */
 const avgiftFalt = (avgifter: boolean) =>
-  avgifter ? "transactions(first: 20) { status kind gateway fees { amount { amount } type rateName } }" : "";
+  avgifter ? "transactions(first: 20) { status kind gateway fees { amount { amount currencyCode } type rateName } }" : "";
 
 interface Orderfalt {
   kund: boolean;
@@ -255,7 +258,7 @@ async function runOrdersPaginated(
                ${kundFalt(kund)}
                ${landFalt(land)}
                ${avgiftFalt(avgifter)}
-               totalPriceSet { shopMoney { amount } }
+               totalPriceSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
                subtotalPriceSet { shopMoney { amount } }
                totalDiscountsSet { shopMoney { amount } }
                totalShippingPriceSet { shopMoney { amount } }
@@ -361,7 +364,7 @@ async function runOrdersBulk(
         ${kundFalt(kund)}
         ${landFalt(land)}
         ${avgiftFalt(avgifter)}
-        totalPriceSet { shopMoney { amount } }
+        totalPriceSet { shopMoney { amount currencyCode } presentmentMoney { amount currencyCode } }
         subtotalPriceSet { shopMoney { amount } }
         totalDiscountsSet { shopMoney { amount } }
         totalShippingPriceSet { shopMoney { amount } }

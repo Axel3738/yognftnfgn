@@ -9,7 +9,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { paginera, parseOrderLines, summeraAvgifter, mergeProductRows } = await import("../app/lib/orderrader.ts");
+const { paginera, parseOrderLines, summeraAvgifter, valutaOmrakning, mergeProductRows } = await import("../app/lib/orderrader.ts");
 
 const pengar = (n) => ({ shopMoney: { amount: String(n) } });
 
@@ -314,4 +314,41 @@ test("mergeProductRows: gammal dag utan pris + ny dag med pris — linesPriced r
   assert.deepEqual(ut.linesPriced, { 2: 2 });
   assert.equal(ut.netRevenue, undefined); // inte hel — tabellen tar netSales
   assert.deepEqual(ny.linesRevenue, { 2: 998 }); // källraden orörd
+});
+
+/* Mätt 2026-10-03 på Matstrumpor: Shopify Payments skriver avgiften i KUNDENS
+   valuta. En japansk order (7 980 JPY = 507,54 kr) bar 268 + 156 JPY, och
+   424 yen räknades som 424 kr — Japans avgift blev 84 % av omsättningen och
+   butikens break-even-MER 1,90 i stället för ~1,6. */
+test("summeraAvgifter: avgift i kundens valuta räknas om med orderns egen kurs", () => {
+  const jp = [{ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments",
+    fees: [{ amount: { amount: "268.0", currencyCode: "JPY" } }, { amount: { amount: "156.0", currencyCode: "JPY" } }] }];
+  const kurs = valutaOmrakning({ shopMoney: { amount: "507.54", currencyCode: "SEK" }, presentmentMoney: { amount: "7980.0", currencyCode: "JPY" } });
+  const b = summeraAvgifter(jp, kurs);
+  assert.ok(Math.abs(b.avgift - 424 * 507.54 / 7980) < 1e-9, `fick ${b.avgift}`);
+  assert.ok(b.avgift < 30);
+  assert.equal(b.sp, true);
+});
+
+test("summeraAvgifter: avgift i butikens valuta och utan valutakod räknas som förut", () => {
+  const kurs = valutaOmrakning({ shopMoney: { amount: "399", currencyCode: "SEK" }, presentmentMoney: { amount: "399", currencyCode: "SEK" } });
+  const se = [{ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments", fees: [{ amount: { amount: "15.93", currencyCode: "SEK" } }] }];
+  assert.equal(summeraAvgifter(se, kurs).avgift, 15.93);
+  assert.equal(summeraAvgifter([{ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments", fees: [{ amount: { amount: "5" } }] }], kurs).avgift, 5);
+  assert.equal(summeraAvgifter(se).avgift, 15.93);
+});
+
+test("summeraAvgifter: avgift i en okänd valuta räknas aldrig som kronor — ordern får satsen", () => {
+  const kurs = valutaOmrakning({ shopMoney: { amount: "450", currencyCode: "SEK" }, presentmentMoney: { amount: "39.9", currencyCode: "EUR" } });
+  const b = summeraAvgifter([{ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments", fees: [{ amount: { amount: "300", currencyCode: "JPY" } }] }], kurs);
+  assert.equal(b.avgift, 0);
+  assert.equal(b.sp, false);
+});
+
+test("summeraAvgifter: presentmentMoney 0 ger ingen kurs — avgiften i kundens valuta blir okänd, ordern får satsen", () => {
+  const kurs = valutaOmrakning({ shopMoney: { amount: "0", currencyCode: "SEK" }, presentmentMoney: { amount: "0", currencyCode: "JPY" } });
+  const b = summeraAvgifter([{ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments", fees: [{ amount: { amount: "100", currencyCode: "JPY" } }] }], kurs);
+  assert.equal(b.avgift, 0);
+  assert.equal(b.sp, false);
+  assert.equal(b.gateway, "shopify_payments");
 });
