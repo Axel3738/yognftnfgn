@@ -423,3 +423,46 @@ Copy: sonnet-subagent mot `docs/copy-regler.md`, tre-frågorstestet i varje brie
 **Skickat:** båda inspelningsplanerna (Nathalie + den andra kreatören) mejlade av Axel 2026-10-02 eftermiddag ("jag har skickat båda mailen"). Nästa steg: när råklippen ligger i Drive skapas hubbraderna 065/068 (`tools/notion-brief.mjs`, de arkiverade raderna återanvänds inte) och redigeraren får dem.
 **Utfall (dag 7):** —
 **Lärdom:** — (skrivs av ronden när etiketten finns)
+
+---
+
+## 2026-10-03 — A/B-testet `paket`, avläsning 1 (Axels fråga: "vad för offer ska vi köra på?")
+
+**Testet** (temat, inte annonser): erbjudandet på sushisidan, bara för Sverige
+(`ms_ab_tests` = `paket:50:50`, `sortval` avstängt). **A** = Köp 1 få 1:
+2 lådor 399 kr, 4 lådor 798 kr (`SUSHI-K1F1`/`-K2F2`). **B** = fasta paket:
+1 låda 399, 2 lådor 499 (förvald), 4 lådor 799 (`SUSHI-1FOR399`/`-2FOR499`/`-4FOR799`).
+Ätpinnar gratis per låda i båda. **Start:** första stämplade order `#5201`
+2026-09-30 14:34 UTC. **Fönster:** till `#5397` 2026-10-03 08:12 UTC, knappt tre dygn.
+100 ordrar till Sverige, 0 utan stämpel, 0 tvingade, 0 annullerade, 0 återbetalda.
+Verktyg: `node matstrumpor/ab-paket.mjs` (nytt) + `analys.mjs` från grenen
+`claude/build-shrinepro-like-theme-pfalsx`, oförändrad.
+
+| | A (Köp 1 få 1) | B (fasta paket) |
+|---|---|---|
+| Ordrar, alla till SE | 58 | 42 |
+| Intäkt | 27 838 kr | 20 356 kr |
+| Snittorder | 480 kr | 485 kr |
+| Lådor per order | 2,28 | 1,67 |
+| Bruttovinst* | 17 274 kr (24 lådor pizza/hamburgare/donut utan kostnad) | 13 365 kr |
+| **Bara sushiordrar** | **49 / 21 456 kr / 106 lådor** | **42 / 20 356 kr / 70 lådor** |
+| **Bruttovinst*, bara sushi** | **11 347 kr (232 kr/order)** | **13 365 kr (318 kr/order)** |
+
+*Intäkt − landad lådkostnad (`cogs.json`: 80,23 kr för 5-par) − tull 2,9 EUR/order
+(ECB 11,29). Annonskostnaden är lika för båda (50/50 på besökare). Frakt till kund
+och betalavgifter ingår inte.
+
+`analys.mjs`: alla SE-ordrar B mot A −27,6 %, p = 0,134; bara sushi −14,3 %,
+p = 0,529; snittorder +5 kr, p = 0,92. **Verktygets beslut: "vet inte".**
+
+**Att veta till nästa avläsning:**
+- A säljer fler ordrar, B tjänar mer per order: i A får kunden två lådor för 399,
+  i B köpte 18 av 42 en enda låda för 399. På bara sushi gav B **~2 000 kr mer
+  bruttovinst** på färre ordrar — riktning, inte dom.
+- ⚠️ **Alla 8 ordrar med bara pizza/hamburgare/donut hamnade i A, 0 i B.** B
+  visas bara på sushisidan, så de besökarna borde fördelas 50/50. Inte utrett;
+  därför jämförelsen "bara sushi" som huvudsiffra.
+- Förbeställningen (sedan 2026-10-03 ~10 UTC, allt slutsålt) gäller båda
+  varianterna lika, men kan sänka konverteringen i båda.
+- Black Friday-kopplingen (`docs/os/evolve/Q4-2026.md`): vinner B på vinst blir
+  B vardagserbjudandet och Köp 1 få 1 kan sparas som Black Friday-steget.
