@@ -1348,8 +1348,9 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
   - Sessionen mätte samma dag. I `sparning/butiker/matstrumpor/lage.json` (origin/main, 05:57
     UTC) stod 461 paket registrerade 23/9–2/10 i 17TRACK-status `InfoReceived`. Etiketten
     finns, men fraktbolaget har inte skannat dem. De äldsta hade väntat 9 dygn.
-  - Lagret skickar fortfarande inom ett dygn (Shopify: median 0,3–0,8 dygn från order till
-    fulfillment). Stoppet ligger efter lagret.
+  - Ordrarna får fortfarande fulfillment med etikett inom ett dygn (Shopify: median 0,3–0,8
+    dygn från order till fulfillment), som förut. Om paketen står kvar hos lagret eller hos
+    fraktbolaget går inte att se, för det finns ingen skanning alls.
   - Före 23/9 var 82–90 % framme inom 15 dygn från ordern (Shopify `deliveredAt`). Det är det
     tal p90 15 dygn och sista dagen 24/10 bygger på.
   - V01 (skickat 30/9) och FD01 (går sön 4/10 18:00) nämner 24/10. Ytterligare 13 schemalagda mejl lovar datumet
