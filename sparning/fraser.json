@@ -158,6 +158,7 @@
   "batch delivery to carrier": "Paketet är överlämnat till fraktbolaget",
   "accepted at usps regional origin facility": "Fraktbolaget har tagit emot paketet",
   "accepted at usps facility": "Fraktbolaget har tagit emot paketet",
+  "accepted at usps destination sort facility": "Fraktbolaget har tagit emot paketet",
   "usps in possession of item": "Fraktbolaget har tagit emot paketet",
   "shipment received, package acceptance pending": "Fraktbolaget har tagit emot paketet",
   "received": "Fraktbolaget har tagit emot paketet",
