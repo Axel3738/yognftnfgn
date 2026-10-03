@@ -1,8 +1,8 @@
 {
   "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
-  "uppdaterad": "2026-10-02",
-  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-10-02 ~06:35 UTC via Notion-MCP: notion-query-data-sources på testcentret (67 rader i Ads review/Ready to launch/In progress/Testing — i går 64; nya Ads review-rader: 13 Tak-AC-huven, 13 Regnkedjan 12 koppar, 13 Highland Cow-kalendern, 13 Rullknivslipen, 12 Läktarponchon, 13 Sorkkorgarna, 11 Kamadohuven m.fl. — de fyra förstnämnda startade som kampanjer i natt), notion-search på \"creative hub\" och \"BÄVER\" (is_archived läst per träff: 14 levande hubbar, samma som i går, inga nya och inga nyss arkiverade), SQL-räkning av Status × Typ i alla 14. Annonsidéer (collection b950b849): 0 rader Ny, 8 Byggd — inget att bygga i dag.",
+  "uppdaterad": "2026-10-03",
+  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-10-03 ~07:50 UTC via Notion-MCP: notion-query-data-sources på testcentret (Status-räkning: Products 108, Ads review 48, Testing 16, In progress 3, Ready to launch 1, To be Reviewed 2, Has gotten over 2000 sek spend 4, Continue to scale 4, Exit 1 — Ads review/Ready to launch/In progress/Testing = 68, i går 67), notion-search på \"creative hub\" och \"BÄVER\" (is_archived läst per träff: 14 levande hubbar, samma som i går, inga nya och inga nyss arkiverade), SQL-räkning Draft × Typ i alla 14 (två frågor à 7 källor). Annonsidéer (collection b950b849): 0 rader Ny, 8 Byggd — inget att bygga i dag. Hubbar att arkivera (Axels klick): inga nya utöver gårdagens lista; Car wash brush, Bird feeder och BÄVER Adventskalendern Racingbilar är redan arkiverade.",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
   "databas_1_product_test_center": {
     "namn": "Product test center SE BÄVER",
@@ -143,7 +143,8 @@
     "matt_2026_09_27": "54 rader i Ads review/Ready to launch/In progress/Testing (SQL 2026-09-27, samma som 2026-09-26). Nya rader sedan 2026-09-23: 11 Maskinhyllan, 12 Radiostyrd offroadbil 1:16 (In progress), 13 Lövsilarna 6-pack, 11 Värmesulorna, 12 Radiostyrd driftbil 1:24, 13 Rullknivslipen — alla utom offroadbilen och Lövsilarna har kampanj i SE-kontot.",
     "matt_2026_09_28": "REST (db-id 3a7270ab-908c-807d-b90d-c55d885cad13 — collection-id:t i filen svarar 404 via REST): Ads review 35, In progress 2, Testing 16 (varav 10 är SOP-sidor, inte produkter), Ready to launch 1. Ads review: 11 Maskinhyllan · 13 Lövsilarna 6-pack · 11 Värmesulorna · 12 Radiostyrd driftbil 1:24 · 13 Rullknivslipen · K Golfkalender · K Pusselkalender · K Gör din egen-kalender · K Dinosauriekalender · 10 Fågelmatare med kamera · 10 Täljset 30 delar · 9 Solcellsladdare 10 W · 10 Kapell till snöslunga · 10 Värmesits 45 × 90 cm · 10 ATV-kapell 3XL · 10 Motorlås utombordare · 10 Hönsgårdsduk 145 × 109 cm · 10 Snöflingor 25-pack · 9 Spabadskapell 215 cm · 10 Snöskyffel utan batteri · 10 Kajakhållare 2-pack · 8 Biltvättborste Teleskop 100 cm · 8 Sotarset Böjliga Stänger · 8 Solcellslampa 210 LED Sensor · 8 Dörr- och Fönsterlarm 110 dB · 8 Inomhustofflor Fodrade Herr 40–47 · 8 Vedklyvborr Ø32 mm · 7 Stegstöd 2-pack · 7 Solcellslarm 2-pack · 7 Infartslarm Trådlöst · 7 Termoskydd Husbil 211 × 171 cm · 7 Sittkäpp Hopfällbar · 6 Staketstolpsbygel 2-pack (2 st ingår) · 5.1 Lövblåsare  · ?. In progress: 12 Radiostyrd offroadbil 1:16 · 9 Vedställskapell 122 cm. Ready to launch: ?",
     "matt_2026_09_29": "57 rader i Ads review/Ready to launch/In progress/Testing (SQL via MCP 2026-09-29, mot 54 i går): Ads review 38 (inkl. en namnlös), In progress 2, Ready to launch 1 (namnlös), Testing 16 (6 produkter + 10 SOP-sidor). Nya sedan 2026-09-28: \"12 Läktarponchon\" och \"13 Sorkkorgarna 15-pack\" (båda fick kampanj i MagiBorsten natten till 29/9, FOR_LITE_DATA, inskrivna i produktkartan) och \"13 Trädansiktet\" (In progress, ingen kampanj). Ads review-rader MED ACTIVE SE-kampanj i dag: Maskinhyllan, Värmesulorna, Rullknivslipen, Täljset, Golfkalender, Värmesits, ATV-kapell, Sotarset, Solcellslampa, Inomhustofflor, Termoskydd, Läktarponchon, Sorkkorgarna.",
-    "matt_2026_09_30": "62 rader i Ads review/Ready to launch/In progress/Testing/To be Reviewed (SQL via MCP 2026-09-30, mot 57 i går): Ads review 41 (inkl. en namnlös), In progress 3, Ready to launch 1 (namnlös), Testing 16 (6 produkter + 10 SOP-sidor), To be Reviewed 2 (5.1 Sömnadskit, Bordtennisnät Infällbart). Nya sedan 2026-09-29: \"11 Kamadohuven\" (Ads review — fick kampanj i MagiBorsten natten till 30/9 02:19, FOR_LITE_DATA, inskriven i produktkartan med kostnadsblock), \"13 Regntunnehuven\" och \"13 Ädelstenskalendern\" (Ads review, ingen kampanj i SE-kontot i dag), \"13 Buskjackan 2-pack\" och \"13 Husbilskalendern\" (In progress, ingen kampanj). \"13 Trädansiktet\" (In progress i går) står inte längre i någon av de fem statusarna. Ads review-rader MED ACTIVE SE-kampanj i dag: Värmesulorna, Rullknivslipen, Täljset, Golfkalender, Värmesits, ATV-kapell (sänkt till 500 kr), Sotarset, Solcellslampa, Inomhustofflor, Termoskydd, Läktarponchon, Sorkkorgarna, Kamadohuven. Maskinhyllan (Ads review) stängdes av av ronden 2026-09-30 (trappan, tjuvar utan kärna) — statusraden i testcentret uppdateras fortfarande inte."
+    "matt_2026_09_30": "62 rader i Ads review/Ready to launch/In progress/Testing/To be Reviewed (SQL via MCP 2026-09-30, mot 57 i går): Ads review 41 (inkl. en namnlös), In progress 3, Ready to launch 1 (namnlös), Testing 16 (6 produkter + 10 SOP-sidor), To be Reviewed 2 (5.1 Sömnadskit, Bordtennisnät Infällbart). Nya sedan 2026-09-29: \"11 Kamadohuven\" (Ads review — fick kampanj i MagiBorsten natten till 30/9 02:19, FOR_LITE_DATA, inskriven i produktkartan med kostnadsblock), \"13 Regntunnehuven\" och \"13 Ädelstenskalendern\" (Ads review, ingen kampanj i SE-kontot i dag), \"13 Buskjackan 2-pack\" och \"13 Husbilskalendern\" (In progress, ingen kampanj). \"13 Trädansiktet\" (In progress i går) står inte längre i någon av de fem statusarna. Ads review-rader MED ACTIVE SE-kampanj i dag: Värmesulorna, Rullknivslipen, Täljset, Golfkalender, Värmesits, ATV-kapell (sänkt till 500 kr), Sotarset, Solcellslampa, Inomhustofflor, Termoskydd, Läktarponchon, Sorkkorgarna, Kamadohuven. Maskinhyllan (Ads review) stängdes av av ronden 2026-09-30 (trappan, tjuvar utan kärna) — statusraden i testcentret uppdateras fortfarande inte.",
+    "lage_2026_10_03": "Status-räkning via SQL: Products 108, Ads review 48, Testing 16, In progress 3, Ready to launch 1, To be Reviewed 2, Has gotten over 2000 sek spend 4, Continue to scale 4, Exit 1. Arbetsraderna (Ads review/Ready to launch/In progress/Testing) = 68, mot 67 i går. Nya kampanjer i SE-kontot sedan i går enligt kontodatan: Buskjackan 2-pack (launch 2026-10-01, i trappan i dag — två tjuvar pausade, kampanjen kvar)."
   },
   "databas_2_creative_hubs": {
     "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
@@ -154,55 +155,55 @@
         "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
         "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
         "collection": "collection://5f2270ab-908c-82ef-b029-0767819050db",
-        "drafts": 7,
-        "drafts_video": 6,
+        "drafts": 1,
+        "drafts_video": 0,
         "drafts_bild": 1,
-        "not": "7 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 1; i går 3)",
-        "avlast": "2026-10-02"
+        "not": "1 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 0, bild 1; i går 7). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "BÄVER Termoskyddet för Husbil",
         "produkt": "Termoskyddet för Husbil 211 × 171 cm",
         "hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
         "collection": "collection://7d0270ab-908c-831e-8021-8758336851c8",
-        "drafts": 6,
-        "drafts_video": 5,
+        "drafts": 3,
+        "drafts_video": 2,
         "drafts_bild": 1,
-        "not": "6 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 1; i går 8)",
-        "avlast": "2026-10-02"
+        "not": "3 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 2, bild 1; i går 6). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Belt grinder creative hub",
         "produkt": "Bälteslipmaskinen",
         "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 7,
-        "drafts_video": 5,
+        "drafts": 6,
+        "drafts_video": 4,
         "drafts_bild": 2,
-        "not": "7 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 2; i går 6)",
-        "avlast": "2026-10-02"
+        "not": "6 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 4, bild 2; i går 7). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Boat motor cover creative hub",
         "produkt": "Båtmotorskyddet 420D",
         "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
         "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
-        "drafts": 10,
-        "drafts_video": 10,
+        "drafts": 2,
+        "drafts_video": 2,
         "drafts_bild": 0,
-        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 10, bild 0; i går 3)",
-        "avlast": "2026-10-02"
+        "not": "2 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 2, bild 0; i går 10). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "BÄVER IBC-Tanköverdraget",
         "produkt": "IBC-Tanköverdraget",
         "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
         "collection": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
-        "drafts": 0,
-        "drafts_video": 0,
+        "drafts": 1,
+        "drafts_video": 1,
         "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 0; i går 0)",
-        "avlast": "2026-10-02"
+        "not": "1 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 1, bild 0; i går 0). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Indoor slippers creative hub",
@@ -212,19 +213,19 @@
         "drafts": 3,
         "drafts_video": 3,
         "drafts_bild": 0,
-        "not": "3 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 3, bild 0; i går 6)",
-        "avlast": "2026-10-02"
+        "not": "3 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 3, bild 0; i går 3). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Chimney sweep set creative hub",
         "produkt": "Sotarsetet med Böjliga Stänger",
         "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
         "collection": "collection://af6270ab-908c-8256-879b-07429bfd3596",
-        "drafts": 4,
-        "drafts_video": 4,
+        "drafts": 3,
+        "drafts_video": 3,
         "drafts_bild": 0,
-        "not": "4 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 4, bild 0; i går 4)",
-        "avlast": "2026-10-02"
+        "not": "3 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 3, bild 0; i går 4). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Solar motion sensor light creative hub",
@@ -234,76 +235,76 @@
         "drafts": 0,
         "drafts_video": 0,
         "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 0; i går 2)",
-        "avlast": "2026-10-02"
+        "not": "0 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 0, bild 0; i går 0). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Golf advent calendar creative hub",
         "produkt": "Golf Adventskalendern",
         "hub_id": "3e8270ab-908c-817b-9e74-efe7a636609e",
         "collection": "collection://64a270ab-908c-8281-9151-071ae0ea9c62",
-        "drafts": 19,
-        "drafts_video": 15,
+        "drafts": 29,
+        "drafts_video": 25,
         "drafts_bild": 4,
-        "not": "19 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 15, bild 4; i går 19)",
-        "avlast": "2026-10-02"
+        "not": "29 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 25, bild 4; i går 19). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Whittling set creative hub",
         "produkt": "Täljsetet 30 Delar",
         "hub_id": "3e8270ab-908c-8156-bd42-e5fcbe833705",
         "collection": "collection://99c270ab-908c-83f9-b32d-07c644fed308",
-        "drafts": 8,
-        "drafts_video": 6,
+        "drafts": 2,
+        "drafts_video": 0,
         "drafts_bild": 2,
-        "not": "8 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 2; i går 9)",
-        "avlast": "2026-10-02"
+        "not": "2 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 0, bild 2; i går 8). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Fish rod holder",
         "produkt": "Fiskespöhållaren",
         "hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
         "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
-        "drafts": 24,
+        "drafts": 25,
         "drafts_video": 0,
-        "drafts_bild": 24,
-        "not": "24 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 0, bild 24; i går 37)",
-        "avlast": "2026-10-02"
+        "drafts_bild": 25,
+        "not": "25 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 0, bild 25; i går 24). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "avlast": "2026-10-03"
       },
       {
         "namn": "Heated insoles creative hub",
         "produkt": "Värmesulorna med Fjärrkontroll",
         "hub_id": "3ea270ab-908c-81fc-b44f-e26f3734a33f",
         "collection": "collection://7ff270ab-908c-821b-990e-074e579f3062",
-        "drafts": 10,
+        "drafts": 6,
         "drafts_video": 6,
-        "drafts_bild": 4,
+        "drafts_bild": 0,
         "skapad": "2026-09-29 (ur MALL, rondens kvällssession på Axels order)",
-        "avlast": "2026-10-02",
-        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 4; i går 10)"
+        "avlast": "2026-10-03",
+        "not": "6 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 6, bild 0; i går 10). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader."
       },
       {
         "namn": "Heated seat cushion creative hub",
         "produkt": "Värmesitsen 45 × 90 cm",
         "hub_id": "3ea270ab-908c-81cf-a1e4-f281af5ba113",
         "collection": "collection://a92270ab-908c-8208-90cd-87592dc36847",
-        "drafts": 9,
-        "drafts_video": 5,
+        "drafts": 14,
+        "drafts_video": 10,
         "drafts_bild": 4,
         "skapad": "2026-09-29 (ur MALL, rondens kvällssession på Axels order)",
-        "avlast": "2026-10-02",
-        "not": "9 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 5, bild 4; i går 9)"
+        "avlast": "2026-10-03",
+        "not": "14 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 10, bild 4; i går 9). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader."
       },
       {
         "namn": "ATV cover creative hub",
         "produkt": "ATV-Kapellet 3XL 256 × 110 × 120 cm",
         "hub_id": "3ea270ab-908c-8157-a2a2-ca2cb28cb792",
         "collection": "collection://e68270ab-908c-8316-a89c-07bd784ea4bd",
-        "not": "10 drafts (mätt 2026-10-02 ~06:35 UTC via MCP SQL: video 6, bild 4; i går 10)",
-        "drafts": 10,
+        "not": "6 drafts (mätt 2026-10-03 ~07:55 UTC via MCP SQL: video 6, bild 0; i går 10). Dagens nya rader (batch-02 Värmesitsen, batch-09 Termoskyddet, batch-04 Inomhustofflorna) skapades av Notion-agenten medan räkningen pågick — Heated seat cushion räknar sina 9 nya, Termoskyddet och Indoor slippers räknades före sina nya rader.",
+        "drafts": 6,
         "drafts_video": 6,
-        "drafts_bild": 4,
-        "avlast": "2026-10-02"
+        "drafts_bild": 0,
+        "avlast": "2026-10-03"
       }
     ],
     "arkiverade": [
@@ -477,7 +478,7 @@
         "drafts_video": 2
       }
     ],
-    "nyss_arkiverade": "Tre sedan 2026-09-25: Fish rod holder (58 drafts, kampanj ACTIVE), \" arkiverad Övervakningskamera\" (7 drafts, kampanj avstängd), \"Arkiverad Isolerade Utekattkojan\" (tom). Plus Termoskydd-dubbletten 513270ab som inte stått i listan förut.",
+    "nyss_arkiverade": [],
     "LAGET_2026_09_16": "Redigerarna har tagit fart. Taköverdraget och Adventskalendern har NOLL drafts kvar — hela förstabatchen respektive batch #2 är levererad och uppladdad (står i SE-ACTIVE to be translated). IBC har 1 draft kvar. Samtidigt har Termoskyddet vuxit till 26 drafts (17 igår + gårdagens extra batch på 9) utan att någon börjat, och Fiskespöhållaren till 41. De två är flaskhalsarna. BÄVER Övervakningskameran är inte längre tom: 7 drafts från gårdagens batch ligger där. BÄVER Isolerade Utekattkojan är fortfarande helt tom (0 rader av alla typer).",
     "omdopta_sedan_forra_svepet": [
       {
@@ -506,12 +507,9 @@
       "arkiverad Övervakningskamera",
       "Damasker vandring (OPS, DryTrek)"
     ],
-    "summa_drafts": "126 (2026-10-01, Draft-status i 14 levande hubbar: video + bild)",
-    "rorelse_sedan_igar": "mätt 2026-09-30 ~06:10 UTC. 13 levande hubbar (11 + två nya). Drafts totalt 184 (i går 113 i 11 hubbar): ökningen är fars dag omgång 4 (7 per hub, 12 hubbar) + ATV/Termo/Sotar-vidarebyggen från 29/9 kväll. Per hub (video + bild): Tak 4+5, Termo 4+5, Belt 9+5, Boat 5+4, IBC 6+4, Tofflor 8+4, Sotar 8+4, Solar 6+4, Golf 15+8, Tälj 6+6, Fish 3+42, Insoles 6+4, Seat 5+4. Fish rod holder är LEVANDE (raderna rörda 2026-09-29, ingen is_archived-flagga i notion-search) — Axels order 2026-09-29: hubben är Bäverbutikens. Inga hubbar arkiverade sedan i går; de fyra från 2026-09-28 (Car wash brush, Motorcycle Cover, Bird feeder, Adventskalendern Racingbilar) står kvar arkiverade.",
-    "nya_hubbar_sedan_igar": [
-      "Heated insoles creative hub (Värmesulorna) — skapad 2026-09-29 kväll ur MALL, 10 drafts (6 video + 4 bild)",
-      "Heated seat cushion creative hub (Värmesitsen) — skapad 2026-09-29 kväll ur MALL, 9 drafts (5 video + 4 bild)"
-    ],
+    "summa_drafts": 101,
+    "rorelse_sedan_igar": "notion-search 'creative hub' + 'BÄVER' 2026-10-03 ~07:50 UTC (is_archived per träff): samma 14 levande hubbar som i går, inga nya, inga nyss arkiverade. Arkiverade i träfflistan: Kranskydd Frost 420D, Bird feeder with camera, Beach crocs, Car wash brush, Mower seat, Trimmer belt, Motorcycle Cover (via Brief review-rad), BÄVER Adventskalendern Racingbilar, arkiverad Övervakningskamera, gamla BÄVER Termoskyddet (513270ab, OPS-dubbletten). Andra verksamheters hubbar (räknas aldrig): Matstrumpor creative hub, Carashell Taköverdrag creative hub, MALL Creative hub MALL, Creative hub prank apron, Creative hub golf grill kit. Summa drafts 101 (i går 101).",
+    "nya_hubbar_sedan_igar": [],
     "nyss_arkiverade_sedan_igar": [],
     "summering_2026_09_18": "56 draftrader totalt över tio levande hubbar (mot 63 i går). Två hubbar står helt still: Fish rod holder (41, tredje dygnet) och BÄVER Övervakningskameran (7, andra dygnet) — tillsammans 48 av de 56. De andra åtta hubbarna rör sig varje dygn.",
     "DODA_KAMPANJERS_DRAFTS_2026_09_19": {
@@ -699,7 +697,8 @@
     "brief_reviews_2026_09_29": "Lästa före dagens rundor: Indoor slippers \"Brief review 2026-09-25\" (engelska EDITOR PICKS; `AI content:` säger hur rösten gjordes; NEW FOOTAGE-block överst) och Boat motor cover \"Brief review 2026-09-26\" (deklarativ hook på varje nytt koncept — storlekens är \"Mät kåpan. Välj storlek. Beställ rätt.\"; förbjudet ord i förälderns copy rättas i iterationen; NEW FOOTAGE namnger kontrollerade filer). Fish rod holder har INGEN Feedback-rad. Inga briefer skrevs i dag (se batch-log per produkt), reglerna gäller nästa runda.",
     "hubbar_att_arkivera_2026_09_30": "Maskinhyllan (kampanj STANG_AV 2026-09-30) har ingen egen hub — testcentret bär raden \"11 Maskinhyllan\". Inga levande hubbar vars kampanj ronden stängt av.",
     "svep_2026_10_01": "notion-search \"creative hub\" + \"BÄVER\" 2026-10-01 ~06:40 UTC: inga nya hubbar sedan 2026-09-30 utöver ATV cover creative hub (skapad 2026-09-29 av ronden, saknades i registret, nu levande); inga nyss arkiverade. Drafts 2026-10-01: Golf 19 (15 video + 4 bild), Fish rod holder 37 (alla bild), Insoles 10, ATV 10, Seat 9, Whittling 9, Termo 8, Slippers 6, Belt 6, Sotar 4, Boat 3, Tak 3, Solar 2, IBC 0. To be Reviewed (redigerarnas leveranser till 13:20-rutinen): Tak 9, Termo 8, Belt 4, Boat 8, IBC 4, Slippers 8, Sotar 6, Solar 4, Golf 4, Whittling 4, Rod 18. Brief review 2026-09-29 (skapad 2026-10-01 05:30 av /briefgranskning) finns i Tak, Belt, Boat, Sotar, Rod, IBC, Solar, Golf, Whittling — lästa för hubbarna som briefas i dag (Tak, Belt, Boat).",
-    "hubbar_att_arkivera_2026_10_01": "Inga levande hubbar vars kampanj ronden stängt av. Dagens avstängda (Sorkkorgarna 15-pack, Läktarponchon med Värme, Rullknivslipen i Trä 20°) har bara rader i Product test center."
+    "hubbar_att_arkivera_2026_10_01": "Inga levande hubbar vars kampanj ronden stängt av. Dagens avstängda (Sorkkorgarna 15-pack, Läktarponchon med Värme, Rullknivslipen i Trä 20°) har bara rader i Product test center.",
+    "annonsideer_2026_10_03": "Annonsidéer: 0 rader med Status Ny (alla 8 står som Byggd). Inget att bygga ur databasen i dag."
   },
   "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15. 2026-09-26: 0 levande hubbar utan kartpost; 12 ACTIVE test-kampanjer (22–26/9) utan hub, väntat; Fiskespöhållarens hub i kartan är arkiverad.",
   "arbetsfordelning": {
