@@ -53,16 +53,16 @@ export function tillHtml(md) {
 }
 
 const CSS = `
-  @page { size: A4; margin: 11mm 15mm 10mm 15mm; }
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
   * { box-sizing: border-box; }
-  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1a1f26; font-size: 10.3pt; line-height: 1.34; margin: 0; }
-  h1 { font-size: 20pt; margin: 0 0 3pt; letter-spacing: -0.2pt; }
-  h2 { font-size: 12pt; margin: 8pt 0 3pt; padding-bottom: 2pt; border-bottom: 1.5pt solid #dd821d; }
-  h3 { font-size: 11.5pt; margin: 8pt 0 3pt; }
-  p { margin: 0 0 5.5pt; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1a1f26; font-size: 13pt; line-height: 1.5; margin: 0; }
+  h1 { font-size: 26pt; margin: 0 0 4pt; letter-spacing: -0.3pt; }
+  h2 { font-size: 15pt; margin: 18pt 0 6pt; padding-bottom: 3pt; border-bottom: 2pt solid #dd821d; }
+  h3 { font-size: 13.5pt; margin: 10pt 0 4pt; }
+  p { margin: 0 0 8pt; }
   p:first-of-type { color: #5b6570; }
-  ul, ol { margin: 0 0 6pt; padding-left: 19pt; }
-  li { margin: 0 0 3pt; }
+  ul, ol { margin: 0 0 8pt; padding-left: 24pt; }
+  li { margin: 0 0 7pt; }
   li::marker { color: #dd821d; font-weight: 700; }
   strong { font-weight: 700; }
   code { font-family: Menlo, Consolas, monospace; font-size: 10.5pt; background: #f3f1ec; padding: 0 3pt; border-radius: 3pt; }

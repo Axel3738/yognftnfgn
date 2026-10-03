@@ -1,0 +1,33 @@
+Uppdrag: ordna vyerna i Notion-sidan "Matstrumpor Growth Guide" så att tabellerna ser ut som Evolves Growth Guide 3.0, och ge Bruce tillgång. Allt innehåll är redan skrivet av Claude via API. Notions API kan inte ordna kolumner i en vy, därför de här klicken. Gör bara det som står nedan.
+
+Sidan: https://www.notion.so/3ed270ab908c80a3beb7e0090eebce5d (ligger i workspace-roten, heter "Matstrumpor Growth Guide").
+
+Rör ALDRIG: innehållet i någon cell, kolumnernas namn eller typ, antalet rader (radera inget), databasen "Matstrumpor creative hub", Meta, Shopify, DNS. Skapa inga nya kolumner. Lägg inte till och ta inte bort rader.
+
+1. Ad Roadmap (den stora tabellen under rubriken "Ad Roadmap")
+   a. Öppna tabellens meny (tre prickar uppe till höger i tabellen) → Egenskaper (Properties). Dra kolumnerna i den här ordningen, uppifrån och ned:
+      AD CONCEPT · STATUS · UPVOTE · BATCH # · DATE ADDED · AUTHOR · DESIRE/CORE AVATAR · SUB AVATAR · ANGLE(S) · BREAKTHROUGH MEMO · AWARENESS LEVEL · FILE TYPE · AD TYPE · LINK TO BRIEF · LINK TO AD · RESULTS · LEARNINGS · CREATOR · MARKET · SPEND 14D KR · PURCHASES 14D · ROAS 14D · HOOK RATE · HOLD RATE · PROFIT 14D KR · ADS
+   b. Dölj kolumnen SYSTEM (ögat/toggle i samma lista). Den är Claudes minne och ska finnas kvar, bara inte synas.
+   c. Sortera: DATE ADDED, fallande (nyast överst).
+   d. Slå på "Wrap all columns" (eller radbrytning på BREAKTHROUGH MEMO, LEARNINGS, ANGLE(S), SUB AVATAR, DESIRE/CORE AVATAR).
+   e. Dra BREAKTHROUGH MEMO och LEARNINGS bredare (ungefär dubbelt så breda som de andra), AD CONCEPT lite bredare.
+   f. Lägg till en andra vy med knappen + vid vyerna: typ Board (tavla), grupperad på RESULTS, döp den "By result". Behåll tabellvyn som första vy.
+
+2. Ad Results (tabellen under rubriken "Ad Results (per ad, written by the system)")
+   a. Ordning: AD · RESULT · BATCH · LABEL HISTORY · TYPE · ANGLE · FORMAT · CREATOR · MARKET · ADSET · ADSET VERDICT · STATUS · START · MEASURED · SPEND 14D KR · PURCHASES 14D · ROAS 14D · CPA KR · HOOK RATE · HOLD RATE · PROFIT 14D KR · ADS MANAGER · META ID
+   b. Dölj SYSTEM.
+   c. Sortera: SPEND 14D KR, fallande.
+
+3. Log
+   a. Ordning: DAY · DATE · NOTES · SYSTEM. Sortera DATE fallande. Radbrytning på.
+
+4. De fem planeringstabellerna (Desires / Core Avatar, Sub Avatars / Angles, Avatars, Awareness, Creators)
+   a. I varje: radbrytning på, kolumnen SOURCE sist och smal. I "Sub Avatars / Angles": PRODUCT NAME · FEATURE (what it is) · BENEFIT ("so you can…") · DESIRE · ANGLE(S) · SOURCE efter titeln. I "Awareness": PRODUCT NAME · QUESTION · ANSWER · SOURCE. I "Creators": ROLE · AUDIENCE SIZE · YOUTUBE · TIKTOK · INSTAGRAM · HIGH PERFORMING CONTENT TRENDS · USER COMMENT NOTES · RESULT · SOURCE.
+
+5. Tillgång för Bruce
+   a. Knappen Dela (Share) uppe till höger på sidan → bjud in "Gilz Bruce Biazon" (samma konto som i Matstrumpor creative hub) med rättigheten "Kan redigera" (Can edit). Inte "Full access". Inget publikt läge, ingen webbpublicering.
+   b. Kontrollera att han står i listan över personer med tillgång.
+
+Kontrollera som läsare: ladda om sidan, läs att Ad Roadmap visar AD CONCEPT, STATUS, UPVOTE, BATCH # först och att SYSTEM inte syns, att "By result"-tavlan finns, och att Bruce står under Dela.
+
+Rapportera: vilka steg som gjordes, vad som inte gick (med knappens exakta namn), och om Bruce står i delningslistan. Skriv sedan "Growth Guide-vyerna klara" i chatten med Claude, så läser Claude tillbaka databaserna själv.

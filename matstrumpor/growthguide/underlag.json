@@ -1,0 +1,218 @@
+{
+  "skrivet": "2026-10-03",
+  "kalla": "Läst ur products/matstrumpor/ (dna, mekanismer, ny-information, CS-BRIEF-sophistication, lardomar, ugc) av en sonnet-läsare 2026-10-03; varje rad bär fil:rad i source. Sås EN gång i Notion (growthguide.mjs --sa), sedan är flikarna människornas.",
+  "desires": [
+    {
+      "desire": "I want to give a gift they will actually use and remember.",
+      "note": "Voiced by the market, not only by us: five Swedish advertisers already promise a funny gift \"they'll actually use / remember\", for example Presenthuset: \"Presenten de faktiskt minns\" (The gift they actually remember). That is why a bigger promise no longer reaches the buyer.",
+      "source": "products/matstrumpor/CS-BRIEF-sophistication.md:13; products/matstrumpor/mekanismer.md:21; products/matstrumpor/mekanismer.md:25-29"
+    },
+    {
+      "desire": "I want to give a gift that shows I know them.",
+      "note": "Nathalie's strongest line: \"När du ger bort dom här så är det som att du vet allt om personen, du visste ju deras favoriträtt.\" (When you give these away it is like you know everything about the person, you knew their favourite dish after all.) Research angle: in a US survey (Bankrate/YouGov, Aug 2024) 32 % gave a gift card \"because they did not know what else to get the person\", so a gift card is an admission, \"jag visste inte\" (I did not know).",
+      "source": "products/matstrumpor/ugc/NATHALIE-MANUS.md:25; products/matstrumpor/ny-information.md:84; products/matstrumpor/ny-information.md:88-89; products/matstrumpor/dna.md:180"
+    },
+    {
+      "desire": "I want to get a real laugh and a double take when someone opens my gift.",
+      "note": "The account's only winner is built on it: the friend opens the package and laughs, \"Ja, hon blev verkligen överraskad.\" (Yes, she was really surprised.) The double take is called the account's load bearing moment. YouGov UK, Nov 2025: 44 % would rather be surprised, 32 % asked first.",
+      "source": "products/matstrumpor/dna.md:99-104; products/matstrumpor/ugc/NATHALIE-MANUS.md:27; products/matstrumpor/mekanismer.md:62-63; products/matstrumpor/ny-information.md:141"
+    },
+    {
+      "desire": "I want to be the person who gives the best gifts.",
+      "note": "The avatar hypothesis says she wants to be the one who gives \"den smarta presenten\" (the smart gift). The haikuh3 listicle carries the line \"Du blir personen som ger de bästa presenterna\" (You become the person who gives the best gifts), but that ad converted 1,1 % köp/LPV against 3,4 % for Nathalie, so the desire is voiced while that execution lacked belief.",
+      "source": "products/matstrumpor/dna.md:99-104; products/matstrumpor/dna.md:180; products/matstrumpor/lardomar.md:199"
+    },
+    {
+      "desire": "I want a gift that is fun and still practical.",
+      "note": "Talker Research (US online shoppers, Oct 2025): 57 % prefer to give something practical, 25 % something fun, and 23 % put gag gifts off limits. Nathalie's line: \"Rolig att öppna och används år efter år.\" (Fun to open and used year after year.)",
+      "source": "products/matstrumpor/ny-information.md:221; products/matstrumpor/ugc/NATHALIE-MANUS.md:28"
+    },
+    {
+      "desire": "I want to give a gift that does not end up hidden away or resold.",
+      "note": "UNICEF/Bilendi, Dec 2024: \"87 procent har någon gång fått en julklapp som de egentligen inte vill ha\" (87 percent have at some point received a Christmas gift they did not really want). Blocket via SVT, Dec 2025: \"Vi brukar se den första oönskad julklappen redan innan Kalle anka har börjat\" (We usually see the first unwanted gift before Kalle Anka has started). The account's own ads say \"Ingen sparar en skämtpryl\" (Nobody keeps a gag gift).",
+      "source": "products/matstrumpor/ny-information.md:276-277; products/matstrumpor/lardomar.md:390-391"
+    },
+    {
+      "desire": "I want small, funny things for the Christmas stocking.",
+      "note": "Season is October to December. Nathalie: \"Ta med till kalaset eller spara till julstrumpan.\" (Bring them to the party or save them for the Christmas stocking.) Sofie H2: \"det här måste ju vara den enda sushin som faktiskt hör hemma i en julstrumpa\" (this must be the only sushi that actually belongs in a Christmas stocking). The sushi box sold out in November 2025, confirmed by the owner 2026-09-24 and allowed in copy.",
+      "source": "products/matstrumpor/dna.md:106-109; products/matstrumpor/dna.md:181; products/matstrumpor/ugc/NATHALIE-MANUS.md:24; products/matstrumpor/lardomar.md:511"
+    },
+    {
+      "desire": "I want to bring something to the party, fika or dinner that people react to.",
+      "note": "From Nathalie's \"Ta med till kalaset\" and the occasions named in the \"serve it\" mechanism: fika, dinner, Christmas table, party. Warmed up, not proven: in the account it has only appeared as b-roll and side clauses.",
+      "source": "products/matstrumpor/ugc/NATHALIE-MANUS.md:24; products/matstrumpor/mekanismer.md:104-108"
+    },
+    {
+      "desire": "I want to give a gift I cannot get wrong.",
+      "note": "Research, not account data: givers worry more than recipients about choosing well (Freling et al., Psychology & Marketing, Feb 2024; Mu & Givi, European Journal of Marketing, Jan 2025), and joke gifts often carry a \"poke\" at the recipient (Schindler et al., May 2025). The file's rule: lower the stakes, never say \"du kommer ångra dig\" (you will regret it).",
+      "source": "products/matstrumpor/ny-information.md:113-114; products/matstrumpor/ny-information.md:118-125; products/matstrumpor/ny-information.md:222"
+    }
+  ],
+  "sub_avatars_angles": [
+    {
+      "product": "Sushi socks",
+      "feature": "A takeaway tray with clear lid and plastic grass holding ten rolled sushi pieces (five pairs), wooden chopsticks included",
+      "benefit": "so you can give a gift that proves you knew their favourite dish",
+      "desire": "I want to give a gift that shows I know them.",
+      "sub_avatar": "The gift buyer: a woman 30 to 55 buying for her mother, brother, partner or a female friend, who wants to be the one who gives \"den smarta presenten\" (the smart gift). Working hypothesis from the account's own hooks and orders, no interviews.",
+      "angles": "Favourite dish: \"När du ger bort dom här så är det som att du vet allt om personen, du visste ju deras favoriträtt.\" (When you give these away it is like you know everything about the person, you knew their favourite dish after all.) Scarcity with a fact: \"Dom sålde slut i november.\" (They sold out in November.) Proof by a real recipient who opens the box. This is the recipe of the account's only breakthrough.",
+      "source": "products/matstrumpor/dna.md:99-109; products/matstrumpor/dna.md:180; products/matstrumpor/mekanismer.md:53-56; products/matstrumpor/ugc/NATHALIE-MANUS.md:25-26"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "A small gift box of ten sushi pieces with wooden chopsticks, to save for the Christmas stocking",
+      "benefit": "so you can fill the stocking or the calendar with something small and funny",
+      "desire": "I want small, funny things for the Christmas stocking.",
+      "sub_avatar": "The Christmas stocking filler (julstrumpefyllaren): the same buyer in October to December, looking for small, funny things for the stocking and the calendar.",
+      "angles": "\"det här måste ju vara den enda sushin som faktiskt hör hemma i en julstrumpa\" (this must be the only sushi that actually belongs in a Christmas stocking), called the best Christmas line in the account (Sofie H2). \"Dom som tog slut i november förra året, så säkra dina innan det händer igen.\" (The ones that sold out last November, so secure yours before it happens again.) Planned Christmas opening for the jul_video adset: \"Första oönskade klappen ligger på Blocket före Kalle Anka.\" (The first unwanted gift is on Blocket before Kalle Anka.) But the owner's rule of 2 Oct 2026 says a fact is never the first line of a video, so the form is still open. Christmas ads have had no readable delivery yet (jul_video: 24 kr in three days).",
+      "source": "products/matstrumpor/dna.md:165-168; products/matstrumpor/dna.md:181; products/matstrumpor/lardomar.md:511; products/matstrumpor/lardomar.md:523; products/matstrumpor/ugc/NATHALIE-MANUS.md:24; products/matstrumpor/ugc/NATHALIE-MANUS.md:29; products/matstrumpor/ny-information.md:277; products/matstrumpor/ny-information.md:297; products/matstrumpor/CS-BRIEF-sophistication.md:70-72; products/matstrumpor/CS-BRIEF-sophistication.md:80"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "Five kinds in one box: salmon nigiri, tamago, salmon maki, cucumber maki, red roll (two pieces per kind)",
+      "benefit": "so the box matches what the sushi lover always orders",
+      "desire": "I want to give a gift that shows I know them.",
+      "sub_avatar": "The buyer for \"sushiälskaren i ditt liv\" (the sushi lover in your life), the recipient in Katarina's gift video. Sizing from research: 56 % of Swedes name sushi as their favourite Japanese dish (Verian for HelloFresh, April 2024, flagged as older than 24 months in the file), and sushi is a top three category on Wolt Sweden (Jan 2026).",
+      "angles": "Favourite dish (mechanism M3, warmed up, tested by brief 060 and Katarina's two videos, no label yet): \"Hon beställer alltid gurkmaki. I tråget finns gurkmaki-strumpor.\" (She always orders cucumber maki. The tray has cucumber maki socks.) The file says to write no new brief on this before 060 and Katarina have a label.",
+      "source": "products/matstrumpor/mekanismer.md:147-175; products/matstrumpor/mekanismer.md:186; products/matstrumpor/mekanismer.md:246-250; products/matstrumpor/ny-information.md:43-44; products/matstrumpor/ugc/2026-10-briefer.md:13; products/matstrumpor/arkiv.md:24"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "A clear lid over a tray that reads as takeaway sushi, wooden chopsticks across the lid; the pieces are rolled socks",
+      "benefit": "so the recipient reads \"sushi\" through the lid and finds socks when she unrolls one piece",
+      "desire": "I want to get a real laugh and a double take when someone opens my gift.",
+      "sub_avatar": "The prankster (skämtaren): wants to fool a colleague at fika, the kids or a partner and watch the double take. Not yet tested as its own angle.",
+      "angles": "The lid (M1, warmed up, not new): \"Slå inte in den. Då syns ju sushin.\" (Don't wrap it. Then the \"sushi\" shows, of course.) Test it only as an image, because the winner's own film shows the box wrapped. The fika prank (brief 4): \"Jag tog med sushi.\" (I brought sushi.) is the only line false on purpose, said to the colleague, never to the camera. Riddle hook: \"Sushi till den som redan är mätt.\" (Sushi for someone who is already full.)",
+      "source": "products/matstrumpor/dna.md:182; products/matstrumpor/mekanismer.md:62-75; products/matstrumpor/mekanismer.md:93; products/matstrumpor/ugc/2026-10-briefer.md:23; products/matstrumpor/ugc/2026-10-briefer.md:84-85; products/matstrumpor/ugc/2026-10-briefer.md:161; products/matstrumpor/ugc/2026-10-briefer.md:175; products/matstrumpor/ugc/2026-10-briefer.md:191"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "Wooden chopsticks come with the tray, which looks like takeaway",
+      "benefit": "so you can set it out on the table like takeaway and let the recipient discover it herself",
+      "desire": "I want to bring something to the party, fika or dinner that people react to.",
+      "sub_avatar": "The giver who brings the box to a real table (party, fika, dinner, Christmas table) and says nothing while someone discovers it.",
+      "angles": "Serve it, don't hand it over (M2, the only genuinely new mechanism): \"Säg ingenting tills någon rullar upp en bit.\" (Say nothing until someone unrolls a piece.) and \"Räck den inte över. Duka fram den.\" (Don't hand it over. Set it out on the table.) It needs a new recording of a real creator with a real recipient. The owner said yes on 2 Oct 2026 and brief 065 was written, but the archive shows 1 brief and 0 with outcome.",
+      "source": "products/matstrumpor/mekanismer.md:102-145; products/matstrumpor/mekanismer.md:314-325; products/matstrumpor/dna.md:219-235; products/matstrumpor/arkiv.md:81"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "A closed takeaway tray the recipient cannot read as socks until she lifts a piece, wooden chopsticks included",
+      "benefit": "so he can hand it over and the camera catches her real reaction",
+      "desire": "I want to get a real laugh and a double take when someone opens my gift.",
+      "sub_avatar": "A man giving the box to his partner or a friend. All UGC so far is women, so this avatar is untested (brief 3).",
+      "angles": "\"Jag ställer fram den och tiger.\" (I set it out and say nothing.) as the silent hook, then \"Dom sålde slut i november.\" (They sold out in November.) and \"Ge bort dom till nån som älskar sushi.\" (Give them to someone who loves sushi.) The recipient knows nothing about the box and the camera stays on her face. No performance data yet.",
+      "source": "products/matstrumpor/ugc/2026-10-briefer.md:22; products/matstrumpor/ugc/2026-10-briefer.md:117-127; products/matstrumpor/ugc/2026-10-briefer.md:135-136"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "The bundle offer on the product page, buy 2 get 2 free (four boxes, twenty pairs)",
+      "benefit": "so you can cover several gifts in one order",
+      "desire": "I want more than one box in one order. (Inferred from order data, not stated by any buyer.)",
+      "sub_avatar": "The multi-box buyer: 90 of 110 orders carry exactly 2 sock products (30 days, measured 2026-09-21). The offer image attracts two-box buyers (623 kr) while Nathalie draws one-box buyers (417 kr). The file asks \"en att ge, en till?\" (one to give, one more?).",
+      "angles": "Image plus offer is the cheapest win: offer_static_d3 \"Ser ut som takeaway. Är 20 par strumpor.\" (Looks like takeaway. Is 20 pairs of socks.) with the buy 2 get 2 free offer, köp/LPV 6,7 %, the best in the account. Next test in the file: buy 1 get 1 against buy 2 get 2 as one isolated variable in two images.",
+      "source": "products/matstrumpor/dna.md:20; products/matstrumpor/dna.md:22-23; products/matstrumpor/dna.md:110-112; products/matstrumpor/dna.md:119-122; products/matstrumpor/dna.md:180; products/matstrumpor/dna.md:267-268; products/matstrumpor/lardomar.md:227-229; products/matstrumpor/lardomar.md:234"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "A tray with wooden chopsticks that can be set out at a table",
+      "benefit": "so the visit becomes the gift",
+      "desire": "I want to bring something to the party, fika or dinner that people react to.",
+      "sub_avatar": "An adult child buying for dad before Father's Day, Sunday 8 November 2026. Svensk Handel (Nov 2025): 244 kr average spend on father, 11 % plan to buy socks or underwear, and dads most want to see their kids.",
+      "angles": "\"Pappor önskar sig mest att få träffa sina barn. Ta med sushi-strumpor.\" (Dads most want to see their kids. Bring sushi socks.) The tray is the excuse for the visit and ties to \"serve it\". Only for October and November. Untested, and by the owner's rule of 2 Oct 2026 a fact is never the first line of a video.",
+      "source": "products/matstrumpor/ny-information.md:332-338; products/matstrumpor/ny-information.md:344-345; products/matstrumpor/ny-information.md:357; products/matstrumpor/ny-information.md:359; products/matstrumpor/CS-BRIEF-sophistication.md:70-72"
+    },
+    {
+      "product": "Sushi socks",
+      "feature": "A tray where the joke sits on the box and the contents are socks (one size 36-44)",
+      "benefit": "so the gift lowers the stakes: the joke is on the box, not on the recipient",
+      "desire": "I want to give a gift I cannot get wrong.",
+      "sub_avatar": "The anxious giver buying for a friend: givers care more than recipients about choosing right, and the gap is largest between friends (Freling et al., Feb 2024). Research derived, no account data.",
+      "angles": "\"Skämtpresenter har ofta en pik mot mottagaren. Här sitter skämtet på lådan.\" (Joke gifts often carry a dig at the recipient. Here the joke sits on the box.) and the headline \"Överraskningen har ätpinnar\" (The surprise comes with chopsticks). Lower the stakes, never \"du kommer ångra dig\" (you will regret it). Untested, and facts go in images, headlines or mail, not as the first line of a video.",
+      "source": "products/matstrumpor/ny-information.md:113; products/matstrumpor/ny-information.md:118-125; products/matstrumpor/ny-information.md:160-162; products/matstrumpor/ny-information.md:238-243; products/matstrumpor/ny-information.md:298; products/matstrumpor/CS-BRIEF-sophistication.md:70-72"
+    }
+  ],
+  "avatars": [
+    {
+      "avatar": "The gift buyer",
+      "description": "Woman 30 to 55 who buys for her mother, brother, partner or a female friend and wants to be the one who gives \"den smarta presenten\" (the smart gift). Evidence: the winning hooks all address her (\"Jag gav min mamma…\" I gave my mum…, \"Min brorsa kommer ALDRIG gissa…\" My brother will NEVER guess…) and 90 of 110 orders carry exactly 2 sock products (\"en att ge, en till?\" one to give, one more?). What works: a real recipient who opens it, and \"du blir personen som ger de bästa presenterna\" (you become the person who gives the best gifts). Working hypothesis written 2026-09-24 from the account's own hooks and orders, no customer interviews.",
+      "source": "products/matstrumpor/dna.md:23; products/matstrumpor/dna.md:172-180"
+    },
+    {
+      "avatar": "The Christmas stocking filler",
+      "description": "The same buyer in October to December, looking for small, funny things for the Christmas stocking and the calendar. Evidence: Nathalie \"spara till julstrumpan\" (save them for the Christmas stocking), Sofie H2 \"den enda sushin som hör hemma i en julstrumpa\" (the only sushi that belongs in a Christmas stocking), Gilz 024 \"Gissa vad jag la i julstrumpan?\" (Guess what I put in the Christmas stocking?), and 036 got the most of the image batch. What works: scarcity (\"sålde slut i november\", sold out in November) and the stocking in the picture.",
+      "source": "products/matstrumpor/dna.md:181"
+    },
+    {
+      "avatar": "The prankster",
+      "description": "Someone who wants to fool a colleague at fika, the kids or a partner and see the double take. Evidence: haikuh3 \"Folk tror alltid att det är riktig sushi när de öppnar lådan\" (People always think it is real sushi when they open the box), Sofie H1 \"jag trodde helt seriöst att det här var riktig sushi\" (I seriously thought this was real sushi), and 012v2 \"bluffpizzan\" (the fake pizza). What works: the chopsticks and someone trying to eat the sock. Untested as its own angle; brief 4 is the first filmed version of it.",
+      "source": "products/matstrumpor/dna.md:182; products/matstrumpor/ugc/2026-10-briefer.md:23; products/matstrumpor/ugc/2026-10-briefer.md:161"
+    },
+    {
+      "avatar": "The male gift buyer (hypothesis, untested)",
+      "description": "A man who gives the box to his partner or a friend. All UGC so far shows women, so brief 3 tests this avatar, with the recipient's real reaction on camera. No performance data exists yet. The dna file still lists a fourth avatar as missing, so treat this as a test hypothesis from the October 2026 briefs, not as a proven avatar.",
+      "source": "products/matstrumpor/ugc/2026-10-briefer.md:22; products/matstrumpor/ugc/2026-10-briefer.md:117-119; products/matstrumpor/dna.md:183"
+    }
+  ],
+  "awareness": [
+    {
+      "level": "Unaware",
+      "question": "Not looking for a gift and sees no problem: what is this odd thing in my feed?",
+      "answer": "Open with a riddle the picture answers at the reveal, never with a fact. Examples in the briefs: \"Sushi att ge bort till den som hatar fisk.\" (Sushi to give to someone who hates fish.) in brief 066 and \"Det finns inget bäst före-datum på den här sushin.\" (There is no best before date on this sushi.) in brief 067, and \"Sushi till den som redan är mätt.\" (Sushi for someone who is already full.) in brief 2. The earlier unaware attempt, the fake pizza slideshow 012v2 (\"En av kartongerna är bluffpizza.\"), was planned as unaware and ended as a LOSER (AI images, no trust, no urgency). 066 and 067 have no label yet.",
+      "source": "products/matstrumpor/lardomar.md:322; products/matstrumpor/lardomar.md:335; products/matstrumpor/lardomar.md:341-344; products/matstrumpor/dna.md:223; products/matstrumpor/dna.md:226; products/matstrumpor/ugc/2026-10-briefer.md:23; products/matstrumpor/ugc/2026-10-briefer.md:85; products/matstrumpor/CS-BRIEF-sophistication.md:70-72; products/matstrumpor/arkiv.md:99-100"
+    },
+    {
+      "level": "Problem Aware",
+      "question": "I need a gift (or something for the party or the stocking) and nothing I have seen is right: what do I give?",
+      "answer": "\"Det här är ditt tecken.\" (This is your sign.) then \"Dom sålde slut i november.\" (They sold out in November.) and \"Ge bort dom.\" (Give them away.) This is the winning Nathalie ad, which the account classifies as problem aware (\"ditt tecken\" → you are already looking for a present). Proof comes from a real friend who opens the box and laughs.",
+      "source": "products/matstrumpor/lardomar.md:150; products/matstrumpor/ugc/NATHALIE-MANUS.md:21-23; products/matstrumpor/ugc/NATHALIE-MANUS.md:27; products/matstrumpor/dna.md:99-104"
+    },
+    {
+      "level": "Solution Aware",
+      "question": "I know funny socks as a gift exist: which one is different from the others?",
+      "answer": "Answer with a mechanism or new information, not a bigger promise. Five advertisers already say \"a funny gift they'll actually use / remember\", so \"the funniest\" or \"perfect\" no longer reaches her. What reaches her is HOW this gift does it (the clear lid, set it out on the table, the favourite dish) or a fact about her world, for example \"Första oönskade klappen ligger på Blocket före Kalle Anka.\" (The first unwanted gift is on Blocket before Kalle Anka.)",
+      "source": "products/matstrumpor/CS-BRIEF-sophistication.md:13; products/matstrumpor/CS-BRIEF-sophistication.md:17-22; products/matstrumpor/mekanismer.md:21; products/matstrumpor/mekanismer.md:25-29; products/matstrumpor/ny-information.md:297"
+    },
+    {
+      "level": "Product Aware",
+      "question": "I have seen the sushi socks: what exactly do I get, and does it deliver?",
+      "answer": "Show the box delivering instead of claiming: \"Tio sushibitar med ätpinnar i trä.\" (Ten sushi pieces with wooden chopsticks.) top down on the tray, and the real recipient: \"Ja, hon blev verkligen överraskad.\" (Yes, she was really surprised.) The account classified the haikuh3 listicle as product aware (\"ultimata presenten\"); it leaned on adjectives without proof and converted 1,1 % köp/LPV against 3,4 % for Nathalie.",
+      "source": "products/matstrumpor/lardomar.md:196; products/matstrumpor/lardomar.md:199; products/matstrumpor/lardomar.md:207; products/matstrumpor/ugc/NATHALIE-MANUS.md:26-27; products/matstrumpor/dna.md:99-104"
+    },
+    {
+      "level": "Most Aware",
+      "question": "I am ready to buy: is there an offer, and what happens if I wait?",
+      "answer": "The offer plus the scarcity fact. Image: \"Ser ut som takeaway. Är 20 par strumpor.\" (Looks like takeaway. Is 20 pairs of socks.) with the buy 2 get 2 free offer; the account classifies it as promo, and it has köp/LPV 6,7 %, the best in the account (14 days to 2026-09-23: 2 124 kr, 8 köp, vinstbidrag +1 204 kr). Closing line from the winner: \"Dom som tog slut i november förra året, så säkra dina innan det händer igen.\" (The ones that sold out last November, so secure yours before it happens again.)",
+      "source": "products/matstrumpor/lardomar.md:227-229; products/matstrumpor/lardomar.md:234; products/matstrumpor/lardomar.md:242; products/matstrumpor/ugc/NATHALIE-MANUS.md:29"
+    }
+  ],
+  "creators": [
+    {
+      "creator": "Nathalie",
+      "role": "UGC creator we use",
+      "what": "A real woman in her own kitchen, a real friend opens the box and laughs. Her ad \"09-17 Nathalie captions musik\" (live since 2026-09-17) is the account's only breakthrough, and her script is now given word for word to every new creator as video A (about 30 seconds, no words in the first second). 14 days to 2026-09-26: 32 703 kr, 173 köp, CPA 189 kr, ROAS 2,23 (break-even 1,498). Last 7 days to 2026-09-26: campaign 37 090 kr / 189 köp, of which Nathalie 32 605 kr (88 %). Köp per landing page view 3,4 %. Hook 0,47, hold 0,15, hook to hold 0,31, CTR 2,7 %, CPM 105 kr (last 14 days to 2026-09-30). Archive 2026-10-03: 15 ads, 77803 kr spend, 382 köp, vinstbidrag 31579 kr. Eleven iterations of her ad are in the chain, none labelled yet.",
+      "result": "BREAKTHROUGH",
+      "source": "products/matstrumpor/dna.md:72-74; products/matstrumpor/dna.md:80; products/matstrumpor/dna.md:99-104; products/matstrumpor/dna.md:129-131; products/matstrumpor/arkiv.md:21; products/matstrumpor/arkiv.md:89-100; products/matstrumpor/ugc/NATHALIE-MANUS.md:3-17; products/matstrumpor/ugc/NATHALIE-MANUS.md:33"
+    },
+    {
+      "creator": "Sofie (@husetmellanhagarna)",
+      "role": "UGC creator we use",
+      "what": "A real creator who filmed two ads in the winner's adset: H1 alone to camera, \"jag trodde helt seriöst att det här var riktig sushi\" (I seriously thought this was real sushi), and H2 with a stocking in hand, \"det här måste ju vara den enda sushin som faktiskt hör hemma i en julstrumpa\" (this must be the only sushi that actually belongs in a Christmas stocking). Both labelled LOSER; the file calls it an A/B outcome in a CBO (Meta fed Nathalie from day one, Sofie got 30 kr together in week one), not a verdict on Sofie. Sofie H1 (501 kr, last 14 days to 2026-09-30): hook 0,25, hold 0,11, hook to hold 0,43, CTR 2,6 %, CPM 162 kr, so a weak hook and the strongest hold. Archive 2026-10-03: 2 ads, 800 kr, 6 köp. Her H2 line is called the best Christmas line in the account. In October 2026 she gets Nathalie's script and briefs 1 and 2, but no stocking and no \"I thought it was sushi\" opening because she already filmed those.",
+      "result": "LOSER",
+      "source": "products/matstrumpor/ugc/2026-10-briefer.md:12; products/matstrumpor/lardomar.md:501-524; products/matstrumpor/dna.md:129-139; products/matstrumpor/arkiv.md:23"
+    },
+    {
+      "creator": "Katarina Kruger",
+      "role": "UGC creator we use",
+      "what": "Two videos ordered by the owner, live in the winner's adset since 2026-09-24: \"sushiälskaren i ditt liv\" (the sushi lover in your life, gift) and \"sushigalen unge\" (the sushi crazy kid). They got 284 and 296 kr in six days, about 50 times more per ad than batch #1; archive 2026-10-03: 2 ads, 703 kr, 2 köp, vinstbidrag 181 kr, and no label yet. Her two videos are also the live test of the favourite dish mechanism. Her footage is used in Sweden only (owner's rule 2026-09-27). In October 2026 she gets briefs 1 and 2 with a different recipient.",
+      "result": null,
+      "source": "products/matstrumpor/ugc/2026-10-briefer.md:13; products/matstrumpor/ugc/2026-10-briefer.md:25; products/matstrumpor/dna.md:93-96; products/matstrumpor/dna.md:269-271; products/matstrumpor/lardomar.md:637; products/matstrumpor/arkiv.md:24; products/matstrumpor/mekanismer.md:163-167"
+    }
+  ],
+  "saknas": [
+    "desires: no direct voice of customer data in these files (no interviews, no comment cluster: 4 comments on the winner, dna.md:141-145). The nine desires are read from the winning hooks, Nathalie's script and the research in ny-information.md, and dna.md:174-176 calls the avatars working hypotheses.",
+    "sub_avatars_angles: only angles with a test or a source are listed. M2 (serve it) and M3 (favourite dish) have no label yet, and the male buyer, prankster, Father's Day and anxious giver rows have no performance data. The desire in the multi-box row is inferred from order data, and the file marks the pizza, burger and donut boxes as not marketed (sushi only, ugc/2026-10-briefer.md:25), so no row uses them.",
+    "avatars: dna.md:183 says the fourth avatar has no source yet and must not be invented. The male gift buyer is only a test hypothesis from brief 3, not a proven avatar.",
+    "awareness: the files classify ads by awareness level only for Nathalie (problem, lardomar.md:150), s001h1 (problem, lardomar.md:277), haikuh3 (product, lardomar.md:207), offer_static_d3 (promo, lardomar.md:242, mapped here to Most Aware) and the fake pizza 012v2 and brief 4 (unaware). No ad is classified Solution Aware, so that row rests on the market sophistication evidence. All five questions are written by the reader from Schwartz's definitions, not quoted from the files.",
+    "creators: no influencer to study is named in any of the listed files. Competitors appear only as advertisers (Soxo, My Angry Socks, svenskhusman_socks, Presenthuset, The London Sock Exchange, mekanismer.md:21-22) and a blind test ad from Lindner & Co is used as a format reference for brief 065 (mekanismer.md:322-325), not as an influencer. Gilz and Carl are editors, not creators, and are left out. The 'okänd (före namnregeln)' group in arkiv.md:22 holds 127 ads with no creator tag."
+  ]
+}
