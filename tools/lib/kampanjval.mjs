@@ -12,11 +12,20 @@ export const annonsdel = (s) => String(s ?? '').split(/\s+[–—-]\s+/)[0].trim
 
 /** Prefixet ur ett annonsnamn: "Rodholder_PD_11_H1" -> "rodholder".
  *  Bindestreck och siffror RÄKNAS med: "MC-Kapell_OF_4_1" -> "mc-kapell".
+ *  Å, Ä och Ö räknas också med: "Värmesulorna_FD_4_1" -> "värmesulorna".
  *  *(Mätt 2026-09-15: mönstret var `^([A-Za-z]+)_`, så varje namn med bindestreck
  *  i prefixet gav null och raden föll ur kön TYST. Motorcycle Cover-hubben hade
- *  13 färdiga creatives i `To be Reviewed` som aldrig syntes i någon rapport.)* */
+ *  13 färdiga creatives i `To be Reviewed` som aldrig syntes i någon rapport.)*
+ *  *(Mätt 2026-10-03: samma sak igen, nu med å/ä/ö. `docs/naming-convention.md`
+ *  förbjuder dem i annonsnamn, men KONTOT bryter mot regeln: kampanjen
+ *  "Värmesulorna med Fjärrkontroll" är ACTIVE med 16 live annonser som alla
+ *  heter `Värmesulorna_*`. Eftersom prefixKarta() använder samma funktion blev
+ *  produkten osynlig från BÅDA hållen — varken kontots kampanj eller hubbens
+ *  fyra färdiga creatives syntes i kön, och raderna rapporterades bara som
+ *  "går inte att tolka som annonsnamn". Tolkaren är ett skyddsnät, inte ett
+ *  godkännande: konventionen gäller fortfarande för den som döper annonser.)* */
 export const prefixAv = (namn) =>
-  (annonsdel(namn).match(/^([A-Za-z][A-Za-z0-9-]*)_/) || [])[1]?.toLowerCase() ?? null;
+  (annonsdel(namn).match(/^([A-Za-zÅÄÖåäö][A-Za-zÅÄÖåäö0-9-]*)_/) || [])[1]?.toLowerCase() ?? null;
 
 /** Landningssideskampanjer (listicle / lagerrensning / vi-testade / anledningar).
  *  De bär SAMMA annonsprefix som produktens vanliga kampanj men skickar trafiken
