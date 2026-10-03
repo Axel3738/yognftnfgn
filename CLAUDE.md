@@ -82,6 +82,7 @@ första gången 2026-09-27): sidan `820358954504320` ligger i Business Manager
 Matstrumpor.se, medan `META_ACCESS_TOKEN`:s systemanvändare sitter i SnarkLös
 — samma namn "API long term", två olika användare. `tools/annonskommentarer.mjs
 --sidtoken-env META_ACCESS_TOKEN_MATSTRUMPOR`.
+📨 **Ursäktsmejlet om leveransförseningen är SKICKAT 2026-10-03 förmiddag** (Axels "skicka allt", via Cowork): alla 13 kampanjer publicerade (svenska 457 mottagare enligt Spoks, nb 1, da 4, fi 12, de nio övriga 70 tillsammans) och flödet "Ursäkt leveransförsening · alla språk · beställningar till och med 9/10" AKTIVT med alla 13 sändsteg på (mätt med `get_flow`, 8 inrullade direkt). Full återbetalning för alla paket som inget fraktbolag skannat (Axels B, ~506 ordrar, ~238 000 kr), VA-SOP:en i Notion. Allt i `matstrumpor/ursakt/README.md`. ⚠️ Spoks segmentlista i publikvalet slutar ibland scrolla efter åtta poster — små steg fungerar, att skriva namnet filtrerar inte. ⛔ **Flödets trigger stängs för nya kunder sedan förbeställningen kom samma förmiddag** (`matstrumpor/ursakt/cowork/3-stang-flodet.txt`): förbeställaren ser skickdatumet 12/10 före köpet och ska aldrig få en ursäkt för förseningen; de redan inrullade får sitt mejl.
 ⛔ **En kreatörsinspelning (NEW FOOTAGE) läggs ALDRIG som rad i hubben förrän
 råklippen finns** (Axels order 2026-10-02: "om du lägger den som ett Notion-item
 kommer Bruce att tro att han ska redigera videorna, och då kommer han ju att

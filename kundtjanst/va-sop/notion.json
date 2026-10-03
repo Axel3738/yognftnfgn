@@ -307,6 +307,12 @@
    "titel": "Disputes — what you decide and what the owner decides",
    "kategori": "Payment",
    "notion_id": "3e2270ab-908c-8190-8b04-d48fbee10450"
+  },
+  {
+   "fil": "matstrumpor-delivery-delay-refunds.md",
+   "titel": "Matstrumpor delivery delay — who gets a refund",
+   "kategori": "Delivery",
+   "notion_id": "3ee270ab-908c-81f4-8151-c2b87f2d7de5"
   }
  ],
  "brand": "baverbutiken"
