@@ -89,9 +89,14 @@ def _delar_meningar(block):
     per pastaende. Men en rubrik som ar ett prispastaende ("489 kr till fars dag.
     Ord. 978 kr.") far da "Ord." som en egen rad mitt i, vilket ser sonderbrutet
     ut (matt 2026-09-30 i fars dag-ronden). `"meningar": false` later den raden
-    brytas pa ordgrans i stallet. Texten ar ordagrann oavsett."""
-    if block.get("meningar") is False:
-        return False
+    brytas pa ordgrans i stallet. Texten ar ordagrann oavsett.
+
+    Flaggan gar at bada hallen sedan 2026-10-01: en underrad med tva meningar
+    bryts annars pa ordgrans och kan tappa ett ensamt ord till sista raden
+    ("… en famnstor / packe." i Takoverdrag_FD_6_4). `"meningar": true` ger den
+    en rad per mening, precis som en rubrik far."""
+    if block.get("meningar") is not None:
+        return bool(block["meningar"])
     return block["stil"] in ("rubrik", "citat")
 
 
@@ -200,14 +205,24 @@ def _radhojd(font):
     return int((font.getbbox("Åjg")[3] - font.getbbox("Åjg")[1]) * 1.45)
 
 
-def rita_scrim(bild, overst, hojd, uppifran=True, styrka=210):
-    """Mörk toning bakom texten så vit text blir läsbar mot vilken bild som helst."""
+def rita_scrim(bild, overst, hojd, uppifran=True, styrka=210, hall=0):
+    """Mörk toning bakom texten så vit text blir läsbar mot vilken bild som helst.
+
+    `hall` är hur många pixlar in från textsidan toningen ska ligga kvar på full
+    styrka innan den börjar tona ut. Utan den är toningen linjär över hela höjden
+    och är nästan borta vid den sista textraden: i Rodholder_PD_41_1 stod
+    underraden i vit text mot en ljus pegboard med knappt 15 % täckning kvar och
+    gick inte att läsa (mätt 2026-10-01).
+    """
     if hojd <= 0:
         return
+    hall = max(0, min(int(hall), hojd))
+    tona = max(1, hojd - hall)
     scrim = Image.new("RGBA", (bild.width, hojd), (0, 0, 0, 0))
     rita = ImageDraw.Draw(scrim)
     for y in range(hojd):
-        andel = (1 - y / hojd) if uppifran else (y / hojd)
+        d = y if uppifran else hojd - 1 - y      # avstånd från textsidan
+        andel = 1.0 if d < hall else (1 - (d - hall) / tona)
         rita.line([(0, y), (bild.width, y)], fill=(10, 14, 18, int(styrka * andel)))
     bild.alpha_composite(scrim, (0, overst))
 
@@ -363,10 +378,34 @@ def lagg_pa_text(spec):
     # Scrim bara där det faktiskt ligger text, och bara när stilen är ljus.
     toppblock = [b for b in block if b["zon"].startswith("topp")]
     bottenblock = [b for b in block if b["zon"].startswith("botten")]
+    def _stackhojd(blocklista):
+        """Hur långt ner texten faktiskt når, mätt med samma radbrytning som ritningen."""
+        h = 0
+        for b in blocklista:
+            stil = STILAR[b["stil"]]
+            if b["stil"] == "knapp":
+                h += int(_radhojd(_font(stil["font"], _storlek(stil, b))) * 1.9) + 16
+                continue
+            kalla = dela_meningar(b["text"]) if _delar_meningar(b) else b["text"]
+            font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
+                                   maxbredd, _rader(stil, b), rita)
+            stjarnor = int(b.get("stjarnor") or 0)
+            h += (int(_radhojd(font) * 0.9) + 12 if stjarnor else 0)
+            h += _radhojd(font) * len(rader) + 20
+        return h
+
+    # Scrimmen täckte en fast tredjedel och tonade ut till noll precis där den
+    # sista toppraden hamnade: i Rodholder_PD_41_1 stod underraden i vit text mot
+    # en ljus pegboard och gick knappt att läsa (mätt 2026-10-01). Den sträcks
+    # därför till den text som faktiskt finns, aldrig kortare än förut.
     if any(_blackfarg(STILAR[b["stil"]], b).upper() == "#FFFFFF" for b in toppblock):
-        rita_scrim(bild, 0, int(hojd * 0.34), uppifran=True)
+        slut = int(spec.get("marginal_topp", MARGINAL)) + _stackhojd(toppblock) + 40
+        h = max(int(hojd * 0.34), min(slut + 110, hojd))
+        rita_scrim(bild, 0, h, uppifran=True, hall=min(slut, h))
     if any(_blackfarg(STILAR[b["stil"]], b).upper() == "#FFFFFF" for b in bottenblock):
-        rita_scrim(bild, int(hojd * 0.66), int(hojd * 0.34), uppifran=False)
+        slut = _stackhojd(bottenblock) + MARGINAL + 40
+        h = min(max(int(hojd * 0.34), slut + 110), hojd)
+        rita_scrim(bild, hojd - h, h, uppifran=False, hall=min(slut, h))
     rita = ImageDraw.Draw(bild)
 
     # "marginal_topp" flyttar ner hela toppstapeln. Fars dag-batchen 2026-09-28
@@ -397,6 +436,13 @@ def lagg_pa_text(spec):
             for i, rad in enumerate(rader):
                 rita.text((bredd / 2, y_botten + i * rh), rad, font=font,
                           fill=farg, anchor="ma")
+                # Överstrykningen fanns bara i toppzonen, men ett prisband står
+                # nästan alltid i botten — så "stryk" gjorde ingenting där, utan
+                # ett ord om det. (Mätt 2026-10-01 på Beltgrinder_FD_6_2, vars
+                # rubrik lyder "Ordinarie pris överstruket": jämförpriset stod
+                # orört och rubriken hade ljugit.)
+                rita_stryk(rita, rad, b.get("stryk"), font, bredd / 2,
+                           y_botten + i * rh)
 
     for b in toppblock:
         stil = STILAR[b["stil"]]

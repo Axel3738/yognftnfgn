@@ -3318,3 +3318,21 @@ dessutom `LISTICLE` 2 800 → 2 000 kr natten till i dag (`73d8e8cf`).
   annons; larmet ligger redan hos Axel.
 
 Discord-rapport postad i `#annons-uppladdning` (`1555599332177215520`).
+
+## 2026-10-03 natt — budgetrond: 0 ändringar, Sverige avstängt för hand
+
+**Ronden gjorde ingenting.** Alla tre svenska kampanjerna är PAUSED, pausade för
+hand **2026-10-02 16:45:28–16:53:30 CEST** (kampanjernas `updated_time`). 0 av
+122 annonser är ACTIVE (16 PAUSED, 106 CAMPAIGN_PAUSED). PAUSED med spend är ett
+beslut — ronden rör det aldrig. 0 loggrader skrivna.
+
+**Läget per marknad** (torr läsning, inget skrivet, vinstbidrag mot break-even
+ROAS 1,63): DK ACTIVE 2 000 kr/d → 13 879 kr / 25 köp / ROAS 2,76 / **+9 658 kr**
+· NO ACTIVE 4 000 kr/d → 27 238 kr / 37 köp / 1,78 / **+2 565 kr** · SE LISTICLE
+16 138 / 21 / 1,67 / +415 · SE NYA LISTICLE 8 042 / 8 / 1,32 / −1 525 · SE
+huvudkampanjen 27 577 / 26 / 1,21 / **−7 141**.
+
+**Dygn:** 1/10 6 945 kr / 3 köp / ROAS 0,49 · 2/10 (halvt dygn) 4 100 kr / 7 köp
+/ ROAS 2,04. **7 dygn SE:** 51 756 kr, 55 köp, ROAS 1,37, vinstbidrag −13 641 kr.
+
+**Briefronden:** pausad sedan 2026-09-18. Bara `kord` stämplad.

@@ -1,7 +1,8 @@
 // Bygger en kreatörs egen PDF-brief ur mallen (Axels krav 2026-10-02: en PDF per kreatör, bara
 // hennes videor, inga andra namn, "så enkelt att en tioåring fattar").
 //   node products/matstrumpor/ugc/pdf/bygg.mjs Sara [Sofie …]
-import { chromium } from 'playwright';
+// playwright finns inte i repots package.json: ta den ur containerns verktyg (/opt/node-tools) som reserv.
+const { chromium } = await import('playwright').catch(() => import('/opt/node-tools/node_modules/playwright/index.mjs'));
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
