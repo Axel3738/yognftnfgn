@@ -366,6 +366,10 @@
         {
           "date": "2026-09-28",
           "count": 5
+        },
+        {
+          "date": "2026-10-03",
+          "count": 7
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen.",
@@ -384,7 +388,10 @@
         "kalla_namn": "BÄVER For CARL Taköverdraget för Husvagn",
         "status_se": "CaraShell SE ready to be active",
         "status_en": "CaraShell EN ready to be active",
-        "satt": "2026-09-18"
+        "satt": "2026-09-18",
+        "ladda_upp": [],
+        "ladda_upp_satt": "2026-10-03",
+        "ladda_upp_motivering": "Axels beslut 2026-10-03: Taköverdraget skalas i Bäverbutiken (SE + NO), CaraShell bara på de engelska marknaderna (US/AU). Speglingen lämnar bara över den svenska filen till CaraShells hub för US-rutinen."
       },
       "malkampanj": {
         "US": {
@@ -393,7 +400,17 @@
           "adset_id": "120251633656400435",
           "landning": "https://carashell.com/pages/rv-roof-cover-5-reasons?country=US",
           "satt": "2026-09-30",
-          "motivering": "Axels order 2026-09-30: \"byter mainkampanj i USA … då börjar vi bara ladda upp till den nya kampanjen\". Mätt 28–30/9: nya (listiclen 5 reasons) ~18 700 kr / 19 köp, gamla (lagerrensning) ~24 300 kr / 15 köp. Den gamla rörs inte."
+          "motivering": "Axels order 2026-09-30: \"byter mainkampanj i USA … då börjar vi bara ladda upp till den nya kampanjen\". Mätt 28–30/9: nya (listiclen 5 reasons) ~18 700 kr / 19 köp, gamla (lagerrensning) ~24 300 kr / 15 köp. Den gamla rörs inte.",
+          "ocksa": [
+            {
+              "land": "AU",
+              "namnkod": "AU",
+              "kampanj_id": "120251471312320435",
+              "satt": "2026-10-03",
+              "motivering": "Axels beslut 2026-10-03: nya engelska annonser läggs i både USA-målet och Australienkampanjen, samma annons (anpassad för USA), USA är huvudfokus. Kampanjen är Axels egen AU LISTICLE Taköverdrag CARASHELL.",
+              "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL"
+            }
+          ]
         }
       }
     },

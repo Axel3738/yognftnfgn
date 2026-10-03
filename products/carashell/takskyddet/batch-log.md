@@ -3336,3 +3336,93 @@ huvudkampanjen 27 577 / 26 / 1,21 / **−7 141**.
 / ROAS 2,04. **7 dygn SE:** 51 756 kr, 55 köp, ROAS 1,37, vinstbidrag −13 641 kr.
 
 **Briefronden:** pausad sedan 2026-09-18. Bara `kord` stämplad.
+
+## 2026-10-03 — flödet ombyggt: CaraShell bara på engelska, 7 överlämnade, 9 FD → Approved
+
+**Axels beslut (morgonen):** taköverdraget skalas i Bäverbutiken (Sverige +
+Norge) och i CaraShell bara på de engelska marknaderna. Han pausade CaraShells
+tre svenska kampanjer själv 2026-10-02 16:45–16:53, och den gamla
+speglingsregeln "ingen SE-kampanj i butiken" stoppade då varje rad i `CaraShell
+SE ready to be active` — sju OB-videor (OB_11, 13, 14, 17, 18, 19, 22), alla
+live i SE och NO i Bäverbutiken sedan 1–2/10, nådde aldrig CaraShells hub och
+därmed aldrig USA. 17 rader stod i steget.
+
+**Ändringen:** `spegling.ladda_upp` i registret (`node factory/register.mjs
+spegling-uppladdning carashell/takskyddet inga`). Tom lista ⇒ speglingen laddar
+inget upp i OPS-kontot, jämför inget pris, utan hämtar den svenska filen ur
+Bäverbutikens live-annons, skapar raden i CaraShells hub (`SE-ACTIVE to be
+translated`) och sätter källraden till `CaraShell EN ready to be active`.
+Brandspärren, slutkortet och bara-Sverige-regeln gäller som förut. FD-rader
+sätts till `Approved` med kommentar (SE + NO i Bäverbutiken är allt de kan
+nå; fars dag är i juni på de engelska marknaderna). Termoskyddet står kvar på
+SE + NO. Dessutom: en strypt läsning av US-kontot stoppar inte längre
+överlämningen (sondering utan backoff; `Approved`-steget väntar till nästa
+körning), och stoppskälen i Discord-rapporten är engelska.
+
+**Körningen (för hand, 07:5x–08:1x CEST, efter torrkörning):** 7 överlämnade,
+9 FD → Approved, 1 stoppad, 0 fel, 0 → Approved via US (UK-kontot strypt, kod
+17, i hela sessionen — de sex timrutinerna delar kvoten).
+
+| Källrad | Rad i CaraShells hub | Fil |
+|---|---|---|
+| `Takoverdrag_OB_11_H1` | `CaraShellRoof_OB_111_H1` | svensk mp4 ur Meta-annons 120250431703050291 |
+| `Takoverdrag_OB_13_H1` | `CaraShellRoof_OB_113_H1` | 120250433883440291 |
+| `Takoverdrag_OB_14_H1` | `CaraShellRoof_OB_114_H1` | 120250433818310291 |
+| `Takoverdrag_OB_17_H1` | `CaraShellRoof_OB_117_H1` | 120250448351660291 — slutkort med pris i SEK (ingen butik) |
+| `Takoverdrag_OB_18_H1` | `CaraShellRoof_OB_118_H1` | 120250447435980291 |
+| `Takoverdrag_OB_19_H1` | `CaraShellRoof_OB_119_H1` | 120250449214630291 |
+| `Takoverdrag_OB_22_H1` | `CaraShellRoof_OB_122_H1` | 120250433684930291 |
+
+Tillbakaläst i Notion efteråt: källhubben 7 i `CaraShell EN ready to be
+active`, 1 kvar i `CaraShell SE ready to be active` (`GT_11_H1`), Approved 62 →
+71; CaraShells hub 7 i `SE-ACTIVE to be translated`. US-rutinen 17:05 tar dem.
+
+**Stoppad:** `Takoverdrag_GT_11_H1` — copyn nämner Bäverbutiken OCH slutkortet
+visar "BÄVERBUTIKEN" (OCR, rapidocr installerad i sessionen). Elfte dygnet.
+Axels beslut: ny version utan butiken, eller stryk den.
+
+**Läget i Meta 06:30 CEST (läs-bart):** CaraShell SE ×3 PAUSED (Axels klick
+2/10). ⚠️ `CARASHELL_NO_Takovertrekket` ACTIVE 4 000 kr/dag, 83 annonser,
+7 d 27 252 kr / 37 köp / ROAS 1,78 — och `CARASHELL_DK_Taköverdrag` ACTIVE
+2 000 kr/dag, 7 d 13 887 kr / 25 köp / ROAS 2,76 — trots Axels ord att norska
+CaraShell är avstängd. Inget pausat av sessionen. Engelska: `Taköverdrag 5
+reasons USA TEST` ACTIVE 12 000 kr/dag (22 annonser, 7 d 46 088 kr / 34 köp /
+ROAS 2,01, registrets mål), `1 CARASHELL_US_… – kopia` ACTIVE 8 000 kr/dag (87
+annonser, 76 418 kr / 41 köp / 1,45), `AU LISTICLE Taköverdrag CARASHELL` ACTIVE
+4 169 kr/dag (27 annonser, alla gamla `_US_`-kopior ≤ nr 7, 23 434 kr / 23 köp /
+2,21) — AU får inget nytt automatiskt, US-rutinen laddar bara upp i målkampanjen.
+Bäverbutiken: `Taköverdraget för Husvagn` ACTIVE 9 600 kr/dag (66 616 kr / 129
+köp / 2,62), `BEAVERSTORE_WW_Taköverdraget` i UK-kontot ACTIVE 1 000 kr/dag (7
+WW-annonser, 2 576 kr / 2 köp).
+
+Discord-rapport postad i `#annons-uppladdning` (`1555809641382809610`).
+Register: `log carashell/takskyddet 7 2026-10-03`.
+
+## 2026-10-03 förmiddag — Australien som extra mål, Danmark igång med flit
+
+**Axels svar på morgonens rapport:** Danmark ska vara igång ("den går ju ganska
+bra … strunta i Danmark nu" — inga nya annonser dit). De engelska annonserna
+ska upp i Australienkampanjen också: "vi kör bara samma i USA och Australien,
+men vi anpassar dem lite mer för USA … USA är det jag vill lägga mest fokus på."
+Norska CaraShell nämnde han inte — den står ACTIVE och rörs inte.
+
+**Bygget:** `malkampanj.US.ocksa` i registret pekar på hans `AU LISTICLE
+Taköverdrag CARASHELL` (`120251471312320435`, ACTIVE, fyra adsets AU_PD/CS/GT/SP
+med AU-geo, länk `…-lagerrensning-au?country=AU`). US-rutinen laddar upp varje ny
+engelsk annons en gång till där under `_AU_`-namnet (kontots dubblettspärr går
+på namnet, och Axels egna 27 AU-kopior heter `_US_`). Nytt koncept ⇒ adset
+klonat av ett AU-syskon. Raden blir Approved först när både US och AU bär den.
+Bara nya rader ur `SE-ACTIVE to be translated` — de 74 Approved utan AU-kopia är
+inte eftersläpande.
+
+**Torrkört mot Meta samma förmiddag:** kön gav 7 rader med `ocksa: AU …
+finns_i_meta: false` och Approved-spärren satt; uppladdaren torr på
+`CaraShellRoof_AU_OB_111_H1` → kampanjen AU LISTICLE, adset `CARASHELL AU_OB`
+som klon av `CARASHELL AU_GT`, AU-länken ärvd, sidan + IG ärvda, inget skrivet.
+Varningen "SE-annonsen finns inte i OPS-kontot" tystad för speglade produkter
+som inte laddar upp SE — den svenska annonsen bor i Bäverbutikens konto.
+
+⚠️ Dagens US-runda 17:05 kör `main`: är grenen inte mergad då får de sju bara
+USA, och AU-kopiorna görs av nästa runda bara om raderna fortfarande saknar AU
+och inte redan är Approved (gamla koden sätter Approved efter USA). Mergas
+grenen före 17:05 får de både USA och AU i samma runda.
