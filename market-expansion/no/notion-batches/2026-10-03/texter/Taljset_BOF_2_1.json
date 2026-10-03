@@ -1,0 +1,112 @@
+[
+ {
+  "box": [
+   0,
+   150,
+   1080,
+   242
+  ],
+  "fet": true,
+  "storlek": 77,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 156,
+  "text": "14 dager fra den dagen du"
+ },
+ {
+  "box": [
+   325,
+   271,
+   749,
+   348
+  ],
+  "fet": true,
+  "storlek": 77,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 277,
+  "text": "får varen"
+ },
+ {
+  "box": [
+   64,
+   408,
+   1016,
+   453
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 414,
+  "text": "14 dagers angrerett fra den dagen du får varen, alle 30"
+ },
+ {
+  "box": [
+   361,
+   464,
+   719,
+   498
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 470,
+  "text": "delene i én veske"
+ },
+ {
+  "box": [
+   0,
+   1025,
+   1080,
+   1094
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 1031,
+  "text": "1 039 kr. Ordinært 1 359 kr."
+ },
+ {
+  "box": [
+   258,
+   1200,
+   820,
+   1308
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   24,
+   72,
+   120
+  ],
+  "radie": 54,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 32,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 1242,
+  "text": "Se vesken med 30 deler"
+ }
+]

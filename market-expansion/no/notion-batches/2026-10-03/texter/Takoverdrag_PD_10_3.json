@@ -1,0 +1,112 @@
+[
+ {
+  "box": [
+   21,
+   158,
+   1055,
+   239
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 164,
+  "text": "3 × 5,5 til 3 × 13,5 meter."
+ },
+ {
+  "box": [
+   228,
+   279,
+   850,
+   364
+  ],
+  "fet": true,
+  "storlek": 77,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 285,
+  "text": "Én passer din."
+ },
+ {
+  "box": [
+   88,
+   408,
+   992,
+   454
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "ink_topp": 414,
+  "text": "Mål fra front til bakkant. Velg størrelsen minst like lang."
+ },
+ {
+  "box": [
+   190,
+   920,
+   890,
+   1012
+  ],
+  "fet": true,
+  "storlek": 95,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 926,
+  "text": "Fra 1 189 kr."
+ },
+ {
+  "box": [
+   91,
+   1082,
+   989,
+   1128
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   21,
+   20,
+   18
+  ],
+  "ink_topp": 1088,
+  "text": "Stropper på alle fire sider, 2,5 m, justerbare i spennen."
+ },
+ {
+  "box": [
+   293,
+   1201,
+   787,
+   1308
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   24,
+   72,
+   120
+  ],
+  "radie": 53,
+  "alfa": 255,
+  "fet": true,
+  "storlek": 34,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "ink_topp": 1242,
+  "text": "Se alle ni størrelser."
+ }
+]

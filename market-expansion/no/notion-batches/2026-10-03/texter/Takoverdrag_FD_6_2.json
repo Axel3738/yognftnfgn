@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   20,
+   150,
+   1058,
+   233
+  ],
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 156,
+  "text": "Fra 1 189 kr, ikke 1 549 kr."
+ },
+ {
+  "box": [
+   39,
+   286,
+   1039,
+   327
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 292,
+  "text": "Fars dag-gave: takovertrekk i 210D oksfordduk, ni størrelser."
+ },
+ {
+  "box": [
+   27,
+   1086,
+   1055,
+   1169
+  ],
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1092,
+  "text": "Fra 1 189 kr, ord. 1 549 kr"
+ },
+ {
+  "box": [
+   312,
+   1218,
+   768,
+   1252
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "text": "Bestill senest 19. oktober"
+ }
+]

@@ -1,0 +1,87 @@
+[
+ {
+  "box": [
+   124,
+   158,
+   948,
+   242
+  ],
+  "fet": true,
+  "storlek": 77,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 164,
+  "text": "Til fars dag: bestill"
+ },
+ {
+  "box": [
+   133,
+   279,
+   943,
+   348
+  ],
+  "fet": true,
+  "storlek": 77,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 285,
+  "text": "senest 19. oktober."
+ },
+ {
+  "box": [
+   41,
+   408,
+   1035,
+   453
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "ink_topp": 414,
+  "text": "Takovertrekket får han på selv. Bare taket, ikke hele vognen."
+ },
+ {
+  "box": [
+   27,
+   1086,
+   1055,
+   1169
+  ],
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 1092,
+  "text": "Fra 1 189 kr, ord. 1 549 kr"
+ },
+ {
+  "box": [
+   312,
+   1218,
+   768,
+   1252
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "text": "Bestill senest 19. oktober"
+ }
+]

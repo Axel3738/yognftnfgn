@@ -1,0 +1,104 @@
+[
+ {
+  "box": [
+   52,
+   158,
+   1030,
+   238
+  ],
+  "fet": true,
+  "storlek": 78,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 164,
+  "text": "Dør, vinduer og luker"
+ },
+ {
+  "box": [
+   373,
+   279,
+   703,
+   348
+  ],
+  "fet": true,
+  "storlek": 76,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 285,
+  "text": "er fri."
+ },
+ {
+  "box": [
+   266,
+   412,
+   812,
+   446
+  ],
+  "fet": false,
+  "storlek": 31,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "ink_topp": 418,
+  "text": "Kanten henger 30 til 40 cm ned."
+ },
+ {
+  "box": [
+   240,
+   464,
+   838,
+   505
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "ink_topp": 470,
+  "text": "Etter sesongen: en favnstor pakke."
+ },
+ {
+  "box": [
+   27,
+   1086,
+   1055,
+   1169
+  ],
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "ink_topp": 1092,
+  "text": "Fra 1 189 kr, ord. 1 549 kr"
+ },
+ {
+  "box": [
+   312,
+   1218,
+   768,
+   1252
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "ink_topp": 1224,
+  "text": "Bestill senest 19. oktober"
+ }
+]

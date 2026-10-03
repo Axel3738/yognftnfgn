@@ -52,10 +52,16 @@ MANUELLA = {
     "Takoverdrag_FD_6_2": ["rubrik1", "underrad", "pris", "botten"],
     "Takoverdrag_FD_6_3": ["rubrik1", "rubrik2", "underrad", "pris", "botten"],
     "Takoverdrag_FD_6_4": ["rubrik1", "rubrik2", "underrad1", "underrad2", "pris", "botten"],
+    "Takoverdrag_PD_10_2": ["rubrik1", "rubrik2", "underrad", "pris", "prisunder"],
+    "Takoverdrag_PD_10_3": ["rubrik1", "rubrik2", "underrad", "pris", "prisunder"],
     "Taljset_BOF_2_1": ["rubrik1", "rubrik2", "underrad1", "underrad2", "pris"],
 }
 # CTA-knappen: bild → (form-id, pillfärg). Ritas som pill, inte som textruta.
-KNAPPAR = {"Taljset_BOF_2_1": ("knapp", [24, 72, 120])}
+KNAPPAR = {
+    "Taljset_BOF_2_1": ("knapp", [24, 72, 120]),
+    "Takoverdrag_PD_10_2": ("knapp", [24, 72, 120]),
+    "Takoverdrag_PD_10_3": ("knapp", [24, 72, 120]),
+}
 
 # ⚠️ Underrader och bottenrader är ALDRIG feta i de här mallarna — det syns i
 # bilden. Bredd/höjd-sökningen väljer ändå FET ibland, för mätrutan klipper
@@ -64,7 +70,15 @@ KNAPPAR = {"Taljset_BOF_2_1": ("knapp", [24, 72, 120])}
 # FET 29px avvikelse 0,223, medan systerraderna i samma mall kalibrerades till
 # normal 32px). Samma fälla som de fyra raderna 2026-10-01. Vikten låses
 # därför här, och bara storleken söks.
-LAST_NORMAL = ("underrad", "botten")
+LAST_NORMAL = ("underrad", "botten", "prisunder")
+
+# ⚠️ Rubriker och prisrader är ALLTID feta i de här mallarna — det syns i
+# bilden. Sökningen valde ändå normal för tre av dem (FD_6_1 rubrik2 "oftast
+# två." och båda PD_10-bildernas rubriker och prisrad), eftersom en normal text
+# i större grad får samma bläckbredd som en fet i mindre. Resultatet syntes
+# direkt i QA-bilden: den norska rubriken stod tunn bredvid den feta svenska.
+# Vikten låses därför, och bara storleken söks.
+LAST_FET = ("rubrik", "pris")
 
 _matare = ImageDraw.Draw(Image.new("RGB", (8, 8)))
 
@@ -105,8 +119,8 @@ def ruta_bredd(se_px, no_px):
 
 
 def main():
-    se = json.load(open(f"{B}/se-texter.json", encoding="utf-8"))["bilder"]
-    no = json.load(open(f"{B}/oversatt-output.json", encoding="utf-8"))["bilder"]
+    se = json.load(open(f"{B}/se-texter-kalla.json", encoding="utf-8"))["bilder"]
+    no = json.load(open(f"{B}/oversatt-output-kalla.json", encoding="utf-8"))["bilder"]
 
     ut = {}
     for namn, formider in MANUELLA.items():
@@ -118,7 +132,12 @@ def main():
             x0, y0, x1, y1 = f["box"]
             svtext = f["rader"][0]
             notext = no[namn][fid]["rader"][0]
-            vikter = (False,) if fid.startswith(LAST_NORMAL) else (True, False)
+            if fid.startswith(LAST_NORMAL):
+                vikter = (False,)
+            elif fid.startswith(LAST_FET):
+                vikter = (True,)
+            else:
+                vikter = (True, False)
             fel, fet, st, w, h = kalibrera(svtext, x1 - x0 + 1, y1 - y0 + 1, vikter)
             now, _ = blackmatt(notext, fet, st)
             bredd = ruta_bredd(x1 - x0 + 1, now)
@@ -152,8 +171,33 @@ def main():
 
     json.dump(ut, open(f"{B}/overrides.json", "w", encoding="utf-8"),
               ensure_ascii=False, indent=1)
+
+    # `oversatt-batch.py` läser PLATTA filer: bildnamn överst, `former` som en
+    # ORDNAD lista, och i norskan `texter: [{rader:[i], text}]`. Mina läsbara
+    # källfiler är nästlade med form-id, så de skrivs om här. Ordningen är
+    # MANUELLA + knappen, alltså exakt samma index som `box_for_form`.
+    copy = json.load(open(f"{B}/oversatt-output-kalla.json", encoding="utf-8"))["copy"]
+    mal = {r["namn"]: r["mal"]["annonsNamn"]
+           for r in json.load(open(f"{B}/jobb.json", encoding="utf-8"))["jobb"]
+           if r.get("mal", {}).get("annonsNamn")}
+    se_platt, no_platt = {}, {}
+    for namn, formider in MANUELLA.items():
+        ids = list(formider) + ([KNAPPAR[namn][0]] if namn in KNAPPAR else [])
+        former = {f["id"]: f for f in se[namn]["former"]}
+        se_platt[namn] = {"former": [
+            {"typ": former[i]["typ"], "rader": former[i]["rader"]} for i in ids]}
+        no_platt[namn] = {
+            "former": [{"texter": [{"rader": [0], "text": no[namn][i]["rader"][0]}]}
+                       for i in ids],
+            "copy": copy[mal[namn]],
+        }
+    json.dump(se_platt, open(f"{B}/se-texter.json", "w", encoding="utf-8"),
+              ensure_ascii=False, indent=1)
+    json.dump(no_platt, open(f"{B}/oversatt-output.json", "w", encoding="utf-8"),
+              ensure_ascii=False, indent=1)
     print(f"\noverrides.json: {len(ut)} bilder, "
           f"{sum(len(v['box_for_form']) for v in ut.values())} rutor")
+    print(f"se-texter.json + oversatt-output.json: {len(se_platt)} bilder (platt form)")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,370 @@
+{
+ "bilder": {
+  "Takoverdrag_FD_6_1": {
+   "badge": {
+    "rader": [
+     "Fars dag-rea"
+    ]
+   },
+   "rubrik1": {
+    "rader": [
+     "Helovertrekk trenger"
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "oftest to."
+    ]
+   },
+   "rubrik3": {
+    "rader": [
+     "Taket klarer han alene."
+    ]
+   },
+   "underrad": {
+    "rader": [
+     "Dette ligger bare på taket og skurer ikke lakken."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr, ord. 1 549 kr"
+    ]
+   },
+   "botten": {
+    "rader": [
+     "Bestill senest 19. oktober"
+    ]
+   }
+  },
+  "Takoverdrag_FD_6_2": {
+   "badge": {
+    "rader": [
+     "Fars dag-rea"
+    ]
+   },
+   "rubrik1": {
+    "rader": [
+     "Fra 1 189 kr, ikke 1 549 kr."
+    ]
+   },
+   "underrad": {
+    "rader": [
+     "Fars dag-gave: takovertrekk i 210D oksfordduk, ni størrelser."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr, ord. 1 549 kr"
+    ]
+   },
+   "botten": {
+    "rader": [
+     "Bestill senest 19. oktober"
+    ]
+   }
+  },
+  "Takoverdrag_FD_6_3": {
+   "badge": {
+    "rader": [
+     "Fars dag-rea"
+    ]
+   },
+   "rubrik1": {
+    "rader": [
+     "Til fars dag: bestill"
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "senest 19. oktober."
+    ]
+   },
+   "underrad": {
+    "rader": [
+     "Takovertrekket får han på selv. Bare taket, ikke hele vognen."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr, ord. 1 549 kr"
+    ]
+   },
+   "botten": {
+    "rader": [
+     "Bestill senest 19. oktober"
+    ]
+   }
+  },
+  "Takoverdrag_FD_6_4": {
+   "badge": {
+    "rader": [
+     "Fars dag-rea"
+    ]
+   },
+   "rubrik1": {
+    "rader": [
+     "Dør, vinduer og luker"
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "er fri."
+    ]
+   },
+   "underrad1": {
+    "rader": [
+     "Kanten henger 30 til 40 cm ned."
+    ]
+   },
+   "underrad2": {
+    "rader": [
+     "Etter sesongen: en favnstor pakke."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr, ord. 1 549 kr"
+    ]
+   },
+   "botten": {
+    "rader": [
+     "Bestill senest 19. oktober"
+    ]
+   }
+  },
+  "Takoverdrag_PD_10_2": {
+   "rubrik1": {
+    "rader": [
+     "Ligger i ro når det blåser."
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "Ni størrelser."
+    ]
+   },
+   "underrad": {
+    "rader": [
+     "Fra 3 × 5,5 til 3 × 13,5 meter."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr."
+    ]
+   },
+   "prisunder": {
+    "rader": [
+     "Stropper på alle fire sider, 2,5 m, justerbare i spennen."
+    ]
+   },
+   "knapp": {
+    "rader": [
+     "Se alle ni størrelser."
+    ]
+   }
+  },
+  "Takoverdrag_PD_10_3": {
+   "rubrik1": {
+    "rader": [
+     "3 × 5,5 til 3 × 13,5 meter."
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "Én passer din."
+    ]
+   },
+   "underrad": {
+    "rader": [
+     "Mål fra front til bakkant. Velg størrelsen minst like lang."
+    ]
+   },
+   "pris": {
+    "rader": [
+     "Fra 1 189 kr."
+    ]
+   },
+   "prisunder": {
+    "rader": [
+     "Stropper på alle fire sider, 2,5 m, justerbare i spennen."
+    ]
+   },
+   "knapp": {
+    "rader": [
+     "Se alle ni størrelser."
+    ]
+   }
+  },
+  "Taljset_BOF_2_1": {
+   "rubrik1": {
+    "rader": [
+     "14 dager fra den dagen du"
+    ]
+   },
+   "rubrik2": {
+    "rader": [
+     "får varen"
+    ]
+   },
+   "underrad1": {
+    "rader": [
+     "14 dagers angrerett fra den dagen du får varen, alle 30"
+    ]
+   },
+   "underrad2": {
+    "rader": [
+     "delene i én veske"
+    ]
+   },
+   "pris": {
+    "rader": [
+     "1 039 kr. Ordinært 1 359 kr."
+    ]
+   },
+   "knapp": {
+    "rader": [
+     "Se vesken med 30 deler"
+    ]
+   }
+  }
+ },
+ "copy": {
+  "Sotarset_NO_FD_3_H1": {
+   "message": "Rens pipa selv mellom feierens besøk. 9 fleksible stenger på 41 cm skrus sammen til 3,69 meter, med nylonbørste på 100 mm i toppen. Fars dag-rea: 389 kr, ord. 509 kr. Bestill senest 19. oktober.",
+   "headline": "Feiesett til fars dag",
+   "description": ""
+  },
+  "Sotarset_NO_FD_3_H2": {
+   "message": "Rens pipa selv mellom feierens besøk. 9 fleksible stenger på 41 cm skrus sammen til 3,69 meter, med nylonbørste på 100 mm i toppen. Fars dag-rea: 389 kr, ord. 509 kr. Bestill senest 19. oktober.",
+   "headline": "Feiesett til fars dag",
+   "description": ""
+  },
+  "Sotarset_NO_FD_3_H3": {
+   "message": "Rens pipa selv mellom feierens besøk. 9 fleksible stenger på 41 cm skrus sammen til 3,69 meter, med nylonbørste på 100 mm i toppen. Fars dag-rea: 389 kr, ord. 509 kr. Bestill senest 19. oktober.",
+   "headline": "Feiesett til fars dag",
+   "description": ""
+  },
+  "Sotarset_NO_PD_1_H5": {
+   "message": "Fleksible stenger følger bøyen i røret i stedet for å sette seg fast. Da kommer børsten forbi svingen. Feiesett for 389 kr, ord. 509 kr.",
+   "headline": "Følger bøyen. Setter seg ikke fast.",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_6_1": {
+   "message": "Helovertrekk trenger oftest to, takovertrekket får han på selv. Det ligger bare på taket, skurer ikke mot lakken, og dør, vinduer og luker er fri. Fars dag-rea: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Takovertrekk han får på alene",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_6_2": {
+   "message": "Helovertrekk trenger oftest to, takovertrekket får han på selv. Det ligger bare på taket, skurer ikke mot lakken, og dør, vinduer og luker er fri. Fars dag-rea: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Takovertrekk han får på alene",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_6_3": {
+   "message": "Helovertrekk trenger oftest to, takovertrekket får han på selv. Det ligger bare på taket, skurer ikke mot lakken, og dør, vinduer og luker er fri. Fars dag-rea: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Takovertrekk han får på alene",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_6_4": {
+   "message": "Helovertrekk trenger oftest to, takovertrekket får han på selv. Det ligger bare på taket, skurer ikke mot lakken, og dør, vinduer og luker er fri. Fars dag-rea: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Takovertrekk han får på alene",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_10_3": {
+   "message": "Mål vognen fra front til bakkant, uten trekkstangen. Velg størrelsen som er minst like lang. Alle ni er 3 meter brede, fra 1 189 kr.",
+   "headline": "Én av ni passer vognen din",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_10_2": {
+   "message": "Ligger i ro når det blåser. Ni størrelser, fra 3 × 5,5 til 3 × 13,5 meter. Stropper på alle fire sider, 2,5 m, justerbare i spennen.",
+   "headline": "Ligger i ro når det blåser",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_3_H2": {
+   "message": "Takovertrekk fra 1 189 kr, ord. 1 549 kr. Stropper på alle fire sider som du justerer i spennen, og vannet renner av. Alle ni størrelser er 3 meter brede. Bestill senest 19. oktober.",
+   "headline": "Fars dag-rea på takovertrekk",
+   "description": ""
+  },
+  "Takovertrekk_NO_FD_3_H1": {
+   "message": "Mål campingvognen først. Det finnes ni lengder, fra 5,5 til 13,5 meter. Så stropper på alle fire sider, og vannet renner av. Fars dag-rea fra 1 189 kr.",
+   "headline": "Ni lengder til campingvognen",
+   "description": ""
+  },
+  "Takovertrekk_NO_OB_9_H1": {
+   "message": "Et løst hjørne er nok til at et overtrekk flyr av gårde. Her sitter stropper på alle fire sider, 2,5 m og justerbare i spennen. To ekstra forsterkede strammestropper (10,5 m) følger med. Taket er det du aldri ser, og det som koster mest å reparere. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "headline": "Stropper, ikke en knute",
+   "description": ""
+  },
+  "Takovertrekk_NO_OB_7_H1": {
+   "message": "Et helovertrekk som legges rundt hele vognen blir tett hele veien, det stemmer. Dette ligger bare på taket, sola treffer den sølvbelagte oversiden i stedet for taket, og vannet renner av i stedet for å samle seg, takket være 210D oksfordduken. Sidene, vinduene og døren er åpne som vanlig. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "headline": "Tett og beskyttet er ikke det samme",
+   "description": ""
+  },
+  "Takovertrekk_NO_OB_6_H1": {
+   "message": "Et helovertrekk som legges ned til bakken blir tett rundt hele vognen. Dette ligger bare på taket, så dør, vinduer og luker er fri. Stroppene sitter på alle fire sider, er 2,5 m lange og justerbare i spennen, pluss to strammestropper på 10,5 m. Fra 1 189 kr i stedet for 1 549 kr, du sparer 360 kr, 23 %.",
+   "headline": "Bare taket dekkes, ikke hele vognen",
+   "description": ""
+  },
+  "Takovertrekk_NO_CS_2_H2": {
+   "message": "Taket koster mest å reparere, og vann samler seg ved takluker hvis det ikke beskyttes.\nDette overtrekket dekker bare taket, og håndteres av én person.\n1 189 kr (ord. 1 549 kr, spar 360 kr / 23 %). Bestill takovertrekket ditt.",
+   "headline": "Taket koster mest å reparere.",
+   "description": ""
+  },
+  "Takovertrekk_NO_CS_2_H3": {
+   "message": "Taket er det du aldri ser, og det som koster mest å reparere.\nDette overtrekket dekker bare taket: sølvbelagt 210D oksfordduk, stropper på alle fire sider som justeres i spennen.\nNi størrelser, fra 3 × 5,5 til 3 × 13,5 meter. Én av dem passer campingvognen din.\nFra 1 189 kr (ord. 1 549 kr, spar 360 kr / 23 %). Bestill takovertrekket ditt.",
+   "headline": "Ni størrelser. Én til din campingvogn.",
+   "description": ""
+  },
+  "Spikkesett_NO_BOF_2_1": {
+   "message": "14 dagers angrerett fra den dagen du får varen. Alle 30 delene, 6 kniver og 6 små jern, ligger samlet i én veske. 1 039 kr, ordinært 1 359 kr.",
+   "headline": "14 dager til å angre kjøpet",
+   "description": ""
+  }
+ },
+ "andringar": [
+  {
+   "var": "alla Takoverdrag/Takovertrekk",
+   "svenska": "Från 1 129 kr, ord. 1 469 kr; spara 340 kr",
+   "norska": "Fra 1 189 kr, ord. 1 549 kr; spar 360 kr (23 %)",
+   "varfor": "Norska priser, spar och procent omräknade."
+  },
+  {
+   "var": "Sotarset_*",
+   "svenska": "459 kr, ord. 599 kr",
+   "norska": "389 kr, ord. 509 kr",
+   "varfor": "Norska priser."
+  },
+  {
+   "var": "Taljset_BOF_2_1 / Spikkesett_NO_BOF_2_1",
+   "svenska": "869 kr, ord. 1 139 kr",
+   "norska": "1 039 kr, ordinært 1 359 kr",
+   "varfor": "Norska priser; varan heter Spikkesett; 'jern' blir 'små jern' som i fakta."
+  },
+  {
+   "var": "Takoverdrag_PD_10_2",
+   "svenska": "Sitter kvar när det blåser",
+   "norska": "Ligger i ro når det blåser",
+   "varfor": "Norska sidans formulering 'ligger i ro i vind'."
+  },
+  {
+   "var": "Takovertrekk_NO_OB_9_H1",
+   "svenska": "Hakar i krok, inte i en knut; hakas i en krok i nederkant",
+   "norska": "Stropper, ikke en knute; krok struken",
+   "varfor": "Krok finns inte i den norska faktalistan; rubriken byggd på stropper i stället."
+  },
+  {
+   "var": "Takovertrekk_NO_OB_9_H1 / CS_2_H2 / CS_2_H3",
+   "svenska": "Taket kostar mest att laga",
+   "norska": "Taket koster mest å reparere",
+   "varfor": "Står inte i faktalistan; behållen som annonsens vinkel, men inte verifierad i Norge. Stryk om ni vill vara strikta."
+  },
+  {
+   "var": "Sotarset_NO_PD_1_H5",
+   "svenska": "Följer kröken. Fastnar inte.",
+   "norska": "Følger bøyen. Setter seg ikke fast.",
+   "varfor": "Hviler på 'fleksible stenger'; 'setter seg ikke fast' står inte i fakta."
+  }
+ ],
+ "hoppa": []
+}
