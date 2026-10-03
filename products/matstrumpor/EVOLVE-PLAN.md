@@ -61,6 +61,9 @@ Facit för siffrorna: 151 tester gröna, och en läsning mot Meta 2026-10-01 (15
   spend mot veckan före) in i Skalnings kungens `agent/etikett.mjs`.
 - **Kreatörslistan:** djupkollen (3 videor per kreatör, poängmallen) görs när någon svarat,
   innan pengar skickas.
+- **Chadbot Q4 (2026-10-03):** fråga → svar + utvärdering → följdfråga → action items. Frågan i
+  `CHADBOT-2026-10-03.md`, svaret och utvärderingen i `CHADBOT-SVAR-2026-10-03.md`, förra julens
+  vinnare i `vinnare-2025.md`. Action items skrivs först efter följdfrågans svar.
 
 ## 🔔 Påminnelser (sessionen påminner, Axel behöver inte komma ihåg)
 
