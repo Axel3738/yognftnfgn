@@ -4,6 +4,11 @@ Gruppen heter `evolve-8484`. Lektionerna nås som
 `https://www.skool.com/evolve-8484/classroom/<kurs-id>?md=<lektions-id>`.
 Hämtas med `tools/skool/` (inloggning via `SKOOL_EMAIL`/`SKOOL_PASSWORD` i miljön).
 📝 = lektionen har egen text (inte bara video). Siffran är antal tecken.
+⚠️ Siffran är ett urval: lektioner UTAN 📝 kan ändå bära länkar till Canva- och
+Google-dokument med hela innehållet (mätt 2026-10-03: "13 Winning Static Ad
+Templates", "Banger Static Ads Prompt" och Q4-lektionerna står utan 📝 men gav
+13 mallar, en 35 kB-prompt och ett 24 kB-dokument). Anteckningarna om statics:
+`STATICS.md`.
 
 ## 👣 Evolve (Start Here) — kurs-id `fc758841`
 

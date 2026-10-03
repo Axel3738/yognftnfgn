@@ -25,6 +25,7 @@ Kräver env `KIE_API_KEY`. Noll externa beroenden — bara inbyggda `fetch`.
 |---|---|
 | `kie.mjs` | Klient mot kie.ai: `createTask` → polla `recordInfo` → bild-URL |
 | `run.mjs` | Läser jobbfilen, granskar, genererar, laddar ner, skriver manifest |
+| `koncept.mjs` + `koncept/` | Konceptbasen ("vår egen Gro", 2026-10-03): 20 layouter ur Evolves mallar och kontots vinnare, väljaren som roterar koncept per produkt, kontrollen av jobbfilen och minnet `koncept/logg.jsonl`. Läs `koncept/README.md` |
 | `output/<datum>/` | Genererade bilder + `_manifest.json` (committas inte) |
 
 ## Jobbfilen

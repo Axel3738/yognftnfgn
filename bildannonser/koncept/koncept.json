@@ -1,0 +1,763 @@
+{
+  "kommentar": "Bäverbutikens konceptbas för bildannonser — vår egen 'Gro'. Byggd 2026-10-03 ur Evolves 13 Winning Static Ad Templates, Evolves BFCM 2025 Winning Ads Document (statics-delen) och kontots egna mätta vinnare. Varje koncept pekar på sin källa; ett koncept föds aldrig ur tomma intet (CLAUDE.md → Så lär sig systemet). Läs README.md i samma mapp. Kodfält: vinklar = annonskoder ur docs/naming-convention.md som konceptet passar; funnel = var i tratten; status 'klar' = går att rendera med bildannonser/text.py som den ser ut i dag, 'tillagg' = behöver ett tillägg i text.py (står i tillagg_text_py) och väljs inte av rutinen förrän det finns; block = skelett för text.py-spec:en (zon + stil, plus text.py:s egna flaggor storlek/rader/meningar/platta/ljus — inga andra nycklar, text.py läser inga färger ur spec:en), raderna själva kommer ALLTID ordagrant ur briefen; bildprompt = engelskt skelett för kie.ai, {PRODUKT} byts mot produktbeskrivningen ur referensfotot, {SCEN} mot briefens scen; kraver = de rader briefen måste bära (namnen är briefens Script/shot list-rader).",
+  "version": 1,
+  "andrad": "2026-10-03",
+  "koncept": [
+    {
+      "id": "K01",
+      "namn": "Reabannern",
+      "kalla": "Kontots egen vinnare Takoverdrag_CS_2_1 (23 471 kr, 88 köp, ROAS 4,77 på 30 dagar, läst 2026-10-03) = Evolve BFCM 'Product BFCM Ad' / 'Biggest Sale Of Year': rean är det första ögat ser, produkten ren på ljus bakgrund, priset tydligt.",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "FD"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Färgplatta i topp (rött/orange) med rabatten eller rean som rubrik, överstruket ordinarie pris och nytt pris direkt under, en kort rad om lagret/sista dagen, produkten utklippt på vit eller ljus bakgrund i nedre två tredjedelar.",
+      "kraver": [
+        "Headline",
+        "Price band",
+        "Sub-line"
+      ],
+      "bildprompt": "Clean product shot of {PRODUKT}, cut out on a plain white studio background, soft shadow, product fills the lower two thirds of the frame, the top third is an empty flat area. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik",
+          "platta": true
+        },
+        {
+          "zon": "topp-under",
+          "stil": "prisover"
+        },
+        {
+          "zon": "topp-under",
+          "stil": "pris"
+        },
+        {
+          "zon": "topp-under",
+          "stil": "brod"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Rea och procent bara när briefen bär raden REA BESLUTAD AV ÄGAREN (verifiera.py).",
+        "Jämförpriset är ett ritat streck, aldrig ordet.",
+        "Större rabattyta gav lägre ROAS på Grillkliniken (docs/mastern-static-analys.md) — plattan tar högst en tredjedel."
+      ]
+    },
+    {
+      "id": "K02",
+      "namn": "Riktigt foto + kundcitat",
+      "kalla": "Kontots egen vinnare Takoverdrag_SP_2_1 (15 555 kr, 47 köp, ROAS 3,50 på 30 dagar) = Evolve mall 1 'Moms of 15 year olds' (citatkortet under bilden).",
+      "funnel": "MOF",
+      "vinklar": [
+        "SP"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Ett foto som ser ut som kundens egen mobilbild av produkten i bruk (riktigt foto nivå 1 i framework-bildannonser.md, annars nivå 3 med referens), utan text på fotot. Under fotot en ljus platta med citatet i fetstil, namn och ålder som attribution, knapp och en rad om öppet köp om briefen bär den.",
+      "kraver": [
+        "Quote",
+        "Attribution",
+        "CTA"
+      ],
+      "bildprompt": "Candid customer-style smartphone photo of {PRODUKT} in real use: {SCEN}. Natural daylight, slightly imperfect framing, no studio feel, no people's faces. The lower quarter of the frame is a calm, uncluttered area. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "botten-over",
+          "stil": "citat"
+        },
+        {
+          "zon": "botten-over",
+          "stil": "attrib"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        },
+        {
+          "zon": "botten",
+          "stil": "brod"
+        }
+      ],
+      "regler": [
+        "Citatet måste vara en riktig recension (Judge.me/Trustpilot) — aldrig påhittat, aldrig 'verifierad kund' på en importerad recension (klaviyo/spoks/README.md → Falska citat).",
+        "Citatet är det visuellt största; hooken (om någon) står ovanför det (bildannonser.md steg 3, punkt 4)."
+      ]
+    },
+    {
+      "id": "K03",
+      "namn": "Avatar-utropet",
+      "kalla": "Evolve mall 1 'MOMS OF 15 YEAR OLDS': rubriken säger VEM annonsen är till, i största möjliga grad, sedan beviset.",
+      "funnel": "TOF",
+      "vinklar": [
+        "SP",
+        "PD",
+        "GT"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Vit eller ljus bakgrund. Rubriken är ett utrop till en specifik person ('Till dig med husvagnen på uppställning i vinter'), satt i mycket stor grad över halva ytan. Under: produkten i bruk eller ett citat från just den personen. Ingen rea.",
+      "kraver": [
+        "Headline",
+        "Sub-line"
+      ],
+      "bildprompt": "{PRODUKT} photographed in its real setting: {SCEN}, composed in the lower half of the frame, the upper half is a plain light wall or sky with no detail. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik",
+          "storlek": 104,
+          "rader": 4
+        },
+        {
+          "zon": "botten",
+          "stil": "underrub"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Avataren ska vara en sub-avatar ur products/<id>/dna.md, aldrig 'husbilsägare' i största allmänhet.",
+        "Rubriken är ett påstående, aldrig en fråga."
+      ]
+    },
+    {
+      "id": "K04",
+      "namn": "Faktarutnätet",
+      "kalla": "Evolve mall 2 (fyra rutor: produkt i en, tre fakta i de andra) och mall 4:s svarta faktachips.",
+      "funnel": "MOF",
+      "vinklar": [
+        "PD",
+        "OB"
+      ],
+      "status": "tillagg",
+      "tillagg_text_py": "En zon 'rutnat-2x2' som delar ytan i fyra celler och ritar en etikett + ett tal per cell.",
+      "sa_ser_den_ut": "Ytan delad i fyra lika rutor: produkten i en, tre mätbara fakta ur produktsidan i de andra (tal stort, etikett under). Två färger växelvis.",
+      "kraver": [
+        "Headline",
+        "Fact 1",
+        "Fact 2",
+        "Fact 3"
+      ],
+      "bildprompt": "{PRODUKT} cut out on a flat solid colour square that occupies exactly the top-left quarter of the frame; the other three quarters are flat solid colour fields in two alternating tones with nothing in them. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "rutnat-2x2",
+          "stil": "etikett"
+        }
+      ],
+      "regler": [
+        "Bara tal som står på produktsidan (framework steg 7)."
+      ]
+    },
+    {
+      "id": "K05",
+      "namn": "Talet. Ingen smärta.",
+      "kalla": "Evolve mall 3 'X+ HOURS. NO PAIN POINT.' (rubrik i två korta satser, sedan fyra nyttorader) och Evolves exempel 'Lisa' i How To Write Image Ads: 'STOP NEEDING DISCIPLINE. START LOWERING CORTISOL.'",
+      "funnel": "MOF",
+      "vinklar": [
+        "PD",
+        "SO"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Mörk eller djupblå helbild med produkten stor till höger, rubriken i två korta satser i versaler uppe till vänster, under den fyra korta nyttorader med tunn linje under varje.",
+      "kraver": [
+        "Headline",
+        "Benefit 1",
+        "Benefit 2",
+        "Benefit 3"
+      ],
+      "bildprompt": "{PRODUKT} large on the right half of the frame against a deep, dark, slightly moody studio background (navy or charcoal), dramatic side light, the left half of the frame is dark and empty. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "vanster-mitt",
+          "stil": "rubrik",
+          "storlek": 72,
+          "rader": 4,
+          "ljus": true
+        },
+        {
+          "zon": "vanster-nere",
+          "stil": "lista",
+          "ljus": true
+        }
+      ],
+      "regler": [
+        "Två satser, båda påståenden. Första satsen är talet eller handlingen, andra är det som försvinner."
+      ]
+    },
+    {
+      "id": "K06",
+      "namn": "Det här är X. Inte Y.",
+      "kalla": "Evolve mall 4 'This is a X. Not a Y.' och exemplet i Evolves Banger Static Ads Prompt ('This is a meal. Not a protein shake'). Mönstret omdefinierar produkten.",
+      "funnel": "MOF",
+      "vinklar": [
+        "PD",
+        "OB",
+        "CO"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Produkten helbild på vänstra 55 procent, en gul eller brandfärgad panel på högra 45 procent med rubriken 'Det här är ett taköverdrag. Inte en presenning.' och tre svarta faktachips under.",
+      "kraver": [
+        "Headline",
+        "Fact 1",
+        "Fact 2",
+        "Fact 3"
+      ],
+      "bildprompt": "{PRODUKT} in use, {SCEN}, composed so the product fills the left 55 percent of the frame; the right 45 percent is a flat solid warm yellow panel with nothing on it, hard vertical edge between the two. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "hoger-mitt",
+          "stil": "rubrik",
+          "storlek": 64,
+          "rader": 4
+        },
+        {
+          "zon": "hoger-nere",
+          "stil": "lista",
+          "platta": true
+        }
+      ],
+      "regler": [
+        "Y är det kunden använder i dag (presenning, gammal filt), aldrig en konkurrents namn."
+      ]
+    },
+    {
+      "id": "K07",
+      "namn": "Mekanismkortet",
+      "kalla": "Evolve mall 5 (lila platta, spec-badge uppe till vänster, pris med streck uppe till höger, stor rubrik i botten, garantirad under).",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "SO",
+        "BOF"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "En mättad enfärgad bakgrund (brandets blå eller djupröd), produkten utklippt i mitten, en liten vit spec-badge uppe till vänster (måttet eller materialet), priset med överstruket jämförpris uppe till höger, rubriken stor i botten, en kort rad under rubriken om öppet köp när briefen bär den.",
+      "kraver": [
+        "Headline",
+        "Badge",
+        "Price band"
+      ],
+      "bildprompt": "{PRODUKT} cut out and centred on a flat, saturated single-colour background (deep blue), subtle radial light behind the product, generous empty margins top and bottom. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "vanster-mitt",
+          "stil": "etikett",
+          "platta": true
+        },
+        {
+          "zon": "hoger-mitt",
+          "stil": "pris",
+          "ljus": true
+        },
+        {
+          "zon": "botten",
+          "stil": "rubrik",
+          "ljus": true
+        },
+        {
+          "zon": "botten",
+          "stil": "brod",
+          "ljus": true
+        }
+      ],
+      "regler": [
+        "Badgen är ett faktum ur produktsidan (420D, 6,5 × 3 m), aldrig ett värdeord."
+      ]
+    },
+    {
+      "id": "K08",
+      "namn": "Jag-raden",
+      "kalla": "Evolve mall 6 'I Accidentally Lost 12 Pounds At 52' (handskriven jag-rubrik på mörk botten, produkten till vänster, tre punkter till höger).",
+      "funnel": "MOF",
+      "vinklar": [
+        "SP"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Mörkgrå botten. Rubriken är kundens egen mening i jag-form ur en riktig recension, satt stort överst. Produkten till vänster, tre korta punkter till höger om vad som hände.",
+      "kraver": [
+        "Quote",
+        "Benefit 1",
+        "Benefit 2",
+        "Benefit 3"
+      ],
+      "bildprompt": "{PRODUKT} cut out on a flat charcoal grey background, placed in the lower left of the frame, the top third and the right half are empty dark areas. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "citat",
+          "meningar": false,
+          "ljus": true
+        },
+        {
+          "zon": "hoger-nere",
+          "stil": "lista",
+          "ljus": true
+        },
+        {
+          "zon": "botten",
+          "stil": "attrib",
+          "ljus": true
+        }
+      ],
+      "regler": [
+        "Jag-raden är ett ordagrant citat ur en riktig recension — samma regel som K02."
+      ]
+    },
+    {
+      "id": "K09",
+      "namn": "Spec-listan",
+      "kalla": "Evolve mall 7 '12-HOUR SHIFT SHOES' (rubrik i versaler, sex korta punkter med streck framför, produkten i nedre halvan).",
+      "funnel": "BOF",
+      "vinklar": [
+        "PD",
+        "BOF"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Vit bakgrund. Rubriken i versaler överst, fem till sex korta punkter med allt kunden vill veta innan köp (mått, material, vad som ingår), produkten i nedre halvan, knapp längst ner.",
+      "kraver": [
+        "Headline",
+        "List"
+      ],
+      "bildprompt": "{PRODUKT} photographed on a plain white background, composed in the lower half of the frame, the upper half is pure white and empty. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik"
+        },
+        {
+          "zon": "topp-under",
+          "stil": "lista"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Varje punkt är ett faktum ur produktsidan. Inga värdeord."
+      ]
+    },
+    {
+      "id": "K10",
+      "namn": "Situationerna",
+      "kalla": "Evolve mall 8 'TEEN ALWAYS GRUMPY?' (rubrik, underrad, nio runda bilder på situationer, rea-sticker). Hos oss är rubriken ett påstående, aldrig en fråga (docs/copy-regler.md).",
+      "funnel": "TOF",
+      "vinklar": [
+        "SO",
+        "PD"
+      ],
+      "status": "tillagg",
+      "tillagg_text_py": "En zon 'ringar-3x3' som ritar nio runda urklipp med etikett under varje.",
+      "sa_ser_den_ut": "Mörk botten, rubriken överst, en underrad, sedan nio runda bilder på situationer där problemet uppstår, var och en med en etikett.",
+      "kraver": [
+        "Headline",
+        "Sub-line",
+        "Call out 1",
+        "Call out 2",
+        "Call out 3"
+      ],
+      "bildprompt": "Nine small circular photographs of everyday situations where {PRODUKT} is needed ({SCEN}), arranged in a 3 by 3 grid on a dark brown background, the top third of the frame empty. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik",
+          "ljus": true
+        },
+        {
+          "zon": "ringar-3x3",
+          "stil": "etikett"
+        }
+      ],
+      "regler": []
+    },
+    {
+      "id": "K11",
+      "namn": "Gåvorna runt produkten",
+      "kalla": "Evolve mall 9 'GET 4 FREE GIFTS' (rosa chips med en nytta vardera flytande runt produkten) och BFCM-typen 'USP Call Out + FREE'. Passar Q4-ramverkets bonusprodukt (factory/PLAN.md punkt 6).",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "GT"
+      ],
+      "status": "tillagg",
+      "tillagg_text_py": "Chips på fria positioner runt produkten (lista av {text, x, y}).",
+      "sa_ser_den_ut": "Ljus himmel eller enfärgad botten, produkten i mitten, rubriken 'Fyra saker på köpet' överst, fem till sex färgade chips runt produkten med en sak vardera.",
+      "kraver": [
+        "Headline",
+        "Chip 1",
+        "Chip 2",
+        "Chip 3"
+      ],
+      "bildprompt": "{PRODUKT} cut out and centred on a soft light-blue gradient background with plenty of empty space all around it. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik"
+        },
+        {
+          "zon": "chips",
+          "stil": "etikett"
+        }
+      ],
+      "regler": [
+        "Varje 'gratis' måste finnas i butiken som bonusprodukt eller paketnivå — aldrig påhittad."
+      ]
+    },
+    {
+      "id": "K12",
+      "namn": "Vänster eller höger?",
+      "kalla": "Evolve mall 10 'Left or right? Just add both to cart. One's on us.' (två produkter sida vid sida, seriffrubrik, en rad under).",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "BOF"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Ljusgrå botten. Två varianter eller två storlekar av produkten sida vid sida som två höga paneler, rubriken överst, en rad under som bär erbjudandet (två-pack, köp 2 få 2, en på köpet).",
+      "kraver": [
+        "Headline",
+        "Sub-line"
+      ],
+      "bildprompt": "Two tall vertical product photographs of {PRODUKT} side by side as two equal panels with a thin gap between them, on a light grey background, a calm empty band above and below the panels. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik"
+        },
+        {
+          "zon": "botten",
+          "stil": "underrub"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Erbjudandet måste finnas i butiken (paketkod eller automatisk rabatt), kontrollerat före rendering."
+      ]
+    },
+    {
+      "id": "K13",
+      "namn": "Det här är bröd. Det här är frukost.",
+      "kalla": "Evolve mall 11 (Nutella: två små bilder bredvid varandra, en etikett under varje, en tagline under) och exemplet i Banger Static Ads Prompt. Transformation som två märkta bilder — vårt före/efter.",
+      "funnel": "MOF",
+      "vinklar": [
+        "SO",
+        "PD",
+        "CO"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Vit botten. Två lika stora bilder i övre halvan: utan produkten till vänster, med produkten till höger, samma plats och samma ljus. En etikett under varje ('Det här är en båt i snön.' / 'Det här är en båt i vår.'). En rad under.",
+      "kraver": [
+        "Label left",
+        "Label right",
+        "Sub-line"
+      ],
+      "bildprompt": "Two square photographs side by side in the upper half of the frame on a pure white background: left panel shows {SCEN} WITHOUT the product, right panel shows the exact same scene, same camera, same light, WITH {PRODUKT} in place. The lower half of the frame is empty white. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "vanster-mitt",
+          "stil": "etikett",
+          "platta": true
+        },
+        {
+          "zon": "hoger-mitt",
+          "stil": "etikett",
+          "platta": true
+        },
+        {
+          "zon": "botten",
+          "stil": "underrub"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Högra panelen genereras FRÅN den vänstra (framework steg 4.3) så att enda skillnaden är produkten."
+      ]
+    },
+    {
+      "id": "K14",
+      "namn": "Scenen + raden",
+      "kalla": "Evolve mall 12 (helbildsscen, en fet kondenserad rubrik i botten, rund detaljbild uppe till vänster) och kontots Bathuv_PD_2_1 / Regnkedjan_CS_2_1.",
+      "funnel": "TOF",
+      "vinklar": [
+        "PD",
+        "SP",
+        "GT",
+        "FD"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Helbildsfoto av produkten i sin miljö (nivå 3 med referens), ingen platta, bara en vit fet rubrik i versaler över nedre kanten med mörk scrim bakom, och en liten knapp.",
+      "kraver": [
+        "Headline"
+      ],
+      "bildprompt": "Full-bleed photograph of {PRODUKT} in its real environment: {SCEN}. Cinematic natural light, the lower quarter of the frame darker and calm, nothing important there. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "botten",
+          "stil": "rubrik",
+          "storlek": 70,
+          "ljus": true
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Rubriken samverkar med eller kontrasterar mot bilden (ITERATIONS-PLAYBOOK hook issue 1) — den beskriver aldrig bara vad som syns."
+      ]
+    },
+    {
+      "id": "K15",
+      "namn": "Dem mot oss",
+      "kalla": "Evolve mall 13 'Them / Brand … None of that.' (två kolumner, callouts på vänster, en rad på höger) och ANALYSMETOD:s format 'jämförelse'.",
+      "funnel": "MOF",
+      "vinklar": [
+        "OB",
+        "CO"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Enfärgad blå botten delad av en vit lodrät linje. Vänster: 'Presenningen' med fyra korta anmärkningar. Höger: 'Taköverdraget' med en rad: 'Inget av det.' Produkten under respektive rubrik.",
+      "kraver": [
+        "Label left",
+        "Label right",
+        "List",
+        "Sub-line"
+      ],
+      "bildprompt": "Split composition on a flat cobalt blue background divided by a thin white vertical line: on the left the everyday alternative ({SCEN}), on the right {PRODUKT}, both as cut-outs in the middle band of the frame, the top and bottom bands empty. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "vanster-mitt",
+          "stil": "etikett",
+          "ljus": true
+        },
+        {
+          "zon": "hoger-mitt",
+          "stil": "etikett",
+          "ljus": true
+        },
+        {
+          "zon": "vanster-nere",
+          "stil": "lista",
+          "ljus": true
+        },
+        {
+          "zon": "hoger-nere",
+          "stil": "brod",
+          "ljus": true
+        }
+      ],
+      "regler": [
+        "'Dem' är det kunden använder i dag, aldrig ett konkurrentnamn (docs/copy-regler.md)."
+      ]
+    },
+    {
+      "id": "K16",
+      "namn": "Stickern på vinnaren",
+      "kalla": "Evolve BFCM 'BFCM Sticker On Top Performer', 'Best Performer + Subtle Sticker' och 'Best Performer Sale Iteration': ta produktens bästa bildannons och lägg en liten rea-sticker på den. Billigaste Q4-draget.",
+      "funnel": "BOF",
+      "vinklar": [
+        "FD",
+        "CS"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Exakt produktens bästa bildannons (föräldern i briefen), plus en liten rund eller fyrkantig sticker i ett hörn med rean och en rad med sista beställningsdagen.",
+      "kraver": [
+        "Parent",
+        "Badge",
+        "Bottom band"
+      ],
+      "bildprompt": "(ingen generering — föräldern är bilden; text.py lägger bara på stickern och bottenraden)",
+      "block": [
+        {
+          "zon": "hoger-mitt",
+          "stil": "badge",
+          "platta": true
+        },
+        {
+          "zon": "botten",
+          "stil": "brod"
+        }
+      ],
+      "regler": [
+        "Föräldern läses ur kontot på vinstbidrag (ANALYSMETOD), aldrig ur minnet.",
+        "Stickern är liten: den får aldrig täcka produkten eller rubriken."
+      ]
+    },
+    {
+      "id": "K17",
+      "namn": "Textannonsen",
+      "kalla": "Evolve BFCM 'Black Friday Text Ad' ('simple to read, clearly shows Black Friday on it') och 'Founder Text Ad'. Ren text på enfärgad botten, ingen produkt.",
+      "funnel": "BOF",
+      "vinklar": [
+        "FD",
+        "CS"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Enfärgad botten (vit eller brandets blå), tre till fyra rader text och inget annat: vad rean är, priset mot ordinarie, sista dagen. Ser ut som ett meddelande, inte som en annons.",
+      "kraver": [
+        "Headline",
+        "Price band",
+        "Bottom band"
+      ],
+      "bildprompt": "(ingen generering — nivå 2: en enfärgad platta ritas av text.py:s bakgrund)",
+      "block": [
+        {
+          "zon": "mitt",
+          "stil": "rubrik",
+          "rader": 4
+        },
+        {
+          "zon": "mitt",
+          "stil": "prisover"
+        },
+        {
+          "zon": "mitt",
+          "stil": "pris"
+        },
+        {
+          "zon": "botten",
+          "stil": "brod"
+        }
+      ],
+      "regler": [
+        "Ingen produktbild med flit — testet är om budskapet ensamt bär."
+      ]
+    },
+    {
+      "id": "K18",
+      "namn": "Delad skärm: produkt + erbjudande",
+      "kalla": "Evolve BFCM 'BFCM Split Screen' ('product on one side & offer on the other … use a top-performing image') och 'BFCM Styles Split Screen'.",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "FD",
+        "BOF"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Vänstra halvan: produktens bästa foto. Högra halvan: enfärgad platta med rean som rubrik, priset, sista dagen och en knapp.",
+      "kraver": [
+        "Headline",
+        "Price band",
+        "Bottom band"
+      ],
+      "bildprompt": "{PRODUKT} photographed {SCEN}, composed entirely within the left half of the frame; the right half is a flat solid dark blue panel with nothing on it, hard vertical edge in the centre. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "hoger-mitt",
+          "stil": "rubrik",
+          "storlek": 60,
+          "rader": 4,
+          "ljus": true
+        },
+        {
+          "zon": "hoger-mitt",
+          "stil": "pris",
+          "ljus": true
+        },
+        {
+          "zon": "hoger-nere",
+          "stil": "brod",
+          "ljus": true
+        },
+        {
+          "zon": "hoger-nere",
+          "stil": "knapp"
+        }
+      ],
+      "regler": []
+    },
+    {
+      "id": "K19",
+      "namn": "Allt du får",
+      "kalla": "Evolve BFCM 'Insane Deal Ad' ('clearly states everything you get … calls out the total value') och 'Bundle Focused Ads' (en logisk anledning per del).",
+      "funnel": "BOF",
+      "vinklar": [
+        "CS",
+        "BOF",
+        "GT"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Produkten eller paketet utlagt på en platta uppifrån (flat lay), rubriken överst, en punktlista med varje sak som ingår och en rad med priset.",
+      "kraver": [
+        "Headline",
+        "List",
+        "Price band"
+      ],
+      "bildprompt": "Overhead flat-lay photograph of everything included with {PRODUKT} laid out neatly on a plain light surface, composed in the lower two thirds of the frame, the top third empty. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "topp",
+          "stil": "rubrik"
+        },
+        {
+          "zon": "topp-under",
+          "stil": "lista"
+        },
+        {
+          "zon": "botten",
+          "stil": "pris"
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Antalet i bild = antalet i erbjudandet (framework steg 4.4)."
+      ]
+    },
+    {
+      "id": "K20",
+      "namn": "Anteckningen i mobilen",
+      "kalla": "Evolves egna slutannonser i How To Write Image Ads Part 2 (iPhone Notes-ramen: 'Eating toddler-sized portions?', tre bockade punkter, produkten till höger, en rad i botten) och ITERATIONS-PLAYBOOK:s native/kamouflage-format.",
+      "funnel": "TOF",
+      "vinklar": [
+        "SO",
+        "OB",
+        "SP"
+      ],
+      "status": "tillagg",
+      "tillagg_text_py": "En ram 'anteckning' som ritar mobilens statusrad, 'Anteckningar'-huvud och datum ovanför blocken.",
+      "sa_ser_den_ut": "Ser ut som en skärmdump av Anteckningar i mobilen: rubriken som anteckningens titel, tre bockade punkter, produkten liten till höger, en rad i botten på svart platta.",
+      "kraver": [
+        "Headline",
+        "Benefit 1",
+        "Benefit 2",
+        "Benefit 3",
+        "Bottom band"
+      ],
+      "bildprompt": "{PRODUKT} cut out small, placed in the right third of the frame on a pure black background, everything else empty black. No text, no letters, no numbers, no logo, no watermark.",
+      "block": [
+        {
+          "zon": "anteckning",
+          "stil": "rubrik"
+        },
+        {
+          "zon": "anteckning",
+          "stil": "lista"
+        },
+        {
+          "zon": "botten",
+          "stil": "brod",
+          "platta": true
+        }
+      ],
+      "regler": [
+        "Native-formatet är lätt att kopiera och lever kort (ITERATIONS-PLAYBOOK rad 137) — en iteration, aldrig en serie."
+      ]
+    }
+  ]
+}
