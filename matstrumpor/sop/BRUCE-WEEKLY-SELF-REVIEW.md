@@ -10,7 +10,7 @@ Go to the table **Ad Roadmap**. Cannot open it? Tell Axel.
 
 ## Rows with a RESULTS and STATUS not Done
 
-1. Under 300 kr spent or under 3 purchases? Write "Too little data" in **LEARNINGS**. Next row.
+1. Under 300 kr spent or under 3 purchases? Write "Too little data" in **LEARNINGS** and set **STATUS = Done**. Next row.
 2. Did the video come out as the brief said? If not, write what differed.
 3. Hook rate or Hold rate lower than the best batch in the table? Write "hook" or "hold". Ignore a hook rate of 90 percent or more.
 4. One line on why, starting with "Guess:".

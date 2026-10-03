@@ -18,7 +18,7 @@
     {
       "namn": "Fish rod holder",
       "datakalla": "3c3270ab-908c-8356-ad6c-87ff779e647d",
-      "notering": "Axels order 2026-09-29, samma skärmbild. 43 bildrader i Draft vid mätningen — en backlog från 3d0…3df, alltså flera veckors briefronder som aldrig genererats. Hubben bär TVÅ prefix: Bäverbutikens Rodholder_ och TackleBays TackleBayRod_ (delad historia, CLAUDE.md). Hubben står INTE i factory/produkter/register.json, så den räknas som Bäverbutikens av alla rutiner — kollat med `node tools/lib/ops-hubbar.mjs` 2026-09-29.",
+      "notering": "Axels order 2026-09-29, samma skärmbild. 43 bildrader i Draft vid mätningen — en backlog från 3d0…3df, alltså flera veckors briefronder som aldrig genererats. Hubben bär TVÅ prefix: Bäverbutikens Rodholder_ och TackleBays TackleBayRod_ (delad historia, CLAUDE.md). Hubben står INTE i factory/produkter/register.json, så den räknas som Bäverbutikens av alla rutiner — kollat med `node tools/lib/ops-hubbar.mjs` 2026-09-29. Sedan 2026-10-03 är TackleBayRod_-raderna Bäverbutikens (Axels beslut: \"Dom ska upp på bäverbutiken i bäverbutikens kampanj ju?\", products/prefix-alias.json → alias.tacklebayrod): bildraderna byggs för Fiskespöhållaren på baverbutiken.se (289 kr). En rad som lovar något bara TackleBay gav (deras recensioner, \"inget överstruket pris\", fri frakt under 300 kr) lämnas i Draft med orsak.",
       "annonsprefix": "Rodholder_"
     },
     {

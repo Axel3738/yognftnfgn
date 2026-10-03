@@ -6,12 +6,19 @@
       "kampanj_namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
       "kontots_prefix": "Balteslipmaskin",
       "noterat": "2026-08-31 — Notion-hubben 'Belt grinder creative hub' är engelsk, kontot svenskt."
+    },
+    "tacklebayrod": {
+      "kampanj_id": "120249850522830291",
+      "kampanj_namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+      "kontots_prefix": "Rodholder",
+      "landningssida": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+      "butiksord_extra": [
+        "TackleBay",
+        "tacklebay.se"
+      ],
+      "noterat": "2026-10-03 — Axels beslut i chatten (\"Dom ska upp på bäverbutiken i bäverbutikens kampanj ju?\"): de tolv TackleBayRod_-raderna i hubben Fish rod holder laddas upp i Fiskespöhållaren med landningssidan ovan (289 kr, jämförpris 482 kr). Briefernas \"Destination: https://tacklebay.se/…\" och \"Landing page is TackleBay only\" gäller ALDRIG — butiken är nedlagd och fel butik är fel pixel. Annonsnamnen behålls som TackleBayRod_… (redigerarnas filer heter så, samma precedens som beltgrinder). TackleBay och tacklebay.se räknas som butiksnamn i stoppregel 1c, precis som Bäverbutiken. Raderna utan fil (TackleBayRod_PD_45, PD_56, PD_60) står kvar som \"väntar på fil\". Blockerat 2026-09-29 till 2026-10-03."
     }
   },
-  "blockerade": {
-    "tacklebayrod": {
-      "orsak": "TackleBays gamla annonser (landningssida tacklebay.se, butiken nedlagd). Hubben Fish rod holder flyttades till Bäverbutiken 2026-09-29 på Axels ord; bara Bäverbutikens egna Rodholder_-rader ska upp, aldrig dessa.",
-      "noterat": "2026-09-29 — elva rader i To be Reviewed vid flytten (TackleBayRod_PD_42/45/47/48/54/55/56/57/60/61_H1, SO_9_H1). Rörs aldrig: ingen statusändring, ingen kommentar, ingen koppling till Fiskespöhållaren."
-    }
-  }
+  "blockerade_kommentar": "Prefix som ALDRIG får en kampanj, vad kontot än säger (kampanjval.mjs → kampanjForPrefix). Tomt sedan 2026-10-03, då TackleBayRod_ blev ett alias. Mekanismen står kvar: lägg in { \"<prefix>\": { \"orsak\": \"…\", \"noterat\": \"…\" } } här. Kommentaren ligger utanför objektet eftersom varje nyckel i det läses som ett prefix.",
+  "blockerade": {}
 }

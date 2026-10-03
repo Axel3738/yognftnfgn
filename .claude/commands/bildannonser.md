@@ -341,6 +341,36 @@ ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska
 }
 ```
 
+### Syskon får aldrig samma bild (Axels dom 2026-10-03)
+
+Axel om fars dag-bilderna: **"alla bildannonser ser tyvärr extremt mycket likadana
+ut"**. Fars dag-brieferna beställde fyra statiska per rond på *samma foto*, med bara
+rubriken utbytt (regeln står i `agent/farsdag.json` på briefrutinens gren), och
+rutinen byggde dem precis så. Mätt i Meta samma dag (7 dygn): ronderna FD_4 och
+FD_6 fick nästan ingen visning — de flesta annonserna under 20 kr — medan
+`Takoverdrag_FD_2_1` tog 2 465 kr. Det är en mätning, inte ett bevis för orsaken.
+
+Därför, tills briefregeln ändrats: **ber en brief om samma foto som syskonen får
+varje syskon ändå en egen bild.** Scenen görs med kie.ai och produktsidans foto som
+referens, och den ska visa det raden säger (invändningen, presenten, innehållet).
+Ett riktigt foto från produktsidan går före en genererad scen när det visar det
+raden säger. De svenska raderna, priset och datumen rörs inte. Skriv in det i
+briefen innan bilden laddas upp, annars skickar leveransrundan tillbaka den som
+"fel foto": byt Photo-raden mot det som faktiskt syns (`tools/notion-brief-rattelse.py`)
+och lägg en rad sist som börjar `BILD BESLUTAD AV ÄGAREN 2026-10-03:` med hans ord
+(`tools/notion-brief-notering.py`). Samma väg gäller en rad som hålls för att dess
+foto "inte finns": Axel frågade "Vadå kan du inte bara göra dedär bilderna med
+Kie.AI???", så den saknade bilden görs med kie.ai i stället för att vänta på ett
+mobilfoto.
+
+Tre saker som gick fel första gången och som ska undvikas:
+- Ett foto som fylls ut med en utdragen pixelrad blir lodräta ränder. Fyll med
+  bildens egen kant speglad och suddad.
+- Kie lägger ibland vita band runt bilden. Skär bort dem innan den placeras.
+- Modellen ritar text på saker i scenen: ett märke på en golfbag, en etikett på en
+  handske, ett emblem på en bil. Leta efter det i varje bild och ta bort det före
+  textlagret.
+
 ## Steg 4 — Generera
 
 ```bash

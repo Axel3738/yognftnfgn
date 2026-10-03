@@ -44,6 +44,7 @@ import { dirname, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { tolka } from './namn.mjs';
 import { RANG, ETIKETT, hitRate } from './etikett.mjs';
+import { hubbnamnUrKalla } from '../redigerarrapport/namn.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..');
@@ -67,6 +68,20 @@ export const FILE_TYPE = Object.freeze({ video: '🎬 Video', static: '🖼️ S
 export const AWARENESS = Object.freeze(['Unaware', 'Problem Aware', 'Solution Aware', 'Product Aware', 'Most Aware']);
 export const STATUS = Object.freeze(['Working', 'Learning', 'Filming', 'Done']);
 const STATISKA_FORMAT = new Set(['static', 'textheavy', 'comparison', 'beforeafter', 'lifestyle']);
+
+/** Slutmarkören på systemets sådd. Bruces SOP säger "write under any text already
+ *  there", så det som står EFTER markören är människans och rörs aldrig
+ *  (strategrapporten läser samma markör). Sådd utan markör är den gamla formen
+ *  från 2026-10-03 och känns igen på att den saknar SOP:ens egna ord. */
+export const SEED_SLUT = '(end of seed)';
+
+/** Är cellen fortfarande systemets egen sådd, utan ett ord från en människa? Ren. */
+export function arSystemetsSadd(nu) {
+  const s = String(nu ?? '').trim();
+  if (!s.startsWith('(seeded')) return false;
+  if (s.includes(SEED_SLUT)) return s.endsWith(SEED_SLUT);
+  return !/too little data|\bguess\s*:/i.test(s);
+}
 
 const sel = (namn, farg) => ({ name: namn, color: farg });
 const resultatOptions = [sel(RESULTAT.BREAKTHROUGH, 'green'), sel(RESULTAT.SPEND_WINNER, 'blue'), sel(RESULTAT.KPI_WINNER, 'yellow'), sel(RESULTAT.LOSER, 'red'), sel(RESULTAT.INGEN_LEVERANS, 'gray')];
@@ -220,8 +235,39 @@ export function batchNyckel(namn) {
 const basta = (etiketter) => etiketter.filter((e) => RANG[e] !== undefined).sort((a, b) => RANG[b] - RANG[a])[0] ?? null;
 const forsta = (lista) => lista.find((x) => x != null && x !== '' && x !== 'okänd') ?? null;
 
-/** Arkivets annonser → batcher (en per koncept). hub: Map annonsnamn → { ansvariga, url }. Ren. */
-export function batcher(arkiv, { hub = new Map(), lardomar = '' } = {}) {
+const batchKod = (t) => (t && t.nummer != null ? `${t.land ?? 'SE'}|${t.vinkel}|${t.format}|${t.nummer}` : null);
+
+/** Hubbraden för ett annonsnamn, i fyra steg: exakt namn → namnet utan `_v<n>` →
+ *  uppladdarens källa (UPPLADDAD `kalla: 'Drive 022_H1.mov'` ⇒ hubbraden "022") →
+ *  samma löpnummer, vinkel och format (3:2:2-namnet `…_048h1_v1` hör till
+ *  hubbraden `…_048_v1`). Mätt 2026-10-03: exakt namn träffade 25 av 260
+ *  arkivnamn, så Bruces batcher stod utan AUTHOR. Ren. */
+export function hubbUppslag(hub = new Map(), uppladdade = []) {
+  const perBatch = new Map();
+  for (const [namn, post] of hub) {
+    const k = batchKod(tolka(namn));
+    if (k && !perBatch.has(k)) perBatch.set(k, post);
+  }
+  const perAnnons = new Map();
+  for (const u of uppladdade ?? []) {
+    const h = hubbnamnUrKalla(u?.kalla);
+    if (h && u.annons && hub.has(h.namn)) perAnnons.set(u.annons, hub.get(h.namn));
+  }
+  return (namn) => {
+    if (!namn) return null;
+    if (hub.has(namn)) return hub.get(namn);
+    const utanV = namn.replace(/_v\d+$/, '');
+    if (hub.has(utanV)) return hub.get(utanV);
+    if (perAnnons.has(namn)) return perAnnons.get(namn);
+    const k = batchKod(tolka(namn));
+    return (k && perBatch.get(k)) ?? null;
+  };
+}
+
+/** Arkivets annonser → batcher (en per koncept). hub: Map annonsnamn → { ansvariga, url };
+ *  uppladdade: loggens UPPLADDAD-rader (redigerarrapport/namn.mjs urLogg). Ren. */
+export function batcher(arkiv, { hub = new Map(), lardomar = '', uppladdade = [] } = {}) {
+  const slaUpp = hubbUppslag(hub, uppladdade);
   const grupper = new Map();
   for (const a of arkiv?.annonser ?? []) {
     if (!a?.namn) continue;
@@ -237,7 +283,7 @@ export function batcher(arkiv, { hub = new Map(), lardomar = '' } = {}) {
     const spend = m.reduce((s, x) => s + (x.spend_sek ?? 0), 0);
     const vagt = (f) => { const rader = m.filter((x) => x[f] != null && x.spend_sek); const w = rader.reduce((s, x) => s + x.spend_sek, 0); return w ? rader.reduce((s, x) => s + x[f] * x.spend_sek, 0) / w : null; };
     const ids = ads.map((a) => a.id).filter(Boolean);
-    const hubbrader = ads.map((a) => hub.get(a.namn) ?? hub.get(a.namn.replace(/_v\d+$/, ''))).filter(Boolean);
+    const hubbrader = ads.map((a) => slaUpp(a.namn)).filter(Boolean);
     const forfattare = [...new Set(hubbrader.flatMap((h) => h.ansvariga ?? []))];
     const komp = {};
     for (const f of ['avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook_typ']) komp[f] = forsta(ads.map((a) => a.komponenter?.[f]));
@@ -301,7 +347,7 @@ export function memoAv(b) {
   if (!delar.length) return null;
   const how = [b.format ? b.format : null, b.playbook ? `playbook ${b.playbook}` : null, b.komponenter?.tro ? `belief ${b.komponenter.tro}` : null, b.komponenter?.urgency ? `urgency ${b.komponenter.urgency}` : null].filter(Boolean).join(', ');
   if (how) delar.push(`HOW: ${how}.`);
-  return `(seeded from the brief) ${delar.join(' ')}`;
+  return `(seeded from the brief) ${delar.join(' ')} ${SEED_SLUT}`;
 }
 
 /** En batch → Notion-egenskaper. system skrivs alltid, sadd bara där tomt. Ren. */
@@ -311,8 +357,10 @@ export function roadmapEgenskaper(b, { adsIds = [] } = {}) {
     'BATCH #': txt(b.batchnr),
     'DATE ADDED': datum(b.d0),
     AUTHOR: txt(b.forfattare?.join(', ')),
-    'FILE TYPE': val(fileType),
-    'AD TYPE': val(AD_TYPE[b.typ] ?? null),
+    // FILE TYPE och AD TYPE skrivs bara när de är kända — ett okänt värde får
+    // aldrig tömma det en människa valt (89 av 106 SE-batcher saknar typ i briefen).
+    ...(fileType ? { 'FILE TYPE': val(fileType) } : {}),
+    ...(AD_TYPE[b.typ] ? { 'AD TYPE': val(AD_TYPE[b.typ]) } : {}),
     'LINK TO BRIEF': url(b.brief_url),
     'LINK TO AD': url(b.ids?.length ? `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${KONTO}&selected_ad_ids=${b.ids.join(',')}` : null),
     RESULTS: val(RESULTAT[b.etikett] ?? null),
@@ -333,7 +381,7 @@ export function roadmapEgenskaper(b, { adsIds = [] } = {}) {
     'ANGLE(S)': txt(angle),
     'BREAKTHROUGH MEMO': txt(memoAv(b)),
     'AWARENESS LEVEL': val(awarenessAv(b.komponenter?.awareness)),
-    LEARNINGS: txt(b.lardom_text ? `(seeded from lardomar.md, ${b.lardom_id}) ${b.lardom_text}` : null),
+    LEARNINGS: txt(b.lardom_text ? `(seeded from lardomar.md, ${b.lardom_id}) ${b.lardom_text} ${SEED_SLUT}` : null),
   };
   return { titel: b.titel, system, sadd };
 }
@@ -343,7 +391,9 @@ export const saddVarde = (p) => (p?.rich_text ? p.rich_text.map((t) => t.text?.c
 
 /** Såddregeln: en cell är systemets tills en människa rört den. Av `sadd`
  *  skrivs ett fält när det har ett värde OCH cellen i Notion är tom, eller
- *  fortfarande bär systemets egen text ("(seeded …") som nu ändrats.
+ *  fortfarande är systemets egen sådd (`arSystemetsSadd`: "(seeded …" utan ett
+ *  ord från en människa efter slutmarkören) som nu ändrats. Har en människa
+ *  skrivit under sådden rörs cellen aldrig, även om sådden skulle ha ändrats.
  *  `befintlig` = { kolumn: nuvarande text } (null = ny rad). Ren. */
 export function saddAttSkriva(sadd, befintlig) {
   const ut = {};
@@ -351,8 +401,8 @@ export function saddAttSkriva(sadd, befintlig) {
     const ny = saddVarde(v);
     const nu = befintlig ? (befintlig[k] ?? '') : '';
     // Ingen sådd längre (briefen gav inget) ⇒ systemets gamla sådd töms, människans text står kvar.
-    if (!ny) { if (nu.startsWith('(seeded')) ut[k] = v; continue; }
-    if (nu === '' || (nu.startsWith('(seeded') && nu !== ny)) ut[k] = v;
+    if (!ny) { if (arSystemetsSadd(nu)) ut[k] = v; continue; }
+    if (nu === '' || (arSystemetsSadd(nu) && nu !== ny)) ut[k] = v;
   }
   return ut;
 }
@@ -688,7 +738,8 @@ async function main() {
   if (!db.roadmap || !db.results || !db.log) { console.log('Sidan är inte byggd än (torrt). Kör --skarpt.'); return; }
 
   const hub = await lasHub(hubId);
-  const batchar = batcher(arkiv, { hub, lardomar });
+  const uppladdade = logg.filter((r) => r.kod === 'UPPLADDAD' && r.annons).map((r) => ({ annons: r.annons, kalla: r.kalla ?? null }));
+  const batchar = batcher(arkiv, { hub, lardomar, uppladdade });
   const batchAv = new Map(); for (const b of batchar) for (const a of b.annonser) batchAv.set(a.namn, b.titel);
   console.log(`Arkivet: ${arkiv.annonser.length} annonser → ${batchar.length} batcher · hubben: ${hub.size} rader · loggen: ${logg.length} rader`);
 

@@ -147,23 +147,51 @@ def _blackfarg(stil, block):
     return stil["farg"]
 
 
+def _girig(stycke, font, maxbredd, rita):
+    """Fyller varje rad så långt den räcker (ett stycke, inga radbrytningar i)."""
+    ord_ = stycke.split()
+    if not ord_:
+        return [""]
+    rader = []
+    rad = ord_[0]
+    for o in ord_[1:]:
+        test = f"{rad} {o}"
+        if rita.textlength(test, font=font) <= maxbredd:
+            rad = test
+        else:
+            rader.append(rad)
+            rad = o
+    rader.append(rad)
+    return rader
+
+
+def _jamna(stycke, font, maxbredd, rita, antal):
+    """Samma antal rader som den giriga brytningen, men så jämna som möjligt.
+
+    Den giriga brytningen fyller första raden och lämnar resten åt sista, så en
+    rubrik som nästan ryms på en rad får ett ensamt ord under sig: "Värmer där han
+    sitter och lutar / sig." och "Han står stilla timme efter / timme." i 1:1
+    (mätt 2026-10-03 i fars dag-ronden). Här söks den smalaste bredd som fortfarande
+    ger samma antal rader, och texten bryts om på den. Antalet rader ändras aldrig,
+    så graden och den fria zonen blir exakt desamma som förut."""
+    lag, hog = maxbredd / antal, maxbredd
+    for _ in range(18):
+        mitt = (lag + hog) / 2
+        if len(_girig(stycke, font, mitt, rita)) <= antal:
+            hog = mitt
+        else:
+            lag = mitt
+    return _girig(stycke, font, hog, rita)
+
+
 def bryt_rader(text, font, maxbredd, rita):
-    """Bryter texten på ordgränser så varje rad ryms inom maxbredd."""
+    """Bryter texten på ordgränser så varje rad ryms inom maxbredd, i jämna rader."""
     rader = []
     for stycke in text.split("\n"):
-        ord_ = stycke.split()
-        if not ord_:
-            rader.append("")
-            continue
-        rad = ord_[0]
-        for o in ord_[1:]:
-            test = f"{rad} {o}"
-            if rita.textlength(test, font=font) <= maxbredd:
-                rad = test
-            else:
-                rader.append(rad)
-                rad = o
-        rader.append(rad)
+        delar = _girig(stycke, font, maxbredd, rita)
+        if len(delar) > 1:
+            delar = _jamna(stycke, font, maxbredd, rita, len(delar))
+        rader.extend(delar)
     return rader
 
 
@@ -493,6 +521,12 @@ def lagg_pa_text(spec):
                           fill=sidfarg, anchor="ma")
         else:
             x = MARGINAL if zon.startswith("vanster") else bredd // 2 + MARGINAL // 2
+            # "x_andel" (0–1 av bredden) flyttar blocket i sidled, som "y_andel" gör på
+            # höjden. Två fasta lägen räcker inte till en annons med tre eller fyra
+            # bildrutor och en etikett under varje (TackleBayRod_PD_53_1 och PD_58_1,
+            # 2026-10-03). Utan fältet är läget exakt som förut.
+            if b.get("x_andel") is not None:
+                x = int(bredd * float(b["x_andel"]))
             # Sidozonerna ligger på fasta höjder, och de räcker inte alltid till:
             # en delad bild med lång rubrik OCH prisband klämmer etiketten mellan
             # två block som växer mot varandra, olika mycket i 4:5 och 1:1.

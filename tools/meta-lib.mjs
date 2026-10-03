@@ -188,7 +188,16 @@ export async function alla(sökväg, params = {}, limit = 100) {
       continue;
     }
     if (svar.error) {
-      if (svar.error.code === 17 && ++försök <= 8) { await vänta(20000); continue; }
+      // Kod 17 är ANVÄNDARgränsen, inte appgränsen: `x-app-usage` kan stå på
+      // call_count 9 medan edgen svarar 17 (mätt 2026-10-03 på act_1867947880635861).
+      // Den släpper i tiotals minuter, inte sekunder. Fast 20 s × 8 gav 160 s
+      // total väntan och kastade medan gränsen fortfarande låg kvar — kön gick
+      // inte att läsa alls den dagen. Fördubblande väntan med tak 10 min ger
+      // 40 minuters total väntan över åtta försök (räknat, inte gissat).
+      if (svar.error.code === 17 && ++försök <= 8) {
+        await vänta(Math.min(20000 * 2 ** (försök - 1), 600_000));
+        continue;
+      }
       throw new Error(`Meta paging: ${svar.error.message}`);
     }
     försök = 0;

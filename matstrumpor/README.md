@@ -338,6 +338,34 @@ Done; sedan EN ny rad med BREAKTHROUGH MEMO (WHY/WHAT/HOW) före briefen.
 Skala är Axels. PDF:en byggs om med `node matstrumpor/sop/bygg.mjs`
 (Chromium, samma väg som `products/matstrumpor/ugc/pdf/bygg.mjs`).
 
+### Strategrapporten: rutinen som granskar hans vecka (2026-10-03)
+
+Axels beställning samma dag: "skapa en rutin som granskar det här varje vecka
+… evaluerar Bruce och rapporterar någonstans där det gör nytta ifall det
+behövs … ger han feedback". **`strategrapport/`** (kommandot
+`/strategrapport`, rutin tisdag 03:00 CEST = 09:00 Manila, dagen efter hans
+måndagskoll): läser Ad Roadmap och hubben, mäter mot förra veckans snapshot
+(stängda rader med lärdom, "Too little data"/"Guess:"-reglerna, EN ny
+konceptrad med de sex cellerna, inlämnade briefer, levande vinnare och deras
+iterationer, veckans etiketter på hans koncept, hit rate som bråk) och skriver
+feedbacken på engelska med ETT action item som en Log-rad `<vecka> Weekly
+review` + en kommentar med @Bruce på raden. Axel pingas i samma rad bara vid
+eskalering (ingen koll två veckor i rad, vinnare utan live iteration efter 14
+dagar). Allt mäts, inget bedöms av en modell; inga kronor, ROAS, köp eller
+butiksnamn i texten (`redigerarrapport/post.mjs kontrollera`), och hans egna
+ord tvättas innan de citeras. Måtten, fönstren, det som inte går att mäta och
+första torrkörningen: `strategrapport/README.md`.
+
+Två saker i `growthguide.mjs` ändrades för rutinens skull, samma dag: (1)
+**sådden slutar med markören `(end of seed)`** — Bruces SOP säger "write
+under any text already there", och utan markören hade ronden skrivit över
+hans text när sådden ändrades och rutinen räknat raden som obesvarad; en
+sådd rörs nu bara när inget står efter markören, och FILE TYPE/AD TYPE skrivs
+bara när de är kända så hans val står kvar. (2) **Hubbraden hittas i fyra
+steg** (`hubbUppslag`: exakt namn, utan `_v<n>`, uppladdarens källa "022_H1"
+⇒ raden "022", samma löpnummer `…_048h1_v1` ⇒ `…_048_v1`) — exakt namn
+träffade 25 av 260 annonser, så AUTHOR saknades på hans batcher.
+
 ## E-posten (Klaviyo, byggd 2026-09-25)
 
 Matstrumpor har ett eget Klaviyo-konto, **`UV6Rqg`** (nyckeln
