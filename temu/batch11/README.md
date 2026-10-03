@@ -221,3 +221,23 @@ Regel: har Axel rört ett galleri i admin körs produkten bara med `--bara-text`
 ("Namnlosdesign-…" = Canva) innan en skarp körning.
 `notion-bilder.mjs [--skarp] [namndel …]` uppdaterar "Images"-stycket på batchens Notion-kort med det som ligger live.
 
+
+## Norge-kostnaden i batch-arken #12/#13 (2026-10-03)
+NO-rutinen ("Daglig NO-videobatch") läser kostnaden ur batch-arken som Axels COGS-doc listar — **#12**
+(`1vgX-s8c…`) och **#13** (`1R6VlstK…`). Där är NORWAY-blocket (kolumn S–X) **tomt** för driftbilen (rad 17–19)
+och regntunnehuven (rad 101–103; regntunnehuven saknar även SWEDEN, J–L). CWD:s riktiga siffror ligger i
+**master-arket** `1zxPXY…` (rad 69–71 resp. 190–192) — det är därifrån `fakta.mjs` tog `landat.no`, och
+butikernas NO-cogs stämmer mot dem (223,82 = 24,07 × 9,2989; 94,76 = 10,19 × 9,2989).
+
+| | Qty | Product | Shipping | Total ex. tax |
+|---|---|---|---|---|
+| Driftbilen NORWAY | 1 / 2 / 3 | 7,08 / 14,15 / 21,23 | 16,99 / 28,92 / 40,84 | **24,07** / 43,07 / 62,07 |
+| Regntunnehuven NORWAY | 1 / 2 / 3 | 2,62 / 5,23 / 7,85 | 7,57 / 10,09 / 12,60 | **10,19** / 15,32 / 20,45 |
+| Regntunnehuven SWEDEN | 1 / 2 / 3 | 2,62 / 5,23 / 7,85 | 5,97 / 9,08 / 11,00 | 8,59 / 14,31 / 18,85 |
+
+Molnsessionen kan inte skriva i Google-ark (bara Drive-connectorn finns, ingen Sheets-connector).
+Leverans/frakt-metod står inte i master-arket heller — de cellerna lämnas tomma.
+
+⚠️ **Läktarponchons NORWAY-rad i master-arket ser ut att vara driftbilens, inklistrad av CWD:** produktkostnad
+7,08 (alla andra marknader 7,69) och exakt samma 24,07 / 43,07 / 62,07 som driftbilen. Ponchons NO-cogs
+(223,82) bygger på den raden. Ska bekräftas av CWD innan NO-rutinen räknar BE-ROAS på ponchon.

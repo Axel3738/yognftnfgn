@@ -23,7 +23,7 @@ Axel: *"Men du kan inte bara använda Kie Ai api då?"* — jo): `miljo-kie.mjs`
 | snoflingor (**25**-pack) | 10 | 249 | 179 | ✅ Axels "25" stämde — leverantörens rutnät är 6+6+6+7 |
 | vattenskal | 10 | 849 | 879 | ✅ NO dyrare än SE. **Omvinklad 2026-09-14 till VILDA FÅGLAR** (Axel: "riktad mer mot fåglar … istället för ens egna hund"): ny copy, fågelbild + GIF (hundbilden borta), kategori Bird Baths, taggar. `vattenskal-faglar.mjs` |
 | atvkapell (3XL) | 10 | 579 | 539 | ✅ |
-| snoskyffel (utan batteri) | 10 | 2 349 | — | ✅ bara SE — CWD: oversize till Norge |
+| snoskyffel (utan batteri) | 10 | 2 349 | — | ✅ bara SE — CWD: oversize till Norge (arkets NORWAY-cell = "oversize"; UK 66,85 / US 86,54 finns, NO saknas). Ingen NO-sida förrän CWD ger en Norge-frakt — NO-rutinen flaggar den varje natt tills dess (2026-10-03) |
 | kajakhallare (2-pack) | 10 | 599 | 809 | ✅ 4 skruvar + 4 pluggar (räknade på bilden) |
 | motorlas | 10 | 909 | 1 079 | ✅ |
 | varmesits | 10 | 599 | 719 | ✅ |

@@ -64,5 +64,8 @@ Skripten rör ALDRIG en variant som redan har cogs.
 - Kvar utan känd kostnad: SE 35, NO 13, DK 40, FI 78, UK 135 varianter. De flesta
   är äldre katalogprodukter vars kostnad inte finns i något ark — de behöver en
   ny offertförfrågan eller manuell uppgift från Axel.
+- **Batch 11–13: batch-arken #12/#13 i COGS-docet saknar NORWAY-blocket** för bl.a. driftbilen och
+  regntunnehuven — CWD:s riktiga siffror står i master-arket `1zxPXY…` (se `temu/batch11/README.md`,
+  2026-10-03). Läktarponchons NORWAY-rad i master-arket är troligen driftbilens (7,08 i stället för 7,69).
 - `Hagepakken` (0 kr) och `Presentkort`/`Blanda & Spara` är paket/tjänster och
   ska aldrig ha cogs.
