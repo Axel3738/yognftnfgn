@@ -425,3 +425,6 @@ replik efter en paus är det som inte går fram.**
 18–28 % drift. `elevenlabs-omdubb` tempo-anpassar varje klipp med flit (Axels
 beslut 2026-09-16), inom sina egna gränser 0,70–1,35, och alla segment låg inom
 dem. Läs `<ut>.tidslinje.json` → `segment[].f` innan en sådan dom tas på allvar.
+
+### 2026-10-03 — Daglig NO-videobatch (rutin)
+Inga produkter kördes. Kandidater (utan NO-mapp och utan NO-kampanj): Snöskyffel utan batteri, Radiostyrd driftbil 1:24, Regntunnehuven, Sorkkorgarna, Biltvättborste Teleskop, Lövsilarna, Pussel Adventskalender, Solcellsladdare, Spabadskapell. De tre första (bokstavsordning) stoppade: Snöskyffeln saknar norsk sida och Norge-kostnad (batch #10 "oversize"), driftbilen (#12) och regntunnan (#13) har tom NORWAY-kostnad. Problemmeddelanden skickade i #problems-no. Sorkkorgarna (#13 tom, ingen norsk sida) och Lövsilarna (#13 tom) blockeras av samma skäl. Fågelmatare hoppad: kampanj finns. HeyGen-kvot 7924, ingen kredit använd.
