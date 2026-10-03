@@ -73,14 +73,20 @@
 - **No generated people.** Real creator footage only (hook-visual rule 2026-08-04).
 - **Naming:** deliver the file named exactly as this Notion row.
 
-## COPY CARD (goes in Ads Manager, not in the creative)
-**Primary text:**
+## COPY CARD (goes in Ads Manager, not in the creative) — 3:2:2: two texts and two headlines
+**Primary text 1:**
 > Ingen jublar åt tvättmedel. Ingen sparar en skämtpryl. Svaret på båda: en låda som ser ut som sushi och är fem par strumpor.
 
-**Headline:** `Rolig i kväll. På fötterna i morgon.`
+**Primary text 2:**
+> Dom sålde slut i november förra året. Den som väntade fick ingen. Fem par strumpor i en låda som ser ut som sushi. Köp 1 – Få 1 GRATIS.
+
+**Headline 1:** `Rolig i kväll. På fötterna i morgon.`
+**Headline 2:** `Du vet vad dom alltid beställer`
 **Description:** `Fem par strumpor i en sushilåda. Ätpinnar ingår.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://matstrumpor.se/products/sushi-strumpor
+
+*(Primary text 2 and Headline 2 added 2026-10-03 by /matstrumporkungen round 5, written by a sonnet subagent against docs/copy-regler.md, three-question test ✅ in products/matstrumpor/batch-log.md. Shared by all eight queued concepts so the video stays the only variable.)*
 
 *(Copy card = the live copy on every UGC ad in the account, kept as a fixed control so the creative is the only variable.)*
 
