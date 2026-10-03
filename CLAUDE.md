@@ -1344,8 +1344,11 @@ till deploy-grenen, och Usage-sidan visade TRETTON projekt — sex nya dubblette
 22/9 (kind-spirit, thriving-compassion, reliable-vibrancy, delightful-serenity,
 robust-liberation, sincere-wonder). Krediten var inte orsaken (Hobby, kort finns).
 Prompten `stonebite/cowork/10-byggko-stonepnl.txt` (samma recept, StonePNL i stället för
-sajten som kontroll); Axel körde den och bygget gick igenom inom en halvtimme. Något
-skapar fortfarande nya projekt ur repot — inte utrett. Räkna aldrig med att en push till
+sajten som kontroll); Cowork hittade ÅTTA nya dubbletter (också disciplined-endurance), kopplade
+bort källan och avbröt köerna — raderar aldrig projekt — och bygget gick igenom inom tre minuter
+(Active 11:31 CEST, alla sex tjänster mätta på v120). Före städningen byggde INGET i kontot, allt
+stod Queued. De tolv tomma projekten står kvar tills Axel raderar dem. Något skapar fortfarande
+nya projekt ur repot, tredje gången — inte utrett. Räkna aldrig med att en push till
 deploy-grenen är live förrän `/healthz` svarar med markören.
 
 ✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
