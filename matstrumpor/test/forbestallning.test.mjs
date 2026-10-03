@@ -16,20 +16,21 @@ test('texterna: alla fjorton språk, {datum} en gång, inga tankstreck, ingen fy
 });
 
 test('datumet skrivs i språkets egen form', () => {
-  assert.equal(datumText('2026-10-13', 'sv'), '13 oktober');
-  assert.equal(datumText('2026-10-13', 'en'), 'October 13');
-  assert.equal(datumText('2026-10-13', 'ja'), '10月13日');
+  assert.equal(datumText('2026-10-12', 'sv'), '12 oktober');
+  assert.equal(datumText('2026-10-12', 'en'), 'October 12');
+  assert.equal(datumText('2026-10-12', 'ja'), '10月12日');
 });
 
 test('snippeten: en gren per språk, svenskan som reserv, ritar bara när metafältet är aktivt', () => {
   const s = byggSnippet(lasTexter(), lasKonfig());
   for (const sp of SPRAK.filter((x) => x !== 'sv')) assert.ok(s.includes(`{%- when '${sp}' -%}`), sp);
-  assert.ok(s.includes('Förbeställning: din beställning skickas från 13 oktober.'));
+  assert.ok(s.includes('Förbeställning: din beställning skickas från 12 oktober.'));
   assert.ok(s.includes('ms_fb.aktiv == true and ms_fb_idag < ms_fb_slut'));
-  assert.ok(s.includes('Slutsålt igen. Säkra din låda ur nästa leverans.'), 'sushi: slutsålt igen');
+  assert.ok(s.includes('{%- else -%}Slutsålt igen{%- endcase -%}'), 'sushi: bandet "Slutsålt igen" utan punkt');
+  assert.ok(s.includes('{%- else -%}Säkra din låda ur nästa leverans.{%- endcase -%}'), 'rubriken under bandet');
   assert.ok(s.includes("produkt.handle == 'sushi-strumpor'"), 'bara sushilådan säger "igen"');
   assert.ok(s.includes('Förbeställning{%- endcase -%}" data-fb-varde="'), 'märkningens nyckel, svenskan som reserv');
-  assert.ok(s.includes('skickas från 13 oktober{%- endcase -%}"'), 'märkningens värde');
+  assert.ok(s.includes('skickas från 12 oktober{%- endcase -%}"'), 'märkningens värde');
   assert.equal(/\{datum\}/.test(s), false, 'ingen platshållare kvar');
 });
 

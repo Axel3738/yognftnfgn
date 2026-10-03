@@ -98,13 +98,21 @@ export function byggSnippet(texter, konfig) {
   };
   const p = (f) => gren((t) => t.paket[f]);
   const pa = (f) => gren((t) => t.paket[f], escAttr);
+  // Rubriken är två meningar ("Slutsålt igen. Säkra din låda …"): den första blir det röda bandet
+  // (utan punkt), den andra rubriken under. Japanska och kinesiska delas på "。".
+  const del = (f, i) => gren((t) => {
+    const m = /^(.+?)[.。]\s*(.+)$/.exec(t.paket[f]);
+    if (!m) throw new Error(`paket.${f} går inte att dela i två meningar: ${t.paket[f]}`);
+    return m[i + 1];
+  });
   const mal = midnattStockholm(konfig.skickas_fran);
   return `{%- comment -%}
   ${MARK} — förbeställningen medan lagret är slutsålt (matstrumpor/forbestallning.mjs, Axel 2026-10-03).
   Skrivs om av skriptet — ändra texterna i matstrumpor/forbestallning/texter.json, inte här.
   Ritar bara när shop-metafältet matstrumpor.forbestallning är aktivt och skickas_fran inte inträffat.
   Parametrar: lage ('paket' | 'kort' | 'knapp' | 'data' | 'input' | 'korg' | 'produkt'), produkt (vid 'paket')
-    paket   rutan överst i paketväljaren (ms-paket.liquid), med nedräkning till skickdagen
+    paket   rutan överst i paketväljaren (ms-paket.liquid): rött band, rubrik, text, nedräkning i rutor
+            till skickdagen (Axel 2026-10-03 kväll: "snyggare och mer urgency", inte brunt)
     kort    raden under varje paketkort
     knapp   köpknappens text (buy-buttons.liquid faller tillbaka på add_to_cart när den är tom)
     data    attributen på <ms-paket>, så ms-paket.js märker raderna "Förbeställning: skickas från …"
@@ -121,7 +129,7 @@ export function byggSnippet(texter, konfig) {
 {%- if ms_fb.aktiv == true and ms_fb_idag < ms_fb_slut -%}
   {%- case lage -%}
   {%- when 'korg' -%}
-<p class="ms-forbestallning ms-forbestallning--korg" style="margin: 8px 0 10px; padding: 8px 12px; border-radius: 8px; background: #fff4e6; border: 1px solid #dd821d; font-size: 0.95rem; font-weight: 600; text-align: left;">${gren((t) => t.korg)}</p>
+<p class="ms-forbestallning ms-forbestallning--korg" style="margin: 8px 0 10px; padding: 8px 12px; border-radius: 8px; background: #fff4f2; border: 1px solid #ff3b30; color: #c4211b; font-size: 0.95rem; font-weight: 700; text-align: left;">${gren((t) => t.korg)}</p>
   {%- when 'kort' -%}
 <span class="ms-fb-kort">${p('kort')}</span>
   {%- when 'knapp' -%}${p('knapp')}
@@ -130,20 +138,32 @@ export function byggSnippet(texter, konfig) {
 <input type="hidden" name="properties[${pa('egenskap_nyckel')}]" value="${pa('egenskap_varde')}">
   {%- when 'paket' -%}
 <div class="ms-forbestallning ms-fb-paket">
-  <p class="ms-fb-paket__rubrik"><span class="ms-fb-paket__prick" aria-hidden="true"></span>{%- if produkt.handle == 'sushi-strumpor' -%}${p('rubrik_igen')}{%- else -%}${p('rubrik')}{%- endif -%}</p>
-  <p class="ms-fb-paket__text">{%- if produkt.handle == 'sushi-strumpor' -%}${p('text_igen')}{%- else -%}${p('text')}{%- endif -%}</p>
-  <p class="ms-fb-paket__nedrakning" data-ms-fb-nedrakning hidden>${p('nedrakning')}<strong data-ms-fb-tid style="margin-left: 0.35em;"></strong></p>
+  <p class="ms-fb-paket__band"><span class="ms-fb-paket__prick" aria-hidden="true"></span>{%- if produkt.handle == 'sushi-strumpor' -%}${del('rubrik_igen', 0)}{%- else -%}${del('rubrik', 0)}{%- endif -%}</p>
+  <div class="ms-fb-paket__kropp">
+    <p class="ms-fb-paket__rubrik">{%- if produkt.handle == 'sushi-strumpor' -%}${del('rubrik_igen', 1)}{%- else -%}${del('rubrik', 1)}{%- endif -%}</p>
+    <p class="ms-fb-paket__text">{%- if produkt.handle == 'sushi-strumpor' -%}${p('text_igen')}{%- else -%}${p('text')}{%- endif -%}</p>
+    <div class="ms-fb-paket__nedrakning" data-ms-fb-nedrakning hidden>
+      <span class="ms-fb-paket__etikett">${p('nedrakning')}</span>
+      <span class="ms-fb-paket__klocka"><span class="ms-fb-ruta"><b data-ms-fb="0">0</b><i data-ms-fb-enhet="0">d</i></span><span class="ms-fb-ruta"><b data-ms-fb="1">00</b><i data-ms-fb-enhet="1">h</i></span><span class="ms-fb-ruta"><b data-ms-fb="2">00</b><i data-ms-fb-enhet="2">m</i></span><span class="ms-fb-ruta"><b data-ms-fb="3">00</b><i data-ms-fb-enhet="3">s</i></span></span>
+    </div>
+  </div>
 </div>
 <style>
-  .ms-fb-paket { margin: 0 0 14px; padding: 14px 16px; border-radius: 12px; background: #1f1a17; color: #fff; text-align: left; }
+  .ms-fb-paket { margin: 0 0 14px; border-radius: 14px; overflow: hidden; background: #fff; border: 2px solid #ff3b30; box-shadow: 0 8px 22px rgba(255, 59, 48, 0.14); text-align: left; }
   .ms-fb-paket p { margin: 0; }
-  .ms-fb-paket__rubrik { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 1.05rem; line-height: 1.3; }
-  .ms-fb-paket__prick { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #ff8a1f; box-shadow: 0 0 0 0 rgba(255, 138, 31, 0.6); animation: ms-fb-puls 1.6s infinite; }
-  .ms-fb-paket__text { margin-top: 6px !important; font-size: 0.92rem; line-height: 1.45; opacity: 0.92; }
-  .ms-fb-paket__nedrakning { display: inline-block; margin-top: 10px !important; padding: 6px 10px; border-radius: 8px; background: rgba(255, 138, 31, 0.18); font-size: 0.9rem; }
-  .ms-fb-paket__nedrakning strong { color: #ffb15e; font-variant-numeric: tabular-nums; }
-  .ms-fb-kort { display: block; margin-top: 3px; font-size: 0.8rem; font-weight: 700; color: #b8640f; }
-  @keyframes ms-fb-puls { 0% { box-shadow: 0 0 0 0 rgba(255, 138, 31, 0.6); } 70% { box-shadow: 0 0 0 9px rgba(255, 138, 31, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 138, 31, 0); } }
+  .ms-fb-paket__band { display: flex; align-items: center; gap: 9px; padding: 8px 14px; background: linear-gradient(90deg, #ff3b30, #ff7a1a); color: #fff; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .ms-fb-paket__prick { flex: none; width: 9px; height: 9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); animation: ms-fb-puls 1.4s infinite; }
+  .ms-fb-paket__kropp { padding: 12px 14px 14px; }
+  .ms-fb-paket__rubrik { font-weight: 800; font-size: 1.12rem; line-height: 1.3; color: #111; }
+  .ms-fb-paket__text { margin-top: 6px !important; font-size: 0.9rem; line-height: 1.45; color: #444; }
+  .ms-fb-paket__nedrakning { margin-top: 12px; }
+  .ms-fb-paket__etikett { display: block; margin-bottom: 6px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ff3b30; }
+  .ms-fb-paket__klocka { display: flex; gap: 6px; }
+  .ms-fb-ruta { display: flex; align-items: baseline; justify-content: center; gap: 2px; min-width: 52px; padding: 7px 8px; border-radius: 9px; background: #111; color: #fff; }
+  .ms-fb-ruta b { font-size: 1.3rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+  .ms-fb-ruta i { font-style: normal; font-size: 0.75rem; font-weight: 700; color: #ff8a6b; }
+  .ms-fb-kort { display: block; margin-top: 3px; font-size: 0.8rem; font-weight: 800; color: #e5302a; }
+  @keyframes ms-fb-puls { 0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); } 70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
   @media (prefers-reduced-motion: reduce) { .ms-fb-paket__prick { animation: none; } }
 </style>
 <script>
@@ -152,20 +172,19 @@ export function byggSnippet(texter, konfig) {
     window.msFbNedrakning = true;
     var MAL = ${mal}; // ${konfig.skickas_fran} 00:00 svensk tid
     var lang = (document.documentElement.lang || 'sv').toLowerCase();
+    var ENHET = lang.indexOf('ja') === 0 ? ['日', '時間', '分', '秒'] : lang.indexOf('zh') === 0 ? ['天', '時', '分', '秒'] : ['d', 'h', 'm', 's'];
     function pad(n) { return n < 10 ? '0' + n : String(n); }
-    function text(ms) {
-      var s = Math.floor(ms / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
-      if (lang.indexOf('ja') === 0) return d + '日' + h + '時間' + m + '分' + pad(x) + '秒';
-      if (lang.indexOf('zh') === 0) return d + '天' + h + '時' + m + '分' + pad(x) + '秒';
-      return d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(x) + 's';
-    }
     function tick() {
       var kvar = MAL - Date.now();
+      var s = Math.max(0, Math.floor(kvar / 1000));
+      var v = [String(Math.floor(s / 86400)), pad(Math.floor(s % 86400 / 3600)), pad(Math.floor(s % 3600 / 60)), pad(s % 60)];
       document.querySelectorAll('[data-ms-fb-nedrakning]').forEach(function (el) {
         if (kvar <= 0) { el.hidden = true; return; }
         el.hidden = false;
-        var t = el.querySelector('[data-ms-fb-tid]');
-        if (t) t.textContent = text(kvar);
+        for (var i = 0; i < 4; i++) {
+          var b = el.querySelector('[data-ms-fb="' + i + '"]'); if (b) b.textContent = v[i];
+          var e = el.querySelector('[data-ms-fb-enhet="' + i + '"]'); if (e) e.textContent = ENHET[i];
+        }
       });
       if (kvar > 0) setTimeout(tick, 1000);
     }

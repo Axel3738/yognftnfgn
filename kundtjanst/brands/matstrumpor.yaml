@@ -55,7 +55,7 @@ svar:
   # inte till VA:n förrän datumet passerat med packtid + 3 dagar. Samma datum som sajtens ruta
   # (matstrumpor/forbestallning/konfig.json). Ta bort blocket när förbeställningen är över.
   forbestallning:
-    skickas_fran: "2026-10-13"
+    skickas_fran: "2026-10-12"
 
 notion:
   # Ingen egen SOP-databas — VA:n använder Bäverbutikens bas (portabel, Store
