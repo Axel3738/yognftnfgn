@@ -1331,6 +1331,31 @@ node klaviyo/spoks/robot/spoks-robot.mjs statistik --post <postId> [--brand mats
   - V04 9/10 `trig_01GoTUd9oR7vppKrahMMyZ51` och V05 12/10 `trig_01M7GAcm5zvRmfcL1yDRQD4e`.
   - K16 och tröstpriset 2/11 `trig_011Xqt44pRC5Ax5yg6ZkBJRA`.
 
+  - Fars dag-datumet 8/10 `trig_015Hq23QqGAiaJVqyX5r2DJh` (se nästa punkt).
+
   De som schemalägger skriver facit med `cowork-schema.mjs --bara`, kör `schemalagg` och mäter
-  sedan med `--jamfor`. Axels enda klick som finns kvar är att flytta ett schemalagt mejl till
-  utkast vid larm, via menyn "•••" i Spoks. Roboten kan inte göra det än.
+  sedan med `--jamfor`.
+- **Ett schemalagt mejl kan flyttas till utkast av roboten** (mätt 2026-10-03 på FD09, bara
+  tittat): menyn bakom pillret "Kommer att publiceras …" har tre val, "Ändra
+  publiceringstid", "Avbryt och flytta till utkast" och "Stäng popup". Kommandot är inte byggt
+  än. Esc stänger menyn utan att något ändras (FD09 stod kvar 11/10 18:00, kollat med
+  `search_campaigns`). Vägen för att ändra texten i ett schemalagt mejl blir alltså: roboten
+  flyttar det till utkast, MCP:n patchar det, roboten schemalägger om det.
+- ⚠️ **Håller "beställ senast 24 oktober"? Frågan ställd till Axel lör 3/10 eftermiddag.**
+  - En annan session skickade 3/10 08:36 CEST ursäktsmejlet "URSAKT" `e1071a3c-…` till 457
+    köpare sedan 23/9: paketen kan ta 5-10 arbetsdagar längre på grund av en störning i
+    leveranskedjan.
+  - Sessionen mätte samma dag. I `sparning/butiker/matstrumpor/lage.json` (origin/main, 05:57
+    UTC) stod 461 paket registrerade 23/9–2/10 i 17TRACK-status `InfoReceived`. Etiketten
+    finns, men fraktbolaget har inte skannat dem. De äldsta hade väntat 9 dygn.
+  - Lagret skickar fortfarande inom ett dygn (Shopify: median 0,3–0,8 dygn från order till
+    fulfillment). Stoppet ligger efter lagret.
+  - Före 23/9 var 82–90 % framme inom 15 dygn från ordern (Shopify `deliveredAt`). Det är det
+    tal p90 15 dygn och sista dagen 24/10 bygger på.
+  - V01 (skickat 30/9) och FD01 (går sön 4/10 18:00) nämner 24/10. Ytterligare 13 schemalagda mejl lovar datumet
+    eller att lådan "hinner fram": FD09, REA03, FD13, FD15, K04, FD16, FD17, FD18, FD21,
+    FD19, FD22, FD23 och FD20. Julens 8 december (K08, K11, K12, K13) bygger på samma 15
+    dygn.
+  - Frågan: A) vänta och mät igen tors 8/10 (rekommenderat, standard utan svar), B) flytta
+    sista dagen till lör 17/10, C) behåll 24/10. Nästa mejl med datumet är FD09 sön 11/10.
+  - Inget i Spoks är ändrat.
