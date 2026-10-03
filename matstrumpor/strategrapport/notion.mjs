@@ -12,9 +12,14 @@ const sov = (ms) => new Promise((k) => setTimeout(k, ms));
 export async function notion(path, { method = 'GET', body, env = process.env } = {}) {
   const tok = env.NOTION_TOKEN;
   if (!tok) throw new Error('NOTION_TOKEN saknas i miljön');
+  // Ett POST som SKAPAR (sida, kommentar) görs aldrig om på 5xx: ett 502 från
+  // proxyn efter en lyckad skrivning hade gett en dubbel rad eller dubbel ping.
+  // Omkörningen är ändå säker: Log-raden återanvänds på titeln, kommentaren
+  // hoppas när den redan finns (harKommentar).
+  const skapar = method === 'POST' && (path === '/pages' || path === '/comments');
   for (let forsok = 0; forsok < 6; forsok++) {
     const r = await fetch(`${NOTION}${path}`, { method, headers: { Authorization: `Bearer ${tok}`, 'Notion-Version': VERSION, 'Content-Type': 'application/json' }, body: body ? JSON.stringify(body) : undefined });
-    if (r.status === 429 || r.status >= 500) { await sov(1500 * (forsok + 1)); continue; }
+    if (r.status === 429 || (r.status >= 500 && !skapar)) { await sov(1500 * (forsok + 1)); continue; }
     const j = await r.json();
     if (!r.ok) throw new Error(`Notion ${r.status} ${method} ${path}: ${j.message || JSON.stringify(j).slice(0, 300)}`);
     return j;
@@ -114,12 +119,27 @@ export async function skrivLoggrad(dbId, { titel, datum: dag, system }, { env } 
   return { id: p.id, url: p.url, skapad: true };
 }
 
-/** NOTES på en Log-rad (människans svar). null när sidan inte går att läsa. */
+/** NOTES på en Log-rad (människans svar): { ok: true, text } ('' = inget
+ *  skrivet) eller { ok: false, fel } när sidan inte gick att läsa — de två
+ *  får aldrig blandas ihop i feedbacken. */
 export async function lasNotes(pageId, { env } = {}) {
   try {
     const p = await notion(`/pages/${pageId}`, { env });
-    return plain(p.properties?.NOTES);
-  } catch { return null; }
+    if (p.archived || p.in_trash) return { ok: false, fel: 'raden ligger i papperskorgen' };
+    return { ok: true, text: plain(p.properties?.NOTES) };
+  } catch (e) { return { ok: false, fel: e.message }; }
+}
+
+/** Finns redan en kommentar av `av` (integrationens id) på sidan som börjar
+ *  med `borjar`? Returnerar kommentarens id eller null. Läs-bart. */
+export async function harKommentar(pageId, { av, borjar }, { env } = {}) {
+  const r = await notion(`/comments?block_id=${pageId}&page_size=100`, { env });
+  const start = String(borjar ?? '').trim();
+  for (const k of r.results ?? []) {
+    const text = (k.rich_text ?? []).map((t) => t.plain_text ?? '').join('').trim();
+    if ((!av || k.created_by?.id === av) && start && text.includes(start)) return k.id;
+  }
+  return null;
 }
 
 /** rich_text i bitar om högst 1 900 tecken (Notions tak är 2 000 per bit). Ren. */

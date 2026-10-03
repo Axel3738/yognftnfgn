@@ -18,16 +18,20 @@
 // text.mjs → Notion (Log-rad, kommentar) → data/snapshot.json + data/historik.jsonl.
 //
 // Skriver aldrig i Ad Roadmap, Ad Results eller hubben. Raderar aldrig.
+// Omkörning är säker: Log-raden återanvänds på titeln och kommentaren hoppas
+// när den redan finns — faller Notion mellan raden och kommentaren skrivs
+// inget minne, och nästa körning tar vid utan dubbletter.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, appendFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { batcher } from '../growthguide.mjs';
-import { lasRoadmap, lasHub, skrivLoggrad, kommentera, lasNotes, notion } from './notion.mjs';
-import { matVecka, eskalering, valjAction } from './matt.mjs';
+import { lasRoadmap, lasHub, skrivLoggrad, kommentera, lasNotes, harKommentar, notion } from './notion.mjs';
+import { matVecka, eskalering, valjAction, perVecka } from './matt.mjs';
 import { feedbackText, loggradText, rapportAxel, eskaleringText } from './text.mjs';
 import { plusDagar, veckaFor } from '../../redigerarrapport/kallor.mjs';
+import { urLogg } from '../../redigerarrapport/namn.mjs';
 import { serUtSomSvenska } from '../../tools/lib/engelska.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
@@ -40,8 +44,10 @@ const SNAPSHOT = join(DATAMAPP, 'snapshot.json');
 const HISTORIK = join(DATAMAPP, 'historik.jsonl');
 const GROWTHGUIDE = join(HAR, '..', 'growthguide.json');
 const MS_KONFIG = join(HAR, '..', 'konfig.json');
+const LOGG = join(HAR, '..', 'logg.jsonl');
 const ARKIV = join(ROT, 'products', 'matstrumpor', 'arkiv.json');
 const LARDOMAR = join(ROT, 'products', 'matstrumpor', 'lardomar.md');
+export const FONSTER_MAX_DAGAR = 28;
 
 const lasJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const lasJsonl = (p) => (existsSync(p) ? readFileSync(p, 'utf8').split('\n').filter(Boolean).map((r) => JSON.parse(r)) : []);
@@ -53,13 +59,24 @@ export function idagSE(nu = new Date()) {
 /** Veckan som rapporten gäller: ISO-veckan som gårdagen låg i (tisdag ⇒ måndagens vecka). Ren. */
 export function rapportVecka(idag) { return veckaFor(plusDagar(idag, -1)); }
 
-/** Etikettfönstret: de sju dygnen före i dag. Ren. */
-export function fonsterFor(idag) { return { fran: plusDagar(idag, -7), till: plusDagar(idag, -1) }; }
-
-/** Snapshotens rad: det som behövs för diffen nästa vecka. Ren. */
-export function snapshotRad(r) {
-  return { id: r.id, titel: r.titel, status: r.status, results: r.results, learnings: String(r.learnings ?? '').slice(0, 400), memo: String(r.memo ?? '').slice(0, 200), upvote: r.upvote ?? null, spend: r.spend ?? null, kop: r.kop ?? null, created_by: r.created_by, created_time: r.created_time, last_edited_by: r.last_edited_by, last_edited_time: r.last_edited_time };
+/** Etikettfönstret: från dagen efter förra körningens fönster (så en missad
+ *  tisdag inte tappar en vecka), annars de sju dygnen före i dag; aldrig längre
+ *  bakåt än FONSTER_MAX_DAGAR, och alltid till i går. Ren. */
+export function fonsterFor(idag, forraTill = null) {
+  const till = plusDagar(idag, -1);
+  const tidigast = plusDagar(idag, -FONSTER_MAX_DAGAR);
+  let fran = forraTill ? plusDagar(forraTill, 1) : plusDagar(idag, -7);
+  if (fran < tidigast) fran = tidigast;
+  if (fran > till) fran = till;
+  return { fran, till };
 }
+
+/** Snapshotens rad: det som behövs för diffen nästa vecka. LEARNINGS hel, för
+ *  människans del står efter systemets sådd. Ren. */
+export function snapshotRad(r) {
+  return { id: r.id, titel: r.titel, status: r.status, results: r.results, learnings: String(r.learnings ?? ''), memo: String(r.memo ?? '').slice(0, 300), upvote: r.upvote ?? null, spend: r.spend ?? null, kop: r.kop ?? null, created_by: r.created_by, created_time: r.created_time, last_edited_by: r.last_edited_by, last_edited_time: r.last_edited_time };
+}
+export function snapshotHubbrad(h) { return { id: h.id, namn: h.namn, status: h.status ?? null }; }
 
 export function tolkaArgv(argv) {
   const a = { skarpt: false, idag: null, cache: false, utanArkiv: false, igen: false, kolla: false };
@@ -93,7 +110,7 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
 
   if (arg.kolla) {
     skriv(`Token: ${env.NOTION_TOKEN ? 'finns' : 'SAKNAS'} · Ad Roadmap ${db.roadmap} · Log ${db.log} · hubben ${hubId ?? 'saknas'} · strateg ${konfig.strateg.namn} (${konfig.strateg.notion_user_id})`);
-    skriv(`Snapshot: ${existsSync(SNAPSHOT) ? lasJson(SNAPSHOT).skrivet : 'saknas (första körningen mäter hela guiden)'} · historik: ${lasJsonl(HISTORIK).length} veckor`);
+    skriv(`Snapshot: ${existsSync(SNAPSHOT) ? lasJson(SNAPSHOT).skrivet : 'saknas (första körningen mäter hela guiden)'} · historik: ${lasJsonl(HISTORIK).length} rader`);
     if (env.NOTION_TOKEN) {
       const me = await notion('/users/me', { env });
       const rader = await lasRoadmap(db.roadmap, { env });
@@ -104,7 +121,6 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
 
   const idag = arg.idag ?? idagSE(nu);
   const vecka = rapportVecka(idag);
-  const fonster = fonsterFor(idag);
   const nuIso = nu.toISOString();
   mkdirSync(join(UTMAPP, vecka), { recursive: true });
   mkdirSync(DATAMAPP, { recursive: true });
@@ -117,6 +133,7 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
   if (!existsSync(ARKIV)) throw new Error(`Arkivet saknas (${ARKIV}). Kör node matstrumpor/kor.mjs --arkiv`);
   const arkiv = lasJson(ARKIV);
   const lardomar = existsSync(LARDOMAR) ? readFileSync(LARDOMAR, 'utf8') : '';
+  const { uppladdade } = urLogg(lasJsonl(LOGG));
 
   // 2. Notion: Ad Roadmap + hubben (eller cachen).
   const cacheFil = join(UTMAPP, 'notion.json');
@@ -134,19 +151,24 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
     skriv(`Notion: Ad Roadmap ${roadmap.length} rader, hubben ${hub.length} rader, ${Math.round((Date.now() - t0) / 1000)} s`);
   }
 
-  // 3. Förra snapshoten + historiken.
+  // 3. Förra snapshoten + historiken + fönstren.
   const forra = existsSync(SNAPSHOT) ? lasJson(SNAPSHOT) : null;
   const historik = lasJsonl(HISTORIK);
+  const fonster = fonsterFor(idag, forra?.fonster?.till ?? null);
   const aktivitet = { fran: forra?.skrivet ?? `${fonster.fran}T00:00:00.000Z`, till: nuIso };
 
   // 4. Batcherna (samma gruppering som Growth Guide) och mätningen.
-  const batchar = batcher(arkiv, { hub: hubbKarta(hub), lardomar });
+  const batchar = batcher(arkiv, { hub: hubbKarta(hub), lardomar, uppladdade });
   const M = matVecka({ roadmap, forra, hub, batchar, strateg: konfig.strateg, idag, vecka, fonster, aktivitet, grind: konfig.grind, konfig });
   const esk = eskalering(M, historik, konfig.eskalera);
   const action = valjAction(M, historik, bank);
-  const forraRad = [...historik].reverse().find((h) => h.action && h.vecka < vecka);
+  const forraRad = perVecka(historik, vecka).reverse().find((h) => h.action);
   let forraAction = null;
-  if (forraRad) forraAction = { text_en: forraRad.action.text_en, svar: !arg.cache && forraRad.logg_rad_id ? await lasNotes(forraRad.logg_rad_id, { env }) : null };
+  if (forraRad) {
+    let svar = null;
+    if (!arg.cache && forraRad.logg_rad_id) { const n = await lasNotes(forraRad.logg_rad_id, { env }); svar = n.ok ? n.text : null; if (!n.ok) skriv(`⚠️ NOTES på förra veckans Log-rad gick inte att läsa: ${n.fel}`); }
+    forraAction = { text_en: forraRad.action.text_en, svar };
+  }
 
   // 5. Texterna.
   const feedback = feedbackText(M, { action, forra: forraAction });
@@ -156,21 +178,28 @@ export async function kor(argv = process.argv.slice(2), { skriv = console.log, e
   writeFileSync(join(UTMAPP, vecka, 'feedback.md'), `${feedback}\n`);
   writeFileSync(join(UTMAPP, vecka, 'loggrad.txt'), `${loggrad}\n`);
   writeFileSync(join(UTMAPP, vecka, 'matning.json'), JSON.stringify({ M, action, eskalering: esk, forraAction }, null, 1));
-  const snapshot = { skrivet: nuIso, idag, vecka, rader: roadmap.map(snapshotRad) };
+  const snapshot = { skrivet: nuIso, idag, vecka, fonster, rader: roadmap.map(snapshotRad), hub: hub.map(snapshotHubbrad) };
 
   // 6. Notion + minnet (bara --skarpt).
   let skrivet = null;
-  const redan = historik.find((h) => h.vecka === vecka);
+  const redan = perVecka(historik).find((h) => h.vecka === vecka);
   if (arg.skarpt && redan && !arg.igen) {
     skriv(`Veckan ${vecka} är redan skriven ${redan.skrivet} (Log-rad ${redan.logg_rad_id}). --igen för att skriva om. Inget skrivet.`);
   } else if (arg.skarpt) {
     const rad = await skrivLoggrad(db.log, { titel: `${vecka} Weekly review`, datum: idag, system: loggrad }, { env });
-    const k1 = await kommentera(rad.id, [{ mention: konfig.strateg.notion_user_id }, { text: ` ${feedback}` }], { env });
-    let k2 = null;
-    if (eskText) k2 = await kommentera(rad.id, [{ mention: konfig.axel_notion_user_id }, { text: ` ${eskText}` }], { env });
-    skrivet = { logg_rad_id: rad.id, logg_rad_url: rad.url, loggrad_skapad: rad.skapad, kommentar_id: k1.id, axel_kommentar_id: k2?.id ?? null };
+    const forstaRaden = feedback.split('\n')[0];
+    let kommentarId = await harKommentar(rad.id, { av: konfig.integration_id, borjar: forstaRaden }, { env });
+    let kommentarFanns = !!kommentarId;
+    if (!kommentarId) kommentarId = (await kommentera(rad.id, [{ mention: konfig.strateg.notion_user_id }, { text: ` ${feedback}` }], { env })).id;
+    let axelId = null;
+    if (eskText) {
+      axelId = await harKommentar(rad.id, { av: konfig.integration_id, borjar: eskText.split('\n')[0] }, { env });
+      if (!axelId) axelId = (await kommentera(rad.id, [{ mention: konfig.axel_notion_user_id }, { text: ` ${eskText}` }], { env })).id;
+    }
+    skrivet = { logg_rad_id: rad.id, logg_rad_url: rad.url, loggrad_skapad: rad.skapad, kommentar_id: kommentarId, kommentar_fanns: kommentarFanns, axel_kommentar_id: axelId };
     writeFileSync(SNAPSHOT, `${JSON.stringify(snapshot, null, 1)}\n`);
-    appendFileSync(HISTORIK, `${JSON.stringify({ vecka, idag, skrivet: nuIso, gjordeKollen: M.gjordeKollen, ko: M.ko, betade: M.betade.length, lardomar: M.betade.filter((b) => b.typ === 'lardom').length, nya_rader: M.nyaRader.length, briefer: M.hubb.inlamnade.length, utfall_egna: M.utfall.filter((u) => u.egen).length, hitrate: M.hitrate.egen, action, eskalering: esk.orsaker, ...skrivet })}\n`);
+    appendFileSync(HISTORIK, `${JSON.stringify({ vecka, idag, skrivet: nuIso, gjordeKollen: M.gjordeKollen, ko: M.ko, betade: M.betade.length, lardomar: M.betade.filter((b) => b.typ === 'lardom').length, nya_rader: M.nyaRader.length, hubbrader: M.hubb.inlamnade.length, utfall_egna: M.utfall.filter((u) => u.egen).length, hitrate: M.hitrate.egen, action, eskalering: esk.orsaker, ...skrivet })}\n`);
+    if (kommentarFanns) skriv(`Kommentaren till ${konfig.strateg.fornamn} fanns redan på Log-raden (${kommentarId}) — ingen ny postad.`);
   } else {
     writeFileSync(join(UTMAPP, vecka, 'snapshot-skulle.json'), `${JSON.stringify(snapshot, null, 1)}\n`);
   }

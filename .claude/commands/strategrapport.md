@@ -32,8 +32,9 @@ Inga påhittade tal: allt kommer ur mätningen. ETT action item per vecka, aldri
 samma två gånger förrän banken är slut (`data/historik.jsonl`).
 
 ⛔ **Axel pingas bara vid eskalering** (ingen måndagskoll två veckor i rad, en
-levande vinnare utan iteration efter 14 dagar, butikens namn i en människocell).
-Allt annat läser han i chatten här och i Log-fliken när han vill.
+levande vinnare utan en live iteration efter 14 dagar). Allt annat läser han
+i chatten här och i Log-fliken när han vill. Måndagskollen = en stängd rad
+med lärdom eller en ny konceptrad; hubbarbete räknas inte.
 
 CONNECTORS: inga krävs. Notion via `NOTION_TOKEN` (integrationen "Bäverbutiken
 RUTINER", som har kommentarsrättigheten — mätt 2026-10-03).
@@ -55,8 +56,10 @@ RUTINER", som har kommentarsrättigheten — mätt 2026-10-03).
    skriver om). Utskriften slutar med rapporten till Axel på svenska — den är
    svaret, citera den.
    Felar Notion mitt i: Log-raden kan finnas utan kommentar. Minnet skrivs
-   bara när både raden och kommentaren gått igenom, så nästa körning gör om
-   veckan (`skrivLoggrad` återanvänder raden på titeln, ingen dubblett).
+   bara när både raden och kommentaren gått igenom; kör då om samma dag med
+   samma flaggor — raden återanvänds på titeln och en kommentar som redan
+   finns hoppas, så det blir aldrig dubbletter. Står felet kvar till nästa
+   tisdag mäter den körningen båda veckorna (snapshoten är oförändrad).
 
 2. Lägg tillbaka arkivets markdown (den är Matstrumporkungens att committa, och
    två rutiner som skriver samma fil ger merge-konflikter):

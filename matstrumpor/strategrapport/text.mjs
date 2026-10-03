@@ -11,21 +11,36 @@
 //
 // Inga påhittade tal: allt kommer ur mätningen (matt.mjs). Hook/hold bara när
 // batchen är bedömbar och måttet är rimligt (< 90 %, post.mjs HOOK_ORIMLIG).
+// Allt en människa skrivit (titlar, NOTES-svar) tvättas med rensa() innan det
+// sätts in, så hans egna ord aldrig fäller körningen.
 
 import { kontrollera, procent, datumEn, ETIKETTNAMN, HOOK_ORIMLIG } from '../../redigerarrapport/post.mjs';
 import { RANG } from '../etikett.mjs';
 
-/** Konceptradens dom per utfall — strategens version (konceptet är hans). */
+/** Konceptradens dom per utfall — strategens version (konceptet är hans).
+ *  Diagnosen är en gissning och sägs så (Evolve: learnings are educated guesses). */
 export const UTFALLSRAD = Object.freeze({
   BREAKTHROUGH: 'Breakthrough: this concept took its share of the campaign in week one and the campaign grew with it. Three iterations on it within 14 days, before anything new.',
-  SPEND_WINNER: 'Spend Winner: Meta found the audience and spent on it, but it did not turn that into enough purchases. That is belief, urgency or the landing page, and it is the next brief\'s job.',
+  SPEND_WINNER: 'Spend Winner: Meta found the audience and spent on it, but it did not turn that into enough purchases. Our best guess, not a fact: belief, urgency or the landing page. Read the hook against the top batch first, it can still be the root cause.',
   KPI_WINNER: 'KPI Winner: it converts when it is shown, but Meta shows it little. Read the hook first, then the hold, before you decide what changes.',
   LOSER: 'Loser: this angle did not stop enough people. The loss is the concept\'s unless the cut differs from the brief.',
-  INGEN_LEVERANS: 'No delivery: Meta never showed it, so it does not count in your hit rate. Only the first frame is worth a second look.',
+  INGEN_LEVERANS: 'No delivery: Meta never showed it, so nothing in it is tested and it does not count in your hit rate. The reason is not measured until the ad set is read.',
 });
 
-/** En titel i löptext: aldrig butikens namn, aldrig tankstreck. Ren. */
-export const rensa = (s) => String(s ?? '').replace(/matstrumpor/gi, 'the store').replace(/[—–]/g, '-').replace(/\d\s?kr\b/gi, (m) => m.replace(/kr/i, 'SEK ')).replace(/\bSEK\s/g, '').trim();
+/** En människas ord i löptext: aldrig butiksnamn, kronor, ROAS, CPA, köp eller
+ *  tankstreck — samma mönster som post.mjs kontrollera fäller. Ren. */
+export const rensa = (s) => String(s ?? '')
+  .replace(/[—–]/g, '-')
+  .replace(/\d[\d\s.,]*\s?kr\b/gi, '')
+  .replace(/\bSEK\b/gi, '')
+  .replace(/\bROAS\b/gi, 'return on spend')
+  .replace(/\bCPA\b/gi, 'cost per purchase')
+  .replace(/\bköp\b/gi, 'purchases')
+  .replace(/b[äa]verbutiken|carashell|matstrumpor/gi, 'the store')
+  .replace(/\.se\b/gi, ' site')
+  .replace(/\s+,/g, ',')
+  .replace(/\s{2,}/g, ' ')
+  .trim();
 const lista = (xs, max = 8) => { const v = xs.slice(0, max).map(rensa); const kvar = xs.length - v.length; return v.join(', ') + (kvar > 0 ? ` and ${kvar} more` : ''); };
 const ett = (n, en, flera) => `${n} ${n === 1 ? en : flera}`;
 const namn = (e) => ETIKETTNAMN[e] ?? e;
@@ -41,10 +56,19 @@ function hookRad(u, topp) {
 
 function utfallBlock(u, rubrik, topp) {
   return [
-    `${rubrik}: ${rensa(u.titel)}, ${namn(u.etikett)} (week ${u.vecka}${u.uppgradering ? ', upgraded' : ''}).`,
+    `${rubrik}: ${rensa(u.titel)}, ${namn(u.etikett)} (week ${u.vecka}${u.uppgradering ? ', upgraded' : ''}${u.iteration ? ', an iteration' : ''}).`,
     UTFALLSRAD[u.etikett] ?? '',
     u.etikett === 'INGEN_LEVERANS' ? '' : hookRad(u, topp),
   ].filter(Boolean).join(' ');
+}
+
+/** Förra veckans item och hans svar i NOTES. null = inget att säga. Ren. */
+export function forraRad(forra) {
+  if (!forra) return null;
+  if (forra.svar === null || forra.svar === undefined) return `Last week's one thing was: ${forra.text_en} I could not read NOTES on that row this time.`;
+  if (String(forra.svar).trim() === '') return `Last week's one thing was: ${forra.text_en} Nothing in NOTES on that row yet. One line there when it is done.`;
+  const rad = `Last week's one thing: you wrote in NOTES "${rensa(forra.svar).slice(0, 160)}". Thank you.`;
+  try { kontrollera(rad); return rad; } catch { return 'Last week\'s one thing: you answered in NOTES. Thank you.'; }
 }
 
 /** Måndagskollen i ord. Ren. */
@@ -52,11 +76,11 @@ export function kollRader(M) {
   const r = [];
   const k = M.ko;
   r.push(M.forsta
-    ? `Rows with a result and not Done when this review started: ${k.start} (${k.startBedombara} with enough data, ${k.startTunna} too little data).`
-    : `Rows with a result and not Done at the start of the week: ${k.start} (${k.startBedombara} with enough data, ${k.startTunna} too little data).`);
+    ? `Rows with a result and not closed when this review started: ${k.start} (${k.startBedombara} with enough data, ${k.startTunna} too little data).`
+    : `Rows with a result and not closed at the start of the week: ${k.start} (${k.startBedombara} with enough data, ${k.startTunna} too little data).`);
   const lard = M.betade.filter((b) => b.typ === 'lardom').length;
   const tunn = M.betade.length - lard;
-  r.push(M.betade.length ? `You closed ${M.betade.length}: ${ett(lard, 'with a learning', 'with a learning')}, ${tunn} as too little data.` : 'You closed none.');
+  r.push(M.betade.length ? `You closed ${M.betade.length}: ${lard} with a learning, ${tunn} as too little data.` : 'You closed none.');
   if (!k.slut) r.push('Nothing left open.');
   else if (k.bedombaraKvar.length) r.push(`Still open: ${k.slut}. With enough data, first to close: ${lista(k.bedombaraKvar, 6)}.`);
   else r.push(`Still open: ${k.slut}, all under the data gate. Too little data is the honest line there, one row at a time.`);
@@ -74,11 +98,12 @@ export function kollRader(M) {
   } else {
     r.push('New concept row: none this week. One row, before it is briefed, every week.');
   }
-  r.push(M.hubb.inlamnade.length
-    ? `Briefs you handed in to the hub: ${M.hubb.inlamnade.length} (${lista(M.hubb.inlamnade.map((h) => h.namn), 6)}). Waiting in the review queue: ${M.hubb.iKo}.`
-    : `Briefs you handed in to the hub: none. Waiting in the review queue: ${M.hubb.iKo}.`);
-  for (const u of M.kvalitet.utanBrief) r.push(`Open for more than a week without a brief: ${rensa(u.titel)} (${u.dagar} days). Brief it or set it to Filming.`);
-  if (M.butiksnamn.length) r.push(`The store's name appears in ${lista(M.butiksnamn)}. It never appears in an ad, a memo or a learning.`);
+  const h = M.hubb;
+  const live = h.gickLiveMatt ? ` Went live this week: ${h.gickLive.length}${h.gickLive.length ? ` (${lista(h.gickLive.map((x) => x.namn), 6)})` : ''}.` : '';
+  r.push(h.inlamnade.length
+    ? `Hub rows you worked on this week: ${h.inlamnade.length} (${lista(h.inlamnade.map((x) => x.namn), 6)}).${live} Waiting in the review queue: ${h.iKo}.`
+    : `Hub rows you worked on this week: none.${live} Waiting in the review queue: ${h.iKo}.`);
+  if (M.butiksnamn.length) r.push(`The store's name is in ${lista(M.butiksnamn)}. Keep it out of the concept name and the memo, it never reaches an ad.`);
   return r;
 }
 
@@ -101,7 +126,7 @@ export function utfallRader(M) {
     const rest = med.filter((u) => u !== basta && u !== forlorare);
     if (rest.length) r.push(`Also labelled this week: ${rest.slice(0, 10).map((u) => `${rensa(u.titel)} (${namn(u.etikett)})`).join('; ')}${rest.length > 10 ? `; and ${rest.length - 10} more` : ''}.`);
   }
-  if (utan.length) r.push(`No delivery: ${lista(utan.map((u) => u.titel), 10)}. Meta never showed ${utan.length === 1 ? 'it' : 'them'}, so there is nothing in the numbers to read and ${utan.length === 1 ? 'it does' : 'they do'} not count in your hit rate.`);
+  if (utan.length) r.push(`No delivery: ${lista(utan.map((u) => u.titel), 10)}. Meta never showed ${utan.length === 1 ? 'it' : 'them'}, so nothing in ${utan.length === 1 ? 'it' : 'them'} is tested yet and ${utan.length === 1 ? 'it does' : 'they do'} not count in your hit rate.`);
   return r;
 }
 
@@ -109,30 +134,28 @@ export function utfallRader(M) {
 export function vinnareRader(M) {
   const lev = M.vinnare.filter((v) => v.levande);
   if (!lev.length) return ['No winner alive right now (label older than 28 days, or the ad is off), so the next row is a new angle, not a copy.'];
-  return lev.map((v) => `${rensa(v.titel)}: ${namn(v.etikett)} ${v.dagar} days ago, ${ett(v.iterationer, 'iteration', 'iterations')} so far. The course asks for three within 14 days${v.iterationer >= 3 ? ', done' : v.utanIteration ? ', and none has started' : ''}.`);
+  return lev.map((v) => `${rensa(v.titel)}: ${namn(v.etikett)} ${v.dagar} days ago, ${ett(v.iterationer, 'live iteration', 'live iterations')} so far${v.briefade ? ` and ${v.briefade} more briefed, not live yet` : ''}. The course asks for three live within 14 days${v.iterationer >= 3 ? ', done' : v.utanIteration ? ', and none is live' : ''}.`);
 }
 
 export function hitrateRad(M) {
   const e = M.hitrate.egen, k = M.hitrate.konto;
-  return `Your hit rate, all your concepts: ${e.traff} of ${e.levererade} that got delivery (${e.traff} of ${e.alla} counting no delivery). The account: ${k.traff} of ${k.levererade}. Benchmark across accounts: 5 to 10 %, a reference, not a grade.`;
+  const iter = e.iter ? ` (${e.iter} of them iterations of an existing winner)` : '';
+  return `Your hit rate, all your concepts: ${e.traff} of ${e.levererade} that got delivery${iter}, ${e.traff} of ${e.alla} counting no delivery. The account: ${k.traff} of ${k.levererade}. Benchmark across accounts: 5 to 10 %, a reference, not a grade.`;
 }
 
 /**
  * Hela feedbacken till strategen.
  *  M       matt.mjs matVecka
  *  action  { text_en } | null
- *  forra   { text_en, svar } | null  (förra veckans item och hans NOTES-svar)
+ *  forra   { text_en, svar } | null  (förra veckans item och hans NOTES-svar:
+ *          '' = inget skrivet, null = gick inte att läsa)
  */
 export function feedbackText(M, { action = null, forra = null } = {}) {
   const r = [];
   r.push(`Weekly strategy review, week ${String(M.vecka).split('-W')[1]} (${datumEn(M.fonster.fran)} to ${datumEn(M.fonster.till)}), for ${M.strateg.fornamn}`);
   r.push('');
-  if (forra) {
-    r.push(forra.svar
-      ? `Last week's one thing: you wrote in NOTES "${rensa(forra.svar).slice(0, 160)}". Thank you.`
-      : `Last week's one thing was: ${forra.text_en} Nothing in NOTES on that row yet. One line there when it is done.`);
-    r.push('');
-  }
+  const f = forraRad(forra);
+  if (f) { r.push(f); r.push(''); }
   r.push('Your Monday check');
   r.push(...kollRader(M));
   r.push('');
@@ -164,7 +187,7 @@ export function loggradText(M, action = null) {
     `closed ${M.betade.length} (${lard} learnings, ${M.betade.length - lard} too little data)`,
     `open now ${M.ko.slut}`,
     `new rows ${M.nyaRader.length}${M.nyaRader.some((n) => !n.komplett) ? ' (incomplete)' : ''}`,
-    `briefs handed in ${M.hubb.inlamnade.length}`,
+    `hub rows worked on ${M.hubb.inlamnade.length}${M.hubb.gickLiveMatt ? `, went live ${M.hubb.gickLive.length}` : ''}`,
     egna.length ? `labels on own concepts: ${Object.entries(antal).map(([k, v]) => `${namn(k)} ${v}`).join(', ')}` : 'no labels on own concepts',
     `winners alive ${M.vinnare.filter((v) => v.levande).length}`,
     `hit rate ${M.hitrate.egen.traff}/${M.hitrate.egen.levererade} with delivery`,
@@ -182,14 +205,13 @@ export function rapportAxel(M, { action = null, eskalering = null, skarpt = fals
   for (const u of egna) antal[u.etikett] = (antal[u.etikett] ?? 0) + 1;
   const r = [];
   r.push(`Strategrapporten vecka ${String(M.vecka).split('-W')[1]} för ${M.strateg.fornamn}.`);
-  r.push(M.gjordeKollen ? 'Han gjorde sin måndagskoll.' : 'Han gjorde ingen måndagskoll i veckan.');
+  r.push(M.gjordeKollen ? 'Han gjorde sin måndagskoll.' : M.hubb.inlamnade.length ? `Han gjorde ingen måndagskoll, men rörde ${M.hubb.inlamnade.length} hubbrader.` : 'Han gjorde ingen måndagskoll i veckan.');
   r.push(`Kön i början: ${M.ko.start} rader, ${M.ko.startBedombara} med nog data.`);
   r.push(M.betade.length ? `Stängda i veckan: ${M.betade.length}, varav ${lard} med lärdom.` : 'Stängda i veckan: inga.');
   r.push(M.nyaRader.length ? `Ny konceptrad: ${M.nyaRader.length}${M.nyaRader.every((n) => n.komplett) ? ', komplett' : ', ofullständig'}.` : 'Ny konceptrad: ingen.');
-  r.push(`Briefer i hubben: ${M.hubb.inlamnade.length}.`);
   r.push(egna.length ? `Hans utfall i veckan: ${Object.entries(antal).map(([k, v]) => `${v} ${namn(k).toLowerCase()}`).join(', ')}.` : 'Hans utfall i veckan: inga nya etiketter.');
   r.push(`Hit rate: ${M.hitrate.egen.traff} av ${M.hitrate.egen.levererade} med leverans.`);
-  if (action) r.push(`Veckans sak till honom: ${action.text_en}`);
+  if (action) r.push(`Veckans sak till honom: ${action.rubrik_sv ?? action.nyckel}.`);
   r.push(eskalering?.tillAxel ? `Till dig: ${eskalering.orsaker.map(eskRad).join(' ')}` : 'Inget som kräver dig.');
   r.push(skarpt ? `Skrivet i Notion: Log-raden och kommentaren till honom.${lank ? ` ${lank}` : ''}` : 'Torrt: inget skrivet i Notion.');
   return r.join('\n');
@@ -197,8 +219,7 @@ export function rapportAxel(M, { action = null, eskalering = null, skarpt = fals
 
 function eskRad(o) {
   if (o.kod === 'ingen_koll') return `Ingen måndagskoll ${o.veckor} veckor i rad.`;
-  if (o.kod === 'vinnare_utan_iteration') return `Vinnaren ${rensa(o.titel)} har ingen iteration efter ${o.dagar} dagar.`;
-  if (o.kod === 'butiksnamn') return `Butikens namn står i ${o.titlar.map(rensa).join(', ')}.`;
+  if (o.kod === 'vinnare_utan_iteration') return `Vinnaren ${rensa(o.titel)} har ingen live iteration efter ${o.dagar} dagar.`;
   return JSON.stringify(o);
 }
 

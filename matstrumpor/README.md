@@ -308,11 +308,21 @@ konceptrad med de sex cellerna, inlämnade briefer, levande vinnare och deras
 iterationer, veckans etiketter på hans koncept, hit rate som bråk) och skriver
 feedbacken på engelska med ETT action item som en Log-rad `<vecka> Weekly
 review` + en kommentar med @Bruce på raden. Axel pingas i samma rad bara vid
-eskalering (ingen koll två veckor i rad, vinnare utan iteration efter 14
-dagar, butikens namn i en människocell). Allt mäts, inget bedöms av en
-modell; inga kronor, ROAS, köp eller butiksnamn i texten
-(`redigerarrapport/post.mjs kontrollera`). Måtten, fönstren, det som inte går
-att mäta och första torrkörningen: `strategrapport/README.md`.
+eskalering (ingen koll två veckor i rad, vinnare utan live iteration efter 14
+dagar). Allt mäts, inget bedöms av en modell; inga kronor, ROAS, köp eller
+butiksnamn i texten (`redigerarrapport/post.mjs kontrollera`), och hans egna
+ord tvättas innan de citeras. Måtten, fönstren, det som inte går att mäta och
+första torrkörningen: `strategrapport/README.md`.
+
+Två saker i `growthguide.mjs` ändrades för rutinens skull, samma dag: (1)
+**sådden slutar med markören `(end of seed)`** — Bruces SOP säger "write
+under any text already there", och utan markören hade ronden skrivit över
+hans text när sådden ändrades och rutinen räknat raden som obesvarad; en
+sådd rörs nu bara när inget står efter markören, och FILE TYPE/AD TYPE skrivs
+bara när de är kända så hans val står kvar. (2) **Hubbraden hittas i fyra
+steg** (`hubbUppslag`: exakt namn, utan `_v<n>`, uppladdarens källa "022_H1"
+⇒ raden "022", samma löpnummer `…_048h1_v1` ⇒ `…_048_v1`) — exakt namn
+träffade 25 av 260 annonser, så AUTHOR saknades på hans batcher.
 
 ## E-posten (Klaviyo, byggd 2026-09-25)
 

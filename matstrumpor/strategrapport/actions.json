@@ -1,5 +1,17 @@
 {
-  "_kommentar": "Action item-banken för strategrapporten till Bruce (creative strategist, Matstrumpor). Byggd 2026-10-03 ur hans SOP (matstrumpor/sop/BRUCE-WEEKLY-SELF-REVIEW.md), Evolves iterationsplaybook (docs/os/evolve/ITERATIONS-PLAYBOOK.md), matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL och CS-KLART.md. Nyckeln väljs av läget (matt.mjs actionNyckel): kön med bedömbara rader först, sedan saknad ny rad, sedan vinnare utan tre iterationer, sedan Done utan lärdom, sedan bästa egna utfallet, sist allmänt. ETT item per vecka, aldrig samma två gånger förrän listan är slut (minnet i data/historik.jsonl). Engelska utan tankstreck, inga butiksnamn, inga kronor.",
+  "_kommentar": "Action item-banken för strategrapporten till Bruce (creative strategist, Matstrumpor). Byggd 2026-10-03 ur hans SOP (matstrumpor/sop/BRUCE-WEEKLY-SELF-REVIEW.md), Evolves iterationsplaybook (docs/os/evolve/ITERATIONS-PLAYBOOK.md), matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL, CS-KLART.md och docs/os/evolve/SVAR.md. Nyckeln väljs av läget (matt.mjs actionNyckel): kön med bedömbara rader först, sedan saknad ny rad, sedan vinnare utan tre live iterationer, sedan Done utan lärdom, sedan bästa egna utfallet, sist allmänt. ETT item per vecka, aldrig samma två gånger förrän listan är slut (minnet i data/historik.jsonl). Engelska utan tankstreck, inga butiksnamn, inga kronor. rubrik_sv är raden till Axel.",
+  "rubrik_sv": {
+    "ko_bedombar_kvar": "stänga raderna med nog data",
+    "ingen_ny_rad": "lägga en ny konceptrad före briefen",
+    "vinnare_utan_iteration": "iterera på vinnaren",
+    "done_utan_lardom": "skriva lärdom på Done-raderna",
+    "BREAKTHROUGH": "komponentkartan och tre iterationer på vinnaren",
+    "SPEND_WINNER": "tro eller brådska i nästa brief, hooken kollad först",
+    "KPI_WINNER": "nästa hook ur briefen på samma kropp",
+    "LOSER": "en ny hookrad eller ett beslut om förloraren",
+    "INGEN_LEVERANS": "första bilden och ett nytt adset innan något stryks",
+    "allmant": "en Done-rad skriven så en ny redigerare förstår"
+  },
   "per_lage": {
     "ko_bedombar_kvar": [
       { "text_en": "Close the rows with enough data first. Open each one, write what differed from the brief, hook or hold against the best batch, and one line that starts with Guess. Then STATUS = Done.", "kalla": "SOP steg 1 till 4; CS-KLART punkt 1 och 5" },
@@ -24,7 +36,7 @@
       { "text_en": "Plan three iterations on the winner inside 14 days and put each one in Ad Roadmap as its own row with Iteration as ad type.", "kalla": "CS-KLART punkt 9; EVOLVE-GAP-ANALYS" }
     ],
     "SPEND_WINNER": [
-      { "text_en": "People stopped and stayed but did not buy enough. In the next brief for this concept, add belief or urgency in the bridge. Keep the hook.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL SPEND_WINNER; post.mjs NASTA_TEST" },
+      { "text_en": "People stopped and stayed but did not buy enough. Check the hook against the top batch first; if it holds up, the next brief for this concept adds belief or urgency in the bridge.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL SPEND_WINNER ('hooken kan vara rotorsaken'); post.mjs NASTA_TEST" },
       { "text_en": "Read the comments on the spend winner and write the objection that comes up most. Answer it in the next version of this concept.", "kalla": "lardom.mjs manus-7; kommentarer/leads.md" }
     ],
     "KPI_WINNER": [
@@ -35,7 +47,7 @@
       { "text_en": "Decide in LEARNINGS whether the loser gets one more try or is dropped. An idea from research gets two or three tries with a new reason each time; a lost imitation gets none.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL LOSER; ITERATIONS-PLAYBOOK §3" }
     ],
     "INGEN_LEVERANS": [
-      { "text_en": "Meta never showed these. Look only at the first frame and the first line of each, then write one decision per row in LEARNINGS: new first frame, or drop.", "kalla": "post.mjs ETIKETTRAD INGEN_LEVERANS; SVAR.md punkt 3" }
+      { "text_en": "Meta never showed these, so nothing in them is tested yet. Write in LEARNINGS: not tested, reason not measured. Look at the first frame once, and ask for a fresh ad set before you drop anything.", "kalla": "SVAR.md punkt 3 ('aldrig your hook failed'); lardomar.md L-batch-0a (CBO:n svalt dem)" }
     ],
     "allmant": [
       { "text_en": "Pick one Done row and rewrite its LEARNINGS so that a new editor would know exactly what to cut next. That is the standard for every row from now on.", "kalla": "CS-KLART punkt 3 och 5" },
