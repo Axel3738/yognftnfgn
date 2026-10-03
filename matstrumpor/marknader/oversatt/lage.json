@@ -1,7 +1,7 @@
 {
  "_om": "Skrivet av oversatt/kor.mjs (granskaren). Läs, ändra aldrig för hand — Axels ord skrivs i konfig.json → manuellt.",
- "idag": "2026-09-30",
- "skrivet": "2026-09-30T20:02:11.528Z",
+ "idag": "2026-10-03",
+ "skrivet": "2026-10-03T07:04:20.928Z",
  "mal": [],
  "domar": [
   {
@@ -27,39 +27,45 @@
   {
    "kod": "DK",
    "kampanj": "MATSTRUMP_DK_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "FI",
    "kampanj": "MATSTRUMP_FI_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "US",
    "kampanj": "MATSTRUMP_US_SALES",
-   "effective_status": "PAUSED",
-   "break_even": 1.182,
-   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 105.78 kr (US)",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "effective_status": "ACTIVE",
+   "break_even": 1.181,
+   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 106.61 kr (US)",
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "WW",
    "kampanj": "MATSTRUMP_WW_SALES",
    "effective_status": "PAUSED",
    "break_even": 1.137,
-   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 82.82 kr (GB)",
+   "break_even_kalla": "sushi 5-par 69 USD, landad kostnad 83.48 kr (GB)",
    "lage": "av",
    "motivering": "kampanjen är PAUSED i kontot",
    "fonster_fran": null
@@ -77,12 +83,14 @@
   {
    "kod": "FR",
    "kampanj": "MATSTRUMP_FR_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "NL",
@@ -107,12 +115,14 @@
   {
    "kod": "IT",
    "kampanj": "MATSTRUMP_IT_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "PL",
@@ -127,22 +137,26 @@
   {
    "kod": "PT",
    "kampanj": "MATSTRUMP_PT_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "JP",
    "kampanj": "MATSTRUMP_JP_SALES",
-   "effective_status": "PAUSED",
+   "effective_status": "ACTIVE",
    "break_even": 1.498,
    "break_even_kalla": "reserv: Sveriges break-even, marknadens kostnad saknas i cogs.json",
-   "lage": "av",
-   "motivering": "kampanjen är PAUSED i kontot",
-   "fonster_fran": null
+   "lage": "testas",
+   "forsta_dygn": "2026-10-02",
+   "hela_dygn": 1,
+   "motivering": "1 av 3 testdygn (spend sedan 2026-10-02)",
+   "fonster_fran": "2026-10-02"
   },
   {
    "kod": "TW",
