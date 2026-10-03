@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { planera, planeraKoncept, briefFil, STOPPSKAL } from '../kon.mjs';
+import { planera, planeraKoncept, briefFil, STOPPSKAL, baraRader } from '../kon.mjs';
 import { lasKonfig } from '../kor.mjs';
 import { strukturLage } from '../struktur.mjs';
 
@@ -193,4 +193,10 @@ test('en hookvariants EGET underkända kort håller just den annonsen — syskon
   assert.deepEqual(k.att_bygga[0].annonser.map((a) => a.namn), [namn[0], namn[2]]);
   const v = k.koncept.find((x) => x.status === 'vantar_copy');
   assert.match(v.skal.join(' '), /_086_h2_v1: butikens namn/);
+});
+
+test('--bara: Axels enskilda video planeras ensam, resten av kön rörs inte, och ett namn utanför kön är ett fel', () => {
+  const rader = [{ namn: 'MATSTRUMP_sushi_gift_ugc_064_v1' }, { namn: 'MATSTRUMP_sushi_gift_ugc_070_im_v1' }, { namn: 'B_Mini-clip_UGC_04' }];
+  assert.deepEqual(baraRader(rader, new Set(['matstrump_sushi_gift_ugc_070_im_v1'])).map((r) => r.namn), ['MATSTRUMP_sushi_gift_ugc_070_im_v1']);
+  assert.throws(() => baraRader(rader, new Set(['MATSTRUMP_sushi_gift_ugc_099_v1'])), /finns inte i kön/);
 });

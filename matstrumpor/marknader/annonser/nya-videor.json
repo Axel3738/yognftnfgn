@@ -1,0 +1,137 @@
+[
+ {
+  "datum": "2026-10-03",
+  "kalla": "Axels fil 2026-10-03 ('ladda upp denna videon i varje marknad'): sushistrumpor från Temu på TikTok, bara händer, musik och ljudeffekter, ingen text i bild, ingen vattenstämpel (sett av sessionen).",
+  "fil": "klar/temu_sushi_009.mp4",
+  "sha256": "03c00a830ed0f45263e1ba6305aa30cd4452e62f692908b098468b53e8ecd48d",
+  "namn": {
+   "NO": "MATSTRUMP_NO_sushi_gift_ugc_009_im_v1",
+   "DK": "MATSTRUMP_DK_sushi_gift_ugc_009_im_v1",
+   "FI": "MATSTRUMP_FI_sushi_gift_ugc_009_im_v1",
+   "US": "MATSTRUMP_US_sushi_gift_ugc_009_im_v1",
+   "WW": "MATSTRUMP_WW_sushi_gift_ugc_009_im_v1",
+   "DE": "MATSTRUMP_DE_sushi_gift_ugc_009_im_v1",
+   "FR": "MATSTRUMP_FR_sushi_gift_ugc_009_im_v1",
+   "NL": "MATSTRUMP_NL_sushi_gift_ugc_009_im_v1",
+   "ES": "MATSTRUMP_ES_sushi_gift_ugc_009_im_v1",
+   "IT": "MATSTRUMP_IT_sushi_gift_ugc_009_im_v1",
+   "PL": "MATSTRUMP_PL_sushi_gift_ugc_009_im_v1",
+   "PT": "MATSTRUMP_PT_sushi_gift_ugc_009_im_v1",
+   "JP": "MATSTRUMP_JP_sushi_gift_ugc_009_im_v1",
+   "TW": "MATSTRUMP_TW_sushi_gift_ugc_009_im_v1",
+   "NOB": "MATSTRUMP_NOB_sushi_gift_ugc_009_im_v1"
+  },
+  "pa": {
+   "skrivet": "2026-10-03T14:21:05.888Z",
+   "utfall": [
+    {
+     "kod": "NO",
+     "namn": "MATSTRUMP_NO_sushi_gift_ugc_009_im_v1",
+     "id": "120251848044550023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "DK",
+     "namn": "MATSTRUMP_DK_sushi_gift_ugc_009_im_v1",
+     "id": "120251848050930023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "FI",
+     "namn": "MATSTRUMP_FI_sushi_gift_ugc_009_im_v1",
+     "id": "120251848053110023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "US",
+     "namn": "MATSTRUMP_US_sushi_gift_ugc_009_im_v1",
+     "id": "120251848057640023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "WW",
+     "namn": "MATSTRUMP_WW_sushi_gift_ugc_009_im_v1",
+     "id": "120251848093950023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "DE",
+     "namn": "MATSTRUMP_DE_sushi_gift_ugc_009_im_v1",
+     "id": "120251848095980023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "FR",
+     "namn": "MATSTRUMP_FR_sushi_gift_ugc_009_im_v1",
+     "id": "120251848098770023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "NL",
+     "namn": "MATSTRUMP_NL_sushi_gift_ugc_009_im_v1",
+     "id": "120251848171570023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "ES",
+     "namn": "MATSTRUMP_ES_sushi_gift_ugc_009_im_v1",
+     "id": "120251848172550023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "IT",
+     "namn": "MATSTRUMP_IT_sushi_gift_ugc_009_im_v1",
+     "id": "120251848174600023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "PL",
+     "namn": "MATSTRUMP_PL_sushi_gift_ugc_009_im_v1",
+     "id": "120251848177330023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    },
+    {
+     "kod": "PT",
+     "namn": "MATSTRUMP_PT_sushi_gift_ugc_009_im_v1",
+     "id": "120251848282050023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "JP",
+     "namn": "MATSTRUMP_JP_sushi_gift_ugc_009_im_v1",
+     "id": "120251848284070023",
+     "status": "ACTIVE/IN_PROCESS",
+     "vantar": null
+    },
+    {
+     "kod": "TW",
+     "namn": "MATSTRUMP_TW_sushi_gift_ugc_009_im_v1",
+     "status": "rörs inte",
+     "skal": [
+      "lanseringsstopp (⛔ Axel 2026-10-01: \"vi borde inte launcha taiwan heller än ……)",
+      "inte byggd än (videor.json saknar annons-id) — kör bygg.mjs för marknaden"
+     ]
+    },
+    {
+     "kod": "NOB",
+     "namn": "MATSTRUMP_NOB_sushi_gift_ugc_009_im_v1",
+     "id": "120251848048730023",
+     "status": "ACTIVE/IN_PROCESS — kampanjen står PAUSED, går först när den slås på",
+     "vantar": "kampanjen står PAUSED"
+    }
+   ]
+  }
+ }
+]

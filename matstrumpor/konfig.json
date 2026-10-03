@@ -101,7 +101,8 @@
     "ko_status": "To be Reviewed",
     "ko_statusar": ["To be Reviewed", "Creative strat review"],
     "ko_statusar_comment": "Mätt 2026-09-30: Gilz satte färdiga 056 och 057 (sex videor, Drive-länk i sidan) i 'Creative strat review' 27–29/9, och kön läste bara 'To be Reviewed' — de låg osynliga i tre dygn. Båda statusarna är nu kö.",
-    "efter_uppladdning": "Approved",
+    "efter_uppladdning": "Approved + Launched in SE",
+  "efter_uppladdning_bytt": "Mätt 2026-10-03: hubbens statusval 'Approved' finns inte längre — det heter 'Approved + Launched in SE' (58 rader bar det, Notion svarade 400 'Invalid status option' på 'Approved'). Valen just nu: Draft, In progress, Creative strat review, In progress 2, To be Reviewed, In Review, Approved + Launched in SE, SPECIAL, To be translated to ACTIVE MARKETS, Hereer to be rewied, Translation in review, FINISHED, Not used.",
     "efter_uppladdning_comment": "Matstrumpor har ingen översättningsrutin (NO/FI-kontona saknar betalmetod 2026-09-21), så en uppladdad rad går direkt till Approved — inte till 'SE-ACTIVE to be translated' som Bäverbutiken."
   },
   "ekonomi": {

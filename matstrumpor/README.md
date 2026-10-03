@@ -43,6 +43,32 @@ under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
 så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
 testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
+### Första uppladdningen i 3:2:2: Axels video, skriven via token (2026-10-03)
+
+Axel skickade en färdig video: "ladda upp denna videon i varje marknad", sedan "Och i svenska
+kampanjen". Den kommer från Temus video på TikTok och visar bara händer, lådorna och musik, utan
+text. Utlandet står i `marknader/README.md` → "Annons 009".
+
+- **Strukturen före:** 4 av taket 5 levererande, alltså en ledig plats. Kampanjen stod på 8 000 kr/dag.
+- **Kön:** åtta svenska annonser stod klara (053, 059–062, 064, 066, 067), och de hade fått platsen
+  först. `--ko --bara MATSTRUMP_sushi_gift_ugc_070_im_v1` planerade bara Axels video, så den fick
+  platsen. De åtta står orörda i hubben och väntar på nästa plats.
+- **Hubbraden:** `products/matstrumpor/axels-videor/MATSTRUMP_sushi_gift_ugc_070_im_v1/brief.md`
+  lyftes med `tools/notion-brief-upp.mjs`, och filen lades i raden med `tools/notion-fil-upp.mjs`.
+  COPY CARD:et är kontrollkopian ur 053, ordagrant. Ingen ny copy skrevs.
+- **Skrivet via `META_ACCESS_TOKEN`, inte Adsmanager-MCP:n,** som inte fanns i sessionen. Planens
+  `adset_spec` och `--creative`-JSON skickades oförändrade. Adsetet fick Champions DSA-fält, och
+  videon är samma video-id som Norges 009 (samma konto). Ordningen var: adsetet PAUSED, sedan
+  `--adset-skapad`, sedan annonsen PAUSED. Tillbakaläsningen gav 2 texter och 2 rubriker lika med
+  planen, sidan `820358954504320` och länken till matstrumpor.se. Därefter slogs adsetet och annonsen
+  på, och `--kontroll` gav exit 0.
+- **Utfallet:** adset `MATSTRUMP_U261003_gift_video` `120251848172810023` ACTIVE, annons
+  `120251848174520023` IN_PROCESS (Metas granskning), `UPPLADDAD` loggad. Hubbraden står på
+  `Approved + Launched in SE`. Vägen med 2 + 2 texter via Graph API är alltså **bevisad**, vilket
+  steg 5c i `/matstrumpor` frågar efter.
+- ⚠️ **Statusvalet `Approved` finns inte längre i hubben** (Notion svarade 400). Det heter
+  `Approved + Launched in SE`, och `konfig.json` → `notion.efter_uppladdning` bär det nya namnet.
+
 ## Förbeställning medan lagret är slut (2026-10-03)
 
 Axels beslut 2026-10-03: allt är slutsålt, nästa leverans är i lagret 11/10, och den säljer också

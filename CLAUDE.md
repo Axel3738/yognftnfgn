@@ -231,6 +231,17 @@ fjorton språk ("skickas från 12 oktober", Axel samma kväll), sedan samma kvä
 nedräkning, "Förbeställ nu", varje låda märkt `Förbeställning` på ordern), styrd av shop-metafältet `matstrumpor.forbestallning`
 och `node matstrumpor/forbestallning.mjs`, släcker sig själv 12/10; kundtjänstboten läser
 `svar.forbestallning` i brandfilen. Allt i `matstrumpor/README.md` → "Förbeställning".
+📹 **"Ladda upp denna videon i varje marknad" (Axel 2026-10-03, en färdig video från Temu på TikTok,
+bara musik):** en video UTAN tal och UTAN text går till utlandet med
+`matstrumpor/marknader/annonser/ny-video.mjs`. Den blir annons 009 i varje kampanj med marknadens
+granskade 001-text, och ingen ny copy skrivs. Sverige får den i ett eget 3:2:2-adset via
+`kor.mjs --ko --bara <namn>`. Det var den första 3:2:2-uppladdningen, skriven via token eftersom
+MCP:n saknades, och vägen med 2 + 2 texter är nu bevisad. Lånad film registreras i
+`konkurrenter/externa/`. ⚠️ Mätt samma dag: **sju av fjorton utlandskampanjer stod PAUSED (NO, NOB,
+DE, NL, ES, PL, WW)**. Det är ett beslut och de slås aldrig på. Den nya annonsen väntar där och går
+först när någon slår på kampanjen. Hubbens status efter uppladdning heter nu
+**`Approved + Launched in SE`** (`Approved` finns inte, Notion svarar 400). Allt i
+`matstrumpor/marknader/README.md` → "Annons 009" och `matstrumpor/README.md` → "Första uppladdningen i 3:2:2".
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla

@@ -15,6 +15,7 @@
 //   node matstrumpor/kor.mjs --aov [--dagar 30] mät AOV ur Shopify på riktigt
 //   node matstrumpor/kor.mjs --struktur [--json]   3:2:2-läget i kampanjen ur Meta (token, läs-bart): Champions, levererande adsets, taket, lediga platser
 //   node matstrumpor/kor.mjs --ko [--json] [--grupp 063,066,067] [--hookrad <sid-id>] [--utan-struktur]   Notion-kön → koncept → testadsets (3:2:2)
+//   node matstrumpor/kor.mjs --ko --bara <annonsnamn[,…]>   planera BARA de raderna (Axel ber om en viss video) — resten av kön rörs inte
 //   node matstrumpor/kor.mjs --creative <annonsnamn> (--video <id> --thumb <url> | --bild <hash>)   creative-JSON till ads_create_ad (2 rubriker + 2 texter)
 //   node matstrumpor/kor.mjs --adset-skapad <adset-id> <adset-namn> [--koncept <nnn>]   logga ett nytt testadset (före annonserna)
 //   node matstrumpor/kor.mjs --adset-kasserat <adset-id> [--orsak "…"]   kvittera ett avbrutet bygge (utkastet kasserat)
@@ -489,7 +490,8 @@ async function main() {
     }
     const grupper = arg.flatMap((x, i) => (x === '--grupp' ? [String(arg[i + 1] ?? '').split(',').map((n) => n.trim()).filter(Boolean)] : [])).filter((g) => g.length > 1);
     const hookrader = new Set(arg.flatMap((x, i) => (x === '--hookrad' ? [arg[i + 1]] : [])).filter(Boolean));
-    const { rader, plan } = await hamtaKo(konfig, { logg: lasLogg(), lage, grupper, hookrader, datum: idag });
+    const bara = new Set(String(varde('--bara') ?? '').split(',').map((n) => n.trim()).filter(Boolean));
+    const { rader, plan } = await hamtaKo(konfig, { logg: lasLogg(), lage, grupper, hookrader, datum: idag, bara });
     // Specarna till Adsmanager-MCP:n för varje koncept som får byggas.
     for (const k of plan.koncept) {
       if (k.status !== 'klar' || !mall) continue;
