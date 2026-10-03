@@ -101,3 +101,13 @@ finska 12, engelska 7, tyska 6, franska 9, nederländska 4, spanska 4, italiensk
 japanska 9. Flödet aktivt 06:46 UTC, alla 13 sändsteg på, 8 inrullade vid första avläsningen (`get_flow`).
 Testutkastet skickades aldrig. Spoks segmentlista slutade scrolla efter åtta poster i första körningen;
 andra körningen gick med små scrollsteg.
+
+## Förbeställningen 2026-10-03: flödet stängs för nya kunder
+
+En annan session lade samma förmiddag in förbeställning i butiken (grenen
+`claude/peaceful-hamilton-1cgxxf`): kunden ser före köpet att lådorna är slutsålda och skickas
+12 oktober. Den kunden har tackat ja till väntan, så ursäktsmejlet ska inte gå till nya ordrar.
+Axels beslut: stäng av flödets trigger med `cowork/3-stang-flodet.txt`. Sändstegen står kvar på,
+så de som redan väntar i flödet får sitt mejl. Flödet var aktivt från 08:46 CEST, och de första
+förbeställningsändringarna committades 10:12 CEST. En del av de väntande kan därför ha
+förbeställt och får ändå mejlet; det accepteras.

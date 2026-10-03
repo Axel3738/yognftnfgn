@@ -15,8 +15,10 @@ have not been picked up by a carrier yet.
 
 An apology email from Matstrumpor, in the customer's own language:
 
-- **Who:** everyone who bought from 23 September, plus every new order until 9 October (the
-  email goes out one day after the order).
+- **Who:** everyone who bought from 23 September until the morning of 3 October (the email goes
+  out one day after the order). New orders after that do not get it: the store now sells the
+  boxes as a **pre-order** and tells the customer before checkout that the boxes ship on
+  12 October. A pre-order customer already agreed to wait, so do not apologise for a delay.
 - **What it says:** the delivery can take 5-10 business days longer than usual.
 - **The offer:** if the parcel has not been shipped yet, the customer can get a **full refund** by
   replying with their order number. Customers who keep the order do nothing.
