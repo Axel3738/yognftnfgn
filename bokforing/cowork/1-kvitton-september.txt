@@ -1,0 +1,148 @@
+UPPDRAG: Hämta alla kvitton och fakturor för september 2026 till bokföringen
+Bolag: STONEBITE ECOM AB, org.nr 559576-2401. Bankkonto: Lunar 9710-0000-0971-0348-9566.
+
+Du hjälper Axel med bokföringen för september 2026. En annan Claude-session har redan gått
+igenom kontoutdraget (564 rader) och hämtat det som gick att nå. Ditt jobb är resten:
+hitta kvittot eller fakturan för varje dragning nedan, först i mejlen, sedan på leverantörens
+sajt i Chrome. Allt sparas i EN mapp.
+
+==================================================================
+REGLER SOM ALDRIG FÅR BRYTAS
+==================================================================
+1. Du BETALAR aldrig något. Ingen knapp som heter Betala, Pay, Pay now, Settle, Add funds.
+2. Du ÄNDRAR aldrig något: inga betalkort, inga abonnemang, inga budgetar, inga annonser,
+   inga inställningar, inga DNS-poster. Du bara läser och laddar ner.
+3. Du raderar aldrig ett mejl, en faktura eller en fil.
+4. Du skickar aldrig ett mejl. Behöver något begäras från en leverantör: skriv det i rapporten.
+5. Du skapar aldrig ett konto och skriver aldrig in ett lösenord eller en verifieringskod.
+   Möter du en inloggning: be Axel logga in, och fortsätt när han skriver "inloggad".
+6. Hittar du en obetald faktura: ladda ner den, skriv upp den, betala den INTE.
+
+==================================================================
+STEG 0: MAPPEN
+==================================================================
+Skapa mappen "Bokföring 2026-09" i Hämtade filer. Där finns kanske redan zip-filen
+"bokforing-2026-09.zip" från Claude-sessionen: packa upp den i mappen. Filen
+"saknar-underlag.csv" i den är hela listan du ska bocka av (Datum, Text, Belopp).
+
+Spara varje fil som:  ÅÅÅÅ-MM-DD_Leverantör_belopp.pdf
+Exempel:              2026-09-25_Klaviyo_1409kr.pdf
+Lägg filerna i undermappar per leverantör: Meta/, Shopify/, Google/, Programvara/, Resor/,
+Wise/, Övrigt/.
+
+Ett mejlkvitto utan PDF-bilaga: öppna mejlet, Skriv ut, Spara som PDF.
+
+==================================================================
+STEG 1: SÖK I MEJLEN FÖRST
+==================================================================
+Sök i alla mejlkonton som är inloggade i Chrome. Kända adresser:
+axel.odhner@stonebite.org, contact@stonebite.org, subscriptions@stonebite.org,
+claude5@stonebite.org, claude6@stonebite.org, barkas.kundservice@gmail.com.
+Datum: 1 september till 3 oktober 2026 (månadsfakturor kommer ofta i början av nästa månad).
+Sök på leverantörens namn + "receipt", "invoice", "kvitto", "faktura".
+
+==================================================================
+STEG 2: LEVERANTÖRERNA, EN I TAGET
+==================================================================
+Det som INTE finns i mejlen hämtar du på leverantörens sajt.
+
+A. META, 273 dragningar, 1 734 135,09 kr (störst, gör den först)
+   business.facebook.com > Fakturering och betalningar > Betalningsaktivitet.
+   Gör det för vart och ett av de sju annonskontona:
+     MagiBorsten 1867947880635861
+     SnarkLös 1346450049878358
+     nya kungen 730973156224390
+     Magiborsten DK 915422744950975
+     Magiborsten UK 1107817401910319
+     Magiborsten FI 1619718346388201
+     Magiborsten NO 1050941584152547
+   Välj datum 1 sep till 30 sep 2026. Markera alla rader. Ladda ner kvitton (Meta ger en zip).
+   Bankens text "FACEBK *CZW669NUT4" = transaktions-ID CZW669NUT4 på Metas kvitto.
+   Listan med alla 273 id finns i meta/facebook-dragningar-att-matcha.csv.
+
+B. SHOPIFY ABONNEMANG OCH APPAR, 24 dragningar, 12 886,94 kr
+   I varje butik: Shopify admin > Inställningar > Fakturering > Fakturor.
+   Ladda ner varje faktura från september. Bankens "Shopify* 595830282" = faktura 595830282.
+   Butikerna: Bäverbutiken (4snrw0-mg), CaraShell (yitrbk-m3), Matstrumpor (1r46tp-qx),
+   Beverbutikken NO (1acuam-s5), Bæverbutiken DK (v0xqtk-tx), Majavakauppa FI (q0uthu-xq),
+   BeaverShop UK (1wucum-x0), och de vilande: HeimGuard (pzjagy-mz), CatCabin (ras1t2-2x),
+   AdventLane (ikf0tu-5e), TackleBay (iahe0c-b1), j0p8qz-kp, aphkky-ke, y1sj1i-3d.
+
+C. SHOPIFY UTBETALNINGAR (pengar IN), 109 rader, 2 518 620,66 kr
+   CaraShell och Matstrumpor är redan klara (shopify/-mappen). Gör resten:
+   Bäverbutiken, Beverbutikken NO, DK, FI och UK:
+   Shopify admin > Finanser > Utbetalningar > välj 1-30 september > Exportera (CSV).
+   Hämta också månadens avgiftsfaktura om butiken har en (Inställningar > Fakturering).
+
+D. GOOGLE
+   Google Ads, 11 dragningar, 51 610,77 kr. ads.google.com > Verktyg > Fakturering > Dokument.
+     Två konton: 139-156-9447 och 361-188-7178. Betalningsprofil 9473-9435-7732.
+     Ladda ner septembers månadsfaktura/kontoutdrag för båda (dokument 5701499534 är klart).
+   Google Workspace, 2 st, 244,53 kr: admin.google.com > Fakturering. Två konton:
+     stonebite.org och bäverkoppling.
+   Google One / Play, 2 st, 281,90 kr: payments.google.com > Aktivitet.
+
+E. PROGRAMVARA (sajt i parentes)
+   Anthropic/Claude 9 st 13 014,27 kr (claude.ai > Inställningar > Fakturering, och
+     console.anthropic.com > Billing)
+   Kie.ai 3 st 18 106,11 kr (kie.ai)
+   Skool 1 st 21 143,24 kr (skool.com > Settings > Payment history)
+   Notion 1 st 4 118,04 kr (notion.so > Inställningar > Fakturering)
+   WeTracked 2 st 4 742,53 kr (wetracked.io)
+   HeyGen 2 st 3 064,06 kr (app.heygen.com > Billing; kontot subscriptions@stonebite.org)
+   Klaviyo 1 st 1 456,62 kr den 11 sep (klaviyo.com > Billing; troligen Matstrumpors konto
+     UV6Rqg — 25 sep är redan klar)
+   CapCut 3 st 1 447,00 kr, 17TRACK 1 st 1 189,28 kr, Loopia 14 st 1 062,84 kr
+     (customerzone.loopia.se > Fakturor), Whop/EcomTalent 967,86 kr, Spoks 2 st 722,10 kr,
+     Palmier 687,33 kr, ElevenLabs 3 st 635,09 kr, Higgsfield 488,87 kr, Atlassian 2 st
+     475,47 kr, dotno.domains 292,76 kr, OpenAI 207,98 kr, Vmake 2 st 197,81 kr, Canva
+     145,85 kr, Spotify 129,00 kr, Discord 2 st 114,20 kr, Domeneshop 25,49 kr,
+     Railway 20,20 kr.
+
+F. RESOR: Booking.com 2 st 4 031,16 kr (28 och 30 sep), SJ 944,00 kr (28 sep).
+
+G. WISE, 11 överföringar, 44 485,20 kr
+   wise.com > Aktivitet. Ladda ner kvittot för varje överföring 1-30 sep.
+   Skriv i rapporten vem som fick pengarna och om det finns en faktura från mottagaren
+   (sök på mottagarens namn i mejlen).
+
+H. LEVERANTÖRSFAKTUROR SOM BETALATS FRÅN BANKEN. Leta i mejlen efter fakturan:
+   Fortnox Finans AB 7 sep 6 153,00 + 7 sep 5 402,00 + 18 sep 6 875,00 kr
+     (Fortnox Finans tar betalt åt en annan leverantör: hitta originalfakturan)
+   PFNAB Intressenter 2 AB 30 sep 5 500,00 kr
+   OptiWellness 25 sep 4 812,00 kr
+   Kod Oslo AS 1 sep 6 769,53 kr
+   Nathalie sushi 21 sep 4 375,00 kr (UGC-kreatören Nathalie — hennes faktura eller kvitto)
+   QualityStrawberryA 5 sep 2 800,00 kr
+   SP POCKET 9 sep 1 764,72 + 1 229,33 kr
+   Betalningar med OCR/fakturanummer: "129767" 1 sep 5 000,00 kr, "130468" 1 sep 3 124,00 kr,
+   "2026-004" 9 sep 16 258,39 kr (1 449,59 EUR), "SB-K2026-001/002/003" 16 sep 3 x 4 533,38 kr.
+
+==================================================================
+STEG 3: OBETALDA FAKTUROR
+==================================================================
+Sök i alla mejlkonton 1 augusti till i dag efter: "påminnelse", "förfallen", "obetald",
+"inkasso", "kravbrev", "betalningspåminnelse", "overdue", "past due", "unpaid",
+"payment failed", "betalningen misslyckades", "faktura".
+Kolla också: Shopify > Inställningar > Fakturering i varje butik (står det en obetald summa?),
+Google Ads > Fakturering (saldo att betala?), Fortnox om Axel har det, Klaviyo och Spoks.
+Lista varje obetald faktura: leverantör, fakturanummer, belopp, förfallodag, var den finns.
+Betala ingenting.
+
+==================================================================
+STEG 4: KONTROLL OCH RAPPORT
+==================================================================
+1. Räkna filerna per leverantör och jämför med antalen ovan.
+2. Packa mappen "Bokföring 2026-09" till en zip.
+3. Skriv rapporten till Axel på svenska, kort, en sak per rad:
+   - Vad som är hämtat: antal per leverantör.
+   - Vad som SAKNAS: datum, text och belopp, och varför (inget konto, ingen faktura finns,
+     kräver Axels inloggning).
+   - Obetalda fakturor: leverantör, belopp, förfallodag.
+   - Inget annat. Ingen tabell.
+
+DET HÄR GÖR DU INTE (det är Axels):
+- Överföringar till och från Axel Odhner (3 st i EUR, 519 627,79 kr ut), PayPal-insättningar
+  (134 258,24 kr in), "Överföring"/"Internationell överföring" in och ut, LÖN 20 000 kr,
+  Skatteverket, fordonsskatt och Trafikförsäkringsföreningen. Axel förklarar dem själv.
+- Butikskvitton: Circle K, Hornbach, Jysk, Snabbgross. Papperskvitton.
