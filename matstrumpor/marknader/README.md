@@ -644,6 +644,13 @@ loggan utan .SE.
     (`kundtjanst/arenden.mjs` → `arSystem`) och svarar därför inte på det. Kontrollen är
     `judgeme-koll.mjs` ("Kopian i Shopify" och språkmärkningen). Del C och D i prompten är reserven om
     supporten inte gör det.
+    ⚠️ **Svaren kommer från Fin, Judge.me:s AI-agent i Intercom, inte från en människa.** Det första kom
+    15:22, alltså en minut efter vårt mejl, och bad om produktlänkarna. Länkarna skickades 2026-10-03.
+    Fins andra svar kom 2026-10-03 15:15 CEST. Fin sa att Irénes språk ändras i adminen, alltså del C, och
+    att Fin inte kan starta en ny synk av metafälten. Samma minut bad vi Fin lämna över till en människa i
+    Judge.me:s team. Läget mätt 2026-10-03 15:00 CEST med `judgeme-koll.mjs --bara-markning`: Irénes
+    recension är fortfarande märkt `en`. Kopian på sushistrumporna är fortfarande den från 2026-09-30 06:09
+    UTC, och Kent, Wide Pia och Niklas står som `en` i den.
   - **Nya recensioner från Shop-appen kan komma in märkta engelska igen.** `judgeme-koll.mjs` listar sist
     varje recension märkt engelska, på alla produkter kunden kan nå, också olistade (produkterna läses
     ur Shopify, annars ur `products.json`). `--bara-markning` kör bara den delen.
