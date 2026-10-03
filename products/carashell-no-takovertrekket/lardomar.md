@@ -644,3 +644,123 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — speglad annons får aldrig egen brief; INGEN_LEVERANS (8 kr på sju dygn) loggas och släpps, aldrig ABO. Konceptets utfall läses på förlagan: Takoverdrag_OB_4_H1 = L-120250341482970291 i products/takoverdraget-husvagn/lardomar.md (LOSER 2026-09-30, 446 kr / 0 köp, släppt — fukt-raden bärs av OB_5_1, vars NO-spegel är KPI_WINNER här).
 
+### Lärdom L-120249279329000172 — CaraShellRoof_NO_OB_108_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 115 kr / 27 271 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Stroppene hektes fast i en krok i nederkant, ikke i en knute du håper holder. Justerbare stropper på alle fire sider, pluss to ekstra forsterkede strammestropper på 10,5 m inkludert. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Reim i krok, ikke i en knute"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Stroppene hektes fast i en krok i nederkant, ikke i en knute du håper holder. Justerbare s… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 115 kr och 0 köp under grinden är CBO-fördelning, inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (115 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare, inte här.
+
+### Lärdom L-120249278809270172 — CaraShellRoof_NO_OB_112_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 38 kr / 27 271 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Overtrekket ligger bare på taket, den dyreste flaten på campingvognen. Ikke en heldekkende presenning som skal passe over hele vognen. 210D oxfordvev med sølvbelegg, tåler en hel vintersesong ute. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Dekker taket, ikke resten av vognen"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Overtrekket ligger bare på taket, den dyreste flaten på campingvognen. Ikke en heldekkende… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 38 kr och 0 köp under grinden är CBO-fördelning bredvid CaraShellRoof_NO_OB_108_1 (0 % av kampanjens spend), inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (38 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare (CaraShellRoof_NO_OB_108_1), inte här.
+
+### Lärdom L-120249278929900172 — CaraShellRoof_NO_OB_110_1 (INGEN_LEVERANS, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 7 kr / 27 271 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,78 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Regnet renner av vevens overflate i stedet for å bli stående. Sølvbelagt 210D-oxfordvev, ikke en tynn presenning. Tåler en hel vintersesong ute og strammes med reim og snor i kanten. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Sølvbelagt vev, ikke tynn presenning"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Regnet renner av vevens overflate i stedet for å bli stående. Sølvbelagt 210D-oxfordvev, i… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 7 kr är Metas CBO-fördelning bredvid CaraShellRoof_NO_OB_108_1 (0 % av kampanjens spend), inte publikens dom; ingen läsning av hooken går att göra på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (7 kr, Metas dom i CBO:n, aldrig ABO): logga och släpp; vinkeln OB lever vidare bara om ett syskon med leverans bär den.
+

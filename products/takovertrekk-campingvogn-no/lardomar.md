@@ -846,3 +846,125 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — under grinden (36 kr, 0 köp): en observation, ingen dom. Norge får inga egna briefer (Axels besked 2026-09-01); lärdomen för den svenska förlagan Takoverdrag_OB_5_1 (L-120250356982310291, KPI_WINNER 2026-10-01) styr nästa steg, och en ny svensk version översätts via /translate-no om den byggs.
 
+### Lärdom L-120252396318630233 — Takovertrekk_NO_OB_12_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 201 kr / 38 448 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,11 |
+| Konverteringsgrad | 0,0 % (0 köp / 6 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Overtrekket ligger bare på taket, den dyreste flaten på campingvognen. Ikke en heldekkende presenning som skal passe over hele vognen. 210D oxfordvev med sølvbelegg, tåler en hel vintersesong ute. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Dekker taket, ikke resten av vognen"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Overtrekket ligger bare på taket, den dyreste flaten på campingvognen. Ikke en heldekkende… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 201 kr och 0 köp under grinden är CBO-fördelning, inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (201 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare, inte här.
+
+### Lärdom L-120252396321140233 — Takovertrekk_NO_OB_8_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 192 kr / 38 448 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,11 |
+| Konverteringsgrad | 0,0 % (0 köp / 10 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Stroppene hektes fast i en krok i nederkant, ikke i en knute du håper holder. Justerbare stropper på alle fire sider, pluss to ekstra forsterkede strammestropper på 10,5 m inkludert. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Reim i krok, ikke i en knute"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Stroppene hektes fast i en krok i nederkant, ikke i en knute du håper holder. Justerbare s… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 192 kr och 0 köp under grinden är CBO-fördelning bredvid Takovertrekk_NO_OB_12_1 (1 % av kampanjens spend), inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (192 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare (Takovertrekk_NO_OB_12_1), inte här.
+
+### Lärdom L-120252396320120233 — Takovertrekk_NO_OB_10_1 (INGEN_LEVERANS, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 5 kr / 38 448 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,11 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Regnet renner av vevens overflate i stedet for å bli stående. Sølvbelagt 210D-oxfordvev, ikke en tynn presenning. Tåler en hel vintersesong ute og strammes med reim og snor i kanten. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)." · rubrik: "Sølvbelagt vev, ikke tynn presenning"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: Regnet renner av vevens overflate i stedet for å bli stående. Sølvbelagt 210D-oxfordvev, i… | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ingen mekanism utskriven i copyn | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: 5 kr är Metas CBO-fördelning bredvid Takovertrekk_NO_OB_12_1 (1 % av kampanjens spend), inte publikens dom; ingen läsning av hooken går att göra på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (5 kr, Metas dom i CBO:n, aldrig ABO): logga och släpp; vinkeln OB lever vidare bara om ett syskon med leverans bär den.
+
+## Värmesulorna med Fjärrkontroll (120250377836130291)
+

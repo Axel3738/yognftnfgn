@@ -98,4 +98,5 @@ Drive-arket `Fodrade Inomhustofflor_REVIEWS` (id 1ixNspytk-E2S3UIVAahmfV8n3VnFow
 | `mannen-med-kallt-golv-innan-kaffet` | Mannen som går upp först och möter det kalla golvet innan kaffet är klart | Sidans egen rad: "Golvet är kallt innan kaffet är klart" | verifierad (sidans text) |
 | `mannen-som-gar-ner-i-kallaren-efter-ved` | Mannen vars gamla toffel glider av i källartrappan på väg efter ved | Sidans egen rad: "nerför källartrappan efter ved glider de gamla tofflorna av redan i första trappsteget" | verifierad (sidans text) |
 | `mannen-som-vill-ha-varma-fotter-hemma` | Mannen som köper för värmen, inte för trappan | Live-annonsen SP_1_H2:s copy ("män som vill ha varma, sköna fötter hemma") — 10 köp | hypotes (annonsens ord, inte sidans) |
+| `partnern-som-koper-present-till-honom` | Partnern eller barnet som köper tofflorna som present till honom (fars dag) | FD-blocken 2026-09-29/30 och 2026-10-03 (FD_7/FD_8); GT_3_H1 1 kr | obevisad |
 

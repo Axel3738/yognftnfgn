@@ -1202,3 +1202,43 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — LOSER under grinden (5 765 kr, 2 köp): en observation, ingen dom; nästa försök i vinkeln byggs på CaraShellRoof_US_SP_104_H1 (USA-kampanjens topp enligt batch-loggen), inte här.
 
+### Lärdom L-120251624621420435 — CaraShellRoof_US_OB_112_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 67 kr / 76 426 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,45 |
+| Konverteringsgrad | 0,0 % (0 köp / 2 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "A full cover protects more of your rig, but it's heavy to wrestle on by yourself and rubs against the paint all winter long." · rubrik: "The roof, not the whole rig." · beskrivning: "Protects the priciest spot."
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: A full cover protects more of your rig, but it's heavy to wrestle on by yourself and rubs … | okänd |
+| Vinkel | — (brief saknas i repot) | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: The roof is what you never see, and what costs the most to repair. · Our cover sits there only, 21 × 10 ft, with straps on all four sides th | okänd |
+| Tro | — (brief saknas i repot) | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (brief saknas i repot) | produkten mot invändningen | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 67 kr och 0 köp under grinden är CBO-fördelning, inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (67 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare, inte här.
+

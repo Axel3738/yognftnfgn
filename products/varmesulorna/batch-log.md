@@ -1,5 +1,7 @@
 # Värmesulorna med Fjärrkontroll — batch-log
 
+Breakthrough-frekvens: 1/16 (6 %) (etikett.mjs --frekvens 2026-10-03)
+
 Kampanj `Värmesulorna med Fjärrkontroll | BE ROAS 1.64 | Launch 2026-09-26` (id 120250377836130291, MagiBorsten SE). Break-even ur prissheetet 1,52 (raden "Värmesulorna för älgpasset", pris 869 kr läst 2026-09-26). Produkttest-raden i Product test center: "11 Värmesulorna" (Ads review).
 
 ## Förstabatchen — VÄNTAR (2026-09-28)
@@ -27,3 +29,26 @@ Hubben **Heated insoles creative hub** (3ea270ab-908c-81fc-b44f-e26f3734a33f) sk
 | Värmesulorna_FD_4_4 | bild, fars dag BOF | Två sulor, tre värmelägen, en fjärr. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c81e89b58d29aa206293c |
 
 Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; varje annons mot förälderns CPA (224 kr) och break-even-CPA (712 kr), aldrig mot ROAS ensam. Etikett dag 7 → lärdom → dna.md.
+
+## Etiketter dag 7 (2026-10-03) — Värmesulorna med Fjärrkontroll
+
+Ur `agent/etikett-backfill.mjs` 2026-10-03 (MagiBorsten SE, annonsens egna första vecka 2026-09-26–2026-10-02, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/16 (6 %).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Värmesulorna_PD_1_H2 | 1 | **BREAKTHROUGH** | 73 % | 13 888 kr | 32 | 2,48 / 2,19 | 42 % / 8 % | ja |
+| Värmesulorna_SP_1_H3 | okänd | **LOSER** | 18 % | 3 402 kr | 6 | 1,71 / 2,19 | 49 % / 7 % | ja |
+| Värmesulorna_PD_1_H3 | okänd | **LOSER** | 5 % | 910 kr | 1 | 1,62 / 2,19 | 23 % / 5 % | nej |
+| Värmesulorna_PD_2_1V | okänd | **LOSER** | 3 % | 627 kr | 0 | 0,00 / 2,19 | — / — | nej |
+| Värmesulorna_PD_1_H1 | okänd | **LOSER** | 1 % | 110 kr | 0 | 0,00 / 2,19 | 22 % / 5 % | nej |
+| Värmesulorna_CS_2_1 | okänd | **LOSER** | 0 % | 35 kr | 0 | 0,00 / 2,19 | — / — | nej |
+| Värmesulorna_SP_1_H2 | okänd | **LOSER** | 0 % | 35 kr | 0 | 0,00 / 2,19 | 34 % / 9 % | nej |
+| Värmesulorna_SP_2_1 | okänd | **LOSER** | 0 % | 32 kr | 0 | 0,00 / 2,19 | — / — | nej |
+| Värmesulorna_G_1_H2 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 2,19 | 8 % / 4 % | nej |
+| Värmesulorna_SP_1_H1 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,19 | 24 % / 3 % | nej |
+| Värmesulorna_CS_1_H3 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,19 | 19 % / — | nej |
+| Värmesulorna_G_2_1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,19 | — / — | nej |
+| Värmesulorna_G_1_H1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,19 | 24 % / 6 % | nej |
+| Värmesulorna_G_1_H3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,19 | 67 % / 17 % | nej |
+| Värmesulorna_CS_1_H2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,19 | 50 % / 25 % | nej |
+| Värmesulorna_CS_1_H1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,19 | 29 % / — | nej |

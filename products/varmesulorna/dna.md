@@ -113,3 +113,23 @@ mekanismen först), ny avatar (den som står stilla på jobbet). **Undvik:** "8 
 
 Invändningen "passar de i mina skor?" → klipps längs de tryckta linjerna 41–46, styrs med fjärren.
 FD_3_H1–H3 + FD_4_1–4 i hubben (regel: `agent/farsdag.json`).
+
+## Komponentkarta Värmesulorna_PD_1_H2 (BREAKTHROUGH, etikett 2026-10-03 — ANALYSMETOD steg 6b)
+
+Raderna är **lästa ur den live annonsen (Meta Graph v21.0, 2026-10-03), inte ur brief** — lanseringsbriefen ligger i Product test center ("11 Värmesulorna", Josh), inte i repot. Videon (4393577100957766, skapad 2026-09-26) är inte transkriberad (VO och första bildruta okända). Den preliminära dag 4-läsningen (FAS 3 ovan, 2026-09-29) bekräftas av etiketten: samma copy, samma tre syskon.
+
+**Datan, första veckan 26/9–2/10 (7d_click):** 13 888 kr (73 % av kampanjens 19 066 kr) · 32 köp · ROAS 2,48 mot kampanjens 2,19 · CPA 434 kr mot break-even-CPA ~707 kr (AOV 1 075 kr ÷ 1,52) · vinstbidrag (707 − 434) × 32 ≈ **8 700 kr** · konverteringsgrad 2,1 % (32 köp / 1 526 LPV) · hook rate 42 % · hold rate 8 % · budget dag 0 → dag 7: 1 000 → 4 000 kr/dag (ronden ×2 28/9 och ×2 29/9). Syskonen PD_1_H1 (1 %, LOSER) och PD_1_H3 (7 %, LOSER) bär ordagrant samma primärtext, rubrik och beskrivning — videons öppning är variabeln. Bedömbar förlorare bredvid: SP_1_H3 (18 %, 6 köp, ROAS 1,71, CPA 567 kr; copyn bär importcitat, "tusentals" och "30 dagars öppet köp" — ärvs aldrig). Lärdom `lardomar.md` → L-120250377855700291 (dag 7-blocket; det preliminära dag 4-blocket står kvar ovanför).
+
+| Komponent | Exakt rad (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK (text) | "Kalla fötter förstör hela dagen. 🥶" | smärta, igenkänning | problem-medveten | den som fryser om fötterna när hon står stilla (copyn: "skidbacken, jobbet eller matchen på söndag") |
+| HOOK (bild) | okänd — videon inte transkriberad, thumbnailen inte läst; H1/H3 med samma text fick 1 % och 7 %, så öppningsklippet är det som skiljer | — | — | samma |
+| BRIDGE | "Inte längre. / Värmesulor med fjärrkontroll ger dig varma fötter — direkt, utan att ta av skorna." ("direkt" är ett tidslöfte sidan inte gör) | lättnad | lösnings-medveten | samma |
+| HOLD | "✅ 3 värmenivåer ✅ Upp till 8 timmars värme ✅ Styr allt med fjärrkontrollen" ("8 timmar" står inte på sidan — ärvs aldrig) · beskrivning "Ladda, lägg i skorna, tryck på knappen." | konkret inventarium | produkt-medveten | samma |
+| CTA | "Perfekt för skidbacken, jobbet eller matchen på söndag. 👉 Beställ dina idag." · rubrik "Varma fötter — hela dagen, varje gång" | positiv, mjuk brådska | — | samma |
+
+**Variabeltaggar (ANALYSMETOD 6b):** vinkel PD · hook-typ problem-påstående · format video, demo (VO okänd) · proof mekanismen (fjärrkontrollen) · offer inget pris i copyn · talare okänd · brådska mjuk ("idag") · tro "8 timmar" (obelagd siffra).
+
+**Bärande komponent = hypotes (gissning):** videons öppning — tre annonser med identisk text, en tog 73 %, och hook rate 42 % mot hold rate 8 % säger att de första tre sekunderna väljer publiken medan kroppen tappar den; konverteringsgraden 2,1 % är hälften av Täljsetets (1,7 %/3,0 % på dag 2) och Värmesitsens (3,3 %), så det är auktionsvolym snarare än stängning som bär. Kampanjens CPA steg fem dygn i rad (161 → 935 kr) när budgeten gick till 4 000 kr/dag och öppningen ensam fick 73 % — spendtjuven dömde den som TROTT_VINNARE i morse (8 156 kr på 3 dygn, ROAS 1,00) och ronden kapade budgeten till 500 kr (livstidsspärren). Fixet är nya öppningar på samma kropp (CPA-regeln 2026-09-22), inte budget. Kundernas kommentarer: 0 leads (agent/leads.mjs --prefix Värmesulorna, 2026-10-03).
+
+**Vidarebyggena (CS-KLART punkt 9, tre iterationer inom 14 dagar — deadline 2026-10-17):** `Värmesulorna_PD_1_H4` (ny hook: sidans älgpass-scen) och `Värmesulorna_PD_1_H5` (mekanismen först) — briefade 2026-09-29 i batch #1 (Draft i Heated insoles creative hub; ⚠️ utan BRIEF-rader i loggen, byggda på Axels order utan `lardom.mjs --brief`, så iterationsräknaren ser 0 av 3 tills H6 loggas); `Värmesulorna_PD_1_H6` (in media res: fjärren trycks och sulan ligger redan i skon i sekund 0) namngiven i lärdomen 2026-10-03 och briefas i nästa runda på produkten. Två rader ärvs aldrig: "Upp till 8 timmars värme" och "direkt".

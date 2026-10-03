@@ -1377,3 +1377,165 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — LOSER under grinden (785 kr, 0 köp, 67 LPV): en observation, ingen dom. Iteration 2 av 3 på Termoskydd_CS_3 är utförd; iteration 1 (`Termoskydd_CS_13_1`, plats CS_9_1) och iteration 3 (`Termoskydd_CS_11_H1`) ligger i hubben och får etikett först. Ingen andra "längre problemdel" på prisvinkeln — den delade bilden lever som video i RI_1_H1 (SPEND_WINNER) och dess namngivna `Termoskydd_RI_2_1`.
 
+### Lärdom L-120250382075460291 — Termoskydd_CS_12_H1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 84 kr / 16 327 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,95 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 24 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** cs-pris-utan-bradska · **Typ:** I · **Parent:** Termoskydd_CS_2 · **Iteration:** 3 · **Källa:** egen-data
+**Brief:** `products/termoskyddet-husbil/batch-04/video-ads-briefs/Termoskydd_CS_12_H1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Torka bort imman varje morgon? Skyddet sitter utanpå glaset, inte innanför – kondensen får inget fäste. Klart på två minuter, utan att öppna dörrarna. Täcker vindrutan och båda sidorutorna, 211 × 171 cm med 90 cm sidflikar. 559 kr (ord. 932 kr), spara 373 kr (40%)." · rubrik: "Sluta torka imma varje morgon."
+- VO/första frame: okänd — videon är inte transkriberad och thumbnailen är inte läst i den här körningen (hook rate 24 %, hold rate 9 % ur etikettraden)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | husbilsagare-som-torkar-imma-varje-dag | läst ur copyn: Torka bort imman varje morgon? Skyddet sitter utanpå glaset, inte innanför – kondensen får… | okänd |
+| Vinkel | CS | prisankare (CS) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | product | produktmedveten (priset först) | okänd |
+| Mekanism | utanpa-glaset-inte-innanfor | ingen mekanism utskriven i copyn | okänd |
+| Tro | att-man-maste-torka-imma-pa-insidan-varje-morgon | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (taggen saknas i briefen) | pris | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 84 kr och 0 köp under grinden är CBO-fördelning, inte en dom; hook rate 24 % / hold rate 9 % säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (84 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln CS byggs på kampanjens vinnare, inte här.
+
+### Lärdom L-120250382048380291 — Termoskydd_SP_2_H3 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 64 kr / 16 327 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,95 |
+| Konverteringsgrad | 0,0 % (0 köp / 4 LPV) |
+| Hook rate / hold rate | 29 % / 8 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** sp-natten-i-husbilen · **Typ:** I · **Parent:** Termoskydd_SP_2 · **Iteration:** 2 · **Källa:** egen-data
+**Brief:** `products/termoskyddet-husbil/batch-05/video-ads-briefs/Termoskydd_SP_2_H3/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Flikarna kläms i dörrkarmen och håller i blåst, utan att du öppnar dörrarna. Skyddet är 211×171 cm och sitter utanpå glaset, så kondensen inte får fäste på insidan. Mörkläggande hela vägen över framvagnen, ingen ser in på rastplatsen. 559 kr (ord. 932 kr), spara 373 kr (40%)." · rubrik: "Kläms i dörrkarmen. Ingen dörr öppnas."
+- VO/första frame: okänd — videon är inte transkriberad och thumbnailen är inte läst i den här körningen (hook rate 29 %, hold rate 8 % ur etikettraden)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | husbilsagare-som-torkar-imma-varje-dag | läst ur copyn: Flikarna kläms i dörrkarmen och håller i blåst, utan att du öppnar dörrarna. Skyddet är 21… | okänd |
+| Vinkel | SP | social proof (SP) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | solution | lösningsmedveten | okänd |
+| Mekanism | flikarna-klams-i-dorrkarmen | ingen mekanism utskriven i copyn | okänd |
+| Tro | att-det-tar-lang-tid-att-satta-pa-ett-skydd | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (taggen saknas i briefen) | andras omdöme, inte priset | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 64 kr och 0 köp under grinden är CBO-fördelning bredvid Termoskydd_CS_12_H1 (1 % av kampanjens spend), inte en dom; hook rate 29 % / hold rate 8 % säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (64 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln SP byggs på kampanjens vinnare (Termoskydd_CS_12_H1), inte här.
+
+### Lärdom L-120250382083180291 — Termoskydd_CS_11_H1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 47 kr / 16 327 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,95 |
+| Konverteringsgrad | 0,0 % (0 köp / 2 LPV) |
+| Hook rate / hold rate | 20 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** cs-pris-utan-bradska · **Typ:** I · **Parent:** Termoskydd_CS_3 · **Iteration:** 3 · **Källa:** egen-data
+**Brief:** `products/termoskyddet-husbil/batch-04/video-ads-briefs/Termoskydd_CS_11_H1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Skyddet sitter utanpå glaset, inte innanför – kondensen får inget fäste. Fastspänd i dörrkarmen på två minuter, utan att öppna dörrarna. Täcker vindrutan och båda sidorutorna, 211 × 171 cm med 90 cm sidflikar. 559 kr (ord. 932 kr), spara 373 kr (40%)." · rubrik: "Två minuters jobb. Ingen imma."
+- VO/första frame: okänd — videon är inte transkriberad och thumbnailen är inte läst i den här körningen (hook rate 20 %, hold rate 9 % ur etikettraden)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | husbilsagare-som-fryser-om-morgonen | läst ur copyn: Skyddet sitter utanpå glaset, inte innanför – kondensen får inget fäste. Fastspänd i dörrk… | okänd |
+| Vinkel | CS | prisankare (CS) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | product | produktmedveten (priset först) | okänd |
+| Mekanism | utanpa-glaset-inte-innanfor | ingen mekanism utskriven i copyn | okänd |
+| Tro | att-det-tar-lang-tid-att-satta-pa-ett-skydd-pa-morgonen | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (taggen saknas i briefen) | pris | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 47 kr och 0 köp under grinden är CBO-fördelning bredvid Termoskydd_CS_12_H1 (1 % av kampanjens spend), inte en dom; hook rate 20 % / hold rate 9 % säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (47 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln CS byggs på kampanjens vinnare (Termoskydd_CS_12_H1), inte här.
+
+### Lärdom L-120250382064920291 — Termoskydd_SP_2_H2 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 31 kr / 16 327 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,95 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 35 % / 13 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** sp-natten-i-husbilen · **Typ:** I · **Parent:** Termoskydd_SP_2 · **Iteration:** 1 · **Källa:** egen-data
+**Brief:** `products/termoskyddet-husbil/batch-05/video-ads-briefs/Termoskydd_SP_2_H2/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Kondensen får inte fäste på insidan av rutan. Skyddet är 211×171 cm och sitter utanpå glaset, inte innanför. Mörkläggande hela vägen över framvagnen, så ingen ser in på rastplatsen. 559 kr (ord. 932 kr), spara 373 kr (40%)." · rubrik: "Utanpå glaset. Ingen kondens inifrån."
+- VO/första frame: okänd — videon är inte transkriberad och thumbnailen är inte läst i den här körningen (hook rate 35 %, hold rate 13 % ur etikettraden)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | husbilsagare-som-torkar-imma-varje-dag | läst ur copyn: Kondensen får inte fäste på insidan av rutan. Skyddet är 211×171 cm och sitter utanpå glas… | okänd |
+| Vinkel | SP | social proof (SP) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | problem | lösningsmedveten | okänd |
+| Mekanism | utanpa-glaset-inte-innanfor | ingen mekanism utskriven i copyn | okänd |
+| Tro | att-imman-kommer-inifran-och-att-inget-hjalper-mot-den | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (taggen saknas i briefen) | andras omdöme, inte priset | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 31 kr och 0 köp under grinden är CBO-fördelning bredvid Termoskydd_CS_12_H1 (1 % av kampanjens spend), inte en dom; hook rate 35 % / hold rate 13 % säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (31 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln SP byggs på kampanjens vinnare (Termoskydd_CS_12_H1), inte här.
+
+## Fiskespöhållaren (120249850522830291)
+

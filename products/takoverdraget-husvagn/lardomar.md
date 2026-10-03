@@ -1925,3 +1925,123 @@ Not: Fler RI_2-hookar först när H2 fått etikett — KPI winner-playbooken sä
 **Nästa annonser:**
 - `SLÄPP` — LOSER under grinden (151 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln byggs på Takoverdrag_SP_4_H1 (breakthrough — H2–H4 är dess tre vidarebyggen, alla svalt i CBO:n), inte här.
 
+### Lärdom L-120250382129970291 — Takoverdrag_OB_8_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 6 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 883 kr / 66 625 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,62 |
+| Konverteringsgrad | 0,0 % (0 köp / 41 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** invandning-blaser-statisk · **Typ:** S · **Parent:** Takoverdrag_OB_1_H1 · **Iteration:** 1 · **Källa:** voc
+**Brief:** `products/takoverdraget-husvagn/batch-06/image-ads-briefs/Takoverdrag_OB_8_1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Ett löst hörn räcker för att ett överdrag ska flyga i väg. Vårt har remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn, som hakas fast i en krok i nederkant. Två extra spännremmar (10,5 m) följer med, utan extra kostnad. Taket är det du aldrig ser, och det som kostar mest att laga. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)." · rubrik: "Remmar på alla fyra sidor"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | agare-som-tvekar-pa-tyget | läst ur copyn: Ett löst hörn räcker för att ett överdrag ska flyga i väg. Vårt har remmar på alla fyra si… | okänd |
+| Vinkel | OB | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | solution | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | remmar-fyra-sidor-krok-i-nederkant | ingen mekanism utskriven i copyn | okänd |
+| Tro | alla-overdrag-blaser-sonder | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (taggen saknas i briefen) | produkten mot invändningen | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 883 kr och 0 köp under grinden är CBO-fördelning, inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (883 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare, inte här.
+
+### Lärdom L-120250382098910291 — Takoverdrag_OB_12_1 (KPI_WINNER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 6 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 279 kr / 66 625 kr (0 %) |
+| Köp | 1 |
+| ROAS / CPA | 4,62 / 279 kr — kampanjens ROAS 2,62 |
+| Konverteringsgrad | 7,7 % (1 köp / 13 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** invandning-tacker-statisk · **Typ:** N · **Parent:** — · **Iteration:** 1 · **Källa:** voc
+**Brief:** `products/takoverdraget-husvagn/batch-06/image-ads-briefs/Takoverdrag_OB_12_1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Ett helöverdrag skyddar mer av vagnen, men är tungt att få på plats själv och skaver mot lacken hela vintern. Taket är det du aldrig ser, och det som kostar mest att laga. Vårt överdrag ligger bara där, 6,5 × 3 m, med remmar på alla fyra sidor som håller kvar det när det blåser. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)." · rubrik: "Taket, inte hela vagnen."
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | agare-som-tvekar-pa-tyget | läst ur copyn: Ett helöverdrag skyddar mer av vagnen, men är tungt att få på plats själv och skaver mot l… | okänd |
+| Vinkel | OB | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | solution | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | bara-taket-den-dyraste-ytan | ingen mekanism utskriven i copyn | okänd |
+| Tro | mer-tackt-ar-battre-skyddat | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (taggen saknas i briefen) | produkten mot invändningen | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 1 köp på 279 kr (ROAS 4.62) — säljer per klick men fick ingen spend bredvid Takoverdrag_OB_8_1 (1 % av kampanjens spend); under grinden är det brus tills 300 kr och 3 köp finns.
+
+**Nästa annonser:**
+- `SLÄPP` tills vidare — KPI_WINNER under grinden (279 kr, 1 köp): ingen iteration på brus; läses om dag 14 och dag 28 (`etikett.mjs --uppgradering`) och itereras först om den passerar grinden.
+
+### Lärdom L-120250382112530291 — Takoverdrag_OB_10_1 (LOSER, etikett 2026-10-03)
+
+| Fält | Värde |
+|---|---|
+| Batch | 6 |
+| Utfall | LOSER |
+| Fönster | 2026-09-26 – 2026-10-02 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 99 kr / 66 625 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,62 |
+| Konverteringsgrad | 0,0 % (0 köp / 4 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** invandning-vattentatt-statisk · **Typ:** S · **Parent:** Takoverdrag_OB_3_H1 · **Iteration:** 1 · **Källa:** voc
+**Brief:** `products/takoverdraget-husvagn/batch-06/image-ads-briefs/Takoverdrag_OB_10_1/brief.md`
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-10-03, Graph v21.0): "Regnet rinner av vävens yta i stället för att bli stående. Den är gjord av silverbelagd 210D-oxfordväv, inte en tunn presenning som samlar vatten. Samma yta möter solen, i stället för att den ska nå taket. Taket är det du aldrig ser, och det som kostar mest att laga. 1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)." · rubrik: "Vattnet rinner av, inte stående"
+- Bild: statisk annons — bildens text är inte avläst i den här körningen (ingen VO)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | agare-som-tvekar-pa-tyget | läst ur copyn: Regnet rinner av vävens yta i stället för att bli stående. Den är gjord av silverbelagd 21… | okänd |
+| Vinkel | OB | invändning (OB) enligt namnkoden och copyn | okänd |
+| Medvetandenivå | solution | produktmedveten (invändningen besvaras) | okänd |
+| Mekanism | silverbelagd-210d-vattnet-rinner-av | ingen mekanism utskriven i copyn | okänd |
+| Tro | tunn-presenning-samlar-vatten | invändningen i rad 1 bemöts | okänd |
+| Positionering | — (taggen saknas i briefen) | produkten mot invändningen | okänd |
+| Brådska | sasong | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 99 kr och 0 köp under grinden är CBO-fördelning bredvid Takoverdrag_OB_8_1 (1 % av kampanjens spend), inte en dom; hook rate okänd / hold rate okänd säger inget avgörande på den här volymen.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden (99 kr, 0 köp): en observation, ingen dom; nästa försök i vinkeln OB byggs på kampanjens vinnare (Takoverdrag_OB_8_1), inte här.
+

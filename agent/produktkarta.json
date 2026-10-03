@@ -1454,7 +1454,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-26, raden \"Rullknivslipen i trä, 2 diamantskivor (09-13)\" (1 st)), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 5,85 + 11,00 = 16.85 USD, plus 2,9 EUR EU-avgift per order. Priset 579 kr läst ur baverbutiken.se/products.json 2026-09-26.",
         "datum": "2026-09-26"
-      }
+      },
+      "minne": "products/rullknivslipen",
+      "minne_not": "satt 2026-10-03 av /rond-auto: första etiketterna dag 7, lärdomarna skrivs hit"
     },
     {
       "campaign_id": "120250377836130291",
@@ -1485,7 +1487,9 @@
       "lage": "test",
       "lage_motivering": "kampanj startad 2026-09-26 med namnet \"LOCK_IN_Bänkhyllan | Engagemang Indien | 2026-09-26\": en ENGAGEMANGSKAMPANJ mot Indien (social proof/lock-in), inte en försäljningskampanj — 500 kr/dag, ~180 kr och 0 köp på 3 dagar vid ronden 2026-09-27. Tillagd av /rond-auto 2026-09-27 så den syns. Break-even saknas i namnet med flit: engagemang har ingen ROAS att mäta mot, så domen SAKNAR_BREAK_EVEN (rör ingenting) är rätt. Inget kostnadsblock — ett break-even ur prissheetet hade gett en försäljningsdom på en kampanj som inte säljer. Axel avgör om de ska ha en egen regel (t.ex. kostnadstak) — tills dess rör ronden dem aldrig.",
       "break_even_roas": null,
-      "break_even_kalla": "saknas med flit (engagemangskampanj)"
+      "break_even_kalla": "saknas med flit (engagemangskampanj)",
+      "minne": "products/lock-in-engagemang-indien",
+      "minne_not": "satt 2026-10-03 av /rond-auto: de tre LOCK_IN-kampanjerna (engagemang, 10 kr/dag) delar en mapp — observationer, inget produktminne att bygga"
     },
     {
       "campaign_id": "120250383022120291",
@@ -1493,7 +1497,9 @@
       "lage": "test",
       "lage_motivering": "kampanj startad 2026-09-26 med namnet \"LOCK_IN_Spabadskapellet | Engagemang Indien | 2026-09-26\": en ENGAGEMANGSKAMPANJ mot Indien (social proof/lock-in), inte en försäljningskampanj — 500 kr/dag, ~180 kr och 0 köp på 3 dagar vid ronden 2026-09-27. Tillagd av /rond-auto 2026-09-27 så den syns. Break-even saknas i namnet med flit: engagemang har ingen ROAS att mäta mot, så domen SAKNAR_BREAK_EVEN (rör ingenting) är rätt. Inget kostnadsblock — ett break-even ur prissheetet hade gett en försäljningsdom på en kampanj som inte säljer. Axel avgör om de ska ha en egen regel (t.ex. kostnadstak) — tills dess rör ronden dem aldrig.",
       "break_even_roas": null,
-      "break_even_kalla": "saknas med flit (engagemangskampanj)"
+      "break_even_kalla": "saknas med flit (engagemangskampanj)",
+      "minne": "products/lock-in-engagemang-indien",
+      "minne_not": "satt 2026-10-03 av /rond-auto: de tre LOCK_IN-kampanjerna (engagemang, 10 kr/dag) delar en mapp — observationer, inget produktminne att bygga"
     },
     {
       "campaign_id": "120250383019880291",
@@ -1501,7 +1507,9 @@
       "lage": "test",
       "lage_motivering": "kampanj startad 2026-09-26 med namnet \"LOCK_IN_Bordtennisnätet | Engagemang Indien | 2026-09-26\": en ENGAGEMANGSKAMPANJ mot Indien (social proof/lock-in), inte en försäljningskampanj — 500 kr/dag, ~180 kr och 0 köp på 3 dagar vid ronden 2026-09-27. Tillagd av /rond-auto 2026-09-27 så den syns. Break-even saknas i namnet med flit: engagemang har ingen ROAS att mäta mot, så domen SAKNAR_BREAK_EVEN (rör ingenting) är rätt. Inget kostnadsblock — ett break-even ur prissheetet hade gett en försäljningsdom på en kampanj som inte säljer. Axel avgör om de ska ha en egen regel (t.ex. kostnadstak) — tills dess rör ronden dem aldrig.",
       "break_even_roas": null,
-      "break_even_kalla": "saknas med flit (engagemangskampanj)"
+      "break_even_kalla": "saknas med flit (engagemangskampanj)",
+      "minne": "products/lock-in-engagemang-indien",
+      "minne_not": "satt 2026-10-03 av /rond-auto: de tre LOCK_IN-kampanjerna (engagemang, 10 kr/dag) delar en mapp — observationer, inget produktminne att bygga"
     },
     {
       "campaign_id": "120250424998070291",

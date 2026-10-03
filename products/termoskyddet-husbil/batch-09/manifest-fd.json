@@ -1,0 +1,51 @@
+[
+  {
+    "namn": "Termoskydd_FD_7_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Termoskydd_FD_7_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Termoskydd_FD_7_H2",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Termoskydd_FD_7_H2/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Termoskydd_FD_7_H3",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Termoskydd_FD_7_H3/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Termoskydd_FD_8_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Termoskydd_FD_8_1/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Termoskydd_FD_8_2",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Termoskydd_FD_8_2/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Termoskydd_FD_8_3",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Termoskydd_FD_8_3/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Termoskydd_FD_8_4",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Termoskydd_FD_8_4/brief.md",
+    "format": "static"
+  }
+]

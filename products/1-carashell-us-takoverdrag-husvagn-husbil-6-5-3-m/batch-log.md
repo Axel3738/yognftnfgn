@@ -1,6 +1,6 @@
 # Batch-logg — 1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m
 
-Breakthrough-frekvens: 0/78 (0 %) (etikett.mjs --frekvens 2026-09-30)
+Breakthrough-frekvens: 0/80 (0 %) (etikett.mjs --frekvens 2026-10-03)
 
 (Skapad 2026-09-30 av rondens etikettsteg — produkten har inget eget briefflöde; etiketter och lärdomar speglar den svenska förlagan.)
 
@@ -31,3 +31,11 @@ Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_cli
 | Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
 |---|---|---|---|---|---|---|---|---|
 | CaraShellRoof_US_OB_105_1 | okänd | **LOSER** | 7 % | 5 765 kr | 2 | 1,10 / 1,25 | — / — | nej |
+
+## Etiketter dag 7 (2026-10-03) — 1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-10-03 (Magiborsten UK, annonsens egna första vecka 2026-09-26–2026-10-02, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 0/80 (0 %).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| CaraShellRoof_US_OB_112_1 | okänd | **LOSER** | 0 % | 67 kr | 0 | 0,00 / 1,45 | — / — | nej |

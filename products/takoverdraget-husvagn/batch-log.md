@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 1/67 (1 %) (etikett.mjs --frekvens 2026-10-02)
+Breakthrough-frekvens: 1/70 (1 %) (etikett.mjs --frekvens 2026-10-03)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -633,3 +633,13 @@ Ur `agent/etikett-backfill.mjs` 2026-10-02 (annonsens egna första vecka, 7d_cli
 | Takoverdrag_SP_4_H2 | 4 | **LOSER** | 1 % | 424 kr | 0 | 0,00 / 2,31 | 26 % / 8 % | nej |
 | Takoverdrag_SP_4_H4 | 4 | **LOSER** | 0 % | 183 kr | 0 | 0,00 / 2,31 | 22 % / 7 % | nej |
 | Takoverdrag_CS_12_H1 | 3 | **LOSER** | 0 % | 151 kr | 0 | 0,00 / 2,31 | 32 % / 8 % | nej |
+
+## Etiketter dag 7 (2026-10-03) — Taköverdraget för Husvagn 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-10-03 (MagiBorsten SE, annonsens egna första vecka 2026-09-26–2026-10-02, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/70 (1 %).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Hook / hold | Bedömbar |
+|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_OB_8_1 | 6 | **LOSER** | 1 % | 883 kr | 0 | 0,00 / 2,62 | — / — | nej |
+| Takoverdrag_OB_12_1 | 6 | **KPI_WINNER** | 0 % | 279 kr | 1 | 4,62 / 2,62 | — / — | nej |
+| Takoverdrag_OB_10_1 | 6 | **LOSER** | 0 % | 99 kr | 0 | 0,00 / 2,62 | — / — | nej |
