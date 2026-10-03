@@ -1,0 +1,1060 @@
+<title>Annonsmaskinen</title>
+<style>
+:root{
+  /* Layout: en lugn berättelse i en kolumn. Bilden bär förklaringen, texten är kort bildtext under. */
+  --bg:#fbf3e8;
+  --surface:#fffaf2;
+  --fg:#2a2019;
+  --muted:#6b5a4b;
+  --line:#e7d6c0;
+  --accent:#dd821d;
+  --accent-ink:#a5590b;
+  --accent-soft:#f9ddba;
+  --good:#3a8749;
+  --good-soft:#d5ebd3;
+  --bad:#cc4c64;
+  --bad-soft:#f7d5db;
+  --robot:#53708c;
+  --robot-soft:#d8e2eb;
+  --guard:#d6a11c;
+  --guard-soft:#f6e3a6;
+  --font-display:"Fredoka","Nunito","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible","Verdana","Segoe UI",system-ui,sans-serif;
+  --font-emoji:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1712;
+    --surface:#27201a;
+    --fg:#f4eadc;
+    --muted:#bca895;
+    --line:#45392d;
+    --accent:#eb9a3d;
+    --accent-ink:#f2ad5f;
+    --accent-soft:#4b3219;
+    --good:#6fc27e;
+    --good-soft:#203a25;
+    --bad:#ef8397;
+    --bad-soft:#48232b;
+    --robot:#95b4d2;
+    --robot-soft:#24313e;
+    --guard:#f0c956;
+    --guard-soft:#463a15;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1c1712;
+  --surface:#27201a;
+  --fg:#f4eadc;
+  --muted:#bca895;
+  --line:#45392d;
+  --accent:#eb9a3d;
+  --accent-ink:#f2ad5f;
+  --accent-soft:#4b3219;
+  --good:#6fc27e;
+  --good-soft:#203a25;
+  --bad:#ef8397;
+  --bad-soft:#48232b;
+  --robot:#95b4d2;
+  --robot-soft:#24313e;
+  --guard:#f0c956;
+  --guard-soft:#463a15;
+  color-scheme:dark;
+}
+
+/* Grunden */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.sida{max-width:880px;margin-inline:auto;padding-inline:20px;padding-block:44px 104px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.8rem,11vw,4.8rem);font-weight:700;letter-spacing:-0.01em}
+h2{font-size:clamp(2rem,7vw,2.9rem)}
+h3{font-size:clamp(1.55rem,5.4vw,2rem)}
+p{margin:0}
+.lead{font-family:var(--font-display);font-weight:500;font-size:clamp(1.3rem,5vw,1.7rem);color:var(--muted)}
+.ogon{font-family:var(--font-display);font-weight:600;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.rubrik{display:flex;flex-direction:column;gap:6px}
+
+/* Avsnitten */
+.topp{display:flex;flex-direction:column;gap:20px}
+section{display:flex;flex-direction:column;gap:24px;margin-top:96px}
+.del{margin-top:120px}
+figure{margin:0;min-width:0}
+.ill{display:block;width:100%;height:auto;max-width:100%}
+.mini-loop{max-width:680px}
+.rader{display:flex;flex-direction:column;gap:.4em;max-width:52ch;font-size:1.05em}
+.rader.stor{font-size:1.15em}
+.not{color:var(--muted);max-width:52ch}
+
+/* Hjärtat: ringen får en egen yta */
+.hjarta{background:var(--surface);border-radius:28px;padding:clamp(6px,2.5vw,26px);min-width:0}
+.forklaring{display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--muted);font-size:.95em;margin-top:10px;padding-inline:10px}
+.forklaring span{display:inline-flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:18px;height:18px;border-radius:50%;border:3px solid var(--fg);flex:none}
+.d-acc{background:var(--accent-soft)}
+.d-rob{background:var(--robot-soft)}
+.d-good{background:var(--good-soft)}
+.d-yta{background:var(--surface)}
+
+/* Stegen runt ringen */
+.steg{list-style:none;margin:0;padding:0;display:grid;gap:16px;max-width:60ch}
+.steg li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:start}
+.steg .dot{margin-top:6px}
+.steg b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.15em;line-height:1.3}
+.steg span{color:var(--muted)}
+
+/* Två bilder bredvid varandra, staplas på mobil */
+.par{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
+.par figure{display:flex;flex-direction:column;gap:10px}
+.par figcaption{display:flex;flex-direction:column;gap:2px}
+.par figcaption b{font-family:var(--font-display);font-weight:600;font-size:1.35em}
+.par figcaption span{color:var(--muted)}
+
+/* Etiketterna på tvättlinan */
+.lina{list-style:none;margin:0;padding:0;padding-top:44px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.lina::before{content:"";position:absolute;left:-4px;right:-4px;top:8px;height:5px;border-radius:5px;background:var(--muted)}
+.tag{position:relative;min-width:0;background:var(--surface);border:3px solid var(--fg);border-radius:20px 20px 14px 14px;padding:44px 16px 18px;display:flex;flex-direction:column;gap:6px}
+.lina .tag::before{content:"";position:absolute;left:50%;top:-34px;width:3px;height:52px;background:var(--muted);transform:translateX(-50%)}
+.tag::after{content:"";position:absolute;left:50%;top:12px;width:18px;height:18px;border-radius:50%;border:3px solid var(--fg);background:var(--bg);transform:translateX(-50%)}
+.tag .sym{font-family:var(--font-emoji);font-size:2.3rem;line-height:1.1}
+.tag b{font-family:var(--font-display);font-weight:600;font-size:1.3em;line-height:1.2}
+.tag span{font-size:.97em}
+.t-vinn{background:var(--good-soft)}
+.t-spend{background:var(--accent-soft)}
+.t-forl{background:var(--bad-soft)}
+.t-sov{background:var(--robot-soft)}
+.tag-tom{border-style:dashed;border-color:var(--muted);background:transparent;max-width:30rem;padding-top:40px}
+.tag-tom::after{border-color:var(--muted)}
+.tag-tom span{color:var(--muted)}
+
+/* Listor med en liten bild framför varje rad */
+.ikonlista{list-style:none;margin:0;padding:0;display:grid;gap:18px;max-width:62ch}
+.ikonlista li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:start}
+.ikonlista b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.15em;line-height:1.3}
+.ikonlista span{display:block}
+.mini{width:52px;height:52px;display:block}
+.vakter{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));max-width:none;gap:22px 28px}
+
+/* Var Axel ser läget */
+.platser{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.plats{min-width:0;background:var(--surface);border:3px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.plats b{font-family:var(--font-display);font-weight:600;font-size:1.2em;line-height:1.25}
+.plats span{color:var(--muted)}
+
+@media (max-width:760px){
+  .lina{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0}
+  .lina::before,.lina .tag::before{display:none}
+}
+@media (max-width:520px){
+  body{font-size:19px}
+  .sida{padding-inline:16px}
+  .hjarta{padding:4px;border-radius:20px}
+  .lina{grid-template-columns:1fr}
+  section{margin-top:80px}
+  .del{margin-top:100px}
+}
+
+/* SVG: alla färger går via samma tokens, så bilderna funkar i ljust och mörkt läge */
+.k{stroke:var(--fg);stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.kl{stroke:var(--line);stroke-width:3}
+.ka{stroke:var(--accent);stroke-width:4}
+.w3{stroke-width:3}
+.w6{stroke-width:6}
+.w8{stroke-width:8}
+.w10{stroke-width:10}
+.f-bg{fill:var(--bg)}
+.f-yta{fill:var(--surface)}
+.f-ink{fill:var(--fg)}
+.f-mut{fill:var(--muted)}
+.f-lin{fill:var(--line)}
+.f-acc{fill:var(--accent)}
+.f-accs{fill:var(--accent-soft)}
+.f-good{fill:var(--good)}
+.f-goods{fill:var(--good-soft)}
+.f-bad{fill:var(--bad)}
+.f-bads{fill:var(--bad-soft)}
+.f-rob{fill:var(--robot)}
+.f-robs{fill:var(--robot-soft)}
+.f-vak{fill:var(--guard)}
+.f-vaks{fill:var(--guard-soft)}
+.f-no{fill:none}
+.ring{fill:none;stroke:var(--line);stroke-width:14}
+.tunn{fill:none;stroke:var(--line);stroke-width:9;stroke-linecap:round}
+.pil{fill:none;stroke:var(--muted);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.pilh{fill:var(--muted)}
+.pilh-a{fill:var(--accent)}
+.prick{fill:none;stroke:var(--accent);stroke-width:6;stroke-linecap:round;stroke-dasharray:1 13}
+.zoom{fill:none;stroke:var(--accent);stroke-width:3;stroke-dasharray:8 8}
+.staket{fill:none;stroke:var(--guard);stroke-width:9;stroke-linecap:round;stroke-dasharray:4 18}
+.penna-k{stroke:var(--fg);stroke-width:15;stroke-linecap:round}
+.penna{stroke:var(--accent);stroke-width:8;stroke-linecap:round}
+.bock{fill:none;stroke:var(--good);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.kryss{fill:none;stroke:var(--bad);stroke-width:6;stroke-linecap:round}
+.skiss{fill:none;stroke:var(--muted);stroke-width:5;stroke-linecap:round}
+.vag{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.tomrad{fill:none;stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-dasharray:8 10}
+.st{fill:var(--fg);font-family:var(--font-body);font-size:26px}
+.sd{font-family:var(--font-display);font-weight:600}
+.sm{fill:var(--muted)}
+.sa{fill:var(--accent-ink)}
+.sr{fill:var(--robot)}
+.sb{fill:var(--bad)}
+.sy{fill:var(--surface)}
+.mid{text-anchor:middle}
+.slut{text-anchor:end}
+.t18{font-size:18px}
+.t20{font-size:20px}
+.t22{font-size:22px}
+.t24{font-size:24px}
+.t26{font-size:26px}
+.t28{font-size:28px}
+.t30{font-size:30px}
+.t34{font-size:34px}
+.t36{font-size:36px}
+.t70{font-size:70px}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Fredoka:wght@500;600;700&amp;display=swap">
+
+<main class="sida">
+
+  <!-- 1. Hela idén -->
+  <header class="topp">
+    <h1>Annonsmaskinen</h1>
+    <p class="lead">Så här funkar det, med bilder</p>
+    <figure>
+      <svg class="ill mini-loop" viewBox="0 30 800 290" role="img" aria-label="Göra, visa, mäta, lära, och sedan börja om">
+        <text class="st sd mid t34" x="115" y="80">Göra</text>
+        <text class="st sd mid t34" x="305" y="80">Visa</text>
+        <text class="st sd mid t34" x="495" y="80">Mäta</text>
+        <text class="st sd mid t34" x="685" y="80">Lära</text>
+
+        <line class="pil" x1="181" y1="170" x2="224" y2="170"/>
+        <polygon class="pilh" points="240,170 222,159 222,181"/>
+        <line class="pil" x1="371" y1="170" x2="414" y2="170"/>
+        <polygon class="pilh" points="430,170 412,159 412,181"/>
+        <line class="pil" x1="561" y1="170" x2="604" y2="170"/>
+        <polygon class="pilh" points="620,170 602,159 602,181"/>
+
+        <path class="pil" d="M 685 236 C 685 326 115 326 115 254"/>
+        <polygon class="pilh" points="115,236 103,258 127,258"/>
+        <text class="st sm mid t28" x="400" y="284">om och om igen</text>
+
+        <!-- Göra: papper och penna -->
+        <g transform="translate(115 170)">
+          <circle r="60" class="k f-accs"/>
+          <rect x="-28" y="-32" width="42" height="56" rx="6" class="k f-yta"/>
+          <line x1="-19" y1="-17" x2="4" y2="-17" class="k"/>
+          <line x1="-19" y1="-5" x2="4" y2="-5" class="k"/>
+          <line x1="-19" y1="7" x2="-4" y2="7" class="k"/>
+          <line x1="32" y1="-28" x2="12" y2="14" class="penna-k"/>
+          <line x1="32" y1="-28" x2="12" y2="14" class="penna"/>
+        </g>
+        <!-- Visa: telefon -->
+        <g transform="translate(305 170)">
+          <circle r="60" class="k f-goods"/>
+          <rect x="-22" y="-37" width="44" height="74" rx="9" class="k f-yta"/>
+          <polygon points="-8,-13 -8,13 13,0" class="f-good"/>
+        </g>
+        <!-- Mäta: staplar -->
+        <g transform="translate(495 170)">
+          <circle r="60" class="k f-robs"/>
+          <line x1="-32" y1="28" x2="32" y2="28" class="k"/>
+          <rect x="-26" y="6" width="14" height="22" class="k f-rob"/>
+          <rect x="-7" y="-8" width="14" height="36" class="k f-rob"/>
+          <rect x="12" y="-26" width="14" height="54" class="k f-rob"/>
+        </g>
+        <!-- Lära: anteckningsbok -->
+        <g transform="translate(685 170)">
+          <circle r="60" class="k f-vaks"/>
+          <rect x="-24" y="-33" width="48" height="64" rx="6" class="k f-yta"/>
+          <rect x="-24" y="-33" width="12" height="64" rx="4" class="k f-acc"/>
+          <line x1="-3" y1="-16" x2="15" y2="-16" class="k"/>
+          <line x1="-3" y1="-4" x2="15" y2="-4" class="k"/>
+          <line x1="-3" y1="8" x2="9" y2="8" class="k"/>
+        </g>
+      </svg>
+    </figure>
+    <div class="rader stor">
+      <p>Vi gör annonser.</p>
+      <p>Vi mäter vilka som funkar.</p>
+      <p>Vi skriver ner vad vi lärde oss.</p>
+      <p>Sedan gör vi nya, lite bättre.</p>
+      <p>Om och om igen.</p>
+    </div>
+  </header>
+
+  <!-- 2. Loopen -->
+  <section class="del">
+    <div class="rubrik">
+      <p class="ogon">Så funkar det</p>
+      <h2>Ett varv i maskinen</h2>
+    </div>
+    <figure class="hjarta">
+      <svg class="ill" viewBox="0 84 800 900" role="img" aria-label="Ringen med sju stationer: Bruce skriver briefen, klippet görs, roboten laddar upp i Meta, folk ser annonsen, Kungen mäter, lärdomen skrivs ner, nya briefer ur lärdomen. Under ringen trycker Axel på knapparna.">
+        <!-- Ringen och pilarna medurs -->
+        <circle cx="400" cy="440" r="215" class="ring"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(493.3 246.3) rotate(25.71)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(609.6 392.2) rotate(77.14)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(568.1 574.1) rotate(128.57)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(400 655) rotate(180)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(231.9 574.1) rotate(231.43)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(190.4 392.2) rotate(282.86)"/>
+        <polygon class="pilh" points="14,0 -10,-13 -10,13" transform="translate(306.7 246.3) rotate(334.29)"/>
+
+        <!-- Spelreglerna i mitten -->
+        <text class="st sd mid t30" x="400" y="390">Spelregler</text>
+        <rect x="296" y="408" width="208" height="52" rx="12" class="k f-vaks"/>
+        <text class="st sd mid t26" x="400" y="443">minst 300 kr</text>
+        <text class="st sm mid t24" x="400" y="490">och</text>
+        <rect x="296" y="504" width="208" height="52" rx="12" class="k f-vaks"/>
+        <text class="st sd mid t26" x="400" y="539">minst 3 köp</text>
+
+        <!-- Station: Bruce skriver briefen -->
+        <text class="st sd mid t28" x="400" y="122">Bruce skriver</text>
+        <text class="st sd mid t28" x="400" y="154">briefen</text>
+        <g transform="translate(400 225)">
+          <circle r="56" class="k f-accs"/>
+          <circle cx="-12" cy="-14" r="12" class="k f-yta"/>
+          <path d="M -34 30 Q -34 4 -12 4 Q 10 4 10 30 Z" class="k f-acc"/>
+          <rect x="13" y="-22" width="22" height="30" rx="4" class="k f-yta"/>
+          <line x1="18" y1="-12" x2="30" y2="-12" class="k w3"/>
+          <line x1="18" y1="-2" x2="27" y2="-2" class="k w3"/>
+        </g>
+
+        <!-- Station: klippet görs -->
+        <text class="st sd t28" x="632" y="292">Klippet</text>
+        <text class="st sd t28" x="632" y="324">görs</text>
+        <g transform="translate(568.1 305.9)">
+          <circle r="56" class="k f-accs"/>
+          <rect x="-32" y="-23" width="64" height="48" rx="6" class="k f-yta"/>
+          <rect x="-32" y="-23" width="64" height="13" rx="4" class="k f-ink"/>
+          <rect x="-24" y="-19" width="8" height="5" rx="1" class="f-yta"/>
+          <rect x="-8" y="-19" width="8" height="5" rx="1" class="f-yta"/>
+          <rect x="8" y="-19" width="8" height="5" rx="1" class="f-yta"/>
+          <polygon points="-8,-1 -8,19 10,9" class="f-acc"/>
+        </g>
+
+        <!-- Station: roboten laddar upp -->
+        <text class="st sd t28" x="598" y="586">Roboten laddar</text>
+        <text class="st sd t28" x="598" y="618">upp i Meta</text>
+        <g transform="translate(609.6 487.8)">
+          <circle r="56" class="k f-robs"/>
+          <line x1="-6" y1="-24" x2="-6" y2="-33" class="k"/>
+          <circle cx="-6" cy="-37" r="5" class="k f-vak"/>
+          <rect x="-32" y="-24" width="52" height="40" rx="10" class="k f-yta"/>
+          <circle cx="-18" cy="-6" r="5" class="f-ink"/>
+          <circle cx="6" cy="-6" r="5" class="f-ink"/>
+          <line x1="-16" y1="6" x2="4" y2="6" class="k"/>
+          <rect x="-24" y="18" width="36" height="14" rx="5" class="k f-rob"/>
+          <line x1="31" y1="26" x2="31" y2="-6" class="k"/>
+          <polyline points="23,3 31,-8 39,3" class="k f-no"/>
+        </g>
+
+        <!-- Station: folk ser annonsen -->
+        <text class="st sd mid t28" x="493.3" y="735">Folk ser</text>
+        <text class="st sd mid t28" x="493.3" y="767">annonsen</text>
+        <g transform="translate(493.3 633.7)">
+          <circle r="56" class="k f-goods"/>
+          <rect x="-32" y="-34" width="38" height="66" rx="8" class="k f-yta"/>
+          <polygon points="-20,-12 -20,10 0,-1" class="f-good"/>
+          <path d="M 12 0 H 38 L 35 28 H 15 Z" class="k f-acc"/>
+          <path d="M 18 0 V -6 A 7 7 0 0 1 32 -6 V 0" class="k f-no"/>
+        </g>
+
+        <!-- Station: Kungen mäter -->
+        <text class="st sd mid t28" x="306.7" y="735">Kungen</text>
+        <text class="st sd mid t28" x="306.7" y="767">mäter</text>
+        <g transform="translate(306.7 633.7)">
+          <circle r="56" class="k f-robs"/>
+          <polygon points="-22,-16 -22,-36 -11,-26 0,-40 11,-26 22,-36 22,-16" class="k f-vak"/>
+          <rect x="-26" y="-16" width="52" height="40" rx="10" class="k f-yta"/>
+          <circle cx="-11" cy="2" r="5" class="f-ink"/>
+          <circle cx="11" cy="2" r="5" class="f-ink"/>
+          <path d="M -9 13 Q 0 19 9 13" class="k f-no"/>
+        </g>
+
+        <!-- Station: lärdomen skrivs ner -->
+        <text class="st sd slut t28" x="200" y="586">Lärdomen</text>
+        <text class="st sd slut t28" x="200" y="618">skrivs ner</text>
+        <g transform="translate(190.4 487.8)">
+          <circle r="56" class="k f-robs"/>
+          <rect x="-28" y="-32" width="46" height="62" rx="6" class="k f-yta"/>
+          <rect x="-28" y="-32" width="11" height="62" rx="4" class="k f-acc"/>
+          <line x1="-10" y1="-16" x2="10" y2="-16" class="k"/>
+          <line x1="-10" y1="-4" x2="10" y2="-4" class="k"/>
+          <line x1="-10" y1="8" x2="2" y2="8" class="k"/>
+          <line x1="32" y1="-24" x2="14" y2="18" class="penna-k"/>
+          <line x1="32" y1="-24" x2="14" y2="18" class="penna"/>
+        </g>
+
+        <!-- Station: nya briefer ur lärdomen -->
+        <text class="st sd slut t28" x="170" y="292">Nya briefer</text>
+        <text class="st sd slut t28" x="170" y="324">ur lärdomen</text>
+        <g transform="translate(231.9 305.9)">
+          <circle r="56" class="k f-robs"/>
+          <path d="M -12 4 A 20 20 0 1 1 12 4 L 12 13 L -12 13 Z" class="k f-vak"/>
+          <rect x="-10" y="13" width="20" height="11" rx="3" class="k f-yta"/>
+          <line x1="-30" y1="-24" x2="-38" y2="-30" class="k"/>
+          <line x1="30" y1="-24" x2="38" y2="-30" class="k"/>
+          <line x1="-31" y1="-4" x2="-40" y2="-3" class="k"/>
+          <line x1="31" y1="-4" x2="40" y2="-3" class="k"/>
+        </g>
+
+        <!-- Utanför ringen: Kungen ger tips, Axel trycker -->
+        <path class="prick" d="M 312 782 Q 360 822 390 870"/>
+        <polygon class="pilh-a" points="13,0 -9,-11 -9,11" transform="translate(394 878) rotate(59)"/>
+        <text class="st sd sa t24" x="372" y="812">tips</text>
+
+        <circle cx="170" cy="862" r="26" class="k f-accs"/>
+        <path d="M 124 962 Q 124 896 170 896 Q 216 896 216 962 Z" class="k f-acc"/>
+        <rect x="250" y="886" width="230" height="72" rx="14" class="k f-yta"/>
+        <line x1="300" y1="922" x2="284" y2="878" class="k w6"/>
+        <circle cx="300" cy="922" r="11" class="k f-ink"/>
+        <circle cx="282" cy="872" r="12" class="k f-bad"/>
+        <circle cx="378" cy="922" r="17" class="k f-good"/>
+        <circle cx="436" cy="922" r="17" class="k f-vak"/>
+        <line x1="206" y1="920" x2="270" y2="878" class="k w8"/>
+        <text class="st sd t28" x="505" y="912">Axel trycker</text>
+        <text class="st sd t28" x="505" y="944">på knapparna</text>
+      </svg>
+      <div class="forklaring" aria-hidden="true">
+        <span><i class="dot d-acc"></i>människor</span>
+        <span><i class="dot d-rob"></i>robotar</span>
+        <span><i class="dot d-good"></i>kunderna</span>
+      </div>
+    </figure>
+
+    <ol class="steg">
+      <li><i class="dot d-acc"></i><div><b>Bruce skriver briefen</b><span>Bruce är vår creative strategist i Manila. Han planerar nästa annons.</span></div></li>
+      <li><i class="dot d-acc"></i><div><b>Klippet görs</b><span>Videon eller bilden blir klar och läggs i Notion.</span></div></li>
+      <li><i class="dot d-rob"></i><div><b>Roboten laddar upp</b><span>Den lägger klippet i annonskontot hos Meta.</span></div></li>
+      <li><i class="dot d-good"></i><div><b>Folk ser annonsen</b><span>Folk köper, eller inte.</span></div></li>
+      <li><i class="dot d-rob"></i><div><b>Kungen mäter</b><span>Varje morgon klockan sju. Efter en vecka får paketet en etikett.</span></div></li>
+      <li><i class="dot d-rob"></i><div><b>Lärdomen skrivs ner</b><span>Varför vann den? Varför inte? Det sparas, aldrig bara i någons huvud.</span></div></li>
+      <li><i class="dot d-rob"></i><div><b>Nya briefer</b><span>Var tredje dag skriver roboten nya briefer ur det som vann.</span></div></li>
+    </ol>
+
+    <div class="rader">
+      <p>Allt går runt i en ring.</p>
+      <p>Roboten ändrar aldrig budgeten, pausar inget och slår inte på något.</p>
+      <p>Den ger tips. Axel bestämmer.</p>
+    </div>
+  </section>
+
+  <!-- 2b. Testpaketet -->
+  <section>
+    <div class="rubrik">
+      <h2>Ett testpaket</h2>
+    </div>
+    <div class="par">
+      <figure>
+        <svg class="ill" viewBox="0 0 400 400" role="img" aria-label="Ett testpaket med tre telefoner. Samma film, tre olika öppningar.">
+          <!-- Flikarna bakom -->
+          <polygon points="36,170 8,136 96,136 122,170" class="k f-accs"/>
+          <polygon points="364,170 392,136 304,136 278,170" class="k f-accs"/>
+          <!-- Tre telefoner: olika början, samma film -->
+          <text class="st mid t22" x="100" y="34">hook ett</text>
+          <text class="st mid t22" x="200" y="34">hook två</text>
+          <text class="st mid t22" x="300" y="34">hook tre</text>
+          <g>
+            <rect x="64" y="48" width="72" height="150" rx="12" class="k f-yta"/>
+            <rect x="72" y="58" width="56" height="32" rx="6" class="k f-vak w3"/>
+            <rect x="72" y="96" width="56" height="80" rx="6" class="k f-accs w3"/>
+            <polygon points="92,122 92,146 112,134" class="f-acc"/>
+          </g>
+          <g>
+            <rect x="164" y="48" width="72" height="150" rx="12" class="k f-yta"/>
+            <rect x="172" y="58" width="56" height="32" rx="6" class="k f-good w3"/>
+            <rect x="172" y="96" width="56" height="80" rx="6" class="k f-accs w3"/>
+            <polygon points="192,122 192,146 212,134" class="f-acc"/>
+          </g>
+          <g>
+            <rect x="264" y="48" width="72" height="150" rx="12" class="k f-yta"/>
+            <rect x="272" y="58" width="56" height="32" rx="6" class="k f-bad w3"/>
+            <rect x="272" y="96" width="56" height="80" rx="6" class="k f-accs w3"/>
+            <polygon points="292,122 292,146 312,134" class="f-acc"/>
+          </g>
+          <!-- Lådan framför -->
+          <rect x="36" y="170" width="328" height="166" rx="14" class="k f-accs"/>
+          <text class="st sd mid t36" x="200" y="266">Testpaket</text>
+          <text class="st sm mid t22" x="200" y="378">samma film, tre öppningar</text>
+        </svg>
+      </figure>
+      <figure>
+        <svg class="ill" viewBox="0 0 400 400" role="img" aria-label="En hylla med plats för högst fem paket, och ett eget paket med krona som heter Champions och är låst för nya annonser.">
+          <text class="st sd mid t26" x="200" y="40">högst fem åt gången</text>
+          <rect x="36" y="64" width="56" height="52" rx="8" class="k f-accs"/>
+          <rect x="104" y="64" width="56" height="52" rx="8" class="k f-accs"/>
+          <rect x="172" y="64" width="56" height="52" rx="8" class="k f-accs"/>
+          <rect x="240" y="64" width="56" height="52" rx="8" class="k f-accs"/>
+          <rect x="308" y="64" width="56" height="52" rx="8" class="k f-accs"/>
+          <line x1="64" y1="64" x2="64" y2="82" class="k w3"/>
+          <line x1="132" y1="64" x2="132" y2="82" class="k w3"/>
+          <line x1="200" y1="64" x2="200" y2="82" class="k w3"/>
+          <line x1="268" y1="64" x2="268" y2="82" class="k w3"/>
+          <line x1="336" y1="64" x2="336" y2="82" class="k w3"/>
+          <line x1="20" y1="122" x2="380" y2="122" class="k w6"/>
+
+          <polygon points="150,212 150,176 175,196 200,166 225,196 250,176 250,212" class="k f-vak"/>
+          <rect x="70" y="212" width="260" height="122" rx="14" class="k f-goods"/>
+          <text class="st sd mid t34" x="200" y="264">Champions</text>
+          <path d="M 132 302 V 294 A 8 8 0 0 1 148 294 V 302" class="k f-no w3"/>
+          <rect x="126" y="300" width="28" height="22" rx="4" class="k f-yta w3"/>
+          <text class="st t24" x="166" y="320">inga nya</text>
+          <text class="st sm mid t22" x="200" y="378">gamla vinnare</text>
+        </svg>
+      </figure>
+    </div>
+    <div class="rader">
+      <p>En idé blir ett testpaket med tre öppningar.</p>
+      <p>Högst fem paket kör samtidigt.</p>
+      <p>Gamla vinnare bor i Champions och får aldrig nya annonser.</p>
+    </div>
+  </section>
+
+  <!-- 3. Etiketterna -->
+  <section>
+    <div class="rubrik">
+      <h2>Etiketterna</h2>
+    </div>
+    <ul class="lina">
+      <li class="tag t-vinn"><span class="sym" aria-hidden="true">🏆</span><b>Vinnare</b><span>Den tjänar pengar. Gör fler som den.</span></li>
+      <li class="tag t-spend"><span class="sym" aria-hidden="true">💸</span><b>Spend-vinnare</b><span>Meta gillar den och lägger pengarna där. Vi tittar närmare.</span></li>
+      <li class="tag t-forl"><span class="sym" aria-hidden="true">❌</span><b>Förlorare</b><span>Den funkade inte. Vi skriver ner varför och går vidare.</span></li>
+      <li class="tag t-sov"><span class="sym" aria-hidden="true">😴</span><b>Ingen leverans</b><span>Meta visade den nästan inte alls. Den är inte dömd, bara osynlig.</span></li>
+    </ul>
+    <div class="tag tag-tom">
+      <b>För lite data</b>
+      <span>Under spelreglerna får annonsen ingen etikett alls.</span>
+    </div>
+    <div class="rader">
+      <p>Vi gissar inte. Vi mäter.</p>
+    </div>
+  </section>
+
+  <!-- 4. Growth Guide -->
+  <section>
+    <div class="rubrik">
+      <h2>Bruces anteckningsbok</h2>
+    </div>
+    <figure>
+      <svg class="ill" viewBox="0 0 800 530" role="img" aria-label="Anteckningsboken Growth Guide. Varje rad är ett testpaket. Roboten fyller i vad som hände, Bruce skriver lärdomen och bockar av.">
+        <rect x="20" y="20" width="760" height="490" rx="20" class="k f-yta"/>
+        <!-- Rubrik -->
+        <rect x="46" y="52" width="28" height="36" rx="4" class="k f-yta w3"/>
+        <rect x="46" y="52" width="9" height="36" rx="3" class="k f-acc w3"/>
+        <text class="st sd t34" x="90" y="83">Growth Guide</text>
+        <!-- Flikar -->
+        <rect x="43" y="108" width="118" height="38" rx="10" class="k f-accs w3"/>
+        <text class="st mid t20" x="102" y="133">Testpaket</text>
+        <rect x="169" y="108" width="108" height="38" rx="10" class="kl f-bg"/>
+        <text class="st sm mid t20" x="223" y="133">Overview</text>
+        <rect x="285" y="108" width="128" height="38" rx="10" class="kl f-bg"/>
+        <text class="st sm mid t20" x="349" y="133">Önskningar</text>
+        <rect x="421" y="108" width="104" height="38" rx="10" class="kl f-bg"/>
+        <text class="st sm mid t20" x="473" y="133">Avatarer</text>
+        <rect x="533" y="108" width="112" height="38" rx="10" class="kl f-bg"/>
+        <text class="st sm mid t20" x="589" y="133">Kreatörer</text>
+        <rect x="653" y="108" width="104" height="38" rx="10" class="kl f-bg"/>
+        <text class="st sm mid t20" x="705" y="133">Resultat</text>
+        <line x1="20" y1="154" x2="780" y2="154" class="kl"/>
+
+        <!-- Kolumnhuvuden med små ikoner -->
+        <g transform="translate(66 186)">
+          <path d="M -7 6 A 11 11 0 1 1 7 6 L 7 11 L -7 11 Z" class="k f-vak w3"/>
+          <line x1="-5" y1="15" x2="5" y2="15" class="k w3"/>
+        </g>
+        <text class="st t26" x="88" y="195">Idén</text>
+        <g transform="translate(264 186)">
+          <line x1="-14" y1="12" x2="14" y2="12" class="k w3"/>
+          <rect x="-12" y="2" width="7" height="10" class="k f-rob w3"/>
+          <rect x="-3" y="-5" width="7" height="17" class="k f-rob w3"/>
+          <rect x="6" y="-12" width="7" height="24" class="k f-rob w3"/>
+        </g>
+        <text class="st t26" x="288" y="195">Vad hände</text>
+        <g transform="translate(464 186)">
+          <line x1="10" y1="-13" x2="-6" y2="13" class="penna-k"/>
+          <line x1="10" y1="-13" x2="-6" y2="13" class="penna"/>
+        </g>
+        <text class="st t26" x="488" y="195">Lärdom</text>
+        <g transform="translate(664 186)">
+          <rect x="-12" y="-12" width="24" height="24" rx="5" class="k f-yta w3"/>
+          <polyline points="-6,0 -1,6 7,-6" class="bock" style="stroke-width:4"/>
+        </g>
+        <text class="st t26" x="686" y="195">Klar</text>
+
+        <!-- Rad ett: vinnare, lärdom skriven, bockad -->
+        <rect x="44" y="218" width="712" height="56" rx="10" class="kl f-bg"/>
+        <line x1="62" y1="238" x2="200" y2="238" class="skiss"/>
+        <line x1="62" y1="256" x2="160" y2="256" class="skiss"/>
+        <rect x="256" y="230" width="150" height="32" rx="16" class="f-goods" style="stroke:var(--good);stroke-width:3"/>
+        <text class="st mid t22" x="331" y="253">vinnare</text>
+        <path d="M 462 246 q 10 -12 20 0 t 20 0 t 20 0 t 20 0 t 20 0 t 20 0 t 20 0" class="vag"/>
+        <rect x="684" y="230" width="32" height="32" rx="6" class="k f-yta"/>
+        <polyline points="691,246 698,254 710,238" class="bock"/>
+
+        <!-- Rad två: förlorare, lärdom skriven, bockad -->
+        <rect x="44" y="286" width="712" height="56" rx="10" class="kl f-bg"/>
+        <line x1="62" y1="306" x2="190" y2="306" class="skiss"/>
+        <line x1="62" y1="324" x2="140" y2="324" class="skiss"/>
+        <rect x="256" y="298" width="150" height="32" rx="16" class="f-bads" style="stroke:var(--bad);stroke-width:3"/>
+        <text class="st mid t22" x="331" y="321">förlorare</text>
+        <path d="M 462 314 q 10 -12 20 0 t 20 0 t 20 0 t 20 0 t 20 0" class="vag"/>
+        <rect x="684" y="298" width="32" height="32" rx="6" class="k f-yta"/>
+        <polyline points="691,314 698,322 710,306" class="bock"/>
+
+        <!-- Rad tre: roboten har just fyllt i, Bruce har inte skrivit än -->
+        <rect x="44" y="354" width="712" height="56" rx="10" class="kl f-bg"/>
+        <line x1="62" y1="374" x2="206" y2="374" class="skiss"/>
+        <line x1="62" y1="392" x2="150" y2="392" class="skiss"/>
+        <rect x="256" y="366" width="150" height="32" rx="16" class="f-robs" style="stroke:var(--robot);stroke-width:3"/>
+        <text class="st mid t22" x="331" y="389">väntar</text>
+        <line x1="462" y1="382" x2="600" y2="382" class="tomrad"/>
+        <rect x="684" y="366" width="32" height="32" rx="6" class="k f-yta"/>
+
+        <!-- Vem gör vad -->
+        <line x1="331" y1="432" x2="331" y2="420" class="pil" style="stroke:var(--robot)"/>
+        <polygon points="331,414 323,426 339,426" style="fill:var(--robot)"/>
+        <text class="st sd mid t28 sr" x="331" y="462">Roboten</text>
+        <text class="st sd mid t28 sr" x="331" y="494">fyller i</text>
+        <line x1="531" y1="432" x2="531" y2="420" class="pil" style="stroke:var(--accent)"/>
+        <polygon class="pilh-a" points="531,414 523,426 539,426"/>
+        <text class="st sd mid t28 sa" x="531" y="462">Bruce</text>
+        <text class="st sd mid t28 sa" x="531" y="494">skriver</text>
+        <line x1="700" y1="432" x2="700" y2="420" class="pil" style="stroke:var(--accent)"/>
+        <polygon class="pilh-a" points="700,414 692,426 708,426"/>
+        <text class="st sd mid t28 sa" x="700" y="462">Bruce</text>
+        <text class="st sd mid t28 sa" x="700" y="494">bockar av</text>
+      </svg>
+    </figure>
+    <div class="rader">
+      <p>Roboten fyller i vad som hände.</p>
+      <p>Bruce skriver vad han lärde sig och bockar av raden.</p>
+      <p>Varje måndag går han igenom veckans rader.</p>
+    </div>
+  </section>
+
+  <!-- 5. Veckans rapporter -->
+  <section>
+    <div class="rubrik">
+      <h2>Veckans rapporter</h2>
+    </div>
+    <figure>
+      <svg class="ill" viewBox="0 0 800 362" role="img" aria-label="En vecka. Måndag: brev till redigerarna och Bruces genomgång. Tisdag: Bruce får feedback. Resten av veckan är Axel ostörd om inget stannar.">
+        <rect x="24" y="20" width="102" height="258" rx="14" class="ka f-accs"/>
+        <rect x="132" y="20" width="102" height="258" rx="14" class="ka f-accs"/>
+        <rect x="240" y="20" width="102" height="258" rx="14" class="kl f-yta"/>
+        <rect x="348" y="20" width="102" height="258" rx="14" class="kl f-yta"/>
+        <rect x="456" y="20" width="102" height="258" rx="14" class="kl f-yta"/>
+        <rect x="564" y="20" width="102" height="258" rx="14" class="kl f-yta"/>
+        <rect x="672" y="20" width="102" height="258" rx="14" class="kl f-yta"/>
+        <text class="st sd mid t28" x="75" y="62">Mån</text>
+        <text class="st sd mid t28" x="183" y="62">Tis</text>
+        <text class="st sd sm mid t28" x="291" y="62">Ons</text>
+        <text class="st sd sm mid t28" x="399" y="62">Tor</text>
+        <text class="st sd sm mid t28" x="507" y="62">Fre</text>
+        <text class="st sd sm mid t28" x="615" y="62">Lör</text>
+        <text class="st sd sm mid t28" x="723" y="62">Sön</text>
+
+        <!-- Måndag tidigt: brev till redigerarna -->
+        <rect x="45" y="104" width="60" height="40" rx="6" class="k f-yta"/>
+        <polyline points="45,107 75,128 105,107" class="k f-no"/>
+        <text class="st sm mid t24" x="75" y="174">tidigt</text>
+        <!-- Måndag: Bruce bockar av -->
+        <rect x="55" y="198" width="40" height="40" rx="8" class="k f-yta"/>
+        <polyline points="63,218 72,228 88,208" class="bock"/>
+        <text class="st sm mid t24" x="75" y="268">Bruce</text>
+
+        <!-- Tisdag tidigt: feedback i boken -->
+        <rect x="160" y="100" width="38" height="50" rx="5" class="k f-yta"/>
+        <rect x="160" y="100" width="10" height="50" rx="3" class="k f-acc"/>
+        <path d="M 196 84 h 26 a 6 6 0 0 1 6 6 v 16 a 6 6 0 0 1 -6 6 h -12 l -9 9 v -9 h -5 a 6 6 0 0 1 -6 -6 v -16 a 6 6 0 0 1 6 -6 z" class="k f-vaks w3"/>
+        <circle cx="203" cy="98" r="2.5" class="f-ink"/>
+        <circle cx="210" cy="98" r="2.5" class="f-ink"/>
+        <circle cx="217" cy="98" r="2.5" class="f-ink"/>
+        <text class="st sm mid t24" x="183" y="174">tidigt</text>
+        <text class="st sm mid t24" x="183" y="268">Bruce</text>
+
+        <!-- Resten av veckan: Axels klocka sover -->
+        <g transform="translate(507 164)">
+          <path d="M -24 18 Q -22 -22 0 -24 Q 22 -22 24 18 Z" class="k f-vaks"/>
+          <line x1="-30" y1="18" x2="30" y2="18" class="k"/>
+          <circle cx="0" cy="25" r="6" class="k f-yta"/>
+        </g>
+        <text class="st sd sm t22" x="530" y="128">zzz</text>
+        <path class="pil" d="M 250 290 Q 250 302 262 302 L 495 302 Q 507 302 507 314 Q 507 302 519 302 L 752 302 Q 764 302 764 290"/>
+        <text class="st sm mid t28" x="507" y="350">Axel: tyst om inget stannar</text>
+      </svg>
+    </figure>
+    <ul class="ikonlista">
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <rect x="-24" y="-16" width="48" height="32" rx="5" class="k f-yta"/>
+          <polyline points="-24,-14 0,4 24,-14" class="k f-no"/>
+        </svg>
+        <div><b>Måndag tidigt</b><span>Carl, Jerzee och Jasper får var sitt privata brev i Discord. Vilka klipp som gick och varför. En sak att göra bättre. Aldrig några pengar i brevet.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <rect x="-20" y="-20" width="40" height="40" rx="8" class="k f-yta"/>
+          <polyline points="-11,0 -3,9 12,-10" class="bock"/>
+        </svg>
+        <div><b>Måndag</b><span>Bruce bockar av raderna och skriver sina lärdomar.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <rect x="-22" y="-24" width="36" height="48" rx="5" class="k f-yta"/>
+          <rect x="-22" y="-24" width="10" height="48" rx="3" class="k f-acc"/>
+          <circle cx="16" cy="-14" r="11" class="k f-vaks w3"/>
+        </svg>
+        <div><b>Tisdag tidigt</b><span>Bruce får feedback i sin anteckningsbok. Vinnarna som väntar på en uppföljare. En sak att göra i veckan.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <path d="M -18 14 Q -16 -18 0 -20 Q 16 -18 18 14 Z" class="k f-vaks"/>
+          <line x1="-23" y1="14" x2="23" y2="14" class="k"/>
+          <circle cx="0" cy="20" r="5" class="k f-yta"/>
+        </svg>
+        <div><b>Axel</b><span>Pingas bara om något stannat. Bruce har hoppat över måndagen två veckor i rad. Eller en vinnare har väntat två veckor på en uppföljare.</span></div>
+      </li>
+    </ul>
+    <div class="rader">
+      <p>Alla får veta hur det gick, varje vecka, utan att Axel behöver skriva något.</p>
+    </div>
+  </section>
+
+  <!-- 6. Vakterna -->
+  <section>
+    <div class="rubrik">
+      <h2>Vakterna</h2>
+    </div>
+    <figure>
+      <svg class="ill" viewBox="0 70 800 470" role="img" aria-label="Fyra vakter står runt maskinen: Annonsvakten, Akutlarmet, Kommentarsvakten och Konkurrentvakten.">
+        <circle cx="400" cy="300" r="150" class="staket"/>
+        <circle cx="400" cy="300" r="98" class="ring"/>
+        <polygon class="pilh" points="12,0 -9,-11 -9,11" transform="translate(400 202) rotate(0)"/>
+        <polygon class="pilh" points="12,0 -9,-11 -9,11" transform="translate(484.9 349) rotate(120)"/>
+        <polygon class="pilh" points="12,0 -9,-11 -9,11" transform="translate(315.1 349) rotate(240)"/>
+        <text class="st sd mid t30" x="400" y="310">Maskinen</text>
+
+        <!-- Vakt uppe till vänster: Annonsvakten -->
+        <g transform="translate(108 160)">
+          <path d="M -34 0 Q 0 -28 34 0 Q 0 28 -34 0 Z" class="k f-yta"/>
+          <circle r="11" class="f-rob"/>
+          <circle r="4" class="f-ink"/>
+        </g>
+        <g transform="translate(190 160)">
+          <rect x="-26" y="-8" width="52" height="60" rx="14" class="k f-robs"/>
+          <circle cx="0" cy="14" r="7" class="k f-vak w3"/>
+          <rect x="-22" y="-50" width="44" height="38" rx="10" class="k f-yta"/>
+          <circle cx="-9" cy="-31" r="4" class="f-ink"/>
+          <circle cx="9" cy="-31" r="4" class="f-ink"/>
+          <path d="M -26 -50 L 26 -50 L 18 -68 L -18 -68 Z" class="k f-vak"/>
+        </g>
+        <text class="st sd mid t30" x="140" y="258">Annonsvakten</text>
+
+        <!-- Vakt uppe till höger: Akutlarmet -->
+        <g transform="translate(610 160)">
+          <rect x="-26" y="-8" width="52" height="60" rx="14" class="k f-robs"/>
+          <circle cx="0" cy="14" r="7" class="k f-vak w3"/>
+          <rect x="-22" y="-50" width="44" height="38" rx="10" class="k f-yta"/>
+          <circle cx="-9" cy="-31" r="4" class="f-ink"/>
+          <circle cx="9" cy="-31" r="4" class="f-ink"/>
+          <path d="M -26 -50 L 26 -50 L 18 -68 L -18 -68 Z" class="k f-vak"/>
+        </g>
+        <g transform="translate(692 162)">
+          <path d="M -22 14 L -22 -4 A 22 22 0 0 1 22 -4 L 22 14 Z" class="k f-bad"/>
+          <rect x="-30" y="14" width="60" height="12" rx="4" class="k f-yta"/>
+          <line x1="-32" y1="-24" x2="-40" y2="-32" class="k"/>
+          <line x1="0" y1="-36" x2="0" y2="-47" class="k"/>
+          <line x1="32" y1="-24" x2="40" y2="-32" class="k"/>
+        </g>
+        <text class="st sd mid t30" x="651" y="258">Akutlarmet</text>
+
+        <!-- Vakt nere till vänster: Kommentarsvakten -->
+        <g transform="translate(108 430)">
+          <path d="M -34 -24 h 68 a 10 10 0 0 1 10 10 v 26 a 10 10 0 0 1 -10 10 h -40 l -14 14 v -14 h -14 a 10 10 0 0 1 -10 -10 v -26 a 10 10 0 0 1 10 -10 z" class="k f-yta"/>
+          <circle cx="-14" cy="-1" r="4" class="f-ink"/>
+          <circle cx="0" cy="-1" r="4" class="f-ink"/>
+          <circle cx="14" cy="-1" r="4" class="f-ink"/>
+        </g>
+        <g transform="translate(190 432)">
+          <rect x="-26" y="-8" width="52" height="60" rx="14" class="k f-robs"/>
+          <circle cx="0" cy="14" r="7" class="k f-vak w3"/>
+          <rect x="-22" y="-50" width="44" height="38" rx="10" class="k f-yta"/>
+          <circle cx="-9" cy="-31" r="4" class="f-ink"/>
+          <circle cx="9" cy="-31" r="4" class="f-ink"/>
+          <path d="M -26 -50 L 26 -50 L 18 -68 L -18 -68 Z" class="k f-vak"/>
+        </g>
+        <text class="st sd mid t30" x="150" y="530">Kommentarsvakten</text>
+
+        <!-- Vakt nere till höger: Konkurrentvakten -->
+        <g transform="translate(610 432)">
+          <rect x="-26" y="-8" width="52" height="60" rx="14" class="k f-robs"/>
+          <circle cx="0" cy="14" r="7" class="k f-vak w3"/>
+          <rect x="-22" y="-50" width="44" height="38" rx="10" class="k f-yta"/>
+          <circle cx="-9" cy="-31" r="4" class="f-ink"/>
+          <circle cx="9" cy="-31" r="4" class="f-ink"/>
+          <path d="M -26 -50 L 26 -50 L 18 -68 L -18 -68 Z" class="k f-vak"/>
+        </g>
+        <g transform="translate(692 428)">
+          <line x1="8" y1="8" x2="28" y2="28" class="k w10"/>
+          <circle cx="-6" cy="-6" r="20" class="k f-yta"/>
+          <rect x="-15" y="-14" width="18" height="14" rx="2" class="k f-accs w3"/>
+        </g>
+        <text class="st sd mid t30" x="651" y="530">Konkurrentvakten</text>
+      </svg>
+    </figure>
+    <ul class="ikonlista vakter">
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <path d="M -26 0 Q 0 -22 26 0 Q 0 22 -26 0 Z" class="k f-yta"/>
+          <circle r="9" class="f-rob"/>
+        </svg>
+        <div><b>Annonsvakten</b><span>Varje timme, alla annonskonton. Säger till om en annons stoppas, ett konto stängs eller en annons bränner pengar utan köp. Skriver i Discord, det röda också i Slack.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <path d="M -16 12 L -16 -2 A 16 16 0 0 1 16 -2 L 16 12 Z" class="k f-bad"/>
+          <rect x="-22" y="12" width="44" height="9" rx="3" class="k f-yta"/>
+          <line x1="0" y1="-24" x2="0" y2="-28" class="k"/>
+        </svg>
+        <div><b>Akutlarmet</b><span>Varje timme. Bara det som bara Axel kan påverka: butiken nere, kontot av, pengar som brinner, pixeln död, robotar som stannat. Ett larm sägs en gång, i Axels egen Slack-kanal.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <path d="M -22 -18 h 44 a 6 6 0 0 1 6 6 v 18 a 6 6 0 0 1 -6 6 h -26 l -10 10 v -10 h -8 a 6 6 0 0 1 -6 -6 v -18 a 6 6 0 0 1 6 -6 z" class="k f-yta"/>
+          <circle cx="-9" cy="-3" r="3" class="f-ink"/>
+          <circle cx="0" cy="-3" r="3" class="f-ink"/>
+          <circle cx="9" cy="-3" r="3" class="f-ink"/>
+        </svg>
+        <div><b>Kommentarsvakten</b><span>Varje morgon läser den alla kommentarer på annonserna. Arga kunder, frågor utan svar, invändningar och nya idéer. Svarar aldrig själv.</span></div>
+      </li>
+      <li>
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <line x1="6" y1="6" x2="22" y2="22" class="k w8"/>
+          <circle cx="-5" cy="-5" r="16" class="k f-yta"/>
+        </svg>
+        <div><b>Konkurrentvakten</b><span>Varje morgon letar den efter butiker som kopierat våra sidor eller annonser. Den samlar bevis. Axel bestämmer om brevet skickas.</span></div>
+      </li>
+    </ul>
+    <div class="rader">
+      <p>Vakterna rör aldrig något.</p>
+      <p>De säger till.</p>
+      <p>Axel bestämmer.</p>
+    </div>
+    <p class="not">Och runt omkring: spårningsroboten som skriver var paketet är, och kundtjänstroboten som svarar på enkla mejl och lugnar arga kunder.</p>
+  </section>
+
+  <!-- 7. Varför blir vi bättre -->
+  <section class="del">
+    <div class="rubrik">
+      <p class="ogon">Därför blir det bättre</p>
+      <h2>Varför blir vi bättre?</h2>
+    </div>
+    <div class="par">
+      <figure>
+        <svg class="ill" viewBox="0 20 400 340" role="img" aria-label="Utan maskinen: en person som gissar, pilar åt alla håll, lärdomarna försvinner som rök.">
+          <!-- Lärdomar som blir rök -->
+          <g opacity="0.55">
+            <circle cx="46" cy="74" r="16" class="f-lin"/>
+            <circle cx="66" cy="64" r="20" class="f-lin"/>
+            <circle cx="86" cy="76" r="14" class="f-lin"/>
+            <text class="st sm mid t20" x="66" y="112">lärdom</text>
+            <circle cx="316" cy="66" r="16" class="f-lin"/>
+            <circle cx="338" cy="56" r="20" class="f-lin"/>
+            <circle cx="358" cy="68" r="14" class="f-lin"/>
+            <text class="st sm mid t20" x="338" y="104">lärdom</text>
+          </g>
+          <!-- Tankebubblan: kanten först, sedan fyllningen ovanpå -->
+          <g class="k w8 f-yta">
+            <circle cx="150" cy="110" r="36"/>
+            <circle cx="205" cy="88" r="46"/>
+            <circle cx="255" cy="112" r="36"/>
+            <circle cx="200" cy="134" r="34"/>
+          </g>
+          <g class="f-yta">
+            <circle cx="150" cy="110" r="36"/>
+            <circle cx="205" cy="88" r="46"/>
+            <circle cx="255" cy="112" r="36"/>
+            <circle cx="200" cy="134" r="34"/>
+          </g>
+          <text class="st sd sb mid t70" x="204" y="134">?</text>
+          <circle cx="180" cy="190" r="9" class="k f-yta"/>
+          <circle cx="190" cy="212" r="6" class="k f-yta"/>
+          <!-- Personen -->
+          <circle cx="200" cy="252" r="26" class="k f-accs"/>
+          <path d="M 156 352 Q 156 282 200 282 Q 244 282 244 352 Z" class="k f-yta"/>
+          <!-- Pilar åt alla håll -->
+          <line x1="142" y1="304" x2="82" y2="304" class="pil"/>
+          <polygon class="pilh" points="66,304 84,293 84,315"/>
+          <line x1="258" y1="304" x2="318" y2="304" class="pil"/>
+          <polygon class="pilh" points="334,304 316,293 316,315"/>
+          <line x1="140" y1="236" x2="102" y2="206" class="pil"/>
+          <polygon class="pilh" points="12,0 -8,-10 -8,10" transform="translate(92 198) rotate(218.3)"/>
+          <line x1="260" y1="236" x2="298" y2="206" class="pil"/>
+          <polygon class="pilh" points="12,0 -8,-10 -8,10" transform="translate(308 198) rotate(-38.3)"/>
+        </svg>
+        <figcaption><b>Utan maskinen</b><span>Gissa varje gång. Lärdomarna försvinner.</span></figcaption>
+      </figure>
+      <figure>
+        <svg class="ill" viewBox="0 20 400 340" role="img" aria-label="Med maskinen: en trappa där varje steg är en vecka med en lärdom, och en person som går uppåt.">
+          <path d="M 24 340 L 24 292 L 96 292 L 96 244 L 168 244 L 168 196 L 240 196 L 240 148 L 312 148 L 312 100 L 384 100 L 384 340 Z" class="k f-goods"/>
+          <!-- En liten bok på varje steg -->
+          <rect x="36" y="268" width="28" height="22" rx="3" class="k f-yta w3"/>
+          <rect x="36" y="268" width="8" height="22" rx="2" class="k f-acc w3"/>
+          <rect x="108" y="220" width="28" height="22" rx="3" class="k f-yta w3"/>
+          <rect x="108" y="220" width="8" height="22" rx="2" class="k f-acc w3"/>
+          <rect x="178" y="172" width="28" height="22" rx="3" class="k f-yta w3"/>
+          <rect x="178" y="172" width="8" height="22" rx="2" class="k f-acc w3"/>
+          <rect x="252" y="124" width="28" height="22" rx="3" class="k f-yta w3"/>
+          <rect x="252" y="124" width="8" height="22" rx="2" class="k f-acc w3"/>
+          <rect x="324" y="76" width="28" height="22" rx="3" class="k f-yta w3"/>
+          <rect x="324" y="76" width="8" height="22" rx="2" class="k f-acc w3"/>
+          <!-- Personen på väg upp -->
+          <circle cx="222" cy="148" r="14" class="k f-accs"/>
+          <path d="M 207 196 Q 207 166 222 166 Q 237 166 237 196 Z" class="k f-acc"/>
+          <!-- Flaggan högst upp -->
+          <line x1="372" y1="100" x2="372" y2="40" class="k"/>
+          <polygon points="372,42 340,54 372,66" class="k f-acc"/>
+        </svg>
+        <figcaption><b>Med maskinen</b><span>Varje vecka ett steg upp. Lärdomen följer med.</span></figcaption>
+      </figure>
+    </div>
+    <div class="rader">
+      <p>Varje test lär oss något, och det skrivs ner. Nästa brief börjar där förra slutade.</p>
+      <p>Vi dömer bara med data, så en bra annons stängs inte av av misstag, och en dålig får inte leva på känsla.</p>
+      <p>Fler träffar per försök. Det är hela poängen. Träffprocenten står i anteckningsbokens Overview.</p>
+    </div>
+
+    <h3>Det här händer av sig självt</h3>
+    <figure>
+      <svg class="ill" viewBox="0 20 800 400" role="img" aria-label="Ett dygn. Varje timme: Annonsvakten och Akutlarmet. På morgonen: Kommentarsvakten 05:40, Konkurrentvakten 06:25, Kungen 07:00.">
+        <text class="st sr mid t26" x="400" y="50">varje timme: Annonsvakten och Akutlarmet</text>
+        <text class="st sm mid t24" x="50" y="86">00</text>
+        <text class="st sm mid t24" x="225" y="86">06</text>
+        <text class="st sm mid t24" x="400" y="86">12</text>
+        <text class="st sm mid t24" x="575" y="86">18</text>
+        <text class="st sm mid t24" x="750" y="86">24</text>
+        <rect x="191" y="95" width="98" height="30" rx="10" class="ka f-accs" style="stroke-width:3"/>
+        <line x1="50" y1="110" x2="750" y2="110" class="tunn"/>
+        <g class="f-rob"><circle cx="64.6" cy="110" r="5"/><circle cx="93.8" cy="110" r="5"/><circle cx="122.9" cy="110" r="5"/><circle cx="152.1" cy="110" r="5"/><circle cx="181.2" cy="110" r="5"/><circle cx="210.4" cy="110" r="5"/><circle cx="239.6" cy="110" r="5"/><circle cx="268.8" cy="110" r="5"/><circle cx="297.9" cy="110" r="5"/><circle cx="327.1" cy="110" r="5"/><circle cx="356.2" cy="110" r="5"/><circle cx="385.4" cy="110" r="5"/><circle cx="414.6" cy="110" r="5"/><circle cx="443.8" cy="110" r="5"/><circle cx="472.9" cy="110" r="5"/><circle cx="502.1" cy="110" r="5"/><circle cx="531.2" cy="110" r="5"/><circle cx="560.4" cy="110" r="5"/><circle cx="589.6" cy="110" r="5"/><circle cx="618.8" cy="110" r="5"/><circle cx="647.9" cy="110" r="5"/><circle cx="677.1" cy="110" r="5"/><circle cx="706.2" cy="110" r="5"/><circle cx="735.4" cy="110" r="5"/></g>
+
+        <!-- Morgonen förstorad -->
+        <line x1="191" y1="125" x2="50" y2="190" class="zoom"/>
+        <line x1="289" y1="125" x2="750" y2="190" class="zoom"/>
+        <rect x="50" y="190" width="700" height="220" rx="18" class="ka f-yta" style="stroke-width:3"/>
+        <text class="st sd sa t24" x="72" y="230">Morgonen</text>
+        <line x1="90" y1="300" x2="710" y2="300" class="tunn"/>
+        <line x1="90" y1="290" x2="90" y2="310" class="kl"/>
+        <line x1="296.7" y1="290" x2="296.7" y2="310" class="kl"/>
+        <line x1="503.3" y1="290" x2="503.3" y2="310" class="kl"/>
+        <line x1="710" y1="290" x2="710" y2="310" class="kl"/>
+        <text class="st sd mid t30" x="228" y="264">05:40</text>
+        <circle cx="228" cy="300" r="14" class="k f-vak"/>
+        <text class="st mid t26" x="228" y="350">Kommentarer</text>
+        <text class="st sd mid t30" x="383" y="264">06:25</text>
+        <line x1="383" y1="316" x2="383" y2="358" class="kl"/>
+        <circle cx="383" cy="300" r="14" class="k f-vak"/>
+        <text class="st mid t26" x="383" y="388">Konkurrenter</text>
+        <text class="st sd mid t30" x="503" y="264">07:00</text>
+        <circle cx="503" cy="300" r="14" class="k f-rob"/>
+        <text class="st mid t26" x="503" y="350">Kungen</text>
+      </svg>
+    </figure>
+    <div class="rader">
+      <p>Måndag och tisdag morgon kommer veckans rapporter.</p>
+    </div>
+  </section>
+
+  <!-- 8. Axels jobb -->
+  <section class="del">
+    <div class="rubrik">
+      <p class="ogon">Det du gör</p>
+      <h2>Axels jobb</h2>
+    </div>
+    <figure>
+      <svg class="ill" viewBox="0 70 800 290" role="img" aria-label="Axel vid en panel med tre knappar: Budget, Skala, Ja eller Nej.">
+        <circle cx="130" cy="150" r="34" class="k f-accs"/>
+        <path d="M 70 330 Q 70 202 130 202 Q 190 202 190 330 Z" class="k f-acc"/>
+        <rect x="240" y="90" width="530" height="240" rx="24" class="k f-yta"/>
+        <line x1="180" y1="240" x2="282" y2="200" class="k w10"/>
+        <circle cx="286" cy="198" r="11" class="k f-accs"/>
+
+        <circle cx="365" cy="185" r="60" class="k f-lin"/>
+        <circle cx="365" cy="185" r="46" class="k f-accs"/>
+        <text class="st sd mid t34" x="365" y="197">kr</text>
+        <text class="st sd mid t30" x="365" y="292">Budget</text>
+
+        <circle cx="515" cy="185" r="60" class="k f-lin"/>
+        <circle cx="515" cy="185" r="46" class="k f-goods"/>
+        <line x1="515" y1="208" x2="515" y2="164" class="k w6"/>
+        <polyline points="499,178 515,160 531,178" class="k w6 f-no"/>
+        <text class="st sd mid t30" x="515" y="292">Skala</text>
+
+        <circle cx="665" cy="185" r="60" class="k f-lin"/>
+        <circle cx="665" cy="185" r="46" class="k f-robs"/>
+        <polyline points="641,186 650,196 662,176" class="bock"/>
+        <line x1="672" y1="176" x2="688" y2="196" class="kryss"/>
+        <line x1="688" y1="176" x2="672" y2="196" class="kryss"/>
+        <text class="st sd mid t30" x="665" y="292">Ja / Nej</text>
+      </svg>
+    </figure>
+    <div class="rader">
+      <p>Axel gör tre saker.</p>
+      <p>Bestämmer pengarna.</p>
+      <p>Trycker på skala när roboten tipsar.</p>
+      <p>Svarar ja eller nej när han pingas.</p>
+      <p>Allt annat går av sig självt.</p>
+    </div>
+  </section>
+
+  <!-- 9. Var ser jag läget -->
+  <section>
+    <div class="rubrik">
+      <h2>Var ser jag läget?</h2>
+    </div>
+    <div class="platser">
+      <div class="plats">
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <rect x="-20" y="-26" width="40" height="52" rx="5" class="k f-yta"/>
+          <rect x="-20" y="-26" width="11" height="52" rx="3" class="k f-acc"/>
+          <line x1="-3" y1="-10" x2="13" y2="-10" class="k w3"/>
+          <line x1="-3" y1="0" x2="13" y2="0" class="k w3"/>
+          <line x1="-3" y1="10" x2="8" y2="10" class="k w3"/>
+        </svg>
+        <b>Anteckningsboken</b>
+        <span>Growth Guide i Notion. Där står träffprocenten.</span>
+      </div>
+      <div class="plats">
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <path d="M -22 -20 h 44 a 6 6 0 0 1 6 6 v 22 a 6 6 0 0 1 -6 6 h -26 l -10 10 v -10 h -8 a 6 6 0 0 1 -6 -6 v -22 a 6 6 0 0 1 6 -6 z" class="k f-bads"/>
+          <line x1="-6" y1="-13" x2="-9" y2="7" class="k w3"/>
+          <line x1="6" y1="-13" x2="3" y2="7" class="k w3"/>
+          <line x1="-13" y1="-6" x2="11" y2="-6" class="k w3"/>
+          <line x1="-14" y1="1" x2="10" y2="1" class="k w3"/>
+        </svg>
+        <b>Slack-kanalen #urgent</b>
+        <span>Bara det som brinner.</span>
+      </div>
+      <div class="plats">
+        <svg class="mini" viewBox="-30 -30 60 60" aria-hidden="true">
+          <rect x="-26" y="-22" width="52" height="36" rx="5" class="k f-robs"/>
+          <line x1="0" y1="14" x2="0" y2="22" class="k"/>
+          <line x1="-12" y1="23" x2="12" y2="23" class="k"/>
+          <circle cx="-12" cy="-4" r="4" class="f-good"/>
+          <circle cx="0" cy="-4" r="4" class="f-good"/>
+          <circle cx="12" cy="-4" r="4" class="f-vak"/>
+        </svg>
+        <b>Sajten, sidan System</b>
+        <span>På stonebite.org. Kartan över alla robotar och om de har kört.</span>
+      </div>
+    </div>
+    <div class="rader">
+      <p>Tre ställen.</p>
+      <p>Behöver du inte titta, så är det tyst.</p>
+    </div>
+  </section>
+
+</main>
