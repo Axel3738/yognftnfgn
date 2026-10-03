@@ -384,7 +384,10 @@
         "kalla_namn": "BÄVER For CARL Taköverdraget för Husvagn",
         "status_se": "CaraShell SE ready to be active",
         "status_en": "CaraShell EN ready to be active",
-        "satt": "2026-09-18"
+        "satt": "2026-09-18",
+        "ladda_upp": [],
+        "ladda_upp_satt": "2026-10-03",
+        "ladda_upp_motivering": "Axels beslut 2026-10-03: Taköverdraget skalas i Bäverbutiken (SE + NO), CaraShell bara på de engelska marknaderna (US/AU). Speglingen lämnar bara över den svenska filen till CaraShells hub för US-rutinen."
       },
       "malkampanj": {
         "US": {

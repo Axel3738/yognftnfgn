@@ -357,3 +357,79 @@ test('tiderFor: speglingen ligger 16:20 + 5 min × plats, efter Bäverbutikens N
   const utan = tiderFor('carashell', { platser, datum: new Date('2026-07-15T12:00:00Z'), annonsmarknader: ['NO', 'US'], spegling: false });
   assert.equal(utan.find((t) => t.kommando === '/ops-spegla carashell'), undefined, 'utan spegling byggs den inte');
 });
+
+// ------------------------------------------- bara engelska marknader (2026-10-03)
+// Axels beslut: Taköverdraget skalas i Bäverbutiken (SE + NO) och i CaraShell
+// bara på de engelska marknaderna. Speglingen laddar då inget upp i butikens
+// konto — den lämnar bara över den svenska filen till butikens hub.
+
+import { speglingLaddarUpp, speglingUppladdningUr } from '../../factory/register.mjs';
+import { seText, noText } from '../ops-spegla.mjs';
+
+test('speglingLaddarUpp: standard SE + NO, tom lista = ingen uppladdning, bara SE/NO räknas', () => {
+  assert.deepEqual(speglingLaddarUpp(undefined), ['SE', 'NO']);
+  assert.deepEqual(speglingLaddarUpp({ kalla_hub: 'x' }), ['SE', 'NO']);
+  assert.deepEqual(speglingLaddarUpp({ ladda_upp: [] }), []);
+  assert.deepEqual(speglingLaddarUpp({ ladda_upp: ['no', 'US'] }), ['NO']);
+});
+
+test('speglingUppladdningUr: "inga" och tomt ger [], "SE,NO" ger båda, US stoppas (engelskan är US-rutinens)', () => {
+  assert.deepEqual(speglingUppladdningUr('inga'), []);
+  assert.deepEqual(speglingUppladdningUr(''), []);
+  assert.deepEqual(speglingUppladdningUr('se,no'), ['SE', 'NO']);
+  assert.throws(() => speglingUppladdningUr('US'), /US-rutinens|kan bara ladda upp/);
+});
+
+test('bedom utan uppladdning: ingen SE-kampanj, inget SE-pris och ingen copy krävs — filen, brandet och slutkortet gäller fortfarande', () => {
+  const bas = { ...RAD_OK, ladda_upp: [], kampanj_se: null, kampanj_no: null, paritet_se: { ok: false, skal: 'okänt' }, copy_se: null };
+  const d = bedom(bas);
+  assert.equal(d.se.ok, true, d.se.skal.join('; '));
+  assert.equal(d.no.ok, false);
+  assert.match(d.no.skal.join(), /ladda_upp/);
+  assert.deepEqual(d.ladda_upp, []);
+  assert.match(bedom({ ...bas, fil: null, hamtat: true }).se.skal.join(), /ingen svensk fil/);
+  // En SE-dubblett i kontot befriar inte från filen när inget laddas upp: hubbraden behöver den.
+  assert.match(bedom({ ...bas, fil: null, hamtat: true, finns_i_meta: { SE: true, NO: false } }).se.skal.join(), /ingen svensk fil/);
+  assert.match(bedom({ ...bas, brand: ['Bäverbutiken'] }).se.skal.join(), /Bäverbutiken/);
+  assert.equal(bedom({ ...bas, slutkort: { se: { dom: 'slutkort-med-brand', fynd: [{ ord: 'baverbutiken' }] }, no: null } }).se.ok, false);
+});
+
+test('bedom: fars dag-raden (FD) märks bara_sverige — den är klar i alla marknader den kan nå', () => {
+  const d = bedom({ ...RAD_OK, namn: 'Takoverdrag_FD_2_1', ladda_upp: [] });
+  assert.ok(d.bara_sverige, 'FD ska märkas');
+  assert.equal(d.se.ok, false);
+  assert.equal(bedom({ ...RAD_OK, namn: 'Takoverdrag_OB_11_H1', ladda_upp: [] }).bara_sverige, null);
+});
+
+test('kalloutBlock utan uppladdning: säger att den svenska filen är källan och att butiken bara säljer på engelska', () => {
+  const b = kalloutBlock({ kallNamn: 'BÄVER Tak', kallUrl: null, brand: 'CaraShell', datum: '2026-10-03', laddaUpp: [] });
+  assert.match(b.callout.rich_text[0].text.content, /Swedish creative is the source/);
+  assert.match(b.callout.rich_text[0].text.content, /English markets/);
+  assert.doesNotMatch(b.callout.rich_text[0].text.content, /already live in CaraShell/);
+});
+
+test('seText/noText: utan SE-annons sägs det rakt ut, och NO-raden är tom när NO inte laddas upp', () => {
+  const ko = { brand: 'CaraShell' };
+  assert.match(seText({ se: { ad_id: '1', kampanj: 'K', adset: 'A' } }, ko), /SE ad 1 live in K \(adset A\)/);
+  assert.match(seText({ se: { ad_id: null } }, ko), /Not uploaded in CaraShell's SE campaign/);
+  assert.equal(noText({ no: { ad_id: null, skal: 'x' } }, new Set(['SE'])), '');
+  assert.match(noText({ no: { ad_id: null, skal: 'x' } }, new Set(['SE', 'NO'])), /NO not mirrored: x/);
+  assert.match(noText({ no: { ad_id: '2', kampanj: 'N' } }, new Set(['SE'])), /NO ad 2 live in N/);
+});
+
+test('byggDiscordJobb: överlämnade rader står under gjort utan SE-annons, bara-Sverige-rader som Approved, ingen NO-varning när NO inte laddas upp', () => {
+  const j = byggDiscordJobb({
+    brand: 'CaraShell', datum: '2026-10-03', kalla_hub_namn: 'BÄVER Tak', saknade_statusar: [],
+    rader: [
+      { namn: 'Takoverdrag_OB_11_H1', spegel: 'CaraShellRoof_OB_111_H1', utfall: 'speglad', se: { ad_id: null, hoppad: true }, no: { ad_id: null, skal: 'NO laddas inte upp i butiken (spegling.ladda_upp)' }, hubb: { url: 'https://n' } },
+      { namn: 'Takoverdrag_FD_2_1', utfall: 'klar_sverige', skal: 'fars dag' },
+    ],
+    approved: [], varningar: [],
+  });
+  assert.equal(j.gjort.length, 2);
+  assert.match(j.gjort[0], /handed over for the English version only/);
+  assert.match(j.gjort[0], /row in hub/);
+  assert.match(j.gjort[1], /Sweden\/Norway-only.*Approved/);
+  assert.equal(j.varningar.length, 0);
+  assert.equal(j.action_axel.length, 0);
+});
