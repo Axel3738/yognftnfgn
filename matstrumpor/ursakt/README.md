@@ -93,3 +93,11 @@ löst.
 
 ⚠️ Autosvaret svarar fortfarande på "var är mitt paket" med det vanliga leveranslöftet
 (`kundtjanst/brands/matstrumpor.yaml` → `svar`). Det har inte ändrats.
+
+## Utskicket 2026-10-03 förmiddag
+
+Skickat av Cowork på Axels ord. Svenska kampanjen 457 mottagare enligt Spoks beräkning, norska 1, danska 4,
+finska 12, engelska 7, tyska 6, franska 9, nederländska 4, spanska 4, italienska 7, polska 4, portugisiska 20,
+japanska 9. Flödet aktivt 06:46 UTC, alla 13 sändsteg på, 8 inrullade vid första avläsningen (`get_flow`).
+Testutkastet skickades aldrig. Spoks segmentlista slutade scrolla efter åtta poster i första körningen;
+andra körningen gick med små scrollsteg.
