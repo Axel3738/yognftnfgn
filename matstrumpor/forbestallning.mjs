@@ -58,32 +58,60 @@ export function datumText(iso, sprak) {
 const escLiquid = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** Kontroll av texterna: alla språk, alla fält, {datum} där det ska, inga tankstreck. */
+export const PAKET_FALT = ['rubrik_igen', 'rubrik', 'text_igen', 'text', 'nedrakning', 'kort', 'knapp', 'egenskap_nyckel', 'egenskap_varde'];
+const MED_DATUM = ['text_igen', 'text', 'kort', 'egenskap_varde'];
 export function kontrolleraTexter(texter) {
   const fel = [];
   for (const s of SPRAK) {
     const t = texter[s];
     if (!t) { fel.push(`${s}: saknas`); continue; }
-    for (const f of ['rubrik', 'produkt', 'bradska', 'korg']) {
-      if (!t[f] || typeof t[f] !== 'string') fel.push(`${s}.${f}: saknas`);
-      else if (/[—–]/.test(t[f])) fel.push(`${s}.${f}: tankstreck`);
+    const falt = [['korg', t.korg], ...PAKET_FALT.map((f) => [`paket.${f}`, t.paket?.[f]])];
+    for (const [namn, v] of falt) {
+      if (!v || typeof v !== 'string') fel.push(`${s}.${namn}: saknas`);
+      else if (/[—–]/.test(v)) fel.push(`${s}.${namn}: tankstreck`);
     }
-    for (const f of ['produkt', 'korg']) if (t[f] && (t[f].match(/\{datum\}/g) ?? []).length !== 1) fel.push(`${s}.${f}: {datum} ska stå exakt en gång`);
-    if (/[四]/.test(Object.values(t).join(''))) fel.push(`${s}: talet fyra`);
+    for (const [namn, v] of [['korg', t.korg], ...MED_DATUM.map((f) => [`paket.${f}`, t.paket?.[f]])]) {
+      if (v && (v.match(/\{datum\}/g) ?? []).length !== 1) fel.push(`${s}.${namn}: {datum} ska stå exakt en gång`);
+    }
+    if (/[四]/.test(JSON.stringify(t))) fel.push(`${s}: talet fyra`);
   }
   return fel;
 }
 
+/** Millisekunder sedan 1970 för midnatt svensk tid den dagen (nedräkningens mål). */
+export function midnattStockholm(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  const utc = Date.UTC(y, m - 1, d);
+  const delar = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Stockholm', hour: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(utc));
+  const timme = Number(delar.find((x) => x.type === 'hour').value);
+  return utc - timme * 3600 * 1000;
+}
+
+const escAttr = (s) => escLiquid(s).replace(/"/g, '&quot;');
+
 /** Snippeten. Datumet bakas in per språk; metafältet bär av/på och slutdagen. */
 export function byggSnippet(texter, konfig) {
-  const gren = (falt) => {
-    const rader = SPRAK.filter((s) => s !== 'sv').map((s) => `{%- when '${s}' -%}${escLiquid(texter[s][falt].replace('{datum}', datumText(konfig.skickas_fran, s)))}`);
-    return `{%- case request.locale.iso_code -%}${rader.join('')}{%- else -%}${escLiquid(texter.sv[falt].replace('{datum}', datumText(konfig.skickas_fran, 'sv')))}{%- endcase -%}`;
+  const varde = (s, v) => v.replace('{datum}', datumText(konfig.skickas_fran, s));
+  const gren = (hamta, esc = escLiquid) => {
+    const rader = SPRAK.filter((s) => s !== 'sv').map((s) => `{%- when '${s}' -%}${esc(varde(s, hamta(texter[s])))}`);
+    return `{%- case request.locale.iso_code -%}${rader.join('')}{%- else -%}${esc(varde('sv', hamta(texter.sv)))}{%- endcase -%}`;
   };
+  const p = (f) => gren((t) => t.paket[f]);
+  const pa = (f) => gren((t) => t.paket[f], escAttr);
+  const mal = midnattStockholm(konfig.skickas_fran);
   return `{%- comment -%}
   ${MARK} — förbeställningen medan lagret är slutsålt (matstrumpor/forbestallning.mjs, Axel 2026-10-03).
   Skrivs om av skriptet — ändra texterna i matstrumpor/forbestallning/texter.json, inte här.
   Ritar bara när shop-metafältet matstrumpor.forbestallning är aktivt och skickas_fran inte inträffat.
-  Parametrar: lage ('produkt' | 'korg')
+  Parametrar: lage ('paket' | 'kort' | 'knapp' | 'data' | 'input' | 'korg' | 'produkt'), produkt (vid 'paket')
+    paket   rutan överst i paketväljaren (ms-paket.liquid), med nedräkning till skickdagen
+    kort    raden under varje paketkort
+    knapp   köpknappens text (buy-buttons.liquid faller tillbaka på add_to_cart när den är tom)
+    data    attributen på <ms-paket>, så ms-paket.js märker raderna "Förbeställning: skickas från …"
+    input   samma märkning som dolt fält i produktformuläret (reservvägen utan ms-paket.js)
+    korg    raden i varukorgslådan och på korgsidan
+    produkt ingenting sedan rutan flyttade in i paketväljaren (2026-10-03 kväll)
+  Sushilådan sålde slut i november 2025, så bara den säger "slutsålt igen".
 {%- endcomment -%}
 {%- liquid
   assign ms_fb = shop.metafields.matstrumpor.forbestallning.value
@@ -91,15 +119,60 @@ export function byggSnippet(texter, konfig) {
   assign ms_fb_slut = ms_fb.skickas_fran | remove: '-' | plus: 0
 -%}
 {%- if ms_fb.aktiv == true and ms_fb_idag < ms_fb_slut -%}
-  {%- if lage == 'korg' -%}
-<p class="ms-forbestallning ms-forbestallning--korg" style="margin: 8px 0 10px; padding: 8px 12px; border-radius: 8px; background: #fff4e6; border: 1px solid #dd821d; font-size: 0.95rem; font-weight: 600; text-align: left;">${gren('korg')}</p>
-  {%- else -%}
-<div class="ms-forbestallning" style="margin: 14px 0 6px; padding: 12px 14px; border-radius: 10px; background: #fff4e6; border: 2px solid #dd821d;">
-  <p style="margin: 0 0 4px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #b8640f; font-size: 0.85rem;">${gren('rubrik')}</p>
-  <p style="margin: 0 0 4px; font-weight: 600;">${gren('produkt')}</p>
-  <p style="margin: 0; font-size: 0.95rem;">${gren('bradska')}</p>
+  {%- case lage -%}
+  {%- when 'korg' -%}
+<p class="ms-forbestallning ms-forbestallning--korg" style="margin: 8px 0 10px; padding: 8px 12px; border-radius: 8px; background: #fff4e6; border: 1px solid #dd821d; font-size: 0.95rem; font-weight: 600; text-align: left;">${gren((t) => t.korg)}</p>
+  {%- when 'kort' -%}
+<span class="ms-fb-kort">${p('kort')}</span>
+  {%- when 'knapp' -%}${p('knapp')}
+  {%- when 'data' %} data-fb-nyckel="${pa('egenskap_nyckel')}" data-fb-varde="${pa('egenskap_varde')}"
+  {%- when 'input' -%}
+<input type="hidden" name="properties[${pa('egenskap_nyckel')}]" value="${pa('egenskap_varde')}">
+  {%- when 'paket' -%}
+<div class="ms-forbestallning ms-fb-paket">
+  <p class="ms-fb-paket__rubrik"><span class="ms-fb-paket__prick" aria-hidden="true"></span>{%- if produkt.handle == 'sushi-strumpor' -%}${p('rubrik_igen')}{%- else -%}${p('rubrik')}{%- endif -%}</p>
+  <p class="ms-fb-paket__text">{%- if produkt.handle == 'sushi-strumpor' -%}${p('text_igen')}{%- else -%}${p('text')}{%- endif -%}</p>
+  <p class="ms-fb-paket__nedrakning" data-ms-fb-nedrakning hidden>${p('nedrakning')}<strong data-ms-fb-tid style="margin-left: 0.35em;"></strong></p>
 </div>
-  {%- endif -%}
+<style>
+  .ms-fb-paket { margin: 0 0 14px; padding: 14px 16px; border-radius: 12px; background: #1f1a17; color: #fff; text-align: left; }
+  .ms-fb-paket p { margin: 0; }
+  .ms-fb-paket__rubrik { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 1.05rem; line-height: 1.3; }
+  .ms-fb-paket__prick { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #ff8a1f; box-shadow: 0 0 0 0 rgba(255, 138, 31, 0.6); animation: ms-fb-puls 1.6s infinite; }
+  .ms-fb-paket__text { margin-top: 6px !important; font-size: 0.92rem; line-height: 1.45; opacity: 0.92; }
+  .ms-fb-paket__nedrakning { display: inline-block; margin-top: 10px !important; padding: 6px 10px; border-radius: 8px; background: rgba(255, 138, 31, 0.18); font-size: 0.9rem; }
+  .ms-fb-paket__nedrakning strong { color: #ffb15e; font-variant-numeric: tabular-nums; }
+  .ms-fb-kort { display: block; margin-top: 3px; font-size: 0.8rem; font-weight: 700; color: #b8640f; }
+  @keyframes ms-fb-puls { 0% { box-shadow: 0 0 0 0 rgba(255, 138, 31, 0.6); } 70% { box-shadow: 0 0 0 9px rgba(255, 138, 31, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 138, 31, 0); } }
+  @media (prefers-reduced-motion: reduce) { .ms-fb-paket__prick { animation: none; } }
+</style>
+<script>
+  (function () {
+    if (window.msFbNedrakning) return;
+    window.msFbNedrakning = true;
+    var MAL = ${mal}; // ${konfig.skickas_fran} 00:00 svensk tid
+    var lang = (document.documentElement.lang || 'sv').toLowerCase();
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+    function text(ms) {
+      var s = Math.floor(ms / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), x = s % 60;
+      if (lang.indexOf('ja') === 0) return d + '日' + h + '時間' + m + '分' + pad(x) + '秒';
+      if (lang.indexOf('zh') === 0) return d + '天' + h + '時' + m + '分' + pad(x) + '秒';
+      return d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(x) + 's';
+    }
+    function tick() {
+      var kvar = MAL - Date.now();
+      document.querySelectorAll('[data-ms-fb-nedrakning]').forEach(function (el) {
+        if (kvar <= 0) { el.hidden = true; return; }
+        el.hidden = false;
+        var t = el.querySelector('[data-ms-fb-tid]');
+        if (t) t.textContent = text(kvar);
+      });
+      if (kvar > 0) setTimeout(tick, 1000);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tick); else tick();
+  })();
+</script>
+  {%- endcase -%}
 {%- endif -%}
 `;
 }
@@ -151,11 +224,70 @@ export function patchaKorg(kod) {
   return { kod: bytExakt(kod, KORG_SOK, KORG_NY), byten: ['raden på korgsidan'] };
 }
 
+const PAKET_DATA_SOK = '    data-varianter="{{ priskarta | strip | escape }}">';
+const PAKET_DATA_NY = `    data-varianter="{{ priskarta | strip | escape }}"{% render 'ms-forbestallning', lage: 'data' %}>`;
+const PAKET_LISTA_SOK = '    <div class="ms-paket__lista" role="radiogroup"';
+const PAKET_LISTA_NY = `    {%- comment -%} ${MARK}: förbeställningen i paketväljaren (matstrumpor/forbestallning.mjs) {%- endcomment -%}\n    {%- render 'ms-forbestallning', lage: 'paket', produkt: p -%}\n${PAKET_LISTA_SOK}`;
+const PAKET_KORT_SOK = `                {%- if niva.underrubrik.value != blank -%}
+                  <span class="ms-paket__under">{{ niva.underrubrik.value }}</span>
+                {%- endif -%}
+`;
+const PAKET_KORT_NY = `${PAKET_KORT_SOK}                {%- render 'ms-forbestallning', lage: 'kort' -%}
+`;
+export function patchaPaketLiquid(kod) {
+  if (kod.includes(MARK)) return { kod, byten: [] };
+  kod = bytExakt(kod, PAKET_DATA_SOK, PAKET_DATA_NY);
+  kod = bytExakt(kod, PAKET_LISTA_SOK, PAKET_LISTA_NY);
+  kod = bytExakt(kod, PAKET_KORT_SOK, PAKET_KORT_NY);
+  return { kod, byten: ['rutan överst', 'raden på varje kort', 'märkningen på <ms-paket>'] };
+}
+
+const KNAPP_SOK = "                {{ 'products.product.add_to_cart' | t }}\n";
+const KNAPP_NY = `                {%- comment -%} ${MARK}: "Förbeställ nu" medan förbeställningen pågår {%- endcomment -%}
+                {%- capture ms_fb_knapp -%}{%- unless product.gift_card? -%}{%- render 'ms-forbestallning', lage: 'knapp' -%}{%- endunless -%}{%- endcapture -%}
+                {%- if ms_fb_knapp != blank -%}{{ ms_fb_knapp }}{%- else -%}{{ 'products.product.add_to_cart' | t }}{%- endif -%}
+`;
+const FORM_SOK = "        data-type: 'add-to-cart-form'\n      -%}\n";
+const FORM_NY = `${FORM_SOK}        {%- unless product.gift_card? -%}{%- render 'ms-forbestallning', lage: 'input' -%}{%- endunless -%}\n`;
+export function patchaKnapp(kod) {
+  if (kod.includes(MARK)) return { kod, byten: [] };
+  kod = bytExakt(kod, KNAPP_SOK, KNAPP_NY);
+  kod = bytExakt(kod, FORM_SOK, FORM_NY);
+  return { kod, byten: ['knapptexten', 'dolda märkningen i formuläret'] };
+}
+
+const PJS_SOK = `        if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
+      }
+
+      var self = this;`;
+const PJS_NY = `        if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
+      }
+
+      // ${MARK}: lådorna märks "Förbeställning: skickas från …" (syns i kassan, på ordern och i
+      // orderbekräftelsen). Gåvan märks inte. Attributen sätts av snippets/ms-forbestallning.liquid.
+      if (this.dataset.fbNyckel && this.dataset.fbVarde) {
+        var fbNyckel = this.dataset.fbNyckel, fbVarde = this.dataset.fbVarde;
+        varor.forEach(function (rad) {
+          if (gvariant && String(rad.id) === String(gvariant)) return;
+          rad.properties = {};
+          rad.properties[fbNyckel] = fbVarde;
+        });
+      }
+
+      var self = this;`;
+export function patchaPaketJs(kod) {
+  if (kod.includes(MARK)) return { kod, byten: [] };
+  return { kod: bytExakt(kod, PJS_SOK, PJS_NY), byten: ['lådorna märks som förbeställning'] };
+}
+
 export const PATCHAR = {
   'snippets/ms-delivery-estimate.liquid': patchaLeverans,
   'assets/ms-cro.js': patchaJs,
   'snippets/cart-drawer.liquid': patchaLada,
   'sections/main-cart-footer.liquid': patchaKorg,
+  'snippets/ms-paket.liquid': patchaPaketLiquid,
+  'snippets/buy-buttons.liquid': patchaKnapp,
+  'assets/ms-paket.js': patchaPaketJs,
 };
 export const SNIPPET = 'snippets/ms-forbestallning.liquid';
 
@@ -208,7 +340,7 @@ async function kor({ skarpt, av, logg = console.log }) {
     logg(`  ${fil}: ${byten.join(', ')}`);
   }
   logg(`  ${SNIPPET}: skrivs (datum ${konfig.skickas_fran}, ${SPRAK.length} språk)`);
-  for (const s of ['sv', 'en', 'ja']) logg(`    ${s}: ${texter[s].korg.replace('{datum}', datumText(konfig.skickas_fran, s))}`);
+  for (const s of ['sv', 'en', 'ja']) logg(`    ${s}: ${texter[s].paket.rubrik_igen} | ${texter[s].paket.kort.replace('{datum}', datumText(konfig.skickas_fran, s))} | ${texter[s].paket.knapp}`);
   mkdirSync(join(HAR, 'output', 'forbestallning'), { recursive: true });
   for (const f of skriv) writeFileSync(join(HAR, 'output', 'forbestallning', f.filename.replace(/\//g, '__')), f.body.value);
   if (!skarpt) { logg('torrt: inget skrivet (filerna i matstrumpor/output/forbestallning/)'); return; }
@@ -247,12 +379,13 @@ export async function kundvy({ logg = console.log } = {}) {
     const sida = await b.newPage({ ignoreHTTPSErrors: true });
     await sida.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await sida.waitForTimeout(2500);
-    const ruta = await sida.locator('.ms-forbestallning:not(.ms-forbestallning--korg)').first().innerText().catch(() => null);
+    const ruta = await sida.locator('.ms-fb-paket:visible').first().innerText({ timeout: 5000 }).catch(() => null);
+    const knapp = await sida.locator('form[action*="/cart/add"] button[name="add"]:visible').first().innerText({ timeout: 5000 }).catch(() => null);
     const lev = await sida.locator('[data-ms-delivery-range]').first().innerText().catch(() => null);
     const lang = await sida.evaluate(() => document.documentElement.lang);
     // Rubriken visas i versaler (text-transform), så jämför utan skiftläge.
-    const ratt = Boolean(ruta && ruta.toLowerCase().includes(texter[s].rubrik.toLowerCase()));
-    logg(`${ratt ? '✓' : '✗'} ${s} (lang=${lang}): ${ruta ? ruta.replace(/\s+/g, ' ') : 'INGEN RUTA'} | leverans: ${lev}`);
+    const ratt = Boolean(ruta && ruta.includes(texter[s].paket.rubrik_igen) && knapp && knapp.trim() === texter[s].paket.knapp);
+    logg(`${ratt ? '✓' : '✗'} ${s} (lang=${lang}): ${ruta ? ruta.replace(/\s+/g, ' ') : 'INGEN RUTA'} | knapp: ${knapp?.trim()} | leverans: ${lev}`);
     if (ratt) ok++;
     await sida.screenshot({ path: join(HAR, 'output', 'forbestallning', `kundvy-${s}.png`), fullPage: false });
     if (s === 'sv') {

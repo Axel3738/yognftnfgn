@@ -50,12 +50,27 @@ slut snabbt. Butiken säljer vidare (lagret står på "fortsätt sälja") men s�
 Evolve Q4 (`docs/os/evolve/Q4-2026.md` → Backend): annars tror kunden att paketet kommer om några
 dagar, och det blir arga mejl och chargebacks.
 
-- **Sajten:** `node matstrumpor/forbestallning.mjs --skarpt` (torrt utan flaggan). Rutan
-  "Förbeställning … skickas från 13 oktober" på produktsidan, ovanför "Beräknad leverans", och en
+- **Sajten:** `node matstrumpor/forbestallning.mjs --skarpt` (torrt utan flaggan). Först (förmiddag)
+  rutan "Förbeställning … skickas från 13 oktober" ovanför "Beräknad leverans", och en
   rad i varukorgslådan och på korgsidan, på alla fjorton språk. "Beräknad leverans" räknas från
   packningsdagen 12/10 (19–26 oktober) i stället för från i dag. Datumen står i
   `forbestallning/konfig.json`, texterna i `forbestallning/texter.json` (svenskan av sessionen,
   resten av en sonnet-subagent mot `marknader/oversattning/REGLER.md`).
+- **I paketväljaren sedan samma kväll** (Axels order efter Chadbots svar,
+  `forbestallning/EVOLVE-FRAGA.md` + `EVOLVE-SVAR.md`: behåll nivåerna, lägg ärlig brist ovanpå,
+  märk varje förbeställning): mörk ruta överst i väljaren, "Slutsålt igen. Säkra din låda ur nästa
+  leverans." (bara sushilådan säger "igen", den sålde slut i november 2025; de andra sorterna säger
+  "Slutsålt."), texten om nästa leverans och en nedräkning till skickdagen; raden
+  "Förbeställning · skickas från 13 oktober" under varje paket; köpknappen "Förbeställ nu"
+  (aldrig på presentkortet); och varje låda i korgen bär radegenskapen
+  `Förbeställning: skickas från 13 oktober`, som syns i kassan, på ordern och i orderbekräftelsen
+  (Chadbot [D3]: juridik och bevis i en tvist). Ätpinnarna märks inte. Mätt som kund 2026-10-03:
+  sushi, pizza, sv/en/de/ja, köp av 2 lådor ⇒ 399 kr med märkningen på båda lådraderna.
+  Den gamla rutan ovanför "Beräknad leverans" ritar ingenting längre. Filerna:
+  `snippets/ms-paket.liquid`, `snippets/buy-buttons.liquid`, `assets/ms-paket.js`.
+- **Inget mätare "X av Y förbeställda" än:** leveransen är minst 5 000 lådor och Axel kan beställa
+  fler, så Y är inte bestämt. En mätare med låg andel säljer dessutom sämre. Chadbot: testa den mot
+  "nästa batch skickas …" när talen finns.
 - **Av och på:** shop-metafältet `matstrumpor.forbestallning` (`aktiv`, `packning_fran`,
   `skickas_fran`). Rutan släcker sig själv den dag `skickas_fran` inträffar; `--av --skarpt` släcker
   den direkt. Temafilerna står kvar och ritar ingenting.

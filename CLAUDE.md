@@ -226,7 +226,8 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
   låst i korgen. ⚠️ Shopify räknar högst fem koder i en vagn, och en köp-X-få-Y-kod ger bara HELA sin
   "få"-mängd (båda mätta) — bygg aldrig en paketkod i en annan form utan att köra `gava.mjs` torrt.
 ⏳ **Förbeställning sedan 2026-10-03** (Axel: allt slutsålt, lagret fylls 11/10): ruta + korgrad på
-fjorton språk ("skickas från 13 oktober"), styrd av shop-metafältet `matstrumpor.forbestallning`
+fjorton språk ("skickas från 13 oktober"), sedan samma kväll inbyggd i paketväljaren ("Slutsålt igen",
+nedräkning, "Förbeställ nu", varje låda märkt `Förbeställning` på ordern), styrd av shop-metafältet `matstrumpor.forbestallning`
 och `node matstrumpor/forbestallning.mjs`, släcker sig själv 13/10; kundtjänstboten läser
 `svar.forbestallning` i brandfilen. Allt i `matstrumpor/README.md` → "Förbeställning".
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
