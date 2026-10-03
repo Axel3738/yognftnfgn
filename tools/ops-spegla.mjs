@@ -356,6 +356,30 @@ export function bedom(rad) {
   return { se, no, bara_sverige: svensk || null, ladda_upp: [...laddaUpp] };
 }
 
+/** Stoppskälen ur bedom() på engelska — Discord stoppar svensk text (exit 3),
+ *  och utan ANTHROPIC_NYCKEL i containern översätts inget automatiskt. Mätt
+ *  2026-10-03: rapporten stoppade på "nämner Bäverbutiken" i en skipped-rad.
+ *  Okända skäl lämnas som de är, hellre ett stopp än en påhittad översättning. */
+export function engelskaSkal(skal) {
+  return String(skal ?? '')
+    .replace(/nämner Bäverbutiken:/g, 'names Bäverbutiken:')
+    .replace(/slutkortet namnger en butik:/g, 'the end card names a store:')
+    .replace(/NO-slutkortet namnger en butik:/g, 'the NO end card names a store:')
+    .replace(/ingen SE-kampanj i butiken/g, 'no SE campaign in the store')
+    .replace(/ingen NO-kampanj i butiken/g, 'no NO campaign in the store')
+    .replace(/ingen svensk fil/g, 'no Swedish file')
+    .replace(/filen gick inte att hämta — /g, 'file could not be fetched — ')
+    .replace(/filen hämtas vid körning \(--ut\)/g, 'file is fetched at run time (--ut)')
+    .replace(/ingen copy — källannonsen finns inte i Bäverbutikens konto/g, 'no copy — source ad not found in Bäverbutiken\'s account')
+    .replace(/spegelnamn kan inte bildas ur namnet/g, 'mirror name cannot be derived from the name')
+    .replace(/pris SE: /g, 'SE price: ')
+    .replace(/pris NO: /g, 'NO price: ')
+    .replace(/creativen säger (\S+), butiken (\S+) \((\d+) % avvikelse, gräns (\d+) %\)/g, 'creative says $1, store says $2 ($3 % off, limit $4 %)')
+    .replace(/priset går inte att jämföra \(creativen ([^,]+), butiken ([^)]+)\)/g, 'price cannot be compared (creative $1, store $2)')
+    .replace(/NO laddas inte upp i butiken \(spegling\.ladda_upp\)/g, 'NO is not uploaded in the store (spegling.ladda_upp)')
+    .replace(/SE stoppad/g, 'SE blocked');
+}
+
 /** Discord-jobbet ur ett körresultat. Ren, engelska rader. */
 export function byggDiscordJobb(resultat) {
   const gjort = [];
@@ -372,12 +396,12 @@ export function byggDiscordJobb(resultat) {
     } else if (r.utfall === 'klar_sverige') {
       gjort.push(`${r.namn}: Sweden/Norway-only angle — never mirrored, source row set to ${SLUTSTATUS}`);
     } else if (r.utfall === 'hoppad') {
-      varningar.push(`${r.namn}: skipped — ${r.skal}`);
+      varningar.push(`${r.namn}: skipped — ${engelskaSkal(r.skal)}`);
       // Brand- och prisstopp kräver ett beslut; saknad fil eller kampanj löser sig själv.
-      if (/nämner|slutkortet namnger|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${r.skal} — decide whether the editor should make a store version`);
+      if (/nämner|slutkortet namnger|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${engelskaSkal(r.skal)} — decide whether the editor should make a store version`);
     } else if (r.utfall === 'fel') {
-      varningar.push(`${r.namn}: FAILED — ${r.skal}`);
-      action.push(`${r.namn} failed: ${r.skal}`);
+      varningar.push(`${r.namn}: FAILED — ${engelskaSkal(r.skal)}`);
+      action.push(`${r.namn} failed: ${engelskaSkal(r.skal)}`);
     }
   }
   // Slutkorten. Ett fynd namnges ALLTID, också när det inte stoppade något:
@@ -398,6 +422,9 @@ export function byggDiscordJobb(resultat) {
     return m === 'NO' ? /NO-slutkortet namnger/i.test(skal) : /(?:^|;\s*)slutkortet namnger/i.test(skal);
   };
   for (const r of resultat.rader ?? []) {
+    // En rad som bara går i Sverige/Norge laddas inte upp någonstans härifrån
+    // — dess slutkort är ingen varning för någon marknad.
+    if (r.utfall === 'klar_sverige') continue;
     for (const [m, g] of [['SE', r.slutkort?.se], ['NO', r.slutkort?.no]]) {
       if (!g) continue;
       // Stoppade rader bär redan skälet i sin "skipped"-rad — en gång räcker.
@@ -721,11 +748,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
       // strypt hoppas läsningen nu, inte om en halvtimme.
       const sond = await fetch(`https://graph.facebook.com/v21.0/act_${usKonto}/ads?fields=id&limit=1&access_token=${process.env.META_ACCESS_TOKEN}`, { signal: AbortSignal.timeout(60_000) });
       const sj = await sond.json().catch(() => ({}));
-      if (sj.error?.code === 17) throw new Error(`strypt av Meta (kod 17): ${sj.error.error_user_msg ?? sj.error.message}`);
+      // Engelska: raden går rakt in i Discord-rapporten.
+      if (sj.error?.code === 17) throw new Error('throttled by Meta (code 17: too many API calls from this ad account)');
       kartaUk = dubblettKarta(await alla(`act_${usKonto}/ads`, { fields: 'id,name,effective_status' }));
       usLast = true;
     } catch (e) {
-      varningar.push(`US-kontot ${usKonto} gick inte att läsa (${e.message}) — ingen rad sätts till ${SLUTSTATUS} i den här körningen; nästa körning läser om`);
+      varningar.push(`US account ${usKonto} could not be read (${e.message}) — no source row is set to ${SLUTSTATUS} this run; the next run reads it again`);
       logg(`  ⚠️  ${varningar.at(-1)}`);
     }
   }

@@ -433,3 +433,25 @@ test('byggDiscordJobb: överlämnade rader står under gjort utan SE-annons, bar
   assert.equal(j.varningar.length, 0);
   assert.equal(j.action_axel.length, 0);
 });
+
+import { engelskaSkal } from '../ops-spegla.mjs';
+
+test('engelskaSkal: stoppskälen blir engelska så Discord-rapporten inte stoppas; okända skäl lämnas', () => {
+  assert.equal(engelskaSkal('nämner Bäverbutiken: Bäverbutiken; slutkortet namnger en butik: "baverbutiken"'), 'names Bäverbutiken: Bäverbutiken; the end card names a store: "baverbutiken"');
+  assert.equal(engelskaSkal('pris SE: creativen säger 1469, butiken 1129 (30 % avvikelse, gräns 20 %)'), 'SE price: creative says 1469, store says 1129 (30 % off, limit 20 %)');
+  assert.equal(engelskaSkal('Meta 400'), 'Meta 400');
+});
+
+test('byggDiscordJobb: bara-Sverige-rader ger inga slutkortsvarningar, och skipped-raden är engelsk', () => {
+  const j = byggDiscordJobb({
+    brand: 'CaraShell', datum: '2026-10-03', kalla_hub_namn: 'BÄVER Tak', saknade_statusar: [],
+    rader: [
+      { namn: 'Takoverdrag_FD_1_H1', utfall: 'klar_sverige', skal: 'fars dag', slutkort: { se: { dom: 'okand', skal: 'x', slut_sek: 3, fynd: [] }, no: null } },
+      { namn: 'Takoverdrag_GT_11_H1', utfall: 'hoppad', skal: 'nämner Bäverbutiken: Bäverbutiken' },
+    ],
+    approved: [], varningar: [],
+  });
+  assert.equal(j.varningar.length, 1);
+  assert.match(j.varningar[0], /skipped — names Bäverbutiken/);
+  assert.equal(j.varningar.some((v) => /\(SE\)/.test(v)), false);
+});
