@@ -9,7 +9,8 @@ polerhjul, svart bottenplatta), tre visar en annan maskin med gul motor
 
 | Fil | Klipp | Sekunder | Vad |
 |---|---|---|---|
-| `balteslip-hero.mp4` | tiktok.com/@user2050983013345/video/7674842883618376974 | 11,5–14,5 | maskinen stilla på OSB-bänken med kniven framför |
+| `balteslip-hero.mp4` | tiktok.com/@user7842909816099/video/7582776876351917325 | 16,0–17,7, slow motion 1,5× (minterpolate), 1080p | gnistorna när eggen möter slipstenen, vit studio |
+| `balteslip-tra.mp4` | tiktok.com/@user2050983013345/video/7676029341448310030 | 0,0–2,4 | trä mot bandet, spånen flyger (efter funktionslistan) |
 | `balteslip-slipning.mp4` | tiktok.com/@user2050983013345/video/7647756056042409230 | 10,0–13,6 | kniven mot bandet, sedan eggen mot slipstenen med gnistor |
 | `balteslip-papper.mp4` | tiktok.com/@user2050983013345/video/7674842883618376974 | 9,55–11,25 | papperstestet direkt efter slipningen |
 

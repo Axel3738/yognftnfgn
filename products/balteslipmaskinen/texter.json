@@ -21,11 +21,12 @@
     "bildtext_stationer": "Slipsten, slipband och polerhjul på samma motor",
     "bildtext_kok": "Får plats på köksbänken eller hobbybänken",
     "bildtext_tomat": "Papperstestet direkt efter slipningen",
-    "bildtext_hero": "Bälteslipmaskinen på bänken",
+    "bildtext_hero": "Gnistorna när eggen möter slipstenen",
     "alt_hero": "Mini bälteslipmaskin på en arbetsbänk av ek",
     "alt_bruk": "Kniv slipas mot bandet på bälteslipmaskinen",
     "alt_kok": "Bälteslipmaskinen på en köksbänk bredvid ett knivblock",
-    "alt_lada": "Allt som följer med i lådan: maskin, slipband, slipskivor, polervax, dammskydd, insexnycklar och nätadapter"
+    "alt_lada": "Allt som följer med i lådan: maskin, slipband, slipskivor, polervax, dammskydd, insexnycklar och nätadapter",
+    "bildtext_tra": "Trä mot bandet, spånen flyger"
   },
   "nb": {
     "rubrik_spec": "Slik fungerer den - tekniske data",
@@ -48,11 +49,12 @@
     "bildtext_stationer": "Slipestein, slipebånd og polerhjul på samme motor",
     "bildtext_kok": "Får plass på kjøkkenbenken eller hobbybenken",
     "bildtext_tomat": "Papirtesten rett etter slipingen",
-    "bildtext_hero": "Beltesliperen på benken",
+    "bildtext_hero": "Gnistene når eggen møter slipesteinen",
     "alt_hero": "Mini beltesliper på en arbeidsbenk i eik",
     "alt_bruk": "Kniv slipes mot båndet på beltesliperen",
     "alt_kok": "Beltesliperen på en kjøkkenbenk ved siden av en knivblokk",
-    "alt_lada": "Alt som følger med i esken: maskin, slipebånd, slipeskiver, polervoks, støvbeskyttelse, unbrakonøkler og nettadapter"
+    "alt_lada": "Alt som følger med i esken: maskin, slipebånd, slipeskiver, polervoks, støvbeskyttelse, unbrakonøkler og nettadapter",
+    "bildtext_tra": "Tre mot båndet, sponen flyr"
   },
   "da": {
     "rubrik_spec": "Sådan fungerer den - tekniske oplysninger",
@@ -75,11 +77,12 @@
     "bildtext_stationer": "Slibesten, slibebånd og polerhjul på den samme motor",
     "bildtext_kok": "Der er plads til den på køkkenbordet eller hobbybordet",
     "bildtext_tomat": "Papirtesten lige efter slibningen",
-    "bildtext_hero": "Båndslibemaskinen på bordet",
+    "bildtext_hero": "Gnisterne når æggen møder slibestenen",
     "alt_hero": "Mini båndslibemaskine på et arbejdsbord i eg",
     "alt_bruk": "Kniv slibes mod båndet på båndslibemaskinen",
     "alt_kok": "Båndslibemaskinen på et køkkenbord ved siden af en knivblok",
-    "alt_lada": "Alt det, der medfølger i kassen: maskine, slibebånd, slibeskiver, polervoks, støvbeskyttelse, unbrakonøgler og netadapter"
+    "alt_lada": "Alt det, der medfølger i kassen: maskine, slibebånd, slibeskiver, polervoks, støvbeskyttelse, unbrakonøgler og netadapter",
+    "bildtext_tra": "Træ mod båndet, spånerne flyver"
   },
   "fi": {
     "rubrik_spec": "Näin se toimii - tekniset tiedot",
@@ -102,10 +105,11 @@
     "bildtext_stationer": "Hiomakivi, hiomanauha ja kiillotuspyörä samassa moottorissa",
     "bildtext_kok": "Mahtuu keittiön työtasolle tai harrastepöydälle",
     "bildtext_tomat": "Paperitesti heti hionnan jälkeen",
-    "bildtext_hero": "Nauhahiomakone työpöydällä",
+    "bildtext_hero": "Kipinät, kun terä kohtaa hiomakiven",
     "alt_hero": "Pieni nauhahiomakone tammisella työpöydällä",
     "alt_bruk": "Veistä hiotaan nauhahiomakoneen nauhaa vasten",
     "alt_kok": "Nauhahiomakone keittiön työtasolla veitsitelineen vieressä",
-    "alt_lada": "Kaikki, mitä laatikossa tulee mukana: kone, hiomanauhat, hiomalaikat, kiillotusvaha, pölysuojus, kuusiokoloavaimet ja verkkolaite"
+    "alt_lada": "Kaikki, mitä laatikossa tulee mukana: kone, hiomanauhat, hiomalaikat, kiillotusvaha, pölysuojus, kuusiokoloavaimet ja verkkolaite",
+    "bildtext_tra": "Puu nauhaa vasten, lastut lentävät"
   }
 }

@@ -55,8 +55,9 @@ export const BUTIKER = {
 };
 
 // Filerna i media/ och vad de är. Looparna är RIKTIG film ur TikTok-klippen i Axels dokument
-// (2026-10-03, hans dom på de första: "väldigt AI-aktiga"): hero och papperstestet ur
-// 7674842883618376974, kniven mot bandet + gnistorna ur 7647756056042409230. Nyckeln tomat_*
+// (2026-10-03, hans dom på de första: "väldigt AI-aktiga", sedan "det kan bli mycket bättre"):
+// hero = gnistorna i slow motion ur 7582776876351917325 (1080p), kniven mot bandet + gnistorna
+// ur 7647756056042409230, trä mot bandet ur 7676029341448310030, papperstestet ur 7674842883618376974. Nyckeln tomat_*
 // heter så av historiska skäl och bär papperstestet. Bildordningen i galleriet: hero, kniv, stationerna, kök, lådan (butikens gamla foto).
 const MEDIAFILER = {
   hero_bild: 'balteslip-hero-bank.jpg',
@@ -67,6 +68,8 @@ const MEDIAFILER = {
   hero_poster: 'balteslip-hero-poster.jpg',
   slipning_mp4: 'balteslip-slipning.mp4',
   slipning_poster: 'balteslip-slipning-poster.jpg',
+  tra_mp4: 'balteslip-tra.mp4',
+  tra_poster: 'balteslip-tra-poster.jpg',
   tomat_mp4: 'balteslip-papper.mp4',
   tomat_poster: 'balteslip-papper-poster.jpg',
 };
@@ -136,6 +139,11 @@ export function byggBeskrivning(gammal, t, m, val) {
   let n = 0;
   html = html.replace(/<\/p>/g, (s) => { n += 1; if (n === 1) return s + hero; if (n === 2) return s + slip; return s; });
   if (n < 2) throw new Error('Gamla beskrivningen har färre än två stycken — bygg inte om den blint.');
+  // Träloopen efter funktionslistan (första </ul>), så "trä, metall och smycken" får en bild.
+  if (m.tra_mp4) {
+    const tra = videoHtml(m.tra_mp4, m.tra_poster, t.bildtext_tra) + bildtext(t.bildtext_tra);
+    html = html.replace(/<\/ul>/, (s) => s + tra);
+  }
   const sista = html.lastIndexOf('<h3>');
   if (sista < 0) throw new Error('Gamla beskrivningen saknar <h3> — bygg inte om den blint.');
   return html.slice(0, sista) + specBlock(t, m, val) + html.slice(sista);

@@ -11,6 +11,7 @@ const TEXTER = JSON.parse(readFileSync(join(ROT, '..', 'texter.json'), 'utf8'));
 const MEDIA = {
   hero_bild: 'https://cdn.example/hero.jpg', bruk_bild: 'https://cdn.example/bruk.jpg', stationer_bild: 'https://cdn.example/st.jpg', kok_bild: 'https://cdn.example/kok.jpg',
   hero_mp4: 'https://cdn.example/hero.mp4', hero_poster: 'https://cdn.example/hero-p.jpg',
+  tra_mp4: 'https://cdn.example/tra.mp4', tra_poster: 'https://cdn.example/tra-p.jpg',
   slipning_mp4: 'https://cdn.example/slip.mp4', slipning_poster: 'https://cdn.example/slip-p.jpg',
   tomat_mp4: 'https://cdn.example/tomat.mp4', tomat_poster: 'https://cdn.example/tomat-p.jpg',
 };
@@ -21,7 +22,8 @@ test('gamla bildparagraferna tas bort och tre videor läggs in på rätt platser
   const ny = byggBeskrivning(GAMMAL, TEXTER.sv, MEDIA, VAL);
   assert.equal((ny.match(/<img/g) ?? []).length, 1, 'bara lådbilden kvar');
   assert.ok(!ny.includes('temu.gif') && !ny.includes('temu.webp'));
-  assert.equal((ny.match(/<video/g) ?? []).length, 3);
+  assert.equal((ny.match(/<video/g) ?? []).length, 4);
+  assert.ok(ny.indexOf('tra.mp4') > ny.indexOf('</ul>') && ny.indexOf('tra.mp4') < ny.indexOf('bs-spec'), 'träloopen efter funktionslistan');
   assert.ok(ny.indexOf('hero.mp4') < ny.indexOf('<h3>Lösningen'), 'hero-loopen efter första stycket');
   assert.ok(ny.indexOf('slip.mp4') > ny.indexOf('<h3>Lösningen') && ny.indexOf('slip.mp4') < ny.indexOf('<h3>Funktioner'));
   assert.ok(ny.indexOf('bs-spec') < ny.indexOf('<h3>Ångerrätt'), 'specblocket före garantin');
@@ -32,7 +34,7 @@ test('en omkörning byter specblocket i stället för att dubbla det', () => {
   const forsta = byggBeskrivning(GAMMAL, TEXTER.sv, MEDIA, VAL);
   const andra = byggBeskrivning(forsta, TEXTER.sv, MEDIA, { ...VAL, strom: 'klar', watt: '96' });
   assert.equal((andra.match(/bs-spec/g) ?? []).length, 1);
-  assert.equal((andra.match(/<video/g) ?? []).length, 3);
+  assert.equal((andra.match(/<video/g) ?? []).length, 4);
   assert.ok(andra.includes('Effekt: 96 W'));
   assert.ok(!andra.includes('Vi håller på att få bekräftat'));
 });
