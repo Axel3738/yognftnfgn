@@ -175,3 +175,36 @@ utkastet raderades osänt och gjordes om.
   för alla nio. Appen publicerades om 13:44 med instruktionen överst (version 16).
 - **Alla nio annonserna är fortfarande aktiva 2/10 13:50 CEST** (`ELIGIBLE`, `is_active: true`
   i annonsbiblioteket, en sida i taget). Ingen är alltså överflödig att anmäla.
+
+## Alla nio inskickade i Metas formulär (2/10 eftermiddag)
+
+- **Axel skickade in alla nio själv.** Hans besked i chatten cirka 18:00 CEST: "klar, skickat in
+  alla nio". Han tryckte inte "Jag har skickat in den" i appen (`data/beslut.json` oförändrad),
+  så kvittona skrevs med `--anmald KD-2026-004 --nr 1` till `9` ur hans besked. Tiden i kvittot
+  är när det skrevs in, inte när anmälan skickades.
+- **Metas mejl, bara två trådar syns för Gmail-connectorn** (samma som för Bustatio):
+  - Anmälan 5 fick ärende **1668025284884046**. Kvittot 17:44 CEST ekar annons
+    1803489827652941 och "Ref KD-2026-004 5/9", så referensen står i kvittot.
+  - Ärende **29485246344396507** fick "We removed the content you reported … This decision was
+    made by our technology" 17:50 CEST. Trådens kvitto syns inte, så mejlet säger inte vilken
+    annons det gällde. Referensen skrivs därför inte på någon anmälan.
+- **Shopify:** inget svar från `legal@shopify.com` än. Mejlet gick 12:39 CEST. GIF 2 låg kvar på
+  produktsidan och på Shopifys CDN 18:03 CEST.
+
+## Morgonen efter, 3/10 07:35 CEST: MatSokker kör inga annonser
+
+- **Annonsbiblioteket, Norge, alla annonser:** "No ads match your search criteria. This
+  advertiser isn't running ads in the selected country and ad category at this time." Samma svar
+  på listan med bara aktiva annonser. Sidan MatSokker finns kvar. Annons 5 svarar "Ad isn't in
+  the ad library" på sin egen länk. I går 13:50 CEST var alla nio aktiva.
+- **Vem som tog bort dem står inte i någon källa.** Meta bekräftade borttagning för ett ärende,
+  29485246344396507, i går 17:50 CEST. Inga nya mejl från Meta har kommit sedan dess. Biblioteket
+  visar inte inaktiva annonser i Norge, så resten kan ha tagits bort av Meta eller stängts av
+  MatSokker själv. Sessionen skriver inte det ena som det andra.
+- ⚠️ Kvällskollen 2/10 cirka 18:00 CEST gav `?` på alla nio, alltså ingen sida i biblioteket.
+  Det var troligen samma sak, men skriptet väntar på texten "Library ID" och kan inte skilja en
+  borttagen annons från en sida som inte laddade. Ingen skärmdump togs då. En länk som
+  svarar "Ad isn't in the ad library" ska läsas som "annonsen finns inte i biblioteket", inte
+  som ett fel.
+- **Shopify 07:33 CEST:** GIF 2 ligger kvar på produktsidan och på Shopifys CDN. Inget svar från
+  Shopify.
