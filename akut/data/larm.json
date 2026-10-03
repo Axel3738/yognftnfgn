@@ -1,41 +1,41 @@
 {
- "uppdaterad": "2026-10-03T14:29:08.316Z",
- "senasteKorning": "2026-10-03T14:28:59.316Z",
+ "uppdaterad": "2026-10-03T15:29:11.348Z",
+ "senasteKorning": "2026-10-03T15:29:00.408Z",
  "butiker": {
   "baverbutiken": {
    "namn": "Bäverbutiken.se",
    "url": "https://baverbutiken.se",
    "shop": "4snrw0-mg.myshopify.com",
-   "senastOk": "2026-10-03T14:16:13.530Z",
-   "ordrar7d": 801
+   "senastOk": "2026-10-03T15:13:50.897Z",
+   "ordrar7d": 810
   },
   "carashell": {
    "namn": "Carashell",
    "url": "https://carashell.se",
    "shop": "yitrbk-m3.myshopify.com",
-   "senastOk": "2026-10-03T14:16:13.530Z",
-   "ordrar7d": 233
+   "senastOk": "2026-10-03T15:13:50.897Z",
+   "ordrar7d": 236
   },
   "beverbutikken": {
    "namn": "Beverbutikken",
    "url": "https://beverbutikken.no",
    "shop": "1acuam-s5.myshopify.com",
-   "senastOk": "2026-10-03T14:16:13.530Z",
-   "ordrar7d": 142
+   "senastOk": "2026-10-03T15:13:50.897Z",
+   "ordrar7d": 144
   },
   "majavakauppa": {
    "namn": "majavakauppa.fi",
    "url": "https://majavakauppa.fi",
    "shop": "q0uthu-xq.myshopify.com",
-   "senastOk": "2026-10-03T14:16:13.530Z",
+   "senastOk": "2026-10-03T15:13:50.897Z",
    "ordrar7d": 14
   },
   "matstrumpor": {
    "namn": "Matstrumpor.se",
    "url": "https://matstrumpor.se",
    "shop": "1r46tp-qx.myshopify.com",
-   "senastOk": "2026-10-03T14:16:13.530Z",
-   "ordrar7d": 420
+   "senastOk": "2026-10-03T15:13:50.897Z",
+   "ordrar7d": 422
   }
  },
  "skickade": [
