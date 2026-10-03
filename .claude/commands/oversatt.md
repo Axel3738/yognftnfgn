@@ -243,6 +243,17 @@ python3 pipeline/pratar-i-bild.py <batch>/<slug>/up/*.mp4 --json > <batch>/rostv
 | `VOICEOVER` | röst över produktbilder, ingen mun att synka | **Fas 4.3, ElevenLabs** |
 | `OKAND` | måtten räcker inte, eller videon gick inte att läsa | **Fas 4.2, HeyGen** |
 
+⚠️ **Det finns ett fjärde fall som detektorn inte kan se: ingen röst alls.**
+Mätt 2026-10-03 på `Takoverdrag_CS_2_H2`: `pratar-i-bild.py` dömde OKAND och
+skickade den till HeyGen, som svarade **"No speaker is detected in the video"**.
+`pipeline/scribe.mjs` gav då ett enda "ord" på 25 sekunder: `[lugn musik]`.
+Videon ska alltså inte dubbas över huvud taget (järnregel 3 i `/translate`:
+HeyGen har ingen röst att klona och hittar på en), men den bar inbränd svensk
+text i bild och behövde därför **textlagret UTAN omdubbning** — originalljudet
+får ligga kvar, och `elevenlabs-omdubb.mjs` får aldrig röra den, för den kastar
+källans ljud. Får du det felet från HeyGen: kör scribe på källan först. Är
+transkriptet tomt eller bara en musikmarkering är det det här fallet.
+
 ⚠️ **Osäkerhet kostar alltid krediter, aldrig kvalitet.** `OKAND` går till
 HeyGen. Att bränna krediter i onödan kostar pengar en gång; ny röst på en mun
 som rör sig fel syns i varje visning.
@@ -274,6 +285,15 @@ node translate-batch.mjs render --manifest=… --marknad=NO && node translate-ba
 python3 pipeline/no-captions.py <render.mp4> <fixed.srt> <out.mp4>   # bara om källan har inbränd text
 ```
 Tom `.orig.srt` = inget tal ⇒ ingen render. Läs QA-bilderna, slutkortssvep.
+
+⚠️ **HeyGen översätter ALDRIG bilden — bara ljudet.** Det står i järnregel 2,
+men det är lätt att tro att en färdig HeyGen-rendering är en färdig annons.
+Mätt 2026-10-03 på de fem Sotarset- och Takovertrekk-videorna: alla fem var
+dubbade, röstkollade gröna och längddriften låg på −0,5 till −1,3 %, och ändå
+stod HELA captionspåret kvar på svenska i bild, inklusive priset 459/599 SEK
+och en stor grafik "Beställ 459 kr." En HeyGen-video är klar först efter
+`no-precis.py`. Läs kontaktarket av den NEDLADDADE filen innan du kallar den
+klar, aldrig bara röstkollen.
 
 ### Fas 4.3 — ElevenLabs-spåret (0 HeyGen-krediter)
 

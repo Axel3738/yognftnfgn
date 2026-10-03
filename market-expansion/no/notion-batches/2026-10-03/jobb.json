@@ -1208,7 +1208,12 @@
         "annonsNamn": "Takovertrekk_NO_FD_6_1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252536418090233",
+        "creativeId": "2084129258876634",
+        "adsetId": "120252433113940233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1273,7 +1278,12 @@
         "annonsNamn": "Takovertrekk_NO_PD_10_3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252536462550233",
+        "creativeId": "1698188598546056",
+        "adsetId": "120252183575470233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1338,7 +1348,12 @@
         "annonsNamn": "Takovertrekk_NO_PD_10_2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252536464420233",
+        "creativeId": "2114368869474361",
+        "adsetId": "120252183575470233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -2538,7 +2553,12 @@
         "annonsNamn": "Spikkesett_NO_BOF_2_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
         "prefix": "Spikkesett",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252536466050233",
+        "creativeId": "4600022323594600",
+        "adsetId": "120252515539760233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1039.00",
