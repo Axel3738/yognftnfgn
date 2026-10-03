@@ -1,6 +1,6 @@
 UPPDRAG: Samla underlag (kvitton, fakturor, rapporter) till STONEBITE ECOM AB:s kontoutdrag april–augusti 2026
 
-Redovisningsbyrån saknar underlag till 347 rader på Lunar-kontona (huvudkonto 566 och kontot -361). 63 av dem är redan klara (augusti-zippen eller bankavgifter) och står INTE med nedan. Du ska hitta resten: 284 rader. Du arbetar i Chrome i Axels Google-konton och sparar filer på datorn.
+Redovisningsbyrån saknar underlag till 347 rader på Lunar-kontona (huvudkonto 566 och kontot -361). 63 av dem är redan klara (augusti-zippen eller bankavgifter) och står INTE med nedan. Du ska hitta resten: 284 rader. Du arbetar i Axels Google-konton. Alla rader du ska leta efter står längst ner under RADERNA.
 
 ===== DET HÄR FÅR DU ALDRIG GÖRA =====
 - Aldrig betala, köpa, förnya, säga upp eller ändra något abonnemang eller betalkort.
@@ -20,9 +20,10 @@ Redovisningsbyrån saknar underlag till 347 rader på Lunar-kontona (huvudkonto 
 Sök i ALLA sex för varje leverantör. Samma leverantör kan skicka till olika konton olika månader.
 
 ===== VAR DU SPARAR =====
-Mappen "Underlag 2026 till byrån" på skrivbordet, med undermapparna 2026-04, 2026-05, 2026-06, 2026-07, 2026-08 (månaden då pengarna drogs från kontot).
-Filnamn: ÅÅÅÅ-MM-DD_Leverantör_belopp.pdf, t.ex. 2026-06-11_OpenAI_203,45.pdf.
-Har mejlet en PDF-bilaga: ladda ner bilagan. Är kvittot bara text i mejlet: öppna mejlet, Skriv ut (Ctrl+P), välj "Spara som PDF".
+Bygg allt i din egen session. Hämta PDF-bilagorna direkt ur Gmail. Är kvittot bara text i mejlet: gör om mejlet till en PDF i sessionen.
+Sortera i mapparna 2026-04, 2026-05, 2026-06, 2026-07 och 2026-08, efter månaden då pengarna drogs från kontot.
+Filnamn: ÅÅÅÅ-MM-DD_Leverantör_belopp.pdf, till exempel 2026-06-11_OpenAI_203,45.pdf.
+Allt packas till sist som "Underlag 2026 till byrån.zip", som Axel laddar ner.
 En faktura i annan valuta (USD, EUR) räknas som rätt om datumet stämmer inom 3 dagar och beloppet stämmer ungefär med kronbeloppet efter växelkurs.
 
 ===== SÅ SÖKER DU I GMAIL =====
@@ -33,7 +34,7 @@ Använd sökfältet med datum, till exempel:
 Sök från cirka 5 dagar före till 5 dagar efter datumet på raden. Kolla även fliken "Kampanjer"/"Uppdateringar" och skräpposten (Gmail söker där bara om du lägger till in:anywhere).
 
 Tips per leverantör:
-- Wise: mejl "You sent …", "Transfer sent", "Your transfer to … is complete" eller "money received". Spara mejlet som PDF. Mottagarens namn ska stå med.
+- Wise: mejl "You sent …", "Transfer sent", "Your transfer to … is complete" eller "money received". Gör om mejlet till PDF. Mottagarens namn ska stå med.
 - CapCut: kvittomejl från CapCut/ByteDance. Raderna märkta "(Lunar -361)" är det andra kortet.
 - Shopify-fakturor: ämnet "Faktura … för <butik>", numret på raden är fakturanumret.
 - Fortnox Finans AB: fakturor från Jemsu AB och andra som betalats via Fortnox ("Här kommer din faktura", "Förfallen faktura"). Matcha beloppet.
@@ -135,9 +136,9 @@ Format: datum belopp. "INBETALNING" = pengar in. Allt annat = pengar ut.
 - Awais (1 st): 2026-08-08 18 133,51 kr INBETALNING
 
 ===== SLUTRAPPORT (det sista du gör) =====
-1. Skapa i mappen "Underlag 2026 till byrån" ett Google-ark eller en textfil "LISTA.txt" med EN rad per rad ovan: datum, leverantör, belopp, filnamn du sparade ELLER "inget hittat" / "kräver inloggning: <sida>" / "Axel".
+1. Lägg en textfil "LISTA.txt" i zippen med EN rad per rad ovan: datum, leverantör, belopp, filnamn du sparade ELLER "inget hittat" / "kräver inloggning: <sida>" / "Axel".
 2. Räkna: hittade, inte hittade, kräver inloggning.
-3. Packa mappen som "Underlag 2026 till byrån.zip".
+3. Packa allt som "Underlag 2026 till byrån.zip" och ge Axel nedladdningen.
 4. Skriv till Axel, kort, på svenska: hur många av 284 rader som har underlag, vilka sidor han måste logga in på, och vilka rader bara han kan svara på.
 
 KONTROLL: öppna tre slumpvisa PDF:er och se att datum och belopp stämmer med raden.
