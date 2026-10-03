@@ -639,3 +639,149 @@ Kampanjen är CBO. Meta lägger 85 % av budgeten i adsetet där Nathalie sitter.
 **Regeln framåt:** en ny video som ska testas mot Nathalie hamnar i `09-17 UGC`, annars testas den inte alls. Det är ett routingbeslut i uppladdaren och Axels beslut (FORSLAG `ROUTING` 2026-09-30). Tills dess ska briefer bygga på Nathalie-kroppen: de har bäst chans att få leverans även utanför adsetet, och de lär oss något om den enda vinnaren.
 
 **Två kundsignaler kvar att ta hand om:** "Material?" (kommentar 27/9) har inget svar på produktsidan (mätt 2026-09-30: inget materialord i texten). Ingen annons får påstå material förrän sidan gör det.
+
+---
+
+## 2026-10-03, rond 5 — tre lärdomar (Katarina ×2, Gilz batch #2) + två uppgraderingar
+
+Talen ur `matstrumpor/output/dom-2026-10-03.json` och `avlasning-2026-10-03.json`
+(Meta, token, 7d_click). Hook rate = 3 s-visningar ÷ visningar, hold rate =
+ThruPlay ÷ visningar, hook→hold = ThruPlay ÷ 3 s-visningar (måtten sedan
+2026-10-01). Nathalie som jämförelse, last_14d: 0,47 / 0,15 / 0,31.
+Kampanjens spend 24–30/9: 71 048 kr (350 köp), 25/9–1/10: 69 189 kr (328 köp).
+
+## L-09-24_Katarina_sushialskaren_i_ditt_liv   (batch #0e · KPI_WINNER · bedömbar nej)
+
+*(Axels egen uppladdning i `09-17 UGC`, alias `kat1`. Lärdoms-id:t byter
+mellanslag och ä mot `_`/`a`.)*
+
+Spend annons / kampanj (första veckan 24–30/9): **355 kr / 71 048 kr — 0,5 %**.
+2 köp, ROAS 2,39 (kampanjen 2,08 i samma fönster). 14 d: **413 kr, 2 köp,
+ROAS 2,05**, köp/LPV **4,5 %** (Nathalie 3,4 %). Under grinden (3 köp) — ingen
+dom, men talen är inte dåliga.
+Hook rate **0,40** · hold rate **0,135** · hook→hold **0,34** — samma nivå som
+Nathalie (0,47 / 0,15 / 0,31).
+
+Hookar, ordagrant (captions avlästa ur videon var 2,5 s, 31 s, källan
+hämtad 2026-10-03 med sidtoken):
+| # | Tid | Rad | Hook rate | Hold rate |
+|---|---|---|---|---|
+| 1 | 0:00–0:05 | Det här är den perfekta balansen mellan praktiskt och oväntat *(hon håller det svarta tråget mot kameran)* | 0,40 | 0,135 |
+| 2 | 0:05–0:10 | först tror man att det är sushi *(närbild laxmaki)* | | |
+| 3 | 0:10–0:12 | och helt plötsligt har du gett bort *(röd strumpa)* | | |
+| 4 | 0:12–0:15 | något som faktiskt får en reaktion / och som används på riktigt *(fot i strumpa)* | | |
+| 5 | 0:17–0:20 | det är den typen av present som passar perfekt till sushiälskaren i ditt liv | | |
+| 6 | 0:22–0:25 | se ut som sushi är strumpor / sushistrumpor | | |
+| 7 | 0:27–0:31 | köp en få en på matstrumpor punkt se *(tråget i båda händerna)* | | |
+
+⚠️ Manuset är **s001h1:s manus** ("perfekta balansen", augusti, AI-kvinna, ROAS
+1,40 och strypt). Samma ord med en riktig människa ger ROAS 2,05 och köp/LPV
+4,5 %. Det är det tydligaste beviset hittills för att det var avsändaren som
+föll i s001, inte orden. Rad 7 säger butikens namn — live, rörs inte.
+
+Planerat mot utfört (briefen var "sushiälskaren i ditt liv", presenten —
+`ugc/2026-10-briefer.md` rad 13):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| avatar | presentköparen till en vuxen sushiälskare | samma, sagt i rad 5 | ja |
+| vinkel | gift + favoriträtt (M3) | gift; favoriträtten bara som en bisats i rad 5 | delvis |
+| medvetandenivå | problem-aware | product-aware (öppnar på "perfekta balansen") | nej |
+| mekanism | ser ut som sushi, är strumpor | samma | ja |
+| tro | riktig kvinna | riktig kvinna, ingen mottagare som öppnar | delvis |
+| positionering | används, inte skämtpryl | "används på riktigt" | ja |
+| brådska | ingen | "köp en få en" (erbjudande, ingen brådska) | ja |
+
+Fel ur katalogen: **6 (bridge)**, åsikt i stället för fakta i öppningen ("den
+perfekta balansen mellan praktiskt och oväntat"), och **5 (empty claims)**,
+"används på riktigt" utan bevis. Måttet: hookarna håller (0,40 / 0,34), men
+spenden kom aldrig, för CBO:n matar Nathalie i samma adset.
+
+Hypotes: idén och personen fungerar, och köparen i rad 5 är rätt (vuxen
+sushiälskare, inte barn, se `unge` nedan). Annonsen fick 0,5 % av spenden för
+att Champions redan har en vinnare som tar 90 %. Det är svält, inte en dom.
+Den svaga punkten är öppningen: en åsikt där Nathalie har en gåta och en
+mottagare **(gissning)**.
+
+Nästa annonser:
+- `MATSTRUMP_sushi_gift_ugc_<nnn>_h1–h3_i1pkat1` — **omklipp av Katarinas
+  befintliga material** (inte ny inspelning), M3 favoriträtten som hook i stället
+  för "perfekta balansen": tre faktahookar som pekar ut en vuxen sushiälskare, och
+  sedan hennes kropp från 0:05. Det testar fel 6 med en variabel. Briefas i den här
+  ronden.
+- Katarina filmar inte mer (ersatt av Ebba Nilsson 2026-10-02, `ugc/`), så
+  ingen ny beställning. Materialet stannar i Sverige (Axels regel 2026-09-27).
+
+## L-09-24_Katarina_Sushigalen_unge   (batch #0e · LOSER · bedömbar nej)
+
+Spend annons / kampanj (första veckan 24–30/9): **301 kr / 71 048 kr — 0,4 %**,
+0 köp. 14 d: 343 kr, 0 köp, köp/LPV **0**. Hook rate **0,40** · hold rate
+**0,07** · hook→hold **0,18**, hälften av systerversionens.
+
+Hookar, ordagrant (samma inspelning, annan text):
+| # | Tid | Rad | Hook rate | Hold rate |
+|---|---|---|---|---|
+| 1 | 0:00–0:05 | det här är den perfekta balansen / Mellan praktiskt och oväntat först | 0,40 | 0,07 |
+| 2 | 0:05–0:10 | tror man att det är sushi / och sen inser man att det är strumpor och Helt plötsligt | | |
+| 3 | 0:12–0:15 | Som faktiskt får en reaktion och som används på riktigt | | |
+| 4 | 0:17–0:22 | det är den typen av present som passar perfekt i sushi / galen unge genomtänkt kul | | |
+| 5 | 0:22–0:25 | men utan att försöka för mycket. Ser ut som sushi är Strumpor | | |
+| 6 | 0:27–0:31 | Sushistrumpor / Köp 1 få 1 GRATIS | | |
+
+Planerat mot utfört: samma som systerversionen, utom **avatar: mottagaren är
+ett barn** ("sushigalen unge"). Det är den enda variabeln, och den är också
+det enda som skiljer utfallet: samma öppning, hook rate 0,40 på båda, men
+hook→hold 0,18 mot 0,34 och 0 köp mot 2.
+
+Fel ur katalogen: **2 (TAM, för smal)**. En förälder till ett sushiälskande
+barn är en mindre publik än "sushiälskaren i ditt liv", och mottagaren är för
+ung för att storleken 36–44 ska kännas given **(gissning)**. Måttet:
+hook→hold halveras precis där raden om ungen kommer.
+
+Nästa annonser:
+- SLÄPP `09-24 Katarina Sushigalen unge` som riktning. Barnmottagaren itereras
+  inte (fel 2, och stängning sker på adsetnivå: Champions stängs aldrig, så den
+  får ligga kvar och svälta).
+- Lärdomen flyttar in i omklippet ovan: mottagaren är en vuxen sushiälskare.
+
+## L-batch-2-gilz-miniklipp   (batch #2 · 25/9 · adset `nya16` + `jul_video` · 7 INGEN_LEVERANS, 1 LOSER)
+
+Annonser: `jul_ugc_048h1_v1`, `048h2`, `048h3`, `gift_ugc_049h1_v1`, `049h2`,
+`049h3`, `gift_ugc_050_v1`, `gift_lifestyle_051_v1`, `gift_ugc_052_v1` (Gilz
+mini-clips, döpta och uppladdade av `/matstrumpor` 25/9). Första veckan
+25/9–1/10: **0,05–45 kr per annons, ungefär 67 kr tillsammans, 0 köp**, mot
+kampanjens 69 189 kr (0,1 %). 051 fick 45 kr (LOSER, 0 köp), resten under 10 kr
+(INGEN_LEVERANS).
+
+Hookar ordagrant: **inte lästa i frames.** Under 50 visningar per annons är
+hook rate brus (049h2 "0,73" är 11 av 15 visningar). Kända rader ur
+transkripten (`mekanismer.md` §2): 049h1–h3 "Det liknar en låda med deras
+favoriträtt, men det är strumpor.", 048h1–h3 "tio olika sushirullar" (fel
+räkning: fem par = fem sorter).
+
+Planerat mot utfört: brief saknas (Gilz egna mini-clips, döpta efteråt).
+
+Fel ur katalogen: inget av 1–8 går att mäta. Det här är **samma utfall som
+batch #1** (`L-batch-1-svalt-adset`): `nya16` och `jul_video` fick 2 % och 0 %
+av spenden. Metas dom över adsetet, inte över annonserna.
+
+Hypotes: inget nytt utöver batch #1 **(gissning)**. Det som ändrats sedan dess
+är strukturen: från 2026-10-02 får varje nytt koncept ett eget testadset
+(3:2:2, Axels beslut ROUTING C), och då ska det inte hända en tredje gång.
+
+Nästa annonser:
+- SLÄPP alla nio. De kostar inget, och stängning sker på adsetnivå (`nya16` är
+  `FOR_UNG` till 8/10, `jul_video` är `SASONG` till 1/12).
+- Räkningen i 048 ("tio olika sushirullar") får inte följa med till någon ny
+  version. Det heter fem sorter.
+
+### Uppgraderingar vecka 2–3 (loggade av koden, lärdomarna finns sedan tidigare)
+
+- **Sofie H1: LOSER → KPI_WINNER vecka 2.** 14 d: 792 kr, 5 köp, ROAS 2,52,
+  köp/LPV 4,2 %, hook 0,25, hold 0,105, hook→hold 0,42. Hon hookar sämst i
+  Champions men behåller flest av dem hon hookar. Det stöder
+  `L-Sofie_H1_H2`: öppningen ("jag trodde helt seriöst att det här var riktig
+  sushi") är svag, kroppen säljer. Nästa steg är redan beställt (Sofies brief 1
+  + 2 i `ugc/2026-10-briefer.md`), ingen ny brief här.
+- **012v2: LOSER → KPI_WINNER vecka 2 → LOSER vecka 3.** 14 d: 951 kr, 3 köp,
+  ROAS 1,36 (under break-even 1,498), köp/LPV 2,1 %. Toppen höll inte. Inget
+  ändras, lärdomen `L-…012v2` står.

@@ -48,7 +48,7 @@ import {
 import { laddaButik, sakerstallKonto, annonskontoFor, tillhorButiken, OPS_ANNONSKONTO } from '../factory/register.mjs';
 import { valjKampanjer } from '../factory/budgetrond.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
-import { malkampanjFor } from './lib/malkampanj.mjs';
+import { malkampanjFor, arMalkampanj } from './lib/malkampanj.mjs';
 import { filtreraPaMarknad, marknadskoderI, MARKNADSKODER } from '../factory/skalning.mjs';
 import { OPS_MARKNADSKODER, marknadFor, marknadslank } from '../factory/opsmarknader.mjs';
 
@@ -300,9 +300,16 @@ async function huvud() {
   logg(`1. Butik: prefix ${butik.prefix.join(' · ')} · annons "${namn}" · ${typ} ${basename(fil)} (${(statSync(fil).size / 1048576).toFixed(2)} MB)`);
 
   // 3. Marknadskoll på namnet — före något nätanrop, den är gratis.
-  const mk = kontrolleraMarknad(namn, marknad);
-  if (!mk.ok) stopp(mk.skal);
-  logg(`3. Marknadskoll: "${namn}" ${mk.koder.length ? `bär ${mk.koder.join('/')}` : 'saknar marknadskod (= SE)'} — ok för ${marknad}`);
+  //    Ett EXTRA mål i registret (malkampanj.<M>.ocksa, t.ex. Australien i
+  //    USA-marknaden) bär landets egen kod i namnet (`_AU_`): samma engelska
+  //    creative, en gång till, i Axels AU-kampanj. Namnet kontrolleras då mot
+  //    landets kod, inte marknadens — annars hade `_AU_` stoppats som fel marknad.
+  const fastMalTidigt = malkampanjFor(post, marknad);
+  const malTyp = args.kampanj ? arMalkampanj(fastMalTidigt, args.kampanj) : null;
+  const ocksaMal = malTyp?.ocksa ?? null;
+  const mk = kontrolleraMarknad(namn, ocksaMal ? ocksaMal.namnkod : marknad);
+  if (!mk.ok) stopp(ocksaMal ? `${mk.skal} (extra målkampanj ${ocksaMal.land}: namnet ska bära _${ocksaMal.namnkod}_)` : mk.skal);
+  logg(`3. Marknadskoll: "${namn}" ${mk.koder.length ? `bär ${mk.koder.join('/')}` : 'saknar marknadskod (= SE)'} — ok för ${ocksaMal ? `${ocksaMal.land} (extra mål i ${marknad})` : marknad}`);
 
   // 5a. Konceptet — också gratis, och ett stopp här sparar alla anrop nedan.
   const koncept = konceptUrNamn(namn);
@@ -321,9 +328,9 @@ async function huvud() {
   } catch (e) { logg(`   ⚠ kampanjbas: ${e.message}`); }
   let kampanj;
   // Ägarens uttryckliga mål (register.json → malkampanj) vinner över namnsökningen.
-  const fastMal = malkampanjFor(post, marknad);
+  const fastMal = fastMalTidigt;
   if (!args.kampanj && fastMal) args.kampanj = fastMal.kampanj_id;
-  if (args.kampanj && fastMal && String(args.kampanj) !== fastMal.kampanj_id) stopp(`--kampanj ${args.kampanj} är inte registrets målkampanj för ${marknad} (${fastMal.kampanj_id}). Rätta registret eller kön — laddar inte upp.`);
+  if (args.kampanj && fastMal && !arMalkampanj(fastMal, args.kampanj)) stopp(`--kampanj ${args.kampanj} är varken registrets målkampanj för ${marknad} (${fastMal.kampanj_id}) eller ett av dess extra mål (${(fastMal.ocksa ?? []).map((o) => `${o.land} ${o.kampanj_id}`).join(', ') || 'inga'}). Rätta registret eller kön — laddar inte upp.`);
   if (args.kampanj) {
     kampanj = await api(String(args.kampanj), { params: { fields: KAMPANJFÄLT } });
     if (String(kampanj.account_id) !== konto) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte marknadens konto ${konto} (${marknaden.kontonamn}). Avbryter.`);
@@ -331,10 +338,12 @@ async function huvud() {
     if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar varken med ${butik.prefix.join(' / ')} eller kampanjbasen ${kampanjbaser.join(' / ') || '(saknas)'}, och ingen annons med prefixet ligger där.`);
     // Registrets målkampanj ÄR marknadens per definition — namnet bär ingen
     // marknadskod ("Taköverdrag 5 reasons USA TEST" lästes som SE, 2026-10-01).
-    const arFastMal = fastMal && String(kampanj.id) === fastMal.kampanj_id;
+    //    Ett extra mål (ocksa) är marknadens på samma sätt: "AU LISTICLE
+    //    Taköverdrag CARASHELL" bär ingen `_US_`-kod och är ändå Axels mål.
+    const arFastMal = Boolean(fastMal && arMalkampanj(fastMal, kampanj.id));
     const m = arFastMal ? { behall: [kampanj] } : filtreraPaMarknad([{ ...kampanj, campaign_name: kampanj.name }], marknad);
     if (!m.behall.length) stopp(`Kampanj "${kampanj.name}" ligger på marknad ${Object.keys(m.bortfiltrerade).join('/')}, inte ${marknad}.`);
-    logg(`2. Kampanj (--kampanj): "${kampanj.name}" (${kampanj.id}) ${kampanj.status}/${kampanj.effective_status}${v.baraViaAnnons.length ? ' — matchar via annonserna, inte namnet' : ''}`);
+    logg(`2. Kampanj (--kampanj): "${kampanj.name}" (${kampanj.id}) ${kampanj.status}/${kampanj.effective_status}${v.baraViaAnnons.length ? ' — matchar via annonserna, inte namnet' : ''}${ocksaMal ? ` — extra mål ${ocksaMal.land} i marknad ${marknad} (registret)` : ''}`);
   } else {
     const kampanjer = await alla(`act_${konto}/campaigns`, { fields: KAMPANJFÄLT });
     const val = valjEnKampanj({ kampanjer, prefix: butik.prefix, annonsrader: butikens, marknad, kampanjbaser });
@@ -365,9 +374,13 @@ async function huvud() {
   // koncept: hittar även kampanjens egen konvention (DRYTREK_SE_PD) och döper
   // ett nytt adset efter den, så ett koncept aldrig får två adsets.
   let adset, skapad = false, mall = null;
-  if (fastMal?.adset_id) {
+  // Adsetlåset gäller det mål kampanjen ÄR: huvudmålets adset_id låser bara
+  // huvudmålet, ett extra måls bara det extra målet (AU har ett adset per
+  // koncept, så där klonas ett AU-syskon när konceptet är nytt).
+  const lastAdset = ocksaMal ? ocksaMal.adset_id : (fastMal && String(kampanj.id) === fastMal.kampanj_id ? fastMal.adset_id : null);
+  if (lastAdset) {
     // Registret låser adsetet: kampanjen bär ett adset, inte ett per koncept.
-    const a = await api(fastMal.adset_id, { params: { fields: 'id,name,status,campaign_id' } }).catch((e) => stopp(`registrets adset ${fastMal.adset_id} gick inte att läsa: ${e.message}`));
+    const a = await api(lastAdset, { params: { fields: 'id,name,status,campaign_id' } }).catch((e) => stopp(`registrets adset ${lastAdset} gick inte att läsa: ${e.message}`));
     if (String(a.campaign_id) !== String(kampanj.id)) stopp(`registrets adset ${a.id} ligger i kampanj ${a.campaign_id}, inte ${kampanj.id}.`);
     adset = a;
   } else {
@@ -432,8 +445,8 @@ async function huvud() {
   logg(`8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):\n${JSON.stringify(spec, null, 2).replace(/^/gm, '   ')}`);
 
   const ut = {
-    ok: true, butik: post.brand, nyckel: post.nyckel, konto, marknad,
-    kampanj: { id: kampanj.id, namn: kampanj.name, bas },
+    ok: true, butik: post.brand, nyckel: post.nyckel, konto, marknad, land: ocksaMal?.land ?? marknad,
+    kampanj: { id: kampanj.id, namn: kampanj.name, bas, extra_mal: Boolean(ocksaMal) },
     adset: { id: adset.id, namn: adset.name, skapad },
     annons: { id: null, namn, status: null, effective_status: null },
     creative_id: null,

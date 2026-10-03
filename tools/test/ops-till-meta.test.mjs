@@ -244,3 +244,10 @@ test('batchuppladdarens glob täcker VARJE filändelse uppladdaren tar emot (mä
     assert.equal(medietyp(`x${a}`) === null, false);
   }
 });
+
+// AU är en marknadskod sedan 2026-10-03 (extra målkampanj i USA-marknaden).
+test('konceptUrNamn + kontrolleraMarknad: _AU_ är en kod — konceptet läses efter den, och namnet godkänns mot AU', () => {
+  assert.equal(konceptUrNamn('CaraShellRoof_AU_OB_111_H1'), 'OB');
+  assert.equal(kontrolleraMarknad('CaraShellRoof_AU_OB_111_H1', 'AU').ok, true);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_AU_OB_111_H1', 'US').ok, false, 'ett AU-namn i en US-körning utan extra mål stoppas');
+});
