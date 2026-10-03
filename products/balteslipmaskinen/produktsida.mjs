@@ -54,7 +54,10 @@ export const BUTIKER = {
   fi: { id: 'fi', namn: 'Majavakauppa', sprak: 'fi', url: 'https://majavakauppa.fi', handle: 'nauhahiomakone-mini-3-in-1-hio-teroita-kiillota', register: 'majavakauppa' },
 };
 
-// Filerna i media/ och vad de är. Bildordningen i galleriet: hero, kniv, stationerna, kök, lådan (butikens gamla foto).
+// Filerna i media/ och vad de är. Looparna är RIKTIG film ur TikTok-klippen i Axels dokument
+// (2026-10-03, hans dom på de första: "väldigt AI-aktiga"): hero och papperstestet ur
+// 7674842883618376974, kniven mot bandet + gnistorna ur 7647756056042409230. Nyckeln tomat_*
+// heter så av historiska skäl och bär papperstestet. Bildordningen i galleriet: hero, kniv, stationerna, kök, lådan (butikens gamla foto).
 const MEDIAFILER = {
   hero_bild: 'balteslip-hero-bank.jpg',
   bruk_bild: 'balteslip-bruk-kniv.jpg',
@@ -64,8 +67,8 @@ const MEDIAFILER = {
   hero_poster: 'balteslip-hero-poster.jpg',
   slipning_mp4: 'balteslip-slipning.mp4',
   slipning_poster: 'balteslip-slipning-poster.jpg',
-  tomat_mp4: 'balteslip-tomat.mp4',
-  tomat_poster: 'balteslip-tomat-poster.jpg',
+  tomat_mp4: 'balteslip-papper.mp4',
+  tomat_poster: 'balteslip-papper-poster.jpg',
 };
 
 export function lasLage() {

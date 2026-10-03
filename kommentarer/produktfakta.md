@@ -104,8 +104,8 @@ Läses av `/kommentarer` innan svaren skrivs.
   tekniska uppgifter (motor, varvtal, fast 15°, band 330 × 30 mm, tre stationer,
   vad som följer med, mini-storlek), ström-raden ovan, "vad den passar för"
   (knivar, saxar, yxor, mejslar, stämjärn, lätt formning av trä/metall/smycken;
-  INTE grova svetsfogar eller tjockt stål), tre loopar ur våra egna annonsfilmer
-  och fyra nya produktbilder. Finska sidans "steglös hastighet" rättad till 7 steg.
+  INTE grova svetsfogar eller tjockt stål), tre loopar ur riktig TikTok-film (Axels
+  dokument, 2026-10-03 kväll) och fyra nya produktbilder. Finska sidans "steglös hastighet" rättad till 7 steg.
   Svaret på kommentarer hänvisar till sidan.
 - **Påfyllningskit (offert från leverantören 2026-09-25, USD utan moms, frakt
   inräknad):** Sverige 1 st $10,33 · 2 st $17,19 · 3 st $22,92; Norge 1 st
