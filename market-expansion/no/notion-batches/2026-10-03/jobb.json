@@ -61,7 +61,8 @@
         "adsetNamn": "Feiesett NO - FD",
         "annonsNamn": "Sotarset_NO_FD_3_H3",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "389.00",
@@ -124,7 +125,8 @@
         "adsetNamn": "Feiesett NO - FD",
         "annonsNamn": "Sotarset_NO_FD_3_H2",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "389.00",
@@ -187,7 +189,8 @@
         "adsetNamn": "Feiesett NO - FD",
         "annonsNamn": "Sotarset_NO_FD_3_H1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "389.00",
@@ -250,7 +253,8 @@
         "adsetNamn": "Feiesett NO - PD",
         "annonsNamn": "Sotarset_NO_PD_1_H5",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "389.00",
@@ -993,7 +997,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_6_4",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252536415760233",
+        "creativeId": "2145252596081313",
+        "adsetId": "120252433113940233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1057,7 +1067,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_6_3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252536416570233",
+        "creativeId": "1148904184259424",
+        "adsetId": "120252433113940233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1121,7 +1137,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_6_2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252536417000233",
+        "creativeId": "1716240982772335",
+        "adsetId": "120252433113940233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -1185,7 +1207,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_6_1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1249,7 +1272,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - PD",
         "annonsNamn": "Takovertrekk_NO_PD_10_3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1313,7 +1337,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - PD",
         "annonsNamn": "Takovertrekk_NO_PD_10_2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1376,7 +1401,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_3_H2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1439,7 +1465,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - FD",
         "annonsNamn": "Takovertrekk_NO_FD_3_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1502,7 +1529,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_9_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1565,7 +1593,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_7_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1628,7 +1657,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - OB",
         "annonsNamn": "Takovertrekk_NO_OB_6_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1691,7 +1721,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - CS",
         "annonsNamn": "Takovertrekk_NO_CS_2_H2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -1754,7 +1785,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - CS",
         "annonsNamn": "Takovertrekk_NO_CS_2_H3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "1189.00",
@@ -2505,7 +2537,8 @@
         "adsetNamn": "Spikkesett NO - BOF",
         "annonsNamn": "Spikkesett_NO_BOF_2_1",
         "link": "https://beverbutikken.no/products/spikkesett-30-deler-6-kniver-og-6-jern",
-        "prefix": "Spikkesett"
+        "prefix": "Spikkesett",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1039.00",

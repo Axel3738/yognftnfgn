@@ -198,6 +198,13 @@ products/matstrumpor/arkiv.json
 # 4,8 GiB 2026-10-02. Pillerloggen (*.piller.json) är liten och sparas.
 market-expansion/*/notion-batches/*/no-video-txt/*.mp4
 market-expansion/*/notion-batches/*/no-video-txt/*.png
+# Textbytet lägger också QA-rutor som .jpg och pillermätningen som .json
+# bredvid videon. Bara mp4 och png var ignorerade, så de två andra låg
+# otrackade i vägen efter varje körning.
+market-expansion/*/notion-batches/*/no-video-txt/*.jpg
+market-expansion/*/notion-batches/*/no-video-txt/*.json
+market-expansion/*/notion-batches/*/out/
+market-expansion/*/notion-batches/*/ark/
 market-expansion/*/notion-batches/*/no-video-txt/*.jpg
 market-expansion/*/notion-batches/*/upp/
 market-expansion/*/notion-batches/*/heygen/
