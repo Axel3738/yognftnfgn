@@ -463,7 +463,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   // 1. Butiken ur registret + kontospärren. laddaButik godtar läge test
   //    (Bäverbutiken) — det gör inte det här verktyget. Kontot är PER MARKNAD
   //    (opsmarknader.mjs): SE/NO i OPS-kontot, US i Magiborsten UK.
-  const { laddaButik, sakerstallKonto, annonskontoFor, OPS_ANNONSKONTO } = await import('../factory/register.mjs');
+  const { laddaButik, sakerstallKonto, annonskontoFor, OPS_ANNONSKONTO, speglingFor, speglingLaddarUpp } = await import('../factory/register.mjs');
   const butik = laddaButik(nyckel);
   const baskonto = sakerstallKonto(butik.post);
   if (baskonto !== OPS_ANNONSKONTO) {
@@ -689,7 +689,11 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     if (!mal_namn) varningar.push(`${namn}: inget "_" i namnet — målnamn kan inte bildas`);
     if (r.leverans === 'saknas') varningar.push(`${namn}: väntar på fil (varken bilaga, mediablock eller Drive-länk)`);
     if (!lank) varningar.push(`${namn}: ingen landningslänk (varken ärvd ur kampanjen eller Landing page på raden)`);
-    if (marknaden.oversatts && !rad.se_ad_id) varningar.push(`${namn}: SE-annonsen finns inte i OPS-kontot — inte launchad i Sverige`);
+    // En speglad produkt vars spegling inte laddar upp SE (CaraShell
+    // Taköverdraget sedan 2026-10-03) har sin svenska annons i Bäverbutikens
+    // konto — det är inte "inte launchad", det är flödet.
+    const seHosBaver = Boolean(speglingFor(butik.post)) && !speglingLaddarUpp(speglingFor(butik.post)).includes('SE');
+    if (marknaden.oversatts && !rad.se_ad_id && !seHosBaver) varningar.push(`${namn}: SE-annonsen finns inte i OPS-kontot — inte launchad i Sverige`);
     if (r.landning && lank_arvd && r.landning !== lank_arvd) rad.landning_avviker = true;
     if (d.finns_i_meta && ocksaSaknas.length && statusLika(r.status, kostatus) && !statusLika(kostatus, 'Approved')) varningar.push(`${namn}: ${m}-annonsen finns (${d.ad_id}) men saknas i ${ocksaSaknas.map((o) => o.land).join('/')} — ladda upp den där med samma engelska copy, sedan Approved`);
     // Filen hämtas också när huvudmålet redan bär annonsen men ett extra mål

@@ -3397,3 +3397,32 @@ WW-annonser, 2 576 kr / 2 köp).
 
 Discord-rapport postad i `#annons-uppladdning` (`1555809641382809610`).
 Register: `log carashell/takskyddet 7 2026-10-03`.
+
+## 2026-10-03 förmiddag — Australien som extra mål, Danmark igång med flit
+
+**Axels svar på morgonens rapport:** Danmark ska vara igång ("den går ju ganska
+bra … strunta i Danmark nu" — inga nya annonser dit). De engelska annonserna
+ska upp i Australienkampanjen också: "vi kör bara samma i USA och Australien,
+men vi anpassar dem lite mer för USA … USA är det jag vill lägga mest fokus på."
+Norska CaraShell nämnde han inte — den står ACTIVE och rörs inte.
+
+**Bygget:** `malkampanj.US.ocksa` i registret pekar på hans `AU LISTICLE
+Taköverdrag CARASHELL` (`120251471312320435`, ACTIVE, fyra adsets AU_PD/CS/GT/SP
+med AU-geo, länk `…-lagerrensning-au?country=AU`). US-rutinen laddar upp varje ny
+engelsk annons en gång till där under `_AU_`-namnet (kontots dubblettspärr går
+på namnet, och Axels egna 27 AU-kopior heter `_US_`). Nytt koncept ⇒ adset
+klonat av ett AU-syskon. Raden blir Approved först när både US och AU bär den.
+Bara nya rader ur `SE-ACTIVE to be translated` — de 74 Approved utan AU-kopia är
+inte eftersläpande.
+
+**Torrkört mot Meta samma förmiddag:** kön gav 7 rader med `ocksa: AU …
+finns_i_meta: false` och Approved-spärren satt; uppladdaren torr på
+`CaraShellRoof_AU_OB_111_H1` → kampanjen AU LISTICLE, adset `CARASHELL AU_OB`
+som klon av `CARASHELL AU_GT`, AU-länken ärvd, sidan + IG ärvda, inget skrivet.
+Varningen "SE-annonsen finns inte i OPS-kontot" tystad för speglade produkter
+som inte laddar upp SE — den svenska annonsen bor i Bäverbutikens konto.
+
+⚠️ Dagens US-runda 17:05 kör `main`: är grenen inte mergad då får de sju bara
+USA, och AU-kopiorna görs av nästa runda bara om raderna fortfarande saknar AU
+och inte redan är Approved (gamla koden sätter Approved efter USA). Mergas
+grenen före 17:05 får de både USA och AU i samma runda.
