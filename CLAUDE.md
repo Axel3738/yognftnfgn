@@ -1347,7 +1347,11 @@ Prompten `stonebite/cowork/10-byggko-stonepnl.txt` (samma recept, StonePNL i st�
 sajten som kontroll); Cowork hittade ÅTTA nya dubbletter (också disciplined-endurance), kopplade
 bort källan och avbröt köerna — raderar aldrig projekt — och bygget gick igenom inom tre minuter
 (Active 11:31 CEST, alla sex tjänster mätta på v120). Före städningen byggde INGET i kontot, allt
-stod Queued. De tolv tomma projekten står kvar tills Axel raderar dem. Något skapar fortfarande
+stod Queued. ✅ **Samma eftermiddag stoppade Cowork det som fortfarande körde i de tolv** (Axel ville
+inte radera själv; `stonebite/cowork/11-dubbletter-stopp.txt`: nio Active-deployer borttagna via Railways
+API, tre hade inget igång, tranquil-insights volym orörd, de tre riktiga projekten kontrollerade Active).
+De tolv står kvar tomma och bygger inget — att radera dem är Axels klick, inte bråttom. Mätt efteråt:
+nästa push till deploy-grenen gick igenom direkt (v121 på alla sex). Något skapar fortfarande
 nya projekt ur repot, tredje gången — inte utrett. Räkna aldrig med att en push till
 deploy-grenen är live förrän `/healthz` svarar med markören.
 

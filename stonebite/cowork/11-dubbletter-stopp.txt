@@ -1,0 +1,33 @@
+✅ Körd av Cowork 2026-10-03 ~13:00 CEST (Axels rapport, efter prompt 10 samma förmiddag). Axel ville inte radera projekten själv ("det är läskigt för jag har ju massa grejer igång"), och Cowork raderar aldrig projekt — så den här prompten stoppar bara det som snurrade. Utfall: alla tolv dubbletter fanns, exakt stavade, ingen hade en GitHub-källa kvar. Nio deployer stoppade (hearty-youth, considerate-delight, pretty-quietude, tranquil-insight, delightful-serenity, sincere-wonder, reliable-vibrancy, thriving-compassion, kind-spirit — en Active var); tre hade inget som kördes (compassionate-sparkle bara gamla FAILED, disciplined-endurance, robust-liberation). Railway svarade `deploymentRemove: true` på varje; Cowork gjorde det via kontots API i fliken, inte i menyerna. tranquil-insights volym orörd. Efteråt: ingen av de tolv har Active/Building/Queued. Kontroll: robust-expression → PNL App store Active (11:35), strong-solace → yognftnfgn Active (11:42, nyare rader SKIPPED = pushar utan stonebite-filer). Sessionen mätte 13:1x CEST: alla sex StonePNL-tjänster svarar på /healthz (build `omsattning-per-timme-v121`, d8934c0 — en senare push till deploy-grenen gick igenom direkt, alltså är kön fri), sajten svarar på direktadressen och www (snapshot 11:13 UTC, boten skarpt på tre butiker). Projekten står kvar tomma och bygger inget; att radera dem är Axels klick och är inte bråttom. Dyker nya dubbletter upp: prompt 10 (koppla bort + avbryt kön) och sedan den här (stoppa det som kör).
+
+Stäng av de gamla kopiorna i mina tomma Railway-projekt. Radera INGENTING. Gör allt i den här fliken och fråga mig om inloggning om du behöver den.
+
+BAKGRUND.
+Mitt Railway-konto har tolv projekt som är dubbletter av repot Axel3738/yognftnfgn. Deras GitHub-källa är redan bortkopplad, så de bygger inget nytt, men i flera av dem står en gammal deploy och kör och drar lite pengar varje månad. Jag vill att den gamla deployen stoppas i varje dubblett. Själva projekten ska stå kvar.
+
+RÖR ALDRIG DE HÄR TRE, oavsett vad du hittar:
+  - robust-expression (StonePNL, min Shopify-app med sex tjänster och en Postgres)
+  - strong-solace (sajten stonebite.org)
+  - just-possibility (bygger en annan gren med flit)
+Ta ALDRIG bort ett projekt (Settings → Danger → Delete Project är förbjudet). Ta aldrig bort en volym. Koppla aldrig in en GitHub-källa.
+
+DE TOLV DUBBLETTERNA, exakt så här stavade:
+  hearty-youth, considerate-delight, pretty-quietude, compassionate-sparkle, tranquil-insight,
+  disciplined-endurance, delightful-serenity, sincere-wonder, reliable-vibrancy, robust-liberation,
+  thriving-compassion, kind-spirit
+Ett projekt som inte står i listan rör du inte alls, hur det än ser ut.
+
+STEG 1 — kontrollera varje dubblett.
+Öppna projektet. Öppna dess tjänst. Under Settings → Source ska det INTE finnas någon kopplad GitHub-källa. Finns det en: koppla bort den (Disconnect) först.
+
+STEG 2 — stoppa den gamla deployen.
+Öppna tjänstens flik Deployments. Står en deploy som Active eller Running: öppna dess tre-prickade meny och välj Remove. Bekräfta om Railway frågar. Ligger deployer i kö eller bygger: avbryt dem också. När fliken inte visar någon Active, Running, Building eller Queued deploy är projektet klart.
+
+STEG 3 — kontroll.
+Öppna robust-expression → PNL App store → Deployments och bekräfta att den senaste deployen fortfarande står som Active. Öppna strong-solace → yognftnfgn → Deployments och bekräfta samma sak. Rör inget där.
+
+RAPPORTERA TILL SIST, i den här ordningen:
+  - varje dubblett: namn, hade den en källa (ja/nej), hur många deployer du stoppade
+  - om något projekt i listan inte fanns, skriv det
+  - att robust-expression och strong-solace fortfarande har en Active deploy
+Gissa inte. Fungerar något inte, skriv exakt vad Railway visade. Skriv sedan "Railway dubbletter klart" i chatten med Claude.
