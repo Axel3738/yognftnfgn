@@ -112,6 +112,9 @@ const T = {
     // Varan passar inte det den ska sitta på (Micke 2026-09-23, motortäckningen "för tajt över motorkåpan"): bild på plats + mått eller modell, inte fraktetiketten.
     beklagarPassform: 'Tråkigt att höra att den inte passar som den ska. Det tittar vi på direkt.',
     fotonPassform: 'För att vi ska kunna lösa det snabbt: skicka gärna en bild på varan på plats där den inte passar, och gärna mått eller modell på det den ska sitta på, så har vi allt när vi tar det vidare.',
+    // Varan stämmer inte med bilden eller beskrivningen, delar saknas (Tony 2026-10-02, "finns inga band"): bild på varan, inte förpackningen och fraktetiketten.
+    beklagarAvviker: 'Tråkigt att höra att varan inte stämmer med det du beställde. Det tittar vi på direkt.',
+    fotonAvviker: 'För att vi ska kunna lösa det snabbt: skicka gärna en bild på varan som du fick den, gärna där det syns vad som skiljer från bilden eller beskrivningen, så har vi allt när vi tar det vidare.',
     fotonOrdernummer: 'Skriv gärna även ditt ordernummer i svaret, så hittar vi ordern direkt.',
     // Returen — VA:ns egna returmejl i Skickat (2026-09-16, 2026-09-14) som förlaga + Axels rad om ombud (2026-09-22).
     retur: (r) => [
@@ -187,6 +190,8 @@ const T = {
     fotonVara: 'For at vi skal kunne løse dette raskt: send gjerne et bilde eller en kort video av varen der feilen synes, så har vi alt når vi tar det videre.',
     beklagarPassform: 'Leit å høre at den ikke passer som den skal. Det ser vi på med en gang.',
     fotonPassform: 'For at vi skal kunne løse dette raskt: send gjerne et bilde av varen på plass der den ikke passer, og gjerne mål eller modell på det den skal sitte på, så har vi alt når vi tar det videre.',
+    beklagarAvviker: 'Leit å høre at varen ikke stemmer med det du bestilte. Det ser vi på med en gang.',
+    fotonAvviker: 'For at vi skal kunne løse dette raskt: send gjerne et bilde av varen slik du fikk den, gjerne der det synes hva som skiller seg fra bildet eller beskrivelsen, så har vi alt når vi tar det videre.',
     fotonOrdernummer: 'Skriv gjerne også ordrenummeret ditt i svaret, så finner vi bestillingen med en gang.',
     retur: (r) => [
       'Slik gjør du returen:',
@@ -258,6 +263,8 @@ const T = {
     fotonVara: 'For at vi kan løse det hurtigt: send gerne et billede eller en kort video af varen, hvor fejlen kan ses, så har vi det hele, når vi går videre med sagen.',
     beklagarPassform: 'Ærgerligt at høre, at den ikke passer, som den skal. Det kigger vi på med det samme.',
     fotonPassform: 'For at vi kan løse det hurtigt: send gerne et billede af varen på plads, hvor den ikke passer, og gerne mål eller model på det, den skal sidde på, så har vi det hele, når vi går videre med sagen.',
+    beklagarAvviker: 'Ærgerligt at høre, at varen ikke stemmer med det, du bestilte. Det kigger vi på med det samme.',
+    fotonAvviker: 'For at vi kan løse det hurtigt: send gerne et billede af varen, som du modtog den, gerne hvor man kan se, hvad der afviger fra billedet eller beskrivelsen, så har vi det hele, når vi går videre med sagen.',
     fotonOrdernummer: 'Skriv gerne også dit ordrenummer i svaret, så finder vi ordren med det samme.',
     retur: (r) => [
       'Sådan gør du med returen:',
@@ -329,6 +336,8 @@ const T = {
     fotonVara: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tai lyhyt video tuotteesta niin, että vika näkyy, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     beklagarPassform: 'Ikävä kuulla, ettei se sovi niin kuin pitäisi. Katsomme asian heti.',
     fotonPassform: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tuotteesta paikallaan siitä kohdasta, jossa se ei sovi, ja mielellään mitat tai malli siitä, mihin sen pitäisi sopia, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
+    beklagarAvviker: 'Ikävä kuulla, ettei tuote vastaa tilaamaasi. Katsomme asian heti.',
+    fotonAvviker: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tuotteesta sellaisena kuin sait sen, mielellään niin, että ero kuvaan tai kuvaukseen näkyy, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     fotonOrdernummer: 'Kirjoita vastaukseen myös tilausnumerosi, niin löydämme tilauksen heti.',
     retur: (r) => [
       'Näin teet palautuksen:',
@@ -400,6 +409,8 @@ const T = {
     fotonVara: 'So we can resolve this quickly: please send a photo or a short video of the item showing the fault, so we have everything when we take it further.',
     beklagarPassform: 'Sorry to hear it does not fit as it should. We will look into it straight away.',
     fotonPassform: 'So we can resolve this quickly: please send a photo of the item in place where it does not fit, and ideally the measurements or model of what it should fit, so we have everything when we take it further.',
+    beklagarAvviker: 'Sorry to hear the item is not what you ordered. We will look into it straight away.',
+    fotonAvviker: 'So we can resolve this quickly: please send a photo of the item as you received it, ideally showing what differs from the picture or the description, so we have everything when we take it further.',
     fotonOrdernummer: 'Please also include your order number in your reply, so we can find the order straight away.',
     retur: (r) => [
       'Here is how to return it:',
@@ -731,6 +742,7 @@ const FELLEVERANS = /beställde .{0,40}fick|fick fel|skickat fel|skickade fel|le
 function fotonRader(t, fotonTyp) {
   if (fotonTyp === 'vara') return [t.beklagarVara, t.fotonVara];
   if (fotonTyp === 'passform') return [t.beklagarPassform, t.fotonPassform];
+  if (fotonTyp === 'avviker') return [t.beklagarAvviker, t.fotonAvviker];
   return [t.beklagar, t.foton];
 }
 
@@ -741,16 +753,19 @@ function fotonRader(t, fotonTyp) {
  * bild eller kort video på felet. 'passform' = varan passar inte det den ska sitta på och
  * inget om transporten eller fel vara skickad ⇒ bild på plats + mått eller modell (Micke
  * 2026-09-23, bottens första skarpa svar bad om fraktetiketten för ett överdrag som var för
- * tajt). 'leverans' = allt annat (fel vara, för få, skadat i transporten, oklart) ⇒
- * "leveransen", varan + förpackningen + fraktetiketten (SOP 05/08).
- * Osäkert ⇒ 'leverans', det är det VA:n alltid bett om. Ren.
+ * tajt). 'avviker' = varan stämmer inte med bilden eller beskrivningen, delar saknas, utan
+ * ett ord om transporten eller en felskickad vara ⇒ bild på varan som den kom (Tony
+ * 2026-10-02: "stämmer inte med bilden, finns inga band" fick förpackningen och
+ * fraktetiketten, som inte har med saken att göra). 'leverans' = allt annat (fel vara
+ * skickad, för få, skadat i transporten, oklart) ⇒ "leveransen", varan + förpackningen +
+ * fraktetiketten (SOP 05/08). Osäkert ⇒ 'leverans', det är det VA:n alltid bett om. Ren.
  */
 export function fotonTypFor({ klass, text = '' } = {}) {
   const ids = (klass?.alla ?? []).map((a) => a.id);
   const s = String(text ?? '');
   if (FELLEVERANS.test(s)) return 'leverans';
   if (PASSFORM.test(s) && !TRANSPORTSKADA.test(s)) return 'passform';
-  if (ids.includes('fel_vara')) return 'leverans';
+  if (ids.includes('fel_vara')) return TRANSPORTSKADA.test(s) || /för få|fel antal|saknas (en|ett|i paketet)|bara en av|fick bara|wrong quantity|only received/i.test(s) ? 'leverans' : 'avviker';
   if (ids.includes('skadad_defekt') && FUNKTIONSFEL.test(s) && !TRANSPORTSKADA.test(s)) return 'vara';
   return 'leverans';
 }

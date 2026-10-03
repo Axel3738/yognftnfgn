@@ -911,7 +911,11 @@ test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild 
   assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Bränslepump', text: 'Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?' }), text: 'den läcker och pumpar dåligt' }), 'vara');
   assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Trasig vara', text: 'borsten kom fram trasig och fungerar inte' }), text: 'borsten kom fram trasig och fungerar inte' }), 'leverans', '"kom fram" är transporten');
   assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'förpackningen var krossad och lampan fungerar inte' }), 'leverans', 'förpackningen nämnd ⇒ transportskada');
-  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }, { id: 'skadad_defekt' }] }, text: 'läcker' }), 'leverans', 'fel vara ⇒ alltid leveransbilderna');
+  // Sedan 2026-10-03 (Tony, "stämmer inte med bilden, finns inga band"): fel vara utan transport eller felleverans ⇒ 'avviker', bild på varan som den kom.
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }, { id: 'skadad_defekt' }] }, text: 'läcker' }), 'avviker', 'fel vara utan transportord ⇒ bild på varan, inte fraktetiketten');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }] }, text: 'Båtöverdraget jag beställde stämmer inte med bilden som visas. Finns inga band med för att dra runt motorn' }), 'avviker');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }] }, text: 'Fick bara en av de två jag beställde' }), 'leverans', 'fel antal ⇒ leveransbilderna (SOP 07)');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }] }, text: 'Paketet kom fram och innehållet stämmer inte' }), 'leverans', 'transporten nämnd ⇒ leverans');
   assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'the pump leaks and stopped working' }), 'vara');
   assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'trasig' }), 'leverans', 'oklart ⇒ leverans');
   assert.equal(fotonTypFor({}), 'leverans');
@@ -1090,16 +1094,23 @@ test('kalibrering 2026-09-22: kategorin ensam gör inget mejl argt — lugnt "al
 });
 
 test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + returinformationen; opostad order ⇒ dagarna i klartext; utan returadress ⇒ VA:n', async () => {
-  // Peter ("Aloha"): fyra utropstecken ⇒ ARG ("besviken" räknas inte längre), "stämmer ej in på beskrivningen" ⇒ som_pa_bilden, "vill reklamera/skicka tillbaka … smidig retur?" ⇒ returblocket. Ingen bildförfrågan för som_pa_bilden sedan 2026-09-29.
+  // Peter ("Aloha"): fyra utropstecken ⇒ ARG ("besviken" räknas inte längre), "stämmer ej in på beskrivningen" ⇒ som_pa_bilden. Ingen bildförfrågan för som_pa_bilden sedan 2026-09-29.
+  // "vill reklamera/skicka tillbaka … smidig retur?" gav returblocket till 2026-10-03 — sedan Axels order den dagen är det en REKLAMATION, och då får kunden aldrig
+  // "Returfrakten står du själv för": inget returblock, VA:n ordnar returen.
   const b1 = new FalskBrevlada({ INBOX: [{ uid: 120, ra: ra({ fran: 'Peter Claesson <aloha@x.se>', amne: 'Retur', text: 'Hej, fick min order i förra veckan! Är detta ett skämt, stämmer ej in på beskrivningen! Jag är väldigt besviken och vill reklamera/skicka tillbaka varorna! Hur gör vi enklast för en smidig retur?', id: '<w120@x.se>' }) }] });
   const r1 = await kor(b1);
-  assert.deepEqual([r1.rader[0].hink, r1.rader[0].x, r1.rader[0].retur, r1.rader[0].flyttad], [HINK.ARG, 'som_pa_bilden', true, 'VA-PRIO']);
+  assert.deepEqual([r1.rader[0].hink, r1.rader[0].x, r1.rader[0].retur, r1.rader[0].flyttad], [HINK.ARG, 'som_pa_bilden', false, 'VA-PRIO']);
   const t1 = b1.utkast()[0].text;
   assert.match(t1, /^Hej Peter!\n\nJag förstår helt din frustration\. En produkt som inte alls ser ut som på bilden är helt oacceptabelt/);
-  assert.match(t1, /\n\nSå här gör du returen:\n1\. Packa varan/);
-  assert.match(t1, /\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\n/);
+  assert.equal(/Så här gör du returen|Returfrakten står du själv för|STONEBITE ECOM AB/.test(t1), false, 'reklamation ⇒ inget returblock med egen frakt');
   assert.equal(/bild på varan|mer information/.test(t1), false);
   assert.equal(harForbjudet(t1), false);
+  // …men en arg kund som bara ÅNGRAR sig och vill returnera får returblocket som förut.
+  const b1b = new FalskBrevlada({ INBOX: [{ uid: 123, ra: ra({ fran: 'Peter Claesson <aloha@x.se>', amne: 'Retur', text: 'Hej, fick min order i förra veckan!!! Ni är så oseriösa, tre dagar utan svar!!! Jag vill skicka tillbaka varorna, hur gör vi enklast för en smidig retur?', id: '<w123@x.se>' }) }] });
+  const r1b = await kor(b1b);
+  assert.deepEqual([r1b.rader[0].hink, r1b.rader[0].retur], [HINK.ARG, true]);
+  assert.match(b1b.utkast()[0].text, /\n\nSå här gör du returen:\n1\. Packa varan/);
+  assert.match(b1b.utkast()[0].text, /\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\n/);
   // Opostad order 13 dagar + arg ⇒ "legat opostad i 13 dagar"; faktan är spärrad (staltFakta) så inget läge-stycke.
   const DAG = 86_400_000;
   const ordrar = { ...ORDRAR, 1080: { id: 8, name: '#1080', order_number: 1080, email: 'sen@x.se', created_at: new Date(NU.getTime() - 13 * DAG).toISOString(), financial_status: 'paid', fulfillment_status: null, customer: { first_name: 'Sen' }, fulfillments: [] } };
@@ -1362,5 +1373,59 @@ test('Axels granskning 2026-09-29 av de 16 skarpa svaren: förköpsfråga, byte 
       assert.equal(harForbjudet(t), false, `${s}: ${t}`);
       assert.equal(/[—–]/.test(t), false, `${s}: tankstreck i ${t}`);
     }
+  }
+});
+
+test('Axels granskning 2026-10-03 av de åtta svaren 1–2/10: reklamation får aldrig returmallen, förköp om en annan butik är inte ARG, varan tillbaka hos fraktbolaget ⇒ VA:n, HTML-citat klipps', async () => {
+  const h = (amne, text, fran = 'K <k@x.se>') => hinka({ mejl: tolkaMejl(ra({ fran, amne, text, id: '<o@x.se>' }), { uid: 1 }), brand: KONFIG });
+  // Thomas (1/10): "känner mig väldigt lurad" ⇒ ARG, rätt som förut.
+  assert.equal(h('Nytt kundmeddelande', 'Vi har fått en vanlig rak pressening med ett par snörstumpar inte som på bilden med långa band med klämmor. Jag känner mig väldigt lurad.').hink, HINK.ARG);
+  // Christer (2/10): skeptisk fråga FÖRE köp om Temus "rena skräpet" ⇒ inte ARG, VA:n.
+  const christer = h('Nytt kundmeddelande', 'Jag hoppas att detta huvagnsskydd inte är samma som Temu säljer för ca300 kr som jag redan provat som är rena skräpet\nMvh/Christer Lindgren');
+  assert.equal(christer.hink, HINK.SVAR);
+  assert.match(christer.orsak, /fråga före köp/);
+  // …och ett argt ord helt utan ärende (inget ordernummer, ingen order, ingen vara, inget klagomål) går också till VA:n.
+  const utanArende = h('Fråga', 'Era annonser är rena skräpet, ser dem överallt.');
+  assert.deepEqual([utanArende.hink, /inget ärende hos oss/.test(utanArende.orsak)], [HINK.SVAR, true]);
+  // …men ett argt ord MED ett ärende är fortfarande ARG (kalibreringen från 2026-09-21 står kvar).
+  assert.equal(h('Vad är det här för skit?', 'Produkten ser inte alls ut som på bilden. Det här betalar jag inte för.').hink, HINK.ARG);
+  assert.equal(h('Skräp', 'Fick paketet i dag och det är rent skräp.').hink, HINK.ARG);
+  // Lars (2/10): trasigt vid uthämtningen, ombudet sände tillbaka till DHL ⇒ ingen bildförfrågan, VA:n.
+  const lars = h('Nytt kundmeddelande', 'Tak överdraget till husvagn var trasigt vid uthämtning dhl har skadat det,Ica Sösdala nära har sänt tillbaka till dhl vad gör jag nu\n0703195169 mobil');
+  assert.equal(lars.hink, HINK.SVAR);
+  assert.match(lars.orsak, /tillbaka hos fraktbolaget/);
+  assert.equal(h('Trasigt', 'Paketet kom fram krossat och borsten var trasig.').typ, 'foton', 'en trasig vara kunden HAR får bildförfrågan som förut');
+  // Johan #7884 (2/10): "passar inte enligt den beskrivning som ges" + "hur detta görs" ⇒ reklamation, inte returmallen med egen frakt.
+  const johan = h('Retur av order - passar ej', 'Hej\n\nJag beställde termoskydd till en Fiat Ducato men produkten passar inte enligt den beskrivning som ges på hemsidan så behöver tyvärr göra en retur.\nTacksam om ni vill återkoppla med instruktioner om hur detta görs.\nMitt ordernummer är 7884.\n\nMed vänlig hälsning\nJohan Malm');
+  assert.equal(johan.hink, HINK.SVAR);
+  assert.match(johan.orsak, /reklamation/);
+  // Annica #7361 (2/10): "Reklamation … felvänt … felsytt … Hur gör jag för att returnera" ⇒ samma.
+  const annica = h('Reklamation order #7361', 'Hej.\nTyvärr så passar inte detta sol-/kylskydd till våran husbil. Trots att vi mätte bilen noggrant innan vi beställde det. Och ett av kardborrbanden är också felvänt när det syddes fast.\nVi satt dit skyddet, knäppte bilder och tog bort det igen när vi insåg att det inte passade och att det var felsytt.\n\nHur gör jag för att returnera skyddet?\n\nMvh\nAnnica Norling');
+  assert.equal(annica.hink, HINK.SVAR);
+  assert.match(annica.orsak, /reklamation/);
+  // Karl-Arne #7425 (2/10): mätte fel, "passar inte alls", vill returnera ⇒ returmallen som förut (ångerrätt, kunden betalar frakten).
+  assert.deepEqual([h('Retur', 'Hej! Jag har idag mottagit order #7425 och provat det på min husbil Fiat Adria coral 670 årsmodell 2017 med negativt resultat. Passar inte alls!\nJag vill returnera objektet.\nMed vänliga hälsningar\nKarl-Arne').hink, h('Retur', 'Hej! Jag har idag mottagit order #7425 och provat det på min husbil med negativt resultat. Passar inte alls!\nJag vill returnera objektet.').typ], [HINK.ENKEL, 'retur']);
+  // Tony (2/10): lugnt "stämmer inte med bilden, finns inga band" ⇒ ENKEL foton med bild på VARAN, inte förpackning och fraktetikett.
+  const b1 = new FalskBrevlada({ INBOX: [{ uid: 140, ra: ra({ fran: 'Tony <tony@x.se>', amne: 'Nytt kundmeddelande', text: 'Båtöverdraget jag beställde stämmer inte med\nBilden som visas\nFinns inga band med för att dra runt motorn\nMed vänlig hälsning, Tony', id: '<w140@x.se>' }) }] });
+  const r1 = await kor(b1);
+  assert.deepEqual([r1.rader[0].hink, r1.rader[0].typ, r1.rader[0].fotonTyp], [HINK.ENKEL, 'foton', 'avviker']);
+  const t1 = b1.utkast()[0].text;
+  assert.match(t1, /Tråkigt att höra att varan inte stämmer med det du beställde\. Det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan som du fick den/);
+  assert.equal(/förpackningen|fraktetiketten/.test(t1), false);
+  // Coco #4799 (1/10, Matstrumpor): ett HTML-mejl utan plain-del, Shopifys orderbekräftelse i ett blockquote under Apple Mails "21 sep. 2026 kl. 11:42 skrev …:" —
+  // utropstecknen i "Tack för din order!" gjorde en lugn ångerfråga ARG och svaret sa "levererat, kolla brevlådan". Nu klipps citatet och mejlet går till VA:n.
+  const html = '<html><body><div>Hej! Om jag &aring;ngrat mitt k&ouml;p, hur g&aring;r jag till v&auml;ga d&aring;? Tack!</div><div>Solsken fr&aring;n Coco</div><br><div>21 sep. 2026 kl. 11:42 skrev Matstrumpor.se &lt;store+1@t.shopifyemail.com&gt;:</div><br><blockquote type="cite"><div><p>Tack f&ouml;r din order!</p><p>Order #1042</p><p>TACK F&Ouml;R DIN ORDER!</p><p>Ladda ner f&ouml;r att sp&aring;ra med</p><p>ORDERSAMMANFATTNING</p></div></blockquote></body></html>';
+  const raHtml = Buffer.from(`From: Coco <coco@x.se>\r\nTo: ${SUPPORT}\r\nSubject: Re: Order #1042 bekräftad\r\nDate: ${new Date(NU.getTime() - 3_600_000).toUTCString()}\r\nMessage-ID: <w141@x.se>\r\nContent-Type: text/html; charset=utf-8\r\n\r\n${html}\r\n`, 'utf8').toString('latin1');
+  const coco = tolkaMejl(raHtml, { uid: 141 });
+  assert.equal(/Tack för din order|ORDERSAMMANFATTNING|skrev Matstrumpor/.test(coco.text), false, 'citatet och Apple Mails citathuvud är borta ur texten');
+  assert.match(coco.text, /^Hej! Om jag ångrat mitt köp, hur går jag till väga då\? Tack!\nSolsken från Coco$/);
+  const hc = hinka({ mejl: coco, brand: KONFIG });
+  assert.equal(hc.hink, HINK.SVAR, `${hc.orsak}`);
+  assert.equal(/utropstecken/.test(hc.orsak), false);
+  // Alla fem språk bär de nya bildmeningarna, utan tankstreck och utan löften.
+  for (const s of SPRAK) {
+    const t = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Tony', fotonTyp: 'avviker' }).text;
+    assert.equal(harForbjudet(t), false, s);
+    assert.equal(/[—–]/.test(t), false, s);
   }
 });

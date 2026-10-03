@@ -27,7 +27,7 @@
 //   • ARG vinner över ENKEL: en arg WISMO får den lugnande raden, inte en
 //     spårningslänk — spårningslänken kommer i VA:ns svar.
 
-import { klassificera, normalisera } from '../klassificering.mjs';
+import { klassificera, normalisera, KATEGORI } from '../klassificering.mjs';
 import { namnerHamtaUt } from './svar.mjs';
 import { arSystem, arEgen } from '../arenden.mjs';
 
@@ -221,7 +221,8 @@ const HAR_VARAN = ['fick', 'fått', 'kom (fram|hem|idag|i dag|igår|i går)', 'l
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Frågan före köp: garanti, passform, vilken variant, "innan jag beställer". sv/nb/da/fi/en.
-const FORKOP_FRAGA = /garanti|warranty|guarantee|passar (den|det|de|dom|detta|dessa) (till|på|min|mitt|mina|en|ett)|skulle (den|det) passa|kommer (den|det) (att )?passa|vilken (storlek|modell|variant|färg|version)|vilket (överdrag|skydd|alternativ)|(skall|ska) jag välja|rekommenderar ni|finns (den|det|de) i|har ni (den|det|de|någon|några|nån)|innan jag (beställer|köper)|funderar på att (köpa|beställa)|vad kostar|går den att|passer (den|det) (til|på)|hvilken (størrelse|modell)|anbefaler dere|før jeg bestiller|sopiiko|mikä koko|ennen kuin tilaan|does it fit|will it fit|which (size|model)|before (i|we) order|before ordering|do you (have|sell)|is it (suitable|compatible)/i;
+// Christer 2026-10-02: "hoppas att detta huvagnsskydd inte är samma som Temu säljer … rena skräpet" — en skeptisk fråga före köp om en ANNAN butiks vara fick eskaleringsmallen för ordet skräp.
+const FORKOP_FRAGA = /garanti|warranty|guarantee|passar (den|det|de|dom|detta|dessa) (till|på|min|mitt|mina|en|ett)|skulle (den|det) passa|kommer (den|det) (att )?passa|vilken (storlek|modell|variant|färg|version)|vilket (överdrag|skydd|alternativ)|(skall|ska) jag välja|rekommenderar ni|finns (den|det|de) i|har ni (den|det|de|någon|några|nån)|innan jag (beställer|köper)|funderar på att (köpa|beställa)|vad kostar|går den att|hoppas (att )?(detta|den|det|era?|ni) |(samma|likadan|lika dålig|samma skräp) som .{0,40}(temu|wish|aliexpress|amazon|ebay|shein|biltema|jula|clas ohlson|rusta)|passer (den|det) (til|på)|hvilken (størrelse|modell)|anbefaler dere|før jeg bestiller|sopiiko|mikä koko|ennen kuin tilaan|does it fit|will it fit|which (size|model)|before (i|we) order|before ordering|do you (have|sell)|is it (suitable|compatible)/i;
 // Ett klagomål på en vara kunden har — då är det aldrig en fråga före köp.
 const KLAGOMAL = /trasig|sönder|defekt|fungerar (inte|ej)|funkar (inte|ej)|saknas|fel (vara|produkt|storlek|färg|antal)|ser (inte|ej) (alls )?ut som|inte som på bilden|stämmer (inte|ej)|passar (inte|ej)|för (liten|litet|små|stor|stora|stort)|skadad|reklam|ødelagt|virker ikke|passer ikke|i stykker|rikki|ei toimi|ei sovi|broken|damaged|does not (work|fit)|doesn.t (work|fit)|wrong (item|size|product)|not as (pictured|described)|missing/i;
 
@@ -234,6 +235,45 @@ export function arForkop({ klass, amne = '', text = '' } = {}) {
   if ([...HAR_ORDER, ...HAR_VARAN].some((re) => re.test(a) || re.test(t))) return false;
   if (KLAGOMAL.test(allt)) return false;
   return klass?.kategori === 'produktfraga' || FORKOP_FRAGA.test(allt);
+}
+
+/**
+ * Finns det över huvud taget ett ÄRENDE hos oss i mejlet — ett ordernummer, en order,
+ * en mottagen vara, ett klagomål, en kategori som förutsätter ett köp, eller en tråd
+ * som väntat på svar? Utan det kan mejlet inte vara argt PÅ OSS. Ren.
+ */
+export function harArende({ klass, amne = '', text = '', trad = null } = {}) {
+  if (klass?.ordernummer?.length) return true;
+  const a = normalisera(amne);
+  const t = normalisera(text);
+  if ([...HAR_ORDER, ...HAR_VARAN].some((re) => re.test(a) || re.test(t))) return true;
+  if (KLAGOMAL.test(`${a}\n${t}`)) return true;
+  if ((klass?.alla ?? []).some((x) => (KATEGORI[x.id]?.vikt ?? 0) >= 2)) return true;
+  return Boolean(trad && trad.antalInkommande >= 3);
+}
+
+// Reklamation: varan är fel, trasig, felsydd eller stämmer inte med bilden/beskrivningen.
+// Då är returen inte kundens ångerrätt utan vårt fel, och "Returfrakten står du själv
+// för" får aldrig gå ut (Axels order 2026-10-03 efter Johan #7884 "passar inte enligt
+// beskrivningen" och Annica #7361 "Reklamation … felsytt kardborreband": båda fick
+// returmallen med egen frakt). Ett bart "passar inte" är INTE reklamation (Karl-Arne
+// #7425 mätte fel och får returmallen som förut).
+const REKLAMATION = /reklam|trasig|sönder|defekt|skadad|skadat|felsy|fel ?(vara|produkt|artikel|modell|färg|storlek)|fick fel|skickat fel|skickade fel|levererade fel|inte som på bild|ser (inte|ej) (alls )?ut som|stämmer (inte|ej)|(enligt|mot|med) (den |det |er |era |hemsidans |sajtens )?(beskrivning|annons|bild|produktbild|specifikation)|(avviker|skiljer sig) från|saknas|fattas|saknar (band|delar|rem|spänn|kläm)|inga band|ødelagt|i stykker|feil (vare|produkt)|stemmer ikke|ikke som på bild|forkert (vare|produkt)|rikki|väärä (tuote|koko)|ei vastaa|not as (described|pictured|advertised)|wrong (item|product|size|colou?r)|broken|damaged|defective|faulty|missing|does not match|doesn.t match|nothing like/i;
+
+/** Är mejlet en reklamation (fel, trasig, felsydd eller avvikande vara), inte en ångerretur? Ren. */
+export function arReklamation({ klass, amne = '', text = '' } = {}) {
+  if ((klass?.alla ?? []).some((x) => x.id === 'skadad_defekt')) return true;
+  return REKLAMATION.test(`${normalisera(amne)}\n${normalisera(text)}`);
+}
+
+// Kunden HAR ingen vara längre: paketet gick tillbaka till fraktbolaget eller avsändaren.
+// Lars 2026-10-02 ("Ica Sösdala … har sänt tillbaka till dhl, vad gör jag nu") ombads fota
+// ett paket han aldrig fick ut. Då finns inget att fota — bara VA:n kan reda ut det.
+const VARAN_BORTA = /(sänt|skickat|skickade|sände|skicka[ts]?|gått|gick|går|returnerat|returnerade|lämnat|lämnade|åkt|åkte) (det |den |paketet |varan |tillbaka |åter |i retur )*(tillbaka |i retur |retur |åter )(till )?(dhl|postnord|post ?nord|bring|budbee|instabox|early ?bird|schenker|ups|fedex|citymail|fraktbolaget|avsändaren|avsändare|er|dig|lagret|kina)|(gått|går|gick) i retur|retur(nerat|nerad|nerats)? till (avsändaren|er|dig)|tillbaka till avsändaren|returned to (the )?sender|sent (it |the parcel |the package )?back to (the (carrier|courier|sender)|dhl|postnord|you)|gikk i retur|sendt tilbake til|sendt tilbage til|returneret til afsender|palautettu lähettäjälle/i;
+
+/** Är varan borta hos kunden (tillbaka till fraktbolaget eller avsändaren)? Ren. */
+export function arVaranBorta(text) {
+  return VARAN_BORTA.test(normalisera(text));
 }
 
 /** Är mejlet ett byte eller en storleksfråga på en levererad vara (SOP 21)? Ren. */
@@ -250,10 +290,13 @@ export function enkelTyp({ klass, amne = '', text = '' }) {
   const t = normalisera(text);
   const traff = (lista) => lista.some((re) => re.test(a) || re.test(t));
   const alla = new Set((klass.alla ?? []).map((x) => x.id));
-  // Returen först: kunden som vill returnera och frågar hur får returinformationen (Axels beslut 2026-09-22) — inte ett byte, inte en tvist.
-  if (alla.has('retur_angerratt') && !alla.has('chargeback_hot') && !arByte({ klass, amne, text }) && arReturfraga({ amne, text })) return 'retur';
+  // Returen först: kunden som vill returnera och frågar hur får returinformationen (Axels beslut 2026-09-22) — inte ett byte, inte en tvist,
+  // och ALDRIG en reklamation (Axels order 2026-10-03): fel eller trasig vara med returönskan går till VA:n, som ordnar returen på butikens bekostnad.
+  if (alla.has('retur_angerratt') && !alla.has('chargeback_hot') && !arByte({ klass, amne, text }) && arReturfraga({ amne, text }) && !arReklamation({ klass, amne, text })) return 'retur';
   if ([...alla].some((id) => ALDRIG_ENKEL.has(id))) return null;
   if (arByte({ klass, amne, text })) return null;
+  // Paketet gick tillbaka till fraktbolaget eller avsändaren: kunden har inget att fota (Lars 2026-10-02) — VA:n.
+  if (arVaranBorta(`${amne}\n${text}`)) return null;
   // SOP 05/08/07/15: skadad, defekt, fel eller för få varor ⇒ första svaret ber om bilderna — bara när kunden HAR varan (arForkop).
   if ((alla.has('skadad_defekt') || alla.has('fel_vara')) && !arForkop({ klass, amne, text })) return 'foton';
   // Kunden står hos ombudet utan kod (Mats 2026-09-25): läget ur spårningen + vad hen gör hos ombudet.
@@ -338,11 +381,19 @@ export function hinka({ mejl, brand, trad = null } = {}) {
   }
 
   const ilska = arArg({ klass, amne, text, trad });
+  // Ett argt ORD utan något ärende hos oss (inget ordernummer, ingen order, ingen mottagen vara, inget
+  // klagomål) är inte ilska på oss: Christer 2026-10-02 kallade Temus husvagnsskydd "rena skräpet" och
+  // frågade om vårt är samma — boten svarade "det du beskriver är helt oacceptabelt". Går till VA:n.
+  if (ilska.arg && ilska.orsaker.every((o) => o === 'argt ordval') && !harArende({ klass, amne, text, trad })) {
+    return { ...bas, hink: HINK.SVAR, orsak: 'argt ordval men inget ärende hos oss (inget ordernummer, ingen order, ingen mottagen vara, inget klagomål) — fråga före köp eller om en annan butik, VA:n (Axels beslut 2026-10-03)' };
+  }
   if (ilska.arg) return { ...bas, hink: HINK.ARG, orsak: ilska.orsaker.join(', '), argOrsaker: ilska.orsaker };
 
   const typ = enkelTyp({ klass, amne, text });
   if (typ) return { ...bas, hink: HINK.ENKEL, typ, orsak: `enkel fråga: ${typ}` };
   if (arByte({ klass, amne, text })) return { ...bas, hink: HINK.SVAR, orsak: 'byte eller storlek (SOP 21) — VA:n beslutar' };
+  if (arVaranBorta(`${amne}\n${text}`)) return { ...bas, hink: HINK.SVAR, orsak: 'paketet är tillbaka hos fraktbolaget eller avsändaren — kunden har ingen vara att fota, VA:n reder ut det (Axels beslut 2026-10-03)' };
+  if (arReturfraga({ amne, text }) && arReklamation({ klass, amne, text })) return { ...bas, hink: HINK.SVAR, orsak: 'reklamation (fel, trasig eller avvikande vara) med returönskan — VA:n ordnar returen, kunden betalar aldrig returfrakten vid fel vara (Axels beslut 2026-10-03)' };
   return { ...bas, hink: HINK.SVAR, orsak: `kategori ${klass.kategori} — VA:n` };
 }
 
