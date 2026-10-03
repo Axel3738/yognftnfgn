@@ -2801,10 +2801,14 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   Lista: `node tools/lib/ops-hubbar.mjs`. ⚠️ **Fish rod holder
   `3c3270ab-…` är Bäverbutikens sedan 2026-09-29** (Axels ord: "märk om
   TackleBay-skiten till Bäverbutiken"): id:t är borttaget ur
-  `tacklebay/fiskespohallare-4-pack` (flytten i `notion.overford`), och de
-  elva gamla `TackleBayRod_`-raderna med tacklebay.se är blockerade i
-  `products/prefix-alias.json` → `blockerade`. De laddas aldrig upp och rörs
-  aldrig.
+  `tacklebay/fiskespohallare-4-pack` (flytten i `notion.overford`). De gamla
+  `TackleBayRod_`-raderna var blockerade 29/9–3/10; **sedan 2026-10-03**
+  (Axel: "Dom ska upp på bäverbutiken i bäverbutikens kampanj ju?") laddas de
+  upp i Fiskespöhållaren via `alias.tacklebayrod` i
+  `products/prefix-alias.json`, med tvingad landningssida
+  `baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring` (briefens
+  tacklebay.se gäller aldrig; `notion-till-meta.mjs` vägrar allt utanför
+  baverbutiken.se), och TackleBay räknas som butiksnamn i slutkortskollen.
 - **Matstrumpors hub undantas nu också per id** (2026-09-21). `Matstrumpor
   creative hub` `3a7270ab-…` sågs av samma integration som Bäverbutikens och
   låg därmed i `/notionkorning`s kö. Den räddades bara av att inget
