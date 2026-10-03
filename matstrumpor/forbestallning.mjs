@@ -386,11 +386,25 @@ export async function kundvy({ logg = console.log } = {}) {
   let pw;
   try { pw = await import('playwright'); } catch { pw = await import('/opt/node-tools/node_modules/playwright/index.mjs'); }
   const b = await pw.chromium.launch({ args: ['--ignore-certificate-errors'] });
+  // Alla fjorton språk i sitt land, plus Norges B-sida på egen domän.
+  const P = '/products/sushi-strumpor';
   const prov = [
-    ['sv', 'https://matstrumpor.se/products/sushi-strumpor?country=SE'],
-    ['en', 'https://matstrumpor.com/products/sushi-strumpor?country=US'],
-    ['de', 'https://matstrumpor.com/de/products/sushi-strumpor?country=DE'],
-    ['ja', 'https://matstrumpor.com/ja/products/sushi-strumpor?country=JP'],
+    ['sv', `https://matstrumpor.se${P}?country=SE`],
+    ['nb', `https://matstrumpor.com/nb${P}?country=NO`],
+    ['nb', `https://matstrumpor.no${P}?country=NO`],
+    ['da', `https://matstrumpor.com/da${P}?country=DK`],
+    ['fi', `https://matstrumpor.com/fi${P}?country=FI`],
+    ['de', `https://matstrumpor.com/de${P}?country=DE`],
+    ['fr', `https://matstrumpor.com/fr${P}?country=FR`],
+    ['nl', `https://matstrumpor.com/nl${P}?country=NL`],
+    ['es', `https://matstrumpor.com/es${P}?country=ES`],
+    ['it', `https://matstrumpor.com/it${P}?country=IT`],
+    ['pl', `https://matstrumpor.com/pl${P}?country=PL`],
+    ['pt-PT', `https://matstrumpor.com/pt-pt${P}?country=PT`],
+    ['en', `https://matstrumpor.com${P}?country=US`],
+    ['en', `https://matstrumpor.com${P}?country=GB`],
+    ['ja', `https://matstrumpor.com/ja${P}?country=JP`],
+    ['zh-TW', `https://matstrumpor.com/zh-tw${P}?country=TW`],
   ];
   const texter = lasTexter();
   let ok = 0;
@@ -403,10 +417,11 @@ export async function kundvy({ logg = console.log } = {}) {
     const lev = await sida.locator('[data-ms-delivery-range]').first().innerText().catch(() => null);
     const lang = await sida.evaluate(() => document.documentElement.lang);
     // Rubriken visas i versaler (text-transform), så jämför utan skiftläge.
-    const ratt = Boolean(ruta && ruta.includes(texter[s].paket.rubrik_igen) && knapp && knapp.trim() === texter[s].paket.knapp);
-    logg(`${ratt ? '✓' : '✗'} ${s} (lang=${lang}): ${ruta ? ruta.replace(/\s+/g, ' ') : 'INGEN RUTA'} | knapp: ${knapp?.trim()} | leverans: ${lev}`);
+    const delar = texter[s].paket.rubrik_igen.split(/(?<=[.。])\s*/).map((x) => x.replace(/[.。]$/, '').trim().toLowerCase()).filter(Boolean);
+    const ratt = Boolean(ruta && delar.every((d) => ruta.toLowerCase().includes(d)) && lang.toLowerCase() === s.toLowerCase() && knapp && knapp.trim() === texter[s].paket.knapp);
+    logg(`${ratt ? '✓' : '✗'} ${s} ${new URL(url).host}${new URL(url).search} (lang=${lang}): ${ruta ? ruta.replace(/\s+/g, ' ') : 'INGEN RUTA'} | knapp: ${knapp?.trim()} | leverans: ${lev}`);
     if (ratt) ok++;
-    await sida.screenshot({ path: join(HAR, 'output', 'forbestallning', `kundvy-${s}.png`), fullPage: false });
+    await sida.screenshot({ path: join(HAR, 'output', 'forbestallning', `kundvy-${s}-${new URL(url).host}${new URL(url).searchParams.get('country')}.png`), fullPage: false });
     if (s === 'sv') {
       // Korgen: lägg en låda i vagnen med Shopifys eget API och läs korgsidan.
       const korg = await sida.evaluate(async () => {
