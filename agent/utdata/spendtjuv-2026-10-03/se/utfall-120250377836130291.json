@@ -1,0 +1,70 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250377855700291",
+      "namn": "Värmesulorna_PD_1_H2",
+      "status": "ACTIVE",
+      "spend": 8156.09,
+      "roas": 1.00453,
+      "kop": 8,
+      "alder_dagar": 7,
+      "spend_7d": 13887.74,
+      "roas_7d": 2.476555,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 2.419051,
+      "intakt": 8193.037087699999,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250377856250291",
+      "namn": "Värmesulorna_PD_1_H3",
+      "status": "ACTIVE",
+      "spend": 466.54,
+      "roas": 3.166502,
+      "kop": 1,
+      "alder_dagar": 7,
+      "spend_7d": 910.41,
+      "roas_7d": 1.622676,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.549036,
+      "intakt": 1477.29984308
+    },
+    {
+      "id": "120250377859490291",
+      "namn": "Värmesulorna_SP_1_H3",
+      "status": "ACTIVE",
+      "spend": 1975.04,
+      "roas": 2.507949,
+      "kop": 5,
+      "alder_dagar": 7,
+      "spend_7d": 3402.3,
+      "roas_7d": 1.711284,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.67854,
+      "intakt": 4953.29959296
+    }
+  ],
+  "rest": {
+    "spend": 2910.65,
+    "intakt": 6430.59943604,
+    "kop": 6,
+    "roas": 2.2093344909350145
+  },
+  "break_even": 1.524209498298288,
+  "kampanj_spend": 11066.74,
+  "tjuvSpend": 8156.09,
+  "tjuvAndel": 0.7369912006607185,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 74 % av spenden under break-even 1,52: Värmesulorna_PD_1_H2 (8 156 kr, ROAS 1,00). Resten av kampanjen ligger på ROAS 2,21 (2 911 kr, 6 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120250377836130291",
+  "kampanj_namn": "Värmesulorna med Fjärrkontroll | BE ROAS 1.64 | Launch 2026-09-26"
+}

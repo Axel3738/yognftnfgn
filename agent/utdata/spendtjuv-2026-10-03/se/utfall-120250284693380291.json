@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250390361070291",
+      "namn": "Sotarset_PD_8_H1",
+      "status": "ACTIVE",
+      "spend": 1155.63,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 6,
+      "spend_7d": 2866.85,
+      "roas_7d": 1.07271,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.062357,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250342271020291",
+      "namn": "Sotarset_PD_6_1",
+      "status": "ACTIVE",
+      "spend": 553.5,
+      "roas": 1.658537,
+      "kop": 2,
+      "alder_dagar": 10,
+      "spend_7d": 1807.45,
+      "roas_7d": 1.015796,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-30",
+      "roas_livstid": 1.858192,
+      "intakt": 918.0002294999999
+    }
+  ],
+  "rest": {
+    "spend": 7709.5599999999995,
+    "intakt": 10853.62030675,
+    "kop": 22,
+    "roas": 1.4078131964405232
+  },
+  "break_even": 1.5106232357549711,
+  "kampanj_spend": 8865.19,
+  "tjuvSpend": 1155.63,
+  "tjuvAndel": 0.13035592017768374,
+  "dom": "STANG_AV",
+  "motivering": "Även utan de 1 tjuvarna ligger resten på ROAS 1,41 mot break-even 1,51 (7 710 kr, 22 köp). Kampanjen går back av egen kraft.",
+  "kampanj_id": "120250284693380291",
+  "kampanj_namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19"
+}

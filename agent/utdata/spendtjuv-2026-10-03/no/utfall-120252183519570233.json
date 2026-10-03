@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [],
+  "vantar": [
+    {
+      "id": "120252263198540233",
+      "namn": "Takovertrekk_NO_SP_4_H1",
+      "status": "ACTIVE",
+      "spend": 4470.85,
+      "roas": 1.434322,
+      "kop": 4,
+      "alder_dagar": 17,
+      "spend_7d": 13447.07,
+      "roas_7d": 2.207247,
+      "backdagar_i_rad": 1,
+      "etikett": "BREAKTHROUGH",
+      "etikett_datum": "2026-09-23",
+      "roas_livstid": 2.946281,
+      "intakt": 6412.638513700001,
+      "dranering": 512.4311643827164,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE",
+      "vantar_orsak": "BREAKTHROUGH (2026-09-23) med livstids-ROAS 2,95 över break-even — nåd. Dränering 7 d: −4 875 kr (tak 2 567 kr), back-dygn 1 (tak 5)."
+    }
+  ],
+  "break_even": 1.62,
+  "break_even_cpa": 855.8321105055867,
+  "kampanj_spend": 13810.33,
+  "noteringar": [],
+  "dom": "INGEN_TJUV",
+  "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA). 1 annons(er) väntar (nåd eller ung).",
+  "kampanj_id": "120252183519570233",
+  "kampanj_namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11"
+}

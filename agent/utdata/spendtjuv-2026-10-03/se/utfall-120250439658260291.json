@@ -1,0 +1,72 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250439721250291",
+      "namn": "Buskjackan_PD_2_1",
+      "status": "ACTIVE",
+      "spend": 985.84,
+      "roas": 0.435162,
+      "kop": 1,
+      "alder_dagar": 2,
+      "spend_7d": 985.84,
+      "roas_7d": 0.435162,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0.415625,
+      "intakt": 429.00010608,
+      "trott_vinnare": false,
+      "orsak": "UNDER_BE"
+    },
+    {
+      "id": "120250439726710291",
+      "namn": "Buskjackan_SP_1_H2",
+      "status": "ACTIVE",
+      "spend": 558.02,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 2,
+      "spend_7d": 558.02,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250439699740291",
+      "namn": "Buskjackan_G_1_H2",
+      "status": "ACTIVE",
+      "spend": 89.38,
+      "roas": 11.519356,
+      "kop": 1,
+      "alder_dagar": 2,
+      "spend_7d": 89.38,
+      "roas_7d": 11.519356,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 8.460843,
+      "intakt": 1029.60003928
+    }
+  ],
+  "rest": {
+    "spend": 397.34,
+    "intakt": 1029.60003928,
+    "kop": 1,
+    "roas": 2.5912317896008457
+  },
+  "break_even": 1.5207993236165245,
+  "kampanj_spend": 1941.2,
+  "tjuvSpend": 1543.8600000000001,
+  "tjuvAndel": 0.7953121780342057,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "2 spendtjuvar tog 80 % av spenden under break-even 1,52: Buskjackan_PD_2_1 (986 kr, ROAS 0,44), Buskjackan_SP_1_H2 (558 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,59 (397 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120250439658260291",
+  "kampanj_namn": "Buskjackan 2-pack | BE ROAS 2.05 | Launch 2026-10-01"
+}
