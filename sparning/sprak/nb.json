@@ -220,6 +220,7 @@
     "Paketet är på väg till ombud": "Pakken er på vei til et hentested",
     "Vi planerar ett nytt hemleveransförsök till dig": "Vi planlegger et nytt leveringsforsøk hjem til deg",
     "Paketet kunde inte lämnas hemma hos dig och är på väg till ditt ombud": "Pakken kunne ikke leveres hjemme hos deg og er på vei til hentestedet ditt",
+    "Streckkoden gick inte att läsa i sorteringen, så paketet har fått en ny fraktetikett": "Strekkoden kunne ikke leses i sorteringen, så pakken har fått en ny fraktetikett",
     "2–4 dagar": "2–4 dager"
   }
 }
