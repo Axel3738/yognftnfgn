@@ -8,6 +8,17 @@ eller lansera inget."
 
 ⛔ **Inget är skickat, schemalagt eller påslaget.** Allt ligger i Spoks som utkast och avstängt.
 
+## Omskrivet 2026-10-03 förmiddag (Axels order)
+
+Axel ville att kunderna ska känna med oss och hellre vänta än ta pengarna: ny svensk text av en
+sonnet-skribent, plus hans tre tillägg (svara med ordernumret och skriv att du vill avbryta ordern och
+få en återbetalning; MS-numret står i fraktmejlet; "Du kan spåra ditt paket via den här länken:").
+Återbetalningen står kvar tydlig och utan skuld. Tolv språk översatta av sonnet, `bygg.mjs` grönt,
+alla 13 kampanjutkast och 12 av 13 flödesmejl uppdaterade i Spoks och lästa tillbaka (`koll.mjs`
+25 av 26). ⚠️ Flödets SVENSKA sändsteg är påslaget (Axel, 05:38 UTC) och Spoks vägrar då ändra mejlet:
+det bär gamla texten tills steget slås av, uppdateras och slås på igen. Testkopian
+"TEST av flödesmejlet sv" `ec246ff3-…` bär den nya texten.
+
 ## Vad som finns
 
 | Del | Var | Läge |
