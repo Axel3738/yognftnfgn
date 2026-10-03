@@ -53,11 +53,11 @@ export function tillHtml(md) {
 }
 
 const CSS = `
-  @page { size: A4; margin: 13mm 16mm 12mm 16mm; }
+  @page { size: A4; margin: 11mm 15mm 10mm 15mm; }
   * { box-sizing: border-box; }
-  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1a1f26; font-size: 10.6pt; line-height: 1.38; margin: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #1a1f26; font-size: 10.3pt; line-height: 1.34; margin: 0; }
   h1 { font-size: 20pt; margin: 0 0 3pt; letter-spacing: -0.2pt; }
-  h2 { font-size: 12.5pt; margin: 10pt 0 4pt; padding-bottom: 2pt; border-bottom: 1.5pt solid #dd821d; }
+  h2 { font-size: 12pt; margin: 8pt 0 3pt; padding-bottom: 2pt; border-bottom: 1.5pt solid #dd821d; }
   h3 { font-size: 11.5pt; margin: 8pt 0 3pt; }
   p { margin: 0 0 5.5pt; }
   p:first-of-type { color: #5b6570; }
@@ -69,7 +69,7 @@ const CSS = `
   blockquote { margin: 6pt 0 8pt; padding: 6pt 10pt; border-left: 3pt solid #dd821d; background: #fff7ee; }
   hr { border: 0; border-top: 1pt solid #d5dad2; margin: 10pt 0; }
   .box { display: inline-block; width: 11pt; height: 11pt; border: 1.2pt solid #1a1f26; border-radius: 2pt; vertical-align: -2pt; margin-right: 4pt; }
-  .fot { margin-top: 14pt; font-size: 9pt; color: #5b6570; border-top: 1pt solid #d5dad2; padding-top: 5pt; }
+  .fot { margin-top: 8pt; font-size: 9pt; color: #5b6570; border-top: 1pt solid #d5dad2; padding-top: 5pt; }
 `;
 
 const md = readFileSync(mdFil, 'utf8');
