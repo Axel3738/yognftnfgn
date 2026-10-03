@@ -1375,8 +1375,10 @@ vanliga Shopify-dashboarden gör."* Kortet har två lägen, och bara det ena
 - 2 nya tester i `test/roas-under-dagen.test.mjs` (timmens tal ≠ summan;
   taket rymmer alltid maxvärdet). Inga nya texter utöver `salesSoFar` i
   båda ordböckerna.
-- Byggt på grenen `claude/kind-meitner-tcl9az` (sessionens arbetsgren);
-  deployas när den pushas till `claude/bäverbutiken-settkopplingen-nba21z`.
+- ✅ **Live 2026-10-03 13:37–13:39 CEST på alla sex tjänsterna** (pushat
+  11:3x UTC efter Axels "ja", `/healthz` läst härifrån — Railway gick att nå
+  den här gången). Åtta minuter från push till sista tjänsten: kön är
+  tom sedan Axel städade dubblettprojekten dagen innan.
 
 ### Avgifterna i kundens valuta (2026-10-03, build avgiftsvaluta-v120)
 Axel, om Matstrumpors panel: *"Hur fan är vår break-even 1,9?"* Shopify
