@@ -11,7 +11,7 @@ förbeställningswidget av typen "current batch sold out, next batch almost sold
 äkta, och konverteringen sjunker först när väntan är över ungefär tre månader.
 
 ```
-Context: Swedish one-product store, novelty gift socks packed like a food box (Q4 gift buy). Bundle picker on the PDP: Buy 1 Get 1 (2 boxes, preselected, ~85% of orders) and Buy 2 Get 2 (4 boxes). A free gift item comes with every box. AOV ~$45, ~50 orders/day in SE, now also 20+ countries.
+Context: Swedish one-product store, novelty gift socks packed like a food box (Q4 gift buy). Bundle picker on the PDP: Buy 1 Get 1 (2 boxes, preselected, ~85% of orders) and Buy 2 Get 2 (4 boxes). A free gift item comes with every box. AOV ~$45, ~40 orders/day in our home country, now also 20+ countries.
 
 We are SOLD OUT right now. Next stock lands in ~8 days and will likely sell out fast. Our best ads already say "it sold out last November". We keep selling as pre-order with an honest ship date (box on PDP + line in cart).
 
