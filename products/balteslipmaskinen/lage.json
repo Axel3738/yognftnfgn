@@ -1,0 +1,101 @@
+{
+ "strom": "vantar",
+ "watt": null,
+ "butiker": {
+  "se": {
+   "media": {
+    "hero_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-bank.jpg?v=1790999014",
+    "bruk_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-bruk-kniv.jpg?v=1790999017",
+    "stationer_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-stationer2.jpg?v=1790999021",
+    "kok_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-kok.jpg?v=1790999025",
+    "slipning_mp4": "https://cdn.shopify.com/videos/c/vp/373b7cef58254903add3d945111576b9/373b7cef58254903add3d945111576b9.HD-720p-1.6Mbps-96281544.mp4",
+    "slipning_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-slipning-poster.jpg?v=1790999060",
+    "tomat_mp4": "https://cdn.shopify.com/videos/c/vp/c00ef3052fc042a3b588362eace82fa4/c00ef3052fc042a3b588362eace82fa4.HD-720p-1.6Mbps-96281554.mp4",
+    "tomat_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-tomat-poster.jpg?v=1790999077",
+    "hero_mp4": "https://cdn.shopify.com/videos/c/vp/e83e4f849a4146e68c4d4e1a7a50b4a2/e83e4f849a4146e68c4d4e1a7a50b4a2.HD-720p-1.6Mbps-96281736.mp4",
+    "hero_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-poster_e5718dab-942d-44cc-af9a-d9d6066fd3c2.jpg?v=1790999324"
+   },
+   "galleri": {
+    "nya": [
+     "gid://shopify/MediaImage/77476828643677",
+     "gid://shopify/MediaImage/77476828676445",
+     "gid://shopify/MediaImage/77476828709213",
+     "gid://shopify/MediaImage/77476828741981"
+    ],
+    "datum": "2026-10-03T03:44:42.600Z"
+   }
+  },
+  "no": {
+   "media": {
+    "hero_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-bank.jpg?v=1790999014",
+    "bruk_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-bruk-kniv.jpg?v=1790999017",
+    "stationer_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-stationer2.jpg?v=1790999021",
+    "kok_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-kok.jpg?v=1790999025",
+    "slipning_mp4": "https://cdn.shopify.com/videos/c/vp/373b7cef58254903add3d945111576b9/373b7cef58254903add3d945111576b9.HD-720p-1.6Mbps-96281544.mp4",
+    "slipning_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-slipning-poster.jpg?v=1790999060",
+    "tomat_mp4": "https://cdn.shopify.com/videos/c/vp/c00ef3052fc042a3b588362eace82fa4/c00ef3052fc042a3b588362eace82fa4.HD-720p-1.6Mbps-96281554.mp4",
+    "tomat_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-tomat-poster.jpg?v=1790999077",
+    "hero_mp4": "https://cdn.shopify.com/videos/c/vp/e83e4f849a4146e68c4d4e1a7a50b4a2/e83e4f849a4146e68c4d4e1a7a50b4a2.HD-720p-1.6Mbps-96281736.mp4",
+    "hero_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-poster_e5718dab-942d-44cc-af9a-d9d6066fd3c2.jpg?v=1790999324"
+   },
+   "media_kalla": "baverbutiken (appen saknar write_files)",
+   "galleri": {
+    "nya": [
+     "gid://shopify/MediaImage/70764922536311",
+     "gid://shopify/MediaImage/70764922569079",
+     "gid://shopify/MediaImage/70764922601847",
+     "gid://shopify/MediaImage/70764922634615"
+    ],
+    "datum": "2026-10-03T03:46:40.362Z"
+   }
+  },
+  "dk": {
+   "media": {
+    "hero_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-bank.jpg?v=1790999014",
+    "bruk_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-bruk-kniv.jpg?v=1790999017",
+    "stationer_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-stationer2.jpg?v=1790999021",
+    "kok_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-kok.jpg?v=1790999025",
+    "slipning_mp4": "https://cdn.shopify.com/videos/c/vp/373b7cef58254903add3d945111576b9/373b7cef58254903add3d945111576b9.HD-720p-1.6Mbps-96281544.mp4",
+    "slipning_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-slipning-poster.jpg?v=1790999060",
+    "tomat_mp4": "https://cdn.shopify.com/videos/c/vp/c00ef3052fc042a3b588362eace82fa4/c00ef3052fc042a3b588362eace82fa4.HD-720p-1.6Mbps-96281554.mp4",
+    "tomat_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-tomat-poster.jpg?v=1790999077",
+    "hero_mp4": "https://cdn.shopify.com/videos/c/vp/e83e4f849a4146e68c4d4e1a7a50b4a2/e83e4f849a4146e68c4d4e1a7a50b4a2.HD-720p-1.6Mbps-96281736.mp4",
+    "hero_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-poster_e5718dab-942d-44cc-af9a-d9d6066fd3c2.jpg?v=1790999324"
+   },
+   "media_kalla": "baverbutiken (appen saknar write_files)",
+   "galleri": {
+    "nya": [
+     "gid://shopify/MediaImage/76335949676889",
+     "gid://shopify/MediaImage/76335949709657",
+     "gid://shopify/MediaImage/76335949742425",
+     "gid://shopify/MediaImage/76335949775193"
+    ],
+    "datum": "2026-10-03T03:46:53.272Z"
+   }
+  },
+  "fi": {
+   "media": {
+    "hero_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-bank.jpg?v=1790999014",
+    "bruk_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-bruk-kniv.jpg?v=1790999017",
+    "stationer_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-stationer2.jpg?v=1790999021",
+    "kok_bild": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-kok.jpg?v=1790999025",
+    "slipning_mp4": "https://cdn.shopify.com/videos/c/vp/373b7cef58254903add3d945111576b9/373b7cef58254903add3d945111576b9.HD-720p-1.6Mbps-96281544.mp4",
+    "slipning_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-slipning-poster.jpg?v=1790999060",
+    "tomat_mp4": "https://cdn.shopify.com/videos/c/vp/c00ef3052fc042a3b588362eace82fa4/c00ef3052fc042a3b588362eace82fa4.HD-720p-1.6Mbps-96281554.mp4",
+    "tomat_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-tomat-poster.jpg?v=1790999077",
+    "hero_mp4": "https://cdn.shopify.com/videos/c/vp/e83e4f849a4146e68c4d4e1a7a50b4a2/e83e4f849a4146e68c4d4e1a7a50b4a2.HD-720p-1.6Mbps-96281736.mp4",
+    "hero_poster": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/balteslip-hero-poster_e5718dab-942d-44cc-af9a-d9d6066fd3c2.jpg?v=1790999324"
+   },
+   "media_kalla": "baverbutiken (appen saknar write_files)",
+   "galleri": {
+    "nya": [
+     "gid://shopify/MediaImage/77476834050397",
+     "gid://shopify/MediaImage/77476834083165",
+     "gid://shopify/MediaImage/77476834115933",
+     "gid://shopify/MediaImage/77476834148701"
+    ],
+    "datum": "2026-10-03T03:47:05.049Z"
+   }
+  }
+ }
+}

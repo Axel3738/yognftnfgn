@@ -82,9 +82,27 @@ Läses av `/kommentarer` innan svaren skrivs.
 - **Vinkeln går inte att ändra** (fast 15°). Axel 2026-09-25.
 - **Flera olika slipband följer med** — se produktbilderna. Axel 2026-09-25.
 - **Slipbandens mått: 330 × 30 mm** (leverantörens specbild 2026-09-25).
-  Varvtal 4 000–9 000 varv/min, 7 hastigheter. ⚠️ Specbilden säger
+  Varvtal 4 000–9 000 varv/min, 7 hastigheter, fram och back. ⚠️ Specbilden säger
   "input voltage 110V" — den är amerikansk; kontrollera att vi skickar
   adapter för 230 V innan det sägs något om ström.
+- **Ström, mätt 2026-10-03 (kundfrågan "what is the wattage, does it run on
+  230 V?"):** maskinen är en lågvoltsmaskin (adapterns utgång 12–24 V DC enligt
+  specbilden, samma modellfamilj hos fem återförsäljare). **Adapterns ingång och
+  effekten är INTE bekräftade** — produktbilden visar en adapter med amerikansk
+  stickpropp, återförsäljarna skriver 96 W. 168 ordrar / 185 st sedan 21/8,
+  161 skickade, 12 recensioner och 0 kundmejl om kontakten — men det är inte
+  ett bevis. Säg till kunden: "Den drivs via en nätadapter som följer med. Vi
+  håller på att få bekräftat från tillverkaren exakt vilken adapter som ligger i
+  lådan och vad effekten är." Lova aldrig 230 V eller en wattsiffra förrän
+  svaret står i `products/balteslipmaskinen/LEVERANTOR-FRAGA-STROM.md`
+  (WhatsApp-frågan ligger där; sidan byts med `produktsida.mjs --strom`).
+- **Produktsidan säger sedan 2026-10-03 i alla fyra butiker (SE, NO, DK, FI):**
+  tekniska uppgifter (motor, varvtal, fast 15°, band 330 × 30 mm, tre stationer,
+  vad som följer med, mini-storlek), ström-raden ovan, "vad den passar för"
+  (knivar, saxar, yxor, mejslar, stämjärn, lätt formning av trä/metall/smycken;
+  INTE grova svetsfogar eller tjockt stål), tre loopar ur våra egna annonsfilmer
+  och fyra nya produktbilder. Finska sidans "steglös hastighet" rättad till 7 steg.
+  Svaret på kommentarer hänvisar till sidan.
 - **Påfyllningskit (offert från leverantören 2026-09-25, USD utan moms, frakt
   inräknad):** Sverige 1 st $10,33 · 2 st $17,19 · 3 st $22,92; Norge 1 st
   $12,88 · 2 st $19,72 · 3 st $26,78. Vad kitet innehåller står inte i offerten.
