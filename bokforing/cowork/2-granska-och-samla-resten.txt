@@ -1,53 +1,45 @@
-UPPDRAG: Granska bokföringen för SEPTEMBER 2026 och samla de sista kvittona. Bolaget är STONEBITE ECOM AB.
+UPPDRAG: Samla de sista kvittona för SEPTEMBER 2026. Bolaget är STONEBITE ECOM AB.
+
+Du jobbar BARA i Chrome. Du behöver inga filer från datorn: allt du behöver står här.
+Det du laddar ner hamnar i nedladdningsmappen. Det räcker. Du behöver inte flytta,
+döpa om eller packa något. Claude sorterar filerna efteråt.
 
 BARA LADDA NER OCH LÄSA.
 Betala aldrig, inte ens en faktura som ser obetald ut. Ändra aldrig abonnemang, betalmetoder,
 annonser eller inställningar. Radera aldrig. Skicka aldrig mejl eller meddelanden.
-Kräver en sida inloggning, kod eller lösenord: stanna och be Axel. Skriv aldrig in ett lösenord.
-Skapa aldrig konton.
+Kräver en sida lösenord eller kod: stanna och be Axel. Skriv aldrig in ett lösenord.
+Skapa aldrig konton. Rör aldrig jessica.odhner@gmail.com.
 
-EN MAPP FÖR ALLT
-Packa upp de tre zipfilerna Del1, Del2 och Del3 i nedladdningsmappen, alla på samma ställe.
-Tillsammans blir de EN mapp: "Bokforing-september-2026". Allt du hämtar sparas DÄR, i rätt undermapp:
-- kvitton från tjänster: 02-Kvitton-september/Hamtat-av-Cowork/
-- Meta: 04-Meta/kvitton/<kontonamn>/
-- Shopify-utbetalningar: 03-Shopify/
-- obetalda fakturor: 05-Obetalda-fakturor/
-Filnamn: ÅÅÅÅ-MM-DD_Handlare_belopp.pdf. Ta bara kvitton som matchar datum och belopp,
-plus eller minus 3 dagar. Finns filen redan i mappen: ladda inte ner den igen.
+GODKÄNNANDE: samla nedladdningarna och fråga Axel EN gång per mejlprofil eller sida,
+med filnamn och källa. Ett ja gäller den omgången.
 
-Facit: 07-saknas-kvitton.csv (det som saknas) och 01-Kontoutdrag/avstamning-alla-564-rader.csv
-(alla rader och vilken fil som hör till).
+Ta bara kvitton som matchar datum och belopp nedan, plus eller minus 3 dagar.
+Laddar du ner samma kvitto två gånger, skriv upp det. Claude tar bort dubbletten.
 
 ==================================================
-DEL 1. GÅ IGENOM ALLA MEJLPROFILER, EN I TAGET
+DEL 1. MEJLPROFILERNA, EN I TAGET
 ==================================================
-I Gmail: klicka på profilbilden uppe till höger och byt konto. Gå igenom de här fem:
+Byt profil i Gmail med profilbilden uppe till höger. Gå igenom:
 1. axel.odhner@stonebite.org
 2. subscriptions@stonebite.org
 3. claude5@stonebite.org
 4. claude6@stonebite.org
 5. barkas.kundservice@gmail.com
-HOPPA ÖVER axelodhner.business@gmail.com. Den är redan genomgången.
+HOPPA ÖVER axelodhner.business@gmail.com. Den är redan klar.
 
-I varje profil, sök på varje handlare i 07-saknas-kvitton.csv där kolumnen "vem hämtar"
-är "Cowork-prompten". Sök så här:
+I varje profil, sök på varje handlare i listan i DEL 2, så här:
   <handlare> after:2026/08/25 before:2026/10/04
-Sök också en gång per profil:
-  (receipt OR kvitto OR invoice OR faktura) after:2026/08/31 before:2026/10/02
-Spara PDF-bilagan. Finns bara en knapp "View receipt" eller "Download invoice": öppna den
-och spara som PDF.
-Skriv upp i en lista vilken profil varje kvitto kom ifrån.
+Hittar du kvittot: ladda ner PDF:en, eller öppna "View receipt" och spara som PDF.
+Det du hittar i en profil letar du inte efter i nästa.
 
-Leta också efter OBETALDA fakturor och påminnelser i varje profil:
+Sök också en gång per profil efter obetalda fakturor. Ladda inte ner, skriv bara upp dem:
   (påminnelse OR förfallen OR "past due" OR overdue OR inkasso OR "payment failed") after:2026/08/01
-Spara dem i 05-Obetalda-fakturor/.
 
 ==================================================
-DEL 2. DET SOM INTE FANNS I MEJLEN: HÄMTA PÅ SIDAN
+DEL 2. DET SOM SAKNAS
 ==================================================
-Logga in med det konto som kvittot hörde till. Prova alla profiler innan du ger upp.
-- Claude (claude.ai, Inställningar, Fakturering), på varje Claude-konto:
+Det du inte hittar i mejlen hämtar du på sidan. Prova alla inloggade konton.
+- Claude (claude.ai, Inställningar, Fakturering), varje Claude-konto:
   8/9 2 030,33, 11/9 2 034,59, 20/9 2 057,04, 24/9 205,65 kr.
 - Anthropic Console (console.anthropic.com, Billing, Invoices):
   4/9 202,76, 5/9 1 836,84, 7/9 1 879,20, 13/9 196,56 kr.
@@ -55,64 +47,50 @@ Logga in med det konto som kvittot hörde till. Prova alla profiler innan du ger
 - HeyGen (Settings, Billing): 12/9 482,85, 28/9 2 581,21 kr.
 - ElevenLabs, det andra kontot: 12/9 195,87, 20/9 219,49 kr.
 - Higgsfield: 1/9 488,87 kr.
-- Klaviyo (Settings, Billing): 11/9 1 456,62 kr. 25/9 finns redan.
-- Google Ads, BÅDA kontona (Fakturering, Dokument, september):
-  139-156-9447: 3/9 3 472,04 och 5 000 kr 12/9, 20/9, 24/9, 28/9.
-  361-188-7178: 3/9 3 138,73 och 5 000 kr 6/9, 11/9, 16/9, 22/9, 26/9.
+- Klaviyo (Settings, Billing): 11/9 1 456,62 kr.
+- Google Ads 139-156-9447 (Fakturering, Dokument): september.
+  Dragningar 3/9 3 472,04 och 5 000 kr 12/9, 20/9, 24/9, 28/9.
+- Google Ads 361-188-7178 (Fakturering, Dokument): september.
+  Dragningar 3/9 3 138,73 och 5 000 kr 6/9, 11/9, 16/9, 22/9, 26/9.
 - Google Workspace stonebite.org och beverkoppling (admin.google.com, Fakturering):
   3/9 153,26 och 91,27 kr.
-- Google One / AI (Google Play eller Google One, Betalningar): 26/9 262,90 kr.
+- Google One / AI (Google One eller Google Play, Betalningar): 26/9 262,90 kr.
 - WeTracked: 22/9 2 235,80 kr. Kolla om det finns en andra organisation.
 - Discord (Inställningar, Fakturering): 16/9 34,18 och 80,02 kr.
 - Whop (Orders): 17/9 967,86 kr.
 - vmake: 25/9 100,41 kr.
-- 17TRACK / 17Returns: 20/9 1 189,28 kr.
+- 17TRACK eller 17Returns: 20/9 1 189,28 kr.
 - Pocket (heypocket.com): 9/9 1 764,72 och 1 229,33 kr.
 - dotno.domains: 29/9 292,76 kr.
 - Spotify (Betalningshistorik): 27/9 129 kr, skriv ut som PDF.
-- CapCut: 3/9 349, 8/9 299, 12/9 799 kr. Länkarna står i filerna *__lankar.txt.
-  Öppna dem och skriv ut som PDF.
-- Atlassian: 5/9 234,00 och 28/9 241,47 kr. Mejlen går till jessica.odhner@gmail.com.
-  Är du inte inloggad där: skriv upp det, rör inte hennes konto.
+- CapCut: 3/9 349, 8/9 299, 12/9 799 kr. Sök "CapCut" eller "pipopay" i mejlen,
+  öppna kvittolänken och skriv ut som PDF.
+- Atlassian: 5/9 234,00 och 28/9 241,47 kr. Mejlen går till Jessica. Finns de inte
+  i Axels profiler: skriv upp det och gå vidare.
 
 ==================================================
-DEL 3. META: TRE KONTON SAKNAS HELT
+DEL 3. META, TRE KONTON
 ==================================================
-169 Meta-dragningar saknar kvitto, cirka 1 080 000 kr.
 https://business.facebook.com/billing_hub/payment_activity
-Hämta september 2026 som PDF för:
+Ladda ner alla kvitton för september 2026 som PDF i:
 - MagiBorsten 1867947880635861
 - Magiborsten DK 915422744950975
 - Magiborsten FI 1619718346388201
-Och en enda rad i Magiborsten NO: transaktionen som slutar på EP4 och saknas.
-NO, UK, SnarkLös och nya kungen finns redan i 04-Meta/kvitton/. Hämta dem inte igen.
-Bocka av mot 04-Meta/meta_debiteringar_kontoutdrag_september.csv. Koden efter FACEBK*
-på kontoutdraget är referensnumret på Metas kvitto.
+NO, UK, SnarkLös och nya kungen är redan klara. Hämta dem inte igen.
+Undantag: en enda NO-dragning saknas. Ladda ner den om du ser den, men leta inte länge.
 
 ==================================================
 DEL 4. SHOPIFY-UTBETALNINGAR, FYRA BUTIKER
 ==================================================
 I Bäverbutiken, Beverbutikken (NO), Bæverbutiken (DK) och Majavakauppa (FI):
-Inställningar, Betalningar, Shopify Payments, Visa utbetalningar, september 2026, Exportera CSV.
-Spara i 03-Shopify/ som <butik>_utbetalningar_september.csv.
-CaraShell och Matstrumpor finns redan.
-
-==================================================
-DEL 5. GRANSKA ALLT
-==================================================
-1. Öppna 01-Kontoutdrag/avstamning-alla-564-rader.csv. För varje rad med "kvitto finns":
-   kontrollera att filen i kolumnen "underlag" finns. Öppna var tionde fil och jämför datum
-   och belopp. Skriv upp varje fel.
-2. Leta efter dubbletter: samma kvitto två gånger med olika namn. Flytta dubbletten till
-   en mapp "99-Dubbletter", radera inget.
-3. Leta efter kvitton som ligger i fel mapp och skriv upp dem.
+Inställningar, Betalningar, Shopify Payments, Visa utbetalningar, september 2026,
+Exportera CSV. CaraShell och Matstrumpor är redan klara.
 
 ==================================================
 SIST: RAPPORT TILL AXEL, PÅ SVENSKA, KORT
 ==================================================
-1. Hämtat: vad, och från vilken mejlprofil eller sida.
+1. Hämtat: filnamnet i nedladdningsmappen, handlare, datum och belopp, och från vilken
+   mejlprofil eller sida det kom.
 2. Gick inte: datum, handlare, belopp och orsak.
-3. Obetalda fakturor: leverantör, nummer, belopp, förfallodag.
-4. Fel som granskningen hittade.
-5. Meningen: "Jag har inte betalat, ändrat eller raderat något."
-Packa sedan hela mappen Bokforing-september-2026 till EN zipfil i nedladdningsmappen.
+3. Obetalda fakturor: leverantör, nummer, belopp, förfallodag och vilken profil.
+4. Meningen: "Jag har inte betalat, ändrat eller raderat något."
