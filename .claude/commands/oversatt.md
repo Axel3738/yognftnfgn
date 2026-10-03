@@ -44,14 +44,24 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
   körloggen. Mätt 2026-09-19: Beltesliper, Frontrutetrekk til Bobil och
   Båtmotortrekk är alla avvecklade med spend, och alla tre produkterna skalar
   i Sverige — det är det normala läget, inte ett problem att lösa.
-- **Fars dag-annonserna (`_FD_` i namnet) översätts aldrig** (batchen
-  2026-09-28, Axels order: fars dag-rea, fars dag 8 november). De säger
-  "beställ senast 19 oktober", räknat på leveranstiden till Sverige, och i USA
-  och Danmark firas fars dag i juni. Kön märker dem `bara_se: true`
-  (`tools/lib/bara-sverige.mjs`). Hanteras som en avvecklad kampanj:
-  kommentar `Sweden only (Father's Day ad) — not translated` och status →
-  **`Approved`** direkt, **även i en speglad hubb** — aldrig
-  `<Brand> SE ready to be active`, för då hade CaraShell och USA fått den.
+- **Fars dag-annonserna (`_FD_` i namnet) går till Norge, men ingen annan
+  marknad.** Facit är `tools/lib/bara-sverige.mjs`, aldrig den här texten:
+  spärren är mätt per marknad och Norge står i `tillatna`. Norsk farsdag 2026
+  är söndag 8 november, exakt samma dag som den svenska, och leveranstiden till
+  Norge är kortare (p90 18,8 dygn mot Bäverbutikens 20), så "beställ senast
+  19 oktober" håller. US, GB, CA och DK firar fars dag i JUNI — där gäller
+  spärren, och en rad utan marknad stoppas också (speglingen till
+  OPS-butikerna är svensk).
+  ⚠️ **Den här raden sa "översätts aldrig" fram till 2026-10-03** och var fel
+  från 2026-09-29 19:00, när Norge mättes in. Briefgranskningen 2026-10-01
+  fällde samma stale formulering i tolv hubbars `Rules`-block, och körningen
+  2026-10-02 följde koden och lade 19 fars dag-annonser live i Norge — rätt
+  enligt koden, tvärs emot den här texten. Läs koden, inte prosan, och rätta
+  prosan när de säger olika.
+  En rad som spärren FAKTISKT stoppar (`bara_se: true` i kön) hanteras som en
+  avvecklad kampanj: kommentar med skälet ur `skal` och status → **`Approved`**
+  direkt, **även i en speglad hubb** — aldrig `<Brand> SE ready to be active`,
+  för då hade CaraShell och USA fått den.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.
