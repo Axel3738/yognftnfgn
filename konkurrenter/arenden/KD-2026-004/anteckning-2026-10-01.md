@@ -208,3 +208,19 @@ utkastet raderades osänt och gjordes om.
   som ett fel.
 - **Shopify 07:33 CEST:** GIF 2 ligger kvar på produktsidan och på Shopifys CDN. Inget svar från
   Shopify.
+
+## Morgonkollen 3/10 cirka 09:10 CEST: inget har ändrats
+
+- **Appen:** `data/beslut.json` är orörd sedan 1/10 16:28 CEST: Ja på alla tio kort, inget
+  "Jag har skickat in den". Alla nio Meta-anmälningar och Shopify-anmälan var redan kvitterade,
+  så inget kvitterades och appens status publicerades inte om.
+- **Annonsbiblioteket, en sida i taget utan skrollning:** alla nio annonslänkar svarar "Ad isn't
+  in the ad library". Kollen väntade den här gången på antingen "Library ID" eller den texten, så
+  den skiljer en borttagen annons från en sida som inte laddade. Inget svar blev `?`. Sidans
+  lista i Norge, både aktiva och alla, svarar "No ads match" utan ett enda Library ID. MatSokker
+  har alltså inte lagt upp nya annonser sedan 07:35.
+- **Gmail:** inga nya mejl från Meta eller Shopify sedan 2/10 17:50 CEST. Tråden till
+  `legal@shopify.com` bär bara vårt eget mejl. Trådarna för ärende 1668025284884046 och
+  29485246344396507 har två meddelanden var, men connectorn visar bara ett, samma som i går.
+- **Shopify-sajten 09:09 CEST:** GIF 2 ligger kvar på produktsidan
+  (`gif2_800x800.gif?v=1790785869`) och på Shopifys CDN (200, `image/gif`).
