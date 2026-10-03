@@ -48,7 +48,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { valjAdsetForKoncept, konceptUrAdsetnamn, krockandeAdsets } from './meta-lib.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
-import { malkampanjFor, domFastMal } from './lib/malkampanj.mjs';
+import { malkampanjFor, domFastMal, domOcksa, landsNamn } from './lib/malkampanj.mjs';
 import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 
@@ -534,6 +534,14 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   if (kampanj) logg(`Kampanj (${m}): ${kampanj.namn} [${kampanj.status}] · bas "${kampanj.bas}"`);
   else { logg(`Kampanj (${m}): INGEN — ${kampanjSkal}`); varningar.push(`kampanj: ${kampanjSkal}`); }
   if (kampanjVarning) { logg(`  ⚠️  ${kampanjVarning}`); varningar.push(`kampanj: ${kampanjVarning}`); }
+  // Extra mål (malkampanj.<M>.ocksa): samma engelska annons en gång till i
+  // t.ex. Axels AU-kampanj, under landets namn. Döms live som huvudmålet;
+  // ett extra mål som inte går att nå stoppar aldrig huvudmålet.
+  const ocksa = fastMal ? await domOcksa(fastMal, konto, kampanjUtfall) : [];
+  for (const o of ocksa) {
+    if (o.kampanj) logg(`Extra mål ${o.land}: ${o.kampanj.namn} [${o.kampanj.status}] — samma annons laddas upp där under _${o.namnkod}_-namnet`);
+    else { logg(`Extra mål ${o.land}: INGEN — ${o.skal}`); varningar.push(`extra mål ${o.land}: ${o.skal} — raden kan inte bli Approved förrän det är löst`); }
+  }
   for (const k of kandidater.filter((x) => x.utfall === 'AVVECKLAD')) {
     if (!kampanj || k.id !== kampanj.id) varningar.push(`"${k.name}" är PAUSED med ${Math.round(k.spend)} kr spend — avvecklad, aldrig mål`);
   }
@@ -642,7 +650,15 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       const namnDar = marknadsNamn(basnamn, k);
       klar_i[k] = namnDar ? dubblett(namnDar, kartaPerKonto.get(annonskontoFor(butik.post, k))).finns_i_meta : false;
     }
-    const flytta_till_approved = marknaden.oversatts ? skaFlyttasTillApproved(klar_i, annonsmarknader, m) : null;
+    // De extra målen: finns annonsen där redan (landets namn i samma konto)?
+    // Raden blir Approved först när huvudmålet OCH varje extra mål bär den.
+    const ocksaRader = ocksa.map((o) => {
+      const namnDar = landsNamn(mal_namn ?? basnamn, o.namnkod, m);
+      const dd = namnDar ? dubblett(namnDar, karta) : { finns_i_meta: false, ad_id: null };
+      return { land: o.land, namnkod: o.namnkod, kampanj_id: o.kampanj_id, kampanj_namn: o.kampanj?.namn ?? o.kampanj_namn ?? null, kampanj_skal: o.skal ?? null, adset_id: o.adset_id, mal_namn: namnDar, finns_i_meta: dd.finns_i_meta, ad_id: dd.ad_id };
+    });
+    const ocksaSaknas = ocksaRader.filter((o) => !o.finns_i_meta);
+    const flytta_till_approved = marknaden.oversatts ? (skaFlyttasTillApproved(klar_i, annonsmarknader, m) && ocksaSaknas.length === 0) : null;
     const rad = {
       namn, mal_namn, page_id: r.id, url: r.url, typ: typAv(r.typ), typ_notion: r.typ, status: r.status,
       fran_cs: statusLika(r.status, CS_STATUS_SE),
@@ -655,6 +671,8 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
       adset_namn: adsetnamn, adset: fastAdset ? { id: fastAdset.id, name: fastAdset.name, status: fastAdset.status ?? null } : hittaAdset(adsets, adsetnamn, t.koncept),
       finns_i_meta: d.finns_i_meta, ad_id: d.ad_id, mal_namn_alias,
+      ocksa: ocksaRader,
+      ocksa_saknas: ocksaSaknas.map((o) => o.land),
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,
       // SE-annonsen ligger alltid i OPS-kontot — även när målmarknaden bor i ett annat.
@@ -673,7 +691,10 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     if (!lank) varningar.push(`${namn}: ingen landningslänk (varken ärvd ur kampanjen eller Landing page på raden)`);
     if (marknaden.oversatts && !rad.se_ad_id) varningar.push(`${namn}: SE-annonsen finns inte i OPS-kontot — inte launchad i Sverige`);
     if (r.landning && lank_arvd && r.landning !== lank_arvd) rad.landning_avviker = true;
-    if (ut && r.leverans !== 'saknas' && !d.finns_i_meta) {
+    if (d.finns_i_meta && ocksaSaknas.length && statusLika(r.status, kostatus) && !statusLika(kostatus, 'Approved')) varningar.push(`${namn}: ${m}-annonsen finns (${d.ad_id}) men saknas i ${ocksaSaknas.map((o) => o.land).join('/')} — ladda upp den där med samma engelska copy, sedan Approved`);
+    // Filen hämtas också när huvudmålet redan bär annonsen men ett extra mål
+    // saknar den — den ska laddas upp en gång till där.
+    if (ut && r.leverans !== 'saknas' && (!d.finns_i_meta || (ocksaSaknas.length && !statusLika(kostatus, 'Approved')))) {
       const h = hamtaFil(r.id, join(ut, namn.replace(/[^\w åäöÅÄÖ.-]/g, '_')));
       Object.assign(rad, h.fel ? { fil_fel: h.fel } : { fil: h.fil, fil_alla: h.fil_alla });
       if (h.fel) varningar.push(`${namn}: filen gick inte att hämta — ${h.fel}`);

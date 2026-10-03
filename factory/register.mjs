@@ -936,6 +936,37 @@ export function speglingUppladdningUr(text) {
   return ut;
 }
 
+/**
+ * Skriver in (eller tar bort med `av`) ett extra mål för marknadens
+ * målkampanj: `malkampanj.<M>.ocksa[]`. Kräver att huvudmålet finns —
+ * ett extra mål utan huvudmål är ingen marknad. Landet är nyckeln: samma
+ * land skrivs över, aldrig dubblerat. `kampanj_namn` fylls av kön vid
+ * nästa läsning om det utelämnas.
+ */
+export function sattMalkampanjOcksa(nyckel, marknad, land, kampanjId, { motivering = '', kampanjNamn = '', satt = svenskDatum() } = {}) {
+  const M = String(marknad ?? '').toUpperCase();
+  const L = String(land ?? '').toUpperCase();
+  if (!/^[A-Z]{2}$/.test(L)) throw new Error(`landet ska vara en tvåbokstavskod (AU, GB …), fick "${land}"`);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  const mal = rad.malkampanj?.[M];
+  if (!mal?.kampanj_id) throw new Error(`${post.nyckel} har ingen målkampanj för ${M} i registret — ett extra mål kräver ett huvudmål (malkampanj.${M}).`);
+  const ocksa = (Array.isArray(mal.ocksa) ? mal.ocksa : []).filter((o) => String(o?.land ?? '').toUpperCase() !== L);
+  if (normalisera(kampanjId) !== 'av') {
+    if (!/^\d{6,}$/.test(String(kampanjId))) throw new Error(`kampanj_id ska vara Metas numeriska id, fick "${kampanjId}"`);
+    if (String(kampanjId) === String(mal.kampanj_id)) throw new Error('det extra målet är samma kampanj som huvudmålet');
+    ocksa.push({ land: L, namnkod: L, kampanj_id: String(kampanjId), ...(kampanjNamn ? { kampanj_namn: kampanjNamn } : {}), satt, ...(motivering ? { motivering } : {}) });
+  }
+  mal.ocksa = ocksa;
+  rad.malkampanj[M] = mal;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, malkampanj: rad.malkampanj };
+}
+
 /** Skriver in vilka marknader speglingen laddar upp i. Kräver en spegling. */
 export function sattSpeglingUppladdning(nyckel, text, { satt = svenskDatum(), motivering = '' } = {}) {
   const lista = speglingUppladdningUr(text);
@@ -1148,6 +1179,17 @@ function huvud() {
     console.log(`  Steg i källhubben (Axels klick: lägg till som Status-alternativ): "${post.spegling.status_se}" och "${post.spegling.status_en}"`);
     console.log(`  Rutin: node factory/rutin.mjs --tider ${post.nyckel} visar /ops-spegla-tiden; /notionscalercs setup ${post.nyckel} bygger den.`);
     console.log(`  Laddar upp i butiken: ${speglingLaddarUpp(post.spegling).join(', ') || 'inget — bara överlämning till engelska (spegling-uppladdning)'}`);
+    return;
+  }
+  if (arg[0] === 'malkampanj-ocksa') {
+    // Extra målkampanj för en marknad (tools/lib/malkampanj.mjs): samma
+    // engelska annons en gång till, i t.ex. Axels AU-kampanj, under _AU_-namnet.
+    //   malkampanj-ocksa <nyckel> <marknad> <LAND> <kampanj_id|av> [kampanjnamn | motivering…]
+    const [, nyckel, marknad, land, kampanjId, ...rest] = arg;
+    if (!nyckel || !marknad || !land || !kampanjId) throw new Error('Ange: malkampanj-ocksa <nyckel> <marknad> <LAND> <kampanj_id|av> [motivering…]');
+    const post = sattMalkampanjOcksa(nyckel, marknad, land, kampanjId, { motivering: rest.join(' '), satt: idag });
+    const lista = post.malkampanj?.[String(marknad).toUpperCase()]?.ocksa ?? [];
+    console.log(`Extra mål för ${post.namn} på ${String(marknad).toUpperCase()}: ${lista.length ? lista.map((o) => `${o.land} → ${o.kampanj_id}${o.kampanj_namn ? ` "${o.kampanj_namn}"` : ''}`).join(' · ') : 'inga'}`);
     return;
   }
   if (arg[0] === 'spegling-uppladdning') {
