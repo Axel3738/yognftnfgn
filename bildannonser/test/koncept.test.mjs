@@ -95,6 +95,34 @@ test('samma produkt får inte samma koncept som de tre senaste gångerna', () =>
   assert.equal(val2.koncept.id, 'K01');
 });
 
+test('prioritet hog vinner vid lika användning, och lag väljs aldrig av sig själv', () => {
+  const b = bib();
+  b.koncept[0].prioritet = 'normal';   // K01
+  b.koncept[1].prioritet = 'hog';      // K07
+  b.koncept[2].prioritet = 'lag';      // K17
+  b.koncept[3].prioritet = 'lag';      // K18
+  assert.equal(valjKoncept({ vinkel: 'CS', produkt: 'P', historik: [], bib: b }).koncept.id, 'K07');
+  // Alla utom de låga är nyss använda: den låga väljs ändå inte, K01 kommer tillbaka.
+  const historik = [
+    { datum: '2026-10-01', produkt: 'P', koncept: 'K07' },
+    { datum: '2026-10-02', produkt: 'P', koncept: 'K01' },
+  ];
+  const val = valjKoncept({ vinkel: 'CS', produkt: 'P', historik, bib: b });
+  assert.notEqual(val.koncept.prioritet, 'lag');
+  // Men briefen får be om den.
+  assert.equal(valjKoncept({ vinkel: 'CS', produkt: 'P', onskat: 'K17', bib: b }).koncept.id, 'K17');
+});
+
+test('biblioteket på disk bär Evolves mallnamn och en prioritet på varje koncept', () => {
+  const bib = lasKoncept();
+  for (const k of bib.koncept) {
+    assert.ok(k.evolve_namn, `${k.id} saknar evolve_namn`);
+    assert.ok(['hog', 'normal', 'lag'].includes(k.prioritet), `${k.id} saknar prioritet`);
+  }
+  assert.ok(bib.koncept.filter((k) => k.prioritet === 'hog').length >= 5);
+  assert.ok(Array.isArray(bib.regler_fran_chadbot) && bib.regler_fran_chadbot.length >= 5);
+});
+
 test('när spärren äter alla kandidater undviks bara det allra senaste', () => {
   const b = bib();
   b.koncept = b.koncept.filter((k) => ['K01', 'K07'].includes(k.id));

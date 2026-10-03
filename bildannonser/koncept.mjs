@@ -36,6 +36,10 @@ const BLOCKNYCKLAR = new Set(['zon', 'stil', 'storlek', 'rader', 'meningar', 'pl
 // Hur många av produktens senaste koncept som är spärrade för nästa val.
 export const SPARR_SENASTE = 3;
 
+// Prioriteten ur Chadbots svar 2026-10-03 (docs/os/evolve/STATICS.md): hog väljs
+// först, normal sedan, lag bara på briefens uttryckliga begäran.
+export const PRIORITET = { hog: 0, normal: 1, undefined: 1, lag: 2 };
+
 export function lasKoncept(fil = BIBLIOTEK) {
   const bib = JSON.parse(readFileSync(fil, 'utf8'));
   granskaBibliotek(bib);
@@ -55,6 +59,9 @@ export function granskaBibliotek(bib) {
     if (sedda.has(k.id)) throw new Error(var_('id:t finns två gånger.'));
     sedda.add(k.id);
     if (!['klar', 'tillagg'].includes(k.status)) throw new Error(var_(`okänd status "${k.status}".`));
+    if (k.prioritet !== undefined && !['hog', 'normal', 'lag'].includes(k.prioritet)) {
+      throw new Error(var_(`okänd prioritet "${k.prioritet}" — hog, normal eller lag.`));
+    }
     if (k.status === 'tillagg' && !k.tillagg_text_py) throw new Error(var_('status "tillagg" utan tillagg_text_py.'));
     if (!Array.isArray(k.vinklar) || k.vinklar.length === 0) throw new Error(var_('vinklar är tom.'));
     if (!Array.isArray(k.block) || k.block.length === 0) throw new Error(var_('block är tomt.'));
@@ -114,18 +121,25 @@ export function valjKoncept({ vinkel, produkt, historik = [], onskat = null, bib
     kandidater = klara;
     orsak = `inget koncept bär vinkeln ${vinkel} — hela biblioteket`;
   }
+  // Chadbot 2026-10-03: narrativa mallar (prioritet "lag") bara när briefen
+  // ber om dem — de lämnar kandidatlistan före spärren, så att en spärrad
+  // produkt hellre får ett nyss använt offer-koncept än ett lågt.
+  const ejLaga = kandidater.filter((k) => k.prioritet !== 'lag');
+  if (ejLaga.length) kandidater = ejLaga;
   let fria = kandidater.filter((k) => !senaste.includes(k.id));
   if (fria.length === 0) {
     // Färre koncept än spärren: undvik bara det allra senaste.
     fria = kandidater.filter((k) => k.id !== senaste[0]);
     if (fria.length === 0) fria = kandidater;
   }
-  fria.sort((a, b) => (antal.get(a.id) || 0) - (antal.get(b.id) || 0));
+  // Offer- och smärtpunktsmallar (prioritet "hog") först vid lika användning.
+  fria.sort((a, b) =>
+    (antal.get(a.id) || 0) - (antal.get(b.id) || 0) || PRIORITET[a.prioritet] - PRIORITET[b.prioritet]);
   const k = fria[0];
   const g = antal.get(k.id) || 0;
   return {
     koncept: k,
-    orsak: `${orsak}; ${g === 0 ? 'aldrig använt' : `använt ${g} gånger`} för ${produkt}; spärrade: ${senaste.join(', ') || 'inga'}`,
+    orsak: `${orsak}; ${g === 0 ? 'aldrig använt' : `använt ${g} gånger`} för ${produkt}; prioritet ${k.prioritet || 'normal'}; spärrade: ${senaste.join(', ') || 'inga'}`,
   };
 }
 
@@ -196,7 +210,7 @@ export function main(argv = process.argv.slice(2)) {
   const bib = lasKoncept();
   if (argv.includes('--lista')) {
     const rader = bib.koncept.map((k) =>
-      `${k.id}  ${k.status === 'klar' ? '✅' : '🔧'}  ${k.namn.padEnd(36)} ${k.funnel.padEnd(4)} ${k.vinklar.join(',')}`);
+      `${k.id}  ${k.status === 'klar' ? '✅' : '🔧'}  ${(k.prioritet || 'normal').padEnd(7)} ${k.namn.padEnd(36)} ${k.funnel.padEnd(4)} ${k.vinklar.join(',')}`);
     console.log(`${bib.koncept.length} koncept (${bib.koncept.filter((k) => k.status === 'klar').length} klara):\n${rader.join('\n')}`);
     return 0;
   }

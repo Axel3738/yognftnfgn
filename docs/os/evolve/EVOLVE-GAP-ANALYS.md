@@ -258,12 +258,11 @@ Matstrumpors enda breakthrough är en riktig kreatör i bild.
 
 ## 8. Det som återstår att fråga Chadbot (inte ställt förut)
 
-- **Statics (bildannonser), skriven 2026-10-03 i `STATICS.md`:** vilka av de 13
-  mallarna och BFCM-typerna som passar lågprisprodukter i BOF och säsong, hur
-  många layouter per produkt och vecka, kongruens med Nano Banana på en produkt
-  utan visuellt drama, ful mot designad, och om konceptet ska in i annonsnamnet.
-  Kursens eget material om statics är läst först (mallarna, BFCM-dokumentet,
-  Banger Static Ads Prompt) och ligger i konceptbasen `bildannonser/koncept/`.
+- ✅ **Statics (bildannonser): ställd och besvarad 2026-10-03** — svaret och
+  vad som gjordes med det står i `STATICS.md`; konceptbasen
+  `bildannonser/koncept/` bär prioriteten. Fråga inte igen om mallval för
+  BOF/säsong, koncept = vinkel, Nano Banana-kongruens eller ful mot designad.
+  Boten hade inget om namnkonventioner för visuellt koncept.
 
 - Hur de hanterar en breakthrough-UGC när kreatören bara gjort EN video: beställa fler av
   samma person eller sprida manuset på nya kreatörer först?

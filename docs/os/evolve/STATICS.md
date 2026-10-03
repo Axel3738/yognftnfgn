@@ -143,6 +143,76 @@ Questions:
 5. Do you tag the visual concept in the ad name for analysis, or only the angle?
 ```
 
-## Chadbots svar
+## Chadbots svar (klistrat av Axel 2026-10-03)
 
-(väntar)
+Botens referenser: D1 = 13 Winning Static Ad Templates, D2 = Nano Banana-metoden
+i How To Write Image Ads 2, D3 = marksman-metoden, D4 = promo-kampanjstrukturen.
+Botens mallnummer avviker från översiktsdokumentets; namnen stämmer och är det
+som mappas nedan.
+
+```
+1. For low-ticket utility products, lean on offer-driven and pain-point templates for BOF, run winners-with-banners for seasonal, and treat each distinct angle as a "concept" — not headline variants on one layout. The sources don't prescribe a per-product weekly cap, and they don't cover ad-name tagging conventions.
+
+Which templates to prioritize for BOF and seasonal
+For BOF on low-ticket utility with no brand moat, the templates that fit from D1's 13:
+* Specific Ad Pain Point: specific pain beats generic — works well for utility products where the problem is concrete (boat cover tearing, garden tool rusting) [D1]
+* Classy Offer Ad: clean emphasis on offers like BOGO — your two scaling statics already prove this format works for you [D1]
+* Minimal Us Versus Them: simplicity reduces purchase fear — matters at low price points where buyers don't want to overthink [D1]
+* Simplified Us Versus Them: minimal words explain the claim — fast comprehension at low AOV [D1]
+For seasonal (Father's Day, BFCM), D4's promo campaign structure is the framework: one campaign, three ad sets, your best ads with sale banners on top plus some new sale image ads [D4]. Layer sale messaging onto proven winners rather than reinventing creative for the promo.
+What's likely a waste at this price point: narrative-heavy or curiosity-dependent templates (Solution Exaggeration, Stealing Credibility, Accidental Ideal Outcome) — these need more cognitive investment from the viewer, which works better for higher-AOV products. At ~600 SEK AOV, speed-to-comprehension matters more than intrigue.
+Your own data confirms this: your two scaling statics are a plain discount banner and a real customer photo with a quote. Both are maximum-clarity, zero-friction formats.
+
+2. How many concepts per week, and what counts as a concept
+No source gives a specific per-product weekly concept count. D3's marksman method treats each angle as a distinct test — 3 angles = 3 tests [D3]. D2: "big enough swings using same template? Yes, focus on copy (headlines target different sub-avatars); visuals secondary without designer" [D2]. So three headline variants targeting different sub-avatars on one layout CAN be three concepts — but only if the headlines represent genuinely different angles. Three headline tweaks of the same message on the same layout = one concept.
+Your problem right now isn't too few layouts — it's 350 live statics with one visual execution. Diversify the ANGLE, and let the layout follow the angle. Given 350 live statics mostly getting no delivery, you're likely past the noise threshold already.
+
+3. Nano Banana congruence for visually boring products
+D2: "Use Nano Banana (in Google AI Studio): Generate congruent images" — images that match the headline's scenario (tiny plate of food, jug of water) rather than generic product shots [D2].
+For a plain black cover with no visual drama: don't generate the product. Generate the PROBLEM or the SCENARIO the headline describes. If your headline is "Your boat cover shouldn't cost as much as a month of storage," generate a marina storage bill, a damaged boat from sun exposure, or a frustrated boat owner — not another product cutout. The image earns the click; the PDP does the selling. "Test messaging first; extra congruence helps but not essential" [D2].
+
+4. Ugly vs designed
+D1: "Avoid judging ads by looks; prioritize conversion over aesthetics" [D1]. The common thread isn't ugly vs designed — it's clarity of message and social proof. When designed beats ugly: when the design communicates the angle faster than a text banner can. A split-screen "them vs us" or a spec-list layout can convey comparison in a way a plain banner can't. If your designed statics are just prettier versions of the same headline-product-price layout, they won't outperform the ugly one. Test designed concepts that carry genuinely different angles, not designed versions of the same angle.
+
+5. Tagging visual concept in ad names
+No source covers ad naming conventions for visual concept tagging vs angle tagging. Worth asking the community directly.
+```
+
+## Evolves egna namn på de tretton mallarna (översiktsdokumentet, läst efter svaret)
+
+| Evolve | Vårt koncept | Prioritet efter Chadbot |
+|---|---|---|
+| 1) Avatar Call Out | K03 (och K02 citatet) | normal |
+| 2) Solution Exaggeration | K05 | lag |
+| 3) Stealing Credibility | K04 | lag |
+| 4) This Is Not [The Product] | K06 | normal |
+| 5) Specific Pain Point | K07 Mekanismkortet | **hog** |
+| 6) Accidental Ideal Outcome | K08 Jag-raden | lag |
+| 7) Relatable Hook | K09 Spec-listan | normal |
+| 8) Indirect Avatar | K10 Situationerna | normal |
+| 9) The Free Ad | K11 | normal |
+| 10) Classy Offer | K12 Vänster eller höger? | **hog** |
+| 11) Simplified Us vs Them | K13 Bröd/frukost | **hog** |
+| 12) Pubity Style | K14 Scenen + raden | normal |
+| 13) Minimal Us vs Them | K15 Dem mot oss | **hog** |
+
+Översiktsdokumentets "why this ad works" per mall, det som inte stod i
+mallarna själva: Specific Pain Point lutar sig mot ett talesätt som "offend
+people" (muffin top) + prisstreck 36 → 27; Accidental Ideal Outcome använder
+"unika tal" (12 pounds, 52, 56,4 %) som är mer trovärdiga än runda; This Is Not
+kräver att ordleken går ihop ("if the dots don't get connected, the ad will
+flop"); The Free Ad: "people love free and they will love free 4x over";
+Relatable Hook och Indirect Avatar pekar båda på en advertorial-landningssida.
+
+## Vad vi gjorde med svaret (samma dag)
+
+- Varje koncept i `bildannonser/koncept/koncept.json` bär `evolve_namn` och
+  `prioritet` (hog/normal/lag). Väljaren tar hog först och väljer aldrig lag
+  av sig själv; briefen får be om ett lågt koncept med `Koncept:`.
+- Nytt koncept **K21 Problemet i bild**: bilden är scenen rubriken påstår,
+  ingen produkt i scenen, produkten som litet utklipp i hörnet. Prioritet hog.
+- `regler_fran_chadbot` i basen: ett koncept är en vinkel; designat bara när
+  layouten säger vinkeln snabbare; säsong = vinnare med sticker + några nya
+  rea-bilder; konceptet loggas, aldrig i annonsnamnet.
+- Inte gjort, med flit: ingen gräns per vecka (boten gav ingen), och ingen
+  ändring av namnkonventionen.

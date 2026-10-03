@@ -90,14 +90,34 @@ uttryckligen ber om det). Det minst använda konceptet för produkten vinner.
   BFCM-exempel, en vinnare i kontot eller en swipe i `docs/swipes/`. Gissningar
   märks som gissningar.
 
+## Chadbots svar är inskrivet (2026-10-03, `docs/os/evolve/STATICS.md`)
+
+- Varje koncept bär `evolve_namn` (Evolves eget mallnamn) och `prioritet`:
+  **hog** = smärtpunkt (K07), offer (K12, K01, K18), de två us-vs-them (K13,
+  K15), stickern på vinnaren (K16) och problemet i bild (K21); **lag** = de
+  narrativa (K04 Stealing Credibility, K05 Solution Exaggeration, K08
+  Accidental Ideal Outcome), som boten dömde som slöseri på en lågprisprodukt.
+  Väljaren tar hog först och tar aldrig ett lågt koncept utan `Koncept:` i
+  briefen.
+- **Ett koncept är en vinkel.** Rotationen är layouten; vinkeln kommer ur
+  briefen, och tre rubriker på samma layout är tre koncept bara om de bär tre
+  olika vinklar. Det står i `regler_fran_chadbot` i basen.
+- **K21 Problemet i bild** är nytt: scenen rubriken påstår, ingen produkt i
+  scenen, produkten som litet utklipp. Botens svar på "hur får man kongruens
+  på ett svart överdrag": generera problemet, inte produkten.
+- Säsong: vinnarna med rea-sticker (K16) plus några nya rea-bilder, aldrig ny
+  creative från noll.
+
 ## Nästa steg (inte gjort)
 
 1. De fyra `tillagg`-koncepten kräver zoner i `text.py`: `rutnat-2x2` (K04),
-   `ringar-3x3` (K10), `chips` (K11), `anteckning` (K20).
+   `ringar-3x3` (K10), `chips` (K11), `anteckning` (K20). K04 och K10 har låg
+   prioritet, så K11 och K20 går först om någon bygger.
 2. Briefskrivaren på rutinens gren (`rond-auto.md`, `claude/daily-agent-discussion-uos5df`)
    ska be om `Koncept:` per bildrad och skriva de rader konceptet kräver.
    Tills dess väljer rutinen själv och tar de rader som finns.
 3. Läs av efter två veckor: vinstbidrag per koncept ur `logg.jsonl` × kontot.
    Koncept utan leverans efter sju dygn är ett utfall att logga, inte ett fel
    (CLAUDE.md regel 11).
-4. Chadbots svar på frågan i `docs/os/evolve/STATICS.md` skrivs in här.
+4. Namnkonventionen rörs inte: konceptet lever i `logg.jsonl`. Vill Axel ha
+   det i annonsnamnet är det en fråga till Evolve-communityn, inte till boten.

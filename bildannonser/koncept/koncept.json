@@ -1,5 +1,5 @@
 {
-  "kommentar": "Bäverbutikens konceptbas för bildannonser — vår egen 'Gro'. Byggd 2026-10-03 ur Evolves 13 Winning Static Ad Templates, Evolves BFCM 2025 Winning Ads Document (statics-delen) och kontots egna mätta vinnare. Varje koncept pekar på sin källa; ett koncept föds aldrig ur tomma intet (CLAUDE.md → Så lär sig systemet). Läs README.md i samma mapp. Kodfält: vinklar = annonskoder ur docs/naming-convention.md som konceptet passar; funnel = var i tratten; status 'klar' = går att rendera med bildannonser/text.py som den ser ut i dag, 'tillagg' = behöver ett tillägg i text.py (står i tillagg_text_py) och väljs inte av rutinen förrän det finns; block = skelett för text.py-spec:en (zon + stil, plus text.py:s egna flaggor storlek/rader/meningar/platta/ljus — inga andra nycklar, text.py läser inga färger ur spec:en), raderna själva kommer ALLTID ordagrant ur briefen; bildprompt = engelskt skelett för kie.ai, {PRODUKT} byts mot produktbeskrivningen ur referensfotot, {SCEN} mot briefens scen; kraver = de rader briefen måste bära (namnen är briefens Script/shot list-rader).",
+  "kommentar": "Bäverbutikens konceptbas för bildannonser — vår egen 'Gro'. Byggd 2026-10-03 ur Evolves 13 Winning Static Ad Templates, Evolves BFCM 2025 Winning Ads Document (statics-delen) och kontots egna mätta vinnare. Varje koncept pekar på sin källa; ett koncept föds aldrig ur tomma intet (CLAUDE.md → Så lär sig systemet). Läs README.md i samma mapp. Kodfält: vinklar = annonskoder ur docs/naming-convention.md som konceptet passar; funnel = var i tratten; status 'klar' = går att rendera med bildannonser/text.py som den ser ut i dag, 'tillagg' = behöver ett tillägg i text.py (står i tillagg_text_py) och väljs inte av rutinen förrän det finns; block = skelett för text.py-spec:en (zon + stil, plus text.py:s egna flaggor storlek/rader/meningar/platta/ljus — inga andra nycklar, text.py läser inga färger ur spec:en), raderna själva kommer ALLTID ordagrant ur briefen; bildprompt = engelskt skelett för kie.ai, {PRODUKT} byts mot produktbeskrivningen ur referensfotot, {SCEN} mot briefens scen; kraver = de rader briefen måste bära (namnen är briefens Script/shot list-rader). Fält sedan Chadbots svar 2026-10-03: evolve_namn = Evolves eget namn på mallen (ur översiktsdokumentet), prioritet = hog/normal/lag med prioritet_orsak, och regler_fran_chadbot längst ner.",
   "version": 1,
   "andrad": "2026-10-03",
   "koncept": [
@@ -47,7 +47,10 @@
         "Rea och procent bara när briefen bär raden REA BESLUTAD AV ÄGAREN (verifiera.py).",
         "Jämförpriset är ett ritat streck, aldrig ordet.",
         "Större rabattyta gav lägre ROAS på Grillkliniken (docs/mastern-static-analys.md) — plattan tar högst en tredjedel."
-      ]
+      ],
+      "evolve_namn": "BFCM: Product BFCM Ad / Biggest Sale Of Year",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K02",
@@ -86,7 +89,9 @@
       "regler": [
         "Citatet måste vara en riktig recension (Judge.me/Trustpilot) — aldrig påhittat, aldrig 'verifierad kund' på en importerad recension (klaviyo/spoks/README.md → Falska citat).",
         "Citatet är det visuellt största; hooken (om någon) står ovanför det (bildannonser.md steg 3, punkt 4)."
-      ]
+      ],
+      "evolve_namn": "1) Avatar Call Out (citatet)",
+      "prioritet": "normal"
     },
     {
       "id": "K03",
@@ -124,7 +129,9 @@
       "regler": [
         "Avataren ska vara en sub-avatar ur products/<id>/dna.md, aldrig 'husbilsägare' i största allmänhet.",
         "Rubriken är ett påstående, aldrig en fråga."
-      ]
+      ],
+      "evolve_namn": "1) Avatar Call Out",
+      "prioritet": "normal"
     },
     {
       "id": "K04",
@@ -153,7 +160,10 @@
       ],
       "regler": [
         "Bara tal som står på produktsidan (framework steg 7)."
-      ]
+      ],
+      "evolve_namn": "3) Stealing Credibility",
+      "prioritet": "lag",
+      "prioritet_orsak": "Chadbot 2026-10-03: narrativa/nyfikenhetsmallar kräver mer av läsaren och passar högre AOV; väljs bara när briefen ber om det."
     },
     {
       "id": "K05",
@@ -189,7 +199,10 @@
       ],
       "regler": [
         "Två satser, båda påståenden. Första satsen är talet eller handlingen, andra är det som försvinner."
-      ]
+      ],
+      "evolve_namn": "2) Solution Exaggeration",
+      "prioritet": "lag",
+      "prioritet_orsak": "Chadbot 2026-10-03: narrativa/nyfikenhetsmallar kräver mer av läsaren och passar högre AOV; väljs bara när briefen ber om det."
     },
     {
       "id": "K06",
@@ -225,7 +238,9 @@
       ],
       "regler": [
         "Y är det kunden använder i dag (presenning, gammal filt), aldrig en konkurrents namn."
-      ]
+      ],
+      "evolve_namn": "4) This Is Not [The Product]",
+      "prioritet": "normal"
     },
     {
       "id": "K07",
@@ -269,7 +284,10 @@
       ],
       "regler": [
         "Badgen är ett faktum ur produktsidan (420D, 6,5 × 3 m), aldrig ett värdeord."
-      ]
+      ],
+      "evolve_namn": "5) Specific Pain Point",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K08",
@@ -308,7 +326,10 @@
       ],
       "regler": [
         "Jag-raden är ett ordagrant citat ur en riktig recension — samma regel som K02."
-      ]
+      ],
+      "evolve_namn": "6) Accidental Ideal Outcome",
+      "prioritet": "lag",
+      "prioritet_orsak": "Chadbot 2026-10-03: narrativa/nyfikenhetsmallar kräver mer av läsaren och passar högre AOV; väljs bara när briefen ber om det."
     },
     {
       "id": "K09",
@@ -342,7 +363,9 @@
       ],
       "regler": [
         "Varje punkt är ett faktum ur produktsidan. Inga värdeord."
-      ]
+      ],
+      "evolve_namn": "7) Relatable Hook",
+      "prioritet": "normal"
     },
     {
       "id": "K10",
@@ -375,7 +398,9 @@
           "stil": "etikett"
         }
       ],
-      "regler": []
+      "regler": [],
+      "evolve_namn": "8) Indirect Avatar",
+      "prioritet": "normal"
     },
     {
       "id": "K11",
@@ -408,7 +433,9 @@
       ],
       "regler": [
         "Varje 'gratis' måste finnas i butiken som bonusprodukt eller paketnivå — aldrig påhittad."
-      ]
+      ],
+      "evolve_namn": "9) The Free Ad",
+      "prioritet": "normal"
     },
     {
       "id": "K12",
@@ -442,7 +469,10 @@
       ],
       "regler": [
         "Erbjudandet måste finnas i butiken (paketkod eller automatisk rabatt), kontrollerat före rendering."
-      ]
+      ],
+      "evolve_namn": "10) Classy Offer",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K13",
@@ -484,7 +514,10 @@
       ],
       "regler": [
         "Högra panelen genereras FRÅN den vänstra (framework steg 4.3) så att enda skillnaden är produkten."
-      ]
+      ],
+      "evolve_namn": "11) Simplified Us vs Them",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K14",
@@ -517,7 +550,9 @@
       ],
       "regler": [
         "Rubriken samverkar med eller kontrasterar mot bilden (ITERATIONS-PLAYBOOK hook issue 1) — den beskriver aldrig bara vad som syns."
-      ]
+      ],
+      "evolve_namn": "12) Pubity Style",
+      "prioritet": "normal"
     },
     {
       "id": "K15",
@@ -561,7 +596,10 @@
       ],
       "regler": [
         "'Dem' är det kunden använder i dag, aldrig ett konkurrentnamn (docs/copy-regler.md)."
-      ]
+      ],
+      "evolve_namn": "13) Minimal Us vs Them",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K16",
@@ -594,7 +632,10 @@
       "regler": [
         "Föräldern läses ur kontot på vinstbidrag (ANALYSMETOD), aldrig ur minnet.",
         "Stickern är liten: den får aldrig täcka produkten eller rubriken."
-      ]
+      ],
+      "evolve_namn": "BFCM: Sticker On Top Performer",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K17",
@@ -634,7 +675,9 @@
       ],
       "regler": [
         "Ingen produktbild med flit — testet är om budskapet ensamt bär."
-      ]
+      ],
+      "evolve_namn": "BFCM: Black Friday Text Ad",
+      "prioritet": "normal"
     },
     {
       "id": "K18",
@@ -677,7 +720,10 @@
           "stil": "knapp"
         }
       ],
-      "regler": []
+      "regler": [],
+      "evolve_namn": "BFCM: Split Screen",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: offer- och smärtpunktsmallar först i BOF på lågprisprodukter; vinnare med rea-sticker i säsong."
     },
     {
       "id": "K19",
@@ -717,7 +763,9 @@
       ],
       "regler": [
         "Antalet i bild = antalet i erbjudandet (framework steg 4.4)."
-      ]
+      ],
+      "evolve_namn": "BFCM: Insane Deal / Bundle",
+      "prioritet": "normal"
     },
     {
       "id": "K20",
@@ -757,7 +805,55 @@
       ],
       "regler": [
         "Native-formatet är lätt att kopiera och lever kort (ITERATIONS-PLAYBOOK rad 137) — en iteration, aldrig en serie."
+      ],
+      "evolve_namn": "Evolves iPhone Notes-annonser (native)",
+      "prioritet": "normal"
+    },
+    {
+      "id": "K21",
+      "namn": "Problemet i bild",
+      "kalla": "Evolve How To Write Image Ads 2 (Nano Banana: generera scenen rubriken beskriver, inte produkten: en liten tallrik, en kanna vatten) och Chadbots svar 2026-10-03: \"don’t generate the product. Generate the PROBLEM or the SCENARIO the headline describes\". Vår Takoverdrag_SP_2_1 (riktigt foto av taket) är samma princip.",
+      "evolve_namn": "Nano Banana congruence (D2)",
+      "prioritet": "hog",
+      "prioritet_orsak": "Chadbot 2026-10-03: för en produkt utan visuellt drama ska bilden bära problemet eller scenen, produkten säljs på sidan.",
+      "funnel": "TOF",
+      "vinklar": [
+        "SO",
+        "PD",
+        "OB",
+        "FD"
+      ],
+      "status": "klar",
+      "sa_ser_den_ut": "Bilden är det rubriken påstår: det nedsnöade taket utan överdrag, den rostiga klingan, fakturan från vinterförvaringen, den tomma lådan under granen. Ingen produktbild i scenen. Rubriken ligger över nedre kanten på scrim, produkten som liten utklippt bild i ett hörn och en knapp.",
+      "kraver": [
+        "Headline",
+        "Scene"
+      ],
+      "bildprompt": "Photorealistic candid photograph of the exact situation this headline describes: {SCEN}. The scene is the whole picture: no product, no packaging, no faces, no text, no letters, no numbers, no logo, no watermark. The lower quarter of the frame is calm and uncluttered.",
+      "block": [
+        {
+          "zon": "botten",
+          "stil": "rubrik",
+          "ljus": true,
+          "storlek": 72
+        },
+        {
+          "zon": "botten",
+          "stil": "knapp"
+        }
+      ],
+      "regler": [
+        "Scenen ska gå att falsifiera: den visar det rubriken påstår, aldrig en allmän stämningsbild.",
+        "Produkten kommer som utklipp ur referensfotot i ett hörn (nivå 2 i framework-bildannonser.md), aldrig ritad av modellen."
       ]
     }
+  ],
+  "regler_fran_chadbot": [
+    "Ett koncept är en VINKEL, inte en layout. Tre rubriker på samma layout är tre koncept bara om de bär tre olika vinklar (olika smärta, avatar eller mekanism). Tre omskrivningar av samma budskap är ett koncept. Layouten följer vinkeln.",
+    "En designad bild slår bara den fula när layouten säger vinkeln snabbare än en textbanner kan (delad skärm, spec-lista, dem mot oss). En snyggare version av samma rubrik-produkt-pris slår aldrig originalet.",
+    "För en produkt utan visuellt drama: generera problemet eller scenen rubriken beskriver, inte produkten (K21). Testa budskapet först; perfekt kongruens är ett plus, inte ett krav.",
+    "Säsong (fars dag, Black Friday): en kampanj, tre adsets, de bästa annonserna med rea-sticker (K16) plus några nya rea-bilder (K01, K17, K18). Aldrig ny creative från noll för en rea.",
+    "Prioritet hog väljs först, normal sedan, lag bara när briefen ber om det. Chadbot gav ingen gräns för antal koncept per vecka; problemet var en layout på 350 bilder, inte för få layouter.",
+    "Konceptet skrivs i logg.jsonl, inte i annonsnamnet: Chadbot hade inget om namnkonventioner, och docs/naming-convention.md är normativ."
   ]
 }
