@@ -496,6 +496,17 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
     Ett kommando som ber om ett längre leveransformat i chatten gäller — men
     Axels egna uppgifter står alltid sist, numrerade och omöjliga att missa.
+16. ⛔ **Modellen: Fable planerar, Opus 5.5 bygger** (Axels order 2026-10-03:
+    "Du cookar min limit … Använd Fable för att planera och Opus 5.5 för att
+    bygga och göra grejer"). Huvudsessionen (Fable) läser, bestämmer och
+    granskar; allt som är skrivande av kod, dokument, tester och körningar
+    går till en subagent med `model: "opus"` (Agent-verktyget) eller
+    `model: 'claude-opus-5-5'` (Workflow). Rutinernas fasta sessioner skapas
+    med `model: "claude-opus-5-5"` — de kör ett skript och behöver ingen dyr
+    modell (Strategrapporten är den första, byggd om samma dag). Granskning
+    med skeptiker-paneler bara när något kostar pengar eller förtroende att
+    ha fel om, och aldrig tre skeptiker per fynd: tre granskare fann riktiga
+    fel i strategrapporten, de 78 skeptikerna efteråt stoppades av Axel.
 15. **Chadbot finns: erbjud den när du är osäker** (Axels beslut 2026-09-29).
     **Chadbot = Evolve-boten**, AI-boten i Evolve-kursens Discord-server.
     Den kan mer än vi om annonser, creative strategy, skalning och e-handel.
