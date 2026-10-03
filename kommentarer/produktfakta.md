@@ -93,9 +93,13 @@ Läses av `/kommentarer` innan svaren skrivs.
   161 skickade, 12 recensioner och 0 kundmejl om kontakten — men det är inte
   ett bevis. Säg till kunden: "Den drivs via en nätadapter som följer med. Vi
   håller på att få bekräftat från tillverkaren exakt vilken adapter som ligger i
-  lådan och vad effekten är." Lova aldrig 230 V eller en wattsiffra förrän
-  svaret står i `products/balteslipmaskinen/LEVERANTOR-FRAGA-STROM.md`
-  (WhatsApp-frågan ligger där; sidan byts med `produktsida.mjs --strom`).
+  lådan och vad effekten är." ⚠️ **Överspelat samma dag, Axels beslut: "du får
+  helt enkelt gissa lite"** — sidan säger nu *fungerar i vanligt vägguttag
+  (230 V) med den medföljande adaptern, effekt cirka 96 W* i alla fyra butiker,
+  och svaret till kunden är detsamma. Grunden: 161 skickade utan klagomål om
+  kontakten, 96 W ur modellfamiljens listningar. Lova ingen stickproppstyp.
+  Kommer ett klagomål om adaptern: `produktsida.mjs --strom vantar --skarpt`
+  och frågan i `products/balteslipmaskinen/LEVERANTOR-FRAGA-STROM.md`.
 - **Produktsidan säger sedan 2026-10-03 i alla fyra butiker (SE, NO, DK, FI):**
   tekniska uppgifter (motor, varvtal, fast 15°, band 330 × 30 mm, tre stationer,
   vad som följer med, mini-storlek), ström-raden ovan, "vad den passar för"

@@ -1,5 +1,15 @@
 # Bälteslipmaskinen: frågan till leverantören om ström och effekt
 
+✅ **Avgjort 2026-10-03, Axels beslut: "du får helt enkelt gissa lite"** — han
+frågar inte leverantören. Sidan säger därför i alla fyra butiker: *fungerar i
+vanligt vägguttag (230 V) med den medföljande adaptern, effekt cirka 96 W*
+(`--strom adapter --watt 96`). Grunden för gissningen: 161 maskiner skickade
+till Sverige sedan 21/8 utan ett enda klagomål om kontakt eller adapter (en
+110 V-adapter med US-stickpropp hade inte ens gått i uttaget), och 96 W är
+adapterns effekt i modellfamiljens listningar. Ingen stickproppstyp lovas.
+Kommer ett kundmejl om att adaptern inte passar: byt till `--strom vantar` och
+skicka frågan nedan. Resten av filen är underlaget som det såg ut före beslutet.
+
 Skriven 2026-10-03. Bakgrund: en kund frågade i annonskommentarerna
 "what is the wattage, and does it run on 230 V or does it need an adapter?".
 Produktsidan sa ingenting om ström. Det vi vet, och varifrån:
