@@ -1152,6 +1152,16 @@ fältet sattes till 0 samma förmiddag via API (`inventoryItemUpdate`, tillbakal
    "Köp 1, få 1"-order som två fulla frakter. ⚠️ Arket ger sushi 3 par varan 2,6 USD i DK/FI men 1,7 i SE/NO —
    arkets eget tal, inte rättat. **Kvar, Axels:** Europa (DE, AT, CH, FR, BE, LU, NL, ES, IT, PL, PT), Japan och
    Taiwan har ingen kostnad; de räknas på svensk kostnad tills leverantören svarat via StonePNL:s offertlänk.
+4. **Axel gjorde klicken själv ~10:20 CEST** (prompt 9 oanvänd som Cowork-prompt; texten gavs i chatten): ruta A
+   inläst, tull 0 utanför EU, ätpinnarna kvitterade som gratis — appens "cost missing on 9–13 % of sales" i varje
+   land var ätpinnarnas 0 kr, som appen räknar som "misstänkt nolla" tills "Yes, this item is free" tryckts
+   (`pnl-app` → `freeVariants`). ⚠️ AU, NZ och TW fanns inte i tullistan (inga ordrar än) — de får standardtullen
+   vid första ordern tills någon skriver 0. Offertförfrågan för FR, BE, LU, IT, PT, JP (`stonepnl/bygg-offertsvar.mjs
+   --fraga`, `offertfraga-2026-10-03.txt`, länderna med aktiva kampanjer utan ark, lästa ur Meta samma förmiddag)
+   skickad till leverantören av Axel; svaret klistras in i samma ruta. **Marginalen på riktiga ordrar (14 dagar,
+   `cogs.mjs` med paketpriset):** Sverige 61 % kvar före annonser, break-even 1,65; FI 1,67, DK 1,55, US 1,45,
+   GB 1,40, NO 1,47. Varorna är inte problemet — SE-kampanjen låg på ROAS 2,06 (7 d), DK 0,86 och FI 1,38 under,
+   PT 4,5 utan känd kostnad.
 
 ## Sajtgranskningen 2026-10-01: rättningarna (2026-10-02, `sajtfix.mjs`)
 
