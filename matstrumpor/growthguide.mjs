@@ -349,8 +349,9 @@ export function saddAttSkriva(sadd, befintlig) {
   const ut = {};
   for (const [k, v] of Object.entries(sadd)) {
     const ny = saddVarde(v);
-    if (!ny) continue;
     const nu = befintlig ? (befintlig[k] ?? '') : '';
+    // Ingen sådd längre (briefen gav inget) ⇒ systemets gamla sådd töms, människans text står kvar.
+    if (!ny) { if (nu.startsWith('(seeded')) ut[k] = v; continue; }
     if (nu === '' || (nu.startsWith('(seeded') && nu !== ny)) ut[k] = v;
   }
   return ut;

@@ -101,6 +101,9 @@ test('såddregeln: en cell är systemets tills en människa rört den', () => {
   assert.deepEqual(saddAttSkriva(sadd, { LEARNINGS: 'Bruce skrev det här', 'AWARENESS LEVEL': 'Unaware' }), {}, 'människans text rörs aldrig');
   assert.deepEqual(Object.keys(saddAttSkriva(sadd, { LEARNINGS: '(seeded from lardomar.md, L-x) gammal text', 'AWARENESS LEVEL': 'Unaware' })), ['LEARNINGS'], 'systemets egen sådd får uppdateras när den ändrats');
   assert.deepEqual(saddAttSkriva(sadd, { LEARNINGS: '(seeded from lardomar.md, L-x) ny text', 'AWARENESS LEVEL': 'Unaware' }), {}, 'samma sådd ⇒ inget skrivs');
+  const tomSadd = { 'BREAKTHROUGH MEMO': { rich_text: [] }, LEARNINGS: { rich_text: [] } };
+  assert.deepEqual(Object.keys(saddAttSkriva(tomSadd, { 'BREAKTHROUGH MEMO': '(seeded from the brief) WHY: builds on L-x.', LEARNINGS: 'Bruce skrev' })), ['BREAKTHROUGH MEMO'], 'systemets gamla sådd töms när briefen inte ger något; människans text står kvar');
+  assert.deepEqual(saddAttSkriva(tomSadd, { 'BREAKTHROUGH MEMO': '', LEARNINGS: '' }), {}, 'tomt mot tomt ⇒ inget skrivs');
 });
 
 test('resultatEgenskaper: en annons → Ad Results, etiketthistoriken som text', () => {
