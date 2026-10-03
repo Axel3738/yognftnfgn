@@ -1,0 +1,66 @@
+{
+ "_comment": "Texterna tools/varmesulor-storlek.mjs splitsar in i värmesulornas produktsida på bäverbutiken.se, per språk (sv är butikens primära; de åtta andra är butikens publicerade locales 2026-10-03). Svenskan skriven av sessionen, de åtta av en sonnet-skribent mot de befintliga översättningarna i butiken och granskade av en skeptisk sonnet-granskare. Varje rad säger samma sak: klipplinjer 46 ner till 41, 41 är minsta, finns inte i 35–40.",
+ "sv": {
+  "rubrik": "Storlek: passar 41–46 – går inte att klippa mindre",
+  "stycke": "Sulan har klipplinjer från 46 ner till 41, och 41 är den minsta storleken. Den går inte att klippa mindre än 41 och finns inte i 35–40. Har du storlek 40 eller mindre passar den tyvärr inte.",
+  "stycke2": "Två sulor klipps efter din egen skostorlek längs de tryckta linjerna, från 46 ner till 41 men inte mindre, och styrs med en fjärrkontroll i nyckelringsformat. USB-kabeln laddar batteriet, 2000 mAh enligt leverantören.",
+  "punkt": "<strong>Klipps efter din egen skostorlek, 41–46</strong> – klipplinjer tryckta på sulan, 41 är minsta storleken",
+  "meta_description": "Två värmesulor med fjärrkontroll, tre värmelägen och klipplinjer för 41–46 – går inte att klippa mindre än 41. USB-kabel och manual ingår."
+ },
+ "de": {
+  "rubrik": "Größe: passend für EU 41–46 – nicht kleiner zuschneidbar",
+  "stycke": "Die Sohle hat Schnittlinien von EU-Größe 46 bis hinunter zu 41, und 41 ist die kleinste Größe. Sie lässt sich nicht kleiner als 41 zuschneiden und es gibt sie nicht in den EU-Größen 35–40. Wenn Sie Größe 40 oder kleiner haben, passt sie leider nicht.",
+  "stycke2": "Zwei Einlegesohlen werden entlang der aufgedruckten Linien auf Ihre eigene Schuhgröße zugeschnitten, von EU-Größe 46 hinunter bis 41, aber nicht kleiner, und mit einer Schlüsselanhänger-Fernbedienung gesteuert. Das USB-Kabel lädt den Akku, laut Lieferant 2000 mAh.",
+  "punkt": "<strong>Auf Ihre eigene Schuhgröße zugeschnitten, EU 41–46</strong> – Schnittlinien auf der Sohle aufgedruckt, 41 ist die kleinste Größe",
+  "meta_description": "Zwei beheizbare Einlegesohlen, Fernbedienung, drei Heizstufen, Schnittlinien für EU 41–46 – nicht kleiner als 41 zuschneidbar. USB-Kabel, Anleitung inklusive."
+ },
+ "en": {
+  "rubrik": "Size: fits EU 41–46 – cannot be trimmed smaller",
+  "stycke": "The insole has cut lines from EU size 46 down to 41, and 41 is the smallest size. It cannot be trimmed smaller than 41 and does not come in EU sizes 35–40. If you wear EU size 40 or smaller, unfortunately it will not fit.",
+  "stycke2": "Two insoles are trimmed to your own shoe size along the printed lines, from EU 46 down to 41 but no smaller, and controlled with a key-fob remote. The USB cable charges the battery, 2000 mAh according to the supplier.",
+  "punkt": "<strong>Trimmed to your own shoe size, EU 41–46</strong> – cut lines printed on the insole, 41 is the smallest size",
+  "meta_description": "Two heated insoles with remote control, three heat modes and cut lines for EU 41–46 – cannot be trimmed smaller than 41. USB cable and manual included."
+ },
+ "es": {
+  "rubrik": "Talla: sirven de la EU 41 a la 46 – no se pueden recortar más pequeñas",
+  "stycke": "La plantilla tiene líneas de corte desde la talla EU 46 hasta la 41, y la 41 es la talla más pequeña. No se puede recortar por debajo de la 41 y no existe en las tallas EU 35–40. Si calzas una 40 o menos, lamentablemente no te sirve.",
+  "stycke2": "Las dos plantillas se recortan a tu propia talla de zapato siguiendo las líneas impresas, desde la EU 46 hasta la 41 pero no más pequeña, y se controlan con un mando a distancia tipo llavero. El cable USB carga la batería, de 2000 mAh según el proveedor.",
+  "punkt": "<strong>Se recorta a tu talla de zapato, EU 41–46</strong> – líneas de corte impresas en la plantilla, la 41 es la talla más pequeña",
+  "meta_description": "Dos plantillas calefactables con mando a distancia, tres modos de calor y líneas de corte EU 41–46; no se recortan por debajo de la 41. Cable USB y manual."
+ },
+ "fr": {
+  "rubrik": "Pointure : convient du 41 au 46 – impossible de découper plus petit",
+  "stycke": "La semelle a des lignes de découpe de la pointure 46 jusqu'à la 41, et la 41 est la plus petite pointure. Elle ne peut pas être découpée en dessous de la 41 et n'existe pas du 35 au 40. Si vous chaussez du 40 ou moins, elle ne vous ira malheureusement pas.",
+  "stycke2": "Les deux semelles se découpent à votre pointure le long des lignes imprimées, de la pointure 46 jusqu'à la 41 mais pas en dessous, et se commandent avec une télécommande porte-clés. Le câble USB recharge la batterie, 2000 mAh selon le fournisseur.",
+  "punkt": "<strong>Découpée à votre pointure, 41–46</strong> – lignes de découpe imprimées sur la semelle, la 41 est la plus petite pointure",
+  "meta_description": "Deux semelles chauffantes avec télécommande, trois modes de chauffe, découpe pour les pointures 41–46, pas en dessous de 41. Câble USB et notice inclus."
+ },
+ "it": {
+  "rubrik": "Misura: adatte alle misure EU 41–46 – non si possono rifilare più piccole",
+  "stycke": "La soletta ha linee di taglio dalla misura EU 46 fino alla 41, e la 41 è la misura più piccola. Non si può rifilare sotto la 41 e non esiste nelle misure EU 35–40. Se porti il 40 o meno, purtroppo non ti andrà bene.",
+  "stycke2": "Due solette da rifilare sulla tua misura di scarpa lungo le linee stampate, dalla misura EU 46 fino alla 41 ma non più piccole, comandate con un telecomando a portachiavi. Il cavo USB ricarica la batteria, da 2000 mAh secondo il fornitore.",
+  "punkt": "<strong>Rifilate sulla tua misura di scarpa, EU 41–46</strong> – linee di taglio stampate sulla soletta, la 41 è la misura più piccola",
+  "meta_description": "Due solette riscaldate con telecomando, tre livelli di calore e linee di taglio per le misure EU 41–46, non sotto la 41. Cavo USB e manuale inclusi."
+ },
+ "nl": {
+  "rubrik": "Maat: geschikt voor EU 41–46 – kleiner knippen kan niet",
+  "stycke": "De inlegzool heeft knipranden van EU-maat 46 tot en met 41, en 41 is de kleinste maat. Hij is niet kleiner dan 41 te knippen en bestaat niet in de EU-maten 35–40. Heb je maat 40 of kleiner, dan past hij helaas niet.",
+  "stycke2": "Twee inlegzolen knip je langs de opgedrukte lijnen op je eigen schoenmaat, van EU-maat 46 tot en met 41 maar niet kleiner, en je bedient ze met een sleutelhangerafstandsbediening. De USB-kabel laadt de accu op, 2000 mAh volgens de leverancier.",
+  "punkt": "<strong>Op je eigen schoenmaat te knippen, EU 41–46</strong> – knipranden op de inlegzool gedrukt, 41 is de kleinste maat",
+  "meta_description": "Twee verwarmde inlegzolen met afstandsbediening, drie warmtestanden, knipranden voor EU 41–46, niet kleiner dan 41 te knippen. USB-kabel en handleiding erbij."
+ },
+ "pl": {
+  "rubrik": "Rozmiar: pasują na EU 41–46 – nie da się przyciąć mniejszych",
+  "stycke": "Wkładka ma linie cięcia od rozmiaru EU 46 w dół do 41, a 41 to najmniejszy rozmiar. Nie da się jej przyciąć do rozmiaru mniejszego niż 41 i nie ma jej w rozmiarach EU 35–40. Jeśli nosisz rozmiar 40 lub mniejszy, niestety nie będzie pasować.",
+  "stycke2": "Dwie wkładki przycina się do własnego rozmiaru buta wzdłuż nadrukowanych linii, od rozmiaru EU 46 w dół do 41, ale nie mniejszego, a steruje się nimi pilotem w formie breloka. Kabel USB ładuje akumulator, który według dostawcy ma 2000 mAh.",
+  "punkt": "<strong>Przycinane do własnego rozmiaru buta, EU 41–46</strong> – linie cięcia nadrukowane na wkładce, 41 to najmniejszy rozmiar",
+  "meta_description": "Dwie podgrzewane wkładki z pilotem, trzy tryby ogrzewania i linie cięcia dla rozmiarów EU 41–46 – nie przytniesz poniżej 41. Kabel USB i instrukcja w zestawie."
+ },
+ "pt-PT": {
+  "rubrik": "Tamanho: servem do EU 41 ao 46 – não podem ser cortadas mais pequenas",
+  "stycke": "A palmilha tem linhas de corte do tamanho EU 46 até ao 41, e o 41 é o tamanho mais pequeno. Não pode ser cortada abaixo do 41 e não existe nos tamanhos EU 35–40. Se calça o 40 ou menos, infelizmente não lhe serve.",
+  "stycke2": "Duas palmilhas cortadas ao seu número, seguindo as linhas impressas, do EU 46 até ao 41 mas não menos, e controladas com um telecomando de chaveiro. O cabo USB carrega a bateria, de 2000 mAh segundo o fornecedor.",
+  "punkt": "<strong>Cortadas ao seu número, EU 41–46</strong> – linhas de corte impressas na palmilha, o 41 é o tamanho mais pequeno",
+  "meta_description": "Duas palmilhas aquecidas com telecomando, três modos de calor e linhas de corte para os tamanhos EU 41–46, não abaixo do 41. Cabo USB e manual incluídos."
+ }
+}

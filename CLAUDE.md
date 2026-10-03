@@ -2671,6 +2671,18 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
   Två creatives har gammalt pris inbränt och får inte launchas: `2178753102691194`
   och `1324700059732480`.
+- **Bäverbutiken har NIO språk, och åtta av dem bor på beaverstoreco.com** (mätt
+  2026-10-03): `sv` är primärt på baverbutiken.se (marknaden Sverige), och `de en es fr
+  it nl pl pt-PT` ligger i marknaden Worldwide på beaverstoreco.com (engelska i roten,
+  de andra i `/<locale>/`). `baverbutiken.se/de/` svarar 404. En ändrad produkttext på
+  svenska är alltså INTE klar förrän de åtta översättningarna registrerats mot den NYA
+  digesten (`translationsRegister`), annars står den gamla texten kvar på åtta språk.
+  Shopify skickar en besökare utan `?country=` från containern (USA) till den engelska
+  roten, så läs varje språk med sitt land (`?country=DE` …). Mönstret, med splitsning i
+  den befintliga översättningen i stället för nyöversättning av hela sidan, torrt →
+  `--skarpt` → `--kundvy` på alla nio: `tools/varmesulor-storlek.mjs` (Axels order
+  2026-10-03 på invändningen "finns de i 35–37?": värmesulornas sida säger nu på alla
+  nio språk att klipplinjerna går 46 → 41, att 41 är minsta och att 35–40 inte finns).
 - **Meta-fältnamnen är exakta:** `amount_spent`, `actions:omni_purchase`,
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på
