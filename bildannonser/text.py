@@ -521,6 +521,12 @@ def lagg_pa_text(spec):
                           fill=sidfarg, anchor="ma")
         else:
             x = MARGINAL if zon.startswith("vanster") else bredd // 2 + MARGINAL // 2
+            # "x_andel" (0–1 av bredden) flyttar blocket i sidled, som "y_andel" gör på
+            # höjden. Två fasta lägen räcker inte till en annons med tre eller fyra
+            # bildrutor och en etikett under varje (TackleBayRod_PD_53_1 och PD_58_1,
+            # 2026-10-03). Utan fältet är läget exakt som förut.
+            if b.get("x_andel") is not None:
+                x = int(bredd * float(b["x_andel"]))
             # Sidozonerna ligger på fasta höjder, och de räcker inte alltid till:
             # en delad bild med lång rubrik OCH prisband klämmer etiketten mellan
             # två block som växer mot varandra, olika mycket i 4:5 och 1:1.

@@ -284,6 +284,41 @@ Fem kontroller innan prompten byggs:
    bottenraden. Inget innehåll saknades, men briefens hook var inte längre hooken
    i bild. Citatet ska vara det visuellt största, hooken ska stå ovanför det.
 
+### Konceptet: layouten kommer ur konceptbasen, aldrig ur vanan
+
+⛔ **Mätt 2026-10-03: 353 aktiva bildannonser med EN layout** (rubrik i topp,
+produkten i mitten, priset i botten) — vinklarna varierade, bilden gjorde det
+inte, och 315 av 353 fick under 300 kr. Orsaken var den här rutinens egen
+prompt ("lugna ytor i topp och botten") och briefens fem fasta rader. Därför
+väljs layouten numera ur **`bildannonser/koncept/koncept.json`** (20 koncept ur
+Evolves mallar, Evolves BFCM-dokument och kontots egna vinnare; läs
+`bildannonser/koncept/README.md`):
+
+```bash
+node bildannonser/koncept.mjs --valj --vinkel <vinkelkod ur namnet> --produkt <prefix> \
+  --scen "<briefens scen på engelska>" --produkt-beskrivning "<produkten ur referensfotot>"
+```
+
+- Bär briefen raden `Koncept: K07` (id eller namn): skicka `--onskat K07` och
+  sätt `koncept_kalla: "brief"` i jobbet. Annars väljer skriptet: ett klart
+  koncept som bär vinkeln, som produkten inte fått de tre senaste gångerna, det
+  minst använda först (`bildannonser/koncept/logg.jsonl` är minnet).
+- Svaret ger `prompt` (skelettet med produkt och scen insatta — bygg vidare på
+  det, byt aldrig ut det mot den gamla "lugna ytor"-prompten), `block`
+  (text.py-spec:en med tomma textfält) och `kraver` (vilka brief-rader
+  konceptet behöver). **Fyll `text` i varje block ordagrant ur briefen.** Saknar
+  briefen en rad konceptet kräver: ta nästa koncept (`--onskat` på id:t
+  skriptet föreslår näst) eller lämna blocket tomt om det är ett tillval
+  (knapp, underrad) — hitta aldrig på raden.
+- Jobbet i jobbfilen får fältet `"koncept": "K07"`.
+- Före rendering: `node bildannonser/koncept.mjs --kontroll --jobb <jobb.json>`
+  — exit 1 (samma koncept två gånger på en produkt i samma körning, eller ett
+  jobb utan koncept) betyder att inget renderas förrän det är rättat.
+- Efter lyckad körning: `node bildannonser/koncept.mjs --logga --jobb <jobb.json>`
+  och committa `bildannonser/koncept/logg.jsonl` med körningen — utan loggen
+  börjar rotationen om nästa kväll.
+- Rapporten skriver konceptet per bild (`Takoverdrag_CS_9_1 → K18 Delad skärm`).
+
 Skriv prompten på engelska (bildmodellen kräver det) men **de svenska raderna
 ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska
 återges tecken för tecken. Skriv jobbfilen till scratchpad:
@@ -298,6 +333,7 @@ ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska
       "hub": "Belt grinder creative hub",
       "notion_url": "https://app.notion.com/p/...",
       "prompt": "...",
+      "koncept": "K07",
       "bildformat": "4:5",
       "referens_bilder": []
     }
@@ -418,6 +454,9 @@ aldrig körningen.
       (inkluderingsfilter) — skriv antalet
 - [ ] **Noll videorader genererade** — skriv hur många som fanns och lämnades
 - [ ] Ingen ny copy skriven; alla svenska rader ordagrant ur briefen
+- [ ] Varje jobb bär ett koncept ur `bildannonser/koncept/koncept.json`,
+      `--kontroll` grön före rendering, `--logga` körd efter och `logg.jsonl`
+      committad — skriv konceptet per bild i rapporten
 - [ ] Priser verifierade mot produktsidan för varje brief som anger pris
 - [ ] Varje genererad bild QA:ad mot checklistan i steg 5 — redovisa per bild
 - [ ] Bild uppladdad FÖRE statusbytet, båda tillbakalästa

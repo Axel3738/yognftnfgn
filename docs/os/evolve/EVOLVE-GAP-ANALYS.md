@@ -258,6 +258,12 @@ Matstrumpors enda breakthrough är en riktig kreatör i bild.
 
 ## 8. Det som återstår att fråga Chadbot (inte ställt förut)
 
+- ✅ **Statics (bildannonser): ställd och besvarad 2026-10-03** — svaret och
+  vad som gjordes med det står i `STATICS.md`; konceptbasen
+  `bildannonser/koncept/` bär prioriteten. Fråga inte igen om mallval för
+  BOF/säsong, koncept = vinkel, Nano Banana-kongruens eller ful mot designad.
+  Boten hade inget om namnkonventioner för visuellt koncept.
+
 - Hur de hanterar en breakthrough-UGC när kreatören bara gjort EN video: beställa fler av
   samma person eller sprida manuset på nya kreatörer först?
 - Spend winner med hög hold (77 %) men låg CVR på en lågprisprodukt (~45 USD): funnel eller

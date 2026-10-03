@@ -3453,3 +3453,50 @@ Kön i övrigt oförändrad, trettonde dygnet: samma två rader i `To be Reviewe
 `271bf976…`), samma slutkort med `carashell.se` (OCR fanns i containern).
 Butikspriset 1 129 kr oförändrat. Inget uppladdat, ingen status ändrad, inga
 nya kommentarer.
+
+## 2026-10-03 — NO-rundan: 7 videor i kön, 0 uppladdade
+
+Sju nya videorader i `SE-ACTIVE to be translated`, alla OB, alla skapade i
+Notion samma morgon 05:09–05:10 UTC. Inget renderat, inget uppladdat, 0
+HeyGen-krediter, ingen status ändrad. Varje rad har en kommentar i hubben med
+sitt eget skäl.
+
+⛔ **`CaraShellRoof_OB_122_H1` är BLOCKERAD: slutkortet bär BÄVERBUTIKEN med
+logga.** Butikens namn står aldrig i en annons, och den här skulle dessutom upp
+i en ANNAN butiks kampanj. Mätt med OCR på de sista fyra sekunderna
+(`rapidocr-onnxruntime`): träffen är ordagrant `BAVERBUTIKEN`. Videon är i
+övrigt hel — den behöver bara ett nytt slut.
+
+⚠️ **Slutkortsvakten dömde 122 som `ren`.** `factory/bildbrand.mjs` letar efter
+ett STILLA slut (`STILLA_TROSKEL`), och den här videon rör sig ända in i sista
+bildrutan (största diff 101,54 mot tröskeln 6), så den hittade aldrig något
+slutkort att läsa. En `ren`-dom från den vakten bevisar alltså inte att slutet
+är rent — bara att slutet rör sig. Det här är nästa sak att rätta i verktyget;
+en OCR-läsning av de sista sekunderna hittade namnet direkt.
+⚠️ Två rader (111 och 117) kom tillbaka som `okand` i samma vakt, för
+`rapidocr-onnxruntime` saknas i den här containern. Den installerades i
+körningen (`pip install --user rapidocr-onnxruntime`), men installationen dör
+med containern.
+
+⛔ **De sex andra (111, 113, 114, 117, 118, 119) är HÅLLNA, inte underkända.**
+Två skäl:
+
+1. **Verktyget är ElevenLabs, och nyckeln saknas.** `pipeline/pratar-i-bild.py`
+   mätte alla sju: sex är VOICEOVER (största ansiktet 0,5–1,4 % av bildytan) och
+   bara 122 hamnade i gråzonen. Axels regel 2026-09-30, bekräftad 2026-10-01
+   ("delningen gäller ÖVERALLT"), säger då ElevenLabs — men
+   `ELEVENLABS_API_KEY` finns inte i den här rutinens miljö (`HEYGEN_API_KEY`,
+   `NOTION_TOKEN`, `META_ACCESS_TOKEN` och `DISCORD_BOT_TOKEN` gör det). Att
+   i stället rendera sex voiceovervideor i HeyGen hade gått emot ett
+   penningbeslut Axel fattat, så det gjordes inte.
+2. **Priset är inbränt i bilden på svenska.** Alla sju bär
+   "1 129 kronor, spara 340 kronor, 23 procent rabatt" i bild (111 bär samma
+   svenska pris med engelska ord: "1 129 kr (regular 1 469 kr), save 340 kr
+   (23 %)"). Norge har eget pris, **1 106 kr**. En dubbning byter bara ljudet,
+   så captionsen måste ritas om på norska med det norska priset
+   (`no-captions.py`-vägen) innan någon av dem kan gå live.
+
+**Approved-kollen:** 74 rader, 0 utan norsk annons. Gårdagens två bildannonser
+ligger med och snurrar.
+
+Marknadsvakten kördes inte: `placeringar` finns bara för US.
