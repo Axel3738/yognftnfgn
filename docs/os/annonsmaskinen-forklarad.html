@@ -16,6 +16,7 @@
   --bad-soft:#f7d5db;
   --robot:#53708c;
   --robot-soft:#d8e2eb;
+  --kpi-soft:#c8e7e2;
   --guard:#d6a11c;
   --guard-soft:#f6e3a6;
   --font-display:"Fredoka","Nunito","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
@@ -38,6 +39,7 @@
     --bad-soft:#48232b;
     --robot:#95b4d2;
     --robot-soft:#24313e;
+    --kpi-soft:#173835;
     --guard:#f0c956;
     --guard-soft:#463a15;
     color-scheme:dark;
@@ -58,6 +60,7 @@
   --bad-soft:#48232b;
   --robot:#95b4d2;
   --robot-soft:#24313e;
+  --kpi-soft:#173835;
   --guard:#f0c956;
   --guard-soft:#463a15;
   color-scheme:dark;
@@ -68,7 +71,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:20px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .sida{max-width:880px;margin-inline:auto;padding-inline:20px;padding-block:44px 104px}
 h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;text-wrap:balance;margin:0}
-h1{font-size:clamp(2.8rem,11vw,4.8rem);font-weight:700;letter-spacing:-0.01em}
+h1{font-size:clamp(2.2rem,9.5vw,4.8rem);font-weight:700;letter-spacing:-0.01em;overflow-wrap:anywhere}
 h2{font-size:clamp(2rem,7vw,2.9rem)}
 h3{font-size:clamp(1.55rem,5.4vw,2rem)}
 p{margin:0}
@@ -112,10 +115,12 @@ figure{margin:0;min-width:0}
 .par figcaption span{color:var(--muted)}
 
 /* Etiketterna på tvättlinan */
-.lina{list-style:none;margin:0;padding:0;padding-top:44px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
-.lina::before{content:"";position:absolute;left:-4px;right:-4px;top:8px;height:5px;border-radius:5px;background:var(--muted)}
+.lina{list-style:none;margin:0;padding:0;padding-top:44px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:52px 16px}
+.lina .tag{grid-column:span 2}
+.lina .tag:nth-child(4){grid-column:2 / span 2}
 .tag{position:relative;min-width:0;background:var(--surface);border:3px solid var(--fg);border-radius:20px 20px 14px 14px;padding:44px 16px 18px;display:flex;flex-direction:column;gap:6px}
-.lina .tag::before{content:"";position:absolute;left:50%;top:-34px;width:3px;height:52px;background:var(--muted);transform:translateX(-50%)}
+/* Varje kort bär sin bit av linan och sitt snöre, så linan följer med till rad två */
+.lina .tag::before{content:"";position:absolute;left:-11px;right:-11px;top:-36px;height:54px;border-top:5px solid var(--muted);background:linear-gradient(var(--muted),var(--muted)) center / 3px 100% no-repeat}
 .tag::after{content:"";position:absolute;left:50%;top:12px;width:18px;height:18px;border-radius:50%;border:3px solid var(--fg);background:var(--bg);transform:translateX(-50%)}
 .tag .sym{font-family:var(--font-emoji);font-size:2.3rem;line-height:1.1}
 .tag b{font-family:var(--font-display);font-weight:600;font-size:1.3em;line-height:1.2}
@@ -123,6 +128,7 @@ figure{margin:0;min-width:0}
 .t-vinn{background:var(--good-soft)}
 .t-spend{background:var(--accent-soft)}
 .t-forl{background:var(--bad-soft)}
+.t-kpi{background:var(--kpi-soft)}
 .t-sov{background:var(--robot-soft)}
 .tag-tom{border-style:dashed;border-color:var(--muted);background:transparent;max-width:30rem;padding-top:40px}
 .tag-tom::after{border-color:var(--muted)}
@@ -142,15 +148,18 @@ figure{margin:0;min-width:0}
 .plats b{font-family:var(--font-display);font-weight:600;font-size:1.2em;line-height:1.25}
 .plats span{color:var(--muted)}
 
-@media (max-width:760px){
-  .lina{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0}
-  .lina::before,.lina .tag::before{display:none}
+@media (max-width:860px){
+  .lina{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0;row-gap:16px}
+  .lina .tag,.lina .tag:nth-child(4){grid-column:auto}
+  .lina .tag::before{display:none}
+}
+@media (max-width:600px){
+  .lina{grid-template-columns:1fr}
 }
 @media (max-width:520px){
   body{font-size:19px}
   .sida{padding-inline:16px}
   .hjarta{padding:4px;border-radius:20px}
-  .lina{grid-template-columns:1fr}
   section{margin-top:80px}
   .del{margin-top:100px}
 }
@@ -426,13 +435,13 @@ figure{margin:0;min-width:0}
     </figure>
 
     <ol class="steg">
-      <li><i class="dot d-acc"></i><div><b>Bruce skriver briefen</b><span>Bruce är vår creative strategist i Manila. Han planerar nästa annons.</span></div></li>
+      <li><i class="dot d-acc"></i><div><b>Bruce skriver briefen</b><span>Bruce är vår creative strategist i Manila. Han planerar nästa annons och klipper den.</span></div></li>
       <li><i class="dot d-acc"></i><div><b>Klippet görs</b><span>Videon eller bilden blir klar och läggs i Notion.</span></div></li>
       <li><i class="dot d-rob"></i><div><b>Roboten laddar upp</b><span>Den lägger klippet i annonskontot hos Meta.</span></div></li>
       <li><i class="dot d-good"></i><div><b>Folk ser annonsen</b><span>Folk köper, eller inte.</span></div></li>
       <li><i class="dot d-rob"></i><div><b>Kungen mäter</b><span>Varje morgon klockan sju. Efter en vecka får paketet en etikett.</span></div></li>
       <li><i class="dot d-rob"></i><div><b>Lärdomen skrivs ner</b><span>Varför vann den? Varför inte? Det sparas, aldrig bara i någons huvud.</span></div></li>
-      <li><i class="dot d-rob"></i><div><b>Nya briefer</b><span>Var tredje dag skriver roboten nya briefer ur det som vann.</span></div></li>
+      <li><i class="dot d-rob"></i><div><b>Nya briefer</b><span>Var tredje dag skriver roboten nya briefer ur det som vann. Bruce skriver sina egna briefer också.</span></div></li>
     </ol>
 
     <div class="rader">
@@ -519,8 +528,9 @@ figure{margin:0;min-width:0}
       <h2>Etiketterna</h2>
     </div>
     <ul class="lina">
-      <li class="tag t-vinn"><span class="sym" aria-hidden="true">🏆</span><b>Vinnare</b><span>Den tjänar pengar. Gör fler som den.</span></li>
-      <li class="tag t-spend"><span class="sym" aria-hidden="true">💸</span><b>Spend-vinnare</b><span>Meta gillar den och lägger pengarna där. Vi tittar närmare.</span></li>
+      <li class="tag t-vinn"><span class="sym" aria-hidden="true">🏆</span><b>Breakthrough</b><span>Meta lägger pengarna på den, och den tjänar pengar. Gör fler som den.</span></li>
+      <li class="tag t-spend"><span class="sym" aria-hidden="true">💸</span><b>Spend-vinnare</b><span>Meta lägger pengarna på den, men den tjänar inte riktigt. Vi lagar manuset.</span></li>
+      <li class="tag t-kpi"><span class="sym" aria-hidden="true">🎯</span><b>KPI-vinnare</b><span>Den tjänar pengar, men Meta visar den lite. Vi testar nya öppningar. Kan bli breakthrough vecka två.</span></li>
       <li class="tag t-forl"><span class="sym" aria-hidden="true">❌</span><b>Förlorare</b><span>Den funkade inte. Vi skriver ner varför och går vidare.</span></li>
       <li class="tag t-sov"><span class="sym" aria-hidden="true">😴</span><b>Ingen leverans</b><span>Meta visade den nästan inte alls. Den är inte dömd, bara osynlig.</span></li>
     </ul>
@@ -530,6 +540,7 @@ figure{margin:0;min-width:0}
     </div>
     <div class="rader">
       <p>Vi gissar inte. Vi mäter.</p>
+      <p>Träffar räknas som breakthrough och spend-vinnare.</p>
     </div>
   </section>
 
@@ -630,6 +641,7 @@ figure{margin:0;min-width:0}
     </figure>
     <div class="rader">
       <p>Roboten fyller i vad som hände.</p>
+      <p>Robotens egen lärdom står redan i raden. Bruce läser den och skriver sin under.</p>
       <p>Bruce skriver vad han lärde sig och bockar av raden.</p>
       <p>Varje måndag går han igenom veckans rader.</p>
     </div>
