@@ -26,7 +26,11 @@ for (const rad of jobb.rader) {
   const delar = mina.map((a) => `${a.land} ✅ ${a.namn} live in ${a.kampanj_namn} (adset ${a.adset_namn}), ad ${a.ad_id}`);
   const saknas = (rad.ocksa ?? []).filter((o) => !mina.some((a) => a.land === o.land));
   if (saknas.length) delar.push(`⚠️ not uploaded to ${saknas.map((o) => o.land).join('/')} yet — the row stays out of Approved until it is`);
-  delar.push('Status unchanged: the row is not in every ad market yet (NO is missing).');
+  // ⚠️ `annonsmarknader` är fortfarande NO,US medan `spegling.ladda_upp` är tom
+  //    sedan 2026-10-03, så ingen körning laddar upp i CaraShells NO-kampanj —
+  //    raden kan därför aldrig nå Approved av sig själv. Det är ett registerbeslut
+  //    (ägarens), inte något den här körningen ändrar; det står som fråga i rapporten.
+  delar.push('Status unchanged: NO is still listed as an ad market for this product, and nothing uploads to the NO campaign any more, so the row waits for the owner.');
   const url = `https://www.facebook.com/adsmanager/manage/ads?act=${KONTO}&selected_ad_ids=${mina.map((a) => a.ad_id).join(',')}`;
   const args = [join(ROT, 'tools', 'notion-aterkoppling.mjs'), rad.page_id,
     '--kommentar', delar.join('\n'), '--egenskap', `Translated url=${url}`];

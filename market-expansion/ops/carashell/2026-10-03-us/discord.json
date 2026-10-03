@@ -6,8 +6,24 @@
  "marknad": "US",
  "server": "CaraShell — OPS",
  "kanal": "annons-uppladdning",
- "gjort": [],
- "varningar": [],
- "action_axel": [],
+ "gjert_obs": "gjort = done automatically",
+ "gjort": [
+  "7 Swedish videos dubbed to US English (HeyGen precision) and live in \"Takoverdrag 5 reasons USA TEST\".",
+  "Same 7 uploaded again to the Australian campaign under _AU_ names, with the ad text rewritten for AU without any amount.",
+  "New AU ad set got the market placements: Facebook feed + Instagram feed only.",
+  "End card on OB_122 carried our shop logo unblurred. Painted over on all 7 before upload.",
+  "Checks on all 7: output language English (US), no Swedish left on screen, voice track measured, AI disclosure line added.",
+  "Market watch: 13 ad sets correct, yesterday and today all spend inside the allowed placements, store pages and checkout in English with US preselected."
+ ],
+ "varningar": [
+  "The Australian campaign is outside the market watch: it reads the target campaign id only, not the extra targets, so its 4 ad sets are never measured.",
+  "Word-by-word voice check could not run in this container (no ElevenLabs key), so the dub is unverified word by word.",
+  "These rows stay out of Approved: NO is still an ad market for this product while nothing uploads to the NO campaign any more."
+ ],
+ "action_axel": [
+  "The 7 new Australian ads speak and show 199 dollars, which is the US price. The Australian page shows a converted amount instead.",
+  "Pick one: leave them running, pause the new AU ad set until an Australian version exists, or set a fixed Australian price so the videos can be rebuilt.",
+  "Your own 4 Australian ad sets run on Advantage+ across all placements. Instagram Stories took money two days in a row with no purchases while the Facebook feed produced them. Say the word and the market watch will cover that campaign too."
+ ],
  "nasta_korning": "2026-10-04"
 }

@@ -2,14 +2,14 @@
  {
   "land": "AU",
   "kort": "OB_111",
-  "namn": null,
-  "ad_id": null,
+  "namn": "CaraShellRoof_AU_OB_111_H1",
+  "ad_id": "120251759626880435",
   "adset_namn": "CARASHELL AU_OB",
   "adset_id": "120251759353250435",
   "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
   "kampanj_id": "120251471312320435",
-  "aktiverad": null,
-  "adset_klonat_av": "CARASHELL AU_GT"
+  "aktiverad": "annons 120251759626880435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
  },
  {
   "land": "US",
@@ -21,6 +21,18 @@
   "kampanj_namn": "Taköverdrag 5 reasons USA TEST",
   "kampanj_id": "120251633656390435",
   "aktiverad": "annons 120251759274670435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
+  "land": "AU",
+  "kort": "OB_113",
+  "namn": "CaraShellRoof_AU_OB_113_H1",
+  "ad_id": "120251759719360435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759719360435: PAUSED → ACTIVE",
   "adset_klonat_av": null
  },
  {
@@ -36,6 +48,18 @@
   "adset_klonat_av": null
  },
  {
+  "land": "AU",
+  "kort": "OB_114",
+  "namn": "CaraShellRoof_AU_OB_114_H1",
+  "ad_id": "120251759732450435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759732450435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
   "land": "US",
   "kort": "OB_114",
   "namn": "CaraShellRoof_US_OB_114_H1",
@@ -45,6 +69,18 @@
   "kampanj_namn": "Taköverdrag 5 reasons USA TEST",
   "kampanj_id": "120251633656390435",
   "aktiverad": "annons 120251759450760435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
+  "land": "AU",
+  "kort": "OB_117",
+  "namn": "CaraShellRoof_AU_OB_117_H1",
+  "ad_id": "120251759806850435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759806850435: PAUSED → ACTIVE",
   "adset_klonat_av": null
  },
  {
@@ -60,6 +96,18 @@
   "adset_klonat_av": null
  },
  {
+  "land": "AU",
+  "kort": "OB_118",
+  "namn": "CaraShellRoof_AU_OB_118_H1",
+  "ad_id": "120251759821050435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759821050435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
   "land": "US",
   "kort": "OB_118",
   "namn": "CaraShellRoof_US_OB_118_H1",
@@ -72,6 +120,18 @@
   "adset_klonat_av": null
  },
  {
+  "land": "AU",
+  "kort": "OB_119",
+  "namn": "CaraShellRoof_AU_OB_119_H1",
+  "ad_id": "120251759833330435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759833330435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
   "land": "US",
   "kort": "OB_119",
   "namn": "CaraShellRoof_US_OB_119_H1",
@@ -81,6 +141,18 @@
   "kampanj_namn": "Taköverdrag 5 reasons USA TEST",
   "kampanj_id": "120251633656390435",
   "aktiverad": "annons 120251759539810435: PAUSED → ACTIVE",
+  "adset_klonat_av": null
+ },
+ {
+  "land": "AU",
+  "kort": "OB_122",
+  "namn": "CaraShellRoof_AU_OB_122_H1",
+  "ad_id": "120251759891680435",
+  "adset_namn": "CARASHELL AU_OB",
+  "adset_id": "120251759353250435",
+  "kampanj_namn": "AU LISTICLE Taköverdrag CARASHELL",
+  "kampanj_id": "120251471312320435",
+  "aktiverad": "annons 120251759891680435: PAUSED → ACTIVE",
   "adset_klonat_av": null
  },
  {

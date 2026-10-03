@@ -89,3 +89,56 @@ alla 17 placeringar. Spend per placering, mätt 2026-10-03:
 | Audience Network m.m. | ~150 kr, 0 köp | ~150 kr, 0 köp |
 
 Det är samma mönster som natten 26→27/9 i USA. **Adseten är Axels och rörs inte.**
+
+### Uppladdningen: 14 annonser live, sju i vardera målet
+
+Alla sju gick live i **US-målet** (`Taköverdrag 5 reasons USA TEST`, kampanj
+`120251633656390435`, adset `120251633656400435`) och sju i **AU-kampanjen**
+(`AU LISTICLE Taköverdrag CARASHELL` `120251471312320435`, nytt adset
+`CARASHELL AU_OB` `120251759353250435`). Alla 14 lästes tillbaka som ACTIVE.
+
+| Kort | US-annons | AU-annons |
+|---|---|---|
+| OB_111 | `120251759274670435` | `120251759626880435` |
+| OB_113 | `120251759359110435` | `120251759719360435` |
+| OB_114 | `120251759450760435` | `120251759732450435` |
+| OB_117 | `120251759467320435` | `120251759806850435` |
+| OB_118 | `120251759536740435` | `120251759821050435` |
+| OB_119 | `120251759539810435` | `120251759833330435` |
+| OB_122 | `120251759613970435` | `120251759891680435` |
+
+⚠️ **AU vägrade Instagram-identiteten.** AU-kampanjens befintliga annonser bär
+`instagram_actor_id 17841421066812446`, och Meta svarar `(#100) Param
+instagram_actor_id must be a valid Instagram account id` på en ny annons med det.
+Id:t går inte heller att läsa med systemanvändarens token. US-målets annonser har
+ingen IG-identitet alls och fungerar, så AU får samma (`--ig ingen`). Gissa aldrig
+ett IG-id.
+
+⚠️ **Ett mål tar ~13 min skarpt** (uppladdaren läser kontots 634 annonser och Meta
+stryper med kod 17), så sex felande AU-försök hade kostat ~80 min. Därför fick
+`ladda-upp.mjs` flaggan `--land`: ett land i taget.
+
+⛔ **Det nya AU-adsetet föddes PAUSED och sju ACTIVE annonser låg i det, alltså
+noll leverans.** Orsaken är uppladdarens egen regel: den aktiverar annonsen alltid
+men adsetet **bara när samma anrop skapade det**. Första AU-försöket skapade
+adsetet och föll sedan på IG-felet, så de sex följande såg det som befintligt.
+Rättat med `au-aktivera.mjs --ja` (PAUSED → ACTIVE, tillbakaläst), som bara rör
+adsetet ur `annonser.json`, bara i registrets AU-kampanj, bara med 0 kr spend.
+Axels fyra egna AU-adsets rörs aldrig.
+
+⚠️ **Placeringarna ärvs av syskonadsetet, inte av marknaden.** `kampanj.mjs` ger
+nya US-adsets marknadens placeringar, men uppladdaren klonar ett syskon — så
+`CARASHELL AU_OB` föddes på Advantage+. Satt till Facebook-flödet + Instagram-
+flödet med `au-placeringar.mjs --ja` och tillbakaläst.
+
+### Notion och vakten
+
+Sju kommentarer + `Translated url` per rad. **Ingen status ändrad:**
+`annonsmarknader` är fortfarande `NO,US` för produkten, NO är falskt på alla sju,
+och sedan `spegling.ladda_upp: []` (2026-10-03) laddar ingen körning upp i
+CaraShells NO-kampanj. Raderna kan alltså aldrig nå `Approved` av sig själva —
+ett registerbeslut som står som fråga i rapporten, inte något körningen ändrar.
+
+Marknadsvakten samma kväll: 13 adsets rätt, spend i går 19 991 kr och i dag
+13 131 kr, allt inom tillåtna placeringar; startsida, båda landningssidorna, fyra
+produktsidor och kassan engelska med US förvalt. Inget larm.

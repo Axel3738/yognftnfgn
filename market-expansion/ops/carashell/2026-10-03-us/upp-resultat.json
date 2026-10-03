@@ -1,76 +1,86 @@
 [
  {
   "rad": "CaraShellRoof_OB_111_H1",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_111_H1",
-  "torr": "STOPP",
-  "logg": "upp-torr-US-OB_111.log"
+  "page_id": "3ee270ab-908c-8142-8a9c-f51d10c3e87e",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_111_H1",
+  "torr": "OK",
+  "skarp": "OK",
+  "ad_id": null,
+  "adset": null,
+  "kampanj": null,
+  "logg": "upp-AU-OB_111.log"
  },
  {
   "rad": "CaraShellRoof_OB_113_H1",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_113_H1",
-  "torr": "STOPP",
-  "logg": "upp-torr-US-OB_113.log"
+  "page_id": "3ee270ab-908c-81c3-b0be-f5e1387814f0",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_113_H1",
+  "torr": "OK",
+  "skarp": "OK",
+  "ad_id": null,
+  "adset": null,
+  "kampanj": null,
+  "logg": "upp-AU-OB_113.log"
  },
  {
   "rad": "CaraShellRoof_OB_114_H1",
   "page_id": "3ee270ab-908c-8102-93dc-cb239190d98d",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_114_H1",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_114_H1",
   "torr": "OK",
   "skarp": "OK",
   "ad_id": null,
   "adset": null,
   "kampanj": null,
-  "logg": "upp-US-OB_114.log"
+  "logg": "upp-AU-OB_114.log"
  },
  {
   "rad": "CaraShellRoof_OB_117_H1",
   "page_id": "3ee270ab-908c-81cb-b2f3-f3fda992f89a",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_117_H1",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_117_H1",
   "torr": "OK",
   "skarp": "OK",
   "ad_id": null,
   "adset": null,
   "kampanj": null,
-  "logg": "upp-US-OB_117.log"
+  "logg": "upp-AU-OB_117.log"
  },
  {
   "rad": "CaraShellRoof_OB_118_H1",
   "page_id": "3ee270ab-908c-811c-bc68-f84b222468be",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_118_H1",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_118_H1",
   "torr": "OK",
   "skarp": "OK",
   "ad_id": null,
   "adset": null,
   "kampanj": null,
-  "logg": "upp-US-OB_118.log"
+  "logg": "upp-AU-OB_118.log"
  },
  {
   "rad": "CaraShellRoof_OB_119_H1",
   "page_id": "3ee270ab-908c-813d-9719-d0b239bf2a28",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_119_H1",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_119_H1",
   "torr": "OK",
   "skarp": "OK",
   "ad_id": null,
   "adset": null,
   "kampanj": null,
-  "logg": "upp-US-OB_119.log"
+  "logg": "upp-AU-OB_119.log"
  },
  {
   "rad": "CaraShellRoof_OB_122_H1",
   "page_id": "3ee270ab-908c-8190-b95f-cebada208986",
-  "land": "US",
-  "namn": "CaraShellRoof_US_OB_122_H1",
+  "land": "AU",
+  "namn": "CaraShellRoof_AU_OB_122_H1",
   "torr": "OK",
   "skarp": "OK",
   "ad_id": null,
   "adset": null,
   "kampanj": null,
-  "logg": "upp-US-OB_122.log"
+  "logg": "upp-AU-OB_122.log"
  }
 ]
