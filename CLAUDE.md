@@ -225,6 +225,10 @@ stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat
   `assets/ms-gava.js` håller ätpinnarna = lådorna och koderna kompletta efter varje ändring. Gåvoraden är
   låst i korgen. ⚠️ Shopify räknar högst fem koder i en vagn, och en köp-X-få-Y-kod ger bara HELA sin
   "få"-mängd (båda mätta) — bygg aldrig en paketkod i en annan form utan att köra `gava.mjs` torrt.
+⏳ **Förbeställning sedan 2026-10-03** (Axel: allt slutsålt, lagret fylls 11/10): ruta + korgrad på
+fjorton språk ("skickas från 13 oktober"), styrd av shop-metafältet `matstrumpor.forbestallning`
+och `node matstrumpor/forbestallning.mjs`, släcker sig själv 13/10; kundtjänstboten läser
+`svar.forbestallning` i brandfilen. Allt i `matstrumpor/README.md` → "Förbeställning".
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
 UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
 (copy av sonnet). ✅ **36 annonser PAUSED sedan 2026-09-28/29** — 3 per kampanj i alla

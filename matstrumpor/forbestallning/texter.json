@@ -1,0 +1,87 @@
+{
+  "sv": {
+    "rubrik": "Förbeställning",
+    "produkt": "Vi sålde slut på lagret. Nästa leverans är på väg in, och din beställning skickas från {datum}.",
+    "bradska": "Förbeställ nu så får du en plats i den innan den också tar slut.",
+    "korg": "Förbeställning: din beställning skickas från {datum}."
+  },
+  "nb": {
+    "rubrik": "Forhåndsbestilling",
+    "produkt": "Vi er utsolgt. Neste leveranse er på vei inn, og bestillingen din sendes fra {datum}.",
+    "bradska": "Forhåndsbestill nå, så sikrer du deg en plass i neste leveranse før den også blir utsolgt.",
+    "korg": "Forhåndsbestilling: bestillingen din sendes fra {datum}."
+  },
+  "da": {
+    "rubrik": "Forudbestilling",
+    "produkt": "Vi er udsolgt. Næste levering er på vej ind, og din bestilling sendes fra {datum}.",
+    "bradska": "Forudbestil nu, så sikrer du dig en plads i næste levering, før den også bliver udsolgt.",
+    "korg": "Forudbestilling: din bestilling sendes fra {datum}."
+  },
+  "fi": {
+    "rubrik": "Ennakkotilaus",
+    "produkt": "Varasto on myyty loppuun. Seuraava erä on tulossa, ja tilauksesi lähetetään {datum} alkaen.",
+    "bradska": "Tee ennakkotilaus nyt, niin varmistat paikan seuraavasta erästä ennen kuin sekin myydään loppuun.",
+    "korg": "Ennakkotilaus: tilauksesi lähetetään {datum} alkaen."
+  },
+  "de": {
+    "rubrik": "Vorbestellung",
+    "produkt": "Wir sind ausverkauft. Die nächste Lieferung ist schon auf dem Weg zu uns, und deine Bestellung wird ab dem {datum} versendet.",
+    "bradska": "Bestell jetzt vor und sichere dir einen Platz in der nächsten Lieferung, bevor auch sie ausverkauft ist.",
+    "korg": "Vorbestellung: Deine Bestellung wird ab dem {datum} versendet."
+  },
+  "fr": {
+    "rubrik": "Précommande",
+    "produkt": "Notre stock est épuisé. Le prochain arrivage est en route, et votre commande sera expédiée à partir du {datum}.",
+    "bradska": "Précommandez maintenant pour réserver votre place dans le prochain arrivage, avant qu'il ne soit lui aussi épuisé.",
+    "korg": "Précommande : votre commande sera expédiée à partir du {datum}."
+  },
+  "nl": {
+    "rubrik": "Voorbestelling",
+    "produkt": "Onze voorraad is uitverkocht. De volgende levering is onderweg, en je bestelling wordt verzonden vanaf {datum}.",
+    "bradska": "Bestel nu vooraf en reserveer je plek in de volgende levering, voordat ook die uitverkocht is.",
+    "korg": "Voorbestelling: je bestelling wordt verzonden vanaf {datum}."
+  },
+  "es": {
+    "rubrik": "Reserva anticipada",
+    "produkt": "Nos hemos quedado sin stock. La próxima remesa ya está en camino y tu pedido se enviará a partir del {datum}.",
+    "bradska": "Reserva ahora y asegura tu sitio en la próxima remesa antes de que también se agote.",
+    "korg": "Reserva anticipada: tu pedido se enviará a partir del {datum}."
+  },
+  "it": {
+    "rubrik": "Preordine",
+    "produkt": "Il magazzino è esaurito. La prossima consegna è in arrivo e il tuo ordine verrà spedito dal {datum}.",
+    "bradska": "Preordina ora e assicurati un posto nella prossima consegna prima che anche questa sia esaurita.",
+    "korg": "Preordine: il tuo ordine verrà spedito dal {datum}."
+  },
+  "pl": {
+    "rubrik": "Przedsprzedaż",
+    "produkt": "Wyprzedaliśmy cały zapas. Kolejna dostawa jest już w drodze, a Twoje zamówienie zostanie wysłane od {datum}.",
+    "bradska": "Zamów w przedsprzedaży już teraz i zarezerwuj sobie miejsce w kolejnej dostawie, zanim i ta się wyprzeda.",
+    "korg": "Przedsprzedaż: Twoje zamówienie zostanie wysłane od {datum}."
+  },
+  "pt-PT": {
+    "rubrik": "Pré-encomenda",
+    "produkt": "Esgotámos o stock. A próxima entrega já vem a caminho e a tua encomenda será enviada a partir de {datum}.",
+    "bradska": "Faz já a tua pré-encomenda e garante um lugar na próxima entrega antes que também esgote.",
+    "korg": "Pré-encomenda: a tua encomenda será enviada a partir de {datum}."
+  },
+  "en": {
+    "rubrik": "Pre-order",
+    "produkt": "We're sold out. The next delivery is on its way in, and your order ships from {datum}.",
+    "bradska": "Pre-order now to secure your spot in the next batch before it sells out too.",
+    "korg": "Pre-order: your order ships from {datum}."
+  },
+  "ja": {
+    "rubrik": "予約注文",
+    "produkt": "現在、在庫は完売しています。次回分の入荷が進んでおり、ご注文は{datum}以降に発送されます。",
+    "bradska": "今すぐ予約注文すれば、次回入荷分の枠を確保できます。次回分も売り切れる前にどうぞ。",
+    "korg": "予約注文：ご注文は{datum}以降に発送されます。"
+  },
+  "zh-TW": {
+    "rubrik": "預購",
+    "produkt": "庫存已售完。下一批貨正在送來的路上，你的訂單將於{datum}起寄出。",
+    "bradska": "立即預購，搶在下一批也售完之前，保留你的名額。",
+    "korg": "預購：你的訂單將於{datum}起寄出。"
+  },
+  "_kalla": "sv: sessionen 2026-10-03. Övriga 13 språk: sonnet-subagent mot matstrumpor/marknader/oversattning/REGLER.md samma dag."
+}

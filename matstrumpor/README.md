@@ -43,6 +43,33 @@ under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
 så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
 testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
+## Förbeställning medan lagret är slut (2026-10-03)
+
+Axels beslut 2026-10-03: allt är slutsålt, nästa leverans är i lagret 11/10, och den säljer också
+slut snabbt. Butiken säljer vidare (lagret står på "fortsätt sälja") men säger det ärligt, enligt
+Evolve Q4 (`docs/os/evolve/Q4-2026.md` → Backend): annars tror kunden att paketet kommer om några
+dagar, och det blir arga mejl och chargebacks.
+
+- **Sajten:** `node matstrumpor/forbestallning.mjs --skarpt` (torrt utan flaggan). Rutan
+  "Förbeställning … skickas från 13 oktober" på produktsidan, ovanför "Beräknad leverans", och en
+  rad i varukorgslådan och på korgsidan, på alla fjorton språk. "Beräknad leverans" räknas från
+  packningsdagen 12/10 (19–26 oktober) i stället för från i dag. Datumen står i
+  `forbestallning/konfig.json`, texterna i `forbestallning/texter.json` (svenskan av sessionen,
+  resten av en sonnet-subagent mot `marknader/oversattning/REGLER.md`).
+- **Av och på:** shop-metafältet `matstrumpor.forbestallning` (`aktiv`, `packning_fran`,
+  `skickas_fran`). Rutan släcker sig själv den dag `skickas_fran` inträffar; `--av --skarpt` släcker
+  den direkt. Temafilerna står kvar och ritar ingenting.
+- **Kundtjänstboten:** `svar.forbestallning.skickas_fran` i `kundtjanst/brands/matstrumpor.yaml`. En
+  oskickad order får "förbeställning, nästa leverans skickas från 13 oktober" i stället för "packas
+  inom 2 arbetsdagar", och går inte till VA:n förrän datumet passerat med packtid + 3 dagar.
+  Railway kör `main`, så ändringen gäller först efter merge. Ta bort blocket när det är över.
+- **Mätt 2026-10-03 som kund** (`--kundvy`): rutan på sv, en, de och ja, raden på korgsidan,
+  leveransfönstret 19–26 oktober. Originalfilerna i `forbestallning/original/`.
+- ⚠️ Shopifys lagersiffror säger inget om vad som är slut: alla varianter står på "fortsätt sälja"
+  och sushilådan på −2 627 (mätt samma dag). Vad som är slut kommer från Axel, inte från Shopify.
+- ⚠️ Kassan och orderbekräftelsen säger inget om förbeställningen (kassan kräver Plus, mejlmallen
+  har inget API). Det kunden ser är produktsidan och korgen.
+
 ## Trustpilot på sajten (2026-09-29)
 
 Axels beställning: "flexa Matstrumpors Trustpilot på hemsidan … lite widgets

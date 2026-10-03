@@ -77,6 +77,7 @@ const T = {
     folj: (l, nr) => (nr ? `Ditt spårningsnummer hos oss är ${nr}, och du följer paketet här: ${l}` : `Du följer paketet här: ${l}`),
     fonster: (a, b) => `Beräknad leverans: ${a} till ${b}.`,
     fonsterDagar: (a, b) => `Beräknad leveranstid är ${a}-${b} arbetsdagar från att paketet skickas.`,
+    forbestalld: (o, d, skickas) => `Din order ${o} är mottagen ${d}. Den är en förbeställning: lagret sålde slut, och nästa leverans skickas från ${skickas}. Du får ett mejl med spårningslänk så fort paketet skickas.`,
     ejSkickad: (o, d, n) => `Din order ${o} är mottagen ${d} och packas inom ${n} arbetsdagar. Du får ett mejl med spårningslänk så fort paketet skickas.`,
     // Arbetsdagar, aldrig "7-14 dagar" (Axels order 2026-09-21; boten skrev det ändå till Peter H 2026-09-28). Länken till spårningssidan när butiken har en.
     leveranstid: (a, b, n, sida) => `Leveranstiden är ${a}-${b} arbetsdagar från att paketet skickats. Vi skickar inom ${n} arbetsdagar efter beställningen, och du får ett mejl med spårningslänk när det går iväg. Kolla även skräpposten om mejlet inte syns.${sida ? ` Du följer paketet här: ${sida}` : ''}`,
@@ -166,6 +167,7 @@ const T = {
     folj: (l, nr) => (nr ? `Sporingsnummeret ditt hos oss er ${nr}, og du følger pakken her: ${l}` : `Du følger pakken her: ${l}`),
     fonster: (a, b) => `Beregnet levering: ${a} til ${b}.`,
     fonsterDagar: (a, b) => `Beregnet leveringstid er ${a}-${b} virkedager fra pakken sendes.`,
+    forbestalld: (o, d, skickas) => `Bestillingen din ${o} er mottatt ${d}. Den er en forhåndsbestilling: lageret ble utsolgt, og neste leveranse sendes fra ${skickas}. Du får en e-post med sporingslenke så snart pakken sendes.`,
     ejSkickad: (o, d, n) => `Bestillingen din ${o} er mottatt ${d} og pakkes innen ${n} virkedager. Du får en e-post med sporingslenke så snart pakken sendes.`,
     leveranstid: (a, b, n, sida) => `Leveringstiden er ${a}-${b} virkedager fra pakken er sendt. Vi sender innen ${n} virkedager etter bestillingen, og du får en e-post med sporingslenke når den går. Sjekk også søppelposten hvis e-posten ikke dukker opp.${sida ? ` Du følger pakken her: ${sida}` : ''}`,
     oppettider: (h) => `Vi svarer på e-post innen ${h} timer på hverdager. Skriv gjerne ordrenummeret i e-posten, så går det raskere.`,
@@ -239,6 +241,7 @@ const T = {
     folj: (l, nr) => (nr ? `Dit sporingsnummer hos os er ${nr}, og du kan følge pakken her: ${l}` : `Du kan følge pakken her: ${l}`),
     fonster: (a, b) => `Forventet levering: ${a} til ${b}.`,
     fonsterDagar: (a, b) => `Forventet leveringstid er ${a}-${b} hverdage fra pakken sendes.`,
+    forbestalld: (o, d, skickas) => `Din ordre ${o} er modtaget ${d}. Den er en forudbestilling: lageret blev udsolgt, og næste levering sendes fra ${skickas}. Du får en mail med sporingslink, så snart pakken er sendt.`,
     ejSkickad: (o, d, n) => `Din ordre ${o} er modtaget ${d} og pakkes inden for ${n} hverdage. Du får en mail med sporingslink, så snart pakken er sendt.`,
     leveranstid: (a, b, n, sida) => `Leveringstiden er ${a}-${b} hverdage fra pakken er sendt. Vi sender inden for ${n} hverdage efter bestillingen, og du får en mail med sporingslink, når den afsendes. Tjek også spam, hvis mailen ikke dukker op.${sida ? ` Du følger pakken her: ${sida}` : ''}`,
     oppettider: (h) => `Vi svarer på mails inden for ${h} timer på hverdage. Skriv gerne ordrenummeret i mailen, så går det hurtigere.`,
@@ -312,6 +315,7 @@ const T = {
     folj: (l, nr) => (nr ? `Seurantanumerosi meillä on ${nr}, ja voit seurata pakettia täällä: ${l}` : `Voit seurata pakettia täällä: ${l}`),
     fonster: (a, b) => `Arvioitu toimitus ${a} ja ${b} välillä.`,
     fonsterDagar: (a, b) => `Arvioitu toimitusaika on ${a}-${b} arkipäivää paketin lähettämisestä.`,
+    forbestalld: (o, d, skickas) => `Tilauksesi ${o} on vastaanotettu ${d}. Se on ennakkotilaus: varasto myytiin loppuun, ja seuraava erä lähetetään ${skickas} alkaen. Saat sähköpostin seurantalinkillä heti, kun paketti lähetetään.`,
     ejSkickad: (o, d, n) => `Tilauksesi ${o} on vastaanotettu ${d}, ja se pakataan ${n} arkipäivän kuluessa. Saat sähköpostin seurantalinkillä heti, kun paketti lähetetään.`,
     leveranstid: (a, b, n, sida) => `Toimitusaika on ${a}-${b} arkipäivää paketin lähettämisestä. Lähetämme ${n} arkipäivän kuluessa tilauksesta, ja saat sähköpostin seurantalinkillä, kun paketti lähtee. Tarkista myös roskaposti, jos viesti ei näy.${sida ? ` Seuraat pakettia täältä: ${sida}` : ''}`,
     oppettider: (h) => `Vastaamme sähköposteihin ${h} tunnin kuluessa arkipäivisin. Kirjoita tilausnumero viestiin, niin asia hoituu nopeammin.`,
@@ -385,6 +389,7 @@ const T = {
     folj: (l, nr) => (nr ? `Your tracking number with us is ${nr}, and you can follow the parcel here: ${l}` : `You can follow the parcel here: ${l}`),
     fonster: (a, b) => `Estimated delivery: between ${a} and ${b}.`,
     fonsterDagar: (a, b) => `Estimated delivery time is ${a}-${b} working days from when the parcel is shipped.`,
+    forbestalld: (o, d, skickas) => `Your order ${o} was received on ${d}. It is a pre-order: we sold out, and the next delivery ships from ${skickas}. You will get an email with a tracking link as soon as the parcel ships.`,
     ejSkickad: (o, d, n) => `Your order ${o} was received on ${d} and is packed within ${n} working days. You will get an email with a tracking link as soon as the parcel ships.`,
     leveranstid: (a, b, n, sida) => `Delivery takes ${a}-${b} working days from when the parcel is shipped. We ship within ${n} working days of the order, and you get an email with a tracking link when it leaves. Please check your spam folder if the email does not show up.${sida ? ` You can follow the parcel here: ${sida}` : ''}`,
     oppettider: (h) => `We answer emails within ${h} hours on weekdays. Please include your order number in the email. It speeds things up.`,
@@ -497,6 +502,26 @@ export function landnamn(kod, sprak = 'sv') {
 }
 
 const DAG_MS = 86_400_000;
+
+/**
+ * Förbeställning (brandfilens `svar.forbestallning: { skickas_fran: 'ÅÅÅÅ-MM-DD' }`): datumet
+ * då nästa leverans skickas, så länge det inte passerat med mer än packtiden + 3 dagar —
+ * sedan gäller vanliga regler igen och en oskickad order går till VA:n. Annars null. Ren.
+ */
+export function forbestallningSkickas(sv = {}, nu = Date.now()) {
+  const iso = sv?.forbestallning?.skickas_fran;
+  if (!iso || !/^\d{4}-\d{2}-\d{2}$/.test(iso)) return null;
+  const d = new Date(`${iso}T12:00:00Z`);
+  const nuMs = nu instanceof Date ? nu.getTime() : Number(nu);
+  const marginal = ((Number(sv.packas_dagar) || 2) + 3) * DAG_MS;
+  return nuMs <= d.getTime() + marginal ? d : null;
+}
+
+/** "13 oktober" / "October 13" — dag och hel månad utan år. */
+function kortDatumLang(d, sprak = 'sv') {
+  const tz = TIDSZON[sprak] ?? TIDSZON.sv;
+  return new Intl.DateTimeFormat(LOCALE[sprak] ?? LOCALE.sv, { timeZone: tz, day: 'numeric', month: 'long' }).format(d);
+}
 export const STILLA_DAGAR = 3;   // äldre senaste skanning än så ⇒ "spårningen får stå still"-raden (SOP 36)
 
 /**
@@ -592,7 +617,11 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
     if (fakta.lank) rader.push(t.folj(fakta.lank, fakta.bavernummer));
   } else {
     if (!o.skapad) throw new Error('order utan datum');
-    rader.push(t.ejSkickad(o.namn, datumText(o.skapad, sprak), packas));
+    // Förbeställning (Matstrumpor 2026-10-03: allt slutsålt): inget skickas före lagret är inne,
+    // så "packas inom N dagar" vore osant. Datumet ur brandfilens svar.forbestallning.
+    const fb = forbestallningSkickas(sv, nuMs);
+    if (fb) rader.push(t.forbestalld(o.namn, datumText(o.skapad, sprak), kortDatumLang(fb, sprak)));
+    else rader.push(t.ejSkickad(o.namn, datumText(o.skapad, sprak), packas));
     rader.push(t.fonsterDagar(levMin, levMax));
   }
   if (bekraftelse) rader.push(t.skrappost(brand.brand ?? ''));

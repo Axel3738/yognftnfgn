@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad, torrPerBrand } from '../autosvar.mjs';
 import { HINK, hinka, beslut, arSaljmejl, harTvistord, arArg, arSvarsamne, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
-import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
+import { forbestallningSkickas, skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
@@ -310,6 +310,24 @@ test('svarsmallar: fem språk, alla meningar finns, inga löftesord, signatur = 
   assert.equal(signatur({ brand: 'CaraShell', svar: {} }, 'nb'), 'Kundeservice CaraShell');
   assert.equal(signatur({ brand: 'CaraShell', svar: {} }, 'fi'), 'Asiakaspalvelu CaraShell');
   assert.equal(signatur({ brand: 'CaraShell', svar: {} }, 'en'), 'Customer service CaraShell');
+});
+
+test('förbeställning: oskickad order får nästa leveransdag i stället för "packas inom", och går inte till VA:n förrän den passerat', () => {
+  const brand = { ...KONFIG, svar: { ...KONFIG.svar, packas_dagar: 2, forbestallning: { skickas_fran: '2026-10-13' } } };
+  const fakta = { order: { namn: '#9001', skapad: new Date('2026-10-03T08:00:00Z') }, sandning: null };
+  const nu = new Date('2026-10-09T08:00:00Z');
+  const sv = skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand, fakta, nu }).text;
+  assert.match(sv, /Din order #9001 är mottagen 3 oktober 2026\. Den är en förbeställning: lagret sålde slut, och nästa leverans skickas från 13 oktober\./);
+  assert.equal(/packas inom/.test(sv), false);
+  assert.match(skrivEnkelt({ typ: 'wismo', sprak: 'en', brand, fakta, nu }).text, /It is a pre-order: we sold out, and the next delivery ships from 13 October\./);
+  for (const s of SPRAK) assert.equal(harForbjudet(skrivEnkelt({ typ: 'wismo', sprak: s, brand, fakta, nu }).text), false, `${s}: inga löften`);
+  // Spärren: sex dagar gammal order är väntad under förbeställningen, men inte när den passerat med packtid + 3.
+  assert.equal(staltFakta(fakta, { nu, packasDagar: 2, forbestallning: forbestallningSkickas(brand.svar, nu) }), null);
+  const sent = new Date('2026-10-19T08:00:00Z');
+  assert.equal(forbestallningSkickas(brand.svar, sent), null, 'passerat med mer än packtid + 3 dagar');
+  assert.match(staltFakta(fakta, { nu: sent, packasDagar: 2, forbestallning: forbestallningSkickas(brand.svar, sent) }), /inte skickad efter 16 dagar/);
+  // Utan blocket: som förut.
+  assert.match(skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand: KONFIG, fakta, nu }).text, /packas inom 2 arbetsdagar/);
 });
 
 test('svar: ej skickad order säger packas + fönster i dagar, aldrig ett datum; wismo utan order kastar', () => {
