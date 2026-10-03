@@ -23,7 +23,7 @@ App Store-appen **StonePNL** (inskickad för granskning aug 2026).
 | Norge | 1acuam-s5 | NOK | yognftnfgn-production-17a1.up.railway.app |
 | Finland | q0uthu-xq | EUR | yognftnfgn-copy-production.up.railway.app |
 | UK | 1wucum-x0 | GBP | pnl-uk-production.up.railway.app |
-| Danmark | v0xqtk-tx | DKK | Railway-domän OKÄND — fråga Axel |
+| Danmark | v0xqtk-tx | DKK | pnl-dk-production-23e3.up.railway.app (läst i Axels Railway-vy 2026-10-03, `/healthz` svarar) |
 | (App Store/StonePNL) | testbutik: stonepnl-test | USD | pnl-app-store-production.up.railway.app |
 
 Publika kataloger nås utan auth via `https://<domän>/products.json?limit=250`
@@ -1387,6 +1387,14 @@ märkte inget.
 - 4 nya tester i `test/orderrader.test.mjs` (kundens valuta, butikens/utan
   kod, okänd valuta, presentment 0). Granskad adversariellt före push:
   typecheck, build och 314 tester gröna.
+- **Deployen tog 2 h 25 min.** Pushen 09:03 CEST (och en tom commit 09:20)
+  stod "Queued" på alla sex tjänster tills 11:31–11:33 CEST. Inte krediten
+  (Hobby, 9,27 USD mot 5 inkluderade, kort finns): Railway-kontot hade
+  TRETTON projekt, varav tio dubbletter som bygger `main` vid varje push
+  (sex nya sedan städningen 2026-09-22). Axel körde
+  `stonebite/cowork/10-byggko-stonepnl.txt` i Cowork, och bygget gick
+  igenom inom en halvtimme. Lärdom: `/healthz` är enda beviset — och står
+  deployen i kö över en kvart är det dubbletterna, inte webhooken.
 
 ### ROAS under dagen (2026-09-28, build roas-under-dagen-v119)
 Axel, med en skärmbild som förlaga: *"gör om timvisaren så här i
