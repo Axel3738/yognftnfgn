@@ -1,87 +1,67 @@
-UPPDRAG: Hämta alla kvitton och fakturor för en månad till bokföringen (STONEBITE ECOM AB)
+UPPDRAG: Hämta RESTEN av kvittona för SEPTEMBER 2026, bolaget STONEBITE ECOM AB.
+Kör den här EFTER Axels andra prompt ("Hämta de sista kvittona …").
 
-Månad: september 2026 (2026-09-01 till 2026-09-30). Byt månaden här nästa gång.
+BARA LADDA NER OCH LÄSA. Betala aldrig, ändra aldrig abonnemang eller inställningar,
+radera aldrig, skicka aldrig mejl eller meddelanden. Kräver en sida inloggning eller
+kod: stanna och be Axel. Skriv aldrig in ett lösenord. Skapa aldrig konton.
 
-Du har en zipfil från Claude, "bokforing-september-2026.zip". Packa upp den i en mapp
-som heter "Bokföring september 2026" på skrivbordet. I den finns:
-- transaktioner-september.csv  = varje rad på Lunar-kontot, med kolumnen
-  "Status kvitto" och "Var kvittot hämtas".
-- kvitton/                     = kvitton som redan är hittade. Rör dem inte.
-- shopify/shopify-fakturor-att-hamta.csv = Shopifys fakturanummer.
-- meta/meta-debiteringar-september.csv   = Metas transaktions-id.
+Spara i nedladdningsmappen. Döp varje fil till ÅÅÅÅ-MM-DD_Handlare_belopp, samma som
+den andra prompten. Ta bara kvitton som matchar datum och belopp, plus eller minus
+3 dagar.
 
-Ditt jobb: för varje rad med "SAKNAS" i Status kvitto, hitta kvittot och spara det som
-PDF i mappen kvitton/. Filnamn: "ÅÅÅÅ-MM-DD Leverantör Belopp.pdf"
-(exempel: "2026-09-30 Kie AI 12618,82.pdf").
+Packa upp "bokforing-september-2026.zip" i nedladdningsmappen. Där finns
+transaktioner-september.csv (alla rader på Lunar-kontot), kvitton/, shopify/ och meta/.
 
-ORDNING (enklast först):
+GÖR INTE DET HÄR, det täcks redan:
+- axelodhner.business@gmail.com, den inkorgen är genomgången.
+- Allt i den andra prompten: mejlen på axel.odhner@ och subscriptions@stonebite.org,
+  Claude, Anthropic, Kie AI, HeyGen, ElevenLabs, Higgsfield, Klaviyo, Google Ads,
+  Google Workspace, WeTracked, Discord, Whop, vmake, 17track, Pocket, dotno.domains,
+  Spotify, PayPal och Skool.
+Ligger en fil redan i nedladdningsmappen, ladda inte ner den igen.
 
-0. DET AXEL REDAN HAR. Mejlen i axelodhner.business@gmail.com är redan genomgångna
-   och kvittona därifrån finns redan hos Axel. Sök INTE i den inkorgen igen.
-   Fråga Axel en gång var de kvittona ligger (mapp eller Drive). Gå igenom dem och
-   sätt "HITTAT" på raderna de täcker i transaktioner-september.csv. Ladda aldrig
-   ner samma kvitto två gånger.
+1. META, 273 dragningar. business.facebook.com, Faktureringar och betalningar, välj
+   annonskonto, Betalningsaktivitet, september 2026, markera alla, Ladda ner, PDF.
+   Alla sju konton: MagiBorsten, Magiborsten DK, Magiborsten NO, Magiborsten UK,
+   nya kungen, SnarkLös, Magiborsten FI. Spara i en mapp per konto.
+   Bocka av mot meta/meta-debiteringar-september.csv. Koden efter FACEBK* på
+   kontoutdraget är transaktions-id:t. Skriv vilka id som inte hittades.
 
-1. MEJLEN. Sök i Gmail i de ANDRA kontona Axel är inloggad på i Chrome:
-   axel.odhner@stonebite.org, subscriptions@stonebite.org, claude5@stonebite.org,
-   claude6@stonebite.org, barkas.kundservice@gmail.com.
-   Hoppa över axelodhner.business@gmail.com (redan gjord, se steg 0).
-   Sök: (receipt OR kvitto OR invoice OR faktura OR "payment confirmation")
-   after:2026/08/31 before:2026/10/02
-   Ladda ner PDF-bilagan. Finns ingen bilaga men en knapp "View receipt"/"Download
-   invoice": öppna den och spara som PDF (Skriv ut → Spara som PDF).
-   Matcha mot raden på beloppet. Utländska belopp: kortbeloppet i kronor kan skilja
-   några procent mot USD/EUR-beloppet, det är okej.
+2. SHOPIFY-FAKTUROR, 24 st. I varje butik: admin, Inställningar, Fakturering,
+   Fakturor, september. Butikerna: Bäverbutiken, CaraShell, Matstrumpor,
+   Beverbutikken, Bæverbutiken, Majavakauppa, HeimGuard, AdventLane, TackleBay,
+   CatCabin, UK. Bocka av mot shopify/shopify-fakturor-att-hamta.csv.
 
-2. LEVERANTÖRERNAS SIDOR (det som inte fanns i mejlen). Kolumnen
-   "Var kvittot hämtas" säger exakt var. Det viktigaste:
+3. SHOPIFY-UTBETALNINGAR. I Bäverbutiken, Beverbutikken, Bæverbutiken, Majavakauppa
+   och UK: Inställningar, Betalningar, Shopify Payments, Visa utbetalningar,
+   september, Exportera CSV. CaraShell och Matstrumpor finns redan i shopify/.
 
-   a) META (273 debiteringar). business.facebook.com → Faktureringar och betalningar
-      → välj annonskonto → Betalningsaktivitet → filtrera september 2026 →
-      markera alla → Ladda ner → PDF-kvitton. Gör det för ALLA sju kontona:
-      MagiBorsten, Magiborsten DK, Magiborsten NO, Magiborsten UK, nya kungen,
-      SnarkLös, Magiborsten FI. Spara i kvitton/meta/<kontonamn>/.
-      Kontrollera: transaktions-id:na i meta-debiteringar-september.csv ska finnas
-      i de nedladdade kvittona. Skriv vilka id som inte hittades.
+4. ÖVRIGA LEVERANTÖRER, Billing eller Fakturor på varje sida:
+   - Fortnox: 7/9 6 153,00 och 5 402,00, 18/9 6 875,00 kr.
+   - Loopia (customerzone.loopia.se, Fakturor): 14 små dragningar, se CSV:n.
+   - Notion: 4 118,04 kr.
+   - CapCut: tre dragningar, totalt 1 447,00 kr.
+   - Spoks: två dragningar, totalt 722,10 kr.
+   - Atlassian: två dragningar, totalt 475,47 kr.
+   - OpenAI: 207,98 kr.
+   - Canva: 145,85 kr.
+   - Railway: 20,20 kr.
+   - Domeneshop: 30/9 25,49 kr.
+   - Palmier: 687,33 kr. Okänd tjänst, sök på namnet i mejlen först.
+   - Booking.com: två bokningar, totalt 4 031,16 kr.
+   - SJ: 944,00 kr.
+   - Wise: elva överföringar, ladda ner kvittot per överföring.
+   - GOOGLE*-raderna som inte är Ads eller Workspace: sök beloppet i
+     payments.google.com, Aktivitet.
+   Datum och exakta belopp står i transaktioner-september.csv.
 
-   b) SHOPIFY-FAKTUROR (24 st). I varje butik: admin → Inställningar →
-      Fakturering → Fakturor → ladda ner fakturorna från september. Butikerna:
-      Bäverbutiken, CaraShell, Matstrumpor, Beverbutikken (NO), Bæverbutiken (DK),
-      Majavakauppa (FI), HeimGuard, AdventLane, TackleBay, CatCabin, UK.
-      Fakturanumren står i shopify-fakturor-att-hamta.csv. Kryssa av varje nummer.
+5. MEJLEN I DE SISTA KONTONA: claude5@stonebite.org, claude6@stonebite.org och
+   barkas.kundservice@gmail.com. Sök på leverantörerna i steg 4 i september.
 
-   c) SHOPIFY-UTBETALNINGAR (intäkter + avgifter). I Bäverbutiken, Beverbutikken,
-      Bæverbutiken, Majavakauppa och UK: admin → Inställningar → Betalningar →
-      Shopify Payments → Visa utbetalningar → välj september → Exportera (CSV).
-      Spara i shopify/. CaraShell och Matstrumpor finns redan där.
+6. OBETALDA FAKTUROR. Skriv upp varje obetald eller förfallen faktura du ser i
+   mejlen eller på sidorna, oavsett månad: leverantör, nummer, belopp,
+   förfallodag, länk.
 
-   d) GOOGLE ADS: ads.google.com (kund-id 139-156-9447) → Fakturering →
-      Dokument → ladda ner september (dokument 5701499534) och augusti.
-
-   e) Resten, en i taget: kie.ai, Anthropic/Claude, HeyGen, Skool, Fortnox, Loopia,
-      WeTracked, Notion, CapCut, ElevenLabs, Spoks, Higgsfield, Atlassian, 17TRACK,
-      Whop, OpenAI, Vmake, Canva, Discord, Railway, Domeneshop, dotno.domains,
-      Palmier, Google Workspace, Booking.com, SJ, Spotify, Wise.
-      Logga in med Axels sparade inloggning i Chrome. Gå till Billing/Fakturering
-      och ladda ner kvittona för september.
-
-3. OBETALDA FAKTUROR. Medan du är inne i mejlen och på sidorna: skriv upp varje
-   faktura som är obetald, förfallen eller "due"/"förfaller", oavsett månad.
-   Leverantör, fakturanummer, belopp, förfallodag, länk.
-
-DET HÄR FÅR DU ALDRIG GÖRA:
-- Betala något, byta kort, ändra en prenumeration eller ett abonnemang.
-- Ändra något i Meta, Shopify, Google Ads eller i någon annan inställning.
-  Du LÄSER och LADDAR NER, inget annat.
-- Svara på, radera eller flytta ett mejl.
-- Skapa konton. Kräver en sida inloggning som inte är sparad: hoppa över och
-  skriv upp den.
-- Skriva in lösenord eller verifieringskoder. Be Axel göra det.
-
-NÄR DU ÄR KLAR, rapportera till Axel på svenska, kort:
-1. Hur många av raderna med SAKNAS som nu har kvitto, och hur många som saknas.
-2. Listan på det som saknas: datum, titel, belopp, varför (ingen inloggning,
-   hittades inte, kräver Axel).
-3. Listan på obetalda fakturor.
-Kontroll: öppna tre slumpvisa PDF:er och se att datum och belopp stämmer mot
-transaktioner-september.csv.
+Sist: skriv en kort rapport på svenska med tre listor: Hämtat, Gick inte med orsak,
+och Obetalda fakturor. Skriv att du inte har betalat, ändrat eller raderat något.
+Kontroll: öppna tre slumpvisa PDF:er och jämför datum och belopp mot CSV:n.
