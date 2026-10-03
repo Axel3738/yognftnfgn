@@ -246,6 +246,13 @@ behörighetsreglerna matchar på första ordet.
    (4) minus koncept som redan är briefade men inte uppladdade — fler hinner inte
    testas. Är taket 0: skriv lärdomarna, kör om, bygg sedan. Budgeten styr aldrig
    antalet.
+   **De väntande koncepten är unionen av kungens egna BRIEF-rader i loggen OCH
+   hubbens kö** (2026-10-03): Bruce skriver egna briefer direkt i hubben utan
+   BRIEF-rad, och de tar samma plats. Odöpta rader i kön räknas som ett golv,
+   ceil(rader ÷ 3) koncept. `--status` läser därför senaste
+   `output/ko-<datum>.json`, så **`--ko` (steg 2) måste ha körts före
+   `--status`** — står det "Kön inte läst" räknar taket bara kungens briefer och
+   blir för högt.
 
 5. **Mixen kommer ur etiketterna** (räknad i koncept). Finns en levande
    breakthrough (≤ 28 dygn, inte tjuvpausad): **80 % vidarebyggen** på den, 20 %

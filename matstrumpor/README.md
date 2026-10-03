@@ -43,6 +43,12 @@ under break-even även utzoomat, `jul_video` och `nya20` svultna). `bilder` och
 så länge inget koncept väntar. Efter de fyra stängningarna finns en plats för ett
 testadset, och fler när `alla17` får ge plats åt ett väntande koncept.
 
+**Koncepttakets platser räknar också hubbens kö sedan 2026-10-03** (Axels fråga "att
+den inte gör för många briefer"): väntande koncept = kungens BRIEF-rader utan
+UPPLADDAD plus kökoncepten i senaste `output/ko-<datum>.json` (Bruces egna briefer
+har ingen BRIEF-rad), samma löpnummer en gång, plus odöpta rader som ceil(rader ÷ 3)
+koncept (`lardom.mjs vantandeKonceptTotalt`) — kör `--ko` före `--status`.
+
 ## Förbeställning medan lagret är slut (2026-10-03)
 
 Axels beslut 2026-10-03: allt är slutsålt, nästa leverans är i lagret 11/10, och den säljer också

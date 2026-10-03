@@ -190,6 +190,75 @@ export function vantandeKoncept(logg, { sedan = null, tolka } = {}) {
   return [...briefade].filter((n) => !uppe.has(n)).sort((a, b) => a - b);
 }
 
+/** Löpnummer stigande först, sedan textnycklar (koncept utan löpnummer). Ren. */
+function sorteraNycklar(nycklar) {
+  const lista = [...nycklar];
+  const tal = lista.filter((n) => typeof n === 'number').sort((a, b) => a - b);
+  const text = lista.filter((n) => typeof n !== 'number').map(String).sort((a, b) => a.localeCompare(b));
+  return [...tal, ...text];
+}
+
+/** Koncept i hubbens uppladdningskö som väntar på en testplats (2026-10-03,
+ *  Axels fråga "att den inte gör för många briefer"). plan = kön ur
+ *  `kor.mjs --ko` (output/ko-<datum>.json): koncepten med status ≠ stopp
+ *  (klar, vantar_plats, vantar_copy, vantar_struktur) som har minst en annons
+ *  som inte är UPPLADDAD. Fångar briefer som aldrig fått en BRIEF-rad i loggen
+ *  — Bruces egna, skrivna direkt i hubben. Nyckeln är annonsens löpnummer
+ *  (tolka), annars konceptets nummer, nyckel eller adsetnamn: en uppladdning
+ *  som bär två löpnummer är två koncept, och samma löpnummer i två poster är
+ *  ett. uppladdade = annonsnamn (eller loggrader med `annons`).
+ *
+ *  Odöpta rader (planens `behover_namn`: raden har en fil men inget namn än —
+ *  redigerarna döper sina rader "022", "023" …) är riktiga klipp som väntar på
+ *  en plats. De har inget löpnummer att para på, så de räknas som
+ *  ceil(rader ÷ hookarPerKoncept) extra koncept: 3:2:2 ger tre rader per
+ *  koncept, så det är ett golv — hellre en brief för lite än för mycket.
+ *  Returnerar { nycklar, odopta: { rader, koncept }, antal }. Ren. */
+export function vantandeKonceptUrKo(plan, { uppladdade = [], tolka: tolkaFn = tolka, hookarPerKoncept = 3 } = {}) {
+  const uppe = new Set([...(uppladdade ?? [])].map((u) => String(typeof u === 'string' ? u : u?.annons ?? '').toLowerCase()).filter(Boolean));
+  const nycklar = new Set();
+  for (const k of plan?.koncept ?? []) {
+    if (!k || k.status === 'stopp') continue;
+    const reserv = Number(k.nummer) > 0 ? Number(k.nummer) : (k.nyckel ?? k.adset_namn ?? null);
+    for (const a of k.annonser ?? []) {
+      if (uppe.has(String(a?.namn ?? '').toLowerCase())) continue;
+      const t = tolkaFn(a?.namn);
+      const n = t && !t.land && t.nummer ? t.nummer : reserv;
+      if (n !== null && n !== undefined && n !== '') nycklar.add(n);
+    }
+  }
+  // behover_namn först; en äldre plan utan fältet har flaggan på de stoppade raderna.
+  const odoptaRader = Array.isArray(plan?.behover_namn) ? plan.behover_namn : (plan?.stoppade ?? []).filter((r) => r?.behover_namn);
+  const radId = new Set(odoptaRader.map((r, i) => String(r?.id ?? r?.url ?? r?.namn ?? `rad-${i}`)));
+  const h = Math.max(1, Number(hookarPerKoncept) || 3);
+  const odopta = { rader: radId.size, koncept: Math.ceil(radId.size / h) };
+  const lista = sorteraNycklar(nycklar);
+  return { nycklar: lista, odopta, antal: lista.length + odopta.koncept };
+}
+
+/** Platstakets väntande koncept = UNIONEN av kungens briefade-inte-uppladdade
+ *  (loggen, vantandeKoncept) och hubbens kö (vantandeKonceptUrKo), plus de
+ *  odöpta radernas golv. Samma löpnummer i båda räknas en gång. antal är talet
+ *  som går in i koncepttak. plan = null ⇒ kön är inte läst och bara loggen
+ *  räknas (ko_last: false — säg det, gissa aldrig att kön är tom). Ren. */
+export function vantandeKonceptTotalt(logg, plan, { sedan = null, tolka: tolkaFn = tolka, hookarPerKoncept = 3 } = {}) {
+  const kungens = vantandeKoncept(logg, { sedan, tolka: tolkaFn });
+  const uppladdade = (logg ?? []).filter((r) => r.kod === 'UPPLADDAD').map((r) => r.annons);
+  const ko = plan ? vantandeKonceptUrKo(plan, { uppladdade, tolka: tolkaFn, hookarPerKoncept }) : { nycklar: [], odopta: { rader: 0, koncept: 0 } };
+  const kon = ko.nycklar;
+  const iLoggen = new Set(kungens);
+  const alla = sorteraNycklar(new Set([...kungens, ...kon]));
+  return {
+    alla,
+    kungens,
+    kon,
+    bara_kon: kon.filter((n) => !iLoggen.has(n)),
+    odopta: ko.odopta,
+    antal: alla.length + ko.odopta.koncept,
+    ko_last: Boolean(plan),
+  };
+}
+
 /** Mixen (punkt 7): finns en levande breakthrough är ronden 80 % vidarebyggen på
  *  den, annars 80 % nya vinklar. Udda annons går till majoriteten. */
 export function mix(antal, harLevandeBreakthrough) {

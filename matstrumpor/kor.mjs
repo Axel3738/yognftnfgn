@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { brytpunkter, rangordna, dom } from './ekonomi.mjs';
 import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKETT, RANG, arUppgradering, gallandeEtiketter, hitRate } from './etikett.mjs';
-import { brieftak, mix, skelett, konceptStatus, koncepttak, vantandeKoncept } from './lardom.mjs';
+import { brieftak, mix, skelett, konceptStatus, koncepttak, vantandeKonceptTotalt } from './lardom.mjs';
 import { nastaNummer_flera, bygg, tolka, adsetNyckel, samlaKandaNamn, nastaIterationPa, mediatyp } from './namn.mjs';
 import { hamtaKo, planera, planeraKoncept, hubbNamn } from './kon.mjs';
 import { strukturLage, regler as strukturRegler, adsetSpec, creativeSpec, kontrolleraAdset, tolkaAdsetNamn, adsetNamn, levererar } from './struktur.mjs';
@@ -280,6 +280,17 @@ export function senasteAvlasning(mapp = UTMAPP) {
   if (!filer.length) return null;
   const fil = filer[filer.length - 1];
   return { fil: join(mapp, fil), datum: fil.slice(10, 20) };
+}
+
+/** Senaste uppladdningskön på disk (`output/ko-YYYY-MM-DD.json`, skriven av
+ *  --ko), högsta datum men aldrig efter `tom` (--idag). null om ingen finns —
+ *  mappen är gitignorerad, så en ny container har ingen förrän --ko körts. */
+export function senasteKo(mapp = UTMAPP, { tom = null } = {}) {
+  if (!existsSync(mapp)) return null;
+  const filer = readdirSync(mapp).filter((f) => /^ko-\d{4}-\d{2}-\d{2}\.json$/.test(f) && (!tom || f.slice(3, 13) <= tom)).sort();
+  if (!filer.length) return null;
+  const fil = filer[filer.length - 1];
+  return { fil: join(mapp, fil), datum: fil.slice(3, 13) };
 }
 
 /** Döper om en Notion-rad (titeln). Namnet ÄR routingen, så det ska stå på ETT
@@ -730,9 +741,21 @@ async function main() {
     console.log(`Brieftak: ${takUnika.antal} — ${takUnika.orsak}${tak.antal !== takUnika.antal ? ` (räknat på loggrader hade det blivit ${tak.antal})` : ''}`);
     // 3:2:2: taket räknas i KONCEPT (tre hookar = tre briefer = ett testadset).
     const sr = strukturRegler(konfig);
-    const vantar = vantandeKoncept(logg, { sedan: sr.sedan, tolka });
-    const kt = koncepttak({ lardomarSedanForraRonden: unikaNya, kadensBriefer: konfig.kadens.briefer_per_rond, hookarPerKoncept: konfig.kadens.hookar_per_koncept ?? sr.annonser_per_adset, vantandeKoncept: vantar.length, testplatser: sr.max_adsets_totalt - 1 });
-    console.log(`Koncepttak (3:2:2): ${kt.orsak}${vantar.length ? ` Briefade, inte uppladdade: ${vantar.map((n) => String(n).padStart(3, '0')).join(', ')}.` : ''}`);
+    // Platstaket räknar också hubbens kö (Bruces egna briefer har ingen
+    // BRIEF-rad i loggen) — ur senaste --ko-filen, 2026-10-03.
+    const koFil = senasteKo(UTMAPP, { tom: varde('--idag') });
+    let koPlan = null;
+    if (koFil) {
+      try { koPlan = JSON.parse(readFileSync(koFil.fil, 'utf8')); } catch (e) { console.log(`⚠️ Kön ${koFil.fil} gick inte att läsa (${e.message}) — platstaket räknar bara kungens egna briefer`); }
+    }
+    const hookarPerKoncept = konfig.kadens.hookar_per_koncept ?? sr.annonser_per_adset;
+    const vt = vantandeKonceptTotalt(logg, koPlan, { sedan: sr.sedan, tolka, hookarPerKoncept });
+    const kt = koncepttak({ lardomarSedanForraRonden: unikaNya, kadensBriefer: konfig.kadens.briefer_per_rond, hookarPerKoncept, vantandeKoncept: vt.antal, testplatser: sr.max_adsets_totalt - 1 });
+    const visaNr = (lista) => (lista.length ? lista.map((n) => (typeof n === 'number' ? String(n).padStart(3, '0') : n)).join(', ') : 'inga');
+    if (!koPlan) console.log('Kön inte läst (kör --ko först) — platstaket räknar bara kungens egna briefer');
+    else console.log(`Kön läst: ${koFil.fil} (${koFil.datum}${koFil.datum !== (varde('--idag') ?? idagSE()) ? ' — inte i dag, kör --ko för en färsk' : ''})`);
+    console.log(`Väntar på en plats: ${vt.antal} (kungens briefer: ${visaNr(vt.kungens)}, hubbens kö: ${koPlan ? visaNr(vt.kon) : 'inte läst'}, odöpta rader: ${koPlan ? `${vt.odopta.rader} ⇒ ${vt.odopta.koncept} koncept` : 'inte lästa'})`);
+    console.log(`Koncepttak (3:2:2): ${kt.orsak}`);
     console.log(`Mix: ${JSON.stringify(mix(kt.antal, levande.length > 0))} (räknat i koncept)`);
     console.log(`Hit rate (breakthrough + spend winner): ${hitRate(galler).text}`);
     for (const k of [...new Set(briefer.map((x) => x.koncept).filter(Boolean))]) {
