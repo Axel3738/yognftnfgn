@@ -110,7 +110,7 @@
     "kostnad_per_order_sek": 120.92,
     "kostnad_comment": "Axels siffra 2026-09-21: 80,61 kr för 1 par, 120,92 kr för 2 par (inköp). Standardordern är 2 par ⇒ 120,92. INGÅR INTE: fraktkostnad till kund, betalväxelns avgift, retur/svinn — break-even nedan är alltså i bästa fall, aldrig i sämsta.",
     "tull_eur": 2.9,
-    "tull_comment": "Axels siffra: 2,9 EUR tull till EU per order.",
+    "tull_comment": "Axels siffra: 2,9 EUR tull till EU per order. Gäller paket som går IN i EU (SE, DK, FI, Europa-marknaden utom CH/IS/LI). Länder utanför EU (NO, CH, GB, JP, US, CA, AU, NZ, TW) får 0 — Axel 2026-10-03 om StonePNL: \"den räknar ju tull på länder som inte ens är med i EU\". StonePNL:s standardtull är 27,50 kr (appens startvärde), inte 2,9 EUR; stonebite/kostnader.json säger 2,8 EUR. Tre tal, alla Axels.",
     "eur_sek": 11.275,
     "eur_sek_comment": "ECB via frankfurter.dev 2026-09-21. Kursen rör sig — räkna om med --ekonomi, skriv aldrig ett break-even-tal ur minnet.",
     "moms_antagen": false,

@@ -1119,6 +1119,29 @@ TOMT, inte 0, och StonePNL räknar tomt som saknat. Axel har sagt att de kostar 
 fältet sattes till 0 samma förmiddag via API (`inventoryItemUpdate`, tillbakaläst). Samma sak låg bakom
 10–13 % i de andra länderna.
 
+**2026-10-03: två fel till, hittade på Axels fråga "hur fan är vår break-even 1,9?".**
+1. **Avgifterna lästes i fel valuta.** Shopify Payments skriver transaktionsavgiften i KUNDENS valuta,
+   och StonePNL summerade beloppet som kronor: en japansk order på 7 980 JPY (507,54 kr) bar 268 + 156 JPY
+   och fick 424 kr i avgift. Japan visade −54 % bidrag, butikens break-even-MER stod på 1,90 medan varje
+   land visade 1,41–1,67; euro-, dansk-, polsk- och pundordrar fick i stället för LÅG avgift (0,83 EUR
+   lästes som 0,83 kr). Rättat i appens kod samma dag (`pnl-app` på deploy-grenen, build
+   `avgiftsvaluta-v120`, avsnittet "Avgifterna i kundens valuta" i `pnl-app/CLAUDE.md`): avgiften räknas om
+   med orderns egen kurs. Redan sparade dagar bär de gamla talen tills returkollen skrivit om dem (45 dagar
+   inom 6 timmar efter deployen), så panelen rättar sig i omgångar.
+2. **Tullen låg på länder utanför EU.** Standardtullen 27,50 kr per order (appens startvärde, inte Axels
+   2,9 EUR) räknades på 26 av dagens 27 ordrar, också Japan, Schweiz, Storbritannien och Norge — bara US och
+   CA hade 0 (prompt 6). `tariffFor` i appen har ingen EU-logik: varje land utan eget belopp får
+   standardtullen. Regeln (Axel 2026-10-03: "den räknar ju tull på länder som inte ens är med i EU"):
+   standardtullen är EU-tullen och gäller paket som går in i EU; länder utanför EU (NO, CH, GB, JP, US, CA,
+   AU, NZ, TW) får 0. Det är Cowork-prompten `cowork/9-stonepnl-tull.txt`, som också klistrar in Big5-priserna
+   en gång till så att GB, NZ och AU får sina (de var inga marknader i appen 2026-10-02).
+   ⚠️ Standardtullen 27,50 kr är appens startvärde för en SEK-butik; Axels egen siffra är 2,9 EUR
+   (`../konfig.json`) och sajten stonebite.org räknar 2,8 EUR (`stonebite/kostnader.json`). Tre tal, alla
+   Axels; prompten rör inte standardvärdet.
+3. **Kvar, Axels:** donut-, pizza- och hamburgarstrumporna saknar Cost per item i Shopify (null, 100 lådor
+   på 14 dagar = det "cost missing" panelen visar), och alla länder utom US/CA räknas på svensk kostnad tills
+   leverantören svarat via StonePNL:s offertlänk.
+
 ## Sajtgranskningen 2026-10-01: rättningarna (2026-10-02, `sajtfix.mjs`)
 
 Axels order: "rätta allt rött och gult" i `granskning/SAJT-2026-10-01.md`. Temadelen sitter i

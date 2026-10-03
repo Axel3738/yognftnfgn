@@ -194,6 +194,12 @@ jämnt. Resten av ländernas priser kommer via StonePNL:s offertförfrågan till
 (`marknader/README.md` → "StonePNL: vinsten per land"). ✅ Körd av Cowork samma förmiddag. "cost missing" som
 stod kvar var ätpinnarnas TOMMA Cost per item (StonePNL räknar tomt som saknat, inte som 0). Fältet är satt till
 0 via API, som Axel bestämt.
+⛔ **StonePNL räknade avgifterna i fel valuta och tull utanför EU (hittat 2026-10-03, Axels "hur fan är vår break-even 1,9?"):**
+Shopify Payments skriver avgiften i KUNDENS valuta och appen summerade yen som kronor (Japan −54 % bidrag, butikens
+break-even-MER 1,90 mot 1,41–1,67 per land) — rättat i appens kod samma dag (build `avgiftsvaluta-v120` på deploy-grenen;
+sparade dagar rättas när returkollen skrivit om dem, 45 dagar inom 6 timmar). Standardtullen 27,50 kr låg på varje land utan
+eget belopp, också JP, CH, GB, NO: regeln är EU-tull bara på paket in i EU, 0 utanför EU — `marknader/cowork/9-stonepnl-tull.txt`.
+Donut, pizza och hamburgare saknar fortfarande Cost per item (Axels siffror). Allt i `marknader/README.md` → "StonePNL: vinsten per land".
 🔧 **Sajtgranskningen 2026-10-01 rättad 2026-10-02** (Axels "rätta allt rött och gult",
 `marknader/sajtfix.mjs`, prov i en kopia av MAIN, tabellen i `marknader/README.md` → "Sajtgranskningen
 2026-10-01: rättningarna"):
