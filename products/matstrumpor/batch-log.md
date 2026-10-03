@@ -442,3 +442,24 @@ efterstämpling). Sessioner per variant mäts inte.
 **"För få köp för att räkna på — 18 av 25 per variant. Ingen dom förrän dess."**
 Sessionens räkning (80,23 kr/låda + 32,70 kr tull, före reklam): A 6 473 kr (281 kr/order),
 B 5 427 kr (302 kr/order). 11 av 18 B-köpare tog 1 låda för 399 kr.
+
+**Avläsning 2 — 2026-10-03 ~10:15 CEST (`/abtest paket`):** fönster `#5195` 2026-09-30 12:01 UTC →
+`#5397` 2026-10-03 08:12 UTC. 203 ordrar med stämpel, 0 okända, 0 tvingade, 0 annullerade, 6 ur koden.
+⚠️ **97 av dem är utländska** (matstrumpor.com, utlandsannonserna sedan 2/10): `ms-ab.js` lottar och
+stämplar alla besökare, men utanför SE ser alla A (Sverige-spärren) — de B-stämplade utlandsordrarna
+bär därför A:s koder (36 × SUSHI-K1F1). Avläsningen räknas bara på **SE/SEK** (106 ordrar), filen
+`ab/output/paket-2026-10-03-SE.json`. ⚠️ B:s 1-lådsnivå ändrades mitt i testet av en annan session
+2026-10-02 08:45 UTC (kod `SUSHI-1FOR399`, "ätpinnar gratis till varje låda"; 5 ordrar).
+
+| SE/SEK | A | B |
+|---|---|---|
+| Ordrar | 64 | 42 |
+| Intäkt | 30 631 kr | 20 356 kr |
+| Snittorder | 479 kr | 485 kr |
+| Lådor/order | 2,28 | 1,67 |
+| 1 / 2 / 4+ lådor | 2 / 53 / 9 | 18 / 22 / 2 |
+| Kvar före reklam (80,23 kr/låda + 32,70 kr tull) | 16 825 kr | 13 367 kr |
+
+`analys.mjs` ordagrant (SE): lyft B mot A −34,4 %, p = 0,0414, konfidens 95,9 %; snittorder +6 kr
+(p = 0,891). **"B är sämre, -34.4 % (p = 0.041). Behåll A."** Alla länder ihop: −28,0 %, p = 0,0247.
+Sessioner per variant mäts inte. Förslag: avsluta testet (`paket-test.mjs --av --skarpt`) på Axels ok.
