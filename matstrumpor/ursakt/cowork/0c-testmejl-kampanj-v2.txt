@@ -1,0 +1,18 @@
+Uppdrag: skicka ETT nytt testmejl till Axel av Matstrumpors ursäktsmejl till kunder som redan har köpt.
+Allt görs i Spoks-appen (https://app.spoks.com), arbetsytan "Matstrumpor.se". Inget annat.
+Det här är BARA ett test. Inget får gå till en kund.
+
+Texten är omskriven sedan förra testet. Ämnesraden är nu "Vi är så ledsna, ditt paket kommer senare".
+
+1. Öppna https://app.spoks.com/matstrumpor/post/e1071a3c-fd98-4cc0-a3a4-5276c4df2af1/edit
+2. Kontrollera att rubriken i mejlet är "Förlåt, ditt paket blir försenat".
+3. Tryck "Titta igenom" och sedan "Skicka test", som förra gången.
+4. Töm adressfältet och skriv bara axelodhner.business@gmail.com. Tryck "Skicka".
+5. Stäng med krysset.
+
+Regler, utan undantag:
+- Tryck ALDRIG "Planera", "Publicera nu" eller "Spara & avsluta".
+- Välj ingen publik eller segment. Ändra ingen text.
+- Ser något annorlunda ut än beskrivet: STANNA och skriv exakt vad du ser.
+
+Rapportera: skickat ja/nej och klockslag.

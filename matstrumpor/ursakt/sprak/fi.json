@@ -1,0 +1,17 @@
+{
+  "amne": "Olemme todella pahoillamme, pakettisi myöhästyy",
+  "forhand": "Toimitus voi kestää 5-10 arkipäivää tavallista kauemmin. Tässä mitä se tarkoittaa sinulle.",
+  "rubrik": "Anteeksi, pakettisi myöhästyy",
+  "hej": "Hei {{fornamn}},",
+  "du_reserv": "ystävä",
+  "intro_kampanj": "Tämä on viesti, jota emme olisi halunneet kirjoittaa. Olet tilannut meiltä, ja pakettisi voi saapua odotettua myöhemmin. Meitä hävettää, ja haluamme, että kuulet sen meiltä heti.",
+  "intro_flode": "Kiitos tilauksestasi Matstrumporilta. Ilahdumme joka kerta, kun joku valitsee meidät. Siksi on erityisen harmillista, että joudumme jo nyt kertomaan toimituksen voivan myöhästyä.",
+  "forsening": "Toimitusketjussa on tapahtunut häiriö. Siksi pakettisi voi viipyä 5-10 arkipäivää tavallista pidempään. Enempää emme voi juuri nyt sanoa. Teemme kaikkemme saadaksemme jokaisen tilauksen matkaan mahdollisimman pian, mutta emme uskalla luvata päivämäärää.\n\nJos ostit paketin lahjaksi, haluamme, että tiedät tämän jo nyt, jotta ehdit suunnitella.",
+  "aterbetalning": "Jos pakettiasi ei ole vielä lähetetty ja haluat mieluummin rahasi takaisin, saat koko summan. Ilman vaivaa ja ilman huonoa omaatuntoa. Vastaa vain tähän viestiin tilausnumerollasi ja kirjoita, että haluat perua tilauksesi ja saada hyvityksen, niin hoidamme asian. Ymmärrämme sinua täysin.",
+  "behalla": "Jos jaksat odottaa meitä vielä hetken, se merkitsee meille todella paljon. Sinun ei tarvitse tehdä mitään. Pakettisi tulee, vain myöhemmin kuin pitäisi. Teemme kaiken voitavamme, jotta se löytää perille luoksesi.",
+  "redan_framme_kampanj": "Jos olet jo saanut pakettisi, tämä viesti ei koske sinua. Toivomme vain, että pidät siitä.",
+  "sparning": "Pakettinumerosi alkaa kirjaimilla MS, ja se löytyy viestistä, jonka sait paketin lähetyksen yhteydessä. Voit seurata pakettiasi tämän linkin kautta:",
+  "knapp": "Seuraa pakettiasi",
+  "avslut": "Olemme todella pahoillamme, ja tarkoitamme sitä. Jos mietit jotain, vastaa vain tähän viestiin. Kiitos, että luet, ja kiitos, että annat meille mahdollisuuden.",
+  "signatur": "Matstrumpor"
+}

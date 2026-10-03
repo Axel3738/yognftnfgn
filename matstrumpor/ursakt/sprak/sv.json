@@ -1,0 +1,17 @@
+{
+  "amne": "Vi är så ledsna, ditt paket kommer senare",
+  "forhand": "Det kan ta 5-10 arbetsdagar längre än vanligt. Här är vad det betyder för dig.",
+  "rubrik": "Förlåt, ditt paket blir försenat",
+  "hej": "Hej {{fornamn}},",
+  "du_reserv": "du",
+  "intro_kampanj": "Det här är ett mejl vi helst inte ville skriva. Du har beställt av oss, och ditt paket kan komma fram senare än du har väntat dig. Vi mår dåligt över det, och vi vill att du hör det från oss direkt.",
+  "intro_flode": "Tack för din beställning hos Matstrumpor. Vi blir glada varje gång någon väljer oss. Därför är det extra tråkigt att vi redan nu måste berätta att leveransen kan bli försenad.",
+  "forsening": "Det har blivit en störning i leveranskedjan. Därför kan ditt paket ta 5-10 arbetsdagar längre än vanligt. Mer än så kan vi inte säga just nu. Vi kämpar för att få iväg varenda order så fort vi kan, men vi vågar inte lova ett datum.\n\nKöpte du paketet som present vill vi att du vet det redan nu, så att du hinner planera.",
+  "aterbetalning": "Har ditt paket inte hunnit skickas och vill du hellre ha pengarna tillbaka, får du hela beloppet. Utan krångel och utan dåligt samvete. Svara bara på det här mejlet med ditt ordernummer och skriv att du vill avbryta din order och få en återbetalning, så ordnar vi det. Vi förstår dig helt.",
+  "behalla": "Kan du stå ut med oss en stund till betyder det väldigt mycket. Du behöver inte göra något. Ditt paket kommer, bara senare än det borde. Vi gör allt vi kan för att det ska hitta hem till dig.",
+  "redan_framme_kampanj": "Har du redan fått ditt paket gäller inte det här mejlet dig. Då hoppas vi bara att du gillar det.",
+  "sparning": "Ditt paketnummer börjar med MS och står i mejlet du fick när paketet skickades. Du kan spåra ditt paket via den här länken:",
+  "knapp": "Följ ditt paket",
+  "avslut": "Vi är så himla ledsna, och vi menar det. Undrar du något, svara bara på det här mejlet. Tack för att du läser, och tack för att du ger oss en chans.",
+  "signatur": "Matstrumpor"
+}
