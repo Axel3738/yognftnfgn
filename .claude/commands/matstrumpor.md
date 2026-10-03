@@ -110,6 +110,13 @@ Bash-anrop.
    - `⛔ STRUKTUR` — strukturen gick inte att läsa ur Meta; inget laddas upp.
    - `🏷️` — odöpt rad (steg 4). `⛔` per rad — fil, pris, landningssida, utland.
 
+   **Axel ber om en viss video** ("ladda upp denna videon … och i svenska
+   kampanjen", 2026-10-03): `--ko --bara <annonsnamn>` planerar bara den raden,
+   och den får nästa lediga plats före kön. Resten av kön rörs inte och väntar
+   på nästa plats. En färdig video utan rad i hubben får först en rad:
+   `tools/notion-brief-upp.mjs` + `tools/notion-fil-upp.mjs --status "To be Reviewed"`
+   (förlagan: `products/matstrumpor/axels-videor/`).
+
 4. **Döp de odöpta och laga det som väntar.**
    - **Odöpt rad** (redigerarna döper sina rader `022`, `023` …): hämta creativen
      (Drive-länken sist på raden; `python3 tools/drive-ls.py` listar mappen,
@@ -230,7 +237,9 @@ Bash-anrop.
       konceptet. Den vägrar Champions, en gammal hink, en annons som inte hör till uppladdningen
       och bild i ett videoadset. `--kreator` gör att arkivet kan räkna
       vinstbidrag per kreatör.
-   f. Sätt radens status till **`Approved`** i Notion.
+   f. Sätt radens status till **`Approved + Launched in SE`** i Notion (`konfig.json` →
+      `notion.efter_uppladdning`; valet hette `Approved` till och med 2026-10-01, och
+      Notion svarar 400 "Invalid status option" på det gamla namnet — mätt 2026-10-03).
 
 6. **Stoppreglerna.**
    - **Pris som avviker mer än 20 %** från produktsidan ⇒ kommentar i Notion,

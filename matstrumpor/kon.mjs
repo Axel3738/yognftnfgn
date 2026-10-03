@@ -42,6 +42,16 @@ export const STOPPSKAL = {
   HOOKRAD: 'raden är märkt som tre hookfiler men namnet bär redan en hook',
 };
 
+/** Ren: bara de namngivna raderna (namnet exakt, skiftläget spelar ingen roll). Ett namn som
+ *  inte finns i kön är ett fel — en tyst tom plan ser ut som "inget att göra". */
+export function baraRader(rader, bara) {
+  const vill = new Set([...bara].map((n) => String(n).trim().toLowerCase()).filter(Boolean));
+  const ut = (rader ?? []).filter((r) => vill.has(String(r.namn ?? '').trim().toLowerCase()));
+  const saknas = [...vill].filter((n) => !ut.some((r) => String(r.namn).trim().toLowerCase() === n));
+  if (saknas.length) throw new Error(`--bara: ${saknas.join(', ')} finns inte i kön (raden ska ha en fil och stå i To be Reviewed eller Creative strat review)`);
+  return ut;
+}
+
 /** Steg 1, rad för rad. hookrader = id:n på rader som bär TRE hookfiler
  *  (H1/H2/H3 i filnamnen, Gilz mönster 2026-09-21): raden blir tre annonser
  *  `_h1 _h2 _h3`, och sessionen tar fil k till annons k. Ren. */
@@ -257,9 +267,12 @@ export async function hubbNamn(konfig, { fetchFn = fetch } = {}) {
 
 /** Läser Matstrumpors hub, briefernas COPY CARD och planerar. Kräver NOTION_TOKEN.
  *  lage kommer från kor.mjs (strukturen läst ur Meta) — null ⇒ inget laddas upp. */
-export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], hookrader = new Set(), prisavvikelse, datum = null, ...val } = {}) {
+export async function hamtaKo(konfig, { logg = [], lage = null, grupper = [], hookrader = new Set(), prisavvikelse, datum = null, bara = null, ...val } = {}) {
   const hub = { id: konfig.notion.hub_id, titel: konfig.notion.hub_namn };
-  const rader = await klaraRader(hub, { statusar: (konfig.notion.ko_statusar ?? [konfig.notion.ko_status]).map((s) => s.toLowerCase()), ...val });
+  const hela = await klaraRader(hub, { statusar: (konfig.notion.ko_statusar ?? [konfig.notion.ko_status]).map((s) => s.toLowerCase()), ...val });
+  // --bara: Axel ber om EN viss video (2026-10-03, "ladda upp denna videon … och i svenska
+  // kampanjen") — den planeras ensam och får nästa lediga plats. Resten av kön rörs inte.
+  const rader = bara?.size ? baraRader(hela, bara) : hela;
   const plan = planera(rader, konfig, { prisavvikelse, hookrader });
   const kort = new Map();
   for (const a of plan.klara) {

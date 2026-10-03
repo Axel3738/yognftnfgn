@@ -1389,6 +1389,40 @@ den textfria basen (`egna/d3/rita.py` på `egna/d3/bas.png`). Bildmodellen ritar
 - Bilderna i `annonser/klar/*_d3.jpg` är gitignorerade (de ritas om med `annons.mjs --skriv`).
   Deras hash står i `videor.json`.
 
+### Annons 009: Axels färdiga video i varje marknad (2026-10-03)
+
+Axel skickade en video 2026-10-03: "ladda upp denna videon i varje marknad", sedan "Och i svenska
+kampanjen". Den kommer från Temus video på TikTok (nedladdad med ssstik). Händer öppnar 5-parslådan
+och 3-parslådan, ätpinnarna lyfter varje bit och den rullas ut till en strumpa. 26 s, 9:16, bara
+musik och ljudeffekter (Scribe hörde "[glad musik]", Axel: "ingen voiceover"). Ingen text i bild,
+ingen vattenstämpel, inget pris, och lådorna är butikens (jämförda med produktbilderna samma dag).
+
+- **Ingen översättning.** En video utan tal och text behöver bara marknadens annonstext. Texten är
+  marknadens egen annons 001:s (sonnet + infödd granskare 2026-09-27–30), så videon är det enda som
+  skiljer. Ingen ny copy skrevs.
+- **Verktyget `annonser/ny-video.mjs`:** torrt → `--skriv` → `bygg.mjs --marknad <KOD> --skarpt`
+  per marknad, NO först → `ny-video.mjs --sla-pa --skarpt`. NO bär filen och alla andra lånar NO:s
+  video-id (`video_fran`). NOB härleds med `nob.mjs`. `annonser/nya-videor.json` minns namnen och
+  utfallet.
+- **Namnen:** `MATSTRUMP_<KOD>_sushi_gift_ugc_009_im_v1` i alla femton filer. `_im` betyder en annan
+  brands video, och arkivet räknar den som IMIT. TW:s post byggs först när Taiwan lanseras.
+- **Påslaget gäller bara de nya ANNONSERNA**, aldrig en kampanj eller ett adset. Mätt 2026-10-03
+  ~13:45 CEST med `bygg.mjs --lage`: sju av fjorton utlandskampanjer stod PAUSED (NO, NOB, DE, NL,
+  ES, PL, WW). Det är ett beslut och rörs inte. Där står den nya annonsen ACTIVE men levererar inte
+  (CAMPAIGN_PAUSED, inget kostar), och den går först när någon slår på kampanjen. PT stod på
+  2 000 kr/dag, de andra igång på 1 000.
+- **Lånad film:** registrerad i `konkurrenter/externa/temu-tiktok-sushistrumpor.json` (261 rutor), så
+  konkurrentdödaren aldrig kallar den vår eller anklagar någon som visar samma klipp. Anmäler ägaren
+  filmen kan Meta ta ner annonserna. Det är Axels val, som med Specialised Covers klipp (KD-2026-001).
+- **Sverige** fick den som `MATSTRUMP_sushi_gift_ugc_070_im_v1` i ett eget uppladdningsadset (3:2:2),
+  se `matstrumpor/README.md` → "Första uppladdningen i 3:2:2".
+- ✅ **Utfallet 2026-10-03 13:43–14:22 CEST:** 14 annonser byggda (NO, NOB, DK, FI, US, WW, DE, FR, NL,
+  ES, IT, PL, PT, JP) och alla 14 påslagna och tillbakalästa ACTIVE/IN_PROCESS (Metas granskning).
+  Sju går så fort granskningen är klar (DK, FI, US, FR, IT, PT, JP), och sju väntar under en pausad
+  kampanj. TW är inte byggd (`lansering_stopp`). Annons-id:n står i `annonser/videor.json` och
+  `annonser/nya-videor.json` → `pa`. Meta strypte (kod 17) i upp till fem omförsök per marknad, och
+  verktygets egen väntan tog det. Hela bygget tog drygt en halvtimme för fjorton marknader.
+
 ⚠️ **HeyGen-nyckeln sitter på kontot `subscriptions@stonebite.org`** (Axel Odhner, mätt
 `GET /v1/user/me` 2026-09-27 kväll): `billing_type: wallet`, **saldo 0,10 USD, ingen
 prenumeration på det kontot**. Det är därför API:t svarar "Insufficient credit … requires 'api'
