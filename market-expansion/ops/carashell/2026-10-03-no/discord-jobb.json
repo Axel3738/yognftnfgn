@@ -1,0 +1,24 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-10-03",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Seven new video rows landed in the Norwegian queue this morning, all in the OB angle. None of them went live today, and nothing was rendered, uploaded or changed. Reasons below, one per row.",
+    "CaraShellRoof_OB_122_H1 is blocked and will not be uploaded: the end card carries the other store's name and logo. A store name never appears in an ad, and this one was heading into a different store's campaign. Measured by reading the text in the last four seconds of the file. The video is otherwise fine, so it only needs a new ending.",
+    "The other six (111, 113, 114, 117, 118, 119) are held, not rejected. They are voiceover over product footage, which we dub with ElevenLabs instead of HeyGen, and the ElevenLabs key is missing from the environment this routine runs in. The rows stay where they are and the next run picks them up.",
+    "All seven also carry the Swedish price burned into the picture: 1 129 kronor, save 340, 23 percent. Norway has its own price, 1 106 kroner, so the captions must be redrawn in Norwegian with the Norwegian price before any of these can go live. Dubbing the sound alone would leave a Swedish price on screen for a Norwegian customer.",
+    "Checked the whole Approved queue as well: 74 rows, every one of them live in Norway. Nothing lagging behind. Yesterday's two image ads are included and running.",
+    "Each of the seven rows has a comment in the hub explaining exactly what is holding it. No status was changed."
+  ],
+  "varningar": [
+    "The automatic end-card check cleared CaraShellRoof_OB_122_H1 as clean, because it only looks for a still ending and this video keeps moving to the last frame. The store name was found by reading the text instead. Until that is fixed, a clean verdict from that check is not proof that an ending is clean.",
+    "Still open, and reported again because nothing has changed since 23 Sep: the gift angle runs in two ad sets in the same CBO - CARASHELL_NO_Takovertrekket - G and - GT. Both are live with spend, so no session touches them; the owner decides whether both keep running or he pauses one himself."
+  ],
+  "action_axel": [
+    "The ElevenLabs key is missing from this routine's environment, so six finished videos cannot be dubbed for Norway. Until it is added, this queue will keep growing."
+  ],
+  "nasta_korning": "2026-10-04"
+}
