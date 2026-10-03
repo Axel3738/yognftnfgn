@@ -117,6 +117,11 @@ export function htmlTillText(html) {
   let s = String(html ?? '');
   s = s.replace(/<(script|style|head)[\s\S]*?<\/\1>/gi, ' ');
   s = s.replace(/<br\s*\/?>/gi, '\n');
+  // Ett citerat mejl (<blockquote>) börjar på en egen rad med ">" — precis som i en
+  // plain-del — så taBortCitat() klipper det. Coco 2026-10-01 (Matstrumpor #4799): ett
+  // HTML-mejl utan plain-del bar Shopifys orderbekräftelse i ett blockquote, texten
+  // "Tack för din order!" räknades som kundens utropstecken och en lugn ångerfråga blev ARG.
+  s = s.replace(/<blockquote[^>]*>/gi, '\n> ');
   s = s.replace(/<\/(p|div|tr|li|h[1-6]|blockquote|table|pre)>/gi, '\n');
   s = s.replace(/<[^>]+>/g, ' ');
   const entiteter = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', aring: 'å', auml: 'ä', ouml: 'ö', Aring: 'Å', Auml: 'Ä', Ouml: 'Ö', oslash: 'ø', aelig: 'æ', Oslash: 'Ø', AElig: 'Æ', eacute: 'é', hellip: '…', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”' };
@@ -190,6 +195,8 @@ export function taBortCitat(text) {
     // Gmail på engelska: "On Tue, Sep 8, 2026 at 10:00 AM Namn <x> wrote:"
     // Gmail på svenska:  "Den ons 9 sep. 2026 kl 14:00 skrev Namn <x>:" — verbet före namnet.
     /^(on|den|le|am|på|pe)\s.{3,160}\b(wrote|skrev|schrieb|kirjoitti)\b.*:\s*$/i,
+    // Apple Mail på svenska utan "Den": "21 sep. 2026 kl. 11:42 skrev Namn <x>:" — ett klockslag, verbet och kolon sist (Coco 2026-10-01).
+    /^.{0,60}\b\d{1,2}[:.]\d{2}\b.{0,160}\b(wrote|skrev|skreiv|schrieb|kirjoitti|escribió|a écrit)\b.{0,200}:\s*$/i,
     /^(from|från|fra|von|lähettäjä):\s.+/i,
     /^_{5,}\s*$/,
     /^-{10,}\s*$/,                                    // Outlook för iOS/Android skiljer citatet med en streckrad

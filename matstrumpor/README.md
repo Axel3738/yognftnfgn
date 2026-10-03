@@ -225,6 +225,24 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.
 
+## Bruces vecko-SOP (2026-10-03)
+
+Bruce (Gilz Bruce Biazon) jobbar bara på Matstrumpor och är creative
+strategist där, så redigerarnas veckorapport gäller inte honom (Axels beslut
+2026-10-03, `redigerarrapport/konfig.json` → `utan_redigerare`). I stället
+utvärderar han sig själv varje måndag 15:00 Manila efter
+**`sop/BRUCE-WEEKLY-SELF-REVIEW.md`** (engelska, en A4-sida, PDF bredvid):
+sex steg i Growth Guide (grinden 300 kr OCH 3 köp, briefen mot klippet,
+hook/hold mot kampanjens topp, "Guess:" i Anteckning, Beslut ur etiketten,
+hit rate som bråk, ETT test i Nästa steg). Han skriver bara i de fyra
+människokolumnerna; Skala är Axels. Texten byggdes av fyra läsare, tre
+utkast, två domare och tre skeptiker (fakta mot `etikett.mjs`,
+`growthguide.mjs`, `struktur.mjs`; enkelhet; repots regler). PDF:en byggs om
+med `node matstrumpor/sop/bygg.mjs` (Chromium, samma väg som
+`products/matstrumpor/ugc/pdf/bygg.mjs`). ⚠️ Om Bruce kan öppna Growth
+Guide-sidan är inte mätt (API:t ser inte delningar): sidan ligger i
+workspace-roten, och SOP:en säger "Cannot open one of them? Tell Axel".
+
 ## E-posten (Klaviyo, byggd 2026-09-25)
 
 Matstrumpor har ett eget Klaviyo-konto, **`UV6Rqg`** (nyckeln

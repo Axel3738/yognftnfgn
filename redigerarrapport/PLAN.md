@@ -14,7 +14,10 @@ planen vi bygger efter. Inget är byggt än.
 > **Läget 2026-10-02 kväll: byggt och torrkört, inte postat.** Koden ligger i
 > den här mappen (`README.md` har delarna, körningen och vad som återstår),
 > 71 tester gröna, W39 torrkörd: 21 av 59 bedömbara annonser fick en person
-> (36 %, upp från 8 %). Axels beslut i avsnitt 8. Rutinen byggs efter merge.
+> (36 %, upp från 8 %). Axels beslut i avsnitt 8. **PR #351 mergad och
+> rutinen byggd 2026-10-03** (trigger `trig_01McuhAA4Xm8aFA7PJPwwAGp`, fast
+> session `session_01GneESZrfpo5tLCp2jnZuYM`); första posten måndag
+> 2026-10-05 03:06 CEST.
 
 ## 1. Det viktigaste fyndet: kopplingen annons → redigerare är flaskhalsen
 
@@ -215,7 +218,9 @@ inte automatiskt (kursen har inget format för det).
 5. **Rutinen** `/redigerarrapport`, måndag 09:00 Manila (03:00 CEST, cron
    `0 1 * * 1` UTC) så posten ligger där när de börjar dagen, efter att
    nattvakten (00:01) och kungen (07:00 CEST söndag) skrivit etiketterna.
-   Fast session med repot som källa, som alla andra rutiner.
+   Fast session med repot som källa, som alla andra rutiner. ✅ Byggd
+   2026-10-03 på Barkås-kontot: `trig_01McuhAA4Xm8aFA7PJPwwAGp` +
+   `session_01GneESZrfpo5tLCp2jnZuYM`, sedd i `list_triggers`.
 6. **Efter två veckor:** mät om redigerarna svarar på action items och
    frågan i slutet. Inget svar på två veckor ⇒ frågan ändras, inte tas bort.
 
@@ -231,9 +236,9 @@ inte automatiskt (kursen har inget format för det).
    `dashboard/data/team.json` (`discordUsername`, `discordUserId`): Josh
    `wang3729` → `930484161070899252`, Annabelle `anna_gonzales_17839` →
    `1194906296403632142`, Jerzee `jerz7108` → `540463446546841610`, Carl och
-   Jasper som förut. **Gilz `gilzbrucebiazon` finns inte i servern**: hans
-   post skrivs till fil tills han bjudits in (Axels klick), ingen gissad
-   mention. Posten går i Bäverbutikens server för alla.
+   Jasper som förut. **Gilz `gilzbrucebiazon` finns inte i servern** och
+   får sedan 2026-10-03 ingen post alls (punkt 8 nedan). Posten går i
+   Bäverbutikens server för alla som får en.
 4. **`tools/discord-rapport.mjs` och "Spend: N SEK" i OPS-servrarnas `#ads`:**
    inte avgjort än. Rapporten här kopierar inte den raden.
 5. **De olästa lektionerna: lästa 2026-10-02** (`docs/os/evolve/REDIGERARE-LEKTIONER.md`),
@@ -241,6 +246,13 @@ inte automatiskt (kursen har inget format för det).
 6. **Josh och Annabelle får ingen rapport** (Axel 2026-10-02: "dom gör andra
    uppgifter"). `konfig.json` → `utan_redigerare`. Produktägarreserven är borttagen.
 7. **Första posten går måndag 2026-10-05 via rutinen**, inte som testpost.
+   Rutinen finns (punkt 5 ovan).
+8. **Gilz (Bruce) får ingen rapport** (Axel 2026-10-03: "Bruce jobbar bara
+   på Matstrumpor. Och han är creative strat så jag tror inte denna behöver
+   vara tillämpad på han"). `konfig.json` → `utan_redigerare`. I stället
+   utvärderar han sig själv varje vecka enligt en enkel SOP, byggd samma dag:
+   `matstrumpor/sop/BRUCE-WEEKLY-SELF-REVIEW.md` (+ PDF), med Growth Guide i
+   Notion som facit. Posterna går till Carl, Jerzee och Jasper.
 
 ## 9. Olästa lektioner som kan ändra reglerna
 

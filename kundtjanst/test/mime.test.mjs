@@ -102,3 +102,15 @@ test('hela fixturen tolkas: 8bit, QP, base64-HTML, multipart, referenser', () =>
   // Varje fixturfil går att tolka utan att kasta.
   for (const mapp of ['inkorg', 'skickat']) for (const f of readdirSync(join(FIXTUR, mapp))) assert.ok(tolkaMejl(las(mapp, f)).fran.adress, `${mapp}/${f} saknar avsändare`);
 });
+
+test('HTML-citat: <blockquote> blir en ">"-rad och Apple Mails "21 sep. 2026 kl. 11:42 skrev …:" klipper (Coco 2026-10-01)', () => {
+  const html = '<div>Hej! Om jag ångrat mitt köp, hur går jag till väga då?</div><div>21 sep. 2026 kl. 11:42 skrev Matstrumpor.se &lt;store+1@t.shopifyemail.com&gt;:</div><blockquote type="cite"><p>Tack för din order!</p><p>Order #4799</p></blockquote>';
+  const text = htmlTillText(html);
+  assert.match(text, /\n> ?Tack för din order!/);
+  assert.equal(taBortCitat(text), 'Hej! Om jag ångrat mitt köp, hur går jag till väga då?');
+  // Citathuvudet ensamt (utan blockquote) klipper också.
+  assert.equal(taBortCitat('Hej!\nTack för hjälpen.\n21 sep. 2026 kl. 11:42 skrev Matstrumpor.se <store+1@t.shopifyemail.com>:\nTack för din order!'), 'Hej!\nTack för hjälpen.');
+  assert.equal(taBortCitat('On 2 Oct 2026, at 09:21, Shop <x@y.se> wrote:\n> hej'), '');
+  // En vanlig rad med klockslag men utan "skrev:" sist står kvar.
+  assert.equal(taBortCitat('Paketet kom 14:30 i dag, men lådan var trasig.'), 'Paketet kom 14:30 i dag, men lådan var trasig.');
+});

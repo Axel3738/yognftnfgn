@@ -1,0 +1,31 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/takskyddet",
+  "datum": "2026-10-03",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Nothing changed, and that is the correct outcome: all three Swedish campaigns are PAUSED. They were paused by hand on 2 October between 16:45 and 16:53 CEST, measured on the campaigns' own updated_time. A paused campaign that has spent money is a decision, so the round leaves it alone.",
+    "0 of the 122 ads are active (16 paused, 106 campaign-paused). Nothing is spending on this product in Sweden right now. 0 rows written to the budget log.",
+    "Read the whole product across markets instead, read-only: Denmark is active at 2 000 kr/day with a 7-day ROAS of 2.76 (13 879 kr, 25 purchases) and Norway at 4 000 kr/day with 1.78 (27 238 kr, 37 purchases). Both are above break-even 1.63; the three Swedish campaigns were at 1.21, 1.32 and 1.67.",
+    "Brief round stays paused (owner's decision 2026-09-18)."
+  ],
+  "siffror": {
+    "spend_7d": 51756,
+    "kop_7d": 55,
+    "roas_7d": 1.37,
+    "vinstbidrag_7d": -13641
+  },
+  "briefer": [],
+  "action_axel": [
+    "Denmark is this product's best market and no routine watches it. It runs on half of Norway's budget with 1.55 times the ROAS: 7-day profit contribution +9 658 kr against Norway's +2 565 kr. The market is not in annonsmarknader and the budget round does not even accept --marknad DK, so no ad there has ever been judged and that budget has never been touched. Say whether it should get more budget and whether the night watch should manage it.",
+    "Correction to an earlier report: Denmark runs at 2 000 kr/day, not the 4 000 kr/day quoted since 23 September. That figure was carried forward without being re-read.",
+    "Kill verdicts on Norwegian and Danish ads are not trustworthy as the numbers are calculated today: they use Sweden's break-even CPA of 693 kr, which assumes a 1 130 kr order. Norway's measured average order is 1 313 kr, so its break-even CPA is about 806 kr, and two ads a dry read flagged as losers are in fact below their own market's line. Nothing was touched. Fixing this means break-even per market in the product file."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-10-04 00:41 CEST",
+  "varningar": [
+    "2 October was profitable at a 2.04 ROAS on 4 100 kr and 7 purchases, but it is only half a day because everything stopped at 16:4x. Single days have reversed the reading three times on this product, so no conclusion is drawn from it.",
+    "The Swedish 7-day window still carries the worst days of the week and empties on its own now that nothing spends."
+  ]
+}

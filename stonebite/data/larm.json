@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-10-02T18:13:00.464Z",
+ "uppdaterad": "2026-10-03T05:12:48.620Z",
  "skickade": [
   {
    "nyckel": "eskalering:1551354091823693906:1551354104536637470",
@@ -205,6 +205,19 @@
    "tid": "2026-10-01T16:15:40.010Z",
    "text": "<@1543617780396593206> ⏰ **Unanswered for 2 h in #customer-service** (Bäverbutiken) — Axel wrote: \"<@1543617780396593206>\". Please pick it up and reply in the channel so everyone can see it is handled. https://discord.com/channels/1540322130388983921/1548923828590088192/1555213183789170799",
    "meddelandeId": "1555251867368431697",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:beverbutikken:#1190:2026-10-06",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-10-03T00:14:19.232Z",
+   "text": "<@1543617780396593206> 🔴 **Chargeback deadline — #1190 (Bäverbutiken)** · 338 NOK · evidence due 2026-10-06 · 3 days left. Unanswered, the money is lost for good. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1555734712993972255",
    "mottagare": [
     "1543617780396593206"
    ]

@@ -102,6 +102,21 @@ råd):
 Uppladdaren får kampanjen ur kön: skicka `--kampanj <jobb.kampanj.id>` i
 steg 5, så kan verktyget aldrig välja en annan kampanj än den kön dömde.
 
+**Extra målkampanjer (`malkampanj.<M>.ocksa` i registret, 2026-10-03 — Axels
+beslut: "de engelska ska ju läggas i Australienkampanjen … vi kör bara samma i
+USA och Australien, men vi anpassar dem lite mer för USA"):** varje rad bär
+`ocksa: [{ land, kampanj_id, kampanj_namn, mal_namn, finns_i_meta, ad_id }]`
+och `ocksa_saknas` (länderna som ännu saknar annonsen). CaraShell Taköverdraget
+har **AU** → `AU LISTICLE Taköverdrag CARASHELL` (Axels egen kampanj, adset per
+koncept — ett nytt koncept får ett adset klonat av ett AU-syskon, med AU-geo).
+Samma engelska fil och samma engelska copy laddas upp en gång till där, under
+landets namn (`CaraShellRoof_AU_OB_111_H1`); länken ärvs ur AU-kampanjen
+(`?country=AU`). Ett extra mål som inte går att nå (`kampanj_skal`) stoppar
+aldrig huvudmålet — raden blir bara inte Approved förrän det är löst. ⛔ Extra
+mål gäller bara NYA rader ur `SE-ACTIVE to be translated`: en Approved-rad utan
+AU-kopia är inte eftersläpande (Axel vill ha nya vinnare dit, inte de 80 gamla).
+Ändra med `node factory/register.mjs malkampanj-ocksa <nyckel> US AU <id|av>`.
+
 ⚠️ **Föreslå ALDRIG `/ny-annonser` eller `--tom` för en kampanj ägaren själv
 har pausat.** PAUSED med spend är hans beslut. Kön **hålls** i det läget:
 ingen rad flyttas, ingen status ändras i Notion, inget renderas i HeyGen.
@@ -208,6 +223,16 @@ Länken ärvs ur kampanjens befintliga annonser; en tom kampanj (första
 US-annonsen) får marknadens standardlänk och produktfilens sida — det står i
 utskriften. Tillbakaläs ACTIVE/ACTIVE.
 
+**Sedan en gång till per extra mål** (`rad.ocksa`, bara de med
+`finns_i_meta: false` och ett läsbart `kampanj_id`): samma fil, samma
+`--primar/--rubrik/--beskrivning`, `--kampanj <ocksa.kampanj_id>` och
+`--namn <ocksa.mal_namn>` (landets kod i namnet, `_AU_`). Torrt först, sedan
+skarpt, tillbakaläs. Bär huvudmålet redan annonsen (`finns_i_meta: true`) men
+ett extra mål saknar den: ladda upp bara dit — copyn ur dagens
+`adcopy-<M>.json`, annars ur US-annonsens creative (`object_story_spec`).
+Ett extra mål som misslyckas rapporteras under `varningar`, raden får
+kommentar men inte `Approved`.
+
 ### 6. Notion
 ```
 node tools/notion-aterkoppling.mjs <page-id> --kommentar "<M> ✅ <mal_namn> live in <kampanj> (adset <KONCEPT>), ad <id>" --egenskap "Translated url=https://www.facebook.com/adsmanager/manage/ads?act=<konto>&selected_ad_ids=<id>" [--status Approved]
@@ -256,7 +281,8 @@ Pusha till `main`.
 - [ ] Video: `translate-batch.mjs status --marknad=<M>` visar ✓ marknadens språk på varje post (inget ✗), och källfilen var den svenska (ingen `_NO_`-fil i `se/`)
 - [ ] Copy utan pris eller med priset ur `ekonomi.marknadspriser`; inget påhittat belopp någonstans
 - [ ] Uppladdning torrkörd först, skarp sedan, tillbakaläst ACTIVE/ACTIVE; ett adset per koncept; rätt konto
-- [ ] Rader flyttade till `Approved` BARA när alla annonsmarknader bär annonsen; annars kommentar
+- [ ] Rader flyttade till `Approved` BARA när alla annonsmarknader OCH alla extra mål (`ocksa`, t.ex. AU) bär annonsen; annars kommentar
+- [ ] Varje extra mål i registret fick sin kopia (`<PREFIX>_AU_…` i AU-kampanjen) eller står under varningar med skäl
 - [ ] Marknadsvakten körd för marknader med `placeringar` (US): alla adsets bär bara flödet, ingen spend utanför, inga svenska rader på sidorna eller i kassan — eller avvikelsen redovisad under ACTION NEEDED
 - [ ] Discord-rapport på engelska i `#annons-uppladdning` med marknadens flagga; ping bara under ACTION NEEDED
 - [ ] Batchfiler committade (aldrig media), batch-log, push till `main`

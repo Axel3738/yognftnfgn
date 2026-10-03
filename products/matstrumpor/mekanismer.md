@@ -328,7 +328,7 @@ kontot kört; skeptikern läste transkripten och fällde dem.
    etiketter först. Lyfter de hook rate får locket en egen videolinje, och
    anti-inslagningen testas som bild (aldrig på Nathalie, som visar lådan
    inslagen).
-3. **M3 Favoriträtten**: 060 (Draft) och Katarina ×2 ÄR testet. Ingen ny
+3. **M3 Favoriträtten** `[använd i batch #5]`: Katarina fick etikett 2026-10-03 (sushiälskaren KPI_WINNER, ROAS 2,05 på 14 d; ungen LOSER) ⇒ brief `069_h1–h3_i1pkat1` (omklipp, gåta om en vuxen sushiälskare). 060 (Draft) och Katarina ×2 ÄR testet. Ingen ny
    brief förrän de har etikett. Bilden med fyra lådor bara om pizza/burgare/
    donut får egna landningssidor i annonsen.
 4. **M5 Fem sorter**: bara som H1-hook på Nathalie-kroppen, aldrig som
