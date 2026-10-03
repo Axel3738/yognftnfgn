@@ -28,9 +28,16 @@ test('blockFor och tillSek', () => {
   assert.throws(() => tillSek(10, 'GBP', KURSER), /Ingen kurs/);
 });
 
-test('Sverige: Cost per item × antal; saknad kostnad blir orsak, aldrig noll', () => {
+test('Sverige: Cost per item × arkets paketkvot; saknad kostnad blir orsak, aldrig noll', () => {
   const k = landadKostnad({ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 2, land: 'SE' }, KURSER, COGS);
-  assert.equal(k.sek, 160.46);
+  assert.equal(k.sek, 120.35, 'två lådor i ett paket: 80,23 × 12,3/8,2 — Axels 120,92');
+  assert.ok(/arket: 2 set/.test(k.kalla));
+  const en = landadKostnad({ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 1, land: 'SE' }, KURSER, COGS);
+  assert.equal(en.sek, 80.23);
+  const fyra = landadKostnad({ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 4, land: 'SE' }, KURSER, COGS);
+  assert.equal(fyra.sek, 240.69, 'fyra lådor: största raden (2 set) skalad linjärt');
+  const utanArk = { ...COGS, sverige: { ...COGS.sverige, ark_usd: undefined } };
+  assert.equal(landadKostnad({ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 2, land: 'SE' }, KURSER, utanArk).sek, 160.46);
   const d = landadKostnad({ handle: 'donut-strumpor', variantTitel: 'One Size', antal: 1, land: 'SE' }, KURSER, COGS);
   assert.equal(d.sek, 73.42);
   const utan = { ...COGS, sverige: { ...COGS.sverige, kostnad: { ...COGS.sverige.kostnad, donut: null } } };
@@ -66,7 +73,7 @@ test('Norden: arkets rad per land, 2 set i ett paket, pris-kolumnen vinner', () 
 
 test('orderKostnad: tull i Sverige och inte i USA, blandad arkorder anmärks', () => {
   const se = orderKostnad([{ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 2 }], 'SE', KURSER, { tullSek: 32.74, cogs: COGS });
-  assert.equal(se.sek, Math.round((160.46 + 32.74) * 100) / 100);
+  assert.equal(se.sek, Math.round((120.35 + 32.74) * 100) / 100);
   assert.equal(se.komplett, true);
   const us = orderKostnad([{ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 1 }, { handle: 'pizza-strumpor', variantTitel: 'One Size', antal: 1 }], 'US', KURSER, { tullSek: 32.74, cogs: COGS });
   assert.ok(!us.delar.some((d) => d.tull));
@@ -97,4 +104,14 @@ test('tullGaller: EU-tullen på SE, DK och FI — aldrig på NO eller Big 5', ()
   assert.ok(dk.delar.some((d) => d.tull));
   const no = orderKostnad([{ handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 2 }], 'NO', KURSER, { tullSek: 32.7, cogs: COGS });
   assert.ok(!no.delar.some((d) => d.tull));
+});
+
+test('orderKostnad: samma variant på två rader (Köp 1, få 1 som gåvorad) räknas som ett tvåpaket', () => {
+  const tva = orderKostnad([
+    { handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 1 },
+    { handle: 'sushi-strumpor', variantTitel: '5 - Par / One Size', antal: 1 },
+    { handle: 'sushipinnar-i-akta-tra', variantTitel: 'Default Title', antal: 2 },
+  ], 'SE', KURSER, { cogs: COGS });
+  assert.equal(tva.sek, 120.35);
+  assert.equal(tva.delar.filter((d) => !d.tull).length, 2, 'sushi + ätpinnar = två delar');
 });

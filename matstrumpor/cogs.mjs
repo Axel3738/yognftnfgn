@@ -77,6 +77,18 @@ export function landadKostnad({ handle, variantTitel = '', antal = 1, land }, ku
   if (block === 'sverige') {
     const k = cogs.sverige.kostnad?.[nyckel];
     if (k === null || k === undefined) return { saknas: `${handle}: ${cogs.sverige.saknas_orsak}` };
+    /* Flera lådor i samma paket: arket (sverige.ark_usd) säger att frakten inte är dubbel —
+       sushi 5 par 8,2 USD för en låda, 12,3 för två. Cost per item är EN låda i SEK, så
+       paketet räknas som Cost per item × arkets kvot (pris_n ÷ pris_1): 80,23 × 12,3/8,2 =
+       120,35 kr, Axels 120,92 i konfig.json. Fler lådor än arket har rad för: största raden
+       skalas linjärt. Utan ark: × n som förut. */
+    const ark = cogs.sverige.ark_usd?.[nyckel];
+    const ett = ark?.find((x) => x.antal === 1);
+    if (n > 1 && ett && radPris(ett) > 0) {
+      const rad = ark.find((x) => x.antal === n) ?? [...ark].sort((a, b) => b.antal - a.antal)[0];
+      const faktor = (radPris(rad) / radPris(ett)) * (n / rad.antal);
+      return { sek: r2(k * faktor), valuta: 'SEK', belopp: r2(k * faktor), kalla: `Cost per item ${k} SEK × ${r2(faktor)} (arket: ${rad.antal} set ${radPris(rad)} / 1 set ${radPris(ett)} USD${rad.antal === n ? '' : `, linjärt till ${n}`})` };
+    }
     return { sek: r2(k * n), valuta: 'SEK', belopp: r2(k * n), kalla: `Cost per item ${k} SEK × ${n}` };
   }
   const blk = cogs[block];
@@ -105,7 +117,16 @@ export function orderKostnad(rader, land, kurser, { tullSek = 0, cogs = lasCogs(
   let sek = 0;
   const delar = [];
   const saknas = [];
+  /* Samma variant på flera orderrader (paketkoderna lägger gåvolådan som en egen rad) är
+     ETT antal i arkets mening — två lådor i ett paket, inte två paket. Slå ihop först. */
+  const ihop = new Map();
   for (const rad of rader) {
+    const nyckel = `${rad.handle}\u0000${rad.variantTitel ?? ''}`;
+    const f = ihop.get(nyckel);
+    if (f) f.antal += Math.max(1, Number(rad.antal) || 1);
+    else ihop.set(nyckel, { ...rad, antal: Math.max(1, Number(rad.antal) || 1) });
+  }
+  for (const rad of ihop.values()) {
     const k = landadKostnad({ ...rad, land }, kurser, cogs);
     if (k.saknas) { saknas.push(k.saknas); continue; }
     sek += k.sek;
