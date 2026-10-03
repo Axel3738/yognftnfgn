@@ -1,0 +1,57 @@
+{
+  "_kommentar": "Action item-banken för strategrapporten till Bruce (creative strategist, Matstrumpor). Byggd 2026-10-03 ur hans SOP (matstrumpor/sop/BRUCE-WEEKLY-SELF-REVIEW.md), Evolves iterationsplaybook (docs/os/evolve/ITERATIONS-PLAYBOOK.md), matstrumpor/lardom.mjs PLAYBOOK_PER_UTFALL, CS-KLART.md och docs/os/evolve/SVAR.md. Nyckeln väljs av läget (matt.mjs actionNyckel): kön med bedömbara rader först, sedan saknad ny rad, sedan vinnare utan tre live iterationer, sedan Done utan lärdom, sedan bästa egna utfallet, sist allmänt. ETT item per vecka, aldrig samma två gånger förrän listan är slut (minnet i data/historik.jsonl). Engelska utan tankstreck, inga butiksnamn, inga kronor. rubrik_sv är raden till Axel.",
+  "rubrik_sv": {
+    "ko_bedombar_kvar": "stänga raderna med nog data",
+    "ingen_ny_rad": "lägga en ny konceptrad före briefen",
+    "vinnare_utan_iteration": "iterera på vinnaren",
+    "done_utan_lardom": "skriva lärdom på Done-raderna",
+    "BREAKTHROUGH": "komponentkartan och tre iterationer på vinnaren",
+    "SPEND_WINNER": "tro eller brådska i nästa brief, hooken kollad först",
+    "KPI_WINNER": "nästa hook ur briefen på samma kropp",
+    "LOSER": "en ny hookrad eller ett beslut om förloraren",
+    "INGEN_LEVERANS": "första bilden och ett nytt adset innan något stryks",
+    "allmant": "en Done-rad skriven så en ny redigerare förstår"
+  },
+  "per_lage": {
+    "ko_bedombar_kvar": [
+      { "text_en": "Close the rows with enough data first. Open each one, write what differed from the brief, hook or hold against the best batch, and one line that starts with Guess. Then STATUS = Done.", "kalla": "SOP steg 1 till 4; CS-KLART punkt 1 och 5" },
+      { "text_en": "End every LEARNINGS you write with the next ad you would make from it, one line. A learning without a next test is a diary entry, not a system.", "kalla": "CS-KLART punkt 3; matstrumporkungen.md 229" },
+      { "text_en": "Before you judge an idea, check the cut against the brief. If the video differs from what the brief asked for, the loss is the execution, and you write which part differed.", "kalla": "SOP steg 2; CS-KLART punkt 2" }
+    ],
+    "ingen_ny_rad": [
+      { "text_en": "Add next week's concept as ONE row in Ad Roadmap before you brief it: WHY, WHAT and HOW in BREAKTHROUGH MEMO, plus desire, sub avatar, angle, awareness level and ad type.", "kalla": "SOP 'Then add ONE row'; Evolve Growth Guide 3.0 Ad Roadmap" },
+      { "text_en": "Take the new row from the planning tabs: one desire, one sub avatar, one angle. Write in the memo which row in each tab it comes from, so the next person can follow the thread.", "kalla": "Evolve Growth Guide 3.0: Desires, Sub Avatars, Awareness" },
+      { "text_en": "Write the new row's hook line first, then the memo. If the first frame cannot show what the line talks about, change the line before you brief it.", "kalla": "docs/hook-visual-rule; ITERATIONS-PLAYBOOK §4" }
+    ],
+    "vinnare_utan_iteration": [
+      { "text_en": "Build on the winner before anything new: the same hook and the same creator, with a longer problem section before the reveal.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL BREAKTHROUGH (manus-5); CS-KLART punkt 9" },
+      { "text_en": "Take the winner one awareness level up or down: the same promise told to someone who does not know the problem yet, or to someone already comparing options.", "kalla": "lardom.mjs manus-6; ITERATIONS-PLAYBOOK §7" },
+      { "text_en": "Start the winner in the middle of the action: cut the setup and open on the moment the gift is unwrapped. Same body after that.", "kalla": "lardom.mjs manus-4" }
+    ],
+    "done_utan_lardom": [
+      { "text_en": "A row is Done only when LEARNINGS holds a line. Open the rows you set to Done without one and write either Too little data or the three lines from the SOP.", "kalla": "SOP; growthguide.mjs SA_LASER_DU" }
+    ],
+    "BREAKTHROUGH": [
+      { "text_en": "Write the component map for the winner: which seconds are the hook, the bridge, the hold and the call to action. The next three iterations are built on that map.", "kalla": "ANALYSMETOD 6b; ITERATIONS-PLAYBOOK §7.1" },
+      { "text_en": "Plan three iterations on the winner inside 14 days and put each one in Ad Roadmap as its own row with Iteration as ad type.", "kalla": "CS-KLART punkt 9; EVOLVE-GAP-ANALYS" }
+    ],
+    "SPEND_WINNER": [
+      { "text_en": "People stopped and stayed but did not buy enough. Check the hook against the top batch first; if it holds up, the next brief for this concept adds belief or urgency in the bridge.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL SPEND_WINNER ('hooken kan vara rotorsaken'); post.mjs NASTA_TEST" },
+      { "text_en": "Read the comments on the spend winner and write the objection that comes up most. Answer it in the next version of this concept.", "kalla": "lardom.mjs manus-7; kommentarer/leads.md" }
+    ],
+    "KPI_WINNER": [
+      { "text_en": "It converts when shown, but Meta shows it little. Next version: the next unused hook line from the brief on the same body, nothing else changed.", "kalla": "post.mjs NASTA_TEST KPI_WINNER; ITERATIONS-PLAYBOOK §4" }
+    ],
+    "LOSER": [
+      { "text_en": "Write one new hook line for the loser where the first frame shows the object the line talks about. One line, not a rewrite of the concept.", "kalla": "lardom.mjs manus-1; docs/hook-visual-rule" },
+      { "text_en": "Decide in LEARNINGS whether the loser gets one more try or is dropped. An idea from research gets two or three tries with a new reason each time; a lost imitation gets none.", "kalla": "lardom.mjs PLAYBOOK_PER_UTFALL LOSER; ITERATIONS-PLAYBOOK §3" }
+    ],
+    "INGEN_LEVERANS": [
+      { "text_en": "Meta never showed these, so nothing in them is tested yet. Write in LEARNINGS: not tested, reason not measured. Look at the first frame once, and ask for a fresh ad set before you drop anything.", "kalla": "SVAR.md punkt 3 ('aldrig your hook failed'); lardomar.md L-batch-0a (CBO:n svalt dem)" }
+    ],
+    "allmant": [
+      { "text_en": "Pick one Done row and rewrite its LEARNINGS so that a new editor would know exactly what to cut next. That is the standard for every row from now on.", "kalla": "CS-KLART punkt 3 och 5" },
+      { "text_en": "Read the three breakthrough memos you are proudest of and check each has WHY, WHAT and HOW. Fill in the part that is missing.", "kalla": "Evolve Growth Guide 3.0 BREAKTHROUGH MEMO" }
+    ]
+  }
+}

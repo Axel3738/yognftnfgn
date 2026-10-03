@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   batchNyckel, batcher, roadmapEgenskaper, resultatEgenskaper, loggrader, overviewText, statusFor, statusAttSkriva,
   saddAttSkriva, awarenessAv, lardomText, memoAv, hashAv, RESULTAT, AD_TYPE, FILE_TYPE, ROADMAP, RESULTS, LOG, PLANERING,
+  hubbUppslag, arSystemetsSadd, SEED_SLUT,
 } from '../growthguide.mjs';
 
 const matning = (spend, kop, roas, hook = 0.4, hold = 0.1) => ({ datum: '2026-10-02', spend_sek: spend, kop, roas, cpa_sek: kop ? spend / kop : null, hook_rate: hook, hold_rate: hold });
@@ -70,14 +71,34 @@ test('roadmapEgenskaper: Evolves kolumner, bara systemfält i system och såddf�
   assert.equal(e.sadd['ANGLE(S)'].rich_text[0].text.content, 'gift · hook: gåta');
   assert.match(e.sadd['BREAKTHROUGH MEMO'].rich_text[0].text.content, /^\(seeded from the brief\) WHY: source: axel\. WHAT: concept nathalie, iteration 3 on nat, mechanism takeaway, hook gåta\. HOW: ugc, belief verklig, urgency lager\./);
   assert.equal(memoAv({ lardom_id: 'L-x', format: 'ugc' }), null, 'annonsens egen lärdom är inte ett WHY');
-  assert.match(e.sadd.LEARNINGS.rich_text[0].text.content, /^\(seeded from lardomar\.md, L-x\) Text\./);
+  assert.match(e.sadd.LEARNINGS.rich_text[0].text.content, /^\(seeded from lardomar\.md, L-x\) Text\.\s+\(end of seed\)$/, 'sådden slutar med markören så människans text under den känns igen');
+  assert.match(e.sadd['BREAKTHROUGH MEMO'].rich_text[0].text.content, /\(end of seed\)$/);
+});
+
+test('hubbUppslag: exakt namn, utan _v, uppladdarens källa (022_H1 → raden 022) och samma löpnummer (048h1 → 048_v1)', () => {
+  const hub = new Map([
+    ['MATSTRUMP_sushi_jul_ugc_048_v1', { ansvariga: ['Gilz Bruce Biazon'], url: 'u48' }],
+    ['022', { ansvariga: ['Gilz Bruce Biazon'], url: 'u22' }],
+    ['MATSTRUMP_sushi_gift_ugc_056h1_v1', { ansvariga: ['Carl'], url: 'u56' }],
+  ]);
+  const slaUpp = hubbUppslag(hub, [{ annons: 'MATSTRUMP_sushi_jul_ugc_044h1_v1', kalla: 'Drive 022_H1.mov' }]);
+  assert.equal(slaUpp('MATSTRUMP_sushi_gift_ugc_056h1_v1').url, 'u56', 'exakt');
+  assert.equal(slaUpp('MATSTRUMP_sushi_jul_ugc_048h1_v1').url, 'u48', 'samma löpnummer');
+  assert.equal(slaUpp('MATSTRUMP_sushi_jul_ugc_048_h2_i1pnat_v1').url, 'u48', '3:2:2-namnet');
+  assert.equal(slaUpp('MATSTRUMP_sushi_jul_ugc_044h1_v1').url, 'u22', 'uppladdarens källa');
+  assert.equal(slaUpp('MATSTRUMP_sushi_gift_ugc_048h1_v1'), null, 'annan vinkel ⇒ ingen gissning');
+  assert.equal(slaUpp('09-17 Nathalie captions musik'), null);
+  const b = batcher({ annonser: [annons('MATSTRUMP_sushi_jul_ugc_048h1_v1'), annons('MATSTRUMP_sushi_jul_ugc_048h2_v1')] }, { hub });
+  assert.deepEqual(b[0].forfattare, ['Gilz Bruce Biazon']);
+  assert.equal(b[0].brief_url, 'u48');
 });
 
 test('bild blir Static, okänd typ blir tom, utan annons blir länken tom', () => {
   const b = batcher({ annonser: [annons('MATSTRUMP_sushi_offer_static_d3_v1', { format: 'static', vinkel: 'offer', id: null })] })[0];
   const e = roadmapEgenskaper(b);
   assert.equal(e.system['FILE TYPE'].select.name, FILE_TYPE.static);
-  assert.equal(e.system['AD TYPE'].select, null);
+  assert.equal('AD TYPE' in e.system, false, 'okänd typ skrivs inte alls, så en människas val står kvar');
+  assert.equal('FILE TYPE' in roadmapEgenskaper(batcher({ annonser: [annons('09-17 Nathalie', { vinkel: null, format: null })] })[0]).system, false);
   assert.equal(e.system['LINK TO AD'].url, null);
   assert.equal(e.system.RESULTS.select, null);
   assert.equal(memoAv(b), null, 'inget i briefen ⇒ ingen memo-sådd');
@@ -104,6 +125,17 @@ test('såddregeln: en cell är systemets tills en människa rört den', () => {
   const tomSadd = { 'BREAKTHROUGH MEMO': { rich_text: [] }, LEARNINGS: { rich_text: [] } };
   assert.deepEqual(Object.keys(saddAttSkriva(tomSadd, { 'BREAKTHROUGH MEMO': '(seeded from the brief) WHY: builds on L-x.', LEARNINGS: 'Bruce skrev' })), ['BREAKTHROUGH MEMO'], 'systemets gamla sådd töms när briefen inte ger något; människans text står kvar');
   assert.deepEqual(saddAttSkriva(tomSadd, { 'BREAKTHROUGH MEMO': '', LEARNINGS: '' }), {}, 'tomt mot tomt ⇒ inget skrivs');
+  // Bruces SOP: "write under any text already there" — det efter slutmarkören är hans och rörs aldrig
+  const under = `(seeded from lardomar.md, L-x) gammal text ${SEED_SLUT}\nGuess: the first frame.`;
+  assert.deepEqual(saddAttSkriva(sadd, { LEARNINGS: under, 'AWARENESS LEVEL': 'Unaware' }), {}, 'människans text under sådden ⇒ cellen rörs aldrig, även om sådden ändrats');
+  assert.deepEqual(saddAttSkriva(tomSadd, { 'BREAKTHROUGH MEMO': `(seeded from the brief) WHY: x. ${SEED_SLUT} Bruce: WHAT: y.`, LEARNINGS: '' }), {}, 'inte heller när briefen inte längre ger något');
+  assert.equal(arSystemetsSadd(`(seeded from lardomar.md, L-x) text ${SEED_SLUT}`), true);
+  assert.equal(arSystemetsSadd(`(seeded from lardomar.md, L-x) text ${SEED_SLUT}  `), true, 'avslutande blanksteg');
+  assert.equal(arSystemetsSadd(under), false);
+  assert.equal(arSystemetsSadd('(seeded from lardomar.md, L-x) gammal utan markör'), true, 'gamla formen utan markör är systemets');
+  assert.equal(arSystemetsSadd('(seeded from lardomar.md, L-x) gammal utan markör\nToo little data'), false, 'utom när SOP:ens ord finns i den');
+  assert.equal(arSystemetsSadd('Bruce skrev'), false);
+  assert.equal(arSystemetsSadd(''), false);
 });
 
 test('resultatEgenskaper: en annons → Ad Results, etiketthistoriken som text', () => {
