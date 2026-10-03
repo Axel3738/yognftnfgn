@@ -1,0 +1,39 @@
+✅ Utfall 2026-10-03: StonePNL:s sex tjänster stod "Queued" i 2 h 25 min efter pushen av avgiftsvaluta-v120 (09:03 CEST) och den tomma commiten (09:20). Railways Usage-sida visade 13 projekt: robust-expression (StonePNL), strong-solace (sajten), just-possibility (annan gren) och TIO dubbletter — hearty-youth, considerate-delight, pretty-quietude, tranquil-insight och sex NYA sedan städningen 2026-09-22: kind-spirit, thriving-compassion, reliable-vibrancy, delightful-serenity, robust-liberation, sincere-wonder. Krediten var INTE problemet (Hobby, 9,27 av 5 USD inkluderat, kort finns — fakturan räknas bara upp). Axel körde prompten nedan i Cowork ~11:00 CEST; alla fem mätbara tjänster svarade avgiftsvaluta-v120 11:31–11:33 CEST. Något skapar fortfarande nya Railway-projekt ur repot — orsaken är inte utredd; städa igen när kön står still.
+
+StonePNL, min Shopify-app på Railway, får inte bygga. Alla sex tjänster i projektet robust-expression står som "Queued" sedan över en timme. Jag vill att du rensar bort de Railway-projekt som stjäl byggplatsen, utan att röra StonePNL eller sajten. Gör allt i den här fliken och fråga mig om inloggning när du behöver den.
+
+BAKGRUND, så du förstår vad du letar efter.
+StonePNL är projektet "robust-expression" med sex tjänster (PNL App store, beautiful-curiosity, yognftnfgn, PNL FI, PNL DK, PNL UK) plus en Postgres. De bygger från GitHub-repot Axel3738/yognftnfgn, branchen claude/bäverbutiken-settkopplingen-nba21z. Sajten stonebite.org är projektet "strong-solace" med tjänsten "yognftnfgn", som bygger samma repo från branchen main, bara när filer under stonebite/, bonus/ eller package.json ändras. Repot får pushar sju till åtta gånger i timmen från mina rutiner. Problemet: det finns fler projekt i samma Railway-konto som bygger SAMMA repo vid VARJE push, utan filter. De tar byggplatsen hela tiden. Förra gången hette de tranquil-insight, considerate-delight, pretty-quietude, compassionate-sparkle och hearty-youth. Det kan finnas fler i dag.
+
+RÖR ALDRIG DE HÄR, oavsett vad du hittar:
+  - projektet robust-expression (StonePNL) och alla dess tjänster och databasen
+  - projektet strong-solace (sajten) och dess tjänst yognftnfgn
+  - projektet just-possibility (bygger en annan branch med flit)
+
+STEG 0 — krediten.
+Öppna kontots Usage eller Billing. Står det att en gräns är nådd, att krediterna är slut, eller att ett kort saknas: stanna, skriv exakt vad det står, och gör inget mer. Det är då Axels klick.
+
+STEG 1 — inventera.
+Gå till railway.app och logga in med mitt konto. Öppna varje projekt i kontot, ett i taget, och skriv upp för varje tjänst:
+  - vilket GitHub-repo och vilken branch den bygger från (Service → Settings → Source)
+  - om den har någon egen domän (Settings → Networking → Custom Domains)
+  - om den har en volym (Volume) kopplad
+  - vad den senaste deployen har för status (Deployments)
+Ta med robust-expression och strong-solace i inventeringen också, men gör inget med dem.
+
+STEG 2 — stoppa dubbletterna.
+För varje projekt som INTE är robust-expression, INTE strong-solace och INTE just-possibility:
+  a) Bygger alla dess tjänster Axel3738/yognftnfgn från main, och ingen tjänst har egen domän eller volym? Då är projektet en dubblett och ska bort: projektets Settings → längst ner under Danger → Delete Project. Bekräfta med projektnamnet om Railway ber om det. Går det inte att ta bort: koppla bort GitHub-källan på varje tjänst (Service → Settings → Source → Disconnect) och avbryt alla deployer som ligger i kö eller bygger (Deployments → den tre-prickade menyn → Remove eller Cancel).
+  b) Har någon tjänst i projektet en egen domän, en volym, eller bygger ett annat repo eller en annan branch? Ta då INTE bort projektet. Koppla i stället bort GitHub-källan på varje tjänst som bygger yognftnfgn main, avbryt dess köade deployer, och skriv i rapporten exakt vad projektet innehöll.
+Heter en knapp något annat än jag skrivit: leta i samma meny, det är samma sak. Ta inte bort något annat för att "städa".
+
+STEG 3 — kontrollera att StonePNL börjar bygga.
+Öppna robust-expression → PNL App store → Deployments. Den nyaste deployen ska inom några minuter gå från Queued till Building och sedan Active. Vänta upp till 15 minuter. Blir den Active: öppna https://pnl-app-store-production.up.railway.app/healthz i en ny flik. Där ska stå "avgiftsvaluta-v120". Står det "roas-under-dagen-v119" är det fortfarande den gamla koden.
+Står deployen kvar som Queued efter 15 minuter: säg det rakt ut och skriv vad som byggs någon annanstans i kontot just då.
+
+RAPPORTERA TILL SIST, i den här ordningen:
+  - steg 0: vad Usage/Billing visade
+  - varje projekt i kontot: namn, vad tjänsterna byggde, domän/volym ja/nej, och vad du gjorde med det
+  - tiden när PNL App store gick från Queued till Building, och när den blev Active
+  - vad /healthz visade
+Gissa inte. Fungerar något inte, skriv exakt vad Railway visade. Skriv sedan "Railway klart" i chatten med Claude.

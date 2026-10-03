@@ -1339,6 +1339,14 @@ direktadressen och www, startsidan utan konsult/tjänster/mentorskap/
 rådgivning, `/tjanster` 301. De tomma projekten står kvar tills Axel raderar
 dem (Settings → Danger → Delete Project). Dyker en ny dubblett upp: koppla
 bort källan och avbryt kön på samma sätt, aldrig vänta ut den.
+⚠️ **Igen 2026-10-03: StonePNL:s sex tjänster stod "Queued" i 2 h 25 min** efter en push
+till deploy-grenen, och Usage-sidan visade TRETTON projekt — sex nya dubbletter sedan
+22/9 (kind-spirit, thriving-compassion, reliable-vibrancy, delightful-serenity,
+robust-liberation, sincere-wonder). Krediten var inte orsaken (Hobby, kort finns).
+Prompten `stonebite/cowork/10-byggko-stonepnl.txt` (samma recept, StonePNL i stället för
+sajten som kontroll); Axel körde den och bygget gick igenom inom en halvtimme. Något
+skapar fortfarande nya projekt ur repot — inte utrett. Räkna aldrig med att en push till
+deploy-grenen är live förrän `/healthz` svarar med markören.
 
 ✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
 Barkås-konto (`barkas.kundservice@gmail.com`), inte på `claude5@stonebite.org`**
